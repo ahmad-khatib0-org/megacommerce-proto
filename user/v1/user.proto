@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package user.v1;
+
+option go_package = "user/v1;v1";
+
+service UserService {
+  rpc CreateSupplier(CreateSupplierRequest) returns (CreateSupplierResponse);
+}
+
+message User {
+  optional string id = 1;
+  optional string business_name = 2;
+  optional string first_name = 3;
+  optional string nickname = 4;
+  optional string last_name = 5;
+  optional string email = 6;
+  optional string user_type = 7;
+  optional string membership = 8;
+  optional bool is_email_verified = 9;
+  optional string password = 10;
+  optional string auth_data = 11;
+  optional string auth_service = 12;
+  optional string roles = 13;
+  map<string, string> props = 14;
+  map<string, string> notify_props = 15;
+  optional int64 last_password_update = 16;
+  optional int64 last_picture_update = 17;
+  optional int32 failed_attempts = 18;
+  optional string locale = 19;
+  optional bool mfa_active = 20;
+  optional string mfa_secret = 21;
+  optional string last_activity_at = 22;
+  optional int64 last_login = 23;
+  optional int64 created_at = 24;
+  optional int64 updated_at = 25;
+  optional int64 deleted_at = 26;
+}
+
+message CreateSupplierRequest {
+  string business_name = 1;
+  string email = 2;
+  string first_name = 3;
+  string last_name = 4;
+  string password = 5;
+  string membership = 6;
+}
+
+message CreateSupplierResponse {}

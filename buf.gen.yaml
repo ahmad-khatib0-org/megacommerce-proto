@@ -1,0 +1,33 @@
+---
+version: v1
+plugins:
+  - plugin: go
+    out: gen/go
+
+  - plugin: go-grpc
+    out: gen/go
+
+  - name: java
+    out: gen/java
+
+  - name: js
+    out: gen/js
+    opt:
+      - import_style=commonjs
+
+  - name: ts
+    out: gen/ts
+    opt:
+      - import_style=commonjs
+
+  - name: grpc-web
+    out: gen/ts-web
+    opt:
+      - import_style=typescript
+      - mode=grpcwebtext
+
+  - name: cpp
+    out: gen/cpp
+
+  - name: python
+    out: gen/python
