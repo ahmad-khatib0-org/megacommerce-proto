@@ -474,8 +474,9 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"membership\"\x18\n" +
 	"\x16CreateSupplierResponse2`\n" +
 	"\vUserService\x12Q\n" +
-	"\x0eCreateSupplier\x12\x1e.user.v1.CreateSupplierRequest\x1a\x1f.user.v1.CreateSupplierResponseB\fZ\n" +
-	"user/v1;v1b\x06proto3"
+	"\x0eCreateSupplier\x12\x1e.user.v1.CreateSupplierRequest\x1a\x1f.user.v1.CreateSupplierResponseB4\n" +
+	"\x18org.megacommerce.user.v1B\tUserProtoZ\n" +
+	"user/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
 	file_user_v1_user_proto_rawDescOnce sync.Once

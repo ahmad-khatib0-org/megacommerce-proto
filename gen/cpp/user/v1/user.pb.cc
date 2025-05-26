@@ -272,12 +272,13 @@ const char descriptor_table_protodef_user_2fv1_2fuser_2eproto[] PROTOBUF_SECTION
   "mbership\030\006 \001(\tR\nmembership\"\030\n\026CreateSupp"
   "lierResponse2`\n\013UserService\022Q\n\016CreateSup"
   "plier\022\036.user.v1.CreateSupplierRequest\032\037."
-  "user.v1.CreateSupplierResponseB\014Z\nuser/v"
-  "1;v1b\006proto3"
+  "user.v1.CreateSupplierResponseB4\n\030org.me"
+  "gacommerce.user.v1B\tUserProtoZ\nuser/v1;v"
+  "1\370\001\001b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_user_2fv1_2fuser_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_user_2fv1_2fuser_2eproto = {
-  false, false, 1892, descriptor_table_protodef_user_2fv1_2fuser_2eproto, "user/v1/user.proto", 
+  false, false, 1932, descriptor_table_protodef_user_2fv1_2fuser_2eproto, "user/v1/user.proto", 
   &descriptor_table_user_2fv1_2fuser_2eproto_once, nullptr, 0, 5,
   schemas, file_default_instances, TableStruct_user_2fv1_2fuser_2eproto::offsets,
   file_level_metadata_user_2fv1_2fuser_2eproto, file_level_enum_descriptors_user_2fv1_2fuser_2eproto, file_level_service_descriptors_user_2fv1_2fuser_2eproto,

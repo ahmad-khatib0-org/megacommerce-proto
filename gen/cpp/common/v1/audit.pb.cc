@@ -163,15 +163,16 @@ const char descriptor_table_protodef_common_2fv1_2faudit_2eproto[] PROTOBUF_SECT
   "\n\nip_address\030\004 \001(\tR\tipAddress\022&\n\017x_forwa"
   "rded_for\030\005 \001(\tR\rxForwardedFor\"K\n\017AuditEv"
   "entError\022\031\n\010api_path\030\001 \001(\tR\007apiPath\022\035\n\nc"
-  "luster_id\030\002 \001(\tR\tclusterIdB\016Z\014common/v1;"
-  "v1b\006proto3"
+  "luster_id\030\002 \001(\tR\tclusterIdB9\n\032org.megaco"
+  "mmerce.common.v1B\nAuditProtoZ\014common/v1;"
+  "v1\370\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_common_2fv1_2faudit_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fany_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2fv1_2faudit_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fv1_2faudit_2eproto = {
-  false, false, 850, descriptor_table_protodef_common_2fv1_2faudit_2eproto, "common/v1/audit.proto", 
+  false, false, 893, descriptor_table_protodef_common_2fv1_2faudit_2eproto, "common/v1/audit.proto", 
   &descriptor_table_common_2fv1_2faudit_2eproto_once, descriptor_table_common_2fv1_2faudit_2eproto_deps, 1, 4,
   schemas, file_default_instances, TableStruct_common_2fv1_2faudit_2eproto::offsets,
   file_level_metadata_common_2fv1_2faudit_2eproto, file_level_enum_descriptors_common_2fv1_2faudit_2eproto, file_level_service_descriptors_common_2fv1_2faudit_2eproto,

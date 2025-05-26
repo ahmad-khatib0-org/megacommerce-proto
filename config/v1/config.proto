@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package config.v1;
+
+import "common/v1/config.proto";
+
+option cc_enable_arenas = true;
+option go_package = "config/v1;v1";
+option java_outer_classname = "ConfigProto";
+option java_package = "org.megacommerce.config.v1";
+
+service ConfigService {
+  rpc GetConfig(GetConfigRequest) returns (common.v1.Config);
+}
+
+message GetConfigRequest {}

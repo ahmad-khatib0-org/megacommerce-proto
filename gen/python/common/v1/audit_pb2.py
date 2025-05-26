@@ -15,7 +15,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import any_pb2 as google_dot_protobuf_dot_any__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x63ommon/v1/audit.proto\x12\tcommon.v1\x1a\x19google/protobuf/any.proto\"\x8c\x02\n\x0b\x41uditRecord\x12\x1d\n\nevent_name\x18\x01 \x01(\tR\teventName\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\x12\x38\n\nevent_data\x18\x03 \x01(\x0b\x32\x19.common.v1.AuditEventDataR\teventData\x12\x30\n\x05\x61\x63tor\x18\x04 \x01(\x0b\x32\x1a.common.v1.AuditEventActorR\x05\x61\x63tor\x12(\n\x04meta\x18\x05 \x01(\x0b\x32\x14.google.protobuf.AnyR\x04meta\x12\x30\n\x05\x65rror\x18\x06 \x01(\x0b\x32\x1a.common.v1.AuditEventErrorR\x05\x65rror\"\xf3\x01\n\x0e\x41uditEventData\x12\x34\n\nparameters\x18\x01 \x01(\x0b\x32\x14.google.protobuf.AnyR\nparameters\x12\x35\n\x0bprior_state\x18\x02 \x01(\x0b\x32\x14.google.protobuf.AnyR\npriorState\x12=\n\x0fresulting_state\x18\x03 \x01(\x0b\x32\x14.google.protobuf.AnyR\x0eresultingState\x12\x35\n\x0bobject_type\x18\x04 \x01(\x0b\x32\x14.google.protobuf.AnyR\nobjectType\"\xa8\x01\n\x0f\x41uditEventActor\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1d\n\nsession_id\x18\x02 \x01(\tR\tsessionId\x12\x16\n\x06\x63lient\x18\x03 \x01(\tR\x06\x63lient\x12\x1d\n\nip_address\x18\x04 \x01(\tR\tipAddress\x12&\n\x0fx_forwarded_for\x18\x05 \x01(\tR\rxForwardedFor\"K\n\x0f\x41uditEventError\x12\x19\n\x08\x61pi_path\x18\x01 \x01(\tR\x07\x61piPath\x12\x1d\n\ncluster_id\x18\x02 \x01(\tR\tclusterIdB\x0eZ\x0c\x63ommon/v1;v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x63ommon/v1/audit.proto\x12\tcommon.v1\x1a\x19google/protobuf/any.proto\"\x8c\x02\n\x0b\x41uditRecord\x12\x1d\n\nevent_name\x18\x01 \x01(\tR\teventName\x12\x16\n\x06status\x18\x02 \x01(\tR\x06status\x12\x38\n\nevent_data\x18\x03 \x01(\x0b\x32\x19.common.v1.AuditEventDataR\teventData\x12\x30\n\x05\x61\x63tor\x18\x04 \x01(\x0b\x32\x1a.common.v1.AuditEventActorR\x05\x61\x63tor\x12(\n\x04meta\x18\x05 \x01(\x0b\x32\x14.google.protobuf.AnyR\x04meta\x12\x30\n\x05\x65rror\x18\x06 \x01(\x0b\x32\x1a.common.v1.AuditEventErrorR\x05\x65rror\"\xf3\x01\n\x0e\x41uditEventData\x12\x34\n\nparameters\x18\x01 \x01(\x0b\x32\x14.google.protobuf.AnyR\nparameters\x12\x35\n\x0bprior_state\x18\x02 \x01(\x0b\x32\x14.google.protobuf.AnyR\npriorState\x12=\n\x0fresulting_state\x18\x03 \x01(\x0b\x32\x14.google.protobuf.AnyR\x0eresultingState\x12\x35\n\x0bobject_type\x18\x04 \x01(\x0b\x32\x14.google.protobuf.AnyR\nobjectType\"\xa8\x01\n\x0f\x41uditEventActor\x12\x17\n\x07user_id\x18\x01 \x01(\tR\x06userId\x12\x1d\n\nsession_id\x18\x02 \x01(\tR\tsessionId\x12\x16\n\x06\x63lient\x18\x03 \x01(\tR\x06\x63lient\x12\x1d\n\nip_address\x18\x04 \x01(\tR\tipAddress\x12&\n\x0fx_forwarded_for\x18\x05 \x01(\tR\rxForwardedFor\"K\n\x0f\x41uditEventError\x12\x19\n\x08\x61pi_path\x18\x01 \x01(\tR\x07\x61piPath\x12\x1d\n\ncluster_id\x18\x02 \x01(\tR\tclusterIdB9\n\x1aorg.megacommerce.common.v1B\nAuditProtoZ\x0c\x63ommon/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 
 
@@ -54,7 +54,7 @@ _sym_db.RegisterMessage(AuditEventError)
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  DESCRIPTOR._serialized_options = b'Z\014common/v1;v1'
+  DESCRIPTOR._serialized_options = b'\n\032org.megacommerce.common.v1B\nAuditProtoZ\014common/v1;v1\370\001\001'
   _AUDITRECORD._serialized_start=64
   _AUDITRECORD._serialized_end=332
   _AUDITEVENTDATA._serialized_start=335

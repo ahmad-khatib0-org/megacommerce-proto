@@ -345,7 +345,9 @@ const file_common_v1_audit_proto_rawDesc = "" +
 	"\x0fAuditEventError\x12\x19\n" +
 	"\bapi_path\x18\x01 \x01(\tR\aapiPath\x12\x1d\n" +
 	"\n" +
-	"cluster_id\x18\x02 \x01(\tR\tclusterIdB\x0eZ\fcommon/v1;v1b\x06proto3"
+	"cluster_id\x18\x02 \x01(\tR\tclusterIdB9\n" +
+	"\x1aorg.megacommerce.common.v1B\n" +
+	"AuditProtoZ\fcommon/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
 	file_common_v1_audit_proto_rawDescOnce sync.Once

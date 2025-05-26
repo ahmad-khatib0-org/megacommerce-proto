@@ -1,0 +1,367 @@
+syntax = "proto3";
+
+package common.v1;
+
+import "google/protobuf/descriptor.proto";
+
+option cc_enable_arenas = true;
+option go_package = "common/v1;v1";
+option java_outer_classname = "ConfigProto";
+option java_package = "org.megacommerce.common.v1";
+
+message ConfigMain {
+  optional int32 read_timeout = 1;
+  optional int32 write_timeout = 2;
+  optional int32 idle_timeout = 3;
+  optional bool enable_link_previews = 4;
+  optional string restrict_link_previews = 5;
+  optional bool enable_client_performance_debugging = 6;
+  optional bool enable_gif_picker = 7;
+  optional bool enable_custom_emoji = 8;
+  optional bool enable_emoji_picker = 9;
+  optional int64 time_between_user_typing_updates_milliseconds = 10;
+  optional bool enable_file_search = 11;
+  optional bool enable_user_typing_messages = 12;
+  optional bool enable_user_statuses = 13;
+  optional bool enable_email_invitations = 14;
+  optional bool enable_svgs = 15;
+  optional bool allow_persistent_notifications = 16;
+  optional int32 persistent_notification_interval_minutes = 17;
+  optional int32 persistent_notification_max_count = 18;
+  optional int32 persistent_notification_max_recipients = 19;
+  optional int32 feature_flag_sync_interval_seconds = 20;
+  optional bool allow_synced_drafts = 21;
+}
+
+message ConfigSecurity {
+  optional int32 maximum_login_attempts = 1;
+  optional bool enable_insecure_outgoing_connections = 2;
+  optional bool enable_multifactor_authentication = 3;
+  optional bool enforce_multifactor_authentication = 4;
+  optional bool enable_oauth_service_provider = 5;
+  optional bool enable_outgoing_oauth_connections = 6;
+  optional bool terminate_sessions_on_password_change = 7;
+  optional int32 session_length_web_in_hours = 8;
+  optional int32 session_length_mobile_in_hours = 9;
+  optional int32 session_length_sso_in_hours = 10;
+  optional string allow_cors_from = 11;
+  optional string cors_exposed_headers = 12;
+  optional bool cors_allow_credentials = 13;
+  optional bool cors_debug = 14;
+  optional bool allow_cookies_for_subdomains = 15;
+  optional int32 session_cache_in_minutes = 16;
+  optional int32 websocket_secure_port = 17;
+  optional int32 websocket_port = 18;
+}
+
+message CacheConfig {
+  optional string cache_type = 1;
+  optional string redis_address = 2;
+  optional string redis_password = 3;
+  optional int32 redis_db = 4;
+  optional string redis_cache_prefix = 5;
+  optional bool disable_client_cache = 6;
+}
+
+message ConfigMetrics {
+  optional bool enable = 1;
+  optional int32 block_profile_rate = 2;
+  optional string listen_address = 3;
+  optional bool enable_client_metrics = 4;
+  optional bool enable_notification_metrics = 5;
+  repeated string client_side_user_ids = 6;
+}
+
+message ConfigSSO {
+  optional bool enable = 1;
+  optional string secret = 2;
+  optional string id = 3;
+  optional string scope = 4;
+  optional string auth_endpoint = 5;
+  optional string token_endpoint = 6;
+  optional string user_api_endpoint = 7;
+  optional string discovery_endpoint = 8;
+  optional string button_text = 9;
+  optional string button_color = 10;
+}
+
+message ConfigSql {
+  optional string driver_name = 1;
+  optional string data_source = 2;
+  optional int32 max_idle_conns = 3;
+  optional int32 conn_max_lifetime_milliseconds = 4;
+  optional int32 conn_max_idle_time_milliseconds = 5;
+  optional int32 max_open_conns = 6;
+  optional bool trace = 7;
+  optional string at_rest_encrypt_key = 8;
+  optional int32 query_timeout = 9;
+  optional bool disable_database_search = 10;
+}
+
+message ConfigPassword {
+  optional int32 minimum_length = 1;
+  optional bool lowercase = 2;
+  optional bool number = 3;
+  optional bool uppercase = 4;
+  optional bool symbol = 5;
+  optional bool enable_forgot_link = 6;
+}
+
+message ConfigFile {
+  optional bool enable_file_attachments = 1;
+  optional bool enable_mobile_upload = 2;
+  optional bool enable_mobile_download = 3;
+  optional int64 max_file_size = 4;
+  optional int64 max_image_resolution = 5;
+  optional int64 max_image_decoder_concurrency = 6;
+  optional string driver_name = 7;
+  optional string directory = 8;
+  optional bool enable_public_link = 9;
+  optional bool extract_content = 10;
+  optional bool archive_recursion = 11;
+  optional string public_link_salt = 12;
+  optional string initial_font = 13;
+  optional string amazon_s3_access_key_id = 14;
+  optional string amazon_s3_secret_access_key = 15;
+  optional string amazon_s3_bucket = 16;
+  optional string amazon_s3_path_prefix = 17;
+  optional string amazon_s3_region = 18;
+  optional string amazon_s3_endpoint = 19;
+  optional bool amazon_s3_ssl = 20;
+  optional bool amazon_s3_sign_v2 = 21;
+  optional bool amazon_s3_sse = 22;
+  optional bool amazon_s3_trace = 23;
+  optional int64 amazon_s3_request_timeout_milliseconds = 24;
+  optional int64 amazon_s3_upload_part_size_bytes = 25;
+  optional string amazon_s3_storage_class = 26;
+}
+
+message ConfigEmail {
+  optional bool send_email_notifications = 1;
+  optional bool require_email_verification = 2;
+  optional string feedback_email = 3;
+  optional string reply_to_address = 4;
+  optional bool enable_smtp_auth = 5;
+  optional string smtp_username = 6;
+  optional string smtp_password = 7;
+  optional string smtp_server = 8;
+  optional string smtp_port = 9;
+  optional int32 smtp_server_timeout = 10;
+  optional string connection_security = 11;
+  optional bool send_push_notifications = 12;
+  optional string push_notification_server = 13;
+  optional string push_notification_contents = 14;
+  optional int32 push_notification_buffer = 15;
+  optional bool enable_email_batching = 16;
+  optional int32 email_batching_buffer_size = 17;
+  optional int32 email_batching_interval = 18;
+  optional bool skip_server_certificate_verification = 19;
+  optional string email_notification_contents_type = 20;
+  optional string login_button_color = 21;
+  optional string login_button_border_color = 22;
+  optional string login_button_text_color = 23;
+}
+
+message ConfigRateLimit {
+  optional bool enable = 1;
+  optional int32 per_sec = 2;
+  optional int32 max_burst = 3;
+  optional int32 memory_store_size = 4;
+  optional bool vary_by_remote_addr = 5;
+  optional bool vary_by_user = 6;
+  string vary_by_header = 7;
+}
+
+message ConfigPrivacy {
+  optional bool show_email_address = 1;
+  optional bool show_full_name = 2;
+}
+
+message ConfigSupport {
+  optional string terms_of_service_link = 1;
+  optional string privacy_policy_link = 2;
+  optional string about_link = 3;
+  optional string help_link = 4;
+  optional string report_a_problem_link = 5;
+  optional string forgot_password_link = 6;
+  optional string support_email = 7;
+}
+
+message ConfigLocalization {
+  optional string default_server_locale = 1;
+  optional string default_client_locale = 2;
+  optional string available_locales = 3;
+}
+
+message ConfigLdap {
+  // Basic
+  optional bool enable = 1;
+  optional bool enable_sync = 2;
+  optional string ldap_server = 3;
+  optional int32 ldap_port = 4;
+  optional string connection_security = 5;
+  optional string base_dn = 6;
+  optional string bind_username = 7;
+  optional string bind_password = 8;
+  optional int32 maximum_login_attempts = 9;
+
+  // Filtering
+  optional string user_filter = 10;
+  optional string group_filter = 11;
+  optional bool enable_admin_filter = 12;
+  optional string admin_filter = 13;
+
+  // Group Mapping
+  optional string group_display_name_attribute = 14;
+  optional string group_id_attribute = 15;
+
+  // User Mapping
+  optional string first_name_attribute = 16;
+  optional string last_name_attribute = 17;
+  optional string email_attribute = 18;
+  optional string username_attribute = 19;
+  optional string nickname_attribute = 20;
+  optional string id_attribute = 21;
+  optional string position_attribute = 22;
+  optional string login_id_attribute = 23;
+  optional string picture_attribute = 24;
+
+  // Synchronization
+  optional int32 sync_interval_minutes = 25;
+
+  // Advanced
+  optional int32 query_timeout = 26;
+  optional int32 max_page_size = 27;
+
+  // Customization
+  optional string login_field_name = 28;
+
+  optional string login_button_color = 29;
+  optional string login_button_border_color = 30;
+  optional string login_button_text_color = 31;
+}
+
+message ConfigSaml {
+  // Basic
+  optional bool enable = 1;
+  optional bool enable_sync_with_ldap = 2;
+  optional bool enable_sync_with_ldap_include_auth = 3;
+  optional bool ignore_guests_ldap_sync = 4;
+
+  optional bool verify = 5;
+  optional bool encrypt = 6;
+  optional bool sign_request = 7;
+
+  optional string idp_url = 8;
+  optional string idp_descriptor_url = 9;
+  optional string idp_metadata_url = 10;
+  optional string service_provider_identifier = 11;
+  optional string assertion_consumer_service_url = 12;
+
+  optional string signature_algorithm = 13;
+  optional string canonical_algorithm = 14;
+
+  optional string scoping_idp_provider_id = 15;
+  optional string scoping_idp_name = 16;
+
+  optional string idp_certificate_file = 17;
+  optional string public_certificate_file = 18;
+  optional string private_key_file = 19;
+
+  // User Mapping
+  optional string id_attribute = 20;
+  optional bool enable_admin_attribute = 21;
+  optional string admin_attribute = 22;
+  optional string first_name_attribute = 23;
+  optional string last_name_attribute = 24;
+  optional string email_attribute = 25;
+  optional string username_attribute = 26;
+  optional string nickname_attribute = 27;
+  optional string locale_attribute = 28;
+  optional string position_attribute = 29;
+
+  optional string login_button_text = 30;
+  optional string login_button_color = 31;
+  optional string login_button_border_color = 32;
+  optional string login_button_text_color = 33;
+}
+
+message ConfigNativeApp {
+  repeated string app_custom_url_schemes = 1;
+  optional string app_download_link = 2;
+  optional string android_app_download_link = 3;
+  optional string ios_app_download_link = 4;
+  optional bool mobile_external_browser = 5;
+  optional bool mobile_enable_biometrics = 6;
+  optional bool mobile_prevent_screen_capture = 7;
+  optional bool mobile_jailbreak_protection = 8;
+}
+
+message ConfigMeilisearch {
+  optional string server_url = 1 [json_name = "server_url"];
+  // optional string connection_url = 1;
+  optional string master_key = 2; // Meilisearch-specific authentication
+  optional bool enable_indexing = 3;
+  optional bool enable_searching = 4;
+  optional bool enable_autocomplete = 5;
+
+  optional int32 batch_size = 6;
+  optional int32 request_timeout_seconds = 7;
+
+  // Meilisearch-specific options
+  optional string index_prefix = 8;
+  optional int32 search_cutoff_ms = 9; // performance tuning
+  optional bool enable_typo_tolerance = 10;
+}
+
+message ConfigBleve {
+  optional string index_dir = 1;
+  optional bool enable_indexing = 2;
+  optional bool enable_searching = 3;
+  optional bool enable_autocomplete = 4;
+  optional int32 bulk_indexing_time_window_seconds = 5;
+  optional int32 batch_size = 6;
+}
+
+message ConfigDataRetention {
+  optional bool enable_message_deletion = 1;
+  optional bool enable_file_deletion = 2;
+  optional bool enable_boards_deletion = 3;
+  optional int32 message_retention_hours = 4;
+  optional int32 file_retention_hours = 5;
+  optional int32 boards_retention_days = 6;
+  optional string deletion_job_start_time = 7;
+  optional int32 batch_size = 8;
+  optional int32 time_between_batches_milliseconds = 9;
+  optional int32 retention_ids_batch_size = 10;
+}
+
+message ConfigImageProxy {
+  optional bool enable = 1;
+  optional string image_proxy_type = 2;
+  optional string remote_image_proxy_url = 3;
+  optional string remote_image_proxy_options = 4;
+}
+
+message Config {
+  ConfigMain main = 1;
+  ConfigSecurity security = 2;
+  CacheConfig cache = 3;
+  ConfigMetrics metrics = 4;
+  ConfigSSO sso = 5;
+  ConfigSql sql = 6;
+  ConfigPassword password = 7;
+  ConfigFile file = 8;
+  ConfigFile email = 9;
+  ConfigRateLimit rate_limit = 10;
+  ConfigPrivacy privacy = 11;
+  ConfigSupport support = 12;
+  ConfigLocalization localization = 13;
+  ConfigLdap ldap = 14;
+  ConfigSaml saml = 15;
+  ConfigNativeApp native_app = 16;
+  ConfigMeilisearch meilisearch = 17;
+  ConfigBleve bleve = 18;
+  ConfigDataRetention data_retention = 19;
+  ConfigImageProxy image_proxy = 20;
+}
