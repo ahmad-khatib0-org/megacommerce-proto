@@ -21,26 +21,26 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type GetConfigRequest struct {
+type ConfigGetRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *GetConfigRequest) Reset() {
-	*x = GetConfigRequest{}
+func (x *ConfigGetRequest) Reset() {
+	*x = ConfigGetRequest{}
 	mi := &file_common_v1_common_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *GetConfigRequest) String() string {
+func (x *ConfigGetRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*GetConfigRequest) ProtoMessage() {}
+func (*ConfigGetRequest) ProtoMessage() {}
 
-func (x *GetConfigRequest) ProtoReflect() protoreflect.Message {
+func (x *ConfigGetRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_common_v1_common_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -52,9 +52,97 @@ func (x *GetConfigRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use GetConfigRequest.ProtoReflect.Descriptor instead.
-func (*GetConfigRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use ConfigGetRequest.ProtoReflect.Descriptor instead.
+func (*ConfigGetRequest) Descriptor() ([]byte, []int) {
 	return file_common_v1_common_proto_rawDescGZIP(), []int{0}
+}
+
+type ConfigUpdateRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Config        *Config                `protobuf:"bytes,1,opt,name=config,proto3" json:"config,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConfigUpdateRequest) Reset() {
+	*x = ConfigUpdateRequest{}
+	mi := &file_common_v1_common_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfigUpdateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfigUpdateRequest) ProtoMessage() {}
+
+func (x *ConfigUpdateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_common_v1_common_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfigUpdateRequest.ProtoReflect.Descriptor instead.
+func (*ConfigUpdateRequest) Descriptor() ([]byte, []int) {
+	return file_common_v1_common_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *ConfigUpdateRequest) GetConfig() *Config {
+	if x != nil {
+		return x.Config
+	}
+	return nil
+}
+
+type ConfigListenerRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ClientId      string                 `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConfigListenerRequest) Reset() {
+	*x = ConfigListenerRequest{}
+	mi := &file_common_v1_common_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfigListenerRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfigListenerRequest) ProtoMessage() {}
+
+func (x *ConfigListenerRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_common_v1_common_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfigListenerRequest.ProtoReflect.Descriptor instead.
+func (*ConfigListenerRequest) Descriptor() ([]byte, []int) {
+	return file_common_v1_common_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *ConfigListenerRequest) GetClientId() string {
+	if x != nil {
+		return x.ClientId
+	}
+	return ""
 }
 
 var File_common_v1_common_proto protoreflect.FileDescriptor
@@ -62,9 +150,15 @@ var File_common_v1_common_proto protoreflect.FileDescriptor
 const file_common_v1_common_proto_rawDesc = "" +
 	"\n" +
 	"\x16common/v1/common.proto\x12\tcommon.v1\x1a\x16common/v1/config.proto\"\x12\n" +
-	"\x10GetConfigRequest2L\n" +
+	"\x10ConfigGetRequest\"@\n" +
+	"\x13ConfigUpdateRequest\x12)\n" +
+	"\x06config\x18\x01 \x01(\v2\x11.common.v1.ConfigR\x06config\"4\n" +
+	"\x15ConfigListenerRequest\x12\x1b\n" +
+	"\tclient_id\x18\x01 \x01(\tR\bclientId2\xd8\x01\n" +
 	"\rCommonService\x12;\n" +
-	"\tGetConfig\x12\x1b.common.v1.GetConfigRequest\x1a\x11.common.v1.ConfigB:\n" +
+	"\tConfigGet\x12\x1b.common.v1.ConfigGetRequest\x1a\x11.common.v1.Config\x12A\n" +
+	"\fConfigUpdate\x12\x1e.common.v1.ConfigUpdateRequest\x1a\x11.common.v1.Config\x12G\n" +
+	"\x0eConfigListener\x12 .common.v1.ConfigListenerRequest\x1a\x11.common.v1.Config0\x01B:\n" +
 	"\x1aorg.megacommerce.common.v1B\vCommonProtoZ\fcommon/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
@@ -79,19 +173,26 @@ func file_common_v1_common_proto_rawDescGZIP() []byte {
 	return file_common_v1_common_proto_rawDescData
 }
 
-var file_common_v1_common_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_common_v1_common_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_common_v1_common_proto_goTypes = []any{
-	(*GetConfigRequest)(nil), // 0: common.v1.GetConfigRequest
-	(*Config)(nil),           // 1: common.v1.Config
+	(*ConfigGetRequest)(nil),      // 0: common.v1.ConfigGetRequest
+	(*ConfigUpdateRequest)(nil),   // 1: common.v1.ConfigUpdateRequest
+	(*ConfigListenerRequest)(nil), // 2: common.v1.ConfigListenerRequest
+	(*Config)(nil),                // 3: common.v1.Config
 }
 var file_common_v1_common_proto_depIdxs = []int32{
-	0, // 0: common.v1.CommonService.GetConfig:input_type -> common.v1.GetConfigRequest
-	1, // 1: common.v1.CommonService.GetConfig:output_type -> common.v1.Config
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	3, // 0: common.v1.ConfigUpdateRequest.config:type_name -> common.v1.Config
+	0, // 1: common.v1.CommonService.ConfigGet:input_type -> common.v1.ConfigGetRequest
+	1, // 2: common.v1.CommonService.ConfigUpdate:input_type -> common.v1.ConfigUpdateRequest
+	2, // 3: common.v1.CommonService.ConfigListener:input_type -> common.v1.ConfigListenerRequest
+	3, // 4: common.v1.CommonService.ConfigGet:output_type -> common.v1.Config
+	3, // 5: common.v1.CommonService.ConfigUpdate:output_type -> common.v1.Config
+	3, // 6: common.v1.CommonService.ConfigListener:output_type -> common.v1.Config
+	4, // [4:7] is the sub-list for method output_type
+	1, // [1:4] is the sub-list for method input_type
+	1, // [1:1] is the sub-list for extension type_name
+	1, // [1:1] is the sub-list for extension extendee
+	0, // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_common_v1_common_proto_init() }
@@ -106,7 +207,7 @@ func file_common_v1_common_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_v1_common_proto_rawDesc), len(file_common_v1_common_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   1,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

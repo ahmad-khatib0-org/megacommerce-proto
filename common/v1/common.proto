@@ -10,7 +10,17 @@ option java_outer_classname = "CommonProto";
 option java_package = "org.megacommerce.common.v1";
 
 service CommonService {
-  rpc GetConfig(GetConfigRequest) returns (common.v1.Config);
+  rpc ConfigGet(ConfigGetRequest) returns (common.v1.Config);
+  rpc ConfigUpdate(ConfigUpdateRequest) returns (common.v1.Config);
+  rpc ConfigListener(ConfigListenerRequest) returns (stream common.v1.Config);
 }
 
-message GetConfigRequest {}
+message ConfigGetRequest {}
+
+message ConfigUpdateRequest {
+  common.v1.Config config = 1;
+}
+
+message ConfigListenerRequest {
+  string client_id = 1;
+}

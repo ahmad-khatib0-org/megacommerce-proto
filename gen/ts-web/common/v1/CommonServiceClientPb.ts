@@ -40,47 +40,112 @@ export class CommonServiceClient {
     this.options_ = options;
   }
 
-  methodDescriptorGetConfig = new grpcWeb.MethodDescriptor(
-    '/common.v1.CommonService/GetConfig',
+  methodDescriptorConfigGet = new grpcWeb.MethodDescriptor(
+    '/common.v1.CommonService/ConfigGet',
     grpcWeb.MethodType.UNARY,
-    common_v1_common_pb.GetConfigRequest,
+    common_v1_common_pb.ConfigGetRequest,
     common_v1_config_pb.Config,
-    (request: common_v1_common_pb.GetConfigRequest) => {
+    (request: common_v1_common_pb.ConfigGetRequest) => {
       return request.serializeBinary();
     },
     common_v1_config_pb.Config.deserializeBinary
   );
 
-  getConfig(
-    request: common_v1_common_pb.GetConfigRequest,
+  configGet(
+    request: common_v1_common_pb.ConfigGetRequest,
     metadata?: grpcWeb.Metadata | null): Promise<common_v1_config_pb.Config>;
 
-  getConfig(
-    request: common_v1_common_pb.GetConfigRequest,
+  configGet(
+    request: common_v1_common_pb.ConfigGetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: common_v1_config_pb.Config) => void): grpcWeb.ClientReadableStream<common_v1_config_pb.Config>;
 
-  getConfig(
-    request: common_v1_common_pb.GetConfigRequest,
+  configGet(
+    request: common_v1_common_pb.ConfigGetRequest,
     metadata?: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
                response: common_v1_config_pb.Config) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/common.v1.CommonService/GetConfig',
+          '/common.v1.CommonService/ConfigGet',
         request,
         metadata || {},
-        this.methodDescriptorGetConfig,
+        this.methodDescriptorConfigGet,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/common.v1.CommonService/GetConfig',
+      '/common.v1.CommonService/ConfigGet',
     request,
     metadata || {},
-    this.methodDescriptorGetConfig);
+    this.methodDescriptorConfigGet);
+  }
+
+  methodDescriptorConfigUpdate = new grpcWeb.MethodDescriptor(
+    '/common.v1.CommonService/ConfigUpdate',
+    grpcWeb.MethodType.UNARY,
+    common_v1_common_pb.ConfigUpdateRequest,
+    common_v1_config_pb.Config,
+    (request: common_v1_common_pb.ConfigUpdateRequest) => {
+      return request.serializeBinary();
+    },
+    common_v1_config_pb.Config.deserializeBinary
+  );
+
+  configUpdate(
+    request: common_v1_common_pb.ConfigUpdateRequest,
+    metadata?: grpcWeb.Metadata | null): Promise<common_v1_config_pb.Config>;
+
+  configUpdate(
+    request: common_v1_common_pb.ConfigUpdateRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: common_v1_config_pb.Config) => void): grpcWeb.ClientReadableStream<common_v1_config_pb.Config>;
+
+  configUpdate(
+    request: common_v1_common_pb.ConfigUpdateRequest,
+    metadata?: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: common_v1_config_pb.Config) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/common.v1.CommonService/ConfigUpdate',
+        request,
+        metadata || {},
+        this.methodDescriptorConfigUpdate,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/common.v1.CommonService/ConfigUpdate',
+    request,
+    metadata || {},
+    this.methodDescriptorConfigUpdate);
+  }
+
+  methodDescriptorConfigListener = new grpcWeb.MethodDescriptor(
+    '/common.v1.CommonService/ConfigListener',
+    grpcWeb.MethodType.SERVER_STREAMING,
+    common_v1_common_pb.ConfigListenerRequest,
+    common_v1_config_pb.Config,
+    (request: common_v1_common_pb.ConfigListenerRequest) => {
+      return request.serializeBinary();
+    },
+    common_v1_config_pb.Config.deserializeBinary
+  );
+
+  configListener(
+    request: common_v1_common_pb.ConfigListenerRequest,
+    metadata?: grpcWeb.Metadata): grpcWeb.ClientReadableStream<common_v1_config_pb.Config> {
+    return this.client_.serverStreaming(
+      this.hostname_ +
+        '/common.v1.CommonService/ConfigListener',
+      request,
+      metadata || {},
+      this.methodDescriptorConfigListener);
   }
 
 }

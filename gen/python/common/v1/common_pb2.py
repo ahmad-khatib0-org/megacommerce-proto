@@ -15,25 +15,45 @@ _sym_db = _symbol_database.Default()
 from common.v1 import config_pb2 as common_dot_v1_dot_config__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x63ommon/v1/common.proto\x12\tcommon.v1\x1a\x16\x63ommon/v1/config.proto\"\x12\n\x10GetConfigRequest2L\n\rCommonService\x12;\n\tGetConfig\x12\x1b.common.v1.GetConfigRequest\x1a\x11.common.v1.ConfigB:\n\x1aorg.megacommerce.common.v1B\x0b\x43ommonProtoZ\x0c\x63ommon/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x63ommon/v1/common.proto\x12\tcommon.v1\x1a\x16\x63ommon/v1/config.proto\"\x12\n\x10\x43onfigGetRequest\"@\n\x13\x43onfigUpdateRequest\x12)\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x11.common.v1.ConfigR\x06\x63onfig\"4\n\x15\x43onfigListenerRequest\x12\x1b\n\tclient_id\x18\x01 \x01(\tR\x08\x63lientId2\xd8\x01\n\rCommonService\x12;\n\tConfigGet\x12\x1b.common.v1.ConfigGetRequest\x1a\x11.common.v1.Config\x12\x41\n\x0c\x43onfigUpdate\x12\x1e.common.v1.ConfigUpdateRequest\x1a\x11.common.v1.Config\x12G\n\x0e\x43onfigListener\x12 .common.v1.ConfigListenerRequest\x1a\x11.common.v1.Config0\x01\x42:\n\x1aorg.megacommerce.common.v1B\x0b\x43ommonProtoZ\x0c\x63ommon/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 
 
-_GETCONFIGREQUEST = DESCRIPTOR.message_types_by_name['GetConfigRequest']
-GetConfigRequest = _reflection.GeneratedProtocolMessageType('GetConfigRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETCONFIGREQUEST,
+_CONFIGGETREQUEST = DESCRIPTOR.message_types_by_name['ConfigGetRequest']
+_CONFIGUPDATEREQUEST = DESCRIPTOR.message_types_by_name['ConfigUpdateRequest']
+_CONFIGLISTENERREQUEST = DESCRIPTOR.message_types_by_name['ConfigListenerRequest']
+ConfigGetRequest = _reflection.GeneratedProtocolMessageType('ConfigGetRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CONFIGGETREQUEST,
   '__module__' : 'common.v1.common_pb2'
-  # @@protoc_insertion_point(class_scope:common.v1.GetConfigRequest)
+  # @@protoc_insertion_point(class_scope:common.v1.ConfigGetRequest)
   })
-_sym_db.RegisterMessage(GetConfigRequest)
+_sym_db.RegisterMessage(ConfigGetRequest)
+
+ConfigUpdateRequest = _reflection.GeneratedProtocolMessageType('ConfigUpdateRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CONFIGUPDATEREQUEST,
+  '__module__' : 'common.v1.common_pb2'
+  # @@protoc_insertion_point(class_scope:common.v1.ConfigUpdateRequest)
+  })
+_sym_db.RegisterMessage(ConfigUpdateRequest)
+
+ConfigListenerRequest = _reflection.GeneratedProtocolMessageType('ConfigListenerRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CONFIGLISTENERREQUEST,
+  '__module__' : 'common.v1.common_pb2'
+  # @@protoc_insertion_point(class_scope:common.v1.ConfigListenerRequest)
+  })
+_sym_db.RegisterMessage(ConfigListenerRequest)
 
 _COMMONSERVICE = DESCRIPTOR.services_by_name['CommonService']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\032org.megacommerce.common.v1B\013CommonProtoZ\014common/v1;v1\370\001\001'
-  _GETCONFIGREQUEST._serialized_start=61
-  _GETCONFIGREQUEST._serialized_end=79
-  _COMMONSERVICE._serialized_start=81
-  _COMMONSERVICE._serialized_end=157
+  _CONFIGGETREQUEST._serialized_start=61
+  _CONFIGGETREQUEST._serialized_end=79
+  _CONFIGUPDATEREQUEST._serialized_start=81
+  _CONFIGUPDATEREQUEST._serialized_end=145
+  _CONFIGLISTENERREQUEST._serialized_start=147
+  _CONFIGLISTENERREQUEST._serialized_end=199
+  _COMMONSERVICE._serialized_start=202
+  _COMMONSERVICE._serialized_end=418
 # @@protoc_insertion_point(module_scope)
