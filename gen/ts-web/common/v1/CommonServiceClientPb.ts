@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for config.v1
+ * @fileoverview gRPC-Web generated client stub for common.v1
  * @enhanceable
  * @public
  */
@@ -8,7 +8,7 @@
 // versions:
 // 	protoc-gen-grpc-web v1.5.0
 // 	protoc              v0.0.0
-// source: config/v1/config.proto
+// source: common/v1/common.proto
 
 
 /* eslint-disable */
@@ -18,10 +18,10 @@
 import * as grpcWeb from 'grpc-web';
 
 import * as common_v1_config_pb from '../../common/v1/config_pb'; // proto import: "common/v1/config.proto"
-import * as config_v1_config_pb from '../../config/v1/config_pb'; // proto import: "config/v1/config.proto"
+import * as common_v1_common_pb from '../../common/v1/common_pb'; // proto import: "common/v1/common.proto"
 
 
-export class ConfigServiceClient {
+export class CommonServiceClient {
   client_: grpcWeb.AbstractClientBase;
   hostname_: string;
   credentials_: null | { [index: string]: string; };
@@ -41,35 +41,35 @@ export class ConfigServiceClient {
   }
 
   methodDescriptorGetConfig = new grpcWeb.MethodDescriptor(
-    '/config.v1.ConfigService/GetConfig',
+    '/common.v1.CommonService/GetConfig',
     grpcWeb.MethodType.UNARY,
-    config_v1_config_pb.GetConfigRequest,
+    common_v1_common_pb.GetConfigRequest,
     common_v1_config_pb.Config,
-    (request: config_v1_config_pb.GetConfigRequest) => {
+    (request: common_v1_common_pb.GetConfigRequest) => {
       return request.serializeBinary();
     },
     common_v1_config_pb.Config.deserializeBinary
   );
 
   getConfig(
-    request: config_v1_config_pb.GetConfigRequest,
+    request: common_v1_common_pb.GetConfigRequest,
     metadata?: grpcWeb.Metadata | null): Promise<common_v1_config_pb.Config>;
 
   getConfig(
-    request: config_v1_config_pb.GetConfigRequest,
+    request: common_v1_common_pb.GetConfigRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: common_v1_config_pb.Config) => void): grpcWeb.ClientReadableStream<common_v1_config_pb.Config>;
 
   getConfig(
-    request: config_v1_config_pb.GetConfigRequest,
+    request: common_v1_common_pb.GetConfigRequest,
     metadata?: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
                response: common_v1_config_pb.Config) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/config.v1.ConfigService/GetConfig',
+          '/common.v1.CommonService/GetConfig',
         request,
         metadata || {},
         this.methodDescriptorGetConfig,
@@ -77,7 +77,7 @@ export class ConfigServiceClient {
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/config.v1.ConfigService/GetConfig',
+      '/common.v1.CommonService/GetConfig',
     request,
     metadata || {},
     this.methodDescriptorGetConfig);
