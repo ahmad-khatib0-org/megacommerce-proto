@@ -21,8 +21,6 @@ var global = (function() {
   return Function('return this')();
 }.call(null));
 
-var google_protobuf_descriptor_pb = require('google-protobuf/google/protobuf/descriptor_pb.js');
-goog.object.extend(proto, google_protobuf_descriptor_pb);
 goog.exportSymbol('proto.common.v1.CacheConfig', null, global);
 goog.exportSymbol('proto.common.v1.Config', null, global);
 goog.exportSymbol('proto.common.v1.ConfigBleve', null, global);

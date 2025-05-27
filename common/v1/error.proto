@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package common.v1;
+
+option cc_enable_arenas = true;
+option go_package = "common/v1;v1";
+option java_outer_classname = "ErrorProto";
+option java_package = "org.megacommerce.common.v1";
+
+message AppError {
+  string id = 1;
+  // Message to be display to the end user without debugging information
+  string message = 2;
+  // Internal debug info
+  string detailed_error = 3;
+  // For correlation
+  string request_id = 4;
+  // HTTP-like status code
+  int32 status_code = 5;
+  // Code path or func name
+  string where = 6;
+  // If false, i18n may not apply
+  bool skip_translation = 7;
+  map<string, string> params = 8;
+}

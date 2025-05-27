@@ -9,7 +9,6 @@ package v1
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	_ "google.golang.org/protobuf/types/descriptorpb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -2929,7 +2928,7 @@ var File_common_v1_config_proto protoreflect.FileDescriptor
 
 const file_common_v1_config_proto_rawDesc = "" +
 	"\n" +
-	"\x16common/v1/config.proto\x12\tcommon.v1\x1a google/protobuf/descriptor.proto\"\x9e\x0f\n" +
+	"\x16common/v1/config.proto\x12\tcommon.v1\"\x9e\x0f\n" +
 	"\n" +
 	"ConfigMain\x12&\n" +
 	"\fread_timeout\x18\x01 \x01(\x05H\x00R\vreadTimeout\x88\x01\x01\x12(\n" +

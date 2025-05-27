@@ -2,7 +2,6 @@
 // file: common/v1/config.proto
 
 import * as jspb from "google-protobuf";
-import * as google_protobuf_descriptor_pb from "google-protobuf/google/protobuf/descriptor_pb";
 
 export class ConfigMain extends jspb.Message {
   hasReadTimeout(): boolean;

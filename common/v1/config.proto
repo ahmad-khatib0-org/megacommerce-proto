@@ -2,8 +2,6 @@ syntax = "proto3";
 
 package common.v1;
 
-import "google/protobuf/descriptor.proto";
-
 option cc_enable_arenas = true;
 option go_package = "common/v1;v1";
 option java_outer_classname = "ConfigProto";
