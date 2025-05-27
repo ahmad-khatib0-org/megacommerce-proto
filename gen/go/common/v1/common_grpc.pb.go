@@ -28,9 +28,9 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CommonServiceClient interface {
-	ConfigGet(ctx context.Context, in *ConfigGetRequest, opts ...grpc.CallOption) (*Config, error)
-	ConfigUpdate(ctx context.Context, in *ConfigUpdateRequest, opts ...grpc.CallOption) (*Config, error)
-	ConfigListener(ctx context.Context, in *ConfigListenerRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[Config], error)
+	ConfigGet(ctx context.Context, in *ConfigGetRequest, opts ...grpc.CallOption) (*ConfigGetResponse, error)
+	ConfigUpdate(ctx context.Context, in *ConfigUpdateRequest, opts ...grpc.CallOption) (*ConfigUpdateResponse, error)
+	ConfigListener(ctx context.Context, in *ConfigListenerRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[ConfigListenerResponse], error)
 }
 
 type commonServiceClient struct {
@@ -41,9 +41,9 @@ func NewCommonServiceClient(cc grpc.ClientConnInterface) CommonServiceClient {
 	return &commonServiceClient{cc}
 }
 
-func (c *commonServiceClient) ConfigGet(ctx context.Context, in *ConfigGetRequest, opts ...grpc.CallOption) (*Config, error) {
+func (c *commonServiceClient) ConfigGet(ctx context.Context, in *ConfigGetRequest, opts ...grpc.CallOption) (*ConfigGetResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(Config)
+	out := new(ConfigGetResponse)
 	err := c.cc.Invoke(ctx, CommonService_ConfigGet_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -51,9 +51,9 @@ func (c *commonServiceClient) ConfigGet(ctx context.Context, in *ConfigGetReques
 	return out, nil
 }
 
-func (c *commonServiceClient) ConfigUpdate(ctx context.Context, in *ConfigUpdateRequest, opts ...grpc.CallOption) (*Config, error) {
+func (c *commonServiceClient) ConfigUpdate(ctx context.Context, in *ConfigUpdateRequest, opts ...grpc.CallOption) (*ConfigUpdateResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(Config)
+	out := new(ConfigUpdateResponse)
 	err := c.cc.Invoke(ctx, CommonService_ConfigUpdate_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -61,13 +61,13 @@ func (c *commonServiceClient) ConfigUpdate(ctx context.Context, in *ConfigUpdate
 	return out, nil
 }
 
-func (c *commonServiceClient) ConfigListener(ctx context.Context, in *ConfigListenerRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[Config], error) {
+func (c *commonServiceClient) ConfigListener(ctx context.Context, in *ConfigListenerRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[ConfigListenerResponse], error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	stream, err := c.cc.NewStream(ctx, &CommonService_ServiceDesc.Streams[0], CommonService_ConfigListener_FullMethodName, cOpts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &grpc.GenericClientStream[ConfigListenerRequest, Config]{ClientStream: stream}
+	x := &grpc.GenericClientStream[ConfigListenerRequest, ConfigListenerResponse]{ClientStream: stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -78,15 +78,15 @@ func (c *commonServiceClient) ConfigListener(ctx context.Context, in *ConfigList
 }
 
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
-type CommonService_ConfigListenerClient = grpc.ServerStreamingClient[Config]
+type CommonService_ConfigListenerClient = grpc.ServerStreamingClient[ConfigListenerResponse]
 
 // CommonServiceServer is the server API for CommonService service.
 // All implementations must embed UnimplementedCommonServiceServer
 // for forward compatibility.
 type CommonServiceServer interface {
-	ConfigGet(context.Context, *ConfigGetRequest) (*Config, error)
-	ConfigUpdate(context.Context, *ConfigUpdateRequest) (*Config, error)
-	ConfigListener(*ConfigListenerRequest, grpc.ServerStreamingServer[Config]) error
+	ConfigGet(context.Context, *ConfigGetRequest) (*ConfigGetResponse, error)
+	ConfigUpdate(context.Context, *ConfigUpdateRequest) (*ConfigUpdateResponse, error)
+	ConfigListener(*ConfigListenerRequest, grpc.ServerStreamingServer[ConfigListenerResponse]) error
 	mustEmbedUnimplementedCommonServiceServer()
 }
 
@@ -97,13 +97,13 @@ type CommonServiceServer interface {
 // pointer dereference when methods are called.
 type UnimplementedCommonServiceServer struct{}
 
-func (UnimplementedCommonServiceServer) ConfigGet(context.Context, *ConfigGetRequest) (*Config, error) {
+func (UnimplementedCommonServiceServer) ConfigGet(context.Context, *ConfigGetRequest) (*ConfigGetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConfigGet not implemented")
 }
-func (UnimplementedCommonServiceServer) ConfigUpdate(context.Context, *ConfigUpdateRequest) (*Config, error) {
+func (UnimplementedCommonServiceServer) ConfigUpdate(context.Context, *ConfigUpdateRequest) (*ConfigUpdateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConfigUpdate not implemented")
 }
-func (UnimplementedCommonServiceServer) ConfigListener(*ConfigListenerRequest, grpc.ServerStreamingServer[Config]) error {
+func (UnimplementedCommonServiceServer) ConfigListener(*ConfigListenerRequest, grpc.ServerStreamingServer[ConfigListenerResponse]) error {
 	return status.Errorf(codes.Unimplemented, "method ConfigListener not implemented")
 }
 func (UnimplementedCommonServiceServer) mustEmbedUnimplementedCommonServiceServer() {}
@@ -168,11 +168,11 @@ func _CommonService_ConfigListener_Handler(srv interface{}, stream grpc.ServerSt
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(CommonServiceServer).ConfigListener(m, &grpc.GenericServerStream[ConfigListenerRequest, Config]{ServerStream: stream})
+	return srv.(CommonServiceServer).ConfigListener(m, &grpc.GenericServerStream[ConfigListenerRequest, ConfigListenerResponse]{ServerStream: stream})
 }
 
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
-type CommonService_ConfigListenerServer = grpc.ServerStreamingServer[Config]
+type CommonService_ConfigListenerServer = grpc.ServerStreamingServer[ConfigListenerResponse]
 
 // CommonService_ServiceDesc is the grpc.ServiceDesc for CommonService service.
 // It's only intended for direct use with grpc.RegisterService,

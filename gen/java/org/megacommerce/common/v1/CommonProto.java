@@ -414,6 +414,927 @@ public final class CommonProto {
 
   }
 
+  public interface ConfigGetResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.v1.ConfigGetResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return Whether the data field is set.
+     */
+    boolean hasData();
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return The data.
+     */
+    org.megacommerce.common.v1.ConfigProto.Config getData();
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     */
+    org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getDataOrBuilder();
+
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return Whether the error field is set.
+     */
+    boolean hasError();
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    org.megacommerce.common.v1.ErrorProto.AppError getError();
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     */
+    org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder();
+
+    public org.megacommerce.common.v1.CommonProto.ConfigGetResponse.ResultCase getResultCase();
+  }
+  /**
+   * Protobuf type {@code common.v1.ConfigGetResponse}
+   */
+  public static final class ConfigGetResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:common.v1.ConfigGetResponse)
+      ConfigGetResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ConfigGetResponse.newBuilder() to construct.
+    private ConfigGetResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ConfigGetResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ConfigGetResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.common.v1.CommonProto.internal_static_common_v1_ConfigGetResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.common.v1.CommonProto.internal_static_common_v1_ConfigGetResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.common.v1.CommonProto.ConfigGetResponse.class, org.megacommerce.common.v1.CommonProto.ConfigGetResponse.Builder.class);
+    }
+
+    private int resultCase_ = 0;
+    private java.lang.Object result_;
+    public enum ResultCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      DATA(1),
+      ERROR(2),
+      RESULT_NOT_SET(0);
+      private final int value;
+      private ResultCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ResultCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ResultCase forNumber(int value) {
+        switch (value) {
+          case 1: return DATA;
+          case 2: return ERROR;
+          case 0: return RESULT_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ResultCase
+    getResultCase() {
+      return ResultCase.forNumber(
+          resultCase_);
+    }
+
+    public static final int DATA_FIELD_NUMBER = 1;
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return Whether the data field is set.
+     */
+    @java.lang.Override
+    public boolean hasData() {
+      return resultCase_ == 1;
+    }
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.Config getData() {
+      if (resultCase_ == 1) {
+         return (org.megacommerce.common.v1.ConfigProto.Config) result_;
+      }
+      return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+    }
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getDataOrBuilder() {
+      if (resultCase_ == 1) {
+         return (org.megacommerce.common.v1.ConfigProto.Config) result_;
+      }
+      return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 2;
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return Whether the error field is set.
+     */
+    @java.lang.Override
+    public boolean hasError() {
+      return resultCase_ == 2;
+    }
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+      if (resultCase_ == 2) {
+         return (org.megacommerce.common.v1.ErrorProto.AppError) result_;
+      }
+      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+    }
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+      if (resultCase_ == 2) {
+         return (org.megacommerce.common.v1.ErrorProto.AppError) result_;
+      }
+      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (resultCase_ == 1) {
+        output.writeMessage(1, (org.megacommerce.common.v1.ConfigProto.Config) result_);
+      }
+      if (resultCase_ == 2) {
+        output.writeMessage(2, (org.megacommerce.common.v1.ErrorProto.AppError) result_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (resultCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (org.megacommerce.common.v1.ConfigProto.Config) result_);
+      }
+      if (resultCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (org.megacommerce.common.v1.ErrorProto.AppError) result_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.common.v1.CommonProto.ConfigGetResponse)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.common.v1.CommonProto.ConfigGetResponse other = (org.megacommerce.common.v1.CommonProto.ConfigGetResponse) obj;
+
+      if (!getResultCase().equals(other.getResultCase())) return false;
+      switch (resultCase_) {
+        case 1:
+          if (!getData()
+              .equals(other.getData())) return false;
+          break;
+        case 2:
+          if (!getError()
+              .equals(other.getError())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (resultCase_) {
+        case 1:
+          hash = (37 * hash) + DATA_FIELD_NUMBER;
+          hash = (53 * hash) + getData().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + ERROR_FIELD_NUMBER;
+          hash = (53 * hash) + getError().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.common.v1.CommonProto.ConfigGetResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigGetResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigGetResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigGetResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigGetResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigGetResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigGetResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigGetResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigGetResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigGetResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigGetResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigGetResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.common.v1.CommonProto.ConfigGetResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code common.v1.ConfigGetResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.v1.ConfigGetResponse)
+        org.megacommerce.common.v1.CommonProto.ConfigGetResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.common.v1.CommonProto.internal_static_common_v1_ConfigGetResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.common.v1.CommonProto.internal_static_common_v1_ConfigGetResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.common.v1.CommonProto.ConfigGetResponse.class, org.megacommerce.common.v1.CommonProto.ConfigGetResponse.Builder.class);
+      }
+
+      // Construct using org.megacommerce.common.v1.CommonProto.ConfigGetResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (dataBuilder_ != null) {
+          dataBuilder_.clear();
+        }
+        if (errorBuilder_ != null) {
+          errorBuilder_.clear();
+        }
+        resultCase_ = 0;
+        result_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.common.v1.CommonProto.internal_static_common_v1_ConfigGetResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.CommonProto.ConfigGetResponse getDefaultInstanceForType() {
+        return org.megacommerce.common.v1.CommonProto.ConfigGetResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.CommonProto.ConfigGetResponse build() {
+        org.megacommerce.common.v1.CommonProto.ConfigGetResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.CommonProto.ConfigGetResponse buildPartial() {
+        org.megacommerce.common.v1.CommonProto.ConfigGetResponse result = new org.megacommerce.common.v1.CommonProto.ConfigGetResponse(this);
+        if (resultCase_ == 1) {
+          if (dataBuilder_ == null) {
+            result.result_ = result_;
+          } else {
+            result.result_ = dataBuilder_.build();
+          }
+        }
+        if (resultCase_ == 2) {
+          if (errorBuilder_ == null) {
+            result.result_ = result_;
+          } else {
+            result.result_ = errorBuilder_.build();
+          }
+        }
+        result.resultCase_ = resultCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.common.v1.CommonProto.ConfigGetResponse) {
+          return mergeFrom((org.megacommerce.common.v1.CommonProto.ConfigGetResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.common.v1.CommonProto.ConfigGetResponse other) {
+        if (other == org.megacommerce.common.v1.CommonProto.ConfigGetResponse.getDefaultInstance()) return this;
+        switch (other.getResultCase()) {
+          case DATA: {
+            mergeData(other.getData());
+            break;
+          }
+          case ERROR: {
+            mergeError(other.getError());
+            break;
+          }
+          case RESULT_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getDataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                resultCase_ = 1;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getErrorFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                resultCase_ = 2;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int resultCase_ = 0;
+      private java.lang.Object result_;
+      public ResultCase
+          getResultCase() {
+        return ResultCase.forNumber(
+            resultCase_);
+      }
+
+      public Builder clearResult() {
+        resultCase_ = 0;
+        result_ = null;
+        onChanged();
+        return this;
+      }
+
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ConfigProto.Config, org.megacommerce.common.v1.ConfigProto.Config.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder> dataBuilder_;
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       * @return Whether the data field is set.
+       */
+      @java.lang.Override
+      public boolean hasData() {
+        return resultCase_ == 1;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       * @return The data.
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.Config getData() {
+        if (dataBuilder_ == null) {
+          if (resultCase_ == 1) {
+            return (org.megacommerce.common.v1.ConfigProto.Config) result_;
+          }
+          return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+        } else {
+          if (resultCase_ == 1) {
+            return dataBuilder_.getMessage();
+          }
+          return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder setData(org.megacommerce.common.v1.ConfigProto.Config value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(value);
+        }
+        resultCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder setData(
+          org.megacommerce.common.v1.ConfigProto.Config.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+        resultCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder mergeData(org.megacommerce.common.v1.ConfigProto.Config value) {
+        if (dataBuilder_ == null) {
+          if (resultCase_ == 1 &&
+              result_ != org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance()) {
+            result_ = org.megacommerce.common.v1.ConfigProto.Config.newBuilder((org.megacommerce.common.v1.ConfigProto.Config) result_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          if (resultCase_ == 1) {
+            dataBuilder_.mergeFrom(value);
+          }
+          dataBuilder_.setMessage(value);
+        }
+        resultCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          if (resultCase_ == 1) {
+            resultCase_ = 0;
+            result_ = null;
+            onChanged();
+          }
+        } else {
+          if (resultCase_ == 1) {
+            resultCase_ = 0;
+            result_ = null;
+          }
+          dataBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public org.megacommerce.common.v1.ConfigProto.Config.Builder getDataBuilder() {
+        return getDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getDataOrBuilder() {
+        if ((resultCase_ == 1) && (dataBuilder_ != null)) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          if (resultCase_ == 1) {
+            return (org.megacommerce.common.v1.ConfigProto.Config) result_;
+          }
+          return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ConfigProto.Config, org.megacommerce.common.v1.ConfigProto.Config.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          if (!(resultCase_ == 1)) {
+            result_ = org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+          }
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.megacommerce.common.v1.ConfigProto.Config, org.megacommerce.common.v1.ConfigProto.Config.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder>(
+                  (org.megacommerce.common.v1.ConfigProto.Config) result_,
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        resultCase_ = 1;
+        onChanged();;
+        return dataBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> errorBuilder_;
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * @return Whether the error field is set.
+       */
+      @java.lang.Override
+      public boolean hasError() {
+        return resultCase_ == 2;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * @return The error.
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+        if (errorBuilder_ == null) {
+          if (resultCase_ == 2) {
+            return (org.megacommerce.common.v1.ErrorProto.AppError) result_;
+          }
+          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+        } else {
+          if (resultCase_ == 2) {
+            return errorBuilder_.getMessage();
+          }
+          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder setError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+        if (errorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          errorBuilder_.setMessage(value);
+        }
+        resultCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder setError(
+          org.megacommerce.common.v1.ErrorProto.AppError.Builder builderForValue) {
+        if (errorBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          errorBuilder_.setMessage(builderForValue.build());
+        }
+        resultCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder mergeError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+        if (errorBuilder_ == null) {
+          if (resultCase_ == 2 &&
+              result_ != org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance()) {
+            result_ = org.megacommerce.common.v1.ErrorProto.AppError.newBuilder((org.megacommerce.common.v1.ErrorProto.AppError) result_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          if (resultCase_ == 2) {
+            errorBuilder_.mergeFrom(value);
+          }
+          errorBuilder_.setMessage(value);
+        }
+        resultCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder clearError() {
+        if (errorBuilder_ == null) {
+          if (resultCase_ == 2) {
+            resultCase_ = 0;
+            result_ = null;
+            onChanged();
+          }
+        } else {
+          if (resultCase_ == 2) {
+            resultCase_ = 0;
+            result_ = null;
+          }
+          errorBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public org.megacommerce.common.v1.ErrorProto.AppError.Builder getErrorBuilder() {
+        return getErrorFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+        if ((resultCase_ == 2) && (errorBuilder_ != null)) {
+          return errorBuilder_.getMessageOrBuilder();
+        } else {
+          if (resultCase_ == 2) {
+            return (org.megacommerce.common.v1.ErrorProto.AppError) result_;
+          }
+          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> 
+          getErrorFieldBuilder() {
+        if (errorBuilder_ == null) {
+          if (!(resultCase_ == 2)) {
+            result_ = org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+          }
+          errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder>(
+                  (org.megacommerce.common.v1.ErrorProto.AppError) result_,
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        resultCase_ = 2;
+        onChanged();;
+        return errorBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:common.v1.ConfigGetResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:common.v1.ConfigGetResponse)
+    private static final org.megacommerce.common.v1.CommonProto.ConfigGetResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.common.v1.CommonProto.ConfigGetResponse();
+    }
+
+    public static org.megacommerce.common.v1.CommonProto.ConfigGetResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConfigGetResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ConfigGetResponse>() {
+      @java.lang.Override
+      public ConfigGetResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ConfigGetResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConfigGetResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.common.v1.CommonProto.ConfigGetResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ConfigUpdateRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:common.v1.ConfigUpdateRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -1011,6 +1932,1848 @@ public final class CommonProto {
 
   }
 
+  public interface ConfigUpdateResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.v1.ConfigUpdateResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return Whether the data field is set.
+     */
+    boolean hasData();
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return The data.
+     */
+    org.megacommerce.common.v1.ConfigProto.Config getData();
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     */
+    org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getDataOrBuilder();
+
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return Whether the error field is set.
+     */
+    boolean hasError();
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    org.megacommerce.common.v1.ErrorProto.AppError getError();
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     */
+    org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder();
+
+    public org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse.ResultCase getResultCase();
+  }
+  /**
+   * Protobuf type {@code common.v1.ConfigUpdateResponse}
+   */
+  public static final class ConfigUpdateResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:common.v1.ConfigUpdateResponse)
+      ConfigUpdateResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ConfigUpdateResponse.newBuilder() to construct.
+    private ConfigUpdateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ConfigUpdateResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ConfigUpdateResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.common.v1.CommonProto.internal_static_common_v1_ConfigUpdateResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.common.v1.CommonProto.internal_static_common_v1_ConfigUpdateResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse.class, org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse.Builder.class);
+    }
+
+    private int resultCase_ = 0;
+    private java.lang.Object result_;
+    public enum ResultCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      DATA(1),
+      ERROR(2),
+      RESULT_NOT_SET(0);
+      private final int value;
+      private ResultCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ResultCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ResultCase forNumber(int value) {
+        switch (value) {
+          case 1: return DATA;
+          case 2: return ERROR;
+          case 0: return RESULT_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ResultCase
+    getResultCase() {
+      return ResultCase.forNumber(
+          resultCase_);
+    }
+
+    public static final int DATA_FIELD_NUMBER = 1;
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return Whether the data field is set.
+     */
+    @java.lang.Override
+    public boolean hasData() {
+      return resultCase_ == 1;
+    }
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.Config getData() {
+      if (resultCase_ == 1) {
+         return (org.megacommerce.common.v1.ConfigProto.Config) result_;
+      }
+      return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+    }
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getDataOrBuilder() {
+      if (resultCase_ == 1) {
+         return (org.megacommerce.common.v1.ConfigProto.Config) result_;
+      }
+      return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 2;
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return Whether the error field is set.
+     */
+    @java.lang.Override
+    public boolean hasError() {
+      return resultCase_ == 2;
+    }
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+      if (resultCase_ == 2) {
+         return (org.megacommerce.common.v1.ErrorProto.AppError) result_;
+      }
+      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+    }
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+      if (resultCase_ == 2) {
+         return (org.megacommerce.common.v1.ErrorProto.AppError) result_;
+      }
+      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (resultCase_ == 1) {
+        output.writeMessage(1, (org.megacommerce.common.v1.ConfigProto.Config) result_);
+      }
+      if (resultCase_ == 2) {
+        output.writeMessage(2, (org.megacommerce.common.v1.ErrorProto.AppError) result_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (resultCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (org.megacommerce.common.v1.ConfigProto.Config) result_);
+      }
+      if (resultCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (org.megacommerce.common.v1.ErrorProto.AppError) result_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse other = (org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse) obj;
+
+      if (!getResultCase().equals(other.getResultCase())) return false;
+      switch (resultCase_) {
+        case 1:
+          if (!getData()
+              .equals(other.getData())) return false;
+          break;
+        case 2:
+          if (!getError()
+              .equals(other.getError())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (resultCase_) {
+        case 1:
+          hash = (37 * hash) + DATA_FIELD_NUMBER;
+          hash = (53 * hash) + getData().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + ERROR_FIELD_NUMBER;
+          hash = (53 * hash) + getError().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code common.v1.ConfigUpdateResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.v1.ConfigUpdateResponse)
+        org.megacommerce.common.v1.CommonProto.ConfigUpdateResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.common.v1.CommonProto.internal_static_common_v1_ConfigUpdateResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.common.v1.CommonProto.internal_static_common_v1_ConfigUpdateResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse.class, org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse.Builder.class);
+      }
+
+      // Construct using org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (dataBuilder_ != null) {
+          dataBuilder_.clear();
+        }
+        if (errorBuilder_ != null) {
+          errorBuilder_.clear();
+        }
+        resultCase_ = 0;
+        result_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.common.v1.CommonProto.internal_static_common_v1_ConfigUpdateResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse getDefaultInstanceForType() {
+        return org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse build() {
+        org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse buildPartial() {
+        org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse result = new org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse(this);
+        if (resultCase_ == 1) {
+          if (dataBuilder_ == null) {
+            result.result_ = result_;
+          } else {
+            result.result_ = dataBuilder_.build();
+          }
+        }
+        if (resultCase_ == 2) {
+          if (errorBuilder_ == null) {
+            result.result_ = result_;
+          } else {
+            result.result_ = errorBuilder_.build();
+          }
+        }
+        result.resultCase_ = resultCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse) {
+          return mergeFrom((org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse other) {
+        if (other == org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse.getDefaultInstance()) return this;
+        switch (other.getResultCase()) {
+          case DATA: {
+            mergeData(other.getData());
+            break;
+          }
+          case ERROR: {
+            mergeError(other.getError());
+            break;
+          }
+          case RESULT_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getDataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                resultCase_ = 1;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getErrorFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                resultCase_ = 2;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int resultCase_ = 0;
+      private java.lang.Object result_;
+      public ResultCase
+          getResultCase() {
+        return ResultCase.forNumber(
+            resultCase_);
+      }
+
+      public Builder clearResult() {
+        resultCase_ = 0;
+        result_ = null;
+        onChanged();
+        return this;
+      }
+
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ConfigProto.Config, org.megacommerce.common.v1.ConfigProto.Config.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder> dataBuilder_;
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       * @return Whether the data field is set.
+       */
+      @java.lang.Override
+      public boolean hasData() {
+        return resultCase_ == 1;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       * @return The data.
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.Config getData() {
+        if (dataBuilder_ == null) {
+          if (resultCase_ == 1) {
+            return (org.megacommerce.common.v1.ConfigProto.Config) result_;
+          }
+          return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+        } else {
+          if (resultCase_ == 1) {
+            return dataBuilder_.getMessage();
+          }
+          return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder setData(org.megacommerce.common.v1.ConfigProto.Config value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(value);
+        }
+        resultCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder setData(
+          org.megacommerce.common.v1.ConfigProto.Config.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+        resultCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder mergeData(org.megacommerce.common.v1.ConfigProto.Config value) {
+        if (dataBuilder_ == null) {
+          if (resultCase_ == 1 &&
+              result_ != org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance()) {
+            result_ = org.megacommerce.common.v1.ConfigProto.Config.newBuilder((org.megacommerce.common.v1.ConfigProto.Config) result_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          if (resultCase_ == 1) {
+            dataBuilder_.mergeFrom(value);
+          }
+          dataBuilder_.setMessage(value);
+        }
+        resultCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          if (resultCase_ == 1) {
+            resultCase_ = 0;
+            result_ = null;
+            onChanged();
+          }
+        } else {
+          if (resultCase_ == 1) {
+            resultCase_ = 0;
+            result_ = null;
+          }
+          dataBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public org.megacommerce.common.v1.ConfigProto.Config.Builder getDataBuilder() {
+        return getDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getDataOrBuilder() {
+        if ((resultCase_ == 1) && (dataBuilder_ != null)) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          if (resultCase_ == 1) {
+            return (org.megacommerce.common.v1.ConfigProto.Config) result_;
+          }
+          return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ConfigProto.Config, org.megacommerce.common.v1.ConfigProto.Config.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          if (!(resultCase_ == 1)) {
+            result_ = org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+          }
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.megacommerce.common.v1.ConfigProto.Config, org.megacommerce.common.v1.ConfigProto.Config.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder>(
+                  (org.megacommerce.common.v1.ConfigProto.Config) result_,
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        resultCase_ = 1;
+        onChanged();;
+        return dataBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> errorBuilder_;
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * @return Whether the error field is set.
+       */
+      @java.lang.Override
+      public boolean hasError() {
+        return resultCase_ == 2;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * @return The error.
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+        if (errorBuilder_ == null) {
+          if (resultCase_ == 2) {
+            return (org.megacommerce.common.v1.ErrorProto.AppError) result_;
+          }
+          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+        } else {
+          if (resultCase_ == 2) {
+            return errorBuilder_.getMessage();
+          }
+          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder setError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+        if (errorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          errorBuilder_.setMessage(value);
+        }
+        resultCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder setError(
+          org.megacommerce.common.v1.ErrorProto.AppError.Builder builderForValue) {
+        if (errorBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          errorBuilder_.setMessage(builderForValue.build());
+        }
+        resultCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder mergeError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+        if (errorBuilder_ == null) {
+          if (resultCase_ == 2 &&
+              result_ != org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance()) {
+            result_ = org.megacommerce.common.v1.ErrorProto.AppError.newBuilder((org.megacommerce.common.v1.ErrorProto.AppError) result_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          if (resultCase_ == 2) {
+            errorBuilder_.mergeFrom(value);
+          }
+          errorBuilder_.setMessage(value);
+        }
+        resultCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder clearError() {
+        if (errorBuilder_ == null) {
+          if (resultCase_ == 2) {
+            resultCase_ = 0;
+            result_ = null;
+            onChanged();
+          }
+        } else {
+          if (resultCase_ == 2) {
+            resultCase_ = 0;
+            result_ = null;
+          }
+          errorBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public org.megacommerce.common.v1.ErrorProto.AppError.Builder getErrorBuilder() {
+        return getErrorFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+        if ((resultCase_ == 2) && (errorBuilder_ != null)) {
+          return errorBuilder_.getMessageOrBuilder();
+        } else {
+          if (resultCase_ == 2) {
+            return (org.megacommerce.common.v1.ErrorProto.AppError) result_;
+          }
+          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> 
+          getErrorFieldBuilder() {
+        if (errorBuilder_ == null) {
+          if (!(resultCase_ == 2)) {
+            result_ = org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+          }
+          errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder>(
+                  (org.megacommerce.common.v1.ErrorProto.AppError) result_,
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        resultCase_ = 2;
+        onChanged();;
+        return errorBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:common.v1.ConfigUpdateResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:common.v1.ConfigUpdateResponse)
+    private static final org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse();
+    }
+
+    public static org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConfigUpdateResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ConfigUpdateResponse>() {
+      @java.lang.Override
+      public ConfigUpdateResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ConfigUpdateResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConfigUpdateResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.common.v1.CommonProto.ConfigUpdateResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ConfigListenerResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.v1.ConfigListenerResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return Whether the data field is set.
+     */
+    boolean hasData();
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return The data.
+     */
+    org.megacommerce.common.v1.ConfigProto.Config getData();
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     */
+    org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getDataOrBuilder();
+
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return Whether the error field is set.
+     */
+    boolean hasError();
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    org.megacommerce.common.v1.ErrorProto.AppError getError();
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     */
+    org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder();
+
+    public org.megacommerce.common.v1.CommonProto.ConfigListenerResponse.ResultCase getResultCase();
+  }
+  /**
+   * Protobuf type {@code common.v1.ConfigListenerResponse}
+   */
+  public static final class ConfigListenerResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:common.v1.ConfigListenerResponse)
+      ConfigListenerResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ConfigListenerResponse.newBuilder() to construct.
+    private ConfigListenerResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ConfigListenerResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ConfigListenerResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.common.v1.CommonProto.internal_static_common_v1_ConfigListenerResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.common.v1.CommonProto.internal_static_common_v1_ConfigListenerResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.common.v1.CommonProto.ConfigListenerResponse.class, org.megacommerce.common.v1.CommonProto.ConfigListenerResponse.Builder.class);
+    }
+
+    private int resultCase_ = 0;
+    private java.lang.Object result_;
+    public enum ResultCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      DATA(1),
+      ERROR(2),
+      RESULT_NOT_SET(0);
+      private final int value;
+      private ResultCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ResultCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ResultCase forNumber(int value) {
+        switch (value) {
+          case 1: return DATA;
+          case 2: return ERROR;
+          case 0: return RESULT_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ResultCase
+    getResultCase() {
+      return ResultCase.forNumber(
+          resultCase_);
+    }
+
+    public static final int DATA_FIELD_NUMBER = 1;
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return Whether the data field is set.
+     */
+    @java.lang.Override
+    public boolean hasData() {
+      return resultCase_ == 1;
+    }
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.Config getData() {
+      if (resultCase_ == 1) {
+         return (org.megacommerce.common.v1.ConfigProto.Config) result_;
+      }
+      return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+    }
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getDataOrBuilder() {
+      if (resultCase_ == 1) {
+         return (org.megacommerce.common.v1.ConfigProto.Config) result_;
+      }
+      return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 2;
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return Whether the error field is set.
+     */
+    @java.lang.Override
+    public boolean hasError() {
+      return resultCase_ == 2;
+    }
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+      if (resultCase_ == 2) {
+         return (org.megacommerce.common.v1.ErrorProto.AppError) result_;
+      }
+      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+    }
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+      if (resultCase_ == 2) {
+         return (org.megacommerce.common.v1.ErrorProto.AppError) result_;
+      }
+      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (resultCase_ == 1) {
+        output.writeMessage(1, (org.megacommerce.common.v1.ConfigProto.Config) result_);
+      }
+      if (resultCase_ == 2) {
+        output.writeMessage(2, (org.megacommerce.common.v1.ErrorProto.AppError) result_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (resultCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (org.megacommerce.common.v1.ConfigProto.Config) result_);
+      }
+      if (resultCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (org.megacommerce.common.v1.ErrorProto.AppError) result_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.common.v1.CommonProto.ConfigListenerResponse)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.common.v1.CommonProto.ConfigListenerResponse other = (org.megacommerce.common.v1.CommonProto.ConfigListenerResponse) obj;
+
+      if (!getResultCase().equals(other.getResultCase())) return false;
+      switch (resultCase_) {
+        case 1:
+          if (!getData()
+              .equals(other.getData())) return false;
+          break;
+        case 2:
+          if (!getError()
+              .equals(other.getError())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (resultCase_) {
+        case 1:
+          hash = (37 * hash) + DATA_FIELD_NUMBER;
+          hash = (53 * hash) + getData().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + ERROR_FIELD_NUMBER;
+          hash = (53 * hash) + getError().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.common.v1.CommonProto.ConfigListenerResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigListenerResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigListenerResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigListenerResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigListenerResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigListenerResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigListenerResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigListenerResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigListenerResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigListenerResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigListenerResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.CommonProto.ConfigListenerResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.common.v1.CommonProto.ConfigListenerResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code common.v1.ConfigListenerResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.v1.ConfigListenerResponse)
+        org.megacommerce.common.v1.CommonProto.ConfigListenerResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.common.v1.CommonProto.internal_static_common_v1_ConfigListenerResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.common.v1.CommonProto.internal_static_common_v1_ConfigListenerResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.common.v1.CommonProto.ConfigListenerResponse.class, org.megacommerce.common.v1.CommonProto.ConfigListenerResponse.Builder.class);
+      }
+
+      // Construct using org.megacommerce.common.v1.CommonProto.ConfigListenerResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (dataBuilder_ != null) {
+          dataBuilder_.clear();
+        }
+        if (errorBuilder_ != null) {
+          errorBuilder_.clear();
+        }
+        resultCase_ = 0;
+        result_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.common.v1.CommonProto.internal_static_common_v1_ConfigListenerResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.CommonProto.ConfigListenerResponse getDefaultInstanceForType() {
+        return org.megacommerce.common.v1.CommonProto.ConfigListenerResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.CommonProto.ConfigListenerResponse build() {
+        org.megacommerce.common.v1.CommonProto.ConfigListenerResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.CommonProto.ConfigListenerResponse buildPartial() {
+        org.megacommerce.common.v1.CommonProto.ConfigListenerResponse result = new org.megacommerce.common.v1.CommonProto.ConfigListenerResponse(this);
+        if (resultCase_ == 1) {
+          if (dataBuilder_ == null) {
+            result.result_ = result_;
+          } else {
+            result.result_ = dataBuilder_.build();
+          }
+        }
+        if (resultCase_ == 2) {
+          if (errorBuilder_ == null) {
+            result.result_ = result_;
+          } else {
+            result.result_ = errorBuilder_.build();
+          }
+        }
+        result.resultCase_ = resultCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.common.v1.CommonProto.ConfigListenerResponse) {
+          return mergeFrom((org.megacommerce.common.v1.CommonProto.ConfigListenerResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.common.v1.CommonProto.ConfigListenerResponse other) {
+        if (other == org.megacommerce.common.v1.CommonProto.ConfigListenerResponse.getDefaultInstance()) return this;
+        switch (other.getResultCase()) {
+          case DATA: {
+            mergeData(other.getData());
+            break;
+          }
+          case ERROR: {
+            mergeError(other.getError());
+            break;
+          }
+          case RESULT_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getDataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                resultCase_ = 1;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getErrorFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                resultCase_ = 2;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int resultCase_ = 0;
+      private java.lang.Object result_;
+      public ResultCase
+          getResultCase() {
+        return ResultCase.forNumber(
+            resultCase_);
+      }
+
+      public Builder clearResult() {
+        resultCase_ = 0;
+        result_ = null;
+        onChanged();
+        return this;
+      }
+
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ConfigProto.Config, org.megacommerce.common.v1.ConfigProto.Config.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder> dataBuilder_;
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       * @return Whether the data field is set.
+       */
+      @java.lang.Override
+      public boolean hasData() {
+        return resultCase_ == 1;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       * @return The data.
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.Config getData() {
+        if (dataBuilder_ == null) {
+          if (resultCase_ == 1) {
+            return (org.megacommerce.common.v1.ConfigProto.Config) result_;
+          }
+          return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+        } else {
+          if (resultCase_ == 1) {
+            return dataBuilder_.getMessage();
+          }
+          return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder setData(org.megacommerce.common.v1.ConfigProto.Config value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(value);
+        }
+        resultCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder setData(
+          org.megacommerce.common.v1.ConfigProto.Config.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+        resultCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder mergeData(org.megacommerce.common.v1.ConfigProto.Config value) {
+        if (dataBuilder_ == null) {
+          if (resultCase_ == 1 &&
+              result_ != org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance()) {
+            result_ = org.megacommerce.common.v1.ConfigProto.Config.newBuilder((org.megacommerce.common.v1.ConfigProto.Config) result_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          if (resultCase_ == 1) {
+            dataBuilder_.mergeFrom(value);
+          }
+          dataBuilder_.setMessage(value);
+        }
+        resultCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          if (resultCase_ == 1) {
+            resultCase_ = 0;
+            result_ = null;
+            onChanged();
+          }
+        } else {
+          if (resultCase_ == 1) {
+            resultCase_ = 0;
+            result_ = null;
+          }
+          dataBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public org.megacommerce.common.v1.ConfigProto.Config.Builder getDataBuilder() {
+        return getDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getDataOrBuilder() {
+        if ((resultCase_ == 1) && (dataBuilder_ != null)) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          if (resultCase_ == 1) {
+            return (org.megacommerce.common.v1.ConfigProto.Config) result_;
+          }
+          return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ConfigProto.Config, org.megacommerce.common.v1.ConfigProto.Config.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          if (!(resultCase_ == 1)) {
+            result_ = org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+          }
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.megacommerce.common.v1.ConfigProto.Config, org.megacommerce.common.v1.ConfigProto.Config.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder>(
+                  (org.megacommerce.common.v1.ConfigProto.Config) result_,
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        resultCase_ = 1;
+        onChanged();;
+        return dataBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> errorBuilder_;
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * @return Whether the error field is set.
+       */
+      @java.lang.Override
+      public boolean hasError() {
+        return resultCase_ == 2;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * @return The error.
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+        if (errorBuilder_ == null) {
+          if (resultCase_ == 2) {
+            return (org.megacommerce.common.v1.ErrorProto.AppError) result_;
+          }
+          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+        } else {
+          if (resultCase_ == 2) {
+            return errorBuilder_.getMessage();
+          }
+          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder setError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+        if (errorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          result_ = value;
+          onChanged();
+        } else {
+          errorBuilder_.setMessage(value);
+        }
+        resultCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder setError(
+          org.megacommerce.common.v1.ErrorProto.AppError.Builder builderForValue) {
+        if (errorBuilder_ == null) {
+          result_ = builderForValue.build();
+          onChanged();
+        } else {
+          errorBuilder_.setMessage(builderForValue.build());
+        }
+        resultCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder mergeError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+        if (errorBuilder_ == null) {
+          if (resultCase_ == 2 &&
+              result_ != org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance()) {
+            result_ = org.megacommerce.common.v1.ErrorProto.AppError.newBuilder((org.megacommerce.common.v1.ErrorProto.AppError) result_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            result_ = value;
+          }
+          onChanged();
+        } else {
+          if (resultCase_ == 2) {
+            errorBuilder_.mergeFrom(value);
+          }
+          errorBuilder_.setMessage(value);
+        }
+        resultCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder clearError() {
+        if (errorBuilder_ == null) {
+          if (resultCase_ == 2) {
+            resultCase_ = 0;
+            result_ = null;
+            onChanged();
+          }
+        } else {
+          if (resultCase_ == 2) {
+            resultCase_ = 0;
+            result_ = null;
+          }
+          errorBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public org.megacommerce.common.v1.ErrorProto.AppError.Builder getErrorBuilder() {
+        return getErrorFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+        if ((resultCase_ == 2) && (errorBuilder_ != null)) {
+          return errorBuilder_.getMessageOrBuilder();
+        } else {
+          if (resultCase_ == 2) {
+            return (org.megacommerce.common.v1.ErrorProto.AppError) result_;
+          }
+          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> 
+          getErrorFieldBuilder() {
+        if (errorBuilder_ == null) {
+          if (!(resultCase_ == 2)) {
+            result_ = org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+          }
+          errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder>(
+                  (org.megacommerce.common.v1.ErrorProto.AppError) result_,
+                  getParentForChildren(),
+                  isClean());
+          result_ = null;
+        }
+        resultCase_ = 2;
+        onChanged();;
+        return errorBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:common.v1.ConfigListenerResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:common.v1.ConfigListenerResponse)
+    private static final org.megacommerce.common.v1.CommonProto.ConfigListenerResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.common.v1.CommonProto.ConfigListenerResponse();
+    }
+
+    public static org.megacommerce.common.v1.CommonProto.ConfigListenerResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConfigListenerResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ConfigListenerResponse>() {
+      @java.lang.Override
+      public ConfigListenerResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ConfigListenerResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConfigListenerResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.common.v1.CommonProto.ConfigListenerResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ConfigListenerRequestOrBuilder extends
       // @@protoc_insertion_point(interface_extends:common.v1.ConfigListenerRequest)
       com.google.protobuf.MessageOrBuilder {
@@ -1566,10 +4329,25 @@ public final class CommonProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_common_v1_ConfigGetRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_v1_ConfigGetResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_common_v1_ConfigGetResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_v1_ConfigUpdateRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_common_v1_ConfigUpdateRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_v1_ConfigUpdateResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_common_v1_ConfigUpdateResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_v1_ConfigListenerResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_common_v1_ConfigListenerResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_v1_ConfigListenerRequest_descriptor;
   private static final 
@@ -1585,23 +4363,34 @@ public final class CommonProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\026common/v1/common.proto\022\tcommon.v1\032\026com" +
-      "mon/v1/config.proto\"\022\n\020ConfigGetRequest\"" +
-      "@\n\023ConfigUpdateRequest\022)\n\006config\030\001 \001(\0132\021" +
-      ".common.v1.ConfigR\006config\"4\n\025ConfigListe" +
-      "nerRequest\022\033\n\tclient_id\030\001 \001(\tR\010clientId2" +
-      "\330\001\n\rCommonService\022;\n\tConfigGet\022\033.common." +
-      "v1.ConfigGetRequest\032\021.common.v1.Config\022A" +
-      "\n\014ConfigUpdate\022\036.common.v1.ConfigUpdateR" +
-      "equest\032\021.common.v1.Config\022G\n\016ConfigListe" +
-      "ner\022 .common.v1.ConfigListenerRequest\032\021." +
-      "common.v1.Config0\001B:\n\032org.megacommerce.c" +
-      "ommon.v1B\013CommonProtoZ\014common/v1;v1\370\001\001b\006" +
-      "proto3"
+      "mon/v1/config.proto\032\025common/v1/error.pro" +
+      "to\"\022\n\020ConfigGetRequest\"s\n\021ConfigGetRespo" +
+      "nse\022\'\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R\004" +
+      "data\022+\n\005error\030\002 \001(\0132\023.common.v1.AppError" +
+      "H\000R\005errorB\010\n\006result\"@\n\023ConfigUpdateReque" +
+      "st\022)\n\006config\030\001 \001(\0132\021.common.v1.ConfigR\006c" +
+      "onfig\"v\n\024ConfigUpdateResponse\022\'\n\004data\030\001 " +
+      "\001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005error\030" +
+      "\002 \001(\0132\023.common.v1.AppErrorH\000R\005errorB\010\n\006r" +
+      "esult\"x\n\026ConfigListenerResponse\022\'\n\004data\030" +
+      "\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005erro" +
+      "r\030\002 \001(\0132\023.common.v1.AppErrorH\000R\005errorB\010\n" +
+      "\006result\"4\n\025ConfigListenerRequest\022\033\n\tclie" +
+      "nt_id\030\001 \001(\tR\010clientId2\201\002\n\rCommonService\022" +
+      "F\n\tConfigGet\022\033.common.v1.ConfigGetReques" +
+      "t\032\034.common.v1.ConfigGetResponse\022O\n\014Confi" +
+      "gUpdate\022\036.common.v1.ConfigUpdateRequest\032" +
+      "\037.common.v1.ConfigUpdateResponse\022W\n\016Conf" +
+      "igListener\022 .common.v1.ConfigListenerReq" +
+      "uest\032!.common.v1.ConfigListenerResponse0" +
+      "\001B:\n\032org.megacommerce.common.v1B\013CommonP" +
+      "rotoZ\014common/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.megacommerce.common.v1.ConfigProto.getDescriptor(),
+          org.megacommerce.common.v1.ErrorProto.getDescriptor(),
         });
     internal_static_common_v1_ConfigGetRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1609,19 +4398,38 @@ public final class CommonProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_v1_ConfigGetRequest_descriptor,
         new java.lang.String[] { });
-    internal_static_common_v1_ConfigUpdateRequest_descriptor =
+    internal_static_common_v1_ConfigGetResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_common_v1_ConfigGetResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_common_v1_ConfigGetResponse_descriptor,
+        new java.lang.String[] { "Data", "Error", "Result", });
+    internal_static_common_v1_ConfigUpdateRequest_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_common_v1_ConfigUpdateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_v1_ConfigUpdateRequest_descriptor,
         new java.lang.String[] { "Config", });
+    internal_static_common_v1_ConfigUpdateResponse_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_common_v1_ConfigUpdateResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_common_v1_ConfigUpdateResponse_descriptor,
+        new java.lang.String[] { "Data", "Error", "Result", });
+    internal_static_common_v1_ConfigListenerResponse_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_common_v1_ConfigListenerResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_common_v1_ConfigListenerResponse_descriptor,
+        new java.lang.String[] { "Data", "Error", "Result", });
     internal_static_common_v1_ConfigListenerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_common_v1_ConfigListenerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_v1_ConfigListenerRequest_descriptor,
         new java.lang.String[] { "ClientId", });
     org.megacommerce.common.v1.ConfigProto.getDescriptor();
+    org.megacommerce.common.v1.ErrorProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

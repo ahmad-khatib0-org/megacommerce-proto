@@ -23,9 +23,10 @@ _sym_db = _symbol_database.Default()
 
 
 from common.v1 import config_pb2 as common_dot_v1_dot_config__pb2
+from common.v1 import error_pb2 as common_dot_v1_dot_error__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x63ommon/v1/common.proto\x12\tcommon.v1\x1a\x16\x63ommon/v1/config.proto\"\x12\n\x10\x43onfigGetRequest\"8\n\x13\x43onfigUpdateRequest\x12!\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x11.common.v1.Config\"*\n\x15\x43onfigListenerRequest\x12\x11\n\tclient_id\x18\x01 \x01(\t2\xd8\x01\n\rCommonService\x12;\n\tConfigGet\x12\x1b.common.v1.ConfigGetRequest\x1a\x11.common.v1.Config\x12\x41\n\x0c\x43onfigUpdate\x12\x1e.common.v1.ConfigUpdateRequest\x1a\x11.common.v1.Config\x12G\n\x0e\x43onfigListener\x12 .common.v1.ConfigListenerRequest\x1a\x11.common.v1.Config0\x01\x42:\n\x1aorg.megacommerce.common.v1B\x0b\x43ommonProtoZ\x0c\x63ommon/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x63ommon/v1/common.proto\x12\tcommon.v1\x1a\x16\x63ommon/v1/config.proto\x1a\x15\x63ommon/v1/error.proto\"\x12\n\x10\x43onfigGetRequest\"f\n\x11\x43onfigGetResponse\x12!\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x11.common.v1.ConfigH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.common.v1.AppErrorH\x00\x42\x08\n\x06result\"8\n\x13\x43onfigUpdateRequest\x12!\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x11.common.v1.Config\"i\n\x14\x43onfigUpdateResponse\x12!\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x11.common.v1.ConfigH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.common.v1.AppErrorH\x00\x42\x08\n\x06result\"k\n\x16\x43onfigListenerResponse\x12!\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x11.common.v1.ConfigH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.common.v1.AppErrorH\x00\x42\x08\n\x06result\"*\n\x15\x43onfigListenerRequest\x12\x11\n\tclient_id\x18\x01 \x01(\t2\x81\x02\n\rCommonService\x12\x46\n\tConfigGet\x12\x1b.common.v1.ConfigGetRequest\x1a\x1c.common.v1.ConfigGetResponse\x12O\n\x0c\x43onfigUpdate\x12\x1e.common.v1.ConfigUpdateRequest\x1a\x1f.common.v1.ConfigUpdateResponse\x12W\n\x0e\x43onfigListener\x12 .common.v1.ConfigListenerRequest\x1a!.common.v1.ConfigListenerResponse0\x01\x42:\n\x1aorg.megacommerce.common.v1B\x0b\x43ommonProtoZ\x0c\x63ommon/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,12 +34,18 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'common.v1.common_pb2', _glo
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\032org.megacommerce.common.v1B\013CommonProtoZ\014common/v1;v1\370\001\001'
-  _globals['_CONFIGGETREQUEST']._serialized_start=61
-  _globals['_CONFIGGETREQUEST']._serialized_end=79
-  _globals['_CONFIGUPDATEREQUEST']._serialized_start=81
-  _globals['_CONFIGUPDATEREQUEST']._serialized_end=137
-  _globals['_CONFIGLISTENERREQUEST']._serialized_start=139
-  _globals['_CONFIGLISTENERREQUEST']._serialized_end=181
-  _globals['_COMMONSERVICE']._serialized_start=184
-  _globals['_COMMONSERVICE']._serialized_end=400
+  _globals['_CONFIGGETREQUEST']._serialized_start=84
+  _globals['_CONFIGGETREQUEST']._serialized_end=102
+  _globals['_CONFIGGETRESPONSE']._serialized_start=104
+  _globals['_CONFIGGETRESPONSE']._serialized_end=206
+  _globals['_CONFIGUPDATEREQUEST']._serialized_start=208
+  _globals['_CONFIGUPDATEREQUEST']._serialized_end=264
+  _globals['_CONFIGUPDATERESPONSE']._serialized_start=266
+  _globals['_CONFIGUPDATERESPONSE']._serialized_end=371
+  _globals['_CONFIGLISTENERRESPONSE']._serialized_start=373
+  _globals['_CONFIGLISTENERRESPONSE']._serialized_end=480
+  _globals['_CONFIGLISTENERREQUEST']._serialized_start=482
+  _globals['_CONFIGLISTENERREQUEST']._serialized_end=524
+  _globals['_COMMONSERVICE']._serialized_start=527
+  _globals['_COMMONSERVICE']._serialized_end=784
 # @@protoc_insertion_point(module_scope)

@@ -4,7 +4,6 @@ import grpc
 import warnings
 
 from common.v1 import common_pb2 as common_dot_v1_dot_common__pb2
-from common.v1 import config_pb2 as common_dot_v1_dot_config__pb2
 
 GRPC_GENERATED_VERSION = '1.71.0'
 GRPC_VERSION = grpc.__version__
@@ -38,17 +37,17 @@ class CommonServiceStub(object):
         self.ConfigGet = channel.unary_unary(
                 '/common.v1.CommonService/ConfigGet',
                 request_serializer=common_dot_v1_dot_common__pb2.ConfigGetRequest.SerializeToString,
-                response_deserializer=common_dot_v1_dot_config__pb2.Config.FromString,
+                response_deserializer=common_dot_v1_dot_common__pb2.ConfigGetResponse.FromString,
                 _registered_method=True)
         self.ConfigUpdate = channel.unary_unary(
                 '/common.v1.CommonService/ConfigUpdate',
                 request_serializer=common_dot_v1_dot_common__pb2.ConfigUpdateRequest.SerializeToString,
-                response_deserializer=common_dot_v1_dot_config__pb2.Config.FromString,
+                response_deserializer=common_dot_v1_dot_common__pb2.ConfigUpdateResponse.FromString,
                 _registered_method=True)
         self.ConfigListener = channel.unary_stream(
                 '/common.v1.CommonService/ConfigListener',
                 request_serializer=common_dot_v1_dot_common__pb2.ConfigListenerRequest.SerializeToString,
-                response_deserializer=common_dot_v1_dot_config__pb2.Config.FromString,
+                response_deserializer=common_dot_v1_dot_common__pb2.ConfigListenerResponse.FromString,
                 _registered_method=True)
 
 
@@ -79,17 +78,17 @@ def add_CommonServiceServicer_to_server(servicer, server):
             'ConfigGet': grpc.unary_unary_rpc_method_handler(
                     servicer.ConfigGet,
                     request_deserializer=common_dot_v1_dot_common__pb2.ConfigGetRequest.FromString,
-                    response_serializer=common_dot_v1_dot_config__pb2.Config.SerializeToString,
+                    response_serializer=common_dot_v1_dot_common__pb2.ConfigGetResponse.SerializeToString,
             ),
             'ConfigUpdate': grpc.unary_unary_rpc_method_handler(
                     servicer.ConfigUpdate,
                     request_deserializer=common_dot_v1_dot_common__pb2.ConfigUpdateRequest.FromString,
-                    response_serializer=common_dot_v1_dot_config__pb2.Config.SerializeToString,
+                    response_serializer=common_dot_v1_dot_common__pb2.ConfigUpdateResponse.SerializeToString,
             ),
             'ConfigListener': grpc.unary_stream_rpc_method_handler(
                     servicer.ConfigListener,
                     request_deserializer=common_dot_v1_dot_common__pb2.ConfigListenerRequest.FromString,
-                    response_serializer=common_dot_v1_dot_config__pb2.Config.SerializeToString,
+                    response_serializer=common_dot_v1_dot_common__pb2.ConfigListenerResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -118,7 +117,7 @@ class CommonService(object):
             target,
             '/common.v1.CommonService/ConfigGet',
             common_dot_v1_dot_common__pb2.ConfigGetRequest.SerializeToString,
-            common_dot_v1_dot_config__pb2.Config.FromString,
+            common_dot_v1_dot_common__pb2.ConfigGetResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -145,7 +144,7 @@ class CommonService(object):
             target,
             '/common.v1.CommonService/ConfigUpdate',
             common_dot_v1_dot_common__pb2.ConfigUpdateRequest.SerializeToString,
-            common_dot_v1_dot_config__pb2.Config.FromString,
+            common_dot_v1_dot_common__pb2.ConfigUpdateResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -172,7 +171,7 @@ class CommonService(object):
             target,
             '/common.v1.CommonService/ConfigListener',
             common_dot_v1_dot_common__pb2.ConfigListenerRequest.SerializeToString,
-            common_dot_v1_dot_config__pb2.Config.FromString,
+            common_dot_v1_dot_common__pb2.ConfigListenerResponse.FromString,
             options,
             channel_credentials,
             insecure,
