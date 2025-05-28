@@ -350,7 +350,7 @@ message Config {
   ConfigSql sql = 6;
   ConfigPassword password = 7;
   ConfigFile file = 8;
-  ConfigFile email = 9;
+  ConfigEmail email = 9;
   ConfigRateLimit rate_limit = 10;
   ConfigPrivacy privacy = 11;
   ConfigSupport support = 12;

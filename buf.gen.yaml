@@ -31,8 +31,3 @@ plugins:
 
   - name: python
     out: gen/python
-
-  # - plugin: python-grpc
-  #   out: gen/python
-  #   path: /usr/local/bin/protoc-gen-python-grpc
-  #   opt: -mgrpc_tools.protoc
