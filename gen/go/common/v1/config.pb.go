@@ -2738,7 +2738,7 @@ type Config struct {
 	Sql           *ConfigSql             `protobuf:"bytes,6,opt,name=sql,proto3" json:"sql,omitempty"`
 	Password      *ConfigPassword        `protobuf:"bytes,7,opt,name=password,proto3" json:"password,omitempty"`
 	File          *ConfigFile            `protobuf:"bytes,8,opt,name=file,proto3" json:"file,omitempty"`
-	Email         *ConfigFile            `protobuf:"bytes,9,opt,name=email,proto3" json:"email,omitempty"`
+	Email         *ConfigEmail           `protobuf:"bytes,9,opt,name=email,proto3" json:"email,omitempty"`
 	RateLimit     *ConfigRateLimit       `protobuf:"bytes,10,opt,name=rate_limit,json=rateLimit,proto3" json:"rate_limit,omitempty"`
 	Privacy       *ConfigPrivacy         `protobuf:"bytes,11,opt,name=privacy,proto3" json:"privacy,omitempty"`
 	Support       *ConfigSupport         `protobuf:"bytes,12,opt,name=support,proto3" json:"support,omitempty"`
@@ -2840,7 +2840,7 @@ func (x *Config) GetFile() *ConfigFile {
 	return nil
 }
 
-func (x *Config) GetEmail() *ConfigFile {
+func (x *Config) GetEmail() *ConfigEmail {
 	if x != nil {
 		return x.Email
 	}
@@ -3490,7 +3490,7 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\a_enableB\x13\n" +
 	"\x11_image_proxy_typeB\x19\n" +
 	"\x17_remote_image_proxy_urlB\x1d\n" +
-	"\x1b_remote_image_proxy_options\"\x95\b\n" +
+	"\x1b_remote_image_proxy_options\"\x96\b\n" +
 	"\x06Config\x12)\n" +
 	"\x04main\x18\x01 \x01(\v2\x15.common.v1.ConfigMainR\x04main\x125\n" +
 	"\bsecurity\x18\x02 \x01(\v2\x19.common.v1.ConfigSecurityR\bsecurity\x12,\n" +
@@ -3499,8 +3499,8 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x03sso\x18\x05 \x01(\v2\x14.common.v1.ConfigSSOR\x03sso\x12&\n" +
 	"\x03sql\x18\x06 \x01(\v2\x14.common.v1.ConfigSqlR\x03sql\x125\n" +
 	"\bpassword\x18\a \x01(\v2\x19.common.v1.ConfigPasswordR\bpassword\x12)\n" +
-	"\x04file\x18\b \x01(\v2\x15.common.v1.ConfigFileR\x04file\x12+\n" +
-	"\x05email\x18\t \x01(\v2\x15.common.v1.ConfigFileR\x05email\x129\n" +
+	"\x04file\x18\b \x01(\v2\x15.common.v1.ConfigFileR\x04file\x12,\n" +
+	"\x05email\x18\t \x01(\v2\x16.common.v1.ConfigEmailR\x05email\x129\n" +
 	"\n" +
 	"rate_limit\x18\n" +
 	" \x01(\v2\x1a.common.v1.ConfigRateLimitR\trateLimit\x122\n" +
@@ -3563,7 +3563,7 @@ var file_common_v1_config_proto_depIdxs = []int32{
 	5,  // 5: common.v1.Config.sql:type_name -> common.v1.ConfigSql
 	6,  // 6: common.v1.Config.password:type_name -> common.v1.ConfigPassword
 	7,  // 7: common.v1.Config.file:type_name -> common.v1.ConfigFile
-	7,  // 8: common.v1.Config.email:type_name -> common.v1.ConfigFile
+	8,  // 8: common.v1.Config.email:type_name -> common.v1.ConfigEmail
 	9,  // 9: common.v1.Config.rate_limit:type_name -> common.v1.ConfigRateLimit
 	10, // 10: common.v1.Config.privacy:type_name -> common.v1.ConfigPrivacy
 	11, // 11: common.v1.Config.support:type_name -> common.v1.ConfigSupport

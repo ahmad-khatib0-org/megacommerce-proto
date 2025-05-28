@@ -3023,8 +3023,8 @@ export class Config extends jspb.Message {
   hasFile(): boolean;
   clearFile(): Config;
 
-  getEmail(): ConfigFile | undefined;
-  setEmail(value?: ConfigFile): Config;
+  getEmail(): ConfigEmail | undefined;
+  setEmail(value?: ConfigEmail): Config;
   hasEmail(): boolean;
   clearEmail(): Config;
 
@@ -3101,7 +3101,7 @@ export namespace Config {
     sql?: ConfigSql.AsObject,
     password?: ConfigPassword.AsObject,
     file?: ConfigFile.AsObject,
-    email?: ConfigFile.AsObject,
+    email?: ConfigEmail.AsObject,
     rateLimit?: ConfigRateLimit.AsObject,
     privacy?: ConfigPrivacy.AsObject,
     support?: ConfigSupport.AsObject,

@@ -14377,7 +14377,7 @@ proto.common.v1.Config.toObject = function(includeInstance, msg) {
     sql: (f = msg.getSql()) && proto.common.v1.ConfigSql.toObject(includeInstance, f),
     password: (f = msg.getPassword()) && proto.common.v1.ConfigPassword.toObject(includeInstance, f),
     file: (f = msg.getFile()) && proto.common.v1.ConfigFile.toObject(includeInstance, f),
-    email: (f = msg.getEmail()) && proto.common.v1.ConfigFile.toObject(includeInstance, f),
+    email: (f = msg.getEmail()) && proto.common.v1.ConfigEmail.toObject(includeInstance, f),
     rateLimit: (f = msg.getRateLimit()) && proto.common.v1.ConfigRateLimit.toObject(includeInstance, f),
     privacy: (f = msg.getPrivacy()) && proto.common.v1.ConfigPrivacy.toObject(includeInstance, f),
     support: (f = msg.getSupport()) && proto.common.v1.ConfigSupport.toObject(includeInstance, f),
@@ -14466,8 +14466,8 @@ proto.common.v1.Config.deserializeBinaryFromReader = function(msg, reader) {
       msg.setFile(value);
       break;
     case 9:
-      var value = new proto.common.v1.ConfigFile;
-      reader.readMessage(value,proto.common.v1.ConfigFile.deserializeBinaryFromReader);
+      var value = new proto.common.v1.ConfigEmail;
+      reader.readMessage(value,proto.common.v1.ConfigEmail.deserializeBinaryFromReader);
       msg.setEmail(value);
       break;
     case 10:
@@ -14623,7 +14623,7 @@ proto.common.v1.Config.serializeBinaryToWriter = function(message, writer) {
     writer.writeMessage(
       9,
       f,
-      proto.common.v1.ConfigFile.serializeBinaryToWriter
+      proto.common.v1.ConfigEmail.serializeBinaryToWriter
     );
   }
   f = message.getRateLimit();
@@ -15014,17 +15014,17 @@ proto.common.v1.Config.prototype.hasFile = function() {
 
 
 /**
- * optional ConfigFile email = 9;
- * @return {?proto.common.v1.ConfigFile}
+ * optional ConfigEmail email = 9;
+ * @return {?proto.common.v1.ConfigEmail}
  */
 proto.common.v1.Config.prototype.getEmail = function() {
-  return /** @type{?proto.common.v1.ConfigFile} */ (
-    jspb.Message.getWrapperField(this, proto.common.v1.ConfigFile, 9));
+  return /** @type{?proto.common.v1.ConfigEmail} */ (
+    jspb.Message.getWrapperField(this, proto.common.v1.ConfigEmail, 9));
 };
 
 
 /**
- * @param {?proto.common.v1.ConfigFile|undefined} value
+ * @param {?proto.common.v1.ConfigEmail|undefined} value
  * @return {!proto.common.v1.Config} returns this
 */
 proto.common.v1.Config.prototype.setEmail = function(value) {

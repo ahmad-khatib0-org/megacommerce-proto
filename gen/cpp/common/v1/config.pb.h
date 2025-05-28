@@ -7448,23 +7448,23 @@ class Config final :
       ::common::v1::ConfigFile* file);
   ::common::v1::ConfigFile* unsafe_arena_release_file();
 
-  // .common.v1.ConfigFile email = 9 [json_name = "email"];
+  // .common.v1.ConfigEmail email = 9 [json_name = "email"];
   bool has_email() const;
   private:
   bool _internal_has_email() const;
   public:
   void clear_email();
-  const ::common::v1::ConfigFile& email() const;
-  PROTOBUF_NODISCARD ::common::v1::ConfigFile* release_email();
-  ::common::v1::ConfigFile* mutable_email();
-  void set_allocated_email(::common::v1::ConfigFile* email);
+  const ::common::v1::ConfigEmail& email() const;
+  PROTOBUF_NODISCARD ::common::v1::ConfigEmail* release_email();
+  ::common::v1::ConfigEmail* mutable_email();
+  void set_allocated_email(::common::v1::ConfigEmail* email);
   private:
-  const ::common::v1::ConfigFile& _internal_email() const;
-  ::common::v1::ConfigFile* _internal_mutable_email();
+  const ::common::v1::ConfigEmail& _internal_email() const;
+  ::common::v1::ConfigEmail* _internal_mutable_email();
   public:
   void unsafe_arena_set_allocated_email(
-      ::common::v1::ConfigFile* email);
-  ::common::v1::ConfigFile* unsafe_arena_release_email();
+      ::common::v1::ConfigEmail* email);
+  ::common::v1::ConfigEmail* unsafe_arena_release_email();
 
   // .common.v1.ConfigRateLimit rate_limit = 10 [json_name = "rateLimit"];
   bool has_rate_limit() const;
@@ -7679,7 +7679,7 @@ class Config final :
   ::common::v1::ConfigSql* sql_;
   ::common::v1::ConfigPassword* password_;
   ::common::v1::ConfigFile* file_;
-  ::common::v1::ConfigFile* email_;
+  ::common::v1::ConfigEmail* email_;
   ::common::v1::ConfigRateLimit* rate_limit_;
   ::common::v1::ConfigPrivacy* privacy_;
   ::common::v1::ConfigSupport* support_;
@@ -20171,7 +20171,7 @@ inline void Config::set_allocated_file(::common::v1::ConfigFile* file) {
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.file)
 }
 
-// .common.v1.ConfigFile email = 9 [json_name = "email"];
+// .common.v1.ConfigEmail email = 9 [json_name = "email"];
 inline bool Config::_internal_has_email() const {
   return this != internal_default_instance() && email_ != nullptr;
 }
@@ -20184,17 +20184,17 @@ inline void Config::clear_email() {
   }
   email_ = nullptr;
 }
-inline const ::common::v1::ConfigFile& Config::_internal_email() const {
-  const ::common::v1::ConfigFile* p = email_;
-  return p != nullptr ? *p : reinterpret_cast<const ::common::v1::ConfigFile&>(
-      ::common::v1::_ConfigFile_default_instance_);
+inline const ::common::v1::ConfigEmail& Config::_internal_email() const {
+  const ::common::v1::ConfigEmail* p = email_;
+  return p != nullptr ? *p : reinterpret_cast<const ::common::v1::ConfigEmail&>(
+      ::common::v1::_ConfigEmail_default_instance_);
 }
-inline const ::common::v1::ConfigFile& Config::email() const {
+inline const ::common::v1::ConfigEmail& Config::email() const {
   // @@protoc_insertion_point(field_get:common.v1.Config.email)
   return _internal_email();
 }
 inline void Config::unsafe_arena_set_allocated_email(
-    ::common::v1::ConfigFile* email) {
+    ::common::v1::ConfigEmail* email) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(email_);
   }
@@ -20206,9 +20206,9 @@ inline void Config::unsafe_arena_set_allocated_email(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.Config.email)
 }
-inline ::common::v1::ConfigFile* Config::release_email() {
+inline ::common::v1::ConfigEmail* Config::release_email() {
   
-  ::common::v1::ConfigFile* temp = email_;
+  ::common::v1::ConfigEmail* temp = email_;
   email_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
@@ -20221,34 +20221,34 @@ inline ::common::v1::ConfigFile* Config::release_email() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::common::v1::ConfigFile* Config::unsafe_arena_release_email() {
+inline ::common::v1::ConfigEmail* Config::unsafe_arena_release_email() {
   // @@protoc_insertion_point(field_release:common.v1.Config.email)
   
-  ::common::v1::ConfigFile* temp = email_;
+  ::common::v1::ConfigEmail* temp = email_;
   email_ = nullptr;
   return temp;
 }
-inline ::common::v1::ConfigFile* Config::_internal_mutable_email() {
+inline ::common::v1::ConfigEmail* Config::_internal_mutable_email() {
   
   if (email_ == nullptr) {
-    auto* p = CreateMaybeMessage<::common::v1::ConfigFile>(GetArenaForAllocation());
+    auto* p = CreateMaybeMessage<::common::v1::ConfigEmail>(GetArenaForAllocation());
     email_ = p;
   }
   return email_;
 }
-inline ::common::v1::ConfigFile* Config::mutable_email() {
-  ::common::v1::ConfigFile* _msg = _internal_mutable_email();
+inline ::common::v1::ConfigEmail* Config::mutable_email() {
+  ::common::v1::ConfigEmail* _msg = _internal_mutable_email();
   // @@protoc_insertion_point(field_mutable:common.v1.Config.email)
   return _msg;
 }
-inline void Config::set_allocated_email(::common::v1::ConfigFile* email) {
+inline void Config::set_allocated_email(::common::v1::ConfigEmail* email) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete email_;
   }
   if (email) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::common::v1::ConfigFile>::GetOwningArena(email);
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::common::v1::ConfigEmail>::GetOwningArena(email);
     if (message_arena != submessage_arena) {
       email = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, email, submessage_arena);

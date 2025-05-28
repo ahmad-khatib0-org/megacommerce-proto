@@ -1689,7 +1689,7 @@ const char descriptor_table_protodef_common_2fv1_2fconfig_2eproto[] PROTOBUF_SEC
   "ns\030\004 \001(\tH\003R\027remoteImageProxyOptions\210\001\001B\t"
   "\n\007_enableB\023\n\021_image_proxy_typeB\031\n\027_remot"
   "e_image_proxy_urlB\035\n\033_remote_image_proxy"
-  "_options\"\225\010\n\006Config\022)\n\004main\030\001 \001(\0132\025.comm"
+  "_options\"\226\010\n\006Config\022)\n\004main\030\001 \001(\0132\025.comm"
   "on.v1.ConfigMainR\004main\0225\n\010security\030\002 \001(\013"
   "2\031.common.v1.ConfigSecurityR\010security\022,\n"
   "\005cache\030\003 \001(\0132\026.common.v1.CacheConfigR\005ca"
@@ -1698,30 +1698,30 @@ const char descriptor_table_protodef_common_2fv1_2fconfig_2eproto[] PROTOBUF_SEC
   ".ConfigSSOR\003sso\022&\n\003sql\030\006 \001(\0132\024.common.v1"
   ".ConfigSqlR\003sql\0225\n\010password\030\007 \001(\0132\031.comm"
   "on.v1.ConfigPasswordR\010password\022)\n\004file\030\010"
-  " \001(\0132\025.common.v1.ConfigFileR\004file\022+\n\005ema"
-  "il\030\t \001(\0132\025.common.v1.ConfigFileR\005email\0229"
-  "\n\nrate_limit\030\n \001(\0132\032.common.v1.ConfigRat"
-  "eLimitR\trateLimit\0222\n\007privacy\030\013 \001(\0132\030.com"
-  "mon.v1.ConfigPrivacyR\007privacy\0222\n\007support"
-  "\030\014 \001(\0132\030.common.v1.ConfigSupportR\007suppor"
-  "t\022A\n\014localization\030\r \001(\0132\035.common.v1.Conf"
-  "igLocalizationR\014localization\022)\n\004ldap\030\016 \001"
-  "(\0132\025.common.v1.ConfigLdapR\004ldap\022)\n\004saml\030"
-  "\017 \001(\0132\025.common.v1.ConfigSamlR\004saml\0229\n\nna"
-  "tive_app\030\020 \001(\0132\032.common.v1.ConfigNativeA"
-  "ppR\tnativeApp\022>\n\013meilisearch\030\021 \001(\0132\034.com"
-  "mon.v1.ConfigMeilisearchR\013meilisearch\022,\n"
-  "\005bleve\030\022 \001(\0132\026.common.v1.ConfigBleveR\005bl"
-  "eve\022E\n\016data_retention\030\023 \001(\0132\036.common.v1."
-  "ConfigDataRetentionR\rdataRetention\022<\n\013im"
-  "age_proxy\030\024 \001(\0132\033.common.v1.ConfigImageP"
-  "roxyR\nimageProxyB:\n\032org.megacommerce.com"
-  "mon.v1B\013ConfigProtoZ\014common/v1;v1\370\001\001b\006pr"
-  "oto3"
+  " \001(\0132\025.common.v1.ConfigFileR\004file\022,\n\005ema"
+  "il\030\t \001(\0132\026.common.v1.ConfigEmailR\005email\022"
+  "9\n\nrate_limit\030\n \001(\0132\032.common.v1.ConfigRa"
+  "teLimitR\trateLimit\0222\n\007privacy\030\013 \001(\0132\030.co"
+  "mmon.v1.ConfigPrivacyR\007privacy\0222\n\007suppor"
+  "t\030\014 \001(\0132\030.common.v1.ConfigSupportR\007suppo"
+  "rt\022A\n\014localization\030\r \001(\0132\035.common.v1.Con"
+  "figLocalizationR\014localization\022)\n\004ldap\030\016 "
+  "\001(\0132\025.common.v1.ConfigLdapR\004ldap\022)\n\004saml"
+  "\030\017 \001(\0132\025.common.v1.ConfigSamlR\004saml\0229\n\nn"
+  "ative_app\030\020 \001(\0132\032.common.v1.ConfigNative"
+  "AppR\tnativeApp\022>\n\013meilisearch\030\021 \001(\0132\034.co"
+  "mmon.v1.ConfigMeilisearchR\013meilisearch\022,"
+  "\n\005bleve\030\022 \001(\0132\026.common.v1.ConfigBleveR\005b"
+  "leve\022E\n\016data_retention\030\023 \001(\0132\036.common.v1"
+  ".ConfigDataRetentionR\rdataRetention\022<\n\013i"
+  "mage_proxy\030\024 \001(\0132\033.common.v1.ConfigImage"
+  "ProxyR\nimageProxyB:\n\032org.megacommerce.co"
+  "mmon.v1B\013ConfigProtoZ\014common/v1;v1\370\001\001b\006p"
+  "roto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2fv1_2fconfig_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fv1_2fconfig_2eproto = {
-  false, false, 20164, descriptor_table_protodef_common_2fv1_2fconfig_2eproto, "common/v1/config.proto", 
+  false, false, 20165, descriptor_table_protodef_common_2fv1_2fconfig_2eproto, "common/v1/config.proto", 
   &descriptor_table_common_2fv1_2fconfig_2eproto_once, nullptr, 0, 21,
   schemas, file_default_instances, TableStruct_common_2fv1_2fconfig_2eproto::offsets,
   file_level_metadata_common_2fv1_2fconfig_2eproto, file_level_enum_descriptors_common_2fv1_2fconfig_2eproto, file_level_service_descriptors_common_2fv1_2fconfig_2eproto,
@@ -15230,7 +15230,7 @@ class Config::_Internal {
   static const ::common::v1::ConfigSql& sql(const Config* msg);
   static const ::common::v1::ConfigPassword& password(const Config* msg);
   static const ::common::v1::ConfigFile& file(const Config* msg);
-  static const ::common::v1::ConfigFile& email(const Config* msg);
+  static const ::common::v1::ConfigEmail& email(const Config* msg);
   static const ::common::v1::ConfigRateLimit& rate_limit(const Config* msg);
   static const ::common::v1::ConfigPrivacy& privacy(const Config* msg);
   static const ::common::v1::ConfigSupport& support(const Config* msg);
@@ -15276,7 +15276,7 @@ const ::common::v1::ConfigFile&
 Config::_Internal::file(const Config* msg) {
   return *msg->file_;
 }
-const ::common::v1::ConfigFile&
+const ::common::v1::ConfigEmail&
 Config::_Internal::email(const Config* msg) {
   return *msg->email_;
 }
@@ -15377,7 +15377,7 @@ Config::Config(const Config& from)
     file_ = nullptr;
   }
   if (from._internal_has_email()) {
-    email_ = new ::common::v1::ConfigFile(*from.email_);
+    email_ = new ::common::v1::ConfigEmail(*from.email_);
   } else {
     email_ = nullptr;
   }
@@ -15646,7 +15646,7 @@ const char* Config::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::int
         } else
           goto handle_unusual;
         continue;
-      // .common.v1.ConfigFile email = 9 [json_name = "email"];
+      // .common.v1.ConfigEmail email = 9 [json_name = "email"];
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
           ptr = ctx->ParseMessage(_internal_mutable_email(), ptr);
@@ -15835,7 +15835,7 @@ uint8_t* Config::_InternalSerialize(
         8, _Internal::file(this), target, stream);
   }
 
-  // .common.v1.ConfigFile email = 9 [json_name = "email"];
+  // .common.v1.ConfigEmail email = 9 [json_name = "email"];
   if (this->_internal_has_email()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -16003,7 +16003,7 @@ size_t Config::ByteSizeLong() const {
         *file_);
   }
 
-  // .common.v1.ConfigFile email = 9 [json_name = "email"];
+  // .common.v1.ConfigEmail email = 9 [json_name = "email"];
   if (this->_internal_has_email()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -16134,7 +16134,7 @@ void Config::MergeFrom(const Config& from) {
     _internal_mutable_file()->::common::v1::ConfigFile::MergeFrom(from._internal_file());
   }
   if (from._internal_has_email()) {
-    _internal_mutable_email()->::common::v1::ConfigFile::MergeFrom(from._internal_email());
+    _internal_mutable_email()->::common::v1::ConfigEmail::MergeFrom(from._internal_email());
   }
   if (from._internal_has_rate_limit()) {
     _internal_mutable_rate_limit()->::common::v1::ConfigRateLimit::MergeFrom(from._internal_rate_limit());

@@ -42480,19 +42480,19 @@ public final class ConfigProto {
     org.megacommerce.common.v1.ConfigProto.ConfigFileOrBuilder getFileOrBuilder();
 
     /**
-     * <code>.common.v1.ConfigFile email = 9 [json_name = "email"];</code>
+     * <code>.common.v1.ConfigEmail email = 9 [json_name = "email"];</code>
      * @return Whether the email field is set.
      */
     boolean hasEmail();
     /**
-     * <code>.common.v1.ConfigFile email = 9 [json_name = "email"];</code>
+     * <code>.common.v1.ConfigEmail email = 9 [json_name = "email"];</code>
      * @return The email.
      */
-    org.megacommerce.common.v1.ConfigProto.ConfigFile getEmail();
+    org.megacommerce.common.v1.ConfigProto.ConfigEmail getEmail();
     /**
-     * <code>.common.v1.ConfigFile email = 9 [json_name = "email"];</code>
+     * <code>.common.v1.ConfigEmail email = 9 [json_name = "email"];</code>
      */
-    org.megacommerce.common.v1.ConfigProto.ConfigFileOrBuilder getEmailOrBuilder();
+    org.megacommerce.common.v1.ConfigProto.ConfigEmailOrBuilder getEmailOrBuilder();
 
     /**
      * <code>.common.v1.ConfigRateLimit rate_limit = 10 [json_name = "rateLimit"];</code>
@@ -42908,9 +42908,9 @@ public final class ConfigProto {
     }
 
     public static final int EMAIL_FIELD_NUMBER = 9;
-    private org.megacommerce.common.v1.ConfigProto.ConfigFile email_;
+    private org.megacommerce.common.v1.ConfigProto.ConfigEmail email_;
     /**
-     * <code>.common.v1.ConfigFile email = 9 [json_name = "email"];</code>
+     * <code>.common.v1.ConfigEmail email = 9 [json_name = "email"];</code>
      * @return Whether the email field is set.
      */
     @java.lang.Override
@@ -42918,18 +42918,18 @@ public final class ConfigProto {
       return email_ != null;
     }
     /**
-     * <code>.common.v1.ConfigFile email = 9 [json_name = "email"];</code>
+     * <code>.common.v1.ConfigEmail email = 9 [json_name = "email"];</code>
      * @return The email.
      */
     @java.lang.Override
-    public org.megacommerce.common.v1.ConfigProto.ConfigFile getEmail() {
-      return email_ == null ? org.megacommerce.common.v1.ConfigProto.ConfigFile.getDefaultInstance() : email_;
+    public org.megacommerce.common.v1.ConfigProto.ConfigEmail getEmail() {
+      return email_ == null ? org.megacommerce.common.v1.ConfigProto.ConfigEmail.getDefaultInstance() : email_;
     }
     /**
-     * <code>.common.v1.ConfigFile email = 9 [json_name = "email"];</code>
+     * <code>.common.v1.ConfigEmail email = 9 [json_name = "email"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.common.v1.ConfigProto.ConfigFileOrBuilder getEmailOrBuilder() {
+    public org.megacommerce.common.v1.ConfigProto.ConfigEmailOrBuilder getEmailOrBuilder() {
       return getEmail();
     }
 
@@ -45204,31 +45204,31 @@ public final class ConfigProto {
         return fileBuilder_;
       }
 
-      private org.megacommerce.common.v1.ConfigProto.ConfigFile email_;
+      private org.megacommerce.common.v1.ConfigProto.ConfigEmail email_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.megacommerce.common.v1.ConfigProto.ConfigFile, org.megacommerce.common.v1.ConfigProto.ConfigFile.Builder, org.megacommerce.common.v1.ConfigProto.ConfigFileOrBuilder> emailBuilder_;
+          org.megacommerce.common.v1.ConfigProto.ConfigEmail, org.megacommerce.common.v1.ConfigProto.ConfigEmail.Builder, org.megacommerce.common.v1.ConfigProto.ConfigEmailOrBuilder> emailBuilder_;
       /**
-       * <code>.common.v1.ConfigFile email = 9 [json_name = "email"];</code>
+       * <code>.common.v1.ConfigEmail email = 9 [json_name = "email"];</code>
        * @return Whether the email field is set.
        */
       public boolean hasEmail() {
         return emailBuilder_ != null || email_ != null;
       }
       /**
-       * <code>.common.v1.ConfigFile email = 9 [json_name = "email"];</code>
+       * <code>.common.v1.ConfigEmail email = 9 [json_name = "email"];</code>
        * @return The email.
        */
-      public org.megacommerce.common.v1.ConfigProto.ConfigFile getEmail() {
+      public org.megacommerce.common.v1.ConfigProto.ConfigEmail getEmail() {
         if (emailBuilder_ == null) {
-          return email_ == null ? org.megacommerce.common.v1.ConfigProto.ConfigFile.getDefaultInstance() : email_;
+          return email_ == null ? org.megacommerce.common.v1.ConfigProto.ConfigEmail.getDefaultInstance() : email_;
         } else {
           return emailBuilder_.getMessage();
         }
       }
       /**
-       * <code>.common.v1.ConfigFile email = 9 [json_name = "email"];</code>
+       * <code>.common.v1.ConfigEmail email = 9 [json_name = "email"];</code>
        */
-      public Builder setEmail(org.megacommerce.common.v1.ConfigProto.ConfigFile value) {
+      public Builder setEmail(org.megacommerce.common.v1.ConfigProto.ConfigEmail value) {
         if (emailBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -45242,10 +45242,10 @@ public final class ConfigProto {
         return this;
       }
       /**
-       * <code>.common.v1.ConfigFile email = 9 [json_name = "email"];</code>
+       * <code>.common.v1.ConfigEmail email = 9 [json_name = "email"];</code>
        */
       public Builder setEmail(
-          org.megacommerce.common.v1.ConfigProto.ConfigFile.Builder builderForValue) {
+          org.megacommerce.common.v1.ConfigProto.ConfigEmail.Builder builderForValue) {
         if (emailBuilder_ == null) {
           email_ = builderForValue.build();
           onChanged();
@@ -45256,13 +45256,13 @@ public final class ConfigProto {
         return this;
       }
       /**
-       * <code>.common.v1.ConfigFile email = 9 [json_name = "email"];</code>
+       * <code>.common.v1.ConfigEmail email = 9 [json_name = "email"];</code>
        */
-      public Builder mergeEmail(org.megacommerce.common.v1.ConfigProto.ConfigFile value) {
+      public Builder mergeEmail(org.megacommerce.common.v1.ConfigProto.ConfigEmail value) {
         if (emailBuilder_ == null) {
           if (email_ != null) {
             email_ =
-              org.megacommerce.common.v1.ConfigProto.ConfigFile.newBuilder(email_).mergeFrom(value).buildPartial();
+              org.megacommerce.common.v1.ConfigProto.ConfigEmail.newBuilder(email_).mergeFrom(value).buildPartial();
           } else {
             email_ = value;
           }
@@ -45274,7 +45274,7 @@ public final class ConfigProto {
         return this;
       }
       /**
-       * <code>.common.v1.ConfigFile email = 9 [json_name = "email"];</code>
+       * <code>.common.v1.ConfigEmail email = 9 [json_name = "email"];</code>
        */
       public Builder clearEmail() {
         if (emailBuilder_ == null) {
@@ -45288,33 +45288,33 @@ public final class ConfigProto {
         return this;
       }
       /**
-       * <code>.common.v1.ConfigFile email = 9 [json_name = "email"];</code>
+       * <code>.common.v1.ConfigEmail email = 9 [json_name = "email"];</code>
        */
-      public org.megacommerce.common.v1.ConfigProto.ConfigFile.Builder getEmailBuilder() {
+      public org.megacommerce.common.v1.ConfigProto.ConfigEmail.Builder getEmailBuilder() {
         
         onChanged();
         return getEmailFieldBuilder().getBuilder();
       }
       /**
-       * <code>.common.v1.ConfigFile email = 9 [json_name = "email"];</code>
+       * <code>.common.v1.ConfigEmail email = 9 [json_name = "email"];</code>
        */
-      public org.megacommerce.common.v1.ConfigProto.ConfigFileOrBuilder getEmailOrBuilder() {
+      public org.megacommerce.common.v1.ConfigProto.ConfigEmailOrBuilder getEmailOrBuilder() {
         if (emailBuilder_ != null) {
           return emailBuilder_.getMessageOrBuilder();
         } else {
           return email_ == null ?
-              org.megacommerce.common.v1.ConfigProto.ConfigFile.getDefaultInstance() : email_;
+              org.megacommerce.common.v1.ConfigProto.ConfigEmail.getDefaultInstance() : email_;
         }
       }
       /**
-       * <code>.common.v1.ConfigFile email = 9 [json_name = "email"];</code>
+       * <code>.common.v1.ConfigEmail email = 9 [json_name = "email"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.megacommerce.common.v1.ConfigProto.ConfigFile, org.megacommerce.common.v1.ConfigProto.ConfigFile.Builder, org.megacommerce.common.v1.ConfigProto.ConfigFileOrBuilder> 
+          org.megacommerce.common.v1.ConfigProto.ConfigEmail, org.megacommerce.common.v1.ConfigProto.ConfigEmail.Builder, org.megacommerce.common.v1.ConfigProto.ConfigEmailOrBuilder> 
           getEmailFieldBuilder() {
         if (emailBuilder_ == null) {
           emailBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.megacommerce.common.v1.ConfigProto.ConfigFile, org.megacommerce.common.v1.ConfigProto.ConfigFile.Builder, org.megacommerce.common.v1.ConfigProto.ConfigFileOrBuilder>(
+              org.megacommerce.common.v1.ConfigProto.ConfigEmail, org.megacommerce.common.v1.ConfigProto.ConfigEmail.Builder, org.megacommerce.common.v1.ConfigProto.ConfigEmailOrBuilder>(
                   getEmail(),
                   getParentForChildren(),
                   isClean());
@@ -47285,7 +47285,7 @@ public final class ConfigProto {
       "ns\030\004 \001(\tH\003R\027remoteImageProxyOptions\210\001\001B\t" +
       "\n\007_enableB\023\n\021_image_proxy_typeB\031\n\027_remot" +
       "e_image_proxy_urlB\035\n\033_remote_image_proxy" +
-      "_options\"\225\010\n\006Config\022)\n\004main\030\001 \001(\0132\025.comm" +
+      "_options\"\226\010\n\006Config\022)\n\004main\030\001 \001(\0132\025.comm" +
       "on.v1.ConfigMainR\004main\0225\n\010security\030\002 \001(\013" +
       "2\031.common.v1.ConfigSecurityR\010security\022,\n" +
       "\005cache\030\003 \001(\0132\026.common.v1.CacheConfigR\005ca" +
@@ -47294,26 +47294,26 @@ public final class ConfigProto {
       ".ConfigSSOR\003sso\022&\n\003sql\030\006 \001(\0132\024.common.v1" +
       ".ConfigSqlR\003sql\0225\n\010password\030\007 \001(\0132\031.comm" +
       "on.v1.ConfigPasswordR\010password\022)\n\004file\030\010" +
-      " \001(\0132\025.common.v1.ConfigFileR\004file\022+\n\005ema" +
-      "il\030\t \001(\0132\025.common.v1.ConfigFileR\005email\0229" +
-      "\n\nrate_limit\030\n \001(\0132\032.common.v1.ConfigRat" +
-      "eLimitR\trateLimit\0222\n\007privacy\030\013 \001(\0132\030.com" +
-      "mon.v1.ConfigPrivacyR\007privacy\0222\n\007support" +
-      "\030\014 \001(\0132\030.common.v1.ConfigSupportR\007suppor" +
-      "t\022A\n\014localization\030\r \001(\0132\035.common.v1.Conf" +
-      "igLocalizationR\014localization\022)\n\004ldap\030\016 \001" +
-      "(\0132\025.common.v1.ConfigLdapR\004ldap\022)\n\004saml\030" +
-      "\017 \001(\0132\025.common.v1.ConfigSamlR\004saml\0229\n\nna" +
-      "tive_app\030\020 \001(\0132\032.common.v1.ConfigNativeA" +
-      "ppR\tnativeApp\022>\n\013meilisearch\030\021 \001(\0132\034.com" +
-      "mon.v1.ConfigMeilisearchR\013meilisearch\022,\n" +
-      "\005bleve\030\022 \001(\0132\026.common.v1.ConfigBleveR\005bl" +
-      "eve\022E\n\016data_retention\030\023 \001(\0132\036.common.v1." +
-      "ConfigDataRetentionR\rdataRetention\022<\n\013im" +
-      "age_proxy\030\024 \001(\0132\033.common.v1.ConfigImageP" +
-      "roxyR\nimageProxyB:\n\032org.megacommerce.com" +
-      "mon.v1B\013ConfigProtoZ\014common/v1;v1\370\001\001b\006pr" +
-      "oto3"
+      " \001(\0132\025.common.v1.ConfigFileR\004file\022,\n\005ema" +
+      "il\030\t \001(\0132\026.common.v1.ConfigEmailR\005email\022" +
+      "9\n\nrate_limit\030\n \001(\0132\032.common.v1.ConfigRa" +
+      "teLimitR\trateLimit\0222\n\007privacy\030\013 \001(\0132\030.co" +
+      "mmon.v1.ConfigPrivacyR\007privacy\0222\n\007suppor" +
+      "t\030\014 \001(\0132\030.common.v1.ConfigSupportR\007suppo" +
+      "rt\022A\n\014localization\030\r \001(\0132\035.common.v1.Con" +
+      "figLocalizationR\014localization\022)\n\004ldap\030\016 " +
+      "\001(\0132\025.common.v1.ConfigLdapR\004ldap\022)\n\004saml" +
+      "\030\017 \001(\0132\025.common.v1.ConfigSamlR\004saml\0229\n\nn" +
+      "ative_app\030\020 \001(\0132\032.common.v1.ConfigNative" +
+      "AppR\tnativeApp\022>\n\013meilisearch\030\021 \001(\0132\034.co" +
+      "mmon.v1.ConfigMeilisearchR\013meilisearch\022," +
+      "\n\005bleve\030\022 \001(\0132\026.common.v1.ConfigBleveR\005b" +
+      "leve\022E\n\016data_retention\030\023 \001(\0132\036.common.v1" +
+      ".ConfigDataRetentionR\rdataRetention\022<\n\013i" +
+      "mage_proxy\030\024 \001(\0132\033.common.v1.ConfigImage" +
+      "ProxyR\nimageProxyB:\n\032org.megacommerce.co" +
+      "mmon.v1B\013ConfigProtoZ\014common/v1;v1\370\001\001b\006p" +
+      "roto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
