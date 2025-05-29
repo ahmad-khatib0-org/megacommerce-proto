@@ -46,7 +46,7 @@ struct TableStruct_common_2fv1_2fconfig_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[21]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[22]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -112,6 +112,9 @@ extern ConfigSamlDefaultTypeInternal _ConfigSaml_default_instance_;
 class ConfigSecurity;
 struct ConfigSecurityDefaultTypeInternal;
 extern ConfigSecurityDefaultTypeInternal _ConfigSecurity_default_instance_;
+class ConfigServices;
+struct ConfigServicesDefaultTypeInternal;
+extern ConfigServicesDefaultTypeInternal _ConfigServices_default_instance_;
 class ConfigSql;
 struct ConfigSqlDefaultTypeInternal;
 extern ConfigSqlDefaultTypeInternal _ConfigSql_default_instance_;
@@ -140,6 +143,7 @@ template<> ::common::v1::ConfigRateLimit* Arena::CreateMaybeMessage<::common::v1
 template<> ::common::v1::ConfigSSO* Arena::CreateMaybeMessage<::common::v1::ConfigSSO>(Arena*);
 template<> ::common::v1::ConfigSaml* Arena::CreateMaybeMessage<::common::v1::ConfigSaml>(Arena*);
 template<> ::common::v1::ConfigSecurity* Arena::CreateMaybeMessage<::common::v1::ConfigSecurity>(Arena*);
+template<> ::common::v1::ConfigServices* Arena::CreateMaybeMessage<::common::v1::ConfigServices>(Arena*);
 template<> ::common::v1::ConfigSql* Arena::CreateMaybeMessage<::common::v1::ConfigSql>(Arena*);
 template<> ::common::v1::ConfigSupport* Arena::CreateMaybeMessage<::common::v1::ConfigSupport>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -604,6 +608,222 @@ class ConfigMain final :
 };
 // -------------------------------------------------------------------
 
+class ConfigServices final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:common.v1.ConfigServices) */ {
+ public:
+  inline ConfigServices() : ConfigServices(nullptr) {}
+  ~ConfigServices() override;
+  explicit constexpr ConfigServices(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ConfigServices(const ConfigServices& from);
+  ConfigServices(ConfigServices&& from) noexcept
+    : ConfigServices() {
+    *this = ::std::move(from);
+  }
+
+  inline ConfigServices& operator=(const ConfigServices& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ConfigServices& operator=(ConfigServices&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ConfigServices& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ConfigServices* internal_default_instance() {
+    return reinterpret_cast<const ConfigServices*>(
+               &_ConfigServices_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(ConfigServices& a, ConfigServices& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ConfigServices* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ConfigServices* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ConfigServices* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ConfigServices>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ConfigServices& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ConfigServices& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ConfigServices* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "common.v1.ConfigServices";
+  }
+  protected:
+  explicit ConfigServices(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kCommonServiceGrpcHostFieldNumber = 1,
+    kCommonServiceGrpcPortFieldNumber = 2,
+    kUserServiceGrpcHostFieldNumber = 3,
+    kUserServiceGrpcPortFieldNumber = 4,
+  };
+  // optional string common_service_grpc_host = 1 [json_name = "commonServiceGrpcHost"];
+  bool has_common_service_grpc_host() const;
+  private:
+  bool _internal_has_common_service_grpc_host() const;
+  public:
+  void clear_common_service_grpc_host();
+  const std::string& common_service_grpc_host() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_common_service_grpc_host(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_common_service_grpc_host();
+  PROTOBUF_NODISCARD std::string* release_common_service_grpc_host();
+  void set_allocated_common_service_grpc_host(std::string* common_service_grpc_host);
+  private:
+  const std::string& _internal_common_service_grpc_host() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_common_service_grpc_host(const std::string& value);
+  std::string* _internal_mutable_common_service_grpc_host();
+  public:
+
+  // optional string common_service_grpc_port = 2 [json_name = "commonServiceGrpcPort"];
+  bool has_common_service_grpc_port() const;
+  private:
+  bool _internal_has_common_service_grpc_port() const;
+  public:
+  void clear_common_service_grpc_port();
+  const std::string& common_service_grpc_port() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_common_service_grpc_port(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_common_service_grpc_port();
+  PROTOBUF_NODISCARD std::string* release_common_service_grpc_port();
+  void set_allocated_common_service_grpc_port(std::string* common_service_grpc_port);
+  private:
+  const std::string& _internal_common_service_grpc_port() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_common_service_grpc_port(const std::string& value);
+  std::string* _internal_mutable_common_service_grpc_port();
+  public:
+
+  // optional string user_service_grpc_host = 3 [json_name = "userServiceGrpcHost"];
+  bool has_user_service_grpc_host() const;
+  private:
+  bool _internal_has_user_service_grpc_host() const;
+  public:
+  void clear_user_service_grpc_host();
+  const std::string& user_service_grpc_host() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_service_grpc_host(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_service_grpc_host();
+  PROTOBUF_NODISCARD std::string* release_user_service_grpc_host();
+  void set_allocated_user_service_grpc_host(std::string* user_service_grpc_host);
+  private:
+  const std::string& _internal_user_service_grpc_host() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_service_grpc_host(const std::string& value);
+  std::string* _internal_mutable_user_service_grpc_host();
+  public:
+
+  // optional string user_service_grpc_port = 4 [json_name = "userServiceGrpcPort"];
+  bool has_user_service_grpc_port() const;
+  private:
+  bool _internal_has_user_service_grpc_port() const;
+  public:
+  void clear_user_service_grpc_port();
+  const std::string& user_service_grpc_port() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_user_service_grpc_port(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_service_grpc_port();
+  PROTOBUF_NODISCARD std::string* release_user_service_grpc_port();
+  void set_allocated_user_service_grpc_port(std::string* user_service_grpc_port);
+  private:
+  const std::string& _internal_user_service_grpc_port() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_service_grpc_port(const std::string& value);
+  std::string* _internal_mutable_user_service_grpc_port();
+  public:
+
+  // @@protoc_insertion_point(class_scope:common.v1.ConfigServices)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr common_service_grpc_host_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr common_service_grpc_port_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_service_grpc_host_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_service_grpc_port_;
+  friend struct ::TableStruct_common_2fv1_2fconfig_2eproto;
+};
+// -------------------------------------------------------------------
+
 class ConfigSecurity final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:common.v1.ConfigSecurity) */ {
  public:
@@ -652,7 +872,7 @@ class ConfigSecurity final :
                &_ConfigSecurity_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   friend void swap(ConfigSecurity& a, ConfigSecurity& b) {
     a.Swap(&b);
@@ -1068,7 +1288,7 @@ class CacheConfig final :
                &_CacheConfig_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   friend void swap(CacheConfig& a, CacheConfig& b) {
     a.Swap(&b);
@@ -1314,7 +1534,7 @@ class ConfigMetrics final :
                &_ConfigMetrics_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(ConfigMetrics& a, ConfigMetrics& b) {
     a.Swap(&b);
@@ -1556,7 +1776,7 @@ class ConfigSSO final :
                &_ConfigSSO_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(ConfigSSO& a, ConfigSSO& b) {
     a.Swap(&b);
@@ -1887,7 +2107,7 @@ class ConfigSql final :
                &_ConfigSql_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(ConfigSql& a, ConfigSql& b) {
     a.Swap(&b);
@@ -2188,7 +2408,7 @@ class ConfigPassword final :
                &_ConfigPassword_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(ConfigPassword& a, ConfigPassword& b) {
     a.Swap(&b);
@@ -2414,7 +2634,7 @@ class ConfigFile final :
                &_ConfigFile_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(ConfigFile& a, ConfigFile& b) {
     a.Swap(&b);
@@ -2995,7 +3215,7 @@ class ConfigEmail final :
                &_ConfigEmail_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   friend void swap(ConfigEmail& a, ConfigEmail& b) {
     a.Swap(&b);
@@ -3541,7 +3761,7 @@ class ConfigRateLimit final :
                &_ConfigRateLimit_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   friend void swap(ConfigRateLimit& a, ConfigRateLimit& b) {
     a.Swap(&b);
@@ -3783,7 +4003,7 @@ class ConfigPrivacy final :
                &_ConfigPrivacy_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   friend void swap(ConfigPrivacy& a, ConfigPrivacy& b) {
     a.Swap(&b);
@@ -3949,7 +4169,7 @@ class ConfigSupport final :
                &_ConfigSupport_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   friend void swap(ConfigSupport& a, ConfigSupport& b) {
     a.Swap(&b);
@@ -4225,7 +4445,7 @@ class ConfigLocalization final :
                &_ConfigLocalization_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   friend void swap(ConfigLocalization& a, ConfigLocalization& b) {
     a.Swap(&b);
@@ -4421,7 +4641,7 @@ class ConfigLdap final :
                &_ConfigLdap_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   friend void swap(ConfigLdap& a, ConfigLdap& b) {
     a.Swap(&b);
@@ -5137,7 +5357,7 @@ class ConfigSaml final :
                &_ConfigSaml_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   friend void swap(ConfigSaml& a, ConfigSaml& b) {
     a.Swap(&b);
@@ -5893,7 +6113,7 @@ class ConfigNativeApp final :
                &_ConfigNativeApp_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   friend void swap(ConfigNativeApp& a, ConfigNativeApp& b) {
     a.Swap(&b);
@@ -6175,7 +6395,7 @@ class ConfigMeilisearch final :
                &_ConfigMeilisearch_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   friend void swap(ConfigMeilisearch& a, ConfigMeilisearch& b) {
     a.Swap(&b);
@@ -6476,7 +6696,7 @@ class ConfigBleve final :
                &_ConfigBleve_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   friend void swap(ConfigBleve& a, ConfigBleve& b) {
     a.Swap(&b);
@@ -6707,7 +6927,7 @@ class ConfigDataRetention final :
                &_ConfigDataRetention_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   friend void swap(ConfigDataRetention& a, ConfigDataRetention& b) {
     a.Swap(&b);
@@ -6998,7 +7218,7 @@ class ConfigImageProxy final :
                &_ConfigImageProxy_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   friend void swap(ConfigImageProxy& a, ConfigImageProxy& b) {
     a.Swap(&b);
@@ -7209,7 +7429,7 @@ class Config final :
                &_Config_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   friend void swap(Config& a, Config& b) {
     a.Swap(&b);
@@ -7284,25 +7504,26 @@ class Config final :
 
   enum : int {
     kMainFieldNumber = 1,
-    kSecurityFieldNumber = 2,
-    kCacheFieldNumber = 3,
-    kMetricsFieldNumber = 4,
-    kSsoFieldNumber = 5,
-    kSqlFieldNumber = 6,
-    kPasswordFieldNumber = 7,
-    kFileFieldNumber = 8,
-    kEmailFieldNumber = 9,
-    kRateLimitFieldNumber = 10,
-    kPrivacyFieldNumber = 11,
-    kSupportFieldNumber = 12,
-    kLocalizationFieldNumber = 13,
-    kLdapFieldNumber = 14,
-    kSamlFieldNumber = 15,
-    kNativeAppFieldNumber = 16,
-    kMeilisearchFieldNumber = 17,
-    kBleveFieldNumber = 18,
-    kDataRetentionFieldNumber = 19,
-    kImageProxyFieldNumber = 20,
+    kServicesFieldNumber = 2,
+    kSecurityFieldNumber = 3,
+    kCacheFieldNumber = 4,
+    kMetricsFieldNumber = 5,
+    kSsoFieldNumber = 6,
+    kSqlFieldNumber = 7,
+    kPasswordFieldNumber = 8,
+    kFileFieldNumber = 9,
+    kEmailFieldNumber = 10,
+    kRateLimitFieldNumber = 11,
+    kPrivacyFieldNumber = 12,
+    kSupportFieldNumber = 13,
+    kLocalizationFieldNumber = 14,
+    kLdapFieldNumber = 15,
+    kSamlFieldNumber = 16,
+    kNativeAppFieldNumber = 17,
+    kMeilisearchFieldNumber = 18,
+    kBleveFieldNumber = 19,
+    kDataRetentionFieldNumber = 20,
+    kImageProxyFieldNumber = 21,
   };
   // .common.v1.ConfigMain main = 1 [json_name = "main"];
   bool has_main() const;
@@ -7322,7 +7543,25 @@ class Config final :
       ::common::v1::ConfigMain* main);
   ::common::v1::ConfigMain* unsafe_arena_release_main();
 
-  // .common.v1.ConfigSecurity security = 2 [json_name = "security"];
+  // .common.v1.ConfigServices services = 2 [json_name = "services"];
+  bool has_services() const;
+  private:
+  bool _internal_has_services() const;
+  public:
+  void clear_services();
+  const ::common::v1::ConfigServices& services() const;
+  PROTOBUF_NODISCARD ::common::v1::ConfigServices* release_services();
+  ::common::v1::ConfigServices* mutable_services();
+  void set_allocated_services(::common::v1::ConfigServices* services);
+  private:
+  const ::common::v1::ConfigServices& _internal_services() const;
+  ::common::v1::ConfigServices* _internal_mutable_services();
+  public:
+  void unsafe_arena_set_allocated_services(
+      ::common::v1::ConfigServices* services);
+  ::common::v1::ConfigServices* unsafe_arena_release_services();
+
+  // .common.v1.ConfigSecurity security = 3 [json_name = "security"];
   bool has_security() const;
   private:
   bool _internal_has_security() const;
@@ -7340,7 +7579,7 @@ class Config final :
       ::common::v1::ConfigSecurity* security);
   ::common::v1::ConfigSecurity* unsafe_arena_release_security();
 
-  // .common.v1.CacheConfig cache = 3 [json_name = "cache"];
+  // .common.v1.CacheConfig cache = 4 [json_name = "cache"];
   bool has_cache() const;
   private:
   bool _internal_has_cache() const;
@@ -7358,7 +7597,7 @@ class Config final :
       ::common::v1::CacheConfig* cache);
   ::common::v1::CacheConfig* unsafe_arena_release_cache();
 
-  // .common.v1.ConfigMetrics metrics = 4 [json_name = "metrics"];
+  // .common.v1.ConfigMetrics metrics = 5 [json_name = "metrics"];
   bool has_metrics() const;
   private:
   bool _internal_has_metrics() const;
@@ -7376,7 +7615,7 @@ class Config final :
       ::common::v1::ConfigMetrics* metrics);
   ::common::v1::ConfigMetrics* unsafe_arena_release_metrics();
 
-  // .common.v1.ConfigSSO sso = 5 [json_name = "sso"];
+  // .common.v1.ConfigSSO sso = 6 [json_name = "sso"];
   bool has_sso() const;
   private:
   bool _internal_has_sso() const;
@@ -7394,7 +7633,7 @@ class Config final :
       ::common::v1::ConfigSSO* sso);
   ::common::v1::ConfigSSO* unsafe_arena_release_sso();
 
-  // .common.v1.ConfigSql sql = 6 [json_name = "sql"];
+  // .common.v1.ConfigSql sql = 7 [json_name = "sql"];
   bool has_sql() const;
   private:
   bool _internal_has_sql() const;
@@ -7412,7 +7651,7 @@ class Config final :
       ::common::v1::ConfigSql* sql);
   ::common::v1::ConfigSql* unsafe_arena_release_sql();
 
-  // .common.v1.ConfigPassword password = 7 [json_name = "password"];
+  // .common.v1.ConfigPassword password = 8 [json_name = "password"];
   bool has_password() const;
   private:
   bool _internal_has_password() const;
@@ -7430,7 +7669,7 @@ class Config final :
       ::common::v1::ConfigPassword* password);
   ::common::v1::ConfigPassword* unsafe_arena_release_password();
 
-  // .common.v1.ConfigFile file = 8 [json_name = "file"];
+  // .common.v1.ConfigFile file = 9 [json_name = "file"];
   bool has_file() const;
   private:
   bool _internal_has_file() const;
@@ -7448,7 +7687,7 @@ class Config final :
       ::common::v1::ConfigFile* file);
   ::common::v1::ConfigFile* unsafe_arena_release_file();
 
-  // .common.v1.ConfigEmail email = 9 [json_name = "email"];
+  // .common.v1.ConfigEmail email = 10 [json_name = "email"];
   bool has_email() const;
   private:
   bool _internal_has_email() const;
@@ -7466,7 +7705,7 @@ class Config final :
       ::common::v1::ConfigEmail* email);
   ::common::v1::ConfigEmail* unsafe_arena_release_email();
 
-  // .common.v1.ConfigRateLimit rate_limit = 10 [json_name = "rateLimit"];
+  // .common.v1.ConfigRateLimit rate_limit = 11 [json_name = "rateLimit"];
   bool has_rate_limit() const;
   private:
   bool _internal_has_rate_limit() const;
@@ -7484,7 +7723,7 @@ class Config final :
       ::common::v1::ConfigRateLimit* rate_limit);
   ::common::v1::ConfigRateLimit* unsafe_arena_release_rate_limit();
 
-  // .common.v1.ConfigPrivacy privacy = 11 [json_name = "privacy"];
+  // .common.v1.ConfigPrivacy privacy = 12 [json_name = "privacy"];
   bool has_privacy() const;
   private:
   bool _internal_has_privacy() const;
@@ -7502,7 +7741,7 @@ class Config final :
       ::common::v1::ConfigPrivacy* privacy);
   ::common::v1::ConfigPrivacy* unsafe_arena_release_privacy();
 
-  // .common.v1.ConfigSupport support = 12 [json_name = "support"];
+  // .common.v1.ConfigSupport support = 13 [json_name = "support"];
   bool has_support() const;
   private:
   bool _internal_has_support() const;
@@ -7520,7 +7759,7 @@ class Config final :
       ::common::v1::ConfigSupport* support);
   ::common::v1::ConfigSupport* unsafe_arena_release_support();
 
-  // .common.v1.ConfigLocalization localization = 13 [json_name = "localization"];
+  // .common.v1.ConfigLocalization localization = 14 [json_name = "localization"];
   bool has_localization() const;
   private:
   bool _internal_has_localization() const;
@@ -7538,7 +7777,7 @@ class Config final :
       ::common::v1::ConfigLocalization* localization);
   ::common::v1::ConfigLocalization* unsafe_arena_release_localization();
 
-  // .common.v1.ConfigLdap ldap = 14 [json_name = "ldap"];
+  // .common.v1.ConfigLdap ldap = 15 [json_name = "ldap"];
   bool has_ldap() const;
   private:
   bool _internal_has_ldap() const;
@@ -7556,7 +7795,7 @@ class Config final :
       ::common::v1::ConfigLdap* ldap);
   ::common::v1::ConfigLdap* unsafe_arena_release_ldap();
 
-  // .common.v1.ConfigSaml saml = 15 [json_name = "saml"];
+  // .common.v1.ConfigSaml saml = 16 [json_name = "saml"];
   bool has_saml() const;
   private:
   bool _internal_has_saml() const;
@@ -7574,7 +7813,7 @@ class Config final :
       ::common::v1::ConfigSaml* saml);
   ::common::v1::ConfigSaml* unsafe_arena_release_saml();
 
-  // .common.v1.ConfigNativeApp native_app = 16 [json_name = "nativeApp"];
+  // .common.v1.ConfigNativeApp native_app = 17 [json_name = "nativeApp"];
   bool has_native_app() const;
   private:
   bool _internal_has_native_app() const;
@@ -7592,7 +7831,7 @@ class Config final :
       ::common::v1::ConfigNativeApp* native_app);
   ::common::v1::ConfigNativeApp* unsafe_arena_release_native_app();
 
-  // .common.v1.ConfigMeilisearch meilisearch = 17 [json_name = "meilisearch"];
+  // .common.v1.ConfigMeilisearch meilisearch = 18 [json_name = "meilisearch"];
   bool has_meilisearch() const;
   private:
   bool _internal_has_meilisearch() const;
@@ -7610,7 +7849,7 @@ class Config final :
       ::common::v1::ConfigMeilisearch* meilisearch);
   ::common::v1::ConfigMeilisearch* unsafe_arena_release_meilisearch();
 
-  // .common.v1.ConfigBleve bleve = 18 [json_name = "bleve"];
+  // .common.v1.ConfigBleve bleve = 19 [json_name = "bleve"];
   bool has_bleve() const;
   private:
   bool _internal_has_bleve() const;
@@ -7628,7 +7867,7 @@ class Config final :
       ::common::v1::ConfigBleve* bleve);
   ::common::v1::ConfigBleve* unsafe_arena_release_bleve();
 
-  // .common.v1.ConfigDataRetention data_retention = 19 [json_name = "dataRetention"];
+  // .common.v1.ConfigDataRetention data_retention = 20 [json_name = "dataRetention"];
   bool has_data_retention() const;
   private:
   bool _internal_has_data_retention() const;
@@ -7646,7 +7885,7 @@ class Config final :
       ::common::v1::ConfigDataRetention* data_retention);
   ::common::v1::ConfigDataRetention* unsafe_arena_release_data_retention();
 
-  // .common.v1.ConfigImageProxy image_proxy = 20 [json_name = "imageProxy"];
+  // .common.v1.ConfigImageProxy image_proxy = 21 [json_name = "imageProxy"];
   bool has_image_proxy() const;
   private:
   bool _internal_has_image_proxy() const;
@@ -7672,6 +7911,7 @@ class Config final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   ::common::v1::ConfigMain* main_;
+  ::common::v1::ConfigServices* services_;
   ::common::v1::ConfigSecurity* security_;
   ::common::v1::CacheConfig* cache_;
   ::common::v1::ConfigMetrics* metrics_;
@@ -8332,6 +8572,286 @@ inline void ConfigMain::_internal_set_allow_synced_drafts(bool value) {
 inline void ConfigMain::set_allow_synced_drafts(bool value) {
   _internal_set_allow_synced_drafts(value);
   // @@protoc_insertion_point(field_set:common.v1.ConfigMain.allow_synced_drafts)
+}
+
+// -------------------------------------------------------------------
+
+// ConfigServices
+
+// optional string common_service_grpc_host = 1 [json_name = "commonServiceGrpcHost"];
+inline bool ConfigServices::_internal_has_common_service_grpc_host() const {
+  bool value = (_has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool ConfigServices::has_common_service_grpc_host() const {
+  return _internal_has_common_service_grpc_host();
+}
+inline void ConfigServices::clear_common_service_grpc_host() {
+  common_service_grpc_host_.ClearToEmpty();
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& ConfigServices::common_service_grpc_host() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.common_service_grpc_host)
+  return _internal_common_service_grpc_host();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ConfigServices::set_common_service_grpc_host(ArgT0&& arg0, ArgT... args) {
+ _has_bits_[0] |= 0x00000001u;
+ common_service_grpc_host_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.common_service_grpc_host)
+}
+inline std::string* ConfigServices::mutable_common_service_grpc_host() {
+  std::string* _s = _internal_mutable_common_service_grpc_host();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.common_service_grpc_host)
+  return _s;
+}
+inline const std::string& ConfigServices::_internal_common_service_grpc_host() const {
+  return common_service_grpc_host_.Get();
+}
+inline void ConfigServices::_internal_set_common_service_grpc_host(const std::string& value) {
+  _has_bits_[0] |= 0x00000001u;
+  common_service_grpc_host_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ConfigServices::_internal_mutable_common_service_grpc_host() {
+  _has_bits_[0] |= 0x00000001u;
+  return common_service_grpc_host_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ConfigServices::release_common_service_grpc_host() {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.common_service_grpc_host)
+  if (!_internal_has_common_service_grpc_host()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00000001u;
+  auto* p = common_service_grpc_host_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (common_service_grpc_host_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    common_service_grpc_host_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void ConfigServices::set_allocated_common_service_grpc_host(std::string* common_service_grpc_host) {
+  if (common_service_grpc_host != nullptr) {
+    _has_bits_[0] |= 0x00000001u;
+  } else {
+    _has_bits_[0] &= ~0x00000001u;
+  }
+  common_service_grpc_host_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), common_service_grpc_host,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (common_service_grpc_host_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    common_service_grpc_host_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.common_service_grpc_host)
+}
+
+// optional string common_service_grpc_port = 2 [json_name = "commonServiceGrpcPort"];
+inline bool ConfigServices::_internal_has_common_service_grpc_port() const {
+  bool value = (_has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool ConfigServices::has_common_service_grpc_port() const {
+  return _internal_has_common_service_grpc_port();
+}
+inline void ConfigServices::clear_common_service_grpc_port() {
+  common_service_grpc_port_.ClearToEmpty();
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline const std::string& ConfigServices::common_service_grpc_port() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.common_service_grpc_port)
+  return _internal_common_service_grpc_port();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ConfigServices::set_common_service_grpc_port(ArgT0&& arg0, ArgT... args) {
+ _has_bits_[0] |= 0x00000002u;
+ common_service_grpc_port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.common_service_grpc_port)
+}
+inline std::string* ConfigServices::mutable_common_service_grpc_port() {
+  std::string* _s = _internal_mutable_common_service_grpc_port();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.common_service_grpc_port)
+  return _s;
+}
+inline const std::string& ConfigServices::_internal_common_service_grpc_port() const {
+  return common_service_grpc_port_.Get();
+}
+inline void ConfigServices::_internal_set_common_service_grpc_port(const std::string& value) {
+  _has_bits_[0] |= 0x00000002u;
+  common_service_grpc_port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ConfigServices::_internal_mutable_common_service_grpc_port() {
+  _has_bits_[0] |= 0x00000002u;
+  return common_service_grpc_port_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ConfigServices::release_common_service_grpc_port() {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.common_service_grpc_port)
+  if (!_internal_has_common_service_grpc_port()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00000002u;
+  auto* p = common_service_grpc_port_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (common_service_grpc_port_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    common_service_grpc_port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void ConfigServices::set_allocated_common_service_grpc_port(std::string* common_service_grpc_port) {
+  if (common_service_grpc_port != nullptr) {
+    _has_bits_[0] |= 0x00000002u;
+  } else {
+    _has_bits_[0] &= ~0x00000002u;
+  }
+  common_service_grpc_port_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), common_service_grpc_port,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (common_service_grpc_port_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    common_service_grpc_port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.common_service_grpc_port)
+}
+
+// optional string user_service_grpc_host = 3 [json_name = "userServiceGrpcHost"];
+inline bool ConfigServices::_internal_has_user_service_grpc_host() const {
+  bool value = (_has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool ConfigServices::has_user_service_grpc_host() const {
+  return _internal_has_user_service_grpc_host();
+}
+inline void ConfigServices::clear_user_service_grpc_host() {
+  user_service_grpc_host_.ClearToEmpty();
+  _has_bits_[0] &= ~0x00000004u;
+}
+inline const std::string& ConfigServices::user_service_grpc_host() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.user_service_grpc_host)
+  return _internal_user_service_grpc_host();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ConfigServices::set_user_service_grpc_host(ArgT0&& arg0, ArgT... args) {
+ _has_bits_[0] |= 0x00000004u;
+ user_service_grpc_host_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.user_service_grpc_host)
+}
+inline std::string* ConfigServices::mutable_user_service_grpc_host() {
+  std::string* _s = _internal_mutable_user_service_grpc_host();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.user_service_grpc_host)
+  return _s;
+}
+inline const std::string& ConfigServices::_internal_user_service_grpc_host() const {
+  return user_service_grpc_host_.Get();
+}
+inline void ConfigServices::_internal_set_user_service_grpc_host(const std::string& value) {
+  _has_bits_[0] |= 0x00000004u;
+  user_service_grpc_host_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ConfigServices::_internal_mutable_user_service_grpc_host() {
+  _has_bits_[0] |= 0x00000004u;
+  return user_service_grpc_host_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ConfigServices::release_user_service_grpc_host() {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.user_service_grpc_host)
+  if (!_internal_has_user_service_grpc_host()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00000004u;
+  auto* p = user_service_grpc_host_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (user_service_grpc_host_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    user_service_grpc_host_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void ConfigServices::set_allocated_user_service_grpc_host(std::string* user_service_grpc_host) {
+  if (user_service_grpc_host != nullptr) {
+    _has_bits_[0] |= 0x00000004u;
+  } else {
+    _has_bits_[0] &= ~0x00000004u;
+  }
+  user_service_grpc_host_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_service_grpc_host,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (user_service_grpc_host_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    user_service_grpc_host_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.user_service_grpc_host)
+}
+
+// optional string user_service_grpc_port = 4 [json_name = "userServiceGrpcPort"];
+inline bool ConfigServices::_internal_has_user_service_grpc_port() const {
+  bool value = (_has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool ConfigServices::has_user_service_grpc_port() const {
+  return _internal_has_user_service_grpc_port();
+}
+inline void ConfigServices::clear_user_service_grpc_port() {
+  user_service_grpc_port_.ClearToEmpty();
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline const std::string& ConfigServices::user_service_grpc_port() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.user_service_grpc_port)
+  return _internal_user_service_grpc_port();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ConfigServices::set_user_service_grpc_port(ArgT0&& arg0, ArgT... args) {
+ _has_bits_[0] |= 0x00000008u;
+ user_service_grpc_port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.user_service_grpc_port)
+}
+inline std::string* ConfigServices::mutable_user_service_grpc_port() {
+  std::string* _s = _internal_mutable_user_service_grpc_port();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.user_service_grpc_port)
+  return _s;
+}
+inline const std::string& ConfigServices::_internal_user_service_grpc_port() const {
+  return user_service_grpc_port_.Get();
+}
+inline void ConfigServices::_internal_set_user_service_grpc_port(const std::string& value) {
+  _has_bits_[0] |= 0x00000008u;
+  user_service_grpc_port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ConfigServices::_internal_mutable_user_service_grpc_port() {
+  _has_bits_[0] |= 0x00000008u;
+  return user_service_grpc_port_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ConfigServices::release_user_service_grpc_port() {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.user_service_grpc_port)
+  if (!_internal_has_user_service_grpc_port()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00000008u;
+  auto* p = user_service_grpc_port_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (user_service_grpc_port_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    user_service_grpc_port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void ConfigServices::set_allocated_user_service_grpc_port(std::string* user_service_grpc_port) {
+  if (user_service_grpc_port != nullptr) {
+    _has_bits_[0] |= 0x00000008u;
+  } else {
+    _has_bits_[0] &= ~0x00000008u;
+  }
+  user_service_grpc_port_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_service_grpc_port,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (user_service_grpc_port_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    user_service_grpc_port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.user_service_grpc_port)
 }
 
 // -------------------------------------------------------------------
@@ -19541,7 +20061,97 @@ inline void Config::set_allocated_main(::common::v1::ConfigMain* main) {
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.main)
 }
 
-// .common.v1.ConfigSecurity security = 2 [json_name = "security"];
+// .common.v1.ConfigServices services = 2 [json_name = "services"];
+inline bool Config::_internal_has_services() const {
+  return this != internal_default_instance() && services_ != nullptr;
+}
+inline bool Config::has_services() const {
+  return _internal_has_services();
+}
+inline void Config::clear_services() {
+  if (GetArenaForAllocation() == nullptr && services_ != nullptr) {
+    delete services_;
+  }
+  services_ = nullptr;
+}
+inline const ::common::v1::ConfigServices& Config::_internal_services() const {
+  const ::common::v1::ConfigServices* p = services_;
+  return p != nullptr ? *p : reinterpret_cast<const ::common::v1::ConfigServices&>(
+      ::common::v1::_ConfigServices_default_instance_);
+}
+inline const ::common::v1::ConfigServices& Config::services() const {
+  // @@protoc_insertion_point(field_get:common.v1.Config.services)
+  return _internal_services();
+}
+inline void Config::unsafe_arena_set_allocated_services(
+    ::common::v1::ConfigServices* services) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(services_);
+  }
+  services_ = services;
+  if (services) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.Config.services)
+}
+inline ::common::v1::ConfigServices* Config::release_services() {
+  
+  ::common::v1::ConfigServices* temp = services_;
+  services_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::common::v1::ConfigServices* Config::unsafe_arena_release_services() {
+  // @@protoc_insertion_point(field_release:common.v1.Config.services)
+  
+  ::common::v1::ConfigServices* temp = services_;
+  services_ = nullptr;
+  return temp;
+}
+inline ::common::v1::ConfigServices* Config::_internal_mutable_services() {
+  
+  if (services_ == nullptr) {
+    auto* p = CreateMaybeMessage<::common::v1::ConfigServices>(GetArenaForAllocation());
+    services_ = p;
+  }
+  return services_;
+}
+inline ::common::v1::ConfigServices* Config::mutable_services() {
+  ::common::v1::ConfigServices* _msg = _internal_mutable_services();
+  // @@protoc_insertion_point(field_mutable:common.v1.Config.services)
+  return _msg;
+}
+inline void Config::set_allocated_services(::common::v1::ConfigServices* services) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete services_;
+  }
+  if (services) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::common::v1::ConfigServices>::GetOwningArena(services);
+    if (message_arena != submessage_arena) {
+      services = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, services, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  services_ = services;
+  // @@protoc_insertion_point(field_set_allocated:common.v1.Config.services)
+}
+
+// .common.v1.ConfigSecurity security = 3 [json_name = "security"];
 inline bool Config::_internal_has_security() const {
   return this != internal_default_instance() && security_ != nullptr;
 }
@@ -19631,7 +20241,7 @@ inline void Config::set_allocated_security(::common::v1::ConfigSecurity* securit
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.security)
 }
 
-// .common.v1.CacheConfig cache = 3 [json_name = "cache"];
+// .common.v1.CacheConfig cache = 4 [json_name = "cache"];
 inline bool Config::_internal_has_cache() const {
   return this != internal_default_instance() && cache_ != nullptr;
 }
@@ -19721,7 +20331,7 @@ inline void Config::set_allocated_cache(::common::v1::CacheConfig* cache) {
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.cache)
 }
 
-// .common.v1.ConfigMetrics metrics = 4 [json_name = "metrics"];
+// .common.v1.ConfigMetrics metrics = 5 [json_name = "metrics"];
 inline bool Config::_internal_has_metrics() const {
   return this != internal_default_instance() && metrics_ != nullptr;
 }
@@ -19811,7 +20421,7 @@ inline void Config::set_allocated_metrics(::common::v1::ConfigMetrics* metrics) 
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.metrics)
 }
 
-// .common.v1.ConfigSSO sso = 5 [json_name = "sso"];
+// .common.v1.ConfigSSO sso = 6 [json_name = "sso"];
 inline bool Config::_internal_has_sso() const {
   return this != internal_default_instance() && sso_ != nullptr;
 }
@@ -19901,7 +20511,7 @@ inline void Config::set_allocated_sso(::common::v1::ConfigSSO* sso) {
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.sso)
 }
 
-// .common.v1.ConfigSql sql = 6 [json_name = "sql"];
+// .common.v1.ConfigSql sql = 7 [json_name = "sql"];
 inline bool Config::_internal_has_sql() const {
   return this != internal_default_instance() && sql_ != nullptr;
 }
@@ -19991,7 +20601,7 @@ inline void Config::set_allocated_sql(::common::v1::ConfigSql* sql) {
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.sql)
 }
 
-// .common.v1.ConfigPassword password = 7 [json_name = "password"];
+// .common.v1.ConfigPassword password = 8 [json_name = "password"];
 inline bool Config::_internal_has_password() const {
   return this != internal_default_instance() && password_ != nullptr;
 }
@@ -20081,7 +20691,7 @@ inline void Config::set_allocated_password(::common::v1::ConfigPassword* passwor
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.password)
 }
 
-// .common.v1.ConfigFile file = 8 [json_name = "file"];
+// .common.v1.ConfigFile file = 9 [json_name = "file"];
 inline bool Config::_internal_has_file() const {
   return this != internal_default_instance() && file_ != nullptr;
 }
@@ -20171,7 +20781,7 @@ inline void Config::set_allocated_file(::common::v1::ConfigFile* file) {
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.file)
 }
 
-// .common.v1.ConfigEmail email = 9 [json_name = "email"];
+// .common.v1.ConfigEmail email = 10 [json_name = "email"];
 inline bool Config::_internal_has_email() const {
   return this != internal_default_instance() && email_ != nullptr;
 }
@@ -20261,7 +20871,7 @@ inline void Config::set_allocated_email(::common::v1::ConfigEmail* email) {
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.email)
 }
 
-// .common.v1.ConfigRateLimit rate_limit = 10 [json_name = "rateLimit"];
+// .common.v1.ConfigRateLimit rate_limit = 11 [json_name = "rateLimit"];
 inline bool Config::_internal_has_rate_limit() const {
   return this != internal_default_instance() && rate_limit_ != nullptr;
 }
@@ -20351,7 +20961,7 @@ inline void Config::set_allocated_rate_limit(::common::v1::ConfigRateLimit* rate
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.rate_limit)
 }
 
-// .common.v1.ConfigPrivacy privacy = 11 [json_name = "privacy"];
+// .common.v1.ConfigPrivacy privacy = 12 [json_name = "privacy"];
 inline bool Config::_internal_has_privacy() const {
   return this != internal_default_instance() && privacy_ != nullptr;
 }
@@ -20441,7 +21051,7 @@ inline void Config::set_allocated_privacy(::common::v1::ConfigPrivacy* privacy) 
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.privacy)
 }
 
-// .common.v1.ConfigSupport support = 12 [json_name = "support"];
+// .common.v1.ConfigSupport support = 13 [json_name = "support"];
 inline bool Config::_internal_has_support() const {
   return this != internal_default_instance() && support_ != nullptr;
 }
@@ -20531,7 +21141,7 @@ inline void Config::set_allocated_support(::common::v1::ConfigSupport* support) 
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.support)
 }
 
-// .common.v1.ConfigLocalization localization = 13 [json_name = "localization"];
+// .common.v1.ConfigLocalization localization = 14 [json_name = "localization"];
 inline bool Config::_internal_has_localization() const {
   return this != internal_default_instance() && localization_ != nullptr;
 }
@@ -20621,7 +21231,7 @@ inline void Config::set_allocated_localization(::common::v1::ConfigLocalization*
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.localization)
 }
 
-// .common.v1.ConfigLdap ldap = 14 [json_name = "ldap"];
+// .common.v1.ConfigLdap ldap = 15 [json_name = "ldap"];
 inline bool Config::_internal_has_ldap() const {
   return this != internal_default_instance() && ldap_ != nullptr;
 }
@@ -20711,7 +21321,7 @@ inline void Config::set_allocated_ldap(::common::v1::ConfigLdap* ldap) {
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.ldap)
 }
 
-// .common.v1.ConfigSaml saml = 15 [json_name = "saml"];
+// .common.v1.ConfigSaml saml = 16 [json_name = "saml"];
 inline bool Config::_internal_has_saml() const {
   return this != internal_default_instance() && saml_ != nullptr;
 }
@@ -20801,7 +21411,7 @@ inline void Config::set_allocated_saml(::common::v1::ConfigSaml* saml) {
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.saml)
 }
 
-// .common.v1.ConfigNativeApp native_app = 16 [json_name = "nativeApp"];
+// .common.v1.ConfigNativeApp native_app = 17 [json_name = "nativeApp"];
 inline bool Config::_internal_has_native_app() const {
   return this != internal_default_instance() && native_app_ != nullptr;
 }
@@ -20891,7 +21501,7 @@ inline void Config::set_allocated_native_app(::common::v1::ConfigNativeApp* nati
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.native_app)
 }
 
-// .common.v1.ConfigMeilisearch meilisearch = 17 [json_name = "meilisearch"];
+// .common.v1.ConfigMeilisearch meilisearch = 18 [json_name = "meilisearch"];
 inline bool Config::_internal_has_meilisearch() const {
   return this != internal_default_instance() && meilisearch_ != nullptr;
 }
@@ -20981,7 +21591,7 @@ inline void Config::set_allocated_meilisearch(::common::v1::ConfigMeilisearch* m
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.meilisearch)
 }
 
-// .common.v1.ConfigBleve bleve = 18 [json_name = "bleve"];
+// .common.v1.ConfigBleve bleve = 19 [json_name = "bleve"];
 inline bool Config::_internal_has_bleve() const {
   return this != internal_default_instance() && bleve_ != nullptr;
 }
@@ -21071,7 +21681,7 @@ inline void Config::set_allocated_bleve(::common::v1::ConfigBleve* bleve) {
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.bleve)
 }
 
-// .common.v1.ConfigDataRetention data_retention = 19 [json_name = "dataRetention"];
+// .common.v1.ConfigDataRetention data_retention = 20 [json_name = "dataRetention"];
 inline bool Config::_internal_has_data_retention() const {
   return this != internal_default_instance() && data_retention_ != nullptr;
 }
@@ -21161,7 +21771,7 @@ inline void Config::set_allocated_data_retention(::common::v1::ConfigDataRetenti
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.data_retention)
 }
 
-// .common.v1.ConfigImageProxy image_proxy = 20 [json_name = "imageProxy"];
+// .common.v1.ConfigImageProxy image_proxy = 21 [json_name = "imageProxy"];
 inline bool Config::_internal_has_image_proxy() const {
   return this != internal_default_instance() && image_proxy_ != nullptr;
 }
@@ -21254,6 +21864,8 @@ inline void Config::set_allocated_image_proxy(::common::v1::ConfigImageProxy* im
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

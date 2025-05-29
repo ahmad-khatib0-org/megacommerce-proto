@@ -247,6 +247,64 @@ export namespace ConfigMain {
   }
 }
 
+export class ConfigServices extends jspb.Message {
+  getCommonServiceGrpcHost(): string;
+  setCommonServiceGrpcHost(value: string): ConfigServices;
+  hasCommonServiceGrpcHost(): boolean;
+  clearCommonServiceGrpcHost(): ConfigServices;
+
+  getCommonServiceGrpcPort(): string;
+  setCommonServiceGrpcPort(value: string): ConfigServices;
+  hasCommonServiceGrpcPort(): boolean;
+  clearCommonServiceGrpcPort(): ConfigServices;
+
+  getUserServiceGrpcHost(): string;
+  setUserServiceGrpcHost(value: string): ConfigServices;
+  hasUserServiceGrpcHost(): boolean;
+  clearUserServiceGrpcHost(): ConfigServices;
+
+  getUserServiceGrpcPort(): string;
+  setUserServiceGrpcPort(value: string): ConfigServices;
+  hasUserServiceGrpcPort(): boolean;
+  clearUserServiceGrpcPort(): ConfigServices;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConfigServices.AsObject;
+  static toObject(includeInstance: boolean, msg: ConfigServices): ConfigServices.AsObject;
+  static serializeBinaryToWriter(message: ConfigServices, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConfigServices;
+  static deserializeBinaryFromReader(message: ConfigServices, reader: jspb.BinaryReader): ConfigServices;
+}
+
+export namespace ConfigServices {
+  export type AsObject = {
+    commonServiceGrpcHost?: string,
+    commonServiceGrpcPort?: string,
+    userServiceGrpcHost?: string,
+    userServiceGrpcPort?: string,
+  }
+
+  export enum CommonServiceGrpcHostCase { 
+    _COMMON_SERVICE_GRPC_HOST_NOT_SET = 0,
+    COMMON_SERVICE_GRPC_HOST = 1,
+  }
+
+  export enum CommonServiceGrpcPortCase { 
+    _COMMON_SERVICE_GRPC_PORT_NOT_SET = 0,
+    COMMON_SERVICE_GRPC_PORT = 2,
+  }
+
+  export enum UserServiceGrpcHostCase { 
+    _USER_SERVICE_GRPC_HOST_NOT_SET = 0,
+    USER_SERVICE_GRPC_HOST = 3,
+  }
+
+  export enum UserServiceGrpcPortCase { 
+    _USER_SERVICE_GRPC_PORT_NOT_SET = 0,
+    USER_SERVICE_GRPC_PORT = 4,
+  }
+}
+
 export class ConfigSecurity extends jspb.Message {
   getMaximumLoginAttempts(): number;
   setMaximumLoginAttempts(value: number): ConfigSecurity;
@@ -2988,6 +3046,11 @@ export class Config extends jspb.Message {
   hasMain(): boolean;
   clearMain(): Config;
 
+  getServices(): ConfigServices | undefined;
+  setServices(value?: ConfigServices): Config;
+  hasServices(): boolean;
+  clearServices(): Config;
+
   getSecurity(): ConfigSecurity | undefined;
   setSecurity(value?: ConfigSecurity): Config;
   hasSecurity(): boolean;
@@ -3094,6 +3157,7 @@ export class Config extends jspb.Message {
 export namespace Config {
   export type AsObject = {
     main?: ConfigMain.AsObject,
+    services?: ConfigServices.AsObject,
     security?: ConfigSecurity.AsObject,
     cache?: CacheConfig.AsObject,
     metrics?: ConfigMetrics.AsObject,

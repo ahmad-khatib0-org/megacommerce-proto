@@ -31,6 +31,13 @@ message ConfigMain {
   optional bool allow_synced_drafts = 21;
 }
 
+message ConfigServices {
+  optional string common_service_grpc_host = 1;
+  optional string common_service_grpc_port = 2;
+  optional string user_service_grpc_host = 3;
+  optional string user_service_grpc_port = 4;
+}
+
 message ConfigSecurity {
   optional int32 maximum_login_attempts = 1;
   optional bool enable_insecure_outgoing_connections = 2;
@@ -343,23 +350,24 @@ message ConfigImageProxy {
 
 message Config {
   ConfigMain main = 1;
-  ConfigSecurity security = 2;
-  CacheConfig cache = 3;
-  ConfigMetrics metrics = 4;
-  ConfigSSO sso = 5;
-  ConfigSql sql = 6;
-  ConfigPassword password = 7;
-  ConfigFile file = 8;
-  ConfigEmail email = 9;
-  ConfigRateLimit rate_limit = 10;
-  ConfigPrivacy privacy = 11;
-  ConfigSupport support = 12;
-  ConfigLocalization localization = 13;
-  ConfigLdap ldap = 14;
-  ConfigSaml saml = 15;
-  ConfigNativeApp native_app = 16;
-  ConfigMeilisearch meilisearch = 17;
-  ConfigBleve bleve = 18;
-  ConfigDataRetention data_retention = 19;
-  ConfigImageProxy image_proxy = 20;
+  ConfigServices services = 2;
+  ConfigSecurity security = 3;
+  CacheConfig cache = 4;
+  ConfigMetrics metrics = 5;
+  ConfigSSO sso = 6;
+  ConfigSql sql = 7;
+  ConfigPassword password = 8;
+  ConfigFile file = 9;
+  ConfigEmail email = 10;
+  ConfigRateLimit rate_limit = 11;
+  ConfigPrivacy privacy = 12;
+  ConfigSupport support = 13;
+  ConfigLocalization localization = 14;
+  ConfigLdap ldap = 15;
+  ConfigSaml saml = 16;
+  ConfigNativeApp native_app = 17;
+  ConfigMeilisearch meilisearch = 18;
+  ConfigBleve bleve = 19;
+  ConfigDataRetention data_retention = 20;
+  ConfigImageProxy image_proxy = 21;
 }

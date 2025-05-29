@@ -145,6 +145,46 @@ export namespace ConfigMain {
   }
 }
 
+export class ConfigServices extends jspb.Message {
+  hasCommonServiceGrpcHost(): boolean;
+  clearCommonServiceGrpcHost(): void;
+  getCommonServiceGrpcHost(): string;
+  setCommonServiceGrpcHost(value: string): void;
+
+  hasCommonServiceGrpcPort(): boolean;
+  clearCommonServiceGrpcPort(): void;
+  getCommonServiceGrpcPort(): string;
+  setCommonServiceGrpcPort(value: string): void;
+
+  hasUserServiceGrpcHost(): boolean;
+  clearUserServiceGrpcHost(): void;
+  getUserServiceGrpcHost(): string;
+  setUserServiceGrpcHost(value: string): void;
+
+  hasUserServiceGrpcPort(): boolean;
+  clearUserServiceGrpcPort(): void;
+  getUserServiceGrpcPort(): string;
+  setUserServiceGrpcPort(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConfigServices.AsObject;
+  static toObject(includeInstance: boolean, msg: ConfigServices): ConfigServices.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConfigServices, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConfigServices;
+  static deserializeBinaryFromReader(message: ConfigServices, reader: jspb.BinaryReader): ConfigServices;
+}
+
+export namespace ConfigServices {
+  export type AsObject = {
+    commonServiceGrpcHost: string,
+    commonServiceGrpcPort: string,
+    userServiceGrpcHost: string,
+    userServiceGrpcPort: string,
+  }
+}
+
 export class ConfigSecurity extends jspb.Message {
   hasMaximumLoginAttempts(): boolean;
   clearMaximumLoginAttempts(): void;
@@ -1809,6 +1849,11 @@ export class Config extends jspb.Message {
   getMain(): ConfigMain | undefined;
   setMain(value?: ConfigMain): void;
 
+  hasServices(): boolean;
+  clearServices(): void;
+  getServices(): ConfigServices | undefined;
+  setServices(value?: ConfigServices): void;
+
   hasSecurity(): boolean;
   clearSecurity(): void;
   getSecurity(): ConfigSecurity | undefined;
@@ -1917,6 +1962,7 @@ export class Config extends jspb.Message {
 export namespace Config {
   export type AsObject = {
     main?: ConfigMain.AsObject,
+    services?: ConfigServices.AsObject,
     security?: ConfigSecurity.AsObject,
     cache?: CacheConfig.AsObject,
     metrics?: ConfigMetrics.AsObject,
