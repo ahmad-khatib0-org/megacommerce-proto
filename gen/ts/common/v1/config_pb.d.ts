@@ -153,8 +153,8 @@ export class ConfigServices extends jspb.Message {
 
   hasCommonServiceGrpcPort(): boolean;
   clearCommonServiceGrpcPort(): void;
-  getCommonServiceGrpcPort(): string;
-  setCommonServiceGrpcPort(value: string): void;
+  getCommonServiceGrpcPort(): number;
+  setCommonServiceGrpcPort(value: number): void;
 
   hasUserServiceGrpcHost(): boolean;
   clearUserServiceGrpcHost(): void;
@@ -163,8 +163,8 @@ export class ConfigServices extends jspb.Message {
 
   hasUserServiceGrpcPort(): boolean;
   clearUserServiceGrpcPort(): void;
-  getUserServiceGrpcPort(): string;
-  setUserServiceGrpcPort(value: string): void;
+  getUserServiceGrpcPort(): number;
+  setUserServiceGrpcPort(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfigServices.AsObject;
@@ -179,9 +179,9 @@ export class ConfigServices extends jspb.Message {
 export namespace ConfigServices {
   export type AsObject = {
     commonServiceGrpcHost: string,
-    commonServiceGrpcPort: string,
+    commonServiceGrpcPort: number,
     userServiceGrpcHost: string,
-    userServiceGrpcPort: string,
+    userServiceGrpcPort: number,
   }
 }
 

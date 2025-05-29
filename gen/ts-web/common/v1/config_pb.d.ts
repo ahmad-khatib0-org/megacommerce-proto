@@ -253,8 +253,8 @@ export class ConfigServices extends jspb.Message {
   hasCommonServiceGrpcHost(): boolean;
   clearCommonServiceGrpcHost(): ConfigServices;
 
-  getCommonServiceGrpcPort(): string;
-  setCommonServiceGrpcPort(value: string): ConfigServices;
+  getCommonServiceGrpcPort(): number;
+  setCommonServiceGrpcPort(value: number): ConfigServices;
   hasCommonServiceGrpcPort(): boolean;
   clearCommonServiceGrpcPort(): ConfigServices;
 
@@ -263,8 +263,8 @@ export class ConfigServices extends jspb.Message {
   hasUserServiceGrpcHost(): boolean;
   clearUserServiceGrpcHost(): ConfigServices;
 
-  getUserServiceGrpcPort(): string;
-  setUserServiceGrpcPort(value: string): ConfigServices;
+  getUserServiceGrpcPort(): number;
+  setUserServiceGrpcPort(value: number): ConfigServices;
   hasUserServiceGrpcPort(): boolean;
   clearUserServiceGrpcPort(): ConfigServices;
 
@@ -279,9 +279,9 @@ export class ConfigServices extends jspb.Message {
 export namespace ConfigServices {
   export type AsObject = {
     commonServiceGrpcHost?: string,
-    commonServiceGrpcPort?: string,
+    commonServiceGrpcPort?: number,
     userServiceGrpcHost?: string,
-    userServiceGrpcPort?: string,
+    userServiceGrpcPort?: number,
   }
 
   export enum CommonServiceGrpcHostCase { 

@@ -228,9 +228,9 @@ func (x *ConfigMain) GetAllowSyncedDrafts() bool {
 type ConfigServices struct {
 	state                 protoimpl.MessageState `protogen:"open.v1"`
 	CommonServiceGrpcHost *string                `protobuf:"bytes,1,opt,name=common_service_grpc_host,json=commonServiceGrpcHost,proto3,oneof" json:"common_service_grpc_host,omitempty"`
-	CommonServiceGrpcPort *string                `protobuf:"bytes,2,opt,name=common_service_grpc_port,json=commonServiceGrpcPort,proto3,oneof" json:"common_service_grpc_port,omitempty"`
+	CommonServiceGrpcPort *int32                 `protobuf:"varint,2,opt,name=common_service_grpc_port,json=commonServiceGrpcPort,proto3,oneof" json:"common_service_grpc_port,omitempty"`
 	UserServiceGrpcHost   *string                `protobuf:"bytes,3,opt,name=user_service_grpc_host,json=userServiceGrpcHost,proto3,oneof" json:"user_service_grpc_host,omitempty"`
-	UserServiceGrpcPort   *string                `protobuf:"bytes,4,opt,name=user_service_grpc_port,json=userServiceGrpcPort,proto3,oneof" json:"user_service_grpc_port,omitempty"`
+	UserServiceGrpcPort   *int32                 `protobuf:"varint,4,opt,name=user_service_grpc_port,json=userServiceGrpcPort,proto3,oneof" json:"user_service_grpc_port,omitempty"`
 	unknownFields         protoimpl.UnknownFields
 	sizeCache             protoimpl.SizeCache
 }
@@ -272,11 +272,11 @@ func (x *ConfigServices) GetCommonServiceGrpcHost() string {
 	return ""
 }
 
-func (x *ConfigServices) GetCommonServiceGrpcPort() string {
+func (x *ConfigServices) GetCommonServiceGrpcPort() int32 {
 	if x != nil && x.CommonServiceGrpcPort != nil {
 		return *x.CommonServiceGrpcPort
 	}
-	return ""
+	return 0
 }
 
 func (x *ConfigServices) GetUserServiceGrpcHost() string {
@@ -286,11 +286,11 @@ func (x *ConfigServices) GetUserServiceGrpcHost() string {
 	return ""
 }
 
-func (x *ConfigServices) GetUserServiceGrpcPort() string {
+func (x *ConfigServices) GetUserServiceGrpcPort() int32 {
 	if x != nil && x.UserServiceGrpcPort != nil {
 		return *x.UserServiceGrpcPort
 	}
-	return ""
+	return 0
 }
 
 type ConfigSecurity struct {
@@ -3054,9 +3054,9 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x14_allow_synced_drafts\"\xf0\x02\n" +
 	"\x0eConfigServices\x12<\n" +
 	"\x18common_service_grpc_host\x18\x01 \x01(\tH\x00R\x15commonServiceGrpcHost\x88\x01\x01\x12<\n" +
-	"\x18common_service_grpc_port\x18\x02 \x01(\tH\x01R\x15commonServiceGrpcPort\x88\x01\x01\x128\n" +
+	"\x18common_service_grpc_port\x18\x02 \x01(\x05H\x01R\x15commonServiceGrpcPort\x88\x01\x01\x128\n" +
 	"\x16user_service_grpc_host\x18\x03 \x01(\tH\x02R\x13userServiceGrpcHost\x88\x01\x01\x128\n" +
-	"\x16user_service_grpc_port\x18\x04 \x01(\tH\x03R\x13userServiceGrpcPort\x88\x01\x01B\x1b\n" +
+	"\x16user_service_grpc_port\x18\x04 \x01(\x05H\x03R\x13userServiceGrpcPort\x88\x01\x01B\x1b\n" +
 	"\x19_common_service_grpc_hostB\x1b\n" +
 	"\x19_common_service_grpc_portB\x19\n" +
 	"\x17_user_service_grpc_hostB\x19\n" +

@@ -731,8 +731,8 @@ class ConfigServices final :
 
   enum : int {
     kCommonServiceGrpcHostFieldNumber = 1,
-    kCommonServiceGrpcPortFieldNumber = 2,
     kUserServiceGrpcHostFieldNumber = 3,
+    kCommonServiceGrpcPortFieldNumber = 2,
     kUserServiceGrpcPortFieldNumber = 4,
   };
   // optional string common_service_grpc_host = 1 [json_name = "commonServiceGrpcHost"];
@@ -753,24 +753,6 @@ class ConfigServices final :
   std::string* _internal_mutable_common_service_grpc_host();
   public:
 
-  // optional string common_service_grpc_port = 2 [json_name = "commonServiceGrpcPort"];
-  bool has_common_service_grpc_port() const;
-  private:
-  bool _internal_has_common_service_grpc_port() const;
-  public:
-  void clear_common_service_grpc_port();
-  const std::string& common_service_grpc_port() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_common_service_grpc_port(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_common_service_grpc_port();
-  PROTOBUF_NODISCARD std::string* release_common_service_grpc_port();
-  void set_allocated_common_service_grpc_port(std::string* common_service_grpc_port);
-  private:
-  const std::string& _internal_common_service_grpc_port() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_common_service_grpc_port(const std::string& value);
-  std::string* _internal_mutable_common_service_grpc_port();
-  public:
-
   // optional string user_service_grpc_host = 3 [json_name = "userServiceGrpcHost"];
   bool has_user_service_grpc_host() const;
   private:
@@ -789,22 +771,30 @@ class ConfigServices final :
   std::string* _internal_mutable_user_service_grpc_host();
   public:
 
-  // optional string user_service_grpc_port = 4 [json_name = "userServiceGrpcPort"];
+  // optional int32 common_service_grpc_port = 2 [json_name = "commonServiceGrpcPort"];
+  bool has_common_service_grpc_port() const;
+  private:
+  bool _internal_has_common_service_grpc_port() const;
+  public:
+  void clear_common_service_grpc_port();
+  int32_t common_service_grpc_port() const;
+  void set_common_service_grpc_port(int32_t value);
+  private:
+  int32_t _internal_common_service_grpc_port() const;
+  void _internal_set_common_service_grpc_port(int32_t value);
+  public:
+
+  // optional int32 user_service_grpc_port = 4 [json_name = "userServiceGrpcPort"];
   bool has_user_service_grpc_port() const;
   private:
   bool _internal_has_user_service_grpc_port() const;
   public:
   void clear_user_service_grpc_port();
-  const std::string& user_service_grpc_port() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_user_service_grpc_port(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_user_service_grpc_port();
-  PROTOBUF_NODISCARD std::string* release_user_service_grpc_port();
-  void set_allocated_user_service_grpc_port(std::string* user_service_grpc_port);
+  int32_t user_service_grpc_port() const;
+  void set_user_service_grpc_port(int32_t value);
   private:
-  const std::string& _internal_user_service_grpc_port() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_service_grpc_port(const std::string& value);
-  std::string* _internal_mutable_user_service_grpc_port();
+  int32_t _internal_user_service_grpc_port() const;
+  void _internal_set_user_service_grpc_port(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:common.v1.ConfigServices)
@@ -817,9 +807,9 @@ class ConfigServices final :
   ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr common_service_grpc_host_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr common_service_grpc_port_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_service_grpc_host_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_service_grpc_port_;
+  int32_t common_service_grpc_port_;
+  int32_t user_service_grpc_port_;
   friend struct ::TableStruct_common_2fv1_2fconfig_2eproto;
 };
 // -------------------------------------------------------------------
@@ -8647,78 +8637,37 @@ inline void ConfigServices::set_allocated_common_service_grpc_host(std::string* 
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.common_service_grpc_host)
 }
 
-// optional string common_service_grpc_port = 2 [json_name = "commonServiceGrpcPort"];
+// optional int32 common_service_grpc_port = 2 [json_name = "commonServiceGrpcPort"];
 inline bool ConfigServices::_internal_has_common_service_grpc_port() const {
-  bool value = (_has_bits_[0] & 0x00000002u) != 0;
+  bool value = (_has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
 inline bool ConfigServices::has_common_service_grpc_port() const {
   return _internal_has_common_service_grpc_port();
 }
 inline void ConfigServices::clear_common_service_grpc_port() {
-  common_service_grpc_port_.ClearToEmpty();
-  _has_bits_[0] &= ~0x00000002u;
+  common_service_grpc_port_ = 0;
+  _has_bits_[0] &= ~0x00000004u;
 }
-inline const std::string& ConfigServices::common_service_grpc_port() const {
+inline int32_t ConfigServices::_internal_common_service_grpc_port() const {
+  return common_service_grpc_port_;
+}
+inline int32_t ConfigServices::common_service_grpc_port() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigServices.common_service_grpc_port)
   return _internal_common_service_grpc_port();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void ConfigServices::set_common_service_grpc_port(ArgT0&& arg0, ArgT... args) {
- _has_bits_[0] |= 0x00000002u;
- common_service_grpc_port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void ConfigServices::_internal_set_common_service_grpc_port(int32_t value) {
+  _has_bits_[0] |= 0x00000004u;
+  common_service_grpc_port_ = value;
+}
+inline void ConfigServices::set_common_service_grpc_port(int32_t value) {
+  _internal_set_common_service_grpc_port(value);
   // @@protoc_insertion_point(field_set:common.v1.ConfigServices.common_service_grpc_port)
-}
-inline std::string* ConfigServices::mutable_common_service_grpc_port() {
-  std::string* _s = _internal_mutable_common_service_grpc_port();
-  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.common_service_grpc_port)
-  return _s;
-}
-inline const std::string& ConfigServices::_internal_common_service_grpc_port() const {
-  return common_service_grpc_port_.Get();
-}
-inline void ConfigServices::_internal_set_common_service_grpc_port(const std::string& value) {
-  _has_bits_[0] |= 0x00000002u;
-  common_service_grpc_port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* ConfigServices::_internal_mutable_common_service_grpc_port() {
-  _has_bits_[0] |= 0x00000002u;
-  return common_service_grpc_port_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* ConfigServices::release_common_service_grpc_port() {
-  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.common_service_grpc_port)
-  if (!_internal_has_common_service_grpc_port()) {
-    return nullptr;
-  }
-  _has_bits_[0] &= ~0x00000002u;
-  auto* p = common_service_grpc_port_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (common_service_grpc_port_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    common_service_grpc_port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return p;
-}
-inline void ConfigServices::set_allocated_common_service_grpc_port(std::string* common_service_grpc_port) {
-  if (common_service_grpc_port != nullptr) {
-    _has_bits_[0] |= 0x00000002u;
-  } else {
-    _has_bits_[0] &= ~0x00000002u;
-  }
-  common_service_grpc_port_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), common_service_grpc_port,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (common_service_grpc_port_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    common_service_grpc_port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.common_service_grpc_port)
 }
 
 // optional string user_service_grpc_host = 3 [json_name = "userServiceGrpcHost"];
 inline bool ConfigServices::_internal_has_user_service_grpc_host() const {
-  bool value = (_has_bits_[0] & 0x00000004u) != 0;
+  bool value = (_has_bits_[0] & 0x00000002u) != 0;
   return value;
 }
 inline bool ConfigServices::has_user_service_grpc_host() const {
@@ -8726,7 +8675,7 @@ inline bool ConfigServices::has_user_service_grpc_host() const {
 }
 inline void ConfigServices::clear_user_service_grpc_host() {
   user_service_grpc_host_.ClearToEmpty();
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000002u;
 }
 inline const std::string& ConfigServices::user_service_grpc_host() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigServices.user_service_grpc_host)
@@ -8735,7 +8684,7 @@ inline const std::string& ConfigServices::user_service_grpc_host() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void ConfigServices::set_user_service_grpc_host(ArgT0&& arg0, ArgT... args) {
- _has_bits_[0] |= 0x00000004u;
+ _has_bits_[0] |= 0x00000002u;
  user_service_grpc_host_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:common.v1.ConfigServices.user_service_grpc_host)
 }
@@ -8748,11 +8697,11 @@ inline const std::string& ConfigServices::_internal_user_service_grpc_host() con
   return user_service_grpc_host_.Get();
 }
 inline void ConfigServices::_internal_set_user_service_grpc_host(const std::string& value) {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000002u;
   user_service_grpc_host_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
 inline std::string* ConfigServices::_internal_mutable_user_service_grpc_host() {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000002u;
   return user_service_grpc_host_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
 inline std::string* ConfigServices::release_user_service_grpc_host() {
@@ -8760,7 +8709,7 @@ inline std::string* ConfigServices::release_user_service_grpc_host() {
   if (!_internal_has_user_service_grpc_host()) {
     return nullptr;
   }
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000002u;
   auto* p = user_service_grpc_host_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (user_service_grpc_host_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
@@ -8771,9 +8720,9 @@ inline std::string* ConfigServices::release_user_service_grpc_host() {
 }
 inline void ConfigServices::set_allocated_user_service_grpc_host(std::string* user_service_grpc_host) {
   if (user_service_grpc_host != nullptr) {
-    _has_bits_[0] |= 0x00000004u;
+    _has_bits_[0] |= 0x00000002u;
   } else {
-    _has_bits_[0] &= ~0x00000004u;
+    _has_bits_[0] &= ~0x00000002u;
   }
   user_service_grpc_host_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_service_grpc_host,
       GetArenaForAllocation());
@@ -8785,7 +8734,7 @@ inline void ConfigServices::set_allocated_user_service_grpc_host(std::string* us
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.user_service_grpc_host)
 }
 
-// optional string user_service_grpc_port = 4 [json_name = "userServiceGrpcPort"];
+// optional int32 user_service_grpc_port = 4 [json_name = "userServiceGrpcPort"];
 inline bool ConfigServices::_internal_has_user_service_grpc_port() const {
   bool value = (_has_bits_[0] & 0x00000008u) != 0;
   return value;
@@ -8794,64 +8743,23 @@ inline bool ConfigServices::has_user_service_grpc_port() const {
   return _internal_has_user_service_grpc_port();
 }
 inline void ConfigServices::clear_user_service_grpc_port() {
-  user_service_grpc_port_.ClearToEmpty();
+  user_service_grpc_port_ = 0;
   _has_bits_[0] &= ~0x00000008u;
 }
-inline const std::string& ConfigServices::user_service_grpc_port() const {
+inline int32_t ConfigServices::_internal_user_service_grpc_port() const {
+  return user_service_grpc_port_;
+}
+inline int32_t ConfigServices::user_service_grpc_port() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigServices.user_service_grpc_port)
   return _internal_user_service_grpc_port();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void ConfigServices::set_user_service_grpc_port(ArgT0&& arg0, ArgT... args) {
- _has_bits_[0] |= 0x00000008u;
- user_service_grpc_port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void ConfigServices::_internal_set_user_service_grpc_port(int32_t value) {
+  _has_bits_[0] |= 0x00000008u;
+  user_service_grpc_port_ = value;
+}
+inline void ConfigServices::set_user_service_grpc_port(int32_t value) {
+  _internal_set_user_service_grpc_port(value);
   // @@protoc_insertion_point(field_set:common.v1.ConfigServices.user_service_grpc_port)
-}
-inline std::string* ConfigServices::mutable_user_service_grpc_port() {
-  std::string* _s = _internal_mutable_user_service_grpc_port();
-  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.user_service_grpc_port)
-  return _s;
-}
-inline const std::string& ConfigServices::_internal_user_service_grpc_port() const {
-  return user_service_grpc_port_.Get();
-}
-inline void ConfigServices::_internal_set_user_service_grpc_port(const std::string& value) {
-  _has_bits_[0] |= 0x00000008u;
-  user_service_grpc_port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* ConfigServices::_internal_mutable_user_service_grpc_port() {
-  _has_bits_[0] |= 0x00000008u;
-  return user_service_grpc_port_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* ConfigServices::release_user_service_grpc_port() {
-  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.user_service_grpc_port)
-  if (!_internal_has_user_service_grpc_port()) {
-    return nullptr;
-  }
-  _has_bits_[0] &= ~0x00000008u;
-  auto* p = user_service_grpc_port_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (user_service_grpc_port_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    user_service_grpc_port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return p;
-}
-inline void ConfigServices::set_allocated_user_service_grpc_port(std::string* user_service_grpc_port) {
-  if (user_service_grpc_port != nullptr) {
-    _has_bits_[0] |= 0x00000008u;
-  } else {
-    _has_bits_[0] &= ~0x00000008u;
-  }
-  user_service_grpc_port_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_service_grpc_port,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (user_service_grpc_port_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    user_service_grpc_port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.user_service_grpc_port)
 }
 
 // -------------------------------------------------------------------

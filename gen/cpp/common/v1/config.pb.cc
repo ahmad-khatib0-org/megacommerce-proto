@@ -53,9 +53,9 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ConfigMainDefaultTypeInternal _
 constexpr ConfigServices::ConfigServices(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : common_service_grpc_host_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , common_service_grpc_port_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , user_service_grpc_host_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , user_service_grpc_port_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+  , common_service_grpc_port_(0)
+  , user_service_grpc_port_(0){}
 struct ConfigServicesDefaultTypeInternal {
   constexpr ConfigServicesDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -598,8 +598,8 @@ const uint32_t TableStruct_common_2fv1_2fconfig_2eproto::offsets[] PROTOBUF_SECT
   PROTOBUF_FIELD_OFFSET(::common::v1::ConfigServices, user_service_grpc_host_),
   PROTOBUF_FIELD_OFFSET(::common::v1::ConfigServices, user_service_grpc_port_),
   0,
-  1,
   2,
+  1,
   3,
   PROTOBUF_FIELD_OFFSET(::common::v1::ConfigSecurity, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::common::v1::ConfigSecurity, _internal_metadata_),
@@ -1298,10 +1298,10 @@ const char descriptor_table_protodef_common_2fv1_2fconfig_2eproto[] PROTOBUF_SEC
   "ondsB\026\n\024_allow_synced_drafts\"\360\002\n\016ConfigS"
   "ervices\022<\n\030common_service_grpc_host\030\001 \001("
   "\tH\000R\025commonServiceGrpcHost\210\001\001\022<\n\030common_"
-  "service_grpc_port\030\002 \001(\tH\001R\025commonService"
+  "service_grpc_port\030\002 \001(\005H\001R\025commonService"
   "GrpcPort\210\001\001\0228\n\026user_service_grpc_host\030\003 "
   "\001(\tH\002R\023userServiceGrpcHost\210\001\001\0228\n\026user_se"
-  "rvice_grpc_port\030\004 \001(\tH\003R\023userServiceGrpc"
+  "rvice_grpc_port\030\004 \001(\005H\003R\023userServiceGrpc"
   "Port\210\001\001B\033\n\031_common_service_grpc_hostB\033\n\031"
   "_common_service_grpc_portB\031\n\027_user_servi"
   "ce_grpc_hostB\031\n\027_user_service_grpc_port\""
@@ -2575,10 +2575,10 @@ class ConfigServices::_Internal {
     (*has_bits)[0] |= 1u;
   }
   static void set_has_common_service_grpc_port(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
+    (*has_bits)[0] |= 4u;
   }
   static void set_has_user_service_grpc_host(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
+    (*has_bits)[0] |= 2u;
   }
   static void set_has_user_service_grpc_port(HasBits* has_bits) {
     (*has_bits)[0] |= 8u;
@@ -2606,14 +2606,6 @@ ConfigServices::ConfigServices(const ConfigServices& from)
     common_service_grpc_host_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_common_service_grpc_host(), 
       GetArenaForAllocation());
   }
-  common_service_grpc_port_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    common_service_grpc_port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_common_service_grpc_port()) {
-    common_service_grpc_port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_common_service_grpc_port(), 
-      GetArenaForAllocation());
-  }
   user_service_grpc_host_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     user_service_grpc_host_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
@@ -2622,14 +2614,9 @@ ConfigServices::ConfigServices(const ConfigServices& from)
     user_service_grpc_host_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_service_grpc_host(), 
       GetArenaForAllocation());
   }
-  user_service_grpc_port_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    user_service_grpc_port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_user_service_grpc_port()) {
-    user_service_grpc_port_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_user_service_grpc_port(), 
-      GetArenaForAllocation());
-  }
+  ::memcpy(&common_service_grpc_port_, &from.common_service_grpc_port_,
+    static_cast<size_t>(reinterpret_cast<char*>(&user_service_grpc_port_) -
+    reinterpret_cast<char*>(&common_service_grpc_port_)) + sizeof(user_service_grpc_port_));
   // @@protoc_insertion_point(copy_constructor:common.v1.ConfigServices)
 }
 
@@ -2638,18 +2625,14 @@ common_service_grpc_host_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::G
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   common_service_grpc_host_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-common_service_grpc_port_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  common_service_grpc_port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 user_service_grpc_host_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   user_service_grpc_host_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-user_service_grpc_port_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  user_service_grpc_port_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
+    reinterpret_cast<char*>(&common_service_grpc_port_) - reinterpret_cast<char*>(this)),
+    0, static_cast<size_t>(reinterpret_cast<char*>(&user_service_grpc_port_) -
+    reinterpret_cast<char*>(&common_service_grpc_port_)) + sizeof(user_service_grpc_port_));
 }
 
 ConfigServices::~ConfigServices() {
@@ -2662,9 +2645,7 @@ ConfigServices::~ConfigServices() {
 inline void ConfigServices::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   common_service_grpc_host_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  common_service_grpc_port_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   user_service_grpc_host_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  user_service_grpc_port_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void ConfigServices::ArenaDtor(void* object) {
@@ -2684,19 +2665,18 @@ void ConfigServices::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _has_bits_[0];
-  if (cached_has_bits & 0x0000000fu) {
+  if (cached_has_bits & 0x00000003u) {
     if (cached_has_bits & 0x00000001u) {
       common_service_grpc_host_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      common_service_grpc_port_.ClearNonDefaultToEmpty();
-    }
-    if (cached_has_bits & 0x00000004u) {
       user_service_grpc_host_.ClearNonDefaultToEmpty();
     }
-    if (cached_has_bits & 0x00000008u) {
-      user_service_grpc_port_.ClearNonDefaultToEmpty();
-    }
+  }
+  if (cached_has_bits & 0x0000000cu) {
+    ::memset(&common_service_grpc_port_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&user_service_grpc_port_) -
+        reinterpret_cast<char*>(&common_service_grpc_port_)) + sizeof(user_service_grpc_port_));
   }
   _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -2719,12 +2699,11 @@ const char* ConfigServices::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         } else
           goto handle_unusual;
         continue;
-      // optional string common_service_grpc_port = 2 [json_name = "commonServiceGrpcPort"];
+      // optional int32 common_service_grpc_port = 2 [json_name = "commonServiceGrpcPort"];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_common_service_grpc_port();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "common.v1.ConfigServices.common_service_grpc_port"));
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _Internal::set_has_common_service_grpc_port(&has_bits);
+          common_service_grpc_port_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2739,12 +2718,11 @@ const char* ConfigServices::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         } else
           goto handle_unusual;
         continue;
-      // optional string user_service_grpc_port = 4 [json_name = "userServiceGrpcPort"];
+      // optional int32 user_service_grpc_port = 4 [json_name = "userServiceGrpcPort"];
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          auto str = _internal_mutable_user_service_grpc_port();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "common.v1.ConfigServices.user_service_grpc_port"));
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _Internal::set_has_user_service_grpc_port(&has_bits);
+          user_service_grpc_port_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2789,14 +2767,10 @@ uint8_t* ConfigServices::_InternalSerialize(
         1, this->_internal_common_service_grpc_host(), target);
   }
 
-  // optional string common_service_grpc_port = 2 [json_name = "commonServiceGrpcPort"];
+  // optional int32 common_service_grpc_port = 2 [json_name = "commonServiceGrpcPort"];
   if (_internal_has_common_service_grpc_port()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_common_service_grpc_port().data(), static_cast<int>(this->_internal_common_service_grpc_port().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "common.v1.ConfigServices.common_service_grpc_port");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_common_service_grpc_port(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_common_service_grpc_port(), target);
   }
 
   // optional string user_service_grpc_host = 3 [json_name = "userServiceGrpcHost"];
@@ -2809,14 +2783,10 @@ uint8_t* ConfigServices::_InternalSerialize(
         3, this->_internal_user_service_grpc_host(), target);
   }
 
-  // optional string user_service_grpc_port = 4 [json_name = "userServiceGrpcPort"];
+  // optional int32 user_service_grpc_port = 4 [json_name = "userServiceGrpcPort"];
   if (_internal_has_user_service_grpc_port()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_user_service_grpc_port().data(), static_cast<int>(this->_internal_user_service_grpc_port().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "common.v1.ConfigServices.user_service_grpc_port");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_user_service_grpc_port(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(4, this->_internal_user_service_grpc_port(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -2844,25 +2814,21 @@ size_t ConfigServices::ByteSizeLong() const {
           this->_internal_common_service_grpc_host());
     }
 
-    // optional string common_service_grpc_port = 2 [json_name = "commonServiceGrpcPort"];
-    if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_common_service_grpc_port());
-    }
-
     // optional string user_service_grpc_host = 3 [json_name = "userServiceGrpcHost"];
-    if (cached_has_bits & 0x00000004u) {
+    if (cached_has_bits & 0x00000002u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
           this->_internal_user_service_grpc_host());
     }
 
-    // optional string user_service_grpc_port = 4 [json_name = "userServiceGrpcPort"];
+    // optional int32 common_service_grpc_port = 2 [json_name = "commonServiceGrpcPort"];
+    if (cached_has_bits & 0x00000004u) {
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_common_service_grpc_port());
+    }
+
+    // optional int32 user_service_grpc_port = 4 [json_name = "userServiceGrpcPort"];
     if (cached_has_bits & 0x00000008u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_user_service_grpc_port());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_user_service_grpc_port());
     }
 
   }
@@ -2894,14 +2860,15 @@ void ConfigServices::MergeFrom(const ConfigServices& from) {
       _internal_set_common_service_grpc_host(from._internal_common_service_grpc_host());
     }
     if (cached_has_bits & 0x00000002u) {
-      _internal_set_common_service_grpc_port(from._internal_common_service_grpc_port());
-    }
-    if (cached_has_bits & 0x00000004u) {
       _internal_set_user_service_grpc_host(from._internal_user_service_grpc_host());
     }
-    if (cached_has_bits & 0x00000008u) {
-      _internal_set_user_service_grpc_port(from._internal_user_service_grpc_port());
+    if (cached_has_bits & 0x00000004u) {
+      common_service_grpc_port_ = from.common_service_grpc_port_;
     }
+    if (cached_has_bits & 0x00000008u) {
+      user_service_grpc_port_ = from.user_service_grpc_port_;
+    }
+    _has_bits_[0] |= cached_has_bits;
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -2930,19 +2897,15 @@ void ConfigServices::InternalSwap(ConfigServices* other) {
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &common_service_grpc_port_, lhs_arena,
-      &other->common_service_grpc_port_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &user_service_grpc_host_, lhs_arena,
       &other->user_service_grpc_host_, rhs_arena
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &user_service_grpc_port_, lhs_arena,
-      &other->user_service_grpc_port_, rhs_arena
-  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ConfigServices, user_service_grpc_port_)
+      + sizeof(ConfigServices::user_service_grpc_port_)
+      - PROTOBUF_FIELD_OFFSET(ConfigServices, common_service_grpc_port_)>(
+          reinterpret_cast<char*>(&common_service_grpc_port_),
+          reinterpret_cast<char*>(&other->common_service_grpc_port_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ConfigServices::GetMetadata() const {

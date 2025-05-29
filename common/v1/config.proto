@@ -33,9 +33,9 @@ message ConfigMain {
 
 message ConfigServices {
   optional string common_service_grpc_host = 1;
-  optional string common_service_grpc_port = 2;
+  optional int32 common_service_grpc_port = 2;
   optional string user_service_grpc_host = 3;
-  optional string user_service_grpc_port = 4;
+  optional int32 user_service_grpc_port = 4;
 }
 
 message ConfigSecurity {

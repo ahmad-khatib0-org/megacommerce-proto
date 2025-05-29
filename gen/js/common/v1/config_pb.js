@@ -1646,9 +1646,9 @@ proto.common.v1.ConfigServices.prototype.toObject = function(opt_includeInstance
 proto.common.v1.ConfigServices.toObject = function(includeInstance, msg) {
   var f, obj = {
     commonServiceGrpcHost: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    commonServiceGrpcPort: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    commonServiceGrpcPort: jspb.Message.getFieldWithDefault(msg, 2, 0),
     userServiceGrpcHost: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    userServiceGrpcPort: jspb.Message.getFieldWithDefault(msg, 4, "")
+    userServiceGrpcPort: jspb.Message.getFieldWithDefault(msg, 4, 0)
   };
 
   if (includeInstance) {
@@ -1690,7 +1690,7 @@ proto.common.v1.ConfigServices.deserializeBinaryFromReader = function(msg, reade
       msg.setCommonServiceGrpcHost(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setCommonServiceGrpcPort(value);
       break;
     case 3:
@@ -1698,7 +1698,7 @@ proto.common.v1.ConfigServices.deserializeBinaryFromReader = function(msg, reade
       msg.setUserServiceGrpcHost(value);
       break;
     case 4:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setUserServiceGrpcPort(value);
       break;
     default:
@@ -1737,9 +1737,9 @@ proto.common.v1.ConfigServices.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeString(
+    writer.writeInt32(
       2,
       f
     );
@@ -1751,9 +1751,9 @@ proto.common.v1.ConfigServices.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
   if (f != null) {
-    writer.writeString(
+    writer.writeInt32(
       4,
       f
     );
@@ -1798,16 +1798,16 @@ proto.common.v1.ConfigServices.prototype.hasCommonServiceGrpcHost = function() {
 
 
 /**
- * optional string common_service_grpc_port = 2;
- * @return {string}
+ * optional int32 common_service_grpc_port = 2;
+ * @return {number}
  */
 proto.common.v1.ConfigServices.prototype.getCommonServiceGrpcPort = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.common.v1.ConfigServices} returns this
  */
 proto.common.v1.ConfigServices.prototype.setCommonServiceGrpcPort = function(value) {
@@ -1870,16 +1870,16 @@ proto.common.v1.ConfigServices.prototype.hasUserServiceGrpcHost = function() {
 
 
 /**
- * optional string user_service_grpc_port = 4;
- * @return {string}
+ * optional int32 user_service_grpc_port = 4;
+ * @return {number}
  */
 proto.common.v1.ConfigServices.prototype.getUserServiceGrpcPort = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.common.v1.ConfigServices} returns this
  */
 proto.common.v1.ConfigServices.prototype.setUserServiceGrpcPort = function(value) {
