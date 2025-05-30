@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package common.v1;
 
+import "google/protobuf/any.proto";
+
 option cc_enable_arenas = true;
 option go_package = "common/v1;v1";
 option java_outer_classname = "ErrorProto";
@@ -21,5 +23,5 @@ message AppError {
   string where = 6;
   // If false, i18n may not apply
   bool skip_translation = 7;
-  map<string, string> params = 8;
+  map<string, google.protobuf.Any> params = 8;
 }

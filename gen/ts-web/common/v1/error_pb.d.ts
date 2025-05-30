@@ -1,5 +1,6 @@
 import * as jspb from 'google-protobuf'
 
+import * as google_protobuf_any_pb from 'google-protobuf/google/protobuf/any_pb'; // proto import: "google/protobuf/any.proto"
 
 
 export class AppError extends jspb.Message {
@@ -24,7 +25,7 @@ export class AppError extends jspb.Message {
   getSkipTranslation(): boolean;
   setSkipTranslation(value: boolean): AppError;
 
-  getParamsMap(): jspb.Map<string, string>;
+  getParamsMap(): jspb.Map<string, google_protobuf_any_pb.Any>;
   clearParamsMap(): AppError;
 
   serializeBinary(): Uint8Array;
@@ -44,7 +45,7 @@ export namespace AppError {
     statusCode: number,
     where: string,
     skipTranslation: boolean,
-    paramsMap: Array<[string, string]>,
+    paramsMap: Array<[string, google_protobuf_any_pb.Any.AsObject]>,
   }
 }
 

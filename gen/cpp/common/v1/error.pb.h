@@ -34,6 +34,7 @@
 #include <google/protobuf/map_entry.h>
 #include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
+#include <google/protobuf/any.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_common_2fv1_2ferror_2eproto
@@ -76,14 +77,14 @@ namespace v1 {
 // ===================================================================
 
 class AppError_ParamsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<AppError_ParamsEntry_DoNotUse, 
-    std::string, std::string,
+    std::string, ::PROTOBUF_NAMESPACE_ID::Any,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> {
 public:
   typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<AppError_ParamsEntry_DoNotUse, 
-    std::string, std::string,
+    std::string, ::PROTOBUF_NAMESPACE_ID::Any,
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> SuperType;
   AppError_ParamsEntry_DoNotUse();
   explicit constexpr AppError_ParamsEntry_DoNotUse(
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
@@ -93,9 +94,7 @@ public:
   static bool ValidateKey(std::string* s) {
     return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "common.v1.AppError.ParamsEntry.key");
  }
-  static bool ValidateValue(std::string* s) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "common.v1.AppError.ParamsEntry.value");
- }
+  static bool ValidateValue(void*) { return true; }
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
   ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
 };
@@ -234,21 +233,21 @@ class AppError final :
     kStatusCodeFieldNumber = 5,
     kSkipTranslationFieldNumber = 7,
   };
-  // map<string, string> params = 8 [json_name = "params"];
+  // map<string, .google.protobuf.Any> params = 8 [json_name = "params"];
   int params_size() const;
   private:
   int _internal_params_size() const;
   public:
   void clear_params();
   private:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >&
       _internal_params() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >*
       _internal_mutable_params();
   public:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >&
       params() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >*
       mutable_params();
 
   // string id = 1 [json_name = "id"];
@@ -348,9 +347,9 @@ class AppError final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::MapField<
       AppError_ParamsEntry_DoNotUse,
-      std::string, std::string,
+      std::string, ::PROTOBUF_NAMESPACE_ID::Any,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> params_;
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> params_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr detailed_error_;
@@ -669,30 +668,27 @@ inline void AppError::set_skip_translation(bool value) {
   // @@protoc_insertion_point(field_set:common.v1.AppError.skip_translation)
 }
 
-// map<string, string> params = 8 [json_name = "params"];
+// map<string, .google.protobuf.Any> params = 8 [json_name = "params"];
 inline int AppError::_internal_params_size() const {
   return params_.size();
 }
 inline int AppError::params_size() const {
   return _internal_params_size();
 }
-inline void AppError::clear_params() {
-  params_.Clear();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >&
 AppError::_internal_params() const {
   return params_.GetMap();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >&
 AppError::params() const {
   // @@protoc_insertion_point(field_map:common.v1.AppError.params)
   return _internal_params();
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >*
 AppError::_internal_mutable_params() {
   return params_.MutableMap();
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >*
 AppError::mutable_params() {
   // @@protoc_insertion_point(field_mutable_map:common.v1.AppError.params)
   return _internal_mutable_params();
