@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package common.v1;
+
+option cc_enable_arenas = true;
+option go_package = "common/v1;v1";
+option java_outer_classname = "TypesProto";
+option java_package = "org.megacommerce.common.v1";
+
+message StringMap {
+  map<string, string> data = 1;
+}
+
+message NestedStringMap {
+  map<string, StringMap> data = 1;
+}
