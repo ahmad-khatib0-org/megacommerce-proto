@@ -25,8 +25,10 @@ export class AppError extends jspb.Message {
   getSkipTranslation(): boolean;
   setSkipTranslation(value: boolean): AppError;
 
-  getParamsMap(): jspb.Map<string, google_protobuf_any_pb.Any>;
-  clearParamsMap(): AppError;
+  getParams(): google_protobuf_any_pb.Any | undefined;
+  setParams(value?: google_protobuf_any_pb.Any): AppError;
+  hasParams(): boolean;
+  clearParams(): AppError;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppError.AsObject;
@@ -45,7 +47,7 @@ export namespace AppError {
     statusCode: number,
     where: string,
     skipTranslation: boolean,
-    paramsMap: Array<[string, google_protobuf_any_pb.Any.AsObject]>,
+    params?: google_protobuf_any_pb.Any.AsObject,
   }
 }
 

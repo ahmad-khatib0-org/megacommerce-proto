@@ -84,7 +84,7 @@ proto.common.v1.AppError.toObject = function(includeInstance, msg) {
     statusCode: jspb.Message.getFieldWithDefault(msg, 5, 0),
     where: jspb.Message.getFieldWithDefault(msg, 6, ""),
     skipTranslation: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    paramsMap: (f = msg.getParamsMap()) ? f.toObject(includeInstance, proto.google.protobuf.Any.toObject) : []
+    params: (f = msg.getParams()) && google_protobuf_any_pb.Any.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -150,10 +150,9 @@ proto.common.v1.AppError.deserializeBinaryFromReader = function(msg, reader) {
       msg.setSkipTranslation(value);
       break;
     case 8:
-      var value = msg.getParamsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.google.protobuf.Any.deserializeBinaryFromReader, "", new proto.google.protobuf.Any());
-         });
+      var value = new google_protobuf_any_pb.Any;
+      reader.readMessage(value,google_protobuf_any_pb.Any.deserializeBinaryFromReader);
+      msg.setParams(value);
       break;
     default:
       reader.skipField();
@@ -233,9 +232,13 @@ proto.common.v1.AppError.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getParamsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(8, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.google.protobuf.Any.serializeBinaryToWriter);
+  f = message.getParams();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      google_protobuf_any_pb.Any.serializeBinaryToWriter
+    );
   }
 };
 
@@ -367,25 +370,40 @@ proto.common.v1.AppError.prototype.setSkipTranslation = function(value) {
 
 
 /**
- * map<string, google.protobuf.Any> params = 8;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!proto.google.protobuf.Any>}
+ * optional google.protobuf.Any params = 8;
+ * @return {?proto.google.protobuf.Any}
  */
-proto.common.v1.AppError.prototype.getParamsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!proto.google.protobuf.Any>} */ (
-      jspb.Message.getMapField(this, 8, opt_noLazyCreate,
-      proto.google.protobuf.Any));
+proto.common.v1.AppError.prototype.getParams = function() {
+  return /** @type{?proto.google.protobuf.Any} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_any_pb.Any, 8));
 };
 
 
 /**
- * Clears values from the map. The map will be non-null.
+ * @param {?proto.google.protobuf.Any|undefined} value
+ * @return {!proto.common.v1.AppError} returns this
+*/
+proto.common.v1.AppError.prototype.setParams = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.common.v1.AppError} returns this
  */
-proto.common.v1.AppError.prototype.clearParamsMap = function() {
-  this.getParamsMap().clear();
-  return this;};
+proto.common.v1.AppError.prototype.clearParams = function() {
+  return this.setParams(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.common.v1.AppError.prototype.hasParams = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
 
 
 goog.object.extend(exports, proto.common.v1);

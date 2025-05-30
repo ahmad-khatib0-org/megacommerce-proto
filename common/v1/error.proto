@@ -23,5 +23,5 @@ message AppError {
   string where = 6;
   // If false, i18n may not apply
   bool skip_translation = 7;
-  map<string, google.protobuf.Any> params = 8;
+  google.protobuf.Any params = 8;
 }

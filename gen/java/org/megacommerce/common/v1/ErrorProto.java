@@ -131,38 +131,19 @@ public final class ErrorProto {
     boolean getSkipTranslation();
 
     /**
-     * <code>map&lt;string, .google.protobuf.Any&gt; params = 8 [json_name = "params"];</code>
+     * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+     * @return Whether the params field is set.
      */
-    int getParamsCount();
+    boolean hasParams();
     /**
-     * <code>map&lt;string, .google.protobuf.Any&gt; params = 8 [json_name = "params"];</code>
+     * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+     * @return The params.
      */
-    boolean containsParams(
-        java.lang.String key);
+    com.google.protobuf.Any getParams();
     /**
-     * Use {@link #getParamsMap()} instead.
+     * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
      */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, com.google.protobuf.Any>
-    getParams();
-    /**
-     * <code>map&lt;string, .google.protobuf.Any&gt; params = 8 [json_name = "params"];</code>
-     */
-    java.util.Map<java.lang.String, com.google.protobuf.Any>
-    getParamsMap();
-    /**
-     * <code>map&lt;string, .google.protobuf.Any&gt; params = 8 [json_name = "params"];</code>
-     */
-
-    com.google.protobuf.Any getParamsOrDefault(
-        java.lang.String key,
-        com.google.protobuf.Any defaultValue);
-    /**
-     * <code>map&lt;string, .google.protobuf.Any&gt; params = 8 [json_name = "params"];</code>
-     */
-
-    com.google.protobuf.Any getParamsOrThrow(
-        java.lang.String key);
+    com.google.protobuf.AnyOrBuilder getParamsOrBuilder();
   }
   /**
    * Protobuf type {@code common.v1.AppError}
@@ -201,18 +182,6 @@ public final class ErrorProto {
       return org.megacommerce.common.v1.ErrorProto.internal_static_common_v1_AppError_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 8:
-          return internalGetParams();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -474,84 +443,29 @@ public final class ErrorProto {
     }
 
     public static final int PARAMS_FIELD_NUMBER = 8;
-    private static final class ParamsDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, com.google.protobuf.Any> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, com.google.protobuf.Any>newDefaultInstance(
-                  org.megacommerce.common.v1.ErrorProto.internal_static_common_v1_AppError_ParamsEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  com.google.protobuf.Any.getDefaultInstance());
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, com.google.protobuf.Any> params_;
-    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Any>
-    internalGetParams() {
-      if (params_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            ParamsDefaultEntryHolder.defaultEntry);
-      }
-      return params_;
-    }
-
-    public int getParamsCount() {
-      return internalGetParams().getMap().size();
-    }
+    private com.google.protobuf.Any params_;
     /**
-     * <code>map&lt;string, .google.protobuf.Any&gt; params = 8 [json_name = "params"];</code>
-     */
-
-    @java.lang.Override
-    public boolean containsParams(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      return internalGetParams().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getParamsMap()} instead.
+     * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+     * @return Whether the params field is set.
      */
     @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.google.protobuf.Any> getParams() {
-      return getParamsMap();
+    public boolean hasParams() {
+      return params_ != null;
     }
     /**
-     * <code>map&lt;string, .google.protobuf.Any&gt; params = 8 [json_name = "params"];</code>
+     * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+     * @return The params.
      */
     @java.lang.Override
-
-    public java.util.Map<java.lang.String, com.google.protobuf.Any> getParamsMap() {
-      return internalGetParams().getMap();
+    public com.google.protobuf.Any getParams() {
+      return params_ == null ? com.google.protobuf.Any.getDefaultInstance() : params_;
     }
     /**
-     * <code>map&lt;string, .google.protobuf.Any&gt; params = 8 [json_name = "params"];</code>
+     * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
      */
     @java.lang.Override
-
-    public com.google.protobuf.Any getParamsOrDefault(
-        java.lang.String key,
-        com.google.protobuf.Any defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, com.google.protobuf.Any> map =
-          internalGetParams().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, .google.protobuf.Any&gt; params = 8 [json_name = "params"];</code>
-     */
-    @java.lang.Override
-
-    public com.google.protobuf.Any getParamsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, com.google.protobuf.Any> map =
-          internalGetParams().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
+    public com.google.protobuf.AnyOrBuilder getParamsOrBuilder() {
+      return getParams();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -589,12 +503,9 @@ public final class ErrorProto {
       if (skipTranslation_ != false) {
         output.writeBool(7, skipTranslation_);
       }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetParams(),
-          ParamsDefaultEntryHolder.defaultEntry,
-          8);
+      if (params_ != null) {
+        output.writeMessage(8, getParams());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -627,15 +538,9 @@ public final class ErrorProto {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(7, skipTranslation_);
       }
-      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.Any> entry
-           : internalGetParams().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Any>
-        params__ = ParamsDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
+      if (params_ != null) {
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(8, params__);
+          .computeMessageSize(8, getParams());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -666,8 +571,11 @@ public final class ErrorProto {
           .equals(other.getWhere())) return false;
       if (getSkipTranslation()
           != other.getSkipTranslation()) return false;
-      if (!internalGetParams().equals(
-          other.internalGetParams())) return false;
+      if (hasParams() != other.hasParams()) return false;
+      if (hasParams()) {
+        if (!getParams()
+            .equals(other.getParams())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -694,9 +602,9 @@ public final class ErrorProto {
       hash = (37 * hash) + SKIP_TRANSLATION_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getSkipTranslation());
-      if (!internalGetParams().getMap().isEmpty()) {
+      if (hasParams()) {
         hash = (37 * hash) + PARAMS_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetParams().hashCode();
+        hash = (53 * hash) + getParams().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -805,28 +713,6 @@ public final class ErrorProto {
         return org.megacommerce.common.v1.ErrorProto.internal_static_common_v1_AppError_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 8:
-            return internalGetParams();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 8:
-            return internalGetMutableParams();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -862,7 +748,12 @@ public final class ErrorProto {
 
         skipTranslation_ = false;
 
-        internalGetMutableParams().clear();
+        if (paramsBuilder_ == null) {
+          params_ = null;
+        } else {
+          params_ = null;
+          paramsBuilder_ = null;
+        }
         return this;
       }
 
@@ -889,7 +780,6 @@ public final class ErrorProto {
       @java.lang.Override
       public org.megacommerce.common.v1.ErrorProto.AppError buildPartial() {
         org.megacommerce.common.v1.ErrorProto.AppError result = new org.megacommerce.common.v1.ErrorProto.AppError(this);
-        int from_bitField0_ = bitField0_;
         result.id_ = id_;
         result.message_ = message_;
         result.detailedError_ = detailedError_;
@@ -897,8 +787,11 @@ public final class ErrorProto {
         result.statusCode_ = statusCode_;
         result.where_ = where_;
         result.skipTranslation_ = skipTranslation_;
-        result.params_ = internalGetParams();
-        result.params_.makeImmutable();
+        if (paramsBuilder_ == null) {
+          result.params_ = params_;
+        } else {
+          result.params_ = paramsBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -973,8 +866,9 @@ public final class ErrorProto {
         if (other.getSkipTranslation() != false) {
           setSkipTranslation(other.getSkipTranslation());
         }
-        internalGetMutableParams().mergeFrom(
-            other.internalGetParams());
+        if (other.hasParams()) {
+          mergeParams(other.getParams());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1037,11 +931,10 @@ public final class ErrorProto {
                 break;
               } // case 56
               case 66: {
-                com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Any>
-                params__ = input.readMessage(
-                    ParamsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableParams().getMutableMap().put(
-                    params__.getKey(), params__.getValue());
+                input.readMessage(
+                    getParamsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
                 break;
               } // case 66
               default: {
@@ -1059,7 +952,6 @@ public final class ErrorProto {
         } // finally
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -1607,135 +1499,123 @@ public final class ErrorProto {
         return this;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.String, com.google.protobuf.Any> params_;
-      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Any>
-      internalGetParams() {
-        if (params_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              ParamsDefaultEntryHolder.defaultEntry);
+      private com.google.protobuf.Any params_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> paramsBuilder_;
+      /**
+       * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+       * @return Whether the params field is set.
+       */
+      public boolean hasParams() {
+        return paramsBuilder_ != null || params_ != null;
+      }
+      /**
+       * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+       * @return The params.
+       */
+      public com.google.protobuf.Any getParams() {
+        if (paramsBuilder_ == null) {
+          return params_ == null ? com.google.protobuf.Any.getDefaultInstance() : params_;
+        } else {
+          return paramsBuilder_.getMessage();
         }
-        return params_;
       }
-      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Any>
-      internalGetMutableParams() {
-        onChanged();;
-        if (params_ == null) {
-          params_ = com.google.protobuf.MapField.newMapField(
-              ParamsDefaultEntryHolder.defaultEntry);
+      /**
+       * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+       */
+      public Builder setParams(com.google.protobuf.Any value) {
+        if (paramsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          params_ = value;
+          onChanged();
+        } else {
+          paramsBuilder_.setMessage(value);
         }
-        if (!params_.isMutable()) {
-          params_ = params_.copy();
+
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+       */
+      public Builder setParams(
+          com.google.protobuf.Any.Builder builderForValue) {
+        if (paramsBuilder_ == null) {
+          params_ = builderForValue.build();
+          onChanged();
+        } else {
+          paramsBuilder_.setMessage(builderForValue.build());
         }
-        return params_;
-      }
 
-      public int getParamsCount() {
-        return internalGetParams().getMap().size();
+        return this;
       }
       /**
-       * <code>map&lt;string, .google.protobuf.Any&gt; params = 8 [json_name = "params"];</code>
+       * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
        */
-
-      @java.lang.Override
-      public boolean containsParams(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        return internalGetParams().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getParamsMap()} instead.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, com.google.protobuf.Any> getParams() {
-        return getParamsMap();
-      }
-      /**
-       * <code>map&lt;string, .google.protobuf.Any&gt; params = 8 [json_name = "params"];</code>
-       */
-      @java.lang.Override
-
-      public java.util.Map<java.lang.String, com.google.protobuf.Any> getParamsMap() {
-        return internalGetParams().getMap();
-      }
-      /**
-       * <code>map&lt;string, .google.protobuf.Any&gt; params = 8 [json_name = "params"];</code>
-       */
-      @java.lang.Override
-
-      public com.google.protobuf.Any getParamsOrDefault(
-          java.lang.String key,
-          com.google.protobuf.Any defaultValue) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, com.google.protobuf.Any> map =
-            internalGetParams().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, .google.protobuf.Any&gt; params = 8 [json_name = "params"];</code>
-       */
-      @java.lang.Override
-
-      public com.google.protobuf.Any getParamsOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, com.google.protobuf.Any> map =
-            internalGetParams().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
+      public Builder mergeParams(com.google.protobuf.Any value) {
+        if (paramsBuilder_ == null) {
+          if (params_ != null) {
+            params_ =
+              com.google.protobuf.Any.newBuilder(params_).mergeFrom(value).buildPartial();
+          } else {
+            params_ = value;
+          }
+          onChanged();
+        } else {
+          paramsBuilder_.mergeFrom(value);
         }
-        return map.get(key);
-      }
 
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+       */
       public Builder clearParams() {
-        internalGetMutableParams().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;string, .google.protobuf.Any&gt; params = 8 [json_name = "params"];</code>
-       */
+        if (paramsBuilder_ == null) {
+          params_ = null;
+          onChanged();
+        } else {
+          params_ = null;
+          paramsBuilder_ = null;
+        }
 
-      public Builder removeParams(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        internalGetMutableParams().getMutableMap()
-            .remove(key);
         return this;
       }
       /**
-       * Use alternate mutation accessors instead.
+       * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
        */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, com.google.protobuf.Any>
-      getMutableParams() {
-        return internalGetMutableParams().getMutableMap();
+      public com.google.protobuf.Any.Builder getParamsBuilder() {
+        
+        onChanged();
+        return getParamsFieldBuilder().getBuilder();
       }
       /**
-       * <code>map&lt;string, .google.protobuf.Any&gt; params = 8 [json_name = "params"];</code>
+       * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
        */
-      public Builder putParams(
-          java.lang.String key,
-          com.google.protobuf.Any value) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        if (value == null) {
-  throw new NullPointerException("map value");
-}
-
-        internalGetMutableParams().getMutableMap()
-            .put(key, value);
-        return this;
+      public com.google.protobuf.AnyOrBuilder getParamsOrBuilder() {
+        if (paramsBuilder_ != null) {
+          return paramsBuilder_.getMessageOrBuilder();
+        } else {
+          return params_ == null ?
+              com.google.protobuf.Any.getDefaultInstance() : params_;
+        }
       }
       /**
-       * <code>map&lt;string, .google.protobuf.Any&gt; params = 8 [json_name = "params"];</code>
+       * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
        */
-
-      public Builder putAllParams(
-          java.util.Map<java.lang.String, com.google.protobuf.Any> values) {
-        internalGetMutableParams().getMutableMap()
-            .putAll(values);
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+          getParamsFieldBuilder() {
+        if (paramsBuilder_ == null) {
+          paramsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+                  getParams(),
+                  getParentForChildren(),
+                  isClean());
+          params_ = null;
+        }
+        return paramsBuilder_;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1806,11 +1686,6 @@ public final class ErrorProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_common_v1_AppError_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_common_v1_AppError_ParamsEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_common_v1_AppError_ParamsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1821,18 +1696,15 @@ public final class ErrorProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\025common/v1/error.proto\022\tcommon.v1\032\031goog" +
-      "le/protobuf/any.proto\"\346\002\n\010AppError\022\016\n\002id" +
+      "le/protobuf/any.proto\"\212\002\n\010AppError\022\016\n\002id" +
       "\030\001 \001(\tR\002id\022\030\n\007message\030\002 \001(\tR\007message\022%\n\016" +
       "detailed_error\030\003 \001(\tR\rdetailedError\022\035\n\nr" +
       "equest_id\030\004 \001(\tR\trequestId\022\037\n\013status_cod" +
       "e\030\005 \001(\005R\nstatusCode\022\024\n\005where\030\006 \001(\tR\005wher" +
       "e\022)\n\020skip_translation\030\007 \001(\010R\017skipTransla" +
-      "tion\0227\n\006params\030\010 \003(\0132\037.common.v1.AppErro" +
-      "r.ParamsEntryR\006params\032O\n\013ParamsEntry\022\020\n\003" +
-      "key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\0132\024.google.p" +
-      "rotobuf.AnyR\005value:\0028\001B9\n\032org.megacommer" +
-      "ce.common.v1B\nErrorProtoZ\014common/v1;v1\370\001" +
-      "\001b\006proto3"
+      "tion\022,\n\006params\030\010 \001(\0132\024.google.protobuf.A" +
+      "nyR\006paramsB9\n\032org.megacommerce.common.v1" +
+      "B\nErrorProtoZ\014common/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1845,12 +1717,6 @@ public final class ErrorProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_v1_AppError_descriptor,
         new java.lang.String[] { "Id", "Message", "DetailedError", "RequestId", "StatusCode", "Where", "SkipTranslation", "Params", });
-    internal_static_common_v1_AppError_ParamsEntry_descriptor =
-      internal_static_common_v1_AppError_descriptor.getNestedTypes().get(0);
-    internal_static_common_v1_AppError_ParamsEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_common_v1_AppError_ParamsEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
     com.google.protobuf.AnyProto.getDescriptor();
   }
 

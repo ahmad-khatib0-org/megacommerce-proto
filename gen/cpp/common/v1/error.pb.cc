@@ -18,25 +18,14 @@
 PROTOBUF_PRAGMA_INIT_SEG
 namespace common {
 namespace v1 {
-constexpr AppError_ParamsEntry_DoNotUse::AppError_ParamsEntry_DoNotUse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
-struct AppError_ParamsEntry_DoNotUseDefaultTypeInternal {
-  constexpr AppError_ParamsEntry_DoNotUseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~AppError_ParamsEntry_DoNotUseDefaultTypeInternal() {}
-  union {
-    AppError_ParamsEntry_DoNotUse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AppError_ParamsEntry_DoNotUseDefaultTypeInternal _AppError_ParamsEntry_DoNotUse_default_instance_;
 constexpr AppError::AppError(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : params_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
-  , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , message_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , detailed_error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , request_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , where_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , params_(nullptr)
   , status_code_(0)
   , skip_translation_(false){}
 struct AppErrorDefaultTypeInternal {
@@ -50,21 +39,11 @@ struct AppErrorDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AppErrorDefaultTypeInternal _AppError_default_instance_;
 }  // namespace v1
 }  // namespace common
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_common_2fv1_2ferror_2eproto[2];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_common_2fv1_2ferror_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_common_2fv1_2ferror_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_common_2fv1_2ferror_2eproto = nullptr;
 
 const uint32_t TableStruct_common_2fv1_2ferror_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  PROTOBUF_FIELD_OFFSET(::common::v1::AppError_ParamsEntry_DoNotUse, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::common::v1::AppError_ParamsEntry_DoNotUse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::common::v1::AppError_ParamsEntry_DoNotUse, key_),
-  PROTOBUF_FIELD_OFFSET(::common::v1::AppError_ParamsEntry_DoNotUse, value_),
-  0,
-  1,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::common::v1::AppError, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -81,37 +60,32 @@ const uint32_t TableStruct_common_2fv1_2ferror_2eproto::offsets[] PROTOBUF_SECTI
   PROTOBUF_FIELD_OFFSET(::common::v1::AppError, params_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 8, -1, sizeof(::common::v1::AppError_ParamsEntry_DoNotUse)},
-  { 10, -1, -1, sizeof(::common::v1::AppError)},
+  { 0, -1, -1, sizeof(::common::v1::AppError)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_AppError_ParamsEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_AppError_default_instance_),
 };
 
 const char descriptor_table_protodef_common_2fv1_2ferror_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\025common/v1/error.proto\022\tcommon.v1\032\031goog"
-  "le/protobuf/any.proto\"\346\002\n\010AppError\022\016\n\002id"
+  "le/protobuf/any.proto\"\212\002\n\010AppError\022\016\n\002id"
   "\030\001 \001(\tR\002id\022\030\n\007message\030\002 \001(\tR\007message\022%\n\016"
   "detailed_error\030\003 \001(\tR\rdetailedError\022\035\n\nr"
   "equest_id\030\004 \001(\tR\trequestId\022\037\n\013status_cod"
   "e\030\005 \001(\005R\nstatusCode\022\024\n\005where\030\006 \001(\tR\005wher"
   "e\022)\n\020skip_translation\030\007 \001(\010R\017skipTransla"
-  "tion\0227\n\006params\030\010 \003(\0132\037.common.v1.AppErro"
-  "r.ParamsEntryR\006params\032O\n\013ParamsEntry\022\020\n\003"
-  "key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\0132\024.google.p"
-  "rotobuf.AnyR\005value:\0028\001B9\n\032org.megacommer"
-  "ce.common.v1B\nErrorProtoZ\014common/v1;v1\370\001"
-  "\001b\006proto3"
+  "tion\022,\n\006params\030\010 \001(\0132\024.google.protobuf.A"
+  "nyR\006paramsB9\n\032org.megacommerce.common.v1"
+  "B\nErrorProtoZ\014common/v1;v1\370\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_common_2fv1_2ferror_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fany_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2fv1_2ferror_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fv1_2ferror_2eproto = {
-  false, false, 489, descriptor_table_protodef_common_2fv1_2ferror_2eproto, "common/v1/error.proto", 
-  &descriptor_table_common_2fv1_2ferror_2eproto_once, descriptor_table_common_2fv1_2ferror_2eproto_deps, 1, 2,
+  false, false, 397, descriptor_table_protodef_common_2fv1_2ferror_2eproto, "common/v1/error.proto", 
+  &descriptor_table_common_2fv1_2ferror_2eproto_once, descriptor_table_common_2fv1_2ferror_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_common_2fv1_2ferror_2eproto::offsets,
   file_level_metadata_common_2fv1_2ferror_2eproto, file_level_enum_descriptors_common_2fv1_2ferror_2eproto, file_level_service_descriptors_common_2fv1_2ferror_2eproto,
 };
@@ -126,31 +100,24 @@ namespace v1 {
 
 // ===================================================================
 
-AppError_ParamsEntry_DoNotUse::AppError_ParamsEntry_DoNotUse() {}
-AppError_ParamsEntry_DoNotUse::AppError_ParamsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-    : SuperType(arena) {}
-void AppError_ParamsEntry_DoNotUse::MergeFrom(const AppError_ParamsEntry_DoNotUse& other) {
-  MergeFromInternal(other);
-}
-::PROTOBUF_NAMESPACE_ID::Metadata AppError_ParamsEntry_DoNotUse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_common_2fv1_2ferror_2eproto_getter, &descriptor_table_common_2fv1_2ferror_2eproto_once,
-      file_level_metadata_common_2fv1_2ferror_2eproto[0]);
-}
-
-// ===================================================================
-
 class AppError::_Internal {
  public:
+  static const ::PROTOBUF_NAMESPACE_ID::Any& params(const AppError* msg);
 };
 
+const ::PROTOBUF_NAMESPACE_ID::Any&
+AppError::_Internal::params(const AppError* msg) {
+  return *msg->params_;
+}
 void AppError::clear_params() {
-  params_.Clear();
+  if (GetArenaForAllocation() == nullptr && params_ != nullptr) {
+    delete params_;
+  }
+  params_ = nullptr;
 }
 AppError::AppError(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  params_(arena) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -160,7 +127,6 @@ AppError::AppError(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 AppError::AppError(const AppError& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  params_.MergeFrom(from.params_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
@@ -201,6 +167,11 @@ AppError::AppError(const AppError& from)
     where_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_where(), 
       GetArenaForAllocation());
   }
+  if (from._internal_has_params()) {
+    params_ = new ::PROTOBUF_NAMESPACE_ID::Any(*from.params_);
+  } else {
+    params_ = nullptr;
+  }
   ::memcpy(&status_code_, &from.status_code_,
     static_cast<size_t>(reinterpret_cast<char*>(&skip_translation_) -
     reinterpret_cast<char*>(&status_code_)) + sizeof(skip_translation_));
@@ -229,9 +200,9 @@ where_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlread
   where_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
-    reinterpret_cast<char*>(&status_code_) - reinterpret_cast<char*>(this)),
+    reinterpret_cast<char*>(&params_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&skip_translation_) -
-    reinterpret_cast<char*>(&status_code_)) + sizeof(skip_translation_));
+    reinterpret_cast<char*>(&params_)) + sizeof(skip_translation_));
 }
 
 AppError::~AppError() {
@@ -248,17 +219,14 @@ inline void AppError::SharedDtor() {
   detailed_error_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   request_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   where_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (this != internal_default_instance()) delete params_;
 }
 
 void AppError::ArenaDtor(void* object) {
   AppError* _this = reinterpret_cast< AppError* >(object);
   (void)_this;
-  _this->params_. ~MapField();
 }
-inline void AppError::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena) {
-  if (arena != nullptr) {
-    arena->OwnCustomDestructor(this, &AppError::ArenaDtor);
-  }
+void AppError::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
 void AppError::SetCachedSize(int size) const {
   _cached_size_.Set(size);
@@ -270,12 +238,15 @@ void AppError::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  params_.Clear();
   id_.ClearToEmpty();
   message_.ClearToEmpty();
   detailed_error_.ClearToEmpty();
   request_id_.ClearToEmpty();
   where_.ClearToEmpty();
+  if (GetArenaForAllocation() == nullptr && params_ != nullptr) {
+    delete params_;
+  }
+  params_ = nullptr;
   ::memset(&status_code_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&skip_translation_) -
       reinterpret_cast<char*>(&status_code_)) + sizeof(skip_translation_));
@@ -354,16 +325,11 @@ const char* AppError::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
         } else
           goto handle_unusual;
         continue;
-      // map<string, .google.protobuf.Any> params = 8 [json_name = "params"];
+      // .google.protobuf.Any params = 8 [json_name = "params"];
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(&params_, ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<66>(ptr));
+          ptr = ctx->ParseMessage(_internal_mutable_params(), ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -458,46 +424,12 @@ uint8_t* AppError::_InternalSerialize(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(7, this->_internal_skip_translation(), target);
   }
 
-  // map<string, .google.protobuf.Any> params = 8 [json_name = "params"];
-  if (!this->_internal_params().empty()) {
-    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        (void)p;
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-          "common.v1.AppError.ParamsEntry.key");
-      }
-    };
-
-    if (stream->IsSerializationDeterministic() &&
-        this->_internal_params().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->_internal_params().size()]);
-      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >::size_type size_type;
-      size_type n = 0;
-      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >::const_iterator
-          it = this->_internal_params().begin();
-          it != this->_internal_params().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      for (size_type i = 0; i < n; i++) {
-        target = AppError_ParamsEntry_DoNotUse::Funcs::InternalSerialize(8, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
-        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
-      }
-    } else {
-      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >::const_iterator
-          it = this->_internal_params().begin();
-          it != this->_internal_params().end(); ++it) {
-        target = AppError_ParamsEntry_DoNotUse::Funcs::InternalSerialize(8, it->first, it->second, target, stream);
-        Utf8Check::Check(&(*it));
-      }
-    }
+  // .google.protobuf.Any params = 8 [json_name = "params"];
+  if (this->_internal_has_params()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        8, _Internal::params(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -515,15 +447,6 @@ size_t AppError::ByteSizeLong() const {
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
-
-  // map<string, .google.protobuf.Any> params = 8 [json_name = "params"];
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_params_size());
-  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >::const_iterator
-      it = this->_internal_params().begin();
-      it != this->_internal_params().end(); ++it) {
-    total_size += AppError_ParamsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
-  }
 
   // string id = 1 [json_name = "id"];
   if (!this->_internal_id().empty()) {
@@ -560,6 +483,13 @@ size_t AppError::ByteSizeLong() const {
         this->_internal_where());
   }
 
+  // .google.protobuf.Any params = 8 [json_name = "params"];
+  if (this->_internal_has_params()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *params_);
+  }
+
   // int32 status_code = 5 [json_name = "statusCode"];
   if (this->_internal_status_code() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_status_code());
@@ -592,7 +522,6 @@ void AppError::MergeFrom(const AppError& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  params_.MergeFrom(from.params_);
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
@@ -607,6 +536,9 @@ void AppError::MergeFrom(const AppError& from) {
   }
   if (!from._internal_where().empty()) {
     _internal_set_where(from._internal_where());
+  }
+  if (from._internal_has_params()) {
+    _internal_mutable_params()->::PROTOBUF_NAMESPACE_ID::Any::MergeFrom(from._internal_params());
   }
   if (from._internal_status_code() != 0) {
     _internal_set_status_code(from._internal_status_code());
@@ -633,7 +565,6 @@ void AppError::InternalSwap(AppError* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  params_.InternalSwap(&other->params_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &id_, lhs_arena,
@@ -662,24 +593,21 @@ void AppError::InternalSwap(AppError* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(AppError, skip_translation_)
       + sizeof(AppError::skip_translation_)
-      - PROTOBUF_FIELD_OFFSET(AppError, status_code_)>(
-          reinterpret_cast<char*>(&status_code_),
-          reinterpret_cast<char*>(&other->status_code_));
+      - PROTOBUF_FIELD_OFFSET(AppError, params_)>(
+          reinterpret_cast<char*>(&params_),
+          reinterpret_cast<char*>(&other->params_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AppError::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_common_2fv1_2ferror_2eproto_getter, &descriptor_table_common_2fv1_2ferror_2eproto_once,
-      file_level_metadata_common_2fv1_2ferror_2eproto[1]);
+      file_level_metadata_common_2fv1_2ferror_2eproto[0]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace common
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::common::v1::AppError_ParamsEntry_DoNotUse* Arena::CreateMaybeMessage< ::common::v1::AppError_ParamsEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::common::v1::AppError_ParamsEntry_DoNotUse >(arena);
-}
 template<> PROTOBUF_NOINLINE ::common::v1::AppError* Arena::CreateMaybeMessage< ::common::v1::AppError >(Arena* arena) {
   return Arena::CreateMessageInternal< ::common::v1::AppError >(arena);
 }

@@ -36,8 +36,8 @@ type AppError struct {
 	// Code path or func name
 	Where string `protobuf:"bytes,6,opt,name=where,proto3" json:"where,omitempty"`
 	// If false, i18n may not apply
-	SkipTranslation bool                  `protobuf:"varint,7,opt,name=skip_translation,json=skipTranslation,proto3" json:"skip_translation,omitempty"`
-	Params          map[string]*anypb.Any `protobuf:"bytes,8,rep,name=params,proto3" json:"params,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	SkipTranslation bool       `protobuf:"varint,7,opt,name=skip_translation,json=skipTranslation,proto3" json:"skip_translation,omitempty"`
+	Params          *anypb.Any `protobuf:"bytes,8,opt,name=params,proto3" json:"params,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -121,7 +121,7 @@ func (x *AppError) GetSkipTranslation() bool {
 	return false
 }
 
-func (x *AppError) GetParams() map[string]*anypb.Any {
+func (x *AppError) GetParams() *anypb.Any {
 	if x != nil {
 		return x.Params
 	}
@@ -132,7 +132,7 @@ var File_common_v1_error_proto protoreflect.FileDescriptor
 
 const file_common_v1_error_proto_rawDesc = "" +
 	"\n" +
-	"\x15common/v1/error.proto\x12\tcommon.v1\x1a\x19google/protobuf/any.proto\"\xe6\x02\n" +
+	"\x15common/v1/error.proto\x12\tcommon.v1\x1a\x19google/protobuf/any.proto\"\x8a\x02\n" +
 	"\bAppError\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12%\n" +
@@ -142,11 +142,8 @@ const file_common_v1_error_proto_rawDesc = "" +
 	"\vstatus_code\x18\x05 \x01(\x05R\n" +
 	"statusCode\x12\x14\n" +
 	"\x05where\x18\x06 \x01(\tR\x05where\x12)\n" +
-	"\x10skip_translation\x18\a \x01(\bR\x0fskipTranslation\x127\n" +
-	"\x06params\x18\b \x03(\v2\x1f.common.v1.AppError.ParamsEntryR\x06params\x1aO\n" +
-	"\vParamsEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x12*\n" +
-	"\x05value\x18\x02 \x01(\v2\x14.google.protobuf.AnyR\x05value:\x028\x01B9\n" +
+	"\x10skip_translation\x18\a \x01(\bR\x0fskipTranslation\x12,\n" +
+	"\x06params\x18\b \x01(\v2\x14.google.protobuf.AnyR\x06paramsB9\n" +
 	"\x1aorg.megacommerce.common.v1B\n" +
 	"ErrorProtoZ\fcommon/v1;v1\xf8\x01\x01b\x06proto3"
 
@@ -162,20 +159,18 @@ func file_common_v1_error_proto_rawDescGZIP() []byte {
 	return file_common_v1_error_proto_rawDescData
 }
 
-var file_common_v1_error_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_common_v1_error_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_common_v1_error_proto_goTypes = []any{
 	(*AppError)(nil),  // 0: common.v1.AppError
-	nil,               // 1: common.v1.AppError.ParamsEntry
-	(*anypb.Any)(nil), // 2: google.protobuf.Any
+	(*anypb.Any)(nil), // 1: google.protobuf.Any
 }
 var file_common_v1_error_proto_depIdxs = []int32{
-	1, // 0: common.v1.AppError.params:type_name -> common.v1.AppError.ParamsEntry
-	2, // 1: common.v1.AppError.ParamsEntry.value:type_name -> google.protobuf.Any
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	1, // 0: common.v1.AppError.params:type_name -> google.protobuf.Any
+	1, // [1:1] is the sub-list for method output_type
+	1, // [1:1] is the sub-list for method input_type
+	1, // [1:1] is the sub-list for extension type_name
+	1, // [1:1] is the sub-list for extension extendee
+	0, // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_common_v1_error_proto_init() }
@@ -189,7 +184,7 @@ func file_common_v1_error_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_v1_error_proto_rawDesc), len(file_common_v1_error_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
