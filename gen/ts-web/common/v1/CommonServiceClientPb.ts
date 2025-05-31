@@ -147,5 +147,48 @@ export class CommonServiceClient {
       this.methodDescriptorConfigListener);
   }
 
+  methodDescriptorTranslationsGet = new grpcWeb.MethodDescriptor(
+    '/common.v1.CommonService/TranslationsGet',
+    grpcWeb.MethodType.UNARY,
+    common_v1_common_pb.TranslationsGetRequest,
+    common_v1_common_pb.TranslationsGetResponse,
+    (request: common_v1_common_pb.TranslationsGetRequest) => {
+      return request.serializeBinary();
+    },
+    common_v1_common_pb.TranslationsGetResponse.deserializeBinary
+  );
+
+  translationsGet(
+    request: common_v1_common_pb.TranslationsGetRequest,
+    metadata?: grpcWeb.Metadata | null): Promise<common_v1_common_pb.TranslationsGetResponse>;
+
+  translationsGet(
+    request: common_v1_common_pb.TranslationsGetRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: common_v1_common_pb.TranslationsGetResponse) => void): grpcWeb.ClientReadableStream<common_v1_common_pb.TranslationsGetResponse>;
+
+  translationsGet(
+    request: common_v1_common_pb.TranslationsGetRequest,
+    metadata?: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: common_v1_common_pb.TranslationsGetResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/common.v1.CommonService/TranslationsGet',
+        request,
+        metadata || {},
+        this.methodDescriptorTranslationsGet,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/common.v1.CommonService/TranslationsGet',
+    request,
+    metadata || {},
+    this.methodDescriptorTranslationsGet);
+  }
+
 }
 

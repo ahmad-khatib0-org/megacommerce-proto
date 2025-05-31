@@ -1448,6 +1448,1479 @@ public final class TypesProto {
 
   }
 
+  public interface TranslationElementOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.v1.TranslationElement)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>string tr = 2 [json_name = "tr"];</code>
+     * @return The tr.
+     */
+    java.lang.String getTr();
+    /**
+     * <code>string tr = 2 [json_name = "tr"];</code>
+     * @return The bytes for tr.
+     */
+    com.google.protobuf.ByteString
+        getTrBytes();
+  }
+  /**
+   * Protobuf type {@code common.v1.TranslationElement}
+   */
+  public static final class TranslationElement extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:common.v1.TranslationElement)
+      TranslationElementOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TranslationElement.newBuilder() to construct.
+    private TranslationElement(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TranslationElement() {
+      id_ = "";
+      tr_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TranslationElement();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.common.v1.TypesProto.internal_static_common_v1_TranslationElement_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.common.v1.TypesProto.internal_static_common_v1_TranslationElement_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.common.v1.TypesProto.TranslationElement.class, org.megacommerce.common.v1.TypesProto.TranslationElement.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object id_;
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TR_FIELD_NUMBER = 2;
+    private volatile java.lang.Object tr_;
+    /**
+     * <code>string tr = 2 [json_name = "tr"];</code>
+     * @return The tr.
+     */
+    @java.lang.Override
+    public java.lang.String getTr() {
+      java.lang.Object ref = tr_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tr_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string tr = 2 [json_name = "tr"];</code>
+     * @return The bytes for tr.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTrBytes() {
+      java.lang.Object ref = tr_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tr_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tr_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tr_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tr_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tr_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.common.v1.TypesProto.TranslationElement)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.common.v1.TypesProto.TranslationElement other = (org.megacommerce.common.v1.TypesProto.TranslationElement) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (!getTr()
+          .equals(other.getTr())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + TR_FIELD_NUMBER;
+      hash = (53 * hash) + getTr().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.common.v1.TypesProto.TranslationElement parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElement parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElement parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElement parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElement parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElement parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElement parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElement parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElement parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElement parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElement parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElement parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.common.v1.TypesProto.TranslationElement prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code common.v1.TranslationElement}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.v1.TranslationElement)
+        org.megacommerce.common.v1.TypesProto.TranslationElementOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.common.v1.TypesProto.internal_static_common_v1_TranslationElement_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.common.v1.TypesProto.internal_static_common_v1_TranslationElement_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.common.v1.TypesProto.TranslationElement.class, org.megacommerce.common.v1.TypesProto.TranslationElement.Builder.class);
+      }
+
+      // Construct using org.megacommerce.common.v1.TypesProto.TranslationElement.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        id_ = "";
+
+        tr_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.common.v1.TypesProto.internal_static_common_v1_TranslationElement_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.TypesProto.TranslationElement getDefaultInstanceForType() {
+        return org.megacommerce.common.v1.TypesProto.TranslationElement.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.TypesProto.TranslationElement build() {
+        org.megacommerce.common.v1.TypesProto.TranslationElement result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.TypesProto.TranslationElement buildPartial() {
+        org.megacommerce.common.v1.TypesProto.TranslationElement result = new org.megacommerce.common.v1.TypesProto.TranslationElement(this);
+        result.id_ = id_;
+        result.tr_ = tr_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.common.v1.TypesProto.TranslationElement) {
+          return mergeFrom((org.megacommerce.common.v1.TypesProto.TranslationElement)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.common.v1.TypesProto.TranslationElement other) {
+        if (other == org.megacommerce.common.v1.TypesProto.TranslationElement.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          onChanged();
+        }
+        if (!other.getTr().isEmpty()) {
+          tr_ = other.tr_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                id_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              case 18: {
+                tr_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private java.lang.Object id_ = "";
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        id_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        
+        id_ = getDefaultInstance().getId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        id_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object tr_ = "";
+      /**
+       * <code>string tr = 2 [json_name = "tr"];</code>
+       * @return The tr.
+       */
+      public java.lang.String getTr() {
+        java.lang.Object ref = tr_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          tr_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string tr = 2 [json_name = "tr"];</code>
+       * @return The bytes for tr.
+       */
+      public com.google.protobuf.ByteString
+          getTrBytes() {
+        java.lang.Object ref = tr_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          tr_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string tr = 2 [json_name = "tr"];</code>
+       * @param value The tr to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTr(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        tr_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string tr = 2 [json_name = "tr"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTr() {
+        
+        tr_ = getDefaultInstance().getTr();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string tr = 2 [json_name = "tr"];</code>
+       * @param value The bytes for tr to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTrBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        tr_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:common.v1.TranslationElement)
+    }
+
+    // @@protoc_insertion_point(class_scope:common.v1.TranslationElement)
+    private static final org.megacommerce.common.v1.TypesProto.TranslationElement DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.common.v1.TypesProto.TranslationElement();
+    }
+
+    public static org.megacommerce.common.v1.TypesProto.TranslationElement getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TranslationElement>
+        PARSER = new com.google.protobuf.AbstractParser<TranslationElement>() {
+      @java.lang.Override
+      public TranslationElement parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<TranslationElement> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TranslationElement> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.common.v1.TypesProto.TranslationElement getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TranslationElementsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.v1.TranslationElements)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+     */
+    java.util.List<org.megacommerce.common.v1.TypesProto.TranslationElement> 
+        getTransList();
+    /**
+     * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+     */
+    org.megacommerce.common.v1.TypesProto.TranslationElement getTrans(int index);
+    /**
+     * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+     */
+    int getTransCount();
+    /**
+     * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+     */
+    java.util.List<? extends org.megacommerce.common.v1.TypesProto.TranslationElementOrBuilder> 
+        getTransOrBuilderList();
+    /**
+     * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+     */
+    org.megacommerce.common.v1.TypesProto.TranslationElementOrBuilder getTransOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code common.v1.TranslationElements}
+   */
+  public static final class TranslationElements extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:common.v1.TranslationElements)
+      TranslationElementsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use TranslationElements.newBuilder() to construct.
+    private TranslationElements(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private TranslationElements() {
+      trans_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new TranslationElements();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.common.v1.TypesProto.internal_static_common_v1_TranslationElements_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.common.v1.TypesProto.internal_static_common_v1_TranslationElements_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.common.v1.TypesProto.TranslationElements.class, org.megacommerce.common.v1.TypesProto.TranslationElements.Builder.class);
+    }
+
+    public static final int TRANS_FIELD_NUMBER = 1;
+    private java.util.List<org.megacommerce.common.v1.TypesProto.TranslationElement> trans_;
+    /**
+     * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<org.megacommerce.common.v1.TypesProto.TranslationElement> getTransList() {
+      return trans_;
+    }
+    /**
+     * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends org.megacommerce.common.v1.TypesProto.TranslationElementOrBuilder> 
+        getTransOrBuilderList() {
+      return trans_;
+    }
+    /**
+     * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+     */
+    @java.lang.Override
+    public int getTransCount() {
+      return trans_.size();
+    }
+    /**
+     * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.TypesProto.TranslationElement getTrans(int index) {
+      return trans_.get(index);
+    }
+    /**
+     * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.TypesProto.TranslationElementOrBuilder getTransOrBuilder(
+        int index) {
+      return trans_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < trans_.size(); i++) {
+        output.writeMessage(1, trans_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < trans_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, trans_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.common.v1.TypesProto.TranslationElements)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.common.v1.TypesProto.TranslationElements other = (org.megacommerce.common.v1.TypesProto.TranslationElements) obj;
+
+      if (!getTransList()
+          .equals(other.getTransList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getTransCount() > 0) {
+        hash = (37 * hash) + TRANS_FIELD_NUMBER;
+        hash = (53 * hash) + getTransList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.common.v1.TypesProto.TranslationElements parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElements parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElements parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElements parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElements parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElements parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElements parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElements parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElements parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElements parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElements parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.TypesProto.TranslationElements parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.common.v1.TypesProto.TranslationElements prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code common.v1.TranslationElements}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.v1.TranslationElements)
+        org.megacommerce.common.v1.TypesProto.TranslationElementsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.common.v1.TypesProto.internal_static_common_v1_TranslationElements_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.common.v1.TypesProto.internal_static_common_v1_TranslationElements_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.common.v1.TypesProto.TranslationElements.class, org.megacommerce.common.v1.TypesProto.TranslationElements.Builder.class);
+      }
+
+      // Construct using org.megacommerce.common.v1.TypesProto.TranslationElements.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (transBuilder_ == null) {
+          trans_ = java.util.Collections.emptyList();
+        } else {
+          trans_ = null;
+          transBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.common.v1.TypesProto.internal_static_common_v1_TranslationElements_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.TypesProto.TranslationElements getDefaultInstanceForType() {
+        return org.megacommerce.common.v1.TypesProto.TranslationElements.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.TypesProto.TranslationElements build() {
+        org.megacommerce.common.v1.TypesProto.TranslationElements result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.TypesProto.TranslationElements buildPartial() {
+        org.megacommerce.common.v1.TypesProto.TranslationElements result = new org.megacommerce.common.v1.TypesProto.TranslationElements(this);
+        int from_bitField0_ = bitField0_;
+        if (transBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            trans_ = java.util.Collections.unmodifiableList(trans_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.trans_ = trans_;
+        } else {
+          result.trans_ = transBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.common.v1.TypesProto.TranslationElements) {
+          return mergeFrom((org.megacommerce.common.v1.TypesProto.TranslationElements)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.common.v1.TypesProto.TranslationElements other) {
+        if (other == org.megacommerce.common.v1.TypesProto.TranslationElements.getDefaultInstance()) return this;
+        if (transBuilder_ == null) {
+          if (!other.trans_.isEmpty()) {
+            if (trans_.isEmpty()) {
+              trans_ = other.trans_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureTransIsMutable();
+              trans_.addAll(other.trans_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.trans_.isEmpty()) {
+            if (transBuilder_.isEmpty()) {
+              transBuilder_.dispose();
+              transBuilder_ = null;
+              trans_ = other.trans_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              transBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getTransFieldBuilder() : null;
+            } else {
+              transBuilder_.addAllMessages(other.trans_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                org.megacommerce.common.v1.TypesProto.TranslationElement m =
+                    input.readMessage(
+                        org.megacommerce.common.v1.TypesProto.TranslationElement.parser(),
+                        extensionRegistry);
+                if (transBuilder_ == null) {
+                  ensureTransIsMutable();
+                  trans_.add(m);
+                } else {
+                  transBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<org.megacommerce.common.v1.TypesProto.TranslationElement> trans_ =
+        java.util.Collections.emptyList();
+      private void ensureTransIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          trans_ = new java.util.ArrayList<org.megacommerce.common.v1.TypesProto.TranslationElement>(trans_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.megacommerce.common.v1.TypesProto.TranslationElement, org.megacommerce.common.v1.TypesProto.TranslationElement.Builder, org.megacommerce.common.v1.TypesProto.TranslationElementOrBuilder> transBuilder_;
+
+      /**
+       * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+       */
+      public java.util.List<org.megacommerce.common.v1.TypesProto.TranslationElement> getTransList() {
+        if (transBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(trans_);
+        } else {
+          return transBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+       */
+      public int getTransCount() {
+        if (transBuilder_ == null) {
+          return trans_.size();
+        } else {
+          return transBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+       */
+      public org.megacommerce.common.v1.TypesProto.TranslationElement getTrans(int index) {
+        if (transBuilder_ == null) {
+          return trans_.get(index);
+        } else {
+          return transBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+       */
+      public Builder setTrans(
+          int index, org.megacommerce.common.v1.TypesProto.TranslationElement value) {
+        if (transBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTransIsMutable();
+          trans_.set(index, value);
+          onChanged();
+        } else {
+          transBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+       */
+      public Builder setTrans(
+          int index, org.megacommerce.common.v1.TypesProto.TranslationElement.Builder builderForValue) {
+        if (transBuilder_ == null) {
+          ensureTransIsMutable();
+          trans_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          transBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+       */
+      public Builder addTrans(org.megacommerce.common.v1.TypesProto.TranslationElement value) {
+        if (transBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTransIsMutable();
+          trans_.add(value);
+          onChanged();
+        } else {
+          transBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+       */
+      public Builder addTrans(
+          int index, org.megacommerce.common.v1.TypesProto.TranslationElement value) {
+        if (transBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureTransIsMutable();
+          trans_.add(index, value);
+          onChanged();
+        } else {
+          transBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+       */
+      public Builder addTrans(
+          org.megacommerce.common.v1.TypesProto.TranslationElement.Builder builderForValue) {
+        if (transBuilder_ == null) {
+          ensureTransIsMutable();
+          trans_.add(builderForValue.build());
+          onChanged();
+        } else {
+          transBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+       */
+      public Builder addTrans(
+          int index, org.megacommerce.common.v1.TypesProto.TranslationElement.Builder builderForValue) {
+        if (transBuilder_ == null) {
+          ensureTransIsMutable();
+          trans_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          transBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+       */
+      public Builder addAllTrans(
+          java.lang.Iterable<? extends org.megacommerce.common.v1.TypesProto.TranslationElement> values) {
+        if (transBuilder_ == null) {
+          ensureTransIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, trans_);
+          onChanged();
+        } else {
+          transBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+       */
+      public Builder clearTrans() {
+        if (transBuilder_ == null) {
+          trans_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          transBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+       */
+      public Builder removeTrans(int index) {
+        if (transBuilder_ == null) {
+          ensureTransIsMutable();
+          trans_.remove(index);
+          onChanged();
+        } else {
+          transBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+       */
+      public org.megacommerce.common.v1.TypesProto.TranslationElement.Builder getTransBuilder(
+          int index) {
+        return getTransFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+       */
+      public org.megacommerce.common.v1.TypesProto.TranslationElementOrBuilder getTransOrBuilder(
+          int index) {
+        if (transBuilder_ == null) {
+          return trans_.get(index);  } else {
+          return transBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+       */
+      public java.util.List<? extends org.megacommerce.common.v1.TypesProto.TranslationElementOrBuilder> 
+           getTransOrBuilderList() {
+        if (transBuilder_ != null) {
+          return transBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(trans_);
+        }
+      }
+      /**
+       * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+       */
+      public org.megacommerce.common.v1.TypesProto.TranslationElement.Builder addTransBuilder() {
+        return getTransFieldBuilder().addBuilder(
+            org.megacommerce.common.v1.TypesProto.TranslationElement.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+       */
+      public org.megacommerce.common.v1.TypesProto.TranslationElement.Builder addTransBuilder(
+          int index) {
+        return getTransFieldBuilder().addBuilder(
+            index, org.megacommerce.common.v1.TypesProto.TranslationElement.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .common.v1.TranslationElement trans = 1 [json_name = "trans"];</code>
+       */
+      public java.util.List<org.megacommerce.common.v1.TypesProto.TranslationElement.Builder> 
+           getTransBuilderList() {
+        return getTransFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          org.megacommerce.common.v1.TypesProto.TranslationElement, org.megacommerce.common.v1.TypesProto.TranslationElement.Builder, org.megacommerce.common.v1.TypesProto.TranslationElementOrBuilder> 
+          getTransFieldBuilder() {
+        if (transBuilder_ == null) {
+          transBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              org.megacommerce.common.v1.TypesProto.TranslationElement, org.megacommerce.common.v1.TypesProto.TranslationElement.Builder, org.megacommerce.common.v1.TypesProto.TranslationElementOrBuilder>(
+                  trans_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          trans_ = null;
+        }
+        return transBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:common.v1.TranslationElements)
+    }
+
+    // @@protoc_insertion_point(class_scope:common.v1.TranslationElements)
+    private static final org.megacommerce.common.v1.TypesProto.TranslationElements DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.common.v1.TypesProto.TranslationElements();
+    }
+
+    public static org.megacommerce.common.v1.TypesProto.TranslationElements getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TranslationElements>
+        PARSER = new com.google.protobuf.AbstractParser<TranslationElements>() {
+      @java.lang.Override
+      public TranslationElements parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<TranslationElements> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TranslationElements> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.common.v1.TypesProto.TranslationElements getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_v1_StringMap_descriptor;
   private static final 
@@ -1468,6 +2941,16 @@ public final class TypesProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_common_v1_NestedStringMap_DataEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_v1_TranslationElement_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_common_v1_TranslationElement_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_v1_TranslationElements_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_common_v1_TranslationElements_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1484,9 +2967,12 @@ public final class TypesProto {
       "\017NestedStringMap\0228\n\004data\030\001 \003(\0132$.common." +
       "v1.NestedStringMap.DataEntryR\004data\032M\n\tDa" +
       "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\013" +
-      "2\024.common.v1.StringMapR\005value:\0028\001B9\n\032org" +
-      ".megacommerce.common.v1B\nTypesProtoZ\014com" +
-      "mon/v1;v1\370\001\001b\006proto3"
+      "2\024.common.v1.StringMapR\005value:\0028\001\"4\n\022Tra" +
+      "nslationElement\022\016\n\002id\030\001 \001(\tR\002id\022\016\n\002tr\030\002 " +
+      "\001(\tR\002tr\"J\n\023TranslationElements\0223\n\005trans\030" +
+      "\001 \003(\0132\035.common.v1.TranslationElementR\005tr" +
+      "ansB9\n\032org.megacommerce.common.v1B\nTypes" +
+      "ProtoZ\014common/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1516,6 +3002,18 @@ public final class TypesProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_v1_NestedStringMap_DataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
+    internal_static_common_v1_TranslationElement_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_common_v1_TranslationElement_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_common_v1_TranslationElement_descriptor,
+        new java.lang.String[] { "Id", "Tr", });
+    internal_static_common_v1_TranslationElements_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_common_v1_TranslationElements_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_common_v1_TranslationElements_descriptor,
+        new java.lang.String[] { "Trans", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

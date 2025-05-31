@@ -59,11 +59,11 @@ func (*ConfigGetRequest) Descriptor() ([]byte, []int) {
 
 type ConfigGetResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// Types that are valid to be assigned to Result:
+	// Types that are valid to be assigned to Response:
 	//
 	//	*ConfigGetResponse_Data
 	//	*ConfigGetResponse_Error
-	Result        isConfigGetResponse_Result `protobuf_oneof:"result"`
+	Response      isConfigGetResponse_Response `protobuf_oneof:"response"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -98,16 +98,16 @@ func (*ConfigGetResponse) Descriptor() ([]byte, []int) {
 	return file_common_v1_common_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *ConfigGetResponse) GetResult() isConfigGetResponse_Result {
+func (x *ConfigGetResponse) GetResponse() isConfigGetResponse_Response {
 	if x != nil {
-		return x.Result
+		return x.Response
 	}
 	return nil
 }
 
 func (x *ConfigGetResponse) GetData() *Config {
 	if x != nil {
-		if x, ok := x.Result.(*ConfigGetResponse_Data); ok {
+		if x, ok := x.Response.(*ConfigGetResponse_Data); ok {
 			return x.Data
 		}
 	}
@@ -116,15 +116,15 @@ func (x *ConfigGetResponse) GetData() *Config {
 
 func (x *ConfigGetResponse) GetError() *AppError {
 	if x != nil {
-		if x, ok := x.Result.(*ConfigGetResponse_Error); ok {
+		if x, ok := x.Response.(*ConfigGetResponse_Error); ok {
 			return x.Error
 		}
 	}
 	return nil
 }
 
-type isConfigGetResponse_Result interface {
-	isConfigGetResponse_Result()
+type isConfigGetResponse_Response interface {
+	isConfigGetResponse_Response()
 }
 
 type ConfigGetResponse_Data struct {
@@ -135,9 +135,9 @@ type ConfigGetResponse_Error struct {
 	Error *AppError `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
 }
 
-func (*ConfigGetResponse_Data) isConfigGetResponse_Result() {}
+func (*ConfigGetResponse_Data) isConfigGetResponse_Response() {}
 
-func (*ConfigGetResponse_Error) isConfigGetResponse_Result() {}
+func (*ConfigGetResponse_Error) isConfigGetResponse_Response() {}
 
 type ConfigUpdateRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
@@ -185,11 +185,11 @@ func (x *ConfigUpdateRequest) GetConfig() *Config {
 
 type ConfigUpdateResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// Types that are valid to be assigned to Result:
+	// Types that are valid to be assigned to Response:
 	//
 	//	*ConfigUpdateResponse_Data
 	//	*ConfigUpdateResponse_Error
-	Result        isConfigUpdateResponse_Result `protobuf_oneof:"result"`
+	Response      isConfigUpdateResponse_Response `protobuf_oneof:"response"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -224,16 +224,16 @@ func (*ConfigUpdateResponse) Descriptor() ([]byte, []int) {
 	return file_common_v1_common_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *ConfigUpdateResponse) GetResult() isConfigUpdateResponse_Result {
+func (x *ConfigUpdateResponse) GetResponse() isConfigUpdateResponse_Response {
 	if x != nil {
-		return x.Result
+		return x.Response
 	}
 	return nil
 }
 
 func (x *ConfigUpdateResponse) GetData() *Config {
 	if x != nil {
-		if x, ok := x.Result.(*ConfigUpdateResponse_Data); ok {
+		if x, ok := x.Response.(*ConfigUpdateResponse_Data); ok {
 			return x.Data
 		}
 	}
@@ -242,15 +242,15 @@ func (x *ConfigUpdateResponse) GetData() *Config {
 
 func (x *ConfigUpdateResponse) GetError() *AppError {
 	if x != nil {
-		if x, ok := x.Result.(*ConfigUpdateResponse_Error); ok {
+		if x, ok := x.Response.(*ConfigUpdateResponse_Error); ok {
 			return x.Error
 		}
 	}
 	return nil
 }
 
-type isConfigUpdateResponse_Result interface {
-	isConfigUpdateResponse_Result()
+type isConfigUpdateResponse_Response interface {
+	isConfigUpdateResponse_Response()
 }
 
 type ConfigUpdateResponse_Data struct {
@@ -261,17 +261,17 @@ type ConfigUpdateResponse_Error struct {
 	Error *AppError `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
 }
 
-func (*ConfigUpdateResponse_Data) isConfigUpdateResponse_Result() {}
+func (*ConfigUpdateResponse_Data) isConfigUpdateResponse_Response() {}
 
-func (*ConfigUpdateResponse_Error) isConfigUpdateResponse_Result() {}
+func (*ConfigUpdateResponse_Error) isConfigUpdateResponse_Response() {}
 
 type ConfigListenerResponse struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// Types that are valid to be assigned to Result:
+	// Types that are valid to be assigned to Response:
 	//
 	//	*ConfigListenerResponse_Data
 	//	*ConfigListenerResponse_Error
-	Result        isConfigListenerResponse_Result `protobuf_oneof:"result"`
+	Response      isConfigListenerResponse_Response `protobuf_oneof:"response"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -306,16 +306,16 @@ func (*ConfigListenerResponse) Descriptor() ([]byte, []int) {
 	return file_common_v1_common_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *ConfigListenerResponse) GetResult() isConfigListenerResponse_Result {
+func (x *ConfigListenerResponse) GetResponse() isConfigListenerResponse_Response {
 	if x != nil {
-		return x.Result
+		return x.Response
 	}
 	return nil
 }
 
 func (x *ConfigListenerResponse) GetData() *Config {
 	if x != nil {
-		if x, ok := x.Result.(*ConfigListenerResponse_Data); ok {
+		if x, ok := x.Response.(*ConfigListenerResponse_Data); ok {
 			return x.Data
 		}
 	}
@@ -324,15 +324,15 @@ func (x *ConfigListenerResponse) GetData() *Config {
 
 func (x *ConfigListenerResponse) GetError() *AppError {
 	if x != nil {
-		if x, ok := x.Result.(*ConfigListenerResponse_Error); ok {
+		if x, ok := x.Response.(*ConfigListenerResponse_Error); ok {
 			return x.Error
 		}
 	}
 	return nil
 }
 
-type isConfigListenerResponse_Result interface {
-	isConfigListenerResponse_Result()
+type isConfigListenerResponse_Response interface {
+	isConfigListenerResponse_Response()
 }
 
 type ConfigListenerResponse_Data struct {
@@ -343,9 +343,9 @@ type ConfigListenerResponse_Error struct {
 	Error *AppError `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
 }
 
-func (*ConfigListenerResponse_Data) isConfigListenerResponse_Result() {}
+func (*ConfigListenerResponse_Data) isConfigListenerResponse_Response() {}
 
-func (*ConfigListenerResponse_Error) isConfigListenerResponse_Result() {}
+func (*ConfigListenerResponse_Error) isConfigListenerResponse_Response() {}
 
 type ConfigListenerRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
@@ -391,32 +391,169 @@ func (x *ConfigListenerRequest) GetClientId() string {
 	return ""
 }
 
+type TranslationsGetRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Lang          string                 `protobuf:"bytes,1,opt,name=lang,proto3" json:"lang,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TranslationsGetRequest) Reset() {
+	*x = TranslationsGetRequest{}
+	mi := &file_common_v1_common_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TranslationsGetRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TranslationsGetRequest) ProtoMessage() {}
+
+func (x *TranslationsGetRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_common_v1_common_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TranslationsGetRequest.ProtoReflect.Descriptor instead.
+func (*TranslationsGetRequest) Descriptor() ([]byte, []int) {
+	return file_common_v1_common_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *TranslationsGetRequest) GetLang() string {
+	if x != nil {
+		return x.Lang
+	}
+	return ""
+}
+
+type TranslationsGetResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Types that are valid to be assigned to Response:
+	//
+	//	*TranslationsGetResponse_Data
+	//	*TranslationsGetResponse_Error
+	Response      isTranslationsGetResponse_Response `protobuf_oneof:"response"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TranslationsGetResponse) Reset() {
+	*x = TranslationsGetResponse{}
+	mi := &file_common_v1_common_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TranslationsGetResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TranslationsGetResponse) ProtoMessage() {}
+
+func (x *TranslationsGetResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_common_v1_common_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TranslationsGetResponse.ProtoReflect.Descriptor instead.
+func (*TranslationsGetResponse) Descriptor() ([]byte, []int) {
+	return file_common_v1_common_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *TranslationsGetResponse) GetResponse() isTranslationsGetResponse_Response {
+	if x != nil {
+		return x.Response
+	}
+	return nil
+}
+
+func (x *TranslationsGetResponse) GetData() *TranslationElements {
+	if x != nil {
+		if x, ok := x.Response.(*TranslationsGetResponse_Data); ok {
+			return x.Data
+		}
+	}
+	return nil
+}
+
+func (x *TranslationsGetResponse) GetError() *AppError {
+	if x != nil {
+		if x, ok := x.Response.(*TranslationsGetResponse_Error); ok {
+			return x.Error
+		}
+	}
+	return nil
+}
+
+type isTranslationsGetResponse_Response interface {
+	isTranslationsGetResponse_Response()
+}
+
+type TranslationsGetResponse_Data struct {
+	Data *TranslationElements `protobuf:"bytes,1,opt,name=data,proto3,oneof"`
+}
+
+type TranslationsGetResponse_Error struct {
+	Error *AppError `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
+}
+
+func (*TranslationsGetResponse_Data) isTranslationsGetResponse_Response() {}
+
+func (*TranslationsGetResponse_Error) isTranslationsGetResponse_Response() {}
+
 var File_common_v1_common_proto protoreflect.FileDescriptor
 
 const file_common_v1_common_proto_rawDesc = "" +
 	"\n" +
-	"\x16common/v1/common.proto\x12\tcommon.v1\x1a\x16common/v1/config.proto\x1a\x15common/v1/error.proto\"\x12\n" +
-	"\x10ConfigGetRequest\"s\n" +
+	"\x16common/v1/common.proto\x12\tcommon.v1\x1a\x16common/v1/config.proto\x1a\x15common/v1/error.proto\x1a\x15common/v1/types.proto\"\x12\n" +
+	"\x10ConfigGetRequest\"u\n" +
 	"\x11ConfigGetResponse\x12'\n" +
 	"\x04data\x18\x01 \x01(\v2\x11.common.v1.ConfigH\x00R\x04data\x12+\n" +
-	"\x05error\x18\x02 \x01(\v2\x13.common.v1.AppErrorH\x00R\x05errorB\b\n" +
-	"\x06result\"@\n" +
+	"\x05error\x18\x02 \x01(\v2\x13.common.v1.AppErrorH\x00R\x05errorB\n" +
+	"\n" +
+	"\bresponse\"@\n" +
 	"\x13ConfigUpdateRequest\x12)\n" +
-	"\x06config\x18\x01 \x01(\v2\x11.common.v1.ConfigR\x06config\"v\n" +
+	"\x06config\x18\x01 \x01(\v2\x11.common.v1.ConfigR\x06config\"x\n" +
 	"\x14ConfigUpdateResponse\x12'\n" +
 	"\x04data\x18\x01 \x01(\v2\x11.common.v1.ConfigH\x00R\x04data\x12+\n" +
-	"\x05error\x18\x02 \x01(\v2\x13.common.v1.AppErrorH\x00R\x05errorB\b\n" +
-	"\x06result\"x\n" +
+	"\x05error\x18\x02 \x01(\v2\x13.common.v1.AppErrorH\x00R\x05errorB\n" +
+	"\n" +
+	"\bresponse\"z\n" +
 	"\x16ConfigListenerResponse\x12'\n" +
 	"\x04data\x18\x01 \x01(\v2\x11.common.v1.ConfigH\x00R\x04data\x12+\n" +
-	"\x05error\x18\x02 \x01(\v2\x13.common.v1.AppErrorH\x00R\x05errorB\b\n" +
-	"\x06result\"4\n" +
+	"\x05error\x18\x02 \x01(\v2\x13.common.v1.AppErrorH\x00R\x05errorB\n" +
+	"\n" +
+	"\bresponse\"4\n" +
 	"\x15ConfigListenerRequest\x12\x1b\n" +
-	"\tclient_id\x18\x01 \x01(\tR\bclientId2\x81\x02\n" +
+	"\tclient_id\x18\x01 \x01(\tR\bclientId\",\n" +
+	"\x16TranslationsGetRequest\x12\x12\n" +
+	"\x04lang\x18\x01 \x01(\tR\x04lang\"\x88\x01\n" +
+	"\x17TranslationsGetResponse\x124\n" +
+	"\x04data\x18\x01 \x01(\v2\x1e.common.v1.TranslationElementsH\x00R\x04data\x12+\n" +
+	"\x05error\x18\x02 \x01(\v2\x13.common.v1.AppErrorH\x00R\x05errorB\n" +
+	"\n" +
+	"\bresponse2\xdb\x02\n" +
 	"\rCommonService\x12F\n" +
 	"\tConfigGet\x12\x1b.common.v1.ConfigGetRequest\x1a\x1c.common.v1.ConfigGetResponse\x12O\n" +
 	"\fConfigUpdate\x12\x1e.common.v1.ConfigUpdateRequest\x1a\x1f.common.v1.ConfigUpdateResponse\x12W\n" +
-	"\x0eConfigListener\x12 .common.v1.ConfigListenerRequest\x1a!.common.v1.ConfigListenerResponse0\x01B:\n" +
+	"\x0eConfigListener\x12 .common.v1.ConfigListenerRequest\x1a!.common.v1.ConfigListenerResponse0\x01\x12X\n" +
+	"\x0fTranslationsGet\x12!.common.v1.TranslationsGetRequest\x1a\".common.v1.TranslationsGetResponseB:\n" +
 	"\x1aorg.megacommerce.common.v1B\vCommonProtoZ\fcommon/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
@@ -431,36 +568,43 @@ func file_common_v1_common_proto_rawDescGZIP() []byte {
 	return file_common_v1_common_proto_rawDescData
 }
 
-var file_common_v1_common_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_common_v1_common_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
 var file_common_v1_common_proto_goTypes = []any{
-	(*ConfigGetRequest)(nil),       // 0: common.v1.ConfigGetRequest
-	(*ConfigGetResponse)(nil),      // 1: common.v1.ConfigGetResponse
-	(*ConfigUpdateRequest)(nil),    // 2: common.v1.ConfigUpdateRequest
-	(*ConfigUpdateResponse)(nil),   // 3: common.v1.ConfigUpdateResponse
-	(*ConfigListenerResponse)(nil), // 4: common.v1.ConfigListenerResponse
-	(*ConfigListenerRequest)(nil),  // 5: common.v1.ConfigListenerRequest
-	(*Config)(nil),                 // 6: common.v1.Config
-	(*AppError)(nil),               // 7: common.v1.AppError
+	(*ConfigGetRequest)(nil),        // 0: common.v1.ConfigGetRequest
+	(*ConfigGetResponse)(nil),       // 1: common.v1.ConfigGetResponse
+	(*ConfigUpdateRequest)(nil),     // 2: common.v1.ConfigUpdateRequest
+	(*ConfigUpdateResponse)(nil),    // 3: common.v1.ConfigUpdateResponse
+	(*ConfigListenerResponse)(nil),  // 4: common.v1.ConfigListenerResponse
+	(*ConfigListenerRequest)(nil),   // 5: common.v1.ConfigListenerRequest
+	(*TranslationsGetRequest)(nil),  // 6: common.v1.TranslationsGetRequest
+	(*TranslationsGetResponse)(nil), // 7: common.v1.TranslationsGetResponse
+	(*Config)(nil),                  // 8: common.v1.Config
+	(*AppError)(nil),                // 9: common.v1.AppError
+	(*TranslationElements)(nil),     // 10: common.v1.TranslationElements
 }
 var file_common_v1_common_proto_depIdxs = []int32{
-	6,  // 0: common.v1.ConfigGetResponse.data:type_name -> common.v1.Config
-	7,  // 1: common.v1.ConfigGetResponse.error:type_name -> common.v1.AppError
-	6,  // 2: common.v1.ConfigUpdateRequest.config:type_name -> common.v1.Config
-	6,  // 3: common.v1.ConfigUpdateResponse.data:type_name -> common.v1.Config
-	7,  // 4: common.v1.ConfigUpdateResponse.error:type_name -> common.v1.AppError
-	6,  // 5: common.v1.ConfigListenerResponse.data:type_name -> common.v1.Config
-	7,  // 6: common.v1.ConfigListenerResponse.error:type_name -> common.v1.AppError
-	0,  // 7: common.v1.CommonService.ConfigGet:input_type -> common.v1.ConfigGetRequest
-	2,  // 8: common.v1.CommonService.ConfigUpdate:input_type -> common.v1.ConfigUpdateRequest
-	5,  // 9: common.v1.CommonService.ConfigListener:input_type -> common.v1.ConfigListenerRequest
-	1,  // 10: common.v1.CommonService.ConfigGet:output_type -> common.v1.ConfigGetResponse
-	3,  // 11: common.v1.CommonService.ConfigUpdate:output_type -> common.v1.ConfigUpdateResponse
-	4,  // 12: common.v1.CommonService.ConfigListener:output_type -> common.v1.ConfigListenerResponse
-	10, // [10:13] is the sub-list for method output_type
-	7,  // [7:10] is the sub-list for method input_type
-	7,  // [7:7] is the sub-list for extension type_name
-	7,  // [7:7] is the sub-list for extension extendee
-	0,  // [0:7] is the sub-list for field type_name
+	8,  // 0: common.v1.ConfigGetResponse.data:type_name -> common.v1.Config
+	9,  // 1: common.v1.ConfigGetResponse.error:type_name -> common.v1.AppError
+	8,  // 2: common.v1.ConfigUpdateRequest.config:type_name -> common.v1.Config
+	8,  // 3: common.v1.ConfigUpdateResponse.data:type_name -> common.v1.Config
+	9,  // 4: common.v1.ConfigUpdateResponse.error:type_name -> common.v1.AppError
+	8,  // 5: common.v1.ConfigListenerResponse.data:type_name -> common.v1.Config
+	9,  // 6: common.v1.ConfigListenerResponse.error:type_name -> common.v1.AppError
+	10, // 7: common.v1.TranslationsGetResponse.data:type_name -> common.v1.TranslationElements
+	9,  // 8: common.v1.TranslationsGetResponse.error:type_name -> common.v1.AppError
+	0,  // 9: common.v1.CommonService.ConfigGet:input_type -> common.v1.ConfigGetRequest
+	2,  // 10: common.v1.CommonService.ConfigUpdate:input_type -> common.v1.ConfigUpdateRequest
+	5,  // 11: common.v1.CommonService.ConfigListener:input_type -> common.v1.ConfigListenerRequest
+	6,  // 12: common.v1.CommonService.TranslationsGet:input_type -> common.v1.TranslationsGetRequest
+	1,  // 13: common.v1.CommonService.ConfigGet:output_type -> common.v1.ConfigGetResponse
+	3,  // 14: common.v1.CommonService.ConfigUpdate:output_type -> common.v1.ConfigUpdateResponse
+	4,  // 15: common.v1.CommonService.ConfigListener:output_type -> common.v1.ConfigListenerResponse
+	7,  // 16: common.v1.CommonService.TranslationsGet:output_type -> common.v1.TranslationsGetResponse
+	13, // [13:17] is the sub-list for method output_type
+	9,  // [9:13] is the sub-list for method input_type
+	9,  // [9:9] is the sub-list for extension type_name
+	9,  // [9:9] is the sub-list for extension extendee
+	0,  // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_common_v1_common_proto_init() }
@@ -470,6 +614,7 @@ func file_common_v1_common_proto_init() {
 	}
 	file_common_v1_config_proto_init()
 	file_common_v1_error_proto_init()
+	file_common_v1_types_proto_init()
 	file_common_v1_common_proto_msgTypes[1].OneofWrappers = []any{
 		(*ConfigGetResponse_Data)(nil),
 		(*ConfigGetResponse_Error)(nil),
@@ -482,13 +627,17 @@ func file_common_v1_common_proto_init() {
 		(*ConfigListenerResponse_Data)(nil),
 		(*ConfigListenerResponse_Error)(nil),
 	}
+	file_common_v1_common_proto_msgTypes[7].OneofWrappers = []any{
+		(*TranslationsGetResponse_Data)(nil),
+		(*TranslationsGetResponse_Error)(nil),
+	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_v1_common_proto_rawDesc), len(file_common_v1_common_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   8,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

@@ -19,9 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CommonService_ConfigGet_FullMethodName      = "/common.v1.CommonService/ConfigGet"
-	CommonService_ConfigUpdate_FullMethodName   = "/common.v1.CommonService/ConfigUpdate"
-	CommonService_ConfigListener_FullMethodName = "/common.v1.CommonService/ConfigListener"
+	CommonService_ConfigGet_FullMethodName       = "/common.v1.CommonService/ConfigGet"
+	CommonService_ConfigUpdate_FullMethodName    = "/common.v1.CommonService/ConfigUpdate"
+	CommonService_ConfigListener_FullMethodName  = "/common.v1.CommonService/ConfigListener"
+	CommonService_TranslationsGet_FullMethodName = "/common.v1.CommonService/TranslationsGet"
 )
 
 // CommonServiceClient is the client API for CommonService service.
@@ -31,6 +32,7 @@ type CommonServiceClient interface {
 	ConfigGet(ctx context.Context, in *ConfigGetRequest, opts ...grpc.CallOption) (*ConfigGetResponse, error)
 	ConfigUpdate(ctx context.Context, in *ConfigUpdateRequest, opts ...grpc.CallOption) (*ConfigUpdateResponse, error)
 	ConfigListener(ctx context.Context, in *ConfigListenerRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[ConfigListenerResponse], error)
+	TranslationsGet(ctx context.Context, in *TranslationsGetRequest, opts ...grpc.CallOption) (*TranslationsGetResponse, error)
 }
 
 type commonServiceClient struct {
@@ -80,6 +82,16 @@ func (c *commonServiceClient) ConfigListener(ctx context.Context, in *ConfigList
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
 type CommonService_ConfigListenerClient = grpc.ServerStreamingClient[ConfigListenerResponse]
 
+func (c *commonServiceClient) TranslationsGet(ctx context.Context, in *TranslationsGetRequest, opts ...grpc.CallOption) (*TranslationsGetResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(TranslationsGetResponse)
+	err := c.cc.Invoke(ctx, CommonService_TranslationsGet_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CommonServiceServer is the server API for CommonService service.
 // All implementations must embed UnimplementedCommonServiceServer
 // for forward compatibility.
@@ -87,6 +99,7 @@ type CommonServiceServer interface {
 	ConfigGet(context.Context, *ConfigGetRequest) (*ConfigGetResponse, error)
 	ConfigUpdate(context.Context, *ConfigUpdateRequest) (*ConfigUpdateResponse, error)
 	ConfigListener(*ConfigListenerRequest, grpc.ServerStreamingServer[ConfigListenerResponse]) error
+	TranslationsGet(context.Context, *TranslationsGetRequest) (*TranslationsGetResponse, error)
 	mustEmbedUnimplementedCommonServiceServer()
 }
 
@@ -105,6 +118,9 @@ func (UnimplementedCommonServiceServer) ConfigUpdate(context.Context, *ConfigUpd
 }
 func (UnimplementedCommonServiceServer) ConfigListener(*ConfigListenerRequest, grpc.ServerStreamingServer[ConfigListenerResponse]) error {
 	return status.Errorf(codes.Unimplemented, "method ConfigListener not implemented")
+}
+func (UnimplementedCommonServiceServer) TranslationsGet(context.Context, *TranslationsGetRequest) (*TranslationsGetResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TranslationsGet not implemented")
 }
 func (UnimplementedCommonServiceServer) mustEmbedUnimplementedCommonServiceServer() {}
 func (UnimplementedCommonServiceServer) testEmbeddedByValue()                       {}
@@ -174,6 +190,24 @@ func _CommonService_ConfigListener_Handler(srv interface{}, stream grpc.ServerSt
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
 type CommonService_ConfigListenerServer = grpc.ServerStreamingServer[ConfigListenerResponse]
 
+func _CommonService_TranslationsGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TranslationsGetRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CommonServiceServer).TranslationsGet(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: CommonService_TranslationsGet_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CommonServiceServer).TranslationsGet(ctx, req.(*TranslationsGetRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // CommonService_ServiceDesc is the grpc.ServiceDesc for CommonService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -188,6 +222,10 @@ var CommonService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ConfigUpdate",
 			Handler:    _CommonService_ConfigUpdate_Handler,
+		},
+		{
+			MethodName: "TranslationsGet",
+			Handler:    _CommonService_TranslationsGet_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

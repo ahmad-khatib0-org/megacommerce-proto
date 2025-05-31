@@ -4,6 +4,7 @@ package common.v1;
 
 import "common/v1/config.proto";
 import "common/v1/error.proto";
+import "common/v1/types.proto";
 
 option cc_enable_arenas = true;
 option go_package = "common/v1;v1";
@@ -14,12 +15,13 @@ service CommonService {
   rpc ConfigGet(ConfigGetRequest) returns (ConfigGetResponse);
   rpc ConfigUpdate(ConfigUpdateRequest) returns (ConfigUpdateResponse);
   rpc ConfigListener(ConfigListenerRequest) returns (stream ConfigListenerResponse);
+  rpc TranslationsGet(TranslationsGetRequest) returns (TranslationsGetResponse);
 }
 
 message ConfigGetRequest {}
 
 message ConfigGetResponse {
-  oneof result {
+  oneof response {
     common.v1.Config data = 1;
     common.v1.AppError error = 2;
   }
@@ -30,14 +32,14 @@ message ConfigUpdateRequest {
 }
 
 message ConfigUpdateResponse {
-  oneof result {
+  oneof response {
     common.v1.Config data = 1;
     common.v1.AppError error = 2;
   }
 }
 
 message ConfigListenerResponse {
-  oneof result {
+  oneof response {
     common.v1.Config data = 1;
     common.v1.AppError error = 2;
   }
@@ -45,4 +47,15 @@ message ConfigListenerResponse {
 
 message ConfigListenerRequest {
   string client_id = 1;
+}
+
+message TranslationsGetRequest {
+  string lang = 1;
+}
+
+message TranslationsGetResponse {
+  oneof response {
+    common.v1.TranslationElements data = 1;
+    common.v1.AppError error = 2;
+  }
 }

@@ -49,6 +49,11 @@ class CommonServiceStub(object):
                 request_serializer=common_dot_v1_dot_common__pb2.ConfigListenerRequest.SerializeToString,
                 response_deserializer=common_dot_v1_dot_common__pb2.ConfigListenerResponse.FromString,
                 _registered_method=True)
+        self.TranslationsGet = channel.unary_unary(
+                '/common.v1.CommonService/TranslationsGet',
+                request_serializer=common_dot_v1_dot_common__pb2.TranslationsGetRequest.SerializeToString,
+                response_deserializer=common_dot_v1_dot_common__pb2.TranslationsGetResponse.FromString,
+                _registered_method=True)
 
 
 class CommonServiceServicer(object):
@@ -72,6 +77,12 @@ class CommonServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def TranslationsGet(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CommonServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -89,6 +100,11 @@ def add_CommonServiceServicer_to_server(servicer, server):
                     servicer.ConfigListener,
                     request_deserializer=common_dot_v1_dot_common__pb2.ConfigListenerRequest.FromString,
                     response_serializer=common_dot_v1_dot_common__pb2.ConfigListenerResponse.SerializeToString,
+            ),
+            'TranslationsGet': grpc.unary_unary_rpc_method_handler(
+                    servicer.TranslationsGet,
+                    request_deserializer=common_dot_v1_dot_common__pb2.TranslationsGetRequest.FromString,
+                    response_serializer=common_dot_v1_dot_common__pb2.TranslationsGetResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -172,6 +188,33 @@ class CommonService(object):
             '/common.v1.CommonService/ConfigListener',
             common_dot_v1_dot_common__pb2.ConfigListenerRequest.SerializeToString,
             common_dot_v1_dot_common__pb2.ConfigListenerResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def TranslationsGet(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/common.v1.CommonService/TranslationsGet',
+            common_dot_v1_dot_common__pb2.TranslationsGetRequest.SerializeToString,
+            common_dot_v1_dot_common__pb2.TranslationsGetResponse.FromString,
             options,
             channel_credentials,
             insecure,

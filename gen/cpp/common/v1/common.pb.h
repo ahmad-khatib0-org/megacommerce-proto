@@ -34,6 +34,7 @@
 #include <google/protobuf/unknown_field_set.h>
 #include "common/v1/config.pb.h"
 #include "common/v1/error.pb.h"
+#include "common/v1/types.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_common_2fv1_2fcommon_2eproto
@@ -49,7 +50,7 @@ struct TableStruct_common_2fv1_2fcommon_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[8]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -76,6 +77,12 @@ extern ConfigUpdateRequestDefaultTypeInternal _ConfigUpdateRequest_default_insta
 class ConfigUpdateResponse;
 struct ConfigUpdateResponseDefaultTypeInternal;
 extern ConfigUpdateResponseDefaultTypeInternal _ConfigUpdateResponse_default_instance_;
+class TranslationsGetRequest;
+struct TranslationsGetRequestDefaultTypeInternal;
+extern TranslationsGetRequestDefaultTypeInternal _TranslationsGetRequest_default_instance_;
+class TranslationsGetResponse;
+struct TranslationsGetResponseDefaultTypeInternal;
+extern TranslationsGetResponseDefaultTypeInternal _TranslationsGetResponse_default_instance_;
 }  // namespace v1
 }  // namespace common
 PROTOBUF_NAMESPACE_OPEN
@@ -85,6 +92,8 @@ template<> ::common::v1::ConfigListenerRequest* Arena::CreateMaybeMessage<::comm
 template<> ::common::v1::ConfigListenerResponse* Arena::CreateMaybeMessage<::common::v1::ConfigListenerResponse>(Arena*);
 template<> ::common::v1::ConfigUpdateRequest* Arena::CreateMaybeMessage<::common::v1::ConfigUpdateRequest>(Arena*);
 template<> ::common::v1::ConfigUpdateResponse* Arena::CreateMaybeMessage<::common::v1::ConfigUpdateResponse>(Arena*);
+template<> ::common::v1::TranslationsGetRequest* Arena::CreateMaybeMessage<::common::v1::TranslationsGetRequest>(Arena*);
+template<> ::common::v1::TranslationsGetResponse* Arena::CreateMaybeMessage<::common::v1::TranslationsGetResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace common {
 namespace v1 {
@@ -252,10 +261,10 @@ class ConfigGetResponse final :
   static const ConfigGetResponse& default_instance() {
     return *internal_default_instance();
   }
-  enum ResultCase {
+  enum ResponseCase {
     kData = 1,
     kError = 2,
-    RESULT_NOT_SET = 0,
+    RESPONSE_NOT_SET = 0,
   };
 
   static inline const ConfigGetResponse* internal_default_instance() {
@@ -376,26 +385,26 @@ class ConfigGetResponse final :
       ::common::v1::AppError* error);
   ::common::v1::AppError* unsafe_arena_release_error();
 
-  void clear_result();
-  ResultCase result_case() const;
+  void clear_response();
+  ResponseCase response_case() const;
   // @@protoc_insertion_point(class_scope:common.v1.ConfigGetResponse)
  private:
   class _Internal;
   void set_has_data();
   void set_has_error();
 
-  inline bool has_result() const;
-  inline void clear_has_result();
+  inline bool has_response() const;
+  inline void clear_has_response();
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  union ResultUnion {
-    constexpr ResultUnion() : _constinit_{} {}
+  union ResponseUnion {
+    constexpr ResponseUnion() : _constinit_{} {}
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     ::common::v1::Config* data_;
     ::common::v1::AppError* error_;
-  } result_;
+  } response_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   uint32_t _oneof_case_[1];
 
@@ -601,10 +610,10 @@ class ConfigUpdateResponse final :
   static const ConfigUpdateResponse& default_instance() {
     return *internal_default_instance();
   }
-  enum ResultCase {
+  enum ResponseCase {
     kData = 1,
     kError = 2,
-    RESULT_NOT_SET = 0,
+    RESPONSE_NOT_SET = 0,
   };
 
   static inline const ConfigUpdateResponse* internal_default_instance() {
@@ -725,26 +734,26 @@ class ConfigUpdateResponse final :
       ::common::v1::AppError* error);
   ::common::v1::AppError* unsafe_arena_release_error();
 
-  void clear_result();
-  ResultCase result_case() const;
+  void clear_response();
+  ResponseCase response_case() const;
   // @@protoc_insertion_point(class_scope:common.v1.ConfigUpdateResponse)
  private:
   class _Internal;
   void set_has_data();
   void set_has_error();
 
-  inline bool has_result() const;
-  inline void clear_has_result();
+  inline bool has_response() const;
+  inline void clear_has_response();
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  union ResultUnion {
-    constexpr ResultUnion() : _constinit_{} {}
+  union ResponseUnion {
+    constexpr ResponseUnion() : _constinit_{} {}
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     ::common::v1::Config* data_;
     ::common::v1::AppError* error_;
-  } result_;
+  } response_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   uint32_t _oneof_case_[1];
 
@@ -795,10 +804,10 @@ class ConfigListenerResponse final :
   static const ConfigListenerResponse& default_instance() {
     return *internal_default_instance();
   }
-  enum ResultCase {
+  enum ResponseCase {
     kData = 1,
     kError = 2,
-    RESULT_NOT_SET = 0,
+    RESPONSE_NOT_SET = 0,
   };
 
   static inline const ConfigListenerResponse* internal_default_instance() {
@@ -919,26 +928,26 @@ class ConfigListenerResponse final :
       ::common::v1::AppError* error);
   ::common::v1::AppError* unsafe_arena_release_error();
 
-  void clear_result();
-  ResultCase result_case() const;
+  void clear_response();
+  ResponseCase response_case() const;
   // @@protoc_insertion_point(class_scope:common.v1.ConfigListenerResponse)
  private:
   class _Internal;
   void set_has_data();
   void set_has_error();
 
-  inline bool has_result() const;
-  inline void clear_has_result();
+  inline bool has_response() const;
+  inline void clear_has_response();
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  union ResultUnion {
-    constexpr ResultUnion() : _constinit_{} {}
+  union ResponseUnion {
+    constexpr ResponseUnion() : _constinit_{} {}
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     ::common::v1::Config* data_;
     ::common::v1::AppError* error_;
-  } result_;
+  } response_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   uint32_t _oneof_case_[1];
 
@@ -1095,6 +1104,351 @@ class ConfigListenerRequest final :
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_common_2fv1_2fcommon_2eproto;
 };
+// -------------------------------------------------------------------
+
+class TranslationsGetRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:common.v1.TranslationsGetRequest) */ {
+ public:
+  inline TranslationsGetRequest() : TranslationsGetRequest(nullptr) {}
+  ~TranslationsGetRequest() override;
+  explicit constexpr TranslationsGetRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  TranslationsGetRequest(const TranslationsGetRequest& from);
+  TranslationsGetRequest(TranslationsGetRequest&& from) noexcept
+    : TranslationsGetRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline TranslationsGetRequest& operator=(const TranslationsGetRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TranslationsGetRequest& operator=(TranslationsGetRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const TranslationsGetRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const TranslationsGetRequest* internal_default_instance() {
+    return reinterpret_cast<const TranslationsGetRequest*>(
+               &_TranslationsGetRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(TranslationsGetRequest& a, TranslationsGetRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TranslationsGetRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TranslationsGetRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  TranslationsGetRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<TranslationsGetRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const TranslationsGetRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const TranslationsGetRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TranslationsGetRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "common.v1.TranslationsGetRequest";
+  }
+  protected:
+  explicit TranslationsGetRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kLangFieldNumber = 1,
+  };
+  // string lang = 1 [json_name = "lang"];
+  void clear_lang();
+  const std::string& lang() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_lang(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_lang();
+  PROTOBUF_NODISCARD std::string* release_lang();
+  void set_allocated_lang(std::string* lang);
+  private:
+  const std::string& _internal_lang() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_lang(const std::string& value);
+  std::string* _internal_mutable_lang();
+  public:
+
+  // @@protoc_insertion_point(class_scope:common.v1.TranslationsGetRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr lang_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_common_2fv1_2fcommon_2eproto;
+};
+// -------------------------------------------------------------------
+
+class TranslationsGetResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:common.v1.TranslationsGetResponse) */ {
+ public:
+  inline TranslationsGetResponse() : TranslationsGetResponse(nullptr) {}
+  ~TranslationsGetResponse() override;
+  explicit constexpr TranslationsGetResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  TranslationsGetResponse(const TranslationsGetResponse& from);
+  TranslationsGetResponse(TranslationsGetResponse&& from) noexcept
+    : TranslationsGetResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline TranslationsGetResponse& operator=(const TranslationsGetResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TranslationsGetResponse& operator=(TranslationsGetResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const TranslationsGetResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  enum ResponseCase {
+    kData = 1,
+    kError = 2,
+    RESPONSE_NOT_SET = 0,
+  };
+
+  static inline const TranslationsGetResponse* internal_default_instance() {
+    return reinterpret_cast<const TranslationsGetResponse*>(
+               &_TranslationsGetResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(TranslationsGetResponse& a, TranslationsGetResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(TranslationsGetResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TranslationsGetResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  TranslationsGetResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<TranslationsGetResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const TranslationsGetResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const TranslationsGetResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(TranslationsGetResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "common.v1.TranslationsGetResponse";
+  }
+  protected:
+  explicit TranslationsGetResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDataFieldNumber = 1,
+    kErrorFieldNumber = 2,
+  };
+  // .common.v1.TranslationElements data = 1 [json_name = "data"];
+  bool has_data() const;
+  private:
+  bool _internal_has_data() const;
+  public:
+  void clear_data();
+  const ::common::v1::TranslationElements& data() const;
+  PROTOBUF_NODISCARD ::common::v1::TranslationElements* release_data();
+  ::common::v1::TranslationElements* mutable_data();
+  void set_allocated_data(::common::v1::TranslationElements* data);
+  private:
+  const ::common::v1::TranslationElements& _internal_data() const;
+  ::common::v1::TranslationElements* _internal_mutable_data();
+  public:
+  void unsafe_arena_set_allocated_data(
+      ::common::v1::TranslationElements* data);
+  ::common::v1::TranslationElements* unsafe_arena_release_data();
+
+  // .common.v1.AppError error = 2 [json_name = "error"];
+  bool has_error() const;
+  private:
+  bool _internal_has_error() const;
+  public:
+  void clear_error();
+  const ::common::v1::AppError& error() const;
+  PROTOBUF_NODISCARD ::common::v1::AppError* release_error();
+  ::common::v1::AppError* mutable_error();
+  void set_allocated_error(::common::v1::AppError* error);
+  private:
+  const ::common::v1::AppError& _internal_error() const;
+  ::common::v1::AppError* _internal_mutable_error();
+  public:
+  void unsafe_arena_set_allocated_error(
+      ::common::v1::AppError* error);
+  ::common::v1::AppError* unsafe_arena_release_error();
+
+  void clear_response();
+  ResponseCase response_case() const;
+  // @@protoc_insertion_point(class_scope:common.v1.TranslationsGetResponse)
+ private:
+  class _Internal;
+  void set_has_data();
+  void set_has_error();
+
+  inline bool has_response() const;
+  inline void clear_has_response();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  union ResponseUnion {
+    constexpr ResponseUnion() : _constinit_{} {}
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+    ::common::v1::TranslationElements* data_;
+    ::common::v1::AppError* error_;
+  } response_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  uint32_t _oneof_case_[1];
+
+  friend struct ::TableStruct_common_2fv1_2fcommon_2eproto;
+};
 // ===================================================================
 
 
@@ -1112,7 +1466,7 @@ class ConfigListenerRequest final :
 
 // .common.v1.Config data = 1 [json_name = "data"];
 inline bool ConfigGetResponse::_internal_has_data() const {
-  return result_case() == kData;
+  return response_case() == kData;
 }
 inline bool ConfigGetResponse::has_data() const {
   return _internal_has_data();
@@ -1123,12 +1477,12 @@ inline void ConfigGetResponse::set_has_data() {
 inline ::common::v1::Config* ConfigGetResponse::release_data() {
   // @@protoc_insertion_point(field_release:common.v1.ConfigGetResponse.data)
   if (_internal_has_data()) {
-    clear_has_result();
-      ::common::v1::Config* temp = result_.data_;
+    clear_has_response();
+      ::common::v1::Config* temp = response_.data_;
     if (GetArenaForAllocation() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    result_.data_ = nullptr;
+    response_.data_ = nullptr;
     return temp;
   } else {
     return nullptr;
@@ -1136,7 +1490,7 @@ inline ::common::v1::Config* ConfigGetResponse::release_data() {
 }
 inline const ::common::v1::Config& ConfigGetResponse::_internal_data() const {
   return _internal_has_data()
-      ? *result_.data_
+      ? *response_.data_
       : reinterpret_cast< ::common::v1::Config&>(::common::v1::_Config_default_instance_);
 }
 inline const ::common::v1::Config& ConfigGetResponse::data() const {
@@ -1146,29 +1500,29 @@ inline const ::common::v1::Config& ConfigGetResponse::data() const {
 inline ::common::v1::Config* ConfigGetResponse::unsafe_arena_release_data() {
   // @@protoc_insertion_point(field_unsafe_arena_release:common.v1.ConfigGetResponse.data)
   if (_internal_has_data()) {
-    clear_has_result();
-    ::common::v1::Config* temp = result_.data_;
-    result_.data_ = nullptr;
+    clear_has_response();
+    ::common::v1::Config* temp = response_.data_;
+    response_.data_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
 inline void ConfigGetResponse::unsafe_arena_set_allocated_data(::common::v1::Config* data) {
-  clear_result();
+  clear_response();
   if (data) {
     set_has_data();
-    result_.data_ = data;
+    response_.data_ = data;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.ConfigGetResponse.data)
 }
 inline ::common::v1::Config* ConfigGetResponse::_internal_mutable_data() {
   if (!_internal_has_data()) {
-    clear_result();
+    clear_response();
     set_has_data();
-    result_.data_ = CreateMaybeMessage< ::common::v1::Config >(GetArenaForAllocation());
+    response_.data_ = CreateMaybeMessage< ::common::v1::Config >(GetArenaForAllocation());
   }
-  return result_.data_;
+  return response_.data_;
 }
 inline ::common::v1::Config* ConfigGetResponse::mutable_data() {
   ::common::v1::Config* _msg = _internal_mutable_data();
@@ -1178,7 +1532,7 @@ inline ::common::v1::Config* ConfigGetResponse::mutable_data() {
 
 // .common.v1.AppError error = 2 [json_name = "error"];
 inline bool ConfigGetResponse::_internal_has_error() const {
-  return result_case() == kError;
+  return response_case() == kError;
 }
 inline bool ConfigGetResponse::has_error() const {
   return _internal_has_error();
@@ -1189,12 +1543,12 @@ inline void ConfigGetResponse::set_has_error() {
 inline ::common::v1::AppError* ConfigGetResponse::release_error() {
   // @@protoc_insertion_point(field_release:common.v1.ConfigGetResponse.error)
   if (_internal_has_error()) {
-    clear_has_result();
-      ::common::v1::AppError* temp = result_.error_;
+    clear_has_response();
+      ::common::v1::AppError* temp = response_.error_;
     if (GetArenaForAllocation() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    result_.error_ = nullptr;
+    response_.error_ = nullptr;
     return temp;
   } else {
     return nullptr;
@@ -1202,7 +1556,7 @@ inline ::common::v1::AppError* ConfigGetResponse::release_error() {
 }
 inline const ::common::v1::AppError& ConfigGetResponse::_internal_error() const {
   return _internal_has_error()
-      ? *result_.error_
+      ? *response_.error_
       : reinterpret_cast< ::common::v1::AppError&>(::common::v1::_AppError_default_instance_);
 }
 inline const ::common::v1::AppError& ConfigGetResponse::error() const {
@@ -1212,29 +1566,29 @@ inline const ::common::v1::AppError& ConfigGetResponse::error() const {
 inline ::common::v1::AppError* ConfigGetResponse::unsafe_arena_release_error() {
   // @@protoc_insertion_point(field_unsafe_arena_release:common.v1.ConfigGetResponse.error)
   if (_internal_has_error()) {
-    clear_has_result();
-    ::common::v1::AppError* temp = result_.error_;
-    result_.error_ = nullptr;
+    clear_has_response();
+    ::common::v1::AppError* temp = response_.error_;
+    response_.error_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
 inline void ConfigGetResponse::unsafe_arena_set_allocated_error(::common::v1::AppError* error) {
-  clear_result();
+  clear_response();
   if (error) {
     set_has_error();
-    result_.error_ = error;
+    response_.error_ = error;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.ConfigGetResponse.error)
 }
 inline ::common::v1::AppError* ConfigGetResponse::_internal_mutable_error() {
   if (!_internal_has_error()) {
-    clear_result();
+    clear_response();
     set_has_error();
-    result_.error_ = CreateMaybeMessage< ::common::v1::AppError >(GetArenaForAllocation());
+    response_.error_ = CreateMaybeMessage< ::common::v1::AppError >(GetArenaForAllocation());
   }
-  return result_.error_;
+  return response_.error_;
 }
 inline ::common::v1::AppError* ConfigGetResponse::mutable_error() {
   ::common::v1::AppError* _msg = _internal_mutable_error();
@@ -1242,14 +1596,14 @@ inline ::common::v1::AppError* ConfigGetResponse::mutable_error() {
   return _msg;
 }
 
-inline bool ConfigGetResponse::has_result() const {
-  return result_case() != RESULT_NOT_SET;
+inline bool ConfigGetResponse::has_response() const {
+  return response_case() != RESPONSE_NOT_SET;
 }
-inline void ConfigGetResponse::clear_has_result() {
-  _oneof_case_[0] = RESULT_NOT_SET;
+inline void ConfigGetResponse::clear_has_response() {
+  _oneof_case_[0] = RESPONSE_NOT_SET;
 }
-inline ConfigGetResponse::ResultCase ConfigGetResponse::result_case() const {
-  return ConfigGetResponse::ResultCase(_oneof_case_[0]);
+inline ConfigGetResponse::ResponseCase ConfigGetResponse::response_case() const {
+  return ConfigGetResponse::ResponseCase(_oneof_case_[0]);
 }
 // -------------------------------------------------------------------
 
@@ -1347,7 +1701,7 @@ inline void ConfigUpdateRequest::set_allocated_config(::common::v1::Config* conf
 
 // .common.v1.Config data = 1 [json_name = "data"];
 inline bool ConfigUpdateResponse::_internal_has_data() const {
-  return result_case() == kData;
+  return response_case() == kData;
 }
 inline bool ConfigUpdateResponse::has_data() const {
   return _internal_has_data();
@@ -1358,12 +1712,12 @@ inline void ConfigUpdateResponse::set_has_data() {
 inline ::common::v1::Config* ConfigUpdateResponse::release_data() {
   // @@protoc_insertion_point(field_release:common.v1.ConfigUpdateResponse.data)
   if (_internal_has_data()) {
-    clear_has_result();
-      ::common::v1::Config* temp = result_.data_;
+    clear_has_response();
+      ::common::v1::Config* temp = response_.data_;
     if (GetArenaForAllocation() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    result_.data_ = nullptr;
+    response_.data_ = nullptr;
     return temp;
   } else {
     return nullptr;
@@ -1371,7 +1725,7 @@ inline ::common::v1::Config* ConfigUpdateResponse::release_data() {
 }
 inline const ::common::v1::Config& ConfigUpdateResponse::_internal_data() const {
   return _internal_has_data()
-      ? *result_.data_
+      ? *response_.data_
       : reinterpret_cast< ::common::v1::Config&>(::common::v1::_Config_default_instance_);
 }
 inline const ::common::v1::Config& ConfigUpdateResponse::data() const {
@@ -1381,29 +1735,29 @@ inline const ::common::v1::Config& ConfigUpdateResponse::data() const {
 inline ::common::v1::Config* ConfigUpdateResponse::unsafe_arena_release_data() {
   // @@protoc_insertion_point(field_unsafe_arena_release:common.v1.ConfigUpdateResponse.data)
   if (_internal_has_data()) {
-    clear_has_result();
-    ::common::v1::Config* temp = result_.data_;
-    result_.data_ = nullptr;
+    clear_has_response();
+    ::common::v1::Config* temp = response_.data_;
+    response_.data_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
 inline void ConfigUpdateResponse::unsafe_arena_set_allocated_data(::common::v1::Config* data) {
-  clear_result();
+  clear_response();
   if (data) {
     set_has_data();
-    result_.data_ = data;
+    response_.data_ = data;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.ConfigUpdateResponse.data)
 }
 inline ::common::v1::Config* ConfigUpdateResponse::_internal_mutable_data() {
   if (!_internal_has_data()) {
-    clear_result();
+    clear_response();
     set_has_data();
-    result_.data_ = CreateMaybeMessage< ::common::v1::Config >(GetArenaForAllocation());
+    response_.data_ = CreateMaybeMessage< ::common::v1::Config >(GetArenaForAllocation());
   }
-  return result_.data_;
+  return response_.data_;
 }
 inline ::common::v1::Config* ConfigUpdateResponse::mutable_data() {
   ::common::v1::Config* _msg = _internal_mutable_data();
@@ -1413,7 +1767,7 @@ inline ::common::v1::Config* ConfigUpdateResponse::mutable_data() {
 
 // .common.v1.AppError error = 2 [json_name = "error"];
 inline bool ConfigUpdateResponse::_internal_has_error() const {
-  return result_case() == kError;
+  return response_case() == kError;
 }
 inline bool ConfigUpdateResponse::has_error() const {
   return _internal_has_error();
@@ -1424,12 +1778,12 @@ inline void ConfigUpdateResponse::set_has_error() {
 inline ::common::v1::AppError* ConfigUpdateResponse::release_error() {
   // @@protoc_insertion_point(field_release:common.v1.ConfigUpdateResponse.error)
   if (_internal_has_error()) {
-    clear_has_result();
-      ::common::v1::AppError* temp = result_.error_;
+    clear_has_response();
+      ::common::v1::AppError* temp = response_.error_;
     if (GetArenaForAllocation() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    result_.error_ = nullptr;
+    response_.error_ = nullptr;
     return temp;
   } else {
     return nullptr;
@@ -1437,7 +1791,7 @@ inline ::common::v1::AppError* ConfigUpdateResponse::release_error() {
 }
 inline const ::common::v1::AppError& ConfigUpdateResponse::_internal_error() const {
   return _internal_has_error()
-      ? *result_.error_
+      ? *response_.error_
       : reinterpret_cast< ::common::v1::AppError&>(::common::v1::_AppError_default_instance_);
 }
 inline const ::common::v1::AppError& ConfigUpdateResponse::error() const {
@@ -1447,29 +1801,29 @@ inline const ::common::v1::AppError& ConfigUpdateResponse::error() const {
 inline ::common::v1::AppError* ConfigUpdateResponse::unsafe_arena_release_error() {
   // @@protoc_insertion_point(field_unsafe_arena_release:common.v1.ConfigUpdateResponse.error)
   if (_internal_has_error()) {
-    clear_has_result();
-    ::common::v1::AppError* temp = result_.error_;
-    result_.error_ = nullptr;
+    clear_has_response();
+    ::common::v1::AppError* temp = response_.error_;
+    response_.error_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
 inline void ConfigUpdateResponse::unsafe_arena_set_allocated_error(::common::v1::AppError* error) {
-  clear_result();
+  clear_response();
   if (error) {
     set_has_error();
-    result_.error_ = error;
+    response_.error_ = error;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.ConfigUpdateResponse.error)
 }
 inline ::common::v1::AppError* ConfigUpdateResponse::_internal_mutable_error() {
   if (!_internal_has_error()) {
-    clear_result();
+    clear_response();
     set_has_error();
-    result_.error_ = CreateMaybeMessage< ::common::v1::AppError >(GetArenaForAllocation());
+    response_.error_ = CreateMaybeMessage< ::common::v1::AppError >(GetArenaForAllocation());
   }
-  return result_.error_;
+  return response_.error_;
 }
 inline ::common::v1::AppError* ConfigUpdateResponse::mutable_error() {
   ::common::v1::AppError* _msg = _internal_mutable_error();
@@ -1477,14 +1831,14 @@ inline ::common::v1::AppError* ConfigUpdateResponse::mutable_error() {
   return _msg;
 }
 
-inline bool ConfigUpdateResponse::has_result() const {
-  return result_case() != RESULT_NOT_SET;
+inline bool ConfigUpdateResponse::has_response() const {
+  return response_case() != RESPONSE_NOT_SET;
 }
-inline void ConfigUpdateResponse::clear_has_result() {
-  _oneof_case_[0] = RESULT_NOT_SET;
+inline void ConfigUpdateResponse::clear_has_response() {
+  _oneof_case_[0] = RESPONSE_NOT_SET;
 }
-inline ConfigUpdateResponse::ResultCase ConfigUpdateResponse::result_case() const {
-  return ConfigUpdateResponse::ResultCase(_oneof_case_[0]);
+inline ConfigUpdateResponse::ResponseCase ConfigUpdateResponse::response_case() const {
+  return ConfigUpdateResponse::ResponseCase(_oneof_case_[0]);
 }
 // -------------------------------------------------------------------
 
@@ -1492,7 +1846,7 @@ inline ConfigUpdateResponse::ResultCase ConfigUpdateResponse::result_case() cons
 
 // .common.v1.Config data = 1 [json_name = "data"];
 inline bool ConfigListenerResponse::_internal_has_data() const {
-  return result_case() == kData;
+  return response_case() == kData;
 }
 inline bool ConfigListenerResponse::has_data() const {
   return _internal_has_data();
@@ -1503,12 +1857,12 @@ inline void ConfigListenerResponse::set_has_data() {
 inline ::common::v1::Config* ConfigListenerResponse::release_data() {
   // @@protoc_insertion_point(field_release:common.v1.ConfigListenerResponse.data)
   if (_internal_has_data()) {
-    clear_has_result();
-      ::common::v1::Config* temp = result_.data_;
+    clear_has_response();
+      ::common::v1::Config* temp = response_.data_;
     if (GetArenaForAllocation() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    result_.data_ = nullptr;
+    response_.data_ = nullptr;
     return temp;
   } else {
     return nullptr;
@@ -1516,7 +1870,7 @@ inline ::common::v1::Config* ConfigListenerResponse::release_data() {
 }
 inline const ::common::v1::Config& ConfigListenerResponse::_internal_data() const {
   return _internal_has_data()
-      ? *result_.data_
+      ? *response_.data_
       : reinterpret_cast< ::common::v1::Config&>(::common::v1::_Config_default_instance_);
 }
 inline const ::common::v1::Config& ConfigListenerResponse::data() const {
@@ -1526,29 +1880,29 @@ inline const ::common::v1::Config& ConfigListenerResponse::data() const {
 inline ::common::v1::Config* ConfigListenerResponse::unsafe_arena_release_data() {
   // @@protoc_insertion_point(field_unsafe_arena_release:common.v1.ConfigListenerResponse.data)
   if (_internal_has_data()) {
-    clear_has_result();
-    ::common::v1::Config* temp = result_.data_;
-    result_.data_ = nullptr;
+    clear_has_response();
+    ::common::v1::Config* temp = response_.data_;
+    response_.data_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
 inline void ConfigListenerResponse::unsafe_arena_set_allocated_data(::common::v1::Config* data) {
-  clear_result();
+  clear_response();
   if (data) {
     set_has_data();
-    result_.data_ = data;
+    response_.data_ = data;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.ConfigListenerResponse.data)
 }
 inline ::common::v1::Config* ConfigListenerResponse::_internal_mutable_data() {
   if (!_internal_has_data()) {
-    clear_result();
+    clear_response();
     set_has_data();
-    result_.data_ = CreateMaybeMessage< ::common::v1::Config >(GetArenaForAllocation());
+    response_.data_ = CreateMaybeMessage< ::common::v1::Config >(GetArenaForAllocation());
   }
-  return result_.data_;
+  return response_.data_;
 }
 inline ::common::v1::Config* ConfigListenerResponse::mutable_data() {
   ::common::v1::Config* _msg = _internal_mutable_data();
@@ -1558,7 +1912,7 @@ inline ::common::v1::Config* ConfigListenerResponse::mutable_data() {
 
 // .common.v1.AppError error = 2 [json_name = "error"];
 inline bool ConfigListenerResponse::_internal_has_error() const {
-  return result_case() == kError;
+  return response_case() == kError;
 }
 inline bool ConfigListenerResponse::has_error() const {
   return _internal_has_error();
@@ -1569,12 +1923,12 @@ inline void ConfigListenerResponse::set_has_error() {
 inline ::common::v1::AppError* ConfigListenerResponse::release_error() {
   // @@protoc_insertion_point(field_release:common.v1.ConfigListenerResponse.error)
   if (_internal_has_error()) {
-    clear_has_result();
-      ::common::v1::AppError* temp = result_.error_;
+    clear_has_response();
+      ::common::v1::AppError* temp = response_.error_;
     if (GetArenaForAllocation() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
-    result_.error_ = nullptr;
+    response_.error_ = nullptr;
     return temp;
   } else {
     return nullptr;
@@ -1582,7 +1936,7 @@ inline ::common::v1::AppError* ConfigListenerResponse::release_error() {
 }
 inline const ::common::v1::AppError& ConfigListenerResponse::_internal_error() const {
   return _internal_has_error()
-      ? *result_.error_
+      ? *response_.error_
       : reinterpret_cast< ::common::v1::AppError&>(::common::v1::_AppError_default_instance_);
 }
 inline const ::common::v1::AppError& ConfigListenerResponse::error() const {
@@ -1592,29 +1946,29 @@ inline const ::common::v1::AppError& ConfigListenerResponse::error() const {
 inline ::common::v1::AppError* ConfigListenerResponse::unsafe_arena_release_error() {
   // @@protoc_insertion_point(field_unsafe_arena_release:common.v1.ConfigListenerResponse.error)
   if (_internal_has_error()) {
-    clear_has_result();
-    ::common::v1::AppError* temp = result_.error_;
-    result_.error_ = nullptr;
+    clear_has_response();
+    ::common::v1::AppError* temp = response_.error_;
+    response_.error_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
 inline void ConfigListenerResponse::unsafe_arena_set_allocated_error(::common::v1::AppError* error) {
-  clear_result();
+  clear_response();
   if (error) {
     set_has_error();
-    result_.error_ = error;
+    response_.error_ = error;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.ConfigListenerResponse.error)
 }
 inline ::common::v1::AppError* ConfigListenerResponse::_internal_mutable_error() {
   if (!_internal_has_error()) {
-    clear_result();
+    clear_response();
     set_has_error();
-    result_.error_ = CreateMaybeMessage< ::common::v1::AppError >(GetArenaForAllocation());
+    response_.error_ = CreateMaybeMessage< ::common::v1::AppError >(GetArenaForAllocation());
   }
-  return result_.error_;
+  return response_.error_;
 }
 inline ::common::v1::AppError* ConfigListenerResponse::mutable_error() {
   ::common::v1::AppError* _msg = _internal_mutable_error();
@@ -1622,14 +1976,14 @@ inline ::common::v1::AppError* ConfigListenerResponse::mutable_error() {
   return _msg;
 }
 
-inline bool ConfigListenerResponse::has_result() const {
-  return result_case() != RESULT_NOT_SET;
+inline bool ConfigListenerResponse::has_response() const {
+  return response_case() != RESPONSE_NOT_SET;
 }
-inline void ConfigListenerResponse::clear_has_result() {
-  _oneof_case_[0] = RESULT_NOT_SET;
+inline void ConfigListenerResponse::clear_has_response() {
+  _oneof_case_[0] = RESPONSE_NOT_SET;
 }
-inline ConfigListenerResponse::ResultCase ConfigListenerResponse::result_case() const {
-  return ConfigListenerResponse::ResultCase(_oneof_case_[0]);
+inline ConfigListenerResponse::ResponseCase ConfigListenerResponse::response_case() const {
+  return ConfigListenerResponse::ResponseCase(_oneof_case_[0]);
 }
 // -------------------------------------------------------------------
 
@@ -1686,9 +2040,213 @@ inline void ConfigListenerRequest::set_allocated_client_id(std::string* client_i
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigListenerRequest.client_id)
 }
 
+// -------------------------------------------------------------------
+
+// TranslationsGetRequest
+
+// string lang = 1 [json_name = "lang"];
+inline void TranslationsGetRequest::clear_lang() {
+  lang_.ClearToEmpty();
+}
+inline const std::string& TranslationsGetRequest::lang() const {
+  // @@protoc_insertion_point(field_get:common.v1.TranslationsGetRequest.lang)
+  return _internal_lang();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void TranslationsGetRequest::set_lang(ArgT0&& arg0, ArgT... args) {
+ 
+ lang_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:common.v1.TranslationsGetRequest.lang)
+}
+inline std::string* TranslationsGetRequest::mutable_lang() {
+  std::string* _s = _internal_mutable_lang();
+  // @@protoc_insertion_point(field_mutable:common.v1.TranslationsGetRequest.lang)
+  return _s;
+}
+inline const std::string& TranslationsGetRequest::_internal_lang() const {
+  return lang_.Get();
+}
+inline void TranslationsGetRequest::_internal_set_lang(const std::string& value) {
+  
+  lang_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* TranslationsGetRequest::_internal_mutable_lang() {
+  
+  return lang_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* TranslationsGetRequest::release_lang() {
+  // @@protoc_insertion_point(field_release:common.v1.TranslationsGetRequest.lang)
+  return lang_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void TranslationsGetRequest::set_allocated_lang(std::string* lang) {
+  if (lang != nullptr) {
+    
+  } else {
+    
+  }
+  lang_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), lang,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (lang_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    lang_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:common.v1.TranslationsGetRequest.lang)
+}
+
+// -------------------------------------------------------------------
+
+// TranslationsGetResponse
+
+// .common.v1.TranslationElements data = 1 [json_name = "data"];
+inline bool TranslationsGetResponse::_internal_has_data() const {
+  return response_case() == kData;
+}
+inline bool TranslationsGetResponse::has_data() const {
+  return _internal_has_data();
+}
+inline void TranslationsGetResponse::set_has_data() {
+  _oneof_case_[0] = kData;
+}
+inline ::common::v1::TranslationElements* TranslationsGetResponse::release_data() {
+  // @@protoc_insertion_point(field_release:common.v1.TranslationsGetResponse.data)
+  if (_internal_has_data()) {
+    clear_has_response();
+      ::common::v1::TranslationElements* temp = response_.data_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    response_.data_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::common::v1::TranslationElements& TranslationsGetResponse::_internal_data() const {
+  return _internal_has_data()
+      ? *response_.data_
+      : reinterpret_cast< ::common::v1::TranslationElements&>(::common::v1::_TranslationElements_default_instance_);
+}
+inline const ::common::v1::TranslationElements& TranslationsGetResponse::data() const {
+  // @@protoc_insertion_point(field_get:common.v1.TranslationsGetResponse.data)
+  return _internal_data();
+}
+inline ::common::v1::TranslationElements* TranslationsGetResponse::unsafe_arena_release_data() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:common.v1.TranslationsGetResponse.data)
+  if (_internal_has_data()) {
+    clear_has_response();
+    ::common::v1::TranslationElements* temp = response_.data_;
+    response_.data_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void TranslationsGetResponse::unsafe_arena_set_allocated_data(::common::v1::TranslationElements* data) {
+  clear_response();
+  if (data) {
+    set_has_data();
+    response_.data_ = data;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.TranslationsGetResponse.data)
+}
+inline ::common::v1::TranslationElements* TranslationsGetResponse::_internal_mutable_data() {
+  if (!_internal_has_data()) {
+    clear_response();
+    set_has_data();
+    response_.data_ = CreateMaybeMessage< ::common::v1::TranslationElements >(GetArenaForAllocation());
+  }
+  return response_.data_;
+}
+inline ::common::v1::TranslationElements* TranslationsGetResponse::mutable_data() {
+  ::common::v1::TranslationElements* _msg = _internal_mutable_data();
+  // @@protoc_insertion_point(field_mutable:common.v1.TranslationsGetResponse.data)
+  return _msg;
+}
+
+// .common.v1.AppError error = 2 [json_name = "error"];
+inline bool TranslationsGetResponse::_internal_has_error() const {
+  return response_case() == kError;
+}
+inline bool TranslationsGetResponse::has_error() const {
+  return _internal_has_error();
+}
+inline void TranslationsGetResponse::set_has_error() {
+  _oneof_case_[0] = kError;
+}
+inline ::common::v1::AppError* TranslationsGetResponse::release_error() {
+  // @@protoc_insertion_point(field_release:common.v1.TranslationsGetResponse.error)
+  if (_internal_has_error()) {
+    clear_has_response();
+      ::common::v1::AppError* temp = response_.error_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    response_.error_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::common::v1::AppError& TranslationsGetResponse::_internal_error() const {
+  return _internal_has_error()
+      ? *response_.error_
+      : reinterpret_cast< ::common::v1::AppError&>(::common::v1::_AppError_default_instance_);
+}
+inline const ::common::v1::AppError& TranslationsGetResponse::error() const {
+  // @@protoc_insertion_point(field_get:common.v1.TranslationsGetResponse.error)
+  return _internal_error();
+}
+inline ::common::v1::AppError* TranslationsGetResponse::unsafe_arena_release_error() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:common.v1.TranslationsGetResponse.error)
+  if (_internal_has_error()) {
+    clear_has_response();
+    ::common::v1::AppError* temp = response_.error_;
+    response_.error_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void TranslationsGetResponse::unsafe_arena_set_allocated_error(::common::v1::AppError* error) {
+  clear_response();
+  if (error) {
+    set_has_error();
+    response_.error_ = error;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.TranslationsGetResponse.error)
+}
+inline ::common::v1::AppError* TranslationsGetResponse::_internal_mutable_error() {
+  if (!_internal_has_error()) {
+    clear_response();
+    set_has_error();
+    response_.error_ = CreateMaybeMessage< ::common::v1::AppError >(GetArenaForAllocation());
+  }
+  return response_.error_;
+}
+inline ::common::v1::AppError* TranslationsGetResponse::mutable_error() {
+  ::common::v1::AppError* _msg = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:common.v1.TranslationsGetResponse.error)
+  return _msg;
+}
+
+inline bool TranslationsGetResponse::has_response() const {
+  return response_case() != RESPONSE_NOT_SET;
+}
+inline void TranslationsGetResponse::clear_has_response() {
+  _oneof_case_[0] = RESPONSE_NOT_SET;
+}
+inline TranslationsGetResponse::ResponseCase TranslationsGetResponse::response_case() const {
+  return TranslationsGetResponse::ResponseCase(_oneof_case_[0]);
+}
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
