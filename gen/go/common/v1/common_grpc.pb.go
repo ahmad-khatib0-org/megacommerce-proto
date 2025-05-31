@@ -19,6 +19,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
+	CommonService_Ping_FullMethodName                  = "/common.v1.CommonService/Ping"
 	CommonService_ConfigGet_FullMethodName             = "/common.v1.CommonService/ConfigGet"
 	CommonService_ConfigUpdate_FullMethodName          = "/common.v1.CommonService/ConfigUpdate"
 	CommonService_ConfigListener_FullMethodName        = "/common.v1.CommonService/ConfigListener"
@@ -30,6 +31,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CommonServiceClient interface {
+	Ping(ctx context.Context, in *PingRequest, opts ...grpc.CallOption) (*PingResponse, error)
 	ConfigGet(ctx context.Context, in *ConfigGetRequest, opts ...grpc.CallOption) (*ConfigGetResponse, error)
 	ConfigUpdate(ctx context.Context, in *ConfigUpdateRequest, opts ...grpc.CallOption) (*ConfigUpdateResponse, error)
 	ConfigListener(ctx context.Context, in *ConfigListenerRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[ConfigListenerResponse], error)
@@ -43,6 +45,16 @@ type commonServiceClient struct {
 
 func NewCommonServiceClient(cc grpc.ClientConnInterface) CommonServiceClient {
 	return &commonServiceClient{cc}
+}
+
+func (c *commonServiceClient) Ping(ctx context.Context, in *PingRequest, opts ...grpc.CallOption) (*PingResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(PingResponse)
+	err := c.cc.Invoke(ctx, CommonService_Ping_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *commonServiceClient) ConfigGet(ctx context.Context, in *ConfigGetRequest, opts ...grpc.CallOption) (*ConfigGetResponse, error) {
@@ -108,6 +120,7 @@ func (c *commonServiceClient) TranslationForLangGet(ctx context.Context, in *Tra
 // All implementations must embed UnimplementedCommonServiceServer
 // for forward compatibility.
 type CommonServiceServer interface {
+	Ping(context.Context, *PingRequest) (*PingResponse, error)
 	ConfigGet(context.Context, *ConfigGetRequest) (*ConfigGetResponse, error)
 	ConfigUpdate(context.Context, *ConfigUpdateRequest) (*ConfigUpdateResponse, error)
 	ConfigListener(*ConfigListenerRequest, grpc.ServerStreamingServer[ConfigListenerResponse]) error
@@ -123,6 +136,9 @@ type CommonServiceServer interface {
 // pointer dereference when methods are called.
 type UnimplementedCommonServiceServer struct{}
 
+func (UnimplementedCommonServiceServer) Ping(context.Context, *PingRequest) (*PingResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Ping not implemented")
+}
 func (UnimplementedCommonServiceServer) ConfigGet(context.Context, *ConfigGetRequest) (*ConfigGetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConfigGet not implemented")
 }
@@ -157,6 +173,24 @@ func RegisterCommonServiceServer(s grpc.ServiceRegistrar, srv CommonServiceServe
 		t.testEmbeddedByValue()
 	}
 	s.RegisterService(&CommonService_ServiceDesc, srv)
+}
+
+func _CommonService_Ping_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PingRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CommonServiceServer).Ping(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: CommonService_Ping_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CommonServiceServer).Ping(ctx, req.(*PingRequest))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _CommonService_ConfigGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -249,6 +283,10 @@ var CommonService_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "common.v1.CommonService",
 	HandlerType: (*CommonServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "Ping",
+			Handler:    _CommonService_Ping_Handler,
+		},
 		{
 			MethodName: "ConfigGet",
 			Handler:    _CommonService_ConfigGet_Handler,

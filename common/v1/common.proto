@@ -4,6 +4,7 @@ package common.v1;
 
 import "common/v1/config.proto";
 import "common/v1/trans.proto";
+import "common/v1/types.proto";
 
 option cc_enable_arenas = true;
 option go_package = "common/v1;v1";
@@ -11,6 +12,7 @@ option java_outer_classname = "CommonProto";
 option java_package = "org.megacommerce.common.v1";
 
 service CommonService {
+  rpc Ping(common.v1.PingRequest) returns (common.v1.PingResponse) {}
   rpc ConfigGet(common.v1.ConfigGetRequest) returns (common.v1.ConfigGetResponse);
   rpc ConfigUpdate(common.v1.ConfigUpdateRequest) returns (common.v1.ConfigUpdateResponse);
   rpc ConfigListener(common.v1.ConfigListenerRequest) returns (stream common.v1.ConfigListenerResponse);

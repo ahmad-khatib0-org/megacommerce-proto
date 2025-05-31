@@ -18,6 +18,7 @@
 import * as grpcWeb from 'grpc-web';
 
 import * as common_v1_config_pb from '../../common/v1/config_pb'; // proto import: "common/v1/config.proto"
+import * as common_v1_types_pb from '../../common/v1/types_pb'; // proto import: "common/v1/types.proto"
 import * as common_v1_trans_pb from '../../common/v1/trans_pb'; // proto import: "common/v1/trans.proto"
 
 
@@ -38,6 +39,49 @@ export class CommonServiceClient {
     this.hostname_ = hostname.replace(/\/+$/, '');
     this.credentials_ = credentials;
     this.options_ = options;
+  }
+
+  methodDescriptorPing = new grpcWeb.MethodDescriptor(
+    '/common.v1.CommonService/Ping',
+    grpcWeb.MethodType.UNARY,
+    common_v1_types_pb.PingRequest,
+    common_v1_types_pb.PingResponse,
+    (request: common_v1_types_pb.PingRequest) => {
+      return request.serializeBinary();
+    },
+    common_v1_types_pb.PingResponse.deserializeBinary
+  );
+
+  ping(
+    request: common_v1_types_pb.PingRequest,
+    metadata?: grpcWeb.Metadata | null): Promise<common_v1_types_pb.PingResponse>;
+
+  ping(
+    request: common_v1_types_pb.PingRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: common_v1_types_pb.PingResponse) => void): grpcWeb.ClientReadableStream<common_v1_types_pb.PingResponse>;
+
+  ping(
+    request: common_v1_types_pb.PingRequest,
+    metadata?: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: common_v1_types_pb.PingResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/common.v1.CommonService/Ping',
+        request,
+        metadata || {},
+        this.methodDescriptorPing,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/common.v1.CommonService/Ping',
+    request,
+    metadata || {},
+    this.methodDescriptorPing);
   }
 
   methodDescriptorConfigGet = new grpcWeb.MethodDescriptor(

@@ -5,6 +5,7 @@ import warnings
 
 from common.v1 import config_pb2 as common_dot_v1_dot_config__pb2
 from common.v1 import trans_pb2 as common_dot_v1_dot_trans__pb2
+from common.v1 import types_pb2 as common_dot_v1_dot_types__pb2
 
 GRPC_GENERATED_VERSION = '1.71.0'
 GRPC_VERSION = grpc.__version__
@@ -35,6 +36,11 @@ class CommonServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.Ping = channel.unary_unary(
+                '/common.v1.CommonService/Ping',
+                request_serializer=common_dot_v1_dot_types__pb2.PingRequest.SerializeToString,
+                response_deserializer=common_dot_v1_dot_types__pb2.PingResponse.FromString,
+                _registered_method=True)
         self.ConfigGet = channel.unary_unary(
                 '/common.v1.CommonService/ConfigGet',
                 request_serializer=common_dot_v1_dot_config__pb2.ConfigGetRequest.SerializeToString,
@@ -64,6 +70,12 @@ class CommonServiceStub(object):
 
 class CommonServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
+
+    def Ping(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def ConfigGet(self, request, context):
         """Missing associated documentation comment in .proto file."""
@@ -98,6 +110,11 @@ class CommonServiceServicer(object):
 
 def add_CommonServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'Ping': grpc.unary_unary_rpc_method_handler(
+                    servicer.Ping,
+                    request_deserializer=common_dot_v1_dot_types__pb2.PingRequest.FromString,
+                    response_serializer=common_dot_v1_dot_types__pb2.PingResponse.SerializeToString,
+            ),
             'ConfigGet': grpc.unary_unary_rpc_method_handler(
                     servicer.ConfigGet,
                     request_deserializer=common_dot_v1_dot_config__pb2.ConfigGetRequest.FromString,
@@ -133,6 +150,33 @@ def add_CommonServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class CommonService(object):
     """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def Ping(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/common.v1.CommonService/Ping',
+            common_dot_v1_dot_types__pb2.PingRequest.SerializeToString,
+            common_dot_v1_dot_types__pb2.PingResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
 
     @staticmethod
     def ConfigGet(request,

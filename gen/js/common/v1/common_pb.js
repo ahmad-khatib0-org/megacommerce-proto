@@ -25,3 +25,5 @@ var common_v1_config_pb = require('../../common/v1/config_pb.js');
 goog.object.extend(proto, common_v1_config_pb);
 var common_v1_trans_pb = require('../../common/v1/trans_pb.js');
 goog.object.extend(proto, common_v1_trans_pb);
+var common_v1_types_pb = require('../../common/v1/types_pb.js');
+goog.object.extend(proto, common_v1_types_pb);

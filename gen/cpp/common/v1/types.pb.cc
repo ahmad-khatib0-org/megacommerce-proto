@@ -64,9 +64,31 @@ struct NestedStringMapDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NestedStringMapDefaultTypeInternal _NestedStringMap_default_instance_;
+constexpr PingRequest::PingRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct PingRequestDefaultTypeInternal {
+  constexpr PingRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PingRequestDefaultTypeInternal() {}
+  union {
+    PingRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PingRequestDefaultTypeInternal _PingRequest_default_instance_;
+constexpr PingResponse::PingResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct PingResponseDefaultTypeInternal {
+  constexpr PingResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~PingResponseDefaultTypeInternal() {}
+  union {
+    PingResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PingResponseDefaultTypeInternal _PingResponse_default_instance_;
 }  // namespace v1
 }  // namespace common
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_common_2fv1_2ftypes_2eproto[4];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_common_2fv1_2ftypes_2eproto[6];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_common_2fv1_2ftypes_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_common_2fv1_2ftypes_2eproto = nullptr;
 
@@ -105,12 +127,26 @@ const uint32_t TableStruct_common_2fv1_2ftypes_2eproto::offsets[] PROTOBUF_SECTI
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::common::v1::NestedStringMap, data_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::common::v1::PingRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::common::v1::PingResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 8, -1, sizeof(::common::v1::StringMap_DataEntry_DoNotUse)},
   { 10, -1, -1, sizeof(::common::v1::StringMap)},
   { 17, 25, -1, sizeof(::common::v1::NestedStringMap_DataEntry_DoNotUse)},
   { 27, -1, -1, sizeof(::common::v1::NestedStringMap)},
+  { 34, -1, -1, sizeof(::common::v1::PingRequest)},
+  { 40, -1, -1, sizeof(::common::v1::PingResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -118,6 +154,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_StringMap_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_NestedStringMap_DataEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_NestedStringMap_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_PingRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_PingResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_common_2fv1_2ftypes_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -128,14 +166,15 @@ const char descriptor_table_protodef_common_2fv1_2ftypes_2eproto[] PROTOBUF_SECT
   "\017NestedStringMap\0228\n\004data\030\001 \003(\0132$.common."
   "v1.NestedStringMap.DataEntryR\004data\032M\n\tDa"
   "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\013"
-  "2\024.common.v1.StringMapR\005value:\0028\001B9\n\032org"
-  ".megacommerce.common.v1B\nTypesProtoZ\014com"
-  "mon/v1;v1\370\001\001b\006proto3"
+  "2\024.common.v1.StringMapR\005value:\0028\001\"\r\n\013Pin"
+  "gRequest\"\016\n\014PingResponseB9\n\032org.megacomm"
+  "erce.common.v1B\nTypesProtoZ\014common/v1;v1"
+  "\370\001\001b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2fv1_2ftypes_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fv1_2ftypes_2eproto = {
-  false, false, 380, descriptor_table_protodef_common_2fv1_2ftypes_2eproto, "common/v1/types.proto", 
-  &descriptor_table_common_2fv1_2ftypes_2eproto_once, nullptr, 0, 4,
+  false, false, 411, descriptor_table_protodef_common_2fv1_2ftypes_2eproto, "common/v1/types.proto", 
+  &descriptor_table_common_2fv1_2ftypes_2eproto_once, nullptr, 0, 6,
   schemas, file_default_instances, TableStruct_common_2fv1_2ftypes_2eproto::offsets,
   file_level_metadata_common_2fv1_2ftypes_2eproto, file_level_enum_descriptors_common_2fv1_2ftypes_2eproto, file_level_service_descriptors_common_2fv1_2ftypes_2eproto,
 };
@@ -630,6 +669,84 @@ void NestedStringMap::InternalSwap(NestedStringMap* other) {
       file_level_metadata_common_2fv1_2ftypes_2eproto[3]);
 }
 
+// ===================================================================
+
+class PingRequest::_Internal {
+ public:
+};
+
+PingRequest::PingRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:common.v1.PingRequest)
+}
+PingRequest::PingRequest(const PingRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:common.v1.PingRequest)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PingRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PingRequest::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata PingRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_common_2fv1_2ftypes_2eproto_getter, &descriptor_table_common_2fv1_2ftypes_2eproto_once,
+      file_level_metadata_common_2fv1_2ftypes_2eproto[4]);
+}
+
+// ===================================================================
+
+class PingResponse::_Internal {
+ public:
+};
+
+PingResponse::PingResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:common.v1.PingResponse)
+}
+PingResponse::PingResponse(const PingResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:common.v1.PingResponse)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData PingResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PingResponse::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata PingResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_common_2fv1_2ftypes_2eproto_getter, &descriptor_table_common_2fv1_2ftypes_2eproto_once,
+      file_level_metadata_common_2fv1_2ftypes_2eproto[5]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace common
@@ -645,6 +762,12 @@ template<> PROTOBUF_NOINLINE ::common::v1::NestedStringMap_DataEntry_DoNotUse* A
 }
 template<> PROTOBUF_NOINLINE ::common::v1::NestedStringMap* Arena::CreateMaybeMessage< ::common::v1::NestedStringMap >(Arena* arena) {
   return Arena::CreateMessageInternal< ::common::v1::NestedStringMap >(arena);
+}
+template<> PROTOBUF_NOINLINE ::common::v1::PingRequest* Arena::CreateMaybeMessage< ::common::v1::PingRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::common::v1::PingRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::common::v1::PingResponse* Arena::CreateMaybeMessage< ::common::v1::PingResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::common::v1::PingResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

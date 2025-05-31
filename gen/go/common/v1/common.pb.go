@@ -24,8 +24,9 @@ var File_common_v1_common_proto protoreflect.FileDescriptor
 
 const file_common_v1_common_proto_rawDesc = "" +
 	"\n" +
-	"\x16common/v1/common.proto\x12\tcommon.v1\x1a\x16common/v1/config.proto\x1a\x15common/v1/trans.proto2\xc9\x03\n" +
-	"\rCommonService\x12F\n" +
+	"\x16common/v1/common.proto\x12\tcommon.v1\x1a\x16common/v1/config.proto\x1a\x15common/v1/trans.proto\x1a\x15common/v1/types.proto2\x84\x04\n" +
+	"\rCommonService\x129\n" +
+	"\x04Ping\x12\x16.common.v1.PingRequest\x1a\x17.common.v1.PingResponse\"\x00\x12F\n" +
 	"\tConfigGet\x12\x1b.common.v1.ConfigGetRequest\x1a\x1c.common.v1.ConfigGetResponse\x12O\n" +
 	"\fConfigUpdate\x12\x1e.common.v1.ConfigUpdateRequest\x1a\x1f.common.v1.ConfigUpdateResponse\x12W\n" +
 	"\x0eConfigListener\x12 .common.v1.ConfigListenerRequest\x1a!.common.v1.ConfigListenerResponse0\x01\x12X\n" +
@@ -34,33 +35,37 @@ const file_common_v1_common_proto_rawDesc = "" +
 	"\x1aorg.megacommerce.common.v1B\vCommonProtoZ\fcommon/v1;v1\xf8\x01\x01b\x06proto3"
 
 var file_common_v1_common_proto_goTypes = []any{
-	(*ConfigGetRequest)(nil),               // 0: common.v1.ConfigGetRequest
-	(*ConfigUpdateRequest)(nil),            // 1: common.v1.ConfigUpdateRequest
-	(*ConfigListenerRequest)(nil),          // 2: common.v1.ConfigListenerRequest
-	(*TranslationsGetRequest)(nil),         // 3: common.v1.TranslationsGetRequest
-	(*TranslationsForLangGetRequest)(nil),  // 4: common.v1.TranslationsForLangGetRequest
-	(*ConfigGetResponse)(nil),              // 5: common.v1.ConfigGetResponse
-	(*ConfigUpdateResponse)(nil),           // 6: common.v1.ConfigUpdateResponse
-	(*ConfigListenerResponse)(nil),         // 7: common.v1.ConfigListenerResponse
-	(*TranslationsGetResponse)(nil),        // 8: common.v1.TranslationsGetResponse
-	(*TranslationsForLangGetResponse)(nil), // 9: common.v1.TranslationsForLangGetResponse
+	(*PingRequest)(nil),                    // 0: common.v1.PingRequest
+	(*ConfigGetRequest)(nil),               // 1: common.v1.ConfigGetRequest
+	(*ConfigUpdateRequest)(nil),            // 2: common.v1.ConfigUpdateRequest
+	(*ConfigListenerRequest)(nil),          // 3: common.v1.ConfigListenerRequest
+	(*TranslationsGetRequest)(nil),         // 4: common.v1.TranslationsGetRequest
+	(*TranslationsForLangGetRequest)(nil),  // 5: common.v1.TranslationsForLangGetRequest
+	(*PingResponse)(nil),                   // 6: common.v1.PingResponse
+	(*ConfigGetResponse)(nil),              // 7: common.v1.ConfigGetResponse
+	(*ConfigUpdateResponse)(nil),           // 8: common.v1.ConfigUpdateResponse
+	(*ConfigListenerResponse)(nil),         // 9: common.v1.ConfigListenerResponse
+	(*TranslationsGetResponse)(nil),        // 10: common.v1.TranslationsGetResponse
+	(*TranslationsForLangGetResponse)(nil), // 11: common.v1.TranslationsForLangGetResponse
 }
 var file_common_v1_common_proto_depIdxs = []int32{
-	0, // 0: common.v1.CommonService.ConfigGet:input_type -> common.v1.ConfigGetRequest
-	1, // 1: common.v1.CommonService.ConfigUpdate:input_type -> common.v1.ConfigUpdateRequest
-	2, // 2: common.v1.CommonService.ConfigListener:input_type -> common.v1.ConfigListenerRequest
-	3, // 3: common.v1.CommonService.TranslationsGet:input_type -> common.v1.TranslationsGetRequest
-	4, // 4: common.v1.CommonService.TranslationForLangGet:input_type -> common.v1.TranslationsForLangGetRequest
-	5, // 5: common.v1.CommonService.ConfigGet:output_type -> common.v1.ConfigGetResponse
-	6, // 6: common.v1.CommonService.ConfigUpdate:output_type -> common.v1.ConfigUpdateResponse
-	7, // 7: common.v1.CommonService.ConfigListener:output_type -> common.v1.ConfigListenerResponse
-	8, // 8: common.v1.CommonService.TranslationsGet:output_type -> common.v1.TranslationsGetResponse
-	9, // 9: common.v1.CommonService.TranslationForLangGet:output_type -> common.v1.TranslationsForLangGetResponse
-	5, // [5:10] is the sub-list for method output_type
-	0, // [0:5] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	0,  // 0: common.v1.CommonService.Ping:input_type -> common.v1.PingRequest
+	1,  // 1: common.v1.CommonService.ConfigGet:input_type -> common.v1.ConfigGetRequest
+	2,  // 2: common.v1.CommonService.ConfigUpdate:input_type -> common.v1.ConfigUpdateRequest
+	3,  // 3: common.v1.CommonService.ConfigListener:input_type -> common.v1.ConfigListenerRequest
+	4,  // 4: common.v1.CommonService.TranslationsGet:input_type -> common.v1.TranslationsGetRequest
+	5,  // 5: common.v1.CommonService.TranslationForLangGet:input_type -> common.v1.TranslationsForLangGetRequest
+	6,  // 6: common.v1.CommonService.Ping:output_type -> common.v1.PingResponse
+	7,  // 7: common.v1.CommonService.ConfigGet:output_type -> common.v1.ConfigGetResponse
+	8,  // 8: common.v1.CommonService.ConfigUpdate:output_type -> common.v1.ConfigUpdateResponse
+	9,  // 9: common.v1.CommonService.ConfigListener:output_type -> common.v1.ConfigListenerResponse
+	10, // 10: common.v1.CommonService.TranslationsGet:output_type -> common.v1.TranslationsGetResponse
+	11, // 11: common.v1.CommonService.TranslationForLangGet:output_type -> common.v1.TranslationsForLangGetResponse
+	6,  // [6:12] is the sub-list for method output_type
+	0,  // [0:6] is the sub-list for method input_type
+	0,  // [0:0] is the sub-list for extension type_name
+	0,  // [0:0] is the sub-list for extension extendee
+	0,  // [0:0] is the sub-list for field type_name
 }
 
 func init() { file_common_v1_common_proto_init() }
@@ -70,6 +75,7 @@ func file_common_v1_common_proto_init() {
 	}
 	file_common_v1_config_proto_init()
 	file_common_v1_trans_proto_init()
+	file_common_v1_types_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

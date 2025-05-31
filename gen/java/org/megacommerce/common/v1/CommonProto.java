@@ -25,29 +25,33 @@ public final class CommonProto {
     java.lang.String[] descriptorData = {
       "\n\026common/v1/common.proto\022\tcommon.v1\032\026com" +
       "mon/v1/config.proto\032\025common/v1/trans.pro" +
-      "to2\311\003\n\rCommonService\022F\n\tConfigGet\022\033.comm" +
-      "on.v1.ConfigGetRequest\032\034.common.v1.Confi" +
-      "gGetResponse\022O\n\014ConfigUpdate\022\036.common.v1" +
-      ".ConfigUpdateRequest\032\037.common.v1.ConfigU" +
-      "pdateResponse\022W\n\016ConfigListener\022 .common" +
-      ".v1.ConfigListenerRequest\032!.common.v1.Co" +
-      "nfigListenerResponse0\001\022X\n\017TranslationsGe" +
-      "t\022!.common.v1.TranslationsGetRequest\032\".c" +
-      "ommon.v1.TranslationsGetResponse\022l\n\025Tran" +
-      "slationForLangGet\022(.common.v1.Translatio" +
-      "nsForLangGetRequest\032).common.v1.Translat" +
-      "ionsForLangGetResponseB:\n\032org.megacommer" +
-      "ce.common.v1B\013CommonProtoZ\014common/v1;v1\370" +
-      "\001\001b\006proto3"
+      "to\032\025common/v1/types.proto2\204\004\n\rCommonServ" +
+      "ice\0229\n\004Ping\022\026.common.v1.PingRequest\032\027.co" +
+      "mmon.v1.PingResponse\"\000\022F\n\tConfigGet\022\033.co" +
+      "mmon.v1.ConfigGetRequest\032\034.common.v1.Con" +
+      "figGetResponse\022O\n\014ConfigUpdate\022\036.common." +
+      "v1.ConfigUpdateRequest\032\037.common.v1.Confi" +
+      "gUpdateResponse\022W\n\016ConfigListener\022 .comm" +
+      "on.v1.ConfigListenerRequest\032!.common.v1." +
+      "ConfigListenerResponse0\001\022X\n\017Translations" +
+      "Get\022!.common.v1.TranslationsGetRequest\032\"" +
+      ".common.v1.TranslationsGetResponse\022l\n\025Tr" +
+      "anslationForLangGet\022(.common.v1.Translat" +
+      "ionsForLangGetRequest\032).common.v1.Transl" +
+      "ationsForLangGetResponseB:\n\032org.megacomm" +
+      "erce.common.v1B\013CommonProtoZ\014common/v1;v" +
+      "1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.megacommerce.common.v1.ConfigProto.getDescriptor(),
           org.megacommerce.common.v1.TransProto.getDescriptor(),
+          org.megacommerce.common.v1.TypesProto.getDescriptor(),
         });
     org.megacommerce.common.v1.ConfigProto.getDescriptor();
     org.megacommerce.common.v1.TransProto.getDescriptor();
+    org.megacommerce.common.v1.TypesProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

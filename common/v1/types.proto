@@ -14,3 +14,8 @@ message StringMap {
 message NestedStringMap {
   map<string, StringMap> data = 1;
 }
+
+
+message PingRequest {}
+
+message PingResponse {}
