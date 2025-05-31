@@ -3000,11 +3000,381 @@ func (x *Config) GetImageProxy() *ConfigImageProxy {
 	return nil
 }
 
+type ConfigGetRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConfigGetRequest) Reset() {
+	*x = ConfigGetRequest{}
+	mi := &file_common_v1_config_proto_msgTypes[22]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfigGetRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfigGetRequest) ProtoMessage() {}
+
+func (x *ConfigGetRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_common_v1_config_proto_msgTypes[22]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfigGetRequest.ProtoReflect.Descriptor instead.
+func (*ConfigGetRequest) Descriptor() ([]byte, []int) {
+	return file_common_v1_config_proto_rawDescGZIP(), []int{22}
+}
+
+type ConfigGetResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Types that are valid to be assigned to Response:
+	//
+	//	*ConfigGetResponse_Data
+	//	*ConfigGetResponse_Error
+	Response      isConfigGetResponse_Response `protobuf_oneof:"response"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConfigGetResponse) Reset() {
+	*x = ConfigGetResponse{}
+	mi := &file_common_v1_config_proto_msgTypes[23]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfigGetResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfigGetResponse) ProtoMessage() {}
+
+func (x *ConfigGetResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_common_v1_config_proto_msgTypes[23]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfigGetResponse.ProtoReflect.Descriptor instead.
+func (*ConfigGetResponse) Descriptor() ([]byte, []int) {
+	return file_common_v1_config_proto_rawDescGZIP(), []int{23}
+}
+
+func (x *ConfigGetResponse) GetResponse() isConfigGetResponse_Response {
+	if x != nil {
+		return x.Response
+	}
+	return nil
+}
+
+func (x *ConfigGetResponse) GetData() *Config {
+	if x != nil {
+		if x, ok := x.Response.(*ConfigGetResponse_Data); ok {
+			return x.Data
+		}
+	}
+	return nil
+}
+
+func (x *ConfigGetResponse) GetError() *AppError {
+	if x != nil {
+		if x, ok := x.Response.(*ConfigGetResponse_Error); ok {
+			return x.Error
+		}
+	}
+	return nil
+}
+
+type isConfigGetResponse_Response interface {
+	isConfigGetResponse_Response()
+}
+
+type ConfigGetResponse_Data struct {
+	Data *Config `protobuf:"bytes,1,opt,name=data,proto3,oneof"`
+}
+
+type ConfigGetResponse_Error struct {
+	Error *AppError `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
+}
+
+func (*ConfigGetResponse_Data) isConfigGetResponse_Response() {}
+
+func (*ConfigGetResponse_Error) isConfigGetResponse_Response() {}
+
+type ConfigUpdateRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Config        *Config                `protobuf:"bytes,1,opt,name=config,proto3" json:"config,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConfigUpdateRequest) Reset() {
+	*x = ConfigUpdateRequest{}
+	mi := &file_common_v1_config_proto_msgTypes[24]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfigUpdateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfigUpdateRequest) ProtoMessage() {}
+
+func (x *ConfigUpdateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_common_v1_config_proto_msgTypes[24]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfigUpdateRequest.ProtoReflect.Descriptor instead.
+func (*ConfigUpdateRequest) Descriptor() ([]byte, []int) {
+	return file_common_v1_config_proto_rawDescGZIP(), []int{24}
+}
+
+func (x *ConfigUpdateRequest) GetConfig() *Config {
+	if x != nil {
+		return x.Config
+	}
+	return nil
+}
+
+type ConfigUpdateResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Types that are valid to be assigned to Response:
+	//
+	//	*ConfigUpdateResponse_Data
+	//	*ConfigUpdateResponse_Error
+	Response      isConfigUpdateResponse_Response `protobuf_oneof:"response"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConfigUpdateResponse) Reset() {
+	*x = ConfigUpdateResponse{}
+	mi := &file_common_v1_config_proto_msgTypes[25]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfigUpdateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfigUpdateResponse) ProtoMessage() {}
+
+func (x *ConfigUpdateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_common_v1_config_proto_msgTypes[25]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfigUpdateResponse.ProtoReflect.Descriptor instead.
+func (*ConfigUpdateResponse) Descriptor() ([]byte, []int) {
+	return file_common_v1_config_proto_rawDescGZIP(), []int{25}
+}
+
+func (x *ConfigUpdateResponse) GetResponse() isConfigUpdateResponse_Response {
+	if x != nil {
+		return x.Response
+	}
+	return nil
+}
+
+func (x *ConfigUpdateResponse) GetData() *Config {
+	if x != nil {
+		if x, ok := x.Response.(*ConfigUpdateResponse_Data); ok {
+			return x.Data
+		}
+	}
+	return nil
+}
+
+func (x *ConfigUpdateResponse) GetError() *AppError {
+	if x != nil {
+		if x, ok := x.Response.(*ConfigUpdateResponse_Error); ok {
+			return x.Error
+		}
+	}
+	return nil
+}
+
+type isConfigUpdateResponse_Response interface {
+	isConfigUpdateResponse_Response()
+}
+
+type ConfigUpdateResponse_Data struct {
+	Data *Config `protobuf:"bytes,1,opt,name=data,proto3,oneof"`
+}
+
+type ConfigUpdateResponse_Error struct {
+	Error *AppError `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
+}
+
+func (*ConfigUpdateResponse_Data) isConfigUpdateResponse_Response() {}
+
+func (*ConfigUpdateResponse_Error) isConfigUpdateResponse_Response() {}
+
+type ConfigListenerResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Types that are valid to be assigned to Response:
+	//
+	//	*ConfigListenerResponse_Data
+	//	*ConfigListenerResponse_Error
+	Response      isConfigListenerResponse_Response `protobuf_oneof:"response"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConfigListenerResponse) Reset() {
+	*x = ConfigListenerResponse{}
+	mi := &file_common_v1_config_proto_msgTypes[26]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfigListenerResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfigListenerResponse) ProtoMessage() {}
+
+func (x *ConfigListenerResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_common_v1_config_proto_msgTypes[26]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfigListenerResponse.ProtoReflect.Descriptor instead.
+func (*ConfigListenerResponse) Descriptor() ([]byte, []int) {
+	return file_common_v1_config_proto_rawDescGZIP(), []int{26}
+}
+
+func (x *ConfigListenerResponse) GetResponse() isConfigListenerResponse_Response {
+	if x != nil {
+		return x.Response
+	}
+	return nil
+}
+
+func (x *ConfigListenerResponse) GetData() *Config {
+	if x != nil {
+		if x, ok := x.Response.(*ConfigListenerResponse_Data); ok {
+			return x.Data
+		}
+	}
+	return nil
+}
+
+func (x *ConfigListenerResponse) GetError() *AppError {
+	if x != nil {
+		if x, ok := x.Response.(*ConfigListenerResponse_Error); ok {
+			return x.Error
+		}
+	}
+	return nil
+}
+
+type isConfigListenerResponse_Response interface {
+	isConfigListenerResponse_Response()
+}
+
+type ConfigListenerResponse_Data struct {
+	Data *Config `protobuf:"bytes,1,opt,name=data,proto3,oneof"`
+}
+
+type ConfigListenerResponse_Error struct {
+	Error *AppError `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
+}
+
+func (*ConfigListenerResponse_Data) isConfigListenerResponse_Response() {}
+
+func (*ConfigListenerResponse_Error) isConfigListenerResponse_Response() {}
+
+type ConfigListenerRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ClientId      string                 `protobuf:"bytes,1,opt,name=client_id,json=clientId,proto3" json:"client_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ConfigListenerRequest) Reset() {
+	*x = ConfigListenerRequest{}
+	mi := &file_common_v1_config_proto_msgTypes[27]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ConfigListenerRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ConfigListenerRequest) ProtoMessage() {}
+
+func (x *ConfigListenerRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_common_v1_config_proto_msgTypes[27]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ConfigListenerRequest.ProtoReflect.Descriptor instead.
+func (*ConfigListenerRequest) Descriptor() ([]byte, []int) {
+	return file_common_v1_config_proto_rawDescGZIP(), []int{27}
+}
+
+func (x *ConfigListenerRequest) GetClientId() string {
+	if x != nil {
+		return x.ClientId
+	}
+	return ""
+}
+
 var File_common_v1_config_proto protoreflect.FileDescriptor
 
 const file_common_v1_config_proto_rawDesc = "" +
 	"\n" +
-	"\x16common/v1/config.proto\x12\tcommon.v1\"\x9e\x0f\n" +
+	"\x16common/v1/config.proto\x12\tcommon.v1\x1a\x15common/v1/error.proto\"\x9e\x0f\n" +
 	"\n" +
 	"ConfigMain\x12&\n" +
 	"\fread_timeout\x18\x01 \x01(\x05H\x00R\vreadTimeout\x88\x01\x01\x12(\n" +
@@ -3601,7 +3971,27 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x05bleve\x18\x13 \x01(\v2\x16.common.v1.ConfigBleveR\x05bleve\x12E\n" +
 	"\x0edata_retention\x18\x14 \x01(\v2\x1e.common.v1.ConfigDataRetentionR\rdataRetention\x12<\n" +
 	"\vimage_proxy\x18\x15 \x01(\v2\x1b.common.v1.ConfigImageProxyR\n" +
-	"imageProxyB:\n" +
+	"imageProxy\"\x12\n" +
+	"\x10ConfigGetRequest\"u\n" +
+	"\x11ConfigGetResponse\x12'\n" +
+	"\x04data\x18\x01 \x01(\v2\x11.common.v1.ConfigH\x00R\x04data\x12+\n" +
+	"\x05error\x18\x02 \x01(\v2\x13.common.v1.AppErrorH\x00R\x05errorB\n" +
+	"\n" +
+	"\bresponse\"@\n" +
+	"\x13ConfigUpdateRequest\x12)\n" +
+	"\x06config\x18\x01 \x01(\v2\x11.common.v1.ConfigR\x06config\"x\n" +
+	"\x14ConfigUpdateResponse\x12'\n" +
+	"\x04data\x18\x01 \x01(\v2\x11.common.v1.ConfigH\x00R\x04data\x12+\n" +
+	"\x05error\x18\x02 \x01(\v2\x13.common.v1.AppErrorH\x00R\x05errorB\n" +
+	"\n" +
+	"\bresponse\"z\n" +
+	"\x16ConfigListenerResponse\x12'\n" +
+	"\x04data\x18\x01 \x01(\v2\x11.common.v1.ConfigH\x00R\x04data\x12+\n" +
+	"\x05error\x18\x02 \x01(\v2\x13.common.v1.AppErrorH\x00R\x05errorB\n" +
+	"\n" +
+	"\bresponse\"4\n" +
+	"\x15ConfigListenerRequest\x12\x1b\n" +
+	"\tclient_id\x18\x01 \x01(\tR\bclientIdB:\n" +
 	"\x1aorg.megacommerce.common.v1B\vConfigProtoZ\fcommon/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
@@ -3616,30 +4006,37 @@ func file_common_v1_config_proto_rawDescGZIP() []byte {
 	return file_common_v1_config_proto_rawDescData
 }
 
-var file_common_v1_config_proto_msgTypes = make([]protoimpl.MessageInfo, 22)
+var file_common_v1_config_proto_msgTypes = make([]protoimpl.MessageInfo, 28)
 var file_common_v1_config_proto_goTypes = []any{
-	(*ConfigMain)(nil),          // 0: common.v1.ConfigMain
-	(*ConfigServices)(nil),      // 1: common.v1.ConfigServices
-	(*ConfigSecurity)(nil),      // 2: common.v1.ConfigSecurity
-	(*CacheConfig)(nil),         // 3: common.v1.CacheConfig
-	(*ConfigMetrics)(nil),       // 4: common.v1.ConfigMetrics
-	(*ConfigSSO)(nil),           // 5: common.v1.ConfigSSO
-	(*ConfigSql)(nil),           // 6: common.v1.ConfigSql
-	(*ConfigPassword)(nil),      // 7: common.v1.ConfigPassword
-	(*ConfigFile)(nil),          // 8: common.v1.ConfigFile
-	(*ConfigEmail)(nil),         // 9: common.v1.ConfigEmail
-	(*ConfigRateLimit)(nil),     // 10: common.v1.ConfigRateLimit
-	(*ConfigPrivacy)(nil),       // 11: common.v1.ConfigPrivacy
-	(*ConfigSupport)(nil),       // 12: common.v1.ConfigSupport
-	(*ConfigLocalization)(nil),  // 13: common.v1.ConfigLocalization
-	(*ConfigLdap)(nil),          // 14: common.v1.ConfigLdap
-	(*ConfigSaml)(nil),          // 15: common.v1.ConfigSaml
-	(*ConfigNativeApp)(nil),     // 16: common.v1.ConfigNativeApp
-	(*ConfigMeilisearch)(nil),   // 17: common.v1.ConfigMeilisearch
-	(*ConfigBleve)(nil),         // 18: common.v1.ConfigBleve
-	(*ConfigDataRetention)(nil), // 19: common.v1.ConfigDataRetention
-	(*ConfigImageProxy)(nil),    // 20: common.v1.ConfigImageProxy
-	(*Config)(nil),              // 21: common.v1.Config
+	(*ConfigMain)(nil),             // 0: common.v1.ConfigMain
+	(*ConfigServices)(nil),         // 1: common.v1.ConfigServices
+	(*ConfigSecurity)(nil),         // 2: common.v1.ConfigSecurity
+	(*CacheConfig)(nil),            // 3: common.v1.CacheConfig
+	(*ConfigMetrics)(nil),          // 4: common.v1.ConfigMetrics
+	(*ConfigSSO)(nil),              // 5: common.v1.ConfigSSO
+	(*ConfigSql)(nil),              // 6: common.v1.ConfigSql
+	(*ConfigPassword)(nil),         // 7: common.v1.ConfigPassword
+	(*ConfigFile)(nil),             // 8: common.v1.ConfigFile
+	(*ConfigEmail)(nil),            // 9: common.v1.ConfigEmail
+	(*ConfigRateLimit)(nil),        // 10: common.v1.ConfigRateLimit
+	(*ConfigPrivacy)(nil),          // 11: common.v1.ConfigPrivacy
+	(*ConfigSupport)(nil),          // 12: common.v1.ConfigSupport
+	(*ConfigLocalization)(nil),     // 13: common.v1.ConfigLocalization
+	(*ConfigLdap)(nil),             // 14: common.v1.ConfigLdap
+	(*ConfigSaml)(nil),             // 15: common.v1.ConfigSaml
+	(*ConfigNativeApp)(nil),        // 16: common.v1.ConfigNativeApp
+	(*ConfigMeilisearch)(nil),      // 17: common.v1.ConfigMeilisearch
+	(*ConfigBleve)(nil),            // 18: common.v1.ConfigBleve
+	(*ConfigDataRetention)(nil),    // 19: common.v1.ConfigDataRetention
+	(*ConfigImageProxy)(nil),       // 20: common.v1.ConfigImageProxy
+	(*Config)(nil),                 // 21: common.v1.Config
+	(*ConfigGetRequest)(nil),       // 22: common.v1.ConfigGetRequest
+	(*ConfigGetResponse)(nil),      // 23: common.v1.ConfigGetResponse
+	(*ConfigUpdateRequest)(nil),    // 24: common.v1.ConfigUpdateRequest
+	(*ConfigUpdateResponse)(nil),   // 25: common.v1.ConfigUpdateResponse
+	(*ConfigListenerResponse)(nil), // 26: common.v1.ConfigListenerResponse
+	(*ConfigListenerRequest)(nil),  // 27: common.v1.ConfigListenerRequest
+	(*AppError)(nil),               // 28: common.v1.AppError
 }
 var file_common_v1_config_proto_depIdxs = []int32{
 	0,  // 0: common.v1.Config.main:type_name -> common.v1.ConfigMain
@@ -3663,11 +4060,18 @@ var file_common_v1_config_proto_depIdxs = []int32{
 	18, // 18: common.v1.Config.bleve:type_name -> common.v1.ConfigBleve
 	19, // 19: common.v1.Config.data_retention:type_name -> common.v1.ConfigDataRetention
 	20, // 20: common.v1.Config.image_proxy:type_name -> common.v1.ConfigImageProxy
-	21, // [21:21] is the sub-list for method output_type
-	21, // [21:21] is the sub-list for method input_type
-	21, // [21:21] is the sub-list for extension type_name
-	21, // [21:21] is the sub-list for extension extendee
-	0,  // [0:21] is the sub-list for field type_name
+	21, // 21: common.v1.ConfigGetResponse.data:type_name -> common.v1.Config
+	28, // 22: common.v1.ConfigGetResponse.error:type_name -> common.v1.AppError
+	21, // 23: common.v1.ConfigUpdateRequest.config:type_name -> common.v1.Config
+	21, // 24: common.v1.ConfigUpdateResponse.data:type_name -> common.v1.Config
+	28, // 25: common.v1.ConfigUpdateResponse.error:type_name -> common.v1.AppError
+	21, // 26: common.v1.ConfigListenerResponse.data:type_name -> common.v1.Config
+	28, // 27: common.v1.ConfigListenerResponse.error:type_name -> common.v1.AppError
+	28, // [28:28] is the sub-list for method output_type
+	28, // [28:28] is the sub-list for method input_type
+	28, // [28:28] is the sub-list for extension type_name
+	28, // [28:28] is the sub-list for extension extendee
+	0,  // [0:28] is the sub-list for field type_name
 }
 
 func init() { file_common_v1_config_proto_init() }
@@ -3675,6 +4079,7 @@ func file_common_v1_config_proto_init() {
 	if File_common_v1_config_proto != nil {
 		return
 	}
+	file_common_v1_error_proto_init()
 	file_common_v1_config_proto_msgTypes[0].OneofWrappers = []any{}
 	file_common_v1_config_proto_msgTypes[1].OneofWrappers = []any{}
 	file_common_v1_config_proto_msgTypes[2].OneofWrappers = []any{}
@@ -3696,13 +4101,25 @@ func file_common_v1_config_proto_init() {
 	file_common_v1_config_proto_msgTypes[18].OneofWrappers = []any{}
 	file_common_v1_config_proto_msgTypes[19].OneofWrappers = []any{}
 	file_common_v1_config_proto_msgTypes[20].OneofWrappers = []any{}
+	file_common_v1_config_proto_msgTypes[23].OneofWrappers = []any{
+		(*ConfigGetResponse_Data)(nil),
+		(*ConfigGetResponse_Error)(nil),
+	}
+	file_common_v1_config_proto_msgTypes[25].OneofWrappers = []any{
+		(*ConfigUpdateResponse_Data)(nil),
+		(*ConfigUpdateResponse_Error)(nil),
+	}
+	file_common_v1_config_proto_msgTypes[26].OneofWrappers = []any{
+		(*ConfigListenerResponse_Data)(nil),
+		(*ConfigListenerResponse_Error)(nil),
+	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_v1_config_proto_rawDesc), len(file_common_v1_config_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   22,
+			NumMessages:   28,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

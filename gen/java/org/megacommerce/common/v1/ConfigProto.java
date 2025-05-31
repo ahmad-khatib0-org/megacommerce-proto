@@ -47851,6 +47851,4315 @@ public final class ConfigProto {
 
   }
 
+  public interface ConfigGetRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.v1.ConfigGetRequest)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code common.v1.ConfigGetRequest}
+   */
+  public static final class ConfigGetRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:common.v1.ConfigGetRequest)
+      ConfigGetRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ConfigGetRequest.newBuilder() to construct.
+    private ConfigGetRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ConfigGetRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ConfigGetRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigGetRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigGetRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.common.v1.ConfigProto.ConfigGetRequest.class, org.megacommerce.common.v1.ConfigProto.ConfigGetRequest.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.common.v1.ConfigProto.ConfigGetRequest)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.common.v1.ConfigProto.ConfigGetRequest other = (org.megacommerce.common.v1.ConfigProto.ConfigGetRequest) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.common.v1.ConfigProto.ConfigGetRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code common.v1.ConfigGetRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.v1.ConfigGetRequest)
+        org.megacommerce.common.v1.ConfigProto.ConfigGetRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigGetRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigGetRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.common.v1.ConfigProto.ConfigGetRequest.class, org.megacommerce.common.v1.ConfigProto.ConfigGetRequest.Builder.class);
+      }
+
+      // Construct using org.megacommerce.common.v1.ConfigProto.ConfigGetRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigGetRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigGetRequest getDefaultInstanceForType() {
+        return org.megacommerce.common.v1.ConfigProto.ConfigGetRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigGetRequest build() {
+        org.megacommerce.common.v1.ConfigProto.ConfigGetRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigGetRequest buildPartial() {
+        org.megacommerce.common.v1.ConfigProto.ConfigGetRequest result = new org.megacommerce.common.v1.ConfigProto.ConfigGetRequest(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.common.v1.ConfigProto.ConfigGetRequest) {
+          return mergeFrom((org.megacommerce.common.v1.ConfigProto.ConfigGetRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.common.v1.ConfigProto.ConfigGetRequest other) {
+        if (other == org.megacommerce.common.v1.ConfigProto.ConfigGetRequest.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:common.v1.ConfigGetRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:common.v1.ConfigGetRequest)
+    private static final org.megacommerce.common.v1.ConfigProto.ConfigGetRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.common.v1.ConfigProto.ConfigGetRequest();
+    }
+
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConfigGetRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ConfigGetRequest>() {
+      @java.lang.Override
+      public ConfigGetRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ConfigGetRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConfigGetRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.ConfigGetRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ConfigGetResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.v1.ConfigGetResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return Whether the data field is set.
+     */
+    boolean hasData();
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return The data.
+     */
+    org.megacommerce.common.v1.ConfigProto.Config getData();
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     */
+    org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getDataOrBuilder();
+
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return Whether the error field is set.
+     */
+    boolean hasError();
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    org.megacommerce.common.v1.ErrorProto.AppError getError();
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     */
+    org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder();
+
+    public org.megacommerce.common.v1.ConfigProto.ConfigGetResponse.ResponseCase getResponseCase();
+  }
+  /**
+   * Protobuf type {@code common.v1.ConfigGetResponse}
+   */
+  public static final class ConfigGetResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:common.v1.ConfigGetResponse)
+      ConfigGetResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ConfigGetResponse.newBuilder() to construct.
+    private ConfigGetResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ConfigGetResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ConfigGetResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigGetResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigGetResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.common.v1.ConfigProto.ConfigGetResponse.class, org.megacommerce.common.v1.ConfigProto.ConfigGetResponse.Builder.class);
+    }
+
+    private int responseCase_ = 0;
+    private java.lang.Object response_;
+    public enum ResponseCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      DATA(1),
+      ERROR(2),
+      RESPONSE_NOT_SET(0);
+      private final int value;
+      private ResponseCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ResponseCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ResponseCase forNumber(int value) {
+        switch (value) {
+          case 1: return DATA;
+          case 2: return ERROR;
+          case 0: return RESPONSE_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ResponseCase
+    getResponseCase() {
+      return ResponseCase.forNumber(
+          responseCase_);
+    }
+
+    public static final int DATA_FIELD_NUMBER = 1;
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return Whether the data field is set.
+     */
+    @java.lang.Override
+    public boolean hasData() {
+      return responseCase_ == 1;
+    }
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.Config getData() {
+      if (responseCase_ == 1) {
+         return (org.megacommerce.common.v1.ConfigProto.Config) response_;
+      }
+      return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+    }
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getDataOrBuilder() {
+      if (responseCase_ == 1) {
+         return (org.megacommerce.common.v1.ConfigProto.Config) response_;
+      }
+      return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 2;
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return Whether the error field is set.
+     */
+    @java.lang.Override
+    public boolean hasError() {
+      return responseCase_ == 2;
+    }
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+      if (responseCase_ == 2) {
+         return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+      }
+      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+    }
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+      if (responseCase_ == 2) {
+         return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+      }
+      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (responseCase_ == 1) {
+        output.writeMessage(1, (org.megacommerce.common.v1.ConfigProto.Config) response_);
+      }
+      if (responseCase_ == 2) {
+        output.writeMessage(2, (org.megacommerce.common.v1.ErrorProto.AppError) response_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (responseCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (org.megacommerce.common.v1.ConfigProto.Config) response_);
+      }
+      if (responseCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (org.megacommerce.common.v1.ErrorProto.AppError) response_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.common.v1.ConfigProto.ConfigGetResponse)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.common.v1.ConfigProto.ConfigGetResponse other = (org.megacommerce.common.v1.ConfigProto.ConfigGetResponse) obj;
+
+      if (!getResponseCase().equals(other.getResponseCase())) return false;
+      switch (responseCase_) {
+        case 1:
+          if (!getData()
+              .equals(other.getData())) return false;
+          break;
+        case 2:
+          if (!getError()
+              .equals(other.getError())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (responseCase_) {
+        case 1:
+          hash = (37 * hash) + DATA_FIELD_NUMBER;
+          hash = (53 * hash) + getData().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + ERROR_FIELD_NUMBER;
+          hash = (53 * hash) + getError().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.common.v1.ConfigProto.ConfigGetResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code common.v1.ConfigGetResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.v1.ConfigGetResponse)
+        org.megacommerce.common.v1.ConfigProto.ConfigGetResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigGetResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigGetResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.common.v1.ConfigProto.ConfigGetResponse.class, org.megacommerce.common.v1.ConfigProto.ConfigGetResponse.Builder.class);
+      }
+
+      // Construct using org.megacommerce.common.v1.ConfigProto.ConfigGetResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (dataBuilder_ != null) {
+          dataBuilder_.clear();
+        }
+        if (errorBuilder_ != null) {
+          errorBuilder_.clear();
+        }
+        responseCase_ = 0;
+        response_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigGetResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigGetResponse getDefaultInstanceForType() {
+        return org.megacommerce.common.v1.ConfigProto.ConfigGetResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigGetResponse build() {
+        org.megacommerce.common.v1.ConfigProto.ConfigGetResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigGetResponse buildPartial() {
+        org.megacommerce.common.v1.ConfigProto.ConfigGetResponse result = new org.megacommerce.common.v1.ConfigProto.ConfigGetResponse(this);
+        if (responseCase_ == 1) {
+          if (dataBuilder_ == null) {
+            result.response_ = response_;
+          } else {
+            result.response_ = dataBuilder_.build();
+          }
+        }
+        if (responseCase_ == 2) {
+          if (errorBuilder_ == null) {
+            result.response_ = response_;
+          } else {
+            result.response_ = errorBuilder_.build();
+          }
+        }
+        result.responseCase_ = responseCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.common.v1.ConfigProto.ConfigGetResponse) {
+          return mergeFrom((org.megacommerce.common.v1.ConfigProto.ConfigGetResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.common.v1.ConfigProto.ConfigGetResponse other) {
+        if (other == org.megacommerce.common.v1.ConfigProto.ConfigGetResponse.getDefaultInstance()) return this;
+        switch (other.getResponseCase()) {
+          case DATA: {
+            mergeData(other.getData());
+            break;
+          }
+          case ERROR: {
+            mergeError(other.getError());
+            break;
+          }
+          case RESPONSE_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getDataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                responseCase_ = 1;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getErrorFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                responseCase_ = 2;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int responseCase_ = 0;
+      private java.lang.Object response_;
+      public ResponseCase
+          getResponseCase() {
+        return ResponseCase.forNumber(
+            responseCase_);
+      }
+
+      public Builder clearResponse() {
+        responseCase_ = 0;
+        response_ = null;
+        onChanged();
+        return this;
+      }
+
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ConfigProto.Config, org.megacommerce.common.v1.ConfigProto.Config.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder> dataBuilder_;
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       * @return Whether the data field is set.
+       */
+      @java.lang.Override
+      public boolean hasData() {
+        return responseCase_ == 1;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       * @return The data.
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.Config getData() {
+        if (dataBuilder_ == null) {
+          if (responseCase_ == 1) {
+            return (org.megacommerce.common.v1.ConfigProto.Config) response_;
+          }
+          return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+        } else {
+          if (responseCase_ == 1) {
+            return dataBuilder_.getMessage();
+          }
+          return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder setData(org.megacommerce.common.v1.ConfigProto.Config value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(value);
+        }
+        responseCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder setData(
+          org.megacommerce.common.v1.ConfigProto.Config.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+        responseCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder mergeData(org.megacommerce.common.v1.ConfigProto.Config value) {
+        if (dataBuilder_ == null) {
+          if (responseCase_ == 1 &&
+              response_ != org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance()) {
+            response_ = org.megacommerce.common.v1.ConfigProto.Config.newBuilder((org.megacommerce.common.v1.ConfigProto.Config) response_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          if (responseCase_ == 1) {
+            dataBuilder_.mergeFrom(value);
+          }
+          dataBuilder_.setMessage(value);
+        }
+        responseCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          if (responseCase_ == 1) {
+            responseCase_ = 0;
+            response_ = null;
+            onChanged();
+          }
+        } else {
+          if (responseCase_ == 1) {
+            responseCase_ = 0;
+            response_ = null;
+          }
+          dataBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public org.megacommerce.common.v1.ConfigProto.Config.Builder getDataBuilder() {
+        return getDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getDataOrBuilder() {
+        if ((responseCase_ == 1) && (dataBuilder_ != null)) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          if (responseCase_ == 1) {
+            return (org.megacommerce.common.v1.ConfigProto.Config) response_;
+          }
+          return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ConfigProto.Config, org.megacommerce.common.v1.ConfigProto.Config.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          if (!(responseCase_ == 1)) {
+            response_ = org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+          }
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.megacommerce.common.v1.ConfigProto.Config, org.megacommerce.common.v1.ConfigProto.Config.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder>(
+                  (org.megacommerce.common.v1.ConfigProto.Config) response_,
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        responseCase_ = 1;
+        onChanged();;
+        return dataBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> errorBuilder_;
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * @return Whether the error field is set.
+       */
+      @java.lang.Override
+      public boolean hasError() {
+        return responseCase_ == 2;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * @return The error.
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+        if (errorBuilder_ == null) {
+          if (responseCase_ == 2) {
+            return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+          }
+          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+        } else {
+          if (responseCase_ == 2) {
+            return errorBuilder_.getMessage();
+          }
+          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder setError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+        if (errorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          errorBuilder_.setMessage(value);
+        }
+        responseCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder setError(
+          org.megacommerce.common.v1.ErrorProto.AppError.Builder builderForValue) {
+        if (errorBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          errorBuilder_.setMessage(builderForValue.build());
+        }
+        responseCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder mergeError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+        if (errorBuilder_ == null) {
+          if (responseCase_ == 2 &&
+              response_ != org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance()) {
+            response_ = org.megacommerce.common.v1.ErrorProto.AppError.newBuilder((org.megacommerce.common.v1.ErrorProto.AppError) response_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          if (responseCase_ == 2) {
+            errorBuilder_.mergeFrom(value);
+          }
+          errorBuilder_.setMessage(value);
+        }
+        responseCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder clearError() {
+        if (errorBuilder_ == null) {
+          if (responseCase_ == 2) {
+            responseCase_ = 0;
+            response_ = null;
+            onChanged();
+          }
+        } else {
+          if (responseCase_ == 2) {
+            responseCase_ = 0;
+            response_ = null;
+          }
+          errorBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public org.megacommerce.common.v1.ErrorProto.AppError.Builder getErrorBuilder() {
+        return getErrorFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+        if ((responseCase_ == 2) && (errorBuilder_ != null)) {
+          return errorBuilder_.getMessageOrBuilder();
+        } else {
+          if (responseCase_ == 2) {
+            return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+          }
+          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> 
+          getErrorFieldBuilder() {
+        if (errorBuilder_ == null) {
+          if (!(responseCase_ == 2)) {
+            response_ = org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+          }
+          errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder>(
+                  (org.megacommerce.common.v1.ErrorProto.AppError) response_,
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        responseCase_ = 2;
+        onChanged();;
+        return errorBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:common.v1.ConfigGetResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:common.v1.ConfigGetResponse)
+    private static final org.megacommerce.common.v1.ConfigProto.ConfigGetResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.common.v1.ConfigProto.ConfigGetResponse();
+    }
+
+    public static org.megacommerce.common.v1.ConfigProto.ConfigGetResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConfigGetResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ConfigGetResponse>() {
+      @java.lang.Override
+      public ConfigGetResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ConfigGetResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConfigGetResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.ConfigGetResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ConfigUpdateRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.v1.ConfigUpdateRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.common.v1.Config config = 1 [json_name = "config"];</code>
+     * @return Whether the config field is set.
+     */
+    boolean hasConfig();
+    /**
+     * <code>.common.v1.Config config = 1 [json_name = "config"];</code>
+     * @return The config.
+     */
+    org.megacommerce.common.v1.ConfigProto.Config getConfig();
+    /**
+     * <code>.common.v1.Config config = 1 [json_name = "config"];</code>
+     */
+    org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getConfigOrBuilder();
+  }
+  /**
+   * Protobuf type {@code common.v1.ConfigUpdateRequest}
+   */
+  public static final class ConfigUpdateRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:common.v1.ConfigUpdateRequest)
+      ConfigUpdateRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ConfigUpdateRequest.newBuilder() to construct.
+    private ConfigUpdateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ConfigUpdateRequest() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ConfigUpdateRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigUpdateRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigUpdateRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest.class, org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest.Builder.class);
+    }
+
+    public static final int CONFIG_FIELD_NUMBER = 1;
+    private org.megacommerce.common.v1.ConfigProto.Config config_;
+    /**
+     * <code>.common.v1.Config config = 1 [json_name = "config"];</code>
+     * @return Whether the config field is set.
+     */
+    @java.lang.Override
+    public boolean hasConfig() {
+      return config_ != null;
+    }
+    /**
+     * <code>.common.v1.Config config = 1 [json_name = "config"];</code>
+     * @return The config.
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.Config getConfig() {
+      return config_ == null ? org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance() : config_;
+    }
+    /**
+     * <code>.common.v1.Config config = 1 [json_name = "config"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getConfigOrBuilder() {
+      return getConfig();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (config_ != null) {
+        output.writeMessage(1, getConfig());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (config_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getConfig());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest other = (org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest) obj;
+
+      if (hasConfig() != other.hasConfig()) return false;
+      if (hasConfig()) {
+        if (!getConfig()
+            .equals(other.getConfig())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasConfig()) {
+        hash = (37 * hash) + CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getConfig().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code common.v1.ConfigUpdateRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.v1.ConfigUpdateRequest)
+        org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigUpdateRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigUpdateRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest.class, org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest.Builder.class);
+      }
+
+      // Construct using org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (configBuilder_ == null) {
+          config_ = null;
+        } else {
+          config_ = null;
+          configBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigUpdateRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest getDefaultInstanceForType() {
+        return org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest build() {
+        org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest buildPartial() {
+        org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest result = new org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest(this);
+        if (configBuilder_ == null) {
+          result.config_ = config_;
+        } else {
+          result.config_ = configBuilder_.build();
+        }
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest) {
+          return mergeFrom((org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest other) {
+        if (other == org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest.getDefaultInstance()) return this;
+        if (other.hasConfig()) {
+          mergeConfig(other.getConfig());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getConfigFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private org.megacommerce.common.v1.ConfigProto.Config config_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ConfigProto.Config, org.megacommerce.common.v1.ConfigProto.Config.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder> configBuilder_;
+      /**
+       * <code>.common.v1.Config config = 1 [json_name = "config"];</code>
+       * @return Whether the config field is set.
+       */
+      public boolean hasConfig() {
+        return configBuilder_ != null || config_ != null;
+      }
+      /**
+       * <code>.common.v1.Config config = 1 [json_name = "config"];</code>
+       * @return The config.
+       */
+      public org.megacommerce.common.v1.ConfigProto.Config getConfig() {
+        if (configBuilder_ == null) {
+          return config_ == null ? org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance() : config_;
+        } else {
+          return configBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.v1.Config config = 1 [json_name = "config"];</code>
+       */
+      public Builder setConfig(org.megacommerce.common.v1.ConfigProto.Config value) {
+        if (configBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          config_ = value;
+          onChanged();
+        } else {
+          configBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config config = 1 [json_name = "config"];</code>
+       */
+      public Builder setConfig(
+          org.megacommerce.common.v1.ConfigProto.Config.Builder builderForValue) {
+        if (configBuilder_ == null) {
+          config_ = builderForValue.build();
+          onChanged();
+        } else {
+          configBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config config = 1 [json_name = "config"];</code>
+       */
+      public Builder mergeConfig(org.megacommerce.common.v1.ConfigProto.Config value) {
+        if (configBuilder_ == null) {
+          if (config_ != null) {
+            config_ =
+              org.megacommerce.common.v1.ConfigProto.Config.newBuilder(config_).mergeFrom(value).buildPartial();
+          } else {
+            config_ = value;
+          }
+          onChanged();
+        } else {
+          configBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config config = 1 [json_name = "config"];</code>
+       */
+      public Builder clearConfig() {
+        if (configBuilder_ == null) {
+          config_ = null;
+          onChanged();
+        } else {
+          config_ = null;
+          configBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config config = 1 [json_name = "config"];</code>
+       */
+      public org.megacommerce.common.v1.ConfigProto.Config.Builder getConfigBuilder() {
+        
+        onChanged();
+        return getConfigFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.v1.Config config = 1 [json_name = "config"];</code>
+       */
+      public org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getConfigOrBuilder() {
+        if (configBuilder_ != null) {
+          return configBuilder_.getMessageOrBuilder();
+        } else {
+          return config_ == null ?
+              org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance() : config_;
+        }
+      }
+      /**
+       * <code>.common.v1.Config config = 1 [json_name = "config"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ConfigProto.Config, org.megacommerce.common.v1.ConfigProto.Config.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder> 
+          getConfigFieldBuilder() {
+        if (configBuilder_ == null) {
+          configBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.megacommerce.common.v1.ConfigProto.Config, org.megacommerce.common.v1.ConfigProto.Config.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder>(
+                  getConfig(),
+                  getParentForChildren(),
+                  isClean());
+          config_ = null;
+        }
+        return configBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:common.v1.ConfigUpdateRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:common.v1.ConfigUpdateRequest)
+    private static final org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest();
+    }
+
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConfigUpdateRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ConfigUpdateRequest>() {
+      @java.lang.Override
+      public ConfigUpdateRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ConfigUpdateRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConfigUpdateRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.ConfigUpdateRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ConfigUpdateResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.v1.ConfigUpdateResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return Whether the data field is set.
+     */
+    boolean hasData();
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return The data.
+     */
+    org.megacommerce.common.v1.ConfigProto.Config getData();
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     */
+    org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getDataOrBuilder();
+
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return Whether the error field is set.
+     */
+    boolean hasError();
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    org.megacommerce.common.v1.ErrorProto.AppError getError();
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     */
+    org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder();
+
+    public org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse.ResponseCase getResponseCase();
+  }
+  /**
+   * Protobuf type {@code common.v1.ConfigUpdateResponse}
+   */
+  public static final class ConfigUpdateResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:common.v1.ConfigUpdateResponse)
+      ConfigUpdateResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ConfigUpdateResponse.newBuilder() to construct.
+    private ConfigUpdateResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ConfigUpdateResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ConfigUpdateResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigUpdateResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigUpdateResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse.class, org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse.Builder.class);
+    }
+
+    private int responseCase_ = 0;
+    private java.lang.Object response_;
+    public enum ResponseCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      DATA(1),
+      ERROR(2),
+      RESPONSE_NOT_SET(0);
+      private final int value;
+      private ResponseCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ResponseCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ResponseCase forNumber(int value) {
+        switch (value) {
+          case 1: return DATA;
+          case 2: return ERROR;
+          case 0: return RESPONSE_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ResponseCase
+    getResponseCase() {
+      return ResponseCase.forNumber(
+          responseCase_);
+    }
+
+    public static final int DATA_FIELD_NUMBER = 1;
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return Whether the data field is set.
+     */
+    @java.lang.Override
+    public boolean hasData() {
+      return responseCase_ == 1;
+    }
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.Config getData() {
+      if (responseCase_ == 1) {
+         return (org.megacommerce.common.v1.ConfigProto.Config) response_;
+      }
+      return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+    }
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getDataOrBuilder() {
+      if (responseCase_ == 1) {
+         return (org.megacommerce.common.v1.ConfigProto.Config) response_;
+      }
+      return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 2;
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return Whether the error field is set.
+     */
+    @java.lang.Override
+    public boolean hasError() {
+      return responseCase_ == 2;
+    }
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+      if (responseCase_ == 2) {
+         return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+      }
+      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+    }
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+      if (responseCase_ == 2) {
+         return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+      }
+      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (responseCase_ == 1) {
+        output.writeMessage(1, (org.megacommerce.common.v1.ConfigProto.Config) response_);
+      }
+      if (responseCase_ == 2) {
+        output.writeMessage(2, (org.megacommerce.common.v1.ErrorProto.AppError) response_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (responseCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (org.megacommerce.common.v1.ConfigProto.Config) response_);
+      }
+      if (responseCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (org.megacommerce.common.v1.ErrorProto.AppError) response_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse other = (org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse) obj;
+
+      if (!getResponseCase().equals(other.getResponseCase())) return false;
+      switch (responseCase_) {
+        case 1:
+          if (!getData()
+              .equals(other.getData())) return false;
+          break;
+        case 2:
+          if (!getError()
+              .equals(other.getError())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (responseCase_) {
+        case 1:
+          hash = (37 * hash) + DATA_FIELD_NUMBER;
+          hash = (53 * hash) + getData().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + ERROR_FIELD_NUMBER;
+          hash = (53 * hash) + getError().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code common.v1.ConfigUpdateResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.v1.ConfigUpdateResponse)
+        org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigUpdateResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigUpdateResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse.class, org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse.Builder.class);
+      }
+
+      // Construct using org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (dataBuilder_ != null) {
+          dataBuilder_.clear();
+        }
+        if (errorBuilder_ != null) {
+          errorBuilder_.clear();
+        }
+        responseCase_ = 0;
+        response_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigUpdateResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse getDefaultInstanceForType() {
+        return org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse build() {
+        org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse buildPartial() {
+        org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse result = new org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse(this);
+        if (responseCase_ == 1) {
+          if (dataBuilder_ == null) {
+            result.response_ = response_;
+          } else {
+            result.response_ = dataBuilder_.build();
+          }
+        }
+        if (responseCase_ == 2) {
+          if (errorBuilder_ == null) {
+            result.response_ = response_;
+          } else {
+            result.response_ = errorBuilder_.build();
+          }
+        }
+        result.responseCase_ = responseCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse) {
+          return mergeFrom((org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse other) {
+        if (other == org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse.getDefaultInstance()) return this;
+        switch (other.getResponseCase()) {
+          case DATA: {
+            mergeData(other.getData());
+            break;
+          }
+          case ERROR: {
+            mergeError(other.getError());
+            break;
+          }
+          case RESPONSE_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getDataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                responseCase_ = 1;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getErrorFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                responseCase_ = 2;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int responseCase_ = 0;
+      private java.lang.Object response_;
+      public ResponseCase
+          getResponseCase() {
+        return ResponseCase.forNumber(
+            responseCase_);
+      }
+
+      public Builder clearResponse() {
+        responseCase_ = 0;
+        response_ = null;
+        onChanged();
+        return this;
+      }
+
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ConfigProto.Config, org.megacommerce.common.v1.ConfigProto.Config.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder> dataBuilder_;
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       * @return Whether the data field is set.
+       */
+      @java.lang.Override
+      public boolean hasData() {
+        return responseCase_ == 1;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       * @return The data.
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.Config getData() {
+        if (dataBuilder_ == null) {
+          if (responseCase_ == 1) {
+            return (org.megacommerce.common.v1.ConfigProto.Config) response_;
+          }
+          return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+        } else {
+          if (responseCase_ == 1) {
+            return dataBuilder_.getMessage();
+          }
+          return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder setData(org.megacommerce.common.v1.ConfigProto.Config value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(value);
+        }
+        responseCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder setData(
+          org.megacommerce.common.v1.ConfigProto.Config.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+        responseCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder mergeData(org.megacommerce.common.v1.ConfigProto.Config value) {
+        if (dataBuilder_ == null) {
+          if (responseCase_ == 1 &&
+              response_ != org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance()) {
+            response_ = org.megacommerce.common.v1.ConfigProto.Config.newBuilder((org.megacommerce.common.v1.ConfigProto.Config) response_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          if (responseCase_ == 1) {
+            dataBuilder_.mergeFrom(value);
+          }
+          dataBuilder_.setMessage(value);
+        }
+        responseCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          if (responseCase_ == 1) {
+            responseCase_ = 0;
+            response_ = null;
+            onChanged();
+          }
+        } else {
+          if (responseCase_ == 1) {
+            responseCase_ = 0;
+            response_ = null;
+          }
+          dataBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public org.megacommerce.common.v1.ConfigProto.Config.Builder getDataBuilder() {
+        return getDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getDataOrBuilder() {
+        if ((responseCase_ == 1) && (dataBuilder_ != null)) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          if (responseCase_ == 1) {
+            return (org.megacommerce.common.v1.ConfigProto.Config) response_;
+          }
+          return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ConfigProto.Config, org.megacommerce.common.v1.ConfigProto.Config.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          if (!(responseCase_ == 1)) {
+            response_ = org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+          }
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.megacommerce.common.v1.ConfigProto.Config, org.megacommerce.common.v1.ConfigProto.Config.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder>(
+                  (org.megacommerce.common.v1.ConfigProto.Config) response_,
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        responseCase_ = 1;
+        onChanged();;
+        return dataBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> errorBuilder_;
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * @return Whether the error field is set.
+       */
+      @java.lang.Override
+      public boolean hasError() {
+        return responseCase_ == 2;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * @return The error.
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+        if (errorBuilder_ == null) {
+          if (responseCase_ == 2) {
+            return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+          }
+          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+        } else {
+          if (responseCase_ == 2) {
+            return errorBuilder_.getMessage();
+          }
+          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder setError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+        if (errorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          errorBuilder_.setMessage(value);
+        }
+        responseCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder setError(
+          org.megacommerce.common.v1.ErrorProto.AppError.Builder builderForValue) {
+        if (errorBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          errorBuilder_.setMessage(builderForValue.build());
+        }
+        responseCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder mergeError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+        if (errorBuilder_ == null) {
+          if (responseCase_ == 2 &&
+              response_ != org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance()) {
+            response_ = org.megacommerce.common.v1.ErrorProto.AppError.newBuilder((org.megacommerce.common.v1.ErrorProto.AppError) response_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          if (responseCase_ == 2) {
+            errorBuilder_.mergeFrom(value);
+          }
+          errorBuilder_.setMessage(value);
+        }
+        responseCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder clearError() {
+        if (errorBuilder_ == null) {
+          if (responseCase_ == 2) {
+            responseCase_ = 0;
+            response_ = null;
+            onChanged();
+          }
+        } else {
+          if (responseCase_ == 2) {
+            responseCase_ = 0;
+            response_ = null;
+          }
+          errorBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public org.megacommerce.common.v1.ErrorProto.AppError.Builder getErrorBuilder() {
+        return getErrorFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+        if ((responseCase_ == 2) && (errorBuilder_ != null)) {
+          return errorBuilder_.getMessageOrBuilder();
+        } else {
+          if (responseCase_ == 2) {
+            return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+          }
+          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> 
+          getErrorFieldBuilder() {
+        if (errorBuilder_ == null) {
+          if (!(responseCase_ == 2)) {
+            response_ = org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+          }
+          errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder>(
+                  (org.megacommerce.common.v1.ErrorProto.AppError) response_,
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        responseCase_ = 2;
+        onChanged();;
+        return errorBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:common.v1.ConfigUpdateResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:common.v1.ConfigUpdateResponse)
+    private static final org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse();
+    }
+
+    public static org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConfigUpdateResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ConfigUpdateResponse>() {
+      @java.lang.Override
+      public ConfigUpdateResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ConfigUpdateResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConfigUpdateResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ConfigListenerResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.v1.ConfigListenerResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return Whether the data field is set.
+     */
+    boolean hasData();
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return The data.
+     */
+    org.megacommerce.common.v1.ConfigProto.Config getData();
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     */
+    org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getDataOrBuilder();
+
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return Whether the error field is set.
+     */
+    boolean hasError();
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    org.megacommerce.common.v1.ErrorProto.AppError getError();
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     */
+    org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder();
+
+    public org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse.ResponseCase getResponseCase();
+  }
+  /**
+   * Protobuf type {@code common.v1.ConfigListenerResponse}
+   */
+  public static final class ConfigListenerResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:common.v1.ConfigListenerResponse)
+      ConfigListenerResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ConfigListenerResponse.newBuilder() to construct.
+    private ConfigListenerResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ConfigListenerResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ConfigListenerResponse();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigListenerResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigListenerResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse.class, org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse.Builder.class);
+    }
+
+    private int responseCase_ = 0;
+    private java.lang.Object response_;
+    public enum ResponseCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      DATA(1),
+      ERROR(2),
+      RESPONSE_NOT_SET(0);
+      private final int value;
+      private ResponseCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ResponseCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ResponseCase forNumber(int value) {
+        switch (value) {
+          case 1: return DATA;
+          case 2: return ERROR;
+          case 0: return RESPONSE_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ResponseCase
+    getResponseCase() {
+      return ResponseCase.forNumber(
+          responseCase_);
+    }
+
+    public static final int DATA_FIELD_NUMBER = 1;
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return Whether the data field is set.
+     */
+    @java.lang.Override
+    public boolean hasData() {
+      return responseCase_ == 1;
+    }
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.Config getData() {
+      if (responseCase_ == 1) {
+         return (org.megacommerce.common.v1.ConfigProto.Config) response_;
+      }
+      return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+    }
+    /**
+     * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getDataOrBuilder() {
+      if (responseCase_ == 1) {
+         return (org.megacommerce.common.v1.ConfigProto.Config) response_;
+      }
+      return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 2;
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return Whether the error field is set.
+     */
+    @java.lang.Override
+    public boolean hasError() {
+      return responseCase_ == 2;
+    }
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+      if (responseCase_ == 2) {
+         return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+      }
+      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+    }
+    /**
+     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+      if (responseCase_ == 2) {
+         return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+      }
+      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (responseCase_ == 1) {
+        output.writeMessage(1, (org.megacommerce.common.v1.ConfigProto.Config) response_);
+      }
+      if (responseCase_ == 2) {
+        output.writeMessage(2, (org.megacommerce.common.v1.ErrorProto.AppError) response_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (responseCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (org.megacommerce.common.v1.ConfigProto.Config) response_);
+      }
+      if (responseCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (org.megacommerce.common.v1.ErrorProto.AppError) response_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse other = (org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse) obj;
+
+      if (!getResponseCase().equals(other.getResponseCase())) return false;
+      switch (responseCase_) {
+        case 1:
+          if (!getData()
+              .equals(other.getData())) return false;
+          break;
+        case 2:
+          if (!getError()
+              .equals(other.getError())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (responseCase_) {
+        case 1:
+          hash = (37 * hash) + DATA_FIELD_NUMBER;
+          hash = (53 * hash) + getData().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + ERROR_FIELD_NUMBER;
+          hash = (53 * hash) + getError().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code common.v1.ConfigListenerResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.v1.ConfigListenerResponse)
+        org.megacommerce.common.v1.ConfigProto.ConfigListenerResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigListenerResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigListenerResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse.class, org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse.Builder.class);
+      }
+
+      // Construct using org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        if (dataBuilder_ != null) {
+          dataBuilder_.clear();
+        }
+        if (errorBuilder_ != null) {
+          errorBuilder_.clear();
+        }
+        responseCase_ = 0;
+        response_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigListenerResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse getDefaultInstanceForType() {
+        return org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse build() {
+        org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse buildPartial() {
+        org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse result = new org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse(this);
+        if (responseCase_ == 1) {
+          if (dataBuilder_ == null) {
+            result.response_ = response_;
+          } else {
+            result.response_ = dataBuilder_.build();
+          }
+        }
+        if (responseCase_ == 2) {
+          if (errorBuilder_ == null) {
+            result.response_ = response_;
+          } else {
+            result.response_ = errorBuilder_.build();
+          }
+        }
+        result.responseCase_ = responseCase_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse) {
+          return mergeFrom((org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse other) {
+        if (other == org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse.getDefaultInstance()) return this;
+        switch (other.getResponseCase()) {
+          case DATA: {
+            mergeData(other.getData());
+            break;
+          }
+          case ERROR: {
+            mergeError(other.getError());
+            break;
+          }
+          case RESPONSE_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    getDataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                responseCase_ = 1;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getErrorFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                responseCase_ = 2;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int responseCase_ = 0;
+      private java.lang.Object response_;
+      public ResponseCase
+          getResponseCase() {
+        return ResponseCase.forNumber(
+            responseCase_);
+      }
+
+      public Builder clearResponse() {
+        responseCase_ = 0;
+        response_ = null;
+        onChanged();
+        return this;
+      }
+
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ConfigProto.Config, org.megacommerce.common.v1.ConfigProto.Config.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder> dataBuilder_;
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       * @return Whether the data field is set.
+       */
+      @java.lang.Override
+      public boolean hasData() {
+        return responseCase_ == 1;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       * @return The data.
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.Config getData() {
+        if (dataBuilder_ == null) {
+          if (responseCase_ == 1) {
+            return (org.megacommerce.common.v1.ConfigProto.Config) response_;
+          }
+          return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+        } else {
+          if (responseCase_ == 1) {
+            return dataBuilder_.getMessage();
+          }
+          return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder setData(org.megacommerce.common.v1.ConfigProto.Config value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(value);
+        }
+        responseCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder setData(
+          org.megacommerce.common.v1.ConfigProto.Config.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+        responseCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder mergeData(org.megacommerce.common.v1.ConfigProto.Config value) {
+        if (dataBuilder_ == null) {
+          if (responseCase_ == 1 &&
+              response_ != org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance()) {
+            response_ = org.megacommerce.common.v1.ConfigProto.Config.newBuilder((org.megacommerce.common.v1.ConfigProto.Config) response_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          if (responseCase_ == 1) {
+            dataBuilder_.mergeFrom(value);
+          }
+          dataBuilder_.setMessage(value);
+        }
+        responseCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          if (responseCase_ == 1) {
+            responseCase_ = 0;
+            response_ = null;
+            onChanged();
+          }
+        } else {
+          if (responseCase_ == 1) {
+            responseCase_ = 0;
+            response_ = null;
+          }
+          dataBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      public org.megacommerce.common.v1.ConfigProto.Config.Builder getDataBuilder() {
+        return getDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getDataOrBuilder() {
+        if ((responseCase_ == 1) && (dataBuilder_ != null)) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          if (responseCase_ == 1) {
+            return (org.megacommerce.common.v1.ConfigProto.Config) response_;
+          }
+          return org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.Config data = 1 [json_name = "data"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ConfigProto.Config, org.megacommerce.common.v1.ConfigProto.Config.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder> 
+          getDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          if (!(responseCase_ == 1)) {
+            response_ = org.megacommerce.common.v1.ConfigProto.Config.getDefaultInstance();
+          }
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.megacommerce.common.v1.ConfigProto.Config, org.megacommerce.common.v1.ConfigProto.Config.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder>(
+                  (org.megacommerce.common.v1.ConfigProto.Config) response_,
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        responseCase_ = 1;
+        onChanged();;
+        return dataBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> errorBuilder_;
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * @return Whether the error field is set.
+       */
+      @java.lang.Override
+      public boolean hasError() {
+        return responseCase_ == 2;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * @return The error.
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+        if (errorBuilder_ == null) {
+          if (responseCase_ == 2) {
+            return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+          }
+          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+        } else {
+          if (responseCase_ == 2) {
+            return errorBuilder_.getMessage();
+          }
+          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder setError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+        if (errorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          errorBuilder_.setMessage(value);
+        }
+        responseCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder setError(
+          org.megacommerce.common.v1.ErrorProto.AppError.Builder builderForValue) {
+        if (errorBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          errorBuilder_.setMessage(builderForValue.build());
+        }
+        responseCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder mergeError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+        if (errorBuilder_ == null) {
+          if (responseCase_ == 2 &&
+              response_ != org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance()) {
+            response_ = org.megacommerce.common.v1.ErrorProto.AppError.newBuilder((org.megacommerce.common.v1.ErrorProto.AppError) response_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          if (responseCase_ == 2) {
+            errorBuilder_.mergeFrom(value);
+          }
+          errorBuilder_.setMessage(value);
+        }
+        responseCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder clearError() {
+        if (errorBuilder_ == null) {
+          if (responseCase_ == 2) {
+            responseCase_ = 0;
+            response_ = null;
+            onChanged();
+          }
+        } else {
+          if (responseCase_ == 2) {
+            responseCase_ = 0;
+            response_ = null;
+          }
+          errorBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public org.megacommerce.common.v1.ErrorProto.AppError.Builder getErrorBuilder() {
+        return getErrorFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+        if ((responseCase_ == 2) && (errorBuilder_ != null)) {
+          return errorBuilder_.getMessageOrBuilder();
+        } else {
+          if (responseCase_ == 2) {
+            return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+          }
+          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> 
+          getErrorFieldBuilder() {
+        if (errorBuilder_ == null) {
+          if (!(responseCase_ == 2)) {
+            response_ = org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+          }
+          errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder>(
+                  (org.megacommerce.common.v1.ErrorProto.AppError) response_,
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        responseCase_ = 2;
+        onChanged();;
+        return errorBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:common.v1.ConfigListenerResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:common.v1.ConfigListenerResponse)
+    private static final org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse();
+    }
+
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConfigListenerResponse>
+        PARSER = new com.google.protobuf.AbstractParser<ConfigListenerResponse>() {
+      @java.lang.Override
+      public ConfigListenerResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ConfigListenerResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConfigListenerResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ConfigListenerRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.v1.ConfigListenerRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string client_id = 1 [json_name = "clientId"];</code>
+     * @return The clientId.
+     */
+    java.lang.String getClientId();
+    /**
+     * <code>string client_id = 1 [json_name = "clientId"];</code>
+     * @return The bytes for clientId.
+     */
+    com.google.protobuf.ByteString
+        getClientIdBytes();
+  }
+  /**
+   * Protobuf type {@code common.v1.ConfigListenerRequest}
+   */
+  public static final class ConfigListenerRequest extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:common.v1.ConfigListenerRequest)
+      ConfigListenerRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use ConfigListenerRequest.newBuilder() to construct.
+    private ConfigListenerRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private ConfigListenerRequest() {
+      clientId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new ConfigListenerRequest();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigListenerRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigListenerRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest.class, org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest.Builder.class);
+    }
+
+    public static final int CLIENT_ID_FIELD_NUMBER = 1;
+    private volatile java.lang.Object clientId_;
+    /**
+     * <code>string client_id = 1 [json_name = "clientId"];</code>
+     * @return The clientId.
+     */
+    @java.lang.Override
+    public java.lang.String getClientId() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        clientId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string client_id = 1 [json_name = "clientId"];</code>
+     * @return The bytes for clientId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getClientIdBytes() {
+      java.lang.Object ref = clientId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        clientId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, clientId_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(clientId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, clientId_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest other = (org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest) obj;
+
+      if (!getClientId()
+          .equals(other.getClientId())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CLIENT_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getClientId().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code common.v1.ConfigListenerRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.v1.ConfigListenerRequest)
+        org.megacommerce.common.v1.ConfigProto.ConfigListenerRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigListenerRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigListenerRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest.class, org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest.Builder.class);
+      }
+
+      // Construct using org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        clientId_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigListenerRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest getDefaultInstanceForType() {
+        return org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest build() {
+        org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest buildPartial() {
+        org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest result = new org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest(this);
+        result.clientId_ = clientId_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest) {
+          return mergeFrom((org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest other) {
+        if (other == org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest.getDefaultInstance()) return this;
+        if (!other.getClientId().isEmpty()) {
+          clientId_ = other.clientId_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                clientId_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private java.lang.Object clientId_ = "";
+      /**
+       * <code>string client_id = 1 [json_name = "clientId"];</code>
+       * @return The clientId.
+       */
+      public java.lang.String getClientId() {
+        java.lang.Object ref = clientId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          clientId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string client_id = 1 [json_name = "clientId"];</code>
+       * @return The bytes for clientId.
+       */
+      public com.google.protobuf.ByteString
+          getClientIdBytes() {
+        java.lang.Object ref = clientId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          clientId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string client_id = 1 [json_name = "clientId"];</code>
+       * @param value The clientId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        clientId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string client_id = 1 [json_name = "clientId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearClientId() {
+        
+        clientId_ = getDefaultInstance().getClientId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string client_id = 1 [json_name = "clientId"];</code>
+       * @param value The bytes for clientId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setClientIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        clientId_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:common.v1.ConfigListenerRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:common.v1.ConfigListenerRequest)
+    private static final org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest();
+    }
+
+    public static org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConfigListenerRequest>
+        PARSER = new com.google.protobuf.AbstractParser<ConfigListenerRequest>() {
+      @java.lang.Override
+      public ConfigListenerRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ConfigListenerRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConfigListenerRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.ConfigListenerRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_v1_ConfigMain_descriptor;
   private static final 
@@ -47961,6 +52270,36 @@ public final class ConfigProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_common_v1_Config_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_v1_ConfigGetRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_common_v1_ConfigGetRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_v1_ConfigGetResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_common_v1_ConfigGetResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_v1_ConfigUpdateRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_common_v1_ConfigUpdateRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_v1_ConfigUpdateResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_common_v1_ConfigUpdateResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_v1_ConfigListenerResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_common_v1_ConfigListenerResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_v1_ConfigListenerRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_common_v1_ConfigListenerRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -47970,525 +52309,539 @@ public final class ConfigProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026common/v1/config.proto\022\tcommon.v1\"\236\017\n\n" +
-      "ConfigMain\022&\n\014read_timeout\030\001 \001(\005H\000R\013read" +
-      "Timeout\210\001\001\022(\n\rwrite_timeout\030\002 \001(\005H\001R\014wri" +
-      "teTimeout\210\001\001\022&\n\014idle_timeout\030\003 \001(\005H\002R\013id" +
-      "leTimeout\210\001\001\0225\n\024enable_link_previews\030\004 \001" +
-      "(\010H\003R\022enableLinkPreviews\210\001\001\0229\n\026restrict_" +
-      "link_previews\030\005 \001(\tH\004R\024restrictLinkPrevi" +
-      "ews\210\001\001\022R\n#enable_client_performance_debu" +
-      "gging\030\006 \001(\010H\005R enableClientPerformanceDe" +
-      "bugging\210\001\001\022/\n\021enable_gif_picker\030\007 \001(\010H\006R" +
-      "\017enableGifPicker\210\001\001\0223\n\023enable_custom_emo" +
-      "ji\030\010 \001(\010H\007R\021enableCustomEmoji\210\001\001\0223\n\023enab" +
-      "le_emoji_picker\030\t \001(\010H\010R\021enableEmojiPick" +
-      "er\210\001\001\022d\n-time_between_user_typing_update" +
-      "s_milliseconds\030\n \001(\003H\tR(timeBetweenUserT" +
-      "ypingUpdatesMilliseconds\210\001\001\0221\n\022enable_fi" +
-      "le_search\030\013 \001(\010H\nR\020enableFileSearch\210\001\001\022B" +
-      "\n\033enable_user_typing_messages\030\014 \001(\010H\013R\030e" +
-      "nableUserTypingMessages\210\001\001\0225\n\024enable_use" +
-      "r_statuses\030\r \001(\010H\014R\022enableUserStatuses\210\001" +
-      "\001\022=\n\030enable_email_invitations\030\016 \001(\010H\rR\026e" +
-      "nableEmailInvitations\210\001\001\022$\n\013enable_svgs\030" +
-      "\017 \001(\010H\016R\nenableSvgs\210\001\001\022I\n\036allow_persiste" +
-      "nt_notifications\030\020 \001(\010H\017R\034allowPersisten" +
-      "tNotifications\210\001\001\022\\\n(persistent_notifica" +
-      "tion_interval_minutes\030\021 \001(\005H\020R%persisten" +
-      "tNotificationIntervalMinutes\210\001\001\022N\n!persi" +
-      "stent_notification_max_count\030\022 \001(\005H\021R\036pe" +
-      "rsistentNotificationMaxCount\210\001\001\022X\n&persi" +
-      "stent_notification_max_recipients\030\023 \001(\005H" +
-      "\022R#persistentNotificationMaxRecipients\210\001" +
-      "\001\022O\n\"feature_flag_sync_interval_seconds\030" +
-      "\024 \001(\005H\023R\036featureFlagSyncIntervalSeconds\210" +
-      "\001\001\0223\n\023allow_synced_drafts\030\025 \001(\010H\024R\021allow" +
-      "SyncedDrafts\210\001\001B\017\n\r_read_timeoutB\020\n\016_wri" +
-      "te_timeoutB\017\n\r_idle_timeoutB\027\n\025_enable_l" +
-      "ink_previewsB\031\n\027_restrict_link_previewsB" +
-      "&\n$_enable_client_performance_debuggingB" +
-      "\024\n\022_enable_gif_pickerB\026\n\024_enable_custom_" +
-      "emojiB\026\n\024_enable_emoji_pickerB0\n._time_b" +
-      "etween_user_typing_updates_millisecondsB" +
-      "\025\n\023_enable_file_searchB\036\n\034_enable_user_t" +
-      "yping_messagesB\027\n\025_enable_user_statusesB" +
-      "\033\n\031_enable_email_invitationsB\016\n\014_enable_" +
-      "svgsB!\n\037_allow_persistent_notificationsB" +
-      "+\n)_persistent_notification_interval_min" +
-      "utesB$\n\"_persistent_notification_max_cou" +
-      "ntB)\n\'_persistent_notification_max_recip" +
-      "ientsB%\n#_feature_flag_sync_interval_sec" +
-      "ondsB\026\n\024_allow_synced_drafts\"\360\002\n\016ConfigS" +
-      "ervices\022<\n\030common_service_grpc_host\030\001 \001(" +
-      "\tH\000R\025commonServiceGrpcHost\210\001\001\022<\n\030common_" +
-      "service_grpc_port\030\002 \001(\005H\001R\025commonService" +
-      "GrpcPort\210\001\001\0228\n\026user_service_grpc_host\030\003 " +
-      "\001(\tH\002R\023userServiceGrpcHost\210\001\001\0228\n\026user_se" +
-      "rvice_grpc_port\030\004 \001(\005H\003R\023userServiceGrpc" +
-      "Port\210\001\001B\033\n\031_common_service_grpc_hostB\033\n\031" +
-      "_common_service_grpc_portB\031\n\027_user_servi" +
-      "ce_grpc_hostB\031\n\027_user_service_grpc_port\"" +
-      "\327\r\n\016ConfigSecurity\0229\n\026maximum_login_atte" +
-      "mpts\030\001 \001(\005H\000R\024maximumLoginAttempts\210\001\001\022T\n" +
-      "$enable_insecure_outgoing_connections\030\002 " +
-      "\001(\010H\001R!enableInsecureOutgoingConnections" +
-      "\210\001\001\022O\n!enable_multifactor_authentication" +
-      "\030\003 \001(\010H\002R\037enableMultifactorAuthenticatio" +
-      "n\210\001\001\022Q\n\"enforce_multifactor_authenticati" +
-      "on\030\004 \001(\010H\003R enforceMultifactorAuthentica" +
-      "tion\210\001\001\022F\n\035enable_oauth_service_provider" +
-      "\030\005 \001(\010H\004R\032enableOauthServiceProvider\210\001\001\022" +
-      "N\n!enable_outgoing_oauth_connections\030\006 \001" +
-      "(\010H\005R\036enableOutgoingOauthConnections\210\001\001\022" +
-      "U\n%terminate_sessions_on_password_change" +
-      "\030\007 \001(\010H\006R!terminateSessionsOnPasswordCha" +
-      "nge\210\001\001\022A\n\033session_length_web_in_hours\030\010 " +
-      "\001(\005H\007R\027sessionLengthWebInHours\210\001\001\022G\n\036ses" +
-      "sion_length_mobile_in_hours\030\t \001(\005H\010R\032ses" +
-      "sionLengthMobileInHours\210\001\001\022A\n\033session_le" +
-      "ngth_sso_in_hours\030\n \001(\005H\tR\027sessionLength" +
-      "SsoInHours\210\001\001\022+\n\017allow_cors_from\030\013 \001(\tH\n" +
-      "R\rallowCorsFrom\210\001\001\0225\n\024cors_exposed_heade" +
-      "rs\030\014 \001(\tH\013R\022corsExposedHeaders\210\001\001\0229\n\026cor" +
-      "s_allow_credentials\030\r \001(\010H\014R\024corsAllowCr" +
-      "edentials\210\001\001\022\"\n\ncors_debug\030\016 \001(\010H\rR\tcors" +
-      "Debug\210\001\001\022D\n\034allow_cookies_for_subdomains" +
-      "\030\017 \001(\010H\016R\031allowCookiesForSubdomains\210\001\001\022<" +
-      "\n\030session_cache_in_minutes\030\020 \001(\005H\017R\025sess" +
-      "ionCacheInMinutes\210\001\001\0227\n\025websocket_secure" +
-      "_port\030\021 \001(\005H\020R\023websocketSecurePort\210\001\001\022*\n" +
-      "\016websocket_port\030\022 \001(\005H\021R\rwebsocketPort\210\001" +
-      "\001B\031\n\027_maximum_login_attemptsB\'\n%_enable_" +
-      "insecure_outgoing_connectionsB$\n\"_enable" +
-      "_multifactor_authenticationB%\n#_enforce_" +
-      "multifactor_authenticationB \n\036_enable_oa" +
-      "uth_service_providerB$\n\"_enable_outgoing" +
-      "_oauth_connectionsB(\n&_terminate_session" +
-      "s_on_password_changeB\036\n\034_session_length_" +
-      "web_in_hoursB!\n\037_session_length_mobile_i" +
-      "n_hoursB\036\n\034_session_length_sso_in_hoursB" +
-      "\022\n\020_allow_cors_fromB\027\n\025_cors_exposed_hea" +
-      "dersB\031\n\027_cors_allow_credentialsB\r\n\013_cors" +
-      "_debugB\037\n\035_allow_cookies_for_subdomainsB" +
-      "\033\n\031_session_cache_in_minutesB\030\n\026_websock" +
-      "et_secure_portB\021\n\017_websocket_port\"\202\003\n\013Ca" +
-      "cheConfig\022\"\n\ncache_type\030\001 \001(\tH\000R\tcacheTy" +
-      "pe\210\001\001\022(\n\rredis_address\030\002 \001(\tH\001R\014redisAdd" +
-      "ress\210\001\001\022*\n\016redis_password\030\003 \001(\tH\002R\rredis" +
-      "Password\210\001\001\022\036\n\010redis_db\030\004 \001(\005H\003R\007redisDb" +
-      "\210\001\001\0221\n\022redis_cache_prefix\030\005 \001(\tH\004R\020redis" +
-      "CachePrefix\210\001\001\0225\n\024disable_client_cache\030\006" +
-      " \001(\010H\005R\022disableClientCache\210\001\001B\r\n\013_cache_" +
-      "typeB\020\n\016_redis_addressB\021\n\017_redis_passwor" +
-      "dB\013\n\t_redis_dbB\025\n\023_redis_cache_prefixB\027\n" +
-      "\025_disable_client_cache\"\251\003\n\rConfigMetrics" +
-      "\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\0221\n\022block_p" +
-      "rofile_rate\030\002 \001(\005H\001R\020blockProfileRate\210\001\001" +
-      "\022*\n\016listen_address\030\003 \001(\tH\002R\rlistenAddres" +
-      "s\210\001\001\0227\n\025enable_client_metrics\030\004 \001(\010H\003R\023e" +
-      "nableClientMetrics\210\001\001\022C\n\033enable_notifica" +
-      "tion_metrics\030\005 \001(\010H\004R\031enableNotification" +
-      "Metrics\210\001\001\022/\n\024client_side_user_ids\030\006 \003(\t" +
-      "R\021clientSideUserIdsB\t\n\007_enableB\025\n\023_block" +
-      "_profile_rateB\021\n\017_listen_addressB\030\n\026_ena" +
-      "ble_client_metricsB\036\n\034_enable_notificati" +
-      "on_metrics\"\230\004\n\tConfigSSO\022\033\n\006enable\030\001 \001(\010" +
-      "H\000R\006enable\210\001\001\022\033\n\006secret\030\002 \001(\tH\001R\006secret\210" +
-      "\001\001\022\023\n\002id\030\003 \001(\tH\002R\002id\210\001\001\022\031\n\005scope\030\004 \001(\tH\003" +
-      "R\005scope\210\001\001\022(\n\rauth_endpoint\030\005 \001(\tH\004R\014aut" +
-      "hEndpoint\210\001\001\022*\n\016token_endpoint\030\006 \001(\tH\005R\r" +
-      "tokenEndpoint\210\001\001\022/\n\021user_api_endpoint\030\007 " +
-      "\001(\tH\006R\017userApiEndpoint\210\001\001\0222\n\022discovery_e" +
-      "ndpoint\030\010 \001(\tH\007R\021discoveryEndpoint\210\001\001\022$\n" +
-      "\013button_text\030\t \001(\tH\010R\nbuttonText\210\001\001\022&\n\014b" +
-      "utton_color\030\n \001(\tH\tR\013buttonColor\210\001\001B\t\n\007_" +
-      "enableB\t\n\007_secretB\005\n\003_idB\010\n\006_scopeB\020\n\016_a" +
-      "uth_endpointB\021\n\017_token_endpointB\024\n\022_user" +
-      "_api_endpointB\025\n\023_discovery_endpointB\016\n\014" +
-      "_button_textB\017\n\r_button_color\"\325\005\n\tConfig" +
-      "Sql\022$\n\013driver_name\030\001 \001(\tH\000R\ndriverName\210\001" +
-      "\001\022$\n\013data_source\030\002 \001(\tH\001R\ndataSource\210\001\001\022" +
-      ")\n\016max_idle_conns\030\003 \001(\005H\002R\014maxIdleConns\210" +
-      "\001\001\022H\n\036conn_max_lifetime_milliseconds\030\004 \001" +
-      "(\005H\003R\033connMaxLifetimeMilliseconds\210\001\001\022I\n\037" +
-      "conn_max_idle_time_milliseconds\030\005 \001(\005H\004R" +
-      "\033connMaxIdleTimeMilliseconds\210\001\001\022)\n\016max_o" +
-      "pen_conns\030\006 \001(\005H\005R\014maxOpenConns\210\001\001\022\031\n\005tr" +
-      "ace\030\007 \001(\010H\006R\005trace\210\001\001\0222\n\023at_rest_encrypt" +
-      "_key\030\010 \001(\tH\007R\020atRestEncryptKey\210\001\001\022(\n\rque" +
-      "ry_timeout\030\t \001(\005H\010R\014queryTimeout\210\001\001\022;\n\027d" +
-      "isable_database_search\030\n \001(\010H\tR\025disableD" +
-      "atabaseSearch\210\001\001B\016\n\014_driver_nameB\016\n\014_dat" +
-      "a_sourceB\021\n\017_max_idle_connsB!\n\037_conn_max" +
-      "_lifetime_millisecondsB\"\n _conn_max_idle" +
-      "_time_millisecondsB\021\n\017_max_open_connsB\010\n" +
-      "\006_traceB\026\n\024_at_rest_encrypt_keyB\020\n\016_quer" +
-      "y_timeoutB\032\n\030_disable_database_search\"\313\002" +
-      "\n\016ConfigPassword\022*\n\016minimum_length\030\001 \001(\005" +
-      "H\000R\rminimumLength\210\001\001\022!\n\tlowercase\030\002 \001(\010H" +
-      "\001R\tlowercase\210\001\001\022\033\n\006number\030\003 \001(\010H\002R\006numbe" +
-      "r\210\001\001\022!\n\tuppercase\030\004 \001(\010H\003R\tuppercase\210\001\001\022" +
-      "\033\n\006symbol\030\005 \001(\010H\004R\006symbol\210\001\001\0221\n\022enable_f" +
-      "orgot_link\030\006 \001(\010H\005R\020enableForgotLink\210\001\001B" +
-      "\021\n\017_minimum_lengthB\014\n\n_lowercaseB\t\n\007_num" +
-      "berB\014\n\n_uppercaseB\t\n\007_symbolB\025\n\023_enable_" +
-      "forgot_link\"\340\017\n\nConfigFile\022;\n\027enable_fil" +
-      "e_attachments\030\001 \001(\010H\000R\025enableFileAttachm" +
-      "ents\210\001\001\0225\n\024enable_mobile_upload\030\002 \001(\010H\001R" +
-      "\022enableMobileUpload\210\001\001\0229\n\026enable_mobile_" +
-      "download\030\003 \001(\010H\002R\024enableMobileDownload\210\001" +
-      "\001\022\'\n\rmax_file_size\030\004 \001(\003H\003R\013maxFileSize\210" +
-      "\001\001\0225\n\024max_image_resolution\030\005 \001(\003H\004R\022maxI" +
-      "mageResolution\210\001\001\022F\n\035max_image_decoder_c" +
-      "oncurrency\030\006 \001(\003H\005R\032maxImageDecoderConcu" +
-      "rrency\210\001\001\022$\n\013driver_name\030\007 \001(\tH\006R\ndriver" +
-      "Name\210\001\001\022!\n\tdirectory\030\010 \001(\tH\007R\tdirectory\210" +
-      "\001\001\0221\n\022enable_public_link\030\t \001(\010H\010R\020enable" +
-      "PublicLink\210\001\001\022,\n\017extract_content\030\n \001(\010H\t" +
-      "R\016extractContent\210\001\001\0220\n\021archive_recursion" +
-      "\030\013 \001(\010H\nR\020archiveRecursion\210\001\001\022-\n\020public_" +
-      "link_salt\030\014 \001(\tH\013R\016publicLinkSalt\210\001\001\022&\n\014" +
-      "initial_font\030\r \001(\tH\014R\013initialFont\210\001\001\0229\n\027" +
-      "amazon_s3_access_key_id\030\016 \001(\tH\rR\023amazonS" +
-      "3AccessKeyId\210\001\001\022A\n\033amazon_s3_secret_acce" +
-      "ss_key\030\017 \001(\tH\016R\027amazonS3SecretAccessKey\210" +
-      "\001\001\022-\n\020amazon_s3_bucket\030\020 \001(\tH\017R\016amazonS3" +
-      "Bucket\210\001\001\0226\n\025amazon_s3_path_prefix\030\021 \001(\t" +
-      "H\020R\022amazonS3PathPrefix\210\001\001\022-\n\020amazon_s3_r" +
-      "egion\030\022 \001(\tH\021R\016amazonS3Region\210\001\001\0221\n\022amaz" +
-      "on_s3_endpoint\030\023 \001(\tH\022R\020amazonS3Endpoint" +
-      "\210\001\001\022\'\n\ramazon_s3_ssl\030\024 \001(\010H\023R\013amazonS3Ss" +
-      "l\210\001\001\022.\n\021amazon_s3_sign_v2\030\025 \001(\010H\024R\016amazo" +
-      "nS3SignV2\210\001\001\022\'\n\ramazon_s3_sse\030\026 \001(\010H\025R\013a" +
-      "mazonS3Sse\210\001\001\022+\n\017amazon_s3_trace\030\027 \001(\010H\026" +
-      "R\ramazonS3Trace\210\001\001\022W\n&amazon_s3_request_" +
-      "timeout_milliseconds\030\030 \001(\003H\027R\"amazonS3Re" +
-      "questTimeoutMilliseconds\210\001\001\022J\n amazon_s3" +
-      "_upload_part_size_bytes\030\031 \001(\003H\030R\033amazonS" +
-      "3UploadPartSizeBytes\210\001\001\022:\n\027amazon_s3_sto" +
-      "rage_class\030\032 \001(\tH\031R\024amazonS3StorageClass" +
-      "\210\001\001B\032\n\030_enable_file_attachmentsB\027\n\025_enab" +
-      "le_mobile_uploadB\031\n\027_enable_mobile_downl" +
-      "oadB\020\n\016_max_file_sizeB\027\n\025_max_image_reso" +
-      "lutionB \n\036_max_image_decoder_concurrency" +
-      "B\016\n\014_driver_nameB\014\n\n_directoryB\025\n\023_enabl" +
-      "e_public_linkB\022\n\020_extract_contentB\024\n\022_ar" +
-      "chive_recursionB\023\n\021_public_link_saltB\017\n\r" +
-      "_initial_fontB\032\n\030_amazon_s3_access_key_i" +
-      "dB\036\n\034_amazon_s3_secret_access_keyB\023\n\021_am" +
-      "azon_s3_bucketB\030\n\026_amazon_s3_path_prefix" +
-      "B\023\n\021_amazon_s3_regionB\025\n\023_amazon_s3_endp" +
-      "ointB\020\n\016_amazon_s3_sslB\024\n\022_amazon_s3_sig" +
-      "n_v2B\020\n\016_amazon_s3_sseB\022\n\020_amazon_s3_tra" +
-      "ceB)\n\'_amazon_s3_request_timeout_millise" +
-      "condsB#\n!_amazon_s3_upload_part_size_byt" +
-      "esB\032\n\030_amazon_s3_storage_class\"\375\016\n\013Confi" +
-      "gEmail\022=\n\030send_email_notifications\030\001 \001(\010" +
-      "H\000R\026sendEmailNotifications\210\001\001\022A\n\032require" +
-      "_email_verification\030\002 \001(\010H\001R\030requireEmai" +
-      "lVerification\210\001\001\022*\n\016feedback_email\030\003 \001(\t" +
-      "H\002R\rfeedbackEmail\210\001\001\022-\n\020reply_to_address" +
-      "\030\004 \001(\tH\003R\016replyToAddress\210\001\001\022-\n\020enable_sm" +
-      "tp_auth\030\005 \001(\010H\004R\016enableSmtpAuth\210\001\001\022(\n\rsm" +
-      "tp_username\030\006 \001(\tH\005R\014smtpUsername\210\001\001\022(\n\r" +
-      "smtp_password\030\007 \001(\tH\006R\014smtpPassword\210\001\001\022$" +
-      "\n\013smtp_server\030\010 \001(\tH\007R\nsmtpServer\210\001\001\022 \n\t" +
-      "smtp_port\030\t \001(\tH\010R\010smtpPort\210\001\001\0223\n\023smtp_s" +
-      "erver_timeout\030\n \001(\005H\tR\021smtpServerTimeout" +
-      "\210\001\001\0224\n\023connection_security\030\013 \001(\tH\nR\022conn" +
-      "ectionSecurity\210\001\001\022;\n\027send_push_notificat" +
-      "ions\030\014 \001(\010H\013R\025sendPushNotifications\210\001\001\022=" +
-      "\n\030push_notification_server\030\r \001(\tH\014R\026push" +
-      "NotificationServer\210\001\001\022A\n\032push_notificati" +
-      "on_contents\030\016 \001(\tH\rR\030pushNotificationCon" +
-      "tents\210\001\001\022=\n\030push_notification_buffer\030\017 \001" +
-      "(\005H\016R\026pushNotificationBuffer\210\001\001\0227\n\025enabl" +
-      "e_email_batching\030\020 \001(\010H\017R\023enableEmailBat" +
-      "ching\210\001\001\022@\n\032email_batching_buffer_size\030\021" +
-      " \001(\005H\020R\027emailBatchingBufferSize\210\001\001\022;\n\027em" +
-      "ail_batching_interval\030\022 \001(\005H\021R\025emailBatc" +
-      "hingInterval\210\001\001\022T\n$skip_server_certifica" +
-      "te_verification\030\023 \001(\010H\022R!skipServerCerti" +
-      "ficateVerification\210\001\001\022L\n email_notificat" +
-      "ion_contents_type\030\024 \001(\tH\023R\035emailNotifica" +
-      "tionContentsType\210\001\001\0221\n\022login_button_colo" +
-      "r\030\025 \001(\tH\024R\020loginButtonColor\210\001\001\022>\n\031login_" +
-      "button_border_color\030\026 \001(\tH\025R\026loginButton" +
-      "BorderColor\210\001\001\022:\n\027login_button_text_colo" +
-      "r\030\027 \001(\tH\026R\024loginButtonTextColor\210\001\001B\033\n\031_s" +
-      "end_email_notificationsB\035\n\033_require_emai" +
-      "l_verificationB\021\n\017_feedback_emailB\023\n\021_re" +
-      "ply_to_addressB\023\n\021_enable_smtp_authB\020\n\016_" +
-      "smtp_usernameB\020\n\016_smtp_passwordB\016\n\014_smtp" +
-      "_serverB\014\n\n_smtp_portB\026\n\024_smtp_server_ti" +
-      "meoutB\026\n\024_connection_securityB\032\n\030_send_p" +
-      "ush_notificationsB\033\n\031_push_notification_" +
-      "serverB\035\n\033_push_notification_contentsB\033\n" +
-      "\031_push_notification_bufferB\030\n\026_enable_em" +
-      "ail_batchingB\035\n\033_email_batching_buffer_s" +
-      "izeB\032\n\030_email_batching_intervalB\'\n%_skip" +
-      "_server_certificate_verificationB#\n!_ema" +
-      "il_notification_contents_typeB\025\n\023_login_" +
-      "button_colorB\034\n\032_login_button_border_col" +
-      "orB\032\n\030_login_button_text_color\"\204\003\n\017Confi" +
-      "gRateLimit\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022" +
-      "\034\n\007per_sec\030\002 \001(\005H\001R\006perSec\210\001\001\022 \n\tmax_bur" +
-      "st\030\003 \001(\005H\002R\010maxBurst\210\001\001\022/\n\021memory_store_" +
-      "size\030\004 \001(\005H\003R\017memoryStoreSize\210\001\001\0222\n\023vary" +
-      "_by_remote_addr\030\005 \001(\010H\004R\020varyByRemoteAdd" +
-      "r\210\001\001\022%\n\014vary_by_user\030\006 \001(\010H\005R\nvaryByUser" +
-      "\210\001\001\022$\n\016vary_by_header\030\007 \001(\tR\014varyByHeade" +
-      "rB\t\n\007_enableB\n\n\010_per_secB\014\n\n_max_burstB\024" +
-      "\n\022_memory_store_sizeB\026\n\024_vary_by_remote_" +
-      "addrB\017\n\r_vary_by_user\"\227\001\n\rConfigPrivacy\022" +
-      "1\n\022show_email_address\030\001 \001(\010H\000R\020showEmail" +
-      "Address\210\001\001\022)\n\016show_full_name\030\002 \001(\010H\001R\014sh" +
-      "owFullName\210\001\001B\025\n\023_show_email_addressB\021\n\017" +
-      "_show_full_name\"\357\003\n\rConfigSupport\0226\n\025ter" +
-      "ms_of_service_link\030\001 \001(\tH\000R\022termsOfServi" +
-      "ceLink\210\001\001\0223\n\023privacy_policy_link\030\002 \001(\tH\001" +
-      "R\021privacyPolicyLink\210\001\001\022\"\n\nabout_link\030\003 \001" +
-      "(\tH\002R\taboutLink\210\001\001\022 \n\thelp_link\030\004 \001(\tH\003R" +
-      "\010helpLink\210\001\001\0226\n\025report_a_problem_link\030\005 " +
-      "\001(\tH\004R\022reportAProblemLink\210\001\001\0225\n\024forgot_p" +
-      "assword_link\030\006 \001(\tH\005R\022forgotPasswordLink" +
-      "\210\001\001\022(\n\rsupport_email\030\007 \001(\tH\006R\014supportEma" +
-      "il\210\001\001B\030\n\026_terms_of_service_linkB\026\n\024_priv" +
-      "acy_policy_linkB\r\n\013_about_linkB\014\n\n_help_" +
-      "linkB\030\n\026_report_a_problem_linkB\027\n\025_forgo" +
-      "t_password_linkB\020\n\016_support_email\"\202\002\n\022Co" +
-      "nfigLocalization\0227\n\025default_server_local" +
-      "e\030\001 \001(\tH\000R\023defaultServerLocale\210\001\001\0227\n\025def" +
-      "ault_client_locale\030\002 \001(\tH\001R\023defaultClien" +
-      "tLocale\210\001\001\0220\n\021available_locales\030\003 \001(\tH\002R" +
-      "\020availableLocales\210\001\001B\030\n\026_default_server_" +
-      "localeB\030\n\026_default_client_localeB\024\n\022_ava" +
-      "ilable_locales\"\325\020\n\nConfigLdap\022\033\n\006enable\030" +
-      "\001 \001(\010H\000R\006enable\210\001\001\022$\n\013enable_sync\030\002 \001(\010H" +
-      "\001R\nenableSync\210\001\001\022$\n\013ldap_server\030\003 \001(\tH\002R" +
-      "\nldapServer\210\001\001\022 \n\tldap_port\030\004 \001(\005H\003R\010lda" +
-      "pPort\210\001\001\0224\n\023connection_security\030\005 \001(\tH\004R" +
-      "\022connectionSecurity\210\001\001\022\034\n\007base_dn\030\006 \001(\tH" +
-      "\005R\006baseDn\210\001\001\022(\n\rbind_username\030\007 \001(\tH\006R\014b" +
-      "indUsername\210\001\001\022(\n\rbind_password\030\010 \001(\tH\007R" +
-      "\014bindPassword\210\001\001\0229\n\026maximum_login_attemp" +
-      "ts\030\t \001(\005H\010R\024maximumLoginAttempts\210\001\001\022$\n\013u" +
-      "ser_filter\030\n \001(\tH\tR\nuserFilter\210\001\001\022&\n\014gro" +
-      "up_filter\030\013 \001(\tH\nR\013groupFilter\210\001\001\0223\n\023ena" +
-      "ble_admin_filter\030\014 \001(\010H\013R\021enableAdminFil" +
-      "ter\210\001\001\022&\n\014admin_filter\030\r \001(\tH\014R\013adminFil" +
-      "ter\210\001\001\022D\n\034group_display_name_attribute\030\016" +
-      " \001(\tH\rR\031groupDisplayNameAttribute\210\001\001\0221\n\022" +
-      "group_id_attribute\030\017 \001(\tH\016R\020groupIdAttri" +
-      "bute\210\001\001\0225\n\024first_name_attribute\030\020 \001(\tH\017R" +
-      "\022firstNameAttribute\210\001\001\0223\n\023last_name_attr" +
-      "ibute\030\021 \001(\tH\020R\021lastNameAttribute\210\001\001\022,\n\017e" +
-      "mail_attribute\030\022 \001(\tH\021R\016emailAttribute\210\001" +
-      "\001\0222\n\022username_attribute\030\023 \001(\tH\022R\021usernam" +
-      "eAttribute\210\001\001\0222\n\022nickname_attribute\030\024 \001(" +
-      "\tH\023R\021nicknameAttribute\210\001\001\022&\n\014id_attribut" +
-      "e\030\025 \001(\tH\024R\013idAttribute\210\001\001\0222\n\022position_at" +
-      "tribute\030\026 \001(\tH\025R\021positionAttribute\210\001\001\0221\n" +
-      "\022login_id_attribute\030\027 \001(\tH\026R\020loginIdAttr" +
-      "ibute\210\001\001\0220\n\021picture_attribute\030\030 \001(\tH\027R\020p" +
-      "ictureAttribute\210\001\001\0227\n\025sync_interval_minu" +
-      "tes\030\031 \001(\005H\030R\023syncIntervalMinutes\210\001\001\022(\n\rq" +
-      "uery_timeout\030\032 \001(\005H\031R\014queryTimeout\210\001\001\022\'\n" +
-      "\rmax_page_size\030\033 \001(\005H\032R\013maxPageSize\210\001\001\022-" +
-      "\n\020login_field_name\030\034 \001(\tH\033R\016loginFieldNa" +
-      "me\210\001\001\0221\n\022login_button_color\030\035 \001(\tH\034R\020log" +
-      "inButtonColor\210\001\001\022>\n\031login_button_border_" +
-      "color\030\036 \001(\tH\035R\026loginButtonBorderColor\210\001\001" +
-      "\022:\n\027login_button_text_color\030\037 \001(\tH\036R\024log" +
-      "inButtonTextColor\210\001\001B\t\n\007_enableB\016\n\014_enab" +
-      "le_syncB\016\n\014_ldap_serverB\014\n\n_ldap_portB\026\n" +
-      "\024_connection_securityB\n\n\010_base_dnB\020\n\016_bi" +
-      "nd_usernameB\020\n\016_bind_passwordB\031\n\027_maximu" +
-      "m_login_attemptsB\016\n\014_user_filterB\017\n\r_gro" +
-      "up_filterB\026\n\024_enable_admin_filterB\017\n\r_ad" +
-      "min_filterB\037\n\035_group_display_name_attrib" +
-      "uteB\025\n\023_group_id_attributeB\027\n\025_first_nam" +
-      "e_attributeB\026\n\024_last_name_attributeB\022\n\020_" +
-      "email_attributeB\025\n\023_username_attributeB\025" +
-      "\n\023_nickname_attributeB\017\n\r_id_attributeB\025" +
-      "\n\023_position_attributeB\025\n\023_login_id_attri" +
-      "buteB\024\n\022_picture_attributeB\030\n\026_sync_inte" +
-      "rval_minutesB\020\n\016_query_timeoutB\020\n\016_max_p" +
-      "age_sizeB\023\n\021_login_field_nameB\025\n\023_login_" +
-      "button_colorB\034\n\032_login_button_border_col" +
-      "orB\032\n\030_login_button_text_color\"\255\023\n\nConfi" +
-      "gSaml\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\0226\n\025en" +
-      "able_sync_with_ldap\030\002 \001(\010H\001R\022enableSyncW" +
-      "ithLdap\210\001\001\022N\n\"enable_sync_with_ldap_incl" +
-      "ude_auth\030\003 \001(\010H\002R\035enableSyncWithLdapIncl" +
-      "udeAuth\210\001\001\022:\n\027ignore_guests_ldap_sync\030\004 " +
-      "\001(\010H\003R\024ignoreGuestsLdapSync\210\001\001\022\033\n\006verify" +
-      "\030\005 \001(\010H\004R\006verify\210\001\001\022\035\n\007encrypt\030\006 \001(\010H\005R\007" +
-      "encrypt\210\001\001\022&\n\014sign_request\030\007 \001(\010H\006R\013sign" +
-      "Request\210\001\001\022\034\n\007idp_url\030\010 \001(\tH\007R\006idpUrl\210\001\001" +
-      "\0221\n\022idp_descriptor_url\030\t \001(\tH\010R\020idpDescr" +
-      "iptorUrl\210\001\001\022-\n\020idp_metadata_url\030\n \001(\tH\tR" +
-      "\016idpMetadataUrl\210\001\001\022C\n\033service_provider_i" +
-      "dentifier\030\013 \001(\tH\nR\031serviceProviderIdenti" +
-      "fier\210\001\001\022H\n\036assertion_consumer_service_ur" +
-      "l\030\014 \001(\tH\013R\033assertionConsumerServiceUrl\210\001" +
-      "\001\0224\n\023signature_algorithm\030\r \001(\tH\014R\022signat" +
-      "ureAlgorithm\210\001\001\0224\n\023canonical_algorithm\030\016" +
-      " \001(\tH\rR\022canonicalAlgorithm\210\001\001\022:\n\027scoping" +
-      "_idp_provider_id\030\017 \001(\tH\016R\024scopingIdpProv" +
-      "iderId\210\001\001\022-\n\020scoping_idp_name\030\020 \001(\tH\017R\016s" +
-      "copingIdpName\210\001\001\0225\n\024idp_certificate_file" +
-      "\030\021 \001(\tH\020R\022idpCertificateFile\210\001\001\022;\n\027publi" +
-      "c_certificate_file\030\022 \001(\tH\021R\025publicCertif" +
-      "icateFile\210\001\001\022-\n\020private_key_file\030\023 \001(\tH\022" +
-      "R\016privateKeyFile\210\001\001\022&\n\014id_attribute\030\024 \001(" +
-      "\tH\023R\013idAttribute\210\001\001\0229\n\026enable_admin_attr" +
-      "ibute\030\025 \001(\010H\024R\024enableAdminAttribute\210\001\001\022," +
-      "\n\017admin_attribute\030\026 \001(\tH\025R\016adminAttribut" +
-      "e\210\001\001\0225\n\024first_name_attribute\030\027 \001(\tH\026R\022fi" +
-      "rstNameAttribute\210\001\001\0223\n\023last_name_attribu" +
-      "te\030\030 \001(\tH\027R\021lastNameAttribute\210\001\001\022,\n\017emai" +
-      "l_attribute\030\031 \001(\tH\030R\016emailAttribute\210\001\001\0222" +
-      "\n\022username_attribute\030\032 \001(\tH\031R\021usernameAt" +
-      "tribute\210\001\001\0222\n\022nickname_attribute\030\033 \001(\tH\032" +
-      "R\021nicknameAttribute\210\001\001\022.\n\020locale_attribu" +
-      "te\030\034 \001(\tH\033R\017localeAttribute\210\001\001\0222\n\022positi" +
-      "on_attribute\030\035 \001(\tH\034R\021positionAttribute\210" +
-      "\001\001\022/\n\021login_button_text\030\036 \001(\tH\035R\017loginBu" +
-      "ttonText\210\001\001\0221\n\022login_button_color\030\037 \001(\tH" +
-      "\036R\020loginButtonColor\210\001\001\022>\n\031login_button_b" +
-      "order_color\030  \001(\tH\037R\026loginButtonBorderCo" +
-      "lor\210\001\001\022:\n\027login_button_text_color\030! \001(\tH" +
-      " R\024loginButtonTextColor\210\001\001B\t\n\007_enableB\030\n" +
-      "\026_enable_sync_with_ldapB%\n#_enable_sync_" +
-      "with_ldap_include_authB\032\n\030_ignore_guests" +
-      "_ldap_syncB\t\n\007_verifyB\n\n\010_encryptB\017\n\r_si" +
-      "gn_requestB\n\n\010_idp_urlB\025\n\023_idp_descripto" +
-      "r_urlB\023\n\021_idp_metadata_urlB\036\n\034_service_p" +
-      "rovider_identifierB!\n\037_assertion_consume" +
-      "r_service_urlB\026\n\024_signature_algorithmB\026\n" +
-      "\024_canonical_algorithmB\032\n\030_scoping_idp_pr" +
-      "ovider_idB\023\n\021_scoping_idp_nameB\027\n\025_idp_c",
-      "ertificate_fileB\032\n\030_public_certificate_f" +
-      "ileB\023\n\021_private_key_fileB\017\n\r_id_attribut" +
-      "eB\031\n\027_enable_admin_attributeB\022\n\020_admin_a" +
-      "ttributeB\027\n\025_first_name_attributeB\026\n\024_la" +
-      "st_name_attributeB\022\n\020_email_attributeB\025\n" +
-      "\023_username_attributeB\025\n\023_nickname_attrib" +
-      "uteB\023\n\021_locale_attributeB\025\n\023_position_at" +
-      "tributeB\024\n\022_login_button_textB\025\n\023_login_" +
-      "button_colorB\034\n\032_login_button_border_col" +
-      "orB\032\n\030_login_button_text_color\"\301\005\n\017Confi" +
-      "gNativeApp\0223\n\026app_custom_url_schemes\030\001 \003" +
-      "(\tR\023appCustomUrlSchemes\022/\n\021app_download_" +
-      "link\030\002 \001(\tH\000R\017appDownloadLink\210\001\001\022>\n\031andr" +
-      "oid_app_download_link\030\003 \001(\tH\001R\026androidAp" +
-      "pDownloadLink\210\001\001\0226\n\025ios_app_download_lin" +
-      "k\030\004 \001(\tH\002R\022iosAppDownloadLink\210\001\001\022;\n\027mobi" +
-      "le_external_browser\030\005 \001(\010H\003R\025mobileExter" +
-      "nalBrowser\210\001\001\022=\n\030mobile_enable_biometric" +
-      "s\030\006 \001(\010H\004R\026mobileEnableBiometrics\210\001\001\022F\n\035" +
-      "mobile_prevent_screen_capture\030\007 \001(\010H\005R\032m" +
-      "obilePreventScreenCapture\210\001\001\022C\n\033mobile_j" +
-      "ailbreak_protection\030\010 \001(\010H\006R\031mobileJailb" +
-      "reakProtection\210\001\001B\024\n\022_app_download_linkB" +
-      "\034\n\032_android_app_download_linkB\030\n\026_ios_ap" +
-      "p_download_linkB\032\n\030_mobile_external_brow" +
-      "serB\033\n\031_mobile_enable_biometricsB \n\036_mob" +
-      "ile_prevent_screen_captureB\036\n\034_mobile_ja" +
-      "ilbreak_protection\"\253\005\n\021ConfigMeilisearch" +
-      "\022#\n\nserver_url\030\001 \001(\tH\000R\nserver_url\210\001\001\022\"\n" +
-      "\nmaster_key\030\002 \001(\tH\001R\tmasterKey\210\001\001\022,\n\017ena" +
-      "ble_indexing\030\003 \001(\010H\002R\016enableIndexing\210\001\001\022" +
-      ".\n\020enable_searching\030\004 \001(\010H\003R\017enableSearc" +
-      "hing\210\001\001\0224\n\023enable_autocomplete\030\005 \001(\010H\004R\022" +
-      "enableAutocomplete\210\001\001\022\"\n\nbatch_size\030\006 \001(" +
-      "\005H\005R\tbatchSize\210\001\001\022;\n\027request_timeout_sec" +
-      "onds\030\007 \001(\005H\006R\025requestTimeoutSeconds\210\001\001\022&" +
-      "\n\014index_prefix\030\010 \001(\tH\007R\013indexPrefix\210\001\001\022-" +
-      "\n\020search_cutoff_ms\030\t \001(\005H\010R\016searchCutoff" +
-      "Ms\210\001\001\0227\n\025enable_typo_tolerance\030\n \001(\010H\tR\023" +
-      "enableTypoTolerance\210\001\001B\r\n\013_server_urlB\r\n" +
-      "\013_master_keyB\022\n\020_enable_indexingB\023\n\021_ena" +
-      "ble_searchingB\026\n\024_enable_autocompleteB\r\n" +
-      "\013_batch_sizeB\032\n\030_request_timeout_seconds" +
-      "B\017\n\r_index_prefixB\023\n\021_search_cutoff_msB\030" +
-      "\n\026_enable_typo_tolerance\"\272\003\n\013ConfigBleve" +
-      "\022 \n\tindex_dir\030\001 \001(\tH\000R\010indexDir\210\001\001\022,\n\017en" +
-      "able_indexing\030\002 \001(\010H\001R\016enableIndexing\210\001\001" +
-      "\022.\n\020enable_searching\030\003 \001(\010H\002R\017enableSear" +
-      "ching\210\001\001\0224\n\023enable_autocomplete\030\004 \001(\010H\003R" +
-      "\022enableAutocomplete\210\001\001\022M\n!bulk_indexing_" +
-      "time_window_seconds\030\005 \001(\005H\004R\035bulkIndexin" +
-      "gTimeWindowSeconds\210\001\001\022\"\n\nbatch_size\030\006 \001(" +
-      "\005H\005R\tbatchSize\210\001\001B\014\n\n_index_dirB\022\n\020_enab" +
-      "le_indexingB\023\n\021_enable_searchingB\026\n\024_ena" +
-      "ble_autocompleteB$\n\"_bulk_indexing_time_" +
-      "window_secondsB\r\n\013_batch_size\"\354\006\n\023Config" +
-      "DataRetention\022;\n\027enable_message_deletion" +
-      "\030\001 \001(\010H\000R\025enableMessageDeletion\210\001\001\0225\n\024en" +
-      "able_file_deletion\030\002 \001(\010H\001R\022enableFileDe" +
-      "letion\210\001\001\0229\n\026enable_boards_deletion\030\003 \001(" +
-      "\010H\002R\024enableBoardsDeletion\210\001\001\022;\n\027message_" +
-      "retention_hours\030\004 \001(\005H\003R\025messageRetentio" +
-      "nHours\210\001\001\0225\n\024file_retention_hours\030\005 \001(\005H" +
-      "\004R\022fileRetentionHours\210\001\001\0227\n\025boards_reten" +
-      "tion_days\030\006 \001(\005H\005R\023boardsRetentionDays\210\001" +
-      "\001\022:\n\027deletion_job_start_time\030\007 \001(\tH\006R\024de" +
-      "letionJobStartTime\210\001\001\022\"\n\nbatch_size\030\010 \001(" +
-      "\005H\007R\tbatchSize\210\001\001\022N\n!time_between_batche" +
-      "s_milliseconds\030\t \001(\005H\010R\036timeBetweenBatch" +
-      "esMilliseconds\210\001\001\022<\n\030retention_ids_batch" +
-      "_size\030\n \001(\005H\tR\025retentionIdsBatchSize\210\001\001B" +
-      "\032\n\030_enable_message_deletionB\027\n\025_enable_f" +
-      "ile_deletionB\031\n\027_enable_boards_deletionB" +
-      "\032\n\030_message_retention_hoursB\027\n\025_file_ret" +
-      "ention_hoursB\030\n\026_boards_retention_daysB\032" +
-      "\n\030_deletion_job_start_timeB\r\n\013_batch_siz" +
-      "eB$\n\"_time_between_batches_millisecondsB" +
-      "\033\n\031_retention_ids_batch_size\"\264\002\n\020ConfigI" +
-      "mageProxy\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022-" +
-      "\n\020image_proxy_type\030\002 \001(\tH\001R\016imageProxyTy" +
-      "pe\210\001\001\0228\n\026remote_image_proxy_url\030\003 \001(\tH\002R" +
-      "\023remoteImageProxyUrl\210\001\001\022@\n\032remote_image_" +
-      "proxy_options\030\004 \001(\tH\003R\027remoteImageProxyO" +
-      "ptions\210\001\001B\t\n\007_enableB\023\n\021_image_proxy_typ" +
-      "eB\031\n\027_remote_image_proxy_urlB\035\n\033_remote_" +
-      "image_proxy_options\"\315\010\n\006Config\022)\n\004main\030\001" +
-      " \001(\0132\025.common.v1.ConfigMainR\004main\0225\n\010ser" +
-      "vices\030\002 \001(\0132\031.common.v1.ConfigServicesR\010" +
-      "services\0225\n\010security\030\003 \001(\0132\031.common.v1.C" +
-      "onfigSecurityR\010security\022,\n\005cache\030\004 \001(\0132\026" +
-      ".common.v1.CacheConfigR\005cache\0222\n\007metrics" +
-      "\030\005 \001(\0132\030.common.v1.ConfigMetricsR\007metric" +
-      "s\022&\n\003sso\030\006 \001(\0132\024.common.v1.ConfigSSOR\003ss" +
-      "o\022&\n\003sql\030\007 \001(\0132\024.common.v1.ConfigSqlR\003sq" +
-      "l\0225\n\010password\030\010 \001(\0132\031.common.v1.ConfigPa" +
-      "sswordR\010password\022)\n\004file\030\t \001(\0132\025.common." +
-      "v1.ConfigFileR\004file\022,\n\005email\030\n \001(\0132\026.com" +
-      "mon.v1.ConfigEmailR\005email\0229\n\nrate_limit\030" +
-      "\013 \001(\0132\032.common.v1.ConfigRateLimitR\trateL" +
-      "imit\0222\n\007privacy\030\014 \001(\0132\030.common.v1.Config" +
-      "PrivacyR\007privacy\0222\n\007support\030\r \001(\0132\030.comm" +
-      "on.v1.ConfigSupportR\007support\022A\n\014localiza" +
-      "tion\030\016 \001(\0132\035.common.v1.ConfigLocalizatio" +
-      "nR\014localization\022)\n\004ldap\030\017 \001(\0132\025.common.v" +
-      "1.ConfigLdapR\004ldap\022)\n\004saml\030\020 \001(\0132\025.commo" +
-      "n.v1.ConfigSamlR\004saml\0229\n\nnative_app\030\021 \001(" +
-      "\0132\032.common.v1.ConfigNativeAppR\tnativeApp" +
-      "\022>\n\013meilisearch\030\022 \001(\0132\034.common.v1.Config" +
-      "MeilisearchR\013meilisearch\022,\n\005bleve\030\023 \001(\0132" +
-      "\026.common.v1.ConfigBleveR\005bleve\022E\n\016data_r" +
-      "etention\030\024 \001(\0132\036.common.v1.ConfigDataRet" +
-      "entionR\rdataRetention\022<\n\013image_proxy\030\025 \001" +
-      "(\0132\033.common.v1.ConfigImageProxyR\nimagePr" +
-      "oxyB:\n\032org.megacommerce.common.v1B\013Confi" +
-      "gProtoZ\014common/v1;v1\370\001\001b\006proto3"
+      "\n\026common/v1/config.proto\022\tcommon.v1\032\025com" +
+      "mon/v1/error.proto\"\236\017\n\nConfigMain\022&\n\014rea" +
+      "d_timeout\030\001 \001(\005H\000R\013readTimeout\210\001\001\022(\n\rwri" +
+      "te_timeout\030\002 \001(\005H\001R\014writeTimeout\210\001\001\022&\n\014i" +
+      "dle_timeout\030\003 \001(\005H\002R\013idleTimeout\210\001\001\0225\n\024e" +
+      "nable_link_previews\030\004 \001(\010H\003R\022enableLinkP" +
+      "reviews\210\001\001\0229\n\026restrict_link_previews\030\005 \001" +
+      "(\tH\004R\024restrictLinkPreviews\210\001\001\022R\n#enable_" +
+      "client_performance_debugging\030\006 \001(\010H\005R en" +
+      "ableClientPerformanceDebugging\210\001\001\022/\n\021ena" +
+      "ble_gif_picker\030\007 \001(\010H\006R\017enableGifPicker\210" +
+      "\001\001\0223\n\023enable_custom_emoji\030\010 \001(\010H\007R\021enabl" +
+      "eCustomEmoji\210\001\001\0223\n\023enable_emoji_picker\030\t" +
+      " \001(\010H\010R\021enableEmojiPicker\210\001\001\022d\n-time_bet" +
+      "ween_user_typing_updates_milliseconds\030\n " +
+      "\001(\003H\tR(timeBetweenUserTypingUpdatesMilli" +
+      "seconds\210\001\001\0221\n\022enable_file_search\030\013 \001(\010H\n" +
+      "R\020enableFileSearch\210\001\001\022B\n\033enable_user_typ" +
+      "ing_messages\030\014 \001(\010H\013R\030enableUserTypingMe" +
+      "ssages\210\001\001\0225\n\024enable_user_statuses\030\r \001(\010H" +
+      "\014R\022enableUserStatuses\210\001\001\022=\n\030enable_email" +
+      "_invitations\030\016 \001(\010H\rR\026enableEmailInvitat" +
+      "ions\210\001\001\022$\n\013enable_svgs\030\017 \001(\010H\016R\nenableSv" +
+      "gs\210\001\001\022I\n\036allow_persistent_notifications\030" +
+      "\020 \001(\010H\017R\034allowPersistentNotifications\210\001\001" +
+      "\022\\\n(persistent_notification_interval_min" +
+      "utes\030\021 \001(\005H\020R%persistentNotificationInte" +
+      "rvalMinutes\210\001\001\022N\n!persistent_notificatio" +
+      "n_max_count\030\022 \001(\005H\021R\036persistentNotificat" +
+      "ionMaxCount\210\001\001\022X\n&persistent_notificatio" +
+      "n_max_recipients\030\023 \001(\005H\022R#persistentNoti" +
+      "ficationMaxRecipients\210\001\001\022O\n\"feature_flag" +
+      "_sync_interval_seconds\030\024 \001(\005H\023R\036featureF" +
+      "lagSyncIntervalSeconds\210\001\001\0223\n\023allow_synce" +
+      "d_drafts\030\025 \001(\010H\024R\021allowSyncedDrafts\210\001\001B\017" +
+      "\n\r_read_timeoutB\020\n\016_write_timeoutB\017\n\r_id" +
+      "le_timeoutB\027\n\025_enable_link_previewsB\031\n\027_" +
+      "restrict_link_previewsB&\n$_enable_client" +
+      "_performance_debuggingB\024\n\022_enable_gif_pi" +
+      "ckerB\026\n\024_enable_custom_emojiB\026\n\024_enable_" +
+      "emoji_pickerB0\n._time_between_user_typin" +
+      "g_updates_millisecondsB\025\n\023_enable_file_s" +
+      "earchB\036\n\034_enable_user_typing_messagesB\027\n" +
+      "\025_enable_user_statusesB\033\n\031_enable_email_" +
+      "invitationsB\016\n\014_enable_svgsB!\n\037_allow_pe" +
+      "rsistent_notificationsB+\n)_persistent_no" +
+      "tification_interval_minutesB$\n\"_persiste" +
+      "nt_notification_max_countB)\n\'_persistent" +
+      "_notification_max_recipientsB%\n#_feature" +
+      "_flag_sync_interval_secondsB\026\n\024_allow_sy" +
+      "nced_drafts\"\360\002\n\016ConfigServices\022<\n\030common" +
+      "_service_grpc_host\030\001 \001(\tH\000R\025commonServic" +
+      "eGrpcHost\210\001\001\022<\n\030common_service_grpc_port" +
+      "\030\002 \001(\005H\001R\025commonServiceGrpcPort\210\001\001\0228\n\026us" +
+      "er_service_grpc_host\030\003 \001(\tH\002R\023userServic" +
+      "eGrpcHost\210\001\001\0228\n\026user_service_grpc_port\030\004" +
+      " \001(\005H\003R\023userServiceGrpcPort\210\001\001B\033\n\031_commo" +
+      "n_service_grpc_hostB\033\n\031_common_service_g" +
+      "rpc_portB\031\n\027_user_service_grpc_hostB\031\n\027_" +
+      "user_service_grpc_port\"\327\r\n\016ConfigSecurit" +
+      "y\0229\n\026maximum_login_attempts\030\001 \001(\005H\000R\024max" +
+      "imumLoginAttempts\210\001\001\022T\n$enable_insecure_" +
+      "outgoing_connections\030\002 \001(\010H\001R!enableInse" +
+      "cureOutgoingConnections\210\001\001\022O\n!enable_mul" +
+      "tifactor_authentication\030\003 \001(\010H\002R\037enableM" +
+      "ultifactorAuthentication\210\001\001\022Q\n\"enforce_m" +
+      "ultifactor_authentication\030\004 \001(\010H\003R enfor" +
+      "ceMultifactorAuthentication\210\001\001\022F\n\035enable" +
+      "_oauth_service_provider\030\005 \001(\010H\004R\032enableO" +
+      "authServiceProvider\210\001\001\022N\n!enable_outgoin" +
+      "g_oauth_connections\030\006 \001(\010H\005R\036enableOutgo" +
+      "ingOauthConnections\210\001\001\022U\n%terminate_sess" +
+      "ions_on_password_change\030\007 \001(\010H\006R!termina" +
+      "teSessionsOnPasswordChange\210\001\001\022A\n\033session" +
+      "_length_web_in_hours\030\010 \001(\005H\007R\027sessionLen" +
+      "gthWebInHours\210\001\001\022G\n\036session_length_mobil" +
+      "e_in_hours\030\t \001(\005H\010R\032sessionLengthMobileI" +
+      "nHours\210\001\001\022A\n\033session_length_sso_in_hours" +
+      "\030\n \001(\005H\tR\027sessionLengthSsoInHours\210\001\001\022+\n\017" +
+      "allow_cors_from\030\013 \001(\tH\nR\rallowCorsFrom\210\001" +
+      "\001\0225\n\024cors_exposed_headers\030\014 \001(\tH\013R\022corsE" +
+      "xposedHeaders\210\001\001\0229\n\026cors_allow_credentia" +
+      "ls\030\r \001(\010H\014R\024corsAllowCredentials\210\001\001\022\"\n\nc" +
+      "ors_debug\030\016 \001(\010H\rR\tcorsDebug\210\001\001\022D\n\034allow" +
+      "_cookies_for_subdomains\030\017 \001(\010H\016R\031allowCo" +
+      "okiesForSubdomains\210\001\001\022<\n\030session_cache_i" +
+      "n_minutes\030\020 \001(\005H\017R\025sessionCacheInMinutes" +
+      "\210\001\001\0227\n\025websocket_secure_port\030\021 \001(\005H\020R\023we" +
+      "bsocketSecurePort\210\001\001\022*\n\016websocket_port\030\022" +
+      " \001(\005H\021R\rwebsocketPort\210\001\001B\031\n\027_maximum_log" +
+      "in_attemptsB\'\n%_enable_insecure_outgoing" +
+      "_connectionsB$\n\"_enable_multifactor_auth" +
+      "enticationB%\n#_enforce_multifactor_authe" +
+      "nticationB \n\036_enable_oauth_service_provi" +
+      "derB$\n\"_enable_outgoing_oauth_connection" +
+      "sB(\n&_terminate_sessions_on_password_cha" +
+      "ngeB\036\n\034_session_length_web_in_hoursB!\n\037_" +
+      "session_length_mobile_in_hoursB\036\n\034_sessi" +
+      "on_length_sso_in_hoursB\022\n\020_allow_cors_fr" +
+      "omB\027\n\025_cors_exposed_headersB\031\n\027_cors_all" +
+      "ow_credentialsB\r\n\013_cors_debugB\037\n\035_allow_" +
+      "cookies_for_subdomainsB\033\n\031_session_cache" +
+      "_in_minutesB\030\n\026_websocket_secure_portB\021\n" +
+      "\017_websocket_port\"\202\003\n\013CacheConfig\022\"\n\ncach" +
+      "e_type\030\001 \001(\tH\000R\tcacheType\210\001\001\022(\n\rredis_ad" +
+      "dress\030\002 \001(\tH\001R\014redisAddress\210\001\001\022*\n\016redis_" +
+      "password\030\003 \001(\tH\002R\rredisPassword\210\001\001\022\036\n\010re" +
+      "dis_db\030\004 \001(\005H\003R\007redisDb\210\001\001\0221\n\022redis_cach" +
+      "e_prefix\030\005 \001(\tH\004R\020redisCachePrefix\210\001\001\0225\n" +
+      "\024disable_client_cache\030\006 \001(\010H\005R\022disableCl" +
+      "ientCache\210\001\001B\r\n\013_cache_typeB\020\n\016_redis_ad" +
+      "dressB\021\n\017_redis_passwordB\013\n\t_redis_dbB\025\n" +
+      "\023_redis_cache_prefixB\027\n\025_disable_client_" +
+      "cache\"\251\003\n\rConfigMetrics\022\033\n\006enable\030\001 \001(\010H" +
+      "\000R\006enable\210\001\001\0221\n\022block_profile_rate\030\002 \001(\005" +
+      "H\001R\020blockProfileRate\210\001\001\022*\n\016listen_addres" +
+      "s\030\003 \001(\tH\002R\rlistenAddress\210\001\001\0227\n\025enable_cl" +
+      "ient_metrics\030\004 \001(\010H\003R\023enableClientMetric" +
+      "s\210\001\001\022C\n\033enable_notification_metrics\030\005 \001(" +
+      "\010H\004R\031enableNotificationMetrics\210\001\001\022/\n\024cli" +
+      "ent_side_user_ids\030\006 \003(\tR\021clientSideUserI" +
+      "dsB\t\n\007_enableB\025\n\023_block_profile_rateB\021\n\017" +
+      "_listen_addressB\030\n\026_enable_client_metric" +
+      "sB\036\n\034_enable_notification_metrics\"\230\004\n\tCo" +
+      "nfigSSO\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022\033\n\006" +
+      "secret\030\002 \001(\tH\001R\006secret\210\001\001\022\023\n\002id\030\003 \001(\tH\002R" +
+      "\002id\210\001\001\022\031\n\005scope\030\004 \001(\tH\003R\005scope\210\001\001\022(\n\raut" +
+      "h_endpoint\030\005 \001(\tH\004R\014authEndpoint\210\001\001\022*\n\016t" +
+      "oken_endpoint\030\006 \001(\tH\005R\rtokenEndpoint\210\001\001\022" +
+      "/\n\021user_api_endpoint\030\007 \001(\tH\006R\017userApiEnd" +
+      "point\210\001\001\0222\n\022discovery_endpoint\030\010 \001(\tH\007R\021" +
+      "discoveryEndpoint\210\001\001\022$\n\013button_text\030\t \001(" +
+      "\tH\010R\nbuttonText\210\001\001\022&\n\014button_color\030\n \001(\t" +
+      "H\tR\013buttonColor\210\001\001B\t\n\007_enableB\t\n\007_secret" +
+      "B\005\n\003_idB\010\n\006_scopeB\020\n\016_auth_endpointB\021\n\017_" +
+      "token_endpointB\024\n\022_user_api_endpointB\025\n\023" +
+      "_discovery_endpointB\016\n\014_button_textB\017\n\r_" +
+      "button_color\"\325\005\n\tConfigSql\022$\n\013driver_nam" +
+      "e\030\001 \001(\tH\000R\ndriverName\210\001\001\022$\n\013data_source\030" +
+      "\002 \001(\tH\001R\ndataSource\210\001\001\022)\n\016max_idle_conns" +
+      "\030\003 \001(\005H\002R\014maxIdleConns\210\001\001\022H\n\036conn_max_li" +
+      "fetime_milliseconds\030\004 \001(\005H\003R\033connMaxLife" +
+      "timeMilliseconds\210\001\001\022I\n\037conn_max_idle_tim" +
+      "e_milliseconds\030\005 \001(\005H\004R\033connMaxIdleTimeM" +
+      "illiseconds\210\001\001\022)\n\016max_open_conns\030\006 \001(\005H\005" +
+      "R\014maxOpenConns\210\001\001\022\031\n\005trace\030\007 \001(\010H\006R\005trac" +
+      "e\210\001\001\0222\n\023at_rest_encrypt_key\030\010 \001(\tH\007R\020atR" +
+      "estEncryptKey\210\001\001\022(\n\rquery_timeout\030\t \001(\005H" +
+      "\010R\014queryTimeout\210\001\001\022;\n\027disable_database_s" +
+      "earch\030\n \001(\010H\tR\025disableDatabaseSearch\210\001\001B" +
+      "\016\n\014_driver_nameB\016\n\014_data_sourceB\021\n\017_max_" +
+      "idle_connsB!\n\037_conn_max_lifetime_millise" +
+      "condsB\"\n _conn_max_idle_time_millisecond" +
+      "sB\021\n\017_max_open_connsB\010\n\006_traceB\026\n\024_at_re" +
+      "st_encrypt_keyB\020\n\016_query_timeoutB\032\n\030_dis" +
+      "able_database_search\"\313\002\n\016ConfigPassword\022" +
+      "*\n\016minimum_length\030\001 \001(\005H\000R\rminimumLength" +
+      "\210\001\001\022!\n\tlowercase\030\002 \001(\010H\001R\tlowercase\210\001\001\022\033" +
+      "\n\006number\030\003 \001(\010H\002R\006number\210\001\001\022!\n\tuppercase" +
+      "\030\004 \001(\010H\003R\tuppercase\210\001\001\022\033\n\006symbol\030\005 \001(\010H\004" +
+      "R\006symbol\210\001\001\0221\n\022enable_forgot_link\030\006 \001(\010H" +
+      "\005R\020enableForgotLink\210\001\001B\021\n\017_minimum_lengt" +
+      "hB\014\n\n_lowercaseB\t\n\007_numberB\014\n\n_uppercase" +
+      "B\t\n\007_symbolB\025\n\023_enable_forgot_link\"\340\017\n\nC" +
+      "onfigFile\022;\n\027enable_file_attachments\030\001 \001" +
+      "(\010H\000R\025enableFileAttachments\210\001\001\0225\n\024enable" +
+      "_mobile_upload\030\002 \001(\010H\001R\022enableMobileUplo" +
+      "ad\210\001\001\0229\n\026enable_mobile_download\030\003 \001(\010H\002R" +
+      "\024enableMobileDownload\210\001\001\022\'\n\rmax_file_siz" +
+      "e\030\004 \001(\003H\003R\013maxFileSize\210\001\001\0225\n\024max_image_r" +
+      "esolution\030\005 \001(\003H\004R\022maxImageResolution\210\001\001" +
+      "\022F\n\035max_image_decoder_concurrency\030\006 \001(\003H" +
+      "\005R\032maxImageDecoderConcurrency\210\001\001\022$\n\013driv" +
+      "er_name\030\007 \001(\tH\006R\ndriverName\210\001\001\022!\n\tdirect" +
+      "ory\030\010 \001(\tH\007R\tdirectory\210\001\001\0221\n\022enable_publ" +
+      "ic_link\030\t \001(\010H\010R\020enablePublicLink\210\001\001\022,\n\017" +
+      "extract_content\030\n \001(\010H\tR\016extractContent\210" +
+      "\001\001\0220\n\021archive_recursion\030\013 \001(\010H\nR\020archive" +
+      "Recursion\210\001\001\022-\n\020public_link_salt\030\014 \001(\tH\013" +
+      "R\016publicLinkSalt\210\001\001\022&\n\014initial_font\030\r \001(" +
+      "\tH\014R\013initialFont\210\001\001\0229\n\027amazon_s3_access_" +
+      "key_id\030\016 \001(\tH\rR\023amazonS3AccessKeyId\210\001\001\022A" +
+      "\n\033amazon_s3_secret_access_key\030\017 \001(\tH\016R\027a" +
+      "mazonS3SecretAccessKey\210\001\001\022-\n\020amazon_s3_b" +
+      "ucket\030\020 \001(\tH\017R\016amazonS3Bucket\210\001\001\0226\n\025amaz" +
+      "on_s3_path_prefix\030\021 \001(\tH\020R\022amazonS3PathP" +
+      "refix\210\001\001\022-\n\020amazon_s3_region\030\022 \001(\tH\021R\016am" +
+      "azonS3Region\210\001\001\0221\n\022amazon_s3_endpoint\030\023 " +
+      "\001(\tH\022R\020amazonS3Endpoint\210\001\001\022\'\n\ramazon_s3_" +
+      "ssl\030\024 \001(\010H\023R\013amazonS3Ssl\210\001\001\022.\n\021amazon_s3" +
+      "_sign_v2\030\025 \001(\010H\024R\016amazonS3SignV2\210\001\001\022\'\n\ra" +
+      "mazon_s3_sse\030\026 \001(\010H\025R\013amazonS3Sse\210\001\001\022+\n\017" +
+      "amazon_s3_trace\030\027 \001(\010H\026R\ramazonS3Trace\210\001" +
+      "\001\022W\n&amazon_s3_request_timeout_milliseco" +
+      "nds\030\030 \001(\003H\027R\"amazonS3RequestTimeoutMilli" +
+      "seconds\210\001\001\022J\n amazon_s3_upload_part_size" +
+      "_bytes\030\031 \001(\003H\030R\033amazonS3UploadPartSizeBy" +
+      "tes\210\001\001\022:\n\027amazon_s3_storage_class\030\032 \001(\tH" +
+      "\031R\024amazonS3StorageClass\210\001\001B\032\n\030_enable_fi" +
+      "le_attachmentsB\027\n\025_enable_mobile_uploadB" +
+      "\031\n\027_enable_mobile_downloadB\020\n\016_max_file_" +
+      "sizeB\027\n\025_max_image_resolutionB \n\036_max_im" +
+      "age_decoder_concurrencyB\016\n\014_driver_nameB" +
+      "\014\n\n_directoryB\025\n\023_enable_public_linkB\022\n\020" +
+      "_extract_contentB\024\n\022_archive_recursionB\023" +
+      "\n\021_public_link_saltB\017\n\r_initial_fontB\032\n\030" +
+      "_amazon_s3_access_key_idB\036\n\034_amazon_s3_s" +
+      "ecret_access_keyB\023\n\021_amazon_s3_bucketB\030\n" +
+      "\026_amazon_s3_path_prefixB\023\n\021_amazon_s3_re" +
+      "gionB\025\n\023_amazon_s3_endpointB\020\n\016_amazon_s" +
+      "3_sslB\024\n\022_amazon_s3_sign_v2B\020\n\016_amazon_s" +
+      "3_sseB\022\n\020_amazon_s3_traceB)\n\'_amazon_s3_" +
+      "request_timeout_millisecondsB#\n!_amazon_" +
+      "s3_upload_part_size_bytesB\032\n\030_amazon_s3_" +
+      "storage_class\"\375\016\n\013ConfigEmail\022=\n\030send_em" +
+      "ail_notifications\030\001 \001(\010H\000R\026sendEmailNoti" +
+      "fications\210\001\001\022A\n\032require_email_verificati" +
+      "on\030\002 \001(\010H\001R\030requireEmailVerification\210\001\001\022" +
+      "*\n\016feedback_email\030\003 \001(\tH\002R\rfeedbackEmail" +
+      "\210\001\001\022-\n\020reply_to_address\030\004 \001(\tH\003R\016replyTo" +
+      "Address\210\001\001\022-\n\020enable_smtp_auth\030\005 \001(\010H\004R\016" +
+      "enableSmtpAuth\210\001\001\022(\n\rsmtp_username\030\006 \001(\t" +
+      "H\005R\014smtpUsername\210\001\001\022(\n\rsmtp_password\030\007 \001" +
+      "(\tH\006R\014smtpPassword\210\001\001\022$\n\013smtp_server\030\010 \001" +
+      "(\tH\007R\nsmtpServer\210\001\001\022 \n\tsmtp_port\030\t \001(\tH\010" +
+      "R\010smtpPort\210\001\001\0223\n\023smtp_server_timeout\030\n \001" +
+      "(\005H\tR\021smtpServerTimeout\210\001\001\0224\n\023connection" +
+      "_security\030\013 \001(\tH\nR\022connectionSecurity\210\001\001" +
+      "\022;\n\027send_push_notifications\030\014 \001(\010H\013R\025sen" +
+      "dPushNotifications\210\001\001\022=\n\030push_notificati" +
+      "on_server\030\r \001(\tH\014R\026pushNotificationServe" +
+      "r\210\001\001\022A\n\032push_notification_contents\030\016 \001(\t" +
+      "H\rR\030pushNotificationContents\210\001\001\022=\n\030push_" +
+      "notification_buffer\030\017 \001(\005H\016R\026pushNotific" +
+      "ationBuffer\210\001\001\0227\n\025enable_email_batching\030" +
+      "\020 \001(\010H\017R\023enableEmailBatching\210\001\001\022@\n\032email" +
+      "_batching_buffer_size\030\021 \001(\005H\020R\027emailBatc" +
+      "hingBufferSize\210\001\001\022;\n\027email_batching_inte" +
+      "rval\030\022 \001(\005H\021R\025emailBatchingInterval\210\001\001\022T" +
+      "\n$skip_server_certificate_verification\030\023" +
+      " \001(\010H\022R!skipServerCertificateVerificatio" +
+      "n\210\001\001\022L\n email_notification_contents_type" +
+      "\030\024 \001(\tH\023R\035emailNotificationContentsType\210" +
+      "\001\001\0221\n\022login_button_color\030\025 \001(\tH\024R\020loginB" +
+      "uttonColor\210\001\001\022>\n\031login_button_border_col" +
+      "or\030\026 \001(\tH\025R\026loginButtonBorderColor\210\001\001\022:\n" +
+      "\027login_button_text_color\030\027 \001(\tH\026R\024loginB" +
+      "uttonTextColor\210\001\001B\033\n\031_send_email_notific" +
+      "ationsB\035\n\033_require_email_verificationB\021\n" +
+      "\017_feedback_emailB\023\n\021_reply_to_addressB\023\n" +
+      "\021_enable_smtp_authB\020\n\016_smtp_usernameB\020\n\016" +
+      "_smtp_passwordB\016\n\014_smtp_serverB\014\n\n_smtp_" +
+      "portB\026\n\024_smtp_server_timeoutB\026\n\024_connect" +
+      "ion_securityB\032\n\030_send_push_notifications" +
+      "B\033\n\031_push_notification_serverB\035\n\033_push_n" +
+      "otification_contentsB\033\n\031_push_notificati" +
+      "on_bufferB\030\n\026_enable_email_batchingB\035\n\033_" +
+      "email_batching_buffer_sizeB\032\n\030_email_bat" +
+      "ching_intervalB\'\n%_skip_server_certifica" +
+      "te_verificationB#\n!_email_notification_c" +
+      "ontents_typeB\025\n\023_login_button_colorB\034\n\032_" +
+      "login_button_border_colorB\032\n\030_login_butt" +
+      "on_text_color\"\204\003\n\017ConfigRateLimit\022\033\n\006ena" +
+      "ble\030\001 \001(\010H\000R\006enable\210\001\001\022\034\n\007per_sec\030\002 \001(\005H" +
+      "\001R\006perSec\210\001\001\022 \n\tmax_burst\030\003 \001(\005H\002R\010maxBu" +
+      "rst\210\001\001\022/\n\021memory_store_size\030\004 \001(\005H\003R\017mem" +
+      "oryStoreSize\210\001\001\0222\n\023vary_by_remote_addr\030\005" +
+      " \001(\010H\004R\020varyByRemoteAddr\210\001\001\022%\n\014vary_by_u" +
+      "ser\030\006 \001(\010H\005R\nvaryByUser\210\001\001\022$\n\016vary_by_he" +
+      "ader\030\007 \001(\tR\014varyByHeaderB\t\n\007_enableB\n\n\010_" +
+      "per_secB\014\n\n_max_burstB\024\n\022_memory_store_s" +
+      "izeB\026\n\024_vary_by_remote_addrB\017\n\r_vary_by_" +
+      "user\"\227\001\n\rConfigPrivacy\0221\n\022show_email_add" +
+      "ress\030\001 \001(\010H\000R\020showEmailAddress\210\001\001\022)\n\016sho" +
+      "w_full_name\030\002 \001(\010H\001R\014showFullName\210\001\001B\025\n\023" +
+      "_show_email_addressB\021\n\017_show_full_name\"\357" +
+      "\003\n\rConfigSupport\0226\n\025terms_of_service_lin" +
+      "k\030\001 \001(\tH\000R\022termsOfServiceLink\210\001\001\0223\n\023priv" +
+      "acy_policy_link\030\002 \001(\tH\001R\021privacyPolicyLi" +
+      "nk\210\001\001\022\"\n\nabout_link\030\003 \001(\tH\002R\taboutLink\210\001" +
+      "\001\022 \n\thelp_link\030\004 \001(\tH\003R\010helpLink\210\001\001\0226\n\025r" +
+      "eport_a_problem_link\030\005 \001(\tH\004R\022reportAPro" +
+      "blemLink\210\001\001\0225\n\024forgot_password_link\030\006 \001(" +
+      "\tH\005R\022forgotPasswordLink\210\001\001\022(\n\rsupport_em" +
+      "ail\030\007 \001(\tH\006R\014supportEmail\210\001\001B\030\n\026_terms_o" +
+      "f_service_linkB\026\n\024_privacy_policy_linkB\r" +
+      "\n\013_about_linkB\014\n\n_help_linkB\030\n\026_report_a" +
+      "_problem_linkB\027\n\025_forgot_password_linkB\020" +
+      "\n\016_support_email\"\202\002\n\022ConfigLocalization\022" +
+      "7\n\025default_server_locale\030\001 \001(\tH\000R\023defaul" +
+      "tServerLocale\210\001\001\0227\n\025default_client_local" +
+      "e\030\002 \001(\tH\001R\023defaultClientLocale\210\001\001\0220\n\021ava" +
+      "ilable_locales\030\003 \001(\tH\002R\020availableLocales" +
+      "\210\001\001B\030\n\026_default_server_localeB\030\n\026_defaul" +
+      "t_client_localeB\024\n\022_available_locales\"\325\020" +
+      "\n\nConfigLdap\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001" +
+      "\001\022$\n\013enable_sync\030\002 \001(\010H\001R\nenableSync\210\001\001\022" +
+      "$\n\013ldap_server\030\003 \001(\tH\002R\nldapServer\210\001\001\022 \n" +
+      "\tldap_port\030\004 \001(\005H\003R\010ldapPort\210\001\001\0224\n\023conne" +
+      "ction_security\030\005 \001(\tH\004R\022connectionSecuri" +
+      "ty\210\001\001\022\034\n\007base_dn\030\006 \001(\tH\005R\006baseDn\210\001\001\022(\n\rb" +
+      "ind_username\030\007 \001(\tH\006R\014bindUsername\210\001\001\022(\n" +
+      "\rbind_password\030\010 \001(\tH\007R\014bindPassword\210\001\001\022" +
+      "9\n\026maximum_login_attempts\030\t \001(\005H\010R\024maxim" +
+      "umLoginAttempts\210\001\001\022$\n\013user_filter\030\n \001(\tH" +
+      "\tR\nuserFilter\210\001\001\022&\n\014group_filter\030\013 \001(\tH\n" +
+      "R\013groupFilter\210\001\001\0223\n\023enable_admin_filter\030" +
+      "\014 \001(\010H\013R\021enableAdminFilter\210\001\001\022&\n\014admin_f" +
+      "ilter\030\r \001(\tH\014R\013adminFilter\210\001\001\022D\n\034group_d" +
+      "isplay_name_attribute\030\016 \001(\tH\rR\031groupDisp" +
+      "layNameAttribute\210\001\001\0221\n\022group_id_attribut" +
+      "e\030\017 \001(\tH\016R\020groupIdAttribute\210\001\001\0225\n\024first_" +
+      "name_attribute\030\020 \001(\tH\017R\022firstNameAttribu" +
+      "te\210\001\001\0223\n\023last_name_attribute\030\021 \001(\tH\020R\021la" +
+      "stNameAttribute\210\001\001\022,\n\017email_attribute\030\022 " +
+      "\001(\tH\021R\016emailAttribute\210\001\001\0222\n\022username_att" +
+      "ribute\030\023 \001(\tH\022R\021usernameAttribute\210\001\001\0222\n\022" +
+      "nickname_attribute\030\024 \001(\tH\023R\021nicknameAttr" +
+      "ibute\210\001\001\022&\n\014id_attribute\030\025 \001(\tH\024R\013idAttr" +
+      "ibute\210\001\001\0222\n\022position_attribute\030\026 \001(\tH\025R\021" +
+      "positionAttribute\210\001\001\0221\n\022login_id_attribu" +
+      "te\030\027 \001(\tH\026R\020loginIdAttribute\210\001\001\0220\n\021pictu" +
+      "re_attribute\030\030 \001(\tH\027R\020pictureAttribute\210\001" +
+      "\001\0227\n\025sync_interval_minutes\030\031 \001(\005H\030R\023sync" +
+      "IntervalMinutes\210\001\001\022(\n\rquery_timeout\030\032 \001(" +
+      "\005H\031R\014queryTimeout\210\001\001\022\'\n\rmax_page_size\030\033 " +
+      "\001(\005H\032R\013maxPageSize\210\001\001\022-\n\020login_field_nam" +
+      "e\030\034 \001(\tH\033R\016loginFieldName\210\001\001\0221\n\022login_bu" +
+      "tton_color\030\035 \001(\tH\034R\020loginButtonColor\210\001\001\022" +
+      ">\n\031login_button_border_color\030\036 \001(\tH\035R\026lo" +
+      "ginButtonBorderColor\210\001\001\022:\n\027login_button_" +
+      "text_color\030\037 \001(\tH\036R\024loginButtonTextColor" +
+      "\210\001\001B\t\n\007_enableB\016\n\014_enable_syncB\016\n\014_ldap_" +
+      "serverB\014\n\n_ldap_portB\026\n\024_connection_secu" +
+      "rityB\n\n\010_base_dnB\020\n\016_bind_usernameB\020\n\016_b" +
+      "ind_passwordB\031\n\027_maximum_login_attemptsB" +
+      "\016\n\014_user_filterB\017\n\r_group_filterB\026\n\024_ena" +
+      "ble_admin_filterB\017\n\r_admin_filterB\037\n\035_gr" +
+      "oup_display_name_attributeB\025\n\023_group_id_" +
+      "attributeB\027\n\025_first_name_attributeB\026\n\024_l" +
+      "ast_name_attributeB\022\n\020_email_attributeB\025" +
+      "\n\023_username_attributeB\025\n\023_nickname_attri" +
+      "buteB\017\n\r_id_attributeB\025\n\023_position_attri" +
+      "buteB\025\n\023_login_id_attributeB\024\n\022_picture_" +
+      "attributeB\030\n\026_sync_interval_minutesB\020\n\016_" +
+      "query_timeoutB\020\n\016_max_page_sizeB\023\n\021_logi" +
+      "n_field_nameB\025\n\023_login_button_colorB\034\n\032_" +
+      "login_button_border_colorB\032\n\030_login_butt" +
+      "on_text_color\"\255\023\n\nConfigSaml\022\033\n\006enable\030\001" +
+      " \001(\010H\000R\006enable\210\001\001\0226\n\025enable_sync_with_ld" +
+      "ap\030\002 \001(\010H\001R\022enableSyncWithLdap\210\001\001\022N\n\"ena" +
+      "ble_sync_with_ldap_include_auth\030\003 \001(\010H\002R" +
+      "\035enableSyncWithLdapIncludeAuth\210\001\001\022:\n\027ign" +
+      "ore_guests_ldap_sync\030\004 \001(\010H\003R\024ignoreGues" +
+      "tsLdapSync\210\001\001\022\033\n\006verify\030\005 \001(\010H\004R\006verify\210" +
+      "\001\001\022\035\n\007encrypt\030\006 \001(\010H\005R\007encrypt\210\001\001\022&\n\014sig" +
+      "n_request\030\007 \001(\010H\006R\013signRequest\210\001\001\022\034\n\007idp" +
+      "_url\030\010 \001(\tH\007R\006idpUrl\210\001\001\0221\n\022idp_descripto" +
+      "r_url\030\t \001(\tH\010R\020idpDescriptorUrl\210\001\001\022-\n\020id" +
+      "p_metadata_url\030\n \001(\tH\tR\016idpMetadataUrl\210\001" +
+      "\001\022C\n\033service_provider_identifier\030\013 \001(\tH\n" +
+      "R\031serviceProviderIdentifier\210\001\001\022H\n\036assert" +
+      "ion_consumer_service_url\030\014 \001(\tH\013R\033assert" +
+      "ionConsumerServiceUrl\210\001\001\0224\n\023signature_al" +
+      "gorithm\030\r \001(\tH\014R\022signatureAlgorithm\210\001\001\0224" +
+      "\n\023canonical_algorithm\030\016 \001(\tH\rR\022canonical" +
+      "Algorithm\210\001\001\022:\n\027scoping_idp_provider_id\030" +
+      "\017 \001(\tH\016R\024scopingIdpProviderId\210\001\001\022-\n\020scop" +
+      "ing_idp_name\030\020 \001(\tH\017R\016scopingIdpName\210\001\001\022" +
+      "5\n\024idp_certificate_file\030\021 \001(\tH\020R\022idpCert" +
+      "ificateFile\210\001\001\022;\n\027public_certificate_fil" +
+      "e\030\022 \001(\tH\021R\025publicCertificateFile\210\001\001\022-\n\020p" +
+      "rivate_key_file\030\023 \001(\tH\022R\016privateKeyFile\210" +
+      "\001\001\022&\n\014id_attribute\030\024 \001(\tH\023R\013idAttribute\210" +
+      "\001\001\0229\n\026enable_admin_attribute\030\025 \001(\010H\024R\024en" +
+      "ableAdminAttribute\210\001\001\022,\n\017admin_attribute" +
+      "\030\026 \001(\tH\025R\016adminAttribute\210\001\001\0225\n\024first_nam" +
+      "e_attribute\030\027 \001(\tH\026R\022firstNameAttribute\210" +
+      "\001\001\0223\n\023last_name_attribute\030\030 \001(\tH\027R\021lastN" +
+      "ameAttribute\210\001\001\022,\n\017email_attribute\030\031 \001(\t" +
+      "H\030R\016emailAttribute\210\001\001\0222\n\022username_attrib" +
+      "ute\030\032 \001(\tH\031R\021usernameAttribute\210\001\001\0222\n\022nic" +
+      "kname_attribute\030\033 \001(\tH\032R\021nicknameAttribu" +
+      "te\210\001\001\022.\n\020locale_attribute\030\034 \001(\tH\033R\017local" +
+      "eAttribute\210\001\001\0222\n\022position_attribute\030\035 \001(" +
+      "\tH\034R\021positionAttribute\210\001\001\022/\n\021login_butto" +
+      "n_text\030\036 \001(\tH\035R\017loginButtonText\210\001\001\0221\n\022lo" +
+      "gin_button_color\030\037 \001(\tH\036R\020loginButtonCol" +
+      "or\210\001\001\022>\n\031login_button_border_color\030  \001(\t" +
+      "H\037R\026loginButtonBorderColor\210\001\001\022:\n\027login_b" +
+      "utton_text_color\030! \001(\tH R\024loginButtonTex" +
+      "tColor\210\001\001B\t\n\007_enableB\030\n\026_enable_sync_wit" +
+      "h_ldapB%\n#_enable_sync_with_ldap_include" +
+      "_authB\032\n\030_ignore_guests_ldap_syncB\t\n\007_ve" +
+      "rifyB\n\n\010_encryptB\017\n\r_sign_requestB\n\n\010_id" +
+      "p_urlB\025\n\023_idp_descriptor_urlB\023\n\021_idp_met" +
+      "adata_urlB\036\n\034_service_provider_identifie" +
+      "rB!\n\037_assertion_consumer_service_urlB\026\n\024" +
+      "_signature_algorithmB\026\n\024_canonical_algor" +
+      "ithmB\032\n\030_scoping_idp_provider_idB\023\n\021_sco",
+      "ping_idp_nameB\027\n\025_idp_certificate_fileB\032" +
+      "\n\030_public_certificate_fileB\023\n\021_private_k" +
+      "ey_fileB\017\n\r_id_attributeB\031\n\027_enable_admi" +
+      "n_attributeB\022\n\020_admin_attributeB\027\n\025_firs" +
+      "t_name_attributeB\026\n\024_last_name_attribute" +
+      "B\022\n\020_email_attributeB\025\n\023_username_attrib" +
+      "uteB\025\n\023_nickname_attributeB\023\n\021_locale_at" +
+      "tributeB\025\n\023_position_attributeB\024\n\022_login" +
+      "_button_textB\025\n\023_login_button_colorB\034\n\032_" +
+      "login_button_border_colorB\032\n\030_login_butt" +
+      "on_text_color\"\301\005\n\017ConfigNativeApp\0223\n\026app" +
+      "_custom_url_schemes\030\001 \003(\tR\023appCustomUrlS" +
+      "chemes\022/\n\021app_download_link\030\002 \001(\tH\000R\017app" +
+      "DownloadLink\210\001\001\022>\n\031android_app_download_" +
+      "link\030\003 \001(\tH\001R\026androidAppDownloadLink\210\001\001\022" +
+      "6\n\025ios_app_download_link\030\004 \001(\tH\002R\022iosApp" +
+      "DownloadLink\210\001\001\022;\n\027mobile_external_brows" +
+      "er\030\005 \001(\010H\003R\025mobileExternalBrowser\210\001\001\022=\n\030" +
+      "mobile_enable_biometrics\030\006 \001(\010H\004R\026mobile" +
+      "EnableBiometrics\210\001\001\022F\n\035mobile_prevent_sc" +
+      "reen_capture\030\007 \001(\010H\005R\032mobilePreventScree" +
+      "nCapture\210\001\001\022C\n\033mobile_jailbreak_protecti" +
+      "on\030\010 \001(\010H\006R\031mobileJailbreakProtection\210\001\001" +
+      "B\024\n\022_app_download_linkB\034\n\032_android_app_d" +
+      "ownload_linkB\030\n\026_ios_app_download_linkB\032" +
+      "\n\030_mobile_external_browserB\033\n\031_mobile_en" +
+      "able_biometricsB \n\036_mobile_prevent_scree" +
+      "n_captureB\036\n\034_mobile_jailbreak_protectio" +
+      "n\"\253\005\n\021ConfigMeilisearch\022#\n\nserver_url\030\001 " +
+      "\001(\tH\000R\nserver_url\210\001\001\022\"\n\nmaster_key\030\002 \001(\t" +
+      "H\001R\tmasterKey\210\001\001\022,\n\017enable_indexing\030\003 \001(" +
+      "\010H\002R\016enableIndexing\210\001\001\022.\n\020enable_searchi" +
+      "ng\030\004 \001(\010H\003R\017enableSearching\210\001\001\0224\n\023enable" +
+      "_autocomplete\030\005 \001(\010H\004R\022enableAutocomplet" +
+      "e\210\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001" +
+      "\022;\n\027request_timeout_seconds\030\007 \001(\005H\006R\025req" +
+      "uestTimeoutSeconds\210\001\001\022&\n\014index_prefix\030\010 " +
+      "\001(\tH\007R\013indexPrefix\210\001\001\022-\n\020search_cutoff_m" +
+      "s\030\t \001(\005H\010R\016searchCutoffMs\210\001\001\0227\n\025enable_t" +
+      "ypo_tolerance\030\n \001(\010H\tR\023enableTypoToleran" +
+      "ce\210\001\001B\r\n\013_server_urlB\r\n\013_master_keyB\022\n\020_" +
+      "enable_indexingB\023\n\021_enable_searchingB\026\n\024" +
+      "_enable_autocompleteB\r\n\013_batch_sizeB\032\n\030_" +
+      "request_timeout_secondsB\017\n\r_index_prefix" +
+      "B\023\n\021_search_cutoff_msB\030\n\026_enable_typo_to" +
+      "lerance\"\272\003\n\013ConfigBleve\022 \n\tindex_dir\030\001 \001" +
+      "(\tH\000R\010indexDir\210\001\001\022,\n\017enable_indexing\030\002 \001" +
+      "(\010H\001R\016enableIndexing\210\001\001\022.\n\020enable_search" +
+      "ing\030\003 \001(\010H\002R\017enableSearching\210\001\001\0224\n\023enabl" +
+      "e_autocomplete\030\004 \001(\010H\003R\022enableAutocomple" +
+      "te\210\001\001\022M\n!bulk_indexing_time_window_secon" +
+      "ds\030\005 \001(\005H\004R\035bulkIndexingTimeWindowSecond" +
+      "s\210\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001" +
+      "B\014\n\n_index_dirB\022\n\020_enable_indexingB\023\n\021_e" +
+      "nable_searchingB\026\n\024_enable_autocompleteB" +
+      "$\n\"_bulk_indexing_time_window_secondsB\r\n" +
+      "\013_batch_size\"\354\006\n\023ConfigDataRetention\022;\n\027" +
+      "enable_message_deletion\030\001 \001(\010H\000R\025enableM" +
+      "essageDeletion\210\001\001\0225\n\024enable_file_deletio" +
+      "n\030\002 \001(\010H\001R\022enableFileDeletion\210\001\001\0229\n\026enab" +
+      "le_boards_deletion\030\003 \001(\010H\002R\024enableBoards" +
+      "Deletion\210\001\001\022;\n\027message_retention_hours\030\004" +
+      " \001(\005H\003R\025messageRetentionHours\210\001\001\0225\n\024file" +
+      "_retention_hours\030\005 \001(\005H\004R\022fileRetentionH" +
+      "ours\210\001\001\0227\n\025boards_retention_days\030\006 \001(\005H\005" +
+      "R\023boardsRetentionDays\210\001\001\022:\n\027deletion_job" +
+      "_start_time\030\007 \001(\tH\006R\024deletionJobStartTim" +
+      "e\210\001\001\022\"\n\nbatch_size\030\010 \001(\005H\007R\tbatchSize\210\001\001" +
+      "\022N\n!time_between_batches_milliseconds\030\t " +
+      "\001(\005H\010R\036timeBetweenBatchesMilliseconds\210\001\001" +
+      "\022<\n\030retention_ids_batch_size\030\n \001(\005H\tR\025re" +
+      "tentionIdsBatchSize\210\001\001B\032\n\030_enable_messag" +
+      "e_deletionB\027\n\025_enable_file_deletionB\031\n\027_" +
+      "enable_boards_deletionB\032\n\030_message_reten" +
+      "tion_hoursB\027\n\025_file_retention_hoursB\030\n\026_" +
+      "boards_retention_daysB\032\n\030_deletion_job_s" +
+      "tart_timeB\r\n\013_batch_sizeB$\n\"_time_betwee" +
+      "n_batches_millisecondsB\033\n\031_retention_ids" +
+      "_batch_size\"\264\002\n\020ConfigImageProxy\022\033\n\006enab" +
+      "le\030\001 \001(\010H\000R\006enable\210\001\001\022-\n\020image_proxy_typ" +
+      "e\030\002 \001(\tH\001R\016imageProxyType\210\001\001\0228\n\026remote_i" +
+      "mage_proxy_url\030\003 \001(\tH\002R\023remoteImageProxy" +
+      "Url\210\001\001\022@\n\032remote_image_proxy_options\030\004 \001" +
+      "(\tH\003R\027remoteImageProxyOptions\210\001\001B\t\n\007_ena" +
+      "bleB\023\n\021_image_proxy_typeB\031\n\027_remote_imag" +
+      "e_proxy_urlB\035\n\033_remote_image_proxy_optio" +
+      "ns\"\315\010\n\006Config\022)\n\004main\030\001 \001(\0132\025.common.v1." +
+      "ConfigMainR\004main\0225\n\010services\030\002 \001(\0132\031.com" +
+      "mon.v1.ConfigServicesR\010services\0225\n\010secur" +
+      "ity\030\003 \001(\0132\031.common.v1.ConfigSecurityR\010se" +
+      "curity\022,\n\005cache\030\004 \001(\0132\026.common.v1.CacheC" +
+      "onfigR\005cache\0222\n\007metrics\030\005 \001(\0132\030.common.v" +
+      "1.ConfigMetricsR\007metrics\022&\n\003sso\030\006 \001(\0132\024." +
+      "common.v1.ConfigSSOR\003sso\022&\n\003sql\030\007 \001(\0132\024." +
+      "common.v1.ConfigSqlR\003sql\0225\n\010password\030\010 \001" +
+      "(\0132\031.common.v1.ConfigPasswordR\010password\022" +
+      ")\n\004file\030\t \001(\0132\025.common.v1.ConfigFileR\004fi" +
+      "le\022,\n\005email\030\n \001(\0132\026.common.v1.ConfigEmai" +
+      "lR\005email\0229\n\nrate_limit\030\013 \001(\0132\032.common.v1" +
+      ".ConfigRateLimitR\trateLimit\0222\n\007privacy\030\014" +
+      " \001(\0132\030.common.v1.ConfigPrivacyR\007privacy\022" +
+      "2\n\007support\030\r \001(\0132\030.common.v1.ConfigSuppo" +
+      "rtR\007support\022A\n\014localization\030\016 \001(\0132\035.comm" +
+      "on.v1.ConfigLocalizationR\014localization\022)" +
+      "\n\004ldap\030\017 \001(\0132\025.common.v1.ConfigLdapR\004lda" +
+      "p\022)\n\004saml\030\020 \001(\0132\025.common.v1.ConfigSamlR\004" +
+      "saml\0229\n\nnative_app\030\021 \001(\0132\032.common.v1.Con" +
+      "figNativeAppR\tnativeApp\022>\n\013meilisearch\030\022" +
+      " \001(\0132\034.common.v1.ConfigMeilisearchR\013meil" +
+      "isearch\022,\n\005bleve\030\023 \001(\0132\026.common.v1.Confi" +
+      "gBleveR\005bleve\022E\n\016data_retention\030\024 \001(\0132\036." +
+      "common.v1.ConfigDataRetentionR\rdataReten" +
+      "tion\022<\n\013image_proxy\030\025 \001(\0132\033.common.v1.Co" +
+      "nfigImageProxyR\nimageProxy\"\022\n\020ConfigGetR" +
+      "equest\"u\n\021ConfigGetResponse\022\'\n\004data\030\001 \001(" +
+      "\0132\021.common.v1.ConfigH\000R\004data\022+\n\005error\030\002 " +
+      "\001(\0132\023.common.v1.AppErrorH\000R\005errorB\n\n\010res" +
+      "ponse\"@\n\023ConfigUpdateRequest\022)\n\006config\030\001" +
+      " \001(\0132\021.common.v1.ConfigR\006config\"x\n\024Confi" +
+      "gUpdateResponse\022\'\n\004data\030\001 \001(\0132\021.common.v" +
+      "1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.common" +
+      ".v1.AppErrorH\000R\005errorB\n\n\010response\"z\n\026Con" +
+      "figListenerResponse\022\'\n\004data\030\001 \001(\0132\021.comm" +
+      "on.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.co" +
+      "mmon.v1.AppErrorH\000R\005errorB\n\n\010response\"4\n" +
+      "\025ConfigListenerRequest\022\033\n\tclient_id\030\001 \001(" +
+      "\tR\010clientIdB:\n\032org.megacommerce.common.v" +
+      "1B\013ConfigProtoZ\014common/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          org.megacommerce.common.v1.ErrorProto.getDescriptor(),
         });
     internal_static_common_v1_ConfigMain_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -48622,6 +52975,43 @@ public final class ConfigProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_v1_Config_descriptor,
         new java.lang.String[] { "Main", "Services", "Security", "Cache", "Metrics", "Sso", "Sql", "Password", "File", "Email", "RateLimit", "Privacy", "Support", "Localization", "Ldap", "Saml", "NativeApp", "Meilisearch", "Bleve", "DataRetention", "ImageProxy", });
+    internal_static_common_v1_ConfigGetRequest_descriptor =
+      getDescriptor().getMessageTypes().get(22);
+    internal_static_common_v1_ConfigGetRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_common_v1_ConfigGetRequest_descriptor,
+        new java.lang.String[] { });
+    internal_static_common_v1_ConfigGetResponse_descriptor =
+      getDescriptor().getMessageTypes().get(23);
+    internal_static_common_v1_ConfigGetResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_common_v1_ConfigGetResponse_descriptor,
+        new java.lang.String[] { "Data", "Error", "Response", });
+    internal_static_common_v1_ConfigUpdateRequest_descriptor =
+      getDescriptor().getMessageTypes().get(24);
+    internal_static_common_v1_ConfigUpdateRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_common_v1_ConfigUpdateRequest_descriptor,
+        new java.lang.String[] { "Config", });
+    internal_static_common_v1_ConfigUpdateResponse_descriptor =
+      getDescriptor().getMessageTypes().get(25);
+    internal_static_common_v1_ConfigUpdateResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_common_v1_ConfigUpdateResponse_descriptor,
+        new java.lang.String[] { "Data", "Error", "Response", });
+    internal_static_common_v1_ConfigListenerResponse_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_common_v1_ConfigListenerResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_common_v1_ConfigListenerResponse_descriptor,
+        new java.lang.String[] { "Data", "Error", "Response", });
+    internal_static_common_v1_ConfigListenerRequest_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_common_v1_ConfigListenerRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_common_v1_ConfigListenerRequest_descriptor,
+        new java.lang.String[] { "ClientId", });
+    org.megacommerce.common.v1.ErrorProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

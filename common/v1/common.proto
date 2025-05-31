@@ -3,7 +3,6 @@ syntax = "proto3";
 package common.v1;
 
 import "common/v1/config.proto";
-import "common/v1/error.proto";
 import "common/v1/trans.proto";
 
 option cc_enable_arenas = true;
@@ -12,41 +11,9 @@ option java_outer_classname = "CommonProto";
 option java_package = "org.megacommerce.common.v1";
 
 service CommonService {
-  rpc ConfigGet(ConfigGetRequest) returns (ConfigGetResponse);
-  rpc ConfigUpdate(ConfigUpdateRequest) returns (ConfigUpdateResponse);
-  rpc ConfigListener(ConfigListenerRequest) returns (stream ConfigListenerResponse);
+  rpc ConfigGet(common.v1.ConfigGetRequest) returns (common.v1.ConfigGetResponse);
+  rpc ConfigUpdate(common.v1.ConfigUpdateRequest) returns (common.v1.ConfigUpdateResponse);
+  rpc ConfigListener(common.v1.ConfigListenerRequest) returns (stream common.v1.ConfigListenerResponse);
   rpc TranslationsGet(common.v1.TranslationsGetRequest) returns (common.v1.TranslationsGetResponse);
   rpc TranslationForLangGet(common.v1.TranslationsForLangGetRequest) returns (common.v1.TranslationsForLangGetResponse);
 }
-
-message ConfigGetRequest {}
-
-message ConfigGetResponse {
-  oneof response {
-    common.v1.Config data = 1;
-    common.v1.AppError error = 2;
-  }
-}
-
-message ConfigUpdateRequest {
-  common.v1.Config config = 1;
-}
-
-message ConfigUpdateResponse {
-  oneof response {
-    common.v1.Config data = 1;
-    common.v1.AppError error = 2;
-  }
-}
-
-message ConfigListenerResponse {
-  oneof response {
-    common.v1.Config data = 1;
-    common.v1.AppError error = 2;
-  }
-}
-
-message ConfigListenerRequest {
-  string client_id = 1;
-}
-

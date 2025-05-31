@@ -532,9 +532,80 @@ struct ConfigDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ConfigDefaultTypeInternal _Config_default_instance_;
+constexpr ConfigGetRequest::ConfigGetRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct ConfigGetRequestDefaultTypeInternal {
+  constexpr ConfigGetRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ConfigGetRequestDefaultTypeInternal() {}
+  union {
+    ConfigGetRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ConfigGetRequestDefaultTypeInternal _ConfigGetRequest_default_instance_;
+constexpr ConfigGetResponse::ConfigGetResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : _oneof_case_{}{}
+struct ConfigGetResponseDefaultTypeInternal {
+  constexpr ConfigGetResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ConfigGetResponseDefaultTypeInternal() {}
+  union {
+    ConfigGetResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ConfigGetResponseDefaultTypeInternal _ConfigGetResponse_default_instance_;
+constexpr ConfigUpdateRequest::ConfigUpdateRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : config_(nullptr){}
+struct ConfigUpdateRequestDefaultTypeInternal {
+  constexpr ConfigUpdateRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ConfigUpdateRequestDefaultTypeInternal() {}
+  union {
+    ConfigUpdateRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ConfigUpdateRequestDefaultTypeInternal _ConfigUpdateRequest_default_instance_;
+constexpr ConfigUpdateResponse::ConfigUpdateResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : _oneof_case_{}{}
+struct ConfigUpdateResponseDefaultTypeInternal {
+  constexpr ConfigUpdateResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ConfigUpdateResponseDefaultTypeInternal() {}
+  union {
+    ConfigUpdateResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ConfigUpdateResponseDefaultTypeInternal _ConfigUpdateResponse_default_instance_;
+constexpr ConfigListenerResponse::ConfigListenerResponse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : _oneof_case_{}{}
+struct ConfigListenerResponseDefaultTypeInternal {
+  constexpr ConfigListenerResponseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ConfigListenerResponseDefaultTypeInternal() {}
+  union {
+    ConfigListenerResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ConfigListenerResponseDefaultTypeInternal _ConfigListenerResponse_default_instance_;
+constexpr ConfigListenerRequest::ConfigListenerRequest(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : client_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
+struct ConfigListenerRequestDefaultTypeInternal {
+  constexpr ConfigListenerRequestDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~ConfigListenerRequestDefaultTypeInternal() {}
+  union {
+    ConfigListenerRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ConfigListenerRequestDefaultTypeInternal _ConfigListenerRequest_default_instance_;
 }  // namespace v1
 }  // namespace common
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_common_2fv1_2fconfig_2eproto[22];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_common_2fv1_2fconfig_2eproto[28];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_common_2fv1_2fconfig_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_common_2fv1_2fconfig_2eproto = nullptr;
 
@@ -1194,6 +1265,53 @@ const uint32_t TableStruct_common_2fv1_2fconfig_2eproto::offsets[] PROTOBUF_SECT
   PROTOBUF_FIELD_OFFSET(::common::v1::Config, bleve_),
   PROTOBUF_FIELD_OFFSET(::common::v1::Config, data_retention_),
   PROTOBUF_FIELD_OFFSET(::common::v1::Config, image_proxy_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::common::v1::ConfigGetRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::common::v1::ConfigGetResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::common::v1::ConfigGetResponse, _oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::common::v1::ConfigGetResponse, response_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::common::v1::ConfigUpdateRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::common::v1::ConfigUpdateRequest, config_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::common::v1::ConfigUpdateResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::common::v1::ConfigUpdateResponse, _oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::common::v1::ConfigUpdateResponse, response_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::common::v1::ConfigListenerResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::common::v1::ConfigListenerResponse, _oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::common::v1::ConfigListenerResponse, response_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::common::v1::ConfigListenerRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::common::v1::ConfigListenerRequest, client_id_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 27, -1, sizeof(::common::v1::ConfigMain)},
@@ -1218,6 +1336,12 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 588, 604, -1, sizeof(::common::v1::ConfigDataRetention)},
   { 614, 624, -1, sizeof(::common::v1::ConfigImageProxy)},
   { 628, -1, -1, sizeof(::common::v1::Config)},
+  { 655, -1, -1, sizeof(::common::v1::ConfigGetRequest)},
+  { 661, -1, -1, sizeof(::common::v1::ConfigGetResponse)},
+  { 670, -1, -1, sizeof(::common::v1::ConfigUpdateRequest)},
+  { 677, -1, -1, sizeof(::common::v1::ConfigUpdateResponse)},
+  { 686, -1, -1, sizeof(::common::v1::ConfigListenerResponse)},
+  { 695, -1, -1, sizeof(::common::v1::ConfigListenerRequest)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -1243,529 +1367,551 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_ConfigDataRetention_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_ConfigImageProxy_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_Config_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_ConfigGetRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_ConfigGetResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_ConfigUpdateRequest_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_ConfigUpdateResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_ConfigListenerResponse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_ConfigListenerRequest_default_instance_),
 };
 
 const char descriptor_table_protodef_common_2fv1_2fconfig_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\026common/v1/config.proto\022\tcommon.v1\"\236\017\n\n"
-  "ConfigMain\022&\n\014read_timeout\030\001 \001(\005H\000R\013read"
-  "Timeout\210\001\001\022(\n\rwrite_timeout\030\002 \001(\005H\001R\014wri"
-  "teTimeout\210\001\001\022&\n\014idle_timeout\030\003 \001(\005H\002R\013id"
-  "leTimeout\210\001\001\0225\n\024enable_link_previews\030\004 \001"
-  "(\010H\003R\022enableLinkPreviews\210\001\001\0229\n\026restrict_"
-  "link_previews\030\005 \001(\tH\004R\024restrictLinkPrevi"
-  "ews\210\001\001\022R\n#enable_client_performance_debu"
-  "gging\030\006 \001(\010H\005R enableClientPerformanceDe"
-  "bugging\210\001\001\022/\n\021enable_gif_picker\030\007 \001(\010H\006R"
-  "\017enableGifPicker\210\001\001\0223\n\023enable_custom_emo"
-  "ji\030\010 \001(\010H\007R\021enableCustomEmoji\210\001\001\0223\n\023enab"
-  "le_emoji_picker\030\t \001(\010H\010R\021enableEmojiPick"
-  "er\210\001\001\022d\n-time_between_user_typing_update"
-  "s_milliseconds\030\n \001(\003H\tR(timeBetweenUserT"
-  "ypingUpdatesMilliseconds\210\001\001\0221\n\022enable_fi"
-  "le_search\030\013 \001(\010H\nR\020enableFileSearch\210\001\001\022B"
-  "\n\033enable_user_typing_messages\030\014 \001(\010H\013R\030e"
-  "nableUserTypingMessages\210\001\001\0225\n\024enable_use"
-  "r_statuses\030\r \001(\010H\014R\022enableUserStatuses\210\001"
-  "\001\022=\n\030enable_email_invitations\030\016 \001(\010H\rR\026e"
-  "nableEmailInvitations\210\001\001\022$\n\013enable_svgs\030"
-  "\017 \001(\010H\016R\nenableSvgs\210\001\001\022I\n\036allow_persiste"
-  "nt_notifications\030\020 \001(\010H\017R\034allowPersisten"
-  "tNotifications\210\001\001\022\\\n(persistent_notifica"
-  "tion_interval_minutes\030\021 \001(\005H\020R%persisten"
-  "tNotificationIntervalMinutes\210\001\001\022N\n!persi"
-  "stent_notification_max_count\030\022 \001(\005H\021R\036pe"
-  "rsistentNotificationMaxCount\210\001\001\022X\n&persi"
-  "stent_notification_max_recipients\030\023 \001(\005H"
-  "\022R#persistentNotificationMaxRecipients\210\001"
-  "\001\022O\n\"feature_flag_sync_interval_seconds\030"
-  "\024 \001(\005H\023R\036featureFlagSyncIntervalSeconds\210"
-  "\001\001\0223\n\023allow_synced_drafts\030\025 \001(\010H\024R\021allow"
-  "SyncedDrafts\210\001\001B\017\n\r_read_timeoutB\020\n\016_wri"
-  "te_timeoutB\017\n\r_idle_timeoutB\027\n\025_enable_l"
-  "ink_previewsB\031\n\027_restrict_link_previewsB"
-  "&\n$_enable_client_performance_debuggingB"
-  "\024\n\022_enable_gif_pickerB\026\n\024_enable_custom_"
-  "emojiB\026\n\024_enable_emoji_pickerB0\n._time_b"
-  "etween_user_typing_updates_millisecondsB"
-  "\025\n\023_enable_file_searchB\036\n\034_enable_user_t"
-  "yping_messagesB\027\n\025_enable_user_statusesB"
-  "\033\n\031_enable_email_invitationsB\016\n\014_enable_"
-  "svgsB!\n\037_allow_persistent_notificationsB"
-  "+\n)_persistent_notification_interval_min"
-  "utesB$\n\"_persistent_notification_max_cou"
-  "ntB)\n\'_persistent_notification_max_recip"
-  "ientsB%\n#_feature_flag_sync_interval_sec"
-  "ondsB\026\n\024_allow_synced_drafts\"\360\002\n\016ConfigS"
-  "ervices\022<\n\030common_service_grpc_host\030\001 \001("
-  "\tH\000R\025commonServiceGrpcHost\210\001\001\022<\n\030common_"
-  "service_grpc_port\030\002 \001(\005H\001R\025commonService"
-  "GrpcPort\210\001\001\0228\n\026user_service_grpc_host\030\003 "
-  "\001(\tH\002R\023userServiceGrpcHost\210\001\001\0228\n\026user_se"
-  "rvice_grpc_port\030\004 \001(\005H\003R\023userServiceGrpc"
-  "Port\210\001\001B\033\n\031_common_service_grpc_hostB\033\n\031"
-  "_common_service_grpc_portB\031\n\027_user_servi"
-  "ce_grpc_hostB\031\n\027_user_service_grpc_port\""
-  "\327\r\n\016ConfigSecurity\0229\n\026maximum_login_atte"
-  "mpts\030\001 \001(\005H\000R\024maximumLoginAttempts\210\001\001\022T\n"
-  "$enable_insecure_outgoing_connections\030\002 "
-  "\001(\010H\001R!enableInsecureOutgoingConnections"
-  "\210\001\001\022O\n!enable_multifactor_authentication"
-  "\030\003 \001(\010H\002R\037enableMultifactorAuthenticatio"
-  "n\210\001\001\022Q\n\"enforce_multifactor_authenticati"
-  "on\030\004 \001(\010H\003R enforceMultifactorAuthentica"
-  "tion\210\001\001\022F\n\035enable_oauth_service_provider"
-  "\030\005 \001(\010H\004R\032enableOauthServiceProvider\210\001\001\022"
-  "N\n!enable_outgoing_oauth_connections\030\006 \001"
-  "(\010H\005R\036enableOutgoingOauthConnections\210\001\001\022"
-  "U\n%terminate_sessions_on_password_change"
-  "\030\007 \001(\010H\006R!terminateSessionsOnPasswordCha"
-  "nge\210\001\001\022A\n\033session_length_web_in_hours\030\010 "
-  "\001(\005H\007R\027sessionLengthWebInHours\210\001\001\022G\n\036ses"
-  "sion_length_mobile_in_hours\030\t \001(\005H\010R\032ses"
-  "sionLengthMobileInHours\210\001\001\022A\n\033session_le"
-  "ngth_sso_in_hours\030\n \001(\005H\tR\027sessionLength"
-  "SsoInHours\210\001\001\022+\n\017allow_cors_from\030\013 \001(\tH\n"
-  "R\rallowCorsFrom\210\001\001\0225\n\024cors_exposed_heade"
-  "rs\030\014 \001(\tH\013R\022corsExposedHeaders\210\001\001\0229\n\026cor"
-  "s_allow_credentials\030\r \001(\010H\014R\024corsAllowCr"
-  "edentials\210\001\001\022\"\n\ncors_debug\030\016 \001(\010H\rR\tcors"
-  "Debug\210\001\001\022D\n\034allow_cookies_for_subdomains"
-  "\030\017 \001(\010H\016R\031allowCookiesForSubdomains\210\001\001\022<"
-  "\n\030session_cache_in_minutes\030\020 \001(\005H\017R\025sess"
-  "ionCacheInMinutes\210\001\001\0227\n\025websocket_secure"
-  "_port\030\021 \001(\005H\020R\023websocketSecurePort\210\001\001\022*\n"
-  "\016websocket_port\030\022 \001(\005H\021R\rwebsocketPort\210\001"
-  "\001B\031\n\027_maximum_login_attemptsB\'\n%_enable_"
-  "insecure_outgoing_connectionsB$\n\"_enable"
-  "_multifactor_authenticationB%\n#_enforce_"
-  "multifactor_authenticationB \n\036_enable_oa"
-  "uth_service_providerB$\n\"_enable_outgoing"
-  "_oauth_connectionsB(\n&_terminate_session"
-  "s_on_password_changeB\036\n\034_session_length_"
-  "web_in_hoursB!\n\037_session_length_mobile_i"
-  "n_hoursB\036\n\034_session_length_sso_in_hoursB"
-  "\022\n\020_allow_cors_fromB\027\n\025_cors_exposed_hea"
-  "dersB\031\n\027_cors_allow_credentialsB\r\n\013_cors"
-  "_debugB\037\n\035_allow_cookies_for_subdomainsB"
-  "\033\n\031_session_cache_in_minutesB\030\n\026_websock"
-  "et_secure_portB\021\n\017_websocket_port\"\202\003\n\013Ca"
-  "cheConfig\022\"\n\ncache_type\030\001 \001(\tH\000R\tcacheTy"
-  "pe\210\001\001\022(\n\rredis_address\030\002 \001(\tH\001R\014redisAdd"
-  "ress\210\001\001\022*\n\016redis_password\030\003 \001(\tH\002R\rredis"
-  "Password\210\001\001\022\036\n\010redis_db\030\004 \001(\005H\003R\007redisDb"
-  "\210\001\001\0221\n\022redis_cache_prefix\030\005 \001(\tH\004R\020redis"
-  "CachePrefix\210\001\001\0225\n\024disable_client_cache\030\006"
-  " \001(\010H\005R\022disableClientCache\210\001\001B\r\n\013_cache_"
-  "typeB\020\n\016_redis_addressB\021\n\017_redis_passwor"
-  "dB\013\n\t_redis_dbB\025\n\023_redis_cache_prefixB\027\n"
-  "\025_disable_client_cache\"\251\003\n\rConfigMetrics"
-  "\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\0221\n\022block_p"
-  "rofile_rate\030\002 \001(\005H\001R\020blockProfileRate\210\001\001"
-  "\022*\n\016listen_address\030\003 \001(\tH\002R\rlistenAddres"
-  "s\210\001\001\0227\n\025enable_client_metrics\030\004 \001(\010H\003R\023e"
-  "nableClientMetrics\210\001\001\022C\n\033enable_notifica"
-  "tion_metrics\030\005 \001(\010H\004R\031enableNotification"
-  "Metrics\210\001\001\022/\n\024client_side_user_ids\030\006 \003(\t"
-  "R\021clientSideUserIdsB\t\n\007_enableB\025\n\023_block"
-  "_profile_rateB\021\n\017_listen_addressB\030\n\026_ena"
-  "ble_client_metricsB\036\n\034_enable_notificati"
-  "on_metrics\"\230\004\n\tConfigSSO\022\033\n\006enable\030\001 \001(\010"
-  "H\000R\006enable\210\001\001\022\033\n\006secret\030\002 \001(\tH\001R\006secret\210"
-  "\001\001\022\023\n\002id\030\003 \001(\tH\002R\002id\210\001\001\022\031\n\005scope\030\004 \001(\tH\003"
-  "R\005scope\210\001\001\022(\n\rauth_endpoint\030\005 \001(\tH\004R\014aut"
-  "hEndpoint\210\001\001\022*\n\016token_endpoint\030\006 \001(\tH\005R\r"
-  "tokenEndpoint\210\001\001\022/\n\021user_api_endpoint\030\007 "
-  "\001(\tH\006R\017userApiEndpoint\210\001\001\0222\n\022discovery_e"
-  "ndpoint\030\010 \001(\tH\007R\021discoveryEndpoint\210\001\001\022$\n"
-  "\013button_text\030\t \001(\tH\010R\nbuttonText\210\001\001\022&\n\014b"
-  "utton_color\030\n \001(\tH\tR\013buttonColor\210\001\001B\t\n\007_"
-  "enableB\t\n\007_secretB\005\n\003_idB\010\n\006_scopeB\020\n\016_a"
-  "uth_endpointB\021\n\017_token_endpointB\024\n\022_user"
-  "_api_endpointB\025\n\023_discovery_endpointB\016\n\014"
-  "_button_textB\017\n\r_button_color\"\325\005\n\tConfig"
-  "Sql\022$\n\013driver_name\030\001 \001(\tH\000R\ndriverName\210\001"
-  "\001\022$\n\013data_source\030\002 \001(\tH\001R\ndataSource\210\001\001\022"
-  ")\n\016max_idle_conns\030\003 \001(\005H\002R\014maxIdleConns\210"
-  "\001\001\022H\n\036conn_max_lifetime_milliseconds\030\004 \001"
-  "(\005H\003R\033connMaxLifetimeMilliseconds\210\001\001\022I\n\037"
-  "conn_max_idle_time_milliseconds\030\005 \001(\005H\004R"
-  "\033connMaxIdleTimeMilliseconds\210\001\001\022)\n\016max_o"
-  "pen_conns\030\006 \001(\005H\005R\014maxOpenConns\210\001\001\022\031\n\005tr"
-  "ace\030\007 \001(\010H\006R\005trace\210\001\001\0222\n\023at_rest_encrypt"
-  "_key\030\010 \001(\tH\007R\020atRestEncryptKey\210\001\001\022(\n\rque"
-  "ry_timeout\030\t \001(\005H\010R\014queryTimeout\210\001\001\022;\n\027d"
-  "isable_database_search\030\n \001(\010H\tR\025disableD"
-  "atabaseSearch\210\001\001B\016\n\014_driver_nameB\016\n\014_dat"
-  "a_sourceB\021\n\017_max_idle_connsB!\n\037_conn_max"
-  "_lifetime_millisecondsB\"\n _conn_max_idle"
-  "_time_millisecondsB\021\n\017_max_open_connsB\010\n"
-  "\006_traceB\026\n\024_at_rest_encrypt_keyB\020\n\016_quer"
-  "y_timeoutB\032\n\030_disable_database_search\"\313\002"
-  "\n\016ConfigPassword\022*\n\016minimum_length\030\001 \001(\005"
-  "H\000R\rminimumLength\210\001\001\022!\n\tlowercase\030\002 \001(\010H"
-  "\001R\tlowercase\210\001\001\022\033\n\006number\030\003 \001(\010H\002R\006numbe"
-  "r\210\001\001\022!\n\tuppercase\030\004 \001(\010H\003R\tuppercase\210\001\001\022"
-  "\033\n\006symbol\030\005 \001(\010H\004R\006symbol\210\001\001\0221\n\022enable_f"
-  "orgot_link\030\006 \001(\010H\005R\020enableForgotLink\210\001\001B"
-  "\021\n\017_minimum_lengthB\014\n\n_lowercaseB\t\n\007_num"
-  "berB\014\n\n_uppercaseB\t\n\007_symbolB\025\n\023_enable_"
-  "forgot_link\"\340\017\n\nConfigFile\022;\n\027enable_fil"
-  "e_attachments\030\001 \001(\010H\000R\025enableFileAttachm"
-  "ents\210\001\001\0225\n\024enable_mobile_upload\030\002 \001(\010H\001R"
-  "\022enableMobileUpload\210\001\001\0229\n\026enable_mobile_"
-  "download\030\003 \001(\010H\002R\024enableMobileDownload\210\001"
-  "\001\022\'\n\rmax_file_size\030\004 \001(\003H\003R\013maxFileSize\210"
-  "\001\001\0225\n\024max_image_resolution\030\005 \001(\003H\004R\022maxI"
-  "mageResolution\210\001\001\022F\n\035max_image_decoder_c"
-  "oncurrency\030\006 \001(\003H\005R\032maxImageDecoderConcu"
-  "rrency\210\001\001\022$\n\013driver_name\030\007 \001(\tH\006R\ndriver"
-  "Name\210\001\001\022!\n\tdirectory\030\010 \001(\tH\007R\tdirectory\210"
-  "\001\001\0221\n\022enable_public_link\030\t \001(\010H\010R\020enable"
-  "PublicLink\210\001\001\022,\n\017extract_content\030\n \001(\010H\t"
-  "R\016extractContent\210\001\001\0220\n\021archive_recursion"
-  "\030\013 \001(\010H\nR\020archiveRecursion\210\001\001\022-\n\020public_"
-  "link_salt\030\014 \001(\tH\013R\016publicLinkSalt\210\001\001\022&\n\014"
-  "initial_font\030\r \001(\tH\014R\013initialFont\210\001\001\0229\n\027"
-  "amazon_s3_access_key_id\030\016 \001(\tH\rR\023amazonS"
-  "3AccessKeyId\210\001\001\022A\n\033amazon_s3_secret_acce"
-  "ss_key\030\017 \001(\tH\016R\027amazonS3SecretAccessKey\210"
-  "\001\001\022-\n\020amazon_s3_bucket\030\020 \001(\tH\017R\016amazonS3"
-  "Bucket\210\001\001\0226\n\025amazon_s3_path_prefix\030\021 \001(\t"
-  "H\020R\022amazonS3PathPrefix\210\001\001\022-\n\020amazon_s3_r"
-  "egion\030\022 \001(\tH\021R\016amazonS3Region\210\001\001\0221\n\022amaz"
-  "on_s3_endpoint\030\023 \001(\tH\022R\020amazonS3Endpoint"
-  "\210\001\001\022\'\n\ramazon_s3_ssl\030\024 \001(\010H\023R\013amazonS3Ss"
-  "l\210\001\001\022.\n\021amazon_s3_sign_v2\030\025 \001(\010H\024R\016amazo"
-  "nS3SignV2\210\001\001\022\'\n\ramazon_s3_sse\030\026 \001(\010H\025R\013a"
-  "mazonS3Sse\210\001\001\022+\n\017amazon_s3_trace\030\027 \001(\010H\026"
-  "R\ramazonS3Trace\210\001\001\022W\n&amazon_s3_request_"
-  "timeout_milliseconds\030\030 \001(\003H\027R\"amazonS3Re"
-  "questTimeoutMilliseconds\210\001\001\022J\n amazon_s3"
-  "_upload_part_size_bytes\030\031 \001(\003H\030R\033amazonS"
-  "3UploadPartSizeBytes\210\001\001\022:\n\027amazon_s3_sto"
-  "rage_class\030\032 \001(\tH\031R\024amazonS3StorageClass"
-  "\210\001\001B\032\n\030_enable_file_attachmentsB\027\n\025_enab"
-  "le_mobile_uploadB\031\n\027_enable_mobile_downl"
-  "oadB\020\n\016_max_file_sizeB\027\n\025_max_image_reso"
-  "lutionB \n\036_max_image_decoder_concurrency"
-  "B\016\n\014_driver_nameB\014\n\n_directoryB\025\n\023_enabl"
-  "e_public_linkB\022\n\020_extract_contentB\024\n\022_ar"
-  "chive_recursionB\023\n\021_public_link_saltB\017\n\r"
-  "_initial_fontB\032\n\030_amazon_s3_access_key_i"
-  "dB\036\n\034_amazon_s3_secret_access_keyB\023\n\021_am"
-  "azon_s3_bucketB\030\n\026_amazon_s3_path_prefix"
-  "B\023\n\021_amazon_s3_regionB\025\n\023_amazon_s3_endp"
-  "ointB\020\n\016_amazon_s3_sslB\024\n\022_amazon_s3_sig"
-  "n_v2B\020\n\016_amazon_s3_sseB\022\n\020_amazon_s3_tra"
-  "ceB)\n\'_amazon_s3_request_timeout_millise"
-  "condsB#\n!_amazon_s3_upload_part_size_byt"
-  "esB\032\n\030_amazon_s3_storage_class\"\375\016\n\013Confi"
-  "gEmail\022=\n\030send_email_notifications\030\001 \001(\010"
-  "H\000R\026sendEmailNotifications\210\001\001\022A\n\032require"
-  "_email_verification\030\002 \001(\010H\001R\030requireEmai"
-  "lVerification\210\001\001\022*\n\016feedback_email\030\003 \001(\t"
-  "H\002R\rfeedbackEmail\210\001\001\022-\n\020reply_to_address"
-  "\030\004 \001(\tH\003R\016replyToAddress\210\001\001\022-\n\020enable_sm"
-  "tp_auth\030\005 \001(\010H\004R\016enableSmtpAuth\210\001\001\022(\n\rsm"
-  "tp_username\030\006 \001(\tH\005R\014smtpUsername\210\001\001\022(\n\r"
-  "smtp_password\030\007 \001(\tH\006R\014smtpPassword\210\001\001\022$"
-  "\n\013smtp_server\030\010 \001(\tH\007R\nsmtpServer\210\001\001\022 \n\t"
-  "smtp_port\030\t \001(\tH\010R\010smtpPort\210\001\001\0223\n\023smtp_s"
-  "erver_timeout\030\n \001(\005H\tR\021smtpServerTimeout"
-  "\210\001\001\0224\n\023connection_security\030\013 \001(\tH\nR\022conn"
-  "ectionSecurity\210\001\001\022;\n\027send_push_notificat"
-  "ions\030\014 \001(\010H\013R\025sendPushNotifications\210\001\001\022="
-  "\n\030push_notification_server\030\r \001(\tH\014R\026push"
-  "NotificationServer\210\001\001\022A\n\032push_notificati"
-  "on_contents\030\016 \001(\tH\rR\030pushNotificationCon"
-  "tents\210\001\001\022=\n\030push_notification_buffer\030\017 \001"
-  "(\005H\016R\026pushNotificationBuffer\210\001\001\0227\n\025enabl"
-  "e_email_batching\030\020 \001(\010H\017R\023enableEmailBat"
-  "ching\210\001\001\022@\n\032email_batching_buffer_size\030\021"
-  " \001(\005H\020R\027emailBatchingBufferSize\210\001\001\022;\n\027em"
-  "ail_batching_interval\030\022 \001(\005H\021R\025emailBatc"
-  "hingInterval\210\001\001\022T\n$skip_server_certifica"
-  "te_verification\030\023 \001(\010H\022R!skipServerCerti"
-  "ficateVerification\210\001\001\022L\n email_notificat"
-  "ion_contents_type\030\024 \001(\tH\023R\035emailNotifica"
-  "tionContentsType\210\001\001\0221\n\022login_button_colo"
-  "r\030\025 \001(\tH\024R\020loginButtonColor\210\001\001\022>\n\031login_"
-  "button_border_color\030\026 \001(\tH\025R\026loginButton"
-  "BorderColor\210\001\001\022:\n\027login_button_text_colo"
-  "r\030\027 \001(\tH\026R\024loginButtonTextColor\210\001\001B\033\n\031_s"
-  "end_email_notificationsB\035\n\033_require_emai"
-  "l_verificationB\021\n\017_feedback_emailB\023\n\021_re"
-  "ply_to_addressB\023\n\021_enable_smtp_authB\020\n\016_"
-  "smtp_usernameB\020\n\016_smtp_passwordB\016\n\014_smtp"
-  "_serverB\014\n\n_smtp_portB\026\n\024_smtp_server_ti"
-  "meoutB\026\n\024_connection_securityB\032\n\030_send_p"
-  "ush_notificationsB\033\n\031_push_notification_"
-  "serverB\035\n\033_push_notification_contentsB\033\n"
-  "\031_push_notification_bufferB\030\n\026_enable_em"
-  "ail_batchingB\035\n\033_email_batching_buffer_s"
-  "izeB\032\n\030_email_batching_intervalB\'\n%_skip"
-  "_server_certificate_verificationB#\n!_ema"
-  "il_notification_contents_typeB\025\n\023_login_"
-  "button_colorB\034\n\032_login_button_border_col"
-  "orB\032\n\030_login_button_text_color\"\204\003\n\017Confi"
-  "gRateLimit\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022"
-  "\034\n\007per_sec\030\002 \001(\005H\001R\006perSec\210\001\001\022 \n\tmax_bur"
-  "st\030\003 \001(\005H\002R\010maxBurst\210\001\001\022/\n\021memory_store_"
-  "size\030\004 \001(\005H\003R\017memoryStoreSize\210\001\001\0222\n\023vary"
-  "_by_remote_addr\030\005 \001(\010H\004R\020varyByRemoteAdd"
-  "r\210\001\001\022%\n\014vary_by_user\030\006 \001(\010H\005R\nvaryByUser"
-  "\210\001\001\022$\n\016vary_by_header\030\007 \001(\tR\014varyByHeade"
-  "rB\t\n\007_enableB\n\n\010_per_secB\014\n\n_max_burstB\024"
-  "\n\022_memory_store_sizeB\026\n\024_vary_by_remote_"
-  "addrB\017\n\r_vary_by_user\"\227\001\n\rConfigPrivacy\022"
-  "1\n\022show_email_address\030\001 \001(\010H\000R\020showEmail"
-  "Address\210\001\001\022)\n\016show_full_name\030\002 \001(\010H\001R\014sh"
-  "owFullName\210\001\001B\025\n\023_show_email_addressB\021\n\017"
-  "_show_full_name\"\357\003\n\rConfigSupport\0226\n\025ter"
-  "ms_of_service_link\030\001 \001(\tH\000R\022termsOfServi"
-  "ceLink\210\001\001\0223\n\023privacy_policy_link\030\002 \001(\tH\001"
-  "R\021privacyPolicyLink\210\001\001\022\"\n\nabout_link\030\003 \001"
-  "(\tH\002R\taboutLink\210\001\001\022 \n\thelp_link\030\004 \001(\tH\003R"
-  "\010helpLink\210\001\001\0226\n\025report_a_problem_link\030\005 "
-  "\001(\tH\004R\022reportAProblemLink\210\001\001\0225\n\024forgot_p"
-  "assword_link\030\006 \001(\tH\005R\022forgotPasswordLink"
-  "\210\001\001\022(\n\rsupport_email\030\007 \001(\tH\006R\014supportEma"
-  "il\210\001\001B\030\n\026_terms_of_service_linkB\026\n\024_priv"
-  "acy_policy_linkB\r\n\013_about_linkB\014\n\n_help_"
-  "linkB\030\n\026_report_a_problem_linkB\027\n\025_forgo"
-  "t_password_linkB\020\n\016_support_email\"\202\002\n\022Co"
-  "nfigLocalization\0227\n\025default_server_local"
-  "e\030\001 \001(\tH\000R\023defaultServerLocale\210\001\001\0227\n\025def"
-  "ault_client_locale\030\002 \001(\tH\001R\023defaultClien"
-  "tLocale\210\001\001\0220\n\021available_locales\030\003 \001(\tH\002R"
-  "\020availableLocales\210\001\001B\030\n\026_default_server_"
-  "localeB\030\n\026_default_client_localeB\024\n\022_ava"
-  "ilable_locales\"\325\020\n\nConfigLdap\022\033\n\006enable\030"
-  "\001 \001(\010H\000R\006enable\210\001\001\022$\n\013enable_sync\030\002 \001(\010H"
-  "\001R\nenableSync\210\001\001\022$\n\013ldap_server\030\003 \001(\tH\002R"
-  "\nldapServer\210\001\001\022 \n\tldap_port\030\004 \001(\005H\003R\010lda"
-  "pPort\210\001\001\0224\n\023connection_security\030\005 \001(\tH\004R"
-  "\022connectionSecurity\210\001\001\022\034\n\007base_dn\030\006 \001(\tH"
-  "\005R\006baseDn\210\001\001\022(\n\rbind_username\030\007 \001(\tH\006R\014b"
-  "indUsername\210\001\001\022(\n\rbind_password\030\010 \001(\tH\007R"
-  "\014bindPassword\210\001\001\0229\n\026maximum_login_attemp"
-  "ts\030\t \001(\005H\010R\024maximumLoginAttempts\210\001\001\022$\n\013u"
-  "ser_filter\030\n \001(\tH\tR\nuserFilter\210\001\001\022&\n\014gro"
-  "up_filter\030\013 \001(\tH\nR\013groupFilter\210\001\001\0223\n\023ena"
-  "ble_admin_filter\030\014 \001(\010H\013R\021enableAdminFil"
-  "ter\210\001\001\022&\n\014admin_filter\030\r \001(\tH\014R\013adminFil"
-  "ter\210\001\001\022D\n\034group_display_name_attribute\030\016"
-  " \001(\tH\rR\031groupDisplayNameAttribute\210\001\001\0221\n\022"
-  "group_id_attribute\030\017 \001(\tH\016R\020groupIdAttri"
-  "bute\210\001\001\0225\n\024first_name_attribute\030\020 \001(\tH\017R"
-  "\022firstNameAttribute\210\001\001\0223\n\023last_name_attr"
-  "ibute\030\021 \001(\tH\020R\021lastNameAttribute\210\001\001\022,\n\017e"
-  "mail_attribute\030\022 \001(\tH\021R\016emailAttribute\210\001"
-  "\001\0222\n\022username_attribute\030\023 \001(\tH\022R\021usernam"
-  "eAttribute\210\001\001\0222\n\022nickname_attribute\030\024 \001("
-  "\tH\023R\021nicknameAttribute\210\001\001\022&\n\014id_attribut"
-  "e\030\025 \001(\tH\024R\013idAttribute\210\001\001\0222\n\022position_at"
-  "tribute\030\026 \001(\tH\025R\021positionAttribute\210\001\001\0221\n"
-  "\022login_id_attribute\030\027 \001(\tH\026R\020loginIdAttr"
-  "ibute\210\001\001\0220\n\021picture_attribute\030\030 \001(\tH\027R\020p"
-  "ictureAttribute\210\001\001\0227\n\025sync_interval_minu"
-  "tes\030\031 \001(\005H\030R\023syncIntervalMinutes\210\001\001\022(\n\rq"
-  "uery_timeout\030\032 \001(\005H\031R\014queryTimeout\210\001\001\022\'\n"
-  "\rmax_page_size\030\033 \001(\005H\032R\013maxPageSize\210\001\001\022-"
-  "\n\020login_field_name\030\034 \001(\tH\033R\016loginFieldNa"
-  "me\210\001\001\0221\n\022login_button_color\030\035 \001(\tH\034R\020log"
-  "inButtonColor\210\001\001\022>\n\031login_button_border_"
-  "color\030\036 \001(\tH\035R\026loginButtonBorderColor\210\001\001"
-  "\022:\n\027login_button_text_color\030\037 \001(\tH\036R\024log"
-  "inButtonTextColor\210\001\001B\t\n\007_enableB\016\n\014_enab"
-  "le_syncB\016\n\014_ldap_serverB\014\n\n_ldap_portB\026\n"
-  "\024_connection_securityB\n\n\010_base_dnB\020\n\016_bi"
-  "nd_usernameB\020\n\016_bind_passwordB\031\n\027_maximu"
-  "m_login_attemptsB\016\n\014_user_filterB\017\n\r_gro"
-  "up_filterB\026\n\024_enable_admin_filterB\017\n\r_ad"
-  "min_filterB\037\n\035_group_display_name_attrib"
-  "uteB\025\n\023_group_id_attributeB\027\n\025_first_nam"
-  "e_attributeB\026\n\024_last_name_attributeB\022\n\020_"
-  "email_attributeB\025\n\023_username_attributeB\025"
-  "\n\023_nickname_attributeB\017\n\r_id_attributeB\025"
-  "\n\023_position_attributeB\025\n\023_login_id_attri"
-  "buteB\024\n\022_picture_attributeB\030\n\026_sync_inte"
-  "rval_minutesB\020\n\016_query_timeoutB\020\n\016_max_p"
-  "age_sizeB\023\n\021_login_field_nameB\025\n\023_login_"
-  "button_colorB\034\n\032_login_button_border_col"
-  "orB\032\n\030_login_button_text_color\"\255\023\n\nConfi"
-  "gSaml\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\0226\n\025en"
-  "able_sync_with_ldap\030\002 \001(\010H\001R\022enableSyncW"
-  "ithLdap\210\001\001\022N\n\"enable_sync_with_ldap_incl"
-  "ude_auth\030\003 \001(\010H\002R\035enableSyncWithLdapIncl"
-  "udeAuth\210\001\001\022:\n\027ignore_guests_ldap_sync\030\004 "
-  "\001(\010H\003R\024ignoreGuestsLdapSync\210\001\001\022\033\n\006verify"
-  "\030\005 \001(\010H\004R\006verify\210\001\001\022\035\n\007encrypt\030\006 \001(\010H\005R\007"
-  "encrypt\210\001\001\022&\n\014sign_request\030\007 \001(\010H\006R\013sign"
-  "Request\210\001\001\022\034\n\007idp_url\030\010 \001(\tH\007R\006idpUrl\210\001\001"
-  "\0221\n\022idp_descriptor_url\030\t \001(\tH\010R\020idpDescr"
-  "iptorUrl\210\001\001\022-\n\020idp_metadata_url\030\n \001(\tH\tR"
-  "\016idpMetadataUrl\210\001\001\022C\n\033service_provider_i"
-  "dentifier\030\013 \001(\tH\nR\031serviceProviderIdenti"
-  "fier\210\001\001\022H\n\036assertion_consumer_service_ur"
-  "l\030\014 \001(\tH\013R\033assertionConsumerServiceUrl\210\001"
-  "\001\0224\n\023signature_algorithm\030\r \001(\tH\014R\022signat"
-  "ureAlgorithm\210\001\001\0224\n\023canonical_algorithm\030\016"
-  " \001(\tH\rR\022canonicalAlgorithm\210\001\001\022:\n\027scoping"
-  "_idp_provider_id\030\017 \001(\tH\016R\024scopingIdpProv"
-  "iderId\210\001\001\022-\n\020scoping_idp_name\030\020 \001(\tH\017R\016s"
-  "copingIdpName\210\001\001\0225\n\024idp_certificate_file"
-  "\030\021 \001(\tH\020R\022idpCertificateFile\210\001\001\022;\n\027publi"
-  "c_certificate_file\030\022 \001(\tH\021R\025publicCertif"
-  "icateFile\210\001\001\022-\n\020private_key_file\030\023 \001(\tH\022"
-  "R\016privateKeyFile\210\001\001\022&\n\014id_attribute\030\024 \001("
-  "\tH\023R\013idAttribute\210\001\001\0229\n\026enable_admin_attr"
-  "ibute\030\025 \001(\010H\024R\024enableAdminAttribute\210\001\001\022,"
-  "\n\017admin_attribute\030\026 \001(\tH\025R\016adminAttribut"
-  "e\210\001\001\0225\n\024first_name_attribute\030\027 \001(\tH\026R\022fi"
-  "rstNameAttribute\210\001\001\0223\n\023last_name_attribu"
-  "te\030\030 \001(\tH\027R\021lastNameAttribute\210\001\001\022,\n\017emai"
-  "l_attribute\030\031 \001(\tH\030R\016emailAttribute\210\001\001\0222"
-  "\n\022username_attribute\030\032 \001(\tH\031R\021usernameAt"
-  "tribute\210\001\001\0222\n\022nickname_attribute\030\033 \001(\tH\032"
-  "R\021nicknameAttribute\210\001\001\022.\n\020locale_attribu"
-  "te\030\034 \001(\tH\033R\017localeAttribute\210\001\001\0222\n\022positi"
-  "on_attribute\030\035 \001(\tH\034R\021positionAttribute\210"
-  "\001\001\022/\n\021login_button_text\030\036 \001(\tH\035R\017loginBu"
-  "ttonText\210\001\001\0221\n\022login_button_color\030\037 \001(\tH"
-  "\036R\020loginButtonColor\210\001\001\022>\n\031login_button_b"
-  "order_color\030  \001(\tH\037R\026loginButtonBorderCo"
-  "lor\210\001\001\022:\n\027login_button_text_color\030! \001(\tH"
-  " R\024loginButtonTextColor\210\001\001B\t\n\007_enableB\030\n"
-  "\026_enable_sync_with_ldapB%\n#_enable_sync_"
-  "with_ldap_include_authB\032\n\030_ignore_guests"
-  "_ldap_syncB\t\n\007_verifyB\n\n\010_encryptB\017\n\r_si"
-  "gn_requestB\n\n\010_idp_urlB\025\n\023_idp_descripto"
-  "r_urlB\023\n\021_idp_metadata_urlB\036\n\034_service_p"
-  "rovider_identifierB!\n\037_assertion_consume"
-  "r_service_urlB\026\n\024_signature_algorithmB\026\n"
-  "\024_canonical_algorithmB\032\n\030_scoping_idp_pr"
-  "ovider_idB\023\n\021_scoping_idp_nameB\027\n\025_idp_c"
-  "ertificate_fileB\032\n\030_public_certificate_f"
-  "ileB\023\n\021_private_key_fileB\017\n\r_id_attribut"
-  "eB\031\n\027_enable_admin_attributeB\022\n\020_admin_a"
-  "ttributeB\027\n\025_first_name_attributeB\026\n\024_la"
-  "st_name_attributeB\022\n\020_email_attributeB\025\n"
-  "\023_username_attributeB\025\n\023_nickname_attrib"
-  "uteB\023\n\021_locale_attributeB\025\n\023_position_at"
-  "tributeB\024\n\022_login_button_textB\025\n\023_login_"
-  "button_colorB\034\n\032_login_button_border_col"
-  "orB\032\n\030_login_button_text_color\"\301\005\n\017Confi"
-  "gNativeApp\0223\n\026app_custom_url_schemes\030\001 \003"
-  "(\tR\023appCustomUrlSchemes\022/\n\021app_download_"
-  "link\030\002 \001(\tH\000R\017appDownloadLink\210\001\001\022>\n\031andr"
-  "oid_app_download_link\030\003 \001(\tH\001R\026androidAp"
-  "pDownloadLink\210\001\001\0226\n\025ios_app_download_lin"
-  "k\030\004 \001(\tH\002R\022iosAppDownloadLink\210\001\001\022;\n\027mobi"
-  "le_external_browser\030\005 \001(\010H\003R\025mobileExter"
-  "nalBrowser\210\001\001\022=\n\030mobile_enable_biometric"
-  "s\030\006 \001(\010H\004R\026mobileEnableBiometrics\210\001\001\022F\n\035"
-  "mobile_prevent_screen_capture\030\007 \001(\010H\005R\032m"
-  "obilePreventScreenCapture\210\001\001\022C\n\033mobile_j"
-  "ailbreak_protection\030\010 \001(\010H\006R\031mobileJailb"
-  "reakProtection\210\001\001B\024\n\022_app_download_linkB"
-  "\034\n\032_android_app_download_linkB\030\n\026_ios_ap"
-  "p_download_linkB\032\n\030_mobile_external_brow"
-  "serB\033\n\031_mobile_enable_biometricsB \n\036_mob"
-  "ile_prevent_screen_captureB\036\n\034_mobile_ja"
-  "ilbreak_protection\"\253\005\n\021ConfigMeilisearch"
-  "\022#\n\nserver_url\030\001 \001(\tH\000R\nserver_url\210\001\001\022\"\n"
-  "\nmaster_key\030\002 \001(\tH\001R\tmasterKey\210\001\001\022,\n\017ena"
-  "ble_indexing\030\003 \001(\010H\002R\016enableIndexing\210\001\001\022"
-  ".\n\020enable_searching\030\004 \001(\010H\003R\017enableSearc"
-  "hing\210\001\001\0224\n\023enable_autocomplete\030\005 \001(\010H\004R\022"
-  "enableAutocomplete\210\001\001\022\"\n\nbatch_size\030\006 \001("
-  "\005H\005R\tbatchSize\210\001\001\022;\n\027request_timeout_sec"
-  "onds\030\007 \001(\005H\006R\025requestTimeoutSeconds\210\001\001\022&"
-  "\n\014index_prefix\030\010 \001(\tH\007R\013indexPrefix\210\001\001\022-"
-  "\n\020search_cutoff_ms\030\t \001(\005H\010R\016searchCutoff"
-  "Ms\210\001\001\0227\n\025enable_typo_tolerance\030\n \001(\010H\tR\023"
-  "enableTypoTolerance\210\001\001B\r\n\013_server_urlB\r\n"
-  "\013_master_keyB\022\n\020_enable_indexingB\023\n\021_ena"
-  "ble_searchingB\026\n\024_enable_autocompleteB\r\n"
-  "\013_batch_sizeB\032\n\030_request_timeout_seconds"
-  "B\017\n\r_index_prefixB\023\n\021_search_cutoff_msB\030"
-  "\n\026_enable_typo_tolerance\"\272\003\n\013ConfigBleve"
-  "\022 \n\tindex_dir\030\001 \001(\tH\000R\010indexDir\210\001\001\022,\n\017en"
-  "able_indexing\030\002 \001(\010H\001R\016enableIndexing\210\001\001"
-  "\022.\n\020enable_searching\030\003 \001(\010H\002R\017enableSear"
-  "ching\210\001\001\0224\n\023enable_autocomplete\030\004 \001(\010H\003R"
-  "\022enableAutocomplete\210\001\001\022M\n!bulk_indexing_"
-  "time_window_seconds\030\005 \001(\005H\004R\035bulkIndexin"
-  "gTimeWindowSeconds\210\001\001\022\"\n\nbatch_size\030\006 \001("
-  "\005H\005R\tbatchSize\210\001\001B\014\n\n_index_dirB\022\n\020_enab"
-  "le_indexingB\023\n\021_enable_searchingB\026\n\024_ena"
-  "ble_autocompleteB$\n\"_bulk_indexing_time_"
-  "window_secondsB\r\n\013_batch_size\"\354\006\n\023Config"
-  "DataRetention\022;\n\027enable_message_deletion"
-  "\030\001 \001(\010H\000R\025enableMessageDeletion\210\001\001\0225\n\024en"
-  "able_file_deletion\030\002 \001(\010H\001R\022enableFileDe"
-  "letion\210\001\001\0229\n\026enable_boards_deletion\030\003 \001("
-  "\010H\002R\024enableBoardsDeletion\210\001\001\022;\n\027message_"
-  "retention_hours\030\004 \001(\005H\003R\025messageRetentio"
-  "nHours\210\001\001\0225\n\024file_retention_hours\030\005 \001(\005H"
-  "\004R\022fileRetentionHours\210\001\001\0227\n\025boards_reten"
-  "tion_days\030\006 \001(\005H\005R\023boardsRetentionDays\210\001"
-  "\001\022:\n\027deletion_job_start_time\030\007 \001(\tH\006R\024de"
-  "letionJobStartTime\210\001\001\022\"\n\nbatch_size\030\010 \001("
-  "\005H\007R\tbatchSize\210\001\001\022N\n!time_between_batche"
-  "s_milliseconds\030\t \001(\005H\010R\036timeBetweenBatch"
-  "esMilliseconds\210\001\001\022<\n\030retention_ids_batch"
-  "_size\030\n \001(\005H\tR\025retentionIdsBatchSize\210\001\001B"
-  "\032\n\030_enable_message_deletionB\027\n\025_enable_f"
-  "ile_deletionB\031\n\027_enable_boards_deletionB"
-  "\032\n\030_message_retention_hoursB\027\n\025_file_ret"
-  "ention_hoursB\030\n\026_boards_retention_daysB\032"
-  "\n\030_deletion_job_start_timeB\r\n\013_batch_siz"
-  "eB$\n\"_time_between_batches_millisecondsB"
-  "\033\n\031_retention_ids_batch_size\"\264\002\n\020ConfigI"
-  "mageProxy\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022-"
-  "\n\020image_proxy_type\030\002 \001(\tH\001R\016imageProxyTy"
-  "pe\210\001\001\0228\n\026remote_image_proxy_url\030\003 \001(\tH\002R"
-  "\023remoteImageProxyUrl\210\001\001\022@\n\032remote_image_"
-  "proxy_options\030\004 \001(\tH\003R\027remoteImageProxyO"
-  "ptions\210\001\001B\t\n\007_enableB\023\n\021_image_proxy_typ"
-  "eB\031\n\027_remote_image_proxy_urlB\035\n\033_remote_"
-  "image_proxy_options\"\315\010\n\006Config\022)\n\004main\030\001"
-  " \001(\0132\025.common.v1.ConfigMainR\004main\0225\n\010ser"
-  "vices\030\002 \001(\0132\031.common.v1.ConfigServicesR\010"
-  "services\0225\n\010security\030\003 \001(\0132\031.common.v1.C"
-  "onfigSecurityR\010security\022,\n\005cache\030\004 \001(\0132\026"
-  ".common.v1.CacheConfigR\005cache\0222\n\007metrics"
-  "\030\005 \001(\0132\030.common.v1.ConfigMetricsR\007metric"
-  "s\022&\n\003sso\030\006 \001(\0132\024.common.v1.ConfigSSOR\003ss"
-  "o\022&\n\003sql\030\007 \001(\0132\024.common.v1.ConfigSqlR\003sq"
-  "l\0225\n\010password\030\010 \001(\0132\031.common.v1.ConfigPa"
-  "sswordR\010password\022)\n\004file\030\t \001(\0132\025.common."
-  "v1.ConfigFileR\004file\022,\n\005email\030\n \001(\0132\026.com"
-  "mon.v1.ConfigEmailR\005email\0229\n\nrate_limit\030"
-  "\013 \001(\0132\032.common.v1.ConfigRateLimitR\trateL"
-  "imit\0222\n\007privacy\030\014 \001(\0132\030.common.v1.Config"
-  "PrivacyR\007privacy\0222\n\007support\030\r \001(\0132\030.comm"
-  "on.v1.ConfigSupportR\007support\022A\n\014localiza"
-  "tion\030\016 \001(\0132\035.common.v1.ConfigLocalizatio"
-  "nR\014localization\022)\n\004ldap\030\017 \001(\0132\025.common.v"
-  "1.ConfigLdapR\004ldap\022)\n\004saml\030\020 \001(\0132\025.commo"
-  "n.v1.ConfigSamlR\004saml\0229\n\nnative_app\030\021 \001("
-  "\0132\032.common.v1.ConfigNativeAppR\tnativeApp"
-  "\022>\n\013meilisearch\030\022 \001(\0132\034.common.v1.Config"
-  "MeilisearchR\013meilisearch\022,\n\005bleve\030\023 \001(\0132"
-  "\026.common.v1.ConfigBleveR\005bleve\022E\n\016data_r"
-  "etention\030\024 \001(\0132\036.common.v1.ConfigDataRet"
-  "entionR\rdataRetention\022<\n\013image_proxy\030\025 \001"
-  "(\0132\033.common.v1.ConfigImageProxyR\nimagePr"
-  "oxyB:\n\032org.megacommerce.common.v1B\013Confi"
-  "gProtoZ\014common/v1;v1\370\001\001b\006proto3"
+  "\n\026common/v1/config.proto\022\tcommon.v1\032\025com"
+  "mon/v1/error.proto\"\236\017\n\nConfigMain\022&\n\014rea"
+  "d_timeout\030\001 \001(\005H\000R\013readTimeout\210\001\001\022(\n\rwri"
+  "te_timeout\030\002 \001(\005H\001R\014writeTimeout\210\001\001\022&\n\014i"
+  "dle_timeout\030\003 \001(\005H\002R\013idleTimeout\210\001\001\0225\n\024e"
+  "nable_link_previews\030\004 \001(\010H\003R\022enableLinkP"
+  "reviews\210\001\001\0229\n\026restrict_link_previews\030\005 \001"
+  "(\tH\004R\024restrictLinkPreviews\210\001\001\022R\n#enable_"
+  "client_performance_debugging\030\006 \001(\010H\005R en"
+  "ableClientPerformanceDebugging\210\001\001\022/\n\021ena"
+  "ble_gif_picker\030\007 \001(\010H\006R\017enableGifPicker\210"
+  "\001\001\0223\n\023enable_custom_emoji\030\010 \001(\010H\007R\021enabl"
+  "eCustomEmoji\210\001\001\0223\n\023enable_emoji_picker\030\t"
+  " \001(\010H\010R\021enableEmojiPicker\210\001\001\022d\n-time_bet"
+  "ween_user_typing_updates_milliseconds\030\n "
+  "\001(\003H\tR(timeBetweenUserTypingUpdatesMilli"
+  "seconds\210\001\001\0221\n\022enable_file_search\030\013 \001(\010H\n"
+  "R\020enableFileSearch\210\001\001\022B\n\033enable_user_typ"
+  "ing_messages\030\014 \001(\010H\013R\030enableUserTypingMe"
+  "ssages\210\001\001\0225\n\024enable_user_statuses\030\r \001(\010H"
+  "\014R\022enableUserStatuses\210\001\001\022=\n\030enable_email"
+  "_invitations\030\016 \001(\010H\rR\026enableEmailInvitat"
+  "ions\210\001\001\022$\n\013enable_svgs\030\017 \001(\010H\016R\nenableSv"
+  "gs\210\001\001\022I\n\036allow_persistent_notifications\030"
+  "\020 \001(\010H\017R\034allowPersistentNotifications\210\001\001"
+  "\022\\\n(persistent_notification_interval_min"
+  "utes\030\021 \001(\005H\020R%persistentNotificationInte"
+  "rvalMinutes\210\001\001\022N\n!persistent_notificatio"
+  "n_max_count\030\022 \001(\005H\021R\036persistentNotificat"
+  "ionMaxCount\210\001\001\022X\n&persistent_notificatio"
+  "n_max_recipients\030\023 \001(\005H\022R#persistentNoti"
+  "ficationMaxRecipients\210\001\001\022O\n\"feature_flag"
+  "_sync_interval_seconds\030\024 \001(\005H\023R\036featureF"
+  "lagSyncIntervalSeconds\210\001\001\0223\n\023allow_synce"
+  "d_drafts\030\025 \001(\010H\024R\021allowSyncedDrafts\210\001\001B\017"
+  "\n\r_read_timeoutB\020\n\016_write_timeoutB\017\n\r_id"
+  "le_timeoutB\027\n\025_enable_link_previewsB\031\n\027_"
+  "restrict_link_previewsB&\n$_enable_client"
+  "_performance_debuggingB\024\n\022_enable_gif_pi"
+  "ckerB\026\n\024_enable_custom_emojiB\026\n\024_enable_"
+  "emoji_pickerB0\n._time_between_user_typin"
+  "g_updates_millisecondsB\025\n\023_enable_file_s"
+  "earchB\036\n\034_enable_user_typing_messagesB\027\n"
+  "\025_enable_user_statusesB\033\n\031_enable_email_"
+  "invitationsB\016\n\014_enable_svgsB!\n\037_allow_pe"
+  "rsistent_notificationsB+\n)_persistent_no"
+  "tification_interval_minutesB$\n\"_persiste"
+  "nt_notification_max_countB)\n\'_persistent"
+  "_notification_max_recipientsB%\n#_feature"
+  "_flag_sync_interval_secondsB\026\n\024_allow_sy"
+  "nced_drafts\"\360\002\n\016ConfigServices\022<\n\030common"
+  "_service_grpc_host\030\001 \001(\tH\000R\025commonServic"
+  "eGrpcHost\210\001\001\022<\n\030common_service_grpc_port"
+  "\030\002 \001(\005H\001R\025commonServiceGrpcPort\210\001\001\0228\n\026us"
+  "er_service_grpc_host\030\003 \001(\tH\002R\023userServic"
+  "eGrpcHost\210\001\001\0228\n\026user_service_grpc_port\030\004"
+  " \001(\005H\003R\023userServiceGrpcPort\210\001\001B\033\n\031_commo"
+  "n_service_grpc_hostB\033\n\031_common_service_g"
+  "rpc_portB\031\n\027_user_service_grpc_hostB\031\n\027_"
+  "user_service_grpc_port\"\327\r\n\016ConfigSecurit"
+  "y\0229\n\026maximum_login_attempts\030\001 \001(\005H\000R\024max"
+  "imumLoginAttempts\210\001\001\022T\n$enable_insecure_"
+  "outgoing_connections\030\002 \001(\010H\001R!enableInse"
+  "cureOutgoingConnections\210\001\001\022O\n!enable_mul"
+  "tifactor_authentication\030\003 \001(\010H\002R\037enableM"
+  "ultifactorAuthentication\210\001\001\022Q\n\"enforce_m"
+  "ultifactor_authentication\030\004 \001(\010H\003R enfor"
+  "ceMultifactorAuthentication\210\001\001\022F\n\035enable"
+  "_oauth_service_provider\030\005 \001(\010H\004R\032enableO"
+  "authServiceProvider\210\001\001\022N\n!enable_outgoin"
+  "g_oauth_connections\030\006 \001(\010H\005R\036enableOutgo"
+  "ingOauthConnections\210\001\001\022U\n%terminate_sess"
+  "ions_on_password_change\030\007 \001(\010H\006R!termina"
+  "teSessionsOnPasswordChange\210\001\001\022A\n\033session"
+  "_length_web_in_hours\030\010 \001(\005H\007R\027sessionLen"
+  "gthWebInHours\210\001\001\022G\n\036session_length_mobil"
+  "e_in_hours\030\t \001(\005H\010R\032sessionLengthMobileI"
+  "nHours\210\001\001\022A\n\033session_length_sso_in_hours"
+  "\030\n \001(\005H\tR\027sessionLengthSsoInHours\210\001\001\022+\n\017"
+  "allow_cors_from\030\013 \001(\tH\nR\rallowCorsFrom\210\001"
+  "\001\0225\n\024cors_exposed_headers\030\014 \001(\tH\013R\022corsE"
+  "xposedHeaders\210\001\001\0229\n\026cors_allow_credentia"
+  "ls\030\r \001(\010H\014R\024corsAllowCredentials\210\001\001\022\"\n\nc"
+  "ors_debug\030\016 \001(\010H\rR\tcorsDebug\210\001\001\022D\n\034allow"
+  "_cookies_for_subdomains\030\017 \001(\010H\016R\031allowCo"
+  "okiesForSubdomains\210\001\001\022<\n\030session_cache_i"
+  "n_minutes\030\020 \001(\005H\017R\025sessionCacheInMinutes"
+  "\210\001\001\0227\n\025websocket_secure_port\030\021 \001(\005H\020R\023we"
+  "bsocketSecurePort\210\001\001\022*\n\016websocket_port\030\022"
+  " \001(\005H\021R\rwebsocketPort\210\001\001B\031\n\027_maximum_log"
+  "in_attemptsB\'\n%_enable_insecure_outgoing"
+  "_connectionsB$\n\"_enable_multifactor_auth"
+  "enticationB%\n#_enforce_multifactor_authe"
+  "nticationB \n\036_enable_oauth_service_provi"
+  "derB$\n\"_enable_outgoing_oauth_connection"
+  "sB(\n&_terminate_sessions_on_password_cha"
+  "ngeB\036\n\034_session_length_web_in_hoursB!\n\037_"
+  "session_length_mobile_in_hoursB\036\n\034_sessi"
+  "on_length_sso_in_hoursB\022\n\020_allow_cors_fr"
+  "omB\027\n\025_cors_exposed_headersB\031\n\027_cors_all"
+  "ow_credentialsB\r\n\013_cors_debugB\037\n\035_allow_"
+  "cookies_for_subdomainsB\033\n\031_session_cache"
+  "_in_minutesB\030\n\026_websocket_secure_portB\021\n"
+  "\017_websocket_port\"\202\003\n\013CacheConfig\022\"\n\ncach"
+  "e_type\030\001 \001(\tH\000R\tcacheType\210\001\001\022(\n\rredis_ad"
+  "dress\030\002 \001(\tH\001R\014redisAddress\210\001\001\022*\n\016redis_"
+  "password\030\003 \001(\tH\002R\rredisPassword\210\001\001\022\036\n\010re"
+  "dis_db\030\004 \001(\005H\003R\007redisDb\210\001\001\0221\n\022redis_cach"
+  "e_prefix\030\005 \001(\tH\004R\020redisCachePrefix\210\001\001\0225\n"
+  "\024disable_client_cache\030\006 \001(\010H\005R\022disableCl"
+  "ientCache\210\001\001B\r\n\013_cache_typeB\020\n\016_redis_ad"
+  "dressB\021\n\017_redis_passwordB\013\n\t_redis_dbB\025\n"
+  "\023_redis_cache_prefixB\027\n\025_disable_client_"
+  "cache\"\251\003\n\rConfigMetrics\022\033\n\006enable\030\001 \001(\010H"
+  "\000R\006enable\210\001\001\0221\n\022block_profile_rate\030\002 \001(\005"
+  "H\001R\020blockProfileRate\210\001\001\022*\n\016listen_addres"
+  "s\030\003 \001(\tH\002R\rlistenAddress\210\001\001\0227\n\025enable_cl"
+  "ient_metrics\030\004 \001(\010H\003R\023enableClientMetric"
+  "s\210\001\001\022C\n\033enable_notification_metrics\030\005 \001("
+  "\010H\004R\031enableNotificationMetrics\210\001\001\022/\n\024cli"
+  "ent_side_user_ids\030\006 \003(\tR\021clientSideUserI"
+  "dsB\t\n\007_enableB\025\n\023_block_profile_rateB\021\n\017"
+  "_listen_addressB\030\n\026_enable_client_metric"
+  "sB\036\n\034_enable_notification_metrics\"\230\004\n\tCo"
+  "nfigSSO\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022\033\n\006"
+  "secret\030\002 \001(\tH\001R\006secret\210\001\001\022\023\n\002id\030\003 \001(\tH\002R"
+  "\002id\210\001\001\022\031\n\005scope\030\004 \001(\tH\003R\005scope\210\001\001\022(\n\raut"
+  "h_endpoint\030\005 \001(\tH\004R\014authEndpoint\210\001\001\022*\n\016t"
+  "oken_endpoint\030\006 \001(\tH\005R\rtokenEndpoint\210\001\001\022"
+  "/\n\021user_api_endpoint\030\007 \001(\tH\006R\017userApiEnd"
+  "point\210\001\001\0222\n\022discovery_endpoint\030\010 \001(\tH\007R\021"
+  "discoveryEndpoint\210\001\001\022$\n\013button_text\030\t \001("
+  "\tH\010R\nbuttonText\210\001\001\022&\n\014button_color\030\n \001(\t"
+  "H\tR\013buttonColor\210\001\001B\t\n\007_enableB\t\n\007_secret"
+  "B\005\n\003_idB\010\n\006_scopeB\020\n\016_auth_endpointB\021\n\017_"
+  "token_endpointB\024\n\022_user_api_endpointB\025\n\023"
+  "_discovery_endpointB\016\n\014_button_textB\017\n\r_"
+  "button_color\"\325\005\n\tConfigSql\022$\n\013driver_nam"
+  "e\030\001 \001(\tH\000R\ndriverName\210\001\001\022$\n\013data_source\030"
+  "\002 \001(\tH\001R\ndataSource\210\001\001\022)\n\016max_idle_conns"
+  "\030\003 \001(\005H\002R\014maxIdleConns\210\001\001\022H\n\036conn_max_li"
+  "fetime_milliseconds\030\004 \001(\005H\003R\033connMaxLife"
+  "timeMilliseconds\210\001\001\022I\n\037conn_max_idle_tim"
+  "e_milliseconds\030\005 \001(\005H\004R\033connMaxIdleTimeM"
+  "illiseconds\210\001\001\022)\n\016max_open_conns\030\006 \001(\005H\005"
+  "R\014maxOpenConns\210\001\001\022\031\n\005trace\030\007 \001(\010H\006R\005trac"
+  "e\210\001\001\0222\n\023at_rest_encrypt_key\030\010 \001(\tH\007R\020atR"
+  "estEncryptKey\210\001\001\022(\n\rquery_timeout\030\t \001(\005H"
+  "\010R\014queryTimeout\210\001\001\022;\n\027disable_database_s"
+  "earch\030\n \001(\010H\tR\025disableDatabaseSearch\210\001\001B"
+  "\016\n\014_driver_nameB\016\n\014_data_sourceB\021\n\017_max_"
+  "idle_connsB!\n\037_conn_max_lifetime_millise"
+  "condsB\"\n _conn_max_idle_time_millisecond"
+  "sB\021\n\017_max_open_connsB\010\n\006_traceB\026\n\024_at_re"
+  "st_encrypt_keyB\020\n\016_query_timeoutB\032\n\030_dis"
+  "able_database_search\"\313\002\n\016ConfigPassword\022"
+  "*\n\016minimum_length\030\001 \001(\005H\000R\rminimumLength"
+  "\210\001\001\022!\n\tlowercase\030\002 \001(\010H\001R\tlowercase\210\001\001\022\033"
+  "\n\006number\030\003 \001(\010H\002R\006number\210\001\001\022!\n\tuppercase"
+  "\030\004 \001(\010H\003R\tuppercase\210\001\001\022\033\n\006symbol\030\005 \001(\010H\004"
+  "R\006symbol\210\001\001\0221\n\022enable_forgot_link\030\006 \001(\010H"
+  "\005R\020enableForgotLink\210\001\001B\021\n\017_minimum_lengt"
+  "hB\014\n\n_lowercaseB\t\n\007_numberB\014\n\n_uppercase"
+  "B\t\n\007_symbolB\025\n\023_enable_forgot_link\"\340\017\n\nC"
+  "onfigFile\022;\n\027enable_file_attachments\030\001 \001"
+  "(\010H\000R\025enableFileAttachments\210\001\001\0225\n\024enable"
+  "_mobile_upload\030\002 \001(\010H\001R\022enableMobileUplo"
+  "ad\210\001\001\0229\n\026enable_mobile_download\030\003 \001(\010H\002R"
+  "\024enableMobileDownload\210\001\001\022\'\n\rmax_file_siz"
+  "e\030\004 \001(\003H\003R\013maxFileSize\210\001\001\0225\n\024max_image_r"
+  "esolution\030\005 \001(\003H\004R\022maxImageResolution\210\001\001"
+  "\022F\n\035max_image_decoder_concurrency\030\006 \001(\003H"
+  "\005R\032maxImageDecoderConcurrency\210\001\001\022$\n\013driv"
+  "er_name\030\007 \001(\tH\006R\ndriverName\210\001\001\022!\n\tdirect"
+  "ory\030\010 \001(\tH\007R\tdirectory\210\001\001\0221\n\022enable_publ"
+  "ic_link\030\t \001(\010H\010R\020enablePublicLink\210\001\001\022,\n\017"
+  "extract_content\030\n \001(\010H\tR\016extractContent\210"
+  "\001\001\0220\n\021archive_recursion\030\013 \001(\010H\nR\020archive"
+  "Recursion\210\001\001\022-\n\020public_link_salt\030\014 \001(\tH\013"
+  "R\016publicLinkSalt\210\001\001\022&\n\014initial_font\030\r \001("
+  "\tH\014R\013initialFont\210\001\001\0229\n\027amazon_s3_access_"
+  "key_id\030\016 \001(\tH\rR\023amazonS3AccessKeyId\210\001\001\022A"
+  "\n\033amazon_s3_secret_access_key\030\017 \001(\tH\016R\027a"
+  "mazonS3SecretAccessKey\210\001\001\022-\n\020amazon_s3_b"
+  "ucket\030\020 \001(\tH\017R\016amazonS3Bucket\210\001\001\0226\n\025amaz"
+  "on_s3_path_prefix\030\021 \001(\tH\020R\022amazonS3PathP"
+  "refix\210\001\001\022-\n\020amazon_s3_region\030\022 \001(\tH\021R\016am"
+  "azonS3Region\210\001\001\0221\n\022amazon_s3_endpoint\030\023 "
+  "\001(\tH\022R\020amazonS3Endpoint\210\001\001\022\'\n\ramazon_s3_"
+  "ssl\030\024 \001(\010H\023R\013amazonS3Ssl\210\001\001\022.\n\021amazon_s3"
+  "_sign_v2\030\025 \001(\010H\024R\016amazonS3SignV2\210\001\001\022\'\n\ra"
+  "mazon_s3_sse\030\026 \001(\010H\025R\013amazonS3Sse\210\001\001\022+\n\017"
+  "amazon_s3_trace\030\027 \001(\010H\026R\ramazonS3Trace\210\001"
+  "\001\022W\n&amazon_s3_request_timeout_milliseco"
+  "nds\030\030 \001(\003H\027R\"amazonS3RequestTimeoutMilli"
+  "seconds\210\001\001\022J\n amazon_s3_upload_part_size"
+  "_bytes\030\031 \001(\003H\030R\033amazonS3UploadPartSizeBy"
+  "tes\210\001\001\022:\n\027amazon_s3_storage_class\030\032 \001(\tH"
+  "\031R\024amazonS3StorageClass\210\001\001B\032\n\030_enable_fi"
+  "le_attachmentsB\027\n\025_enable_mobile_uploadB"
+  "\031\n\027_enable_mobile_downloadB\020\n\016_max_file_"
+  "sizeB\027\n\025_max_image_resolutionB \n\036_max_im"
+  "age_decoder_concurrencyB\016\n\014_driver_nameB"
+  "\014\n\n_directoryB\025\n\023_enable_public_linkB\022\n\020"
+  "_extract_contentB\024\n\022_archive_recursionB\023"
+  "\n\021_public_link_saltB\017\n\r_initial_fontB\032\n\030"
+  "_amazon_s3_access_key_idB\036\n\034_amazon_s3_s"
+  "ecret_access_keyB\023\n\021_amazon_s3_bucketB\030\n"
+  "\026_amazon_s3_path_prefixB\023\n\021_amazon_s3_re"
+  "gionB\025\n\023_amazon_s3_endpointB\020\n\016_amazon_s"
+  "3_sslB\024\n\022_amazon_s3_sign_v2B\020\n\016_amazon_s"
+  "3_sseB\022\n\020_amazon_s3_traceB)\n\'_amazon_s3_"
+  "request_timeout_millisecondsB#\n!_amazon_"
+  "s3_upload_part_size_bytesB\032\n\030_amazon_s3_"
+  "storage_class\"\375\016\n\013ConfigEmail\022=\n\030send_em"
+  "ail_notifications\030\001 \001(\010H\000R\026sendEmailNoti"
+  "fications\210\001\001\022A\n\032require_email_verificati"
+  "on\030\002 \001(\010H\001R\030requireEmailVerification\210\001\001\022"
+  "*\n\016feedback_email\030\003 \001(\tH\002R\rfeedbackEmail"
+  "\210\001\001\022-\n\020reply_to_address\030\004 \001(\tH\003R\016replyTo"
+  "Address\210\001\001\022-\n\020enable_smtp_auth\030\005 \001(\010H\004R\016"
+  "enableSmtpAuth\210\001\001\022(\n\rsmtp_username\030\006 \001(\t"
+  "H\005R\014smtpUsername\210\001\001\022(\n\rsmtp_password\030\007 \001"
+  "(\tH\006R\014smtpPassword\210\001\001\022$\n\013smtp_server\030\010 \001"
+  "(\tH\007R\nsmtpServer\210\001\001\022 \n\tsmtp_port\030\t \001(\tH\010"
+  "R\010smtpPort\210\001\001\0223\n\023smtp_server_timeout\030\n \001"
+  "(\005H\tR\021smtpServerTimeout\210\001\001\0224\n\023connection"
+  "_security\030\013 \001(\tH\nR\022connectionSecurity\210\001\001"
+  "\022;\n\027send_push_notifications\030\014 \001(\010H\013R\025sen"
+  "dPushNotifications\210\001\001\022=\n\030push_notificati"
+  "on_server\030\r \001(\tH\014R\026pushNotificationServe"
+  "r\210\001\001\022A\n\032push_notification_contents\030\016 \001(\t"
+  "H\rR\030pushNotificationContents\210\001\001\022=\n\030push_"
+  "notification_buffer\030\017 \001(\005H\016R\026pushNotific"
+  "ationBuffer\210\001\001\0227\n\025enable_email_batching\030"
+  "\020 \001(\010H\017R\023enableEmailBatching\210\001\001\022@\n\032email"
+  "_batching_buffer_size\030\021 \001(\005H\020R\027emailBatc"
+  "hingBufferSize\210\001\001\022;\n\027email_batching_inte"
+  "rval\030\022 \001(\005H\021R\025emailBatchingInterval\210\001\001\022T"
+  "\n$skip_server_certificate_verification\030\023"
+  " \001(\010H\022R!skipServerCertificateVerificatio"
+  "n\210\001\001\022L\n email_notification_contents_type"
+  "\030\024 \001(\tH\023R\035emailNotificationContentsType\210"
+  "\001\001\0221\n\022login_button_color\030\025 \001(\tH\024R\020loginB"
+  "uttonColor\210\001\001\022>\n\031login_button_border_col"
+  "or\030\026 \001(\tH\025R\026loginButtonBorderColor\210\001\001\022:\n"
+  "\027login_button_text_color\030\027 \001(\tH\026R\024loginB"
+  "uttonTextColor\210\001\001B\033\n\031_send_email_notific"
+  "ationsB\035\n\033_require_email_verificationB\021\n"
+  "\017_feedback_emailB\023\n\021_reply_to_addressB\023\n"
+  "\021_enable_smtp_authB\020\n\016_smtp_usernameB\020\n\016"
+  "_smtp_passwordB\016\n\014_smtp_serverB\014\n\n_smtp_"
+  "portB\026\n\024_smtp_server_timeoutB\026\n\024_connect"
+  "ion_securityB\032\n\030_send_push_notifications"
+  "B\033\n\031_push_notification_serverB\035\n\033_push_n"
+  "otification_contentsB\033\n\031_push_notificati"
+  "on_bufferB\030\n\026_enable_email_batchingB\035\n\033_"
+  "email_batching_buffer_sizeB\032\n\030_email_bat"
+  "ching_intervalB\'\n%_skip_server_certifica"
+  "te_verificationB#\n!_email_notification_c"
+  "ontents_typeB\025\n\023_login_button_colorB\034\n\032_"
+  "login_button_border_colorB\032\n\030_login_butt"
+  "on_text_color\"\204\003\n\017ConfigRateLimit\022\033\n\006ena"
+  "ble\030\001 \001(\010H\000R\006enable\210\001\001\022\034\n\007per_sec\030\002 \001(\005H"
+  "\001R\006perSec\210\001\001\022 \n\tmax_burst\030\003 \001(\005H\002R\010maxBu"
+  "rst\210\001\001\022/\n\021memory_store_size\030\004 \001(\005H\003R\017mem"
+  "oryStoreSize\210\001\001\0222\n\023vary_by_remote_addr\030\005"
+  " \001(\010H\004R\020varyByRemoteAddr\210\001\001\022%\n\014vary_by_u"
+  "ser\030\006 \001(\010H\005R\nvaryByUser\210\001\001\022$\n\016vary_by_he"
+  "ader\030\007 \001(\tR\014varyByHeaderB\t\n\007_enableB\n\n\010_"
+  "per_secB\014\n\n_max_burstB\024\n\022_memory_store_s"
+  "izeB\026\n\024_vary_by_remote_addrB\017\n\r_vary_by_"
+  "user\"\227\001\n\rConfigPrivacy\0221\n\022show_email_add"
+  "ress\030\001 \001(\010H\000R\020showEmailAddress\210\001\001\022)\n\016sho"
+  "w_full_name\030\002 \001(\010H\001R\014showFullName\210\001\001B\025\n\023"
+  "_show_email_addressB\021\n\017_show_full_name\"\357"
+  "\003\n\rConfigSupport\0226\n\025terms_of_service_lin"
+  "k\030\001 \001(\tH\000R\022termsOfServiceLink\210\001\001\0223\n\023priv"
+  "acy_policy_link\030\002 \001(\tH\001R\021privacyPolicyLi"
+  "nk\210\001\001\022\"\n\nabout_link\030\003 \001(\tH\002R\taboutLink\210\001"
+  "\001\022 \n\thelp_link\030\004 \001(\tH\003R\010helpLink\210\001\001\0226\n\025r"
+  "eport_a_problem_link\030\005 \001(\tH\004R\022reportAPro"
+  "blemLink\210\001\001\0225\n\024forgot_password_link\030\006 \001("
+  "\tH\005R\022forgotPasswordLink\210\001\001\022(\n\rsupport_em"
+  "ail\030\007 \001(\tH\006R\014supportEmail\210\001\001B\030\n\026_terms_o"
+  "f_service_linkB\026\n\024_privacy_policy_linkB\r"
+  "\n\013_about_linkB\014\n\n_help_linkB\030\n\026_report_a"
+  "_problem_linkB\027\n\025_forgot_password_linkB\020"
+  "\n\016_support_email\"\202\002\n\022ConfigLocalization\022"
+  "7\n\025default_server_locale\030\001 \001(\tH\000R\023defaul"
+  "tServerLocale\210\001\001\0227\n\025default_client_local"
+  "e\030\002 \001(\tH\001R\023defaultClientLocale\210\001\001\0220\n\021ava"
+  "ilable_locales\030\003 \001(\tH\002R\020availableLocales"
+  "\210\001\001B\030\n\026_default_server_localeB\030\n\026_defaul"
+  "t_client_localeB\024\n\022_available_locales\"\325\020"
+  "\n\nConfigLdap\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001"
+  "\001\022$\n\013enable_sync\030\002 \001(\010H\001R\nenableSync\210\001\001\022"
+  "$\n\013ldap_server\030\003 \001(\tH\002R\nldapServer\210\001\001\022 \n"
+  "\tldap_port\030\004 \001(\005H\003R\010ldapPort\210\001\001\0224\n\023conne"
+  "ction_security\030\005 \001(\tH\004R\022connectionSecuri"
+  "ty\210\001\001\022\034\n\007base_dn\030\006 \001(\tH\005R\006baseDn\210\001\001\022(\n\rb"
+  "ind_username\030\007 \001(\tH\006R\014bindUsername\210\001\001\022(\n"
+  "\rbind_password\030\010 \001(\tH\007R\014bindPassword\210\001\001\022"
+  "9\n\026maximum_login_attempts\030\t \001(\005H\010R\024maxim"
+  "umLoginAttempts\210\001\001\022$\n\013user_filter\030\n \001(\tH"
+  "\tR\nuserFilter\210\001\001\022&\n\014group_filter\030\013 \001(\tH\n"
+  "R\013groupFilter\210\001\001\0223\n\023enable_admin_filter\030"
+  "\014 \001(\010H\013R\021enableAdminFilter\210\001\001\022&\n\014admin_f"
+  "ilter\030\r \001(\tH\014R\013adminFilter\210\001\001\022D\n\034group_d"
+  "isplay_name_attribute\030\016 \001(\tH\rR\031groupDisp"
+  "layNameAttribute\210\001\001\0221\n\022group_id_attribut"
+  "e\030\017 \001(\tH\016R\020groupIdAttribute\210\001\001\0225\n\024first_"
+  "name_attribute\030\020 \001(\tH\017R\022firstNameAttribu"
+  "te\210\001\001\0223\n\023last_name_attribute\030\021 \001(\tH\020R\021la"
+  "stNameAttribute\210\001\001\022,\n\017email_attribute\030\022 "
+  "\001(\tH\021R\016emailAttribute\210\001\001\0222\n\022username_att"
+  "ribute\030\023 \001(\tH\022R\021usernameAttribute\210\001\001\0222\n\022"
+  "nickname_attribute\030\024 \001(\tH\023R\021nicknameAttr"
+  "ibute\210\001\001\022&\n\014id_attribute\030\025 \001(\tH\024R\013idAttr"
+  "ibute\210\001\001\0222\n\022position_attribute\030\026 \001(\tH\025R\021"
+  "positionAttribute\210\001\001\0221\n\022login_id_attribu"
+  "te\030\027 \001(\tH\026R\020loginIdAttribute\210\001\001\0220\n\021pictu"
+  "re_attribute\030\030 \001(\tH\027R\020pictureAttribute\210\001"
+  "\001\0227\n\025sync_interval_minutes\030\031 \001(\005H\030R\023sync"
+  "IntervalMinutes\210\001\001\022(\n\rquery_timeout\030\032 \001("
+  "\005H\031R\014queryTimeout\210\001\001\022\'\n\rmax_page_size\030\033 "
+  "\001(\005H\032R\013maxPageSize\210\001\001\022-\n\020login_field_nam"
+  "e\030\034 \001(\tH\033R\016loginFieldName\210\001\001\0221\n\022login_bu"
+  "tton_color\030\035 \001(\tH\034R\020loginButtonColor\210\001\001\022"
+  ">\n\031login_button_border_color\030\036 \001(\tH\035R\026lo"
+  "ginButtonBorderColor\210\001\001\022:\n\027login_button_"
+  "text_color\030\037 \001(\tH\036R\024loginButtonTextColor"
+  "\210\001\001B\t\n\007_enableB\016\n\014_enable_syncB\016\n\014_ldap_"
+  "serverB\014\n\n_ldap_portB\026\n\024_connection_secu"
+  "rityB\n\n\010_base_dnB\020\n\016_bind_usernameB\020\n\016_b"
+  "ind_passwordB\031\n\027_maximum_login_attemptsB"
+  "\016\n\014_user_filterB\017\n\r_group_filterB\026\n\024_ena"
+  "ble_admin_filterB\017\n\r_admin_filterB\037\n\035_gr"
+  "oup_display_name_attributeB\025\n\023_group_id_"
+  "attributeB\027\n\025_first_name_attributeB\026\n\024_l"
+  "ast_name_attributeB\022\n\020_email_attributeB\025"
+  "\n\023_username_attributeB\025\n\023_nickname_attri"
+  "buteB\017\n\r_id_attributeB\025\n\023_position_attri"
+  "buteB\025\n\023_login_id_attributeB\024\n\022_picture_"
+  "attributeB\030\n\026_sync_interval_minutesB\020\n\016_"
+  "query_timeoutB\020\n\016_max_page_sizeB\023\n\021_logi"
+  "n_field_nameB\025\n\023_login_button_colorB\034\n\032_"
+  "login_button_border_colorB\032\n\030_login_butt"
+  "on_text_color\"\255\023\n\nConfigSaml\022\033\n\006enable\030\001"
+  " \001(\010H\000R\006enable\210\001\001\0226\n\025enable_sync_with_ld"
+  "ap\030\002 \001(\010H\001R\022enableSyncWithLdap\210\001\001\022N\n\"ena"
+  "ble_sync_with_ldap_include_auth\030\003 \001(\010H\002R"
+  "\035enableSyncWithLdapIncludeAuth\210\001\001\022:\n\027ign"
+  "ore_guests_ldap_sync\030\004 \001(\010H\003R\024ignoreGues"
+  "tsLdapSync\210\001\001\022\033\n\006verify\030\005 \001(\010H\004R\006verify\210"
+  "\001\001\022\035\n\007encrypt\030\006 \001(\010H\005R\007encrypt\210\001\001\022&\n\014sig"
+  "n_request\030\007 \001(\010H\006R\013signRequest\210\001\001\022\034\n\007idp"
+  "_url\030\010 \001(\tH\007R\006idpUrl\210\001\001\0221\n\022idp_descripto"
+  "r_url\030\t \001(\tH\010R\020idpDescriptorUrl\210\001\001\022-\n\020id"
+  "p_metadata_url\030\n \001(\tH\tR\016idpMetadataUrl\210\001"
+  "\001\022C\n\033service_provider_identifier\030\013 \001(\tH\n"
+  "R\031serviceProviderIdentifier\210\001\001\022H\n\036assert"
+  "ion_consumer_service_url\030\014 \001(\tH\013R\033assert"
+  "ionConsumerServiceUrl\210\001\001\0224\n\023signature_al"
+  "gorithm\030\r \001(\tH\014R\022signatureAlgorithm\210\001\001\0224"
+  "\n\023canonical_algorithm\030\016 \001(\tH\rR\022canonical"
+  "Algorithm\210\001\001\022:\n\027scoping_idp_provider_id\030"
+  "\017 \001(\tH\016R\024scopingIdpProviderId\210\001\001\022-\n\020scop"
+  "ing_idp_name\030\020 \001(\tH\017R\016scopingIdpName\210\001\001\022"
+  "5\n\024idp_certificate_file\030\021 \001(\tH\020R\022idpCert"
+  "ificateFile\210\001\001\022;\n\027public_certificate_fil"
+  "e\030\022 \001(\tH\021R\025publicCertificateFile\210\001\001\022-\n\020p"
+  "rivate_key_file\030\023 \001(\tH\022R\016privateKeyFile\210"
+  "\001\001\022&\n\014id_attribute\030\024 \001(\tH\023R\013idAttribute\210"
+  "\001\001\0229\n\026enable_admin_attribute\030\025 \001(\010H\024R\024en"
+  "ableAdminAttribute\210\001\001\022,\n\017admin_attribute"
+  "\030\026 \001(\tH\025R\016adminAttribute\210\001\001\0225\n\024first_nam"
+  "e_attribute\030\027 \001(\tH\026R\022firstNameAttribute\210"
+  "\001\001\0223\n\023last_name_attribute\030\030 \001(\tH\027R\021lastN"
+  "ameAttribute\210\001\001\022,\n\017email_attribute\030\031 \001(\t"
+  "H\030R\016emailAttribute\210\001\001\0222\n\022username_attrib"
+  "ute\030\032 \001(\tH\031R\021usernameAttribute\210\001\001\0222\n\022nic"
+  "kname_attribute\030\033 \001(\tH\032R\021nicknameAttribu"
+  "te\210\001\001\022.\n\020locale_attribute\030\034 \001(\tH\033R\017local"
+  "eAttribute\210\001\001\0222\n\022position_attribute\030\035 \001("
+  "\tH\034R\021positionAttribute\210\001\001\022/\n\021login_butto"
+  "n_text\030\036 \001(\tH\035R\017loginButtonText\210\001\001\0221\n\022lo"
+  "gin_button_color\030\037 \001(\tH\036R\020loginButtonCol"
+  "or\210\001\001\022>\n\031login_button_border_color\030  \001(\t"
+  "H\037R\026loginButtonBorderColor\210\001\001\022:\n\027login_b"
+  "utton_text_color\030! \001(\tH R\024loginButtonTex"
+  "tColor\210\001\001B\t\n\007_enableB\030\n\026_enable_sync_wit"
+  "h_ldapB%\n#_enable_sync_with_ldap_include"
+  "_authB\032\n\030_ignore_guests_ldap_syncB\t\n\007_ve"
+  "rifyB\n\n\010_encryptB\017\n\r_sign_requestB\n\n\010_id"
+  "p_urlB\025\n\023_idp_descriptor_urlB\023\n\021_idp_met"
+  "adata_urlB\036\n\034_service_provider_identifie"
+  "rB!\n\037_assertion_consumer_service_urlB\026\n\024"
+  "_signature_algorithmB\026\n\024_canonical_algor"
+  "ithmB\032\n\030_scoping_idp_provider_idB\023\n\021_sco"
+  "ping_idp_nameB\027\n\025_idp_certificate_fileB\032"
+  "\n\030_public_certificate_fileB\023\n\021_private_k"
+  "ey_fileB\017\n\r_id_attributeB\031\n\027_enable_admi"
+  "n_attributeB\022\n\020_admin_attributeB\027\n\025_firs"
+  "t_name_attributeB\026\n\024_last_name_attribute"
+  "B\022\n\020_email_attributeB\025\n\023_username_attrib"
+  "uteB\025\n\023_nickname_attributeB\023\n\021_locale_at"
+  "tributeB\025\n\023_position_attributeB\024\n\022_login"
+  "_button_textB\025\n\023_login_button_colorB\034\n\032_"
+  "login_button_border_colorB\032\n\030_login_butt"
+  "on_text_color\"\301\005\n\017ConfigNativeApp\0223\n\026app"
+  "_custom_url_schemes\030\001 \003(\tR\023appCustomUrlS"
+  "chemes\022/\n\021app_download_link\030\002 \001(\tH\000R\017app"
+  "DownloadLink\210\001\001\022>\n\031android_app_download_"
+  "link\030\003 \001(\tH\001R\026androidAppDownloadLink\210\001\001\022"
+  "6\n\025ios_app_download_link\030\004 \001(\tH\002R\022iosApp"
+  "DownloadLink\210\001\001\022;\n\027mobile_external_brows"
+  "er\030\005 \001(\010H\003R\025mobileExternalBrowser\210\001\001\022=\n\030"
+  "mobile_enable_biometrics\030\006 \001(\010H\004R\026mobile"
+  "EnableBiometrics\210\001\001\022F\n\035mobile_prevent_sc"
+  "reen_capture\030\007 \001(\010H\005R\032mobilePreventScree"
+  "nCapture\210\001\001\022C\n\033mobile_jailbreak_protecti"
+  "on\030\010 \001(\010H\006R\031mobileJailbreakProtection\210\001\001"
+  "B\024\n\022_app_download_linkB\034\n\032_android_app_d"
+  "ownload_linkB\030\n\026_ios_app_download_linkB\032"
+  "\n\030_mobile_external_browserB\033\n\031_mobile_en"
+  "able_biometricsB \n\036_mobile_prevent_scree"
+  "n_captureB\036\n\034_mobile_jailbreak_protectio"
+  "n\"\253\005\n\021ConfigMeilisearch\022#\n\nserver_url\030\001 "
+  "\001(\tH\000R\nserver_url\210\001\001\022\"\n\nmaster_key\030\002 \001(\t"
+  "H\001R\tmasterKey\210\001\001\022,\n\017enable_indexing\030\003 \001("
+  "\010H\002R\016enableIndexing\210\001\001\022.\n\020enable_searchi"
+  "ng\030\004 \001(\010H\003R\017enableSearching\210\001\001\0224\n\023enable"
+  "_autocomplete\030\005 \001(\010H\004R\022enableAutocomplet"
+  "e\210\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001"
+  "\022;\n\027request_timeout_seconds\030\007 \001(\005H\006R\025req"
+  "uestTimeoutSeconds\210\001\001\022&\n\014index_prefix\030\010 "
+  "\001(\tH\007R\013indexPrefix\210\001\001\022-\n\020search_cutoff_m"
+  "s\030\t \001(\005H\010R\016searchCutoffMs\210\001\001\0227\n\025enable_t"
+  "ypo_tolerance\030\n \001(\010H\tR\023enableTypoToleran"
+  "ce\210\001\001B\r\n\013_server_urlB\r\n\013_master_keyB\022\n\020_"
+  "enable_indexingB\023\n\021_enable_searchingB\026\n\024"
+  "_enable_autocompleteB\r\n\013_batch_sizeB\032\n\030_"
+  "request_timeout_secondsB\017\n\r_index_prefix"
+  "B\023\n\021_search_cutoff_msB\030\n\026_enable_typo_to"
+  "lerance\"\272\003\n\013ConfigBleve\022 \n\tindex_dir\030\001 \001"
+  "(\tH\000R\010indexDir\210\001\001\022,\n\017enable_indexing\030\002 \001"
+  "(\010H\001R\016enableIndexing\210\001\001\022.\n\020enable_search"
+  "ing\030\003 \001(\010H\002R\017enableSearching\210\001\001\0224\n\023enabl"
+  "e_autocomplete\030\004 \001(\010H\003R\022enableAutocomple"
+  "te\210\001\001\022M\n!bulk_indexing_time_window_secon"
+  "ds\030\005 \001(\005H\004R\035bulkIndexingTimeWindowSecond"
+  "s\210\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001"
+  "B\014\n\n_index_dirB\022\n\020_enable_indexingB\023\n\021_e"
+  "nable_searchingB\026\n\024_enable_autocompleteB"
+  "$\n\"_bulk_indexing_time_window_secondsB\r\n"
+  "\013_batch_size\"\354\006\n\023ConfigDataRetention\022;\n\027"
+  "enable_message_deletion\030\001 \001(\010H\000R\025enableM"
+  "essageDeletion\210\001\001\0225\n\024enable_file_deletio"
+  "n\030\002 \001(\010H\001R\022enableFileDeletion\210\001\001\0229\n\026enab"
+  "le_boards_deletion\030\003 \001(\010H\002R\024enableBoards"
+  "Deletion\210\001\001\022;\n\027message_retention_hours\030\004"
+  " \001(\005H\003R\025messageRetentionHours\210\001\001\0225\n\024file"
+  "_retention_hours\030\005 \001(\005H\004R\022fileRetentionH"
+  "ours\210\001\001\0227\n\025boards_retention_days\030\006 \001(\005H\005"
+  "R\023boardsRetentionDays\210\001\001\022:\n\027deletion_job"
+  "_start_time\030\007 \001(\tH\006R\024deletionJobStartTim"
+  "e\210\001\001\022\"\n\nbatch_size\030\010 \001(\005H\007R\tbatchSize\210\001\001"
+  "\022N\n!time_between_batches_milliseconds\030\t "
+  "\001(\005H\010R\036timeBetweenBatchesMilliseconds\210\001\001"
+  "\022<\n\030retention_ids_batch_size\030\n \001(\005H\tR\025re"
+  "tentionIdsBatchSize\210\001\001B\032\n\030_enable_messag"
+  "e_deletionB\027\n\025_enable_file_deletionB\031\n\027_"
+  "enable_boards_deletionB\032\n\030_message_reten"
+  "tion_hoursB\027\n\025_file_retention_hoursB\030\n\026_"
+  "boards_retention_daysB\032\n\030_deletion_job_s"
+  "tart_timeB\r\n\013_batch_sizeB$\n\"_time_betwee"
+  "n_batches_millisecondsB\033\n\031_retention_ids"
+  "_batch_size\"\264\002\n\020ConfigImageProxy\022\033\n\006enab"
+  "le\030\001 \001(\010H\000R\006enable\210\001\001\022-\n\020image_proxy_typ"
+  "e\030\002 \001(\tH\001R\016imageProxyType\210\001\001\0228\n\026remote_i"
+  "mage_proxy_url\030\003 \001(\tH\002R\023remoteImageProxy"
+  "Url\210\001\001\022@\n\032remote_image_proxy_options\030\004 \001"
+  "(\tH\003R\027remoteImageProxyOptions\210\001\001B\t\n\007_ena"
+  "bleB\023\n\021_image_proxy_typeB\031\n\027_remote_imag"
+  "e_proxy_urlB\035\n\033_remote_image_proxy_optio"
+  "ns\"\315\010\n\006Config\022)\n\004main\030\001 \001(\0132\025.common.v1."
+  "ConfigMainR\004main\0225\n\010services\030\002 \001(\0132\031.com"
+  "mon.v1.ConfigServicesR\010services\0225\n\010secur"
+  "ity\030\003 \001(\0132\031.common.v1.ConfigSecurityR\010se"
+  "curity\022,\n\005cache\030\004 \001(\0132\026.common.v1.CacheC"
+  "onfigR\005cache\0222\n\007metrics\030\005 \001(\0132\030.common.v"
+  "1.ConfigMetricsR\007metrics\022&\n\003sso\030\006 \001(\0132\024."
+  "common.v1.ConfigSSOR\003sso\022&\n\003sql\030\007 \001(\0132\024."
+  "common.v1.ConfigSqlR\003sql\0225\n\010password\030\010 \001"
+  "(\0132\031.common.v1.ConfigPasswordR\010password\022"
+  ")\n\004file\030\t \001(\0132\025.common.v1.ConfigFileR\004fi"
+  "le\022,\n\005email\030\n \001(\0132\026.common.v1.ConfigEmai"
+  "lR\005email\0229\n\nrate_limit\030\013 \001(\0132\032.common.v1"
+  ".ConfigRateLimitR\trateLimit\0222\n\007privacy\030\014"
+  " \001(\0132\030.common.v1.ConfigPrivacyR\007privacy\022"
+  "2\n\007support\030\r \001(\0132\030.common.v1.ConfigSuppo"
+  "rtR\007support\022A\n\014localization\030\016 \001(\0132\035.comm"
+  "on.v1.ConfigLocalizationR\014localization\022)"
+  "\n\004ldap\030\017 \001(\0132\025.common.v1.ConfigLdapR\004lda"
+  "p\022)\n\004saml\030\020 \001(\0132\025.common.v1.ConfigSamlR\004"
+  "saml\0229\n\nnative_app\030\021 \001(\0132\032.common.v1.Con"
+  "figNativeAppR\tnativeApp\022>\n\013meilisearch\030\022"
+  " \001(\0132\034.common.v1.ConfigMeilisearchR\013meil"
+  "isearch\022,\n\005bleve\030\023 \001(\0132\026.common.v1.Confi"
+  "gBleveR\005bleve\022E\n\016data_retention\030\024 \001(\0132\036."
+  "common.v1.ConfigDataRetentionR\rdataReten"
+  "tion\022<\n\013image_proxy\030\025 \001(\0132\033.common.v1.Co"
+  "nfigImageProxyR\nimageProxy\"\022\n\020ConfigGetR"
+  "equest\"u\n\021ConfigGetResponse\022\'\n\004data\030\001 \001("
+  "\0132\021.common.v1.ConfigH\000R\004data\022+\n\005error\030\002 "
+  "\001(\0132\023.common.v1.AppErrorH\000R\005errorB\n\n\010res"
+  "ponse\"@\n\023ConfigUpdateRequest\022)\n\006config\030\001"
+  " \001(\0132\021.common.v1.ConfigR\006config\"x\n\024Confi"
+  "gUpdateResponse\022\'\n\004data\030\001 \001(\0132\021.common.v"
+  "1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.common"
+  ".v1.AppErrorH\000R\005errorB\n\n\010response\"z\n\026Con"
+  "figListenerResponse\022\'\n\004data\030\001 \001(\0132\021.comm"
+  "on.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.co"
+  "mmon.v1.AppErrorH\000R\005errorB\n\n\010response\"4\n"
+  "\025ConfigListenerRequest\022\033\n\tclient_id\030\001 \001("
+  "\tR\010clientIdB:\n\032org.megacommerce.common.v"
+  "1B\013ConfigProtoZ\014common/v1;v1\370\001\001b\006proto3"
   ;
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_common_2fv1_2fconfig_2eproto_deps[1] = {
+  &::descriptor_table_common_2fv1_2ferror_2eproto,
+};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2fv1_2fconfig_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fv1_2fconfig_2eproto = {
-  false, false, 20591, descriptor_table_protodef_common_2fv1_2fconfig_2eproto, "common/v1/config.proto", 
-  &descriptor_table_common_2fv1_2fconfig_2eproto_once, nullptr, 0, 22,
+  false, false, 21119, descriptor_table_protodef_common_2fv1_2fconfig_2eproto, "common/v1/config.proto", 
+  &descriptor_table_common_2fv1_2fconfig_2eproto_once, descriptor_table_common_2fv1_2fconfig_2eproto_deps, 1, 28,
   schemas, file_default_instances, TableStruct_common_2fv1_2fconfig_2eproto::offsets,
   file_level_metadata_common_2fv1_2fconfig_2eproto, file_level_enum_descriptors_common_2fv1_2fconfig_2eproto, file_level_service_descriptors_common_2fv1_2fconfig_2eproto,
 };
@@ -16632,6 +16778,1373 @@ void Config::InternalSwap(Config* other) {
       file_level_metadata_common_2fv1_2fconfig_2eproto[21]);
 }
 
+// ===================================================================
+
+class ConfigGetRequest::_Internal {
+ public:
+};
+
+ConfigGetRequest::ConfigGetRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:common.v1.ConfigGetRequest)
+}
+ConfigGetRequest::ConfigGetRequest(const ConfigGetRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:common.v1.ConfigGetRequest)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ConfigGetRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ConfigGetRequest::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata ConfigGetRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_common_2fv1_2fconfig_2eproto_getter, &descriptor_table_common_2fv1_2fconfig_2eproto_once,
+      file_level_metadata_common_2fv1_2fconfig_2eproto[22]);
+}
+
+// ===================================================================
+
+class ConfigGetResponse::_Internal {
+ public:
+  static const ::common::v1::Config& data(const ConfigGetResponse* msg);
+  static const ::common::v1::AppError& error(const ConfigGetResponse* msg);
+};
+
+const ::common::v1::Config&
+ConfigGetResponse::_Internal::data(const ConfigGetResponse* msg) {
+  return *msg->response_.data_;
+}
+const ::common::v1::AppError&
+ConfigGetResponse::_Internal::error(const ConfigGetResponse* msg) {
+  return *msg->response_.error_;
+}
+void ConfigGetResponse::set_allocated_data(::common::v1::Config* data) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_response();
+  if (data) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::common::v1::Config>::GetOwningArena(data);
+    if (message_arena != submessage_arena) {
+      data = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, data, submessage_arena);
+    }
+    set_has_data();
+    response_.data_ = data;
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigGetResponse.data)
+}
+void ConfigGetResponse::set_allocated_error(::common::v1::AppError* error) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_response();
+  if (error) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(error));
+    if (message_arena != submessage_arena) {
+      error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, error, submessage_arena);
+    }
+    set_has_error();
+    response_.error_ = error;
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigGetResponse.error)
+}
+void ConfigGetResponse::clear_error() {
+  if (_internal_has_error()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete response_.error_;
+    }
+    clear_has_response();
+  }
+}
+ConfigGetResponse::ConfigGetResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:common.v1.ConfigGetResponse)
+}
+ConfigGetResponse::ConfigGetResponse(const ConfigGetResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  clear_has_response();
+  switch (from.response_case()) {
+    case kData: {
+      _internal_mutable_data()->::common::v1::Config::MergeFrom(from._internal_data());
+      break;
+    }
+    case kError: {
+      _internal_mutable_error()->::common::v1::AppError::MergeFrom(from._internal_error());
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:common.v1.ConfigGetResponse)
+}
+
+inline void ConfigGetResponse::SharedCtor() {
+clear_has_response();
+}
+
+ConfigGetResponse::~ConfigGetResponse() {
+  // @@protoc_insertion_point(destructor:common.v1.ConfigGetResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void ConfigGetResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (has_response()) {
+    clear_response();
+  }
+}
+
+void ConfigGetResponse::ArenaDtor(void* object) {
+  ConfigGetResponse* _this = reinterpret_cast< ConfigGetResponse* >(object);
+  (void)_this;
+}
+void ConfigGetResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ConfigGetResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ConfigGetResponse::clear_response() {
+// @@protoc_insertion_point(one_of_clear_start:common.v1.ConfigGetResponse)
+  switch (response_case()) {
+    case kData: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete response_.data_;
+      }
+      break;
+    }
+    case kError: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete response_.error_;
+      }
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = RESPONSE_NOT_SET;
+}
+
+
+void ConfigGetResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:common.v1.ConfigGetResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  clear_response();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ConfigGetResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .common.v1.Config data = 1 [json_name = "data"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_data(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .common.v1.AppError error = 2 [json_name = "error"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ConfigGetResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:common.v1.ConfigGetResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .common.v1.Config data = 1 [json_name = "data"];
+  if (_internal_has_data()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::data(this), target, stream);
+  }
+
+  // .common.v1.AppError error = 2 [json_name = "error"];
+  if (_internal_has_error()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::error(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:common.v1.ConfigGetResponse)
+  return target;
+}
+
+size_t ConfigGetResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:common.v1.ConfigGetResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  switch (response_case()) {
+    // .common.v1.Config data = 1 [json_name = "data"];
+    case kData: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *response_.data_);
+      break;
+    }
+    // .common.v1.AppError error = 2 [json_name = "error"];
+    case kError: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *response_.error_);
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ConfigGetResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ConfigGetResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ConfigGetResponse::GetClassData() const { return &_class_data_; }
+
+void ConfigGetResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<ConfigGetResponse *>(to)->MergeFrom(
+      static_cast<const ConfigGetResponse &>(from));
+}
+
+
+void ConfigGetResponse::MergeFrom(const ConfigGetResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:common.v1.ConfigGetResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  switch (from.response_case()) {
+    case kData: {
+      _internal_mutable_data()->::common::v1::Config::MergeFrom(from._internal_data());
+      break;
+    }
+    case kError: {
+      _internal_mutable_error()->::common::v1::AppError::MergeFrom(from._internal_error());
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ConfigGetResponse::CopyFrom(const ConfigGetResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:common.v1.ConfigGetResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ConfigGetResponse::IsInitialized() const {
+  return true;
+}
+
+void ConfigGetResponse::InternalSwap(ConfigGetResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(response_, other->response_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ConfigGetResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_common_2fv1_2fconfig_2eproto_getter, &descriptor_table_common_2fv1_2fconfig_2eproto_once,
+      file_level_metadata_common_2fv1_2fconfig_2eproto[23]);
+}
+
+// ===================================================================
+
+class ConfigUpdateRequest::_Internal {
+ public:
+  static const ::common::v1::Config& config(const ConfigUpdateRequest* msg);
+};
+
+const ::common::v1::Config&
+ConfigUpdateRequest::_Internal::config(const ConfigUpdateRequest* msg) {
+  return *msg->config_;
+}
+ConfigUpdateRequest::ConfigUpdateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:common.v1.ConfigUpdateRequest)
+}
+ConfigUpdateRequest::ConfigUpdateRequest(const ConfigUpdateRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  if (from._internal_has_config()) {
+    config_ = new ::common::v1::Config(*from.config_);
+  } else {
+    config_ = nullptr;
+  }
+  // @@protoc_insertion_point(copy_constructor:common.v1.ConfigUpdateRequest)
+}
+
+inline void ConfigUpdateRequest::SharedCtor() {
+config_ = nullptr;
+}
+
+ConfigUpdateRequest::~ConfigUpdateRequest() {
+  // @@protoc_insertion_point(destructor:common.v1.ConfigUpdateRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void ConfigUpdateRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (this != internal_default_instance()) delete config_;
+}
+
+void ConfigUpdateRequest::ArenaDtor(void* object) {
+  ConfigUpdateRequest* _this = reinterpret_cast< ConfigUpdateRequest* >(object);
+  (void)_this;
+}
+void ConfigUpdateRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ConfigUpdateRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ConfigUpdateRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:common.v1.ConfigUpdateRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  if (GetArenaForAllocation() == nullptr && config_ != nullptr) {
+    delete config_;
+  }
+  config_ = nullptr;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ConfigUpdateRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .common.v1.Config config = 1 [json_name = "config"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_config(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ConfigUpdateRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:common.v1.ConfigUpdateRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .common.v1.Config config = 1 [json_name = "config"];
+  if (this->_internal_has_config()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::config(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:common.v1.ConfigUpdateRequest)
+  return target;
+}
+
+size_t ConfigUpdateRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:common.v1.ConfigUpdateRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // .common.v1.Config config = 1 [json_name = "config"];
+  if (this->_internal_has_config()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *config_);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ConfigUpdateRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ConfigUpdateRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ConfigUpdateRequest::GetClassData() const { return &_class_data_; }
+
+void ConfigUpdateRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<ConfigUpdateRequest *>(to)->MergeFrom(
+      static_cast<const ConfigUpdateRequest &>(from));
+}
+
+
+void ConfigUpdateRequest::MergeFrom(const ConfigUpdateRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:common.v1.ConfigUpdateRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_config()) {
+    _internal_mutable_config()->::common::v1::Config::MergeFrom(from._internal_config());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ConfigUpdateRequest::CopyFrom(const ConfigUpdateRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:common.v1.ConfigUpdateRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ConfigUpdateRequest::IsInitialized() const {
+  return true;
+}
+
+void ConfigUpdateRequest::InternalSwap(ConfigUpdateRequest* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(config_, other->config_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ConfigUpdateRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_common_2fv1_2fconfig_2eproto_getter, &descriptor_table_common_2fv1_2fconfig_2eproto_once,
+      file_level_metadata_common_2fv1_2fconfig_2eproto[24]);
+}
+
+// ===================================================================
+
+class ConfigUpdateResponse::_Internal {
+ public:
+  static const ::common::v1::Config& data(const ConfigUpdateResponse* msg);
+  static const ::common::v1::AppError& error(const ConfigUpdateResponse* msg);
+};
+
+const ::common::v1::Config&
+ConfigUpdateResponse::_Internal::data(const ConfigUpdateResponse* msg) {
+  return *msg->response_.data_;
+}
+const ::common::v1::AppError&
+ConfigUpdateResponse::_Internal::error(const ConfigUpdateResponse* msg) {
+  return *msg->response_.error_;
+}
+void ConfigUpdateResponse::set_allocated_data(::common::v1::Config* data) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_response();
+  if (data) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::common::v1::Config>::GetOwningArena(data);
+    if (message_arena != submessage_arena) {
+      data = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, data, submessage_arena);
+    }
+    set_has_data();
+    response_.data_ = data;
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigUpdateResponse.data)
+}
+void ConfigUpdateResponse::set_allocated_error(::common::v1::AppError* error) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_response();
+  if (error) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(error));
+    if (message_arena != submessage_arena) {
+      error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, error, submessage_arena);
+    }
+    set_has_error();
+    response_.error_ = error;
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigUpdateResponse.error)
+}
+void ConfigUpdateResponse::clear_error() {
+  if (_internal_has_error()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete response_.error_;
+    }
+    clear_has_response();
+  }
+}
+ConfigUpdateResponse::ConfigUpdateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:common.v1.ConfigUpdateResponse)
+}
+ConfigUpdateResponse::ConfigUpdateResponse(const ConfigUpdateResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  clear_has_response();
+  switch (from.response_case()) {
+    case kData: {
+      _internal_mutable_data()->::common::v1::Config::MergeFrom(from._internal_data());
+      break;
+    }
+    case kError: {
+      _internal_mutable_error()->::common::v1::AppError::MergeFrom(from._internal_error());
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:common.v1.ConfigUpdateResponse)
+}
+
+inline void ConfigUpdateResponse::SharedCtor() {
+clear_has_response();
+}
+
+ConfigUpdateResponse::~ConfigUpdateResponse() {
+  // @@protoc_insertion_point(destructor:common.v1.ConfigUpdateResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void ConfigUpdateResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (has_response()) {
+    clear_response();
+  }
+}
+
+void ConfigUpdateResponse::ArenaDtor(void* object) {
+  ConfigUpdateResponse* _this = reinterpret_cast< ConfigUpdateResponse* >(object);
+  (void)_this;
+}
+void ConfigUpdateResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ConfigUpdateResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ConfigUpdateResponse::clear_response() {
+// @@protoc_insertion_point(one_of_clear_start:common.v1.ConfigUpdateResponse)
+  switch (response_case()) {
+    case kData: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete response_.data_;
+      }
+      break;
+    }
+    case kError: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete response_.error_;
+      }
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = RESPONSE_NOT_SET;
+}
+
+
+void ConfigUpdateResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:common.v1.ConfigUpdateResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  clear_response();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ConfigUpdateResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .common.v1.Config data = 1 [json_name = "data"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_data(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .common.v1.AppError error = 2 [json_name = "error"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ConfigUpdateResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:common.v1.ConfigUpdateResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .common.v1.Config data = 1 [json_name = "data"];
+  if (_internal_has_data()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::data(this), target, stream);
+  }
+
+  // .common.v1.AppError error = 2 [json_name = "error"];
+  if (_internal_has_error()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::error(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:common.v1.ConfigUpdateResponse)
+  return target;
+}
+
+size_t ConfigUpdateResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:common.v1.ConfigUpdateResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  switch (response_case()) {
+    // .common.v1.Config data = 1 [json_name = "data"];
+    case kData: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *response_.data_);
+      break;
+    }
+    // .common.v1.AppError error = 2 [json_name = "error"];
+    case kError: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *response_.error_);
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ConfigUpdateResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ConfigUpdateResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ConfigUpdateResponse::GetClassData() const { return &_class_data_; }
+
+void ConfigUpdateResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<ConfigUpdateResponse *>(to)->MergeFrom(
+      static_cast<const ConfigUpdateResponse &>(from));
+}
+
+
+void ConfigUpdateResponse::MergeFrom(const ConfigUpdateResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:common.v1.ConfigUpdateResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  switch (from.response_case()) {
+    case kData: {
+      _internal_mutable_data()->::common::v1::Config::MergeFrom(from._internal_data());
+      break;
+    }
+    case kError: {
+      _internal_mutable_error()->::common::v1::AppError::MergeFrom(from._internal_error());
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ConfigUpdateResponse::CopyFrom(const ConfigUpdateResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:common.v1.ConfigUpdateResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ConfigUpdateResponse::IsInitialized() const {
+  return true;
+}
+
+void ConfigUpdateResponse::InternalSwap(ConfigUpdateResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(response_, other->response_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ConfigUpdateResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_common_2fv1_2fconfig_2eproto_getter, &descriptor_table_common_2fv1_2fconfig_2eproto_once,
+      file_level_metadata_common_2fv1_2fconfig_2eproto[25]);
+}
+
+// ===================================================================
+
+class ConfigListenerResponse::_Internal {
+ public:
+  static const ::common::v1::Config& data(const ConfigListenerResponse* msg);
+  static const ::common::v1::AppError& error(const ConfigListenerResponse* msg);
+};
+
+const ::common::v1::Config&
+ConfigListenerResponse::_Internal::data(const ConfigListenerResponse* msg) {
+  return *msg->response_.data_;
+}
+const ::common::v1::AppError&
+ConfigListenerResponse::_Internal::error(const ConfigListenerResponse* msg) {
+  return *msg->response_.error_;
+}
+void ConfigListenerResponse::set_allocated_data(::common::v1::Config* data) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_response();
+  if (data) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::common::v1::Config>::GetOwningArena(data);
+    if (message_arena != submessage_arena) {
+      data = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, data, submessage_arena);
+    }
+    set_has_data();
+    response_.data_ = data;
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigListenerResponse.data)
+}
+void ConfigListenerResponse::set_allocated_error(::common::v1::AppError* error) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_response();
+  if (error) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(error));
+    if (message_arena != submessage_arena) {
+      error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, error, submessage_arena);
+    }
+    set_has_error();
+    response_.error_ = error;
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigListenerResponse.error)
+}
+void ConfigListenerResponse::clear_error() {
+  if (_internal_has_error()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete response_.error_;
+    }
+    clear_has_response();
+  }
+}
+ConfigListenerResponse::ConfigListenerResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:common.v1.ConfigListenerResponse)
+}
+ConfigListenerResponse::ConfigListenerResponse(const ConfigListenerResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  clear_has_response();
+  switch (from.response_case()) {
+    case kData: {
+      _internal_mutable_data()->::common::v1::Config::MergeFrom(from._internal_data());
+      break;
+    }
+    case kError: {
+      _internal_mutable_error()->::common::v1::AppError::MergeFrom(from._internal_error());
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:common.v1.ConfigListenerResponse)
+}
+
+inline void ConfigListenerResponse::SharedCtor() {
+clear_has_response();
+}
+
+ConfigListenerResponse::~ConfigListenerResponse() {
+  // @@protoc_insertion_point(destructor:common.v1.ConfigListenerResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void ConfigListenerResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (has_response()) {
+    clear_response();
+  }
+}
+
+void ConfigListenerResponse::ArenaDtor(void* object) {
+  ConfigListenerResponse* _this = reinterpret_cast< ConfigListenerResponse* >(object);
+  (void)_this;
+}
+void ConfigListenerResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ConfigListenerResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ConfigListenerResponse::clear_response() {
+// @@protoc_insertion_point(one_of_clear_start:common.v1.ConfigListenerResponse)
+  switch (response_case()) {
+    case kData: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete response_.data_;
+      }
+      break;
+    }
+    case kError: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete response_.error_;
+      }
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = RESPONSE_NOT_SET;
+}
+
+
+void ConfigListenerResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:common.v1.ConfigListenerResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  clear_response();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ConfigListenerResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .common.v1.Config data = 1 [json_name = "data"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_data(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .common.v1.AppError error = 2 [json_name = "error"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ConfigListenerResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:common.v1.ConfigListenerResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .common.v1.Config data = 1 [json_name = "data"];
+  if (_internal_has_data()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::data(this), target, stream);
+  }
+
+  // .common.v1.AppError error = 2 [json_name = "error"];
+  if (_internal_has_error()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::error(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:common.v1.ConfigListenerResponse)
+  return target;
+}
+
+size_t ConfigListenerResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:common.v1.ConfigListenerResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  switch (response_case()) {
+    // .common.v1.Config data = 1 [json_name = "data"];
+    case kData: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *response_.data_);
+      break;
+    }
+    // .common.v1.AppError error = 2 [json_name = "error"];
+    case kError: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *response_.error_);
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ConfigListenerResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ConfigListenerResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ConfigListenerResponse::GetClassData() const { return &_class_data_; }
+
+void ConfigListenerResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<ConfigListenerResponse *>(to)->MergeFrom(
+      static_cast<const ConfigListenerResponse &>(from));
+}
+
+
+void ConfigListenerResponse::MergeFrom(const ConfigListenerResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:common.v1.ConfigListenerResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  switch (from.response_case()) {
+    case kData: {
+      _internal_mutable_data()->::common::v1::Config::MergeFrom(from._internal_data());
+      break;
+    }
+    case kError: {
+      _internal_mutable_error()->::common::v1::AppError::MergeFrom(from._internal_error());
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ConfigListenerResponse::CopyFrom(const ConfigListenerResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:common.v1.ConfigListenerResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ConfigListenerResponse::IsInitialized() const {
+  return true;
+}
+
+void ConfigListenerResponse::InternalSwap(ConfigListenerResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(response_, other->response_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ConfigListenerResponse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_common_2fv1_2fconfig_2eproto_getter, &descriptor_table_common_2fv1_2fconfig_2eproto_once,
+      file_level_metadata_common_2fv1_2fconfig_2eproto[26]);
+}
+
+// ===================================================================
+
+class ConfigListenerRequest::_Internal {
+ public:
+};
+
+ConfigListenerRequest::ConfigListenerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
+  // @@protoc_insertion_point(arena_constructor:common.v1.ConfigListenerRequest)
+}
+ConfigListenerRequest::ConfigListenerRequest(const ConfigListenerRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  client_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    client_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_client_id().empty()) {
+    client_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_client_id(), 
+      GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:common.v1.ConfigListenerRequest)
+}
+
+inline void ConfigListenerRequest::SharedCtor() {
+client_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  client_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+ConfigListenerRequest::~ConfigListenerRequest() {
+  // @@protoc_insertion_point(destructor:common.v1.ConfigListenerRequest)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void ConfigListenerRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  client_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void ConfigListenerRequest::ArenaDtor(void* object) {
+  ConfigListenerRequest* _this = reinterpret_cast< ConfigListenerRequest* >(object);
+  (void)_this;
+}
+void ConfigListenerRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void ConfigListenerRequest::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void ConfigListenerRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:common.v1.ConfigListenerRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  client_id_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ConfigListenerRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string client_id = 1 [json_name = "clientId"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_client_id();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "common.v1.ConfigListenerRequest.client_id"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ConfigListenerRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:common.v1.ConfigListenerRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string client_id = 1 [json_name = "clientId"];
+  if (!this->_internal_client_id().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_client_id().data(), static_cast<int>(this->_internal_client_id().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "common.v1.ConfigListenerRequest.client_id");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_client_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:common.v1.ConfigListenerRequest)
+  return target;
+}
+
+size_t ConfigListenerRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:common.v1.ConfigListenerRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string client_id = 1 [json_name = "clientId"];
+  if (!this->_internal_client_id().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_client_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ConfigListenerRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    ConfigListenerRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ConfigListenerRequest::GetClassData() const { return &_class_data_; }
+
+void ConfigListenerRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<ConfigListenerRequest *>(to)->MergeFrom(
+      static_cast<const ConfigListenerRequest &>(from));
+}
+
+
+void ConfigListenerRequest::MergeFrom(const ConfigListenerRequest& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:common.v1.ConfigListenerRequest)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_client_id().empty()) {
+    _internal_set_client_id(from._internal_client_id());
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ConfigListenerRequest::CopyFrom(const ConfigListenerRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:common.v1.ConfigListenerRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ConfigListenerRequest::IsInitialized() const {
+  return true;
+}
+
+void ConfigListenerRequest::InternalSwap(ConfigListenerRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &client_id_, lhs_arena,
+      &other->client_id_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ConfigListenerRequest::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_common_2fv1_2fconfig_2eproto_getter, &descriptor_table_common_2fv1_2fconfig_2eproto_once,
+      file_level_metadata_common_2fv1_2fconfig_2eproto[27]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace common
@@ -16701,6 +18214,24 @@ template<> PROTOBUF_NOINLINE ::common::v1::ConfigImageProxy* Arena::CreateMaybeM
 }
 template<> PROTOBUF_NOINLINE ::common::v1::Config* Arena::CreateMaybeMessage< ::common::v1::Config >(Arena* arena) {
   return Arena::CreateMessageInternal< ::common::v1::Config >(arena);
+}
+template<> PROTOBUF_NOINLINE ::common::v1::ConfigGetRequest* Arena::CreateMaybeMessage< ::common::v1::ConfigGetRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::common::v1::ConfigGetRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::common::v1::ConfigGetResponse* Arena::CreateMaybeMessage< ::common::v1::ConfigGetResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::common::v1::ConfigGetResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::common::v1::ConfigUpdateRequest* Arena::CreateMaybeMessage< ::common::v1::ConfigUpdateRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::common::v1::ConfigUpdateRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::common::v1::ConfigUpdateResponse* Arena::CreateMaybeMessage< ::common::v1::ConfigUpdateResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::common::v1::ConfigUpdateResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::common::v1::ConfigListenerResponse* Arena::CreateMaybeMessage< ::common::v1::ConfigListenerResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::common::v1::ConfigListenerResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::common::v1::ConfigListenerRequest* Arena::CreateMaybeMessage< ::common::v1::ConfigListenerRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::common::v1::ConfigListenerRequest >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

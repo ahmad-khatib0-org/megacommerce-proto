@@ -23,6 +23,7 @@
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/arena.h>
 #include <google/protobuf/arenastring.h>
+#include <google/protobuf/generated_message_bases.h>
 #include <google/protobuf/generated_message_table_driven.h>
 #include <google/protobuf/generated_message_util.h>
 #include <google/protobuf/metadata_lite.h>
@@ -31,6 +32,7 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "common/v1/error.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_common_2fv1_2fconfig_2eproto
@@ -46,7 +48,7 @@ struct TableStruct_common_2fv1_2fconfig_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[22]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[28]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -73,12 +75,24 @@ extern ConfigEmailDefaultTypeInternal _ConfigEmail_default_instance_;
 class ConfigFile;
 struct ConfigFileDefaultTypeInternal;
 extern ConfigFileDefaultTypeInternal _ConfigFile_default_instance_;
+class ConfigGetRequest;
+struct ConfigGetRequestDefaultTypeInternal;
+extern ConfigGetRequestDefaultTypeInternal _ConfigGetRequest_default_instance_;
+class ConfigGetResponse;
+struct ConfigGetResponseDefaultTypeInternal;
+extern ConfigGetResponseDefaultTypeInternal _ConfigGetResponse_default_instance_;
 class ConfigImageProxy;
 struct ConfigImageProxyDefaultTypeInternal;
 extern ConfigImageProxyDefaultTypeInternal _ConfigImageProxy_default_instance_;
 class ConfigLdap;
 struct ConfigLdapDefaultTypeInternal;
 extern ConfigLdapDefaultTypeInternal _ConfigLdap_default_instance_;
+class ConfigListenerRequest;
+struct ConfigListenerRequestDefaultTypeInternal;
+extern ConfigListenerRequestDefaultTypeInternal _ConfigListenerRequest_default_instance_;
+class ConfigListenerResponse;
+struct ConfigListenerResponseDefaultTypeInternal;
+extern ConfigListenerResponseDefaultTypeInternal _ConfigListenerResponse_default_instance_;
 class ConfigLocalization;
 struct ConfigLocalizationDefaultTypeInternal;
 extern ConfigLocalizationDefaultTypeInternal _ConfigLocalization_default_instance_;
@@ -121,6 +135,12 @@ extern ConfigSqlDefaultTypeInternal _ConfigSql_default_instance_;
 class ConfigSupport;
 struct ConfigSupportDefaultTypeInternal;
 extern ConfigSupportDefaultTypeInternal _ConfigSupport_default_instance_;
+class ConfigUpdateRequest;
+struct ConfigUpdateRequestDefaultTypeInternal;
+extern ConfigUpdateRequestDefaultTypeInternal _ConfigUpdateRequest_default_instance_;
+class ConfigUpdateResponse;
+struct ConfigUpdateResponseDefaultTypeInternal;
+extern ConfigUpdateResponseDefaultTypeInternal _ConfigUpdateResponse_default_instance_;
 }  // namespace v1
 }  // namespace common
 PROTOBUF_NAMESPACE_OPEN
@@ -130,8 +150,12 @@ template<> ::common::v1::ConfigBleve* Arena::CreateMaybeMessage<::common::v1::Co
 template<> ::common::v1::ConfigDataRetention* Arena::CreateMaybeMessage<::common::v1::ConfigDataRetention>(Arena*);
 template<> ::common::v1::ConfigEmail* Arena::CreateMaybeMessage<::common::v1::ConfigEmail>(Arena*);
 template<> ::common::v1::ConfigFile* Arena::CreateMaybeMessage<::common::v1::ConfigFile>(Arena*);
+template<> ::common::v1::ConfigGetRequest* Arena::CreateMaybeMessage<::common::v1::ConfigGetRequest>(Arena*);
+template<> ::common::v1::ConfigGetResponse* Arena::CreateMaybeMessage<::common::v1::ConfigGetResponse>(Arena*);
 template<> ::common::v1::ConfigImageProxy* Arena::CreateMaybeMessage<::common::v1::ConfigImageProxy>(Arena*);
 template<> ::common::v1::ConfigLdap* Arena::CreateMaybeMessage<::common::v1::ConfigLdap>(Arena*);
+template<> ::common::v1::ConfigListenerRequest* Arena::CreateMaybeMessage<::common::v1::ConfigListenerRequest>(Arena*);
+template<> ::common::v1::ConfigListenerResponse* Arena::CreateMaybeMessage<::common::v1::ConfigListenerResponse>(Arena*);
 template<> ::common::v1::ConfigLocalization* Arena::CreateMaybeMessage<::common::v1::ConfigLocalization>(Arena*);
 template<> ::common::v1::ConfigMain* Arena::CreateMaybeMessage<::common::v1::ConfigMain>(Arena*);
 template<> ::common::v1::ConfigMeilisearch* Arena::CreateMaybeMessage<::common::v1::ConfigMeilisearch>(Arena*);
@@ -146,6 +170,8 @@ template<> ::common::v1::ConfigSecurity* Arena::CreateMaybeMessage<::common::v1:
 template<> ::common::v1::ConfigServices* Arena::CreateMaybeMessage<::common::v1::ConfigServices>(Arena*);
 template<> ::common::v1::ConfigSql* Arena::CreateMaybeMessage<::common::v1::ConfigSql>(Arena*);
 template<> ::common::v1::ConfigSupport* Arena::CreateMaybeMessage<::common::v1::ConfigSupport>(Arena*);
+template<> ::common::v1::ConfigUpdateRequest* Arena::CreateMaybeMessage<::common::v1::ConfigUpdateRequest>(Arena*);
+template<> ::common::v1::ConfigUpdateResponse* Arena::CreateMaybeMessage<::common::v1::ConfigUpdateResponse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace common {
 namespace v1 {
@@ -7921,6 +7947,1012 @@ class Config final :
   ::common::v1::ConfigBleve* bleve_;
   ::common::v1::ConfigDataRetention* data_retention_;
   ::common::v1::ConfigImageProxy* image_proxy_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_common_2fv1_2fconfig_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ConfigGetRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:common.v1.ConfigGetRequest) */ {
+ public:
+  inline ConfigGetRequest() : ConfigGetRequest(nullptr) {}
+  explicit constexpr ConfigGetRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ConfigGetRequest(const ConfigGetRequest& from);
+  ConfigGetRequest(ConfigGetRequest&& from) noexcept
+    : ConfigGetRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ConfigGetRequest& operator=(const ConfigGetRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ConfigGetRequest& operator=(ConfigGetRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ConfigGetRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ConfigGetRequest* internal_default_instance() {
+    return reinterpret_cast<const ConfigGetRequest*>(
+               &_ConfigGetRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    22;
+
+  friend void swap(ConfigGetRequest& a, ConfigGetRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ConfigGetRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ConfigGetRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ConfigGetRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ConfigGetRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const ConfigGetRequest& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const ConfigGetRequest& from) {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
+  }
+  public:
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "common.v1.ConfigGetRequest";
+  }
+  protected:
+  explicit ConfigGetRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:common.v1.ConfigGetRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_common_2fv1_2fconfig_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ConfigGetResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:common.v1.ConfigGetResponse) */ {
+ public:
+  inline ConfigGetResponse() : ConfigGetResponse(nullptr) {}
+  ~ConfigGetResponse() override;
+  explicit constexpr ConfigGetResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ConfigGetResponse(const ConfigGetResponse& from);
+  ConfigGetResponse(ConfigGetResponse&& from) noexcept
+    : ConfigGetResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ConfigGetResponse& operator=(const ConfigGetResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ConfigGetResponse& operator=(ConfigGetResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ConfigGetResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  enum ResponseCase {
+    kData = 1,
+    kError = 2,
+    RESPONSE_NOT_SET = 0,
+  };
+
+  static inline const ConfigGetResponse* internal_default_instance() {
+    return reinterpret_cast<const ConfigGetResponse*>(
+               &_ConfigGetResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    23;
+
+  friend void swap(ConfigGetResponse& a, ConfigGetResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ConfigGetResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ConfigGetResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ConfigGetResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ConfigGetResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ConfigGetResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ConfigGetResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ConfigGetResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "common.v1.ConfigGetResponse";
+  }
+  protected:
+  explicit ConfigGetResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDataFieldNumber = 1,
+    kErrorFieldNumber = 2,
+  };
+  // .common.v1.Config data = 1 [json_name = "data"];
+  bool has_data() const;
+  private:
+  bool _internal_has_data() const;
+  public:
+  void clear_data();
+  const ::common::v1::Config& data() const;
+  PROTOBUF_NODISCARD ::common::v1::Config* release_data();
+  ::common::v1::Config* mutable_data();
+  void set_allocated_data(::common::v1::Config* data);
+  private:
+  const ::common::v1::Config& _internal_data() const;
+  ::common::v1::Config* _internal_mutable_data();
+  public:
+  void unsafe_arena_set_allocated_data(
+      ::common::v1::Config* data);
+  ::common::v1::Config* unsafe_arena_release_data();
+
+  // .common.v1.AppError error = 2 [json_name = "error"];
+  bool has_error() const;
+  private:
+  bool _internal_has_error() const;
+  public:
+  void clear_error();
+  const ::common::v1::AppError& error() const;
+  PROTOBUF_NODISCARD ::common::v1::AppError* release_error();
+  ::common::v1::AppError* mutable_error();
+  void set_allocated_error(::common::v1::AppError* error);
+  private:
+  const ::common::v1::AppError& _internal_error() const;
+  ::common::v1::AppError* _internal_mutable_error();
+  public:
+  void unsafe_arena_set_allocated_error(
+      ::common::v1::AppError* error);
+  ::common::v1::AppError* unsafe_arena_release_error();
+
+  void clear_response();
+  ResponseCase response_case() const;
+  // @@protoc_insertion_point(class_scope:common.v1.ConfigGetResponse)
+ private:
+  class _Internal;
+  void set_has_data();
+  void set_has_error();
+
+  inline bool has_response() const;
+  inline void clear_has_response();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  union ResponseUnion {
+    constexpr ResponseUnion() : _constinit_{} {}
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+    ::common::v1::Config* data_;
+    ::common::v1::AppError* error_;
+  } response_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  uint32_t _oneof_case_[1];
+
+  friend struct ::TableStruct_common_2fv1_2fconfig_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ConfigUpdateRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:common.v1.ConfigUpdateRequest) */ {
+ public:
+  inline ConfigUpdateRequest() : ConfigUpdateRequest(nullptr) {}
+  ~ConfigUpdateRequest() override;
+  explicit constexpr ConfigUpdateRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ConfigUpdateRequest(const ConfigUpdateRequest& from);
+  ConfigUpdateRequest(ConfigUpdateRequest&& from) noexcept
+    : ConfigUpdateRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ConfigUpdateRequest& operator=(const ConfigUpdateRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ConfigUpdateRequest& operator=(ConfigUpdateRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ConfigUpdateRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ConfigUpdateRequest* internal_default_instance() {
+    return reinterpret_cast<const ConfigUpdateRequest*>(
+               &_ConfigUpdateRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    24;
+
+  friend void swap(ConfigUpdateRequest& a, ConfigUpdateRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ConfigUpdateRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ConfigUpdateRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ConfigUpdateRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ConfigUpdateRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ConfigUpdateRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ConfigUpdateRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ConfigUpdateRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "common.v1.ConfigUpdateRequest";
+  }
+  protected:
+  explicit ConfigUpdateRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kConfigFieldNumber = 1,
+  };
+  // .common.v1.Config config = 1 [json_name = "config"];
+  bool has_config() const;
+  private:
+  bool _internal_has_config() const;
+  public:
+  void clear_config();
+  const ::common::v1::Config& config() const;
+  PROTOBUF_NODISCARD ::common::v1::Config* release_config();
+  ::common::v1::Config* mutable_config();
+  void set_allocated_config(::common::v1::Config* config);
+  private:
+  const ::common::v1::Config& _internal_config() const;
+  ::common::v1::Config* _internal_mutable_config();
+  public:
+  void unsafe_arena_set_allocated_config(
+      ::common::v1::Config* config);
+  ::common::v1::Config* unsafe_arena_release_config();
+
+  // @@protoc_insertion_point(class_scope:common.v1.ConfigUpdateRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::common::v1::Config* config_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_common_2fv1_2fconfig_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ConfigUpdateResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:common.v1.ConfigUpdateResponse) */ {
+ public:
+  inline ConfigUpdateResponse() : ConfigUpdateResponse(nullptr) {}
+  ~ConfigUpdateResponse() override;
+  explicit constexpr ConfigUpdateResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ConfigUpdateResponse(const ConfigUpdateResponse& from);
+  ConfigUpdateResponse(ConfigUpdateResponse&& from) noexcept
+    : ConfigUpdateResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ConfigUpdateResponse& operator=(const ConfigUpdateResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ConfigUpdateResponse& operator=(ConfigUpdateResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ConfigUpdateResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  enum ResponseCase {
+    kData = 1,
+    kError = 2,
+    RESPONSE_NOT_SET = 0,
+  };
+
+  static inline const ConfigUpdateResponse* internal_default_instance() {
+    return reinterpret_cast<const ConfigUpdateResponse*>(
+               &_ConfigUpdateResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    25;
+
+  friend void swap(ConfigUpdateResponse& a, ConfigUpdateResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ConfigUpdateResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ConfigUpdateResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ConfigUpdateResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ConfigUpdateResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ConfigUpdateResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ConfigUpdateResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ConfigUpdateResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "common.v1.ConfigUpdateResponse";
+  }
+  protected:
+  explicit ConfigUpdateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDataFieldNumber = 1,
+    kErrorFieldNumber = 2,
+  };
+  // .common.v1.Config data = 1 [json_name = "data"];
+  bool has_data() const;
+  private:
+  bool _internal_has_data() const;
+  public:
+  void clear_data();
+  const ::common::v1::Config& data() const;
+  PROTOBUF_NODISCARD ::common::v1::Config* release_data();
+  ::common::v1::Config* mutable_data();
+  void set_allocated_data(::common::v1::Config* data);
+  private:
+  const ::common::v1::Config& _internal_data() const;
+  ::common::v1::Config* _internal_mutable_data();
+  public:
+  void unsafe_arena_set_allocated_data(
+      ::common::v1::Config* data);
+  ::common::v1::Config* unsafe_arena_release_data();
+
+  // .common.v1.AppError error = 2 [json_name = "error"];
+  bool has_error() const;
+  private:
+  bool _internal_has_error() const;
+  public:
+  void clear_error();
+  const ::common::v1::AppError& error() const;
+  PROTOBUF_NODISCARD ::common::v1::AppError* release_error();
+  ::common::v1::AppError* mutable_error();
+  void set_allocated_error(::common::v1::AppError* error);
+  private:
+  const ::common::v1::AppError& _internal_error() const;
+  ::common::v1::AppError* _internal_mutable_error();
+  public:
+  void unsafe_arena_set_allocated_error(
+      ::common::v1::AppError* error);
+  ::common::v1::AppError* unsafe_arena_release_error();
+
+  void clear_response();
+  ResponseCase response_case() const;
+  // @@protoc_insertion_point(class_scope:common.v1.ConfigUpdateResponse)
+ private:
+  class _Internal;
+  void set_has_data();
+  void set_has_error();
+
+  inline bool has_response() const;
+  inline void clear_has_response();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  union ResponseUnion {
+    constexpr ResponseUnion() : _constinit_{} {}
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+    ::common::v1::Config* data_;
+    ::common::v1::AppError* error_;
+  } response_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  uint32_t _oneof_case_[1];
+
+  friend struct ::TableStruct_common_2fv1_2fconfig_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ConfigListenerResponse final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:common.v1.ConfigListenerResponse) */ {
+ public:
+  inline ConfigListenerResponse() : ConfigListenerResponse(nullptr) {}
+  ~ConfigListenerResponse() override;
+  explicit constexpr ConfigListenerResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ConfigListenerResponse(const ConfigListenerResponse& from);
+  ConfigListenerResponse(ConfigListenerResponse&& from) noexcept
+    : ConfigListenerResponse() {
+    *this = ::std::move(from);
+  }
+
+  inline ConfigListenerResponse& operator=(const ConfigListenerResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ConfigListenerResponse& operator=(ConfigListenerResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ConfigListenerResponse& default_instance() {
+    return *internal_default_instance();
+  }
+  enum ResponseCase {
+    kData = 1,
+    kError = 2,
+    RESPONSE_NOT_SET = 0,
+  };
+
+  static inline const ConfigListenerResponse* internal_default_instance() {
+    return reinterpret_cast<const ConfigListenerResponse*>(
+               &_ConfigListenerResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    26;
+
+  friend void swap(ConfigListenerResponse& a, ConfigListenerResponse& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ConfigListenerResponse* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ConfigListenerResponse* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ConfigListenerResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ConfigListenerResponse>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ConfigListenerResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ConfigListenerResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ConfigListenerResponse* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "common.v1.ConfigListenerResponse";
+  }
+  protected:
+  explicit ConfigListenerResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDataFieldNumber = 1,
+    kErrorFieldNumber = 2,
+  };
+  // .common.v1.Config data = 1 [json_name = "data"];
+  bool has_data() const;
+  private:
+  bool _internal_has_data() const;
+  public:
+  void clear_data();
+  const ::common::v1::Config& data() const;
+  PROTOBUF_NODISCARD ::common::v1::Config* release_data();
+  ::common::v1::Config* mutable_data();
+  void set_allocated_data(::common::v1::Config* data);
+  private:
+  const ::common::v1::Config& _internal_data() const;
+  ::common::v1::Config* _internal_mutable_data();
+  public:
+  void unsafe_arena_set_allocated_data(
+      ::common::v1::Config* data);
+  ::common::v1::Config* unsafe_arena_release_data();
+
+  // .common.v1.AppError error = 2 [json_name = "error"];
+  bool has_error() const;
+  private:
+  bool _internal_has_error() const;
+  public:
+  void clear_error();
+  const ::common::v1::AppError& error() const;
+  PROTOBUF_NODISCARD ::common::v1::AppError* release_error();
+  ::common::v1::AppError* mutable_error();
+  void set_allocated_error(::common::v1::AppError* error);
+  private:
+  const ::common::v1::AppError& _internal_error() const;
+  ::common::v1::AppError* _internal_mutable_error();
+  public:
+  void unsafe_arena_set_allocated_error(
+      ::common::v1::AppError* error);
+  ::common::v1::AppError* unsafe_arena_release_error();
+
+  void clear_response();
+  ResponseCase response_case() const;
+  // @@protoc_insertion_point(class_scope:common.v1.ConfigListenerResponse)
+ private:
+  class _Internal;
+  void set_has_data();
+  void set_has_error();
+
+  inline bool has_response() const;
+  inline void clear_has_response();
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  union ResponseUnion {
+    constexpr ResponseUnion() : _constinit_{} {}
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+    ::common::v1::Config* data_;
+    ::common::v1::AppError* error_;
+  } response_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  uint32_t _oneof_case_[1];
+
+  friend struct ::TableStruct_common_2fv1_2fconfig_2eproto;
+};
+// -------------------------------------------------------------------
+
+class ConfigListenerRequest final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:common.v1.ConfigListenerRequest) */ {
+ public:
+  inline ConfigListenerRequest() : ConfigListenerRequest(nullptr) {}
+  ~ConfigListenerRequest() override;
+  explicit constexpr ConfigListenerRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  ConfigListenerRequest(const ConfigListenerRequest& from);
+  ConfigListenerRequest(ConfigListenerRequest&& from) noexcept
+    : ConfigListenerRequest() {
+    *this = ::std::move(from);
+  }
+
+  inline ConfigListenerRequest& operator=(const ConfigListenerRequest& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ConfigListenerRequest& operator=(ConfigListenerRequest&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ConfigListenerRequest& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const ConfigListenerRequest* internal_default_instance() {
+    return reinterpret_cast<const ConfigListenerRequest*>(
+               &_ConfigListenerRequest_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    27;
+
+  friend void swap(ConfigListenerRequest& a, ConfigListenerRequest& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(ConfigListenerRequest* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ConfigListenerRequest* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ConfigListenerRequest* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ConfigListenerRequest>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const ConfigListenerRequest& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const ConfigListenerRequest& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(ConfigListenerRequest* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "common.v1.ConfigListenerRequest";
+  }
+  protected:
+  explicit ConfigListenerRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kClientIdFieldNumber = 1,
+  };
+  // string client_id = 1 [json_name = "clientId"];
+  void clear_client_id();
+  const std::string& client_id() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_client_id(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_client_id();
+  PROTOBUF_NODISCARD std::string* release_client_id();
+  void set_allocated_client_id(std::string* client_id);
+  private:
+  const std::string& _internal_client_id() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_client_id(const std::string& value);
+  std::string* _internal_mutable_client_id();
+  public:
+
+  // @@protoc_insertion_point(class_scope:common.v1.ConfigListenerRequest)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr client_id_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_common_2fv1_2fconfig_2eproto;
 };
@@ -21769,9 +22801,633 @@ inline void Config::set_allocated_image_proxy(::common::v1::ConfigImageProxy* im
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.image_proxy)
 }
 
+// -------------------------------------------------------------------
+
+// ConfigGetRequest
+
+// -------------------------------------------------------------------
+
+// ConfigGetResponse
+
+// .common.v1.Config data = 1 [json_name = "data"];
+inline bool ConfigGetResponse::_internal_has_data() const {
+  return response_case() == kData;
+}
+inline bool ConfigGetResponse::has_data() const {
+  return _internal_has_data();
+}
+inline void ConfigGetResponse::set_has_data() {
+  _oneof_case_[0] = kData;
+}
+inline void ConfigGetResponse::clear_data() {
+  if (_internal_has_data()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete response_.data_;
+    }
+    clear_has_response();
+  }
+}
+inline ::common::v1::Config* ConfigGetResponse::release_data() {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigGetResponse.data)
+  if (_internal_has_data()) {
+    clear_has_response();
+      ::common::v1::Config* temp = response_.data_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    response_.data_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::common::v1::Config& ConfigGetResponse::_internal_data() const {
+  return _internal_has_data()
+      ? *response_.data_
+      : reinterpret_cast< ::common::v1::Config&>(::common::v1::_Config_default_instance_);
+}
+inline const ::common::v1::Config& ConfigGetResponse::data() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigGetResponse.data)
+  return _internal_data();
+}
+inline ::common::v1::Config* ConfigGetResponse::unsafe_arena_release_data() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:common.v1.ConfigGetResponse.data)
+  if (_internal_has_data()) {
+    clear_has_response();
+    ::common::v1::Config* temp = response_.data_;
+    response_.data_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void ConfigGetResponse::unsafe_arena_set_allocated_data(::common::v1::Config* data) {
+  clear_response();
+  if (data) {
+    set_has_data();
+    response_.data_ = data;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.ConfigGetResponse.data)
+}
+inline ::common::v1::Config* ConfigGetResponse::_internal_mutable_data() {
+  if (!_internal_has_data()) {
+    clear_response();
+    set_has_data();
+    response_.data_ = CreateMaybeMessage< ::common::v1::Config >(GetArenaForAllocation());
+  }
+  return response_.data_;
+}
+inline ::common::v1::Config* ConfigGetResponse::mutable_data() {
+  ::common::v1::Config* _msg = _internal_mutable_data();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigGetResponse.data)
+  return _msg;
+}
+
+// .common.v1.AppError error = 2 [json_name = "error"];
+inline bool ConfigGetResponse::_internal_has_error() const {
+  return response_case() == kError;
+}
+inline bool ConfigGetResponse::has_error() const {
+  return _internal_has_error();
+}
+inline void ConfigGetResponse::set_has_error() {
+  _oneof_case_[0] = kError;
+}
+inline ::common::v1::AppError* ConfigGetResponse::release_error() {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigGetResponse.error)
+  if (_internal_has_error()) {
+    clear_has_response();
+      ::common::v1::AppError* temp = response_.error_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    response_.error_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::common::v1::AppError& ConfigGetResponse::_internal_error() const {
+  return _internal_has_error()
+      ? *response_.error_
+      : reinterpret_cast< ::common::v1::AppError&>(::common::v1::_AppError_default_instance_);
+}
+inline const ::common::v1::AppError& ConfigGetResponse::error() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigGetResponse.error)
+  return _internal_error();
+}
+inline ::common::v1::AppError* ConfigGetResponse::unsafe_arena_release_error() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:common.v1.ConfigGetResponse.error)
+  if (_internal_has_error()) {
+    clear_has_response();
+    ::common::v1::AppError* temp = response_.error_;
+    response_.error_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void ConfigGetResponse::unsafe_arena_set_allocated_error(::common::v1::AppError* error) {
+  clear_response();
+  if (error) {
+    set_has_error();
+    response_.error_ = error;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.ConfigGetResponse.error)
+}
+inline ::common::v1::AppError* ConfigGetResponse::_internal_mutable_error() {
+  if (!_internal_has_error()) {
+    clear_response();
+    set_has_error();
+    response_.error_ = CreateMaybeMessage< ::common::v1::AppError >(GetArenaForAllocation());
+  }
+  return response_.error_;
+}
+inline ::common::v1::AppError* ConfigGetResponse::mutable_error() {
+  ::common::v1::AppError* _msg = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigGetResponse.error)
+  return _msg;
+}
+
+inline bool ConfigGetResponse::has_response() const {
+  return response_case() != RESPONSE_NOT_SET;
+}
+inline void ConfigGetResponse::clear_has_response() {
+  _oneof_case_[0] = RESPONSE_NOT_SET;
+}
+inline ConfigGetResponse::ResponseCase ConfigGetResponse::response_case() const {
+  return ConfigGetResponse::ResponseCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// ConfigUpdateRequest
+
+// .common.v1.Config config = 1 [json_name = "config"];
+inline bool ConfigUpdateRequest::_internal_has_config() const {
+  return this != internal_default_instance() && config_ != nullptr;
+}
+inline bool ConfigUpdateRequest::has_config() const {
+  return _internal_has_config();
+}
+inline void ConfigUpdateRequest::clear_config() {
+  if (GetArenaForAllocation() == nullptr && config_ != nullptr) {
+    delete config_;
+  }
+  config_ = nullptr;
+}
+inline const ::common::v1::Config& ConfigUpdateRequest::_internal_config() const {
+  const ::common::v1::Config* p = config_;
+  return p != nullptr ? *p : reinterpret_cast<const ::common::v1::Config&>(
+      ::common::v1::_Config_default_instance_);
+}
+inline const ::common::v1::Config& ConfigUpdateRequest::config() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigUpdateRequest.config)
+  return _internal_config();
+}
+inline void ConfigUpdateRequest::unsafe_arena_set_allocated_config(
+    ::common::v1::Config* config) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(config_);
+  }
+  config_ = config;
+  if (config) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.ConfigUpdateRequest.config)
+}
+inline ::common::v1::Config* ConfigUpdateRequest::release_config() {
+  
+  ::common::v1::Config* temp = config_;
+  config_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::common::v1::Config* ConfigUpdateRequest::unsafe_arena_release_config() {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigUpdateRequest.config)
+  
+  ::common::v1::Config* temp = config_;
+  config_ = nullptr;
+  return temp;
+}
+inline ::common::v1::Config* ConfigUpdateRequest::_internal_mutable_config() {
+  
+  if (config_ == nullptr) {
+    auto* p = CreateMaybeMessage<::common::v1::Config>(GetArenaForAllocation());
+    config_ = p;
+  }
+  return config_;
+}
+inline ::common::v1::Config* ConfigUpdateRequest::mutable_config() {
+  ::common::v1::Config* _msg = _internal_mutable_config();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigUpdateRequest.config)
+  return _msg;
+}
+inline void ConfigUpdateRequest::set_allocated_config(::common::v1::Config* config) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete config_;
+  }
+  if (config) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<::common::v1::Config>::GetOwningArena(config);
+    if (message_arena != submessage_arena) {
+      config = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, config, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  config_ = config;
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigUpdateRequest.config)
+}
+
+// -------------------------------------------------------------------
+
+// ConfigUpdateResponse
+
+// .common.v1.Config data = 1 [json_name = "data"];
+inline bool ConfigUpdateResponse::_internal_has_data() const {
+  return response_case() == kData;
+}
+inline bool ConfigUpdateResponse::has_data() const {
+  return _internal_has_data();
+}
+inline void ConfigUpdateResponse::set_has_data() {
+  _oneof_case_[0] = kData;
+}
+inline void ConfigUpdateResponse::clear_data() {
+  if (_internal_has_data()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete response_.data_;
+    }
+    clear_has_response();
+  }
+}
+inline ::common::v1::Config* ConfigUpdateResponse::release_data() {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigUpdateResponse.data)
+  if (_internal_has_data()) {
+    clear_has_response();
+      ::common::v1::Config* temp = response_.data_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    response_.data_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::common::v1::Config& ConfigUpdateResponse::_internal_data() const {
+  return _internal_has_data()
+      ? *response_.data_
+      : reinterpret_cast< ::common::v1::Config&>(::common::v1::_Config_default_instance_);
+}
+inline const ::common::v1::Config& ConfigUpdateResponse::data() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigUpdateResponse.data)
+  return _internal_data();
+}
+inline ::common::v1::Config* ConfigUpdateResponse::unsafe_arena_release_data() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:common.v1.ConfigUpdateResponse.data)
+  if (_internal_has_data()) {
+    clear_has_response();
+    ::common::v1::Config* temp = response_.data_;
+    response_.data_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void ConfigUpdateResponse::unsafe_arena_set_allocated_data(::common::v1::Config* data) {
+  clear_response();
+  if (data) {
+    set_has_data();
+    response_.data_ = data;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.ConfigUpdateResponse.data)
+}
+inline ::common::v1::Config* ConfigUpdateResponse::_internal_mutable_data() {
+  if (!_internal_has_data()) {
+    clear_response();
+    set_has_data();
+    response_.data_ = CreateMaybeMessage< ::common::v1::Config >(GetArenaForAllocation());
+  }
+  return response_.data_;
+}
+inline ::common::v1::Config* ConfigUpdateResponse::mutable_data() {
+  ::common::v1::Config* _msg = _internal_mutable_data();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigUpdateResponse.data)
+  return _msg;
+}
+
+// .common.v1.AppError error = 2 [json_name = "error"];
+inline bool ConfigUpdateResponse::_internal_has_error() const {
+  return response_case() == kError;
+}
+inline bool ConfigUpdateResponse::has_error() const {
+  return _internal_has_error();
+}
+inline void ConfigUpdateResponse::set_has_error() {
+  _oneof_case_[0] = kError;
+}
+inline ::common::v1::AppError* ConfigUpdateResponse::release_error() {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigUpdateResponse.error)
+  if (_internal_has_error()) {
+    clear_has_response();
+      ::common::v1::AppError* temp = response_.error_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    response_.error_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::common::v1::AppError& ConfigUpdateResponse::_internal_error() const {
+  return _internal_has_error()
+      ? *response_.error_
+      : reinterpret_cast< ::common::v1::AppError&>(::common::v1::_AppError_default_instance_);
+}
+inline const ::common::v1::AppError& ConfigUpdateResponse::error() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigUpdateResponse.error)
+  return _internal_error();
+}
+inline ::common::v1::AppError* ConfigUpdateResponse::unsafe_arena_release_error() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:common.v1.ConfigUpdateResponse.error)
+  if (_internal_has_error()) {
+    clear_has_response();
+    ::common::v1::AppError* temp = response_.error_;
+    response_.error_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void ConfigUpdateResponse::unsafe_arena_set_allocated_error(::common::v1::AppError* error) {
+  clear_response();
+  if (error) {
+    set_has_error();
+    response_.error_ = error;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.ConfigUpdateResponse.error)
+}
+inline ::common::v1::AppError* ConfigUpdateResponse::_internal_mutable_error() {
+  if (!_internal_has_error()) {
+    clear_response();
+    set_has_error();
+    response_.error_ = CreateMaybeMessage< ::common::v1::AppError >(GetArenaForAllocation());
+  }
+  return response_.error_;
+}
+inline ::common::v1::AppError* ConfigUpdateResponse::mutable_error() {
+  ::common::v1::AppError* _msg = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigUpdateResponse.error)
+  return _msg;
+}
+
+inline bool ConfigUpdateResponse::has_response() const {
+  return response_case() != RESPONSE_NOT_SET;
+}
+inline void ConfigUpdateResponse::clear_has_response() {
+  _oneof_case_[0] = RESPONSE_NOT_SET;
+}
+inline ConfigUpdateResponse::ResponseCase ConfigUpdateResponse::response_case() const {
+  return ConfigUpdateResponse::ResponseCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// ConfigListenerResponse
+
+// .common.v1.Config data = 1 [json_name = "data"];
+inline bool ConfigListenerResponse::_internal_has_data() const {
+  return response_case() == kData;
+}
+inline bool ConfigListenerResponse::has_data() const {
+  return _internal_has_data();
+}
+inline void ConfigListenerResponse::set_has_data() {
+  _oneof_case_[0] = kData;
+}
+inline void ConfigListenerResponse::clear_data() {
+  if (_internal_has_data()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete response_.data_;
+    }
+    clear_has_response();
+  }
+}
+inline ::common::v1::Config* ConfigListenerResponse::release_data() {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigListenerResponse.data)
+  if (_internal_has_data()) {
+    clear_has_response();
+      ::common::v1::Config* temp = response_.data_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    response_.data_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::common::v1::Config& ConfigListenerResponse::_internal_data() const {
+  return _internal_has_data()
+      ? *response_.data_
+      : reinterpret_cast< ::common::v1::Config&>(::common::v1::_Config_default_instance_);
+}
+inline const ::common::v1::Config& ConfigListenerResponse::data() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigListenerResponse.data)
+  return _internal_data();
+}
+inline ::common::v1::Config* ConfigListenerResponse::unsafe_arena_release_data() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:common.v1.ConfigListenerResponse.data)
+  if (_internal_has_data()) {
+    clear_has_response();
+    ::common::v1::Config* temp = response_.data_;
+    response_.data_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void ConfigListenerResponse::unsafe_arena_set_allocated_data(::common::v1::Config* data) {
+  clear_response();
+  if (data) {
+    set_has_data();
+    response_.data_ = data;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.ConfigListenerResponse.data)
+}
+inline ::common::v1::Config* ConfigListenerResponse::_internal_mutable_data() {
+  if (!_internal_has_data()) {
+    clear_response();
+    set_has_data();
+    response_.data_ = CreateMaybeMessage< ::common::v1::Config >(GetArenaForAllocation());
+  }
+  return response_.data_;
+}
+inline ::common::v1::Config* ConfigListenerResponse::mutable_data() {
+  ::common::v1::Config* _msg = _internal_mutable_data();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigListenerResponse.data)
+  return _msg;
+}
+
+// .common.v1.AppError error = 2 [json_name = "error"];
+inline bool ConfigListenerResponse::_internal_has_error() const {
+  return response_case() == kError;
+}
+inline bool ConfigListenerResponse::has_error() const {
+  return _internal_has_error();
+}
+inline void ConfigListenerResponse::set_has_error() {
+  _oneof_case_[0] = kError;
+}
+inline ::common::v1::AppError* ConfigListenerResponse::release_error() {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigListenerResponse.error)
+  if (_internal_has_error()) {
+    clear_has_response();
+      ::common::v1::AppError* temp = response_.error_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    response_.error_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::common::v1::AppError& ConfigListenerResponse::_internal_error() const {
+  return _internal_has_error()
+      ? *response_.error_
+      : reinterpret_cast< ::common::v1::AppError&>(::common::v1::_AppError_default_instance_);
+}
+inline const ::common::v1::AppError& ConfigListenerResponse::error() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigListenerResponse.error)
+  return _internal_error();
+}
+inline ::common::v1::AppError* ConfigListenerResponse::unsafe_arena_release_error() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:common.v1.ConfigListenerResponse.error)
+  if (_internal_has_error()) {
+    clear_has_response();
+    ::common::v1::AppError* temp = response_.error_;
+    response_.error_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void ConfigListenerResponse::unsafe_arena_set_allocated_error(::common::v1::AppError* error) {
+  clear_response();
+  if (error) {
+    set_has_error();
+    response_.error_ = error;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.ConfigListenerResponse.error)
+}
+inline ::common::v1::AppError* ConfigListenerResponse::_internal_mutable_error() {
+  if (!_internal_has_error()) {
+    clear_response();
+    set_has_error();
+    response_.error_ = CreateMaybeMessage< ::common::v1::AppError >(GetArenaForAllocation());
+  }
+  return response_.error_;
+}
+inline ::common::v1::AppError* ConfigListenerResponse::mutable_error() {
+  ::common::v1::AppError* _msg = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigListenerResponse.error)
+  return _msg;
+}
+
+inline bool ConfigListenerResponse::has_response() const {
+  return response_case() != RESPONSE_NOT_SET;
+}
+inline void ConfigListenerResponse::clear_has_response() {
+  _oneof_case_[0] = RESPONSE_NOT_SET;
+}
+inline ConfigListenerResponse::ResponseCase ConfigListenerResponse::response_case() const {
+  return ConfigListenerResponse::ResponseCase(_oneof_case_[0]);
+}
+// -------------------------------------------------------------------
+
+// ConfigListenerRequest
+
+// string client_id = 1 [json_name = "clientId"];
+inline void ConfigListenerRequest::clear_client_id() {
+  client_id_.ClearToEmpty();
+}
+inline const std::string& ConfigListenerRequest::client_id() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigListenerRequest.client_id)
+  return _internal_client_id();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ConfigListenerRequest::set_client_id(ArgT0&& arg0, ArgT... args) {
+ 
+ client_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigListenerRequest.client_id)
+}
+inline std::string* ConfigListenerRequest::mutable_client_id() {
+  std::string* _s = _internal_mutable_client_id();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigListenerRequest.client_id)
+  return _s;
+}
+inline const std::string& ConfigListenerRequest::_internal_client_id() const {
+  return client_id_.Get();
+}
+inline void ConfigListenerRequest::_internal_set_client_id(const std::string& value) {
+  
+  client_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ConfigListenerRequest::_internal_mutable_client_id() {
+  
+  return client_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ConfigListenerRequest::release_client_id() {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigListenerRequest.client_id)
+  return client_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+}
+inline void ConfigListenerRequest::set_allocated_client_id(std::string* client_id) {
+  if (client_id != nullptr) {
+    
+  } else {
+    
+  }
+  client_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), client_id,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (client_id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    client_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigListenerRequest.client_id)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

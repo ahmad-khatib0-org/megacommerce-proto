@@ -17,7 +17,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as common_v1_common_pb from '../../common/v1/common_pb'; // proto import: "common/v1/common.proto"
+import * as common_v1_config_pb from '../../common/v1/config_pb'; // proto import: "common/v1/config.proto"
 import * as common_v1_trans_pb from '../../common/v1/trans_pb'; // proto import: "common/v1/trans.proto"
 
 
@@ -43,29 +43,29 @@ export class CommonServiceClient {
   methodDescriptorConfigGet = new grpcWeb.MethodDescriptor(
     '/common.v1.CommonService/ConfigGet',
     grpcWeb.MethodType.UNARY,
-    common_v1_common_pb.ConfigGetRequest,
-    common_v1_common_pb.ConfigGetResponse,
-    (request: common_v1_common_pb.ConfigGetRequest) => {
+    common_v1_config_pb.ConfigGetRequest,
+    common_v1_config_pb.ConfigGetResponse,
+    (request: common_v1_config_pb.ConfigGetRequest) => {
       return request.serializeBinary();
     },
-    common_v1_common_pb.ConfigGetResponse.deserializeBinary
+    common_v1_config_pb.ConfigGetResponse.deserializeBinary
   );
 
   configGet(
-    request: common_v1_common_pb.ConfigGetRequest,
-    metadata?: grpcWeb.Metadata | null): Promise<common_v1_common_pb.ConfigGetResponse>;
+    request: common_v1_config_pb.ConfigGetRequest,
+    metadata?: grpcWeb.Metadata | null): Promise<common_v1_config_pb.ConfigGetResponse>;
 
   configGet(
-    request: common_v1_common_pb.ConfigGetRequest,
+    request: common_v1_config_pb.ConfigGetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: common_v1_common_pb.ConfigGetResponse) => void): grpcWeb.ClientReadableStream<common_v1_common_pb.ConfigGetResponse>;
+               response: common_v1_config_pb.ConfigGetResponse) => void): grpcWeb.ClientReadableStream<common_v1_config_pb.ConfigGetResponse>;
 
   configGet(
-    request: common_v1_common_pb.ConfigGetRequest,
+    request: common_v1_config_pb.ConfigGetRequest,
     metadata?: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: common_v1_common_pb.ConfigGetResponse) => void) {
+               response: common_v1_config_pb.ConfigGetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -86,29 +86,29 @@ export class CommonServiceClient {
   methodDescriptorConfigUpdate = new grpcWeb.MethodDescriptor(
     '/common.v1.CommonService/ConfigUpdate',
     grpcWeb.MethodType.UNARY,
-    common_v1_common_pb.ConfigUpdateRequest,
-    common_v1_common_pb.ConfigUpdateResponse,
-    (request: common_v1_common_pb.ConfigUpdateRequest) => {
+    common_v1_config_pb.ConfigUpdateRequest,
+    common_v1_config_pb.ConfigUpdateResponse,
+    (request: common_v1_config_pb.ConfigUpdateRequest) => {
       return request.serializeBinary();
     },
-    common_v1_common_pb.ConfigUpdateResponse.deserializeBinary
+    common_v1_config_pb.ConfigUpdateResponse.deserializeBinary
   );
 
   configUpdate(
-    request: common_v1_common_pb.ConfigUpdateRequest,
-    metadata?: grpcWeb.Metadata | null): Promise<common_v1_common_pb.ConfigUpdateResponse>;
+    request: common_v1_config_pb.ConfigUpdateRequest,
+    metadata?: grpcWeb.Metadata | null): Promise<common_v1_config_pb.ConfigUpdateResponse>;
 
   configUpdate(
-    request: common_v1_common_pb.ConfigUpdateRequest,
+    request: common_v1_config_pb.ConfigUpdateRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: common_v1_common_pb.ConfigUpdateResponse) => void): grpcWeb.ClientReadableStream<common_v1_common_pb.ConfigUpdateResponse>;
+               response: common_v1_config_pb.ConfigUpdateResponse) => void): grpcWeb.ClientReadableStream<common_v1_config_pb.ConfigUpdateResponse>;
 
   configUpdate(
-    request: common_v1_common_pb.ConfigUpdateRequest,
+    request: common_v1_config_pb.ConfigUpdateRequest,
     metadata?: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: common_v1_common_pb.ConfigUpdateResponse) => void) {
+               response: common_v1_config_pb.ConfigUpdateResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -129,17 +129,17 @@ export class CommonServiceClient {
   methodDescriptorConfigListener = new grpcWeb.MethodDescriptor(
     '/common.v1.CommonService/ConfigListener',
     grpcWeb.MethodType.SERVER_STREAMING,
-    common_v1_common_pb.ConfigListenerRequest,
-    common_v1_common_pb.ConfigListenerResponse,
-    (request: common_v1_common_pb.ConfigListenerRequest) => {
+    common_v1_config_pb.ConfigListenerRequest,
+    common_v1_config_pb.ConfigListenerResponse,
+    (request: common_v1_config_pb.ConfigListenerRequest) => {
       return request.serializeBinary();
     },
-    common_v1_common_pb.ConfigListenerResponse.deserializeBinary
+    common_v1_config_pb.ConfigListenerResponse.deserializeBinary
   );
 
   configListener(
-    request: common_v1_common_pb.ConfigListenerRequest,
-    metadata?: grpcWeb.Metadata): grpcWeb.ClientReadableStream<common_v1_common_pb.ConfigListenerResponse> {
+    request: common_v1_config_pb.ConfigListenerRequest,
+    metadata?: grpcWeb.Metadata): grpcWeb.ClientReadableStream<common_v1_config_pb.ConfigListenerResponse> {
     return this.client_.serverStreaming(
       this.hostname_ +
         '/common.v1.CommonService/ConfigListener',

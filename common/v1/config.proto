@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package common.v1;
 
+import "common/v1/error.proto";
+
 option cc_enable_arenas = true;
 option go_package = "common/v1;v1";
 option java_outer_classname = "ConfigProto";
@@ -370,4 +372,35 @@ message Config {
   ConfigBleve bleve = 19;
   ConfigDataRetention data_retention = 20;
   ConfigImageProxy image_proxy = 21;
+}
+
+message ConfigGetRequest {}
+
+message ConfigGetResponse {
+  oneof response {
+    Config data = 1;
+    common.v1.AppError error = 2;
+  }
+}
+
+message ConfigUpdateRequest {
+  Config config = 1;
+}
+
+message ConfigUpdateResponse {
+  oneof response {
+    Config data = 1;
+    common.v1.AppError error = 2;
+  }
+}
+
+message ConfigListenerResponse {
+  oneof response {
+    Config data = 1;
+    common.v1.AppError error = 2;
+  }
+}
+
+message ConfigListenerRequest {
+  string client_id = 1;
 }
