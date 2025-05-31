@@ -2,7 +2,7 @@ import * as jspb from 'google-protobuf'
 
 import * as common_v1_config_pb from '../../common/v1/config_pb'; // proto import: "common/v1/config.proto"
 import * as common_v1_error_pb from '../../common/v1/error_pb'; // proto import: "common/v1/error.proto"
-import * as common_v1_types_pb from '../../common/v1/types_pb'; // proto import: "common/v1/types.proto"
+import * as common_v1_trans_pb from '../../common/v1/trans_pb'; // proto import: "common/v1/trans.proto"
 
 
 export class ConfigGetRequest extends jspb.Message {
@@ -156,58 +156,6 @@ export class ConfigListenerRequest extends jspb.Message {
 export namespace ConfigListenerRequest {
   export type AsObject = {
     clientId: string,
-  }
-}
-
-export class TranslationsGetRequest extends jspb.Message {
-  getLang(): string;
-  setLang(value: string): TranslationsGetRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TranslationsGetRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: TranslationsGetRequest): TranslationsGetRequest.AsObject;
-  static serializeBinaryToWriter(message: TranslationsGetRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TranslationsGetRequest;
-  static deserializeBinaryFromReader(message: TranslationsGetRequest, reader: jspb.BinaryReader): TranslationsGetRequest;
-}
-
-export namespace TranslationsGetRequest {
-  export type AsObject = {
-    lang: string,
-  }
-}
-
-export class TranslationsGetResponse extends jspb.Message {
-  getData(): common_v1_types_pb.TranslationElements | undefined;
-  setData(value?: common_v1_types_pb.TranslationElements): TranslationsGetResponse;
-  hasData(): boolean;
-  clearData(): TranslationsGetResponse;
-
-  getError(): common_v1_error_pb.AppError | undefined;
-  setError(value?: common_v1_error_pb.AppError): TranslationsGetResponse;
-  hasError(): boolean;
-  clearError(): TranslationsGetResponse;
-
-  getResponseCase(): TranslationsGetResponse.ResponseCase;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): TranslationsGetResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: TranslationsGetResponse): TranslationsGetResponse.AsObject;
-  static serializeBinaryToWriter(message: TranslationsGetResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): TranslationsGetResponse;
-  static deserializeBinaryFromReader(message: TranslationsGetResponse, reader: jspb.BinaryReader): TranslationsGetResponse;
-}
-
-export namespace TranslationsGetResponse {
-  export type AsObject = {
-    data?: common_v1_types_pb.TranslationElements.AsObject,
-    error?: common_v1_error_pb.AppError.AsObject,
-  }
-
-  export enum ResponseCase { 
-    RESPONSE_NOT_SET = 0,
-    DATA = 1,
-    ERROR = 2,
   }
 }
 

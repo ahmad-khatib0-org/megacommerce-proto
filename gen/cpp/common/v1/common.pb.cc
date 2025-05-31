@@ -89,33 +89,9 @@ struct ConfigListenerRequestDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ConfigListenerRequestDefaultTypeInternal _ConfigListenerRequest_default_instance_;
-constexpr TranslationsGetRequest::TranslationsGetRequest(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : lang_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string){}
-struct TranslationsGetRequestDefaultTypeInternal {
-  constexpr TranslationsGetRequestDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~TranslationsGetRequestDefaultTypeInternal() {}
-  union {
-    TranslationsGetRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TranslationsGetRequestDefaultTypeInternal _TranslationsGetRequest_default_instance_;
-constexpr TranslationsGetResponse::TranslationsGetResponse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : _oneof_case_{}{}
-struct TranslationsGetResponseDefaultTypeInternal {
-  constexpr TranslationsGetResponseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~TranslationsGetResponseDefaultTypeInternal() {}
-  union {
-    TranslationsGetResponse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT TranslationsGetResponseDefaultTypeInternal _TranslationsGetResponse_default_instance_;
 }  // namespace v1
 }  // namespace common
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_common_2fv1_2fcommon_2eproto[8];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_common_2fv1_2fcommon_2eproto[6];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_common_2fv1_2fcommon_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_common_2fv1_2fcommon_2eproto = nullptr;
 
@@ -167,22 +143,6 @@ const uint32_t TableStruct_common_2fv1_2fcommon_2eproto::offsets[] PROTOBUF_SECT
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::common::v1::ConfigListenerRequest, client_id_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::common::v1::TranslationsGetRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::common::v1::TranslationsGetRequest, lang_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::common::v1::TranslationsGetResponse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  PROTOBUF_FIELD_OFFSET(::common::v1::TranslationsGetResponse, _oneof_case_[0]),
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
-  PROTOBUF_FIELD_OFFSET(::common::v1::TranslationsGetResponse, response_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::common::v1::ConfigGetRequest)},
@@ -191,8 +151,6 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 22, -1, -1, sizeof(::common::v1::ConfigUpdateResponse)},
   { 31, -1, -1, sizeof(::common::v1::ConfigListenerResponse)},
   { 40, -1, -1, sizeof(::common::v1::ConfigListenerRequest)},
-  { 47, -1, -1, sizeof(::common::v1::TranslationsGetRequest)},
-  { 54, -1, -1, sizeof(::common::v1::TranslationsGetResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -202,14 +160,12 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_ConfigUpdateResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_ConfigListenerResponse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_ConfigListenerRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_TranslationsGetRequest_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_TranslationsGetResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_common_2fv1_2fcommon_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\026common/v1/common.proto\022\tcommon.v1\032\026com"
   "mon/v1/config.proto\032\025common/v1/error.pro"
-  "to\032\025common/v1/types.proto\"\022\n\020ConfigGetRe"
+  "to\032\025common/v1/trans.proto\"\022\n\020ConfigGetRe"
   "quest\"u\n\021ConfigGetResponse\022\'\n\004data\030\001 \001(\013"
   "2\021.common.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001"
   "(\0132\023.common.v1.AppErrorH\000R\005errorB\n\n\010resp"
@@ -222,32 +178,30 @@ const char descriptor_table_protodef_common_2fv1_2fcommon_2eproto[] PROTOBUF_SEC
   "n.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.com"
   "mon.v1.AppErrorH\000R\005errorB\n\n\010response\"4\n\025"
   "ConfigListenerRequest\022\033\n\tclient_id\030\001 \001(\t"
-  "R\010clientId\",\n\026TranslationsGetRequest\022\022\n\004"
-  "lang\030\001 \001(\tR\004lang\"\210\001\n\027TranslationsGetResp"
-  "onse\0224\n\004data\030\001 \001(\0132\036.common.v1.Translati"
-  "onElementsH\000R\004data\022+\n\005error\030\002 \001(\0132\023.comm"
-  "on.v1.AppErrorH\000R\005errorB\n\n\010response2\333\002\n\r"
-  "CommonService\022F\n\tConfigGet\022\033.common.v1.C"
-  "onfigGetRequest\032\034.common.v1.ConfigGetRes"
-  "ponse\022O\n\014ConfigUpdate\022\036.common.v1.Config"
-  "UpdateRequest\032\037.common.v1.ConfigUpdateRe"
-  "sponse\022W\n\016ConfigListener\022 .common.v1.Con"
-  "figListenerRequest\032!.common.v1.ConfigLis"
-  "tenerResponse0\001\022X\n\017TranslationsGet\022!.com"
-  "mon.v1.TranslationsGetRequest\032\".common.v"
-  "1.TranslationsGetResponseB:\n\032org.megacom"
-  "merce.common.v1B\013CommonProtoZ\014common/v1;"
-  "v1\370\001\001b\006proto3"
+  "R\010clientId2\311\003\n\rCommonService\022F\n\tConfigGe"
+  "t\022\033.common.v1.ConfigGetRequest\032\034.common."
+  "v1.ConfigGetResponse\022O\n\014ConfigUpdate\022\036.c"
+  "ommon.v1.ConfigUpdateRequest\032\037.common.v1"
+  ".ConfigUpdateResponse\022W\n\016ConfigListener\022"
+  " .common.v1.ConfigListenerRequest\032!.comm"
+  "on.v1.ConfigListenerResponse0\001\022X\n\017Transl"
+  "ationsGet\022!.common.v1.TranslationsGetReq"
+  "uest\032\".common.v1.TranslationsGetResponse"
+  "\022l\n\025TranslationForLangGet\022(.common.v1.Tr"
+  "anslationsForLangGetRequest\032).common.v1."
+  "TranslationsForLangGetResponseB:\n\032org.me"
+  "gacommerce.common.v1B\013CommonProtoZ\014commo"
+  "n/v1;v1\370\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_common_2fv1_2fcommon_2eproto_deps[3] = {
   &::descriptor_table_common_2fv1_2fconfig_2eproto,
   &::descriptor_table_common_2fv1_2ferror_2eproto,
-  &::descriptor_table_common_2fv1_2ftypes_2eproto,
+  &::descriptor_table_common_2fv1_2ftrans_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2fv1_2fcommon_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fv1_2fcommon_2eproto = {
-  false, false, 1213, descriptor_table_protodef_common_2fv1_2fcommon_2eproto, "common/v1/common.proto", 
-  &descriptor_table_common_2fv1_2fcommon_2eproto_once, descriptor_table_common_2fv1_2fcommon_2eproto_deps, 3, 8,
+  false, false, 1138, descriptor_table_protodef_common_2fv1_2fcommon_2eproto, "common/v1/common.proto", 
+  &descriptor_table_common_2fv1_2fcommon_2eproto_once, descriptor_table_common_2fv1_2fcommon_2eproto_deps, 3, 6,
   schemas, file_default_instances, TableStruct_common_2fv1_2fcommon_2eproto::offsets,
   file_level_metadata_common_2fv1_2fcommon_2eproto, file_level_enum_descriptors_common_2fv1_2fcommon_2eproto, file_level_service_descriptors_common_2fv1_2fcommon_2eproto,
 };
@@ -1663,529 +1617,6 @@ void ConfigListenerRequest::InternalSwap(ConfigListenerRequest* other) {
       file_level_metadata_common_2fv1_2fcommon_2eproto[5]);
 }
 
-// ===================================================================
-
-class TranslationsGetRequest::_Internal {
- public:
-};
-
-TranslationsGetRequest::TranslationsGetRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:common.v1.TranslationsGetRequest)
-}
-TranslationsGetRequest::TranslationsGetRequest(const TranslationsGetRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  lang_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    lang_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_lang().empty()) {
-    lang_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_lang(), 
-      GetArenaForAllocation());
-  }
-  // @@protoc_insertion_point(copy_constructor:common.v1.TranslationsGetRequest)
-}
-
-inline void TranslationsGetRequest::SharedCtor() {
-lang_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  lang_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-}
-
-TranslationsGetRequest::~TranslationsGetRequest() {
-  // @@protoc_insertion_point(destructor:common.v1.TranslationsGetRequest)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-inline void TranslationsGetRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  lang_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-
-void TranslationsGetRequest::ArenaDtor(void* object) {
-  TranslationsGetRequest* _this = reinterpret_cast< TranslationsGetRequest* >(object);
-  (void)_this;
-}
-void TranslationsGetRequest::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void TranslationsGetRequest::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void TranslationsGetRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:common.v1.TranslationsGetRequest)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  lang_.ClearToEmpty();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* TranslationsGetRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // string lang = 1 [json_name = "lang"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_lang();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "common.v1.TranslationsGetRequest.lang"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* TranslationsGetRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:common.v1.TranslationsGetRequest)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // string lang = 1 [json_name = "lang"];
-  if (!this->_internal_lang().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_lang().data(), static_cast<int>(this->_internal_lang().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "common.v1.TranslationsGetRequest.lang");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_lang(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:common.v1.TranslationsGetRequest)
-  return target;
-}
-
-size_t TranslationsGetRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:common.v1.TranslationsGetRequest)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string lang = 1 [json_name = "lang"];
-  if (!this->_internal_lang().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_lang());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TranslationsGetRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    TranslationsGetRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TranslationsGetRequest::GetClassData() const { return &_class_data_; }
-
-void TranslationsGetRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<TranslationsGetRequest *>(to)->MergeFrom(
-      static_cast<const TranslationsGetRequest &>(from));
-}
-
-
-void TranslationsGetRequest::MergeFrom(const TranslationsGetRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:common.v1.TranslationsGetRequest)
-  GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_lang().empty()) {
-    _internal_set_lang(from._internal_lang());
-  }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void TranslationsGetRequest::CopyFrom(const TranslationsGetRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:common.v1.TranslationsGetRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool TranslationsGetRequest::IsInitialized() const {
-  return true;
-}
-
-void TranslationsGetRequest::InternalSwap(TranslationsGetRequest* other) {
-  using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &lang_, lhs_arena,
-      &other->lang_, rhs_arena
-  );
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata TranslationsGetRequest::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_common_2fv1_2fcommon_2eproto_getter, &descriptor_table_common_2fv1_2fcommon_2eproto_once,
-      file_level_metadata_common_2fv1_2fcommon_2eproto[6]);
-}
-
-// ===================================================================
-
-class TranslationsGetResponse::_Internal {
- public:
-  static const ::common::v1::TranslationElements& data(const TranslationsGetResponse* msg);
-  static const ::common::v1::AppError& error(const TranslationsGetResponse* msg);
-};
-
-const ::common::v1::TranslationElements&
-TranslationsGetResponse::_Internal::data(const TranslationsGetResponse* msg) {
-  return *msg->response_.data_;
-}
-const ::common::v1::AppError&
-TranslationsGetResponse::_Internal::error(const TranslationsGetResponse* msg) {
-  return *msg->response_.error_;
-}
-void TranslationsGetResponse::set_allocated_data(::common::v1::TranslationElements* data) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  clear_response();
-  if (data) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(data));
-    if (message_arena != submessage_arena) {
-      data = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, data, submessage_arena);
-    }
-    set_has_data();
-    response_.data_ = data;
-  }
-  // @@protoc_insertion_point(field_set_allocated:common.v1.TranslationsGetResponse.data)
-}
-void TranslationsGetResponse::clear_data() {
-  if (_internal_has_data()) {
-    if (GetArenaForAllocation() == nullptr) {
-      delete response_.data_;
-    }
-    clear_has_response();
-  }
-}
-void TranslationsGetResponse::set_allocated_error(::common::v1::AppError* error) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  clear_response();
-  if (error) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
-            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
-                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(error));
-    if (message_arena != submessage_arena) {
-      error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, error, submessage_arena);
-    }
-    set_has_error();
-    response_.error_ = error;
-  }
-  // @@protoc_insertion_point(field_set_allocated:common.v1.TranslationsGetResponse.error)
-}
-void TranslationsGetResponse::clear_error() {
-  if (_internal_has_error()) {
-    if (GetArenaForAllocation() == nullptr) {
-      delete response_.error_;
-    }
-    clear_has_response();
-  }
-}
-TranslationsGetResponse::TranslationsGetResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:common.v1.TranslationsGetResponse)
-}
-TranslationsGetResponse::TranslationsGetResponse(const TranslationsGetResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  clear_has_response();
-  switch (from.response_case()) {
-    case kData: {
-      _internal_mutable_data()->::common::v1::TranslationElements::MergeFrom(from._internal_data());
-      break;
-    }
-    case kError: {
-      _internal_mutable_error()->::common::v1::AppError::MergeFrom(from._internal_error());
-      break;
-    }
-    case RESPONSE_NOT_SET: {
-      break;
-    }
-  }
-  // @@protoc_insertion_point(copy_constructor:common.v1.TranslationsGetResponse)
-}
-
-inline void TranslationsGetResponse::SharedCtor() {
-clear_has_response();
-}
-
-TranslationsGetResponse::~TranslationsGetResponse() {
-  // @@protoc_insertion_point(destructor:common.v1.TranslationsGetResponse)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-inline void TranslationsGetResponse::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (has_response()) {
-    clear_response();
-  }
-}
-
-void TranslationsGetResponse::ArenaDtor(void* object) {
-  TranslationsGetResponse* _this = reinterpret_cast< TranslationsGetResponse* >(object);
-  (void)_this;
-}
-void TranslationsGetResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
-}
-void TranslationsGetResponse::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void TranslationsGetResponse::clear_response() {
-// @@protoc_insertion_point(one_of_clear_start:common.v1.TranslationsGetResponse)
-  switch (response_case()) {
-    case kData: {
-      if (GetArenaForAllocation() == nullptr) {
-        delete response_.data_;
-      }
-      break;
-    }
-    case kError: {
-      if (GetArenaForAllocation() == nullptr) {
-        delete response_.error_;
-      }
-      break;
-    }
-    case RESPONSE_NOT_SET: {
-      break;
-    }
-  }
-  _oneof_case_[0] = RESPONSE_NOT_SET;
-}
-
-
-void TranslationsGetResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:common.v1.TranslationsGetResponse)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  clear_response();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* TranslationsGetResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // .common.v1.TranslationElements data = 1 [json_name = "data"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_data(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // .common.v1.AppError error = 2 [json_name = "error"];
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* TranslationsGetResponse::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:common.v1.TranslationsGetResponse)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // .common.v1.TranslationElements data = 1 [json_name = "data"];
-  if (_internal_has_data()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        1, _Internal::data(this), target, stream);
-  }
-
-  // .common.v1.AppError error = 2 [json_name = "error"];
-  if (_internal_has_error()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        2, _Internal::error(this), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:common.v1.TranslationsGetResponse)
-  return target;
-}
-
-size_t TranslationsGetResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:common.v1.TranslationsGetResponse)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  switch (response_case()) {
-    // .common.v1.TranslationElements data = 1 [json_name = "data"];
-    case kData: {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *response_.data_);
-      break;
-    }
-    // .common.v1.AppError error = 2 [json_name = "error"];
-    case kError: {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *response_.error_);
-      break;
-    }
-    case RESPONSE_NOT_SET: {
-      break;
-    }
-  }
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData TranslationsGetResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    TranslationsGetResponse::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*TranslationsGetResponse::GetClassData() const { return &_class_data_; }
-
-void TranslationsGetResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<TranslationsGetResponse *>(to)->MergeFrom(
-      static_cast<const TranslationsGetResponse &>(from));
-}
-
-
-void TranslationsGetResponse::MergeFrom(const TranslationsGetResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:common.v1.TranslationsGetResponse)
-  GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  switch (from.response_case()) {
-    case kData: {
-      _internal_mutable_data()->::common::v1::TranslationElements::MergeFrom(from._internal_data());
-      break;
-    }
-    case kError: {
-      _internal_mutable_error()->::common::v1::AppError::MergeFrom(from._internal_error());
-      break;
-    }
-    case RESPONSE_NOT_SET: {
-      break;
-    }
-  }
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void TranslationsGetResponse::CopyFrom(const TranslationsGetResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:common.v1.TranslationsGetResponse)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool TranslationsGetResponse::IsInitialized() const {
-  return true;
-}
-
-void TranslationsGetResponse::InternalSwap(TranslationsGetResponse* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(response_, other->response_);
-  swap(_oneof_case_[0], other->_oneof_case_[0]);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata TranslationsGetResponse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_common_2fv1_2fcommon_2eproto_getter, &descriptor_table_common_2fv1_2fcommon_2eproto_once,
-      file_level_metadata_common_2fv1_2fcommon_2eproto[7]);
-}
-
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace common
@@ -2207,12 +1638,6 @@ template<> PROTOBUF_NOINLINE ::common::v1::ConfigListenerResponse* Arena::Create
 }
 template<> PROTOBUF_NOINLINE ::common::v1::ConfigListenerRequest* Arena::CreateMaybeMessage< ::common::v1::ConfigListenerRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::common::v1::ConfigListenerRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::common::v1::TranslationsGetRequest* Arena::CreateMaybeMessage< ::common::v1::TranslationsGetRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::common::v1::TranslationsGetRequest >(arena);
-}
-template<> PROTOBUF_NOINLINE ::common::v1::TranslationsGetResponse* Arena::CreateMaybeMessage< ::common::v1::TranslationsGetResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::common::v1::TranslationsGetResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

@@ -19,10 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	CommonService_ConfigGet_FullMethodName       = "/common.v1.CommonService/ConfigGet"
-	CommonService_ConfigUpdate_FullMethodName    = "/common.v1.CommonService/ConfigUpdate"
-	CommonService_ConfigListener_FullMethodName  = "/common.v1.CommonService/ConfigListener"
-	CommonService_TranslationsGet_FullMethodName = "/common.v1.CommonService/TranslationsGet"
+	CommonService_ConfigGet_FullMethodName             = "/common.v1.CommonService/ConfigGet"
+	CommonService_ConfigUpdate_FullMethodName          = "/common.v1.CommonService/ConfigUpdate"
+	CommonService_ConfigListener_FullMethodName        = "/common.v1.CommonService/ConfigListener"
+	CommonService_TranslationsGet_FullMethodName       = "/common.v1.CommonService/TranslationsGet"
+	CommonService_TranslationForLangGet_FullMethodName = "/common.v1.CommonService/TranslationForLangGet"
 )
 
 // CommonServiceClient is the client API for CommonService service.
@@ -33,6 +34,7 @@ type CommonServiceClient interface {
 	ConfigUpdate(ctx context.Context, in *ConfigUpdateRequest, opts ...grpc.CallOption) (*ConfigUpdateResponse, error)
 	ConfigListener(ctx context.Context, in *ConfigListenerRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[ConfigListenerResponse], error)
 	TranslationsGet(ctx context.Context, in *TranslationsGetRequest, opts ...grpc.CallOption) (*TranslationsGetResponse, error)
+	TranslationForLangGet(ctx context.Context, in *TranslationsForLangGetRequest, opts ...grpc.CallOption) (*TranslationsForLangGetResponse, error)
 }
 
 type commonServiceClient struct {
@@ -92,6 +94,16 @@ func (c *commonServiceClient) TranslationsGet(ctx context.Context, in *Translati
 	return out, nil
 }
 
+func (c *commonServiceClient) TranslationForLangGet(ctx context.Context, in *TranslationsForLangGetRequest, opts ...grpc.CallOption) (*TranslationsForLangGetResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(TranslationsForLangGetResponse)
+	err := c.cc.Invoke(ctx, CommonService_TranslationForLangGet_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // CommonServiceServer is the server API for CommonService service.
 // All implementations must embed UnimplementedCommonServiceServer
 // for forward compatibility.
@@ -100,6 +112,7 @@ type CommonServiceServer interface {
 	ConfigUpdate(context.Context, *ConfigUpdateRequest) (*ConfigUpdateResponse, error)
 	ConfigListener(*ConfigListenerRequest, grpc.ServerStreamingServer[ConfigListenerResponse]) error
 	TranslationsGet(context.Context, *TranslationsGetRequest) (*TranslationsGetResponse, error)
+	TranslationForLangGet(context.Context, *TranslationsForLangGetRequest) (*TranslationsForLangGetResponse, error)
 	mustEmbedUnimplementedCommonServiceServer()
 }
 
@@ -121,6 +134,9 @@ func (UnimplementedCommonServiceServer) ConfigListener(*ConfigListenerRequest, g
 }
 func (UnimplementedCommonServiceServer) TranslationsGet(context.Context, *TranslationsGetRequest) (*TranslationsGetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TranslationsGet not implemented")
+}
+func (UnimplementedCommonServiceServer) TranslationForLangGet(context.Context, *TranslationsForLangGetRequest) (*TranslationsForLangGetResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method TranslationForLangGet not implemented")
 }
 func (UnimplementedCommonServiceServer) mustEmbedUnimplementedCommonServiceServer() {}
 func (UnimplementedCommonServiceServer) testEmbeddedByValue()                       {}
@@ -208,6 +224,24 @@ func _CommonService_TranslationsGet_Handler(srv interface{}, ctx context.Context
 	return interceptor(ctx, in, info, handler)
 }
 
+func _CommonService_TranslationForLangGet_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(TranslationsForLangGetRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(CommonServiceServer).TranslationForLangGet(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: CommonService_TranslationForLangGet_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(CommonServiceServer).TranslationForLangGet(ctx, req.(*TranslationsForLangGetRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // CommonService_ServiceDesc is the grpc.ServiceDesc for CommonService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -226,6 +260,10 @@ var CommonService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "TranslationsGet",
 			Handler:    _CommonService_TranslationsGet_Handler,
+		},
+		{
+			MethodName: "TranslationForLangGet",
+			Handler:    _CommonService_TranslationForLangGet_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{

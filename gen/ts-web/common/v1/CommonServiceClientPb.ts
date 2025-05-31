@@ -18,6 +18,7 @@
 import * as grpcWeb from 'grpc-web';
 
 import * as common_v1_common_pb from '../../common/v1/common_pb'; // proto import: "common/v1/common.proto"
+import * as common_v1_trans_pb from '../../common/v1/trans_pb'; // proto import: "common/v1/trans.proto"
 
 
 export class CommonServiceClient {
@@ -150,29 +151,29 @@ export class CommonServiceClient {
   methodDescriptorTranslationsGet = new grpcWeb.MethodDescriptor(
     '/common.v1.CommonService/TranslationsGet',
     grpcWeb.MethodType.UNARY,
-    common_v1_common_pb.TranslationsGetRequest,
-    common_v1_common_pb.TranslationsGetResponse,
-    (request: common_v1_common_pb.TranslationsGetRequest) => {
+    common_v1_trans_pb.TranslationsGetRequest,
+    common_v1_trans_pb.TranslationsGetResponse,
+    (request: common_v1_trans_pb.TranslationsGetRequest) => {
       return request.serializeBinary();
     },
-    common_v1_common_pb.TranslationsGetResponse.deserializeBinary
+    common_v1_trans_pb.TranslationsGetResponse.deserializeBinary
   );
 
   translationsGet(
-    request: common_v1_common_pb.TranslationsGetRequest,
-    metadata?: grpcWeb.Metadata | null): Promise<common_v1_common_pb.TranslationsGetResponse>;
+    request: common_v1_trans_pb.TranslationsGetRequest,
+    metadata?: grpcWeb.Metadata | null): Promise<common_v1_trans_pb.TranslationsGetResponse>;
 
   translationsGet(
-    request: common_v1_common_pb.TranslationsGetRequest,
+    request: common_v1_trans_pb.TranslationsGetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: common_v1_common_pb.TranslationsGetResponse) => void): grpcWeb.ClientReadableStream<common_v1_common_pb.TranslationsGetResponse>;
+               response: common_v1_trans_pb.TranslationsGetResponse) => void): grpcWeb.ClientReadableStream<common_v1_trans_pb.TranslationsGetResponse>;
 
   translationsGet(
-    request: common_v1_common_pb.TranslationsGetRequest,
+    request: common_v1_trans_pb.TranslationsGetRequest,
     metadata?: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: common_v1_common_pb.TranslationsGetResponse) => void) {
+               response: common_v1_trans_pb.TranslationsGetResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
@@ -188,6 +189,49 @@ export class CommonServiceClient {
     request,
     metadata || {},
     this.methodDescriptorTranslationsGet);
+  }
+
+  methodDescriptorTranslationForLangGet = new grpcWeb.MethodDescriptor(
+    '/common.v1.CommonService/TranslationForLangGet',
+    grpcWeb.MethodType.UNARY,
+    common_v1_trans_pb.TranslationsForLangGetRequest,
+    common_v1_trans_pb.TranslationsForLangGetResponse,
+    (request: common_v1_trans_pb.TranslationsForLangGetRequest) => {
+      return request.serializeBinary();
+    },
+    common_v1_trans_pb.TranslationsForLangGetResponse.deserializeBinary
+  );
+
+  translationForLangGet(
+    request: common_v1_trans_pb.TranslationsForLangGetRequest,
+    metadata?: grpcWeb.Metadata | null): Promise<common_v1_trans_pb.TranslationsForLangGetResponse>;
+
+  translationForLangGet(
+    request: common_v1_trans_pb.TranslationsForLangGetRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: common_v1_trans_pb.TranslationsForLangGetResponse) => void): grpcWeb.ClientReadableStream<common_v1_trans_pb.TranslationsForLangGetResponse>;
+
+  translationForLangGet(
+    request: common_v1_trans_pb.TranslationsForLangGetRequest,
+    metadata?: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: common_v1_trans_pb.TranslationsForLangGetResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/common.v1.CommonService/TranslationForLangGet',
+        request,
+        metadata || {},
+        this.methodDescriptorTranslationForLangGet,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/common.v1.CommonService/TranslationForLangGet',
+    request,
+    metadata || {},
+    this.methodDescriptorTranslationForLangGet);
   }
 
 }

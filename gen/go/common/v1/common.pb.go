@@ -391,137 +391,11 @@ func (x *ConfigListenerRequest) GetClientId() string {
 	return ""
 }
 
-type TranslationsGetRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Lang          string                 `protobuf:"bytes,1,opt,name=lang,proto3" json:"lang,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TranslationsGetRequest) Reset() {
-	*x = TranslationsGetRequest{}
-	mi := &file_common_v1_common_proto_msgTypes[6]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TranslationsGetRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TranslationsGetRequest) ProtoMessage() {}
-
-func (x *TranslationsGetRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_common_proto_msgTypes[6]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TranslationsGetRequest.ProtoReflect.Descriptor instead.
-func (*TranslationsGetRequest) Descriptor() ([]byte, []int) {
-	return file_common_v1_common_proto_rawDescGZIP(), []int{6}
-}
-
-func (x *TranslationsGetRequest) GetLang() string {
-	if x != nil {
-		return x.Lang
-	}
-	return ""
-}
-
-type TranslationsGetResponse struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	// Types that are valid to be assigned to Response:
-	//
-	//	*TranslationsGetResponse_Data
-	//	*TranslationsGetResponse_Error
-	Response      isTranslationsGetResponse_Response `protobuf_oneof:"response"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *TranslationsGetResponse) Reset() {
-	*x = TranslationsGetResponse{}
-	mi := &file_common_v1_common_proto_msgTypes[7]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *TranslationsGetResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*TranslationsGetResponse) ProtoMessage() {}
-
-func (x *TranslationsGetResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_common_proto_msgTypes[7]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use TranslationsGetResponse.ProtoReflect.Descriptor instead.
-func (*TranslationsGetResponse) Descriptor() ([]byte, []int) {
-	return file_common_v1_common_proto_rawDescGZIP(), []int{7}
-}
-
-func (x *TranslationsGetResponse) GetResponse() isTranslationsGetResponse_Response {
-	if x != nil {
-		return x.Response
-	}
-	return nil
-}
-
-func (x *TranslationsGetResponse) GetData() *TranslationElements {
-	if x != nil {
-		if x, ok := x.Response.(*TranslationsGetResponse_Data); ok {
-			return x.Data
-		}
-	}
-	return nil
-}
-
-func (x *TranslationsGetResponse) GetError() *AppError {
-	if x != nil {
-		if x, ok := x.Response.(*TranslationsGetResponse_Error); ok {
-			return x.Error
-		}
-	}
-	return nil
-}
-
-type isTranslationsGetResponse_Response interface {
-	isTranslationsGetResponse_Response()
-}
-
-type TranslationsGetResponse_Data struct {
-	Data *TranslationElements `protobuf:"bytes,1,opt,name=data,proto3,oneof"`
-}
-
-type TranslationsGetResponse_Error struct {
-	Error *AppError `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
-}
-
-func (*TranslationsGetResponse_Data) isTranslationsGetResponse_Response() {}
-
-func (*TranslationsGetResponse_Error) isTranslationsGetResponse_Response() {}
-
 var File_common_v1_common_proto protoreflect.FileDescriptor
 
 const file_common_v1_common_proto_rawDesc = "" +
 	"\n" +
-	"\x16common/v1/common.proto\x12\tcommon.v1\x1a\x16common/v1/config.proto\x1a\x15common/v1/error.proto\x1a\x15common/v1/types.proto\"\x12\n" +
+	"\x16common/v1/common.proto\x12\tcommon.v1\x1a\x16common/v1/config.proto\x1a\x15common/v1/error.proto\x1a\x15common/v1/trans.proto\"\x12\n" +
 	"\x10ConfigGetRequest\"u\n" +
 	"\x11ConfigGetResponse\x12'\n" +
 	"\x04data\x18\x01 \x01(\v2\x11.common.v1.ConfigH\x00R\x04data\x12+\n" +
@@ -541,19 +415,13 @@ const file_common_v1_common_proto_rawDesc = "" +
 	"\n" +
 	"\bresponse\"4\n" +
 	"\x15ConfigListenerRequest\x12\x1b\n" +
-	"\tclient_id\x18\x01 \x01(\tR\bclientId\",\n" +
-	"\x16TranslationsGetRequest\x12\x12\n" +
-	"\x04lang\x18\x01 \x01(\tR\x04lang\"\x88\x01\n" +
-	"\x17TranslationsGetResponse\x124\n" +
-	"\x04data\x18\x01 \x01(\v2\x1e.common.v1.TranslationElementsH\x00R\x04data\x12+\n" +
-	"\x05error\x18\x02 \x01(\v2\x13.common.v1.AppErrorH\x00R\x05errorB\n" +
-	"\n" +
-	"\bresponse2\xdb\x02\n" +
+	"\tclient_id\x18\x01 \x01(\tR\bclientId2\xc9\x03\n" +
 	"\rCommonService\x12F\n" +
 	"\tConfigGet\x12\x1b.common.v1.ConfigGetRequest\x1a\x1c.common.v1.ConfigGetResponse\x12O\n" +
 	"\fConfigUpdate\x12\x1e.common.v1.ConfigUpdateRequest\x1a\x1f.common.v1.ConfigUpdateResponse\x12W\n" +
 	"\x0eConfigListener\x12 .common.v1.ConfigListenerRequest\x1a!.common.v1.ConfigListenerResponse0\x01\x12X\n" +
-	"\x0fTranslationsGet\x12!.common.v1.TranslationsGetRequest\x1a\".common.v1.TranslationsGetResponseB:\n" +
+	"\x0fTranslationsGet\x12!.common.v1.TranslationsGetRequest\x1a\".common.v1.TranslationsGetResponse\x12l\n" +
+	"\x15TranslationForLangGet\x12(.common.v1.TranslationsForLangGetRequest\x1a).common.v1.TranslationsForLangGetResponseB:\n" +
 	"\x1aorg.megacommerce.common.v1B\vCommonProtoZ\fcommon/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
@@ -568,43 +436,44 @@ func file_common_v1_common_proto_rawDescGZIP() []byte {
 	return file_common_v1_common_proto_rawDescData
 }
 
-var file_common_v1_common_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_common_v1_common_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_common_v1_common_proto_goTypes = []any{
-	(*ConfigGetRequest)(nil),        // 0: common.v1.ConfigGetRequest
-	(*ConfigGetResponse)(nil),       // 1: common.v1.ConfigGetResponse
-	(*ConfigUpdateRequest)(nil),     // 2: common.v1.ConfigUpdateRequest
-	(*ConfigUpdateResponse)(nil),    // 3: common.v1.ConfigUpdateResponse
-	(*ConfigListenerResponse)(nil),  // 4: common.v1.ConfigListenerResponse
-	(*ConfigListenerRequest)(nil),   // 5: common.v1.ConfigListenerRequest
-	(*TranslationsGetRequest)(nil),  // 6: common.v1.TranslationsGetRequest
-	(*TranslationsGetResponse)(nil), // 7: common.v1.TranslationsGetResponse
-	(*Config)(nil),                  // 8: common.v1.Config
-	(*AppError)(nil),                // 9: common.v1.AppError
-	(*TranslationElements)(nil),     // 10: common.v1.TranslationElements
+	(*ConfigGetRequest)(nil),               // 0: common.v1.ConfigGetRequest
+	(*ConfigGetResponse)(nil),              // 1: common.v1.ConfigGetResponse
+	(*ConfigUpdateRequest)(nil),            // 2: common.v1.ConfigUpdateRequest
+	(*ConfigUpdateResponse)(nil),           // 3: common.v1.ConfigUpdateResponse
+	(*ConfigListenerResponse)(nil),         // 4: common.v1.ConfigListenerResponse
+	(*ConfigListenerRequest)(nil),          // 5: common.v1.ConfigListenerRequest
+	(*Config)(nil),                         // 6: common.v1.Config
+	(*AppError)(nil),                       // 7: common.v1.AppError
+	(*TranslationsGetRequest)(nil),         // 8: common.v1.TranslationsGetRequest
+	(*TranslationsForLangGetRequest)(nil),  // 9: common.v1.TranslationsForLangGetRequest
+	(*TranslationsGetResponse)(nil),        // 10: common.v1.TranslationsGetResponse
+	(*TranslationsForLangGetResponse)(nil), // 11: common.v1.TranslationsForLangGetResponse
 }
 var file_common_v1_common_proto_depIdxs = []int32{
-	8,  // 0: common.v1.ConfigGetResponse.data:type_name -> common.v1.Config
-	9,  // 1: common.v1.ConfigGetResponse.error:type_name -> common.v1.AppError
-	8,  // 2: common.v1.ConfigUpdateRequest.config:type_name -> common.v1.Config
-	8,  // 3: common.v1.ConfigUpdateResponse.data:type_name -> common.v1.Config
-	9,  // 4: common.v1.ConfigUpdateResponse.error:type_name -> common.v1.AppError
-	8,  // 5: common.v1.ConfigListenerResponse.data:type_name -> common.v1.Config
-	9,  // 6: common.v1.ConfigListenerResponse.error:type_name -> common.v1.AppError
-	10, // 7: common.v1.TranslationsGetResponse.data:type_name -> common.v1.TranslationElements
-	9,  // 8: common.v1.TranslationsGetResponse.error:type_name -> common.v1.AppError
-	0,  // 9: common.v1.CommonService.ConfigGet:input_type -> common.v1.ConfigGetRequest
-	2,  // 10: common.v1.CommonService.ConfigUpdate:input_type -> common.v1.ConfigUpdateRequest
-	5,  // 11: common.v1.CommonService.ConfigListener:input_type -> common.v1.ConfigListenerRequest
-	6,  // 12: common.v1.CommonService.TranslationsGet:input_type -> common.v1.TranslationsGetRequest
-	1,  // 13: common.v1.CommonService.ConfigGet:output_type -> common.v1.ConfigGetResponse
-	3,  // 14: common.v1.CommonService.ConfigUpdate:output_type -> common.v1.ConfigUpdateResponse
-	4,  // 15: common.v1.CommonService.ConfigListener:output_type -> common.v1.ConfigListenerResponse
-	7,  // 16: common.v1.CommonService.TranslationsGet:output_type -> common.v1.TranslationsGetResponse
-	13, // [13:17] is the sub-list for method output_type
-	9,  // [9:13] is the sub-list for method input_type
-	9,  // [9:9] is the sub-list for extension type_name
-	9,  // [9:9] is the sub-list for extension extendee
-	0,  // [0:9] is the sub-list for field type_name
+	6,  // 0: common.v1.ConfigGetResponse.data:type_name -> common.v1.Config
+	7,  // 1: common.v1.ConfigGetResponse.error:type_name -> common.v1.AppError
+	6,  // 2: common.v1.ConfigUpdateRequest.config:type_name -> common.v1.Config
+	6,  // 3: common.v1.ConfigUpdateResponse.data:type_name -> common.v1.Config
+	7,  // 4: common.v1.ConfigUpdateResponse.error:type_name -> common.v1.AppError
+	6,  // 5: common.v1.ConfigListenerResponse.data:type_name -> common.v1.Config
+	7,  // 6: common.v1.ConfigListenerResponse.error:type_name -> common.v1.AppError
+	0,  // 7: common.v1.CommonService.ConfigGet:input_type -> common.v1.ConfigGetRequest
+	2,  // 8: common.v1.CommonService.ConfigUpdate:input_type -> common.v1.ConfigUpdateRequest
+	5,  // 9: common.v1.CommonService.ConfigListener:input_type -> common.v1.ConfigListenerRequest
+	8,  // 10: common.v1.CommonService.TranslationsGet:input_type -> common.v1.TranslationsGetRequest
+	9,  // 11: common.v1.CommonService.TranslationForLangGet:input_type -> common.v1.TranslationsForLangGetRequest
+	1,  // 12: common.v1.CommonService.ConfigGet:output_type -> common.v1.ConfigGetResponse
+	3,  // 13: common.v1.CommonService.ConfigUpdate:output_type -> common.v1.ConfigUpdateResponse
+	4,  // 14: common.v1.CommonService.ConfigListener:output_type -> common.v1.ConfigListenerResponse
+	10, // 15: common.v1.CommonService.TranslationsGet:output_type -> common.v1.TranslationsGetResponse
+	11, // 16: common.v1.CommonService.TranslationForLangGet:output_type -> common.v1.TranslationsForLangGetResponse
+	12, // [12:17] is the sub-list for method output_type
+	7,  // [7:12] is the sub-list for method input_type
+	7,  // [7:7] is the sub-list for extension type_name
+	7,  // [7:7] is the sub-list for extension extendee
+	0,  // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_common_v1_common_proto_init() }
@@ -614,7 +483,7 @@ func file_common_v1_common_proto_init() {
 	}
 	file_common_v1_config_proto_init()
 	file_common_v1_error_proto_init()
-	file_common_v1_types_proto_init()
+	file_common_v1_trans_proto_init()
 	file_common_v1_common_proto_msgTypes[1].OneofWrappers = []any{
 		(*ConfigGetResponse_Data)(nil),
 		(*ConfigGetResponse_Error)(nil),
@@ -627,17 +496,13 @@ func file_common_v1_common_proto_init() {
 		(*ConfigListenerResponse_Data)(nil),
 		(*ConfigListenerResponse_Error)(nil),
 	}
-	file_common_v1_common_proto_msgTypes[7].OneofWrappers = []any{
-		(*TranslationsGetResponse_Data)(nil),
-		(*TranslationsGetResponse_Error)(nil),
-	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_v1_common_proto_rawDesc), len(file_common_v1_common_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   8,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

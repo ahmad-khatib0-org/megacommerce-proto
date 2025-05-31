@@ -14,12 +14,3 @@ message StringMap {
 message NestedStringMap {
   map<string, StringMap> data = 1;
 }
-
-message TranslationElement {
-  string id = 1;
-  string tr = 2;
-}
-
-message TranslationElements {
-  repeated TranslationElement trans = 1;
-}
