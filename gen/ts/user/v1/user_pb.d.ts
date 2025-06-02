@@ -105,8 +105,8 @@ export class User extends jspb.Message {
 
   hasLastActivityAt(): boolean;
   clearLastActivityAt(): void;
-  getLastActivityAt(): string;
-  setLastActivityAt(value: string): void;
+  getLastActivityAt(): number;
+  setLastActivityAt(value: number): void;
 
   hasLastLogin(): boolean;
   clearLastLogin(): void;
@@ -161,7 +161,7 @@ export namespace User {
     locale: string,
     mfaActive: boolean,
     mfaSecret: string,
-    lastActivityAt: string,
+    lastActivityAt: number,
     lastLogin: number,
     createdAt: number,
     updatedAt: number,

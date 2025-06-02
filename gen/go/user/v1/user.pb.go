@@ -44,7 +44,7 @@ type User struct {
 	Locale             *string                `protobuf:"bytes,19,opt,name=locale,proto3,oneof" json:"locale,omitempty"`
 	MfaActive          *bool                  `protobuf:"varint,20,opt,name=mfa_active,json=mfaActive,proto3,oneof" json:"mfa_active,omitempty"`
 	MfaSecret          *string                `protobuf:"bytes,21,opt,name=mfa_secret,json=mfaSecret,proto3,oneof" json:"mfa_secret,omitempty"`
-	LastActivityAt     *string                `protobuf:"bytes,22,opt,name=last_activity_at,json=lastActivityAt,proto3,oneof" json:"last_activity_at,omitempty"`
+	LastActivityAt     *int64                 `protobuf:"varint,22,opt,name=last_activity_at,json=lastActivityAt,proto3,oneof" json:"last_activity_at,omitempty"`
 	LastLogin          *int64                 `protobuf:"varint,23,opt,name=last_login,json=lastLogin,proto3,oneof" json:"last_login,omitempty"`
 	CreatedAt          *int64                 `protobuf:"varint,24,opt,name=created_at,json=createdAt,proto3,oneof" json:"created_at,omitempty"`
 	UpdatedAt          *int64                 `protobuf:"varint,25,opt,name=updated_at,json=updatedAt,proto3,oneof" json:"updated_at,omitempty"`
@@ -230,11 +230,11 @@ func (x *User) GetMfaSecret() string {
 	return ""
 }
 
-func (x *User) GetLastActivityAt() string {
+func (x *User) GetLastActivityAt() int64 {
 	if x != nil && x.LastActivityAt != nil {
 		return *x.LastActivityAt
 	}
-	return ""
+	return 0
 }
 
 func (x *User) GetLastLogin() int64 {
@@ -419,7 +419,7 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"mfa_active\x18\x14 \x01(\bH\x11R\tmfaActive\x88\x01\x01\x12\"\n" +
 	"\n" +
 	"mfa_secret\x18\x15 \x01(\tH\x12R\tmfaSecret\x88\x01\x01\x12-\n" +
-	"\x10last_activity_at\x18\x16 \x01(\tH\x13R\x0elastActivityAt\x88\x01\x01\x12\"\n" +
+	"\x10last_activity_at\x18\x16 \x01(\x03H\x13R\x0elastActivityAt\x88\x01\x01\x12\"\n" +
 	"\n" +
 	"last_login\x18\x17 \x01(\x03H\x14R\tlastLogin\x88\x01\x01\x12\"\n" +
 	"\n" +

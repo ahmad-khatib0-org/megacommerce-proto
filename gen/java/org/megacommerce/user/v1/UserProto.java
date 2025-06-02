@@ -380,21 +380,15 @@ public final class UserProto {
         getMfaSecretBytes();
 
     /**
-     * <code>optional string last_activity_at = 22 [json_name = "lastActivityAt"];</code>
+     * <code>optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];</code>
      * @return Whether the lastActivityAt field is set.
      */
     boolean hasLastActivityAt();
     /**
-     * <code>optional string last_activity_at = 22 [json_name = "lastActivityAt"];</code>
+     * <code>optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];</code>
      * @return The lastActivityAt.
      */
-    java.lang.String getLastActivityAt();
-    /**
-     * <code>optional string last_activity_at = 22 [json_name = "lastActivityAt"];</code>
-     * @return The bytes for lastActivityAt.
-     */
-    com.google.protobuf.ByteString
-        getLastActivityAtBytes();
+    long getLastActivityAt();
 
     /**
      * <code>optional int64 last_login = 23 [json_name = "lastLogin"];</code>
@@ -467,7 +461,6 @@ public final class UserProto {
       roles_ = "";
       locale_ = "";
       mfaSecret_ = "";
-      lastActivityAt_ = "";
     }
 
     @java.lang.Override
@@ -1412,9 +1405,9 @@ public final class UserProto {
     }
 
     public static final int LAST_ACTIVITY_AT_FIELD_NUMBER = 22;
-    private volatile java.lang.Object lastActivityAt_;
+    private long lastActivityAt_;
     /**
-     * <code>optional string last_activity_at = 22 [json_name = "lastActivityAt"];</code>
+     * <code>optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];</code>
      * @return Whether the lastActivityAt field is set.
      */
     @java.lang.Override
@@ -1422,39 +1415,12 @@ public final class UserProto {
       return ((bitField0_ & 0x00080000) != 0);
     }
     /**
-     * <code>optional string last_activity_at = 22 [json_name = "lastActivityAt"];</code>
+     * <code>optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];</code>
      * @return The lastActivityAt.
      */
     @java.lang.Override
-    public java.lang.String getLastActivityAt() {
-      java.lang.Object ref = lastActivityAt_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        lastActivityAt_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string last_activity_at = 22 [json_name = "lastActivityAt"];</code>
-     * @return The bytes for lastActivityAt.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getLastActivityAtBytes() {
-      java.lang.Object ref = lastActivityAt_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        lastActivityAt_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getLastActivityAt() {
+      return lastActivityAt_;
     }
 
     public static final int LAST_LOGIN_FIELD_NUMBER = 23;
@@ -1617,7 +1583,7 @@ public final class UserProto {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 21, mfaSecret_);
       }
       if (((bitField0_ & 0x00080000) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 22, lastActivityAt_);
+        output.writeInt64(22, lastActivityAt_);
       }
       if (((bitField0_ & 0x00100000) != 0)) {
         output.writeInt64(23, lastLogin_);
@@ -1723,7 +1689,8 @@ public final class UserProto {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, mfaSecret_);
       }
       if (((bitField0_ & 0x00080000) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, lastActivityAt_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(22, lastActivityAt_);
       }
       if (((bitField0_ & 0x00100000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
@@ -1857,8 +1824,8 @@ public final class UserProto {
       }
       if (hasLastActivityAt() != other.hasLastActivityAt()) return false;
       if (hasLastActivityAt()) {
-        if (!getLastActivityAt()
-            .equals(other.getLastActivityAt())) return false;
+        if (getLastActivityAt()
+            != other.getLastActivityAt()) return false;
       }
       if (hasLastLogin() != other.hasLastLogin()) return false;
       if (hasLastLogin()) {
@@ -1981,7 +1948,8 @@ public final class UserProto {
       }
       if (hasLastActivityAt()) {
         hash = (37 * hash) + LAST_ACTIVITY_AT_FIELD_NUMBER;
-        hash = (53 * hash) + getLastActivityAt().hashCode();
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getLastActivityAt());
       }
       if (hasLastLogin()) {
         hash = (37 * hash) + LAST_LOGIN_FIELD_NUMBER;
@@ -2197,7 +2165,7 @@ public final class UserProto {
         bitField0_ = (bitField0_ & ~0x00080000);
         mfaSecret_ = "";
         bitField0_ = (bitField0_ & ~0x00100000);
-        lastActivityAt_ = "";
+        lastActivityAt_ = 0L;
         bitField0_ = (bitField0_ & ~0x00200000);
         lastLogin_ = 0L;
         bitField0_ = (bitField0_ & ~0x00400000);
@@ -2316,9 +2284,9 @@ public final class UserProto {
         }
         result.mfaSecret_ = mfaSecret_;
         if (((from_bitField0_ & 0x00200000) != 0)) {
+          result.lastActivityAt_ = lastActivityAt_;
           to_bitField0_ |= 0x00080000;
         }
-        result.lastActivityAt_ = lastActivityAt_;
         if (((from_bitField0_ & 0x00400000) != 0)) {
           result.lastLogin_ = lastLogin_;
           to_bitField0_ |= 0x00100000;
@@ -2474,9 +2442,7 @@ public final class UserProto {
           onChanged();
         }
         if (other.hasLastActivityAt()) {
-          bitField0_ |= 0x00200000;
-          lastActivityAt_ = other.lastActivityAt_;
-          onChanged();
+          setLastActivityAt(other.getLastActivityAt());
         }
         if (other.hasLastLogin()) {
           setLastLogin(other.getLastLogin());
@@ -2627,11 +2593,11 @@ public final class UserProto {
                 bitField0_ |= 0x00100000;
                 break;
               } // case 170
-              case 178: {
-                lastActivityAt_ = input.readStringRequireUtf8();
+              case 176: {
+                lastActivityAt_ = input.readInt64();
                 bitField0_ |= 0x00200000;
                 break;
-              } // case 178
+              } // case 176
               case 184: {
                 lastLogin_ = input.readInt64();
                 bitField0_ |= 0x00400000;
@@ -4288,85 +4254,41 @@ public final class UserProto {
         return this;
       }
 
-      private java.lang.Object lastActivityAt_ = "";
+      private long lastActivityAt_ ;
       /**
-       * <code>optional string last_activity_at = 22 [json_name = "lastActivityAt"];</code>
+       * <code>optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];</code>
        * @return Whether the lastActivityAt field is set.
        */
+      @java.lang.Override
       public boolean hasLastActivityAt() {
         return ((bitField0_ & 0x00200000) != 0);
       }
       /**
-       * <code>optional string last_activity_at = 22 [json_name = "lastActivityAt"];</code>
+       * <code>optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];</code>
        * @return The lastActivityAt.
        */
-      public java.lang.String getLastActivityAt() {
-        java.lang.Object ref = lastActivityAt_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          lastActivityAt_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public long getLastActivityAt() {
+        return lastActivityAt_;
       }
       /**
-       * <code>optional string last_activity_at = 22 [json_name = "lastActivityAt"];</code>
-       * @return The bytes for lastActivityAt.
-       */
-      public com.google.protobuf.ByteString
-          getLastActivityAtBytes() {
-        java.lang.Object ref = lastActivityAt_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          lastActivityAt_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string last_activity_at = 22 [json_name = "lastActivityAt"];</code>
+       * <code>optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];</code>
        * @param value The lastActivityAt to set.
        * @return This builder for chaining.
        */
-      public Builder setLastActivityAt(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00200000;
+      public Builder setLastActivityAt(long value) {
+        bitField0_ |= 0x00200000;
         lastActivityAt_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string last_activity_at = 22 [json_name = "lastActivityAt"];</code>
+       * <code>optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearLastActivityAt() {
         bitField0_ = (bitField0_ & ~0x00200000);
-        lastActivityAt_ = getDefaultInstance().getLastActivityAt();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string last_activity_at = 22 [json_name = "lastActivityAt"];</code>
-       * @param value The bytes for lastActivityAt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLastActivityAtBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        bitField0_ |= 0x00200000;
-        lastActivityAt_ = value;
+        lastActivityAt_ = 0L;
         onChanged();
         return this;
       }
@@ -6340,7 +6262,7 @@ public final class UserProto {
       "cale\030\023 \001(\tH\020R\006locale\210\001\001\022\"\n\nmfa_active\030\024 " +
       "\001(\010H\021R\tmfaActive\210\001\001\022\"\n\nmfa_secret\030\025 \001(\tH" +
       "\022R\tmfaSecret\210\001\001\022-\n\020last_activity_at\030\026 \001(" +
-      "\tH\023R\016lastActivityAt\210\001\001\022\"\n\nlast_login\030\027 \001" +
+      "\003H\023R\016lastActivityAt\210\001\001\022\"\n\nlast_login\030\027 \001" +
       "(\003H\024R\tlastLogin\210\001\001\022\"\n\ncreated_at\030\030 \001(\003H\025" +
       "R\tcreatedAt\210\001\001\022\"\n\nupdated_at\030\031 \001(\003H\026R\tup" +
       "datedAt\210\001\001\022\"\n\ndeleted_at\030\032 \001(\003H\027R\tdelete" +

@@ -140,7 +140,7 @@ proto.user.v1.User.toObject = function(includeInstance, msg) {
     locale: jspb.Message.getFieldWithDefault(msg, 19, ""),
     mfaActive: jspb.Message.getBooleanFieldWithDefault(msg, 20, false),
     mfaSecret: jspb.Message.getFieldWithDefault(msg, 21, ""),
-    lastActivityAt: jspb.Message.getFieldWithDefault(msg, 22, ""),
+    lastActivityAt: jspb.Message.getFieldWithDefault(msg, 22, 0),
     lastLogin: jspb.Message.getFieldWithDefault(msg, 23, 0),
     createdAt: jspb.Message.getFieldWithDefault(msg, 24, 0),
     updatedAt: jspb.Message.getFieldWithDefault(msg, 25, 0),
@@ -270,7 +270,7 @@ proto.user.v1.User.deserializeBinaryFromReader = function(msg, reader) {
       msg.setMfaSecret(value);
       break;
     case 22:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readInt64());
       msg.setLastActivityAt(value);
       break;
     case 23:
@@ -459,9 +459,9 @@ proto.user.v1.User.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 22));
+  f = /** @type {number} */ (jspb.Message.getField(message, 22));
   if (f != null) {
-    writer.writeString(
+    writer.writeInt64(
       22,
       f
     );
@@ -1226,16 +1226,16 @@ proto.user.v1.User.prototype.hasMfaSecret = function() {
 
 
 /**
- * optional string last_activity_at = 22;
- * @return {string}
+ * optional int64 last_activity_at = 22;
+ * @return {number}
  */
 proto.user.v1.User.prototype.getLastActivityAt = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 22, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 22, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.setLastActivityAt = function(value) {

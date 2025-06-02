@@ -58,12 +58,12 @@ constexpr User::User(
   , roles_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , locale_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , mfa_secret_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , last_activity_at_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , is_email_verified_(false)
   , mfa_active_(false)
   , failed_attempts_(0)
   , last_password_update_(int64_t{0})
   , last_picture_update_(int64_t{0})
+  , last_activity_at_(int64_t{0})
   , last_login_(int64_t{0})
   , created_at_(int64_t{0})
   , updated_at_(int64_t{0})
@@ -172,20 +172,20 @@ const uint32_t TableStruct_user_2fv1_2fuser_2eproto::offsets[] PROTOBUF_SECTION_
   5,
   6,
   7,
-  15,
+  14,
   8,
   9,
   10,
   11,
   ~0u,
   ~0u,
-  18,
-  19,
   17,
-  12,
+  18,
   16,
+  12,
+  15,
   13,
-  14,
+  19,
   20,
   21,
   22,
@@ -248,7 +248,7 @@ const char descriptor_table_protodef_user_2fv1_2fuser_2eproto[] PROTOBUF_SECTION
   "cale\030\023 \001(\tH\020R\006locale\210\001\001\022\"\n\nmfa_active\030\024 "
   "\001(\010H\021R\tmfaActive\210\001\001\022\"\n\nmfa_secret\030\025 \001(\tH"
   "\022R\tmfaSecret\210\001\001\022-\n\020last_activity_at\030\026 \001("
-  "\tH\023R\016lastActivityAt\210\001\001\022\"\n\nlast_login\030\027 \001"
+  "\003H\023R\016lastActivityAt\210\001\001\022\"\n\nlast_login\030\027 \001"
   "(\003H\024R\tlastLogin\210\001\001\022\"\n\ncreated_at\030\030 \001(\003H\025"
   "R\tcreatedAt\210\001\001\022\"\n\nupdated_at\030\031 \001(\003H\026R\tup"
   "datedAt\210\001\001\022\"\n\ndeleted_at\030\032 \001(\003H\027R\tdelete"
@@ -350,7 +350,7 @@ class User::_Internal {
     (*has_bits)[0] |= 128u;
   }
   static void set_has_is_email_verified(HasBits* has_bits) {
-    (*has_bits)[0] |= 32768u;
+    (*has_bits)[0] |= 16384u;
   }
   static void set_has_password(HasBits* has_bits) {
     (*has_bits)[0] |= 256u;
@@ -365,25 +365,25 @@ class User::_Internal {
     (*has_bits)[0] |= 2048u;
   }
   static void set_has_last_password_update(HasBits* has_bits) {
-    (*has_bits)[0] |= 262144u;
+    (*has_bits)[0] |= 131072u;
   }
   static void set_has_last_picture_update(HasBits* has_bits) {
-    (*has_bits)[0] |= 524288u;
+    (*has_bits)[0] |= 262144u;
   }
   static void set_has_failed_attempts(HasBits* has_bits) {
-    (*has_bits)[0] |= 131072u;
+    (*has_bits)[0] |= 65536u;
   }
   static void set_has_locale(HasBits* has_bits) {
     (*has_bits)[0] |= 4096u;
   }
   static void set_has_mfa_active(HasBits* has_bits) {
-    (*has_bits)[0] |= 65536u;
+    (*has_bits)[0] |= 32768u;
   }
   static void set_has_mfa_secret(HasBits* has_bits) {
     (*has_bits)[0] |= 8192u;
   }
   static void set_has_last_activity_at(HasBits* has_bits) {
-    (*has_bits)[0] |= 16384u;
+    (*has_bits)[0] |= 524288u;
   }
   static void set_has_last_login(HasBits* has_bits) {
     (*has_bits)[0] |= 1048576u;
@@ -528,14 +528,6 @@ User::User(const User& from)
     mfa_secret_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_mfa_secret(), 
       GetArenaForAllocation());
   }
-  last_activity_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    last_activity_at_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_last_activity_at()) {
-    last_activity_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_last_activity_at(), 
-      GetArenaForAllocation());
-  }
   ::memcpy(&is_email_verified_, &from.is_email_verified_,
     static_cast<size_t>(reinterpret_cast<char*>(&deleted_at_) -
     reinterpret_cast<char*>(&is_email_verified_)) + sizeof(deleted_at_));
@@ -599,10 +591,6 @@ mfa_secret_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringA
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   mfa_secret_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-last_activity_at_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  last_activity_at_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&is_email_verified_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&deleted_at_) -
@@ -632,7 +620,6 @@ inline void User::SharedDtor() {
   roles_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   locale_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   mfa_secret_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  last_activity_at_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void User::ArenaDtor(void* object) {
@@ -685,7 +672,7 @@ void User::Clear() {
       membership_.ClearNonDefaultToEmpty();
     }
   }
-  if (cached_has_bits & 0x00007f00u) {
+  if (cached_has_bits & 0x00003f00u) {
     if (cached_has_bits & 0x00000100u) {
       password_.ClearNonDefaultToEmpty();
     }
@@ -704,15 +691,16 @@ void User::Clear() {
     if (cached_has_bits & 0x00002000u) {
       mfa_secret_.ClearNonDefaultToEmpty();
     }
-    if (cached_has_bits & 0x00004000u) {
-      last_activity_at_.ClearNonDefaultToEmpty();
-    }
   }
-  is_email_verified_ = false;
+  if (cached_has_bits & 0x0000c000u) {
+    ::memset(&is_email_verified_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&mfa_active_) -
+        reinterpret_cast<char*>(&is_email_verified_)) + sizeof(mfa_active_));
+  }
   if (cached_has_bits & 0x00ff0000u) {
-    ::memset(&mfa_active_, 0, static_cast<size_t>(
+    ::memset(&failed_attempts_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&deleted_at_) -
-        reinterpret_cast<char*>(&mfa_active_)) + sizeof(deleted_at_));
+        reinterpret_cast<char*>(&failed_attempts_)) + sizeof(deleted_at_));
   }
   _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -936,12 +924,11 @@ const char* User::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
         } else
           goto handle_unusual;
         continue;
-      // optional string last_activity_at = 22 [json_name = "lastActivityAt"];
+      // optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];
       case 22:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 178)) {
-          auto str = _internal_mutable_last_activity_at();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "user.v1.User.last_activity_at"));
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 176)) {
+          _Internal::set_has_last_activity_at(&has_bits);
+          last_activity_at_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1274,14 +1261,10 @@ uint8_t* User::_InternalSerialize(
         21, this->_internal_mfa_secret(), target);
   }
 
-  // optional string last_activity_at = 22 [json_name = "lastActivityAt"];
+  // optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];
   if (_internal_has_last_activity_at()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_last_activity_at().data(), static_cast<int>(this->_internal_last_activity_at().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "user.v1.User.last_activity_at");
-    target = stream->WriteStringMaybeAliased(
-        22, this->_internal_last_activity_at(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(22, this->_internal_last_activity_at(), target);
   }
 
   // optional int64 last_login = 23 [json_name = "lastLogin"];
@@ -1444,44 +1427,44 @@ size_t User::ByteSizeLong() const {
           this->_internal_mfa_secret());
     }
 
-    // optional string last_activity_at = 22 [json_name = "lastActivityAt"];
+    // optional bool is_email_verified = 9 [json_name = "isEmailVerified"];
     if (cached_has_bits & 0x00004000u) {
-      total_size += 2 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_last_activity_at());
+      total_size += 1 + 1;
     }
 
-    // optional bool is_email_verified = 9 [json_name = "isEmailVerified"];
+    // optional bool mfa_active = 20 [json_name = "mfaActive"];
     if (cached_has_bits & 0x00008000u) {
-      total_size += 1 + 1;
+      total_size += 2 + 1;
     }
 
   }
   if (cached_has_bits & 0x00ff0000u) {
-    // optional bool mfa_active = 20 [json_name = "mfaActive"];
-    if (cached_has_bits & 0x00010000u) {
-      total_size += 2 + 1;
-    }
-
     // optional int32 failed_attempts = 18 [json_name = "failedAttempts"];
-    if (cached_has_bits & 0x00020000u) {
+    if (cached_has_bits & 0x00010000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
           this->_internal_failed_attempts());
     }
 
     // optional int64 last_password_update = 16 [json_name = "lastPasswordUpdate"];
-    if (cached_has_bits & 0x00040000u) {
+    if (cached_has_bits & 0x00020000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
           this->_internal_last_password_update());
     }
 
     // optional int64 last_picture_update = 17 [json_name = "lastPictureUpdate"];
-    if (cached_has_bits & 0x00080000u) {
+    if (cached_has_bits & 0x00040000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
           this->_internal_last_picture_update());
+    }
+
+    // optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];
+    if (cached_has_bits & 0x00080000u) {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
+          this->_internal_last_activity_at());
     }
 
     // optional int64 last_login = 23 [json_name = "lastLogin"];
@@ -1584,25 +1567,25 @@ void User::MergeFrom(const User& from) {
       _internal_set_mfa_secret(from._internal_mfa_secret());
     }
     if (cached_has_bits & 0x00004000u) {
-      _internal_set_last_activity_at(from._internal_last_activity_at());
+      is_email_verified_ = from.is_email_verified_;
     }
     if (cached_has_bits & 0x00008000u) {
-      is_email_verified_ = from.is_email_verified_;
+      mfa_active_ = from.mfa_active_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
   if (cached_has_bits & 0x00ff0000u) {
     if (cached_has_bits & 0x00010000u) {
-      mfa_active_ = from.mfa_active_;
-    }
-    if (cached_has_bits & 0x00020000u) {
       failed_attempts_ = from.failed_attempts_;
     }
-    if (cached_has_bits & 0x00040000u) {
+    if (cached_has_bits & 0x00020000u) {
       last_password_update_ = from.last_password_update_;
     }
-    if (cached_has_bits & 0x00080000u) {
+    if (cached_has_bits & 0x00040000u) {
       last_picture_update_ = from.last_picture_update_;
+    }
+    if (cached_has_bits & 0x00080000u) {
+      last_activity_at_ = from.last_activity_at_;
     }
     if (cached_has_bits & 0x00100000u) {
       last_login_ = from.last_login_;
@@ -1709,11 +1692,6 @@ void User::InternalSwap(User* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &mfa_secret_, lhs_arena,
       &other->mfa_secret_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &last_activity_at_, lhs_arena,
-      &other->last_activity_at_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(User, deleted_at_)

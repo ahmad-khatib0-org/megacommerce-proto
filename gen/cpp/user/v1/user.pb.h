@@ -281,12 +281,12 @@ class User final :
     kRolesFieldNumber = 13,
     kLocaleFieldNumber = 19,
     kMfaSecretFieldNumber = 21,
-    kLastActivityAtFieldNumber = 22,
     kIsEmailVerifiedFieldNumber = 9,
     kMfaActiveFieldNumber = 20,
     kFailedAttemptsFieldNumber = 18,
     kLastPasswordUpdateFieldNumber = 16,
     kLastPictureUpdateFieldNumber = 17,
+    kLastActivityAtFieldNumber = 22,
     kLastLoginFieldNumber = 23,
     kCreatedAtFieldNumber = 24,
     kUpdatedAtFieldNumber = 25,
@@ -578,24 +578,6 @@ class User final :
   std::string* _internal_mutable_mfa_secret();
   public:
 
-  // optional string last_activity_at = 22 [json_name = "lastActivityAt"];
-  bool has_last_activity_at() const;
-  private:
-  bool _internal_has_last_activity_at() const;
-  public:
-  void clear_last_activity_at();
-  const std::string& last_activity_at() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_last_activity_at(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_last_activity_at();
-  PROTOBUF_NODISCARD std::string* release_last_activity_at();
-  void set_allocated_last_activity_at(std::string* last_activity_at);
-  private:
-  const std::string& _internal_last_activity_at() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_last_activity_at(const std::string& value);
-  std::string* _internal_mutable_last_activity_at();
-  public:
-
   // optional bool is_email_verified = 9 [json_name = "isEmailVerified"];
   bool has_is_email_verified() const;
   private:
@@ -659,6 +641,19 @@ class User final :
   private:
   int64_t _internal_last_picture_update() const;
   void _internal_set_last_picture_update(int64_t value);
+  public:
+
+  // optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];
+  bool has_last_activity_at() const;
+  private:
+  bool _internal_has_last_activity_at() const;
+  public:
+  void clear_last_activity_at();
+  int64_t last_activity_at() const;
+  void set_last_activity_at(int64_t value);
+  private:
+  int64_t _internal_last_activity_at() const;
+  void _internal_set_last_activity_at(int64_t value);
   public:
 
   // optional int64 last_login = 23 [json_name = "lastLogin"];
@@ -746,12 +741,12 @@ class User final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr roles_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr locale_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr mfa_secret_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr last_activity_at_;
   bool is_email_verified_;
   bool mfa_active_;
   int32_t failed_attempts_;
   int64_t last_password_update_;
   int64_t last_picture_update_;
+  int64_t last_activity_at_;
   int64_t last_login_;
   int64_t created_at_;
   int64_t updated_at_;
@@ -1676,7 +1671,7 @@ inline void User::set_allocated_membership(std::string* membership) {
 
 // optional bool is_email_verified = 9 [json_name = "isEmailVerified"];
 inline bool User::_internal_has_is_email_verified() const {
-  bool value = (_has_bits_[0] & 0x00008000u) != 0;
+  bool value = (_has_bits_[0] & 0x00004000u) != 0;
   return value;
 }
 inline bool User::has_is_email_verified() const {
@@ -1684,7 +1679,7 @@ inline bool User::has_is_email_verified() const {
 }
 inline void User::clear_is_email_verified() {
   is_email_verified_ = false;
-  _has_bits_[0] &= ~0x00008000u;
+  _has_bits_[0] &= ~0x00004000u;
 }
 inline bool User::_internal_is_email_verified() const {
   return is_email_verified_;
@@ -1694,7 +1689,7 @@ inline bool User::is_email_verified() const {
   return _internal_is_email_verified();
 }
 inline void User::_internal_set_is_email_verified(bool value) {
-  _has_bits_[0] |= 0x00008000u;
+  _has_bits_[0] |= 0x00004000u;
   is_email_verified_ = value;
 }
 inline void User::set_is_email_verified(bool value) {
@@ -2038,7 +2033,7 @@ User::mutable_notify_props() {
 
 // optional int64 last_password_update = 16 [json_name = "lastPasswordUpdate"];
 inline bool User::_internal_has_last_password_update() const {
-  bool value = (_has_bits_[0] & 0x00040000u) != 0;
+  bool value = (_has_bits_[0] & 0x00020000u) != 0;
   return value;
 }
 inline bool User::has_last_password_update() const {
@@ -2046,7 +2041,7 @@ inline bool User::has_last_password_update() const {
 }
 inline void User::clear_last_password_update() {
   last_password_update_ = int64_t{0};
-  _has_bits_[0] &= ~0x00040000u;
+  _has_bits_[0] &= ~0x00020000u;
 }
 inline int64_t User::_internal_last_password_update() const {
   return last_password_update_;
@@ -2056,7 +2051,7 @@ inline int64_t User::last_password_update() const {
   return _internal_last_password_update();
 }
 inline void User::_internal_set_last_password_update(int64_t value) {
-  _has_bits_[0] |= 0x00040000u;
+  _has_bits_[0] |= 0x00020000u;
   last_password_update_ = value;
 }
 inline void User::set_last_password_update(int64_t value) {
@@ -2066,7 +2061,7 @@ inline void User::set_last_password_update(int64_t value) {
 
 // optional int64 last_picture_update = 17 [json_name = "lastPictureUpdate"];
 inline bool User::_internal_has_last_picture_update() const {
-  bool value = (_has_bits_[0] & 0x00080000u) != 0;
+  bool value = (_has_bits_[0] & 0x00040000u) != 0;
   return value;
 }
 inline bool User::has_last_picture_update() const {
@@ -2074,7 +2069,7 @@ inline bool User::has_last_picture_update() const {
 }
 inline void User::clear_last_picture_update() {
   last_picture_update_ = int64_t{0};
-  _has_bits_[0] &= ~0x00080000u;
+  _has_bits_[0] &= ~0x00040000u;
 }
 inline int64_t User::_internal_last_picture_update() const {
   return last_picture_update_;
@@ -2084,7 +2079,7 @@ inline int64_t User::last_picture_update() const {
   return _internal_last_picture_update();
 }
 inline void User::_internal_set_last_picture_update(int64_t value) {
-  _has_bits_[0] |= 0x00080000u;
+  _has_bits_[0] |= 0x00040000u;
   last_picture_update_ = value;
 }
 inline void User::set_last_picture_update(int64_t value) {
@@ -2094,7 +2089,7 @@ inline void User::set_last_picture_update(int64_t value) {
 
 // optional int32 failed_attempts = 18 [json_name = "failedAttempts"];
 inline bool User::_internal_has_failed_attempts() const {
-  bool value = (_has_bits_[0] & 0x00020000u) != 0;
+  bool value = (_has_bits_[0] & 0x00010000u) != 0;
   return value;
 }
 inline bool User::has_failed_attempts() const {
@@ -2102,7 +2097,7 @@ inline bool User::has_failed_attempts() const {
 }
 inline void User::clear_failed_attempts() {
   failed_attempts_ = 0;
-  _has_bits_[0] &= ~0x00020000u;
+  _has_bits_[0] &= ~0x00010000u;
 }
 inline int32_t User::_internal_failed_attempts() const {
   return failed_attempts_;
@@ -2112,7 +2107,7 @@ inline int32_t User::failed_attempts() const {
   return _internal_failed_attempts();
 }
 inline void User::_internal_set_failed_attempts(int32_t value) {
-  _has_bits_[0] |= 0x00020000u;
+  _has_bits_[0] |= 0x00010000u;
   failed_attempts_ = value;
 }
 inline void User::set_failed_attempts(int32_t value) {
@@ -2191,7 +2186,7 @@ inline void User::set_allocated_locale(std::string* locale) {
 
 // optional bool mfa_active = 20 [json_name = "mfaActive"];
 inline bool User::_internal_has_mfa_active() const {
-  bool value = (_has_bits_[0] & 0x00010000u) != 0;
+  bool value = (_has_bits_[0] & 0x00008000u) != 0;
   return value;
 }
 inline bool User::has_mfa_active() const {
@@ -2199,7 +2194,7 @@ inline bool User::has_mfa_active() const {
 }
 inline void User::clear_mfa_active() {
   mfa_active_ = false;
-  _has_bits_[0] &= ~0x00010000u;
+  _has_bits_[0] &= ~0x00008000u;
 }
 inline bool User::_internal_mfa_active() const {
   return mfa_active_;
@@ -2209,7 +2204,7 @@ inline bool User::mfa_active() const {
   return _internal_mfa_active();
 }
 inline void User::_internal_set_mfa_active(bool value) {
-  _has_bits_[0] |= 0x00010000u;
+  _has_bits_[0] |= 0x00008000u;
   mfa_active_ = value;
 }
 inline void User::set_mfa_active(bool value) {
@@ -2286,73 +2281,32 @@ inline void User::set_allocated_mfa_secret(std::string* mfa_secret) {
   // @@protoc_insertion_point(field_set_allocated:user.v1.User.mfa_secret)
 }
 
-// optional string last_activity_at = 22 [json_name = "lastActivityAt"];
+// optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];
 inline bool User::_internal_has_last_activity_at() const {
-  bool value = (_has_bits_[0] & 0x00004000u) != 0;
+  bool value = (_has_bits_[0] & 0x00080000u) != 0;
   return value;
 }
 inline bool User::has_last_activity_at() const {
   return _internal_has_last_activity_at();
 }
 inline void User::clear_last_activity_at() {
-  last_activity_at_.ClearToEmpty();
-  _has_bits_[0] &= ~0x00004000u;
+  last_activity_at_ = int64_t{0};
+  _has_bits_[0] &= ~0x00080000u;
 }
-inline const std::string& User::last_activity_at() const {
+inline int64_t User::_internal_last_activity_at() const {
+  return last_activity_at_;
+}
+inline int64_t User::last_activity_at() const {
   // @@protoc_insertion_point(field_get:user.v1.User.last_activity_at)
   return _internal_last_activity_at();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void User::set_last_activity_at(ArgT0&& arg0, ArgT... args) {
- _has_bits_[0] |= 0x00004000u;
- last_activity_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+inline void User::_internal_set_last_activity_at(int64_t value) {
+  _has_bits_[0] |= 0x00080000u;
+  last_activity_at_ = value;
+}
+inline void User::set_last_activity_at(int64_t value) {
+  _internal_set_last_activity_at(value);
   // @@protoc_insertion_point(field_set:user.v1.User.last_activity_at)
-}
-inline std::string* User::mutable_last_activity_at() {
-  std::string* _s = _internal_mutable_last_activity_at();
-  // @@protoc_insertion_point(field_mutable:user.v1.User.last_activity_at)
-  return _s;
-}
-inline const std::string& User::_internal_last_activity_at() const {
-  return last_activity_at_.Get();
-}
-inline void User::_internal_set_last_activity_at(const std::string& value) {
-  _has_bits_[0] |= 0x00004000u;
-  last_activity_at_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* User::_internal_mutable_last_activity_at() {
-  _has_bits_[0] |= 0x00004000u;
-  return last_activity_at_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* User::release_last_activity_at() {
-  // @@protoc_insertion_point(field_release:user.v1.User.last_activity_at)
-  if (!_internal_has_last_activity_at()) {
-    return nullptr;
-  }
-  _has_bits_[0] &= ~0x00004000u;
-  auto* p = last_activity_at_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (last_activity_at_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    last_activity_at_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return p;
-}
-inline void User::set_allocated_last_activity_at(std::string* last_activity_at) {
-  if (last_activity_at != nullptr) {
-    _has_bits_[0] |= 0x00004000u;
-  } else {
-    _has_bits_[0] &= ~0x00004000u;
-  }
-  last_activity_at_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), last_activity_at,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (last_activity_at_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    last_activity_at_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:user.v1.User.last_activity_at)
 }
 
 // optional int64 last_login = 23 [json_name = "lastLogin"];

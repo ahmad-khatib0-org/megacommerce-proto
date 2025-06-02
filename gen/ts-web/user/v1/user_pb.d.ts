@@ -104,8 +104,8 @@ export class User extends jspb.Message {
   hasMfaSecret(): boolean;
   clearMfaSecret(): User;
 
-  getLastActivityAt(): string;
-  setLastActivityAt(value: string): User;
+  getLastActivityAt(): number;
+  setLastActivityAt(value: number): User;
   hasLastActivityAt(): boolean;
   clearLastActivityAt(): User;
 
@@ -160,7 +160,7 @@ export namespace User {
     locale?: string,
     mfaActive?: boolean,
     mfaSecret?: string,
-    lastActivityAt?: string,
+    lastActivityAt?: number,
     lastLogin?: number,
     createdAt?: number,
     updatedAt?: number,
