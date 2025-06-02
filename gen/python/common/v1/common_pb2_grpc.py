@@ -61,8 +61,8 @@ class CommonServiceStub(object):
                 request_serializer=common_dot_v1_dot_trans__pb2.TranslationsGetRequest.SerializeToString,
                 response_deserializer=common_dot_v1_dot_trans__pb2.TranslationsGetResponse.FromString,
                 _registered_method=True)
-        self.TranslationForLangGet = channel.unary_unary(
-                '/common.v1.CommonService/TranslationForLangGet',
+        self.TranslationsForLangGet = channel.unary_unary(
+                '/common.v1.CommonService/TranslationsForLangGet',
                 request_serializer=common_dot_v1_dot_trans__pb2.TranslationsForLangGetRequest.SerializeToString,
                 response_deserializer=common_dot_v1_dot_trans__pb2.TranslationsForLangGetResponse.FromString,
                 _registered_method=True)
@@ -101,7 +101,7 @@ class CommonServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def TranslationForLangGet(self, request, context):
+    def TranslationsForLangGet(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -135,8 +135,8 @@ def add_CommonServiceServicer_to_server(servicer, server):
                     request_deserializer=common_dot_v1_dot_trans__pb2.TranslationsGetRequest.FromString,
                     response_serializer=common_dot_v1_dot_trans__pb2.TranslationsGetResponse.SerializeToString,
             ),
-            'TranslationForLangGet': grpc.unary_unary_rpc_method_handler(
-                    servicer.TranslationForLangGet,
+            'TranslationsForLangGet': grpc.unary_unary_rpc_method_handler(
+                    servicer.TranslationsForLangGet,
                     request_deserializer=common_dot_v1_dot_trans__pb2.TranslationsForLangGetRequest.FromString,
                     response_serializer=common_dot_v1_dot_trans__pb2.TranslationsForLangGetResponse.SerializeToString,
             ),
@@ -287,7 +287,7 @@ class CommonService(object):
             _registered_method=True)
 
     @staticmethod
-    def TranslationForLangGet(request,
+    def TranslationsForLangGet(request,
             target,
             options=(),
             channel_credentials=None,
@@ -300,7 +300,7 @@ class CommonService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/common.v1.CommonService/TranslationForLangGet',
+            '/common.v1.CommonService/TranslationsForLangGet',
             common_dot_v1_dot_trans__pb2.TranslationsForLangGetRequest.SerializeToString,
             common_dot_v1_dot_trans__pb2.TranslationsForLangGetResponse.FromString,
             options,

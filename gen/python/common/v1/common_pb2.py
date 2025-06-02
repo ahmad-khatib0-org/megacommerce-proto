@@ -27,7 +27,7 @@ from common.v1 import trans_pb2 as common_dot_v1_dot_trans__pb2
 from common.v1 import types_pb2 as common_dot_v1_dot_types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x63ommon/v1/common.proto\x12\tcommon.v1\x1a\x16\x63ommon/v1/config.proto\x1a\x15\x63ommon/v1/trans.proto\x1a\x15\x63ommon/v1/types.proto2\x84\x04\n\rCommonService\x12\x39\n\x04Ping\x12\x16.common.v1.PingRequest\x1a\x17.common.v1.PingResponse\"\x00\x12\x46\n\tConfigGet\x12\x1b.common.v1.ConfigGetRequest\x1a\x1c.common.v1.ConfigGetResponse\x12O\n\x0c\x43onfigUpdate\x12\x1e.common.v1.ConfigUpdateRequest\x1a\x1f.common.v1.ConfigUpdateResponse\x12W\n\x0e\x43onfigListener\x12 .common.v1.ConfigListenerRequest\x1a!.common.v1.ConfigListenerResponse0\x01\x12X\n\x0fTranslationsGet\x12!.common.v1.TranslationsGetRequest\x1a\".common.v1.TranslationsGetResponse\x12l\n\x15TranslationForLangGet\x12(.common.v1.TranslationsForLangGetRequest\x1a).common.v1.TranslationsForLangGetResponseB:\n\x1aorg.megacommerce.common.v1B\x0b\x43ommonProtoZ\x0c\x63ommon/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x63ommon/v1/common.proto\x12\tcommon.v1\x1a\x16\x63ommon/v1/config.proto\x1a\x15\x63ommon/v1/trans.proto\x1a\x15\x63ommon/v1/types.proto2\x85\x04\n\rCommonService\x12\x39\n\x04Ping\x12\x16.common.v1.PingRequest\x1a\x17.common.v1.PingResponse\"\x00\x12\x46\n\tConfigGet\x12\x1b.common.v1.ConfigGetRequest\x1a\x1c.common.v1.ConfigGetResponse\x12O\n\x0c\x43onfigUpdate\x12\x1e.common.v1.ConfigUpdateRequest\x1a\x1f.common.v1.ConfigUpdateResponse\x12W\n\x0e\x43onfigListener\x12 .common.v1.ConfigListenerRequest\x1a!.common.v1.ConfigListenerResponse0\x01\x12X\n\x0fTranslationsGet\x12!.common.v1.TranslationsGetRequest\x1a\".common.v1.TranslationsGetResponse\x12m\n\x16TranslationsForLangGet\x12(.common.v1.TranslationsForLangGetRequest\x1a).common.v1.TranslationsForLangGetResponseB:\n\x1aorg.megacommerce.common.v1B\x0b\x43ommonProtoZ\x0c\x63ommon/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,5 +36,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\032org.megacommerce.common.v1B\013CommonProtoZ\014common/v1;v1\370\001\001'
   _globals['_COMMONSERVICE']._serialized_start=108
-  _globals['_COMMONSERVICE']._serialized_end=624
+  _globals['_COMMONSERVICE']._serialized_end=625
 # @@protoc_insertion_point(module_scope)

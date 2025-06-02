@@ -17,5 +17,5 @@ service CommonService {
   rpc ConfigUpdate(common.v1.ConfigUpdateRequest) returns (common.v1.ConfigUpdateResponse);
   rpc ConfigListener(common.v1.ConfigListenerRequest) returns (stream common.v1.ConfigListenerResponse);
   rpc TranslationsGet(common.v1.TranslationsGetRequest) returns (common.v1.TranslationsGetResponse);
-  rpc TranslationForLangGet(common.v1.TranslationsForLangGetRequest) returns (common.v1.TranslationsForLangGetResponse);
+  rpc TranslationsForLangGet(common.v1.TranslationsForLangGetRequest) returns (common.v1.TranslationsForLangGetResponse);
 }

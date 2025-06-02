@@ -25,7 +25,7 @@ public final class CommonProto {
     java.lang.String[] descriptorData = {
       "\n\026common/v1/common.proto\022\tcommon.v1\032\026com" +
       "mon/v1/config.proto\032\025common/v1/trans.pro" +
-      "to\032\025common/v1/types.proto2\204\004\n\rCommonServ" +
+      "to\032\025common/v1/types.proto2\205\004\n\rCommonServ" +
       "ice\0229\n\004Ping\022\026.common.v1.PingRequest\032\027.co" +
       "mmon.v1.PingResponse\"\000\022F\n\tConfigGet\022\033.co" +
       "mmon.v1.ConfigGetRequest\032\034.common.v1.Con" +
@@ -35,12 +35,12 @@ public final class CommonProto {
       "on.v1.ConfigListenerRequest\032!.common.v1." +
       "ConfigListenerResponse0\001\022X\n\017Translations" +
       "Get\022!.common.v1.TranslationsGetRequest\032\"" +
-      ".common.v1.TranslationsGetResponse\022l\n\025Tr" +
-      "anslationForLangGet\022(.common.v1.Translat" +
-      "ionsForLangGetRequest\032).common.v1.Transl" +
-      "ationsForLangGetResponseB:\n\032org.megacomm" +
-      "erce.common.v1B\013CommonProtoZ\014common/v1;v" +
-      "1\370\001\001b\006proto3"
+      ".common.v1.TranslationsGetResponse\022m\n\026Tr" +
+      "anslationsForLangGet\022(.common.v1.Transla" +
+      "tionsForLangGetRequest\032).common.v1.Trans" +
+      "lationsForLangGetResponseB:\n\032org.megacom" +
+      "merce.common.v1B\013CommonProtoZ\014common/v1;" +
+      "v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

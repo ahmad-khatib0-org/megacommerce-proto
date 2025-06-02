@@ -235,8 +235,8 @@ export class CommonServiceClient {
     this.methodDescriptorTranslationsGet);
   }
 
-  methodDescriptorTranslationForLangGet = new grpcWeb.MethodDescriptor(
-    '/common.v1.CommonService/TranslationForLangGet',
+  methodDescriptorTranslationsForLangGet = new grpcWeb.MethodDescriptor(
+    '/common.v1.CommonService/TranslationsForLangGet',
     grpcWeb.MethodType.UNARY,
     common_v1_trans_pb.TranslationsForLangGetRequest,
     common_v1_trans_pb.TranslationsForLangGetResponse,
@@ -246,17 +246,17 @@ export class CommonServiceClient {
     common_v1_trans_pb.TranslationsForLangGetResponse.deserializeBinary
   );
 
-  translationForLangGet(
+  translationsForLangGet(
     request: common_v1_trans_pb.TranslationsForLangGetRequest,
     metadata?: grpcWeb.Metadata | null): Promise<common_v1_trans_pb.TranslationsForLangGetResponse>;
 
-  translationForLangGet(
+  translationsForLangGet(
     request: common_v1_trans_pb.TranslationsForLangGetRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
                response: common_v1_trans_pb.TranslationsForLangGetResponse) => void): grpcWeb.ClientReadableStream<common_v1_trans_pb.TranslationsForLangGetResponse>;
 
-  translationForLangGet(
+  translationsForLangGet(
     request: common_v1_trans_pb.TranslationsForLangGetRequest,
     metadata?: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
@@ -264,18 +264,18 @@ export class CommonServiceClient {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
-          '/common.v1.CommonService/TranslationForLangGet',
+          '/common.v1.CommonService/TranslationsForLangGet',
         request,
         metadata || {},
-        this.methodDescriptorTranslationForLangGet,
+        this.methodDescriptorTranslationsForLangGet,
         callback);
     }
     return this.client_.unaryCall(
     this.hostname_ +
-      '/common.v1.CommonService/TranslationForLangGet',
+      '/common.v1.CommonService/TranslationsForLangGet',
     request,
     metadata || {},
-    this.methodDescriptorTranslationForLangGet);
+    this.methodDescriptorTranslationsForLangGet);
   }
 
 }
