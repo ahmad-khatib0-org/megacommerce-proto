@@ -24,7 +24,7 @@ const (
 type User struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
 	Id                 *string                `protobuf:"bytes,1,opt,name=id,proto3,oneof" json:"id,omitempty"`
-	BusinessName       *string                `protobuf:"bytes,2,opt,name=business_name,json=businessName,proto3,oneof" json:"business_name,omitempty"`
+	Username           *string                `protobuf:"bytes,2,opt,name=username,proto3,oneof" json:"username,omitempty"`
 	FirstName          *string                `protobuf:"bytes,3,opt,name=first_name,json=firstName,proto3,oneof" json:"first_name,omitempty"`
 	Nickname           *string                `protobuf:"bytes,4,opt,name=nickname,proto3,oneof" json:"nickname,omitempty"`
 	LastName           *string                `protobuf:"bytes,5,opt,name=last_name,json=lastName,proto3,oneof" json:"last_name,omitempty"`
@@ -90,9 +90,9 @@ func (x *User) GetId() string {
 	return ""
 }
 
-func (x *User) GetBusinessName() string {
-	if x != nil && x.BusinessName != nil {
-		return *x.BusinessName
+func (x *User) GetUsername() string {
+	if x != nil && x.Username != nil {
+		return *x.Username
 	}
 	return ""
 }
@@ -267,7 +267,7 @@ func (x *User) GetDeletedAt() int64 {
 
 type CreateSupplierRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	BusinessName  string                 `protobuf:"bytes,1,opt,name=business_name,json=businessName,proto3" json:"business_name,omitempty"`
+	Username      string                 `protobuf:"bytes,1,opt,name=username,proto3" json:"username,omitempty"`
 	Email         string                 `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
 	FirstName     string                 `protobuf:"bytes,3,opt,name=first_name,json=firstName,proto3" json:"first_name,omitempty"`
 	LastName      string                 `protobuf:"bytes,4,opt,name=last_name,json=lastName,proto3" json:"last_name,omitempty"`
@@ -307,9 +307,9 @@ func (*CreateSupplierRequest) Descriptor() ([]byte, []int) {
 	return file_user_v1_user_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *CreateSupplierRequest) GetBusinessName() string {
+func (x *CreateSupplierRequest) GetUsername() string {
 	if x != nil {
-		return x.BusinessName
+		return x.Username
 	}
 	return ""
 }
@@ -389,10 +389,10 @@ var File_user_v1_user_proto protoreflect.FileDescriptor
 
 const file_user_v1_user_proto_rawDesc = "" +
 	"\n" +
-	"\x12user/v1/user.proto\x12\auser.v1\"\xe5\v\n" +
+	"\x12user/v1/user.proto\x12\auser.v1\"\xd7\v\n" +
 	"\x04User\x12\x13\n" +
-	"\x02id\x18\x01 \x01(\tH\x00R\x02id\x88\x01\x01\x12(\n" +
-	"\rbusiness_name\x18\x02 \x01(\tH\x01R\fbusinessName\x88\x01\x01\x12\"\n" +
+	"\x02id\x18\x01 \x01(\tH\x00R\x02id\x88\x01\x01\x12\x1f\n" +
+	"\busername\x18\x02 \x01(\tH\x01R\busername\x88\x01\x01\x12\"\n" +
 	"\n" +
 	"first_name\x18\x03 \x01(\tH\x02R\tfirstName\x88\x01\x01\x12\x1f\n" +
 	"\bnickname\x18\x04 \x01(\tH\x03R\bnickname\x88\x01\x01\x12 \n" +
@@ -435,8 +435,8 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\x10NotifyPropsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\x05\n" +
-	"\x03_idB\x10\n" +
-	"\x0e_business_nameB\r\n" +
+	"\x03_idB\v\n" +
+	"\t_usernameB\r\n" +
 	"\v_first_nameB\v\n" +
 	"\t_nicknameB\f\n" +
 	"\n" +
@@ -461,9 +461,9 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\v_last_loginB\r\n" +
 	"\v_created_atB\r\n" +
 	"\v_updated_atB\r\n" +
-	"\v_deleted_at\"\xca\x01\n" +
-	"\x15CreateSupplierRequest\x12#\n" +
-	"\rbusiness_name\x18\x01 \x01(\tR\fbusinessName\x12\x14\n" +
+	"\v_deleted_at\"\xc1\x01\n" +
+	"\x15CreateSupplierRequest\x12\x1a\n" +
+	"\busername\x18\x01 \x01(\tR\busername\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email\x12\x1d\n" +
 	"\n" +
 	"first_name\x18\x03 \x01(\tR\tfirstName\x12\x1b\n" +

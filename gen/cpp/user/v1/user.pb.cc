@@ -45,7 +45,7 @@ constexpr User::User(
   : props_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , notify_props_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
   , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , business_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , username_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , first_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , nickname_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , last_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -79,7 +79,7 @@ struct UserDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT UserDefaultTypeInternal _User_default_instance_;
 constexpr CreateSupplierRequest::CreateSupplierRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : business_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : username_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , first_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , last_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -139,7 +139,7 @@ const uint32_t TableStruct_user_2fv1_2fuser_2eproto::offsets[] PROTOBUF_SECTION_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::user::v1::User, id_),
-  PROTOBUF_FIELD_OFFSET(::user::v1::User, business_name_),
+  PROTOBUF_FIELD_OFFSET(::user::v1::User, username_),
   PROTOBUF_FIELD_OFFSET(::user::v1::User, first_name_),
   PROTOBUF_FIELD_OFFSET(::user::v1::User, nickname_),
   PROTOBUF_FIELD_OFFSET(::user::v1::User, last_name_),
@@ -196,7 +196,7 @@ const uint32_t TableStruct_user_2fv1_2fuser_2eproto::offsets[] PROTOBUF_SECTION_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::user::v1::CreateSupplierRequest, business_name_),
+  PROTOBUF_FIELD_OFFSET(::user::v1::CreateSupplierRequest, username_),
   PROTOBUF_FIELD_OFFSET(::user::v1::CreateSupplierRequest, email_),
   PROTOBUF_FIELD_OFFSET(::user::v1::CreateSupplierRequest, first_name_),
   PROTOBUF_FIELD_OFFSET(::user::v1::CreateSupplierRequest, last_name_),
@@ -226,59 +226,58 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_user_2fv1_2fuser_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\022user/v1/user.proto\022\007user.v1\"\345\013\n\004User\022\023"
-  "\n\002id\030\001 \001(\tH\000R\002id\210\001\001\022(\n\rbusiness_name\030\002 \001"
-  "(\tH\001R\014businessName\210\001\001\022\"\n\nfirst_name\030\003 \001("
-  "\tH\002R\tfirstName\210\001\001\022\037\n\010nickname\030\004 \001(\tH\003R\010n"
-  "ickname\210\001\001\022 \n\tlast_name\030\005 \001(\tH\004R\010lastNam"
-  "e\210\001\001\022\031\n\005email\030\006 \001(\tH\005R\005email\210\001\001\022 \n\tuser_"
-  "type\030\007 \001(\tH\006R\010userType\210\001\001\022#\n\nmembership\030"
-  "\010 \001(\tH\007R\nmembership\210\001\001\022/\n\021is_email_verif"
-  "ied\030\t \001(\010H\010R\017isEmailVerified\210\001\001\022\037\n\010passw"
-  "ord\030\n \001(\tH\tR\010password\210\001\001\022 \n\tauth_data\030\013 "
-  "\001(\tH\nR\010authData\210\001\001\022&\n\014auth_service\030\014 \001(\t"
-  "H\013R\013authService\210\001\001\022\031\n\005roles\030\r \001(\tH\014R\005rol"
-  "es\210\001\001\022.\n\005props\030\016 \003(\0132\030.user.v1.User.Prop"
-  "sEntryR\005props\022A\n\014notify_props\030\017 \003(\0132\036.us"
-  "er.v1.User.NotifyPropsEntryR\013notifyProps"
-  "\0225\n\024last_password_update\030\020 \001(\003H\rR\022lastPa"
-  "sswordUpdate\210\001\001\0223\n\023last_picture_update\030\021"
-  " \001(\003H\016R\021lastPictureUpdate\210\001\001\022,\n\017failed_a"
-  "ttempts\030\022 \001(\005H\017R\016failedAttempts\210\001\001\022\033\n\006lo"
-  "cale\030\023 \001(\tH\020R\006locale\210\001\001\022\"\n\nmfa_active\030\024 "
-  "\001(\010H\021R\tmfaActive\210\001\001\022\"\n\nmfa_secret\030\025 \001(\tH"
-  "\022R\tmfaSecret\210\001\001\022-\n\020last_activity_at\030\026 \001("
-  "\003H\023R\016lastActivityAt\210\001\001\022\"\n\nlast_login\030\027 \001"
-  "(\003H\024R\tlastLogin\210\001\001\022\"\n\ncreated_at\030\030 \001(\003H\025"
-  "R\tcreatedAt\210\001\001\022\"\n\nupdated_at\030\031 \001(\003H\026R\tup"
-  "datedAt\210\001\001\022\"\n\ndeleted_at\030\032 \001(\003H\027R\tdelete"
-  "dAt\210\001\001\0328\n\nPropsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024"
-  "\n\005value\030\002 \001(\tR\005value:\0028\001\032>\n\020NotifyPropsE"
-  "ntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005v"
-  "alue:\0028\001B\005\n\003_idB\020\n\016_business_nameB\r\n\013_fi"
-  "rst_nameB\013\n\t_nicknameB\014\n\n_last_nameB\010\n\006_"
-  "emailB\014\n\n_user_typeB\r\n\013_membershipB\024\n\022_i"
-  "s_email_verifiedB\013\n\t_passwordB\014\n\n_auth_d"
-  "ataB\017\n\r_auth_serviceB\010\n\006_rolesB\027\n\025_last_"
-  "password_updateB\026\n\024_last_picture_updateB"
-  "\022\n\020_failed_attemptsB\t\n\007_localeB\r\n\013_mfa_a"
-  "ctiveB\r\n\013_mfa_secretB\023\n\021_last_activity_a"
-  "tB\r\n\013_last_loginB\r\n\013_created_atB\r\n\013_upda"
-  "ted_atB\r\n\013_deleted_at\"\312\001\n\025CreateSupplier"
-  "Request\022#\n\rbusiness_name\030\001 \001(\tR\014business"
-  "Name\022\024\n\005email\030\002 \001(\tR\005email\022\035\n\nfirst_name"
-  "\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010la"
-  "stName\022\032\n\010password\030\005 \001(\tR\010password\022\036\n\nme"
-  "mbership\030\006 \001(\tR\nmembership\"\030\n\026CreateSupp"
-  "lierResponse2`\n\013UserService\022Q\n\016CreateSup"
-  "plier\022\036.user.v1.CreateSupplierRequest\032\037."
-  "user.v1.CreateSupplierResponseB4\n\030org.me"
-  "gacommerce.user.v1B\tUserProtoZ\nuser/v1;v"
-  "1\370\001\001b\006proto3"
+  "\n\022user/v1/user.proto\022\007user.v1\"\327\013\n\004User\022\023"
+  "\n\002id\030\001 \001(\tH\000R\002id\210\001\001\022\037\n\010username\030\002 \001(\tH\001R"
+  "\010username\210\001\001\022\"\n\nfirst_name\030\003 \001(\tH\002R\tfirs"
+  "tName\210\001\001\022\037\n\010nickname\030\004 \001(\tH\003R\010nickname\210\001"
+  "\001\022 \n\tlast_name\030\005 \001(\tH\004R\010lastName\210\001\001\022\031\n\005e"
+  "mail\030\006 \001(\tH\005R\005email\210\001\001\022 \n\tuser_type\030\007 \001("
+  "\tH\006R\010userType\210\001\001\022#\n\nmembership\030\010 \001(\tH\007R\n"
+  "membership\210\001\001\022/\n\021is_email_verified\030\t \001(\010"
+  "H\010R\017isEmailVerified\210\001\001\022\037\n\010password\030\n \001(\t"
+  "H\tR\010password\210\001\001\022 \n\tauth_data\030\013 \001(\tH\nR\010au"
+  "thData\210\001\001\022&\n\014auth_service\030\014 \001(\tH\013R\013authS"
+  "ervice\210\001\001\022\031\n\005roles\030\r \001(\tH\014R\005roles\210\001\001\022.\n\005"
+  "props\030\016 \003(\0132\030.user.v1.User.PropsEntryR\005p"
+  "rops\022A\n\014notify_props\030\017 \003(\0132\036.user.v1.Use"
+  "r.NotifyPropsEntryR\013notifyProps\0225\n\024last_"
+  "password_update\030\020 \001(\003H\rR\022lastPasswordUpd"
+  "ate\210\001\001\0223\n\023last_picture_update\030\021 \001(\003H\016R\021l"
+  "astPictureUpdate\210\001\001\022,\n\017failed_attempts\030\022"
+  " \001(\005H\017R\016failedAttempts\210\001\001\022\033\n\006locale\030\023 \001("
+  "\tH\020R\006locale\210\001\001\022\"\n\nmfa_active\030\024 \001(\010H\021R\tmf"
+  "aActive\210\001\001\022\"\n\nmfa_secret\030\025 \001(\tH\022R\tmfaSec"
+  "ret\210\001\001\022-\n\020last_activity_at\030\026 \001(\003H\023R\016last"
+  "ActivityAt\210\001\001\022\"\n\nlast_login\030\027 \001(\003H\024R\tlas"
+  "tLogin\210\001\001\022\"\n\ncreated_at\030\030 \001(\003H\025R\tcreated"
+  "At\210\001\001\022\"\n\nupdated_at\030\031 \001(\003H\026R\tupdatedAt\210\001"
+  "\001\022\"\n\ndeleted_at\030\032 \001(\003H\027R\tdeletedAt\210\001\001\0328\n"
+  "\nPropsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002"
+  " \001(\tR\005value:\0028\001\032>\n\020NotifyPropsEntry\022\020\n\003k"
+  "ey\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B"
+  "\005\n\003_idB\013\n\t_usernameB\r\n\013_first_nameB\013\n\t_n"
+  "icknameB\014\n\n_last_nameB\010\n\006_emailB\014\n\n_user"
+  "_typeB\r\n\013_membershipB\024\n\022_is_email_verifi"
+  "edB\013\n\t_passwordB\014\n\n_auth_dataB\017\n\r_auth_s"
+  "erviceB\010\n\006_rolesB\027\n\025_last_password_updat"
+  "eB\026\n\024_last_picture_updateB\022\n\020_failed_att"
+  "emptsB\t\n\007_localeB\r\n\013_mfa_activeB\r\n\013_mfa_"
+  "secretB\023\n\021_last_activity_atB\r\n\013_last_log"
+  "inB\r\n\013_created_atB\r\n\013_updated_atB\r\n\013_del"
+  "eted_at\"\301\001\n\025CreateSupplierRequest\022\032\n\010use"
+  "rname\030\001 \001(\tR\010username\022\024\n\005email\030\002 \001(\tR\005em"
+  "ail\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName\022\033\n\tla"
+  "st_name\030\004 \001(\tR\010lastName\022\032\n\010password\030\005 \001("
+  "\tR\010password\022\036\n\nmembership\030\006 \001(\tR\nmembers"
+  "hip\"\030\n\026CreateSupplierResponse2`\n\013UserSer"
+  "vice\022Q\n\016CreateSupplier\022\036.user.v1.CreateS"
+  "upplierRequest\032\037.user.v1.CreateSupplierR"
+  "esponseB4\n\030org.megacommerce.user.v1B\tUse"
+  "rProtoZ\nuser/v1;v1\370\001\001b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_user_2fv1_2fuser_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_user_2fv1_2fuser_2eproto = {
-  false, false, 1932, descriptor_table_protodef_user_2fv1_2fuser_2eproto, "user/v1/user.proto", 
+  false, false, 1909, descriptor_table_protodef_user_2fv1_2fuser_2eproto, "user/v1/user.proto", 
   &descriptor_table_user_2fv1_2fuser_2eproto_once, nullptr, 0, 5,
   schemas, file_default_instances, TableStruct_user_2fv1_2fuser_2eproto::offsets,
   file_level_metadata_user_2fv1_2fuser_2eproto, file_level_enum_descriptors_user_2fv1_2fuser_2eproto, file_level_service_descriptors_user_2fv1_2fuser_2eproto,
@@ -328,7 +327,7 @@ class User::_Internal {
   static void set_has_id(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
-  static void set_has_business_name(HasBits* has_bits) {
+  static void set_has_username(HasBits* has_bits) {
     (*has_bits)[0] |= 2u;
   }
   static void set_has_first_name(HasBits* has_bits) {
@@ -424,12 +423,12 @@ User::User(const User& from)
     id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_id(), 
       GetArenaForAllocation());
   }
-  business_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  username_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    business_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    username_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_business_name()) {
-    business_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_business_name(), 
+  if (from._internal_has_username()) {
+    username_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_username(), 
       GetArenaForAllocation());
   }
   first_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -539,9 +538,9 @@ id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyIn
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-business_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+username_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  business_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  username_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 first_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -607,7 +606,7 @@ User::~User() {
 inline void User::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  business_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  username_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   first_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   nickname_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   last_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -651,7 +650,7 @@ void User::Clear() {
       id_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      business_name_.ClearNonDefaultToEmpty();
+      username_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000004u) {
       first_name_.ClearNonDefaultToEmpty();
@@ -723,12 +722,12 @@ const char* User::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
         } else
           goto handle_unusual;
         continue;
-      // optional string business_name = 2 [json_name = "businessName"];
+      // optional string username = 2 [json_name = "username"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_business_name();
+          auto str = _internal_mutable_username();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "user.v1.User.business_name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "user.v1.User.username"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1009,14 +1008,14 @@ uint8_t* User::_InternalSerialize(
         1, this->_internal_id(), target);
   }
 
-  // optional string business_name = 2 [json_name = "businessName"];
-  if (_internal_has_business_name()) {
+  // optional string username = 2 [json_name = "username"];
+  if (_internal_has_username()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_business_name().data(), static_cast<int>(this->_internal_business_name().length()),
+      this->_internal_username().data(), static_cast<int>(this->_internal_username().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "user.v1.User.business_name");
+      "user.v1.User.username");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_business_name(), target);
+        2, this->_internal_username(), target);
   }
 
   // optional string first_name = 3 [json_name = "firstName"];
@@ -1334,11 +1333,11 @@ size_t User::ByteSizeLong() const {
           this->_internal_id());
     }
 
-    // optional string business_name = 2 [json_name = "businessName"];
+    // optional string username = 2 [json_name = "username"];
     if (cached_has_bits & 0x00000002u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_business_name());
+          this->_internal_username());
     }
 
     // optional string first_name = 3 [json_name = "firstName"];
@@ -1526,7 +1525,7 @@ void User::MergeFrom(const User& from) {
       _internal_set_id(from._internal_id());
     }
     if (cached_has_bits & 0x00000002u) {
-      _internal_set_business_name(from._internal_business_name());
+      _internal_set_username(from._internal_username());
     }
     if (cached_has_bits & 0x00000004u) {
       _internal_set_first_name(from._internal_first_name());
@@ -1630,8 +1629,8 @@ void User::InternalSwap(User* other) {
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &business_name_, lhs_arena,
-      &other->business_name_, rhs_arena
+      &username_, lhs_arena,
+      &other->username_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
@@ -1725,12 +1724,12 @@ CreateSupplierRequest::CreateSupplierRequest(::PROTOBUF_NAMESPACE_ID::Arena* are
 CreateSupplierRequest::CreateSupplierRequest(const CreateSupplierRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  business_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  username_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    business_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+    username_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_business_name().empty()) {
-    business_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_business_name(), 
+  if (!from._internal_username().empty()) {
+    username_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_username(), 
       GetArenaForAllocation());
   }
   email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1777,9 +1776,9 @@ CreateSupplierRequest::CreateSupplierRequest(const CreateSupplierRequest& from)
 }
 
 inline void CreateSupplierRequest::SharedCtor() {
-business_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+username_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  business_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  username_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 email_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -1812,7 +1811,7 @@ CreateSupplierRequest::~CreateSupplierRequest() {
 
 inline void CreateSupplierRequest::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  business_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  username_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   first_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   last_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -1836,7 +1835,7 @@ void CreateSupplierRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  business_name_.ClearToEmpty();
+  username_.ClearToEmpty();
   email_.ClearToEmpty();
   first_name_.ClearToEmpty();
   last_name_.ClearToEmpty();
@@ -1851,12 +1850,12 @@ const char* CreateSupplierRequest::_InternalParse(const char* ptr, ::PROTOBUF_NA
     uint32_t tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string business_name = 1 [json_name = "businessName"];
+      // string username = 1 [json_name = "username"];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_business_name();
+          auto str = _internal_mutable_username();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "user.v1.CreateSupplierRequest.business_name"));
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "user.v1.CreateSupplierRequest.username"));
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1940,14 +1939,14 @@ uint8_t* CreateSupplierRequest::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string business_name = 1 [json_name = "businessName"];
-  if (!this->_internal_business_name().empty()) {
+  // string username = 1 [json_name = "username"];
+  if (!this->_internal_username().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_business_name().data(), static_cast<int>(this->_internal_business_name().length()),
+      this->_internal_username().data(), static_cast<int>(this->_internal_username().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "user.v1.CreateSupplierRequest.business_name");
+      "user.v1.CreateSupplierRequest.username");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_business_name(), target);
+        1, this->_internal_username(), target);
   }
 
   // string email = 2 [json_name = "email"];
@@ -2016,11 +2015,11 @@ size_t CreateSupplierRequest::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string business_name = 1 [json_name = "businessName"];
-  if (!this->_internal_business_name().empty()) {
+  // string username = 1 [json_name = "username"];
+  if (!this->_internal_username().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_business_name());
+        this->_internal_username());
   }
 
   // string email = 2 [json_name = "email"];
@@ -2080,8 +2079,8 @@ void CreateSupplierRequest::MergeFrom(const CreateSupplierRequest& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_business_name().empty()) {
-    _internal_set_business_name(from._internal_business_name());
+  if (!from._internal_username().empty()) {
+    _internal_set_username(from._internal_username());
   }
   if (!from._internal_email().empty()) {
     _internal_set_email(from._internal_email());
@@ -2119,8 +2118,8 @@ void CreateSupplierRequest::InternalSwap(CreateSupplierRequest* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &business_name_, lhs_arena,
-      &other->business_name_, rhs_arena
+      &username_, lhs_arena,
+      &other->username_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),

@@ -120,7 +120,7 @@ proto.user.v1.User.prototype.toObject = function(opt_includeInstance) {
 proto.user.v1.User.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    businessName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    username: jspb.Message.getFieldWithDefault(msg, 2, ""),
     firstName: jspb.Message.getFieldWithDefault(msg, 3, ""),
     nickname: jspb.Message.getFieldWithDefault(msg, 4, ""),
     lastName: jspb.Message.getFieldWithDefault(msg, 5, ""),
@@ -187,7 +187,7 @@ proto.user.v1.User.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setBusinessName(value);
+      msg.setUsername(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
@@ -534,10 +534,10 @@ proto.user.v1.User.prototype.hasId = function() {
 
 
 /**
- * optional string business_name = 2;
+ * optional string username = 2;
  * @return {string}
  */
-proto.user.v1.User.prototype.getBusinessName = function() {
+proto.user.v1.User.prototype.getUsername = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -546,7 +546,7 @@ proto.user.v1.User.prototype.getBusinessName = function() {
  * @param {string} value
  * @return {!proto.user.v1.User} returns this
  */
-proto.user.v1.User.prototype.setBusinessName = function(value) {
+proto.user.v1.User.prototype.setUsername = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -555,7 +555,7 @@ proto.user.v1.User.prototype.setBusinessName = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.user.v1.User} returns this
  */
-proto.user.v1.User.prototype.clearBusinessName = function() {
+proto.user.v1.User.prototype.clearUsername = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -564,7 +564,7 @@ proto.user.v1.User.prototype.clearBusinessName = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.user.v1.User.prototype.hasBusinessName = function() {
+proto.user.v1.User.prototype.hasUsername = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -1437,7 +1437,7 @@ proto.user.v1.CreateSupplierRequest.prototype.toObject = function(opt_includeIns
  */
 proto.user.v1.CreateSupplierRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    businessName: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    username: jspb.Message.getFieldWithDefault(msg, 1, ""),
     email: jspb.Message.getFieldWithDefault(msg, 2, ""),
     firstName: jspb.Message.getFieldWithDefault(msg, 3, ""),
     lastName: jspb.Message.getFieldWithDefault(msg, 4, ""),
@@ -1481,7 +1481,7 @@ proto.user.v1.CreateSupplierRequest.deserializeBinaryFromReader = function(msg, 
     switch (field) {
     case 1:
       var value = /** @type {string} */ (reader.readString());
-      msg.setBusinessName(value);
+      msg.setUsername(value);
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
@@ -1532,7 +1532,7 @@ proto.user.v1.CreateSupplierRequest.prototype.serializeBinary = function() {
  */
 proto.user.v1.CreateSupplierRequest.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getBusinessName();
+  f = message.getUsername();
   if (f.length > 0) {
     writer.writeString(
       1,
@@ -1578,10 +1578,10 @@ proto.user.v1.CreateSupplierRequest.serializeBinaryToWriter = function(message, 
 
 
 /**
- * optional string business_name = 1;
+ * optional string username = 1;
  * @return {string}
  */
-proto.user.v1.CreateSupplierRequest.prototype.getBusinessName = function() {
+proto.user.v1.CreateSupplierRequest.prototype.getUsername = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
@@ -1590,7 +1590,7 @@ proto.user.v1.CreateSupplierRequest.prototype.getBusinessName = function() {
  * @param {string} value
  * @return {!proto.user.v1.CreateSupplierRequest} returns this
  */
-proto.user.v1.CreateSupplierRequest.prototype.setBusinessName = function(value) {
+proto.user.v1.CreateSupplierRequest.prototype.setUsername = function(value) {
   return jspb.Message.setProto3StringField(this, 1, value);
 };
 

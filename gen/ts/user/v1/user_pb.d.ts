@@ -9,10 +9,10 @@ export class User extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
-  hasBusinessName(): boolean;
-  clearBusinessName(): void;
-  getBusinessName(): string;
-  setBusinessName(value: string): void;
+  hasUsername(): boolean;
+  clearUsername(): void;
+  getUsername(): string;
+  setUsername(value: string): void;
 
   hasFirstName(): boolean;
   clearFirstName(): void;
@@ -141,7 +141,7 @@ export class User extends jspb.Message {
 export namespace User {
   export type AsObject = {
     id: string,
-    businessName: string,
+    username: string,
     firstName: string,
     nickname: string,
     lastName: string,
@@ -170,8 +170,8 @@ export namespace User {
 }
 
 export class CreateSupplierRequest extends jspb.Message {
-  getBusinessName(): string;
-  setBusinessName(value: string): void;
+  getUsername(): string;
+  setUsername(value: string): void;
 
   getEmail(): string;
   setEmail(value: string): void;
@@ -200,7 +200,7 @@ export class CreateSupplierRequest extends jspb.Message {
 
 export namespace CreateSupplierRequest {
   export type AsObject = {
-    businessName: string,
+    username: string,
     email: string,
     firstName: string,
     lastName: string,

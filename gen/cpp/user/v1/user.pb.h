@@ -268,7 +268,7 @@ class User final :
     kPropsFieldNumber = 14,
     kNotifyPropsFieldNumber = 15,
     kIdFieldNumber = 1,
-    kBusinessNameFieldNumber = 2,
+    kUsernameFieldNumber = 2,
     kFirstNameFieldNumber = 3,
     kNicknameFieldNumber = 4,
     kLastNameFieldNumber = 5,
@@ -344,22 +344,22 @@ class User final :
   std::string* _internal_mutable_id();
   public:
 
-  // optional string business_name = 2 [json_name = "businessName"];
-  bool has_business_name() const;
+  // optional string username = 2 [json_name = "username"];
+  bool has_username() const;
   private:
-  bool _internal_has_business_name() const;
+  bool _internal_has_username() const;
   public:
-  void clear_business_name();
-  const std::string& business_name() const;
+  void clear_username();
+  const std::string& username() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_business_name(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_business_name();
-  PROTOBUF_NODISCARD std::string* release_business_name();
-  void set_allocated_business_name(std::string* business_name);
+  void set_username(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_username();
+  PROTOBUF_NODISCARD std::string* release_username();
+  void set_allocated_username(std::string* username);
   private:
-  const std::string& _internal_business_name() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_business_name(const std::string& value);
-  std::string* _internal_mutable_business_name();
+  const std::string& _internal_username() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_username(const std::string& value);
+  std::string* _internal_mutable_username();
   public:
 
   // optional string first_name = 3 [json_name = "firstName"];
@@ -728,7 +728,7 @@ class User final :
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> notify_props_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr business_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr username_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr first_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nickname_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr last_name_;
@@ -877,25 +877,25 @@ class CreateSupplierRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBusinessNameFieldNumber = 1,
+    kUsernameFieldNumber = 1,
     kEmailFieldNumber = 2,
     kFirstNameFieldNumber = 3,
     kLastNameFieldNumber = 4,
     kPasswordFieldNumber = 5,
     kMembershipFieldNumber = 6,
   };
-  // string business_name = 1 [json_name = "businessName"];
-  void clear_business_name();
-  const std::string& business_name() const;
+  // string username = 1 [json_name = "username"];
+  void clear_username();
+  const std::string& username() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_business_name(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_business_name();
-  PROTOBUF_NODISCARD std::string* release_business_name();
-  void set_allocated_business_name(std::string* business_name);
+  void set_username(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_username();
+  PROTOBUF_NODISCARD std::string* release_username();
+  void set_allocated_username(std::string* username);
   private:
-  const std::string& _internal_business_name() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_business_name(const std::string& value);
-  std::string* _internal_mutable_business_name();
+  const std::string& _internal_username() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_username(const std::string& value);
+  std::string* _internal_mutable_username();
   public:
 
   // string email = 2 [json_name = "email"];
@@ -975,7 +975,7 @@ class CreateSupplierRequest final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr business_name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr username_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr email_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr first_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr last_name_;
@@ -1186,73 +1186,73 @@ inline void User::set_allocated_id(std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:user.v1.User.id)
 }
 
-// optional string business_name = 2 [json_name = "businessName"];
-inline bool User::_internal_has_business_name() const {
+// optional string username = 2 [json_name = "username"];
+inline bool User::_internal_has_username() const {
   bool value = (_has_bits_[0] & 0x00000002u) != 0;
   return value;
 }
-inline bool User::has_business_name() const {
-  return _internal_has_business_name();
+inline bool User::has_username() const {
+  return _internal_has_username();
 }
-inline void User::clear_business_name() {
-  business_name_.ClearToEmpty();
+inline void User::clear_username() {
+  username_.ClearToEmpty();
   _has_bits_[0] &= ~0x00000002u;
 }
-inline const std::string& User::business_name() const {
-  // @@protoc_insertion_point(field_get:user.v1.User.business_name)
-  return _internal_business_name();
+inline const std::string& User::username() const {
+  // @@protoc_insertion_point(field_get:user.v1.User.username)
+  return _internal_username();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void User::set_business_name(ArgT0&& arg0, ArgT... args) {
+void User::set_username(ArgT0&& arg0, ArgT... args) {
  _has_bits_[0] |= 0x00000002u;
- business_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:user.v1.User.business_name)
+ username_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:user.v1.User.username)
 }
-inline std::string* User::mutable_business_name() {
-  std::string* _s = _internal_mutable_business_name();
-  // @@protoc_insertion_point(field_mutable:user.v1.User.business_name)
+inline std::string* User::mutable_username() {
+  std::string* _s = _internal_mutable_username();
+  // @@protoc_insertion_point(field_mutable:user.v1.User.username)
   return _s;
 }
-inline const std::string& User::_internal_business_name() const {
-  return business_name_.Get();
+inline const std::string& User::_internal_username() const {
+  return username_.Get();
 }
-inline void User::_internal_set_business_name(const std::string& value) {
+inline void User::_internal_set_username(const std::string& value) {
   _has_bits_[0] |= 0x00000002u;
-  business_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  username_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* User::_internal_mutable_business_name() {
+inline std::string* User::_internal_mutable_username() {
   _has_bits_[0] |= 0x00000002u;
-  return business_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return username_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* User::release_business_name() {
-  // @@protoc_insertion_point(field_release:user.v1.User.business_name)
-  if (!_internal_has_business_name()) {
+inline std::string* User::release_username() {
+  // @@protoc_insertion_point(field_release:user.v1.User.username)
+  if (!_internal_has_username()) {
     return nullptr;
   }
   _has_bits_[0] &= ~0x00000002u;
-  auto* p = business_name_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+  auto* p = username_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (business_name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    business_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (username_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    username_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   return p;
 }
-inline void User::set_allocated_business_name(std::string* business_name) {
-  if (business_name != nullptr) {
+inline void User::set_allocated_username(std::string* username) {
+  if (username != nullptr) {
     _has_bits_[0] |= 0x00000002u;
   } else {
     _has_bits_[0] &= ~0x00000002u;
   }
-  business_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), business_name,
+  username_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), username,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (business_name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    business_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (username_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    username_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:user.v1.User.business_name)
+  // @@protoc_insertion_point(field_set_allocated:user.v1.User.username)
 }
 
 // optional string first_name = 3 [json_name = "firstName"];
@@ -2425,55 +2425,55 @@ inline void User::set_deleted_at(int64_t value) {
 
 // CreateSupplierRequest
 
-// string business_name = 1 [json_name = "businessName"];
-inline void CreateSupplierRequest::clear_business_name() {
-  business_name_.ClearToEmpty();
+// string username = 1 [json_name = "username"];
+inline void CreateSupplierRequest::clear_username() {
+  username_.ClearToEmpty();
 }
-inline const std::string& CreateSupplierRequest::business_name() const {
-  // @@protoc_insertion_point(field_get:user.v1.CreateSupplierRequest.business_name)
-  return _internal_business_name();
+inline const std::string& CreateSupplierRequest::username() const {
+  // @@protoc_insertion_point(field_get:user.v1.CreateSupplierRequest.username)
+  return _internal_username();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void CreateSupplierRequest::set_business_name(ArgT0&& arg0, ArgT... args) {
+void CreateSupplierRequest::set_username(ArgT0&& arg0, ArgT... args) {
  
- business_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:user.v1.CreateSupplierRequest.business_name)
+ username_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:user.v1.CreateSupplierRequest.username)
 }
-inline std::string* CreateSupplierRequest::mutable_business_name() {
-  std::string* _s = _internal_mutable_business_name();
-  // @@protoc_insertion_point(field_mutable:user.v1.CreateSupplierRequest.business_name)
+inline std::string* CreateSupplierRequest::mutable_username() {
+  std::string* _s = _internal_mutable_username();
+  // @@protoc_insertion_point(field_mutable:user.v1.CreateSupplierRequest.username)
   return _s;
 }
-inline const std::string& CreateSupplierRequest::_internal_business_name() const {
-  return business_name_.Get();
+inline const std::string& CreateSupplierRequest::_internal_username() const {
+  return username_.Get();
 }
-inline void CreateSupplierRequest::_internal_set_business_name(const std::string& value) {
+inline void CreateSupplierRequest::_internal_set_username(const std::string& value) {
   
-  business_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  username_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* CreateSupplierRequest::_internal_mutable_business_name() {
+inline std::string* CreateSupplierRequest::_internal_mutable_username() {
   
-  return business_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return username_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* CreateSupplierRequest::release_business_name() {
-  // @@protoc_insertion_point(field_release:user.v1.CreateSupplierRequest.business_name)
-  return business_name_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+inline std::string* CreateSupplierRequest::release_username() {
+  // @@protoc_insertion_point(field_release:user.v1.CreateSupplierRequest.username)
+  return username_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
-inline void CreateSupplierRequest::set_allocated_business_name(std::string* business_name) {
-  if (business_name != nullptr) {
+inline void CreateSupplierRequest::set_allocated_username(std::string* username) {
+  if (username != nullptr) {
     
   } else {
     
   }
-  business_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), business_name,
+  username_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), username,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (business_name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    business_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (username_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    username_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:user.v1.CreateSupplierRequest.business_name)
+  // @@protoc_insertion_point(field_set_allocated:user.v1.CreateSupplierRequest.username)
 }
 
 // string email = 2 [json_name = "email"];

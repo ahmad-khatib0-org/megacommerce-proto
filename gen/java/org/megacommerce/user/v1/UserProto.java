@@ -36,21 +36,21 @@ public final class UserProto {
         getIdBytes();
 
     /**
-     * <code>optional string business_name = 2 [json_name = "businessName"];</code>
-     * @return Whether the businessName field is set.
+     * <code>optional string username = 2 [json_name = "username"];</code>
+     * @return Whether the username field is set.
      */
-    boolean hasBusinessName();
+    boolean hasUsername();
     /**
-     * <code>optional string business_name = 2 [json_name = "businessName"];</code>
-     * @return The businessName.
+     * <code>optional string username = 2 [json_name = "username"];</code>
+     * @return The username.
      */
-    java.lang.String getBusinessName();
+    java.lang.String getUsername();
     /**
-     * <code>optional string business_name = 2 [json_name = "businessName"];</code>
-     * @return The bytes for businessName.
+     * <code>optional string username = 2 [json_name = "username"];</code>
+     * @return The bytes for username.
      */
     com.google.protobuf.ByteString
-        getBusinessNameBytes();
+        getUsernameBytes();
 
     /**
      * <code>optional string first_name = 3 [json_name = "firstName"];</code>
@@ -448,7 +448,7 @@ public final class UserProto {
     }
     private User() {
       id_ = "";
-      businessName_ = "";
+      username_ = "";
       firstName_ = "";
       nickname_ = "";
       lastName_ = "";
@@ -549,46 +549,46 @@ public final class UserProto {
       }
     }
 
-    public static final int BUSINESS_NAME_FIELD_NUMBER = 2;
-    private volatile java.lang.Object businessName_;
+    public static final int USERNAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object username_;
     /**
-     * <code>optional string business_name = 2 [json_name = "businessName"];</code>
-     * @return Whether the businessName field is set.
+     * <code>optional string username = 2 [json_name = "username"];</code>
+     * @return Whether the username field is set.
      */
     @java.lang.Override
-    public boolean hasBusinessName() {
+    public boolean hasUsername() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>optional string business_name = 2 [json_name = "businessName"];</code>
-     * @return The businessName.
+     * <code>optional string username = 2 [json_name = "username"];</code>
+     * @return The username.
      */
     @java.lang.Override
-    public java.lang.String getBusinessName() {
-      java.lang.Object ref = businessName_;
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        businessName_ = s;
+        username_ = s;
         return s;
       }
     }
     /**
-     * <code>optional string business_name = 2 [json_name = "businessName"];</code>
-     * @return The bytes for businessName.
+     * <code>optional string username = 2 [json_name = "username"];</code>
+     * @return The bytes for username.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getBusinessNameBytes() {
-      java.lang.Object ref = businessName_;
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        businessName_ = b;
+        username_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1517,7 +1517,7 @@ public final class UserProto {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, businessName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, username_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, firstName_);
@@ -1610,7 +1610,7 @@ public final class UserProto {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, businessName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, username_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, firstName_);
@@ -1728,10 +1728,10 @@ public final class UserProto {
         if (!getId()
             .equals(other.getId())) return false;
       }
-      if (hasBusinessName() != other.hasBusinessName()) return false;
-      if (hasBusinessName()) {
-        if (!getBusinessName()
-            .equals(other.getBusinessName())) return false;
+      if (hasUsername() != other.hasUsername()) return false;
+      if (hasUsername()) {
+        if (!getUsername()
+            .equals(other.getUsername())) return false;
       }
       if (hasFirstName() != other.hasFirstName()) return false;
       if (hasFirstName()) {
@@ -1862,9 +1862,9 @@ public final class UserProto {
         hash = (37 * hash) + ID_FIELD_NUMBER;
         hash = (53 * hash) + getId().hashCode();
       }
-      if (hasBusinessName()) {
-        hash = (37 * hash) + BUSINESS_NAME_FIELD_NUMBER;
-        hash = (53 * hash) + getBusinessName().hashCode();
+      if (hasUsername()) {
+        hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+        hash = (53 * hash) + getUsername().hashCode();
       }
       if (hasFirstName()) {
         hash = (37 * hash) + FIRST_NAME_FIELD_NUMBER;
@@ -2127,7 +2127,7 @@ public final class UserProto {
         super.clear();
         id_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
-        businessName_ = "";
+        username_ = "";
         bitField0_ = (bitField0_ & ~0x00000002);
         firstName_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -2210,7 +2210,7 @@ public final class UserProto {
         if (((from_bitField0_ & 0x00000002) != 0)) {
           to_bitField0_ |= 0x00000002;
         }
-        result.businessName_ = businessName_;
+        result.username_ = username_;
         if (((from_bitField0_ & 0x00000004) != 0)) {
           to_bitField0_ |= 0x00000004;
         }
@@ -2357,9 +2357,9 @@ public final class UserProto {
           id_ = other.id_;
           onChanged();
         }
-        if (other.hasBusinessName()) {
+        if (other.hasUsername()) {
           bitField0_ |= 0x00000002;
-          businessName_ = other.businessName_;
+          username_ = other.username_;
           onChanged();
         }
         if (other.hasFirstName()) {
@@ -2488,7 +2488,7 @@ public final class UserProto {
                 break;
               } // case 10
               case 18: {
-                businessName_ = input.readStringRequireUtf8();
+                username_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
@@ -2718,85 +2718,85 @@ public final class UserProto {
         return this;
       }
 
-      private java.lang.Object businessName_ = "";
+      private java.lang.Object username_ = "";
       /**
-       * <code>optional string business_name = 2 [json_name = "businessName"];</code>
-       * @return Whether the businessName field is set.
+       * <code>optional string username = 2 [json_name = "username"];</code>
+       * @return Whether the username field is set.
        */
-      public boolean hasBusinessName() {
+      public boolean hasUsername() {
         return ((bitField0_ & 0x00000002) != 0);
       }
       /**
-       * <code>optional string business_name = 2 [json_name = "businessName"];</code>
-       * @return The businessName.
+       * <code>optional string username = 2 [json_name = "username"];</code>
+       * @return The username.
        */
-      public java.lang.String getBusinessName() {
-        java.lang.Object ref = businessName_;
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          businessName_ = s;
+          username_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>optional string business_name = 2 [json_name = "businessName"];</code>
-       * @return The bytes for businessName.
+       * <code>optional string username = 2 [json_name = "username"];</code>
+       * @return The bytes for username.
        */
       public com.google.protobuf.ByteString
-          getBusinessNameBytes() {
-        java.lang.Object ref = businessName_;
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          businessName_ = b;
+          username_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>optional string business_name = 2 [json_name = "businessName"];</code>
-       * @param value The businessName to set.
+       * <code>optional string username = 2 [json_name = "username"];</code>
+       * @param value The username to set.
        * @return This builder for chaining.
        */
-      public Builder setBusinessName(
+      public Builder setUsername(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   bitField0_ |= 0x00000002;
-        businessName_ = value;
+        username_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string business_name = 2 [json_name = "businessName"];</code>
+       * <code>optional string username = 2 [json_name = "username"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearBusinessName() {
+      public Builder clearUsername() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        businessName_ = getDefaultInstance().getBusinessName();
+        username_ = getDefaultInstance().getUsername();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string business_name = 2 [json_name = "businessName"];</code>
-       * @param value The bytes for businessName to set.
+       * <code>optional string username = 2 [json_name = "username"];</code>
+       * @param value The bytes for username to set.
        * @return This builder for chaining.
        */
-      public Builder setBusinessNameBytes(
+      public Builder setUsernameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         bitField0_ |= 0x00000002;
-        businessName_ = value;
+        username_ = value;
         onChanged();
         return this;
       }
@@ -4517,16 +4517,16 @@ public final class UserProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>string business_name = 1 [json_name = "businessName"];</code>
-     * @return The businessName.
+     * <code>string username = 1 [json_name = "username"];</code>
+     * @return The username.
      */
-    java.lang.String getBusinessName();
+    java.lang.String getUsername();
     /**
-     * <code>string business_name = 1 [json_name = "businessName"];</code>
-     * @return The bytes for businessName.
+     * <code>string username = 1 [json_name = "username"];</code>
+     * @return The bytes for username.
      */
     com.google.protobuf.ByteString
-        getBusinessNameBytes();
+        getUsernameBytes();
 
     /**
      * <code>string email = 2 [json_name = "email"];</code>
@@ -4601,7 +4601,7 @@ public final class UserProto {
       super(builder);
     }
     private CreateSupplierRequest() {
-      businessName_ = "";
+      username_ = "";
       email_ = "";
       firstName_ = "";
       lastName_ = "";
@@ -4634,38 +4634,38 @@ public final class UserProto {
               org.megacommerce.user.v1.UserProto.CreateSupplierRequest.class, org.megacommerce.user.v1.UserProto.CreateSupplierRequest.Builder.class);
     }
 
-    public static final int BUSINESS_NAME_FIELD_NUMBER = 1;
-    private volatile java.lang.Object businessName_;
+    public static final int USERNAME_FIELD_NUMBER = 1;
+    private volatile java.lang.Object username_;
     /**
-     * <code>string business_name = 1 [json_name = "businessName"];</code>
-     * @return The businessName.
+     * <code>string username = 1 [json_name = "username"];</code>
+     * @return The username.
      */
     @java.lang.Override
-    public java.lang.String getBusinessName() {
-      java.lang.Object ref = businessName_;
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        businessName_ = s;
+        username_ = s;
         return s;
       }
     }
     /**
-     * <code>string business_name = 1 [json_name = "businessName"];</code>
-     * @return The bytes for businessName.
+     * <code>string username = 1 [json_name = "username"];</code>
+     * @return The bytes for username.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getBusinessNameBytes() {
-      java.lang.Object ref = businessName_;
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        businessName_ = b;
+        username_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -4876,8 +4876,8 @@ public final class UserProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(businessName_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, businessName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, email_);
@@ -4903,8 +4903,8 @@ public final class UserProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(businessName_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, businessName_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(username_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, username_);
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(email_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, email_);
@@ -4936,8 +4936,8 @@ public final class UserProto {
       }
       org.megacommerce.user.v1.UserProto.CreateSupplierRequest other = (org.megacommerce.user.v1.UserProto.CreateSupplierRequest) obj;
 
-      if (!getBusinessName()
-          .equals(other.getBusinessName())) return false;
+      if (!getUsername()
+          .equals(other.getUsername())) return false;
       if (!getEmail()
           .equals(other.getEmail())) return false;
       if (!getFirstName()
@@ -4959,8 +4959,8 @@ public final class UserProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + BUSINESS_NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getBusinessName().hashCode();
+      hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getUsername().hashCode();
       hash = (37 * hash) + EMAIL_FIELD_NUMBER;
       hash = (53 * hash) + getEmail().hashCode();
       hash = (37 * hash) + FIRST_NAME_FIELD_NUMBER;
@@ -5099,7 +5099,7 @@ public final class UserProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        businessName_ = "";
+        username_ = "";
 
         email_ = "";
 
@@ -5137,7 +5137,7 @@ public final class UserProto {
       @java.lang.Override
       public org.megacommerce.user.v1.UserProto.CreateSupplierRequest buildPartial() {
         org.megacommerce.user.v1.UserProto.CreateSupplierRequest result = new org.megacommerce.user.v1.UserProto.CreateSupplierRequest(this);
-        result.businessName_ = businessName_;
+        result.username_ = username_;
         result.email_ = email_;
         result.firstName_ = firstName_;
         result.lastName_ = lastName_;
@@ -5191,8 +5191,8 @@ public final class UserProto {
 
       public Builder mergeFrom(org.megacommerce.user.v1.UserProto.CreateSupplierRequest other) {
         if (other == org.megacommerce.user.v1.UserProto.CreateSupplierRequest.getDefaultInstance()) return this;
-        if (!other.getBusinessName().isEmpty()) {
-          businessName_ = other.businessName_;
+        if (!other.getUsername().isEmpty()) {
+          username_ = other.username_;
           onChanged();
         }
         if (!other.getEmail().isEmpty()) {
@@ -5242,7 +5242,7 @@ public final class UserProto {
                 done = true;
                 break;
               case 10: {
-                businessName_ = input.readStringRequireUtf8();
+                username_ = input.readStringRequireUtf8();
 
                 break;
               } // case 10
@@ -5287,78 +5287,78 @@ public final class UserProto {
         return this;
       }
 
-      private java.lang.Object businessName_ = "";
+      private java.lang.Object username_ = "";
       /**
-       * <code>string business_name = 1 [json_name = "businessName"];</code>
-       * @return The businessName.
+       * <code>string username = 1 [json_name = "username"];</code>
+       * @return The username.
        */
-      public java.lang.String getBusinessName() {
-        java.lang.Object ref = businessName_;
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          businessName_ = s;
+          username_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string business_name = 1 [json_name = "businessName"];</code>
-       * @return The bytes for businessName.
+       * <code>string username = 1 [json_name = "username"];</code>
+       * @return The bytes for username.
        */
       public com.google.protobuf.ByteString
-          getBusinessNameBytes() {
-        java.lang.Object ref = businessName_;
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          businessName_ = b;
+          username_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string business_name = 1 [json_name = "businessName"];</code>
-       * @param value The businessName to set.
+       * <code>string username = 1 [json_name = "username"];</code>
+       * @param value The username to set.
        * @return This builder for chaining.
        */
-      public Builder setBusinessName(
+      public Builder setUsername(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        businessName_ = value;
+        username_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string business_name = 1 [json_name = "businessName"];</code>
+       * <code>string username = 1 [json_name = "username"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearBusinessName() {
+      public Builder clearUsername() {
         
-        businessName_ = getDefaultInstance().getBusinessName();
+        username_ = getDefaultInstance().getUsername();
         onChanged();
         return this;
       }
       /**
-       * <code>string business_name = 1 [json_name = "businessName"];</code>
-       * @param value The bytes for businessName to set.
+       * <code>string username = 1 [json_name = "username"];</code>
+       * @param value The bytes for username to set.
        * @return This builder for chaining.
        */
-      public Builder setBusinessNameBytes(
+      public Builder setUsernameBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        businessName_ = value;
+        username_ = value;
         onChanged();
         return this;
       }
@@ -6240,55 +6240,54 @@ public final class UserProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\022user/v1/user.proto\022\007user.v1\"\345\013\n\004User\022\023" +
-      "\n\002id\030\001 \001(\tH\000R\002id\210\001\001\022(\n\rbusiness_name\030\002 \001" +
-      "(\tH\001R\014businessName\210\001\001\022\"\n\nfirst_name\030\003 \001(" +
-      "\tH\002R\tfirstName\210\001\001\022\037\n\010nickname\030\004 \001(\tH\003R\010n" +
-      "ickname\210\001\001\022 \n\tlast_name\030\005 \001(\tH\004R\010lastNam" +
-      "e\210\001\001\022\031\n\005email\030\006 \001(\tH\005R\005email\210\001\001\022 \n\tuser_" +
-      "type\030\007 \001(\tH\006R\010userType\210\001\001\022#\n\nmembership\030" +
-      "\010 \001(\tH\007R\nmembership\210\001\001\022/\n\021is_email_verif" +
-      "ied\030\t \001(\010H\010R\017isEmailVerified\210\001\001\022\037\n\010passw" +
-      "ord\030\n \001(\tH\tR\010password\210\001\001\022 \n\tauth_data\030\013 " +
-      "\001(\tH\nR\010authData\210\001\001\022&\n\014auth_service\030\014 \001(\t" +
-      "H\013R\013authService\210\001\001\022\031\n\005roles\030\r \001(\tH\014R\005rol" +
-      "es\210\001\001\022.\n\005props\030\016 \003(\0132\030.user.v1.User.Prop" +
-      "sEntryR\005props\022A\n\014notify_props\030\017 \003(\0132\036.us" +
-      "er.v1.User.NotifyPropsEntryR\013notifyProps" +
-      "\0225\n\024last_password_update\030\020 \001(\003H\rR\022lastPa" +
-      "sswordUpdate\210\001\001\0223\n\023last_picture_update\030\021" +
-      " \001(\003H\016R\021lastPictureUpdate\210\001\001\022,\n\017failed_a" +
-      "ttempts\030\022 \001(\005H\017R\016failedAttempts\210\001\001\022\033\n\006lo" +
-      "cale\030\023 \001(\tH\020R\006locale\210\001\001\022\"\n\nmfa_active\030\024 " +
-      "\001(\010H\021R\tmfaActive\210\001\001\022\"\n\nmfa_secret\030\025 \001(\tH" +
-      "\022R\tmfaSecret\210\001\001\022-\n\020last_activity_at\030\026 \001(" +
-      "\003H\023R\016lastActivityAt\210\001\001\022\"\n\nlast_login\030\027 \001" +
-      "(\003H\024R\tlastLogin\210\001\001\022\"\n\ncreated_at\030\030 \001(\003H\025" +
-      "R\tcreatedAt\210\001\001\022\"\n\nupdated_at\030\031 \001(\003H\026R\tup" +
-      "datedAt\210\001\001\022\"\n\ndeleted_at\030\032 \001(\003H\027R\tdelete" +
-      "dAt\210\001\001\0328\n\nPropsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024" +
-      "\n\005value\030\002 \001(\tR\005value:\0028\001\032>\n\020NotifyPropsE" +
-      "ntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005v" +
-      "alue:\0028\001B\005\n\003_idB\020\n\016_business_nameB\r\n\013_fi" +
-      "rst_nameB\013\n\t_nicknameB\014\n\n_last_nameB\010\n\006_" +
-      "emailB\014\n\n_user_typeB\r\n\013_membershipB\024\n\022_i" +
-      "s_email_verifiedB\013\n\t_passwordB\014\n\n_auth_d" +
-      "ataB\017\n\r_auth_serviceB\010\n\006_rolesB\027\n\025_last_" +
-      "password_updateB\026\n\024_last_picture_updateB" +
-      "\022\n\020_failed_attemptsB\t\n\007_localeB\r\n\013_mfa_a" +
-      "ctiveB\r\n\013_mfa_secretB\023\n\021_last_activity_a" +
-      "tB\r\n\013_last_loginB\r\n\013_created_atB\r\n\013_upda" +
-      "ted_atB\r\n\013_deleted_at\"\312\001\n\025CreateSupplier" +
-      "Request\022#\n\rbusiness_name\030\001 \001(\tR\014business" +
-      "Name\022\024\n\005email\030\002 \001(\tR\005email\022\035\n\nfirst_name" +
-      "\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010la" +
-      "stName\022\032\n\010password\030\005 \001(\tR\010password\022\036\n\nme" +
-      "mbership\030\006 \001(\tR\nmembership\"\030\n\026CreateSupp" +
-      "lierResponse2`\n\013UserService\022Q\n\016CreateSup" +
-      "plier\022\036.user.v1.CreateSupplierRequest\032\037." +
-      "user.v1.CreateSupplierResponseB4\n\030org.me" +
-      "gacommerce.user.v1B\tUserProtoZ\nuser/v1;v" +
-      "1\370\001\001b\006proto3"
+      "\n\022user/v1/user.proto\022\007user.v1\"\327\013\n\004User\022\023" +
+      "\n\002id\030\001 \001(\tH\000R\002id\210\001\001\022\037\n\010username\030\002 \001(\tH\001R" +
+      "\010username\210\001\001\022\"\n\nfirst_name\030\003 \001(\tH\002R\tfirs" +
+      "tName\210\001\001\022\037\n\010nickname\030\004 \001(\tH\003R\010nickname\210\001" +
+      "\001\022 \n\tlast_name\030\005 \001(\tH\004R\010lastName\210\001\001\022\031\n\005e" +
+      "mail\030\006 \001(\tH\005R\005email\210\001\001\022 \n\tuser_type\030\007 \001(" +
+      "\tH\006R\010userType\210\001\001\022#\n\nmembership\030\010 \001(\tH\007R\n" +
+      "membership\210\001\001\022/\n\021is_email_verified\030\t \001(\010" +
+      "H\010R\017isEmailVerified\210\001\001\022\037\n\010password\030\n \001(\t" +
+      "H\tR\010password\210\001\001\022 \n\tauth_data\030\013 \001(\tH\nR\010au" +
+      "thData\210\001\001\022&\n\014auth_service\030\014 \001(\tH\013R\013authS" +
+      "ervice\210\001\001\022\031\n\005roles\030\r \001(\tH\014R\005roles\210\001\001\022.\n\005" +
+      "props\030\016 \003(\0132\030.user.v1.User.PropsEntryR\005p" +
+      "rops\022A\n\014notify_props\030\017 \003(\0132\036.user.v1.Use" +
+      "r.NotifyPropsEntryR\013notifyProps\0225\n\024last_" +
+      "password_update\030\020 \001(\003H\rR\022lastPasswordUpd" +
+      "ate\210\001\001\0223\n\023last_picture_update\030\021 \001(\003H\016R\021l" +
+      "astPictureUpdate\210\001\001\022,\n\017failed_attempts\030\022" +
+      " \001(\005H\017R\016failedAttempts\210\001\001\022\033\n\006locale\030\023 \001(" +
+      "\tH\020R\006locale\210\001\001\022\"\n\nmfa_active\030\024 \001(\010H\021R\tmf" +
+      "aActive\210\001\001\022\"\n\nmfa_secret\030\025 \001(\tH\022R\tmfaSec" +
+      "ret\210\001\001\022-\n\020last_activity_at\030\026 \001(\003H\023R\016last" +
+      "ActivityAt\210\001\001\022\"\n\nlast_login\030\027 \001(\003H\024R\tlas" +
+      "tLogin\210\001\001\022\"\n\ncreated_at\030\030 \001(\003H\025R\tcreated" +
+      "At\210\001\001\022\"\n\nupdated_at\030\031 \001(\003H\026R\tupdatedAt\210\001" +
+      "\001\022\"\n\ndeleted_at\030\032 \001(\003H\027R\tdeletedAt\210\001\001\0328\n" +
+      "\nPropsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002" +
+      " \001(\tR\005value:\0028\001\032>\n\020NotifyPropsEntry\022\020\n\003k" +
+      "ey\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B" +
+      "\005\n\003_idB\013\n\t_usernameB\r\n\013_first_nameB\013\n\t_n" +
+      "icknameB\014\n\n_last_nameB\010\n\006_emailB\014\n\n_user" +
+      "_typeB\r\n\013_membershipB\024\n\022_is_email_verifi" +
+      "edB\013\n\t_passwordB\014\n\n_auth_dataB\017\n\r_auth_s" +
+      "erviceB\010\n\006_rolesB\027\n\025_last_password_updat" +
+      "eB\026\n\024_last_picture_updateB\022\n\020_failed_att" +
+      "emptsB\t\n\007_localeB\r\n\013_mfa_activeB\r\n\013_mfa_" +
+      "secretB\023\n\021_last_activity_atB\r\n\013_last_log" +
+      "inB\r\n\013_created_atB\r\n\013_updated_atB\r\n\013_del" +
+      "eted_at\"\301\001\n\025CreateSupplierRequest\022\032\n\010use" +
+      "rname\030\001 \001(\tR\010username\022\024\n\005email\030\002 \001(\tR\005em" +
+      "ail\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName\022\033\n\tla" +
+      "st_name\030\004 \001(\tR\010lastName\022\032\n\010password\030\005 \001(" +
+      "\tR\010password\022\036\n\nmembership\030\006 \001(\tR\nmembers" +
+      "hip\"\030\n\026CreateSupplierResponse2`\n\013UserSer" +
+      "vice\022Q\n\016CreateSupplier\022\036.user.v1.CreateS" +
+      "upplierRequest\032\037.user.v1.CreateSupplierR" +
+      "esponseB4\n\030org.megacommerce.user.v1B\tUse" +
+      "rProtoZ\nuser/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6299,7 +6298,7 @@ public final class UserProto {
     internal_static_user_v1_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_user_v1_User_descriptor,
-        new java.lang.String[] { "Id", "BusinessName", "FirstName", "Nickname", "LastName", "Email", "UserType", "Membership", "IsEmailVerified", "Password", "AuthData", "AuthService", "Roles", "Props", "NotifyProps", "LastPasswordUpdate", "LastPictureUpdate", "FailedAttempts", "Locale", "MfaActive", "MfaSecret", "LastActivityAt", "LastLogin", "CreatedAt", "UpdatedAt", "DeletedAt", "Id", "BusinessName", "FirstName", "Nickname", "LastName", "Email", "UserType", "Membership", "IsEmailVerified", "Password", "AuthData", "AuthService", "Roles", "LastPasswordUpdate", "LastPictureUpdate", "FailedAttempts", "Locale", "MfaActive", "MfaSecret", "LastActivityAt", "LastLogin", "CreatedAt", "UpdatedAt", "DeletedAt", });
+        new java.lang.String[] { "Id", "Username", "FirstName", "Nickname", "LastName", "Email", "UserType", "Membership", "IsEmailVerified", "Password", "AuthData", "AuthService", "Roles", "Props", "NotifyProps", "LastPasswordUpdate", "LastPictureUpdate", "FailedAttempts", "Locale", "MfaActive", "MfaSecret", "LastActivityAt", "LastLogin", "CreatedAt", "UpdatedAt", "DeletedAt", "Id", "Username", "FirstName", "Nickname", "LastName", "Email", "UserType", "Membership", "IsEmailVerified", "Password", "AuthData", "AuthService", "Roles", "LastPasswordUpdate", "LastPictureUpdate", "FailedAttempts", "Locale", "MfaActive", "MfaSecret", "LastActivityAt", "LastLogin", "CreatedAt", "UpdatedAt", "DeletedAt", });
     internal_static_user_v1_User_PropsEntry_descriptor =
       internal_static_user_v1_User_descriptor.getNestedTypes().get(0);
     internal_static_user_v1_User_PropsEntry_fieldAccessorTable = new
@@ -6317,7 +6316,7 @@ public final class UserProto {
     internal_static_user_v1_CreateSupplierRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_user_v1_CreateSupplierRequest_descriptor,
-        new java.lang.String[] { "BusinessName", "Email", "FirstName", "LastName", "Password", "Membership", });
+        new java.lang.String[] { "Username", "Email", "FirstName", "LastName", "Password", "Membership", });
     internal_static_user_v1_CreateSupplierResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_user_v1_CreateSupplierResponse_fieldAccessorTable = new
