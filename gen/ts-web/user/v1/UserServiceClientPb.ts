@@ -17,7 +17,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as user_v1_user_pb from '../../user/v1/user_pb'; // proto import: "user/v1/user.proto"
+import * as user_v1_supplier_pb from '../../user/v1/supplier_pb'; // proto import: "user/v1/supplier.proto"
 
 
 export class UserServiceClient {
@@ -42,29 +42,29 @@ export class UserServiceClient {
   methodDescriptorCreateSupplier = new grpcWeb.MethodDescriptor(
     '/user.v1.UserService/CreateSupplier',
     grpcWeb.MethodType.UNARY,
-    user_v1_user_pb.CreateSupplierRequest,
-    user_v1_user_pb.CreateSupplierResponse,
-    (request: user_v1_user_pb.CreateSupplierRequest) => {
+    user_v1_supplier_pb.SupplierCreateRequest,
+    user_v1_supplier_pb.SupplierCreateResponse,
+    (request: user_v1_supplier_pb.SupplierCreateRequest) => {
       return request.serializeBinary();
     },
-    user_v1_user_pb.CreateSupplierResponse.deserializeBinary
+    user_v1_supplier_pb.SupplierCreateResponse.deserializeBinary
   );
 
   createSupplier(
-    request: user_v1_user_pb.CreateSupplierRequest,
-    metadata?: grpcWeb.Metadata | null): Promise<user_v1_user_pb.CreateSupplierResponse>;
+    request: user_v1_supplier_pb.SupplierCreateRequest,
+    metadata?: grpcWeb.Metadata | null): Promise<user_v1_supplier_pb.SupplierCreateResponse>;
 
   createSupplier(
-    request: user_v1_user_pb.CreateSupplierRequest,
+    request: user_v1_supplier_pb.SupplierCreateRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: user_v1_user_pb.CreateSupplierResponse) => void): grpcWeb.ClientReadableStream<user_v1_user_pb.CreateSupplierResponse>;
+               response: user_v1_supplier_pb.SupplierCreateResponse) => void): grpcWeb.ClientReadableStream<user_v1_supplier_pb.SupplierCreateResponse>;
 
   createSupplier(
-    request: user_v1_user_pb.CreateSupplierRequest,
+    request: user_v1_supplier_pb.SupplierCreateRequest,
     metadata?: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: user_v1_user_pb.CreateSupplierResponse) => void) {
+               response: user_v1_supplier_pb.SupplierCreateResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +

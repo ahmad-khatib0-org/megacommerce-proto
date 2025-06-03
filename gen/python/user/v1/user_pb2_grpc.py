@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-from user.v1 import user_pb2 as user_dot_v1_dot_user__pb2
+from user.v1 import supplier_pb2 as user_dot_v1_dot_supplier__pb2
 
 GRPC_GENERATED_VERSION = '1.71.0'
 GRPC_VERSION = grpc.__version__
@@ -36,8 +36,8 @@ class UserServiceStub(object):
         """
         self.CreateSupplier = channel.unary_unary(
                 '/user.v1.UserService/CreateSupplier',
-                request_serializer=user_dot_v1_dot_user__pb2.CreateSupplierRequest.SerializeToString,
-                response_deserializer=user_dot_v1_dot_user__pb2.CreateSupplierResponse.FromString,
+                request_serializer=user_dot_v1_dot_supplier__pb2.SupplierCreateRequest.SerializeToString,
+                response_deserializer=user_dot_v1_dot_supplier__pb2.SupplierCreateResponse.FromString,
                 _registered_method=True)
 
 
@@ -55,8 +55,8 @@ def add_UserServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'CreateSupplier': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateSupplier,
-                    request_deserializer=user_dot_v1_dot_user__pb2.CreateSupplierRequest.FromString,
-                    response_serializer=user_dot_v1_dot_user__pb2.CreateSupplierResponse.SerializeToString,
+                    request_deserializer=user_dot_v1_dot_supplier__pb2.SupplierCreateRequest.FromString,
+                    response_serializer=user_dot_v1_dot_supplier__pb2.SupplierCreateResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -84,8 +84,8 @@ class UserService(object):
             request,
             target,
             '/user.v1.UserService/CreateSupplier',
-            user_dot_v1_dot_user__pb2.CreateSupplierRequest.SerializeToString,
-            user_dot_v1_dot_user__pb2.CreateSupplierResponse.FromString,
+            user_dot_v1_dot_supplier__pb2.SupplierCreateRequest.SerializeToString,
+            user_dot_v1_dot_supplier__pb2.SupplierCreateResponse.FromString,
             options,
             channel_credentials,
             insecure,

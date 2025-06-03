@@ -1,5 +1,6 @@
 import * as jspb from 'google-protobuf'
 
+import * as user_v1_supplier_pb from '../../user/v1/supplier_pb'; // proto import: "user/v1/supplier.proto"
 
 
 export class User extends jspb.Message {
@@ -285,58 +286,6 @@ export namespace User {
   export enum DeletedAtCase { 
     _DELETED_AT_NOT_SET = 0,
     DELETED_AT = 26,
-  }
-}
-
-export class CreateSupplierRequest extends jspb.Message {
-  getUsername(): string;
-  setUsername(value: string): CreateSupplierRequest;
-
-  getEmail(): string;
-  setEmail(value: string): CreateSupplierRequest;
-
-  getFirstName(): string;
-  setFirstName(value: string): CreateSupplierRequest;
-
-  getLastName(): string;
-  setLastName(value: string): CreateSupplierRequest;
-
-  getPassword(): string;
-  setPassword(value: string): CreateSupplierRequest;
-
-  getMembership(): string;
-  setMembership(value: string): CreateSupplierRequest;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateSupplierRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateSupplierRequest): CreateSupplierRequest.AsObject;
-  static serializeBinaryToWriter(message: CreateSupplierRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateSupplierRequest;
-  static deserializeBinaryFromReader(message: CreateSupplierRequest, reader: jspb.BinaryReader): CreateSupplierRequest;
-}
-
-export namespace CreateSupplierRequest {
-  export type AsObject = {
-    username: string,
-    email: string,
-    firstName: string,
-    lastName: string,
-    password: string,
-    membership: string,
-  }
-}
-
-export class CreateSupplierResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateSupplierResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateSupplierResponse): CreateSupplierResponse.AsObject;
-  static serializeBinaryToWriter(message: CreateSupplierResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateSupplierResponse;
-  static deserializeBinaryFromReader(message: CreateSupplierResponse, reader: jspb.BinaryReader): CreateSupplierResponse;
-}
-
-export namespace CreateSupplierResponse {
-  export type AsObject = {
   }
 }
 

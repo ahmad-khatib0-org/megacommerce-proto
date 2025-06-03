@@ -265,131 +265,11 @@ func (x *User) GetDeletedAt() int64 {
 	return 0
 }
 
-type CreateSupplierRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Username      string                 `protobuf:"bytes,1,opt,name=username,proto3" json:"username,omitempty"`
-	Email         string                 `protobuf:"bytes,2,opt,name=email,proto3" json:"email,omitempty"`
-	FirstName     string                 `protobuf:"bytes,3,opt,name=first_name,json=firstName,proto3" json:"first_name,omitempty"`
-	LastName      string                 `protobuf:"bytes,4,opt,name=last_name,json=lastName,proto3" json:"last_name,omitempty"`
-	Password      string                 `protobuf:"bytes,5,opt,name=password,proto3" json:"password,omitempty"`
-	Membership    string                 `protobuf:"bytes,6,opt,name=membership,proto3" json:"membership,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *CreateSupplierRequest) Reset() {
-	*x = CreateSupplierRequest{}
-	mi := &file_user_v1_user_proto_msgTypes[1]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *CreateSupplierRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateSupplierRequest) ProtoMessage() {}
-
-func (x *CreateSupplierRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_user_v1_user_proto_msgTypes[1]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateSupplierRequest.ProtoReflect.Descriptor instead.
-func (*CreateSupplierRequest) Descriptor() ([]byte, []int) {
-	return file_user_v1_user_proto_rawDescGZIP(), []int{1}
-}
-
-func (x *CreateSupplierRequest) GetUsername() string {
-	if x != nil {
-		return x.Username
-	}
-	return ""
-}
-
-func (x *CreateSupplierRequest) GetEmail() string {
-	if x != nil {
-		return x.Email
-	}
-	return ""
-}
-
-func (x *CreateSupplierRequest) GetFirstName() string {
-	if x != nil {
-		return x.FirstName
-	}
-	return ""
-}
-
-func (x *CreateSupplierRequest) GetLastName() string {
-	if x != nil {
-		return x.LastName
-	}
-	return ""
-}
-
-func (x *CreateSupplierRequest) GetPassword() string {
-	if x != nil {
-		return x.Password
-	}
-	return ""
-}
-
-func (x *CreateSupplierRequest) GetMembership() string {
-	if x != nil {
-		return x.Membership
-	}
-	return ""
-}
-
-type CreateSupplierResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *CreateSupplierResponse) Reset() {
-	*x = CreateSupplierResponse{}
-	mi := &file_user_v1_user_proto_msgTypes[2]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *CreateSupplierResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CreateSupplierResponse) ProtoMessage() {}
-
-func (x *CreateSupplierResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_user_v1_user_proto_msgTypes[2]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CreateSupplierResponse.ProtoReflect.Descriptor instead.
-func (*CreateSupplierResponse) Descriptor() ([]byte, []int) {
-	return file_user_v1_user_proto_rawDescGZIP(), []int{2}
-}
-
 var File_user_v1_user_proto protoreflect.FileDescriptor
 
 const file_user_v1_user_proto_rawDesc = "" +
 	"\n" +
-	"\x12user/v1/user.proto\x12\auser.v1\"\xd7\v\n" +
+	"\x12user/v1/user.proto\x12\auser.v1\x1a\x16user/v1/supplier.proto\"\xd7\v\n" +
 	"\x04User\x12\x13\n" +
 	"\x02id\x18\x01 \x01(\tH\x00R\x02id\x88\x01\x01\x12\x1f\n" +
 	"\busername\x18\x02 \x01(\tH\x01R\busername\x88\x01\x01\x12\"\n" +
@@ -461,20 +341,9 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\v_last_loginB\r\n" +
 	"\v_created_atB\r\n" +
 	"\v_updated_atB\r\n" +
-	"\v_deleted_at\"\xc1\x01\n" +
-	"\x15CreateSupplierRequest\x12\x1a\n" +
-	"\busername\x18\x01 \x01(\tR\busername\x12\x14\n" +
-	"\x05email\x18\x02 \x01(\tR\x05email\x12\x1d\n" +
-	"\n" +
-	"first_name\x18\x03 \x01(\tR\tfirstName\x12\x1b\n" +
-	"\tlast_name\x18\x04 \x01(\tR\blastName\x12\x1a\n" +
-	"\bpassword\x18\x05 \x01(\tR\bpassword\x12\x1e\n" +
-	"\n" +
-	"membership\x18\x06 \x01(\tR\n" +
-	"membership\"\x18\n" +
-	"\x16CreateSupplierResponse2`\n" +
+	"\v_deleted_at2`\n" +
 	"\vUserService\x12Q\n" +
-	"\x0eCreateSupplier\x12\x1e.user.v1.CreateSupplierRequest\x1a\x1f.user.v1.CreateSupplierResponseB4\n" +
+	"\x0eCreateSupplier\x12\x1e.user.v1.SupplierCreateRequest\x1a\x1f.user.v1.SupplierCreateResponseB4\n" +
 	"\x18org.megacommerce.user.v1B\tUserProtoZ\n" +
 	"user/v1;v1\xf8\x01\x01b\x06proto3"
 
@@ -490,19 +359,19 @@ func file_user_v1_user_proto_rawDescGZIP() []byte {
 	return file_user_v1_user_proto_rawDescData
 }
 
-var file_user_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_user_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_user_v1_user_proto_goTypes = []any{
 	(*User)(nil),                   // 0: user.v1.User
-	(*CreateSupplierRequest)(nil),  // 1: user.v1.CreateSupplierRequest
-	(*CreateSupplierResponse)(nil), // 2: user.v1.CreateSupplierResponse
-	nil,                            // 3: user.v1.User.PropsEntry
-	nil,                            // 4: user.v1.User.NotifyPropsEntry
+	nil,                            // 1: user.v1.User.PropsEntry
+	nil,                            // 2: user.v1.User.NotifyPropsEntry
+	(*SupplierCreateRequest)(nil),  // 3: user.v1.SupplierCreateRequest
+	(*SupplierCreateResponse)(nil), // 4: user.v1.SupplierCreateResponse
 }
 var file_user_v1_user_proto_depIdxs = []int32{
-	3, // 0: user.v1.User.props:type_name -> user.v1.User.PropsEntry
-	4, // 1: user.v1.User.notify_props:type_name -> user.v1.User.NotifyPropsEntry
-	1, // 2: user.v1.UserService.CreateSupplier:input_type -> user.v1.CreateSupplierRequest
-	2, // 3: user.v1.UserService.CreateSupplier:output_type -> user.v1.CreateSupplierResponse
+	1, // 0: user.v1.User.props:type_name -> user.v1.User.PropsEntry
+	2, // 1: user.v1.User.notify_props:type_name -> user.v1.User.NotifyPropsEntry
+	3, // 2: user.v1.UserService.CreateSupplier:input_type -> user.v1.SupplierCreateRequest
+	4, // 3: user.v1.UserService.CreateSupplier:output_type -> user.v1.SupplierCreateResponse
 	3, // [3:4] is the sub-list for method output_type
 	2, // [2:3] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -515,6 +384,7 @@ func file_user_v1_user_proto_init() {
 	if File_user_v1_user_proto != nil {
 		return
 	}
+	file_user_v1_supplier_proto_init()
 	file_user_v1_user_proto_msgTypes[0].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -522,7 +392,7 @@ func file_user_v1_user_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_user_v1_user_proto_rawDesc), len(file_user_v1_user_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   5,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

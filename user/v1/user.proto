@@ -2,13 +2,16 @@ syntax = "proto3";
 
 package user.v1;
 
+import "user/v1/supplier.proto";
+
 option cc_enable_arenas = true;
 option go_package = "user/v1;v1";
 option java_outer_classname = "UserProto";
 option java_package = "org.megacommerce.user.v1";
 
 service UserService {
-  rpc CreateSupplier(CreateSupplierRequest) returns (CreateSupplierResponse);
+  rpc CreateSupplier(user.v1.SupplierCreateRequest)
+      returns (user.v1.SupplierCreateResponse);
 }
 
 message User {
@@ -39,14 +42,3 @@ message User {
   optional int64 updated_at = 25;
   optional int64 deleted_at = 26;
 }
-
-message CreateSupplierRequest {
-  string username = 1;
-  string email = 2;
-  string first_name = 3;
-  string last_name = 4;
-  string password = 5;
-  string membership = 6;
-}
-
-message CreateSupplierResponse {}

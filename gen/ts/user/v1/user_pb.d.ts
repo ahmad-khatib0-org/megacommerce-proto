@@ -2,6 +2,7 @@
 // file: user/v1/user.proto
 
 import * as jspb from "google-protobuf";
+import * as user_v1_supplier_pb from "../../user/v1/supplier_pb";
 
 export class User extends jspb.Message {
   hasId(): boolean;
@@ -166,62 +167,6 @@ export namespace User {
     createdAt: number,
     updatedAt: number,
     deletedAt: number,
-  }
-}
-
-export class CreateSupplierRequest extends jspb.Message {
-  getUsername(): string;
-  setUsername(value: string): void;
-
-  getEmail(): string;
-  setEmail(value: string): void;
-
-  getFirstName(): string;
-  setFirstName(value: string): void;
-
-  getLastName(): string;
-  setLastName(value: string): void;
-
-  getPassword(): string;
-  setPassword(value: string): void;
-
-  getMembership(): string;
-  setMembership(value: string): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateSupplierRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateSupplierRequest): CreateSupplierRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CreateSupplierRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateSupplierRequest;
-  static deserializeBinaryFromReader(message: CreateSupplierRequest, reader: jspb.BinaryReader): CreateSupplierRequest;
-}
-
-export namespace CreateSupplierRequest {
-  export type AsObject = {
-    username: string,
-    email: string,
-    firstName: string,
-    lastName: string,
-    password: string,
-    membership: string,
-  }
-}
-
-export class CreateSupplierResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CreateSupplierResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: CreateSupplierResponse): CreateSupplierResponse.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CreateSupplierResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CreateSupplierResponse;
-  static deserializeBinaryFromReader(message: CreateSupplierResponse, reader: jspb.BinaryReader): CreateSupplierResponse;
-}
-
-export namespace CreateSupplierResponse {
-  export type AsObject = {
   }
 }
 
