@@ -12169,56 +12169,67 @@ public final class ConfigProto {
     int getMinimumLength();
 
     /**
-     * <code>optional bool lowercase = 2 [json_name = "lowercase"];</code>
+     * <code>optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];</code>
+     * @return Whether the maximumLenght field is set.
+     */
+    boolean hasMaximumLenght();
+    /**
+     * <code>optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];</code>
+     * @return The maximumLenght.
+     */
+    int getMaximumLenght();
+
+    /**
+     * <code>optional bool lowercase = 3 [json_name = "lowercase"];</code>
      * @return Whether the lowercase field is set.
      */
     boolean hasLowercase();
     /**
-     * <code>optional bool lowercase = 2 [json_name = "lowercase"];</code>
+     * <code>optional bool lowercase = 3 [json_name = "lowercase"];</code>
      * @return The lowercase.
      */
     boolean getLowercase();
 
     /**
-     * <code>optional bool number = 3 [json_name = "number"];</code>
+     * <code>optional bool number = 4 [json_name = "number"];</code>
      * @return Whether the number field is set.
      */
     boolean hasNumber();
     /**
-     * <code>optional bool number = 3 [json_name = "number"];</code>
+     * <code>optional bool number = 4 [json_name = "number"];</code>
      * @return The number.
      */
     boolean getNumber();
 
     /**
-     * <code>optional bool uppercase = 4 [json_name = "uppercase"];</code>
+     * <code>optional bool uppercase = 5 [json_name = "uppercase"];</code>
      * @return Whether the uppercase field is set.
      */
     boolean hasUppercase();
     /**
-     * <code>optional bool uppercase = 4 [json_name = "uppercase"];</code>
+     * <code>optional bool uppercase = 5 [json_name = "uppercase"];</code>
      * @return The uppercase.
      */
     boolean getUppercase();
 
     /**
-     * <code>optional bool symbol = 5 [json_name = "symbol"];</code>
+     * <code>optional bool symbol = 6 [json_name = "symbol"];</code>
      * @return Whether the symbol field is set.
      */
     boolean hasSymbol();
     /**
-     * <code>optional bool symbol = 5 [json_name = "symbol"];</code>
+     * <code>optional bool symbol = 6 [json_name = "symbol"];</code>
      * @return The symbol.
      */
     boolean getSymbol();
 
     /**
-     * <code>optional bool enable_forgot_link = 6 [json_name = "enableForgotLink"];</code>
+     * <code>optional bool enable_forgot_link = 7 [json_name = "enableForgotLink"];</code>
      * @return Whether the enableForgotLink field is set.
      */
     boolean hasEnableForgotLink();
     /**
-     * <code>optional bool enable_forgot_link = 6 [json_name = "enableForgotLink"];</code>
+     * <code>optional bool enable_forgot_link = 7 [json_name = "enableForgotLink"];</code>
      * @return The enableForgotLink.
      */
     boolean getEnableForgotLink();
@@ -12283,18 +12294,37 @@ public final class ConfigProto {
       return minimumLength_;
     }
 
-    public static final int LOWERCASE_FIELD_NUMBER = 2;
+    public static final int MAXIMUM_LENGHT_FIELD_NUMBER = 2;
+    private int maximumLenght_;
+    /**
+     * <code>optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];</code>
+     * @return Whether the maximumLenght field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaximumLenght() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];</code>
+     * @return The maximumLenght.
+     */
+    @java.lang.Override
+    public int getMaximumLenght() {
+      return maximumLenght_;
+    }
+
+    public static final int LOWERCASE_FIELD_NUMBER = 3;
     private boolean lowercase_;
     /**
-     * <code>optional bool lowercase = 2 [json_name = "lowercase"];</code>
+     * <code>optional bool lowercase = 3 [json_name = "lowercase"];</code>
      * @return Whether the lowercase field is set.
      */
     @java.lang.Override
     public boolean hasLowercase() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>optional bool lowercase = 2 [json_name = "lowercase"];</code>
+     * <code>optional bool lowercase = 3 [json_name = "lowercase"];</code>
      * @return The lowercase.
      */
     @java.lang.Override
@@ -12302,18 +12332,18 @@ public final class ConfigProto {
       return lowercase_;
     }
 
-    public static final int NUMBER_FIELD_NUMBER = 3;
+    public static final int NUMBER_FIELD_NUMBER = 4;
     private boolean number_;
     /**
-     * <code>optional bool number = 3 [json_name = "number"];</code>
+     * <code>optional bool number = 4 [json_name = "number"];</code>
      * @return Whether the number field is set.
      */
     @java.lang.Override
     public boolean hasNumber() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>optional bool number = 3 [json_name = "number"];</code>
+     * <code>optional bool number = 4 [json_name = "number"];</code>
      * @return The number.
      */
     @java.lang.Override
@@ -12321,18 +12351,18 @@ public final class ConfigProto {
       return number_;
     }
 
-    public static final int UPPERCASE_FIELD_NUMBER = 4;
+    public static final int UPPERCASE_FIELD_NUMBER = 5;
     private boolean uppercase_;
     /**
-     * <code>optional bool uppercase = 4 [json_name = "uppercase"];</code>
+     * <code>optional bool uppercase = 5 [json_name = "uppercase"];</code>
      * @return Whether the uppercase field is set.
      */
     @java.lang.Override
     public boolean hasUppercase() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>optional bool uppercase = 4 [json_name = "uppercase"];</code>
+     * <code>optional bool uppercase = 5 [json_name = "uppercase"];</code>
      * @return The uppercase.
      */
     @java.lang.Override
@@ -12340,18 +12370,18 @@ public final class ConfigProto {
       return uppercase_;
     }
 
-    public static final int SYMBOL_FIELD_NUMBER = 5;
+    public static final int SYMBOL_FIELD_NUMBER = 6;
     private boolean symbol_;
     /**
-     * <code>optional bool symbol = 5 [json_name = "symbol"];</code>
+     * <code>optional bool symbol = 6 [json_name = "symbol"];</code>
      * @return Whether the symbol field is set.
      */
     @java.lang.Override
     public boolean hasSymbol() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
-     * <code>optional bool symbol = 5 [json_name = "symbol"];</code>
+     * <code>optional bool symbol = 6 [json_name = "symbol"];</code>
      * @return The symbol.
      */
     @java.lang.Override
@@ -12359,18 +12389,18 @@ public final class ConfigProto {
       return symbol_;
     }
 
-    public static final int ENABLE_FORGOT_LINK_FIELD_NUMBER = 6;
+    public static final int ENABLE_FORGOT_LINK_FIELD_NUMBER = 7;
     private boolean enableForgotLink_;
     /**
-     * <code>optional bool enable_forgot_link = 6 [json_name = "enableForgotLink"];</code>
+     * <code>optional bool enable_forgot_link = 7 [json_name = "enableForgotLink"];</code>
      * @return Whether the enableForgotLink field is set.
      */
     @java.lang.Override
     public boolean hasEnableForgotLink() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
-     * <code>optional bool enable_forgot_link = 6 [json_name = "enableForgotLink"];</code>
+     * <code>optional bool enable_forgot_link = 7 [json_name = "enableForgotLink"];</code>
      * @return The enableForgotLink.
      */
     @java.lang.Override
@@ -12396,19 +12426,22 @@ public final class ConfigProto {
         output.writeInt32(1, minimumLength_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeBool(2, lowercase_);
+        output.writeInt32(2, maximumLenght_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeBool(3, number_);
+        output.writeBool(3, lowercase_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
-        output.writeBool(4, uppercase_);
+        output.writeBool(4, number_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
-        output.writeBool(5, symbol_);
+        output.writeBool(5, uppercase_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
-        output.writeBool(6, enableForgotLink_);
+        output.writeBool(6, symbol_);
+      }
+      if (((bitField0_ & 0x00000040) != 0)) {
+        output.writeBool(7, enableForgotLink_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -12425,23 +12458,27 @@ public final class ConfigProto {
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, lowercase_);
+          .computeInt32Size(2, maximumLenght_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, number_);
+          .computeBoolSize(3, lowercase_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, uppercase_);
+          .computeBoolSize(4, number_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, symbol_);
+          .computeBoolSize(5, uppercase_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, enableForgotLink_);
+          .computeBoolSize(6, symbol_);
+      }
+      if (((bitField0_ & 0x00000040) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, enableForgotLink_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -12462,6 +12499,11 @@ public final class ConfigProto {
       if (hasMinimumLength()) {
         if (getMinimumLength()
             != other.getMinimumLength()) return false;
+      }
+      if (hasMaximumLenght() != other.hasMaximumLenght()) return false;
+      if (hasMaximumLenght()) {
+        if (getMaximumLenght()
+            != other.getMaximumLenght()) return false;
       }
       if (hasLowercase() != other.hasLowercase()) return false;
       if (hasLowercase()) {
@@ -12502,6 +12544,10 @@ public final class ConfigProto {
       if (hasMinimumLength()) {
         hash = (37 * hash) + MINIMUM_LENGTH_FIELD_NUMBER;
         hash = (53 * hash) + getMinimumLength();
+      }
+      if (hasMaximumLenght()) {
+        hash = (37 * hash) + MAXIMUM_LENGHT_FIELD_NUMBER;
+        hash = (53 * hash) + getMaximumLenght();
       }
       if (hasLowercase()) {
         hash = (37 * hash) + LOWERCASE_FIELD_NUMBER;
@@ -12658,16 +12704,18 @@ public final class ConfigProto {
         super.clear();
         minimumLength_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
-        lowercase_ = false;
+        maximumLenght_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
-        number_ = false;
+        lowercase_ = false;
         bitField0_ = (bitField0_ & ~0x00000004);
-        uppercase_ = false;
+        number_ = false;
         bitField0_ = (bitField0_ & ~0x00000008);
-        symbol_ = false;
+        uppercase_ = false;
         bitField0_ = (bitField0_ & ~0x00000010);
-        enableForgotLink_ = false;
+        symbol_ = false;
         bitField0_ = (bitField0_ & ~0x00000020);
+        enableForgotLink_ = false;
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
 
@@ -12701,24 +12749,28 @@ public final class ConfigProto {
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.lowercase_ = lowercase_;
+          result.maximumLenght_ = maximumLenght_;
           to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.number_ = number_;
+          result.lowercase_ = lowercase_;
           to_bitField0_ |= 0x00000004;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.uppercase_ = uppercase_;
+          result.number_ = number_;
           to_bitField0_ |= 0x00000008;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.symbol_ = symbol_;
+          result.uppercase_ = uppercase_;
           to_bitField0_ |= 0x00000010;
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.enableForgotLink_ = enableForgotLink_;
+          result.symbol_ = symbol_;
           to_bitField0_ |= 0x00000020;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.enableForgotLink_ = enableForgotLink_;
+          to_bitField0_ |= 0x00000040;
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -12772,6 +12824,9 @@ public final class ConfigProto {
         if (other.hasMinimumLength()) {
           setMinimumLength(other.getMinimumLength());
         }
+        if (other.hasMaximumLenght()) {
+          setMaximumLenght(other.getMaximumLenght());
+        }
         if (other.hasLowercase()) {
           setLowercase(other.getLowercase());
         }
@@ -12819,30 +12874,35 @@ public final class ConfigProto {
                 break;
               } // case 8
               case 16: {
-                lowercase_ = input.readBool();
+                maximumLenght_ = input.readInt32();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
               case 24: {
-                number_ = input.readBool();
+                lowercase_ = input.readBool();
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
               case 32: {
-                uppercase_ = input.readBool();
+                number_ = input.readBool();
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
               case 40: {
-                symbol_ = input.readBool();
+                uppercase_ = input.readBool();
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
               case 48: {
-                enableForgotLink_ = input.readBool();
+                symbol_ = input.readBool();
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+              case 56: {
+                enableForgotLink_ = input.readBool();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -12899,17 +12959,56 @@ public final class ConfigProto {
         return this;
       }
 
+      private int maximumLenght_ ;
+      /**
+       * <code>optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];</code>
+       * @return Whether the maximumLenght field is set.
+       */
+      @java.lang.Override
+      public boolean hasMaximumLenght() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <code>optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];</code>
+       * @return The maximumLenght.
+       */
+      @java.lang.Override
+      public int getMaximumLenght() {
+        return maximumLenght_;
+      }
+      /**
+       * <code>optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];</code>
+       * @param value The maximumLenght to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaximumLenght(int value) {
+        bitField0_ |= 0x00000002;
+        maximumLenght_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMaximumLenght() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        maximumLenght_ = 0;
+        onChanged();
+        return this;
+      }
+
       private boolean lowercase_ ;
       /**
-       * <code>optional bool lowercase = 2 [json_name = "lowercase"];</code>
+       * <code>optional bool lowercase = 3 [json_name = "lowercase"];</code>
        * @return Whether the lowercase field is set.
        */
       @java.lang.Override
       public boolean hasLowercase() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
-       * <code>optional bool lowercase = 2 [json_name = "lowercase"];</code>
+       * <code>optional bool lowercase = 3 [json_name = "lowercase"];</code>
        * @return The lowercase.
        */
       @java.lang.Override
@@ -12917,22 +13016,22 @@ public final class ConfigProto {
         return lowercase_;
       }
       /**
-       * <code>optional bool lowercase = 2 [json_name = "lowercase"];</code>
+       * <code>optional bool lowercase = 3 [json_name = "lowercase"];</code>
        * @param value The lowercase to set.
        * @return This builder for chaining.
        */
       public Builder setLowercase(boolean value) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         lowercase_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool lowercase = 2 [json_name = "lowercase"];</code>
+       * <code>optional bool lowercase = 3 [json_name = "lowercase"];</code>
        * @return This builder for chaining.
        */
       public Builder clearLowercase() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         lowercase_ = false;
         onChanged();
         return this;
@@ -12940,15 +13039,15 @@ public final class ConfigProto {
 
       private boolean number_ ;
       /**
-       * <code>optional bool number = 3 [json_name = "number"];</code>
+       * <code>optional bool number = 4 [json_name = "number"];</code>
        * @return Whether the number field is set.
        */
       @java.lang.Override
       public boolean hasNumber() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
-       * <code>optional bool number = 3 [json_name = "number"];</code>
+       * <code>optional bool number = 4 [json_name = "number"];</code>
        * @return The number.
        */
       @java.lang.Override
@@ -12956,22 +13055,22 @@ public final class ConfigProto {
         return number_;
       }
       /**
-       * <code>optional bool number = 3 [json_name = "number"];</code>
+       * <code>optional bool number = 4 [json_name = "number"];</code>
        * @param value The number to set.
        * @return This builder for chaining.
        */
       public Builder setNumber(boolean value) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         number_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool number = 3 [json_name = "number"];</code>
+       * <code>optional bool number = 4 [json_name = "number"];</code>
        * @return This builder for chaining.
        */
       public Builder clearNumber() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         number_ = false;
         onChanged();
         return this;
@@ -12979,15 +13078,15 @@ public final class ConfigProto {
 
       private boolean uppercase_ ;
       /**
-       * <code>optional bool uppercase = 4 [json_name = "uppercase"];</code>
+       * <code>optional bool uppercase = 5 [json_name = "uppercase"];</code>
        * @return Whether the uppercase field is set.
        */
       @java.lang.Override
       public boolean hasUppercase() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
-       * <code>optional bool uppercase = 4 [json_name = "uppercase"];</code>
+       * <code>optional bool uppercase = 5 [json_name = "uppercase"];</code>
        * @return The uppercase.
        */
       @java.lang.Override
@@ -12995,22 +13094,22 @@ public final class ConfigProto {
         return uppercase_;
       }
       /**
-       * <code>optional bool uppercase = 4 [json_name = "uppercase"];</code>
+       * <code>optional bool uppercase = 5 [json_name = "uppercase"];</code>
        * @param value The uppercase to set.
        * @return This builder for chaining.
        */
       public Builder setUppercase(boolean value) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         uppercase_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool uppercase = 4 [json_name = "uppercase"];</code>
+       * <code>optional bool uppercase = 5 [json_name = "uppercase"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUppercase() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         uppercase_ = false;
         onChanged();
         return this;
@@ -13018,15 +13117,15 @@ public final class ConfigProto {
 
       private boolean symbol_ ;
       /**
-       * <code>optional bool symbol = 5 [json_name = "symbol"];</code>
+       * <code>optional bool symbol = 6 [json_name = "symbol"];</code>
        * @return Whether the symbol field is set.
        */
       @java.lang.Override
       public boolean hasSymbol() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
-       * <code>optional bool symbol = 5 [json_name = "symbol"];</code>
+       * <code>optional bool symbol = 6 [json_name = "symbol"];</code>
        * @return The symbol.
        */
       @java.lang.Override
@@ -13034,22 +13133,22 @@ public final class ConfigProto {
         return symbol_;
       }
       /**
-       * <code>optional bool symbol = 5 [json_name = "symbol"];</code>
+       * <code>optional bool symbol = 6 [json_name = "symbol"];</code>
        * @param value The symbol to set.
        * @return This builder for chaining.
        */
       public Builder setSymbol(boolean value) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         symbol_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool symbol = 5 [json_name = "symbol"];</code>
+       * <code>optional bool symbol = 6 [json_name = "symbol"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSymbol() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         symbol_ = false;
         onChanged();
         return this;
@@ -13057,15 +13156,15 @@ public final class ConfigProto {
 
       private boolean enableForgotLink_ ;
       /**
-       * <code>optional bool enable_forgot_link = 6 [json_name = "enableForgotLink"];</code>
+       * <code>optional bool enable_forgot_link = 7 [json_name = "enableForgotLink"];</code>
        * @return Whether the enableForgotLink field is set.
        */
       @java.lang.Override
       public boolean hasEnableForgotLink() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
-       * <code>optional bool enable_forgot_link = 6 [json_name = "enableForgotLink"];</code>
+       * <code>optional bool enable_forgot_link = 7 [json_name = "enableForgotLink"];</code>
        * @return The enableForgotLink.
        */
       @java.lang.Override
@@ -13073,22 +13172,22 @@ public final class ConfigProto {
         return enableForgotLink_;
       }
       /**
-       * <code>optional bool enable_forgot_link = 6 [json_name = "enableForgotLink"];</code>
+       * <code>optional bool enable_forgot_link = 7 [json_name = "enableForgotLink"];</code>
        * @param value The enableForgotLink to set.
        * @return This builder for chaining.
        */
       public Builder setEnableForgotLink(boolean value) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         enableForgotLink_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool enable_forgot_link = 6 [json_name = "enableForgotLink"];</code>
+       * <code>optional bool enable_forgot_link = 7 [json_name = "enableForgotLink"];</code>
        * @return This builder for chaining.
        */
       public Builder clearEnableForgotLink() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         enableForgotLink_ = false;
         onChanged();
         return this;
@@ -52464,379 +52563,381 @@ public final class ConfigProto {
       "condsB\"\n _conn_max_idle_time_millisecond" +
       "sB\021\n\017_max_open_connsB\010\n\006_traceB\026\n\024_at_re" +
       "st_encrypt_keyB\020\n\016_query_timeoutB\032\n\030_dis" +
-      "able_database_search\"\313\002\n\016ConfigPassword\022" +
+      "able_database_search\"\212\003\n\016ConfigPassword\022" +
       "*\n\016minimum_length\030\001 \001(\005H\000R\rminimumLength" +
-      "\210\001\001\022!\n\tlowercase\030\002 \001(\010H\001R\tlowercase\210\001\001\022\033" +
-      "\n\006number\030\003 \001(\010H\002R\006number\210\001\001\022!\n\tuppercase" +
-      "\030\004 \001(\010H\003R\tuppercase\210\001\001\022\033\n\006symbol\030\005 \001(\010H\004" +
-      "R\006symbol\210\001\001\0221\n\022enable_forgot_link\030\006 \001(\010H" +
-      "\005R\020enableForgotLink\210\001\001B\021\n\017_minimum_lengt" +
-      "hB\014\n\n_lowercaseB\t\n\007_numberB\014\n\n_uppercase" +
-      "B\t\n\007_symbolB\025\n\023_enable_forgot_link\"\340\017\n\nC" +
-      "onfigFile\022;\n\027enable_file_attachments\030\001 \001" +
-      "(\010H\000R\025enableFileAttachments\210\001\001\0225\n\024enable" +
-      "_mobile_upload\030\002 \001(\010H\001R\022enableMobileUplo" +
-      "ad\210\001\001\0229\n\026enable_mobile_download\030\003 \001(\010H\002R" +
-      "\024enableMobileDownload\210\001\001\022\'\n\rmax_file_siz" +
-      "e\030\004 \001(\003H\003R\013maxFileSize\210\001\001\0225\n\024max_image_r" +
-      "esolution\030\005 \001(\003H\004R\022maxImageResolution\210\001\001" +
-      "\022F\n\035max_image_decoder_concurrency\030\006 \001(\003H" +
-      "\005R\032maxImageDecoderConcurrency\210\001\001\022$\n\013driv" +
-      "er_name\030\007 \001(\tH\006R\ndriverName\210\001\001\022!\n\tdirect" +
-      "ory\030\010 \001(\tH\007R\tdirectory\210\001\001\0221\n\022enable_publ" +
-      "ic_link\030\t \001(\010H\010R\020enablePublicLink\210\001\001\022,\n\017" +
-      "extract_content\030\n \001(\010H\tR\016extractContent\210" +
-      "\001\001\0220\n\021archive_recursion\030\013 \001(\010H\nR\020archive" +
-      "Recursion\210\001\001\022-\n\020public_link_salt\030\014 \001(\tH\013" +
-      "R\016publicLinkSalt\210\001\001\022&\n\014initial_font\030\r \001(" +
-      "\tH\014R\013initialFont\210\001\001\0229\n\027amazon_s3_access_" +
-      "key_id\030\016 \001(\tH\rR\023amazonS3AccessKeyId\210\001\001\022A" +
-      "\n\033amazon_s3_secret_access_key\030\017 \001(\tH\016R\027a" +
-      "mazonS3SecretAccessKey\210\001\001\022-\n\020amazon_s3_b" +
-      "ucket\030\020 \001(\tH\017R\016amazonS3Bucket\210\001\001\0226\n\025amaz" +
-      "on_s3_path_prefix\030\021 \001(\tH\020R\022amazonS3PathP" +
-      "refix\210\001\001\022-\n\020amazon_s3_region\030\022 \001(\tH\021R\016am" +
-      "azonS3Region\210\001\001\0221\n\022amazon_s3_endpoint\030\023 " +
-      "\001(\tH\022R\020amazonS3Endpoint\210\001\001\022\'\n\ramazon_s3_" +
-      "ssl\030\024 \001(\010H\023R\013amazonS3Ssl\210\001\001\022.\n\021amazon_s3" +
-      "_sign_v2\030\025 \001(\010H\024R\016amazonS3SignV2\210\001\001\022\'\n\ra" +
-      "mazon_s3_sse\030\026 \001(\010H\025R\013amazonS3Sse\210\001\001\022+\n\017" +
-      "amazon_s3_trace\030\027 \001(\010H\026R\ramazonS3Trace\210\001" +
-      "\001\022W\n&amazon_s3_request_timeout_milliseco" +
-      "nds\030\030 \001(\003H\027R\"amazonS3RequestTimeoutMilli" +
-      "seconds\210\001\001\022J\n amazon_s3_upload_part_size" +
-      "_bytes\030\031 \001(\003H\030R\033amazonS3UploadPartSizeBy" +
-      "tes\210\001\001\022:\n\027amazon_s3_storage_class\030\032 \001(\tH" +
-      "\031R\024amazonS3StorageClass\210\001\001B\032\n\030_enable_fi" +
-      "le_attachmentsB\027\n\025_enable_mobile_uploadB" +
-      "\031\n\027_enable_mobile_downloadB\020\n\016_max_file_" +
-      "sizeB\027\n\025_max_image_resolutionB \n\036_max_im" +
-      "age_decoder_concurrencyB\016\n\014_driver_nameB" +
-      "\014\n\n_directoryB\025\n\023_enable_public_linkB\022\n\020" +
-      "_extract_contentB\024\n\022_archive_recursionB\023" +
-      "\n\021_public_link_saltB\017\n\r_initial_fontB\032\n\030" +
-      "_amazon_s3_access_key_idB\036\n\034_amazon_s3_s" +
-      "ecret_access_keyB\023\n\021_amazon_s3_bucketB\030\n" +
-      "\026_amazon_s3_path_prefixB\023\n\021_amazon_s3_re" +
-      "gionB\025\n\023_amazon_s3_endpointB\020\n\016_amazon_s" +
-      "3_sslB\024\n\022_amazon_s3_sign_v2B\020\n\016_amazon_s" +
-      "3_sseB\022\n\020_amazon_s3_traceB)\n\'_amazon_s3_" +
-      "request_timeout_millisecondsB#\n!_amazon_" +
-      "s3_upload_part_size_bytesB\032\n\030_amazon_s3_" +
-      "storage_class\"\375\016\n\013ConfigEmail\022=\n\030send_em" +
-      "ail_notifications\030\001 \001(\010H\000R\026sendEmailNoti" +
-      "fications\210\001\001\022A\n\032require_email_verificati" +
-      "on\030\002 \001(\010H\001R\030requireEmailVerification\210\001\001\022" +
-      "*\n\016feedback_email\030\003 \001(\tH\002R\rfeedbackEmail" +
-      "\210\001\001\022-\n\020reply_to_address\030\004 \001(\tH\003R\016replyTo" +
-      "Address\210\001\001\022-\n\020enable_smtp_auth\030\005 \001(\010H\004R\016" +
-      "enableSmtpAuth\210\001\001\022(\n\rsmtp_username\030\006 \001(\t" +
-      "H\005R\014smtpUsername\210\001\001\022(\n\rsmtp_password\030\007 \001" +
-      "(\tH\006R\014smtpPassword\210\001\001\022$\n\013smtp_server\030\010 \001" +
-      "(\tH\007R\nsmtpServer\210\001\001\022 \n\tsmtp_port\030\t \001(\tH\010" +
-      "R\010smtpPort\210\001\001\0223\n\023smtp_server_timeout\030\n \001" +
-      "(\005H\tR\021smtpServerTimeout\210\001\001\0224\n\023connection" +
-      "_security\030\013 \001(\tH\nR\022connectionSecurity\210\001\001" +
-      "\022;\n\027send_push_notifications\030\014 \001(\010H\013R\025sen" +
-      "dPushNotifications\210\001\001\022=\n\030push_notificati" +
-      "on_server\030\r \001(\tH\014R\026pushNotificationServe" +
-      "r\210\001\001\022A\n\032push_notification_contents\030\016 \001(\t" +
-      "H\rR\030pushNotificationContents\210\001\001\022=\n\030push_" +
-      "notification_buffer\030\017 \001(\005H\016R\026pushNotific" +
-      "ationBuffer\210\001\001\0227\n\025enable_email_batching\030" +
-      "\020 \001(\010H\017R\023enableEmailBatching\210\001\001\022@\n\032email" +
-      "_batching_buffer_size\030\021 \001(\005H\020R\027emailBatc" +
-      "hingBufferSize\210\001\001\022;\n\027email_batching_inte" +
-      "rval\030\022 \001(\005H\021R\025emailBatchingInterval\210\001\001\022T" +
-      "\n$skip_server_certificate_verification\030\023" +
-      " \001(\010H\022R!skipServerCertificateVerificatio" +
-      "n\210\001\001\022L\n email_notification_contents_type" +
-      "\030\024 \001(\tH\023R\035emailNotificationContentsType\210" +
-      "\001\001\0221\n\022login_button_color\030\025 \001(\tH\024R\020loginB" +
-      "uttonColor\210\001\001\022>\n\031login_button_border_col" +
-      "or\030\026 \001(\tH\025R\026loginButtonBorderColor\210\001\001\022:\n" +
-      "\027login_button_text_color\030\027 \001(\tH\026R\024loginB" +
-      "uttonTextColor\210\001\001B\033\n\031_send_email_notific" +
-      "ationsB\035\n\033_require_email_verificationB\021\n" +
-      "\017_feedback_emailB\023\n\021_reply_to_addressB\023\n" +
-      "\021_enable_smtp_authB\020\n\016_smtp_usernameB\020\n\016" +
-      "_smtp_passwordB\016\n\014_smtp_serverB\014\n\n_smtp_" +
-      "portB\026\n\024_smtp_server_timeoutB\026\n\024_connect" +
-      "ion_securityB\032\n\030_send_push_notifications" +
-      "B\033\n\031_push_notification_serverB\035\n\033_push_n" +
-      "otification_contentsB\033\n\031_push_notificati" +
-      "on_bufferB\030\n\026_enable_email_batchingB\035\n\033_" +
-      "email_batching_buffer_sizeB\032\n\030_email_bat" +
-      "ching_intervalB\'\n%_skip_server_certifica" +
-      "te_verificationB#\n!_email_notification_c" +
-      "ontents_typeB\025\n\023_login_button_colorB\034\n\032_" +
-      "login_button_border_colorB\032\n\030_login_butt" +
-      "on_text_color\"\204\003\n\017ConfigRateLimit\022\033\n\006ena" +
-      "ble\030\001 \001(\010H\000R\006enable\210\001\001\022\034\n\007per_sec\030\002 \001(\005H" +
-      "\001R\006perSec\210\001\001\022 \n\tmax_burst\030\003 \001(\005H\002R\010maxBu" +
-      "rst\210\001\001\022/\n\021memory_store_size\030\004 \001(\005H\003R\017mem" +
-      "oryStoreSize\210\001\001\0222\n\023vary_by_remote_addr\030\005" +
-      " \001(\010H\004R\020varyByRemoteAddr\210\001\001\022%\n\014vary_by_u" +
-      "ser\030\006 \001(\010H\005R\nvaryByUser\210\001\001\022$\n\016vary_by_he" +
-      "ader\030\007 \001(\tR\014varyByHeaderB\t\n\007_enableB\n\n\010_" +
-      "per_secB\014\n\n_max_burstB\024\n\022_memory_store_s" +
-      "izeB\026\n\024_vary_by_remote_addrB\017\n\r_vary_by_" +
-      "user\"\227\001\n\rConfigPrivacy\0221\n\022show_email_add" +
-      "ress\030\001 \001(\010H\000R\020showEmailAddress\210\001\001\022)\n\016sho" +
-      "w_full_name\030\002 \001(\010H\001R\014showFullName\210\001\001B\025\n\023" +
-      "_show_email_addressB\021\n\017_show_full_name\"\357" +
-      "\003\n\rConfigSupport\0226\n\025terms_of_service_lin" +
-      "k\030\001 \001(\tH\000R\022termsOfServiceLink\210\001\001\0223\n\023priv" +
-      "acy_policy_link\030\002 \001(\tH\001R\021privacyPolicyLi" +
-      "nk\210\001\001\022\"\n\nabout_link\030\003 \001(\tH\002R\taboutLink\210\001" +
-      "\001\022 \n\thelp_link\030\004 \001(\tH\003R\010helpLink\210\001\001\0226\n\025r" +
-      "eport_a_problem_link\030\005 \001(\tH\004R\022reportAPro" +
-      "blemLink\210\001\001\0225\n\024forgot_password_link\030\006 \001(" +
-      "\tH\005R\022forgotPasswordLink\210\001\001\022(\n\rsupport_em" +
-      "ail\030\007 \001(\tH\006R\014supportEmail\210\001\001B\030\n\026_terms_o" +
-      "f_service_linkB\026\n\024_privacy_policy_linkB\r" +
-      "\n\013_about_linkB\014\n\n_help_linkB\030\n\026_report_a" +
-      "_problem_linkB\027\n\025_forgot_password_linkB\020" +
-      "\n\016_support_email\"\202\002\n\022ConfigLocalization\022" +
-      "7\n\025default_server_locale\030\001 \001(\tH\000R\023defaul" +
-      "tServerLocale\210\001\001\0227\n\025default_client_local" +
-      "e\030\002 \001(\tH\001R\023defaultClientLocale\210\001\001\0220\n\021ava" +
-      "ilable_locales\030\003 \001(\tH\002R\020availableLocales" +
-      "\210\001\001B\030\n\026_default_server_localeB\030\n\026_defaul" +
-      "t_client_localeB\024\n\022_available_locales\"\325\020" +
-      "\n\nConfigLdap\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001" +
-      "\001\022$\n\013enable_sync\030\002 \001(\010H\001R\nenableSync\210\001\001\022" +
-      "$\n\013ldap_server\030\003 \001(\tH\002R\nldapServer\210\001\001\022 \n" +
-      "\tldap_port\030\004 \001(\005H\003R\010ldapPort\210\001\001\0224\n\023conne" +
-      "ction_security\030\005 \001(\tH\004R\022connectionSecuri" +
-      "ty\210\001\001\022\034\n\007base_dn\030\006 \001(\tH\005R\006baseDn\210\001\001\022(\n\rb" +
-      "ind_username\030\007 \001(\tH\006R\014bindUsername\210\001\001\022(\n" +
-      "\rbind_password\030\010 \001(\tH\007R\014bindPassword\210\001\001\022" +
-      "9\n\026maximum_login_attempts\030\t \001(\005H\010R\024maxim" +
-      "umLoginAttempts\210\001\001\022$\n\013user_filter\030\n \001(\tH" +
-      "\tR\nuserFilter\210\001\001\022&\n\014group_filter\030\013 \001(\tH\n" +
-      "R\013groupFilter\210\001\001\0223\n\023enable_admin_filter\030" +
-      "\014 \001(\010H\013R\021enableAdminFilter\210\001\001\022&\n\014admin_f" +
-      "ilter\030\r \001(\tH\014R\013adminFilter\210\001\001\022D\n\034group_d" +
-      "isplay_name_attribute\030\016 \001(\tH\rR\031groupDisp" +
-      "layNameAttribute\210\001\001\0221\n\022group_id_attribut" +
-      "e\030\017 \001(\tH\016R\020groupIdAttribute\210\001\001\0225\n\024first_" +
-      "name_attribute\030\020 \001(\tH\017R\022firstNameAttribu" +
-      "te\210\001\001\0223\n\023last_name_attribute\030\021 \001(\tH\020R\021la" +
-      "stNameAttribute\210\001\001\022,\n\017email_attribute\030\022 " +
-      "\001(\tH\021R\016emailAttribute\210\001\001\0222\n\022username_att" +
-      "ribute\030\023 \001(\tH\022R\021usernameAttribute\210\001\001\0222\n\022" +
-      "nickname_attribute\030\024 \001(\tH\023R\021nicknameAttr" +
-      "ibute\210\001\001\022&\n\014id_attribute\030\025 \001(\tH\024R\013idAttr" +
-      "ibute\210\001\001\0222\n\022position_attribute\030\026 \001(\tH\025R\021" +
-      "positionAttribute\210\001\001\0221\n\022login_id_attribu" +
-      "te\030\027 \001(\tH\026R\020loginIdAttribute\210\001\001\0220\n\021pictu" +
-      "re_attribute\030\030 \001(\tH\027R\020pictureAttribute\210\001" +
-      "\001\0227\n\025sync_interval_minutes\030\031 \001(\005H\030R\023sync" +
-      "IntervalMinutes\210\001\001\022(\n\rquery_timeout\030\032 \001(" +
-      "\005H\031R\014queryTimeout\210\001\001\022\'\n\rmax_page_size\030\033 " +
-      "\001(\005H\032R\013maxPageSize\210\001\001\022-\n\020login_field_nam" +
-      "e\030\034 \001(\tH\033R\016loginFieldName\210\001\001\0221\n\022login_bu" +
-      "tton_color\030\035 \001(\tH\034R\020loginButtonColor\210\001\001\022" +
-      ">\n\031login_button_border_color\030\036 \001(\tH\035R\026lo" +
-      "ginButtonBorderColor\210\001\001\022:\n\027login_button_" +
-      "text_color\030\037 \001(\tH\036R\024loginButtonTextColor" +
-      "\210\001\001B\t\n\007_enableB\016\n\014_enable_syncB\016\n\014_ldap_" +
-      "serverB\014\n\n_ldap_portB\026\n\024_connection_secu" +
-      "rityB\n\n\010_base_dnB\020\n\016_bind_usernameB\020\n\016_b" +
-      "ind_passwordB\031\n\027_maximum_login_attemptsB" +
-      "\016\n\014_user_filterB\017\n\r_group_filterB\026\n\024_ena" +
-      "ble_admin_filterB\017\n\r_admin_filterB\037\n\035_gr" +
-      "oup_display_name_attributeB\025\n\023_group_id_" +
-      "attributeB\027\n\025_first_name_attributeB\026\n\024_l" +
-      "ast_name_attributeB\022\n\020_email_attributeB\025" +
-      "\n\023_username_attributeB\025\n\023_nickname_attri" +
-      "buteB\017\n\r_id_attributeB\025\n\023_position_attri" +
-      "buteB\025\n\023_login_id_attributeB\024\n\022_picture_" +
-      "attributeB\030\n\026_sync_interval_minutesB\020\n\016_" +
-      "query_timeoutB\020\n\016_max_page_sizeB\023\n\021_logi" +
-      "n_field_nameB\025\n\023_login_button_colorB\034\n\032_" +
-      "login_button_border_colorB\032\n\030_login_butt" +
-      "on_text_color\"\255\023\n\nConfigSaml\022\033\n\006enable\030\001" +
-      " \001(\010H\000R\006enable\210\001\001\0226\n\025enable_sync_with_ld" +
-      "ap\030\002 \001(\010H\001R\022enableSyncWithLdap\210\001\001\022N\n\"ena" +
-      "ble_sync_with_ldap_include_auth\030\003 \001(\010H\002R" +
-      "\035enableSyncWithLdapIncludeAuth\210\001\001\022:\n\027ign" +
-      "ore_guests_ldap_sync\030\004 \001(\010H\003R\024ignoreGues" +
-      "tsLdapSync\210\001\001\022\033\n\006verify\030\005 \001(\010H\004R\006verify\210" +
-      "\001\001\022\035\n\007encrypt\030\006 \001(\010H\005R\007encrypt\210\001\001\022&\n\014sig" +
-      "n_request\030\007 \001(\010H\006R\013signRequest\210\001\001\022\034\n\007idp" +
-      "_url\030\010 \001(\tH\007R\006idpUrl\210\001\001\0221\n\022idp_descripto" +
-      "r_url\030\t \001(\tH\010R\020idpDescriptorUrl\210\001\001\022-\n\020id" +
-      "p_metadata_url\030\n \001(\tH\tR\016idpMetadataUrl\210\001" +
-      "\001\022C\n\033service_provider_identifier\030\013 \001(\tH\n" +
-      "R\031serviceProviderIdentifier\210\001\001\022H\n\036assert" +
-      "ion_consumer_service_url\030\014 \001(\tH\013R\033assert" +
-      "ionConsumerServiceUrl\210\001\001\0224\n\023signature_al" +
-      "gorithm\030\r \001(\tH\014R\022signatureAlgorithm\210\001\001\0224" +
-      "\n\023canonical_algorithm\030\016 \001(\tH\rR\022canonical" +
-      "Algorithm\210\001\001\022:\n\027scoping_idp_provider_id\030" +
-      "\017 \001(\tH\016R\024scopingIdpProviderId\210\001\001\022-\n\020scop" +
-      "ing_idp_name\030\020 \001(\tH\017R\016scopingIdpName\210\001\001\022" +
-      "5\n\024idp_certificate_file\030\021 \001(\tH\020R\022idpCert" +
-      "ificateFile\210\001\001\022;\n\027public_certificate_fil" +
-      "e\030\022 \001(\tH\021R\025publicCertificateFile\210\001\001\022-\n\020p" +
-      "rivate_key_file\030\023 \001(\tH\022R\016privateKeyFile\210" +
-      "\001\001\022&\n\014id_attribute\030\024 \001(\tH\023R\013idAttribute\210" +
-      "\001\001\0229\n\026enable_admin_attribute\030\025 \001(\010H\024R\024en" +
-      "ableAdminAttribute\210\001\001\022,\n\017admin_attribute" +
-      "\030\026 \001(\tH\025R\016adminAttribute\210\001\001\0225\n\024first_nam" +
-      "e_attribute\030\027 \001(\tH\026R\022firstNameAttribute\210" +
-      "\001\001\0223\n\023last_name_attribute\030\030 \001(\tH\027R\021lastN" +
-      "ameAttribute\210\001\001\022,\n\017email_attribute\030\031 \001(\t" +
-      "H\030R\016emailAttribute\210\001\001\0222\n\022username_attrib" +
-      "ute\030\032 \001(\tH\031R\021usernameAttribute\210\001\001\0222\n\022nic" +
-      "kname_attribute\030\033 \001(\tH\032R\021nicknameAttribu" +
-      "te\210\001\001\022.\n\020locale_attribute\030\034 \001(\tH\033R\017local" +
-      "eAttribute\210\001\001\0222\n\022position_attribute\030\035 \001(" +
-      "\tH\034R\021positionAttribute\210\001\001\022/\n\021login_butto" +
-      "n_text\030\036 \001(\tH\035R\017loginButtonText\210\001\001\0221\n\022lo" +
-      "gin_button_color\030\037 \001(\tH\036R\020loginButtonCol" +
-      "or\210\001\001\022>\n\031login_button_border_color\030  \001(\t" +
-      "H\037R\026loginButtonBorderColor\210\001\001\022:\n\027login_b" +
-      "utton_text_color\030! \001(\tH R\024loginButtonTex" +
-      "tColor\210\001\001B\t\n\007_enableB\030\n\026_enable_sync_wit" +
-      "h_ldapB%\n#_enable_sync_with_ldap_include" +
-      "_authB\032\n\030_ignore_guests_ldap_syncB\t\n\007_ve" +
-      "rifyB\n\n\010_encryptB\017\n\r_sign_requestB\n\n\010_id" +
-      "p_urlB\025\n\023_idp_descriptor_urlB\023\n\021_idp_met" +
-      "adata_urlB\036\n\034_service_provider_identifie" +
-      "rB!\n\037_assertion_consumer_service_urlB\026\n\024" +
-      "_signature_algorithmB\026\n\024_canonical_algor" +
-      "ithmB\032\n\030_scoping_idp_provider_idB\023\n\021_sco",
-      "ping_idp_nameB\027\n\025_idp_certificate_fileB\032" +
-      "\n\030_public_certificate_fileB\023\n\021_private_k" +
-      "ey_fileB\017\n\r_id_attributeB\031\n\027_enable_admi" +
-      "n_attributeB\022\n\020_admin_attributeB\027\n\025_firs" +
-      "t_name_attributeB\026\n\024_last_name_attribute" +
-      "B\022\n\020_email_attributeB\025\n\023_username_attrib" +
-      "uteB\025\n\023_nickname_attributeB\023\n\021_locale_at" +
-      "tributeB\025\n\023_position_attributeB\024\n\022_login" +
-      "_button_textB\025\n\023_login_button_colorB\034\n\032_" +
-      "login_button_border_colorB\032\n\030_login_butt" +
-      "on_text_color\"\301\005\n\017ConfigNativeApp\0223\n\026app" +
-      "_custom_url_schemes\030\001 \003(\tR\023appCustomUrlS" +
-      "chemes\022/\n\021app_download_link\030\002 \001(\tH\000R\017app" +
-      "DownloadLink\210\001\001\022>\n\031android_app_download_" +
-      "link\030\003 \001(\tH\001R\026androidAppDownloadLink\210\001\001\022" +
-      "6\n\025ios_app_download_link\030\004 \001(\tH\002R\022iosApp" +
-      "DownloadLink\210\001\001\022;\n\027mobile_external_brows" +
-      "er\030\005 \001(\010H\003R\025mobileExternalBrowser\210\001\001\022=\n\030" +
-      "mobile_enable_biometrics\030\006 \001(\010H\004R\026mobile" +
-      "EnableBiometrics\210\001\001\022F\n\035mobile_prevent_sc" +
-      "reen_capture\030\007 \001(\010H\005R\032mobilePreventScree" +
-      "nCapture\210\001\001\022C\n\033mobile_jailbreak_protecti" +
-      "on\030\010 \001(\010H\006R\031mobileJailbreakProtection\210\001\001" +
-      "B\024\n\022_app_download_linkB\034\n\032_android_app_d" +
-      "ownload_linkB\030\n\026_ios_app_download_linkB\032" +
-      "\n\030_mobile_external_browserB\033\n\031_mobile_en" +
-      "able_biometricsB \n\036_mobile_prevent_scree" +
-      "n_captureB\036\n\034_mobile_jailbreak_protectio" +
-      "n\"\253\005\n\021ConfigMeilisearch\022#\n\nserver_url\030\001 " +
-      "\001(\tH\000R\nserver_url\210\001\001\022\"\n\nmaster_key\030\002 \001(\t" +
-      "H\001R\tmasterKey\210\001\001\022,\n\017enable_indexing\030\003 \001(" +
-      "\010H\002R\016enableIndexing\210\001\001\022.\n\020enable_searchi" +
-      "ng\030\004 \001(\010H\003R\017enableSearching\210\001\001\0224\n\023enable" +
-      "_autocomplete\030\005 \001(\010H\004R\022enableAutocomplet" +
-      "e\210\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001" +
-      "\022;\n\027request_timeout_seconds\030\007 \001(\005H\006R\025req" +
-      "uestTimeoutSeconds\210\001\001\022&\n\014index_prefix\030\010 " +
-      "\001(\tH\007R\013indexPrefix\210\001\001\022-\n\020search_cutoff_m" +
-      "s\030\t \001(\005H\010R\016searchCutoffMs\210\001\001\0227\n\025enable_t" +
-      "ypo_tolerance\030\n \001(\010H\tR\023enableTypoToleran" +
-      "ce\210\001\001B\r\n\013_server_urlB\r\n\013_master_keyB\022\n\020_" +
-      "enable_indexingB\023\n\021_enable_searchingB\026\n\024" +
-      "_enable_autocompleteB\r\n\013_batch_sizeB\032\n\030_" +
-      "request_timeout_secondsB\017\n\r_index_prefix" +
-      "B\023\n\021_search_cutoff_msB\030\n\026_enable_typo_to" +
-      "lerance\"\272\003\n\013ConfigBleve\022 \n\tindex_dir\030\001 \001" +
-      "(\tH\000R\010indexDir\210\001\001\022,\n\017enable_indexing\030\002 \001" +
-      "(\010H\001R\016enableIndexing\210\001\001\022.\n\020enable_search" +
-      "ing\030\003 \001(\010H\002R\017enableSearching\210\001\001\0224\n\023enabl" +
-      "e_autocomplete\030\004 \001(\010H\003R\022enableAutocomple" +
-      "te\210\001\001\022M\n!bulk_indexing_time_window_secon" +
-      "ds\030\005 \001(\005H\004R\035bulkIndexingTimeWindowSecond" +
-      "s\210\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001" +
-      "B\014\n\n_index_dirB\022\n\020_enable_indexingB\023\n\021_e" +
-      "nable_searchingB\026\n\024_enable_autocompleteB" +
-      "$\n\"_bulk_indexing_time_window_secondsB\r\n" +
-      "\013_batch_size\"\354\006\n\023ConfigDataRetention\022;\n\027" +
-      "enable_message_deletion\030\001 \001(\010H\000R\025enableM" +
-      "essageDeletion\210\001\001\0225\n\024enable_file_deletio" +
-      "n\030\002 \001(\010H\001R\022enableFileDeletion\210\001\001\0229\n\026enab" +
-      "le_boards_deletion\030\003 \001(\010H\002R\024enableBoards" +
-      "Deletion\210\001\001\022;\n\027message_retention_hours\030\004" +
-      " \001(\005H\003R\025messageRetentionHours\210\001\001\0225\n\024file" +
-      "_retention_hours\030\005 \001(\005H\004R\022fileRetentionH" +
-      "ours\210\001\001\0227\n\025boards_retention_days\030\006 \001(\005H\005" +
-      "R\023boardsRetentionDays\210\001\001\022:\n\027deletion_job" +
-      "_start_time\030\007 \001(\tH\006R\024deletionJobStartTim" +
-      "e\210\001\001\022\"\n\nbatch_size\030\010 \001(\005H\007R\tbatchSize\210\001\001" +
-      "\022N\n!time_between_batches_milliseconds\030\t " +
-      "\001(\005H\010R\036timeBetweenBatchesMilliseconds\210\001\001" +
-      "\022<\n\030retention_ids_batch_size\030\n \001(\005H\tR\025re" +
-      "tentionIdsBatchSize\210\001\001B\032\n\030_enable_messag" +
-      "e_deletionB\027\n\025_enable_file_deletionB\031\n\027_" +
-      "enable_boards_deletionB\032\n\030_message_reten" +
-      "tion_hoursB\027\n\025_file_retention_hoursB\030\n\026_" +
-      "boards_retention_daysB\032\n\030_deletion_job_s" +
-      "tart_timeB\r\n\013_batch_sizeB$\n\"_time_betwee" +
-      "n_batches_millisecondsB\033\n\031_retention_ids" +
-      "_batch_size\"\264\002\n\020ConfigImageProxy\022\033\n\006enab" +
-      "le\030\001 \001(\010H\000R\006enable\210\001\001\022-\n\020image_proxy_typ" +
-      "e\030\002 \001(\tH\001R\016imageProxyType\210\001\001\0228\n\026remote_i" +
-      "mage_proxy_url\030\003 \001(\tH\002R\023remoteImageProxy" +
-      "Url\210\001\001\022@\n\032remote_image_proxy_options\030\004 \001" +
-      "(\tH\003R\027remoteImageProxyOptions\210\001\001B\t\n\007_ena" +
-      "bleB\023\n\021_image_proxy_typeB\031\n\027_remote_imag" +
-      "e_proxy_urlB\035\n\033_remote_image_proxy_optio" +
-      "ns\"\315\010\n\006Config\022)\n\004main\030\001 \001(\0132\025.common.v1." +
-      "ConfigMainR\004main\0225\n\010services\030\002 \001(\0132\031.com" +
-      "mon.v1.ConfigServicesR\010services\0225\n\010secur" +
-      "ity\030\003 \001(\0132\031.common.v1.ConfigSecurityR\010se" +
-      "curity\022,\n\005cache\030\004 \001(\0132\026.common.v1.CacheC" +
-      "onfigR\005cache\0222\n\007metrics\030\005 \001(\0132\030.common.v" +
-      "1.ConfigMetricsR\007metrics\022&\n\003sso\030\006 \001(\0132\024." +
-      "common.v1.ConfigSSOR\003sso\022&\n\003sql\030\007 \001(\0132\024." +
-      "common.v1.ConfigSqlR\003sql\0225\n\010password\030\010 \001" +
-      "(\0132\031.common.v1.ConfigPasswordR\010password\022" +
-      ")\n\004file\030\t \001(\0132\025.common.v1.ConfigFileR\004fi" +
-      "le\022,\n\005email\030\n \001(\0132\026.common.v1.ConfigEmai" +
-      "lR\005email\0229\n\nrate_limit\030\013 \001(\0132\032.common.v1" +
-      ".ConfigRateLimitR\trateLimit\0222\n\007privacy\030\014" +
-      " \001(\0132\030.common.v1.ConfigPrivacyR\007privacy\022" +
-      "2\n\007support\030\r \001(\0132\030.common.v1.ConfigSuppo" +
-      "rtR\007support\022A\n\014localization\030\016 \001(\0132\035.comm" +
-      "on.v1.ConfigLocalizationR\014localization\022)" +
-      "\n\004ldap\030\017 \001(\0132\025.common.v1.ConfigLdapR\004lda" +
-      "p\022)\n\004saml\030\020 \001(\0132\025.common.v1.ConfigSamlR\004" +
-      "saml\0229\n\nnative_app\030\021 \001(\0132\032.common.v1.Con" +
-      "figNativeAppR\tnativeApp\022>\n\013meilisearch\030\022" +
-      " \001(\0132\034.common.v1.ConfigMeilisearchR\013meil" +
-      "isearch\022,\n\005bleve\030\023 \001(\0132\026.common.v1.Confi" +
-      "gBleveR\005bleve\022E\n\016data_retention\030\024 \001(\0132\036." +
-      "common.v1.ConfigDataRetentionR\rdataReten" +
-      "tion\022<\n\013image_proxy\030\025 \001(\0132\033.common.v1.Co" +
-      "nfigImageProxyR\nimageProxy\"\022\n\020ConfigGetR" +
-      "equest\"u\n\021ConfigGetResponse\022\'\n\004data\030\001 \001(" +
-      "\0132\021.common.v1.ConfigH\000R\004data\022+\n\005error\030\002 " +
-      "\001(\0132\023.common.v1.AppErrorH\000R\005errorB\n\n\010res" +
-      "ponse\"@\n\023ConfigUpdateRequest\022)\n\006config\030\001" +
-      " \001(\0132\021.common.v1.ConfigR\006config\"x\n\024Confi" +
-      "gUpdateResponse\022\'\n\004data\030\001 \001(\0132\021.common.v" +
-      "1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.common" +
-      ".v1.AppErrorH\000R\005errorB\n\n\010response\"z\n\026Con" +
-      "figListenerResponse\022\'\n\004data\030\001 \001(\0132\021.comm" +
-      "on.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.co" +
-      "mmon.v1.AppErrorH\000R\005errorB\n\n\010response\"4\n" +
-      "\025ConfigListenerRequest\022\033\n\tclient_id\030\001 \001(" +
-      "\tR\010clientIdB:\n\032org.megacommerce.common.v" +
-      "1B\013ConfigProtoZ\014common/v1;v1\370\001\001b\006proto3"
+      "\210\001\001\022*\n\016maximum_lenght\030\002 \001(\005H\001R\rmaximumLe" +
+      "nght\210\001\001\022!\n\tlowercase\030\003 \001(\010H\002R\tlowercase\210" +
+      "\001\001\022\033\n\006number\030\004 \001(\010H\003R\006number\210\001\001\022!\n\tupper" +
+      "case\030\005 \001(\010H\004R\tuppercase\210\001\001\022\033\n\006symbol\030\006 \001" +
+      "(\010H\005R\006symbol\210\001\001\0221\n\022enable_forgot_link\030\007 " +
+      "\001(\010H\006R\020enableForgotLink\210\001\001B\021\n\017_minimum_l" +
+      "engthB\021\n\017_maximum_lenghtB\014\n\n_lowercaseB\t" +
+      "\n\007_numberB\014\n\n_uppercaseB\t\n\007_symbolB\025\n\023_e" +
+      "nable_forgot_link\"\340\017\n\nConfigFile\022;\n\027enab" +
+      "le_file_attachments\030\001 \001(\010H\000R\025enableFileA" +
+      "ttachments\210\001\001\0225\n\024enable_mobile_upload\030\002 " +
+      "\001(\010H\001R\022enableMobileUpload\210\001\001\0229\n\026enable_m" +
+      "obile_download\030\003 \001(\010H\002R\024enableMobileDown" +
+      "load\210\001\001\022\'\n\rmax_file_size\030\004 \001(\003H\003R\013maxFil" +
+      "eSize\210\001\001\0225\n\024max_image_resolution\030\005 \001(\003H\004" +
+      "R\022maxImageResolution\210\001\001\022F\n\035max_image_dec" +
+      "oder_concurrency\030\006 \001(\003H\005R\032maxImageDecode" +
+      "rConcurrency\210\001\001\022$\n\013driver_name\030\007 \001(\tH\006R\n" +
+      "driverName\210\001\001\022!\n\tdirectory\030\010 \001(\tH\007R\tdire" +
+      "ctory\210\001\001\0221\n\022enable_public_link\030\t \001(\010H\010R\020" +
+      "enablePublicLink\210\001\001\022,\n\017extract_content\030\n" +
+      " \001(\010H\tR\016extractContent\210\001\001\0220\n\021archive_rec" +
+      "ursion\030\013 \001(\010H\nR\020archiveRecursion\210\001\001\022-\n\020p" +
+      "ublic_link_salt\030\014 \001(\tH\013R\016publicLinkSalt\210" +
+      "\001\001\022&\n\014initial_font\030\r \001(\tH\014R\013initialFont\210" +
+      "\001\001\0229\n\027amazon_s3_access_key_id\030\016 \001(\tH\rR\023a" +
+      "mazonS3AccessKeyId\210\001\001\022A\n\033amazon_s3_secre" +
+      "t_access_key\030\017 \001(\tH\016R\027amazonS3SecretAcce" +
+      "ssKey\210\001\001\022-\n\020amazon_s3_bucket\030\020 \001(\tH\017R\016am" +
+      "azonS3Bucket\210\001\001\0226\n\025amazon_s3_path_prefix" +
+      "\030\021 \001(\tH\020R\022amazonS3PathPrefix\210\001\001\022-\n\020amazo" +
+      "n_s3_region\030\022 \001(\tH\021R\016amazonS3Region\210\001\001\0221" +
+      "\n\022amazon_s3_endpoint\030\023 \001(\tH\022R\020amazonS3En" +
+      "dpoint\210\001\001\022\'\n\ramazon_s3_ssl\030\024 \001(\010H\023R\013amaz" +
+      "onS3Ssl\210\001\001\022.\n\021amazon_s3_sign_v2\030\025 \001(\010H\024R" +
+      "\016amazonS3SignV2\210\001\001\022\'\n\ramazon_s3_sse\030\026 \001(" +
+      "\010H\025R\013amazonS3Sse\210\001\001\022+\n\017amazon_s3_trace\030\027" +
+      " \001(\010H\026R\ramazonS3Trace\210\001\001\022W\n&amazon_s3_re" +
+      "quest_timeout_milliseconds\030\030 \001(\003H\027R\"amaz" +
+      "onS3RequestTimeoutMilliseconds\210\001\001\022J\n ama" +
+      "zon_s3_upload_part_size_bytes\030\031 \001(\003H\030R\033a" +
+      "mazonS3UploadPartSizeBytes\210\001\001\022:\n\027amazon_" +
+      "s3_storage_class\030\032 \001(\tH\031R\024amazonS3Storag" +
+      "eClass\210\001\001B\032\n\030_enable_file_attachmentsB\027\n" +
+      "\025_enable_mobile_uploadB\031\n\027_enable_mobile" +
+      "_downloadB\020\n\016_max_file_sizeB\027\n\025_max_imag" +
+      "e_resolutionB \n\036_max_image_decoder_concu" +
+      "rrencyB\016\n\014_driver_nameB\014\n\n_directoryB\025\n\023" +
+      "_enable_public_linkB\022\n\020_extract_contentB" +
+      "\024\n\022_archive_recursionB\023\n\021_public_link_sa" +
+      "ltB\017\n\r_initial_fontB\032\n\030_amazon_s3_access" +
+      "_key_idB\036\n\034_amazon_s3_secret_access_keyB" +
+      "\023\n\021_amazon_s3_bucketB\030\n\026_amazon_s3_path_" +
+      "prefixB\023\n\021_amazon_s3_regionB\025\n\023_amazon_s" +
+      "3_endpointB\020\n\016_amazon_s3_sslB\024\n\022_amazon_" +
+      "s3_sign_v2B\020\n\016_amazon_s3_sseB\022\n\020_amazon_" +
+      "s3_traceB)\n\'_amazon_s3_request_timeout_m" +
+      "illisecondsB#\n!_amazon_s3_upload_part_si" +
+      "ze_bytesB\032\n\030_amazon_s3_storage_class\"\375\016\n" +
+      "\013ConfigEmail\022=\n\030send_email_notifications" +
+      "\030\001 \001(\010H\000R\026sendEmailNotifications\210\001\001\022A\n\032r" +
+      "equire_email_verification\030\002 \001(\010H\001R\030requi" +
+      "reEmailVerification\210\001\001\022*\n\016feedback_email" +
+      "\030\003 \001(\tH\002R\rfeedbackEmail\210\001\001\022-\n\020reply_to_a" +
+      "ddress\030\004 \001(\tH\003R\016replyToAddress\210\001\001\022-\n\020ena" +
+      "ble_smtp_auth\030\005 \001(\010H\004R\016enableSmtpAuth\210\001\001" +
+      "\022(\n\rsmtp_username\030\006 \001(\tH\005R\014smtpUsername\210" +
+      "\001\001\022(\n\rsmtp_password\030\007 \001(\tH\006R\014smtpPasswor" +
+      "d\210\001\001\022$\n\013smtp_server\030\010 \001(\tH\007R\nsmtpServer\210" +
+      "\001\001\022 \n\tsmtp_port\030\t \001(\tH\010R\010smtpPort\210\001\001\0223\n\023" +
+      "smtp_server_timeout\030\n \001(\005H\tR\021smtpServerT" +
+      "imeout\210\001\001\0224\n\023connection_security\030\013 \001(\tH\n" +
+      "R\022connectionSecurity\210\001\001\022;\n\027send_push_not" +
+      "ifications\030\014 \001(\010H\013R\025sendPushNotification" +
+      "s\210\001\001\022=\n\030push_notification_server\030\r \001(\tH\014" +
+      "R\026pushNotificationServer\210\001\001\022A\n\032push_noti" +
+      "fication_contents\030\016 \001(\tH\rR\030pushNotificat" +
+      "ionContents\210\001\001\022=\n\030push_notification_buff" +
+      "er\030\017 \001(\005H\016R\026pushNotificationBuffer\210\001\001\0227\n" +
+      "\025enable_email_batching\030\020 \001(\010H\017R\023enableEm" +
+      "ailBatching\210\001\001\022@\n\032email_batching_buffer_" +
+      "size\030\021 \001(\005H\020R\027emailBatchingBufferSize\210\001\001" +
+      "\022;\n\027email_batching_interval\030\022 \001(\005H\021R\025ema" +
+      "ilBatchingInterval\210\001\001\022T\n$skip_server_cer" +
+      "tificate_verification\030\023 \001(\010H\022R!skipServe" +
+      "rCertificateVerification\210\001\001\022L\n email_not" +
+      "ification_contents_type\030\024 \001(\tH\023R\035emailNo" +
+      "tificationContentsType\210\001\001\0221\n\022login_butto" +
+      "n_color\030\025 \001(\tH\024R\020loginButtonColor\210\001\001\022>\n\031" +
+      "login_button_border_color\030\026 \001(\tH\025R\026login" +
+      "ButtonBorderColor\210\001\001\022:\n\027login_button_tex" +
+      "t_color\030\027 \001(\tH\026R\024loginButtonTextColor\210\001\001" +
+      "B\033\n\031_send_email_notificationsB\035\n\033_requir" +
+      "e_email_verificationB\021\n\017_feedback_emailB" +
+      "\023\n\021_reply_to_addressB\023\n\021_enable_smtp_aut" +
+      "hB\020\n\016_smtp_usernameB\020\n\016_smtp_passwordB\016\n" +
+      "\014_smtp_serverB\014\n\n_smtp_portB\026\n\024_smtp_ser" +
+      "ver_timeoutB\026\n\024_connection_securityB\032\n\030_" +
+      "send_push_notificationsB\033\n\031_push_notific" +
+      "ation_serverB\035\n\033_push_notification_conte" +
+      "ntsB\033\n\031_push_notification_bufferB\030\n\026_ena" +
+      "ble_email_batchingB\035\n\033_email_batching_bu" +
+      "ffer_sizeB\032\n\030_email_batching_intervalB\'\n" +
+      "%_skip_server_certificate_verificationB#" +
+      "\n!_email_notification_contents_typeB\025\n\023_" +
+      "login_button_colorB\034\n\032_login_button_bord" +
+      "er_colorB\032\n\030_login_button_text_color\"\204\003\n" +
+      "\017ConfigRateLimit\022\033\n\006enable\030\001 \001(\010H\000R\006enab" +
+      "le\210\001\001\022\034\n\007per_sec\030\002 \001(\005H\001R\006perSec\210\001\001\022 \n\tm" +
+      "ax_burst\030\003 \001(\005H\002R\010maxBurst\210\001\001\022/\n\021memory_" +
+      "store_size\030\004 \001(\005H\003R\017memoryStoreSize\210\001\001\0222" +
+      "\n\023vary_by_remote_addr\030\005 \001(\010H\004R\020varyByRem" +
+      "oteAddr\210\001\001\022%\n\014vary_by_user\030\006 \001(\010H\005R\nvary" +
+      "ByUser\210\001\001\022$\n\016vary_by_header\030\007 \001(\tR\014varyB" +
+      "yHeaderB\t\n\007_enableB\n\n\010_per_secB\014\n\n_max_b" +
+      "urstB\024\n\022_memory_store_sizeB\026\n\024_vary_by_r" +
+      "emote_addrB\017\n\r_vary_by_user\"\227\001\n\rConfigPr" +
+      "ivacy\0221\n\022show_email_address\030\001 \001(\010H\000R\020sho" +
+      "wEmailAddress\210\001\001\022)\n\016show_full_name\030\002 \001(\010" +
+      "H\001R\014showFullName\210\001\001B\025\n\023_show_email_addre" +
+      "ssB\021\n\017_show_full_name\"\357\003\n\rConfigSupport\022" +
+      "6\n\025terms_of_service_link\030\001 \001(\tH\000R\022termsO" +
+      "fServiceLink\210\001\001\0223\n\023privacy_policy_link\030\002" +
+      " \001(\tH\001R\021privacyPolicyLink\210\001\001\022\"\n\nabout_li" +
+      "nk\030\003 \001(\tH\002R\taboutLink\210\001\001\022 \n\thelp_link\030\004 " +
+      "\001(\tH\003R\010helpLink\210\001\001\0226\n\025report_a_problem_l" +
+      "ink\030\005 \001(\tH\004R\022reportAProblemLink\210\001\001\0225\n\024fo" +
+      "rgot_password_link\030\006 \001(\tH\005R\022forgotPasswo" +
+      "rdLink\210\001\001\022(\n\rsupport_email\030\007 \001(\tH\006R\014supp" +
+      "ortEmail\210\001\001B\030\n\026_terms_of_service_linkB\026\n" +
+      "\024_privacy_policy_linkB\r\n\013_about_linkB\014\n\n" +
+      "_help_linkB\030\n\026_report_a_problem_linkB\027\n\025" +
+      "_forgot_password_linkB\020\n\016_support_email\"" +
+      "\202\002\n\022ConfigLocalization\0227\n\025default_server" +
+      "_locale\030\001 \001(\tH\000R\023defaultServerLocale\210\001\001\022" +
+      "7\n\025default_client_locale\030\002 \001(\tH\001R\023defaul" +
+      "tClientLocale\210\001\001\0220\n\021available_locales\030\003 " +
+      "\001(\tH\002R\020availableLocales\210\001\001B\030\n\026_default_s" +
+      "erver_localeB\030\n\026_default_client_localeB\024" +
+      "\n\022_available_locales\"\325\020\n\nConfigLdap\022\033\n\006e" +
+      "nable\030\001 \001(\010H\000R\006enable\210\001\001\022$\n\013enable_sync\030" +
+      "\002 \001(\010H\001R\nenableSync\210\001\001\022$\n\013ldap_server\030\003 " +
+      "\001(\tH\002R\nldapServer\210\001\001\022 \n\tldap_port\030\004 \001(\005H" +
+      "\003R\010ldapPort\210\001\001\0224\n\023connection_security\030\005 " +
+      "\001(\tH\004R\022connectionSecurity\210\001\001\022\034\n\007base_dn\030" +
+      "\006 \001(\tH\005R\006baseDn\210\001\001\022(\n\rbind_username\030\007 \001(" +
+      "\tH\006R\014bindUsername\210\001\001\022(\n\rbind_password\030\010 " +
+      "\001(\tH\007R\014bindPassword\210\001\001\0229\n\026maximum_login_" +
+      "attempts\030\t \001(\005H\010R\024maximumLoginAttempts\210\001" +
+      "\001\022$\n\013user_filter\030\n \001(\tH\tR\nuserFilter\210\001\001\022" +
+      "&\n\014group_filter\030\013 \001(\tH\nR\013groupFilter\210\001\001\022" +
+      "3\n\023enable_admin_filter\030\014 \001(\010H\013R\021enableAd" +
+      "minFilter\210\001\001\022&\n\014admin_filter\030\r \001(\tH\014R\013ad" +
+      "minFilter\210\001\001\022D\n\034group_display_name_attri" +
+      "bute\030\016 \001(\tH\rR\031groupDisplayNameAttribute\210" +
+      "\001\001\0221\n\022group_id_attribute\030\017 \001(\tH\016R\020groupI" +
+      "dAttribute\210\001\001\0225\n\024first_name_attribute\030\020 " +
+      "\001(\tH\017R\022firstNameAttribute\210\001\001\0223\n\023last_nam" +
+      "e_attribute\030\021 \001(\tH\020R\021lastNameAttribute\210\001" +
+      "\001\022,\n\017email_attribute\030\022 \001(\tH\021R\016emailAttri" +
+      "bute\210\001\001\0222\n\022username_attribute\030\023 \001(\tH\022R\021u" +
+      "sernameAttribute\210\001\001\0222\n\022nickname_attribut" +
+      "e\030\024 \001(\tH\023R\021nicknameAttribute\210\001\001\022&\n\014id_at" +
+      "tribute\030\025 \001(\tH\024R\013idAttribute\210\001\001\0222\n\022posit" +
+      "ion_attribute\030\026 \001(\tH\025R\021positionAttribute" +
+      "\210\001\001\0221\n\022login_id_attribute\030\027 \001(\tH\026R\020login" +
+      "IdAttribute\210\001\001\0220\n\021picture_attribute\030\030 \001(" +
+      "\tH\027R\020pictureAttribute\210\001\001\0227\n\025sync_interva" +
+      "l_minutes\030\031 \001(\005H\030R\023syncIntervalMinutes\210\001" +
+      "\001\022(\n\rquery_timeout\030\032 \001(\005H\031R\014queryTimeout" +
+      "\210\001\001\022\'\n\rmax_page_size\030\033 \001(\005H\032R\013maxPageSiz" +
+      "e\210\001\001\022-\n\020login_field_name\030\034 \001(\tH\033R\016loginF" +
+      "ieldName\210\001\001\0221\n\022login_button_color\030\035 \001(\tH" +
+      "\034R\020loginButtonColor\210\001\001\022>\n\031login_button_b" +
+      "order_color\030\036 \001(\tH\035R\026loginButtonBorderCo" +
+      "lor\210\001\001\022:\n\027login_button_text_color\030\037 \001(\tH" +
+      "\036R\024loginButtonTextColor\210\001\001B\t\n\007_enableB\016\n" +
+      "\014_enable_syncB\016\n\014_ldap_serverB\014\n\n_ldap_p" +
+      "ortB\026\n\024_connection_securityB\n\n\010_base_dnB" +
+      "\020\n\016_bind_usernameB\020\n\016_bind_passwordB\031\n\027_" +
+      "maximum_login_attemptsB\016\n\014_user_filterB\017" +
+      "\n\r_group_filterB\026\n\024_enable_admin_filterB" +
+      "\017\n\r_admin_filterB\037\n\035_group_display_name_" +
+      "attributeB\025\n\023_group_id_attributeB\027\n\025_fir" +
+      "st_name_attributeB\026\n\024_last_name_attribut" +
+      "eB\022\n\020_email_attributeB\025\n\023_username_attri" +
+      "buteB\025\n\023_nickname_attributeB\017\n\r_id_attri" +
+      "buteB\025\n\023_position_attributeB\025\n\023_login_id" +
+      "_attributeB\024\n\022_picture_attributeB\030\n\026_syn" +
+      "c_interval_minutesB\020\n\016_query_timeoutB\020\n\016" +
+      "_max_page_sizeB\023\n\021_login_field_nameB\025\n\023_" +
+      "login_button_colorB\034\n\032_login_button_bord" +
+      "er_colorB\032\n\030_login_button_text_color\"\255\023\n" +
+      "\nConfigSaml\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001" +
+      "\0226\n\025enable_sync_with_ldap\030\002 \001(\010H\001R\022enabl" +
+      "eSyncWithLdap\210\001\001\022N\n\"enable_sync_with_lda" +
+      "p_include_auth\030\003 \001(\010H\002R\035enableSyncWithLd" +
+      "apIncludeAuth\210\001\001\022:\n\027ignore_guests_ldap_s" +
+      "ync\030\004 \001(\010H\003R\024ignoreGuestsLdapSync\210\001\001\022\033\n\006" +
+      "verify\030\005 \001(\010H\004R\006verify\210\001\001\022\035\n\007encrypt\030\006 \001" +
+      "(\010H\005R\007encrypt\210\001\001\022&\n\014sign_request\030\007 \001(\010H\006" +
+      "R\013signRequest\210\001\001\022\034\n\007idp_url\030\010 \001(\tH\007R\006idp" +
+      "Url\210\001\001\0221\n\022idp_descriptor_url\030\t \001(\tH\010R\020id" +
+      "pDescriptorUrl\210\001\001\022-\n\020idp_metadata_url\030\n " +
+      "\001(\tH\tR\016idpMetadataUrl\210\001\001\022C\n\033service_prov" +
+      "ider_identifier\030\013 \001(\tH\nR\031serviceProvider" +
+      "Identifier\210\001\001\022H\n\036assertion_consumer_serv" +
+      "ice_url\030\014 \001(\tH\013R\033assertionConsumerServic" +
+      "eUrl\210\001\001\0224\n\023signature_algorithm\030\r \001(\tH\014R\022" +
+      "signatureAlgorithm\210\001\001\0224\n\023canonical_algor" +
+      "ithm\030\016 \001(\tH\rR\022canonicalAlgorithm\210\001\001\022:\n\027s" +
+      "coping_idp_provider_id\030\017 \001(\tH\016R\024scopingI" +
+      "dpProviderId\210\001\001\022-\n\020scoping_idp_name\030\020 \001(" +
+      "\tH\017R\016scopingIdpName\210\001\001\0225\n\024idp_certificat" +
+      "e_file\030\021 \001(\tH\020R\022idpCertificateFile\210\001\001\022;\n" +
+      "\027public_certificate_file\030\022 \001(\tH\021R\025public" +
+      "CertificateFile\210\001\001\022-\n\020private_key_file\030\023" +
+      " \001(\tH\022R\016privateKeyFile\210\001\001\022&\n\014id_attribut" +
+      "e\030\024 \001(\tH\023R\013idAttribute\210\001\001\0229\n\026enable_admi" +
+      "n_attribute\030\025 \001(\010H\024R\024enableAdminAttribut" +
+      "e\210\001\001\022,\n\017admin_attribute\030\026 \001(\tH\025R\016adminAt" +
+      "tribute\210\001\001\0225\n\024first_name_attribute\030\027 \001(\t" +
+      "H\026R\022firstNameAttribute\210\001\001\0223\n\023last_name_a" +
+      "ttribute\030\030 \001(\tH\027R\021lastNameAttribute\210\001\001\022," +
+      "\n\017email_attribute\030\031 \001(\tH\030R\016emailAttribut" +
+      "e\210\001\001\0222\n\022username_attribute\030\032 \001(\tH\031R\021user" +
+      "nameAttribute\210\001\001\0222\n\022nickname_attribute\030\033" +
+      " \001(\tH\032R\021nicknameAttribute\210\001\001\022.\n\020locale_a" +
+      "ttribute\030\034 \001(\tH\033R\017localeAttribute\210\001\001\0222\n\022" +
+      "position_attribute\030\035 \001(\tH\034R\021positionAttr" +
+      "ibute\210\001\001\022/\n\021login_button_text\030\036 \001(\tH\035R\017l" +
+      "oginButtonText\210\001\001\0221\n\022login_button_color\030" +
+      "\037 \001(\tH\036R\020loginButtonColor\210\001\001\022>\n\031login_bu" +
+      "tton_border_color\030  \001(\tH\037R\026loginButtonBo" +
+      "rderColor\210\001\001\022:\n\027login_button_text_color\030" +
+      "! \001(\tH R\024loginButtonTextColor\210\001\001B\t\n\007_ena" +
+      "bleB\030\n\026_enable_sync_with_ldapB%\n#_enable" +
+      "_sync_with_ldap_include_authB\032\n\030_ignore_" +
+      "guests_ldap_syncB\t\n\007_verifyB\n\n\010_encryptB" +
+      "\017\n\r_sign_requestB\n\n\010_idp_urlB\025\n\023_idp_des" +
+      "criptor_urlB\023\n\021_idp_metadata_urlB\036\n\034_ser" +
+      "vice_provider_identifierB!\n\037_assertion_c" +
+      "onsumer_service_urlB\026\n\024_signature_algori",
+      "thmB\026\n\024_canonical_algorithmB\032\n\030_scoping_" +
+      "idp_provider_idB\023\n\021_scoping_idp_nameB\027\n\025" +
+      "_idp_certificate_fileB\032\n\030_public_certifi" +
+      "cate_fileB\023\n\021_private_key_fileB\017\n\r_id_at" +
+      "tributeB\031\n\027_enable_admin_attributeB\022\n\020_a" +
+      "dmin_attributeB\027\n\025_first_name_attributeB" +
+      "\026\n\024_last_name_attributeB\022\n\020_email_attrib" +
+      "uteB\025\n\023_username_attributeB\025\n\023_nickname_" +
+      "attributeB\023\n\021_locale_attributeB\025\n\023_posit" +
+      "ion_attributeB\024\n\022_login_button_textB\025\n\023_" +
+      "login_button_colorB\034\n\032_login_button_bord" +
+      "er_colorB\032\n\030_login_button_text_color\"\301\005\n" +
+      "\017ConfigNativeApp\0223\n\026app_custom_url_schem" +
+      "es\030\001 \003(\tR\023appCustomUrlSchemes\022/\n\021app_dow" +
+      "nload_link\030\002 \001(\tH\000R\017appDownloadLink\210\001\001\022>" +
+      "\n\031android_app_download_link\030\003 \001(\tH\001R\026and" +
+      "roidAppDownloadLink\210\001\001\0226\n\025ios_app_downlo" +
+      "ad_link\030\004 \001(\tH\002R\022iosAppDownloadLink\210\001\001\022;" +
+      "\n\027mobile_external_browser\030\005 \001(\010H\003R\025mobil" +
+      "eExternalBrowser\210\001\001\022=\n\030mobile_enable_bio" +
+      "metrics\030\006 \001(\010H\004R\026mobileEnableBiometrics\210" +
+      "\001\001\022F\n\035mobile_prevent_screen_capture\030\007 \001(" +
+      "\010H\005R\032mobilePreventScreenCapture\210\001\001\022C\n\033mo" +
+      "bile_jailbreak_protection\030\010 \001(\010H\006R\031mobil" +
+      "eJailbreakProtection\210\001\001B\024\n\022_app_download" +
+      "_linkB\034\n\032_android_app_download_linkB\030\n\026_" +
+      "ios_app_download_linkB\032\n\030_mobile_externa" +
+      "l_browserB\033\n\031_mobile_enable_biometricsB " +
+      "\n\036_mobile_prevent_screen_captureB\036\n\034_mob" +
+      "ile_jailbreak_protection\"\253\005\n\021ConfigMeili" +
+      "search\022#\n\nserver_url\030\001 \001(\tH\000R\nserver_url" +
+      "\210\001\001\022\"\n\nmaster_key\030\002 \001(\tH\001R\tmasterKey\210\001\001\022" +
+      ",\n\017enable_indexing\030\003 \001(\010H\002R\016enableIndexi" +
+      "ng\210\001\001\022.\n\020enable_searching\030\004 \001(\010H\003R\017enabl" +
+      "eSearching\210\001\001\0224\n\023enable_autocomplete\030\005 \001" +
+      "(\010H\004R\022enableAutocomplete\210\001\001\022\"\n\nbatch_siz" +
+      "e\030\006 \001(\005H\005R\tbatchSize\210\001\001\022;\n\027request_timeo" +
+      "ut_seconds\030\007 \001(\005H\006R\025requestTimeoutSecond" +
+      "s\210\001\001\022&\n\014index_prefix\030\010 \001(\tH\007R\013indexPrefi" +
+      "x\210\001\001\022-\n\020search_cutoff_ms\030\t \001(\005H\010R\016search" +
+      "CutoffMs\210\001\001\0227\n\025enable_typo_tolerance\030\n \001" +
+      "(\010H\tR\023enableTypoTolerance\210\001\001B\r\n\013_server_" +
+      "urlB\r\n\013_master_keyB\022\n\020_enable_indexingB\023" +
+      "\n\021_enable_searchingB\026\n\024_enable_autocompl" +
+      "eteB\r\n\013_batch_sizeB\032\n\030_request_timeout_s" +
+      "econdsB\017\n\r_index_prefixB\023\n\021_search_cutof" +
+      "f_msB\030\n\026_enable_typo_tolerance\"\272\003\n\013Confi" +
+      "gBleve\022 \n\tindex_dir\030\001 \001(\tH\000R\010indexDir\210\001\001" +
+      "\022,\n\017enable_indexing\030\002 \001(\010H\001R\016enableIndex" +
+      "ing\210\001\001\022.\n\020enable_searching\030\003 \001(\010H\002R\017enab" +
+      "leSearching\210\001\001\0224\n\023enable_autocomplete\030\004 " +
+      "\001(\010H\003R\022enableAutocomplete\210\001\001\022M\n!bulk_ind" +
+      "exing_time_window_seconds\030\005 \001(\005H\004R\035bulkI" +
+      "ndexingTimeWindowSeconds\210\001\001\022\"\n\nbatch_siz" +
+      "e\030\006 \001(\005H\005R\tbatchSize\210\001\001B\014\n\n_index_dirB\022\n" +
+      "\020_enable_indexingB\023\n\021_enable_searchingB\026" +
+      "\n\024_enable_autocompleteB$\n\"_bulk_indexing" +
+      "_time_window_secondsB\r\n\013_batch_size\"\354\006\n\023" +
+      "ConfigDataRetention\022;\n\027enable_message_de" +
+      "letion\030\001 \001(\010H\000R\025enableMessageDeletion\210\001\001" +
+      "\0225\n\024enable_file_deletion\030\002 \001(\010H\001R\022enable" +
+      "FileDeletion\210\001\001\0229\n\026enable_boards_deletio" +
+      "n\030\003 \001(\010H\002R\024enableBoardsDeletion\210\001\001\022;\n\027me" +
+      "ssage_retention_hours\030\004 \001(\005H\003R\025messageRe" +
+      "tentionHours\210\001\001\0225\n\024file_retention_hours\030" +
+      "\005 \001(\005H\004R\022fileRetentionHours\210\001\001\0227\n\025boards" +
+      "_retention_days\030\006 \001(\005H\005R\023boardsRetention" +
+      "Days\210\001\001\022:\n\027deletion_job_start_time\030\007 \001(\t" +
+      "H\006R\024deletionJobStartTime\210\001\001\022\"\n\nbatch_siz" +
+      "e\030\010 \001(\005H\007R\tbatchSize\210\001\001\022N\n!time_between_" +
+      "batches_milliseconds\030\t \001(\005H\010R\036timeBetwee" +
+      "nBatchesMilliseconds\210\001\001\022<\n\030retention_ids" +
+      "_batch_size\030\n \001(\005H\tR\025retentionIdsBatchSi" +
+      "ze\210\001\001B\032\n\030_enable_message_deletionB\027\n\025_en" +
+      "able_file_deletionB\031\n\027_enable_boards_del" +
+      "etionB\032\n\030_message_retention_hoursB\027\n\025_fi" +
+      "le_retention_hoursB\030\n\026_boards_retention_" +
+      "daysB\032\n\030_deletion_job_start_timeB\r\n\013_bat" +
+      "ch_sizeB$\n\"_time_between_batches_millise" +
+      "condsB\033\n\031_retention_ids_batch_size\"\264\002\n\020C" +
+      "onfigImageProxy\022\033\n\006enable\030\001 \001(\010H\000R\006enabl" +
+      "e\210\001\001\022-\n\020image_proxy_type\030\002 \001(\tH\001R\016imageP" +
+      "roxyType\210\001\001\0228\n\026remote_image_proxy_url\030\003 " +
+      "\001(\tH\002R\023remoteImageProxyUrl\210\001\001\022@\n\032remote_" +
+      "image_proxy_options\030\004 \001(\tH\003R\027remoteImage" +
+      "ProxyOptions\210\001\001B\t\n\007_enableB\023\n\021_image_pro" +
+      "xy_typeB\031\n\027_remote_image_proxy_urlB\035\n\033_r" +
+      "emote_image_proxy_options\"\315\010\n\006Config\022)\n\004" +
+      "main\030\001 \001(\0132\025.common.v1.ConfigMainR\004main\022" +
+      "5\n\010services\030\002 \001(\0132\031.common.v1.ConfigServ" +
+      "icesR\010services\0225\n\010security\030\003 \001(\0132\031.commo" +
+      "n.v1.ConfigSecurityR\010security\022,\n\005cache\030\004" +
+      " \001(\0132\026.common.v1.CacheConfigR\005cache\0222\n\007m" +
+      "etrics\030\005 \001(\0132\030.common.v1.ConfigMetricsR\007" +
+      "metrics\022&\n\003sso\030\006 \001(\0132\024.common.v1.ConfigS" +
+      "SOR\003sso\022&\n\003sql\030\007 \001(\0132\024.common.v1.ConfigS" +
+      "qlR\003sql\0225\n\010password\030\010 \001(\0132\031.common.v1.Co" +
+      "nfigPasswordR\010password\022)\n\004file\030\t \001(\0132\025.c" +
+      "ommon.v1.ConfigFileR\004file\022,\n\005email\030\n \001(\013" +
+      "2\026.common.v1.ConfigEmailR\005email\0229\n\nrate_" +
+      "limit\030\013 \001(\0132\032.common.v1.ConfigRateLimitR" +
+      "\trateLimit\0222\n\007privacy\030\014 \001(\0132\030.common.v1." +
+      "ConfigPrivacyR\007privacy\0222\n\007support\030\r \001(\0132" +
+      "\030.common.v1.ConfigSupportR\007support\022A\n\014lo" +
+      "calization\030\016 \001(\0132\035.common.v1.ConfigLocal" +
+      "izationR\014localization\022)\n\004ldap\030\017 \001(\0132\025.co" +
+      "mmon.v1.ConfigLdapR\004ldap\022)\n\004saml\030\020 \001(\0132\025" +
+      ".common.v1.ConfigSamlR\004saml\0229\n\nnative_ap" +
+      "p\030\021 \001(\0132\032.common.v1.ConfigNativeAppR\tnat" +
+      "iveApp\022>\n\013meilisearch\030\022 \001(\0132\034.common.v1." +
+      "ConfigMeilisearchR\013meilisearch\022,\n\005bleve\030" +
+      "\023 \001(\0132\026.common.v1.ConfigBleveR\005bleve\022E\n\016" +
+      "data_retention\030\024 \001(\0132\036.common.v1.ConfigD" +
+      "ataRetentionR\rdataRetention\022<\n\013image_pro" +
+      "xy\030\025 \001(\0132\033.common.v1.ConfigImageProxyR\ni" +
+      "mageProxy\"\022\n\020ConfigGetRequest\"u\n\021ConfigG" +
+      "etResponse\022\'\n\004data\030\001 \001(\0132\021.common.v1.Con" +
+      "figH\000R\004data\022+\n\005error\030\002 \001(\0132\023.common.v1.A" +
+      "ppErrorH\000R\005errorB\n\n\010response\"@\n\023ConfigUp" +
+      "dateRequest\022)\n\006config\030\001 \001(\0132\021.common.v1." +
+      "ConfigR\006config\"x\n\024ConfigUpdateResponse\022\'" +
+      "\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022" +
+      "+\n\005error\030\002 \001(\0132\023.common.v1.AppErrorH\000R\005e" +
+      "rrorB\n\n\010response\"z\n\026ConfigListenerRespon" +
+      "se\022\'\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R\004d" +
+      "ata\022+\n\005error\030\002 \001(\0132\023.common.v1.AppErrorH" +
+      "\000R\005errorB\n\n\010response\"4\n\025ConfigListenerRe" +
+      "quest\022\033\n\tclient_id\030\001 \001(\tR\010clientIdB:\n\032or" +
+      "g.megacommerce.common.v1B\013ConfigProtoZ\014c" +
+      "ommon/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -52890,7 +52991,7 @@ public final class ConfigProto {
     internal_static_common_v1_ConfigPassword_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_v1_ConfigPassword_descriptor,
-        new java.lang.String[] { "MinimumLength", "Lowercase", "Number", "Uppercase", "Symbol", "EnableForgotLink", "MinimumLength", "Lowercase", "Number", "Uppercase", "Symbol", "EnableForgotLink", });
+        new java.lang.String[] { "MinimumLength", "MaximumLenght", "Lowercase", "Number", "Uppercase", "Symbol", "EnableForgotLink", "MinimumLength", "MaximumLenght", "Lowercase", "Number", "Uppercase", "Symbol", "EnableForgotLink", });
     internal_static_common_v1_ConfigFile_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_common_v1_ConfigFile_fieldAccessorTable = new

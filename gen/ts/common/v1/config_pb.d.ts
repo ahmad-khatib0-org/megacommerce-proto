@@ -572,6 +572,11 @@ export class ConfigPassword extends jspb.Message {
   getMinimumLength(): number;
   setMinimumLength(value: number): void;
 
+  hasMaximumLenght(): boolean;
+  clearMaximumLenght(): void;
+  getMaximumLenght(): number;
+  setMaximumLenght(value: number): void;
+
   hasLowercase(): boolean;
   clearLowercase(): void;
   getLowercase(): boolean;
@@ -610,6 +615,7 @@ export class ConfigPassword extends jspb.Message {
 export namespace ConfigPassword {
   export type AsObject = {
     minimumLength: number,
+    maximumLenght: number,
     lowercase: boolean,
     number: boolean,
     uppercase: boolean,

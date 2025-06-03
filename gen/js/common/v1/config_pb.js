@@ -4983,11 +4983,12 @@ proto.common.v1.ConfigPassword.prototype.toObject = function(opt_includeInstance
 proto.common.v1.ConfigPassword.toObject = function(includeInstance, msg) {
   var f, obj = {
     minimumLength: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    lowercase: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    number: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    uppercase: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    symbol: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    enableForgotLink: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
+    maximumLenght: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    lowercase: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    number: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    uppercase: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    symbol: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+    enableForgotLink: jspb.Message.getBooleanFieldWithDefault(msg, 7, false)
   };
 
   if (includeInstance) {
@@ -5029,22 +5030,26 @@ proto.common.v1.ConfigPassword.deserializeBinaryFromReader = function(msg, reade
       msg.setMinimumLength(value);
       break;
     case 2:
-      var value = /** @type {boolean} */ (reader.readBool());
-      msg.setLowercase(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setMaximumLenght(value);
       break;
     case 3:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setNumber(value);
+      msg.setLowercase(value);
       break;
     case 4:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setUppercase(value);
+      msg.setNumber(value);
       break;
     case 5:
       var value = /** @type {boolean} */ (reader.readBool());
-      msg.setSymbol(value);
+      msg.setUppercase(value);
       break;
     case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setSymbol(value);
+      break;
+    case 7:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnableForgotLink(value);
       break;
@@ -5084,9 +5089,9 @@ proto.common.v1.ConfigPassword.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeBool(
+    writer.writeInt32(
       2,
       f
     );
@@ -5116,6 +5121,13 @@ proto.common.v1.ConfigPassword.serializeBinaryToWriter = function(message, write
   if (f != null) {
     writer.writeBool(
       6,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeBool(
+      7,
       f
     );
   }
@@ -5159,19 +5171,19 @@ proto.common.v1.ConfigPassword.prototype.hasMinimumLength = function() {
 
 
 /**
- * optional bool lowercase = 2;
- * @return {boolean}
+ * optional int32 maximum_lenght = 2;
+ * @return {number}
  */
-proto.common.v1.ConfigPassword.prototype.getLowercase = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
+proto.common.v1.ConfigPassword.prototype.getMaximumLenght = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {number} value
  * @return {!proto.common.v1.ConfigPassword} returns this
  */
-proto.common.v1.ConfigPassword.prototype.setLowercase = function(value) {
+proto.common.v1.ConfigPassword.prototype.setMaximumLenght = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -5180,7 +5192,7 @@ proto.common.v1.ConfigPassword.prototype.setLowercase = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigPassword} returns this
  */
-proto.common.v1.ConfigPassword.prototype.clearLowercase = function() {
+proto.common.v1.ConfigPassword.prototype.clearMaximumLenght = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -5189,16 +5201,16 @@ proto.common.v1.ConfigPassword.prototype.clearLowercase = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigPassword.prototype.hasLowercase = function() {
+proto.common.v1.ConfigPassword.prototype.hasMaximumLenght = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional bool number = 3;
+ * optional bool lowercase = 3;
  * @return {boolean}
  */
-proto.common.v1.ConfigPassword.prototype.getNumber = function() {
+proto.common.v1.ConfigPassword.prototype.getLowercase = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
@@ -5207,7 +5219,7 @@ proto.common.v1.ConfigPassword.prototype.getNumber = function() {
  * @param {boolean} value
  * @return {!proto.common.v1.ConfigPassword} returns this
  */
-proto.common.v1.ConfigPassword.prototype.setNumber = function(value) {
+proto.common.v1.ConfigPassword.prototype.setLowercase = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -5216,7 +5228,7 @@ proto.common.v1.ConfigPassword.prototype.setNumber = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigPassword} returns this
  */
-proto.common.v1.ConfigPassword.prototype.clearNumber = function() {
+proto.common.v1.ConfigPassword.prototype.clearLowercase = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -5225,16 +5237,16 @@ proto.common.v1.ConfigPassword.prototype.clearNumber = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigPassword.prototype.hasNumber = function() {
+proto.common.v1.ConfigPassword.prototype.hasLowercase = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional bool uppercase = 4;
+ * optional bool number = 4;
  * @return {boolean}
  */
-proto.common.v1.ConfigPassword.prototype.getUppercase = function() {
+proto.common.v1.ConfigPassword.prototype.getNumber = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
@@ -5243,7 +5255,7 @@ proto.common.v1.ConfigPassword.prototype.getUppercase = function() {
  * @param {boolean} value
  * @return {!proto.common.v1.ConfigPassword} returns this
  */
-proto.common.v1.ConfigPassword.prototype.setUppercase = function(value) {
+proto.common.v1.ConfigPassword.prototype.setNumber = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -5252,7 +5264,7 @@ proto.common.v1.ConfigPassword.prototype.setUppercase = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigPassword} returns this
  */
-proto.common.v1.ConfigPassword.prototype.clearUppercase = function() {
+proto.common.v1.ConfigPassword.prototype.clearNumber = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -5261,16 +5273,16 @@ proto.common.v1.ConfigPassword.prototype.clearUppercase = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigPassword.prototype.hasUppercase = function() {
+proto.common.v1.ConfigPassword.prototype.hasNumber = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional bool symbol = 5;
+ * optional bool uppercase = 5;
  * @return {boolean}
  */
-proto.common.v1.ConfigPassword.prototype.getSymbol = function() {
+proto.common.v1.ConfigPassword.prototype.getUppercase = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
@@ -5279,7 +5291,7 @@ proto.common.v1.ConfigPassword.prototype.getSymbol = function() {
  * @param {boolean} value
  * @return {!proto.common.v1.ConfigPassword} returns this
  */
-proto.common.v1.ConfigPassword.prototype.setSymbol = function(value) {
+proto.common.v1.ConfigPassword.prototype.setUppercase = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -5288,7 +5300,7 @@ proto.common.v1.ConfigPassword.prototype.setSymbol = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigPassword} returns this
  */
-proto.common.v1.ConfigPassword.prototype.clearSymbol = function() {
+proto.common.v1.ConfigPassword.prototype.clearUppercase = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -5297,16 +5309,16 @@ proto.common.v1.ConfigPassword.prototype.clearSymbol = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigPassword.prototype.hasSymbol = function() {
+proto.common.v1.ConfigPassword.prototype.hasUppercase = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional bool enable_forgot_link = 6;
+ * optional bool symbol = 6;
  * @return {boolean}
  */
-proto.common.v1.ConfigPassword.prototype.getEnableForgotLink = function() {
+proto.common.v1.ConfigPassword.prototype.getSymbol = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
@@ -5315,7 +5327,7 @@ proto.common.v1.ConfigPassword.prototype.getEnableForgotLink = function() {
  * @param {boolean} value
  * @return {!proto.common.v1.ConfigPassword} returns this
  */
-proto.common.v1.ConfigPassword.prototype.setEnableForgotLink = function(value) {
+proto.common.v1.ConfigPassword.prototype.setSymbol = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -5324,7 +5336,7 @@ proto.common.v1.ConfigPassword.prototype.setEnableForgotLink = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigPassword} returns this
  */
-proto.common.v1.ConfigPassword.prototype.clearEnableForgotLink = function() {
+proto.common.v1.ConfigPassword.prototype.clearSymbol = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -5333,8 +5345,44 @@ proto.common.v1.ConfigPassword.prototype.clearEnableForgotLink = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigPassword.prototype.hasEnableForgotLink = function() {
+proto.common.v1.ConfigPassword.prototype.hasSymbol = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional bool enable_forgot_link = 7;
+ * @return {boolean}
+ */
+proto.common.v1.ConfigPassword.prototype.getEnableForgotLink = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.common.v1.ConfigPassword} returns this
+ */
+proto.common.v1.ConfigPassword.prototype.setEnableForgotLink = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.common.v1.ConfigPassword} returns this
+ */
+proto.common.v1.ConfigPassword.prototype.clearEnableForgotLink = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.common.v1.ConfigPassword.prototype.hasEnableForgotLink = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

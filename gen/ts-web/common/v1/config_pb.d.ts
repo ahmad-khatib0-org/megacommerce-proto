@@ -927,6 +927,11 @@ export class ConfigPassword extends jspb.Message {
   hasMinimumLength(): boolean;
   clearMinimumLength(): ConfigPassword;
 
+  getMaximumLenght(): number;
+  setMaximumLenght(value: number): ConfigPassword;
+  hasMaximumLenght(): boolean;
+  clearMaximumLenght(): ConfigPassword;
+
   getLowercase(): boolean;
   setLowercase(value: boolean): ConfigPassword;
   hasLowercase(): boolean;
@@ -963,6 +968,7 @@ export class ConfigPassword extends jspb.Message {
 export namespace ConfigPassword {
   export type AsObject = {
     minimumLength?: number,
+    maximumLenght?: number,
     lowercase?: boolean,
     number?: boolean,
     uppercase?: boolean,
@@ -975,29 +981,34 @@ export namespace ConfigPassword {
     MINIMUM_LENGTH = 1,
   }
 
+  export enum MaximumLenghtCase { 
+    _MAXIMUM_LENGHT_NOT_SET = 0,
+    MAXIMUM_LENGHT = 2,
+  }
+
   export enum LowercaseCase { 
     _LOWERCASE_NOT_SET = 0,
-    LOWERCASE = 2,
+    LOWERCASE = 3,
   }
 
   export enum NumberCase { 
     _NUMBER_NOT_SET = 0,
-    NUMBER = 3,
+    NUMBER = 4,
   }
 
   export enum UppercaseCase { 
     _UPPERCASE_NOT_SET = 0,
-    UPPERCASE = 4,
+    UPPERCASE = 5,
   }
 
   export enum SymbolCase { 
     _SYMBOL_NOT_SET = 0,
-    SYMBOL = 5,
+    SYMBOL = 6,
   }
 
   export enum EnableForgotLinkCase { 
     _ENABLE_FORGOT_LINK_NOT_SET = 0,
-    ENABLE_FORGOT_LINK = 6,
+    ENABLE_FORGOT_LINK = 7,
   }
 }
 

@@ -2499,11 +2499,12 @@ class ConfigPassword final :
 
   enum : int {
     kMinimumLengthFieldNumber = 1,
-    kLowercaseFieldNumber = 2,
-    kNumberFieldNumber = 3,
-    kUppercaseFieldNumber = 4,
-    kSymbolFieldNumber = 5,
-    kEnableForgotLinkFieldNumber = 6,
+    kMaximumLenghtFieldNumber = 2,
+    kLowercaseFieldNumber = 3,
+    kNumberFieldNumber = 4,
+    kUppercaseFieldNumber = 5,
+    kSymbolFieldNumber = 6,
+    kEnableForgotLinkFieldNumber = 7,
   };
   // optional int32 minimum_length = 1 [json_name = "minimumLength"];
   bool has_minimum_length() const;
@@ -2518,7 +2519,20 @@ class ConfigPassword final :
   void _internal_set_minimum_length(int32_t value);
   public:
 
-  // optional bool lowercase = 2 [json_name = "lowercase"];
+  // optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];
+  bool has_maximum_lenght() const;
+  private:
+  bool _internal_has_maximum_lenght() const;
+  public:
+  void clear_maximum_lenght();
+  int32_t maximum_lenght() const;
+  void set_maximum_lenght(int32_t value);
+  private:
+  int32_t _internal_maximum_lenght() const;
+  void _internal_set_maximum_lenght(int32_t value);
+  public:
+
+  // optional bool lowercase = 3 [json_name = "lowercase"];
   bool has_lowercase() const;
   private:
   bool _internal_has_lowercase() const;
@@ -2531,7 +2545,7 @@ class ConfigPassword final :
   void _internal_set_lowercase(bool value);
   public:
 
-  // optional bool number = 3 [json_name = "number"];
+  // optional bool number = 4 [json_name = "number"];
   bool has_number() const;
   private:
   bool _internal_has_number() const;
@@ -2544,7 +2558,7 @@ class ConfigPassword final :
   void _internal_set_number(bool value);
   public:
 
-  // optional bool uppercase = 4 [json_name = "uppercase"];
+  // optional bool uppercase = 5 [json_name = "uppercase"];
   bool has_uppercase() const;
   private:
   bool _internal_has_uppercase() const;
@@ -2557,7 +2571,7 @@ class ConfigPassword final :
   void _internal_set_uppercase(bool value);
   public:
 
-  // optional bool symbol = 5 [json_name = "symbol"];
+  // optional bool symbol = 6 [json_name = "symbol"];
   bool has_symbol() const;
   private:
   bool _internal_has_symbol() const;
@@ -2570,7 +2584,7 @@ class ConfigPassword final :
   void _internal_set_symbol(bool value);
   public:
 
-  // optional bool enable_forgot_link = 6 [json_name = "enableForgotLink"];
+  // optional bool enable_forgot_link = 7 [json_name = "enableForgotLink"];
   bool has_enable_forgot_link() const;
   private:
   bool _internal_has_enable_forgot_link() const;
@@ -2593,6 +2607,7 @@ class ConfigPassword final :
   ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   int32_t minimum_length_;
+  int32_t maximum_lenght_;
   bool lowercase_;
   bool number_;
   bool uppercase_;
@@ -12072,9 +12087,37 @@ inline void ConfigPassword::set_minimum_length(int32_t value) {
   // @@protoc_insertion_point(field_set:common.v1.ConfigPassword.minimum_length)
 }
 
-// optional bool lowercase = 2 [json_name = "lowercase"];
-inline bool ConfigPassword::_internal_has_lowercase() const {
+// optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];
+inline bool ConfigPassword::_internal_has_maximum_lenght() const {
   bool value = (_has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool ConfigPassword::has_maximum_lenght() const {
+  return _internal_has_maximum_lenght();
+}
+inline void ConfigPassword::clear_maximum_lenght() {
+  maximum_lenght_ = 0;
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline int32_t ConfigPassword::_internal_maximum_lenght() const {
+  return maximum_lenght_;
+}
+inline int32_t ConfigPassword::maximum_lenght() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigPassword.maximum_lenght)
+  return _internal_maximum_lenght();
+}
+inline void ConfigPassword::_internal_set_maximum_lenght(int32_t value) {
+  _has_bits_[0] |= 0x00000002u;
+  maximum_lenght_ = value;
+}
+inline void ConfigPassword::set_maximum_lenght(int32_t value) {
+  _internal_set_maximum_lenght(value);
+  // @@protoc_insertion_point(field_set:common.v1.ConfigPassword.maximum_lenght)
+}
+
+// optional bool lowercase = 3 [json_name = "lowercase"];
+inline bool ConfigPassword::_internal_has_lowercase() const {
+  bool value = (_has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
 inline bool ConfigPassword::has_lowercase() const {
@@ -12082,7 +12125,7 @@ inline bool ConfigPassword::has_lowercase() const {
 }
 inline void ConfigPassword::clear_lowercase() {
   lowercase_ = false;
-  _has_bits_[0] &= ~0x00000002u;
+  _has_bits_[0] &= ~0x00000004u;
 }
 inline bool ConfigPassword::_internal_lowercase() const {
   return lowercase_;
@@ -12092,7 +12135,7 @@ inline bool ConfigPassword::lowercase() const {
   return _internal_lowercase();
 }
 inline void ConfigPassword::_internal_set_lowercase(bool value) {
-  _has_bits_[0] |= 0x00000002u;
+  _has_bits_[0] |= 0x00000004u;
   lowercase_ = value;
 }
 inline void ConfigPassword::set_lowercase(bool value) {
@@ -12100,9 +12143,9 @@ inline void ConfigPassword::set_lowercase(bool value) {
   // @@protoc_insertion_point(field_set:common.v1.ConfigPassword.lowercase)
 }
 
-// optional bool number = 3 [json_name = "number"];
+// optional bool number = 4 [json_name = "number"];
 inline bool ConfigPassword::_internal_has_number() const {
-  bool value = (_has_bits_[0] & 0x00000004u) != 0;
+  bool value = (_has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
 inline bool ConfigPassword::has_number() const {
@@ -12110,7 +12153,7 @@ inline bool ConfigPassword::has_number() const {
 }
 inline void ConfigPassword::clear_number() {
   number_ = false;
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline bool ConfigPassword::_internal_number() const {
   return number_;
@@ -12120,7 +12163,7 @@ inline bool ConfigPassword::number() const {
   return _internal_number();
 }
 inline void ConfigPassword::_internal_set_number(bool value) {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
   number_ = value;
 }
 inline void ConfigPassword::set_number(bool value) {
@@ -12128,9 +12171,9 @@ inline void ConfigPassword::set_number(bool value) {
   // @@protoc_insertion_point(field_set:common.v1.ConfigPassword.number)
 }
 
-// optional bool uppercase = 4 [json_name = "uppercase"];
+// optional bool uppercase = 5 [json_name = "uppercase"];
 inline bool ConfigPassword::_internal_has_uppercase() const {
-  bool value = (_has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_has_bits_[0] & 0x00000010u) != 0;
   return value;
 }
 inline bool ConfigPassword::has_uppercase() const {
@@ -12138,7 +12181,7 @@ inline bool ConfigPassword::has_uppercase() const {
 }
 inline void ConfigPassword::clear_uppercase() {
   uppercase_ = false;
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline bool ConfigPassword::_internal_uppercase() const {
   return uppercase_;
@@ -12148,7 +12191,7 @@ inline bool ConfigPassword::uppercase() const {
   return _internal_uppercase();
 }
 inline void ConfigPassword::_internal_set_uppercase(bool value) {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000010u;
   uppercase_ = value;
 }
 inline void ConfigPassword::set_uppercase(bool value) {
@@ -12156,9 +12199,9 @@ inline void ConfigPassword::set_uppercase(bool value) {
   // @@protoc_insertion_point(field_set:common.v1.ConfigPassword.uppercase)
 }
 
-// optional bool symbol = 5 [json_name = "symbol"];
+// optional bool symbol = 6 [json_name = "symbol"];
 inline bool ConfigPassword::_internal_has_symbol() const {
-  bool value = (_has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
 inline bool ConfigPassword::has_symbol() const {
@@ -12166,7 +12209,7 @@ inline bool ConfigPassword::has_symbol() const {
 }
 inline void ConfigPassword::clear_symbol() {
   symbol_ = false;
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline bool ConfigPassword::_internal_symbol() const {
   return symbol_;
@@ -12176,7 +12219,7 @@ inline bool ConfigPassword::symbol() const {
   return _internal_symbol();
 }
 inline void ConfigPassword::_internal_set_symbol(bool value) {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000020u;
   symbol_ = value;
 }
 inline void ConfigPassword::set_symbol(bool value) {
@@ -12184,9 +12227,9 @@ inline void ConfigPassword::set_symbol(bool value) {
   // @@protoc_insertion_point(field_set:common.v1.ConfigPassword.symbol)
 }
 
-// optional bool enable_forgot_link = 6 [json_name = "enableForgotLink"];
+// optional bool enable_forgot_link = 7 [json_name = "enableForgotLink"];
 inline bool ConfigPassword::_internal_has_enable_forgot_link() const {
-  bool value = (_has_bits_[0] & 0x00000020u) != 0;
+  bool value = (_has_bits_[0] & 0x00000040u) != 0;
   return value;
 }
 inline bool ConfigPassword::has_enable_forgot_link() const {
@@ -12194,7 +12237,7 @@ inline bool ConfigPassword::has_enable_forgot_link() const {
 }
 inline void ConfigPassword::clear_enable_forgot_link() {
   enable_forgot_link_ = false;
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000040u;
 }
 inline bool ConfigPassword::_internal_enable_forgot_link() const {
   return enable_forgot_link_;
@@ -12204,7 +12247,7 @@ inline bool ConfigPassword::enable_forgot_link() const {
   return _internal_enable_forgot_link();
 }
 inline void ConfigPassword::_internal_set_enable_forgot_link(bool value) {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000040u;
   enable_forgot_link_ = value;
 }
 inline void ConfigPassword::set_enable_forgot_link(bool value) {

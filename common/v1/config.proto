@@ -107,11 +107,12 @@ message ConfigSql {
 
 message ConfigPassword {
   optional int32 minimum_length = 1;
-  optional bool lowercase = 2;
-  optional bool number = 3;
-  optional bool uppercase = 4;
-  optional bool symbol = 5;
-  optional bool enable_forgot_link = 6;
+  optional int32 maximum_lenght = 2;
+  optional bool lowercase = 3;
+  optional bool number = 4;
+  optional bool uppercase = 5;
+  optional bool symbol = 6;
+  optional bool enable_forgot_link = 7;
 }
 
 message ConfigFile {

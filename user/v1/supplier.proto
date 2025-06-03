@@ -4,8 +4,8 @@ package user.v1;
 
 option cc_enable_arenas = true;
 option go_package = "user/v1;v1";
-option java_package = "org.megacommerce.user.v1";
 option java_outer_classname = "SupplierProto";
+option java_package = "org.megacommerce.user.v1";
 
 message SupplierCreateRequest {
   string username = 1;
