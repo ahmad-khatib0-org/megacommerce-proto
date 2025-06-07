@@ -31,9 +31,6 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
-#include <google/protobuf/map.h>  // IWYU pragma: export
-#include <google/protobuf/map_entry.h>
-#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "common/v1/error.pb.h"
 // @@protoc_insertion_point(includes)
@@ -51,7 +48,7 @@ struct TableStruct_common_2fv1_2fconfig_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[29]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[28]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -129,9 +126,6 @@ extern ConfigSamlDefaultTypeInternal _ConfigSaml_default_instance_;
 class ConfigSecurity;
 struct ConfigSecurityDefaultTypeInternal;
 extern ConfigSecurityDefaultTypeInternal _ConfigSecurity_default_instance_;
-class ConfigSecurity_RestrictedUsernamesEntry_DoNotUse;
-struct ConfigSecurity_RestrictedUsernamesEntry_DoNotUseDefaultTypeInternal;
-extern ConfigSecurity_RestrictedUsernamesEntry_DoNotUseDefaultTypeInternal _ConfigSecurity_RestrictedUsernamesEntry_DoNotUse_default_instance_;
 class ConfigServices;
 struct ConfigServicesDefaultTypeInternal;
 extern ConfigServicesDefaultTypeInternal _ConfigServices_default_instance_;
@@ -173,7 +167,6 @@ template<> ::common::v1::ConfigRateLimit* Arena::CreateMaybeMessage<::common::v1
 template<> ::common::v1::ConfigSSO* Arena::CreateMaybeMessage<::common::v1::ConfigSSO>(Arena*);
 template<> ::common::v1::ConfigSaml* Arena::CreateMaybeMessage<::common::v1::ConfigSaml>(Arena*);
 template<> ::common::v1::ConfigSecurity* Arena::CreateMaybeMessage<::common::v1::ConfigSecurity>(Arena*);
-template<> ::common::v1::ConfigSecurity_RestrictedUsernamesEntry_DoNotUse* Arena::CreateMaybeMessage<::common::v1::ConfigSecurity_RestrictedUsernamesEntry_DoNotUse>(Arena*);
 template<> ::common::v1::ConfigServices* Arena::CreateMaybeMessage<::common::v1::ConfigServices>(Arena*);
 template<> ::common::v1::ConfigSql* Arena::CreateMaybeMessage<::common::v1::ConfigSql>(Arena*);
 template<> ::common::v1::ConfigSupport* Arena::CreateMaybeMessage<::common::v1::ConfigSupport>(Arena*);
@@ -847,33 +840,6 @@ class ConfigServices final :
 };
 // -------------------------------------------------------------------
 
-class ConfigSecurity_RestrictedUsernamesEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<ConfigSecurity_RestrictedUsernamesEntry_DoNotUse, 
-    std::string, std::string,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
-public:
-  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<ConfigSecurity_RestrictedUsernamesEntry_DoNotUse, 
-    std::string, std::string,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
-  ConfigSecurity_RestrictedUsernamesEntry_DoNotUse();
-  explicit constexpr ConfigSecurity_RestrictedUsernamesEntry_DoNotUse(
-      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-  explicit ConfigSecurity_RestrictedUsernamesEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  void MergeFrom(const ConfigSecurity_RestrictedUsernamesEntry_DoNotUse& other);
-  static const ConfigSecurity_RestrictedUsernamesEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const ConfigSecurity_RestrictedUsernamesEntry_DoNotUse*>(&_ConfigSecurity_RestrictedUsernamesEntry_DoNotUse_default_instance_); }
-  static bool ValidateKey(std::string* s) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "common.v1.ConfigSecurity.RestrictedUsernamesEntry.key");
- }
-  static bool ValidateValue(std::string* s) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "common.v1.ConfigSecurity.RestrictedUsernamesEntry.value");
- }
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-};
-
-// -------------------------------------------------------------------
-
 class ConfigSecurity final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:common.v1.ConfigSecurity) */ {
  public:
@@ -922,7 +888,7 @@ class ConfigSecurity final :
                &_ConfigSecurity_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    2;
 
   friend void swap(ConfigSecurity& a, ConfigSecurity& b) {
     a.Swap(&b);
@@ -993,7 +959,6 @@ class ConfigSecurity final :
 
   // nested types ----------------------------------------------------
 
-
   // accessors -------------------------------------------------------
 
   enum : int {
@@ -1017,22 +982,29 @@ class ConfigSecurity final :
     kWebsocketSecurePortFieldNumber = 18,
     kWebsocketPortFieldNumber = 19,
   };
-  // map<string, string> restricted_usernames = 1 [json_name = "restrictedUsernames"];
+  // repeated string restricted_usernames = 1 [json_name = "restrictedUsernames"];
   int restricted_usernames_size() const;
   private:
   int _internal_restricted_usernames_size() const;
   public:
   void clear_restricted_usernames();
+  const std::string& restricted_usernames(int index) const;
+  std::string* mutable_restricted_usernames(int index);
+  void set_restricted_usernames(int index, const std::string& value);
+  void set_restricted_usernames(int index, std::string&& value);
+  void set_restricted_usernames(int index, const char* value);
+  void set_restricted_usernames(int index, const char* value, size_t size);
+  std::string* add_restricted_usernames();
+  void add_restricted_usernames(const std::string& value);
+  void add_restricted_usernames(std::string&& value);
+  void add_restricted_usernames(const char* value);
+  void add_restricted_usernames(const char* value, size_t size);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>& restricted_usernames() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>* mutable_restricted_usernames();
   private:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-      _internal_restricted_usernames() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-      _internal_mutable_restricted_usernames();
+  const std::string& _internal_restricted_usernames(int index) const;
+  std::string* _internal_add_restricted_usernames();
   public:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-      restricted_usernames() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-      mutable_restricted_usernames();
 
   // optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];
   bool has_allow_cors_from() const;
@@ -1287,11 +1259,7 @@ class ConfigSecurity final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
-      ConfigSecurity_RestrictedUsernamesEntry_DoNotUse,
-      std::string, std::string,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> restricted_usernames_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string> restricted_usernames_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr allow_cors_from_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cors_exposed_headers_;
   int32_t maximum_login_attempts_;
@@ -1362,7 +1330,7 @@ class CacheConfig final :
                &_CacheConfig_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    3;
 
   friend void swap(CacheConfig& a, CacheConfig& b) {
     a.Swap(&b);
@@ -1608,7 +1576,7 @@ class ConfigMetrics final :
                &_ConfigMetrics_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    4;
 
   friend void swap(ConfigMetrics& a, ConfigMetrics& b) {
     a.Swap(&b);
@@ -1850,7 +1818,7 @@ class ConfigSSO final :
                &_ConfigSSO_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    5;
 
   friend void swap(ConfigSSO& a, ConfigSSO& b) {
     a.Swap(&b);
@@ -2181,7 +2149,7 @@ class ConfigSql final :
                &_ConfigSql_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    6;
 
   friend void swap(ConfigSql& a, ConfigSql& b) {
     a.Swap(&b);
@@ -2482,7 +2450,7 @@ class ConfigPassword final :
                &_ConfigPassword_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    7;
 
   friend void swap(ConfigPassword& a, ConfigPassword& b) {
     a.Swap(&b);
@@ -2723,7 +2691,7 @@ class ConfigFile final :
                &_ConfigFile_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    8;
 
   friend void swap(ConfigFile& a, ConfigFile& b) {
     a.Swap(&b);
@@ -3304,7 +3272,7 @@ class ConfigEmail final :
                &_ConfigEmail_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    9;
 
   friend void swap(ConfigEmail& a, ConfigEmail& b) {
     a.Swap(&b);
@@ -3850,7 +3818,7 @@ class ConfigRateLimit final :
                &_ConfigRateLimit_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    10;
 
   friend void swap(ConfigRateLimit& a, ConfigRateLimit& b) {
     a.Swap(&b);
@@ -4092,7 +4060,7 @@ class ConfigPrivacy final :
                &_ConfigPrivacy_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    11;
 
   friend void swap(ConfigPrivacy& a, ConfigPrivacy& b) {
     a.Swap(&b);
@@ -4258,7 +4226,7 @@ class ConfigSupport final :
                &_ConfigSupport_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    12;
 
   friend void swap(ConfigSupport& a, ConfigSupport& b) {
     a.Swap(&b);
@@ -4534,7 +4502,7 @@ class ConfigLocalization final :
                &_ConfigLocalization_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    13;
 
   friend void swap(ConfigLocalization& a, ConfigLocalization& b) {
     a.Swap(&b);
@@ -4730,7 +4698,7 @@ class ConfigLdap final :
                &_ConfigLdap_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    14;
 
   friend void swap(ConfigLdap& a, ConfigLdap& b) {
     a.Swap(&b);
@@ -5446,7 +5414,7 @@ class ConfigSaml final :
                &_ConfigSaml_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    15;
 
   friend void swap(ConfigSaml& a, ConfigSaml& b) {
     a.Swap(&b);
@@ -6202,7 +6170,7 @@ class ConfigNativeApp final :
                &_ConfigNativeApp_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    16;
 
   friend void swap(ConfigNativeApp& a, ConfigNativeApp& b) {
     a.Swap(&b);
@@ -6484,7 +6452,7 @@ class ConfigMeilisearch final :
                &_ConfigMeilisearch_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    17;
 
   friend void swap(ConfigMeilisearch& a, ConfigMeilisearch& b) {
     a.Swap(&b);
@@ -6785,7 +6753,7 @@ class ConfigBleve final :
                &_ConfigBleve_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    18;
 
   friend void swap(ConfigBleve& a, ConfigBleve& b) {
     a.Swap(&b);
@@ -7016,7 +6984,7 @@ class ConfigDataRetention final :
                &_ConfigDataRetention_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    19;
 
   friend void swap(ConfigDataRetention& a, ConfigDataRetention& b) {
     a.Swap(&b);
@@ -7307,7 +7275,7 @@ class ConfigImageProxy final :
                &_ConfigImageProxy_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    20;
 
   friend void swap(ConfigImageProxy& a, ConfigImageProxy& b) {
     a.Swap(&b);
@@ -7518,7 +7486,7 @@ class Config final :
                &_Config_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    21;
 
   friend void swap(Config& a, Config& b) {
     a.Swap(&b);
@@ -8072,7 +8040,7 @@ class ConfigGetRequest final :
                &_ConfigGetRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    22;
 
   friend void swap(ConfigGetRequest& a, ConfigGetRequest& b) {
     a.Swap(&b);
@@ -8197,7 +8165,7 @@ class ConfigGetResponse final :
                &_ConfigGetResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    23;
 
   friend void swap(ConfigGetResponse& a, ConfigGetResponse& b) {
     a.Swap(&b);
@@ -8385,7 +8353,7 @@ class ConfigUpdateRequest final :
                &_ConfigUpdateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    24;
 
   friend void swap(ConfigUpdateRequest& a, ConfigUpdateRequest& b) {
     a.Swap(&b);
@@ -8546,7 +8514,7 @@ class ConfigUpdateResponse final :
                &_ConfigUpdateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    25;
 
   friend void swap(ConfigUpdateResponse& a, ConfigUpdateResponse& b) {
     a.Swap(&b);
@@ -8740,7 +8708,7 @@ class ConfigListenerResponse final :
                &_ConfigListenerResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    26;
 
   friend void swap(ConfigListenerResponse& a, ConfigListenerResponse& b) {
     a.Swap(&b);
@@ -8928,7 +8896,7 @@ class ConfigListenerRequest final :
                &_ConfigListenerRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    27;
 
   friend void swap(ConfigListenerRequest& a, ConfigListenerRequest& b) {
     a.Swap(&b);
@@ -9869,11 +9837,9 @@ inline void ConfigServices::set_user_service_grpc_port(int32_t value) {
 
 // -------------------------------------------------------------------
 
-// -------------------------------------------------------------------
-
 // ConfigSecurity
 
-// map<string, string> restricted_usernames = 1 [json_name = "restrictedUsernames"];
+// repeated string restricted_usernames = 1 [json_name = "restrictedUsernames"];
 inline int ConfigSecurity::_internal_restricted_usernames_size() const {
   return restricted_usernames_.size();
 }
@@ -9883,23 +9849,69 @@ inline int ConfigSecurity::restricted_usernames_size() const {
 inline void ConfigSecurity::clear_restricted_usernames() {
   restricted_usernames_.Clear();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-ConfigSecurity::_internal_restricted_usernames() const {
-  return restricted_usernames_.GetMap();
+inline std::string* ConfigSecurity::add_restricted_usernames() {
+  std::string* _s = _internal_add_restricted_usernames();
+  // @@protoc_insertion_point(field_add_mutable:common.v1.ConfigSecurity.restricted_usernames)
+  return _s;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+inline const std::string& ConfigSecurity::_internal_restricted_usernames(int index) const {
+  return restricted_usernames_.Get(index);
+}
+inline const std::string& ConfigSecurity::restricted_usernames(int index) const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.restricted_usernames)
+  return _internal_restricted_usernames(index);
+}
+inline std::string* ConfigSecurity::mutable_restricted_usernames(int index) {
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigSecurity.restricted_usernames)
+  return restricted_usernames_.Mutable(index);
+}
+inline void ConfigSecurity::set_restricted_usernames(int index, const std::string& value) {
+  restricted_usernames_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.restricted_usernames)
+}
+inline void ConfigSecurity::set_restricted_usernames(int index, std::string&& value) {
+  restricted_usernames_.Mutable(index)->assign(std::move(value));
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.restricted_usernames)
+}
+inline void ConfigSecurity::set_restricted_usernames(int index, const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  restricted_usernames_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:common.v1.ConfigSecurity.restricted_usernames)
+}
+inline void ConfigSecurity::set_restricted_usernames(int index, const char* value, size_t size) {
+  restricted_usernames_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:common.v1.ConfigSecurity.restricted_usernames)
+}
+inline std::string* ConfigSecurity::_internal_add_restricted_usernames() {
+  return restricted_usernames_.Add();
+}
+inline void ConfigSecurity::add_restricted_usernames(const std::string& value) {
+  restricted_usernames_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:common.v1.ConfigSecurity.restricted_usernames)
+}
+inline void ConfigSecurity::add_restricted_usernames(std::string&& value) {
+  restricted_usernames_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:common.v1.ConfigSecurity.restricted_usernames)
+}
+inline void ConfigSecurity::add_restricted_usernames(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  restricted_usernames_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:common.v1.ConfigSecurity.restricted_usernames)
+}
+inline void ConfigSecurity::add_restricted_usernames(const char* value, size_t size) {
+  restricted_usernames_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:common.v1.ConfigSecurity.restricted_usernames)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>&
 ConfigSecurity::restricted_usernames() const {
-  // @@protoc_insertion_point(field_map:common.v1.ConfigSecurity.restricted_usernames)
-  return _internal_restricted_usernames();
+  // @@protoc_insertion_point(field_list:common.v1.ConfigSecurity.restricted_usernames)
+  return restricted_usernames_;
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-ConfigSecurity::_internal_mutable_restricted_usernames() {
-  return restricted_usernames_.MutableMap();
-}
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField<std::string>*
 ConfigSecurity::mutable_restricted_usernames() {
-  // @@protoc_insertion_point(field_mutable_map:common.v1.ConfigSecurity.restricted_usernames)
-  return _internal_mutable_restricted_usernames();
+  // @@protoc_insertion_point(field_mutable_list:common.v1.ConfigSecurity.restricted_usernames)
+  return &restricted_usernames_;
 }
 
 // optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];
@@ -23548,8 +23560,6 @@ inline void ConfigListenerRequest::set_allocated_client_id(std::string* client_i
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

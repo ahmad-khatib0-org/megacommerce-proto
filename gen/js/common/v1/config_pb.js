@@ -107,7 +107,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.common.v1.ConfigSecurity = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.common.v1.ConfigSecurity.repeatedFields_, null);
 };
 goog.inherits(proto.common.v1.ConfigSecurity, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -2043,6 +2043,13 @@ proto.common.v1.ConfigServices.prototype.hasUserServiceGrpcPort = function() {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.common.v1.ConfigSecurity.repeatedFields_ = [1];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -2074,7 +2081,7 @@ proto.common.v1.ConfigSecurity.prototype.toObject = function(opt_includeInstance
  */
 proto.common.v1.ConfigSecurity.toObject = function(includeInstance, msg) {
   var f, obj = {
-    restrictedUsernamesMap: (f = msg.getRestrictedUsernamesMap()) ? f.toObject(includeInstance, undefined) : [],
+    restrictedUsernamesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
     maximumLoginAttempts: jspb.Message.getFieldWithDefault(msg, 2, 0),
     enableInsecureOutgoingConnections: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
     enableMultifactorAuthentication: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
@@ -2130,10 +2137,8 @@ proto.common.v1.ConfigSecurity.deserializeBinaryFromReader = function(msg, reade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = msg.getRestrictedUsernamesMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
-         });
+      var value = /** @type {string} */ (reader.readString());
+      msg.addRestrictedUsernames(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
@@ -2236,9 +2241,12 @@ proto.common.v1.ConfigSecurity.prototype.serializeBinary = function() {
  */
 proto.common.v1.ConfigSecurity.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getRestrictedUsernamesMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  f = message.getRestrictedUsernamesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      1,
+      f
+    );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 2));
   if (f != null) {
@@ -2370,25 +2378,40 @@ proto.common.v1.ConfigSecurity.serializeBinaryToWriter = function(message, write
 
 
 /**
- * map<string, string> restricted_usernames = 1;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,string>}
+ * repeated string restricted_usernames = 1;
+ * @return {!Array<string>}
  */
-proto.common.v1.ConfigSecurity.prototype.getRestrictedUsernamesMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 1, opt_noLazyCreate,
-      null));
+proto.common.v1.ConfigSecurity.prototype.getRestrictedUsernamesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 1));
 };
 
 
 /**
- * Clears values from the map. The map will be non-null.
+ * @param {!Array<string>} value
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.clearRestrictedUsernamesMap = function() {
-  this.getRestrictedUsernamesMap().clear();
-  return this;};
+proto.common.v1.ConfigSecurity.prototype.setRestrictedUsernamesList = function(value) {
+  return jspb.Message.setField(this, 1, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.common.v1.ConfigSecurity} returns this
+ */
+proto.common.v1.ConfigSecurity.prototype.addRestrictedUsernames = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 1, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.common.v1.ConfigSecurity} returns this
+ */
+proto.common.v1.ConfigSecurity.prototype.clearRestrictedUsernamesList = function() {
+  return this.setRestrictedUsernamesList([]);
+};
 
 
 /**

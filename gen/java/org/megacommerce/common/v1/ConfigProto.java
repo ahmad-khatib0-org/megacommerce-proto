@@ -3554,38 +3554,29 @@ public final class ConfigProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     * <code>repeated string restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     * @return A list containing the restrictedUsernames.
+     */
+    java.util.List<java.lang.String>
+        getRestrictedUsernamesList();
+    /**
+     * <code>repeated string restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     * @return The count of restrictedUsernames.
      */
     int getRestrictedUsernamesCount();
     /**
-     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     * <code>repeated string restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     * @param index The index of the element to return.
+     * @return The restrictedUsernames at the given index.
      */
-    boolean containsRestrictedUsernames(
-        java.lang.String key);
+    java.lang.String getRestrictedUsernames(int index);
     /**
-     * Use {@link #getRestrictedUsernamesMap()} instead.
+     * <code>repeated string restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the restrictedUsernames at the given index.
      */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getRestrictedUsernames();
-    /**
-     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getRestrictedUsernamesMap();
-    /**
-     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
-     */
-
-    java.lang.String getRestrictedUsernamesOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue);
-    /**
-     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
-     */
-
-    java.lang.String getRestrictedUsernamesOrThrow(
-        java.lang.String key);
+    com.google.protobuf.ByteString
+        getRestrictedUsernamesBytes(int index);
 
     /**
      * <code>optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];</code>
@@ -3810,6 +3801,7 @@ public final class ConfigProto {
       super(builder);
     }
     private ConfigSecurity() {
+      restrictedUsernames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       allowCorsFrom_ = "";
       corsExposedHeaders_ = "";
     }
@@ -3831,18 +3823,6 @@ public final class ConfigProto {
       return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigSecurity_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 1:
-          return internalGetRestrictedUsernames();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -3853,84 +3833,38 @@ public final class ConfigProto {
 
     private int bitField0_;
     public static final int RESTRICTED_USERNAMES_FIELD_NUMBER = 1;
-    private static final class RestrictedUsernamesDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigSecurity_RestrictedUsernamesEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> restrictedUsernames_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetRestrictedUsernames() {
-      if (restrictedUsernames_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            RestrictedUsernamesDefaultEntryHolder.defaultEntry);
-      }
+    private com.google.protobuf.LazyStringList restrictedUsernames_;
+    /**
+     * <code>repeated string restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     * @return A list containing the restrictedUsernames.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getRestrictedUsernamesList() {
       return restrictedUsernames_;
     }
-
+    /**
+     * <code>repeated string restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     * @return The count of restrictedUsernames.
+     */
     public int getRestrictedUsernamesCount() {
-      return internalGetRestrictedUsernames().getMap().size();
+      return restrictedUsernames_.size();
     }
     /**
-     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     * <code>repeated string restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     * @param index The index of the element to return.
+     * @return The restrictedUsernames at the given index.
      */
-
-    @java.lang.Override
-    public boolean containsRestrictedUsernames(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      return internalGetRestrictedUsernames().getMap().containsKey(key);
+    public java.lang.String getRestrictedUsernames(int index) {
+      return restrictedUsernames_.get(index);
     }
     /**
-     * Use {@link #getRestrictedUsernamesMap()} instead.
+     * <code>repeated string restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the restrictedUsernames at the given index.
      */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getRestrictedUsernames() {
-      return getRestrictedUsernamesMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
-     */
-    @java.lang.Override
-
-    public java.util.Map<java.lang.String, java.lang.String> getRestrictedUsernamesMap() {
-      return internalGetRestrictedUsernames().getMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
-     */
-    @java.lang.Override
-
-    public java.lang.String getRestrictedUsernamesOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetRestrictedUsernames().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
-     */
-    @java.lang.Override
-
-    public java.lang.String getRestrictedUsernamesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetRestrictedUsernames().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
+    public com.google.protobuf.ByteString
+        getRestrictedUsernamesBytes(int index) {
+      return restrictedUsernames_.getByteString(index);
     }
 
     public static final int MAXIMUM_LOGIN_ATTEMPTS_FIELD_NUMBER = 2;
@@ -4343,12 +4277,9 @@ public final class ConfigProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetRestrictedUsernames(),
-          RestrictedUsernamesDefaultEntryHolder.defaultEntry,
-          1);
+      for (int i = 0; i < restrictedUsernames_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, restrictedUsernames_.getRaw(i));
+      }
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeInt32(2, maximumLoginAttempts_);
       }
@@ -4412,15 +4343,13 @@ public final class ConfigProto {
       if (size != -1) return size;
 
       size = 0;
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetRestrictedUsernames().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        restrictedUsernames__ = RestrictedUsernamesDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, restrictedUsernames__);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < restrictedUsernames_.size(); i++) {
+          dataSize += computeStringSizeNoTag(restrictedUsernames_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getRestrictedUsernamesList().size();
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
@@ -4507,8 +4436,8 @@ public final class ConfigProto {
       }
       org.megacommerce.common.v1.ConfigProto.ConfigSecurity other = (org.megacommerce.common.v1.ConfigProto.ConfigSecurity) obj;
 
-      if (!internalGetRestrictedUsernames().equals(
-          other.internalGetRestrictedUsernames())) return false;
+      if (!getRestrictedUsernamesList()
+          .equals(other.getRestrictedUsernamesList())) return false;
       if (hasMaximumLoginAttempts() != other.hasMaximumLoginAttempts()) return false;
       if (hasMaximumLoginAttempts()) {
         if (getMaximumLoginAttempts()
@@ -4610,9 +4539,9 @@ public final class ConfigProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (!internalGetRestrictedUsernames().getMap().isEmpty()) {
+      if (getRestrictedUsernamesCount() > 0) {
         hash = (37 * hash) + RESTRICTED_USERNAMES_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetRestrictedUsernames().hashCode();
+        hash = (53 * hash) + getRestrictedUsernamesList().hashCode();
       }
       if (hasMaximumLoginAttempts()) {
         hash = (37 * hash) + MAXIMUM_LOGIN_ATTEMPTS_FIELD_NUMBER;
@@ -4802,28 +4731,6 @@ public final class ConfigProto {
         return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigSecurity_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetRestrictedUsernames();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetMutableRestrictedUsernames();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -4845,7 +4752,8 @@ public final class ConfigProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        internalGetMutableRestrictedUsernames().clear();
+        restrictedUsernames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
         maximumLoginAttempts_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
         enableInsecureOutgoingConnections_ = false;
@@ -4910,8 +4818,11 @@ public final class ConfigProto {
         org.megacommerce.common.v1.ConfigProto.ConfigSecurity result = new org.megacommerce.common.v1.ConfigProto.ConfigSecurity(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        result.restrictedUsernames_ = internalGetRestrictedUsernames();
-        result.restrictedUsernames_.makeImmutable();
+        if (((bitField0_ & 0x00000001) != 0)) {
+          restrictedUsernames_ = restrictedUsernames_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000001);
+        }
+        result.restrictedUsernames_ = restrictedUsernames_;
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.maximumLoginAttempts_ = maximumLoginAttempts_;
           to_bitField0_ |= 0x00000001;
@@ -5033,8 +4944,16 @@ public final class ConfigProto {
 
       public Builder mergeFrom(org.megacommerce.common.v1.ConfigProto.ConfigSecurity other) {
         if (other == org.megacommerce.common.v1.ConfigProto.ConfigSecurity.getDefaultInstance()) return this;
-        internalGetMutableRestrictedUsernames().mergeFrom(
-            other.internalGetRestrictedUsernames());
+        if (!other.restrictedUsernames_.isEmpty()) {
+          if (restrictedUsernames_.isEmpty()) {
+            restrictedUsernames_ = other.restrictedUsernames_;
+            bitField0_ = (bitField0_ & ~0x00000001);
+          } else {
+            ensureRestrictedUsernamesIsMutable();
+            restrictedUsernames_.addAll(other.restrictedUsernames_);
+          }
+          onChanged();
+        }
         if (other.hasMaximumLoginAttempts()) {
           setMaximumLoginAttempts(other.getMaximumLoginAttempts());
         }
@@ -5120,11 +5039,9 @@ public final class ConfigProto {
                 done = true;
                 break;
               case 10: {
-                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-                restrictedUsernames__ = input.readMessage(
-                    RestrictedUsernamesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableRestrictedUsernames().getMutableMap().put(
-                    restrictedUsernames__.getKey(), restrictedUsernames__.getValue());
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureRestrictedUsernamesIsMutable();
+                restrictedUsernames_.add(s);
                 break;
               } // case 10
               case 16: {
@@ -5234,134 +5151,113 @@ public final class ConfigProto {
       }
       private int bitField0_;
 
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> restrictedUsernames_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetRestrictedUsernames() {
-        if (restrictedUsernames_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              RestrictedUsernamesDefaultEntryHolder.defaultEntry);
-        }
-        return restrictedUsernames_;
+      private com.google.protobuf.LazyStringList restrictedUsernames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureRestrictedUsernamesIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          restrictedUsernames_ = new com.google.protobuf.LazyStringArrayList(restrictedUsernames_);
+          bitField0_ |= 0x00000001;
+         }
       }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-      internalGetMutableRestrictedUsernames() {
-        onChanged();;
-        if (restrictedUsernames_ == null) {
-          restrictedUsernames_ = com.google.protobuf.MapField.newMapField(
-              RestrictedUsernamesDefaultEntryHolder.defaultEntry);
-        }
-        if (!restrictedUsernames_.isMutable()) {
-          restrictedUsernames_ = restrictedUsernames_.copy();
-        }
-        return restrictedUsernames_;
+      /**
+       * <code>repeated string restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       * @return A list containing the restrictedUsernames.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getRestrictedUsernamesList() {
+        return restrictedUsernames_.getUnmodifiableView();
       }
-
+      /**
+       * <code>repeated string restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       * @return The count of restrictedUsernames.
+       */
       public int getRestrictedUsernamesCount() {
-        return internalGetRestrictedUsernames().getMap().size();
+        return restrictedUsernames_.size();
       }
       /**
-       * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       * <code>repeated string restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       * @param index The index of the element to return.
+       * @return The restrictedUsernames at the given index.
        */
-
-      @java.lang.Override
-      public boolean containsRestrictedUsernames(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        return internalGetRestrictedUsernames().getMap().containsKey(key);
+      public java.lang.String getRestrictedUsernames(int index) {
+        return restrictedUsernames_.get(index);
       }
       /**
-       * Use {@link #getRestrictedUsernamesMap()} instead.
+       * <code>repeated string restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the restrictedUsernames at the given index.
        */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getRestrictedUsernames() {
-        return getRestrictedUsernamesMap();
+      public com.google.protobuf.ByteString
+          getRestrictedUsernamesBytes(int index) {
+        return restrictedUsernames_.getByteString(index);
       }
       /**
-       * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       * <code>repeated string restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       * @param index The index to set the value at.
+       * @param value The restrictedUsernames to set.
+       * @return This builder for chaining.
        */
-      @java.lang.Override
-
-      public java.util.Map<java.lang.String, java.lang.String> getRestrictedUsernamesMap() {
-        return internalGetRestrictedUsernames().getMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
-       */
-      @java.lang.Override
-
-      public java.lang.String getRestrictedUsernamesOrDefault(
-          java.lang.String key,
-          java.lang.String defaultValue) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetRestrictedUsernames().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
-       */
-      @java.lang.Override
-
-      public java.lang.String getRestrictedUsernamesOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetRestrictedUsernames().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-
-      public Builder clearRestrictedUsernames() {
-        internalGetMutableRestrictedUsernames().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
-       */
-
-      public Builder removeRestrictedUsernames(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        internalGetMutableRestrictedUsernames().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-      getMutableRestrictedUsernames() {
-        return internalGetMutableRestrictedUsernames().getMutableMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
-       */
-      public Builder putRestrictedUsernames(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new NullPointerException("map key"); }
+      public Builder setRestrictedUsernames(
+          int index, java.lang.String value) {
         if (value == null) {
-  throw new NullPointerException("map value");
-}
-
-        internalGetMutableRestrictedUsernames().getMutableMap()
-            .put(key, value);
+    throw new NullPointerException();
+  }
+  ensureRestrictedUsernamesIsMutable();
+        restrictedUsernames_.set(index, value);
+        onChanged();
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       * <code>repeated string restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       * @param value The restrictedUsernames to add.
+       * @return This builder for chaining.
        */
-
-      public Builder putAllRestrictedUsernames(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableRestrictedUsernames().getMutableMap()
-            .putAll(values);
+      public Builder addRestrictedUsernames(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureRestrictedUsernamesIsMutable();
+        restrictedUsernames_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       * @param values The restrictedUsernames to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllRestrictedUsernames(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureRestrictedUsernamesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, restrictedUsernames_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRestrictedUsernames() {
+        restrictedUsernames_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       * @param value The bytes of the restrictedUsernames to add.
+       * @return This builder for chaining.
+       */
+      public Builder addRestrictedUsernamesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureRestrictedUsernamesIsMutable();
+        restrictedUsernames_.add(value);
+        onChanged();
         return this;
       }
 
@@ -52590,11 +52486,6 @@ public final class ConfigProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_common_v1_ConfigSecurity_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_common_v1_ConfigSecurity_RestrictedUsernamesEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_common_v1_ConfigSecurity_RestrictedUsernamesEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_v1_CacheConfig_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -52787,481 +52678,478 @@ public final class ConfigProto {
       " \001(\005H\003R\023userServiceGrpcPort\210\001\001B\033\n\031_commo" +
       "n_service_grpc_hostB\033\n\031_common_service_g" +
       "rpc_portB\031\n\027_user_service_grpc_hostB\031\n\027_" +
-      "user_service_grpc_port\"\206\017\n\016ConfigSecurit" +
-      "y\022e\n\024restricted_usernames\030\001 \003(\01322.common" +
-      ".v1.ConfigSecurity.RestrictedUsernamesEn" +
-      "tryR\023restrictedUsernames\0229\n\026maximum_logi" +
-      "n_attempts\030\002 \001(\005H\000R\024maximumLoginAttempts" +
-      "\210\001\001\022T\n$enable_insecure_outgoing_connecti" +
-      "ons\030\003 \001(\010H\001R!enableInsecureOutgoingConne" +
-      "ctions\210\001\001\022O\n!enable_multifactor_authenti" +
-      "cation\030\004 \001(\010H\002R\037enableMultifactorAuthent" +
-      "ication\210\001\001\022Q\n\"enforce_multifactor_authen" +
-      "tication\030\005 \001(\010H\003R enforceMultifactorAuth" +
-      "entication\210\001\001\022F\n\035enable_oauth_service_pr" +
-      "ovider\030\006 \001(\010H\004R\032enableOauthServiceProvid" +
-      "er\210\001\001\022N\n!enable_outgoing_oauth_connectio" +
-      "ns\030\007 \001(\010H\005R\036enableOutgoingOauthConnectio" +
-      "ns\210\001\001\022U\n%terminate_sessions_on_password_" +
-      "change\030\010 \001(\010H\006R!terminateSessionsOnPassw" +
-      "ordChange\210\001\001\022A\n\033session_length_web_in_ho" +
-      "urs\030\t \001(\005H\007R\027sessionLengthWebInHours\210\001\001\022" +
-      "G\n\036session_length_mobile_in_hours\030\n \001(\005H" +
-      "\010R\032sessionLengthMobileInHours\210\001\001\022A\n\033sess" +
-      "ion_length_sso_in_hours\030\013 \001(\005H\tR\027session" +
-      "LengthSsoInHours\210\001\001\022+\n\017allow_cors_from\030\014" +
-      " \001(\tH\nR\rallowCorsFrom\210\001\001\0225\n\024cors_exposed" +
-      "_headers\030\r \001(\tH\013R\022corsExposedHeaders\210\001\001\022" +
-      "9\n\026cors_allow_credentials\030\016 \001(\010H\014R\024corsA" +
-      "llowCredentials\210\001\001\022\"\n\ncors_debug\030\017 \001(\010H\r" +
-      "R\tcorsDebug\210\001\001\022D\n\034allow_cookies_for_subd" +
-      "omains\030\020 \001(\010H\016R\031allowCookiesForSubdomain" +
-      "s\210\001\001\022<\n\030session_cache_in_minutes\030\021 \001(\005H\017" +
-      "R\025sessionCacheInMinutes\210\001\001\0227\n\025websocket_" +
-      "secure_port\030\022 \001(\005H\020R\023websocketSecurePort" +
-      "\210\001\001\022*\n\016websocket_port\030\023 \001(\005H\021R\rwebsocket" +
-      "Port\210\001\001\032F\n\030RestrictedUsernamesEntry\022\020\n\003k" +
-      "ey\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B" +
-      "\031\n\027_maximum_login_attemptsB\'\n%_enable_in" +
-      "secure_outgoing_connectionsB$\n\"_enable_m" +
-      "ultifactor_authenticationB%\n#_enforce_mu" +
-      "ltifactor_authenticationB \n\036_enable_oaut" +
-      "h_service_providerB$\n\"_enable_outgoing_o" +
-      "auth_connectionsB(\n&_terminate_sessions_" +
-      "on_password_changeB\036\n\034_session_length_we" +
-      "b_in_hoursB!\n\037_session_length_mobile_in_" +
-      "hoursB\036\n\034_session_length_sso_in_hoursB\022\n" +
-      "\020_allow_cors_fromB\027\n\025_cors_exposed_heade" +
-      "rsB\031\n\027_cors_allow_credentialsB\r\n\013_cors_d" +
-      "ebugB\037\n\035_allow_cookies_for_subdomainsB\033\n" +
-      "\031_session_cache_in_minutesB\030\n\026_websocket" +
-      "_secure_portB\021\n\017_websocket_port\"\202\003\n\013Cach" +
-      "eConfig\022\"\n\ncache_type\030\001 \001(\tH\000R\tcacheType" +
-      "\210\001\001\022(\n\rredis_address\030\002 \001(\tH\001R\014redisAddre" +
-      "ss\210\001\001\022*\n\016redis_password\030\003 \001(\tH\002R\rredisPa" +
-      "ssword\210\001\001\022\036\n\010redis_db\030\004 \001(\005H\003R\007redisDb\210\001" +
-      "\001\0221\n\022redis_cache_prefix\030\005 \001(\tH\004R\020redisCa" +
-      "chePrefix\210\001\001\0225\n\024disable_client_cache\030\006 \001" +
-      "(\010H\005R\022disableClientCache\210\001\001B\r\n\013_cache_ty" +
-      "peB\020\n\016_redis_addressB\021\n\017_redis_passwordB" +
-      "\013\n\t_redis_dbB\025\n\023_redis_cache_prefixB\027\n\025_" +
-      "disable_client_cache\"\251\003\n\rConfigMetrics\022\033" +
-      "\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\0221\n\022block_pro" +
-      "file_rate\030\002 \001(\005H\001R\020blockProfileRate\210\001\001\022*" +
-      "\n\016listen_address\030\003 \001(\tH\002R\rlistenAddress\210" +
-      "\001\001\0227\n\025enable_client_metrics\030\004 \001(\010H\003R\023ena" +
-      "bleClientMetrics\210\001\001\022C\n\033enable_notificati" +
-      "on_metrics\030\005 \001(\010H\004R\031enableNotificationMe" +
-      "trics\210\001\001\022/\n\024client_side_user_ids\030\006 \003(\tR\021" +
-      "clientSideUserIdsB\t\n\007_enableB\025\n\023_block_p" +
-      "rofile_rateB\021\n\017_listen_addressB\030\n\026_enabl" +
-      "e_client_metricsB\036\n\034_enable_notification" +
-      "_metrics\"\230\004\n\tConfigSSO\022\033\n\006enable\030\001 \001(\010H\000" +
-      "R\006enable\210\001\001\022\033\n\006secret\030\002 \001(\tH\001R\006secret\210\001\001" +
-      "\022\023\n\002id\030\003 \001(\tH\002R\002id\210\001\001\022\031\n\005scope\030\004 \001(\tH\003R\005" +
-      "scope\210\001\001\022(\n\rauth_endpoint\030\005 \001(\tH\004R\014authE" +
-      "ndpoint\210\001\001\022*\n\016token_endpoint\030\006 \001(\tH\005R\rto" +
-      "kenEndpoint\210\001\001\022/\n\021user_api_endpoint\030\007 \001(" +
-      "\tH\006R\017userApiEndpoint\210\001\001\0222\n\022discovery_end" +
-      "point\030\010 \001(\tH\007R\021discoveryEndpoint\210\001\001\022$\n\013b" +
-      "utton_text\030\t \001(\tH\010R\nbuttonText\210\001\001\022&\n\014but" +
-      "ton_color\030\n \001(\tH\tR\013buttonColor\210\001\001B\t\n\007_en" +
-      "ableB\t\n\007_secretB\005\n\003_idB\010\n\006_scopeB\020\n\016_aut" +
-      "h_endpointB\021\n\017_token_endpointB\024\n\022_user_a" +
-      "pi_endpointB\025\n\023_discovery_endpointB\016\n\014_b" +
-      "utton_textB\017\n\r_button_color\"\325\005\n\tConfigSq" +
-      "l\022$\n\013driver_name\030\001 \001(\tH\000R\ndriverName\210\001\001\022" +
-      "$\n\013data_source\030\002 \001(\tH\001R\ndataSource\210\001\001\022)\n" +
-      "\016max_idle_conns\030\003 \001(\005H\002R\014maxIdleConns\210\001\001" +
-      "\022H\n\036conn_max_lifetime_milliseconds\030\004 \001(\005" +
-      "H\003R\033connMaxLifetimeMilliseconds\210\001\001\022I\n\037co" +
-      "nn_max_idle_time_milliseconds\030\005 \001(\005H\004R\033c" +
-      "onnMaxIdleTimeMilliseconds\210\001\001\022)\n\016max_ope" +
-      "n_conns\030\006 \001(\005H\005R\014maxOpenConns\210\001\001\022\031\n\005trac" +
-      "e\030\007 \001(\010H\006R\005trace\210\001\001\0222\n\023at_rest_encrypt_k" +
-      "ey\030\010 \001(\tH\007R\020atRestEncryptKey\210\001\001\022(\n\rquery" +
-      "_timeout\030\t \001(\005H\010R\014queryTimeout\210\001\001\022;\n\027dis" +
-      "able_database_search\030\n \001(\010H\tR\025disableDat" +
-      "abaseSearch\210\001\001B\016\n\014_driver_nameB\016\n\014_data_" +
-      "sourceB\021\n\017_max_idle_connsB!\n\037_conn_max_l" +
-      "ifetime_millisecondsB\"\n _conn_max_idle_t" +
-      "ime_millisecondsB\021\n\017_max_open_connsB\010\n\006_" +
-      "traceB\026\n\024_at_rest_encrypt_keyB\020\n\016_query_" +
-      "timeoutB\032\n\030_disable_database_search\"\212\003\n\016" +
-      "ConfigPassword\022*\n\016minimum_length\030\001 \001(\005H\000" +
-      "R\rminimumLength\210\001\001\022*\n\016maximum_lenght\030\002 \001" +
-      "(\005H\001R\rmaximumLenght\210\001\001\022!\n\tlowercase\030\003 \001(" +
-      "\010H\002R\tlowercase\210\001\001\022\033\n\006number\030\004 \001(\010H\003R\006num" +
-      "ber\210\001\001\022!\n\tuppercase\030\005 \001(\010H\004R\tuppercase\210\001" +
-      "\001\022\033\n\006symbol\030\006 \001(\010H\005R\006symbol\210\001\001\0221\n\022enable" +
-      "_forgot_link\030\007 \001(\010H\006R\020enableForgotLink\210\001" +
-      "\001B\021\n\017_minimum_lengthB\021\n\017_maximum_lenghtB" +
-      "\014\n\n_lowercaseB\t\n\007_numberB\014\n\n_uppercaseB\t" +
-      "\n\007_symbolB\025\n\023_enable_forgot_link\"\340\017\n\nCon" +
-      "figFile\022;\n\027enable_file_attachments\030\001 \001(\010" +
-      "H\000R\025enableFileAttachments\210\001\001\0225\n\024enable_m" +
-      "obile_upload\030\002 \001(\010H\001R\022enableMobileUpload" +
-      "\210\001\001\0229\n\026enable_mobile_download\030\003 \001(\010H\002R\024e" +
-      "nableMobileDownload\210\001\001\022\'\n\rmax_file_size\030" +
-      "\004 \001(\003H\003R\013maxFileSize\210\001\001\0225\n\024max_image_res" +
-      "olution\030\005 \001(\003H\004R\022maxImageResolution\210\001\001\022F" +
-      "\n\035max_image_decoder_concurrency\030\006 \001(\003H\005R" +
-      "\032maxImageDecoderConcurrency\210\001\001\022$\n\013driver" +
-      "_name\030\007 \001(\tH\006R\ndriverName\210\001\001\022!\n\tdirector" +
-      "y\030\010 \001(\tH\007R\tdirectory\210\001\001\0221\n\022enable_public" +
-      "_link\030\t \001(\010H\010R\020enablePublicLink\210\001\001\022,\n\017ex" +
-      "tract_content\030\n \001(\010H\tR\016extractContent\210\001\001" +
-      "\0220\n\021archive_recursion\030\013 \001(\010H\nR\020archiveRe" +
-      "cursion\210\001\001\022-\n\020public_link_salt\030\014 \001(\tH\013R\016" +
-      "publicLinkSalt\210\001\001\022&\n\014initial_font\030\r \001(\tH" +
-      "\014R\013initialFont\210\001\001\0229\n\027amazon_s3_access_ke" +
-      "y_id\030\016 \001(\tH\rR\023amazonS3AccessKeyId\210\001\001\022A\n\033" +
-      "amazon_s3_secret_access_key\030\017 \001(\tH\016R\027ama" +
-      "zonS3SecretAccessKey\210\001\001\022-\n\020amazon_s3_buc" +
-      "ket\030\020 \001(\tH\017R\016amazonS3Bucket\210\001\001\0226\n\025amazon" +
-      "_s3_path_prefix\030\021 \001(\tH\020R\022amazonS3PathPre" +
-      "fix\210\001\001\022-\n\020amazon_s3_region\030\022 \001(\tH\021R\016amaz" +
-      "onS3Region\210\001\001\0221\n\022amazon_s3_endpoint\030\023 \001(" +
-      "\tH\022R\020amazonS3Endpoint\210\001\001\022\'\n\ramazon_s3_ss" +
-      "l\030\024 \001(\010H\023R\013amazonS3Ssl\210\001\001\022.\n\021amazon_s3_s" +
-      "ign_v2\030\025 \001(\010H\024R\016amazonS3SignV2\210\001\001\022\'\n\rama" +
-      "zon_s3_sse\030\026 \001(\010H\025R\013amazonS3Sse\210\001\001\022+\n\017am" +
-      "azon_s3_trace\030\027 \001(\010H\026R\ramazonS3Trace\210\001\001\022" +
-      "W\n&amazon_s3_request_timeout_millisecond" +
-      "s\030\030 \001(\003H\027R\"amazonS3RequestTimeoutMillise" +
-      "conds\210\001\001\022J\n amazon_s3_upload_part_size_b" +
-      "ytes\030\031 \001(\003H\030R\033amazonS3UploadPartSizeByte" +
-      "s\210\001\001\022:\n\027amazon_s3_storage_class\030\032 \001(\tH\031R" +
-      "\024amazonS3StorageClass\210\001\001B\032\n\030_enable_file" +
-      "_attachmentsB\027\n\025_enable_mobile_uploadB\031\n" +
-      "\027_enable_mobile_downloadB\020\n\016_max_file_si" +
-      "zeB\027\n\025_max_image_resolutionB \n\036_max_imag" +
-      "e_decoder_concurrencyB\016\n\014_driver_nameB\014\n" +
-      "\n_directoryB\025\n\023_enable_public_linkB\022\n\020_e" +
-      "xtract_contentB\024\n\022_archive_recursionB\023\n\021" +
-      "_public_link_saltB\017\n\r_initial_fontB\032\n\030_a" +
-      "mazon_s3_access_key_idB\036\n\034_amazon_s3_sec" +
-      "ret_access_keyB\023\n\021_amazon_s3_bucketB\030\n\026_" +
-      "amazon_s3_path_prefixB\023\n\021_amazon_s3_regi" +
-      "onB\025\n\023_amazon_s3_endpointB\020\n\016_amazon_s3_" +
-      "sslB\024\n\022_amazon_s3_sign_v2B\020\n\016_amazon_s3_" +
-      "sseB\022\n\020_amazon_s3_traceB)\n\'_amazon_s3_re" +
-      "quest_timeout_millisecondsB#\n!_amazon_s3" +
-      "_upload_part_size_bytesB\032\n\030_amazon_s3_st" +
-      "orage_class\"\375\016\n\013ConfigEmail\022=\n\030send_emai" +
-      "l_notifications\030\001 \001(\010H\000R\026sendEmailNotifi" +
-      "cations\210\001\001\022A\n\032require_email_verification" +
-      "\030\002 \001(\010H\001R\030requireEmailVerification\210\001\001\022*\n" +
-      "\016feedback_email\030\003 \001(\tH\002R\rfeedbackEmail\210\001" +
-      "\001\022-\n\020reply_to_address\030\004 \001(\tH\003R\016replyToAd" +
-      "dress\210\001\001\022-\n\020enable_smtp_auth\030\005 \001(\010H\004R\016en" +
-      "ableSmtpAuth\210\001\001\022(\n\rsmtp_username\030\006 \001(\tH\005" +
-      "R\014smtpUsername\210\001\001\022(\n\rsmtp_password\030\007 \001(\t" +
-      "H\006R\014smtpPassword\210\001\001\022$\n\013smtp_server\030\010 \001(\t" +
-      "H\007R\nsmtpServer\210\001\001\022 \n\tsmtp_port\030\t \001(\tH\010R\010" +
-      "smtpPort\210\001\001\0223\n\023smtp_server_timeout\030\n \001(\005" +
-      "H\tR\021smtpServerTimeout\210\001\001\0224\n\023connection_s" +
-      "ecurity\030\013 \001(\tH\nR\022connectionSecurity\210\001\001\022;" +
-      "\n\027send_push_notifications\030\014 \001(\010H\013R\025sendP" +
-      "ushNotifications\210\001\001\022=\n\030push_notification" +
-      "_server\030\r \001(\tH\014R\026pushNotificationServer\210" +
-      "\001\001\022A\n\032push_notification_contents\030\016 \001(\tH\r" +
-      "R\030pushNotificationContents\210\001\001\022=\n\030push_no" +
-      "tification_buffer\030\017 \001(\005H\016R\026pushNotificat" +
-      "ionBuffer\210\001\001\0227\n\025enable_email_batching\030\020 " +
-      "\001(\010H\017R\023enableEmailBatching\210\001\001\022@\n\032email_b" +
-      "atching_buffer_size\030\021 \001(\005H\020R\027emailBatchi" +
-      "ngBufferSize\210\001\001\022;\n\027email_batching_interv" +
-      "al\030\022 \001(\005H\021R\025emailBatchingInterval\210\001\001\022T\n$" +
-      "skip_server_certificate_verification\030\023 \001" +
-      "(\010H\022R!skipServerCertificateVerification\210" +
-      "\001\001\022L\n email_notification_contents_type\030\024" +
-      " \001(\tH\023R\035emailNotificationContentsType\210\001\001" +
-      "\0221\n\022login_button_color\030\025 \001(\tH\024R\020loginBut" +
-      "tonColor\210\001\001\022>\n\031login_button_border_color" +
-      "\030\026 \001(\tH\025R\026loginButtonBorderColor\210\001\001\022:\n\027l" +
-      "ogin_button_text_color\030\027 \001(\tH\026R\024loginBut" +
-      "tonTextColor\210\001\001B\033\n\031_send_email_notificat" +
-      "ionsB\035\n\033_require_email_verificationB\021\n\017_" +
-      "feedback_emailB\023\n\021_reply_to_addressB\023\n\021_" +
-      "enable_smtp_authB\020\n\016_smtp_usernameB\020\n\016_s" +
-      "mtp_passwordB\016\n\014_smtp_serverB\014\n\n_smtp_po" +
-      "rtB\026\n\024_smtp_server_timeoutB\026\n\024_connectio" +
-      "n_securityB\032\n\030_send_push_notificationsB\033" +
-      "\n\031_push_notification_serverB\035\n\033_push_not" +
-      "ification_contentsB\033\n\031_push_notification" +
-      "_bufferB\030\n\026_enable_email_batchingB\035\n\033_em" +
-      "ail_batching_buffer_sizeB\032\n\030_email_batch" +
-      "ing_intervalB\'\n%_skip_server_certificate" +
-      "_verificationB#\n!_email_notification_con" +
-      "tents_typeB\025\n\023_login_button_colorB\034\n\032_lo" +
-      "gin_button_border_colorB\032\n\030_login_button" +
-      "_text_color\"\204\003\n\017ConfigRateLimit\022\033\n\006enabl" +
-      "e\030\001 \001(\010H\000R\006enable\210\001\001\022\034\n\007per_sec\030\002 \001(\005H\001R" +
-      "\006perSec\210\001\001\022 \n\tmax_burst\030\003 \001(\005H\002R\010maxBurs" +
-      "t\210\001\001\022/\n\021memory_store_size\030\004 \001(\005H\003R\017memor" +
-      "yStoreSize\210\001\001\0222\n\023vary_by_remote_addr\030\005 \001" +
-      "(\010H\004R\020varyByRemoteAddr\210\001\001\022%\n\014vary_by_use" +
-      "r\030\006 \001(\010H\005R\nvaryByUser\210\001\001\022$\n\016vary_by_head" +
-      "er\030\007 \001(\tR\014varyByHeaderB\t\n\007_enableB\n\n\010_pe" +
-      "r_secB\014\n\n_max_burstB\024\n\022_memory_store_siz" +
-      "eB\026\n\024_vary_by_remote_addrB\017\n\r_vary_by_us" +
-      "er\"\227\001\n\rConfigPrivacy\0221\n\022show_email_addre" +
-      "ss\030\001 \001(\010H\000R\020showEmailAddress\210\001\001\022)\n\016show_" +
-      "full_name\030\002 \001(\010H\001R\014showFullName\210\001\001B\025\n\023_s" +
-      "how_email_addressB\021\n\017_show_full_name\"\357\003\n" +
-      "\rConfigSupport\0226\n\025terms_of_service_link\030" +
-      "\001 \001(\tH\000R\022termsOfServiceLink\210\001\001\0223\n\023privac" +
-      "y_policy_link\030\002 \001(\tH\001R\021privacyPolicyLink" +
-      "\210\001\001\022\"\n\nabout_link\030\003 \001(\tH\002R\taboutLink\210\001\001\022" +
-      " \n\thelp_link\030\004 \001(\tH\003R\010helpLink\210\001\001\0226\n\025rep" +
-      "ort_a_problem_link\030\005 \001(\tH\004R\022reportAProbl" +
-      "emLink\210\001\001\0225\n\024forgot_password_link\030\006 \001(\tH" +
-      "\005R\022forgotPasswordLink\210\001\001\022(\n\rsupport_emai" +
-      "l\030\007 \001(\tH\006R\014supportEmail\210\001\001B\030\n\026_terms_of_" +
-      "service_linkB\026\n\024_privacy_policy_linkB\r\n\013" +
-      "_about_linkB\014\n\n_help_linkB\030\n\026_report_a_p" +
-      "roblem_linkB\027\n\025_forgot_password_linkB\020\n\016" +
-      "_support_email\"\202\002\n\022ConfigLocalization\0227\n" +
-      "\025default_server_locale\030\001 \001(\tH\000R\023defaultS" +
-      "erverLocale\210\001\001\0227\n\025default_client_locale\030" +
-      "\002 \001(\tH\001R\023defaultClientLocale\210\001\001\0220\n\021avail" +
-      "able_locales\030\003 \001(\tH\002R\020availableLocales\210\001" +
-      "\001B\030\n\026_default_server_localeB\030\n\026_default_" +
-      "client_localeB\024\n\022_available_locales\"\325\020\n\n" +
-      "ConfigLdap\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022" +
-      "$\n\013enable_sync\030\002 \001(\010H\001R\nenableSync\210\001\001\022$\n" +
-      "\013ldap_server\030\003 \001(\tH\002R\nldapServer\210\001\001\022 \n\tl" +
-      "dap_port\030\004 \001(\005H\003R\010ldapPort\210\001\001\0224\n\023connect" +
-      "ion_security\030\005 \001(\tH\004R\022connectionSecurity" +
-      "\210\001\001\022\034\n\007base_dn\030\006 \001(\tH\005R\006baseDn\210\001\001\022(\n\rbin" +
-      "d_username\030\007 \001(\tH\006R\014bindUsername\210\001\001\022(\n\rb" +
-      "ind_password\030\010 \001(\tH\007R\014bindPassword\210\001\001\0229\n" +
-      "\026maximum_login_attempts\030\t \001(\005H\010R\024maximum" +
-      "LoginAttempts\210\001\001\022$\n\013user_filter\030\n \001(\tH\tR" +
-      "\nuserFilter\210\001\001\022&\n\014group_filter\030\013 \001(\tH\nR\013" +
-      "groupFilter\210\001\001\0223\n\023enable_admin_filter\030\014 " +
-      "\001(\010H\013R\021enableAdminFilter\210\001\001\022&\n\014admin_fil" +
-      "ter\030\r \001(\tH\014R\013adminFilter\210\001\001\022D\n\034group_dis" +
-      "play_name_attribute\030\016 \001(\tH\rR\031groupDispla" +
-      "yNameAttribute\210\001\001\0221\n\022group_id_attribute\030" +
-      "\017 \001(\tH\016R\020groupIdAttribute\210\001\001\0225\n\024first_na" +
-      "me_attribute\030\020 \001(\tH\017R\022firstNameAttribute" +
-      "\210\001\001\0223\n\023last_name_attribute\030\021 \001(\tH\020R\021last" +
-      "NameAttribute\210\001\001\022,\n\017email_attribute\030\022 \001(" +
-      "\tH\021R\016emailAttribute\210\001\001\0222\n\022username_attri" +
-      "bute\030\023 \001(\tH\022R\021usernameAttribute\210\001\001\0222\n\022ni" +
-      "ckname_attribute\030\024 \001(\tH\023R\021nicknameAttrib" +
-      "ute\210\001\001\022&\n\014id_attribute\030\025 \001(\tH\024R\013idAttrib" +
-      "ute\210\001\001\0222\n\022position_attribute\030\026 \001(\tH\025R\021po" +
-      "sitionAttribute\210\001\001\0221\n\022login_id_attribute" +
-      "\030\027 \001(\tH\026R\020loginIdAttribute\210\001\001\0220\n\021picture" +
-      "_attribute\030\030 \001(\tH\027R\020pictureAttribute\210\001\001\022" +
-      "7\n\025sync_interval_minutes\030\031 \001(\005H\030R\023syncIn" +
-      "tervalMinutes\210\001\001\022(\n\rquery_timeout\030\032 \001(\005H" +
-      "\031R\014queryTimeout\210\001\001\022\'\n\rmax_page_size\030\033 \001(" +
-      "\005H\032R\013maxPageSize\210\001\001\022-\n\020login_field_name\030" +
-      "\034 \001(\tH\033R\016loginFieldName\210\001\001\0221\n\022login_butt" +
-      "on_color\030\035 \001(\tH\034R\020loginButtonColor\210\001\001\022>\n" +
-      "\031login_button_border_color\030\036 \001(\tH\035R\026logi" +
-      "nButtonBorderColor\210\001\001\022:\n\027login_button_te" +
-      "xt_color\030\037 \001(\tH\036R\024loginButtonTextColor\210\001" +
-      "\001B\t\n\007_enableB\016\n\014_enable_syncB\016\n\014_ldap_se" +
-      "rverB\014\n\n_ldap_portB\026\n\024_connection_securi" +
-      "tyB\n\n\010_base_dnB\020\n\016_bind_usernameB\020\n\016_bin" +
-      "d_passwordB\031\n\027_maximum_login_attemptsB\016\n" +
-      "\014_user_filterB\017\n\r_group_filterB\026\n\024_enabl" +
-      "e_admin_filterB\017\n\r_admin_filterB\037\n\035_grou" +
-      "p_display_name_attributeB\025\n\023_group_id_at" +
-      "tributeB\027\n\025_first_name_attributeB\026\n\024_las" +
-      "t_name_attributeB\022\n\020_email_attributeB\025\n\023" +
-      "_username_attributeB\025\n\023_nickname_attribu" +
-      "teB\017\n\r_id_attributeB\025\n\023_position_attribu" +
-      "teB\025\n\023_login_id_attributeB\024\n\022_picture_at" +
-      "tributeB\030\n\026_sync_interval_minutesB\020\n\016_qu" +
-      "ery_timeoutB\020\n\016_max_page_sizeB\023\n\021_login_" +
-      "field_nameB\025\n\023_login_button_colorB\034\n\032_lo" +
-      "gin_button_border_colorB\032\n\030_login_button" +
-      "_text_color\"\255\023\n\nConfigSaml\022\033\n\006enable\030\001 \001" +
-      "(\010H\000R\006enable\210\001\001\0226\n\025enable_sync_with_ldap" +
-      "\030\002 \001(\010H\001R\022enableSyncWithLdap\210\001\001\022N\n\"enabl" +
-      "e_sync_with_ldap_include_auth\030\003 \001(\010H\002R\035e" +
-      "nableSyncWithLdapIncludeAuth\210\001\001\022:\n\027ignor" +
-      "e_guests_ldap_sync\030\004 \001(\010H\003R\024ignoreGuests" +
-      "LdapSync\210\001\001\022\033\n\006verify\030\005 \001(\010H\004R\006verify\210\001\001" +
-      "\022\035\n\007encrypt\030\006 \001(\010H\005R\007encrypt\210\001\001\022&\n\014sign_" +
-      "request\030\007 \001(\010H\006R\013signRequest\210\001\001\022\034\n\007idp_u" +
-      "rl\030\010 \001(\tH\007R\006idpUrl\210\001\001\0221\n\022idp_descriptor_" +
-      "url\030\t \001(\tH\010R\020idpDescriptorUrl\210\001\001\022-\n\020idp_" +
-      "metadata_url\030\n \001(\tH\tR\016idpMetadataUrl\210\001\001\022" +
-      "C\n\033service_provider_identifier\030\013 \001(\tH\nR\031" +
-      "serviceProviderIdentifier\210\001\001\022H\n\036assertio" +
-      "n_consumer_service_url\030\014 \001(\tH\013R\033assertio" +
-      "nConsumerServiceUrl\210\001\001\0224\n\023signature_algo" +
-      "rithm\030\r \001(\tH\014R\022signatureAlgorithm\210\001\001\0224\n\023" +
-      "canonical_algorithm\030\016 \001(\tH\rR\022canonicalAl" +
-      "gorithm\210\001\001\022:\n\027scoping_idp_provider_id\030\017 " +
-      "\001(\tH\016R\024scopingIdpProviderId\210\001\001\022-\n\020scopin" +
-      "g_idp_name\030\020 \001(\tH\017R\016scopingIdpName\210\001\001\0225\n" +
-      "\024idp_certificate_file\030\021 \001(\tH\020R\022idpCertif" +
-      "icateFile\210\001\001\022;\n\027public_certificate_file\030" +
-      "\022 \001(\tH\021R\025publicCertificateFile\210\001\001\022-\n\020pri" +
-      "vate_key_file\030\023 \001(\tH\022R\016privateKeyFile\210\001\001" +
-      "\022&\n\014id_attribute\030\024 \001(\tH\023R\013idAttribute\210\001\001" +
-      "\0229\n\026enable_admin_attribute\030\025 \001(\010H\024R\024enab" +
-      "leAdminAttribute\210\001\001\022,\n\017admin_attribute\030\026" +
-      " \001(\tH\025R\016adminAttribute\210\001\001\0225\n\024first_name_" +
-      "attribute\030\027 \001(\tH\026R\022firstNameAttribute\210\001\001" +
-      "\0223\n\023last_name_attribute\030\030 \001(\tH\027R\021lastNam" +
-      "eAttribute\210\001\001\022,\n\017email_attribute\030\031 \001(\tH\030" +
-      "R\016emailAttribute\210\001\001\0222\n\022username_attribut" +
-      "e\030\032 \001(\tH\031R\021usernameAttribute\210\001\001\0222\n\022nickn" +
-      "ame_attribute\030\033 \001(\tH\032R\021nicknameAttribute" +
-      "\210\001\001\022.\n\020locale_attribute\030\034 \001(\tH\033R\017localeA" +
-      "ttribute\210\001\001\0222\n\022position_attribute\030\035 \001(\tH" +
-      "\034R\021positionAttribute\210\001\001\022/\n\021login_button_" +
-      "text\030\036 \001(\tH\035R\017loginButtonText\210\001\001\0221\n\022logi" +
-      "n_button_color\030\037 \001(\tH\036R\020loginButtonColor" +
-      "\210\001\001\022>\n\031login_button_border_color\030  \001(\tH\037" +
-      "R\026loginButtonBorderColor\210\001\001\022:\n\027login_but" +
-      "ton_text_color\030! \001(\tH R\024loginButtonTextC" +
-      "olor\210\001\001B\t\n\007_enableB\030\n\026_enable_sync_with_" +
-      "ldapB%\n#_enable_sync_with_ldap_include_a" +
-      "uthB\032\n\030_ignore_guests_ldap_syncB\t\n\007_veri",
-      "fyB\n\n\010_encryptB\017\n\r_sign_requestB\n\n\010_idp_" +
-      "urlB\025\n\023_idp_descriptor_urlB\023\n\021_idp_metad" +
-      "ata_urlB\036\n\034_service_provider_identifierB" +
-      "!\n\037_assertion_consumer_service_urlB\026\n\024_s" +
-      "ignature_algorithmB\026\n\024_canonical_algorit" +
-      "hmB\032\n\030_scoping_idp_provider_idB\023\n\021_scopi" +
-      "ng_idp_nameB\027\n\025_idp_certificate_fileB\032\n\030" +
-      "_public_certificate_fileB\023\n\021_private_key" +
-      "_fileB\017\n\r_id_attributeB\031\n\027_enable_admin_" +
-      "attributeB\022\n\020_admin_attributeB\027\n\025_first_" +
-      "name_attributeB\026\n\024_last_name_attributeB\022" +
-      "\n\020_email_attributeB\025\n\023_username_attribut" +
-      "eB\025\n\023_nickname_attributeB\023\n\021_locale_attr" +
-      "ibuteB\025\n\023_position_attributeB\024\n\022_login_b" +
-      "utton_textB\025\n\023_login_button_colorB\034\n\032_lo" +
-      "gin_button_border_colorB\032\n\030_login_button" +
-      "_text_color\"\301\005\n\017ConfigNativeApp\0223\n\026app_c" +
-      "ustom_url_schemes\030\001 \003(\tR\023appCustomUrlSch" +
-      "emes\022/\n\021app_download_link\030\002 \001(\tH\000R\017appDo" +
-      "wnloadLink\210\001\001\022>\n\031android_app_download_li" +
-      "nk\030\003 \001(\tH\001R\026androidAppDownloadLink\210\001\001\0226\n" +
-      "\025ios_app_download_link\030\004 \001(\tH\002R\022iosAppDo" +
-      "wnloadLink\210\001\001\022;\n\027mobile_external_browser" +
-      "\030\005 \001(\010H\003R\025mobileExternalBrowser\210\001\001\022=\n\030mo" +
-      "bile_enable_biometrics\030\006 \001(\010H\004R\026mobileEn" +
-      "ableBiometrics\210\001\001\022F\n\035mobile_prevent_scre" +
-      "en_capture\030\007 \001(\010H\005R\032mobilePreventScreenC" +
-      "apture\210\001\001\022C\n\033mobile_jailbreak_protection" +
-      "\030\010 \001(\010H\006R\031mobileJailbreakProtection\210\001\001B\024" +
-      "\n\022_app_download_linkB\034\n\032_android_app_dow" +
-      "nload_linkB\030\n\026_ios_app_download_linkB\032\n\030" +
-      "_mobile_external_browserB\033\n\031_mobile_enab" +
-      "le_biometricsB \n\036_mobile_prevent_screen_" +
-      "captureB\036\n\034_mobile_jailbreak_protection\"" +
-      "\253\005\n\021ConfigMeilisearch\022#\n\nserver_url\030\001 \001(" +
-      "\tH\000R\nserver_url\210\001\001\022\"\n\nmaster_key\030\002 \001(\tH\001" +
-      "R\tmasterKey\210\001\001\022,\n\017enable_indexing\030\003 \001(\010H" +
-      "\002R\016enableIndexing\210\001\001\022.\n\020enable_searching" +
-      "\030\004 \001(\010H\003R\017enableSearching\210\001\001\0224\n\023enable_a" +
-      "utocomplete\030\005 \001(\010H\004R\022enableAutocomplete\210" +
-      "\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001\022;" +
-      "\n\027request_timeout_seconds\030\007 \001(\005H\006R\025reque" +
-      "stTimeoutSeconds\210\001\001\022&\n\014index_prefix\030\010 \001(" +
-      "\tH\007R\013indexPrefix\210\001\001\022-\n\020search_cutoff_ms\030" +
-      "\t \001(\005H\010R\016searchCutoffMs\210\001\001\0227\n\025enable_typ" +
-      "o_tolerance\030\n \001(\010H\tR\023enableTypoTolerance" +
-      "\210\001\001B\r\n\013_server_urlB\r\n\013_master_keyB\022\n\020_en" +
-      "able_indexingB\023\n\021_enable_searchingB\026\n\024_e" +
-      "nable_autocompleteB\r\n\013_batch_sizeB\032\n\030_re" +
-      "quest_timeout_secondsB\017\n\r_index_prefixB\023" +
-      "\n\021_search_cutoff_msB\030\n\026_enable_typo_tole" +
-      "rance\"\272\003\n\013ConfigBleve\022 \n\tindex_dir\030\001 \001(\t" +
-      "H\000R\010indexDir\210\001\001\022,\n\017enable_indexing\030\002 \001(\010" +
-      "H\001R\016enableIndexing\210\001\001\022.\n\020enable_searchin" +
-      "g\030\003 \001(\010H\002R\017enableSearching\210\001\001\0224\n\023enable_" +
-      "autocomplete\030\004 \001(\010H\003R\022enableAutocomplete" +
-      "\210\001\001\022M\n!bulk_indexing_time_window_seconds" +
-      "\030\005 \001(\005H\004R\035bulkIndexingTimeWindowSeconds\210" +
-      "\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001B\014" +
-      "\n\n_index_dirB\022\n\020_enable_indexingB\023\n\021_ena" +
-      "ble_searchingB\026\n\024_enable_autocompleteB$\n" +
-      "\"_bulk_indexing_time_window_secondsB\r\n\013_" +
-      "batch_size\"\354\006\n\023ConfigDataRetention\022;\n\027en" +
-      "able_message_deletion\030\001 \001(\010H\000R\025enableMes" +
-      "sageDeletion\210\001\001\0225\n\024enable_file_deletion\030" +
-      "\002 \001(\010H\001R\022enableFileDeletion\210\001\001\0229\n\026enable" +
-      "_boards_deletion\030\003 \001(\010H\002R\024enableBoardsDe" +
-      "letion\210\001\001\022;\n\027message_retention_hours\030\004 \001" +
-      "(\005H\003R\025messageRetentionHours\210\001\001\0225\n\024file_r" +
-      "etention_hours\030\005 \001(\005H\004R\022fileRetentionHou" +
-      "rs\210\001\001\0227\n\025boards_retention_days\030\006 \001(\005H\005R\023" +
-      "boardsRetentionDays\210\001\001\022:\n\027deletion_job_s" +
-      "tart_time\030\007 \001(\tH\006R\024deletionJobStartTime\210" +
-      "\001\001\022\"\n\nbatch_size\030\010 \001(\005H\007R\tbatchSize\210\001\001\022N" +
-      "\n!time_between_batches_milliseconds\030\t \001(" +
-      "\005H\010R\036timeBetweenBatchesMilliseconds\210\001\001\022<" +
-      "\n\030retention_ids_batch_size\030\n \001(\005H\tR\025rete" +
-      "ntionIdsBatchSize\210\001\001B\032\n\030_enable_message_" +
-      "deletionB\027\n\025_enable_file_deletionB\031\n\027_en" +
-      "able_boards_deletionB\032\n\030_message_retenti" +
-      "on_hoursB\027\n\025_file_retention_hoursB\030\n\026_bo" +
-      "ards_retention_daysB\032\n\030_deletion_job_sta" +
-      "rt_timeB\r\n\013_batch_sizeB$\n\"_time_between_" +
-      "batches_millisecondsB\033\n\031_retention_ids_b" +
-      "atch_size\"\264\002\n\020ConfigImageProxy\022\033\n\006enable" +
-      "\030\001 \001(\010H\000R\006enable\210\001\001\022-\n\020image_proxy_type\030" +
-      "\002 \001(\tH\001R\016imageProxyType\210\001\001\0228\n\026remote_ima" +
-      "ge_proxy_url\030\003 \001(\tH\002R\023remoteImageProxyUr" +
-      "l\210\001\001\022@\n\032remote_image_proxy_options\030\004 \001(\t" +
-      "H\003R\027remoteImageProxyOptions\210\001\001B\t\n\007_enabl" +
-      "eB\023\n\021_image_proxy_typeB\031\n\027_remote_image_" +
-      "proxy_urlB\035\n\033_remote_image_proxy_options" +
-      "\"\315\010\n\006Config\022)\n\004main\030\001 \001(\0132\025.common.v1.Co" +
-      "nfigMainR\004main\0225\n\010services\030\002 \001(\0132\031.commo" +
-      "n.v1.ConfigServicesR\010services\0225\n\010securit" +
-      "y\030\003 \001(\0132\031.common.v1.ConfigSecurityR\010secu" +
-      "rity\022,\n\005cache\030\004 \001(\0132\026.common.v1.CacheCon" +
-      "figR\005cache\0222\n\007metrics\030\005 \001(\0132\030.common.v1." +
-      "ConfigMetricsR\007metrics\022&\n\003sso\030\006 \001(\0132\024.co" +
-      "mmon.v1.ConfigSSOR\003sso\022&\n\003sql\030\007 \001(\0132\024.co" +
-      "mmon.v1.ConfigSqlR\003sql\0225\n\010password\030\010 \001(\013" +
-      "2\031.common.v1.ConfigPasswordR\010password\022)\n" +
-      "\004file\030\t \001(\0132\025.common.v1.ConfigFileR\004file" +
-      "\022,\n\005email\030\n \001(\0132\026.common.v1.ConfigEmailR" +
-      "\005email\0229\n\nrate_limit\030\013 \001(\0132\032.common.v1.C" +
-      "onfigRateLimitR\trateLimit\0222\n\007privacy\030\014 \001" +
-      "(\0132\030.common.v1.ConfigPrivacyR\007privacy\0222\n" +
-      "\007support\030\r \001(\0132\030.common.v1.ConfigSupport" +
-      "R\007support\022A\n\014localization\030\016 \001(\0132\035.common" +
-      ".v1.ConfigLocalizationR\014localization\022)\n\004" +
-      "ldap\030\017 \001(\0132\025.common.v1.ConfigLdapR\004ldap\022" +
-      ")\n\004saml\030\020 \001(\0132\025.common.v1.ConfigSamlR\004sa" +
-      "ml\0229\n\nnative_app\030\021 \001(\0132\032.common.v1.Confi" +
-      "gNativeAppR\tnativeApp\022>\n\013meilisearch\030\022 \001" +
-      "(\0132\034.common.v1.ConfigMeilisearchR\013meilis" +
-      "earch\022,\n\005bleve\030\023 \001(\0132\026.common.v1.ConfigB" +
-      "leveR\005bleve\022E\n\016data_retention\030\024 \001(\0132\036.co" +
-      "mmon.v1.ConfigDataRetentionR\rdataRetenti" +
-      "on\022<\n\013image_proxy\030\025 \001(\0132\033.common.v1.Conf" +
-      "igImageProxyR\nimageProxy\"\022\n\020ConfigGetReq" +
-      "uest\"u\n\021ConfigGetResponse\022\'\n\004data\030\001 \001(\0132" +
-      "\021.common.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(" +
-      "\0132\023.common.v1.AppErrorH\000R\005errorB\n\n\010respo" +
-      "nse\"@\n\023ConfigUpdateRequest\022)\n\006config\030\001 \001" +
-      "(\0132\021.common.v1.ConfigR\006config\"x\n\024ConfigU" +
-      "pdateResponse\022\'\n\004data\030\001 \001(\0132\021.common.v1." +
+      "user_service_grpc_port\"\212\016\n\016ConfigSecurit" +
+      "y\0221\n\024restricted_usernames\030\001 \003(\tR\023restric" +
+      "tedUsernames\0229\n\026maximum_login_attempts\030\002" +
+      " \001(\005H\000R\024maximumLoginAttempts\210\001\001\022T\n$enabl" +
+      "e_insecure_outgoing_connections\030\003 \001(\010H\001R" +
+      "!enableInsecureOutgoingConnections\210\001\001\022O\n" +
+      "!enable_multifactor_authentication\030\004 \001(\010" +
+      "H\002R\037enableMultifactorAuthentication\210\001\001\022Q" +
+      "\n\"enforce_multifactor_authentication\030\005 \001" +
+      "(\010H\003R enforceMultifactorAuthentication\210\001" +
+      "\001\022F\n\035enable_oauth_service_provider\030\006 \001(\010" +
+      "H\004R\032enableOauthServiceProvider\210\001\001\022N\n!ena" +
+      "ble_outgoing_oauth_connections\030\007 \001(\010H\005R\036" +
+      "enableOutgoingOauthConnections\210\001\001\022U\n%ter" +
+      "minate_sessions_on_password_change\030\010 \001(\010" +
+      "H\006R!terminateSessionsOnPasswordChange\210\001\001" +
+      "\022A\n\033session_length_web_in_hours\030\t \001(\005H\007R" +
+      "\027sessionLengthWebInHours\210\001\001\022G\n\036session_l" +
+      "ength_mobile_in_hours\030\n \001(\005H\010R\032sessionLe" +
+      "ngthMobileInHours\210\001\001\022A\n\033session_length_s" +
+      "so_in_hours\030\013 \001(\005H\tR\027sessionLengthSsoInH" +
+      "ours\210\001\001\022+\n\017allow_cors_from\030\014 \001(\tH\nR\rallo" +
+      "wCorsFrom\210\001\001\0225\n\024cors_exposed_headers\030\r \001" +
+      "(\tH\013R\022corsExposedHeaders\210\001\001\0229\n\026cors_allo" +
+      "w_credentials\030\016 \001(\010H\014R\024corsAllowCredenti" +
+      "als\210\001\001\022\"\n\ncors_debug\030\017 \001(\010H\rR\tcorsDebug\210" +
+      "\001\001\022D\n\034allow_cookies_for_subdomains\030\020 \001(\010" +
+      "H\016R\031allowCookiesForSubdomains\210\001\001\022<\n\030sess" +
+      "ion_cache_in_minutes\030\021 \001(\005H\017R\025sessionCac" +
+      "heInMinutes\210\001\001\0227\n\025websocket_secure_port\030" +
+      "\022 \001(\005H\020R\023websocketSecurePort\210\001\001\022*\n\016webso" +
+      "cket_port\030\023 \001(\005H\021R\rwebsocketPort\210\001\001B\031\n\027_" +
+      "maximum_login_attemptsB\'\n%_enable_insecu" +
+      "re_outgoing_connectionsB$\n\"_enable_multi" +
+      "factor_authenticationB%\n#_enforce_multif" +
+      "actor_authenticationB \n\036_enable_oauth_se" +
+      "rvice_providerB$\n\"_enable_outgoing_oauth" +
+      "_connectionsB(\n&_terminate_sessions_on_p" +
+      "assword_changeB\036\n\034_session_length_web_in" +
+      "_hoursB!\n\037_session_length_mobile_in_hour" +
+      "sB\036\n\034_session_length_sso_in_hoursB\022\n\020_al" +
+      "low_cors_fromB\027\n\025_cors_exposed_headersB\031" +
+      "\n\027_cors_allow_credentialsB\r\n\013_cors_debug" +
+      "B\037\n\035_allow_cookies_for_subdomainsB\033\n\031_se" +
+      "ssion_cache_in_minutesB\030\n\026_websocket_sec" +
+      "ure_portB\021\n\017_websocket_port\"\202\003\n\013CacheCon" +
+      "fig\022\"\n\ncache_type\030\001 \001(\tH\000R\tcacheType\210\001\001\022" +
+      "(\n\rredis_address\030\002 \001(\tH\001R\014redisAddress\210\001" +
+      "\001\022*\n\016redis_password\030\003 \001(\tH\002R\rredisPasswo" +
+      "rd\210\001\001\022\036\n\010redis_db\030\004 \001(\005H\003R\007redisDb\210\001\001\0221\n" +
+      "\022redis_cache_prefix\030\005 \001(\tH\004R\020redisCacheP" +
+      "refix\210\001\001\0225\n\024disable_client_cache\030\006 \001(\010H\005" +
+      "R\022disableClientCache\210\001\001B\r\n\013_cache_typeB\020" +
+      "\n\016_redis_addressB\021\n\017_redis_passwordB\013\n\t_" +
+      "redis_dbB\025\n\023_redis_cache_prefixB\027\n\025_disa" +
+      "ble_client_cache\"\251\003\n\rConfigMetrics\022\033\n\006en" +
+      "able\030\001 \001(\010H\000R\006enable\210\001\001\0221\n\022block_profile" +
+      "_rate\030\002 \001(\005H\001R\020blockProfileRate\210\001\001\022*\n\016li" +
+      "sten_address\030\003 \001(\tH\002R\rlistenAddress\210\001\001\0227" +
+      "\n\025enable_client_metrics\030\004 \001(\010H\003R\023enableC" +
+      "lientMetrics\210\001\001\022C\n\033enable_notification_m" +
+      "etrics\030\005 \001(\010H\004R\031enableNotificationMetric" +
+      "s\210\001\001\022/\n\024client_side_user_ids\030\006 \003(\tR\021clie" +
+      "ntSideUserIdsB\t\n\007_enableB\025\n\023_block_profi" +
+      "le_rateB\021\n\017_listen_addressB\030\n\026_enable_cl" +
+      "ient_metricsB\036\n\034_enable_notification_met" +
+      "rics\"\230\004\n\tConfigSSO\022\033\n\006enable\030\001 \001(\010H\000R\006en" +
+      "able\210\001\001\022\033\n\006secret\030\002 \001(\tH\001R\006secret\210\001\001\022\023\n\002" +
+      "id\030\003 \001(\tH\002R\002id\210\001\001\022\031\n\005scope\030\004 \001(\tH\003R\005scop" +
+      "e\210\001\001\022(\n\rauth_endpoint\030\005 \001(\tH\004R\014authEndpo" +
+      "int\210\001\001\022*\n\016token_endpoint\030\006 \001(\tH\005R\rtokenE" +
+      "ndpoint\210\001\001\022/\n\021user_api_endpoint\030\007 \001(\tH\006R" +
+      "\017userApiEndpoint\210\001\001\0222\n\022discovery_endpoin" +
+      "t\030\010 \001(\tH\007R\021discoveryEndpoint\210\001\001\022$\n\013butto" +
+      "n_text\030\t \001(\tH\010R\nbuttonText\210\001\001\022&\n\014button_" +
+      "color\030\n \001(\tH\tR\013buttonColor\210\001\001B\t\n\007_enable" +
+      "B\t\n\007_secretB\005\n\003_idB\010\n\006_scopeB\020\n\016_auth_en" +
+      "dpointB\021\n\017_token_endpointB\024\n\022_user_api_e" +
+      "ndpointB\025\n\023_discovery_endpointB\016\n\014_butto" +
+      "n_textB\017\n\r_button_color\"\325\005\n\tConfigSql\022$\n" +
+      "\013driver_name\030\001 \001(\tH\000R\ndriverName\210\001\001\022$\n\013d" +
+      "ata_source\030\002 \001(\tH\001R\ndataSource\210\001\001\022)\n\016max" +
+      "_idle_conns\030\003 \001(\005H\002R\014maxIdleConns\210\001\001\022H\n\036" +
+      "conn_max_lifetime_milliseconds\030\004 \001(\005H\003R\033" +
+      "connMaxLifetimeMilliseconds\210\001\001\022I\n\037conn_m" +
+      "ax_idle_time_milliseconds\030\005 \001(\005H\004R\033connM" +
+      "axIdleTimeMilliseconds\210\001\001\022)\n\016max_open_co" +
+      "nns\030\006 \001(\005H\005R\014maxOpenConns\210\001\001\022\031\n\005trace\030\007 " +
+      "\001(\010H\006R\005trace\210\001\001\0222\n\023at_rest_encrypt_key\030\010" +
+      " \001(\tH\007R\020atRestEncryptKey\210\001\001\022(\n\rquery_tim" +
+      "eout\030\t \001(\005H\010R\014queryTimeout\210\001\001\022;\n\027disable" +
+      "_database_search\030\n \001(\010H\tR\025disableDatabas" +
+      "eSearch\210\001\001B\016\n\014_driver_nameB\016\n\014_data_sour" +
+      "ceB\021\n\017_max_idle_connsB!\n\037_conn_max_lifet" +
+      "ime_millisecondsB\"\n _conn_max_idle_time_" +
+      "millisecondsB\021\n\017_max_open_connsB\010\n\006_trac" +
+      "eB\026\n\024_at_rest_encrypt_keyB\020\n\016_query_time" +
+      "outB\032\n\030_disable_database_search\"\212\003\n\016Conf" +
+      "igPassword\022*\n\016minimum_length\030\001 \001(\005H\000R\rmi" +
+      "nimumLength\210\001\001\022*\n\016maximum_lenght\030\002 \001(\005H\001" +
+      "R\rmaximumLenght\210\001\001\022!\n\tlowercase\030\003 \001(\010H\002R" +
+      "\tlowercase\210\001\001\022\033\n\006number\030\004 \001(\010H\003R\006number\210" +
+      "\001\001\022!\n\tuppercase\030\005 \001(\010H\004R\tuppercase\210\001\001\022\033\n" +
+      "\006symbol\030\006 \001(\010H\005R\006symbol\210\001\001\0221\n\022enable_for" +
+      "got_link\030\007 \001(\010H\006R\020enableForgotLink\210\001\001B\021\n" +
+      "\017_minimum_lengthB\021\n\017_maximum_lenghtB\014\n\n_" +
+      "lowercaseB\t\n\007_numberB\014\n\n_uppercaseB\t\n\007_s" +
+      "ymbolB\025\n\023_enable_forgot_link\"\340\017\n\nConfigF" +
+      "ile\022;\n\027enable_file_attachments\030\001 \001(\010H\000R\025" +
+      "enableFileAttachments\210\001\001\0225\n\024enable_mobil" +
+      "e_upload\030\002 \001(\010H\001R\022enableMobileUpload\210\001\001\022" +
+      "9\n\026enable_mobile_download\030\003 \001(\010H\002R\024enabl" +
+      "eMobileDownload\210\001\001\022\'\n\rmax_file_size\030\004 \001(" +
+      "\003H\003R\013maxFileSize\210\001\001\0225\n\024max_image_resolut" +
+      "ion\030\005 \001(\003H\004R\022maxImageResolution\210\001\001\022F\n\035ma" +
+      "x_image_decoder_concurrency\030\006 \001(\003H\005R\032max" +
+      "ImageDecoderConcurrency\210\001\001\022$\n\013driver_nam" +
+      "e\030\007 \001(\tH\006R\ndriverName\210\001\001\022!\n\tdirectory\030\010 " +
+      "\001(\tH\007R\tdirectory\210\001\001\0221\n\022enable_public_lin" +
+      "k\030\t \001(\010H\010R\020enablePublicLink\210\001\001\022,\n\017extrac" +
+      "t_content\030\n \001(\010H\tR\016extractContent\210\001\001\0220\n\021" +
+      "archive_recursion\030\013 \001(\010H\nR\020archiveRecurs" +
+      "ion\210\001\001\022-\n\020public_link_salt\030\014 \001(\tH\013R\016publ" +
+      "icLinkSalt\210\001\001\022&\n\014initial_font\030\r \001(\tH\014R\013i" +
+      "nitialFont\210\001\001\0229\n\027amazon_s3_access_key_id" +
+      "\030\016 \001(\tH\rR\023amazonS3AccessKeyId\210\001\001\022A\n\033amaz" +
+      "on_s3_secret_access_key\030\017 \001(\tH\016R\027amazonS" +
+      "3SecretAccessKey\210\001\001\022-\n\020amazon_s3_bucket\030" +
+      "\020 \001(\tH\017R\016amazonS3Bucket\210\001\001\0226\n\025amazon_s3_" +
+      "path_prefix\030\021 \001(\tH\020R\022amazonS3PathPrefix\210" +
+      "\001\001\022-\n\020amazon_s3_region\030\022 \001(\tH\021R\016amazonS3" +
+      "Region\210\001\001\0221\n\022amazon_s3_endpoint\030\023 \001(\tH\022R" +
+      "\020amazonS3Endpoint\210\001\001\022\'\n\ramazon_s3_ssl\030\024 " +
+      "\001(\010H\023R\013amazonS3Ssl\210\001\001\022.\n\021amazon_s3_sign_" +
+      "v2\030\025 \001(\010H\024R\016amazonS3SignV2\210\001\001\022\'\n\ramazon_" +
+      "s3_sse\030\026 \001(\010H\025R\013amazonS3Sse\210\001\001\022+\n\017amazon" +
+      "_s3_trace\030\027 \001(\010H\026R\ramazonS3Trace\210\001\001\022W\n&a" +
+      "mazon_s3_request_timeout_milliseconds\030\030 " +
+      "\001(\003H\027R\"amazonS3RequestTimeoutMillisecond" +
+      "s\210\001\001\022J\n amazon_s3_upload_part_size_bytes" +
+      "\030\031 \001(\003H\030R\033amazonS3UploadPartSizeBytes\210\001\001" +
+      "\022:\n\027amazon_s3_storage_class\030\032 \001(\tH\031R\024ama" +
+      "zonS3StorageClass\210\001\001B\032\n\030_enable_file_att" +
+      "achmentsB\027\n\025_enable_mobile_uploadB\031\n\027_en" +
+      "able_mobile_downloadB\020\n\016_max_file_sizeB\027" +
+      "\n\025_max_image_resolutionB \n\036_max_image_de" +
+      "coder_concurrencyB\016\n\014_driver_nameB\014\n\n_di" +
+      "rectoryB\025\n\023_enable_public_linkB\022\n\020_extra" +
+      "ct_contentB\024\n\022_archive_recursionB\023\n\021_pub" +
+      "lic_link_saltB\017\n\r_initial_fontB\032\n\030_amazo" +
+      "n_s3_access_key_idB\036\n\034_amazon_s3_secret_" +
+      "access_keyB\023\n\021_amazon_s3_bucketB\030\n\026_amaz" +
+      "on_s3_path_prefixB\023\n\021_amazon_s3_regionB\025" +
+      "\n\023_amazon_s3_endpointB\020\n\016_amazon_s3_sslB" +
+      "\024\n\022_amazon_s3_sign_v2B\020\n\016_amazon_s3_sseB" +
+      "\022\n\020_amazon_s3_traceB)\n\'_amazon_s3_reques" +
+      "t_timeout_millisecondsB#\n!_amazon_s3_upl" +
+      "oad_part_size_bytesB\032\n\030_amazon_s3_storag" +
+      "e_class\"\375\016\n\013ConfigEmail\022=\n\030send_email_no" +
+      "tifications\030\001 \001(\010H\000R\026sendEmailNotificati" +
+      "ons\210\001\001\022A\n\032require_email_verification\030\002 \001" +
+      "(\010H\001R\030requireEmailVerification\210\001\001\022*\n\016fee" +
+      "dback_email\030\003 \001(\tH\002R\rfeedbackEmail\210\001\001\022-\n" +
+      "\020reply_to_address\030\004 \001(\tH\003R\016replyToAddres" +
+      "s\210\001\001\022-\n\020enable_smtp_auth\030\005 \001(\010H\004R\016enable" +
+      "SmtpAuth\210\001\001\022(\n\rsmtp_username\030\006 \001(\tH\005R\014sm" +
+      "tpUsername\210\001\001\022(\n\rsmtp_password\030\007 \001(\tH\006R\014" +
+      "smtpPassword\210\001\001\022$\n\013smtp_server\030\010 \001(\tH\007R\n" +
+      "smtpServer\210\001\001\022 \n\tsmtp_port\030\t \001(\tH\010R\010smtp" +
+      "Port\210\001\001\0223\n\023smtp_server_timeout\030\n \001(\005H\tR\021" +
+      "smtpServerTimeout\210\001\001\0224\n\023connection_secur" +
+      "ity\030\013 \001(\tH\nR\022connectionSecurity\210\001\001\022;\n\027se" +
+      "nd_push_notifications\030\014 \001(\010H\013R\025sendPushN" +
+      "otifications\210\001\001\022=\n\030push_notification_ser" +
+      "ver\030\r \001(\tH\014R\026pushNotificationServer\210\001\001\022A" +
+      "\n\032push_notification_contents\030\016 \001(\tH\rR\030pu" +
+      "shNotificationContents\210\001\001\022=\n\030push_notifi" +
+      "cation_buffer\030\017 \001(\005H\016R\026pushNotificationB" +
+      "uffer\210\001\001\0227\n\025enable_email_batching\030\020 \001(\010H" +
+      "\017R\023enableEmailBatching\210\001\001\022@\n\032email_batch" +
+      "ing_buffer_size\030\021 \001(\005H\020R\027emailBatchingBu" +
+      "fferSize\210\001\001\022;\n\027email_batching_interval\030\022" +
+      " \001(\005H\021R\025emailBatchingInterval\210\001\001\022T\n$skip" +
+      "_server_certificate_verification\030\023 \001(\010H\022" +
+      "R!skipServerCertificateVerification\210\001\001\022L" +
+      "\n email_notification_contents_type\030\024 \001(\t" +
+      "H\023R\035emailNotificationContentsType\210\001\001\0221\n\022" +
+      "login_button_color\030\025 \001(\tH\024R\020loginButtonC" +
+      "olor\210\001\001\022>\n\031login_button_border_color\030\026 \001" +
+      "(\tH\025R\026loginButtonBorderColor\210\001\001\022:\n\027login" +
+      "_button_text_color\030\027 \001(\tH\026R\024loginButtonT" +
+      "extColor\210\001\001B\033\n\031_send_email_notifications" +
+      "B\035\n\033_require_email_verificationB\021\n\017_feed" +
+      "back_emailB\023\n\021_reply_to_addressB\023\n\021_enab" +
+      "le_smtp_authB\020\n\016_smtp_usernameB\020\n\016_smtp_" +
+      "passwordB\016\n\014_smtp_serverB\014\n\n_smtp_portB\026" +
+      "\n\024_smtp_server_timeoutB\026\n\024_connection_se" +
+      "curityB\032\n\030_send_push_notificationsB\033\n\031_p" +
+      "ush_notification_serverB\035\n\033_push_notific" +
+      "ation_contentsB\033\n\031_push_notification_buf" +
+      "ferB\030\n\026_enable_email_batchingB\035\n\033_email_" +
+      "batching_buffer_sizeB\032\n\030_email_batching_" +
+      "intervalB\'\n%_skip_server_certificate_ver" +
+      "ificationB#\n!_email_notification_content" +
+      "s_typeB\025\n\023_login_button_colorB\034\n\032_login_" +
+      "button_border_colorB\032\n\030_login_button_tex" +
+      "t_color\"\204\003\n\017ConfigRateLimit\022\033\n\006enable\030\001 " +
+      "\001(\010H\000R\006enable\210\001\001\022\034\n\007per_sec\030\002 \001(\005H\001R\006per" +
+      "Sec\210\001\001\022 \n\tmax_burst\030\003 \001(\005H\002R\010maxBurst\210\001\001" +
+      "\022/\n\021memory_store_size\030\004 \001(\005H\003R\017memorySto" +
+      "reSize\210\001\001\0222\n\023vary_by_remote_addr\030\005 \001(\010H\004" +
+      "R\020varyByRemoteAddr\210\001\001\022%\n\014vary_by_user\030\006 " +
+      "\001(\010H\005R\nvaryByUser\210\001\001\022$\n\016vary_by_header\030\007" +
+      " \001(\tR\014varyByHeaderB\t\n\007_enableB\n\n\010_per_se" +
+      "cB\014\n\n_max_burstB\024\n\022_memory_store_sizeB\026\n" +
+      "\024_vary_by_remote_addrB\017\n\r_vary_by_user\"\227" +
+      "\001\n\rConfigPrivacy\0221\n\022show_email_address\030\001" +
+      " \001(\010H\000R\020showEmailAddress\210\001\001\022)\n\016show_full" +
+      "_name\030\002 \001(\010H\001R\014showFullName\210\001\001B\025\n\023_show_" +
+      "email_addressB\021\n\017_show_full_name\"\357\003\n\rCon" +
+      "figSupport\0226\n\025terms_of_service_link\030\001 \001(" +
+      "\tH\000R\022termsOfServiceLink\210\001\001\0223\n\023privacy_po" +
+      "licy_link\030\002 \001(\tH\001R\021privacyPolicyLink\210\001\001\022" +
+      "\"\n\nabout_link\030\003 \001(\tH\002R\taboutLink\210\001\001\022 \n\th" +
+      "elp_link\030\004 \001(\tH\003R\010helpLink\210\001\001\0226\n\025report_" +
+      "a_problem_link\030\005 \001(\tH\004R\022reportAProblemLi" +
+      "nk\210\001\001\0225\n\024forgot_password_link\030\006 \001(\tH\005R\022f" +
+      "orgotPasswordLink\210\001\001\022(\n\rsupport_email\030\007 " +
+      "\001(\tH\006R\014supportEmail\210\001\001B\030\n\026_terms_of_serv" +
+      "ice_linkB\026\n\024_privacy_policy_linkB\r\n\013_abo" +
+      "ut_linkB\014\n\n_help_linkB\030\n\026_report_a_probl" +
+      "em_linkB\027\n\025_forgot_password_linkB\020\n\016_sup" +
+      "port_email\"\202\002\n\022ConfigLocalization\0227\n\025def" +
+      "ault_server_locale\030\001 \001(\tH\000R\023defaultServe" +
+      "rLocale\210\001\001\0227\n\025default_client_locale\030\002 \001(" +
+      "\tH\001R\023defaultClientLocale\210\001\001\0220\n\021available" +
+      "_locales\030\003 \001(\tH\002R\020availableLocales\210\001\001B\030\n" +
+      "\026_default_server_localeB\030\n\026_default_clie" +
+      "nt_localeB\024\n\022_available_locales\"\325\020\n\nConf" +
+      "igLdap\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022$\n\013e" +
+      "nable_sync\030\002 \001(\010H\001R\nenableSync\210\001\001\022$\n\013lda" +
+      "p_server\030\003 \001(\tH\002R\nldapServer\210\001\001\022 \n\tldap_" +
+      "port\030\004 \001(\005H\003R\010ldapPort\210\001\001\0224\n\023connection_" +
+      "security\030\005 \001(\tH\004R\022connectionSecurity\210\001\001\022" +
+      "\034\n\007base_dn\030\006 \001(\tH\005R\006baseDn\210\001\001\022(\n\rbind_us" +
+      "ername\030\007 \001(\tH\006R\014bindUsername\210\001\001\022(\n\rbind_" +
+      "password\030\010 \001(\tH\007R\014bindPassword\210\001\001\0229\n\026max" +
+      "imum_login_attempts\030\t \001(\005H\010R\024maximumLogi" +
+      "nAttempts\210\001\001\022$\n\013user_filter\030\n \001(\tH\tR\nuse" +
+      "rFilter\210\001\001\022&\n\014group_filter\030\013 \001(\tH\nR\013grou" +
+      "pFilter\210\001\001\0223\n\023enable_admin_filter\030\014 \001(\010H" +
+      "\013R\021enableAdminFilter\210\001\001\022&\n\014admin_filter\030" +
+      "\r \001(\tH\014R\013adminFilter\210\001\001\022D\n\034group_display" +
+      "_name_attribute\030\016 \001(\tH\rR\031groupDisplayNam" +
+      "eAttribute\210\001\001\0221\n\022group_id_attribute\030\017 \001(" +
+      "\tH\016R\020groupIdAttribute\210\001\001\0225\n\024first_name_a" +
+      "ttribute\030\020 \001(\tH\017R\022firstNameAttribute\210\001\001\022" +
+      "3\n\023last_name_attribute\030\021 \001(\tH\020R\021lastName" +
+      "Attribute\210\001\001\022,\n\017email_attribute\030\022 \001(\tH\021R" +
+      "\016emailAttribute\210\001\001\0222\n\022username_attribute" +
+      "\030\023 \001(\tH\022R\021usernameAttribute\210\001\001\0222\n\022nickna" +
+      "me_attribute\030\024 \001(\tH\023R\021nicknameAttribute\210" +
+      "\001\001\022&\n\014id_attribute\030\025 \001(\tH\024R\013idAttribute\210" +
+      "\001\001\0222\n\022position_attribute\030\026 \001(\tH\025R\021positi" +
+      "onAttribute\210\001\001\0221\n\022login_id_attribute\030\027 \001" +
+      "(\tH\026R\020loginIdAttribute\210\001\001\0220\n\021picture_att" +
+      "ribute\030\030 \001(\tH\027R\020pictureAttribute\210\001\001\0227\n\025s" +
+      "ync_interval_minutes\030\031 \001(\005H\030R\023syncInterv" +
+      "alMinutes\210\001\001\022(\n\rquery_timeout\030\032 \001(\005H\031R\014q" +
+      "ueryTimeout\210\001\001\022\'\n\rmax_page_size\030\033 \001(\005H\032R" +
+      "\013maxPageSize\210\001\001\022-\n\020login_field_name\030\034 \001(" +
+      "\tH\033R\016loginFieldName\210\001\001\0221\n\022login_button_c" +
+      "olor\030\035 \001(\tH\034R\020loginButtonColor\210\001\001\022>\n\031log" +
+      "in_button_border_color\030\036 \001(\tH\035R\026loginBut" +
+      "tonBorderColor\210\001\001\022:\n\027login_button_text_c" +
+      "olor\030\037 \001(\tH\036R\024loginButtonTextColor\210\001\001B\t\n" +
+      "\007_enableB\016\n\014_enable_syncB\016\n\014_ldap_server" +
+      "B\014\n\n_ldap_portB\026\n\024_connection_securityB\n" +
+      "\n\010_base_dnB\020\n\016_bind_usernameB\020\n\016_bind_pa" +
+      "sswordB\031\n\027_maximum_login_attemptsB\016\n\014_us" +
+      "er_filterB\017\n\r_group_filterB\026\n\024_enable_ad" +
+      "min_filterB\017\n\r_admin_filterB\037\n\035_group_di" +
+      "splay_name_attributeB\025\n\023_group_id_attrib" +
+      "uteB\027\n\025_first_name_attributeB\026\n\024_last_na" +
+      "me_attributeB\022\n\020_email_attributeB\025\n\023_use" +
+      "rname_attributeB\025\n\023_nickname_attributeB\017" +
+      "\n\r_id_attributeB\025\n\023_position_attributeB\025" +
+      "\n\023_login_id_attributeB\024\n\022_picture_attrib" +
+      "uteB\030\n\026_sync_interval_minutesB\020\n\016_query_" +
+      "timeoutB\020\n\016_max_page_sizeB\023\n\021_login_fiel" +
+      "d_nameB\025\n\023_login_button_colorB\034\n\032_login_" +
+      "button_border_colorB\032\n\030_login_button_tex" +
+      "t_color\"\255\023\n\nConfigSaml\022\033\n\006enable\030\001 \001(\010H\000" +
+      "R\006enable\210\001\001\0226\n\025enable_sync_with_ldap\030\002 \001" +
+      "(\010H\001R\022enableSyncWithLdap\210\001\001\022N\n\"enable_sy" +
+      "nc_with_ldap_include_auth\030\003 \001(\010H\002R\035enabl" +
+      "eSyncWithLdapIncludeAuth\210\001\001\022:\n\027ignore_gu" +
+      "ests_ldap_sync\030\004 \001(\010H\003R\024ignoreGuestsLdap" +
+      "Sync\210\001\001\022\033\n\006verify\030\005 \001(\010H\004R\006verify\210\001\001\022\035\n\007" +
+      "encrypt\030\006 \001(\010H\005R\007encrypt\210\001\001\022&\n\014sign_requ" +
+      "est\030\007 \001(\010H\006R\013signRequest\210\001\001\022\034\n\007idp_url\030\010" +
+      " \001(\tH\007R\006idpUrl\210\001\001\0221\n\022idp_descriptor_url\030" +
+      "\t \001(\tH\010R\020idpDescriptorUrl\210\001\001\022-\n\020idp_meta" +
+      "data_url\030\n \001(\tH\tR\016idpMetadataUrl\210\001\001\022C\n\033s" +
+      "ervice_provider_identifier\030\013 \001(\tH\nR\031serv" +
+      "iceProviderIdentifier\210\001\001\022H\n\036assertion_co" +
+      "nsumer_service_url\030\014 \001(\tH\013R\033assertionCon" +
+      "sumerServiceUrl\210\001\001\0224\n\023signature_algorith" +
+      "m\030\r \001(\tH\014R\022signatureAlgorithm\210\001\001\0224\n\023cano" +
+      "nical_algorithm\030\016 \001(\tH\rR\022canonicalAlgori" +
+      "thm\210\001\001\022:\n\027scoping_idp_provider_id\030\017 \001(\tH" +
+      "\016R\024scopingIdpProviderId\210\001\001\022-\n\020scoping_id" +
+      "p_name\030\020 \001(\tH\017R\016scopingIdpName\210\001\001\0225\n\024idp" +
+      "_certificate_file\030\021 \001(\tH\020R\022idpCertificat" +
+      "eFile\210\001\001\022;\n\027public_certificate_file\030\022 \001(" +
+      "\tH\021R\025publicCertificateFile\210\001\001\022-\n\020private" +
+      "_key_file\030\023 \001(\tH\022R\016privateKeyFile\210\001\001\022&\n\014" +
+      "id_attribute\030\024 \001(\tH\023R\013idAttribute\210\001\001\0229\n\026" +
+      "enable_admin_attribute\030\025 \001(\010H\024R\024enableAd" +
+      "minAttribute\210\001\001\022,\n\017admin_attribute\030\026 \001(\t" +
+      "H\025R\016adminAttribute\210\001\001\0225\n\024first_name_attr" +
+      "ibute\030\027 \001(\tH\026R\022firstNameAttribute\210\001\001\0223\n\023" +
+      "last_name_attribute\030\030 \001(\tH\027R\021lastNameAtt" +
+      "ribute\210\001\001\022,\n\017email_attribute\030\031 \001(\tH\030R\016em" +
+      "ailAttribute\210\001\001\0222\n\022username_attribute\030\032 " +
+      "\001(\tH\031R\021usernameAttribute\210\001\001\0222\n\022nickname_" +
+      "attribute\030\033 \001(\tH\032R\021nicknameAttribute\210\001\001\022" +
+      ".\n\020locale_attribute\030\034 \001(\tH\033R\017localeAttri" +
+      "bute\210\001\001\0222\n\022position_attribute\030\035 \001(\tH\034R\021p" +
+      "ositionAttribute\210\001\001\022/\n\021login_button_text" +
+      "\030\036 \001(\tH\035R\017loginButtonText\210\001\001\0221\n\022login_bu" +
+      "tton_color\030\037 \001(\tH\036R\020loginButtonColor\210\001\001\022" +
+      ">\n\031login_button_border_color\030  \001(\tH\037R\026lo" +
+      "ginButtonBorderColor\210\001\001\022:\n\027login_button_" +
+      "text_color\030! \001(\tH R\024loginButtonTextColor" +
+      "\210\001\001B\t\n\007_enableB\030\n\026_enable_sync_with_ldap" +
+      "B%\n#_enable_sync_with_ldap_include_authB" +
+      "\032\n\030_ignore_guests_ldap_syncB\t\n\007_verifyB\n" +
+      "\n\010_encryptB\017\n\r_sign_requestB\n\n\010_idp_urlB" +
+      "\025\n\023_idp_descriptor_urlB\023\n\021_idp_metadata_" +
+      "urlB\036\n\034_service_provider_identifierB!\n\037_",
+      "assertion_consumer_service_urlB\026\n\024_signa" +
+      "ture_algorithmB\026\n\024_canonical_algorithmB\032" +
+      "\n\030_scoping_idp_provider_idB\023\n\021_scoping_i" +
+      "dp_nameB\027\n\025_idp_certificate_fileB\032\n\030_pub" +
+      "lic_certificate_fileB\023\n\021_private_key_fil" +
+      "eB\017\n\r_id_attributeB\031\n\027_enable_admin_attr" +
+      "ibuteB\022\n\020_admin_attributeB\027\n\025_first_name" +
+      "_attributeB\026\n\024_last_name_attributeB\022\n\020_e" +
+      "mail_attributeB\025\n\023_username_attributeB\025\n" +
+      "\023_nickname_attributeB\023\n\021_locale_attribut" +
+      "eB\025\n\023_position_attributeB\024\n\022_login_butto" +
+      "n_textB\025\n\023_login_button_colorB\034\n\032_login_" +
+      "button_border_colorB\032\n\030_login_button_tex" +
+      "t_color\"\301\005\n\017ConfigNativeApp\0223\n\026app_custo" +
+      "m_url_schemes\030\001 \003(\tR\023appCustomUrlSchemes" +
+      "\022/\n\021app_download_link\030\002 \001(\tH\000R\017appDownlo" +
+      "adLink\210\001\001\022>\n\031android_app_download_link\030\003" +
+      " \001(\tH\001R\026androidAppDownloadLink\210\001\001\0226\n\025ios" +
+      "_app_download_link\030\004 \001(\tH\002R\022iosAppDownlo" +
+      "adLink\210\001\001\022;\n\027mobile_external_browser\030\005 \001" +
+      "(\010H\003R\025mobileExternalBrowser\210\001\001\022=\n\030mobile" +
+      "_enable_biometrics\030\006 \001(\010H\004R\026mobileEnable" +
+      "Biometrics\210\001\001\022F\n\035mobile_prevent_screen_c" +
+      "apture\030\007 \001(\010H\005R\032mobilePreventScreenCaptu" +
+      "re\210\001\001\022C\n\033mobile_jailbreak_protection\030\010 \001" +
+      "(\010H\006R\031mobileJailbreakProtection\210\001\001B\024\n\022_a" +
+      "pp_download_linkB\034\n\032_android_app_downloa" +
+      "d_linkB\030\n\026_ios_app_download_linkB\032\n\030_mob" +
+      "ile_external_browserB\033\n\031_mobile_enable_b" +
+      "iometricsB \n\036_mobile_prevent_screen_capt" +
+      "ureB\036\n\034_mobile_jailbreak_protection\"\253\005\n\021" +
+      "ConfigMeilisearch\022#\n\nserver_url\030\001 \001(\tH\000R" +
+      "\nserver_url\210\001\001\022\"\n\nmaster_key\030\002 \001(\tH\001R\tma" +
+      "sterKey\210\001\001\022,\n\017enable_indexing\030\003 \001(\010H\002R\016e" +
+      "nableIndexing\210\001\001\022.\n\020enable_searching\030\004 \001" +
+      "(\010H\003R\017enableSearching\210\001\001\0224\n\023enable_autoc" +
+      "omplete\030\005 \001(\010H\004R\022enableAutocomplete\210\001\001\022\"" +
+      "\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001\022;\n\027re" +
+      "quest_timeout_seconds\030\007 \001(\005H\006R\025requestTi" +
+      "meoutSeconds\210\001\001\022&\n\014index_prefix\030\010 \001(\tH\007R" +
+      "\013indexPrefix\210\001\001\022-\n\020search_cutoff_ms\030\t \001(" +
+      "\005H\010R\016searchCutoffMs\210\001\001\0227\n\025enable_typo_to" +
+      "lerance\030\n \001(\010H\tR\023enableTypoTolerance\210\001\001B" +
+      "\r\n\013_server_urlB\r\n\013_master_keyB\022\n\020_enable" +
+      "_indexingB\023\n\021_enable_searchingB\026\n\024_enabl" +
+      "e_autocompleteB\r\n\013_batch_sizeB\032\n\030_reques" +
+      "t_timeout_secondsB\017\n\r_index_prefixB\023\n\021_s" +
+      "earch_cutoff_msB\030\n\026_enable_typo_toleranc" +
+      "e\"\272\003\n\013ConfigBleve\022 \n\tindex_dir\030\001 \001(\tH\000R\010" +
+      "indexDir\210\001\001\022,\n\017enable_indexing\030\002 \001(\010H\001R\016" +
+      "enableIndexing\210\001\001\022.\n\020enable_searching\030\003 " +
+      "\001(\010H\002R\017enableSearching\210\001\001\0224\n\023enable_auto" +
+      "complete\030\004 \001(\010H\003R\022enableAutocomplete\210\001\001\022" +
+      "M\n!bulk_indexing_time_window_seconds\030\005 \001" +
+      "(\005H\004R\035bulkIndexingTimeWindowSeconds\210\001\001\022\"" +
+      "\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001B\014\n\n_i" +
+      "ndex_dirB\022\n\020_enable_indexingB\023\n\021_enable_" +
+      "searchingB\026\n\024_enable_autocompleteB$\n\"_bu" +
+      "lk_indexing_time_window_secondsB\r\n\013_batc" +
+      "h_size\"\354\006\n\023ConfigDataRetention\022;\n\027enable" +
+      "_message_deletion\030\001 \001(\010H\000R\025enableMessage" +
+      "Deletion\210\001\001\0225\n\024enable_file_deletion\030\002 \001(" +
+      "\010H\001R\022enableFileDeletion\210\001\001\0229\n\026enable_boa" +
+      "rds_deletion\030\003 \001(\010H\002R\024enableBoardsDeleti" +
+      "on\210\001\001\022;\n\027message_retention_hours\030\004 \001(\005H\003" +
+      "R\025messageRetentionHours\210\001\001\0225\n\024file_reten" +
+      "tion_hours\030\005 \001(\005H\004R\022fileRetentionHours\210\001" +
+      "\001\0227\n\025boards_retention_days\030\006 \001(\005H\005R\023boar" +
+      "dsRetentionDays\210\001\001\022:\n\027deletion_job_start" +
+      "_time\030\007 \001(\tH\006R\024deletionJobStartTime\210\001\001\022\"" +
+      "\n\nbatch_size\030\010 \001(\005H\007R\tbatchSize\210\001\001\022N\n!ti" +
+      "me_between_batches_milliseconds\030\t \001(\005H\010R" +
+      "\036timeBetweenBatchesMilliseconds\210\001\001\022<\n\030re" +
+      "tention_ids_batch_size\030\n \001(\005H\tR\025retentio" +
+      "nIdsBatchSize\210\001\001B\032\n\030_enable_message_dele" +
+      "tionB\027\n\025_enable_file_deletionB\031\n\027_enable" +
+      "_boards_deletionB\032\n\030_message_retention_h" +
+      "oursB\027\n\025_file_retention_hoursB\030\n\026_boards" +
+      "_retention_daysB\032\n\030_deletion_job_start_t" +
+      "imeB\r\n\013_batch_sizeB$\n\"_time_between_batc" +
+      "hes_millisecondsB\033\n\031_retention_ids_batch" +
+      "_size\"\264\002\n\020ConfigImageProxy\022\033\n\006enable\030\001 \001" +
+      "(\010H\000R\006enable\210\001\001\022-\n\020image_proxy_type\030\002 \001(" +
+      "\tH\001R\016imageProxyType\210\001\001\0228\n\026remote_image_p" +
+      "roxy_url\030\003 \001(\tH\002R\023remoteImageProxyUrl\210\001\001" +
+      "\022@\n\032remote_image_proxy_options\030\004 \001(\tH\003R\027" +
+      "remoteImageProxyOptions\210\001\001B\t\n\007_enableB\023\n" +
+      "\021_image_proxy_typeB\031\n\027_remote_image_prox" +
+      "y_urlB\035\n\033_remote_image_proxy_options\"\315\010\n" +
+      "\006Config\022)\n\004main\030\001 \001(\0132\025.common.v1.Config" +
+      "MainR\004main\0225\n\010services\030\002 \001(\0132\031.common.v1" +
+      ".ConfigServicesR\010services\0225\n\010security\030\003 " +
+      "\001(\0132\031.common.v1.ConfigSecurityR\010security" +
+      "\022,\n\005cache\030\004 \001(\0132\026.common.v1.CacheConfigR" +
+      "\005cache\0222\n\007metrics\030\005 \001(\0132\030.common.v1.Conf" +
+      "igMetricsR\007metrics\022&\n\003sso\030\006 \001(\0132\024.common" +
+      ".v1.ConfigSSOR\003sso\022&\n\003sql\030\007 \001(\0132\024.common" +
+      ".v1.ConfigSqlR\003sql\0225\n\010password\030\010 \001(\0132\031.c" +
+      "ommon.v1.ConfigPasswordR\010password\022)\n\004fil" +
+      "e\030\t \001(\0132\025.common.v1.ConfigFileR\004file\022,\n\005" +
+      "email\030\n \001(\0132\026.common.v1.ConfigEmailR\005ema" +
+      "il\0229\n\nrate_limit\030\013 \001(\0132\032.common.v1.Confi" +
+      "gRateLimitR\trateLimit\0222\n\007privacy\030\014 \001(\0132\030" +
+      ".common.v1.ConfigPrivacyR\007privacy\0222\n\007sup" +
+      "port\030\r \001(\0132\030.common.v1.ConfigSupportR\007su" +
+      "pport\022A\n\014localization\030\016 \001(\0132\035.common.v1." +
+      "ConfigLocalizationR\014localization\022)\n\004ldap" +
+      "\030\017 \001(\0132\025.common.v1.ConfigLdapR\004ldap\022)\n\004s" +
+      "aml\030\020 \001(\0132\025.common.v1.ConfigSamlR\004saml\0229" +
+      "\n\nnative_app\030\021 \001(\0132\032.common.v1.ConfigNat" +
+      "iveAppR\tnativeApp\022>\n\013meilisearch\030\022 \001(\0132\034" +
+      ".common.v1.ConfigMeilisearchR\013meilisearc" +
+      "h\022,\n\005bleve\030\023 \001(\0132\026.common.v1.ConfigBleve" +
+      "R\005bleve\022E\n\016data_retention\030\024 \001(\0132\036.common" +
+      ".v1.ConfigDataRetentionR\rdataRetention\022<" +
+      "\n\013image_proxy\030\025 \001(\0132\033.common.v1.ConfigIm" +
+      "ageProxyR\nimageProxy\"\022\n\020ConfigGetRequest" +
+      "\"u\n\021ConfigGetResponse\022\'\n\004data\030\001 \001(\0132\021.co" +
+      "mmon.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023." +
+      "common.v1.AppErrorH\000R\005errorB\n\n\010response\"" +
+      "@\n\023ConfigUpdateRequest\022)\n\006config\030\001 \001(\0132\021" +
+      ".common.v1.ConfigR\006config\"x\n\024ConfigUpdat" +
+      "eResponse\022\'\n\004data\030\001 \001(\0132\021.common.v1.Conf" +
+      "igH\000R\004data\022+\n\005error\030\002 \001(\0132\023.common.v1.Ap" +
+      "pErrorH\000R\005errorB\n\n\010response\"z\n\026ConfigLis" +
+      "tenerResponse\022\'\n\004data\030\001 \001(\0132\021.common.v1." +
       "ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.common.v" +
-      "1.AppErrorH\000R\005errorB\n\n\010response\"z\n\026Confi" +
-      "gListenerResponse\022\'\n\004data\030\001 \001(\0132\021.common" +
-      ".v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.comm" +
-      "on.v1.AppErrorH\000R\005errorB\n\n\010response\"4\n\025C" +
-      "onfigListenerRequest\022\033\n\tclient_id\030\001 \001(\tR" +
-      "\010clientIdB:\n\032org.megacommerce.common.v1B" +
-      "\013ConfigProtoZ\014common/v1;v1\370\001\001b\006proto3"
+      "1.AppErrorH\000R\005errorB\n\n\010response\"4\n\025Confi" +
+      "gListenerRequest\022\033\n\tclient_id\030\001 \001(\tR\010cli" +
+      "entIdB:\n\032org.megacommerce.common.v1B\013Con" +
+      "figProtoZ\014common/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -53286,12 +53174,6 @@ public final class ConfigProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_v1_ConfigSecurity_descriptor,
         new java.lang.String[] { "RestrictedUsernames", "MaximumLoginAttempts", "EnableInsecureOutgoingConnections", "EnableMultifactorAuthentication", "EnforceMultifactorAuthentication", "EnableOauthServiceProvider", "EnableOutgoingOauthConnections", "TerminateSessionsOnPasswordChange", "SessionLengthWebInHours", "SessionLengthMobileInHours", "SessionLengthSsoInHours", "AllowCorsFrom", "CorsExposedHeaders", "CorsAllowCredentials", "CorsDebug", "AllowCookiesForSubdomains", "SessionCacheInMinutes", "WebsocketSecurePort", "WebsocketPort", "MaximumLoginAttempts", "EnableInsecureOutgoingConnections", "EnableMultifactorAuthentication", "EnforceMultifactorAuthentication", "EnableOauthServiceProvider", "EnableOutgoingOauthConnections", "TerminateSessionsOnPasswordChange", "SessionLengthWebInHours", "SessionLengthMobileInHours", "SessionLengthSsoInHours", "AllowCorsFrom", "CorsExposedHeaders", "CorsAllowCredentials", "CorsDebug", "AllowCookiesForSubdomains", "SessionCacheInMinutes", "WebsocketSecurePort", "WebsocketPort", });
-    internal_static_common_v1_ConfigSecurity_RestrictedUsernamesEntry_descriptor =
-      internal_static_common_v1_ConfigSecurity_descriptor.getNestedTypes().get(0);
-    internal_static_common_v1_ConfigSecurity_RestrictedUsernamesEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_common_v1_ConfigSecurity_RestrictedUsernamesEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
     internal_static_common_v1_CacheConfig_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_common_v1_CacheConfig_fieldAccessorTable = new
