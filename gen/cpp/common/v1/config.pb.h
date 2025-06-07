@@ -31,6 +31,9 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
+#include <google/protobuf/map.h>  // IWYU pragma: export
+#include <google/protobuf/map_entry.h>
+#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "common/v1/error.pb.h"
 // @@protoc_insertion_point(includes)
@@ -48,7 +51,7 @@ struct TableStruct_common_2fv1_2fconfig_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[28]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[29]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -126,6 +129,9 @@ extern ConfigSamlDefaultTypeInternal _ConfigSaml_default_instance_;
 class ConfigSecurity;
 struct ConfigSecurityDefaultTypeInternal;
 extern ConfigSecurityDefaultTypeInternal _ConfigSecurity_default_instance_;
+class ConfigSecurity_RestrictedUsernamesEntry_DoNotUse;
+struct ConfigSecurity_RestrictedUsernamesEntry_DoNotUseDefaultTypeInternal;
+extern ConfigSecurity_RestrictedUsernamesEntry_DoNotUseDefaultTypeInternal _ConfigSecurity_RestrictedUsernamesEntry_DoNotUse_default_instance_;
 class ConfigServices;
 struct ConfigServicesDefaultTypeInternal;
 extern ConfigServicesDefaultTypeInternal _ConfigServices_default_instance_;
@@ -167,6 +173,7 @@ template<> ::common::v1::ConfigRateLimit* Arena::CreateMaybeMessage<::common::v1
 template<> ::common::v1::ConfigSSO* Arena::CreateMaybeMessage<::common::v1::ConfigSSO>(Arena*);
 template<> ::common::v1::ConfigSaml* Arena::CreateMaybeMessage<::common::v1::ConfigSaml>(Arena*);
 template<> ::common::v1::ConfigSecurity* Arena::CreateMaybeMessage<::common::v1::ConfigSecurity>(Arena*);
+template<> ::common::v1::ConfigSecurity_RestrictedUsernamesEntry_DoNotUse* Arena::CreateMaybeMessage<::common::v1::ConfigSecurity_RestrictedUsernamesEntry_DoNotUse>(Arena*);
 template<> ::common::v1::ConfigServices* Arena::CreateMaybeMessage<::common::v1::ConfigServices>(Arena*);
 template<> ::common::v1::ConfigSql* Arena::CreateMaybeMessage<::common::v1::ConfigSql>(Arena*);
 template<> ::common::v1::ConfigSupport* Arena::CreateMaybeMessage<::common::v1::ConfigSupport>(Arena*);
@@ -840,6 +847,33 @@ class ConfigServices final :
 };
 // -------------------------------------------------------------------
 
+class ConfigSecurity_RestrictedUsernamesEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<ConfigSecurity_RestrictedUsernamesEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
+public:
+  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<ConfigSecurity_RestrictedUsernamesEntry_DoNotUse, 
+    std::string, std::string,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
+  ConfigSecurity_RestrictedUsernamesEntry_DoNotUse();
+  explicit constexpr ConfigSecurity_RestrictedUsernamesEntry_DoNotUse(
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit ConfigSecurity_RestrictedUsernamesEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
+  void MergeFrom(const ConfigSecurity_RestrictedUsernamesEntry_DoNotUse& other);
+  static const ConfigSecurity_RestrictedUsernamesEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const ConfigSecurity_RestrictedUsernamesEntry_DoNotUse*>(&_ConfigSecurity_RestrictedUsernamesEntry_DoNotUse_default_instance_); }
+  static bool ValidateKey(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "common.v1.ConfigSecurity.RestrictedUsernamesEntry.key");
+ }
+  static bool ValidateValue(std::string* s) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "common.v1.ConfigSecurity.RestrictedUsernamesEntry.value");
+ }
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+};
+
+// -------------------------------------------------------------------
+
 class ConfigSecurity final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:common.v1.ConfigSecurity) */ {
  public:
@@ -888,7 +922,7 @@ class ConfigSecurity final :
                &_ConfigSecurity_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   friend void swap(ConfigSecurity& a, ConfigSecurity& b) {
     a.Swap(&b);
@@ -959,29 +993,48 @@ class ConfigSecurity final :
 
   // nested types ----------------------------------------------------
 
+
   // accessors -------------------------------------------------------
 
   enum : int {
-    kAllowCorsFromFieldNumber = 11,
-    kCorsExposedHeadersFieldNumber = 12,
-    kMaximumLoginAttemptsFieldNumber = 1,
-    kEnableInsecureOutgoingConnectionsFieldNumber = 2,
-    kEnableMultifactorAuthenticationFieldNumber = 3,
-    kEnforceMultifactorAuthenticationFieldNumber = 4,
-    kEnableOauthServiceProviderFieldNumber = 5,
-    kSessionLengthWebInHoursFieldNumber = 8,
-    kSessionLengthMobileInHoursFieldNumber = 9,
-    kSessionLengthSsoInHoursFieldNumber = 10,
-    kEnableOutgoingOauthConnectionsFieldNumber = 6,
-    kTerminateSessionsOnPasswordChangeFieldNumber = 7,
-    kCorsAllowCredentialsFieldNumber = 13,
-    kCorsDebugFieldNumber = 14,
-    kAllowCookiesForSubdomainsFieldNumber = 15,
-    kSessionCacheInMinutesFieldNumber = 16,
-    kWebsocketSecurePortFieldNumber = 17,
-    kWebsocketPortFieldNumber = 18,
+    kRestrictedUsernamesFieldNumber = 1,
+    kAllowCorsFromFieldNumber = 12,
+    kCorsExposedHeadersFieldNumber = 13,
+    kMaximumLoginAttemptsFieldNumber = 2,
+    kEnableInsecureOutgoingConnectionsFieldNumber = 3,
+    kEnableMultifactorAuthenticationFieldNumber = 4,
+    kEnforceMultifactorAuthenticationFieldNumber = 5,
+    kEnableOauthServiceProviderFieldNumber = 6,
+    kSessionLengthWebInHoursFieldNumber = 9,
+    kSessionLengthMobileInHoursFieldNumber = 10,
+    kSessionLengthSsoInHoursFieldNumber = 11,
+    kEnableOutgoingOauthConnectionsFieldNumber = 7,
+    kTerminateSessionsOnPasswordChangeFieldNumber = 8,
+    kCorsAllowCredentialsFieldNumber = 14,
+    kCorsDebugFieldNumber = 15,
+    kAllowCookiesForSubdomainsFieldNumber = 16,
+    kSessionCacheInMinutesFieldNumber = 17,
+    kWebsocketSecurePortFieldNumber = 18,
+    kWebsocketPortFieldNumber = 19,
   };
-  // optional string allow_cors_from = 11 [json_name = "allowCorsFrom"];
+  // map<string, string> restricted_usernames = 1 [json_name = "restrictedUsernames"];
+  int restricted_usernames_size() const;
+  private:
+  int _internal_restricted_usernames_size() const;
+  public:
+  void clear_restricted_usernames();
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      _internal_restricted_usernames() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      _internal_mutable_restricted_usernames();
+  public:
+  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+      restricted_usernames() const;
+  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+      mutable_restricted_usernames();
+
+  // optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];
   bool has_allow_cors_from() const;
   private:
   bool _internal_has_allow_cors_from() const;
@@ -999,7 +1052,7 @@ class ConfigSecurity final :
   std::string* _internal_mutable_allow_cors_from();
   public:
 
-  // optional string cors_exposed_headers = 12 [json_name = "corsExposedHeaders"];
+  // optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];
   bool has_cors_exposed_headers() const;
   private:
   bool _internal_has_cors_exposed_headers() const;
@@ -1017,7 +1070,7 @@ class ConfigSecurity final :
   std::string* _internal_mutable_cors_exposed_headers();
   public:
 
-  // optional int32 maximum_login_attempts = 1 [json_name = "maximumLoginAttempts"];
+  // optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];
   bool has_maximum_login_attempts() const;
   private:
   bool _internal_has_maximum_login_attempts() const;
@@ -1030,7 +1083,7 @@ class ConfigSecurity final :
   void _internal_set_maximum_login_attempts(int32_t value);
   public:
 
-  // optional bool enable_insecure_outgoing_connections = 2 [json_name = "enableInsecureOutgoingConnections"];
+  // optional bool enable_insecure_outgoing_connections = 3 [json_name = "enableInsecureOutgoingConnections"];
   bool has_enable_insecure_outgoing_connections() const;
   private:
   bool _internal_has_enable_insecure_outgoing_connections() const;
@@ -1043,7 +1096,7 @@ class ConfigSecurity final :
   void _internal_set_enable_insecure_outgoing_connections(bool value);
   public:
 
-  // optional bool enable_multifactor_authentication = 3 [json_name = "enableMultifactorAuthentication"];
+  // optional bool enable_multifactor_authentication = 4 [json_name = "enableMultifactorAuthentication"];
   bool has_enable_multifactor_authentication() const;
   private:
   bool _internal_has_enable_multifactor_authentication() const;
@@ -1056,7 +1109,7 @@ class ConfigSecurity final :
   void _internal_set_enable_multifactor_authentication(bool value);
   public:
 
-  // optional bool enforce_multifactor_authentication = 4 [json_name = "enforceMultifactorAuthentication"];
+  // optional bool enforce_multifactor_authentication = 5 [json_name = "enforceMultifactorAuthentication"];
   bool has_enforce_multifactor_authentication() const;
   private:
   bool _internal_has_enforce_multifactor_authentication() const;
@@ -1069,7 +1122,7 @@ class ConfigSecurity final :
   void _internal_set_enforce_multifactor_authentication(bool value);
   public:
 
-  // optional bool enable_oauth_service_provider = 5 [json_name = "enableOauthServiceProvider"];
+  // optional bool enable_oauth_service_provider = 6 [json_name = "enableOauthServiceProvider"];
   bool has_enable_oauth_service_provider() const;
   private:
   bool _internal_has_enable_oauth_service_provider() const;
@@ -1082,7 +1135,7 @@ class ConfigSecurity final :
   void _internal_set_enable_oauth_service_provider(bool value);
   public:
 
-  // optional int32 session_length_web_in_hours = 8 [json_name = "sessionLengthWebInHours"];
+  // optional int32 session_length_web_in_hours = 9 [json_name = "sessionLengthWebInHours"];
   bool has_session_length_web_in_hours() const;
   private:
   bool _internal_has_session_length_web_in_hours() const;
@@ -1095,7 +1148,7 @@ class ConfigSecurity final :
   void _internal_set_session_length_web_in_hours(int32_t value);
   public:
 
-  // optional int32 session_length_mobile_in_hours = 9 [json_name = "sessionLengthMobileInHours"];
+  // optional int32 session_length_mobile_in_hours = 10 [json_name = "sessionLengthMobileInHours"];
   bool has_session_length_mobile_in_hours() const;
   private:
   bool _internal_has_session_length_mobile_in_hours() const;
@@ -1108,7 +1161,7 @@ class ConfigSecurity final :
   void _internal_set_session_length_mobile_in_hours(int32_t value);
   public:
 
-  // optional int32 session_length_sso_in_hours = 10 [json_name = "sessionLengthSsoInHours"];
+  // optional int32 session_length_sso_in_hours = 11 [json_name = "sessionLengthSsoInHours"];
   bool has_session_length_sso_in_hours() const;
   private:
   bool _internal_has_session_length_sso_in_hours() const;
@@ -1121,7 +1174,7 @@ class ConfigSecurity final :
   void _internal_set_session_length_sso_in_hours(int32_t value);
   public:
 
-  // optional bool enable_outgoing_oauth_connections = 6 [json_name = "enableOutgoingOauthConnections"];
+  // optional bool enable_outgoing_oauth_connections = 7 [json_name = "enableOutgoingOauthConnections"];
   bool has_enable_outgoing_oauth_connections() const;
   private:
   bool _internal_has_enable_outgoing_oauth_connections() const;
@@ -1134,7 +1187,7 @@ class ConfigSecurity final :
   void _internal_set_enable_outgoing_oauth_connections(bool value);
   public:
 
-  // optional bool terminate_sessions_on_password_change = 7 [json_name = "terminateSessionsOnPasswordChange"];
+  // optional bool terminate_sessions_on_password_change = 8 [json_name = "terminateSessionsOnPasswordChange"];
   bool has_terminate_sessions_on_password_change() const;
   private:
   bool _internal_has_terminate_sessions_on_password_change() const;
@@ -1147,7 +1200,7 @@ class ConfigSecurity final :
   void _internal_set_terminate_sessions_on_password_change(bool value);
   public:
 
-  // optional bool cors_allow_credentials = 13 [json_name = "corsAllowCredentials"];
+  // optional bool cors_allow_credentials = 14 [json_name = "corsAllowCredentials"];
   bool has_cors_allow_credentials() const;
   private:
   bool _internal_has_cors_allow_credentials() const;
@@ -1160,7 +1213,7 @@ class ConfigSecurity final :
   void _internal_set_cors_allow_credentials(bool value);
   public:
 
-  // optional bool cors_debug = 14 [json_name = "corsDebug"];
+  // optional bool cors_debug = 15 [json_name = "corsDebug"];
   bool has_cors_debug() const;
   private:
   bool _internal_has_cors_debug() const;
@@ -1173,7 +1226,7 @@ class ConfigSecurity final :
   void _internal_set_cors_debug(bool value);
   public:
 
-  // optional bool allow_cookies_for_subdomains = 15 [json_name = "allowCookiesForSubdomains"];
+  // optional bool allow_cookies_for_subdomains = 16 [json_name = "allowCookiesForSubdomains"];
   bool has_allow_cookies_for_subdomains() const;
   private:
   bool _internal_has_allow_cookies_for_subdomains() const;
@@ -1186,7 +1239,7 @@ class ConfigSecurity final :
   void _internal_set_allow_cookies_for_subdomains(bool value);
   public:
 
-  // optional int32 session_cache_in_minutes = 16 [json_name = "sessionCacheInMinutes"];
+  // optional int32 session_cache_in_minutes = 17 [json_name = "sessionCacheInMinutes"];
   bool has_session_cache_in_minutes() const;
   private:
   bool _internal_has_session_cache_in_minutes() const;
@@ -1199,7 +1252,7 @@ class ConfigSecurity final :
   void _internal_set_session_cache_in_minutes(int32_t value);
   public:
 
-  // optional int32 websocket_secure_port = 17 [json_name = "websocketSecurePort"];
+  // optional int32 websocket_secure_port = 18 [json_name = "websocketSecurePort"];
   bool has_websocket_secure_port() const;
   private:
   bool _internal_has_websocket_secure_port() const;
@@ -1212,7 +1265,7 @@ class ConfigSecurity final :
   void _internal_set_websocket_secure_port(int32_t value);
   public:
 
-  // optional int32 websocket_port = 18 [json_name = "websocketPort"];
+  // optional int32 websocket_port = 19 [json_name = "websocketPort"];
   bool has_websocket_port() const;
   private:
   bool _internal_has_websocket_port() const;
@@ -1234,6 +1287,11 @@ class ConfigSecurity final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+      ConfigSecurity_RestrictedUsernamesEntry_DoNotUse,
+      std::string, std::string,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> restricted_usernames_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr allow_cors_from_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cors_exposed_headers_;
   int32_t maximum_login_attempts_;
@@ -1304,7 +1362,7 @@ class CacheConfig final :
                &_CacheConfig_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   friend void swap(CacheConfig& a, CacheConfig& b) {
     a.Swap(&b);
@@ -1550,7 +1608,7 @@ class ConfigMetrics final :
                &_ConfigMetrics_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   friend void swap(ConfigMetrics& a, ConfigMetrics& b) {
     a.Swap(&b);
@@ -1792,7 +1850,7 @@ class ConfigSSO final :
                &_ConfigSSO_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   friend void swap(ConfigSSO& a, ConfigSSO& b) {
     a.Swap(&b);
@@ -2123,7 +2181,7 @@ class ConfigSql final :
                &_ConfigSql_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    7;
 
   friend void swap(ConfigSql& a, ConfigSql& b) {
     a.Swap(&b);
@@ -2424,7 +2482,7 @@ class ConfigPassword final :
                &_ConfigPassword_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    7;
+    8;
 
   friend void swap(ConfigPassword& a, ConfigPassword& b) {
     a.Swap(&b);
@@ -2665,7 +2723,7 @@ class ConfigFile final :
                &_ConfigFile_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    8;
+    9;
 
   friend void swap(ConfigFile& a, ConfigFile& b) {
     a.Swap(&b);
@@ -3246,7 +3304,7 @@ class ConfigEmail final :
                &_ConfigEmail_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    9;
+    10;
 
   friend void swap(ConfigEmail& a, ConfigEmail& b) {
     a.Swap(&b);
@@ -3792,7 +3850,7 @@ class ConfigRateLimit final :
                &_ConfigRateLimit_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   friend void swap(ConfigRateLimit& a, ConfigRateLimit& b) {
     a.Swap(&b);
@@ -4034,7 +4092,7 @@ class ConfigPrivacy final :
                &_ConfigPrivacy_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    11;
+    12;
 
   friend void swap(ConfigPrivacy& a, ConfigPrivacy& b) {
     a.Swap(&b);
@@ -4200,7 +4258,7 @@ class ConfigSupport final :
                &_ConfigSupport_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    12;
+    13;
 
   friend void swap(ConfigSupport& a, ConfigSupport& b) {
     a.Swap(&b);
@@ -4476,7 +4534,7 @@ class ConfigLocalization final :
                &_ConfigLocalization_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    13;
+    14;
 
   friend void swap(ConfigLocalization& a, ConfigLocalization& b) {
     a.Swap(&b);
@@ -4672,7 +4730,7 @@ class ConfigLdap final :
                &_ConfigLdap_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    14;
+    15;
 
   friend void swap(ConfigLdap& a, ConfigLdap& b) {
     a.Swap(&b);
@@ -5388,7 +5446,7 @@ class ConfigSaml final :
                &_ConfigSaml_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    15;
+    16;
 
   friend void swap(ConfigSaml& a, ConfigSaml& b) {
     a.Swap(&b);
@@ -6144,7 +6202,7 @@ class ConfigNativeApp final :
                &_ConfigNativeApp_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    16;
+    17;
 
   friend void swap(ConfigNativeApp& a, ConfigNativeApp& b) {
     a.Swap(&b);
@@ -6426,7 +6484,7 @@ class ConfigMeilisearch final :
                &_ConfigMeilisearch_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   friend void swap(ConfigMeilisearch& a, ConfigMeilisearch& b) {
     a.Swap(&b);
@@ -6727,7 +6785,7 @@ class ConfigBleve final :
                &_ConfigBleve_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   friend void swap(ConfigBleve& a, ConfigBleve& b) {
     a.Swap(&b);
@@ -6958,7 +7016,7 @@ class ConfigDataRetention final :
                &_ConfigDataRetention_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   friend void swap(ConfigDataRetention& a, ConfigDataRetention& b) {
     a.Swap(&b);
@@ -7249,7 +7307,7 @@ class ConfigImageProxy final :
                &_ConfigImageProxy_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   friend void swap(ConfigImageProxy& a, ConfigImageProxy& b) {
     a.Swap(&b);
@@ -7460,7 +7518,7 @@ class Config final :
                &_Config_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   friend void swap(Config& a, Config& b) {
     a.Swap(&b);
@@ -8014,7 +8072,7 @@ class ConfigGetRequest final :
                &_ConfigGetRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   friend void swap(ConfigGetRequest& a, ConfigGetRequest& b) {
     a.Swap(&b);
@@ -8139,7 +8197,7 @@ class ConfigGetResponse final :
                &_ConfigGetResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    24;
 
   friend void swap(ConfigGetResponse& a, ConfigGetResponse& b) {
     a.Swap(&b);
@@ -8327,7 +8385,7 @@ class ConfigUpdateRequest final :
                &_ConfigUpdateRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    25;
 
   friend void swap(ConfigUpdateRequest& a, ConfigUpdateRequest& b) {
     a.Swap(&b);
@@ -8488,7 +8546,7 @@ class ConfigUpdateResponse final :
                &_ConfigUpdateResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   friend void swap(ConfigUpdateResponse& a, ConfigUpdateResponse& b) {
     a.Swap(&b);
@@ -8682,7 +8740,7 @@ class ConfigListenerResponse final :
                &_ConfigListenerResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    27;
 
   friend void swap(ConfigListenerResponse& a, ConfigListenerResponse& b) {
     a.Swap(&b);
@@ -8870,7 +8928,7 @@ class ConfigListenerRequest final :
                &_ConfigListenerRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    28;
 
   friend void swap(ConfigListenerRequest& a, ConfigListenerRequest& b) {
     a.Swap(&b);
@@ -9811,9 +9869,40 @@ inline void ConfigServices::set_user_service_grpc_port(int32_t value) {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
 // ConfigSecurity
 
-// optional int32 maximum_login_attempts = 1 [json_name = "maximumLoginAttempts"];
+// map<string, string> restricted_usernames = 1 [json_name = "restrictedUsernames"];
+inline int ConfigSecurity::_internal_restricted_usernames_size() const {
+  return restricted_usernames_.size();
+}
+inline int ConfigSecurity::restricted_usernames_size() const {
+  return _internal_restricted_usernames_size();
+}
+inline void ConfigSecurity::clear_restricted_usernames() {
+  restricted_usernames_.Clear();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+ConfigSecurity::_internal_restricted_usernames() const {
+  return restricted_usernames_.GetMap();
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
+ConfigSecurity::restricted_usernames() const {
+  // @@protoc_insertion_point(field_map:common.v1.ConfigSecurity.restricted_usernames)
+  return _internal_restricted_usernames();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+ConfigSecurity::_internal_mutable_restricted_usernames() {
+  return restricted_usernames_.MutableMap();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
+ConfigSecurity::mutable_restricted_usernames() {
+  // @@protoc_insertion_point(field_mutable_map:common.v1.ConfigSecurity.restricted_usernames)
+  return _internal_mutable_restricted_usernames();
+}
+
+// optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];
 inline bool ConfigSecurity::_internal_has_maximum_login_attempts() const {
   bool value = (_has_bits_[0] & 0x00000004u) != 0;
   return value;
@@ -9841,7 +9930,7 @@ inline void ConfigSecurity::set_maximum_login_attempts(int32_t value) {
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.maximum_login_attempts)
 }
 
-// optional bool enable_insecure_outgoing_connections = 2 [json_name = "enableInsecureOutgoingConnections"];
+// optional bool enable_insecure_outgoing_connections = 3 [json_name = "enableInsecureOutgoingConnections"];
 inline bool ConfigSecurity::_internal_has_enable_insecure_outgoing_connections() const {
   bool value = (_has_bits_[0] & 0x00000008u) != 0;
   return value;
@@ -9869,7 +9958,7 @@ inline void ConfigSecurity::set_enable_insecure_outgoing_connections(bool value)
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.enable_insecure_outgoing_connections)
 }
 
-// optional bool enable_multifactor_authentication = 3 [json_name = "enableMultifactorAuthentication"];
+// optional bool enable_multifactor_authentication = 4 [json_name = "enableMultifactorAuthentication"];
 inline bool ConfigSecurity::_internal_has_enable_multifactor_authentication() const {
   bool value = (_has_bits_[0] & 0x00000010u) != 0;
   return value;
@@ -9897,7 +9986,7 @@ inline void ConfigSecurity::set_enable_multifactor_authentication(bool value) {
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.enable_multifactor_authentication)
 }
 
-// optional bool enforce_multifactor_authentication = 4 [json_name = "enforceMultifactorAuthentication"];
+// optional bool enforce_multifactor_authentication = 5 [json_name = "enforceMultifactorAuthentication"];
 inline bool ConfigSecurity::_internal_has_enforce_multifactor_authentication() const {
   bool value = (_has_bits_[0] & 0x00000020u) != 0;
   return value;
@@ -9925,7 +10014,7 @@ inline void ConfigSecurity::set_enforce_multifactor_authentication(bool value) {
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.enforce_multifactor_authentication)
 }
 
-// optional bool enable_oauth_service_provider = 5 [json_name = "enableOauthServiceProvider"];
+// optional bool enable_oauth_service_provider = 6 [json_name = "enableOauthServiceProvider"];
 inline bool ConfigSecurity::_internal_has_enable_oauth_service_provider() const {
   bool value = (_has_bits_[0] & 0x00000040u) != 0;
   return value;
@@ -9953,7 +10042,7 @@ inline void ConfigSecurity::set_enable_oauth_service_provider(bool value) {
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.enable_oauth_service_provider)
 }
 
-// optional bool enable_outgoing_oauth_connections = 6 [json_name = "enableOutgoingOauthConnections"];
+// optional bool enable_outgoing_oauth_connections = 7 [json_name = "enableOutgoingOauthConnections"];
 inline bool ConfigSecurity::_internal_has_enable_outgoing_oauth_connections() const {
   bool value = (_has_bits_[0] & 0x00000400u) != 0;
   return value;
@@ -9981,7 +10070,7 @@ inline void ConfigSecurity::set_enable_outgoing_oauth_connections(bool value) {
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.enable_outgoing_oauth_connections)
 }
 
-// optional bool terminate_sessions_on_password_change = 7 [json_name = "terminateSessionsOnPasswordChange"];
+// optional bool terminate_sessions_on_password_change = 8 [json_name = "terminateSessionsOnPasswordChange"];
 inline bool ConfigSecurity::_internal_has_terminate_sessions_on_password_change() const {
   bool value = (_has_bits_[0] & 0x00000800u) != 0;
   return value;
@@ -10009,7 +10098,7 @@ inline void ConfigSecurity::set_terminate_sessions_on_password_change(bool value
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.terminate_sessions_on_password_change)
 }
 
-// optional int32 session_length_web_in_hours = 8 [json_name = "sessionLengthWebInHours"];
+// optional int32 session_length_web_in_hours = 9 [json_name = "sessionLengthWebInHours"];
 inline bool ConfigSecurity::_internal_has_session_length_web_in_hours() const {
   bool value = (_has_bits_[0] & 0x00000080u) != 0;
   return value;
@@ -10037,7 +10126,7 @@ inline void ConfigSecurity::set_session_length_web_in_hours(int32_t value) {
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.session_length_web_in_hours)
 }
 
-// optional int32 session_length_mobile_in_hours = 9 [json_name = "sessionLengthMobileInHours"];
+// optional int32 session_length_mobile_in_hours = 10 [json_name = "sessionLengthMobileInHours"];
 inline bool ConfigSecurity::_internal_has_session_length_mobile_in_hours() const {
   bool value = (_has_bits_[0] & 0x00000100u) != 0;
   return value;
@@ -10065,7 +10154,7 @@ inline void ConfigSecurity::set_session_length_mobile_in_hours(int32_t value) {
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.session_length_mobile_in_hours)
 }
 
-// optional int32 session_length_sso_in_hours = 10 [json_name = "sessionLengthSsoInHours"];
+// optional int32 session_length_sso_in_hours = 11 [json_name = "sessionLengthSsoInHours"];
 inline bool ConfigSecurity::_internal_has_session_length_sso_in_hours() const {
   bool value = (_has_bits_[0] & 0x00000200u) != 0;
   return value;
@@ -10093,7 +10182,7 @@ inline void ConfigSecurity::set_session_length_sso_in_hours(int32_t value) {
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.session_length_sso_in_hours)
 }
 
-// optional string allow_cors_from = 11 [json_name = "allowCorsFrom"];
+// optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];
 inline bool ConfigSecurity::_internal_has_allow_cors_from() const {
   bool value = (_has_bits_[0] & 0x00000001u) != 0;
   return value;
@@ -10162,7 +10251,7 @@ inline void ConfigSecurity::set_allocated_allow_cors_from(std::string* allow_cor
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigSecurity.allow_cors_from)
 }
 
-// optional string cors_exposed_headers = 12 [json_name = "corsExposedHeaders"];
+// optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];
 inline bool ConfigSecurity::_internal_has_cors_exposed_headers() const {
   bool value = (_has_bits_[0] & 0x00000002u) != 0;
   return value;
@@ -10231,7 +10320,7 @@ inline void ConfigSecurity::set_allocated_cors_exposed_headers(std::string* cors
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigSecurity.cors_exposed_headers)
 }
 
-// optional bool cors_allow_credentials = 13 [json_name = "corsAllowCredentials"];
+// optional bool cors_allow_credentials = 14 [json_name = "corsAllowCredentials"];
 inline bool ConfigSecurity::_internal_has_cors_allow_credentials() const {
   bool value = (_has_bits_[0] & 0x00001000u) != 0;
   return value;
@@ -10259,7 +10348,7 @@ inline void ConfigSecurity::set_cors_allow_credentials(bool value) {
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.cors_allow_credentials)
 }
 
-// optional bool cors_debug = 14 [json_name = "corsDebug"];
+// optional bool cors_debug = 15 [json_name = "corsDebug"];
 inline bool ConfigSecurity::_internal_has_cors_debug() const {
   bool value = (_has_bits_[0] & 0x00002000u) != 0;
   return value;
@@ -10287,7 +10376,7 @@ inline void ConfigSecurity::set_cors_debug(bool value) {
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.cors_debug)
 }
 
-// optional bool allow_cookies_for_subdomains = 15 [json_name = "allowCookiesForSubdomains"];
+// optional bool allow_cookies_for_subdomains = 16 [json_name = "allowCookiesForSubdomains"];
 inline bool ConfigSecurity::_internal_has_allow_cookies_for_subdomains() const {
   bool value = (_has_bits_[0] & 0x00004000u) != 0;
   return value;
@@ -10315,7 +10404,7 @@ inline void ConfigSecurity::set_allow_cookies_for_subdomains(bool value) {
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.allow_cookies_for_subdomains)
 }
 
-// optional int32 session_cache_in_minutes = 16 [json_name = "sessionCacheInMinutes"];
+// optional int32 session_cache_in_minutes = 17 [json_name = "sessionCacheInMinutes"];
 inline bool ConfigSecurity::_internal_has_session_cache_in_minutes() const {
   bool value = (_has_bits_[0] & 0x00008000u) != 0;
   return value;
@@ -10343,7 +10432,7 @@ inline void ConfigSecurity::set_session_cache_in_minutes(int32_t value) {
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.session_cache_in_minutes)
 }
 
-// optional int32 websocket_secure_port = 17 [json_name = "websocketSecurePort"];
+// optional int32 websocket_secure_port = 18 [json_name = "websocketSecurePort"];
 inline bool ConfigSecurity::_internal_has_websocket_secure_port() const {
   bool value = (_has_bits_[0] & 0x00010000u) != 0;
   return value;
@@ -10371,7 +10460,7 @@ inline void ConfigSecurity::set_websocket_secure_port(int32_t value) {
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.websocket_secure_port)
 }
 
-// optional int32 websocket_port = 18 [json_name = "websocketPort"];
+// optional int32 websocket_port = 19 [json_name = "websocketPort"];
 inline bool ConfigSecurity::_internal_has_websocket_port() const {
   bool value = (_has_bits_[0] & 0x00020000u) != 0;
   return value;
@@ -23459,6 +23548,8 @@ inline void ConfigListenerRequest::set_allocated_client_id(std::string* client_i
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

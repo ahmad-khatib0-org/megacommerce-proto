@@ -3554,211 +3554,245 @@ public final class ConfigProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int32 maximum_login_attempts = 1 [json_name = "maximumLoginAttempts"];</code>
+     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     */
+    int getRestrictedUsernamesCount();
+    /**
+     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     */
+    boolean containsRestrictedUsernames(
+        java.lang.String key);
+    /**
+     * Use {@link #getRestrictedUsernamesMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getRestrictedUsernames();
+    /**
+     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getRestrictedUsernamesMap();
+    /**
+     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     */
+
+    java.lang.String getRestrictedUsernamesOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     */
+
+    java.lang.String getRestrictedUsernamesOrThrow(
+        java.lang.String key);
+
+    /**
+     * <code>optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];</code>
      * @return Whether the maximumLoginAttempts field is set.
      */
     boolean hasMaximumLoginAttempts();
     /**
-     * <code>optional int32 maximum_login_attempts = 1 [json_name = "maximumLoginAttempts"];</code>
+     * <code>optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];</code>
      * @return The maximumLoginAttempts.
      */
     int getMaximumLoginAttempts();
 
     /**
-     * <code>optional bool enable_insecure_outgoing_connections = 2 [json_name = "enableInsecureOutgoingConnections"];</code>
+     * <code>optional bool enable_insecure_outgoing_connections = 3 [json_name = "enableInsecureOutgoingConnections"];</code>
      * @return Whether the enableInsecureOutgoingConnections field is set.
      */
     boolean hasEnableInsecureOutgoingConnections();
     /**
-     * <code>optional bool enable_insecure_outgoing_connections = 2 [json_name = "enableInsecureOutgoingConnections"];</code>
+     * <code>optional bool enable_insecure_outgoing_connections = 3 [json_name = "enableInsecureOutgoingConnections"];</code>
      * @return The enableInsecureOutgoingConnections.
      */
     boolean getEnableInsecureOutgoingConnections();
 
     /**
-     * <code>optional bool enable_multifactor_authentication = 3 [json_name = "enableMultifactorAuthentication"];</code>
+     * <code>optional bool enable_multifactor_authentication = 4 [json_name = "enableMultifactorAuthentication"];</code>
      * @return Whether the enableMultifactorAuthentication field is set.
      */
     boolean hasEnableMultifactorAuthentication();
     /**
-     * <code>optional bool enable_multifactor_authentication = 3 [json_name = "enableMultifactorAuthentication"];</code>
+     * <code>optional bool enable_multifactor_authentication = 4 [json_name = "enableMultifactorAuthentication"];</code>
      * @return The enableMultifactorAuthentication.
      */
     boolean getEnableMultifactorAuthentication();
 
     /**
-     * <code>optional bool enforce_multifactor_authentication = 4 [json_name = "enforceMultifactorAuthentication"];</code>
+     * <code>optional bool enforce_multifactor_authentication = 5 [json_name = "enforceMultifactorAuthentication"];</code>
      * @return Whether the enforceMultifactorAuthentication field is set.
      */
     boolean hasEnforceMultifactorAuthentication();
     /**
-     * <code>optional bool enforce_multifactor_authentication = 4 [json_name = "enforceMultifactorAuthentication"];</code>
+     * <code>optional bool enforce_multifactor_authentication = 5 [json_name = "enforceMultifactorAuthentication"];</code>
      * @return The enforceMultifactorAuthentication.
      */
     boolean getEnforceMultifactorAuthentication();
 
     /**
-     * <code>optional bool enable_oauth_service_provider = 5 [json_name = "enableOauthServiceProvider"];</code>
+     * <code>optional bool enable_oauth_service_provider = 6 [json_name = "enableOauthServiceProvider"];</code>
      * @return Whether the enableOauthServiceProvider field is set.
      */
     boolean hasEnableOauthServiceProvider();
     /**
-     * <code>optional bool enable_oauth_service_provider = 5 [json_name = "enableOauthServiceProvider"];</code>
+     * <code>optional bool enable_oauth_service_provider = 6 [json_name = "enableOauthServiceProvider"];</code>
      * @return The enableOauthServiceProvider.
      */
     boolean getEnableOauthServiceProvider();
 
     /**
-     * <code>optional bool enable_outgoing_oauth_connections = 6 [json_name = "enableOutgoingOauthConnections"];</code>
+     * <code>optional bool enable_outgoing_oauth_connections = 7 [json_name = "enableOutgoingOauthConnections"];</code>
      * @return Whether the enableOutgoingOauthConnections field is set.
      */
     boolean hasEnableOutgoingOauthConnections();
     /**
-     * <code>optional bool enable_outgoing_oauth_connections = 6 [json_name = "enableOutgoingOauthConnections"];</code>
+     * <code>optional bool enable_outgoing_oauth_connections = 7 [json_name = "enableOutgoingOauthConnections"];</code>
      * @return The enableOutgoingOauthConnections.
      */
     boolean getEnableOutgoingOauthConnections();
 
     /**
-     * <code>optional bool terminate_sessions_on_password_change = 7 [json_name = "terminateSessionsOnPasswordChange"];</code>
+     * <code>optional bool terminate_sessions_on_password_change = 8 [json_name = "terminateSessionsOnPasswordChange"];</code>
      * @return Whether the terminateSessionsOnPasswordChange field is set.
      */
     boolean hasTerminateSessionsOnPasswordChange();
     /**
-     * <code>optional bool terminate_sessions_on_password_change = 7 [json_name = "terminateSessionsOnPasswordChange"];</code>
+     * <code>optional bool terminate_sessions_on_password_change = 8 [json_name = "terminateSessionsOnPasswordChange"];</code>
      * @return The terminateSessionsOnPasswordChange.
      */
     boolean getTerminateSessionsOnPasswordChange();
 
     /**
-     * <code>optional int32 session_length_web_in_hours = 8 [json_name = "sessionLengthWebInHours"];</code>
+     * <code>optional int32 session_length_web_in_hours = 9 [json_name = "sessionLengthWebInHours"];</code>
      * @return Whether the sessionLengthWebInHours field is set.
      */
     boolean hasSessionLengthWebInHours();
     /**
-     * <code>optional int32 session_length_web_in_hours = 8 [json_name = "sessionLengthWebInHours"];</code>
+     * <code>optional int32 session_length_web_in_hours = 9 [json_name = "sessionLengthWebInHours"];</code>
      * @return The sessionLengthWebInHours.
      */
     int getSessionLengthWebInHours();
 
     /**
-     * <code>optional int32 session_length_mobile_in_hours = 9 [json_name = "sessionLengthMobileInHours"];</code>
+     * <code>optional int32 session_length_mobile_in_hours = 10 [json_name = "sessionLengthMobileInHours"];</code>
      * @return Whether the sessionLengthMobileInHours field is set.
      */
     boolean hasSessionLengthMobileInHours();
     /**
-     * <code>optional int32 session_length_mobile_in_hours = 9 [json_name = "sessionLengthMobileInHours"];</code>
+     * <code>optional int32 session_length_mobile_in_hours = 10 [json_name = "sessionLengthMobileInHours"];</code>
      * @return The sessionLengthMobileInHours.
      */
     int getSessionLengthMobileInHours();
 
     /**
-     * <code>optional int32 session_length_sso_in_hours = 10 [json_name = "sessionLengthSsoInHours"];</code>
+     * <code>optional int32 session_length_sso_in_hours = 11 [json_name = "sessionLengthSsoInHours"];</code>
      * @return Whether the sessionLengthSsoInHours field is set.
      */
     boolean hasSessionLengthSsoInHours();
     /**
-     * <code>optional int32 session_length_sso_in_hours = 10 [json_name = "sessionLengthSsoInHours"];</code>
+     * <code>optional int32 session_length_sso_in_hours = 11 [json_name = "sessionLengthSsoInHours"];</code>
      * @return The sessionLengthSsoInHours.
      */
     int getSessionLengthSsoInHours();
 
     /**
-     * <code>optional string allow_cors_from = 11 [json_name = "allowCorsFrom"];</code>
+     * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
      * @return Whether the allowCorsFrom field is set.
      */
     boolean hasAllowCorsFrom();
     /**
-     * <code>optional string allow_cors_from = 11 [json_name = "allowCorsFrom"];</code>
+     * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
      * @return The allowCorsFrom.
      */
     java.lang.String getAllowCorsFrom();
     /**
-     * <code>optional string allow_cors_from = 11 [json_name = "allowCorsFrom"];</code>
+     * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
      * @return The bytes for allowCorsFrom.
      */
     com.google.protobuf.ByteString
         getAllowCorsFromBytes();
 
     /**
-     * <code>optional string cors_exposed_headers = 12 [json_name = "corsExposedHeaders"];</code>
+     * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
      * @return Whether the corsExposedHeaders field is set.
      */
     boolean hasCorsExposedHeaders();
     /**
-     * <code>optional string cors_exposed_headers = 12 [json_name = "corsExposedHeaders"];</code>
+     * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
      * @return The corsExposedHeaders.
      */
     java.lang.String getCorsExposedHeaders();
     /**
-     * <code>optional string cors_exposed_headers = 12 [json_name = "corsExposedHeaders"];</code>
+     * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
      * @return The bytes for corsExposedHeaders.
      */
     com.google.protobuf.ByteString
         getCorsExposedHeadersBytes();
 
     /**
-     * <code>optional bool cors_allow_credentials = 13 [json_name = "corsAllowCredentials"];</code>
+     * <code>optional bool cors_allow_credentials = 14 [json_name = "corsAllowCredentials"];</code>
      * @return Whether the corsAllowCredentials field is set.
      */
     boolean hasCorsAllowCredentials();
     /**
-     * <code>optional bool cors_allow_credentials = 13 [json_name = "corsAllowCredentials"];</code>
+     * <code>optional bool cors_allow_credentials = 14 [json_name = "corsAllowCredentials"];</code>
      * @return The corsAllowCredentials.
      */
     boolean getCorsAllowCredentials();
 
     /**
-     * <code>optional bool cors_debug = 14 [json_name = "corsDebug"];</code>
+     * <code>optional bool cors_debug = 15 [json_name = "corsDebug"];</code>
      * @return Whether the corsDebug field is set.
      */
     boolean hasCorsDebug();
     /**
-     * <code>optional bool cors_debug = 14 [json_name = "corsDebug"];</code>
+     * <code>optional bool cors_debug = 15 [json_name = "corsDebug"];</code>
      * @return The corsDebug.
      */
     boolean getCorsDebug();
 
     /**
-     * <code>optional bool allow_cookies_for_subdomains = 15 [json_name = "allowCookiesForSubdomains"];</code>
+     * <code>optional bool allow_cookies_for_subdomains = 16 [json_name = "allowCookiesForSubdomains"];</code>
      * @return Whether the allowCookiesForSubdomains field is set.
      */
     boolean hasAllowCookiesForSubdomains();
     /**
-     * <code>optional bool allow_cookies_for_subdomains = 15 [json_name = "allowCookiesForSubdomains"];</code>
+     * <code>optional bool allow_cookies_for_subdomains = 16 [json_name = "allowCookiesForSubdomains"];</code>
      * @return The allowCookiesForSubdomains.
      */
     boolean getAllowCookiesForSubdomains();
 
     /**
-     * <code>optional int32 session_cache_in_minutes = 16 [json_name = "sessionCacheInMinutes"];</code>
+     * <code>optional int32 session_cache_in_minutes = 17 [json_name = "sessionCacheInMinutes"];</code>
      * @return Whether the sessionCacheInMinutes field is set.
      */
     boolean hasSessionCacheInMinutes();
     /**
-     * <code>optional int32 session_cache_in_minutes = 16 [json_name = "sessionCacheInMinutes"];</code>
+     * <code>optional int32 session_cache_in_minutes = 17 [json_name = "sessionCacheInMinutes"];</code>
      * @return The sessionCacheInMinutes.
      */
     int getSessionCacheInMinutes();
 
     /**
-     * <code>optional int32 websocket_secure_port = 17 [json_name = "websocketSecurePort"];</code>
+     * <code>optional int32 websocket_secure_port = 18 [json_name = "websocketSecurePort"];</code>
      * @return Whether the websocketSecurePort field is set.
      */
     boolean hasWebsocketSecurePort();
     /**
-     * <code>optional int32 websocket_secure_port = 17 [json_name = "websocketSecurePort"];</code>
+     * <code>optional int32 websocket_secure_port = 18 [json_name = "websocketSecurePort"];</code>
      * @return The websocketSecurePort.
      */
     int getWebsocketSecurePort();
 
     /**
-     * <code>optional int32 websocket_port = 18 [json_name = "websocketPort"];</code>
+     * <code>optional int32 websocket_port = 19 [json_name = "websocketPort"];</code>
      * @return Whether the websocketPort field is set.
      */
     boolean hasWebsocketPort();
     /**
-     * <code>optional int32 websocket_port = 18 [json_name = "websocketPort"];</code>
+     * <code>optional int32 websocket_port = 19 [json_name = "websocketPort"];</code>
      * @return The websocketPort.
      */
     int getWebsocketPort();
@@ -3797,6 +3831,18 @@ public final class ConfigProto {
       return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigSecurity_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetRestrictedUsernames();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -3806,10 +3852,91 @@ public final class ConfigProto {
     }
 
     private int bitField0_;
-    public static final int MAXIMUM_LOGIN_ATTEMPTS_FIELD_NUMBER = 1;
+    public static final int RESTRICTED_USERNAMES_FIELD_NUMBER = 1;
+    private static final class RestrictedUsernamesDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigSecurity_RestrictedUsernamesEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> restrictedUsernames_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetRestrictedUsernames() {
+      if (restrictedUsernames_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            RestrictedUsernamesDefaultEntryHolder.defaultEntry);
+      }
+      return restrictedUsernames_;
+    }
+
+    public int getRestrictedUsernamesCount() {
+      return internalGetRestrictedUsernames().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     */
+
+    @java.lang.Override
+    public boolean containsRestrictedUsernames(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetRestrictedUsernames().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getRestrictedUsernamesMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getRestrictedUsernames() {
+      return getRestrictedUsernamesMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, java.lang.String> getRestrictedUsernamesMap() {
+      return internalGetRestrictedUsernames().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getRestrictedUsernamesOrDefault(
+        java.lang.String key,
+        java.lang.String defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetRestrictedUsernames().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     */
+    @java.lang.Override
+
+    public java.lang.String getRestrictedUsernamesOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetRestrictedUsernames().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int MAXIMUM_LOGIN_ATTEMPTS_FIELD_NUMBER = 2;
     private int maximumLoginAttempts_;
     /**
-     * <code>optional int32 maximum_login_attempts = 1 [json_name = "maximumLoginAttempts"];</code>
+     * <code>optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];</code>
      * @return Whether the maximumLoginAttempts field is set.
      */
     @java.lang.Override
@@ -3817,7 +3944,7 @@ public final class ConfigProto {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>optional int32 maximum_login_attempts = 1 [json_name = "maximumLoginAttempts"];</code>
+     * <code>optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];</code>
      * @return The maximumLoginAttempts.
      */
     @java.lang.Override
@@ -3825,10 +3952,10 @@ public final class ConfigProto {
       return maximumLoginAttempts_;
     }
 
-    public static final int ENABLE_INSECURE_OUTGOING_CONNECTIONS_FIELD_NUMBER = 2;
+    public static final int ENABLE_INSECURE_OUTGOING_CONNECTIONS_FIELD_NUMBER = 3;
     private boolean enableInsecureOutgoingConnections_;
     /**
-     * <code>optional bool enable_insecure_outgoing_connections = 2 [json_name = "enableInsecureOutgoingConnections"];</code>
+     * <code>optional bool enable_insecure_outgoing_connections = 3 [json_name = "enableInsecureOutgoingConnections"];</code>
      * @return Whether the enableInsecureOutgoingConnections field is set.
      */
     @java.lang.Override
@@ -3836,7 +3963,7 @@ public final class ConfigProto {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>optional bool enable_insecure_outgoing_connections = 2 [json_name = "enableInsecureOutgoingConnections"];</code>
+     * <code>optional bool enable_insecure_outgoing_connections = 3 [json_name = "enableInsecureOutgoingConnections"];</code>
      * @return The enableInsecureOutgoingConnections.
      */
     @java.lang.Override
@@ -3844,10 +3971,10 @@ public final class ConfigProto {
       return enableInsecureOutgoingConnections_;
     }
 
-    public static final int ENABLE_MULTIFACTOR_AUTHENTICATION_FIELD_NUMBER = 3;
+    public static final int ENABLE_MULTIFACTOR_AUTHENTICATION_FIELD_NUMBER = 4;
     private boolean enableMultifactorAuthentication_;
     /**
-     * <code>optional bool enable_multifactor_authentication = 3 [json_name = "enableMultifactorAuthentication"];</code>
+     * <code>optional bool enable_multifactor_authentication = 4 [json_name = "enableMultifactorAuthentication"];</code>
      * @return Whether the enableMultifactorAuthentication field is set.
      */
     @java.lang.Override
@@ -3855,7 +3982,7 @@ public final class ConfigProto {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>optional bool enable_multifactor_authentication = 3 [json_name = "enableMultifactorAuthentication"];</code>
+     * <code>optional bool enable_multifactor_authentication = 4 [json_name = "enableMultifactorAuthentication"];</code>
      * @return The enableMultifactorAuthentication.
      */
     @java.lang.Override
@@ -3863,10 +3990,10 @@ public final class ConfigProto {
       return enableMultifactorAuthentication_;
     }
 
-    public static final int ENFORCE_MULTIFACTOR_AUTHENTICATION_FIELD_NUMBER = 4;
+    public static final int ENFORCE_MULTIFACTOR_AUTHENTICATION_FIELD_NUMBER = 5;
     private boolean enforceMultifactorAuthentication_;
     /**
-     * <code>optional bool enforce_multifactor_authentication = 4 [json_name = "enforceMultifactorAuthentication"];</code>
+     * <code>optional bool enforce_multifactor_authentication = 5 [json_name = "enforceMultifactorAuthentication"];</code>
      * @return Whether the enforceMultifactorAuthentication field is set.
      */
     @java.lang.Override
@@ -3874,7 +4001,7 @@ public final class ConfigProto {
       return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>optional bool enforce_multifactor_authentication = 4 [json_name = "enforceMultifactorAuthentication"];</code>
+     * <code>optional bool enforce_multifactor_authentication = 5 [json_name = "enforceMultifactorAuthentication"];</code>
      * @return The enforceMultifactorAuthentication.
      */
     @java.lang.Override
@@ -3882,10 +4009,10 @@ public final class ConfigProto {
       return enforceMultifactorAuthentication_;
     }
 
-    public static final int ENABLE_OAUTH_SERVICE_PROVIDER_FIELD_NUMBER = 5;
+    public static final int ENABLE_OAUTH_SERVICE_PROVIDER_FIELD_NUMBER = 6;
     private boolean enableOauthServiceProvider_;
     /**
-     * <code>optional bool enable_oauth_service_provider = 5 [json_name = "enableOauthServiceProvider"];</code>
+     * <code>optional bool enable_oauth_service_provider = 6 [json_name = "enableOauthServiceProvider"];</code>
      * @return Whether the enableOauthServiceProvider field is set.
      */
     @java.lang.Override
@@ -3893,7 +4020,7 @@ public final class ConfigProto {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>optional bool enable_oauth_service_provider = 5 [json_name = "enableOauthServiceProvider"];</code>
+     * <code>optional bool enable_oauth_service_provider = 6 [json_name = "enableOauthServiceProvider"];</code>
      * @return The enableOauthServiceProvider.
      */
     @java.lang.Override
@@ -3901,10 +4028,10 @@ public final class ConfigProto {
       return enableOauthServiceProvider_;
     }
 
-    public static final int ENABLE_OUTGOING_OAUTH_CONNECTIONS_FIELD_NUMBER = 6;
+    public static final int ENABLE_OUTGOING_OAUTH_CONNECTIONS_FIELD_NUMBER = 7;
     private boolean enableOutgoingOauthConnections_;
     /**
-     * <code>optional bool enable_outgoing_oauth_connections = 6 [json_name = "enableOutgoingOauthConnections"];</code>
+     * <code>optional bool enable_outgoing_oauth_connections = 7 [json_name = "enableOutgoingOauthConnections"];</code>
      * @return Whether the enableOutgoingOauthConnections field is set.
      */
     @java.lang.Override
@@ -3912,7 +4039,7 @@ public final class ConfigProto {
       return ((bitField0_ & 0x00000020) != 0);
     }
     /**
-     * <code>optional bool enable_outgoing_oauth_connections = 6 [json_name = "enableOutgoingOauthConnections"];</code>
+     * <code>optional bool enable_outgoing_oauth_connections = 7 [json_name = "enableOutgoingOauthConnections"];</code>
      * @return The enableOutgoingOauthConnections.
      */
     @java.lang.Override
@@ -3920,10 +4047,10 @@ public final class ConfigProto {
       return enableOutgoingOauthConnections_;
     }
 
-    public static final int TERMINATE_SESSIONS_ON_PASSWORD_CHANGE_FIELD_NUMBER = 7;
+    public static final int TERMINATE_SESSIONS_ON_PASSWORD_CHANGE_FIELD_NUMBER = 8;
     private boolean terminateSessionsOnPasswordChange_;
     /**
-     * <code>optional bool terminate_sessions_on_password_change = 7 [json_name = "terminateSessionsOnPasswordChange"];</code>
+     * <code>optional bool terminate_sessions_on_password_change = 8 [json_name = "terminateSessionsOnPasswordChange"];</code>
      * @return Whether the terminateSessionsOnPasswordChange field is set.
      */
     @java.lang.Override
@@ -3931,7 +4058,7 @@ public final class ConfigProto {
       return ((bitField0_ & 0x00000040) != 0);
     }
     /**
-     * <code>optional bool terminate_sessions_on_password_change = 7 [json_name = "terminateSessionsOnPasswordChange"];</code>
+     * <code>optional bool terminate_sessions_on_password_change = 8 [json_name = "terminateSessionsOnPasswordChange"];</code>
      * @return The terminateSessionsOnPasswordChange.
      */
     @java.lang.Override
@@ -3939,10 +4066,10 @@ public final class ConfigProto {
       return terminateSessionsOnPasswordChange_;
     }
 
-    public static final int SESSION_LENGTH_WEB_IN_HOURS_FIELD_NUMBER = 8;
+    public static final int SESSION_LENGTH_WEB_IN_HOURS_FIELD_NUMBER = 9;
     private int sessionLengthWebInHours_;
     /**
-     * <code>optional int32 session_length_web_in_hours = 8 [json_name = "sessionLengthWebInHours"];</code>
+     * <code>optional int32 session_length_web_in_hours = 9 [json_name = "sessionLengthWebInHours"];</code>
      * @return Whether the sessionLengthWebInHours field is set.
      */
     @java.lang.Override
@@ -3950,7 +4077,7 @@ public final class ConfigProto {
       return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>optional int32 session_length_web_in_hours = 8 [json_name = "sessionLengthWebInHours"];</code>
+     * <code>optional int32 session_length_web_in_hours = 9 [json_name = "sessionLengthWebInHours"];</code>
      * @return The sessionLengthWebInHours.
      */
     @java.lang.Override
@@ -3958,10 +4085,10 @@ public final class ConfigProto {
       return sessionLengthWebInHours_;
     }
 
-    public static final int SESSION_LENGTH_MOBILE_IN_HOURS_FIELD_NUMBER = 9;
+    public static final int SESSION_LENGTH_MOBILE_IN_HOURS_FIELD_NUMBER = 10;
     private int sessionLengthMobileInHours_;
     /**
-     * <code>optional int32 session_length_mobile_in_hours = 9 [json_name = "sessionLengthMobileInHours"];</code>
+     * <code>optional int32 session_length_mobile_in_hours = 10 [json_name = "sessionLengthMobileInHours"];</code>
      * @return Whether the sessionLengthMobileInHours field is set.
      */
     @java.lang.Override
@@ -3969,7 +4096,7 @@ public final class ConfigProto {
       return ((bitField0_ & 0x00000100) != 0);
     }
     /**
-     * <code>optional int32 session_length_mobile_in_hours = 9 [json_name = "sessionLengthMobileInHours"];</code>
+     * <code>optional int32 session_length_mobile_in_hours = 10 [json_name = "sessionLengthMobileInHours"];</code>
      * @return The sessionLengthMobileInHours.
      */
     @java.lang.Override
@@ -3977,10 +4104,10 @@ public final class ConfigProto {
       return sessionLengthMobileInHours_;
     }
 
-    public static final int SESSION_LENGTH_SSO_IN_HOURS_FIELD_NUMBER = 10;
+    public static final int SESSION_LENGTH_SSO_IN_HOURS_FIELD_NUMBER = 11;
     private int sessionLengthSsoInHours_;
     /**
-     * <code>optional int32 session_length_sso_in_hours = 10 [json_name = "sessionLengthSsoInHours"];</code>
+     * <code>optional int32 session_length_sso_in_hours = 11 [json_name = "sessionLengthSsoInHours"];</code>
      * @return Whether the sessionLengthSsoInHours field is set.
      */
     @java.lang.Override
@@ -3988,7 +4115,7 @@ public final class ConfigProto {
       return ((bitField0_ & 0x00000200) != 0);
     }
     /**
-     * <code>optional int32 session_length_sso_in_hours = 10 [json_name = "sessionLengthSsoInHours"];</code>
+     * <code>optional int32 session_length_sso_in_hours = 11 [json_name = "sessionLengthSsoInHours"];</code>
      * @return The sessionLengthSsoInHours.
      */
     @java.lang.Override
@@ -3996,10 +4123,10 @@ public final class ConfigProto {
       return sessionLengthSsoInHours_;
     }
 
-    public static final int ALLOW_CORS_FROM_FIELD_NUMBER = 11;
+    public static final int ALLOW_CORS_FROM_FIELD_NUMBER = 12;
     private volatile java.lang.Object allowCorsFrom_;
     /**
-     * <code>optional string allow_cors_from = 11 [json_name = "allowCorsFrom"];</code>
+     * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
      * @return Whether the allowCorsFrom field is set.
      */
     @java.lang.Override
@@ -4007,7 +4134,7 @@ public final class ConfigProto {
       return ((bitField0_ & 0x00000400) != 0);
     }
     /**
-     * <code>optional string allow_cors_from = 11 [json_name = "allowCorsFrom"];</code>
+     * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
      * @return The allowCorsFrom.
      */
     @java.lang.Override
@@ -4024,7 +4151,7 @@ public final class ConfigProto {
       }
     }
     /**
-     * <code>optional string allow_cors_from = 11 [json_name = "allowCorsFrom"];</code>
+     * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
      * @return The bytes for allowCorsFrom.
      */
     @java.lang.Override
@@ -4042,10 +4169,10 @@ public final class ConfigProto {
       }
     }
 
-    public static final int CORS_EXPOSED_HEADERS_FIELD_NUMBER = 12;
+    public static final int CORS_EXPOSED_HEADERS_FIELD_NUMBER = 13;
     private volatile java.lang.Object corsExposedHeaders_;
     /**
-     * <code>optional string cors_exposed_headers = 12 [json_name = "corsExposedHeaders"];</code>
+     * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
      * @return Whether the corsExposedHeaders field is set.
      */
     @java.lang.Override
@@ -4053,7 +4180,7 @@ public final class ConfigProto {
       return ((bitField0_ & 0x00000800) != 0);
     }
     /**
-     * <code>optional string cors_exposed_headers = 12 [json_name = "corsExposedHeaders"];</code>
+     * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
      * @return The corsExposedHeaders.
      */
     @java.lang.Override
@@ -4070,7 +4197,7 @@ public final class ConfigProto {
       }
     }
     /**
-     * <code>optional string cors_exposed_headers = 12 [json_name = "corsExposedHeaders"];</code>
+     * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
      * @return The bytes for corsExposedHeaders.
      */
     @java.lang.Override
@@ -4088,10 +4215,10 @@ public final class ConfigProto {
       }
     }
 
-    public static final int CORS_ALLOW_CREDENTIALS_FIELD_NUMBER = 13;
+    public static final int CORS_ALLOW_CREDENTIALS_FIELD_NUMBER = 14;
     private boolean corsAllowCredentials_;
     /**
-     * <code>optional bool cors_allow_credentials = 13 [json_name = "corsAllowCredentials"];</code>
+     * <code>optional bool cors_allow_credentials = 14 [json_name = "corsAllowCredentials"];</code>
      * @return Whether the corsAllowCredentials field is set.
      */
     @java.lang.Override
@@ -4099,7 +4226,7 @@ public final class ConfigProto {
       return ((bitField0_ & 0x00001000) != 0);
     }
     /**
-     * <code>optional bool cors_allow_credentials = 13 [json_name = "corsAllowCredentials"];</code>
+     * <code>optional bool cors_allow_credentials = 14 [json_name = "corsAllowCredentials"];</code>
      * @return The corsAllowCredentials.
      */
     @java.lang.Override
@@ -4107,10 +4234,10 @@ public final class ConfigProto {
       return corsAllowCredentials_;
     }
 
-    public static final int CORS_DEBUG_FIELD_NUMBER = 14;
+    public static final int CORS_DEBUG_FIELD_NUMBER = 15;
     private boolean corsDebug_;
     /**
-     * <code>optional bool cors_debug = 14 [json_name = "corsDebug"];</code>
+     * <code>optional bool cors_debug = 15 [json_name = "corsDebug"];</code>
      * @return Whether the corsDebug field is set.
      */
     @java.lang.Override
@@ -4118,7 +4245,7 @@ public final class ConfigProto {
       return ((bitField0_ & 0x00002000) != 0);
     }
     /**
-     * <code>optional bool cors_debug = 14 [json_name = "corsDebug"];</code>
+     * <code>optional bool cors_debug = 15 [json_name = "corsDebug"];</code>
      * @return The corsDebug.
      */
     @java.lang.Override
@@ -4126,10 +4253,10 @@ public final class ConfigProto {
       return corsDebug_;
     }
 
-    public static final int ALLOW_COOKIES_FOR_SUBDOMAINS_FIELD_NUMBER = 15;
+    public static final int ALLOW_COOKIES_FOR_SUBDOMAINS_FIELD_NUMBER = 16;
     private boolean allowCookiesForSubdomains_;
     /**
-     * <code>optional bool allow_cookies_for_subdomains = 15 [json_name = "allowCookiesForSubdomains"];</code>
+     * <code>optional bool allow_cookies_for_subdomains = 16 [json_name = "allowCookiesForSubdomains"];</code>
      * @return Whether the allowCookiesForSubdomains field is set.
      */
     @java.lang.Override
@@ -4137,7 +4264,7 @@ public final class ConfigProto {
       return ((bitField0_ & 0x00004000) != 0);
     }
     /**
-     * <code>optional bool allow_cookies_for_subdomains = 15 [json_name = "allowCookiesForSubdomains"];</code>
+     * <code>optional bool allow_cookies_for_subdomains = 16 [json_name = "allowCookiesForSubdomains"];</code>
      * @return The allowCookiesForSubdomains.
      */
     @java.lang.Override
@@ -4145,10 +4272,10 @@ public final class ConfigProto {
       return allowCookiesForSubdomains_;
     }
 
-    public static final int SESSION_CACHE_IN_MINUTES_FIELD_NUMBER = 16;
+    public static final int SESSION_CACHE_IN_MINUTES_FIELD_NUMBER = 17;
     private int sessionCacheInMinutes_;
     /**
-     * <code>optional int32 session_cache_in_minutes = 16 [json_name = "sessionCacheInMinutes"];</code>
+     * <code>optional int32 session_cache_in_minutes = 17 [json_name = "sessionCacheInMinutes"];</code>
      * @return Whether the sessionCacheInMinutes field is set.
      */
     @java.lang.Override
@@ -4156,7 +4283,7 @@ public final class ConfigProto {
       return ((bitField0_ & 0x00008000) != 0);
     }
     /**
-     * <code>optional int32 session_cache_in_minutes = 16 [json_name = "sessionCacheInMinutes"];</code>
+     * <code>optional int32 session_cache_in_minutes = 17 [json_name = "sessionCacheInMinutes"];</code>
      * @return The sessionCacheInMinutes.
      */
     @java.lang.Override
@@ -4164,10 +4291,10 @@ public final class ConfigProto {
       return sessionCacheInMinutes_;
     }
 
-    public static final int WEBSOCKET_SECURE_PORT_FIELD_NUMBER = 17;
+    public static final int WEBSOCKET_SECURE_PORT_FIELD_NUMBER = 18;
     private int websocketSecurePort_;
     /**
-     * <code>optional int32 websocket_secure_port = 17 [json_name = "websocketSecurePort"];</code>
+     * <code>optional int32 websocket_secure_port = 18 [json_name = "websocketSecurePort"];</code>
      * @return Whether the websocketSecurePort field is set.
      */
     @java.lang.Override
@@ -4175,7 +4302,7 @@ public final class ConfigProto {
       return ((bitField0_ & 0x00010000) != 0);
     }
     /**
-     * <code>optional int32 websocket_secure_port = 17 [json_name = "websocketSecurePort"];</code>
+     * <code>optional int32 websocket_secure_port = 18 [json_name = "websocketSecurePort"];</code>
      * @return The websocketSecurePort.
      */
     @java.lang.Override
@@ -4183,10 +4310,10 @@ public final class ConfigProto {
       return websocketSecurePort_;
     }
 
-    public static final int WEBSOCKET_PORT_FIELD_NUMBER = 18;
+    public static final int WEBSOCKET_PORT_FIELD_NUMBER = 19;
     private int websocketPort_;
     /**
-     * <code>optional int32 websocket_port = 18 [json_name = "websocketPort"];</code>
+     * <code>optional int32 websocket_port = 19 [json_name = "websocketPort"];</code>
      * @return Whether the websocketPort field is set.
      */
     @java.lang.Override
@@ -4194,7 +4321,7 @@ public final class ConfigProto {
       return ((bitField0_ & 0x00020000) != 0);
     }
     /**
-     * <code>optional int32 websocket_port = 18 [json_name = "websocketPort"];</code>
+     * <code>optional int32 websocket_port = 19 [json_name = "websocketPort"];</code>
      * @return The websocketPort.
      */
     @java.lang.Override
@@ -4216,59 +4343,65 @@ public final class ConfigProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetRestrictedUsernames(),
+          RestrictedUsernamesDefaultEntryHolder.defaultEntry,
+          1);
       if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeInt32(1, maximumLoginAttempts_);
+        output.writeInt32(2, maximumLoginAttempts_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeBool(2, enableInsecureOutgoingConnections_);
+        output.writeBool(3, enableInsecureOutgoingConnections_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeBool(3, enableMultifactorAuthentication_);
+        output.writeBool(4, enableMultifactorAuthentication_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
-        output.writeBool(4, enforceMultifactorAuthentication_);
+        output.writeBool(5, enforceMultifactorAuthentication_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
-        output.writeBool(5, enableOauthServiceProvider_);
+        output.writeBool(6, enableOauthServiceProvider_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
-        output.writeBool(6, enableOutgoingOauthConnections_);
+        output.writeBool(7, enableOutgoingOauthConnections_);
       }
       if (((bitField0_ & 0x00000040) != 0)) {
-        output.writeBool(7, terminateSessionsOnPasswordChange_);
+        output.writeBool(8, terminateSessionsOnPasswordChange_);
       }
       if (((bitField0_ & 0x00000080) != 0)) {
-        output.writeInt32(8, sessionLengthWebInHours_);
+        output.writeInt32(9, sessionLengthWebInHours_);
       }
       if (((bitField0_ & 0x00000100) != 0)) {
-        output.writeInt32(9, sessionLengthMobileInHours_);
+        output.writeInt32(10, sessionLengthMobileInHours_);
       }
       if (((bitField0_ & 0x00000200) != 0)) {
-        output.writeInt32(10, sessionLengthSsoInHours_);
+        output.writeInt32(11, sessionLengthSsoInHours_);
       }
       if (((bitField0_ & 0x00000400) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, allowCorsFrom_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, allowCorsFrom_);
       }
       if (((bitField0_ & 0x00000800) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, corsExposedHeaders_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, corsExposedHeaders_);
       }
       if (((bitField0_ & 0x00001000) != 0)) {
-        output.writeBool(13, corsAllowCredentials_);
+        output.writeBool(14, corsAllowCredentials_);
       }
       if (((bitField0_ & 0x00002000) != 0)) {
-        output.writeBool(14, corsDebug_);
+        output.writeBool(15, corsDebug_);
       }
       if (((bitField0_ & 0x00004000) != 0)) {
-        output.writeBool(15, allowCookiesForSubdomains_);
+        output.writeBool(16, allowCookiesForSubdomains_);
       }
       if (((bitField0_ & 0x00008000) != 0)) {
-        output.writeInt32(16, sessionCacheInMinutes_);
+        output.writeInt32(17, sessionCacheInMinutes_);
       }
       if (((bitField0_ & 0x00010000) != 0)) {
-        output.writeInt32(17, websocketSecurePort_);
+        output.writeInt32(18, websocketSecurePort_);
       }
       if (((bitField0_ & 0x00020000) != 0)) {
-        output.writeInt32(18, websocketPort_);
+        output.writeInt32(19, websocketPort_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -4279,75 +4412,85 @@ public final class ConfigProto {
       if (size != -1) return size;
 
       size = 0;
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetRestrictedUsernames().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        restrictedUsernames__ = RestrictedUsernamesDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(1, restrictedUsernames__);
+      }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, maximumLoginAttempts_);
+          .computeInt32Size(2, maximumLoginAttempts_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, enableInsecureOutgoingConnections_);
+          .computeBoolSize(3, enableInsecureOutgoingConnections_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, enableMultifactorAuthentication_);
+          .computeBoolSize(4, enableMultifactorAuthentication_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, enforceMultifactorAuthentication_);
+          .computeBoolSize(5, enforceMultifactorAuthentication_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, enableOauthServiceProvider_);
+          .computeBoolSize(6, enableOauthServiceProvider_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, enableOutgoingOauthConnections_);
+          .computeBoolSize(7, enableOutgoingOauthConnections_);
       }
       if (((bitField0_ & 0x00000040) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, terminateSessionsOnPasswordChange_);
+          .computeBoolSize(8, terminateSessionsOnPasswordChange_);
       }
       if (((bitField0_ & 0x00000080) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, sessionLengthWebInHours_);
+          .computeInt32Size(9, sessionLengthWebInHours_);
       }
       if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, sessionLengthMobileInHours_);
+          .computeInt32Size(10, sessionLengthMobileInHours_);
       }
       if (((bitField0_ & 0x00000200) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, sessionLengthSsoInHours_);
+          .computeInt32Size(11, sessionLengthSsoInHours_);
       }
       if (((bitField0_ & 0x00000400) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, allowCorsFrom_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, allowCorsFrom_);
       }
       if (((bitField0_ & 0x00000800) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, corsExposedHeaders_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, corsExposedHeaders_);
       }
       if (((bitField0_ & 0x00001000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, corsAllowCredentials_);
+          .computeBoolSize(14, corsAllowCredentials_);
       }
       if (((bitField0_ & 0x00002000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, corsDebug_);
+          .computeBoolSize(15, corsDebug_);
       }
       if (((bitField0_ & 0x00004000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, allowCookiesForSubdomains_);
+          .computeBoolSize(16, allowCookiesForSubdomains_);
       }
       if (((bitField0_ & 0x00008000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(16, sessionCacheInMinutes_);
+          .computeInt32Size(17, sessionCacheInMinutes_);
       }
       if (((bitField0_ & 0x00010000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(17, websocketSecurePort_);
+          .computeInt32Size(18, websocketSecurePort_);
       }
       if (((bitField0_ & 0x00020000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(18, websocketPort_);
+          .computeInt32Size(19, websocketPort_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4364,6 +4507,8 @@ public final class ConfigProto {
       }
       org.megacommerce.common.v1.ConfigProto.ConfigSecurity other = (org.megacommerce.common.v1.ConfigProto.ConfigSecurity) obj;
 
+      if (!internalGetRestrictedUsernames().equals(
+          other.internalGetRestrictedUsernames())) return false;
       if (hasMaximumLoginAttempts() != other.hasMaximumLoginAttempts()) return false;
       if (hasMaximumLoginAttempts()) {
         if (getMaximumLoginAttempts()
@@ -4465,6 +4610,10 @@ public final class ConfigProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (!internalGetRestrictedUsernames().getMap().isEmpty()) {
+        hash = (37 * hash) + RESTRICTED_USERNAMES_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetRestrictedUsernames().hashCode();
+      }
       if (hasMaximumLoginAttempts()) {
         hash = (37 * hash) + MAXIMUM_LOGIN_ATTEMPTS_FIELD_NUMBER;
         hash = (53 * hash) + getMaximumLoginAttempts();
@@ -4653,6 +4802,28 @@ public final class ConfigProto {
         return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigSecurity_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetRestrictedUsernames();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableRestrictedUsernames();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -4674,42 +4845,43 @@ public final class ConfigProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        internalGetMutableRestrictedUsernames().clear();
         maximumLoginAttempts_ = 0;
-        bitField0_ = (bitField0_ & ~0x00000001);
-        enableInsecureOutgoingConnections_ = false;
         bitField0_ = (bitField0_ & ~0x00000002);
-        enableMultifactorAuthentication_ = false;
+        enableInsecureOutgoingConnections_ = false;
         bitField0_ = (bitField0_ & ~0x00000004);
-        enforceMultifactorAuthentication_ = false;
+        enableMultifactorAuthentication_ = false;
         bitField0_ = (bitField0_ & ~0x00000008);
-        enableOauthServiceProvider_ = false;
+        enforceMultifactorAuthentication_ = false;
         bitField0_ = (bitField0_ & ~0x00000010);
-        enableOutgoingOauthConnections_ = false;
+        enableOauthServiceProvider_ = false;
         bitField0_ = (bitField0_ & ~0x00000020);
-        terminateSessionsOnPasswordChange_ = false;
+        enableOutgoingOauthConnections_ = false;
         bitField0_ = (bitField0_ & ~0x00000040);
-        sessionLengthWebInHours_ = 0;
+        terminateSessionsOnPasswordChange_ = false;
         bitField0_ = (bitField0_ & ~0x00000080);
-        sessionLengthMobileInHours_ = 0;
+        sessionLengthWebInHours_ = 0;
         bitField0_ = (bitField0_ & ~0x00000100);
-        sessionLengthSsoInHours_ = 0;
+        sessionLengthMobileInHours_ = 0;
         bitField0_ = (bitField0_ & ~0x00000200);
-        allowCorsFrom_ = "";
+        sessionLengthSsoInHours_ = 0;
         bitField0_ = (bitField0_ & ~0x00000400);
-        corsExposedHeaders_ = "";
+        allowCorsFrom_ = "";
         bitField0_ = (bitField0_ & ~0x00000800);
-        corsAllowCredentials_ = false;
+        corsExposedHeaders_ = "";
         bitField0_ = (bitField0_ & ~0x00001000);
-        corsDebug_ = false;
+        corsAllowCredentials_ = false;
         bitField0_ = (bitField0_ & ~0x00002000);
-        allowCookiesForSubdomains_ = false;
+        corsDebug_ = false;
         bitField0_ = (bitField0_ & ~0x00004000);
-        sessionCacheInMinutes_ = 0;
+        allowCookiesForSubdomains_ = false;
         bitField0_ = (bitField0_ & ~0x00008000);
-        websocketSecurePort_ = 0;
+        sessionCacheInMinutes_ = 0;
         bitField0_ = (bitField0_ & ~0x00010000);
-        websocketPort_ = 0;
+        websocketSecurePort_ = 0;
         bitField0_ = (bitField0_ & ~0x00020000);
+        websocketPort_ = 0;
+        bitField0_ = (bitField0_ & ~0x00040000);
         return this;
       }
 
@@ -4738,75 +4910,77 @@ public final class ConfigProto {
         org.megacommerce.common.v1.ConfigProto.ConfigSecurity result = new org.megacommerce.common.v1.ConfigProto.ConfigSecurity(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.restrictedUsernames_ = internalGetRestrictedUsernames();
+        result.restrictedUsernames_.makeImmutable();
+        if (((from_bitField0_ & 0x00000002) != 0)) {
           result.maximumLoginAttempts_ = maximumLoginAttempts_;
           to_bitField0_ |= 0x00000001;
         }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           result.enableInsecureOutgoingConnections_ = enableInsecureOutgoingConnections_;
           to_bitField0_ |= 0x00000002;
         }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.enableMultifactorAuthentication_ = enableMultifactorAuthentication_;
           to_bitField0_ |= 0x00000004;
         }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.enforceMultifactorAuthentication_ = enforceMultifactorAuthentication_;
           to_bitField0_ |= 0x00000008;
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           result.enableOauthServiceProvider_ = enableOauthServiceProvider_;
           to_bitField0_ |= 0x00000010;
         }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
+        if (((from_bitField0_ & 0x00000040) != 0)) {
           result.enableOutgoingOauthConnections_ = enableOutgoingOauthConnections_;
           to_bitField0_ |= 0x00000020;
         }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
+        if (((from_bitField0_ & 0x00000080) != 0)) {
           result.terminateSessionsOnPasswordChange_ = terminateSessionsOnPasswordChange_;
           to_bitField0_ |= 0x00000040;
         }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
+        if (((from_bitField0_ & 0x00000100) != 0)) {
           result.sessionLengthWebInHours_ = sessionLengthWebInHours_;
           to_bitField0_ |= 0x00000080;
         }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
+        if (((from_bitField0_ & 0x00000200) != 0)) {
           result.sessionLengthMobileInHours_ = sessionLengthMobileInHours_;
           to_bitField0_ |= 0x00000100;
         }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
+        if (((from_bitField0_ & 0x00000400) != 0)) {
           result.sessionLengthSsoInHours_ = sessionLengthSsoInHours_;
           to_bitField0_ |= 0x00000200;
         }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
+        if (((from_bitField0_ & 0x00000800) != 0)) {
           to_bitField0_ |= 0x00000400;
         }
         result.allowCorsFrom_ = allowCorsFrom_;
-        if (((from_bitField0_ & 0x00000800) != 0)) {
+        if (((from_bitField0_ & 0x00001000) != 0)) {
           to_bitField0_ |= 0x00000800;
         }
         result.corsExposedHeaders_ = corsExposedHeaders_;
-        if (((from_bitField0_ & 0x00001000) != 0)) {
+        if (((from_bitField0_ & 0x00002000) != 0)) {
           result.corsAllowCredentials_ = corsAllowCredentials_;
           to_bitField0_ |= 0x00001000;
         }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
+        if (((from_bitField0_ & 0x00004000) != 0)) {
           result.corsDebug_ = corsDebug_;
           to_bitField0_ |= 0x00002000;
         }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
+        if (((from_bitField0_ & 0x00008000) != 0)) {
           result.allowCookiesForSubdomains_ = allowCookiesForSubdomains_;
           to_bitField0_ |= 0x00004000;
         }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
+        if (((from_bitField0_ & 0x00010000) != 0)) {
           result.sessionCacheInMinutes_ = sessionCacheInMinutes_;
           to_bitField0_ |= 0x00008000;
         }
-        if (((from_bitField0_ & 0x00010000) != 0)) {
+        if (((from_bitField0_ & 0x00020000) != 0)) {
           result.websocketSecurePort_ = websocketSecurePort_;
           to_bitField0_ |= 0x00010000;
         }
-        if (((from_bitField0_ & 0x00020000) != 0)) {
+        if (((from_bitField0_ & 0x00040000) != 0)) {
           result.websocketPort_ = websocketPort_;
           to_bitField0_ |= 0x00020000;
         }
@@ -4859,6 +5033,8 @@ public final class ConfigProto {
 
       public Builder mergeFrom(org.megacommerce.common.v1.ConfigProto.ConfigSecurity other) {
         if (other == org.megacommerce.common.v1.ConfigProto.ConfigSecurity.getDefaultInstance()) return this;
+        internalGetMutableRestrictedUsernames().mergeFrom(
+            other.internalGetRestrictedUsernames());
         if (other.hasMaximumLoginAttempts()) {
           setMaximumLoginAttempts(other.getMaximumLoginAttempts());
         }
@@ -4890,12 +5066,12 @@ public final class ConfigProto {
           setSessionLengthSsoInHours(other.getSessionLengthSsoInHours());
         }
         if (other.hasAllowCorsFrom()) {
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000800;
           allowCorsFrom_ = other.allowCorsFrom_;
           onChanged();
         }
         if (other.hasCorsExposedHeaders()) {
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00001000;
           corsExposedHeaders_ = other.corsExposedHeaders_;
           onChanged();
         }
@@ -4943,96 +5119,104 @@ public final class ConfigProto {
               case 0:
                 done = true;
                 break;
-              case 8: {
-                maximumLoginAttempts_ = input.readInt32();
-                bitField0_ |= 0x00000001;
+              case 10: {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                restrictedUsernames__ = input.readMessage(
+                    RestrictedUsernamesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableRestrictedUsernames().getMutableMap().put(
+                    restrictedUsernames__.getKey(), restrictedUsernames__.getValue());
                 break;
-              } // case 8
+              } // case 10
               case 16: {
-                enableInsecureOutgoingConnections_ = input.readBool();
+                maximumLoginAttempts_ = input.readInt32();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
               case 24: {
-                enableMultifactorAuthentication_ = input.readBool();
+                enableInsecureOutgoingConnections_ = input.readBool();
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
               case 32: {
-                enforceMultifactorAuthentication_ = input.readBool();
+                enableMultifactorAuthentication_ = input.readBool();
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
               case 40: {
-                enableOauthServiceProvider_ = input.readBool();
+                enforceMultifactorAuthentication_ = input.readBool();
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
               case 48: {
-                enableOutgoingOauthConnections_ = input.readBool();
+                enableOauthServiceProvider_ = input.readBool();
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
               case 56: {
-                terminateSessionsOnPasswordChange_ = input.readBool();
+                enableOutgoingOauthConnections_ = input.readBool();
                 bitField0_ |= 0x00000040;
                 break;
               } // case 56
               case 64: {
-                sessionLengthWebInHours_ = input.readInt32();
+                terminateSessionsOnPasswordChange_ = input.readBool();
                 bitField0_ |= 0x00000080;
                 break;
               } // case 64
               case 72: {
-                sessionLengthMobileInHours_ = input.readInt32();
+                sessionLengthWebInHours_ = input.readInt32();
                 bitField0_ |= 0x00000100;
                 break;
               } // case 72
               case 80: {
-                sessionLengthSsoInHours_ = input.readInt32();
+                sessionLengthMobileInHours_ = input.readInt32();
                 bitField0_ |= 0x00000200;
                 break;
               } // case 80
-              case 90: {
-                allowCorsFrom_ = input.readStringRequireUtf8();
+              case 88: {
+                sessionLengthSsoInHours_ = input.readInt32();
                 bitField0_ |= 0x00000400;
                 break;
-              } // case 90
+              } // case 88
               case 98: {
-                corsExposedHeaders_ = input.readStringRequireUtf8();
+                allowCorsFrom_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000800;
                 break;
               } // case 98
-              case 104: {
-                corsAllowCredentials_ = input.readBool();
+              case 106: {
+                corsExposedHeaders_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00001000;
                 break;
-              } // case 104
+              } // case 106
               case 112: {
-                corsDebug_ = input.readBool();
+                corsAllowCredentials_ = input.readBool();
                 bitField0_ |= 0x00002000;
                 break;
               } // case 112
               case 120: {
-                allowCookiesForSubdomains_ = input.readBool();
+                corsDebug_ = input.readBool();
                 bitField0_ |= 0x00004000;
                 break;
               } // case 120
               case 128: {
-                sessionCacheInMinutes_ = input.readInt32();
+                allowCookiesForSubdomains_ = input.readBool();
                 bitField0_ |= 0x00008000;
                 break;
               } // case 128
               case 136: {
-                websocketSecurePort_ = input.readInt32();
+                sessionCacheInMinutes_ = input.readInt32();
                 bitField0_ |= 0x00010000;
                 break;
               } // case 136
               case 144: {
-                websocketPort_ = input.readInt32();
+                websocketSecurePort_ = input.readInt32();
                 bitField0_ |= 0x00020000;
                 break;
               } // case 144
+              case 152: {
+                websocketPort_ = input.readInt32();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 152
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -5050,17 +5234,148 @@ public final class ConfigProto {
       }
       private int bitField0_;
 
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> restrictedUsernames_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetRestrictedUsernames() {
+        if (restrictedUsernames_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              RestrictedUsernamesDefaultEntryHolder.defaultEntry);
+        }
+        return restrictedUsernames_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      internalGetMutableRestrictedUsernames() {
+        onChanged();;
+        if (restrictedUsernames_ == null) {
+          restrictedUsernames_ = com.google.protobuf.MapField.newMapField(
+              RestrictedUsernamesDefaultEntryHolder.defaultEntry);
+        }
+        if (!restrictedUsernames_.isMutable()) {
+          restrictedUsernames_ = restrictedUsernames_.copy();
+        }
+        return restrictedUsernames_;
+      }
+
+      public int getRestrictedUsernamesCount() {
+        return internalGetRestrictedUsernames().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       */
+
+      @java.lang.Override
+      public boolean containsRestrictedUsernames(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetRestrictedUsernames().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getRestrictedUsernamesMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getRestrictedUsernames() {
+        return getRestrictedUsernamesMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, java.lang.String> getRestrictedUsernamesMap() {
+        return internalGetRestrictedUsernames().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getRestrictedUsernamesOrDefault(
+          java.lang.String key,
+          java.lang.String defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetRestrictedUsernames().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       */
+      @java.lang.Override
+
+      public java.lang.String getRestrictedUsernamesOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetRestrictedUsernames().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearRestrictedUsernames() {
+        internalGetMutableRestrictedUsernames().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       */
+
+      public Builder removeRestrictedUsernames(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableRestrictedUsernames().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+      getMutableRestrictedUsernames() {
+        return internalGetMutableRestrictedUsernames().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       */
+      public Builder putRestrictedUsernames(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) {
+  throw new NullPointerException("map value");
+}
+
+        internalGetMutableRestrictedUsernames().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       */
+
+      public Builder putAllRestrictedUsernames(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableRestrictedUsernames().getMutableMap()
+            .putAll(values);
+        return this;
+      }
+
       private int maximumLoginAttempts_ ;
       /**
-       * <code>optional int32 maximum_login_attempts = 1 [json_name = "maximumLoginAttempts"];</code>
+       * <code>optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];</code>
        * @return Whether the maximumLoginAttempts field is set.
        */
       @java.lang.Override
       public boolean hasMaximumLoginAttempts() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
-       * <code>optional int32 maximum_login_attempts = 1 [json_name = "maximumLoginAttempts"];</code>
+       * <code>optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];</code>
        * @return The maximumLoginAttempts.
        */
       @java.lang.Override
@@ -5068,22 +5383,22 @@ public final class ConfigProto {
         return maximumLoginAttempts_;
       }
       /**
-       * <code>optional int32 maximum_login_attempts = 1 [json_name = "maximumLoginAttempts"];</code>
+       * <code>optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];</code>
        * @param value The maximumLoginAttempts to set.
        * @return This builder for chaining.
        */
       public Builder setMaximumLoginAttempts(int value) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         maximumLoginAttempts_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 maximum_login_attempts = 1 [json_name = "maximumLoginAttempts"];</code>
+       * <code>optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMaximumLoginAttempts() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         maximumLoginAttempts_ = 0;
         onChanged();
         return this;
@@ -5091,15 +5406,15 @@ public final class ConfigProto {
 
       private boolean enableInsecureOutgoingConnections_ ;
       /**
-       * <code>optional bool enable_insecure_outgoing_connections = 2 [json_name = "enableInsecureOutgoingConnections"];</code>
+       * <code>optional bool enable_insecure_outgoing_connections = 3 [json_name = "enableInsecureOutgoingConnections"];</code>
        * @return Whether the enableInsecureOutgoingConnections field is set.
        */
       @java.lang.Override
       public boolean hasEnableInsecureOutgoingConnections() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
-       * <code>optional bool enable_insecure_outgoing_connections = 2 [json_name = "enableInsecureOutgoingConnections"];</code>
+       * <code>optional bool enable_insecure_outgoing_connections = 3 [json_name = "enableInsecureOutgoingConnections"];</code>
        * @return The enableInsecureOutgoingConnections.
        */
       @java.lang.Override
@@ -5107,22 +5422,22 @@ public final class ConfigProto {
         return enableInsecureOutgoingConnections_;
       }
       /**
-       * <code>optional bool enable_insecure_outgoing_connections = 2 [json_name = "enableInsecureOutgoingConnections"];</code>
+       * <code>optional bool enable_insecure_outgoing_connections = 3 [json_name = "enableInsecureOutgoingConnections"];</code>
        * @param value The enableInsecureOutgoingConnections to set.
        * @return This builder for chaining.
        */
       public Builder setEnableInsecureOutgoingConnections(boolean value) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         enableInsecureOutgoingConnections_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool enable_insecure_outgoing_connections = 2 [json_name = "enableInsecureOutgoingConnections"];</code>
+       * <code>optional bool enable_insecure_outgoing_connections = 3 [json_name = "enableInsecureOutgoingConnections"];</code>
        * @return This builder for chaining.
        */
       public Builder clearEnableInsecureOutgoingConnections() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         enableInsecureOutgoingConnections_ = false;
         onChanged();
         return this;
@@ -5130,15 +5445,15 @@ public final class ConfigProto {
 
       private boolean enableMultifactorAuthentication_ ;
       /**
-       * <code>optional bool enable_multifactor_authentication = 3 [json_name = "enableMultifactorAuthentication"];</code>
+       * <code>optional bool enable_multifactor_authentication = 4 [json_name = "enableMultifactorAuthentication"];</code>
        * @return Whether the enableMultifactorAuthentication field is set.
        */
       @java.lang.Override
       public boolean hasEnableMultifactorAuthentication() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
-       * <code>optional bool enable_multifactor_authentication = 3 [json_name = "enableMultifactorAuthentication"];</code>
+       * <code>optional bool enable_multifactor_authentication = 4 [json_name = "enableMultifactorAuthentication"];</code>
        * @return The enableMultifactorAuthentication.
        */
       @java.lang.Override
@@ -5146,22 +5461,22 @@ public final class ConfigProto {
         return enableMultifactorAuthentication_;
       }
       /**
-       * <code>optional bool enable_multifactor_authentication = 3 [json_name = "enableMultifactorAuthentication"];</code>
+       * <code>optional bool enable_multifactor_authentication = 4 [json_name = "enableMultifactorAuthentication"];</code>
        * @param value The enableMultifactorAuthentication to set.
        * @return This builder for chaining.
        */
       public Builder setEnableMultifactorAuthentication(boolean value) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         enableMultifactorAuthentication_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool enable_multifactor_authentication = 3 [json_name = "enableMultifactorAuthentication"];</code>
+       * <code>optional bool enable_multifactor_authentication = 4 [json_name = "enableMultifactorAuthentication"];</code>
        * @return This builder for chaining.
        */
       public Builder clearEnableMultifactorAuthentication() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         enableMultifactorAuthentication_ = false;
         onChanged();
         return this;
@@ -5169,15 +5484,15 @@ public final class ConfigProto {
 
       private boolean enforceMultifactorAuthentication_ ;
       /**
-       * <code>optional bool enforce_multifactor_authentication = 4 [json_name = "enforceMultifactorAuthentication"];</code>
+       * <code>optional bool enforce_multifactor_authentication = 5 [json_name = "enforceMultifactorAuthentication"];</code>
        * @return Whether the enforceMultifactorAuthentication field is set.
        */
       @java.lang.Override
       public boolean hasEnforceMultifactorAuthentication() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
-       * <code>optional bool enforce_multifactor_authentication = 4 [json_name = "enforceMultifactorAuthentication"];</code>
+       * <code>optional bool enforce_multifactor_authentication = 5 [json_name = "enforceMultifactorAuthentication"];</code>
        * @return The enforceMultifactorAuthentication.
        */
       @java.lang.Override
@@ -5185,22 +5500,22 @@ public final class ConfigProto {
         return enforceMultifactorAuthentication_;
       }
       /**
-       * <code>optional bool enforce_multifactor_authentication = 4 [json_name = "enforceMultifactorAuthentication"];</code>
+       * <code>optional bool enforce_multifactor_authentication = 5 [json_name = "enforceMultifactorAuthentication"];</code>
        * @param value The enforceMultifactorAuthentication to set.
        * @return This builder for chaining.
        */
       public Builder setEnforceMultifactorAuthentication(boolean value) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         enforceMultifactorAuthentication_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool enforce_multifactor_authentication = 4 [json_name = "enforceMultifactorAuthentication"];</code>
+       * <code>optional bool enforce_multifactor_authentication = 5 [json_name = "enforceMultifactorAuthentication"];</code>
        * @return This builder for chaining.
        */
       public Builder clearEnforceMultifactorAuthentication() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         enforceMultifactorAuthentication_ = false;
         onChanged();
         return this;
@@ -5208,15 +5523,15 @@ public final class ConfigProto {
 
       private boolean enableOauthServiceProvider_ ;
       /**
-       * <code>optional bool enable_oauth_service_provider = 5 [json_name = "enableOauthServiceProvider"];</code>
+       * <code>optional bool enable_oauth_service_provider = 6 [json_name = "enableOauthServiceProvider"];</code>
        * @return Whether the enableOauthServiceProvider field is set.
        */
       @java.lang.Override
       public boolean hasEnableOauthServiceProvider() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
-       * <code>optional bool enable_oauth_service_provider = 5 [json_name = "enableOauthServiceProvider"];</code>
+       * <code>optional bool enable_oauth_service_provider = 6 [json_name = "enableOauthServiceProvider"];</code>
        * @return The enableOauthServiceProvider.
        */
       @java.lang.Override
@@ -5224,22 +5539,22 @@ public final class ConfigProto {
         return enableOauthServiceProvider_;
       }
       /**
-       * <code>optional bool enable_oauth_service_provider = 5 [json_name = "enableOauthServiceProvider"];</code>
+       * <code>optional bool enable_oauth_service_provider = 6 [json_name = "enableOauthServiceProvider"];</code>
        * @param value The enableOauthServiceProvider to set.
        * @return This builder for chaining.
        */
       public Builder setEnableOauthServiceProvider(boolean value) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         enableOauthServiceProvider_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool enable_oauth_service_provider = 5 [json_name = "enableOauthServiceProvider"];</code>
+       * <code>optional bool enable_oauth_service_provider = 6 [json_name = "enableOauthServiceProvider"];</code>
        * @return This builder for chaining.
        */
       public Builder clearEnableOauthServiceProvider() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         enableOauthServiceProvider_ = false;
         onChanged();
         return this;
@@ -5247,15 +5562,15 @@ public final class ConfigProto {
 
       private boolean enableOutgoingOauthConnections_ ;
       /**
-       * <code>optional bool enable_outgoing_oauth_connections = 6 [json_name = "enableOutgoingOauthConnections"];</code>
+       * <code>optional bool enable_outgoing_oauth_connections = 7 [json_name = "enableOutgoingOauthConnections"];</code>
        * @return Whether the enableOutgoingOauthConnections field is set.
        */
       @java.lang.Override
       public boolean hasEnableOutgoingOauthConnections() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
-       * <code>optional bool enable_outgoing_oauth_connections = 6 [json_name = "enableOutgoingOauthConnections"];</code>
+       * <code>optional bool enable_outgoing_oauth_connections = 7 [json_name = "enableOutgoingOauthConnections"];</code>
        * @return The enableOutgoingOauthConnections.
        */
       @java.lang.Override
@@ -5263,22 +5578,22 @@ public final class ConfigProto {
         return enableOutgoingOauthConnections_;
       }
       /**
-       * <code>optional bool enable_outgoing_oauth_connections = 6 [json_name = "enableOutgoingOauthConnections"];</code>
+       * <code>optional bool enable_outgoing_oauth_connections = 7 [json_name = "enableOutgoingOauthConnections"];</code>
        * @param value The enableOutgoingOauthConnections to set.
        * @return This builder for chaining.
        */
       public Builder setEnableOutgoingOauthConnections(boolean value) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         enableOutgoingOauthConnections_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool enable_outgoing_oauth_connections = 6 [json_name = "enableOutgoingOauthConnections"];</code>
+       * <code>optional bool enable_outgoing_oauth_connections = 7 [json_name = "enableOutgoingOauthConnections"];</code>
        * @return This builder for chaining.
        */
       public Builder clearEnableOutgoingOauthConnections() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         enableOutgoingOauthConnections_ = false;
         onChanged();
         return this;
@@ -5286,15 +5601,15 @@ public final class ConfigProto {
 
       private boolean terminateSessionsOnPasswordChange_ ;
       /**
-       * <code>optional bool terminate_sessions_on_password_change = 7 [json_name = "terminateSessionsOnPasswordChange"];</code>
+       * <code>optional bool terminate_sessions_on_password_change = 8 [json_name = "terminateSessionsOnPasswordChange"];</code>
        * @return Whether the terminateSessionsOnPasswordChange field is set.
        */
       @java.lang.Override
       public boolean hasTerminateSessionsOnPasswordChange() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
-       * <code>optional bool terminate_sessions_on_password_change = 7 [json_name = "terminateSessionsOnPasswordChange"];</code>
+       * <code>optional bool terminate_sessions_on_password_change = 8 [json_name = "terminateSessionsOnPasswordChange"];</code>
        * @return The terminateSessionsOnPasswordChange.
        */
       @java.lang.Override
@@ -5302,22 +5617,22 @@ public final class ConfigProto {
         return terminateSessionsOnPasswordChange_;
       }
       /**
-       * <code>optional bool terminate_sessions_on_password_change = 7 [json_name = "terminateSessionsOnPasswordChange"];</code>
+       * <code>optional bool terminate_sessions_on_password_change = 8 [json_name = "terminateSessionsOnPasswordChange"];</code>
        * @param value The terminateSessionsOnPasswordChange to set.
        * @return This builder for chaining.
        */
       public Builder setTerminateSessionsOnPasswordChange(boolean value) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         terminateSessionsOnPasswordChange_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool terminate_sessions_on_password_change = 7 [json_name = "terminateSessionsOnPasswordChange"];</code>
+       * <code>optional bool terminate_sessions_on_password_change = 8 [json_name = "terminateSessionsOnPasswordChange"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTerminateSessionsOnPasswordChange() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         terminateSessionsOnPasswordChange_ = false;
         onChanged();
         return this;
@@ -5325,15 +5640,15 @@ public final class ConfigProto {
 
       private int sessionLengthWebInHours_ ;
       /**
-       * <code>optional int32 session_length_web_in_hours = 8 [json_name = "sessionLengthWebInHours"];</code>
+       * <code>optional int32 session_length_web_in_hours = 9 [json_name = "sessionLengthWebInHours"];</code>
        * @return Whether the sessionLengthWebInHours field is set.
        */
       @java.lang.Override
       public boolean hasSessionLengthWebInHours() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000100) != 0);
       }
       /**
-       * <code>optional int32 session_length_web_in_hours = 8 [json_name = "sessionLengthWebInHours"];</code>
+       * <code>optional int32 session_length_web_in_hours = 9 [json_name = "sessionLengthWebInHours"];</code>
        * @return The sessionLengthWebInHours.
        */
       @java.lang.Override
@@ -5341,22 +5656,22 @@ public final class ConfigProto {
         return sessionLengthWebInHours_;
       }
       /**
-       * <code>optional int32 session_length_web_in_hours = 8 [json_name = "sessionLengthWebInHours"];</code>
+       * <code>optional int32 session_length_web_in_hours = 9 [json_name = "sessionLengthWebInHours"];</code>
        * @param value The sessionLengthWebInHours to set.
        * @return This builder for chaining.
        */
       public Builder setSessionLengthWebInHours(int value) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         sessionLengthWebInHours_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 session_length_web_in_hours = 8 [json_name = "sessionLengthWebInHours"];</code>
+       * <code>optional int32 session_length_web_in_hours = 9 [json_name = "sessionLengthWebInHours"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSessionLengthWebInHours() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         sessionLengthWebInHours_ = 0;
         onChanged();
         return this;
@@ -5364,15 +5679,15 @@ public final class ConfigProto {
 
       private int sessionLengthMobileInHours_ ;
       /**
-       * <code>optional int32 session_length_mobile_in_hours = 9 [json_name = "sessionLengthMobileInHours"];</code>
+       * <code>optional int32 session_length_mobile_in_hours = 10 [json_name = "sessionLengthMobileInHours"];</code>
        * @return Whether the sessionLengthMobileInHours field is set.
        */
       @java.lang.Override
       public boolean hasSessionLengthMobileInHours() {
-        return ((bitField0_ & 0x00000100) != 0);
+        return ((bitField0_ & 0x00000200) != 0);
       }
       /**
-       * <code>optional int32 session_length_mobile_in_hours = 9 [json_name = "sessionLengthMobileInHours"];</code>
+       * <code>optional int32 session_length_mobile_in_hours = 10 [json_name = "sessionLengthMobileInHours"];</code>
        * @return The sessionLengthMobileInHours.
        */
       @java.lang.Override
@@ -5380,22 +5695,22 @@ public final class ConfigProto {
         return sessionLengthMobileInHours_;
       }
       /**
-       * <code>optional int32 session_length_mobile_in_hours = 9 [json_name = "sessionLengthMobileInHours"];</code>
+       * <code>optional int32 session_length_mobile_in_hours = 10 [json_name = "sessionLengthMobileInHours"];</code>
        * @param value The sessionLengthMobileInHours to set.
        * @return This builder for chaining.
        */
       public Builder setSessionLengthMobileInHours(int value) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         sessionLengthMobileInHours_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 session_length_mobile_in_hours = 9 [json_name = "sessionLengthMobileInHours"];</code>
+       * <code>optional int32 session_length_mobile_in_hours = 10 [json_name = "sessionLengthMobileInHours"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSessionLengthMobileInHours() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         sessionLengthMobileInHours_ = 0;
         onChanged();
         return this;
@@ -5403,15 +5718,15 @@ public final class ConfigProto {
 
       private int sessionLengthSsoInHours_ ;
       /**
-       * <code>optional int32 session_length_sso_in_hours = 10 [json_name = "sessionLengthSsoInHours"];</code>
+       * <code>optional int32 session_length_sso_in_hours = 11 [json_name = "sessionLengthSsoInHours"];</code>
        * @return Whether the sessionLengthSsoInHours field is set.
        */
       @java.lang.Override
       public boolean hasSessionLengthSsoInHours() {
-        return ((bitField0_ & 0x00000200) != 0);
+        return ((bitField0_ & 0x00000400) != 0);
       }
       /**
-       * <code>optional int32 session_length_sso_in_hours = 10 [json_name = "sessionLengthSsoInHours"];</code>
+       * <code>optional int32 session_length_sso_in_hours = 11 [json_name = "sessionLengthSsoInHours"];</code>
        * @return The sessionLengthSsoInHours.
        */
       @java.lang.Override
@@ -5419,22 +5734,22 @@ public final class ConfigProto {
         return sessionLengthSsoInHours_;
       }
       /**
-       * <code>optional int32 session_length_sso_in_hours = 10 [json_name = "sessionLengthSsoInHours"];</code>
+       * <code>optional int32 session_length_sso_in_hours = 11 [json_name = "sessionLengthSsoInHours"];</code>
        * @param value The sessionLengthSsoInHours to set.
        * @return This builder for chaining.
        */
       public Builder setSessionLengthSsoInHours(int value) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         sessionLengthSsoInHours_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 session_length_sso_in_hours = 10 [json_name = "sessionLengthSsoInHours"];</code>
+       * <code>optional int32 session_length_sso_in_hours = 11 [json_name = "sessionLengthSsoInHours"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSessionLengthSsoInHours() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         sessionLengthSsoInHours_ = 0;
         onChanged();
         return this;
@@ -5442,14 +5757,14 @@ public final class ConfigProto {
 
       private java.lang.Object allowCorsFrom_ = "";
       /**
-       * <code>optional string allow_cors_from = 11 [json_name = "allowCorsFrom"];</code>
+       * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
        * @return Whether the allowCorsFrom field is set.
        */
       public boolean hasAllowCorsFrom() {
-        return ((bitField0_ & 0x00000400) != 0);
+        return ((bitField0_ & 0x00000800) != 0);
       }
       /**
-       * <code>optional string allow_cors_from = 11 [json_name = "allowCorsFrom"];</code>
+       * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
        * @return The allowCorsFrom.
        */
       public java.lang.String getAllowCorsFrom() {
@@ -5465,7 +5780,7 @@ public final class ConfigProto {
         }
       }
       /**
-       * <code>optional string allow_cors_from = 11 [json_name = "allowCorsFrom"];</code>
+       * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
        * @return The bytes for allowCorsFrom.
        */
       public com.google.protobuf.ByteString
@@ -5482,7 +5797,7 @@ public final class ConfigProto {
         }
       }
       /**
-       * <code>optional string allow_cors_from = 11 [json_name = "allowCorsFrom"];</code>
+       * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
        * @param value The allowCorsFrom to set.
        * @return This builder for chaining.
        */
@@ -5491,23 +5806,23 @@ public final class ConfigProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  bitField0_ |= 0x00000800;
         allowCorsFrom_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string allow_cors_from = 11 [json_name = "allowCorsFrom"];</code>
+       * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAllowCorsFrom() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         allowCorsFrom_ = getDefaultInstance().getAllowCorsFrom();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string allow_cors_from = 11 [json_name = "allowCorsFrom"];</code>
+       * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
        * @param value The bytes for allowCorsFrom to set.
        * @return This builder for chaining.
        */
@@ -5517,7 +5832,7 @@ public final class ConfigProto {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         allowCorsFrom_ = value;
         onChanged();
         return this;
@@ -5525,14 +5840,14 @@ public final class ConfigProto {
 
       private java.lang.Object corsExposedHeaders_ = "";
       /**
-       * <code>optional string cors_exposed_headers = 12 [json_name = "corsExposedHeaders"];</code>
+       * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
        * @return Whether the corsExposedHeaders field is set.
        */
       public boolean hasCorsExposedHeaders() {
-        return ((bitField0_ & 0x00000800) != 0);
+        return ((bitField0_ & 0x00001000) != 0);
       }
       /**
-       * <code>optional string cors_exposed_headers = 12 [json_name = "corsExposedHeaders"];</code>
+       * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
        * @return The corsExposedHeaders.
        */
       public java.lang.String getCorsExposedHeaders() {
@@ -5548,7 +5863,7 @@ public final class ConfigProto {
         }
       }
       /**
-       * <code>optional string cors_exposed_headers = 12 [json_name = "corsExposedHeaders"];</code>
+       * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
        * @return The bytes for corsExposedHeaders.
        */
       public com.google.protobuf.ByteString
@@ -5565,7 +5880,7 @@ public final class ConfigProto {
         }
       }
       /**
-       * <code>optional string cors_exposed_headers = 12 [json_name = "corsExposedHeaders"];</code>
+       * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
        * @param value The corsExposedHeaders to set.
        * @return This builder for chaining.
        */
@@ -5574,23 +5889,23 @@ public final class ConfigProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000800;
+  bitField0_ |= 0x00001000;
         corsExposedHeaders_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string cors_exposed_headers = 12 [json_name = "corsExposedHeaders"];</code>
+       * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCorsExposedHeaders() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         corsExposedHeaders_ = getDefaultInstance().getCorsExposedHeaders();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string cors_exposed_headers = 12 [json_name = "corsExposedHeaders"];</code>
+       * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
        * @param value The bytes for corsExposedHeaders to set.
        * @return This builder for chaining.
        */
@@ -5600,7 +5915,7 @@ public final class ConfigProto {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         corsExposedHeaders_ = value;
         onChanged();
         return this;
@@ -5608,15 +5923,15 @@ public final class ConfigProto {
 
       private boolean corsAllowCredentials_ ;
       /**
-       * <code>optional bool cors_allow_credentials = 13 [json_name = "corsAllowCredentials"];</code>
+       * <code>optional bool cors_allow_credentials = 14 [json_name = "corsAllowCredentials"];</code>
        * @return Whether the corsAllowCredentials field is set.
        */
       @java.lang.Override
       public boolean hasCorsAllowCredentials() {
-        return ((bitField0_ & 0x00001000) != 0);
+        return ((bitField0_ & 0x00002000) != 0);
       }
       /**
-       * <code>optional bool cors_allow_credentials = 13 [json_name = "corsAllowCredentials"];</code>
+       * <code>optional bool cors_allow_credentials = 14 [json_name = "corsAllowCredentials"];</code>
        * @return The corsAllowCredentials.
        */
       @java.lang.Override
@@ -5624,22 +5939,22 @@ public final class ConfigProto {
         return corsAllowCredentials_;
       }
       /**
-       * <code>optional bool cors_allow_credentials = 13 [json_name = "corsAllowCredentials"];</code>
+       * <code>optional bool cors_allow_credentials = 14 [json_name = "corsAllowCredentials"];</code>
        * @param value The corsAllowCredentials to set.
        * @return This builder for chaining.
        */
       public Builder setCorsAllowCredentials(boolean value) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         corsAllowCredentials_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool cors_allow_credentials = 13 [json_name = "corsAllowCredentials"];</code>
+       * <code>optional bool cors_allow_credentials = 14 [json_name = "corsAllowCredentials"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCorsAllowCredentials() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         corsAllowCredentials_ = false;
         onChanged();
         return this;
@@ -5647,15 +5962,15 @@ public final class ConfigProto {
 
       private boolean corsDebug_ ;
       /**
-       * <code>optional bool cors_debug = 14 [json_name = "corsDebug"];</code>
+       * <code>optional bool cors_debug = 15 [json_name = "corsDebug"];</code>
        * @return Whether the corsDebug field is set.
        */
       @java.lang.Override
       public boolean hasCorsDebug() {
-        return ((bitField0_ & 0x00002000) != 0);
+        return ((bitField0_ & 0x00004000) != 0);
       }
       /**
-       * <code>optional bool cors_debug = 14 [json_name = "corsDebug"];</code>
+       * <code>optional bool cors_debug = 15 [json_name = "corsDebug"];</code>
        * @return The corsDebug.
        */
       @java.lang.Override
@@ -5663,22 +5978,22 @@ public final class ConfigProto {
         return corsDebug_;
       }
       /**
-       * <code>optional bool cors_debug = 14 [json_name = "corsDebug"];</code>
+       * <code>optional bool cors_debug = 15 [json_name = "corsDebug"];</code>
        * @param value The corsDebug to set.
        * @return This builder for chaining.
        */
       public Builder setCorsDebug(boolean value) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         corsDebug_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool cors_debug = 14 [json_name = "corsDebug"];</code>
+       * <code>optional bool cors_debug = 15 [json_name = "corsDebug"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCorsDebug() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         corsDebug_ = false;
         onChanged();
         return this;
@@ -5686,15 +6001,15 @@ public final class ConfigProto {
 
       private boolean allowCookiesForSubdomains_ ;
       /**
-       * <code>optional bool allow_cookies_for_subdomains = 15 [json_name = "allowCookiesForSubdomains"];</code>
+       * <code>optional bool allow_cookies_for_subdomains = 16 [json_name = "allowCookiesForSubdomains"];</code>
        * @return Whether the allowCookiesForSubdomains field is set.
        */
       @java.lang.Override
       public boolean hasAllowCookiesForSubdomains() {
-        return ((bitField0_ & 0x00004000) != 0);
+        return ((bitField0_ & 0x00008000) != 0);
       }
       /**
-       * <code>optional bool allow_cookies_for_subdomains = 15 [json_name = "allowCookiesForSubdomains"];</code>
+       * <code>optional bool allow_cookies_for_subdomains = 16 [json_name = "allowCookiesForSubdomains"];</code>
        * @return The allowCookiesForSubdomains.
        */
       @java.lang.Override
@@ -5702,22 +6017,22 @@ public final class ConfigProto {
         return allowCookiesForSubdomains_;
       }
       /**
-       * <code>optional bool allow_cookies_for_subdomains = 15 [json_name = "allowCookiesForSubdomains"];</code>
+       * <code>optional bool allow_cookies_for_subdomains = 16 [json_name = "allowCookiesForSubdomains"];</code>
        * @param value The allowCookiesForSubdomains to set.
        * @return This builder for chaining.
        */
       public Builder setAllowCookiesForSubdomains(boolean value) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         allowCookiesForSubdomains_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool allow_cookies_for_subdomains = 15 [json_name = "allowCookiesForSubdomains"];</code>
+       * <code>optional bool allow_cookies_for_subdomains = 16 [json_name = "allowCookiesForSubdomains"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAllowCookiesForSubdomains() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         allowCookiesForSubdomains_ = false;
         onChanged();
         return this;
@@ -5725,15 +6040,15 @@ public final class ConfigProto {
 
       private int sessionCacheInMinutes_ ;
       /**
-       * <code>optional int32 session_cache_in_minutes = 16 [json_name = "sessionCacheInMinutes"];</code>
+       * <code>optional int32 session_cache_in_minutes = 17 [json_name = "sessionCacheInMinutes"];</code>
        * @return Whether the sessionCacheInMinutes field is set.
        */
       @java.lang.Override
       public boolean hasSessionCacheInMinutes() {
-        return ((bitField0_ & 0x00008000) != 0);
+        return ((bitField0_ & 0x00010000) != 0);
       }
       /**
-       * <code>optional int32 session_cache_in_minutes = 16 [json_name = "sessionCacheInMinutes"];</code>
+       * <code>optional int32 session_cache_in_minutes = 17 [json_name = "sessionCacheInMinutes"];</code>
        * @return The sessionCacheInMinutes.
        */
       @java.lang.Override
@@ -5741,22 +6056,22 @@ public final class ConfigProto {
         return sessionCacheInMinutes_;
       }
       /**
-       * <code>optional int32 session_cache_in_minutes = 16 [json_name = "sessionCacheInMinutes"];</code>
+       * <code>optional int32 session_cache_in_minutes = 17 [json_name = "sessionCacheInMinutes"];</code>
        * @param value The sessionCacheInMinutes to set.
        * @return This builder for chaining.
        */
       public Builder setSessionCacheInMinutes(int value) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         sessionCacheInMinutes_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 session_cache_in_minutes = 16 [json_name = "sessionCacheInMinutes"];</code>
+       * <code>optional int32 session_cache_in_minutes = 17 [json_name = "sessionCacheInMinutes"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSessionCacheInMinutes() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         sessionCacheInMinutes_ = 0;
         onChanged();
         return this;
@@ -5764,15 +6079,15 @@ public final class ConfigProto {
 
       private int websocketSecurePort_ ;
       /**
-       * <code>optional int32 websocket_secure_port = 17 [json_name = "websocketSecurePort"];</code>
+       * <code>optional int32 websocket_secure_port = 18 [json_name = "websocketSecurePort"];</code>
        * @return Whether the websocketSecurePort field is set.
        */
       @java.lang.Override
       public boolean hasWebsocketSecurePort() {
-        return ((bitField0_ & 0x00010000) != 0);
+        return ((bitField0_ & 0x00020000) != 0);
       }
       /**
-       * <code>optional int32 websocket_secure_port = 17 [json_name = "websocketSecurePort"];</code>
+       * <code>optional int32 websocket_secure_port = 18 [json_name = "websocketSecurePort"];</code>
        * @return The websocketSecurePort.
        */
       @java.lang.Override
@@ -5780,22 +6095,22 @@ public final class ConfigProto {
         return websocketSecurePort_;
       }
       /**
-       * <code>optional int32 websocket_secure_port = 17 [json_name = "websocketSecurePort"];</code>
+       * <code>optional int32 websocket_secure_port = 18 [json_name = "websocketSecurePort"];</code>
        * @param value The websocketSecurePort to set.
        * @return This builder for chaining.
        */
       public Builder setWebsocketSecurePort(int value) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         websocketSecurePort_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 websocket_secure_port = 17 [json_name = "websocketSecurePort"];</code>
+       * <code>optional int32 websocket_secure_port = 18 [json_name = "websocketSecurePort"];</code>
        * @return This builder for chaining.
        */
       public Builder clearWebsocketSecurePort() {
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         websocketSecurePort_ = 0;
         onChanged();
         return this;
@@ -5803,15 +6118,15 @@ public final class ConfigProto {
 
       private int websocketPort_ ;
       /**
-       * <code>optional int32 websocket_port = 18 [json_name = "websocketPort"];</code>
+       * <code>optional int32 websocket_port = 19 [json_name = "websocketPort"];</code>
        * @return Whether the websocketPort field is set.
        */
       @java.lang.Override
       public boolean hasWebsocketPort() {
-        return ((bitField0_ & 0x00020000) != 0);
+        return ((bitField0_ & 0x00040000) != 0);
       }
       /**
-       * <code>optional int32 websocket_port = 18 [json_name = "websocketPort"];</code>
+       * <code>optional int32 websocket_port = 19 [json_name = "websocketPort"];</code>
        * @return The websocketPort.
        */
       @java.lang.Override
@@ -5819,22 +6134,22 @@ public final class ConfigProto {
         return websocketPort_;
       }
       /**
-       * <code>optional int32 websocket_port = 18 [json_name = "websocketPort"];</code>
+       * <code>optional int32 websocket_port = 19 [json_name = "websocketPort"];</code>
        * @param value The websocketPort to set.
        * @return This builder for chaining.
        */
       public Builder setWebsocketPort(int value) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         websocketPort_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 websocket_port = 18 [json_name = "websocketPort"];</code>
+       * <code>optional int32 websocket_port = 19 [json_name = "websocketPort"];</code>
        * @return This builder for chaining.
        */
       public Builder clearWebsocketPort() {
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         websocketPort_ = 0;
         onChanged();
         return this;
@@ -52275,6 +52590,11 @@ public final class ConfigProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_common_v1_ConfigSecurity_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_v1_ConfigSecurity_RestrictedUsernamesEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_common_v1_ConfigSecurity_RestrictedUsernamesEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_v1_CacheConfig_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -52467,477 +52787,481 @@ public final class ConfigProto {
       " \001(\005H\003R\023userServiceGrpcPort\210\001\001B\033\n\031_commo" +
       "n_service_grpc_hostB\033\n\031_common_service_g" +
       "rpc_portB\031\n\027_user_service_grpc_hostB\031\n\027_" +
-      "user_service_grpc_port\"\327\r\n\016ConfigSecurit" +
-      "y\0229\n\026maximum_login_attempts\030\001 \001(\005H\000R\024max" +
-      "imumLoginAttempts\210\001\001\022T\n$enable_insecure_" +
-      "outgoing_connections\030\002 \001(\010H\001R!enableInse" +
-      "cureOutgoingConnections\210\001\001\022O\n!enable_mul" +
-      "tifactor_authentication\030\003 \001(\010H\002R\037enableM" +
-      "ultifactorAuthentication\210\001\001\022Q\n\"enforce_m" +
-      "ultifactor_authentication\030\004 \001(\010H\003R enfor" +
-      "ceMultifactorAuthentication\210\001\001\022F\n\035enable" +
-      "_oauth_service_provider\030\005 \001(\010H\004R\032enableO" +
-      "authServiceProvider\210\001\001\022N\n!enable_outgoin" +
-      "g_oauth_connections\030\006 \001(\010H\005R\036enableOutgo" +
-      "ingOauthConnections\210\001\001\022U\n%terminate_sess" +
-      "ions_on_password_change\030\007 \001(\010H\006R!termina" +
-      "teSessionsOnPasswordChange\210\001\001\022A\n\033session" +
-      "_length_web_in_hours\030\010 \001(\005H\007R\027sessionLen" +
-      "gthWebInHours\210\001\001\022G\n\036session_length_mobil" +
-      "e_in_hours\030\t \001(\005H\010R\032sessionLengthMobileI" +
-      "nHours\210\001\001\022A\n\033session_length_sso_in_hours" +
-      "\030\n \001(\005H\tR\027sessionLengthSsoInHours\210\001\001\022+\n\017" +
-      "allow_cors_from\030\013 \001(\tH\nR\rallowCorsFrom\210\001" +
-      "\001\0225\n\024cors_exposed_headers\030\014 \001(\tH\013R\022corsE" +
-      "xposedHeaders\210\001\001\0229\n\026cors_allow_credentia" +
-      "ls\030\r \001(\010H\014R\024corsAllowCredentials\210\001\001\022\"\n\nc" +
-      "ors_debug\030\016 \001(\010H\rR\tcorsDebug\210\001\001\022D\n\034allow" +
-      "_cookies_for_subdomains\030\017 \001(\010H\016R\031allowCo" +
-      "okiesForSubdomains\210\001\001\022<\n\030session_cache_i" +
-      "n_minutes\030\020 \001(\005H\017R\025sessionCacheInMinutes" +
-      "\210\001\001\0227\n\025websocket_secure_port\030\021 \001(\005H\020R\023we" +
-      "bsocketSecurePort\210\001\001\022*\n\016websocket_port\030\022" +
-      " \001(\005H\021R\rwebsocketPort\210\001\001B\031\n\027_maximum_log" +
-      "in_attemptsB\'\n%_enable_insecure_outgoing" +
-      "_connectionsB$\n\"_enable_multifactor_auth" +
-      "enticationB%\n#_enforce_multifactor_authe" +
-      "nticationB \n\036_enable_oauth_service_provi" +
-      "derB$\n\"_enable_outgoing_oauth_connection" +
-      "sB(\n&_terminate_sessions_on_password_cha" +
-      "ngeB\036\n\034_session_length_web_in_hoursB!\n\037_" +
-      "session_length_mobile_in_hoursB\036\n\034_sessi" +
-      "on_length_sso_in_hoursB\022\n\020_allow_cors_fr" +
-      "omB\027\n\025_cors_exposed_headersB\031\n\027_cors_all" +
-      "ow_credentialsB\r\n\013_cors_debugB\037\n\035_allow_" +
-      "cookies_for_subdomainsB\033\n\031_session_cache" +
-      "_in_minutesB\030\n\026_websocket_secure_portB\021\n" +
-      "\017_websocket_port\"\202\003\n\013CacheConfig\022\"\n\ncach" +
-      "e_type\030\001 \001(\tH\000R\tcacheType\210\001\001\022(\n\rredis_ad" +
-      "dress\030\002 \001(\tH\001R\014redisAddress\210\001\001\022*\n\016redis_" +
-      "password\030\003 \001(\tH\002R\rredisPassword\210\001\001\022\036\n\010re" +
-      "dis_db\030\004 \001(\005H\003R\007redisDb\210\001\001\0221\n\022redis_cach" +
-      "e_prefix\030\005 \001(\tH\004R\020redisCachePrefix\210\001\001\0225\n" +
-      "\024disable_client_cache\030\006 \001(\010H\005R\022disableCl" +
-      "ientCache\210\001\001B\r\n\013_cache_typeB\020\n\016_redis_ad" +
-      "dressB\021\n\017_redis_passwordB\013\n\t_redis_dbB\025\n" +
-      "\023_redis_cache_prefixB\027\n\025_disable_client_" +
-      "cache\"\251\003\n\rConfigMetrics\022\033\n\006enable\030\001 \001(\010H" +
-      "\000R\006enable\210\001\001\0221\n\022block_profile_rate\030\002 \001(\005" +
-      "H\001R\020blockProfileRate\210\001\001\022*\n\016listen_addres" +
-      "s\030\003 \001(\tH\002R\rlistenAddress\210\001\001\0227\n\025enable_cl" +
-      "ient_metrics\030\004 \001(\010H\003R\023enableClientMetric" +
-      "s\210\001\001\022C\n\033enable_notification_metrics\030\005 \001(" +
-      "\010H\004R\031enableNotificationMetrics\210\001\001\022/\n\024cli" +
-      "ent_side_user_ids\030\006 \003(\tR\021clientSideUserI" +
-      "dsB\t\n\007_enableB\025\n\023_block_profile_rateB\021\n\017" +
-      "_listen_addressB\030\n\026_enable_client_metric" +
-      "sB\036\n\034_enable_notification_metrics\"\230\004\n\tCo" +
-      "nfigSSO\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022\033\n\006" +
-      "secret\030\002 \001(\tH\001R\006secret\210\001\001\022\023\n\002id\030\003 \001(\tH\002R" +
-      "\002id\210\001\001\022\031\n\005scope\030\004 \001(\tH\003R\005scope\210\001\001\022(\n\raut" +
-      "h_endpoint\030\005 \001(\tH\004R\014authEndpoint\210\001\001\022*\n\016t" +
-      "oken_endpoint\030\006 \001(\tH\005R\rtokenEndpoint\210\001\001\022" +
-      "/\n\021user_api_endpoint\030\007 \001(\tH\006R\017userApiEnd" +
-      "point\210\001\001\0222\n\022discovery_endpoint\030\010 \001(\tH\007R\021" +
-      "discoveryEndpoint\210\001\001\022$\n\013button_text\030\t \001(" +
-      "\tH\010R\nbuttonText\210\001\001\022&\n\014button_color\030\n \001(\t" +
-      "H\tR\013buttonColor\210\001\001B\t\n\007_enableB\t\n\007_secret" +
-      "B\005\n\003_idB\010\n\006_scopeB\020\n\016_auth_endpointB\021\n\017_" +
-      "token_endpointB\024\n\022_user_api_endpointB\025\n\023" +
-      "_discovery_endpointB\016\n\014_button_textB\017\n\r_" +
-      "button_color\"\325\005\n\tConfigSql\022$\n\013driver_nam" +
-      "e\030\001 \001(\tH\000R\ndriverName\210\001\001\022$\n\013data_source\030" +
-      "\002 \001(\tH\001R\ndataSource\210\001\001\022)\n\016max_idle_conns" +
-      "\030\003 \001(\005H\002R\014maxIdleConns\210\001\001\022H\n\036conn_max_li" +
-      "fetime_milliseconds\030\004 \001(\005H\003R\033connMaxLife" +
-      "timeMilliseconds\210\001\001\022I\n\037conn_max_idle_tim" +
-      "e_milliseconds\030\005 \001(\005H\004R\033connMaxIdleTimeM" +
-      "illiseconds\210\001\001\022)\n\016max_open_conns\030\006 \001(\005H\005" +
-      "R\014maxOpenConns\210\001\001\022\031\n\005trace\030\007 \001(\010H\006R\005trac" +
-      "e\210\001\001\0222\n\023at_rest_encrypt_key\030\010 \001(\tH\007R\020atR" +
-      "estEncryptKey\210\001\001\022(\n\rquery_timeout\030\t \001(\005H" +
-      "\010R\014queryTimeout\210\001\001\022;\n\027disable_database_s" +
-      "earch\030\n \001(\010H\tR\025disableDatabaseSearch\210\001\001B" +
-      "\016\n\014_driver_nameB\016\n\014_data_sourceB\021\n\017_max_" +
-      "idle_connsB!\n\037_conn_max_lifetime_millise" +
-      "condsB\"\n _conn_max_idle_time_millisecond" +
-      "sB\021\n\017_max_open_connsB\010\n\006_traceB\026\n\024_at_re" +
-      "st_encrypt_keyB\020\n\016_query_timeoutB\032\n\030_dis" +
-      "able_database_search\"\212\003\n\016ConfigPassword\022" +
-      "*\n\016minimum_length\030\001 \001(\005H\000R\rminimumLength" +
-      "\210\001\001\022*\n\016maximum_lenght\030\002 \001(\005H\001R\rmaximumLe" +
-      "nght\210\001\001\022!\n\tlowercase\030\003 \001(\010H\002R\tlowercase\210" +
-      "\001\001\022\033\n\006number\030\004 \001(\010H\003R\006number\210\001\001\022!\n\tupper" +
-      "case\030\005 \001(\010H\004R\tuppercase\210\001\001\022\033\n\006symbol\030\006 \001" +
-      "(\010H\005R\006symbol\210\001\001\0221\n\022enable_forgot_link\030\007 " +
-      "\001(\010H\006R\020enableForgotLink\210\001\001B\021\n\017_minimum_l" +
-      "engthB\021\n\017_maximum_lenghtB\014\n\n_lowercaseB\t" +
-      "\n\007_numberB\014\n\n_uppercaseB\t\n\007_symbolB\025\n\023_e" +
-      "nable_forgot_link\"\340\017\n\nConfigFile\022;\n\027enab" +
-      "le_file_attachments\030\001 \001(\010H\000R\025enableFileA" +
-      "ttachments\210\001\001\0225\n\024enable_mobile_upload\030\002 " +
-      "\001(\010H\001R\022enableMobileUpload\210\001\001\0229\n\026enable_m" +
-      "obile_download\030\003 \001(\010H\002R\024enableMobileDown" +
-      "load\210\001\001\022\'\n\rmax_file_size\030\004 \001(\003H\003R\013maxFil" +
-      "eSize\210\001\001\0225\n\024max_image_resolution\030\005 \001(\003H\004" +
-      "R\022maxImageResolution\210\001\001\022F\n\035max_image_dec" +
-      "oder_concurrency\030\006 \001(\003H\005R\032maxImageDecode" +
-      "rConcurrency\210\001\001\022$\n\013driver_name\030\007 \001(\tH\006R\n" +
-      "driverName\210\001\001\022!\n\tdirectory\030\010 \001(\tH\007R\tdire" +
-      "ctory\210\001\001\0221\n\022enable_public_link\030\t \001(\010H\010R\020" +
-      "enablePublicLink\210\001\001\022,\n\017extract_content\030\n" +
-      " \001(\010H\tR\016extractContent\210\001\001\0220\n\021archive_rec" +
-      "ursion\030\013 \001(\010H\nR\020archiveRecursion\210\001\001\022-\n\020p" +
-      "ublic_link_salt\030\014 \001(\tH\013R\016publicLinkSalt\210" +
-      "\001\001\022&\n\014initial_font\030\r \001(\tH\014R\013initialFont\210" +
-      "\001\001\0229\n\027amazon_s3_access_key_id\030\016 \001(\tH\rR\023a" +
-      "mazonS3AccessKeyId\210\001\001\022A\n\033amazon_s3_secre" +
-      "t_access_key\030\017 \001(\tH\016R\027amazonS3SecretAcce" +
-      "ssKey\210\001\001\022-\n\020amazon_s3_bucket\030\020 \001(\tH\017R\016am" +
-      "azonS3Bucket\210\001\001\0226\n\025amazon_s3_path_prefix" +
-      "\030\021 \001(\tH\020R\022amazonS3PathPrefix\210\001\001\022-\n\020amazo" +
-      "n_s3_region\030\022 \001(\tH\021R\016amazonS3Region\210\001\001\0221" +
-      "\n\022amazon_s3_endpoint\030\023 \001(\tH\022R\020amazonS3En" +
-      "dpoint\210\001\001\022\'\n\ramazon_s3_ssl\030\024 \001(\010H\023R\013amaz" +
-      "onS3Ssl\210\001\001\022.\n\021amazon_s3_sign_v2\030\025 \001(\010H\024R" +
-      "\016amazonS3SignV2\210\001\001\022\'\n\ramazon_s3_sse\030\026 \001(" +
-      "\010H\025R\013amazonS3Sse\210\001\001\022+\n\017amazon_s3_trace\030\027" +
-      " \001(\010H\026R\ramazonS3Trace\210\001\001\022W\n&amazon_s3_re" +
-      "quest_timeout_milliseconds\030\030 \001(\003H\027R\"amaz" +
-      "onS3RequestTimeoutMilliseconds\210\001\001\022J\n ama" +
-      "zon_s3_upload_part_size_bytes\030\031 \001(\003H\030R\033a" +
-      "mazonS3UploadPartSizeBytes\210\001\001\022:\n\027amazon_" +
-      "s3_storage_class\030\032 \001(\tH\031R\024amazonS3Storag" +
-      "eClass\210\001\001B\032\n\030_enable_file_attachmentsB\027\n" +
-      "\025_enable_mobile_uploadB\031\n\027_enable_mobile" +
-      "_downloadB\020\n\016_max_file_sizeB\027\n\025_max_imag" +
-      "e_resolutionB \n\036_max_image_decoder_concu" +
-      "rrencyB\016\n\014_driver_nameB\014\n\n_directoryB\025\n\023" +
-      "_enable_public_linkB\022\n\020_extract_contentB" +
-      "\024\n\022_archive_recursionB\023\n\021_public_link_sa" +
-      "ltB\017\n\r_initial_fontB\032\n\030_amazon_s3_access" +
-      "_key_idB\036\n\034_amazon_s3_secret_access_keyB" +
-      "\023\n\021_amazon_s3_bucketB\030\n\026_amazon_s3_path_" +
-      "prefixB\023\n\021_amazon_s3_regionB\025\n\023_amazon_s" +
-      "3_endpointB\020\n\016_amazon_s3_sslB\024\n\022_amazon_" +
-      "s3_sign_v2B\020\n\016_amazon_s3_sseB\022\n\020_amazon_" +
-      "s3_traceB)\n\'_amazon_s3_request_timeout_m" +
-      "illisecondsB#\n!_amazon_s3_upload_part_si" +
-      "ze_bytesB\032\n\030_amazon_s3_storage_class\"\375\016\n" +
-      "\013ConfigEmail\022=\n\030send_email_notifications" +
-      "\030\001 \001(\010H\000R\026sendEmailNotifications\210\001\001\022A\n\032r" +
-      "equire_email_verification\030\002 \001(\010H\001R\030requi" +
-      "reEmailVerification\210\001\001\022*\n\016feedback_email" +
-      "\030\003 \001(\tH\002R\rfeedbackEmail\210\001\001\022-\n\020reply_to_a" +
-      "ddress\030\004 \001(\tH\003R\016replyToAddress\210\001\001\022-\n\020ena" +
-      "ble_smtp_auth\030\005 \001(\010H\004R\016enableSmtpAuth\210\001\001" +
-      "\022(\n\rsmtp_username\030\006 \001(\tH\005R\014smtpUsername\210" +
-      "\001\001\022(\n\rsmtp_password\030\007 \001(\tH\006R\014smtpPasswor" +
-      "d\210\001\001\022$\n\013smtp_server\030\010 \001(\tH\007R\nsmtpServer\210" +
-      "\001\001\022 \n\tsmtp_port\030\t \001(\tH\010R\010smtpPort\210\001\001\0223\n\023" +
-      "smtp_server_timeout\030\n \001(\005H\tR\021smtpServerT" +
-      "imeout\210\001\001\0224\n\023connection_security\030\013 \001(\tH\n" +
-      "R\022connectionSecurity\210\001\001\022;\n\027send_push_not" +
-      "ifications\030\014 \001(\010H\013R\025sendPushNotification" +
-      "s\210\001\001\022=\n\030push_notification_server\030\r \001(\tH\014" +
-      "R\026pushNotificationServer\210\001\001\022A\n\032push_noti" +
-      "fication_contents\030\016 \001(\tH\rR\030pushNotificat" +
-      "ionContents\210\001\001\022=\n\030push_notification_buff" +
-      "er\030\017 \001(\005H\016R\026pushNotificationBuffer\210\001\001\0227\n" +
-      "\025enable_email_batching\030\020 \001(\010H\017R\023enableEm" +
-      "ailBatching\210\001\001\022@\n\032email_batching_buffer_" +
-      "size\030\021 \001(\005H\020R\027emailBatchingBufferSize\210\001\001" +
-      "\022;\n\027email_batching_interval\030\022 \001(\005H\021R\025ema" +
-      "ilBatchingInterval\210\001\001\022T\n$skip_server_cer" +
-      "tificate_verification\030\023 \001(\010H\022R!skipServe" +
-      "rCertificateVerification\210\001\001\022L\n email_not" +
-      "ification_contents_type\030\024 \001(\tH\023R\035emailNo" +
-      "tificationContentsType\210\001\001\0221\n\022login_butto" +
-      "n_color\030\025 \001(\tH\024R\020loginButtonColor\210\001\001\022>\n\031" +
-      "login_button_border_color\030\026 \001(\tH\025R\026login" +
-      "ButtonBorderColor\210\001\001\022:\n\027login_button_tex" +
-      "t_color\030\027 \001(\tH\026R\024loginButtonTextColor\210\001\001" +
-      "B\033\n\031_send_email_notificationsB\035\n\033_requir" +
-      "e_email_verificationB\021\n\017_feedback_emailB" +
-      "\023\n\021_reply_to_addressB\023\n\021_enable_smtp_aut" +
-      "hB\020\n\016_smtp_usernameB\020\n\016_smtp_passwordB\016\n" +
-      "\014_smtp_serverB\014\n\n_smtp_portB\026\n\024_smtp_ser" +
-      "ver_timeoutB\026\n\024_connection_securityB\032\n\030_" +
-      "send_push_notificationsB\033\n\031_push_notific" +
-      "ation_serverB\035\n\033_push_notification_conte" +
-      "ntsB\033\n\031_push_notification_bufferB\030\n\026_ena" +
-      "ble_email_batchingB\035\n\033_email_batching_bu" +
-      "ffer_sizeB\032\n\030_email_batching_intervalB\'\n" +
-      "%_skip_server_certificate_verificationB#" +
-      "\n!_email_notification_contents_typeB\025\n\023_" +
-      "login_button_colorB\034\n\032_login_button_bord" +
-      "er_colorB\032\n\030_login_button_text_color\"\204\003\n" +
-      "\017ConfigRateLimit\022\033\n\006enable\030\001 \001(\010H\000R\006enab" +
-      "le\210\001\001\022\034\n\007per_sec\030\002 \001(\005H\001R\006perSec\210\001\001\022 \n\tm" +
-      "ax_burst\030\003 \001(\005H\002R\010maxBurst\210\001\001\022/\n\021memory_" +
-      "store_size\030\004 \001(\005H\003R\017memoryStoreSize\210\001\001\0222" +
-      "\n\023vary_by_remote_addr\030\005 \001(\010H\004R\020varyByRem" +
-      "oteAddr\210\001\001\022%\n\014vary_by_user\030\006 \001(\010H\005R\nvary" +
-      "ByUser\210\001\001\022$\n\016vary_by_header\030\007 \001(\tR\014varyB" +
-      "yHeaderB\t\n\007_enableB\n\n\010_per_secB\014\n\n_max_b" +
-      "urstB\024\n\022_memory_store_sizeB\026\n\024_vary_by_r" +
-      "emote_addrB\017\n\r_vary_by_user\"\227\001\n\rConfigPr" +
-      "ivacy\0221\n\022show_email_address\030\001 \001(\010H\000R\020sho" +
-      "wEmailAddress\210\001\001\022)\n\016show_full_name\030\002 \001(\010" +
-      "H\001R\014showFullName\210\001\001B\025\n\023_show_email_addre" +
-      "ssB\021\n\017_show_full_name\"\357\003\n\rConfigSupport\022" +
-      "6\n\025terms_of_service_link\030\001 \001(\tH\000R\022termsO" +
-      "fServiceLink\210\001\001\0223\n\023privacy_policy_link\030\002" +
-      " \001(\tH\001R\021privacyPolicyLink\210\001\001\022\"\n\nabout_li" +
-      "nk\030\003 \001(\tH\002R\taboutLink\210\001\001\022 \n\thelp_link\030\004 " +
-      "\001(\tH\003R\010helpLink\210\001\001\0226\n\025report_a_problem_l" +
-      "ink\030\005 \001(\tH\004R\022reportAProblemLink\210\001\001\0225\n\024fo" +
-      "rgot_password_link\030\006 \001(\tH\005R\022forgotPasswo" +
-      "rdLink\210\001\001\022(\n\rsupport_email\030\007 \001(\tH\006R\014supp" +
-      "ortEmail\210\001\001B\030\n\026_terms_of_service_linkB\026\n" +
-      "\024_privacy_policy_linkB\r\n\013_about_linkB\014\n\n" +
-      "_help_linkB\030\n\026_report_a_problem_linkB\027\n\025" +
-      "_forgot_password_linkB\020\n\016_support_email\"" +
-      "\202\002\n\022ConfigLocalization\0227\n\025default_server" +
-      "_locale\030\001 \001(\tH\000R\023defaultServerLocale\210\001\001\022" +
-      "7\n\025default_client_locale\030\002 \001(\tH\001R\023defaul" +
-      "tClientLocale\210\001\001\0220\n\021available_locales\030\003 " +
-      "\001(\tH\002R\020availableLocales\210\001\001B\030\n\026_default_s" +
-      "erver_localeB\030\n\026_default_client_localeB\024" +
-      "\n\022_available_locales\"\325\020\n\nConfigLdap\022\033\n\006e" +
-      "nable\030\001 \001(\010H\000R\006enable\210\001\001\022$\n\013enable_sync\030" +
-      "\002 \001(\010H\001R\nenableSync\210\001\001\022$\n\013ldap_server\030\003 " +
-      "\001(\tH\002R\nldapServer\210\001\001\022 \n\tldap_port\030\004 \001(\005H" +
-      "\003R\010ldapPort\210\001\001\0224\n\023connection_security\030\005 " +
-      "\001(\tH\004R\022connectionSecurity\210\001\001\022\034\n\007base_dn\030" +
-      "\006 \001(\tH\005R\006baseDn\210\001\001\022(\n\rbind_username\030\007 \001(" +
-      "\tH\006R\014bindUsername\210\001\001\022(\n\rbind_password\030\010 " +
-      "\001(\tH\007R\014bindPassword\210\001\001\0229\n\026maximum_login_" +
-      "attempts\030\t \001(\005H\010R\024maximumLoginAttempts\210\001" +
-      "\001\022$\n\013user_filter\030\n \001(\tH\tR\nuserFilter\210\001\001\022" +
-      "&\n\014group_filter\030\013 \001(\tH\nR\013groupFilter\210\001\001\022" +
-      "3\n\023enable_admin_filter\030\014 \001(\010H\013R\021enableAd" +
-      "minFilter\210\001\001\022&\n\014admin_filter\030\r \001(\tH\014R\013ad" +
-      "minFilter\210\001\001\022D\n\034group_display_name_attri" +
-      "bute\030\016 \001(\tH\rR\031groupDisplayNameAttribute\210" +
-      "\001\001\0221\n\022group_id_attribute\030\017 \001(\tH\016R\020groupI" +
-      "dAttribute\210\001\001\0225\n\024first_name_attribute\030\020 " +
-      "\001(\tH\017R\022firstNameAttribute\210\001\001\0223\n\023last_nam" +
-      "e_attribute\030\021 \001(\tH\020R\021lastNameAttribute\210\001" +
-      "\001\022,\n\017email_attribute\030\022 \001(\tH\021R\016emailAttri" +
-      "bute\210\001\001\0222\n\022username_attribute\030\023 \001(\tH\022R\021u" +
-      "sernameAttribute\210\001\001\0222\n\022nickname_attribut" +
-      "e\030\024 \001(\tH\023R\021nicknameAttribute\210\001\001\022&\n\014id_at" +
-      "tribute\030\025 \001(\tH\024R\013idAttribute\210\001\001\0222\n\022posit" +
-      "ion_attribute\030\026 \001(\tH\025R\021positionAttribute" +
-      "\210\001\001\0221\n\022login_id_attribute\030\027 \001(\tH\026R\020login" +
-      "IdAttribute\210\001\001\0220\n\021picture_attribute\030\030 \001(" +
-      "\tH\027R\020pictureAttribute\210\001\001\0227\n\025sync_interva" +
-      "l_minutes\030\031 \001(\005H\030R\023syncIntervalMinutes\210\001" +
-      "\001\022(\n\rquery_timeout\030\032 \001(\005H\031R\014queryTimeout" +
-      "\210\001\001\022\'\n\rmax_page_size\030\033 \001(\005H\032R\013maxPageSiz" +
-      "e\210\001\001\022-\n\020login_field_name\030\034 \001(\tH\033R\016loginF" +
-      "ieldName\210\001\001\0221\n\022login_button_color\030\035 \001(\tH" +
-      "\034R\020loginButtonColor\210\001\001\022>\n\031login_button_b" +
-      "order_color\030\036 \001(\tH\035R\026loginButtonBorderCo" +
-      "lor\210\001\001\022:\n\027login_button_text_color\030\037 \001(\tH" +
-      "\036R\024loginButtonTextColor\210\001\001B\t\n\007_enableB\016\n" +
-      "\014_enable_syncB\016\n\014_ldap_serverB\014\n\n_ldap_p" +
-      "ortB\026\n\024_connection_securityB\n\n\010_base_dnB" +
-      "\020\n\016_bind_usernameB\020\n\016_bind_passwordB\031\n\027_" +
-      "maximum_login_attemptsB\016\n\014_user_filterB\017" +
-      "\n\r_group_filterB\026\n\024_enable_admin_filterB" +
-      "\017\n\r_admin_filterB\037\n\035_group_display_name_" +
-      "attributeB\025\n\023_group_id_attributeB\027\n\025_fir" +
-      "st_name_attributeB\026\n\024_last_name_attribut" +
-      "eB\022\n\020_email_attributeB\025\n\023_username_attri" +
-      "buteB\025\n\023_nickname_attributeB\017\n\r_id_attri" +
-      "buteB\025\n\023_position_attributeB\025\n\023_login_id" +
-      "_attributeB\024\n\022_picture_attributeB\030\n\026_syn" +
-      "c_interval_minutesB\020\n\016_query_timeoutB\020\n\016" +
-      "_max_page_sizeB\023\n\021_login_field_nameB\025\n\023_" +
-      "login_button_colorB\034\n\032_login_button_bord" +
-      "er_colorB\032\n\030_login_button_text_color\"\255\023\n" +
-      "\nConfigSaml\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001" +
-      "\0226\n\025enable_sync_with_ldap\030\002 \001(\010H\001R\022enabl" +
-      "eSyncWithLdap\210\001\001\022N\n\"enable_sync_with_lda" +
-      "p_include_auth\030\003 \001(\010H\002R\035enableSyncWithLd" +
-      "apIncludeAuth\210\001\001\022:\n\027ignore_guests_ldap_s" +
-      "ync\030\004 \001(\010H\003R\024ignoreGuestsLdapSync\210\001\001\022\033\n\006" +
-      "verify\030\005 \001(\010H\004R\006verify\210\001\001\022\035\n\007encrypt\030\006 \001" +
-      "(\010H\005R\007encrypt\210\001\001\022&\n\014sign_request\030\007 \001(\010H\006" +
-      "R\013signRequest\210\001\001\022\034\n\007idp_url\030\010 \001(\tH\007R\006idp" +
-      "Url\210\001\001\0221\n\022idp_descriptor_url\030\t \001(\tH\010R\020id" +
-      "pDescriptorUrl\210\001\001\022-\n\020idp_metadata_url\030\n " +
-      "\001(\tH\tR\016idpMetadataUrl\210\001\001\022C\n\033service_prov" +
-      "ider_identifier\030\013 \001(\tH\nR\031serviceProvider" +
-      "Identifier\210\001\001\022H\n\036assertion_consumer_serv" +
-      "ice_url\030\014 \001(\tH\013R\033assertionConsumerServic" +
-      "eUrl\210\001\001\0224\n\023signature_algorithm\030\r \001(\tH\014R\022" +
-      "signatureAlgorithm\210\001\001\0224\n\023canonical_algor" +
-      "ithm\030\016 \001(\tH\rR\022canonicalAlgorithm\210\001\001\022:\n\027s" +
-      "coping_idp_provider_id\030\017 \001(\tH\016R\024scopingI" +
-      "dpProviderId\210\001\001\022-\n\020scoping_idp_name\030\020 \001(" +
-      "\tH\017R\016scopingIdpName\210\001\001\0225\n\024idp_certificat" +
-      "e_file\030\021 \001(\tH\020R\022idpCertificateFile\210\001\001\022;\n" +
-      "\027public_certificate_file\030\022 \001(\tH\021R\025public" +
-      "CertificateFile\210\001\001\022-\n\020private_key_file\030\023" +
-      " \001(\tH\022R\016privateKeyFile\210\001\001\022&\n\014id_attribut" +
-      "e\030\024 \001(\tH\023R\013idAttribute\210\001\001\0229\n\026enable_admi" +
-      "n_attribute\030\025 \001(\010H\024R\024enableAdminAttribut" +
-      "e\210\001\001\022,\n\017admin_attribute\030\026 \001(\tH\025R\016adminAt" +
-      "tribute\210\001\001\0225\n\024first_name_attribute\030\027 \001(\t" +
-      "H\026R\022firstNameAttribute\210\001\001\0223\n\023last_name_a" +
-      "ttribute\030\030 \001(\tH\027R\021lastNameAttribute\210\001\001\022," +
-      "\n\017email_attribute\030\031 \001(\tH\030R\016emailAttribut" +
-      "e\210\001\001\0222\n\022username_attribute\030\032 \001(\tH\031R\021user" +
-      "nameAttribute\210\001\001\0222\n\022nickname_attribute\030\033" +
-      " \001(\tH\032R\021nicknameAttribute\210\001\001\022.\n\020locale_a" +
-      "ttribute\030\034 \001(\tH\033R\017localeAttribute\210\001\001\0222\n\022" +
-      "position_attribute\030\035 \001(\tH\034R\021positionAttr" +
-      "ibute\210\001\001\022/\n\021login_button_text\030\036 \001(\tH\035R\017l" +
-      "oginButtonText\210\001\001\0221\n\022login_button_color\030" +
-      "\037 \001(\tH\036R\020loginButtonColor\210\001\001\022>\n\031login_bu" +
-      "tton_border_color\030  \001(\tH\037R\026loginButtonBo" +
-      "rderColor\210\001\001\022:\n\027login_button_text_color\030" +
-      "! \001(\tH R\024loginButtonTextColor\210\001\001B\t\n\007_ena" +
-      "bleB\030\n\026_enable_sync_with_ldapB%\n#_enable" +
-      "_sync_with_ldap_include_authB\032\n\030_ignore_" +
-      "guests_ldap_syncB\t\n\007_verifyB\n\n\010_encryptB" +
-      "\017\n\r_sign_requestB\n\n\010_idp_urlB\025\n\023_idp_des" +
-      "criptor_urlB\023\n\021_idp_metadata_urlB\036\n\034_ser" +
-      "vice_provider_identifierB!\n\037_assertion_c" +
-      "onsumer_service_urlB\026\n\024_signature_algori",
-      "thmB\026\n\024_canonical_algorithmB\032\n\030_scoping_" +
-      "idp_provider_idB\023\n\021_scoping_idp_nameB\027\n\025" +
-      "_idp_certificate_fileB\032\n\030_public_certifi" +
-      "cate_fileB\023\n\021_private_key_fileB\017\n\r_id_at" +
-      "tributeB\031\n\027_enable_admin_attributeB\022\n\020_a" +
-      "dmin_attributeB\027\n\025_first_name_attributeB" +
-      "\026\n\024_last_name_attributeB\022\n\020_email_attrib" +
-      "uteB\025\n\023_username_attributeB\025\n\023_nickname_" +
-      "attributeB\023\n\021_locale_attributeB\025\n\023_posit" +
-      "ion_attributeB\024\n\022_login_button_textB\025\n\023_" +
-      "login_button_colorB\034\n\032_login_button_bord" +
-      "er_colorB\032\n\030_login_button_text_color\"\301\005\n" +
-      "\017ConfigNativeApp\0223\n\026app_custom_url_schem" +
-      "es\030\001 \003(\tR\023appCustomUrlSchemes\022/\n\021app_dow" +
-      "nload_link\030\002 \001(\tH\000R\017appDownloadLink\210\001\001\022>" +
-      "\n\031android_app_download_link\030\003 \001(\tH\001R\026and" +
-      "roidAppDownloadLink\210\001\001\0226\n\025ios_app_downlo" +
-      "ad_link\030\004 \001(\tH\002R\022iosAppDownloadLink\210\001\001\022;" +
-      "\n\027mobile_external_browser\030\005 \001(\010H\003R\025mobil" +
-      "eExternalBrowser\210\001\001\022=\n\030mobile_enable_bio" +
-      "metrics\030\006 \001(\010H\004R\026mobileEnableBiometrics\210" +
-      "\001\001\022F\n\035mobile_prevent_screen_capture\030\007 \001(" +
-      "\010H\005R\032mobilePreventScreenCapture\210\001\001\022C\n\033mo" +
-      "bile_jailbreak_protection\030\010 \001(\010H\006R\031mobil" +
-      "eJailbreakProtection\210\001\001B\024\n\022_app_download" +
-      "_linkB\034\n\032_android_app_download_linkB\030\n\026_" +
-      "ios_app_download_linkB\032\n\030_mobile_externa" +
-      "l_browserB\033\n\031_mobile_enable_biometricsB " +
-      "\n\036_mobile_prevent_screen_captureB\036\n\034_mob" +
-      "ile_jailbreak_protection\"\253\005\n\021ConfigMeili" +
-      "search\022#\n\nserver_url\030\001 \001(\tH\000R\nserver_url" +
-      "\210\001\001\022\"\n\nmaster_key\030\002 \001(\tH\001R\tmasterKey\210\001\001\022" +
-      ",\n\017enable_indexing\030\003 \001(\010H\002R\016enableIndexi" +
-      "ng\210\001\001\022.\n\020enable_searching\030\004 \001(\010H\003R\017enabl" +
-      "eSearching\210\001\001\0224\n\023enable_autocomplete\030\005 \001" +
-      "(\010H\004R\022enableAutocomplete\210\001\001\022\"\n\nbatch_siz" +
-      "e\030\006 \001(\005H\005R\tbatchSize\210\001\001\022;\n\027request_timeo" +
-      "ut_seconds\030\007 \001(\005H\006R\025requestTimeoutSecond" +
-      "s\210\001\001\022&\n\014index_prefix\030\010 \001(\tH\007R\013indexPrefi" +
-      "x\210\001\001\022-\n\020search_cutoff_ms\030\t \001(\005H\010R\016search" +
-      "CutoffMs\210\001\001\0227\n\025enable_typo_tolerance\030\n \001" +
-      "(\010H\tR\023enableTypoTolerance\210\001\001B\r\n\013_server_" +
-      "urlB\r\n\013_master_keyB\022\n\020_enable_indexingB\023" +
-      "\n\021_enable_searchingB\026\n\024_enable_autocompl" +
-      "eteB\r\n\013_batch_sizeB\032\n\030_request_timeout_s" +
-      "econdsB\017\n\r_index_prefixB\023\n\021_search_cutof" +
-      "f_msB\030\n\026_enable_typo_tolerance\"\272\003\n\013Confi" +
-      "gBleve\022 \n\tindex_dir\030\001 \001(\tH\000R\010indexDir\210\001\001" +
-      "\022,\n\017enable_indexing\030\002 \001(\010H\001R\016enableIndex" +
-      "ing\210\001\001\022.\n\020enable_searching\030\003 \001(\010H\002R\017enab" +
-      "leSearching\210\001\001\0224\n\023enable_autocomplete\030\004 " +
-      "\001(\010H\003R\022enableAutocomplete\210\001\001\022M\n!bulk_ind" +
-      "exing_time_window_seconds\030\005 \001(\005H\004R\035bulkI" +
-      "ndexingTimeWindowSeconds\210\001\001\022\"\n\nbatch_siz" +
-      "e\030\006 \001(\005H\005R\tbatchSize\210\001\001B\014\n\n_index_dirB\022\n" +
-      "\020_enable_indexingB\023\n\021_enable_searchingB\026" +
-      "\n\024_enable_autocompleteB$\n\"_bulk_indexing" +
-      "_time_window_secondsB\r\n\013_batch_size\"\354\006\n\023" +
-      "ConfigDataRetention\022;\n\027enable_message_de" +
-      "letion\030\001 \001(\010H\000R\025enableMessageDeletion\210\001\001" +
-      "\0225\n\024enable_file_deletion\030\002 \001(\010H\001R\022enable" +
-      "FileDeletion\210\001\001\0229\n\026enable_boards_deletio" +
-      "n\030\003 \001(\010H\002R\024enableBoardsDeletion\210\001\001\022;\n\027me" +
-      "ssage_retention_hours\030\004 \001(\005H\003R\025messageRe" +
-      "tentionHours\210\001\001\0225\n\024file_retention_hours\030" +
-      "\005 \001(\005H\004R\022fileRetentionHours\210\001\001\0227\n\025boards" +
-      "_retention_days\030\006 \001(\005H\005R\023boardsRetention" +
-      "Days\210\001\001\022:\n\027deletion_job_start_time\030\007 \001(\t" +
-      "H\006R\024deletionJobStartTime\210\001\001\022\"\n\nbatch_siz" +
-      "e\030\010 \001(\005H\007R\tbatchSize\210\001\001\022N\n!time_between_" +
-      "batches_milliseconds\030\t \001(\005H\010R\036timeBetwee" +
-      "nBatchesMilliseconds\210\001\001\022<\n\030retention_ids" +
-      "_batch_size\030\n \001(\005H\tR\025retentionIdsBatchSi" +
-      "ze\210\001\001B\032\n\030_enable_message_deletionB\027\n\025_en" +
-      "able_file_deletionB\031\n\027_enable_boards_del" +
-      "etionB\032\n\030_message_retention_hoursB\027\n\025_fi" +
-      "le_retention_hoursB\030\n\026_boards_retention_" +
-      "daysB\032\n\030_deletion_job_start_timeB\r\n\013_bat" +
-      "ch_sizeB$\n\"_time_between_batches_millise" +
-      "condsB\033\n\031_retention_ids_batch_size\"\264\002\n\020C" +
-      "onfigImageProxy\022\033\n\006enable\030\001 \001(\010H\000R\006enabl" +
-      "e\210\001\001\022-\n\020image_proxy_type\030\002 \001(\tH\001R\016imageP" +
-      "roxyType\210\001\001\0228\n\026remote_image_proxy_url\030\003 " +
-      "\001(\tH\002R\023remoteImageProxyUrl\210\001\001\022@\n\032remote_" +
-      "image_proxy_options\030\004 \001(\tH\003R\027remoteImage" +
-      "ProxyOptions\210\001\001B\t\n\007_enableB\023\n\021_image_pro" +
-      "xy_typeB\031\n\027_remote_image_proxy_urlB\035\n\033_r" +
-      "emote_image_proxy_options\"\315\010\n\006Config\022)\n\004" +
-      "main\030\001 \001(\0132\025.common.v1.ConfigMainR\004main\022" +
-      "5\n\010services\030\002 \001(\0132\031.common.v1.ConfigServ" +
-      "icesR\010services\0225\n\010security\030\003 \001(\0132\031.commo" +
-      "n.v1.ConfigSecurityR\010security\022,\n\005cache\030\004" +
-      " \001(\0132\026.common.v1.CacheConfigR\005cache\0222\n\007m" +
-      "etrics\030\005 \001(\0132\030.common.v1.ConfigMetricsR\007" +
-      "metrics\022&\n\003sso\030\006 \001(\0132\024.common.v1.ConfigS" +
-      "SOR\003sso\022&\n\003sql\030\007 \001(\0132\024.common.v1.ConfigS" +
-      "qlR\003sql\0225\n\010password\030\010 \001(\0132\031.common.v1.Co" +
-      "nfigPasswordR\010password\022)\n\004file\030\t \001(\0132\025.c" +
-      "ommon.v1.ConfigFileR\004file\022,\n\005email\030\n \001(\013" +
-      "2\026.common.v1.ConfigEmailR\005email\0229\n\nrate_" +
-      "limit\030\013 \001(\0132\032.common.v1.ConfigRateLimitR" +
-      "\trateLimit\0222\n\007privacy\030\014 \001(\0132\030.common.v1." +
-      "ConfigPrivacyR\007privacy\0222\n\007support\030\r \001(\0132" +
-      "\030.common.v1.ConfigSupportR\007support\022A\n\014lo" +
-      "calization\030\016 \001(\0132\035.common.v1.ConfigLocal" +
-      "izationR\014localization\022)\n\004ldap\030\017 \001(\0132\025.co" +
-      "mmon.v1.ConfigLdapR\004ldap\022)\n\004saml\030\020 \001(\0132\025" +
-      ".common.v1.ConfigSamlR\004saml\0229\n\nnative_ap" +
-      "p\030\021 \001(\0132\032.common.v1.ConfigNativeAppR\tnat" +
-      "iveApp\022>\n\013meilisearch\030\022 \001(\0132\034.common.v1." +
-      "ConfigMeilisearchR\013meilisearch\022,\n\005bleve\030" +
-      "\023 \001(\0132\026.common.v1.ConfigBleveR\005bleve\022E\n\016" +
-      "data_retention\030\024 \001(\0132\036.common.v1.ConfigD" +
-      "ataRetentionR\rdataRetention\022<\n\013image_pro" +
-      "xy\030\025 \001(\0132\033.common.v1.ConfigImageProxyR\ni" +
-      "mageProxy\"\022\n\020ConfigGetRequest\"u\n\021ConfigG" +
-      "etResponse\022\'\n\004data\030\001 \001(\0132\021.common.v1.Con" +
-      "figH\000R\004data\022+\n\005error\030\002 \001(\0132\023.common.v1.A" +
-      "ppErrorH\000R\005errorB\n\n\010response\"@\n\023ConfigUp" +
-      "dateRequest\022)\n\006config\030\001 \001(\0132\021.common.v1." +
-      "ConfigR\006config\"x\n\024ConfigUpdateResponse\022\'" +
-      "\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022" +
-      "+\n\005error\030\002 \001(\0132\023.common.v1.AppErrorH\000R\005e" +
-      "rrorB\n\n\010response\"z\n\026ConfigListenerRespon" +
-      "se\022\'\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R\004d" +
-      "ata\022+\n\005error\030\002 \001(\0132\023.common.v1.AppErrorH" +
-      "\000R\005errorB\n\n\010response\"4\n\025ConfigListenerRe" +
-      "quest\022\033\n\tclient_id\030\001 \001(\tR\010clientIdB:\n\032or" +
-      "g.megacommerce.common.v1B\013ConfigProtoZ\014c" +
-      "ommon/v1;v1\370\001\001b\006proto3"
+      "user_service_grpc_port\"\206\017\n\016ConfigSecurit" +
+      "y\022e\n\024restricted_usernames\030\001 \003(\01322.common" +
+      ".v1.ConfigSecurity.RestrictedUsernamesEn" +
+      "tryR\023restrictedUsernames\0229\n\026maximum_logi" +
+      "n_attempts\030\002 \001(\005H\000R\024maximumLoginAttempts" +
+      "\210\001\001\022T\n$enable_insecure_outgoing_connecti" +
+      "ons\030\003 \001(\010H\001R!enableInsecureOutgoingConne" +
+      "ctions\210\001\001\022O\n!enable_multifactor_authenti" +
+      "cation\030\004 \001(\010H\002R\037enableMultifactorAuthent" +
+      "ication\210\001\001\022Q\n\"enforce_multifactor_authen" +
+      "tication\030\005 \001(\010H\003R enforceMultifactorAuth" +
+      "entication\210\001\001\022F\n\035enable_oauth_service_pr" +
+      "ovider\030\006 \001(\010H\004R\032enableOauthServiceProvid" +
+      "er\210\001\001\022N\n!enable_outgoing_oauth_connectio" +
+      "ns\030\007 \001(\010H\005R\036enableOutgoingOauthConnectio" +
+      "ns\210\001\001\022U\n%terminate_sessions_on_password_" +
+      "change\030\010 \001(\010H\006R!terminateSessionsOnPassw" +
+      "ordChange\210\001\001\022A\n\033session_length_web_in_ho" +
+      "urs\030\t \001(\005H\007R\027sessionLengthWebInHours\210\001\001\022" +
+      "G\n\036session_length_mobile_in_hours\030\n \001(\005H" +
+      "\010R\032sessionLengthMobileInHours\210\001\001\022A\n\033sess" +
+      "ion_length_sso_in_hours\030\013 \001(\005H\tR\027session" +
+      "LengthSsoInHours\210\001\001\022+\n\017allow_cors_from\030\014" +
+      " \001(\tH\nR\rallowCorsFrom\210\001\001\0225\n\024cors_exposed" +
+      "_headers\030\r \001(\tH\013R\022corsExposedHeaders\210\001\001\022" +
+      "9\n\026cors_allow_credentials\030\016 \001(\010H\014R\024corsA" +
+      "llowCredentials\210\001\001\022\"\n\ncors_debug\030\017 \001(\010H\r" +
+      "R\tcorsDebug\210\001\001\022D\n\034allow_cookies_for_subd" +
+      "omains\030\020 \001(\010H\016R\031allowCookiesForSubdomain" +
+      "s\210\001\001\022<\n\030session_cache_in_minutes\030\021 \001(\005H\017" +
+      "R\025sessionCacheInMinutes\210\001\001\0227\n\025websocket_" +
+      "secure_port\030\022 \001(\005H\020R\023websocketSecurePort" +
+      "\210\001\001\022*\n\016websocket_port\030\023 \001(\005H\021R\rwebsocket" +
+      "Port\210\001\001\032F\n\030RestrictedUsernamesEntry\022\020\n\003k" +
+      "ey\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B" +
+      "\031\n\027_maximum_login_attemptsB\'\n%_enable_in" +
+      "secure_outgoing_connectionsB$\n\"_enable_m" +
+      "ultifactor_authenticationB%\n#_enforce_mu" +
+      "ltifactor_authenticationB \n\036_enable_oaut" +
+      "h_service_providerB$\n\"_enable_outgoing_o" +
+      "auth_connectionsB(\n&_terminate_sessions_" +
+      "on_password_changeB\036\n\034_session_length_we" +
+      "b_in_hoursB!\n\037_session_length_mobile_in_" +
+      "hoursB\036\n\034_session_length_sso_in_hoursB\022\n" +
+      "\020_allow_cors_fromB\027\n\025_cors_exposed_heade" +
+      "rsB\031\n\027_cors_allow_credentialsB\r\n\013_cors_d" +
+      "ebugB\037\n\035_allow_cookies_for_subdomainsB\033\n" +
+      "\031_session_cache_in_minutesB\030\n\026_websocket" +
+      "_secure_portB\021\n\017_websocket_port\"\202\003\n\013Cach" +
+      "eConfig\022\"\n\ncache_type\030\001 \001(\tH\000R\tcacheType" +
+      "\210\001\001\022(\n\rredis_address\030\002 \001(\tH\001R\014redisAddre" +
+      "ss\210\001\001\022*\n\016redis_password\030\003 \001(\tH\002R\rredisPa" +
+      "ssword\210\001\001\022\036\n\010redis_db\030\004 \001(\005H\003R\007redisDb\210\001" +
+      "\001\0221\n\022redis_cache_prefix\030\005 \001(\tH\004R\020redisCa" +
+      "chePrefix\210\001\001\0225\n\024disable_client_cache\030\006 \001" +
+      "(\010H\005R\022disableClientCache\210\001\001B\r\n\013_cache_ty" +
+      "peB\020\n\016_redis_addressB\021\n\017_redis_passwordB" +
+      "\013\n\t_redis_dbB\025\n\023_redis_cache_prefixB\027\n\025_" +
+      "disable_client_cache\"\251\003\n\rConfigMetrics\022\033" +
+      "\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\0221\n\022block_pro" +
+      "file_rate\030\002 \001(\005H\001R\020blockProfileRate\210\001\001\022*" +
+      "\n\016listen_address\030\003 \001(\tH\002R\rlistenAddress\210" +
+      "\001\001\0227\n\025enable_client_metrics\030\004 \001(\010H\003R\023ena" +
+      "bleClientMetrics\210\001\001\022C\n\033enable_notificati" +
+      "on_metrics\030\005 \001(\010H\004R\031enableNotificationMe" +
+      "trics\210\001\001\022/\n\024client_side_user_ids\030\006 \003(\tR\021" +
+      "clientSideUserIdsB\t\n\007_enableB\025\n\023_block_p" +
+      "rofile_rateB\021\n\017_listen_addressB\030\n\026_enabl" +
+      "e_client_metricsB\036\n\034_enable_notification" +
+      "_metrics\"\230\004\n\tConfigSSO\022\033\n\006enable\030\001 \001(\010H\000" +
+      "R\006enable\210\001\001\022\033\n\006secret\030\002 \001(\tH\001R\006secret\210\001\001" +
+      "\022\023\n\002id\030\003 \001(\tH\002R\002id\210\001\001\022\031\n\005scope\030\004 \001(\tH\003R\005" +
+      "scope\210\001\001\022(\n\rauth_endpoint\030\005 \001(\tH\004R\014authE" +
+      "ndpoint\210\001\001\022*\n\016token_endpoint\030\006 \001(\tH\005R\rto" +
+      "kenEndpoint\210\001\001\022/\n\021user_api_endpoint\030\007 \001(" +
+      "\tH\006R\017userApiEndpoint\210\001\001\0222\n\022discovery_end" +
+      "point\030\010 \001(\tH\007R\021discoveryEndpoint\210\001\001\022$\n\013b" +
+      "utton_text\030\t \001(\tH\010R\nbuttonText\210\001\001\022&\n\014but" +
+      "ton_color\030\n \001(\tH\tR\013buttonColor\210\001\001B\t\n\007_en" +
+      "ableB\t\n\007_secretB\005\n\003_idB\010\n\006_scopeB\020\n\016_aut" +
+      "h_endpointB\021\n\017_token_endpointB\024\n\022_user_a" +
+      "pi_endpointB\025\n\023_discovery_endpointB\016\n\014_b" +
+      "utton_textB\017\n\r_button_color\"\325\005\n\tConfigSq" +
+      "l\022$\n\013driver_name\030\001 \001(\tH\000R\ndriverName\210\001\001\022" +
+      "$\n\013data_source\030\002 \001(\tH\001R\ndataSource\210\001\001\022)\n" +
+      "\016max_idle_conns\030\003 \001(\005H\002R\014maxIdleConns\210\001\001" +
+      "\022H\n\036conn_max_lifetime_milliseconds\030\004 \001(\005" +
+      "H\003R\033connMaxLifetimeMilliseconds\210\001\001\022I\n\037co" +
+      "nn_max_idle_time_milliseconds\030\005 \001(\005H\004R\033c" +
+      "onnMaxIdleTimeMilliseconds\210\001\001\022)\n\016max_ope" +
+      "n_conns\030\006 \001(\005H\005R\014maxOpenConns\210\001\001\022\031\n\005trac" +
+      "e\030\007 \001(\010H\006R\005trace\210\001\001\0222\n\023at_rest_encrypt_k" +
+      "ey\030\010 \001(\tH\007R\020atRestEncryptKey\210\001\001\022(\n\rquery" +
+      "_timeout\030\t \001(\005H\010R\014queryTimeout\210\001\001\022;\n\027dis" +
+      "able_database_search\030\n \001(\010H\tR\025disableDat" +
+      "abaseSearch\210\001\001B\016\n\014_driver_nameB\016\n\014_data_" +
+      "sourceB\021\n\017_max_idle_connsB!\n\037_conn_max_l" +
+      "ifetime_millisecondsB\"\n _conn_max_idle_t" +
+      "ime_millisecondsB\021\n\017_max_open_connsB\010\n\006_" +
+      "traceB\026\n\024_at_rest_encrypt_keyB\020\n\016_query_" +
+      "timeoutB\032\n\030_disable_database_search\"\212\003\n\016" +
+      "ConfigPassword\022*\n\016minimum_length\030\001 \001(\005H\000" +
+      "R\rminimumLength\210\001\001\022*\n\016maximum_lenght\030\002 \001" +
+      "(\005H\001R\rmaximumLenght\210\001\001\022!\n\tlowercase\030\003 \001(" +
+      "\010H\002R\tlowercase\210\001\001\022\033\n\006number\030\004 \001(\010H\003R\006num" +
+      "ber\210\001\001\022!\n\tuppercase\030\005 \001(\010H\004R\tuppercase\210\001" +
+      "\001\022\033\n\006symbol\030\006 \001(\010H\005R\006symbol\210\001\001\0221\n\022enable" +
+      "_forgot_link\030\007 \001(\010H\006R\020enableForgotLink\210\001" +
+      "\001B\021\n\017_minimum_lengthB\021\n\017_maximum_lenghtB" +
+      "\014\n\n_lowercaseB\t\n\007_numberB\014\n\n_uppercaseB\t" +
+      "\n\007_symbolB\025\n\023_enable_forgot_link\"\340\017\n\nCon" +
+      "figFile\022;\n\027enable_file_attachments\030\001 \001(\010" +
+      "H\000R\025enableFileAttachments\210\001\001\0225\n\024enable_m" +
+      "obile_upload\030\002 \001(\010H\001R\022enableMobileUpload" +
+      "\210\001\001\0229\n\026enable_mobile_download\030\003 \001(\010H\002R\024e" +
+      "nableMobileDownload\210\001\001\022\'\n\rmax_file_size\030" +
+      "\004 \001(\003H\003R\013maxFileSize\210\001\001\0225\n\024max_image_res" +
+      "olution\030\005 \001(\003H\004R\022maxImageResolution\210\001\001\022F" +
+      "\n\035max_image_decoder_concurrency\030\006 \001(\003H\005R" +
+      "\032maxImageDecoderConcurrency\210\001\001\022$\n\013driver" +
+      "_name\030\007 \001(\tH\006R\ndriverName\210\001\001\022!\n\tdirector" +
+      "y\030\010 \001(\tH\007R\tdirectory\210\001\001\0221\n\022enable_public" +
+      "_link\030\t \001(\010H\010R\020enablePublicLink\210\001\001\022,\n\017ex" +
+      "tract_content\030\n \001(\010H\tR\016extractContent\210\001\001" +
+      "\0220\n\021archive_recursion\030\013 \001(\010H\nR\020archiveRe" +
+      "cursion\210\001\001\022-\n\020public_link_salt\030\014 \001(\tH\013R\016" +
+      "publicLinkSalt\210\001\001\022&\n\014initial_font\030\r \001(\tH" +
+      "\014R\013initialFont\210\001\001\0229\n\027amazon_s3_access_ke" +
+      "y_id\030\016 \001(\tH\rR\023amazonS3AccessKeyId\210\001\001\022A\n\033" +
+      "amazon_s3_secret_access_key\030\017 \001(\tH\016R\027ama" +
+      "zonS3SecretAccessKey\210\001\001\022-\n\020amazon_s3_buc" +
+      "ket\030\020 \001(\tH\017R\016amazonS3Bucket\210\001\001\0226\n\025amazon" +
+      "_s3_path_prefix\030\021 \001(\tH\020R\022amazonS3PathPre" +
+      "fix\210\001\001\022-\n\020amazon_s3_region\030\022 \001(\tH\021R\016amaz" +
+      "onS3Region\210\001\001\0221\n\022amazon_s3_endpoint\030\023 \001(" +
+      "\tH\022R\020amazonS3Endpoint\210\001\001\022\'\n\ramazon_s3_ss" +
+      "l\030\024 \001(\010H\023R\013amazonS3Ssl\210\001\001\022.\n\021amazon_s3_s" +
+      "ign_v2\030\025 \001(\010H\024R\016amazonS3SignV2\210\001\001\022\'\n\rama" +
+      "zon_s3_sse\030\026 \001(\010H\025R\013amazonS3Sse\210\001\001\022+\n\017am" +
+      "azon_s3_trace\030\027 \001(\010H\026R\ramazonS3Trace\210\001\001\022" +
+      "W\n&amazon_s3_request_timeout_millisecond" +
+      "s\030\030 \001(\003H\027R\"amazonS3RequestTimeoutMillise" +
+      "conds\210\001\001\022J\n amazon_s3_upload_part_size_b" +
+      "ytes\030\031 \001(\003H\030R\033amazonS3UploadPartSizeByte" +
+      "s\210\001\001\022:\n\027amazon_s3_storage_class\030\032 \001(\tH\031R" +
+      "\024amazonS3StorageClass\210\001\001B\032\n\030_enable_file" +
+      "_attachmentsB\027\n\025_enable_mobile_uploadB\031\n" +
+      "\027_enable_mobile_downloadB\020\n\016_max_file_si" +
+      "zeB\027\n\025_max_image_resolutionB \n\036_max_imag" +
+      "e_decoder_concurrencyB\016\n\014_driver_nameB\014\n" +
+      "\n_directoryB\025\n\023_enable_public_linkB\022\n\020_e" +
+      "xtract_contentB\024\n\022_archive_recursionB\023\n\021" +
+      "_public_link_saltB\017\n\r_initial_fontB\032\n\030_a" +
+      "mazon_s3_access_key_idB\036\n\034_amazon_s3_sec" +
+      "ret_access_keyB\023\n\021_amazon_s3_bucketB\030\n\026_" +
+      "amazon_s3_path_prefixB\023\n\021_amazon_s3_regi" +
+      "onB\025\n\023_amazon_s3_endpointB\020\n\016_amazon_s3_" +
+      "sslB\024\n\022_amazon_s3_sign_v2B\020\n\016_amazon_s3_" +
+      "sseB\022\n\020_amazon_s3_traceB)\n\'_amazon_s3_re" +
+      "quest_timeout_millisecondsB#\n!_amazon_s3" +
+      "_upload_part_size_bytesB\032\n\030_amazon_s3_st" +
+      "orage_class\"\375\016\n\013ConfigEmail\022=\n\030send_emai" +
+      "l_notifications\030\001 \001(\010H\000R\026sendEmailNotifi" +
+      "cations\210\001\001\022A\n\032require_email_verification" +
+      "\030\002 \001(\010H\001R\030requireEmailVerification\210\001\001\022*\n" +
+      "\016feedback_email\030\003 \001(\tH\002R\rfeedbackEmail\210\001" +
+      "\001\022-\n\020reply_to_address\030\004 \001(\tH\003R\016replyToAd" +
+      "dress\210\001\001\022-\n\020enable_smtp_auth\030\005 \001(\010H\004R\016en" +
+      "ableSmtpAuth\210\001\001\022(\n\rsmtp_username\030\006 \001(\tH\005" +
+      "R\014smtpUsername\210\001\001\022(\n\rsmtp_password\030\007 \001(\t" +
+      "H\006R\014smtpPassword\210\001\001\022$\n\013smtp_server\030\010 \001(\t" +
+      "H\007R\nsmtpServer\210\001\001\022 \n\tsmtp_port\030\t \001(\tH\010R\010" +
+      "smtpPort\210\001\001\0223\n\023smtp_server_timeout\030\n \001(\005" +
+      "H\tR\021smtpServerTimeout\210\001\001\0224\n\023connection_s" +
+      "ecurity\030\013 \001(\tH\nR\022connectionSecurity\210\001\001\022;" +
+      "\n\027send_push_notifications\030\014 \001(\010H\013R\025sendP" +
+      "ushNotifications\210\001\001\022=\n\030push_notification" +
+      "_server\030\r \001(\tH\014R\026pushNotificationServer\210" +
+      "\001\001\022A\n\032push_notification_contents\030\016 \001(\tH\r" +
+      "R\030pushNotificationContents\210\001\001\022=\n\030push_no" +
+      "tification_buffer\030\017 \001(\005H\016R\026pushNotificat" +
+      "ionBuffer\210\001\001\0227\n\025enable_email_batching\030\020 " +
+      "\001(\010H\017R\023enableEmailBatching\210\001\001\022@\n\032email_b" +
+      "atching_buffer_size\030\021 \001(\005H\020R\027emailBatchi" +
+      "ngBufferSize\210\001\001\022;\n\027email_batching_interv" +
+      "al\030\022 \001(\005H\021R\025emailBatchingInterval\210\001\001\022T\n$" +
+      "skip_server_certificate_verification\030\023 \001" +
+      "(\010H\022R!skipServerCertificateVerification\210" +
+      "\001\001\022L\n email_notification_contents_type\030\024" +
+      " \001(\tH\023R\035emailNotificationContentsType\210\001\001" +
+      "\0221\n\022login_button_color\030\025 \001(\tH\024R\020loginBut" +
+      "tonColor\210\001\001\022>\n\031login_button_border_color" +
+      "\030\026 \001(\tH\025R\026loginButtonBorderColor\210\001\001\022:\n\027l" +
+      "ogin_button_text_color\030\027 \001(\tH\026R\024loginBut" +
+      "tonTextColor\210\001\001B\033\n\031_send_email_notificat" +
+      "ionsB\035\n\033_require_email_verificationB\021\n\017_" +
+      "feedback_emailB\023\n\021_reply_to_addressB\023\n\021_" +
+      "enable_smtp_authB\020\n\016_smtp_usernameB\020\n\016_s" +
+      "mtp_passwordB\016\n\014_smtp_serverB\014\n\n_smtp_po" +
+      "rtB\026\n\024_smtp_server_timeoutB\026\n\024_connectio" +
+      "n_securityB\032\n\030_send_push_notificationsB\033" +
+      "\n\031_push_notification_serverB\035\n\033_push_not" +
+      "ification_contentsB\033\n\031_push_notification" +
+      "_bufferB\030\n\026_enable_email_batchingB\035\n\033_em" +
+      "ail_batching_buffer_sizeB\032\n\030_email_batch" +
+      "ing_intervalB\'\n%_skip_server_certificate" +
+      "_verificationB#\n!_email_notification_con" +
+      "tents_typeB\025\n\023_login_button_colorB\034\n\032_lo" +
+      "gin_button_border_colorB\032\n\030_login_button" +
+      "_text_color\"\204\003\n\017ConfigRateLimit\022\033\n\006enabl" +
+      "e\030\001 \001(\010H\000R\006enable\210\001\001\022\034\n\007per_sec\030\002 \001(\005H\001R" +
+      "\006perSec\210\001\001\022 \n\tmax_burst\030\003 \001(\005H\002R\010maxBurs" +
+      "t\210\001\001\022/\n\021memory_store_size\030\004 \001(\005H\003R\017memor" +
+      "yStoreSize\210\001\001\0222\n\023vary_by_remote_addr\030\005 \001" +
+      "(\010H\004R\020varyByRemoteAddr\210\001\001\022%\n\014vary_by_use" +
+      "r\030\006 \001(\010H\005R\nvaryByUser\210\001\001\022$\n\016vary_by_head" +
+      "er\030\007 \001(\tR\014varyByHeaderB\t\n\007_enableB\n\n\010_pe" +
+      "r_secB\014\n\n_max_burstB\024\n\022_memory_store_siz" +
+      "eB\026\n\024_vary_by_remote_addrB\017\n\r_vary_by_us" +
+      "er\"\227\001\n\rConfigPrivacy\0221\n\022show_email_addre" +
+      "ss\030\001 \001(\010H\000R\020showEmailAddress\210\001\001\022)\n\016show_" +
+      "full_name\030\002 \001(\010H\001R\014showFullName\210\001\001B\025\n\023_s" +
+      "how_email_addressB\021\n\017_show_full_name\"\357\003\n" +
+      "\rConfigSupport\0226\n\025terms_of_service_link\030" +
+      "\001 \001(\tH\000R\022termsOfServiceLink\210\001\001\0223\n\023privac" +
+      "y_policy_link\030\002 \001(\tH\001R\021privacyPolicyLink" +
+      "\210\001\001\022\"\n\nabout_link\030\003 \001(\tH\002R\taboutLink\210\001\001\022" +
+      " \n\thelp_link\030\004 \001(\tH\003R\010helpLink\210\001\001\0226\n\025rep" +
+      "ort_a_problem_link\030\005 \001(\tH\004R\022reportAProbl" +
+      "emLink\210\001\001\0225\n\024forgot_password_link\030\006 \001(\tH" +
+      "\005R\022forgotPasswordLink\210\001\001\022(\n\rsupport_emai" +
+      "l\030\007 \001(\tH\006R\014supportEmail\210\001\001B\030\n\026_terms_of_" +
+      "service_linkB\026\n\024_privacy_policy_linkB\r\n\013" +
+      "_about_linkB\014\n\n_help_linkB\030\n\026_report_a_p" +
+      "roblem_linkB\027\n\025_forgot_password_linkB\020\n\016" +
+      "_support_email\"\202\002\n\022ConfigLocalization\0227\n" +
+      "\025default_server_locale\030\001 \001(\tH\000R\023defaultS" +
+      "erverLocale\210\001\001\0227\n\025default_client_locale\030" +
+      "\002 \001(\tH\001R\023defaultClientLocale\210\001\001\0220\n\021avail" +
+      "able_locales\030\003 \001(\tH\002R\020availableLocales\210\001" +
+      "\001B\030\n\026_default_server_localeB\030\n\026_default_" +
+      "client_localeB\024\n\022_available_locales\"\325\020\n\n" +
+      "ConfigLdap\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022" +
+      "$\n\013enable_sync\030\002 \001(\010H\001R\nenableSync\210\001\001\022$\n" +
+      "\013ldap_server\030\003 \001(\tH\002R\nldapServer\210\001\001\022 \n\tl" +
+      "dap_port\030\004 \001(\005H\003R\010ldapPort\210\001\001\0224\n\023connect" +
+      "ion_security\030\005 \001(\tH\004R\022connectionSecurity" +
+      "\210\001\001\022\034\n\007base_dn\030\006 \001(\tH\005R\006baseDn\210\001\001\022(\n\rbin" +
+      "d_username\030\007 \001(\tH\006R\014bindUsername\210\001\001\022(\n\rb" +
+      "ind_password\030\010 \001(\tH\007R\014bindPassword\210\001\001\0229\n" +
+      "\026maximum_login_attempts\030\t \001(\005H\010R\024maximum" +
+      "LoginAttempts\210\001\001\022$\n\013user_filter\030\n \001(\tH\tR" +
+      "\nuserFilter\210\001\001\022&\n\014group_filter\030\013 \001(\tH\nR\013" +
+      "groupFilter\210\001\001\0223\n\023enable_admin_filter\030\014 " +
+      "\001(\010H\013R\021enableAdminFilter\210\001\001\022&\n\014admin_fil" +
+      "ter\030\r \001(\tH\014R\013adminFilter\210\001\001\022D\n\034group_dis" +
+      "play_name_attribute\030\016 \001(\tH\rR\031groupDispla" +
+      "yNameAttribute\210\001\001\0221\n\022group_id_attribute\030" +
+      "\017 \001(\tH\016R\020groupIdAttribute\210\001\001\0225\n\024first_na" +
+      "me_attribute\030\020 \001(\tH\017R\022firstNameAttribute" +
+      "\210\001\001\0223\n\023last_name_attribute\030\021 \001(\tH\020R\021last" +
+      "NameAttribute\210\001\001\022,\n\017email_attribute\030\022 \001(" +
+      "\tH\021R\016emailAttribute\210\001\001\0222\n\022username_attri" +
+      "bute\030\023 \001(\tH\022R\021usernameAttribute\210\001\001\0222\n\022ni" +
+      "ckname_attribute\030\024 \001(\tH\023R\021nicknameAttrib" +
+      "ute\210\001\001\022&\n\014id_attribute\030\025 \001(\tH\024R\013idAttrib" +
+      "ute\210\001\001\0222\n\022position_attribute\030\026 \001(\tH\025R\021po" +
+      "sitionAttribute\210\001\001\0221\n\022login_id_attribute" +
+      "\030\027 \001(\tH\026R\020loginIdAttribute\210\001\001\0220\n\021picture" +
+      "_attribute\030\030 \001(\tH\027R\020pictureAttribute\210\001\001\022" +
+      "7\n\025sync_interval_minutes\030\031 \001(\005H\030R\023syncIn" +
+      "tervalMinutes\210\001\001\022(\n\rquery_timeout\030\032 \001(\005H" +
+      "\031R\014queryTimeout\210\001\001\022\'\n\rmax_page_size\030\033 \001(" +
+      "\005H\032R\013maxPageSize\210\001\001\022-\n\020login_field_name\030" +
+      "\034 \001(\tH\033R\016loginFieldName\210\001\001\0221\n\022login_butt" +
+      "on_color\030\035 \001(\tH\034R\020loginButtonColor\210\001\001\022>\n" +
+      "\031login_button_border_color\030\036 \001(\tH\035R\026logi" +
+      "nButtonBorderColor\210\001\001\022:\n\027login_button_te" +
+      "xt_color\030\037 \001(\tH\036R\024loginButtonTextColor\210\001" +
+      "\001B\t\n\007_enableB\016\n\014_enable_syncB\016\n\014_ldap_se" +
+      "rverB\014\n\n_ldap_portB\026\n\024_connection_securi" +
+      "tyB\n\n\010_base_dnB\020\n\016_bind_usernameB\020\n\016_bin" +
+      "d_passwordB\031\n\027_maximum_login_attemptsB\016\n" +
+      "\014_user_filterB\017\n\r_group_filterB\026\n\024_enabl" +
+      "e_admin_filterB\017\n\r_admin_filterB\037\n\035_grou" +
+      "p_display_name_attributeB\025\n\023_group_id_at" +
+      "tributeB\027\n\025_first_name_attributeB\026\n\024_las" +
+      "t_name_attributeB\022\n\020_email_attributeB\025\n\023" +
+      "_username_attributeB\025\n\023_nickname_attribu" +
+      "teB\017\n\r_id_attributeB\025\n\023_position_attribu" +
+      "teB\025\n\023_login_id_attributeB\024\n\022_picture_at" +
+      "tributeB\030\n\026_sync_interval_minutesB\020\n\016_qu" +
+      "ery_timeoutB\020\n\016_max_page_sizeB\023\n\021_login_" +
+      "field_nameB\025\n\023_login_button_colorB\034\n\032_lo" +
+      "gin_button_border_colorB\032\n\030_login_button" +
+      "_text_color\"\255\023\n\nConfigSaml\022\033\n\006enable\030\001 \001" +
+      "(\010H\000R\006enable\210\001\001\0226\n\025enable_sync_with_ldap" +
+      "\030\002 \001(\010H\001R\022enableSyncWithLdap\210\001\001\022N\n\"enabl" +
+      "e_sync_with_ldap_include_auth\030\003 \001(\010H\002R\035e" +
+      "nableSyncWithLdapIncludeAuth\210\001\001\022:\n\027ignor" +
+      "e_guests_ldap_sync\030\004 \001(\010H\003R\024ignoreGuests" +
+      "LdapSync\210\001\001\022\033\n\006verify\030\005 \001(\010H\004R\006verify\210\001\001" +
+      "\022\035\n\007encrypt\030\006 \001(\010H\005R\007encrypt\210\001\001\022&\n\014sign_" +
+      "request\030\007 \001(\010H\006R\013signRequest\210\001\001\022\034\n\007idp_u" +
+      "rl\030\010 \001(\tH\007R\006idpUrl\210\001\001\0221\n\022idp_descriptor_" +
+      "url\030\t \001(\tH\010R\020idpDescriptorUrl\210\001\001\022-\n\020idp_" +
+      "metadata_url\030\n \001(\tH\tR\016idpMetadataUrl\210\001\001\022" +
+      "C\n\033service_provider_identifier\030\013 \001(\tH\nR\031" +
+      "serviceProviderIdentifier\210\001\001\022H\n\036assertio" +
+      "n_consumer_service_url\030\014 \001(\tH\013R\033assertio" +
+      "nConsumerServiceUrl\210\001\001\0224\n\023signature_algo" +
+      "rithm\030\r \001(\tH\014R\022signatureAlgorithm\210\001\001\0224\n\023" +
+      "canonical_algorithm\030\016 \001(\tH\rR\022canonicalAl" +
+      "gorithm\210\001\001\022:\n\027scoping_idp_provider_id\030\017 " +
+      "\001(\tH\016R\024scopingIdpProviderId\210\001\001\022-\n\020scopin" +
+      "g_idp_name\030\020 \001(\tH\017R\016scopingIdpName\210\001\001\0225\n" +
+      "\024idp_certificate_file\030\021 \001(\tH\020R\022idpCertif" +
+      "icateFile\210\001\001\022;\n\027public_certificate_file\030" +
+      "\022 \001(\tH\021R\025publicCertificateFile\210\001\001\022-\n\020pri" +
+      "vate_key_file\030\023 \001(\tH\022R\016privateKeyFile\210\001\001" +
+      "\022&\n\014id_attribute\030\024 \001(\tH\023R\013idAttribute\210\001\001" +
+      "\0229\n\026enable_admin_attribute\030\025 \001(\010H\024R\024enab" +
+      "leAdminAttribute\210\001\001\022,\n\017admin_attribute\030\026" +
+      " \001(\tH\025R\016adminAttribute\210\001\001\0225\n\024first_name_" +
+      "attribute\030\027 \001(\tH\026R\022firstNameAttribute\210\001\001" +
+      "\0223\n\023last_name_attribute\030\030 \001(\tH\027R\021lastNam" +
+      "eAttribute\210\001\001\022,\n\017email_attribute\030\031 \001(\tH\030" +
+      "R\016emailAttribute\210\001\001\0222\n\022username_attribut" +
+      "e\030\032 \001(\tH\031R\021usernameAttribute\210\001\001\0222\n\022nickn" +
+      "ame_attribute\030\033 \001(\tH\032R\021nicknameAttribute" +
+      "\210\001\001\022.\n\020locale_attribute\030\034 \001(\tH\033R\017localeA" +
+      "ttribute\210\001\001\0222\n\022position_attribute\030\035 \001(\tH" +
+      "\034R\021positionAttribute\210\001\001\022/\n\021login_button_" +
+      "text\030\036 \001(\tH\035R\017loginButtonText\210\001\001\0221\n\022logi" +
+      "n_button_color\030\037 \001(\tH\036R\020loginButtonColor" +
+      "\210\001\001\022>\n\031login_button_border_color\030  \001(\tH\037" +
+      "R\026loginButtonBorderColor\210\001\001\022:\n\027login_but" +
+      "ton_text_color\030! \001(\tH R\024loginButtonTextC" +
+      "olor\210\001\001B\t\n\007_enableB\030\n\026_enable_sync_with_" +
+      "ldapB%\n#_enable_sync_with_ldap_include_a" +
+      "uthB\032\n\030_ignore_guests_ldap_syncB\t\n\007_veri",
+      "fyB\n\n\010_encryptB\017\n\r_sign_requestB\n\n\010_idp_" +
+      "urlB\025\n\023_idp_descriptor_urlB\023\n\021_idp_metad" +
+      "ata_urlB\036\n\034_service_provider_identifierB" +
+      "!\n\037_assertion_consumer_service_urlB\026\n\024_s" +
+      "ignature_algorithmB\026\n\024_canonical_algorit" +
+      "hmB\032\n\030_scoping_idp_provider_idB\023\n\021_scopi" +
+      "ng_idp_nameB\027\n\025_idp_certificate_fileB\032\n\030" +
+      "_public_certificate_fileB\023\n\021_private_key" +
+      "_fileB\017\n\r_id_attributeB\031\n\027_enable_admin_" +
+      "attributeB\022\n\020_admin_attributeB\027\n\025_first_" +
+      "name_attributeB\026\n\024_last_name_attributeB\022" +
+      "\n\020_email_attributeB\025\n\023_username_attribut" +
+      "eB\025\n\023_nickname_attributeB\023\n\021_locale_attr" +
+      "ibuteB\025\n\023_position_attributeB\024\n\022_login_b" +
+      "utton_textB\025\n\023_login_button_colorB\034\n\032_lo" +
+      "gin_button_border_colorB\032\n\030_login_button" +
+      "_text_color\"\301\005\n\017ConfigNativeApp\0223\n\026app_c" +
+      "ustom_url_schemes\030\001 \003(\tR\023appCustomUrlSch" +
+      "emes\022/\n\021app_download_link\030\002 \001(\tH\000R\017appDo" +
+      "wnloadLink\210\001\001\022>\n\031android_app_download_li" +
+      "nk\030\003 \001(\tH\001R\026androidAppDownloadLink\210\001\001\0226\n" +
+      "\025ios_app_download_link\030\004 \001(\tH\002R\022iosAppDo" +
+      "wnloadLink\210\001\001\022;\n\027mobile_external_browser" +
+      "\030\005 \001(\010H\003R\025mobileExternalBrowser\210\001\001\022=\n\030mo" +
+      "bile_enable_biometrics\030\006 \001(\010H\004R\026mobileEn" +
+      "ableBiometrics\210\001\001\022F\n\035mobile_prevent_scre" +
+      "en_capture\030\007 \001(\010H\005R\032mobilePreventScreenC" +
+      "apture\210\001\001\022C\n\033mobile_jailbreak_protection" +
+      "\030\010 \001(\010H\006R\031mobileJailbreakProtection\210\001\001B\024" +
+      "\n\022_app_download_linkB\034\n\032_android_app_dow" +
+      "nload_linkB\030\n\026_ios_app_download_linkB\032\n\030" +
+      "_mobile_external_browserB\033\n\031_mobile_enab" +
+      "le_biometricsB \n\036_mobile_prevent_screen_" +
+      "captureB\036\n\034_mobile_jailbreak_protection\"" +
+      "\253\005\n\021ConfigMeilisearch\022#\n\nserver_url\030\001 \001(" +
+      "\tH\000R\nserver_url\210\001\001\022\"\n\nmaster_key\030\002 \001(\tH\001" +
+      "R\tmasterKey\210\001\001\022,\n\017enable_indexing\030\003 \001(\010H" +
+      "\002R\016enableIndexing\210\001\001\022.\n\020enable_searching" +
+      "\030\004 \001(\010H\003R\017enableSearching\210\001\001\0224\n\023enable_a" +
+      "utocomplete\030\005 \001(\010H\004R\022enableAutocomplete\210" +
+      "\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001\022;" +
+      "\n\027request_timeout_seconds\030\007 \001(\005H\006R\025reque" +
+      "stTimeoutSeconds\210\001\001\022&\n\014index_prefix\030\010 \001(" +
+      "\tH\007R\013indexPrefix\210\001\001\022-\n\020search_cutoff_ms\030" +
+      "\t \001(\005H\010R\016searchCutoffMs\210\001\001\0227\n\025enable_typ" +
+      "o_tolerance\030\n \001(\010H\tR\023enableTypoTolerance" +
+      "\210\001\001B\r\n\013_server_urlB\r\n\013_master_keyB\022\n\020_en" +
+      "able_indexingB\023\n\021_enable_searchingB\026\n\024_e" +
+      "nable_autocompleteB\r\n\013_batch_sizeB\032\n\030_re" +
+      "quest_timeout_secondsB\017\n\r_index_prefixB\023" +
+      "\n\021_search_cutoff_msB\030\n\026_enable_typo_tole" +
+      "rance\"\272\003\n\013ConfigBleve\022 \n\tindex_dir\030\001 \001(\t" +
+      "H\000R\010indexDir\210\001\001\022,\n\017enable_indexing\030\002 \001(\010" +
+      "H\001R\016enableIndexing\210\001\001\022.\n\020enable_searchin" +
+      "g\030\003 \001(\010H\002R\017enableSearching\210\001\001\0224\n\023enable_" +
+      "autocomplete\030\004 \001(\010H\003R\022enableAutocomplete" +
+      "\210\001\001\022M\n!bulk_indexing_time_window_seconds" +
+      "\030\005 \001(\005H\004R\035bulkIndexingTimeWindowSeconds\210" +
+      "\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001B\014" +
+      "\n\n_index_dirB\022\n\020_enable_indexingB\023\n\021_ena" +
+      "ble_searchingB\026\n\024_enable_autocompleteB$\n" +
+      "\"_bulk_indexing_time_window_secondsB\r\n\013_" +
+      "batch_size\"\354\006\n\023ConfigDataRetention\022;\n\027en" +
+      "able_message_deletion\030\001 \001(\010H\000R\025enableMes" +
+      "sageDeletion\210\001\001\0225\n\024enable_file_deletion\030" +
+      "\002 \001(\010H\001R\022enableFileDeletion\210\001\001\0229\n\026enable" +
+      "_boards_deletion\030\003 \001(\010H\002R\024enableBoardsDe" +
+      "letion\210\001\001\022;\n\027message_retention_hours\030\004 \001" +
+      "(\005H\003R\025messageRetentionHours\210\001\001\0225\n\024file_r" +
+      "etention_hours\030\005 \001(\005H\004R\022fileRetentionHou" +
+      "rs\210\001\001\0227\n\025boards_retention_days\030\006 \001(\005H\005R\023" +
+      "boardsRetentionDays\210\001\001\022:\n\027deletion_job_s" +
+      "tart_time\030\007 \001(\tH\006R\024deletionJobStartTime\210" +
+      "\001\001\022\"\n\nbatch_size\030\010 \001(\005H\007R\tbatchSize\210\001\001\022N" +
+      "\n!time_between_batches_milliseconds\030\t \001(" +
+      "\005H\010R\036timeBetweenBatchesMilliseconds\210\001\001\022<" +
+      "\n\030retention_ids_batch_size\030\n \001(\005H\tR\025rete" +
+      "ntionIdsBatchSize\210\001\001B\032\n\030_enable_message_" +
+      "deletionB\027\n\025_enable_file_deletionB\031\n\027_en" +
+      "able_boards_deletionB\032\n\030_message_retenti" +
+      "on_hoursB\027\n\025_file_retention_hoursB\030\n\026_bo" +
+      "ards_retention_daysB\032\n\030_deletion_job_sta" +
+      "rt_timeB\r\n\013_batch_sizeB$\n\"_time_between_" +
+      "batches_millisecondsB\033\n\031_retention_ids_b" +
+      "atch_size\"\264\002\n\020ConfigImageProxy\022\033\n\006enable" +
+      "\030\001 \001(\010H\000R\006enable\210\001\001\022-\n\020image_proxy_type\030" +
+      "\002 \001(\tH\001R\016imageProxyType\210\001\001\0228\n\026remote_ima" +
+      "ge_proxy_url\030\003 \001(\tH\002R\023remoteImageProxyUr" +
+      "l\210\001\001\022@\n\032remote_image_proxy_options\030\004 \001(\t" +
+      "H\003R\027remoteImageProxyOptions\210\001\001B\t\n\007_enabl" +
+      "eB\023\n\021_image_proxy_typeB\031\n\027_remote_image_" +
+      "proxy_urlB\035\n\033_remote_image_proxy_options" +
+      "\"\315\010\n\006Config\022)\n\004main\030\001 \001(\0132\025.common.v1.Co" +
+      "nfigMainR\004main\0225\n\010services\030\002 \001(\0132\031.commo" +
+      "n.v1.ConfigServicesR\010services\0225\n\010securit" +
+      "y\030\003 \001(\0132\031.common.v1.ConfigSecurityR\010secu" +
+      "rity\022,\n\005cache\030\004 \001(\0132\026.common.v1.CacheCon" +
+      "figR\005cache\0222\n\007metrics\030\005 \001(\0132\030.common.v1." +
+      "ConfigMetricsR\007metrics\022&\n\003sso\030\006 \001(\0132\024.co" +
+      "mmon.v1.ConfigSSOR\003sso\022&\n\003sql\030\007 \001(\0132\024.co" +
+      "mmon.v1.ConfigSqlR\003sql\0225\n\010password\030\010 \001(\013" +
+      "2\031.common.v1.ConfigPasswordR\010password\022)\n" +
+      "\004file\030\t \001(\0132\025.common.v1.ConfigFileR\004file" +
+      "\022,\n\005email\030\n \001(\0132\026.common.v1.ConfigEmailR" +
+      "\005email\0229\n\nrate_limit\030\013 \001(\0132\032.common.v1.C" +
+      "onfigRateLimitR\trateLimit\0222\n\007privacy\030\014 \001" +
+      "(\0132\030.common.v1.ConfigPrivacyR\007privacy\0222\n" +
+      "\007support\030\r \001(\0132\030.common.v1.ConfigSupport" +
+      "R\007support\022A\n\014localization\030\016 \001(\0132\035.common" +
+      ".v1.ConfigLocalizationR\014localization\022)\n\004" +
+      "ldap\030\017 \001(\0132\025.common.v1.ConfigLdapR\004ldap\022" +
+      ")\n\004saml\030\020 \001(\0132\025.common.v1.ConfigSamlR\004sa" +
+      "ml\0229\n\nnative_app\030\021 \001(\0132\032.common.v1.Confi" +
+      "gNativeAppR\tnativeApp\022>\n\013meilisearch\030\022 \001" +
+      "(\0132\034.common.v1.ConfigMeilisearchR\013meilis" +
+      "earch\022,\n\005bleve\030\023 \001(\0132\026.common.v1.ConfigB" +
+      "leveR\005bleve\022E\n\016data_retention\030\024 \001(\0132\036.co" +
+      "mmon.v1.ConfigDataRetentionR\rdataRetenti" +
+      "on\022<\n\013image_proxy\030\025 \001(\0132\033.common.v1.Conf" +
+      "igImageProxyR\nimageProxy\"\022\n\020ConfigGetReq" +
+      "uest\"u\n\021ConfigGetResponse\022\'\n\004data\030\001 \001(\0132" +
+      "\021.common.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(" +
+      "\0132\023.common.v1.AppErrorH\000R\005errorB\n\n\010respo" +
+      "nse\"@\n\023ConfigUpdateRequest\022)\n\006config\030\001 \001" +
+      "(\0132\021.common.v1.ConfigR\006config\"x\n\024ConfigU" +
+      "pdateResponse\022\'\n\004data\030\001 \001(\0132\021.common.v1." +
+      "ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.common.v" +
+      "1.AppErrorH\000R\005errorB\n\n\010response\"z\n\026Confi" +
+      "gListenerResponse\022\'\n\004data\030\001 \001(\0132\021.common" +
+      ".v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.comm" +
+      "on.v1.AppErrorH\000R\005errorB\n\n\010response\"4\n\025C" +
+      "onfigListenerRequest\022\033\n\tclient_id\030\001 \001(\tR" +
+      "\010clientIdB:\n\032org.megacommerce.common.v1B" +
+      "\013ConfigProtoZ\014common/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -52961,7 +53285,13 @@ public final class ConfigProto {
     internal_static_common_v1_ConfigSecurity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_v1_ConfigSecurity_descriptor,
-        new java.lang.String[] { "MaximumLoginAttempts", "EnableInsecureOutgoingConnections", "EnableMultifactorAuthentication", "EnforceMultifactorAuthentication", "EnableOauthServiceProvider", "EnableOutgoingOauthConnections", "TerminateSessionsOnPasswordChange", "SessionLengthWebInHours", "SessionLengthMobileInHours", "SessionLengthSsoInHours", "AllowCorsFrom", "CorsExposedHeaders", "CorsAllowCredentials", "CorsDebug", "AllowCookiesForSubdomains", "SessionCacheInMinutes", "WebsocketSecurePort", "WebsocketPort", "MaximumLoginAttempts", "EnableInsecureOutgoingConnections", "EnableMultifactorAuthentication", "EnforceMultifactorAuthentication", "EnableOauthServiceProvider", "EnableOutgoingOauthConnections", "TerminateSessionsOnPasswordChange", "SessionLengthWebInHours", "SessionLengthMobileInHours", "SessionLengthSsoInHours", "AllowCorsFrom", "CorsExposedHeaders", "CorsAllowCredentials", "CorsDebug", "AllowCookiesForSubdomains", "SessionCacheInMinutes", "WebsocketSecurePort", "WebsocketPort", });
+        new java.lang.String[] { "RestrictedUsernames", "MaximumLoginAttempts", "EnableInsecureOutgoingConnections", "EnableMultifactorAuthentication", "EnforceMultifactorAuthentication", "EnableOauthServiceProvider", "EnableOutgoingOauthConnections", "TerminateSessionsOnPasswordChange", "SessionLengthWebInHours", "SessionLengthMobileInHours", "SessionLengthSsoInHours", "AllowCorsFrom", "CorsExposedHeaders", "CorsAllowCredentials", "CorsDebug", "AllowCookiesForSubdomains", "SessionCacheInMinutes", "WebsocketSecurePort", "WebsocketPort", "MaximumLoginAttempts", "EnableInsecureOutgoingConnections", "EnableMultifactorAuthentication", "EnforceMultifactorAuthentication", "EnableOauthServiceProvider", "EnableOutgoingOauthConnections", "TerminateSessionsOnPasswordChange", "SessionLengthWebInHours", "SessionLengthMobileInHours", "SessionLengthSsoInHours", "AllowCorsFrom", "CorsExposedHeaders", "CorsAllowCredentials", "CorsDebug", "AllowCookiesForSubdomains", "SessionCacheInMinutes", "WebsocketSecurePort", "WebsocketPort", });
+    internal_static_common_v1_ConfigSecurity_RestrictedUsernamesEntry_descriptor =
+      internal_static_common_v1_ConfigSecurity_descriptor.getNestedTypes().get(0);
+    internal_static_common_v1_ConfigSecurity_RestrictedUsernamesEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_common_v1_ConfigSecurity_RestrictedUsernamesEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_common_v1_CacheConfig_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_common_v1_CacheConfig_fieldAccessorTable = new

@@ -307,6 +307,9 @@ export namespace ConfigServices {
 }
 
 export class ConfigSecurity extends jspb.Message {
+  getRestrictedUsernamesMap(): jspb.Map<string, string>;
+  clearRestrictedUsernamesMap(): ConfigSecurity;
+
   getMaximumLoginAttempts(): number;
   setMaximumLoginAttempts(value: number): ConfigSecurity;
   hasMaximumLoginAttempts(): boolean;
@@ -407,6 +410,7 @@ export class ConfigSecurity extends jspb.Message {
 
 export namespace ConfigSecurity {
   export type AsObject = {
+    restrictedUsernamesMap: Array<[string, string]>,
     maximumLoginAttempts?: number,
     enableInsecureOutgoingConnections?: boolean,
     enableMultifactorAuthentication?: boolean,
@@ -429,92 +433,92 @@ export namespace ConfigSecurity {
 
   export enum MaximumLoginAttemptsCase { 
     _MAXIMUM_LOGIN_ATTEMPTS_NOT_SET = 0,
-    MAXIMUM_LOGIN_ATTEMPTS = 1,
+    MAXIMUM_LOGIN_ATTEMPTS = 2,
   }
 
   export enum EnableInsecureOutgoingConnectionsCase { 
     _ENABLE_INSECURE_OUTGOING_CONNECTIONS_NOT_SET = 0,
-    ENABLE_INSECURE_OUTGOING_CONNECTIONS = 2,
+    ENABLE_INSECURE_OUTGOING_CONNECTIONS = 3,
   }
 
   export enum EnableMultifactorAuthenticationCase { 
     _ENABLE_MULTIFACTOR_AUTHENTICATION_NOT_SET = 0,
-    ENABLE_MULTIFACTOR_AUTHENTICATION = 3,
+    ENABLE_MULTIFACTOR_AUTHENTICATION = 4,
   }
 
   export enum EnforceMultifactorAuthenticationCase { 
     _ENFORCE_MULTIFACTOR_AUTHENTICATION_NOT_SET = 0,
-    ENFORCE_MULTIFACTOR_AUTHENTICATION = 4,
+    ENFORCE_MULTIFACTOR_AUTHENTICATION = 5,
   }
 
   export enum EnableOauthServiceProviderCase { 
     _ENABLE_OAUTH_SERVICE_PROVIDER_NOT_SET = 0,
-    ENABLE_OAUTH_SERVICE_PROVIDER = 5,
+    ENABLE_OAUTH_SERVICE_PROVIDER = 6,
   }
 
   export enum EnableOutgoingOauthConnectionsCase { 
     _ENABLE_OUTGOING_OAUTH_CONNECTIONS_NOT_SET = 0,
-    ENABLE_OUTGOING_OAUTH_CONNECTIONS = 6,
+    ENABLE_OUTGOING_OAUTH_CONNECTIONS = 7,
   }
 
   export enum TerminateSessionsOnPasswordChangeCase { 
     _TERMINATE_SESSIONS_ON_PASSWORD_CHANGE_NOT_SET = 0,
-    TERMINATE_SESSIONS_ON_PASSWORD_CHANGE = 7,
+    TERMINATE_SESSIONS_ON_PASSWORD_CHANGE = 8,
   }
 
   export enum SessionLengthWebInHoursCase { 
     _SESSION_LENGTH_WEB_IN_HOURS_NOT_SET = 0,
-    SESSION_LENGTH_WEB_IN_HOURS = 8,
+    SESSION_LENGTH_WEB_IN_HOURS = 9,
   }
 
   export enum SessionLengthMobileInHoursCase { 
     _SESSION_LENGTH_MOBILE_IN_HOURS_NOT_SET = 0,
-    SESSION_LENGTH_MOBILE_IN_HOURS = 9,
+    SESSION_LENGTH_MOBILE_IN_HOURS = 10,
   }
 
   export enum SessionLengthSsoInHoursCase { 
     _SESSION_LENGTH_SSO_IN_HOURS_NOT_SET = 0,
-    SESSION_LENGTH_SSO_IN_HOURS = 10,
+    SESSION_LENGTH_SSO_IN_HOURS = 11,
   }
 
   export enum AllowCorsFromCase { 
     _ALLOW_CORS_FROM_NOT_SET = 0,
-    ALLOW_CORS_FROM = 11,
+    ALLOW_CORS_FROM = 12,
   }
 
   export enum CorsExposedHeadersCase { 
     _CORS_EXPOSED_HEADERS_NOT_SET = 0,
-    CORS_EXPOSED_HEADERS = 12,
+    CORS_EXPOSED_HEADERS = 13,
   }
 
   export enum CorsAllowCredentialsCase { 
     _CORS_ALLOW_CREDENTIALS_NOT_SET = 0,
-    CORS_ALLOW_CREDENTIALS = 13,
+    CORS_ALLOW_CREDENTIALS = 14,
   }
 
   export enum CorsDebugCase { 
     _CORS_DEBUG_NOT_SET = 0,
-    CORS_DEBUG = 14,
+    CORS_DEBUG = 15,
   }
 
   export enum AllowCookiesForSubdomainsCase { 
     _ALLOW_COOKIES_FOR_SUBDOMAINS_NOT_SET = 0,
-    ALLOW_COOKIES_FOR_SUBDOMAINS = 15,
+    ALLOW_COOKIES_FOR_SUBDOMAINS = 16,
   }
 
   export enum SessionCacheInMinutesCase { 
     _SESSION_CACHE_IN_MINUTES_NOT_SET = 0,
-    SESSION_CACHE_IN_MINUTES = 16,
+    SESSION_CACHE_IN_MINUTES = 17,
   }
 
   export enum WebsocketSecurePortCase { 
     _WEBSOCKET_SECURE_PORT_NOT_SET = 0,
-    WEBSOCKET_SECURE_PORT = 17,
+    WEBSOCKET_SECURE_PORT = 18,
   }
 
   export enum WebsocketPortCase { 
     _WEBSOCKET_PORT_NOT_SET = 0,
-    WEBSOCKET_PORT = 18,
+    WEBSOCKET_PORT = 19,
   }
 }
 

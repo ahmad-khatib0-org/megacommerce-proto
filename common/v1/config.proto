@@ -41,24 +41,25 @@ message ConfigServices {
 }
 
 message ConfigSecurity {
-  optional int32 maximum_login_attempts = 1;
-  optional bool enable_insecure_outgoing_connections = 2;
-  optional bool enable_multifactor_authentication = 3;
-  optional bool enforce_multifactor_authentication = 4;
-  optional bool enable_oauth_service_provider = 5;
-  optional bool enable_outgoing_oauth_connections = 6;
-  optional bool terminate_sessions_on_password_change = 7;
-  optional int32 session_length_web_in_hours = 8;
-  optional int32 session_length_mobile_in_hours = 9;
-  optional int32 session_length_sso_in_hours = 10;
-  optional string allow_cors_from = 11;
-  optional string cors_exposed_headers = 12;
-  optional bool cors_allow_credentials = 13;
-  optional bool cors_debug = 14;
-  optional bool allow_cookies_for_subdomains = 15;
-  optional int32 session_cache_in_minutes = 16;
-  optional int32 websocket_secure_port = 17;
-  optional int32 websocket_port = 18;
+  map<string, string> restricted_usernames = 1;
+  optional int32 maximum_login_attempts = 2;
+  optional bool enable_insecure_outgoing_connections = 3;
+  optional bool enable_multifactor_authentication = 4;
+  optional bool enforce_multifactor_authentication = 5;
+  optional bool enable_oauth_service_provider = 6;
+  optional bool enable_outgoing_oauth_connections = 7;
+  optional bool terminate_sessions_on_password_change = 8;
+  optional int32 session_length_web_in_hours = 9;
+  optional int32 session_length_mobile_in_hours = 10;
+  optional int32 session_length_sso_in_hours = 11;
+  optional string allow_cors_from = 12;
+  optional string cors_exposed_headers = 13;
+  optional bool cors_allow_credentials = 14;
+  optional bool cors_debug = 15;
+  optional bool allow_cookies_for_subdomains = 16;
+  optional int32 session_cache_in_minutes = 17;
+  optional int32 websocket_secure_port = 18;
+  optional int32 websocket_port = 19;
 }
 
 message CacheConfig {

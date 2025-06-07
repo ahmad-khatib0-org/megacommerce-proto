@@ -2074,24 +2074,25 @@ proto.common.v1.ConfigSecurity.prototype.toObject = function(opt_includeInstance
  */
 proto.common.v1.ConfigSecurity.toObject = function(includeInstance, msg) {
   var f, obj = {
-    maximumLoginAttempts: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    enableInsecureOutgoingConnections: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    enableMultifactorAuthentication: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    enforceMultifactorAuthentication: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    enableOauthServiceProvider: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    enableOutgoingOauthConnections: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    terminateSessionsOnPasswordChange: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    sessionLengthWebInHours: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    sessionLengthMobileInHours: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    sessionLengthSsoInHours: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    allowCorsFrom: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    corsExposedHeaders: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    corsAllowCredentials: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
-    corsDebug: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
-    allowCookiesForSubdomains: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
-    sessionCacheInMinutes: jspb.Message.getFieldWithDefault(msg, 16, 0),
-    websocketSecurePort: jspb.Message.getFieldWithDefault(msg, 17, 0),
-    websocketPort: jspb.Message.getFieldWithDefault(msg, 18, 0)
+    restrictedUsernamesMap: (f = msg.getRestrictedUsernamesMap()) ? f.toObject(includeInstance, undefined) : [],
+    maximumLoginAttempts: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    enableInsecureOutgoingConnections: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    enableMultifactorAuthentication: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
+    enforceMultifactorAuthentication: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    enableOauthServiceProvider: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+    enableOutgoingOauthConnections: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+    terminateSessionsOnPasswordChange: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+    sessionLengthWebInHours: jspb.Message.getFieldWithDefault(msg, 9, 0),
+    sessionLengthMobileInHours: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    sessionLengthSsoInHours: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    allowCorsFrom: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    corsExposedHeaders: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    corsAllowCredentials: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
+    corsDebug: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
+    allowCookiesForSubdomains: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
+    sessionCacheInMinutes: jspb.Message.getFieldWithDefault(msg, 17, 0),
+    websocketSecurePort: jspb.Message.getFieldWithDefault(msg, 18, 0),
+    websocketPort: jspb.Message.getFieldWithDefault(msg, 19, 0)
   };
 
   if (includeInstance) {
@@ -2129,74 +2130,80 @@ proto.common.v1.ConfigSecurity.deserializeBinaryFromReader = function(msg, reade
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
+      var value = msg.getRestrictedUsernamesMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
+         });
+      break;
+    case 2:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setMaximumLoginAttempts(value);
       break;
-    case 2:
+    case 3:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnableInsecureOutgoingConnections(value);
       break;
-    case 3:
+    case 4:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnableMultifactorAuthentication(value);
       break;
-    case 4:
+    case 5:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnforceMultifactorAuthentication(value);
       break;
-    case 5:
+    case 6:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnableOauthServiceProvider(value);
       break;
-    case 6:
+    case 7:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnableOutgoingOauthConnections(value);
       break;
-    case 7:
+    case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setTerminateSessionsOnPasswordChange(value);
       break;
-    case 8:
+    case 9:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setSessionLengthWebInHours(value);
       break;
-    case 9:
+    case 10:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setSessionLengthMobileInHours(value);
       break;
-    case 10:
+    case 11:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setSessionLengthSsoInHours(value);
       break;
-    case 11:
+    case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.setAllowCorsFrom(value);
       break;
-    case 12:
+    case 13:
       var value = /** @type {string} */ (reader.readString());
       msg.setCorsExposedHeaders(value);
       break;
-    case 13:
+    case 14:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setCorsAllowCredentials(value);
       break;
-    case 14:
+    case 15:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setCorsDebug(value);
       break;
-    case 15:
+    case 16:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAllowCookiesForSubdomains(value);
       break;
-    case 16:
+    case 17:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setSessionCacheInMinutes(value);
       break;
-    case 17:
+    case 18:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setWebsocketSecurePort(value);
       break;
-    case 18:
+    case 19:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setWebsocketPort(value);
       break;
@@ -2229,16 +2236,13 @@ proto.common.v1.ConfigSecurity.prototype.serializeBinary = function() {
  */
 proto.common.v1.ConfigSecurity.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  f = message.getRestrictedUsernamesMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 2));
   if (f != null) {
     writer.writeInt32(
-      1,
-      f
-    );
-  }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
-    writer.writeBool(
       2,
       f
     );
@@ -2278,9 +2282,9 @@ proto.common.v1.ConfigSecurity.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 8));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeBool(
       8,
       f
     );
@@ -2299,9 +2303,9 @@ proto.common.v1.ConfigSecurity.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 11));
+  f = /** @type {number} */ (jspb.Message.getField(message, 11));
   if (f != null) {
-    writer.writeString(
+    writer.writeInt32(
       11,
       f
     );
@@ -2313,9 +2317,9 @@ proto.common.v1.ConfigSecurity.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 13));
+  f = /** @type {string} */ (jspb.Message.getField(message, 13));
   if (f != null) {
-    writer.writeBool(
+    writer.writeString(
       13,
       f
     );
@@ -2334,9 +2338,9 @@ proto.common.v1.ConfigSecurity.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 16));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 16));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeBool(
       16,
       f
     );
@@ -2355,15 +2359,44 @@ proto.common.v1.ConfigSecurity.serializeBinaryToWriter = function(message, write
       f
     );
   }
+  f = /** @type {number} */ (jspb.Message.getField(message, 19));
+  if (f != null) {
+    writer.writeInt32(
+      19,
+      f
+    );
+  }
 };
 
 
 /**
- * optional int32 maximum_login_attempts = 1;
+ * map<string, string> restricted_usernames = 1;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,string>}
+ */
+proto.common.v1.ConfigSecurity.prototype.getRestrictedUsernamesMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,string>} */ (
+      jspb.Message.getMapField(this, 1, opt_noLazyCreate,
+      null));
+};
+
+
+/**
+ * Clears values from the map. The map will be non-null.
+ * @return {!proto.common.v1.ConfigSecurity} returns this
+ */
+proto.common.v1.ConfigSecurity.prototype.clearRestrictedUsernamesMap = function() {
+  this.getRestrictedUsernamesMap().clear();
+  return this;};
+
+
+/**
+ * optional int32 maximum_login_attempts = 2;
  * @return {number}
  */
 proto.common.v1.ConfigSecurity.prototype.getMaximumLoginAttempts = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
 
@@ -2372,42 +2405,6 @@ proto.common.v1.ConfigSecurity.prototype.getMaximumLoginAttempts = function() {
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
 proto.common.v1.ConfigSecurity.prototype.setMaximumLoginAttempts = function(value) {
-  return jspb.Message.setField(this, 1, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.common.v1.ConfigSecurity} returns this
- */
-proto.common.v1.ConfigSecurity.prototype.clearMaximumLoginAttempts = function() {
-  return jspb.Message.setField(this, 1, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.common.v1.ConfigSecurity.prototype.hasMaximumLoginAttempts = function() {
-  return jspb.Message.getField(this, 1) != null;
-};
-
-
-/**
- * optional bool enable_insecure_outgoing_connections = 2;
- * @return {boolean}
- */
-proto.common.v1.ConfigSecurity.prototype.getEnableInsecureOutgoingConnections = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
-};
-
-
-/**
- * @param {boolean} value
- * @return {!proto.common.v1.ConfigSecurity} returns this
- */
-proto.common.v1.ConfigSecurity.prototype.setEnableInsecureOutgoingConnections = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -2416,7 +2413,7 @@ proto.common.v1.ConfigSecurity.prototype.setEnableInsecureOutgoingConnections = 
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.clearEnableInsecureOutgoingConnections = function() {
+proto.common.v1.ConfigSecurity.prototype.clearMaximumLoginAttempts = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -2425,16 +2422,16 @@ proto.common.v1.ConfigSecurity.prototype.clearEnableInsecureOutgoingConnections 
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.hasEnableInsecureOutgoingConnections = function() {
+proto.common.v1.ConfigSecurity.prototype.hasMaximumLoginAttempts = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional bool enable_multifactor_authentication = 3;
+ * optional bool enable_insecure_outgoing_connections = 3;
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.getEnableMultifactorAuthentication = function() {
+proto.common.v1.ConfigSecurity.prototype.getEnableInsecureOutgoingConnections = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 3, false));
 };
 
@@ -2443,7 +2440,7 @@ proto.common.v1.ConfigSecurity.prototype.getEnableMultifactorAuthentication = fu
  * @param {boolean} value
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.setEnableMultifactorAuthentication = function(value) {
+proto.common.v1.ConfigSecurity.prototype.setEnableInsecureOutgoingConnections = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -2452,7 +2449,7 @@ proto.common.v1.ConfigSecurity.prototype.setEnableMultifactorAuthentication = fu
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.clearEnableMultifactorAuthentication = function() {
+proto.common.v1.ConfigSecurity.prototype.clearEnableInsecureOutgoingConnections = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -2461,16 +2458,16 @@ proto.common.v1.ConfigSecurity.prototype.clearEnableMultifactorAuthentication = 
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.hasEnableMultifactorAuthentication = function() {
+proto.common.v1.ConfigSecurity.prototype.hasEnableInsecureOutgoingConnections = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional bool enforce_multifactor_authentication = 4;
+ * optional bool enable_multifactor_authentication = 4;
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.getEnforceMultifactorAuthentication = function() {
+proto.common.v1.ConfigSecurity.prototype.getEnableMultifactorAuthentication = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
 };
 
@@ -2479,7 +2476,7 @@ proto.common.v1.ConfigSecurity.prototype.getEnforceMultifactorAuthentication = f
  * @param {boolean} value
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.setEnforceMultifactorAuthentication = function(value) {
+proto.common.v1.ConfigSecurity.prototype.setEnableMultifactorAuthentication = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -2488,7 +2485,7 @@ proto.common.v1.ConfigSecurity.prototype.setEnforceMultifactorAuthentication = f
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.clearEnforceMultifactorAuthentication = function() {
+proto.common.v1.ConfigSecurity.prototype.clearEnableMultifactorAuthentication = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -2497,16 +2494,16 @@ proto.common.v1.ConfigSecurity.prototype.clearEnforceMultifactorAuthentication =
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.hasEnforceMultifactorAuthentication = function() {
+proto.common.v1.ConfigSecurity.prototype.hasEnableMultifactorAuthentication = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional bool enable_oauth_service_provider = 5;
+ * optional bool enforce_multifactor_authentication = 5;
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.getEnableOauthServiceProvider = function() {
+proto.common.v1.ConfigSecurity.prototype.getEnforceMultifactorAuthentication = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
@@ -2515,7 +2512,7 @@ proto.common.v1.ConfigSecurity.prototype.getEnableOauthServiceProvider = functio
  * @param {boolean} value
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.setEnableOauthServiceProvider = function(value) {
+proto.common.v1.ConfigSecurity.prototype.setEnforceMultifactorAuthentication = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -2524,7 +2521,7 @@ proto.common.v1.ConfigSecurity.prototype.setEnableOauthServiceProvider = functio
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.clearEnableOauthServiceProvider = function() {
+proto.common.v1.ConfigSecurity.prototype.clearEnforceMultifactorAuthentication = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -2533,16 +2530,16 @@ proto.common.v1.ConfigSecurity.prototype.clearEnableOauthServiceProvider = funct
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.hasEnableOauthServiceProvider = function() {
+proto.common.v1.ConfigSecurity.prototype.hasEnforceMultifactorAuthentication = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional bool enable_outgoing_oauth_connections = 6;
+ * optional bool enable_oauth_service_provider = 6;
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.getEnableOutgoingOauthConnections = function() {
+proto.common.v1.ConfigSecurity.prototype.getEnableOauthServiceProvider = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
 };
 
@@ -2551,7 +2548,7 @@ proto.common.v1.ConfigSecurity.prototype.getEnableOutgoingOauthConnections = fun
  * @param {boolean} value
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.setEnableOutgoingOauthConnections = function(value) {
+proto.common.v1.ConfigSecurity.prototype.setEnableOauthServiceProvider = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -2560,7 +2557,7 @@ proto.common.v1.ConfigSecurity.prototype.setEnableOutgoingOauthConnections = fun
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.clearEnableOutgoingOauthConnections = function() {
+proto.common.v1.ConfigSecurity.prototype.clearEnableOauthServiceProvider = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -2569,16 +2566,16 @@ proto.common.v1.ConfigSecurity.prototype.clearEnableOutgoingOauthConnections = f
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.hasEnableOutgoingOauthConnections = function() {
+proto.common.v1.ConfigSecurity.prototype.hasEnableOauthServiceProvider = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional bool terminate_sessions_on_password_change = 7;
+ * optional bool enable_outgoing_oauth_connections = 7;
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.getTerminateSessionsOnPasswordChange = function() {
+proto.common.v1.ConfigSecurity.prototype.getEnableOutgoingOauthConnections = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
@@ -2587,7 +2584,7 @@ proto.common.v1.ConfigSecurity.prototype.getTerminateSessionsOnPasswordChange = 
  * @param {boolean} value
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.setTerminateSessionsOnPasswordChange = function(value) {
+proto.common.v1.ConfigSecurity.prototype.setEnableOutgoingOauthConnections = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -2596,7 +2593,7 @@ proto.common.v1.ConfigSecurity.prototype.setTerminateSessionsOnPasswordChange = 
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.clearTerminateSessionsOnPasswordChange = function() {
+proto.common.v1.ConfigSecurity.prototype.clearEnableOutgoingOauthConnections = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -2605,25 +2602,25 @@ proto.common.v1.ConfigSecurity.prototype.clearTerminateSessionsOnPasswordChange 
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.hasTerminateSessionsOnPasswordChange = function() {
+proto.common.v1.ConfigSecurity.prototype.hasEnableOutgoingOauthConnections = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional int32 session_length_web_in_hours = 8;
- * @return {number}
+ * optional bool terminate_sessions_on_password_change = 8;
+ * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.getSessionLengthWebInHours = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+proto.common.v1.ConfigSecurity.prototype.getTerminateSessionsOnPasswordChange = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
 };
 
 
 /**
- * @param {number} value
+ * @param {boolean} value
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.setSessionLengthWebInHours = function(value) {
+proto.common.v1.ConfigSecurity.prototype.setTerminateSessionsOnPasswordChange = function(value) {
   return jspb.Message.setField(this, 8, value);
 };
 
@@ -2632,7 +2629,7 @@ proto.common.v1.ConfigSecurity.prototype.setSessionLengthWebInHours = function(v
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.clearSessionLengthWebInHours = function() {
+proto.common.v1.ConfigSecurity.prototype.clearTerminateSessionsOnPasswordChange = function() {
   return jspb.Message.setField(this, 8, undefined);
 };
 
@@ -2641,16 +2638,16 @@ proto.common.v1.ConfigSecurity.prototype.clearSessionLengthWebInHours = function
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.hasSessionLengthWebInHours = function() {
+proto.common.v1.ConfigSecurity.prototype.hasTerminateSessionsOnPasswordChange = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional int32 session_length_mobile_in_hours = 9;
+ * optional int32 session_length_web_in_hours = 9;
  * @return {number}
  */
-proto.common.v1.ConfigSecurity.prototype.getSessionLengthMobileInHours = function() {
+proto.common.v1.ConfigSecurity.prototype.getSessionLengthWebInHours = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
 };
 
@@ -2659,7 +2656,7 @@ proto.common.v1.ConfigSecurity.prototype.getSessionLengthMobileInHours = functio
  * @param {number} value
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.setSessionLengthMobileInHours = function(value) {
+proto.common.v1.ConfigSecurity.prototype.setSessionLengthWebInHours = function(value) {
   return jspb.Message.setField(this, 9, value);
 };
 
@@ -2668,7 +2665,7 @@ proto.common.v1.ConfigSecurity.prototype.setSessionLengthMobileInHours = functio
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.clearSessionLengthMobileInHours = function() {
+proto.common.v1.ConfigSecurity.prototype.clearSessionLengthWebInHours = function() {
   return jspb.Message.setField(this, 9, undefined);
 };
 
@@ -2677,16 +2674,16 @@ proto.common.v1.ConfigSecurity.prototype.clearSessionLengthMobileInHours = funct
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.hasSessionLengthMobileInHours = function() {
+proto.common.v1.ConfigSecurity.prototype.hasSessionLengthWebInHours = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional int32 session_length_sso_in_hours = 10;
+ * optional int32 session_length_mobile_in_hours = 10;
  * @return {number}
  */
-proto.common.v1.ConfigSecurity.prototype.getSessionLengthSsoInHours = function() {
+proto.common.v1.ConfigSecurity.prototype.getSessionLengthMobileInHours = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
 };
 
@@ -2695,7 +2692,7 @@ proto.common.v1.ConfigSecurity.prototype.getSessionLengthSsoInHours = function()
  * @param {number} value
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.setSessionLengthSsoInHours = function(value) {
+proto.common.v1.ConfigSecurity.prototype.setSessionLengthMobileInHours = function(value) {
   return jspb.Message.setField(this, 10, value);
 };
 
@@ -2704,7 +2701,7 @@ proto.common.v1.ConfigSecurity.prototype.setSessionLengthSsoInHours = function(v
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.clearSessionLengthSsoInHours = function() {
+proto.common.v1.ConfigSecurity.prototype.clearSessionLengthMobileInHours = function() {
   return jspb.Message.setField(this, 10, undefined);
 };
 
@@ -2713,25 +2710,25 @@ proto.common.v1.ConfigSecurity.prototype.clearSessionLengthSsoInHours = function
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.hasSessionLengthSsoInHours = function() {
+proto.common.v1.ConfigSecurity.prototype.hasSessionLengthMobileInHours = function() {
   return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional string allow_cors_from = 11;
- * @return {string}
+ * optional int32 session_length_sso_in_hours = 11;
+ * @return {number}
  */
-proto.common.v1.ConfigSecurity.prototype.getAllowCorsFrom = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+proto.common.v1.ConfigSecurity.prototype.getSessionLengthSsoInHours = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.setAllowCorsFrom = function(value) {
+proto.common.v1.ConfigSecurity.prototype.setSessionLengthSsoInHours = function(value) {
   return jspb.Message.setField(this, 11, value);
 };
 
@@ -2740,7 +2737,7 @@ proto.common.v1.ConfigSecurity.prototype.setAllowCorsFrom = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.clearAllowCorsFrom = function() {
+proto.common.v1.ConfigSecurity.prototype.clearSessionLengthSsoInHours = function() {
   return jspb.Message.setField(this, 11, undefined);
 };
 
@@ -2749,16 +2746,16 @@ proto.common.v1.ConfigSecurity.prototype.clearAllowCorsFrom = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.hasAllowCorsFrom = function() {
+proto.common.v1.ConfigSecurity.prototype.hasSessionLengthSsoInHours = function() {
   return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * optional string cors_exposed_headers = 12;
+ * optional string allow_cors_from = 12;
  * @return {string}
  */
-proto.common.v1.ConfigSecurity.prototype.getCorsExposedHeaders = function() {
+proto.common.v1.ConfigSecurity.prototype.getAllowCorsFrom = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
@@ -2767,7 +2764,7 @@ proto.common.v1.ConfigSecurity.prototype.getCorsExposedHeaders = function() {
  * @param {string} value
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.setCorsExposedHeaders = function(value) {
+proto.common.v1.ConfigSecurity.prototype.setAllowCorsFrom = function(value) {
   return jspb.Message.setField(this, 12, value);
 };
 
@@ -2776,7 +2773,7 @@ proto.common.v1.ConfigSecurity.prototype.setCorsExposedHeaders = function(value)
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.clearCorsExposedHeaders = function() {
+proto.common.v1.ConfigSecurity.prototype.clearAllowCorsFrom = function() {
   return jspb.Message.setField(this, 12, undefined);
 };
 
@@ -2785,25 +2782,25 @@ proto.common.v1.ConfigSecurity.prototype.clearCorsExposedHeaders = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.hasCorsExposedHeaders = function() {
+proto.common.v1.ConfigSecurity.prototype.hasAllowCorsFrom = function() {
   return jspb.Message.getField(this, 12) != null;
 };
 
 
 /**
- * optional bool cors_allow_credentials = 13;
- * @return {boolean}
+ * optional string cors_exposed_headers = 13;
+ * @return {string}
  */
-proto.common.v1.ConfigSecurity.prototype.getCorsAllowCredentials = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
+proto.common.v1.ConfigSecurity.prototype.getCorsExposedHeaders = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.setCorsAllowCredentials = function(value) {
+proto.common.v1.ConfigSecurity.prototype.setCorsExposedHeaders = function(value) {
   return jspb.Message.setField(this, 13, value);
 };
 
@@ -2812,7 +2809,7 @@ proto.common.v1.ConfigSecurity.prototype.setCorsAllowCredentials = function(valu
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.clearCorsAllowCredentials = function() {
+proto.common.v1.ConfigSecurity.prototype.clearCorsExposedHeaders = function() {
   return jspb.Message.setField(this, 13, undefined);
 };
 
@@ -2821,16 +2818,16 @@ proto.common.v1.ConfigSecurity.prototype.clearCorsAllowCredentials = function() 
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.hasCorsAllowCredentials = function() {
+proto.common.v1.ConfigSecurity.prototype.hasCorsExposedHeaders = function() {
   return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional bool cors_debug = 14;
+ * optional bool cors_allow_credentials = 14;
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.getCorsDebug = function() {
+proto.common.v1.ConfigSecurity.prototype.getCorsAllowCredentials = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
 };
 
@@ -2839,7 +2836,7 @@ proto.common.v1.ConfigSecurity.prototype.getCorsDebug = function() {
  * @param {boolean} value
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.setCorsDebug = function(value) {
+proto.common.v1.ConfigSecurity.prototype.setCorsAllowCredentials = function(value) {
   return jspb.Message.setField(this, 14, value);
 };
 
@@ -2848,7 +2845,7 @@ proto.common.v1.ConfigSecurity.prototype.setCorsDebug = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.clearCorsDebug = function() {
+proto.common.v1.ConfigSecurity.prototype.clearCorsAllowCredentials = function() {
   return jspb.Message.setField(this, 14, undefined);
 };
 
@@ -2857,16 +2854,16 @@ proto.common.v1.ConfigSecurity.prototype.clearCorsDebug = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.hasCorsDebug = function() {
+proto.common.v1.ConfigSecurity.prototype.hasCorsAllowCredentials = function() {
   return jspb.Message.getField(this, 14) != null;
 };
 
 
 /**
- * optional bool allow_cookies_for_subdomains = 15;
+ * optional bool cors_debug = 15;
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.getAllowCookiesForSubdomains = function() {
+proto.common.v1.ConfigSecurity.prototype.getCorsDebug = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
 };
 
@@ -2875,7 +2872,7 @@ proto.common.v1.ConfigSecurity.prototype.getAllowCookiesForSubdomains = function
  * @param {boolean} value
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.setAllowCookiesForSubdomains = function(value) {
+proto.common.v1.ConfigSecurity.prototype.setCorsDebug = function(value) {
   return jspb.Message.setField(this, 15, value);
 };
 
@@ -2884,7 +2881,7 @@ proto.common.v1.ConfigSecurity.prototype.setAllowCookiesForSubdomains = function
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.clearAllowCookiesForSubdomains = function() {
+proto.common.v1.ConfigSecurity.prototype.clearCorsDebug = function() {
   return jspb.Message.setField(this, 15, undefined);
 };
 
@@ -2893,25 +2890,25 @@ proto.common.v1.ConfigSecurity.prototype.clearAllowCookiesForSubdomains = functi
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.hasAllowCookiesForSubdomains = function() {
+proto.common.v1.ConfigSecurity.prototype.hasCorsDebug = function() {
   return jspb.Message.getField(this, 15) != null;
 };
 
 
 /**
- * optional int32 session_cache_in_minutes = 16;
- * @return {number}
+ * optional bool allow_cookies_for_subdomains = 16;
+ * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.getSessionCacheInMinutes = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
+proto.common.v1.ConfigSecurity.prototype.getAllowCookiesForSubdomains = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
 };
 
 
 /**
- * @param {number} value
+ * @param {boolean} value
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.setSessionCacheInMinutes = function(value) {
+proto.common.v1.ConfigSecurity.prototype.setAllowCookiesForSubdomains = function(value) {
   return jspb.Message.setField(this, 16, value);
 };
 
@@ -2920,7 +2917,7 @@ proto.common.v1.ConfigSecurity.prototype.setSessionCacheInMinutes = function(val
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.clearSessionCacheInMinutes = function() {
+proto.common.v1.ConfigSecurity.prototype.clearAllowCookiesForSubdomains = function() {
   return jspb.Message.setField(this, 16, undefined);
 };
 
@@ -2929,16 +2926,16 @@ proto.common.v1.ConfigSecurity.prototype.clearSessionCacheInMinutes = function()
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.hasSessionCacheInMinutes = function() {
+proto.common.v1.ConfigSecurity.prototype.hasAllowCookiesForSubdomains = function() {
   return jspb.Message.getField(this, 16) != null;
 };
 
 
 /**
- * optional int32 websocket_secure_port = 17;
+ * optional int32 session_cache_in_minutes = 17;
  * @return {number}
  */
-proto.common.v1.ConfigSecurity.prototype.getWebsocketSecurePort = function() {
+proto.common.v1.ConfigSecurity.prototype.getSessionCacheInMinutes = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 17, 0));
 };
 
@@ -2947,7 +2944,7 @@ proto.common.v1.ConfigSecurity.prototype.getWebsocketSecurePort = function() {
  * @param {number} value
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.setWebsocketSecurePort = function(value) {
+proto.common.v1.ConfigSecurity.prototype.setSessionCacheInMinutes = function(value) {
   return jspb.Message.setField(this, 17, value);
 };
 
@@ -2956,7 +2953,7 @@ proto.common.v1.ConfigSecurity.prototype.setWebsocketSecurePort = function(value
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.clearWebsocketSecurePort = function() {
+proto.common.v1.ConfigSecurity.prototype.clearSessionCacheInMinutes = function() {
   return jspb.Message.setField(this, 17, undefined);
 };
 
@@ -2965,16 +2962,16 @@ proto.common.v1.ConfigSecurity.prototype.clearWebsocketSecurePort = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.hasWebsocketSecurePort = function() {
+proto.common.v1.ConfigSecurity.prototype.hasSessionCacheInMinutes = function() {
   return jspb.Message.getField(this, 17) != null;
 };
 
 
 /**
- * optional int32 websocket_port = 18;
+ * optional int32 websocket_secure_port = 18;
  * @return {number}
  */
-proto.common.v1.ConfigSecurity.prototype.getWebsocketPort = function() {
+proto.common.v1.ConfigSecurity.prototype.getWebsocketSecurePort = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 18, 0));
 };
 
@@ -2983,7 +2980,7 @@ proto.common.v1.ConfigSecurity.prototype.getWebsocketPort = function() {
  * @param {number} value
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.setWebsocketPort = function(value) {
+proto.common.v1.ConfigSecurity.prototype.setWebsocketSecurePort = function(value) {
   return jspb.Message.setField(this, 18, value);
 };
 
@@ -2992,7 +2989,7 @@ proto.common.v1.ConfigSecurity.prototype.setWebsocketPort = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.clearWebsocketPort = function() {
+proto.common.v1.ConfigSecurity.prototype.clearWebsocketSecurePort = function() {
   return jspb.Message.setField(this, 18, undefined);
 };
 
@@ -3001,8 +2998,44 @@ proto.common.v1.ConfigSecurity.prototype.clearWebsocketPort = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.hasWebsocketPort = function() {
+proto.common.v1.ConfigSecurity.prototype.hasWebsocketSecurePort = function() {
   return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional int32 websocket_port = 19;
+ * @return {number}
+ */
+proto.common.v1.ConfigSecurity.prototype.getWebsocketPort = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 19, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.common.v1.ConfigSecurity} returns this
+ */
+proto.common.v1.ConfigSecurity.prototype.setWebsocketPort = function(value) {
+  return jspb.Message.setField(this, 19, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.common.v1.ConfigSecurity} returns this
+ */
+proto.common.v1.ConfigSecurity.prototype.clearWebsocketPort = function() {
+  return jspb.Message.setField(this, 19, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.common.v1.ConfigSecurity.prototype.hasWebsocketPort = function() {
+  return jspb.Message.getField(this, 19) != null;
 };
 
 

@@ -295,24 +295,25 @@ func (x *ConfigServices) GetUserServiceGrpcPort() int32 {
 
 type ConfigSecurity struct {
 	state                             protoimpl.MessageState `protogen:"open.v1"`
-	MaximumLoginAttempts              *int32                 `protobuf:"varint,1,opt,name=maximum_login_attempts,json=maximumLoginAttempts,proto3,oneof" json:"maximum_login_attempts,omitempty"`
-	EnableInsecureOutgoingConnections *bool                  `protobuf:"varint,2,opt,name=enable_insecure_outgoing_connections,json=enableInsecureOutgoingConnections,proto3,oneof" json:"enable_insecure_outgoing_connections,omitempty"`
-	EnableMultifactorAuthentication   *bool                  `protobuf:"varint,3,opt,name=enable_multifactor_authentication,json=enableMultifactorAuthentication,proto3,oneof" json:"enable_multifactor_authentication,omitempty"`
-	EnforceMultifactorAuthentication  *bool                  `protobuf:"varint,4,opt,name=enforce_multifactor_authentication,json=enforceMultifactorAuthentication,proto3,oneof" json:"enforce_multifactor_authentication,omitempty"`
-	EnableOauthServiceProvider        *bool                  `protobuf:"varint,5,opt,name=enable_oauth_service_provider,json=enableOauthServiceProvider,proto3,oneof" json:"enable_oauth_service_provider,omitempty"`
-	EnableOutgoingOauthConnections    *bool                  `protobuf:"varint,6,opt,name=enable_outgoing_oauth_connections,json=enableOutgoingOauthConnections,proto3,oneof" json:"enable_outgoing_oauth_connections,omitempty"`
-	TerminateSessionsOnPasswordChange *bool                  `protobuf:"varint,7,opt,name=terminate_sessions_on_password_change,json=terminateSessionsOnPasswordChange,proto3,oneof" json:"terminate_sessions_on_password_change,omitempty"`
-	SessionLengthWebInHours           *int32                 `protobuf:"varint,8,opt,name=session_length_web_in_hours,json=sessionLengthWebInHours,proto3,oneof" json:"session_length_web_in_hours,omitempty"`
-	SessionLengthMobileInHours        *int32                 `protobuf:"varint,9,opt,name=session_length_mobile_in_hours,json=sessionLengthMobileInHours,proto3,oneof" json:"session_length_mobile_in_hours,omitempty"`
-	SessionLengthSsoInHours           *int32                 `protobuf:"varint,10,opt,name=session_length_sso_in_hours,json=sessionLengthSsoInHours,proto3,oneof" json:"session_length_sso_in_hours,omitempty"`
-	AllowCorsFrom                     *string                `protobuf:"bytes,11,opt,name=allow_cors_from,json=allowCorsFrom,proto3,oneof" json:"allow_cors_from,omitempty"`
-	CorsExposedHeaders                *string                `protobuf:"bytes,12,opt,name=cors_exposed_headers,json=corsExposedHeaders,proto3,oneof" json:"cors_exposed_headers,omitempty"`
-	CorsAllowCredentials              *bool                  `protobuf:"varint,13,opt,name=cors_allow_credentials,json=corsAllowCredentials,proto3,oneof" json:"cors_allow_credentials,omitempty"`
-	CorsDebug                         *bool                  `protobuf:"varint,14,opt,name=cors_debug,json=corsDebug,proto3,oneof" json:"cors_debug,omitempty"`
-	AllowCookiesForSubdomains         *bool                  `protobuf:"varint,15,opt,name=allow_cookies_for_subdomains,json=allowCookiesForSubdomains,proto3,oneof" json:"allow_cookies_for_subdomains,omitempty"`
-	SessionCacheInMinutes             *int32                 `protobuf:"varint,16,opt,name=session_cache_in_minutes,json=sessionCacheInMinutes,proto3,oneof" json:"session_cache_in_minutes,omitempty"`
-	WebsocketSecurePort               *int32                 `protobuf:"varint,17,opt,name=websocket_secure_port,json=websocketSecurePort,proto3,oneof" json:"websocket_secure_port,omitempty"`
-	WebsocketPort                     *int32                 `protobuf:"varint,18,opt,name=websocket_port,json=websocketPort,proto3,oneof" json:"websocket_port,omitempty"`
+	RestrictedUsernames               map[string]string      `protobuf:"bytes,1,rep,name=restricted_usernames,json=restrictedUsernames,proto3" json:"restricted_usernames,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	MaximumLoginAttempts              *int32                 `protobuf:"varint,2,opt,name=maximum_login_attempts,json=maximumLoginAttempts,proto3,oneof" json:"maximum_login_attempts,omitempty"`
+	EnableInsecureOutgoingConnections *bool                  `protobuf:"varint,3,opt,name=enable_insecure_outgoing_connections,json=enableInsecureOutgoingConnections,proto3,oneof" json:"enable_insecure_outgoing_connections,omitempty"`
+	EnableMultifactorAuthentication   *bool                  `protobuf:"varint,4,opt,name=enable_multifactor_authentication,json=enableMultifactorAuthentication,proto3,oneof" json:"enable_multifactor_authentication,omitempty"`
+	EnforceMultifactorAuthentication  *bool                  `protobuf:"varint,5,opt,name=enforce_multifactor_authentication,json=enforceMultifactorAuthentication,proto3,oneof" json:"enforce_multifactor_authentication,omitempty"`
+	EnableOauthServiceProvider        *bool                  `protobuf:"varint,6,opt,name=enable_oauth_service_provider,json=enableOauthServiceProvider,proto3,oneof" json:"enable_oauth_service_provider,omitempty"`
+	EnableOutgoingOauthConnections    *bool                  `protobuf:"varint,7,opt,name=enable_outgoing_oauth_connections,json=enableOutgoingOauthConnections,proto3,oneof" json:"enable_outgoing_oauth_connections,omitempty"`
+	TerminateSessionsOnPasswordChange *bool                  `protobuf:"varint,8,opt,name=terminate_sessions_on_password_change,json=terminateSessionsOnPasswordChange,proto3,oneof" json:"terminate_sessions_on_password_change,omitempty"`
+	SessionLengthWebInHours           *int32                 `protobuf:"varint,9,opt,name=session_length_web_in_hours,json=sessionLengthWebInHours,proto3,oneof" json:"session_length_web_in_hours,omitempty"`
+	SessionLengthMobileInHours        *int32                 `protobuf:"varint,10,opt,name=session_length_mobile_in_hours,json=sessionLengthMobileInHours,proto3,oneof" json:"session_length_mobile_in_hours,omitempty"`
+	SessionLengthSsoInHours           *int32                 `protobuf:"varint,11,opt,name=session_length_sso_in_hours,json=sessionLengthSsoInHours,proto3,oneof" json:"session_length_sso_in_hours,omitempty"`
+	AllowCorsFrom                     *string                `protobuf:"bytes,12,opt,name=allow_cors_from,json=allowCorsFrom,proto3,oneof" json:"allow_cors_from,omitempty"`
+	CorsExposedHeaders                *string                `protobuf:"bytes,13,opt,name=cors_exposed_headers,json=corsExposedHeaders,proto3,oneof" json:"cors_exposed_headers,omitempty"`
+	CorsAllowCredentials              *bool                  `protobuf:"varint,14,opt,name=cors_allow_credentials,json=corsAllowCredentials,proto3,oneof" json:"cors_allow_credentials,omitempty"`
+	CorsDebug                         *bool                  `protobuf:"varint,15,opt,name=cors_debug,json=corsDebug,proto3,oneof" json:"cors_debug,omitempty"`
+	AllowCookiesForSubdomains         *bool                  `protobuf:"varint,16,opt,name=allow_cookies_for_subdomains,json=allowCookiesForSubdomains,proto3,oneof" json:"allow_cookies_for_subdomains,omitempty"`
+	SessionCacheInMinutes             *int32                 `protobuf:"varint,17,opt,name=session_cache_in_minutes,json=sessionCacheInMinutes,proto3,oneof" json:"session_cache_in_minutes,omitempty"`
+	WebsocketSecurePort               *int32                 `protobuf:"varint,18,opt,name=websocket_secure_port,json=websocketSecurePort,proto3,oneof" json:"websocket_secure_port,omitempty"`
+	WebsocketPort                     *int32                 `protobuf:"varint,19,opt,name=websocket_port,json=websocketPort,proto3,oneof" json:"websocket_port,omitempty"`
 	unknownFields                     protoimpl.UnknownFields
 	sizeCache                         protoimpl.SizeCache
 }
@@ -345,6 +346,13 @@ func (x *ConfigSecurity) ProtoReflect() protoreflect.Message {
 // Deprecated: Use ConfigSecurity.ProtoReflect.Descriptor instead.
 func (*ConfigSecurity) Descriptor() ([]byte, []int) {
 	return file_common_v1_config_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *ConfigSecurity) GetRestrictedUsernames() map[string]string {
+	if x != nil {
+		return x.RestrictedUsernames
+	}
+	return nil
 }
 
 func (x *ConfigSecurity) GetMaximumLoginAttempts() int32 {
@@ -3438,29 +3446,33 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x19_common_service_grpc_hostB\x1b\n" +
 	"\x19_common_service_grpc_portB\x19\n" +
 	"\x17_user_service_grpc_hostB\x19\n" +
-	"\x17_user_service_grpc_port\"\xd7\r\n" +
-	"\x0eConfigSecurity\x129\n" +
-	"\x16maximum_login_attempts\x18\x01 \x01(\x05H\x00R\x14maximumLoginAttempts\x88\x01\x01\x12T\n" +
-	"$enable_insecure_outgoing_connections\x18\x02 \x01(\bH\x01R!enableInsecureOutgoingConnections\x88\x01\x01\x12O\n" +
-	"!enable_multifactor_authentication\x18\x03 \x01(\bH\x02R\x1fenableMultifactorAuthentication\x88\x01\x01\x12Q\n" +
-	"\"enforce_multifactor_authentication\x18\x04 \x01(\bH\x03R enforceMultifactorAuthentication\x88\x01\x01\x12F\n" +
-	"\x1denable_oauth_service_provider\x18\x05 \x01(\bH\x04R\x1aenableOauthServiceProvider\x88\x01\x01\x12N\n" +
-	"!enable_outgoing_oauth_connections\x18\x06 \x01(\bH\x05R\x1eenableOutgoingOauthConnections\x88\x01\x01\x12U\n" +
-	"%terminate_sessions_on_password_change\x18\a \x01(\bH\x06R!terminateSessionsOnPasswordChange\x88\x01\x01\x12A\n" +
-	"\x1bsession_length_web_in_hours\x18\b \x01(\x05H\aR\x17sessionLengthWebInHours\x88\x01\x01\x12G\n" +
-	"\x1esession_length_mobile_in_hours\x18\t \x01(\x05H\bR\x1asessionLengthMobileInHours\x88\x01\x01\x12A\n" +
-	"\x1bsession_length_sso_in_hours\x18\n" +
-	" \x01(\x05H\tR\x17sessionLengthSsoInHours\x88\x01\x01\x12+\n" +
-	"\x0fallow_cors_from\x18\v \x01(\tH\n" +
+	"\x17_user_service_grpc_port\"\x86\x0f\n" +
+	"\x0eConfigSecurity\x12e\n" +
+	"\x14restricted_usernames\x18\x01 \x03(\v22.common.v1.ConfigSecurity.RestrictedUsernamesEntryR\x13restrictedUsernames\x129\n" +
+	"\x16maximum_login_attempts\x18\x02 \x01(\x05H\x00R\x14maximumLoginAttempts\x88\x01\x01\x12T\n" +
+	"$enable_insecure_outgoing_connections\x18\x03 \x01(\bH\x01R!enableInsecureOutgoingConnections\x88\x01\x01\x12O\n" +
+	"!enable_multifactor_authentication\x18\x04 \x01(\bH\x02R\x1fenableMultifactorAuthentication\x88\x01\x01\x12Q\n" +
+	"\"enforce_multifactor_authentication\x18\x05 \x01(\bH\x03R enforceMultifactorAuthentication\x88\x01\x01\x12F\n" +
+	"\x1denable_oauth_service_provider\x18\x06 \x01(\bH\x04R\x1aenableOauthServiceProvider\x88\x01\x01\x12N\n" +
+	"!enable_outgoing_oauth_connections\x18\a \x01(\bH\x05R\x1eenableOutgoingOauthConnections\x88\x01\x01\x12U\n" +
+	"%terminate_sessions_on_password_change\x18\b \x01(\bH\x06R!terminateSessionsOnPasswordChange\x88\x01\x01\x12A\n" +
+	"\x1bsession_length_web_in_hours\x18\t \x01(\x05H\aR\x17sessionLengthWebInHours\x88\x01\x01\x12G\n" +
+	"\x1esession_length_mobile_in_hours\x18\n" +
+	" \x01(\x05H\bR\x1asessionLengthMobileInHours\x88\x01\x01\x12A\n" +
+	"\x1bsession_length_sso_in_hours\x18\v \x01(\x05H\tR\x17sessionLengthSsoInHours\x88\x01\x01\x12+\n" +
+	"\x0fallow_cors_from\x18\f \x01(\tH\n" +
 	"R\rallowCorsFrom\x88\x01\x01\x125\n" +
-	"\x14cors_exposed_headers\x18\f \x01(\tH\vR\x12corsExposedHeaders\x88\x01\x01\x129\n" +
-	"\x16cors_allow_credentials\x18\r \x01(\bH\fR\x14corsAllowCredentials\x88\x01\x01\x12\"\n" +
+	"\x14cors_exposed_headers\x18\r \x01(\tH\vR\x12corsExposedHeaders\x88\x01\x01\x129\n" +
+	"\x16cors_allow_credentials\x18\x0e \x01(\bH\fR\x14corsAllowCredentials\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"cors_debug\x18\x0e \x01(\bH\rR\tcorsDebug\x88\x01\x01\x12D\n" +
-	"\x1callow_cookies_for_subdomains\x18\x0f \x01(\bH\x0eR\x19allowCookiesForSubdomains\x88\x01\x01\x12<\n" +
-	"\x18session_cache_in_minutes\x18\x10 \x01(\x05H\x0fR\x15sessionCacheInMinutes\x88\x01\x01\x127\n" +
-	"\x15websocket_secure_port\x18\x11 \x01(\x05H\x10R\x13websocketSecurePort\x88\x01\x01\x12*\n" +
-	"\x0ewebsocket_port\x18\x12 \x01(\x05H\x11R\rwebsocketPort\x88\x01\x01B\x19\n" +
+	"cors_debug\x18\x0f \x01(\bH\rR\tcorsDebug\x88\x01\x01\x12D\n" +
+	"\x1callow_cookies_for_subdomains\x18\x10 \x01(\bH\x0eR\x19allowCookiesForSubdomains\x88\x01\x01\x12<\n" +
+	"\x18session_cache_in_minutes\x18\x11 \x01(\x05H\x0fR\x15sessionCacheInMinutes\x88\x01\x01\x127\n" +
+	"\x15websocket_secure_port\x18\x12 \x01(\x05H\x10R\x13websocketSecurePort\x88\x01\x01\x12*\n" +
+	"\x0ewebsocket_port\x18\x13 \x01(\x05H\x11R\rwebsocketPort\x88\x01\x01\x1aF\n" +
+	"\x18RestrictedUsernamesEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\x19\n" +
 	"\x17_maximum_login_attemptsB'\n" +
 	"%_enable_insecure_outgoing_connectionsB$\n" +
 	"\"_enable_multifactor_authenticationB%\n" +
@@ -4016,7 +4028,7 @@ func file_common_v1_config_proto_rawDescGZIP() []byte {
 	return file_common_v1_config_proto_rawDescData
 }
 
-var file_common_v1_config_proto_msgTypes = make([]protoimpl.MessageInfo, 28)
+var file_common_v1_config_proto_msgTypes = make([]protoimpl.MessageInfo, 29)
 var file_common_v1_config_proto_goTypes = []any{
 	(*ConfigMain)(nil),             // 0: common.v1.ConfigMain
 	(*ConfigServices)(nil),         // 1: common.v1.ConfigServices
@@ -4046,42 +4058,44 @@ var file_common_v1_config_proto_goTypes = []any{
 	(*ConfigUpdateResponse)(nil),   // 25: common.v1.ConfigUpdateResponse
 	(*ConfigListenerResponse)(nil), // 26: common.v1.ConfigListenerResponse
 	(*ConfigListenerRequest)(nil),  // 27: common.v1.ConfigListenerRequest
-	(*AppError)(nil),               // 28: common.v1.AppError
+	nil,                            // 28: common.v1.ConfigSecurity.RestrictedUsernamesEntry
+	(*AppError)(nil),               // 29: common.v1.AppError
 }
 var file_common_v1_config_proto_depIdxs = []int32{
-	0,  // 0: common.v1.Config.main:type_name -> common.v1.ConfigMain
-	1,  // 1: common.v1.Config.services:type_name -> common.v1.ConfigServices
-	2,  // 2: common.v1.Config.security:type_name -> common.v1.ConfigSecurity
-	3,  // 3: common.v1.Config.cache:type_name -> common.v1.CacheConfig
-	4,  // 4: common.v1.Config.metrics:type_name -> common.v1.ConfigMetrics
-	5,  // 5: common.v1.Config.sso:type_name -> common.v1.ConfigSSO
-	6,  // 6: common.v1.Config.sql:type_name -> common.v1.ConfigSql
-	7,  // 7: common.v1.Config.password:type_name -> common.v1.ConfigPassword
-	8,  // 8: common.v1.Config.file:type_name -> common.v1.ConfigFile
-	9,  // 9: common.v1.Config.email:type_name -> common.v1.ConfigEmail
-	10, // 10: common.v1.Config.rate_limit:type_name -> common.v1.ConfigRateLimit
-	11, // 11: common.v1.Config.privacy:type_name -> common.v1.ConfigPrivacy
-	12, // 12: common.v1.Config.support:type_name -> common.v1.ConfigSupport
-	13, // 13: common.v1.Config.localization:type_name -> common.v1.ConfigLocalization
-	14, // 14: common.v1.Config.ldap:type_name -> common.v1.ConfigLdap
-	15, // 15: common.v1.Config.saml:type_name -> common.v1.ConfigSaml
-	16, // 16: common.v1.Config.native_app:type_name -> common.v1.ConfigNativeApp
-	17, // 17: common.v1.Config.meilisearch:type_name -> common.v1.ConfigMeilisearch
-	18, // 18: common.v1.Config.bleve:type_name -> common.v1.ConfigBleve
-	19, // 19: common.v1.Config.data_retention:type_name -> common.v1.ConfigDataRetention
-	20, // 20: common.v1.Config.image_proxy:type_name -> common.v1.ConfigImageProxy
-	21, // 21: common.v1.ConfigGetResponse.data:type_name -> common.v1.Config
-	28, // 22: common.v1.ConfigGetResponse.error:type_name -> common.v1.AppError
-	21, // 23: common.v1.ConfigUpdateRequest.config:type_name -> common.v1.Config
-	21, // 24: common.v1.ConfigUpdateResponse.data:type_name -> common.v1.Config
-	28, // 25: common.v1.ConfigUpdateResponse.error:type_name -> common.v1.AppError
-	21, // 26: common.v1.ConfigListenerResponse.data:type_name -> common.v1.Config
-	28, // 27: common.v1.ConfigListenerResponse.error:type_name -> common.v1.AppError
-	28, // [28:28] is the sub-list for method output_type
-	28, // [28:28] is the sub-list for method input_type
-	28, // [28:28] is the sub-list for extension type_name
-	28, // [28:28] is the sub-list for extension extendee
-	0,  // [0:28] is the sub-list for field type_name
+	28, // 0: common.v1.ConfigSecurity.restricted_usernames:type_name -> common.v1.ConfigSecurity.RestrictedUsernamesEntry
+	0,  // 1: common.v1.Config.main:type_name -> common.v1.ConfigMain
+	1,  // 2: common.v1.Config.services:type_name -> common.v1.ConfigServices
+	2,  // 3: common.v1.Config.security:type_name -> common.v1.ConfigSecurity
+	3,  // 4: common.v1.Config.cache:type_name -> common.v1.CacheConfig
+	4,  // 5: common.v1.Config.metrics:type_name -> common.v1.ConfigMetrics
+	5,  // 6: common.v1.Config.sso:type_name -> common.v1.ConfigSSO
+	6,  // 7: common.v1.Config.sql:type_name -> common.v1.ConfigSql
+	7,  // 8: common.v1.Config.password:type_name -> common.v1.ConfigPassword
+	8,  // 9: common.v1.Config.file:type_name -> common.v1.ConfigFile
+	9,  // 10: common.v1.Config.email:type_name -> common.v1.ConfigEmail
+	10, // 11: common.v1.Config.rate_limit:type_name -> common.v1.ConfigRateLimit
+	11, // 12: common.v1.Config.privacy:type_name -> common.v1.ConfigPrivacy
+	12, // 13: common.v1.Config.support:type_name -> common.v1.ConfigSupport
+	13, // 14: common.v1.Config.localization:type_name -> common.v1.ConfigLocalization
+	14, // 15: common.v1.Config.ldap:type_name -> common.v1.ConfigLdap
+	15, // 16: common.v1.Config.saml:type_name -> common.v1.ConfigSaml
+	16, // 17: common.v1.Config.native_app:type_name -> common.v1.ConfigNativeApp
+	17, // 18: common.v1.Config.meilisearch:type_name -> common.v1.ConfigMeilisearch
+	18, // 19: common.v1.Config.bleve:type_name -> common.v1.ConfigBleve
+	19, // 20: common.v1.Config.data_retention:type_name -> common.v1.ConfigDataRetention
+	20, // 21: common.v1.Config.image_proxy:type_name -> common.v1.ConfigImageProxy
+	21, // 22: common.v1.ConfigGetResponse.data:type_name -> common.v1.Config
+	29, // 23: common.v1.ConfigGetResponse.error:type_name -> common.v1.AppError
+	21, // 24: common.v1.ConfigUpdateRequest.config:type_name -> common.v1.Config
+	21, // 25: common.v1.ConfigUpdateResponse.data:type_name -> common.v1.Config
+	29, // 26: common.v1.ConfigUpdateResponse.error:type_name -> common.v1.AppError
+	21, // 27: common.v1.ConfigListenerResponse.data:type_name -> common.v1.Config
+	29, // 28: common.v1.ConfigListenerResponse.error:type_name -> common.v1.AppError
+	29, // [29:29] is the sub-list for method output_type
+	29, // [29:29] is the sub-list for method input_type
+	29, // [29:29] is the sub-list for extension type_name
+	29, // [29:29] is the sub-list for extension extendee
+	0,  // [0:29] is the sub-list for field type_name
 }
 
 func init() { file_common_v1_config_proto_init() }
@@ -4129,7 +4143,7 @@ func file_common_v1_config_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_v1_config_proto_rawDesc), len(file_common_v1_config_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   28,
+			NumMessages:   29,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
