@@ -41,7 +41,7 @@ message ConfigServices {
 }
 
 message ConfigSecurity {
-  repeated string restricted_usernames = 1;
+  map<string, string> restricted_usernames = 1;
   optional int32 maximum_login_attempts = 2;
   optional bool enable_insecure_outgoing_connections = 3;
   optional bool enable_multifactor_authentication = 4;

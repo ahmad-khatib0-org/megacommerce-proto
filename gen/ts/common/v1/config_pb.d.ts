@@ -187,11 +187,8 @@ export namespace ConfigServices {
 }
 
 export class ConfigSecurity extends jspb.Message {
-  clearRestrictedUsernamesList(): void;
-  getRestrictedUsernamesList(): Array<string>;
-  setRestrictedUsernamesList(value: Array<string>): void;
-  addRestrictedUsernames(value: string, index?: number): string;
-
+  getRestrictedUsernamesMap(): jspb.Map<string, string>;
+  clearRestrictedUsernamesMap(): void;
   hasMaximumLoginAttempts(): boolean;
   clearMaximumLoginAttempts(): void;
   getMaximumLoginAttempts(): number;
@@ -294,7 +291,7 @@ export class ConfigSecurity extends jspb.Message {
 
 export namespace ConfigSecurity {
   export type AsObject = {
-    restrictedUsernamesList: Array<string>,
+    restrictedUsernamesMap: Array<[string, string]>,
     maximumLoginAttempts: number,
     enableInsecureOutgoingConnections: boolean,
     enableMultifactorAuthentication: boolean,
