@@ -38,6 +38,9 @@ message ConfigServices {
   optional int32 common_service_grpc_port = 2;
   optional string user_service_grpc_host = 3;
   optional int32 user_service_grpc_port = 4;
+  optional string jaeger_collector_endpoint = 5;
+  optional string common_service_prometheus_url = 6;
+  optional string user_service_prometheus_url = 7;
 }
 
 message ConfigSecurity {
@@ -307,7 +310,7 @@ message ConfigNativeApp {
 }
 
 message ConfigMeilisearch {
-  optional string server_url = 1 [json_name = "server_url"];
+  optional string server_url = 1 [ json_name = "server_url" ];
   // optional string connection_url = 1;
   optional string master_key = 2; // Meilisearch-specific authentication
   optional bool enable_indexing = 3;
@@ -385,9 +388,7 @@ message ConfigGetResponse {
   }
 }
 
-message ConfigUpdateRequest {
-  Config config = 1;
-}
+message ConfigUpdateRequest { Config config = 1; }
 
 message ConfigUpdateResponse {
   oneof response {
@@ -403,6 +404,4 @@ message ConfigListenerResponse {
   }
 }
 
-message ConfigListenerRequest {
-  string client_id = 1;
-}
+message ConfigListenerRequest { string client_id = 1; }

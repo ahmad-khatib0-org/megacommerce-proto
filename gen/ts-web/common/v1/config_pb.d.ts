@@ -269,6 +269,21 @@ export class ConfigServices extends jspb.Message {
   hasUserServiceGrpcPort(): boolean;
   clearUserServiceGrpcPort(): ConfigServices;
 
+  getJaegerCollectorEndpoint(): string;
+  setJaegerCollectorEndpoint(value: string): ConfigServices;
+  hasJaegerCollectorEndpoint(): boolean;
+  clearJaegerCollectorEndpoint(): ConfigServices;
+
+  getCommonServicePrometheusUrl(): string;
+  setCommonServicePrometheusUrl(value: string): ConfigServices;
+  hasCommonServicePrometheusUrl(): boolean;
+  clearCommonServicePrometheusUrl(): ConfigServices;
+
+  getUserServicePrometheusUrl(): string;
+  setUserServicePrometheusUrl(value: string): ConfigServices;
+  hasUserServicePrometheusUrl(): boolean;
+  clearUserServicePrometheusUrl(): ConfigServices;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfigServices.AsObject;
   static toObject(includeInstance: boolean, msg: ConfigServices): ConfigServices.AsObject;
@@ -283,6 +298,9 @@ export namespace ConfigServices {
     commonServiceGrpcPort?: number,
     userServiceGrpcHost?: string,
     userServiceGrpcPort?: number,
+    jaegerCollectorEndpoint?: string,
+    commonServicePrometheusUrl?: string,
+    userServicePrometheusUrl?: string,
   }
 
   export enum CommonServiceGrpcHostCase { 
@@ -303,6 +321,21 @@ export namespace ConfigServices {
   export enum UserServiceGrpcPortCase { 
     _USER_SERVICE_GRPC_PORT_NOT_SET = 0,
     USER_SERVICE_GRPC_PORT = 4,
+  }
+
+  export enum JaegerCollectorEndpointCase { 
+    _JAEGER_COLLECTOR_ENDPOINT_NOT_SET = 0,
+    JAEGER_COLLECTOR_ENDPOINT = 5,
+  }
+
+  export enum CommonServicePrometheusUrlCase { 
+    _COMMON_SERVICE_PROMETHEUS_URL_NOT_SET = 0,
+    COMMON_SERVICE_PROMETHEUS_URL = 6,
+  }
+
+  export enum UserServicePrometheusUrlCase { 
+    _USER_SERVICE_PROMETHEUS_URL_NOT_SET = 0,
+    USER_SERVICE_PROMETHEUS_URL = 7,
   }
 }
 

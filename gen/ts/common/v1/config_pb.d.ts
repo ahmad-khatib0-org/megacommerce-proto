@@ -167,6 +167,21 @@ export class ConfigServices extends jspb.Message {
   getUserServiceGrpcPort(): number;
   setUserServiceGrpcPort(value: number): void;
 
+  hasJaegerCollectorEndpoint(): boolean;
+  clearJaegerCollectorEndpoint(): void;
+  getJaegerCollectorEndpoint(): string;
+  setJaegerCollectorEndpoint(value: string): void;
+
+  hasCommonServicePrometheusUrl(): boolean;
+  clearCommonServicePrometheusUrl(): void;
+  getCommonServicePrometheusUrl(): string;
+  setCommonServicePrometheusUrl(value: string): void;
+
+  hasUserServicePrometheusUrl(): boolean;
+  clearUserServicePrometheusUrl(): void;
+  getUserServicePrometheusUrl(): string;
+  setUserServicePrometheusUrl(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfigServices.AsObject;
   static toObject(includeInstance: boolean, msg: ConfigServices): ConfigServices.AsObject;
@@ -183,6 +198,9 @@ export namespace ConfigServices {
     commonServiceGrpcPort: number,
     userServiceGrpcHost: string,
     userServiceGrpcPort: number,
+    jaegerCollectorEndpoint: string,
+    commonServicePrometheusUrl: string,
+    userServicePrometheusUrl: string,
   }
 }
 
