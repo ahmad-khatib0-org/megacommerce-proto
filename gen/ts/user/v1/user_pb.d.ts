@@ -20,11 +20,6 @@ export class User extends jspb.Message {
   getFirstName(): string;
   setFirstName(value: string): void;
 
-  hasNickname(): boolean;
-  clearNickname(): void;
-  getNickname(): string;
-  setNickname(value: string): void;
-
   hasLastName(): boolean;
   clearLastName(): void;
   getLastName(): string;
@@ -144,7 +139,6 @@ export namespace User {
     id: string,
     username: string,
     firstName: string,
-    nickname: string,
     lastName: string,
     email: string,
     userType: string,

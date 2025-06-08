@@ -47,7 +47,6 @@ constexpr User::User(
   , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , username_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , first_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , nickname_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , last_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , email_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , user_type_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
@@ -113,7 +112,6 @@ const uint32_t TableStruct_user_2fv1_2fuser_2eproto::offsets[] PROTOBUF_SECTION_
   PROTOBUF_FIELD_OFFSET(::user::v1::User, id_),
   PROTOBUF_FIELD_OFFSET(::user::v1::User, username_),
   PROTOBUF_FIELD_OFFSET(::user::v1::User, first_name_),
-  PROTOBUF_FIELD_OFFSET(::user::v1::User, nickname_),
   PROTOBUF_FIELD_OFFSET(::user::v1::User, last_name_),
   PROTOBUF_FIELD_OFFSET(::user::v1::User, email_),
   PROTOBUF_FIELD_OFFSET(::user::v1::User, user_type_),
@@ -143,30 +141,29 @@ const uint32_t TableStruct_user_2fv1_2fuser_2eproto::offsets[] PROTOBUF_SECTION_
   4,
   5,
   6,
+  13,
   7,
-  14,
   8,
   9,
   10,
-  11,
   ~0u,
   ~0u,
-  17,
-  18,
   16,
-  12,
+  17,
   15,
-  13,
+  11,
+  14,
+  12,
+  18,
   19,
   20,
   21,
   22,
-  23,
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 8, -1, sizeof(::user::v1::User_PropsEntry_DoNotUse)},
   { 10, 18, -1, sizeof(::user::v1::User_NotifyPropsEntry_DoNotUse)},
-  { 20, 52, -1, sizeof(::user::v1::User)},
+  { 20, 51, -1, sizeof(::user::v1::User)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -177,55 +174,54 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_user_2fv1_2fuser_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\022user/v1/user.proto\022\007user.v1\032\026user/v1/s"
-  "upplier.proto\"\327\013\n\004User\022\023\n\002id\030\001 \001(\tH\000R\002id"
+  "upplier.proto\"\251\013\n\004User\022\023\n\002id\030\001 \001(\tH\000R\002id"
   "\210\001\001\022\037\n\010username\030\002 \001(\tH\001R\010username\210\001\001\022\"\n\n"
-  "first_name\030\003 \001(\tH\002R\tfirstName\210\001\001\022\037\n\010nick"
-  "name\030\004 \001(\tH\003R\010nickname\210\001\001\022 \n\tlast_name\030\005"
-  " \001(\tH\004R\010lastName\210\001\001\022\031\n\005email\030\006 \001(\tH\005R\005em"
-  "ail\210\001\001\022 \n\tuser_type\030\007 \001(\tH\006R\010userType\210\001\001"
-  "\022#\n\nmembership\030\010 \001(\tH\007R\nmembership\210\001\001\022/\n"
-  "\021is_email_verified\030\t \001(\010H\010R\017isEmailVerif"
-  "ied\210\001\001\022\037\n\010password\030\n \001(\tH\tR\010password\210\001\001\022"
-  " \n\tauth_data\030\013 \001(\tH\nR\010authData\210\001\001\022&\n\014aut"
-  "h_service\030\014 \001(\tH\013R\013authService\210\001\001\022\031\n\005rol"
-  "es\030\r \001(\tH\014R\005roles\210\001\001\022.\n\005props\030\016 \003(\0132\030.us"
-  "er.v1.User.PropsEntryR\005props\022A\n\014notify_p"
-  "rops\030\017 \003(\0132\036.user.v1.User.NotifyPropsEnt"
-  "ryR\013notifyProps\0225\n\024last_password_update\030"
-  "\020 \001(\003H\rR\022lastPasswordUpdate\210\001\001\0223\n\023last_p"
-  "icture_update\030\021 \001(\003H\016R\021lastPictureUpdate"
-  "\210\001\001\022,\n\017failed_attempts\030\022 \001(\005H\017R\016failedAt"
-  "tempts\210\001\001\022\033\n\006locale\030\023 \001(\tH\020R\006locale\210\001\001\022\""
-  "\n\nmfa_active\030\024 \001(\010H\021R\tmfaActive\210\001\001\022\"\n\nmf"
-  "a_secret\030\025 \001(\tH\022R\tmfaSecret\210\001\001\022-\n\020last_a"
-  "ctivity_at\030\026 \001(\003H\023R\016lastActivityAt\210\001\001\022\"\n"
-  "\nlast_login\030\027 \001(\003H\024R\tlastLogin\210\001\001\022\"\n\ncre"
-  "ated_at\030\030 \001(\003H\025R\tcreatedAt\210\001\001\022\"\n\nupdated"
-  "_at\030\031 \001(\003H\026R\tupdatedAt\210\001\001\022\"\n\ndeleted_at\030"
-  "\032 \001(\003H\027R\tdeletedAt\210\001\001\0328\n\nPropsEntry\022\020\n\003k"
-  "ey\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032"
-  ">\n\020NotifyPropsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n"
-  "\005value\030\002 \001(\tR\005value:\0028\001B\005\n\003_idB\013\n\t_usern"
-  "ameB\r\n\013_first_nameB\013\n\t_nicknameB\014\n\n_last"
-  "_nameB\010\n\006_emailB\014\n\n_user_typeB\r\n\013_member"
-  "shipB\024\n\022_is_email_verifiedB\013\n\t_passwordB"
-  "\014\n\n_auth_dataB\017\n\r_auth_serviceB\010\n\006_roles"
-  "B\027\n\025_last_password_updateB\026\n\024_last_pictu"
-  "re_updateB\022\n\020_failed_attemptsB\t\n\007_locale"
-  "B\r\n\013_mfa_activeB\r\n\013_mfa_secretB\023\n\021_last_"
-  "activity_atB\r\n\013_last_loginB\r\n\013_created_a"
-  "tB\r\n\013_updated_atB\r\n\013_deleted_at2`\n\013UserS"
-  "ervice\022Q\n\016CreateSupplier\022\036.user.v1.Suppl"
-  "ierCreateRequest\032\037.user.v1.SupplierCreat"
-  "eResponseB4\n\030org.megacommerce.user.v1B\tU"
-  "serProtoZ\nuser/v1;v1\370\001\001b\006proto3"
+  "first_name\030\003 \001(\tH\002R\tfirstName\210\001\001\022 \n\tlast"
+  "_name\030\004 \001(\tH\003R\010lastName\210\001\001\022\031\n\005email\030\005 \001("
+  "\tH\004R\005email\210\001\001\022 \n\tuser_type\030\006 \001(\tH\005R\010user"
+  "Type\210\001\001\022#\n\nmembership\030\007 \001(\tH\006R\nmembershi"
+  "p\210\001\001\022/\n\021is_email_verified\030\010 \001(\010H\007R\017isEma"
+  "ilVerified\210\001\001\022\037\n\010password\030\t \001(\tH\010R\010passw"
+  "ord\210\001\001\022 \n\tauth_data\030\n \001(\tH\tR\010authData\210\001\001"
+  "\022&\n\014auth_service\030\013 \001(\tH\nR\013authService\210\001\001"
+  "\022\031\n\005roles\030\014 \001(\tH\013R\005roles\210\001\001\022.\n\005props\030\r \003"
+  "(\0132\030.user.v1.User.PropsEntryR\005props\022A\n\014n"
+  "otify_props\030\016 \003(\0132\036.user.v1.User.NotifyP"
+  "ropsEntryR\013notifyProps\0225\n\024last_password_"
+  "update\030\017 \001(\003H\014R\022lastPasswordUpdate\210\001\001\0223\n"
+  "\023last_picture_update\030\020 \001(\003H\rR\021lastPictur"
+  "eUpdate\210\001\001\022,\n\017failed_attempts\030\021 \001(\005H\016R\016f"
+  "ailedAttempts\210\001\001\022\033\n\006locale\030\022 \001(\tH\017R\006loca"
+  "le\210\001\001\022\"\n\nmfa_active\030\023 \001(\010H\020R\tmfaActive\210\001"
+  "\001\022\"\n\nmfa_secret\030\024 \001(\tH\021R\tmfaSecret\210\001\001\022-\n"
+  "\020last_activity_at\030\025 \001(\003H\022R\016lastActivityA"
+  "t\210\001\001\022\"\n\nlast_login\030\026 \001(\003H\023R\tlastLogin\210\001\001"
+  "\022\"\n\ncreated_at\030\027 \001(\003H\024R\tcreatedAt\210\001\001\022\"\n\n"
+  "updated_at\030\030 \001(\003H\025R\tupdatedAt\210\001\001\022\"\n\ndele"
+  "ted_at\030\031 \001(\003H\026R\tdeletedAt\210\001\001\0328\n\nPropsEnt"
+  "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005val"
+  "ue:\0028\001\032>\n\020NotifyPropsEntry\022\020\n\003key\030\001 \001(\tR"
+  "\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\005\n\003_idB\013\n"
+  "\t_usernameB\r\n\013_first_nameB\014\n\n_last_nameB"
+  "\010\n\006_emailB\014\n\n_user_typeB\r\n\013_membershipB\024"
+  "\n\022_is_email_verifiedB\013\n\t_passwordB\014\n\n_au"
+  "th_dataB\017\n\r_auth_serviceB\010\n\006_rolesB\027\n\025_l"
+  "ast_password_updateB\026\n\024_last_picture_upd"
+  "ateB\022\n\020_failed_attemptsB\t\n\007_localeB\r\n\013_m"
+  "fa_activeB\r\n\013_mfa_secretB\023\n\021_last_activi"
+  "ty_atB\r\n\013_last_loginB\r\n\013_created_atB\r\n\013_"
+  "updated_atB\r\n\013_deleted_at2`\n\013UserService"
+  "\022Q\n\016CreateSupplier\022\036.user.v1.SupplierCre"
+  "ateRequest\032\037.user.v1.SupplierCreateRespo"
+  "nseB4\n\030org.megacommerce.user.v1B\tUserPro"
+  "toZ\nuser/v1;v1\370\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_user_2fv1_2fuser_2eproto_deps[1] = {
   &::descriptor_table_user_2fv1_2fsupplier_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_user_2fv1_2fuser_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_user_2fv1_2fuser_2eproto = {
-  false, false, 1711, descriptor_table_protodef_user_2fv1_2fuser_2eproto, "user/v1/user.proto", 
+  false, false, 1665, descriptor_table_protodef_user_2fv1_2fuser_2eproto, "user/v1/user.proto", 
   &descriptor_table_user_2fv1_2fuser_2eproto_once, descriptor_table_user_2fv1_2fuser_2eproto_deps, 1, 3,
   schemas, file_default_instances, TableStruct_user_2fv1_2fuser_2eproto::offsets,
   file_level_metadata_user_2fv1_2fuser_2eproto, file_level_enum_descriptors_user_2fv1_2fuser_2eproto, file_level_service_descriptors_user_2fv1_2fuser_2eproto,
@@ -281,68 +277,65 @@ class User::_Internal {
   static void set_has_first_name(HasBits* has_bits) {
     (*has_bits)[0] |= 4u;
   }
-  static void set_has_nickname(HasBits* has_bits) {
+  static void set_has_last_name(HasBits* has_bits) {
     (*has_bits)[0] |= 8u;
   }
-  static void set_has_last_name(HasBits* has_bits) {
+  static void set_has_email(HasBits* has_bits) {
     (*has_bits)[0] |= 16u;
   }
-  static void set_has_email(HasBits* has_bits) {
+  static void set_has_user_type(HasBits* has_bits) {
     (*has_bits)[0] |= 32u;
   }
-  static void set_has_user_type(HasBits* has_bits) {
+  static void set_has_membership(HasBits* has_bits) {
     (*has_bits)[0] |= 64u;
   }
-  static void set_has_membership(HasBits* has_bits) {
-    (*has_bits)[0] |= 128u;
-  }
   static void set_has_is_email_verified(HasBits* has_bits) {
-    (*has_bits)[0] |= 16384u;
-  }
-  static void set_has_password(HasBits* has_bits) {
-    (*has_bits)[0] |= 256u;
-  }
-  static void set_has_auth_data(HasBits* has_bits) {
-    (*has_bits)[0] |= 512u;
-  }
-  static void set_has_auth_service(HasBits* has_bits) {
-    (*has_bits)[0] |= 1024u;
-  }
-  static void set_has_roles(HasBits* has_bits) {
-    (*has_bits)[0] |= 2048u;
-  }
-  static void set_has_last_password_update(HasBits* has_bits) {
-    (*has_bits)[0] |= 131072u;
-  }
-  static void set_has_last_picture_update(HasBits* has_bits) {
-    (*has_bits)[0] |= 262144u;
-  }
-  static void set_has_failed_attempts(HasBits* has_bits) {
-    (*has_bits)[0] |= 65536u;
-  }
-  static void set_has_locale(HasBits* has_bits) {
-    (*has_bits)[0] |= 4096u;
-  }
-  static void set_has_mfa_active(HasBits* has_bits) {
-    (*has_bits)[0] |= 32768u;
-  }
-  static void set_has_mfa_secret(HasBits* has_bits) {
     (*has_bits)[0] |= 8192u;
   }
+  static void set_has_password(HasBits* has_bits) {
+    (*has_bits)[0] |= 128u;
+  }
+  static void set_has_auth_data(HasBits* has_bits) {
+    (*has_bits)[0] |= 256u;
+  }
+  static void set_has_auth_service(HasBits* has_bits) {
+    (*has_bits)[0] |= 512u;
+  }
+  static void set_has_roles(HasBits* has_bits) {
+    (*has_bits)[0] |= 1024u;
+  }
+  static void set_has_last_password_update(HasBits* has_bits) {
+    (*has_bits)[0] |= 65536u;
+  }
+  static void set_has_last_picture_update(HasBits* has_bits) {
+    (*has_bits)[0] |= 131072u;
+  }
+  static void set_has_failed_attempts(HasBits* has_bits) {
+    (*has_bits)[0] |= 32768u;
+  }
+  static void set_has_locale(HasBits* has_bits) {
+    (*has_bits)[0] |= 2048u;
+  }
+  static void set_has_mfa_active(HasBits* has_bits) {
+    (*has_bits)[0] |= 16384u;
+  }
+  static void set_has_mfa_secret(HasBits* has_bits) {
+    (*has_bits)[0] |= 4096u;
+  }
   static void set_has_last_activity_at(HasBits* has_bits) {
-    (*has_bits)[0] |= 524288u;
+    (*has_bits)[0] |= 262144u;
   }
   static void set_has_last_login(HasBits* has_bits) {
-    (*has_bits)[0] |= 1048576u;
+    (*has_bits)[0] |= 524288u;
   }
   static void set_has_created_at(HasBits* has_bits) {
-    (*has_bits)[0] |= 2097152u;
+    (*has_bits)[0] |= 1048576u;
   }
   static void set_has_updated_at(HasBits* has_bits) {
-    (*has_bits)[0] |= 4194304u;
+    (*has_bits)[0] |= 2097152u;
   }
   static void set_has_deleted_at(HasBits* has_bits) {
-    (*has_bits)[0] |= 8388608u;
+    (*has_bits)[0] |= 4194304u;
   }
 };
 
@@ -385,14 +378,6 @@ User::User(const User& from)
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (from._internal_has_first_name()) {
     first_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_first_name(), 
-      GetArenaForAllocation());
-  }
-  nickname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    nickname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_nickname()) {
-    nickname_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_nickname(), 
       GetArenaForAllocation());
   }
   last_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -494,10 +479,6 @@ first_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringA
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   first_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-nickname_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  nickname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 last_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   last_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
@@ -556,7 +537,6 @@ inline void User::SharedDtor() {
   id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   username_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   first_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  nickname_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   last_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   email_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   user_type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -604,50 +584,47 @@ void User::Clear() {
       first_name_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000008u) {
-      nickname_.ClearNonDefaultToEmpty();
-    }
-    if (cached_has_bits & 0x00000010u) {
       last_name_.ClearNonDefaultToEmpty();
     }
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00000010u) {
       email_.ClearNonDefaultToEmpty();
     }
-    if (cached_has_bits & 0x00000040u) {
+    if (cached_has_bits & 0x00000020u) {
       user_type_.ClearNonDefaultToEmpty();
     }
-    if (cached_has_bits & 0x00000080u) {
+    if (cached_has_bits & 0x00000040u) {
       membership_.ClearNonDefaultToEmpty();
     }
-  }
-  if (cached_has_bits & 0x00003f00u) {
-    if (cached_has_bits & 0x00000100u) {
+    if (cached_has_bits & 0x00000080u) {
       password_.ClearNonDefaultToEmpty();
     }
-    if (cached_has_bits & 0x00000200u) {
+  }
+  if (cached_has_bits & 0x00001f00u) {
+    if (cached_has_bits & 0x00000100u) {
       auth_data_.ClearNonDefaultToEmpty();
     }
-    if (cached_has_bits & 0x00000400u) {
+    if (cached_has_bits & 0x00000200u) {
       auth_service_.ClearNonDefaultToEmpty();
     }
-    if (cached_has_bits & 0x00000800u) {
+    if (cached_has_bits & 0x00000400u) {
       roles_.ClearNonDefaultToEmpty();
     }
-    if (cached_has_bits & 0x00001000u) {
+    if (cached_has_bits & 0x00000800u) {
       locale_.ClearNonDefaultToEmpty();
     }
-    if (cached_has_bits & 0x00002000u) {
+    if (cached_has_bits & 0x00001000u) {
       mfa_secret_.ClearNonDefaultToEmpty();
     }
   }
-  if (cached_has_bits & 0x0000c000u) {
+  if (cached_has_bits & 0x0000e000u) {
     ::memset(&is_email_verified_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&mfa_active_) -
-        reinterpret_cast<char*>(&is_email_verified_)) + sizeof(mfa_active_));
+        reinterpret_cast<char*>(&failed_attempts_) -
+        reinterpret_cast<char*>(&is_email_verified_)) + sizeof(failed_attempts_));
   }
-  if (cached_has_bits & 0x00ff0000u) {
-    ::memset(&failed_attempts_, 0, static_cast<size_t>(
+  if (cached_has_bits & 0x007f0000u) {
+    ::memset(&last_password_update_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&deleted_at_) -
-        reinterpret_cast<char*>(&failed_attempts_)) + sizeof(deleted_at_));
+        reinterpret_cast<char*>(&last_password_update_)) + sizeof(deleted_at_));
   }
   _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -690,19 +667,9 @@ const char* User::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
         } else
           goto handle_unusual;
         continue;
-      // optional string nickname = 4 [json_name = "nickname"];
+      // optional string last_name = 4 [json_name = "lastName"];
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          auto str = _internal_mutable_nickname();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "user.v1.User.nickname"));
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string last_name = 5 [json_name = "lastName"];
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_last_name();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "user.v1.User.last_name"));
@@ -710,9 +677,9 @@ const char* User::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
         } else
           goto handle_unusual;
         continue;
-      // optional string email = 6 [json_name = "email"];
-      case 6:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+      // optional string email = 5 [json_name = "email"];
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_email();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "user.v1.User.email"));
@@ -720,9 +687,9 @@ const char* User::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
         } else
           goto handle_unusual;
         continue;
-      // optional string user_type = 7 [json_name = "userType"];
-      case 7:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+      // optional string user_type = 6 [json_name = "userType"];
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           auto str = _internal_mutable_user_type();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "user.v1.User.user_type"));
@@ -730,9 +697,9 @@ const char* User::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
         } else
           goto handle_unusual;
         continue;
-      // optional string membership = 8 [json_name = "membership"];
-      case 8:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
+      // optional string membership = 7 [json_name = "membership"];
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
           auto str = _internal_mutable_membership();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "user.v1.User.membership"));
@@ -740,18 +707,18 @@ const char* User::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
         } else
           goto handle_unusual;
         continue;
-      // optional bool is_email_verified = 9 [json_name = "isEmailVerified"];
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+      // optional bool is_email_verified = 8 [json_name = "isEmailVerified"];
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
           _Internal::set_has_is_email_verified(&has_bits);
           is_email_verified_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // optional string password = 10 [json_name = "password"];
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
+      // optional string password = 9 [json_name = "password"];
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
           auto str = _internal_mutable_password();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "user.v1.User.password"));
@@ -759,9 +726,9 @@ const char* User::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
         } else
           goto handle_unusual;
         continue;
-      // optional string auth_data = 11 [json_name = "authData"];
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
+      // optional string auth_data = 10 [json_name = "authData"];
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
           auto str = _internal_mutable_auth_data();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "user.v1.User.auth_data"));
@@ -769,9 +736,9 @@ const char* User::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
         } else
           goto handle_unusual;
         continue;
-      // optional string auth_service = 12 [json_name = "authService"];
-      case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
+      // optional string auth_service = 11 [json_name = "authService"];
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
           auto str = _internal_mutable_auth_service();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "user.v1.User.auth_service"));
@@ -779,9 +746,9 @@ const char* User::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
         } else
           goto handle_unusual;
         continue;
-      // optional string roles = 13 [json_name = "roles"];
-      case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
+      // optional string roles = 12 [json_name = "roles"];
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
           auto str = _internal_mutable_roles();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "user.v1.User.roles"));
@@ -789,62 +756,62 @@ const char* User::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
         } else
           goto handle_unusual;
         continue;
-      // map<string, string> props = 14 [json_name = "props"];
-      case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
+      // map<string, string> props = 13 [json_name = "props"];
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(&props_, ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<114>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<106>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // map<string, string> notify_props = 15 [json_name = "notifyProps"];
-      case 15:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 122)) {
+      // map<string, string> notify_props = 14 [json_name = "notifyProps"];
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(&notify_props_, ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<122>(ptr));
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<114>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // optional int64 last_password_update = 16 [json_name = "lastPasswordUpdate"];
-      case 16:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 128)) {
+      // optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
           _Internal::set_has_last_password_update(&has_bits);
           last_password_update_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // optional int64 last_picture_update = 17 [json_name = "lastPictureUpdate"];
-      case 17:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 136)) {
+      // optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 128)) {
           _Internal::set_has_last_picture_update(&has_bits);
           last_picture_update_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // optional int32 failed_attempts = 18 [json_name = "failedAttempts"];
-      case 18:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 144)) {
+      // optional int32 failed_attempts = 17 [json_name = "failedAttempts"];
+      case 17:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 136)) {
           _Internal::set_has_failed_attempts(&has_bits);
           failed_attempts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // optional string locale = 19 [json_name = "locale"];
-      case 19:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 154)) {
+      // optional string locale = 18 [json_name = "locale"];
+      case 18:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 146)) {
           auto str = _internal_mutable_locale();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "user.v1.User.locale"));
@@ -852,18 +819,18 @@ const char* User::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
         } else
           goto handle_unusual;
         continue;
-      // optional bool mfa_active = 20 [json_name = "mfaActive"];
-      case 20:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 160)) {
+      // optional bool mfa_active = 19 [json_name = "mfaActive"];
+      case 19:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 152)) {
           _Internal::set_has_mfa_active(&has_bits);
           mfa_active_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // optional string mfa_secret = 21 [json_name = "mfaSecret"];
-      case 21:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 170)) {
+      // optional string mfa_secret = 20 [json_name = "mfaSecret"];
+      case 20:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 162)) {
           auto str = _internal_mutable_mfa_secret();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "user.v1.User.mfa_secret"));
@@ -871,45 +838,45 @@ const char* User::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
         } else
           goto handle_unusual;
         continue;
-      // optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];
-      case 22:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 176)) {
+      // optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];
+      case 21:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 168)) {
           _Internal::set_has_last_activity_at(&has_bits);
           last_activity_at_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // optional int64 last_login = 23 [json_name = "lastLogin"];
-      case 23:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 184)) {
+      // optional int64 last_login = 22 [json_name = "lastLogin"];
+      case 22:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 176)) {
           _Internal::set_has_last_login(&has_bits);
           last_login_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // optional int64 created_at = 24 [json_name = "createdAt"];
-      case 24:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 192)) {
+      // optional int64 created_at = 23 [json_name = "createdAt"];
+      case 23:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 184)) {
           _Internal::set_has_created_at(&has_bits);
           created_at_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // optional int64 updated_at = 25 [json_name = "updatedAt"];
-      case 25:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 200)) {
+      // optional int64 updated_at = 24 [json_name = "updatedAt"];
+      case 24:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 192)) {
           _Internal::set_has_updated_at(&has_bits);
           updated_at_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // optional int64 deleted_at = 26 [json_name = "deletedAt"];
-      case 26:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 208)) {
+      // optional int64 deleted_at = 25 [json_name = "deletedAt"];
+      case 25:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 200)) {
           _Internal::set_has_deleted_at(&has_bits);
           deleted_at_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
@@ -976,103 +943,93 @@ uint8_t* User::_InternalSerialize(
         3, this->_internal_first_name(), target);
   }
 
-  // optional string nickname = 4 [json_name = "nickname"];
-  if (_internal_has_nickname()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_nickname().data(), static_cast<int>(this->_internal_nickname().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "user.v1.User.nickname");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_nickname(), target);
-  }
-
-  // optional string last_name = 5 [json_name = "lastName"];
+  // optional string last_name = 4 [json_name = "lastName"];
   if (_internal_has_last_name()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_last_name().data(), static_cast<int>(this->_internal_last_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "user.v1.User.last_name");
     target = stream->WriteStringMaybeAliased(
-        5, this->_internal_last_name(), target);
+        4, this->_internal_last_name(), target);
   }
 
-  // optional string email = 6 [json_name = "email"];
+  // optional string email = 5 [json_name = "email"];
   if (_internal_has_email()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_email().data(), static_cast<int>(this->_internal_email().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "user.v1.User.email");
     target = stream->WriteStringMaybeAliased(
-        6, this->_internal_email(), target);
+        5, this->_internal_email(), target);
   }
 
-  // optional string user_type = 7 [json_name = "userType"];
+  // optional string user_type = 6 [json_name = "userType"];
   if (_internal_has_user_type()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_user_type().data(), static_cast<int>(this->_internal_user_type().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "user.v1.User.user_type");
     target = stream->WriteStringMaybeAliased(
-        7, this->_internal_user_type(), target);
+        6, this->_internal_user_type(), target);
   }
 
-  // optional string membership = 8 [json_name = "membership"];
+  // optional string membership = 7 [json_name = "membership"];
   if (_internal_has_membership()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_membership().data(), static_cast<int>(this->_internal_membership().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "user.v1.User.membership");
     target = stream->WriteStringMaybeAliased(
-        8, this->_internal_membership(), target);
+        7, this->_internal_membership(), target);
   }
 
-  // optional bool is_email_verified = 9 [json_name = "isEmailVerified"];
+  // optional bool is_email_verified = 8 [json_name = "isEmailVerified"];
   if (_internal_has_is_email_verified()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(9, this->_internal_is_email_verified(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(8, this->_internal_is_email_verified(), target);
   }
 
-  // optional string password = 10 [json_name = "password"];
+  // optional string password = 9 [json_name = "password"];
   if (_internal_has_password()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_password().data(), static_cast<int>(this->_internal_password().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "user.v1.User.password");
     target = stream->WriteStringMaybeAliased(
-        10, this->_internal_password(), target);
+        9, this->_internal_password(), target);
   }
 
-  // optional string auth_data = 11 [json_name = "authData"];
+  // optional string auth_data = 10 [json_name = "authData"];
   if (_internal_has_auth_data()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_auth_data().data(), static_cast<int>(this->_internal_auth_data().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "user.v1.User.auth_data");
     target = stream->WriteStringMaybeAliased(
-        11, this->_internal_auth_data(), target);
+        10, this->_internal_auth_data(), target);
   }
 
-  // optional string auth_service = 12 [json_name = "authService"];
+  // optional string auth_service = 11 [json_name = "authService"];
   if (_internal_has_auth_service()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_auth_service().data(), static_cast<int>(this->_internal_auth_service().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "user.v1.User.auth_service");
     target = stream->WriteStringMaybeAliased(
-        12, this->_internal_auth_service(), target);
+        11, this->_internal_auth_service(), target);
   }
 
-  // optional string roles = 13 [json_name = "roles"];
+  // optional string roles = 12 [json_name = "roles"];
   if (_internal_has_roles()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_roles().data(), static_cast<int>(this->_internal_roles().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "user.v1.User.roles");
     target = stream->WriteStringMaybeAliased(
-        13, this->_internal_roles(), target);
+        12, this->_internal_roles(), target);
   }
 
-  // map<string, string> props = 14 [json_name = "props"];
+  // map<string, string> props = 13 [json_name = "props"];
   if (!this->_internal_props().empty()) {
     typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
         ConstPtr;
@@ -1105,20 +1062,20 @@ uint8_t* User::_InternalSerialize(
       }
       ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       for (size_type i = 0; i < n; i++) {
-        target = User_PropsEntry_DoNotUse::Funcs::InternalSerialize(14, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
+        target = User_PropsEntry_DoNotUse::Funcs::InternalSerialize(13, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
         Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
       }
     } else {
       for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
           it = this->_internal_props().begin();
           it != this->_internal_props().end(); ++it) {
-        target = User_PropsEntry_DoNotUse::Funcs::InternalSerialize(14, it->first, it->second, target, stream);
+        target = User_PropsEntry_DoNotUse::Funcs::InternalSerialize(13, it->first, it->second, target, stream);
         Utf8Check::Check(&(*it));
       }
     }
   }
 
-  // map<string, string> notify_props = 15 [json_name = "notifyProps"];
+  // map<string, string> notify_props = 14 [json_name = "notifyProps"];
   if (!this->_internal_notify_props().empty()) {
     typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
         ConstPtr;
@@ -1151,91 +1108,91 @@ uint8_t* User::_InternalSerialize(
       }
       ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
       for (size_type i = 0; i < n; i++) {
-        target = User_NotifyPropsEntry_DoNotUse::Funcs::InternalSerialize(15, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
+        target = User_NotifyPropsEntry_DoNotUse::Funcs::InternalSerialize(14, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
         Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
       }
     } else {
       for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
           it = this->_internal_notify_props().begin();
           it != this->_internal_notify_props().end(); ++it) {
-        target = User_NotifyPropsEntry_DoNotUse::Funcs::InternalSerialize(15, it->first, it->second, target, stream);
+        target = User_NotifyPropsEntry_DoNotUse::Funcs::InternalSerialize(14, it->first, it->second, target, stream);
         Utf8Check::Check(&(*it));
       }
     }
   }
 
-  // optional int64 last_password_update = 16 [json_name = "lastPasswordUpdate"];
+  // optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];
   if (_internal_has_last_password_update()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(16, this->_internal_last_password_update(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(15, this->_internal_last_password_update(), target);
   }
 
-  // optional int64 last_picture_update = 17 [json_name = "lastPictureUpdate"];
+  // optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];
   if (_internal_has_last_picture_update()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(17, this->_internal_last_picture_update(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(16, this->_internal_last_picture_update(), target);
   }
 
-  // optional int32 failed_attempts = 18 [json_name = "failedAttempts"];
+  // optional int32 failed_attempts = 17 [json_name = "failedAttempts"];
   if (_internal_has_failed_attempts()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(18, this->_internal_failed_attempts(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(17, this->_internal_failed_attempts(), target);
   }
 
-  // optional string locale = 19 [json_name = "locale"];
+  // optional string locale = 18 [json_name = "locale"];
   if (_internal_has_locale()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_locale().data(), static_cast<int>(this->_internal_locale().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "user.v1.User.locale");
     target = stream->WriteStringMaybeAliased(
-        19, this->_internal_locale(), target);
+        18, this->_internal_locale(), target);
   }
 
-  // optional bool mfa_active = 20 [json_name = "mfaActive"];
+  // optional bool mfa_active = 19 [json_name = "mfaActive"];
   if (_internal_has_mfa_active()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(20, this->_internal_mfa_active(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(19, this->_internal_mfa_active(), target);
   }
 
-  // optional string mfa_secret = 21 [json_name = "mfaSecret"];
+  // optional string mfa_secret = 20 [json_name = "mfaSecret"];
   if (_internal_has_mfa_secret()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_mfa_secret().data(), static_cast<int>(this->_internal_mfa_secret().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
       "user.v1.User.mfa_secret");
     target = stream->WriteStringMaybeAliased(
-        21, this->_internal_mfa_secret(), target);
+        20, this->_internal_mfa_secret(), target);
   }
 
-  // optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];
+  // optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];
   if (_internal_has_last_activity_at()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(22, this->_internal_last_activity_at(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(21, this->_internal_last_activity_at(), target);
   }
 
-  // optional int64 last_login = 23 [json_name = "lastLogin"];
+  // optional int64 last_login = 22 [json_name = "lastLogin"];
   if (_internal_has_last_login()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(23, this->_internal_last_login(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(22, this->_internal_last_login(), target);
   }
 
-  // optional int64 created_at = 24 [json_name = "createdAt"];
+  // optional int64 created_at = 23 [json_name = "createdAt"];
   if (_internal_has_created_at()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(24, this->_internal_created_at(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(23, this->_internal_created_at(), target);
   }
 
-  // optional int64 updated_at = 25 [json_name = "updatedAt"];
+  // optional int64 updated_at = 24 [json_name = "updatedAt"];
   if (_internal_has_updated_at()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(25, this->_internal_updated_at(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(24, this->_internal_updated_at(), target);
   }
 
-  // optional int64 deleted_at = 26 [json_name = "deletedAt"];
+  // optional int64 deleted_at = 25 [json_name = "deletedAt"];
   if (_internal_has_deleted_at()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(26, this->_internal_deleted_at(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt64ToArray(25, this->_internal_deleted_at(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1254,7 +1211,7 @@ size_t User::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // map<string, string> props = 14 [json_name = "props"];
+  // map<string, string> props = 13 [json_name = "props"];
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_props_size());
   for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
@@ -1263,7 +1220,7 @@ size_t User::ByteSizeLong() const {
     total_size += User_PropsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
   }
 
-  // map<string, string> notify_props = 15 [json_name = "notifyProps"];
+  // map<string, string> notify_props = 14 [json_name = "notifyProps"];
   total_size += 1 *
       ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_notify_props_size());
   for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
@@ -1295,148 +1252,139 @@ size_t User::ByteSizeLong() const {
           this->_internal_first_name());
     }
 
-    // optional string nickname = 4 [json_name = "nickname"];
+    // optional string last_name = 4 [json_name = "lastName"];
     if (cached_has_bits & 0x00000008u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_nickname());
-    }
-
-    // optional string last_name = 5 [json_name = "lastName"];
-    if (cached_has_bits & 0x00000010u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
           this->_internal_last_name());
     }
 
-    // optional string email = 6 [json_name = "email"];
-    if (cached_has_bits & 0x00000020u) {
+    // optional string email = 5 [json_name = "email"];
+    if (cached_has_bits & 0x00000010u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
           this->_internal_email());
     }
 
-    // optional string user_type = 7 [json_name = "userType"];
-    if (cached_has_bits & 0x00000040u) {
+    // optional string user_type = 6 [json_name = "userType"];
+    if (cached_has_bits & 0x00000020u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
           this->_internal_user_type());
     }
 
-    // optional string membership = 8 [json_name = "membership"];
-    if (cached_has_bits & 0x00000080u) {
+    // optional string membership = 7 [json_name = "membership"];
+    if (cached_has_bits & 0x00000040u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
           this->_internal_membership());
     }
 
-  }
-  if (cached_has_bits & 0x0000ff00u) {
-    // optional string password = 10 [json_name = "password"];
-    if (cached_has_bits & 0x00000100u) {
+    // optional string password = 9 [json_name = "password"];
+    if (cached_has_bits & 0x00000080u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
           this->_internal_password());
     }
 
-    // optional string auth_data = 11 [json_name = "authData"];
-    if (cached_has_bits & 0x00000200u) {
+  }
+  if (cached_has_bits & 0x0000ff00u) {
+    // optional string auth_data = 10 [json_name = "authData"];
+    if (cached_has_bits & 0x00000100u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
           this->_internal_auth_data());
     }
 
-    // optional string auth_service = 12 [json_name = "authService"];
-    if (cached_has_bits & 0x00000400u) {
+    // optional string auth_service = 11 [json_name = "authService"];
+    if (cached_has_bits & 0x00000200u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
           this->_internal_auth_service());
     }
 
-    // optional string roles = 13 [json_name = "roles"];
-    if (cached_has_bits & 0x00000800u) {
+    // optional string roles = 12 [json_name = "roles"];
+    if (cached_has_bits & 0x00000400u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
           this->_internal_roles());
     }
 
-    // optional string locale = 19 [json_name = "locale"];
-    if (cached_has_bits & 0x00001000u) {
+    // optional string locale = 18 [json_name = "locale"];
+    if (cached_has_bits & 0x00000800u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
           this->_internal_locale());
     }
 
-    // optional string mfa_secret = 21 [json_name = "mfaSecret"];
-    if (cached_has_bits & 0x00002000u) {
+    // optional string mfa_secret = 20 [json_name = "mfaSecret"];
+    if (cached_has_bits & 0x00001000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
           this->_internal_mfa_secret());
     }
 
-    // optional bool is_email_verified = 9 [json_name = "isEmailVerified"];
-    if (cached_has_bits & 0x00004000u) {
+    // optional bool is_email_verified = 8 [json_name = "isEmailVerified"];
+    if (cached_has_bits & 0x00002000u) {
       total_size += 1 + 1;
     }
 
-    // optional bool mfa_active = 20 [json_name = "mfaActive"];
-    if (cached_has_bits & 0x00008000u) {
+    // optional bool mfa_active = 19 [json_name = "mfaActive"];
+    if (cached_has_bits & 0x00004000u) {
       total_size += 2 + 1;
     }
 
-  }
-  if (cached_has_bits & 0x00ff0000u) {
-    // optional int32 failed_attempts = 18 [json_name = "failedAttempts"];
-    if (cached_has_bits & 0x00010000u) {
+    // optional int32 failed_attempts = 17 [json_name = "failedAttempts"];
+    if (cached_has_bits & 0x00008000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
           this->_internal_failed_attempts());
     }
 
-    // optional int64 last_password_update = 16 [json_name = "lastPasswordUpdate"];
-    if (cached_has_bits & 0x00020000u) {
-      total_size += 2 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
-          this->_internal_last_password_update());
+  }
+  if (cached_has_bits & 0x007f0000u) {
+    // optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];
+    if (cached_has_bits & 0x00010000u) {
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64SizePlusOne(this->_internal_last_password_update());
     }
 
-    // optional int64 last_picture_update = 17 [json_name = "lastPictureUpdate"];
-    if (cached_has_bits & 0x00040000u) {
+    // optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];
+    if (cached_has_bits & 0x00020000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
           this->_internal_last_picture_update());
     }
 
-    // optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];
-    if (cached_has_bits & 0x00080000u) {
+    // optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];
+    if (cached_has_bits & 0x00040000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
           this->_internal_last_activity_at());
     }
 
-    // optional int64 last_login = 23 [json_name = "lastLogin"];
-    if (cached_has_bits & 0x00100000u) {
+    // optional int64 last_login = 22 [json_name = "lastLogin"];
+    if (cached_has_bits & 0x00080000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
           this->_internal_last_login());
     }
 
-    // optional int64 created_at = 24 [json_name = "createdAt"];
-    if (cached_has_bits & 0x00200000u) {
+    // optional int64 created_at = 23 [json_name = "createdAt"];
+    if (cached_has_bits & 0x00100000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
           this->_internal_created_at());
     }
 
-    // optional int64 updated_at = 25 [json_name = "updatedAt"];
-    if (cached_has_bits & 0x00400000u) {
+    // optional int64 updated_at = 24 [json_name = "updatedAt"];
+    if (cached_has_bits & 0x00200000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
           this->_internal_updated_at());
     }
 
-    // optional int64 deleted_at = 26 [json_name = "deletedAt"];
-    if (cached_has_bits & 0x00800000u) {
+    // optional int64 deleted_at = 25 [json_name = "deletedAt"];
+    if (cached_has_bits & 0x00400000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int64Size(
           this->_internal_deleted_at());
@@ -1479,71 +1427,68 @@ void User::MergeFrom(const User& from) {
       _internal_set_first_name(from._internal_first_name());
     }
     if (cached_has_bits & 0x00000008u) {
-      _internal_set_nickname(from._internal_nickname());
-    }
-    if (cached_has_bits & 0x00000010u) {
       _internal_set_last_name(from._internal_last_name());
     }
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00000010u) {
       _internal_set_email(from._internal_email());
     }
-    if (cached_has_bits & 0x00000040u) {
+    if (cached_has_bits & 0x00000020u) {
       _internal_set_user_type(from._internal_user_type());
     }
-    if (cached_has_bits & 0x00000080u) {
+    if (cached_has_bits & 0x00000040u) {
       _internal_set_membership(from._internal_membership());
+    }
+    if (cached_has_bits & 0x00000080u) {
+      _internal_set_password(from._internal_password());
     }
   }
   if (cached_has_bits & 0x0000ff00u) {
     if (cached_has_bits & 0x00000100u) {
-      _internal_set_password(from._internal_password());
-    }
-    if (cached_has_bits & 0x00000200u) {
       _internal_set_auth_data(from._internal_auth_data());
     }
-    if (cached_has_bits & 0x00000400u) {
+    if (cached_has_bits & 0x00000200u) {
       _internal_set_auth_service(from._internal_auth_service());
     }
-    if (cached_has_bits & 0x00000800u) {
+    if (cached_has_bits & 0x00000400u) {
       _internal_set_roles(from._internal_roles());
     }
-    if (cached_has_bits & 0x00001000u) {
+    if (cached_has_bits & 0x00000800u) {
       _internal_set_locale(from._internal_locale());
     }
-    if (cached_has_bits & 0x00002000u) {
+    if (cached_has_bits & 0x00001000u) {
       _internal_set_mfa_secret(from._internal_mfa_secret());
     }
-    if (cached_has_bits & 0x00004000u) {
+    if (cached_has_bits & 0x00002000u) {
       is_email_verified_ = from.is_email_verified_;
     }
-    if (cached_has_bits & 0x00008000u) {
+    if (cached_has_bits & 0x00004000u) {
       mfa_active_ = from.mfa_active_;
+    }
+    if (cached_has_bits & 0x00008000u) {
+      failed_attempts_ = from.failed_attempts_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  if (cached_has_bits & 0x00ff0000u) {
+  if (cached_has_bits & 0x007f0000u) {
     if (cached_has_bits & 0x00010000u) {
-      failed_attempts_ = from.failed_attempts_;
-    }
-    if (cached_has_bits & 0x00020000u) {
       last_password_update_ = from.last_password_update_;
     }
-    if (cached_has_bits & 0x00040000u) {
+    if (cached_has_bits & 0x00020000u) {
       last_picture_update_ = from.last_picture_update_;
     }
-    if (cached_has_bits & 0x00080000u) {
+    if (cached_has_bits & 0x00040000u) {
       last_activity_at_ = from.last_activity_at_;
     }
-    if (cached_has_bits & 0x00100000u) {
+    if (cached_has_bits & 0x00080000u) {
       last_login_ = from.last_login_;
     }
-    if (cached_has_bits & 0x00200000u) {
+    if (cached_has_bits & 0x00100000u) {
       created_at_ = from.created_at_;
     }
-    if (cached_has_bits & 0x00400000u) {
+    if (cached_has_bits & 0x00200000u) {
       updated_at_ = from.updated_at_;
     }
-    if (cached_has_bits & 0x00800000u) {
+    if (cached_has_bits & 0x00400000u) {
       deleted_at_ = from.deleted_at_;
     }
     _has_bits_[0] |= cached_has_bits;
@@ -1584,11 +1529,6 @@ void User::InternalSwap(User* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &first_name_, lhs_arena,
       &other->first_name_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &nickname_, lhs_arena,
-      &other->nickname_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),

@@ -80,29 +80,28 @@ proto.user.v1.User.toObject = function(includeInstance, msg) {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     username: jspb.Message.getFieldWithDefault(msg, 2, ""),
     firstName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    nickname: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    lastName: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    email: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    userType: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    membership: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    isEmailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
-    password: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    authData: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    authService: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    roles: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    lastName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    email: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    userType: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    membership: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    isEmailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+    password: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    authData: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    authService: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    roles: jspb.Message.getFieldWithDefault(msg, 12, ""),
     propsMap: (f = msg.getPropsMap()) ? f.toObject(includeInstance, undefined) : [],
     notifyPropsMap: (f = msg.getNotifyPropsMap()) ? f.toObject(includeInstance, undefined) : [],
-    lastPasswordUpdate: jspb.Message.getFieldWithDefault(msg, 16, 0),
-    lastPictureUpdate: jspb.Message.getFieldWithDefault(msg, 17, 0),
-    failedAttempts: jspb.Message.getFieldWithDefault(msg, 18, 0),
-    locale: jspb.Message.getFieldWithDefault(msg, 19, ""),
-    mfaActive: jspb.Message.getBooleanFieldWithDefault(msg, 20, false),
-    mfaSecret: jspb.Message.getFieldWithDefault(msg, 21, ""),
-    lastActivityAt: jspb.Message.getFieldWithDefault(msg, 22, 0),
-    lastLogin: jspb.Message.getFieldWithDefault(msg, 23, 0),
-    createdAt: jspb.Message.getFieldWithDefault(msg, 24, 0),
-    updatedAt: jspb.Message.getFieldWithDefault(msg, 25, 0),
-    deletedAt: jspb.Message.getFieldWithDefault(msg, 26, 0)
+    lastPasswordUpdate: jspb.Message.getFieldWithDefault(msg, 15, 0),
+    lastPictureUpdate: jspb.Message.getFieldWithDefault(msg, 16, 0),
+    failedAttempts: jspb.Message.getFieldWithDefault(msg, 17, 0),
+    locale: jspb.Message.getFieldWithDefault(msg, 18, ""),
+    mfaActive: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
+    mfaSecret: jspb.Message.getFieldWithDefault(msg, 20, ""),
+    lastActivityAt: jspb.Message.getFieldWithDefault(msg, 21, 0),
+    lastLogin: jspb.Message.getFieldWithDefault(msg, 22, 0),
+    createdAt: jspb.Message.getFieldWithDefault(msg, 23, 0),
+    updatedAt: jspb.Message.getFieldWithDefault(msg, 24, 0),
+    deletedAt: jspb.Message.getFieldWithDefault(msg, 25, 0)
   };
 
   if (includeInstance) {
@@ -153,97 +152,93 @@ proto.user.v1.User.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setNickname(value);
+      msg.setLastName(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setLastName(value);
+      msg.setEmail(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setEmail(value);
+      msg.setUserType(value);
       break;
     case 7:
       var value = /** @type {string} */ (reader.readString());
-      msg.setUserType(value);
-      break;
-    case 8:
-      var value = /** @type {string} */ (reader.readString());
       msg.setMembership(value);
       break;
-    case 9:
+    case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setIsEmailVerified(value);
       break;
-    case 10:
+    case 9:
       var value = /** @type {string} */ (reader.readString());
       msg.setPassword(value);
       break;
-    case 11:
+    case 10:
       var value = /** @type {string} */ (reader.readString());
       msg.setAuthData(value);
       break;
-    case 12:
+    case 11:
       var value = /** @type {string} */ (reader.readString());
       msg.setAuthService(value);
       break;
-    case 13:
+    case 12:
       var value = /** @type {string} */ (reader.readString());
       msg.setRoles(value);
       break;
-    case 14:
+    case 13:
       var value = msg.getPropsMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
-    case 15:
+    case 14:
       var value = msg.getNotifyPropsMap();
       reader.readMessage(value, function(message, reader) {
         jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readString, null, "", "");
          });
       break;
-    case 16:
+    case 15:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setLastPasswordUpdate(value);
       break;
-    case 17:
+    case 16:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setLastPictureUpdate(value);
       break;
-    case 18:
+    case 17:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setFailedAttempts(value);
       break;
-    case 19:
+    case 18:
       var value = /** @type {string} */ (reader.readString());
       msg.setLocale(value);
       break;
-    case 20:
+    case 19:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setMfaActive(value);
       break;
-    case 21:
+    case 20:
       var value = /** @type {string} */ (reader.readString());
       msg.setMfaSecret(value);
       break;
-    case 22:
+    case 21:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setLastActivityAt(value);
       break;
-    case 23:
+    case 22:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setLastLogin(value);
       break;
-    case 24:
+    case 23:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setCreatedAt(value);
       break;
-    case 25:
+    case 24:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setUpdatedAt(value);
       break;
-    case 26:
+    case 25:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setDeletedAt(value);
       break;
@@ -325,16 +320,16 @@ proto.user.v1.User.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 8));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 8));
   if (f != null) {
-    writer.writeString(
+    writer.writeBool(
       8,
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 9));
+  f = /** @type {string} */ (jspb.Message.getField(message, 9));
   if (f != null) {
-    writer.writeBool(
+    writer.writeString(
       9,
       f
     );
@@ -360,20 +355,20 @@ proto.user.v1.User.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 13));
-  if (f != null) {
-    writer.writeString(
-      13,
-      f
-    );
-  }
   f = message.getPropsMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(14, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(13, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
   }
   f = message.getNotifyPropsMap(true);
   if (f && f.getLength() > 0) {
-    f.serializeBinary(15, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+    f.serializeBinary(14, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeString);
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 15));
+  if (f != null) {
+    writer.writeInt64(
+      15,
+      f
+    );
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 16));
   if (f != null) {
@@ -384,35 +379,35 @@ proto.user.v1.User.serializeBinaryToWriter = function(message, writer) {
   }
   f = /** @type {number} */ (jspb.Message.getField(message, 17));
   if (f != null) {
-    writer.writeInt64(
+    writer.writeInt32(
       17,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 18));
+  f = /** @type {string} */ (jspb.Message.getField(message, 18));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       18,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 19));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 19));
   if (f != null) {
-    writer.writeString(
+    writer.writeBool(
       19,
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 20));
+  f = /** @type {string} */ (jspb.Message.getField(message, 20));
   if (f != null) {
-    writer.writeBool(
+    writer.writeString(
       20,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 21));
+  f = /** @type {number} */ (jspb.Message.getField(message, 21));
   if (f != null) {
-    writer.writeString(
+    writer.writeInt64(
       21,
       f
     );
@@ -442,13 +437,6 @@ proto.user.v1.User.serializeBinaryToWriter = function(message, writer) {
   if (f != null) {
     writer.writeInt64(
       25,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 26));
-  if (f != null) {
-    writer.writeInt64(
-      26,
       f
     );
   }
@@ -564,10 +552,10 @@ proto.user.v1.User.prototype.hasFirstName = function() {
 
 
 /**
- * optional string nickname = 4;
+ * optional string last_name = 4;
  * @return {string}
  */
-proto.user.v1.User.prototype.getNickname = function() {
+proto.user.v1.User.prototype.getLastName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -576,7 +564,7 @@ proto.user.v1.User.prototype.getNickname = function() {
  * @param {string} value
  * @return {!proto.user.v1.User} returns this
  */
-proto.user.v1.User.prototype.setNickname = function(value) {
+proto.user.v1.User.prototype.setLastName = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -585,7 +573,7 @@ proto.user.v1.User.prototype.setNickname = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.user.v1.User} returns this
  */
-proto.user.v1.User.prototype.clearNickname = function() {
+proto.user.v1.User.prototype.clearLastName = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -594,16 +582,16 @@ proto.user.v1.User.prototype.clearNickname = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.user.v1.User.prototype.hasNickname = function() {
+proto.user.v1.User.prototype.hasLastName = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string last_name = 5;
+ * optional string email = 5;
  * @return {string}
  */
-proto.user.v1.User.prototype.getLastName = function() {
+proto.user.v1.User.prototype.getEmail = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -612,7 +600,7 @@ proto.user.v1.User.prototype.getLastName = function() {
  * @param {string} value
  * @return {!proto.user.v1.User} returns this
  */
-proto.user.v1.User.prototype.setLastName = function(value) {
+proto.user.v1.User.prototype.setEmail = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -621,7 +609,7 @@ proto.user.v1.User.prototype.setLastName = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.user.v1.User} returns this
  */
-proto.user.v1.User.prototype.clearLastName = function() {
+proto.user.v1.User.prototype.clearEmail = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -630,16 +618,16 @@ proto.user.v1.User.prototype.clearLastName = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.user.v1.User.prototype.hasLastName = function() {
+proto.user.v1.User.prototype.hasEmail = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional string email = 6;
+ * optional string user_type = 6;
  * @return {string}
  */
-proto.user.v1.User.prototype.getEmail = function() {
+proto.user.v1.User.prototype.getUserType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -648,7 +636,7 @@ proto.user.v1.User.prototype.getEmail = function() {
  * @param {string} value
  * @return {!proto.user.v1.User} returns this
  */
-proto.user.v1.User.prototype.setEmail = function(value) {
+proto.user.v1.User.prototype.setUserType = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -657,7 +645,7 @@ proto.user.v1.User.prototype.setEmail = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.user.v1.User} returns this
  */
-proto.user.v1.User.prototype.clearEmail = function() {
+proto.user.v1.User.prototype.clearUserType = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -666,16 +654,16 @@ proto.user.v1.User.prototype.clearEmail = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.user.v1.User.prototype.hasEmail = function() {
+proto.user.v1.User.prototype.hasUserType = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional string user_type = 7;
+ * optional string membership = 7;
  * @return {string}
  */
-proto.user.v1.User.prototype.getUserType = function() {
+proto.user.v1.User.prototype.getMembership = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
@@ -684,7 +672,7 @@ proto.user.v1.User.prototype.getUserType = function() {
  * @param {string} value
  * @return {!proto.user.v1.User} returns this
  */
-proto.user.v1.User.prototype.setUserType = function(value) {
+proto.user.v1.User.prototype.setMembership = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -693,7 +681,7 @@ proto.user.v1.User.prototype.setUserType = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.user.v1.User} returns this
  */
-proto.user.v1.User.prototype.clearUserType = function() {
+proto.user.v1.User.prototype.clearMembership = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -702,53 +690,17 @@ proto.user.v1.User.prototype.clearUserType = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.user.v1.User.prototype.hasUserType = function() {
+proto.user.v1.User.prototype.hasMembership = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional string membership = 8;
- * @return {string}
- */
-proto.user.v1.User.prototype.getMembership = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.user.v1.User} returns this
- */
-proto.user.v1.User.prototype.setMembership = function(value) {
-  return jspb.Message.setField(this, 8, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.user.v1.User} returns this
- */
-proto.user.v1.User.prototype.clearMembership = function() {
-  return jspb.Message.setField(this, 8, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.user.v1.User.prototype.hasMembership = function() {
-  return jspb.Message.getField(this, 8) != null;
-};
-
-
-/**
- * optional bool is_email_verified = 9;
+ * optional bool is_email_verified = 8;
  * @return {boolean}
  */
 proto.user.v1.User.prototype.getIsEmailVerified = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
 };
 
 
@@ -757,7 +709,7 @@ proto.user.v1.User.prototype.getIsEmailVerified = function() {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.setIsEmailVerified = function(value) {
-  return jspb.Message.setField(this, 9, value);
+  return jspb.Message.setField(this, 8, value);
 };
 
 
@@ -766,7 +718,7 @@ proto.user.v1.User.prototype.setIsEmailVerified = function(value) {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.clearIsEmailVerified = function() {
-  return jspb.Message.setField(this, 9, undefined);
+  return jspb.Message.setField(this, 8, undefined);
 };
 
 
@@ -775,16 +727,16 @@ proto.user.v1.User.prototype.clearIsEmailVerified = function() {
  * @return {boolean}
  */
 proto.user.v1.User.prototype.hasIsEmailVerified = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional string password = 10;
+ * optional string password = 9;
  * @return {string}
  */
 proto.user.v1.User.prototype.getPassword = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
@@ -793,7 +745,7 @@ proto.user.v1.User.prototype.getPassword = function() {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.setPassword = function(value) {
-  return jspb.Message.setField(this, 10, value);
+  return jspb.Message.setField(this, 9, value);
 };
 
 
@@ -802,7 +754,7 @@ proto.user.v1.User.prototype.setPassword = function(value) {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.clearPassword = function() {
-  return jspb.Message.setField(this, 10, undefined);
+  return jspb.Message.setField(this, 9, undefined);
 };
 
 
@@ -811,16 +763,16 @@ proto.user.v1.User.prototype.clearPassword = function() {
  * @return {boolean}
  */
 proto.user.v1.User.prototype.hasPassword = function() {
-  return jspb.Message.getField(this, 10) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional string auth_data = 11;
+ * optional string auth_data = 10;
  * @return {string}
  */
 proto.user.v1.User.prototype.getAuthData = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
@@ -829,7 +781,7 @@ proto.user.v1.User.prototype.getAuthData = function() {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.setAuthData = function(value) {
-  return jspb.Message.setField(this, 11, value);
+  return jspb.Message.setField(this, 10, value);
 };
 
 
@@ -838,7 +790,7 @@ proto.user.v1.User.prototype.setAuthData = function(value) {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.clearAuthData = function() {
-  return jspb.Message.setField(this, 11, undefined);
+  return jspb.Message.setField(this, 10, undefined);
 };
 
 
@@ -847,16 +799,16 @@ proto.user.v1.User.prototype.clearAuthData = function() {
  * @return {boolean}
  */
 proto.user.v1.User.prototype.hasAuthData = function() {
-  return jspb.Message.getField(this, 11) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional string auth_service = 12;
+ * optional string auth_service = 11;
  * @return {string}
  */
 proto.user.v1.User.prototype.getAuthService = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
@@ -865,7 +817,7 @@ proto.user.v1.User.prototype.getAuthService = function() {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.setAuthService = function(value) {
-  return jspb.Message.setField(this, 12, value);
+  return jspb.Message.setField(this, 11, value);
 };
 
 
@@ -874,7 +826,7 @@ proto.user.v1.User.prototype.setAuthService = function(value) {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.clearAuthService = function() {
-  return jspb.Message.setField(this, 12, undefined);
+  return jspb.Message.setField(this, 11, undefined);
 };
 
 
@@ -883,16 +835,16 @@ proto.user.v1.User.prototype.clearAuthService = function() {
  * @return {boolean}
  */
 proto.user.v1.User.prototype.hasAuthService = function() {
-  return jspb.Message.getField(this, 12) != null;
+  return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * optional string roles = 13;
+ * optional string roles = 12;
  * @return {string}
  */
 proto.user.v1.User.prototype.getRoles = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
 };
 
 
@@ -901,7 +853,7 @@ proto.user.v1.User.prototype.getRoles = function() {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.setRoles = function(value) {
-  return jspb.Message.setField(this, 13, value);
+  return jspb.Message.setField(this, 12, value);
 };
 
 
@@ -910,7 +862,7 @@ proto.user.v1.User.prototype.setRoles = function(value) {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.clearRoles = function() {
-  return jspb.Message.setField(this, 13, undefined);
+  return jspb.Message.setField(this, 12, undefined);
 };
 
 
@@ -919,19 +871,19 @@ proto.user.v1.User.prototype.clearRoles = function() {
  * @return {boolean}
  */
 proto.user.v1.User.prototype.hasRoles = function() {
-  return jspb.Message.getField(this, 13) != null;
+  return jspb.Message.getField(this, 12) != null;
 };
 
 
 /**
- * map<string, string> props = 14;
+ * map<string, string> props = 13;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.user.v1.User.prototype.getPropsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 14, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 13, opt_noLazyCreate,
       null));
 };
 
@@ -946,14 +898,14 @@ proto.user.v1.User.prototype.clearPropsMap = function() {
 
 
 /**
- * map<string, string> notify_props = 15;
+ * map<string, string> notify_props = 14;
  * @param {boolean=} opt_noLazyCreate Do not create the map if
  * empty, instead returning `undefined`
  * @return {!jspb.Map<string,string>}
  */
 proto.user.v1.User.prototype.getNotifyPropsMap = function(opt_noLazyCreate) {
   return /** @type {!jspb.Map<string,string>} */ (
-      jspb.Message.getMapField(this, 15, opt_noLazyCreate,
+      jspb.Message.getMapField(this, 14, opt_noLazyCreate,
       null));
 };
 
@@ -968,11 +920,11 @@ proto.user.v1.User.prototype.clearNotifyPropsMap = function() {
 
 
 /**
- * optional int64 last_password_update = 16;
+ * optional int64 last_password_update = 15;
  * @return {number}
  */
 proto.user.v1.User.prototype.getLastPasswordUpdate = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 15, 0));
 };
 
 
@@ -981,7 +933,7 @@ proto.user.v1.User.prototype.getLastPasswordUpdate = function() {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.setLastPasswordUpdate = function(value) {
-  return jspb.Message.setField(this, 16, value);
+  return jspb.Message.setField(this, 15, value);
 };
 
 
@@ -990,7 +942,7 @@ proto.user.v1.User.prototype.setLastPasswordUpdate = function(value) {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.clearLastPasswordUpdate = function() {
-  return jspb.Message.setField(this, 16, undefined);
+  return jspb.Message.setField(this, 15, undefined);
 };
 
 
@@ -999,16 +951,16 @@ proto.user.v1.User.prototype.clearLastPasswordUpdate = function() {
  * @return {boolean}
  */
 proto.user.v1.User.prototype.hasLastPasswordUpdate = function() {
-  return jspb.Message.getField(this, 16) != null;
+  return jspb.Message.getField(this, 15) != null;
 };
 
 
 /**
- * optional int64 last_picture_update = 17;
+ * optional int64 last_picture_update = 16;
  * @return {number}
  */
 proto.user.v1.User.prototype.getLastPictureUpdate = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 17, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 16, 0));
 };
 
 
@@ -1017,7 +969,7 @@ proto.user.v1.User.prototype.getLastPictureUpdate = function() {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.setLastPictureUpdate = function(value) {
-  return jspb.Message.setField(this, 17, value);
+  return jspb.Message.setField(this, 16, value);
 };
 
 
@@ -1026,7 +978,7 @@ proto.user.v1.User.prototype.setLastPictureUpdate = function(value) {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.clearLastPictureUpdate = function() {
-  return jspb.Message.setField(this, 17, undefined);
+  return jspb.Message.setField(this, 16, undefined);
 };
 
 
@@ -1035,16 +987,16 @@ proto.user.v1.User.prototype.clearLastPictureUpdate = function() {
  * @return {boolean}
  */
 proto.user.v1.User.prototype.hasLastPictureUpdate = function() {
-  return jspb.Message.getField(this, 17) != null;
+  return jspb.Message.getField(this, 16) != null;
 };
 
 
 /**
- * optional int32 failed_attempts = 18;
+ * optional int32 failed_attempts = 17;
  * @return {number}
  */
 proto.user.v1.User.prototype.getFailedAttempts = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 18, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 17, 0));
 };
 
 
@@ -1053,7 +1005,7 @@ proto.user.v1.User.prototype.getFailedAttempts = function() {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.setFailedAttempts = function(value) {
-  return jspb.Message.setField(this, 18, value);
+  return jspb.Message.setField(this, 17, value);
 };
 
 
@@ -1062,7 +1014,7 @@ proto.user.v1.User.prototype.setFailedAttempts = function(value) {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.clearFailedAttempts = function() {
-  return jspb.Message.setField(this, 18, undefined);
+  return jspb.Message.setField(this, 17, undefined);
 };
 
 
@@ -1071,16 +1023,16 @@ proto.user.v1.User.prototype.clearFailedAttempts = function() {
  * @return {boolean}
  */
 proto.user.v1.User.prototype.hasFailedAttempts = function() {
-  return jspb.Message.getField(this, 18) != null;
+  return jspb.Message.getField(this, 17) != null;
 };
 
 
 /**
- * optional string locale = 19;
+ * optional string locale = 18;
  * @return {string}
  */
 proto.user.v1.User.prototype.getLocale = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
 };
 
 
@@ -1089,7 +1041,7 @@ proto.user.v1.User.prototype.getLocale = function() {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.setLocale = function(value) {
-  return jspb.Message.setField(this, 19, value);
+  return jspb.Message.setField(this, 18, value);
 };
 
 
@@ -1098,7 +1050,7 @@ proto.user.v1.User.prototype.setLocale = function(value) {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.clearLocale = function() {
-  return jspb.Message.setField(this, 19, undefined);
+  return jspb.Message.setField(this, 18, undefined);
 };
 
 
@@ -1107,16 +1059,16 @@ proto.user.v1.User.prototype.clearLocale = function() {
  * @return {boolean}
  */
 proto.user.v1.User.prototype.hasLocale = function() {
-  return jspb.Message.getField(this, 19) != null;
+  return jspb.Message.getField(this, 18) != null;
 };
 
 
 /**
- * optional bool mfa_active = 20;
+ * optional bool mfa_active = 19;
  * @return {boolean}
  */
 proto.user.v1.User.prototype.getMfaActive = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 20, false));
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 19, false));
 };
 
 
@@ -1125,7 +1077,7 @@ proto.user.v1.User.prototype.getMfaActive = function() {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.setMfaActive = function(value) {
-  return jspb.Message.setField(this, 20, value);
+  return jspb.Message.setField(this, 19, value);
 };
 
 
@@ -1134,7 +1086,7 @@ proto.user.v1.User.prototype.setMfaActive = function(value) {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.clearMfaActive = function() {
-  return jspb.Message.setField(this, 20, undefined);
+  return jspb.Message.setField(this, 19, undefined);
 };
 
 
@@ -1143,16 +1095,16 @@ proto.user.v1.User.prototype.clearMfaActive = function() {
  * @return {boolean}
  */
 proto.user.v1.User.prototype.hasMfaActive = function() {
-  return jspb.Message.getField(this, 20) != null;
+  return jspb.Message.getField(this, 19) != null;
 };
 
 
 /**
- * optional string mfa_secret = 21;
+ * optional string mfa_secret = 20;
  * @return {string}
  */
 proto.user.v1.User.prototype.getMfaSecret = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 20, ""));
 };
 
 
@@ -1161,7 +1113,7 @@ proto.user.v1.User.prototype.getMfaSecret = function() {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.setMfaSecret = function(value) {
-  return jspb.Message.setField(this, 21, value);
+  return jspb.Message.setField(this, 20, value);
 };
 
 
@@ -1170,7 +1122,7 @@ proto.user.v1.User.prototype.setMfaSecret = function(value) {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.clearMfaSecret = function() {
-  return jspb.Message.setField(this, 21, undefined);
+  return jspb.Message.setField(this, 20, undefined);
 };
 
 
@@ -1179,16 +1131,16 @@ proto.user.v1.User.prototype.clearMfaSecret = function() {
  * @return {boolean}
  */
 proto.user.v1.User.prototype.hasMfaSecret = function() {
-  return jspb.Message.getField(this, 21) != null;
+  return jspb.Message.getField(this, 20) != null;
 };
 
 
 /**
- * optional int64 last_activity_at = 22;
+ * optional int64 last_activity_at = 21;
  * @return {number}
  */
 proto.user.v1.User.prototype.getLastActivityAt = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 22, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 21, 0));
 };
 
 
@@ -1197,7 +1149,7 @@ proto.user.v1.User.prototype.getLastActivityAt = function() {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.setLastActivityAt = function(value) {
-  return jspb.Message.setField(this, 22, value);
+  return jspb.Message.setField(this, 21, value);
 };
 
 
@@ -1206,7 +1158,7 @@ proto.user.v1.User.prototype.setLastActivityAt = function(value) {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.clearLastActivityAt = function() {
-  return jspb.Message.setField(this, 22, undefined);
+  return jspb.Message.setField(this, 21, undefined);
 };
 
 
@@ -1215,16 +1167,16 @@ proto.user.v1.User.prototype.clearLastActivityAt = function() {
  * @return {boolean}
  */
 proto.user.v1.User.prototype.hasLastActivityAt = function() {
-  return jspb.Message.getField(this, 22) != null;
+  return jspb.Message.getField(this, 21) != null;
 };
 
 
 /**
- * optional int64 last_login = 23;
+ * optional int64 last_login = 22;
  * @return {number}
  */
 proto.user.v1.User.prototype.getLastLogin = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 23, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 22, 0));
 };
 
 
@@ -1233,7 +1185,7 @@ proto.user.v1.User.prototype.getLastLogin = function() {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.setLastLogin = function(value) {
-  return jspb.Message.setField(this, 23, value);
+  return jspb.Message.setField(this, 22, value);
 };
 
 
@@ -1242,7 +1194,7 @@ proto.user.v1.User.prototype.setLastLogin = function(value) {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.clearLastLogin = function() {
-  return jspb.Message.setField(this, 23, undefined);
+  return jspb.Message.setField(this, 22, undefined);
 };
 
 
@@ -1251,16 +1203,16 @@ proto.user.v1.User.prototype.clearLastLogin = function() {
  * @return {boolean}
  */
 proto.user.v1.User.prototype.hasLastLogin = function() {
-  return jspb.Message.getField(this, 23) != null;
+  return jspb.Message.getField(this, 22) != null;
 };
 
 
 /**
- * optional int64 created_at = 24;
+ * optional int64 created_at = 23;
  * @return {number}
  */
 proto.user.v1.User.prototype.getCreatedAt = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 24, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 23, 0));
 };
 
 
@@ -1269,7 +1221,7 @@ proto.user.v1.User.prototype.getCreatedAt = function() {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.setCreatedAt = function(value) {
-  return jspb.Message.setField(this, 24, value);
+  return jspb.Message.setField(this, 23, value);
 };
 
 
@@ -1278,7 +1230,7 @@ proto.user.v1.User.prototype.setCreatedAt = function(value) {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.clearCreatedAt = function() {
-  return jspb.Message.setField(this, 24, undefined);
+  return jspb.Message.setField(this, 23, undefined);
 };
 
 
@@ -1287,16 +1239,16 @@ proto.user.v1.User.prototype.clearCreatedAt = function() {
  * @return {boolean}
  */
 proto.user.v1.User.prototype.hasCreatedAt = function() {
-  return jspb.Message.getField(this, 24) != null;
+  return jspb.Message.getField(this, 23) != null;
 };
 
 
 /**
- * optional int64 updated_at = 25;
+ * optional int64 updated_at = 24;
  * @return {number}
  */
 proto.user.v1.User.prototype.getUpdatedAt = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 25, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 24, 0));
 };
 
 
@@ -1305,7 +1257,7 @@ proto.user.v1.User.prototype.getUpdatedAt = function() {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.setUpdatedAt = function(value) {
-  return jspb.Message.setField(this, 25, value);
+  return jspb.Message.setField(this, 24, value);
 };
 
 
@@ -1314,7 +1266,7 @@ proto.user.v1.User.prototype.setUpdatedAt = function(value) {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.clearUpdatedAt = function() {
-  return jspb.Message.setField(this, 25, undefined);
+  return jspb.Message.setField(this, 24, undefined);
 };
 
 
@@ -1323,16 +1275,16 @@ proto.user.v1.User.prototype.clearUpdatedAt = function() {
  * @return {boolean}
  */
 proto.user.v1.User.prototype.hasUpdatedAt = function() {
-  return jspb.Message.getField(this, 25) != null;
+  return jspb.Message.getField(this, 24) != null;
 };
 
 
 /**
- * optional int64 deleted_at = 26;
+ * optional int64 deleted_at = 25;
  * @return {number}
  */
 proto.user.v1.User.prototype.getDeletedAt = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 26, 0));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 25, 0));
 };
 
 
@@ -1341,7 +1293,7 @@ proto.user.v1.User.prototype.getDeletedAt = function() {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.setDeletedAt = function(value) {
-  return jspb.Message.setField(this, 26, value);
+  return jspb.Message.setField(this, 25, value);
 };
 
 
@@ -1350,7 +1302,7 @@ proto.user.v1.User.prototype.setDeletedAt = function(value) {
  * @return {!proto.user.v1.User} returns this
  */
 proto.user.v1.User.prototype.clearDeletedAt = function() {
-  return jspb.Message.setField(this, 26, undefined);
+  return jspb.Message.setField(this, 25, undefined);
 };
 
 
@@ -1359,7 +1311,7 @@ proto.user.v1.User.prototype.clearDeletedAt = function() {
  * @return {boolean}
  */
 proto.user.v1.User.prototype.hasDeletedAt = function() {
-  return jspb.Message.getField(this, 26) != null;
+  return jspb.Message.getField(this, 25) != null;
 };
 
 

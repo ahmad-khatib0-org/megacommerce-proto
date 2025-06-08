@@ -70,175 +70,158 @@ public final class UserProto {
         getFirstNameBytes();
 
     /**
-     * <code>optional string nickname = 4 [json_name = "nickname"];</code>
-     * @return Whether the nickname field is set.
-     */
-    boolean hasNickname();
-    /**
-     * <code>optional string nickname = 4 [json_name = "nickname"];</code>
-     * @return The nickname.
-     */
-    java.lang.String getNickname();
-    /**
-     * <code>optional string nickname = 4 [json_name = "nickname"];</code>
-     * @return The bytes for nickname.
-     */
-    com.google.protobuf.ByteString
-        getNicknameBytes();
-
-    /**
-     * <code>optional string last_name = 5 [json_name = "lastName"];</code>
+     * <code>optional string last_name = 4 [json_name = "lastName"];</code>
      * @return Whether the lastName field is set.
      */
     boolean hasLastName();
     /**
-     * <code>optional string last_name = 5 [json_name = "lastName"];</code>
+     * <code>optional string last_name = 4 [json_name = "lastName"];</code>
      * @return The lastName.
      */
     java.lang.String getLastName();
     /**
-     * <code>optional string last_name = 5 [json_name = "lastName"];</code>
+     * <code>optional string last_name = 4 [json_name = "lastName"];</code>
      * @return The bytes for lastName.
      */
     com.google.protobuf.ByteString
         getLastNameBytes();
 
     /**
-     * <code>optional string email = 6 [json_name = "email"];</code>
+     * <code>optional string email = 5 [json_name = "email"];</code>
      * @return Whether the email field is set.
      */
     boolean hasEmail();
     /**
-     * <code>optional string email = 6 [json_name = "email"];</code>
+     * <code>optional string email = 5 [json_name = "email"];</code>
      * @return The email.
      */
     java.lang.String getEmail();
     /**
-     * <code>optional string email = 6 [json_name = "email"];</code>
+     * <code>optional string email = 5 [json_name = "email"];</code>
      * @return The bytes for email.
      */
     com.google.protobuf.ByteString
         getEmailBytes();
 
     /**
-     * <code>optional string user_type = 7 [json_name = "userType"];</code>
+     * <code>optional string user_type = 6 [json_name = "userType"];</code>
      * @return Whether the userType field is set.
      */
     boolean hasUserType();
     /**
-     * <code>optional string user_type = 7 [json_name = "userType"];</code>
+     * <code>optional string user_type = 6 [json_name = "userType"];</code>
      * @return The userType.
      */
     java.lang.String getUserType();
     /**
-     * <code>optional string user_type = 7 [json_name = "userType"];</code>
+     * <code>optional string user_type = 6 [json_name = "userType"];</code>
      * @return The bytes for userType.
      */
     com.google.protobuf.ByteString
         getUserTypeBytes();
 
     /**
-     * <code>optional string membership = 8 [json_name = "membership"];</code>
+     * <code>optional string membership = 7 [json_name = "membership"];</code>
      * @return Whether the membership field is set.
      */
     boolean hasMembership();
     /**
-     * <code>optional string membership = 8 [json_name = "membership"];</code>
+     * <code>optional string membership = 7 [json_name = "membership"];</code>
      * @return The membership.
      */
     java.lang.String getMembership();
     /**
-     * <code>optional string membership = 8 [json_name = "membership"];</code>
+     * <code>optional string membership = 7 [json_name = "membership"];</code>
      * @return The bytes for membership.
      */
     com.google.protobuf.ByteString
         getMembershipBytes();
 
     /**
-     * <code>optional bool is_email_verified = 9 [json_name = "isEmailVerified"];</code>
+     * <code>optional bool is_email_verified = 8 [json_name = "isEmailVerified"];</code>
      * @return Whether the isEmailVerified field is set.
      */
     boolean hasIsEmailVerified();
     /**
-     * <code>optional bool is_email_verified = 9 [json_name = "isEmailVerified"];</code>
+     * <code>optional bool is_email_verified = 8 [json_name = "isEmailVerified"];</code>
      * @return The isEmailVerified.
      */
     boolean getIsEmailVerified();
 
     /**
-     * <code>optional string password = 10 [json_name = "password"];</code>
+     * <code>optional string password = 9 [json_name = "password"];</code>
      * @return Whether the password field is set.
      */
     boolean hasPassword();
     /**
-     * <code>optional string password = 10 [json_name = "password"];</code>
+     * <code>optional string password = 9 [json_name = "password"];</code>
      * @return The password.
      */
     java.lang.String getPassword();
     /**
-     * <code>optional string password = 10 [json_name = "password"];</code>
+     * <code>optional string password = 9 [json_name = "password"];</code>
      * @return The bytes for password.
      */
     com.google.protobuf.ByteString
         getPasswordBytes();
 
     /**
-     * <code>optional string auth_data = 11 [json_name = "authData"];</code>
+     * <code>optional string auth_data = 10 [json_name = "authData"];</code>
      * @return Whether the authData field is set.
      */
     boolean hasAuthData();
     /**
-     * <code>optional string auth_data = 11 [json_name = "authData"];</code>
+     * <code>optional string auth_data = 10 [json_name = "authData"];</code>
      * @return The authData.
      */
     java.lang.String getAuthData();
     /**
-     * <code>optional string auth_data = 11 [json_name = "authData"];</code>
+     * <code>optional string auth_data = 10 [json_name = "authData"];</code>
      * @return The bytes for authData.
      */
     com.google.protobuf.ByteString
         getAuthDataBytes();
 
     /**
-     * <code>optional string auth_service = 12 [json_name = "authService"];</code>
+     * <code>optional string auth_service = 11 [json_name = "authService"];</code>
      * @return Whether the authService field is set.
      */
     boolean hasAuthService();
     /**
-     * <code>optional string auth_service = 12 [json_name = "authService"];</code>
+     * <code>optional string auth_service = 11 [json_name = "authService"];</code>
      * @return The authService.
      */
     java.lang.String getAuthService();
     /**
-     * <code>optional string auth_service = 12 [json_name = "authService"];</code>
+     * <code>optional string auth_service = 11 [json_name = "authService"];</code>
      * @return The bytes for authService.
      */
     com.google.protobuf.ByteString
         getAuthServiceBytes();
 
     /**
-     * <code>optional string roles = 13 [json_name = "roles"];</code>
+     * <code>optional string roles = 12 [json_name = "roles"];</code>
      * @return Whether the roles field is set.
      */
     boolean hasRoles();
     /**
-     * <code>optional string roles = 13 [json_name = "roles"];</code>
+     * <code>optional string roles = 12 [json_name = "roles"];</code>
      * @return The roles.
      */
     java.lang.String getRoles();
     /**
-     * <code>optional string roles = 13 [json_name = "roles"];</code>
+     * <code>optional string roles = 12 [json_name = "roles"];</code>
      * @return The bytes for roles.
      */
     com.google.protobuf.ByteString
         getRolesBytes();
 
     /**
-     * <code>map&lt;string, string&gt; props = 14 [json_name = "props"];</code>
+     * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
      */
     int getPropsCount();
     /**
-     * <code>map&lt;string, string&gt; props = 14 [json_name = "props"];</code>
+     * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
      */
     boolean containsProps(
         java.lang.String key);
@@ -249,30 +232,30 @@ public final class UserProto {
     java.util.Map<java.lang.String, java.lang.String>
     getProps();
     /**
-     * <code>map&lt;string, string&gt; props = 14 [json_name = "props"];</code>
+     * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getPropsMap();
     /**
-     * <code>map&lt;string, string&gt; props = 14 [json_name = "props"];</code>
+     * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
      */
 
     java.lang.String getPropsOrDefault(
         java.lang.String key,
         java.lang.String defaultValue);
     /**
-     * <code>map&lt;string, string&gt; props = 14 [json_name = "props"];</code>
+     * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
      */
 
     java.lang.String getPropsOrThrow(
         java.lang.String key);
 
     /**
-     * <code>map&lt;string, string&gt; notify_props = 15 [json_name = "notifyProps"];</code>
+     * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
      */
     int getNotifyPropsCount();
     /**
-     * <code>map&lt;string, string&gt; notify_props = 15 [json_name = "notifyProps"];</code>
+     * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
      */
     boolean containsNotifyProps(
         java.lang.String key);
@@ -283,153 +266,153 @@ public final class UserProto {
     java.util.Map<java.lang.String, java.lang.String>
     getNotifyProps();
     /**
-     * <code>map&lt;string, string&gt; notify_props = 15 [json_name = "notifyProps"];</code>
+     * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getNotifyPropsMap();
     /**
-     * <code>map&lt;string, string&gt; notify_props = 15 [json_name = "notifyProps"];</code>
+     * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
      */
 
     java.lang.String getNotifyPropsOrDefault(
         java.lang.String key,
         java.lang.String defaultValue);
     /**
-     * <code>map&lt;string, string&gt; notify_props = 15 [json_name = "notifyProps"];</code>
+     * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
      */
 
     java.lang.String getNotifyPropsOrThrow(
         java.lang.String key);
 
     /**
-     * <code>optional int64 last_password_update = 16 [json_name = "lastPasswordUpdate"];</code>
+     * <code>optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];</code>
      * @return Whether the lastPasswordUpdate field is set.
      */
     boolean hasLastPasswordUpdate();
     /**
-     * <code>optional int64 last_password_update = 16 [json_name = "lastPasswordUpdate"];</code>
+     * <code>optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];</code>
      * @return The lastPasswordUpdate.
      */
     long getLastPasswordUpdate();
 
     /**
-     * <code>optional int64 last_picture_update = 17 [json_name = "lastPictureUpdate"];</code>
+     * <code>optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];</code>
      * @return Whether the lastPictureUpdate field is set.
      */
     boolean hasLastPictureUpdate();
     /**
-     * <code>optional int64 last_picture_update = 17 [json_name = "lastPictureUpdate"];</code>
+     * <code>optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];</code>
      * @return The lastPictureUpdate.
      */
     long getLastPictureUpdate();
 
     /**
-     * <code>optional int32 failed_attempts = 18 [json_name = "failedAttempts"];</code>
+     * <code>optional int32 failed_attempts = 17 [json_name = "failedAttempts"];</code>
      * @return Whether the failedAttempts field is set.
      */
     boolean hasFailedAttempts();
     /**
-     * <code>optional int32 failed_attempts = 18 [json_name = "failedAttempts"];</code>
+     * <code>optional int32 failed_attempts = 17 [json_name = "failedAttempts"];</code>
      * @return The failedAttempts.
      */
     int getFailedAttempts();
 
     /**
-     * <code>optional string locale = 19 [json_name = "locale"];</code>
+     * <code>optional string locale = 18 [json_name = "locale"];</code>
      * @return Whether the locale field is set.
      */
     boolean hasLocale();
     /**
-     * <code>optional string locale = 19 [json_name = "locale"];</code>
+     * <code>optional string locale = 18 [json_name = "locale"];</code>
      * @return The locale.
      */
     java.lang.String getLocale();
     /**
-     * <code>optional string locale = 19 [json_name = "locale"];</code>
+     * <code>optional string locale = 18 [json_name = "locale"];</code>
      * @return The bytes for locale.
      */
     com.google.protobuf.ByteString
         getLocaleBytes();
 
     /**
-     * <code>optional bool mfa_active = 20 [json_name = "mfaActive"];</code>
+     * <code>optional bool mfa_active = 19 [json_name = "mfaActive"];</code>
      * @return Whether the mfaActive field is set.
      */
     boolean hasMfaActive();
     /**
-     * <code>optional bool mfa_active = 20 [json_name = "mfaActive"];</code>
+     * <code>optional bool mfa_active = 19 [json_name = "mfaActive"];</code>
      * @return The mfaActive.
      */
     boolean getMfaActive();
 
     /**
-     * <code>optional string mfa_secret = 21 [json_name = "mfaSecret"];</code>
+     * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
      * @return Whether the mfaSecret field is set.
      */
     boolean hasMfaSecret();
     /**
-     * <code>optional string mfa_secret = 21 [json_name = "mfaSecret"];</code>
+     * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
      * @return The mfaSecret.
      */
     java.lang.String getMfaSecret();
     /**
-     * <code>optional string mfa_secret = 21 [json_name = "mfaSecret"];</code>
+     * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
      * @return The bytes for mfaSecret.
      */
     com.google.protobuf.ByteString
         getMfaSecretBytes();
 
     /**
-     * <code>optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];</code>
+     * <code>optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];</code>
      * @return Whether the lastActivityAt field is set.
      */
     boolean hasLastActivityAt();
     /**
-     * <code>optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];</code>
+     * <code>optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];</code>
      * @return The lastActivityAt.
      */
     long getLastActivityAt();
 
     /**
-     * <code>optional int64 last_login = 23 [json_name = "lastLogin"];</code>
+     * <code>optional int64 last_login = 22 [json_name = "lastLogin"];</code>
      * @return Whether the lastLogin field is set.
      */
     boolean hasLastLogin();
     /**
-     * <code>optional int64 last_login = 23 [json_name = "lastLogin"];</code>
+     * <code>optional int64 last_login = 22 [json_name = "lastLogin"];</code>
      * @return The lastLogin.
      */
     long getLastLogin();
 
     /**
-     * <code>optional int64 created_at = 24 [json_name = "createdAt"];</code>
+     * <code>optional int64 created_at = 23 [json_name = "createdAt"];</code>
      * @return Whether the createdAt field is set.
      */
     boolean hasCreatedAt();
     /**
-     * <code>optional int64 created_at = 24 [json_name = "createdAt"];</code>
+     * <code>optional int64 created_at = 23 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     long getCreatedAt();
 
     /**
-     * <code>optional int64 updated_at = 25 [json_name = "updatedAt"];</code>
+     * <code>optional int64 updated_at = 24 [json_name = "updatedAt"];</code>
      * @return Whether the updatedAt field is set.
      */
     boolean hasUpdatedAt();
     /**
-     * <code>optional int64 updated_at = 25 [json_name = "updatedAt"];</code>
+     * <code>optional int64 updated_at = 24 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     long getUpdatedAt();
 
     /**
-     * <code>optional int64 deleted_at = 26 [json_name = "deletedAt"];</code>
+     * <code>optional int64 deleted_at = 25 [json_name = "deletedAt"];</code>
      * @return Whether the deletedAt field is set.
      */
     boolean hasDeletedAt();
     /**
-     * <code>optional int64 deleted_at = 26 [json_name = "deletedAt"];</code>
+     * <code>optional int64 deleted_at = 25 [json_name = "deletedAt"];</code>
      * @return The deletedAt.
      */
     long getDeletedAt();
@@ -450,7 +433,6 @@ public final class UserProto {
       id_ = "";
       username_ = "";
       firstName_ = "";
-      nickname_ = "";
       lastName_ = "";
       email_ = "";
       userType_ = "";
@@ -485,9 +467,9 @@ public final class UserProto {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 14:
+        case 13:
           return internalGetProps();
-        case 15:
+        case 14:
           return internalGetNotifyProps();
         default:
           throw new RuntimeException(
@@ -641,64 +623,18 @@ public final class UserProto {
       }
     }
 
-    public static final int NICKNAME_FIELD_NUMBER = 4;
-    private volatile java.lang.Object nickname_;
-    /**
-     * <code>optional string nickname = 4 [json_name = "nickname"];</code>
-     * @return Whether the nickname field is set.
-     */
-    @java.lang.Override
-    public boolean hasNickname() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <code>optional string nickname = 4 [json_name = "nickname"];</code>
-     * @return The nickname.
-     */
-    @java.lang.Override
-    public java.lang.String getNickname() {
-      java.lang.Object ref = nickname_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        nickname_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string nickname = 4 [json_name = "nickname"];</code>
-     * @return The bytes for nickname.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getNicknameBytes() {
-      java.lang.Object ref = nickname_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        nickname_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int LAST_NAME_FIELD_NUMBER = 5;
+    public static final int LAST_NAME_FIELD_NUMBER = 4;
     private volatile java.lang.Object lastName_;
     /**
-     * <code>optional string last_name = 5 [json_name = "lastName"];</code>
+     * <code>optional string last_name = 4 [json_name = "lastName"];</code>
      * @return Whether the lastName field is set.
      */
     @java.lang.Override
     public boolean hasLastName() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>optional string last_name = 5 [json_name = "lastName"];</code>
+     * <code>optional string last_name = 4 [json_name = "lastName"];</code>
      * @return The lastName.
      */
     @java.lang.Override
@@ -715,7 +651,7 @@ public final class UserProto {
       }
     }
     /**
-     * <code>optional string last_name = 5 [json_name = "lastName"];</code>
+     * <code>optional string last_name = 4 [json_name = "lastName"];</code>
      * @return The bytes for lastName.
      */
     @java.lang.Override
@@ -733,18 +669,18 @@ public final class UserProto {
       }
     }
 
-    public static final int EMAIL_FIELD_NUMBER = 6;
+    public static final int EMAIL_FIELD_NUMBER = 5;
     private volatile java.lang.Object email_;
     /**
-     * <code>optional string email = 6 [json_name = "email"];</code>
+     * <code>optional string email = 5 [json_name = "email"];</code>
      * @return Whether the email field is set.
      */
     @java.lang.Override
     public boolean hasEmail() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>optional string email = 6 [json_name = "email"];</code>
+     * <code>optional string email = 5 [json_name = "email"];</code>
      * @return The email.
      */
     @java.lang.Override
@@ -761,7 +697,7 @@ public final class UserProto {
       }
     }
     /**
-     * <code>optional string email = 6 [json_name = "email"];</code>
+     * <code>optional string email = 5 [json_name = "email"];</code>
      * @return The bytes for email.
      */
     @java.lang.Override
@@ -779,18 +715,18 @@ public final class UserProto {
       }
     }
 
-    public static final int USER_TYPE_FIELD_NUMBER = 7;
+    public static final int USER_TYPE_FIELD_NUMBER = 6;
     private volatile java.lang.Object userType_;
     /**
-     * <code>optional string user_type = 7 [json_name = "userType"];</code>
+     * <code>optional string user_type = 6 [json_name = "userType"];</code>
      * @return Whether the userType field is set.
      */
     @java.lang.Override
     public boolean hasUserType() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
-     * <code>optional string user_type = 7 [json_name = "userType"];</code>
+     * <code>optional string user_type = 6 [json_name = "userType"];</code>
      * @return The userType.
      */
     @java.lang.Override
@@ -807,7 +743,7 @@ public final class UserProto {
       }
     }
     /**
-     * <code>optional string user_type = 7 [json_name = "userType"];</code>
+     * <code>optional string user_type = 6 [json_name = "userType"];</code>
      * @return The bytes for userType.
      */
     @java.lang.Override
@@ -825,18 +761,18 @@ public final class UserProto {
       }
     }
 
-    public static final int MEMBERSHIP_FIELD_NUMBER = 8;
+    public static final int MEMBERSHIP_FIELD_NUMBER = 7;
     private volatile java.lang.Object membership_;
     /**
-     * <code>optional string membership = 8 [json_name = "membership"];</code>
+     * <code>optional string membership = 7 [json_name = "membership"];</code>
      * @return Whether the membership field is set.
      */
     @java.lang.Override
     public boolean hasMembership() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
-     * <code>optional string membership = 8 [json_name = "membership"];</code>
+     * <code>optional string membership = 7 [json_name = "membership"];</code>
      * @return The membership.
      */
     @java.lang.Override
@@ -853,7 +789,7 @@ public final class UserProto {
       }
     }
     /**
-     * <code>optional string membership = 8 [json_name = "membership"];</code>
+     * <code>optional string membership = 7 [json_name = "membership"];</code>
      * @return The bytes for membership.
      */
     @java.lang.Override
@@ -871,18 +807,18 @@ public final class UserProto {
       }
     }
 
-    public static final int IS_EMAIL_VERIFIED_FIELD_NUMBER = 9;
+    public static final int IS_EMAIL_VERIFIED_FIELD_NUMBER = 8;
     private boolean isEmailVerified_;
     /**
-     * <code>optional bool is_email_verified = 9 [json_name = "isEmailVerified"];</code>
+     * <code>optional bool is_email_verified = 8 [json_name = "isEmailVerified"];</code>
      * @return Whether the isEmailVerified field is set.
      */
     @java.lang.Override
     public boolean hasIsEmailVerified() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>optional bool is_email_verified = 9 [json_name = "isEmailVerified"];</code>
+     * <code>optional bool is_email_verified = 8 [json_name = "isEmailVerified"];</code>
      * @return The isEmailVerified.
      */
     @java.lang.Override
@@ -890,18 +826,18 @@ public final class UserProto {
       return isEmailVerified_;
     }
 
-    public static final int PASSWORD_FIELD_NUMBER = 10;
+    public static final int PASSWORD_FIELD_NUMBER = 9;
     private volatile java.lang.Object password_;
     /**
-     * <code>optional string password = 10 [json_name = "password"];</code>
+     * <code>optional string password = 9 [json_name = "password"];</code>
      * @return Whether the password field is set.
      */
     @java.lang.Override
     public boolean hasPassword() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
-     * <code>optional string password = 10 [json_name = "password"];</code>
+     * <code>optional string password = 9 [json_name = "password"];</code>
      * @return The password.
      */
     @java.lang.Override
@@ -918,7 +854,7 @@ public final class UserProto {
       }
     }
     /**
-     * <code>optional string password = 10 [json_name = "password"];</code>
+     * <code>optional string password = 9 [json_name = "password"];</code>
      * @return The bytes for password.
      */
     @java.lang.Override
@@ -936,18 +872,18 @@ public final class UserProto {
       }
     }
 
-    public static final int AUTH_DATA_FIELD_NUMBER = 11;
+    public static final int AUTH_DATA_FIELD_NUMBER = 10;
     private volatile java.lang.Object authData_;
     /**
-     * <code>optional string auth_data = 11 [json_name = "authData"];</code>
+     * <code>optional string auth_data = 10 [json_name = "authData"];</code>
      * @return Whether the authData field is set.
      */
     @java.lang.Override
     public boolean hasAuthData() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
-     * <code>optional string auth_data = 11 [json_name = "authData"];</code>
+     * <code>optional string auth_data = 10 [json_name = "authData"];</code>
      * @return The authData.
      */
     @java.lang.Override
@@ -964,7 +900,7 @@ public final class UserProto {
       }
     }
     /**
-     * <code>optional string auth_data = 11 [json_name = "authData"];</code>
+     * <code>optional string auth_data = 10 [json_name = "authData"];</code>
      * @return The bytes for authData.
      */
     @java.lang.Override
@@ -982,18 +918,18 @@ public final class UserProto {
       }
     }
 
-    public static final int AUTH_SERVICE_FIELD_NUMBER = 12;
+    public static final int AUTH_SERVICE_FIELD_NUMBER = 11;
     private volatile java.lang.Object authService_;
     /**
-     * <code>optional string auth_service = 12 [json_name = "authService"];</code>
+     * <code>optional string auth_service = 11 [json_name = "authService"];</code>
      * @return Whether the authService field is set.
      */
     @java.lang.Override
     public boolean hasAuthService() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
-     * <code>optional string auth_service = 12 [json_name = "authService"];</code>
+     * <code>optional string auth_service = 11 [json_name = "authService"];</code>
      * @return The authService.
      */
     @java.lang.Override
@@ -1010,7 +946,7 @@ public final class UserProto {
       }
     }
     /**
-     * <code>optional string auth_service = 12 [json_name = "authService"];</code>
+     * <code>optional string auth_service = 11 [json_name = "authService"];</code>
      * @return The bytes for authService.
      */
     @java.lang.Override
@@ -1028,18 +964,18 @@ public final class UserProto {
       }
     }
 
-    public static final int ROLES_FIELD_NUMBER = 13;
+    public static final int ROLES_FIELD_NUMBER = 12;
     private volatile java.lang.Object roles_;
     /**
-     * <code>optional string roles = 13 [json_name = "roles"];</code>
+     * <code>optional string roles = 12 [json_name = "roles"];</code>
      * @return Whether the roles field is set.
      */
     @java.lang.Override
     public boolean hasRoles() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
-     * <code>optional string roles = 13 [json_name = "roles"];</code>
+     * <code>optional string roles = 12 [json_name = "roles"];</code>
      * @return The roles.
      */
     @java.lang.Override
@@ -1056,7 +992,7 @@ public final class UserProto {
       }
     }
     /**
-     * <code>optional string roles = 13 [json_name = "roles"];</code>
+     * <code>optional string roles = 12 [json_name = "roles"];</code>
      * @return The bytes for roles.
      */
     @java.lang.Override
@@ -1074,7 +1010,7 @@ public final class UserProto {
       }
     }
 
-    public static final int PROPS_FIELD_NUMBER = 14;
+    public static final int PROPS_FIELD_NUMBER = 13;
     private static final class PropsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.String> defaultEntry =
@@ -1101,7 +1037,7 @@ public final class UserProto {
       return internalGetProps().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; props = 14 [json_name = "props"];</code>
+     * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
      */
 
     @java.lang.Override
@@ -1119,7 +1055,7 @@ public final class UserProto {
       return getPropsMap();
     }
     /**
-     * <code>map&lt;string, string&gt; props = 14 [json_name = "props"];</code>
+     * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
      */
     @java.lang.Override
 
@@ -1127,7 +1063,7 @@ public final class UserProto {
       return internalGetProps().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; props = 14 [json_name = "props"];</code>
+     * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
      */
     @java.lang.Override
 
@@ -1140,7 +1076,7 @@ public final class UserProto {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; props = 14 [json_name = "props"];</code>
+     * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
      */
     @java.lang.Override
 
@@ -1155,7 +1091,7 @@ public final class UserProto {
       return map.get(key);
     }
 
-    public static final int NOTIFY_PROPS_FIELD_NUMBER = 15;
+    public static final int NOTIFY_PROPS_FIELD_NUMBER = 14;
     private static final class NotifyPropsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.String> defaultEntry =
@@ -1182,7 +1118,7 @@ public final class UserProto {
       return internalGetNotifyProps().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; notify_props = 15 [json_name = "notifyProps"];</code>
+     * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
      */
 
     @java.lang.Override
@@ -1200,7 +1136,7 @@ public final class UserProto {
       return getNotifyPropsMap();
     }
     /**
-     * <code>map&lt;string, string&gt; notify_props = 15 [json_name = "notifyProps"];</code>
+     * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
      */
     @java.lang.Override
 
@@ -1208,7 +1144,7 @@ public final class UserProto {
       return internalGetNotifyProps().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; notify_props = 15 [json_name = "notifyProps"];</code>
+     * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
      */
     @java.lang.Override
 
@@ -1221,7 +1157,7 @@ public final class UserProto {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; notify_props = 15 [json_name = "notifyProps"];</code>
+     * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
      */
     @java.lang.Override
 
@@ -1236,18 +1172,18 @@ public final class UserProto {
       return map.get(key);
     }
 
-    public static final int LAST_PASSWORD_UPDATE_FIELD_NUMBER = 16;
+    public static final int LAST_PASSWORD_UPDATE_FIELD_NUMBER = 15;
     private long lastPasswordUpdate_;
     /**
-     * <code>optional int64 last_password_update = 16 [json_name = "lastPasswordUpdate"];</code>
+     * <code>optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];</code>
      * @return Whether the lastPasswordUpdate field is set.
      */
     @java.lang.Override
     public boolean hasLastPasswordUpdate() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
-     * <code>optional int64 last_password_update = 16 [json_name = "lastPasswordUpdate"];</code>
+     * <code>optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];</code>
      * @return The lastPasswordUpdate.
      */
     @java.lang.Override
@@ -1255,18 +1191,18 @@ public final class UserProto {
       return lastPasswordUpdate_;
     }
 
-    public static final int LAST_PICTURE_UPDATE_FIELD_NUMBER = 17;
+    public static final int LAST_PICTURE_UPDATE_FIELD_NUMBER = 16;
     private long lastPictureUpdate_;
     /**
-     * <code>optional int64 last_picture_update = 17 [json_name = "lastPictureUpdate"];</code>
+     * <code>optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];</code>
      * @return Whether the lastPictureUpdate field is set.
      */
     @java.lang.Override
     public boolean hasLastPictureUpdate() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
-     * <code>optional int64 last_picture_update = 17 [json_name = "lastPictureUpdate"];</code>
+     * <code>optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];</code>
      * @return The lastPictureUpdate.
      */
     @java.lang.Override
@@ -1274,18 +1210,18 @@ public final class UserProto {
       return lastPictureUpdate_;
     }
 
-    public static final int FAILED_ATTEMPTS_FIELD_NUMBER = 18;
+    public static final int FAILED_ATTEMPTS_FIELD_NUMBER = 17;
     private int failedAttempts_;
     /**
-     * <code>optional int32 failed_attempts = 18 [json_name = "failedAttempts"];</code>
+     * <code>optional int32 failed_attempts = 17 [json_name = "failedAttempts"];</code>
      * @return Whether the failedAttempts field is set.
      */
     @java.lang.Override
     public boolean hasFailedAttempts() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
-     * <code>optional int32 failed_attempts = 18 [json_name = "failedAttempts"];</code>
+     * <code>optional int32 failed_attempts = 17 [json_name = "failedAttempts"];</code>
      * @return The failedAttempts.
      */
     @java.lang.Override
@@ -1293,18 +1229,18 @@ public final class UserProto {
       return failedAttempts_;
     }
 
-    public static final int LOCALE_FIELD_NUMBER = 19;
+    public static final int LOCALE_FIELD_NUMBER = 18;
     private volatile java.lang.Object locale_;
     /**
-     * <code>optional string locale = 19 [json_name = "locale"];</code>
+     * <code>optional string locale = 18 [json_name = "locale"];</code>
      * @return Whether the locale field is set.
      */
     @java.lang.Override
     public boolean hasLocale() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
-     * <code>optional string locale = 19 [json_name = "locale"];</code>
+     * <code>optional string locale = 18 [json_name = "locale"];</code>
      * @return The locale.
      */
     @java.lang.Override
@@ -1321,7 +1257,7 @@ public final class UserProto {
       }
     }
     /**
-     * <code>optional string locale = 19 [json_name = "locale"];</code>
+     * <code>optional string locale = 18 [json_name = "locale"];</code>
      * @return The bytes for locale.
      */
     @java.lang.Override
@@ -1339,18 +1275,18 @@ public final class UserProto {
       }
     }
 
-    public static final int MFA_ACTIVE_FIELD_NUMBER = 20;
+    public static final int MFA_ACTIVE_FIELD_NUMBER = 19;
     private boolean mfaActive_;
     /**
-     * <code>optional bool mfa_active = 20 [json_name = "mfaActive"];</code>
+     * <code>optional bool mfa_active = 19 [json_name = "mfaActive"];</code>
      * @return Whether the mfaActive field is set.
      */
     @java.lang.Override
     public boolean hasMfaActive() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
-     * <code>optional bool mfa_active = 20 [json_name = "mfaActive"];</code>
+     * <code>optional bool mfa_active = 19 [json_name = "mfaActive"];</code>
      * @return The mfaActive.
      */
     @java.lang.Override
@@ -1358,18 +1294,18 @@ public final class UserProto {
       return mfaActive_;
     }
 
-    public static final int MFA_SECRET_FIELD_NUMBER = 21;
+    public static final int MFA_SECRET_FIELD_NUMBER = 20;
     private volatile java.lang.Object mfaSecret_;
     /**
-     * <code>optional string mfa_secret = 21 [json_name = "mfaSecret"];</code>
+     * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
      * @return Whether the mfaSecret field is set.
      */
     @java.lang.Override
     public boolean hasMfaSecret() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
-     * <code>optional string mfa_secret = 21 [json_name = "mfaSecret"];</code>
+     * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
      * @return The mfaSecret.
      */
     @java.lang.Override
@@ -1386,7 +1322,7 @@ public final class UserProto {
       }
     }
     /**
-     * <code>optional string mfa_secret = 21 [json_name = "mfaSecret"];</code>
+     * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
      * @return The bytes for mfaSecret.
      */
     @java.lang.Override
@@ -1404,18 +1340,18 @@ public final class UserProto {
       }
     }
 
-    public static final int LAST_ACTIVITY_AT_FIELD_NUMBER = 22;
+    public static final int LAST_ACTIVITY_AT_FIELD_NUMBER = 21;
     private long lastActivityAt_;
     /**
-     * <code>optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];</code>
+     * <code>optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];</code>
      * @return Whether the lastActivityAt field is set.
      */
     @java.lang.Override
     public boolean hasLastActivityAt() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
-     * <code>optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];</code>
+     * <code>optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];</code>
      * @return The lastActivityAt.
      */
     @java.lang.Override
@@ -1423,18 +1359,18 @@ public final class UserProto {
       return lastActivityAt_;
     }
 
-    public static final int LAST_LOGIN_FIELD_NUMBER = 23;
+    public static final int LAST_LOGIN_FIELD_NUMBER = 22;
     private long lastLogin_;
     /**
-     * <code>optional int64 last_login = 23 [json_name = "lastLogin"];</code>
+     * <code>optional int64 last_login = 22 [json_name = "lastLogin"];</code>
      * @return Whether the lastLogin field is set.
      */
     @java.lang.Override
     public boolean hasLastLogin() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
-     * <code>optional int64 last_login = 23 [json_name = "lastLogin"];</code>
+     * <code>optional int64 last_login = 22 [json_name = "lastLogin"];</code>
      * @return The lastLogin.
      */
     @java.lang.Override
@@ -1442,18 +1378,18 @@ public final class UserProto {
       return lastLogin_;
     }
 
-    public static final int CREATED_AT_FIELD_NUMBER = 24;
+    public static final int CREATED_AT_FIELD_NUMBER = 23;
     private long createdAt_;
     /**
-     * <code>optional int64 created_at = 24 [json_name = "createdAt"];</code>
+     * <code>optional int64 created_at = 23 [json_name = "createdAt"];</code>
      * @return Whether the createdAt field is set.
      */
     @java.lang.Override
     public boolean hasCreatedAt() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
-     * <code>optional int64 created_at = 24 [json_name = "createdAt"];</code>
+     * <code>optional int64 created_at = 23 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     @java.lang.Override
@@ -1461,18 +1397,18 @@ public final class UserProto {
       return createdAt_;
     }
 
-    public static final int UPDATED_AT_FIELD_NUMBER = 25;
+    public static final int UPDATED_AT_FIELD_NUMBER = 24;
     private long updatedAt_;
     /**
-     * <code>optional int64 updated_at = 25 [json_name = "updatedAt"];</code>
+     * <code>optional int64 updated_at = 24 [json_name = "updatedAt"];</code>
      * @return Whether the updatedAt field is set.
      */
     @java.lang.Override
     public boolean hasUpdatedAt() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
     /**
-     * <code>optional int64 updated_at = 25 [json_name = "updatedAt"];</code>
+     * <code>optional int64 updated_at = 24 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     @java.lang.Override
@@ -1480,18 +1416,18 @@ public final class UserProto {
       return updatedAt_;
     }
 
-    public static final int DELETED_AT_FIELD_NUMBER = 26;
+    public static final int DELETED_AT_FIELD_NUMBER = 25;
     private long deletedAt_;
     /**
-     * <code>optional int64 deleted_at = 26 [json_name = "deletedAt"];</code>
+     * <code>optional int64 deleted_at = 25 [json_name = "deletedAt"];</code>
      * @return Whether the deletedAt field is set.
      */
     @java.lang.Override
     public boolean hasDeletedAt() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
-     * <code>optional int64 deleted_at = 26 [json_name = "deletedAt"];</code>
+     * <code>optional int64 deleted_at = 25 [json_name = "deletedAt"];</code>
      * @return The deletedAt.
      */
     @java.lang.Override
@@ -1523,79 +1459,76 @@ public final class UserProto {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, firstName_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, nickname_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, lastName_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, lastName_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, email_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, email_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, userType_);
       }
       if (((bitField0_ & 0x00000040) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, userType_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, membership_);
       }
       if (((bitField0_ & 0x00000080) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, membership_);
+        output.writeBool(8, isEmailVerified_);
       }
       if (((bitField0_ & 0x00000100) != 0)) {
-        output.writeBool(9, isEmailVerified_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, password_);
       }
       if (((bitField0_ & 0x00000200) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, password_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, authData_);
       }
       if (((bitField0_ & 0x00000400) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, authData_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, authService_);
       }
       if (((bitField0_ & 0x00000800) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, authService_);
-      }
-      if (((bitField0_ & 0x00001000) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, roles_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, roles_);
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
           internalGetProps(),
           PropsDefaultEntryHolder.defaultEntry,
-          14);
+          13);
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
           internalGetNotifyProps(),
           NotifyPropsDefaultEntryHolder.defaultEntry,
-          15);
+          14);
+      if (((bitField0_ & 0x00001000) != 0)) {
+        output.writeInt64(15, lastPasswordUpdate_);
+      }
       if (((bitField0_ & 0x00002000) != 0)) {
-        output.writeInt64(16, lastPasswordUpdate_);
+        output.writeInt64(16, lastPictureUpdate_);
       }
       if (((bitField0_ & 0x00004000) != 0)) {
-        output.writeInt64(17, lastPictureUpdate_);
+        output.writeInt32(17, failedAttempts_);
       }
       if (((bitField0_ & 0x00008000) != 0)) {
-        output.writeInt32(18, failedAttempts_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 18, locale_);
       }
       if (((bitField0_ & 0x00010000) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 19, locale_);
+        output.writeBool(19, mfaActive_);
       }
       if (((bitField0_ & 0x00020000) != 0)) {
-        output.writeBool(20, mfaActive_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 20, mfaSecret_);
       }
       if (((bitField0_ & 0x00040000) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 21, mfaSecret_);
+        output.writeInt64(21, lastActivityAt_);
       }
       if (((bitField0_ & 0x00080000) != 0)) {
-        output.writeInt64(22, lastActivityAt_);
+        output.writeInt64(22, lastLogin_);
       }
       if (((bitField0_ & 0x00100000) != 0)) {
-        output.writeInt64(23, lastLogin_);
+        output.writeInt64(23, createdAt_);
       }
       if (((bitField0_ & 0x00200000) != 0)) {
-        output.writeInt64(24, createdAt_);
+        output.writeInt64(24, updatedAt_);
       }
       if (((bitField0_ & 0x00400000) != 0)) {
-        output.writeInt64(25, updatedAt_);
-      }
-      if (((bitField0_ & 0x00800000) != 0)) {
-        output.writeInt64(26, deletedAt_);
+        output.writeInt64(25, deletedAt_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1616,35 +1549,32 @@ public final class UserProto {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, firstName_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, nickname_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, lastName_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, lastName_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, email_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, email_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, userType_);
       }
       if (((bitField0_ & 0x00000040) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, userType_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, membership_);
       }
       if (((bitField0_ & 0x00000080) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, membership_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, isEmailVerified_);
       }
       if (((bitField0_ & 0x00000100) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, isEmailVerified_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, password_);
       }
       if (((bitField0_ & 0x00000200) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, password_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, authData_);
       }
       if (((bitField0_ & 0x00000400) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, authData_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, authService_);
       }
       if (((bitField0_ & 0x00000800) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, authService_);
-      }
-      if (((bitField0_ & 0x00001000) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, roles_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, roles_);
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetProps().getMap().entrySet()) {
@@ -1654,7 +1584,7 @@ public final class UserProto {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(14, props__);
+            .computeMessageSize(13, props__);
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetNotifyProps().getMap().entrySet()) {
@@ -1664,49 +1594,49 @@ public final class UserProto {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(15, notifyProps__);
+            .computeMessageSize(14, notifyProps__);
+      }
+      if (((bitField0_ & 0x00001000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(15, lastPasswordUpdate_);
       }
       if (((bitField0_ & 0x00002000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(16, lastPasswordUpdate_);
+          .computeInt64Size(16, lastPictureUpdate_);
       }
       if (((bitField0_ & 0x00004000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(17, lastPictureUpdate_);
+          .computeInt32Size(17, failedAttempts_);
       }
       if (((bitField0_ & 0x00008000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(18, failedAttempts_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, locale_);
       }
       if (((bitField0_ & 0x00010000) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(19, locale_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(19, mfaActive_);
       }
       if (((bitField0_ & 0x00020000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(20, mfaActive_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, mfaSecret_);
       }
       if (((bitField0_ & 0x00040000) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, mfaSecret_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(21, lastActivityAt_);
       }
       if (((bitField0_ & 0x00080000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(22, lastActivityAt_);
+          .computeInt64Size(22, lastLogin_);
       }
       if (((bitField0_ & 0x00100000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(23, lastLogin_);
+          .computeInt64Size(23, createdAt_);
       }
       if (((bitField0_ & 0x00200000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(24, createdAt_);
+          .computeInt64Size(24, updatedAt_);
       }
       if (((bitField0_ & 0x00400000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(25, updatedAt_);
-      }
-      if (((bitField0_ & 0x00800000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(26, deletedAt_);
+          .computeInt64Size(25, deletedAt_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1737,11 +1667,6 @@ public final class UserProto {
       if (hasFirstName()) {
         if (!getFirstName()
             .equals(other.getFirstName())) return false;
-      }
-      if (hasNickname() != other.hasNickname()) return false;
-      if (hasNickname()) {
-        if (!getNickname()
-            .equals(other.getNickname())) return false;
       }
       if (hasLastName() != other.hasLastName()) return false;
       if (hasLastName()) {
@@ -1869,10 +1794,6 @@ public final class UserProto {
       if (hasFirstName()) {
         hash = (37 * hash) + FIRST_NAME_FIELD_NUMBER;
         hash = (53 * hash) + getFirstName().hashCode();
-      }
-      if (hasNickname()) {
-        hash = (37 * hash) + NICKNAME_FIELD_NUMBER;
-        hash = (53 * hash) + getNickname().hashCode();
       }
       if (hasLastName()) {
         hash = (37 * hash) + LAST_NAME_FIELD_NUMBER;
@@ -2082,9 +2003,9 @@ public final class UserProto {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 14:
+          case 13:
             return internalGetProps();
-          case 15:
+          case 14:
             return internalGetNotifyProps();
           default:
             throw new RuntimeException(
@@ -2095,9 +2016,9 @@ public final class UserProto {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 14:
+          case 13:
             return internalGetMutableProps();
-          case 15:
+          case 14:
             return internalGetMutableNotifyProps();
           default:
             throw new RuntimeException(
@@ -2131,50 +2052,48 @@ public final class UserProto {
         bitField0_ = (bitField0_ & ~0x00000002);
         firstName_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
-        nickname_ = "";
-        bitField0_ = (bitField0_ & ~0x00000008);
         lastName_ = "";
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         email_ = "";
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         userType_ = "";
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000020);
         membership_ = "";
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000040);
         isEmailVerified_ = false;
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000080);
         password_ = "";
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000100);
         authData_ = "";
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000200);
         authService_ = "";
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000400);
         roles_ = "";
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000800);
         internalGetMutableProps().clear();
         internalGetMutableNotifyProps().clear();
         lastPasswordUpdate_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         lastPictureUpdate_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         failedAttempts_ = 0;
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         locale_ = "";
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         mfaActive_ = false;
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         mfaSecret_ = "";
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         lastActivityAt_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x00100000);
         lastLogin_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00400000);
+        bitField0_ = (bitField0_ & ~0x00200000);
         createdAt_ = 0L;
-        bitField0_ = (bitField0_ & ~0x00800000);
+        bitField0_ = (bitField0_ & ~0x00400000);
         updatedAt_ = 0L;
-        bitField0_ = (bitField0_ & ~0x01000000);
+        bitField0_ = (bitField0_ & ~0x00800000);
         deletedAt_ = 0L;
-        bitField0_ = (bitField0_ & ~0x02000000);
+        bitField0_ = (bitField0_ & ~0x01000000);
         return this;
       }
 
@@ -2218,90 +2137,86 @@ public final class UserProto {
         if (((from_bitField0_ & 0x00000008) != 0)) {
           to_bitField0_ |= 0x00000008;
         }
-        result.nickname_ = nickname_;
+        result.lastName_ = lastName_;
         if (((from_bitField0_ & 0x00000010) != 0)) {
           to_bitField0_ |= 0x00000010;
         }
-        result.lastName_ = lastName_;
+        result.email_ = email_;
         if (((from_bitField0_ & 0x00000020) != 0)) {
           to_bitField0_ |= 0x00000020;
         }
-        result.email_ = email_;
+        result.userType_ = userType_;
         if (((from_bitField0_ & 0x00000040) != 0)) {
           to_bitField0_ |= 0x00000040;
         }
-        result.userType_ = userType_;
+        result.membership_ = membership_;
         if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.isEmailVerified_ = isEmailVerified_;
           to_bitField0_ |= 0x00000080;
         }
-        result.membership_ = membership_;
         if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.isEmailVerified_ = isEmailVerified_;
           to_bitField0_ |= 0x00000100;
         }
+        result.password_ = password_;
         if (((from_bitField0_ & 0x00000200) != 0)) {
           to_bitField0_ |= 0x00000200;
         }
-        result.password_ = password_;
+        result.authData_ = authData_;
         if (((from_bitField0_ & 0x00000400) != 0)) {
           to_bitField0_ |= 0x00000400;
         }
-        result.authData_ = authData_;
+        result.authService_ = authService_;
         if (((from_bitField0_ & 0x00000800) != 0)) {
           to_bitField0_ |= 0x00000800;
-        }
-        result.authService_ = authService_;
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          to_bitField0_ |= 0x00001000;
         }
         result.roles_ = roles_;
         result.props_ = internalGetProps();
         result.props_.makeImmutable();
         result.notifyProps_ = internalGetNotifyProps();
         result.notifyProps_.makeImmutable();
-        if (((from_bitField0_ & 0x00008000) != 0)) {
+        if (((from_bitField0_ & 0x00004000) != 0)) {
           result.lastPasswordUpdate_ = lastPasswordUpdate_;
+          to_bitField0_ |= 0x00001000;
+        }
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          result.lastPictureUpdate_ = lastPictureUpdate_;
           to_bitField0_ |= 0x00002000;
         }
         if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.lastPictureUpdate_ = lastPictureUpdate_;
+          result.failedAttempts_ = failedAttempts_;
           to_bitField0_ |= 0x00004000;
         }
         if (((from_bitField0_ & 0x00020000) != 0)) {
-          result.failedAttempts_ = failedAttempts_;
           to_bitField0_ |= 0x00008000;
         }
+        result.locale_ = locale_;
         if (((from_bitField0_ & 0x00040000) != 0)) {
+          result.mfaActive_ = mfaActive_;
           to_bitField0_ |= 0x00010000;
         }
-        result.locale_ = locale_;
         if (((from_bitField0_ & 0x00080000) != 0)) {
-          result.mfaActive_ = mfaActive_;
           to_bitField0_ |= 0x00020000;
         }
+        result.mfaSecret_ = mfaSecret_;
         if (((from_bitField0_ & 0x00100000) != 0)) {
+          result.lastActivityAt_ = lastActivityAt_;
           to_bitField0_ |= 0x00040000;
         }
-        result.mfaSecret_ = mfaSecret_;
         if (((from_bitField0_ & 0x00200000) != 0)) {
-          result.lastActivityAt_ = lastActivityAt_;
+          result.lastLogin_ = lastLogin_;
           to_bitField0_ |= 0x00080000;
         }
         if (((from_bitField0_ & 0x00400000) != 0)) {
-          result.lastLogin_ = lastLogin_;
+          result.createdAt_ = createdAt_;
           to_bitField0_ |= 0x00100000;
         }
         if (((from_bitField0_ & 0x00800000) != 0)) {
-          result.createdAt_ = createdAt_;
+          result.updatedAt_ = updatedAt_;
           to_bitField0_ |= 0x00200000;
         }
         if (((from_bitField0_ & 0x01000000) != 0)) {
-          result.updatedAt_ = updatedAt_;
-          to_bitField0_ |= 0x00400000;
-        }
-        if (((from_bitField0_ & 0x02000000) != 0)) {
           result.deletedAt_ = deletedAt_;
-          to_bitField0_ |= 0x00800000;
+          to_bitField0_ |= 0x00400000;
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -2367,28 +2282,23 @@ public final class UserProto {
           firstName_ = other.firstName_;
           onChanged();
         }
-        if (other.hasNickname()) {
-          bitField0_ |= 0x00000008;
-          nickname_ = other.nickname_;
-          onChanged();
-        }
         if (other.hasLastName()) {
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000008;
           lastName_ = other.lastName_;
           onChanged();
         }
         if (other.hasEmail()) {
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000010;
           email_ = other.email_;
           onChanged();
         }
         if (other.hasUserType()) {
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000020;
           userType_ = other.userType_;
           onChanged();
         }
         if (other.hasMembership()) {
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000040;
           membership_ = other.membership_;
           onChanged();
         }
@@ -2396,22 +2306,22 @@ public final class UserProto {
           setIsEmailVerified(other.getIsEmailVerified());
         }
         if (other.hasPassword()) {
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000100;
           password_ = other.password_;
           onChanged();
         }
         if (other.hasAuthData()) {
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000200;
           authData_ = other.authData_;
           onChanged();
         }
         if (other.hasAuthService()) {
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00000400;
           authService_ = other.authService_;
           onChanged();
         }
         if (other.hasRoles()) {
-          bitField0_ |= 0x00001000;
+          bitField0_ |= 0x00000800;
           roles_ = other.roles_;
           onChanged();
         }
@@ -2429,7 +2339,7 @@ public final class UserProto {
           setFailedAttempts(other.getFailedAttempts());
         }
         if (other.hasLocale()) {
-          bitField0_ |= 0x00040000;
+          bitField0_ |= 0x00020000;
           locale_ = other.locale_;
           onChanged();
         }
@@ -2437,7 +2347,7 @@ public final class UserProto {
           setMfaActive(other.getMfaActive());
         }
         if (other.hasMfaSecret()) {
-          bitField0_ |= 0x00100000;
+          bitField0_ |= 0x00080000;
           mfaSecret_ = other.mfaSecret_;
           onChanged();
         }
@@ -2498,126 +2408,121 @@ public final class UserProto {
                 break;
               } // case 26
               case 34: {
-                nickname_ = input.readStringRequireUtf8();
+                lastName_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
               case 42: {
-                lastName_ = input.readStringRequireUtf8();
+                email_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
               case 50: {
-                email_ = input.readStringRequireUtf8();
+                userType_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
               case 58: {
-                userType_ = input.readStringRequireUtf8();
+                membership_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
-              case 66: {
-                membership_ = input.readStringRequireUtf8();
+              case 64: {
+                isEmailVerified_ = input.readBool();
                 bitField0_ |= 0x00000080;
                 break;
-              } // case 66
-              case 72: {
-                isEmailVerified_ = input.readBool();
+              } // case 64
+              case 74: {
+                password_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000100;
                 break;
-              } // case 72
+              } // case 74
               case 82: {
-                password_ = input.readStringRequireUtf8();
+                authData_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000200;
                 break;
               } // case 82
               case 90: {
-                authData_ = input.readStringRequireUtf8();
+                authService_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000400;
                 break;
               } // case 90
               case 98: {
-                authService_ = input.readStringRequireUtf8();
+                roles_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000800;
                 break;
               } // case 98
               case 106: {
-                roles_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 106
-              case 114: {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
                 props__ = input.readMessage(
                     PropsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableProps().getMutableMap().put(
                     props__.getKey(), props__.getValue());
                 break;
-              } // case 114
-              case 122: {
+              } // case 106
+              case 114: {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
                 notifyProps__ = input.readMessage(
                     NotifyPropsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableNotifyProps().getMutableMap().put(
                     notifyProps__.getKey(), notifyProps__.getValue());
                 break;
-              } // case 122
-              case 128: {
+              } // case 114
+              case 120: {
                 lastPasswordUpdate_ = input.readInt64();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 120
+              case 128: {
+                lastPictureUpdate_ = input.readInt64();
                 bitField0_ |= 0x00008000;
                 break;
               } // case 128
               case 136: {
-                lastPictureUpdate_ = input.readInt64();
+                failedAttempts_ = input.readInt32();
                 bitField0_ |= 0x00010000;
                 break;
               } // case 136
-              case 144: {
-                failedAttempts_ = input.readInt32();
+              case 146: {
+                locale_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00020000;
                 break;
-              } // case 144
-              case 154: {
-                locale_ = input.readStringRequireUtf8();
+              } // case 146
+              case 152: {
+                mfaActive_ = input.readBool();
                 bitField0_ |= 0x00040000;
                 break;
-              } // case 154
-              case 160: {
-                mfaActive_ = input.readBool();
+              } // case 152
+              case 162: {
+                mfaSecret_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00080000;
                 break;
-              } // case 160
-              case 170: {
-                mfaSecret_ = input.readStringRequireUtf8();
+              } // case 162
+              case 168: {
+                lastActivityAt_ = input.readInt64();
                 bitField0_ |= 0x00100000;
                 break;
-              } // case 170
+              } // case 168
               case 176: {
-                lastActivityAt_ = input.readInt64();
+                lastLogin_ = input.readInt64();
                 bitField0_ |= 0x00200000;
                 break;
               } // case 176
               case 184: {
-                lastLogin_ = input.readInt64();
+                createdAt_ = input.readInt64();
                 bitField0_ |= 0x00400000;
                 break;
               } // case 184
               case 192: {
-                createdAt_ = input.readInt64();
+                updatedAt_ = input.readInt64();
                 bitField0_ |= 0x00800000;
                 break;
               } // case 192
               case 200: {
-                updatedAt_ = input.readInt64();
+                deletedAt_ = input.readInt64();
                 bitField0_ |= 0x01000000;
                 break;
               } // case 200
-              case 208: {
-                deletedAt_ = input.readInt64();
-                bitField0_ |= 0x02000000;
-                break;
-              } // case 208
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2884,99 +2789,16 @@ public final class UserProto {
         return this;
       }
 
-      private java.lang.Object nickname_ = "";
-      /**
-       * <code>optional string nickname = 4 [json_name = "nickname"];</code>
-       * @return Whether the nickname field is set.
-       */
-      public boolean hasNickname() {
-        return ((bitField0_ & 0x00000008) != 0);
-      }
-      /**
-       * <code>optional string nickname = 4 [json_name = "nickname"];</code>
-       * @return The nickname.
-       */
-      public java.lang.String getNickname() {
-        java.lang.Object ref = nickname_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          nickname_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string nickname = 4 [json_name = "nickname"];</code>
-       * @return The bytes for nickname.
-       */
-      public com.google.protobuf.ByteString
-          getNicknameBytes() {
-        java.lang.Object ref = nickname_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          nickname_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string nickname = 4 [json_name = "nickname"];</code>
-       * @param value The nickname to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNickname(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00000008;
-        nickname_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string nickname = 4 [json_name = "nickname"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearNickname() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        nickname_ = getDefaultInstance().getNickname();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string nickname = 4 [json_name = "nickname"];</code>
-       * @param value The bytes for nickname to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNicknameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        bitField0_ |= 0x00000008;
-        nickname_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object lastName_ = "";
       /**
-       * <code>optional string last_name = 5 [json_name = "lastName"];</code>
+       * <code>optional string last_name = 4 [json_name = "lastName"];</code>
        * @return Whether the lastName field is set.
        */
       public boolean hasLastName() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
-       * <code>optional string last_name = 5 [json_name = "lastName"];</code>
+       * <code>optional string last_name = 4 [json_name = "lastName"];</code>
        * @return The lastName.
        */
       public java.lang.String getLastName() {
@@ -2992,7 +2814,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>optional string last_name = 5 [json_name = "lastName"];</code>
+       * <code>optional string last_name = 4 [json_name = "lastName"];</code>
        * @return The bytes for lastName.
        */
       public com.google.protobuf.ByteString
@@ -3009,7 +2831,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>optional string last_name = 5 [json_name = "lastName"];</code>
+       * <code>optional string last_name = 4 [json_name = "lastName"];</code>
        * @param value The lastName to set.
        * @return This builder for chaining.
        */
@@ -3018,23 +2840,23 @@ public final class UserProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
+  bitField0_ |= 0x00000008;
         lastName_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string last_name = 5 [json_name = "lastName"];</code>
+       * <code>optional string last_name = 4 [json_name = "lastName"];</code>
        * @return This builder for chaining.
        */
       public Builder clearLastName() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         lastName_ = getDefaultInstance().getLastName();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string last_name = 5 [json_name = "lastName"];</code>
+       * <code>optional string last_name = 4 [json_name = "lastName"];</code>
        * @param value The bytes for lastName to set.
        * @return This builder for chaining.
        */
@@ -3044,7 +2866,7 @@ public final class UserProto {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         lastName_ = value;
         onChanged();
         return this;
@@ -3052,14 +2874,14 @@ public final class UserProto {
 
       private java.lang.Object email_ = "";
       /**
-       * <code>optional string email = 6 [json_name = "email"];</code>
+       * <code>optional string email = 5 [json_name = "email"];</code>
        * @return Whether the email field is set.
        */
       public boolean hasEmail() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
-       * <code>optional string email = 6 [json_name = "email"];</code>
+       * <code>optional string email = 5 [json_name = "email"];</code>
        * @return The email.
        */
       public java.lang.String getEmail() {
@@ -3075,7 +2897,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>optional string email = 6 [json_name = "email"];</code>
+       * <code>optional string email = 5 [json_name = "email"];</code>
        * @return The bytes for email.
        */
       public com.google.protobuf.ByteString
@@ -3092,7 +2914,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>optional string email = 6 [json_name = "email"];</code>
+       * <code>optional string email = 5 [json_name = "email"];</code>
        * @param value The email to set.
        * @return This builder for chaining.
        */
@@ -3101,23 +2923,23 @@ public final class UserProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000020;
+  bitField0_ |= 0x00000010;
         email_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string email = 6 [json_name = "email"];</code>
+       * <code>optional string email = 5 [json_name = "email"];</code>
        * @return This builder for chaining.
        */
       public Builder clearEmail() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         email_ = getDefaultInstance().getEmail();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string email = 6 [json_name = "email"];</code>
+       * <code>optional string email = 5 [json_name = "email"];</code>
        * @param value The bytes for email to set.
        * @return This builder for chaining.
        */
@@ -3127,7 +2949,7 @@ public final class UserProto {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         email_ = value;
         onChanged();
         return this;
@@ -3135,14 +2957,14 @@ public final class UserProto {
 
       private java.lang.Object userType_ = "";
       /**
-       * <code>optional string user_type = 7 [json_name = "userType"];</code>
+       * <code>optional string user_type = 6 [json_name = "userType"];</code>
        * @return Whether the userType field is set.
        */
       public boolean hasUserType() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
-       * <code>optional string user_type = 7 [json_name = "userType"];</code>
+       * <code>optional string user_type = 6 [json_name = "userType"];</code>
        * @return The userType.
        */
       public java.lang.String getUserType() {
@@ -3158,7 +2980,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>optional string user_type = 7 [json_name = "userType"];</code>
+       * <code>optional string user_type = 6 [json_name = "userType"];</code>
        * @return The bytes for userType.
        */
       public com.google.protobuf.ByteString
@@ -3175,7 +2997,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>optional string user_type = 7 [json_name = "userType"];</code>
+       * <code>optional string user_type = 6 [json_name = "userType"];</code>
        * @param value The userType to set.
        * @return This builder for chaining.
        */
@@ -3184,23 +3006,23 @@ public final class UserProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000040;
+  bitField0_ |= 0x00000020;
         userType_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string user_type = 7 [json_name = "userType"];</code>
+       * <code>optional string user_type = 6 [json_name = "userType"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUserType() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000020);
         userType_ = getDefaultInstance().getUserType();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string user_type = 7 [json_name = "userType"];</code>
+       * <code>optional string user_type = 6 [json_name = "userType"];</code>
        * @param value The bytes for userType to set.
        * @return This builder for chaining.
        */
@@ -3210,7 +3032,7 @@ public final class UserProto {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         userType_ = value;
         onChanged();
         return this;
@@ -3218,14 +3040,14 @@ public final class UserProto {
 
       private java.lang.Object membership_ = "";
       /**
-       * <code>optional string membership = 8 [json_name = "membership"];</code>
+       * <code>optional string membership = 7 [json_name = "membership"];</code>
        * @return Whether the membership field is set.
        */
       public boolean hasMembership() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
-       * <code>optional string membership = 8 [json_name = "membership"];</code>
+       * <code>optional string membership = 7 [json_name = "membership"];</code>
        * @return The membership.
        */
       public java.lang.String getMembership() {
@@ -3241,7 +3063,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>optional string membership = 8 [json_name = "membership"];</code>
+       * <code>optional string membership = 7 [json_name = "membership"];</code>
        * @return The bytes for membership.
        */
       public com.google.protobuf.ByteString
@@ -3258,7 +3080,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>optional string membership = 8 [json_name = "membership"];</code>
+       * <code>optional string membership = 7 [json_name = "membership"];</code>
        * @param value The membership to set.
        * @return This builder for chaining.
        */
@@ -3267,23 +3089,23 @@ public final class UserProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000080;
+  bitField0_ |= 0x00000040;
         membership_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string membership = 8 [json_name = "membership"];</code>
+       * <code>optional string membership = 7 [json_name = "membership"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMembership() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000040);
         membership_ = getDefaultInstance().getMembership();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string membership = 8 [json_name = "membership"];</code>
+       * <code>optional string membership = 7 [json_name = "membership"];</code>
        * @param value The bytes for membership to set.
        * @return This builder for chaining.
        */
@@ -3293,7 +3115,7 @@ public final class UserProto {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000040;
         membership_ = value;
         onChanged();
         return this;
@@ -3301,15 +3123,15 @@ public final class UserProto {
 
       private boolean isEmailVerified_ ;
       /**
-       * <code>optional bool is_email_verified = 9 [json_name = "isEmailVerified"];</code>
+       * <code>optional bool is_email_verified = 8 [json_name = "isEmailVerified"];</code>
        * @return Whether the isEmailVerified field is set.
        */
       @java.lang.Override
       public boolean hasIsEmailVerified() {
-        return ((bitField0_ & 0x00000100) != 0);
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
-       * <code>optional bool is_email_verified = 9 [json_name = "isEmailVerified"];</code>
+       * <code>optional bool is_email_verified = 8 [json_name = "isEmailVerified"];</code>
        * @return The isEmailVerified.
        */
       @java.lang.Override
@@ -3317,22 +3139,22 @@ public final class UserProto {
         return isEmailVerified_;
       }
       /**
-       * <code>optional bool is_email_verified = 9 [json_name = "isEmailVerified"];</code>
+       * <code>optional bool is_email_verified = 8 [json_name = "isEmailVerified"];</code>
        * @param value The isEmailVerified to set.
        * @return This builder for chaining.
        */
       public Builder setIsEmailVerified(boolean value) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000080;
         isEmailVerified_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool is_email_verified = 9 [json_name = "isEmailVerified"];</code>
+       * <code>optional bool is_email_verified = 8 [json_name = "isEmailVerified"];</code>
        * @return This builder for chaining.
        */
       public Builder clearIsEmailVerified() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000080);
         isEmailVerified_ = false;
         onChanged();
         return this;
@@ -3340,14 +3162,14 @@ public final class UserProto {
 
       private java.lang.Object password_ = "";
       /**
-       * <code>optional string password = 10 [json_name = "password"];</code>
+       * <code>optional string password = 9 [json_name = "password"];</code>
        * @return Whether the password field is set.
        */
       public boolean hasPassword() {
-        return ((bitField0_ & 0x00000200) != 0);
+        return ((bitField0_ & 0x00000100) != 0);
       }
       /**
-       * <code>optional string password = 10 [json_name = "password"];</code>
+       * <code>optional string password = 9 [json_name = "password"];</code>
        * @return The password.
        */
       public java.lang.String getPassword() {
@@ -3363,7 +3185,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>optional string password = 10 [json_name = "password"];</code>
+       * <code>optional string password = 9 [json_name = "password"];</code>
        * @return The bytes for password.
        */
       public com.google.protobuf.ByteString
@@ -3380,7 +3202,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>optional string password = 10 [json_name = "password"];</code>
+       * <code>optional string password = 9 [json_name = "password"];</code>
        * @param value The password to set.
        * @return This builder for chaining.
        */
@@ -3389,23 +3211,23 @@ public final class UserProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000200;
+  bitField0_ |= 0x00000100;
         password_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string password = 10 [json_name = "password"];</code>
+       * <code>optional string password = 9 [json_name = "password"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPassword() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000100);
         password_ = getDefaultInstance().getPassword();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string password = 10 [json_name = "password"];</code>
+       * <code>optional string password = 9 [json_name = "password"];</code>
        * @param value The bytes for password to set.
        * @return This builder for chaining.
        */
@@ -3415,7 +3237,7 @@ public final class UserProto {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000100;
         password_ = value;
         onChanged();
         return this;
@@ -3423,14 +3245,14 @@ public final class UserProto {
 
       private java.lang.Object authData_ = "";
       /**
-       * <code>optional string auth_data = 11 [json_name = "authData"];</code>
+       * <code>optional string auth_data = 10 [json_name = "authData"];</code>
        * @return Whether the authData field is set.
        */
       public boolean hasAuthData() {
-        return ((bitField0_ & 0x00000400) != 0);
+        return ((bitField0_ & 0x00000200) != 0);
       }
       /**
-       * <code>optional string auth_data = 11 [json_name = "authData"];</code>
+       * <code>optional string auth_data = 10 [json_name = "authData"];</code>
        * @return The authData.
        */
       public java.lang.String getAuthData() {
@@ -3446,7 +3268,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>optional string auth_data = 11 [json_name = "authData"];</code>
+       * <code>optional string auth_data = 10 [json_name = "authData"];</code>
        * @return The bytes for authData.
        */
       public com.google.protobuf.ByteString
@@ -3463,7 +3285,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>optional string auth_data = 11 [json_name = "authData"];</code>
+       * <code>optional string auth_data = 10 [json_name = "authData"];</code>
        * @param value The authData to set.
        * @return This builder for chaining.
        */
@@ -3472,23 +3294,23 @@ public final class UserProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000400;
+  bitField0_ |= 0x00000200;
         authData_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string auth_data = 11 [json_name = "authData"];</code>
+       * <code>optional string auth_data = 10 [json_name = "authData"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAuthData() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000200);
         authData_ = getDefaultInstance().getAuthData();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string auth_data = 11 [json_name = "authData"];</code>
+       * <code>optional string auth_data = 10 [json_name = "authData"];</code>
        * @param value The bytes for authData to set.
        * @return This builder for chaining.
        */
@@ -3498,7 +3320,7 @@ public final class UserProto {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000200;
         authData_ = value;
         onChanged();
         return this;
@@ -3506,14 +3328,14 @@ public final class UserProto {
 
       private java.lang.Object authService_ = "";
       /**
-       * <code>optional string auth_service = 12 [json_name = "authService"];</code>
+       * <code>optional string auth_service = 11 [json_name = "authService"];</code>
        * @return Whether the authService field is set.
        */
       public boolean hasAuthService() {
-        return ((bitField0_ & 0x00000800) != 0);
+        return ((bitField0_ & 0x00000400) != 0);
       }
       /**
-       * <code>optional string auth_service = 12 [json_name = "authService"];</code>
+       * <code>optional string auth_service = 11 [json_name = "authService"];</code>
        * @return The authService.
        */
       public java.lang.String getAuthService() {
@@ -3529,7 +3351,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>optional string auth_service = 12 [json_name = "authService"];</code>
+       * <code>optional string auth_service = 11 [json_name = "authService"];</code>
        * @return The bytes for authService.
        */
       public com.google.protobuf.ByteString
@@ -3546,7 +3368,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>optional string auth_service = 12 [json_name = "authService"];</code>
+       * <code>optional string auth_service = 11 [json_name = "authService"];</code>
        * @param value The authService to set.
        * @return This builder for chaining.
        */
@@ -3555,23 +3377,23 @@ public final class UserProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000800;
+  bitField0_ |= 0x00000400;
         authService_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string auth_service = 12 [json_name = "authService"];</code>
+       * <code>optional string auth_service = 11 [json_name = "authService"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAuthService() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00000400);
         authService_ = getDefaultInstance().getAuthService();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string auth_service = 12 [json_name = "authService"];</code>
+       * <code>optional string auth_service = 11 [json_name = "authService"];</code>
        * @param value The bytes for authService to set.
        * @return This builder for chaining.
        */
@@ -3581,7 +3403,7 @@ public final class UserProto {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00000400;
         authService_ = value;
         onChanged();
         return this;
@@ -3589,14 +3411,14 @@ public final class UserProto {
 
       private java.lang.Object roles_ = "";
       /**
-       * <code>optional string roles = 13 [json_name = "roles"];</code>
+       * <code>optional string roles = 12 [json_name = "roles"];</code>
        * @return Whether the roles field is set.
        */
       public boolean hasRoles() {
-        return ((bitField0_ & 0x00001000) != 0);
+        return ((bitField0_ & 0x00000800) != 0);
       }
       /**
-       * <code>optional string roles = 13 [json_name = "roles"];</code>
+       * <code>optional string roles = 12 [json_name = "roles"];</code>
        * @return The roles.
        */
       public java.lang.String getRoles() {
@@ -3612,7 +3434,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>optional string roles = 13 [json_name = "roles"];</code>
+       * <code>optional string roles = 12 [json_name = "roles"];</code>
        * @return The bytes for roles.
        */
       public com.google.protobuf.ByteString
@@ -3629,7 +3451,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>optional string roles = 13 [json_name = "roles"];</code>
+       * <code>optional string roles = 12 [json_name = "roles"];</code>
        * @param value The roles to set.
        * @return This builder for chaining.
        */
@@ -3638,23 +3460,23 @@ public final class UserProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00001000;
+  bitField0_ |= 0x00000800;
         roles_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string roles = 13 [json_name = "roles"];</code>
+       * <code>optional string roles = 12 [json_name = "roles"];</code>
        * @return This builder for chaining.
        */
       public Builder clearRoles() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000800);
         roles_ = getDefaultInstance().getRoles();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string roles = 13 [json_name = "roles"];</code>
+       * <code>optional string roles = 12 [json_name = "roles"];</code>
        * @param value The bytes for roles to set.
        * @return This builder for chaining.
        */
@@ -3664,7 +3486,7 @@ public final class UserProto {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000800;
         roles_ = value;
         onChanged();
         return this;
@@ -3697,7 +3519,7 @@ public final class UserProto {
         return internalGetProps().getMap().size();
       }
       /**
-       * <code>map&lt;string, string&gt; props = 14 [json_name = "props"];</code>
+       * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
        */
 
       @java.lang.Override
@@ -3715,7 +3537,7 @@ public final class UserProto {
         return getPropsMap();
       }
       /**
-       * <code>map&lt;string, string&gt; props = 14 [json_name = "props"];</code>
+       * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
        */
       @java.lang.Override
 
@@ -3723,7 +3545,7 @@ public final class UserProto {
         return internalGetProps().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; props = 14 [json_name = "props"];</code>
+       * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
        */
       @java.lang.Override
 
@@ -3736,7 +3558,7 @@ public final class UserProto {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;string, string&gt; props = 14 [json_name = "props"];</code>
+       * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
        */
       @java.lang.Override
 
@@ -3757,7 +3579,7 @@ public final class UserProto {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; props = 14 [json_name = "props"];</code>
+       * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
        */
 
       public Builder removeProps(
@@ -3776,7 +3598,7 @@ public final class UserProto {
         return internalGetMutableProps().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; props = 14 [json_name = "props"];</code>
+       * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
        */
       public Builder putProps(
           java.lang.String key,
@@ -3791,7 +3613,7 @@ public final class UserProto {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; props = 14 [json_name = "props"];</code>
+       * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
        */
 
       public Builder putAllProps(
@@ -3828,7 +3650,7 @@ public final class UserProto {
         return internalGetNotifyProps().getMap().size();
       }
       /**
-       * <code>map&lt;string, string&gt; notify_props = 15 [json_name = "notifyProps"];</code>
+       * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
        */
 
       @java.lang.Override
@@ -3846,7 +3668,7 @@ public final class UserProto {
         return getNotifyPropsMap();
       }
       /**
-       * <code>map&lt;string, string&gt; notify_props = 15 [json_name = "notifyProps"];</code>
+       * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
        */
       @java.lang.Override
 
@@ -3854,7 +3676,7 @@ public final class UserProto {
         return internalGetNotifyProps().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; notify_props = 15 [json_name = "notifyProps"];</code>
+       * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
        */
       @java.lang.Override
 
@@ -3867,7 +3689,7 @@ public final class UserProto {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;string, string&gt; notify_props = 15 [json_name = "notifyProps"];</code>
+       * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
        */
       @java.lang.Override
 
@@ -3888,7 +3710,7 @@ public final class UserProto {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; notify_props = 15 [json_name = "notifyProps"];</code>
+       * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
        */
 
       public Builder removeNotifyProps(
@@ -3907,7 +3729,7 @@ public final class UserProto {
         return internalGetMutableNotifyProps().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; notify_props = 15 [json_name = "notifyProps"];</code>
+       * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
        */
       public Builder putNotifyProps(
           java.lang.String key,
@@ -3922,7 +3744,7 @@ public final class UserProto {
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; notify_props = 15 [json_name = "notifyProps"];</code>
+       * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
        */
 
       public Builder putAllNotifyProps(
@@ -3934,15 +3756,15 @@ public final class UserProto {
 
       private long lastPasswordUpdate_ ;
       /**
-       * <code>optional int64 last_password_update = 16 [json_name = "lastPasswordUpdate"];</code>
+       * <code>optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];</code>
        * @return Whether the lastPasswordUpdate field is set.
        */
       @java.lang.Override
       public boolean hasLastPasswordUpdate() {
-        return ((bitField0_ & 0x00008000) != 0);
+        return ((bitField0_ & 0x00004000) != 0);
       }
       /**
-       * <code>optional int64 last_password_update = 16 [json_name = "lastPasswordUpdate"];</code>
+       * <code>optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];</code>
        * @return The lastPasswordUpdate.
        */
       @java.lang.Override
@@ -3950,22 +3772,22 @@ public final class UserProto {
         return lastPasswordUpdate_;
       }
       /**
-       * <code>optional int64 last_password_update = 16 [json_name = "lastPasswordUpdate"];</code>
+       * <code>optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];</code>
        * @param value The lastPasswordUpdate to set.
        * @return This builder for chaining.
        */
       public Builder setLastPasswordUpdate(long value) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00004000;
         lastPasswordUpdate_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 last_password_update = 16 [json_name = "lastPasswordUpdate"];</code>
+       * <code>optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];</code>
        * @return This builder for chaining.
        */
       public Builder clearLastPasswordUpdate() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         lastPasswordUpdate_ = 0L;
         onChanged();
         return this;
@@ -3973,15 +3795,15 @@ public final class UserProto {
 
       private long lastPictureUpdate_ ;
       /**
-       * <code>optional int64 last_picture_update = 17 [json_name = "lastPictureUpdate"];</code>
+       * <code>optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];</code>
        * @return Whether the lastPictureUpdate field is set.
        */
       @java.lang.Override
       public boolean hasLastPictureUpdate() {
-        return ((bitField0_ & 0x00010000) != 0);
+        return ((bitField0_ & 0x00008000) != 0);
       }
       /**
-       * <code>optional int64 last_picture_update = 17 [json_name = "lastPictureUpdate"];</code>
+       * <code>optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];</code>
        * @return The lastPictureUpdate.
        */
       @java.lang.Override
@@ -3989,22 +3811,22 @@ public final class UserProto {
         return lastPictureUpdate_;
       }
       /**
-       * <code>optional int64 last_picture_update = 17 [json_name = "lastPictureUpdate"];</code>
+       * <code>optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];</code>
        * @param value The lastPictureUpdate to set.
        * @return This builder for chaining.
        */
       public Builder setLastPictureUpdate(long value) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00008000;
         lastPictureUpdate_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 last_picture_update = 17 [json_name = "lastPictureUpdate"];</code>
+       * <code>optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];</code>
        * @return This builder for chaining.
        */
       public Builder clearLastPictureUpdate() {
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         lastPictureUpdate_ = 0L;
         onChanged();
         return this;
@@ -4012,15 +3834,15 @@ public final class UserProto {
 
       private int failedAttempts_ ;
       /**
-       * <code>optional int32 failed_attempts = 18 [json_name = "failedAttempts"];</code>
+       * <code>optional int32 failed_attempts = 17 [json_name = "failedAttempts"];</code>
        * @return Whether the failedAttempts field is set.
        */
       @java.lang.Override
       public boolean hasFailedAttempts() {
-        return ((bitField0_ & 0x00020000) != 0);
+        return ((bitField0_ & 0x00010000) != 0);
       }
       /**
-       * <code>optional int32 failed_attempts = 18 [json_name = "failedAttempts"];</code>
+       * <code>optional int32 failed_attempts = 17 [json_name = "failedAttempts"];</code>
        * @return The failedAttempts.
        */
       @java.lang.Override
@@ -4028,22 +3850,22 @@ public final class UserProto {
         return failedAttempts_;
       }
       /**
-       * <code>optional int32 failed_attempts = 18 [json_name = "failedAttempts"];</code>
+       * <code>optional int32 failed_attempts = 17 [json_name = "failedAttempts"];</code>
        * @param value The failedAttempts to set.
        * @return This builder for chaining.
        */
       public Builder setFailedAttempts(int value) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00010000;
         failedAttempts_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 failed_attempts = 18 [json_name = "failedAttempts"];</code>
+       * <code>optional int32 failed_attempts = 17 [json_name = "failedAttempts"];</code>
        * @return This builder for chaining.
        */
       public Builder clearFailedAttempts() {
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         failedAttempts_ = 0;
         onChanged();
         return this;
@@ -4051,14 +3873,14 @@ public final class UserProto {
 
       private java.lang.Object locale_ = "";
       /**
-       * <code>optional string locale = 19 [json_name = "locale"];</code>
+       * <code>optional string locale = 18 [json_name = "locale"];</code>
        * @return Whether the locale field is set.
        */
       public boolean hasLocale() {
-        return ((bitField0_ & 0x00040000) != 0);
+        return ((bitField0_ & 0x00020000) != 0);
       }
       /**
-       * <code>optional string locale = 19 [json_name = "locale"];</code>
+       * <code>optional string locale = 18 [json_name = "locale"];</code>
        * @return The locale.
        */
       public java.lang.String getLocale() {
@@ -4074,7 +3896,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>optional string locale = 19 [json_name = "locale"];</code>
+       * <code>optional string locale = 18 [json_name = "locale"];</code>
        * @return The bytes for locale.
        */
       public com.google.protobuf.ByteString
@@ -4091,7 +3913,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>optional string locale = 19 [json_name = "locale"];</code>
+       * <code>optional string locale = 18 [json_name = "locale"];</code>
        * @param value The locale to set.
        * @return This builder for chaining.
        */
@@ -4100,23 +3922,23 @@ public final class UserProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00040000;
+  bitField0_ |= 0x00020000;
         locale_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string locale = 19 [json_name = "locale"];</code>
+       * <code>optional string locale = 18 [json_name = "locale"];</code>
        * @return This builder for chaining.
        */
       public Builder clearLocale() {
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         locale_ = getDefaultInstance().getLocale();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string locale = 19 [json_name = "locale"];</code>
+       * <code>optional string locale = 18 [json_name = "locale"];</code>
        * @param value The bytes for locale to set.
        * @return This builder for chaining.
        */
@@ -4126,7 +3948,7 @@ public final class UserProto {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00020000;
         locale_ = value;
         onChanged();
         return this;
@@ -4134,15 +3956,15 @@ public final class UserProto {
 
       private boolean mfaActive_ ;
       /**
-       * <code>optional bool mfa_active = 20 [json_name = "mfaActive"];</code>
+       * <code>optional bool mfa_active = 19 [json_name = "mfaActive"];</code>
        * @return Whether the mfaActive field is set.
        */
       @java.lang.Override
       public boolean hasMfaActive() {
-        return ((bitField0_ & 0x00080000) != 0);
+        return ((bitField0_ & 0x00040000) != 0);
       }
       /**
-       * <code>optional bool mfa_active = 20 [json_name = "mfaActive"];</code>
+       * <code>optional bool mfa_active = 19 [json_name = "mfaActive"];</code>
        * @return The mfaActive.
        */
       @java.lang.Override
@@ -4150,22 +3972,22 @@ public final class UserProto {
         return mfaActive_;
       }
       /**
-       * <code>optional bool mfa_active = 20 [json_name = "mfaActive"];</code>
+       * <code>optional bool mfa_active = 19 [json_name = "mfaActive"];</code>
        * @param value The mfaActive to set.
        * @return This builder for chaining.
        */
       public Builder setMfaActive(boolean value) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00040000;
         mfaActive_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool mfa_active = 20 [json_name = "mfaActive"];</code>
+       * <code>optional bool mfa_active = 19 [json_name = "mfaActive"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMfaActive() {
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         mfaActive_ = false;
         onChanged();
         return this;
@@ -4173,14 +3995,14 @@ public final class UserProto {
 
       private java.lang.Object mfaSecret_ = "";
       /**
-       * <code>optional string mfa_secret = 21 [json_name = "mfaSecret"];</code>
+       * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
        * @return Whether the mfaSecret field is set.
        */
       public boolean hasMfaSecret() {
-        return ((bitField0_ & 0x00100000) != 0);
+        return ((bitField0_ & 0x00080000) != 0);
       }
       /**
-       * <code>optional string mfa_secret = 21 [json_name = "mfaSecret"];</code>
+       * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
        * @return The mfaSecret.
        */
       public java.lang.String getMfaSecret() {
@@ -4196,7 +4018,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>optional string mfa_secret = 21 [json_name = "mfaSecret"];</code>
+       * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
        * @return The bytes for mfaSecret.
        */
       public com.google.protobuf.ByteString
@@ -4213,7 +4035,7 @@ public final class UserProto {
         }
       }
       /**
-       * <code>optional string mfa_secret = 21 [json_name = "mfaSecret"];</code>
+       * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
        * @param value The mfaSecret to set.
        * @return This builder for chaining.
        */
@@ -4222,23 +4044,23 @@ public final class UserProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00100000;
+  bitField0_ |= 0x00080000;
         mfaSecret_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string mfa_secret = 21 [json_name = "mfaSecret"];</code>
+       * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMfaSecret() {
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         mfaSecret_ = getDefaultInstance().getMfaSecret();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string mfa_secret = 21 [json_name = "mfaSecret"];</code>
+       * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
        * @param value The bytes for mfaSecret to set.
        * @return This builder for chaining.
        */
@@ -4248,7 +4070,7 @@ public final class UserProto {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00080000;
         mfaSecret_ = value;
         onChanged();
         return this;
@@ -4256,15 +4078,15 @@ public final class UserProto {
 
       private long lastActivityAt_ ;
       /**
-       * <code>optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];</code>
+       * <code>optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];</code>
        * @return Whether the lastActivityAt field is set.
        */
       @java.lang.Override
       public boolean hasLastActivityAt() {
-        return ((bitField0_ & 0x00200000) != 0);
+        return ((bitField0_ & 0x00100000) != 0);
       }
       /**
-       * <code>optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];</code>
+       * <code>optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];</code>
        * @return The lastActivityAt.
        */
       @java.lang.Override
@@ -4272,22 +4094,22 @@ public final class UserProto {
         return lastActivityAt_;
       }
       /**
-       * <code>optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];</code>
+       * <code>optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];</code>
        * @param value The lastActivityAt to set.
        * @return This builder for chaining.
        */
       public Builder setLastActivityAt(long value) {
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00100000;
         lastActivityAt_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];</code>
+       * <code>optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearLastActivityAt() {
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x00100000);
         lastActivityAt_ = 0L;
         onChanged();
         return this;
@@ -4295,15 +4117,15 @@ public final class UserProto {
 
       private long lastLogin_ ;
       /**
-       * <code>optional int64 last_login = 23 [json_name = "lastLogin"];</code>
+       * <code>optional int64 last_login = 22 [json_name = "lastLogin"];</code>
        * @return Whether the lastLogin field is set.
        */
       @java.lang.Override
       public boolean hasLastLogin() {
-        return ((bitField0_ & 0x00400000) != 0);
+        return ((bitField0_ & 0x00200000) != 0);
       }
       /**
-       * <code>optional int64 last_login = 23 [json_name = "lastLogin"];</code>
+       * <code>optional int64 last_login = 22 [json_name = "lastLogin"];</code>
        * @return The lastLogin.
        */
       @java.lang.Override
@@ -4311,22 +4133,22 @@ public final class UserProto {
         return lastLogin_;
       }
       /**
-       * <code>optional int64 last_login = 23 [json_name = "lastLogin"];</code>
+       * <code>optional int64 last_login = 22 [json_name = "lastLogin"];</code>
        * @param value The lastLogin to set.
        * @return This builder for chaining.
        */
       public Builder setLastLogin(long value) {
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00200000;
         lastLogin_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 last_login = 23 [json_name = "lastLogin"];</code>
+       * <code>optional int64 last_login = 22 [json_name = "lastLogin"];</code>
        * @return This builder for chaining.
        */
       public Builder clearLastLogin() {
-        bitField0_ = (bitField0_ & ~0x00400000);
+        bitField0_ = (bitField0_ & ~0x00200000);
         lastLogin_ = 0L;
         onChanged();
         return this;
@@ -4334,15 +4156,15 @@ public final class UserProto {
 
       private long createdAt_ ;
       /**
-       * <code>optional int64 created_at = 24 [json_name = "createdAt"];</code>
+       * <code>optional int64 created_at = 23 [json_name = "createdAt"];</code>
        * @return Whether the createdAt field is set.
        */
       @java.lang.Override
       public boolean hasCreatedAt() {
-        return ((bitField0_ & 0x00800000) != 0);
+        return ((bitField0_ & 0x00400000) != 0);
       }
       /**
-       * <code>optional int64 created_at = 24 [json_name = "createdAt"];</code>
+       * <code>optional int64 created_at = 23 [json_name = "createdAt"];</code>
        * @return The createdAt.
        */
       @java.lang.Override
@@ -4350,22 +4172,22 @@ public final class UserProto {
         return createdAt_;
       }
       /**
-       * <code>optional int64 created_at = 24 [json_name = "createdAt"];</code>
+       * <code>optional int64 created_at = 23 [json_name = "createdAt"];</code>
        * @param value The createdAt to set.
        * @return This builder for chaining.
        */
       public Builder setCreatedAt(long value) {
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x00400000;
         createdAt_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 created_at = 24 [json_name = "createdAt"];</code>
+       * <code>optional int64 created_at = 23 [json_name = "createdAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCreatedAt() {
-        bitField0_ = (bitField0_ & ~0x00800000);
+        bitField0_ = (bitField0_ & ~0x00400000);
         createdAt_ = 0L;
         onChanged();
         return this;
@@ -4373,15 +4195,15 @@ public final class UserProto {
 
       private long updatedAt_ ;
       /**
-       * <code>optional int64 updated_at = 25 [json_name = "updatedAt"];</code>
+       * <code>optional int64 updated_at = 24 [json_name = "updatedAt"];</code>
        * @return Whether the updatedAt field is set.
        */
       @java.lang.Override
       public boolean hasUpdatedAt() {
-        return ((bitField0_ & 0x01000000) != 0);
+        return ((bitField0_ & 0x00800000) != 0);
       }
       /**
-       * <code>optional int64 updated_at = 25 [json_name = "updatedAt"];</code>
+       * <code>optional int64 updated_at = 24 [json_name = "updatedAt"];</code>
        * @return The updatedAt.
        */
       @java.lang.Override
@@ -4389,22 +4211,22 @@ public final class UserProto {
         return updatedAt_;
       }
       /**
-       * <code>optional int64 updated_at = 25 [json_name = "updatedAt"];</code>
+       * <code>optional int64 updated_at = 24 [json_name = "updatedAt"];</code>
        * @param value The updatedAt to set.
        * @return This builder for chaining.
        */
       public Builder setUpdatedAt(long value) {
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x00800000;
         updatedAt_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 updated_at = 25 [json_name = "updatedAt"];</code>
+       * <code>optional int64 updated_at = 24 [json_name = "updatedAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdatedAt() {
-        bitField0_ = (bitField0_ & ~0x01000000);
+        bitField0_ = (bitField0_ & ~0x00800000);
         updatedAt_ = 0L;
         onChanged();
         return this;
@@ -4412,15 +4234,15 @@ public final class UserProto {
 
       private long deletedAt_ ;
       /**
-       * <code>optional int64 deleted_at = 26 [json_name = "deletedAt"];</code>
+       * <code>optional int64 deleted_at = 25 [json_name = "deletedAt"];</code>
        * @return Whether the deletedAt field is set.
        */
       @java.lang.Override
       public boolean hasDeletedAt() {
-        return ((bitField0_ & 0x02000000) != 0);
+        return ((bitField0_ & 0x01000000) != 0);
       }
       /**
-       * <code>optional int64 deleted_at = 26 [json_name = "deletedAt"];</code>
+       * <code>optional int64 deleted_at = 25 [json_name = "deletedAt"];</code>
        * @return The deletedAt.
        */
       @java.lang.Override
@@ -4428,22 +4250,22 @@ public final class UserProto {
         return deletedAt_;
       }
       /**
-       * <code>optional int64 deleted_at = 26 [json_name = "deletedAt"];</code>
+       * <code>optional int64 deleted_at = 25 [json_name = "deletedAt"];</code>
        * @param value The deletedAt to set.
        * @return This builder for chaining.
        */
       public Builder setDeletedAt(long value) {
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x01000000;
         deletedAt_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 deleted_at = 26 [json_name = "deletedAt"];</code>
+       * <code>optional int64 deleted_at = 25 [json_name = "deletedAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearDeletedAt() {
-        bitField0_ = (bitField0_ & ~0x02000000);
+        bitField0_ = (bitField0_ & ~0x01000000);
         deletedAt_ = 0L;
         onChanged();
         return this;
@@ -4537,48 +4359,47 @@ public final class UserProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\022user/v1/user.proto\022\007user.v1\032\026user/v1/s" +
-      "upplier.proto\"\327\013\n\004User\022\023\n\002id\030\001 \001(\tH\000R\002id" +
+      "upplier.proto\"\251\013\n\004User\022\023\n\002id\030\001 \001(\tH\000R\002id" +
       "\210\001\001\022\037\n\010username\030\002 \001(\tH\001R\010username\210\001\001\022\"\n\n" +
-      "first_name\030\003 \001(\tH\002R\tfirstName\210\001\001\022\037\n\010nick" +
-      "name\030\004 \001(\tH\003R\010nickname\210\001\001\022 \n\tlast_name\030\005" +
-      " \001(\tH\004R\010lastName\210\001\001\022\031\n\005email\030\006 \001(\tH\005R\005em" +
-      "ail\210\001\001\022 \n\tuser_type\030\007 \001(\tH\006R\010userType\210\001\001" +
-      "\022#\n\nmembership\030\010 \001(\tH\007R\nmembership\210\001\001\022/\n" +
-      "\021is_email_verified\030\t \001(\010H\010R\017isEmailVerif" +
-      "ied\210\001\001\022\037\n\010password\030\n \001(\tH\tR\010password\210\001\001\022" +
-      " \n\tauth_data\030\013 \001(\tH\nR\010authData\210\001\001\022&\n\014aut" +
-      "h_service\030\014 \001(\tH\013R\013authService\210\001\001\022\031\n\005rol" +
-      "es\030\r \001(\tH\014R\005roles\210\001\001\022.\n\005props\030\016 \003(\0132\030.us" +
-      "er.v1.User.PropsEntryR\005props\022A\n\014notify_p" +
-      "rops\030\017 \003(\0132\036.user.v1.User.NotifyPropsEnt" +
-      "ryR\013notifyProps\0225\n\024last_password_update\030" +
-      "\020 \001(\003H\rR\022lastPasswordUpdate\210\001\001\0223\n\023last_p" +
-      "icture_update\030\021 \001(\003H\016R\021lastPictureUpdate" +
-      "\210\001\001\022,\n\017failed_attempts\030\022 \001(\005H\017R\016failedAt" +
-      "tempts\210\001\001\022\033\n\006locale\030\023 \001(\tH\020R\006locale\210\001\001\022\"" +
-      "\n\nmfa_active\030\024 \001(\010H\021R\tmfaActive\210\001\001\022\"\n\nmf" +
-      "a_secret\030\025 \001(\tH\022R\tmfaSecret\210\001\001\022-\n\020last_a" +
-      "ctivity_at\030\026 \001(\003H\023R\016lastActivityAt\210\001\001\022\"\n" +
-      "\nlast_login\030\027 \001(\003H\024R\tlastLogin\210\001\001\022\"\n\ncre" +
-      "ated_at\030\030 \001(\003H\025R\tcreatedAt\210\001\001\022\"\n\nupdated" +
-      "_at\030\031 \001(\003H\026R\tupdatedAt\210\001\001\022\"\n\ndeleted_at\030" +
-      "\032 \001(\003H\027R\tdeletedAt\210\001\001\0328\n\nPropsEntry\022\020\n\003k" +
-      "ey\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032" +
-      ">\n\020NotifyPropsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n" +
-      "\005value\030\002 \001(\tR\005value:\0028\001B\005\n\003_idB\013\n\t_usern" +
-      "ameB\r\n\013_first_nameB\013\n\t_nicknameB\014\n\n_last" +
-      "_nameB\010\n\006_emailB\014\n\n_user_typeB\r\n\013_member" +
-      "shipB\024\n\022_is_email_verifiedB\013\n\t_passwordB" +
-      "\014\n\n_auth_dataB\017\n\r_auth_serviceB\010\n\006_roles" +
-      "B\027\n\025_last_password_updateB\026\n\024_last_pictu" +
-      "re_updateB\022\n\020_failed_attemptsB\t\n\007_locale" +
-      "B\r\n\013_mfa_activeB\r\n\013_mfa_secretB\023\n\021_last_" +
-      "activity_atB\r\n\013_last_loginB\r\n\013_created_a" +
-      "tB\r\n\013_updated_atB\r\n\013_deleted_at2`\n\013UserS" +
-      "ervice\022Q\n\016CreateSupplier\022\036.user.v1.Suppl" +
-      "ierCreateRequest\032\037.user.v1.SupplierCreat" +
-      "eResponseB4\n\030org.megacommerce.user.v1B\tU" +
-      "serProtoZ\nuser/v1;v1\370\001\001b\006proto3"
+      "first_name\030\003 \001(\tH\002R\tfirstName\210\001\001\022 \n\tlast" +
+      "_name\030\004 \001(\tH\003R\010lastName\210\001\001\022\031\n\005email\030\005 \001(" +
+      "\tH\004R\005email\210\001\001\022 \n\tuser_type\030\006 \001(\tH\005R\010user" +
+      "Type\210\001\001\022#\n\nmembership\030\007 \001(\tH\006R\nmembershi" +
+      "p\210\001\001\022/\n\021is_email_verified\030\010 \001(\010H\007R\017isEma" +
+      "ilVerified\210\001\001\022\037\n\010password\030\t \001(\tH\010R\010passw" +
+      "ord\210\001\001\022 \n\tauth_data\030\n \001(\tH\tR\010authData\210\001\001" +
+      "\022&\n\014auth_service\030\013 \001(\tH\nR\013authService\210\001\001" +
+      "\022\031\n\005roles\030\014 \001(\tH\013R\005roles\210\001\001\022.\n\005props\030\r \003" +
+      "(\0132\030.user.v1.User.PropsEntryR\005props\022A\n\014n" +
+      "otify_props\030\016 \003(\0132\036.user.v1.User.NotifyP" +
+      "ropsEntryR\013notifyProps\0225\n\024last_password_" +
+      "update\030\017 \001(\003H\014R\022lastPasswordUpdate\210\001\001\0223\n" +
+      "\023last_picture_update\030\020 \001(\003H\rR\021lastPictur" +
+      "eUpdate\210\001\001\022,\n\017failed_attempts\030\021 \001(\005H\016R\016f" +
+      "ailedAttempts\210\001\001\022\033\n\006locale\030\022 \001(\tH\017R\006loca" +
+      "le\210\001\001\022\"\n\nmfa_active\030\023 \001(\010H\020R\tmfaActive\210\001" +
+      "\001\022\"\n\nmfa_secret\030\024 \001(\tH\021R\tmfaSecret\210\001\001\022-\n" +
+      "\020last_activity_at\030\025 \001(\003H\022R\016lastActivityA" +
+      "t\210\001\001\022\"\n\nlast_login\030\026 \001(\003H\023R\tlastLogin\210\001\001" +
+      "\022\"\n\ncreated_at\030\027 \001(\003H\024R\tcreatedAt\210\001\001\022\"\n\n" +
+      "updated_at\030\030 \001(\003H\025R\tupdatedAt\210\001\001\022\"\n\ndele" +
+      "ted_at\030\031 \001(\003H\026R\tdeletedAt\210\001\001\0328\n\nPropsEnt" +
+      "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005val" +
+      "ue:\0028\001\032>\n\020NotifyPropsEntry\022\020\n\003key\030\001 \001(\tR" +
+      "\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\005\n\003_idB\013\n" +
+      "\t_usernameB\r\n\013_first_nameB\014\n\n_last_nameB" +
+      "\010\n\006_emailB\014\n\n_user_typeB\r\n\013_membershipB\024" +
+      "\n\022_is_email_verifiedB\013\n\t_passwordB\014\n\n_au" +
+      "th_dataB\017\n\r_auth_serviceB\010\n\006_rolesB\027\n\025_l" +
+      "ast_password_updateB\026\n\024_last_picture_upd" +
+      "ateB\022\n\020_failed_attemptsB\t\n\007_localeB\r\n\013_m" +
+      "fa_activeB\r\n\013_mfa_secretB\023\n\021_last_activi" +
+      "ty_atB\r\n\013_last_loginB\r\n\013_created_atB\r\n\013_" +
+      "updated_atB\r\n\013_deleted_at2`\n\013UserService" +
+      "\022Q\n\016CreateSupplier\022\036.user.v1.SupplierCre" +
+      "ateRequest\032\037.user.v1.SupplierCreateRespo" +
+      "nseB4\n\030org.megacommerce.user.v1B\tUserPro" +
+      "toZ\nuser/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4590,7 +4411,7 @@ public final class UserProto {
     internal_static_user_v1_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_user_v1_User_descriptor,
-        new java.lang.String[] { "Id", "Username", "FirstName", "Nickname", "LastName", "Email", "UserType", "Membership", "IsEmailVerified", "Password", "AuthData", "AuthService", "Roles", "Props", "NotifyProps", "LastPasswordUpdate", "LastPictureUpdate", "FailedAttempts", "Locale", "MfaActive", "MfaSecret", "LastActivityAt", "LastLogin", "CreatedAt", "UpdatedAt", "DeletedAt", "Id", "Username", "FirstName", "Nickname", "LastName", "Email", "UserType", "Membership", "IsEmailVerified", "Password", "AuthData", "AuthService", "Roles", "LastPasswordUpdate", "LastPictureUpdate", "FailedAttempts", "Locale", "MfaActive", "MfaSecret", "LastActivityAt", "LastLogin", "CreatedAt", "UpdatedAt", "DeletedAt", });
+        new java.lang.String[] { "Id", "Username", "FirstName", "LastName", "Email", "UserType", "Membership", "IsEmailVerified", "Password", "AuthData", "AuthService", "Roles", "Props", "NotifyProps", "LastPasswordUpdate", "LastPictureUpdate", "FailedAttempts", "Locale", "MfaActive", "MfaSecret", "LastActivityAt", "LastLogin", "CreatedAt", "UpdatedAt", "DeletedAt", "Id", "Username", "FirstName", "LastName", "Email", "UserType", "Membership", "IsEmailVerified", "Password", "AuthData", "AuthService", "Roles", "LastPasswordUpdate", "LastPictureUpdate", "FailedAttempts", "Locale", "MfaActive", "MfaSecret", "LastActivityAt", "LastLogin", "CreatedAt", "UpdatedAt", "DeletedAt", });
     internal_static_user_v1_User_PropsEntry_descriptor =
       internal_static_user_v1_User_descriptor.getNestedTypes().get(0);
     internal_static_user_v1_User_PropsEntry_fieldAccessorTable = new

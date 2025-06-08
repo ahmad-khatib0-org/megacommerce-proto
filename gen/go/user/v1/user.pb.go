@@ -26,29 +26,28 @@ type User struct {
 	Id                 *string                `protobuf:"bytes,1,opt,name=id,proto3,oneof" json:"id,omitempty"`
 	Username           *string                `protobuf:"bytes,2,opt,name=username,proto3,oneof" json:"username,omitempty"`
 	FirstName          *string                `protobuf:"bytes,3,opt,name=first_name,json=firstName,proto3,oneof" json:"first_name,omitempty"`
-	Nickname           *string                `protobuf:"bytes,4,opt,name=nickname,proto3,oneof" json:"nickname,omitempty"`
-	LastName           *string                `protobuf:"bytes,5,opt,name=last_name,json=lastName,proto3,oneof" json:"last_name,omitempty"`
-	Email              *string                `protobuf:"bytes,6,opt,name=email,proto3,oneof" json:"email,omitempty"`
-	UserType           *string                `protobuf:"bytes,7,opt,name=user_type,json=userType,proto3,oneof" json:"user_type,omitempty"`
-	Membership         *string                `protobuf:"bytes,8,opt,name=membership,proto3,oneof" json:"membership,omitempty"`
-	IsEmailVerified    *bool                  `protobuf:"varint,9,opt,name=is_email_verified,json=isEmailVerified,proto3,oneof" json:"is_email_verified,omitempty"`
-	Password           *string                `protobuf:"bytes,10,opt,name=password,proto3,oneof" json:"password,omitempty"`
-	AuthData           *string                `protobuf:"bytes,11,opt,name=auth_data,json=authData,proto3,oneof" json:"auth_data,omitempty"`
-	AuthService        *string                `protobuf:"bytes,12,opt,name=auth_service,json=authService,proto3,oneof" json:"auth_service,omitempty"`
-	Roles              *string                `protobuf:"bytes,13,opt,name=roles,proto3,oneof" json:"roles,omitempty"`
-	Props              map[string]string      `protobuf:"bytes,14,rep,name=props,proto3" json:"props,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	NotifyProps        map[string]string      `protobuf:"bytes,15,rep,name=notify_props,json=notifyProps,proto3" json:"notify_props,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	LastPasswordUpdate *int64                 `protobuf:"varint,16,opt,name=last_password_update,json=lastPasswordUpdate,proto3,oneof" json:"last_password_update,omitempty"`
-	LastPictureUpdate  *int64                 `protobuf:"varint,17,opt,name=last_picture_update,json=lastPictureUpdate,proto3,oneof" json:"last_picture_update,omitempty"`
-	FailedAttempts     *int32                 `protobuf:"varint,18,opt,name=failed_attempts,json=failedAttempts,proto3,oneof" json:"failed_attempts,omitempty"`
-	Locale             *string                `protobuf:"bytes,19,opt,name=locale,proto3,oneof" json:"locale,omitempty"`
-	MfaActive          *bool                  `protobuf:"varint,20,opt,name=mfa_active,json=mfaActive,proto3,oneof" json:"mfa_active,omitempty"`
-	MfaSecret          *string                `protobuf:"bytes,21,opt,name=mfa_secret,json=mfaSecret,proto3,oneof" json:"mfa_secret,omitempty"`
-	LastActivityAt     *int64                 `protobuf:"varint,22,opt,name=last_activity_at,json=lastActivityAt,proto3,oneof" json:"last_activity_at,omitempty"`
-	LastLogin          *int64                 `protobuf:"varint,23,opt,name=last_login,json=lastLogin,proto3,oneof" json:"last_login,omitempty"`
-	CreatedAt          *int64                 `protobuf:"varint,24,opt,name=created_at,json=createdAt,proto3,oneof" json:"created_at,omitempty"`
-	UpdatedAt          *int64                 `protobuf:"varint,25,opt,name=updated_at,json=updatedAt,proto3,oneof" json:"updated_at,omitempty"`
-	DeletedAt          *int64                 `protobuf:"varint,26,opt,name=deleted_at,json=deletedAt,proto3,oneof" json:"deleted_at,omitempty"`
+	LastName           *string                `protobuf:"bytes,4,opt,name=last_name,json=lastName,proto3,oneof" json:"last_name,omitempty"`
+	Email              *string                `protobuf:"bytes,5,opt,name=email,proto3,oneof" json:"email,omitempty"`
+	UserType           *string                `protobuf:"bytes,6,opt,name=user_type,json=userType,proto3,oneof" json:"user_type,omitempty"`
+	Membership         *string                `protobuf:"bytes,7,opt,name=membership,proto3,oneof" json:"membership,omitempty"`
+	IsEmailVerified    *bool                  `protobuf:"varint,8,opt,name=is_email_verified,json=isEmailVerified,proto3,oneof" json:"is_email_verified,omitempty"`
+	Password           *string                `protobuf:"bytes,9,opt,name=password,proto3,oneof" json:"password,omitempty"`
+	AuthData           *string                `protobuf:"bytes,10,opt,name=auth_data,json=authData,proto3,oneof" json:"auth_data,omitempty"`
+	AuthService        *string                `protobuf:"bytes,11,opt,name=auth_service,json=authService,proto3,oneof" json:"auth_service,omitempty"`
+	Roles              *string                `protobuf:"bytes,12,opt,name=roles,proto3,oneof" json:"roles,omitempty"`
+	Props              map[string]string      `protobuf:"bytes,13,rep,name=props,proto3" json:"props,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	NotifyProps        map[string]string      `protobuf:"bytes,14,rep,name=notify_props,json=notifyProps,proto3" json:"notify_props,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	LastPasswordUpdate *int64                 `protobuf:"varint,15,opt,name=last_password_update,json=lastPasswordUpdate,proto3,oneof" json:"last_password_update,omitempty"`
+	LastPictureUpdate  *int64                 `protobuf:"varint,16,opt,name=last_picture_update,json=lastPictureUpdate,proto3,oneof" json:"last_picture_update,omitempty"`
+	FailedAttempts     *int32                 `protobuf:"varint,17,opt,name=failed_attempts,json=failedAttempts,proto3,oneof" json:"failed_attempts,omitempty"`
+	Locale             *string                `protobuf:"bytes,18,opt,name=locale,proto3,oneof" json:"locale,omitempty"`
+	MfaActive          *bool                  `protobuf:"varint,19,opt,name=mfa_active,json=mfaActive,proto3,oneof" json:"mfa_active,omitempty"`
+	MfaSecret          *string                `protobuf:"bytes,20,opt,name=mfa_secret,json=mfaSecret,proto3,oneof" json:"mfa_secret,omitempty"`
+	LastActivityAt     *int64                 `protobuf:"varint,21,opt,name=last_activity_at,json=lastActivityAt,proto3,oneof" json:"last_activity_at,omitempty"`
+	LastLogin          *int64                 `protobuf:"varint,22,opt,name=last_login,json=lastLogin,proto3,oneof" json:"last_login,omitempty"`
+	CreatedAt          *int64                 `protobuf:"varint,23,opt,name=created_at,json=createdAt,proto3,oneof" json:"created_at,omitempty"`
+	UpdatedAt          *int64                 `protobuf:"varint,24,opt,name=updated_at,json=updatedAt,proto3,oneof" json:"updated_at,omitempty"`
+	DeletedAt          *int64                 `protobuf:"varint,25,opt,name=deleted_at,json=deletedAt,proto3,oneof" json:"deleted_at,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
@@ -100,13 +99,6 @@ func (x *User) GetUsername() string {
 func (x *User) GetFirstName() string {
 	if x != nil && x.FirstName != nil {
 		return *x.FirstName
-	}
-	return ""
-}
-
-func (x *User) GetNickname() string {
-	if x != nil && x.Nickname != nil {
-		return *x.Nickname
 	}
 	return ""
 }
@@ -269,45 +261,44 @@ var File_user_v1_user_proto protoreflect.FileDescriptor
 
 const file_user_v1_user_proto_rawDesc = "" +
 	"\n" +
-	"\x12user/v1/user.proto\x12\auser.v1\x1a\x16user/v1/supplier.proto\"\xd7\v\n" +
+	"\x12user/v1/user.proto\x12\auser.v1\x1a\x16user/v1/supplier.proto\"\xa9\v\n" +
 	"\x04User\x12\x13\n" +
 	"\x02id\x18\x01 \x01(\tH\x00R\x02id\x88\x01\x01\x12\x1f\n" +
 	"\busername\x18\x02 \x01(\tH\x01R\busername\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"first_name\x18\x03 \x01(\tH\x02R\tfirstName\x88\x01\x01\x12\x1f\n" +
-	"\bnickname\x18\x04 \x01(\tH\x03R\bnickname\x88\x01\x01\x12 \n" +
-	"\tlast_name\x18\x05 \x01(\tH\x04R\blastName\x88\x01\x01\x12\x19\n" +
-	"\x05email\x18\x06 \x01(\tH\x05R\x05email\x88\x01\x01\x12 \n" +
-	"\tuser_type\x18\a \x01(\tH\x06R\buserType\x88\x01\x01\x12#\n" +
+	"first_name\x18\x03 \x01(\tH\x02R\tfirstName\x88\x01\x01\x12 \n" +
+	"\tlast_name\x18\x04 \x01(\tH\x03R\blastName\x88\x01\x01\x12\x19\n" +
+	"\x05email\x18\x05 \x01(\tH\x04R\x05email\x88\x01\x01\x12 \n" +
+	"\tuser_type\x18\x06 \x01(\tH\x05R\buserType\x88\x01\x01\x12#\n" +
 	"\n" +
-	"membership\x18\b \x01(\tH\aR\n" +
+	"membership\x18\a \x01(\tH\x06R\n" +
 	"membership\x88\x01\x01\x12/\n" +
-	"\x11is_email_verified\x18\t \x01(\bH\bR\x0fisEmailVerified\x88\x01\x01\x12\x1f\n" +
-	"\bpassword\x18\n" +
-	" \x01(\tH\tR\bpassword\x88\x01\x01\x12 \n" +
-	"\tauth_data\x18\v \x01(\tH\n" +
-	"R\bauthData\x88\x01\x01\x12&\n" +
-	"\fauth_service\x18\f \x01(\tH\vR\vauthService\x88\x01\x01\x12\x19\n" +
-	"\x05roles\x18\r \x01(\tH\fR\x05roles\x88\x01\x01\x12.\n" +
-	"\x05props\x18\x0e \x03(\v2\x18.user.v1.User.PropsEntryR\x05props\x12A\n" +
-	"\fnotify_props\x18\x0f \x03(\v2\x1e.user.v1.User.NotifyPropsEntryR\vnotifyProps\x125\n" +
-	"\x14last_password_update\x18\x10 \x01(\x03H\rR\x12lastPasswordUpdate\x88\x01\x01\x123\n" +
-	"\x13last_picture_update\x18\x11 \x01(\x03H\x0eR\x11lastPictureUpdate\x88\x01\x01\x12,\n" +
-	"\x0ffailed_attempts\x18\x12 \x01(\x05H\x0fR\x0efailedAttempts\x88\x01\x01\x12\x1b\n" +
-	"\x06locale\x18\x13 \x01(\tH\x10R\x06locale\x88\x01\x01\x12\"\n" +
+	"\x11is_email_verified\x18\b \x01(\bH\aR\x0fisEmailVerified\x88\x01\x01\x12\x1f\n" +
+	"\bpassword\x18\t \x01(\tH\bR\bpassword\x88\x01\x01\x12 \n" +
+	"\tauth_data\x18\n" +
+	" \x01(\tH\tR\bauthData\x88\x01\x01\x12&\n" +
+	"\fauth_service\x18\v \x01(\tH\n" +
+	"R\vauthService\x88\x01\x01\x12\x19\n" +
+	"\x05roles\x18\f \x01(\tH\vR\x05roles\x88\x01\x01\x12.\n" +
+	"\x05props\x18\r \x03(\v2\x18.user.v1.User.PropsEntryR\x05props\x12A\n" +
+	"\fnotify_props\x18\x0e \x03(\v2\x1e.user.v1.User.NotifyPropsEntryR\vnotifyProps\x125\n" +
+	"\x14last_password_update\x18\x0f \x01(\x03H\fR\x12lastPasswordUpdate\x88\x01\x01\x123\n" +
+	"\x13last_picture_update\x18\x10 \x01(\x03H\rR\x11lastPictureUpdate\x88\x01\x01\x12,\n" +
+	"\x0ffailed_attempts\x18\x11 \x01(\x05H\x0eR\x0efailedAttempts\x88\x01\x01\x12\x1b\n" +
+	"\x06locale\x18\x12 \x01(\tH\x0fR\x06locale\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"mfa_active\x18\x14 \x01(\bH\x11R\tmfaActive\x88\x01\x01\x12\"\n" +
+	"mfa_active\x18\x13 \x01(\bH\x10R\tmfaActive\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"mfa_secret\x18\x15 \x01(\tH\x12R\tmfaSecret\x88\x01\x01\x12-\n" +
-	"\x10last_activity_at\x18\x16 \x01(\x03H\x13R\x0elastActivityAt\x88\x01\x01\x12\"\n" +
+	"mfa_secret\x18\x14 \x01(\tH\x11R\tmfaSecret\x88\x01\x01\x12-\n" +
+	"\x10last_activity_at\x18\x15 \x01(\x03H\x12R\x0elastActivityAt\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"last_login\x18\x17 \x01(\x03H\x14R\tlastLogin\x88\x01\x01\x12\"\n" +
+	"last_login\x18\x16 \x01(\x03H\x13R\tlastLogin\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"created_at\x18\x18 \x01(\x03H\x15R\tcreatedAt\x88\x01\x01\x12\"\n" +
+	"created_at\x18\x17 \x01(\x03H\x14R\tcreatedAt\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"updated_at\x18\x19 \x01(\x03H\x16R\tupdatedAt\x88\x01\x01\x12\"\n" +
+	"updated_at\x18\x18 \x01(\x03H\x15R\tupdatedAt\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"deleted_at\x18\x1a \x01(\x03H\x17R\tdeletedAt\x88\x01\x01\x1a8\n" +
+	"deleted_at\x18\x19 \x01(\x03H\x16R\tdeletedAt\x88\x01\x01\x1a8\n" +
 	"\n" +
 	"PropsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
@@ -317,8 +308,7 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\x05\n" +
 	"\x03_idB\v\n" +
 	"\t_usernameB\r\n" +
-	"\v_first_nameB\v\n" +
-	"\t_nicknameB\f\n" +
+	"\v_first_nameB\f\n" +
 	"\n" +
 	"_last_nameB\b\n" +
 	"\x06_emailB\f\n" +

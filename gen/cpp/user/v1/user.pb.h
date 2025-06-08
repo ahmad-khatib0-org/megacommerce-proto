@@ -257,34 +257,33 @@ class User final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPropsFieldNumber = 14,
-    kNotifyPropsFieldNumber = 15,
+    kPropsFieldNumber = 13,
+    kNotifyPropsFieldNumber = 14,
     kIdFieldNumber = 1,
     kUsernameFieldNumber = 2,
     kFirstNameFieldNumber = 3,
-    kNicknameFieldNumber = 4,
-    kLastNameFieldNumber = 5,
-    kEmailFieldNumber = 6,
-    kUserTypeFieldNumber = 7,
-    kMembershipFieldNumber = 8,
-    kPasswordFieldNumber = 10,
-    kAuthDataFieldNumber = 11,
-    kAuthServiceFieldNumber = 12,
-    kRolesFieldNumber = 13,
-    kLocaleFieldNumber = 19,
-    kMfaSecretFieldNumber = 21,
-    kIsEmailVerifiedFieldNumber = 9,
-    kMfaActiveFieldNumber = 20,
-    kFailedAttemptsFieldNumber = 18,
-    kLastPasswordUpdateFieldNumber = 16,
-    kLastPictureUpdateFieldNumber = 17,
-    kLastActivityAtFieldNumber = 22,
-    kLastLoginFieldNumber = 23,
-    kCreatedAtFieldNumber = 24,
-    kUpdatedAtFieldNumber = 25,
-    kDeletedAtFieldNumber = 26,
+    kLastNameFieldNumber = 4,
+    kEmailFieldNumber = 5,
+    kUserTypeFieldNumber = 6,
+    kMembershipFieldNumber = 7,
+    kPasswordFieldNumber = 9,
+    kAuthDataFieldNumber = 10,
+    kAuthServiceFieldNumber = 11,
+    kRolesFieldNumber = 12,
+    kLocaleFieldNumber = 18,
+    kMfaSecretFieldNumber = 20,
+    kIsEmailVerifiedFieldNumber = 8,
+    kMfaActiveFieldNumber = 19,
+    kFailedAttemptsFieldNumber = 17,
+    kLastPasswordUpdateFieldNumber = 15,
+    kLastPictureUpdateFieldNumber = 16,
+    kLastActivityAtFieldNumber = 21,
+    kLastLoginFieldNumber = 22,
+    kCreatedAtFieldNumber = 23,
+    kUpdatedAtFieldNumber = 24,
+    kDeletedAtFieldNumber = 25,
   };
-  // map<string, string> props = 14 [json_name = "props"];
+  // map<string, string> props = 13 [json_name = "props"];
   int props_size() const;
   private:
   int _internal_props_size() const;
@@ -301,7 +300,7 @@ class User final :
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
       mutable_props();
 
-  // map<string, string> notify_props = 15 [json_name = "notifyProps"];
+  // map<string, string> notify_props = 14 [json_name = "notifyProps"];
   int notify_props_size() const;
   private:
   int _internal_notify_props_size() const;
@@ -372,25 +371,7 @@ class User final :
   std::string* _internal_mutable_first_name();
   public:
 
-  // optional string nickname = 4 [json_name = "nickname"];
-  bool has_nickname() const;
-  private:
-  bool _internal_has_nickname() const;
-  public:
-  void clear_nickname();
-  const std::string& nickname() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_nickname(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_nickname();
-  PROTOBUF_NODISCARD std::string* release_nickname();
-  void set_allocated_nickname(std::string* nickname);
-  private:
-  const std::string& _internal_nickname() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_nickname(const std::string& value);
-  std::string* _internal_mutable_nickname();
-  public:
-
-  // optional string last_name = 5 [json_name = "lastName"];
+  // optional string last_name = 4 [json_name = "lastName"];
   bool has_last_name() const;
   private:
   bool _internal_has_last_name() const;
@@ -408,7 +389,7 @@ class User final :
   std::string* _internal_mutable_last_name();
   public:
 
-  // optional string email = 6 [json_name = "email"];
+  // optional string email = 5 [json_name = "email"];
   bool has_email() const;
   private:
   bool _internal_has_email() const;
@@ -426,7 +407,7 @@ class User final :
   std::string* _internal_mutable_email();
   public:
 
-  // optional string user_type = 7 [json_name = "userType"];
+  // optional string user_type = 6 [json_name = "userType"];
   bool has_user_type() const;
   private:
   bool _internal_has_user_type() const;
@@ -444,7 +425,7 @@ class User final :
   std::string* _internal_mutable_user_type();
   public:
 
-  // optional string membership = 8 [json_name = "membership"];
+  // optional string membership = 7 [json_name = "membership"];
   bool has_membership() const;
   private:
   bool _internal_has_membership() const;
@@ -462,7 +443,7 @@ class User final :
   std::string* _internal_mutable_membership();
   public:
 
-  // optional string password = 10 [json_name = "password"];
+  // optional string password = 9 [json_name = "password"];
   bool has_password() const;
   private:
   bool _internal_has_password() const;
@@ -480,7 +461,7 @@ class User final :
   std::string* _internal_mutable_password();
   public:
 
-  // optional string auth_data = 11 [json_name = "authData"];
+  // optional string auth_data = 10 [json_name = "authData"];
   bool has_auth_data() const;
   private:
   bool _internal_has_auth_data() const;
@@ -498,7 +479,7 @@ class User final :
   std::string* _internal_mutable_auth_data();
   public:
 
-  // optional string auth_service = 12 [json_name = "authService"];
+  // optional string auth_service = 11 [json_name = "authService"];
   bool has_auth_service() const;
   private:
   bool _internal_has_auth_service() const;
@@ -516,7 +497,7 @@ class User final :
   std::string* _internal_mutable_auth_service();
   public:
 
-  // optional string roles = 13 [json_name = "roles"];
+  // optional string roles = 12 [json_name = "roles"];
   bool has_roles() const;
   private:
   bool _internal_has_roles() const;
@@ -534,7 +515,7 @@ class User final :
   std::string* _internal_mutable_roles();
   public:
 
-  // optional string locale = 19 [json_name = "locale"];
+  // optional string locale = 18 [json_name = "locale"];
   bool has_locale() const;
   private:
   bool _internal_has_locale() const;
@@ -552,7 +533,7 @@ class User final :
   std::string* _internal_mutable_locale();
   public:
 
-  // optional string mfa_secret = 21 [json_name = "mfaSecret"];
+  // optional string mfa_secret = 20 [json_name = "mfaSecret"];
   bool has_mfa_secret() const;
   private:
   bool _internal_has_mfa_secret() const;
@@ -570,7 +551,7 @@ class User final :
   std::string* _internal_mutable_mfa_secret();
   public:
 
-  // optional bool is_email_verified = 9 [json_name = "isEmailVerified"];
+  // optional bool is_email_verified = 8 [json_name = "isEmailVerified"];
   bool has_is_email_verified() const;
   private:
   bool _internal_has_is_email_verified() const;
@@ -583,7 +564,7 @@ class User final :
   void _internal_set_is_email_verified(bool value);
   public:
 
-  // optional bool mfa_active = 20 [json_name = "mfaActive"];
+  // optional bool mfa_active = 19 [json_name = "mfaActive"];
   bool has_mfa_active() const;
   private:
   bool _internal_has_mfa_active() const;
@@ -596,7 +577,7 @@ class User final :
   void _internal_set_mfa_active(bool value);
   public:
 
-  // optional int32 failed_attempts = 18 [json_name = "failedAttempts"];
+  // optional int32 failed_attempts = 17 [json_name = "failedAttempts"];
   bool has_failed_attempts() const;
   private:
   bool _internal_has_failed_attempts() const;
@@ -609,7 +590,7 @@ class User final :
   void _internal_set_failed_attempts(int32_t value);
   public:
 
-  // optional int64 last_password_update = 16 [json_name = "lastPasswordUpdate"];
+  // optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];
   bool has_last_password_update() const;
   private:
   bool _internal_has_last_password_update() const;
@@ -622,7 +603,7 @@ class User final :
   void _internal_set_last_password_update(int64_t value);
   public:
 
-  // optional int64 last_picture_update = 17 [json_name = "lastPictureUpdate"];
+  // optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];
   bool has_last_picture_update() const;
   private:
   bool _internal_has_last_picture_update() const;
@@ -635,7 +616,7 @@ class User final :
   void _internal_set_last_picture_update(int64_t value);
   public:
 
-  // optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];
+  // optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];
   bool has_last_activity_at() const;
   private:
   bool _internal_has_last_activity_at() const;
@@ -648,7 +629,7 @@ class User final :
   void _internal_set_last_activity_at(int64_t value);
   public:
 
-  // optional int64 last_login = 23 [json_name = "lastLogin"];
+  // optional int64 last_login = 22 [json_name = "lastLogin"];
   bool has_last_login() const;
   private:
   bool _internal_has_last_login() const;
@@ -661,7 +642,7 @@ class User final :
   void _internal_set_last_login(int64_t value);
   public:
 
-  // optional int64 created_at = 24 [json_name = "createdAt"];
+  // optional int64 created_at = 23 [json_name = "createdAt"];
   bool has_created_at() const;
   private:
   bool _internal_has_created_at() const;
@@ -674,7 +655,7 @@ class User final :
   void _internal_set_created_at(int64_t value);
   public:
 
-  // optional int64 updated_at = 25 [json_name = "updatedAt"];
+  // optional int64 updated_at = 24 [json_name = "updatedAt"];
   bool has_updated_at() const;
   private:
   bool _internal_has_updated_at() const;
@@ -687,7 +668,7 @@ class User final :
   void _internal_set_updated_at(int64_t value);
   public:
 
-  // optional int64 deleted_at = 26 [json_name = "deletedAt"];
+  // optional int64 deleted_at = 25 [json_name = "deletedAt"];
   bool has_deleted_at() const;
   private:
   bool _internal_has_deleted_at() const;
@@ -722,7 +703,6 @@ class User final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr username_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr first_name_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nickname_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr last_name_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr email_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_type_;
@@ -967,78 +947,9 @@ inline void User::set_allocated_first_name(std::string* first_name) {
   // @@protoc_insertion_point(field_set_allocated:user.v1.User.first_name)
 }
 
-// optional string nickname = 4 [json_name = "nickname"];
-inline bool User::_internal_has_nickname() const {
-  bool value = (_has_bits_[0] & 0x00000008u) != 0;
-  return value;
-}
-inline bool User::has_nickname() const {
-  return _internal_has_nickname();
-}
-inline void User::clear_nickname() {
-  nickname_.ClearToEmpty();
-  _has_bits_[0] &= ~0x00000008u;
-}
-inline const std::string& User::nickname() const {
-  // @@protoc_insertion_point(field_get:user.v1.User.nickname)
-  return _internal_nickname();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void User::set_nickname(ArgT0&& arg0, ArgT... args) {
- _has_bits_[0] |= 0x00000008u;
- nickname_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:user.v1.User.nickname)
-}
-inline std::string* User::mutable_nickname() {
-  std::string* _s = _internal_mutable_nickname();
-  // @@protoc_insertion_point(field_mutable:user.v1.User.nickname)
-  return _s;
-}
-inline const std::string& User::_internal_nickname() const {
-  return nickname_.Get();
-}
-inline void User::_internal_set_nickname(const std::string& value) {
-  _has_bits_[0] |= 0x00000008u;
-  nickname_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
-}
-inline std::string* User::_internal_mutable_nickname() {
-  _has_bits_[0] |= 0x00000008u;
-  return nickname_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
-}
-inline std::string* User::release_nickname() {
-  // @@protoc_insertion_point(field_release:user.v1.User.nickname)
-  if (!_internal_has_nickname()) {
-    return nullptr;
-  }
-  _has_bits_[0] &= ~0x00000008u;
-  auto* p = nickname_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (nickname_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    nickname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return p;
-}
-inline void User::set_allocated_nickname(std::string* nickname) {
-  if (nickname != nullptr) {
-    _has_bits_[0] |= 0x00000008u;
-  } else {
-    _has_bits_[0] &= ~0x00000008u;
-  }
-  nickname_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), nickname,
-      GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (nickname_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    nickname_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:user.v1.User.nickname)
-}
-
-// optional string last_name = 5 [json_name = "lastName"];
+// optional string last_name = 4 [json_name = "lastName"];
 inline bool User::_internal_has_last_name() const {
-  bool value = (_has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
 inline bool User::has_last_name() const {
@@ -1046,7 +957,7 @@ inline bool User::has_last_name() const {
 }
 inline void User::clear_last_name() {
   last_name_.ClearToEmpty();
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline const std::string& User::last_name() const {
   // @@protoc_insertion_point(field_get:user.v1.User.last_name)
@@ -1055,7 +966,7 @@ inline const std::string& User::last_name() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void User::set_last_name(ArgT0&& arg0, ArgT... args) {
- _has_bits_[0] |= 0x00000010u;
+ _has_bits_[0] |= 0x00000008u;
  last_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:user.v1.User.last_name)
 }
@@ -1068,11 +979,11 @@ inline const std::string& User::_internal_last_name() const {
   return last_name_.Get();
 }
 inline void User::_internal_set_last_name(const std::string& value) {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000008u;
   last_name_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
 inline std::string* User::_internal_mutable_last_name() {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000008u;
   return last_name_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
 inline std::string* User::release_last_name() {
@@ -1080,7 +991,7 @@ inline std::string* User::release_last_name() {
   if (!_internal_has_last_name()) {
     return nullptr;
   }
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000008u;
   auto* p = last_name_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (last_name_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
@@ -1091,9 +1002,9 @@ inline std::string* User::release_last_name() {
 }
 inline void User::set_allocated_last_name(std::string* last_name) {
   if (last_name != nullptr) {
-    _has_bits_[0] |= 0x00000010u;
+    _has_bits_[0] |= 0x00000008u;
   } else {
-    _has_bits_[0] &= ~0x00000010u;
+    _has_bits_[0] &= ~0x00000008u;
   }
   last_name_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), last_name,
       GetArenaForAllocation());
@@ -1105,9 +1016,9 @@ inline void User::set_allocated_last_name(std::string* last_name) {
   // @@protoc_insertion_point(field_set_allocated:user.v1.User.last_name)
 }
 
-// optional string email = 6 [json_name = "email"];
+// optional string email = 5 [json_name = "email"];
 inline bool User::_internal_has_email() const {
-  bool value = (_has_bits_[0] & 0x00000020u) != 0;
+  bool value = (_has_bits_[0] & 0x00000010u) != 0;
   return value;
 }
 inline bool User::has_email() const {
@@ -1115,7 +1026,7 @@ inline bool User::has_email() const {
 }
 inline void User::clear_email() {
   email_.ClearToEmpty();
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline const std::string& User::email() const {
   // @@protoc_insertion_point(field_get:user.v1.User.email)
@@ -1124,7 +1035,7 @@ inline const std::string& User::email() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void User::set_email(ArgT0&& arg0, ArgT... args) {
- _has_bits_[0] |= 0x00000020u;
+ _has_bits_[0] |= 0x00000010u;
  email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:user.v1.User.email)
 }
@@ -1137,11 +1048,11 @@ inline const std::string& User::_internal_email() const {
   return email_.Get();
 }
 inline void User::_internal_set_email(const std::string& value) {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000010u;
   email_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
 inline std::string* User::_internal_mutable_email() {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000010u;
   return email_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
 inline std::string* User::release_email() {
@@ -1149,7 +1060,7 @@ inline std::string* User::release_email() {
   if (!_internal_has_email()) {
     return nullptr;
   }
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000010u;
   auto* p = email_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (email_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
@@ -1160,9 +1071,9 @@ inline std::string* User::release_email() {
 }
 inline void User::set_allocated_email(std::string* email) {
   if (email != nullptr) {
-    _has_bits_[0] |= 0x00000020u;
+    _has_bits_[0] |= 0x00000010u;
   } else {
-    _has_bits_[0] &= ~0x00000020u;
+    _has_bits_[0] &= ~0x00000010u;
   }
   email_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), email,
       GetArenaForAllocation());
@@ -1174,9 +1085,9 @@ inline void User::set_allocated_email(std::string* email) {
   // @@protoc_insertion_point(field_set_allocated:user.v1.User.email)
 }
 
-// optional string user_type = 7 [json_name = "userType"];
+// optional string user_type = 6 [json_name = "userType"];
 inline bool User::_internal_has_user_type() const {
-  bool value = (_has_bits_[0] & 0x00000040u) != 0;
+  bool value = (_has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
 inline bool User::has_user_type() const {
@@ -1184,7 +1095,7 @@ inline bool User::has_user_type() const {
 }
 inline void User::clear_user_type() {
   user_type_.ClearToEmpty();
-  _has_bits_[0] &= ~0x00000040u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline const std::string& User::user_type() const {
   // @@protoc_insertion_point(field_get:user.v1.User.user_type)
@@ -1193,7 +1104,7 @@ inline const std::string& User::user_type() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void User::set_user_type(ArgT0&& arg0, ArgT... args) {
- _has_bits_[0] |= 0x00000040u;
+ _has_bits_[0] |= 0x00000020u;
  user_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:user.v1.User.user_type)
 }
@@ -1206,11 +1117,11 @@ inline const std::string& User::_internal_user_type() const {
   return user_type_.Get();
 }
 inline void User::_internal_set_user_type(const std::string& value) {
-  _has_bits_[0] |= 0x00000040u;
+  _has_bits_[0] |= 0x00000020u;
   user_type_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
 inline std::string* User::_internal_mutable_user_type() {
-  _has_bits_[0] |= 0x00000040u;
+  _has_bits_[0] |= 0x00000020u;
   return user_type_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
 inline std::string* User::release_user_type() {
@@ -1218,7 +1129,7 @@ inline std::string* User::release_user_type() {
   if (!_internal_has_user_type()) {
     return nullptr;
   }
-  _has_bits_[0] &= ~0x00000040u;
+  _has_bits_[0] &= ~0x00000020u;
   auto* p = user_type_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (user_type_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
@@ -1229,9 +1140,9 @@ inline std::string* User::release_user_type() {
 }
 inline void User::set_allocated_user_type(std::string* user_type) {
   if (user_type != nullptr) {
-    _has_bits_[0] |= 0x00000040u;
+    _has_bits_[0] |= 0x00000020u;
   } else {
-    _has_bits_[0] &= ~0x00000040u;
+    _has_bits_[0] &= ~0x00000020u;
   }
   user_type_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_type,
       GetArenaForAllocation());
@@ -1243,9 +1154,9 @@ inline void User::set_allocated_user_type(std::string* user_type) {
   // @@protoc_insertion_point(field_set_allocated:user.v1.User.user_type)
 }
 
-// optional string membership = 8 [json_name = "membership"];
+// optional string membership = 7 [json_name = "membership"];
 inline bool User::_internal_has_membership() const {
-  bool value = (_has_bits_[0] & 0x00000080u) != 0;
+  bool value = (_has_bits_[0] & 0x00000040u) != 0;
   return value;
 }
 inline bool User::has_membership() const {
@@ -1253,7 +1164,7 @@ inline bool User::has_membership() const {
 }
 inline void User::clear_membership() {
   membership_.ClearToEmpty();
-  _has_bits_[0] &= ~0x00000080u;
+  _has_bits_[0] &= ~0x00000040u;
 }
 inline const std::string& User::membership() const {
   // @@protoc_insertion_point(field_get:user.v1.User.membership)
@@ -1262,7 +1173,7 @@ inline const std::string& User::membership() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void User::set_membership(ArgT0&& arg0, ArgT... args) {
- _has_bits_[0] |= 0x00000080u;
+ _has_bits_[0] |= 0x00000040u;
  membership_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:user.v1.User.membership)
 }
@@ -1275,11 +1186,11 @@ inline const std::string& User::_internal_membership() const {
   return membership_.Get();
 }
 inline void User::_internal_set_membership(const std::string& value) {
-  _has_bits_[0] |= 0x00000080u;
+  _has_bits_[0] |= 0x00000040u;
   membership_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
 inline std::string* User::_internal_mutable_membership() {
-  _has_bits_[0] |= 0x00000080u;
+  _has_bits_[0] |= 0x00000040u;
   return membership_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
 inline std::string* User::release_membership() {
@@ -1287,7 +1198,7 @@ inline std::string* User::release_membership() {
   if (!_internal_has_membership()) {
     return nullptr;
   }
-  _has_bits_[0] &= ~0x00000080u;
+  _has_bits_[0] &= ~0x00000040u;
   auto* p = membership_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (membership_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
@@ -1298,9 +1209,9 @@ inline std::string* User::release_membership() {
 }
 inline void User::set_allocated_membership(std::string* membership) {
   if (membership != nullptr) {
-    _has_bits_[0] |= 0x00000080u;
+    _has_bits_[0] |= 0x00000040u;
   } else {
-    _has_bits_[0] &= ~0x00000080u;
+    _has_bits_[0] &= ~0x00000040u;
   }
   membership_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), membership,
       GetArenaForAllocation());
@@ -1312,9 +1223,9 @@ inline void User::set_allocated_membership(std::string* membership) {
   // @@protoc_insertion_point(field_set_allocated:user.v1.User.membership)
 }
 
-// optional bool is_email_verified = 9 [json_name = "isEmailVerified"];
+// optional bool is_email_verified = 8 [json_name = "isEmailVerified"];
 inline bool User::_internal_has_is_email_verified() const {
-  bool value = (_has_bits_[0] & 0x00004000u) != 0;
+  bool value = (_has_bits_[0] & 0x00002000u) != 0;
   return value;
 }
 inline bool User::has_is_email_verified() const {
@@ -1322,7 +1233,7 @@ inline bool User::has_is_email_verified() const {
 }
 inline void User::clear_is_email_verified() {
   is_email_verified_ = false;
-  _has_bits_[0] &= ~0x00004000u;
+  _has_bits_[0] &= ~0x00002000u;
 }
 inline bool User::_internal_is_email_verified() const {
   return is_email_verified_;
@@ -1332,7 +1243,7 @@ inline bool User::is_email_verified() const {
   return _internal_is_email_verified();
 }
 inline void User::_internal_set_is_email_verified(bool value) {
-  _has_bits_[0] |= 0x00004000u;
+  _has_bits_[0] |= 0x00002000u;
   is_email_verified_ = value;
 }
 inline void User::set_is_email_verified(bool value) {
@@ -1340,9 +1251,9 @@ inline void User::set_is_email_verified(bool value) {
   // @@protoc_insertion_point(field_set:user.v1.User.is_email_verified)
 }
 
-// optional string password = 10 [json_name = "password"];
+// optional string password = 9 [json_name = "password"];
 inline bool User::_internal_has_password() const {
-  bool value = (_has_bits_[0] & 0x00000100u) != 0;
+  bool value = (_has_bits_[0] & 0x00000080u) != 0;
   return value;
 }
 inline bool User::has_password() const {
@@ -1350,7 +1261,7 @@ inline bool User::has_password() const {
 }
 inline void User::clear_password() {
   password_.ClearToEmpty();
-  _has_bits_[0] &= ~0x00000100u;
+  _has_bits_[0] &= ~0x00000080u;
 }
 inline const std::string& User::password() const {
   // @@protoc_insertion_point(field_get:user.v1.User.password)
@@ -1359,7 +1270,7 @@ inline const std::string& User::password() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void User::set_password(ArgT0&& arg0, ArgT... args) {
- _has_bits_[0] |= 0x00000100u;
+ _has_bits_[0] |= 0x00000080u;
  password_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:user.v1.User.password)
 }
@@ -1372,11 +1283,11 @@ inline const std::string& User::_internal_password() const {
   return password_.Get();
 }
 inline void User::_internal_set_password(const std::string& value) {
-  _has_bits_[0] |= 0x00000100u;
+  _has_bits_[0] |= 0x00000080u;
   password_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
 inline std::string* User::_internal_mutable_password() {
-  _has_bits_[0] |= 0x00000100u;
+  _has_bits_[0] |= 0x00000080u;
   return password_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
 inline std::string* User::release_password() {
@@ -1384,7 +1295,7 @@ inline std::string* User::release_password() {
   if (!_internal_has_password()) {
     return nullptr;
   }
-  _has_bits_[0] &= ~0x00000100u;
+  _has_bits_[0] &= ~0x00000080u;
   auto* p = password_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (password_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
@@ -1395,9 +1306,9 @@ inline std::string* User::release_password() {
 }
 inline void User::set_allocated_password(std::string* password) {
   if (password != nullptr) {
-    _has_bits_[0] |= 0x00000100u;
+    _has_bits_[0] |= 0x00000080u;
   } else {
-    _has_bits_[0] &= ~0x00000100u;
+    _has_bits_[0] &= ~0x00000080u;
   }
   password_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), password,
       GetArenaForAllocation());
@@ -1409,9 +1320,9 @@ inline void User::set_allocated_password(std::string* password) {
   // @@protoc_insertion_point(field_set_allocated:user.v1.User.password)
 }
 
-// optional string auth_data = 11 [json_name = "authData"];
+// optional string auth_data = 10 [json_name = "authData"];
 inline bool User::_internal_has_auth_data() const {
-  bool value = (_has_bits_[0] & 0x00000200u) != 0;
+  bool value = (_has_bits_[0] & 0x00000100u) != 0;
   return value;
 }
 inline bool User::has_auth_data() const {
@@ -1419,7 +1330,7 @@ inline bool User::has_auth_data() const {
 }
 inline void User::clear_auth_data() {
   auth_data_.ClearToEmpty();
-  _has_bits_[0] &= ~0x00000200u;
+  _has_bits_[0] &= ~0x00000100u;
 }
 inline const std::string& User::auth_data() const {
   // @@protoc_insertion_point(field_get:user.v1.User.auth_data)
@@ -1428,7 +1339,7 @@ inline const std::string& User::auth_data() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void User::set_auth_data(ArgT0&& arg0, ArgT... args) {
- _has_bits_[0] |= 0x00000200u;
+ _has_bits_[0] |= 0x00000100u;
  auth_data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:user.v1.User.auth_data)
 }
@@ -1441,11 +1352,11 @@ inline const std::string& User::_internal_auth_data() const {
   return auth_data_.Get();
 }
 inline void User::_internal_set_auth_data(const std::string& value) {
-  _has_bits_[0] |= 0x00000200u;
+  _has_bits_[0] |= 0x00000100u;
   auth_data_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
 inline std::string* User::_internal_mutable_auth_data() {
-  _has_bits_[0] |= 0x00000200u;
+  _has_bits_[0] |= 0x00000100u;
   return auth_data_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
 inline std::string* User::release_auth_data() {
@@ -1453,7 +1364,7 @@ inline std::string* User::release_auth_data() {
   if (!_internal_has_auth_data()) {
     return nullptr;
   }
-  _has_bits_[0] &= ~0x00000200u;
+  _has_bits_[0] &= ~0x00000100u;
   auto* p = auth_data_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (auth_data_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
@@ -1464,9 +1375,9 @@ inline std::string* User::release_auth_data() {
 }
 inline void User::set_allocated_auth_data(std::string* auth_data) {
   if (auth_data != nullptr) {
-    _has_bits_[0] |= 0x00000200u;
+    _has_bits_[0] |= 0x00000100u;
   } else {
-    _has_bits_[0] &= ~0x00000200u;
+    _has_bits_[0] &= ~0x00000100u;
   }
   auth_data_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), auth_data,
       GetArenaForAllocation());
@@ -1478,9 +1389,9 @@ inline void User::set_allocated_auth_data(std::string* auth_data) {
   // @@protoc_insertion_point(field_set_allocated:user.v1.User.auth_data)
 }
 
-// optional string auth_service = 12 [json_name = "authService"];
+// optional string auth_service = 11 [json_name = "authService"];
 inline bool User::_internal_has_auth_service() const {
-  bool value = (_has_bits_[0] & 0x00000400u) != 0;
+  bool value = (_has_bits_[0] & 0x00000200u) != 0;
   return value;
 }
 inline bool User::has_auth_service() const {
@@ -1488,7 +1399,7 @@ inline bool User::has_auth_service() const {
 }
 inline void User::clear_auth_service() {
   auth_service_.ClearToEmpty();
-  _has_bits_[0] &= ~0x00000400u;
+  _has_bits_[0] &= ~0x00000200u;
 }
 inline const std::string& User::auth_service() const {
   // @@protoc_insertion_point(field_get:user.v1.User.auth_service)
@@ -1497,7 +1408,7 @@ inline const std::string& User::auth_service() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void User::set_auth_service(ArgT0&& arg0, ArgT... args) {
- _has_bits_[0] |= 0x00000400u;
+ _has_bits_[0] |= 0x00000200u;
  auth_service_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:user.v1.User.auth_service)
 }
@@ -1510,11 +1421,11 @@ inline const std::string& User::_internal_auth_service() const {
   return auth_service_.Get();
 }
 inline void User::_internal_set_auth_service(const std::string& value) {
-  _has_bits_[0] |= 0x00000400u;
+  _has_bits_[0] |= 0x00000200u;
   auth_service_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
 inline std::string* User::_internal_mutable_auth_service() {
-  _has_bits_[0] |= 0x00000400u;
+  _has_bits_[0] |= 0x00000200u;
   return auth_service_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
 inline std::string* User::release_auth_service() {
@@ -1522,7 +1433,7 @@ inline std::string* User::release_auth_service() {
   if (!_internal_has_auth_service()) {
     return nullptr;
   }
-  _has_bits_[0] &= ~0x00000400u;
+  _has_bits_[0] &= ~0x00000200u;
   auto* p = auth_service_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (auth_service_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
@@ -1533,9 +1444,9 @@ inline std::string* User::release_auth_service() {
 }
 inline void User::set_allocated_auth_service(std::string* auth_service) {
   if (auth_service != nullptr) {
-    _has_bits_[0] |= 0x00000400u;
+    _has_bits_[0] |= 0x00000200u;
   } else {
-    _has_bits_[0] &= ~0x00000400u;
+    _has_bits_[0] &= ~0x00000200u;
   }
   auth_service_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), auth_service,
       GetArenaForAllocation());
@@ -1547,9 +1458,9 @@ inline void User::set_allocated_auth_service(std::string* auth_service) {
   // @@protoc_insertion_point(field_set_allocated:user.v1.User.auth_service)
 }
 
-// optional string roles = 13 [json_name = "roles"];
+// optional string roles = 12 [json_name = "roles"];
 inline bool User::_internal_has_roles() const {
-  bool value = (_has_bits_[0] & 0x00000800u) != 0;
+  bool value = (_has_bits_[0] & 0x00000400u) != 0;
   return value;
 }
 inline bool User::has_roles() const {
@@ -1557,7 +1468,7 @@ inline bool User::has_roles() const {
 }
 inline void User::clear_roles() {
   roles_.ClearToEmpty();
-  _has_bits_[0] &= ~0x00000800u;
+  _has_bits_[0] &= ~0x00000400u;
 }
 inline const std::string& User::roles() const {
   // @@protoc_insertion_point(field_get:user.v1.User.roles)
@@ -1566,7 +1477,7 @@ inline const std::string& User::roles() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void User::set_roles(ArgT0&& arg0, ArgT... args) {
- _has_bits_[0] |= 0x00000800u;
+ _has_bits_[0] |= 0x00000400u;
  roles_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:user.v1.User.roles)
 }
@@ -1579,11 +1490,11 @@ inline const std::string& User::_internal_roles() const {
   return roles_.Get();
 }
 inline void User::_internal_set_roles(const std::string& value) {
-  _has_bits_[0] |= 0x00000800u;
+  _has_bits_[0] |= 0x00000400u;
   roles_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
 inline std::string* User::_internal_mutable_roles() {
-  _has_bits_[0] |= 0x00000800u;
+  _has_bits_[0] |= 0x00000400u;
   return roles_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
 inline std::string* User::release_roles() {
@@ -1591,7 +1502,7 @@ inline std::string* User::release_roles() {
   if (!_internal_has_roles()) {
     return nullptr;
   }
-  _has_bits_[0] &= ~0x00000800u;
+  _has_bits_[0] &= ~0x00000400u;
   auto* p = roles_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (roles_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
@@ -1602,9 +1513,9 @@ inline std::string* User::release_roles() {
 }
 inline void User::set_allocated_roles(std::string* roles) {
   if (roles != nullptr) {
-    _has_bits_[0] |= 0x00000800u;
+    _has_bits_[0] |= 0x00000400u;
   } else {
-    _has_bits_[0] &= ~0x00000800u;
+    _has_bits_[0] &= ~0x00000400u;
   }
   roles_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), roles,
       GetArenaForAllocation());
@@ -1616,7 +1527,7 @@ inline void User::set_allocated_roles(std::string* roles) {
   // @@protoc_insertion_point(field_set_allocated:user.v1.User.roles)
 }
 
-// map<string, string> props = 14 [json_name = "props"];
+// map<string, string> props = 13 [json_name = "props"];
 inline int User::_internal_props_size() const {
   return props_.size();
 }
@@ -1645,7 +1556,7 @@ User::mutable_props() {
   return _internal_mutable_props();
 }
 
-// map<string, string> notify_props = 15 [json_name = "notifyProps"];
+// map<string, string> notify_props = 14 [json_name = "notifyProps"];
 inline int User::_internal_notify_props_size() const {
   return notify_props_.size();
 }
@@ -1674,9 +1585,9 @@ User::mutable_notify_props() {
   return _internal_mutable_notify_props();
 }
 
-// optional int64 last_password_update = 16 [json_name = "lastPasswordUpdate"];
+// optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];
 inline bool User::_internal_has_last_password_update() const {
-  bool value = (_has_bits_[0] & 0x00020000u) != 0;
+  bool value = (_has_bits_[0] & 0x00010000u) != 0;
   return value;
 }
 inline bool User::has_last_password_update() const {
@@ -1684,7 +1595,7 @@ inline bool User::has_last_password_update() const {
 }
 inline void User::clear_last_password_update() {
   last_password_update_ = int64_t{0};
-  _has_bits_[0] &= ~0x00020000u;
+  _has_bits_[0] &= ~0x00010000u;
 }
 inline int64_t User::_internal_last_password_update() const {
   return last_password_update_;
@@ -1694,7 +1605,7 @@ inline int64_t User::last_password_update() const {
   return _internal_last_password_update();
 }
 inline void User::_internal_set_last_password_update(int64_t value) {
-  _has_bits_[0] |= 0x00020000u;
+  _has_bits_[0] |= 0x00010000u;
   last_password_update_ = value;
 }
 inline void User::set_last_password_update(int64_t value) {
@@ -1702,9 +1613,9 @@ inline void User::set_last_password_update(int64_t value) {
   // @@protoc_insertion_point(field_set:user.v1.User.last_password_update)
 }
 
-// optional int64 last_picture_update = 17 [json_name = "lastPictureUpdate"];
+// optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];
 inline bool User::_internal_has_last_picture_update() const {
-  bool value = (_has_bits_[0] & 0x00040000u) != 0;
+  bool value = (_has_bits_[0] & 0x00020000u) != 0;
   return value;
 }
 inline bool User::has_last_picture_update() const {
@@ -1712,7 +1623,7 @@ inline bool User::has_last_picture_update() const {
 }
 inline void User::clear_last_picture_update() {
   last_picture_update_ = int64_t{0};
-  _has_bits_[0] &= ~0x00040000u;
+  _has_bits_[0] &= ~0x00020000u;
 }
 inline int64_t User::_internal_last_picture_update() const {
   return last_picture_update_;
@@ -1722,7 +1633,7 @@ inline int64_t User::last_picture_update() const {
   return _internal_last_picture_update();
 }
 inline void User::_internal_set_last_picture_update(int64_t value) {
-  _has_bits_[0] |= 0x00040000u;
+  _has_bits_[0] |= 0x00020000u;
   last_picture_update_ = value;
 }
 inline void User::set_last_picture_update(int64_t value) {
@@ -1730,9 +1641,9 @@ inline void User::set_last_picture_update(int64_t value) {
   // @@protoc_insertion_point(field_set:user.v1.User.last_picture_update)
 }
 
-// optional int32 failed_attempts = 18 [json_name = "failedAttempts"];
+// optional int32 failed_attempts = 17 [json_name = "failedAttempts"];
 inline bool User::_internal_has_failed_attempts() const {
-  bool value = (_has_bits_[0] & 0x00010000u) != 0;
+  bool value = (_has_bits_[0] & 0x00008000u) != 0;
   return value;
 }
 inline bool User::has_failed_attempts() const {
@@ -1740,7 +1651,7 @@ inline bool User::has_failed_attempts() const {
 }
 inline void User::clear_failed_attempts() {
   failed_attempts_ = 0;
-  _has_bits_[0] &= ~0x00010000u;
+  _has_bits_[0] &= ~0x00008000u;
 }
 inline int32_t User::_internal_failed_attempts() const {
   return failed_attempts_;
@@ -1750,7 +1661,7 @@ inline int32_t User::failed_attempts() const {
   return _internal_failed_attempts();
 }
 inline void User::_internal_set_failed_attempts(int32_t value) {
-  _has_bits_[0] |= 0x00010000u;
+  _has_bits_[0] |= 0x00008000u;
   failed_attempts_ = value;
 }
 inline void User::set_failed_attempts(int32_t value) {
@@ -1758,9 +1669,9 @@ inline void User::set_failed_attempts(int32_t value) {
   // @@protoc_insertion_point(field_set:user.v1.User.failed_attempts)
 }
 
-// optional string locale = 19 [json_name = "locale"];
+// optional string locale = 18 [json_name = "locale"];
 inline bool User::_internal_has_locale() const {
-  bool value = (_has_bits_[0] & 0x00001000u) != 0;
+  bool value = (_has_bits_[0] & 0x00000800u) != 0;
   return value;
 }
 inline bool User::has_locale() const {
@@ -1768,7 +1679,7 @@ inline bool User::has_locale() const {
 }
 inline void User::clear_locale() {
   locale_.ClearToEmpty();
-  _has_bits_[0] &= ~0x00001000u;
+  _has_bits_[0] &= ~0x00000800u;
 }
 inline const std::string& User::locale() const {
   // @@protoc_insertion_point(field_get:user.v1.User.locale)
@@ -1777,7 +1688,7 @@ inline const std::string& User::locale() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void User::set_locale(ArgT0&& arg0, ArgT... args) {
- _has_bits_[0] |= 0x00001000u;
+ _has_bits_[0] |= 0x00000800u;
  locale_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:user.v1.User.locale)
 }
@@ -1790,11 +1701,11 @@ inline const std::string& User::_internal_locale() const {
   return locale_.Get();
 }
 inline void User::_internal_set_locale(const std::string& value) {
-  _has_bits_[0] |= 0x00001000u;
+  _has_bits_[0] |= 0x00000800u;
   locale_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
 inline std::string* User::_internal_mutable_locale() {
-  _has_bits_[0] |= 0x00001000u;
+  _has_bits_[0] |= 0x00000800u;
   return locale_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
 inline std::string* User::release_locale() {
@@ -1802,7 +1713,7 @@ inline std::string* User::release_locale() {
   if (!_internal_has_locale()) {
     return nullptr;
   }
-  _has_bits_[0] &= ~0x00001000u;
+  _has_bits_[0] &= ~0x00000800u;
   auto* p = locale_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (locale_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
@@ -1813,9 +1724,9 @@ inline std::string* User::release_locale() {
 }
 inline void User::set_allocated_locale(std::string* locale) {
   if (locale != nullptr) {
-    _has_bits_[0] |= 0x00001000u;
+    _has_bits_[0] |= 0x00000800u;
   } else {
-    _has_bits_[0] &= ~0x00001000u;
+    _has_bits_[0] &= ~0x00000800u;
   }
   locale_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), locale,
       GetArenaForAllocation());
@@ -1827,9 +1738,9 @@ inline void User::set_allocated_locale(std::string* locale) {
   // @@protoc_insertion_point(field_set_allocated:user.v1.User.locale)
 }
 
-// optional bool mfa_active = 20 [json_name = "mfaActive"];
+// optional bool mfa_active = 19 [json_name = "mfaActive"];
 inline bool User::_internal_has_mfa_active() const {
-  bool value = (_has_bits_[0] & 0x00008000u) != 0;
+  bool value = (_has_bits_[0] & 0x00004000u) != 0;
   return value;
 }
 inline bool User::has_mfa_active() const {
@@ -1837,7 +1748,7 @@ inline bool User::has_mfa_active() const {
 }
 inline void User::clear_mfa_active() {
   mfa_active_ = false;
-  _has_bits_[0] &= ~0x00008000u;
+  _has_bits_[0] &= ~0x00004000u;
 }
 inline bool User::_internal_mfa_active() const {
   return mfa_active_;
@@ -1847,7 +1758,7 @@ inline bool User::mfa_active() const {
   return _internal_mfa_active();
 }
 inline void User::_internal_set_mfa_active(bool value) {
-  _has_bits_[0] |= 0x00008000u;
+  _has_bits_[0] |= 0x00004000u;
   mfa_active_ = value;
 }
 inline void User::set_mfa_active(bool value) {
@@ -1855,9 +1766,9 @@ inline void User::set_mfa_active(bool value) {
   // @@protoc_insertion_point(field_set:user.v1.User.mfa_active)
 }
 
-// optional string mfa_secret = 21 [json_name = "mfaSecret"];
+// optional string mfa_secret = 20 [json_name = "mfaSecret"];
 inline bool User::_internal_has_mfa_secret() const {
-  bool value = (_has_bits_[0] & 0x00002000u) != 0;
+  bool value = (_has_bits_[0] & 0x00001000u) != 0;
   return value;
 }
 inline bool User::has_mfa_secret() const {
@@ -1865,7 +1776,7 @@ inline bool User::has_mfa_secret() const {
 }
 inline void User::clear_mfa_secret() {
   mfa_secret_.ClearToEmpty();
-  _has_bits_[0] &= ~0x00002000u;
+  _has_bits_[0] &= ~0x00001000u;
 }
 inline const std::string& User::mfa_secret() const {
   // @@protoc_insertion_point(field_get:user.v1.User.mfa_secret)
@@ -1874,7 +1785,7 @@ inline const std::string& User::mfa_secret() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void User::set_mfa_secret(ArgT0&& arg0, ArgT... args) {
- _has_bits_[0] |= 0x00002000u;
+ _has_bits_[0] |= 0x00001000u;
  mfa_secret_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:user.v1.User.mfa_secret)
 }
@@ -1887,11 +1798,11 @@ inline const std::string& User::_internal_mfa_secret() const {
   return mfa_secret_.Get();
 }
 inline void User::_internal_set_mfa_secret(const std::string& value) {
-  _has_bits_[0] |= 0x00002000u;
+  _has_bits_[0] |= 0x00001000u;
   mfa_secret_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
 inline std::string* User::_internal_mutable_mfa_secret() {
-  _has_bits_[0] |= 0x00002000u;
+  _has_bits_[0] |= 0x00001000u;
   return mfa_secret_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
 inline std::string* User::release_mfa_secret() {
@@ -1899,7 +1810,7 @@ inline std::string* User::release_mfa_secret() {
   if (!_internal_has_mfa_secret()) {
     return nullptr;
   }
-  _has_bits_[0] &= ~0x00002000u;
+  _has_bits_[0] &= ~0x00001000u;
   auto* p = mfa_secret_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   if (mfa_secret_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
@@ -1910,9 +1821,9 @@ inline std::string* User::release_mfa_secret() {
 }
 inline void User::set_allocated_mfa_secret(std::string* mfa_secret) {
   if (mfa_secret != nullptr) {
-    _has_bits_[0] |= 0x00002000u;
+    _has_bits_[0] |= 0x00001000u;
   } else {
-    _has_bits_[0] &= ~0x00002000u;
+    _has_bits_[0] &= ~0x00001000u;
   }
   mfa_secret_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), mfa_secret,
       GetArenaForAllocation());
@@ -1924,9 +1835,9 @@ inline void User::set_allocated_mfa_secret(std::string* mfa_secret) {
   // @@protoc_insertion_point(field_set_allocated:user.v1.User.mfa_secret)
 }
 
-// optional int64 last_activity_at = 22 [json_name = "lastActivityAt"];
+// optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];
 inline bool User::_internal_has_last_activity_at() const {
-  bool value = (_has_bits_[0] & 0x00080000u) != 0;
+  bool value = (_has_bits_[0] & 0x00040000u) != 0;
   return value;
 }
 inline bool User::has_last_activity_at() const {
@@ -1934,7 +1845,7 @@ inline bool User::has_last_activity_at() const {
 }
 inline void User::clear_last_activity_at() {
   last_activity_at_ = int64_t{0};
-  _has_bits_[0] &= ~0x00080000u;
+  _has_bits_[0] &= ~0x00040000u;
 }
 inline int64_t User::_internal_last_activity_at() const {
   return last_activity_at_;
@@ -1944,7 +1855,7 @@ inline int64_t User::last_activity_at() const {
   return _internal_last_activity_at();
 }
 inline void User::_internal_set_last_activity_at(int64_t value) {
-  _has_bits_[0] |= 0x00080000u;
+  _has_bits_[0] |= 0x00040000u;
   last_activity_at_ = value;
 }
 inline void User::set_last_activity_at(int64_t value) {
@@ -1952,9 +1863,9 @@ inline void User::set_last_activity_at(int64_t value) {
   // @@protoc_insertion_point(field_set:user.v1.User.last_activity_at)
 }
 
-// optional int64 last_login = 23 [json_name = "lastLogin"];
+// optional int64 last_login = 22 [json_name = "lastLogin"];
 inline bool User::_internal_has_last_login() const {
-  bool value = (_has_bits_[0] & 0x00100000u) != 0;
+  bool value = (_has_bits_[0] & 0x00080000u) != 0;
   return value;
 }
 inline bool User::has_last_login() const {
@@ -1962,7 +1873,7 @@ inline bool User::has_last_login() const {
 }
 inline void User::clear_last_login() {
   last_login_ = int64_t{0};
-  _has_bits_[0] &= ~0x00100000u;
+  _has_bits_[0] &= ~0x00080000u;
 }
 inline int64_t User::_internal_last_login() const {
   return last_login_;
@@ -1972,7 +1883,7 @@ inline int64_t User::last_login() const {
   return _internal_last_login();
 }
 inline void User::_internal_set_last_login(int64_t value) {
-  _has_bits_[0] |= 0x00100000u;
+  _has_bits_[0] |= 0x00080000u;
   last_login_ = value;
 }
 inline void User::set_last_login(int64_t value) {
@@ -1980,9 +1891,9 @@ inline void User::set_last_login(int64_t value) {
   // @@protoc_insertion_point(field_set:user.v1.User.last_login)
 }
 
-// optional int64 created_at = 24 [json_name = "createdAt"];
+// optional int64 created_at = 23 [json_name = "createdAt"];
 inline bool User::_internal_has_created_at() const {
-  bool value = (_has_bits_[0] & 0x00200000u) != 0;
+  bool value = (_has_bits_[0] & 0x00100000u) != 0;
   return value;
 }
 inline bool User::has_created_at() const {
@@ -1990,7 +1901,7 @@ inline bool User::has_created_at() const {
 }
 inline void User::clear_created_at() {
   created_at_ = int64_t{0};
-  _has_bits_[0] &= ~0x00200000u;
+  _has_bits_[0] &= ~0x00100000u;
 }
 inline int64_t User::_internal_created_at() const {
   return created_at_;
@@ -2000,7 +1911,7 @@ inline int64_t User::created_at() const {
   return _internal_created_at();
 }
 inline void User::_internal_set_created_at(int64_t value) {
-  _has_bits_[0] |= 0x00200000u;
+  _has_bits_[0] |= 0x00100000u;
   created_at_ = value;
 }
 inline void User::set_created_at(int64_t value) {
@@ -2008,9 +1919,9 @@ inline void User::set_created_at(int64_t value) {
   // @@protoc_insertion_point(field_set:user.v1.User.created_at)
 }
 
-// optional int64 updated_at = 25 [json_name = "updatedAt"];
+// optional int64 updated_at = 24 [json_name = "updatedAt"];
 inline bool User::_internal_has_updated_at() const {
-  bool value = (_has_bits_[0] & 0x00400000u) != 0;
+  bool value = (_has_bits_[0] & 0x00200000u) != 0;
   return value;
 }
 inline bool User::has_updated_at() const {
@@ -2018,7 +1929,7 @@ inline bool User::has_updated_at() const {
 }
 inline void User::clear_updated_at() {
   updated_at_ = int64_t{0};
-  _has_bits_[0] &= ~0x00400000u;
+  _has_bits_[0] &= ~0x00200000u;
 }
 inline int64_t User::_internal_updated_at() const {
   return updated_at_;
@@ -2028,7 +1939,7 @@ inline int64_t User::updated_at() const {
   return _internal_updated_at();
 }
 inline void User::_internal_set_updated_at(int64_t value) {
-  _has_bits_[0] |= 0x00400000u;
+  _has_bits_[0] |= 0x00200000u;
   updated_at_ = value;
 }
 inline void User::set_updated_at(int64_t value) {
@@ -2036,9 +1947,9 @@ inline void User::set_updated_at(int64_t value) {
   // @@protoc_insertion_point(field_set:user.v1.User.updated_at)
 }
 
-// optional int64 deleted_at = 26 [json_name = "deletedAt"];
+// optional int64 deleted_at = 25 [json_name = "deletedAt"];
 inline bool User::_internal_has_deleted_at() const {
-  bool value = (_has_bits_[0] & 0x00800000u) != 0;
+  bool value = (_has_bits_[0] & 0x00400000u) != 0;
   return value;
 }
 inline bool User::has_deleted_at() const {
@@ -2046,7 +1957,7 @@ inline bool User::has_deleted_at() const {
 }
 inline void User::clear_deleted_at() {
   deleted_at_ = int64_t{0};
-  _has_bits_[0] &= ~0x00800000u;
+  _has_bits_[0] &= ~0x00400000u;
 }
 inline int64_t User::_internal_deleted_at() const {
   return deleted_at_;
@@ -2056,7 +1967,7 @@ inline int64_t User::deleted_at() const {
   return _internal_deleted_at();
 }
 inline void User::_internal_set_deleted_at(int64_t value) {
-  _has_bits_[0] |= 0x00800000u;
+  _has_bits_[0] |= 0x00400000u;
   deleted_at_ = value;
 }
 inline void User::set_deleted_at(int64_t value) {

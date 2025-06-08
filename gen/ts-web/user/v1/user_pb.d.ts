@@ -19,11 +19,6 @@ export class User extends jspb.Message {
   hasFirstName(): boolean;
   clearFirstName(): User;
 
-  getNickname(): string;
-  setNickname(value: string): User;
-  hasNickname(): boolean;
-  clearNickname(): User;
-
   getLastName(): string;
   setLastName(value: string): User;
   hasLastName(): boolean;
@@ -143,7 +138,6 @@ export namespace User {
     id?: string,
     username?: string,
     firstName?: string,
-    nickname?: string,
     lastName?: string,
     email?: string,
     userType?: string,
@@ -183,109 +177,104 @@ export namespace User {
     FIRST_NAME = 3,
   }
 
-  export enum NicknameCase { 
-    _NICKNAME_NOT_SET = 0,
-    NICKNAME = 4,
-  }
-
   export enum LastNameCase { 
     _LAST_NAME_NOT_SET = 0,
-    LAST_NAME = 5,
+    LAST_NAME = 4,
   }
 
   export enum EmailCase { 
     _EMAIL_NOT_SET = 0,
-    EMAIL = 6,
+    EMAIL = 5,
   }
 
   export enum UserTypeCase { 
     _USER_TYPE_NOT_SET = 0,
-    USER_TYPE = 7,
+    USER_TYPE = 6,
   }
 
   export enum MembershipCase { 
     _MEMBERSHIP_NOT_SET = 0,
-    MEMBERSHIP = 8,
+    MEMBERSHIP = 7,
   }
 
   export enum IsEmailVerifiedCase { 
     _IS_EMAIL_VERIFIED_NOT_SET = 0,
-    IS_EMAIL_VERIFIED = 9,
+    IS_EMAIL_VERIFIED = 8,
   }
 
   export enum PasswordCase { 
     _PASSWORD_NOT_SET = 0,
-    PASSWORD = 10,
+    PASSWORD = 9,
   }
 
   export enum AuthDataCase { 
     _AUTH_DATA_NOT_SET = 0,
-    AUTH_DATA = 11,
+    AUTH_DATA = 10,
   }
 
   export enum AuthServiceCase { 
     _AUTH_SERVICE_NOT_SET = 0,
-    AUTH_SERVICE = 12,
+    AUTH_SERVICE = 11,
   }
 
   export enum RolesCase { 
     _ROLES_NOT_SET = 0,
-    ROLES = 13,
+    ROLES = 12,
   }
 
   export enum LastPasswordUpdateCase { 
     _LAST_PASSWORD_UPDATE_NOT_SET = 0,
-    LAST_PASSWORD_UPDATE = 16,
+    LAST_PASSWORD_UPDATE = 15,
   }
 
   export enum LastPictureUpdateCase { 
     _LAST_PICTURE_UPDATE_NOT_SET = 0,
-    LAST_PICTURE_UPDATE = 17,
+    LAST_PICTURE_UPDATE = 16,
   }
 
   export enum FailedAttemptsCase { 
     _FAILED_ATTEMPTS_NOT_SET = 0,
-    FAILED_ATTEMPTS = 18,
+    FAILED_ATTEMPTS = 17,
   }
 
   export enum LocaleCase { 
     _LOCALE_NOT_SET = 0,
-    LOCALE = 19,
+    LOCALE = 18,
   }
 
   export enum MfaActiveCase { 
     _MFA_ACTIVE_NOT_SET = 0,
-    MFA_ACTIVE = 20,
+    MFA_ACTIVE = 19,
   }
 
   export enum MfaSecretCase { 
     _MFA_SECRET_NOT_SET = 0,
-    MFA_SECRET = 21,
+    MFA_SECRET = 20,
   }
 
   export enum LastActivityAtCase { 
     _LAST_ACTIVITY_AT_NOT_SET = 0,
-    LAST_ACTIVITY_AT = 22,
+    LAST_ACTIVITY_AT = 21,
   }
 
   export enum LastLoginCase { 
     _LAST_LOGIN_NOT_SET = 0,
-    LAST_LOGIN = 23,
+    LAST_LOGIN = 22,
   }
 
   export enum CreatedAtCase { 
     _CREATED_AT_NOT_SET = 0,
-    CREATED_AT = 24,
+    CREATED_AT = 23,
   }
 
   export enum UpdatedAtCase { 
     _UPDATED_AT_NOT_SET = 0,
-    UPDATED_AT = 25,
+    UPDATED_AT = 24,
   }
 
   export enum DeletedAtCase { 
     _DELETED_AT_NOT_SET = 0,
-    DELETED_AT = 26,
+    DELETED_AT = 25,
   }
 }
 
