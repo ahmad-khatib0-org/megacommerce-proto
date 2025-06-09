@@ -10,27 +10,28 @@ option java_outer_classname = "ConfigProto";
 option java_package = "org.megacommerce.common.v1";
 
 message ConfigMain {
-  optional int32 read_timeout = 1;
-  optional int32 write_timeout = 2;
-  optional int32 idle_timeout = 3;
-  optional bool enable_link_previews = 4;
-  optional string restrict_link_previews = 5;
-  optional bool enable_client_performance_debugging = 6;
-  optional bool enable_gif_picker = 7;
-  optional bool enable_custom_emoji = 8;
-  optional bool enable_emoji_picker = 9;
-  optional int64 time_between_user_typing_updates_milliseconds = 10;
-  optional bool enable_file_search = 11;
-  optional bool enable_user_typing_messages = 12;
-  optional bool enable_user_statuses = 13;
-  optional bool enable_email_invitations = 14;
-  optional bool enable_svgs = 15;
-  optional bool allow_persistent_notifications = 16;
-  optional int32 persistent_notification_interval_minutes = 17;
-  optional int32 persistent_notification_max_count = 18;
-  optional int32 persistent_notification_max_recipients = 19;
-  optional int32 feature_flag_sync_interval_seconds = 20;
-  optional bool allow_synced_drafts = 21;
+  optional string env = 1;
+  optional int32 read_timeout = 2;
+  optional int32 write_timeout = 3;
+  optional int32 idle_timeout = 4;
+  optional bool enable_link_previews = 5;
+  optional string restrict_link_previews = 6;
+  optional bool enable_client_performance_debugging = 7;
+  optional bool enable_gif_picker = 8;
+  optional bool enable_custom_emoji = 9;
+  optional bool enable_emoji_picker = 10;
+  optional int64 time_between_user_typing_updates_milliseconds = 11;
+  optional bool enable_file_search = 12;
+  optional bool enable_user_typing_messages = 13;
+  optional bool enable_user_statuses = 14;
+  optional bool enable_email_invitations = 15;
+  optional bool enable_svgs = 16;
+  optional bool allow_persistent_notifications = 17;
+  optional int32 persistent_notification_interval_minutes = 18;
+  optional int32 persistent_notification_max_count = 19;
+  optional int32 persistent_notification_max_recipients = 20;
+  optional int32 feature_flag_sync_interval_seconds = 21;
+  optional bool allow_synced_drafts = 22;
 }
 
 message ConfigServices {
@@ -310,7 +311,7 @@ message ConfigNativeApp {
 }
 
 message ConfigMeilisearch {
-  optional string server_url = 1 [ json_name = "server_url" ];
+  optional string server_url = 1 [json_name = "server_url"];
   // optional string connection_url = 1;
   optional string master_key = 2; // Meilisearch-specific authentication
   optional bool enable_indexing = 3;
@@ -388,7 +389,9 @@ message ConfigGetResponse {
   }
 }
 
-message ConfigUpdateRequest { Config config = 1; }
+message ConfigUpdateRequest {
+  Config config = 1;
+}
 
 message ConfigUpdateResponse {
   oneof response {
@@ -404,4 +407,6 @@ message ConfigListenerResponse {
   }
 }
 
-message ConfigListenerRequest { string client_id = 1; }
+message ConfigListenerRequest {
+  string client_id = 1;
+}

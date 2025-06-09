@@ -5,6 +5,11 @@ import * as jspb from "google-protobuf";
 import * as common_v1_error_pb from "../../common/v1/error_pb";
 
 export class ConfigMain extends jspb.Message {
+  hasEnv(): boolean;
+  clearEnv(): void;
+  getEnv(): string;
+  setEnv(value: string): void;
+
   hasReadTimeout(): boolean;
   clearReadTimeout(): void;
   getReadTimeout(): number;
@@ -122,6 +127,7 @@ export class ConfigMain extends jspb.Message {
 
 export namespace ConfigMain {
   export type AsObject = {
+    env: string,
     readTimeout: number,
     writeTimeout: number,
     idleTimeout: number,

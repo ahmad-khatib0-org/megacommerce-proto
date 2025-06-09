@@ -19,238 +19,255 @@ public final class ConfigProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional int32 read_timeout = 1 [json_name = "readTimeout"];</code>
+     * <code>optional string env = 1 [json_name = "env"];</code>
+     * @return Whether the env field is set.
+     */
+    boolean hasEnv();
+    /**
+     * <code>optional string env = 1 [json_name = "env"];</code>
+     * @return The env.
+     */
+    java.lang.String getEnv();
+    /**
+     * <code>optional string env = 1 [json_name = "env"];</code>
+     * @return The bytes for env.
+     */
+    com.google.protobuf.ByteString
+        getEnvBytes();
+
+    /**
+     * <code>optional int32 read_timeout = 2 [json_name = "readTimeout"];</code>
      * @return Whether the readTimeout field is set.
      */
     boolean hasReadTimeout();
     /**
-     * <code>optional int32 read_timeout = 1 [json_name = "readTimeout"];</code>
+     * <code>optional int32 read_timeout = 2 [json_name = "readTimeout"];</code>
      * @return The readTimeout.
      */
     int getReadTimeout();
 
     /**
-     * <code>optional int32 write_timeout = 2 [json_name = "writeTimeout"];</code>
+     * <code>optional int32 write_timeout = 3 [json_name = "writeTimeout"];</code>
      * @return Whether the writeTimeout field is set.
      */
     boolean hasWriteTimeout();
     /**
-     * <code>optional int32 write_timeout = 2 [json_name = "writeTimeout"];</code>
+     * <code>optional int32 write_timeout = 3 [json_name = "writeTimeout"];</code>
      * @return The writeTimeout.
      */
     int getWriteTimeout();
 
     /**
-     * <code>optional int32 idle_timeout = 3 [json_name = "idleTimeout"];</code>
+     * <code>optional int32 idle_timeout = 4 [json_name = "idleTimeout"];</code>
      * @return Whether the idleTimeout field is set.
      */
     boolean hasIdleTimeout();
     /**
-     * <code>optional int32 idle_timeout = 3 [json_name = "idleTimeout"];</code>
+     * <code>optional int32 idle_timeout = 4 [json_name = "idleTimeout"];</code>
      * @return The idleTimeout.
      */
     int getIdleTimeout();
 
     /**
-     * <code>optional bool enable_link_previews = 4 [json_name = "enableLinkPreviews"];</code>
+     * <code>optional bool enable_link_previews = 5 [json_name = "enableLinkPreviews"];</code>
      * @return Whether the enableLinkPreviews field is set.
      */
     boolean hasEnableLinkPreviews();
     /**
-     * <code>optional bool enable_link_previews = 4 [json_name = "enableLinkPreviews"];</code>
+     * <code>optional bool enable_link_previews = 5 [json_name = "enableLinkPreviews"];</code>
      * @return The enableLinkPreviews.
      */
     boolean getEnableLinkPreviews();
 
     /**
-     * <code>optional string restrict_link_previews = 5 [json_name = "restrictLinkPreviews"];</code>
+     * <code>optional string restrict_link_previews = 6 [json_name = "restrictLinkPreviews"];</code>
      * @return Whether the restrictLinkPreviews field is set.
      */
     boolean hasRestrictLinkPreviews();
     /**
-     * <code>optional string restrict_link_previews = 5 [json_name = "restrictLinkPreviews"];</code>
+     * <code>optional string restrict_link_previews = 6 [json_name = "restrictLinkPreviews"];</code>
      * @return The restrictLinkPreviews.
      */
     java.lang.String getRestrictLinkPreviews();
     /**
-     * <code>optional string restrict_link_previews = 5 [json_name = "restrictLinkPreviews"];</code>
+     * <code>optional string restrict_link_previews = 6 [json_name = "restrictLinkPreviews"];</code>
      * @return The bytes for restrictLinkPreviews.
      */
     com.google.protobuf.ByteString
         getRestrictLinkPreviewsBytes();
 
     /**
-     * <code>optional bool enable_client_performance_debugging = 6 [json_name = "enableClientPerformanceDebugging"];</code>
+     * <code>optional bool enable_client_performance_debugging = 7 [json_name = "enableClientPerformanceDebugging"];</code>
      * @return Whether the enableClientPerformanceDebugging field is set.
      */
     boolean hasEnableClientPerformanceDebugging();
     /**
-     * <code>optional bool enable_client_performance_debugging = 6 [json_name = "enableClientPerformanceDebugging"];</code>
+     * <code>optional bool enable_client_performance_debugging = 7 [json_name = "enableClientPerformanceDebugging"];</code>
      * @return The enableClientPerformanceDebugging.
      */
     boolean getEnableClientPerformanceDebugging();
 
     /**
-     * <code>optional bool enable_gif_picker = 7 [json_name = "enableGifPicker"];</code>
+     * <code>optional bool enable_gif_picker = 8 [json_name = "enableGifPicker"];</code>
      * @return Whether the enableGifPicker field is set.
      */
     boolean hasEnableGifPicker();
     /**
-     * <code>optional bool enable_gif_picker = 7 [json_name = "enableGifPicker"];</code>
+     * <code>optional bool enable_gif_picker = 8 [json_name = "enableGifPicker"];</code>
      * @return The enableGifPicker.
      */
     boolean getEnableGifPicker();
 
     /**
-     * <code>optional bool enable_custom_emoji = 8 [json_name = "enableCustomEmoji"];</code>
+     * <code>optional bool enable_custom_emoji = 9 [json_name = "enableCustomEmoji"];</code>
      * @return Whether the enableCustomEmoji field is set.
      */
     boolean hasEnableCustomEmoji();
     /**
-     * <code>optional bool enable_custom_emoji = 8 [json_name = "enableCustomEmoji"];</code>
+     * <code>optional bool enable_custom_emoji = 9 [json_name = "enableCustomEmoji"];</code>
      * @return The enableCustomEmoji.
      */
     boolean getEnableCustomEmoji();
 
     /**
-     * <code>optional bool enable_emoji_picker = 9 [json_name = "enableEmojiPicker"];</code>
+     * <code>optional bool enable_emoji_picker = 10 [json_name = "enableEmojiPicker"];</code>
      * @return Whether the enableEmojiPicker field is set.
      */
     boolean hasEnableEmojiPicker();
     /**
-     * <code>optional bool enable_emoji_picker = 9 [json_name = "enableEmojiPicker"];</code>
+     * <code>optional bool enable_emoji_picker = 10 [json_name = "enableEmojiPicker"];</code>
      * @return The enableEmojiPicker.
      */
     boolean getEnableEmojiPicker();
 
     /**
-     * <code>optional int64 time_between_user_typing_updates_milliseconds = 10 [json_name = "timeBetweenUserTypingUpdatesMilliseconds"];</code>
+     * <code>optional int64 time_between_user_typing_updates_milliseconds = 11 [json_name = "timeBetweenUserTypingUpdatesMilliseconds"];</code>
      * @return Whether the timeBetweenUserTypingUpdatesMilliseconds field is set.
      */
     boolean hasTimeBetweenUserTypingUpdatesMilliseconds();
     /**
-     * <code>optional int64 time_between_user_typing_updates_milliseconds = 10 [json_name = "timeBetweenUserTypingUpdatesMilliseconds"];</code>
+     * <code>optional int64 time_between_user_typing_updates_milliseconds = 11 [json_name = "timeBetweenUserTypingUpdatesMilliseconds"];</code>
      * @return The timeBetweenUserTypingUpdatesMilliseconds.
      */
     long getTimeBetweenUserTypingUpdatesMilliseconds();
 
     /**
-     * <code>optional bool enable_file_search = 11 [json_name = "enableFileSearch"];</code>
+     * <code>optional bool enable_file_search = 12 [json_name = "enableFileSearch"];</code>
      * @return Whether the enableFileSearch field is set.
      */
     boolean hasEnableFileSearch();
     /**
-     * <code>optional bool enable_file_search = 11 [json_name = "enableFileSearch"];</code>
+     * <code>optional bool enable_file_search = 12 [json_name = "enableFileSearch"];</code>
      * @return The enableFileSearch.
      */
     boolean getEnableFileSearch();
 
     /**
-     * <code>optional bool enable_user_typing_messages = 12 [json_name = "enableUserTypingMessages"];</code>
+     * <code>optional bool enable_user_typing_messages = 13 [json_name = "enableUserTypingMessages"];</code>
      * @return Whether the enableUserTypingMessages field is set.
      */
     boolean hasEnableUserTypingMessages();
     /**
-     * <code>optional bool enable_user_typing_messages = 12 [json_name = "enableUserTypingMessages"];</code>
+     * <code>optional bool enable_user_typing_messages = 13 [json_name = "enableUserTypingMessages"];</code>
      * @return The enableUserTypingMessages.
      */
     boolean getEnableUserTypingMessages();
 
     /**
-     * <code>optional bool enable_user_statuses = 13 [json_name = "enableUserStatuses"];</code>
+     * <code>optional bool enable_user_statuses = 14 [json_name = "enableUserStatuses"];</code>
      * @return Whether the enableUserStatuses field is set.
      */
     boolean hasEnableUserStatuses();
     /**
-     * <code>optional bool enable_user_statuses = 13 [json_name = "enableUserStatuses"];</code>
+     * <code>optional bool enable_user_statuses = 14 [json_name = "enableUserStatuses"];</code>
      * @return The enableUserStatuses.
      */
     boolean getEnableUserStatuses();
 
     /**
-     * <code>optional bool enable_email_invitations = 14 [json_name = "enableEmailInvitations"];</code>
+     * <code>optional bool enable_email_invitations = 15 [json_name = "enableEmailInvitations"];</code>
      * @return Whether the enableEmailInvitations field is set.
      */
     boolean hasEnableEmailInvitations();
     /**
-     * <code>optional bool enable_email_invitations = 14 [json_name = "enableEmailInvitations"];</code>
+     * <code>optional bool enable_email_invitations = 15 [json_name = "enableEmailInvitations"];</code>
      * @return The enableEmailInvitations.
      */
     boolean getEnableEmailInvitations();
 
     /**
-     * <code>optional bool enable_svgs = 15 [json_name = "enableSvgs"];</code>
+     * <code>optional bool enable_svgs = 16 [json_name = "enableSvgs"];</code>
      * @return Whether the enableSvgs field is set.
      */
     boolean hasEnableSvgs();
     /**
-     * <code>optional bool enable_svgs = 15 [json_name = "enableSvgs"];</code>
+     * <code>optional bool enable_svgs = 16 [json_name = "enableSvgs"];</code>
      * @return The enableSvgs.
      */
     boolean getEnableSvgs();
 
     /**
-     * <code>optional bool allow_persistent_notifications = 16 [json_name = "allowPersistentNotifications"];</code>
+     * <code>optional bool allow_persistent_notifications = 17 [json_name = "allowPersistentNotifications"];</code>
      * @return Whether the allowPersistentNotifications field is set.
      */
     boolean hasAllowPersistentNotifications();
     /**
-     * <code>optional bool allow_persistent_notifications = 16 [json_name = "allowPersistentNotifications"];</code>
+     * <code>optional bool allow_persistent_notifications = 17 [json_name = "allowPersistentNotifications"];</code>
      * @return The allowPersistentNotifications.
      */
     boolean getAllowPersistentNotifications();
 
     /**
-     * <code>optional int32 persistent_notification_interval_minutes = 17 [json_name = "persistentNotificationIntervalMinutes"];</code>
+     * <code>optional int32 persistent_notification_interval_minutes = 18 [json_name = "persistentNotificationIntervalMinutes"];</code>
      * @return Whether the persistentNotificationIntervalMinutes field is set.
      */
     boolean hasPersistentNotificationIntervalMinutes();
     /**
-     * <code>optional int32 persistent_notification_interval_minutes = 17 [json_name = "persistentNotificationIntervalMinutes"];</code>
+     * <code>optional int32 persistent_notification_interval_minutes = 18 [json_name = "persistentNotificationIntervalMinutes"];</code>
      * @return The persistentNotificationIntervalMinutes.
      */
     int getPersistentNotificationIntervalMinutes();
 
     /**
-     * <code>optional int32 persistent_notification_max_count = 18 [json_name = "persistentNotificationMaxCount"];</code>
+     * <code>optional int32 persistent_notification_max_count = 19 [json_name = "persistentNotificationMaxCount"];</code>
      * @return Whether the persistentNotificationMaxCount field is set.
      */
     boolean hasPersistentNotificationMaxCount();
     /**
-     * <code>optional int32 persistent_notification_max_count = 18 [json_name = "persistentNotificationMaxCount"];</code>
+     * <code>optional int32 persistent_notification_max_count = 19 [json_name = "persistentNotificationMaxCount"];</code>
      * @return The persistentNotificationMaxCount.
      */
     int getPersistentNotificationMaxCount();
 
     /**
-     * <code>optional int32 persistent_notification_max_recipients = 19 [json_name = "persistentNotificationMaxRecipients"];</code>
+     * <code>optional int32 persistent_notification_max_recipients = 20 [json_name = "persistentNotificationMaxRecipients"];</code>
      * @return Whether the persistentNotificationMaxRecipients field is set.
      */
     boolean hasPersistentNotificationMaxRecipients();
     /**
-     * <code>optional int32 persistent_notification_max_recipients = 19 [json_name = "persistentNotificationMaxRecipients"];</code>
+     * <code>optional int32 persistent_notification_max_recipients = 20 [json_name = "persistentNotificationMaxRecipients"];</code>
      * @return The persistentNotificationMaxRecipients.
      */
     int getPersistentNotificationMaxRecipients();
 
     /**
-     * <code>optional int32 feature_flag_sync_interval_seconds = 20 [json_name = "featureFlagSyncIntervalSeconds"];</code>
+     * <code>optional int32 feature_flag_sync_interval_seconds = 21 [json_name = "featureFlagSyncIntervalSeconds"];</code>
      * @return Whether the featureFlagSyncIntervalSeconds field is set.
      */
     boolean hasFeatureFlagSyncIntervalSeconds();
     /**
-     * <code>optional int32 feature_flag_sync_interval_seconds = 20 [json_name = "featureFlagSyncIntervalSeconds"];</code>
+     * <code>optional int32 feature_flag_sync_interval_seconds = 21 [json_name = "featureFlagSyncIntervalSeconds"];</code>
      * @return The featureFlagSyncIntervalSeconds.
      */
     int getFeatureFlagSyncIntervalSeconds();
 
     /**
-     * <code>optional bool allow_synced_drafts = 21 [json_name = "allowSyncedDrafts"];</code>
+     * <code>optional bool allow_synced_drafts = 22 [json_name = "allowSyncedDrafts"];</code>
      * @return Whether the allowSyncedDrafts field is set.
      */
     boolean hasAllowSyncedDrafts();
     /**
-     * <code>optional bool allow_synced_drafts = 21 [json_name = "allowSyncedDrafts"];</code>
+     * <code>optional bool allow_synced_drafts = 22 [json_name = "allowSyncedDrafts"];</code>
      * @return The allowSyncedDrafts.
      */
     boolean getAllowSyncedDrafts();
@@ -268,6 +285,7 @@ public final class ConfigProto {
       super(builder);
     }
     private ConfigMain() {
+      env_ = "";
       restrictLinkPreviews_ = "";
     }
 
@@ -297,18 +315,64 @@ public final class ConfigProto {
     }
 
     private int bitField0_;
-    public static final int READ_TIMEOUT_FIELD_NUMBER = 1;
+    public static final int ENV_FIELD_NUMBER = 1;
+    private volatile java.lang.Object env_;
+    /**
+     * <code>optional string env = 1 [json_name = "env"];</code>
+     * @return Whether the env field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnv() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional string env = 1 [json_name = "env"];</code>
+     * @return The env.
+     */
+    @java.lang.Override
+    public java.lang.String getEnv() {
+      java.lang.Object ref = env_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        env_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string env = 1 [json_name = "env"];</code>
+     * @return The bytes for env.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEnvBytes() {
+      java.lang.Object ref = env_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        env_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int READ_TIMEOUT_FIELD_NUMBER = 2;
     private int readTimeout_;
     /**
-     * <code>optional int32 read_timeout = 1 [json_name = "readTimeout"];</code>
+     * <code>optional int32 read_timeout = 2 [json_name = "readTimeout"];</code>
      * @return Whether the readTimeout field is set.
      */
     @java.lang.Override
     public boolean hasReadTimeout() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>optional int32 read_timeout = 1 [json_name = "readTimeout"];</code>
+     * <code>optional int32 read_timeout = 2 [json_name = "readTimeout"];</code>
      * @return The readTimeout.
      */
     @java.lang.Override
@@ -316,18 +380,18 @@ public final class ConfigProto {
       return readTimeout_;
     }
 
-    public static final int WRITE_TIMEOUT_FIELD_NUMBER = 2;
+    public static final int WRITE_TIMEOUT_FIELD_NUMBER = 3;
     private int writeTimeout_;
     /**
-     * <code>optional int32 write_timeout = 2 [json_name = "writeTimeout"];</code>
+     * <code>optional int32 write_timeout = 3 [json_name = "writeTimeout"];</code>
      * @return Whether the writeTimeout field is set.
      */
     @java.lang.Override
     public boolean hasWriteTimeout() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>optional int32 write_timeout = 2 [json_name = "writeTimeout"];</code>
+     * <code>optional int32 write_timeout = 3 [json_name = "writeTimeout"];</code>
      * @return The writeTimeout.
      */
     @java.lang.Override
@@ -335,18 +399,18 @@ public final class ConfigProto {
       return writeTimeout_;
     }
 
-    public static final int IDLE_TIMEOUT_FIELD_NUMBER = 3;
+    public static final int IDLE_TIMEOUT_FIELD_NUMBER = 4;
     private int idleTimeout_;
     /**
-     * <code>optional int32 idle_timeout = 3 [json_name = "idleTimeout"];</code>
+     * <code>optional int32 idle_timeout = 4 [json_name = "idleTimeout"];</code>
      * @return Whether the idleTimeout field is set.
      */
     @java.lang.Override
     public boolean hasIdleTimeout() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>optional int32 idle_timeout = 3 [json_name = "idleTimeout"];</code>
+     * <code>optional int32 idle_timeout = 4 [json_name = "idleTimeout"];</code>
      * @return The idleTimeout.
      */
     @java.lang.Override
@@ -354,18 +418,18 @@ public final class ConfigProto {
       return idleTimeout_;
     }
 
-    public static final int ENABLE_LINK_PREVIEWS_FIELD_NUMBER = 4;
+    public static final int ENABLE_LINK_PREVIEWS_FIELD_NUMBER = 5;
     private boolean enableLinkPreviews_;
     /**
-     * <code>optional bool enable_link_previews = 4 [json_name = "enableLinkPreviews"];</code>
+     * <code>optional bool enable_link_previews = 5 [json_name = "enableLinkPreviews"];</code>
      * @return Whether the enableLinkPreviews field is set.
      */
     @java.lang.Override
     public boolean hasEnableLinkPreviews() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>optional bool enable_link_previews = 4 [json_name = "enableLinkPreviews"];</code>
+     * <code>optional bool enable_link_previews = 5 [json_name = "enableLinkPreviews"];</code>
      * @return The enableLinkPreviews.
      */
     @java.lang.Override
@@ -373,18 +437,18 @@ public final class ConfigProto {
       return enableLinkPreviews_;
     }
 
-    public static final int RESTRICT_LINK_PREVIEWS_FIELD_NUMBER = 5;
+    public static final int RESTRICT_LINK_PREVIEWS_FIELD_NUMBER = 6;
     private volatile java.lang.Object restrictLinkPreviews_;
     /**
-     * <code>optional string restrict_link_previews = 5 [json_name = "restrictLinkPreviews"];</code>
+     * <code>optional string restrict_link_previews = 6 [json_name = "restrictLinkPreviews"];</code>
      * @return Whether the restrictLinkPreviews field is set.
      */
     @java.lang.Override
     public boolean hasRestrictLinkPreviews() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
-     * <code>optional string restrict_link_previews = 5 [json_name = "restrictLinkPreviews"];</code>
+     * <code>optional string restrict_link_previews = 6 [json_name = "restrictLinkPreviews"];</code>
      * @return The restrictLinkPreviews.
      */
     @java.lang.Override
@@ -401,7 +465,7 @@ public final class ConfigProto {
       }
     }
     /**
-     * <code>optional string restrict_link_previews = 5 [json_name = "restrictLinkPreviews"];</code>
+     * <code>optional string restrict_link_previews = 6 [json_name = "restrictLinkPreviews"];</code>
      * @return The bytes for restrictLinkPreviews.
      */
     @java.lang.Override
@@ -419,18 +483,18 @@ public final class ConfigProto {
       }
     }
 
-    public static final int ENABLE_CLIENT_PERFORMANCE_DEBUGGING_FIELD_NUMBER = 6;
+    public static final int ENABLE_CLIENT_PERFORMANCE_DEBUGGING_FIELD_NUMBER = 7;
     private boolean enableClientPerformanceDebugging_;
     /**
-     * <code>optional bool enable_client_performance_debugging = 6 [json_name = "enableClientPerformanceDebugging"];</code>
+     * <code>optional bool enable_client_performance_debugging = 7 [json_name = "enableClientPerformanceDebugging"];</code>
      * @return Whether the enableClientPerformanceDebugging field is set.
      */
     @java.lang.Override
     public boolean hasEnableClientPerformanceDebugging() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
-     * <code>optional bool enable_client_performance_debugging = 6 [json_name = "enableClientPerformanceDebugging"];</code>
+     * <code>optional bool enable_client_performance_debugging = 7 [json_name = "enableClientPerformanceDebugging"];</code>
      * @return The enableClientPerformanceDebugging.
      */
     @java.lang.Override
@@ -438,18 +502,18 @@ public final class ConfigProto {
       return enableClientPerformanceDebugging_;
     }
 
-    public static final int ENABLE_GIF_PICKER_FIELD_NUMBER = 7;
+    public static final int ENABLE_GIF_PICKER_FIELD_NUMBER = 8;
     private boolean enableGifPicker_;
     /**
-     * <code>optional bool enable_gif_picker = 7 [json_name = "enableGifPicker"];</code>
+     * <code>optional bool enable_gif_picker = 8 [json_name = "enableGifPicker"];</code>
      * @return Whether the enableGifPicker field is set.
      */
     @java.lang.Override
     public boolean hasEnableGifPicker() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>optional bool enable_gif_picker = 7 [json_name = "enableGifPicker"];</code>
+     * <code>optional bool enable_gif_picker = 8 [json_name = "enableGifPicker"];</code>
      * @return The enableGifPicker.
      */
     @java.lang.Override
@@ -457,18 +521,18 @@ public final class ConfigProto {
       return enableGifPicker_;
     }
 
-    public static final int ENABLE_CUSTOM_EMOJI_FIELD_NUMBER = 8;
+    public static final int ENABLE_CUSTOM_EMOJI_FIELD_NUMBER = 9;
     private boolean enableCustomEmoji_;
     /**
-     * <code>optional bool enable_custom_emoji = 8 [json_name = "enableCustomEmoji"];</code>
+     * <code>optional bool enable_custom_emoji = 9 [json_name = "enableCustomEmoji"];</code>
      * @return Whether the enableCustomEmoji field is set.
      */
     @java.lang.Override
     public boolean hasEnableCustomEmoji() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
-     * <code>optional bool enable_custom_emoji = 8 [json_name = "enableCustomEmoji"];</code>
+     * <code>optional bool enable_custom_emoji = 9 [json_name = "enableCustomEmoji"];</code>
      * @return The enableCustomEmoji.
      */
     @java.lang.Override
@@ -476,18 +540,18 @@ public final class ConfigProto {
       return enableCustomEmoji_;
     }
 
-    public static final int ENABLE_EMOJI_PICKER_FIELD_NUMBER = 9;
+    public static final int ENABLE_EMOJI_PICKER_FIELD_NUMBER = 10;
     private boolean enableEmojiPicker_;
     /**
-     * <code>optional bool enable_emoji_picker = 9 [json_name = "enableEmojiPicker"];</code>
+     * <code>optional bool enable_emoji_picker = 10 [json_name = "enableEmojiPicker"];</code>
      * @return Whether the enableEmojiPicker field is set.
      */
     @java.lang.Override
     public boolean hasEnableEmojiPicker() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
-     * <code>optional bool enable_emoji_picker = 9 [json_name = "enableEmojiPicker"];</code>
+     * <code>optional bool enable_emoji_picker = 10 [json_name = "enableEmojiPicker"];</code>
      * @return The enableEmojiPicker.
      */
     @java.lang.Override
@@ -495,18 +559,18 @@ public final class ConfigProto {
       return enableEmojiPicker_;
     }
 
-    public static final int TIME_BETWEEN_USER_TYPING_UPDATES_MILLISECONDS_FIELD_NUMBER = 10;
+    public static final int TIME_BETWEEN_USER_TYPING_UPDATES_MILLISECONDS_FIELD_NUMBER = 11;
     private long timeBetweenUserTypingUpdatesMilliseconds_;
     /**
-     * <code>optional int64 time_between_user_typing_updates_milliseconds = 10 [json_name = "timeBetweenUserTypingUpdatesMilliseconds"];</code>
+     * <code>optional int64 time_between_user_typing_updates_milliseconds = 11 [json_name = "timeBetweenUserTypingUpdatesMilliseconds"];</code>
      * @return Whether the timeBetweenUserTypingUpdatesMilliseconds field is set.
      */
     @java.lang.Override
     public boolean hasTimeBetweenUserTypingUpdatesMilliseconds() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
-     * <code>optional int64 time_between_user_typing_updates_milliseconds = 10 [json_name = "timeBetweenUserTypingUpdatesMilliseconds"];</code>
+     * <code>optional int64 time_between_user_typing_updates_milliseconds = 11 [json_name = "timeBetweenUserTypingUpdatesMilliseconds"];</code>
      * @return The timeBetweenUserTypingUpdatesMilliseconds.
      */
     @java.lang.Override
@@ -514,18 +578,18 @@ public final class ConfigProto {
       return timeBetweenUserTypingUpdatesMilliseconds_;
     }
 
-    public static final int ENABLE_FILE_SEARCH_FIELD_NUMBER = 11;
+    public static final int ENABLE_FILE_SEARCH_FIELD_NUMBER = 12;
     private boolean enableFileSearch_;
     /**
-     * <code>optional bool enable_file_search = 11 [json_name = "enableFileSearch"];</code>
+     * <code>optional bool enable_file_search = 12 [json_name = "enableFileSearch"];</code>
      * @return Whether the enableFileSearch field is set.
      */
     @java.lang.Override
     public boolean hasEnableFileSearch() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
-     * <code>optional bool enable_file_search = 11 [json_name = "enableFileSearch"];</code>
+     * <code>optional bool enable_file_search = 12 [json_name = "enableFileSearch"];</code>
      * @return The enableFileSearch.
      */
     @java.lang.Override
@@ -533,18 +597,18 @@ public final class ConfigProto {
       return enableFileSearch_;
     }
 
-    public static final int ENABLE_USER_TYPING_MESSAGES_FIELD_NUMBER = 12;
+    public static final int ENABLE_USER_TYPING_MESSAGES_FIELD_NUMBER = 13;
     private boolean enableUserTypingMessages_;
     /**
-     * <code>optional bool enable_user_typing_messages = 12 [json_name = "enableUserTypingMessages"];</code>
+     * <code>optional bool enable_user_typing_messages = 13 [json_name = "enableUserTypingMessages"];</code>
      * @return Whether the enableUserTypingMessages field is set.
      */
     @java.lang.Override
     public boolean hasEnableUserTypingMessages() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
-     * <code>optional bool enable_user_typing_messages = 12 [json_name = "enableUserTypingMessages"];</code>
+     * <code>optional bool enable_user_typing_messages = 13 [json_name = "enableUserTypingMessages"];</code>
      * @return The enableUserTypingMessages.
      */
     @java.lang.Override
@@ -552,18 +616,18 @@ public final class ConfigProto {
       return enableUserTypingMessages_;
     }
 
-    public static final int ENABLE_USER_STATUSES_FIELD_NUMBER = 13;
+    public static final int ENABLE_USER_STATUSES_FIELD_NUMBER = 14;
     private boolean enableUserStatuses_;
     /**
-     * <code>optional bool enable_user_statuses = 13 [json_name = "enableUserStatuses"];</code>
+     * <code>optional bool enable_user_statuses = 14 [json_name = "enableUserStatuses"];</code>
      * @return Whether the enableUserStatuses field is set.
      */
     @java.lang.Override
     public boolean hasEnableUserStatuses() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
-     * <code>optional bool enable_user_statuses = 13 [json_name = "enableUserStatuses"];</code>
+     * <code>optional bool enable_user_statuses = 14 [json_name = "enableUserStatuses"];</code>
      * @return The enableUserStatuses.
      */
     @java.lang.Override
@@ -571,18 +635,18 @@ public final class ConfigProto {
       return enableUserStatuses_;
     }
 
-    public static final int ENABLE_EMAIL_INVITATIONS_FIELD_NUMBER = 14;
+    public static final int ENABLE_EMAIL_INVITATIONS_FIELD_NUMBER = 15;
     private boolean enableEmailInvitations_;
     /**
-     * <code>optional bool enable_email_invitations = 14 [json_name = "enableEmailInvitations"];</code>
+     * <code>optional bool enable_email_invitations = 15 [json_name = "enableEmailInvitations"];</code>
      * @return Whether the enableEmailInvitations field is set.
      */
     @java.lang.Override
     public boolean hasEnableEmailInvitations() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
-     * <code>optional bool enable_email_invitations = 14 [json_name = "enableEmailInvitations"];</code>
+     * <code>optional bool enable_email_invitations = 15 [json_name = "enableEmailInvitations"];</code>
      * @return The enableEmailInvitations.
      */
     @java.lang.Override
@@ -590,18 +654,18 @@ public final class ConfigProto {
       return enableEmailInvitations_;
     }
 
-    public static final int ENABLE_SVGS_FIELD_NUMBER = 15;
+    public static final int ENABLE_SVGS_FIELD_NUMBER = 16;
     private boolean enableSvgs_;
     /**
-     * <code>optional bool enable_svgs = 15 [json_name = "enableSvgs"];</code>
+     * <code>optional bool enable_svgs = 16 [json_name = "enableSvgs"];</code>
      * @return Whether the enableSvgs field is set.
      */
     @java.lang.Override
     public boolean hasEnableSvgs() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
-     * <code>optional bool enable_svgs = 15 [json_name = "enableSvgs"];</code>
+     * <code>optional bool enable_svgs = 16 [json_name = "enableSvgs"];</code>
      * @return The enableSvgs.
      */
     @java.lang.Override
@@ -609,18 +673,18 @@ public final class ConfigProto {
       return enableSvgs_;
     }
 
-    public static final int ALLOW_PERSISTENT_NOTIFICATIONS_FIELD_NUMBER = 16;
+    public static final int ALLOW_PERSISTENT_NOTIFICATIONS_FIELD_NUMBER = 17;
     private boolean allowPersistentNotifications_;
     /**
-     * <code>optional bool allow_persistent_notifications = 16 [json_name = "allowPersistentNotifications"];</code>
+     * <code>optional bool allow_persistent_notifications = 17 [json_name = "allowPersistentNotifications"];</code>
      * @return Whether the allowPersistentNotifications field is set.
      */
     @java.lang.Override
     public boolean hasAllowPersistentNotifications() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
-     * <code>optional bool allow_persistent_notifications = 16 [json_name = "allowPersistentNotifications"];</code>
+     * <code>optional bool allow_persistent_notifications = 17 [json_name = "allowPersistentNotifications"];</code>
      * @return The allowPersistentNotifications.
      */
     @java.lang.Override
@@ -628,18 +692,18 @@ public final class ConfigProto {
       return allowPersistentNotifications_;
     }
 
-    public static final int PERSISTENT_NOTIFICATION_INTERVAL_MINUTES_FIELD_NUMBER = 17;
+    public static final int PERSISTENT_NOTIFICATION_INTERVAL_MINUTES_FIELD_NUMBER = 18;
     private int persistentNotificationIntervalMinutes_;
     /**
-     * <code>optional int32 persistent_notification_interval_minutes = 17 [json_name = "persistentNotificationIntervalMinutes"];</code>
+     * <code>optional int32 persistent_notification_interval_minutes = 18 [json_name = "persistentNotificationIntervalMinutes"];</code>
      * @return Whether the persistentNotificationIntervalMinutes field is set.
      */
     @java.lang.Override
     public boolean hasPersistentNotificationIntervalMinutes() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
-     * <code>optional int32 persistent_notification_interval_minutes = 17 [json_name = "persistentNotificationIntervalMinutes"];</code>
+     * <code>optional int32 persistent_notification_interval_minutes = 18 [json_name = "persistentNotificationIntervalMinutes"];</code>
      * @return The persistentNotificationIntervalMinutes.
      */
     @java.lang.Override
@@ -647,18 +711,18 @@ public final class ConfigProto {
       return persistentNotificationIntervalMinutes_;
     }
 
-    public static final int PERSISTENT_NOTIFICATION_MAX_COUNT_FIELD_NUMBER = 18;
+    public static final int PERSISTENT_NOTIFICATION_MAX_COUNT_FIELD_NUMBER = 19;
     private int persistentNotificationMaxCount_;
     /**
-     * <code>optional int32 persistent_notification_max_count = 18 [json_name = "persistentNotificationMaxCount"];</code>
+     * <code>optional int32 persistent_notification_max_count = 19 [json_name = "persistentNotificationMaxCount"];</code>
      * @return Whether the persistentNotificationMaxCount field is set.
      */
     @java.lang.Override
     public boolean hasPersistentNotificationMaxCount() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
-     * <code>optional int32 persistent_notification_max_count = 18 [json_name = "persistentNotificationMaxCount"];</code>
+     * <code>optional int32 persistent_notification_max_count = 19 [json_name = "persistentNotificationMaxCount"];</code>
      * @return The persistentNotificationMaxCount.
      */
     @java.lang.Override
@@ -666,18 +730,18 @@ public final class ConfigProto {
       return persistentNotificationMaxCount_;
     }
 
-    public static final int PERSISTENT_NOTIFICATION_MAX_RECIPIENTS_FIELD_NUMBER = 19;
+    public static final int PERSISTENT_NOTIFICATION_MAX_RECIPIENTS_FIELD_NUMBER = 20;
     private int persistentNotificationMaxRecipients_;
     /**
-     * <code>optional int32 persistent_notification_max_recipients = 19 [json_name = "persistentNotificationMaxRecipients"];</code>
+     * <code>optional int32 persistent_notification_max_recipients = 20 [json_name = "persistentNotificationMaxRecipients"];</code>
      * @return Whether the persistentNotificationMaxRecipients field is set.
      */
     @java.lang.Override
     public boolean hasPersistentNotificationMaxRecipients() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
-     * <code>optional int32 persistent_notification_max_recipients = 19 [json_name = "persistentNotificationMaxRecipients"];</code>
+     * <code>optional int32 persistent_notification_max_recipients = 20 [json_name = "persistentNotificationMaxRecipients"];</code>
      * @return The persistentNotificationMaxRecipients.
      */
     @java.lang.Override
@@ -685,18 +749,18 @@ public final class ConfigProto {
       return persistentNotificationMaxRecipients_;
     }
 
-    public static final int FEATURE_FLAG_SYNC_INTERVAL_SECONDS_FIELD_NUMBER = 20;
+    public static final int FEATURE_FLAG_SYNC_INTERVAL_SECONDS_FIELD_NUMBER = 21;
     private int featureFlagSyncIntervalSeconds_;
     /**
-     * <code>optional int32 feature_flag_sync_interval_seconds = 20 [json_name = "featureFlagSyncIntervalSeconds"];</code>
+     * <code>optional int32 feature_flag_sync_interval_seconds = 21 [json_name = "featureFlagSyncIntervalSeconds"];</code>
      * @return Whether the featureFlagSyncIntervalSeconds field is set.
      */
     @java.lang.Override
     public boolean hasFeatureFlagSyncIntervalSeconds() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
-     * <code>optional int32 feature_flag_sync_interval_seconds = 20 [json_name = "featureFlagSyncIntervalSeconds"];</code>
+     * <code>optional int32 feature_flag_sync_interval_seconds = 21 [json_name = "featureFlagSyncIntervalSeconds"];</code>
      * @return The featureFlagSyncIntervalSeconds.
      */
     @java.lang.Override
@@ -704,18 +768,18 @@ public final class ConfigProto {
       return featureFlagSyncIntervalSeconds_;
     }
 
-    public static final int ALLOW_SYNCED_DRAFTS_FIELD_NUMBER = 21;
+    public static final int ALLOW_SYNCED_DRAFTS_FIELD_NUMBER = 22;
     private boolean allowSyncedDrafts_;
     /**
-     * <code>optional bool allow_synced_drafts = 21 [json_name = "allowSyncedDrafts"];</code>
+     * <code>optional bool allow_synced_drafts = 22 [json_name = "allowSyncedDrafts"];</code>
      * @return Whether the allowSyncedDrafts field is set.
      */
     @java.lang.Override
     public boolean hasAllowSyncedDrafts() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
     /**
-     * <code>optional bool allow_synced_drafts = 21 [json_name = "allowSyncedDrafts"];</code>
+     * <code>optional bool allow_synced_drafts = 22 [json_name = "allowSyncedDrafts"];</code>
      * @return The allowSyncedDrafts.
      */
     @java.lang.Override
@@ -738,67 +802,70 @@ public final class ConfigProto {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeInt32(1, readTimeout_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, env_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeInt32(2, writeTimeout_);
+        output.writeInt32(2, readTimeout_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeInt32(3, idleTimeout_);
+        output.writeInt32(3, writeTimeout_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
-        output.writeBool(4, enableLinkPreviews_);
+        output.writeInt32(4, idleTimeout_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, restrictLinkPreviews_);
+        output.writeBool(5, enableLinkPreviews_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
-        output.writeBool(6, enableClientPerformanceDebugging_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, restrictLinkPreviews_);
       }
       if (((bitField0_ & 0x00000040) != 0)) {
-        output.writeBool(7, enableGifPicker_);
+        output.writeBool(7, enableClientPerformanceDebugging_);
       }
       if (((bitField0_ & 0x00000080) != 0)) {
-        output.writeBool(8, enableCustomEmoji_);
+        output.writeBool(8, enableGifPicker_);
       }
       if (((bitField0_ & 0x00000100) != 0)) {
-        output.writeBool(9, enableEmojiPicker_);
+        output.writeBool(9, enableCustomEmoji_);
       }
       if (((bitField0_ & 0x00000200) != 0)) {
-        output.writeInt64(10, timeBetweenUserTypingUpdatesMilliseconds_);
+        output.writeBool(10, enableEmojiPicker_);
       }
       if (((bitField0_ & 0x00000400) != 0)) {
-        output.writeBool(11, enableFileSearch_);
+        output.writeInt64(11, timeBetweenUserTypingUpdatesMilliseconds_);
       }
       if (((bitField0_ & 0x00000800) != 0)) {
-        output.writeBool(12, enableUserTypingMessages_);
+        output.writeBool(12, enableFileSearch_);
       }
       if (((bitField0_ & 0x00001000) != 0)) {
-        output.writeBool(13, enableUserStatuses_);
+        output.writeBool(13, enableUserTypingMessages_);
       }
       if (((bitField0_ & 0x00002000) != 0)) {
-        output.writeBool(14, enableEmailInvitations_);
+        output.writeBool(14, enableUserStatuses_);
       }
       if (((bitField0_ & 0x00004000) != 0)) {
-        output.writeBool(15, enableSvgs_);
+        output.writeBool(15, enableEmailInvitations_);
       }
       if (((bitField0_ & 0x00008000) != 0)) {
-        output.writeBool(16, allowPersistentNotifications_);
+        output.writeBool(16, enableSvgs_);
       }
       if (((bitField0_ & 0x00010000) != 0)) {
-        output.writeInt32(17, persistentNotificationIntervalMinutes_);
+        output.writeBool(17, allowPersistentNotifications_);
       }
       if (((bitField0_ & 0x00020000) != 0)) {
-        output.writeInt32(18, persistentNotificationMaxCount_);
+        output.writeInt32(18, persistentNotificationIntervalMinutes_);
       }
       if (((bitField0_ & 0x00040000) != 0)) {
-        output.writeInt32(19, persistentNotificationMaxRecipients_);
+        output.writeInt32(19, persistentNotificationMaxCount_);
       }
       if (((bitField0_ & 0x00080000) != 0)) {
-        output.writeInt32(20, featureFlagSyncIntervalSeconds_);
+        output.writeInt32(20, persistentNotificationMaxRecipients_);
       }
       if (((bitField0_ & 0x00100000) != 0)) {
-        output.writeBool(21, allowSyncedDrafts_);
+        output.writeInt32(21, featureFlagSyncIntervalSeconds_);
+      }
+      if (((bitField0_ & 0x00200000) != 0)) {
+        output.writeBool(22, allowSyncedDrafts_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -810,87 +877,90 @@ public final class ConfigProto {
 
       size = 0;
       if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, readTimeout_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, env_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, writeTimeout_);
+          .computeInt32Size(2, readTimeout_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(3, idleTimeout_);
+          .computeInt32Size(3, writeTimeout_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, enableLinkPreviews_);
+          .computeInt32Size(4, idleTimeout_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, restrictLinkPreviews_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, enableLinkPreviews_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, enableClientPerformanceDebugging_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, restrictLinkPreviews_);
       }
       if (((bitField0_ & 0x00000040) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, enableGifPicker_);
+          .computeBoolSize(7, enableClientPerformanceDebugging_);
       }
       if (((bitField0_ & 0x00000080) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, enableCustomEmoji_);
+          .computeBoolSize(8, enableGifPicker_);
       }
       if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, enableEmojiPicker_);
+          .computeBoolSize(9, enableCustomEmoji_);
       }
       if (((bitField0_ & 0x00000200) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(10, timeBetweenUserTypingUpdatesMilliseconds_);
+          .computeBoolSize(10, enableEmojiPicker_);
       }
       if (((bitField0_ & 0x00000400) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, enableFileSearch_);
+          .computeInt64Size(11, timeBetweenUserTypingUpdatesMilliseconds_);
       }
       if (((bitField0_ & 0x00000800) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(12, enableUserTypingMessages_);
+          .computeBoolSize(12, enableFileSearch_);
       }
       if (((bitField0_ & 0x00001000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(13, enableUserStatuses_);
+          .computeBoolSize(13, enableUserTypingMessages_);
       }
       if (((bitField0_ & 0x00002000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, enableEmailInvitations_);
+          .computeBoolSize(14, enableUserStatuses_);
       }
       if (((bitField0_ & 0x00004000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, enableSvgs_);
+          .computeBoolSize(15, enableEmailInvitations_);
       }
       if (((bitField0_ & 0x00008000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(16, allowPersistentNotifications_);
+          .computeBoolSize(16, enableSvgs_);
       }
       if (((bitField0_ & 0x00010000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(17, persistentNotificationIntervalMinutes_);
+          .computeBoolSize(17, allowPersistentNotifications_);
       }
       if (((bitField0_ & 0x00020000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(18, persistentNotificationMaxCount_);
+          .computeInt32Size(18, persistentNotificationIntervalMinutes_);
       }
       if (((bitField0_ & 0x00040000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(19, persistentNotificationMaxRecipients_);
+          .computeInt32Size(19, persistentNotificationMaxCount_);
       }
       if (((bitField0_ & 0x00080000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(20, featureFlagSyncIntervalSeconds_);
+          .computeInt32Size(20, persistentNotificationMaxRecipients_);
       }
       if (((bitField0_ & 0x00100000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(21, allowSyncedDrafts_);
+          .computeInt32Size(21, featureFlagSyncIntervalSeconds_);
+      }
+      if (((bitField0_ & 0x00200000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(22, allowSyncedDrafts_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -907,6 +977,11 @@ public final class ConfigProto {
       }
       org.megacommerce.common.v1.ConfigProto.ConfigMain other = (org.megacommerce.common.v1.ConfigProto.ConfigMain) obj;
 
+      if (hasEnv() != other.hasEnv()) return false;
+      if (hasEnv()) {
+        if (!getEnv()
+            .equals(other.getEnv())) return false;
+      }
       if (hasReadTimeout() != other.hasReadTimeout()) return false;
       if (hasReadTimeout()) {
         if (getReadTimeout()
@@ -1023,6 +1098,10 @@ public final class ConfigProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasEnv()) {
+        hash = (37 * hash) + ENV_FIELD_NUMBER;
+        hash = (53 * hash) + getEnv().hashCode();
+      }
       if (hasReadTimeout()) {
         hash = (37 * hash) + READ_TIMEOUT_FIELD_NUMBER;
         hash = (53 * hash) + getReadTimeout();
@@ -1248,48 +1327,50 @@ public final class ConfigProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
-        readTimeout_ = 0;
+        env_ = "";
         bitField0_ = (bitField0_ & ~0x00000001);
-        writeTimeout_ = 0;
+        readTimeout_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
-        idleTimeout_ = 0;
+        writeTimeout_ = 0;
         bitField0_ = (bitField0_ & ~0x00000004);
-        enableLinkPreviews_ = false;
+        idleTimeout_ = 0;
         bitField0_ = (bitField0_ & ~0x00000008);
-        restrictLinkPreviews_ = "";
+        enableLinkPreviews_ = false;
         bitField0_ = (bitField0_ & ~0x00000010);
-        enableClientPerformanceDebugging_ = false;
+        restrictLinkPreviews_ = "";
         bitField0_ = (bitField0_ & ~0x00000020);
-        enableGifPicker_ = false;
+        enableClientPerformanceDebugging_ = false;
         bitField0_ = (bitField0_ & ~0x00000040);
-        enableCustomEmoji_ = false;
+        enableGifPicker_ = false;
         bitField0_ = (bitField0_ & ~0x00000080);
-        enableEmojiPicker_ = false;
+        enableCustomEmoji_ = false;
         bitField0_ = (bitField0_ & ~0x00000100);
-        timeBetweenUserTypingUpdatesMilliseconds_ = 0L;
+        enableEmojiPicker_ = false;
         bitField0_ = (bitField0_ & ~0x00000200);
-        enableFileSearch_ = false;
+        timeBetweenUserTypingUpdatesMilliseconds_ = 0L;
         bitField0_ = (bitField0_ & ~0x00000400);
-        enableUserTypingMessages_ = false;
+        enableFileSearch_ = false;
         bitField0_ = (bitField0_ & ~0x00000800);
-        enableUserStatuses_ = false;
+        enableUserTypingMessages_ = false;
         bitField0_ = (bitField0_ & ~0x00001000);
-        enableEmailInvitations_ = false;
+        enableUserStatuses_ = false;
         bitField0_ = (bitField0_ & ~0x00002000);
-        enableSvgs_ = false;
+        enableEmailInvitations_ = false;
         bitField0_ = (bitField0_ & ~0x00004000);
-        allowPersistentNotifications_ = false;
+        enableSvgs_ = false;
         bitField0_ = (bitField0_ & ~0x00008000);
-        persistentNotificationIntervalMinutes_ = 0;
+        allowPersistentNotifications_ = false;
         bitField0_ = (bitField0_ & ~0x00010000);
-        persistentNotificationMaxCount_ = 0;
+        persistentNotificationIntervalMinutes_ = 0;
         bitField0_ = (bitField0_ & ~0x00020000);
-        persistentNotificationMaxRecipients_ = 0;
+        persistentNotificationMaxCount_ = 0;
         bitField0_ = (bitField0_ & ~0x00040000);
-        featureFlagSyncIntervalSeconds_ = 0;
+        persistentNotificationMaxRecipients_ = 0;
         bitField0_ = (bitField0_ & ~0x00080000);
-        allowSyncedDrafts_ = false;
+        featureFlagSyncIntervalSeconds_ = 0;
         bitField0_ = (bitField0_ & ~0x00100000);
+        allowSyncedDrafts_ = false;
+        bitField0_ = (bitField0_ & ~0x00200000);
         return this;
       }
 
@@ -1319,88 +1400,92 @@ public final class ConfigProto {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.readTimeout_ = readTimeout_;
           to_bitField0_ |= 0x00000001;
         }
+        result.env_ = env_;
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.writeTimeout_ = writeTimeout_;
+          result.readTimeout_ = readTimeout_;
           to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.idleTimeout_ = idleTimeout_;
+          result.writeTimeout_ = writeTimeout_;
           to_bitField0_ |= 0x00000004;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.enableLinkPreviews_ = enableLinkPreviews_;
+          result.idleTimeout_ = idleTimeout_;
           to_bitField0_ |= 0x00000008;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.enableLinkPreviews_ = enableLinkPreviews_;
           to_bitField0_ |= 0x00000010;
         }
-        result.restrictLinkPreviews_ = restrictLinkPreviews_;
         if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.enableClientPerformanceDebugging_ = enableClientPerformanceDebugging_;
           to_bitField0_ |= 0x00000020;
         }
+        result.restrictLinkPreviews_ = restrictLinkPreviews_;
         if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.enableGifPicker_ = enableGifPicker_;
+          result.enableClientPerformanceDebugging_ = enableClientPerformanceDebugging_;
           to_bitField0_ |= 0x00000040;
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.enableCustomEmoji_ = enableCustomEmoji_;
+          result.enableGifPicker_ = enableGifPicker_;
           to_bitField0_ |= 0x00000080;
         }
         if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.enableEmojiPicker_ = enableEmojiPicker_;
+          result.enableCustomEmoji_ = enableCustomEmoji_;
           to_bitField0_ |= 0x00000100;
         }
         if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.timeBetweenUserTypingUpdatesMilliseconds_ = timeBetweenUserTypingUpdatesMilliseconds_;
+          result.enableEmojiPicker_ = enableEmojiPicker_;
           to_bitField0_ |= 0x00000200;
         }
         if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.enableFileSearch_ = enableFileSearch_;
+          result.timeBetweenUserTypingUpdatesMilliseconds_ = timeBetweenUserTypingUpdatesMilliseconds_;
           to_bitField0_ |= 0x00000400;
         }
         if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.enableUserTypingMessages_ = enableUserTypingMessages_;
+          result.enableFileSearch_ = enableFileSearch_;
           to_bitField0_ |= 0x00000800;
         }
         if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.enableUserStatuses_ = enableUserStatuses_;
+          result.enableUserTypingMessages_ = enableUserTypingMessages_;
           to_bitField0_ |= 0x00001000;
         }
         if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.enableEmailInvitations_ = enableEmailInvitations_;
+          result.enableUserStatuses_ = enableUserStatuses_;
           to_bitField0_ |= 0x00002000;
         }
         if (((from_bitField0_ & 0x00004000) != 0)) {
-          result.enableSvgs_ = enableSvgs_;
+          result.enableEmailInvitations_ = enableEmailInvitations_;
           to_bitField0_ |= 0x00004000;
         }
         if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.allowPersistentNotifications_ = allowPersistentNotifications_;
+          result.enableSvgs_ = enableSvgs_;
           to_bitField0_ |= 0x00008000;
         }
         if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.persistentNotificationIntervalMinutes_ = persistentNotificationIntervalMinutes_;
+          result.allowPersistentNotifications_ = allowPersistentNotifications_;
           to_bitField0_ |= 0x00010000;
         }
         if (((from_bitField0_ & 0x00020000) != 0)) {
-          result.persistentNotificationMaxCount_ = persistentNotificationMaxCount_;
+          result.persistentNotificationIntervalMinutes_ = persistentNotificationIntervalMinutes_;
           to_bitField0_ |= 0x00020000;
         }
         if (((from_bitField0_ & 0x00040000) != 0)) {
-          result.persistentNotificationMaxRecipients_ = persistentNotificationMaxRecipients_;
+          result.persistentNotificationMaxCount_ = persistentNotificationMaxCount_;
           to_bitField0_ |= 0x00040000;
         }
         if (((from_bitField0_ & 0x00080000) != 0)) {
-          result.featureFlagSyncIntervalSeconds_ = featureFlagSyncIntervalSeconds_;
+          result.persistentNotificationMaxRecipients_ = persistentNotificationMaxRecipients_;
           to_bitField0_ |= 0x00080000;
         }
         if (((from_bitField0_ & 0x00100000) != 0)) {
-          result.allowSyncedDrafts_ = allowSyncedDrafts_;
+          result.featureFlagSyncIntervalSeconds_ = featureFlagSyncIntervalSeconds_;
           to_bitField0_ |= 0x00100000;
+        }
+        if (((from_bitField0_ & 0x00200000) != 0)) {
+          result.allowSyncedDrafts_ = allowSyncedDrafts_;
+          to_bitField0_ |= 0x00200000;
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -1451,6 +1536,11 @@ public final class ConfigProto {
 
       public Builder mergeFrom(org.megacommerce.common.v1.ConfigProto.ConfigMain other) {
         if (other == org.megacommerce.common.v1.ConfigProto.ConfigMain.getDefaultInstance()) return this;
+        if (other.hasEnv()) {
+          bitField0_ |= 0x00000001;
+          env_ = other.env_;
+          onChanged();
+        }
         if (other.hasReadTimeout()) {
           setReadTimeout(other.getReadTimeout());
         }
@@ -1464,7 +1554,7 @@ public final class ConfigProto {
           setEnableLinkPreviews(other.getEnableLinkPreviews());
         }
         if (other.hasRestrictLinkPreviews()) {
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000020;
           restrictLinkPreviews_ = other.restrictLinkPreviews_;
           onChanged();
         }
@@ -1542,111 +1632,116 @@ public final class ConfigProto {
               case 0:
                 done = true;
                 break;
-              case 8: {
-                readTimeout_ = input.readInt32();
+              case 10: {
+                env_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 8
+              } // case 10
               case 16: {
-                writeTimeout_ = input.readInt32();
+                readTimeout_ = input.readInt32();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
               case 24: {
-                idleTimeout_ = input.readInt32();
+                writeTimeout_ = input.readInt32();
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
               case 32: {
-                enableLinkPreviews_ = input.readBool();
+                idleTimeout_ = input.readInt32();
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
-              case 42: {
-                restrictLinkPreviews_ = input.readStringRequireUtf8();
+              case 40: {
+                enableLinkPreviews_ = input.readBool();
                 bitField0_ |= 0x00000010;
                 break;
-              } // case 42
-              case 48: {
-                enableClientPerformanceDebugging_ = input.readBool();
+              } // case 40
+              case 50: {
+                restrictLinkPreviews_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000020;
                 break;
-              } // case 48
+              } // case 50
               case 56: {
-                enableGifPicker_ = input.readBool();
+                enableClientPerformanceDebugging_ = input.readBool();
                 bitField0_ |= 0x00000040;
                 break;
               } // case 56
               case 64: {
-                enableCustomEmoji_ = input.readBool();
+                enableGifPicker_ = input.readBool();
                 bitField0_ |= 0x00000080;
                 break;
               } // case 64
               case 72: {
-                enableEmojiPicker_ = input.readBool();
+                enableCustomEmoji_ = input.readBool();
                 bitField0_ |= 0x00000100;
                 break;
               } // case 72
               case 80: {
-                timeBetweenUserTypingUpdatesMilliseconds_ = input.readInt64();
+                enableEmojiPicker_ = input.readBool();
                 bitField0_ |= 0x00000200;
                 break;
               } // case 80
               case 88: {
-                enableFileSearch_ = input.readBool();
+                timeBetweenUserTypingUpdatesMilliseconds_ = input.readInt64();
                 bitField0_ |= 0x00000400;
                 break;
               } // case 88
               case 96: {
-                enableUserTypingMessages_ = input.readBool();
+                enableFileSearch_ = input.readBool();
                 bitField0_ |= 0x00000800;
                 break;
               } // case 96
               case 104: {
-                enableUserStatuses_ = input.readBool();
+                enableUserTypingMessages_ = input.readBool();
                 bitField0_ |= 0x00001000;
                 break;
               } // case 104
               case 112: {
-                enableEmailInvitations_ = input.readBool();
+                enableUserStatuses_ = input.readBool();
                 bitField0_ |= 0x00002000;
                 break;
               } // case 112
               case 120: {
-                enableSvgs_ = input.readBool();
+                enableEmailInvitations_ = input.readBool();
                 bitField0_ |= 0x00004000;
                 break;
               } // case 120
               case 128: {
-                allowPersistentNotifications_ = input.readBool();
+                enableSvgs_ = input.readBool();
                 bitField0_ |= 0x00008000;
                 break;
               } // case 128
               case 136: {
-                persistentNotificationIntervalMinutes_ = input.readInt32();
+                allowPersistentNotifications_ = input.readBool();
                 bitField0_ |= 0x00010000;
                 break;
               } // case 136
               case 144: {
-                persistentNotificationMaxCount_ = input.readInt32();
+                persistentNotificationIntervalMinutes_ = input.readInt32();
                 bitField0_ |= 0x00020000;
                 break;
               } // case 144
               case 152: {
-                persistentNotificationMaxRecipients_ = input.readInt32();
+                persistentNotificationMaxCount_ = input.readInt32();
                 bitField0_ |= 0x00040000;
                 break;
               } // case 152
               case 160: {
-                featureFlagSyncIntervalSeconds_ = input.readInt32();
+                persistentNotificationMaxRecipients_ = input.readInt32();
                 bitField0_ |= 0x00080000;
                 break;
               } // case 160
               case 168: {
-                allowSyncedDrafts_ = input.readBool();
+                featureFlagSyncIntervalSeconds_ = input.readInt32();
                 bitField0_ |= 0x00100000;
                 break;
               } // case 168
+              case 176: {
+                allowSyncedDrafts_ = input.readBool();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 176
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1664,17 +1759,100 @@ public final class ConfigProto {
       }
       private int bitField0_;
 
+      private java.lang.Object env_ = "";
+      /**
+       * <code>optional string env = 1 [json_name = "env"];</code>
+       * @return Whether the env field is set.
+       */
+      public boolean hasEnv() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>optional string env = 1 [json_name = "env"];</code>
+       * @return The env.
+       */
+      public java.lang.String getEnv() {
+        java.lang.Object ref = env_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          env_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string env = 1 [json_name = "env"];</code>
+       * @return The bytes for env.
+       */
+      public com.google.protobuf.ByteString
+          getEnvBytes() {
+        java.lang.Object ref = env_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          env_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string env = 1 [json_name = "env"];</code>
+       * @param value The env to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnv(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000001;
+        env_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string env = 1 [json_name = "env"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnv() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        env_ = getDefaultInstance().getEnv();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string env = 1 [json_name = "env"];</code>
+       * @param value The bytes for env to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnvBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        bitField0_ |= 0x00000001;
+        env_ = value;
+        onChanged();
+        return this;
+      }
+
       private int readTimeout_ ;
       /**
-       * <code>optional int32 read_timeout = 1 [json_name = "readTimeout"];</code>
+       * <code>optional int32 read_timeout = 2 [json_name = "readTimeout"];</code>
        * @return Whether the readTimeout field is set.
        */
       @java.lang.Override
       public boolean hasReadTimeout() {
-        return ((bitField0_ & 0x00000001) != 0);
+        return ((bitField0_ & 0x00000002) != 0);
       }
       /**
-       * <code>optional int32 read_timeout = 1 [json_name = "readTimeout"];</code>
+       * <code>optional int32 read_timeout = 2 [json_name = "readTimeout"];</code>
        * @return The readTimeout.
        */
       @java.lang.Override
@@ -1682,22 +1860,22 @@ public final class ConfigProto {
         return readTimeout_;
       }
       /**
-       * <code>optional int32 read_timeout = 1 [json_name = "readTimeout"];</code>
+       * <code>optional int32 read_timeout = 2 [json_name = "readTimeout"];</code>
        * @param value The readTimeout to set.
        * @return This builder for chaining.
        */
       public Builder setReadTimeout(int value) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         readTimeout_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 read_timeout = 1 [json_name = "readTimeout"];</code>
+       * <code>optional int32 read_timeout = 2 [json_name = "readTimeout"];</code>
        * @return This builder for chaining.
        */
       public Builder clearReadTimeout() {
-        bitField0_ = (bitField0_ & ~0x00000001);
+        bitField0_ = (bitField0_ & ~0x00000002);
         readTimeout_ = 0;
         onChanged();
         return this;
@@ -1705,15 +1883,15 @@ public final class ConfigProto {
 
       private int writeTimeout_ ;
       /**
-       * <code>optional int32 write_timeout = 2 [json_name = "writeTimeout"];</code>
+       * <code>optional int32 write_timeout = 3 [json_name = "writeTimeout"];</code>
        * @return Whether the writeTimeout field is set.
        */
       @java.lang.Override
       public boolean hasWriteTimeout() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
-       * <code>optional int32 write_timeout = 2 [json_name = "writeTimeout"];</code>
+       * <code>optional int32 write_timeout = 3 [json_name = "writeTimeout"];</code>
        * @return The writeTimeout.
        */
       @java.lang.Override
@@ -1721,22 +1899,22 @@ public final class ConfigProto {
         return writeTimeout_;
       }
       /**
-       * <code>optional int32 write_timeout = 2 [json_name = "writeTimeout"];</code>
+       * <code>optional int32 write_timeout = 3 [json_name = "writeTimeout"];</code>
        * @param value The writeTimeout to set.
        * @return This builder for chaining.
        */
       public Builder setWriteTimeout(int value) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         writeTimeout_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 write_timeout = 2 [json_name = "writeTimeout"];</code>
+       * <code>optional int32 write_timeout = 3 [json_name = "writeTimeout"];</code>
        * @return This builder for chaining.
        */
       public Builder clearWriteTimeout() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         writeTimeout_ = 0;
         onChanged();
         return this;
@@ -1744,15 +1922,15 @@ public final class ConfigProto {
 
       private int idleTimeout_ ;
       /**
-       * <code>optional int32 idle_timeout = 3 [json_name = "idleTimeout"];</code>
+       * <code>optional int32 idle_timeout = 4 [json_name = "idleTimeout"];</code>
        * @return Whether the idleTimeout field is set.
        */
       @java.lang.Override
       public boolean hasIdleTimeout() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
-       * <code>optional int32 idle_timeout = 3 [json_name = "idleTimeout"];</code>
+       * <code>optional int32 idle_timeout = 4 [json_name = "idleTimeout"];</code>
        * @return The idleTimeout.
        */
       @java.lang.Override
@@ -1760,22 +1938,22 @@ public final class ConfigProto {
         return idleTimeout_;
       }
       /**
-       * <code>optional int32 idle_timeout = 3 [json_name = "idleTimeout"];</code>
+       * <code>optional int32 idle_timeout = 4 [json_name = "idleTimeout"];</code>
        * @param value The idleTimeout to set.
        * @return This builder for chaining.
        */
       public Builder setIdleTimeout(int value) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         idleTimeout_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 idle_timeout = 3 [json_name = "idleTimeout"];</code>
+       * <code>optional int32 idle_timeout = 4 [json_name = "idleTimeout"];</code>
        * @return This builder for chaining.
        */
       public Builder clearIdleTimeout() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         idleTimeout_ = 0;
         onChanged();
         return this;
@@ -1783,15 +1961,15 @@ public final class ConfigProto {
 
       private boolean enableLinkPreviews_ ;
       /**
-       * <code>optional bool enable_link_previews = 4 [json_name = "enableLinkPreviews"];</code>
+       * <code>optional bool enable_link_previews = 5 [json_name = "enableLinkPreviews"];</code>
        * @return Whether the enableLinkPreviews field is set.
        */
       @java.lang.Override
       public boolean hasEnableLinkPreviews() {
-        return ((bitField0_ & 0x00000008) != 0);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
-       * <code>optional bool enable_link_previews = 4 [json_name = "enableLinkPreviews"];</code>
+       * <code>optional bool enable_link_previews = 5 [json_name = "enableLinkPreviews"];</code>
        * @return The enableLinkPreviews.
        */
       @java.lang.Override
@@ -1799,22 +1977,22 @@ public final class ConfigProto {
         return enableLinkPreviews_;
       }
       /**
-       * <code>optional bool enable_link_previews = 4 [json_name = "enableLinkPreviews"];</code>
+       * <code>optional bool enable_link_previews = 5 [json_name = "enableLinkPreviews"];</code>
        * @param value The enableLinkPreviews to set.
        * @return This builder for chaining.
        */
       public Builder setEnableLinkPreviews(boolean value) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         enableLinkPreviews_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool enable_link_previews = 4 [json_name = "enableLinkPreviews"];</code>
+       * <code>optional bool enable_link_previews = 5 [json_name = "enableLinkPreviews"];</code>
        * @return This builder for chaining.
        */
       public Builder clearEnableLinkPreviews() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         enableLinkPreviews_ = false;
         onChanged();
         return this;
@@ -1822,14 +2000,14 @@ public final class ConfigProto {
 
       private java.lang.Object restrictLinkPreviews_ = "";
       /**
-       * <code>optional string restrict_link_previews = 5 [json_name = "restrictLinkPreviews"];</code>
+       * <code>optional string restrict_link_previews = 6 [json_name = "restrictLinkPreviews"];</code>
        * @return Whether the restrictLinkPreviews field is set.
        */
       public boolean hasRestrictLinkPreviews() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
-       * <code>optional string restrict_link_previews = 5 [json_name = "restrictLinkPreviews"];</code>
+       * <code>optional string restrict_link_previews = 6 [json_name = "restrictLinkPreviews"];</code>
        * @return The restrictLinkPreviews.
        */
       public java.lang.String getRestrictLinkPreviews() {
@@ -1845,7 +2023,7 @@ public final class ConfigProto {
         }
       }
       /**
-       * <code>optional string restrict_link_previews = 5 [json_name = "restrictLinkPreviews"];</code>
+       * <code>optional string restrict_link_previews = 6 [json_name = "restrictLinkPreviews"];</code>
        * @return The bytes for restrictLinkPreviews.
        */
       public com.google.protobuf.ByteString
@@ -1862,7 +2040,7 @@ public final class ConfigProto {
         }
       }
       /**
-       * <code>optional string restrict_link_previews = 5 [json_name = "restrictLinkPreviews"];</code>
+       * <code>optional string restrict_link_previews = 6 [json_name = "restrictLinkPreviews"];</code>
        * @param value The restrictLinkPreviews to set.
        * @return This builder for chaining.
        */
@@ -1871,23 +2049,23 @@ public final class ConfigProto {
         if (value == null) {
     throw new NullPointerException();
   }
-  bitField0_ |= 0x00000010;
+  bitField0_ |= 0x00000020;
         restrictLinkPreviews_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string restrict_link_previews = 5 [json_name = "restrictLinkPreviews"];</code>
+       * <code>optional string restrict_link_previews = 6 [json_name = "restrictLinkPreviews"];</code>
        * @return This builder for chaining.
        */
       public Builder clearRestrictLinkPreviews() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         restrictLinkPreviews_ = getDefaultInstance().getRestrictLinkPreviews();
         onChanged();
         return this;
       }
       /**
-       * <code>optional string restrict_link_previews = 5 [json_name = "restrictLinkPreviews"];</code>
+       * <code>optional string restrict_link_previews = 6 [json_name = "restrictLinkPreviews"];</code>
        * @param value The bytes for restrictLinkPreviews to set.
        * @return This builder for chaining.
        */
@@ -1897,7 +2075,7 @@ public final class ConfigProto {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         restrictLinkPreviews_ = value;
         onChanged();
         return this;
@@ -1905,15 +2083,15 @@ public final class ConfigProto {
 
       private boolean enableClientPerformanceDebugging_ ;
       /**
-       * <code>optional bool enable_client_performance_debugging = 6 [json_name = "enableClientPerformanceDebugging"];</code>
+       * <code>optional bool enable_client_performance_debugging = 7 [json_name = "enableClientPerformanceDebugging"];</code>
        * @return Whether the enableClientPerformanceDebugging field is set.
        */
       @java.lang.Override
       public boolean hasEnableClientPerformanceDebugging() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
-       * <code>optional bool enable_client_performance_debugging = 6 [json_name = "enableClientPerformanceDebugging"];</code>
+       * <code>optional bool enable_client_performance_debugging = 7 [json_name = "enableClientPerformanceDebugging"];</code>
        * @return The enableClientPerformanceDebugging.
        */
       @java.lang.Override
@@ -1921,22 +2099,22 @@ public final class ConfigProto {
         return enableClientPerformanceDebugging_;
       }
       /**
-       * <code>optional bool enable_client_performance_debugging = 6 [json_name = "enableClientPerformanceDebugging"];</code>
+       * <code>optional bool enable_client_performance_debugging = 7 [json_name = "enableClientPerformanceDebugging"];</code>
        * @param value The enableClientPerformanceDebugging to set.
        * @return This builder for chaining.
        */
       public Builder setEnableClientPerformanceDebugging(boolean value) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         enableClientPerformanceDebugging_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool enable_client_performance_debugging = 6 [json_name = "enableClientPerformanceDebugging"];</code>
+       * <code>optional bool enable_client_performance_debugging = 7 [json_name = "enableClientPerformanceDebugging"];</code>
        * @return This builder for chaining.
        */
       public Builder clearEnableClientPerformanceDebugging() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         enableClientPerformanceDebugging_ = false;
         onChanged();
         return this;
@@ -1944,15 +2122,15 @@ public final class ConfigProto {
 
       private boolean enableGifPicker_ ;
       /**
-       * <code>optional bool enable_gif_picker = 7 [json_name = "enableGifPicker"];</code>
+       * <code>optional bool enable_gif_picker = 8 [json_name = "enableGifPicker"];</code>
        * @return Whether the enableGifPicker field is set.
        */
       @java.lang.Override
       public boolean hasEnableGifPicker() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
-       * <code>optional bool enable_gif_picker = 7 [json_name = "enableGifPicker"];</code>
+       * <code>optional bool enable_gif_picker = 8 [json_name = "enableGifPicker"];</code>
        * @return The enableGifPicker.
        */
       @java.lang.Override
@@ -1960,22 +2138,22 @@ public final class ConfigProto {
         return enableGifPicker_;
       }
       /**
-       * <code>optional bool enable_gif_picker = 7 [json_name = "enableGifPicker"];</code>
+       * <code>optional bool enable_gif_picker = 8 [json_name = "enableGifPicker"];</code>
        * @param value The enableGifPicker to set.
        * @return This builder for chaining.
        */
       public Builder setEnableGifPicker(boolean value) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         enableGifPicker_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool enable_gif_picker = 7 [json_name = "enableGifPicker"];</code>
+       * <code>optional bool enable_gif_picker = 8 [json_name = "enableGifPicker"];</code>
        * @return This builder for chaining.
        */
       public Builder clearEnableGifPicker() {
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         enableGifPicker_ = false;
         onChanged();
         return this;
@@ -1983,15 +2161,15 @@ public final class ConfigProto {
 
       private boolean enableCustomEmoji_ ;
       /**
-       * <code>optional bool enable_custom_emoji = 8 [json_name = "enableCustomEmoji"];</code>
+       * <code>optional bool enable_custom_emoji = 9 [json_name = "enableCustomEmoji"];</code>
        * @return Whether the enableCustomEmoji field is set.
        */
       @java.lang.Override
       public boolean hasEnableCustomEmoji() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000100) != 0);
       }
       /**
-       * <code>optional bool enable_custom_emoji = 8 [json_name = "enableCustomEmoji"];</code>
+       * <code>optional bool enable_custom_emoji = 9 [json_name = "enableCustomEmoji"];</code>
        * @return The enableCustomEmoji.
        */
       @java.lang.Override
@@ -1999,22 +2177,22 @@ public final class ConfigProto {
         return enableCustomEmoji_;
       }
       /**
-       * <code>optional bool enable_custom_emoji = 8 [json_name = "enableCustomEmoji"];</code>
+       * <code>optional bool enable_custom_emoji = 9 [json_name = "enableCustomEmoji"];</code>
        * @param value The enableCustomEmoji to set.
        * @return This builder for chaining.
        */
       public Builder setEnableCustomEmoji(boolean value) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         enableCustomEmoji_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool enable_custom_emoji = 8 [json_name = "enableCustomEmoji"];</code>
+       * <code>optional bool enable_custom_emoji = 9 [json_name = "enableCustomEmoji"];</code>
        * @return This builder for chaining.
        */
       public Builder clearEnableCustomEmoji() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         enableCustomEmoji_ = false;
         onChanged();
         return this;
@@ -2022,15 +2200,15 @@ public final class ConfigProto {
 
       private boolean enableEmojiPicker_ ;
       /**
-       * <code>optional bool enable_emoji_picker = 9 [json_name = "enableEmojiPicker"];</code>
+       * <code>optional bool enable_emoji_picker = 10 [json_name = "enableEmojiPicker"];</code>
        * @return Whether the enableEmojiPicker field is set.
        */
       @java.lang.Override
       public boolean hasEnableEmojiPicker() {
-        return ((bitField0_ & 0x00000100) != 0);
+        return ((bitField0_ & 0x00000200) != 0);
       }
       /**
-       * <code>optional bool enable_emoji_picker = 9 [json_name = "enableEmojiPicker"];</code>
+       * <code>optional bool enable_emoji_picker = 10 [json_name = "enableEmojiPicker"];</code>
        * @return The enableEmojiPicker.
        */
       @java.lang.Override
@@ -2038,22 +2216,22 @@ public final class ConfigProto {
         return enableEmojiPicker_;
       }
       /**
-       * <code>optional bool enable_emoji_picker = 9 [json_name = "enableEmojiPicker"];</code>
+       * <code>optional bool enable_emoji_picker = 10 [json_name = "enableEmojiPicker"];</code>
        * @param value The enableEmojiPicker to set.
        * @return This builder for chaining.
        */
       public Builder setEnableEmojiPicker(boolean value) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         enableEmojiPicker_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool enable_emoji_picker = 9 [json_name = "enableEmojiPicker"];</code>
+       * <code>optional bool enable_emoji_picker = 10 [json_name = "enableEmojiPicker"];</code>
        * @return This builder for chaining.
        */
       public Builder clearEnableEmojiPicker() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000200);
         enableEmojiPicker_ = false;
         onChanged();
         return this;
@@ -2061,15 +2239,15 @@ public final class ConfigProto {
 
       private long timeBetweenUserTypingUpdatesMilliseconds_ ;
       /**
-       * <code>optional int64 time_between_user_typing_updates_milliseconds = 10 [json_name = "timeBetweenUserTypingUpdatesMilliseconds"];</code>
+       * <code>optional int64 time_between_user_typing_updates_milliseconds = 11 [json_name = "timeBetweenUserTypingUpdatesMilliseconds"];</code>
        * @return Whether the timeBetweenUserTypingUpdatesMilliseconds field is set.
        */
       @java.lang.Override
       public boolean hasTimeBetweenUserTypingUpdatesMilliseconds() {
-        return ((bitField0_ & 0x00000200) != 0);
+        return ((bitField0_ & 0x00000400) != 0);
       }
       /**
-       * <code>optional int64 time_between_user_typing_updates_milliseconds = 10 [json_name = "timeBetweenUserTypingUpdatesMilliseconds"];</code>
+       * <code>optional int64 time_between_user_typing_updates_milliseconds = 11 [json_name = "timeBetweenUserTypingUpdatesMilliseconds"];</code>
        * @return The timeBetweenUserTypingUpdatesMilliseconds.
        */
       @java.lang.Override
@@ -2077,22 +2255,22 @@ public final class ConfigProto {
         return timeBetweenUserTypingUpdatesMilliseconds_;
       }
       /**
-       * <code>optional int64 time_between_user_typing_updates_milliseconds = 10 [json_name = "timeBetweenUserTypingUpdatesMilliseconds"];</code>
+       * <code>optional int64 time_between_user_typing_updates_milliseconds = 11 [json_name = "timeBetweenUserTypingUpdatesMilliseconds"];</code>
        * @param value The timeBetweenUserTypingUpdatesMilliseconds to set.
        * @return This builder for chaining.
        */
       public Builder setTimeBetweenUserTypingUpdatesMilliseconds(long value) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000400;
         timeBetweenUserTypingUpdatesMilliseconds_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 time_between_user_typing_updates_milliseconds = 10 [json_name = "timeBetweenUserTypingUpdatesMilliseconds"];</code>
+       * <code>optional int64 time_between_user_typing_updates_milliseconds = 11 [json_name = "timeBetweenUserTypingUpdatesMilliseconds"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTimeBetweenUserTypingUpdatesMilliseconds() {
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         timeBetweenUserTypingUpdatesMilliseconds_ = 0L;
         onChanged();
         return this;
@@ -2100,15 +2278,15 @@ public final class ConfigProto {
 
       private boolean enableFileSearch_ ;
       /**
-       * <code>optional bool enable_file_search = 11 [json_name = "enableFileSearch"];</code>
+       * <code>optional bool enable_file_search = 12 [json_name = "enableFileSearch"];</code>
        * @return Whether the enableFileSearch field is set.
        */
       @java.lang.Override
       public boolean hasEnableFileSearch() {
-        return ((bitField0_ & 0x00000400) != 0);
+        return ((bitField0_ & 0x00000800) != 0);
       }
       /**
-       * <code>optional bool enable_file_search = 11 [json_name = "enableFileSearch"];</code>
+       * <code>optional bool enable_file_search = 12 [json_name = "enableFileSearch"];</code>
        * @return The enableFileSearch.
        */
       @java.lang.Override
@@ -2116,22 +2294,22 @@ public final class ConfigProto {
         return enableFileSearch_;
       }
       /**
-       * <code>optional bool enable_file_search = 11 [json_name = "enableFileSearch"];</code>
+       * <code>optional bool enable_file_search = 12 [json_name = "enableFileSearch"];</code>
        * @param value The enableFileSearch to set.
        * @return This builder for chaining.
        */
       public Builder setEnableFileSearch(boolean value) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         enableFileSearch_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool enable_file_search = 11 [json_name = "enableFileSearch"];</code>
+       * <code>optional bool enable_file_search = 12 [json_name = "enableFileSearch"];</code>
        * @return This builder for chaining.
        */
       public Builder clearEnableFileSearch() {
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00000800);
         enableFileSearch_ = false;
         onChanged();
         return this;
@@ -2139,15 +2317,15 @@ public final class ConfigProto {
 
       private boolean enableUserTypingMessages_ ;
       /**
-       * <code>optional bool enable_user_typing_messages = 12 [json_name = "enableUserTypingMessages"];</code>
+       * <code>optional bool enable_user_typing_messages = 13 [json_name = "enableUserTypingMessages"];</code>
        * @return Whether the enableUserTypingMessages field is set.
        */
       @java.lang.Override
       public boolean hasEnableUserTypingMessages() {
-        return ((bitField0_ & 0x00000800) != 0);
+        return ((bitField0_ & 0x00001000) != 0);
       }
       /**
-       * <code>optional bool enable_user_typing_messages = 12 [json_name = "enableUserTypingMessages"];</code>
+       * <code>optional bool enable_user_typing_messages = 13 [json_name = "enableUserTypingMessages"];</code>
        * @return The enableUserTypingMessages.
        */
       @java.lang.Override
@@ -2155,22 +2333,22 @@ public final class ConfigProto {
         return enableUserTypingMessages_;
       }
       /**
-       * <code>optional bool enable_user_typing_messages = 12 [json_name = "enableUserTypingMessages"];</code>
+       * <code>optional bool enable_user_typing_messages = 13 [json_name = "enableUserTypingMessages"];</code>
        * @param value The enableUserTypingMessages to set.
        * @return This builder for chaining.
        */
       public Builder setEnableUserTypingMessages(boolean value) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         enableUserTypingMessages_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool enable_user_typing_messages = 12 [json_name = "enableUserTypingMessages"];</code>
+       * <code>optional bool enable_user_typing_messages = 13 [json_name = "enableUserTypingMessages"];</code>
        * @return This builder for chaining.
        */
       public Builder clearEnableUserTypingMessages() {
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         enableUserTypingMessages_ = false;
         onChanged();
         return this;
@@ -2178,15 +2356,15 @@ public final class ConfigProto {
 
       private boolean enableUserStatuses_ ;
       /**
-       * <code>optional bool enable_user_statuses = 13 [json_name = "enableUserStatuses"];</code>
+       * <code>optional bool enable_user_statuses = 14 [json_name = "enableUserStatuses"];</code>
        * @return Whether the enableUserStatuses field is set.
        */
       @java.lang.Override
       public boolean hasEnableUserStatuses() {
-        return ((bitField0_ & 0x00001000) != 0);
+        return ((bitField0_ & 0x00002000) != 0);
       }
       /**
-       * <code>optional bool enable_user_statuses = 13 [json_name = "enableUserStatuses"];</code>
+       * <code>optional bool enable_user_statuses = 14 [json_name = "enableUserStatuses"];</code>
        * @return The enableUserStatuses.
        */
       @java.lang.Override
@@ -2194,22 +2372,22 @@ public final class ConfigProto {
         return enableUserStatuses_;
       }
       /**
-       * <code>optional bool enable_user_statuses = 13 [json_name = "enableUserStatuses"];</code>
+       * <code>optional bool enable_user_statuses = 14 [json_name = "enableUserStatuses"];</code>
        * @param value The enableUserStatuses to set.
        * @return This builder for chaining.
        */
       public Builder setEnableUserStatuses(boolean value) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         enableUserStatuses_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool enable_user_statuses = 13 [json_name = "enableUserStatuses"];</code>
+       * <code>optional bool enable_user_statuses = 14 [json_name = "enableUserStatuses"];</code>
        * @return This builder for chaining.
        */
       public Builder clearEnableUserStatuses() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         enableUserStatuses_ = false;
         onChanged();
         return this;
@@ -2217,15 +2395,15 @@ public final class ConfigProto {
 
       private boolean enableEmailInvitations_ ;
       /**
-       * <code>optional bool enable_email_invitations = 14 [json_name = "enableEmailInvitations"];</code>
+       * <code>optional bool enable_email_invitations = 15 [json_name = "enableEmailInvitations"];</code>
        * @return Whether the enableEmailInvitations field is set.
        */
       @java.lang.Override
       public boolean hasEnableEmailInvitations() {
-        return ((bitField0_ & 0x00002000) != 0);
+        return ((bitField0_ & 0x00004000) != 0);
       }
       /**
-       * <code>optional bool enable_email_invitations = 14 [json_name = "enableEmailInvitations"];</code>
+       * <code>optional bool enable_email_invitations = 15 [json_name = "enableEmailInvitations"];</code>
        * @return The enableEmailInvitations.
        */
       @java.lang.Override
@@ -2233,22 +2411,22 @@ public final class ConfigProto {
         return enableEmailInvitations_;
       }
       /**
-       * <code>optional bool enable_email_invitations = 14 [json_name = "enableEmailInvitations"];</code>
+       * <code>optional bool enable_email_invitations = 15 [json_name = "enableEmailInvitations"];</code>
        * @param value The enableEmailInvitations to set.
        * @return This builder for chaining.
        */
       public Builder setEnableEmailInvitations(boolean value) {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00004000;
         enableEmailInvitations_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool enable_email_invitations = 14 [json_name = "enableEmailInvitations"];</code>
+       * <code>optional bool enable_email_invitations = 15 [json_name = "enableEmailInvitations"];</code>
        * @return This builder for chaining.
        */
       public Builder clearEnableEmailInvitations() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         enableEmailInvitations_ = false;
         onChanged();
         return this;
@@ -2256,15 +2434,15 @@ public final class ConfigProto {
 
       private boolean enableSvgs_ ;
       /**
-       * <code>optional bool enable_svgs = 15 [json_name = "enableSvgs"];</code>
+       * <code>optional bool enable_svgs = 16 [json_name = "enableSvgs"];</code>
        * @return Whether the enableSvgs field is set.
        */
       @java.lang.Override
       public boolean hasEnableSvgs() {
-        return ((bitField0_ & 0x00004000) != 0);
+        return ((bitField0_ & 0x00008000) != 0);
       }
       /**
-       * <code>optional bool enable_svgs = 15 [json_name = "enableSvgs"];</code>
+       * <code>optional bool enable_svgs = 16 [json_name = "enableSvgs"];</code>
        * @return The enableSvgs.
        */
       @java.lang.Override
@@ -2272,22 +2450,22 @@ public final class ConfigProto {
         return enableSvgs_;
       }
       /**
-       * <code>optional bool enable_svgs = 15 [json_name = "enableSvgs"];</code>
+       * <code>optional bool enable_svgs = 16 [json_name = "enableSvgs"];</code>
        * @param value The enableSvgs to set.
        * @return This builder for chaining.
        */
       public Builder setEnableSvgs(boolean value) {
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         enableSvgs_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool enable_svgs = 15 [json_name = "enableSvgs"];</code>
+       * <code>optional bool enable_svgs = 16 [json_name = "enableSvgs"];</code>
        * @return This builder for chaining.
        */
       public Builder clearEnableSvgs() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         enableSvgs_ = false;
         onChanged();
         return this;
@@ -2295,15 +2473,15 @@ public final class ConfigProto {
 
       private boolean allowPersistentNotifications_ ;
       /**
-       * <code>optional bool allow_persistent_notifications = 16 [json_name = "allowPersistentNotifications"];</code>
+       * <code>optional bool allow_persistent_notifications = 17 [json_name = "allowPersistentNotifications"];</code>
        * @return Whether the allowPersistentNotifications field is set.
        */
       @java.lang.Override
       public boolean hasAllowPersistentNotifications() {
-        return ((bitField0_ & 0x00008000) != 0);
+        return ((bitField0_ & 0x00010000) != 0);
       }
       /**
-       * <code>optional bool allow_persistent_notifications = 16 [json_name = "allowPersistentNotifications"];</code>
+       * <code>optional bool allow_persistent_notifications = 17 [json_name = "allowPersistentNotifications"];</code>
        * @return The allowPersistentNotifications.
        */
       @java.lang.Override
@@ -2311,22 +2489,22 @@ public final class ConfigProto {
         return allowPersistentNotifications_;
       }
       /**
-       * <code>optional bool allow_persistent_notifications = 16 [json_name = "allowPersistentNotifications"];</code>
+       * <code>optional bool allow_persistent_notifications = 17 [json_name = "allowPersistentNotifications"];</code>
        * @param value The allowPersistentNotifications to set.
        * @return This builder for chaining.
        */
       public Builder setAllowPersistentNotifications(boolean value) {
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         allowPersistentNotifications_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool allow_persistent_notifications = 16 [json_name = "allowPersistentNotifications"];</code>
+       * <code>optional bool allow_persistent_notifications = 17 [json_name = "allowPersistentNotifications"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAllowPersistentNotifications() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         allowPersistentNotifications_ = false;
         onChanged();
         return this;
@@ -2334,15 +2512,15 @@ public final class ConfigProto {
 
       private int persistentNotificationIntervalMinutes_ ;
       /**
-       * <code>optional int32 persistent_notification_interval_minutes = 17 [json_name = "persistentNotificationIntervalMinutes"];</code>
+       * <code>optional int32 persistent_notification_interval_minutes = 18 [json_name = "persistentNotificationIntervalMinutes"];</code>
        * @return Whether the persistentNotificationIntervalMinutes field is set.
        */
       @java.lang.Override
       public boolean hasPersistentNotificationIntervalMinutes() {
-        return ((bitField0_ & 0x00010000) != 0);
+        return ((bitField0_ & 0x00020000) != 0);
       }
       /**
-       * <code>optional int32 persistent_notification_interval_minutes = 17 [json_name = "persistentNotificationIntervalMinutes"];</code>
+       * <code>optional int32 persistent_notification_interval_minutes = 18 [json_name = "persistentNotificationIntervalMinutes"];</code>
        * @return The persistentNotificationIntervalMinutes.
        */
       @java.lang.Override
@@ -2350,22 +2528,22 @@ public final class ConfigProto {
         return persistentNotificationIntervalMinutes_;
       }
       /**
-       * <code>optional int32 persistent_notification_interval_minutes = 17 [json_name = "persistentNotificationIntervalMinutes"];</code>
+       * <code>optional int32 persistent_notification_interval_minutes = 18 [json_name = "persistentNotificationIntervalMinutes"];</code>
        * @param value The persistentNotificationIntervalMinutes to set.
        * @return This builder for chaining.
        */
       public Builder setPersistentNotificationIntervalMinutes(int value) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         persistentNotificationIntervalMinutes_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 persistent_notification_interval_minutes = 17 [json_name = "persistentNotificationIntervalMinutes"];</code>
+       * <code>optional int32 persistent_notification_interval_minutes = 18 [json_name = "persistentNotificationIntervalMinutes"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPersistentNotificationIntervalMinutes() {
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         persistentNotificationIntervalMinutes_ = 0;
         onChanged();
         return this;
@@ -2373,15 +2551,15 @@ public final class ConfigProto {
 
       private int persistentNotificationMaxCount_ ;
       /**
-       * <code>optional int32 persistent_notification_max_count = 18 [json_name = "persistentNotificationMaxCount"];</code>
+       * <code>optional int32 persistent_notification_max_count = 19 [json_name = "persistentNotificationMaxCount"];</code>
        * @return Whether the persistentNotificationMaxCount field is set.
        */
       @java.lang.Override
       public boolean hasPersistentNotificationMaxCount() {
-        return ((bitField0_ & 0x00020000) != 0);
+        return ((bitField0_ & 0x00040000) != 0);
       }
       /**
-       * <code>optional int32 persistent_notification_max_count = 18 [json_name = "persistentNotificationMaxCount"];</code>
+       * <code>optional int32 persistent_notification_max_count = 19 [json_name = "persistentNotificationMaxCount"];</code>
        * @return The persistentNotificationMaxCount.
        */
       @java.lang.Override
@@ -2389,22 +2567,22 @@ public final class ConfigProto {
         return persistentNotificationMaxCount_;
       }
       /**
-       * <code>optional int32 persistent_notification_max_count = 18 [json_name = "persistentNotificationMaxCount"];</code>
+       * <code>optional int32 persistent_notification_max_count = 19 [json_name = "persistentNotificationMaxCount"];</code>
        * @param value The persistentNotificationMaxCount to set.
        * @return This builder for chaining.
        */
       public Builder setPersistentNotificationMaxCount(int value) {
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         persistentNotificationMaxCount_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 persistent_notification_max_count = 18 [json_name = "persistentNotificationMaxCount"];</code>
+       * <code>optional int32 persistent_notification_max_count = 19 [json_name = "persistentNotificationMaxCount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPersistentNotificationMaxCount() {
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         persistentNotificationMaxCount_ = 0;
         onChanged();
         return this;
@@ -2412,15 +2590,15 @@ public final class ConfigProto {
 
       private int persistentNotificationMaxRecipients_ ;
       /**
-       * <code>optional int32 persistent_notification_max_recipients = 19 [json_name = "persistentNotificationMaxRecipients"];</code>
+       * <code>optional int32 persistent_notification_max_recipients = 20 [json_name = "persistentNotificationMaxRecipients"];</code>
        * @return Whether the persistentNotificationMaxRecipients field is set.
        */
       @java.lang.Override
       public boolean hasPersistentNotificationMaxRecipients() {
-        return ((bitField0_ & 0x00040000) != 0);
+        return ((bitField0_ & 0x00080000) != 0);
       }
       /**
-       * <code>optional int32 persistent_notification_max_recipients = 19 [json_name = "persistentNotificationMaxRecipients"];</code>
+       * <code>optional int32 persistent_notification_max_recipients = 20 [json_name = "persistentNotificationMaxRecipients"];</code>
        * @return The persistentNotificationMaxRecipients.
        */
       @java.lang.Override
@@ -2428,22 +2606,22 @@ public final class ConfigProto {
         return persistentNotificationMaxRecipients_;
       }
       /**
-       * <code>optional int32 persistent_notification_max_recipients = 19 [json_name = "persistentNotificationMaxRecipients"];</code>
+       * <code>optional int32 persistent_notification_max_recipients = 20 [json_name = "persistentNotificationMaxRecipients"];</code>
        * @param value The persistentNotificationMaxRecipients to set.
        * @return This builder for chaining.
        */
       public Builder setPersistentNotificationMaxRecipients(int value) {
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         persistentNotificationMaxRecipients_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 persistent_notification_max_recipients = 19 [json_name = "persistentNotificationMaxRecipients"];</code>
+       * <code>optional int32 persistent_notification_max_recipients = 20 [json_name = "persistentNotificationMaxRecipients"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPersistentNotificationMaxRecipients() {
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         persistentNotificationMaxRecipients_ = 0;
         onChanged();
         return this;
@@ -2451,15 +2629,15 @@ public final class ConfigProto {
 
       private int featureFlagSyncIntervalSeconds_ ;
       /**
-       * <code>optional int32 feature_flag_sync_interval_seconds = 20 [json_name = "featureFlagSyncIntervalSeconds"];</code>
+       * <code>optional int32 feature_flag_sync_interval_seconds = 21 [json_name = "featureFlagSyncIntervalSeconds"];</code>
        * @return Whether the featureFlagSyncIntervalSeconds field is set.
        */
       @java.lang.Override
       public boolean hasFeatureFlagSyncIntervalSeconds() {
-        return ((bitField0_ & 0x00080000) != 0);
+        return ((bitField0_ & 0x00100000) != 0);
       }
       /**
-       * <code>optional int32 feature_flag_sync_interval_seconds = 20 [json_name = "featureFlagSyncIntervalSeconds"];</code>
+       * <code>optional int32 feature_flag_sync_interval_seconds = 21 [json_name = "featureFlagSyncIntervalSeconds"];</code>
        * @return The featureFlagSyncIntervalSeconds.
        */
       @java.lang.Override
@@ -2467,22 +2645,22 @@ public final class ConfigProto {
         return featureFlagSyncIntervalSeconds_;
       }
       /**
-       * <code>optional int32 feature_flag_sync_interval_seconds = 20 [json_name = "featureFlagSyncIntervalSeconds"];</code>
+       * <code>optional int32 feature_flag_sync_interval_seconds = 21 [json_name = "featureFlagSyncIntervalSeconds"];</code>
        * @param value The featureFlagSyncIntervalSeconds to set.
        * @return This builder for chaining.
        */
       public Builder setFeatureFlagSyncIntervalSeconds(int value) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         featureFlagSyncIntervalSeconds_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 feature_flag_sync_interval_seconds = 20 [json_name = "featureFlagSyncIntervalSeconds"];</code>
+       * <code>optional int32 feature_flag_sync_interval_seconds = 21 [json_name = "featureFlagSyncIntervalSeconds"];</code>
        * @return This builder for chaining.
        */
       public Builder clearFeatureFlagSyncIntervalSeconds() {
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00100000);
         featureFlagSyncIntervalSeconds_ = 0;
         onChanged();
         return this;
@@ -2490,15 +2668,15 @@ public final class ConfigProto {
 
       private boolean allowSyncedDrafts_ ;
       /**
-       * <code>optional bool allow_synced_drafts = 21 [json_name = "allowSyncedDrafts"];</code>
+       * <code>optional bool allow_synced_drafts = 22 [json_name = "allowSyncedDrafts"];</code>
        * @return Whether the allowSyncedDrafts field is set.
        */
       @java.lang.Override
       public boolean hasAllowSyncedDrafts() {
-        return ((bitField0_ & 0x00100000) != 0);
+        return ((bitField0_ & 0x00200000) != 0);
       }
       /**
-       * <code>optional bool allow_synced_drafts = 21 [json_name = "allowSyncedDrafts"];</code>
+       * <code>optional bool allow_synced_drafts = 22 [json_name = "allowSyncedDrafts"];</code>
        * @return The allowSyncedDrafts.
        */
       @java.lang.Override
@@ -2506,22 +2684,22 @@ public final class ConfigProto {
         return allowSyncedDrafts_;
       }
       /**
-       * <code>optional bool allow_synced_drafts = 21 [json_name = "allowSyncedDrafts"];</code>
+       * <code>optional bool allow_synced_drafts = 22 [json_name = "allowSyncedDrafts"];</code>
        * @param value The allowSyncedDrafts to set.
        * @return This builder for chaining.
        */
       public Builder setAllowSyncedDrafts(boolean value) {
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00200000;
         allowSyncedDrafts_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool allow_synced_drafts = 21 [json_name = "allowSyncedDrafts"];</code>
+       * <code>optional bool allow_synced_drafts = 22 [json_name = "allowSyncedDrafts"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAllowSyncedDrafts() {
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00200000);
         allowSyncedDrafts_ = false;
         onChanged();
         return this;
@@ -53263,547 +53441,548 @@ public final class ConfigProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\026common/v1/config.proto\022\tcommon.v1\032\025com" +
-      "mon/v1/error.proto\"\236\017\n\nConfigMain\022&\n\014rea" +
-      "d_timeout\030\001 \001(\005H\000R\013readTimeout\210\001\001\022(\n\rwri" +
-      "te_timeout\030\002 \001(\005H\001R\014writeTimeout\210\001\001\022&\n\014i" +
-      "dle_timeout\030\003 \001(\005H\002R\013idleTimeout\210\001\001\0225\n\024e" +
-      "nable_link_previews\030\004 \001(\010H\003R\022enableLinkP" +
-      "reviews\210\001\001\0229\n\026restrict_link_previews\030\005 \001" +
-      "(\tH\004R\024restrictLinkPreviews\210\001\001\022R\n#enable_" +
-      "client_performance_debugging\030\006 \001(\010H\005R en" +
-      "ableClientPerformanceDebugging\210\001\001\022/\n\021ena" +
-      "ble_gif_picker\030\007 \001(\010H\006R\017enableGifPicker\210" +
-      "\001\001\0223\n\023enable_custom_emoji\030\010 \001(\010H\007R\021enabl" +
-      "eCustomEmoji\210\001\001\0223\n\023enable_emoji_picker\030\t" +
-      " \001(\010H\010R\021enableEmojiPicker\210\001\001\022d\n-time_bet" +
-      "ween_user_typing_updates_milliseconds\030\n " +
-      "\001(\003H\tR(timeBetweenUserTypingUpdatesMilli" +
-      "seconds\210\001\001\0221\n\022enable_file_search\030\013 \001(\010H\n" +
-      "R\020enableFileSearch\210\001\001\022B\n\033enable_user_typ" +
-      "ing_messages\030\014 \001(\010H\013R\030enableUserTypingMe" +
-      "ssages\210\001\001\0225\n\024enable_user_statuses\030\r \001(\010H" +
-      "\014R\022enableUserStatuses\210\001\001\022=\n\030enable_email" +
-      "_invitations\030\016 \001(\010H\rR\026enableEmailInvitat" +
-      "ions\210\001\001\022$\n\013enable_svgs\030\017 \001(\010H\016R\nenableSv" +
-      "gs\210\001\001\022I\n\036allow_persistent_notifications\030" +
-      "\020 \001(\010H\017R\034allowPersistentNotifications\210\001\001" +
-      "\022\\\n(persistent_notification_interval_min" +
-      "utes\030\021 \001(\005H\020R%persistentNotificationInte" +
-      "rvalMinutes\210\001\001\022N\n!persistent_notificatio" +
-      "n_max_count\030\022 \001(\005H\021R\036persistentNotificat" +
-      "ionMaxCount\210\001\001\022X\n&persistent_notificatio" +
-      "n_max_recipients\030\023 \001(\005H\022R#persistentNoti" +
-      "ficationMaxRecipients\210\001\001\022O\n\"feature_flag" +
-      "_sync_interval_seconds\030\024 \001(\005H\023R\036featureF" +
-      "lagSyncIntervalSeconds\210\001\001\0223\n\023allow_synce" +
-      "d_drafts\030\025 \001(\010H\024R\021allowSyncedDrafts\210\001\001B\017" +
-      "\n\r_read_timeoutB\020\n\016_write_timeoutB\017\n\r_id" +
-      "le_timeoutB\027\n\025_enable_link_previewsB\031\n\027_" +
-      "restrict_link_previewsB&\n$_enable_client" +
-      "_performance_debuggingB\024\n\022_enable_gif_pi" +
-      "ckerB\026\n\024_enable_custom_emojiB\026\n\024_enable_" +
-      "emoji_pickerB0\n._time_between_user_typin" +
-      "g_updates_millisecondsB\025\n\023_enable_file_s" +
-      "earchB\036\n\034_enable_user_typing_messagesB\027\n" +
-      "\025_enable_user_statusesB\033\n\031_enable_email_" +
-      "invitationsB\016\n\014_enable_svgsB!\n\037_allow_pe" +
-      "rsistent_notificationsB+\n)_persistent_no" +
-      "tification_interval_minutesB$\n\"_persiste" +
-      "nt_notification_max_countB)\n\'_persistent" +
-      "_notification_max_recipientsB%\n#_feature" +
-      "_flag_sync_interval_secondsB\026\n\024_allow_sy" +
-      "nced_drafts\"\235\005\n\016ConfigServices\022<\n\030common" +
-      "_service_grpc_host\030\001 \001(\tH\000R\025commonServic" +
-      "eGrpcHost\210\001\001\022<\n\030common_service_grpc_port" +
-      "\030\002 \001(\005H\001R\025commonServiceGrpcPort\210\001\001\0228\n\026us" +
-      "er_service_grpc_host\030\003 \001(\tH\002R\023userServic" +
-      "eGrpcHost\210\001\001\0228\n\026user_service_grpc_port\030\004" +
-      " \001(\005H\003R\023userServiceGrpcPort\210\001\001\022?\n\031jaeger" +
-      "_collector_endpoint\030\005 \001(\tH\004R\027jaegerColle" +
-      "ctorEndpoint\210\001\001\022F\n\035common_service_promet" +
-      "heus_url\030\006 \001(\tH\005R\032commonServicePrometheu" +
-      "sUrl\210\001\001\022B\n\033user_service_prometheus_url\030\007" +
-      " \001(\tH\006R\030userServicePrometheusUrl\210\001\001B\033\n\031_" +
-      "common_service_grpc_hostB\033\n\031_common_serv" +
-      "ice_grpc_portB\031\n\027_user_service_grpc_host" +
-      "B\031\n\027_user_service_grpc_portB\034\n\032_jaeger_c" +
-      "ollector_endpointB \n\036_common_service_pro" +
-      "metheus_urlB\036\n\034_user_service_prometheus_" +
-      "url\"\206\017\n\016ConfigSecurity\022e\n\024restricted_use" +
-      "rnames\030\001 \003(\01322.common.v1.ConfigSecurity." +
-      "RestrictedUsernamesEntryR\023restrictedUser" +
-      "names\0229\n\026maximum_login_attempts\030\002 \001(\005H\000R" +
-      "\024maximumLoginAttempts\210\001\001\022T\n$enable_insec" +
-      "ure_outgoing_connections\030\003 \001(\010H\001R!enable" +
-      "InsecureOutgoingConnections\210\001\001\022O\n!enable" +
-      "_multifactor_authentication\030\004 \001(\010H\002R\037ena" +
-      "bleMultifactorAuthentication\210\001\001\022Q\n\"enfor" +
-      "ce_multifactor_authentication\030\005 \001(\010H\003R e" +
-      "nforceMultifactorAuthentication\210\001\001\022F\n\035en" +
-      "able_oauth_service_provider\030\006 \001(\010H\004R\032ena" +
-      "bleOauthServiceProvider\210\001\001\022N\n!enable_out" +
-      "going_oauth_connections\030\007 \001(\010H\005R\036enableO" +
-      "utgoingOauthConnections\210\001\001\022U\n%terminate_" +
-      "sessions_on_password_change\030\010 \001(\010H\006R!ter" +
-      "minateSessionsOnPasswordChange\210\001\001\022A\n\033ses" +
-      "sion_length_web_in_hours\030\t \001(\005H\007R\027sessio" +
-      "nLengthWebInHours\210\001\001\022G\n\036session_length_m" +
-      "obile_in_hours\030\n \001(\005H\010R\032sessionLengthMob" +
-      "ileInHours\210\001\001\022A\n\033session_length_sso_in_h" +
-      "ours\030\013 \001(\005H\tR\027sessionLengthSsoInHours\210\001\001" +
-      "\022+\n\017allow_cors_from\030\014 \001(\tH\nR\rallowCorsFr" +
-      "om\210\001\001\0225\n\024cors_exposed_headers\030\r \001(\tH\013R\022c" +
-      "orsExposedHeaders\210\001\001\0229\n\026cors_allow_crede" +
-      "ntials\030\016 \001(\010H\014R\024corsAllowCredentials\210\001\001\022" +
-      "\"\n\ncors_debug\030\017 \001(\010H\rR\tcorsDebug\210\001\001\022D\n\034a" +
-      "llow_cookies_for_subdomains\030\020 \001(\010H\016R\031all" +
-      "owCookiesForSubdomains\210\001\001\022<\n\030session_cac" +
-      "he_in_minutes\030\021 \001(\005H\017R\025sessionCacheInMin" +
-      "utes\210\001\001\0227\n\025websocket_secure_port\030\022 \001(\005H\020" +
-      "R\023websocketSecurePort\210\001\001\022*\n\016websocket_po" +
-      "rt\030\023 \001(\005H\021R\rwebsocketPort\210\001\001\032F\n\030Restrict" +
-      "edUsernamesEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005va" +
-      "lue\030\002 \001(\tR\005value:\0028\001B\031\n\027_maximum_login_a" +
-      "ttemptsB\'\n%_enable_insecure_outgoing_con" +
-      "nectionsB$\n\"_enable_multifactor_authenti" +
-      "cationB%\n#_enforce_multifactor_authentic" +
-      "ationB \n\036_enable_oauth_service_providerB" +
-      "$\n\"_enable_outgoing_oauth_connectionsB(\n" +
-      "&_terminate_sessions_on_password_changeB" +
-      "\036\n\034_session_length_web_in_hoursB!\n\037_sess" +
-      "ion_length_mobile_in_hoursB\036\n\034_session_l" +
-      "ength_sso_in_hoursB\022\n\020_allow_cors_fromB\027" +
-      "\n\025_cors_exposed_headersB\031\n\027_cors_allow_c" +
-      "redentialsB\r\n\013_cors_debugB\037\n\035_allow_cook" +
-      "ies_for_subdomainsB\033\n\031_session_cache_in_" +
-      "minutesB\030\n\026_websocket_secure_portB\021\n\017_we" +
-      "bsocket_port\"\202\003\n\013CacheConfig\022\"\n\ncache_ty" +
-      "pe\030\001 \001(\tH\000R\tcacheType\210\001\001\022(\n\rredis_addres" +
-      "s\030\002 \001(\tH\001R\014redisAddress\210\001\001\022*\n\016redis_pass" +
-      "word\030\003 \001(\tH\002R\rredisPassword\210\001\001\022\036\n\010redis_" +
-      "db\030\004 \001(\005H\003R\007redisDb\210\001\001\0221\n\022redis_cache_pr" +
-      "efix\030\005 \001(\tH\004R\020redisCachePrefix\210\001\001\0225\n\024dis" +
-      "able_client_cache\030\006 \001(\010H\005R\022disableClient" +
-      "Cache\210\001\001B\r\n\013_cache_typeB\020\n\016_redis_addres" +
-      "sB\021\n\017_redis_passwordB\013\n\t_redis_dbB\025\n\023_re" +
-      "dis_cache_prefixB\027\n\025_disable_client_cach" +
-      "e\"\251\003\n\rConfigMetrics\022\033\n\006enable\030\001 \001(\010H\000R\006e" +
-      "nable\210\001\001\0221\n\022block_profile_rate\030\002 \001(\005H\001R\020" +
-      "blockProfileRate\210\001\001\022*\n\016listen_address\030\003 " +
-      "\001(\tH\002R\rlistenAddress\210\001\001\0227\n\025enable_client" +
-      "_metrics\030\004 \001(\010H\003R\023enableClientMetrics\210\001\001" +
-      "\022C\n\033enable_notification_metrics\030\005 \001(\010H\004R" +
-      "\031enableNotificationMetrics\210\001\001\022/\n\024client_" +
-      "side_user_ids\030\006 \003(\tR\021clientSideUserIdsB\t" +
-      "\n\007_enableB\025\n\023_block_profile_rateB\021\n\017_lis" +
-      "ten_addressB\030\n\026_enable_client_metricsB\036\n" +
-      "\034_enable_notification_metrics\"\230\004\n\tConfig" +
-      "SSO\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022\033\n\006secr" +
-      "et\030\002 \001(\tH\001R\006secret\210\001\001\022\023\n\002id\030\003 \001(\tH\002R\002id\210" +
-      "\001\001\022\031\n\005scope\030\004 \001(\tH\003R\005scope\210\001\001\022(\n\rauth_en" +
-      "dpoint\030\005 \001(\tH\004R\014authEndpoint\210\001\001\022*\n\016token" +
-      "_endpoint\030\006 \001(\tH\005R\rtokenEndpoint\210\001\001\022/\n\021u" +
-      "ser_api_endpoint\030\007 \001(\tH\006R\017userApiEndpoin" +
-      "t\210\001\001\0222\n\022discovery_endpoint\030\010 \001(\tH\007R\021disc" +
-      "overyEndpoint\210\001\001\022$\n\013button_text\030\t \001(\tH\010R" +
-      "\nbuttonText\210\001\001\022&\n\014button_color\030\n \001(\tH\tR\013" +
-      "buttonColor\210\001\001B\t\n\007_enableB\t\n\007_secretB\005\n\003" +
-      "_idB\010\n\006_scopeB\020\n\016_auth_endpointB\021\n\017_toke" +
-      "n_endpointB\024\n\022_user_api_endpointB\025\n\023_dis" +
-      "covery_endpointB\016\n\014_button_textB\017\n\r_butt" +
-      "on_color\"\325\005\n\tConfigSql\022$\n\013driver_name\030\001 " +
-      "\001(\tH\000R\ndriverName\210\001\001\022$\n\013data_source\030\002 \001(" +
-      "\tH\001R\ndataSource\210\001\001\022)\n\016max_idle_conns\030\003 \001" +
-      "(\005H\002R\014maxIdleConns\210\001\001\022H\n\036conn_max_lifeti" +
-      "me_milliseconds\030\004 \001(\005H\003R\033connMaxLifetime" +
-      "Milliseconds\210\001\001\022I\n\037conn_max_idle_time_mi" +
-      "lliseconds\030\005 \001(\005H\004R\033connMaxIdleTimeMilli" +
-      "seconds\210\001\001\022)\n\016max_open_conns\030\006 \001(\005H\005R\014ma" +
-      "xOpenConns\210\001\001\022\031\n\005trace\030\007 \001(\010H\006R\005trace\210\001\001" +
-      "\0222\n\023at_rest_encrypt_key\030\010 \001(\tH\007R\020atRestE" +
-      "ncryptKey\210\001\001\022(\n\rquery_timeout\030\t \001(\005H\010R\014q" +
-      "ueryTimeout\210\001\001\022;\n\027disable_database_searc" +
-      "h\030\n \001(\010H\tR\025disableDatabaseSearch\210\001\001B\016\n\014_" +
-      "driver_nameB\016\n\014_data_sourceB\021\n\017_max_idle" +
-      "_connsB!\n\037_conn_max_lifetime_millisecond" +
-      "sB\"\n _conn_max_idle_time_millisecondsB\021\n" +
-      "\017_max_open_connsB\010\n\006_traceB\026\n\024_at_rest_e" +
-      "ncrypt_keyB\020\n\016_query_timeoutB\032\n\030_disable" +
-      "_database_search\"\212\003\n\016ConfigPassword\022*\n\016m" +
-      "inimum_length\030\001 \001(\005H\000R\rminimumLength\210\001\001\022" +
-      "*\n\016maximum_lenght\030\002 \001(\005H\001R\rmaximumLenght" +
-      "\210\001\001\022!\n\tlowercase\030\003 \001(\010H\002R\tlowercase\210\001\001\022\033" +
-      "\n\006number\030\004 \001(\010H\003R\006number\210\001\001\022!\n\tuppercase" +
-      "\030\005 \001(\010H\004R\tuppercase\210\001\001\022\033\n\006symbol\030\006 \001(\010H\005" +
-      "R\006symbol\210\001\001\0221\n\022enable_forgot_link\030\007 \001(\010H" +
-      "\006R\020enableForgotLink\210\001\001B\021\n\017_minimum_lengt" +
-      "hB\021\n\017_maximum_lenghtB\014\n\n_lowercaseB\t\n\007_n" +
-      "umberB\014\n\n_uppercaseB\t\n\007_symbolB\025\n\023_enabl" +
-      "e_forgot_link\"\340\017\n\nConfigFile\022;\n\027enable_f" +
-      "ile_attachments\030\001 \001(\010H\000R\025enableFileAttac" +
-      "hments\210\001\001\0225\n\024enable_mobile_upload\030\002 \001(\010H" +
-      "\001R\022enableMobileUpload\210\001\001\0229\n\026enable_mobil" +
-      "e_download\030\003 \001(\010H\002R\024enableMobileDownload" +
-      "\210\001\001\022\'\n\rmax_file_size\030\004 \001(\003H\003R\013maxFileSiz" +
-      "e\210\001\001\0225\n\024max_image_resolution\030\005 \001(\003H\004R\022ma" +
-      "xImageResolution\210\001\001\022F\n\035max_image_decoder" +
-      "_concurrency\030\006 \001(\003H\005R\032maxImageDecoderCon" +
-      "currency\210\001\001\022$\n\013driver_name\030\007 \001(\tH\006R\ndriv" +
-      "erName\210\001\001\022!\n\tdirectory\030\010 \001(\tH\007R\tdirector" +
-      "y\210\001\001\0221\n\022enable_public_link\030\t \001(\010H\010R\020enab" +
-      "lePublicLink\210\001\001\022,\n\017extract_content\030\n \001(\010" +
-      "H\tR\016extractContent\210\001\001\0220\n\021archive_recursi" +
-      "on\030\013 \001(\010H\nR\020archiveRecursion\210\001\001\022-\n\020publi" +
-      "c_link_salt\030\014 \001(\tH\013R\016publicLinkSalt\210\001\001\022&" +
-      "\n\014initial_font\030\r \001(\tH\014R\013initialFont\210\001\001\0229" +
-      "\n\027amazon_s3_access_key_id\030\016 \001(\tH\rR\023amazo" +
-      "nS3AccessKeyId\210\001\001\022A\n\033amazon_s3_secret_ac" +
-      "cess_key\030\017 \001(\tH\016R\027amazonS3SecretAccessKe" +
-      "y\210\001\001\022-\n\020amazon_s3_bucket\030\020 \001(\tH\017R\016amazon" +
-      "S3Bucket\210\001\001\0226\n\025amazon_s3_path_prefix\030\021 \001" +
-      "(\tH\020R\022amazonS3PathPrefix\210\001\001\022-\n\020amazon_s3" +
-      "_region\030\022 \001(\tH\021R\016amazonS3Region\210\001\001\0221\n\022am" +
-      "azon_s3_endpoint\030\023 \001(\tH\022R\020amazonS3Endpoi" +
-      "nt\210\001\001\022\'\n\ramazon_s3_ssl\030\024 \001(\010H\023R\013amazonS3" +
-      "Ssl\210\001\001\022.\n\021amazon_s3_sign_v2\030\025 \001(\010H\024R\016ama" +
-      "zonS3SignV2\210\001\001\022\'\n\ramazon_s3_sse\030\026 \001(\010H\025R" +
-      "\013amazonS3Sse\210\001\001\022+\n\017amazon_s3_trace\030\027 \001(\010" +
-      "H\026R\ramazonS3Trace\210\001\001\022W\n&amazon_s3_reques" +
-      "t_timeout_milliseconds\030\030 \001(\003H\027R\"amazonS3" +
-      "RequestTimeoutMilliseconds\210\001\001\022J\n amazon_" +
-      "s3_upload_part_size_bytes\030\031 \001(\003H\030R\033amazo" +
-      "nS3UploadPartSizeBytes\210\001\001\022:\n\027amazon_s3_s" +
-      "torage_class\030\032 \001(\tH\031R\024amazonS3StorageCla" +
-      "ss\210\001\001B\032\n\030_enable_file_attachmentsB\027\n\025_en" +
-      "able_mobile_uploadB\031\n\027_enable_mobile_dow" +
-      "nloadB\020\n\016_max_file_sizeB\027\n\025_max_image_re" +
-      "solutionB \n\036_max_image_decoder_concurren" +
-      "cyB\016\n\014_driver_nameB\014\n\n_directoryB\025\n\023_ena" +
-      "ble_public_linkB\022\n\020_extract_contentB\024\n\022_" +
-      "archive_recursionB\023\n\021_public_link_saltB\017" +
-      "\n\r_initial_fontB\032\n\030_amazon_s3_access_key" +
-      "_idB\036\n\034_amazon_s3_secret_access_keyB\023\n\021_" +
-      "amazon_s3_bucketB\030\n\026_amazon_s3_path_pref" +
-      "ixB\023\n\021_amazon_s3_regionB\025\n\023_amazon_s3_en" +
-      "dpointB\020\n\016_amazon_s3_sslB\024\n\022_amazon_s3_s" +
-      "ign_v2B\020\n\016_amazon_s3_sseB\022\n\020_amazon_s3_t" +
-      "raceB)\n\'_amazon_s3_request_timeout_milli" +
-      "secondsB#\n!_amazon_s3_upload_part_size_b" +
-      "ytesB\032\n\030_amazon_s3_storage_class\"\375\016\n\013Con" +
-      "figEmail\022=\n\030send_email_notifications\030\001 \001" +
-      "(\010H\000R\026sendEmailNotifications\210\001\001\022A\n\032requi" +
-      "re_email_verification\030\002 \001(\010H\001R\030requireEm" +
-      "ailVerification\210\001\001\022*\n\016feedback_email\030\003 \001" +
-      "(\tH\002R\rfeedbackEmail\210\001\001\022-\n\020reply_to_addre" +
-      "ss\030\004 \001(\tH\003R\016replyToAddress\210\001\001\022-\n\020enable_" +
-      "smtp_auth\030\005 \001(\010H\004R\016enableSmtpAuth\210\001\001\022(\n\r" +
-      "smtp_username\030\006 \001(\tH\005R\014smtpUsername\210\001\001\022(" +
-      "\n\rsmtp_password\030\007 \001(\tH\006R\014smtpPassword\210\001\001" +
-      "\022$\n\013smtp_server\030\010 \001(\tH\007R\nsmtpServer\210\001\001\022 " +
-      "\n\tsmtp_port\030\t \001(\tH\010R\010smtpPort\210\001\001\0223\n\023smtp" +
-      "_server_timeout\030\n \001(\005H\tR\021smtpServerTimeo" +
-      "ut\210\001\001\0224\n\023connection_security\030\013 \001(\tH\nR\022co" +
-      "nnectionSecurity\210\001\001\022;\n\027send_push_notific" +
-      "ations\030\014 \001(\010H\013R\025sendPushNotifications\210\001\001" +
-      "\022=\n\030push_notification_server\030\r \001(\tH\014R\026pu" +
-      "shNotificationServer\210\001\001\022A\n\032push_notifica" +
-      "tion_contents\030\016 \001(\tH\rR\030pushNotificationC" +
-      "ontents\210\001\001\022=\n\030push_notification_buffer\030\017" +
-      " \001(\005H\016R\026pushNotificationBuffer\210\001\001\0227\n\025ena" +
-      "ble_email_batching\030\020 \001(\010H\017R\023enableEmailB" +
-      "atching\210\001\001\022@\n\032email_batching_buffer_size" +
-      "\030\021 \001(\005H\020R\027emailBatchingBufferSize\210\001\001\022;\n\027" +
-      "email_batching_interval\030\022 \001(\005H\021R\025emailBa" +
-      "tchingInterval\210\001\001\022T\n$skip_server_certifi" +
-      "cate_verification\030\023 \001(\010H\022R!skipServerCer" +
-      "tificateVerification\210\001\001\022L\n email_notific" +
-      "ation_contents_type\030\024 \001(\tH\023R\035emailNotifi" +
-      "cationContentsType\210\001\001\0221\n\022login_button_co" +
-      "lor\030\025 \001(\tH\024R\020loginButtonColor\210\001\001\022>\n\031logi" +
-      "n_button_border_color\030\026 \001(\tH\025R\026loginButt" +
-      "onBorderColor\210\001\001\022:\n\027login_button_text_co" +
-      "lor\030\027 \001(\tH\026R\024loginButtonTextColor\210\001\001B\033\n\031" +
-      "_send_email_notificationsB\035\n\033_require_em" +
-      "ail_verificationB\021\n\017_feedback_emailB\023\n\021_" +
-      "reply_to_addressB\023\n\021_enable_smtp_authB\020\n" +
-      "\016_smtp_usernameB\020\n\016_smtp_passwordB\016\n\014_sm" +
-      "tp_serverB\014\n\n_smtp_portB\026\n\024_smtp_server_" +
-      "timeoutB\026\n\024_connection_securityB\032\n\030_send" +
-      "_push_notificationsB\033\n\031_push_notificatio" +
-      "n_serverB\035\n\033_push_notification_contentsB" +
-      "\033\n\031_push_notification_bufferB\030\n\026_enable_" +
-      "email_batchingB\035\n\033_email_batching_buffer" +
-      "_sizeB\032\n\030_email_batching_intervalB\'\n%_sk" +
-      "ip_server_certificate_verificationB#\n!_e" +
-      "mail_notification_contents_typeB\025\n\023_logi" +
-      "n_button_colorB\034\n\032_login_button_border_c" +
-      "olorB\032\n\030_login_button_text_color\"\204\003\n\017Con" +
-      "figRateLimit\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001" +
-      "\001\022\034\n\007per_sec\030\002 \001(\005H\001R\006perSec\210\001\001\022 \n\tmax_b" +
-      "urst\030\003 \001(\005H\002R\010maxBurst\210\001\001\022/\n\021memory_stor" +
-      "e_size\030\004 \001(\005H\003R\017memoryStoreSize\210\001\001\0222\n\023va" +
-      "ry_by_remote_addr\030\005 \001(\010H\004R\020varyByRemoteA" +
-      "ddr\210\001\001\022%\n\014vary_by_user\030\006 \001(\010H\005R\nvaryByUs" +
-      "er\210\001\001\022$\n\016vary_by_header\030\007 \001(\tR\014varyByHea" +
-      "derB\t\n\007_enableB\n\n\010_per_secB\014\n\n_max_burst" +
-      "B\024\n\022_memory_store_sizeB\026\n\024_vary_by_remot" +
-      "e_addrB\017\n\r_vary_by_user\"\227\001\n\rConfigPrivac" +
-      "y\0221\n\022show_email_address\030\001 \001(\010H\000R\020showEma" +
-      "ilAddress\210\001\001\022)\n\016show_full_name\030\002 \001(\010H\001R\014" +
-      "showFullName\210\001\001B\025\n\023_show_email_addressB\021" +
-      "\n\017_show_full_name\"\357\003\n\rConfigSupport\0226\n\025t" +
-      "erms_of_service_link\030\001 \001(\tH\000R\022termsOfSer" +
-      "viceLink\210\001\001\0223\n\023privacy_policy_link\030\002 \001(\t" +
-      "H\001R\021privacyPolicyLink\210\001\001\022\"\n\nabout_link\030\003" +
-      " \001(\tH\002R\taboutLink\210\001\001\022 \n\thelp_link\030\004 \001(\tH" +
-      "\003R\010helpLink\210\001\001\0226\n\025report_a_problem_link\030" +
-      "\005 \001(\tH\004R\022reportAProblemLink\210\001\001\0225\n\024forgot" +
-      "_password_link\030\006 \001(\tH\005R\022forgotPasswordLi" +
-      "nk\210\001\001\022(\n\rsupport_email\030\007 \001(\tH\006R\014supportE" +
-      "mail\210\001\001B\030\n\026_terms_of_service_linkB\026\n\024_pr" +
-      "ivacy_policy_linkB\r\n\013_about_linkB\014\n\n_hel" +
-      "p_linkB\030\n\026_report_a_problem_linkB\027\n\025_for" +
-      "got_password_linkB\020\n\016_support_email\"\202\002\n\022" +
-      "ConfigLocalization\0227\n\025default_server_loc" +
-      "ale\030\001 \001(\tH\000R\023defaultServerLocale\210\001\001\0227\n\025d" +
-      "efault_client_locale\030\002 \001(\tH\001R\023defaultCli" +
-      "entLocale\210\001\001\0220\n\021available_locales\030\003 \001(\tH" +
-      "\002R\020availableLocales\210\001\001B\030\n\026_default_serve" +
-      "r_localeB\030\n\026_default_client_localeB\024\n\022_a" +
-      "vailable_locales\"\325\020\n\nConfigLdap\022\033\n\006enabl" +
-      "e\030\001 \001(\010H\000R\006enable\210\001\001\022$\n\013enable_sync\030\002 \001(" +
-      "\010H\001R\nenableSync\210\001\001\022$\n\013ldap_server\030\003 \001(\tH" +
-      "\002R\nldapServer\210\001\001\022 \n\tldap_port\030\004 \001(\005H\003R\010l" +
-      "dapPort\210\001\001\0224\n\023connection_security\030\005 \001(\tH" +
-      "\004R\022connectionSecurity\210\001\001\022\034\n\007base_dn\030\006 \001(" +
-      "\tH\005R\006baseDn\210\001\001\022(\n\rbind_username\030\007 \001(\tH\006R" +
-      "\014bindUsername\210\001\001\022(\n\rbind_password\030\010 \001(\tH" +
-      "\007R\014bindPassword\210\001\001\0229\n\026maximum_login_atte" +
-      "mpts\030\t \001(\005H\010R\024maximumLoginAttempts\210\001\001\022$\n" +
-      "\013user_filter\030\n \001(\tH\tR\nuserFilter\210\001\001\022&\n\014g" +
-      "roup_filter\030\013 \001(\tH\nR\013groupFilter\210\001\001\0223\n\023e" +
-      "nable_admin_filter\030\014 \001(\010H\013R\021enableAdminF" +
-      "ilter\210\001\001\022&\n\014admin_filter\030\r \001(\tH\014R\013adminF" +
-      "ilter\210\001\001\022D\n\034group_display_name_attribute" +
-      "\030\016 \001(\tH\rR\031groupDisplayNameAttribute\210\001\001\0221" +
-      "\n\022group_id_attribute\030\017 \001(\tH\016R\020groupIdAtt" +
-      "ribute\210\001\001\0225\n\024first_name_attribute\030\020 \001(\tH" +
-      "\017R\022firstNameAttribute\210\001\001\0223\n\023last_name_at" +
-      "tribute\030\021 \001(\tH\020R\021lastNameAttribute\210\001\001\022,\n" +
-      "\017email_attribute\030\022 \001(\tH\021R\016emailAttribute" +
-      "\210\001\001\0222\n\022username_attribute\030\023 \001(\tH\022R\021usern" +
-      "ameAttribute\210\001\001\0222\n\022nickname_attribute\030\024 " +
-      "\001(\tH\023R\021nicknameAttribute\210\001\001\022&\n\014id_attrib" +
-      "ute\030\025 \001(\tH\024R\013idAttribute\210\001\001\0222\n\022position_" +
-      "attribute\030\026 \001(\tH\025R\021positionAttribute\210\001\001\022" +
-      "1\n\022login_id_attribute\030\027 \001(\tH\026R\020loginIdAt" +
-      "tribute\210\001\001\0220\n\021picture_attribute\030\030 \001(\tH\027R" +
-      "\020pictureAttribute\210\001\001\0227\n\025sync_interval_mi" +
-      "nutes\030\031 \001(\005H\030R\023syncIntervalMinutes\210\001\001\022(\n" +
-      "\rquery_timeout\030\032 \001(\005H\031R\014queryTimeout\210\001\001\022" +
-      "\'\n\rmax_page_size\030\033 \001(\005H\032R\013maxPageSize\210\001\001" +
-      "\022-\n\020login_field_name\030\034 \001(\tH\033R\016loginField" +
-      "Name\210\001\001\0221\n\022login_button_color\030\035 \001(\tH\034R\020l" +
-      "oginButtonColor\210\001\001\022>\n\031login_button_borde" +
-      "r_color\030\036 \001(\tH\035R\026loginButtonBorderColor\210" +
-      "\001\001\022:\n\027login_button_text_color\030\037 \001(\tH\036R\024l" +
-      "oginButtonTextColor\210\001\001B\t\n\007_enableB\016\n\014_en" +
-      "able_syncB\016\n\014_ldap_serverB\014\n\n_ldap_portB" +
-      "\026\n\024_connection_securityB\n\n\010_base_dnB\020\n\016_" +
-      "bind_usernameB\020\n\016_bind_passwordB\031\n\027_maxi" +
-      "mum_login_attemptsB\016\n\014_user_filterB\017\n\r_g" +
-      "roup_filterB\026\n\024_enable_admin_filterB\017\n\r_" +
-      "admin_filterB\037\n\035_group_display_name_attr" +
-      "ibuteB\025\n\023_group_id_attributeB\027\n\025_first_n" +
-      "ame_attributeB\026\n\024_last_name_attributeB\022\n" +
-      "\020_email_attributeB\025\n\023_username_attribute" +
-      "B\025\n\023_nickname_attributeB\017\n\r_id_attribute" +
-      "B\025\n\023_position_attributeB\025\n\023_login_id_att" +
-      "ributeB\024\n\022_picture_attributeB\030\n\026_sync_in" +
-      "terval_minutesB\020\n\016_query_timeoutB\020\n\016_max" +
-      "_page_sizeB\023\n\021_login_field_nameB\025\n\023_logi" +
-      "n_button_colorB\034\n\032_login_button_border_c" +
-      "olorB\032\n\030_login_button_text_color\"\255\023\n\nCon" +
-      "figSaml\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\0226\n\025" +
-      "enable_sync_with_ldap\030\002 \001(\010H\001R\022enableSyn" +
-      "cWithLdap\210\001\001\022N\n\"enable_sync_with_ldap_in" +
-      "clude_auth\030\003 \001(\010H\002R\035enableSyncWithLdapIn" +
-      "cludeAuth\210\001\001\022:\n\027ignore_guests_ldap_sync\030" +
-      "\004 \001(\010H\003R\024ignoreGuestsLdapSync\210\001\001\022\033\n\006veri" +
-      "fy\030\005 \001(\010H\004R\006verify\210\001\001\022\035\n\007encrypt\030\006 \001(\010H\005" +
-      "R\007encrypt\210\001\001\022&\n\014sign_request\030\007 \001(\010H\006R\013si" +
-      "gnRequest\210\001\001\022\034\n\007idp_url\030\010 \001(\tH\007R\006idpUrl\210" +
-      "\001\001\0221\n\022idp_descriptor_url\030\t \001(\tH\010R\020idpDes" +
-      "criptorUrl\210\001\001\022-\n\020idp_metadata_url\030\n \001(\tH" +
-      "\tR\016idpMetadataUrl\210\001\001\022C\n\033service_provider" +
-      "_identifier\030\013 \001(\tH\nR\031serviceProviderIden" +
-      "tifier\210\001\001\022H\n\036assertion_consumer_service_" +
-      "url\030\014 \001(\tH\013R\033assertionConsumerServiceUrl" +
-      "\210\001\001\0224\n\023signature_algorithm\030\r \001(\tH\014R\022sign" +
-      "atureAlgorithm\210\001\001\0224\n\023canonical_algorithm" +
-      "\030\016 \001(\tH\rR\022canonicalAlgorithm\210\001\001\022:\n\027scopi" +
-      "ng_idp_provider_id\030\017 \001(\tH\016R\024scopingIdpPr" +
-      "oviderId\210\001\001\022-\n\020scoping_idp_name\030\020 \001(\tH\017R" +
-      "\016scopingIdpName\210\001\001\0225\n\024idp_certificate_fi" +
-      "le\030\021 \001(\tH\020R\022idpCertificateFile\210\001\001\022;\n\027pub" +
-      "lic_certificate_file\030\022 \001(\tH\021R\025publicCert" +
-      "ificateFile\210\001\001\022-\n\020private_key_file\030\023 \001(\t" +
-      "H\022R\016privateKeyFile\210\001\001\022&\n\014id_attribute\030\024 " +
-      "\001(\tH\023R\013idAttribute\210\001\001\0229\n\026enable_admin_at" +
-      "tribute\030\025 \001(\010H\024R\024enableAdminAttribute\210\001\001" +
-      "\022,\n\017admin_attribute\030\026 \001(\tH\025R\016adminAttrib" +
-      "ute\210\001\001\0225\n\024first_name_attribute\030\027 \001(\tH\026R\022" +
-      "firstNameAttribute\210\001\001\0223\n\023last_name_attri" +
-      "bute\030\030 \001(\tH\027R\021lastNameAttribute\210\001\001\022,\n\017em" +
-      "ail_attribute\030\031 \001(\tH\030R\016emailAttribute\210\001\001" +
-      "\0222\n\022username_attribute\030\032 \001(\tH\031R\021username" +
-      "Attribute\210\001\001\0222\n\022nickname_attribute\030\033 \001(\t" +
-      "H\032R\021nicknameAttribute\210\001\001\022.\n\020locale_attri" +
-      "bute\030\034 \001(\tH\033R\017localeAttribute\210\001\001\0222\n\022posi" +
-      "tion_attribute\030\035 \001(\tH\034R\021positionAttribut" +
-      "e\210\001\001\022/\n\021login_button_text\030\036 \001(\tH\035R\017login",
-      "ButtonText\210\001\001\0221\n\022login_button_color\030\037 \001(" +
-      "\tH\036R\020loginButtonColor\210\001\001\022>\n\031login_button" +
-      "_border_color\030  \001(\tH\037R\026loginButtonBorder" +
-      "Color\210\001\001\022:\n\027login_button_text_color\030! \001(" +
-      "\tH R\024loginButtonTextColor\210\001\001B\t\n\007_enableB" +
-      "\030\n\026_enable_sync_with_ldapB%\n#_enable_syn" +
-      "c_with_ldap_include_authB\032\n\030_ignore_gues" +
-      "ts_ldap_syncB\t\n\007_verifyB\n\n\010_encryptB\017\n\r_" +
-      "sign_requestB\n\n\010_idp_urlB\025\n\023_idp_descrip" +
-      "tor_urlB\023\n\021_idp_metadata_urlB\036\n\034_service" +
-      "_provider_identifierB!\n\037_assertion_consu" +
-      "mer_service_urlB\026\n\024_signature_algorithmB" +
-      "\026\n\024_canonical_algorithmB\032\n\030_scoping_idp_" +
-      "provider_idB\023\n\021_scoping_idp_nameB\027\n\025_idp" +
-      "_certificate_fileB\032\n\030_public_certificate" +
-      "_fileB\023\n\021_private_key_fileB\017\n\r_id_attrib" +
-      "uteB\031\n\027_enable_admin_attributeB\022\n\020_admin" +
-      "_attributeB\027\n\025_first_name_attributeB\026\n\024_" +
-      "last_name_attributeB\022\n\020_email_attributeB" +
-      "\025\n\023_username_attributeB\025\n\023_nickname_attr" +
-      "ibuteB\023\n\021_locale_attributeB\025\n\023_position_" +
-      "attributeB\024\n\022_login_button_textB\025\n\023_logi" +
-      "n_button_colorB\034\n\032_login_button_border_c" +
-      "olorB\032\n\030_login_button_text_color\"\301\005\n\017Con" +
-      "figNativeApp\0223\n\026app_custom_url_schemes\030\001" +
-      " \003(\tR\023appCustomUrlSchemes\022/\n\021app_downloa" +
-      "d_link\030\002 \001(\tH\000R\017appDownloadLink\210\001\001\022>\n\031an" +
-      "droid_app_download_link\030\003 \001(\tH\001R\026android" +
-      "AppDownloadLink\210\001\001\0226\n\025ios_app_download_l" +
-      "ink\030\004 \001(\tH\002R\022iosAppDownloadLink\210\001\001\022;\n\027mo" +
-      "bile_external_browser\030\005 \001(\010H\003R\025mobileExt" +
-      "ernalBrowser\210\001\001\022=\n\030mobile_enable_biometr" +
-      "ics\030\006 \001(\010H\004R\026mobileEnableBiometrics\210\001\001\022F" +
-      "\n\035mobile_prevent_screen_capture\030\007 \001(\010H\005R" +
-      "\032mobilePreventScreenCapture\210\001\001\022C\n\033mobile" +
-      "_jailbreak_protection\030\010 \001(\010H\006R\031mobileJai" +
-      "lbreakProtection\210\001\001B\024\n\022_app_download_lin" +
-      "kB\034\n\032_android_app_download_linkB\030\n\026_ios_" +
-      "app_download_linkB\032\n\030_mobile_external_br" +
-      "owserB\033\n\031_mobile_enable_biometricsB \n\036_m" +
-      "obile_prevent_screen_captureB\036\n\034_mobile_" +
-      "jailbreak_protection\"\253\005\n\021ConfigMeilisear" +
-      "ch\022#\n\nserver_url\030\001 \001(\tH\000R\nserver_url\210\001\001\022" +
-      "\"\n\nmaster_key\030\002 \001(\tH\001R\tmasterKey\210\001\001\022,\n\017e" +
-      "nable_indexing\030\003 \001(\010H\002R\016enableIndexing\210\001" +
-      "\001\022.\n\020enable_searching\030\004 \001(\010H\003R\017enableSea" +
-      "rching\210\001\001\0224\n\023enable_autocomplete\030\005 \001(\010H\004" +
-      "R\022enableAutocomplete\210\001\001\022\"\n\nbatch_size\030\006 " +
-      "\001(\005H\005R\tbatchSize\210\001\001\022;\n\027request_timeout_s" +
-      "econds\030\007 \001(\005H\006R\025requestTimeoutSeconds\210\001\001" +
-      "\022&\n\014index_prefix\030\010 \001(\tH\007R\013indexPrefix\210\001\001" +
-      "\022-\n\020search_cutoff_ms\030\t \001(\005H\010R\016searchCuto" +
-      "ffMs\210\001\001\0227\n\025enable_typo_tolerance\030\n \001(\010H\t" +
-      "R\023enableTypoTolerance\210\001\001B\r\n\013_server_urlB" +
-      "\r\n\013_master_keyB\022\n\020_enable_indexingB\023\n\021_e" +
-      "nable_searchingB\026\n\024_enable_autocompleteB" +
-      "\r\n\013_batch_sizeB\032\n\030_request_timeout_secon" +
-      "dsB\017\n\r_index_prefixB\023\n\021_search_cutoff_ms" +
-      "B\030\n\026_enable_typo_tolerance\"\272\003\n\013ConfigBle" +
-      "ve\022 \n\tindex_dir\030\001 \001(\tH\000R\010indexDir\210\001\001\022,\n\017" +
-      "enable_indexing\030\002 \001(\010H\001R\016enableIndexing\210" +
-      "\001\001\022.\n\020enable_searching\030\003 \001(\010H\002R\017enableSe" +
-      "arching\210\001\001\0224\n\023enable_autocomplete\030\004 \001(\010H" +
-      "\003R\022enableAutocomplete\210\001\001\022M\n!bulk_indexin" +
-      "g_time_window_seconds\030\005 \001(\005H\004R\035bulkIndex" +
-      "ingTimeWindowSeconds\210\001\001\022\"\n\nbatch_size\030\006 " +
-      "\001(\005H\005R\tbatchSize\210\001\001B\014\n\n_index_dirB\022\n\020_en" +
-      "able_indexingB\023\n\021_enable_searchingB\026\n\024_e" +
-      "nable_autocompleteB$\n\"_bulk_indexing_tim" +
-      "e_window_secondsB\r\n\013_batch_size\"\354\006\n\023Conf" +
-      "igDataRetention\022;\n\027enable_message_deleti" +
-      "on\030\001 \001(\010H\000R\025enableMessageDeletion\210\001\001\0225\n\024" +
-      "enable_file_deletion\030\002 \001(\010H\001R\022enableFile" +
-      "Deletion\210\001\001\0229\n\026enable_boards_deletion\030\003 " +
-      "\001(\010H\002R\024enableBoardsDeletion\210\001\001\022;\n\027messag" +
-      "e_retention_hours\030\004 \001(\005H\003R\025messageRetent" +
-      "ionHours\210\001\001\0225\n\024file_retention_hours\030\005 \001(" +
-      "\005H\004R\022fileRetentionHours\210\001\001\0227\n\025boards_ret" +
-      "ention_days\030\006 \001(\005H\005R\023boardsRetentionDays" +
-      "\210\001\001\022:\n\027deletion_job_start_time\030\007 \001(\tH\006R\024" +
-      "deletionJobStartTime\210\001\001\022\"\n\nbatch_size\030\010 " +
-      "\001(\005H\007R\tbatchSize\210\001\001\022N\n!time_between_batc" +
-      "hes_milliseconds\030\t \001(\005H\010R\036timeBetweenBat" +
-      "chesMilliseconds\210\001\001\022<\n\030retention_ids_bat" +
-      "ch_size\030\n \001(\005H\tR\025retentionIdsBatchSize\210\001" +
-      "\001B\032\n\030_enable_message_deletionB\027\n\025_enable" +
-      "_file_deletionB\031\n\027_enable_boards_deletio" +
-      "nB\032\n\030_message_retention_hoursB\027\n\025_file_r" +
-      "etention_hoursB\030\n\026_boards_retention_days" +
-      "B\032\n\030_deletion_job_start_timeB\r\n\013_batch_s" +
-      "izeB$\n\"_time_between_batches_millisecond" +
-      "sB\033\n\031_retention_ids_batch_size\"\264\002\n\020Confi" +
-      "gImageProxy\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001" +
-      "\022-\n\020image_proxy_type\030\002 \001(\tH\001R\016imageProxy" +
-      "Type\210\001\001\0228\n\026remote_image_proxy_url\030\003 \001(\tH" +
-      "\002R\023remoteImageProxyUrl\210\001\001\022@\n\032remote_imag" +
-      "e_proxy_options\030\004 \001(\tH\003R\027remoteImageProx" +
-      "yOptions\210\001\001B\t\n\007_enableB\023\n\021_image_proxy_t" +
-      "ypeB\031\n\027_remote_image_proxy_urlB\035\n\033_remot" +
-      "e_image_proxy_options\"\315\010\n\006Config\022)\n\004main" +
-      "\030\001 \001(\0132\025.common.v1.ConfigMainR\004main\0225\n\010s" +
-      "ervices\030\002 \001(\0132\031.common.v1.ConfigServices" +
-      "R\010services\0225\n\010security\030\003 \001(\0132\031.common.v1" +
-      ".ConfigSecurityR\010security\022,\n\005cache\030\004 \001(\013" +
-      "2\026.common.v1.CacheConfigR\005cache\0222\n\007metri" +
-      "cs\030\005 \001(\0132\030.common.v1.ConfigMetricsR\007metr" +
-      "ics\022&\n\003sso\030\006 \001(\0132\024.common.v1.ConfigSSOR\003" +
-      "sso\022&\n\003sql\030\007 \001(\0132\024.common.v1.ConfigSqlR\003" +
-      "sql\0225\n\010password\030\010 \001(\0132\031.common.v1.Config" +
-      "PasswordR\010password\022)\n\004file\030\t \001(\0132\025.commo" +
-      "n.v1.ConfigFileR\004file\022,\n\005email\030\n \001(\0132\026.c" +
-      "ommon.v1.ConfigEmailR\005email\0229\n\nrate_limi" +
-      "t\030\013 \001(\0132\032.common.v1.ConfigRateLimitR\trat" +
-      "eLimit\0222\n\007privacy\030\014 \001(\0132\030.common.v1.Conf" +
-      "igPrivacyR\007privacy\0222\n\007support\030\r \001(\0132\030.co" +
-      "mmon.v1.ConfigSupportR\007support\022A\n\014locali" +
-      "zation\030\016 \001(\0132\035.common.v1.ConfigLocalizat" +
-      "ionR\014localization\022)\n\004ldap\030\017 \001(\0132\025.common" +
-      ".v1.ConfigLdapR\004ldap\022)\n\004saml\030\020 \001(\0132\025.com" +
-      "mon.v1.ConfigSamlR\004saml\0229\n\nnative_app\030\021 " +
-      "\001(\0132\032.common.v1.ConfigNativeAppR\tnativeA" +
-      "pp\022>\n\013meilisearch\030\022 \001(\0132\034.common.v1.Conf" +
-      "igMeilisearchR\013meilisearch\022,\n\005bleve\030\023 \001(" +
-      "\0132\026.common.v1.ConfigBleveR\005bleve\022E\n\016data" +
-      "_retention\030\024 \001(\0132\036.common.v1.ConfigDataR" +
-      "etentionR\rdataRetention\022<\n\013image_proxy\030\025" +
-      " \001(\0132\033.common.v1.ConfigImageProxyR\nimage" +
-      "Proxy\"\022\n\020ConfigGetRequest\"u\n\021ConfigGetRe" +
-      "sponse\022\'\n\004data\030\001 \001(\0132\021.common.v1.ConfigH" +
-      "\000R\004data\022+\n\005error\030\002 \001(\0132\023.common.v1.AppEr" +
-      "rorH\000R\005errorB\n\n\010response\"@\n\023ConfigUpdate" +
-      "Request\022)\n\006config\030\001 \001(\0132\021.common.v1.Conf" +
-      "igR\006config\"x\n\024ConfigUpdateResponse\022\'\n\004da" +
-      "ta\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005e" +
-      "rror\030\002 \001(\0132\023.common.v1.AppErrorH\000R\005error" +
-      "B\n\n\010response\"z\n\026ConfigListenerResponse\022\'" +
-      "\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022" +
-      "+\n\005error\030\002 \001(\0132\023.common.v1.AppErrorH\000R\005e" +
-      "rrorB\n\n\010response\"4\n\025ConfigListenerReques" +
-      "t\022\033\n\tclient_id\030\001 \001(\tR\010clientIdB:\n\032org.me" +
-      "gacommerce.common.v1B\013ConfigProtoZ\014commo" +
-      "n/v1;v1\370\001\001b\006proto3"
+      "mon/v1/error.proto\"\275\017\n\nConfigMain\022\025\n\003env" +
+      "\030\001 \001(\tH\000R\003env\210\001\001\022&\n\014read_timeout\030\002 \001(\005H\001" +
+      "R\013readTimeout\210\001\001\022(\n\rwrite_timeout\030\003 \001(\005H" +
+      "\002R\014writeTimeout\210\001\001\022&\n\014idle_timeout\030\004 \001(\005" +
+      "H\003R\013idleTimeout\210\001\001\0225\n\024enable_link_previe" +
+      "ws\030\005 \001(\010H\004R\022enableLinkPreviews\210\001\001\0229\n\026res" +
+      "trict_link_previews\030\006 \001(\tH\005R\024restrictLin" +
+      "kPreviews\210\001\001\022R\n#enable_client_performanc" +
+      "e_debugging\030\007 \001(\010H\006R enableClientPerform" +
+      "anceDebugging\210\001\001\022/\n\021enable_gif_picker\030\010 " +
+      "\001(\010H\007R\017enableGifPicker\210\001\001\0223\n\023enable_cust" +
+      "om_emoji\030\t \001(\010H\010R\021enableCustomEmoji\210\001\001\0223" +
+      "\n\023enable_emoji_picker\030\n \001(\010H\tR\021enableEmo" +
+      "jiPicker\210\001\001\022d\n-time_between_user_typing_" +
+      "updates_milliseconds\030\013 \001(\003H\nR(timeBetwee" +
+      "nUserTypingUpdatesMilliseconds\210\001\001\0221\n\022ena" +
+      "ble_file_search\030\014 \001(\010H\013R\020enableFileSearc" +
+      "h\210\001\001\022B\n\033enable_user_typing_messages\030\r \001(" +
+      "\010H\014R\030enableUserTypingMessages\210\001\001\0225\n\024enab" +
+      "le_user_statuses\030\016 \001(\010H\rR\022enableUserStat" +
+      "uses\210\001\001\022=\n\030enable_email_invitations\030\017 \001(" +
+      "\010H\016R\026enableEmailInvitations\210\001\001\022$\n\013enable" +
+      "_svgs\030\020 \001(\010H\017R\nenableSvgs\210\001\001\022I\n\036allow_pe" +
+      "rsistent_notifications\030\021 \001(\010H\020R\034allowPer" +
+      "sistentNotifications\210\001\001\022\\\n(persistent_no" +
+      "tification_interval_minutes\030\022 \001(\005H\021R%per" +
+      "sistentNotificationIntervalMinutes\210\001\001\022N\n" +
+      "!persistent_notification_max_count\030\023 \001(\005" +
+      "H\022R\036persistentNotificationMaxCount\210\001\001\022X\n" +
+      "&persistent_notification_max_recipients\030" +
+      "\024 \001(\005H\023R#persistentNotificationMaxRecipi" +
+      "ents\210\001\001\022O\n\"feature_flag_sync_interval_se" +
+      "conds\030\025 \001(\005H\024R\036featureFlagSyncIntervalSe" +
+      "conds\210\001\001\0223\n\023allow_synced_drafts\030\026 \001(\010H\025R" +
+      "\021allowSyncedDrafts\210\001\001B\006\n\004_envB\017\n\r_read_t" +
+      "imeoutB\020\n\016_write_timeoutB\017\n\r_idle_timeou" +
+      "tB\027\n\025_enable_link_previewsB\031\n\027_restrict_" +
+      "link_previewsB&\n$_enable_client_performa" +
+      "nce_debuggingB\024\n\022_enable_gif_pickerB\026\n\024_" +
+      "enable_custom_emojiB\026\n\024_enable_emoji_pic" +
+      "kerB0\n._time_between_user_typing_updates" +
+      "_millisecondsB\025\n\023_enable_file_searchB\036\n\034" +
+      "_enable_user_typing_messagesB\027\n\025_enable_" +
+      "user_statusesB\033\n\031_enable_email_invitatio" +
+      "nsB\016\n\014_enable_svgsB!\n\037_allow_persistent_" +
+      "notificationsB+\n)_persistent_notificatio" +
+      "n_interval_minutesB$\n\"_persistent_notifi" +
+      "cation_max_countB)\n\'_persistent_notifica" +
+      "tion_max_recipientsB%\n#_feature_flag_syn" +
+      "c_interval_secondsB\026\n\024_allow_synced_draf" +
+      "ts\"\235\005\n\016ConfigServices\022<\n\030common_service_" +
+      "grpc_host\030\001 \001(\tH\000R\025commonServiceGrpcHost" +
+      "\210\001\001\022<\n\030common_service_grpc_port\030\002 \001(\005H\001R" +
+      "\025commonServiceGrpcPort\210\001\001\0228\n\026user_servic" +
+      "e_grpc_host\030\003 \001(\tH\002R\023userServiceGrpcHost" +
+      "\210\001\001\0228\n\026user_service_grpc_port\030\004 \001(\005H\003R\023u" +
+      "serServiceGrpcPort\210\001\001\022?\n\031jaeger_collecto" +
+      "r_endpoint\030\005 \001(\tH\004R\027jaegerCollectorEndpo" +
+      "int\210\001\001\022F\n\035common_service_prometheus_url\030" +
+      "\006 \001(\tH\005R\032commonServicePrometheusUrl\210\001\001\022B" +
+      "\n\033user_service_prometheus_url\030\007 \001(\tH\006R\030u" +
+      "serServicePrometheusUrl\210\001\001B\033\n\031_common_se" +
+      "rvice_grpc_hostB\033\n\031_common_service_grpc_" +
+      "portB\031\n\027_user_service_grpc_hostB\031\n\027_user" +
+      "_service_grpc_portB\034\n\032_jaeger_collector_" +
+      "endpointB \n\036_common_service_prometheus_u" +
+      "rlB\036\n\034_user_service_prometheus_url\"\206\017\n\016C" +
+      "onfigSecurity\022e\n\024restricted_usernames\030\001 " +
+      "\003(\01322.common.v1.ConfigSecurity.Restricte" +
+      "dUsernamesEntryR\023restrictedUsernames\0229\n\026" +
+      "maximum_login_attempts\030\002 \001(\005H\000R\024maximumL" +
+      "oginAttempts\210\001\001\022T\n$enable_insecure_outgo" +
+      "ing_connections\030\003 \001(\010H\001R!enableInsecureO" +
+      "utgoingConnections\210\001\001\022O\n!enable_multifac" +
+      "tor_authentication\030\004 \001(\010H\002R\037enableMultif" +
+      "actorAuthentication\210\001\001\022Q\n\"enforce_multif" +
+      "actor_authentication\030\005 \001(\010H\003R enforceMul" +
+      "tifactorAuthentication\210\001\001\022F\n\035enable_oaut" +
+      "h_service_provider\030\006 \001(\010H\004R\032enableOauthS" +
+      "erviceProvider\210\001\001\022N\n!enable_outgoing_oau" +
+      "th_connections\030\007 \001(\010H\005R\036enableOutgoingOa" +
+      "uthConnections\210\001\001\022U\n%terminate_sessions_" +
+      "on_password_change\030\010 \001(\010H\006R!terminateSes" +
+      "sionsOnPasswordChange\210\001\001\022A\n\033session_leng" +
+      "th_web_in_hours\030\t \001(\005H\007R\027sessionLengthWe" +
+      "bInHours\210\001\001\022G\n\036session_length_mobile_in_" +
+      "hours\030\n \001(\005H\010R\032sessionLengthMobileInHour" +
+      "s\210\001\001\022A\n\033session_length_sso_in_hours\030\013 \001(" +
+      "\005H\tR\027sessionLengthSsoInHours\210\001\001\022+\n\017allow" +
+      "_cors_from\030\014 \001(\tH\nR\rallowCorsFrom\210\001\001\0225\n\024" +
+      "cors_exposed_headers\030\r \001(\tH\013R\022corsExpose" +
+      "dHeaders\210\001\001\0229\n\026cors_allow_credentials\030\016 " +
+      "\001(\010H\014R\024corsAllowCredentials\210\001\001\022\"\n\ncors_d" +
+      "ebug\030\017 \001(\010H\rR\tcorsDebug\210\001\001\022D\n\034allow_cook" +
+      "ies_for_subdomains\030\020 \001(\010H\016R\031allowCookies" +
+      "ForSubdomains\210\001\001\022<\n\030session_cache_in_min" +
+      "utes\030\021 \001(\005H\017R\025sessionCacheInMinutes\210\001\001\0227" +
+      "\n\025websocket_secure_port\030\022 \001(\005H\020R\023websock" +
+      "etSecurePort\210\001\001\022*\n\016websocket_port\030\023 \001(\005H" +
+      "\021R\rwebsocketPort\210\001\001\032F\n\030RestrictedUsernam" +
+      "esEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t" +
+      "R\005value:\0028\001B\031\n\027_maximum_login_attemptsB\'" +
+      "\n%_enable_insecure_outgoing_connectionsB" +
+      "$\n\"_enable_multifactor_authenticationB%\n" +
+      "#_enforce_multifactor_authenticationB \n\036" +
+      "_enable_oauth_service_providerB$\n\"_enabl" +
+      "e_outgoing_oauth_connectionsB(\n&_termina" +
+      "te_sessions_on_password_changeB\036\n\034_sessi" +
+      "on_length_web_in_hoursB!\n\037_session_lengt" +
+      "h_mobile_in_hoursB\036\n\034_session_length_sso" +
+      "_in_hoursB\022\n\020_allow_cors_fromB\027\n\025_cors_e" +
+      "xposed_headersB\031\n\027_cors_allow_credential" +
+      "sB\r\n\013_cors_debugB\037\n\035_allow_cookies_for_s" +
+      "ubdomainsB\033\n\031_session_cache_in_minutesB\030" +
+      "\n\026_websocket_secure_portB\021\n\017_websocket_p" +
+      "ort\"\202\003\n\013CacheConfig\022\"\n\ncache_type\030\001 \001(\tH" +
+      "\000R\tcacheType\210\001\001\022(\n\rredis_address\030\002 \001(\tH\001" +
+      "R\014redisAddress\210\001\001\022*\n\016redis_password\030\003 \001(" +
+      "\tH\002R\rredisPassword\210\001\001\022\036\n\010redis_db\030\004 \001(\005H" +
+      "\003R\007redisDb\210\001\001\0221\n\022redis_cache_prefix\030\005 \001(" +
+      "\tH\004R\020redisCachePrefix\210\001\001\0225\n\024disable_clie" +
+      "nt_cache\030\006 \001(\010H\005R\022disableClientCache\210\001\001B" +
+      "\r\n\013_cache_typeB\020\n\016_redis_addressB\021\n\017_red" +
+      "is_passwordB\013\n\t_redis_dbB\025\n\023_redis_cache" +
+      "_prefixB\027\n\025_disable_client_cache\"\251\003\n\rCon" +
+      "figMetrics\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022" +
+      "1\n\022block_profile_rate\030\002 \001(\005H\001R\020blockProf" +
+      "ileRate\210\001\001\022*\n\016listen_address\030\003 \001(\tH\002R\rli" +
+      "stenAddress\210\001\001\0227\n\025enable_client_metrics\030" +
+      "\004 \001(\010H\003R\023enableClientMetrics\210\001\001\022C\n\033enabl" +
+      "e_notification_metrics\030\005 \001(\010H\004R\031enableNo" +
+      "tificationMetrics\210\001\001\022/\n\024client_side_user" +
+      "_ids\030\006 \003(\tR\021clientSideUserIdsB\t\n\007_enable" +
+      "B\025\n\023_block_profile_rateB\021\n\017_listen_addre" +
+      "ssB\030\n\026_enable_client_metricsB\036\n\034_enable_" +
+      "notification_metrics\"\230\004\n\tConfigSSO\022\033\n\006en" +
+      "able\030\001 \001(\010H\000R\006enable\210\001\001\022\033\n\006secret\030\002 \001(\tH" +
+      "\001R\006secret\210\001\001\022\023\n\002id\030\003 \001(\tH\002R\002id\210\001\001\022\031\n\005sco" +
+      "pe\030\004 \001(\tH\003R\005scope\210\001\001\022(\n\rauth_endpoint\030\005 " +
+      "\001(\tH\004R\014authEndpoint\210\001\001\022*\n\016token_endpoint" +
+      "\030\006 \001(\tH\005R\rtokenEndpoint\210\001\001\022/\n\021user_api_e" +
+      "ndpoint\030\007 \001(\tH\006R\017userApiEndpoint\210\001\001\0222\n\022d" +
+      "iscovery_endpoint\030\010 \001(\tH\007R\021discoveryEndp" +
+      "oint\210\001\001\022$\n\013button_text\030\t \001(\tH\010R\nbuttonTe" +
+      "xt\210\001\001\022&\n\014button_color\030\n \001(\tH\tR\013buttonCol" +
+      "or\210\001\001B\t\n\007_enableB\t\n\007_secretB\005\n\003_idB\010\n\006_s" +
+      "copeB\020\n\016_auth_endpointB\021\n\017_token_endpoin" +
+      "tB\024\n\022_user_api_endpointB\025\n\023_discovery_en" +
+      "dpointB\016\n\014_button_textB\017\n\r_button_color\"" +
+      "\325\005\n\tConfigSql\022$\n\013driver_name\030\001 \001(\tH\000R\ndr" +
+      "iverName\210\001\001\022$\n\013data_source\030\002 \001(\tH\001R\ndata" +
+      "Source\210\001\001\022)\n\016max_idle_conns\030\003 \001(\005H\002R\014max" +
+      "IdleConns\210\001\001\022H\n\036conn_max_lifetime_millis" +
+      "econds\030\004 \001(\005H\003R\033connMaxLifetimeMilliseco" +
+      "nds\210\001\001\022I\n\037conn_max_idle_time_millisecond" +
+      "s\030\005 \001(\005H\004R\033connMaxIdleTimeMilliseconds\210\001" +
+      "\001\022)\n\016max_open_conns\030\006 \001(\005H\005R\014maxOpenConn" +
+      "s\210\001\001\022\031\n\005trace\030\007 \001(\010H\006R\005trace\210\001\001\0222\n\023at_re" +
+      "st_encrypt_key\030\010 \001(\tH\007R\020atRestEncryptKey" +
+      "\210\001\001\022(\n\rquery_timeout\030\t \001(\005H\010R\014queryTimeo" +
+      "ut\210\001\001\022;\n\027disable_database_search\030\n \001(\010H\t" +
+      "R\025disableDatabaseSearch\210\001\001B\016\n\014_driver_na" +
+      "meB\016\n\014_data_sourceB\021\n\017_max_idle_connsB!\n" +
+      "\037_conn_max_lifetime_millisecondsB\"\n _con" +
+      "n_max_idle_time_millisecondsB\021\n\017_max_ope" +
+      "n_connsB\010\n\006_traceB\026\n\024_at_rest_encrypt_ke" +
+      "yB\020\n\016_query_timeoutB\032\n\030_disable_database" +
+      "_search\"\212\003\n\016ConfigPassword\022*\n\016minimum_le" +
+      "ngth\030\001 \001(\005H\000R\rminimumLength\210\001\001\022*\n\016maximu" +
+      "m_lenght\030\002 \001(\005H\001R\rmaximumLenght\210\001\001\022!\n\tlo" +
+      "wercase\030\003 \001(\010H\002R\tlowercase\210\001\001\022\033\n\006number\030" +
+      "\004 \001(\010H\003R\006number\210\001\001\022!\n\tuppercase\030\005 \001(\010H\004R" +
+      "\tuppercase\210\001\001\022\033\n\006symbol\030\006 \001(\010H\005R\006symbol\210" +
+      "\001\001\0221\n\022enable_forgot_link\030\007 \001(\010H\006R\020enable" +
+      "ForgotLink\210\001\001B\021\n\017_minimum_lengthB\021\n\017_max" +
+      "imum_lenghtB\014\n\n_lowercaseB\t\n\007_numberB\014\n\n" +
+      "_uppercaseB\t\n\007_symbolB\025\n\023_enable_forgot_" +
+      "link\"\340\017\n\nConfigFile\022;\n\027enable_file_attac" +
+      "hments\030\001 \001(\010H\000R\025enableFileAttachments\210\001\001" +
+      "\0225\n\024enable_mobile_upload\030\002 \001(\010H\001R\022enable" +
+      "MobileUpload\210\001\001\0229\n\026enable_mobile_downloa" +
+      "d\030\003 \001(\010H\002R\024enableMobileDownload\210\001\001\022\'\n\rma" +
+      "x_file_size\030\004 \001(\003H\003R\013maxFileSize\210\001\001\0225\n\024m" +
+      "ax_image_resolution\030\005 \001(\003H\004R\022maxImageRes" +
+      "olution\210\001\001\022F\n\035max_image_decoder_concurre" +
+      "ncy\030\006 \001(\003H\005R\032maxImageDecoderConcurrency\210" +
+      "\001\001\022$\n\013driver_name\030\007 \001(\tH\006R\ndriverName\210\001\001" +
+      "\022!\n\tdirectory\030\010 \001(\tH\007R\tdirectory\210\001\001\0221\n\022e" +
+      "nable_public_link\030\t \001(\010H\010R\020enablePublicL" +
+      "ink\210\001\001\022,\n\017extract_content\030\n \001(\010H\tR\016extra" +
+      "ctContent\210\001\001\0220\n\021archive_recursion\030\013 \001(\010H" +
+      "\nR\020archiveRecursion\210\001\001\022-\n\020public_link_sa" +
+      "lt\030\014 \001(\tH\013R\016publicLinkSalt\210\001\001\022&\n\014initial" +
+      "_font\030\r \001(\tH\014R\013initialFont\210\001\001\0229\n\027amazon_" +
+      "s3_access_key_id\030\016 \001(\tH\rR\023amazonS3Access" +
+      "KeyId\210\001\001\022A\n\033amazon_s3_secret_access_key\030" +
+      "\017 \001(\tH\016R\027amazonS3SecretAccessKey\210\001\001\022-\n\020a" +
+      "mazon_s3_bucket\030\020 \001(\tH\017R\016amazonS3Bucket\210" +
+      "\001\001\0226\n\025amazon_s3_path_prefix\030\021 \001(\tH\020R\022ama" +
+      "zonS3PathPrefix\210\001\001\022-\n\020amazon_s3_region\030\022" +
+      " \001(\tH\021R\016amazonS3Region\210\001\001\0221\n\022amazon_s3_e" +
+      "ndpoint\030\023 \001(\tH\022R\020amazonS3Endpoint\210\001\001\022\'\n\r" +
+      "amazon_s3_ssl\030\024 \001(\010H\023R\013amazonS3Ssl\210\001\001\022.\n" +
+      "\021amazon_s3_sign_v2\030\025 \001(\010H\024R\016amazonS3Sign" +
+      "V2\210\001\001\022\'\n\ramazon_s3_sse\030\026 \001(\010H\025R\013amazonS3" +
+      "Sse\210\001\001\022+\n\017amazon_s3_trace\030\027 \001(\010H\026R\ramazo" +
+      "nS3Trace\210\001\001\022W\n&amazon_s3_request_timeout" +
+      "_milliseconds\030\030 \001(\003H\027R\"amazonS3RequestTi" +
+      "meoutMilliseconds\210\001\001\022J\n amazon_s3_upload" +
+      "_part_size_bytes\030\031 \001(\003H\030R\033amazonS3Upload" +
+      "PartSizeBytes\210\001\001\022:\n\027amazon_s3_storage_cl" +
+      "ass\030\032 \001(\tH\031R\024amazonS3StorageClass\210\001\001B\032\n\030" +
+      "_enable_file_attachmentsB\027\n\025_enable_mobi" +
+      "le_uploadB\031\n\027_enable_mobile_downloadB\020\n\016" +
+      "_max_file_sizeB\027\n\025_max_image_resolutionB" +
+      " \n\036_max_image_decoder_concurrencyB\016\n\014_dr" +
+      "iver_nameB\014\n\n_directoryB\025\n\023_enable_publi" +
+      "c_linkB\022\n\020_extract_contentB\024\n\022_archive_r" +
+      "ecursionB\023\n\021_public_link_saltB\017\n\r_initia" +
+      "l_fontB\032\n\030_amazon_s3_access_key_idB\036\n\034_a" +
+      "mazon_s3_secret_access_keyB\023\n\021_amazon_s3" +
+      "_bucketB\030\n\026_amazon_s3_path_prefixB\023\n\021_am" +
+      "azon_s3_regionB\025\n\023_amazon_s3_endpointB\020\n" +
+      "\016_amazon_s3_sslB\024\n\022_amazon_s3_sign_v2B\020\n" +
+      "\016_amazon_s3_sseB\022\n\020_amazon_s3_traceB)\n\'_" +
+      "amazon_s3_request_timeout_millisecondsB#" +
+      "\n!_amazon_s3_upload_part_size_bytesB\032\n\030_" +
+      "amazon_s3_storage_class\"\375\016\n\013ConfigEmail\022" +
+      "=\n\030send_email_notifications\030\001 \001(\010H\000R\026sen" +
+      "dEmailNotifications\210\001\001\022A\n\032require_email_" +
+      "verification\030\002 \001(\010H\001R\030requireEmailVerifi" +
+      "cation\210\001\001\022*\n\016feedback_email\030\003 \001(\tH\002R\rfee" +
+      "dbackEmail\210\001\001\022-\n\020reply_to_address\030\004 \001(\tH" +
+      "\003R\016replyToAddress\210\001\001\022-\n\020enable_smtp_auth" +
+      "\030\005 \001(\010H\004R\016enableSmtpAuth\210\001\001\022(\n\rsmtp_user" +
+      "name\030\006 \001(\tH\005R\014smtpUsername\210\001\001\022(\n\rsmtp_pa" +
+      "ssword\030\007 \001(\tH\006R\014smtpPassword\210\001\001\022$\n\013smtp_" +
+      "server\030\010 \001(\tH\007R\nsmtpServer\210\001\001\022 \n\tsmtp_po" +
+      "rt\030\t \001(\tH\010R\010smtpPort\210\001\001\0223\n\023smtp_server_t" +
+      "imeout\030\n \001(\005H\tR\021smtpServerTimeout\210\001\001\0224\n\023" +
+      "connection_security\030\013 \001(\tH\nR\022connectionS" +
+      "ecurity\210\001\001\022;\n\027send_push_notifications\030\014 " +
+      "\001(\010H\013R\025sendPushNotifications\210\001\001\022=\n\030push_" +
+      "notification_server\030\r \001(\tH\014R\026pushNotific" +
+      "ationServer\210\001\001\022A\n\032push_notification_cont" +
+      "ents\030\016 \001(\tH\rR\030pushNotificationContents\210\001" +
+      "\001\022=\n\030push_notification_buffer\030\017 \001(\005H\016R\026p" +
+      "ushNotificationBuffer\210\001\001\0227\n\025enable_email" +
+      "_batching\030\020 \001(\010H\017R\023enableEmailBatching\210\001" +
+      "\001\022@\n\032email_batching_buffer_size\030\021 \001(\005H\020R" +
+      "\027emailBatchingBufferSize\210\001\001\022;\n\027email_bat" +
+      "ching_interval\030\022 \001(\005H\021R\025emailBatchingInt" +
+      "erval\210\001\001\022T\n$skip_server_certificate_veri" +
+      "fication\030\023 \001(\010H\022R!skipServerCertificateV" +
+      "erification\210\001\001\022L\n email_notification_con" +
+      "tents_type\030\024 \001(\tH\023R\035emailNotificationCon" +
+      "tentsType\210\001\001\0221\n\022login_button_color\030\025 \001(\t" +
+      "H\024R\020loginButtonColor\210\001\001\022>\n\031login_button_" +
+      "border_color\030\026 \001(\tH\025R\026loginButtonBorderC" +
+      "olor\210\001\001\022:\n\027login_button_text_color\030\027 \001(\t" +
+      "H\026R\024loginButtonTextColor\210\001\001B\033\n\031_send_ema" +
+      "il_notificationsB\035\n\033_require_email_verif" +
+      "icationB\021\n\017_feedback_emailB\023\n\021_reply_to_" +
+      "addressB\023\n\021_enable_smtp_authB\020\n\016_smtp_us" +
+      "ernameB\020\n\016_smtp_passwordB\016\n\014_smtp_server" +
+      "B\014\n\n_smtp_portB\026\n\024_smtp_server_timeoutB\026" +
+      "\n\024_connection_securityB\032\n\030_send_push_not" +
+      "ificationsB\033\n\031_push_notification_serverB" +
+      "\035\n\033_push_notification_contentsB\033\n\031_push_" +
+      "notification_bufferB\030\n\026_enable_email_bat" +
+      "chingB\035\n\033_email_batching_buffer_sizeB\032\n\030" +
+      "_email_batching_intervalB\'\n%_skip_server" +
+      "_certificate_verificationB#\n!_email_noti" +
+      "fication_contents_typeB\025\n\023_login_button_" +
+      "colorB\034\n\032_login_button_border_colorB\032\n\030_" +
+      "login_button_text_color\"\204\003\n\017ConfigRateLi" +
+      "mit\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022\034\n\007per_" +
+      "sec\030\002 \001(\005H\001R\006perSec\210\001\001\022 \n\tmax_burst\030\003 \001(" +
+      "\005H\002R\010maxBurst\210\001\001\022/\n\021memory_store_size\030\004 " +
+      "\001(\005H\003R\017memoryStoreSize\210\001\001\0222\n\023vary_by_rem" +
+      "ote_addr\030\005 \001(\010H\004R\020varyByRemoteAddr\210\001\001\022%\n" +
+      "\014vary_by_user\030\006 \001(\010H\005R\nvaryByUser\210\001\001\022$\n\016" +
+      "vary_by_header\030\007 \001(\tR\014varyByHeaderB\t\n\007_e" +
+      "nableB\n\n\010_per_secB\014\n\n_max_burstB\024\n\022_memo" +
+      "ry_store_sizeB\026\n\024_vary_by_remote_addrB\017\n" +
+      "\r_vary_by_user\"\227\001\n\rConfigPrivacy\0221\n\022show" +
+      "_email_address\030\001 \001(\010H\000R\020showEmailAddress" +
+      "\210\001\001\022)\n\016show_full_name\030\002 \001(\010H\001R\014showFullN" +
+      "ame\210\001\001B\025\n\023_show_email_addressB\021\n\017_show_f" +
+      "ull_name\"\357\003\n\rConfigSupport\0226\n\025terms_of_s" +
+      "ervice_link\030\001 \001(\tH\000R\022termsOfServiceLink\210" +
+      "\001\001\0223\n\023privacy_policy_link\030\002 \001(\tH\001R\021priva" +
+      "cyPolicyLink\210\001\001\022\"\n\nabout_link\030\003 \001(\tH\002R\ta" +
+      "boutLink\210\001\001\022 \n\thelp_link\030\004 \001(\tH\003R\010helpLi" +
+      "nk\210\001\001\0226\n\025report_a_problem_link\030\005 \001(\tH\004R\022" +
+      "reportAProblemLink\210\001\001\0225\n\024forgot_password" +
+      "_link\030\006 \001(\tH\005R\022forgotPasswordLink\210\001\001\022(\n\r" +
+      "support_email\030\007 \001(\tH\006R\014supportEmail\210\001\001B\030" +
+      "\n\026_terms_of_service_linkB\026\n\024_privacy_pol" +
+      "icy_linkB\r\n\013_about_linkB\014\n\n_help_linkB\030\n" +
+      "\026_report_a_problem_linkB\027\n\025_forgot_passw" +
+      "ord_linkB\020\n\016_support_email\"\202\002\n\022ConfigLoc" +
+      "alization\0227\n\025default_server_locale\030\001 \001(\t" +
+      "H\000R\023defaultServerLocale\210\001\001\0227\n\025default_cl" +
+      "ient_locale\030\002 \001(\tH\001R\023defaultClientLocale" +
+      "\210\001\001\0220\n\021available_locales\030\003 \001(\tH\002R\020availa" +
+      "bleLocales\210\001\001B\030\n\026_default_server_localeB" +
+      "\030\n\026_default_client_localeB\024\n\022_available_" +
+      "locales\"\325\020\n\nConfigLdap\022\033\n\006enable\030\001 \001(\010H\000" +
+      "R\006enable\210\001\001\022$\n\013enable_sync\030\002 \001(\010H\001R\nenab" +
+      "leSync\210\001\001\022$\n\013ldap_server\030\003 \001(\tH\002R\nldapSe" +
+      "rver\210\001\001\022 \n\tldap_port\030\004 \001(\005H\003R\010ldapPort\210\001" +
+      "\001\0224\n\023connection_security\030\005 \001(\tH\004R\022connec" +
+      "tionSecurity\210\001\001\022\034\n\007base_dn\030\006 \001(\tH\005R\006base" +
+      "Dn\210\001\001\022(\n\rbind_username\030\007 \001(\tH\006R\014bindUser" +
+      "name\210\001\001\022(\n\rbind_password\030\010 \001(\tH\007R\014bindPa" +
+      "ssword\210\001\001\0229\n\026maximum_login_attempts\030\t \001(" +
+      "\005H\010R\024maximumLoginAttempts\210\001\001\022$\n\013user_fil" +
+      "ter\030\n \001(\tH\tR\nuserFilter\210\001\001\022&\n\014group_filt" +
+      "er\030\013 \001(\tH\nR\013groupFilter\210\001\001\0223\n\023enable_adm" +
+      "in_filter\030\014 \001(\010H\013R\021enableAdminFilter\210\001\001\022" +
+      "&\n\014admin_filter\030\r \001(\tH\014R\013adminFilter\210\001\001\022" +
+      "D\n\034group_display_name_attribute\030\016 \001(\tH\rR" +
+      "\031groupDisplayNameAttribute\210\001\001\0221\n\022group_i" +
+      "d_attribute\030\017 \001(\tH\016R\020groupIdAttribute\210\001\001" +
+      "\0225\n\024first_name_attribute\030\020 \001(\tH\017R\022firstN" +
+      "ameAttribute\210\001\001\0223\n\023last_name_attribute\030\021" +
+      " \001(\tH\020R\021lastNameAttribute\210\001\001\022,\n\017email_at" +
+      "tribute\030\022 \001(\tH\021R\016emailAttribute\210\001\001\0222\n\022us" +
+      "ername_attribute\030\023 \001(\tH\022R\021usernameAttrib" +
+      "ute\210\001\001\0222\n\022nickname_attribute\030\024 \001(\tH\023R\021ni" +
+      "cknameAttribute\210\001\001\022&\n\014id_attribute\030\025 \001(\t" +
+      "H\024R\013idAttribute\210\001\001\0222\n\022position_attribute" +
+      "\030\026 \001(\tH\025R\021positionAttribute\210\001\001\0221\n\022login_" +
+      "id_attribute\030\027 \001(\tH\026R\020loginIdAttribute\210\001" +
+      "\001\0220\n\021picture_attribute\030\030 \001(\tH\027R\020pictureA" +
+      "ttribute\210\001\001\0227\n\025sync_interval_minutes\030\031 \001" +
+      "(\005H\030R\023syncIntervalMinutes\210\001\001\022(\n\rquery_ti" +
+      "meout\030\032 \001(\005H\031R\014queryTimeout\210\001\001\022\'\n\rmax_pa" +
+      "ge_size\030\033 \001(\005H\032R\013maxPageSize\210\001\001\022-\n\020login" +
+      "_field_name\030\034 \001(\tH\033R\016loginFieldName\210\001\001\0221" +
+      "\n\022login_button_color\030\035 \001(\tH\034R\020loginButto" +
+      "nColor\210\001\001\022>\n\031login_button_border_color\030\036" +
+      " \001(\tH\035R\026loginButtonBorderColor\210\001\001\022:\n\027log" +
+      "in_button_text_color\030\037 \001(\tH\036R\024loginButto" +
+      "nTextColor\210\001\001B\t\n\007_enableB\016\n\014_enable_sync" +
+      "B\016\n\014_ldap_serverB\014\n\n_ldap_portB\026\n\024_conne" +
+      "ction_securityB\n\n\010_base_dnB\020\n\016_bind_user" +
+      "nameB\020\n\016_bind_passwordB\031\n\027_maximum_login" +
+      "_attemptsB\016\n\014_user_filterB\017\n\r_group_filt" +
+      "erB\026\n\024_enable_admin_filterB\017\n\r_admin_fil" +
+      "terB\037\n\035_group_display_name_attributeB\025\n\023" +
+      "_group_id_attributeB\027\n\025_first_name_attri" +
+      "buteB\026\n\024_last_name_attributeB\022\n\020_email_a" +
+      "ttributeB\025\n\023_username_attributeB\025\n\023_nick" +
+      "name_attributeB\017\n\r_id_attributeB\025\n\023_posi" +
+      "tion_attributeB\025\n\023_login_id_attributeB\024\n" +
+      "\022_picture_attributeB\030\n\026_sync_interval_mi" +
+      "nutesB\020\n\016_query_timeoutB\020\n\016_max_page_siz" +
+      "eB\023\n\021_login_field_nameB\025\n\023_login_button_" +
+      "colorB\034\n\032_login_button_border_colorB\032\n\030_" +
+      "login_button_text_color\"\255\023\n\nConfigSaml\022\033" +
+      "\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\0226\n\025enable_sy" +
+      "nc_with_ldap\030\002 \001(\010H\001R\022enableSyncWithLdap" +
+      "\210\001\001\022N\n\"enable_sync_with_ldap_include_aut" +
+      "h\030\003 \001(\010H\002R\035enableSyncWithLdapIncludeAuth" +
+      "\210\001\001\022:\n\027ignore_guests_ldap_sync\030\004 \001(\010H\003R\024" +
+      "ignoreGuestsLdapSync\210\001\001\022\033\n\006verify\030\005 \001(\010H" +
+      "\004R\006verify\210\001\001\022\035\n\007encrypt\030\006 \001(\010H\005R\007encrypt" +
+      "\210\001\001\022&\n\014sign_request\030\007 \001(\010H\006R\013signRequest" +
+      "\210\001\001\022\034\n\007idp_url\030\010 \001(\tH\007R\006idpUrl\210\001\001\0221\n\022idp" +
+      "_descriptor_url\030\t \001(\tH\010R\020idpDescriptorUr" +
+      "l\210\001\001\022-\n\020idp_metadata_url\030\n \001(\tH\tR\016idpMet" +
+      "adataUrl\210\001\001\022C\n\033service_provider_identifi" +
+      "er\030\013 \001(\tH\nR\031serviceProviderIdentifier\210\001\001" +
+      "\022H\n\036assertion_consumer_service_url\030\014 \001(\t" +
+      "H\013R\033assertionConsumerServiceUrl\210\001\001\0224\n\023si" +
+      "gnature_algorithm\030\r \001(\tH\014R\022signatureAlgo" +
+      "rithm\210\001\001\0224\n\023canonical_algorithm\030\016 \001(\tH\rR" +
+      "\022canonicalAlgorithm\210\001\001\022:\n\027scoping_idp_pr" +
+      "ovider_id\030\017 \001(\tH\016R\024scopingIdpProviderId\210" +
+      "\001\001\022-\n\020scoping_idp_name\030\020 \001(\tH\017R\016scopingI" +
+      "dpName\210\001\001\0225\n\024idp_certificate_file\030\021 \001(\tH" +
+      "\020R\022idpCertificateFile\210\001\001\022;\n\027public_certi" +
+      "ficate_file\030\022 \001(\tH\021R\025publicCertificateFi" +
+      "le\210\001\001\022-\n\020private_key_file\030\023 \001(\tH\022R\016priva" +
+      "teKeyFile\210\001\001\022&\n\014id_attribute\030\024 \001(\tH\023R\013id" +
+      "Attribute\210\001\001\0229\n\026enable_admin_attribute\030\025" +
+      " \001(\010H\024R\024enableAdminAttribute\210\001\001\022,\n\017admin" +
+      "_attribute\030\026 \001(\tH\025R\016adminAttribute\210\001\001\0225\n" +
+      "\024first_name_attribute\030\027 \001(\tH\026R\022firstName" +
+      "Attribute\210\001\001\0223\n\023last_name_attribute\030\030 \001(" +
+      "\tH\027R\021lastNameAttribute\210\001\001\022,\n\017email_attri" +
+      "bute\030\031 \001(\tH\030R\016emailAttribute\210\001\001\0222\n\022usern" +
+      "ame_attribute\030\032 \001(\tH\031R\021usernameAttribute" +
+      "\210\001\001\0222\n\022nickname_attribute\030\033 \001(\tH\032R\021nickn" +
+      "ameAttribute\210\001\001\022.\n\020locale_attribute\030\034 \001(" +
+      "\tH\033R\017localeAttribute\210\001\001\0222\n\022position_attr" +
+      "ibute\030\035 \001(\tH\034R\021positionAttribute\210\001\001\022/\n\021l",
+      "ogin_button_text\030\036 \001(\tH\035R\017loginButtonTex" +
+      "t\210\001\001\0221\n\022login_button_color\030\037 \001(\tH\036R\020logi" +
+      "nButtonColor\210\001\001\022>\n\031login_button_border_c" +
+      "olor\030  \001(\tH\037R\026loginButtonBorderColor\210\001\001\022" +
+      ":\n\027login_button_text_color\030! \001(\tH R\024logi" +
+      "nButtonTextColor\210\001\001B\t\n\007_enableB\030\n\026_enabl" +
+      "e_sync_with_ldapB%\n#_enable_sync_with_ld" +
+      "ap_include_authB\032\n\030_ignore_guests_ldap_s" +
+      "yncB\t\n\007_verifyB\n\n\010_encryptB\017\n\r_sign_requ" +
+      "estB\n\n\010_idp_urlB\025\n\023_idp_descriptor_urlB\023" +
+      "\n\021_idp_metadata_urlB\036\n\034_service_provider" +
+      "_identifierB!\n\037_assertion_consumer_servi" +
+      "ce_urlB\026\n\024_signature_algorithmB\026\n\024_canon" +
+      "ical_algorithmB\032\n\030_scoping_idp_provider_" +
+      "idB\023\n\021_scoping_idp_nameB\027\n\025_idp_certific" +
+      "ate_fileB\032\n\030_public_certificate_fileB\023\n\021" +
+      "_private_key_fileB\017\n\r_id_attributeB\031\n\027_e" +
+      "nable_admin_attributeB\022\n\020_admin_attribut" +
+      "eB\027\n\025_first_name_attributeB\026\n\024_last_name" +
+      "_attributeB\022\n\020_email_attributeB\025\n\023_usern" +
+      "ame_attributeB\025\n\023_nickname_attributeB\023\n\021" +
+      "_locale_attributeB\025\n\023_position_attribute" +
+      "B\024\n\022_login_button_textB\025\n\023_login_button_" +
+      "colorB\034\n\032_login_button_border_colorB\032\n\030_" +
+      "login_button_text_color\"\301\005\n\017ConfigNative" +
+      "App\0223\n\026app_custom_url_schemes\030\001 \003(\tR\023app" +
+      "CustomUrlSchemes\022/\n\021app_download_link\030\002 " +
+      "\001(\tH\000R\017appDownloadLink\210\001\001\022>\n\031android_app" +
+      "_download_link\030\003 \001(\tH\001R\026androidAppDownlo" +
+      "adLink\210\001\001\0226\n\025ios_app_download_link\030\004 \001(\t" +
+      "H\002R\022iosAppDownloadLink\210\001\001\022;\n\027mobile_exte" +
+      "rnal_browser\030\005 \001(\010H\003R\025mobileExternalBrow" +
+      "ser\210\001\001\022=\n\030mobile_enable_biometrics\030\006 \001(\010" +
+      "H\004R\026mobileEnableBiometrics\210\001\001\022F\n\035mobile_" +
+      "prevent_screen_capture\030\007 \001(\010H\005R\032mobilePr" +
+      "eventScreenCapture\210\001\001\022C\n\033mobile_jailbrea" +
+      "k_protection\030\010 \001(\010H\006R\031mobileJailbreakPro" +
+      "tection\210\001\001B\024\n\022_app_download_linkB\034\n\032_and" +
+      "roid_app_download_linkB\030\n\026_ios_app_downl" +
+      "oad_linkB\032\n\030_mobile_external_browserB\033\n\031" +
+      "_mobile_enable_biometricsB \n\036_mobile_pre" +
+      "vent_screen_captureB\036\n\034_mobile_jailbreak" +
+      "_protection\"\253\005\n\021ConfigMeilisearch\022#\n\nser" +
+      "ver_url\030\001 \001(\tH\000R\nserver_url\210\001\001\022\"\n\nmaster" +
+      "_key\030\002 \001(\tH\001R\tmasterKey\210\001\001\022,\n\017enable_ind" +
+      "exing\030\003 \001(\010H\002R\016enableIndexing\210\001\001\022.\n\020enab" +
+      "le_searching\030\004 \001(\010H\003R\017enableSearching\210\001\001" +
+      "\0224\n\023enable_autocomplete\030\005 \001(\010H\004R\022enableA" +
+      "utocomplete\210\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tba" +
+      "tchSize\210\001\001\022;\n\027request_timeout_seconds\030\007 " +
+      "\001(\005H\006R\025requestTimeoutSeconds\210\001\001\022&\n\014index" +
+      "_prefix\030\010 \001(\tH\007R\013indexPrefix\210\001\001\022-\n\020searc" +
+      "h_cutoff_ms\030\t \001(\005H\010R\016searchCutoffMs\210\001\001\0227" +
+      "\n\025enable_typo_tolerance\030\n \001(\010H\tR\023enableT" +
+      "ypoTolerance\210\001\001B\r\n\013_server_urlB\r\n\013_maste" +
+      "r_keyB\022\n\020_enable_indexingB\023\n\021_enable_sea" +
+      "rchingB\026\n\024_enable_autocompleteB\r\n\013_batch" +
+      "_sizeB\032\n\030_request_timeout_secondsB\017\n\r_in" +
+      "dex_prefixB\023\n\021_search_cutoff_msB\030\n\026_enab" +
+      "le_typo_tolerance\"\272\003\n\013ConfigBleve\022 \n\tind" +
+      "ex_dir\030\001 \001(\tH\000R\010indexDir\210\001\001\022,\n\017enable_in" +
+      "dexing\030\002 \001(\010H\001R\016enableIndexing\210\001\001\022.\n\020ena" +
+      "ble_searching\030\003 \001(\010H\002R\017enableSearching\210\001" +
+      "\001\0224\n\023enable_autocomplete\030\004 \001(\010H\003R\022enable" +
+      "Autocomplete\210\001\001\022M\n!bulk_indexing_time_wi" +
+      "ndow_seconds\030\005 \001(\005H\004R\035bulkIndexingTimeWi" +
+      "ndowSeconds\210\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tba" +
+      "tchSize\210\001\001B\014\n\n_index_dirB\022\n\020_enable_inde" +
+      "xingB\023\n\021_enable_searchingB\026\n\024_enable_aut" +
+      "ocompleteB$\n\"_bulk_indexing_time_window_" +
+      "secondsB\r\n\013_batch_size\"\354\006\n\023ConfigDataRet" +
+      "ention\022;\n\027enable_message_deletion\030\001 \001(\010H" +
+      "\000R\025enableMessageDeletion\210\001\001\0225\n\024enable_fi" +
+      "le_deletion\030\002 \001(\010H\001R\022enableFileDeletion\210" +
+      "\001\001\0229\n\026enable_boards_deletion\030\003 \001(\010H\002R\024en" +
+      "ableBoardsDeletion\210\001\001\022;\n\027message_retenti" +
+      "on_hours\030\004 \001(\005H\003R\025messageRetentionHours\210" +
+      "\001\001\0225\n\024file_retention_hours\030\005 \001(\005H\004R\022file" +
+      "RetentionHours\210\001\001\0227\n\025boards_retention_da" +
+      "ys\030\006 \001(\005H\005R\023boardsRetentionDays\210\001\001\022:\n\027de" +
+      "letion_job_start_time\030\007 \001(\tH\006R\024deletionJ" +
+      "obStartTime\210\001\001\022\"\n\nbatch_size\030\010 \001(\005H\007R\tba" +
+      "tchSize\210\001\001\022N\n!time_between_batches_milli" +
+      "seconds\030\t \001(\005H\010R\036timeBetweenBatchesMilli" +
+      "seconds\210\001\001\022<\n\030retention_ids_batch_size\030\n" +
+      " \001(\005H\tR\025retentionIdsBatchSize\210\001\001B\032\n\030_ena" +
+      "ble_message_deletionB\027\n\025_enable_file_del" +
+      "etionB\031\n\027_enable_boards_deletionB\032\n\030_mes" +
+      "sage_retention_hoursB\027\n\025_file_retention_" +
+      "hoursB\030\n\026_boards_retention_daysB\032\n\030_dele" +
+      "tion_job_start_timeB\r\n\013_batch_sizeB$\n\"_t" +
+      "ime_between_batches_millisecondsB\033\n\031_ret" +
+      "ention_ids_batch_size\"\264\002\n\020ConfigImagePro" +
+      "xy\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022-\n\020image" +
+      "_proxy_type\030\002 \001(\tH\001R\016imageProxyType\210\001\001\0228" +
+      "\n\026remote_image_proxy_url\030\003 \001(\tH\002R\023remote" +
+      "ImageProxyUrl\210\001\001\022@\n\032remote_image_proxy_o" +
+      "ptions\030\004 \001(\tH\003R\027remoteImageProxyOptions\210" +
+      "\001\001B\t\n\007_enableB\023\n\021_image_proxy_typeB\031\n\027_r" +
+      "emote_image_proxy_urlB\035\n\033_remote_image_p" +
+      "roxy_options\"\315\010\n\006Config\022)\n\004main\030\001 \001(\0132\025." +
+      "common.v1.ConfigMainR\004main\0225\n\010services\030\002" +
+      " \001(\0132\031.common.v1.ConfigServicesR\010service" +
+      "s\0225\n\010security\030\003 \001(\0132\031.common.v1.ConfigSe" +
+      "curityR\010security\022,\n\005cache\030\004 \001(\0132\026.common" +
+      ".v1.CacheConfigR\005cache\0222\n\007metrics\030\005 \001(\0132" +
+      "\030.common.v1.ConfigMetricsR\007metrics\022&\n\003ss" +
+      "o\030\006 \001(\0132\024.common.v1.ConfigSSOR\003sso\022&\n\003sq" +
+      "l\030\007 \001(\0132\024.common.v1.ConfigSqlR\003sql\0225\n\010pa" +
+      "ssword\030\010 \001(\0132\031.common.v1.ConfigPasswordR" +
+      "\010password\022)\n\004file\030\t \001(\0132\025.common.v1.Conf" +
+      "igFileR\004file\022,\n\005email\030\n \001(\0132\026.common.v1." +
+      "ConfigEmailR\005email\0229\n\nrate_limit\030\013 \001(\0132\032" +
+      ".common.v1.ConfigRateLimitR\trateLimit\0222\n" +
+      "\007privacy\030\014 \001(\0132\030.common.v1.ConfigPrivacy" +
+      "R\007privacy\0222\n\007support\030\r \001(\0132\030.common.v1.C" +
+      "onfigSupportR\007support\022A\n\014localization\030\016 " +
+      "\001(\0132\035.common.v1.ConfigLocalizationR\014loca" +
+      "lization\022)\n\004ldap\030\017 \001(\0132\025.common.v1.Confi" +
+      "gLdapR\004ldap\022)\n\004saml\030\020 \001(\0132\025.common.v1.Co" +
+      "nfigSamlR\004saml\0229\n\nnative_app\030\021 \001(\0132\032.com" +
+      "mon.v1.ConfigNativeAppR\tnativeApp\022>\n\013mei" +
+      "lisearch\030\022 \001(\0132\034.common.v1.ConfigMeilise" +
+      "archR\013meilisearch\022,\n\005bleve\030\023 \001(\0132\026.commo" +
+      "n.v1.ConfigBleveR\005bleve\022E\n\016data_retentio" +
+      "n\030\024 \001(\0132\036.common.v1.ConfigDataRetentionR" +
+      "\rdataRetention\022<\n\013image_proxy\030\025 \001(\0132\033.co" +
+      "mmon.v1.ConfigImageProxyR\nimageProxy\"\022\n\020" +
+      "ConfigGetRequest\"u\n\021ConfigGetResponse\022\'\n" +
+      "\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+" +
+      "\n\005error\030\002 \001(\0132\023.common.v1.AppErrorH\000R\005er" +
+      "rorB\n\n\010response\"@\n\023ConfigUpdateRequest\022)" +
+      "\n\006config\030\001 \001(\0132\021.common.v1.ConfigR\006confi" +
+      "g\"x\n\024ConfigUpdateResponse\022\'\n\004data\030\001 \001(\0132" +
+      "\021.common.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(" +
+      "\0132\023.common.v1.AppErrorH\000R\005errorB\n\n\010respo" +
+      "nse\"z\n\026ConfigListenerResponse\022\'\n\004data\030\001 " +
+      "\001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005error\030" +
+      "\002 \001(\0132\023.common.v1.AppErrorH\000R\005errorB\n\n\010r" +
+      "esponse\"4\n\025ConfigListenerRequest\022\033\n\tclie" +
+      "nt_id\030\001 \001(\tR\010clientIdB:\n\032org.megacommerc" +
+      "e.common.v1B\013ConfigProtoZ\014common/v1;v1\370\001" +
+      "\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -53815,7 +53994,7 @@ public final class ConfigProto {
     internal_static_common_v1_ConfigMain_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_v1_ConfigMain_descriptor,
-        new java.lang.String[] { "ReadTimeout", "WriteTimeout", "IdleTimeout", "EnableLinkPreviews", "RestrictLinkPreviews", "EnableClientPerformanceDebugging", "EnableGifPicker", "EnableCustomEmoji", "EnableEmojiPicker", "TimeBetweenUserTypingUpdatesMilliseconds", "EnableFileSearch", "EnableUserTypingMessages", "EnableUserStatuses", "EnableEmailInvitations", "EnableSvgs", "AllowPersistentNotifications", "PersistentNotificationIntervalMinutes", "PersistentNotificationMaxCount", "PersistentNotificationMaxRecipients", "FeatureFlagSyncIntervalSeconds", "AllowSyncedDrafts", "ReadTimeout", "WriteTimeout", "IdleTimeout", "EnableLinkPreviews", "RestrictLinkPreviews", "EnableClientPerformanceDebugging", "EnableGifPicker", "EnableCustomEmoji", "EnableEmojiPicker", "TimeBetweenUserTypingUpdatesMilliseconds", "EnableFileSearch", "EnableUserTypingMessages", "EnableUserStatuses", "EnableEmailInvitations", "EnableSvgs", "AllowPersistentNotifications", "PersistentNotificationIntervalMinutes", "PersistentNotificationMaxCount", "PersistentNotificationMaxRecipients", "FeatureFlagSyncIntervalSeconds", "AllowSyncedDrafts", });
+        new java.lang.String[] { "Env", "ReadTimeout", "WriteTimeout", "IdleTimeout", "EnableLinkPreviews", "RestrictLinkPreviews", "EnableClientPerformanceDebugging", "EnableGifPicker", "EnableCustomEmoji", "EnableEmojiPicker", "TimeBetweenUserTypingUpdatesMilliseconds", "EnableFileSearch", "EnableUserTypingMessages", "EnableUserStatuses", "EnableEmailInvitations", "EnableSvgs", "AllowPersistentNotifications", "PersistentNotificationIntervalMinutes", "PersistentNotificationMaxCount", "PersistentNotificationMaxRecipients", "FeatureFlagSyncIntervalSeconds", "AllowSyncedDrafts", "Env", "ReadTimeout", "WriteTimeout", "IdleTimeout", "EnableLinkPreviews", "RestrictLinkPreviews", "EnableClientPerformanceDebugging", "EnableGifPicker", "EnableCustomEmoji", "EnableEmojiPicker", "TimeBetweenUserTypingUpdatesMilliseconds", "EnableFileSearch", "EnableUserTypingMessages", "EnableUserStatuses", "EnableEmailInvitations", "EnableSvgs", "AllowPersistentNotifications", "PersistentNotificationIntervalMinutes", "PersistentNotificationMaxCount", "PersistentNotificationMaxRecipients", "FeatureFlagSyncIntervalSeconds", "AllowSyncedDrafts", });
     internal_static_common_v1_ConfigServices_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_common_v1_ConfigServices_fieldAccessorTable = new

@@ -674,27 +674,28 @@ proto.common.v1.ConfigMain.prototype.toObject = function(opt_includeInstance) {
  */
 proto.common.v1.ConfigMain.toObject = function(includeInstance, msg) {
   var f, obj = {
-    readTimeout: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    writeTimeout: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    idleTimeout: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    enableLinkPreviews: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    restrictLinkPreviews: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    enableClientPerformanceDebugging: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    enableGifPicker: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    enableCustomEmoji: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-    enableEmojiPicker: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
-    timeBetweenUserTypingUpdatesMilliseconds: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    enableFileSearch: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
-    enableUserTypingMessages: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
-    enableUserStatuses: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
-    enableEmailInvitations: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
-    enableSvgs: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
-    allowPersistentNotifications: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
-    persistentNotificationIntervalMinutes: jspb.Message.getFieldWithDefault(msg, 17, 0),
-    persistentNotificationMaxCount: jspb.Message.getFieldWithDefault(msg, 18, 0),
-    persistentNotificationMaxRecipients: jspb.Message.getFieldWithDefault(msg, 19, 0),
-    featureFlagSyncIntervalSeconds: jspb.Message.getFieldWithDefault(msg, 20, 0),
-    allowSyncedDrafts: jspb.Message.getBooleanFieldWithDefault(msg, 21, false)
+    env: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    readTimeout: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    writeTimeout: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    idleTimeout: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    enableLinkPreviews: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
+    restrictLinkPreviews: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    enableClientPerformanceDebugging: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
+    enableGifPicker: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
+    enableCustomEmoji: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
+    enableEmojiPicker: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
+    timeBetweenUserTypingUpdatesMilliseconds: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    enableFileSearch: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
+    enableUserTypingMessages: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
+    enableUserStatuses: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
+    enableEmailInvitations: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
+    enableSvgs: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
+    allowPersistentNotifications: jspb.Message.getBooleanFieldWithDefault(msg, 17, false),
+    persistentNotificationIntervalMinutes: jspb.Message.getFieldWithDefault(msg, 18, 0),
+    persistentNotificationMaxCount: jspb.Message.getFieldWithDefault(msg, 19, 0),
+    persistentNotificationMaxRecipients: jspb.Message.getFieldWithDefault(msg, 20, 0),
+    featureFlagSyncIntervalSeconds: jspb.Message.getFieldWithDefault(msg, 21, 0),
+    allowSyncedDrafts: jspb.Message.getBooleanFieldWithDefault(msg, 22, false)
   };
 
   if (includeInstance) {
@@ -732,86 +733,90 @@ proto.common.v1.ConfigMain.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setReadTimeout(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEnv(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setWriteTimeout(value);
+      msg.setReadTimeout(value);
       break;
     case 3:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setIdleTimeout(value);
+      msg.setWriteTimeout(value);
       break;
     case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setIdleTimeout(value);
+      break;
+    case 5:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnableLinkPreviews(value);
       break;
-    case 5:
+    case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setRestrictLinkPreviews(value);
       break;
-    case 6:
+    case 7:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnableClientPerformanceDebugging(value);
       break;
-    case 7:
+    case 8:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnableGifPicker(value);
       break;
-    case 8:
+    case 9:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnableCustomEmoji(value);
       break;
-    case 9:
+    case 10:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnableEmojiPicker(value);
       break;
-    case 10:
+    case 11:
       var value = /** @type {number} */ (reader.readInt64());
       msg.setTimeBetweenUserTypingUpdatesMilliseconds(value);
       break;
-    case 11:
+    case 12:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnableFileSearch(value);
       break;
-    case 12:
+    case 13:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnableUserTypingMessages(value);
       break;
-    case 13:
+    case 14:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnableUserStatuses(value);
       break;
-    case 14:
+    case 15:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnableEmailInvitations(value);
       break;
-    case 15:
+    case 16:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setEnableSvgs(value);
       break;
-    case 16:
+    case 17:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAllowPersistentNotifications(value);
       break;
-    case 17:
+    case 18:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPersistentNotificationIntervalMinutes(value);
       break;
-    case 18:
+    case 19:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPersistentNotificationMaxCount(value);
       break;
-    case 19:
+    case 20:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setPersistentNotificationMaxRecipients(value);
       break;
-    case 20:
+    case 21:
       var value = /** @type {number} */ (reader.readInt32());
       msg.setFeatureFlagSyncIntervalSeconds(value);
       break;
-    case 21:
+    case 22:
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setAllowSyncedDrafts(value);
       break;
@@ -844,9 +849,9 @@ proto.common.v1.ConfigMain.prototype.serializeBinary = function() {
  */
 proto.common.v1.ConfigMain.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  f = /** @type {string} */ (jspb.Message.getField(message, 1));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       1,
       f
     );
@@ -865,23 +870,23 @@ proto.common.v1.ConfigMain.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 4));
+  f = /** @type {number} */ (jspb.Message.getField(message, 4));
   if (f != null) {
-    writer.writeBool(
+    writer.writeInt32(
       4,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 5));
   if (f != null) {
-    writer.writeString(
+    writer.writeBool(
       5,
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 6));
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
   if (f != null) {
-    writer.writeBool(
+    writer.writeString(
       6,
       f
     );
@@ -907,16 +912,16 @@ proto.common.v1.ConfigMain.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 10));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 10));
   if (f != null) {
-    writer.writeInt64(
+    writer.writeBool(
       10,
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 11));
+  f = /** @type {number} */ (jspb.Message.getField(message, 11));
   if (f != null) {
-    writer.writeBool(
+    writer.writeInt64(
       11,
       f
     );
@@ -956,9 +961,9 @@ proto.common.v1.ConfigMain.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 17));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 17));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeBool(
       17,
       f
     );
@@ -984,10 +989,17 @@ proto.common.v1.ConfigMain.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = /** @type {boolean} */ (jspb.Message.getField(message, 21));
+  f = /** @type {number} */ (jspb.Message.getField(message, 21));
+  if (f != null) {
+    writer.writeInt32(
+      21,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 22));
   if (f != null) {
     writer.writeBool(
-      21,
+      22,
       f
     );
   }
@@ -995,19 +1007,19 @@ proto.common.v1.ConfigMain.serializeBinaryToWriter = function(message, writer) {
 
 
 /**
- * optional int32 read_timeout = 1;
- * @return {number}
+ * optional string env = 1;
+ * @return {string}
  */
-proto.common.v1.ConfigMain.prototype.getReadTimeout = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+proto.common.v1.ConfigMain.prototype.getEnv = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setReadTimeout = function(value) {
+proto.common.v1.ConfigMain.prototype.setEnv = function(value) {
   return jspb.Message.setField(this, 1, value);
 };
 
@@ -1016,7 +1028,7 @@ proto.common.v1.ConfigMain.prototype.setReadTimeout = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearReadTimeout = function() {
+proto.common.v1.ConfigMain.prototype.clearEnv = function() {
   return jspb.Message.setField(this, 1, undefined);
 };
 
@@ -1025,16 +1037,16 @@ proto.common.v1.ConfigMain.prototype.clearReadTimeout = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasReadTimeout = function() {
+proto.common.v1.ConfigMain.prototype.hasEnv = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional int32 write_timeout = 2;
+ * optional int32 read_timeout = 2;
  * @return {number}
  */
-proto.common.v1.ConfigMain.prototype.getWriteTimeout = function() {
+proto.common.v1.ConfigMain.prototype.getReadTimeout = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -1043,7 +1055,7 @@ proto.common.v1.ConfigMain.prototype.getWriteTimeout = function() {
  * @param {number} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setWriteTimeout = function(value) {
+proto.common.v1.ConfigMain.prototype.setReadTimeout = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -1052,7 +1064,7 @@ proto.common.v1.ConfigMain.prototype.setWriteTimeout = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearWriteTimeout = function() {
+proto.common.v1.ConfigMain.prototype.clearReadTimeout = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -1061,16 +1073,16 @@ proto.common.v1.ConfigMain.prototype.clearWriteTimeout = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasWriteTimeout = function() {
+proto.common.v1.ConfigMain.prototype.hasReadTimeout = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional int32 idle_timeout = 3;
+ * optional int32 write_timeout = 3;
  * @return {number}
  */
-proto.common.v1.ConfigMain.prototype.getIdleTimeout = function() {
+proto.common.v1.ConfigMain.prototype.getWriteTimeout = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
@@ -1079,7 +1091,7 @@ proto.common.v1.ConfigMain.prototype.getIdleTimeout = function() {
  * @param {number} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setIdleTimeout = function(value) {
+proto.common.v1.ConfigMain.prototype.setWriteTimeout = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -1088,7 +1100,7 @@ proto.common.v1.ConfigMain.prototype.setIdleTimeout = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearIdleTimeout = function() {
+proto.common.v1.ConfigMain.prototype.clearWriteTimeout = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -1097,25 +1109,25 @@ proto.common.v1.ConfigMain.prototype.clearIdleTimeout = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasIdleTimeout = function() {
+proto.common.v1.ConfigMain.prototype.hasWriteTimeout = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional bool enable_link_previews = 4;
- * @return {boolean}
+ * optional int32 idle_timeout = 4;
+ * @return {number}
  */
-proto.common.v1.ConfigMain.prototype.getEnableLinkPreviews = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+proto.common.v1.ConfigMain.prototype.getIdleTimeout = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {number} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setEnableLinkPreviews = function(value) {
+proto.common.v1.ConfigMain.prototype.setIdleTimeout = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -1124,7 +1136,7 @@ proto.common.v1.ConfigMain.prototype.setEnableLinkPreviews = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearEnableLinkPreviews = function() {
+proto.common.v1.ConfigMain.prototype.clearIdleTimeout = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -1133,25 +1145,25 @@ proto.common.v1.ConfigMain.prototype.clearEnableLinkPreviews = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasEnableLinkPreviews = function() {
+proto.common.v1.ConfigMain.prototype.hasIdleTimeout = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string restrict_link_previews = 5;
- * @return {string}
+ * optional bool enable_link_previews = 5;
+ * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.getRestrictLinkPreviews = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.common.v1.ConfigMain.prototype.getEnableLinkPreviews = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 5, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setRestrictLinkPreviews = function(value) {
+proto.common.v1.ConfigMain.prototype.setEnableLinkPreviews = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -1160,7 +1172,7 @@ proto.common.v1.ConfigMain.prototype.setRestrictLinkPreviews = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearRestrictLinkPreviews = function() {
+proto.common.v1.ConfigMain.prototype.clearEnableLinkPreviews = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -1169,25 +1181,25 @@ proto.common.v1.ConfigMain.prototype.clearRestrictLinkPreviews = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasRestrictLinkPreviews = function() {
+proto.common.v1.ConfigMain.prototype.hasEnableLinkPreviews = function() {
   return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional bool enable_client_performance_debugging = 6;
- * @return {boolean}
+ * optional string restrict_link_previews = 6;
+ * @return {string}
  */
-proto.common.v1.ConfigMain.prototype.getEnableClientPerformanceDebugging = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+proto.common.v1.ConfigMain.prototype.getRestrictLinkPreviews = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {string} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setEnableClientPerformanceDebugging = function(value) {
+proto.common.v1.ConfigMain.prototype.setRestrictLinkPreviews = function(value) {
   return jspb.Message.setField(this, 6, value);
 };
 
@@ -1196,7 +1208,7 @@ proto.common.v1.ConfigMain.prototype.setEnableClientPerformanceDebugging = funct
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearEnableClientPerformanceDebugging = function() {
+proto.common.v1.ConfigMain.prototype.clearRestrictLinkPreviews = function() {
   return jspb.Message.setField(this, 6, undefined);
 };
 
@@ -1205,16 +1217,16 @@ proto.common.v1.ConfigMain.prototype.clearEnableClientPerformanceDebugging = fun
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasEnableClientPerformanceDebugging = function() {
+proto.common.v1.ConfigMain.prototype.hasRestrictLinkPreviews = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional bool enable_gif_picker = 7;
+ * optional bool enable_client_performance_debugging = 7;
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.getEnableGifPicker = function() {
+proto.common.v1.ConfigMain.prototype.getEnableClientPerformanceDebugging = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 7, false));
 };
 
@@ -1223,7 +1235,7 @@ proto.common.v1.ConfigMain.prototype.getEnableGifPicker = function() {
  * @param {boolean} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setEnableGifPicker = function(value) {
+proto.common.v1.ConfigMain.prototype.setEnableClientPerformanceDebugging = function(value) {
   return jspb.Message.setField(this, 7, value);
 };
 
@@ -1232,7 +1244,7 @@ proto.common.v1.ConfigMain.prototype.setEnableGifPicker = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearEnableGifPicker = function() {
+proto.common.v1.ConfigMain.prototype.clearEnableClientPerformanceDebugging = function() {
   return jspb.Message.setField(this, 7, undefined);
 };
 
@@ -1241,16 +1253,16 @@ proto.common.v1.ConfigMain.prototype.clearEnableGifPicker = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasEnableGifPicker = function() {
+proto.common.v1.ConfigMain.prototype.hasEnableClientPerformanceDebugging = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional bool enable_custom_emoji = 8;
+ * optional bool enable_gif_picker = 8;
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.getEnableCustomEmoji = function() {
+proto.common.v1.ConfigMain.prototype.getEnableGifPicker = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 8, false));
 };
 
@@ -1259,7 +1271,7 @@ proto.common.v1.ConfigMain.prototype.getEnableCustomEmoji = function() {
  * @param {boolean} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setEnableCustomEmoji = function(value) {
+proto.common.v1.ConfigMain.prototype.setEnableGifPicker = function(value) {
   return jspb.Message.setField(this, 8, value);
 };
 
@@ -1268,7 +1280,7 @@ proto.common.v1.ConfigMain.prototype.setEnableCustomEmoji = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearEnableCustomEmoji = function() {
+proto.common.v1.ConfigMain.prototype.clearEnableGifPicker = function() {
   return jspb.Message.setField(this, 8, undefined);
 };
 
@@ -1277,16 +1289,16 @@ proto.common.v1.ConfigMain.prototype.clearEnableCustomEmoji = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasEnableCustomEmoji = function() {
+proto.common.v1.ConfigMain.prototype.hasEnableGifPicker = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional bool enable_emoji_picker = 9;
+ * optional bool enable_custom_emoji = 9;
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.getEnableEmojiPicker = function() {
+proto.common.v1.ConfigMain.prototype.getEnableCustomEmoji = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 9, false));
 };
 
@@ -1295,7 +1307,7 @@ proto.common.v1.ConfigMain.prototype.getEnableEmojiPicker = function() {
  * @param {boolean} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setEnableEmojiPicker = function(value) {
+proto.common.v1.ConfigMain.prototype.setEnableCustomEmoji = function(value) {
   return jspb.Message.setField(this, 9, value);
 };
 
@@ -1304,7 +1316,7 @@ proto.common.v1.ConfigMain.prototype.setEnableEmojiPicker = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearEnableEmojiPicker = function() {
+proto.common.v1.ConfigMain.prototype.clearEnableCustomEmoji = function() {
   return jspb.Message.setField(this, 9, undefined);
 };
 
@@ -1313,25 +1325,25 @@ proto.common.v1.ConfigMain.prototype.clearEnableEmojiPicker = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasEnableEmojiPicker = function() {
+proto.common.v1.ConfigMain.prototype.hasEnableCustomEmoji = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional int64 time_between_user_typing_updates_milliseconds = 10;
- * @return {number}
+ * optional bool enable_emoji_picker = 10;
+ * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.getTimeBetweenUserTypingUpdatesMilliseconds = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+proto.common.v1.ConfigMain.prototype.getEnableEmojiPicker = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 10, false));
 };
 
 
 /**
- * @param {number} value
+ * @param {boolean} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setTimeBetweenUserTypingUpdatesMilliseconds = function(value) {
+proto.common.v1.ConfigMain.prototype.setEnableEmojiPicker = function(value) {
   return jspb.Message.setField(this, 10, value);
 };
 
@@ -1340,7 +1352,7 @@ proto.common.v1.ConfigMain.prototype.setTimeBetweenUserTypingUpdatesMilliseconds
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearTimeBetweenUserTypingUpdatesMilliseconds = function() {
+proto.common.v1.ConfigMain.prototype.clearEnableEmojiPicker = function() {
   return jspb.Message.setField(this, 10, undefined);
 };
 
@@ -1349,25 +1361,25 @@ proto.common.v1.ConfigMain.prototype.clearTimeBetweenUserTypingUpdatesMillisecon
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasTimeBetweenUserTypingUpdatesMilliseconds = function() {
+proto.common.v1.ConfigMain.prototype.hasEnableEmojiPicker = function() {
   return jspb.Message.getField(this, 10) != null;
 };
 
 
 /**
- * optional bool enable_file_search = 11;
- * @return {boolean}
+ * optional int64 time_between_user_typing_updates_milliseconds = 11;
+ * @return {number}
  */
-proto.common.v1.ConfigMain.prototype.getEnableFileSearch = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 11, false));
+proto.common.v1.ConfigMain.prototype.getTimeBetweenUserTypingUpdatesMilliseconds = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {number} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setEnableFileSearch = function(value) {
+proto.common.v1.ConfigMain.prototype.setTimeBetweenUserTypingUpdatesMilliseconds = function(value) {
   return jspb.Message.setField(this, 11, value);
 };
 
@@ -1376,7 +1388,7 @@ proto.common.v1.ConfigMain.prototype.setEnableFileSearch = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearEnableFileSearch = function() {
+proto.common.v1.ConfigMain.prototype.clearTimeBetweenUserTypingUpdatesMilliseconds = function() {
   return jspb.Message.setField(this, 11, undefined);
 };
 
@@ -1385,16 +1397,16 @@ proto.common.v1.ConfigMain.prototype.clearEnableFileSearch = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasEnableFileSearch = function() {
+proto.common.v1.ConfigMain.prototype.hasTimeBetweenUserTypingUpdatesMilliseconds = function() {
   return jspb.Message.getField(this, 11) != null;
 };
 
 
 /**
- * optional bool enable_user_typing_messages = 12;
+ * optional bool enable_file_search = 12;
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.getEnableUserTypingMessages = function() {
+proto.common.v1.ConfigMain.prototype.getEnableFileSearch = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 12, false));
 };
 
@@ -1403,7 +1415,7 @@ proto.common.v1.ConfigMain.prototype.getEnableUserTypingMessages = function() {
  * @param {boolean} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setEnableUserTypingMessages = function(value) {
+proto.common.v1.ConfigMain.prototype.setEnableFileSearch = function(value) {
   return jspb.Message.setField(this, 12, value);
 };
 
@@ -1412,7 +1424,7 @@ proto.common.v1.ConfigMain.prototype.setEnableUserTypingMessages = function(valu
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearEnableUserTypingMessages = function() {
+proto.common.v1.ConfigMain.prototype.clearEnableFileSearch = function() {
   return jspb.Message.setField(this, 12, undefined);
 };
 
@@ -1421,16 +1433,16 @@ proto.common.v1.ConfigMain.prototype.clearEnableUserTypingMessages = function() 
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasEnableUserTypingMessages = function() {
+proto.common.v1.ConfigMain.prototype.hasEnableFileSearch = function() {
   return jspb.Message.getField(this, 12) != null;
 };
 
 
 /**
- * optional bool enable_user_statuses = 13;
+ * optional bool enable_user_typing_messages = 13;
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.getEnableUserStatuses = function() {
+proto.common.v1.ConfigMain.prototype.getEnableUserTypingMessages = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 13, false));
 };
 
@@ -1439,7 +1451,7 @@ proto.common.v1.ConfigMain.prototype.getEnableUserStatuses = function() {
  * @param {boolean} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setEnableUserStatuses = function(value) {
+proto.common.v1.ConfigMain.prototype.setEnableUserTypingMessages = function(value) {
   return jspb.Message.setField(this, 13, value);
 };
 
@@ -1448,7 +1460,7 @@ proto.common.v1.ConfigMain.prototype.setEnableUserStatuses = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearEnableUserStatuses = function() {
+proto.common.v1.ConfigMain.prototype.clearEnableUserTypingMessages = function() {
   return jspb.Message.setField(this, 13, undefined);
 };
 
@@ -1457,16 +1469,16 @@ proto.common.v1.ConfigMain.prototype.clearEnableUserStatuses = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasEnableUserStatuses = function() {
+proto.common.v1.ConfigMain.prototype.hasEnableUserTypingMessages = function() {
   return jspb.Message.getField(this, 13) != null;
 };
 
 
 /**
- * optional bool enable_email_invitations = 14;
+ * optional bool enable_user_statuses = 14;
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.getEnableEmailInvitations = function() {
+proto.common.v1.ConfigMain.prototype.getEnableUserStatuses = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 14, false));
 };
 
@@ -1475,7 +1487,7 @@ proto.common.v1.ConfigMain.prototype.getEnableEmailInvitations = function() {
  * @param {boolean} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setEnableEmailInvitations = function(value) {
+proto.common.v1.ConfigMain.prototype.setEnableUserStatuses = function(value) {
   return jspb.Message.setField(this, 14, value);
 };
 
@@ -1484,7 +1496,7 @@ proto.common.v1.ConfigMain.prototype.setEnableEmailInvitations = function(value)
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearEnableEmailInvitations = function() {
+proto.common.v1.ConfigMain.prototype.clearEnableUserStatuses = function() {
   return jspb.Message.setField(this, 14, undefined);
 };
 
@@ -1493,16 +1505,16 @@ proto.common.v1.ConfigMain.prototype.clearEnableEmailInvitations = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasEnableEmailInvitations = function() {
+proto.common.v1.ConfigMain.prototype.hasEnableUserStatuses = function() {
   return jspb.Message.getField(this, 14) != null;
 };
 
 
 /**
- * optional bool enable_svgs = 15;
+ * optional bool enable_email_invitations = 15;
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.getEnableSvgs = function() {
+proto.common.v1.ConfigMain.prototype.getEnableEmailInvitations = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 15, false));
 };
 
@@ -1511,7 +1523,7 @@ proto.common.v1.ConfigMain.prototype.getEnableSvgs = function() {
  * @param {boolean} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setEnableSvgs = function(value) {
+proto.common.v1.ConfigMain.prototype.setEnableEmailInvitations = function(value) {
   return jspb.Message.setField(this, 15, value);
 };
 
@@ -1520,7 +1532,7 @@ proto.common.v1.ConfigMain.prototype.setEnableSvgs = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearEnableSvgs = function() {
+proto.common.v1.ConfigMain.prototype.clearEnableEmailInvitations = function() {
   return jspb.Message.setField(this, 15, undefined);
 };
 
@@ -1529,16 +1541,16 @@ proto.common.v1.ConfigMain.prototype.clearEnableSvgs = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasEnableSvgs = function() {
+proto.common.v1.ConfigMain.prototype.hasEnableEmailInvitations = function() {
   return jspb.Message.getField(this, 15) != null;
 };
 
 
 /**
- * optional bool allow_persistent_notifications = 16;
+ * optional bool enable_svgs = 16;
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.getAllowPersistentNotifications = function() {
+proto.common.v1.ConfigMain.prototype.getEnableSvgs = function() {
   return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 16, false));
 };
 
@@ -1547,7 +1559,7 @@ proto.common.v1.ConfigMain.prototype.getAllowPersistentNotifications = function(
  * @param {boolean} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setAllowPersistentNotifications = function(value) {
+proto.common.v1.ConfigMain.prototype.setEnableSvgs = function(value) {
   return jspb.Message.setField(this, 16, value);
 };
 
@@ -1556,7 +1568,7 @@ proto.common.v1.ConfigMain.prototype.setAllowPersistentNotifications = function(
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearAllowPersistentNotifications = function() {
+proto.common.v1.ConfigMain.prototype.clearEnableSvgs = function() {
   return jspb.Message.setField(this, 16, undefined);
 };
 
@@ -1565,25 +1577,25 @@ proto.common.v1.ConfigMain.prototype.clearAllowPersistentNotifications = functio
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasAllowPersistentNotifications = function() {
+proto.common.v1.ConfigMain.prototype.hasEnableSvgs = function() {
   return jspb.Message.getField(this, 16) != null;
 };
 
 
 /**
- * optional int32 persistent_notification_interval_minutes = 17;
- * @return {number}
+ * optional bool allow_persistent_notifications = 17;
+ * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.getPersistentNotificationIntervalMinutes = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 17, 0));
+proto.common.v1.ConfigMain.prototype.getAllowPersistentNotifications = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 17, false));
 };
 
 
 /**
- * @param {number} value
+ * @param {boolean} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setPersistentNotificationIntervalMinutes = function(value) {
+proto.common.v1.ConfigMain.prototype.setAllowPersistentNotifications = function(value) {
   return jspb.Message.setField(this, 17, value);
 };
 
@@ -1592,7 +1604,7 @@ proto.common.v1.ConfigMain.prototype.setPersistentNotificationIntervalMinutes = 
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearPersistentNotificationIntervalMinutes = function() {
+proto.common.v1.ConfigMain.prototype.clearAllowPersistentNotifications = function() {
   return jspb.Message.setField(this, 17, undefined);
 };
 
@@ -1601,16 +1613,16 @@ proto.common.v1.ConfigMain.prototype.clearPersistentNotificationIntervalMinutes 
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasPersistentNotificationIntervalMinutes = function() {
+proto.common.v1.ConfigMain.prototype.hasAllowPersistentNotifications = function() {
   return jspb.Message.getField(this, 17) != null;
 };
 
 
 /**
- * optional int32 persistent_notification_max_count = 18;
+ * optional int32 persistent_notification_interval_minutes = 18;
  * @return {number}
  */
-proto.common.v1.ConfigMain.prototype.getPersistentNotificationMaxCount = function() {
+proto.common.v1.ConfigMain.prototype.getPersistentNotificationIntervalMinutes = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 18, 0));
 };
 
@@ -1619,7 +1631,7 @@ proto.common.v1.ConfigMain.prototype.getPersistentNotificationMaxCount = functio
  * @param {number} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setPersistentNotificationMaxCount = function(value) {
+proto.common.v1.ConfigMain.prototype.setPersistentNotificationIntervalMinutes = function(value) {
   return jspb.Message.setField(this, 18, value);
 };
 
@@ -1628,7 +1640,7 @@ proto.common.v1.ConfigMain.prototype.setPersistentNotificationMaxCount = functio
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearPersistentNotificationMaxCount = function() {
+proto.common.v1.ConfigMain.prototype.clearPersistentNotificationIntervalMinutes = function() {
   return jspb.Message.setField(this, 18, undefined);
 };
 
@@ -1637,16 +1649,16 @@ proto.common.v1.ConfigMain.prototype.clearPersistentNotificationMaxCount = funct
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasPersistentNotificationMaxCount = function() {
+proto.common.v1.ConfigMain.prototype.hasPersistentNotificationIntervalMinutes = function() {
   return jspb.Message.getField(this, 18) != null;
 };
 
 
 /**
- * optional int32 persistent_notification_max_recipients = 19;
+ * optional int32 persistent_notification_max_count = 19;
  * @return {number}
  */
-proto.common.v1.ConfigMain.prototype.getPersistentNotificationMaxRecipients = function() {
+proto.common.v1.ConfigMain.prototype.getPersistentNotificationMaxCount = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 19, 0));
 };
 
@@ -1655,7 +1667,7 @@ proto.common.v1.ConfigMain.prototype.getPersistentNotificationMaxRecipients = fu
  * @param {number} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setPersistentNotificationMaxRecipients = function(value) {
+proto.common.v1.ConfigMain.prototype.setPersistentNotificationMaxCount = function(value) {
   return jspb.Message.setField(this, 19, value);
 };
 
@@ -1664,7 +1676,7 @@ proto.common.v1.ConfigMain.prototype.setPersistentNotificationMaxRecipients = fu
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearPersistentNotificationMaxRecipients = function() {
+proto.common.v1.ConfigMain.prototype.clearPersistentNotificationMaxCount = function() {
   return jspb.Message.setField(this, 19, undefined);
 };
 
@@ -1673,16 +1685,16 @@ proto.common.v1.ConfigMain.prototype.clearPersistentNotificationMaxRecipients = 
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasPersistentNotificationMaxRecipients = function() {
+proto.common.v1.ConfigMain.prototype.hasPersistentNotificationMaxCount = function() {
   return jspb.Message.getField(this, 19) != null;
 };
 
 
 /**
- * optional int32 feature_flag_sync_interval_seconds = 20;
+ * optional int32 persistent_notification_max_recipients = 20;
  * @return {number}
  */
-proto.common.v1.ConfigMain.prototype.getFeatureFlagSyncIntervalSeconds = function() {
+proto.common.v1.ConfigMain.prototype.getPersistentNotificationMaxRecipients = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 20, 0));
 };
 
@@ -1691,7 +1703,7 @@ proto.common.v1.ConfigMain.prototype.getFeatureFlagSyncIntervalSeconds = functio
  * @param {number} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setFeatureFlagSyncIntervalSeconds = function(value) {
+proto.common.v1.ConfigMain.prototype.setPersistentNotificationMaxRecipients = function(value) {
   return jspb.Message.setField(this, 20, value);
 };
 
@@ -1700,7 +1712,7 @@ proto.common.v1.ConfigMain.prototype.setFeatureFlagSyncIntervalSeconds = functio
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearFeatureFlagSyncIntervalSeconds = function() {
+proto.common.v1.ConfigMain.prototype.clearPersistentNotificationMaxRecipients = function() {
   return jspb.Message.setField(this, 20, undefined);
 };
 
@@ -1709,25 +1721,25 @@ proto.common.v1.ConfigMain.prototype.clearFeatureFlagSyncIntervalSeconds = funct
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasFeatureFlagSyncIntervalSeconds = function() {
+proto.common.v1.ConfigMain.prototype.hasPersistentNotificationMaxRecipients = function() {
   return jspb.Message.getField(this, 20) != null;
 };
 
 
 /**
- * optional bool allow_synced_drafts = 21;
- * @return {boolean}
+ * optional int32 feature_flag_sync_interval_seconds = 21;
+ * @return {number}
  */
-proto.common.v1.ConfigMain.prototype.getAllowSyncedDrafts = function() {
-  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 21, false));
+proto.common.v1.ConfigMain.prototype.getFeatureFlagSyncIntervalSeconds = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 21, 0));
 };
 
 
 /**
- * @param {boolean} value
+ * @param {number} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setAllowSyncedDrafts = function(value) {
+proto.common.v1.ConfigMain.prototype.setFeatureFlagSyncIntervalSeconds = function(value) {
   return jspb.Message.setField(this, 21, value);
 };
 
@@ -1736,7 +1748,7 @@ proto.common.v1.ConfigMain.prototype.setAllowSyncedDrafts = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearAllowSyncedDrafts = function() {
+proto.common.v1.ConfigMain.prototype.clearFeatureFlagSyncIntervalSeconds = function() {
   return jspb.Message.setField(this, 21, undefined);
 };
 
@@ -1745,8 +1757,44 @@ proto.common.v1.ConfigMain.prototype.clearAllowSyncedDrafts = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasAllowSyncedDrafts = function() {
+proto.common.v1.ConfigMain.prototype.hasFeatureFlagSyncIntervalSeconds = function() {
   return jspb.Message.getField(this, 21) != null;
+};
+
+
+/**
+ * optional bool allow_synced_drafts = 22;
+ * @return {boolean}
+ */
+proto.common.v1.ConfigMain.prototype.getAllowSyncedDrafts = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 22, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.common.v1.ConfigMain} returns this
+ */
+proto.common.v1.ConfigMain.prototype.setAllowSyncedDrafts = function(value) {
+  return jspb.Message.setField(this, 22, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.common.v1.ConfigMain} returns this
+ */
+proto.common.v1.ConfigMain.prototype.clearAllowSyncedDrafts = function() {
+  return jspb.Message.setField(this, 22, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.common.v1.ConfigMain.prototype.hasAllowSyncedDrafts = function() {
+  return jspb.Message.getField(this, 22) != null;
 };
 
 

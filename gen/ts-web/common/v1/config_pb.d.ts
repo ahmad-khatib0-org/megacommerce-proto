@@ -4,6 +4,11 @@ import * as common_v1_error_pb from '../../common/v1/error_pb'; // proto import:
 
 
 export class ConfigMain extends jspb.Message {
+  getEnv(): string;
+  setEnv(value: string): ConfigMain;
+  hasEnv(): boolean;
+  clearEnv(): ConfigMain;
+
   getReadTimeout(): number;
   setReadTimeout(value: number): ConfigMain;
   hasReadTimeout(): boolean;
@@ -119,6 +124,7 @@ export class ConfigMain extends jspb.Message {
 
 export namespace ConfigMain {
   export type AsObject = {
+    env?: string,
     readTimeout?: number,
     writeTimeout?: number,
     idleTimeout?: number,
@@ -142,109 +148,114 @@ export namespace ConfigMain {
     allowSyncedDrafts?: boolean,
   }
 
+  export enum EnvCase { 
+    _ENV_NOT_SET = 0,
+    ENV = 1,
+  }
+
   export enum ReadTimeoutCase { 
     _READ_TIMEOUT_NOT_SET = 0,
-    READ_TIMEOUT = 1,
+    READ_TIMEOUT = 2,
   }
 
   export enum WriteTimeoutCase { 
     _WRITE_TIMEOUT_NOT_SET = 0,
-    WRITE_TIMEOUT = 2,
+    WRITE_TIMEOUT = 3,
   }
 
   export enum IdleTimeoutCase { 
     _IDLE_TIMEOUT_NOT_SET = 0,
-    IDLE_TIMEOUT = 3,
+    IDLE_TIMEOUT = 4,
   }
 
   export enum EnableLinkPreviewsCase { 
     _ENABLE_LINK_PREVIEWS_NOT_SET = 0,
-    ENABLE_LINK_PREVIEWS = 4,
+    ENABLE_LINK_PREVIEWS = 5,
   }
 
   export enum RestrictLinkPreviewsCase { 
     _RESTRICT_LINK_PREVIEWS_NOT_SET = 0,
-    RESTRICT_LINK_PREVIEWS = 5,
+    RESTRICT_LINK_PREVIEWS = 6,
   }
 
   export enum EnableClientPerformanceDebuggingCase { 
     _ENABLE_CLIENT_PERFORMANCE_DEBUGGING_NOT_SET = 0,
-    ENABLE_CLIENT_PERFORMANCE_DEBUGGING = 6,
+    ENABLE_CLIENT_PERFORMANCE_DEBUGGING = 7,
   }
 
   export enum EnableGifPickerCase { 
     _ENABLE_GIF_PICKER_NOT_SET = 0,
-    ENABLE_GIF_PICKER = 7,
+    ENABLE_GIF_PICKER = 8,
   }
 
   export enum EnableCustomEmojiCase { 
     _ENABLE_CUSTOM_EMOJI_NOT_SET = 0,
-    ENABLE_CUSTOM_EMOJI = 8,
+    ENABLE_CUSTOM_EMOJI = 9,
   }
 
   export enum EnableEmojiPickerCase { 
     _ENABLE_EMOJI_PICKER_NOT_SET = 0,
-    ENABLE_EMOJI_PICKER = 9,
+    ENABLE_EMOJI_PICKER = 10,
   }
 
   export enum TimeBetweenUserTypingUpdatesMillisecondsCase { 
     _TIME_BETWEEN_USER_TYPING_UPDATES_MILLISECONDS_NOT_SET = 0,
-    TIME_BETWEEN_USER_TYPING_UPDATES_MILLISECONDS = 10,
+    TIME_BETWEEN_USER_TYPING_UPDATES_MILLISECONDS = 11,
   }
 
   export enum EnableFileSearchCase { 
     _ENABLE_FILE_SEARCH_NOT_SET = 0,
-    ENABLE_FILE_SEARCH = 11,
+    ENABLE_FILE_SEARCH = 12,
   }
 
   export enum EnableUserTypingMessagesCase { 
     _ENABLE_USER_TYPING_MESSAGES_NOT_SET = 0,
-    ENABLE_USER_TYPING_MESSAGES = 12,
+    ENABLE_USER_TYPING_MESSAGES = 13,
   }
 
   export enum EnableUserStatusesCase { 
     _ENABLE_USER_STATUSES_NOT_SET = 0,
-    ENABLE_USER_STATUSES = 13,
+    ENABLE_USER_STATUSES = 14,
   }
 
   export enum EnableEmailInvitationsCase { 
     _ENABLE_EMAIL_INVITATIONS_NOT_SET = 0,
-    ENABLE_EMAIL_INVITATIONS = 14,
+    ENABLE_EMAIL_INVITATIONS = 15,
   }
 
   export enum EnableSvgsCase { 
     _ENABLE_SVGS_NOT_SET = 0,
-    ENABLE_SVGS = 15,
+    ENABLE_SVGS = 16,
   }
 
   export enum AllowPersistentNotificationsCase { 
     _ALLOW_PERSISTENT_NOTIFICATIONS_NOT_SET = 0,
-    ALLOW_PERSISTENT_NOTIFICATIONS = 16,
+    ALLOW_PERSISTENT_NOTIFICATIONS = 17,
   }
 
   export enum PersistentNotificationIntervalMinutesCase { 
     _PERSISTENT_NOTIFICATION_INTERVAL_MINUTES_NOT_SET = 0,
-    PERSISTENT_NOTIFICATION_INTERVAL_MINUTES = 17,
+    PERSISTENT_NOTIFICATION_INTERVAL_MINUTES = 18,
   }
 
   export enum PersistentNotificationMaxCountCase { 
     _PERSISTENT_NOTIFICATION_MAX_COUNT_NOT_SET = 0,
-    PERSISTENT_NOTIFICATION_MAX_COUNT = 18,
+    PERSISTENT_NOTIFICATION_MAX_COUNT = 19,
   }
 
   export enum PersistentNotificationMaxRecipientsCase { 
     _PERSISTENT_NOTIFICATION_MAX_RECIPIENTS_NOT_SET = 0,
-    PERSISTENT_NOTIFICATION_MAX_RECIPIENTS = 19,
+    PERSISTENT_NOTIFICATION_MAX_RECIPIENTS = 20,
   }
 
   export enum FeatureFlagSyncIntervalSecondsCase { 
     _FEATURE_FLAG_SYNC_INTERVAL_SECONDS_NOT_SET = 0,
-    FEATURE_FLAG_SYNC_INTERVAL_SECONDS = 20,
+    FEATURE_FLAG_SYNC_INTERVAL_SECONDS = 21,
   }
 
   export enum AllowSyncedDraftsCase { 
     _ALLOW_SYNCED_DRAFTS_NOT_SET = 0,
-    ALLOW_SYNCED_DRAFTS = 21,
+    ALLOW_SYNCED_DRAFTS = 22,
   }
 }
 
