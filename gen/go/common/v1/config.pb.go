@@ -235,13 +235,11 @@ func (x *ConfigMain) GetAllowSyncedDrafts() bool {
 
 type ConfigServices struct {
 	state                      protoimpl.MessageState `protogen:"open.v1"`
-	CommonServiceGrpcHost      *string                `protobuf:"bytes,1,opt,name=common_service_grpc_host,json=commonServiceGrpcHost,proto3,oneof" json:"common_service_grpc_host,omitempty"`
-	CommonServiceGrpcPort      *int32                 `protobuf:"varint,2,opt,name=common_service_grpc_port,json=commonServiceGrpcPort,proto3,oneof" json:"common_service_grpc_port,omitempty"`
-	UserServiceGrpcHost        *string                `protobuf:"bytes,3,opt,name=user_service_grpc_host,json=userServiceGrpcHost,proto3,oneof" json:"user_service_grpc_host,omitempty"`
-	UserServiceGrpcPort        *int32                 `protobuf:"varint,4,opt,name=user_service_grpc_port,json=userServiceGrpcPort,proto3,oneof" json:"user_service_grpc_port,omitempty"`
-	JaegerCollectorEndpoint    *string                `protobuf:"bytes,5,opt,name=jaeger_collector_endpoint,json=jaegerCollectorEndpoint,proto3,oneof" json:"jaeger_collector_endpoint,omitempty"`
-	CommonServicePrometheusUrl *string                `protobuf:"bytes,6,opt,name=common_service_prometheus_url,json=commonServicePrometheusUrl,proto3,oneof" json:"common_service_prometheus_url,omitempty"`
-	UserServicePrometheusUrl   *string                `protobuf:"bytes,7,opt,name=user_service_prometheus_url,json=userServicePrometheusUrl,proto3,oneof" json:"user_service_prometheus_url,omitempty"`
+	CommonServiceGrpcUrl       *string                `protobuf:"bytes,1,opt,name=common_service_grpc_url,json=commonServiceGrpcUrl,proto3,oneof" json:"common_service_grpc_url,omitempty"`
+	UserServiceGrpcUrl         *string                `protobuf:"bytes,2,opt,name=user_service_grpc_url,json=userServiceGrpcUrl,proto3,oneof" json:"user_service_grpc_url,omitempty"`
+	JaegerCollectorUrl         *string                `protobuf:"bytes,3,opt,name=jaeger_collector_url,json=jaegerCollectorUrl,proto3,oneof" json:"jaeger_collector_url,omitempty"`
+	CommonServicePrometheusUrl *string                `protobuf:"bytes,4,opt,name=common_service_prometheus_url,json=commonServicePrometheusUrl,proto3,oneof" json:"common_service_prometheus_url,omitempty"`
+	UserServicePrometheusUrl   *string                `protobuf:"bytes,5,opt,name=user_service_prometheus_url,json=userServicePrometheusUrl,proto3,oneof" json:"user_service_prometheus_url,omitempty"`
 	unknownFields              protoimpl.UnknownFields
 	sizeCache                  protoimpl.SizeCache
 }
@@ -276,37 +274,23 @@ func (*ConfigServices) Descriptor() ([]byte, []int) {
 	return file_common_v1_config_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *ConfigServices) GetCommonServiceGrpcHost() string {
-	if x != nil && x.CommonServiceGrpcHost != nil {
-		return *x.CommonServiceGrpcHost
+func (x *ConfigServices) GetCommonServiceGrpcUrl() string {
+	if x != nil && x.CommonServiceGrpcUrl != nil {
+		return *x.CommonServiceGrpcUrl
 	}
 	return ""
 }
 
-func (x *ConfigServices) GetCommonServiceGrpcPort() int32 {
-	if x != nil && x.CommonServiceGrpcPort != nil {
-		return *x.CommonServiceGrpcPort
-	}
-	return 0
-}
-
-func (x *ConfigServices) GetUserServiceGrpcHost() string {
-	if x != nil && x.UserServiceGrpcHost != nil {
-		return *x.UserServiceGrpcHost
+func (x *ConfigServices) GetUserServiceGrpcUrl() string {
+	if x != nil && x.UserServiceGrpcUrl != nil {
+		return *x.UserServiceGrpcUrl
 	}
 	return ""
 }
 
-func (x *ConfigServices) GetUserServiceGrpcPort() int32 {
-	if x != nil && x.UserServiceGrpcPort != nil {
-		return *x.UserServiceGrpcPort
-	}
-	return 0
-}
-
-func (x *ConfigServices) GetJaegerCollectorEndpoint() string {
-	if x != nil && x.JaegerCollectorEndpoint != nil {
-		return *x.JaegerCollectorEndpoint
+func (x *ConfigServices) GetJaegerCollectorUrl() string {
+	if x != nil && x.JaegerCollectorUrl != nil {
+		return *x.JaegerCollectorUrl
 	}
 	return ""
 }
@@ -3471,20 +3455,16 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\"_persistent_notification_max_countB)\n" +
 	"'_persistent_notification_max_recipientsB%\n" +
 	"#_feature_flag_sync_interval_secondsB\x16\n" +
-	"\x14_allow_synced_drafts\"\x9d\x05\n" +
-	"\x0eConfigServices\x12<\n" +
-	"\x18common_service_grpc_host\x18\x01 \x01(\tH\x00R\x15commonServiceGrpcHost\x88\x01\x01\x12<\n" +
-	"\x18common_service_grpc_port\x18\x02 \x01(\x05H\x01R\x15commonServiceGrpcPort\x88\x01\x01\x128\n" +
-	"\x16user_service_grpc_host\x18\x03 \x01(\tH\x02R\x13userServiceGrpcHost\x88\x01\x01\x128\n" +
-	"\x16user_service_grpc_port\x18\x04 \x01(\x05H\x03R\x13userServiceGrpcPort\x88\x01\x01\x12?\n" +
-	"\x19jaeger_collector_endpoint\x18\x05 \x01(\tH\x04R\x17jaegerCollectorEndpoint\x88\x01\x01\x12F\n" +
-	"\x1dcommon_service_prometheus_url\x18\x06 \x01(\tH\x05R\x1acommonServicePrometheusUrl\x88\x01\x01\x12B\n" +
-	"\x1buser_service_prometheus_url\x18\a \x01(\tH\x06R\x18userServicePrometheusUrl\x88\x01\x01B\x1b\n" +
-	"\x19_common_service_grpc_hostB\x1b\n" +
-	"\x19_common_service_grpc_portB\x19\n" +
-	"\x17_user_service_grpc_hostB\x19\n" +
-	"\x17_user_service_grpc_portB\x1c\n" +
-	"\x1a_jaeger_collector_endpointB \n" +
+	"\x14_allow_synced_drafts\"\xd8\x03\n" +
+	"\x0eConfigServices\x12:\n" +
+	"\x17common_service_grpc_url\x18\x01 \x01(\tH\x00R\x14commonServiceGrpcUrl\x88\x01\x01\x126\n" +
+	"\x15user_service_grpc_url\x18\x02 \x01(\tH\x01R\x12userServiceGrpcUrl\x88\x01\x01\x125\n" +
+	"\x14jaeger_collector_url\x18\x03 \x01(\tH\x02R\x12jaegerCollectorUrl\x88\x01\x01\x12F\n" +
+	"\x1dcommon_service_prometheus_url\x18\x04 \x01(\tH\x03R\x1acommonServicePrometheusUrl\x88\x01\x01\x12B\n" +
+	"\x1buser_service_prometheus_url\x18\x05 \x01(\tH\x04R\x18userServicePrometheusUrl\x88\x01\x01B\x1a\n" +
+	"\x18_common_service_grpc_urlB\x18\n" +
+	"\x16_user_service_grpc_urlB\x17\n" +
+	"\x15_jaeger_collector_urlB \n" +
 	"\x1e_common_service_prometheus_urlB\x1e\n" +
 	"\x1c_user_service_prometheus_url\"\x86\x0f\n" +
 	"\x0eConfigSecurity\x12e\n" +

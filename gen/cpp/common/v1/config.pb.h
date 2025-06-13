@@ -783,69 +783,67 @@ class ConfigServices final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCommonServiceGrpcHostFieldNumber = 1,
-    kUserServiceGrpcHostFieldNumber = 3,
-    kJaegerCollectorEndpointFieldNumber = 5,
-    kCommonServicePrometheusUrlFieldNumber = 6,
-    kUserServicePrometheusUrlFieldNumber = 7,
-    kCommonServiceGrpcPortFieldNumber = 2,
-    kUserServiceGrpcPortFieldNumber = 4,
+    kCommonServiceGrpcUrlFieldNumber = 1,
+    kUserServiceGrpcUrlFieldNumber = 2,
+    kJaegerCollectorUrlFieldNumber = 3,
+    kCommonServicePrometheusUrlFieldNumber = 4,
+    kUserServicePrometheusUrlFieldNumber = 5,
   };
-  // optional string common_service_grpc_host = 1 [json_name = "commonServiceGrpcHost"];
-  bool has_common_service_grpc_host() const;
+  // optional string common_service_grpc_url = 1 [json_name = "commonServiceGrpcUrl"];
+  bool has_common_service_grpc_url() const;
   private:
-  bool _internal_has_common_service_grpc_host() const;
+  bool _internal_has_common_service_grpc_url() const;
   public:
-  void clear_common_service_grpc_host();
-  const std::string& common_service_grpc_host() const;
+  void clear_common_service_grpc_url();
+  const std::string& common_service_grpc_url() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_common_service_grpc_host(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_common_service_grpc_host();
-  PROTOBUF_NODISCARD std::string* release_common_service_grpc_host();
-  void set_allocated_common_service_grpc_host(std::string* common_service_grpc_host);
+  void set_common_service_grpc_url(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_common_service_grpc_url();
+  PROTOBUF_NODISCARD std::string* release_common_service_grpc_url();
+  void set_allocated_common_service_grpc_url(std::string* common_service_grpc_url);
   private:
-  const std::string& _internal_common_service_grpc_host() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_common_service_grpc_host(const std::string& value);
-  std::string* _internal_mutable_common_service_grpc_host();
+  const std::string& _internal_common_service_grpc_url() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_common_service_grpc_url(const std::string& value);
+  std::string* _internal_mutable_common_service_grpc_url();
   public:
 
-  // optional string user_service_grpc_host = 3 [json_name = "userServiceGrpcHost"];
-  bool has_user_service_grpc_host() const;
+  // optional string user_service_grpc_url = 2 [json_name = "userServiceGrpcUrl"];
+  bool has_user_service_grpc_url() const;
   private:
-  bool _internal_has_user_service_grpc_host() const;
+  bool _internal_has_user_service_grpc_url() const;
   public:
-  void clear_user_service_grpc_host();
-  const std::string& user_service_grpc_host() const;
+  void clear_user_service_grpc_url();
+  const std::string& user_service_grpc_url() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_user_service_grpc_host(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_user_service_grpc_host();
-  PROTOBUF_NODISCARD std::string* release_user_service_grpc_host();
-  void set_allocated_user_service_grpc_host(std::string* user_service_grpc_host);
+  void set_user_service_grpc_url(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_user_service_grpc_url();
+  PROTOBUF_NODISCARD std::string* release_user_service_grpc_url();
+  void set_allocated_user_service_grpc_url(std::string* user_service_grpc_url);
   private:
-  const std::string& _internal_user_service_grpc_host() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_service_grpc_host(const std::string& value);
-  std::string* _internal_mutable_user_service_grpc_host();
+  const std::string& _internal_user_service_grpc_url() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_user_service_grpc_url(const std::string& value);
+  std::string* _internal_mutable_user_service_grpc_url();
   public:
 
-  // optional string jaeger_collector_endpoint = 5 [json_name = "jaegerCollectorEndpoint"];
-  bool has_jaeger_collector_endpoint() const;
+  // optional string jaeger_collector_url = 3 [json_name = "jaegerCollectorUrl"];
+  bool has_jaeger_collector_url() const;
   private:
-  bool _internal_has_jaeger_collector_endpoint() const;
+  bool _internal_has_jaeger_collector_url() const;
   public:
-  void clear_jaeger_collector_endpoint();
-  const std::string& jaeger_collector_endpoint() const;
+  void clear_jaeger_collector_url();
+  const std::string& jaeger_collector_url() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_jaeger_collector_endpoint(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_jaeger_collector_endpoint();
-  PROTOBUF_NODISCARD std::string* release_jaeger_collector_endpoint();
-  void set_allocated_jaeger_collector_endpoint(std::string* jaeger_collector_endpoint);
+  void set_jaeger_collector_url(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_jaeger_collector_url();
+  PROTOBUF_NODISCARD std::string* release_jaeger_collector_url();
+  void set_allocated_jaeger_collector_url(std::string* jaeger_collector_url);
   private:
-  const std::string& _internal_jaeger_collector_endpoint() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_jaeger_collector_endpoint(const std::string& value);
-  std::string* _internal_mutable_jaeger_collector_endpoint();
+  const std::string& _internal_jaeger_collector_url() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_jaeger_collector_url(const std::string& value);
+  std::string* _internal_mutable_jaeger_collector_url();
   public:
 
-  // optional string common_service_prometheus_url = 6 [json_name = "commonServicePrometheusUrl"];
+  // optional string common_service_prometheus_url = 4 [json_name = "commonServicePrometheusUrl"];
   bool has_common_service_prometheus_url() const;
   private:
   bool _internal_has_common_service_prometheus_url() const;
@@ -863,7 +861,7 @@ class ConfigServices final :
   std::string* _internal_mutable_common_service_prometheus_url();
   public:
 
-  // optional string user_service_prometheus_url = 7 [json_name = "userServicePrometheusUrl"];
+  // optional string user_service_prometheus_url = 5 [json_name = "userServicePrometheusUrl"];
   bool has_user_service_prometheus_url() const;
   private:
   bool _internal_has_user_service_prometheus_url() const;
@@ -881,32 +879,6 @@ class ConfigServices final :
   std::string* _internal_mutable_user_service_prometheus_url();
   public:
 
-  // optional int32 common_service_grpc_port = 2 [json_name = "commonServiceGrpcPort"];
-  bool has_common_service_grpc_port() const;
-  private:
-  bool _internal_has_common_service_grpc_port() const;
-  public:
-  void clear_common_service_grpc_port();
-  int32_t common_service_grpc_port() const;
-  void set_common_service_grpc_port(int32_t value);
-  private:
-  int32_t _internal_common_service_grpc_port() const;
-  void _internal_set_common_service_grpc_port(int32_t value);
-  public:
-
-  // optional int32 user_service_grpc_port = 4 [json_name = "userServiceGrpcPort"];
-  bool has_user_service_grpc_port() const;
-  private:
-  bool _internal_has_user_service_grpc_port() const;
-  public:
-  void clear_user_service_grpc_port();
-  int32_t user_service_grpc_port() const;
-  void set_user_service_grpc_port(int32_t value);
-  private:
-  int32_t _internal_user_service_grpc_port() const;
-  void _internal_set_user_service_grpc_port(int32_t value);
-  public:
-
   // @@protoc_insertion_point(class_scope:common.v1.ConfigServices)
  private:
   class _Internal;
@@ -916,13 +888,11 @@ class ConfigServices final :
   typedef void DestructorSkippable_;
   ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr common_service_grpc_host_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_service_grpc_host_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr jaeger_collector_endpoint_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr common_service_grpc_url_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_service_grpc_url_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr jaeger_collector_url_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr common_service_prometheus_url_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_service_prometheus_url_;
-  int32_t common_service_grpc_port_;
-  int32_t user_service_grpc_port_;
   friend struct ::TableStruct_common_2fv1_2fconfig_2eproto;
 };
 // -------------------------------------------------------------------
@@ -9822,270 +9792,214 @@ inline void ConfigMain::set_allow_synced_drafts(bool value) {
 
 // ConfigServices
 
-// optional string common_service_grpc_host = 1 [json_name = "commonServiceGrpcHost"];
-inline bool ConfigServices::_internal_has_common_service_grpc_host() const {
+// optional string common_service_grpc_url = 1 [json_name = "commonServiceGrpcUrl"];
+inline bool ConfigServices::_internal_has_common_service_grpc_url() const {
   bool value = (_has_bits_[0] & 0x00000001u) != 0;
   return value;
 }
-inline bool ConfigServices::has_common_service_grpc_host() const {
-  return _internal_has_common_service_grpc_host();
+inline bool ConfigServices::has_common_service_grpc_url() const {
+  return _internal_has_common_service_grpc_url();
 }
-inline void ConfigServices::clear_common_service_grpc_host() {
-  common_service_grpc_host_.ClearToEmpty();
+inline void ConfigServices::clear_common_service_grpc_url() {
+  common_service_grpc_url_.ClearToEmpty();
   _has_bits_[0] &= ~0x00000001u;
 }
-inline const std::string& ConfigServices::common_service_grpc_host() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.common_service_grpc_host)
-  return _internal_common_service_grpc_host();
+inline const std::string& ConfigServices::common_service_grpc_url() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.common_service_grpc_url)
+  return _internal_common_service_grpc_url();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void ConfigServices::set_common_service_grpc_host(ArgT0&& arg0, ArgT... args) {
+void ConfigServices::set_common_service_grpc_url(ArgT0&& arg0, ArgT... args) {
  _has_bits_[0] |= 0x00000001u;
- common_service_grpc_host_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.common_service_grpc_host)
+ common_service_grpc_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.common_service_grpc_url)
 }
-inline std::string* ConfigServices::mutable_common_service_grpc_host() {
-  std::string* _s = _internal_mutable_common_service_grpc_host();
-  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.common_service_grpc_host)
+inline std::string* ConfigServices::mutable_common_service_grpc_url() {
+  std::string* _s = _internal_mutable_common_service_grpc_url();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.common_service_grpc_url)
   return _s;
 }
-inline const std::string& ConfigServices::_internal_common_service_grpc_host() const {
-  return common_service_grpc_host_.Get();
+inline const std::string& ConfigServices::_internal_common_service_grpc_url() const {
+  return common_service_grpc_url_.Get();
 }
-inline void ConfigServices::_internal_set_common_service_grpc_host(const std::string& value) {
+inline void ConfigServices::_internal_set_common_service_grpc_url(const std::string& value) {
   _has_bits_[0] |= 0x00000001u;
-  common_service_grpc_host_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  common_service_grpc_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* ConfigServices::_internal_mutable_common_service_grpc_host() {
+inline std::string* ConfigServices::_internal_mutable_common_service_grpc_url() {
   _has_bits_[0] |= 0x00000001u;
-  return common_service_grpc_host_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return common_service_grpc_url_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* ConfigServices::release_common_service_grpc_host() {
-  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.common_service_grpc_host)
-  if (!_internal_has_common_service_grpc_host()) {
+inline std::string* ConfigServices::release_common_service_grpc_url() {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.common_service_grpc_url)
+  if (!_internal_has_common_service_grpc_url()) {
     return nullptr;
   }
   _has_bits_[0] &= ~0x00000001u;
-  auto* p = common_service_grpc_host_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+  auto* p = common_service_grpc_url_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (common_service_grpc_host_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    common_service_grpc_host_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (common_service_grpc_url_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    common_service_grpc_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   return p;
 }
-inline void ConfigServices::set_allocated_common_service_grpc_host(std::string* common_service_grpc_host) {
-  if (common_service_grpc_host != nullptr) {
+inline void ConfigServices::set_allocated_common_service_grpc_url(std::string* common_service_grpc_url) {
+  if (common_service_grpc_url != nullptr) {
     _has_bits_[0] |= 0x00000001u;
   } else {
     _has_bits_[0] &= ~0x00000001u;
   }
-  common_service_grpc_host_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), common_service_grpc_host,
+  common_service_grpc_url_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), common_service_grpc_url,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (common_service_grpc_host_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    common_service_grpc_host_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (common_service_grpc_url_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    common_service_grpc_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.common_service_grpc_host)
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.common_service_grpc_url)
 }
 
-// optional int32 common_service_grpc_port = 2 [json_name = "commonServiceGrpcPort"];
-inline bool ConfigServices::_internal_has_common_service_grpc_port() const {
-  bool value = (_has_bits_[0] & 0x00000020u) != 0;
-  return value;
-}
-inline bool ConfigServices::has_common_service_grpc_port() const {
-  return _internal_has_common_service_grpc_port();
-}
-inline void ConfigServices::clear_common_service_grpc_port() {
-  common_service_grpc_port_ = 0;
-  _has_bits_[0] &= ~0x00000020u;
-}
-inline int32_t ConfigServices::_internal_common_service_grpc_port() const {
-  return common_service_grpc_port_;
-}
-inline int32_t ConfigServices::common_service_grpc_port() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.common_service_grpc_port)
-  return _internal_common_service_grpc_port();
-}
-inline void ConfigServices::_internal_set_common_service_grpc_port(int32_t value) {
-  _has_bits_[0] |= 0x00000020u;
-  common_service_grpc_port_ = value;
-}
-inline void ConfigServices::set_common_service_grpc_port(int32_t value) {
-  _internal_set_common_service_grpc_port(value);
-  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.common_service_grpc_port)
-}
-
-// optional string user_service_grpc_host = 3 [json_name = "userServiceGrpcHost"];
-inline bool ConfigServices::_internal_has_user_service_grpc_host() const {
+// optional string user_service_grpc_url = 2 [json_name = "userServiceGrpcUrl"];
+inline bool ConfigServices::_internal_has_user_service_grpc_url() const {
   bool value = (_has_bits_[0] & 0x00000002u) != 0;
   return value;
 }
-inline bool ConfigServices::has_user_service_grpc_host() const {
-  return _internal_has_user_service_grpc_host();
+inline bool ConfigServices::has_user_service_grpc_url() const {
+  return _internal_has_user_service_grpc_url();
 }
-inline void ConfigServices::clear_user_service_grpc_host() {
-  user_service_grpc_host_.ClearToEmpty();
+inline void ConfigServices::clear_user_service_grpc_url() {
+  user_service_grpc_url_.ClearToEmpty();
   _has_bits_[0] &= ~0x00000002u;
 }
-inline const std::string& ConfigServices::user_service_grpc_host() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.user_service_grpc_host)
-  return _internal_user_service_grpc_host();
+inline const std::string& ConfigServices::user_service_grpc_url() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.user_service_grpc_url)
+  return _internal_user_service_grpc_url();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void ConfigServices::set_user_service_grpc_host(ArgT0&& arg0, ArgT... args) {
+void ConfigServices::set_user_service_grpc_url(ArgT0&& arg0, ArgT... args) {
  _has_bits_[0] |= 0x00000002u;
- user_service_grpc_host_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.user_service_grpc_host)
+ user_service_grpc_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.user_service_grpc_url)
 }
-inline std::string* ConfigServices::mutable_user_service_grpc_host() {
-  std::string* _s = _internal_mutable_user_service_grpc_host();
-  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.user_service_grpc_host)
+inline std::string* ConfigServices::mutable_user_service_grpc_url() {
+  std::string* _s = _internal_mutable_user_service_grpc_url();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.user_service_grpc_url)
   return _s;
 }
-inline const std::string& ConfigServices::_internal_user_service_grpc_host() const {
-  return user_service_grpc_host_.Get();
+inline const std::string& ConfigServices::_internal_user_service_grpc_url() const {
+  return user_service_grpc_url_.Get();
 }
-inline void ConfigServices::_internal_set_user_service_grpc_host(const std::string& value) {
+inline void ConfigServices::_internal_set_user_service_grpc_url(const std::string& value) {
   _has_bits_[0] |= 0x00000002u;
-  user_service_grpc_host_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  user_service_grpc_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* ConfigServices::_internal_mutable_user_service_grpc_host() {
+inline std::string* ConfigServices::_internal_mutable_user_service_grpc_url() {
   _has_bits_[0] |= 0x00000002u;
-  return user_service_grpc_host_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return user_service_grpc_url_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* ConfigServices::release_user_service_grpc_host() {
-  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.user_service_grpc_host)
-  if (!_internal_has_user_service_grpc_host()) {
+inline std::string* ConfigServices::release_user_service_grpc_url() {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.user_service_grpc_url)
+  if (!_internal_has_user_service_grpc_url()) {
     return nullptr;
   }
   _has_bits_[0] &= ~0x00000002u;
-  auto* p = user_service_grpc_host_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+  auto* p = user_service_grpc_url_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (user_service_grpc_host_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    user_service_grpc_host_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (user_service_grpc_url_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    user_service_grpc_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   return p;
 }
-inline void ConfigServices::set_allocated_user_service_grpc_host(std::string* user_service_grpc_host) {
-  if (user_service_grpc_host != nullptr) {
+inline void ConfigServices::set_allocated_user_service_grpc_url(std::string* user_service_grpc_url) {
+  if (user_service_grpc_url != nullptr) {
     _has_bits_[0] |= 0x00000002u;
   } else {
     _has_bits_[0] &= ~0x00000002u;
   }
-  user_service_grpc_host_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_service_grpc_host,
+  user_service_grpc_url_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), user_service_grpc_url,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (user_service_grpc_host_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    user_service_grpc_host_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (user_service_grpc_url_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    user_service_grpc_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.user_service_grpc_host)
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.user_service_grpc_url)
 }
 
-// optional int32 user_service_grpc_port = 4 [json_name = "userServiceGrpcPort"];
-inline bool ConfigServices::_internal_has_user_service_grpc_port() const {
-  bool value = (_has_bits_[0] & 0x00000040u) != 0;
-  return value;
-}
-inline bool ConfigServices::has_user_service_grpc_port() const {
-  return _internal_has_user_service_grpc_port();
-}
-inline void ConfigServices::clear_user_service_grpc_port() {
-  user_service_grpc_port_ = 0;
-  _has_bits_[0] &= ~0x00000040u;
-}
-inline int32_t ConfigServices::_internal_user_service_grpc_port() const {
-  return user_service_grpc_port_;
-}
-inline int32_t ConfigServices::user_service_grpc_port() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.user_service_grpc_port)
-  return _internal_user_service_grpc_port();
-}
-inline void ConfigServices::_internal_set_user_service_grpc_port(int32_t value) {
-  _has_bits_[0] |= 0x00000040u;
-  user_service_grpc_port_ = value;
-}
-inline void ConfigServices::set_user_service_grpc_port(int32_t value) {
-  _internal_set_user_service_grpc_port(value);
-  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.user_service_grpc_port)
-}
-
-// optional string jaeger_collector_endpoint = 5 [json_name = "jaegerCollectorEndpoint"];
-inline bool ConfigServices::_internal_has_jaeger_collector_endpoint() const {
+// optional string jaeger_collector_url = 3 [json_name = "jaegerCollectorUrl"];
+inline bool ConfigServices::_internal_has_jaeger_collector_url() const {
   bool value = (_has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
-inline bool ConfigServices::has_jaeger_collector_endpoint() const {
-  return _internal_has_jaeger_collector_endpoint();
+inline bool ConfigServices::has_jaeger_collector_url() const {
+  return _internal_has_jaeger_collector_url();
 }
-inline void ConfigServices::clear_jaeger_collector_endpoint() {
-  jaeger_collector_endpoint_.ClearToEmpty();
+inline void ConfigServices::clear_jaeger_collector_url() {
+  jaeger_collector_url_.ClearToEmpty();
   _has_bits_[0] &= ~0x00000004u;
 }
-inline const std::string& ConfigServices::jaeger_collector_endpoint() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.jaeger_collector_endpoint)
-  return _internal_jaeger_collector_endpoint();
+inline const std::string& ConfigServices::jaeger_collector_url() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.jaeger_collector_url)
+  return _internal_jaeger_collector_url();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void ConfigServices::set_jaeger_collector_endpoint(ArgT0&& arg0, ArgT... args) {
+void ConfigServices::set_jaeger_collector_url(ArgT0&& arg0, ArgT... args) {
  _has_bits_[0] |= 0x00000004u;
- jaeger_collector_endpoint_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.jaeger_collector_endpoint)
+ jaeger_collector_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.jaeger_collector_url)
 }
-inline std::string* ConfigServices::mutable_jaeger_collector_endpoint() {
-  std::string* _s = _internal_mutable_jaeger_collector_endpoint();
-  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.jaeger_collector_endpoint)
+inline std::string* ConfigServices::mutable_jaeger_collector_url() {
+  std::string* _s = _internal_mutable_jaeger_collector_url();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.jaeger_collector_url)
   return _s;
 }
-inline const std::string& ConfigServices::_internal_jaeger_collector_endpoint() const {
-  return jaeger_collector_endpoint_.Get();
+inline const std::string& ConfigServices::_internal_jaeger_collector_url() const {
+  return jaeger_collector_url_.Get();
 }
-inline void ConfigServices::_internal_set_jaeger_collector_endpoint(const std::string& value) {
+inline void ConfigServices::_internal_set_jaeger_collector_url(const std::string& value) {
   _has_bits_[0] |= 0x00000004u;
-  jaeger_collector_endpoint_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+  jaeger_collector_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline std::string* ConfigServices::_internal_mutable_jaeger_collector_endpoint() {
+inline std::string* ConfigServices::_internal_mutable_jaeger_collector_url() {
   _has_bits_[0] |= 0x00000004u;
-  return jaeger_collector_endpoint_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+  return jaeger_collector_url_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline std::string* ConfigServices::release_jaeger_collector_endpoint() {
-  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.jaeger_collector_endpoint)
-  if (!_internal_has_jaeger_collector_endpoint()) {
+inline std::string* ConfigServices::release_jaeger_collector_url() {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.jaeger_collector_url)
+  if (!_internal_has_jaeger_collector_url()) {
     return nullptr;
   }
   _has_bits_[0] &= ~0x00000004u;
-  auto* p = jaeger_collector_endpoint_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+  auto* p = jaeger_collector_url_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (jaeger_collector_endpoint_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    jaeger_collector_endpoint_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (jaeger_collector_url_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    jaeger_collector_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   return p;
 }
-inline void ConfigServices::set_allocated_jaeger_collector_endpoint(std::string* jaeger_collector_endpoint) {
-  if (jaeger_collector_endpoint != nullptr) {
+inline void ConfigServices::set_allocated_jaeger_collector_url(std::string* jaeger_collector_url) {
+  if (jaeger_collector_url != nullptr) {
     _has_bits_[0] |= 0x00000004u;
   } else {
     _has_bits_[0] &= ~0x00000004u;
   }
-  jaeger_collector_endpoint_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), jaeger_collector_endpoint,
+  jaeger_collector_url_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), jaeger_collector_url,
       GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (jaeger_collector_endpoint_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
-    jaeger_collector_endpoint_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  if (jaeger_collector_url_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    jaeger_collector_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.jaeger_collector_endpoint)
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.jaeger_collector_url)
 }
 
-// optional string common_service_prometheus_url = 6 [json_name = "commonServicePrometheusUrl"];
+// optional string common_service_prometheus_url = 4 [json_name = "commonServicePrometheusUrl"];
 inline bool ConfigServices::_internal_has_common_service_prometheus_url() const {
   bool value = (_has_bits_[0] & 0x00000008u) != 0;
   return value;
@@ -10154,7 +10068,7 @@ inline void ConfigServices::set_allocated_common_service_prometheus_url(std::str
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.common_service_prometheus_url)
 }
 
-// optional string user_service_prometheus_url = 7 [json_name = "userServicePrometheusUrl"];
+// optional string user_service_prometheus_url = 5 [json_name = "userServicePrometheusUrl"];
 inline bool ConfigServices::_internal_has_user_service_prometheus_url() const {
   bool value = (_has_bits_[0] & 0x00000010u) != 0;
   return value;

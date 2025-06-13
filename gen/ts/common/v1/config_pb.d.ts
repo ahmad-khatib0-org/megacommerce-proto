@@ -153,30 +153,20 @@ export namespace ConfigMain {
 }
 
 export class ConfigServices extends jspb.Message {
-  hasCommonServiceGrpcHost(): boolean;
-  clearCommonServiceGrpcHost(): void;
-  getCommonServiceGrpcHost(): string;
-  setCommonServiceGrpcHost(value: string): void;
+  hasCommonServiceGrpcUrl(): boolean;
+  clearCommonServiceGrpcUrl(): void;
+  getCommonServiceGrpcUrl(): string;
+  setCommonServiceGrpcUrl(value: string): void;
 
-  hasCommonServiceGrpcPort(): boolean;
-  clearCommonServiceGrpcPort(): void;
-  getCommonServiceGrpcPort(): number;
-  setCommonServiceGrpcPort(value: number): void;
+  hasUserServiceGrpcUrl(): boolean;
+  clearUserServiceGrpcUrl(): void;
+  getUserServiceGrpcUrl(): string;
+  setUserServiceGrpcUrl(value: string): void;
 
-  hasUserServiceGrpcHost(): boolean;
-  clearUserServiceGrpcHost(): void;
-  getUserServiceGrpcHost(): string;
-  setUserServiceGrpcHost(value: string): void;
-
-  hasUserServiceGrpcPort(): boolean;
-  clearUserServiceGrpcPort(): void;
-  getUserServiceGrpcPort(): number;
-  setUserServiceGrpcPort(value: number): void;
-
-  hasJaegerCollectorEndpoint(): boolean;
-  clearJaegerCollectorEndpoint(): void;
-  getJaegerCollectorEndpoint(): string;
-  setJaegerCollectorEndpoint(value: string): void;
+  hasJaegerCollectorUrl(): boolean;
+  clearJaegerCollectorUrl(): void;
+  getJaegerCollectorUrl(): string;
+  setJaegerCollectorUrl(value: string): void;
 
   hasCommonServicePrometheusUrl(): boolean;
   clearCommonServicePrometheusUrl(): void;
@@ -200,11 +190,9 @@ export class ConfigServices extends jspb.Message {
 
 export namespace ConfigServices {
   export type AsObject = {
-    commonServiceGrpcHost: string,
-    commonServiceGrpcPort: number,
-    userServiceGrpcHost: string,
-    userServiceGrpcPort: number,
-    jaegerCollectorEndpoint: string,
+    commonServiceGrpcUrl: string,
+    userServiceGrpcUrl: string,
+    jaegerCollectorUrl: string,
     commonServicePrometheusUrl: string,
     userServicePrometheusUrl: string,
   }
