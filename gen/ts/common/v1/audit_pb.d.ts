@@ -21,8 +21,11 @@ export class AuditRecord extends jspb.Message {
   getActor(): AuditEventActor | undefined;
   setActor(value?: AuditEventActor): void;
 
-  getMetaMap(): jspb.Map<string, google_protobuf_any_pb.Any>;
-  clearMetaMap(): void;
+  hasMeta(): boolean;
+  clearMeta(): void;
+  getMeta(): AuditRecordMeta | undefined;
+  setMeta(value?: AuditRecordMeta): void;
+
   hasError(): boolean;
   clearError(): void;
   getError(): AuditEventError | undefined;
@@ -44,7 +47,7 @@ export namespace AuditRecord {
     status: string,
     eventData?: AuditEventData.AsObject,
     actor?: AuditEventActor.AsObject,
-    metaMap: Array<[string, google_protobuf_any_pb.Any.AsObject]>,
+    meta?: AuditRecordMeta.AsObject,
     error?: AuditEventError.AsObject,
   }
 }
@@ -122,6 +125,26 @@ export namespace AuditEventActor {
     client: string,
     ipAddress: string,
     xForwardedFor: string,
+  }
+}
+
+export class AuditRecordMeta extends jspb.Message {
+  getPath(): string;
+  setPath(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AuditRecordMeta.AsObject;
+  static toObject(includeInstance: boolean, msg: AuditRecordMeta): AuditRecordMeta.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AuditRecordMeta, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AuditRecordMeta;
+  static deserializeBinaryFromReader(message: AuditRecordMeta, reader: jspb.BinaryReader): AuditRecordMeta;
+}
+
+export namespace AuditRecordMeta {
+  export type AsObject = {
+    path: string,
   }
 }
 

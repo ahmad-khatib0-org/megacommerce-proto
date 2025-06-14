@@ -15,7 +15,7 @@ message AuditRecord {
   string status = 2;
   AuditEventData event_data = 3;
   AuditEventActor actor = 4;
-  map<string, google.protobuf.Any> meta = 5;
+  AuditRecordMeta meta = 5;
   AuditEventError error = 6;
 }
 
@@ -38,6 +38,10 @@ message AuditEventActor {
   string client = 3;
   string ip_address = 4;
   string x_forwarded_for = 5;
+}
+
+message AuditRecordMeta {
+  string path = 1;
 }
 
 // AuditEventError is a key-value store to store related information to

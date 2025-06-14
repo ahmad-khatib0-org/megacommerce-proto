@@ -29,7 +29,7 @@ type AuditRecord struct {
 	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
 	EventData     *AuditEventData        `protobuf:"bytes,3,opt,name=event_data,json=eventData,proto3" json:"event_data,omitempty"`
 	Actor         *AuditEventActor       `protobuf:"bytes,4,opt,name=actor,proto3" json:"actor,omitempty"`
-	Meta          map[string]*anypb.Any  `protobuf:"bytes,5,rep,name=meta,proto3" json:"meta,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	Meta          *AuditRecordMeta       `protobuf:"bytes,5,opt,name=meta,proto3" json:"meta,omitempty"`
 	Error         *AuditEventError       `protobuf:"bytes,6,opt,name=error,proto3" json:"error,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -93,7 +93,7 @@ func (x *AuditRecord) GetActor() *AuditEventActor {
 	return nil
 }
 
-func (x *AuditRecord) GetMeta() map[string]*anypb.Any {
+func (x *AuditRecord) GetMeta() *AuditRecordMeta {
 	if x != nil {
 		return x.Meta
 	}
@@ -257,6 +257,50 @@ func (x *AuditEventActor) GetXForwardedFor() string {
 	return ""
 }
 
+type AuditRecordMeta struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Path          string                 `protobuf:"bytes,1,opt,name=path,proto3" json:"path,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AuditRecordMeta) Reset() {
+	*x = AuditRecordMeta{}
+	mi := &file_common_v1_audit_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AuditRecordMeta) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AuditRecordMeta) ProtoMessage() {}
+
+func (x *AuditRecordMeta) ProtoReflect() protoreflect.Message {
+	mi := &file_common_v1_audit_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AuditRecordMeta.ProtoReflect.Descriptor instead.
+func (*AuditRecordMeta) Descriptor() ([]byte, []int) {
+	return file_common_v1_audit_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *AuditRecordMeta) GetPath() string {
+	if x != nil {
+		return x.Path
+	}
+	return ""
+}
+
 // AuditEventError is a key-value store to store related information to
 // the event that is not directly related to the modified entity
 type AuditEventError struct {
@@ -269,7 +313,7 @@ type AuditEventError struct {
 
 func (x *AuditEventError) Reset() {
 	*x = AuditEventError{}
-	mi := &file_common_v1_audit_proto_msgTypes[3]
+	mi := &file_common_v1_audit_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -281,7 +325,7 @@ func (x *AuditEventError) String() string {
 func (*AuditEventError) ProtoMessage() {}
 
 func (x *AuditEventError) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_audit_proto_msgTypes[3]
+	mi := &file_common_v1_audit_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -294,7 +338,7 @@ func (x *AuditEventError) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AuditEventError.ProtoReflect.Descriptor instead.
 func (*AuditEventError) Descriptor() ([]byte, []int) {
-	return file_common_v1_audit_proto_rawDescGZIP(), []int{3}
+	return file_common_v1_audit_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *AuditEventError) GetApiPath() string {
@@ -315,19 +359,16 @@ var File_common_v1_audit_proto protoreflect.FileDescriptor
 
 const file_common_v1_audit_proto_rawDesc = "" +
 	"\n" +
-	"\x15common/v1/audit.proto\x12\tcommon.v1\x1a\x19google/protobuf/any.proto\"\xe7\x02\n" +
+	"\x15common/v1/audit.proto\x12\tcommon.v1\x1a\x19google/protobuf/any.proto\"\x92\x02\n" +
 	"\vAuditRecord\x12\x1d\n" +
 	"\n" +
 	"event_name\x18\x01 \x01(\tR\teventName\x12\x16\n" +
 	"\x06status\x18\x02 \x01(\tR\x06status\x128\n" +
 	"\n" +
 	"event_data\x18\x03 \x01(\v2\x19.common.v1.AuditEventDataR\teventData\x120\n" +
-	"\x05actor\x18\x04 \x01(\v2\x1a.common.v1.AuditEventActorR\x05actor\x124\n" +
-	"\x04meta\x18\x05 \x03(\v2 .common.v1.AuditRecord.MetaEntryR\x04meta\x120\n" +
-	"\x05error\x18\x06 \x01(\v2\x1a.common.v1.AuditEventErrorR\x05error\x1aM\n" +
-	"\tMetaEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x12*\n" +
-	"\x05value\x18\x02 \x01(\v2\x14.google.protobuf.AnyR\x05value:\x028\x01\"\xf3\x01\n" +
+	"\x05actor\x18\x04 \x01(\v2\x1a.common.v1.AuditEventActorR\x05actor\x12.\n" +
+	"\x04meta\x18\x05 \x01(\v2\x1a.common.v1.AuditRecordMetaR\x04meta\x120\n" +
+	"\x05error\x18\x06 \x01(\v2\x1a.common.v1.AuditEventErrorR\x05error\"\xf3\x01\n" +
 	"\x0eAuditEventData\x124\n" +
 	"\n" +
 	"parameters\x18\x01 \x01(\v2\x14.google.protobuf.AnyR\n" +
@@ -344,7 +385,9 @@ const file_common_v1_audit_proto_rawDesc = "" +
 	"\x06client\x18\x03 \x01(\tR\x06client\x12\x1d\n" +
 	"\n" +
 	"ip_address\x18\x04 \x01(\tR\tipAddress\x12&\n" +
-	"\x0fx_forwarded_for\x18\x05 \x01(\tR\rxForwardedFor\"K\n" +
+	"\x0fx_forwarded_for\x18\x05 \x01(\tR\rxForwardedFor\"%\n" +
+	"\x0fAuditRecordMeta\x12\x12\n" +
+	"\x04path\x18\x01 \x01(\tR\x04path\"K\n" +
 	"\x0fAuditEventError\x12\x19\n" +
 	"\bapi_path\x18\x01 \x01(\tR\aapiPath\x12\x1d\n" +
 	"\n" +
@@ -369,25 +412,24 @@ var file_common_v1_audit_proto_goTypes = []any{
 	(*AuditRecord)(nil),     // 0: common.v1.AuditRecord
 	(*AuditEventData)(nil),  // 1: common.v1.AuditEventData
 	(*AuditEventActor)(nil), // 2: common.v1.AuditEventActor
-	(*AuditEventError)(nil), // 3: common.v1.AuditEventError
-	nil,                     // 4: common.v1.AuditRecord.MetaEntry
+	(*AuditRecordMeta)(nil), // 3: common.v1.AuditRecordMeta
+	(*AuditEventError)(nil), // 4: common.v1.AuditEventError
 	(*anypb.Any)(nil),       // 5: google.protobuf.Any
 }
 var file_common_v1_audit_proto_depIdxs = []int32{
 	1, // 0: common.v1.AuditRecord.event_data:type_name -> common.v1.AuditEventData
 	2, // 1: common.v1.AuditRecord.actor:type_name -> common.v1.AuditEventActor
-	4, // 2: common.v1.AuditRecord.meta:type_name -> common.v1.AuditRecord.MetaEntry
-	3, // 3: common.v1.AuditRecord.error:type_name -> common.v1.AuditEventError
+	3, // 2: common.v1.AuditRecord.meta:type_name -> common.v1.AuditRecordMeta
+	4, // 3: common.v1.AuditRecord.error:type_name -> common.v1.AuditEventError
 	5, // 4: common.v1.AuditEventData.parameters:type_name -> google.protobuf.Any
 	5, // 5: common.v1.AuditEventData.prior_state:type_name -> google.protobuf.Any
 	5, // 6: common.v1.AuditEventData.resulting_state:type_name -> google.protobuf.Any
 	5, // 7: common.v1.AuditEventData.object_type:type_name -> google.protobuf.Any
-	5, // 8: common.v1.AuditRecord.MetaEntry.value:type_name -> google.protobuf.Any
-	9, // [9:9] is the sub-list for method output_type
-	9, // [9:9] is the sub-list for method input_type
-	9, // [9:9] is the sub-list for extension type_name
-	9, // [9:9] is the sub-list for extension extendee
-	0, // [0:9] is the sub-list for field type_name
+	8, // [8:8] is the sub-list for method output_type
+	8, // [8:8] is the sub-list for method input_type
+	8, // [8:8] is the sub-list for extension type_name
+	8, // [8:8] is the sub-list for extension extendee
+	0, // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_common_v1_audit_proto_init() }

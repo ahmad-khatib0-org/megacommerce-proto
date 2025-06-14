@@ -73,38 +73,19 @@ public final class AuditProto {
     org.megacommerce.common.v1.AuditProto.AuditEventActorOrBuilder getActorOrBuilder();
 
     /**
-     * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
+     * <code>.common.v1.AuditRecordMeta meta = 5 [json_name = "meta"];</code>
+     * @return Whether the meta field is set.
      */
-    int getMetaCount();
+    boolean hasMeta();
     /**
-     * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
+     * <code>.common.v1.AuditRecordMeta meta = 5 [json_name = "meta"];</code>
+     * @return The meta.
      */
-    boolean containsMeta(
-        java.lang.String key);
+    org.megacommerce.common.v1.AuditProto.AuditRecordMeta getMeta();
     /**
-     * Use {@link #getMetaMap()} instead.
+     * <code>.common.v1.AuditRecordMeta meta = 5 [json_name = "meta"];</code>
      */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, com.google.protobuf.Any>
-    getMeta();
-    /**
-     * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
-     */
-    java.util.Map<java.lang.String, com.google.protobuf.Any>
-    getMetaMap();
-    /**
-     * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
-     */
-
-    com.google.protobuf.Any getMetaOrDefault(
-        java.lang.String key,
-        com.google.protobuf.Any defaultValue);
-    /**
-     * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
-     */
-
-    com.google.protobuf.Any getMetaOrThrow(
-        java.lang.String key);
+    org.megacommerce.common.v1.AuditProto.AuditRecordMetaOrBuilder getMetaOrBuilder();
 
     /**
      * <code>.common.v1.AuditEventError error = 6 [json_name = "error"];</code>
@@ -159,18 +140,6 @@ public final class AuditProto {
       return org.megacommerce.common.v1.AuditProto.internal_static_common_v1_AuditRecord_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
-      switch (number) {
-        case 5:
-          return internalGetMeta();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -308,84 +277,29 @@ public final class AuditProto {
     }
 
     public static final int META_FIELD_NUMBER = 5;
-    private static final class MetaDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, com.google.protobuf.Any> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, com.google.protobuf.Any>newDefaultInstance(
-                  org.megacommerce.common.v1.AuditProto.internal_static_common_v1_AuditRecord_MetaEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  com.google.protobuf.Any.getDefaultInstance());
-    }
-    private com.google.protobuf.MapField<
-        java.lang.String, com.google.protobuf.Any> meta_;
-    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Any>
-    internalGetMeta() {
-      if (meta_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            MetaDefaultEntryHolder.defaultEntry);
-      }
-      return meta_;
-    }
-
-    public int getMetaCount() {
-      return internalGetMeta().getMap().size();
-    }
+    private org.megacommerce.common.v1.AuditProto.AuditRecordMeta meta_;
     /**
-     * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
-     */
-
-    @java.lang.Override
-    public boolean containsMeta(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      return internalGetMeta().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getMetaMap()} instead.
+     * <code>.common.v1.AuditRecordMeta meta = 5 [json_name = "meta"];</code>
+     * @return Whether the meta field is set.
      */
     @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.google.protobuf.Any> getMeta() {
-      return getMetaMap();
+    public boolean hasMeta() {
+      return meta_ != null;
     }
     /**
-     * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
+     * <code>.common.v1.AuditRecordMeta meta = 5 [json_name = "meta"];</code>
+     * @return The meta.
      */
     @java.lang.Override
-
-    public java.util.Map<java.lang.String, com.google.protobuf.Any> getMetaMap() {
-      return internalGetMeta().getMap();
+    public org.megacommerce.common.v1.AuditProto.AuditRecordMeta getMeta() {
+      return meta_ == null ? org.megacommerce.common.v1.AuditProto.AuditRecordMeta.getDefaultInstance() : meta_;
     }
     /**
-     * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
+     * <code>.common.v1.AuditRecordMeta meta = 5 [json_name = "meta"];</code>
      */
     @java.lang.Override
-
-    public com.google.protobuf.Any getMetaOrDefault(
-        java.lang.String key,
-        com.google.protobuf.Any defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, com.google.protobuf.Any> map =
-          internalGetMeta().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
-     */
-    @java.lang.Override
-
-    public com.google.protobuf.Any getMetaOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, com.google.protobuf.Any> map =
-          internalGetMeta().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
+    public org.megacommerce.common.v1.AuditProto.AuditRecordMetaOrBuilder getMetaOrBuilder() {
+      return getMeta();
     }
 
     public static final int ERROR_FIELD_NUMBER = 6;
@@ -440,12 +354,9 @@ public final class AuditProto {
       if (actor_ != null) {
         output.writeMessage(4, getActor());
       }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetMeta(),
-          MetaDefaultEntryHolder.defaultEntry,
-          5);
+      if (meta_ != null) {
+        output.writeMessage(5, getMeta());
+      }
       if (error_ != null) {
         output.writeMessage(6, getError());
       }
@@ -472,15 +383,9 @@ public final class AuditProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getActor());
       }
-      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.Any> entry
-           : internalGetMeta().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Any>
-        meta__ = MetaDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
+      if (meta_ != null) {
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(5, meta__);
+          .computeMessageSize(5, getMeta());
       }
       if (error_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -515,8 +420,11 @@ public final class AuditProto {
         if (!getActor()
             .equals(other.getActor())) return false;
       }
-      if (!internalGetMeta().equals(
-          other.internalGetMeta())) return false;
+      if (hasMeta() != other.hasMeta()) return false;
+      if (hasMeta()) {
+        if (!getMeta()
+            .equals(other.getMeta())) return false;
+      }
       if (hasError() != other.hasError()) return false;
       if (hasError()) {
         if (!getError()
@@ -545,9 +453,9 @@ public final class AuditProto {
         hash = (37 * hash) + ACTOR_FIELD_NUMBER;
         hash = (53 * hash) + getActor().hashCode();
       }
-      if (!internalGetMeta().getMap().isEmpty()) {
+      if (hasMeta()) {
         hash = (37 * hash) + META_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetMeta().hashCode();
+        hash = (53 * hash) + getMeta().hashCode();
       }
       if (hasError()) {
         hash = (37 * hash) + ERROR_FIELD_NUMBER;
@@ -664,28 +572,6 @@ public final class AuditProto {
         return org.megacommerce.common.v1.AuditProto.internal_static_common_v1_AuditRecord_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMapField(
-          int number) {
-        switch (number) {
-          case 5:
-            return internalGetMeta();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapField internalGetMutableMapField(
-          int number) {
-        switch (number) {
-          case 5:
-            return internalGetMutableMeta();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -723,7 +609,12 @@ public final class AuditProto {
           actor_ = null;
           actorBuilder_ = null;
         }
-        internalGetMutableMeta().clear();
+        if (metaBuilder_ == null) {
+          meta_ = null;
+        } else {
+          meta_ = null;
+          metaBuilder_ = null;
+        }
         if (errorBuilder_ == null) {
           error_ = null;
         } else {
@@ -756,7 +647,6 @@ public final class AuditProto {
       @java.lang.Override
       public org.megacommerce.common.v1.AuditProto.AuditRecord buildPartial() {
         org.megacommerce.common.v1.AuditProto.AuditRecord result = new org.megacommerce.common.v1.AuditProto.AuditRecord(this);
-        int from_bitField0_ = bitField0_;
         result.eventName_ = eventName_;
         result.status_ = status_;
         if (eventDataBuilder_ == null) {
@@ -769,8 +659,11 @@ public final class AuditProto {
         } else {
           result.actor_ = actorBuilder_.build();
         }
-        result.meta_ = internalGetMeta();
-        result.meta_.makeImmutable();
+        if (metaBuilder_ == null) {
+          result.meta_ = meta_;
+        } else {
+          result.meta_ = metaBuilder_.build();
+        }
         if (errorBuilder_ == null) {
           result.error_ = error_;
         } else {
@@ -838,8 +731,9 @@ public final class AuditProto {
         if (other.hasActor()) {
           mergeActor(other.getActor());
         }
-        internalGetMutableMeta().mergeFrom(
-            other.internalGetMeta());
+        if (other.hasMeta()) {
+          mergeMeta(other.getMeta());
+        }
         if (other.hasError()) {
           mergeError(other.getError());
         }
@@ -894,11 +788,10 @@ public final class AuditProto {
                 break;
               } // case 34
               case 42: {
-                com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Any>
-                meta__ = input.readMessage(
-                    MetaDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableMeta().getMutableMap().put(
-                    meta__.getKey(), meta__.getValue());
+                input.readMessage(
+                    getMetaFieldBuilder().getBuilder(),
+                    extensionRegistry);
+
                 break;
               } // case 42
               case 50: {
@@ -923,7 +816,6 @@ public final class AuditProto {
         } // finally
         return this;
       }
-      private int bitField0_;
 
       private java.lang.Object eventName_ = "";
       /**
@@ -1315,135 +1207,123 @@ public final class AuditProto {
         return actorBuilder_;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.String, com.google.protobuf.Any> meta_;
-      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Any>
-      internalGetMeta() {
-        if (meta_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              MetaDefaultEntryHolder.defaultEntry);
+      private org.megacommerce.common.v1.AuditProto.AuditRecordMeta meta_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.AuditProto.AuditRecordMeta, org.megacommerce.common.v1.AuditProto.AuditRecordMeta.Builder, org.megacommerce.common.v1.AuditProto.AuditRecordMetaOrBuilder> metaBuilder_;
+      /**
+       * <code>.common.v1.AuditRecordMeta meta = 5 [json_name = "meta"];</code>
+       * @return Whether the meta field is set.
+       */
+      public boolean hasMeta() {
+        return metaBuilder_ != null || meta_ != null;
+      }
+      /**
+       * <code>.common.v1.AuditRecordMeta meta = 5 [json_name = "meta"];</code>
+       * @return The meta.
+       */
+      public org.megacommerce.common.v1.AuditProto.AuditRecordMeta getMeta() {
+        if (metaBuilder_ == null) {
+          return meta_ == null ? org.megacommerce.common.v1.AuditProto.AuditRecordMeta.getDefaultInstance() : meta_;
+        } else {
+          return metaBuilder_.getMessage();
         }
-        return meta_;
       }
-      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Any>
-      internalGetMutableMeta() {
-        onChanged();;
-        if (meta_ == null) {
-          meta_ = com.google.protobuf.MapField.newMapField(
-              MetaDefaultEntryHolder.defaultEntry);
+      /**
+       * <code>.common.v1.AuditRecordMeta meta = 5 [json_name = "meta"];</code>
+       */
+      public Builder setMeta(org.megacommerce.common.v1.AuditProto.AuditRecordMeta value) {
+        if (metaBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          meta_ = value;
+          onChanged();
+        } else {
+          metaBuilder_.setMessage(value);
         }
-        if (!meta_.isMutable()) {
-          meta_ = meta_.copy();
+
+        return this;
+      }
+      /**
+       * <code>.common.v1.AuditRecordMeta meta = 5 [json_name = "meta"];</code>
+       */
+      public Builder setMeta(
+          org.megacommerce.common.v1.AuditProto.AuditRecordMeta.Builder builderForValue) {
+        if (metaBuilder_ == null) {
+          meta_ = builderForValue.build();
+          onChanged();
+        } else {
+          metaBuilder_.setMessage(builderForValue.build());
         }
-        return meta_;
-      }
 
-      public int getMetaCount() {
-        return internalGetMeta().getMap().size();
+        return this;
       }
       /**
-       * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
+       * <code>.common.v1.AuditRecordMeta meta = 5 [json_name = "meta"];</code>
        */
-
-      @java.lang.Override
-      public boolean containsMeta(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        return internalGetMeta().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getMetaMap()} instead.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, com.google.protobuf.Any> getMeta() {
-        return getMetaMap();
-      }
-      /**
-       * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
-       */
-      @java.lang.Override
-
-      public java.util.Map<java.lang.String, com.google.protobuf.Any> getMetaMap() {
-        return internalGetMeta().getMap();
-      }
-      /**
-       * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
-       */
-      @java.lang.Override
-
-      public com.google.protobuf.Any getMetaOrDefault(
-          java.lang.String key,
-          com.google.protobuf.Any defaultValue) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, com.google.protobuf.Any> map =
-            internalGetMeta().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
-       */
-      @java.lang.Override
-
-      public com.google.protobuf.Any getMetaOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, com.google.protobuf.Any> map =
-            internalGetMeta().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
+      public Builder mergeMeta(org.megacommerce.common.v1.AuditProto.AuditRecordMeta value) {
+        if (metaBuilder_ == null) {
+          if (meta_ != null) {
+            meta_ =
+              org.megacommerce.common.v1.AuditProto.AuditRecordMeta.newBuilder(meta_).mergeFrom(value).buildPartial();
+          } else {
+            meta_ = value;
+          }
+          onChanged();
+        } else {
+          metaBuilder_.mergeFrom(value);
         }
-        return map.get(key);
-      }
 
+        return this;
+      }
+      /**
+       * <code>.common.v1.AuditRecordMeta meta = 5 [json_name = "meta"];</code>
+       */
       public Builder clearMeta() {
-        internalGetMutableMeta().getMutableMap()
-            .clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
-       */
+        if (metaBuilder_ == null) {
+          meta_ = null;
+          onChanged();
+        } else {
+          meta_ = null;
+          metaBuilder_ = null;
+        }
 
-      public Builder removeMeta(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        internalGetMutableMeta().getMutableMap()
-            .remove(key);
         return this;
       }
       /**
-       * Use alternate mutation accessors instead.
+       * <code>.common.v1.AuditRecordMeta meta = 5 [json_name = "meta"];</code>
        */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, com.google.protobuf.Any>
-      getMutableMeta() {
-        return internalGetMutableMeta().getMutableMap();
+      public org.megacommerce.common.v1.AuditProto.AuditRecordMeta.Builder getMetaBuilder() {
+        
+        onChanged();
+        return getMetaFieldBuilder().getBuilder();
       }
       /**
-       * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
+       * <code>.common.v1.AuditRecordMeta meta = 5 [json_name = "meta"];</code>
        */
-      public Builder putMeta(
-          java.lang.String key,
-          com.google.protobuf.Any value) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        if (value == null) {
-  throw new NullPointerException("map value");
-}
-
-        internalGetMutableMeta().getMutableMap()
-            .put(key, value);
-        return this;
+      public org.megacommerce.common.v1.AuditProto.AuditRecordMetaOrBuilder getMetaOrBuilder() {
+        if (metaBuilder_ != null) {
+          return metaBuilder_.getMessageOrBuilder();
+        } else {
+          return meta_ == null ?
+              org.megacommerce.common.v1.AuditProto.AuditRecordMeta.getDefaultInstance() : meta_;
+        }
       }
       /**
-       * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
+       * <code>.common.v1.AuditRecordMeta meta = 5 [json_name = "meta"];</code>
        */
-
-      public Builder putAllMeta(
-          java.util.Map<java.lang.String, com.google.protobuf.Any> values) {
-        internalGetMutableMeta().getMutableMap()
-            .putAll(values);
-        return this;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          org.megacommerce.common.v1.AuditProto.AuditRecordMeta, org.megacommerce.common.v1.AuditProto.AuditRecordMeta.Builder, org.megacommerce.common.v1.AuditProto.AuditRecordMetaOrBuilder> 
+          getMetaFieldBuilder() {
+        if (metaBuilder_ == null) {
+          metaBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              org.megacommerce.common.v1.AuditProto.AuditRecordMeta, org.megacommerce.common.v1.AuditProto.AuditRecordMeta.Builder, org.megacommerce.common.v1.AuditProto.AuditRecordMetaOrBuilder>(
+                  getMeta(),
+                  getParentForChildren(),
+                  isClean());
+          meta_ = null;
+        }
+        return metaBuilder_;
       }
 
       private org.megacommerce.common.v1.AuditProto.AuditEventError error_;
@@ -4217,6 +4097,555 @@ public final class AuditProto {
 
   }
 
+  public interface AuditRecordMetaOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.v1.AuditRecordMeta)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string path = 1 [json_name = "path"];</code>
+     * @return The path.
+     */
+    java.lang.String getPath();
+    /**
+     * <code>string path = 1 [json_name = "path"];</code>
+     * @return The bytes for path.
+     */
+    com.google.protobuf.ByteString
+        getPathBytes();
+  }
+  /**
+   * Protobuf type {@code common.v1.AuditRecordMeta}
+   */
+  public static final class AuditRecordMeta extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:common.v1.AuditRecordMeta)
+      AuditRecordMetaOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use AuditRecordMeta.newBuilder() to construct.
+    private AuditRecordMeta(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private AuditRecordMeta() {
+      path_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new AuditRecordMeta();
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.common.v1.AuditProto.internal_static_common_v1_AuditRecordMeta_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.common.v1.AuditProto.internal_static_common_v1_AuditRecordMeta_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.common.v1.AuditProto.AuditRecordMeta.class, org.megacommerce.common.v1.AuditProto.AuditRecordMeta.Builder.class);
+    }
+
+    public static final int PATH_FIELD_NUMBER = 1;
+    private volatile java.lang.Object path_;
+    /**
+     * <code>string path = 1 [json_name = "path"];</code>
+     * @return The path.
+     */
+    @java.lang.Override
+    public java.lang.String getPath() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        path_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string path = 1 [json_name = "path"];</code>
+     * @return The bytes for path.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPathBytes() {
+      java.lang.Object ref = path_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        path_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, path_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(path_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, path_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.common.v1.AuditProto.AuditRecordMeta)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.common.v1.AuditProto.AuditRecordMeta other = (org.megacommerce.common.v1.AuditProto.AuditRecordMeta) obj;
+
+      if (!getPath()
+          .equals(other.getPath())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PATH_FIELD_NUMBER;
+      hash = (53 * hash) + getPath().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.common.v1.AuditProto.AuditRecordMeta parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.AuditProto.AuditRecordMeta parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.AuditProto.AuditRecordMeta parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.AuditProto.AuditRecordMeta parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.AuditProto.AuditRecordMeta parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.AuditProto.AuditRecordMeta parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.AuditProto.AuditRecordMeta parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.AuditProto.AuditRecordMeta parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.AuditProto.AuditRecordMeta parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.AuditProto.AuditRecordMeta parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.AuditProto.AuditRecordMeta parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.AuditProto.AuditRecordMeta parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.common.v1.AuditProto.AuditRecordMeta prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code common.v1.AuditRecordMeta}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.v1.AuditRecordMeta)
+        org.megacommerce.common.v1.AuditProto.AuditRecordMetaOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.common.v1.AuditProto.internal_static_common_v1_AuditRecordMeta_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.common.v1.AuditProto.internal_static_common_v1_AuditRecordMeta_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.common.v1.AuditProto.AuditRecordMeta.class, org.megacommerce.common.v1.AuditProto.AuditRecordMeta.Builder.class);
+      }
+
+      // Construct using org.megacommerce.common.v1.AuditProto.AuditRecordMeta.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        path_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.common.v1.AuditProto.internal_static_common_v1_AuditRecordMeta_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.AuditProto.AuditRecordMeta getDefaultInstanceForType() {
+        return org.megacommerce.common.v1.AuditProto.AuditRecordMeta.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.AuditProto.AuditRecordMeta build() {
+        org.megacommerce.common.v1.AuditProto.AuditRecordMeta result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.AuditProto.AuditRecordMeta buildPartial() {
+        org.megacommerce.common.v1.AuditProto.AuditRecordMeta result = new org.megacommerce.common.v1.AuditProto.AuditRecordMeta(this);
+        result.path_ = path_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.setField(field, value);
+      }
+      @java.lang.Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @java.lang.Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.common.v1.AuditProto.AuditRecordMeta) {
+          return mergeFrom((org.megacommerce.common.v1.AuditProto.AuditRecordMeta)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.common.v1.AuditProto.AuditRecordMeta other) {
+        if (other == org.megacommerce.common.v1.AuditProto.AuditRecordMeta.getDefaultInstance()) return this;
+        if (!other.getPath().isEmpty()) {
+          path_ = other.path_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                path_ = input.readStringRequireUtf8();
+
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private java.lang.Object path_ = "";
+      /**
+       * <code>string path = 1 [json_name = "path"];</code>
+       * @return The path.
+       */
+      public java.lang.String getPath() {
+        java.lang.Object ref = path_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          path_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string path = 1 [json_name = "path"];</code>
+       * @return The bytes for path.
+       */
+      public com.google.protobuf.ByteString
+          getPathBytes() {
+        java.lang.Object ref = path_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          path_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string path = 1 [json_name = "path"];</code>
+       * @param value The path to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPath(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        path_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string path = 1 [json_name = "path"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPath() {
+        
+        path_ = getDefaultInstance().getPath();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string path = 1 [json_name = "path"];</code>
+       * @param value The bytes for path to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPathBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        path_ = value;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:common.v1.AuditRecordMeta)
+    }
+
+    // @@protoc_insertion_point(class_scope:common.v1.AuditRecordMeta)
+    private static final org.megacommerce.common.v1.AuditProto.AuditRecordMeta DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.common.v1.AuditProto.AuditRecordMeta();
+    }
+
+    public static org.megacommerce.common.v1.AuditProto.AuditRecordMeta getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AuditRecordMeta>
+        PARSER = new com.google.protobuf.AbstractParser<AuditRecordMeta>() {
+      @java.lang.Override
+      public AuditRecordMeta parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<AuditRecordMeta> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AuditRecordMeta> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.common.v1.AuditProto.AuditRecordMeta getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface AuditEventErrorOrBuilder extends
       // @@protoc_insertion_point(interface_extends:common.v1.AuditEventError)
       com.google.protobuf.MessageOrBuilder {
@@ -4931,11 +5360,6 @@ public final class AuditProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_common_v1_AuditRecord_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_common_v1_AuditRecord_MetaEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_common_v1_AuditRecord_MetaEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_v1_AuditEventData_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -4945,6 +5369,11 @@ public final class AuditProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_common_v1_AuditEventActor_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_v1_AuditRecordMeta_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_common_v1_AuditRecordMeta_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_v1_AuditEventError_descriptor;
   private static final 
@@ -4960,30 +5389,29 @@ public final class AuditProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\025common/v1/audit.proto\022\tcommon.v1\032\031goog" +
-      "le/protobuf/any.proto\"\347\002\n\013AuditRecord\022\035\n" +
+      "le/protobuf/any.proto\"\222\002\n\013AuditRecord\022\035\n" +
       "\nevent_name\030\001 \001(\tR\teventName\022\026\n\006status\030\002" +
       " \001(\tR\006status\0228\n\nevent_data\030\003 \001(\0132\031.commo" +
       "n.v1.AuditEventDataR\teventData\0220\n\005actor\030" +
       "\004 \001(\0132\032.common.v1.AuditEventActorR\005actor" +
-      "\0224\n\004meta\030\005 \003(\0132 .common.v1.AuditRecord.M" +
-      "etaEntryR\004meta\0220\n\005error\030\006 \001(\0132\032.common.v" +
-      "1.AuditEventErrorR\005error\032M\n\tMetaEntry\022\020\n" +
-      "\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\0132\024.google." +
-      "protobuf.AnyR\005value:\0028\001\"\363\001\n\016AuditEventDa" +
-      "ta\0224\n\nparameters\030\001 \001(\0132\024.google.protobuf" +
-      ".AnyR\nparameters\0225\n\013prior_state\030\002 \001(\0132\024." +
-      "google.protobuf.AnyR\npriorState\022=\n\017resul" +
-      "ting_state\030\003 \001(\0132\024.google.protobuf.AnyR\016" +
-      "resultingState\0225\n\013object_type\030\004 \001(\0132\024.go" +
-      "ogle.protobuf.AnyR\nobjectType\"\250\001\n\017AuditE" +
-      "ventActor\022\027\n\007user_id\030\001 \001(\tR\006userId\022\035\n\nse" +
-      "ssion_id\030\002 \001(\tR\tsessionId\022\026\n\006client\030\003 \001(" +
-      "\tR\006client\022\035\n\nip_address\030\004 \001(\tR\tipAddress" +
-      "\022&\n\017x_forwarded_for\030\005 \001(\tR\rxForwardedFor" +
-      "\"K\n\017AuditEventError\022\031\n\010api_path\030\001 \001(\tR\007a" +
-      "piPath\022\035\n\ncluster_id\030\002 \001(\tR\tclusterIdB9\n" +
-      "\032org.megacommerce.common.v1B\nAuditProtoZ" +
-      "\014common/v1;v1\370\001\001b\006proto3"
+      "\022.\n\004meta\030\005 \001(\0132\032.common.v1.AuditRecordMe" +
+      "taR\004meta\0220\n\005error\030\006 \001(\0132\032.common.v1.Audi" +
+      "tEventErrorR\005error\"\363\001\n\016AuditEventData\0224\n" +
+      "\nparameters\030\001 \001(\0132\024.google.protobuf.AnyR" +
+      "\nparameters\0225\n\013prior_state\030\002 \001(\0132\024.googl" +
+      "e.protobuf.AnyR\npriorState\022=\n\017resulting_" +
+      "state\030\003 \001(\0132\024.google.protobuf.AnyR\016resul" +
+      "tingState\0225\n\013object_type\030\004 \001(\0132\024.google." +
+      "protobuf.AnyR\nobjectType\"\250\001\n\017AuditEventA" +
+      "ctor\022\027\n\007user_id\030\001 \001(\tR\006userId\022\035\n\nsession" +
+      "_id\030\002 \001(\tR\tsessionId\022\026\n\006client\030\003 \001(\tR\006cl" +
+      "ient\022\035\n\nip_address\030\004 \001(\tR\tipAddress\022&\n\017x" +
+      "_forwarded_for\030\005 \001(\tR\rxForwardedFor\"%\n\017A" +
+      "uditRecordMeta\022\022\n\004path\030\001 \001(\tR\004path\"K\n\017Au" +
+      "ditEventError\022\031\n\010api_path\030\001 \001(\tR\007apiPath" +
+      "\022\035\n\ncluster_id\030\002 \001(\tR\tclusterIdB9\n\032org.m" +
+      "egacommerce.common.v1B\nAuditProtoZ\014commo" +
+      "n/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4996,12 +5424,6 @@ public final class AuditProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_v1_AuditRecord_descriptor,
         new java.lang.String[] { "EventName", "Status", "EventData", "Actor", "Meta", "Error", });
-    internal_static_common_v1_AuditRecord_MetaEntry_descriptor =
-      internal_static_common_v1_AuditRecord_descriptor.getNestedTypes().get(0);
-    internal_static_common_v1_AuditRecord_MetaEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_common_v1_AuditRecord_MetaEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
     internal_static_common_v1_AuditEventData_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_common_v1_AuditEventData_fieldAccessorTable = new
@@ -5014,8 +5436,14 @@ public final class AuditProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_v1_AuditEventActor_descriptor,
         new java.lang.String[] { "UserId", "SessionId", "Client", "IpAddress", "XForwardedFor", });
-    internal_static_common_v1_AuditEventError_descriptor =
+    internal_static_common_v1_AuditRecordMeta_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_common_v1_AuditRecordMeta_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_common_v1_AuditRecordMeta_descriptor,
+        new java.lang.String[] { "Path", });
+    internal_static_common_v1_AuditEventError_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_common_v1_AuditEventError_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_v1_AuditEventError_descriptor,
