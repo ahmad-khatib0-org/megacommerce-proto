@@ -147,7 +147,7 @@ proto.common.v1.AuditRecord.toObject = function(includeInstance, msg) {
     status: jspb.Message.getFieldWithDefault(msg, 2, ""),
     eventData: (f = msg.getEventData()) && proto.common.v1.AuditEventData.toObject(includeInstance, f),
     actor: (f = msg.getActor()) && proto.common.v1.AuditEventActor.toObject(includeInstance, f),
-    meta: (f = msg.getMeta()) && google_protobuf_any_pb.Any.toObject(includeInstance, f),
+    metaMap: (f = msg.getMetaMap()) ? f.toObject(includeInstance, proto.google.protobuf.Any.toObject) : [],
     error: (f = msg.getError()) && proto.common.v1.AuditEventError.toObject(includeInstance, f)
   };
 
@@ -204,9 +204,10 @@ proto.common.v1.AuditRecord.deserializeBinaryFromReader = function(msg, reader) 
       msg.setActor(value);
       break;
     case 5:
-      var value = new google_protobuf_any_pb.Any;
-      reader.readMessage(value,google_protobuf_any_pb.Any.deserializeBinaryFromReader);
-      msg.setMeta(value);
+      var value = msg.getMetaMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.google.protobuf.Any.deserializeBinaryFromReader, "", new proto.google.protobuf.Any());
+         });
       break;
     case 6:
       var value = new proto.common.v1.AuditEventError;
@@ -272,13 +273,9 @@ proto.common.v1.AuditRecord.serializeBinaryToWriter = function(message, writer) 
       proto.common.v1.AuditEventActor.serializeBinaryToWriter
     );
   }
-  f = message.getMeta();
-  if (f != null) {
-    writer.writeMessage(
-      5,
-      f,
-      google_protobuf_any_pb.Any.serializeBinaryToWriter
-    );
+  f = message.getMetaMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(5, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.google.protobuf.Any.serializeBinaryToWriter);
   }
   f = message.getError();
   if (f != null) {
@@ -402,40 +399,25 @@ proto.common.v1.AuditRecord.prototype.hasActor = function() {
 
 
 /**
- * optional google.protobuf.Any meta = 5;
- * @return {?proto.google.protobuf.Any}
+ * map<string, google.protobuf.Any> meta = 5;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,!proto.google.protobuf.Any>}
  */
-proto.common.v1.AuditRecord.prototype.getMeta = function() {
-  return /** @type{?proto.google.protobuf.Any} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_any_pb.Any, 5));
+proto.common.v1.AuditRecord.prototype.getMetaMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!proto.google.protobuf.Any>} */ (
+      jspb.Message.getMapField(this, 5, opt_noLazyCreate,
+      proto.google.protobuf.Any));
 };
 
 
 /**
- * @param {?proto.google.protobuf.Any|undefined} value
- * @return {!proto.common.v1.AuditRecord} returns this
-*/
-proto.common.v1.AuditRecord.prototype.setMeta = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.common.v1.AuditRecord} returns this
  */
-proto.common.v1.AuditRecord.prototype.clearMeta = function() {
-  return this.setMeta(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.common.v1.AuditRecord.prototype.hasMeta = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
+proto.common.v1.AuditRecord.prototype.clearMetaMap = function() {
+  this.getMetaMap().clear();
+  return this;};
 
 
 /**

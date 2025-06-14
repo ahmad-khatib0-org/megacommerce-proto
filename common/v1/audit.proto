@@ -15,7 +15,7 @@ message AuditRecord {
   string status = 2;
   AuditEventData event_data = 3;
   AuditEventActor actor = 4;
-  google.protobuf.Any meta = 5;
+  map<string, google.protobuf.Any> meta = 5;
   AuditEventError error = 6;
 }
 

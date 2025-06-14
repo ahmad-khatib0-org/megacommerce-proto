@@ -21,11 +21,8 @@ export class AuditRecord extends jspb.Message {
   getActor(): AuditEventActor | undefined;
   setActor(value?: AuditEventActor): void;
 
-  hasMeta(): boolean;
-  clearMeta(): void;
-  getMeta(): google_protobuf_any_pb.Any | undefined;
-  setMeta(value?: google_protobuf_any_pb.Any): void;
-
+  getMetaMap(): jspb.Map<string, google_protobuf_any_pb.Any>;
+  clearMetaMap(): void;
   hasError(): boolean;
   clearError(): void;
   getError(): AuditEventError | undefined;
@@ -47,7 +44,7 @@ export namespace AuditRecord {
     status: string,
     eventData?: AuditEventData.AsObject,
     actor?: AuditEventActor.AsObject,
-    meta?: google_protobuf_any_pb.Any.AsObject,
+    metaMap: Array<[string, google_protobuf_any_pb.Any.AsObject]>,
     error?: AuditEventError.AsObject,
   }
 }

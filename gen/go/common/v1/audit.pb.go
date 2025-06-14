@@ -29,7 +29,7 @@ type AuditRecord struct {
 	Status        string                 `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
 	EventData     *AuditEventData        `protobuf:"bytes,3,opt,name=event_data,json=eventData,proto3" json:"event_data,omitempty"`
 	Actor         *AuditEventActor       `protobuf:"bytes,4,opt,name=actor,proto3" json:"actor,omitempty"`
-	Meta          *anypb.Any             `protobuf:"bytes,5,opt,name=meta,proto3" json:"meta,omitempty"`
+	Meta          map[string]*anypb.Any  `protobuf:"bytes,5,rep,name=meta,proto3" json:"meta,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	Error         *AuditEventError       `protobuf:"bytes,6,opt,name=error,proto3" json:"error,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -93,7 +93,7 @@ func (x *AuditRecord) GetActor() *AuditEventActor {
 	return nil
 }
 
-func (x *AuditRecord) GetMeta() *anypb.Any {
+func (x *AuditRecord) GetMeta() map[string]*anypb.Any {
 	if x != nil {
 		return x.Meta
 	}
@@ -315,16 +315,19 @@ var File_common_v1_audit_proto protoreflect.FileDescriptor
 
 const file_common_v1_audit_proto_rawDesc = "" +
 	"\n" +
-	"\x15common/v1/audit.proto\x12\tcommon.v1\x1a\x19google/protobuf/any.proto\"\x8c\x02\n" +
+	"\x15common/v1/audit.proto\x12\tcommon.v1\x1a\x19google/protobuf/any.proto\"\xe7\x02\n" +
 	"\vAuditRecord\x12\x1d\n" +
 	"\n" +
 	"event_name\x18\x01 \x01(\tR\teventName\x12\x16\n" +
 	"\x06status\x18\x02 \x01(\tR\x06status\x128\n" +
 	"\n" +
 	"event_data\x18\x03 \x01(\v2\x19.common.v1.AuditEventDataR\teventData\x120\n" +
-	"\x05actor\x18\x04 \x01(\v2\x1a.common.v1.AuditEventActorR\x05actor\x12(\n" +
-	"\x04meta\x18\x05 \x01(\v2\x14.google.protobuf.AnyR\x04meta\x120\n" +
-	"\x05error\x18\x06 \x01(\v2\x1a.common.v1.AuditEventErrorR\x05error\"\xf3\x01\n" +
+	"\x05actor\x18\x04 \x01(\v2\x1a.common.v1.AuditEventActorR\x05actor\x124\n" +
+	"\x04meta\x18\x05 \x03(\v2 .common.v1.AuditRecord.MetaEntryR\x04meta\x120\n" +
+	"\x05error\x18\x06 \x01(\v2\x1a.common.v1.AuditEventErrorR\x05error\x1aM\n" +
+	"\tMetaEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12*\n" +
+	"\x05value\x18\x02 \x01(\v2\x14.google.protobuf.AnyR\x05value:\x028\x01\"\xf3\x01\n" +
 	"\x0eAuditEventData\x124\n" +
 	"\n" +
 	"parameters\x18\x01 \x01(\v2\x14.google.protobuf.AnyR\n" +
@@ -361,28 +364,30 @@ func file_common_v1_audit_proto_rawDescGZIP() []byte {
 	return file_common_v1_audit_proto_rawDescData
 }
 
-var file_common_v1_audit_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_common_v1_audit_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_common_v1_audit_proto_goTypes = []any{
 	(*AuditRecord)(nil),     // 0: common.v1.AuditRecord
 	(*AuditEventData)(nil),  // 1: common.v1.AuditEventData
 	(*AuditEventActor)(nil), // 2: common.v1.AuditEventActor
 	(*AuditEventError)(nil), // 3: common.v1.AuditEventError
-	(*anypb.Any)(nil),       // 4: google.protobuf.Any
+	nil,                     // 4: common.v1.AuditRecord.MetaEntry
+	(*anypb.Any)(nil),       // 5: google.protobuf.Any
 }
 var file_common_v1_audit_proto_depIdxs = []int32{
 	1, // 0: common.v1.AuditRecord.event_data:type_name -> common.v1.AuditEventData
 	2, // 1: common.v1.AuditRecord.actor:type_name -> common.v1.AuditEventActor
-	4, // 2: common.v1.AuditRecord.meta:type_name -> google.protobuf.Any
+	4, // 2: common.v1.AuditRecord.meta:type_name -> common.v1.AuditRecord.MetaEntry
 	3, // 3: common.v1.AuditRecord.error:type_name -> common.v1.AuditEventError
-	4, // 4: common.v1.AuditEventData.parameters:type_name -> google.protobuf.Any
-	4, // 5: common.v1.AuditEventData.prior_state:type_name -> google.protobuf.Any
-	4, // 6: common.v1.AuditEventData.resulting_state:type_name -> google.protobuf.Any
-	4, // 7: common.v1.AuditEventData.object_type:type_name -> google.protobuf.Any
-	8, // [8:8] is the sub-list for method output_type
-	8, // [8:8] is the sub-list for method input_type
-	8, // [8:8] is the sub-list for extension type_name
-	8, // [8:8] is the sub-list for extension extendee
-	0, // [0:8] is the sub-list for field type_name
+	5, // 4: common.v1.AuditEventData.parameters:type_name -> google.protobuf.Any
+	5, // 5: common.v1.AuditEventData.prior_state:type_name -> google.protobuf.Any
+	5, // 6: common.v1.AuditEventData.resulting_state:type_name -> google.protobuf.Any
+	5, // 7: common.v1.AuditEventData.object_type:type_name -> google.protobuf.Any
+	5, // 8: common.v1.AuditRecord.MetaEntry.value:type_name -> google.protobuf.Any
+	9, // [9:9] is the sub-list for method output_type
+	9, // [9:9] is the sub-list for method input_type
+	9, // [9:9] is the sub-list for extension type_name
+	9, // [9:9] is the sub-list for extension extendee
+	0, // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_common_v1_audit_proto_init() }
@@ -396,7 +401,7 @@ func file_common_v1_audit_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_v1_audit_proto_rawDesc), len(file_common_v1_audit_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

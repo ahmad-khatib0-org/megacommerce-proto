@@ -73,19 +73,38 @@ public final class AuditProto {
     org.megacommerce.common.v1.AuditProto.AuditEventActorOrBuilder getActorOrBuilder();
 
     /**
-     * <code>.google.protobuf.Any meta = 5 [json_name = "meta"];</code>
-     * @return Whether the meta field is set.
+     * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
      */
-    boolean hasMeta();
+    int getMetaCount();
     /**
-     * <code>.google.protobuf.Any meta = 5 [json_name = "meta"];</code>
-     * @return The meta.
+     * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
      */
-    com.google.protobuf.Any getMeta();
+    boolean containsMeta(
+        java.lang.String key);
     /**
-     * <code>.google.protobuf.Any meta = 5 [json_name = "meta"];</code>
+     * Use {@link #getMetaMap()} instead.
      */
-    com.google.protobuf.AnyOrBuilder getMetaOrBuilder();
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, com.google.protobuf.Any>
+    getMeta();
+    /**
+     * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
+     */
+    java.util.Map<java.lang.String, com.google.protobuf.Any>
+    getMetaMap();
+    /**
+     * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
+     */
+
+    com.google.protobuf.Any getMetaOrDefault(
+        java.lang.String key,
+        com.google.protobuf.Any defaultValue);
+    /**
+     * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
+     */
+
+    com.google.protobuf.Any getMetaOrThrow(
+        java.lang.String key);
 
     /**
      * <code>.common.v1.AuditEventError error = 6 [json_name = "error"];</code>
@@ -140,6 +159,18 @@ public final class AuditProto {
       return org.megacommerce.common.v1.AuditProto.internal_static_common_v1_AuditRecord_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 5:
+          return internalGetMeta();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -277,29 +308,84 @@ public final class AuditProto {
     }
 
     public static final int META_FIELD_NUMBER = 5;
-    private com.google.protobuf.Any meta_;
-    /**
-     * <code>.google.protobuf.Any meta = 5 [json_name = "meta"];</code>
-     * @return Whether the meta field is set.
-     */
-    @java.lang.Override
-    public boolean hasMeta() {
-      return meta_ != null;
+    private static final class MetaDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, com.google.protobuf.Any> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, com.google.protobuf.Any>newDefaultInstance(
+                  org.megacommerce.common.v1.AuditProto.internal_static_common_v1_AuditRecord_MetaEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  com.google.protobuf.Any.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, com.google.protobuf.Any> meta_;
+    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Any>
+    internalGetMeta() {
+      if (meta_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            MetaDefaultEntryHolder.defaultEntry);
+      }
+      return meta_;
+    }
+
+    public int getMetaCount() {
+      return internalGetMeta().getMap().size();
     }
     /**
-     * <code>.google.protobuf.Any meta = 5 [json_name = "meta"];</code>
-     * @return The meta.
+     * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
      */
+
     @java.lang.Override
-    public com.google.protobuf.Any getMeta() {
-      return meta_ == null ? com.google.protobuf.Any.getDefaultInstance() : meta_;
+    public boolean containsMeta(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetMeta().getMap().containsKey(key);
     }
     /**
-     * <code>.google.protobuf.Any meta = 5 [json_name = "meta"];</code>
+     * Use {@link #getMetaMap()} instead.
      */
     @java.lang.Override
-    public com.google.protobuf.AnyOrBuilder getMetaOrBuilder() {
-      return getMeta();
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.protobuf.Any> getMeta() {
+      return getMetaMap();
+    }
+    /**
+     * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, com.google.protobuf.Any> getMetaMap() {
+      return internalGetMeta().getMap();
+    }
+    /**
+     * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
+     */
+    @java.lang.Override
+
+    public com.google.protobuf.Any getMetaOrDefault(
+        java.lang.String key,
+        com.google.protobuf.Any defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, com.google.protobuf.Any> map =
+          internalGetMeta().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
+     */
+    @java.lang.Override
+
+    public com.google.protobuf.Any getMetaOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, com.google.protobuf.Any> map =
+          internalGetMeta().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
     }
 
     public static final int ERROR_FIELD_NUMBER = 6;
@@ -354,9 +440,12 @@ public final class AuditProto {
       if (actor_ != null) {
         output.writeMessage(4, getActor());
       }
-      if (meta_ != null) {
-        output.writeMessage(5, getMeta());
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetMeta(),
+          MetaDefaultEntryHolder.defaultEntry,
+          5);
       if (error_ != null) {
         output.writeMessage(6, getError());
       }
@@ -383,9 +472,15 @@ public final class AuditProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, getActor());
       }
-      if (meta_ != null) {
+      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.Any> entry
+           : internalGetMeta().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Any>
+        meta__ = MetaDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getMeta());
+            .computeMessageSize(5, meta__);
       }
       if (error_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -420,11 +515,8 @@ public final class AuditProto {
         if (!getActor()
             .equals(other.getActor())) return false;
       }
-      if (hasMeta() != other.hasMeta()) return false;
-      if (hasMeta()) {
-        if (!getMeta()
-            .equals(other.getMeta())) return false;
-      }
+      if (!internalGetMeta().equals(
+          other.internalGetMeta())) return false;
       if (hasError() != other.hasError()) return false;
       if (hasError()) {
         if (!getError()
@@ -453,9 +545,9 @@ public final class AuditProto {
         hash = (37 * hash) + ACTOR_FIELD_NUMBER;
         hash = (53 * hash) + getActor().hashCode();
       }
-      if (hasMeta()) {
+      if (!internalGetMeta().getMap().isEmpty()) {
         hash = (37 * hash) + META_FIELD_NUMBER;
-        hash = (53 * hash) + getMeta().hashCode();
+        hash = (53 * hash) + internalGetMeta().hashCode();
       }
       if (hasError()) {
         hash = (37 * hash) + ERROR_FIELD_NUMBER;
@@ -572,6 +664,28 @@ public final class AuditProto {
         return org.megacommerce.common.v1.AuditProto.internal_static_common_v1_AuditRecord_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetMeta();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 5:
+            return internalGetMutableMeta();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -609,12 +723,7 @@ public final class AuditProto {
           actor_ = null;
           actorBuilder_ = null;
         }
-        if (metaBuilder_ == null) {
-          meta_ = null;
-        } else {
-          meta_ = null;
-          metaBuilder_ = null;
-        }
+        internalGetMutableMeta().clear();
         if (errorBuilder_ == null) {
           error_ = null;
         } else {
@@ -647,6 +756,7 @@ public final class AuditProto {
       @java.lang.Override
       public org.megacommerce.common.v1.AuditProto.AuditRecord buildPartial() {
         org.megacommerce.common.v1.AuditProto.AuditRecord result = new org.megacommerce.common.v1.AuditProto.AuditRecord(this);
+        int from_bitField0_ = bitField0_;
         result.eventName_ = eventName_;
         result.status_ = status_;
         if (eventDataBuilder_ == null) {
@@ -659,11 +769,8 @@ public final class AuditProto {
         } else {
           result.actor_ = actorBuilder_.build();
         }
-        if (metaBuilder_ == null) {
-          result.meta_ = meta_;
-        } else {
-          result.meta_ = metaBuilder_.build();
-        }
+        result.meta_ = internalGetMeta();
+        result.meta_.makeImmutable();
         if (errorBuilder_ == null) {
           result.error_ = error_;
         } else {
@@ -731,9 +838,8 @@ public final class AuditProto {
         if (other.hasActor()) {
           mergeActor(other.getActor());
         }
-        if (other.hasMeta()) {
-          mergeMeta(other.getMeta());
-        }
+        internalGetMutableMeta().mergeFrom(
+            other.internalGetMeta());
         if (other.hasError()) {
           mergeError(other.getError());
         }
@@ -788,10 +894,11 @@ public final class AuditProto {
                 break;
               } // case 34
               case 42: {
-                input.readMessage(
-                    getMetaFieldBuilder().getBuilder(),
-                    extensionRegistry);
-
+                com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Any>
+                meta__ = input.readMessage(
+                    MetaDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableMeta().getMutableMap().put(
+                    meta__.getKey(), meta__.getValue());
                 break;
               } // case 42
               case 50: {
@@ -816,6 +923,7 @@ public final class AuditProto {
         } // finally
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object eventName_ = "";
       /**
@@ -1207,123 +1315,135 @@ public final class AuditProto {
         return actorBuilder_;
       }
 
-      private com.google.protobuf.Any meta_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> metaBuilder_;
-      /**
-       * <code>.google.protobuf.Any meta = 5 [json_name = "meta"];</code>
-       * @return Whether the meta field is set.
-       */
-      public boolean hasMeta() {
-        return metaBuilder_ != null || meta_ != null;
-      }
-      /**
-       * <code>.google.protobuf.Any meta = 5 [json_name = "meta"];</code>
-       * @return The meta.
-       */
-      public com.google.protobuf.Any getMeta() {
-        if (metaBuilder_ == null) {
-          return meta_ == null ? com.google.protobuf.Any.getDefaultInstance() : meta_;
-        } else {
-          return metaBuilder_.getMessage();
+      private com.google.protobuf.MapField<
+          java.lang.String, com.google.protobuf.Any> meta_;
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Any>
+      internalGetMeta() {
+        if (meta_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              MetaDefaultEntryHolder.defaultEntry);
         }
+        return meta_;
       }
-      /**
-       * <code>.google.protobuf.Any meta = 5 [json_name = "meta"];</code>
-       */
-      public Builder setMeta(com.google.protobuf.Any value) {
-        if (metaBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          meta_ = value;
-          onChanged();
-        } else {
-          metaBuilder_.setMessage(value);
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Any>
+      internalGetMutableMeta() {
+        onChanged();;
+        if (meta_ == null) {
+          meta_ = com.google.protobuf.MapField.newMapField(
+              MetaDefaultEntryHolder.defaultEntry);
         }
+        if (!meta_.isMutable()) {
+          meta_ = meta_.copy();
+        }
+        return meta_;
+      }
 
-        return this;
+      public int getMetaCount() {
+        return internalGetMeta().getMap().size();
       }
       /**
-       * <code>.google.protobuf.Any meta = 5 [json_name = "meta"];</code>
+       * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
        */
-      public Builder setMeta(
-          com.google.protobuf.Any.Builder builderForValue) {
-        if (metaBuilder_ == null) {
-          meta_ = builderForValue.build();
-          onChanged();
-        } else {
-          metaBuilder_.setMessage(builderForValue.build());
-        }
 
-        return this;
+      @java.lang.Override
+      public boolean containsMeta(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetMeta().getMap().containsKey(key);
       }
       /**
-       * <code>.google.protobuf.Any meta = 5 [json_name = "meta"];</code>
+       * Use {@link #getMetaMap()} instead.
        */
-      public Builder mergeMeta(com.google.protobuf.Any value) {
-        if (metaBuilder_ == null) {
-          if (meta_ != null) {
-            meta_ =
-              com.google.protobuf.Any.newBuilder(meta_).mergeFrom(value).buildPartial();
-          } else {
-            meta_ = value;
-          }
-          onChanged();
-        } else {
-          metaBuilder_.mergeFrom(value);
-        }
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.google.protobuf.Any> getMeta() {
+        return getMetaMap();
+      }
+      /**
+       * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
+       */
+      @java.lang.Override
 
-        return this;
+      public java.util.Map<java.lang.String, com.google.protobuf.Any> getMetaMap() {
+        return internalGetMeta().getMap();
       }
       /**
-       * <code>.google.protobuf.Any meta = 5 [json_name = "meta"];</code>
+       * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
        */
+      @java.lang.Override
+
+      public com.google.protobuf.Any getMetaOrDefault(
+          java.lang.String key,
+          com.google.protobuf.Any defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, com.google.protobuf.Any> map =
+            internalGetMeta().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
+       */
+      @java.lang.Override
+
+      public com.google.protobuf.Any getMetaOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, com.google.protobuf.Any> map =
+            internalGetMeta().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
       public Builder clearMeta() {
-        if (metaBuilder_ == null) {
-          meta_ = null;
-          onChanged();
-        } else {
-          meta_ = null;
-          metaBuilder_ = null;
-        }
-
+        internalGetMutableMeta().getMutableMap()
+            .clear();
         return this;
       }
       /**
-       * <code>.google.protobuf.Any meta = 5 [json_name = "meta"];</code>
+       * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
        */
-      public com.google.protobuf.Any.Builder getMetaBuilder() {
-        
-        onChanged();
-        return getMetaFieldBuilder().getBuilder();
+
+      public Builder removeMeta(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableMeta().getMutableMap()
+            .remove(key);
+        return this;
       }
       /**
-       * <code>.google.protobuf.Any meta = 5 [json_name = "meta"];</code>
+       * Use alternate mutation accessors instead.
        */
-      public com.google.protobuf.AnyOrBuilder getMetaOrBuilder() {
-        if (metaBuilder_ != null) {
-          return metaBuilder_.getMessageOrBuilder();
-        } else {
-          return meta_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : meta_;
-        }
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.google.protobuf.Any>
+      getMutableMeta() {
+        return internalGetMutableMeta().getMutableMap();
       }
       /**
-       * <code>.google.protobuf.Any meta = 5 [json_name = "meta"];</code>
+       * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
        */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
-          getMetaFieldBuilder() {
-        if (metaBuilder_ == null) {
-          metaBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
-                  getMeta(),
-                  getParentForChildren(),
-                  isClean());
-          meta_ = null;
-        }
-        return metaBuilder_;
+      public Builder putMeta(
+          java.lang.String key,
+          com.google.protobuf.Any value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) {
+  throw new NullPointerException("map value");
+}
+
+        internalGetMutableMeta().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .google.protobuf.Any&gt; meta = 5 [json_name = "meta"];</code>
+       */
+
+      public Builder putAllMeta(
+          java.util.Map<java.lang.String, com.google.protobuf.Any> values) {
+        internalGetMutableMeta().getMutableMap()
+            .putAll(values);
+        return this;
       }
 
       private org.megacommerce.common.v1.AuditProto.AuditEventError error_;
@@ -4811,6 +4931,11 @@ public final class AuditProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_common_v1_AuditRecord_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_v1_AuditRecord_MetaEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_common_v1_AuditRecord_MetaEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_v1_AuditEventData_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -4835,28 +4960,30 @@ public final class AuditProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\025common/v1/audit.proto\022\tcommon.v1\032\031goog" +
-      "le/protobuf/any.proto\"\214\002\n\013AuditRecord\022\035\n" +
+      "le/protobuf/any.proto\"\347\002\n\013AuditRecord\022\035\n" +
       "\nevent_name\030\001 \001(\tR\teventName\022\026\n\006status\030\002" +
       " \001(\tR\006status\0228\n\nevent_data\030\003 \001(\0132\031.commo" +
       "n.v1.AuditEventDataR\teventData\0220\n\005actor\030" +
       "\004 \001(\0132\032.common.v1.AuditEventActorR\005actor" +
-      "\022(\n\004meta\030\005 \001(\0132\024.google.protobuf.AnyR\004me" +
-      "ta\0220\n\005error\030\006 \001(\0132\032.common.v1.AuditEvent" +
-      "ErrorR\005error\"\363\001\n\016AuditEventData\0224\n\nparam" +
-      "eters\030\001 \001(\0132\024.google.protobuf.AnyR\nparam" +
-      "eters\0225\n\013prior_state\030\002 \001(\0132\024.google.prot" +
-      "obuf.AnyR\npriorState\022=\n\017resulting_state\030" +
-      "\003 \001(\0132\024.google.protobuf.AnyR\016resultingSt" +
-      "ate\0225\n\013object_type\030\004 \001(\0132\024.google.protob" +
-      "uf.AnyR\nobjectType\"\250\001\n\017AuditEventActor\022\027" +
-      "\n\007user_id\030\001 \001(\tR\006userId\022\035\n\nsession_id\030\002 " +
-      "\001(\tR\tsessionId\022\026\n\006client\030\003 \001(\tR\006client\022\035" +
-      "\n\nip_address\030\004 \001(\tR\tipAddress\022&\n\017x_forwa" +
-      "rded_for\030\005 \001(\tR\rxForwardedFor\"K\n\017AuditEv" +
-      "entError\022\031\n\010api_path\030\001 \001(\tR\007apiPath\022\035\n\nc" +
-      "luster_id\030\002 \001(\tR\tclusterIdB9\n\032org.megaco" +
-      "mmerce.common.v1B\nAuditProtoZ\014common/v1;" +
-      "v1\370\001\001b\006proto3"
+      "\0224\n\004meta\030\005 \003(\0132 .common.v1.AuditRecord.M" +
+      "etaEntryR\004meta\0220\n\005error\030\006 \001(\0132\032.common.v" +
+      "1.AuditEventErrorR\005error\032M\n\tMetaEntry\022\020\n" +
+      "\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\0132\024.google." +
+      "protobuf.AnyR\005value:\0028\001\"\363\001\n\016AuditEventDa" +
+      "ta\0224\n\nparameters\030\001 \001(\0132\024.google.protobuf" +
+      ".AnyR\nparameters\0225\n\013prior_state\030\002 \001(\0132\024." +
+      "google.protobuf.AnyR\npriorState\022=\n\017resul" +
+      "ting_state\030\003 \001(\0132\024.google.protobuf.AnyR\016" +
+      "resultingState\0225\n\013object_type\030\004 \001(\0132\024.go" +
+      "ogle.protobuf.AnyR\nobjectType\"\250\001\n\017AuditE" +
+      "ventActor\022\027\n\007user_id\030\001 \001(\tR\006userId\022\035\n\nse" +
+      "ssion_id\030\002 \001(\tR\tsessionId\022\026\n\006client\030\003 \001(" +
+      "\tR\006client\022\035\n\nip_address\030\004 \001(\tR\tipAddress" +
+      "\022&\n\017x_forwarded_for\030\005 \001(\tR\rxForwardedFor" +
+      "\"K\n\017AuditEventError\022\031\n\010api_path\030\001 \001(\tR\007a" +
+      "piPath\022\035\n\ncluster_id\030\002 \001(\tR\tclusterIdB9\n" +
+      "\032org.megacommerce.common.v1B\nAuditProtoZ" +
+      "\014common/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4869,6 +4996,12 @@ public final class AuditProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_v1_AuditRecord_descriptor,
         new java.lang.String[] { "EventName", "Status", "EventData", "Actor", "Meta", "Error", });
+    internal_static_common_v1_AuditRecord_MetaEntry_descriptor =
+      internal_static_common_v1_AuditRecord_descriptor.getNestedTypes().get(0);
+    internal_static_common_v1_AuditRecord_MetaEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_common_v1_AuditRecord_MetaEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_common_v1_AuditEventData_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_common_v1_AuditEventData_fieldAccessorTable = new

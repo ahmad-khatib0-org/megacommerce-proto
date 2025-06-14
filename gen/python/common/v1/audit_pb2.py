@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import any_pb2 as google_dot_protobuf_dot_any__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x63ommon/v1/audit.proto\x12\tcommon.v1\x1a\x19google/protobuf/any.proto\"\xda\x01\n\x0b\x41uditRecord\x12\x12\n\nevent_name\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12-\n\nevent_data\x18\x03 \x01(\x0b\x32\x19.common.v1.AuditEventData\x12)\n\x05\x61\x63tor\x18\x04 \x01(\x0b\x32\x1a.common.v1.AuditEventActor\x12\"\n\x04meta\x18\x05 \x01(\x0b\x32\x14.google.protobuf.Any\x12)\n\x05\x65rror\x18\x06 \x01(\x0b\x32\x1a.common.v1.AuditEventError\"\xbf\x01\n\x0e\x41uditEventData\x12(\n\nparameters\x18\x01 \x01(\x0b\x32\x14.google.protobuf.Any\x12)\n\x0bprior_state\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any\x12-\n\x0fresulting_state\x18\x03 \x01(\x0b\x32\x14.google.protobuf.Any\x12)\n\x0bobject_type\x18\x04 \x01(\x0b\x32\x14.google.protobuf.Any\"s\n\x0f\x41uditEventActor\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x12\n\nsession_id\x18\x02 \x01(\t\x12\x0e\n\x06\x63lient\x18\x03 \x01(\t\x12\x12\n\nip_address\x18\x04 \x01(\t\x12\x17\n\x0fx_forwarded_for\x18\x05 \x01(\t\"7\n\x0f\x41uditEventError\x12\x10\n\x08\x61pi_path\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\tB9\n\x1aorg.megacommerce.common.v1B\nAuditProtoZ\x0c\x63ommon/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x63ommon/v1/audit.proto\x12\tcommon.v1\x1a\x19google/protobuf/any.proto\"\xa9\x02\n\x0b\x41uditRecord\x12\x12\n\nevent_name\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12-\n\nevent_data\x18\x03 \x01(\x0b\x32\x19.common.v1.AuditEventData\x12)\n\x05\x61\x63tor\x18\x04 \x01(\x0b\x32\x1a.common.v1.AuditEventActor\x12.\n\x04meta\x18\x05 \x03(\x0b\x32 .common.v1.AuditRecord.MetaEntry\x12)\n\x05\x65rror\x18\x06 \x01(\x0b\x32\x1a.common.v1.AuditEventError\x1a\x41\n\tMetaEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any:\x02\x38\x01\"\xbf\x01\n\x0e\x41uditEventData\x12(\n\nparameters\x18\x01 \x01(\x0b\x32\x14.google.protobuf.Any\x12)\n\x0bprior_state\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any\x12-\n\x0fresulting_state\x18\x03 \x01(\x0b\x32\x14.google.protobuf.Any\x12)\n\x0bobject_type\x18\x04 \x01(\x0b\x32\x14.google.protobuf.Any\"s\n\x0f\x41uditEventActor\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x12\n\nsession_id\x18\x02 \x01(\t\x12\x0e\n\x06\x63lient\x18\x03 \x01(\t\x12\x12\n\nip_address\x18\x04 \x01(\t\x12\x17\n\x0fx_forwarded_for\x18\x05 \x01(\t\"7\n\x0f\x41uditEventError\x12\x10\n\x08\x61pi_path\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\tB9\n\x1aorg.megacommerce.common.v1B\nAuditProtoZ\x0c\x63ommon/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,12 +33,16 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'common.v1.audit_pb2', _glob
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\032org.megacommerce.common.v1B\nAuditProtoZ\014common/v1;v1\370\001\001'
+  _globals['_AUDITRECORD_METAENTRY']._loaded_options = None
+  _globals['_AUDITRECORD_METAENTRY']._serialized_options = b'8\001'
   _globals['_AUDITRECORD']._serialized_start=64
-  _globals['_AUDITRECORD']._serialized_end=282
-  _globals['_AUDITEVENTDATA']._serialized_start=285
-  _globals['_AUDITEVENTDATA']._serialized_end=476
-  _globals['_AUDITEVENTACTOR']._serialized_start=478
-  _globals['_AUDITEVENTACTOR']._serialized_end=593
-  _globals['_AUDITEVENTERROR']._serialized_start=595
-  _globals['_AUDITEVENTERROR']._serialized_end=650
+  _globals['_AUDITRECORD']._serialized_end=361
+  _globals['_AUDITRECORD_METAENTRY']._serialized_start=296
+  _globals['_AUDITRECORD_METAENTRY']._serialized_end=361
+  _globals['_AUDITEVENTDATA']._serialized_start=364
+  _globals['_AUDITEVENTDATA']._serialized_end=555
+  _globals['_AUDITEVENTACTOR']._serialized_start=557
+  _globals['_AUDITEVENTACTOR']._serialized_end=672
+  _globals['_AUDITEVENTERROR']._serialized_start=674
+  _globals['_AUDITEVENTERROR']._serialized_end=729
 # @@protoc_insertion_point(module_scope)

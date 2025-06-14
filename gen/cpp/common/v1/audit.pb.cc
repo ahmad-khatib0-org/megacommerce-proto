@@ -18,13 +18,24 @@
 PROTOBUF_PRAGMA_INIT_SEG
 namespace common {
 namespace v1 {
+constexpr AuditRecord_MetaEntry_DoNotUse::AuditRecord_MetaEntry_DoNotUse(
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+struct AuditRecord_MetaEntry_DoNotUseDefaultTypeInternal {
+  constexpr AuditRecord_MetaEntry_DoNotUseDefaultTypeInternal()
+    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
+  ~AuditRecord_MetaEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    AuditRecord_MetaEntry_DoNotUse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AuditRecord_MetaEntry_DoNotUseDefaultTypeInternal _AuditRecord_MetaEntry_DoNotUse_default_instance_;
 constexpr AuditRecord::AuditRecord(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : event_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : meta_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
+  , event_name_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , status_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , event_data_(nullptr)
   , actor_(nullptr)
-  , meta_(nullptr)
   , error_(nullptr){}
 struct AuditRecordDefaultTypeInternal {
   constexpr AuditRecordDefaultTypeInternal()
@@ -81,11 +92,21 @@ struct AuditEventErrorDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AuditEventErrorDefaultTypeInternal _AuditEventError_default_instance_;
 }  // namespace v1
 }  // namespace common
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_common_2fv1_2faudit_2eproto[4];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_common_2fv1_2faudit_2eproto[5];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_common_2fv1_2faudit_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_common_2fv1_2faudit_2eproto = nullptr;
 
 const uint32_t TableStruct_common_2fv1_2faudit_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
+  PROTOBUF_FIELD_OFFSET(::common::v1::AuditRecord_MetaEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::common::v1::AuditRecord_MetaEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::common::v1::AuditRecord_MetaEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::common::v1::AuditRecord_MetaEntry_DoNotUse, value_),
+  0,
+  1,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::common::v1::AuditRecord, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -129,13 +150,15 @@ const uint32_t TableStruct_common_2fv1_2faudit_2eproto::offsets[] PROTOBUF_SECTI
   PROTOBUF_FIELD_OFFSET(::common::v1::AuditEventError, cluster_id_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::common::v1::AuditRecord)},
-  { 12, -1, -1, sizeof(::common::v1::AuditEventData)},
-  { 22, -1, -1, sizeof(::common::v1::AuditEventActor)},
-  { 33, -1, -1, sizeof(::common::v1::AuditEventError)},
+  { 0, 8, -1, sizeof(::common::v1::AuditRecord_MetaEntry_DoNotUse)},
+  { 10, -1, -1, sizeof(::common::v1::AuditRecord)},
+  { 22, -1, -1, sizeof(::common::v1::AuditEventData)},
+  { 32, -1, -1, sizeof(::common::v1::AuditEventActor)},
+  { 43, -1, -1, sizeof(::common::v1::AuditEventError)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_AuditRecord_MetaEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_AuditRecord_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_AuditEventData_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_AuditEventActor_default_instance_),
@@ -144,36 +167,38 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 
 const char descriptor_table_protodef_common_2fv1_2faudit_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\025common/v1/audit.proto\022\tcommon.v1\032\031goog"
-  "le/protobuf/any.proto\"\214\002\n\013AuditRecord\022\035\n"
+  "le/protobuf/any.proto\"\347\002\n\013AuditRecord\022\035\n"
   "\nevent_name\030\001 \001(\tR\teventName\022\026\n\006status\030\002"
   " \001(\tR\006status\0228\n\nevent_data\030\003 \001(\0132\031.commo"
   "n.v1.AuditEventDataR\teventData\0220\n\005actor\030"
   "\004 \001(\0132\032.common.v1.AuditEventActorR\005actor"
-  "\022(\n\004meta\030\005 \001(\0132\024.google.protobuf.AnyR\004me"
-  "ta\0220\n\005error\030\006 \001(\0132\032.common.v1.AuditEvent"
-  "ErrorR\005error\"\363\001\n\016AuditEventData\0224\n\nparam"
-  "eters\030\001 \001(\0132\024.google.protobuf.AnyR\nparam"
-  "eters\0225\n\013prior_state\030\002 \001(\0132\024.google.prot"
-  "obuf.AnyR\npriorState\022=\n\017resulting_state\030"
-  "\003 \001(\0132\024.google.protobuf.AnyR\016resultingSt"
-  "ate\0225\n\013object_type\030\004 \001(\0132\024.google.protob"
-  "uf.AnyR\nobjectType\"\250\001\n\017AuditEventActor\022\027"
-  "\n\007user_id\030\001 \001(\tR\006userId\022\035\n\nsession_id\030\002 "
-  "\001(\tR\tsessionId\022\026\n\006client\030\003 \001(\tR\006client\022\035"
-  "\n\nip_address\030\004 \001(\tR\tipAddress\022&\n\017x_forwa"
-  "rded_for\030\005 \001(\tR\rxForwardedFor\"K\n\017AuditEv"
-  "entError\022\031\n\010api_path\030\001 \001(\tR\007apiPath\022\035\n\nc"
-  "luster_id\030\002 \001(\tR\tclusterIdB9\n\032org.megaco"
-  "mmerce.common.v1B\nAuditProtoZ\014common/v1;"
-  "v1\370\001\001b\006proto3"
+  "\0224\n\004meta\030\005 \003(\0132 .common.v1.AuditRecord.M"
+  "etaEntryR\004meta\0220\n\005error\030\006 \001(\0132\032.common.v"
+  "1.AuditEventErrorR\005error\032M\n\tMetaEntry\022\020\n"
+  "\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\0132\024.google."
+  "protobuf.AnyR\005value:\0028\001\"\363\001\n\016AuditEventDa"
+  "ta\0224\n\nparameters\030\001 \001(\0132\024.google.protobuf"
+  ".AnyR\nparameters\0225\n\013prior_state\030\002 \001(\0132\024."
+  "google.protobuf.AnyR\npriorState\022=\n\017resul"
+  "ting_state\030\003 \001(\0132\024.google.protobuf.AnyR\016"
+  "resultingState\0225\n\013object_type\030\004 \001(\0132\024.go"
+  "ogle.protobuf.AnyR\nobjectType\"\250\001\n\017AuditE"
+  "ventActor\022\027\n\007user_id\030\001 \001(\tR\006userId\022\035\n\nse"
+  "ssion_id\030\002 \001(\tR\tsessionId\022\026\n\006client\030\003 \001("
+  "\tR\006client\022\035\n\nip_address\030\004 \001(\tR\tipAddress"
+  "\022&\n\017x_forwarded_for\030\005 \001(\tR\rxForwardedFor"
+  "\"K\n\017AuditEventError\022\031\n\010api_path\030\001 \001(\tR\007a"
+  "piPath\022\035\n\ncluster_id\030\002 \001(\tR\tclusterIdB9\n"
+  "\032org.megacommerce.common.v1B\nAuditProtoZ"
+  "\014common/v1;v1\370\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_common_2fv1_2faudit_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fany_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2fv1_2faudit_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fv1_2faudit_2eproto = {
-  false, false, 893, descriptor_table_protodef_common_2fv1_2faudit_2eproto, "common/v1/audit.proto", 
-  &descriptor_table_common_2fv1_2faudit_2eproto_once, descriptor_table_common_2fv1_2faudit_2eproto_deps, 1, 4,
+  false, false, 984, descriptor_table_protodef_common_2fv1_2faudit_2eproto, "common/v1/audit.proto", 
+  &descriptor_table_common_2fv1_2faudit_2eproto_once, descriptor_table_common_2fv1_2faudit_2eproto_deps, 1, 5,
   schemas, file_default_instances, TableStruct_common_2fv1_2faudit_2eproto::offsets,
   file_level_metadata_common_2fv1_2faudit_2eproto, file_level_enum_descriptors_common_2fv1_2faudit_2eproto, file_level_service_descriptors_common_2fv1_2faudit_2eproto,
 };
@@ -188,11 +213,24 @@ namespace v1 {
 
 // ===================================================================
 
+AuditRecord_MetaEntry_DoNotUse::AuditRecord_MetaEntry_DoNotUse() {}
+AuditRecord_MetaEntry_DoNotUse::AuditRecord_MetaEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void AuditRecord_MetaEntry_DoNotUse::MergeFrom(const AuditRecord_MetaEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata AuditRecord_MetaEntry_DoNotUse::GetMetadata() const {
+  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
+      &descriptor_table_common_2fv1_2faudit_2eproto_getter, &descriptor_table_common_2fv1_2faudit_2eproto_once,
+      file_level_metadata_common_2fv1_2faudit_2eproto[0]);
+}
+
+// ===================================================================
+
 class AuditRecord::_Internal {
  public:
   static const ::common::v1::AuditEventData& event_data(const AuditRecord* msg);
   static const ::common::v1::AuditEventActor& actor(const AuditRecord* msg);
-  static const ::PROTOBUF_NAMESPACE_ID::Any& meta(const AuditRecord* msg);
   static const ::common::v1::AuditEventError& error(const AuditRecord* msg);
 };
 
@@ -204,23 +242,17 @@ const ::common::v1::AuditEventActor&
 AuditRecord::_Internal::actor(const AuditRecord* msg) {
   return *msg->actor_;
 }
-const ::PROTOBUF_NAMESPACE_ID::Any&
-AuditRecord::_Internal::meta(const AuditRecord* msg) {
-  return *msg->meta_;
-}
 const ::common::v1::AuditEventError&
 AuditRecord::_Internal::error(const AuditRecord* msg) {
   return *msg->error_;
 }
 void AuditRecord::clear_meta() {
-  if (GetArenaForAllocation() == nullptr && meta_ != nullptr) {
-    delete meta_;
-  }
-  meta_ = nullptr;
+  meta_.Clear();
 }
 AuditRecord::AuditRecord(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
+  meta_(arena) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -230,6 +262,7 @@ AuditRecord::AuditRecord(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 AuditRecord::AuditRecord(const AuditRecord& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  meta_.MergeFrom(from.meta_);
   event_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     event_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
@@ -255,11 +288,6 @@ AuditRecord::AuditRecord(const AuditRecord& from)
     actor_ = new ::common::v1::AuditEventActor(*from.actor_);
   } else {
     actor_ = nullptr;
-  }
-  if (from._internal_has_meta()) {
-    meta_ = new ::PROTOBUF_NAMESPACE_ID::Any(*from.meta_);
-  } else {
-    meta_ = nullptr;
   }
   if (from._internal_has_error()) {
     error_ = new ::common::v1::AuditEventError(*from.error_);
@@ -297,15 +325,18 @@ inline void AuditRecord::SharedDtor() {
   status_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete event_data_;
   if (this != internal_default_instance()) delete actor_;
-  if (this != internal_default_instance()) delete meta_;
   if (this != internal_default_instance()) delete error_;
 }
 
 void AuditRecord::ArenaDtor(void* object) {
   AuditRecord* _this = reinterpret_cast< AuditRecord* >(object);
   (void)_this;
+  _this->meta_. ~MapField();
 }
-void AuditRecord::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+inline void AuditRecord::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena) {
+  if (arena != nullptr) {
+    arena->OwnCustomDestructor(this, &AuditRecord::ArenaDtor);
+  }
 }
 void AuditRecord::SetCachedSize(int size) const {
   _cached_size_.Set(size);
@@ -317,6 +348,7 @@ void AuditRecord::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  meta_.Clear();
   event_name_.ClearToEmpty();
   status_.ClearToEmpty();
   if (GetArenaForAllocation() == nullptr && event_data_ != nullptr) {
@@ -327,10 +359,6 @@ void AuditRecord::Clear() {
     delete actor_;
   }
   actor_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && meta_ != nullptr) {
-    delete meta_;
-  }
-  meta_ = nullptr;
   if (GetArenaForAllocation() == nullptr && error_ != nullptr) {
     delete error_;
   }
@@ -380,11 +408,16 @@ const char* AuditRecord::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
         } else
           goto handle_unusual;
         continue;
-      // .google.protobuf.Any meta = 5 [json_name = "meta"];
+      // map<string, .google.protobuf.Any> meta = 5 [json_name = "meta"];
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
-          ptr = ctx->ParseMessage(_internal_mutable_meta(), ptr);
-          CHK_(ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&meta_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<42>(ptr));
         } else
           goto handle_unusual;
         continue;
@@ -461,12 +494,46 @@ uint8_t* AuditRecord::_InternalSerialize(
         4, _Internal::actor(this), target, stream);
   }
 
-  // .google.protobuf.Any meta = 5 [json_name = "meta"];
-  if (this->_internal_has_meta()) {
-    target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(
-        5, _Internal::meta(this), target, stream);
+  // map<string, .google.protobuf.Any> meta = 5 [json_name = "meta"];
+  if (!this->_internal_meta().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        (void)p;
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "common.v1.AuditRecord.MetaEntry.key");
+      }
+    };
+
+    if (stream->IsSerializationDeterministic() &&
+        this->_internal_meta().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->_internal_meta().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >::const_iterator
+          it = this->_internal_meta().begin();
+          it != this->_internal_meta().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        target = AuditRecord_MetaEntry_DoNotUse::Funcs::InternalSerialize(5, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
+        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >::const_iterator
+          it = this->_internal_meta().begin();
+          it != this->_internal_meta().end(); ++it) {
+        target = AuditRecord_MetaEntry_DoNotUse::Funcs::InternalSerialize(5, it->first, it->second, target, stream);
+        Utf8Check::Check(&(*it));
+      }
+    }
   }
 
   // .common.v1.AuditEventError error = 6 [json_name = "error"];
@@ -492,6 +559,15 @@ size_t AuditRecord::ByteSizeLong() const {
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
+
+  // map<string, .google.protobuf.Any> meta = 5 [json_name = "meta"];
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_meta_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, ::PROTOBUF_NAMESPACE_ID::Any >::const_iterator
+      it = this->_internal_meta().begin();
+      it != this->_internal_meta().end(); ++it) {
+    total_size += AuditRecord_MetaEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
+  }
 
   // string event_name = 1 [json_name = "eventName"];
   if (!this->_internal_event_name().empty()) {
@@ -519,13 +595,6 @@ size_t AuditRecord::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *actor_);
-  }
-
-  // .google.protobuf.Any meta = 5 [json_name = "meta"];
-  if (this->_internal_has_meta()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *meta_);
   }
 
   // .common.v1.AuditEventError error = 6 [json_name = "error"];
@@ -557,6 +626,7 @@ void AuditRecord::MergeFrom(const AuditRecord& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  meta_.MergeFrom(from.meta_);
   if (!from._internal_event_name().empty()) {
     _internal_set_event_name(from._internal_event_name());
   }
@@ -568,9 +638,6 @@ void AuditRecord::MergeFrom(const AuditRecord& from) {
   }
   if (from._internal_has_actor()) {
     _internal_mutable_actor()->::common::v1::AuditEventActor::MergeFrom(from._internal_actor());
-  }
-  if (from._internal_has_meta()) {
-    _internal_mutable_meta()->::PROTOBUF_NAMESPACE_ID::Any::MergeFrom(from._internal_meta());
   }
   if (from._internal_has_error()) {
     _internal_mutable_error()->::common::v1::AuditEventError::MergeFrom(from._internal_error());
@@ -594,6 +661,7 @@ void AuditRecord::InternalSwap(AuditRecord* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  meta_.InternalSwap(&other->meta_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &event_name_, lhs_arena,
@@ -615,7 +683,7 @@ void AuditRecord::InternalSwap(AuditRecord* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AuditRecord::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_common_2fv1_2faudit_2eproto_getter, &descriptor_table_common_2fv1_2faudit_2eproto_once,
-      file_level_metadata_common_2fv1_2faudit_2eproto[0]);
+      file_level_metadata_common_2fv1_2faudit_2eproto[1]);
 }
 
 // ===================================================================
@@ -965,7 +1033,7 @@ void AuditEventData::InternalSwap(AuditEventData* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AuditEventData::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_common_2fv1_2faudit_2eproto_getter, &descriptor_table_common_2fv1_2faudit_2eproto_once,
-      file_level_metadata_common_2fv1_2faudit_2eproto[1]);
+      file_level_metadata_common_2fv1_2faudit_2eproto[2]);
 }
 
 // ===================================================================
@@ -1364,7 +1432,7 @@ void AuditEventActor::InternalSwap(AuditEventActor* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AuditEventActor::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_common_2fv1_2faudit_2eproto_getter, &descriptor_table_common_2fv1_2faudit_2eproto_once,
-      file_level_metadata_common_2fv1_2faudit_2eproto[2]);
+      file_level_metadata_common_2fv1_2faudit_2eproto[3]);
 }
 
 // ===================================================================
@@ -1616,13 +1684,16 @@ void AuditEventError::InternalSwap(AuditEventError* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AuditEventError::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_common_2fv1_2faudit_2eproto_getter, &descriptor_table_common_2fv1_2faudit_2eproto_once,
-      file_level_metadata_common_2fv1_2faudit_2eproto[3]);
+      file_level_metadata_common_2fv1_2faudit_2eproto[4]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace common
 PROTOBUF_NAMESPACE_OPEN
+template<> PROTOBUF_NOINLINE ::common::v1::AuditRecord_MetaEntry_DoNotUse* Arena::CreateMaybeMessage< ::common::v1::AuditRecord_MetaEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::common::v1::AuditRecord_MetaEntry_DoNotUse >(arena);
+}
 template<> PROTOBUF_NOINLINE ::common::v1::AuditRecord* Arena::CreateMaybeMessage< ::common::v1::AuditRecord >(Arena* arena) {
   return Arena::CreateMessageInternal< ::common::v1::AuditRecord >(arena);
 }
