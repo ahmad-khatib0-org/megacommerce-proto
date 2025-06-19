@@ -7,7 +7,6 @@
 package v1
 
 import (
-	v1 "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/user/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -334,9 +333,8 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\v_updated_atB\r\n" +
 	"\v_deleted_at2`\n" +
 	"\vUserService\x12Q\n" +
-	"\x0eCreateSupplier\x12\x1e.user.v1.SupplierCreateRequest\x1a\x1f.user.v1.SupplierCreateResponseB4\n" +
-	"\x18org.megacommerce.user.v1B\tUserProtoZ\n" +
-	"user/v1;v1\xf8\x01\x01b\x06proto3"
+	"\x0eCreateSupplier\x12\x1e.user.v1.SupplierCreateRequest\x1a\x1f.user.v1.SupplierCreateResponseBk\n" +
+	"\x18org.megacommerce.user.v1B\tUserProtoZAgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/user/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
 	file_user_v1_user_proto_rawDescOnce sync.Once
@@ -352,11 +350,11 @@ func file_user_v1_user_proto_rawDescGZIP() []byte {
 
 var file_user_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_user_v1_user_proto_goTypes = []any{
-	(*User)(nil),                      // 0: user.v1.User
-	nil,                               // 1: user.v1.User.PropsEntry
-	nil,                               // 2: user.v1.User.NotifyPropsEntry
-	(*v1.SupplierCreateRequest)(nil),  // 3: user.v1.SupplierCreateRequest
-	(*v1.SupplierCreateResponse)(nil), // 4: user.v1.SupplierCreateResponse
+	(*User)(nil),                   // 0: user.v1.User
+	nil,                            // 1: user.v1.User.PropsEntry
+	nil,                            // 2: user.v1.User.NotifyPropsEntry
+	(*SupplierCreateRequest)(nil),  // 3: user.v1.SupplierCreateRequest
+	(*SupplierCreateResponse)(nil), // 4: user.v1.SupplierCreateResponse
 }
 var file_user_v1_user_proto_depIdxs = []int32{
 	1, // 0: user.v1.User.props:type_name -> user.v1.User.PropsEntry
@@ -375,6 +373,7 @@ func file_user_v1_user_proto_init() {
 	if File_user_v1_user_proto != nil {
 		return
 	}
+	file_user_v1_supplier_proto_init()
 	file_user_v1_user_proto_msgTypes[0].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{

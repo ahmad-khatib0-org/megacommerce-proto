@@ -2,7 +2,7 @@
 // file: user/v1/supplier.proto
 
 import * as jspb from "google-protobuf";
-import * as common_v1_error_pb from "../../common/v1/error_pb";
+import * as shared_v1_error_pb from "../../shared/v1/error_pb";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
 
 export class SupplierCreateRequest extends jspb.Message {
@@ -53,8 +53,8 @@ export class SupplierCreateResponse extends jspb.Message {
 
   hasError(): boolean;
   clearError(): void;
-  getError(): common_v1_error_pb.AppError | undefined;
-  setError(value?: common_v1_error_pb.AppError): void;
+  getError(): shared_v1_error_pb.AppError | undefined;
+  setError(value?: shared_v1_error_pb.AppError): void;
 
   getResponseCase(): SupplierCreateResponse.ResponseCase;
   serializeBinary(): Uint8Array;
@@ -70,7 +70,7 @@ export class SupplierCreateResponse extends jspb.Message {
 export namespace SupplierCreateResponse {
   export type AsObject = {
     data?: google_protobuf_empty_pb.Empty.AsObject,
-    error?: common_v1_error_pb.AppError.AsObject,
+    error?: shared_v1_error_pb.AppError.AsObject,
   }
 
   export enum ResponseCase {

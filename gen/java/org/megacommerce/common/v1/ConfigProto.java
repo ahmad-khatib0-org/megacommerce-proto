@@ -38904,7 +38904,7 @@ public final class ConfigProto {
 
     /**
      * <pre>
-     * optional string connection_url = 1;
+     * Meilisearch-specific authentication
      * </pre>
      *
      * <code>optional string master_key = 2 [json_name = "masterKey"];</code>
@@ -38913,7 +38913,7 @@ public final class ConfigProto {
     boolean hasMasterKey();
     /**
      * <pre>
-     * optional string connection_url = 1;
+     * Meilisearch-specific authentication
      * </pre>
      *
      * <code>optional string master_key = 2 [json_name = "masterKey"];</code>
@@ -38922,7 +38922,7 @@ public final class ConfigProto {
     java.lang.String getMasterKey();
     /**
      * <pre>
-     * optional string connection_url = 1;
+     * Meilisearch-specific authentication
      * </pre>
      *
      * <code>optional string master_key = 2 [json_name = "masterKey"];</code>
@@ -39139,7 +39139,7 @@ public final class ConfigProto {
     private volatile java.lang.Object masterKey_;
     /**
      * <pre>
-     * optional string connection_url = 1;
+     * Meilisearch-specific authentication
      * </pre>
      *
      * <code>optional string master_key = 2 [json_name = "masterKey"];</code>
@@ -39151,7 +39151,7 @@ public final class ConfigProto {
     }
     /**
      * <pre>
-     * optional string connection_url = 1;
+     * Meilisearch-specific authentication
      * </pre>
      *
      * <code>optional string master_key = 2 [json_name = "masterKey"];</code>
@@ -39172,7 +39172,7 @@ public final class ConfigProto {
     }
     /**
      * <pre>
-     * optional string connection_url = 1;
+     * Meilisearch-specific authentication
      * </pre>
      *
      * <code>optional string master_key = 2 [json_name = "masterKey"];</code>
@@ -40082,7 +40082,7 @@ public final class ConfigProto {
       private java.lang.Object masterKey_ = "";
       /**
        * <pre>
-       * optional string connection_url = 1;
+       * Meilisearch-specific authentication
        * </pre>
        *
        * <code>optional string master_key = 2 [json_name = "masterKey"];</code>
@@ -40093,7 +40093,7 @@ public final class ConfigProto {
       }
       /**
        * <pre>
-       * optional string connection_url = 1;
+       * Meilisearch-specific authentication
        * </pre>
        *
        * <code>optional string master_key = 2 [json_name = "masterKey"];</code>
@@ -40113,7 +40113,7 @@ public final class ConfigProto {
       }
       /**
        * <pre>
-       * optional string connection_url = 1;
+       * Meilisearch-specific authentication
        * </pre>
        *
        * <code>optional string master_key = 2 [json_name = "masterKey"];</code>
@@ -40134,7 +40134,7 @@ public final class ConfigProto {
       }
       /**
        * <pre>
-       * optional string connection_url = 1;
+       * Meilisearch-specific authentication
        * </pre>
        *
        * <code>optional string master_key = 2 [json_name = "masterKey"];</code>
@@ -40153,7 +40153,7 @@ public final class ConfigProto {
       }
       /**
        * <pre>
-       * optional string connection_url = 1;
+       * Meilisearch-specific authentication
        * </pre>
        *
        * <code>optional string master_key = 2 [json_name = "masterKey"];</code>
@@ -40167,7 +40167,7 @@ public final class ConfigProto {
       }
       /**
        * <pre>
-       * optional string connection_url = 1;
+       * Meilisearch-specific authentication
        * </pre>
        *
        * <code>optional string master_key = 2 [json_name = "masterKey"];</code>
@@ -49199,19 +49199,19 @@ public final class ConfigProto {
     org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getDataOrBuilder();
 
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return Whether the error field is set.
      */
     boolean hasError();
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return The error.
      */
-    org.megacommerce.common.v1.ErrorProto.AppError getError();
+    org.megacommerce.shared.v1.ErrorProto.AppError getError();
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      */
-    org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder();
+    org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder();
 
     public org.megacommerce.common.v1.ConfigProto.ConfigGetResponse.ResponseCase getResponseCase();
   }
@@ -49329,7 +49329,7 @@ public final class ConfigProto {
 
     public static final int ERROR_FIELD_NUMBER = 2;
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return Whether the error field is set.
      */
     @java.lang.Override
@@ -49337,25 +49337,25 @@ public final class ConfigProto {
       return responseCase_ == 2;
     }
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return The error.
      */
     @java.lang.Override
-    public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+    public org.megacommerce.shared.v1.ErrorProto.AppError getError() {
       if (responseCase_ == 2) {
-         return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+         return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
       }
-      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+      return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
     }
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+    public org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
       if (responseCase_ == 2) {
-         return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+         return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
       }
-      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+      return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -49376,7 +49376,7 @@ public final class ConfigProto {
         output.writeMessage(1, (org.megacommerce.common.v1.ConfigProto.Config) response_);
       }
       if (responseCase_ == 2) {
-        output.writeMessage(2, (org.megacommerce.common.v1.ErrorProto.AppError) response_);
+        output.writeMessage(2, (org.megacommerce.shared.v1.ErrorProto.AppError) response_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -49393,7 +49393,7 @@ public final class ConfigProto {
       }
       if (responseCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (org.megacommerce.common.v1.ErrorProto.AppError) response_);
+          .computeMessageSize(2, (org.megacommerce.shared.v1.ErrorProto.AppError) response_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -49897,9 +49897,9 @@ public final class ConfigProto {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> errorBuilder_;
+          org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder> errorBuilder_;
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        * @return Whether the error field is set.
        */
       @java.lang.Override
@@ -49907,27 +49907,27 @@ public final class ConfigProto {
         return responseCase_ == 2;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        * @return The error.
        */
       @java.lang.Override
-      public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+      public org.megacommerce.shared.v1.ErrorProto.AppError getError() {
         if (errorBuilder_ == null) {
           if (responseCase_ == 2) {
-            return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+            return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
           }
-          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+          return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
         } else {
           if (responseCase_ == 2) {
             return errorBuilder_.getMessage();
           }
-          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+          return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
         }
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
-      public Builder setError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+      public Builder setError(org.megacommerce.shared.v1.ErrorProto.AppError value) {
         if (errorBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -49941,10 +49941,10 @@ public final class ConfigProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       public Builder setError(
-          org.megacommerce.common.v1.ErrorProto.AppError.Builder builderForValue) {
+          org.megacommerce.shared.v1.ErrorProto.AppError.Builder builderForValue) {
         if (errorBuilder_ == null) {
           response_ = builderForValue.build();
           onChanged();
@@ -49955,13 +49955,13 @@ public final class ConfigProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
-      public Builder mergeError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+      public Builder mergeError(org.megacommerce.shared.v1.ErrorProto.AppError value) {
         if (errorBuilder_ == null) {
           if (responseCase_ == 2 &&
-              response_ != org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance()) {
-            response_ = org.megacommerce.common.v1.ErrorProto.AppError.newBuilder((org.megacommerce.common.v1.ErrorProto.AppError) response_)
+              response_ != org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance()) {
+            response_ = org.megacommerce.shared.v1.ErrorProto.AppError.newBuilder((org.megacommerce.shared.v1.ErrorProto.AppError) response_)
                 .mergeFrom(value).buildPartial();
           } else {
             response_ = value;
@@ -49977,7 +49977,7 @@ public final class ConfigProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       public Builder clearError() {
         if (errorBuilder_ == null) {
@@ -49996,38 +49996,38 @@ public final class ConfigProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
-      public org.megacommerce.common.v1.ErrorProto.AppError.Builder getErrorBuilder() {
+      public org.megacommerce.shared.v1.ErrorProto.AppError.Builder getErrorBuilder() {
         return getErrorFieldBuilder().getBuilder();
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       @java.lang.Override
-      public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+      public org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
         if ((responseCase_ == 2) && (errorBuilder_ != null)) {
           return errorBuilder_.getMessageOrBuilder();
         } else {
           if (responseCase_ == 2) {
-            return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+            return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
           }
-          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+          return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
         }
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> 
+          org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder> 
           getErrorFieldBuilder() {
         if (errorBuilder_ == null) {
           if (!(responseCase_ == 2)) {
-            response_ = org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+            response_ = org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
           }
           errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder>(
-                  (org.megacommerce.common.v1.ErrorProto.AppError) response_,
+              org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder>(
+                  (org.megacommerce.shared.v1.ErrorProto.AppError) response_,
                   getParentForChildren(),
                   isClean());
           response_ = null;
@@ -50717,19 +50717,19 @@ public final class ConfigProto {
     org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getDataOrBuilder();
 
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return Whether the error field is set.
      */
     boolean hasError();
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return The error.
      */
-    org.megacommerce.common.v1.ErrorProto.AppError getError();
+    org.megacommerce.shared.v1.ErrorProto.AppError getError();
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      */
-    org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder();
+    org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder();
 
     public org.megacommerce.common.v1.ConfigProto.ConfigUpdateResponse.ResponseCase getResponseCase();
   }
@@ -50847,7 +50847,7 @@ public final class ConfigProto {
 
     public static final int ERROR_FIELD_NUMBER = 2;
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return Whether the error field is set.
      */
     @java.lang.Override
@@ -50855,25 +50855,25 @@ public final class ConfigProto {
       return responseCase_ == 2;
     }
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return The error.
      */
     @java.lang.Override
-    public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+    public org.megacommerce.shared.v1.ErrorProto.AppError getError() {
       if (responseCase_ == 2) {
-         return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+         return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
       }
-      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+      return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
     }
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+    public org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
       if (responseCase_ == 2) {
-         return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+         return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
       }
-      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+      return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -50894,7 +50894,7 @@ public final class ConfigProto {
         output.writeMessage(1, (org.megacommerce.common.v1.ConfigProto.Config) response_);
       }
       if (responseCase_ == 2) {
-        output.writeMessage(2, (org.megacommerce.common.v1.ErrorProto.AppError) response_);
+        output.writeMessage(2, (org.megacommerce.shared.v1.ErrorProto.AppError) response_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -50911,7 +50911,7 @@ public final class ConfigProto {
       }
       if (responseCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (org.megacommerce.common.v1.ErrorProto.AppError) response_);
+          .computeMessageSize(2, (org.megacommerce.shared.v1.ErrorProto.AppError) response_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -51415,9 +51415,9 @@ public final class ConfigProto {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> errorBuilder_;
+          org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder> errorBuilder_;
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        * @return Whether the error field is set.
        */
       @java.lang.Override
@@ -51425,27 +51425,27 @@ public final class ConfigProto {
         return responseCase_ == 2;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        * @return The error.
        */
       @java.lang.Override
-      public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+      public org.megacommerce.shared.v1.ErrorProto.AppError getError() {
         if (errorBuilder_ == null) {
           if (responseCase_ == 2) {
-            return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+            return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
           }
-          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+          return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
         } else {
           if (responseCase_ == 2) {
             return errorBuilder_.getMessage();
           }
-          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+          return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
         }
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
-      public Builder setError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+      public Builder setError(org.megacommerce.shared.v1.ErrorProto.AppError value) {
         if (errorBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -51459,10 +51459,10 @@ public final class ConfigProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       public Builder setError(
-          org.megacommerce.common.v1.ErrorProto.AppError.Builder builderForValue) {
+          org.megacommerce.shared.v1.ErrorProto.AppError.Builder builderForValue) {
         if (errorBuilder_ == null) {
           response_ = builderForValue.build();
           onChanged();
@@ -51473,13 +51473,13 @@ public final class ConfigProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
-      public Builder mergeError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+      public Builder mergeError(org.megacommerce.shared.v1.ErrorProto.AppError value) {
         if (errorBuilder_ == null) {
           if (responseCase_ == 2 &&
-              response_ != org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance()) {
-            response_ = org.megacommerce.common.v1.ErrorProto.AppError.newBuilder((org.megacommerce.common.v1.ErrorProto.AppError) response_)
+              response_ != org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance()) {
+            response_ = org.megacommerce.shared.v1.ErrorProto.AppError.newBuilder((org.megacommerce.shared.v1.ErrorProto.AppError) response_)
                 .mergeFrom(value).buildPartial();
           } else {
             response_ = value;
@@ -51495,7 +51495,7 @@ public final class ConfigProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       public Builder clearError() {
         if (errorBuilder_ == null) {
@@ -51514,38 +51514,38 @@ public final class ConfigProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
-      public org.megacommerce.common.v1.ErrorProto.AppError.Builder getErrorBuilder() {
+      public org.megacommerce.shared.v1.ErrorProto.AppError.Builder getErrorBuilder() {
         return getErrorFieldBuilder().getBuilder();
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       @java.lang.Override
-      public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+      public org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
         if ((responseCase_ == 2) && (errorBuilder_ != null)) {
           return errorBuilder_.getMessageOrBuilder();
         } else {
           if (responseCase_ == 2) {
-            return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+            return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
           }
-          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+          return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
         }
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> 
+          org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder> 
           getErrorFieldBuilder() {
         if (errorBuilder_ == null) {
           if (!(responseCase_ == 2)) {
-            response_ = org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+            response_ = org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
           }
           errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder>(
-                  (org.megacommerce.common.v1.ErrorProto.AppError) response_,
+              org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder>(
+                  (org.megacommerce.shared.v1.ErrorProto.AppError) response_,
                   getParentForChildren(),
                   isClean());
           response_ = null;
@@ -51638,19 +51638,19 @@ public final class ConfigProto {
     org.megacommerce.common.v1.ConfigProto.ConfigOrBuilder getDataOrBuilder();
 
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return Whether the error field is set.
      */
     boolean hasError();
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return The error.
      */
-    org.megacommerce.common.v1.ErrorProto.AppError getError();
+    org.megacommerce.shared.v1.ErrorProto.AppError getError();
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      */
-    org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder();
+    org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder();
 
     public org.megacommerce.common.v1.ConfigProto.ConfigListenerResponse.ResponseCase getResponseCase();
   }
@@ -51768,7 +51768,7 @@ public final class ConfigProto {
 
     public static final int ERROR_FIELD_NUMBER = 2;
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return Whether the error field is set.
      */
     @java.lang.Override
@@ -51776,25 +51776,25 @@ public final class ConfigProto {
       return responseCase_ == 2;
     }
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return The error.
      */
     @java.lang.Override
-    public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+    public org.megacommerce.shared.v1.ErrorProto.AppError getError() {
       if (responseCase_ == 2) {
-         return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+         return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
       }
-      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+      return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
     }
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+    public org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
       if (responseCase_ == 2) {
-         return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+         return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
       }
-      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+      return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -51815,7 +51815,7 @@ public final class ConfigProto {
         output.writeMessage(1, (org.megacommerce.common.v1.ConfigProto.Config) response_);
       }
       if (responseCase_ == 2) {
-        output.writeMessage(2, (org.megacommerce.common.v1.ErrorProto.AppError) response_);
+        output.writeMessage(2, (org.megacommerce.shared.v1.ErrorProto.AppError) response_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -51832,7 +51832,7 @@ public final class ConfigProto {
       }
       if (responseCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (org.megacommerce.common.v1.ErrorProto.AppError) response_);
+          .computeMessageSize(2, (org.megacommerce.shared.v1.ErrorProto.AppError) response_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -52336,9 +52336,9 @@ public final class ConfigProto {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> errorBuilder_;
+          org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder> errorBuilder_;
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        * @return Whether the error field is set.
        */
       @java.lang.Override
@@ -52346,27 +52346,27 @@ public final class ConfigProto {
         return responseCase_ == 2;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        * @return The error.
        */
       @java.lang.Override
-      public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+      public org.megacommerce.shared.v1.ErrorProto.AppError getError() {
         if (errorBuilder_ == null) {
           if (responseCase_ == 2) {
-            return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+            return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
           }
-          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+          return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
         } else {
           if (responseCase_ == 2) {
             return errorBuilder_.getMessage();
           }
-          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+          return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
         }
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
-      public Builder setError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+      public Builder setError(org.megacommerce.shared.v1.ErrorProto.AppError value) {
         if (errorBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -52380,10 +52380,10 @@ public final class ConfigProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       public Builder setError(
-          org.megacommerce.common.v1.ErrorProto.AppError.Builder builderForValue) {
+          org.megacommerce.shared.v1.ErrorProto.AppError.Builder builderForValue) {
         if (errorBuilder_ == null) {
           response_ = builderForValue.build();
           onChanged();
@@ -52394,13 +52394,13 @@ public final class ConfigProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
-      public Builder mergeError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+      public Builder mergeError(org.megacommerce.shared.v1.ErrorProto.AppError value) {
         if (errorBuilder_ == null) {
           if (responseCase_ == 2 &&
-              response_ != org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance()) {
-            response_ = org.megacommerce.common.v1.ErrorProto.AppError.newBuilder((org.megacommerce.common.v1.ErrorProto.AppError) response_)
+              response_ != org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance()) {
+            response_ = org.megacommerce.shared.v1.ErrorProto.AppError.newBuilder((org.megacommerce.shared.v1.ErrorProto.AppError) response_)
                 .mergeFrom(value).buildPartial();
           } else {
             response_ = value;
@@ -52416,7 +52416,7 @@ public final class ConfigProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       public Builder clearError() {
         if (errorBuilder_ == null) {
@@ -52435,38 +52435,38 @@ public final class ConfigProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
-      public org.megacommerce.common.v1.ErrorProto.AppError.Builder getErrorBuilder() {
+      public org.megacommerce.shared.v1.ErrorProto.AppError.Builder getErrorBuilder() {
         return getErrorFieldBuilder().getBuilder();
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       @java.lang.Override
-      public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+      public org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
         if ((responseCase_ == 2) && (errorBuilder_ != null)) {
           return errorBuilder_.getMessageOrBuilder();
         } else {
           if (responseCase_ == 2) {
-            return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+            return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
           }
-          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+          return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
         }
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> 
+          org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder> 
           getErrorFieldBuilder() {
         if (errorBuilder_ == null) {
           if (!(responseCase_ == 2)) {
-            response_ = org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+            response_ = org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
           }
           errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder>(
-                  (org.megacommerce.common.v1.ErrorProto.AppError) response_,
+              org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder>(
+                  (org.megacommerce.shared.v1.ErrorProto.AppError) response_,
                   getParentForChildren(),
                   isClean());
           response_ = null;
@@ -53242,8 +53242,8 @@ public final class ConfigProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026common/v1/config.proto\022\tcommon.v1\032\025com" +
-      "mon/v1/error.proto\"\275\017\n\nConfigMain\022\025\n\003env" +
+      "\n\026common/v1/config.proto\022\tcommon.v1\032\025sha" +
+      "red/v1/error.proto\"\275\017\n\nConfigMain\022\025\n\003env" +
       "\030\001 \001(\tH\000R\003env\210\001\001\022&\n\014read_timeout\030\002 \001(\005H\001" +
       "R\013readTimeout\210\001\001\022(\n\rwrite_timeout\030\003 \001(\005H" +
       "\002R\014writeTimeout\210\001\001\022&\n\014idle_timeout\030\004 \001(\005" +
@@ -53767,15 +53767,15 @@ public final class ConfigProto {
       ".common.v1.ConfigImageProxyR\nimageProxy\"" +
       "\022\n\020ConfigGetRequest\"u\n\021ConfigGetResponse" +
       "\022\'\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R\004dat" +
-      "a\022+\n\005error\030\002 \001(\0132\023.common.v1.AppErrorH\000R" +
+      "a\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R" +
       "\005errorB\n\n\010response\"@\n\023ConfigUpdateReques" +
       "t\022)\n\006config\030\001 \001(\0132\021.common.v1.ConfigR\006co" +
       "nfig\"x\n\024ConfigUpdateResponse\022\'\n\004data\030\001 \001" +
       "(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005error\030\002" +
-      " \001(\0132\023.common.v1.AppErrorH\000R\005errorB\n\n\010re" +
+      " \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n\010re" +
       "sponse\"z\n\026ConfigListenerResponse\022\'\n\004data" +
       "\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005err" +
-      "or\030\002 \001(\0132\023.common.v1.AppErrorH\000R\005errorB\n" +
+      "or\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n" +
       "\n\010response\"4\n\025ConfigListenerRequest\022\033\n\tc" +
       "lient_id\030\001 \001(\tR\010clientIdBq\n\032org.megacomm" +
       "erce.common.v1B\013ConfigProtoZCgithub.com/" +
@@ -53785,7 +53785,7 @@ public final class ConfigProto {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          org.megacommerce.common.v1.ErrorProto.getDescriptor(),
+          org.megacommerce.shared.v1.ErrorProto.getDescriptor(),
         });
     internal_static_common_v1_ConfigMain_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -53961,7 +53961,7 @@ public final class ConfigProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_v1_ConfigListenerRequest_descriptor,
         new java.lang.String[] { "ClientId", });
-    org.megacommerce.common.v1.ErrorProto.getDescriptor();
+    org.megacommerce.shared.v1.ErrorProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

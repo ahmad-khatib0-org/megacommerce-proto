@@ -7,6 +7,7 @@
 package v1
 
 import (
+	v1 "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -60,7 +61,7 @@ func (*TranslationsGetRequest) Descriptor() ([]byte, []int) {
 type TranslationsGetResponse struct {
 	state         protoimpl.MessageState          `protogen:"open.v1"`
 	Data          map[string]*TranslationElements `protobuf:"bytes,1,rep,name=data,proto3" json:"data,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	Error         *AppError                       `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
+	Error         *v1.AppError                    `protobuf:"bytes,2,opt,name=error,proto3" json:"error,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -102,7 +103,7 @@ func (x *TranslationsGetResponse) GetData() map[string]*TranslationElements {
 	return nil
 }
 
-func (x *TranslationsGetResponse) GetError() *AppError {
+func (x *TranslationsGetResponse) GetError() *v1.AppError {
 	if x != nil {
 		return x.Error
 	}
@@ -210,7 +211,7 @@ func (x *TranslationsForLangGetResponse) GetData() *TranslationElements {
 	return nil
 }
 
-func (x *TranslationsForLangGetResponse) GetError() *AppError {
+func (x *TranslationsForLangGetResponse) GetError() *v1.AppError {
 	if x != nil {
 		if x, ok := x.Response.(*TranslationsForLangGetResponse_Error); ok {
 			return x.Error
@@ -228,7 +229,7 @@ type TranslationsForLangGetResponse_Data struct {
 }
 
 type TranslationsForLangGetResponse_Error struct {
-	Error *AppError `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
+	Error *v1.AppError `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
 }
 
 func (*TranslationsForLangGetResponse_Data) isTranslationsForLangGetResponse_Response() {}
@@ -335,11 +336,11 @@ var File_common_v1_trans_proto protoreflect.FileDescriptor
 
 const file_common_v1_trans_proto_rawDesc = "" +
 	"\n" +
-	"\x15common/v1/trans.proto\x12\tcommon.v1\x1a\x15common/v1/error.proto\"\x18\n" +
+	"\x15common/v1/trans.proto\x12\tcommon.v1\x1a\x15shared/v1/error.proto\"\x18\n" +
 	"\x16TranslationsGetRequest\"\xdf\x01\n" +
 	"\x17TranslationsGetResponse\x12@\n" +
 	"\x04data\x18\x01 \x03(\v2,.common.v1.TranslationsGetResponse.DataEntryR\x04data\x12)\n" +
-	"\x05error\x18\x02 \x01(\v2\x13.common.v1.AppErrorR\x05error\x1aW\n" +
+	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorR\x05error\x1aW\n" +
 	"\tDataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x124\n" +
 	"\x05value\x18\x02 \x01(\v2\x1e.common.v1.TranslationElementsR\x05value:\x028\x01\"3\n" +
@@ -347,7 +348,7 @@ const file_common_v1_trans_proto_rawDesc = "" +
 	"\x04lang\x18\x01 \x01(\tR\x04lang\"\x8f\x01\n" +
 	"\x1eTranslationsForLangGetResponse\x124\n" +
 	"\x04data\x18\x01 \x01(\v2\x1e.common.v1.TranslationElementsH\x00R\x04data\x12+\n" +
-	"\x05error\x18\x02 \x01(\v2\x13.common.v1.AppErrorH\x00R\x05errorB\n" +
+	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +
 	"\n" +
 	"\bresponse\"4\n" +
 	"\x12TranslationElement\x12\x0e\n" +
@@ -379,13 +380,13 @@ var file_common_v1_trans_proto_goTypes = []any{
 	(*TranslationElement)(nil),             // 4: common.v1.TranslationElement
 	(*TranslationElements)(nil),            // 5: common.v1.TranslationElements
 	nil,                                    // 6: common.v1.TranslationsGetResponse.DataEntry
-	(*AppError)(nil),                       // 7: common.v1.AppError
+	(*v1.AppError)(nil),                    // 7: shared.v1.AppError
 }
 var file_common_v1_trans_proto_depIdxs = []int32{
 	6, // 0: common.v1.TranslationsGetResponse.data:type_name -> common.v1.TranslationsGetResponse.DataEntry
-	7, // 1: common.v1.TranslationsGetResponse.error:type_name -> common.v1.AppError
+	7, // 1: common.v1.TranslationsGetResponse.error:type_name -> shared.v1.AppError
 	5, // 2: common.v1.TranslationsForLangGetResponse.data:type_name -> common.v1.TranslationElements
-	7, // 3: common.v1.TranslationsForLangGetResponse.error:type_name -> common.v1.AppError
+	7, // 3: common.v1.TranslationsForLangGetResponse.error:type_name -> shared.v1.AppError
 	4, // 4: common.v1.TranslationElements.trans:type_name -> common.v1.TranslationElement
 	5, // 5: common.v1.TranslationsGetResponse.DataEntry.value:type_name -> common.v1.TranslationElements
 	6, // [6:6] is the sub-list for method output_type
@@ -400,7 +401,6 @@ func file_common_v1_trans_proto_init() {
 	if File_common_v1_trans_proto != nil {
 		return
 	}
-	file_common_v1_error_proto_init()
 	file_common_v1_trans_proto_msgTypes[3].OneofWrappers = []any{
 		(*TranslationsForLangGetResponse_Data)(nil),
 		(*TranslationsForLangGetResponse_Error)(nil),

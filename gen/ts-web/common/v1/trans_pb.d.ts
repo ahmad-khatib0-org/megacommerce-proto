@@ -1,6 +1,6 @@
 import * as jspb from 'google-protobuf'
 
-import * as common_v1_error_pb from '../../common/v1/error_pb'; // proto import: "common/v1/error.proto"
+import * as shared_v1_error_pb from '../../shared/v1/error_pb'; // proto import: "shared/v1/error.proto"
 
 
 export class TranslationsGetRequest extends jspb.Message {
@@ -21,8 +21,8 @@ export class TranslationsGetResponse extends jspb.Message {
   getDataMap(): jspb.Map<string, TranslationElements>;
   clearDataMap(): TranslationsGetResponse;
 
-  getError(): common_v1_error_pb.AppError | undefined;
-  setError(value?: common_v1_error_pb.AppError): TranslationsGetResponse;
+  getError(): shared_v1_error_pb.AppError | undefined;
+  setError(value?: shared_v1_error_pb.AppError): TranslationsGetResponse;
   hasError(): boolean;
   clearError(): TranslationsGetResponse;
 
@@ -37,7 +37,7 @@ export class TranslationsGetResponse extends jspb.Message {
 export namespace TranslationsGetResponse {
   export type AsObject = {
     dataMap: Array<[string, TranslationElements.AsObject]>,
-    error?: common_v1_error_pb.AppError.AsObject,
+    error?: shared_v1_error_pb.AppError.AsObject,
   }
 }
 
@@ -65,8 +65,8 @@ export class TranslationsForLangGetResponse extends jspb.Message {
   hasData(): boolean;
   clearData(): TranslationsForLangGetResponse;
 
-  getError(): common_v1_error_pb.AppError | undefined;
-  setError(value?: common_v1_error_pb.AppError): TranslationsForLangGetResponse;
+  getError(): shared_v1_error_pb.AppError | undefined;
+  setError(value?: shared_v1_error_pb.AppError): TranslationsForLangGetResponse;
   hasError(): boolean;
   clearError(): TranslationsForLangGetResponse;
 
@@ -83,7 +83,7 @@ export class TranslationsForLangGetResponse extends jspb.Message {
 export namespace TranslationsForLangGetResponse {
   export type AsObject = {
     data?: TranslationElements.AsObject,
-    error?: common_v1_error_pb.AppError.AsObject,
+    error?: shared_v1_error_pb.AppError.AsObject,
   }
 
   export enum ResponseCase { 

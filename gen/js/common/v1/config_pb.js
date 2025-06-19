@@ -21,8 +21,8 @@ var global = (function() {
   return Function('return this')();
 }.call(null));
 
-var common_v1_error_pb = require('../../common/v1/error_pb.js');
-goog.object.extend(proto, common_v1_error_pb);
+var shared_v1_error_pb = require('../../shared/v1/error_pb.js');
+goog.object.extend(proto, shared_v1_error_pb);
 goog.exportSymbol('proto.common.v1.CacheConfig', null, global);
 goog.exportSymbol('proto.common.v1.Config', null, global);
 goog.exportSymbol('proto.common.v1.ConfigBleve', null, global);
@@ -16296,7 +16296,7 @@ proto.common.v1.ConfigGetResponse.prototype.toObject = function(opt_includeInsta
 proto.common.v1.ConfigGetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     data: (f = msg.getData()) && proto.common.v1.Config.toObject(includeInstance, f),
-    error: (f = msg.getError()) && common_v1_error_pb.AppError.toObject(includeInstance, f)
+    error: (f = msg.getError()) && shared_v1_error_pb.AppError.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16339,8 +16339,8 @@ proto.common.v1.ConfigGetResponse.deserializeBinaryFromReader = function(msg, re
       msg.setData(value);
       break;
     case 2:
-      var value = new common_v1_error_pb.AppError;
-      reader.readMessage(value,common_v1_error_pb.AppError.deserializeBinaryFromReader);
+      var value = new shared_v1_error_pb.AppError;
+      reader.readMessage(value,shared_v1_error_pb.AppError.deserializeBinaryFromReader);
       msg.setError(value);
       break;
     default:
@@ -16385,7 +16385,7 @@ proto.common.v1.ConfigGetResponse.serializeBinaryToWriter = function(message, wr
     writer.writeMessage(
       2,
       f,
-      common_v1_error_pb.AppError.serializeBinaryToWriter
+      shared_v1_error_pb.AppError.serializeBinaryToWriter
     );
   }
 };
@@ -16429,17 +16429,17 @@ proto.common.v1.ConfigGetResponse.prototype.hasData = function() {
 
 
 /**
- * optional AppError error = 2;
- * @return {?proto.common.v1.AppError}
+ * optional shared.v1.AppError error = 2;
+ * @return {?proto.shared.v1.AppError}
  */
 proto.common.v1.ConfigGetResponse.prototype.getError = function() {
-  return /** @type{?proto.common.v1.AppError} */ (
-    jspb.Message.getWrapperField(this, common_v1_error_pb.AppError, 2));
+  return /** @type{?proto.shared.v1.AppError} */ (
+    jspb.Message.getWrapperField(this, shared_v1_error_pb.AppError, 2));
 };
 
 
 /**
- * @param {?proto.common.v1.AppError|undefined} value
+ * @param {?proto.shared.v1.AppError|undefined} value
  * @return {!proto.common.v1.ConfigGetResponse} returns this
 */
 proto.common.v1.ConfigGetResponse.prototype.setError = function(value) {
@@ -16675,7 +16675,7 @@ proto.common.v1.ConfigUpdateResponse.prototype.toObject = function(opt_includeIn
 proto.common.v1.ConfigUpdateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     data: (f = msg.getData()) && proto.common.v1.Config.toObject(includeInstance, f),
-    error: (f = msg.getError()) && common_v1_error_pb.AppError.toObject(includeInstance, f)
+    error: (f = msg.getError()) && shared_v1_error_pb.AppError.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16718,8 +16718,8 @@ proto.common.v1.ConfigUpdateResponse.deserializeBinaryFromReader = function(msg,
       msg.setData(value);
       break;
     case 2:
-      var value = new common_v1_error_pb.AppError;
-      reader.readMessage(value,common_v1_error_pb.AppError.deserializeBinaryFromReader);
+      var value = new shared_v1_error_pb.AppError;
+      reader.readMessage(value,shared_v1_error_pb.AppError.deserializeBinaryFromReader);
       msg.setError(value);
       break;
     default:
@@ -16764,7 +16764,7 @@ proto.common.v1.ConfigUpdateResponse.serializeBinaryToWriter = function(message,
     writer.writeMessage(
       2,
       f,
-      common_v1_error_pb.AppError.serializeBinaryToWriter
+      shared_v1_error_pb.AppError.serializeBinaryToWriter
     );
   }
 };
@@ -16808,17 +16808,17 @@ proto.common.v1.ConfigUpdateResponse.prototype.hasData = function() {
 
 
 /**
- * optional AppError error = 2;
- * @return {?proto.common.v1.AppError}
+ * optional shared.v1.AppError error = 2;
+ * @return {?proto.shared.v1.AppError}
  */
 proto.common.v1.ConfigUpdateResponse.prototype.getError = function() {
-  return /** @type{?proto.common.v1.AppError} */ (
-    jspb.Message.getWrapperField(this, common_v1_error_pb.AppError, 2));
+  return /** @type{?proto.shared.v1.AppError} */ (
+    jspb.Message.getWrapperField(this, shared_v1_error_pb.AppError, 2));
 };
 
 
 /**
- * @param {?proto.common.v1.AppError|undefined} value
+ * @param {?proto.shared.v1.AppError|undefined} value
  * @return {!proto.common.v1.ConfigUpdateResponse} returns this
 */
 proto.common.v1.ConfigUpdateResponse.prototype.setError = function(value) {
@@ -16903,7 +16903,7 @@ proto.common.v1.ConfigListenerResponse.prototype.toObject = function(opt_include
 proto.common.v1.ConfigListenerResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     data: (f = msg.getData()) && proto.common.v1.Config.toObject(includeInstance, f),
-    error: (f = msg.getError()) && common_v1_error_pb.AppError.toObject(includeInstance, f)
+    error: (f = msg.getError()) && shared_v1_error_pb.AppError.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16946,8 +16946,8 @@ proto.common.v1.ConfigListenerResponse.deserializeBinaryFromReader = function(ms
       msg.setData(value);
       break;
     case 2:
-      var value = new common_v1_error_pb.AppError;
-      reader.readMessage(value,common_v1_error_pb.AppError.deserializeBinaryFromReader);
+      var value = new shared_v1_error_pb.AppError;
+      reader.readMessage(value,shared_v1_error_pb.AppError.deserializeBinaryFromReader);
       msg.setError(value);
       break;
     default:
@@ -16992,7 +16992,7 @@ proto.common.v1.ConfigListenerResponse.serializeBinaryToWriter = function(messag
     writer.writeMessage(
       2,
       f,
-      common_v1_error_pb.AppError.serializeBinaryToWriter
+      shared_v1_error_pb.AppError.serializeBinaryToWriter
     );
   }
 };
@@ -17036,17 +17036,17 @@ proto.common.v1.ConfigListenerResponse.prototype.hasData = function() {
 
 
 /**
- * optional AppError error = 2;
- * @return {?proto.common.v1.AppError}
+ * optional shared.v1.AppError error = 2;
+ * @return {?proto.shared.v1.AppError}
  */
 proto.common.v1.ConfigListenerResponse.prototype.getError = function() {
-  return /** @type{?proto.common.v1.AppError} */ (
-    jspb.Message.getWrapperField(this, common_v1_error_pb.AppError, 2));
+  return /** @type{?proto.shared.v1.AppError} */ (
+    jspb.Message.getWrapperField(this, shared_v1_error_pb.AppError, 2));
 };
 
 
 /**
- * @param {?proto.common.v1.AppError|undefined} value
+ * @param {?proto.shared.v1.AppError|undefined} value
  * @return {!proto.common.v1.ConfigListenerResponse} returns this
 */
 proto.common.v1.ConfigListenerResponse.prototype.setError = function(value) {

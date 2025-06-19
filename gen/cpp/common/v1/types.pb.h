@@ -31,9 +31,6 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
-#include <google/protobuf/map.h>  // IWYU pragma: export
-#include <google/protobuf/map_entry.h>
-#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
@@ -50,7 +47,7 @@ struct TableStruct_common_2fv1_2ftypes_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[6]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -59,408 +56,22 @@ struct TableStruct_common_2fv1_2ftypes_2eproto {
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fv1_2ftypes_2eproto;
 namespace common {
 namespace v1 {
-class NestedStringMap;
-struct NestedStringMapDefaultTypeInternal;
-extern NestedStringMapDefaultTypeInternal _NestedStringMap_default_instance_;
-class NestedStringMap_DataEntry_DoNotUse;
-struct NestedStringMap_DataEntry_DoNotUseDefaultTypeInternal;
-extern NestedStringMap_DataEntry_DoNotUseDefaultTypeInternal _NestedStringMap_DataEntry_DoNotUse_default_instance_;
 class PingRequest;
 struct PingRequestDefaultTypeInternal;
 extern PingRequestDefaultTypeInternal _PingRequest_default_instance_;
 class PingResponse;
 struct PingResponseDefaultTypeInternal;
 extern PingResponseDefaultTypeInternal _PingResponse_default_instance_;
-class StringMap;
-struct StringMapDefaultTypeInternal;
-extern StringMapDefaultTypeInternal _StringMap_default_instance_;
-class StringMap_DataEntry_DoNotUse;
-struct StringMap_DataEntry_DoNotUseDefaultTypeInternal;
-extern StringMap_DataEntry_DoNotUseDefaultTypeInternal _StringMap_DataEntry_DoNotUse_default_instance_;
 }  // namespace v1
 }  // namespace common
 PROTOBUF_NAMESPACE_OPEN
-template<> ::common::v1::NestedStringMap* Arena::CreateMaybeMessage<::common::v1::NestedStringMap>(Arena*);
-template<> ::common::v1::NestedStringMap_DataEntry_DoNotUse* Arena::CreateMaybeMessage<::common::v1::NestedStringMap_DataEntry_DoNotUse>(Arena*);
 template<> ::common::v1::PingRequest* Arena::CreateMaybeMessage<::common::v1::PingRequest>(Arena*);
 template<> ::common::v1::PingResponse* Arena::CreateMaybeMessage<::common::v1::PingResponse>(Arena*);
-template<> ::common::v1::StringMap* Arena::CreateMaybeMessage<::common::v1::StringMap>(Arena*);
-template<> ::common::v1::StringMap_DataEntry_DoNotUse* Arena::CreateMaybeMessage<::common::v1::StringMap_DataEntry_DoNotUse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace common {
 namespace v1 {
 
 // ===================================================================
-
-class StringMap_DataEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<StringMap_DataEntry_DoNotUse, 
-    std::string, std::string,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> {
-public:
-  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<StringMap_DataEntry_DoNotUse, 
-    std::string, std::string,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> SuperType;
-  StringMap_DataEntry_DoNotUse();
-  explicit constexpr StringMap_DataEntry_DoNotUse(
-      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-  explicit StringMap_DataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  void MergeFrom(const StringMap_DataEntry_DoNotUse& other);
-  static const StringMap_DataEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const StringMap_DataEntry_DoNotUse*>(&_StringMap_DataEntry_DoNotUse_default_instance_); }
-  static bool ValidateKey(std::string* s) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "common.v1.StringMap.DataEntry.key");
- }
-  static bool ValidateValue(std::string* s) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "common.v1.StringMap.DataEntry.value");
- }
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-};
-
-// -------------------------------------------------------------------
-
-class StringMap final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:common.v1.StringMap) */ {
- public:
-  inline StringMap() : StringMap(nullptr) {}
-  ~StringMap() override;
-  explicit constexpr StringMap(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  StringMap(const StringMap& from);
-  StringMap(StringMap&& from) noexcept
-    : StringMap() {
-    *this = ::std::move(from);
-  }
-
-  inline StringMap& operator=(const StringMap& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline StringMap& operator=(StringMap&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const StringMap& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const StringMap* internal_default_instance() {
-    return reinterpret_cast<const StringMap*>(
-               &_StringMap_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    1;
-
-  friend void swap(StringMap& a, StringMap& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(StringMap* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(StringMap* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  StringMap* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<StringMap>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const StringMap& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const StringMap& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(StringMap* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "common.v1.StringMap";
-  }
-  protected:
-  explicit StringMap(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kDataFieldNumber = 1,
-  };
-  // map<string, string> data = 1 [json_name = "data"];
-  int data_size() const;
-  private:
-  int _internal_data_size() const;
-  public:
-  void clear_data();
-  private:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-      _internal_data() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-      _internal_mutable_data();
-  public:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-      data() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-      mutable_data();
-
-  // @@protoc_insertion_point(class_scope:common.v1.StringMap)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
-      StringMap_DataEntry_DoNotUse,
-      std::string, std::string,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> data_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_common_2fv1_2ftypes_2eproto;
-};
-// -------------------------------------------------------------------
-
-class NestedStringMap_DataEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NestedStringMap_DataEntry_DoNotUse, 
-    std::string, ::common::v1::StringMap,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> {
-public:
-  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<NestedStringMap_DataEntry_DoNotUse, 
-    std::string, ::common::v1::StringMap,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> SuperType;
-  NestedStringMap_DataEntry_DoNotUse();
-  explicit constexpr NestedStringMap_DataEntry_DoNotUse(
-      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-  explicit NestedStringMap_DataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  void MergeFrom(const NestedStringMap_DataEntry_DoNotUse& other);
-  static const NestedStringMap_DataEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const NestedStringMap_DataEntry_DoNotUse*>(&_NestedStringMap_DataEntry_DoNotUse_default_instance_); }
-  static bool ValidateKey(std::string* s) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "common.v1.NestedStringMap.DataEntry.key");
- }
-  static bool ValidateValue(void*) { return true; }
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-};
-
-// -------------------------------------------------------------------
-
-class NestedStringMap final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:common.v1.NestedStringMap) */ {
- public:
-  inline NestedStringMap() : NestedStringMap(nullptr) {}
-  ~NestedStringMap() override;
-  explicit constexpr NestedStringMap(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-
-  NestedStringMap(const NestedStringMap& from);
-  NestedStringMap(NestedStringMap&& from) noexcept
-    : NestedStringMap() {
-    *this = ::std::move(from);
-  }
-
-  inline NestedStringMap& operator=(const NestedStringMap& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline NestedStringMap& operator=(NestedStringMap&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetOwningArena() == from.GetOwningArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetOwningArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const NestedStringMap& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const NestedStringMap* internal_default_instance() {
-    return reinterpret_cast<const NestedStringMap*>(
-               &_NestedStringMap_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    3;
-
-  friend void swap(NestedStringMap& a, NestedStringMap& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(NestedStringMap* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() != nullptr &&
-        GetOwningArena() == other->GetOwningArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetOwningArena() == other->GetOwningArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(NestedStringMap* other) {
-    if (other == this) return;
-    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  NestedStringMap* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<NestedStringMap>(arena);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const NestedStringMap& from);
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const NestedStringMap& from);
-  private:
-  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
-  uint8_t* _InternalSerialize(
-      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const final { return _cached_size_.Get(); }
-
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const final;
-  void InternalSwap(NestedStringMap* other);
-
-  private:
-  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
-  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "common.v1.NestedStringMap";
-  }
-  protected:
-  explicit NestedStringMap(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                       bool is_message_owned = false);
-  private:
-  static void ArenaDtor(void* object);
-  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  public:
-
-  static const ClassData _class_data_;
-  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
-
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kDataFieldNumber = 1,
-  };
-  // map<string, .common.v1.StringMap> data = 1 [json_name = "data"];
-  int data_size() const;
-  private:
-  int _internal_data_size() const;
-  public:
-  void clear_data();
-  private:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::common::v1::StringMap >&
-      _internal_data() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::common::v1::StringMap >*
-      _internal_mutable_data();
-  public:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::common::v1::StringMap >&
-      data() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::common::v1::StringMap >*
-      mutable_data();
-
-  // @@protoc_insertion_point(class_scope:common.v1.NestedStringMap)
- private:
-  class _Internal;
-
-  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
-  typedef void InternalArenaConstructable_;
-  typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
-      NestedStringMap_DataEntry_DoNotUse,
-      std::string, ::common::v1::StringMap,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> data_;
-  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-  friend struct ::TableStruct_common_2fv1_2ftypes_2eproto;
-};
-// -------------------------------------------------------------------
 
 class PingRequest final :
     public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:common.v1.PingRequest) */ {
@@ -509,7 +120,7 @@ class PingRequest final :
                &_PingRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    0;
 
   friend void swap(PingRequest& a, PingRequest& b) {
     a.Swap(&b);
@@ -627,7 +238,7 @@ class PingResponse final :
                &_PingResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    1;
 
   friend void swap(PingResponse& a, PingResponse& b) {
     a.Swap(&b);
@@ -705,76 +316,6 @@ class PingResponse final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
-// StringMap
-
-// map<string, string> data = 1 [json_name = "data"];
-inline int StringMap::_internal_data_size() const {
-  return data_.size();
-}
-inline int StringMap::data_size() const {
-  return _internal_data_size();
-}
-inline void StringMap::clear_data() {
-  data_.Clear();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-StringMap::_internal_data() const {
-  return data_.GetMap();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >&
-StringMap::data() const {
-  // @@protoc_insertion_point(field_map:common.v1.StringMap.data)
-  return _internal_data();
-}
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-StringMap::_internal_mutable_data() {
-  return data_.MutableMap();
-}
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >*
-StringMap::mutable_data() {
-  // @@protoc_insertion_point(field_mutable_map:common.v1.StringMap.data)
-  return _internal_mutable_data();
-}
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// NestedStringMap
-
-// map<string, .common.v1.StringMap> data = 1 [json_name = "data"];
-inline int NestedStringMap::_internal_data_size() const {
-  return data_.size();
-}
-inline int NestedStringMap::data_size() const {
-  return _internal_data_size();
-}
-inline void NestedStringMap::clear_data() {
-  data_.Clear();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::common::v1::StringMap >&
-NestedStringMap::_internal_data() const {
-  return data_.GetMap();
-}
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::common::v1::StringMap >&
-NestedStringMap::data() const {
-  // @@protoc_insertion_point(field_map:common.v1.NestedStringMap.data)
-  return _internal_data();
-}
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::common::v1::StringMap >*
-NestedStringMap::_internal_mutable_data() {
-  return data_.MutableMap();
-}
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::common::v1::StringMap >*
-NestedStringMap::mutable_data() {
-  // @@protoc_insertion_point(field_mutable_map:common.v1.NestedStringMap.data)
-  return _internal_mutable_data();
-}
-
-// -------------------------------------------------------------------
-
 // PingRequest
 
 // -------------------------------------------------------------------
@@ -784,14 +325,6 @@ NestedStringMap::mutable_data() {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
-// -------------------------------------------------------------------
-
 // -------------------------------------------------------------------
 
 

@@ -7,7 +7,7 @@
 package v1
 
 import (
-	v1 "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/common/v1"
+	v1 "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
@@ -193,7 +193,7 @@ var File_user_v1_supplier_proto protoreflect.FileDescriptor
 
 const file_user_v1_supplier_proto_rawDesc = "" +
 	"\n" +
-	"\x16user/v1/supplier.proto\x12\auser.v1\x1a\x15common/v1/error.proto\x1a\x1bgoogle/protobuf/empty.proto\"\xc1\x01\n" +
+	"\x16user/v1/supplier.proto\x12\auser.v1\x1a\x15shared/v1/error.proto\x1a\x1bgoogle/protobuf/empty.proto\"\xc1\x01\n" +
 	"\x15SupplierCreateRequest\x12\x1a\n" +
 	"\busername\x18\x01 \x01(\tR\busername\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email\x12\x1d\n" +
@@ -206,7 +206,7 @@ const file_user_v1_supplier_proto_rawDesc = "" +
 	"membership\"\x7f\n" +
 	"\x16SupplierCreateResponse\x12,\n" +
 	"\x04data\x18\x01 \x01(\v2\x16.google.protobuf.EmptyH\x00R\x04data\x12+\n" +
-	"\x05error\x18\x02 \x01(\v2\x13.common.v1.AppErrorH\x00R\x05errorB\n" +
+	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +
 	"\n" +
 	"\bresponseBo\n" +
 	"\x18org.megacommerce.user.v1B\rSupplierProtoZAgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/user/v1;v1\xf8\x01\x01b\x06proto3"
@@ -228,11 +228,11 @@ var file_user_v1_supplier_proto_goTypes = []any{
 	(*SupplierCreateRequest)(nil),  // 0: user.v1.SupplierCreateRequest
 	(*SupplierCreateResponse)(nil), // 1: user.v1.SupplierCreateResponse
 	(*emptypb.Empty)(nil),          // 2: google.protobuf.Empty
-	(*v1.AppError)(nil),            // 3: common.v1.AppError
+	(*v1.AppError)(nil),            // 3: shared.v1.AppError
 }
 var file_user_v1_supplier_proto_depIdxs = []int32{
 	2, // 0: user.v1.SupplierCreateResponse.data:type_name -> google.protobuf.Empty
-	3, // 1: user.v1.SupplierCreateResponse.error:type_name -> common.v1.AppError
+	3, // 1: user.v1.SupplierCreateResponse.error:type_name -> shared.v1.AppError
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name

@@ -8,7 +8,6 @@ package v1
 
 import (
 	context "context"
-	v1 "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/user/v1"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -27,7 +26,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type UserServiceClient interface {
-	CreateSupplier(ctx context.Context, in *v1.SupplierCreateRequest, opts ...grpc.CallOption) (*v1.SupplierCreateResponse, error)
+	CreateSupplier(ctx context.Context, in *SupplierCreateRequest, opts ...grpc.CallOption) (*SupplierCreateResponse, error)
 }
 
 type userServiceClient struct {
@@ -38,9 +37,9 @@ func NewUserServiceClient(cc grpc.ClientConnInterface) UserServiceClient {
 	return &userServiceClient{cc}
 }
 
-func (c *userServiceClient) CreateSupplier(ctx context.Context, in *v1.SupplierCreateRequest, opts ...grpc.CallOption) (*v1.SupplierCreateResponse, error) {
+func (c *userServiceClient) CreateSupplier(ctx context.Context, in *SupplierCreateRequest, opts ...grpc.CallOption) (*SupplierCreateResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(v1.SupplierCreateResponse)
+	out := new(SupplierCreateResponse)
 	err := c.cc.Invoke(ctx, UserService_CreateSupplier_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -52,7 +51,7 @@ func (c *userServiceClient) CreateSupplier(ctx context.Context, in *v1.SupplierC
 // All implementations must embed UnimplementedUserServiceServer
 // for forward compatibility.
 type UserServiceServer interface {
-	CreateSupplier(context.Context, *v1.SupplierCreateRequest) (*v1.SupplierCreateResponse, error)
+	CreateSupplier(context.Context, *SupplierCreateRequest) (*SupplierCreateResponse, error)
 	mustEmbedUnimplementedUserServiceServer()
 }
 
@@ -63,7 +62,7 @@ type UserServiceServer interface {
 // pointer dereference when methods are called.
 type UnimplementedUserServiceServer struct{}
 
-func (UnimplementedUserServiceServer) CreateSupplier(context.Context, *v1.SupplierCreateRequest) (*v1.SupplierCreateResponse, error) {
+func (UnimplementedUserServiceServer) CreateSupplier(context.Context, *SupplierCreateRequest) (*SupplierCreateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateSupplier not implemented")
 }
 func (UnimplementedUserServiceServer) mustEmbedUnimplementedUserServiceServer() {}
@@ -88,7 +87,7 @@ func RegisterUserServiceServer(s grpc.ServiceRegistrar, srv UserServiceServer) {
 }
 
 func _UserService_CreateSupplier_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(v1.SupplierCreateRequest)
+	in := new(SupplierCreateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -100,7 +99,7 @@ func _UserService_CreateSupplier_Handler(srv interface{}, ctx context.Context, d
 		FullMethod: UserService_CreateSupplier_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).CreateSupplier(ctx, req.(*v1.SupplierCreateRequest))
+		return srv.(UserServiceServer).CreateSupplier(ctx, req.(*SupplierCreateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

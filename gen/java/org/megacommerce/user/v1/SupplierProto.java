@@ -1328,19 +1328,19 @@ public final class SupplierProto {
     com.google.protobuf.EmptyOrBuilder getDataOrBuilder();
 
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return Whether the error field is set.
      */
     boolean hasError();
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return The error.
      */
-    org.megacommerce.common.v1.ErrorProto.AppError getError();
+    org.megacommerce.shared.v1.ErrorProto.AppError getError();
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      */
-    org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder();
+    org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder();
 
     public org.megacommerce.user.v1.SupplierProto.SupplierCreateResponse.ResponseCase getResponseCase();
   }
@@ -1458,7 +1458,7 @@ public final class SupplierProto {
 
     public static final int ERROR_FIELD_NUMBER = 2;
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return Whether the error field is set.
      */
     @java.lang.Override
@@ -1466,25 +1466,25 @@ public final class SupplierProto {
       return responseCase_ == 2;
     }
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return The error.
      */
     @java.lang.Override
-    public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+    public org.megacommerce.shared.v1.ErrorProto.AppError getError() {
       if (responseCase_ == 2) {
-         return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+         return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
       }
-      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+      return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
     }
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+    public org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
       if (responseCase_ == 2) {
-         return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+         return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
       }
-      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+      return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1505,7 +1505,7 @@ public final class SupplierProto {
         output.writeMessage(1, (com.google.protobuf.Empty) response_);
       }
       if (responseCase_ == 2) {
-        output.writeMessage(2, (org.megacommerce.common.v1.ErrorProto.AppError) response_);
+        output.writeMessage(2, (org.megacommerce.shared.v1.ErrorProto.AppError) response_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1522,7 +1522,7 @@ public final class SupplierProto {
       }
       if (responseCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (org.megacommerce.common.v1.ErrorProto.AppError) response_);
+          .computeMessageSize(2, (org.megacommerce.shared.v1.ErrorProto.AppError) response_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2026,9 +2026,9 @@ public final class SupplierProto {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> errorBuilder_;
+          org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder> errorBuilder_;
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        * @return Whether the error field is set.
        */
       @java.lang.Override
@@ -2036,27 +2036,27 @@ public final class SupplierProto {
         return responseCase_ == 2;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        * @return The error.
        */
       @java.lang.Override
-      public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+      public org.megacommerce.shared.v1.ErrorProto.AppError getError() {
         if (errorBuilder_ == null) {
           if (responseCase_ == 2) {
-            return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+            return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
           }
-          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+          return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
         } else {
           if (responseCase_ == 2) {
             return errorBuilder_.getMessage();
           }
-          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+          return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
         }
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
-      public Builder setError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+      public Builder setError(org.megacommerce.shared.v1.ErrorProto.AppError value) {
         if (errorBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2070,10 +2070,10 @@ public final class SupplierProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       public Builder setError(
-          org.megacommerce.common.v1.ErrorProto.AppError.Builder builderForValue) {
+          org.megacommerce.shared.v1.ErrorProto.AppError.Builder builderForValue) {
         if (errorBuilder_ == null) {
           response_ = builderForValue.build();
           onChanged();
@@ -2084,13 +2084,13 @@ public final class SupplierProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
-      public Builder mergeError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+      public Builder mergeError(org.megacommerce.shared.v1.ErrorProto.AppError value) {
         if (errorBuilder_ == null) {
           if (responseCase_ == 2 &&
-              response_ != org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance()) {
-            response_ = org.megacommerce.common.v1.ErrorProto.AppError.newBuilder((org.megacommerce.common.v1.ErrorProto.AppError) response_)
+              response_ != org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance()) {
+            response_ = org.megacommerce.shared.v1.ErrorProto.AppError.newBuilder((org.megacommerce.shared.v1.ErrorProto.AppError) response_)
                 .mergeFrom(value).buildPartial();
           } else {
             response_ = value;
@@ -2106,7 +2106,7 @@ public final class SupplierProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       public Builder clearError() {
         if (errorBuilder_ == null) {
@@ -2125,38 +2125,38 @@ public final class SupplierProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
-      public org.megacommerce.common.v1.ErrorProto.AppError.Builder getErrorBuilder() {
+      public org.megacommerce.shared.v1.ErrorProto.AppError.Builder getErrorBuilder() {
         return getErrorFieldBuilder().getBuilder();
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       @java.lang.Override
-      public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+      public org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
         if ((responseCase_ == 2) && (errorBuilder_ != null)) {
           return errorBuilder_.getMessageOrBuilder();
         } else {
           if (responseCase_ == 2) {
-            return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+            return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
           }
-          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+          return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
         }
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> 
+          org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder> 
           getErrorFieldBuilder() {
         if (errorBuilder_ == null) {
           if (!(responseCase_ == 2)) {
-            response_ = org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+            response_ = org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
           }
           errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder>(
-                  (org.megacommerce.common.v1.ErrorProto.AppError) response_,
+              org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder>(
+                  (org.megacommerce.shared.v1.ErrorProto.AppError) response_,
                   getParentForChildren(),
                   isClean());
           response_ = null;
@@ -2248,8 +2248,8 @@ public final class SupplierProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026user/v1/supplier.proto\022\007user.v1\032\025commo" +
-      "n/v1/error.proto\032\033google/protobuf/empty." +
+      "\n\026user/v1/supplier.proto\022\007user.v1\032\025share" +
+      "d/v1/error.proto\032\033google/protobuf/empty." +
       "proto\"\301\001\n\025SupplierCreateRequest\022\032\n\010usern" +
       "ame\030\001 \001(\tR\010username\022\024\n\005email\030\002 \001(\tR\005emai" +
       "l\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName\022\033\n\tlast" +
@@ -2257,7 +2257,7 @@ public final class SupplierProto {
       "\010password\022\036\n\nmembership\030\006 \001(\tR\nmembershi" +
       "p\"\177\n\026SupplierCreateResponse\022,\n\004data\030\001 \001(" +
       "\0132\026.google.protobuf.EmptyH\000R\004data\022+\n\005err" +
-      "or\030\002 \001(\0132\023.common.v1.AppErrorH\000R\005errorB\n" +
+      "or\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n" +
       "\n\010responseBo\n\030org.megacommerce.user.v1B\r" +
       "SupplierProtoZAgithub.com/ahmad-khatib0-" +
       "org/megacommerce-proto/gen/go/user/v1;v1" +
@@ -2266,7 +2266,7 @@ public final class SupplierProto {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          org.megacommerce.common.v1.ErrorProto.getDescriptor(),
+          org.megacommerce.shared.v1.ErrorProto.getDescriptor(),
           com.google.protobuf.EmptyProto.getDescriptor(),
         });
     internal_static_user_v1_SupplierCreateRequest_descriptor =
@@ -2281,7 +2281,7 @@ public final class SupplierProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_user_v1_SupplierCreateResponse_descriptor,
         new java.lang.String[] { "Data", "Error", "Response", });
-    org.megacommerce.common.v1.ErrorProto.getDescriptor();
+    org.megacommerce.shared.v1.ErrorProto.getDescriptor();
     com.google.protobuf.EmptyProto.getDescriptor();
   }
 

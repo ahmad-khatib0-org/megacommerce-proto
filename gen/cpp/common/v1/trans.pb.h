@@ -35,7 +35,7 @@
 #include <google/protobuf/map_entry.h>
 #include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
-#include "common/v1/error.pb.h"
+#include "shared/v1/error.pb.h"
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_common_2fv1_2ftrans_2eproto
@@ -383,23 +383,23 @@ class TranslationsGetResponse final :
   ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::common::v1::TranslationElements >*
       mutable_data();
 
-  // .common.v1.AppError error = 2 [json_name = "error"];
+  // .shared.v1.AppError error = 2 [json_name = "error"];
   bool has_error() const;
   private:
   bool _internal_has_error() const;
   public:
   void clear_error();
-  const ::common::v1::AppError& error() const;
-  PROTOBUF_NODISCARD ::common::v1::AppError* release_error();
-  ::common::v1::AppError* mutable_error();
-  void set_allocated_error(::common::v1::AppError* error);
+  const ::shared::v1::AppError& error() const;
+  PROTOBUF_NODISCARD ::shared::v1::AppError* release_error();
+  ::shared::v1::AppError* mutable_error();
+  void set_allocated_error(::shared::v1::AppError* error);
   private:
-  const ::common::v1::AppError& _internal_error() const;
-  ::common::v1::AppError* _internal_mutable_error();
+  const ::shared::v1::AppError& _internal_error() const;
+  ::shared::v1::AppError* _internal_mutable_error();
   public:
   void unsafe_arena_set_allocated_error(
-      ::common::v1::AppError* error);
-  ::common::v1::AppError* unsafe_arena_release_error();
+      ::shared::v1::AppError* error);
+  ::shared::v1::AppError* unsafe_arena_release_error();
 
   // @@protoc_insertion_point(class_scope:common.v1.TranslationsGetResponse)
  private:
@@ -413,7 +413,7 @@ class TranslationsGetResponse final :
       std::string, ::common::v1::TranslationElements,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> data_;
-  ::common::v1::AppError* error_;
+  ::shared::v1::AppError* error_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_common_2fv1_2ftrans_2eproto;
 };
@@ -719,23 +719,23 @@ class TranslationsForLangGetResponse final :
       ::common::v1::TranslationElements* data);
   ::common::v1::TranslationElements* unsafe_arena_release_data();
 
-  // .common.v1.AppError error = 2 [json_name = "error"];
+  // .shared.v1.AppError error = 2 [json_name = "error"];
   bool has_error() const;
   private:
   bool _internal_has_error() const;
   public:
   void clear_error();
-  const ::common::v1::AppError& error() const;
-  PROTOBUF_NODISCARD ::common::v1::AppError* release_error();
-  ::common::v1::AppError* mutable_error();
-  void set_allocated_error(::common::v1::AppError* error);
+  const ::shared::v1::AppError& error() const;
+  PROTOBUF_NODISCARD ::shared::v1::AppError* release_error();
+  ::shared::v1::AppError* mutable_error();
+  void set_allocated_error(::shared::v1::AppError* error);
   private:
-  const ::common::v1::AppError& _internal_error() const;
-  ::common::v1::AppError* _internal_mutable_error();
+  const ::shared::v1::AppError& _internal_error() const;
+  ::shared::v1::AppError* _internal_mutable_error();
   public:
   void unsafe_arena_set_allocated_error(
-      ::common::v1::AppError* error);
-  ::common::v1::AppError* unsafe_arena_release_error();
+      ::shared::v1::AppError* error);
+  ::shared::v1::AppError* unsafe_arena_release_error();
 
   void clear_response();
   ResponseCase response_case() const;
@@ -755,7 +755,7 @@ class TranslationsForLangGetResponse final :
     constexpr ResponseUnion() : _constinit_{} {}
       ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
     ::common::v1::TranslationElements* data_;
-    ::common::v1::AppError* error_;
+    ::shared::v1::AppError* error_;
   } response_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   uint32_t _oneof_case_[1];
@@ -1130,24 +1130,24 @@ TranslationsGetResponse::mutable_data() {
   return _internal_mutable_data();
 }
 
-// .common.v1.AppError error = 2 [json_name = "error"];
+// .shared.v1.AppError error = 2 [json_name = "error"];
 inline bool TranslationsGetResponse::_internal_has_error() const {
   return this != internal_default_instance() && error_ != nullptr;
 }
 inline bool TranslationsGetResponse::has_error() const {
   return _internal_has_error();
 }
-inline const ::common::v1::AppError& TranslationsGetResponse::_internal_error() const {
-  const ::common::v1::AppError* p = error_;
-  return p != nullptr ? *p : reinterpret_cast<const ::common::v1::AppError&>(
-      ::common::v1::_AppError_default_instance_);
+inline const ::shared::v1::AppError& TranslationsGetResponse::_internal_error() const {
+  const ::shared::v1::AppError* p = error_;
+  return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::AppError&>(
+      ::shared::v1::_AppError_default_instance_);
 }
-inline const ::common::v1::AppError& TranslationsGetResponse::error() const {
+inline const ::shared::v1::AppError& TranslationsGetResponse::error() const {
   // @@protoc_insertion_point(field_get:common.v1.TranslationsGetResponse.error)
   return _internal_error();
 }
 inline void TranslationsGetResponse::unsafe_arena_set_allocated_error(
-    ::common::v1::AppError* error) {
+    ::shared::v1::AppError* error) {
   if (GetArenaForAllocation() == nullptr) {
     delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(error_);
   }
@@ -1159,9 +1159,9 @@ inline void TranslationsGetResponse::unsafe_arena_set_allocated_error(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.TranslationsGetResponse.error)
 }
-inline ::common::v1::AppError* TranslationsGetResponse::release_error() {
+inline ::shared::v1::AppError* TranslationsGetResponse::release_error() {
   
-  ::common::v1::AppError* temp = error_;
+  ::shared::v1::AppError* temp = error_;
   error_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
@@ -1174,27 +1174,27 @@ inline ::common::v1::AppError* TranslationsGetResponse::release_error() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::common::v1::AppError* TranslationsGetResponse::unsafe_arena_release_error() {
+inline ::shared::v1::AppError* TranslationsGetResponse::unsafe_arena_release_error() {
   // @@protoc_insertion_point(field_release:common.v1.TranslationsGetResponse.error)
   
-  ::common::v1::AppError* temp = error_;
+  ::shared::v1::AppError* temp = error_;
   error_ = nullptr;
   return temp;
 }
-inline ::common::v1::AppError* TranslationsGetResponse::_internal_mutable_error() {
+inline ::shared::v1::AppError* TranslationsGetResponse::_internal_mutable_error() {
   
   if (error_ == nullptr) {
-    auto* p = CreateMaybeMessage<::common::v1::AppError>(GetArenaForAllocation());
+    auto* p = CreateMaybeMessage<::shared::v1::AppError>(GetArenaForAllocation());
     error_ = p;
   }
   return error_;
 }
-inline ::common::v1::AppError* TranslationsGetResponse::mutable_error() {
-  ::common::v1::AppError* _msg = _internal_mutable_error();
+inline ::shared::v1::AppError* TranslationsGetResponse::mutable_error() {
+  ::shared::v1::AppError* _msg = _internal_mutable_error();
   // @@protoc_insertion_point(field_mutable:common.v1.TranslationsGetResponse.error)
   return _msg;
 }
-inline void TranslationsGetResponse::set_allocated_error(::common::v1::AppError* error) {
+inline void TranslationsGetResponse::set_allocated_error(::shared::v1::AppError* error) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
     delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(error_);
@@ -1349,7 +1349,7 @@ inline ::common::v1::TranslationElements* TranslationsForLangGetResponse::mutabl
   return _msg;
 }
 
-// .common.v1.AppError error = 2 [json_name = "error"];
+// .shared.v1.AppError error = 2 [json_name = "error"];
 inline bool TranslationsForLangGetResponse::_internal_has_error() const {
   return response_case() == kError;
 }
@@ -1359,11 +1359,11 @@ inline bool TranslationsForLangGetResponse::has_error() const {
 inline void TranslationsForLangGetResponse::set_has_error() {
   _oneof_case_[0] = kError;
 }
-inline ::common::v1::AppError* TranslationsForLangGetResponse::release_error() {
+inline ::shared::v1::AppError* TranslationsForLangGetResponse::release_error() {
   // @@protoc_insertion_point(field_release:common.v1.TranslationsForLangGetResponse.error)
   if (_internal_has_error()) {
     clear_has_response();
-      ::common::v1::AppError* temp = response_.error_;
+      ::shared::v1::AppError* temp = response_.error_;
     if (GetArenaForAllocation() != nullptr) {
       temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
     }
@@ -1373,27 +1373,27 @@ inline ::common::v1::AppError* TranslationsForLangGetResponse::release_error() {
     return nullptr;
   }
 }
-inline const ::common::v1::AppError& TranslationsForLangGetResponse::_internal_error() const {
+inline const ::shared::v1::AppError& TranslationsForLangGetResponse::_internal_error() const {
   return _internal_has_error()
       ? *response_.error_
-      : reinterpret_cast< ::common::v1::AppError&>(::common::v1::_AppError_default_instance_);
+      : reinterpret_cast< ::shared::v1::AppError&>(::shared::v1::_AppError_default_instance_);
 }
-inline const ::common::v1::AppError& TranslationsForLangGetResponse::error() const {
+inline const ::shared::v1::AppError& TranslationsForLangGetResponse::error() const {
   // @@protoc_insertion_point(field_get:common.v1.TranslationsForLangGetResponse.error)
   return _internal_error();
 }
-inline ::common::v1::AppError* TranslationsForLangGetResponse::unsafe_arena_release_error() {
+inline ::shared::v1::AppError* TranslationsForLangGetResponse::unsafe_arena_release_error() {
   // @@protoc_insertion_point(field_unsafe_arena_release:common.v1.TranslationsForLangGetResponse.error)
   if (_internal_has_error()) {
     clear_has_response();
-    ::common::v1::AppError* temp = response_.error_;
+    ::shared::v1::AppError* temp = response_.error_;
     response_.error_ = nullptr;
     return temp;
   } else {
     return nullptr;
   }
 }
-inline void TranslationsForLangGetResponse::unsafe_arena_set_allocated_error(::common::v1::AppError* error) {
+inline void TranslationsForLangGetResponse::unsafe_arena_set_allocated_error(::shared::v1::AppError* error) {
   clear_response();
   if (error) {
     set_has_error();
@@ -1401,16 +1401,16 @@ inline void TranslationsForLangGetResponse::unsafe_arena_set_allocated_error(::c
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.TranslationsForLangGetResponse.error)
 }
-inline ::common::v1::AppError* TranslationsForLangGetResponse::_internal_mutable_error() {
+inline ::shared::v1::AppError* TranslationsForLangGetResponse::_internal_mutable_error() {
   if (!_internal_has_error()) {
     clear_response();
     set_has_error();
-    response_.error_ = CreateMaybeMessage< ::common::v1::AppError >(GetArenaForAllocation());
+    response_.error_ = CreateMaybeMessage< ::shared::v1::AppError >(GetArenaForAllocation());
   }
   return response_.error_;
 }
-inline ::common::v1::AppError* TranslationsForLangGetResponse::mutable_error() {
-  ::common::v1::AppError* _msg = _internal_mutable_error();
+inline ::shared::v1::AppError* TranslationsForLangGetResponse::mutable_error() {
+  ::shared::v1::AppError* _msg = _internal_mutable_error();
   // @@protoc_insertion_point(field_mutable:common.v1.TranslationsForLangGetResponse.error)
   return _msg;
 }

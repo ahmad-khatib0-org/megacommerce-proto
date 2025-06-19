@@ -21,8 +21,8 @@ var global = (function() {
   return Function('return this')();
 }.call(null));
 
-var common_v1_error_pb = require('../../common/v1/error_pb.js');
-goog.object.extend(proto, common_v1_error_pb);
+var shared_v1_error_pb = require('../../shared/v1/error_pb.js');
+goog.object.extend(proto, shared_v1_error_pb);
 var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
 goog.object.extend(proto, google_protobuf_empty_pb);
 goog.exportSymbol('proto.user.v1.SupplierCreateRequest', null, global);
@@ -409,7 +409,7 @@ proto.user.v1.SupplierCreateResponse.prototype.toObject = function(opt_includeIn
 proto.user.v1.SupplierCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     data: (f = msg.getData()) && google_protobuf_empty_pb.Empty.toObject(includeInstance, f),
-    error: (f = msg.getError()) && common_v1_error_pb.AppError.toObject(includeInstance, f)
+    error: (f = msg.getError()) && shared_v1_error_pb.AppError.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -452,8 +452,8 @@ proto.user.v1.SupplierCreateResponse.deserializeBinaryFromReader = function(msg,
       msg.setData(value);
       break;
     case 2:
-      var value = new common_v1_error_pb.AppError;
-      reader.readMessage(value,common_v1_error_pb.AppError.deserializeBinaryFromReader);
+      var value = new shared_v1_error_pb.AppError;
+      reader.readMessage(value,shared_v1_error_pb.AppError.deserializeBinaryFromReader);
       msg.setError(value);
       break;
     default:
@@ -498,7 +498,7 @@ proto.user.v1.SupplierCreateResponse.serializeBinaryToWriter = function(message,
     writer.writeMessage(
       2,
       f,
-      common_v1_error_pb.AppError.serializeBinaryToWriter
+      shared_v1_error_pb.AppError.serializeBinaryToWriter
     );
   }
 };
@@ -542,17 +542,17 @@ proto.user.v1.SupplierCreateResponse.prototype.hasData = function() {
 
 
 /**
- * optional common.v1.AppError error = 2;
- * @return {?proto.common.v1.AppError}
+ * optional shared.v1.AppError error = 2;
+ * @return {?proto.shared.v1.AppError}
  */
 proto.user.v1.SupplierCreateResponse.prototype.getError = function() {
-  return /** @type{?proto.common.v1.AppError} */ (
-    jspb.Message.getWrapperField(this, common_v1_error_pb.AppError, 2));
+  return /** @type{?proto.shared.v1.AppError} */ (
+    jspb.Message.getWrapperField(this, shared_v1_error_pb.AppError, 2));
 };
 
 
 /**
- * @param {?proto.common.v1.AppError|undefined} value
+ * @param {?proto.shared.v1.AppError|undefined} value
  * @return {!proto.user.v1.SupplierCreateResponse} returns this
 */
 proto.user.v1.SupplierCreateResponse.prototype.setError = function(value) {

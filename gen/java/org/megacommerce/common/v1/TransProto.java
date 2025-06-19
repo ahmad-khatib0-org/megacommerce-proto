@@ -453,19 +453,19 @@ public final class TransProto {
         java.lang.String key);
 
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return Whether the error field is set.
      */
     boolean hasError();
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return The error.
      */
-    org.megacommerce.common.v1.ErrorProto.AppError getError();
+    org.megacommerce.shared.v1.ErrorProto.AppError getError();
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      */
-    org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder();
+    org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder();
   }
   /**
    * Protobuf type {@code common.v1.TranslationsGetResponse}
@@ -601,9 +601,9 @@ public final class TransProto {
     }
 
     public static final int ERROR_FIELD_NUMBER = 2;
-    private org.megacommerce.common.v1.ErrorProto.AppError error_;
+    private org.megacommerce.shared.v1.ErrorProto.AppError error_;
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return Whether the error field is set.
      */
     @java.lang.Override
@@ -611,18 +611,18 @@ public final class TransProto {
       return error_ != null;
     }
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return The error.
      */
     @java.lang.Override
-    public org.megacommerce.common.v1.ErrorProto.AppError getError() {
-      return error_ == null ? org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance() : error_;
+    public org.megacommerce.shared.v1.ErrorProto.AppError getError() {
+      return error_ == null ? org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance() : error_;
     }
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+    public org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
       return getError();
     }
 
@@ -1146,31 +1146,31 @@ public final class TransProto {
         return this;
       }
 
-      private org.megacommerce.common.v1.ErrorProto.AppError error_;
+      private org.megacommerce.shared.v1.ErrorProto.AppError error_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> errorBuilder_;
+          org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder> errorBuilder_;
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        * @return Whether the error field is set.
        */
       public boolean hasError() {
         return errorBuilder_ != null || error_ != null;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        * @return The error.
        */
-      public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+      public org.megacommerce.shared.v1.ErrorProto.AppError getError() {
         if (errorBuilder_ == null) {
-          return error_ == null ? org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance() : error_;
+          return error_ == null ? org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance() : error_;
         } else {
           return errorBuilder_.getMessage();
         }
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
-      public Builder setError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+      public Builder setError(org.megacommerce.shared.v1.ErrorProto.AppError value) {
         if (errorBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1184,10 +1184,10 @@ public final class TransProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       public Builder setError(
-          org.megacommerce.common.v1.ErrorProto.AppError.Builder builderForValue) {
+          org.megacommerce.shared.v1.ErrorProto.AppError.Builder builderForValue) {
         if (errorBuilder_ == null) {
           error_ = builderForValue.build();
           onChanged();
@@ -1198,13 +1198,13 @@ public final class TransProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
-      public Builder mergeError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+      public Builder mergeError(org.megacommerce.shared.v1.ErrorProto.AppError value) {
         if (errorBuilder_ == null) {
           if (error_ != null) {
             error_ =
-              org.megacommerce.common.v1.ErrorProto.AppError.newBuilder(error_).mergeFrom(value).buildPartial();
+              org.megacommerce.shared.v1.ErrorProto.AppError.newBuilder(error_).mergeFrom(value).buildPartial();
           } else {
             error_ = value;
           }
@@ -1216,7 +1216,7 @@ public final class TransProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       public Builder clearError() {
         if (errorBuilder_ == null) {
@@ -1230,33 +1230,33 @@ public final class TransProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
-      public org.megacommerce.common.v1.ErrorProto.AppError.Builder getErrorBuilder() {
+      public org.megacommerce.shared.v1.ErrorProto.AppError.Builder getErrorBuilder() {
         
         onChanged();
         return getErrorFieldBuilder().getBuilder();
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
-      public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+      public org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
         if (errorBuilder_ != null) {
           return errorBuilder_.getMessageOrBuilder();
         } else {
           return error_ == null ?
-              org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance() : error_;
+              org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance() : error_;
         }
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> 
+          org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder> 
           getErrorFieldBuilder() {
         if (errorBuilder_ == null) {
           errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder>(
+              org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder>(
                   getError(),
                   getParentForChildren(),
                   isClean());
@@ -1897,19 +1897,19 @@ public final class TransProto {
     org.megacommerce.common.v1.TransProto.TranslationElementsOrBuilder getDataOrBuilder();
 
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return Whether the error field is set.
      */
     boolean hasError();
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return The error.
      */
-    org.megacommerce.common.v1.ErrorProto.AppError getError();
+    org.megacommerce.shared.v1.ErrorProto.AppError getError();
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      */
-    org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder();
+    org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder();
 
     public org.megacommerce.common.v1.TransProto.TranslationsForLangGetResponse.ResponseCase getResponseCase();
   }
@@ -2027,7 +2027,7 @@ public final class TransProto {
 
     public static final int ERROR_FIELD_NUMBER = 2;
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return Whether the error field is set.
      */
     @java.lang.Override
@@ -2035,25 +2035,25 @@ public final class TransProto {
       return responseCase_ == 2;
     }
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      * @return The error.
      */
     @java.lang.Override
-    public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+    public org.megacommerce.shared.v1.ErrorProto.AppError getError() {
       if (responseCase_ == 2) {
-         return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+         return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
       }
-      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+      return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
     }
     /**
-     * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+    public org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
       if (responseCase_ == 2) {
-         return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+         return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
       }
-      return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+      return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2074,7 +2074,7 @@ public final class TransProto {
         output.writeMessage(1, (org.megacommerce.common.v1.TransProto.TranslationElements) response_);
       }
       if (responseCase_ == 2) {
-        output.writeMessage(2, (org.megacommerce.common.v1.ErrorProto.AppError) response_);
+        output.writeMessage(2, (org.megacommerce.shared.v1.ErrorProto.AppError) response_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -2091,7 +2091,7 @@ public final class TransProto {
       }
       if (responseCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (org.megacommerce.common.v1.ErrorProto.AppError) response_);
+          .computeMessageSize(2, (org.megacommerce.shared.v1.ErrorProto.AppError) response_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2595,9 +2595,9 @@ public final class TransProto {
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> errorBuilder_;
+          org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder> errorBuilder_;
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        * @return Whether the error field is set.
        */
       @java.lang.Override
@@ -2605,27 +2605,27 @@ public final class TransProto {
         return responseCase_ == 2;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        * @return The error.
        */
       @java.lang.Override
-      public org.megacommerce.common.v1.ErrorProto.AppError getError() {
+      public org.megacommerce.shared.v1.ErrorProto.AppError getError() {
         if (errorBuilder_ == null) {
           if (responseCase_ == 2) {
-            return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+            return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
           }
-          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+          return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
         } else {
           if (responseCase_ == 2) {
             return errorBuilder_.getMessage();
           }
-          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+          return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
         }
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
-      public Builder setError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+      public Builder setError(org.megacommerce.shared.v1.ErrorProto.AppError value) {
         if (errorBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2639,10 +2639,10 @@ public final class TransProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       public Builder setError(
-          org.megacommerce.common.v1.ErrorProto.AppError.Builder builderForValue) {
+          org.megacommerce.shared.v1.ErrorProto.AppError.Builder builderForValue) {
         if (errorBuilder_ == null) {
           response_ = builderForValue.build();
           onChanged();
@@ -2653,13 +2653,13 @@ public final class TransProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
-      public Builder mergeError(org.megacommerce.common.v1.ErrorProto.AppError value) {
+      public Builder mergeError(org.megacommerce.shared.v1.ErrorProto.AppError value) {
         if (errorBuilder_ == null) {
           if (responseCase_ == 2 &&
-              response_ != org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance()) {
-            response_ = org.megacommerce.common.v1.ErrorProto.AppError.newBuilder((org.megacommerce.common.v1.ErrorProto.AppError) response_)
+              response_ != org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance()) {
+            response_ = org.megacommerce.shared.v1.ErrorProto.AppError.newBuilder((org.megacommerce.shared.v1.ErrorProto.AppError) response_)
                 .mergeFrom(value).buildPartial();
           } else {
             response_ = value;
@@ -2675,7 +2675,7 @@ public final class TransProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       public Builder clearError() {
         if (errorBuilder_ == null) {
@@ -2694,38 +2694,38 @@ public final class TransProto {
         return this;
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
-      public org.megacommerce.common.v1.ErrorProto.AppError.Builder getErrorBuilder() {
+      public org.megacommerce.shared.v1.ErrorProto.AppError.Builder getErrorBuilder() {
         return getErrorFieldBuilder().getBuilder();
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       @java.lang.Override
-      public org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+      public org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
         if ((responseCase_ == 2) && (errorBuilder_ != null)) {
           return errorBuilder_.getMessageOrBuilder();
         } else {
           if (responseCase_ == 2) {
-            return (org.megacommerce.common.v1.ErrorProto.AppError) response_;
+            return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
           }
-          return org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+          return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
         }
       }
       /**
-       * <code>.common.v1.AppError error = 2 [json_name = "error"];</code>
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder> 
+          org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder> 
           getErrorFieldBuilder() {
         if (errorBuilder_ == null) {
           if (!(responseCase_ == 2)) {
-            response_ = org.megacommerce.common.v1.ErrorProto.AppError.getDefaultInstance();
+            response_ = org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
           }
           errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              org.megacommerce.common.v1.ErrorProto.AppError, org.megacommerce.common.v1.ErrorProto.AppError.Builder, org.megacommerce.common.v1.ErrorProto.AppErrorOrBuilder>(
-                  (org.megacommerce.common.v1.ErrorProto.AppError) response_,
+              org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder>(
+                  (org.megacommerce.shared.v1.ErrorProto.AppError) response_,
                   getParentForChildren(),
                   isClean());
           response_ = null;
@@ -4315,18 +4315,18 @@ public final class TransProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025common/v1/trans.proto\022\tcommon.v1\032\025comm" +
-      "on/v1/error.proto\"\030\n\026TranslationsGetRequ" +
+      "\n\025common/v1/trans.proto\022\tcommon.v1\032\025shar" +
+      "ed/v1/error.proto\"\030\n\026TranslationsGetRequ" +
       "est\"\337\001\n\027TranslationsGetResponse\022@\n\004data\030" +
       "\001 \003(\0132,.common.v1.TranslationsGetRespons" +
-      "e.DataEntryR\004data\022)\n\005error\030\002 \001(\0132\023.commo" +
-      "n.v1.AppErrorR\005error\032W\n\tDataEntry\022\020\n\003key" +
+      "e.DataEntryR\004data\022)\n\005error\030\002 \001(\0132\023.share" +
+      "d.v1.AppErrorR\005error\032W\n\tDataEntry\022\020\n\003key" +
       "\030\001 \001(\tR\003key\0224\n\005value\030\002 \001(\0132\036.common.v1.T" +
       "ranslationElementsR\005value:\0028\001\"3\n\035Transla" +
       "tionsForLangGetRequest\022\022\n\004lang\030\001 \001(\tR\004la" +
       "ng\"\217\001\n\036TranslationsForLangGetResponse\0224\n" +
       "\004data\030\001 \001(\0132\036.common.v1.TranslationEleme" +
-      "ntsH\000R\004data\022+\n\005error\030\002 \001(\0132\023.common.v1.A" +
+      "ntsH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.A" +
       "ppErrorH\000R\005errorB\n\n\010response\"4\n\022Translat" +
       "ionElement\022\016\n\002id\030\001 \001(\tR\002id\022\016\n\002tr\030\002 \001(\tR\002" +
       "tr\"J\n\023TranslationElements\0223\n\005trans\030\001 \003(\013" +
@@ -4338,7 +4338,7 @@ public final class TransProto {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          org.megacommerce.common.v1.ErrorProto.getDescriptor(),
+          org.megacommerce.shared.v1.ErrorProto.getDescriptor(),
         });
     internal_static_common_v1_TranslationsGetRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -4382,7 +4382,7 @@ public final class TransProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_v1_TranslationElements_descriptor,
         new java.lang.String[] { "Trans", });
-    org.megacommerce.common.v1.ErrorProto.getDescriptor();
+    org.megacommerce.shared.v1.ErrorProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

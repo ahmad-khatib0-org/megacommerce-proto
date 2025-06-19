@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package user.v1;
 
-import "common/v1/error.proto";
+import "shared/v1/error.proto";
 import "google/protobuf/empty.proto";
 
 option cc_enable_arenas = true;
@@ -22,6 +22,6 @@ message SupplierCreateRequest {
 message SupplierCreateResponse {
   oneof response {
     google.protobuf.Empty data = 1;
-    common.v1.AppError error = 2;
+    shared.v1.AppError error = 2;
   }
 }

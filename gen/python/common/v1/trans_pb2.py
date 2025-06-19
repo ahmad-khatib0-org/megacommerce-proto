@@ -22,10 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from common.v1 import error_pb2 as common_dot_v1_dot_error__pb2
+from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x63ommon/v1/trans.proto\x12\tcommon.v1\x1a\x15\x63ommon/v1/error.proto\"\x18\n\x16TranslationsGetRequest\"\xc6\x01\n\x17TranslationsGetResponse\x12:\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32,.common.v1.TranslationsGetResponse.DataEntry\x12\"\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.common.v1.AppError\x1aK\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12-\n\x05value\x18\x02 \x01(\x0b\x32\x1e.common.v1.TranslationElements:\x02\x38\x01\"-\n\x1dTranslationsForLangGetRequest\x12\x0c\n\x04lang\x18\x01 \x01(\t\"\x82\x01\n\x1eTranslationsForLangGetResponse\x12.\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x1e.common.v1.TranslationElementsH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.common.v1.AppErrorH\x00\x42\n\n\x08response\",\n\x12TranslationElement\x12\n\n\x02id\x18\x01 \x01(\t\x12\n\n\x02tr\x18\x02 \x01(\t\"C\n\x13TranslationElements\x12,\n\x05trans\x18\x01 \x03(\x0b\x32\x1d.common.v1.TranslationElementBp\n\x1aorg.megacommerce.common.v1B\nTransProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/common/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15\x63ommon/v1/trans.proto\x12\tcommon.v1\x1a\x15shared/v1/error.proto\"\x18\n\x16TranslationsGetRequest\"\xc6\x01\n\x17TranslationsGetResponse\x12:\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32,.common.v1.TranslationsGetResponse.DataEntry\x12\"\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppError\x1aK\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12-\n\x05value\x18\x02 \x01(\x0b\x32\x1e.common.v1.TranslationElements:\x02\x38\x01\"-\n\x1dTranslationsForLangGetRequest\x12\x0c\n\x04lang\x18\x01 \x01(\t\"\x82\x01\n\x1eTranslationsForLangGetResponse\x12.\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x1e.common.v1.TranslationElementsH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\",\n\x12TranslationElement\x12\n\n\x02id\x18\x01 \x01(\t\x12\n\n\x02tr\x18\x02 \x01(\t\"C\n\x13TranslationElements\x12,\n\x05trans\x18\x01 \x03(\x0b\x32\x1d.common.v1.TranslationElementBp\n\x1aorg.megacommerce.common.v1B\nTransProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/common/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)

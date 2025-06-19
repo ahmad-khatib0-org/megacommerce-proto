@@ -21,94 +21,6 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type StringMap struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Data          map[string]string      `protobuf:"bytes,1,rep,name=data,proto3" json:"data,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *StringMap) Reset() {
-	*x = StringMap{}
-	mi := &file_common_v1_types_proto_msgTypes[0]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *StringMap) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*StringMap) ProtoMessage() {}
-
-func (x *StringMap) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_types_proto_msgTypes[0]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use StringMap.ProtoReflect.Descriptor instead.
-func (*StringMap) Descriptor() ([]byte, []int) {
-	return file_common_v1_types_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *StringMap) GetData() map[string]string {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
-
-type NestedStringMap struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Data          map[string]*StringMap  `protobuf:"bytes,1,rep,name=data,proto3" json:"data,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *NestedStringMap) Reset() {
-	*x = NestedStringMap{}
-	mi := &file_common_v1_types_proto_msgTypes[1]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *NestedStringMap) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*NestedStringMap) ProtoMessage() {}
-
-func (x *NestedStringMap) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_types_proto_msgTypes[1]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use NestedStringMap.ProtoReflect.Descriptor instead.
-func (*NestedStringMap) Descriptor() ([]byte, []int) {
-	return file_common_v1_types_proto_rawDescGZIP(), []int{1}
-}
-
-func (x *NestedStringMap) GetData() map[string]*StringMap {
-	if x != nil {
-		return x.Data
-	}
-	return nil
-}
-
 type PingRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
@@ -117,7 +29,7 @@ type PingRequest struct {
 
 func (x *PingRequest) Reset() {
 	*x = PingRequest{}
-	mi := &file_common_v1_types_proto_msgTypes[2]
+	mi := &file_common_v1_types_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -129,7 +41,7 @@ func (x *PingRequest) String() string {
 func (*PingRequest) ProtoMessage() {}
 
 func (x *PingRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_types_proto_msgTypes[2]
+	mi := &file_common_v1_types_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -142,7 +54,7 @@ func (x *PingRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PingRequest.ProtoReflect.Descriptor instead.
 func (*PingRequest) Descriptor() ([]byte, []int) {
-	return file_common_v1_types_proto_rawDescGZIP(), []int{2}
+	return file_common_v1_types_proto_rawDescGZIP(), []int{0}
 }
 
 type PingResponse struct {
@@ -153,7 +65,7 @@ type PingResponse struct {
 
 func (x *PingResponse) Reset() {
 	*x = PingResponse{}
-	mi := &file_common_v1_types_proto_msgTypes[3]
+	mi := &file_common_v1_types_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -165,7 +77,7 @@ func (x *PingResponse) String() string {
 func (*PingResponse) ProtoMessage() {}
 
 func (x *PingResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_types_proto_msgTypes[3]
+	mi := &file_common_v1_types_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -178,24 +90,14 @@ func (x *PingResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PingResponse.ProtoReflect.Descriptor instead.
 func (*PingResponse) Descriptor() ([]byte, []int) {
-	return file_common_v1_types_proto_rawDescGZIP(), []int{3}
+	return file_common_v1_types_proto_rawDescGZIP(), []int{1}
 }
 
 var File_common_v1_types_proto protoreflect.FileDescriptor
 
 const file_common_v1_types_proto_rawDesc = "" +
 	"\n" +
-	"\x15common/v1/types.proto\x12\tcommon.v1\"x\n" +
-	"\tStringMap\x122\n" +
-	"\x04data\x18\x01 \x03(\v2\x1e.common.v1.StringMap.DataEntryR\x04data\x1a7\n" +
-	"\tDataEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\x9a\x01\n" +
-	"\x0fNestedStringMap\x128\n" +
-	"\x04data\x18\x01 \x03(\v2$.common.v1.NestedStringMap.DataEntryR\x04data\x1aM\n" +
-	"\tDataEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x12*\n" +
-	"\x05value\x18\x02 \x01(\v2\x14.common.v1.StringMapR\x05value:\x028\x01\"\r\n" +
+	"\x15common/v1/types.proto\x12\tcommon.v1\"\r\n" +
 	"\vPingRequest\"\x0e\n" +
 	"\fPingResponseBp\n" +
 	"\x1aorg.megacommerce.common.v1B\n" +
@@ -213,24 +115,17 @@ func file_common_v1_types_proto_rawDescGZIP() []byte {
 	return file_common_v1_types_proto_rawDescData
 }
 
-var file_common_v1_types_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_common_v1_types_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_common_v1_types_proto_goTypes = []any{
-	(*StringMap)(nil),       // 0: common.v1.StringMap
-	(*NestedStringMap)(nil), // 1: common.v1.NestedStringMap
-	(*PingRequest)(nil),     // 2: common.v1.PingRequest
-	(*PingResponse)(nil),    // 3: common.v1.PingResponse
-	nil,                     // 4: common.v1.StringMap.DataEntry
-	nil,                     // 5: common.v1.NestedStringMap.DataEntry
+	(*PingRequest)(nil),  // 0: common.v1.PingRequest
+	(*PingResponse)(nil), // 1: common.v1.PingResponse
 }
 var file_common_v1_types_proto_depIdxs = []int32{
-	4, // 0: common.v1.StringMap.data:type_name -> common.v1.StringMap.DataEntry
-	5, // 1: common.v1.NestedStringMap.data:type_name -> common.v1.NestedStringMap.DataEntry
-	0, // 2: common.v1.NestedStringMap.DataEntry.value:type_name -> common.v1.StringMap
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	0, // [0:0] is the sub-list for method output_type
+	0, // [0:0] is the sub-list for method input_type
+	0, // [0:0] is the sub-list for extension type_name
+	0, // [0:0] is the sub-list for extension extendee
+	0, // [0:0] is the sub-list for field type_name
 }
 
 func init() { file_common_v1_types_proto_init() }
@@ -244,7 +139,7 @@ func file_common_v1_types_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_v1_types_proto_rawDesc), len(file_common_v1_types_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   6,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

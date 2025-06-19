@@ -213,15 +213,16 @@ const char descriptor_table_protodef_user_2fv1_2fuser_2eproto[] PROTOBUF_SECTION
   "updated_atB\r\n\013_deleted_at2`\n\013UserService"
   "\022Q\n\016CreateSupplier\022\036.user.v1.SupplierCre"
   "ateRequest\032\037.user.v1.SupplierCreateRespo"
-  "nseB4\n\030org.megacommerce.user.v1B\tUserPro"
-  "toZ\nuser/v1;v1\370\001\001b\006proto3"
+  "nseBk\n\030org.megacommerce.user.v1B\tUserPro"
+  "toZAgithub.com/ahmad-khatib0-org/megacom"
+  "merce-proto/gen/go/user/v1;v1\370\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_user_2fv1_2fuser_2eproto_deps[1] = {
   &::descriptor_table_user_2fv1_2fsupplier_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_user_2fv1_2fuser_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_user_2fv1_2fuser_2eproto = {
-  false, false, 1665, descriptor_table_protodef_user_2fv1_2fuser_2eproto, "user/v1/user.proto", 
+  false, false, 1720, descriptor_table_protodef_user_2fv1_2fuser_2eproto, "user/v1/user.proto", 
   &descriptor_table_user_2fv1_2fuser_2eproto_once, descriptor_table_user_2fv1_2fuser_2eproto_deps, 1, 3,
   schemas, file_default_instances, TableStruct_user_2fv1_2fuser_2eproto::offsets,
   file_level_metadata_user_2fv1_2fuser_2eproto, file_level_enum_descriptors_user_2fv1_2fuser_2eproto, file_level_service_descriptors_user_2fv1_2fuser_2eproto,

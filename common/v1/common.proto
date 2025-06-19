@@ -13,14 +13,9 @@ option java_package = "org.megacommerce.common.v1";
 
 service CommonService {
   rpc Ping(common.v1.PingRequest) returns (common.v1.PingResponse) {}
-  rpc ConfigGet(common.v1.ConfigGetRequest)
-      returns (common.v1.ConfigGetResponse);
-  rpc ConfigUpdate(common.v1.ConfigUpdateRequest)
-      returns (common.v1.ConfigUpdateResponse);
-  rpc ConfigListener(common.v1.ConfigListenerRequest)
-      returns (stream common.v1.ConfigListenerResponse);
-  rpc TranslationsGet(common.v1.TranslationsGetRequest)
-      returns (common.v1.TranslationsGetResponse);
-  rpc TranslationsForLangGet(common.v1.TranslationsForLangGetRequest)
-      returns (common.v1.TranslationsForLangGetResponse);
+  rpc ConfigGet(common.v1.ConfigGetRequest) returns (common.v1.ConfigGetResponse);
+  rpc ConfigUpdate(common.v1.ConfigUpdateRequest) returns (common.v1.ConfigUpdateResponse);
+  rpc ConfigListener(common.v1.ConfigListenerRequest) returns (stream common.v1.ConfigListenerResponse);
+  rpc TranslationsGet(common.v1.TranslationsGetRequest) returns (common.v1.TranslationsGetResponse);
+  rpc TranslationsForLangGet(common.v1.TranslationsForLangGetRequest) returns (common.v1.TranslationsForLangGetResponse);
 }

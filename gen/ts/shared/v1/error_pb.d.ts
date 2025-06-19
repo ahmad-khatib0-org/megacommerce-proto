@@ -1,5 +1,5 @@
-// package: common.v1
-// file: common/v1/error.proto
+// package: shared.v1
+// file: shared/v1/error.proto
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_any_pb from "google-protobuf/google/protobuf/any_pb";

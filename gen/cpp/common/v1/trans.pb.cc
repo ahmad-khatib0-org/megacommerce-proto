@@ -186,18 +186,18 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_common_2fv1_2ftrans_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\025common/v1/trans.proto\022\tcommon.v1\032\025comm"
-  "on/v1/error.proto\"\030\n\026TranslationsGetRequ"
+  "\n\025common/v1/trans.proto\022\tcommon.v1\032\025shar"
+  "ed/v1/error.proto\"\030\n\026TranslationsGetRequ"
   "est\"\337\001\n\027TranslationsGetResponse\022@\n\004data\030"
   "\001 \003(\0132,.common.v1.TranslationsGetRespons"
-  "e.DataEntryR\004data\022)\n\005error\030\002 \001(\0132\023.commo"
-  "n.v1.AppErrorR\005error\032W\n\tDataEntry\022\020\n\003key"
+  "e.DataEntryR\004data\022)\n\005error\030\002 \001(\0132\023.share"
+  "d.v1.AppErrorR\005error\032W\n\tDataEntry\022\020\n\003key"
   "\030\001 \001(\tR\003key\0224\n\005value\030\002 \001(\0132\036.common.v1.T"
   "ranslationElementsR\005value:\0028\001\"3\n\035Transla"
   "tionsForLangGetRequest\022\022\n\004lang\030\001 \001(\tR\004la"
   "ng\"\217\001\n\036TranslationsForLangGetResponse\0224\n"
   "\004data\030\001 \001(\0132\036.common.v1.TranslationEleme"
-  "ntsH\000R\004data\022+\n\005error\030\002 \001(\0132\023.common.v1.A"
+  "ntsH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.A"
   "ppErrorH\000R\005errorB\n\n\010response\"4\n\022Translat"
   "ionElement\022\016\n\002id\030\001 \001(\tR\002id\022\016\n\002tr\030\002 \001(\tR\002"
   "tr\"J\n\023TranslationElements\0223\n\005trans\030\001 \003(\013"
@@ -207,7 +207,7 @@ const char descriptor_table_protodef_common_2fv1_2ftrans_2eproto[] PROTOBUF_SECT
   "rce-proto/gen/go/common/v1;v1\370\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_common_2fv1_2ftrans_2eproto_deps[1] = {
-  &::descriptor_table_common_2fv1_2ferror_2eproto,
+  &::descriptor_table_shared_2fv1_2ferror_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2fv1_2ftrans_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fv1_2ftrans_2eproto = {
@@ -282,10 +282,10 @@ void TranslationsGetResponse_DataEntry_DoNotUse::MergeFrom(const TranslationsGet
 
 class TranslationsGetResponse::_Internal {
  public:
-  static const ::common::v1::AppError& error(const TranslationsGetResponse* msg);
+  static const ::shared::v1::AppError& error(const TranslationsGetResponse* msg);
 };
 
-const ::common::v1::AppError&
+const ::shared::v1::AppError&
 TranslationsGetResponse::_Internal::error(const TranslationsGetResponse* msg) {
   return *msg->error_;
 }
@@ -310,7 +310,7 @@ TranslationsGetResponse::TranslationsGetResponse(const TranslationsGetResponse& 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   data_.MergeFrom(from.data_);
   if (from._internal_has_error()) {
-    error_ = new ::common::v1::AppError(*from.error_);
+    error_ = new ::shared::v1::AppError(*from.error_);
   } else {
     error_ = nullptr;
   }
@@ -380,7 +380,7 @@ const char* TranslationsGetResponse::_InternalParse(const char* ptr, ::PROTOBUF_
         } else
           goto handle_unusual;
         continue;
-      // .common.v1.AppError error = 2 [json_name = "error"];
+      // .shared.v1.AppError error = 2 [json_name = "error"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
@@ -459,7 +459,7 @@ uint8_t* TranslationsGetResponse::_InternalSerialize(
     }
   }
 
-  // .common.v1.AppError error = 2 [json_name = "error"];
+  // .shared.v1.AppError error = 2 [json_name = "error"];
   if (this->_internal_has_error()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -492,7 +492,7 @@ size_t TranslationsGetResponse::ByteSizeLong() const {
     total_size += TranslationsGetResponse_DataEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
   }
 
-  // .common.v1.AppError error = 2 [json_name = "error"];
+  // .shared.v1.AppError error = 2 [json_name = "error"];
   if (this->_internal_has_error()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -523,7 +523,7 @@ void TranslationsGetResponse::MergeFrom(const TranslationsGetResponse& from) {
 
   data_.MergeFrom(from.data_);
   if (from._internal_has_error()) {
-    _internal_mutable_error()->::common::v1::AppError::MergeFrom(from._internal_error());
+    _internal_mutable_error()->::shared::v1::AppError::MergeFrom(from._internal_error());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -760,14 +760,14 @@ void TranslationsForLangGetRequest::InternalSwap(TranslationsForLangGetRequest* 
 class TranslationsForLangGetResponse::_Internal {
  public:
   static const ::common::v1::TranslationElements& data(const TranslationsForLangGetResponse* msg);
-  static const ::common::v1::AppError& error(const TranslationsForLangGetResponse* msg);
+  static const ::shared::v1::AppError& error(const TranslationsForLangGetResponse* msg);
 };
 
 const ::common::v1::TranslationElements&
 TranslationsForLangGetResponse::_Internal::data(const TranslationsForLangGetResponse* msg) {
   return *msg->response_.data_;
 }
-const ::common::v1::AppError&
+const ::shared::v1::AppError&
 TranslationsForLangGetResponse::_Internal::error(const TranslationsForLangGetResponse* msg) {
   return *msg->response_.error_;
 }
@@ -786,7 +786,7 @@ void TranslationsForLangGetResponse::set_allocated_data(::common::v1::Translatio
   }
   // @@protoc_insertion_point(field_set_allocated:common.v1.TranslationsForLangGetResponse.data)
 }
-void TranslationsForLangGetResponse::set_allocated_error(::common::v1::AppError* error) {
+void TranslationsForLangGetResponse::set_allocated_error(::shared::v1::AppError* error) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_response();
   if (error) {
@@ -830,7 +830,7 @@ TranslationsForLangGetResponse::TranslationsForLangGetResponse(const Translation
       break;
     }
     case kError: {
-      _internal_mutable_error()->::common::v1::AppError::MergeFrom(from._internal_error());
+      _internal_mutable_error()->::shared::v1::AppError::MergeFrom(from._internal_error());
       break;
     }
     case RESPONSE_NOT_SET: {
@@ -915,7 +915,7 @@ const char* TranslationsForLangGetResponse::_InternalParse(const char* ptr, ::PR
         } else
           goto handle_unusual;
         continue;
-      // .common.v1.AppError error = 2 [json_name = "error"];
+      // .shared.v1.AppError error = 2 [json_name = "error"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
@@ -960,7 +960,7 @@ uint8_t* TranslationsForLangGetResponse::_InternalSerialize(
         1, _Internal::data(this), target, stream);
   }
 
-  // .common.v1.AppError error = 2 [json_name = "error"];
+  // .shared.v1.AppError error = 2 [json_name = "error"];
   if (_internal_has_error()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -992,7 +992,7 @@ size_t TranslationsForLangGetResponse::ByteSizeLong() const {
           *response_.data_);
       break;
     }
-    // .common.v1.AppError error = 2 [json_name = "error"];
+    // .shared.v1.AppError error = 2 [json_name = "error"];
     case kError: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1031,7 +1031,7 @@ void TranslationsForLangGetResponse::MergeFrom(const TranslationsForLangGetRespo
       break;
     }
     case kError: {
-      _internal_mutable_error()->::common::v1::AppError::MergeFrom(from._internal_error());
+      _internal_mutable_error()->::shared::v1::AppError::MergeFrom(from._internal_error());
       break;
     }
     case RESPONSE_NOT_SET: {

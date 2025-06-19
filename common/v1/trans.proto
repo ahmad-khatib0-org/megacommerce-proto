@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package common.v1;
 
-import "common/v1/error.proto";
+import "shared/v1/error.proto";
 
 option cc_enable_arenas = true;
 option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/common/v1;v1";
@@ -13,7 +13,7 @@ message TranslationsGetRequest {}
 
 message TranslationsGetResponse {
   map<string, TranslationElements> data = 1;
-  common.v1.AppError error = 2;
+  shared.v1.AppError error = 2;
 }
 
 message TranslationsForLangGetRequest {
@@ -23,7 +23,7 @@ message TranslationsForLangGetRequest {
 message TranslationsForLangGetResponse {
   oneof response {
     TranslationElements data = 1;
-    AppError error = 2;
+    shared.v1.AppError error = 2;
   }
 }
 

@@ -4398,8 +4398,9 @@ public final class UserProto {
       "updated_atB\r\n\013_deleted_at2`\n\013UserService" +
       "\022Q\n\016CreateSupplier\022\036.user.v1.SupplierCre" +
       "ateRequest\032\037.user.v1.SupplierCreateRespo" +
-      "nseB4\n\030org.megacommerce.user.v1B\tUserPro" +
-      "toZ\nuser/v1;v1\370\001\001b\006proto3"
+      "nseBk\n\030org.megacommerce.user.v1B\tUserPro" +
+      "toZAgithub.com/ahmad-khatib0-org/megacom" +
+      "merce-proto/gen/go/user/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

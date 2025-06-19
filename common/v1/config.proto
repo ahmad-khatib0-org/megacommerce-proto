@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package common.v1;
 
-import "common/v1/error.proto";
+import "shared/v1/error.proto";
 
 option cc_enable_arenas = true;
 option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/common/v1;v1";
@@ -309,8 +309,7 @@ message ConfigNativeApp {
 }
 
 message ConfigMeilisearch {
-  optional string server_url = 1 [ json_name = "server_url" ];
-  // optional string connection_url = 1;
+  optional string server_url = 1 [json_name = "server_url"];
   optional string master_key = 2; // Meilisearch-specific authentication
   optional bool enable_indexing = 3;
   optional bool enable_searching = 4;
@@ -383,24 +382,28 @@ message ConfigGetRequest {}
 message ConfigGetResponse {
   oneof response {
     Config data = 1;
-    common.v1.AppError error = 2;
+    shared.v1.AppError error = 2;
   }
 }
 
-message ConfigUpdateRequest { Config config = 1; }
+message ConfigUpdateRequest {
+  Config config = 1;
+}
 
 message ConfigUpdateResponse {
   oneof response {
     Config data = 1;
-    common.v1.AppError error = 2;
+    shared.v1.AppError error = 2;
   }
 }
 
 message ConfigListenerResponse {
   oneof response {
     Config data = 1;
-    common.v1.AppError error = 2;
+    shared.v1.AppError error = 2;
   }
 }
 
-message ConfigListenerRequest { string client_id = 1; }
+message ConfigListenerRequest {
+  string client_id = 1;
+}

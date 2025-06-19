@@ -1,6 +1,6 @@
 import * as jspb from 'google-protobuf'
 
-import * as common_v1_error_pb from '../../common/v1/error_pb'; // proto import: "common/v1/error.proto"
+import * as shared_v1_error_pb from '../../shared/v1/error_pb'; // proto import: "shared/v1/error.proto"
 import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb'; // proto import: "google/protobuf/empty.proto"
 
 
@@ -48,8 +48,8 @@ export class SupplierCreateResponse extends jspb.Message {
   hasData(): boolean;
   clearData(): SupplierCreateResponse;
 
-  getError(): common_v1_error_pb.AppError | undefined;
-  setError(value?: common_v1_error_pb.AppError): SupplierCreateResponse;
+  getError(): shared_v1_error_pb.AppError | undefined;
+  setError(value?: shared_v1_error_pb.AppError): SupplierCreateResponse;
   hasError(): boolean;
   clearError(): SupplierCreateResponse;
 
@@ -66,7 +66,7 @@ export class SupplierCreateResponse extends jspb.Message {
 export namespace SupplierCreateResponse {
   export type AsObject = {
     data?: google_protobuf_empty_pb.Empty.AsObject,
-    error?: common_v1_error_pb.AppError.AsObject,
+    error?: shared_v1_error_pb.AppError.AsObject,
   }
 
   export enum ResponseCase { 

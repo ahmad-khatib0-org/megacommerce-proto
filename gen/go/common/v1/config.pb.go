@@ -7,6 +7,7 @@
 package v1
 
 import (
+	v1 "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -2443,15 +2444,14 @@ func (x *ConfigNativeApp) GetMobileJailbreakProtection() bool {
 }
 
 type ConfigMeilisearch struct {
-	state     protoimpl.MessageState `protogen:"open.v1"`
-	ServerUrl *string                `protobuf:"bytes,1,opt,name=server_url,proto3,oneof" json:"server_url,omitempty"`
-	// optional string connection_url = 1;
-	MasterKey             *string `protobuf:"bytes,2,opt,name=master_key,json=masterKey,proto3,oneof" json:"master_key,omitempty"` // Meilisearch-specific authentication
-	EnableIndexing        *bool   `protobuf:"varint,3,opt,name=enable_indexing,json=enableIndexing,proto3,oneof" json:"enable_indexing,omitempty"`
-	EnableSearching       *bool   `protobuf:"varint,4,opt,name=enable_searching,json=enableSearching,proto3,oneof" json:"enable_searching,omitempty"`
-	EnableAutocomplete    *bool   `protobuf:"varint,5,opt,name=enable_autocomplete,json=enableAutocomplete,proto3,oneof" json:"enable_autocomplete,omitempty"`
-	BatchSize             *int32  `protobuf:"varint,6,opt,name=batch_size,json=batchSize,proto3,oneof" json:"batch_size,omitempty"`
-	RequestTimeoutSeconds *int32  `protobuf:"varint,7,opt,name=request_timeout_seconds,json=requestTimeoutSeconds,proto3,oneof" json:"request_timeout_seconds,omitempty"`
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	ServerUrl             *string                `protobuf:"bytes,1,opt,name=server_url,proto3,oneof" json:"server_url,omitempty"`
+	MasterKey             *string                `protobuf:"bytes,2,opt,name=master_key,json=masterKey,proto3,oneof" json:"master_key,omitempty"` // Meilisearch-specific authentication
+	EnableIndexing        *bool                  `protobuf:"varint,3,opt,name=enable_indexing,json=enableIndexing,proto3,oneof" json:"enable_indexing,omitempty"`
+	EnableSearching       *bool                  `protobuf:"varint,4,opt,name=enable_searching,json=enableSearching,proto3,oneof" json:"enable_searching,omitempty"`
+	EnableAutocomplete    *bool                  `protobuf:"varint,5,opt,name=enable_autocomplete,json=enableAutocomplete,proto3,oneof" json:"enable_autocomplete,omitempty"`
+	BatchSize             *int32                 `protobuf:"varint,6,opt,name=batch_size,json=batchSize,proto3,oneof" json:"batch_size,omitempty"`
+	RequestTimeoutSeconds *int32                 `protobuf:"varint,7,opt,name=request_timeout_seconds,json=requestTimeoutSeconds,proto3,oneof" json:"request_timeout_seconds,omitempty"`
 	// Meilisearch-specific options
 	IndexPrefix         *string `protobuf:"bytes,8,opt,name=index_prefix,json=indexPrefix,proto3,oneof" json:"index_prefix,omitempty"`
 	SearchCutoffMs      *int32  `protobuf:"varint,9,opt,name=search_cutoff_ms,json=searchCutoffMs,proto3,oneof" json:"search_cutoff_ms,omitempty"` // performance tuning
@@ -3125,7 +3125,7 @@ func (x *ConfigGetResponse) GetData() *Config {
 	return nil
 }
 
-func (x *ConfigGetResponse) GetError() *AppError {
+func (x *ConfigGetResponse) GetError() *v1.AppError {
 	if x != nil {
 		if x, ok := x.Response.(*ConfigGetResponse_Error); ok {
 			return x.Error
@@ -3143,7 +3143,7 @@ type ConfigGetResponse_Data struct {
 }
 
 type ConfigGetResponse_Error struct {
-	Error *AppError `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
+	Error *v1.AppError `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
 }
 
 func (*ConfigGetResponse_Data) isConfigGetResponse_Response() {}
@@ -3251,7 +3251,7 @@ func (x *ConfigUpdateResponse) GetData() *Config {
 	return nil
 }
 
-func (x *ConfigUpdateResponse) GetError() *AppError {
+func (x *ConfigUpdateResponse) GetError() *v1.AppError {
 	if x != nil {
 		if x, ok := x.Response.(*ConfigUpdateResponse_Error); ok {
 			return x.Error
@@ -3269,7 +3269,7 @@ type ConfigUpdateResponse_Data struct {
 }
 
 type ConfigUpdateResponse_Error struct {
-	Error *AppError `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
+	Error *v1.AppError `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
 }
 
 func (*ConfigUpdateResponse_Data) isConfigUpdateResponse_Response() {}
@@ -3333,7 +3333,7 @@ func (x *ConfigListenerResponse) GetData() *Config {
 	return nil
 }
 
-func (x *ConfigListenerResponse) GetError() *AppError {
+func (x *ConfigListenerResponse) GetError() *v1.AppError {
 	if x != nil {
 		if x, ok := x.Response.(*ConfigListenerResponse_Error); ok {
 			return x.Error
@@ -3351,7 +3351,7 @@ type ConfigListenerResponse_Data struct {
 }
 
 type ConfigListenerResponse_Error struct {
-	Error *AppError `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
+	Error *v1.AppError `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
 }
 
 func (*ConfigListenerResponse_Data) isConfigListenerResponse_Response() {}
@@ -3406,7 +3406,7 @@ var File_common_v1_config_proto protoreflect.FileDescriptor
 
 const file_common_v1_config_proto_rawDesc = "" +
 	"\n" +
-	"\x16common/v1/config.proto\x12\tcommon.v1\x1a\x15common/v1/error.proto\"\xbd\x0f\n" +
+	"\x16common/v1/config.proto\x12\tcommon.v1\x1a\x15shared/v1/error.proto\"\xbd\x0f\n" +
 	"\n" +
 	"ConfigMain\x12\x15\n" +
 	"\x03env\x18\x01 \x01(\tH\x00R\x03env\x88\x01\x01\x12&\n" +
@@ -4017,19 +4017,19 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x10ConfigGetRequest\"u\n" +
 	"\x11ConfigGetResponse\x12'\n" +
 	"\x04data\x18\x01 \x01(\v2\x11.common.v1.ConfigH\x00R\x04data\x12+\n" +
-	"\x05error\x18\x02 \x01(\v2\x13.common.v1.AppErrorH\x00R\x05errorB\n" +
+	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +
 	"\n" +
 	"\bresponse\"@\n" +
 	"\x13ConfigUpdateRequest\x12)\n" +
 	"\x06config\x18\x01 \x01(\v2\x11.common.v1.ConfigR\x06config\"x\n" +
 	"\x14ConfigUpdateResponse\x12'\n" +
 	"\x04data\x18\x01 \x01(\v2\x11.common.v1.ConfigH\x00R\x04data\x12+\n" +
-	"\x05error\x18\x02 \x01(\v2\x13.common.v1.AppErrorH\x00R\x05errorB\n" +
+	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +
 	"\n" +
 	"\bresponse\"z\n" +
 	"\x16ConfigListenerResponse\x12'\n" +
 	"\x04data\x18\x01 \x01(\v2\x11.common.v1.ConfigH\x00R\x04data\x12+\n" +
-	"\x05error\x18\x02 \x01(\v2\x13.common.v1.AppErrorH\x00R\x05errorB\n" +
+	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +
 	"\n" +
 	"\bresponse\"4\n" +
 	"\x15ConfigListenerRequest\x12\x1b\n" +
@@ -4079,7 +4079,7 @@ var file_common_v1_config_proto_goTypes = []any{
 	(*ConfigListenerResponse)(nil), // 26: common.v1.ConfigListenerResponse
 	(*ConfigListenerRequest)(nil),  // 27: common.v1.ConfigListenerRequest
 	nil,                            // 28: common.v1.ConfigSecurity.RestrictedUsernamesEntry
-	(*AppError)(nil),               // 29: common.v1.AppError
+	(*v1.AppError)(nil),            // 29: shared.v1.AppError
 }
 var file_common_v1_config_proto_depIdxs = []int32{
 	28, // 0: common.v1.ConfigSecurity.restricted_usernames:type_name -> common.v1.ConfigSecurity.RestrictedUsernamesEntry
@@ -4105,12 +4105,12 @@ var file_common_v1_config_proto_depIdxs = []int32{
 	19, // 20: common.v1.Config.data_retention:type_name -> common.v1.ConfigDataRetention
 	20, // 21: common.v1.Config.image_proxy:type_name -> common.v1.ConfigImageProxy
 	21, // 22: common.v1.ConfigGetResponse.data:type_name -> common.v1.Config
-	29, // 23: common.v1.ConfigGetResponse.error:type_name -> common.v1.AppError
+	29, // 23: common.v1.ConfigGetResponse.error:type_name -> shared.v1.AppError
 	21, // 24: common.v1.ConfigUpdateRequest.config:type_name -> common.v1.Config
 	21, // 25: common.v1.ConfigUpdateResponse.data:type_name -> common.v1.Config
-	29, // 26: common.v1.ConfigUpdateResponse.error:type_name -> common.v1.AppError
+	29, // 26: common.v1.ConfigUpdateResponse.error:type_name -> shared.v1.AppError
 	21, // 27: common.v1.ConfigListenerResponse.data:type_name -> common.v1.Config
-	29, // 28: common.v1.ConfigListenerResponse.error:type_name -> common.v1.AppError
+	29, // 28: common.v1.ConfigListenerResponse.error:type_name -> shared.v1.AppError
 	29, // [29:29] is the sub-list for method output_type
 	29, // [29:29] is the sub-list for method input_type
 	29, // [29:29] is the sub-list for extension type_name
@@ -4123,7 +4123,6 @@ func file_common_v1_config_proto_init() {
 	if File_common_v1_config_proto != nil {
 		return
 	}
-	file_common_v1_error_proto_init()
 	file_common_v1_config_proto_msgTypes[0].OneofWrappers = []any{}
 	file_common_v1_config_proto_msgTypes[1].OneofWrappers = []any{}
 	file_common_v1_config_proto_msgTypes[2].OneofWrappers = []any{}

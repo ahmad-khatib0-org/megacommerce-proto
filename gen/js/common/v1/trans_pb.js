@@ -21,8 +21,8 @@ var global = (function() {
   return Function('return this')();
 }.call(null));
 
-var common_v1_error_pb = require('../../common/v1/error_pb.js');
-goog.object.extend(proto, common_v1_error_pb);
+var shared_v1_error_pb = require('../../shared/v1/error_pb.js');
+goog.object.extend(proto, shared_v1_error_pb);
 goog.exportSymbol('proto.common.v1.TranslationElement', null, global);
 goog.exportSymbol('proto.common.v1.TranslationElements', null, global);
 goog.exportSymbol('proto.common.v1.TranslationsForLangGetRequest', null, global);
@@ -290,7 +290,7 @@ proto.common.v1.TranslationsGetResponse.prototype.toObject = function(opt_includ
 proto.common.v1.TranslationsGetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, proto.common.v1.TranslationElements.toObject) : [],
-    error: (f = msg.getError()) && common_v1_error_pb.AppError.toObject(includeInstance, f)
+    error: (f = msg.getError()) && shared_v1_error_pb.AppError.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -334,8 +334,8 @@ proto.common.v1.TranslationsGetResponse.deserializeBinaryFromReader = function(m
          });
       break;
     case 2:
-      var value = new common_v1_error_pb.AppError;
-      reader.readMessage(value,common_v1_error_pb.AppError.deserializeBinaryFromReader);
+      var value = new shared_v1_error_pb.AppError;
+      reader.readMessage(value,shared_v1_error_pb.AppError.deserializeBinaryFromReader);
       msg.setError(value);
       break;
     default:
@@ -376,7 +376,7 @@ proto.common.v1.TranslationsGetResponse.serializeBinaryToWriter = function(messa
     writer.writeMessage(
       2,
       f,
-      common_v1_error_pb.AppError.serializeBinaryToWriter
+      shared_v1_error_pb.AppError.serializeBinaryToWriter
     );
   }
 };
@@ -405,17 +405,17 @@ proto.common.v1.TranslationsGetResponse.prototype.clearDataMap = function() {
 
 
 /**
- * optional AppError error = 2;
- * @return {?proto.common.v1.AppError}
+ * optional shared.v1.AppError error = 2;
+ * @return {?proto.shared.v1.AppError}
  */
 proto.common.v1.TranslationsGetResponse.prototype.getError = function() {
-  return /** @type{?proto.common.v1.AppError} */ (
-    jspb.Message.getWrapperField(this, common_v1_error_pb.AppError, 2));
+  return /** @type{?proto.shared.v1.AppError} */ (
+    jspb.Message.getWrapperField(this, shared_v1_error_pb.AppError, 2));
 };
 
 
 /**
- * @param {?proto.common.v1.AppError|undefined} value
+ * @param {?proto.shared.v1.AppError|undefined} value
  * @return {!proto.common.v1.TranslationsGetResponse} returns this
 */
 proto.common.v1.TranslationsGetResponse.prototype.setError = function(value) {
@@ -630,7 +630,7 @@ proto.common.v1.TranslationsForLangGetResponse.prototype.toObject = function(opt
 proto.common.v1.TranslationsForLangGetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
     data: (f = msg.getData()) && proto.common.v1.TranslationElements.toObject(includeInstance, f),
-    error: (f = msg.getError()) && common_v1_error_pb.AppError.toObject(includeInstance, f)
+    error: (f = msg.getError()) && shared_v1_error_pb.AppError.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -673,8 +673,8 @@ proto.common.v1.TranslationsForLangGetResponse.deserializeBinaryFromReader = fun
       msg.setData(value);
       break;
     case 2:
-      var value = new common_v1_error_pb.AppError;
-      reader.readMessage(value,common_v1_error_pb.AppError.deserializeBinaryFromReader);
+      var value = new shared_v1_error_pb.AppError;
+      reader.readMessage(value,shared_v1_error_pb.AppError.deserializeBinaryFromReader);
       msg.setError(value);
       break;
     default:
@@ -719,7 +719,7 @@ proto.common.v1.TranslationsForLangGetResponse.serializeBinaryToWriter = functio
     writer.writeMessage(
       2,
       f,
-      common_v1_error_pb.AppError.serializeBinaryToWriter
+      shared_v1_error_pb.AppError.serializeBinaryToWriter
     );
   }
 };
@@ -763,17 +763,17 @@ proto.common.v1.TranslationsForLangGetResponse.prototype.hasData = function() {
 
 
 /**
- * optional AppError error = 2;
- * @return {?proto.common.v1.AppError}
+ * optional shared.v1.AppError error = 2;
+ * @return {?proto.shared.v1.AppError}
  */
 proto.common.v1.TranslationsForLangGetResponse.prototype.getError = function() {
-  return /** @type{?proto.common.v1.AppError} */ (
-    jspb.Message.getWrapperField(this, common_v1_error_pb.AppError, 2));
+  return /** @type{?proto.shared.v1.AppError} */ (
+    jspb.Message.getWrapperField(this, shared_v1_error_pb.AppError, 2));
 };
 
 
 /**
- * @param {?proto.common.v1.AppError|undefined} value
+ * @param {?proto.shared.v1.AppError|undefined} value
  * @return {!proto.common.v1.TranslationsForLangGetResponse} returns this
 */
 proto.common.v1.TranslationsForLangGetResponse.prototype.setError = function(value) {

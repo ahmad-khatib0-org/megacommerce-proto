@@ -87,8 +87,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_user_2fv1_2fsupplier_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\026user/v1/supplier.proto\022\007user.v1\032\025commo"
-  "n/v1/error.proto\032\033google/protobuf/empty."
+  "\n\026user/v1/supplier.proto\022\007user.v1\032\025share"
+  "d/v1/error.proto\032\033google/protobuf/empty."
   "proto\"\301\001\n\025SupplierCreateRequest\022\032\n\010usern"
   "ame\030\001 \001(\tR\010username\022\024\n\005email\030\002 \001(\tR\005emai"
   "l\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName\022\033\n\tlast"
@@ -96,15 +96,15 @@ const char descriptor_table_protodef_user_2fv1_2fsupplier_2eproto[] PROTOBUF_SEC
   "\010password\022\036\n\nmembership\030\006 \001(\tR\nmembershi"
   "p\"\177\n\026SupplierCreateResponse\022,\n\004data\030\001 \001("
   "\0132\026.google.protobuf.EmptyH\000R\004data\022+\n\005err"
-  "or\030\002 \001(\0132\023.common.v1.AppErrorH\000R\005errorB\n"
+  "or\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n"
   "\n\010responseBo\n\030org.megacommerce.user.v1B\r"
   "SupplierProtoZAgithub.com/ahmad-khatib0-"
   "org/megacommerce-proto/gen/go/user/v1;v1"
   "\370\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_user_2fv1_2fsupplier_2eproto_deps[2] = {
-  &::descriptor_table_common_2fv1_2ferror_2eproto,
   &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
+  &::descriptor_table_shared_2fv1_2ferror_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_user_2fv1_2fsupplier_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_user_2fv1_2fsupplier_2eproto = {
@@ -575,14 +575,14 @@ void SupplierCreateRequest::InternalSwap(SupplierCreateRequest* other) {
 class SupplierCreateResponse::_Internal {
  public:
   static const ::PROTOBUF_NAMESPACE_ID::Empty& data(const SupplierCreateResponse* msg);
-  static const ::common::v1::AppError& error(const SupplierCreateResponse* msg);
+  static const ::shared::v1::AppError& error(const SupplierCreateResponse* msg);
 };
 
 const ::PROTOBUF_NAMESPACE_ID::Empty&
 SupplierCreateResponse::_Internal::data(const SupplierCreateResponse* msg) {
   return *msg->response_.data_;
 }
-const ::common::v1::AppError&
+const ::shared::v1::AppError&
 SupplierCreateResponse::_Internal::error(const SupplierCreateResponse* msg) {
   return *msg->response_.error_;
 }
@@ -611,7 +611,7 @@ void SupplierCreateResponse::clear_data() {
     clear_has_response();
   }
 }
-void SupplierCreateResponse::set_allocated_error(::common::v1::AppError* error) {
+void SupplierCreateResponse::set_allocated_error(::shared::v1::AppError* error) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_response();
   if (error) {
@@ -655,7 +655,7 @@ SupplierCreateResponse::SupplierCreateResponse(const SupplierCreateResponse& fro
       break;
     }
     case kError: {
-      _internal_mutable_error()->::common::v1::AppError::MergeFrom(from._internal_error());
+      _internal_mutable_error()->::shared::v1::AppError::MergeFrom(from._internal_error());
       break;
     }
     case RESPONSE_NOT_SET: {
@@ -740,7 +740,7 @@ const char* SupplierCreateResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
         } else
           goto handle_unusual;
         continue;
-      // .common.v1.AppError error = 2 [json_name = "error"];
+      // .shared.v1.AppError error = 2 [json_name = "error"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
@@ -785,7 +785,7 @@ uint8_t* SupplierCreateResponse::_InternalSerialize(
         1, _Internal::data(this), target, stream);
   }
 
-  // .common.v1.AppError error = 2 [json_name = "error"];
+  // .shared.v1.AppError error = 2 [json_name = "error"];
   if (_internal_has_error()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -817,7 +817,7 @@ size_t SupplierCreateResponse::ByteSizeLong() const {
           *response_.data_);
       break;
     }
-    // .common.v1.AppError error = 2 [json_name = "error"];
+    // .shared.v1.AppError error = 2 [json_name = "error"];
     case kError: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -856,7 +856,7 @@ void SupplierCreateResponse::MergeFrom(const SupplierCreateResponse& from) {
       break;
     }
     case kError: {
-      _internal_mutable_error()->::common::v1::AppError::MergeFrom(from._internal_error());
+      _internal_mutable_error()->::shared::v1::AppError::MergeFrom(from._internal_error());
       break;
     }
     case RESPONSE_NOT_SET: {

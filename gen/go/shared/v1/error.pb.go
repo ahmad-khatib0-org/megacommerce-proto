@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        (unknown)
-// source: common/v1/error.proto
+// source: shared/v1/error.proto
 
 package v1
 
@@ -44,7 +44,7 @@ type AppError struct {
 
 func (x *AppError) Reset() {
 	*x = AppError{}
-	mi := &file_common_v1_error_proto_msgTypes[0]
+	mi := &file_shared_v1_error_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -56,7 +56,7 @@ func (x *AppError) String() string {
 func (*AppError) ProtoMessage() {}
 
 func (x *AppError) ProtoReflect() protoreflect.Message {
-	mi := &file_common_v1_error_proto_msgTypes[0]
+	mi := &file_shared_v1_error_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -69,7 +69,7 @@ func (x *AppError) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AppError.ProtoReflect.Descriptor instead.
 func (*AppError) Descriptor() ([]byte, []int) {
-	return file_common_v1_error_proto_rawDescGZIP(), []int{0}
+	return file_shared_v1_error_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *AppError) GetId() string {
@@ -128,11 +128,11 @@ func (x *AppError) GetParams() *anypb.Any {
 	return nil
 }
 
-var File_common_v1_error_proto protoreflect.FileDescriptor
+var File_shared_v1_error_proto protoreflect.FileDescriptor
 
-const file_common_v1_error_proto_rawDesc = "" +
+const file_shared_v1_error_proto_rawDesc = "" +
 	"\n" +
-	"\x15common/v1/error.proto\x12\tcommon.v1\x1a\x19google/protobuf/any.proto\"\x8a\x02\n" +
+	"\x15shared/v1/error.proto\x12\tshared.v1\x1a\x19google/protobuf/any.proto\"\x8a\x02\n" +
 	"\bAppError\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12%\n" +
@@ -144,28 +144,28 @@ const file_common_v1_error_proto_rawDesc = "" +
 	"\x05where\x18\x06 \x01(\tR\x05where\x12)\n" +
 	"\x10skip_translation\x18\a \x01(\bR\x0fskipTranslation\x12,\n" +
 	"\x06params\x18\b \x01(\v2\x14.google.protobuf.AnyR\x06paramsBp\n" +
-	"\x1aorg.megacommerce.common.v1B\n" +
-	"ErrorProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/common/v1;v1\xf8\x01\x01b\x06proto3"
+	"\x1aorg.megacommerce.shared.v1B\n" +
+	"ErrorProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
-	file_common_v1_error_proto_rawDescOnce sync.Once
-	file_common_v1_error_proto_rawDescData []byte
+	file_shared_v1_error_proto_rawDescOnce sync.Once
+	file_shared_v1_error_proto_rawDescData []byte
 )
 
-func file_common_v1_error_proto_rawDescGZIP() []byte {
-	file_common_v1_error_proto_rawDescOnce.Do(func() {
-		file_common_v1_error_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_common_v1_error_proto_rawDesc), len(file_common_v1_error_proto_rawDesc)))
+func file_shared_v1_error_proto_rawDescGZIP() []byte {
+	file_shared_v1_error_proto_rawDescOnce.Do(func() {
+		file_shared_v1_error_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_shared_v1_error_proto_rawDesc), len(file_shared_v1_error_proto_rawDesc)))
 	})
-	return file_common_v1_error_proto_rawDescData
+	return file_shared_v1_error_proto_rawDescData
 }
 
-var file_common_v1_error_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_common_v1_error_proto_goTypes = []any{
-	(*AppError)(nil),  // 0: common.v1.AppError
+var file_shared_v1_error_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_shared_v1_error_proto_goTypes = []any{
+	(*AppError)(nil),  // 0: shared.v1.AppError
 	(*anypb.Any)(nil), // 1: google.protobuf.Any
 }
-var file_common_v1_error_proto_depIdxs = []int32{
-	1, // 0: common.v1.AppError.params:type_name -> google.protobuf.Any
+var file_shared_v1_error_proto_depIdxs = []int32{
+	1, // 0: shared.v1.AppError.params:type_name -> google.protobuf.Any
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
@@ -173,26 +173,26 @@ var file_common_v1_error_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_common_v1_error_proto_init() }
-func file_common_v1_error_proto_init() {
-	if File_common_v1_error_proto != nil {
+func init() { file_shared_v1_error_proto_init() }
+func file_shared_v1_error_proto_init() {
+	if File_shared_v1_error_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_common_v1_error_proto_rawDesc), len(file_common_v1_error_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_shared_v1_error_proto_rawDesc), len(file_shared_v1_error_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_common_v1_error_proto_goTypes,
-		DependencyIndexes: file_common_v1_error_proto_depIdxs,
-		MessageInfos:      file_common_v1_error_proto_msgTypes,
+		GoTypes:           file_shared_v1_error_proto_goTypes,
+		DependencyIndexes: file_shared_v1_error_proto_depIdxs,
+		MessageInfos:      file_shared_v1_error_proto_msgTypes,
 	}.Build()
-	File_common_v1_error_proto = out.File
-	file_common_v1_error_proto_goTypes = nil
-	file_common_v1_error_proto_depIdxs = nil
+	File_shared_v1_error_proto = out.File
+	file_shared_v1_error_proto_goTypes = nil
+	file_shared_v1_error_proto_depIdxs = nil
 }

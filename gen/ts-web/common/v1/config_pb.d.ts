@@ -1,6 +1,6 @@
 import * as jspb from 'google-protobuf'
 
-import * as common_v1_error_pb from '../../common/v1/error_pb'; // proto import: "common/v1/error.proto"
+import * as shared_v1_error_pb from '../../shared/v1/error_pb'; // proto import: "shared/v1/error.proto"
 
 
 export class ConfigMain extends jspb.Message {
@@ -3238,8 +3238,8 @@ export class ConfigGetResponse extends jspb.Message {
   hasData(): boolean;
   clearData(): ConfigGetResponse;
 
-  getError(): common_v1_error_pb.AppError | undefined;
-  setError(value?: common_v1_error_pb.AppError): ConfigGetResponse;
+  getError(): shared_v1_error_pb.AppError | undefined;
+  setError(value?: shared_v1_error_pb.AppError): ConfigGetResponse;
   hasError(): boolean;
   clearError(): ConfigGetResponse;
 
@@ -3256,7 +3256,7 @@ export class ConfigGetResponse extends jspb.Message {
 export namespace ConfigGetResponse {
   export type AsObject = {
     data?: Config.AsObject,
-    error?: common_v1_error_pb.AppError.AsObject,
+    error?: shared_v1_error_pb.AppError.AsObject,
   }
 
   export enum ResponseCase { 
@@ -3292,8 +3292,8 @@ export class ConfigUpdateResponse extends jspb.Message {
   hasData(): boolean;
   clearData(): ConfigUpdateResponse;
 
-  getError(): common_v1_error_pb.AppError | undefined;
-  setError(value?: common_v1_error_pb.AppError): ConfigUpdateResponse;
+  getError(): shared_v1_error_pb.AppError | undefined;
+  setError(value?: shared_v1_error_pb.AppError): ConfigUpdateResponse;
   hasError(): boolean;
   clearError(): ConfigUpdateResponse;
 
@@ -3310,7 +3310,7 @@ export class ConfigUpdateResponse extends jspb.Message {
 export namespace ConfigUpdateResponse {
   export type AsObject = {
     data?: Config.AsObject,
-    error?: common_v1_error_pb.AppError.AsObject,
+    error?: shared_v1_error_pb.AppError.AsObject,
   }
 
   export enum ResponseCase { 
@@ -3326,8 +3326,8 @@ export class ConfigListenerResponse extends jspb.Message {
   hasData(): boolean;
   clearData(): ConfigListenerResponse;
 
-  getError(): common_v1_error_pb.AppError | undefined;
-  setError(value?: common_v1_error_pb.AppError): ConfigListenerResponse;
+  getError(): shared_v1_error_pb.AppError | undefined;
+  setError(value?: shared_v1_error_pb.AppError): ConfigListenerResponse;
   hasError(): boolean;
   clearError(): ConfigListenerResponse;
 
@@ -3344,7 +3344,7 @@ export class ConfigListenerResponse extends jspb.Message {
 export namespace ConfigListenerResponse {
   export type AsObject = {
     data?: Config.AsObject,
-    error?: common_v1_error_pb.AppError.AsObject,
+    error?: shared_v1_error_pb.AppError.AsObject,
   }
 
   export enum ResponseCase { 

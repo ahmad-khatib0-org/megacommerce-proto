@@ -1411,8 +1411,8 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_common_2fv1_2fconfig_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\026common/v1/config.proto\022\tcommon.v1\032\025com"
-  "mon/v1/error.proto\"\275\017\n\nConfigMain\022\025\n\003env"
+  "\n\026common/v1/config.proto\022\tcommon.v1\032\025sha"
+  "red/v1/error.proto\"\275\017\n\nConfigMain\022\025\n\003env"
   "\030\001 \001(\tH\000R\003env\210\001\001\022&\n\014read_timeout\030\002 \001(\005H\001"
   "R\013readTimeout\210\001\001\022(\n\rwrite_timeout\030\003 \001(\005H"
   "\002R\014writeTimeout\210\001\001\022&\n\014idle_timeout\030\004 \001(\005"
@@ -1936,15 +1936,15 @@ const char descriptor_table_protodef_common_2fv1_2fconfig_2eproto[] PROTOBUF_SEC
   ".common.v1.ConfigImageProxyR\nimageProxy\""
   "\022\n\020ConfigGetRequest\"u\n\021ConfigGetResponse"
   "\022\'\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R\004dat"
-  "a\022+\n\005error\030\002 \001(\0132\023.common.v1.AppErrorH\000R"
+  "a\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R"
   "\005errorB\n\n\010response\"@\n\023ConfigUpdateReques"
   "t\022)\n\006config\030\001 \001(\0132\021.common.v1.ConfigR\006co"
   "nfig\"x\n\024ConfigUpdateResponse\022\'\n\004data\030\001 \001"
   "(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005error\030\002"
-  " \001(\0132\023.common.v1.AppErrorH\000R\005errorB\n\n\010re"
+  " \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n\010re"
   "sponse\"z\n\026ConfigListenerResponse\022\'\n\004data"
   "\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005err"
-  "or\030\002 \001(\0132\023.common.v1.AppErrorH\000R\005errorB\n"
+  "or\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n"
   "\n\010response\"4\n\025ConfigListenerRequest\022\033\n\tc"
   "lient_id\030\001 \001(\tR\010clientIdBq\n\032org.megacomm"
   "erce.common.v1B\013ConfigProtoZCgithub.com/"
@@ -1952,7 +1952,7 @@ const char descriptor_table_protodef_common_2fv1_2fconfig_2eproto[] PROTOBUF_SEC
   "/go/common/v1;v1\370\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_common_2fv1_2fconfig_2eproto_deps[1] = {
-  &::descriptor_table_common_2fv1_2ferror_2eproto,
+  &::descriptor_table_shared_2fv1_2ferror_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2fv1_2fconfig_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fv1_2fconfig_2eproto = {
@@ -17132,14 +17132,14 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ConfigGetRequest::GetClassData
 class ConfigGetResponse::_Internal {
  public:
   static const ::common::v1::Config& data(const ConfigGetResponse* msg);
-  static const ::common::v1::AppError& error(const ConfigGetResponse* msg);
+  static const ::shared::v1::AppError& error(const ConfigGetResponse* msg);
 };
 
 const ::common::v1::Config&
 ConfigGetResponse::_Internal::data(const ConfigGetResponse* msg) {
   return *msg->response_.data_;
 }
-const ::common::v1::AppError&
+const ::shared::v1::AppError&
 ConfigGetResponse::_Internal::error(const ConfigGetResponse* msg) {
   return *msg->response_.error_;
 }
@@ -17158,7 +17158,7 @@ void ConfigGetResponse::set_allocated_data(::common::v1::Config* data) {
   }
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigGetResponse.data)
 }
-void ConfigGetResponse::set_allocated_error(::common::v1::AppError* error) {
+void ConfigGetResponse::set_allocated_error(::shared::v1::AppError* error) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_response();
   if (error) {
@@ -17202,7 +17202,7 @@ ConfigGetResponse::ConfigGetResponse(const ConfigGetResponse& from)
       break;
     }
     case kError: {
-      _internal_mutable_error()->::common::v1::AppError::MergeFrom(from._internal_error());
+      _internal_mutable_error()->::shared::v1::AppError::MergeFrom(from._internal_error());
       break;
     }
     case RESPONSE_NOT_SET: {
@@ -17287,7 +17287,7 @@ const char* ConfigGetResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
         } else
           goto handle_unusual;
         continue;
-      // .common.v1.AppError error = 2 [json_name = "error"];
+      // .shared.v1.AppError error = 2 [json_name = "error"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
@@ -17332,7 +17332,7 @@ uint8_t* ConfigGetResponse::_InternalSerialize(
         1, _Internal::data(this), target, stream);
   }
 
-  // .common.v1.AppError error = 2 [json_name = "error"];
+  // .shared.v1.AppError error = 2 [json_name = "error"];
   if (_internal_has_error()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -17364,7 +17364,7 @@ size_t ConfigGetResponse::ByteSizeLong() const {
           *response_.data_);
       break;
     }
-    // .common.v1.AppError error = 2 [json_name = "error"];
+    // .shared.v1.AppError error = 2 [json_name = "error"];
     case kError: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -17403,7 +17403,7 @@ void ConfigGetResponse::MergeFrom(const ConfigGetResponse& from) {
       break;
     }
     case kError: {
-      _internal_mutable_error()->::common::v1::AppError::MergeFrom(from._internal_error());
+      _internal_mutable_error()->::shared::v1::AppError::MergeFrom(from._internal_error());
       break;
     }
     case RESPONSE_NOT_SET: {
@@ -17637,14 +17637,14 @@ void ConfigUpdateRequest::InternalSwap(ConfigUpdateRequest* other) {
 class ConfigUpdateResponse::_Internal {
  public:
   static const ::common::v1::Config& data(const ConfigUpdateResponse* msg);
-  static const ::common::v1::AppError& error(const ConfigUpdateResponse* msg);
+  static const ::shared::v1::AppError& error(const ConfigUpdateResponse* msg);
 };
 
 const ::common::v1::Config&
 ConfigUpdateResponse::_Internal::data(const ConfigUpdateResponse* msg) {
   return *msg->response_.data_;
 }
-const ::common::v1::AppError&
+const ::shared::v1::AppError&
 ConfigUpdateResponse::_Internal::error(const ConfigUpdateResponse* msg) {
   return *msg->response_.error_;
 }
@@ -17663,7 +17663,7 @@ void ConfigUpdateResponse::set_allocated_data(::common::v1::Config* data) {
   }
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigUpdateResponse.data)
 }
-void ConfigUpdateResponse::set_allocated_error(::common::v1::AppError* error) {
+void ConfigUpdateResponse::set_allocated_error(::shared::v1::AppError* error) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_response();
   if (error) {
@@ -17707,7 +17707,7 @@ ConfigUpdateResponse::ConfigUpdateResponse(const ConfigUpdateResponse& from)
       break;
     }
     case kError: {
-      _internal_mutable_error()->::common::v1::AppError::MergeFrom(from._internal_error());
+      _internal_mutable_error()->::shared::v1::AppError::MergeFrom(from._internal_error());
       break;
     }
     case RESPONSE_NOT_SET: {
@@ -17792,7 +17792,7 @@ const char* ConfigUpdateResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAM
         } else
           goto handle_unusual;
         continue;
-      // .common.v1.AppError error = 2 [json_name = "error"];
+      // .shared.v1.AppError error = 2 [json_name = "error"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
@@ -17837,7 +17837,7 @@ uint8_t* ConfigUpdateResponse::_InternalSerialize(
         1, _Internal::data(this), target, stream);
   }
 
-  // .common.v1.AppError error = 2 [json_name = "error"];
+  // .shared.v1.AppError error = 2 [json_name = "error"];
   if (_internal_has_error()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -17869,7 +17869,7 @@ size_t ConfigUpdateResponse::ByteSizeLong() const {
           *response_.data_);
       break;
     }
-    // .common.v1.AppError error = 2 [json_name = "error"];
+    // .shared.v1.AppError error = 2 [json_name = "error"];
     case kError: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -17908,7 +17908,7 @@ void ConfigUpdateResponse::MergeFrom(const ConfigUpdateResponse& from) {
       break;
     }
     case kError: {
-      _internal_mutable_error()->::common::v1::AppError::MergeFrom(from._internal_error());
+      _internal_mutable_error()->::shared::v1::AppError::MergeFrom(from._internal_error());
       break;
     }
     case RESPONSE_NOT_SET: {
@@ -17947,14 +17947,14 @@ void ConfigUpdateResponse::InternalSwap(ConfigUpdateResponse* other) {
 class ConfigListenerResponse::_Internal {
  public:
   static const ::common::v1::Config& data(const ConfigListenerResponse* msg);
-  static const ::common::v1::AppError& error(const ConfigListenerResponse* msg);
+  static const ::shared::v1::AppError& error(const ConfigListenerResponse* msg);
 };
 
 const ::common::v1::Config&
 ConfigListenerResponse::_Internal::data(const ConfigListenerResponse* msg) {
   return *msg->response_.data_;
 }
-const ::common::v1::AppError&
+const ::shared::v1::AppError&
 ConfigListenerResponse::_Internal::error(const ConfigListenerResponse* msg) {
   return *msg->response_.error_;
 }
@@ -17973,7 +17973,7 @@ void ConfigListenerResponse::set_allocated_data(::common::v1::Config* data) {
   }
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigListenerResponse.data)
 }
-void ConfigListenerResponse::set_allocated_error(::common::v1::AppError* error) {
+void ConfigListenerResponse::set_allocated_error(::shared::v1::AppError* error) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_response();
   if (error) {
@@ -18017,7 +18017,7 @@ ConfigListenerResponse::ConfigListenerResponse(const ConfigListenerResponse& fro
       break;
     }
     case kError: {
-      _internal_mutable_error()->::common::v1::AppError::MergeFrom(from._internal_error());
+      _internal_mutable_error()->::shared::v1::AppError::MergeFrom(from._internal_error());
       break;
     }
     case RESPONSE_NOT_SET: {
@@ -18102,7 +18102,7 @@ const char* ConfigListenerResponse::_InternalParse(const char* ptr, ::PROTOBUF_N
         } else
           goto handle_unusual;
         continue;
-      // .common.v1.AppError error = 2 [json_name = "error"];
+      // .shared.v1.AppError error = 2 [json_name = "error"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
@@ -18147,7 +18147,7 @@ uint8_t* ConfigListenerResponse::_InternalSerialize(
         1, _Internal::data(this), target, stream);
   }
 
-  // .common.v1.AppError error = 2 [json_name = "error"];
+  // .shared.v1.AppError error = 2 [json_name = "error"];
   if (_internal_has_error()) {
     target = stream->EnsureSpace(target);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
@@ -18179,7 +18179,7 @@ size_t ConfigListenerResponse::ByteSizeLong() const {
           *response_.data_);
       break;
     }
-    // .common.v1.AppError error = 2 [json_name = "error"];
+    // .shared.v1.AppError error = 2 [json_name = "error"];
     case kError: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -18218,7 +18218,7 @@ void ConfigListenerResponse::MergeFrom(const ConfigListenerResponse& from) {
       break;
     }
     case kError: {
-      _internal_mutable_error()->::common::v1::AppError::MergeFrom(from._internal_error());
+      _internal_mutable_error()->::shared::v1::AppError::MergeFrom(from._internal_error());
       break;
     }
     case RESPONSE_NOT_SET: {

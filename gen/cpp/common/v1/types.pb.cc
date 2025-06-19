@@ -18,52 +18,6 @@
 PROTOBUF_PRAGMA_INIT_SEG
 namespace common {
 namespace v1 {
-constexpr StringMap_DataEntry_DoNotUse::StringMap_DataEntry_DoNotUse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
-struct StringMap_DataEntry_DoNotUseDefaultTypeInternal {
-  constexpr StringMap_DataEntry_DoNotUseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~StringMap_DataEntry_DoNotUseDefaultTypeInternal() {}
-  union {
-    StringMap_DataEntry_DoNotUse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StringMap_DataEntry_DoNotUseDefaultTypeInternal _StringMap_DataEntry_DoNotUse_default_instance_;
-constexpr StringMap::StringMap(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : data_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}){}
-struct StringMapDefaultTypeInternal {
-  constexpr StringMapDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~StringMapDefaultTypeInternal() {}
-  union {
-    StringMap _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT StringMapDefaultTypeInternal _StringMap_default_instance_;
-constexpr NestedStringMap_DataEntry_DoNotUse::NestedStringMap_DataEntry_DoNotUse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
-struct NestedStringMap_DataEntry_DoNotUseDefaultTypeInternal {
-  constexpr NestedStringMap_DataEntry_DoNotUseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~NestedStringMap_DataEntry_DoNotUseDefaultTypeInternal() {}
-  union {
-    NestedStringMap_DataEntry_DoNotUse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NestedStringMap_DataEntry_DoNotUseDefaultTypeInternal _NestedStringMap_DataEntry_DoNotUse_default_instance_;
-constexpr NestedStringMap::NestedStringMap(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : data_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}){}
-struct NestedStringMapDefaultTypeInternal {
-  constexpr NestedStringMapDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~NestedStringMapDefaultTypeInternal() {}
-  union {
-    NestedStringMap _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT NestedStringMapDefaultTypeInternal _NestedStringMap_default_instance_;
 constexpr PingRequest::PingRequest(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
 struct PingRequestDefaultTypeInternal {
@@ -88,45 +42,11 @@ struct PingResponseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PingResponseDefaultTypeInternal _PingResponse_default_instance_;
 }  // namespace v1
 }  // namespace common
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_common_2fv1_2ftypes_2eproto[6];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_common_2fv1_2ftypes_2eproto[2];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_common_2fv1_2ftypes_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_common_2fv1_2ftypes_2eproto = nullptr;
 
 const uint32_t TableStruct_common_2fv1_2ftypes_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  PROTOBUF_FIELD_OFFSET(::common::v1::StringMap_DataEntry_DoNotUse, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::common::v1::StringMap_DataEntry_DoNotUse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::common::v1::StringMap_DataEntry_DoNotUse, key_),
-  PROTOBUF_FIELD_OFFSET(::common::v1::StringMap_DataEntry_DoNotUse, value_),
-  0,
-  1,
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::common::v1::StringMap, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::common::v1::StringMap, data_),
-  PROTOBUF_FIELD_OFFSET(::common::v1::NestedStringMap_DataEntry_DoNotUse, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::common::v1::NestedStringMap_DataEntry_DoNotUse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::common::v1::NestedStringMap_DataEntry_DoNotUse, key_),
-  PROTOBUF_FIELD_OFFSET(::common::v1::NestedStringMap_DataEntry_DoNotUse, value_),
-  0,
-  1,
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::common::v1::NestedStringMap, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::common::v1::NestedStringMap, data_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::common::v1::PingRequest, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -141,41 +61,26 @@ const uint32_t TableStruct_common_2fv1_2ftypes_2eproto::offsets[] PROTOBUF_SECTI
   ~0u,  // no _inlined_string_donated_
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 8, -1, sizeof(::common::v1::StringMap_DataEntry_DoNotUse)},
-  { 10, -1, -1, sizeof(::common::v1::StringMap)},
-  { 17, 25, -1, sizeof(::common::v1::NestedStringMap_DataEntry_DoNotUse)},
-  { 27, -1, -1, sizeof(::common::v1::NestedStringMap)},
-  { 34, -1, -1, sizeof(::common::v1::PingRequest)},
-  { 40, -1, -1, sizeof(::common::v1::PingResponse)},
+  { 0, -1, -1, sizeof(::common::v1::PingRequest)},
+  { 6, -1, -1, sizeof(::common::v1::PingResponse)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_StringMap_DataEntry_DoNotUse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_StringMap_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_NestedStringMap_DataEntry_DoNotUse_default_instance_),
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_NestedStringMap_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_PingRequest_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::common::v1::_PingResponse_default_instance_),
 };
 
 const char descriptor_table_protodef_common_2fv1_2ftypes_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\025common/v1/types.proto\022\tcommon.v1\"x\n\tSt"
-  "ringMap\0222\n\004data\030\001 \003(\0132\036.common.v1.String"
-  "Map.DataEntryR\004data\0327\n\tDataEntry\022\020\n\003key\030"
-  "\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\232\001\n"
-  "\017NestedStringMap\0228\n\004data\030\001 \003(\0132$.common."
-  "v1.NestedStringMap.DataEntryR\004data\032M\n\tDa"
-  "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\013"
-  "2\024.common.v1.StringMapR\005value:\0028\001\"\r\n\013Pin"
-  "gRequest\"\016\n\014PingResponseBp\n\032org.megacomm"
-  "erce.common.v1B\nTypesProtoZCgithub.com/a"
-  "hmad-khatib0-org/megacommerce-proto/gen/"
-  "go/common/v1;v1\370\001\001b\006proto3"
+  "\n\025common/v1/types.proto\022\tcommon.v1\"\r\n\013Pi"
+  "ngRequest\"\016\n\014PingResponseBp\n\032org.megacom"
+  "merce.common.v1B\nTypesProtoZCgithub.com/"
+  "ahmad-khatib0-org/megacommerce-proto/gen"
+  "/go/common/v1;v1\370\001\001b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2fv1_2ftypes_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fv1_2ftypes_2eproto = {
-  false, false, 466, descriptor_table_protodef_common_2fv1_2ftypes_2eproto, "common/v1/types.proto", 
-  &descriptor_table_common_2fv1_2ftypes_2eproto_once, nullptr, 0, 6,
+  false, false, 187, descriptor_table_protodef_common_2fv1_2ftypes_2eproto, "common/v1/types.proto", 
+  &descriptor_table_common_2fv1_2ftypes_2eproto_once, nullptr, 0, 2,
   schemas, file_default_instances, TableStruct_common_2fv1_2ftypes_2eproto::offsets,
   file_level_metadata_common_2fv1_2ftypes_2eproto, file_level_enum_descriptors_common_2fv1_2ftypes_2eproto, file_level_service_descriptors_common_2fv1_2ftypes_2eproto,
 };
@@ -187,488 +92,6 @@ PROTOBUF_ATTRIBUTE_WEAK const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY static ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptorsRunner dynamic_init_dummy_common_2fv1_2ftypes_2eproto(&descriptor_table_common_2fv1_2ftypes_2eproto);
 namespace common {
 namespace v1 {
-
-// ===================================================================
-
-StringMap_DataEntry_DoNotUse::StringMap_DataEntry_DoNotUse() {}
-StringMap_DataEntry_DoNotUse::StringMap_DataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-    : SuperType(arena) {}
-void StringMap_DataEntry_DoNotUse::MergeFrom(const StringMap_DataEntry_DoNotUse& other) {
-  MergeFromInternal(other);
-}
-::PROTOBUF_NAMESPACE_ID::Metadata StringMap_DataEntry_DoNotUse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_common_2fv1_2ftypes_2eproto_getter, &descriptor_table_common_2fv1_2ftypes_2eproto_once,
-      file_level_metadata_common_2fv1_2ftypes_2eproto[0]);
-}
-
-// ===================================================================
-
-class StringMap::_Internal {
- public:
-};
-
-StringMap::StringMap(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  data_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:common.v1.StringMap)
-}
-StringMap::StringMap(const StringMap& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  data_.MergeFrom(from.data_);
-  // @@protoc_insertion_point(copy_constructor:common.v1.StringMap)
-}
-
-inline void StringMap::SharedCtor() {
-}
-
-StringMap::~StringMap() {
-  // @@protoc_insertion_point(destructor:common.v1.StringMap)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-inline void StringMap::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-}
-
-void StringMap::ArenaDtor(void* object) {
-  StringMap* _this = reinterpret_cast< StringMap* >(object);
-  (void)_this;
-  _this->data_. ~MapField();
-}
-inline void StringMap::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena) {
-  if (arena != nullptr) {
-    arena->OwnCustomDestructor(this, &StringMap::ArenaDtor);
-  }
-}
-void StringMap::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void StringMap::Clear() {
-// @@protoc_insertion_point(message_clear_start:common.v1.StringMap)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  data_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* StringMap::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // map<string, string> data = 1 [json_name = "data"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(&data_, ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* StringMap::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:common.v1.StringMap)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // map<string, string> data = 1 [json_name = "data"];
-  if (!this->_internal_data().empty()) {
-    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        (void)p;
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-          "common.v1.StringMap.DataEntry.key");
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-          p->second.data(), static_cast<int>(p->second.length()),
-          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-          "common.v1.StringMap.DataEntry.value");
-      }
-    };
-
-    if (stream->IsSerializationDeterministic() &&
-        this->_internal_data().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->_internal_data().size()]);
-      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::size_type size_type;
-      size_type n = 0;
-      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
-          it = this->_internal_data().begin();
-          it != this->_internal_data().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      for (size_type i = 0; i < n; i++) {
-        target = StringMap_DataEntry_DoNotUse::Funcs::InternalSerialize(1, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
-        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
-      }
-    } else {
-      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
-          it = this->_internal_data().begin();
-          it != this->_internal_data().end(); ++it) {
-        target = StringMap_DataEntry_DoNotUse::Funcs::InternalSerialize(1, it->first, it->second, target, stream);
-        Utf8Check::Check(&(*it));
-      }
-    }
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:common.v1.StringMap)
-  return target;
-}
-
-size_t StringMap::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:common.v1.StringMap)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // map<string, string> data = 1 [json_name = "data"];
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_data_size());
-  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
-      it = this->_internal_data().begin();
-      it != this->_internal_data().end(); ++it) {
-    total_size += StringMap_DataEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData StringMap::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    StringMap::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*StringMap::GetClassData() const { return &_class_data_; }
-
-void StringMap::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<StringMap *>(to)->MergeFrom(
-      static_cast<const StringMap &>(from));
-}
-
-
-void StringMap::MergeFrom(const StringMap& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:common.v1.StringMap)
-  GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  data_.MergeFrom(from.data_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void StringMap::CopyFrom(const StringMap& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:common.v1.StringMap)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool StringMap::IsInitialized() const {
-  return true;
-}
-
-void StringMap::InternalSwap(StringMap* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  data_.InternalSwap(&other->data_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata StringMap::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_common_2fv1_2ftypes_2eproto_getter, &descriptor_table_common_2fv1_2ftypes_2eproto_once,
-      file_level_metadata_common_2fv1_2ftypes_2eproto[1]);
-}
-
-// ===================================================================
-
-NestedStringMap_DataEntry_DoNotUse::NestedStringMap_DataEntry_DoNotUse() {}
-NestedStringMap_DataEntry_DoNotUse::NestedStringMap_DataEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-    : SuperType(arena) {}
-void NestedStringMap_DataEntry_DoNotUse::MergeFrom(const NestedStringMap_DataEntry_DoNotUse& other) {
-  MergeFromInternal(other);
-}
-::PROTOBUF_NAMESPACE_ID::Metadata NestedStringMap_DataEntry_DoNotUse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_common_2fv1_2ftypes_2eproto_getter, &descriptor_table_common_2fv1_2ftypes_2eproto_once,
-      file_level_metadata_common_2fv1_2ftypes_2eproto[2]);
-}
-
-// ===================================================================
-
-class NestedStringMap::_Internal {
- public:
-};
-
-NestedStringMap::NestedStringMap(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  data_(arena) {
-  SharedCtor();
-  if (!is_message_owned) {
-    RegisterArenaDtor(arena);
-  }
-  // @@protoc_insertion_point(arena_constructor:common.v1.NestedStringMap)
-}
-NestedStringMap::NestedStringMap(const NestedStringMap& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  data_.MergeFrom(from.data_);
-  // @@protoc_insertion_point(copy_constructor:common.v1.NestedStringMap)
-}
-
-inline void NestedStringMap::SharedCtor() {
-}
-
-NestedStringMap::~NestedStringMap() {
-  // @@protoc_insertion_point(destructor:common.v1.NestedStringMap)
-  if (GetArenaForAllocation() != nullptr) return;
-  SharedDtor();
-  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-inline void NestedStringMap::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-}
-
-void NestedStringMap::ArenaDtor(void* object) {
-  NestedStringMap* _this = reinterpret_cast< NestedStringMap* >(object);
-  (void)_this;
-  _this->data_. ~MapField();
-}
-inline void NestedStringMap::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena) {
-  if (arena != nullptr) {
-    arena->OwnCustomDestructor(this, &NestedStringMap::ArenaDtor);
-  }
-}
-void NestedStringMap::SetCachedSize(int size) const {
-  _cached_size_.Set(size);
-}
-
-void NestedStringMap::Clear() {
-// @@protoc_insertion_point(message_clear_start:common.v1.NestedStringMap)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  data_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* NestedStringMap::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // map<string, .common.v1.StringMap> data = 1 [json_name = "data"];
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(&data_, ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* NestedStringMap::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:common.v1.NestedStringMap)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // map<string, .common.v1.StringMap> data = 1 [json_name = "data"];
-  if (!this->_internal_data().empty()) {
-    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::common::v1::StringMap >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        (void)p;
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-          "common.v1.NestedStringMap.DataEntry.key");
-      }
-    };
-
-    if (stream->IsSerializationDeterministic() &&
-        this->_internal_data().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->_internal_data().size()]);
-      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::common::v1::StringMap >::size_type size_type;
-      size_type n = 0;
-      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, ::common::v1::StringMap >::const_iterator
-          it = this->_internal_data().begin();
-          it != this->_internal_data().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      for (size_type i = 0; i < n; i++) {
-        target = NestedStringMap_DataEntry_DoNotUse::Funcs::InternalSerialize(1, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
-        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
-      }
-    } else {
-      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, ::common::v1::StringMap >::const_iterator
-          it = this->_internal_data().begin();
-          it != this->_internal_data().end(); ++it) {
-        target = NestedStringMap_DataEntry_DoNotUse::Funcs::InternalSerialize(1, it->first, it->second, target, stream);
-        Utf8Check::Check(&(*it));
-      }
-    }
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:common.v1.NestedStringMap)
-  return target;
-}
-
-size_t NestedStringMap::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:common.v1.NestedStringMap)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // map<string, .common.v1.StringMap> data = 1 [json_name = "data"];
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_data_size());
-  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, ::common::v1::StringMap >::const_iterator
-      it = this->_internal_data().begin();
-      it != this->_internal_data().end(); ++it) {
-    total_size += NestedStringMap_DataEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData NestedStringMap::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
-    NestedStringMap::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*NestedStringMap::GetClassData() const { return &_class_data_; }
-
-void NestedStringMap::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
-                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
-  static_cast<NestedStringMap *>(to)->MergeFrom(
-      static_cast<const NestedStringMap &>(from));
-}
-
-
-void NestedStringMap::MergeFrom(const NestedStringMap& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:common.v1.NestedStringMap)
-  GOOGLE_DCHECK_NE(&from, this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  data_.MergeFrom(from.data_);
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void NestedStringMap::CopyFrom(const NestedStringMap& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:common.v1.NestedStringMap)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool NestedStringMap::IsInitialized() const {
-  return true;
-}
-
-void NestedStringMap::InternalSwap(NestedStringMap* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  data_.InternalSwap(&other->data_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata NestedStringMap::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_common_2fv1_2ftypes_2eproto_getter, &descriptor_table_common_2fv1_2ftypes_2eproto_once,
-      file_level_metadata_common_2fv1_2ftypes_2eproto[3]);
-}
 
 // ===================================================================
 
@@ -706,7 +129,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PingRequest::GetClassData() co
 ::PROTOBUF_NAMESPACE_ID::Metadata PingRequest::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_common_2fv1_2ftypes_2eproto_getter, &descriptor_table_common_2fv1_2ftypes_2eproto_once,
-      file_level_metadata_common_2fv1_2ftypes_2eproto[4]);
+      file_level_metadata_common_2fv1_2ftypes_2eproto[0]);
 }
 
 // ===================================================================
@@ -745,25 +168,13 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*PingResponse::GetClassData() c
 ::PROTOBUF_NAMESPACE_ID::Metadata PingResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_common_2fv1_2ftypes_2eproto_getter, &descriptor_table_common_2fv1_2ftypes_2eproto_once,
-      file_level_metadata_common_2fv1_2ftypes_2eproto[5]);
+      file_level_metadata_common_2fv1_2ftypes_2eproto[1]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace common
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::common::v1::StringMap_DataEntry_DoNotUse* Arena::CreateMaybeMessage< ::common::v1::StringMap_DataEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::common::v1::StringMap_DataEntry_DoNotUse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::common::v1::StringMap* Arena::CreateMaybeMessage< ::common::v1::StringMap >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::common::v1::StringMap >(arena);
-}
-template<> PROTOBUF_NOINLINE ::common::v1::NestedStringMap_DataEntry_DoNotUse* Arena::CreateMaybeMessage< ::common::v1::NestedStringMap_DataEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::common::v1::NestedStringMap_DataEntry_DoNotUse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::common::v1::NestedStringMap* Arena::CreateMaybeMessage< ::common::v1::NestedStringMap >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::common::v1::NestedStringMap >(arena);
-}
 template<> PROTOBUF_NOINLINE ::common::v1::PingRequest* Arena::CreateMaybeMessage< ::common::v1::PingRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::common::v1::PingRequest >(arena);
 }
