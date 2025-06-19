@@ -2,7 +2,7 @@
 // file: shared/v1/error.proto
 
 import * as jspb from "google-protobuf";
-import * as google_protobuf_any_pb from "google-protobuf/google/protobuf/any_pb";
+import * as shared_v1_types_pb from "../../shared/v1/types_pb";
 
 export class AppError extends jspb.Message {
   getId(): string;
@@ -28,9 +28,11 @@ export class AppError extends jspb.Message {
 
   hasParams(): boolean;
   clearParams(): void;
-  getParams(): google_protobuf_any_pb.Any | undefined;
-  setParams(value?: google_protobuf_any_pb.Any): void;
+  getParams(): shared_v1_types_pb.StringMap | undefined;
+  setParams(value?: shared_v1_types_pb.StringMap): void;
 
+  getNestedParamsMap(): jspb.Map<string, shared_v1_types_pb.StringMap>;
+  clearNestedParamsMap(): void;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppError.AsObject;
   static toObject(includeInstance: boolean, msg: AppError): AppError.AsObject;
@@ -50,7 +52,8 @@ export namespace AppError {
     statusCode: number,
     where: string,
     skipTranslation: boolean,
-    params?: google_protobuf_any_pb.Any.AsObject,
+    params?: shared_v1_types_pb.StringMap.AsObject,
+    nestedParamsMap: Array<[string, shared_v1_types_pb.StringMap.AsObject]>,
   }
 }
 

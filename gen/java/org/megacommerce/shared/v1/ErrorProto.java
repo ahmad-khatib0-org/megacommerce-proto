@@ -131,19 +131,53 @@ public final class ErrorProto {
     boolean getSkipTranslation();
 
     /**
-     * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+     * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
      * @return Whether the params field is set.
      */
     boolean hasParams();
     /**
-     * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+     * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
      * @return The params.
      */
-    com.google.protobuf.Any getParams();
+    org.megacommerce.shared.v1.TypesProto.StringMap getParams();
     /**
-     * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+     * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
      */
-    com.google.protobuf.AnyOrBuilder getParamsOrBuilder();
+    org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder getParamsOrBuilder();
+
+    /**
+     * <code>map&lt;string, .shared.v1.StringMap&gt; nested_params = 9 [json_name = "nestedParams"];</code>
+     */
+    int getNestedParamsCount();
+    /**
+     * <code>map&lt;string, .shared.v1.StringMap&gt; nested_params = 9 [json_name = "nestedParams"];</code>
+     */
+    boolean containsNestedParams(
+        java.lang.String key);
+    /**
+     * Use {@link #getNestedParamsMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap>
+    getNestedParams();
+    /**
+     * <code>map&lt;string, .shared.v1.StringMap&gt; nested_params = 9 [json_name = "nestedParams"];</code>
+     */
+    java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap>
+    getNestedParamsMap();
+    /**
+     * <code>map&lt;string, .shared.v1.StringMap&gt; nested_params = 9 [json_name = "nestedParams"];</code>
+     */
+
+    org.megacommerce.shared.v1.TypesProto.StringMap getNestedParamsOrDefault(
+        java.lang.String key,
+        org.megacommerce.shared.v1.TypesProto.StringMap defaultValue);
+    /**
+     * <code>map&lt;string, .shared.v1.StringMap&gt; nested_params = 9 [json_name = "nestedParams"];</code>
+     */
+
+    org.megacommerce.shared.v1.TypesProto.StringMap getNestedParamsOrThrow(
+        java.lang.String key);
   }
   /**
    * Protobuf type {@code shared.v1.AppError}
@@ -182,6 +216,18 @@ public final class ErrorProto {
       return org.megacommerce.shared.v1.ErrorProto.internal_static_shared_v1_AppError_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 9:
+          return internalGetNestedParams();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -443,9 +489,9 @@ public final class ErrorProto {
     }
 
     public static final int PARAMS_FIELD_NUMBER = 8;
-    private com.google.protobuf.Any params_;
+    private org.megacommerce.shared.v1.TypesProto.StringMap params_;
     /**
-     * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+     * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
      * @return Whether the params field is set.
      */
     @java.lang.Override
@@ -453,19 +499,100 @@ public final class ErrorProto {
       return params_ != null;
     }
     /**
-     * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+     * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
      * @return The params.
      */
     @java.lang.Override
-    public com.google.protobuf.Any getParams() {
-      return params_ == null ? com.google.protobuf.Any.getDefaultInstance() : params_;
+    public org.megacommerce.shared.v1.TypesProto.StringMap getParams() {
+      return params_ == null ? org.megacommerce.shared.v1.TypesProto.StringMap.getDefaultInstance() : params_;
     }
     /**
-     * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+     * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.AnyOrBuilder getParamsOrBuilder() {
+    public org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder getParamsOrBuilder() {
       return getParams();
+    }
+
+    public static final int NESTED_PARAMS_FIELD_NUMBER = 9;
+    private static final class NestedParamsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap>newDefaultInstance(
+                  org.megacommerce.shared.v1.ErrorProto.internal_static_shared_v1_AppError_NestedParamsEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  org.megacommerce.shared.v1.TypesProto.StringMap.getDefaultInstance());
+    }
+    private com.google.protobuf.MapField<
+        java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> nestedParams_;
+    private com.google.protobuf.MapField<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap>
+    internalGetNestedParams() {
+      if (nestedParams_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            NestedParamsDefaultEntryHolder.defaultEntry);
+      }
+      return nestedParams_;
+    }
+
+    public int getNestedParamsCount() {
+      return internalGetNestedParams().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, .shared.v1.StringMap&gt; nested_params = 9 [json_name = "nestedParams"];</code>
+     */
+
+    @java.lang.Override
+    public boolean containsNestedParams(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetNestedParams().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getNestedParamsMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> getNestedParams() {
+      return getNestedParamsMap();
+    }
+    /**
+     * <code>map&lt;string, .shared.v1.StringMap&gt; nested_params = 9 [json_name = "nestedParams"];</code>
+     */
+    @java.lang.Override
+
+    public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> getNestedParamsMap() {
+      return internalGetNestedParams().getMap();
+    }
+    /**
+     * <code>map&lt;string, .shared.v1.StringMap&gt; nested_params = 9 [json_name = "nestedParams"];</code>
+     */
+    @java.lang.Override
+
+    public org.megacommerce.shared.v1.TypesProto.StringMap getNestedParamsOrDefault(
+        java.lang.String key,
+        org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> map =
+          internalGetNestedParams().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, .shared.v1.StringMap&gt; nested_params = 9 [json_name = "nestedParams"];</code>
+     */
+    @java.lang.Override
+
+    public org.megacommerce.shared.v1.TypesProto.StringMap getNestedParamsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> map =
+          internalGetNestedParams().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -506,6 +633,12 @@ public final class ErrorProto {
       if (params_ != null) {
         output.writeMessage(8, getParams());
       }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetNestedParams(),
+          NestedParamsDefaultEntryHolder.defaultEntry,
+          9);
       getUnknownFields().writeTo(output);
     }
 
@@ -542,6 +675,16 @@ public final class ErrorProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(8, getParams());
       }
+      for (java.util.Map.Entry<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> entry
+           : internalGetNestedParams().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap>
+        nestedParams__ = NestedParamsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(9, nestedParams__);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -576,6 +719,8 @@ public final class ErrorProto {
         if (!getParams()
             .equals(other.getParams())) return false;
       }
+      if (!internalGetNestedParams().equals(
+          other.internalGetNestedParams())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -605,6 +750,10 @@ public final class ErrorProto {
       if (hasParams()) {
         hash = (37 * hash) + PARAMS_FIELD_NUMBER;
         hash = (53 * hash) + getParams().hashCode();
+      }
+      if (!internalGetNestedParams().getMap().isEmpty()) {
+        hash = (37 * hash) + NESTED_PARAMS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetNestedParams().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -713,6 +862,28 @@ public final class ErrorProto {
         return org.megacommerce.shared.v1.ErrorProto.internal_static_shared_v1_AppError_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 9:
+            return internalGetNestedParams();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 9:
+            return internalGetMutableNestedParams();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -754,6 +925,7 @@ public final class ErrorProto {
           params_ = null;
           paramsBuilder_ = null;
         }
+        internalGetMutableNestedParams().clear();
         return this;
       }
 
@@ -780,6 +952,7 @@ public final class ErrorProto {
       @java.lang.Override
       public org.megacommerce.shared.v1.ErrorProto.AppError buildPartial() {
         org.megacommerce.shared.v1.ErrorProto.AppError result = new org.megacommerce.shared.v1.ErrorProto.AppError(this);
+        int from_bitField0_ = bitField0_;
         result.id_ = id_;
         result.message_ = message_;
         result.detailedError_ = detailedError_;
@@ -792,6 +965,8 @@ public final class ErrorProto {
         } else {
           result.params_ = paramsBuilder_.build();
         }
+        result.nestedParams_ = internalGetNestedParams();
+        result.nestedParams_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -869,6 +1044,8 @@ public final class ErrorProto {
         if (other.hasParams()) {
           mergeParams(other.getParams());
         }
+        internalGetMutableNestedParams().mergeFrom(
+            other.internalGetNestedParams());
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -937,6 +1114,14 @@ public final class ErrorProto {
 
                 break;
               } // case 66
+              case 74: {
+                com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap>
+                nestedParams__ = input.readMessage(
+                    NestedParamsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableNestedParams().getMutableMap().put(
+                    nestedParams__.getKey(), nestedParams__.getValue());
+                break;
+              } // case 74
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -952,6 +1137,7 @@ public final class ErrorProto {
         } // finally
         return this;
       }
+      private int bitField0_;
 
       private java.lang.Object id_ = "";
       /**
@@ -1499,31 +1685,31 @@ public final class ErrorProto {
         return this;
       }
 
-      private com.google.protobuf.Any params_;
+      private org.megacommerce.shared.v1.TypesProto.StringMap params_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> paramsBuilder_;
+          org.megacommerce.shared.v1.TypesProto.StringMap, org.megacommerce.shared.v1.TypesProto.StringMap.Builder, org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder> paramsBuilder_;
       /**
-       * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+       * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
        * @return Whether the params field is set.
        */
       public boolean hasParams() {
         return paramsBuilder_ != null || params_ != null;
       }
       /**
-       * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+       * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
        * @return The params.
        */
-      public com.google.protobuf.Any getParams() {
+      public org.megacommerce.shared.v1.TypesProto.StringMap getParams() {
         if (paramsBuilder_ == null) {
-          return params_ == null ? com.google.protobuf.Any.getDefaultInstance() : params_;
+          return params_ == null ? org.megacommerce.shared.v1.TypesProto.StringMap.getDefaultInstance() : params_;
         } else {
           return paramsBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+       * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
        */
-      public Builder setParams(com.google.protobuf.Any value) {
+      public Builder setParams(org.megacommerce.shared.v1.TypesProto.StringMap value) {
         if (paramsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1537,10 +1723,10 @@ public final class ErrorProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+       * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
        */
       public Builder setParams(
-          com.google.protobuf.Any.Builder builderForValue) {
+          org.megacommerce.shared.v1.TypesProto.StringMap.Builder builderForValue) {
         if (paramsBuilder_ == null) {
           params_ = builderForValue.build();
           onChanged();
@@ -1551,13 +1737,13 @@ public final class ErrorProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+       * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
        */
-      public Builder mergeParams(com.google.protobuf.Any value) {
+      public Builder mergeParams(org.megacommerce.shared.v1.TypesProto.StringMap value) {
         if (paramsBuilder_ == null) {
           if (params_ != null) {
             params_ =
-              com.google.protobuf.Any.newBuilder(params_).mergeFrom(value).buildPartial();
+              org.megacommerce.shared.v1.TypesProto.StringMap.newBuilder(params_).mergeFrom(value).buildPartial();
           } else {
             params_ = value;
           }
@@ -1569,7 +1755,7 @@ public final class ErrorProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+       * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
        */
       public Builder clearParams() {
         if (paramsBuilder_ == null) {
@@ -1583,39 +1769,170 @@ public final class ErrorProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+       * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
        */
-      public com.google.protobuf.Any.Builder getParamsBuilder() {
+      public org.megacommerce.shared.v1.TypesProto.StringMap.Builder getParamsBuilder() {
         
         onChanged();
         return getParamsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+       * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
        */
-      public com.google.protobuf.AnyOrBuilder getParamsOrBuilder() {
+      public org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder getParamsOrBuilder() {
         if (paramsBuilder_ != null) {
           return paramsBuilder_.getMessageOrBuilder();
         } else {
           return params_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : params_;
+              org.megacommerce.shared.v1.TypesProto.StringMap.getDefaultInstance() : params_;
         }
       }
       /**
-       * <code>.google.protobuf.Any params = 8 [json_name = "params"];</code>
+       * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+          org.megacommerce.shared.v1.TypesProto.StringMap, org.megacommerce.shared.v1.TypesProto.StringMap.Builder, org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder> 
           getParamsFieldBuilder() {
         if (paramsBuilder_ == null) {
           paramsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+              org.megacommerce.shared.v1.TypesProto.StringMap, org.megacommerce.shared.v1.TypesProto.StringMap.Builder, org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder>(
                   getParams(),
                   getParentForChildren(),
                   isClean());
           params_ = null;
         }
         return paramsBuilder_;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> nestedParams_;
+      private com.google.protobuf.MapField<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap>
+      internalGetNestedParams() {
+        if (nestedParams_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              NestedParamsDefaultEntryHolder.defaultEntry);
+        }
+        return nestedParams_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap>
+      internalGetMutableNestedParams() {
+        onChanged();;
+        if (nestedParams_ == null) {
+          nestedParams_ = com.google.protobuf.MapField.newMapField(
+              NestedParamsDefaultEntryHolder.defaultEntry);
+        }
+        if (!nestedParams_.isMutable()) {
+          nestedParams_ = nestedParams_.copy();
+        }
+        return nestedParams_;
+      }
+
+      public int getNestedParamsCount() {
+        return internalGetNestedParams().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.StringMap&gt; nested_params = 9 [json_name = "nestedParams"];</code>
+       */
+
+      @java.lang.Override
+      public boolean containsNestedParams(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetNestedParams().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getNestedParamsMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> getNestedParams() {
+        return getNestedParamsMap();
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.StringMap&gt; nested_params = 9 [json_name = "nestedParams"];</code>
+       */
+      @java.lang.Override
+
+      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> getNestedParamsMap() {
+        return internalGetNestedParams().getMap();
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.StringMap&gt; nested_params = 9 [json_name = "nestedParams"];</code>
+       */
+      @java.lang.Override
+
+      public org.megacommerce.shared.v1.TypesProto.StringMap getNestedParamsOrDefault(
+          java.lang.String key,
+          org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> map =
+            internalGetNestedParams().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.StringMap&gt; nested_params = 9 [json_name = "nestedParams"];</code>
+       */
+      @java.lang.Override
+
+      public org.megacommerce.shared.v1.TypesProto.StringMap getNestedParamsOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> map =
+            internalGetNestedParams().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearNestedParams() {
+        internalGetMutableNestedParams().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.StringMap&gt; nested_params = 9 [json_name = "nestedParams"];</code>
+       */
+
+      public Builder removeNestedParams(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableNestedParams().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap>
+      getMutableNestedParams() {
+        return internalGetMutableNestedParams().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.StringMap&gt; nested_params = 9 [json_name = "nestedParams"];</code>
+       */
+      public Builder putNestedParams(
+          java.lang.String key,
+          org.megacommerce.shared.v1.TypesProto.StringMap value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) {
+  throw new NullPointerException("map value");
+}
+
+        internalGetMutableNestedParams().getMutableMap()
+            .put(key, value);
+        return this;
+      }
+      /**
+       * <code>map&lt;string, .shared.v1.StringMap&gt; nested_params = 9 [json_name = "nestedParams"];</code>
+       */
+
+      public Builder putAllNestedParams(
+          java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> values) {
+        internalGetMutableNestedParams().getMutableMap()
+            .putAll(values);
+        return this;
       }
       @java.lang.Override
       public final Builder setUnknownFields(
@@ -1686,6 +2003,11 @@ public final class ErrorProto {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_shared_v1_AppError_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_shared_v1_AppError_NestedParamsEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_shared_v1_AppError_NestedParamsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1695,31 +2017,41 @@ public final class ErrorProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025shared/v1/error.proto\022\tshared.v1\032\031goog" +
-      "le/protobuf/any.proto\"\212\002\n\010AppError\022\016\n\002id" +
-      "\030\001 \001(\tR\002id\022\030\n\007message\030\002 \001(\tR\007message\022%\n\016" +
-      "detailed_error\030\003 \001(\tR\rdetailedError\022\035\n\nr" +
-      "equest_id\030\004 \001(\tR\trequestId\022\037\n\013status_cod" +
-      "e\030\005 \001(\005R\nstatusCode\022\024\n\005where\030\006 \001(\tR\005wher" +
-      "e\022)\n\020skip_translation\030\007 \001(\010R\017skipTransla" +
-      "tion\022,\n\006params\030\010 \001(\0132\024.google.protobuf.A" +
-      "nyR\006paramsBp\n\032org.megacommerce.shared.v1" +
-      "B\nErrorProtoZCgithub.com/ahmad-khatib0-o" +
-      "rg/megacommerce-proto/gen/go/shared/v1;v" +
-      "1\370\001\001b\006proto3"
+      "\n\025shared/v1/error.proto\022\tshared.v1\032\025shar" +
+      "ed/v1/types.proto\"\255\003\n\010AppError\022\016\n\002id\030\001 \001" +
+      "(\tR\002id\022\030\n\007message\030\002 \001(\tR\007message\022%\n\016deta" +
+      "iled_error\030\003 \001(\tR\rdetailedError\022\035\n\nreque" +
+      "st_id\030\004 \001(\tR\trequestId\022\037\n\013status_code\030\005 " +
+      "\001(\005R\nstatusCode\022\024\n\005where\030\006 \001(\tR\005where\022)\n" +
+      "\020skip_translation\030\007 \001(\010R\017skipTranslation" +
+      "\022,\n\006params\030\010 \001(\0132\024.shared.v1.StringMapR\006" +
+      "params\022J\n\rnested_params\030\t \003(\0132%.shared.v" +
+      "1.AppError.NestedParamsEntryR\014nestedPara" +
+      "ms\032U\n\021NestedParamsEntry\022\020\n\003key\030\001 \001(\tR\003ke" +
+      "y\022*\n\005value\030\002 \001(\0132\024.shared.v1.StringMapR\005" +
+      "value:\0028\001Bp\n\032org.megacommerce.shared.v1B" +
+      "\nErrorProtoZCgithub.com/ahmad-khatib0-or" +
+      "g/megacommerce-proto/gen/go/shared/v1;v1" +
+      "\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.AnyProto.getDescriptor(),
+          org.megacommerce.shared.v1.TypesProto.getDescriptor(),
         });
     internal_static_shared_v1_AppError_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_shared_v1_AppError_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_shared_v1_AppError_descriptor,
-        new java.lang.String[] { "Id", "Message", "DetailedError", "RequestId", "StatusCode", "Where", "SkipTranslation", "Params", });
-    com.google.protobuf.AnyProto.getDescriptor();
+        new java.lang.String[] { "Id", "Message", "DetailedError", "RequestId", "StatusCode", "Where", "SkipTranslation", "Params", "NestedParams", });
+    internal_static_shared_v1_AppError_NestedParamsEntry_descriptor =
+      internal_static_shared_v1_AppError_descriptor.getNestedTypes().get(0);
+    internal_static_shared_v1_AppError_NestedParamsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_shared_v1_AppError_NestedParamsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    org.megacommerce.shared.v1.TypesProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -9,7 +9,6 @@ package v1
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	anypb "google.golang.org/protobuf/types/known/anypb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -36,8 +35,9 @@ type AppError struct {
 	// Code path or func name
 	Where string `protobuf:"bytes,6,opt,name=where,proto3" json:"where,omitempty"`
 	// If false, i18n may not apply
-	SkipTranslation bool       `protobuf:"varint,7,opt,name=skip_translation,json=skipTranslation,proto3" json:"skip_translation,omitempty"`
-	Params          *anypb.Any `protobuf:"bytes,8,opt,name=params,proto3" json:"params,omitempty"`
+	SkipTranslation bool                  `protobuf:"varint,7,opt,name=skip_translation,json=skipTranslation,proto3" json:"skip_translation,omitempty"`
+	Params          *StringMap            `protobuf:"bytes,8,opt,name=params,proto3" json:"params,omitempty"`
+	NestedParams    map[string]*StringMap `protobuf:"bytes,9,rep,name=nested_params,json=nestedParams,proto3" json:"nested_params,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -121,9 +121,16 @@ func (x *AppError) GetSkipTranslation() bool {
 	return false
 }
 
-func (x *AppError) GetParams() *anypb.Any {
+func (x *AppError) GetParams() *StringMap {
 	if x != nil {
 		return x.Params
+	}
+	return nil
+}
+
+func (x *AppError) GetNestedParams() map[string]*StringMap {
+	if x != nil {
+		return x.NestedParams
 	}
 	return nil
 }
@@ -132,7 +139,7 @@ var File_shared_v1_error_proto protoreflect.FileDescriptor
 
 const file_shared_v1_error_proto_rawDesc = "" +
 	"\n" +
-	"\x15shared/v1/error.proto\x12\tshared.v1\x1a\x19google/protobuf/any.proto\"\x8a\x02\n" +
+	"\x15shared/v1/error.proto\x12\tshared.v1\x1a\x15shared/v1/types.proto\"\xad\x03\n" +
 	"\bAppError\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x18\n" +
 	"\amessage\x18\x02 \x01(\tR\amessage\x12%\n" +
@@ -143,7 +150,11 @@ const file_shared_v1_error_proto_rawDesc = "" +
 	"statusCode\x12\x14\n" +
 	"\x05where\x18\x06 \x01(\tR\x05where\x12)\n" +
 	"\x10skip_translation\x18\a \x01(\bR\x0fskipTranslation\x12,\n" +
-	"\x06params\x18\b \x01(\v2\x14.google.protobuf.AnyR\x06paramsBp\n" +
+	"\x06params\x18\b \x01(\v2\x14.shared.v1.StringMapR\x06params\x12J\n" +
+	"\rnested_params\x18\t \x03(\v2%.shared.v1.AppError.NestedParamsEntryR\fnestedParams\x1aU\n" +
+	"\x11NestedParamsEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12*\n" +
+	"\x05value\x18\x02 \x01(\v2\x14.shared.v1.StringMapR\x05value:\x028\x01Bp\n" +
 	"\x1aorg.megacommerce.shared.v1B\n" +
 	"ErrorProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1;v1\xf8\x01\x01b\x06proto3"
 
@@ -159,18 +170,21 @@ func file_shared_v1_error_proto_rawDescGZIP() []byte {
 	return file_shared_v1_error_proto_rawDescData
 }
 
-var file_shared_v1_error_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_shared_v1_error_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_shared_v1_error_proto_goTypes = []any{
 	(*AppError)(nil),  // 0: shared.v1.AppError
-	(*anypb.Any)(nil), // 1: google.protobuf.Any
+	nil,               // 1: shared.v1.AppError.NestedParamsEntry
+	(*StringMap)(nil), // 2: shared.v1.StringMap
 }
 var file_shared_v1_error_proto_depIdxs = []int32{
-	1, // 0: shared.v1.AppError.params:type_name -> google.protobuf.Any
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	2, // 0: shared.v1.AppError.params:type_name -> shared.v1.StringMap
+	1, // 1: shared.v1.AppError.nested_params:type_name -> shared.v1.AppError.NestedParamsEntry
+	2, // 2: shared.v1.AppError.NestedParamsEntry.value:type_name -> shared.v1.StringMap
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_shared_v1_error_proto_init() }
@@ -178,13 +192,14 @@ func file_shared_v1_error_proto_init() {
 	if File_shared_v1_error_proto != nil {
 		return
 	}
+	file_shared_v1_types_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_shared_v1_error_proto_rawDesc), len(file_shared_v1_error_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   1,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

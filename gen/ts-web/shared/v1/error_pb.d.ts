@@ -1,6 +1,6 @@
 import * as jspb from 'google-protobuf'
 
-import * as google_protobuf_any_pb from 'google-protobuf/google/protobuf/any_pb'; // proto import: "google/protobuf/any.proto"
+import * as shared_v1_types_pb from '../../shared/v1/types_pb'; // proto import: "shared/v1/types.proto"
 
 
 export class AppError extends jspb.Message {
@@ -25,10 +25,13 @@ export class AppError extends jspb.Message {
   getSkipTranslation(): boolean;
   setSkipTranslation(value: boolean): AppError;
 
-  getParams(): google_protobuf_any_pb.Any | undefined;
-  setParams(value?: google_protobuf_any_pb.Any): AppError;
+  getParams(): shared_v1_types_pb.StringMap | undefined;
+  setParams(value?: shared_v1_types_pb.StringMap): AppError;
   hasParams(): boolean;
   clearParams(): AppError;
+
+  getNestedParamsMap(): jspb.Map<string, shared_v1_types_pb.StringMap>;
+  clearNestedParamsMap(): AppError;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppError.AsObject;
@@ -47,7 +50,8 @@ export namespace AppError {
     statusCode: number,
     where: string,
     skipTranslation: boolean,
-    params?: google_protobuf_any_pb.Any.AsObject,
+    params?: shared_v1_types_pb.StringMap.AsObject,
+    nestedParamsMap: Array<[string, shared_v1_types_pb.StringMap.AsObject]>,
   }
 }
 
