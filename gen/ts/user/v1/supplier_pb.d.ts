@@ -2,6 +2,8 @@
 // file: user/v1/supplier.proto
 
 import * as jspb from "google-protobuf";
+import * as common_v1_error_pb from "../../common/v1/error_pb";
+import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
 
 export class SupplierCreateRequest extends jspb.Message {
   getUsername(): string;
@@ -44,6 +46,17 @@ export namespace SupplierCreateRequest {
 }
 
 export class SupplierCreateResponse extends jspb.Message {
+  hasData(): boolean;
+  clearData(): void;
+  getData(): google_protobuf_empty_pb.Empty | undefined;
+  setData(value?: google_protobuf_empty_pb.Empty): void;
+
+  hasError(): boolean;
+  clearError(): void;
+  getError(): common_v1_error_pb.AppError | undefined;
+  setError(value?: common_v1_error_pb.AppError): void;
+
+  getResponseCase(): SupplierCreateResponse.ResponseCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SupplierCreateResponse.AsObject;
   static toObject(includeInstance: boolean, msg: SupplierCreateResponse): SupplierCreateResponse.AsObject;
@@ -56,6 +69,14 @@ export class SupplierCreateResponse extends jspb.Message {
 
 export namespace SupplierCreateResponse {
   export type AsObject = {
+    data?: google_protobuf_empty_pb.Empty.AsObject,
+    error?: common_v1_error_pb.AppError.AsObject,
+  }
+
+  export enum ResponseCase {
+    RESPONSE_NOT_SET = 0,
+    DATA = 1,
+    ERROR = 2,
   }
 }
 

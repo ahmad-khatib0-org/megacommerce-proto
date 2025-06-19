@@ -36,7 +36,8 @@ struct SupplierCreateRequestDefaultTypeInternal {
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT SupplierCreateRequestDefaultTypeInternal _SupplierCreateRequest_default_instance_;
 constexpr SupplierCreateResponse::SupplierCreateResponse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
+  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
+  : _oneof_case_{}{}
 struct SupplierCreateResponseDefaultTypeInternal {
   constexpr SupplierCreateResponseDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -68,9 +69,12 @@ const uint32_t TableStruct_user_2fv1_2fsupplier_2eproto::offsets[] PROTOBUF_SECT
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::user::v1::SupplierCreateResponse, _internal_metadata_),
   ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
+  PROTOBUF_FIELD_OFFSET(::user::v1::SupplierCreateResponse, _oneof_case_[0]),
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  ::PROTOBUF_NAMESPACE_ID::internal::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::user::v1::SupplierCreateResponse, response_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::user::v1::SupplierCreateRequest)},
@@ -83,20 +87,27 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_user_2fv1_2fsupplier_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\026user/v1/supplier.proto\022\007user.v1\"\301\001\n\025Su"
-  "pplierCreateRequest\022\032\n\010username\030\001 \001(\tR\010u"
-  "sername\022\024\n\005email\030\002 \001(\tR\005email\022\035\n\nfirst_n"
-  "ame\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR"
-  "\010lastName\022\032\n\010password\030\005 \001(\tR\010password\022\036\n"
-  "\nmembership\030\006 \001(\tR\nmembership\"\030\n\026Supplie"
-  "rCreateResponseB8\n\030org.megacommerce.user"
-  ".v1B\rSupplierProtoZ\nuser/v1;v1\370\001\001b\006proto"
-  "3"
+  "\n\026user/v1/supplier.proto\022\007user.v1\032\025commo"
+  "n/v1/error.proto\032\033google/protobuf/empty."
+  "proto\"\301\001\n\025SupplierCreateRequest\022\032\n\010usern"
+  "ame\030\001 \001(\tR\010username\022\024\n\005email\030\002 \001(\tR\005emai"
+  "l\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName\022\033\n\tlast"
+  "_name\030\004 \001(\tR\010lastName\022\032\n\010password\030\005 \001(\tR"
+  "\010password\022\036\n\nmembership\030\006 \001(\tR\nmembershi"
+  "p\"\177\n\026SupplierCreateResponse\022,\n\004data\030\001 \001("
+  "\0132\026.google.protobuf.EmptyH\000R\004data\022+\n\005err"
+  "or\030\002 \001(\0132\023.common.v1.AppErrorH\000R\005errorB\n"
+  "\n\010responseB8\n\030org.megacommerce.user.v1B\r"
+  "SupplierProtoZ\nuser/v1;v1\370\001\001b\006proto3"
   ;
+static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_user_2fv1_2fsupplier_2eproto_deps[2] = {
+  &::descriptor_table_common_2fv1_2ferror_2eproto,
+  &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
+};
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_user_2fv1_2fsupplier_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_user_2fv1_2fsupplier_2eproto = {
-  false, false, 321, descriptor_table_protodef_user_2fv1_2fsupplier_2eproto, "user/v1/supplier.proto", 
-  &descriptor_table_user_2fv1_2fsupplier_2eproto_once, nullptr, 0, 2,
+  false, false, 476, descriptor_table_protodef_user_2fv1_2fsupplier_2eproto, "user/v1/supplier.proto", 
+  &descriptor_table_user_2fv1_2fsupplier_2eproto_once, descriptor_table_user_2fv1_2fsupplier_2eproto_deps, 2, 2,
   schemas, file_default_instances, TableStruct_user_2fv1_2fsupplier_2eproto::offsets,
   file_level_metadata_user_2fv1_2fsupplier_2eproto, file_level_enum_descriptors_user_2fv1_2fsupplier_2eproto, file_level_service_descriptors_user_2fv1_2fsupplier_2eproto,
 };
@@ -561,34 +572,315 @@ void SupplierCreateRequest::InternalSwap(SupplierCreateRequest* other) {
 
 class SupplierCreateResponse::_Internal {
  public:
+  static const ::PROTOBUF_NAMESPACE_ID::Empty& data(const SupplierCreateResponse* msg);
+  static const ::common::v1::AppError& error(const SupplierCreateResponse* msg);
 };
 
+const ::PROTOBUF_NAMESPACE_ID::Empty&
+SupplierCreateResponse::_Internal::data(const SupplierCreateResponse* msg) {
+  return *msg->response_.data_;
+}
+const ::common::v1::AppError&
+SupplierCreateResponse::_Internal::error(const SupplierCreateResponse* msg) {
+  return *msg->response_.error_;
+}
+void SupplierCreateResponse::set_allocated_data(::PROTOBUF_NAMESPACE_ID::Empty* data) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_response();
+  if (data) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(data));
+    if (message_arena != submessage_arena) {
+      data = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, data, submessage_arena);
+    }
+    set_has_data();
+    response_.data_ = data;
+  }
+  // @@protoc_insertion_point(field_set_allocated:user.v1.SupplierCreateResponse.data)
+}
+void SupplierCreateResponse::clear_data() {
+  if (_internal_has_data()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete response_.data_;
+    }
+    clear_has_response();
+  }
+}
+void SupplierCreateResponse::set_allocated_error(::common::v1::AppError* error) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_response();
+  if (error) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(error));
+    if (message_arena != submessage_arena) {
+      error = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, error, submessage_arena);
+    }
+    set_has_error();
+    response_.error_ = error;
+  }
+  // @@protoc_insertion_point(field_set_allocated:user.v1.SupplierCreateResponse.error)
+}
+void SupplierCreateResponse::clear_error() {
+  if (_internal_has_error()) {
+    if (GetArenaForAllocation() == nullptr) {
+      delete response_.error_;
+    }
+    clear_has_response();
+  }
+}
 SupplierCreateResponse::SupplierCreateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor();
+  if (!is_message_owned) {
+    RegisterArenaDtor(arena);
+  }
   // @@protoc_insertion_point(arena_constructor:user.v1.SupplierCreateResponse)
 }
 SupplierCreateResponse::SupplierCreateResponse(const SupplierCreateResponse& from)
-  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  clear_has_response();
+  switch (from.response_case()) {
+    case kData: {
+      _internal_mutable_data()->::PROTOBUF_NAMESPACE_ID::Empty::MergeFrom(from._internal_data());
+      break;
+    }
+    case kError: {
+      _internal_mutable_error()->::common::v1::AppError::MergeFrom(from._internal_error());
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
   // @@protoc_insertion_point(copy_constructor:user.v1.SupplierCreateResponse)
 }
 
+inline void SupplierCreateResponse::SharedCtor() {
+clear_has_response();
+}
+
+SupplierCreateResponse::~SupplierCreateResponse() {
+  // @@protoc_insertion_point(destructor:user.v1.SupplierCreateResponse)
+  if (GetArenaForAllocation() != nullptr) return;
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+inline void SupplierCreateResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  if (has_response()) {
+    clear_response();
+  }
+}
+
+void SupplierCreateResponse::ArenaDtor(void* object) {
+  SupplierCreateResponse* _this = reinterpret_cast< SupplierCreateResponse* >(object);
+  (void)_this;
+}
+void SupplierCreateResponse::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void SupplierCreateResponse::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+
+void SupplierCreateResponse::clear_response() {
+// @@protoc_insertion_point(one_of_clear_start:user.v1.SupplierCreateResponse)
+  switch (response_case()) {
+    case kData: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete response_.data_;
+      }
+      break;
+    }
+    case kError: {
+      if (GetArenaForAllocation() == nullptr) {
+        delete response_.error_;
+      }
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  _oneof_case_[0] = RESPONSE_NOT_SET;
+}
 
 
+void SupplierCreateResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:user.v1.SupplierCreateResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
+  clear_response();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* SupplierCreateResponse::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // .google.protobuf.Empty data = 1 [json_name = "data"];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr = ctx->ParseMessage(_internal_mutable_data(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // .common.v1.AppError error = 2 [json_name = "error"];
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          ptr = ctx->ParseMessage(_internal_mutable_error(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* SupplierCreateResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:user.v1.SupplierCreateResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .google.protobuf.Empty data = 1 [json_name = "data"];
+  if (_internal_has_data()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        1, _Internal::data(this), target, stream);
+  }
+
+  // .common.v1.AppError error = 2 [json_name = "error"];
+  if (_internal_has_error()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        2, _Internal::error(this), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:user.v1.SupplierCreateResponse)
+  return target;
+}
+
+size_t SupplierCreateResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:user.v1.SupplierCreateResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  switch (response_case()) {
+    // .google.protobuf.Empty data = 1 [json_name = "data"];
+    case kData: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *response_.data_);
+      break;
+    }
+    // .common.v1.AppError error = 2 [json_name = "error"];
+    case kError: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *response_.error_);
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_cached_size_);
+}
 
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SupplierCreateResponse::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSizeCheck,
+    SupplierCreateResponse::MergeImpl
 };
 const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SupplierCreateResponse::GetClassData() const { return &_class_data_; }
 
+void SupplierCreateResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
+                      const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+  static_cast<SupplierCreateResponse *>(to)->MergeFrom(
+      static_cast<const SupplierCreateResponse &>(from));
+}
 
 
+void SupplierCreateResponse::MergeFrom(const SupplierCreateResponse& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:user.v1.SupplierCreateResponse)
+  GOOGLE_DCHECK_NE(&from, this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
 
+  switch (from.response_case()) {
+    case kData: {
+      _internal_mutable_data()->::PROTOBUF_NAMESPACE_ID::Empty::MergeFrom(from._internal_data());
+      break;
+    }
+    case kError: {
+      _internal_mutable_error()->::common::v1::AppError::MergeFrom(from._internal_error());
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
 
+void SupplierCreateResponse::CopyFrom(const SupplierCreateResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:user.v1.SupplierCreateResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
 
+bool SupplierCreateResponse::IsInitialized() const {
+  return true;
+}
+
+void SupplierCreateResponse::InternalSwap(SupplierCreateResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(response_, other->response_);
+  swap(_oneof_case_[0], other->_oneof_case_[0]);
+}
 
 ::PROTOBUF_NAMESPACE_ID::Metadata SupplierCreateResponse::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(

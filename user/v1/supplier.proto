@@ -2,6 +2,9 @@ syntax = "proto3";
 
 package user.v1;
 
+import "common/v1/error.proto";
+import "google/protobuf/empty.proto";
+
 option cc_enable_arenas = true;
 option go_package = "user/v1;v1";
 option java_outer_classname = "SupplierProto";
@@ -16,4 +19,9 @@ message SupplierCreateRequest {
   string membership = 6;
 }
 
-message SupplierCreateResponse {}
+message SupplierCreateResponse {
+  oneof response {
+    google.protobuf.Empty data = 1;
+    common.v1.AppError error = 2;
+  }
+}

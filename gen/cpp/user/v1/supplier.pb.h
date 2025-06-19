@@ -23,7 +23,6 @@
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/arena.h>
 #include <google/protobuf/arenastring.h>
-#include <google/protobuf/generated_message_bases.h>
 #include <google/protobuf/generated_message_table_driven.h>
 #include <google/protobuf/generated_message_util.h>
 #include <google/protobuf/metadata_lite.h>
@@ -32,6 +31,8 @@
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
 #include <google/protobuf/unknown_field_set.h>
+#include "common/v1/error.pb.h"
+#include <google/protobuf/empty.pb.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_user_2fv1_2fsupplier_2eproto
@@ -305,9 +306,10 @@ class SupplierCreateRequest final :
 // -------------------------------------------------------------------
 
 class SupplierCreateResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase /* @@protoc_insertion_point(class_definition:user.v1.SupplierCreateResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:user.v1.SupplierCreateResponse) */ {
  public:
   inline SupplierCreateResponse() : SupplierCreateResponse(nullptr) {}
+  ~SupplierCreateResponse() override;
   explicit constexpr SupplierCreateResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
   SupplierCreateResponse(const SupplierCreateResponse& from);
@@ -346,6 +348,12 @@ class SupplierCreateResponse final :
   static const SupplierCreateResponse& default_instance() {
     return *internal_default_instance();
   }
+  enum ResponseCase {
+    kData = 1,
+    kError = 2,
+    RESPONSE_NOT_SET = 0,
+  };
+
   static inline const SupplierCreateResponse* internal_default_instance() {
     return reinterpret_cast<const SupplierCreateResponse*>(
                &_SupplierCreateResponse_default_instance_);
@@ -380,15 +388,27 @@ class SupplierCreateResponse final :
   SupplierCreateResponse* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
     return CreateMaybeMessage<SupplierCreateResponse>(arena);
   }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const SupplierCreateResponse& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl(this, from);
-  }
-  using ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const SupplierCreateResponse& from) {
-    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl(this, from);
-  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SupplierCreateResponse& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom(const SupplierCreateResponse& from);
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SupplierCreateResponse* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
@@ -399,6 +419,8 @@ class SupplierCreateResponse final :
   explicit SupplierCreateResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   public:
 
   static const ClassData _class_data_;
@@ -410,14 +432,69 @@ class SupplierCreateResponse final :
 
   // accessors -------------------------------------------------------
 
+  enum : int {
+    kDataFieldNumber = 1,
+    kErrorFieldNumber = 2,
+  };
+  // .google.protobuf.Empty data = 1 [json_name = "data"];
+  bool has_data() const;
+  private:
+  bool _internal_has_data() const;
+  public:
+  void clear_data();
+  const ::PROTOBUF_NAMESPACE_ID::Empty& data() const;
+  PROTOBUF_NODISCARD ::PROTOBUF_NAMESPACE_ID::Empty* release_data();
+  ::PROTOBUF_NAMESPACE_ID::Empty* mutable_data();
+  void set_allocated_data(::PROTOBUF_NAMESPACE_ID::Empty* data);
+  private:
+  const ::PROTOBUF_NAMESPACE_ID::Empty& _internal_data() const;
+  ::PROTOBUF_NAMESPACE_ID::Empty* _internal_mutable_data();
+  public:
+  void unsafe_arena_set_allocated_data(
+      ::PROTOBUF_NAMESPACE_ID::Empty* data);
+  ::PROTOBUF_NAMESPACE_ID::Empty* unsafe_arena_release_data();
+
+  // .common.v1.AppError error = 2 [json_name = "error"];
+  bool has_error() const;
+  private:
+  bool _internal_has_error() const;
+  public:
+  void clear_error();
+  const ::common::v1::AppError& error() const;
+  PROTOBUF_NODISCARD ::common::v1::AppError* release_error();
+  ::common::v1::AppError* mutable_error();
+  void set_allocated_error(::common::v1::AppError* error);
+  private:
+  const ::common::v1::AppError& _internal_error() const;
+  ::common::v1::AppError* _internal_mutable_error();
+  public:
+  void unsafe_arena_set_allocated_error(
+      ::common::v1::AppError* error);
+  ::common::v1::AppError* unsafe_arena_release_error();
+
+  void clear_response();
+  ResponseCase response_case() const;
   // @@protoc_insertion_point(class_scope:user.v1.SupplierCreateResponse)
  private:
   class _Internal;
+  void set_has_data();
+  void set_has_error();
+
+  inline bool has_response() const;
+  inline void clear_has_response();
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
+  union ResponseUnion {
+    constexpr ResponseUnion() : _constinit_{} {}
+      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized _constinit_;
+    ::PROTOBUF_NAMESPACE_ID::Empty* data_;
+    ::common::v1::AppError* error_;
+  } response_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  uint32_t _oneof_case_[1];
+
   friend struct ::TableStruct_user_2fv1_2fsupplier_2eproto;
 };
 // ===================================================================
@@ -741,6 +818,147 @@ inline void SupplierCreateRequest::set_allocated_membership(std::string* members
 
 // SupplierCreateResponse
 
+// .google.protobuf.Empty data = 1 [json_name = "data"];
+inline bool SupplierCreateResponse::_internal_has_data() const {
+  return response_case() == kData;
+}
+inline bool SupplierCreateResponse::has_data() const {
+  return _internal_has_data();
+}
+inline void SupplierCreateResponse::set_has_data() {
+  _oneof_case_[0] = kData;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Empty* SupplierCreateResponse::release_data() {
+  // @@protoc_insertion_point(field_release:user.v1.SupplierCreateResponse.data)
+  if (_internal_has_data()) {
+    clear_has_response();
+      ::PROTOBUF_NAMESPACE_ID::Empty* temp = response_.data_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    response_.data_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Empty& SupplierCreateResponse::_internal_data() const {
+  return _internal_has_data()
+      ? *response_.data_
+      : reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::Empty&>(::PROTOBUF_NAMESPACE_ID::_Empty_default_instance_);
+}
+inline const ::PROTOBUF_NAMESPACE_ID::Empty& SupplierCreateResponse::data() const {
+  // @@protoc_insertion_point(field_get:user.v1.SupplierCreateResponse.data)
+  return _internal_data();
+}
+inline ::PROTOBUF_NAMESPACE_ID::Empty* SupplierCreateResponse::unsafe_arena_release_data() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:user.v1.SupplierCreateResponse.data)
+  if (_internal_has_data()) {
+    clear_has_response();
+    ::PROTOBUF_NAMESPACE_ID::Empty* temp = response_.data_;
+    response_.data_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void SupplierCreateResponse::unsafe_arena_set_allocated_data(::PROTOBUF_NAMESPACE_ID::Empty* data) {
+  clear_response();
+  if (data) {
+    set_has_data();
+    response_.data_ = data;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:user.v1.SupplierCreateResponse.data)
+}
+inline ::PROTOBUF_NAMESPACE_ID::Empty* SupplierCreateResponse::_internal_mutable_data() {
+  if (!_internal_has_data()) {
+    clear_response();
+    set_has_data();
+    response_.data_ = CreateMaybeMessage< ::PROTOBUF_NAMESPACE_ID::Empty >(GetArenaForAllocation());
+  }
+  return response_.data_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::Empty* SupplierCreateResponse::mutable_data() {
+  ::PROTOBUF_NAMESPACE_ID::Empty* _msg = _internal_mutable_data();
+  // @@protoc_insertion_point(field_mutable:user.v1.SupplierCreateResponse.data)
+  return _msg;
+}
+
+// .common.v1.AppError error = 2 [json_name = "error"];
+inline bool SupplierCreateResponse::_internal_has_error() const {
+  return response_case() == kError;
+}
+inline bool SupplierCreateResponse::has_error() const {
+  return _internal_has_error();
+}
+inline void SupplierCreateResponse::set_has_error() {
+  _oneof_case_[0] = kError;
+}
+inline ::common::v1::AppError* SupplierCreateResponse::release_error() {
+  // @@protoc_insertion_point(field_release:user.v1.SupplierCreateResponse.error)
+  if (_internal_has_error()) {
+    clear_has_response();
+      ::common::v1::AppError* temp = response_.error_;
+    if (GetArenaForAllocation() != nullptr) {
+      temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+    }
+    response_.error_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::common::v1::AppError& SupplierCreateResponse::_internal_error() const {
+  return _internal_has_error()
+      ? *response_.error_
+      : reinterpret_cast< ::common::v1::AppError&>(::common::v1::_AppError_default_instance_);
+}
+inline const ::common::v1::AppError& SupplierCreateResponse::error() const {
+  // @@protoc_insertion_point(field_get:user.v1.SupplierCreateResponse.error)
+  return _internal_error();
+}
+inline ::common::v1::AppError* SupplierCreateResponse::unsafe_arena_release_error() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:user.v1.SupplierCreateResponse.error)
+  if (_internal_has_error()) {
+    clear_has_response();
+    ::common::v1::AppError* temp = response_.error_;
+    response_.error_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void SupplierCreateResponse::unsafe_arena_set_allocated_error(::common::v1::AppError* error) {
+  clear_response();
+  if (error) {
+    set_has_error();
+    response_.error_ = error;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:user.v1.SupplierCreateResponse.error)
+}
+inline ::common::v1::AppError* SupplierCreateResponse::_internal_mutable_error() {
+  if (!_internal_has_error()) {
+    clear_response();
+    set_has_error();
+    response_.error_ = CreateMaybeMessage< ::common::v1::AppError >(GetArenaForAllocation());
+  }
+  return response_.error_;
+}
+inline ::common::v1::AppError* SupplierCreateResponse::mutable_error() {
+  ::common::v1::AppError* _msg = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:user.v1.SupplierCreateResponse.error)
+  return _msg;
+}
+
+inline bool SupplierCreateResponse::has_response() const {
+  return response_case() != RESPONSE_NOT_SET;
+}
+inline void SupplierCreateResponse::clear_has_response() {
+  _oneof_case_[0] = RESPONSE_NOT_SET;
+}
+inline SupplierCreateResponse::ResponseCase SupplierCreateResponse::response_case() const {
+  return SupplierCreateResponse::ResponseCase(_oneof_case_[0]);
+}
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__

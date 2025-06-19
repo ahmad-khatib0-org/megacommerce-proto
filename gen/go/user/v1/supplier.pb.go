@@ -7,8 +7,10 @@
 package v1
 
 import (
+	v1 "common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
+	emptypb "google.golang.org/protobuf/types/known/emptypb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -106,7 +108,12 @@ func (x *SupplierCreateRequest) GetMembership() string {
 }
 
 type SupplierCreateResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Types that are valid to be assigned to Response:
+	//
+	//	*SupplierCreateResponse_Data
+	//	*SupplierCreateResponse_Error
+	Response      isSupplierCreateResponse_Response `protobuf_oneof:"response"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -141,11 +148,52 @@ func (*SupplierCreateResponse) Descriptor() ([]byte, []int) {
 	return file_user_v1_supplier_proto_rawDescGZIP(), []int{1}
 }
 
+func (x *SupplierCreateResponse) GetResponse() isSupplierCreateResponse_Response {
+	if x != nil {
+		return x.Response
+	}
+	return nil
+}
+
+func (x *SupplierCreateResponse) GetData() *emptypb.Empty {
+	if x != nil {
+		if x, ok := x.Response.(*SupplierCreateResponse_Data); ok {
+			return x.Data
+		}
+	}
+	return nil
+}
+
+func (x *SupplierCreateResponse) GetError() *v1.AppError {
+	if x != nil {
+		if x, ok := x.Response.(*SupplierCreateResponse_Error); ok {
+			return x.Error
+		}
+	}
+	return nil
+}
+
+type isSupplierCreateResponse_Response interface {
+	isSupplierCreateResponse_Response()
+}
+
+type SupplierCreateResponse_Data struct {
+	Data *emptypb.Empty `protobuf:"bytes,1,opt,name=data,proto3,oneof"`
+}
+
+type SupplierCreateResponse_Error struct {
+	Error *v1.AppError `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
+}
+
+func (*SupplierCreateResponse_Data) isSupplierCreateResponse_Response() {}
+
+func (*SupplierCreateResponse_Error) isSupplierCreateResponse_Response() {}
+
 var File_user_v1_supplier_proto protoreflect.FileDescriptor
 
 const file_user_v1_supplier_proto_rawDesc = "" +
 	"\n" +
-	"\x16user/v1/supplier.proto\x12\auser.v1\"\xc1\x01\n" +
+	"\x16user/v1/supplier.proto\x12\auser.v1\x1a\x15common/v1/error.proto\x1a\x1bgoogle/protobuf/empty.proto\"\xc1\x01\n" +
 	"\x15SupplierCreateRequest\x12\x1a\n" +
 	"\busername\x18\x01 \x01(\tR\busername\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email\x12\x1d\n" +
@@ -155,8 +203,12 @@ const file_user_v1_supplier_proto_rawDesc = "" +
 	"\bpassword\x18\x05 \x01(\tR\bpassword\x12\x1e\n" +
 	"\n" +
 	"membership\x18\x06 \x01(\tR\n" +
-	"membership\"\x18\n" +
-	"\x16SupplierCreateResponseB8\n" +
+	"membership\"\x7f\n" +
+	"\x16SupplierCreateResponse\x12,\n" +
+	"\x04data\x18\x01 \x01(\v2\x16.google.protobuf.EmptyH\x00R\x04data\x12+\n" +
+	"\x05error\x18\x02 \x01(\v2\x13.common.v1.AppErrorH\x00R\x05errorB\n" +
+	"\n" +
+	"\bresponseB8\n" +
 	"\x18org.megacommerce.user.v1B\rSupplierProtoZ\n" +
 	"user/v1;v1\xf8\x01\x01b\x06proto3"
 
@@ -176,19 +228,27 @@ var file_user_v1_supplier_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_user_v1_supplier_proto_goTypes = []any{
 	(*SupplierCreateRequest)(nil),  // 0: user.v1.SupplierCreateRequest
 	(*SupplierCreateResponse)(nil), // 1: user.v1.SupplierCreateResponse
+	(*emptypb.Empty)(nil),          // 2: google.protobuf.Empty
+	(*v1.AppError)(nil),            // 3: common.v1.AppError
 }
 var file_user_v1_supplier_proto_depIdxs = []int32{
-	0, // [0:0] is the sub-list for method output_type
-	0, // [0:0] is the sub-list for method input_type
-	0, // [0:0] is the sub-list for extension type_name
-	0, // [0:0] is the sub-list for extension extendee
-	0, // [0:0] is the sub-list for field type_name
+	2, // 0: user.v1.SupplierCreateResponse.data:type_name -> google.protobuf.Empty
+	3, // 1: user.v1.SupplierCreateResponse.error:type_name -> common.v1.AppError
+	2, // [2:2] is the sub-list for method output_type
+	2, // [2:2] is the sub-list for method input_type
+	2, // [2:2] is the sub-list for extension type_name
+	2, // [2:2] is the sub-list for extension extendee
+	0, // [0:2] is the sub-list for field type_name
 }
 
 func init() { file_user_v1_supplier_proto_init() }
 func file_user_v1_supplier_proto_init() {
 	if File_user_v1_supplier_proto != nil {
 		return
+	}
+	file_user_v1_supplier_proto_msgTypes[1].OneofWrappers = []any{
+		(*SupplierCreateResponse_Data)(nil),
+		(*SupplierCreateResponse_Error)(nil),
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
