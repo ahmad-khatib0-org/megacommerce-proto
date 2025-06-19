@@ -18,26 +18,15 @@
 PROTOBUF_PRAGMA_INIT_SEG
 namespace shared {
 namespace v1 {
-constexpr AppError_NestedParamsEntry_DoNotUse::AppError_NestedParamsEntry_DoNotUse(
-  ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized){}
-struct AppError_NestedParamsEntry_DoNotUseDefaultTypeInternal {
-  constexpr AppError_NestedParamsEntry_DoNotUseDefaultTypeInternal()
-    : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
-  ~AppError_NestedParamsEntry_DoNotUseDefaultTypeInternal() {}
-  union {
-    AppError_NestedParamsEntry_DoNotUse _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AppError_NestedParamsEntry_DoNotUseDefaultTypeInternal _AppError_NestedParamsEntry_DoNotUse_default_instance_;
 constexpr AppError::AppError(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
-  : nested_params_(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{})
-  , id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  : id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , message_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , detailed_error_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , request_id_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , where_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , params_(nullptr)
+  , nested_params_(nullptr)
   , status_code_(0)
   , skip_translation_(false){}
 struct AppErrorDefaultTypeInternal {
@@ -51,21 +40,11 @@ struct AppErrorDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT AppErrorDefaultTypeInternal _AppError_default_instance_;
 }  // namespace v1
 }  // namespace shared
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_shared_2fv1_2ferror_2eproto[2];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_shared_2fv1_2ferror_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_shared_2fv1_2ferror_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_shared_2fv1_2ferror_2eproto = nullptr;
 
 const uint32_t TableStruct_shared_2fv1_2ferror_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  PROTOBUF_FIELD_OFFSET(::shared::v1::AppError_NestedParamsEntry_DoNotUse, _has_bits_),
-  PROTOBUF_FIELD_OFFSET(::shared::v1::AppError_NestedParamsEntry_DoNotUse, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::shared::v1::AppError_NestedParamsEntry_DoNotUse, key_),
-  PROTOBUF_FIELD_OFFSET(::shared::v1::AppError_NestedParamsEntry_DoNotUse, value_),
-  0,
-  1,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::shared::v1::AppError, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -83,40 +62,35 @@ const uint32_t TableStruct_shared_2fv1_2ferror_2eproto::offsets[] PROTOBUF_SECTI
   PROTOBUF_FIELD_OFFSET(::shared::v1::AppError, nested_params_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, 8, -1, sizeof(::shared::v1::AppError_NestedParamsEntry_DoNotUse)},
-  { 10, -1, -1, sizeof(::shared::v1::AppError)},
+  { 0, -1, -1, sizeof(::shared::v1::AppError)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
-  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::shared::v1::_AppError_NestedParamsEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::shared::v1::_AppError_default_instance_),
 };
 
 const char descriptor_table_protodef_shared_2fv1_2ferror_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\025shared/v1/error.proto\022\tshared.v1\032\025shar"
-  "ed/v1/types.proto\"\255\003\n\010AppError\022\016\n\002id\030\001 \001"
+  "ed/v1/types.proto\"\313\002\n\010AppError\022\016\n\002id\030\001 \001"
   "(\tR\002id\022\030\n\007message\030\002 \001(\tR\007message\022%\n\016deta"
   "iled_error\030\003 \001(\tR\rdetailedError\022\035\n\nreque"
   "st_id\030\004 \001(\tR\trequestId\022\037\n\013status_code\030\005 "
   "\001(\005R\nstatusCode\022\024\n\005where\030\006 \001(\tR\005where\022)\n"
   "\020skip_translation\030\007 \001(\010R\017skipTranslation"
   "\022,\n\006params\030\010 \001(\0132\024.shared.v1.StringMapR\006"
-  "params\022J\n\rnested_params\030\t \003(\0132%.shared.v"
-  "1.AppError.NestedParamsEntryR\014nestedPara"
-  "ms\032U\n\021NestedParamsEntry\022\020\n\003key\030\001 \001(\tR\003ke"
-  "y\022*\n\005value\030\002 \001(\0132\024.shared.v1.StringMapR\005"
-  "value:\0028\001Bp\n\032org.megacommerce.shared.v1B"
-  "\nErrorProtoZCgithub.com/ahmad-khatib0-or"
-  "g/megacommerce-proto/gen/go/shared/v1;v1"
-  "\370\001\001b\006proto3"
+  "params\022\?\n\rnested_params\030\t \001(\0132\032.shared.v"
+  "1.NestedStringMapR\014nestedParamsBp\n\032org.m"
+  "egacommerce.shared.v1B\nErrorProtoZCgithu"
+  "b.com/ahmad-khatib0-org/megacommerce-pro"
+  "to/gen/go/shared/v1;v1\370\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_shared_2fv1_2ferror_2eproto_deps[1] = {
   &::descriptor_table_shared_2fv1_2ftypes_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_shared_2fv1_2ferror_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_shared_2fv1_2ferror_2eproto = {
-  false, false, 611, descriptor_table_protodef_shared_2fv1_2ferror_2eproto, "shared/v1/error.proto", 
-  &descriptor_table_shared_2fv1_2ferror_2eproto_once, descriptor_table_shared_2fv1_2ferror_2eproto_deps, 1, 2,
+  false, false, 513, descriptor_table_protodef_shared_2fv1_2ferror_2eproto, "shared/v1/error.proto", 
+  &descriptor_table_shared_2fv1_2ferror_2eproto_once, descriptor_table_shared_2fv1_2ferror_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_shared_2fv1_2ferror_2eproto::offsets,
   file_level_metadata_shared_2fv1_2ferror_2eproto, file_level_enum_descriptors_shared_2fv1_2ferror_2eproto, file_level_service_descriptors_shared_2fv1_2ferror_2eproto,
 };
@@ -131,28 +105,19 @@ namespace v1 {
 
 // ===================================================================
 
-AppError_NestedParamsEntry_DoNotUse::AppError_NestedParamsEntry_DoNotUse() {}
-AppError_NestedParamsEntry_DoNotUse::AppError_NestedParamsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
-    : SuperType(arena) {}
-void AppError_NestedParamsEntry_DoNotUse::MergeFrom(const AppError_NestedParamsEntry_DoNotUse& other) {
-  MergeFromInternal(other);
-}
-::PROTOBUF_NAMESPACE_ID::Metadata AppError_NestedParamsEntry_DoNotUse::GetMetadata() const {
-  return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
-      &descriptor_table_shared_2fv1_2ferror_2eproto_getter, &descriptor_table_shared_2fv1_2ferror_2eproto_once,
-      file_level_metadata_shared_2fv1_2ferror_2eproto[0]);
-}
-
-// ===================================================================
-
 class AppError::_Internal {
  public:
   static const ::shared::v1::StringMap& params(const AppError* msg);
+  static const ::shared::v1::NestedStringMap& nested_params(const AppError* msg);
 };
 
 const ::shared::v1::StringMap&
 AppError::_Internal::params(const AppError* msg) {
   return *msg->params_;
+}
+const ::shared::v1::NestedStringMap&
+AppError::_Internal::nested_params(const AppError* msg) {
+  return *msg->nested_params_;
 }
 void AppError::clear_params() {
   if (GetArenaForAllocation() == nullptr && params_ != nullptr) {
@@ -161,12 +126,14 @@ void AppError::clear_params() {
   params_ = nullptr;
 }
 void AppError::clear_nested_params() {
-  nested_params_.Clear();
+  if (GetArenaForAllocation() == nullptr && nested_params_ != nullptr) {
+    delete nested_params_;
+  }
+  nested_params_ = nullptr;
 }
 AppError::AppError(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
-  nested_params_(arena) {
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
   if (!is_message_owned) {
     RegisterArenaDtor(arena);
@@ -176,7 +143,6 @@ AppError::AppError(::PROTOBUF_NAMESPACE_ID::Arena* arena,
 AppError::AppError(const AppError& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  nested_params_.MergeFrom(from.nested_params_);
   id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
@@ -221,6 +187,11 @@ AppError::AppError(const AppError& from)
     params_ = new ::shared::v1::StringMap(*from.params_);
   } else {
     params_ = nullptr;
+  }
+  if (from._internal_has_nested_params()) {
+    nested_params_ = new ::shared::v1::NestedStringMap(*from.nested_params_);
+  } else {
+    nested_params_ = nullptr;
   }
   ::memcpy(&status_code_, &from.status_code_,
     static_cast<size_t>(reinterpret_cast<char*>(&skip_translation_) -
@@ -270,17 +241,14 @@ inline void AppError::SharedDtor() {
   request_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   where_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete params_;
+  if (this != internal_default_instance()) delete nested_params_;
 }
 
 void AppError::ArenaDtor(void* object) {
   AppError* _this = reinterpret_cast< AppError* >(object);
   (void)_this;
-  _this->nested_params_. ~MapField();
 }
-inline void AppError::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena) {
-  if (arena != nullptr) {
-    arena->OwnCustomDestructor(this, &AppError::ArenaDtor);
-  }
+void AppError::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
 }
 void AppError::SetCachedSize(int size) const {
   _cached_size_.Set(size);
@@ -292,7 +260,6 @@ void AppError::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  nested_params_.Clear();
   id_.ClearToEmpty();
   message_.ClearToEmpty();
   detailed_error_.ClearToEmpty();
@@ -302,6 +269,10 @@ void AppError::Clear() {
     delete params_;
   }
   params_ = nullptr;
+  if (GetArenaForAllocation() == nullptr && nested_params_ != nullptr) {
+    delete nested_params_;
+  }
+  nested_params_ = nullptr;
   ::memset(&status_code_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&skip_translation_) -
       reinterpret_cast<char*>(&status_code_)) + sizeof(skip_translation_));
@@ -388,16 +359,11 @@ const char* AppError::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::i
         } else
           goto handle_unusual;
         continue;
-      // map<string, .shared.v1.StringMap> nested_params = 9 [json_name = "nestedParams"];
+      // .shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];
       case 9:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(&nested_params_, ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<74>(ptr));
+          ptr = ctx->ParseMessage(_internal_mutable_nested_params(), ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -500,46 +466,12 @@ uint8_t* AppError::_InternalSerialize(
         8, _Internal::params(this), target, stream);
   }
 
-  // map<string, .shared.v1.StringMap> nested_params = 9 [json_name = "nestedParams"];
-  if (!this->_internal_nested_params().empty()) {
-    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::shared::v1::StringMap >::const_pointer
-        ConstPtr;
-    typedef ConstPtr SortItem;
-    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
-    struct Utf8Check {
-      static void Check(ConstPtr p) {
-        (void)p;
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-          p->first.data(), static_cast<int>(p->first.length()),
-          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-          "shared.v1.AppError.NestedParamsEntry.key");
-      }
-    };
-
-    if (stream->IsSerializationDeterministic() &&
-        this->_internal_nested_params().size() > 1) {
-      ::std::unique_ptr<SortItem[]> items(
-          new SortItem[this->_internal_nested_params().size()]);
-      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::shared::v1::StringMap >::size_type size_type;
-      size_type n = 0;
-      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, ::shared::v1::StringMap >::const_iterator
-          it = this->_internal_nested_params().begin();
-          it != this->_internal_nested_params().end(); ++it, ++n) {
-        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
-      }
-      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
-      for (size_type i = 0; i < n; i++) {
-        target = AppError_NestedParamsEntry_DoNotUse::Funcs::InternalSerialize(9, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second, target, stream);
-        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
-      }
-    } else {
-      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, ::shared::v1::StringMap >::const_iterator
-          it = this->_internal_nested_params().begin();
-          it != this->_internal_nested_params().end(); ++it) {
-        target = AppError_NestedParamsEntry_DoNotUse::Funcs::InternalSerialize(9, it->first, it->second, target, stream);
-        Utf8Check::Check(&(*it));
-      }
-    }
+  // .shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];
+  if (this->_internal_has_nested_params()) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(
+        9, _Internal::nested_params(this), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -557,15 +489,6 @@ size_t AppError::ByteSizeLong() const {
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
-
-  // map<string, .shared.v1.StringMap> nested_params = 9 [json_name = "nestedParams"];
-  total_size += 1 *
-      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->_internal_nested_params_size());
-  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, ::shared::v1::StringMap >::const_iterator
-      it = this->_internal_nested_params().begin();
-      it != this->_internal_nested_params().end(); ++it) {
-    total_size += AppError_NestedParamsEntry_DoNotUse::Funcs::ByteSizeLong(it->first, it->second);
-  }
 
   // string id = 1 [json_name = "id"];
   if (!this->_internal_id().empty()) {
@@ -609,6 +532,13 @@ size_t AppError::ByteSizeLong() const {
         *params_);
   }
 
+  // .shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];
+  if (this->_internal_has_nested_params()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *nested_params_);
+  }
+
   // int32 status_code = 5 [json_name = "statusCode"];
   if (this->_internal_status_code() != 0) {
     total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_status_code());
@@ -641,7 +571,6 @@ void AppError::MergeFrom(const AppError& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  nested_params_.MergeFrom(from.nested_params_);
   if (!from._internal_id().empty()) {
     _internal_set_id(from._internal_id());
   }
@@ -659,6 +588,9 @@ void AppError::MergeFrom(const AppError& from) {
   }
   if (from._internal_has_params()) {
     _internal_mutable_params()->::shared::v1::StringMap::MergeFrom(from._internal_params());
+  }
+  if (from._internal_has_nested_params()) {
+    _internal_mutable_nested_params()->::shared::v1::NestedStringMap::MergeFrom(from._internal_nested_params());
   }
   if (from._internal_status_code() != 0) {
     _internal_set_status_code(from._internal_status_code());
@@ -685,7 +617,6 @@ void AppError::InternalSwap(AppError* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  nested_params_.InternalSwap(&other->nested_params_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &id_, lhs_arena,
@@ -722,16 +653,13 @@ void AppError::InternalSwap(AppError* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata AppError::GetMetadata() const {
   return ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(
       &descriptor_table_shared_2fv1_2ferror_2eproto_getter, &descriptor_table_shared_2fv1_2ferror_2eproto_once,
-      file_level_metadata_shared_2fv1_2ferror_2eproto[1]);
+      file_level_metadata_shared_2fv1_2ferror_2eproto[0]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1
 }  // namespace shared
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::shared::v1::AppError_NestedParamsEntry_DoNotUse* Arena::CreateMaybeMessage< ::shared::v1::AppError_NestedParamsEntry_DoNotUse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::shared::v1::AppError_NestedParamsEntry_DoNotUse >(arena);
-}
 template<> PROTOBUF_NOINLINE ::shared::v1::AppError* Arena::CreateMaybeMessage< ::shared::v1::AppError >(Arena* arena) {
   return Arena::CreateMessageInternal< ::shared::v1::AppError >(arena);
 }

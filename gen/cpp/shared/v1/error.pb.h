@@ -30,9 +30,6 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>  // IWYU pragma: export
 #include <google/protobuf/extension_set.h>  // IWYU pragma: export
-#include <google/protobuf/map.h>  // IWYU pragma: export
-#include <google/protobuf/map_entry.h>
-#include <google/protobuf/map_field_inl.h>
 #include <google/protobuf/unknown_field_set.h>
 #include "shared/v1/types.pb.h"
 // @@protoc_insertion_point(includes)
@@ -50,7 +47,7 @@ struct TableStruct_shared_2fv1_2ferror_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[1]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -62,44 +59,15 @@ namespace v1 {
 class AppError;
 struct AppErrorDefaultTypeInternal;
 extern AppErrorDefaultTypeInternal _AppError_default_instance_;
-class AppError_NestedParamsEntry_DoNotUse;
-struct AppError_NestedParamsEntry_DoNotUseDefaultTypeInternal;
-extern AppError_NestedParamsEntry_DoNotUseDefaultTypeInternal _AppError_NestedParamsEntry_DoNotUse_default_instance_;
 }  // namespace v1
 }  // namespace shared
 PROTOBUF_NAMESPACE_OPEN
 template<> ::shared::v1::AppError* Arena::CreateMaybeMessage<::shared::v1::AppError>(Arena*);
-template<> ::shared::v1::AppError_NestedParamsEntry_DoNotUse* Arena::CreateMaybeMessage<::shared::v1::AppError_NestedParamsEntry_DoNotUse>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace shared {
 namespace v1 {
 
 // ===================================================================
-
-class AppError_NestedParamsEntry_DoNotUse : public ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<AppError_NestedParamsEntry_DoNotUse, 
-    std::string, ::shared::v1::StringMap,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> {
-public:
-  typedef ::PROTOBUF_NAMESPACE_ID::internal::MapEntry<AppError_NestedParamsEntry_DoNotUse, 
-    std::string, ::shared::v1::StringMap,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> SuperType;
-  AppError_NestedParamsEntry_DoNotUse();
-  explicit constexpr AppError_NestedParamsEntry_DoNotUse(
-      ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
-  explicit AppError_NestedParamsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena);
-  void MergeFrom(const AppError_NestedParamsEntry_DoNotUse& other);
-  static const AppError_NestedParamsEntry_DoNotUse* internal_default_instance() { return reinterpret_cast<const AppError_NestedParamsEntry_DoNotUse*>(&_AppError_NestedParamsEntry_DoNotUse_default_instance_); }
-  static bool ValidateKey(std::string* s) {
-    return ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(s->data(), static_cast<int>(s->size()), ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE, "shared.v1.AppError.NestedParamsEntry.key");
- }
-  static bool ValidateValue(void*) { return true; }
-  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
-};
-
-// -------------------------------------------------------------------
 
 class AppError final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:shared.v1.AppError) */ {
@@ -149,7 +117,7 @@ class AppError final :
                &_AppError_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    0;
 
   friend void swap(AppError& a, AppError& b) {
     a.Swap(&b);
@@ -220,37 +188,19 @@ class AppError final :
 
   // nested types ----------------------------------------------------
 
-
   // accessors -------------------------------------------------------
 
   enum : int {
-    kNestedParamsFieldNumber = 9,
     kIdFieldNumber = 1,
     kMessageFieldNumber = 2,
     kDetailedErrorFieldNumber = 3,
     kRequestIdFieldNumber = 4,
     kWhereFieldNumber = 6,
     kParamsFieldNumber = 8,
+    kNestedParamsFieldNumber = 9,
     kStatusCodeFieldNumber = 5,
     kSkipTranslationFieldNumber = 7,
   };
-  // map<string, .shared.v1.StringMap> nested_params = 9 [json_name = "nestedParams"];
-  int nested_params_size() const;
-  private:
-  int _internal_nested_params_size() const;
-  public:
-  void clear_nested_params();
-  private:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::shared::v1::StringMap >&
-      _internal_nested_params() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::shared::v1::StringMap >*
-      _internal_mutable_nested_params();
-  public:
-  const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::shared::v1::StringMap >&
-      nested_params() const;
-  ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::shared::v1::StringMap >*
-      mutable_nested_params();
-
   // string id = 1 [json_name = "id"];
   void clear_id();
   const std::string& id() const;
@@ -339,6 +289,24 @@ class AppError final :
       ::shared::v1::StringMap* params);
   ::shared::v1::StringMap* unsafe_arena_release_params();
 
+  // .shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];
+  bool has_nested_params() const;
+  private:
+  bool _internal_has_nested_params() const;
+  public:
+  void clear_nested_params();
+  const ::shared::v1::NestedStringMap& nested_params() const;
+  PROTOBUF_NODISCARD ::shared::v1::NestedStringMap* release_nested_params();
+  ::shared::v1::NestedStringMap* mutable_nested_params();
+  void set_allocated_nested_params(::shared::v1::NestedStringMap* nested_params);
+  private:
+  const ::shared::v1::NestedStringMap& _internal_nested_params() const;
+  ::shared::v1::NestedStringMap* _internal_mutable_nested_params();
+  public:
+  void unsafe_arena_set_allocated_nested_params(
+      ::shared::v1::NestedStringMap* nested_params);
+  ::shared::v1::NestedStringMap* unsafe_arena_release_nested_params();
+
   // int32 status_code = 5 [json_name = "statusCode"];
   void clear_status_code();
   int32_t status_code() const;
@@ -364,17 +332,13 @@ class AppError final :
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::MapField<
-      AppError_NestedParamsEntry_DoNotUse,
-      std::string, ::shared::v1::StringMap,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_MESSAGE> nested_params_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr detailed_error_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr request_id_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr where_;
   ::shared::v1::StringMap* params_;
+  ::shared::v1::NestedStringMap* nested_params_;
   int32_t status_code_;
   bool skip_translation_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
@@ -389,8 +353,6 @@ class AppError final :
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 // AppError
 
 // string id = 1 [json_name = "id"];
@@ -774,37 +736,95 @@ inline void AppError::set_allocated_params(::shared::v1::StringMap* params) {
   // @@protoc_insertion_point(field_set_allocated:shared.v1.AppError.params)
 }
 
-// map<string, .shared.v1.StringMap> nested_params = 9 [json_name = "nestedParams"];
-inline int AppError::_internal_nested_params_size() const {
-  return nested_params_.size();
+// .shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];
+inline bool AppError::_internal_has_nested_params() const {
+  return this != internal_default_instance() && nested_params_ != nullptr;
 }
-inline int AppError::nested_params_size() const {
-  return _internal_nested_params_size();
+inline bool AppError::has_nested_params() const {
+  return _internal_has_nested_params();
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::shared::v1::StringMap >&
-AppError::_internal_nested_params() const {
-  return nested_params_.GetMap();
+inline const ::shared::v1::NestedStringMap& AppError::_internal_nested_params() const {
+  const ::shared::v1::NestedStringMap* p = nested_params_;
+  return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::NestedStringMap&>(
+      ::shared::v1::_NestedStringMap_default_instance_);
 }
-inline const ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::shared::v1::StringMap >&
-AppError::nested_params() const {
-  // @@protoc_insertion_point(field_map:shared.v1.AppError.nested_params)
+inline const ::shared::v1::NestedStringMap& AppError::nested_params() const {
+  // @@protoc_insertion_point(field_get:shared.v1.AppError.nested_params)
   return _internal_nested_params();
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::shared::v1::StringMap >*
-AppError::_internal_mutable_nested_params() {
-  return nested_params_.MutableMap();
+inline void AppError::unsafe_arena_set_allocated_nested_params(
+    ::shared::v1::NestedStringMap* nested_params) {
+  if (GetArenaForAllocation() == nullptr) {
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(nested_params_);
+  }
+  nested_params_ = nested_params;
+  if (nested_params) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:shared.v1.AppError.nested_params)
 }
-inline ::PROTOBUF_NAMESPACE_ID::Map< std::string, ::shared::v1::StringMap >*
-AppError::mutable_nested_params() {
-  // @@protoc_insertion_point(field_mutable_map:shared.v1.AppError.nested_params)
-  return _internal_mutable_nested_params();
+inline ::shared::v1::NestedStringMap* AppError::release_nested_params() {
+  
+  ::shared::v1::NestedStringMap* temp = nested_params_;
+  nested_params_ = nullptr;
+#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
+  auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
+  temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  if (GetArenaForAllocation() == nullptr) { delete old; }
+#else  // PROTOBUF_FORCE_COPY_IN_RELEASE
+  if (GetArenaForAllocation() != nullptr) {
+    temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
+  }
+#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
+  return temp;
+}
+inline ::shared::v1::NestedStringMap* AppError::unsafe_arena_release_nested_params() {
+  // @@protoc_insertion_point(field_release:shared.v1.AppError.nested_params)
+  
+  ::shared::v1::NestedStringMap* temp = nested_params_;
+  nested_params_ = nullptr;
+  return temp;
+}
+inline ::shared::v1::NestedStringMap* AppError::_internal_mutable_nested_params() {
+  
+  if (nested_params_ == nullptr) {
+    auto* p = CreateMaybeMessage<::shared::v1::NestedStringMap>(GetArenaForAllocation());
+    nested_params_ = p;
+  }
+  return nested_params_;
+}
+inline ::shared::v1::NestedStringMap* AppError::mutable_nested_params() {
+  ::shared::v1::NestedStringMap* _msg = _internal_mutable_nested_params();
+  // @@protoc_insertion_point(field_mutable:shared.v1.AppError.nested_params)
+  return _msg;
+}
+inline void AppError::set_allocated_nested_params(::shared::v1::NestedStringMap* nested_params) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  if (message_arena == nullptr) {
+    delete reinterpret_cast< ::PROTOBUF_NAMESPACE_ID::MessageLite*>(nested_params_);
+  }
+  if (nested_params) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper<
+            ::PROTOBUF_NAMESPACE_ID::MessageLite>::GetOwningArena(
+                reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(nested_params));
+    if (message_arena != submessage_arena) {
+      nested_params = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, nested_params, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  nested_params_ = nested_params;
+  // @@protoc_insertion_point(field_set_allocated:shared.v1.AppError.nested_params)
 }
 
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
-// -------------------------------------------------------------------
-
 
 // @@protoc_insertion_point(namespace_scope)
 

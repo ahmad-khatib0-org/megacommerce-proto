@@ -26,5 +26,5 @@ message AppError {
 
   shared.v1.StringMap params = 8;
 
-  map<string, shared.v1.StringMap> nested_params = 9;
+  shared.v1.NestedStringMap nested_params = 9;
 }

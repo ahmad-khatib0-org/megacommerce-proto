@@ -85,7 +85,7 @@ proto.shared.v1.AppError.toObject = function(includeInstance, msg) {
     where: jspb.Message.getFieldWithDefault(msg, 6, ""),
     skipTranslation: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
     params: (f = msg.getParams()) && shared_v1_types_pb.StringMap.toObject(includeInstance, f),
-    nestedParamsMap: (f = msg.getNestedParamsMap()) ? f.toObject(includeInstance, proto.shared.v1.StringMap.toObject) : []
+    nestedParams: (f = msg.getNestedParams()) && shared_v1_types_pb.NestedStringMap.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -156,10 +156,9 @@ proto.shared.v1.AppError.deserializeBinaryFromReader = function(msg, reader) {
       msg.setParams(value);
       break;
     case 9:
-      var value = msg.getNestedParamsMap();
-      reader.readMessage(value, function(message, reader) {
-        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.shared.v1.StringMap.deserializeBinaryFromReader, "", new proto.shared.v1.StringMap());
-         });
+      var value = new shared_v1_types_pb.NestedStringMap;
+      reader.readMessage(value,shared_v1_types_pb.NestedStringMap.deserializeBinaryFromReader);
+      msg.setNestedParams(value);
       break;
     default:
       reader.skipField();
@@ -247,9 +246,13 @@ proto.shared.v1.AppError.serializeBinaryToWriter = function(message, writer) {
       shared_v1_types_pb.StringMap.serializeBinaryToWriter
     );
   }
-  f = message.getNestedParamsMap(true);
-  if (f && f.getLength() > 0) {
-    f.serializeBinary(9, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.shared.v1.StringMap.serializeBinaryToWriter);
+  f = message.getNestedParams();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      shared_v1_types_pb.NestedStringMap.serializeBinaryToWriter
+    );
   }
 };
 
@@ -418,25 +421,40 @@ proto.shared.v1.AppError.prototype.hasParams = function() {
 
 
 /**
- * map<string, StringMap> nested_params = 9;
- * @param {boolean=} opt_noLazyCreate Do not create the map if
- * empty, instead returning `undefined`
- * @return {!jspb.Map<string,!proto.shared.v1.StringMap>}
+ * optional NestedStringMap nested_params = 9;
+ * @return {?proto.shared.v1.NestedStringMap}
  */
-proto.shared.v1.AppError.prototype.getNestedParamsMap = function(opt_noLazyCreate) {
-  return /** @type {!jspb.Map<string,!proto.shared.v1.StringMap>} */ (
-      jspb.Message.getMapField(this, 9, opt_noLazyCreate,
-      proto.shared.v1.StringMap));
+proto.shared.v1.AppError.prototype.getNestedParams = function() {
+  return /** @type{?proto.shared.v1.NestedStringMap} */ (
+    jspb.Message.getWrapperField(this, shared_v1_types_pb.NestedStringMap, 9));
 };
 
 
 /**
- * Clears values from the map. The map will be non-null.
+ * @param {?proto.shared.v1.NestedStringMap|undefined} value
+ * @return {!proto.shared.v1.AppError} returns this
+*/
+proto.shared.v1.AppError.prototype.setNestedParams = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.shared.v1.AppError} returns this
  */
-proto.shared.v1.AppError.prototype.clearNestedParamsMap = function() {
-  this.getNestedParamsMap().clear();
-  return this;};
+proto.shared.v1.AppError.prototype.clearNestedParams = function() {
+  return this.setNestedParams(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.shared.v1.AppError.prototype.hasNestedParams = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
 
 
 goog.object.extend(exports, proto.shared.v1);

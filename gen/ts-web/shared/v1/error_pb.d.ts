@@ -30,8 +30,10 @@ export class AppError extends jspb.Message {
   hasParams(): boolean;
   clearParams(): AppError;
 
-  getNestedParamsMap(): jspb.Map<string, shared_v1_types_pb.StringMap>;
-  clearNestedParamsMap(): AppError;
+  getNestedParams(): shared_v1_types_pb.NestedStringMap | undefined;
+  setNestedParams(value?: shared_v1_types_pb.NestedStringMap): AppError;
+  hasNestedParams(): boolean;
+  clearNestedParams(): AppError;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): AppError.AsObject;
@@ -51,7 +53,7 @@ export namespace AppError {
     where: string,
     skipTranslation: boolean,
     params?: shared_v1_types_pb.StringMap.AsObject,
-    nestedParamsMap: Array<[string, shared_v1_types_pb.StringMap.AsObject]>,
+    nestedParams?: shared_v1_types_pb.NestedStringMap.AsObject,
   }
 }
 
