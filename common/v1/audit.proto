@@ -5,7 +5,7 @@ package common.v1;
 import "google/protobuf/any.proto";
 
 option cc_enable_arenas = true;
-option go_package = "common/v1;v1";
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/common/v1;v1";
 option java_outer_classname = "AuditProto";
 option java_package = "org.megacommerce.common.v1";
 

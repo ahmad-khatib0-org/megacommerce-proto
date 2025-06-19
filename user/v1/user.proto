@@ -5,7 +5,7 @@ package user.v1;
 import "user/v1/supplier.proto";
 
 option cc_enable_arenas = true;
-option go_package = "user/v1;v1";
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/user/v1;v1";
 option java_outer_classname = "UserProto";
 option java_package = "org.megacommerce.user.v1";
 

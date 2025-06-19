@@ -31,8 +31,8 @@ const file_common_v1_common_proto_rawDesc = "" +
 	"\fConfigUpdate\x12\x1e.common.v1.ConfigUpdateRequest\x1a\x1f.common.v1.ConfigUpdateResponse\x12W\n" +
 	"\x0eConfigListener\x12 .common.v1.ConfigListenerRequest\x1a!.common.v1.ConfigListenerResponse0\x01\x12X\n" +
 	"\x0fTranslationsGet\x12!.common.v1.TranslationsGetRequest\x1a\".common.v1.TranslationsGetResponse\x12m\n" +
-	"\x16TranslationsForLangGet\x12(.common.v1.TranslationsForLangGetRequest\x1a).common.v1.TranslationsForLangGetResponseB:\n" +
-	"\x1aorg.megacommerce.common.v1B\vCommonProtoZ\fcommon/v1;v1\xf8\x01\x01b\x06proto3"
+	"\x16TranslationsForLangGet\x12(.common.v1.TranslationsForLangGetRequest\x1a).common.v1.TranslationsForLangGetResponseBq\n" +
+	"\x1aorg.megacommerce.common.v1B\vCommonProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/common/v1;v1\xf8\x01\x01b\x06proto3"
 
 var file_common_v1_common_proto_goTypes = []any{
 	(*PingRequest)(nil),                    // 0: common.v1.PingRequest

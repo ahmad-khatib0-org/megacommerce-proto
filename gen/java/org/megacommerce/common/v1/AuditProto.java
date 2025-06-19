@@ -5409,9 +5409,10 @@ public final class AuditProto {
       "_forwarded_for\030\005 \001(\tR\rxForwardedFor\"%\n\017A" +
       "uditRecordMeta\022\022\n\004path\030\001 \001(\tR\004path\"K\n\017Au" +
       "ditEventError\022\031\n\010api_path\030\001 \001(\tR\007apiPath" +
-      "\022\035\n\ncluster_id\030\002 \001(\tR\tclusterIdB9\n\032org.m" +
-      "egacommerce.common.v1B\nAuditProtoZ\014commo" +
-      "n/v1;v1\370\001\001b\006proto3"
+      "\022\035\n\ncluster_id\030\002 \001(\tR\tclusterIdBp\n\032org.m" +
+      "egacommerce.common.v1B\nAuditProtoZCgithu" +
+      "b.com/ahmad-khatib0-org/megacommerce-pro" +
+      "to/gen/go/common/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

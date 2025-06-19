@@ -185,16 +185,17 @@ const char descriptor_table_protodef_common_2fv1_2faudit_2eproto[] PROTOBUF_SECT
   "_forwarded_for\030\005 \001(\tR\rxForwardedFor\"%\n\017A"
   "uditRecordMeta\022\022\n\004path\030\001 \001(\tR\004path\"K\n\017Au"
   "ditEventError\022\031\n\010api_path\030\001 \001(\tR\007apiPath"
-  "\022\035\n\ncluster_id\030\002 \001(\tR\tclusterIdB9\n\032org.m"
-  "egacommerce.common.v1B\nAuditProtoZ\014commo"
-  "n/v1;v1\370\001\001b\006proto3"
+  "\022\035\n\ncluster_id\030\002 \001(\tR\tclusterIdBp\n\032org.m"
+  "egacommerce.common.v1B\nAuditProtoZCgithu"
+  "b.com/ahmad-khatib0-org/megacommerce-pro"
+  "to/gen/go/common/v1;v1\370\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_common_2fv1_2faudit_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fany_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2fv1_2faudit_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fv1_2faudit_2eproto = {
-  false, false, 938, descriptor_table_protodef_common_2fv1_2faudit_2eproto, "common/v1/audit.proto", 
+  false, false, 993, descriptor_table_protodef_common_2fv1_2faudit_2eproto, "common/v1/audit.proto", 
   &descriptor_table_common_2fv1_2faudit_2eproto_once, descriptor_table_common_2fv1_2faudit_2eproto_deps, 1, 5,
   schemas, file_default_instances, TableStruct_common_2fv1_2faudit_2eproto::offsets,
   file_level_metadata_common_2fv1_2faudit_2eproto, file_level_enum_descriptors_common_2fv1_2faudit_2eproto, file_level_service_descriptors_common_2fv1_2faudit_2eproto,

@@ -354,9 +354,9 @@ const file_common_v1_trans_proto_rawDesc = "" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x0e\n" +
 	"\x02tr\x18\x02 \x01(\tR\x02tr\"J\n" +
 	"\x13TranslationElements\x123\n" +
-	"\x05trans\x18\x01 \x03(\v2\x1d.common.v1.TranslationElementR\x05transB9\n" +
+	"\x05trans\x18\x01 \x03(\v2\x1d.common.v1.TranslationElementR\x05transBp\n" +
 	"\x1aorg.megacommerce.common.v1B\n" +
-	"TransProtoZ\fcommon/v1;v1\xf8\x01\x01b\x06proto3"
+	"TransProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/common/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
 	file_common_v1_trans_proto_rawDescOnce sync.Once

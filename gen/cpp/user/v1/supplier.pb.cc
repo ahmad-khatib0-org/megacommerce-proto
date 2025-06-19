@@ -97,8 +97,10 @@ const char descriptor_table_protodef_user_2fv1_2fsupplier_2eproto[] PROTOBUF_SEC
   "p\"\177\n\026SupplierCreateResponse\022,\n\004data\030\001 \001("
   "\0132\026.google.protobuf.EmptyH\000R\004data\022+\n\005err"
   "or\030\002 \001(\0132\023.common.v1.AppErrorH\000R\005errorB\n"
-  "\n\010responseB8\n\030org.megacommerce.user.v1B\r"
-  "SupplierProtoZ\nuser/v1;v1\370\001\001b\006proto3"
+  "\n\010responseBo\n\030org.megacommerce.user.v1B\r"
+  "SupplierProtoZAgithub.com/ahmad-khatib0-"
+  "org/megacommerce-proto/gen/go/user/v1;v1"
+  "\370\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_user_2fv1_2fsupplier_2eproto_deps[2] = {
   &::descriptor_table_common_2fv1_2ferror_2eproto,
@@ -106,7 +108,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_user_2fv1_2fsupplier_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_user_2fv1_2fsupplier_2eproto = {
-  false, false, 476, descriptor_table_protodef_user_2fv1_2fsupplier_2eproto, "user/v1/supplier.proto", 
+  false, false, 531, descriptor_table_protodef_user_2fv1_2fsupplier_2eproto, "user/v1/supplier.proto", 
   &descriptor_table_user_2fv1_2fsupplier_2eproto_once, descriptor_table_user_2fv1_2fsupplier_2eproto_deps, 2, 2,
   schemas, file_default_instances, TableStruct_user_2fv1_2fsupplier_2eproto::offsets,
   file_level_metadata_user_2fv1_2fsupplier_2eproto, file_level_enum_descriptors_user_2fv1_2fsupplier_2eproto, file_level_service_descriptors_user_2fv1_2fsupplier_2eproto,

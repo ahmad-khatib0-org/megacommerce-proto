@@ -197,9 +197,9 @@ const file_common_v1_types_proto_rawDesc = "" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12*\n" +
 	"\x05value\x18\x02 \x01(\v2\x14.common.v1.StringMapR\x05value:\x028\x01\"\r\n" +
 	"\vPingRequest\"\x0e\n" +
-	"\fPingResponseB9\n" +
+	"\fPingResponseBp\n" +
 	"\x1aorg.megacommerce.common.v1B\n" +
-	"TypesProtoZ\fcommon/v1;v1\xf8\x01\x01b\x06proto3"
+	"TypesProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/common/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
 	file_common_v1_types_proto_rawDescOnce sync.Once

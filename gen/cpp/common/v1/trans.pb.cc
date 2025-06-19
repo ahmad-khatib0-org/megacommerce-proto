@@ -201,16 +201,17 @@ const char descriptor_table_protodef_common_2fv1_2ftrans_2eproto[] PROTOBUF_SECT
   "ppErrorH\000R\005errorB\n\n\010response\"4\n\022Translat"
   "ionElement\022\016\n\002id\030\001 \001(\tR\002id\022\016\n\002tr\030\002 \001(\tR\002"
   "tr\"J\n\023TranslationElements\0223\n\005trans\030\001 \003(\013"
-  "2\035.common.v1.TranslationElementR\005transB9"
+  "2\035.common.v1.TranslationElementR\005transBp"
   "\n\032org.megacommerce.common.v1B\nTransProto"
-  "Z\014common/v1;v1\370\001\001b\006proto3"
+  "ZCgithub.com/ahmad-khatib0-org/megacomme"
+  "rce-proto/gen/go/common/v1;v1\370\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_common_2fv1_2ftrans_2eproto_deps[1] = {
   &::descriptor_table_common_2fv1_2ferror_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2fv1_2ftrans_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fv1_2ftrans_2eproto = {
-  false, false, 705, descriptor_table_protodef_common_2fv1_2ftrans_2eproto, "common/v1/trans.proto", 
+  false, false, 760, descriptor_table_protodef_common_2fv1_2ftrans_2eproto, "common/v1/trans.proto", 
   &descriptor_table_common_2fv1_2ftrans_2eproto_once, descriptor_table_common_2fv1_2ftrans_2eproto_deps, 1, 7,
   schemas, file_default_instances, TableStruct_common_2fv1_2ftrans_2eproto::offsets,
   file_level_metadata_common_2fv1_2ftrans_2eproto, file_level_enum_descriptors_common_2fv1_2ftrans_2eproto, file_level_service_descriptors_common_2fv1_2ftrans_2eproto,

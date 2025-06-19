@@ -2295,9 +2295,10 @@ public final class TypesProto {
       "v1.NestedStringMap.DataEntryR\004data\032M\n\tDa" +
       "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\013" +
       "2\024.common.v1.StringMapR\005value:\0028\001\"\r\n\013Pin" +
-      "gRequest\"\016\n\014PingResponseB9\n\032org.megacomm" +
-      "erce.common.v1B\nTypesProtoZ\014common/v1;v1" +
-      "\370\001\001b\006proto3"
+      "gRequest\"\016\n\014PingResponseBp\n\032org.megacomm" +
+      "erce.common.v1B\nTypesProtoZCgithub.com/a" +
+      "hmad-khatib0-org/megacommerce-proto/gen/" +
+      "go/common/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

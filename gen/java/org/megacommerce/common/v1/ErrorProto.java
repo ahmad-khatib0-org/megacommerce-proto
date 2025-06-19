@@ -1703,8 +1703,10 @@ public final class ErrorProto {
       "e\030\005 \001(\005R\nstatusCode\022\024\n\005where\030\006 \001(\tR\005wher" +
       "e\022)\n\020skip_translation\030\007 \001(\010R\017skipTransla" +
       "tion\022,\n\006params\030\010 \001(\0132\024.google.protobuf.A" +
-      "nyR\006paramsB9\n\032org.megacommerce.common.v1" +
-      "B\nErrorProtoZ\014common/v1;v1\370\001\001b\006proto3"
+      "nyR\006paramsBp\n\032org.megacommerce.common.v1" +
+      "B\nErrorProtoZCgithub.com/ahmad-khatib0-o" +
+      "rg/megacommerce-proto/gen/go/common/v1;v" +
+      "1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -53777,9 +53777,10 @@ public final class ConfigProto {
       "\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005err" +
       "or\030\002 \001(\0132\023.common.v1.AppErrorH\000R\005errorB\n" +
       "\n\010response\"4\n\025ConfigListenerRequest\022\033\n\tc" +
-      "lient_id\030\001 \001(\tR\010clientIdB:\n\032org.megacomm" +
-      "erce.common.v1B\013ConfigProtoZ\014common/v1;v" +
-      "1\370\001\001b\006proto3"
+      "lient_id\030\001 \001(\tR\010clientIdBq\n\032org.megacomm" +
+      "erce.common.v1B\013ConfigProtoZCgithub.com/" +
+      "ahmad-khatib0-org/megacommerce-proto/gen" +
+      "/go/common/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

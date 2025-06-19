@@ -143,9 +143,9 @@ const file_common_v1_error_proto_rawDesc = "" +
 	"statusCode\x12\x14\n" +
 	"\x05where\x18\x06 \x01(\tR\x05where\x12)\n" +
 	"\x10skip_translation\x18\a \x01(\bR\x0fskipTranslation\x12,\n" +
-	"\x06params\x18\b \x01(\v2\x14.google.protobuf.AnyR\x06paramsB9\n" +
+	"\x06params\x18\b \x01(\v2\x14.google.protobuf.AnyR\x06paramsBp\n" +
 	"\x1aorg.megacommerce.common.v1B\n" +
-	"ErrorProtoZ\fcommon/v1;v1\xf8\x01\x01b\x06proto3"
+	"ErrorProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/common/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
 	file_common_v1_error_proto_rawDescOnce sync.Once

@@ -1946,16 +1946,17 @@ const char descriptor_table_protodef_common_2fv1_2fconfig_2eproto[] PROTOBUF_SEC
   "\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005err"
   "or\030\002 \001(\0132\023.common.v1.AppErrorH\000R\005errorB\n"
   "\n\010response\"4\n\025ConfigListenerRequest\022\033\n\tc"
-  "lient_id\030\001 \001(\tR\010clientIdB:\n\032org.megacomm"
-  "erce.common.v1B\013ConfigProtoZ\014common/v1;v"
-  "1\370\001\001b\006proto3"
+  "lient_id\030\001 \001(\tR\010clientIdBq\n\032org.megacomm"
+  "erce.common.v1B\013ConfigProtoZCgithub.com/"
+  "ahmad-khatib0-org/megacommerce-proto/gen"
+  "/go/common/v1;v1\370\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_common_2fv1_2fconfig_2eproto_deps[1] = {
   &::descriptor_table_common_2fv1_2ferror_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2fv1_2fconfig_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fv1_2fconfig_2eproto = {
-  false, false, 21492, descriptor_table_protodef_common_2fv1_2fconfig_2eproto, "common/v1/config.proto", 
+  false, false, 21547, descriptor_table_protodef_common_2fv1_2fconfig_2eproto, "common/v1/config.proto", 
   &descriptor_table_common_2fv1_2fconfig_2eproto_once, descriptor_table_common_2fv1_2fconfig_2eproto_deps, 1, 29,
   schemas, file_default_instances, TableStruct_common_2fv1_2fconfig_2eproto::offsets,
   file_level_metadata_common_2fv1_2fconfig_2eproto, file_level_enum_descriptors_common_2fv1_2fconfig_2eproto, file_level_service_descriptors_common_2fv1_2fconfig_2eproto,

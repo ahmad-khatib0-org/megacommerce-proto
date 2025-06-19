@@ -76,15 +76,17 @@ const char descriptor_table_protodef_common_2fv1_2ferror_2eproto[] PROTOBUF_SECT
   "e\030\005 \001(\005R\nstatusCode\022\024\n\005where\030\006 \001(\tR\005wher"
   "e\022)\n\020skip_translation\030\007 \001(\010R\017skipTransla"
   "tion\022,\n\006params\030\010 \001(\0132\024.google.protobuf.A"
-  "nyR\006paramsB9\n\032org.megacommerce.common.v1"
-  "B\nErrorProtoZ\014common/v1;v1\370\001\001b\006proto3"
+  "nyR\006paramsBp\n\032org.megacommerce.common.v1"
+  "B\nErrorProtoZCgithub.com/ahmad-khatib0-o"
+  "rg/megacommerce-proto/gen/go/common/v1;v"
+  "1\370\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_common_2fv1_2ferror_2eproto_deps[1] = {
   &::descriptor_table_google_2fprotobuf_2fany_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2fv1_2ferror_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fv1_2ferror_2eproto = {
-  false, false, 397, descriptor_table_protodef_common_2fv1_2ferror_2eproto, "common/v1/error.proto", 
+  false, false, 452, descriptor_table_protodef_common_2fv1_2ferror_2eproto, "common/v1/error.proto", 
   &descriptor_table_common_2fv1_2ferror_2eproto_once, descriptor_table_common_2fv1_2ferror_2eproto_deps, 1, 1,
   schemas, file_default_instances, TableStruct_common_2fv1_2ferror_2eproto::offsets,
   file_level_metadata_common_2fv1_2ferror_2eproto, file_level_enum_descriptors_common_2fv1_2ferror_2eproto, file_level_service_descriptors_common_2fv1_2ferror_2eproto,

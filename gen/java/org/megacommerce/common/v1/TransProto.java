@@ -4330,9 +4330,10 @@ public final class TransProto {
       "ppErrorH\000R\005errorB\n\n\010response\"4\n\022Translat" +
       "ionElement\022\016\n\002id\030\001 \001(\tR\002id\022\016\n\002tr\030\002 \001(\tR\002" +
       "tr\"J\n\023TranslationElements\0223\n\005trans\030\001 \003(\013" +
-      "2\035.common.v1.TranslationElementR\005transB9" +
+      "2\035.common.v1.TranslationElementR\005transBp" +
       "\n\032org.megacommerce.common.v1B\nTransProto" +
-      "Z\014common/v1;v1\370\001\001b\006proto3"
+      "ZCgithub.com/ahmad-khatib0-org/megacomme" +
+      "rce-proto/gen/go/common/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

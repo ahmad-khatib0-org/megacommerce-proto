@@ -7,7 +7,7 @@
 package v1
 
 import (
-	v1 "common/v1"
+	v1 "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/common/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
@@ -208,9 +208,8 @@ const file_user_v1_supplier_proto_rawDesc = "" +
 	"\x04data\x18\x01 \x01(\v2\x16.google.protobuf.EmptyH\x00R\x04data\x12+\n" +
 	"\x05error\x18\x02 \x01(\v2\x13.common.v1.AppErrorH\x00R\x05errorB\n" +
 	"\n" +
-	"\bresponseB8\n" +
-	"\x18org.megacommerce.user.v1B\rSupplierProtoZ\n" +
-	"user/v1;v1\xf8\x01\x01b\x06proto3"
+	"\bresponseBo\n" +
+	"\x18org.megacommerce.user.v1B\rSupplierProtoZAgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/user/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
 	file_user_v1_supplier_proto_rawDescOnce sync.Once

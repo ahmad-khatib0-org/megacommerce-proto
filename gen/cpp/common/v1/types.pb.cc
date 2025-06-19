@@ -167,13 +167,14 @@ const char descriptor_table_protodef_common_2fv1_2ftypes_2eproto[] PROTOBUF_SECT
   "v1.NestedStringMap.DataEntryR\004data\032M\n\tDa"
   "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\013"
   "2\024.common.v1.StringMapR\005value:\0028\001\"\r\n\013Pin"
-  "gRequest\"\016\n\014PingResponseB9\n\032org.megacomm"
-  "erce.common.v1B\nTypesProtoZ\014common/v1;v1"
-  "\370\001\001b\006proto3"
+  "gRequest\"\016\n\014PingResponseBp\n\032org.megacomm"
+  "erce.common.v1B\nTypesProtoZCgithub.com/a"
+  "hmad-khatib0-org/megacommerce-proto/gen/"
+  "go/common/v1;v1\370\001\001b\006proto3"
   ;
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2fv1_2ftypes_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fv1_2ftypes_2eproto = {
-  false, false, 411, descriptor_table_protodef_common_2fv1_2ftypes_2eproto, "common/v1/types.proto", 
+  false, false, 466, descriptor_table_protodef_common_2fv1_2ftypes_2eproto, "common/v1/types.proto", 
   &descriptor_table_common_2fv1_2ftypes_2eproto_once, nullptr, 0, 6,
   schemas, file_default_instances, TableStruct_common_2fv1_2ftypes_2eproto::offsets,
   file_level_metadata_common_2fv1_2ftypes_2eproto, file_level_enum_descriptors_common_2fv1_2ftypes_2eproto, file_level_service_descriptors_common_2fv1_2ftypes_2eproto,

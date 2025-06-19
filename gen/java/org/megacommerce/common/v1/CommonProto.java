@@ -38,9 +38,10 @@ public final class CommonProto {
       ".common.v1.TranslationsGetResponse\022m\n\026Tr" +
       "anslationsForLangGet\022(.common.v1.Transla" +
       "tionsForLangGetRequest\032).common.v1.Trans" +
-      "lationsForLangGetResponseB:\n\032org.megacom" +
-      "merce.common.v1B\013CommonProtoZ\014common/v1;" +
-      "v1\370\001\001b\006proto3"
+      "lationsForLangGetResponseBq\n\032org.megacom" +
+      "merce.common.v1B\013CommonProtoZCgithub.com" +
+      "/ahmad-khatib0-org/megacommerce-proto/ge" +
+      "n/go/common/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -42,9 +42,10 @@ const char descriptor_table_protodef_common_2fv1_2fcommon_2eproto[] PROTOBUF_SEC
   ".common.v1.TranslationsGetResponse\022m\n\026Tr"
   "anslationsForLangGet\022(.common.v1.Transla"
   "tionsForLangGetRequest\032).common.v1.Trans"
-  "lationsForLangGetResponseB:\n\032org.megacom"
-  "merce.common.v1B\013CommonProtoZ\014common/v1;"
-  "v1\370\001\001b\006proto3"
+  "lationsForLangGetResponseBq\n\032org.megacom"
+  "merce.common.v1B\013CommonProtoZCgithub.com"
+  "/ahmad-khatib0-org/megacommerce-proto/ge"
+  "n/go/common/v1;v1\370\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_common_2fv1_2fcommon_2eproto_deps[3] = {
   &::descriptor_table_common_2fv1_2fconfig_2eproto,
@@ -53,7 +54,7 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2fv1_2fcommon_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fv1_2fcommon_2eproto = {
-  false, false, 693, descriptor_table_protodef_common_2fv1_2fcommon_2eproto, "common/v1/common.proto", 
+  false, false, 748, descriptor_table_protodef_common_2fv1_2fcommon_2eproto, "common/v1/common.proto", 
   &descriptor_table_common_2fv1_2fcommon_2eproto_once, descriptor_table_common_2fv1_2fcommon_2eproto_deps, 3, 0,
   schemas, file_default_instances, TableStruct_common_2fv1_2fcommon_2eproto::offsets,
   nullptr, file_level_enum_descriptors_common_2fv1_2fcommon_2eproto, file_level_service_descriptors_common_2fv1_2fcommon_2eproto,

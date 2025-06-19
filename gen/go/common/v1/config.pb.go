@@ -4033,8 +4033,8 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\n" +
 	"\bresponse\"4\n" +
 	"\x15ConfigListenerRequest\x12\x1b\n" +
-	"\tclient_id\x18\x01 \x01(\tR\bclientIdB:\n" +
-	"\x1aorg.megacommerce.common.v1B\vConfigProtoZ\fcommon/v1;v1\xf8\x01\x01b\x06proto3"
+	"\tclient_id\x18\x01 \x01(\tR\bclientIdBq\n" +
+	"\x1aorg.megacommerce.common.v1B\vConfigProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/common/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
 	file_common_v1_config_proto_rawDescOnce sync.Once
