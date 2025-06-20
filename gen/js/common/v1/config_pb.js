@@ -5112,7 +5112,7 @@ proto.common.v1.ConfigPassword.prototype.toObject = function(opt_includeInstance
 proto.common.v1.ConfigPassword.toObject = function(includeInstance, msg) {
   var f, obj = {
     minimumLength: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    maximumLenght: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    maximumLength: jspb.Message.getFieldWithDefault(msg, 2, 0),
     lowercase: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
     number: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
     uppercase: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
@@ -5160,7 +5160,7 @@ proto.common.v1.ConfigPassword.deserializeBinaryFromReader = function(msg, reade
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setMaximumLenght(value);
+      msg.setMaximumLength(value);
       break;
     case 3:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -5300,10 +5300,10 @@ proto.common.v1.ConfigPassword.prototype.hasMinimumLength = function() {
 
 
 /**
- * optional int32 maximum_lenght = 2;
+ * optional int32 maximum_length = 2;
  * @return {number}
  */
-proto.common.v1.ConfigPassword.prototype.getMaximumLenght = function() {
+proto.common.v1.ConfigPassword.prototype.getMaximumLength = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -5312,7 +5312,7 @@ proto.common.v1.ConfigPassword.prototype.getMaximumLenght = function() {
  * @param {number} value
  * @return {!proto.common.v1.ConfigPassword} returns this
  */
-proto.common.v1.ConfigPassword.prototype.setMaximumLenght = function(value) {
+proto.common.v1.ConfigPassword.prototype.setMaximumLength = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -5321,7 +5321,7 @@ proto.common.v1.ConfigPassword.prototype.setMaximumLenght = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigPassword} returns this
  */
-proto.common.v1.ConfigPassword.prototype.clearMaximumLenght = function() {
+proto.common.v1.ConfigPassword.prototype.clearMaximumLength = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -5330,7 +5330,7 @@ proto.common.v1.ConfigPassword.prototype.clearMaximumLenght = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigPassword.prototype.hasMaximumLenght = function() {
+proto.common.v1.ConfigPassword.prototype.hasMaximumLength = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 

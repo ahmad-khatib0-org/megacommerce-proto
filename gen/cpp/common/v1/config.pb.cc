@@ -187,7 +187,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT ConfigSqlDefaultTypeInternal _C
 constexpr ConfigPassword::ConfigPassword(
   ::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized)
   : minimum_length_(0)
-  , maximum_lenght_(0)
+  , maximum_length_(0)
   , lowercase_(false)
   , number_(false)
   , uppercase_(false)
@@ -840,7 +840,7 @@ const uint32_t TableStruct_common_2fv1_2fconfig_2eproto::offsets[] PROTOBUF_SECT
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::common::v1::ConfigPassword, minimum_length_),
-  PROTOBUF_FIELD_OFFSET(::common::v1::ConfigPassword, maximum_lenght_),
+  PROTOBUF_FIELD_OFFSET(::common::v1::ConfigPassword, maximum_length_),
   PROTOBUF_FIELD_OFFSET(::common::v1::ConfigPassword, lowercase_),
   PROTOBUF_FIELD_OFFSET(::common::v1::ConfigPassword, number_),
   PROTOBUF_FIELD_OFFSET(::common::v1::ConfigPassword, uppercase_),
@@ -1576,13 +1576,13 @@ const char descriptor_table_protodef_common_2fv1_2fconfig_2eproto[] PROTOBUF_SEC
   "_keyB\020\n\016_query_timeoutB\032\n\030_disable_datab"
   "ase_search\"\212\003\n\016ConfigPassword\022*\n\016minimum"
   "_length\030\001 \001(\005H\000R\rminimumLength\210\001\001\022*\n\016max"
-  "imum_lenght\030\002 \001(\005H\001R\rmaximumLenght\210\001\001\022!\n"
+  "imum_length\030\002 \001(\005H\001R\rmaximumLength\210\001\001\022!\n"
   "\tlowercase\030\003 \001(\010H\002R\tlowercase\210\001\001\022\033\n\006numb"
   "er\030\004 \001(\010H\003R\006number\210\001\001\022!\n\tuppercase\030\005 \001(\010"
   "H\004R\tuppercase\210\001\001\022\033\n\006symbol\030\006 \001(\010H\005R\006symb"
   "ol\210\001\001\0221\n\022enable_forgot_link\030\007 \001(\010H\006R\020ena"
   "bleForgotLink\210\001\001B\021\n\017_minimum_lengthB\021\n\017_"
-  "maximum_lenghtB\014\n\n_lowercaseB\t\n\007_numberB"
+  "maximum_lengthB\014\n\n_lowercaseB\t\n\007_numberB"
   "\014\n\n_uppercaseB\t\n\007_symbolB\025\n\023_enable_forg"
   "ot_link\"\340\017\n\nConfigFile\022;\n\027enable_file_at"
   "tachments\030\001 \001(\010H\000R\025enableFileAttachments"
@@ -6160,7 +6160,7 @@ class ConfigPassword::_Internal {
   static void set_has_minimum_length(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
-  static void set_has_maximum_lenght(HasBits* has_bits) {
+  static void set_has_maximum_length(HasBits* has_bits) {
     (*has_bits)[0] |= 2u;
   }
   static void set_has_lowercase(HasBits* has_bits) {
@@ -6259,11 +6259,11 @@ const char* ConfigPassword::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE
         } else
           goto handle_unusual;
         continue;
-      // optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];
+      // optional int32 maximum_length = 2 [json_name = "maximumLength"];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _Internal::set_has_maximum_lenght(&has_bits);
-          maximum_lenght_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _Internal::set_has_maximum_length(&has_bits);
+          maximum_length_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -6349,10 +6349,10 @@ uint8_t* ConfigPassword::_InternalSerialize(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(1, this->_internal_minimum_length(), target);
   }
 
-  // optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];
-  if (_internal_has_maximum_lenght()) {
+  // optional int32 maximum_length = 2 [json_name = "maximumLength"];
+  if (_internal_has_maximum_length()) {
     target = stream->EnsureSpace(target);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_maximum_lenght(), target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_maximum_length(), target);
   }
 
   // optional bool lowercase = 3 [json_name = "lowercase"];
@@ -6408,9 +6408,9 @@ size_t ConfigPassword::ByteSizeLong() const {
       total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_minimum_length());
     }
 
-    // optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];
+    // optional int32 maximum_length = 2 [json_name = "maximumLength"];
     if (cached_has_bits & 0x00000002u) {
-      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_maximum_lenght());
+      total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_maximum_length());
     }
 
     // optional bool lowercase = 3 [json_name = "lowercase"];
@@ -6467,7 +6467,7 @@ void ConfigPassword::MergeFrom(const ConfigPassword& from) {
       minimum_length_ = from.minimum_length_;
     }
     if (cached_has_bits & 0x00000002u) {
-      maximum_lenght_ = from.maximum_lenght_;
+      maximum_length_ = from.maximum_length_;
     }
     if (cached_has_bits & 0x00000004u) {
       lowercase_ = from.lowercase_;

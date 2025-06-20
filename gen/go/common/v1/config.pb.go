@@ -901,7 +901,7 @@ func (x *ConfigSql) GetDisableDatabaseSearch() bool {
 type ConfigPassword struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
 	MinimumLength    *int32                 `protobuf:"varint,1,opt,name=minimum_length,json=minimumLength,proto3,oneof" json:"minimum_length,omitempty"`
-	MaximumLenght    *int32                 `protobuf:"varint,2,opt,name=maximum_lenght,json=maximumLenght,proto3,oneof" json:"maximum_lenght,omitempty"`
+	MaximumLength    *int32                 `protobuf:"varint,2,opt,name=maximum_length,json=maximumLength,proto3,oneof" json:"maximum_length,omitempty"`
 	Lowercase        *bool                  `protobuf:"varint,3,opt,name=lowercase,proto3,oneof" json:"lowercase,omitempty"`
 	Number           *bool                  `protobuf:"varint,4,opt,name=number,proto3,oneof" json:"number,omitempty"`
 	Uppercase        *bool                  `protobuf:"varint,5,opt,name=uppercase,proto3,oneof" json:"uppercase,omitempty"`
@@ -948,9 +948,9 @@ func (x *ConfigPassword) GetMinimumLength() int32 {
 	return 0
 }
 
-func (x *ConfigPassword) GetMaximumLenght() int32 {
-	if x != nil && x.MaximumLenght != nil {
-		return *x.MaximumLenght
+func (x *ConfigPassword) GetMaximumLength() int32 {
+	if x != nil && x.MaximumLength != nil {
+		return *x.MaximumLength
 	}
 	return 0
 }
@@ -3586,14 +3586,14 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x18_disable_database_search\"\x8a\x03\n" +
 	"\x0eConfigPassword\x12*\n" +
 	"\x0eminimum_length\x18\x01 \x01(\x05H\x00R\rminimumLength\x88\x01\x01\x12*\n" +
-	"\x0emaximum_lenght\x18\x02 \x01(\x05H\x01R\rmaximumLenght\x88\x01\x01\x12!\n" +
+	"\x0emaximum_length\x18\x02 \x01(\x05H\x01R\rmaximumLength\x88\x01\x01\x12!\n" +
 	"\tlowercase\x18\x03 \x01(\bH\x02R\tlowercase\x88\x01\x01\x12\x1b\n" +
 	"\x06number\x18\x04 \x01(\bH\x03R\x06number\x88\x01\x01\x12!\n" +
 	"\tuppercase\x18\x05 \x01(\bH\x04R\tuppercase\x88\x01\x01\x12\x1b\n" +
 	"\x06symbol\x18\x06 \x01(\bH\x05R\x06symbol\x88\x01\x01\x121\n" +
 	"\x12enable_forgot_link\x18\a \x01(\bH\x06R\x10enableForgotLink\x88\x01\x01B\x11\n" +
 	"\x0f_minimum_lengthB\x11\n" +
-	"\x0f_maximum_lenghtB\f\n" +
+	"\x0f_maximum_lengthB\f\n" +
 	"\n" +
 	"_lowercaseB\t\n" +
 	"\a_numberB\f\n" +

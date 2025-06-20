@@ -110,7 +110,7 @@ message ConfigSql {
 
 message ConfigPassword {
   optional int32 minimum_length = 1;
-  optional int32 maximum_lenght = 2;
+  optional int32 maximum_length = 2;
   optional bool lowercase = 3;
   optional bool number = 4;
   optional bool uppercase = 5;

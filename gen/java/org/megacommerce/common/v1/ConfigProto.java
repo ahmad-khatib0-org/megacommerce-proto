@@ -12998,15 +12998,15 @@ public final class ConfigProto {
     int getMinimumLength();
 
     /**
-     * <code>optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];</code>
-     * @return Whether the maximumLenght field is set.
+     * <code>optional int32 maximum_length = 2 [json_name = "maximumLength"];</code>
+     * @return Whether the maximumLength field is set.
      */
-    boolean hasMaximumLenght();
+    boolean hasMaximumLength();
     /**
-     * <code>optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];</code>
-     * @return The maximumLenght.
+     * <code>optional int32 maximum_length = 2 [json_name = "maximumLength"];</code>
+     * @return The maximumLength.
      */
-    int getMaximumLenght();
+    int getMaximumLength();
 
     /**
      * <code>optional bool lowercase = 3 [json_name = "lowercase"];</code>
@@ -13123,23 +13123,23 @@ public final class ConfigProto {
       return minimumLength_;
     }
 
-    public static final int MAXIMUM_LENGHT_FIELD_NUMBER = 2;
-    private int maximumLenght_;
+    public static final int MAXIMUM_LENGTH_FIELD_NUMBER = 2;
+    private int maximumLength_;
     /**
-     * <code>optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];</code>
-     * @return Whether the maximumLenght field is set.
+     * <code>optional int32 maximum_length = 2 [json_name = "maximumLength"];</code>
+     * @return Whether the maximumLength field is set.
      */
     @java.lang.Override
-    public boolean hasMaximumLenght() {
+    public boolean hasMaximumLength() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];</code>
-     * @return The maximumLenght.
+     * <code>optional int32 maximum_length = 2 [json_name = "maximumLength"];</code>
+     * @return The maximumLength.
      */
     @java.lang.Override
-    public int getMaximumLenght() {
-      return maximumLenght_;
+    public int getMaximumLength() {
+      return maximumLength_;
     }
 
     public static final int LOWERCASE_FIELD_NUMBER = 3;
@@ -13255,7 +13255,7 @@ public final class ConfigProto {
         output.writeInt32(1, minimumLength_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeInt32(2, maximumLenght_);
+        output.writeInt32(2, maximumLength_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeBool(3, lowercase_);
@@ -13287,7 +13287,7 @@ public final class ConfigProto {
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, maximumLenght_);
+          .computeInt32Size(2, maximumLength_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
@@ -13329,10 +13329,10 @@ public final class ConfigProto {
         if (getMinimumLength()
             != other.getMinimumLength()) return false;
       }
-      if (hasMaximumLenght() != other.hasMaximumLenght()) return false;
-      if (hasMaximumLenght()) {
-        if (getMaximumLenght()
-            != other.getMaximumLenght()) return false;
+      if (hasMaximumLength() != other.hasMaximumLength()) return false;
+      if (hasMaximumLength()) {
+        if (getMaximumLength()
+            != other.getMaximumLength()) return false;
       }
       if (hasLowercase() != other.hasLowercase()) return false;
       if (hasLowercase()) {
@@ -13374,9 +13374,9 @@ public final class ConfigProto {
         hash = (37 * hash) + MINIMUM_LENGTH_FIELD_NUMBER;
         hash = (53 * hash) + getMinimumLength();
       }
-      if (hasMaximumLenght()) {
-        hash = (37 * hash) + MAXIMUM_LENGHT_FIELD_NUMBER;
-        hash = (53 * hash) + getMaximumLenght();
+      if (hasMaximumLength()) {
+        hash = (37 * hash) + MAXIMUM_LENGTH_FIELD_NUMBER;
+        hash = (53 * hash) + getMaximumLength();
       }
       if (hasLowercase()) {
         hash = (37 * hash) + LOWERCASE_FIELD_NUMBER;
@@ -13533,7 +13533,7 @@ public final class ConfigProto {
         super.clear();
         minimumLength_ = 0;
         bitField0_ = (bitField0_ & ~0x00000001);
-        maximumLenght_ = 0;
+        maximumLength_ = 0;
         bitField0_ = (bitField0_ & ~0x00000002);
         lowercase_ = false;
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -13578,7 +13578,7 @@ public final class ConfigProto {
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.maximumLenght_ = maximumLenght_;
+          result.maximumLength_ = maximumLength_;
           to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
@@ -13653,8 +13653,8 @@ public final class ConfigProto {
         if (other.hasMinimumLength()) {
           setMinimumLength(other.getMinimumLength());
         }
-        if (other.hasMaximumLenght()) {
-          setMaximumLenght(other.getMaximumLenght());
+        if (other.hasMaximumLength()) {
+          setMaximumLength(other.getMaximumLength());
         }
         if (other.hasLowercase()) {
           setLowercase(other.getLowercase());
@@ -13703,7 +13703,7 @@ public final class ConfigProto {
                 break;
               } // case 8
               case 16: {
-                maximumLenght_ = input.readInt32();
+                maximumLength_ = input.readInt32();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
@@ -13788,41 +13788,41 @@ public final class ConfigProto {
         return this;
       }
 
-      private int maximumLenght_ ;
+      private int maximumLength_ ;
       /**
-       * <code>optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];</code>
-       * @return Whether the maximumLenght field is set.
+       * <code>optional int32 maximum_length = 2 [json_name = "maximumLength"];</code>
+       * @return Whether the maximumLength field is set.
        */
       @java.lang.Override
-      public boolean hasMaximumLenght() {
+      public boolean hasMaximumLength() {
         return ((bitField0_ & 0x00000002) != 0);
       }
       /**
-       * <code>optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];</code>
-       * @return The maximumLenght.
+       * <code>optional int32 maximum_length = 2 [json_name = "maximumLength"];</code>
+       * @return The maximumLength.
        */
       @java.lang.Override
-      public int getMaximumLenght() {
-        return maximumLenght_;
+      public int getMaximumLength() {
+        return maximumLength_;
       }
       /**
-       * <code>optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];</code>
-       * @param value The maximumLenght to set.
+       * <code>optional int32 maximum_length = 2 [json_name = "maximumLength"];</code>
+       * @param value The maximumLength to set.
        * @return This builder for chaining.
        */
-      public Builder setMaximumLenght(int value) {
+      public Builder setMaximumLength(int value) {
         bitField0_ |= 0x00000002;
-        maximumLenght_ = value;
+        maximumLength_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];</code>
+       * <code>optional int32 maximum_length = 2 [json_name = "maximumLength"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearMaximumLenght() {
+      public Builder clearMaximumLength() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        maximumLenght_ = 0;
+        maximumLength_ = 0;
         onChanged();
         return this;
       }
@@ -53407,13 +53407,13 @@ public final class ConfigProto {
       "_keyB\020\n\016_query_timeoutB\032\n\030_disable_datab" +
       "ase_search\"\212\003\n\016ConfigPassword\022*\n\016minimum" +
       "_length\030\001 \001(\005H\000R\rminimumLength\210\001\001\022*\n\016max" +
-      "imum_lenght\030\002 \001(\005H\001R\rmaximumLenght\210\001\001\022!\n" +
+      "imum_length\030\002 \001(\005H\001R\rmaximumLength\210\001\001\022!\n" +
       "\tlowercase\030\003 \001(\010H\002R\tlowercase\210\001\001\022\033\n\006numb" +
       "er\030\004 \001(\010H\003R\006number\210\001\001\022!\n\tuppercase\030\005 \001(\010" +
       "H\004R\tuppercase\210\001\001\022\033\n\006symbol\030\006 \001(\010H\005R\006symb" +
       "ol\210\001\001\0221\n\022enable_forgot_link\030\007 \001(\010H\006R\020ena" +
       "bleForgotLink\210\001\001B\021\n\017_minimum_lengthB\021\n\017_" +
-      "maximum_lenghtB\014\n\n_lowercaseB\t\n\007_numberB" +
+      "maximum_lengthB\014\n\n_lowercaseB\t\n\007_numberB" +
       "\014\n\n_uppercaseB\t\n\007_symbolB\025\n\023_enable_forg" +
       "ot_link\"\340\017\n\nConfigFile\022;\n\027enable_file_at" +
       "tachments\030\001 \001(\010H\000R\025enableFileAttachments" +
@@ -53840,7 +53840,7 @@ public final class ConfigProto {
     internal_static_common_v1_ConfigPassword_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_common_v1_ConfigPassword_descriptor,
-        new java.lang.String[] { "MinimumLength", "MaximumLenght", "Lowercase", "Number", "Uppercase", "Symbol", "EnableForgotLink", "MinimumLength", "MaximumLenght", "Lowercase", "Number", "Uppercase", "Symbol", "EnableForgotLink", });
+        new java.lang.String[] { "MinimumLength", "MaximumLength", "Lowercase", "Number", "Uppercase", "Symbol", "EnableForgotLink", "MinimumLength", "MaximumLength", "Lowercase", "Number", "Uppercase", "Symbol", "EnableForgotLink", });
     internal_static_common_v1_ConfigFile_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_common_v1_ConfigFile_fieldAccessorTable = new

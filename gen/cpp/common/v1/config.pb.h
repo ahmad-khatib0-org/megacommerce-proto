@@ -2607,7 +2607,7 @@ class ConfigPassword final :
 
   enum : int {
     kMinimumLengthFieldNumber = 1,
-    kMaximumLenghtFieldNumber = 2,
+    kMaximumLengthFieldNumber = 2,
     kLowercaseFieldNumber = 3,
     kNumberFieldNumber = 4,
     kUppercaseFieldNumber = 5,
@@ -2627,17 +2627,17 @@ class ConfigPassword final :
   void _internal_set_minimum_length(int32_t value);
   public:
 
-  // optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];
-  bool has_maximum_lenght() const;
+  // optional int32 maximum_length = 2 [json_name = "maximumLength"];
+  bool has_maximum_length() const;
   private:
-  bool _internal_has_maximum_lenght() const;
+  bool _internal_has_maximum_length() const;
   public:
-  void clear_maximum_lenght();
-  int32_t maximum_lenght() const;
-  void set_maximum_lenght(int32_t value);
+  void clear_maximum_length();
+  int32_t maximum_length() const;
+  void set_maximum_length(int32_t value);
   private:
-  int32_t _internal_maximum_lenght() const;
-  void _internal_set_maximum_lenght(int32_t value);
+  int32_t _internal_maximum_length() const;
+  void _internal_set_maximum_length(int32_t value);
   public:
 
   // optional bool lowercase = 3 [json_name = "lowercase"];
@@ -2715,7 +2715,7 @@ class ConfigPassword final :
   ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   int32_t minimum_length_;
-  int32_t maximum_lenght_;
+  int32_t maximum_length_;
   bool lowercase_;
   bool number_;
   bool uppercase_;
@@ -12446,32 +12446,32 @@ inline void ConfigPassword::set_minimum_length(int32_t value) {
   // @@protoc_insertion_point(field_set:common.v1.ConfigPassword.minimum_length)
 }
 
-// optional int32 maximum_lenght = 2 [json_name = "maximumLenght"];
-inline bool ConfigPassword::_internal_has_maximum_lenght() const {
+// optional int32 maximum_length = 2 [json_name = "maximumLength"];
+inline bool ConfigPassword::_internal_has_maximum_length() const {
   bool value = (_has_bits_[0] & 0x00000002u) != 0;
   return value;
 }
-inline bool ConfigPassword::has_maximum_lenght() const {
-  return _internal_has_maximum_lenght();
+inline bool ConfigPassword::has_maximum_length() const {
+  return _internal_has_maximum_length();
 }
-inline void ConfigPassword::clear_maximum_lenght() {
-  maximum_lenght_ = 0;
+inline void ConfigPassword::clear_maximum_length() {
+  maximum_length_ = 0;
   _has_bits_[0] &= ~0x00000002u;
 }
-inline int32_t ConfigPassword::_internal_maximum_lenght() const {
-  return maximum_lenght_;
+inline int32_t ConfigPassword::_internal_maximum_length() const {
+  return maximum_length_;
 }
-inline int32_t ConfigPassword::maximum_lenght() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigPassword.maximum_lenght)
-  return _internal_maximum_lenght();
+inline int32_t ConfigPassword::maximum_length() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigPassword.maximum_length)
+  return _internal_maximum_length();
 }
-inline void ConfigPassword::_internal_set_maximum_lenght(int32_t value) {
+inline void ConfigPassword::_internal_set_maximum_length(int32_t value) {
   _has_bits_[0] |= 0x00000002u;
-  maximum_lenght_ = value;
+  maximum_length_ = value;
 }
-inline void ConfigPassword::set_maximum_lenght(int32_t value) {
-  _internal_set_maximum_lenght(value);
-  // @@protoc_insertion_point(field_set:common.v1.ConfigPassword.maximum_lenght)
+inline void ConfigPassword::set_maximum_length(int32_t value) {
+  _internal_set_maximum_length(value);
+  // @@protoc_insertion_point(field_set:common.v1.ConfigPassword.maximum_length)
 }
 
 // optional bool lowercase = 3 [json_name = "lowercase"];
