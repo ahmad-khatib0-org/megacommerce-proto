@@ -1454,6 +1454,21 @@ export class ConfigEmail extends jspb.Message {
   hasLoginButtonTextColor(): boolean;
   clearLoginButtonTextColor(): ConfigEmail;
 
+  getRateLimitingMemorySize(): string;
+  setRateLimitingMemorySize(value: string): ConfigEmail;
+  hasRateLimitingMemorySize(): boolean;
+  clearRateLimitingMemorySize(): ConfigEmail;
+
+  getRateLimitingPerHour(): string;
+  setRateLimitingPerHour(value: string): ConfigEmail;
+  hasRateLimitingPerHour(): boolean;
+  clearRateLimitingPerHour(): ConfigEmail;
+
+  getRateLimitingMaxBurst(): string;
+  setRateLimitingMaxBurst(value: string): ConfigEmail;
+  hasRateLimitingMaxBurst(): boolean;
+  clearRateLimitingMaxBurst(): ConfigEmail;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfigEmail.AsObject;
   static toObject(includeInstance: boolean, msg: ConfigEmail): ConfigEmail.AsObject;
@@ -1487,6 +1502,9 @@ export namespace ConfigEmail {
     loginButtonColor?: string,
     loginButtonBorderColor?: string,
     loginButtonTextColor?: string,
+    rateLimitingMemorySize?: string,
+    rateLimitingPerHour?: string,
+    rateLimitingMaxBurst?: string,
   }
 
   export enum SendEmailNotificationsCase { 
@@ -1602,6 +1620,21 @@ export namespace ConfigEmail {
   export enum LoginButtonTextColorCase { 
     _LOGIN_BUTTON_TEXT_COLOR_NOT_SET = 0,
     LOGIN_BUTTON_TEXT_COLOR = 23,
+  }
+
+  export enum RateLimitingMemorySizeCase { 
+    _RATE_LIMITING_MEMORY_SIZE_NOT_SET = 0,
+    RATE_LIMITING_MEMORY_SIZE = 24,
+  }
+
+  export enum RateLimitingPerHourCase { 
+    _RATE_LIMITING_PER_HOUR_NOT_SET = 0,
+    RATE_LIMITING_PER_HOUR = 25,
+  }
+
+  export enum RateLimitingMaxBurstCase { 
+    _RATE_LIMITING_MAX_BURST_NOT_SET = 0,
+    RATE_LIMITING_MAX_BURST = 26,
   }
 }
 

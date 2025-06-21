@@ -1259,6 +1259,9 @@ type ConfigEmail struct {
 	LoginButtonColor                  *string                `protobuf:"bytes,21,opt,name=login_button_color,json=loginButtonColor,proto3,oneof" json:"login_button_color,omitempty"`
 	LoginButtonBorderColor            *string                `protobuf:"bytes,22,opt,name=login_button_border_color,json=loginButtonBorderColor,proto3,oneof" json:"login_button_border_color,omitempty"`
 	LoginButtonTextColor              *string                `protobuf:"bytes,23,opt,name=login_button_text_color,json=loginButtonTextColor,proto3,oneof" json:"login_button_text_color,omitempty"`
+	RateLimitingMemorySize            *string                `protobuf:"bytes,24,opt,name=rate_limiting_memory_size,json=rateLimitingMemorySize,proto3,oneof" json:"rate_limiting_memory_size,omitempty"`
+	RateLimitingPerHour               *string                `protobuf:"bytes,25,opt,name=rate_limiting_per_hour,json=rateLimitingPerHour,proto3,oneof" json:"rate_limiting_per_hour,omitempty"`
+	RateLimitingMaxBurst              *string                `protobuf:"bytes,26,opt,name=rate_limiting_max_burst,json=rateLimitingMaxBurst,proto3,oneof" json:"rate_limiting_max_burst,omitempty"`
 	unknownFields                     protoimpl.UnknownFields
 	sizeCache                         protoimpl.SizeCache
 }
@@ -1450,6 +1453,27 @@ func (x *ConfigEmail) GetLoginButtonBorderColor() string {
 func (x *ConfigEmail) GetLoginButtonTextColor() string {
 	if x != nil && x.LoginButtonTextColor != nil {
 		return *x.LoginButtonTextColor
+	}
+	return ""
+}
+
+func (x *ConfigEmail) GetRateLimitingMemorySize() string {
+	if x != nil && x.RateLimitingMemorySize != nil {
+		return *x.RateLimitingMemorySize
+	}
+	return ""
+}
+
+func (x *ConfigEmail) GetRateLimitingPerHour() string {
+	if x != nil && x.RateLimitingPerHour != nil {
+		return *x.RateLimitingPerHour
+	}
+	return ""
+}
+
+func (x *ConfigEmail) GetRateLimitingMaxBurst() string {
+	if x != nil && x.RateLimitingMaxBurst != nil {
+		return *x.RateLimitingMaxBurst
 	}
 	return ""
 }
@@ -3658,7 +3682,7 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x10_amazon_s3_traceB)\n" +
 	"'_amazon_s3_request_timeout_millisecondsB#\n" +
 	"!_amazon_s3_upload_part_size_bytesB\x1a\n" +
-	"\x18_amazon_s3_storage_class\"\xfd\x0e\n" +
+	"\x18_amazon_s3_storage_class\"\x88\x11\n" +
 	"\vConfigEmail\x12=\n" +
 	"\x18send_email_notifications\x18\x01 \x01(\bH\x00R\x16sendEmailNotifications\x88\x01\x01\x12A\n" +
 	"\x1arequire_email_verification\x18\x02 \x01(\bH\x01R\x18requireEmailVerification\x88\x01\x01\x12*\n" +
@@ -3685,7 +3709,10 @@ const file_common_v1_config_proto_rawDesc = "" +
 	" email_notification_contents_type\x18\x14 \x01(\tH\x13R\x1demailNotificationContentsType\x88\x01\x01\x121\n" +
 	"\x12login_button_color\x18\x15 \x01(\tH\x14R\x10loginButtonColor\x88\x01\x01\x12>\n" +
 	"\x19login_button_border_color\x18\x16 \x01(\tH\x15R\x16loginButtonBorderColor\x88\x01\x01\x12:\n" +
-	"\x17login_button_text_color\x18\x17 \x01(\tH\x16R\x14loginButtonTextColor\x88\x01\x01B\x1b\n" +
+	"\x17login_button_text_color\x18\x17 \x01(\tH\x16R\x14loginButtonTextColor\x88\x01\x01\x12>\n" +
+	"\x19rate_limiting_memory_size\x18\x18 \x01(\tH\x17R\x16rateLimitingMemorySize\x88\x01\x01\x128\n" +
+	"\x16rate_limiting_per_hour\x18\x19 \x01(\tH\x18R\x13rateLimitingPerHour\x88\x01\x01\x12:\n" +
+	"\x17rate_limiting_max_burst\x18\x1a \x01(\tH\x19R\x14rateLimitingMaxBurst\x88\x01\x01B\x1b\n" +
 	"\x19_send_email_notificationsB\x1d\n" +
 	"\x1b_require_email_verificationB\x11\n" +
 	"\x0f_feedback_emailB\x13\n" +
@@ -3709,7 +3736,10 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"!_email_notification_contents_typeB\x15\n" +
 	"\x13_login_button_colorB\x1c\n" +
 	"\x1a_login_button_border_colorB\x1a\n" +
-	"\x18_login_button_text_color\"\x84\x03\n" +
+	"\x18_login_button_text_colorB\x1c\n" +
+	"\x1a_rate_limiting_memory_sizeB\x19\n" +
+	"\x17_rate_limiting_per_hourB\x1a\n" +
+	"\x18_rate_limiting_max_burst\"\x84\x03\n" +
 	"\x0fConfigRateLimit\x12\x1b\n" +
 	"\x06enable\x18\x01 \x01(\bH\x00R\x06enable\x88\x01\x01\x12\x1c\n" +
 	"\aper_sec\x18\x02 \x01(\x05H\x01R\x06perSec\x88\x01\x01\x12 \n" +

@@ -254,6 +254,9 @@ constexpr ConfigEmail::ConfigEmail(
   , login_button_color_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , login_button_border_color_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , login_button_text_color_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , rate_limiting_memory_size_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , rate_limiting_per_hour_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
+  , rate_limiting_max_burst_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , send_email_notifications_(false)
   , require_email_verification_(false)
   , enable_smtp_auth_(false)
@@ -940,29 +943,35 @@ const uint32_t TableStruct_common_2fv1_2fconfig_2eproto::offsets[] PROTOBUF_SECT
   PROTOBUF_FIELD_OFFSET(::common::v1::ConfigEmail, login_button_color_),
   PROTOBUF_FIELD_OFFSET(::common::v1::ConfigEmail, login_button_border_color_),
   PROTOBUF_FIELD_OFFSET(::common::v1::ConfigEmail, login_button_text_color_),
-  13,
-  14,
+  PROTOBUF_FIELD_OFFSET(::common::v1::ConfigEmail, rate_limiting_memory_size_),
+  PROTOBUF_FIELD_OFFSET(::common::v1::ConfigEmail, rate_limiting_per_hour_),
+  PROTOBUF_FIELD_OFFSET(::common::v1::ConfigEmail, rate_limiting_max_burst_),
+  16,
+  17,
   0,
   1,
-  15,
+  18,
   2,
   3,
   4,
   5,
-  17,
+  20,
   6,
-  16,
+  19,
   7,
   8,
-  18,
-  20,
-  19,
-  22,
   21,
+  23,
+  22,
+  25,
+  24,
   9,
   10,
   11,
   12,
+  13,
+  14,
+  15,
   PROTOBUF_FIELD_OFFSET(::common::v1::ConfigRateLimit, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::common::v1::ConfigRateLimit, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1357,25 +1366,25 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 182, 198, -1, sizeof(::common::v1::ConfigSql)},
   { 208, 221, -1, sizeof(::common::v1::ConfigPassword)},
   { 228, 260, -1, sizeof(::common::v1::ConfigFile)},
-  { 286, 315, -1, sizeof(::common::v1::ConfigEmail)},
-  { 338, 351, -1, sizeof(::common::v1::ConfigRateLimit)},
-  { 358, 366, -1, sizeof(::common::v1::ConfigPrivacy)},
-  { 368, 381, -1, sizeof(::common::v1::ConfigSupport)},
-  { 388, 397, -1, sizeof(::common::v1::ConfigLocalization)},
-  { 400, 437, -1, sizeof(::common::v1::ConfigLdap)},
-  { 468, 507, -1, sizeof(::common::v1::ConfigSaml)},
-  { 540, 554, -1, sizeof(::common::v1::ConfigNativeApp)},
-  { 562, 578, -1, sizeof(::common::v1::ConfigMeilisearch)},
-  { 588, 600, -1, sizeof(::common::v1::ConfigBleve)},
-  { 606, 622, -1, sizeof(::common::v1::ConfigDataRetention)},
-  { 632, 642, -1, sizeof(::common::v1::ConfigImageProxy)},
-  { 646, -1, -1, sizeof(::common::v1::Config)},
-  { 673, -1, -1, sizeof(::common::v1::ConfigGetRequest)},
-  { 679, -1, -1, sizeof(::common::v1::ConfigGetResponse)},
-  { 688, -1, -1, sizeof(::common::v1::ConfigUpdateRequest)},
-  { 695, -1, -1, sizeof(::common::v1::ConfigUpdateResponse)},
-  { 704, -1, -1, sizeof(::common::v1::ConfigListenerResponse)},
-  { 713, -1, -1, sizeof(::common::v1::ConfigListenerRequest)},
+  { 286, 318, -1, sizeof(::common::v1::ConfigEmail)},
+  { 344, 357, -1, sizeof(::common::v1::ConfigRateLimit)},
+  { 364, 372, -1, sizeof(::common::v1::ConfigPrivacy)},
+  { 374, 387, -1, sizeof(::common::v1::ConfigSupport)},
+  { 394, 403, -1, sizeof(::common::v1::ConfigLocalization)},
+  { 406, 443, -1, sizeof(::common::v1::ConfigLdap)},
+  { 474, 513, -1, sizeof(::common::v1::ConfigSaml)},
+  { 546, 560, -1, sizeof(::common::v1::ConfigNativeApp)},
+  { 568, 584, -1, sizeof(::common::v1::ConfigMeilisearch)},
+  { 594, 606, -1, sizeof(::common::v1::ConfigBleve)},
+  { 612, 628, -1, sizeof(::common::v1::ConfigDataRetention)},
+  { 638, 648, -1, sizeof(::common::v1::ConfigImageProxy)},
+  { 652, -1, -1, sizeof(::common::v1::Config)},
+  { 679, -1, -1, sizeof(::common::v1::ConfigGetRequest)},
+  { 685, -1, -1, sizeof(::common::v1::ConfigGetResponse)},
+  { 694, -1, -1, sizeof(::common::v1::ConfigUpdateRequest)},
+  { 701, -1, -1, sizeof(::common::v1::ConfigUpdateResponse)},
+  { 710, -1, -1, sizeof(::common::v1::ConfigListenerResponse)},
+  { 719, -1, -1, sizeof(::common::v1::ConfigListenerRequest)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -1634,7 +1643,7 @@ const char descriptor_table_protodef_common_2fv1_2fconfig_2eproto[] PROTOBUF_SEC
   "B\020\n\016_amazon_s3_sseB\022\n\020_amazon_s3_traceB)"
   "\n\'_amazon_s3_request_timeout_millisecond"
   "sB#\n!_amazon_s3_upload_part_size_bytesB\032"
-  "\n\030_amazon_s3_storage_class\"\375\016\n\013ConfigEma"
+  "\n\030_amazon_s3_storage_class\"\210\021\n\013ConfigEma"
   "il\022=\n\030send_email_notifications\030\001 \001(\010H\000R\026"
   "sendEmailNotifications\210\001\001\022A\n\032require_ema"
   "il_verification\030\002 \001(\010H\001R\030requireEmailVer"
@@ -1667,296 +1676,303 @@ const char descriptor_table_protodef_common_2fv1_2fconfig_2eproto[] PROTOBUF_SEC
   "\001(\tH\024R\020loginButtonColor\210\001\001\022>\n\031login_butt"
   "on_border_color\030\026 \001(\tH\025R\026loginButtonBord"
   "erColor\210\001\001\022:\n\027login_button_text_color\030\027 "
-  "\001(\tH\026R\024loginButtonTextColor\210\001\001B\033\n\031_send_"
-  "email_notificationsB\035\n\033_require_email_ve"
-  "rificationB\021\n\017_feedback_emailB\023\n\021_reply_"
-  "to_addressB\023\n\021_enable_smtp_authB\020\n\016_smtp"
-  "_usernameB\020\n\016_smtp_passwordB\016\n\014_smtp_ser"
-  "verB\014\n\n_smtp_portB\026\n\024_smtp_server_timeou"
-  "tB\026\n\024_connection_securityB\032\n\030_send_push_"
-  "notificationsB\033\n\031_push_notification_serv"
-  "erB\035\n\033_push_notification_contentsB\033\n\031_pu"
-  "sh_notification_bufferB\030\n\026_enable_email_"
-  "batchingB\035\n\033_email_batching_buffer_sizeB"
-  "\032\n\030_email_batching_intervalB\'\n%_skip_ser"
-  "ver_certificate_verificationB#\n!_email_n"
-  "otification_contents_typeB\025\n\023_login_butt"
-  "on_colorB\034\n\032_login_button_border_colorB\032"
-  "\n\030_login_button_text_color\"\204\003\n\017ConfigRat"
-  "eLimit\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022\034\n\007p"
-  "er_sec\030\002 \001(\005H\001R\006perSec\210\001\001\022 \n\tmax_burst\030\003"
-  " \001(\005H\002R\010maxBurst\210\001\001\022/\n\021memory_store_size"
-  "\030\004 \001(\005H\003R\017memoryStoreSize\210\001\001\0222\n\023vary_by_"
-  "remote_addr\030\005 \001(\010H\004R\020varyByRemoteAddr\210\001\001"
-  "\022%\n\014vary_by_user\030\006 \001(\010H\005R\nvaryByUser\210\001\001\022"
-  "$\n\016vary_by_header\030\007 \001(\tR\014varyByHeaderB\t\n"
-  "\007_enableB\n\n\010_per_secB\014\n\n_max_burstB\024\n\022_m"
-  "emory_store_sizeB\026\n\024_vary_by_remote_addr"
-  "B\017\n\r_vary_by_user\"\227\001\n\rConfigPrivacy\0221\n\022s"
-  "how_email_address\030\001 \001(\010H\000R\020showEmailAddr"
-  "ess\210\001\001\022)\n\016show_full_name\030\002 \001(\010H\001R\014showFu"
-  "llName\210\001\001B\025\n\023_show_email_addressB\021\n\017_sho"
-  "w_full_name\"\357\003\n\rConfigSupport\0226\n\025terms_o"
-  "f_service_link\030\001 \001(\tH\000R\022termsOfServiceLi"
-  "nk\210\001\001\0223\n\023privacy_policy_link\030\002 \001(\tH\001R\021pr"
-  "ivacyPolicyLink\210\001\001\022\"\n\nabout_link\030\003 \001(\tH\002"
-  "R\taboutLink\210\001\001\022 \n\thelp_link\030\004 \001(\tH\003R\010hel"
-  "pLink\210\001\001\0226\n\025report_a_problem_link\030\005 \001(\tH"
-  "\004R\022reportAProblemLink\210\001\001\0225\n\024forgot_passw"
-  "ord_link\030\006 \001(\tH\005R\022forgotPasswordLink\210\001\001\022"
-  "(\n\rsupport_email\030\007 \001(\tH\006R\014supportEmail\210\001"
-  "\001B\030\n\026_terms_of_service_linkB\026\n\024_privacy_"
-  "policy_linkB\r\n\013_about_linkB\014\n\n_help_link"
-  "B\030\n\026_report_a_problem_linkB\027\n\025_forgot_pa"
-  "ssword_linkB\020\n\016_support_email\"\202\002\n\022Config"
-  "Localization\0227\n\025default_server_locale\030\001 "
-  "\001(\tH\000R\023defaultServerLocale\210\001\001\0227\n\025default"
-  "_client_locale\030\002 \001(\tH\001R\023defaultClientLoc"
-  "ale\210\001\001\0220\n\021available_locales\030\003 \001(\tH\002R\020ava"
-  "ilableLocales\210\001\001B\030\n\026_default_server_loca"
-  "leB\030\n\026_default_client_localeB\024\n\022_availab"
-  "le_locales\"\325\020\n\nConfigLdap\022\033\n\006enable\030\001 \001("
-  "\010H\000R\006enable\210\001\001\022$\n\013enable_sync\030\002 \001(\010H\001R\ne"
-  "nableSync\210\001\001\022$\n\013ldap_server\030\003 \001(\tH\002R\nlda"
-  "pServer\210\001\001\022 \n\tldap_port\030\004 \001(\005H\003R\010ldapPor"
-  "t\210\001\001\0224\n\023connection_security\030\005 \001(\tH\004R\022con"
-  "nectionSecurity\210\001\001\022\034\n\007base_dn\030\006 \001(\tH\005R\006b"
-  "aseDn\210\001\001\022(\n\rbind_username\030\007 \001(\tH\006R\014bindU"
-  "sername\210\001\001\022(\n\rbind_password\030\010 \001(\tH\007R\014bin"
-  "dPassword\210\001\001\0229\n\026maximum_login_attempts\030\t"
-  " \001(\005H\010R\024maximumLoginAttempts\210\001\001\022$\n\013user_"
-  "filter\030\n \001(\tH\tR\nuserFilter\210\001\001\022&\n\014group_f"
-  "ilter\030\013 \001(\tH\nR\013groupFilter\210\001\001\0223\n\023enable_"
-  "admin_filter\030\014 \001(\010H\013R\021enableAdminFilter\210"
-  "\001\001\022&\n\014admin_filter\030\r \001(\tH\014R\013adminFilter\210"
-  "\001\001\022D\n\034group_display_name_attribute\030\016 \001(\t"
-  "H\rR\031groupDisplayNameAttribute\210\001\001\0221\n\022grou"
-  "p_id_attribute\030\017 \001(\tH\016R\020groupIdAttribute"
-  "\210\001\001\0225\n\024first_name_attribute\030\020 \001(\tH\017R\022fir"
-  "stNameAttribute\210\001\001\0223\n\023last_name_attribut"
-  "e\030\021 \001(\tH\020R\021lastNameAttribute\210\001\001\022,\n\017email"
-  "_attribute\030\022 \001(\tH\021R\016emailAttribute\210\001\001\0222\n"
-  "\022username_attribute\030\023 \001(\tH\022R\021usernameAtt"
-  "ribute\210\001\001\0222\n\022nickname_attribute\030\024 \001(\tH\023R"
-  "\021nicknameAttribute\210\001\001\022&\n\014id_attribute\030\025 "
-  "\001(\tH\024R\013idAttribute\210\001\001\0222\n\022position_attrib"
-  "ute\030\026 \001(\tH\025R\021positionAttribute\210\001\001\0221\n\022log"
-  "in_id_attribute\030\027 \001(\tH\026R\020loginIdAttribut"
-  "e\210\001\001\0220\n\021picture_attribute\030\030 \001(\tH\027R\020pictu"
-  "reAttribute\210\001\001\0227\n\025sync_interval_minutes\030"
-  "\031 \001(\005H\030R\023syncIntervalMinutes\210\001\001\022(\n\rquery"
-  "_timeout\030\032 \001(\005H\031R\014queryTimeout\210\001\001\022\'\n\rmax"
-  "_page_size\030\033 \001(\005H\032R\013maxPageSize\210\001\001\022-\n\020lo"
-  "gin_field_name\030\034 \001(\tH\033R\016loginFieldName\210\001"
-  "\001\0221\n\022login_button_color\030\035 \001(\tH\034R\020loginBu"
-  "ttonColor\210\001\001\022>\n\031login_button_border_colo"
-  "r\030\036 \001(\tH\035R\026loginButtonBorderColor\210\001\001\022:\n\027"
-  "login_button_text_color\030\037 \001(\tH\036R\024loginBu"
-  "ttonTextColor\210\001\001B\t\n\007_enableB\016\n\014_enable_s"
-  "yncB\016\n\014_ldap_serverB\014\n\n_ldap_portB\026\n\024_co"
-  "nnection_securityB\n\n\010_base_dnB\020\n\016_bind_u"
-  "sernameB\020\n\016_bind_passwordB\031\n\027_maximum_lo"
-  "gin_attemptsB\016\n\014_user_filterB\017\n\r_group_f"
-  "ilterB\026\n\024_enable_admin_filterB\017\n\r_admin_"
-  "filterB\037\n\035_group_display_name_attributeB"
-  "\025\n\023_group_id_attributeB\027\n\025_first_name_at"
-  "tributeB\026\n\024_last_name_attributeB\022\n\020_emai"
-  "l_attributeB\025\n\023_username_attributeB\025\n\023_n"
-  "ickname_attributeB\017\n\r_id_attributeB\025\n\023_p"
-  "osition_attributeB\025\n\023_login_id_attribute"
-  "B\024\n\022_picture_attributeB\030\n\026_sync_interval"
-  "_minutesB\020\n\016_query_timeoutB\020\n\016_max_page_"
-  "sizeB\023\n\021_login_field_nameB\025\n\023_login_butt"
-  "on_colorB\034\n\032_login_button_border_colorB\032"
-  "\n\030_login_button_text_color\"\255\023\n\nConfigSam"
-  "l\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\0226\n\025enable"
-  "_sync_with_ldap\030\002 \001(\010H\001R\022enableSyncWithL"
-  "dap\210\001\001\022N\n\"enable_sync_with_ldap_include_"
-  "auth\030\003 \001(\010H\002R\035enableSyncWithLdapIncludeA"
-  "uth\210\001\001\022:\n\027ignore_guests_ldap_sync\030\004 \001(\010H"
-  "\003R\024ignoreGuestsLdapSync\210\001\001\022\033\n\006verify\030\005 \001"
-  "(\010H\004R\006verify\210\001\001\022\035\n\007encrypt\030\006 \001(\010H\005R\007encr"
-  "ypt\210\001\001\022&\n\014sign_request\030\007 \001(\010H\006R\013signRequ"
-  "est\210\001\001\022\034\n\007idp_url\030\010 \001(\tH\007R\006idpUrl\210\001\001\0221\n\022"
-  "idp_descriptor_url\030\t \001(\tH\010R\020idpDescripto"
-  "rUrl\210\001\001\022-\n\020idp_metadata_url\030\n \001(\tH\tR\016idp"
-  "MetadataUrl\210\001\001\022C\n\033service_provider_ident"
-  "ifier\030\013 \001(\tH\nR\031serviceProviderIdentifier"
-  "\210\001\001\022H\n\036assertion_consumer_service_url\030\014 "
-  "\001(\tH\013R\033assertionConsumerServiceUrl\210\001\001\0224\n"
-  "\023signature_algorithm\030\r \001(\tH\014R\022signatureA"
-  "lgorithm\210\001\001\0224\n\023canonical_algorithm\030\016 \001(\t"
-  "H\rR\022canonicalAlgorithm\210\001\001\022:\n\027scoping_idp"
-  "_provider_id\030\017 \001(\tH\016R\024scopingIdpProvider"
-  "Id\210\001\001\022-\n\020scoping_idp_name\030\020 \001(\tH\017R\016scopi"
-  "ngIdpName\210\001\001\0225\n\024idp_certificate_file\030\021 \001"
-  "(\tH\020R\022idpCertificateFile\210\001\001\022;\n\027public_ce"
-  "rtificate_file\030\022 \001(\tH\021R\025publicCertificat"
-  "eFile\210\001\001\022-\n\020private_key_file\030\023 \001(\tH\022R\016pr"
-  "ivateKeyFile\210\001\001\022&\n\014id_attribute\030\024 \001(\tH\023R"
-  "\013idAttribute\210\001\001\0229\n\026enable_admin_attribut"
-  "e\030\025 \001(\010H\024R\024enableAdminAttribute\210\001\001\022,\n\017ad"
-  "min_attribute\030\026 \001(\tH\025R\016adminAttribute\210\001\001"
-  "\0225\n\024first_name_attribute\030\027 \001(\tH\026R\022firstN"
-  "ameAttribute\210\001\001\0223\n\023last_name_attribute\030\030"
-  " \001(\tH\027R\021lastNameAttribute\210\001\001\022,\n\017email_at"
-  "tribute\030\031 \001(\tH\030R\016emailAttribute\210\001\001\0222\n\022us"
-  "ername_attribute\030\032 \001(\tH\031R\021usernameAttrib"
-  "ute\210\001\001\0222\n\022nickname_attribute\030\033 \001(\tH\032R\021ni"
-  "cknameAttribute\210\001\001\022.\n\020locale_attribute\030\034"
-  " \001(\tH\033R\017localeAttribute\210\001\001\0222\n\022position_a"
-  "ttribute\030\035 \001(\tH\034R\021positionAttribute\210\001\001\022/"
-  "\n\021login_button_text\030\036 \001(\tH\035R\017loginButton"
-  "Text\210\001\001\0221\n\022login_button_color\030\037 \001(\tH\036R\020l"
-  "oginButtonColor\210\001\001\022>\n\031login_button_borde"
-  "r_color\030  \001(\tH\037R\026loginButtonBorderColor\210"
-  "\001\001\022:\n\027login_button_text_color\030! \001(\tH R\024l"
-  "oginButtonTextColor\210\001\001B\t\n\007_enableB\030\n\026_en"
-  "able_sync_with_ldapB%\n#_enable_sync_with"
-  "_ldap_include_authB\032\n\030_ignore_guests_lda"
-  "p_syncB\t\n\007_verifyB\n\n\010_encryptB\017\n\r_sign_r"
-  "equestB\n\n\010_idp_urlB\025\n\023_idp_descriptor_ur"
-  "lB\023\n\021_idp_metadata_urlB\036\n\034_service_provi"
-  "der_identifierB!\n\037_assertion_consumer_se"
-  "rvice_urlB\026\n\024_signature_algorithmB\026\n\024_ca"
-  "nonical_algorithmB\032\n\030_scoping_idp_provid"
-  "er_idB\023\n\021_scoping_idp_nameB\027\n\025_idp_certi"
-  "ficate_fileB\032\n\030_public_certificate_fileB"
-  "\023\n\021_private_key_fileB\017\n\r_id_attributeB\031\n"
-  "\027_enable_admin_attributeB\022\n\020_admin_attri"
-  "buteB\027\n\025_first_name_attributeB\026\n\024_last_n"
-  "ame_attributeB\022\n\020_email_attributeB\025\n\023_us"
-  "ername_attributeB\025\n\023_nickname_attributeB"
-  "\023\n\021_locale_attributeB\025\n\023_position_attrib"
-  "uteB\024\n\022_login_button_textB\025\n\023_login_butt"
-  "on_colorB\034\n\032_login_button_border_colorB\032"
-  "\n\030_login_button_text_color\"\301\005\n\017ConfigNat"
-  "iveApp\0223\n\026app_custom_url_schemes\030\001 \003(\tR\023"
-  "appCustomUrlSchemes\022/\n\021app_download_link"
-  "\030\002 \001(\tH\000R\017appDownloadLink\210\001\001\022>\n\031android_"
-  "app_download_link\030\003 \001(\tH\001R\026androidAppDow"
-  "nloadLink\210\001\001\0226\n\025ios_app_download_link\030\004 "
-  "\001(\tH\002R\022iosAppDownloadLink\210\001\001\022;\n\027mobile_e"
-  "xternal_browser\030\005 \001(\010H\003R\025mobileExternalB"
-  "rowser\210\001\001\022=\n\030mobile_enable_biometrics\030\006 "
-  "\001(\010H\004R\026mobileEnableBiometrics\210\001\001\022F\n\035mobi"
-  "le_prevent_screen_capture\030\007 \001(\010H\005R\032mobil"
-  "ePreventScreenCapture\210\001\001\022C\n\033mobile_jailb"
-  "reak_protection\030\010 \001(\010H\006R\031mobileJailbreak"
-  "Protection\210\001\001B\024\n\022_app_download_linkB\034\n\032_"
-  "android_app_download_linkB\030\n\026_ios_app_do"
-  "wnload_linkB\032\n\030_mobile_external_browserB"
-  "\033\n\031_mobile_enable_biometricsB \n\036_mobile_"
-  "prevent_screen_captureB\036\n\034_mobile_jailbr"
-  "eak_protection\"\253\005\n\021ConfigMeilisearch\022#\n\n"
-  "server_url\030\001 \001(\tH\000R\nserver_url\210\001\001\022\"\n\nmas"
-  "ter_key\030\002 \001(\tH\001R\tmasterKey\210\001\001\022,\n\017enable_"
-  "indexing\030\003 \001(\010H\002R\016enableIndexing\210\001\001\022.\n\020e"
-  "nable_searching\030\004 \001(\010H\003R\017enableSearching"
-  "\210\001\001\0224\n\023enable_autocomplete\030\005 \001(\010H\004R\022enab"
-  "leAutocomplete\210\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R"
-  "\tbatchSize\210\001\001\022;\n\027request_timeout_seconds"
-  "\030\007 \001(\005H\006R\025requestTimeoutSeconds\210\001\001\022&\n\014in"
-  "dex_prefix\030\010 \001(\tH\007R\013indexPrefix\210\001\001\022-\n\020se"
-  "arch_cutoff_ms\030\t \001(\005H\010R\016searchCutoffMs\210\001"
-  "\001\0227\n\025enable_typo_tolerance\030\n \001(\010H\tR\023enab"
-  "leTypoTolerance\210\001\001B\r\n\013_server_urlB\r\n\013_ma"
-  "ster_keyB\022\n\020_enable_indexingB\023\n\021_enable_"
-  "searchingB\026\n\024_enable_autocompleteB\r\n\013_ba"
-  "tch_sizeB\032\n\030_request_timeout_secondsB\017\n\r"
-  "_index_prefixB\023\n\021_search_cutoff_msB\030\n\026_e"
-  "nable_typo_tolerance\"\272\003\n\013ConfigBleve\022 \n\t"
-  "index_dir\030\001 \001(\tH\000R\010indexDir\210\001\001\022,\n\017enable"
-  "_indexing\030\002 \001(\010H\001R\016enableIndexing\210\001\001\022.\n\020"
-  "enable_searching\030\003 \001(\010H\002R\017enableSearchin"
-  "g\210\001\001\0224\n\023enable_autocomplete\030\004 \001(\010H\003R\022ena"
-  "bleAutocomplete\210\001\001\022M\n!bulk_indexing_time"
-  "_window_seconds\030\005 \001(\005H\004R\035bulkIndexingTim"
-  "eWindowSeconds\210\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R"
-  "\tbatchSize\210\001\001B\014\n\n_index_dirB\022\n\020_enable_i"
-  "ndexingB\023\n\021_enable_searchingB\026\n\024_enable_"
-  "autocompleteB$\n\"_bulk_indexing_time_wind"
-  "ow_secondsB\r\n\013_batch_size\"\354\006\n\023ConfigData"
-  "Retention\022;\n\027enable_message_deletion\030\001 \001"
-  "(\010H\000R\025enableMessageDeletion\210\001\001\0225\n\024enable"
-  "_file_deletion\030\002 \001(\010H\001R\022enableFileDeleti"
-  "on\210\001\001\0229\n\026enable_boards_deletion\030\003 \001(\010H\002R"
-  "\024enableBoardsDeletion\210\001\001\022;\n\027message_rete"
-  "ntion_hours\030\004 \001(\005H\003R\025messageRetentionHou"
-  "rs\210\001\001\0225\n\024file_retention_hours\030\005 \001(\005H\004R\022f"
-  "ileRetentionHours\210\001\001\0227\n\025boards_retention"
-  "_days\030\006 \001(\005H\005R\023boardsRetentionDays\210\001\001\022:\n"
-  "\027deletion_job_start_time\030\007 \001(\tH\006R\024deleti"
-  "onJobStartTime\210\001\001\022\"\n\nbatch_size\030\010 \001(\005H\007R"
-  "\tbatchSize\210\001\001\022N\n!time_between_batches_mi"
-  "lliseconds\030\t \001(\005H\010R\036timeBetweenBatchesMi"
-  "lliseconds\210\001\001\022<\n\030retention_ids_batch_siz"
-  "e\030\n \001(\005H\tR\025retentionIdsBatchSize\210\001\001B\032\n\030_"
-  "enable_message_deletionB\027\n\025_enable_file_"
-  "deletionB\031\n\027_enable_boards_deletionB\032\n\030_"
-  "message_retention_hoursB\027\n\025_file_retenti"
-  "on_hoursB\030\n\026_boards_retention_daysB\032\n\030_d"
-  "eletion_job_start_timeB\r\n\013_batch_sizeB$\n"
-  "\"_time_between_batches_millisecondsB\033\n\031_"
-  "retention_ids_batch_size\"\264\002\n\020ConfigImage"
-  "Proxy\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022-\n\020im"
-  "age_proxy_type\030\002 \001(\tH\001R\016imageProxyType\210\001"
-  "\001\0228\n\026remote_image_proxy_url\030\003 \001(\tH\002R\023rem"
-  "oteImageProxyUrl\210\001\001\022@\n\032remote_image_prox"
-  "y_options\030\004 \001(\tH\003R\027remoteImageProxyOptio"
-  "ns\210\001\001B\t\n\007_enableB\023\n\021_image_proxy_typeB\031\n"
-  "\027_remote_image_proxy_urlB\035\n\033_remote_imag"
-  "e_proxy_options\"\315\010\n\006Config\022)\n\004main\030\001 \001(\013"
-  "2\025.common.v1.ConfigMainR\004main\0225\n\010service"
-  "s\030\002 \001(\0132\031.common.v1.ConfigServicesR\010serv"
-  "ices\0225\n\010security\030\003 \001(\0132\031.common.v1.Confi"
-  "gSecurityR\010security\022,\n\005cache\030\004 \001(\0132\026.com"
-  "mon.v1.CacheConfigR\005cache\0222\n\007metrics\030\005 \001"
-  "(\0132\030.common.v1.ConfigMetricsR\007metrics\022&\n"
-  "\003sso\030\006 \001(\0132\024.common.v1.ConfigSSOR\003sso\022&\n"
-  "\003sql\030\007 \001(\0132\024.common.v1.ConfigSqlR\003sql\0225\n"
-  "\010password\030\010 \001(\0132\031.common.v1.ConfigPasswo"
-  "rdR\010password\022)\n\004file\030\t \001(\0132\025.common.v1.C"
-  "onfigFileR\004file\022,\n\005email\030\n \001(\0132\026.common."
-  "v1.ConfigEmailR\005email\0229\n\nrate_limit\030\013 \001("
-  "\0132\032.common.v1.ConfigRateLimitR\trateLimit"
-  "\0222\n\007privacy\030\014 \001(\0132\030.common.v1.ConfigPriv"
-  "acyR\007privacy\0222\n\007support\030\r \001(\0132\030.common.v"
-  "1.ConfigSupportR\007support\022A\n\014localization"
-  "\030\016 \001(\0132\035.common.v1.ConfigLocalizationR\014l"
-  "ocalization\022)\n\004ldap\030\017 \001(\0132\025.common.v1.Co"
-  "nfigLdapR\004ldap\022)\n\004saml\030\020 \001(\0132\025.common.v1"
-  ".ConfigSamlR\004saml\0229\n\nnative_app\030\021 \001(\0132\032."
-  "common.v1.ConfigNativeAppR\tnativeApp\022>\n\013"
-  "meilisearch\030\022 \001(\0132\034.common.v1.ConfigMeil"
-  "isearchR\013meilisearch\022,\n\005bleve\030\023 \001(\0132\026.co"
-  "mmon.v1.ConfigBleveR\005bleve\022E\n\016data_reten"
-  "tion\030\024 \001(\0132\036.common.v1.ConfigDataRetenti"
-  "onR\rdataRetention\022<\n\013image_proxy\030\025 \001(\0132\033"
-  ".common.v1.ConfigImageProxyR\nimageProxy\""
-  "\022\n\020ConfigGetRequest\"u\n\021ConfigGetResponse"
-  "\022\'\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R\004dat"
-  "a\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R"
-  "\005errorB\n\n\010response\"@\n\023ConfigUpdateReques"
-  "t\022)\n\006config\030\001 \001(\0132\021.common.v1.ConfigR\006co"
-  "nfig\"x\n\024ConfigUpdateResponse\022\'\n\004data\030\001 \001"
-  "(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005error\030\002"
-  " \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n\010re"
-  "sponse\"z\n\026ConfigListenerResponse\022\'\n\004data"
-  "\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005err"
-  "or\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n"
-  "\n\010response\"4\n\025ConfigListenerRequest\022\033\n\tc"
-  "lient_id\030\001 \001(\tR\010clientIdBq\n\032org.megacomm"
-  "erce.common.v1B\013ConfigProtoZCgithub.com/"
-  "ahmad-khatib0-org/megacommerce-proto/gen"
-  "/go/common/v1;v1\370\001\001b\006proto3"
+  "\001(\tH\026R\024loginButtonTextColor\210\001\001\022>\n\031rate_l"
+  "imiting_memory_size\030\030 \001(\tH\027R\026rateLimitin"
+  "gMemorySize\210\001\001\0228\n\026rate_limiting_per_hour"
+  "\030\031 \001(\tH\030R\023rateLimitingPerHour\210\001\001\022:\n\027rate"
+  "_limiting_max_burst\030\032 \001(\tH\031R\024rateLimitin"
+  "gMaxBurst\210\001\001B\033\n\031_send_email_notification"
+  "sB\035\n\033_require_email_verificationB\021\n\017_fee"
+  "dback_emailB\023\n\021_reply_to_addressB\023\n\021_ena"
+  "ble_smtp_authB\020\n\016_smtp_usernameB\020\n\016_smtp"
+  "_passwordB\016\n\014_smtp_serverB\014\n\n_smtp_portB"
+  "\026\n\024_smtp_server_timeoutB\026\n\024_connection_s"
+  "ecurityB\032\n\030_send_push_notificationsB\033\n\031_"
+  "push_notification_serverB\035\n\033_push_notifi"
+  "cation_contentsB\033\n\031_push_notification_bu"
+  "fferB\030\n\026_enable_email_batchingB\035\n\033_email"
+  "_batching_buffer_sizeB\032\n\030_email_batching"
+  "_intervalB\'\n%_skip_server_certificate_ve"
+  "rificationB#\n!_email_notification_conten"
+  "ts_typeB\025\n\023_login_button_colorB\034\n\032_login"
+  "_button_border_colorB\032\n\030_login_button_te"
+  "xt_colorB\034\n\032_rate_limiting_memory_sizeB\031"
+  "\n\027_rate_limiting_per_hourB\032\n\030_rate_limit"
+  "ing_max_burst\"\204\003\n\017ConfigRateLimit\022\033\n\006ena"
+  "ble\030\001 \001(\010H\000R\006enable\210\001\001\022\034\n\007per_sec\030\002 \001(\005H"
+  "\001R\006perSec\210\001\001\022 \n\tmax_burst\030\003 \001(\005H\002R\010maxBu"
+  "rst\210\001\001\022/\n\021memory_store_size\030\004 \001(\005H\003R\017mem"
+  "oryStoreSize\210\001\001\0222\n\023vary_by_remote_addr\030\005"
+  " \001(\010H\004R\020varyByRemoteAddr\210\001\001\022%\n\014vary_by_u"
+  "ser\030\006 \001(\010H\005R\nvaryByUser\210\001\001\022$\n\016vary_by_he"
+  "ader\030\007 \001(\tR\014varyByHeaderB\t\n\007_enableB\n\n\010_"
+  "per_secB\014\n\n_max_burstB\024\n\022_memory_store_s"
+  "izeB\026\n\024_vary_by_remote_addrB\017\n\r_vary_by_"
+  "user\"\227\001\n\rConfigPrivacy\0221\n\022show_email_add"
+  "ress\030\001 \001(\010H\000R\020showEmailAddress\210\001\001\022)\n\016sho"
+  "w_full_name\030\002 \001(\010H\001R\014showFullName\210\001\001B\025\n\023"
+  "_show_email_addressB\021\n\017_show_full_name\"\357"
+  "\003\n\rConfigSupport\0226\n\025terms_of_service_lin"
+  "k\030\001 \001(\tH\000R\022termsOfServiceLink\210\001\001\0223\n\023priv"
+  "acy_policy_link\030\002 \001(\tH\001R\021privacyPolicyLi"
+  "nk\210\001\001\022\"\n\nabout_link\030\003 \001(\tH\002R\taboutLink\210\001"
+  "\001\022 \n\thelp_link\030\004 \001(\tH\003R\010helpLink\210\001\001\0226\n\025r"
+  "eport_a_problem_link\030\005 \001(\tH\004R\022reportAPro"
+  "blemLink\210\001\001\0225\n\024forgot_password_link\030\006 \001("
+  "\tH\005R\022forgotPasswordLink\210\001\001\022(\n\rsupport_em"
+  "ail\030\007 \001(\tH\006R\014supportEmail\210\001\001B\030\n\026_terms_o"
+  "f_service_linkB\026\n\024_privacy_policy_linkB\r"
+  "\n\013_about_linkB\014\n\n_help_linkB\030\n\026_report_a"
+  "_problem_linkB\027\n\025_forgot_password_linkB\020"
+  "\n\016_support_email\"\202\002\n\022ConfigLocalization\022"
+  "7\n\025default_server_locale\030\001 \001(\tH\000R\023defaul"
+  "tServerLocale\210\001\001\0227\n\025default_client_local"
+  "e\030\002 \001(\tH\001R\023defaultClientLocale\210\001\001\0220\n\021ava"
+  "ilable_locales\030\003 \001(\tH\002R\020availableLocales"
+  "\210\001\001B\030\n\026_default_server_localeB\030\n\026_defaul"
+  "t_client_localeB\024\n\022_available_locales\"\325\020"
+  "\n\nConfigLdap\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001"
+  "\001\022$\n\013enable_sync\030\002 \001(\010H\001R\nenableSync\210\001\001\022"
+  "$\n\013ldap_server\030\003 \001(\tH\002R\nldapServer\210\001\001\022 \n"
+  "\tldap_port\030\004 \001(\005H\003R\010ldapPort\210\001\001\0224\n\023conne"
+  "ction_security\030\005 \001(\tH\004R\022connectionSecuri"
+  "ty\210\001\001\022\034\n\007base_dn\030\006 \001(\tH\005R\006baseDn\210\001\001\022(\n\rb"
+  "ind_username\030\007 \001(\tH\006R\014bindUsername\210\001\001\022(\n"
+  "\rbind_password\030\010 \001(\tH\007R\014bindPassword\210\001\001\022"
+  "9\n\026maximum_login_attempts\030\t \001(\005H\010R\024maxim"
+  "umLoginAttempts\210\001\001\022$\n\013user_filter\030\n \001(\tH"
+  "\tR\nuserFilter\210\001\001\022&\n\014group_filter\030\013 \001(\tH\n"
+  "R\013groupFilter\210\001\001\0223\n\023enable_admin_filter\030"
+  "\014 \001(\010H\013R\021enableAdminFilter\210\001\001\022&\n\014admin_f"
+  "ilter\030\r \001(\tH\014R\013adminFilter\210\001\001\022D\n\034group_d"
+  "isplay_name_attribute\030\016 \001(\tH\rR\031groupDisp"
+  "layNameAttribute\210\001\001\0221\n\022group_id_attribut"
+  "e\030\017 \001(\tH\016R\020groupIdAttribute\210\001\001\0225\n\024first_"
+  "name_attribute\030\020 \001(\tH\017R\022firstNameAttribu"
+  "te\210\001\001\0223\n\023last_name_attribute\030\021 \001(\tH\020R\021la"
+  "stNameAttribute\210\001\001\022,\n\017email_attribute\030\022 "
+  "\001(\tH\021R\016emailAttribute\210\001\001\0222\n\022username_att"
+  "ribute\030\023 \001(\tH\022R\021usernameAttribute\210\001\001\0222\n\022"
+  "nickname_attribute\030\024 \001(\tH\023R\021nicknameAttr"
+  "ibute\210\001\001\022&\n\014id_attribute\030\025 \001(\tH\024R\013idAttr"
+  "ibute\210\001\001\0222\n\022position_attribute\030\026 \001(\tH\025R\021"
+  "positionAttribute\210\001\001\0221\n\022login_id_attribu"
+  "te\030\027 \001(\tH\026R\020loginIdAttribute\210\001\001\0220\n\021pictu"
+  "re_attribute\030\030 \001(\tH\027R\020pictureAttribute\210\001"
+  "\001\0227\n\025sync_interval_minutes\030\031 \001(\005H\030R\023sync"
+  "IntervalMinutes\210\001\001\022(\n\rquery_timeout\030\032 \001("
+  "\005H\031R\014queryTimeout\210\001\001\022\'\n\rmax_page_size\030\033 "
+  "\001(\005H\032R\013maxPageSize\210\001\001\022-\n\020login_field_nam"
+  "e\030\034 \001(\tH\033R\016loginFieldName\210\001\001\0221\n\022login_bu"
+  "tton_color\030\035 \001(\tH\034R\020loginButtonColor\210\001\001\022"
+  ">\n\031login_button_border_color\030\036 \001(\tH\035R\026lo"
+  "ginButtonBorderColor\210\001\001\022:\n\027login_button_"
+  "text_color\030\037 \001(\tH\036R\024loginButtonTextColor"
+  "\210\001\001B\t\n\007_enableB\016\n\014_enable_syncB\016\n\014_ldap_"
+  "serverB\014\n\n_ldap_portB\026\n\024_connection_secu"
+  "rityB\n\n\010_base_dnB\020\n\016_bind_usernameB\020\n\016_b"
+  "ind_passwordB\031\n\027_maximum_login_attemptsB"
+  "\016\n\014_user_filterB\017\n\r_group_filterB\026\n\024_ena"
+  "ble_admin_filterB\017\n\r_admin_filterB\037\n\035_gr"
+  "oup_display_name_attributeB\025\n\023_group_id_"
+  "attributeB\027\n\025_first_name_attributeB\026\n\024_l"
+  "ast_name_attributeB\022\n\020_email_attributeB\025"
+  "\n\023_username_attributeB\025\n\023_nickname_attri"
+  "buteB\017\n\r_id_attributeB\025\n\023_position_attri"
+  "buteB\025\n\023_login_id_attributeB\024\n\022_picture_"
+  "attributeB\030\n\026_sync_interval_minutesB\020\n\016_"
+  "query_timeoutB\020\n\016_max_page_sizeB\023\n\021_logi"
+  "n_field_nameB\025\n\023_login_button_colorB\034\n\032_"
+  "login_button_border_colorB\032\n\030_login_butt"
+  "on_text_color\"\255\023\n\nConfigSaml\022\033\n\006enable\030\001"
+  " \001(\010H\000R\006enable\210\001\001\0226\n\025enable_sync_with_ld"
+  "ap\030\002 \001(\010H\001R\022enableSyncWithLdap\210\001\001\022N\n\"ena"
+  "ble_sync_with_ldap_include_auth\030\003 \001(\010H\002R"
+  "\035enableSyncWithLdapIncludeAuth\210\001\001\022:\n\027ign"
+  "ore_guests_ldap_sync\030\004 \001(\010H\003R\024ignoreGues"
+  "tsLdapSync\210\001\001\022\033\n\006verify\030\005 \001(\010H\004R\006verify\210"
+  "\001\001\022\035\n\007encrypt\030\006 \001(\010H\005R\007encrypt\210\001\001\022&\n\014sig"
+  "n_request\030\007 \001(\010H\006R\013signRequest\210\001\001\022\034\n\007idp"
+  "_url\030\010 \001(\tH\007R\006idpUrl\210\001\001\0221\n\022idp_descripto"
+  "r_url\030\t \001(\tH\010R\020idpDescriptorUrl\210\001\001\022-\n\020id"
+  "p_metadata_url\030\n \001(\tH\tR\016idpMetadataUrl\210\001"
+  "\001\022C\n\033service_provider_identifier\030\013 \001(\tH\n"
+  "R\031serviceProviderIdentifier\210\001\001\022H\n\036assert"
+  "ion_consumer_service_url\030\014 \001(\tH\013R\033assert"
+  "ionConsumerServiceUrl\210\001\001\0224\n\023signature_al"
+  "gorithm\030\r \001(\tH\014R\022signatureAlgorithm\210\001\001\0224"
+  "\n\023canonical_algorithm\030\016 \001(\tH\rR\022canonical"
+  "Algorithm\210\001\001\022:\n\027scoping_idp_provider_id\030"
+  "\017 \001(\tH\016R\024scopingIdpProviderId\210\001\001\022-\n\020scop"
+  "ing_idp_name\030\020 \001(\tH\017R\016scopingIdpName\210\001\001\022"
+  "5\n\024idp_certificate_file\030\021 \001(\tH\020R\022idpCert"
+  "ificateFile\210\001\001\022;\n\027public_certificate_fil"
+  "e\030\022 \001(\tH\021R\025publicCertificateFile\210\001\001\022-\n\020p"
+  "rivate_key_file\030\023 \001(\tH\022R\016privateKeyFile\210"
+  "\001\001\022&\n\014id_attribute\030\024 \001(\tH\023R\013idAttribute\210"
+  "\001\001\0229\n\026enable_admin_attribute\030\025 \001(\010H\024R\024en"
+  "ableAdminAttribute\210\001\001\022,\n\017admin_attribute"
+  "\030\026 \001(\tH\025R\016adminAttribute\210\001\001\0225\n\024first_nam"
+  "e_attribute\030\027 \001(\tH\026R\022firstNameAttribute\210"
+  "\001\001\0223\n\023last_name_attribute\030\030 \001(\tH\027R\021lastN"
+  "ameAttribute\210\001\001\022,\n\017email_attribute\030\031 \001(\t"
+  "H\030R\016emailAttribute\210\001\001\0222\n\022username_attrib"
+  "ute\030\032 \001(\tH\031R\021usernameAttribute\210\001\001\0222\n\022nic"
+  "kname_attribute\030\033 \001(\tH\032R\021nicknameAttribu"
+  "te\210\001\001\022.\n\020locale_attribute\030\034 \001(\tH\033R\017local"
+  "eAttribute\210\001\001\0222\n\022position_attribute\030\035 \001("
+  "\tH\034R\021positionAttribute\210\001\001\022/\n\021login_butto"
+  "n_text\030\036 \001(\tH\035R\017loginButtonText\210\001\001\0221\n\022lo"
+  "gin_button_color\030\037 \001(\tH\036R\020loginButtonCol"
+  "or\210\001\001\022>\n\031login_button_border_color\030  \001(\t"
+  "H\037R\026loginButtonBorderColor\210\001\001\022:\n\027login_b"
+  "utton_text_color\030! \001(\tH R\024loginButtonTex"
+  "tColor\210\001\001B\t\n\007_enableB\030\n\026_enable_sync_wit"
+  "h_ldapB%\n#_enable_sync_with_ldap_include"
+  "_authB\032\n\030_ignore_guests_ldap_syncB\t\n\007_ve"
+  "rifyB\n\n\010_encryptB\017\n\r_sign_requestB\n\n\010_id"
+  "p_urlB\025\n\023_idp_descriptor_urlB\023\n\021_idp_met"
+  "adata_urlB\036\n\034_service_provider_identifie"
+  "rB!\n\037_assertion_consumer_service_urlB\026\n\024"
+  "_signature_algorithmB\026\n\024_canonical_algor"
+  "ithmB\032\n\030_scoping_idp_provider_idB\023\n\021_sco"
+  "ping_idp_nameB\027\n\025_idp_certificate_fileB\032"
+  "\n\030_public_certificate_fileB\023\n\021_private_k"
+  "ey_fileB\017\n\r_id_attributeB\031\n\027_enable_admi"
+  "n_attributeB\022\n\020_admin_attributeB\027\n\025_firs"
+  "t_name_attributeB\026\n\024_last_name_attribute"
+  "B\022\n\020_email_attributeB\025\n\023_username_attrib"
+  "uteB\025\n\023_nickname_attributeB\023\n\021_locale_at"
+  "tributeB\025\n\023_position_attributeB\024\n\022_login"
+  "_button_textB\025\n\023_login_button_colorB\034\n\032_"
+  "login_button_border_colorB\032\n\030_login_butt"
+  "on_text_color\"\301\005\n\017ConfigNativeApp\0223\n\026app"
+  "_custom_url_schemes\030\001 \003(\tR\023appCustomUrlS"
+  "chemes\022/\n\021app_download_link\030\002 \001(\tH\000R\017app"
+  "DownloadLink\210\001\001\022>\n\031android_app_download_"
+  "link\030\003 \001(\tH\001R\026androidAppDownloadLink\210\001\001\022"
+  "6\n\025ios_app_download_link\030\004 \001(\tH\002R\022iosApp"
+  "DownloadLink\210\001\001\022;\n\027mobile_external_brows"
+  "er\030\005 \001(\010H\003R\025mobileExternalBrowser\210\001\001\022=\n\030"
+  "mobile_enable_biometrics\030\006 \001(\010H\004R\026mobile"
+  "EnableBiometrics\210\001\001\022F\n\035mobile_prevent_sc"
+  "reen_capture\030\007 \001(\010H\005R\032mobilePreventScree"
+  "nCapture\210\001\001\022C\n\033mobile_jailbreak_protecti"
+  "on\030\010 \001(\010H\006R\031mobileJailbreakProtection\210\001\001"
+  "B\024\n\022_app_download_linkB\034\n\032_android_app_d"
+  "ownload_linkB\030\n\026_ios_app_download_linkB\032"
+  "\n\030_mobile_external_browserB\033\n\031_mobile_en"
+  "able_biometricsB \n\036_mobile_prevent_scree"
+  "n_captureB\036\n\034_mobile_jailbreak_protectio"
+  "n\"\253\005\n\021ConfigMeilisearch\022#\n\nserver_url\030\001 "
+  "\001(\tH\000R\nserver_url\210\001\001\022\"\n\nmaster_key\030\002 \001(\t"
+  "H\001R\tmasterKey\210\001\001\022,\n\017enable_indexing\030\003 \001("
+  "\010H\002R\016enableIndexing\210\001\001\022.\n\020enable_searchi"
+  "ng\030\004 \001(\010H\003R\017enableSearching\210\001\001\0224\n\023enable"
+  "_autocomplete\030\005 \001(\010H\004R\022enableAutocomplet"
+  "e\210\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001"
+  "\022;\n\027request_timeout_seconds\030\007 \001(\005H\006R\025req"
+  "uestTimeoutSeconds\210\001\001\022&\n\014index_prefix\030\010 "
+  "\001(\tH\007R\013indexPrefix\210\001\001\022-\n\020search_cutoff_m"
+  "s\030\t \001(\005H\010R\016searchCutoffMs\210\001\001\0227\n\025enable_t"
+  "ypo_tolerance\030\n \001(\010H\tR\023enableTypoToleran"
+  "ce\210\001\001B\r\n\013_server_urlB\r\n\013_master_keyB\022\n\020_"
+  "enable_indexingB\023\n\021_enable_searchingB\026\n\024"
+  "_enable_autocompleteB\r\n\013_batch_sizeB\032\n\030_"
+  "request_timeout_secondsB\017\n\r_index_prefix"
+  "B\023\n\021_search_cutoff_msB\030\n\026_enable_typo_to"
+  "lerance\"\272\003\n\013ConfigBleve\022 \n\tindex_dir\030\001 \001"
+  "(\tH\000R\010indexDir\210\001\001\022,\n\017enable_indexing\030\002 \001"
+  "(\010H\001R\016enableIndexing\210\001\001\022.\n\020enable_search"
+  "ing\030\003 \001(\010H\002R\017enableSearching\210\001\001\0224\n\023enabl"
+  "e_autocomplete\030\004 \001(\010H\003R\022enableAutocomple"
+  "te\210\001\001\022M\n!bulk_indexing_time_window_secon"
+  "ds\030\005 \001(\005H\004R\035bulkIndexingTimeWindowSecond"
+  "s\210\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001"
+  "B\014\n\n_index_dirB\022\n\020_enable_indexingB\023\n\021_e"
+  "nable_searchingB\026\n\024_enable_autocompleteB"
+  "$\n\"_bulk_indexing_time_window_secondsB\r\n"
+  "\013_batch_size\"\354\006\n\023ConfigDataRetention\022;\n\027"
+  "enable_message_deletion\030\001 \001(\010H\000R\025enableM"
+  "essageDeletion\210\001\001\0225\n\024enable_file_deletio"
+  "n\030\002 \001(\010H\001R\022enableFileDeletion\210\001\001\0229\n\026enab"
+  "le_boards_deletion\030\003 \001(\010H\002R\024enableBoards"
+  "Deletion\210\001\001\022;\n\027message_retention_hours\030\004"
+  " \001(\005H\003R\025messageRetentionHours\210\001\001\0225\n\024file"
+  "_retention_hours\030\005 \001(\005H\004R\022fileRetentionH"
+  "ours\210\001\001\0227\n\025boards_retention_days\030\006 \001(\005H\005"
+  "R\023boardsRetentionDays\210\001\001\022:\n\027deletion_job"
+  "_start_time\030\007 \001(\tH\006R\024deletionJobStartTim"
+  "e\210\001\001\022\"\n\nbatch_size\030\010 \001(\005H\007R\tbatchSize\210\001\001"
+  "\022N\n!time_between_batches_milliseconds\030\t "
+  "\001(\005H\010R\036timeBetweenBatchesMilliseconds\210\001\001"
+  "\022<\n\030retention_ids_batch_size\030\n \001(\005H\tR\025re"
+  "tentionIdsBatchSize\210\001\001B\032\n\030_enable_messag"
+  "e_deletionB\027\n\025_enable_file_deletionB\031\n\027_"
+  "enable_boards_deletionB\032\n\030_message_reten"
+  "tion_hoursB\027\n\025_file_retention_hoursB\030\n\026_"
+  "boards_retention_daysB\032\n\030_deletion_job_s"
+  "tart_timeB\r\n\013_batch_sizeB$\n\"_time_betwee"
+  "n_batches_millisecondsB\033\n\031_retention_ids"
+  "_batch_size\"\264\002\n\020ConfigImageProxy\022\033\n\006enab"
+  "le\030\001 \001(\010H\000R\006enable\210\001\001\022-\n\020image_proxy_typ"
+  "e\030\002 \001(\tH\001R\016imageProxyType\210\001\001\0228\n\026remote_i"
+  "mage_proxy_url\030\003 \001(\tH\002R\023remoteImageProxy"
+  "Url\210\001\001\022@\n\032remote_image_proxy_options\030\004 \001"
+  "(\tH\003R\027remoteImageProxyOptions\210\001\001B\t\n\007_ena"
+  "bleB\023\n\021_image_proxy_typeB\031\n\027_remote_imag"
+  "e_proxy_urlB\035\n\033_remote_image_proxy_optio"
+  "ns\"\315\010\n\006Config\022)\n\004main\030\001 \001(\0132\025.common.v1."
+  "ConfigMainR\004main\0225\n\010services\030\002 \001(\0132\031.com"
+  "mon.v1.ConfigServicesR\010services\0225\n\010secur"
+  "ity\030\003 \001(\0132\031.common.v1.ConfigSecurityR\010se"
+  "curity\022,\n\005cache\030\004 \001(\0132\026.common.v1.CacheC"
+  "onfigR\005cache\0222\n\007metrics\030\005 \001(\0132\030.common.v"
+  "1.ConfigMetricsR\007metrics\022&\n\003sso\030\006 \001(\0132\024."
+  "common.v1.ConfigSSOR\003sso\022&\n\003sql\030\007 \001(\0132\024."
+  "common.v1.ConfigSqlR\003sql\0225\n\010password\030\010 \001"
+  "(\0132\031.common.v1.ConfigPasswordR\010password\022"
+  ")\n\004file\030\t \001(\0132\025.common.v1.ConfigFileR\004fi"
+  "le\022,\n\005email\030\n \001(\0132\026.common.v1.ConfigEmai"
+  "lR\005email\0229\n\nrate_limit\030\013 \001(\0132\032.common.v1"
+  ".ConfigRateLimitR\trateLimit\0222\n\007privacy\030\014"
+  " \001(\0132\030.common.v1.ConfigPrivacyR\007privacy\022"
+  "2\n\007support\030\r \001(\0132\030.common.v1.ConfigSuppo"
+  "rtR\007support\022A\n\014localization\030\016 \001(\0132\035.comm"
+  "on.v1.ConfigLocalizationR\014localization\022)"
+  "\n\004ldap\030\017 \001(\0132\025.common.v1.ConfigLdapR\004lda"
+  "p\022)\n\004saml\030\020 \001(\0132\025.common.v1.ConfigSamlR\004"
+  "saml\0229\n\nnative_app\030\021 \001(\0132\032.common.v1.Con"
+  "figNativeAppR\tnativeApp\022>\n\013meilisearch\030\022"
+  " \001(\0132\034.common.v1.ConfigMeilisearchR\013meil"
+  "isearch\022,\n\005bleve\030\023 \001(\0132\026.common.v1.Confi"
+  "gBleveR\005bleve\022E\n\016data_retention\030\024 \001(\0132\036."
+  "common.v1.ConfigDataRetentionR\rdataReten"
+  "tion\022<\n\013image_proxy\030\025 \001(\0132\033.common.v1.Co"
+  "nfigImageProxyR\nimageProxy\"\022\n\020ConfigGetR"
+  "equest\"u\n\021ConfigGetResponse\022\'\n\004data\030\001 \001("
+  "\0132\021.common.v1.ConfigH\000R\004data\022+\n\005error\030\002 "
+  "\001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n\010res"
+  "ponse\"@\n\023ConfigUpdateRequest\022)\n\006config\030\001"
+  " \001(\0132\021.common.v1.ConfigR\006config\"x\n\024Confi"
+  "gUpdateResponse\022\'\n\004data\030\001 \001(\0132\021.common.v"
+  "1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared"
+  ".v1.AppErrorH\000R\005errorB\n\n\010response\"z\n\026Con"
+  "figListenerResponse\022\'\n\004data\030\001 \001(\0132\021.comm"
+  "on.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.sh"
+  "ared.v1.AppErrorH\000R\005errorB\n\n\010response\"4\n"
+  "\025ConfigListenerRequest\022\033\n\tclient_id\030\001 \001("
+  "\tR\010clientIdBq\n\032org.megacommerce.common.v"
+  "1B\013ConfigProtoZCgithub.com/ahmad-khatib0"
+  "-org/megacommerce-proto/gen/go/common/v1"
+  ";v1\370\001\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_common_2fv1_2fconfig_2eproto_deps[1] = {
   &::descriptor_table_shared_2fv1_2ferror_2eproto,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_common_2fv1_2fconfig_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_common_2fv1_2fconfig_2eproto = {
-  false, false, 21547, descriptor_table_protodef_common_2fv1_2fconfig_2eproto, "common/v1/config.proto", 
+  false, false, 21814, descriptor_table_protodef_common_2fv1_2fconfig_2eproto, "common/v1/config.proto", 
   &descriptor_table_common_2fv1_2fconfig_2eproto_once, descriptor_table_common_2fv1_2fconfig_2eproto_deps, 1, 29,
   schemas, file_default_instances, TableStruct_common_2fv1_2fconfig_2eproto::offsets,
   file_level_metadata_common_2fv1_2fconfig_2eproto, file_level_enum_descriptors_common_2fv1_2fconfig_2eproto, file_level_service_descriptors_common_2fv1_2fconfig_2eproto,
@@ -7726,10 +7742,10 @@ class ConfigEmail::_Internal {
  public:
   using HasBits = decltype(std::declval<ConfigEmail>()._has_bits_);
   static void set_has_send_email_notifications(HasBits* has_bits) {
-    (*has_bits)[0] |= 8192u;
+    (*has_bits)[0] |= 65536u;
   }
   static void set_has_require_email_verification(HasBits* has_bits) {
-    (*has_bits)[0] |= 16384u;
+    (*has_bits)[0] |= 131072u;
   }
   static void set_has_feedback_email(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
@@ -7738,7 +7754,7 @@ class ConfigEmail::_Internal {
     (*has_bits)[0] |= 2u;
   }
   static void set_has_enable_smtp_auth(HasBits* has_bits) {
-    (*has_bits)[0] |= 32768u;
+    (*has_bits)[0] |= 262144u;
   }
   static void set_has_smtp_username(HasBits* has_bits) {
     (*has_bits)[0] |= 4u;
@@ -7753,13 +7769,13 @@ class ConfigEmail::_Internal {
     (*has_bits)[0] |= 32u;
   }
   static void set_has_smtp_server_timeout(HasBits* has_bits) {
-    (*has_bits)[0] |= 131072u;
+    (*has_bits)[0] |= 1048576u;
   }
   static void set_has_connection_security(HasBits* has_bits) {
     (*has_bits)[0] |= 64u;
   }
   static void set_has_send_push_notifications(HasBits* has_bits) {
-    (*has_bits)[0] |= 65536u;
+    (*has_bits)[0] |= 524288u;
   }
   static void set_has_push_notification_server(HasBits* has_bits) {
     (*has_bits)[0] |= 128u;
@@ -7768,19 +7784,19 @@ class ConfigEmail::_Internal {
     (*has_bits)[0] |= 256u;
   }
   static void set_has_push_notification_buffer(HasBits* has_bits) {
-    (*has_bits)[0] |= 262144u;
+    (*has_bits)[0] |= 2097152u;
   }
   static void set_has_enable_email_batching(HasBits* has_bits) {
-    (*has_bits)[0] |= 1048576u;
+    (*has_bits)[0] |= 8388608u;
   }
   static void set_has_email_batching_buffer_size(HasBits* has_bits) {
-    (*has_bits)[0] |= 524288u;
-  }
-  static void set_has_email_batching_interval(HasBits* has_bits) {
     (*has_bits)[0] |= 4194304u;
   }
+  static void set_has_email_batching_interval(HasBits* has_bits) {
+    (*has_bits)[0] |= 33554432u;
+  }
   static void set_has_skip_server_certificate_verification(HasBits* has_bits) {
-    (*has_bits)[0] |= 2097152u;
+    (*has_bits)[0] |= 16777216u;
   }
   static void set_has_email_notification_contents_type(HasBits* has_bits) {
     (*has_bits)[0] |= 512u;
@@ -7793,6 +7809,15 @@ class ConfigEmail::_Internal {
   }
   static void set_has_login_button_text_color(HasBits* has_bits) {
     (*has_bits)[0] |= 4096u;
+  }
+  static void set_has_rate_limiting_memory_size(HasBits* has_bits) {
+    (*has_bits)[0] |= 8192u;
+  }
+  static void set_has_rate_limiting_per_hour(HasBits* has_bits) {
+    (*has_bits)[0] |= 16384u;
+  }
+  static void set_has_rate_limiting_max_burst(HasBits* has_bits) {
+    (*has_bits)[0] |= 32768u;
   }
 };
 
@@ -7913,6 +7938,30 @@ ConfigEmail::ConfigEmail(const ConfigEmail& from)
     login_button_text_color_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_login_button_text_color(), 
       GetArenaForAllocation());
   }
+  rate_limiting_memory_size_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    rate_limiting_memory_size_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_rate_limiting_memory_size()) {
+    rate_limiting_memory_size_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_rate_limiting_memory_size(), 
+      GetArenaForAllocation());
+  }
+  rate_limiting_per_hour_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    rate_limiting_per_hour_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_rate_limiting_per_hour()) {
+    rate_limiting_per_hour_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_rate_limiting_per_hour(), 
+      GetArenaForAllocation());
+  }
+  rate_limiting_max_burst_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    rate_limiting_max_burst_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_rate_limiting_max_burst()) {
+    rate_limiting_max_burst_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_rate_limiting_max_burst(), 
+      GetArenaForAllocation());
+  }
   ::memcpy(&send_email_notifications_, &from.send_email_notifications_,
     static_cast<size_t>(reinterpret_cast<char*>(&email_batching_interval_) -
     reinterpret_cast<char*>(&send_email_notifications_)) + sizeof(email_batching_interval_));
@@ -7972,6 +8021,18 @@ login_button_text_color_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::Ge
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   login_button_text_color_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+rate_limiting_memory_size_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  rate_limiting_memory_size_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+rate_limiting_per_hour_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  rate_limiting_per_hour_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+rate_limiting_max_burst_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  rate_limiting_max_burst_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&send_email_notifications_) - reinterpret_cast<char*>(this)),
     0, static_cast<size_t>(reinterpret_cast<char*>(&email_batching_interval_) -
@@ -8000,6 +8061,9 @@ inline void ConfigEmail::SharedDtor() {
   login_button_color_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   login_button_border_color_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   login_button_text_color_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  rate_limiting_memory_size_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  rate_limiting_per_hour_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  rate_limiting_max_burst_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void ConfigEmail::ArenaDtor(void* object) {
@@ -8045,7 +8109,7 @@ void ConfigEmail::Clear() {
       push_notification_server_.ClearNonDefaultToEmpty();
     }
   }
-  if (cached_has_bits & 0x00001f00u) {
+  if (cached_has_bits & 0x0000ff00u) {
     if (cached_has_bits & 0x00000100u) {
       push_notification_contents_.ClearNonDefaultToEmpty();
     }
@@ -8061,16 +8125,25 @@ void ConfigEmail::Clear() {
     if (cached_has_bits & 0x00001000u) {
       login_button_text_color_.ClearNonDefaultToEmpty();
     }
+    if (cached_has_bits & 0x00002000u) {
+      rate_limiting_memory_size_.ClearNonDefaultToEmpty();
+    }
+    if (cached_has_bits & 0x00004000u) {
+      rate_limiting_per_hour_.ClearNonDefaultToEmpty();
+    }
+    if (cached_has_bits & 0x00008000u) {
+      rate_limiting_max_burst_.ClearNonDefaultToEmpty();
+    }
   }
-  if (cached_has_bits & 0x0000e000u) {
+  if (cached_has_bits & 0x00ff0000u) {
     ::memset(&send_email_notifications_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&enable_smtp_auth_) -
-        reinterpret_cast<char*>(&send_email_notifications_)) + sizeof(enable_smtp_auth_));
+        reinterpret_cast<char*>(&enable_email_batching_) -
+        reinterpret_cast<char*>(&send_email_notifications_)) + sizeof(enable_email_batching_));
   }
-  if (cached_has_bits & 0x007f0000u) {
-    ::memset(&send_push_notifications_, 0, static_cast<size_t>(
+  if (cached_has_bits & 0x03000000u) {
+    ::memset(&skip_server_certificate_verification_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&email_batching_interval_) -
-        reinterpret_cast<char*>(&send_push_notifications_)) + sizeof(email_batching_interval_));
+        reinterpret_cast<char*>(&skip_server_certificate_verification_)) + sizeof(email_batching_interval_));
   }
   _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -8303,6 +8376,36 @@ const char* ConfigEmail::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
         } else
           goto handle_unusual;
         continue;
+      // optional string rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];
+      case 24:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 194)) {
+          auto str = _internal_mutable_rate_limiting_memory_size();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "common.v1.ConfigEmail.rate_limiting_memory_size"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional string rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];
+      case 25:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 202)) {
+          auto str = _internal_mutable_rate_limiting_per_hour();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "common.v1.ConfigEmail.rate_limiting_per_hour"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional string rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];
+      case 26:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 210)) {
+          auto str = _internal_mutable_rate_limiting_max_burst();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "common.v1.ConfigEmail.rate_limiting_max_burst"));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -8523,6 +8626,36 @@ uint8_t* ConfigEmail::_InternalSerialize(
         23, this->_internal_login_button_text_color(), target);
   }
 
+  // optional string rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];
+  if (_internal_has_rate_limiting_memory_size()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_rate_limiting_memory_size().data(), static_cast<int>(this->_internal_rate_limiting_memory_size().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "common.v1.ConfigEmail.rate_limiting_memory_size");
+    target = stream->WriteStringMaybeAliased(
+        24, this->_internal_rate_limiting_memory_size(), target);
+  }
+
+  // optional string rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];
+  if (_internal_has_rate_limiting_per_hour()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_rate_limiting_per_hour().data(), static_cast<int>(this->_internal_rate_limiting_per_hour().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "common.v1.ConfigEmail.rate_limiting_per_hour");
+    target = stream->WriteStringMaybeAliased(
+        25, this->_internal_rate_limiting_per_hour(), target);
+  }
+
+  // optional string rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];
+  if (_internal_has_rate_limiting_max_burst()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_rate_limiting_max_burst().data(), static_cast<int>(this->_internal_rate_limiting_max_burst().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "common.v1.ConfigEmail.rate_limiting_max_burst");
+    target = stream->WriteStringMaybeAliased(
+        26, this->_internal_rate_limiting_max_burst(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -8634,57 +8767,80 @@ size_t ConfigEmail::ByteSizeLong() const {
           this->_internal_login_button_text_color());
     }
 
-    // optional bool send_email_notifications = 1 [json_name = "sendEmailNotifications"];
+    // optional string rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];
     if (cached_has_bits & 0x00002000u) {
-      total_size += 1 + 1;
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_rate_limiting_memory_size());
     }
 
-    // optional bool require_email_verification = 2 [json_name = "requireEmailVerification"];
+    // optional string rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];
     if (cached_has_bits & 0x00004000u) {
-      total_size += 1 + 1;
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_rate_limiting_per_hour());
     }
 
-    // optional bool enable_smtp_auth = 5 [json_name = "enableSmtpAuth"];
+    // optional string rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];
     if (cached_has_bits & 0x00008000u) {
-      total_size += 1 + 1;
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_rate_limiting_max_burst());
     }
 
   }
-  if (cached_has_bits & 0x007f0000u) {
-    // optional bool send_push_notifications = 12 [json_name = "sendPushNotifications"];
+  if (cached_has_bits & 0x00ff0000u) {
+    // optional bool send_email_notifications = 1 [json_name = "sendEmailNotifications"];
     if (cached_has_bits & 0x00010000u) {
       total_size += 1 + 1;
     }
 
-    // optional int32 smtp_server_timeout = 10 [json_name = "smtpServerTimeout"];
+    // optional bool require_email_verification = 2 [json_name = "requireEmailVerification"];
     if (cached_has_bits & 0x00020000u) {
+      total_size += 1 + 1;
+    }
+
+    // optional bool enable_smtp_auth = 5 [json_name = "enableSmtpAuth"];
+    if (cached_has_bits & 0x00040000u) {
+      total_size += 1 + 1;
+    }
+
+    // optional bool send_push_notifications = 12 [json_name = "sendPushNotifications"];
+    if (cached_has_bits & 0x00080000u) {
+      total_size += 1 + 1;
+    }
+
+    // optional int32 smtp_server_timeout = 10 [json_name = "smtpServerTimeout"];
+    if (cached_has_bits & 0x00100000u) {
       total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_smtp_server_timeout());
     }
 
     // optional int32 push_notification_buffer = 15 [json_name = "pushNotificationBuffer"];
-    if (cached_has_bits & 0x00040000u) {
+    if (cached_has_bits & 0x00200000u) {
       total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_push_notification_buffer());
     }
 
     // optional int32 email_batching_buffer_size = 17 [json_name = "emailBatchingBufferSize"];
-    if (cached_has_bits & 0x00080000u) {
+    if (cached_has_bits & 0x00400000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
           this->_internal_email_batching_buffer_size());
     }
 
     // optional bool enable_email_batching = 16 [json_name = "enableEmailBatching"];
-    if (cached_has_bits & 0x00100000u) {
+    if (cached_has_bits & 0x00800000u) {
       total_size += 2 + 1;
     }
 
+  }
+  if (cached_has_bits & 0x03000000u) {
     // optional bool skip_server_certificate_verification = 19 [json_name = "skipServerCertificateVerification"];
-    if (cached_has_bits & 0x00200000u) {
+    if (cached_has_bits & 0x01000000u) {
       total_size += 2 + 1;
     }
 
     // optional int32 email_batching_interval = 18 [json_name = "emailBatchingInterval"];
-    if (cached_has_bits & 0x00400000u) {
+    if (cached_has_bits & 0x02000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
           this->_internal_email_batching_interval());
@@ -8757,36 +8913,47 @@ void ConfigEmail::MergeFrom(const ConfigEmail& from) {
       _internal_set_login_button_text_color(from._internal_login_button_text_color());
     }
     if (cached_has_bits & 0x00002000u) {
-      send_email_notifications_ = from.send_email_notifications_;
+      _internal_set_rate_limiting_memory_size(from._internal_rate_limiting_memory_size());
     }
     if (cached_has_bits & 0x00004000u) {
-      require_email_verification_ = from.require_email_verification_;
+      _internal_set_rate_limiting_per_hour(from._internal_rate_limiting_per_hour());
     }
     if (cached_has_bits & 0x00008000u) {
+      _internal_set_rate_limiting_max_burst(from._internal_rate_limiting_max_burst());
+    }
+  }
+  if (cached_has_bits & 0x00ff0000u) {
+    if (cached_has_bits & 0x00010000u) {
+      send_email_notifications_ = from.send_email_notifications_;
+    }
+    if (cached_has_bits & 0x00020000u) {
+      require_email_verification_ = from.require_email_verification_;
+    }
+    if (cached_has_bits & 0x00040000u) {
       enable_smtp_auth_ = from.enable_smtp_auth_;
+    }
+    if (cached_has_bits & 0x00080000u) {
+      send_push_notifications_ = from.send_push_notifications_;
+    }
+    if (cached_has_bits & 0x00100000u) {
+      smtp_server_timeout_ = from.smtp_server_timeout_;
+    }
+    if (cached_has_bits & 0x00200000u) {
+      push_notification_buffer_ = from.push_notification_buffer_;
+    }
+    if (cached_has_bits & 0x00400000u) {
+      email_batching_buffer_size_ = from.email_batching_buffer_size_;
+    }
+    if (cached_has_bits & 0x00800000u) {
+      enable_email_batching_ = from.enable_email_batching_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
-  if (cached_has_bits & 0x007f0000u) {
-    if (cached_has_bits & 0x00010000u) {
-      send_push_notifications_ = from.send_push_notifications_;
-    }
-    if (cached_has_bits & 0x00020000u) {
-      smtp_server_timeout_ = from.smtp_server_timeout_;
-    }
-    if (cached_has_bits & 0x00040000u) {
-      push_notification_buffer_ = from.push_notification_buffer_;
-    }
-    if (cached_has_bits & 0x00080000u) {
-      email_batching_buffer_size_ = from.email_batching_buffer_size_;
-    }
-    if (cached_has_bits & 0x00100000u) {
-      enable_email_batching_ = from.enable_email_batching_;
-    }
-    if (cached_has_bits & 0x00200000u) {
+  if (cached_has_bits & 0x03000000u) {
+    if (cached_has_bits & 0x01000000u) {
       skip_server_certificate_verification_ = from.skip_server_certificate_verification_;
     }
-    if (cached_has_bits & 0x00400000u) {
+    if (cached_has_bits & 0x02000000u) {
       email_batching_interval_ = from.email_batching_interval_;
     }
     _has_bits_[0] |= cached_has_bits;
@@ -8875,6 +9042,21 @@ void ConfigEmail::InternalSwap(ConfigEmail* other) {
       &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       &login_button_text_color_, lhs_arena,
       &other->login_button_text_color_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &rate_limiting_memory_size_, lhs_arena,
+      &other->rate_limiting_memory_size_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &rate_limiting_per_hour_, lhs_arena,
+      &other->rate_limiting_per_hour_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      &rate_limiting_max_burst_, lhs_arena,
+      &other->rate_limiting_max_burst_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(ConfigEmail, email_batching_interval_)

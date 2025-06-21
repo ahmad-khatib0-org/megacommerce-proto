@@ -6917,7 +6917,10 @@ proto.common.v1.ConfigEmail.toObject = function(includeInstance, msg) {
     emailNotificationContentsType: jspb.Message.getFieldWithDefault(msg, 20, ""),
     loginButtonColor: jspb.Message.getFieldWithDefault(msg, 21, ""),
     loginButtonBorderColor: jspb.Message.getFieldWithDefault(msg, 22, ""),
-    loginButtonTextColor: jspb.Message.getFieldWithDefault(msg, 23, "")
+    loginButtonTextColor: jspb.Message.getFieldWithDefault(msg, 23, ""),
+    rateLimitingMemorySize: jspb.Message.getFieldWithDefault(msg, 24, ""),
+    rateLimitingPerHour: jspb.Message.getFieldWithDefault(msg, 25, ""),
+    rateLimitingMaxBurst: jspb.Message.getFieldWithDefault(msg, 26, "")
   };
 
   if (includeInstance) {
@@ -7045,6 +7048,18 @@ proto.common.v1.ConfigEmail.deserializeBinaryFromReader = function(msg, reader) 
     case 23:
       var value = /** @type {string} */ (reader.readString());
       msg.setLoginButtonTextColor(value);
+      break;
+    case 24:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRateLimitingMemorySize(value);
+      break;
+    case 25:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRateLimitingPerHour(value);
+      break;
+    case 26:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRateLimitingMaxBurst(value);
       break;
     default:
       reader.skipField();
@@ -7233,6 +7248,27 @@ proto.common.v1.ConfigEmail.serializeBinaryToWriter = function(message, writer) 
   if (f != null) {
     writer.writeString(
       23,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 24));
+  if (f != null) {
+    writer.writeString(
+      24,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 25));
+  if (f != null) {
+    writer.writeString(
+      25,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 26));
+  if (f != null) {
+    writer.writeString(
+      26,
       f
     );
   }
@@ -8064,6 +8100,114 @@ proto.common.v1.ConfigEmail.prototype.clearLoginButtonTextColor = function() {
  */
 proto.common.v1.ConfigEmail.prototype.hasLoginButtonTextColor = function() {
   return jspb.Message.getField(this, 23) != null;
+};
+
+
+/**
+ * optional string rate_limiting_memory_size = 24;
+ * @return {string}
+ */
+proto.common.v1.ConfigEmail.prototype.getRateLimitingMemorySize = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 24, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.common.v1.ConfigEmail} returns this
+ */
+proto.common.v1.ConfigEmail.prototype.setRateLimitingMemorySize = function(value) {
+  return jspb.Message.setField(this, 24, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.common.v1.ConfigEmail} returns this
+ */
+proto.common.v1.ConfigEmail.prototype.clearRateLimitingMemorySize = function() {
+  return jspb.Message.setField(this, 24, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.common.v1.ConfigEmail.prototype.hasRateLimitingMemorySize = function() {
+  return jspb.Message.getField(this, 24) != null;
+};
+
+
+/**
+ * optional string rate_limiting_per_hour = 25;
+ * @return {string}
+ */
+proto.common.v1.ConfigEmail.prototype.getRateLimitingPerHour = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 25, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.common.v1.ConfigEmail} returns this
+ */
+proto.common.v1.ConfigEmail.prototype.setRateLimitingPerHour = function(value) {
+  return jspb.Message.setField(this, 25, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.common.v1.ConfigEmail} returns this
+ */
+proto.common.v1.ConfigEmail.prototype.clearRateLimitingPerHour = function() {
+  return jspb.Message.setField(this, 25, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.common.v1.ConfigEmail.prototype.hasRateLimitingPerHour = function() {
+  return jspb.Message.getField(this, 25) != null;
+};
+
+
+/**
+ * optional string rate_limiting_max_burst = 26;
+ * @return {string}
+ */
+proto.common.v1.ConfigEmail.prototype.getRateLimitingMaxBurst = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 26, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.common.v1.ConfigEmail} returns this
+ */
+proto.common.v1.ConfigEmail.prototype.setRateLimitingMaxBurst = function(value) {
+  return jspb.Message.setField(this, 26, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.common.v1.ConfigEmail} returns this
+ */
+proto.common.v1.ConfigEmail.prototype.clearRateLimitingMaxBurst = function() {
+  return jspb.Message.setField(this, 26, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.common.v1.ConfigEmail.prototype.hasRateLimitingMaxBurst = function() {
+  return jspb.Message.getField(this, 26) != null;
 };
 
 

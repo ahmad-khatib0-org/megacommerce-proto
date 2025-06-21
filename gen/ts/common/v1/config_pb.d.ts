@@ -927,6 +927,21 @@ export class ConfigEmail extends jspb.Message {
   getLoginButtonTextColor(): string;
   setLoginButtonTextColor(value: string): void;
 
+  hasRateLimitingMemorySize(): boolean;
+  clearRateLimitingMemorySize(): void;
+  getRateLimitingMemorySize(): string;
+  setRateLimitingMemorySize(value: string): void;
+
+  hasRateLimitingPerHour(): boolean;
+  clearRateLimitingPerHour(): void;
+  getRateLimitingPerHour(): string;
+  setRateLimitingPerHour(value: string): void;
+
+  hasRateLimitingMaxBurst(): boolean;
+  clearRateLimitingMaxBurst(): void;
+  getRateLimitingMaxBurst(): string;
+  setRateLimitingMaxBurst(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfigEmail.AsObject;
   static toObject(includeInstance: boolean, msg: ConfigEmail): ConfigEmail.AsObject;
@@ -962,6 +977,9 @@ export namespace ConfigEmail {
     loginButtonColor: string,
     loginButtonBorderColor: string,
     loginButtonTextColor: string,
+    rateLimitingMemorySize: string,
+    rateLimitingPerHour: string,
+    rateLimitingMaxBurst: string,
   }
 }
 

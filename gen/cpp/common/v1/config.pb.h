@@ -3441,6 +3441,9 @@ class ConfigEmail final :
     kLoginButtonColorFieldNumber = 21,
     kLoginButtonBorderColorFieldNumber = 22,
     kLoginButtonTextColorFieldNumber = 23,
+    kRateLimitingMemorySizeFieldNumber = 24,
+    kRateLimitingPerHourFieldNumber = 25,
+    kRateLimitingMaxBurstFieldNumber = 26,
     kSendEmailNotificationsFieldNumber = 1,
     kRequireEmailVerificationFieldNumber = 2,
     kEnableSmtpAuthFieldNumber = 5,
@@ -3686,6 +3689,60 @@ class ConfigEmail final :
   std::string* _internal_mutable_login_button_text_color();
   public:
 
+  // optional string rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];
+  bool has_rate_limiting_memory_size() const;
+  private:
+  bool _internal_has_rate_limiting_memory_size() const;
+  public:
+  void clear_rate_limiting_memory_size();
+  const std::string& rate_limiting_memory_size() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_rate_limiting_memory_size(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_rate_limiting_memory_size();
+  PROTOBUF_NODISCARD std::string* release_rate_limiting_memory_size();
+  void set_allocated_rate_limiting_memory_size(std::string* rate_limiting_memory_size);
+  private:
+  const std::string& _internal_rate_limiting_memory_size() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_rate_limiting_memory_size(const std::string& value);
+  std::string* _internal_mutable_rate_limiting_memory_size();
+  public:
+
+  // optional string rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];
+  bool has_rate_limiting_per_hour() const;
+  private:
+  bool _internal_has_rate_limiting_per_hour() const;
+  public:
+  void clear_rate_limiting_per_hour();
+  const std::string& rate_limiting_per_hour() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_rate_limiting_per_hour(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_rate_limiting_per_hour();
+  PROTOBUF_NODISCARD std::string* release_rate_limiting_per_hour();
+  void set_allocated_rate_limiting_per_hour(std::string* rate_limiting_per_hour);
+  private:
+  const std::string& _internal_rate_limiting_per_hour() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_rate_limiting_per_hour(const std::string& value);
+  std::string* _internal_mutable_rate_limiting_per_hour();
+  public:
+
+  // optional string rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];
+  bool has_rate_limiting_max_burst() const;
+  private:
+  bool _internal_has_rate_limiting_max_burst() const;
+  public:
+  void clear_rate_limiting_max_burst();
+  const std::string& rate_limiting_max_burst() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_rate_limiting_max_burst(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_rate_limiting_max_burst();
+  PROTOBUF_NODISCARD std::string* release_rate_limiting_max_burst();
+  void set_allocated_rate_limiting_max_burst(std::string* rate_limiting_max_burst);
+  private:
+  const std::string& _internal_rate_limiting_max_burst() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_rate_limiting_max_burst(const std::string& value);
+  std::string* _internal_mutable_rate_limiting_max_burst();
+  public:
+
   // optional bool send_email_notifications = 1 [json_name = "sendEmailNotifications"];
   bool has_send_email_notifications() const;
   private:
@@ -3838,6 +3895,9 @@ class ConfigEmail final :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr login_button_color_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr login_button_border_color_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr login_button_text_color_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rate_limiting_memory_size_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rate_limiting_per_hour_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr rate_limiting_max_burst_;
   bool send_email_notifications_;
   bool require_email_verification_;
   bool enable_smtp_auth_;
@@ -13803,7 +13863,7 @@ inline void ConfigFile::set_allocated_amazon_s3_storage_class(std::string* amazo
 
 // optional bool send_email_notifications = 1 [json_name = "sendEmailNotifications"];
 inline bool ConfigEmail::_internal_has_send_email_notifications() const {
-  bool value = (_has_bits_[0] & 0x00002000u) != 0;
+  bool value = (_has_bits_[0] & 0x00010000u) != 0;
   return value;
 }
 inline bool ConfigEmail::has_send_email_notifications() const {
@@ -13811,7 +13871,7 @@ inline bool ConfigEmail::has_send_email_notifications() const {
 }
 inline void ConfigEmail::clear_send_email_notifications() {
   send_email_notifications_ = false;
-  _has_bits_[0] &= ~0x00002000u;
+  _has_bits_[0] &= ~0x00010000u;
 }
 inline bool ConfigEmail::_internal_send_email_notifications() const {
   return send_email_notifications_;
@@ -13821,7 +13881,7 @@ inline bool ConfigEmail::send_email_notifications() const {
   return _internal_send_email_notifications();
 }
 inline void ConfigEmail::_internal_set_send_email_notifications(bool value) {
-  _has_bits_[0] |= 0x00002000u;
+  _has_bits_[0] |= 0x00010000u;
   send_email_notifications_ = value;
 }
 inline void ConfigEmail::set_send_email_notifications(bool value) {
@@ -13831,7 +13891,7 @@ inline void ConfigEmail::set_send_email_notifications(bool value) {
 
 // optional bool require_email_verification = 2 [json_name = "requireEmailVerification"];
 inline bool ConfigEmail::_internal_has_require_email_verification() const {
-  bool value = (_has_bits_[0] & 0x00004000u) != 0;
+  bool value = (_has_bits_[0] & 0x00020000u) != 0;
   return value;
 }
 inline bool ConfigEmail::has_require_email_verification() const {
@@ -13839,7 +13899,7 @@ inline bool ConfigEmail::has_require_email_verification() const {
 }
 inline void ConfigEmail::clear_require_email_verification() {
   require_email_verification_ = false;
-  _has_bits_[0] &= ~0x00004000u;
+  _has_bits_[0] &= ~0x00020000u;
 }
 inline bool ConfigEmail::_internal_require_email_verification() const {
   return require_email_verification_;
@@ -13849,7 +13909,7 @@ inline bool ConfigEmail::require_email_verification() const {
   return _internal_require_email_verification();
 }
 inline void ConfigEmail::_internal_set_require_email_verification(bool value) {
-  _has_bits_[0] |= 0x00004000u;
+  _has_bits_[0] |= 0x00020000u;
   require_email_verification_ = value;
 }
 inline void ConfigEmail::set_require_email_verification(bool value) {
@@ -13997,7 +14057,7 @@ inline void ConfigEmail::set_allocated_reply_to_address(std::string* reply_to_ad
 
 // optional bool enable_smtp_auth = 5 [json_name = "enableSmtpAuth"];
 inline bool ConfigEmail::_internal_has_enable_smtp_auth() const {
-  bool value = (_has_bits_[0] & 0x00008000u) != 0;
+  bool value = (_has_bits_[0] & 0x00040000u) != 0;
   return value;
 }
 inline bool ConfigEmail::has_enable_smtp_auth() const {
@@ -14005,7 +14065,7 @@ inline bool ConfigEmail::has_enable_smtp_auth() const {
 }
 inline void ConfigEmail::clear_enable_smtp_auth() {
   enable_smtp_auth_ = false;
-  _has_bits_[0] &= ~0x00008000u;
+  _has_bits_[0] &= ~0x00040000u;
 }
 inline bool ConfigEmail::_internal_enable_smtp_auth() const {
   return enable_smtp_auth_;
@@ -14015,7 +14075,7 @@ inline bool ConfigEmail::enable_smtp_auth() const {
   return _internal_enable_smtp_auth();
 }
 inline void ConfigEmail::_internal_set_enable_smtp_auth(bool value) {
-  _has_bits_[0] |= 0x00008000u;
+  _has_bits_[0] |= 0x00040000u;
   enable_smtp_auth_ = value;
 }
 inline void ConfigEmail::set_enable_smtp_auth(bool value) {
@@ -14301,7 +14361,7 @@ inline void ConfigEmail::set_allocated_smtp_port(std::string* smtp_port) {
 
 // optional int32 smtp_server_timeout = 10 [json_name = "smtpServerTimeout"];
 inline bool ConfigEmail::_internal_has_smtp_server_timeout() const {
-  bool value = (_has_bits_[0] & 0x00020000u) != 0;
+  bool value = (_has_bits_[0] & 0x00100000u) != 0;
   return value;
 }
 inline bool ConfigEmail::has_smtp_server_timeout() const {
@@ -14309,7 +14369,7 @@ inline bool ConfigEmail::has_smtp_server_timeout() const {
 }
 inline void ConfigEmail::clear_smtp_server_timeout() {
   smtp_server_timeout_ = 0;
-  _has_bits_[0] &= ~0x00020000u;
+  _has_bits_[0] &= ~0x00100000u;
 }
 inline int32_t ConfigEmail::_internal_smtp_server_timeout() const {
   return smtp_server_timeout_;
@@ -14319,7 +14379,7 @@ inline int32_t ConfigEmail::smtp_server_timeout() const {
   return _internal_smtp_server_timeout();
 }
 inline void ConfigEmail::_internal_set_smtp_server_timeout(int32_t value) {
-  _has_bits_[0] |= 0x00020000u;
+  _has_bits_[0] |= 0x00100000u;
   smtp_server_timeout_ = value;
 }
 inline void ConfigEmail::set_smtp_server_timeout(int32_t value) {
@@ -14398,7 +14458,7 @@ inline void ConfigEmail::set_allocated_connection_security(std::string* connecti
 
 // optional bool send_push_notifications = 12 [json_name = "sendPushNotifications"];
 inline bool ConfigEmail::_internal_has_send_push_notifications() const {
-  bool value = (_has_bits_[0] & 0x00010000u) != 0;
+  bool value = (_has_bits_[0] & 0x00080000u) != 0;
   return value;
 }
 inline bool ConfigEmail::has_send_push_notifications() const {
@@ -14406,7 +14466,7 @@ inline bool ConfigEmail::has_send_push_notifications() const {
 }
 inline void ConfigEmail::clear_send_push_notifications() {
   send_push_notifications_ = false;
-  _has_bits_[0] &= ~0x00010000u;
+  _has_bits_[0] &= ~0x00080000u;
 }
 inline bool ConfigEmail::_internal_send_push_notifications() const {
   return send_push_notifications_;
@@ -14416,7 +14476,7 @@ inline bool ConfigEmail::send_push_notifications() const {
   return _internal_send_push_notifications();
 }
 inline void ConfigEmail::_internal_set_send_push_notifications(bool value) {
-  _has_bits_[0] |= 0x00010000u;
+  _has_bits_[0] |= 0x00080000u;
   send_push_notifications_ = value;
 }
 inline void ConfigEmail::set_send_push_notifications(bool value) {
@@ -14564,7 +14624,7 @@ inline void ConfigEmail::set_allocated_push_notification_contents(std::string* p
 
 // optional int32 push_notification_buffer = 15 [json_name = "pushNotificationBuffer"];
 inline bool ConfigEmail::_internal_has_push_notification_buffer() const {
-  bool value = (_has_bits_[0] & 0x00040000u) != 0;
+  bool value = (_has_bits_[0] & 0x00200000u) != 0;
   return value;
 }
 inline bool ConfigEmail::has_push_notification_buffer() const {
@@ -14572,7 +14632,7 @@ inline bool ConfigEmail::has_push_notification_buffer() const {
 }
 inline void ConfigEmail::clear_push_notification_buffer() {
   push_notification_buffer_ = 0;
-  _has_bits_[0] &= ~0x00040000u;
+  _has_bits_[0] &= ~0x00200000u;
 }
 inline int32_t ConfigEmail::_internal_push_notification_buffer() const {
   return push_notification_buffer_;
@@ -14582,7 +14642,7 @@ inline int32_t ConfigEmail::push_notification_buffer() const {
   return _internal_push_notification_buffer();
 }
 inline void ConfigEmail::_internal_set_push_notification_buffer(int32_t value) {
-  _has_bits_[0] |= 0x00040000u;
+  _has_bits_[0] |= 0x00200000u;
   push_notification_buffer_ = value;
 }
 inline void ConfigEmail::set_push_notification_buffer(int32_t value) {
@@ -14592,7 +14652,7 @@ inline void ConfigEmail::set_push_notification_buffer(int32_t value) {
 
 // optional bool enable_email_batching = 16 [json_name = "enableEmailBatching"];
 inline bool ConfigEmail::_internal_has_enable_email_batching() const {
-  bool value = (_has_bits_[0] & 0x00100000u) != 0;
+  bool value = (_has_bits_[0] & 0x00800000u) != 0;
   return value;
 }
 inline bool ConfigEmail::has_enable_email_batching() const {
@@ -14600,7 +14660,7 @@ inline bool ConfigEmail::has_enable_email_batching() const {
 }
 inline void ConfigEmail::clear_enable_email_batching() {
   enable_email_batching_ = false;
-  _has_bits_[0] &= ~0x00100000u;
+  _has_bits_[0] &= ~0x00800000u;
 }
 inline bool ConfigEmail::_internal_enable_email_batching() const {
   return enable_email_batching_;
@@ -14610,7 +14670,7 @@ inline bool ConfigEmail::enable_email_batching() const {
   return _internal_enable_email_batching();
 }
 inline void ConfigEmail::_internal_set_enable_email_batching(bool value) {
-  _has_bits_[0] |= 0x00100000u;
+  _has_bits_[0] |= 0x00800000u;
   enable_email_batching_ = value;
 }
 inline void ConfigEmail::set_enable_email_batching(bool value) {
@@ -14620,7 +14680,7 @@ inline void ConfigEmail::set_enable_email_batching(bool value) {
 
 // optional int32 email_batching_buffer_size = 17 [json_name = "emailBatchingBufferSize"];
 inline bool ConfigEmail::_internal_has_email_batching_buffer_size() const {
-  bool value = (_has_bits_[0] & 0x00080000u) != 0;
+  bool value = (_has_bits_[0] & 0x00400000u) != 0;
   return value;
 }
 inline bool ConfigEmail::has_email_batching_buffer_size() const {
@@ -14628,7 +14688,7 @@ inline bool ConfigEmail::has_email_batching_buffer_size() const {
 }
 inline void ConfigEmail::clear_email_batching_buffer_size() {
   email_batching_buffer_size_ = 0;
-  _has_bits_[0] &= ~0x00080000u;
+  _has_bits_[0] &= ~0x00400000u;
 }
 inline int32_t ConfigEmail::_internal_email_batching_buffer_size() const {
   return email_batching_buffer_size_;
@@ -14638,7 +14698,7 @@ inline int32_t ConfigEmail::email_batching_buffer_size() const {
   return _internal_email_batching_buffer_size();
 }
 inline void ConfigEmail::_internal_set_email_batching_buffer_size(int32_t value) {
-  _has_bits_[0] |= 0x00080000u;
+  _has_bits_[0] |= 0x00400000u;
   email_batching_buffer_size_ = value;
 }
 inline void ConfigEmail::set_email_batching_buffer_size(int32_t value) {
@@ -14648,7 +14708,7 @@ inline void ConfigEmail::set_email_batching_buffer_size(int32_t value) {
 
 // optional int32 email_batching_interval = 18 [json_name = "emailBatchingInterval"];
 inline bool ConfigEmail::_internal_has_email_batching_interval() const {
-  bool value = (_has_bits_[0] & 0x00400000u) != 0;
+  bool value = (_has_bits_[0] & 0x02000000u) != 0;
   return value;
 }
 inline bool ConfigEmail::has_email_batching_interval() const {
@@ -14656,7 +14716,7 @@ inline bool ConfigEmail::has_email_batching_interval() const {
 }
 inline void ConfigEmail::clear_email_batching_interval() {
   email_batching_interval_ = 0;
-  _has_bits_[0] &= ~0x00400000u;
+  _has_bits_[0] &= ~0x02000000u;
 }
 inline int32_t ConfigEmail::_internal_email_batching_interval() const {
   return email_batching_interval_;
@@ -14666,7 +14726,7 @@ inline int32_t ConfigEmail::email_batching_interval() const {
   return _internal_email_batching_interval();
 }
 inline void ConfigEmail::_internal_set_email_batching_interval(int32_t value) {
-  _has_bits_[0] |= 0x00400000u;
+  _has_bits_[0] |= 0x02000000u;
   email_batching_interval_ = value;
 }
 inline void ConfigEmail::set_email_batching_interval(int32_t value) {
@@ -14676,7 +14736,7 @@ inline void ConfigEmail::set_email_batching_interval(int32_t value) {
 
 // optional bool skip_server_certificate_verification = 19 [json_name = "skipServerCertificateVerification"];
 inline bool ConfigEmail::_internal_has_skip_server_certificate_verification() const {
-  bool value = (_has_bits_[0] & 0x00200000u) != 0;
+  bool value = (_has_bits_[0] & 0x01000000u) != 0;
   return value;
 }
 inline bool ConfigEmail::has_skip_server_certificate_verification() const {
@@ -14684,7 +14744,7 @@ inline bool ConfigEmail::has_skip_server_certificate_verification() const {
 }
 inline void ConfigEmail::clear_skip_server_certificate_verification() {
   skip_server_certificate_verification_ = false;
-  _has_bits_[0] &= ~0x00200000u;
+  _has_bits_[0] &= ~0x01000000u;
 }
 inline bool ConfigEmail::_internal_skip_server_certificate_verification() const {
   return skip_server_certificate_verification_;
@@ -14694,7 +14754,7 @@ inline bool ConfigEmail::skip_server_certificate_verification() const {
   return _internal_skip_server_certificate_verification();
 }
 inline void ConfigEmail::_internal_set_skip_server_certificate_verification(bool value) {
-  _has_bits_[0] |= 0x00200000u;
+  _has_bits_[0] |= 0x01000000u;
   skip_server_certificate_verification_ = value;
 }
 inline void ConfigEmail::set_skip_server_certificate_verification(bool value) {
@@ -14976,6 +15036,213 @@ inline void ConfigEmail::set_allocated_login_button_text_color(std::string* logi
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigEmail.login_button_text_color)
+}
+
+// optional string rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];
+inline bool ConfigEmail::_internal_has_rate_limiting_memory_size() const {
+  bool value = (_has_bits_[0] & 0x00002000u) != 0;
+  return value;
+}
+inline bool ConfigEmail::has_rate_limiting_memory_size() const {
+  return _internal_has_rate_limiting_memory_size();
+}
+inline void ConfigEmail::clear_rate_limiting_memory_size() {
+  rate_limiting_memory_size_.ClearToEmpty();
+  _has_bits_[0] &= ~0x00002000u;
+}
+inline const std::string& ConfigEmail::rate_limiting_memory_size() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigEmail.rate_limiting_memory_size)
+  return _internal_rate_limiting_memory_size();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ConfigEmail::set_rate_limiting_memory_size(ArgT0&& arg0, ArgT... args) {
+ _has_bits_[0] |= 0x00002000u;
+ rate_limiting_memory_size_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigEmail.rate_limiting_memory_size)
+}
+inline std::string* ConfigEmail::mutable_rate_limiting_memory_size() {
+  std::string* _s = _internal_mutable_rate_limiting_memory_size();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigEmail.rate_limiting_memory_size)
+  return _s;
+}
+inline const std::string& ConfigEmail::_internal_rate_limiting_memory_size() const {
+  return rate_limiting_memory_size_.Get();
+}
+inline void ConfigEmail::_internal_set_rate_limiting_memory_size(const std::string& value) {
+  _has_bits_[0] |= 0x00002000u;
+  rate_limiting_memory_size_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ConfigEmail::_internal_mutable_rate_limiting_memory_size() {
+  _has_bits_[0] |= 0x00002000u;
+  return rate_limiting_memory_size_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ConfigEmail::release_rate_limiting_memory_size() {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigEmail.rate_limiting_memory_size)
+  if (!_internal_has_rate_limiting_memory_size()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00002000u;
+  auto* p = rate_limiting_memory_size_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (rate_limiting_memory_size_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    rate_limiting_memory_size_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void ConfigEmail::set_allocated_rate_limiting_memory_size(std::string* rate_limiting_memory_size) {
+  if (rate_limiting_memory_size != nullptr) {
+    _has_bits_[0] |= 0x00002000u;
+  } else {
+    _has_bits_[0] &= ~0x00002000u;
+  }
+  rate_limiting_memory_size_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), rate_limiting_memory_size,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (rate_limiting_memory_size_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    rate_limiting_memory_size_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigEmail.rate_limiting_memory_size)
+}
+
+// optional string rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];
+inline bool ConfigEmail::_internal_has_rate_limiting_per_hour() const {
+  bool value = (_has_bits_[0] & 0x00004000u) != 0;
+  return value;
+}
+inline bool ConfigEmail::has_rate_limiting_per_hour() const {
+  return _internal_has_rate_limiting_per_hour();
+}
+inline void ConfigEmail::clear_rate_limiting_per_hour() {
+  rate_limiting_per_hour_.ClearToEmpty();
+  _has_bits_[0] &= ~0x00004000u;
+}
+inline const std::string& ConfigEmail::rate_limiting_per_hour() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigEmail.rate_limiting_per_hour)
+  return _internal_rate_limiting_per_hour();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ConfigEmail::set_rate_limiting_per_hour(ArgT0&& arg0, ArgT... args) {
+ _has_bits_[0] |= 0x00004000u;
+ rate_limiting_per_hour_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigEmail.rate_limiting_per_hour)
+}
+inline std::string* ConfigEmail::mutable_rate_limiting_per_hour() {
+  std::string* _s = _internal_mutable_rate_limiting_per_hour();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigEmail.rate_limiting_per_hour)
+  return _s;
+}
+inline const std::string& ConfigEmail::_internal_rate_limiting_per_hour() const {
+  return rate_limiting_per_hour_.Get();
+}
+inline void ConfigEmail::_internal_set_rate_limiting_per_hour(const std::string& value) {
+  _has_bits_[0] |= 0x00004000u;
+  rate_limiting_per_hour_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ConfigEmail::_internal_mutable_rate_limiting_per_hour() {
+  _has_bits_[0] |= 0x00004000u;
+  return rate_limiting_per_hour_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ConfigEmail::release_rate_limiting_per_hour() {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigEmail.rate_limiting_per_hour)
+  if (!_internal_has_rate_limiting_per_hour()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00004000u;
+  auto* p = rate_limiting_per_hour_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (rate_limiting_per_hour_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    rate_limiting_per_hour_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void ConfigEmail::set_allocated_rate_limiting_per_hour(std::string* rate_limiting_per_hour) {
+  if (rate_limiting_per_hour != nullptr) {
+    _has_bits_[0] |= 0x00004000u;
+  } else {
+    _has_bits_[0] &= ~0x00004000u;
+  }
+  rate_limiting_per_hour_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), rate_limiting_per_hour,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (rate_limiting_per_hour_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    rate_limiting_per_hour_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigEmail.rate_limiting_per_hour)
+}
+
+// optional string rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];
+inline bool ConfigEmail::_internal_has_rate_limiting_max_burst() const {
+  bool value = (_has_bits_[0] & 0x00008000u) != 0;
+  return value;
+}
+inline bool ConfigEmail::has_rate_limiting_max_burst() const {
+  return _internal_has_rate_limiting_max_burst();
+}
+inline void ConfigEmail::clear_rate_limiting_max_burst() {
+  rate_limiting_max_burst_.ClearToEmpty();
+  _has_bits_[0] &= ~0x00008000u;
+}
+inline const std::string& ConfigEmail::rate_limiting_max_burst() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigEmail.rate_limiting_max_burst)
+  return _internal_rate_limiting_max_burst();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ConfigEmail::set_rate_limiting_max_burst(ArgT0&& arg0, ArgT... args) {
+ _has_bits_[0] |= 0x00008000u;
+ rate_limiting_max_burst_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigEmail.rate_limiting_max_burst)
+}
+inline std::string* ConfigEmail::mutable_rate_limiting_max_burst() {
+  std::string* _s = _internal_mutable_rate_limiting_max_burst();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigEmail.rate_limiting_max_burst)
+  return _s;
+}
+inline const std::string& ConfigEmail::_internal_rate_limiting_max_burst() const {
+  return rate_limiting_max_burst_.Get();
+}
+inline void ConfigEmail::_internal_set_rate_limiting_max_burst(const std::string& value) {
+  _has_bits_[0] |= 0x00008000u;
+  rate_limiting_max_burst_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
+}
+inline std::string* ConfigEmail::_internal_mutable_rate_limiting_max_burst() {
+  _has_bits_[0] |= 0x00008000u;
+  return rate_limiting_max_burst_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
+}
+inline std::string* ConfigEmail::release_rate_limiting_max_burst() {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigEmail.rate_limiting_max_burst)
+  if (!_internal_has_rate_limiting_max_burst()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00008000u;
+  auto* p = rate_limiting_max_burst_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (rate_limiting_max_burst_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    rate_limiting_max_burst_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void ConfigEmail::set_allocated_rate_limiting_max_burst(std::string* rate_limiting_max_burst) {
+  if (rate_limiting_max_burst != nullptr) {
+    _has_bits_[0] |= 0x00008000u;
+  } else {
+    _has_bits_[0] &= ~0x00008000u;
+  }
+  rate_limiting_max_burst_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), rate_limiting_max_burst,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (rate_limiting_max_burst_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    rate_limiting_max_burst_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigEmail.rate_limiting_max_burst)
 }
 
 // -------------------------------------------------------------------

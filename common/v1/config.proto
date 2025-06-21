@@ -171,6 +171,9 @@ message ConfigEmail {
   optional string login_button_color = 21;
   optional string login_button_border_color = 22;
   optional string login_button_text_color = 23;
+  optional string rate_limiting_memory_size = 24;
+  optional string rate_limiting_per_hour = 25;
+  optional string rate_limiting_max_burst = 26;
 }
 
 message ConfigRateLimit {
