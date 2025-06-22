@@ -675,9 +675,8 @@ proto.common.v1.ConfigMain.prototype.toObject = function(opt_includeInstance) {
 proto.common.v1.ConfigMain.toObject = function(includeInstance, msg) {
   var f, obj = {
     env: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    readTimeout: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    writeTimeout: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    idleTimeout: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    siteName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    siteUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
     enableLinkPreviews: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
     restrictLinkPreviews: jspb.Message.getFieldWithDefault(msg, 6, ""),
     enableClientPerformanceDebugging: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
@@ -737,16 +736,12 @@ proto.common.v1.ConfigMain.deserializeBinaryFromReader = function(msg, reader) {
       msg.setEnv(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setReadTimeout(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSiteName(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setWriteTimeout(value);
-      break;
-    case 4:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setIdleTimeout(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSiteUrl(value);
       break;
     case 5:
       var value = /** @type {boolean} */ (reader.readBool());
@@ -856,24 +851,17 @@ proto.common.v1.ConfigMain.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 2));
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       2,
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 3));
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       3,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 4));
-  if (f != null) {
-    writer.writeInt32(
-      4,
       f
     );
   }
@@ -1043,19 +1031,19 @@ proto.common.v1.ConfigMain.prototype.hasEnv = function() {
 
 
 /**
- * optional int32 read_timeout = 2;
- * @return {number}
+ * optional string site_name = 2;
+ * @return {string}
  */
-proto.common.v1.ConfigMain.prototype.getReadTimeout = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+proto.common.v1.ConfigMain.prototype.getSiteName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setReadTimeout = function(value) {
+proto.common.v1.ConfigMain.prototype.setSiteName = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -1064,7 +1052,7 @@ proto.common.v1.ConfigMain.prototype.setReadTimeout = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearReadTimeout = function() {
+proto.common.v1.ConfigMain.prototype.clearSiteName = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -1073,25 +1061,25 @@ proto.common.v1.ConfigMain.prototype.clearReadTimeout = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasReadTimeout = function() {
+proto.common.v1.ConfigMain.prototype.hasSiteName = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
 
 /**
- * optional int32 write_timeout = 3;
- * @return {number}
+ * optional string site_url = 3;
+ * @return {string}
  */
-proto.common.v1.ConfigMain.prototype.getWriteTimeout = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+proto.common.v1.ConfigMain.prototype.getSiteUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.setWriteTimeout = function(value) {
+proto.common.v1.ConfigMain.prototype.setSiteUrl = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -1100,7 +1088,7 @@ proto.common.v1.ConfigMain.prototype.setWriteTimeout = function(value) {
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigMain} returns this
  */
-proto.common.v1.ConfigMain.prototype.clearWriteTimeout = function() {
+proto.common.v1.ConfigMain.prototype.clearSiteUrl = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -1109,44 +1097,8 @@ proto.common.v1.ConfigMain.prototype.clearWriteTimeout = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigMain.prototype.hasWriteTimeout = function() {
+proto.common.v1.ConfigMain.prototype.hasSiteUrl = function() {
   return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional int32 idle_timeout = 4;
- * @return {number}
- */
-proto.common.v1.ConfigMain.prototype.getIdleTimeout = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.common.v1.ConfigMain} returns this
- */
-proto.common.v1.ConfigMain.prototype.setIdleTimeout = function(value) {
-  return jspb.Message.setField(this, 4, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.common.v1.ConfigMain} returns this
- */
-proto.common.v1.ConfigMain.prototype.clearIdleTimeout = function() {
-  return jspb.Message.setField(this, 4, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.common.v1.ConfigMain.prototype.hasIdleTimeout = function() {
-  return jspb.Message.getField(this, 4) != null;
 };
 
 

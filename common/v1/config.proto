@@ -11,9 +11,8 @@ option java_package = "org.megacommerce.common.v1";
 
 message ConfigMain {
   optional string env = 1;
-  optional int32 read_timeout = 2;
-  optional int32 write_timeout = 3;
-  optional int32 idle_timeout = 4;
+  optional string site_name = 2;
+  optional string site_url = 3;
   optional bool enable_link_previews = 5;
   optional string restrict_link_previews = 6;
   optional bool enable_client_performance_debugging = 7;

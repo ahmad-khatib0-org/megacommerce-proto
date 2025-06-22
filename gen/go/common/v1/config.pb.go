@@ -25,9 +25,8 @@ const (
 type ConfigMain struct {
 	state                                    protoimpl.MessageState `protogen:"open.v1"`
 	Env                                      *string                `protobuf:"bytes,1,opt,name=env,proto3,oneof" json:"env,omitempty"`
-	ReadTimeout                              *int32                 `protobuf:"varint,2,opt,name=read_timeout,json=readTimeout,proto3,oneof" json:"read_timeout,omitempty"`
-	WriteTimeout                             *int32                 `protobuf:"varint,3,opt,name=write_timeout,json=writeTimeout,proto3,oneof" json:"write_timeout,omitempty"`
-	IdleTimeout                              *int32                 `protobuf:"varint,4,opt,name=idle_timeout,json=idleTimeout,proto3,oneof" json:"idle_timeout,omitempty"`
+	SiteName                                 *string                `protobuf:"bytes,2,opt,name=site_name,json=siteName,proto3,oneof" json:"site_name,omitempty"`
+	SiteUrl                                  *string                `protobuf:"bytes,3,opt,name=site_url,json=siteUrl,proto3,oneof" json:"site_url,omitempty"`
 	EnableLinkPreviews                       *bool                  `protobuf:"varint,5,opt,name=enable_link_previews,json=enableLinkPreviews,proto3,oneof" json:"enable_link_previews,omitempty"`
 	RestrictLinkPreviews                     *string                `protobuf:"bytes,6,opt,name=restrict_link_previews,json=restrictLinkPreviews,proto3,oneof" json:"restrict_link_previews,omitempty"`
 	EnableClientPerformanceDebugging         *bool                  `protobuf:"varint,7,opt,name=enable_client_performance_debugging,json=enableClientPerformanceDebugging,proto3,oneof" json:"enable_client_performance_debugging,omitempty"`
@@ -87,25 +86,18 @@ func (x *ConfigMain) GetEnv() string {
 	return ""
 }
 
-func (x *ConfigMain) GetReadTimeout() int32 {
-	if x != nil && x.ReadTimeout != nil {
-		return *x.ReadTimeout
+func (x *ConfigMain) GetSiteName() string {
+	if x != nil && x.SiteName != nil {
+		return *x.SiteName
 	}
-	return 0
+	return ""
 }
 
-func (x *ConfigMain) GetWriteTimeout() int32 {
-	if x != nil && x.WriteTimeout != nil {
-		return *x.WriteTimeout
+func (x *ConfigMain) GetSiteUrl() string {
+	if x != nil && x.SiteUrl != nil {
+		return *x.SiteUrl
 	}
-	return 0
-}
-
-func (x *ConfigMain) GetIdleTimeout() int32 {
-	if x != nil && x.IdleTimeout != nil {
-		return *x.IdleTimeout
-	}
-	return 0
+	return ""
 }
 
 func (x *ConfigMain) GetEnableLinkPreviews() bool {
@@ -3430,38 +3422,37 @@ var File_common_v1_config_proto protoreflect.FileDescriptor
 
 const file_common_v1_config_proto_rawDesc = "" +
 	"\n" +
-	"\x16common/v1/config.proto\x12\tcommon.v1\x1a\x15shared/v1/error.proto\"\xbd\x0f\n" +
+	"\x16common/v1/config.proto\x12\tcommon.v1\x1a\x15shared/v1/error.proto\"\xec\x0e\n" +
 	"\n" +
 	"ConfigMain\x12\x15\n" +
-	"\x03env\x18\x01 \x01(\tH\x00R\x03env\x88\x01\x01\x12&\n" +
-	"\fread_timeout\x18\x02 \x01(\x05H\x01R\vreadTimeout\x88\x01\x01\x12(\n" +
-	"\rwrite_timeout\x18\x03 \x01(\x05H\x02R\fwriteTimeout\x88\x01\x01\x12&\n" +
-	"\fidle_timeout\x18\x04 \x01(\x05H\x03R\vidleTimeout\x88\x01\x01\x125\n" +
-	"\x14enable_link_previews\x18\x05 \x01(\bH\x04R\x12enableLinkPreviews\x88\x01\x01\x129\n" +
-	"\x16restrict_link_previews\x18\x06 \x01(\tH\x05R\x14restrictLinkPreviews\x88\x01\x01\x12R\n" +
-	"#enable_client_performance_debugging\x18\a \x01(\bH\x06R enableClientPerformanceDebugging\x88\x01\x01\x12/\n" +
-	"\x11enable_gif_picker\x18\b \x01(\bH\aR\x0fenableGifPicker\x88\x01\x01\x123\n" +
-	"\x13enable_custom_emoji\x18\t \x01(\bH\bR\x11enableCustomEmoji\x88\x01\x01\x123\n" +
+	"\x03env\x18\x01 \x01(\tH\x00R\x03env\x88\x01\x01\x12 \n" +
+	"\tsite_name\x18\x02 \x01(\tH\x01R\bsiteName\x88\x01\x01\x12\x1e\n" +
+	"\bsite_url\x18\x03 \x01(\tH\x02R\asiteUrl\x88\x01\x01\x125\n" +
+	"\x14enable_link_previews\x18\x05 \x01(\bH\x03R\x12enableLinkPreviews\x88\x01\x01\x129\n" +
+	"\x16restrict_link_previews\x18\x06 \x01(\tH\x04R\x14restrictLinkPreviews\x88\x01\x01\x12R\n" +
+	"#enable_client_performance_debugging\x18\a \x01(\bH\x05R enableClientPerformanceDebugging\x88\x01\x01\x12/\n" +
+	"\x11enable_gif_picker\x18\b \x01(\bH\x06R\x0fenableGifPicker\x88\x01\x01\x123\n" +
+	"\x13enable_custom_emoji\x18\t \x01(\bH\aR\x11enableCustomEmoji\x88\x01\x01\x123\n" +
 	"\x13enable_emoji_picker\x18\n" +
-	" \x01(\bH\tR\x11enableEmojiPicker\x88\x01\x01\x12d\n" +
-	"-time_between_user_typing_updates_milliseconds\x18\v \x01(\x03H\n" +
-	"R(timeBetweenUserTypingUpdatesMilliseconds\x88\x01\x01\x121\n" +
-	"\x12enable_file_search\x18\f \x01(\bH\vR\x10enableFileSearch\x88\x01\x01\x12B\n" +
-	"\x1benable_user_typing_messages\x18\r \x01(\bH\fR\x18enableUserTypingMessages\x88\x01\x01\x125\n" +
-	"\x14enable_user_statuses\x18\x0e \x01(\bH\rR\x12enableUserStatuses\x88\x01\x01\x12=\n" +
-	"\x18enable_email_invitations\x18\x0f \x01(\bH\x0eR\x16enableEmailInvitations\x88\x01\x01\x12$\n" +
-	"\venable_svgs\x18\x10 \x01(\bH\x0fR\n" +
+	" \x01(\bH\bR\x11enableEmojiPicker\x88\x01\x01\x12d\n" +
+	"-time_between_user_typing_updates_milliseconds\x18\v \x01(\x03H\tR(timeBetweenUserTypingUpdatesMilliseconds\x88\x01\x01\x121\n" +
+	"\x12enable_file_search\x18\f \x01(\bH\n" +
+	"R\x10enableFileSearch\x88\x01\x01\x12B\n" +
+	"\x1benable_user_typing_messages\x18\r \x01(\bH\vR\x18enableUserTypingMessages\x88\x01\x01\x125\n" +
+	"\x14enable_user_statuses\x18\x0e \x01(\bH\fR\x12enableUserStatuses\x88\x01\x01\x12=\n" +
+	"\x18enable_email_invitations\x18\x0f \x01(\bH\rR\x16enableEmailInvitations\x88\x01\x01\x12$\n" +
+	"\venable_svgs\x18\x10 \x01(\bH\x0eR\n" +
 	"enableSvgs\x88\x01\x01\x12I\n" +
-	"\x1eallow_persistent_notifications\x18\x11 \x01(\bH\x10R\x1callowPersistentNotifications\x88\x01\x01\x12\\\n" +
-	"(persistent_notification_interval_minutes\x18\x12 \x01(\x05H\x11R%persistentNotificationIntervalMinutes\x88\x01\x01\x12N\n" +
-	"!persistent_notification_max_count\x18\x13 \x01(\x05H\x12R\x1epersistentNotificationMaxCount\x88\x01\x01\x12X\n" +
-	"&persistent_notification_max_recipients\x18\x14 \x01(\x05H\x13R#persistentNotificationMaxRecipients\x88\x01\x01\x12O\n" +
-	"\"feature_flag_sync_interval_seconds\x18\x15 \x01(\x05H\x14R\x1efeatureFlagSyncIntervalSeconds\x88\x01\x01\x123\n" +
-	"\x13allow_synced_drafts\x18\x16 \x01(\bH\x15R\x11allowSyncedDrafts\x88\x01\x01B\x06\n" +
-	"\x04_envB\x0f\n" +
-	"\r_read_timeoutB\x10\n" +
-	"\x0e_write_timeoutB\x0f\n" +
-	"\r_idle_timeoutB\x17\n" +
+	"\x1eallow_persistent_notifications\x18\x11 \x01(\bH\x0fR\x1callowPersistentNotifications\x88\x01\x01\x12\\\n" +
+	"(persistent_notification_interval_minutes\x18\x12 \x01(\x05H\x10R%persistentNotificationIntervalMinutes\x88\x01\x01\x12N\n" +
+	"!persistent_notification_max_count\x18\x13 \x01(\x05H\x11R\x1epersistentNotificationMaxCount\x88\x01\x01\x12X\n" +
+	"&persistent_notification_max_recipients\x18\x14 \x01(\x05H\x12R#persistentNotificationMaxRecipients\x88\x01\x01\x12O\n" +
+	"\"feature_flag_sync_interval_seconds\x18\x15 \x01(\x05H\x13R\x1efeatureFlagSyncIntervalSeconds\x88\x01\x01\x123\n" +
+	"\x13allow_synced_drafts\x18\x16 \x01(\bH\x14R\x11allowSyncedDrafts\x88\x01\x01B\x06\n" +
+	"\x04_envB\f\n" +
+	"\n" +
+	"_site_nameB\v\n" +
+	"\t_site_urlB\x17\n" +
 	"\x15_enable_link_previewsB\x19\n" +
 	"\x17_restrict_link_previewsB&\n" +
 	"$_enable_client_performance_debuggingB\x14\n" +

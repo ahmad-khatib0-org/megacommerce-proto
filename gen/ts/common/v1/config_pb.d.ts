@@ -10,20 +10,15 @@ export class ConfigMain extends jspb.Message {
   getEnv(): string;
   setEnv(value: string): void;
 
-  hasReadTimeout(): boolean;
-  clearReadTimeout(): void;
-  getReadTimeout(): number;
-  setReadTimeout(value: number): void;
+  hasSiteName(): boolean;
+  clearSiteName(): void;
+  getSiteName(): string;
+  setSiteName(value: string): void;
 
-  hasWriteTimeout(): boolean;
-  clearWriteTimeout(): void;
-  getWriteTimeout(): number;
-  setWriteTimeout(value: number): void;
-
-  hasIdleTimeout(): boolean;
-  clearIdleTimeout(): void;
-  getIdleTimeout(): number;
-  setIdleTimeout(value: number): void;
+  hasSiteUrl(): boolean;
+  clearSiteUrl(): void;
+  getSiteUrl(): string;
+  setSiteUrl(value: string): void;
 
   hasEnableLinkPreviews(): boolean;
   clearEnableLinkPreviews(): void;
@@ -128,9 +123,8 @@ export class ConfigMain extends jspb.Message {
 export namespace ConfigMain {
   export type AsObject = {
     env: string,
-    readTimeout: number,
-    writeTimeout: number,
-    idleTimeout: number,
+    siteName: string,
+    siteUrl: string,
     enableLinkPreviews: boolean,
     restrictLinkPreviews: string,
     enableClientPerformanceDebugging: boolean,

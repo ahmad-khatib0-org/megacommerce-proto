@@ -9,20 +9,15 @@ export class ConfigMain extends jspb.Message {
   hasEnv(): boolean;
   clearEnv(): ConfigMain;
 
-  getReadTimeout(): number;
-  setReadTimeout(value: number): ConfigMain;
-  hasReadTimeout(): boolean;
-  clearReadTimeout(): ConfigMain;
+  getSiteName(): string;
+  setSiteName(value: string): ConfigMain;
+  hasSiteName(): boolean;
+  clearSiteName(): ConfigMain;
 
-  getWriteTimeout(): number;
-  setWriteTimeout(value: number): ConfigMain;
-  hasWriteTimeout(): boolean;
-  clearWriteTimeout(): ConfigMain;
-
-  getIdleTimeout(): number;
-  setIdleTimeout(value: number): ConfigMain;
-  hasIdleTimeout(): boolean;
-  clearIdleTimeout(): ConfigMain;
+  getSiteUrl(): string;
+  setSiteUrl(value: string): ConfigMain;
+  hasSiteUrl(): boolean;
+  clearSiteUrl(): ConfigMain;
 
   getEnableLinkPreviews(): boolean;
   setEnableLinkPreviews(value: boolean): ConfigMain;
@@ -125,9 +120,8 @@ export class ConfigMain extends jspb.Message {
 export namespace ConfigMain {
   export type AsObject = {
     env?: string,
-    readTimeout?: number,
-    writeTimeout?: number,
-    idleTimeout?: number,
+    siteName?: string,
+    siteUrl?: string,
     enableLinkPreviews?: boolean,
     restrictLinkPreviews?: string,
     enableClientPerformanceDebugging?: boolean,
@@ -153,19 +147,14 @@ export namespace ConfigMain {
     ENV = 1,
   }
 
-  export enum ReadTimeoutCase { 
-    _READ_TIMEOUT_NOT_SET = 0,
-    READ_TIMEOUT = 2,
+  export enum SiteNameCase { 
+    _SITE_NAME_NOT_SET = 0,
+    SITE_NAME = 2,
   }
 
-  export enum WriteTimeoutCase { 
-    _WRITE_TIMEOUT_NOT_SET = 0,
-    WRITE_TIMEOUT = 3,
-  }
-
-  export enum IdleTimeoutCase { 
-    _IDLE_TIMEOUT_NOT_SET = 0,
-    IDLE_TIMEOUT = 4,
+  export enum SiteUrlCase { 
+    _SITE_URL_NOT_SET = 0,
+    SITE_URL = 3,
   }
 
   export enum EnableLinkPreviewsCase { 
