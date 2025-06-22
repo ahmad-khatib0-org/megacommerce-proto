@@ -253,9 +253,6 @@ constexpr ConfigEmail::ConfigEmail(
   , login_button_color_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , login_button_border_color_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , login_button_text_color_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , rate_limiting_memory_size_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , rate_limiting_per_hour_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
-  , rate_limiting_max_burst_(&::PROTOBUF_NAMESPACE_ID::internal::fixed_address_empty_string)
   , send_email_notifications_(false)
   , require_email_verification_(false)
   , enable_smtp_auth_(false)
@@ -265,7 +262,10 @@ constexpr ConfigEmail::ConfigEmail(
   , email_batching_buffer_size_(0)
   , enable_email_batching_(false)
   , skip_server_certificate_verification_(false)
-  , email_batching_interval_(0){}
+  , email_batching_interval_(0)
+  , rate_limiting_memory_size_(0)
+  , rate_limiting_per_hour_(0)
+  , rate_limiting_max_burst_(0){}
 struct ConfigEmailDefaultTypeInternal {
   constexpr ConfigEmailDefaultTypeInternal()
     : _instance(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized{}) {}
@@ -943,32 +943,32 @@ const uint32_t TableStruct_common_2fv1_2fconfig_2eproto::offsets[] PROTOBUF_SECT
   PROTOBUF_FIELD_OFFSET(::common::v1::ConfigEmail, rate_limiting_memory_size_),
   PROTOBUF_FIELD_OFFSET(::common::v1::ConfigEmail, rate_limiting_per_hour_),
   PROTOBUF_FIELD_OFFSET(::common::v1::ConfigEmail, rate_limiting_max_burst_),
-  16,
-  17,
+  13,
+  14,
   0,
   1,
-  18,
+  15,
   2,
   3,
   4,
   5,
-  20,
+  17,
   6,
-  19,
+  16,
   7,
   8,
-  21,
-  23,
+  18,
+  20,
+  19,
   22,
-  25,
-  24,
+  21,
   9,
   10,
   11,
   12,
-  13,
-  14,
-  15,
+  23,
+  24,
+  25,
   PROTOBUF_FIELD_OFFSET(::common::v1::ConfigRateLimit, _has_bits_),
   PROTOBUF_FIELD_OFFSET(::common::v1::ConfigRateLimit, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1672,10 +1672,10 @@ const char descriptor_table_protodef_common_2fv1_2fconfig_2eproto[] PROTOBUF_SEC
   "n_border_color\030\026 \001(\tH\025R\026loginButtonBorde"
   "rColor\210\001\001\022:\n\027login_button_text_color\030\027 \001"
   "(\tH\026R\024loginButtonTextColor\210\001\001\022>\n\031rate_li"
-  "miting_memory_size\030\030 \001(\tH\027R\026rateLimiting"
+  "miting_memory_size\030\030 \001(\005H\027R\026rateLimiting"
   "MemorySize\210\001\001\0228\n\026rate_limiting_per_hour\030"
-  "\031 \001(\tH\030R\023rateLimitingPerHour\210\001\001\022:\n\027rate_"
-  "limiting_max_burst\030\032 \001(\tH\031R\024rateLimiting"
+  "\031 \001(\005H\030R\023rateLimitingPerHour\210\001\001\022:\n\027rate_"
+  "limiting_max_burst\030\032 \001(\005H\031R\024rateLimiting"
   "MaxBurst\210\001\001B\033\n\031_send_email_notifications"
   "B\035\n\033_require_email_verificationB\021\n\017_feed"
   "back_emailB\023\n\021_reply_to_addressB\023\n\021_enab"
@@ -7767,10 +7767,10 @@ class ConfigEmail::_Internal {
  public:
   using HasBits = decltype(std::declval<ConfigEmail>()._has_bits_);
   static void set_has_send_email_notifications(HasBits* has_bits) {
-    (*has_bits)[0] |= 65536u;
+    (*has_bits)[0] |= 8192u;
   }
   static void set_has_require_email_verification(HasBits* has_bits) {
-    (*has_bits)[0] |= 131072u;
+    (*has_bits)[0] |= 16384u;
   }
   static void set_has_feedback_email(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
@@ -7779,7 +7779,7 @@ class ConfigEmail::_Internal {
     (*has_bits)[0] |= 2u;
   }
   static void set_has_enable_smtp_auth(HasBits* has_bits) {
-    (*has_bits)[0] |= 262144u;
+    (*has_bits)[0] |= 32768u;
   }
   static void set_has_smtp_username(HasBits* has_bits) {
     (*has_bits)[0] |= 4u;
@@ -7794,13 +7794,13 @@ class ConfigEmail::_Internal {
     (*has_bits)[0] |= 32u;
   }
   static void set_has_smtp_server_timeout(HasBits* has_bits) {
-    (*has_bits)[0] |= 1048576u;
+    (*has_bits)[0] |= 131072u;
   }
   static void set_has_connection_security(HasBits* has_bits) {
     (*has_bits)[0] |= 64u;
   }
   static void set_has_send_push_notifications(HasBits* has_bits) {
-    (*has_bits)[0] |= 524288u;
+    (*has_bits)[0] |= 65536u;
   }
   static void set_has_push_notification_server(HasBits* has_bits) {
     (*has_bits)[0] |= 128u;
@@ -7809,19 +7809,19 @@ class ConfigEmail::_Internal {
     (*has_bits)[0] |= 256u;
   }
   static void set_has_push_notification_buffer(HasBits* has_bits) {
-    (*has_bits)[0] |= 2097152u;
+    (*has_bits)[0] |= 262144u;
   }
   static void set_has_enable_email_batching(HasBits* has_bits) {
-    (*has_bits)[0] |= 8388608u;
+    (*has_bits)[0] |= 1048576u;
   }
   static void set_has_email_batching_buffer_size(HasBits* has_bits) {
-    (*has_bits)[0] |= 4194304u;
+    (*has_bits)[0] |= 524288u;
   }
   static void set_has_email_batching_interval(HasBits* has_bits) {
-    (*has_bits)[0] |= 33554432u;
+    (*has_bits)[0] |= 4194304u;
   }
   static void set_has_skip_server_certificate_verification(HasBits* has_bits) {
-    (*has_bits)[0] |= 16777216u;
+    (*has_bits)[0] |= 2097152u;
   }
   static void set_has_email_notification_contents_type(HasBits* has_bits) {
     (*has_bits)[0] |= 512u;
@@ -7836,13 +7836,13 @@ class ConfigEmail::_Internal {
     (*has_bits)[0] |= 4096u;
   }
   static void set_has_rate_limiting_memory_size(HasBits* has_bits) {
-    (*has_bits)[0] |= 8192u;
+    (*has_bits)[0] |= 8388608u;
   }
   static void set_has_rate_limiting_per_hour(HasBits* has_bits) {
-    (*has_bits)[0] |= 16384u;
+    (*has_bits)[0] |= 16777216u;
   }
   static void set_has_rate_limiting_max_burst(HasBits* has_bits) {
-    (*has_bits)[0] |= 32768u;
+    (*has_bits)[0] |= 33554432u;
   }
 };
 
@@ -7963,33 +7963,9 @@ ConfigEmail::ConfigEmail(const ConfigEmail& from)
     login_button_text_color_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_login_button_text_color(), 
       GetArenaForAllocation());
   }
-  rate_limiting_memory_size_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    rate_limiting_memory_size_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_rate_limiting_memory_size()) {
-    rate_limiting_memory_size_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_rate_limiting_memory_size(), 
-      GetArenaForAllocation());
-  }
-  rate_limiting_per_hour_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    rate_limiting_per_hour_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_rate_limiting_per_hour()) {
-    rate_limiting_per_hour_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_rate_limiting_per_hour(), 
-      GetArenaForAllocation());
-  }
-  rate_limiting_max_burst_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    rate_limiting_max_burst_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_rate_limiting_max_burst()) {
-    rate_limiting_max_burst_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, from._internal_rate_limiting_max_burst(), 
-      GetArenaForAllocation());
-  }
   ::memcpy(&send_email_notifications_, &from.send_email_notifications_,
-    static_cast<size_t>(reinterpret_cast<char*>(&email_batching_interval_) -
-    reinterpret_cast<char*>(&send_email_notifications_)) + sizeof(email_batching_interval_));
+    static_cast<size_t>(reinterpret_cast<char*>(&rate_limiting_max_burst_) -
+    reinterpret_cast<char*>(&send_email_notifications_)) + sizeof(rate_limiting_max_burst_));
   // @@protoc_insertion_point(copy_constructor:common.v1.ConfigEmail)
 }
 
@@ -8046,22 +8022,10 @@ login_button_text_color_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::Ge
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
   login_button_text_color_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-rate_limiting_memory_size_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  rate_limiting_memory_size_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-rate_limiting_per_hour_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  rate_limiting_per_hour_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-rate_limiting_max_burst_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  rate_limiting_max_burst_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 ::memset(reinterpret_cast<char*>(this) + static_cast<size_t>(
     reinterpret_cast<char*>(&send_email_notifications_) - reinterpret_cast<char*>(this)),
-    0, static_cast<size_t>(reinterpret_cast<char*>(&email_batching_interval_) -
-    reinterpret_cast<char*>(&send_email_notifications_)) + sizeof(email_batching_interval_));
+    0, static_cast<size_t>(reinterpret_cast<char*>(&rate_limiting_max_burst_) -
+    reinterpret_cast<char*>(&send_email_notifications_)) + sizeof(rate_limiting_max_burst_));
 }
 
 ConfigEmail::~ConfigEmail() {
@@ -8086,9 +8050,6 @@ inline void ConfigEmail::SharedDtor() {
   login_button_color_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   login_button_border_color_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   login_button_text_color_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  rate_limiting_memory_size_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  rate_limiting_per_hour_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  rate_limiting_max_burst_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void ConfigEmail::ArenaDtor(void* object) {
@@ -8134,7 +8095,7 @@ void ConfigEmail::Clear() {
       push_notification_server_.ClearNonDefaultToEmpty();
     }
   }
-  if (cached_has_bits & 0x0000ff00u) {
+  if (cached_has_bits & 0x00001f00u) {
     if (cached_has_bits & 0x00000100u) {
       push_notification_contents_.ClearNonDefaultToEmpty();
     }
@@ -8150,25 +8111,21 @@ void ConfigEmail::Clear() {
     if (cached_has_bits & 0x00001000u) {
       login_button_text_color_.ClearNonDefaultToEmpty();
     }
-    if (cached_has_bits & 0x00002000u) {
-      rate_limiting_memory_size_.ClearNonDefaultToEmpty();
-    }
-    if (cached_has_bits & 0x00004000u) {
-      rate_limiting_per_hour_.ClearNonDefaultToEmpty();
-    }
-    if (cached_has_bits & 0x00008000u) {
-      rate_limiting_max_burst_.ClearNonDefaultToEmpty();
-    }
+  }
+  if (cached_has_bits & 0x0000e000u) {
+    ::memset(&send_email_notifications_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&enable_smtp_auth_) -
+        reinterpret_cast<char*>(&send_email_notifications_)) + sizeof(enable_smtp_auth_));
   }
   if (cached_has_bits & 0x00ff0000u) {
-    ::memset(&send_email_notifications_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&enable_email_batching_) -
-        reinterpret_cast<char*>(&send_email_notifications_)) + sizeof(enable_email_batching_));
+    ::memset(&send_push_notifications_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&rate_limiting_memory_size_) -
+        reinterpret_cast<char*>(&send_push_notifications_)) + sizeof(rate_limiting_memory_size_));
   }
   if (cached_has_bits & 0x03000000u) {
-    ::memset(&skip_server_certificate_verification_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&email_batching_interval_) -
-        reinterpret_cast<char*>(&skip_server_certificate_verification_)) + sizeof(email_batching_interval_));
+    ::memset(&rate_limiting_per_hour_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&rate_limiting_max_burst_) -
+        reinterpret_cast<char*>(&rate_limiting_per_hour_)) + sizeof(rate_limiting_max_burst_));
   }
   _has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -8401,32 +8358,29 @@ const char* ConfigEmail::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID
         } else
           goto handle_unusual;
         continue;
-      // optional string rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];
+      // optional int32 rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];
       case 24:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 194)) {
-          auto str = _internal_mutable_rate_limiting_memory_size();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "common.v1.ConfigEmail.rate_limiting_memory_size"));
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 192)) {
+          _Internal::set_has_rate_limiting_memory_size(&has_bits);
+          rate_limiting_memory_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // optional string rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];
+      // optional int32 rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];
       case 25:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 202)) {
-          auto str = _internal_mutable_rate_limiting_per_hour();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "common.v1.ConfigEmail.rate_limiting_per_hour"));
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 200)) {
+          _Internal::set_has_rate_limiting_per_hour(&has_bits);
+          rate_limiting_per_hour_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // optional string rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];
+      // optional int32 rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];
       case 26:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 210)) {
-          auto str = _internal_mutable_rate_limiting_max_burst();
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "common.v1.ConfigEmail.rate_limiting_max_burst"));
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 208)) {
+          _Internal::set_has_rate_limiting_max_burst(&has_bits);
+          rate_limiting_max_burst_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -8651,34 +8605,22 @@ uint8_t* ConfigEmail::_InternalSerialize(
         23, this->_internal_login_button_text_color(), target);
   }
 
-  // optional string rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];
+  // optional int32 rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];
   if (_internal_has_rate_limiting_memory_size()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_rate_limiting_memory_size().data(), static_cast<int>(this->_internal_rate_limiting_memory_size().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "common.v1.ConfigEmail.rate_limiting_memory_size");
-    target = stream->WriteStringMaybeAliased(
-        24, this->_internal_rate_limiting_memory_size(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(24, this->_internal_rate_limiting_memory_size(), target);
   }
 
-  // optional string rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];
+  // optional int32 rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];
   if (_internal_has_rate_limiting_per_hour()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_rate_limiting_per_hour().data(), static_cast<int>(this->_internal_rate_limiting_per_hour().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "common.v1.ConfigEmail.rate_limiting_per_hour");
-    target = stream->WriteStringMaybeAliased(
-        25, this->_internal_rate_limiting_per_hour(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(25, this->_internal_rate_limiting_per_hour(), target);
   }
 
-  // optional string rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];
+  // optional int32 rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];
   if (_internal_has_rate_limiting_max_burst()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_rate_limiting_max_burst().data(), static_cast<int>(this->_internal_rate_limiting_max_burst().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "common.v1.ConfigEmail.rate_limiting_max_burst");
-    target = stream->WriteStringMaybeAliased(
-        26, this->_internal_rate_limiting_max_burst(), target);
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(26, this->_internal_rate_limiting_max_burst(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -8792,83 +8734,83 @@ size_t ConfigEmail::ByteSizeLong() const {
           this->_internal_login_button_text_color());
     }
 
-    // optional string rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];
-    if (cached_has_bits & 0x00002000u) {
-      total_size += 2 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_rate_limiting_memory_size());
-    }
-
-    // optional string rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];
-    if (cached_has_bits & 0x00004000u) {
-      total_size += 2 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_rate_limiting_per_hour());
-    }
-
-    // optional string rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];
-    if (cached_has_bits & 0x00008000u) {
-      total_size += 2 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_rate_limiting_max_burst());
-    }
-
-  }
-  if (cached_has_bits & 0x00ff0000u) {
     // optional bool send_email_notifications = 1 [json_name = "sendEmailNotifications"];
-    if (cached_has_bits & 0x00010000u) {
+    if (cached_has_bits & 0x00002000u) {
       total_size += 1 + 1;
     }
 
     // optional bool require_email_verification = 2 [json_name = "requireEmailVerification"];
-    if (cached_has_bits & 0x00020000u) {
+    if (cached_has_bits & 0x00004000u) {
       total_size += 1 + 1;
     }
 
     // optional bool enable_smtp_auth = 5 [json_name = "enableSmtpAuth"];
-    if (cached_has_bits & 0x00040000u) {
+    if (cached_has_bits & 0x00008000u) {
       total_size += 1 + 1;
     }
 
+  }
+  if (cached_has_bits & 0x00ff0000u) {
     // optional bool send_push_notifications = 12 [json_name = "sendPushNotifications"];
-    if (cached_has_bits & 0x00080000u) {
+    if (cached_has_bits & 0x00010000u) {
       total_size += 1 + 1;
     }
 
     // optional int32 smtp_server_timeout = 10 [json_name = "smtpServerTimeout"];
-    if (cached_has_bits & 0x00100000u) {
+    if (cached_has_bits & 0x00020000u) {
       total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_smtp_server_timeout());
     }
 
     // optional int32 push_notification_buffer = 15 [json_name = "pushNotificationBuffer"];
-    if (cached_has_bits & 0x00200000u) {
+    if (cached_has_bits & 0x00040000u) {
       total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32SizePlusOne(this->_internal_push_notification_buffer());
     }
 
     // optional int32 email_batching_buffer_size = 17 [json_name = "emailBatchingBufferSize"];
-    if (cached_has_bits & 0x00400000u) {
+    if (cached_has_bits & 0x00080000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
           this->_internal_email_batching_buffer_size());
     }
 
     // optional bool enable_email_batching = 16 [json_name = "enableEmailBatching"];
-    if (cached_has_bits & 0x00800000u) {
+    if (cached_has_bits & 0x00100000u) {
       total_size += 2 + 1;
     }
 
-  }
-  if (cached_has_bits & 0x03000000u) {
     // optional bool skip_server_certificate_verification = 19 [json_name = "skipServerCertificateVerification"];
-    if (cached_has_bits & 0x01000000u) {
+    if (cached_has_bits & 0x00200000u) {
       total_size += 2 + 1;
     }
 
     // optional int32 email_batching_interval = 18 [json_name = "emailBatchingInterval"];
-    if (cached_has_bits & 0x02000000u) {
+    if (cached_has_bits & 0x00400000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
           this->_internal_email_batching_interval());
+    }
+
+    // optional int32 rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];
+    if (cached_has_bits & 0x00800000u) {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+          this->_internal_rate_limiting_memory_size());
+    }
+
+  }
+  if (cached_has_bits & 0x03000000u) {
+    // optional int32 rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];
+    if (cached_has_bits & 0x01000000u) {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+          this->_internal_rate_limiting_per_hour());
+    }
+
+    // optional int32 rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];
+    if (cached_has_bits & 0x02000000u) {
+      total_size += 2 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+          this->_internal_rate_limiting_max_burst());
     }
 
   }
@@ -8938,48 +8880,49 @@ void ConfigEmail::MergeFrom(const ConfigEmail& from) {
       _internal_set_login_button_text_color(from._internal_login_button_text_color());
     }
     if (cached_has_bits & 0x00002000u) {
-      _internal_set_rate_limiting_memory_size(from._internal_rate_limiting_memory_size());
+      send_email_notifications_ = from.send_email_notifications_;
     }
     if (cached_has_bits & 0x00004000u) {
-      _internal_set_rate_limiting_per_hour(from._internal_rate_limiting_per_hour());
+      require_email_verification_ = from.require_email_verification_;
     }
     if (cached_has_bits & 0x00008000u) {
-      _internal_set_rate_limiting_max_burst(from._internal_rate_limiting_max_burst());
+      enable_smtp_auth_ = from.enable_smtp_auth_;
     }
+    _has_bits_[0] |= cached_has_bits;
   }
   if (cached_has_bits & 0x00ff0000u) {
     if (cached_has_bits & 0x00010000u) {
-      send_email_notifications_ = from.send_email_notifications_;
-    }
-    if (cached_has_bits & 0x00020000u) {
-      require_email_verification_ = from.require_email_verification_;
-    }
-    if (cached_has_bits & 0x00040000u) {
-      enable_smtp_auth_ = from.enable_smtp_auth_;
-    }
-    if (cached_has_bits & 0x00080000u) {
       send_push_notifications_ = from.send_push_notifications_;
     }
-    if (cached_has_bits & 0x00100000u) {
+    if (cached_has_bits & 0x00020000u) {
       smtp_server_timeout_ = from.smtp_server_timeout_;
     }
-    if (cached_has_bits & 0x00200000u) {
+    if (cached_has_bits & 0x00040000u) {
       push_notification_buffer_ = from.push_notification_buffer_;
     }
-    if (cached_has_bits & 0x00400000u) {
+    if (cached_has_bits & 0x00080000u) {
       email_batching_buffer_size_ = from.email_batching_buffer_size_;
     }
-    if (cached_has_bits & 0x00800000u) {
+    if (cached_has_bits & 0x00100000u) {
       enable_email_batching_ = from.enable_email_batching_;
+    }
+    if (cached_has_bits & 0x00200000u) {
+      skip_server_certificate_verification_ = from.skip_server_certificate_verification_;
+    }
+    if (cached_has_bits & 0x00400000u) {
+      email_batching_interval_ = from.email_batching_interval_;
+    }
+    if (cached_has_bits & 0x00800000u) {
+      rate_limiting_memory_size_ = from.rate_limiting_memory_size_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
   if (cached_has_bits & 0x03000000u) {
     if (cached_has_bits & 0x01000000u) {
-      skip_server_certificate_verification_ = from.skip_server_certificate_verification_;
+      rate_limiting_per_hour_ = from.rate_limiting_per_hour_;
     }
     if (cached_has_bits & 0x02000000u) {
-      email_batching_interval_ = from.email_batching_interval_;
+      rate_limiting_max_burst_ = from.rate_limiting_max_burst_;
     }
     _has_bits_[0] |= cached_has_bits;
   }
@@ -9068,24 +9011,9 @@ void ConfigEmail::InternalSwap(ConfigEmail* other) {
       &login_button_text_color_, lhs_arena,
       &other->login_button_text_color_, rhs_arena
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &rate_limiting_memory_size_, lhs_arena,
-      &other->rate_limiting_memory_size_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &rate_limiting_per_hour_, lhs_arena,
-      &other->rate_limiting_per_hour_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      &rate_limiting_max_burst_, lhs_arena,
-      &other->rate_limiting_max_burst_, rhs_arena
-  );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ConfigEmail, email_batching_interval_)
-      + sizeof(ConfigEmail::email_batching_interval_)
+      PROTOBUF_FIELD_OFFSET(ConfigEmail, rate_limiting_max_burst_)
+      + sizeof(ConfigEmail::rate_limiting_max_burst_)
       - PROTOBUF_FIELD_OFFSET(ConfigEmail, send_email_notifications_)>(
           reinterpret_cast<char*>(&send_email_notifications_),
           reinterpret_cast<char*>(&other->send_email_notifications_));

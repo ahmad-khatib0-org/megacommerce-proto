@@ -18343,55 +18343,37 @@ public final class ConfigProto {
         getLoginButtonTextColorBytes();
 
     /**
-     * <code>optional string rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];</code>
+     * <code>optional int32 rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];</code>
      * @return Whether the rateLimitingMemorySize field is set.
      */
     boolean hasRateLimitingMemorySize();
     /**
-     * <code>optional string rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];</code>
+     * <code>optional int32 rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];</code>
      * @return The rateLimitingMemorySize.
      */
-    java.lang.String getRateLimitingMemorySize();
-    /**
-     * <code>optional string rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];</code>
-     * @return The bytes for rateLimitingMemorySize.
-     */
-    com.google.protobuf.ByteString
-        getRateLimitingMemorySizeBytes();
+    int getRateLimitingMemorySize();
 
     /**
-     * <code>optional string rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];</code>
+     * <code>optional int32 rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];</code>
      * @return Whether the rateLimitingPerHour field is set.
      */
     boolean hasRateLimitingPerHour();
     /**
-     * <code>optional string rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];</code>
+     * <code>optional int32 rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];</code>
      * @return The rateLimitingPerHour.
      */
-    java.lang.String getRateLimitingPerHour();
-    /**
-     * <code>optional string rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];</code>
-     * @return The bytes for rateLimitingPerHour.
-     */
-    com.google.protobuf.ByteString
-        getRateLimitingPerHourBytes();
+    int getRateLimitingPerHour();
 
     /**
-     * <code>optional string rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];</code>
+     * <code>optional int32 rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];</code>
      * @return Whether the rateLimitingMaxBurst field is set.
      */
     boolean hasRateLimitingMaxBurst();
     /**
-     * <code>optional string rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];</code>
+     * <code>optional int32 rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];</code>
      * @return The rateLimitingMaxBurst.
      */
-    java.lang.String getRateLimitingMaxBurst();
-    /**
-     * <code>optional string rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];</code>
-     * @return The bytes for rateLimitingMaxBurst.
-     */
-    com.google.protobuf.ByteString
-        getRateLimitingMaxBurstBytes();
+    int getRateLimitingMaxBurst();
   }
   /**
    * Protobuf type {@code common.v1.ConfigEmail}
@@ -18419,9 +18401,6 @@ public final class ConfigProto {
       loginButtonColor_ = "";
       loginButtonBorderColor_ = "";
       loginButtonTextColor_ = "";
-      rateLimitingMemorySize_ = "";
-      rateLimitingPerHour_ = "";
-      rateLimitingMaxBurst_ = "";
     }
 
     @java.lang.Override
@@ -19239,9 +19218,9 @@ public final class ConfigProto {
     }
 
     public static final int RATE_LIMITING_MEMORY_SIZE_FIELD_NUMBER = 24;
-    private volatile java.lang.Object rateLimitingMemorySize_;
+    private int rateLimitingMemorySize_;
     /**
-     * <code>optional string rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];</code>
+     * <code>optional int32 rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];</code>
      * @return Whether the rateLimitingMemorySize field is set.
      */
     @java.lang.Override
@@ -19249,45 +19228,18 @@ public final class ConfigProto {
       return ((bitField0_ & 0x00800000) != 0);
     }
     /**
-     * <code>optional string rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];</code>
+     * <code>optional int32 rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];</code>
      * @return The rateLimitingMemorySize.
      */
     @java.lang.Override
-    public java.lang.String getRateLimitingMemorySize() {
-      java.lang.Object ref = rateLimitingMemorySize_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        rateLimitingMemorySize_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];</code>
-     * @return The bytes for rateLimitingMemorySize.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getRateLimitingMemorySizeBytes() {
-      java.lang.Object ref = rateLimitingMemorySize_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        rateLimitingMemorySize_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getRateLimitingMemorySize() {
+      return rateLimitingMemorySize_;
     }
 
     public static final int RATE_LIMITING_PER_HOUR_FIELD_NUMBER = 25;
-    private volatile java.lang.Object rateLimitingPerHour_;
+    private int rateLimitingPerHour_;
     /**
-     * <code>optional string rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];</code>
+     * <code>optional int32 rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];</code>
      * @return Whether the rateLimitingPerHour field is set.
      */
     @java.lang.Override
@@ -19295,45 +19247,18 @@ public final class ConfigProto {
       return ((bitField0_ & 0x01000000) != 0);
     }
     /**
-     * <code>optional string rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];</code>
+     * <code>optional int32 rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];</code>
      * @return The rateLimitingPerHour.
      */
     @java.lang.Override
-    public java.lang.String getRateLimitingPerHour() {
-      java.lang.Object ref = rateLimitingPerHour_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        rateLimitingPerHour_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];</code>
-     * @return The bytes for rateLimitingPerHour.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getRateLimitingPerHourBytes() {
-      java.lang.Object ref = rateLimitingPerHour_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        rateLimitingPerHour_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getRateLimitingPerHour() {
+      return rateLimitingPerHour_;
     }
 
     public static final int RATE_LIMITING_MAX_BURST_FIELD_NUMBER = 26;
-    private volatile java.lang.Object rateLimitingMaxBurst_;
+    private int rateLimitingMaxBurst_;
     /**
-     * <code>optional string rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];</code>
+     * <code>optional int32 rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];</code>
      * @return Whether the rateLimitingMaxBurst field is set.
      */
     @java.lang.Override
@@ -19341,39 +19266,12 @@ public final class ConfigProto {
       return ((bitField0_ & 0x02000000) != 0);
     }
     /**
-     * <code>optional string rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];</code>
+     * <code>optional int32 rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];</code>
      * @return The rateLimitingMaxBurst.
      */
     @java.lang.Override
-    public java.lang.String getRateLimitingMaxBurst() {
-      java.lang.Object ref = rateLimitingMaxBurst_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        rateLimitingMaxBurst_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];</code>
-     * @return The bytes for rateLimitingMaxBurst.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getRateLimitingMaxBurstBytes() {
-      java.lang.Object ref = rateLimitingMaxBurst_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        rateLimitingMaxBurst_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public int getRateLimitingMaxBurst() {
+      return rateLimitingMaxBurst_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -19460,13 +19358,13 @@ public final class ConfigProto {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 23, loginButtonTextColor_);
       }
       if (((bitField0_ & 0x00800000) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 24, rateLimitingMemorySize_);
+        output.writeInt32(24, rateLimitingMemorySize_);
       }
       if (((bitField0_ & 0x01000000) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 25, rateLimitingPerHour_);
+        output.writeInt32(25, rateLimitingPerHour_);
       }
       if (((bitField0_ & 0x02000000) != 0)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 26, rateLimitingMaxBurst_);
+        output.writeInt32(26, rateLimitingMaxBurst_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -19557,13 +19455,16 @@ public final class ConfigProto {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, loginButtonTextColor_);
       }
       if (((bitField0_ & 0x00800000) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, rateLimitingMemorySize_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(24, rateLimitingMemorySize_);
       }
       if (((bitField0_ & 0x01000000) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, rateLimitingPerHour_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(25, rateLimitingPerHour_);
       }
       if (((bitField0_ & 0x02000000) != 0)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, rateLimitingMaxBurst_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(26, rateLimitingMaxBurst_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -19697,18 +19598,18 @@ public final class ConfigProto {
       }
       if (hasRateLimitingMemorySize() != other.hasRateLimitingMemorySize()) return false;
       if (hasRateLimitingMemorySize()) {
-        if (!getRateLimitingMemorySize()
-            .equals(other.getRateLimitingMemorySize())) return false;
+        if (getRateLimitingMemorySize()
+            != other.getRateLimitingMemorySize()) return false;
       }
       if (hasRateLimitingPerHour() != other.hasRateLimitingPerHour()) return false;
       if (hasRateLimitingPerHour()) {
-        if (!getRateLimitingPerHour()
-            .equals(other.getRateLimitingPerHour())) return false;
+        if (getRateLimitingPerHour()
+            != other.getRateLimitingPerHour()) return false;
       }
       if (hasRateLimitingMaxBurst() != other.hasRateLimitingMaxBurst()) return false;
       if (hasRateLimitingMaxBurst()) {
-        if (!getRateLimitingMaxBurst()
-            .equals(other.getRateLimitingMaxBurst())) return false;
+        if (getRateLimitingMaxBurst()
+            != other.getRateLimitingMaxBurst()) return false;
       }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -19821,15 +19722,15 @@ public final class ConfigProto {
       }
       if (hasRateLimitingMemorySize()) {
         hash = (37 * hash) + RATE_LIMITING_MEMORY_SIZE_FIELD_NUMBER;
-        hash = (53 * hash) + getRateLimitingMemorySize().hashCode();
+        hash = (53 * hash) + getRateLimitingMemorySize();
       }
       if (hasRateLimitingPerHour()) {
         hash = (37 * hash) + RATE_LIMITING_PER_HOUR_FIELD_NUMBER;
-        hash = (53 * hash) + getRateLimitingPerHour().hashCode();
+        hash = (53 * hash) + getRateLimitingPerHour();
       }
       if (hasRateLimitingMaxBurst()) {
         hash = (37 * hash) + RATE_LIMITING_MAX_BURST_FIELD_NUMBER;
-        hash = (53 * hash) + getRateLimitingMaxBurst().hashCode();
+        hash = (53 * hash) + getRateLimitingMaxBurst();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -20005,11 +19906,11 @@ public final class ConfigProto {
         bitField0_ = (bitField0_ & ~0x00200000);
         loginButtonTextColor_ = "";
         bitField0_ = (bitField0_ & ~0x00400000);
-        rateLimitingMemorySize_ = "";
+        rateLimitingMemorySize_ = 0;
         bitField0_ = (bitField0_ & ~0x00800000);
-        rateLimitingPerHour_ = "";
+        rateLimitingPerHour_ = 0;
         bitField0_ = (bitField0_ & ~0x01000000);
-        rateLimitingMaxBurst_ = "";
+        rateLimitingMaxBurst_ = 0;
         bitField0_ = (bitField0_ & ~0x02000000);
         return this;
       }
@@ -20132,17 +20033,17 @@ public final class ConfigProto {
         }
         result.loginButtonTextColor_ = loginButtonTextColor_;
         if (((from_bitField0_ & 0x00800000) != 0)) {
+          result.rateLimitingMemorySize_ = rateLimitingMemorySize_;
           to_bitField0_ |= 0x00800000;
         }
-        result.rateLimitingMemorySize_ = rateLimitingMemorySize_;
         if (((from_bitField0_ & 0x01000000) != 0)) {
+          result.rateLimitingPerHour_ = rateLimitingPerHour_;
           to_bitField0_ |= 0x01000000;
         }
-        result.rateLimitingPerHour_ = rateLimitingPerHour_;
         if (((from_bitField0_ & 0x02000000) != 0)) {
+          result.rateLimitingMaxBurst_ = rateLimitingMaxBurst_;
           to_bitField0_ |= 0x02000000;
         }
-        result.rateLimitingMaxBurst_ = rateLimitingMaxBurst_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -20288,19 +20189,13 @@ public final class ConfigProto {
           onChanged();
         }
         if (other.hasRateLimitingMemorySize()) {
-          bitField0_ |= 0x00800000;
-          rateLimitingMemorySize_ = other.rateLimitingMemorySize_;
-          onChanged();
+          setRateLimitingMemorySize(other.getRateLimitingMemorySize());
         }
         if (other.hasRateLimitingPerHour()) {
-          bitField0_ |= 0x01000000;
-          rateLimitingPerHour_ = other.rateLimitingPerHour_;
-          onChanged();
+          setRateLimitingPerHour(other.getRateLimitingPerHour());
         }
         if (other.hasRateLimitingMaxBurst()) {
-          bitField0_ |= 0x02000000;
-          rateLimitingMaxBurst_ = other.rateLimitingMaxBurst_;
-          onChanged();
+          setRateLimitingMaxBurst(other.getRateLimitingMaxBurst());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -20443,21 +20338,21 @@ public final class ConfigProto {
                 bitField0_ |= 0x00400000;
                 break;
               } // case 186
-              case 194: {
-                rateLimitingMemorySize_ = input.readStringRequireUtf8();
+              case 192: {
+                rateLimitingMemorySize_ = input.readInt32();
                 bitField0_ |= 0x00800000;
                 break;
-              } // case 194
-              case 202: {
-                rateLimitingPerHour_ = input.readStringRequireUtf8();
+              } // case 192
+              case 200: {
+                rateLimitingPerHour_ = input.readInt32();
                 bitField0_ |= 0x01000000;
                 break;
-              } // case 202
-              case 210: {
-                rateLimitingMaxBurst_ = input.readStringRequireUtf8();
+              } // case 200
+              case 208: {
+                rateLimitingMaxBurst_ = input.readInt32();
                 bitField0_ |= 0x02000000;
                 break;
-              } // case 210
+              } // case 208
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -21944,251 +21839,119 @@ public final class ConfigProto {
         return this;
       }
 
-      private java.lang.Object rateLimitingMemorySize_ = "";
+      private int rateLimitingMemorySize_ ;
       /**
-       * <code>optional string rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];</code>
+       * <code>optional int32 rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];</code>
        * @return Whether the rateLimitingMemorySize field is set.
        */
+      @java.lang.Override
       public boolean hasRateLimitingMemorySize() {
         return ((bitField0_ & 0x00800000) != 0);
       }
       /**
-       * <code>optional string rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];</code>
+       * <code>optional int32 rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];</code>
        * @return The rateLimitingMemorySize.
        */
-      public java.lang.String getRateLimitingMemorySize() {
-        java.lang.Object ref = rateLimitingMemorySize_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          rateLimitingMemorySize_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public int getRateLimitingMemorySize() {
+        return rateLimitingMemorySize_;
       }
       /**
-       * <code>optional string rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];</code>
-       * @return The bytes for rateLimitingMemorySize.
-       */
-      public com.google.protobuf.ByteString
-          getRateLimitingMemorySizeBytes() {
-        java.lang.Object ref = rateLimitingMemorySize_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          rateLimitingMemorySize_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];</code>
+       * <code>optional int32 rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];</code>
        * @param value The rateLimitingMemorySize to set.
        * @return This builder for chaining.
        */
-      public Builder setRateLimitingMemorySize(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x00800000;
-        rateLimitingMemorySize_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRateLimitingMemorySize() {
-        bitField0_ = (bitField0_ & ~0x00800000);
-        rateLimitingMemorySize_ = getDefaultInstance().getRateLimitingMemorySize();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];</code>
-       * @param value The bytes for rateLimitingMemorySize to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRateLimitingMemorySizeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+      public Builder setRateLimitingMemorySize(int value) {
         bitField0_ |= 0x00800000;
         rateLimitingMemorySize_ = value;
         onChanged();
         return this;
       }
-
-      private java.lang.Object rateLimitingPerHour_ = "";
       /**
-       * <code>optional string rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];</code>
+       * <code>optional int32 rate_limiting_memory_size = 24 [json_name = "rateLimitingMemorySize"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRateLimitingMemorySize() {
+        bitField0_ = (bitField0_ & ~0x00800000);
+        rateLimitingMemorySize_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int rateLimitingPerHour_ ;
+      /**
+       * <code>optional int32 rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];</code>
        * @return Whether the rateLimitingPerHour field is set.
        */
+      @java.lang.Override
       public boolean hasRateLimitingPerHour() {
         return ((bitField0_ & 0x01000000) != 0);
       }
       /**
-       * <code>optional string rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];</code>
+       * <code>optional int32 rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];</code>
        * @return The rateLimitingPerHour.
        */
-      public java.lang.String getRateLimitingPerHour() {
-        java.lang.Object ref = rateLimitingPerHour_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          rateLimitingPerHour_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public int getRateLimitingPerHour() {
+        return rateLimitingPerHour_;
       }
       /**
-       * <code>optional string rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];</code>
-       * @return The bytes for rateLimitingPerHour.
-       */
-      public com.google.protobuf.ByteString
-          getRateLimitingPerHourBytes() {
-        java.lang.Object ref = rateLimitingPerHour_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          rateLimitingPerHour_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];</code>
+       * <code>optional int32 rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];</code>
        * @param value The rateLimitingPerHour to set.
        * @return This builder for chaining.
        */
-      public Builder setRateLimitingPerHour(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x01000000;
-        rateLimitingPerHour_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearRateLimitingPerHour() {
-        bitField0_ = (bitField0_ & ~0x01000000);
-        rateLimitingPerHour_ = getDefaultInstance().getRateLimitingPerHour();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];</code>
-       * @param value The bytes for rateLimitingPerHour to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRateLimitingPerHourBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+      public Builder setRateLimitingPerHour(int value) {
         bitField0_ |= 0x01000000;
         rateLimitingPerHour_ = value;
         onChanged();
         return this;
       }
-
-      private java.lang.Object rateLimitingMaxBurst_ = "";
       /**
-       * <code>optional string rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];</code>
+       * <code>optional int32 rate_limiting_per_hour = 25 [json_name = "rateLimitingPerHour"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRateLimitingPerHour() {
+        bitField0_ = (bitField0_ & ~0x01000000);
+        rateLimitingPerHour_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int rateLimitingMaxBurst_ ;
+      /**
+       * <code>optional int32 rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];</code>
        * @return Whether the rateLimitingMaxBurst field is set.
        */
+      @java.lang.Override
       public boolean hasRateLimitingMaxBurst() {
         return ((bitField0_ & 0x02000000) != 0);
       }
       /**
-       * <code>optional string rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];</code>
+       * <code>optional int32 rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];</code>
        * @return The rateLimitingMaxBurst.
        */
-      public java.lang.String getRateLimitingMaxBurst() {
-        java.lang.Object ref = rateLimitingMaxBurst_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          rateLimitingMaxBurst_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public int getRateLimitingMaxBurst() {
+        return rateLimitingMaxBurst_;
       }
       /**
-       * <code>optional string rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];</code>
-       * @return The bytes for rateLimitingMaxBurst.
-       */
-      public com.google.protobuf.ByteString
-          getRateLimitingMaxBurstBytes() {
-        java.lang.Object ref = rateLimitingMaxBurst_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          rateLimitingMaxBurst_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];</code>
+       * <code>optional int32 rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];</code>
        * @param value The rateLimitingMaxBurst to set.
        * @return This builder for chaining.
        */
-      public Builder setRateLimitingMaxBurst(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  bitField0_ |= 0x02000000;
+      public Builder setRateLimitingMaxBurst(int value) {
+        bitField0_ |= 0x02000000;
         rateLimitingMaxBurst_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];</code>
+       * <code>optional int32 rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];</code>
        * @return This builder for chaining.
        */
       public Builder clearRateLimitingMaxBurst() {
         bitField0_ = (bitField0_ & ~0x02000000);
-        rateLimitingMaxBurst_ = getDefaultInstance().getRateLimitingMaxBurst();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string rate_limiting_max_burst = 26 [json_name = "rateLimitingMaxBurst"];</code>
-       * @param value The bytes for rateLimitingMaxBurst to set.
-       * @return This builder for chaining.
-       */
-      public Builder setRateLimitingMaxBurstBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        bitField0_ |= 0x02000000;
-        rateLimitingMaxBurst_ = value;
+        rateLimitingMaxBurst_ = 0;
         onChanged();
         return this;
       }
@@ -54090,10 +53853,10 @@ public final class ConfigProto {
       "n_border_color\030\026 \001(\tH\025R\026loginButtonBorde" +
       "rColor\210\001\001\022:\n\027login_button_text_color\030\027 \001" +
       "(\tH\026R\024loginButtonTextColor\210\001\001\022>\n\031rate_li" +
-      "miting_memory_size\030\030 \001(\tH\027R\026rateLimiting" +
+      "miting_memory_size\030\030 \001(\005H\027R\026rateLimiting" +
       "MemorySize\210\001\001\0228\n\026rate_limiting_per_hour\030" +
-      "\031 \001(\tH\030R\023rateLimitingPerHour\210\001\001\022:\n\027rate_" +
-      "limiting_max_burst\030\032 \001(\tH\031R\024rateLimiting" +
+      "\031 \001(\005H\030R\023rateLimitingPerHour\210\001\001\022:\n\027rate_" +
+      "limiting_max_burst\030\032 \001(\005H\031R\024rateLimiting" +
       "MaxBurst\210\001\001B\033\n\031_send_email_notifications" +
       "B\035\n\033_require_email_verificationB\021\n\017_feed" +
       "back_emailB\023\n\021_reply_to_addressB\023\n\021_enab" +

@@ -1443,18 +1443,18 @@ export class ConfigEmail extends jspb.Message {
   hasLoginButtonTextColor(): boolean;
   clearLoginButtonTextColor(): ConfigEmail;
 
-  getRateLimitingMemorySize(): string;
-  setRateLimitingMemorySize(value: string): ConfigEmail;
+  getRateLimitingMemorySize(): number;
+  setRateLimitingMemorySize(value: number): ConfigEmail;
   hasRateLimitingMemorySize(): boolean;
   clearRateLimitingMemorySize(): ConfigEmail;
 
-  getRateLimitingPerHour(): string;
-  setRateLimitingPerHour(value: string): ConfigEmail;
+  getRateLimitingPerHour(): number;
+  setRateLimitingPerHour(value: number): ConfigEmail;
   hasRateLimitingPerHour(): boolean;
   clearRateLimitingPerHour(): ConfigEmail;
 
-  getRateLimitingMaxBurst(): string;
-  setRateLimitingMaxBurst(value: string): ConfigEmail;
+  getRateLimitingMaxBurst(): number;
+  setRateLimitingMaxBurst(value: number): ConfigEmail;
   hasRateLimitingMaxBurst(): boolean;
   clearRateLimitingMaxBurst(): ConfigEmail;
 
@@ -1491,9 +1491,9 @@ export namespace ConfigEmail {
     loginButtonColor?: string,
     loginButtonBorderColor?: string,
     loginButtonTextColor?: string,
-    rateLimitingMemorySize?: string,
-    rateLimitingPerHour?: string,
-    rateLimitingMaxBurst?: string,
+    rateLimitingMemorySize?: number,
+    rateLimitingPerHour?: number,
+    rateLimitingMaxBurst?: number,
   }
 
   export enum SendEmailNotificationsCase { 

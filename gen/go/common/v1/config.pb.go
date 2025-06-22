@@ -1251,9 +1251,9 @@ type ConfigEmail struct {
 	LoginButtonColor                  *string                `protobuf:"bytes,21,opt,name=login_button_color,json=loginButtonColor,proto3,oneof" json:"login_button_color,omitempty"`
 	LoginButtonBorderColor            *string                `protobuf:"bytes,22,opt,name=login_button_border_color,json=loginButtonBorderColor,proto3,oneof" json:"login_button_border_color,omitempty"`
 	LoginButtonTextColor              *string                `protobuf:"bytes,23,opt,name=login_button_text_color,json=loginButtonTextColor,proto3,oneof" json:"login_button_text_color,omitempty"`
-	RateLimitingMemorySize            *string                `protobuf:"bytes,24,opt,name=rate_limiting_memory_size,json=rateLimitingMemorySize,proto3,oneof" json:"rate_limiting_memory_size,omitempty"`
-	RateLimitingPerHour               *string                `protobuf:"bytes,25,opt,name=rate_limiting_per_hour,json=rateLimitingPerHour,proto3,oneof" json:"rate_limiting_per_hour,omitempty"`
-	RateLimitingMaxBurst              *string                `protobuf:"bytes,26,opt,name=rate_limiting_max_burst,json=rateLimitingMaxBurst,proto3,oneof" json:"rate_limiting_max_burst,omitempty"`
+	RateLimitingMemorySize            *int32                 `protobuf:"varint,24,opt,name=rate_limiting_memory_size,json=rateLimitingMemorySize,proto3,oneof" json:"rate_limiting_memory_size,omitempty"`
+	RateLimitingPerHour               *int32                 `protobuf:"varint,25,opt,name=rate_limiting_per_hour,json=rateLimitingPerHour,proto3,oneof" json:"rate_limiting_per_hour,omitempty"`
+	RateLimitingMaxBurst              *int32                 `protobuf:"varint,26,opt,name=rate_limiting_max_burst,json=rateLimitingMaxBurst,proto3,oneof" json:"rate_limiting_max_burst,omitempty"`
 	unknownFields                     protoimpl.UnknownFields
 	sizeCache                         protoimpl.SizeCache
 }
@@ -1449,25 +1449,25 @@ func (x *ConfigEmail) GetLoginButtonTextColor() string {
 	return ""
 }
 
-func (x *ConfigEmail) GetRateLimitingMemorySize() string {
+func (x *ConfigEmail) GetRateLimitingMemorySize() int32 {
 	if x != nil && x.RateLimitingMemorySize != nil {
 		return *x.RateLimitingMemorySize
 	}
-	return ""
+	return 0
 }
 
-func (x *ConfigEmail) GetRateLimitingPerHour() string {
+func (x *ConfigEmail) GetRateLimitingPerHour() int32 {
 	if x != nil && x.RateLimitingPerHour != nil {
 		return *x.RateLimitingPerHour
 	}
-	return ""
+	return 0
 }
 
-func (x *ConfigEmail) GetRateLimitingMaxBurst() string {
+func (x *ConfigEmail) GetRateLimitingMaxBurst() int32 {
 	if x != nil && x.RateLimitingMaxBurst != nil {
 		return *x.RateLimitingMaxBurst
 	}
-	return ""
+	return 0
 }
 
 type ConfigRateLimit struct {
@@ -3701,9 +3701,9 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x12login_button_color\x18\x15 \x01(\tH\x14R\x10loginButtonColor\x88\x01\x01\x12>\n" +
 	"\x19login_button_border_color\x18\x16 \x01(\tH\x15R\x16loginButtonBorderColor\x88\x01\x01\x12:\n" +
 	"\x17login_button_text_color\x18\x17 \x01(\tH\x16R\x14loginButtonTextColor\x88\x01\x01\x12>\n" +
-	"\x19rate_limiting_memory_size\x18\x18 \x01(\tH\x17R\x16rateLimitingMemorySize\x88\x01\x01\x128\n" +
-	"\x16rate_limiting_per_hour\x18\x19 \x01(\tH\x18R\x13rateLimitingPerHour\x88\x01\x01\x12:\n" +
-	"\x17rate_limiting_max_burst\x18\x1a \x01(\tH\x19R\x14rateLimitingMaxBurst\x88\x01\x01B\x1b\n" +
+	"\x19rate_limiting_memory_size\x18\x18 \x01(\x05H\x17R\x16rateLimitingMemorySize\x88\x01\x01\x128\n" +
+	"\x16rate_limiting_per_hour\x18\x19 \x01(\x05H\x18R\x13rateLimitingPerHour\x88\x01\x01\x12:\n" +
+	"\x17rate_limiting_max_burst\x18\x1a \x01(\x05H\x19R\x14rateLimitingMaxBurst\x88\x01\x01B\x1b\n" +
 	"\x19_send_email_notificationsB\x1d\n" +
 	"\x1b_require_email_verificationB\x11\n" +
 	"\x0f_feedback_emailB\x13\n" +
