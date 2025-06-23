@@ -2139,8 +2139,7 @@ proto.common.v1.ConfigSecurity.toObject = function(includeInstance, msg) {
     corsDebug: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
     allowCookiesForSubdomains: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
     sessionCacheInMinutes: jspb.Message.getFieldWithDefault(msg, 17, 0),
-    websocketSecurePort: jspb.Message.getFieldWithDefault(msg, 18, 0),
-    websocketPort: jspb.Message.getFieldWithDefault(msg, 19, 0)
+    emailConfirmationUrl: jspb.Message.getFieldWithDefault(msg, 18, "")
   };
 
   if (includeInstance) {
@@ -2248,12 +2247,8 @@ proto.common.v1.ConfigSecurity.deserializeBinaryFromReader = function(msg, reade
       msg.setSessionCacheInMinutes(value);
       break;
     case 18:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setWebsocketSecurePort(value);
-      break;
-    case 19:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setWebsocketPort(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEmailConfirmationUrl(value);
       break;
     default:
       reader.skipField();
@@ -2400,17 +2395,10 @@ proto.common.v1.ConfigSecurity.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = /** @type {number} */ (jspb.Message.getField(message, 18));
+  f = /** @type {string} */ (jspb.Message.getField(message, 18));
   if (f != null) {
-    writer.writeInt32(
+    writer.writeString(
       18,
-      f
-    );
-  }
-  f = /** @type {number} */ (jspb.Message.getField(message, 19));
-  if (f != null) {
-    writer.writeInt32(
-      19,
       f
     );
   }
@@ -3016,19 +3004,19 @@ proto.common.v1.ConfigSecurity.prototype.hasSessionCacheInMinutes = function() {
 
 
 /**
- * optional int32 websocket_secure_port = 18;
- * @return {number}
+ * optional string email_confirmation_url = 18;
+ * @return {string}
  */
-proto.common.v1.ConfigSecurity.prototype.getWebsocketSecurePort = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 18, 0));
+proto.common.v1.ConfigSecurity.prototype.getEmailConfirmationUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.setWebsocketSecurePort = function(value) {
+proto.common.v1.ConfigSecurity.prototype.setEmailConfirmationUrl = function(value) {
   return jspb.Message.setField(this, 18, value);
 };
 
@@ -3037,7 +3025,7 @@ proto.common.v1.ConfigSecurity.prototype.setWebsocketSecurePort = function(value
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigSecurity} returns this
  */
-proto.common.v1.ConfigSecurity.prototype.clearWebsocketSecurePort = function() {
+proto.common.v1.ConfigSecurity.prototype.clearEmailConfirmationUrl = function() {
   return jspb.Message.setField(this, 18, undefined);
 };
 
@@ -3046,44 +3034,8 @@ proto.common.v1.ConfigSecurity.prototype.clearWebsocketSecurePort = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigSecurity.prototype.hasWebsocketSecurePort = function() {
+proto.common.v1.ConfigSecurity.prototype.hasEmailConfirmationUrl = function() {
   return jspb.Message.getField(this, 18) != null;
-};
-
-
-/**
- * optional int32 websocket_port = 19;
- * @return {number}
- */
-proto.common.v1.ConfigSecurity.prototype.getWebsocketPort = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 19, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.common.v1.ConfigSecurity} returns this
- */
-proto.common.v1.ConfigSecurity.prototype.setWebsocketPort = function(value) {
-  return jspb.Message.setField(this, 19, value);
-};
-
-
-/**
- * Clears the field making it undefined.
- * @return {!proto.common.v1.ConfigSecurity} returns this
- */
-proto.common.v1.ConfigSecurity.prototype.clearWebsocketPort = function() {
-  return jspb.Message.setField(this, 19, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.common.v1.ConfigSecurity.prototype.hasWebsocketPort = function() {
-  return jspb.Message.getField(this, 19) != null;
 };
 
 

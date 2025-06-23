@@ -321,8 +321,7 @@ type ConfigSecurity struct {
 	CorsDebug                         *bool                  `protobuf:"varint,15,opt,name=cors_debug,json=corsDebug,proto3,oneof" json:"cors_debug,omitempty"`
 	AllowCookiesForSubdomains         *bool                  `protobuf:"varint,16,opt,name=allow_cookies_for_subdomains,json=allowCookiesForSubdomains,proto3,oneof" json:"allow_cookies_for_subdomains,omitempty"`
 	SessionCacheInMinutes             *int32                 `protobuf:"varint,17,opt,name=session_cache_in_minutes,json=sessionCacheInMinutes,proto3,oneof" json:"session_cache_in_minutes,omitempty"`
-	WebsocketSecurePort               *int32                 `protobuf:"varint,18,opt,name=websocket_secure_port,json=websocketSecurePort,proto3,oneof" json:"websocket_secure_port,omitempty"`
-	WebsocketPort                     *int32                 `protobuf:"varint,19,opt,name=websocket_port,json=websocketPort,proto3,oneof" json:"websocket_port,omitempty"`
+	EmailConfirmationUrl              *string                `protobuf:"bytes,18,opt,name=email_confirmation_url,json=emailConfirmationUrl,proto3,oneof" json:"email_confirmation_url,omitempty"`
 	unknownFields                     protoimpl.UnknownFields
 	sizeCache                         protoimpl.SizeCache
 }
@@ -476,18 +475,11 @@ func (x *ConfigSecurity) GetSessionCacheInMinutes() int32 {
 	return 0
 }
 
-func (x *ConfigSecurity) GetWebsocketSecurePort() int32 {
-	if x != nil && x.WebsocketSecurePort != nil {
-		return *x.WebsocketSecurePort
+func (x *ConfigSecurity) GetEmailConfirmationUrl() string {
+	if x != nil && x.EmailConfirmationUrl != nil {
+		return *x.EmailConfirmationUrl
 	}
-	return 0
-}
-
-func (x *ConfigSecurity) GetWebsocketPort() int32 {
-	if x != nil && x.WebsocketPort != nil {
-		return *x.WebsocketPort
-	}
-	return 0
+	return ""
 }
 
 type CacheConfig struct {
@@ -3481,7 +3473,7 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x16_user_service_grpc_urlB\x17\n" +
 	"\x15_jaeger_collector_urlB \n" +
 	"\x1e_common_service_prometheus_urlB\x1e\n" +
-	"\x1c_user_service_prometheus_url\"\x86\x0f\n" +
+	"\x1c_user_service_prometheus_url\"\xca\x0e\n" +
 	"\x0eConfigSecurity\x12e\n" +
 	"\x14restricted_usernames\x18\x01 \x03(\v22.common.v1.ConfigSecurity.RestrictedUsernamesEntryR\x13restrictedUsernames\x129\n" +
 	"\x16maximum_login_attempts\x18\x02 \x01(\x05H\x00R\x14maximumLoginAttempts\x88\x01\x01\x12T\n" +
@@ -3502,9 +3494,8 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\n" +
 	"cors_debug\x18\x0f \x01(\bH\rR\tcorsDebug\x88\x01\x01\x12D\n" +
 	"\x1callow_cookies_for_subdomains\x18\x10 \x01(\bH\x0eR\x19allowCookiesForSubdomains\x88\x01\x01\x12<\n" +
-	"\x18session_cache_in_minutes\x18\x11 \x01(\x05H\x0fR\x15sessionCacheInMinutes\x88\x01\x01\x127\n" +
-	"\x15websocket_secure_port\x18\x12 \x01(\x05H\x10R\x13websocketSecurePort\x88\x01\x01\x12*\n" +
-	"\x0ewebsocket_port\x18\x13 \x01(\x05H\x11R\rwebsocketPort\x88\x01\x01\x1aF\n" +
+	"\x18session_cache_in_minutes\x18\x11 \x01(\x05H\x0fR\x15sessionCacheInMinutes\x88\x01\x01\x129\n" +
+	"\x16email_confirmation_url\x18\x12 \x01(\tH\x10R\x14emailConfirmationUrl\x88\x01\x01\x1aF\n" +
 	"\x18RestrictedUsernamesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\x19\n" +
@@ -3523,9 +3514,8 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x17_cors_allow_credentialsB\r\n" +
 	"\v_cors_debugB\x1f\n" +
 	"\x1d_allow_cookies_for_subdomainsB\x1b\n" +
-	"\x19_session_cache_in_minutesB\x18\n" +
-	"\x16_websocket_secure_portB\x11\n" +
-	"\x0f_websocket_port\"\x82\x03\n" +
+	"\x19_session_cache_in_minutesB\x19\n" +
+	"\x17_email_confirmation_url\"\x82\x03\n" +
 	"\vCacheConfig\x12\"\n" +
 	"\n" +
 	"cache_type\x18\x01 \x01(\tH\x00R\tcacheType\x88\x01\x01\x12(\n" +

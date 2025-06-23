@@ -59,8 +59,7 @@ message ConfigSecurity {
   optional bool cors_debug = 15;
   optional bool allow_cookies_for_subdomains = 16;
   optional int32 session_cache_in_minutes = 17;
-  optional int32 websocket_secure_port = 18;
-  optional int32 websocket_port = 19;
+  optional string email_confirmation_url = 18;
 }
 
 message CacheConfig {

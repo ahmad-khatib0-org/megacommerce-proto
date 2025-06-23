@@ -1045,6 +1045,7 @@ class ConfigSecurity final :
     kRestrictedUsernamesFieldNumber = 1,
     kAllowCorsFromFieldNumber = 12,
     kCorsExposedHeadersFieldNumber = 13,
+    kEmailConfirmationUrlFieldNumber = 18,
     kMaximumLoginAttemptsFieldNumber = 2,
     kEnableInsecureOutgoingConnectionsFieldNumber = 3,
     kEnableMultifactorAuthenticationFieldNumber = 4,
@@ -1059,8 +1060,6 @@ class ConfigSecurity final :
     kCorsDebugFieldNumber = 15,
     kAllowCookiesForSubdomainsFieldNumber = 16,
     kSessionCacheInMinutesFieldNumber = 17,
-    kWebsocketSecurePortFieldNumber = 18,
-    kWebsocketPortFieldNumber = 19,
   };
   // map<string, string> restricted_usernames = 1 [json_name = "restrictedUsernames"];
   int restricted_usernames_size() const;
@@ -1113,6 +1112,24 @@ class ConfigSecurity final :
   const std::string& _internal_cors_exposed_headers() const;
   inline PROTOBUF_ALWAYS_INLINE void _internal_set_cors_exposed_headers(const std::string& value);
   std::string* _internal_mutable_cors_exposed_headers();
+  public:
+
+  // optional string email_confirmation_url = 18 [json_name = "emailConfirmationUrl"];
+  bool has_email_confirmation_url() const;
+  private:
+  bool _internal_has_email_confirmation_url() const;
+  public:
+  void clear_email_confirmation_url();
+  const std::string& email_confirmation_url() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_email_confirmation_url(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_email_confirmation_url();
+  PROTOBUF_NODISCARD std::string* release_email_confirmation_url();
+  void set_allocated_email_confirmation_url(std::string* email_confirmation_url);
+  private:
+  const std::string& _internal_email_confirmation_url() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_email_confirmation_url(const std::string& value);
+  std::string* _internal_mutable_email_confirmation_url();
   public:
 
   // optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];
@@ -1297,32 +1314,6 @@ class ConfigSecurity final :
   void _internal_set_session_cache_in_minutes(int32_t value);
   public:
 
-  // optional int32 websocket_secure_port = 18 [json_name = "websocketSecurePort"];
-  bool has_websocket_secure_port() const;
-  private:
-  bool _internal_has_websocket_secure_port() const;
-  public:
-  void clear_websocket_secure_port();
-  int32_t websocket_secure_port() const;
-  void set_websocket_secure_port(int32_t value);
-  private:
-  int32_t _internal_websocket_secure_port() const;
-  void _internal_set_websocket_secure_port(int32_t value);
-  public:
-
-  // optional int32 websocket_port = 19 [json_name = "websocketPort"];
-  bool has_websocket_port() const;
-  private:
-  bool _internal_has_websocket_port() const;
-  public:
-  void clear_websocket_port();
-  int32_t websocket_port() const;
-  void set_websocket_port(int32_t value);
-  private:
-  int32_t _internal_websocket_port() const;
-  void _internal_set_websocket_port(int32_t value);
-  public:
-
   // @@protoc_insertion_point(class_scope:common.v1.ConfigSecurity)
  private:
   class _Internal;
@@ -1339,6 +1330,7 @@ class ConfigSecurity final :
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING> restricted_usernames_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr allow_cors_from_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr cors_exposed_headers_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr email_confirmation_url_;
   int32_t maximum_login_attempts_;
   bool enable_insecure_outgoing_connections_;
   bool enable_multifactor_authentication_;
@@ -1353,8 +1345,6 @@ class ConfigSecurity final :
   bool cors_debug_;
   bool allow_cookies_for_subdomains_;
   int32_t session_cache_in_minutes_;
-  int32_t websocket_secure_port_;
-  int32_t websocket_port_;
   friend struct ::TableStruct_common_2fv1_2fconfig_2eproto;
 };
 // -------------------------------------------------------------------
@@ -10268,7 +10258,7 @@ ConfigSecurity::mutable_restricted_usernames() {
 
 // optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];
 inline bool ConfigSecurity::_internal_has_maximum_login_attempts() const {
-  bool value = (_has_bits_[0] & 0x00000004u) != 0;
+  bool value = (_has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
 inline bool ConfigSecurity::has_maximum_login_attempts() const {
@@ -10276,7 +10266,7 @@ inline bool ConfigSecurity::has_maximum_login_attempts() const {
 }
 inline void ConfigSecurity::clear_maximum_login_attempts() {
   maximum_login_attempts_ = 0;
-  _has_bits_[0] &= ~0x00000004u;
+  _has_bits_[0] &= ~0x00000008u;
 }
 inline int32_t ConfigSecurity::_internal_maximum_login_attempts() const {
   return maximum_login_attempts_;
@@ -10286,7 +10276,7 @@ inline int32_t ConfigSecurity::maximum_login_attempts() const {
   return _internal_maximum_login_attempts();
 }
 inline void ConfigSecurity::_internal_set_maximum_login_attempts(int32_t value) {
-  _has_bits_[0] |= 0x00000004u;
+  _has_bits_[0] |= 0x00000008u;
   maximum_login_attempts_ = value;
 }
 inline void ConfigSecurity::set_maximum_login_attempts(int32_t value) {
@@ -10296,7 +10286,7 @@ inline void ConfigSecurity::set_maximum_login_attempts(int32_t value) {
 
 // optional bool enable_insecure_outgoing_connections = 3 [json_name = "enableInsecureOutgoingConnections"];
 inline bool ConfigSecurity::_internal_has_enable_insecure_outgoing_connections() const {
-  bool value = (_has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_has_bits_[0] & 0x00000010u) != 0;
   return value;
 }
 inline bool ConfigSecurity::has_enable_insecure_outgoing_connections() const {
@@ -10304,7 +10294,7 @@ inline bool ConfigSecurity::has_enable_insecure_outgoing_connections() const {
 }
 inline void ConfigSecurity::clear_enable_insecure_outgoing_connections() {
   enable_insecure_outgoing_connections_ = false;
-  _has_bits_[0] &= ~0x00000008u;
+  _has_bits_[0] &= ~0x00000010u;
 }
 inline bool ConfigSecurity::_internal_enable_insecure_outgoing_connections() const {
   return enable_insecure_outgoing_connections_;
@@ -10314,7 +10304,7 @@ inline bool ConfigSecurity::enable_insecure_outgoing_connections() const {
   return _internal_enable_insecure_outgoing_connections();
 }
 inline void ConfigSecurity::_internal_set_enable_insecure_outgoing_connections(bool value) {
-  _has_bits_[0] |= 0x00000008u;
+  _has_bits_[0] |= 0x00000010u;
   enable_insecure_outgoing_connections_ = value;
 }
 inline void ConfigSecurity::set_enable_insecure_outgoing_connections(bool value) {
@@ -10324,7 +10314,7 @@ inline void ConfigSecurity::set_enable_insecure_outgoing_connections(bool value)
 
 // optional bool enable_multifactor_authentication = 4 [json_name = "enableMultifactorAuthentication"];
 inline bool ConfigSecurity::_internal_has_enable_multifactor_authentication() const {
-  bool value = (_has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
 inline bool ConfigSecurity::has_enable_multifactor_authentication() const {
@@ -10332,7 +10322,7 @@ inline bool ConfigSecurity::has_enable_multifactor_authentication() const {
 }
 inline void ConfigSecurity::clear_enable_multifactor_authentication() {
   enable_multifactor_authentication_ = false;
-  _has_bits_[0] &= ~0x00000010u;
+  _has_bits_[0] &= ~0x00000020u;
 }
 inline bool ConfigSecurity::_internal_enable_multifactor_authentication() const {
   return enable_multifactor_authentication_;
@@ -10342,7 +10332,7 @@ inline bool ConfigSecurity::enable_multifactor_authentication() const {
   return _internal_enable_multifactor_authentication();
 }
 inline void ConfigSecurity::_internal_set_enable_multifactor_authentication(bool value) {
-  _has_bits_[0] |= 0x00000010u;
+  _has_bits_[0] |= 0x00000020u;
   enable_multifactor_authentication_ = value;
 }
 inline void ConfigSecurity::set_enable_multifactor_authentication(bool value) {
@@ -10352,7 +10342,7 @@ inline void ConfigSecurity::set_enable_multifactor_authentication(bool value) {
 
 // optional bool enforce_multifactor_authentication = 5 [json_name = "enforceMultifactorAuthentication"];
 inline bool ConfigSecurity::_internal_has_enforce_multifactor_authentication() const {
-  bool value = (_has_bits_[0] & 0x00000020u) != 0;
+  bool value = (_has_bits_[0] & 0x00000040u) != 0;
   return value;
 }
 inline bool ConfigSecurity::has_enforce_multifactor_authentication() const {
@@ -10360,7 +10350,7 @@ inline bool ConfigSecurity::has_enforce_multifactor_authentication() const {
 }
 inline void ConfigSecurity::clear_enforce_multifactor_authentication() {
   enforce_multifactor_authentication_ = false;
-  _has_bits_[0] &= ~0x00000020u;
+  _has_bits_[0] &= ~0x00000040u;
 }
 inline bool ConfigSecurity::_internal_enforce_multifactor_authentication() const {
   return enforce_multifactor_authentication_;
@@ -10370,7 +10360,7 @@ inline bool ConfigSecurity::enforce_multifactor_authentication() const {
   return _internal_enforce_multifactor_authentication();
 }
 inline void ConfigSecurity::_internal_set_enforce_multifactor_authentication(bool value) {
-  _has_bits_[0] |= 0x00000020u;
+  _has_bits_[0] |= 0x00000040u;
   enforce_multifactor_authentication_ = value;
 }
 inline void ConfigSecurity::set_enforce_multifactor_authentication(bool value) {
@@ -10380,7 +10370,7 @@ inline void ConfigSecurity::set_enforce_multifactor_authentication(bool value) {
 
 // optional bool enable_oauth_service_provider = 6 [json_name = "enableOauthServiceProvider"];
 inline bool ConfigSecurity::_internal_has_enable_oauth_service_provider() const {
-  bool value = (_has_bits_[0] & 0x00000040u) != 0;
+  bool value = (_has_bits_[0] & 0x00000080u) != 0;
   return value;
 }
 inline bool ConfigSecurity::has_enable_oauth_service_provider() const {
@@ -10388,7 +10378,7 @@ inline bool ConfigSecurity::has_enable_oauth_service_provider() const {
 }
 inline void ConfigSecurity::clear_enable_oauth_service_provider() {
   enable_oauth_service_provider_ = false;
-  _has_bits_[0] &= ~0x00000040u;
+  _has_bits_[0] &= ~0x00000080u;
 }
 inline bool ConfigSecurity::_internal_enable_oauth_service_provider() const {
   return enable_oauth_service_provider_;
@@ -10398,7 +10388,7 @@ inline bool ConfigSecurity::enable_oauth_service_provider() const {
   return _internal_enable_oauth_service_provider();
 }
 inline void ConfigSecurity::_internal_set_enable_oauth_service_provider(bool value) {
-  _has_bits_[0] |= 0x00000040u;
+  _has_bits_[0] |= 0x00000080u;
   enable_oauth_service_provider_ = value;
 }
 inline void ConfigSecurity::set_enable_oauth_service_provider(bool value) {
@@ -10408,7 +10398,7 @@ inline void ConfigSecurity::set_enable_oauth_service_provider(bool value) {
 
 // optional bool enable_outgoing_oauth_connections = 7 [json_name = "enableOutgoingOauthConnections"];
 inline bool ConfigSecurity::_internal_has_enable_outgoing_oauth_connections() const {
-  bool value = (_has_bits_[0] & 0x00000400u) != 0;
+  bool value = (_has_bits_[0] & 0x00000800u) != 0;
   return value;
 }
 inline bool ConfigSecurity::has_enable_outgoing_oauth_connections() const {
@@ -10416,7 +10406,7 @@ inline bool ConfigSecurity::has_enable_outgoing_oauth_connections() const {
 }
 inline void ConfigSecurity::clear_enable_outgoing_oauth_connections() {
   enable_outgoing_oauth_connections_ = false;
-  _has_bits_[0] &= ~0x00000400u;
+  _has_bits_[0] &= ~0x00000800u;
 }
 inline bool ConfigSecurity::_internal_enable_outgoing_oauth_connections() const {
   return enable_outgoing_oauth_connections_;
@@ -10426,7 +10416,7 @@ inline bool ConfigSecurity::enable_outgoing_oauth_connections() const {
   return _internal_enable_outgoing_oauth_connections();
 }
 inline void ConfigSecurity::_internal_set_enable_outgoing_oauth_connections(bool value) {
-  _has_bits_[0] |= 0x00000400u;
+  _has_bits_[0] |= 0x00000800u;
   enable_outgoing_oauth_connections_ = value;
 }
 inline void ConfigSecurity::set_enable_outgoing_oauth_connections(bool value) {
@@ -10436,7 +10426,7 @@ inline void ConfigSecurity::set_enable_outgoing_oauth_connections(bool value) {
 
 // optional bool terminate_sessions_on_password_change = 8 [json_name = "terminateSessionsOnPasswordChange"];
 inline bool ConfigSecurity::_internal_has_terminate_sessions_on_password_change() const {
-  bool value = (_has_bits_[0] & 0x00000800u) != 0;
+  bool value = (_has_bits_[0] & 0x00001000u) != 0;
   return value;
 }
 inline bool ConfigSecurity::has_terminate_sessions_on_password_change() const {
@@ -10444,7 +10434,7 @@ inline bool ConfigSecurity::has_terminate_sessions_on_password_change() const {
 }
 inline void ConfigSecurity::clear_terminate_sessions_on_password_change() {
   terminate_sessions_on_password_change_ = false;
-  _has_bits_[0] &= ~0x00000800u;
+  _has_bits_[0] &= ~0x00001000u;
 }
 inline bool ConfigSecurity::_internal_terminate_sessions_on_password_change() const {
   return terminate_sessions_on_password_change_;
@@ -10454,7 +10444,7 @@ inline bool ConfigSecurity::terminate_sessions_on_password_change() const {
   return _internal_terminate_sessions_on_password_change();
 }
 inline void ConfigSecurity::_internal_set_terminate_sessions_on_password_change(bool value) {
-  _has_bits_[0] |= 0x00000800u;
+  _has_bits_[0] |= 0x00001000u;
   terminate_sessions_on_password_change_ = value;
 }
 inline void ConfigSecurity::set_terminate_sessions_on_password_change(bool value) {
@@ -10464,7 +10454,7 @@ inline void ConfigSecurity::set_terminate_sessions_on_password_change(bool value
 
 // optional int32 session_length_web_in_hours = 9 [json_name = "sessionLengthWebInHours"];
 inline bool ConfigSecurity::_internal_has_session_length_web_in_hours() const {
-  bool value = (_has_bits_[0] & 0x00000080u) != 0;
+  bool value = (_has_bits_[0] & 0x00000100u) != 0;
   return value;
 }
 inline bool ConfigSecurity::has_session_length_web_in_hours() const {
@@ -10472,7 +10462,7 @@ inline bool ConfigSecurity::has_session_length_web_in_hours() const {
 }
 inline void ConfigSecurity::clear_session_length_web_in_hours() {
   session_length_web_in_hours_ = 0;
-  _has_bits_[0] &= ~0x00000080u;
+  _has_bits_[0] &= ~0x00000100u;
 }
 inline int32_t ConfigSecurity::_internal_session_length_web_in_hours() const {
   return session_length_web_in_hours_;
@@ -10482,7 +10472,7 @@ inline int32_t ConfigSecurity::session_length_web_in_hours() const {
   return _internal_session_length_web_in_hours();
 }
 inline void ConfigSecurity::_internal_set_session_length_web_in_hours(int32_t value) {
-  _has_bits_[0] |= 0x00000080u;
+  _has_bits_[0] |= 0x00000100u;
   session_length_web_in_hours_ = value;
 }
 inline void ConfigSecurity::set_session_length_web_in_hours(int32_t value) {
@@ -10492,7 +10482,7 @@ inline void ConfigSecurity::set_session_length_web_in_hours(int32_t value) {
 
 // optional int32 session_length_mobile_in_hours = 10 [json_name = "sessionLengthMobileInHours"];
 inline bool ConfigSecurity::_internal_has_session_length_mobile_in_hours() const {
-  bool value = (_has_bits_[0] & 0x00000100u) != 0;
+  bool value = (_has_bits_[0] & 0x00000200u) != 0;
   return value;
 }
 inline bool ConfigSecurity::has_session_length_mobile_in_hours() const {
@@ -10500,7 +10490,7 @@ inline bool ConfigSecurity::has_session_length_mobile_in_hours() const {
 }
 inline void ConfigSecurity::clear_session_length_mobile_in_hours() {
   session_length_mobile_in_hours_ = 0;
-  _has_bits_[0] &= ~0x00000100u;
+  _has_bits_[0] &= ~0x00000200u;
 }
 inline int32_t ConfigSecurity::_internal_session_length_mobile_in_hours() const {
   return session_length_mobile_in_hours_;
@@ -10510,7 +10500,7 @@ inline int32_t ConfigSecurity::session_length_mobile_in_hours() const {
   return _internal_session_length_mobile_in_hours();
 }
 inline void ConfigSecurity::_internal_set_session_length_mobile_in_hours(int32_t value) {
-  _has_bits_[0] |= 0x00000100u;
+  _has_bits_[0] |= 0x00000200u;
   session_length_mobile_in_hours_ = value;
 }
 inline void ConfigSecurity::set_session_length_mobile_in_hours(int32_t value) {
@@ -10520,7 +10510,7 @@ inline void ConfigSecurity::set_session_length_mobile_in_hours(int32_t value) {
 
 // optional int32 session_length_sso_in_hours = 11 [json_name = "sessionLengthSsoInHours"];
 inline bool ConfigSecurity::_internal_has_session_length_sso_in_hours() const {
-  bool value = (_has_bits_[0] & 0x00000200u) != 0;
+  bool value = (_has_bits_[0] & 0x00000400u) != 0;
   return value;
 }
 inline bool ConfigSecurity::has_session_length_sso_in_hours() const {
@@ -10528,7 +10518,7 @@ inline bool ConfigSecurity::has_session_length_sso_in_hours() const {
 }
 inline void ConfigSecurity::clear_session_length_sso_in_hours() {
   session_length_sso_in_hours_ = 0;
-  _has_bits_[0] &= ~0x00000200u;
+  _has_bits_[0] &= ~0x00000400u;
 }
 inline int32_t ConfigSecurity::_internal_session_length_sso_in_hours() const {
   return session_length_sso_in_hours_;
@@ -10538,7 +10528,7 @@ inline int32_t ConfigSecurity::session_length_sso_in_hours() const {
   return _internal_session_length_sso_in_hours();
 }
 inline void ConfigSecurity::_internal_set_session_length_sso_in_hours(int32_t value) {
-  _has_bits_[0] |= 0x00000200u;
+  _has_bits_[0] |= 0x00000400u;
   session_length_sso_in_hours_ = value;
 }
 inline void ConfigSecurity::set_session_length_sso_in_hours(int32_t value) {
@@ -10686,7 +10676,7 @@ inline void ConfigSecurity::set_allocated_cors_exposed_headers(std::string* cors
 
 // optional bool cors_allow_credentials = 14 [json_name = "corsAllowCredentials"];
 inline bool ConfigSecurity::_internal_has_cors_allow_credentials() const {
-  bool value = (_has_bits_[0] & 0x00001000u) != 0;
+  bool value = (_has_bits_[0] & 0x00002000u) != 0;
   return value;
 }
 inline bool ConfigSecurity::has_cors_allow_credentials() const {
@@ -10694,7 +10684,7 @@ inline bool ConfigSecurity::has_cors_allow_credentials() const {
 }
 inline void ConfigSecurity::clear_cors_allow_credentials() {
   cors_allow_credentials_ = false;
-  _has_bits_[0] &= ~0x00001000u;
+  _has_bits_[0] &= ~0x00002000u;
 }
 inline bool ConfigSecurity::_internal_cors_allow_credentials() const {
   return cors_allow_credentials_;
@@ -10704,7 +10694,7 @@ inline bool ConfigSecurity::cors_allow_credentials() const {
   return _internal_cors_allow_credentials();
 }
 inline void ConfigSecurity::_internal_set_cors_allow_credentials(bool value) {
-  _has_bits_[0] |= 0x00001000u;
+  _has_bits_[0] |= 0x00002000u;
   cors_allow_credentials_ = value;
 }
 inline void ConfigSecurity::set_cors_allow_credentials(bool value) {
@@ -10714,7 +10704,7 @@ inline void ConfigSecurity::set_cors_allow_credentials(bool value) {
 
 // optional bool cors_debug = 15 [json_name = "corsDebug"];
 inline bool ConfigSecurity::_internal_has_cors_debug() const {
-  bool value = (_has_bits_[0] & 0x00002000u) != 0;
+  bool value = (_has_bits_[0] & 0x00004000u) != 0;
   return value;
 }
 inline bool ConfigSecurity::has_cors_debug() const {
@@ -10722,7 +10712,7 @@ inline bool ConfigSecurity::has_cors_debug() const {
 }
 inline void ConfigSecurity::clear_cors_debug() {
   cors_debug_ = false;
-  _has_bits_[0] &= ~0x00002000u;
+  _has_bits_[0] &= ~0x00004000u;
 }
 inline bool ConfigSecurity::_internal_cors_debug() const {
   return cors_debug_;
@@ -10732,7 +10722,7 @@ inline bool ConfigSecurity::cors_debug() const {
   return _internal_cors_debug();
 }
 inline void ConfigSecurity::_internal_set_cors_debug(bool value) {
-  _has_bits_[0] |= 0x00002000u;
+  _has_bits_[0] |= 0x00004000u;
   cors_debug_ = value;
 }
 inline void ConfigSecurity::set_cors_debug(bool value) {
@@ -10742,7 +10732,7 @@ inline void ConfigSecurity::set_cors_debug(bool value) {
 
 // optional bool allow_cookies_for_subdomains = 16 [json_name = "allowCookiesForSubdomains"];
 inline bool ConfigSecurity::_internal_has_allow_cookies_for_subdomains() const {
-  bool value = (_has_bits_[0] & 0x00004000u) != 0;
+  bool value = (_has_bits_[0] & 0x00008000u) != 0;
   return value;
 }
 inline bool ConfigSecurity::has_allow_cookies_for_subdomains() const {
@@ -10750,7 +10740,7 @@ inline bool ConfigSecurity::has_allow_cookies_for_subdomains() const {
 }
 inline void ConfigSecurity::clear_allow_cookies_for_subdomains() {
   allow_cookies_for_subdomains_ = false;
-  _has_bits_[0] &= ~0x00004000u;
+  _has_bits_[0] &= ~0x00008000u;
 }
 inline bool ConfigSecurity::_internal_allow_cookies_for_subdomains() const {
   return allow_cookies_for_subdomains_;
@@ -10760,7 +10750,7 @@ inline bool ConfigSecurity::allow_cookies_for_subdomains() const {
   return _internal_allow_cookies_for_subdomains();
 }
 inline void ConfigSecurity::_internal_set_allow_cookies_for_subdomains(bool value) {
-  _has_bits_[0] |= 0x00004000u;
+  _has_bits_[0] |= 0x00008000u;
   allow_cookies_for_subdomains_ = value;
 }
 inline void ConfigSecurity::set_allow_cookies_for_subdomains(bool value) {
@@ -10770,7 +10760,7 @@ inline void ConfigSecurity::set_allow_cookies_for_subdomains(bool value) {
 
 // optional int32 session_cache_in_minutes = 17 [json_name = "sessionCacheInMinutes"];
 inline bool ConfigSecurity::_internal_has_session_cache_in_minutes() const {
-  bool value = (_has_bits_[0] & 0x00008000u) != 0;
+  bool value = (_has_bits_[0] & 0x00010000u) != 0;
   return value;
 }
 inline bool ConfigSecurity::has_session_cache_in_minutes() const {
@@ -10778,7 +10768,7 @@ inline bool ConfigSecurity::has_session_cache_in_minutes() const {
 }
 inline void ConfigSecurity::clear_session_cache_in_minutes() {
   session_cache_in_minutes_ = 0;
-  _has_bits_[0] &= ~0x00008000u;
+  _has_bits_[0] &= ~0x00010000u;
 }
 inline int32_t ConfigSecurity::_internal_session_cache_in_minutes() const {
   return session_cache_in_minutes_;
@@ -10788,7 +10778,7 @@ inline int32_t ConfigSecurity::session_cache_in_minutes() const {
   return _internal_session_cache_in_minutes();
 }
 inline void ConfigSecurity::_internal_set_session_cache_in_minutes(int32_t value) {
-  _has_bits_[0] |= 0x00008000u;
+  _has_bits_[0] |= 0x00010000u;
   session_cache_in_minutes_ = value;
 }
 inline void ConfigSecurity::set_session_cache_in_minutes(int32_t value) {
@@ -10796,60 +10786,73 @@ inline void ConfigSecurity::set_session_cache_in_minutes(int32_t value) {
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.session_cache_in_minutes)
 }
 
-// optional int32 websocket_secure_port = 18 [json_name = "websocketSecurePort"];
-inline bool ConfigSecurity::_internal_has_websocket_secure_port() const {
-  bool value = (_has_bits_[0] & 0x00010000u) != 0;
+// optional string email_confirmation_url = 18 [json_name = "emailConfirmationUrl"];
+inline bool ConfigSecurity::_internal_has_email_confirmation_url() const {
+  bool value = (_has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
-inline bool ConfigSecurity::has_websocket_secure_port() const {
-  return _internal_has_websocket_secure_port();
+inline bool ConfigSecurity::has_email_confirmation_url() const {
+  return _internal_has_email_confirmation_url();
 }
-inline void ConfigSecurity::clear_websocket_secure_port() {
-  websocket_secure_port_ = 0;
-  _has_bits_[0] &= ~0x00010000u;
+inline void ConfigSecurity::clear_email_confirmation_url() {
+  email_confirmation_url_.ClearToEmpty();
+  _has_bits_[0] &= ~0x00000004u;
 }
-inline int32_t ConfigSecurity::_internal_websocket_secure_port() const {
-  return websocket_secure_port_;
+inline const std::string& ConfigSecurity::email_confirmation_url() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.email_confirmation_url)
+  return _internal_email_confirmation_url();
 }
-inline int32_t ConfigSecurity::websocket_secure_port() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.websocket_secure_port)
-  return _internal_websocket_secure_port();
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void ConfigSecurity::set_email_confirmation_url(ArgT0&& arg0, ArgT... args) {
+ _has_bits_[0] |= 0x00000004u;
+ email_confirmation_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.email_confirmation_url)
 }
-inline void ConfigSecurity::_internal_set_websocket_secure_port(int32_t value) {
-  _has_bits_[0] |= 0x00010000u;
-  websocket_secure_port_ = value;
+inline std::string* ConfigSecurity::mutable_email_confirmation_url() {
+  std::string* _s = _internal_mutable_email_confirmation_url();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigSecurity.email_confirmation_url)
+  return _s;
 }
-inline void ConfigSecurity::set_websocket_secure_port(int32_t value) {
-  _internal_set_websocket_secure_port(value);
-  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.websocket_secure_port)
+inline const std::string& ConfigSecurity::_internal_email_confirmation_url() const {
+  return email_confirmation_url_.Get();
 }
-
-// optional int32 websocket_port = 19 [json_name = "websocketPort"];
-inline bool ConfigSecurity::_internal_has_websocket_port() const {
-  bool value = (_has_bits_[0] & 0x00020000u) != 0;
-  return value;
+inline void ConfigSecurity::_internal_set_email_confirmation_url(const std::string& value) {
+  _has_bits_[0] |= 0x00000004u;
+  email_confirmation_url_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
-inline bool ConfigSecurity::has_websocket_port() const {
-  return _internal_has_websocket_port();
+inline std::string* ConfigSecurity::_internal_mutable_email_confirmation_url() {
+  _has_bits_[0] |= 0x00000004u;
+  return email_confirmation_url_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
-inline void ConfigSecurity::clear_websocket_port() {
-  websocket_port_ = 0;
-  _has_bits_[0] &= ~0x00020000u;
+inline std::string* ConfigSecurity::release_email_confirmation_url() {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigSecurity.email_confirmation_url)
+  if (!_internal_has_email_confirmation_url()) {
+    return nullptr;
+  }
+  _has_bits_[0] &= ~0x00000004u;
+  auto* p = email_confirmation_url_.ReleaseNonDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (email_confirmation_url_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    email_confirmation_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
 }
-inline int32_t ConfigSecurity::_internal_websocket_port() const {
-  return websocket_port_;
-}
-inline int32_t ConfigSecurity::websocket_port() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.websocket_port)
-  return _internal_websocket_port();
-}
-inline void ConfigSecurity::_internal_set_websocket_port(int32_t value) {
-  _has_bits_[0] |= 0x00020000u;
-  websocket_port_ = value;
-}
-inline void ConfigSecurity::set_websocket_port(int32_t value) {
-  _internal_set_websocket_port(value);
-  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.websocket_port)
+inline void ConfigSecurity::set_allocated_email_confirmation_url(std::string* email_confirmation_url) {
+  if (email_confirmation_url != nullptr) {
+    _has_bits_[0] |= 0x00000004u;
+  } else {
+    _has_bits_[0] &= ~0x00000004u;
+  }
+  email_confirmation_url_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), email_confirmation_url,
+      GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (email_confirmation_url_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    email_confirmation_url_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigSecurity.email_confirmation_url)
 }
 
 // -------------------------------------------------------------------

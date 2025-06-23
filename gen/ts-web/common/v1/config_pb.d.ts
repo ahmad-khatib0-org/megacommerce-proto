@@ -401,15 +401,10 @@ export class ConfigSecurity extends jspb.Message {
   hasSessionCacheInMinutes(): boolean;
   clearSessionCacheInMinutes(): ConfigSecurity;
 
-  getWebsocketSecurePort(): number;
-  setWebsocketSecurePort(value: number): ConfigSecurity;
-  hasWebsocketSecurePort(): boolean;
-  clearWebsocketSecurePort(): ConfigSecurity;
-
-  getWebsocketPort(): number;
-  setWebsocketPort(value: number): ConfigSecurity;
-  hasWebsocketPort(): boolean;
-  clearWebsocketPort(): ConfigSecurity;
+  getEmailConfirmationUrl(): string;
+  setEmailConfirmationUrl(value: string): ConfigSecurity;
+  hasEmailConfirmationUrl(): boolean;
+  clearEmailConfirmationUrl(): ConfigSecurity;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfigSecurity.AsObject;
@@ -438,8 +433,7 @@ export namespace ConfigSecurity {
     corsDebug?: boolean,
     allowCookiesForSubdomains?: boolean,
     sessionCacheInMinutes?: number,
-    websocketSecurePort?: number,
-    websocketPort?: number,
+    emailConfirmationUrl?: string,
   }
 
   export enum MaximumLoginAttemptsCase { 
@@ -522,14 +516,9 @@ export namespace ConfigSecurity {
     SESSION_CACHE_IN_MINUTES = 17,
   }
 
-  export enum WebsocketSecurePortCase { 
-    _WEBSOCKET_SECURE_PORT_NOT_SET = 0,
-    WEBSOCKET_SECURE_PORT = 18,
-  }
-
-  export enum WebsocketPortCase { 
-    _WEBSOCKET_PORT_NOT_SET = 0,
-    WEBSOCKET_PORT = 19,
+  export enum EmailConfirmationUrlCase { 
+    _EMAIL_CONFIRMATION_URL_NOT_SET = 0,
+    EMAIL_CONFIRMATION_URL = 18,
   }
 }
 

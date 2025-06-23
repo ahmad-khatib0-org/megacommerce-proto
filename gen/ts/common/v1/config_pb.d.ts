@@ -275,15 +275,10 @@ export class ConfigSecurity extends jspb.Message {
   getSessionCacheInMinutes(): number;
   setSessionCacheInMinutes(value: number): void;
 
-  hasWebsocketSecurePort(): boolean;
-  clearWebsocketSecurePort(): void;
-  getWebsocketSecurePort(): number;
-  setWebsocketSecurePort(value: number): void;
-
-  hasWebsocketPort(): boolean;
-  clearWebsocketPort(): void;
-  getWebsocketPort(): number;
-  setWebsocketPort(value: number): void;
+  hasEmailConfirmationUrl(): boolean;
+  clearEmailConfirmationUrl(): void;
+  getEmailConfirmationUrl(): string;
+  setEmailConfirmationUrl(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfigSecurity.AsObject;
@@ -314,8 +309,7 @@ export namespace ConfigSecurity {
     corsDebug: boolean,
     allowCookiesForSubdomains: boolean,
     sessionCacheInMinutes: number,
-    websocketSecurePort: number,
-    websocketPort: number,
+    emailConfirmationUrl: string,
   }
 }
 
