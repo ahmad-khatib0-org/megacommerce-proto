@@ -13,13 +13,13 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = (function() {
-  if (this) { return this; }
-  if (typeof window !== 'undefined') { return window; }
-  if (typeof global !== 'undefined') { return global; }
-  if (typeof self !== 'undefined') { return self; }
-  return Function('return this')();
-}.call(null));
+var global =
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var shared_v1_error_pb = require('../../shared/v1/error_pb.js');
 goog.object.extend(proto, shared_v1_error_pb);
@@ -289,8 +289,8 @@ proto.common.v1.TranslationsGetResponse.prototype.toObject = function(opt_includ
  */
 proto.common.v1.TranslationsGetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, proto.common.v1.TranslationElements.toObject) : [],
-    error: (f = msg.getError()) && shared_v1_error_pb.AppError.toObject(includeInstance, f)
+dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, proto.common.v1.TranslationElements.toObject) : [],
+error: (f = msg.getError()) && shared_v1_error_pb.AppError.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -401,7 +401,8 @@ proto.common.v1.TranslationsGetResponse.prototype.getDataMap = function(opt_noLa
  */
 proto.common.v1.TranslationsGetResponse.prototype.clearDataMap = function() {
   this.getDataMap().clear();
-  return this;};
+  return this;
+};
 
 
 /**
@@ -473,7 +474,7 @@ proto.common.v1.TranslationsForLangGetRequest.prototype.toObject = function(opt_
  */
 proto.common.v1.TranslationsForLangGetRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    lang: jspb.Message.getFieldWithDefault(msg, 1, "")
+lang: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {
@@ -629,8 +630,8 @@ proto.common.v1.TranslationsForLangGetResponse.prototype.toObject = function(opt
  */
 proto.common.v1.TranslationsForLangGetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    data: (f = msg.getData()) && proto.common.v1.TranslationElements.toObject(includeInstance, f),
-    error: (f = msg.getError()) && shared_v1_error_pb.AppError.toObject(includeInstance, f)
+data: (f = msg.getData()) && proto.common.v1.TranslationElements.toObject(includeInstance, f),
+error: (f = msg.getError()) && shared_v1_error_pb.AppError.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -831,8 +832,8 @@ proto.common.v1.TranslationElement.prototype.toObject = function(opt_includeInst
  */
 proto.common.v1.TranslationElement.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    tr: jspb.Message.getFieldWithDefault(msg, 2, "")
+id: jspb.Message.getFieldWithDefault(msg, 1, ""),
+tr: jspb.Message.getFieldWithDefault(msg, 2, "")
   };
 
   if (includeInstance) {
@@ -998,7 +999,7 @@ proto.common.v1.TranslationElements.prototype.toObject = function(opt_includeIns
  */
 proto.common.v1.TranslationElements.toObject = function(includeInstance, msg) {
   var f, obj = {
-    transList: jspb.Message.toObjectList(msg.getTransList(),
+transList: jspb.Message.toObjectList(msg.getTransList(),
     proto.common.v1.TranslationElement.toObject, includeInstance)
   };
 

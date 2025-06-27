@@ -1,0 +1,20 @@
+[package]
+name = "megacommerce-proto"
+version = "0.1.0"
+edition = "2021"
+description = "Generated gRPC protobuf definitions for MegaCommerce"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/ahmad-khatib0-org/megacommerce-proto"
+readme = "README.md"
+keywords = ["protobuf", "tonic", "grpc", "megacommerce"]
+categories = ["api-bindings", "network-programming"]
+publish = true
+
+[dependencies]
+prost = { workspace = true }
+prost-types = { workspace = true }
+tonic = { workspace = true }
+
+[lib]
+name = "megacommerce_proto"
+path = "src/lib.rs"

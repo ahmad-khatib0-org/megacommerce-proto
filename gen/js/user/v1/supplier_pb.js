@@ -13,13 +13,13 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = (function() {
-  if (this) { return this; }
-  if (typeof window !== 'undefined') { return window; }
-  if (typeof global !== 'undefined') { return global; }
-  if (typeof self !== 'undefined') { return self; }
-  return Function('return this')();
-}.call(null));
+var global =
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var shared_v1_error_pb = require('../../shared/v1/error_pb.js');
 goog.object.extend(proto, shared_v1_error_pb);
@@ -102,12 +102,12 @@ proto.user.v1.SupplierCreateRequest.prototype.toObject = function(opt_includeIns
  */
 proto.user.v1.SupplierCreateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    username: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    email: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    firstName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    lastName: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    password: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    membership: jspb.Message.getFieldWithDefault(msg, 6, "")
+username: jspb.Message.getFieldWithDefault(msg, 1, ""),
+email: jspb.Message.getFieldWithDefault(msg, 2, ""),
+firstName: jspb.Message.getFieldWithDefault(msg, 3, ""),
+lastName: jspb.Message.getFieldWithDefault(msg, 4, ""),
+password: jspb.Message.getFieldWithDefault(msg, 5, ""),
+membership: jspb.Message.getFieldWithDefault(msg, 6, "")
   };
 
   if (includeInstance) {
@@ -408,8 +408,8 @@ proto.user.v1.SupplierCreateResponse.prototype.toObject = function(opt_includeIn
  */
 proto.user.v1.SupplierCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    data: (f = msg.getData()) && google_protobuf_empty_pb.Empty.toObject(includeInstance, f),
-    error: (f = msg.getError()) && shared_v1_error_pb.AppError.toObject(includeInstance, f)
+data: (f = msg.getData()) && google_protobuf_empty_pb.Empty.toObject(includeInstance, f),
+error: (f = msg.getError()) && shared_v1_error_pb.AppError.toObject(includeInstance, f)
   };
 
   if (includeInstance) {

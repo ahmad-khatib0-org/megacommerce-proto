@@ -13,13 +13,13 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = (function() {
-  if (this) { return this; }
-  if (typeof window !== 'undefined') { return window; }
-  if (typeof global !== 'undefined') { return global; }
-  if (typeof self !== 'undefined') { return self; }
-  return Function('return this')();
-}.call(null));
+var global =
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var shared_v1_error_pb = require('../../shared/v1/error_pb.js');
 goog.object.extend(proto, shared_v1_error_pb);
@@ -674,27 +674,27 @@ proto.common.v1.ConfigMain.prototype.toObject = function(opt_includeInstance) {
  */
 proto.common.v1.ConfigMain.toObject = function(includeInstance, msg) {
   var f, obj = {
-    env: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    siteName: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    siteUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    enableLinkPreviews: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    restrictLinkPreviews: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    enableClientPerformanceDebugging: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    enableGifPicker: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-    enableCustomEmoji: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
-    enableEmojiPicker: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
-    timeBetweenUserTypingUpdatesMilliseconds: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    enableFileSearch: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
-    enableUserTypingMessages: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
-    enableUserStatuses: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
-    enableEmailInvitations: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
-    enableSvgs: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
-    allowPersistentNotifications: jspb.Message.getBooleanFieldWithDefault(msg, 17, false),
-    persistentNotificationIntervalMinutes: jspb.Message.getFieldWithDefault(msg, 18, 0),
-    persistentNotificationMaxCount: jspb.Message.getFieldWithDefault(msg, 19, 0),
-    persistentNotificationMaxRecipients: jspb.Message.getFieldWithDefault(msg, 20, 0),
-    featureFlagSyncIntervalSeconds: jspb.Message.getFieldWithDefault(msg, 21, 0),
-    allowSyncedDrafts: jspb.Message.getBooleanFieldWithDefault(msg, 22, false)
+env: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+siteName: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+siteUrl: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+enableLinkPreviews: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
+restrictLinkPreviews: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+enableClientPerformanceDebugging: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
+enableGifPicker: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
+enableCustomEmoji: (f = jspb.Message.getBooleanField(msg, 9)) == null ? undefined : f,
+enableEmojiPicker: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f,
+timeBetweenUserTypingUpdatesMilliseconds: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
+enableFileSearch: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f,
+enableUserTypingMessages: (f = jspb.Message.getBooleanField(msg, 13)) == null ? undefined : f,
+enableUserStatuses: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
+enableEmailInvitations: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
+enableSvgs: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f,
+allowPersistentNotifications: (f = jspb.Message.getBooleanField(msg, 17)) == null ? undefined : f,
+persistentNotificationIntervalMinutes: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
+persistentNotificationMaxCount: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f,
+persistentNotificationMaxRecipients: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
+featureFlagSyncIntervalSeconds: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f,
+allowSyncedDrafts: (f = jspb.Message.getBooleanField(msg, 22)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1782,11 +1782,11 @@ proto.common.v1.ConfigServices.prototype.toObject = function(opt_includeInstance
  */
 proto.common.v1.ConfigServices.toObject = function(includeInstance, msg) {
   var f, obj = {
-    commonServiceGrpcUrl: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    userServiceGrpcUrl: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    jaegerCollectorUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    commonServicePrometheusUrl: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    userServicePrometheusUrl: jspb.Message.getFieldWithDefault(msg, 5, "")
+commonServiceGrpcUrl: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+userServiceGrpcUrl: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+jaegerCollectorUrl: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+commonServicePrometheusUrl: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+userServicePrometheusUrl: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2122,24 +2122,24 @@ proto.common.v1.ConfigSecurity.prototype.toObject = function(opt_includeInstance
  */
 proto.common.v1.ConfigSecurity.toObject = function(includeInstance, msg) {
   var f, obj = {
-    restrictedUsernamesMap: (f = msg.getRestrictedUsernamesMap()) ? f.toObject(includeInstance, undefined) : [],
-    maximumLoginAttempts: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    enableInsecureOutgoingConnections: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    enableMultifactorAuthentication: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    enforceMultifactorAuthentication: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    enableOauthServiceProvider: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    enableOutgoingOauthConnections: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    terminateSessionsOnPasswordChange: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-    sessionLengthWebInHours: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    sessionLengthMobileInHours: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    sessionLengthSsoInHours: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    allowCorsFrom: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    corsExposedHeaders: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    corsAllowCredentials: jspb.Message.getBooleanFieldWithDefault(msg, 14, false),
-    corsDebug: jspb.Message.getBooleanFieldWithDefault(msg, 15, false),
-    allowCookiesForSubdomains: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
-    sessionCacheInMinutes: jspb.Message.getFieldWithDefault(msg, 17, 0),
-    emailConfirmationUrl: jspb.Message.getFieldWithDefault(msg, 18, "")
+restrictedUsernamesMap: (f = msg.getRestrictedUsernamesMap()) ? f.toObject(includeInstance, undefined) : [],
+maximumLoginAttempts: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+enableInsecureOutgoingConnections: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+enableMultifactorAuthentication: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
+enforceMultifactorAuthentication: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
+enableOauthServiceProvider: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+enableOutgoingOauthConnections: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
+terminateSessionsOnPasswordChange: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
+sessionLengthWebInHours: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+sessionLengthMobileInHours: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+sessionLengthSsoInHours: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
+allowCorsFrom: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
+corsExposedHeaders: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
+corsAllowCredentials: (f = jspb.Message.getBooleanField(msg, 14)) == null ? undefined : f,
+corsDebug: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
+allowCookiesForSubdomains: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f,
+sessionCacheInMinutes: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
+emailConfirmationUrl: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2424,7 +2424,8 @@ proto.common.v1.ConfigSecurity.prototype.getRestrictedUsernamesMap = function(op
  */
 proto.common.v1.ConfigSecurity.prototype.clearRestrictedUsernamesMap = function() {
   this.getRestrictedUsernamesMap().clear();
-  return this;};
+  return this;
+};
 
 
 /**
@@ -3071,12 +3072,12 @@ proto.common.v1.CacheConfig.prototype.toObject = function(opt_includeInstance) {
  */
 proto.common.v1.CacheConfig.toObject = function(includeInstance, msg) {
   var f, obj = {
-    cacheType: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    redisAddress: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    redisPassword: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    redisDb: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    redisCachePrefix: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    disableClientCache: jspb.Message.getBooleanFieldWithDefault(msg, 6, false)
+cacheType: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+redisAddress: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+redisPassword: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+redisDb: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+redisCachePrefix: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+disableClientCache: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3466,12 +3467,12 @@ proto.common.v1.ConfigMetrics.prototype.toObject = function(opt_includeInstance)
  */
 proto.common.v1.ConfigMetrics.toObject = function(includeInstance, msg) {
   var f, obj = {
-    enable: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    blockProfileRate: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    listenAddress: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    enableClientMetrics: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    enableNotificationMetrics: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    clientSideUserIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
+enable: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+blockProfileRate: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+listenAddress: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+enableClientMetrics: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
+enableNotificationMetrics: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
+clientSideUserIdsList: (f = jspb.Message.getRepeatedField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -3855,16 +3856,16 @@ proto.common.v1.ConfigSSO.prototype.toObject = function(opt_includeInstance) {
  */
 proto.common.v1.ConfigSSO.toObject = function(includeInstance, msg) {
   var f, obj = {
-    enable: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    secret: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    id: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    scope: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    authEndpoint: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    tokenEndpoint: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    userApiEndpoint: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    discoveryEndpoint: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    buttonText: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    buttonColor: jspb.Message.getFieldWithDefault(msg, 10, "")
+enable: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+secret: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+id: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+scope: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+authEndpoint: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+tokenEndpoint: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+userApiEndpoint: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+discoveryEndpoint: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+buttonText: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+buttonColor: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -4435,16 +4436,16 @@ proto.common.v1.ConfigSql.prototype.toObject = function(opt_includeInstance) {
  */
 proto.common.v1.ConfigSql.toObject = function(includeInstance, msg) {
   var f, obj = {
-    driverName: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    dataSource: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    maxIdleConns: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    connMaxLifetimeMilliseconds: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    connMaxIdleTimeMilliseconds: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    maxOpenConns: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    trace: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    atRestEncryptKey: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    queryTimeout: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    disableDatabaseSearch: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
+driverName: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+dataSource: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+maxIdleConns: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+connMaxLifetimeMilliseconds: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+connMaxIdleTimeMilliseconds: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+maxOpenConns: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+trace: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
+atRestEncryptKey: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+queryTimeout: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+disableDatabaseSearch: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5015,13 +5016,13 @@ proto.common.v1.ConfigPassword.prototype.toObject = function(opt_includeInstance
  */
 proto.common.v1.ConfigPassword.toObject = function(includeInstance, msg) {
   var f, obj = {
-    minimumLength: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    maximumLength: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    lowercase: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    number: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    uppercase: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    symbol: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    enableForgotLink: jspb.Message.getBooleanFieldWithDefault(msg, 7, false)
+minimumLength: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+maximumLength: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+lowercase: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+number: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
+uppercase: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
+symbol: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+enableForgotLink: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -5451,32 +5452,32 @@ proto.common.v1.ConfigFile.prototype.toObject = function(opt_includeInstance) {
  */
 proto.common.v1.ConfigFile.toObject = function(includeInstance, msg) {
   var f, obj = {
-    enableFileAttachments: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    enableMobileUpload: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    enableMobileDownload: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    maxFileSize: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    maxImageResolution: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    maxImageDecoderConcurrency: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    driverName: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    directory: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    enablePublicLink: jspb.Message.getBooleanFieldWithDefault(msg, 9, false),
-    extractContent: jspb.Message.getBooleanFieldWithDefault(msg, 10, false),
-    archiveRecursion: jspb.Message.getBooleanFieldWithDefault(msg, 11, false),
-    publicLinkSalt: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    initialFont: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    amazonS3AccessKeyId: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    amazonS3SecretAccessKey: jspb.Message.getFieldWithDefault(msg, 15, ""),
-    amazonS3Bucket: jspb.Message.getFieldWithDefault(msg, 16, ""),
-    amazonS3PathPrefix: jspb.Message.getFieldWithDefault(msg, 17, ""),
-    amazonS3Region: jspb.Message.getFieldWithDefault(msg, 18, ""),
-    amazonS3Endpoint: jspb.Message.getFieldWithDefault(msg, 19, ""),
-    amazonS3Ssl: jspb.Message.getBooleanFieldWithDefault(msg, 20, false),
-    amazonS3SignV2: jspb.Message.getBooleanFieldWithDefault(msg, 21, false),
-    amazonS3Sse: jspb.Message.getBooleanFieldWithDefault(msg, 22, false),
-    amazonS3Trace: jspb.Message.getBooleanFieldWithDefault(msg, 23, false),
-    amazonS3RequestTimeoutMilliseconds: jspb.Message.getFieldWithDefault(msg, 24, 0),
-    amazonS3UploadPartSizeBytes: jspb.Message.getFieldWithDefault(msg, 25, 0),
-    amazonS3StorageClass: jspb.Message.getFieldWithDefault(msg, 26, "")
+enableFileAttachments: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+enableMobileUpload: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
+enableMobileDownload: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+maxFileSize: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+maxImageResolution: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+maxImageDecoderConcurrency: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+driverName: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+directory: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+enablePublicLink: (f = jspb.Message.getBooleanField(msg, 9)) == null ? undefined : f,
+extractContent: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f,
+archiveRecursion: (f = jspb.Message.getBooleanField(msg, 11)) == null ? undefined : f,
+publicLinkSalt: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
+initialFont: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
+amazonS3AccessKeyId: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
+amazonS3SecretAccessKey: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
+amazonS3Bucket: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
+amazonS3PathPrefix: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
+amazonS3Region: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
+amazonS3Endpoint: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f,
+amazonS3Ssl: (f = jspb.Message.getBooleanField(msg, 20)) == null ? undefined : f,
+amazonS3SignV2: (f = jspb.Message.getBooleanField(msg, 21)) == null ? undefined : f,
+amazonS3Sse: (f = jspb.Message.getBooleanField(msg, 22)) == null ? undefined : f,
+amazonS3Trace: (f = jspb.Message.getBooleanField(msg, 23)) == null ? undefined : f,
+amazonS3RequestTimeoutMilliseconds: (f = jspb.Message.getField(msg, 24)) == null ? undefined : f,
+amazonS3UploadPartSizeBytes: (f = jspb.Message.getField(msg, 25)) == null ? undefined : f,
+amazonS3StorageClass: (f = jspb.Message.getField(msg, 26)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -6799,32 +6800,32 @@ proto.common.v1.ConfigEmail.prototype.toObject = function(opt_includeInstance) {
  */
 proto.common.v1.ConfigEmail.toObject = function(includeInstance, msg) {
   var f, obj = {
-    sendEmailNotifications: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    requireEmailVerification: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    feedbackEmail: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    replyToAddress: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    enableSmtpAuth: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    smtpUsername: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    smtpPassword: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    smtpServer: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    smtpPort: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    smtpServerTimeout: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    connectionSecurity: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    sendPushNotifications: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
-    pushNotificationServer: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    pushNotificationContents: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    pushNotificationBuffer: jspb.Message.getFieldWithDefault(msg, 15, 0),
-    enableEmailBatching: jspb.Message.getBooleanFieldWithDefault(msg, 16, false),
-    emailBatchingBufferSize: jspb.Message.getFieldWithDefault(msg, 17, 0),
-    emailBatchingInterval: jspb.Message.getFieldWithDefault(msg, 18, 0),
-    skipServerCertificateVerification: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
-    emailNotificationContentsType: jspb.Message.getFieldWithDefault(msg, 20, ""),
-    loginButtonColor: jspb.Message.getFieldWithDefault(msg, 21, ""),
-    loginButtonBorderColor: jspb.Message.getFieldWithDefault(msg, 22, ""),
-    loginButtonTextColor: jspb.Message.getFieldWithDefault(msg, 23, ""),
-    rateLimitingMemorySize: jspb.Message.getFieldWithDefault(msg, 24, 0),
-    rateLimitingPerHour: jspb.Message.getFieldWithDefault(msg, 25, 0),
-    rateLimitingMaxBurst: jspb.Message.getFieldWithDefault(msg, 26, 0)
+sendEmailNotifications: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+requireEmailVerification: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
+feedbackEmail: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+replyToAddress: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+enableSmtpAuth: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
+smtpUsername: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+smtpPassword: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+smtpServer: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+smtpPort: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+smtpServerTimeout: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+connectionSecurity: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
+sendPushNotifications: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f,
+pushNotificationServer: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
+pushNotificationContents: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
+pushNotificationBuffer: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
+enableEmailBatching: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f,
+emailBatchingBufferSize: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
+emailBatchingInterval: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
+skipServerCertificateVerification: (f = jspb.Message.getBooleanField(msg, 19)) == null ? undefined : f,
+emailNotificationContentsType: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
+loginButtonColor: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f,
+loginButtonBorderColor: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f,
+loginButtonTextColor: (f = jspb.Message.getField(msg, 23)) == null ? undefined : f,
+rateLimitingMemorySize: (f = jspb.Message.getField(msg, 24)) == null ? undefined : f,
+rateLimitingPerHour: (f = jspb.Message.getField(msg, 25)) == null ? undefined : f,
+rateLimitingMaxBurst: (f = jspb.Message.getField(msg, 26)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -8147,13 +8148,13 @@ proto.common.v1.ConfigRateLimit.prototype.toObject = function(opt_includeInstanc
  */
 proto.common.v1.ConfigRateLimit.toObject = function(includeInstance, msg) {
   var f, obj = {
-    enable: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    perSec: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    maxBurst: jspb.Message.getFieldWithDefault(msg, 3, 0),
-    memoryStoreSize: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    varyByRemoteAddr: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    varyByUser: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    varyByHeader: jspb.Message.getFieldWithDefault(msg, 7, "")
+enable: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+perSec: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+maxBurst: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+memoryStoreSize: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+varyByRemoteAddr: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
+varyByUser: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+varyByHeader: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -8565,8 +8566,8 @@ proto.common.v1.ConfigPrivacy.prototype.toObject = function(opt_includeInstance)
  */
 proto.common.v1.ConfigPrivacy.toObject = function(includeInstance, msg) {
   var f, obj = {
-    showEmailAddress: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    showFullName: jspb.Message.getBooleanFieldWithDefault(msg, 2, false)
+showEmailAddress: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+showFullName: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -8761,13 +8762,13 @@ proto.common.v1.ConfigSupport.prototype.toObject = function(opt_includeInstance)
  */
 proto.common.v1.ConfigSupport.toObject = function(includeInstance, msg) {
   var f, obj = {
-    termsOfServiceLink: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    privacyPolicyLink: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    aboutLink: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    helpLink: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    reportAProblemLink: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    forgotPasswordLink: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    supportEmail: jspb.Message.getFieldWithDefault(msg, 7, "")
+termsOfServiceLink: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+privacyPolicyLink: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+aboutLink: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+helpLink: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+reportAProblemLink: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+forgotPasswordLink: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+supportEmail: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -9197,9 +9198,9 @@ proto.common.v1.ConfigLocalization.prototype.toObject = function(opt_includeInst
  */
 proto.common.v1.ConfigLocalization.toObject = function(includeInstance, msg) {
   var f, obj = {
-    defaultServerLocale: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    defaultClientLocale: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    availableLocales: jspb.Message.getFieldWithDefault(msg, 3, "")
+defaultServerLocale: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+defaultClientLocale: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+availableLocales: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -9441,37 +9442,37 @@ proto.common.v1.ConfigLdap.prototype.toObject = function(opt_includeInstance) {
  */
 proto.common.v1.ConfigLdap.toObject = function(includeInstance, msg) {
   var f, obj = {
-    enable: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    enableSync: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    ldapServer: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    ldapPort: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    connectionSecurity: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    baseDn: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    bindUsername: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    bindPassword: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    maximumLoginAttempts: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    userFilter: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    groupFilter: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    enableAdminFilter: jspb.Message.getBooleanFieldWithDefault(msg, 12, false),
-    adminFilter: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    groupDisplayNameAttribute: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    groupIdAttribute: jspb.Message.getFieldWithDefault(msg, 15, ""),
-    firstNameAttribute: jspb.Message.getFieldWithDefault(msg, 16, ""),
-    lastNameAttribute: jspb.Message.getFieldWithDefault(msg, 17, ""),
-    emailAttribute: jspb.Message.getFieldWithDefault(msg, 18, ""),
-    usernameAttribute: jspb.Message.getFieldWithDefault(msg, 19, ""),
-    nicknameAttribute: jspb.Message.getFieldWithDefault(msg, 20, ""),
-    idAttribute: jspb.Message.getFieldWithDefault(msg, 21, ""),
-    positionAttribute: jspb.Message.getFieldWithDefault(msg, 22, ""),
-    loginIdAttribute: jspb.Message.getFieldWithDefault(msg, 23, ""),
-    pictureAttribute: jspb.Message.getFieldWithDefault(msg, 24, ""),
-    syncIntervalMinutes: jspb.Message.getFieldWithDefault(msg, 25, 0),
-    queryTimeout: jspb.Message.getFieldWithDefault(msg, 26, 0),
-    maxPageSize: jspb.Message.getFieldWithDefault(msg, 27, 0),
-    loginFieldName: jspb.Message.getFieldWithDefault(msg, 28, ""),
-    loginButtonColor: jspb.Message.getFieldWithDefault(msg, 29, ""),
-    loginButtonBorderColor: jspb.Message.getFieldWithDefault(msg, 30, ""),
-    loginButtonTextColor: jspb.Message.getFieldWithDefault(msg, 31, "")
+enable: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+enableSync: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
+ldapServer: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+ldapPort: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+connectionSecurity: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+baseDn: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+bindUsername: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+bindPassword: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+maximumLoginAttempts: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+userFilter: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+groupFilter: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
+enableAdminFilter: (f = jspb.Message.getBooleanField(msg, 12)) == null ? undefined : f,
+adminFilter: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
+groupDisplayNameAttribute: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
+groupIdAttribute: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
+firstNameAttribute: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
+lastNameAttribute: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
+emailAttribute: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
+usernameAttribute: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f,
+nicknameAttribute: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
+idAttribute: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f,
+positionAttribute: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f,
+loginIdAttribute: (f = jspb.Message.getField(msg, 23)) == null ? undefined : f,
+pictureAttribute: (f = jspb.Message.getField(msg, 24)) == null ? undefined : f,
+syncIntervalMinutes: (f = jspb.Message.getField(msg, 25)) == null ? undefined : f,
+queryTimeout: (f = jspb.Message.getField(msg, 26)) == null ? undefined : f,
+maxPageSize: (f = jspb.Message.getField(msg, 27)) == null ? undefined : f,
+loginFieldName: (f = jspb.Message.getField(msg, 28)) == null ? undefined : f,
+loginButtonColor: (f = jspb.Message.getField(msg, 29)) == null ? undefined : f,
+loginButtonBorderColor: (f = jspb.Message.getField(msg, 30)) == null ? undefined : f,
+loginButtonTextColor: (f = jspb.Message.getField(msg, 31)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -11029,39 +11030,39 @@ proto.common.v1.ConfigSaml.prototype.toObject = function(opt_includeInstance) {
  */
 proto.common.v1.ConfigSaml.toObject = function(includeInstance, msg) {
   var f, obj = {
-    enable: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    enableSyncWithLdap: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    enableSyncWithLdapIncludeAuth: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    ignoreGuestsLdapSync: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    verify: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    encrypt: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    signRequest: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    idpUrl: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    idpDescriptorUrl: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    idpMetadataUrl: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    serviceProviderIdentifier: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    assertionConsumerServiceUrl: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    signatureAlgorithm: jspb.Message.getFieldWithDefault(msg, 13, ""),
-    canonicalAlgorithm: jspb.Message.getFieldWithDefault(msg, 14, ""),
-    scopingIdpProviderId: jspb.Message.getFieldWithDefault(msg, 15, ""),
-    scopingIdpName: jspb.Message.getFieldWithDefault(msg, 16, ""),
-    idpCertificateFile: jspb.Message.getFieldWithDefault(msg, 17, ""),
-    publicCertificateFile: jspb.Message.getFieldWithDefault(msg, 18, ""),
-    privateKeyFile: jspb.Message.getFieldWithDefault(msg, 19, ""),
-    idAttribute: jspb.Message.getFieldWithDefault(msg, 20, ""),
-    enableAdminAttribute: jspb.Message.getBooleanFieldWithDefault(msg, 21, false),
-    adminAttribute: jspb.Message.getFieldWithDefault(msg, 22, ""),
-    firstNameAttribute: jspb.Message.getFieldWithDefault(msg, 23, ""),
-    lastNameAttribute: jspb.Message.getFieldWithDefault(msg, 24, ""),
-    emailAttribute: jspb.Message.getFieldWithDefault(msg, 25, ""),
-    usernameAttribute: jspb.Message.getFieldWithDefault(msg, 26, ""),
-    nicknameAttribute: jspb.Message.getFieldWithDefault(msg, 27, ""),
-    localeAttribute: jspb.Message.getFieldWithDefault(msg, 28, ""),
-    positionAttribute: jspb.Message.getFieldWithDefault(msg, 29, ""),
-    loginButtonText: jspb.Message.getFieldWithDefault(msg, 30, ""),
-    loginButtonColor: jspb.Message.getFieldWithDefault(msg, 31, ""),
-    loginButtonBorderColor: jspb.Message.getFieldWithDefault(msg, 32, ""),
-    loginButtonTextColor: jspb.Message.getFieldWithDefault(msg, 33, "")
+enable: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+enableSyncWithLdap: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
+enableSyncWithLdapIncludeAuth: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+ignoreGuestsLdapSync: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
+verify: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
+encrypt: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+signRequest: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
+idpUrl: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+idpDescriptorUrl: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+idpMetadataUrl: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+serviceProviderIdentifier: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
+assertionConsumerServiceUrl: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
+signatureAlgorithm: (f = jspb.Message.getField(msg, 13)) == null ? undefined : f,
+canonicalAlgorithm: (f = jspb.Message.getField(msg, 14)) == null ? undefined : f,
+scopingIdpProviderId: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
+scopingIdpName: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
+idpCertificateFile: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
+publicCertificateFile: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
+privateKeyFile: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f,
+idAttribute: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
+enableAdminAttribute: (f = jspb.Message.getBooleanField(msg, 21)) == null ? undefined : f,
+adminAttribute: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f,
+firstNameAttribute: (f = jspb.Message.getField(msg, 23)) == null ? undefined : f,
+lastNameAttribute: (f = jspb.Message.getField(msg, 24)) == null ? undefined : f,
+emailAttribute: (f = jspb.Message.getField(msg, 25)) == null ? undefined : f,
+usernameAttribute: (f = jspb.Message.getField(msg, 26)) == null ? undefined : f,
+nicknameAttribute: (f = jspb.Message.getField(msg, 27)) == null ? undefined : f,
+localeAttribute: (f = jspb.Message.getField(msg, 28)) == null ? undefined : f,
+positionAttribute: (f = jspb.Message.getField(msg, 29)) == null ? undefined : f,
+loginButtonText: (f = jspb.Message.getField(msg, 30)) == null ? undefined : f,
+loginButtonColor: (f = jspb.Message.getField(msg, 31)) == null ? undefined : f,
+loginButtonBorderColor: (f = jspb.Message.getField(msg, 32)) == null ? undefined : f,
+loginButtonTextColor: (f = jspb.Message.getField(msg, 33)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -12720,14 +12721,14 @@ proto.common.v1.ConfigNativeApp.prototype.toObject = function(opt_includeInstanc
  */
 proto.common.v1.ConfigNativeApp.toObject = function(includeInstance, msg) {
   var f, obj = {
-    appCustomUrlSchemesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    appDownloadLink: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    androidAppDownloadLink: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    iosAppDownloadLink: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    mobileExternalBrowser: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    mobileEnableBiometrics: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
-    mobilePreventScreenCapture: jspb.Message.getBooleanFieldWithDefault(msg, 7, false),
-    mobileJailbreakProtection: jspb.Message.getBooleanFieldWithDefault(msg, 8, false)
+appCustomUrlSchemesList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
+appDownloadLink: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+androidAppDownloadLink: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+iosAppDownloadLink: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+mobileExternalBrowser: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
+mobileEnableBiometrics: (f = jspb.Message.getBooleanField(msg, 6)) == null ? undefined : f,
+mobilePreventScreenCapture: (f = jspb.Message.getBooleanField(msg, 7)) == null ? undefined : f,
+mobileJailbreakProtection: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -13205,16 +13206,16 @@ proto.common.v1.ConfigMeilisearch.prototype.toObject = function(opt_includeInsta
  */
 proto.common.v1.ConfigMeilisearch.toObject = function(includeInstance, msg) {
   var f, obj = {
-    serverUrl: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    masterKey: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    enableIndexing: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    enableSearching: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    enableAutocomplete: jspb.Message.getBooleanFieldWithDefault(msg, 5, false),
-    batchSize: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    requestTimeoutSeconds: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    indexPrefix: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    searchCutoffMs: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    enableTypoTolerance: jspb.Message.getBooleanFieldWithDefault(msg, 10, false)
+serverUrl: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+masterKey: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+enableIndexing: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+enableSearching: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
+enableAutocomplete: (f = jspb.Message.getBooleanField(msg, 5)) == null ? undefined : f,
+batchSize: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+requestTimeoutSeconds: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+indexPrefix: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+searchCutoffMs: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+enableTypoTolerance: (f = jspb.Message.getBooleanField(msg, 10)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -13785,12 +13786,12 @@ proto.common.v1.ConfigBleve.prototype.toObject = function(opt_includeInstance) {
  */
 proto.common.v1.ConfigBleve.toObject = function(includeInstance, msg) {
   var f, obj = {
-    indexDir: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    enableIndexing: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    enableSearching: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    enableAutocomplete: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
-    bulkIndexingTimeWindowSeconds: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    batchSize: jspb.Message.getFieldWithDefault(msg, 6, 0)
+indexDir: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+enableIndexing: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
+enableSearching: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+enableAutocomplete: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f,
+bulkIndexingTimeWindowSeconds: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+batchSize: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -14173,16 +14174,16 @@ proto.common.v1.ConfigDataRetention.prototype.toObject = function(opt_includeIns
  */
 proto.common.v1.ConfigDataRetention.toObject = function(includeInstance, msg) {
   var f, obj = {
-    enableMessageDeletion: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    enableFileDeletion: jspb.Message.getBooleanFieldWithDefault(msg, 2, false),
-    enableBoardsDeletion: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
-    messageRetentionHours: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    fileRetentionHours: jspb.Message.getFieldWithDefault(msg, 5, 0),
-    boardsRetentionDays: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    deletionJobStartTime: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    batchSize: jspb.Message.getFieldWithDefault(msg, 8, 0),
-    timeBetweenBatchesMilliseconds: jspb.Message.getFieldWithDefault(msg, 9, 0),
-    retentionIdsBatchSize: jspb.Message.getFieldWithDefault(msg, 10, 0)
+enableMessageDeletion: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+enableFileDeletion: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
+enableBoardsDeletion: (f = jspb.Message.getBooleanField(msg, 3)) == null ? undefined : f,
+messageRetentionHours: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+fileRetentionHours: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+boardsRetentionDays: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+deletionJobStartTime: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+batchSize: (f = jspb.Message.getField(msg, 8)) == null ? undefined : f,
+timeBetweenBatchesMilliseconds: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+retentionIdsBatchSize: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -14753,10 +14754,10 @@ proto.common.v1.ConfigImageProxy.prototype.toObject = function(opt_includeInstan
  */
 proto.common.v1.ConfigImageProxy.toObject = function(includeInstance, msg) {
   var f, obj = {
-    enable: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
-    imageProxyType: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    remoteImageProxyUrl: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    remoteImageProxyOptions: jspb.Message.getFieldWithDefault(msg, 4, "")
+enable: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
+imageProxyType: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+remoteImageProxyUrl: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+remoteImageProxyOptions: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -15045,27 +15046,27 @@ proto.common.v1.Config.prototype.toObject = function(opt_includeInstance) {
  */
 proto.common.v1.Config.toObject = function(includeInstance, msg) {
   var f, obj = {
-    main: (f = msg.getMain()) && proto.common.v1.ConfigMain.toObject(includeInstance, f),
-    services: (f = msg.getServices()) && proto.common.v1.ConfigServices.toObject(includeInstance, f),
-    security: (f = msg.getSecurity()) && proto.common.v1.ConfigSecurity.toObject(includeInstance, f),
-    cache: (f = msg.getCache()) && proto.common.v1.CacheConfig.toObject(includeInstance, f),
-    metrics: (f = msg.getMetrics()) && proto.common.v1.ConfigMetrics.toObject(includeInstance, f),
-    sso: (f = msg.getSso()) && proto.common.v1.ConfigSSO.toObject(includeInstance, f),
-    sql: (f = msg.getSql()) && proto.common.v1.ConfigSql.toObject(includeInstance, f),
-    password: (f = msg.getPassword()) && proto.common.v1.ConfigPassword.toObject(includeInstance, f),
-    file: (f = msg.getFile()) && proto.common.v1.ConfigFile.toObject(includeInstance, f),
-    email: (f = msg.getEmail()) && proto.common.v1.ConfigEmail.toObject(includeInstance, f),
-    rateLimit: (f = msg.getRateLimit()) && proto.common.v1.ConfigRateLimit.toObject(includeInstance, f),
-    privacy: (f = msg.getPrivacy()) && proto.common.v1.ConfigPrivacy.toObject(includeInstance, f),
-    support: (f = msg.getSupport()) && proto.common.v1.ConfigSupport.toObject(includeInstance, f),
-    localization: (f = msg.getLocalization()) && proto.common.v1.ConfigLocalization.toObject(includeInstance, f),
-    ldap: (f = msg.getLdap()) && proto.common.v1.ConfigLdap.toObject(includeInstance, f),
-    saml: (f = msg.getSaml()) && proto.common.v1.ConfigSaml.toObject(includeInstance, f),
-    nativeApp: (f = msg.getNativeApp()) && proto.common.v1.ConfigNativeApp.toObject(includeInstance, f),
-    meilisearch: (f = msg.getMeilisearch()) && proto.common.v1.ConfigMeilisearch.toObject(includeInstance, f),
-    bleve: (f = msg.getBleve()) && proto.common.v1.ConfigBleve.toObject(includeInstance, f),
-    dataRetention: (f = msg.getDataRetention()) && proto.common.v1.ConfigDataRetention.toObject(includeInstance, f),
-    imageProxy: (f = msg.getImageProxy()) && proto.common.v1.ConfigImageProxy.toObject(includeInstance, f)
+main: (f = msg.getMain()) && proto.common.v1.ConfigMain.toObject(includeInstance, f),
+services: (f = msg.getServices()) && proto.common.v1.ConfigServices.toObject(includeInstance, f),
+security: (f = msg.getSecurity()) && proto.common.v1.ConfigSecurity.toObject(includeInstance, f),
+cache: (f = msg.getCache()) && proto.common.v1.CacheConfig.toObject(includeInstance, f),
+metrics: (f = msg.getMetrics()) && proto.common.v1.ConfigMetrics.toObject(includeInstance, f),
+sso: (f = msg.getSso()) && proto.common.v1.ConfigSSO.toObject(includeInstance, f),
+sql: (f = msg.getSql()) && proto.common.v1.ConfigSql.toObject(includeInstance, f),
+password: (f = msg.getPassword()) && proto.common.v1.ConfigPassword.toObject(includeInstance, f),
+file: (f = msg.getFile()) && proto.common.v1.ConfigFile.toObject(includeInstance, f),
+email: (f = msg.getEmail()) && proto.common.v1.ConfigEmail.toObject(includeInstance, f),
+rateLimit: (f = msg.getRateLimit()) && proto.common.v1.ConfigRateLimit.toObject(includeInstance, f),
+privacy: (f = msg.getPrivacy()) && proto.common.v1.ConfigPrivacy.toObject(includeInstance, f),
+support: (f = msg.getSupport()) && proto.common.v1.ConfigSupport.toObject(includeInstance, f),
+localization: (f = msg.getLocalization()) && proto.common.v1.ConfigLocalization.toObject(includeInstance, f),
+ldap: (f = msg.getLdap()) && proto.common.v1.ConfigLdap.toObject(includeInstance, f),
+saml: (f = msg.getSaml()) && proto.common.v1.ConfigSaml.toObject(includeInstance, f),
+nativeApp: (f = msg.getNativeApp()) && proto.common.v1.ConfigNativeApp.toObject(includeInstance, f),
+meilisearch: (f = msg.getMeilisearch()) && proto.common.v1.ConfigMeilisearch.toObject(includeInstance, f),
+bleve: (f = msg.getBleve()) && proto.common.v1.ConfigBleve.toObject(includeInstance, f),
+dataRetention: (f = msg.getDataRetention()) && proto.common.v1.ConfigDataRetention.toObject(includeInstance, f),
+imageProxy: (f = msg.getImageProxy()) && proto.common.v1.ConfigImageProxy.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16343,8 +16344,8 @@ proto.common.v1.ConfigGetResponse.prototype.toObject = function(opt_includeInsta
  */
 proto.common.v1.ConfigGetResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    data: (f = msg.getData()) && proto.common.v1.Config.toObject(includeInstance, f),
-    error: (f = msg.getError()) && shared_v1_error_pb.AppError.toObject(includeInstance, f)
+data: (f = msg.getData()) && proto.common.v1.Config.toObject(includeInstance, f),
+error: (f = msg.getError()) && shared_v1_error_pb.AppError.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16545,7 +16546,7 @@ proto.common.v1.ConfigUpdateRequest.prototype.toObject = function(opt_includeIns
  */
 proto.common.v1.ConfigUpdateRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    config: (f = msg.getConfig()) && proto.common.v1.Config.toObject(includeInstance, f)
+config: (f = msg.getConfig()) && proto.common.v1.Config.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16722,8 +16723,8 @@ proto.common.v1.ConfigUpdateResponse.prototype.toObject = function(opt_includeIn
  */
 proto.common.v1.ConfigUpdateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    data: (f = msg.getData()) && proto.common.v1.Config.toObject(includeInstance, f),
-    error: (f = msg.getError()) && shared_v1_error_pb.AppError.toObject(includeInstance, f)
+data: (f = msg.getData()) && proto.common.v1.Config.toObject(includeInstance, f),
+error: (f = msg.getError()) && shared_v1_error_pb.AppError.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -16950,8 +16951,8 @@ proto.common.v1.ConfigListenerResponse.prototype.toObject = function(opt_include
  */
 proto.common.v1.ConfigListenerResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    data: (f = msg.getData()) && proto.common.v1.Config.toObject(includeInstance, f),
-    error: (f = msg.getError()) && shared_v1_error_pb.AppError.toObject(includeInstance, f)
+data: (f = msg.getData()) && proto.common.v1.Config.toObject(includeInstance, f),
+error: (f = msg.getError()) && shared_v1_error_pb.AppError.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -17152,7 +17153,7 @@ proto.common.v1.ConfigListenerRequest.prototype.toObject = function(opt_includeI
  */
 proto.common.v1.ConfigListenerRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
-    clientId: jspb.Message.getFieldWithDefault(msg, 1, "")
+clientId: jspb.Message.getFieldWithDefault(msg, 1, "")
   };
 
   if (includeInstance) {

@@ -13,13 +13,13 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = (function() {
-  if (this) { return this; }
-  if (typeof window !== 'undefined') { return window; }
-  if (typeof global !== 'undefined') { return global; }
-  if (typeof self !== 'undefined') { return self; }
-  return Function('return this')();
-}.call(null));
+var global =
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 var user_v1_supplier_pb = require('../../user/v1/supplier_pb.js');
 goog.object.extend(proto, user_v1_supplier_pb);
@@ -77,31 +77,31 @@ proto.user.v1.User.prototype.toObject = function(opt_includeInstance) {
  */
 proto.user.v1.User.toObject = function(includeInstance, msg) {
   var f, obj = {
-    id: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    username: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    firstName: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    lastName: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    email: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    userType: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    membership: jspb.Message.getFieldWithDefault(msg, 7, ""),
-    isEmailVerified: jspb.Message.getBooleanFieldWithDefault(msg, 8, false),
-    password: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    authData: jspb.Message.getFieldWithDefault(msg, 10, ""),
-    authService: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    roles: jspb.Message.getFieldWithDefault(msg, 12, ""),
-    propsMap: (f = msg.getPropsMap()) ? f.toObject(includeInstance, undefined) : [],
-    notifyPropsMap: (f = msg.getNotifyPropsMap()) ? f.toObject(includeInstance, undefined) : [],
-    lastPasswordUpdate: jspb.Message.getFieldWithDefault(msg, 15, 0),
-    lastPictureUpdate: jspb.Message.getFieldWithDefault(msg, 16, 0),
-    failedAttempts: jspb.Message.getFieldWithDefault(msg, 17, 0),
-    locale: jspb.Message.getFieldWithDefault(msg, 18, ""),
-    mfaActive: jspb.Message.getBooleanFieldWithDefault(msg, 19, false),
-    mfaSecret: jspb.Message.getFieldWithDefault(msg, 20, ""),
-    lastActivityAt: jspb.Message.getFieldWithDefault(msg, 21, 0),
-    lastLogin: jspb.Message.getFieldWithDefault(msg, 22, 0),
-    createdAt: jspb.Message.getFieldWithDefault(msg, 23, 0),
-    updatedAt: jspb.Message.getFieldWithDefault(msg, 24, 0),
-    deletedAt: jspb.Message.getFieldWithDefault(msg, 25, 0)
+id: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+username: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
+firstName: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+lastName: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+email: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+userType: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+membership: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f,
+isEmailVerified: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined : f,
+password: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
+authData: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
+authService: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
+roles: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
+propsMap: (f = msg.getPropsMap()) ? f.toObject(includeInstance, undefined) : [],
+notifyPropsMap: (f = msg.getNotifyPropsMap()) ? f.toObject(includeInstance, undefined) : [],
+lastPasswordUpdate: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
+lastPictureUpdate: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f,
+failedAttempts: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
+locale: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
+mfaActive: (f = jspb.Message.getBooleanField(msg, 19)) == null ? undefined : f,
+mfaSecret: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f,
+lastActivityAt: (f = jspb.Message.getField(msg, 21)) == null ? undefined : f,
+lastLogin: (f = jspb.Message.getField(msg, 22)) == null ? undefined : f,
+createdAt: (f = jspb.Message.getField(msg, 23)) == null ? undefined : f,
+updatedAt: (f = jspb.Message.getField(msg, 24)) == null ? undefined : f,
+deletedAt: (f = jspb.Message.getField(msg, 25)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -894,7 +894,8 @@ proto.user.v1.User.prototype.getPropsMap = function(opt_noLazyCreate) {
  */
 proto.user.v1.User.prototype.clearPropsMap = function() {
   this.getPropsMap().clear();
-  return this;};
+  return this;
+};
 
 
 /**
@@ -916,7 +917,8 @@ proto.user.v1.User.prototype.getNotifyPropsMap = function(opt_noLazyCreate) {
  */
 proto.user.v1.User.prototype.clearNotifyPropsMap = function() {
   this.getNotifyPropsMap().clear();
-  return this;};
+  return this;
+};
 
 
 /**

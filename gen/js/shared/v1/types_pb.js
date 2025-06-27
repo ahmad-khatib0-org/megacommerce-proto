@@ -13,13 +13,13 @@
 
 var jspb = require('google-protobuf');
 var goog = jspb;
-var global = (function() {
-  if (this) { return this; }
-  if (typeof window !== 'undefined') { return window; }
-  if (typeof global !== 'undefined') { return global; }
-  if (typeof self !== 'undefined') { return self; }
-  return Function('return this')();
-}.call(null));
+var global =
+    (typeof globalThis !== 'undefined' && globalThis) ||
+    (typeof window !== 'undefined' && window) ||
+    (typeof global !== 'undefined' && global) ||
+    (typeof self !== 'undefined' && self) ||
+    (function () { return this; }).call(null) ||
+    Function('return this')();
 
 goog.exportSymbol('proto.shared.v1.NestedStringMap', null, global);
 goog.exportSymbol('proto.shared.v1.StringMap', null, global);
@@ -97,7 +97,7 @@ proto.shared.v1.StringMap.prototype.toObject = function(opt_includeInstance) {
  */
 proto.shared.v1.StringMap.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, undefined) : []
+dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, undefined) : []
   };
 
   if (includeInstance) {
@@ -195,7 +195,8 @@ proto.shared.v1.StringMap.prototype.getDataMap = function(opt_noLazyCreate) {
  */
 proto.shared.v1.StringMap.prototype.clearDataMap = function() {
   this.getDataMap().clear();
-  return this;};
+  return this;
+};
 
 
 
@@ -230,7 +231,7 @@ proto.shared.v1.NestedStringMap.prototype.toObject = function(opt_includeInstanc
  */
 proto.shared.v1.NestedStringMap.toObject = function(includeInstance, msg) {
   var f, obj = {
-    dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, proto.shared.v1.StringMap.toObject) : []
+dataMap: (f = msg.getDataMap()) ? f.toObject(includeInstance, proto.shared.v1.StringMap.toObject) : []
   };
 
   if (includeInstance) {
@@ -328,7 +329,8 @@ proto.shared.v1.NestedStringMap.prototype.getDataMap = function(opt_noLazyCreate
  */
 proto.shared.v1.NestedStringMap.prototype.clearDataMap = function() {
   this.getDataMap().clear();
-  return this;};
+  return this;
+};
 
 
 goog.object.extend(exports, proto.shared.v1);
