@@ -420,7 +420,7 @@ dependencies = [
 
 [[package]]
 name = "megacommerce-protos"
-version = "0.1.0"
+version = "0.1.11"
 dependencies = [
  "prost 0.13.5",
  "prost-types 0.14.1",

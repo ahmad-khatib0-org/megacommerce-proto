@@ -29,5 +29,6 @@ mod products {
 
 // Re-export main types at crate root
 pub use common::v1::*;
+pub use products::v1::*;
 pub use shared::v1::*;
 pub use user::v1::*;
