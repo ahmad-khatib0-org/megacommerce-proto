@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package products.v1;
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1";
+option java_outer_classname = "ProductProto";
+option java_package = "org.megacommerce.products.v1";
+
+message ProductTag {
+  uint32 id = 1;
+  string name = 2;
+}
+
+message ProductCreateRequest {
+  string title = 1;
+  string description = 2;
+  string sku = 3;
+  uint32 price = 4;
+  string currency_code = 5;
+  repeated ProductTag tags = 6;
+  bool ar_enabled = 7;
+}
+
+message ProductCreateResponse {}

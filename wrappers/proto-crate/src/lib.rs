@@ -21,6 +21,12 @@ mod user {
   }
 }
 
+mod products {
+  pub mod v1 {
+    include!("products.v1.rs");
+  }
+}
+
 // Re-export main types at crate root
 pub use common::v1::*;
 pub use shared::v1::*;
