@@ -259,6 +259,11 @@ export class ConfigServices extends jspb.Message {
   hasUserServiceGrpcUrl(): boolean;
   clearUserServiceGrpcUrl(): ConfigServices;
 
+  getProductsServiceGrpcUrl(): string;
+  setProductsServiceGrpcUrl(value: string): ConfigServices;
+  hasProductsServiceGrpcUrl(): boolean;
+  clearProductsServiceGrpcUrl(): ConfigServices;
+
   getJaegerCollectorUrl(): string;
   setJaegerCollectorUrl(value: string): ConfigServices;
   hasJaegerCollectorUrl(): boolean;
@@ -274,6 +279,11 @@ export class ConfigServices extends jspb.Message {
   hasUserServicePrometheusUrl(): boolean;
   clearUserServicePrometheusUrl(): ConfigServices;
 
+  getProductsServicePrometheusUrl(): string;
+  setProductsServicePrometheusUrl(value: string): ConfigServices;
+  hasProductsServicePrometheusUrl(): boolean;
+  clearProductsServicePrometheusUrl(): ConfigServices;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfigServices.AsObject;
   static toObject(includeInstance: boolean, msg: ConfigServices): ConfigServices.AsObject;
@@ -286,9 +296,11 @@ export namespace ConfigServices {
   export type AsObject = {
     commonServiceGrpcUrl?: string,
     userServiceGrpcUrl?: string,
+    productsServiceGrpcUrl?: string,
     jaegerCollectorUrl?: string,
     commonServicePrometheusUrl?: string,
     userServicePrometheusUrl?: string,
+    productsServicePrometheusUrl?: string,
   }
 
   export enum CommonServiceGrpcUrlCase { 
@@ -301,19 +313,29 @@ export namespace ConfigServices {
     USER_SERVICE_GRPC_URL = 2,
   }
 
+  export enum ProductsServiceGrpcUrlCase { 
+    _PRODUCTS_SERVICE_GRPC_URL_NOT_SET = 0,
+    PRODUCTS_SERVICE_GRPC_URL = 3,
+  }
+
   export enum JaegerCollectorUrlCase { 
     _JAEGER_COLLECTOR_URL_NOT_SET = 0,
-    JAEGER_COLLECTOR_URL = 3,
+    JAEGER_COLLECTOR_URL = 4,
   }
 
   export enum CommonServicePrometheusUrlCase { 
     _COMMON_SERVICE_PROMETHEUS_URL_NOT_SET = 0,
-    COMMON_SERVICE_PROMETHEUS_URL = 4,
+    COMMON_SERVICE_PROMETHEUS_URL = 5,
   }
 
   export enum UserServicePrometheusUrlCase { 
     _USER_SERVICE_PROMETHEUS_URL_NOT_SET = 0,
-    USER_SERVICE_PROMETHEUS_URL = 5,
+    USER_SERVICE_PROMETHEUS_URL = 6,
+  }
+
+  export enum ProductsServicePrometheusUrlCase { 
+    _PRODUCTS_SERVICE_PROMETHEUS_URL_NOT_SET = 0,
+    PRODUCTS_SERVICE_PROMETHEUS_URL = 7,
   }
 }
 

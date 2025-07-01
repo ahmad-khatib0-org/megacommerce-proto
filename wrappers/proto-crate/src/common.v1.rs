@@ -51,13 +51,21 @@ pub struct ConfigServices {
     #[prost(string, optional, tag = "2")]
     pub user_service_grpc_url: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "3")]
-    pub jaeger_collector_url: ::core::option::Option<::prost::alloc::string::String>,
+    pub products_service_grpc_url: ::core::option::Option<
+        ::prost::alloc::string::String,
+    >,
     #[prost(string, optional, tag = "4")]
+    pub jaeger_collector_url: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "5")]
     pub common_service_prometheus_url: ::core::option::Option<
         ::prost::alloc::string::String,
     >,
-    #[prost(string, optional, tag = "5")]
+    #[prost(string, optional, tag = "6")]
     pub user_service_prometheus_url: ::core::option::Option<
+        ::prost::alloc::string::String,
+    >,
+    #[prost(string, optional, tag = "7")]
+    pub products_service_prometheus_url: ::core::option::Option<
         ::prost::alloc::string::String,
     >,
 }

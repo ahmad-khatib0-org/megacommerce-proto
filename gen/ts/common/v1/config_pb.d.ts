@@ -157,6 +157,11 @@ export class ConfigServices extends jspb.Message {
   getUserServiceGrpcUrl(): string;
   setUserServiceGrpcUrl(value: string): void;
 
+  hasProductsServiceGrpcUrl(): boolean;
+  clearProductsServiceGrpcUrl(): void;
+  getProductsServiceGrpcUrl(): string;
+  setProductsServiceGrpcUrl(value: string): void;
+
   hasJaegerCollectorUrl(): boolean;
   clearJaegerCollectorUrl(): void;
   getJaegerCollectorUrl(): string;
@@ -172,6 +177,11 @@ export class ConfigServices extends jspb.Message {
   getUserServicePrometheusUrl(): string;
   setUserServicePrometheusUrl(value: string): void;
 
+  hasProductsServicePrometheusUrl(): boolean;
+  clearProductsServicePrometheusUrl(): void;
+  getProductsServicePrometheusUrl(): string;
+  setProductsServicePrometheusUrl(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfigServices.AsObject;
   static toObject(includeInstance: boolean, msg: ConfigServices): ConfigServices.AsObject;
@@ -186,9 +196,11 @@ export namespace ConfigServices {
   export type AsObject = {
     commonServiceGrpcUrl: string,
     userServiceGrpcUrl: string,
+    productsServiceGrpcUrl: string,
     jaegerCollectorUrl: string,
     commonServicePrometheusUrl: string,
     userServicePrometheusUrl: string,
+    productsServicePrometheusUrl: string,
   }
 }
 

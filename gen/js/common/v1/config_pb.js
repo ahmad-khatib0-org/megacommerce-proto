@@ -1784,9 +1784,11 @@ proto.common.v1.ConfigServices.toObject = function(includeInstance, msg) {
   var f, obj = {
 commonServiceGrpcUrl: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
 userServiceGrpcUrl: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f,
-jaegerCollectorUrl: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
-commonServicePrometheusUrl: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
-userServicePrometheusUrl: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f
+productsServiceGrpcUrl: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+jaegerCollectorUrl: (f = jspb.Message.getField(msg, 4)) == null ? undefined : f,
+commonServicePrometheusUrl: (f = jspb.Message.getField(msg, 5)) == null ? undefined : f,
+userServicePrometheusUrl: (f = jspb.Message.getField(msg, 6)) == null ? undefined : f,
+productsServicePrometheusUrl: (f = jspb.Message.getField(msg, 7)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -1833,15 +1835,23 @@ proto.common.v1.ConfigServices.deserializeBinaryFromReader = function(msg, reade
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setJaegerCollectorUrl(value);
+      msg.setProductsServiceGrpcUrl(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCommonServicePrometheusUrl(value);
+      msg.setJaegerCollectorUrl(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
+      msg.setCommonServicePrometheusUrl(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
       msg.setUserServicePrometheusUrl(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProductsServicePrometheusUrl(value);
       break;
     default:
       reader.skipField();
@@ -1904,6 +1914,20 @@ proto.common.v1.ConfigServices.serializeBinaryToWriter = function(message, write
   if (f != null) {
     writer.writeString(
       5,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 7));
+  if (f != null) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -1983,10 +2007,10 @@ proto.common.v1.ConfigServices.prototype.hasUserServiceGrpcUrl = function() {
 
 
 /**
- * optional string jaeger_collector_url = 3;
+ * optional string products_service_grpc_url = 3;
  * @return {string}
  */
-proto.common.v1.ConfigServices.prototype.getJaegerCollectorUrl = function() {
+proto.common.v1.ConfigServices.prototype.getProductsServiceGrpcUrl = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -1995,7 +2019,7 @@ proto.common.v1.ConfigServices.prototype.getJaegerCollectorUrl = function() {
  * @param {string} value
  * @return {!proto.common.v1.ConfigServices} returns this
  */
-proto.common.v1.ConfigServices.prototype.setJaegerCollectorUrl = function(value) {
+proto.common.v1.ConfigServices.prototype.setProductsServiceGrpcUrl = function(value) {
   return jspb.Message.setField(this, 3, value);
 };
 
@@ -2004,7 +2028,7 @@ proto.common.v1.ConfigServices.prototype.setJaegerCollectorUrl = function(value)
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigServices} returns this
  */
-proto.common.v1.ConfigServices.prototype.clearJaegerCollectorUrl = function() {
+proto.common.v1.ConfigServices.prototype.clearProductsServiceGrpcUrl = function() {
   return jspb.Message.setField(this, 3, undefined);
 };
 
@@ -2013,16 +2037,16 @@ proto.common.v1.ConfigServices.prototype.clearJaegerCollectorUrl = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigServices.prototype.hasJaegerCollectorUrl = function() {
+proto.common.v1.ConfigServices.prototype.hasProductsServiceGrpcUrl = function() {
   return jspb.Message.getField(this, 3) != null;
 };
 
 
 /**
- * optional string common_service_prometheus_url = 4;
+ * optional string jaeger_collector_url = 4;
  * @return {string}
  */
-proto.common.v1.ConfigServices.prototype.getCommonServicePrometheusUrl = function() {
+proto.common.v1.ConfigServices.prototype.getJaegerCollectorUrl = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -2031,7 +2055,7 @@ proto.common.v1.ConfigServices.prototype.getCommonServicePrometheusUrl = functio
  * @param {string} value
  * @return {!proto.common.v1.ConfigServices} returns this
  */
-proto.common.v1.ConfigServices.prototype.setCommonServicePrometheusUrl = function(value) {
+proto.common.v1.ConfigServices.prototype.setJaegerCollectorUrl = function(value) {
   return jspb.Message.setField(this, 4, value);
 };
 
@@ -2040,7 +2064,7 @@ proto.common.v1.ConfigServices.prototype.setCommonServicePrometheusUrl = functio
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigServices} returns this
  */
-proto.common.v1.ConfigServices.prototype.clearCommonServicePrometheusUrl = function() {
+proto.common.v1.ConfigServices.prototype.clearJaegerCollectorUrl = function() {
   return jspb.Message.setField(this, 4, undefined);
 };
 
@@ -2049,16 +2073,16 @@ proto.common.v1.ConfigServices.prototype.clearCommonServicePrometheusUrl = funct
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigServices.prototype.hasCommonServicePrometheusUrl = function() {
+proto.common.v1.ConfigServices.prototype.hasJaegerCollectorUrl = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string user_service_prometheus_url = 5;
+ * optional string common_service_prometheus_url = 5;
  * @return {string}
  */
-proto.common.v1.ConfigServices.prototype.getUserServicePrometheusUrl = function() {
+proto.common.v1.ConfigServices.prototype.getCommonServicePrometheusUrl = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -2067,7 +2091,7 @@ proto.common.v1.ConfigServices.prototype.getUserServicePrometheusUrl = function(
  * @param {string} value
  * @return {!proto.common.v1.ConfigServices} returns this
  */
-proto.common.v1.ConfigServices.prototype.setUserServicePrometheusUrl = function(value) {
+proto.common.v1.ConfigServices.prototype.setCommonServicePrometheusUrl = function(value) {
   return jspb.Message.setField(this, 5, value);
 };
 
@@ -2076,7 +2100,7 @@ proto.common.v1.ConfigServices.prototype.setUserServicePrometheusUrl = function(
  * Clears the field making it undefined.
  * @return {!proto.common.v1.ConfigServices} returns this
  */
-proto.common.v1.ConfigServices.prototype.clearUserServicePrometheusUrl = function() {
+proto.common.v1.ConfigServices.prototype.clearCommonServicePrometheusUrl = function() {
   return jspb.Message.setField(this, 5, undefined);
 };
 
@@ -2085,8 +2109,80 @@ proto.common.v1.ConfigServices.prototype.clearUserServicePrometheusUrl = functio
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.common.v1.ConfigServices.prototype.hasUserServicePrometheusUrl = function() {
+proto.common.v1.ConfigServices.prototype.hasCommonServicePrometheusUrl = function() {
   return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string user_service_prometheus_url = 6;
+ * @return {string}
+ */
+proto.common.v1.ConfigServices.prototype.getUserServicePrometheusUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.common.v1.ConfigServices} returns this
+ */
+proto.common.v1.ConfigServices.prototype.setUserServicePrometheusUrl = function(value) {
+  return jspb.Message.setField(this, 6, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.common.v1.ConfigServices} returns this
+ */
+proto.common.v1.ConfigServices.prototype.clearUserServicePrometheusUrl = function() {
+  return jspb.Message.setField(this, 6, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.common.v1.ConfigServices.prototype.hasUserServicePrometheusUrl = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string products_service_prometheus_url = 7;
+ * @return {string}
+ */
+proto.common.v1.ConfigServices.prototype.getProductsServicePrometheusUrl = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.common.v1.ConfigServices} returns this
+ */
+proto.common.v1.ConfigServices.prototype.setProductsServicePrometheusUrl = function(value) {
+  return jspb.Message.setField(this, 7, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.common.v1.ConfigServices} returns this
+ */
+proto.common.v1.ConfigServices.prototype.clearProductsServicePrometheusUrl = function() {
+  return jspb.Message.setField(this, 7, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.common.v1.ConfigServices.prototype.hasProductsServicePrometheusUrl = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

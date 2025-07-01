@@ -36,9 +36,11 @@ message ConfigMain {
 message ConfigServices {
   optional string common_service_grpc_url = 1;
   optional string user_service_grpc_url = 2;
-  optional string jaeger_collector_url = 3;
-  optional string common_service_prometheus_url = 4;
-  optional string user_service_prometheus_url = 5;
+  optional string products_service_grpc_url = 3;
+  optional string jaeger_collector_url = 4;
+  optional string common_service_prometheus_url = 5;
+  optional string user_service_prometheus_url = 6;
+  optional string products_service_prometheus_url = 7;
 }
 
 message ConfigSecurity {
