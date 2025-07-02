@@ -1,5 +1,5 @@
 [package]
-name = "megacommerce-protos"
+name = "megacommerce-proto"
 version = "0.1.12"
 edition = "2021"
 description = "Generated gRPC protobuf definitions for MegaCommerce"
