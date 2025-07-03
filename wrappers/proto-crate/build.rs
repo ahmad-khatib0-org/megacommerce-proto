@@ -6,9 +6,9 @@ use std::{
 fn main() -> Result<(), Box<dyn std::error::Error>> {
   // Path to googleapis protos relative to project root
   let googleapis_path = Path::new("../../external_libs");
-  if !googleapis_path.exists() {
-    panic!("Google APIs protos not found. Please run:\n  mkdir -p external_libs && git clone --depth 1 https://github.com/googleapis/googleapis.git external_libs/googleapis");
-  }
+  // if !googleapis_path.exists() {
+  //   panic!("Google APIs protos not found. Please run:\n  mkdir -p external_libs && git clone --depth 1 https://github.com/googleapis/googleapis.git external_libs/googleapis");
+  // }
 
   // Output directory for generated Rust files (relative to crate root)
   let out_dir_rs = Path::new("src");
@@ -58,4 +58,3 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
   Ok(())
 }
-
