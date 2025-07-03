@@ -6,8 +6,8 @@ generate:
 	buf generate --exclude-path external_libs/
 	
 	@echo "Generating Rust protobuf files..."
-	find wrappers/proto-crate/src -name "*.rs" -not -name "lib.rs" -o -name "descriptor.bin" -o -name "build.rs" -delete
-	cd wrappers/proto-crate && cargo build
+	find wrappers/proto-crate/src -name "*.rs" -not -name "lib.rs" -o -name "descriptor.bin" -delete
+	cargo build
 	
 	@echo "Generating Python protobuf files..."
 	find . -name "*.proto" -not -path "./external_libs/*" | while read -r file; do \

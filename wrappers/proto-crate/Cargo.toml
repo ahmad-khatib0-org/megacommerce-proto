@@ -9,7 +9,6 @@ readme = "README.md"
 keywords = ["protobuf", "tonic", "grpc", "megacommerce"]
 categories = ["api-bindings", "network-programming"]
 publish = true
-build = "build.rs"
 
 [dependencies]
 prost = { workspace = true }
