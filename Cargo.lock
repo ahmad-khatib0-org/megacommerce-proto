@@ -418,7 +418,6 @@ dependencies = [
  "prost 0.13.5",
  "prost-types 0.14.1",
  "tonic",
- "tonic-build",
 ]
 
 [[package]]
