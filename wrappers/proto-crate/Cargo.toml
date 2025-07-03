@@ -1,6 +1,6 @@
 [package]
 name = "megacommerce-proto"
-version = "0.1.12"
+version = "0.1.13"
 edition = "2021"
 description = "Generated gRPC protobuf definitions for MegaCommerce"
 license = "MIT OR Apache-2.0"
@@ -9,11 +9,15 @@ readme = "README.md"
 keywords = ["protobuf", "tonic", "grpc", "megacommerce"]
 categories = ["api-bindings", "network-programming"]
 publish = true
+build = "build.rs"
 
 [dependencies]
 prost = { workspace = true }
 prost-types = { workspace = true }
 tonic = { workspace = true }
+
+[build-dependencies]
+tonic-build = { workspace = true }
 
 [lib]
 name = "megacommerce_proto"

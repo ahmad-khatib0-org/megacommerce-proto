@@ -32,3 +32,6 @@ pub use common::v1::*;
 pub use products::v1::*;
 pub use shared::v1::*;
 pub use user::v1::*;
+
+// This makes it available for server reflection
+include!(concat!(env!("OUT_DIR"), "/descriptor.rs"));
