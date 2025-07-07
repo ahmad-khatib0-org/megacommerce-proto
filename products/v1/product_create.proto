@@ -8,8 +8,8 @@ option java_outer_classname = "ProductCreateProto";
 option java_package = "org.megacommerce.products.v1";
 
 message ProductCreateTag {
-  uint32 id = 1;
-  string name = 2;
+  optional uint32 id = 1;
+  optional string name = 2;
 }
 
 message ProductCreateRequest {

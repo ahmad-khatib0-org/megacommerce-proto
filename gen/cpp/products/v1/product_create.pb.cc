@@ -161,24 +161,25 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 const char descriptor_table_protodef_products_2fv1_2fproduct_5fcreate_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n products/v1/product_create.proto\022\013prod"
-    "ucts.v1\"6\n\020ProductCreateTag\022\016\n\002id\030\001 \001(\rR"
-    "\002id\022\022\n\004name\030\002 \001(\tR\004name\"\355\001\n\024ProductCreat"
-    "eRequest\022\024\n\005title\030\001 \001(\tR\005title\022 \n\013descri"
-    "ption\030\002 \001(\tR\013description\022\020\n\003sku\030\003 \001(\tR\003s"
-    "ku\022\024\n\005price\030\004 \001(\rR\005price\022#\n\rcurrency_cod"
-    "e\030\005 \001(\tR\014currencyCode\0221\n\004tags\030\006 \003(\0132\035.pr"
-    "oducts.v1.ProductCreateTagR\004tags\022\035\n\nar_e"
-    "nabled\030\007 \001(\010R\tarEnabled\"\027\n\025ProductCreate"
-    "ResponseB|\n\034org.megacommerce.products.v1"
-    "B\022ProductCreateProtoZEgithub.com/ahmad-k"
-    "hatib0-org/megacommerce-proto/gen/go/pro"
-    "ducts/v1;v1\370\001\001b\006proto3"
+    "ucts.v1\"P\n\020ProductCreateTag\022\023\n\002id\030\001 \001(\rH"
+    "\000R\002id\210\001\001\022\027\n\004name\030\002 \001(\tH\001R\004name\210\001\001B\005\n\003_id"
+    "B\007\n\005_name\"\355\001\n\024ProductCreateRequest\022\024\n\005ti"
+    "tle\030\001 \001(\tR\005title\022 \n\013description\030\002 \001(\tR\013d"
+    "escription\022\020\n\003sku\030\003 \001(\tR\003sku\022\024\n\005price\030\004 "
+    "\001(\rR\005price\022#\n\rcurrency_code\030\005 \001(\tR\014curre"
+    "ncyCode\0221\n\004tags\030\006 \003(\0132\035.products.v1.Prod"
+    "uctCreateTagR\004tags\022\035\n\nar_enabled\030\007 \001(\010R\t"
+    "arEnabled\"\027\n\025ProductCreateResponseB|\n\034or"
+    "g.megacommerce.products.v1B\022ProductCreat"
+    "eProtoZEgithub.com/ahmad-khatib0-org/meg"
+    "acommerce-proto/gen/go/products/v1;v1\370\001\001"
+    "b\006proto3"
 };
 static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto = {
     false,
     false,
-    502,
+    528,
     descriptor_table_protodef_products_2fv1_2fproduct_5fcreate_2eproto,
     "products/v1/product_create.proto",
     &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto_once,
@@ -321,19 +322,19 @@ ProductCreateTag::_table_ = {
     ::_pbi::TcParser::GetTable<::products::v1::ProductCreateTag>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // string name = 2 [json_name = "name"];
+    // optional string name = 2 [json_name = "name"];
     {::_pbi::TcParser::FastUS1,
      {18, 0, 0, PROTOBUF_FIELD_OFFSET(ProductCreateTag, _impl_.name_)}},
-    // uint32 id = 1 [json_name = "id"];
+    // optional uint32 id = 1 [json_name = "id"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ProductCreateTag, _impl_.id_), 1>(),
      {8, 1, 0, PROTOBUF_FIELD_OFFSET(ProductCreateTag, _impl_.id_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // uint32 id = 1 [json_name = "id"];
+    // optional uint32 id = 1 [json_name = "id"];
     {PROTOBUF_FIELD_OFFSET(ProductCreateTag, _impl_.id_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
-    // string name = 2 [json_name = "name"];
+    // optional string name = 2 [json_name = "name"];
     {PROTOBUF_FIELD_OFFSET(ProductCreateTag, _impl_.name_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
@@ -375,23 +376,20 @@ PROTOBUF_NOINLINE void ProductCreateTag::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // uint32 id = 1 [json_name = "id"];
-  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
-    if (this_._internal_id() != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
-          1, this_._internal_id(), target);
-    }
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // optional uint32 id = 1 [json_name = "id"];
+  if ((cached_has_bits & 0x00000002u) != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        1, this_._internal_id(), target);
   }
 
-  // string name = 2 [json_name = "name"];
-  if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    if (!this_._internal_name().empty()) {
-      const ::std::string& _s = this_._internal_name();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateTag.name");
-      target = stream->WriteStringMaybeAliased(2, _s, target);
-    }
+  // optional string name = 2 [json_name = "name"];
+  if ((cached_has_bits & 0x00000001u) != 0) {
+    const ::std::string& _s = this_._internal_name();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateTag.name");
+    target = stream->WriteStringMaybeAliased(2, _s, target);
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -420,19 +418,15 @@ PROTOBUF_NOINLINE void ProductCreateTag::Clear() {
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
   if ((cached_has_bits & 0x00000003u) != 0) {
-    // string name = 2 [json_name = "name"];
+    // optional string name = 2 [json_name = "name"];
     if ((cached_has_bits & 0x00000001u) != 0) {
-      if (!this_._internal_name().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_name());
-      }
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_name());
     }
-    // uint32 id = 1 [json_name = "id"];
+    // optional uint32 id = 1 [json_name = "id"];
     if ((cached_has_bits & 0x00000002u) != 0) {
-      if (this_._internal_id() != 0) {
-        total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
-            this_._internal_id());
-      }
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+          this_._internal_id());
     }
   }
   return this_.MaybeComputeUnknownFieldsSize(total_size,
@@ -450,18 +444,10 @@ void ProductCreateTag::MergeImpl(::google::protobuf::MessageLite& to_msg, const 
   cached_has_bits = from._impl_._has_bits_[0];
   if ((cached_has_bits & 0x00000003u) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
-      if (!from._internal_name().empty()) {
-        _this->_internal_set_name(from._internal_name());
-      } else {
-        if (_this->_impl_.name_.IsDefault()) {
-          _this->_internal_set_name("");
-        }
-      }
+      _this->_internal_set_name(from._internal_name());
     }
     if ((cached_has_bits & 0x00000002u) != 0) {
-      if (from._internal_id() != 0) {
-        _this->_impl_.id_ = from._impl_.id_;
-      }
+      _this->_impl_.id_ = from._impl_.id_;
     }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;

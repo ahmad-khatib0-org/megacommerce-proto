@@ -5,9 +5,13 @@ import * as jspb from 'google-protobuf'
 export class ProductCreateTag extends jspb.Message {
   getId(): number;
   setId(value: number): ProductCreateTag;
+  hasId(): boolean;
+  clearId(): ProductCreateTag;
 
   getName(): string;
   setName(value: string): ProductCreateTag;
+  hasName(): boolean;
+  clearName(): ProductCreateTag;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductCreateTag.AsObject;
@@ -19,8 +23,18 @@ export class ProductCreateTag extends jspb.Message {
 
 export namespace ProductCreateTag {
   export type AsObject = {
-    id: number,
-    name: string,
+    id?: number,
+    name?: string,
+  }
+
+  export enum IdCase { 
+    _ID_NOT_SET = 0,
+    ID = 1,
+  }
+
+  export enum NameCase { 
+    _NAME_NOT_SET = 0,
+    NAME = 2,
   }
 }
 

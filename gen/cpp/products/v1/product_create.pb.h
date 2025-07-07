@@ -228,7 +228,8 @@ class ProductCreateTag final : public ::google::protobuf::Message
     kNameFieldNumber = 2,
     kIdFieldNumber = 1,
   };
-  // string name = 2 [json_name = "name"];
+  // optional string name = 2 [json_name = "name"];
+  bool has_name() const;
   void clear_name() ;
   const ::std::string& name() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -243,7 +244,8 @@ class ProductCreateTag final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_name();
 
   public:
-  // uint32 id = 1 [json_name = "id"];
+  // optional uint32 id = 1 [json_name = "id"];
+  bool has_id() const;
   void clear_id() ;
   ::uint32_t id() const;
   void set_id(::uint32_t value);
@@ -741,7 +743,11 @@ extern const ::google::protobuf::internal::ClassDataFull ProductCreateRequest_cl
 
 // ProductCreateTag
 
-// uint32 id = 1 [json_name = "id"];
+// optional uint32 id = 1 [json_name = "id"];
+inline bool ProductCreateTag::has_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
 inline void ProductCreateTag::clear_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.id_ = 0u;
@@ -765,7 +771,11 @@ inline void ProductCreateTag::_internal_set_id(::uint32_t value) {
   _impl_.id_ = value;
 }
 
-// string name = 2 [json_name = "name"];
+// optional string name = 2 [json_name = "name"];
+inline bool ProductCreateTag::has_name() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
 inline void ProductCreateTag::clear_name() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.name_.ClearToEmpty();

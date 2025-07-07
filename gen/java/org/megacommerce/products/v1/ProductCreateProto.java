@@ -31,18 +31,28 @@ public final class ProductCreateProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
+     * <code>optional uint32 id = 1 [json_name = "id"];</code>
+     * @return Whether the id field is set.
+     */
+    boolean hasId();
+    /**
+     * <code>optional uint32 id = 1 [json_name = "id"];</code>
      * @return The id.
      */
     int getId();
 
     /**
-     * <code>string name = 2 [json_name = "name"];</code>
+     * <code>optional string name = 2 [json_name = "name"];</code>
+     * @return Whether the name field is set.
+     */
+    boolean hasName();
+    /**
+     * <code>optional string name = 2 [json_name = "name"];</code>
      * @return The name.
      */
     java.lang.String getName();
     /**
-     * <code>string name = 2 [json_name = "name"];</code>
+     * <code>optional string name = 2 [json_name = "name"];</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
@@ -86,10 +96,19 @@ public final class ProductCreateProto {
               org.megacommerce.products.v1.ProductCreateProto.ProductCreateTag.class, org.megacommerce.products.v1.ProductCreateProto.ProductCreateTag.Builder.class);
     }
 
+    private int bitField0_;
     public static final int ID_FIELD_NUMBER = 1;
     private int id_ = 0;
     /**
-     * <code>uint32 id = 1 [json_name = "id"];</code>
+     * <code>optional uint32 id = 1 [json_name = "id"];</code>
+     * @return Whether the id field is set.
+     */
+    @java.lang.Override
+    public boolean hasId() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional uint32 id = 1 [json_name = "id"];</code>
      * @return The id.
      */
     @java.lang.Override
@@ -101,7 +120,15 @@ public final class ProductCreateProto {
     @SuppressWarnings("serial")
     private volatile java.lang.Object name_ = "";
     /**
-     * <code>string name = 2 [json_name = "name"];</code>
+     * <code>optional string name = 2 [json_name = "name"];</code>
+     * @return Whether the name field is set.
+     */
+    @java.lang.Override
+    public boolean hasName() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional string name = 2 [json_name = "name"];</code>
      * @return The name.
      */
     @java.lang.Override
@@ -118,7 +145,7 @@ public final class ProductCreateProto {
       }
     }
     /**
-     * <code>string name = 2 [json_name = "name"];</code>
+     * <code>optional string name = 2 [json_name = "name"];</code>
      * @return The bytes for name.
      */
     @java.lang.Override
@@ -150,10 +177,10 @@ public final class ProductCreateProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != 0) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         output.writeUInt32(1, id_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 2, name_);
       }
       getUnknownFields().writeTo(output);
@@ -165,11 +192,11 @@ public final class ProductCreateProto {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != 0) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, id_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(2, name_);
       }
       size += getUnknownFields().getSerializedSize();
@@ -187,10 +214,16 @@ public final class ProductCreateProto {
       }
       org.megacommerce.products.v1.ProductCreateProto.ProductCreateTag other = (org.megacommerce.products.v1.ProductCreateProto.ProductCreateTag) obj;
 
-      if (getId()
-          != other.getId()) return false;
-      if (!getName()
-          .equals(other.getName())) return false;
+      if (hasId() != other.hasId()) return false;
+      if (hasId()) {
+        if (getId()
+            != other.getId()) return false;
+      }
+      if (hasName() != other.hasName()) return false;
+      if (hasName()) {
+        if (!getName()
+            .equals(other.getName())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -202,10 +235,14 @@ public final class ProductCreateProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
+      if (hasId()) {
+        hash = (37 * hash) + ID_FIELD_NUMBER;
+        hash = (53 * hash) + getId();
+      }
+      if (hasName()) {
+        hash = (37 * hash) + NAME_FIELD_NUMBER;
+        hash = (53 * hash) + getName().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -372,12 +409,16 @@ public final class ProductCreateProto {
 
       private void buildPartial0(org.megacommerce.products.v1.ProductCreateProto.ProductCreateTag result) {
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.id_ = id_;
+          to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.name_ = name_;
+          to_bitField0_ |= 0x00000002;
         }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -392,10 +433,10 @@ public final class ProductCreateProto {
 
       public Builder mergeFrom(org.megacommerce.products.v1.ProductCreateProto.ProductCreateTag other) {
         if (other == org.megacommerce.products.v1.ProductCreateProto.ProductCreateTag.getDefaultInstance()) return this;
-        if (other.getId() != 0) {
+        if (other.hasId()) {
           setId(other.getId());
         }
-        if (!other.getName().isEmpty()) {
+        if (other.hasName()) {
           name_ = other.name_;
           bitField0_ |= 0x00000002;
           onChanged();
@@ -455,7 +496,15 @@ public final class ProductCreateProto {
 
       private int id_ ;
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
+       * <code>optional uint32 id = 1 [json_name = "id"];</code>
+       * @return Whether the id field is set.
+       */
+      @java.lang.Override
+      public boolean hasId() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>optional uint32 id = 1 [json_name = "id"];</code>
        * @return The id.
        */
       @java.lang.Override
@@ -463,7 +512,7 @@ public final class ProductCreateProto {
         return id_;
       }
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
+       * <code>optional uint32 id = 1 [json_name = "id"];</code>
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -475,7 +524,7 @@ public final class ProductCreateProto {
         return this;
       }
       /**
-       * <code>uint32 id = 1 [json_name = "id"];</code>
+       * <code>optional uint32 id = 1 [json_name = "id"];</code>
        * @return This builder for chaining.
        */
       public Builder clearId() {
@@ -487,7 +536,14 @@ public final class ProductCreateProto {
 
       private java.lang.Object name_ = "";
       /**
-       * <code>string name = 2 [json_name = "name"];</code>
+       * <code>optional string name = 2 [json_name = "name"];</code>
+       * @return Whether the name field is set.
+       */
+      public boolean hasName() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <code>optional string name = 2 [json_name = "name"];</code>
        * @return The name.
        */
       public java.lang.String getName() {
@@ -503,7 +559,7 @@ public final class ProductCreateProto {
         }
       }
       /**
-       * <code>string name = 2 [json_name = "name"];</code>
+       * <code>optional string name = 2 [json_name = "name"];</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
@@ -520,7 +576,7 @@ public final class ProductCreateProto {
         }
       }
       /**
-       * <code>string name = 2 [json_name = "name"];</code>
+       * <code>optional string name = 2 [json_name = "name"];</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -533,7 +589,7 @@ public final class ProductCreateProto {
         return this;
       }
       /**
-       * <code>string name = 2 [json_name = "name"];</code>
+       * <code>optional string name = 2 [json_name = "name"];</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
@@ -543,7 +599,7 @@ public final class ProductCreateProto {
         return this;
       }
       /**
-       * <code>string name = 2 [json_name = "name"];</code>
+       * <code>optional string name = 2 [json_name = "name"];</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -2465,18 +2521,19 @@ public final class ProductCreateProto {
   static {
     java.lang.String[] descriptorData = {
       "\n products/v1/product_create.proto\022\013prod" +
-      "ucts.v1\"6\n\020ProductCreateTag\022\016\n\002id\030\001 \001(\rR" +
-      "\002id\022\022\n\004name\030\002 \001(\tR\004name\"\355\001\n\024ProductCreat" +
-      "eRequest\022\024\n\005title\030\001 \001(\tR\005title\022 \n\013descri" +
-      "ption\030\002 \001(\tR\013description\022\020\n\003sku\030\003 \001(\tR\003s" +
-      "ku\022\024\n\005price\030\004 \001(\rR\005price\022#\n\rcurrency_cod" +
-      "e\030\005 \001(\tR\014currencyCode\0221\n\004tags\030\006 \003(\0132\035.pr" +
-      "oducts.v1.ProductCreateTagR\004tags\022\035\n\nar_e" +
-      "nabled\030\007 \001(\010R\tarEnabled\"\027\n\025ProductCreate" +
-      "ResponseB|\n\034org.megacommerce.products.v1" +
-      "B\022ProductCreateProtoZEgithub.com/ahmad-k" +
-      "hatib0-org/megacommerce-proto/gen/go/pro" +
-      "ducts/v1;v1\370\001\001b\006proto3"
+      "ucts.v1\"P\n\020ProductCreateTag\022\023\n\002id\030\001 \001(\rH" +
+      "\000R\002id\210\001\001\022\027\n\004name\030\002 \001(\tH\001R\004name\210\001\001B\005\n\003_id" +
+      "B\007\n\005_name\"\355\001\n\024ProductCreateRequest\022\024\n\005ti" +
+      "tle\030\001 \001(\tR\005title\022 \n\013description\030\002 \001(\tR\013d" +
+      "escription\022\020\n\003sku\030\003 \001(\tR\003sku\022\024\n\005price\030\004 " +
+      "\001(\rR\005price\022#\n\rcurrency_code\030\005 \001(\tR\014curre" +
+      "ncyCode\0221\n\004tags\030\006 \003(\0132\035.products.v1.Prod" +
+      "uctCreateTagR\004tags\022\035\n\nar_enabled\030\007 \001(\010R\t" +
+      "arEnabled\"\027\n\025ProductCreateResponseB|\n\034or" +
+      "g.megacommerce.products.v1B\022ProductCreat" +
+      "eProtoZEgithub.com/ahmad-khatib0-org/meg" +
+      "acommerce-proto/gen/go/products/v1;v1\370\001\001" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

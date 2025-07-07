@@ -119,8 +119,8 @@ proto.products.v1.ProductCreateTag.prototype.toObject = function(opt_includeInst
  */
 proto.products.v1.ProductCreateTag.toObject = function(includeInstance, msg) {
   var f, obj = {
-id: jspb.Message.getFieldWithDefault(msg, 1, 0),
-name: jspb.Message.getFieldWithDefault(msg, 2, "")
+id: (f = jspb.Message.getField(msg, 1)) == null ? undefined : f,
+name: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -194,15 +194,15 @@ proto.products.v1.ProductCreateTag.prototype.serializeBinary = function() {
  */
 proto.products.v1.ProductCreateTag.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getId();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 1));
+  if (f != null) {
     writer.writeUint32(
       1,
       f
     );
   }
-  f = message.getName();
-  if (f.length > 0) {
+  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
     writer.writeString(
       2,
       f
@@ -225,7 +225,25 @@ proto.products.v1.ProductCreateTag.prototype.getId = function() {
  * @return {!proto.products.v1.ProductCreateTag} returns this
  */
 proto.products.v1.ProductCreateTag.prototype.setId = function(value) {
-  return jspb.Message.setProto3IntField(this, 1, value);
+  return jspb.Message.setField(this, 1, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.products.v1.ProductCreateTag} returns this
+ */
+proto.products.v1.ProductCreateTag.prototype.clearId = function() {
+  return jspb.Message.setField(this, 1, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.products.v1.ProductCreateTag.prototype.hasId = function() {
+  return jspb.Message.getField(this, 1) != null;
 };
 
 
@@ -243,7 +261,25 @@ proto.products.v1.ProductCreateTag.prototype.getName = function() {
  * @return {!proto.products.v1.ProductCreateTag} returns this
  */
 proto.products.v1.ProductCreateTag.prototype.setName = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+  return jspb.Message.setField(this, 2, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.products.v1.ProductCreateTag} returns this
+ */
+proto.products.v1.ProductCreateTag.prototype.clearName = function() {
+  return jspb.Message.setField(this, 2, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.products.v1.ProductCreateTag.prototype.hasName = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

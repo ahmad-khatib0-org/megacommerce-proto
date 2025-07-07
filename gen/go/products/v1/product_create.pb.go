@@ -23,8 +23,8 @@ const (
 
 type ProductCreateTag struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            uint32                 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
-	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Id            *uint32                `protobuf:"varint,1,opt,name=id,proto3,oneof" json:"id,omitempty"`
+	Name          *string                `protobuf:"bytes,2,opt,name=name,proto3,oneof" json:"name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -60,15 +60,15 @@ func (*ProductCreateTag) Descriptor() ([]byte, []int) {
 }
 
 func (x *ProductCreateTag) GetId() uint32 {
-	if x != nil {
-		return x.Id
+	if x != nil && x.Id != nil {
+		return *x.Id
 	}
 	return 0
 }
 
 func (x *ProductCreateTag) GetName() string {
-	if x != nil {
-		return x.Name
+	if x != nil && x.Name != nil {
+		return *x.Name
 	}
 	return ""
 }
@@ -205,10 +205,12 @@ var File_products_v1_product_create_proto protoreflect.FileDescriptor
 
 const file_products_v1_product_create_proto_rawDesc = "" +
 	"\n" +
-	" products/v1/product_create.proto\x12\vproducts.v1\"6\n" +
-	"\x10ProductCreateTag\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\rR\x02id\x12\x12\n" +
-	"\x04name\x18\x02 \x01(\tR\x04name\"\xed\x01\n" +
+	" products/v1/product_create.proto\x12\vproducts.v1\"P\n" +
+	"\x10ProductCreateTag\x12\x13\n" +
+	"\x02id\x18\x01 \x01(\rH\x00R\x02id\x88\x01\x01\x12\x17\n" +
+	"\x04name\x18\x02 \x01(\tH\x01R\x04name\x88\x01\x01B\x05\n" +
+	"\x03_idB\a\n" +
+	"\x05_name\"\xed\x01\n" +
 	"\x14ProductCreateRequest\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12 \n" +
 	"\vdescription\x18\x02 \x01(\tR\vdescription\x12\x10\n" +
@@ -253,6 +255,7 @@ func file_products_v1_product_create_proto_init() {
 	if File_products_v1_product_create_proto != nil {
 		return
 	}
+	file_products_v1_product_create_proto_msgTypes[0].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

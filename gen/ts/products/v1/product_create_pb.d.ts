@@ -4,9 +4,13 @@
 import * as jspb from "google-protobuf";
 
 export class ProductCreateTag extends jspb.Message {
+  hasId(): boolean;
+  clearId(): void;
   getId(): number;
   setId(value: number): void;
 
+  hasName(): boolean;
+  clearName(): void;
   getName(): string;
   setName(value: string): void;
 
