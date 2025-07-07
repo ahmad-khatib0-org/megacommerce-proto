@@ -39,23 +39,23 @@ static constexpr ::_pb::Message* PROTOBUF_NONNULL const* PROTOBUF_NULLABLE
 const char descriptor_table_protodef_products_2fv1_2fproducts_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n\032products/v1/products.proto\022\013products.v"
-    "1\032\031products/v1/product.proto2i\n\017Products"
-    "Service\022V\n\rProductCreate\022!.products.v1.P"
-    "roductCreateRequest\032\".products.v1.Produc"
-    "tCreateResponseBw\n\034org.megacommerce.prod"
-    "ucts.v1B\rProductsProtoZEgithub.com/ahmad"
-    "-khatib0-org/megacommerce-proto/gen/go/p"
-    "roducts/v1;v1\370\001\001b\006proto3"
+    "1\032 products/v1/product_create.proto2i\n\017P"
+    "roductsService\022V\n\rProductCreate\022!.produc"
+    "ts.v1.ProductCreateRequest\032\".products.v1"
+    ".ProductCreateResponseBw\n\034org.megacommer"
+    "ce.products.v1B\rProductsProtoZEgithub.co"
+    "m/ahmad-khatib0-org/megacommerce-proto/g"
+    "en/go/products/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_products_2fv1_2fproducts_2eproto_deps[1] = {
-        &::descriptor_table_products_2fv1_2fproduct_2eproto,
+        &::descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
 };
 static ::absl::once_flag descriptor_table_products_2fv1_2fproducts_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproducts_2eproto = {
     false,
     false,
-    304,
+    311,
     descriptor_table_protodef_products_2fv1_2fproducts_2eproto,
     "products/v1/products.proto",
     &descriptor_table_products_2fv1_2fproducts_2eproto_once,

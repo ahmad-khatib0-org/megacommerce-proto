@@ -36,21 +36,21 @@ public final class ProductsProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\032products/v1/products.proto\022\013products.v" +
-      "1\032\031products/v1/product.proto2i\n\017Products" +
-      "Service\022V\n\rProductCreate\022!.products.v1.P" +
-      "roductCreateRequest\032\".products.v1.Produc" +
-      "tCreateResponseBw\n\034org.megacommerce.prod" +
-      "ucts.v1B\rProductsProtoZEgithub.com/ahmad" +
-      "-khatib0-org/megacommerce-proto/gen/go/p" +
-      "roducts/v1;v1\370\001\001b\006proto3"
+      "1\032 products/v1/product_create.proto2i\n\017P" +
+      "roductsService\022V\n\rProductCreate\022!.produc" +
+      "ts.v1.ProductCreateRequest\032\".products.v1" +
+      ".ProductCreateResponseBw\n\034org.megacommer" +
+      "ce.products.v1B\rProductsProtoZEgithub.co" +
+      "m/ahmad-khatib0-org/megacommerce-proto/g" +
+      "en/go/products/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          org.megacommerce.products.v1.ProductProto.getDescriptor(),
+          org.megacommerce.products.v1.ProductCreateProto.getDescriptor(),
         });
     descriptor.resolveAllFeaturesImmutable();
-    org.megacommerce.products.v1.ProductProto.getDescriptor();
+    org.megacommerce.products.v1.ProductCreateProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

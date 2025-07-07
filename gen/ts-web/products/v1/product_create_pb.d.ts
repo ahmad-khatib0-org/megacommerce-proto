@@ -1,0 +1,84 @@
+import * as jspb from 'google-protobuf'
+
+
+
+export class ProductCreateTag extends jspb.Message {
+  getId(): number;
+  setId(value: number): ProductCreateTag;
+
+  getName(): string;
+  setName(value: string): ProductCreateTag;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ProductCreateTag.AsObject;
+  static toObject(includeInstance: boolean, msg: ProductCreateTag): ProductCreateTag.AsObject;
+  static serializeBinaryToWriter(message: ProductCreateTag, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProductCreateTag;
+  static deserializeBinaryFromReader(message: ProductCreateTag, reader: jspb.BinaryReader): ProductCreateTag;
+}
+
+export namespace ProductCreateTag {
+  export type AsObject = {
+    id: number,
+    name: string,
+  }
+}
+
+export class ProductCreateRequest extends jspb.Message {
+  getTitle(): string;
+  setTitle(value: string): ProductCreateRequest;
+
+  getDescription(): string;
+  setDescription(value: string): ProductCreateRequest;
+
+  getSku(): string;
+  setSku(value: string): ProductCreateRequest;
+
+  getPrice(): number;
+  setPrice(value: number): ProductCreateRequest;
+
+  getCurrencyCode(): string;
+  setCurrencyCode(value: string): ProductCreateRequest;
+
+  getTagsList(): Array<ProductCreateTag>;
+  setTagsList(value: Array<ProductCreateTag>): ProductCreateRequest;
+  clearTagsList(): ProductCreateRequest;
+  addTags(value?: ProductCreateTag, index?: number): ProductCreateTag;
+
+  getArEnabled(): boolean;
+  setArEnabled(value: boolean): ProductCreateRequest;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ProductCreateRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ProductCreateRequest): ProductCreateRequest.AsObject;
+  static serializeBinaryToWriter(message: ProductCreateRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProductCreateRequest;
+  static deserializeBinaryFromReader(message: ProductCreateRequest, reader: jspb.BinaryReader): ProductCreateRequest;
+}
+
+export namespace ProductCreateRequest {
+  export type AsObject = {
+    title: string,
+    description: string,
+    sku: string,
+    price: number,
+    currencyCode: string,
+    tagsList: Array<ProductCreateTag.AsObject>,
+    arEnabled: boolean,
+  }
+}
+
+export class ProductCreateResponse extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ProductCreateResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ProductCreateResponse): ProductCreateResponse.AsObject;
+  static serializeBinaryToWriter(message: ProductCreateResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProductCreateResponse;
+  static deserializeBinaryFromReader(message: ProductCreateResponse, reader: jspb.BinaryReader): ProductCreateResponse;
+}
+
+export namespace ProductCreateResponse {
+  export type AsObject = {
+  }
+}
+

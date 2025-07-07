@@ -8,18 +8,27 @@ option java_outer_classname = "ProductProto";
 option java_package = "org.megacommerce.products.v1";
 
 message ProductTag {
-  uint32 id = 1;
-  string name = 2;
+  optional uint32 id = 1;
+  optional string name = 2;
 }
 
-message ProductCreateRequest {
-  string title = 1;
-  string description = 2;
+message ProductMetadata {}
+
+message Product {
+  string id = 1;
+  string user_id = 2;
   string sku = 3;
-  uint32 price = 4;
-  string currency_code = 5;
-  repeated ProductTag tags = 6;
-  bool ar_enabled = 7;
+  uint32 version = 4;
+  string status = 5;
+  string title = 6;
+  string description = 7;
+  string slug = 8;
+  uint32 price = 9;
+  string currency_code = 10;
+  repeated ProductTag tags = 11;
+  ProductMetadata metadata = 12;
+  bool ar_enabled = 13;
+  uint64 created_at = 14;
+  uint64 published_at = 15;
+  uint64 updated_at = 16;
 }
-
-message ProductCreateResponse {}

@@ -5,9 +5,13 @@ import * as jspb from 'google-protobuf'
 export class ProductTag extends jspb.Message {
   getId(): number;
   setId(value: number): ProductTag;
+  hasId(): boolean;
+  clearId(): ProductTag;
 
   getName(): string;
   setName(value: string): ProductTag;
+  hasName(): boolean;
+  clearName(): ProductTag;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductTag.AsObject;
@@ -19,66 +23,114 @@ export class ProductTag extends jspb.Message {
 
 export namespace ProductTag {
   export type AsObject = {
-    id: number,
-    name: string,
+    id?: number,
+    name?: string,
+  }
+
+  export enum IdCase { 
+    _ID_NOT_SET = 0,
+    ID = 1,
+  }
+
+  export enum NameCase { 
+    _NAME_NOT_SET = 0,
+    NAME = 2,
   }
 }
 
-export class ProductCreateRequest extends jspb.Message {
-  getTitle(): string;
-  setTitle(value: string): ProductCreateRequest;
-
-  getDescription(): string;
-  setDescription(value: string): ProductCreateRequest;
-
-  getSku(): string;
-  setSku(value: string): ProductCreateRequest;
-
-  getPrice(): number;
-  setPrice(value: number): ProductCreateRequest;
-
-  getCurrencyCode(): string;
-  setCurrencyCode(value: string): ProductCreateRequest;
-
-  getTagsList(): Array<ProductTag>;
-  setTagsList(value: Array<ProductTag>): ProductCreateRequest;
-  clearTagsList(): ProductCreateRequest;
-  addTags(value?: ProductTag, index?: number): ProductTag;
-
-  getArEnabled(): boolean;
-  setArEnabled(value: boolean): ProductCreateRequest;
-
+export class ProductMetadata extends jspb.Message {
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ProductCreateRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ProductCreateRequest): ProductCreateRequest.AsObject;
-  static serializeBinaryToWriter(message: ProductCreateRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ProductCreateRequest;
-  static deserializeBinaryFromReader(message: ProductCreateRequest, reader: jspb.BinaryReader): ProductCreateRequest;
+  toObject(includeInstance?: boolean): ProductMetadata.AsObject;
+  static toObject(includeInstance: boolean, msg: ProductMetadata): ProductMetadata.AsObject;
+  static serializeBinaryToWriter(message: ProductMetadata, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProductMetadata;
+  static deserializeBinaryFromReader(message: ProductMetadata, reader: jspb.BinaryReader): ProductMetadata;
 }
 
-export namespace ProductCreateRequest {
+export namespace ProductMetadata {
   export type AsObject = {
+  }
+}
+
+export class Product extends jspb.Message {
+  getId(): string;
+  setId(value: string): Product;
+
+  getUserId(): string;
+  setUserId(value: string): Product;
+
+  getSku(): string;
+  setSku(value: string): Product;
+
+  getVersion(): number;
+  setVersion(value: number): Product;
+
+  getStatus(): string;
+  setStatus(value: string): Product;
+
+  getTitle(): string;
+  setTitle(value: string): Product;
+
+  getDescription(): string;
+  setDescription(value: string): Product;
+
+  getSlug(): string;
+  setSlug(value: string): Product;
+
+  getPrice(): number;
+  setPrice(value: number): Product;
+
+  getCurrencyCode(): string;
+  setCurrencyCode(value: string): Product;
+
+  getTagsList(): Array<ProductTag>;
+  setTagsList(value: Array<ProductTag>): Product;
+  clearTagsList(): Product;
+  addTags(value?: ProductTag, index?: number): ProductTag;
+
+  getMetadata(): ProductMetadata | undefined;
+  setMetadata(value?: ProductMetadata): Product;
+  hasMetadata(): boolean;
+  clearMetadata(): Product;
+
+  getArEnabled(): boolean;
+  setArEnabled(value: boolean): Product;
+
+  getCreatedAt(): number;
+  setCreatedAt(value: number): Product;
+
+  getPublishedAt(): number;
+  setPublishedAt(value: number): Product;
+
+  getUpdatedAt(): number;
+  setUpdatedAt(value: number): Product;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Product.AsObject;
+  static toObject(includeInstance: boolean, msg: Product): Product.AsObject;
+  static serializeBinaryToWriter(message: Product, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Product;
+  static deserializeBinaryFromReader(message: Product, reader: jspb.BinaryReader): Product;
+}
+
+export namespace Product {
+  export type AsObject = {
+    id: string,
+    userId: string,
+    sku: string,
+    version: number,
+    status: string,
     title: string,
     description: string,
-    sku: string,
+    slug: string,
     price: number,
     currencyCode: string,
     tagsList: Array<ProductTag.AsObject>,
+    metadata?: ProductMetadata.AsObject,
     arEnabled: boolean,
-  }
-}
-
-export class ProductCreateResponse extends jspb.Message {
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ProductCreateResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: ProductCreateResponse): ProductCreateResponse.AsObject;
-  static serializeBinaryToWriter(message: ProductCreateResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ProductCreateResponse;
-  static deserializeBinaryFromReader(message: ProductCreateResponse, reader: jspb.BinaryReader): ProductCreateResponse;
-}
-
-export namespace ProductCreateResponse {
-  export type AsObject = {
+    createdAt: number,
+    publishedAt: number,
+    updatedAt: number,
   }
 }
 

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package products.v1;
 
-import "products/v1/product.proto";
+import "products/v1/product_create.proto";
 
 option cc_enable_arenas = true;
 option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1";

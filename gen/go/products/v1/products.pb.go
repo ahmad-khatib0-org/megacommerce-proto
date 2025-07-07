@@ -24,7 +24,7 @@ var File_products_v1_products_proto protoreflect.FileDescriptor
 
 const file_products_v1_products_proto_rawDesc = "" +
 	"\n" +
-	"\x1aproducts/v1/products.proto\x12\vproducts.v1\x1a\x19products/v1/product.proto2i\n" +
+	"\x1aproducts/v1/products.proto\x12\vproducts.v1\x1a products/v1/product_create.proto2i\n" +
 	"\x0fProductsService\x12V\n" +
 	"\rProductCreate\x12!.products.v1.ProductCreateRequest\x1a\".products.v1.ProductCreateResponseBw\n" +
 	"\x1corg.megacommerce.products.v1B\rProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01b\x06proto3"
@@ -48,7 +48,7 @@ func file_products_v1_products_proto_init() {
 	if File_products_v1_products_proto != nil {
 		return
 	}
-	file_products_v1_product_proto_init()
+	file_products_v1_product_create_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

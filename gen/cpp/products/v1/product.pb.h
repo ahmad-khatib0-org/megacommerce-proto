@@ -55,14 +55,14 @@ extern const ::google::protobuf::internal::DescriptorTable descriptor_table_prod
 }  // extern "C"
 namespace products {
 namespace v1 {
-class ProductCreateRequest;
-struct ProductCreateRequestDefaultTypeInternal;
-extern ProductCreateRequestDefaultTypeInternal _ProductCreateRequest_default_instance_;
-extern const ::google::protobuf::internal::ClassDataFull ProductCreateRequest_class_data_;
-class ProductCreateResponse;
-struct ProductCreateResponseDefaultTypeInternal;
-extern ProductCreateResponseDefaultTypeInternal _ProductCreateResponse_default_instance_;
-extern const ::google::protobuf::internal::ClassDataFull ProductCreateResponse_class_data_;
+class Product;
+struct ProductDefaultTypeInternal;
+extern ProductDefaultTypeInternal _Product_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull Product_class_data_;
+class ProductMetadata;
+struct ProductMetadataDefaultTypeInternal;
+extern ProductMetadataDefaultTypeInternal _ProductMetadata_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull ProductMetadata_class_data_;
 class ProductTag;
 struct ProductTagDefaultTypeInternal;
 extern ProductTagDefaultTypeInternal _ProductTag_default_instance_;
@@ -228,7 +228,8 @@ class ProductTag final : public ::google::protobuf::Message
     kNameFieldNumber = 2,
     kIdFieldNumber = 1,
   };
-  // string name = 2 [json_name = "name"];
+  // optional string name = 2 [json_name = "name"];
+  bool has_name() const;
   void clear_name() ;
   const ::std::string& name() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -243,7 +244,8 @@ class ProductTag final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_name();
 
   public:
-  // uint32 id = 1 [json_name = "id"];
+  // optional uint32 id = 1 [json_name = "id"];
+  bool has_id() const;
   void clear_id() ;
   ::uint32_t id() const;
   void set_id(::uint32_t value);
@@ -290,29 +292,29 @@ class ProductTag final : public ::google::protobuf::Message
 extern const ::google::protobuf::internal::ClassDataFull ProductTag_class_data_;
 // -------------------------------------------------------------------
 
-class ProductCreateResponse final : public ::google::protobuf::internal::ZeroFieldsBase
-/* @@protoc_insertion_point(class_definition:products.v1.ProductCreateResponse) */ {
+class ProductMetadata final : public ::google::protobuf::internal::ZeroFieldsBase
+/* @@protoc_insertion_point(class_definition:products.v1.ProductMetadata) */ {
  public:
-  inline ProductCreateResponse() : ProductCreateResponse(nullptr) {}
+  inline ProductMetadata() : ProductMetadata(nullptr) {}
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(ProductCreateResponse* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+  void operator delete(ProductMetadata* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
     SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(ProductCreateResponse));
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(ProductMetadata));
   }
 #endif
 
   template <typename = void>
-  explicit PROTOBUF_CONSTEXPR ProductCreateResponse(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR ProductMetadata(::google::protobuf::internal::ConstantInitialized);
 
-  inline ProductCreateResponse(const ProductCreateResponse& from) : ProductCreateResponse(nullptr, from) {}
-  inline ProductCreateResponse(ProductCreateResponse&& from) noexcept
-      : ProductCreateResponse(nullptr, ::std::move(from)) {}
-  inline ProductCreateResponse& operator=(const ProductCreateResponse& from) {
+  inline ProductMetadata(const ProductMetadata& from) : ProductMetadata(nullptr, from) {}
+  inline ProductMetadata(ProductMetadata&& from) noexcept
+      : ProductMetadata(nullptr, ::std::move(from)) {}
+  inline ProductMetadata& operator=(const ProductMetadata& from) {
     CopyFrom(from);
     return *this;
   }
-  inline ProductCreateResponse& operator=(ProductCreateResponse&& from) noexcept {
+  inline ProductMetadata& operator=(ProductMetadata&& from) noexcept {
     if (this == &from) return *this;
     if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
       InternalSwap(&from);
@@ -340,13 +342,13 @@ class ProductCreateResponse final : public ::google::protobuf::internal::ZeroFie
   static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const ProductCreateResponse& default_instance() {
-    return *reinterpret_cast<const ProductCreateResponse*>(
-        &_ProductCreateResponse_default_instance_);
+  static const ProductMetadata& default_instance() {
+    return *reinterpret_cast<const ProductMetadata*>(
+        &_ProductMetadata_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 2;
-  friend void swap(ProductCreateResponse& a, ProductCreateResponse& b) { a.Swap(&b); }
-  inline void Swap(ProductCreateResponse* PROTOBUF_NONNULL other) {
+  static constexpr int kIndexInFileMessages = 1;
+  friend void swap(ProductMetadata& a, ProductMetadata& b) { a.Swap(&b); }
+  inline void Swap(ProductMetadata* PROTOBUF_NONNULL other) {
     if (other == this) return;
     if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
       InternalSwap(other);
@@ -354,7 +356,7 @@ class ProductCreateResponse final : public ::google::protobuf::internal::ZeroFie
       ::google::protobuf::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(ProductCreateResponse* PROTOBUF_NONNULL other) {
+  void UnsafeArenaSwap(ProductMetadata* PROTOBUF_NONNULL other) {
     if (other == this) return;
     ABSL_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -362,15 +364,15 @@ class ProductCreateResponse final : public ::google::protobuf::internal::ZeroFie
 
   // implements Message ----------------------------------------------
 
-  ProductCreateResponse* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::internal::ZeroFieldsBase::DefaultConstruct<ProductCreateResponse>(arena);
+  ProductMetadata* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::internal::ZeroFieldsBase::DefaultConstruct<ProductMetadata>(arena);
   }
   using ::google::protobuf::internal::ZeroFieldsBase::CopyFrom;
-  inline void CopyFrom(const ProductCreateResponse& from) {
+  inline void CopyFrom(const ProductMetadata& from) {
     ::google::protobuf::internal::ZeroFieldsBase::CopyImpl(*this, from);
   }
   using ::google::protobuf::internal::ZeroFieldsBase::MergeFrom;
-  void MergeFrom(const ProductCreateResponse& from) {
+  void MergeFrom(const ProductMetadata& from) {
     ::google::protobuf::internal::ZeroFieldsBase::MergeImpl(*this, from);
   }
 
@@ -381,14 +383,14 @@ class ProductCreateResponse final : public ::google::protobuf::internal::ZeroFie
  private:
   template <typename T>
   friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() { return "products.v1.ProductCreateResponse"; }
+  static ::absl::string_view FullMessageName() { return "products.v1.ProductMetadata"; }
 
  protected:
-  explicit ProductCreateResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  ProductCreateResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ProductCreateResponse& from);
-  ProductCreateResponse(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ProductCreateResponse&& from) noexcept
-      : ProductCreateResponse(arena) {
+  explicit ProductMetadata(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  ProductMetadata(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ProductMetadata& from);
+  ProductMetadata(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ProductMetadata&& from) noexcept
+      : ProductMetadata(arena) {
     *this = ::std::move(from);
   }
   const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
@@ -404,7 +406,7 @@ class ProductCreateResponse final : public ::google::protobuf::internal::ZeroFie
   // nested types ----------------------------------------------------
 
   // accessors -------------------------------------------------------
-  // @@protoc_insertion_point(class_scope:products.v1.ProductCreateResponse)
+  // @@protoc_insertion_point(class_scope:products.v1.ProductMetadata)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
@@ -427,39 +429,39 @@ class ProductCreateResponse final : public ::google::protobuf::internal::ZeroFie
     inline explicit Impl_(
         ::google::protobuf::internal::InternalVisibility visibility,
         ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const ProductCreateResponse& from_msg);
+        const ProductMetadata& from_msg);
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   friend struct ::TableStruct_products_2fv1_2fproduct_2eproto;
 };
 
-extern const ::google::protobuf::internal::ClassDataFull ProductCreateResponse_class_data_;
+extern const ::google::protobuf::internal::ClassDataFull ProductMetadata_class_data_;
 // -------------------------------------------------------------------
 
-class ProductCreateRequest final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:products.v1.ProductCreateRequest) */ {
+class Product final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:products.v1.Product) */ {
  public:
-  inline ProductCreateRequest() : ProductCreateRequest(nullptr) {}
-  ~ProductCreateRequest() PROTOBUF_FINAL;
+  inline Product() : Product(nullptr) {}
+  ~Product() PROTOBUF_FINAL;
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(ProductCreateRequest* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+  void operator delete(Product* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
     SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(ProductCreateRequest));
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(Product));
   }
 #endif
 
   template <typename = void>
-  explicit PROTOBUF_CONSTEXPR ProductCreateRequest(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR Product(::google::protobuf::internal::ConstantInitialized);
 
-  inline ProductCreateRequest(const ProductCreateRequest& from) : ProductCreateRequest(nullptr, from) {}
-  inline ProductCreateRequest(ProductCreateRequest&& from) noexcept
-      : ProductCreateRequest(nullptr, ::std::move(from)) {}
-  inline ProductCreateRequest& operator=(const ProductCreateRequest& from) {
+  inline Product(const Product& from) : Product(nullptr, from) {}
+  inline Product(Product&& from) noexcept
+      : Product(nullptr, ::std::move(from)) {}
+  inline Product& operator=(const Product& from) {
     CopyFrom(from);
     return *this;
   }
-  inline ProductCreateRequest& operator=(ProductCreateRequest&& from) noexcept {
+  inline Product& operator=(Product&& from) noexcept {
     if (this == &from) return *this;
     if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
       InternalSwap(&from);
@@ -487,13 +489,13 @@ class ProductCreateRequest final : public ::google::protobuf::Message
   static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const ProductCreateRequest& default_instance() {
-    return *reinterpret_cast<const ProductCreateRequest*>(
-        &_ProductCreateRequest_default_instance_);
+  static const Product& default_instance() {
+    return *reinterpret_cast<const Product*>(
+        &_Product_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 1;
-  friend void swap(ProductCreateRequest& a, ProductCreateRequest& b) { a.Swap(&b); }
-  inline void Swap(ProductCreateRequest* PROTOBUF_NONNULL other) {
+  static constexpr int kIndexInFileMessages = 2;
+  friend void swap(Product& a, Product& b) { a.Swap(&b); }
+  inline void Swap(Product* PROTOBUF_NONNULL other) {
     if (other == this) return;
     if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
       InternalSwap(other);
@@ -501,7 +503,7 @@ class ProductCreateRequest final : public ::google::protobuf::Message
       ::google::protobuf::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(ProductCreateRequest* PROTOBUF_NONNULL other) {
+  void UnsafeArenaSwap(Product* PROTOBUF_NONNULL other) {
     if (other == this) return;
     ABSL_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -509,13 +511,13 @@ class ProductCreateRequest final : public ::google::protobuf::Message
 
   // implements Message ----------------------------------------------
 
-  ProductCreateRequest* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<ProductCreateRequest>(arena);
+  Product* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<Product>(arena);
   }
   using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const ProductCreateRequest& from);
+  void CopyFrom(const Product& from);
   using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const ProductCreateRequest& from) { ProductCreateRequest::MergeImpl(*this, from); }
+  void MergeFrom(const Product& from) { Product::MergeImpl(*this, from); }
 
   private:
   static void MergeImpl(::google::protobuf::MessageLite& to_msg,
@@ -551,18 +553,18 @@ class ProductCreateRequest final : public ::google::protobuf::Message
   private:
   void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static void SharedDtor(MessageLite& self);
-  void InternalSwap(ProductCreateRequest* PROTOBUF_NONNULL other);
+  void InternalSwap(Product* PROTOBUF_NONNULL other);
  private:
   template <typename T>
   friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() { return "products.v1.ProductCreateRequest"; }
+  static ::absl::string_view FullMessageName() { return "products.v1.Product"; }
 
  protected:
-  explicit ProductCreateRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  ProductCreateRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ProductCreateRequest& from);
-  ProductCreateRequest(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ProductCreateRequest&& from) noexcept
-      : ProductCreateRequest(arena) {
+  explicit Product(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  Product(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Product& from);
+  Product(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, Product&& from) noexcept
+      : Product(arena) {
     *this = ::std::move(from);
   }
   const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
@@ -579,15 +581,24 @@ class ProductCreateRequest final : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
   enum : int {
-    kTagsFieldNumber = 6,
-    kTitleFieldNumber = 1,
-    kDescriptionFieldNumber = 2,
+    kTagsFieldNumber = 11,
+    kIdFieldNumber = 1,
+    kUserIdFieldNumber = 2,
     kSkuFieldNumber = 3,
-    kCurrencyCodeFieldNumber = 5,
-    kPriceFieldNumber = 4,
-    kArEnabledFieldNumber = 7,
+    kStatusFieldNumber = 5,
+    kTitleFieldNumber = 6,
+    kDescriptionFieldNumber = 7,
+    kSlugFieldNumber = 8,
+    kCurrencyCodeFieldNumber = 10,
+    kMetadataFieldNumber = 12,
+    kVersionFieldNumber = 4,
+    kPriceFieldNumber = 9,
+    kCreatedAtFieldNumber = 14,
+    kPublishedAtFieldNumber = 15,
+    kUpdatedAtFieldNumber = 16,
+    kArEnabledFieldNumber = 13,
   };
-  // repeated .products.v1.ProductTag tags = 6 [json_name = "tags"];
+  // repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];
   int tags_size() const;
   private:
   int _internal_tags_size() const;
@@ -604,34 +615,34 @@ class ProductCreateRequest final : public ::google::protobuf::Message
   const ::products::v1::ProductTag& tags(int index) const;
   ::products::v1::ProductTag* PROTOBUF_NONNULL add_tags();
   const ::google::protobuf::RepeatedPtrField<::products::v1::ProductTag>& tags() const;
-  // string title = 1 [json_name = "title"];
-  void clear_title() ;
-  const ::std::string& title() const;
+  // string id = 1 [json_name = "id"];
+  void clear_id() ;
+  const ::std::string& id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_title(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_title();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_title();
-  void set_allocated_title(::std::string* PROTOBUF_NULLABLE value);
+  void set_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_id();
+  void set_allocated_id(::std::string* PROTOBUF_NULLABLE value);
 
   private:
-  const ::std::string& _internal_title() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_title(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_title();
+  const ::std::string& _internal_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_id();
 
   public:
-  // string description = 2 [json_name = "description"];
-  void clear_description() ;
-  const ::std::string& description() const;
+  // string user_id = 2 [json_name = "userId"];
+  void clear_user_id() ;
+  const ::std::string& user_id() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_description(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_description();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_description();
-  void set_allocated_description(::std::string* PROTOBUF_NULLABLE value);
+  void set_user_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_user_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_user_id();
+  void set_allocated_user_id(::std::string* PROTOBUF_NULLABLE value);
 
   private:
-  const ::std::string& _internal_description() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_description(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_description();
+  const ::std::string& _internal_user_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_user_id();
 
   public:
   // string sku = 3 [json_name = "sku"];
@@ -649,7 +660,67 @@ class ProductCreateRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_sku();
 
   public:
-  // string currency_code = 5 [json_name = "currencyCode"];
+  // string status = 5 [json_name = "status"];
+  void clear_status() ;
+  const ::std::string& status() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_status(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_status();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_status();
+  void set_allocated_status(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_status() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_status(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_status();
+
+  public:
+  // string title = 6 [json_name = "title"];
+  void clear_title() ;
+  const ::std::string& title() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_title(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_title();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_title();
+  void set_allocated_title(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_title() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_title(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_title();
+
+  public:
+  // string description = 7 [json_name = "description"];
+  void clear_description() ;
+  const ::std::string& description() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_description(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_description();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_description();
+  void set_allocated_description(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_description() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_description(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_description();
+
+  public:
+  // string slug = 8 [json_name = "slug"];
+  void clear_slug() ;
+  const ::std::string& slug() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_slug(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_slug();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_slug();
+  void set_allocated_slug(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_slug() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_slug(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_slug();
+
+  public:
+  // string currency_code = 10 [json_name = "currencyCode"];
   void clear_currency_code() ;
   const ::std::string& currency_code() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -664,7 +735,32 @@ class ProductCreateRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_currency_code();
 
   public:
-  // uint32 price = 4 [json_name = "price"];
+  // .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];
+  bool has_metadata() const;
+  void clear_metadata() ;
+  const ::products::v1::ProductMetadata& metadata() const;
+  [[nodiscard]] ::products::v1::ProductMetadata* PROTOBUF_NULLABLE release_metadata();
+  ::products::v1::ProductMetadata* PROTOBUF_NONNULL mutable_metadata();
+  void set_allocated_metadata(::products::v1::ProductMetadata* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_metadata(::products::v1::ProductMetadata* PROTOBUF_NULLABLE value);
+  ::products::v1::ProductMetadata* PROTOBUF_NULLABLE unsafe_arena_release_metadata();
+
+  private:
+  const ::products::v1::ProductMetadata& _internal_metadata() const;
+  ::products::v1::ProductMetadata* PROTOBUF_NONNULL _internal_mutable_metadata();
+
+  public:
+  // uint32 version = 4 [json_name = "version"];
+  void clear_version() ;
+  ::uint32_t version() const;
+  void set_version(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_version() const;
+  void _internal_set_version(::uint32_t value);
+
+  public:
+  // uint32 price = 9 [json_name = "price"];
   void clear_price() ;
   ::uint32_t price() const;
   void set_price(::uint32_t value);
@@ -674,7 +770,37 @@ class ProductCreateRequest final : public ::google::protobuf::Message
   void _internal_set_price(::uint32_t value);
 
   public:
-  // bool ar_enabled = 7 [json_name = "arEnabled"];
+  // uint64 created_at = 14 [json_name = "createdAt"];
+  void clear_created_at() ;
+  ::uint64_t created_at() const;
+  void set_created_at(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_created_at() const;
+  void _internal_set_created_at(::uint64_t value);
+
+  public:
+  // uint64 published_at = 15 [json_name = "publishedAt"];
+  void clear_published_at() ;
+  ::uint64_t published_at() const;
+  void set_published_at(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_published_at() const;
+  void _internal_set_published_at(::uint64_t value);
+
+  public:
+  // uint64 updated_at = 16 [json_name = "updatedAt"];
+  void clear_updated_at() ;
+  ::uint64_t updated_at() const;
+  void set_updated_at(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_updated_at() const;
+  void _internal_set_updated_at(::uint64_t value);
+
+  public:
+  // bool ar_enabled = 13 [json_name = "arEnabled"];
   void clear_ar_enabled() ;
   bool ar_enabled() const;
   void set_ar_enabled(bool value);
@@ -684,12 +810,12 @@ class ProductCreateRequest final : public ::google::protobuf::Message
   void _internal_set_ar_enabled(bool value);
 
   public:
-  // @@protoc_insertion_point(class_scope:products.v1.ProductCreateRequest)
+  // @@protoc_insertion_point(class_scope:products.v1.Product)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<3, 7,
-                                   1, 73,
+  static const ::google::protobuf::internal::TcParseTable<4, 16,
+                                   2, 95,
                                    2>
       _table_;
 
@@ -707,15 +833,24 @@ class ProductCreateRequest final : public ::google::protobuf::Message
     inline explicit Impl_(
         ::google::protobuf::internal::InternalVisibility visibility,
         ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const ProductCreateRequest& from_msg);
+        const Product& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::RepeatedPtrField< ::products::v1::ProductTag > tags_;
+    ::google::protobuf::internal::ArenaStringPtr id_;
+    ::google::protobuf::internal::ArenaStringPtr user_id_;
+    ::google::protobuf::internal::ArenaStringPtr sku_;
+    ::google::protobuf::internal::ArenaStringPtr status_;
     ::google::protobuf::internal::ArenaStringPtr title_;
     ::google::protobuf::internal::ArenaStringPtr description_;
-    ::google::protobuf::internal::ArenaStringPtr sku_;
+    ::google::protobuf::internal::ArenaStringPtr slug_;
     ::google::protobuf::internal::ArenaStringPtr currency_code_;
+    ::products::v1::ProductMetadata* PROTOBUF_NULLABLE metadata_;
+    ::uint32_t version_;
     ::uint32_t price_;
+    ::uint64_t created_at_;
+    ::uint64_t published_at_;
+    ::uint64_t updated_at_;
     bool ar_enabled_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -723,7 +858,7 @@ class ProductCreateRequest final : public ::google::protobuf::Message
   friend struct ::TableStruct_products_2fv1_2fproduct_2eproto;
 };
 
-extern const ::google::protobuf::internal::ClassDataFull ProductCreateRequest_class_data_;
+extern const ::google::protobuf::internal::ClassDataFull Product_class_data_;
 
 // ===================================================================
 
@@ -741,7 +876,11 @@ extern const ::google::protobuf::internal::ClassDataFull ProductCreateRequest_cl
 
 // ProductTag
 
-// uint32 id = 1 [json_name = "id"];
+// optional uint32 id = 1 [json_name = "id"];
+inline bool ProductTag::has_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
 inline void ProductTag::clear_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.id_ = 0u;
@@ -765,7 +904,11 @@ inline void ProductTag::_internal_set_id(::uint32_t value) {
   _impl_.id_ = value;
 }
 
-// string name = 2 [json_name = "name"];
+// optional string name = 2 [json_name = "name"];
+inline bool ProductTag::has_name() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
 inline void ProductTag::clear_name() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.name_.ClearToEmpty();
@@ -832,179 +975,183 @@ inline void ProductTag::set_allocated_name(::std::string* PROTOBUF_NULLABLE valu
 
 // -------------------------------------------------------------------
 
-// ProductCreateRequest
+// ProductMetadata
 
-// string title = 1 [json_name = "title"];
-inline void ProductCreateRequest::clear_title() {
+// -------------------------------------------------------------------
+
+// Product
+
+// string id = 1 [json_name = "id"];
+inline void Product::clear_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.title_.ClearToEmpty();
+  _impl_.id_.ClearToEmpty();
   _impl_._has_bits_[0] &= ~0x00000001u;
 }
-inline const ::std::string& ProductCreateRequest::title() const
+inline const ::std::string& Product::id() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:products.v1.ProductCreateRequest.title)
-  return _internal_title();
+  // @@protoc_insertion_point(field_get:products.v1.Product.id)
+  return _internal_id();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void ProductCreateRequest::set_title(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void Product::set_id(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.title_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:products.v1.ProductCreateRequest.title)
+  _impl_.id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:products.v1.Product.id)
 }
-inline ::std::string* PROTOBUF_NONNULL ProductCreateRequest::mutable_title()
+inline ::std::string* PROTOBUF_NONNULL Product::mutable_id()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_title();
-  // @@protoc_insertion_point(field_mutable:products.v1.ProductCreateRequest.title)
+  ::std::string* _s = _internal_mutable_id();
+  // @@protoc_insertion_point(field_mutable:products.v1.Product.id)
   return _s;
 }
-inline const ::std::string& ProductCreateRequest::_internal_title() const {
+inline const ::std::string& Product::_internal_id() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.title_.Get();
+  return _impl_.id_.Get();
 }
-inline void ProductCreateRequest::_internal_set_title(const ::std::string& value) {
+inline void Product::_internal_set_id(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.title_.Set(value, GetArena());
+  _impl_.id_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL ProductCreateRequest::_internal_mutable_title() {
+inline ::std::string* PROTOBUF_NONNULL Product::_internal_mutable_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
-  return _impl_.title_.Mutable( GetArena());
+  return _impl_.id_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE ProductCreateRequest::release_title() {
+inline ::std::string* PROTOBUF_NULLABLE Product::release_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:products.v1.ProductCreateRequest.title)
+  // @@protoc_insertion_point(field_release:products.v1.Product.id)
   if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
     return nullptr;
   }
   _impl_._has_bits_[0] &= ~0x00000001u;
-  auto* released = _impl_.title_.Release();
+  auto* released = _impl_.id_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.title_.Set("", GetArena());
+    _impl_.id_.Set("", GetArena());
   }
   return released;
 }
-inline void ProductCreateRequest::set_allocated_title(::std::string* PROTOBUF_NULLABLE value) {
+inline void Product::set_allocated_id(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000001u;
   } else {
     _impl_._has_bits_[0] &= ~0x00000001u;
   }
-  _impl_.title_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.title_.IsDefault()) {
-    _impl_.title_.Set("", GetArena());
+  _impl_.id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.id_.IsDefault()) {
+    _impl_.id_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductCreateRequest.title)
+  // @@protoc_insertion_point(field_set_allocated:products.v1.Product.id)
 }
 
-// string description = 2 [json_name = "description"];
-inline void ProductCreateRequest::clear_description() {
+// string user_id = 2 [json_name = "userId"];
+inline void Product::clear_user_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.description_.ClearToEmpty();
+  _impl_.user_id_.ClearToEmpty();
   _impl_._has_bits_[0] &= ~0x00000002u;
 }
-inline const ::std::string& ProductCreateRequest::description() const
+inline const ::std::string& Product::user_id() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:products.v1.ProductCreateRequest.description)
-  return _internal_description();
+  // @@protoc_insertion_point(field_get:products.v1.Product.user_id)
+  return _internal_user_id();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void ProductCreateRequest::set_description(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void Product::set_user_id(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.description_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:products.v1.ProductCreateRequest.description)
+  _impl_.user_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:products.v1.Product.user_id)
 }
-inline ::std::string* PROTOBUF_NONNULL ProductCreateRequest::mutable_description()
+inline ::std::string* PROTOBUF_NONNULL Product::mutable_user_id()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_description();
-  // @@protoc_insertion_point(field_mutable:products.v1.ProductCreateRequest.description)
+  ::std::string* _s = _internal_mutable_user_id();
+  // @@protoc_insertion_point(field_mutable:products.v1.Product.user_id)
   return _s;
 }
-inline const ::std::string& ProductCreateRequest::_internal_description() const {
+inline const ::std::string& Product::_internal_user_id() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.description_.Get();
+  return _impl_.user_id_.Get();
 }
-inline void ProductCreateRequest::_internal_set_description(const ::std::string& value) {
+inline void Product::_internal_set_user_id(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.description_.Set(value, GetArena());
+  _impl_.user_id_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL ProductCreateRequest::_internal_mutable_description() {
+inline ::std::string* PROTOBUF_NONNULL Product::_internal_mutable_user_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000002u;
-  return _impl_.description_.Mutable( GetArena());
+  return _impl_.user_id_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE ProductCreateRequest::release_description() {
+inline ::std::string* PROTOBUF_NULLABLE Product::release_user_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:products.v1.ProductCreateRequest.description)
+  // @@protoc_insertion_point(field_release:products.v1.Product.user_id)
   if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
     return nullptr;
   }
   _impl_._has_bits_[0] &= ~0x00000002u;
-  auto* released = _impl_.description_.Release();
+  auto* released = _impl_.user_id_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.description_.Set("", GetArena());
+    _impl_.user_id_.Set("", GetArena());
   }
   return released;
 }
-inline void ProductCreateRequest::set_allocated_description(::std::string* PROTOBUF_NULLABLE value) {
+inline void Product::set_allocated_user_id(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000002u;
   } else {
     _impl_._has_bits_[0] &= ~0x00000002u;
   }
-  _impl_.description_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.description_.IsDefault()) {
-    _impl_.description_.Set("", GetArena());
+  _impl_.user_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.user_id_.IsDefault()) {
+    _impl_.user_id_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductCreateRequest.description)
+  // @@protoc_insertion_point(field_set_allocated:products.v1.Product.user_id)
 }
 
 // string sku = 3 [json_name = "sku"];
-inline void ProductCreateRequest::clear_sku() {
+inline void Product::clear_sku() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.sku_.ClearToEmpty();
   _impl_._has_bits_[0] &= ~0x00000004u;
 }
-inline const ::std::string& ProductCreateRequest::sku() const
+inline const ::std::string& Product::sku() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:products.v1.ProductCreateRequest.sku)
+  // @@protoc_insertion_point(field_get:products.v1.Product.sku)
   return _internal_sku();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void ProductCreateRequest::set_sku(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void Product::set_sku(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.sku_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:products.v1.ProductCreateRequest.sku)
+  // @@protoc_insertion_point(field_set:products.v1.Product.sku)
 }
-inline ::std::string* PROTOBUF_NONNULL ProductCreateRequest::mutable_sku()
+inline ::std::string* PROTOBUF_NONNULL Product::mutable_sku()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::std::string* _s = _internal_mutable_sku();
-  // @@protoc_insertion_point(field_mutable:products.v1.ProductCreateRequest.sku)
+  // @@protoc_insertion_point(field_mutable:products.v1.Product.sku)
   return _s;
 }
-inline const ::std::string& ProductCreateRequest::_internal_sku() const {
+inline const ::std::string& Product::_internal_sku() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.sku_.Get();
 }
-inline void ProductCreateRequest::_internal_set_sku(const ::std::string& value) {
+inline void Product::_internal_set_sku(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.sku_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL ProductCreateRequest::_internal_mutable_sku() {
+inline ::std::string* PROTOBUF_NONNULL Product::_internal_mutable_sku() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000004u;
   return _impl_.sku_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE ProductCreateRequest::release_sku() {
+inline ::std::string* PROTOBUF_NULLABLE Product::release_sku() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:products.v1.ProductCreateRequest.sku)
+  // @@protoc_insertion_point(field_release:products.v1.Product.sku)
   if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
     return nullptr;
   }
@@ -1015,7 +1162,7 @@ inline ::std::string* PROTOBUF_NULLABLE ProductCreateRequest::release_sku() {
   }
   return released;
 }
-inline void ProductCreateRequest::set_allocated_sku(::std::string* PROTOBUF_NULLABLE value) {
+inline void Product::set_allocated_sku(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000004u;
@@ -1026,175 +1173,625 @@ inline void ProductCreateRequest::set_allocated_sku(::std::string* PROTOBUF_NULL
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.sku_.IsDefault()) {
     _impl_.sku_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductCreateRequest.sku)
+  // @@protoc_insertion_point(field_set_allocated:products.v1.Product.sku)
 }
 
-// uint32 price = 4 [json_name = "price"];
-inline void ProductCreateRequest::clear_price() {
+// uint32 version = 4 [json_name = "version"];
+inline void Product::clear_version() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.price_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000010u;
+  _impl_.version_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000200u;
 }
-inline ::uint32_t ProductCreateRequest::price() const {
-  // @@protoc_insertion_point(field_get:products.v1.ProductCreateRequest.price)
-  return _internal_price();
+inline ::uint32_t Product::version() const {
+  // @@protoc_insertion_point(field_get:products.v1.Product.version)
+  return _internal_version();
 }
-inline void ProductCreateRequest::set_price(::uint32_t value) {
-  _internal_set_price(value);
-  _impl_._has_bits_[0] |= 0x00000010u;
-  // @@protoc_insertion_point(field_set:products.v1.ProductCreateRequest.price)
+inline void Product::set_version(::uint32_t value) {
+  _internal_set_version(value);
+  _impl_._has_bits_[0] |= 0x00000200u;
+  // @@protoc_insertion_point(field_set:products.v1.Product.version)
 }
-inline ::uint32_t ProductCreateRequest::_internal_price() const {
+inline ::uint32_t Product::_internal_version() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.price_;
+  return _impl_.version_;
 }
-inline void ProductCreateRequest::_internal_set_price(::uint32_t value) {
+inline void Product::_internal_set_version(::uint32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.price_ = value;
+  _impl_.version_ = value;
 }
 
-// string currency_code = 5 [json_name = "currencyCode"];
-inline void ProductCreateRequest::clear_currency_code() {
+// string status = 5 [json_name = "status"];
+inline void Product::clear_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.currency_code_.ClearToEmpty();
+  _impl_.status_.ClearToEmpty();
   _impl_._has_bits_[0] &= ~0x00000008u;
 }
-inline const ::std::string& ProductCreateRequest::currency_code() const
+inline const ::std::string& Product::status() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:products.v1.ProductCreateRequest.currency_code)
-  return _internal_currency_code();
+  // @@protoc_insertion_point(field_get:products.v1.Product.status)
+  return _internal_status();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void ProductCreateRequest::set_currency_code(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void Product::set_status(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000008u;
-  _impl_.currency_code_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:products.v1.ProductCreateRequest.currency_code)
+  _impl_.status_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:products.v1.Product.status)
 }
-inline ::std::string* PROTOBUF_NONNULL ProductCreateRequest::mutable_currency_code()
+inline ::std::string* PROTOBUF_NONNULL Product::mutable_status()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_currency_code();
-  // @@protoc_insertion_point(field_mutable:products.v1.ProductCreateRequest.currency_code)
+  ::std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:products.v1.Product.status)
   return _s;
 }
-inline const ::std::string& ProductCreateRequest::_internal_currency_code() const {
+inline const ::std::string& Product::_internal_status() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.currency_code_.Get();
+  return _impl_.status_.Get();
 }
-inline void ProductCreateRequest::_internal_set_currency_code(const ::std::string& value) {
+inline void Product::_internal_set_status(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000008u;
-  _impl_.currency_code_.Set(value, GetArena());
+  _impl_.status_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL ProductCreateRequest::_internal_mutable_currency_code() {
+inline ::std::string* PROTOBUF_NONNULL Product::_internal_mutable_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000008u;
-  return _impl_.currency_code_.Mutable( GetArena());
+  return _impl_.status_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE ProductCreateRequest::release_currency_code() {
+inline ::std::string* PROTOBUF_NULLABLE Product::release_status() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:products.v1.ProductCreateRequest.currency_code)
+  // @@protoc_insertion_point(field_release:products.v1.Product.status)
   if ((_impl_._has_bits_[0] & 0x00000008u) == 0) {
     return nullptr;
   }
   _impl_._has_bits_[0] &= ~0x00000008u;
-  auto* released = _impl_.currency_code_.Release();
+  auto* released = _impl_.status_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.currency_code_.Set("", GetArena());
+    _impl_.status_.Set("", GetArena());
   }
   return released;
 }
-inline void ProductCreateRequest::set_allocated_currency_code(::std::string* PROTOBUF_NULLABLE value) {
+inline void Product::set_allocated_status(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000008u;
   } else {
     _impl_._has_bits_[0] &= ~0x00000008u;
   }
+  _impl_.status_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.status_.IsDefault()) {
+    _impl_.status_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.Product.status)
+}
+
+// string title = 6 [json_name = "title"];
+inline void Product::clear_title() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.title_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000010u;
+}
+inline const ::std::string& Product::title() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.Product.title)
+  return _internal_title();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void Product::set_title(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_.title_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:products.v1.Product.title)
+}
+inline ::std::string* PROTOBUF_NONNULL Product::mutable_title()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_title();
+  // @@protoc_insertion_point(field_mutable:products.v1.Product.title)
+  return _s;
+}
+inline const ::std::string& Product::_internal_title() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.title_.Get();
+}
+inline void Product::_internal_set_title(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_.title_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL Product::_internal_mutable_title() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000010u;
+  return _impl_.title_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE Product::release_title() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.Product.title)
+  if ((_impl_._has_bits_[0] & 0x00000010u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000010u;
+  auto* released = _impl_.title_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.title_.Set("", GetArena());
+  }
+  return released;
+}
+inline void Product::set_allocated_title(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000010u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000010u;
+  }
+  _impl_.title_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.title_.IsDefault()) {
+    _impl_.title_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.Product.title)
+}
+
+// string description = 7 [json_name = "description"];
+inline void Product::clear_description() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.description_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000020u;
+}
+inline const ::std::string& Product::description() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.Product.description)
+  return _internal_description();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void Product::set_description(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_.description_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:products.v1.Product.description)
+}
+inline ::std::string* PROTOBUF_NONNULL Product::mutable_description()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_description();
+  // @@protoc_insertion_point(field_mutable:products.v1.Product.description)
+  return _s;
+}
+inline const ::std::string& Product::_internal_description() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.description_.Get();
+}
+inline void Product::_internal_set_description(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_.description_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL Product::_internal_mutable_description() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000020u;
+  return _impl_.description_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE Product::release_description() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.Product.description)
+  if ((_impl_._has_bits_[0] & 0x00000020u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000020u;
+  auto* released = _impl_.description_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.description_.Set("", GetArena());
+  }
+  return released;
+}
+inline void Product::set_allocated_description(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000020u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000020u;
+  }
+  _impl_.description_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.description_.IsDefault()) {
+    _impl_.description_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.Product.description)
+}
+
+// string slug = 8 [json_name = "slug"];
+inline void Product::clear_slug() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.slug_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000040u;
+}
+inline const ::std::string& Product::slug() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.Product.slug)
+  return _internal_slug();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void Product::set_slug(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_.slug_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:products.v1.Product.slug)
+}
+inline ::std::string* PROTOBUF_NONNULL Product::mutable_slug()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_slug();
+  // @@protoc_insertion_point(field_mutable:products.v1.Product.slug)
+  return _s;
+}
+inline const ::std::string& Product::_internal_slug() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.slug_.Get();
+}
+inline void Product::_internal_set_slug(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_.slug_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL Product::_internal_mutable_slug() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000040u;
+  return _impl_.slug_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE Product::release_slug() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.Product.slug)
+  if ((_impl_._has_bits_[0] & 0x00000040u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000040u;
+  auto* released = _impl_.slug_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.slug_.Set("", GetArena());
+  }
+  return released;
+}
+inline void Product::set_allocated_slug(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000040u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000040u;
+  }
+  _impl_.slug_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.slug_.IsDefault()) {
+    _impl_.slug_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.Product.slug)
+}
+
+// uint32 price = 9 [json_name = "price"];
+inline void Product::clear_price() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.price_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000400u;
+}
+inline ::uint32_t Product::price() const {
+  // @@protoc_insertion_point(field_get:products.v1.Product.price)
+  return _internal_price();
+}
+inline void Product::set_price(::uint32_t value) {
+  _internal_set_price(value);
+  _impl_._has_bits_[0] |= 0x00000400u;
+  // @@protoc_insertion_point(field_set:products.v1.Product.price)
+}
+inline ::uint32_t Product::_internal_price() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.price_;
+}
+inline void Product::_internal_set_price(::uint32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.price_ = value;
+}
+
+// string currency_code = 10 [json_name = "currencyCode"];
+inline void Product::clear_currency_code() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.currency_code_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000080u;
+}
+inline const ::std::string& Product::currency_code() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.Product.currency_code)
+  return _internal_currency_code();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void Product::set_currency_code(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_.currency_code_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:products.v1.Product.currency_code)
+}
+inline ::std::string* PROTOBUF_NONNULL Product::mutable_currency_code()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_currency_code();
+  // @@protoc_insertion_point(field_mutable:products.v1.Product.currency_code)
+  return _s;
+}
+inline const ::std::string& Product::_internal_currency_code() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.currency_code_.Get();
+}
+inline void Product::_internal_set_currency_code(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_.currency_code_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL Product::_internal_mutable_currency_code() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000080u;
+  return _impl_.currency_code_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE Product::release_currency_code() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.Product.currency_code)
+  if ((_impl_._has_bits_[0] & 0x00000080u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000080u;
+  auto* released = _impl_.currency_code_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.currency_code_.Set("", GetArena());
+  }
+  return released;
+}
+inline void Product::set_allocated_currency_code(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000080u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000080u;
+  }
   _impl_.currency_code_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.currency_code_.IsDefault()) {
     _impl_.currency_code_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductCreateRequest.currency_code)
+  // @@protoc_insertion_point(field_set_allocated:products.v1.Product.currency_code)
 }
 
-// repeated .products.v1.ProductTag tags = 6 [json_name = "tags"];
-inline int ProductCreateRequest::_internal_tags_size() const {
+// repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];
+inline int Product::_internal_tags_size() const {
   return _internal_tags().size();
 }
-inline int ProductCreateRequest::tags_size() const {
+inline int Product::tags_size() const {
   return _internal_tags_size();
 }
-inline void ProductCreateRequest::clear_tags() {
+inline void Product::clear_tags() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.tags_.Clear();
 }
-inline ::products::v1::ProductTag* PROTOBUF_NONNULL ProductCreateRequest::mutable_tags(int index)
+inline ::products::v1::ProductTag* PROTOBUF_NONNULL Product::mutable_tags(int index)
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_mutable:products.v1.ProductCreateRequest.tags)
+  // @@protoc_insertion_point(field_mutable:products.v1.Product.tags)
   return _internal_mutable_tags()->Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField<::products::v1::ProductTag>* PROTOBUF_NONNULL ProductCreateRequest::mutable_tags()
+inline ::google::protobuf::RepeatedPtrField<::products::v1::ProductTag>* PROTOBUF_NONNULL Product::mutable_tags()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_mutable_list:products.v1.ProductCreateRequest.tags)
+  // @@protoc_insertion_point(field_mutable_list:products.v1.Product.tags)
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _internal_mutable_tags();
 }
-inline const ::products::v1::ProductTag& ProductCreateRequest::tags(int index) const
+inline const ::products::v1::ProductTag& Product::tags(int index) const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:products.v1.ProductCreateRequest.tags)
+  // @@protoc_insertion_point(field_get:products.v1.Product.tags)
   return _internal_tags().Get(index);
 }
-inline ::products::v1::ProductTag* PROTOBUF_NONNULL ProductCreateRequest::add_tags()
+inline ::products::v1::ProductTag* PROTOBUF_NONNULL Product::add_tags()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   ::products::v1::ProductTag* _add = _internal_mutable_tags()->Add();
-  // @@protoc_insertion_point(field_add:products.v1.ProductCreateRequest.tags)
+  // @@protoc_insertion_point(field_add:products.v1.Product.tags)
   return _add;
 }
-inline const ::google::protobuf::RepeatedPtrField<::products::v1::ProductTag>& ProductCreateRequest::tags() const
+inline const ::google::protobuf::RepeatedPtrField<::products::v1::ProductTag>& Product::tags() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_list:products.v1.ProductCreateRequest.tags)
+  // @@protoc_insertion_point(field_list:products.v1.Product.tags)
   return _internal_tags();
 }
 inline const ::google::protobuf::RepeatedPtrField<::products::v1::ProductTag>&
-ProductCreateRequest::_internal_tags() const {
+Product::_internal_tags() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.tags_;
 }
 inline ::google::protobuf::RepeatedPtrField<::products::v1::ProductTag>* PROTOBUF_NONNULL
-ProductCreateRequest::_internal_mutable_tags() {
+Product::_internal_mutable_tags() {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return &_impl_.tags_;
 }
 
-// bool ar_enabled = 7 [json_name = "arEnabled"];
-inline void ProductCreateRequest::clear_ar_enabled() {
+// .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];
+inline bool Product::has_metadata() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.metadata_ != nullptr);
+  return value;
+}
+inline void Product::clear_metadata() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.metadata_ != nullptr) _impl_.metadata_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000100u;
+}
+inline const ::products::v1::ProductMetadata& Product::_internal_metadata() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::products::v1::ProductMetadata* p = _impl_.metadata_;
+  return p != nullptr ? *p : reinterpret_cast<const ::products::v1::ProductMetadata&>(::products::v1::_ProductMetadata_default_instance_);
+}
+inline const ::products::v1::ProductMetadata& Product::metadata() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.Product.metadata)
+  return _internal_metadata();
+}
+inline void Product::unsafe_arena_set_allocated_metadata(
+    ::products::v1::ProductMetadata* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.metadata_);
+  }
+  _impl_.metadata_ = reinterpret_cast<::products::v1::ProductMetadata*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000100u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000100u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:products.v1.Product.metadata)
+}
+inline ::products::v1::ProductMetadata* PROTOBUF_NULLABLE Product::release_metadata() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00000100u;
+  ::products::v1::ProductMetadata* released = _impl_.metadata_;
+  _impl_.metadata_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::products::v1::ProductMetadata* PROTOBUF_NULLABLE Product::unsafe_arena_release_metadata() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.Product.metadata)
+
+  _impl_._has_bits_[0] &= ~0x00000100u;
+  ::products::v1::ProductMetadata* temp = _impl_.metadata_;
+  _impl_.metadata_ = nullptr;
+  return temp;
+}
+inline ::products::v1::ProductMetadata* PROTOBUF_NONNULL Product::_internal_mutable_metadata() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.metadata_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::products::v1::ProductMetadata>(GetArena());
+    _impl_.metadata_ = reinterpret_cast<::products::v1::ProductMetadata*>(p);
+  }
+  return _impl_.metadata_;
+}
+inline ::products::v1::ProductMetadata* PROTOBUF_NONNULL Product::mutable_metadata()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00000100u;
+  ::products::v1::ProductMetadata* _msg = _internal_mutable_metadata();
+  // @@protoc_insertion_point(field_mutable:products.v1.Product.metadata)
+  return _msg;
+}
+inline void Product::set_allocated_metadata(::products::v1::ProductMetadata* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.metadata_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = value->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000100u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000100u;
+  }
+
+  _impl_.metadata_ = reinterpret_cast<::products::v1::ProductMetadata*>(value);
+  // @@protoc_insertion_point(field_set_allocated:products.v1.Product.metadata)
+}
+
+// bool ar_enabled = 13 [json_name = "arEnabled"];
+inline void Product::clear_ar_enabled() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.ar_enabled_ = false;
-  _impl_._has_bits_[0] &= ~0x00000020u;
+  _impl_._has_bits_[0] &= ~0x00004000u;
 }
-inline bool ProductCreateRequest::ar_enabled() const {
-  // @@protoc_insertion_point(field_get:products.v1.ProductCreateRequest.ar_enabled)
+inline bool Product::ar_enabled() const {
+  // @@protoc_insertion_point(field_get:products.v1.Product.ar_enabled)
   return _internal_ar_enabled();
 }
-inline void ProductCreateRequest::set_ar_enabled(bool value) {
+inline void Product::set_ar_enabled(bool value) {
   _internal_set_ar_enabled(value);
-  _impl_._has_bits_[0] |= 0x00000020u;
-  // @@protoc_insertion_point(field_set:products.v1.ProductCreateRequest.ar_enabled)
+  _impl_._has_bits_[0] |= 0x00004000u;
+  // @@protoc_insertion_point(field_set:products.v1.Product.ar_enabled)
 }
-inline bool ProductCreateRequest::_internal_ar_enabled() const {
+inline bool Product::_internal_ar_enabled() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.ar_enabled_;
 }
-inline void ProductCreateRequest::_internal_set_ar_enabled(bool value) {
+inline void Product::_internal_set_ar_enabled(bool value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.ar_enabled_ = value;
 }
 
-// -------------------------------------------------------------------
+// uint64 created_at = 14 [json_name = "createdAt"];
+inline void Product::clear_created_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.created_at_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000800u;
+}
+inline ::uint64_t Product::created_at() const {
+  // @@protoc_insertion_point(field_get:products.v1.Product.created_at)
+  return _internal_created_at();
+}
+inline void Product::set_created_at(::uint64_t value) {
+  _internal_set_created_at(value);
+  _impl_._has_bits_[0] |= 0x00000800u;
+  // @@protoc_insertion_point(field_set:products.v1.Product.created_at)
+}
+inline ::uint64_t Product::_internal_created_at() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.created_at_;
+}
+inline void Product::_internal_set_created_at(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.created_at_ = value;
+}
 
-// ProductCreateResponse
+// uint64 published_at = 15 [json_name = "publishedAt"];
+inline void Product::clear_published_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.published_at_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00001000u;
+}
+inline ::uint64_t Product::published_at() const {
+  // @@protoc_insertion_point(field_get:products.v1.Product.published_at)
+  return _internal_published_at();
+}
+inline void Product::set_published_at(::uint64_t value) {
+  _internal_set_published_at(value);
+  _impl_._has_bits_[0] |= 0x00001000u;
+  // @@protoc_insertion_point(field_set:products.v1.Product.published_at)
+}
+inline ::uint64_t Product::_internal_published_at() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.published_at_;
+}
+inline void Product::_internal_set_published_at(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.published_at_ = value;
+}
+
+// uint64 updated_at = 16 [json_name = "updatedAt"];
+inline void Product::clear_updated_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.updated_at_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00002000u;
+}
+inline ::uint64_t Product::updated_at() const {
+  // @@protoc_insertion_point(field_get:products.v1.Product.updated_at)
+  return _internal_updated_at();
+}
+inline void Product::set_updated_at(::uint64_t value) {
+  _internal_set_updated_at(value);
+  _impl_._has_bits_[0] |= 0x00002000u;
+  // @@protoc_insertion_point(field_set:products.v1.Product.updated_at)
+}
+inline ::uint64_t Product::_internal_updated_at() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.updated_at_;
+}
+inline void Product::_internal_set_updated_at(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.updated_at_ = value;
+}
 
 #ifdef __GNUC__
 #pragma GCC diagnostic pop

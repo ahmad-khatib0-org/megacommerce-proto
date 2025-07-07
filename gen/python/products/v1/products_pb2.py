@@ -22,10 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from products.v1 import product_pb2 as products_dot_v1_dot_product__pb2
+from products.v1 import product_create_pb2 as products_dot_v1_dot_product__create__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1aproducts/v1/products.proto\x12\x0bproducts.v1\x1a\x19products/v1/product.proto2i\n\x0fProductsService\x12V\n\rProductCreate\x12!.products.v1.ProductCreateRequest\x1a\".products.v1.ProductCreateResponseBw\n\x1corg.megacommerce.products.v1B\rProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1aproducts/v1/products.proto\x12\x0bproducts.v1\x1a products/v1/product_create.proto2i\n\x0fProductsService\x12V\n\rProductCreate\x12!.products.v1.ProductCreateRequest\x1a\".products.v1.ProductCreateResponseBw\n\x1corg.megacommerce.products.v1B\rProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,6 +33,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'products.v1.products_pb2', 
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\034org.megacommerce.products.v1B\rProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\370\001\001'
-  _globals['_PRODUCTSSERVICE']._serialized_start=70
-  _globals['_PRODUCTSSERVICE']._serialized_end=175
+  _globals['_PRODUCTSSERVICE']._serialized_start=77
+  _globals['_PRODUCTSSERVICE']._serialized_end=182
 # @@protoc_insertion_point(module_scope)

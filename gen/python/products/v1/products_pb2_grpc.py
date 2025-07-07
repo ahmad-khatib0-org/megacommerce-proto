@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-from products.v1 import product_pb2 as products_dot_v1_dot_product__pb2
+from products.v1 import product_create_pb2 as products_dot_v1_dot_product__create__pb2
 
 GRPC_GENERATED_VERSION = '1.71.0'
 GRPC_VERSION = grpc.__version__
@@ -36,8 +36,8 @@ class ProductsServiceStub(object):
         """
         self.ProductCreate = channel.unary_unary(
                 '/products.v1.ProductsService/ProductCreate',
-                request_serializer=products_dot_v1_dot_product__pb2.ProductCreateRequest.SerializeToString,
-                response_deserializer=products_dot_v1_dot_product__pb2.ProductCreateResponse.FromString,
+                request_serializer=products_dot_v1_dot_product__create__pb2.ProductCreateRequest.SerializeToString,
+                response_deserializer=products_dot_v1_dot_product__create__pb2.ProductCreateResponse.FromString,
                 _registered_method=True)
 
 
@@ -55,8 +55,8 @@ def add_ProductsServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ProductCreate': grpc.unary_unary_rpc_method_handler(
                     servicer.ProductCreate,
-                    request_deserializer=products_dot_v1_dot_product__pb2.ProductCreateRequest.FromString,
-                    response_serializer=products_dot_v1_dot_product__pb2.ProductCreateResponse.SerializeToString,
+                    request_deserializer=products_dot_v1_dot_product__create__pb2.ProductCreateRequest.FromString,
+                    response_serializer=products_dot_v1_dot_product__create__pb2.ProductCreateResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -84,8 +84,8 @@ class ProductsService(object):
             request,
             target,
             '/products.v1.ProductsService/ProductCreate',
-            products_dot_v1_dot_product__pb2.ProductCreateRequest.SerializeToString,
-            products_dot_v1_dot_product__pb2.ProductCreateResponse.FromString,
+            products_dot_v1_dot_product__create__pb2.ProductCreateRequest.SerializeToString,
+            products_dot_v1_dot_product__create__pb2.ProductCreateResponse.FromString,
             options,
             channel_credentials,
             insecure,

@@ -21,5 +21,5 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var products_v1_product_pb = require('../../products/v1/product_pb.js');
-goog.object.extend(proto, products_v1_product_pb);
+var products_v1_product_create_pb = require('../../products/v1/product_create_pb.js');
+goog.object.extend(proto, products_v1_product_create_pb);

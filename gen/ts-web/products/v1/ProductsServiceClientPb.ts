@@ -17,7 +17,7 @@
 
 import * as grpcWeb from 'grpc-web';
 
-import * as products_v1_product_pb from '../../products/v1/product_pb'; // proto import: "products/v1/product.proto"
+import * as products_v1_product_create_pb from '../../products/v1/product_create_pb'; // proto import: "products/v1/product_create.proto"
 
 
 export class ProductsServiceClient {
@@ -42,29 +42,29 @@ export class ProductsServiceClient {
   methodDescriptorProductCreate = new grpcWeb.MethodDescriptor(
     '/products.v1.ProductsService/ProductCreate',
     grpcWeb.MethodType.UNARY,
-    products_v1_product_pb.ProductCreateRequest,
-    products_v1_product_pb.ProductCreateResponse,
-    (request: products_v1_product_pb.ProductCreateRequest) => {
+    products_v1_product_create_pb.ProductCreateRequest,
+    products_v1_product_create_pb.ProductCreateResponse,
+    (request: products_v1_product_create_pb.ProductCreateRequest) => {
       return request.serializeBinary();
     },
-    products_v1_product_pb.ProductCreateResponse.deserializeBinary
+    products_v1_product_create_pb.ProductCreateResponse.deserializeBinary
   );
 
   productCreate(
-    request: products_v1_product_pb.ProductCreateRequest,
-    metadata?: grpcWeb.Metadata | null): Promise<products_v1_product_pb.ProductCreateResponse>;
+    request: products_v1_product_create_pb.ProductCreateRequest,
+    metadata?: grpcWeb.Metadata | null): Promise<products_v1_product_create_pb.ProductCreateResponse>;
 
   productCreate(
-    request: products_v1_product_pb.ProductCreateRequest,
+    request: products_v1_product_create_pb.ProductCreateRequest,
     metadata: grpcWeb.Metadata | null,
     callback: (err: grpcWeb.RpcError,
-               response: products_v1_product_pb.ProductCreateResponse) => void): grpcWeb.ClientReadableStream<products_v1_product_pb.ProductCreateResponse>;
+               response: products_v1_product_create_pb.ProductCreateResponse) => void): grpcWeb.ClientReadableStream<products_v1_product_create_pb.ProductCreateResponse>;
 
   productCreate(
-    request: products_v1_product_pb.ProductCreateRequest,
+    request: products_v1_product_create_pb.ProductCreateRequest,
     metadata?: grpcWeb.Metadata | null,
     callback?: (err: grpcWeb.RpcError,
-               response: products_v1_product_pb.ProductCreateResponse) => void) {
+               response: products_v1_product_create_pb.ProductCreateResponse) => void) {
     if (callback !== undefined) {
       return this.client_.rpcCall(
         this.hostname_ +
