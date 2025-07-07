@@ -198,28 +198,30 @@ const char descriptor_table_protodef_products_2fv1_2fproduct_2eproto[] ABSL_ATTR
     "\n\031products/v1/product.proto\022\013products.v1"
     "\"J\n\nProductTag\022\023\n\002id\030\001 \001(\rH\000R\002id\210\001\001\022\027\n\004n"
     "ame\030\002 \001(\tH\001R\004name\210\001\001B\005\n\003_idB\007\n\005_name\"\021\n\017"
-    "ProductMetadata\"\344\003\n\007Product\022\016\n\002id\030\001 \001(\tR"
+    "ProductMetadata\"\240\004\n\007Product\022\016\n\002id\030\001 \001(\tR"
     "\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\020\n\003sku\030\003 \001("
     "\tR\003sku\022\030\n\007version\030\004 \001(\rR\007version\022\026\n\006stat"
     "us\030\005 \001(\tR\006status\022\024\n\005title\030\006 \001(\tR\005title\022 "
     "\n\013description\030\007 \001(\tR\013description\022\022\n\004slug"
     "\030\010 \001(\tR\004slug\022\024\n\005price\030\t \001(\rR\005price\022#\n\rcu"
     "rrency_code\030\n \001(\tR\014currencyCode\022+\n\004tags\030"
-    "\013 \003(\0132\027.products.v1.ProductTagR\004tags\0228\n\010"
+    "\013 \003(\0132\027.products.v1.ProductTagR\004tags\022=\n\010"
     "metadata\030\014 \001(\0132\034.products.v1.ProductMeta"
-    "dataR\010metadata\022\035\n\nar_enabled\030\r \001(\010R\tarEn"
-    "abled\022\035\n\ncreated_at\030\016 \001(\004R\tcreatedAt\022!\n\014"
-    "published_at\030\017 \001(\004R\013publishedAt\022\035\n\nupdat"
-    "ed_at\030\020 \001(\004R\tupdatedAtBv\n\034org.megacommer"
-    "ce.products.v1B\014ProductProtoZEgithub.com"
-    "/ahmad-khatib0-org/megacommerce-proto/ge"
-    "n/go/products/v1;v1\370\001\001b\006proto3"
+    "dataH\000R\010metadata\210\001\001\022\035\n\nar_enabled\030\r \001(\010R"
+    "\tarEnabled\022\035\n\ncreated_at\030\016 \001(\004R\tcreatedA"
+    "t\022&\n\014published_at\030\017 \001(\004H\001R\013publishedAt\210\001"
+    "\001\022\"\n\nupdated_at\030\020 \001(\004H\002R\tupdatedAt\210\001\001B\013\n"
+    "\t_metadataB\017\n\r_published_atB\r\n\013_updated_"
+    "atBv\n\034org.megacommerce.products.v1B\014Prod"
+    "uctProtoZEgithub.com/ahmad-khatib0-org/m"
+    "egacommerce-proto/gen/go/products/v1;v1\370"
+    "\001\001b\006proto3"
 };
 static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_2eproto = {
     false,
     false,
-    750,
+    810,
     descriptor_table_protodef_products_2fv1_2fproduct_2eproto,
     "products/v1/product.proto",
     &descriptor_table_products_2fv1_2fproduct_2eproto_once,
@@ -803,7 +805,7 @@ Product::_table_ = {
     ::_pbi::TcParser::GetTable<::products::v1::Product>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // uint64 updated_at = 16 [json_name = "updatedAt"];
+    // optional uint64 updated_at = 16 [json_name = "updatedAt"];
     {::_pbi::TcParser::FastV64S2,
      {384, 13, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.updated_at_)}},
     // string id = 1 [json_name = "id"];
@@ -839,7 +841,7 @@ Product::_table_ = {
     // repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];
     {::_pbi::TcParser::FastMtR1,
      {90, 63, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.tags_)}},
-    // .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];
+    // optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];
     {::_pbi::TcParser::FastMtS1,
      {98, 8, 1, PROTOBUF_FIELD_OFFSET(Product, _impl_.metadata_)}},
     // bool ar_enabled = 13 [json_name = "arEnabled"];
@@ -848,7 +850,7 @@ Product::_table_ = {
     // uint64 created_at = 14 [json_name = "createdAt"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Product, _impl_.created_at_), 11>(),
      {112, 11, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.created_at_)}},
-    // uint64 published_at = 15 [json_name = "publishedAt"];
+    // optional uint64 published_at = 15 [json_name = "publishedAt"];
     {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Product, _impl_.published_at_), 12>(),
      {120, 12, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.published_at_)}},
   }}, {{
@@ -887,7 +889,7 @@ Product::_table_ = {
     // repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];
     {PROTOBUF_FIELD_OFFSET(Product, _impl_.tags_), -1, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];
+    // optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];
     {PROTOBUF_FIELD_OFFSET(Product, _impl_.metadata_), _Internal::kHasBitsOffset + 8, 1,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
     // bool ar_enabled = 13 [json_name = "arEnabled"];
@@ -896,10 +898,10 @@ Product::_table_ = {
     // uint64 created_at = 14 [json_name = "createdAt"];
     {PROTOBUF_FIELD_OFFSET(Product, _impl_.created_at_), _Internal::kHasBitsOffset + 11, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
-    // uint64 published_at = 15 [json_name = "publishedAt"];
+    // optional uint64 published_at = 15 [json_name = "publishedAt"];
     {PROTOBUF_FIELD_OFFSET(Product, _impl_.published_at_), _Internal::kHasBitsOffset + 12, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
-    // uint64 updated_at = 16 [json_name = "updatedAt"];
+    // optional uint64 updated_at = 16 [json_name = "updatedAt"];
     {PROTOBUF_FIELD_OFFSET(Product, _impl_.updated_at_), _Internal::kHasBitsOffset + 13, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
   }},
@@ -1093,7 +1095,7 @@ PROTOBUF_NOINLINE void Product::Clear() {
   }
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];
+  // optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];
   if ((cached_has_bits & 0x00000100u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
         12, *this_._impl_.metadata_, this_._impl_.metadata_->GetCachedSize(), target,
@@ -1118,22 +1120,18 @@ PROTOBUF_NOINLINE void Product::Clear() {
     }
   }
 
-  // uint64 published_at = 15 [json_name = "publishedAt"];
+  // optional uint64 published_at = 15 [json_name = "publishedAt"];
   if ((cached_has_bits & 0x00001000u) != 0) {
-    if (this_._internal_published_at() != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
-          15, this_._internal_published_at(), target);
-    }
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+        15, this_._internal_published_at(), target);
   }
 
-  // uint64 updated_at = 16 [json_name = "updatedAt"];
+  // optional uint64 updated_at = 16 [json_name = "updatedAt"];
   if ((cached_has_bits & 0x00002000u) != 0) {
-    if (this_._internal_updated_at() != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
-          16, this_._internal_updated_at(), target);
-    }
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+        16, this_._internal_updated_at(), target);
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -1229,7 +1227,7 @@ PROTOBUF_NOINLINE void Product::Clear() {
     }
   }
   if ((cached_has_bits & 0x00007f00u) != 0) {
-    // .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];
+    // optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];
     if ((cached_has_bits & 0x00000100u) != 0) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.metadata_);
@@ -1255,19 +1253,15 @@ PROTOBUF_NOINLINE void Product::Clear() {
             this_._internal_created_at());
       }
     }
-    // uint64 published_at = 15 [json_name = "publishedAt"];
+    // optional uint64 published_at = 15 [json_name = "publishedAt"];
     if ((cached_has_bits & 0x00001000u) != 0) {
-      if (this_._internal_published_at() != 0) {
-        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
-            this_._internal_published_at());
-      }
+      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+          this_._internal_published_at());
     }
-    // uint64 updated_at = 16 [json_name = "updatedAt"];
+    // optional uint64 updated_at = 16 [json_name = "updatedAt"];
     if ((cached_has_bits & 0x00002000u) != 0) {
-      if (this_._internal_updated_at() != 0) {
-        total_size += 2 + ::_pbi::WireFormatLite::UInt64Size(
-                                        this_._internal_updated_at());
-      }
+      total_size += 2 + ::_pbi::WireFormatLite::UInt64Size(
+                                      this_._internal_updated_at());
     }
     // bool ar_enabled = 13 [json_name = "arEnabled"];
     if ((cached_has_bits & 0x00004000u) != 0) {
@@ -1391,14 +1385,10 @@ void Product::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google:
       }
     }
     if ((cached_has_bits & 0x00001000u) != 0) {
-      if (from._internal_published_at() != 0) {
-        _this->_impl_.published_at_ = from._impl_.published_at_;
-      }
+      _this->_impl_.published_at_ = from._impl_.published_at_;
     }
     if ((cached_has_bits & 0x00002000u) != 0) {
-      if (from._internal_updated_at() != 0) {
-        _this->_impl_.updated_at_ = from._impl_.updated_at_;
-      }
+      _this->_impl_.updated_at_ = from._impl_.updated_at_;
     }
     if ((cached_has_bits & 0x00004000u) != 0) {
       if (from._internal_ar_enabled() != 0) {

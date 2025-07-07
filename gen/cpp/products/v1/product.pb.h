@@ -735,7 +735,7 @@ class Product final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_currency_code();
 
   public:
-  // .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];
+  // optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];
   bool has_metadata() const;
   void clear_metadata() ;
   const ::products::v1::ProductMetadata& metadata() const;
@@ -780,7 +780,8 @@ class Product final : public ::google::protobuf::Message
   void _internal_set_created_at(::uint64_t value);
 
   public:
-  // uint64 published_at = 15 [json_name = "publishedAt"];
+  // optional uint64 published_at = 15 [json_name = "publishedAt"];
+  bool has_published_at() const;
   void clear_published_at() ;
   ::uint64_t published_at() const;
   void set_published_at(::uint64_t value);
@@ -790,7 +791,8 @@ class Product final : public ::google::protobuf::Message
   void _internal_set_published_at(::uint64_t value);
 
   public:
-  // uint64 updated_at = 16 [json_name = "updatedAt"];
+  // optional uint64 updated_at = 16 [json_name = "updatedAt"];
+  bool has_updated_at() const;
   void clear_updated_at() ;
   ::uint64_t updated_at() const;
   void set_updated_at(::uint64_t value);
@@ -1599,7 +1601,7 @@ Product::_internal_mutable_tags() {
   return &_impl_.tags_;
 }
 
-// .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];
+// optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];
 inline bool Product::has_metadata() const {
   bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.metadata_ != nullptr);
@@ -1745,7 +1747,11 @@ inline void Product::_internal_set_created_at(::uint64_t value) {
   _impl_.created_at_ = value;
 }
 
-// uint64 published_at = 15 [json_name = "publishedAt"];
+// optional uint64 published_at = 15 [json_name = "publishedAt"];
+inline bool Product::has_published_at() const {
+  bool value = (_impl_._has_bits_[0] & 0x00001000u) != 0;
+  return value;
+}
 inline void Product::clear_published_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.published_at_ = ::uint64_t{0u};
@@ -1769,7 +1775,11 @@ inline void Product::_internal_set_published_at(::uint64_t value) {
   _impl_.published_at_ = value;
 }
 
-// uint64 updated_at = 16 [json_name = "updatedAt"];
+// optional uint64 updated_at = 16 [json_name = "updatedAt"];
+inline bool Product::has_updated_at() const {
+  bool value = (_impl_._has_bits_[0] & 0x00002000u) != 0;
+  return value;
+}
 inline void Product::clear_updated_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.updated_at_ = ::uint64_t{0u};

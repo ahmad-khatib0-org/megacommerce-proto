@@ -122,11 +122,11 @@ type Product struct {
 	Price         uint32                 `protobuf:"varint,9,opt,name=price,proto3" json:"price,omitempty"`
 	CurrencyCode  string                 `protobuf:"bytes,10,opt,name=currency_code,json=currencyCode,proto3" json:"currency_code,omitempty"`
 	Tags          []*ProductTag          `protobuf:"bytes,11,rep,name=tags,proto3" json:"tags,omitempty"`
-	Metadata      *ProductMetadata       `protobuf:"bytes,12,opt,name=metadata,proto3" json:"metadata,omitempty"`
+	Metadata      *ProductMetadata       `protobuf:"bytes,12,opt,name=metadata,proto3,oneof" json:"metadata,omitempty"`
 	ArEnabled     bool                   `protobuf:"varint,13,opt,name=ar_enabled,json=arEnabled,proto3" json:"ar_enabled,omitempty"`
 	CreatedAt     uint64                 `protobuf:"varint,14,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	PublishedAt   uint64                 `protobuf:"varint,15,opt,name=published_at,json=publishedAt,proto3" json:"published_at,omitempty"`
-	UpdatedAt     uint64                 `protobuf:"varint,16,opt,name=updated_at,json=updatedAt,proto3" json:"updated_at,omitempty"`
+	PublishedAt   *uint64                `protobuf:"varint,15,opt,name=published_at,json=publishedAt,proto3,oneof" json:"published_at,omitempty"`
+	UpdatedAt     *uint64                `protobuf:"varint,16,opt,name=updated_at,json=updatedAt,proto3,oneof" json:"updated_at,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -260,15 +260,15 @@ func (x *Product) GetCreatedAt() uint64 {
 }
 
 func (x *Product) GetPublishedAt() uint64 {
-	if x != nil {
-		return x.PublishedAt
+	if x != nil && x.PublishedAt != nil {
+		return *x.PublishedAt
 	}
 	return 0
 }
 
 func (x *Product) GetUpdatedAt() uint64 {
-	if x != nil {
-		return x.UpdatedAt
+	if x != nil && x.UpdatedAt != nil {
+		return *x.UpdatedAt
 	}
 	return 0
 }
@@ -284,7 +284,7 @@ const file_products_v1_product_proto_rawDesc = "" +
 	"\x04name\x18\x02 \x01(\tH\x01R\x04name\x88\x01\x01B\x05\n" +
 	"\x03_idB\a\n" +
 	"\x05_name\"\x11\n" +
-	"\x0fProductMetadata\"\xe4\x03\n" +
+	"\x0fProductMetadata\"\xa0\x04\n" +
 	"\aProduct\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
 	"\auser_id\x18\x02 \x01(\tR\x06userId\x12\x10\n" +
@@ -297,15 +297,18 @@ const file_products_v1_product_proto_rawDesc = "" +
 	"\x05price\x18\t \x01(\rR\x05price\x12#\n" +
 	"\rcurrency_code\x18\n" +
 	" \x01(\tR\fcurrencyCode\x12+\n" +
-	"\x04tags\x18\v \x03(\v2\x17.products.v1.ProductTagR\x04tags\x128\n" +
-	"\bmetadata\x18\f \x01(\v2\x1c.products.v1.ProductMetadataR\bmetadata\x12\x1d\n" +
+	"\x04tags\x18\v \x03(\v2\x17.products.v1.ProductTagR\x04tags\x12=\n" +
+	"\bmetadata\x18\f \x01(\v2\x1c.products.v1.ProductMetadataH\x00R\bmetadata\x88\x01\x01\x12\x1d\n" +
 	"\n" +
 	"ar_enabled\x18\r \x01(\bR\tarEnabled\x12\x1d\n" +
 	"\n" +
-	"created_at\x18\x0e \x01(\x04R\tcreatedAt\x12!\n" +
-	"\fpublished_at\x18\x0f \x01(\x04R\vpublishedAt\x12\x1d\n" +
+	"created_at\x18\x0e \x01(\x04R\tcreatedAt\x12&\n" +
+	"\fpublished_at\x18\x0f \x01(\x04H\x01R\vpublishedAt\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"updated_at\x18\x10 \x01(\x04R\tupdatedAtBv\n" +
+	"updated_at\x18\x10 \x01(\x04H\x02R\tupdatedAt\x88\x01\x01B\v\n" +
+	"\t_metadataB\x0f\n" +
+	"\r_published_atB\r\n" +
+	"\v_updated_atBv\n" +
 	"\x1corg.megacommerce.products.v1B\fProductProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
@@ -342,6 +345,7 @@ func file_products_v1_product_proto_init() {
 		return
 	}
 	file_products_v1_product_proto_msgTypes[0].OneofWrappers = []any{}
+	file_products_v1_product_proto_msgTypes[2].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

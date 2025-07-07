@@ -26,9 +26,9 @@ message Product {
   uint32 price = 9;
   string currency_code = 10;
   repeated ProductTag tags = 11;
-  ProductMetadata metadata = 12;
+  optional ProductMetadata metadata = 12;
   bool ar_enabled = 13;
   uint64 created_at = 14;
-  uint64 published_at = 15;
-  uint64 updated_at = 16;
+  optional uint64 published_at = 15;
+  optional uint64 updated_at = 16;
 }

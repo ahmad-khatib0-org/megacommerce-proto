@@ -438,8 +438,8 @@ tagsList: jspb.Message.toObjectList(msg.getTagsList(),
 metadata: (f = msg.getMetadata()) && proto.products.v1.ProductMetadata.toObject(includeInstance, f),
 arEnabled: jspb.Message.getBooleanFieldWithDefault(msg, 13, false),
 createdAt: jspb.Message.getFieldWithDefault(msg, 14, 0),
-publishedAt: jspb.Message.getFieldWithDefault(msg, 15, 0),
-updatedAt: jspb.Message.getFieldWithDefault(msg, 16, 0)
+publishedAt: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
+updatedAt: (f = jspb.Message.getField(msg, 16)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -671,15 +671,15 @@ proto.products.v1.Product.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = message.getPublishedAt();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 15));
+  if (f != null) {
     writer.writeUint64(
       15,
       f
     );
   }
-  f = message.getUpdatedAt();
-  if (f !== 0) {
+  f = /** @type {number} */ (jspb.Message.getField(message, 16));
+  if (f != null) {
     writer.writeUint64(
       16,
       f
@@ -993,7 +993,25 @@ proto.products.v1.Product.prototype.getPublishedAt = function() {
  * @return {!proto.products.v1.Product} returns this
  */
 proto.products.v1.Product.prototype.setPublishedAt = function(value) {
-  return jspb.Message.setProto3IntField(this, 15, value);
+  return jspb.Message.setField(this, 15, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.products.v1.Product} returns this
+ */
+proto.products.v1.Product.prototype.clearPublishedAt = function() {
+  return jspb.Message.setField(this, 15, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.products.v1.Product.prototype.hasPublishedAt = function() {
+  return jspb.Message.getField(this, 15) != null;
 };
 
 
@@ -1011,7 +1029,25 @@ proto.products.v1.Product.prototype.getUpdatedAt = function() {
  * @return {!proto.products.v1.Product} returns this
  */
 proto.products.v1.Product.prototype.setUpdatedAt = function(value) {
-  return jspb.Message.setProto3IntField(this, 16, value);
+  return jspb.Message.setField(this, 16, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.products.v1.Product} returns this
+ */
+proto.products.v1.Product.prototype.clearUpdatedAt = function() {
+  return jspb.Message.setField(this, 16, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.products.v1.Product.prototype.hasUpdatedAt = function() {
+  return jspb.Message.getField(this, 16) != null;
 };
 
 

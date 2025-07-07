@@ -101,9 +101,13 @@ export class Product extends jspb.Message {
 
   getPublishedAt(): number;
   setPublishedAt(value: number): Product;
+  hasPublishedAt(): boolean;
+  clearPublishedAt(): Product;
 
   getUpdatedAt(): number;
   setUpdatedAt(value: number): Product;
+  hasUpdatedAt(): boolean;
+  clearUpdatedAt(): Product;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Product.AsObject;
@@ -129,8 +133,23 @@ export namespace Product {
     metadata?: ProductMetadata.AsObject,
     arEnabled: boolean,
     createdAt: number,
-    publishedAt: number,
-    updatedAt: number,
+    publishedAt?: number,
+    updatedAt?: number,
+  }
+
+  export enum MetadataCase { 
+    _METADATA_NOT_SET = 0,
+    METADATA = 12,
+  }
+
+  export enum PublishedAtCase { 
+    _PUBLISHED_AT_NOT_SET = 0,
+    PUBLISHED_AT = 15,
+  }
+
+  export enum UpdatedAtCase { 
+    _UPDATED_AT_NOT_SET = 0,
+    UPDATED_AT = 16,
   }
 }
 

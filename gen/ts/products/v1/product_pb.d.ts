@@ -94,9 +94,13 @@ export class Product extends jspb.Message {
   getCreatedAt(): number;
   setCreatedAt(value: number): void;
 
+  hasPublishedAt(): boolean;
+  clearPublishedAt(): void;
   getPublishedAt(): number;
   setPublishedAt(value: number): void;
 
+  hasUpdatedAt(): boolean;
+  clearUpdatedAt(): void;
   getUpdatedAt(): number;
   setUpdatedAt(value: number): void;
 

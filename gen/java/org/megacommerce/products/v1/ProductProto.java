@@ -1156,17 +1156,17 @@ public final class ProductProto {
         int index);
 
     /**
-     * <code>.products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+     * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
      * @return Whether the metadata field is set.
      */
     boolean hasMetadata();
     /**
-     * <code>.products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+     * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
      * @return The metadata.
      */
     org.megacommerce.products.v1.ProductProto.ProductMetadata getMetadata();
     /**
-     * <code>.products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+     * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
      */
     org.megacommerce.products.v1.ProductProto.ProductMetadataOrBuilder getMetadataOrBuilder();
 
@@ -1183,13 +1183,23 @@ public final class ProductProto {
     long getCreatedAt();
 
     /**
-     * <code>uint64 published_at = 15 [json_name = "publishedAt"];</code>
+     * <code>optional uint64 published_at = 15 [json_name = "publishedAt"];</code>
+     * @return Whether the publishedAt field is set.
+     */
+    boolean hasPublishedAt();
+    /**
+     * <code>optional uint64 published_at = 15 [json_name = "publishedAt"];</code>
      * @return The publishedAt.
      */
     long getPublishedAt();
 
     /**
-     * <code>uint64 updated_at = 16 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 16 [json_name = "updatedAt"];</code>
+     * @return Whether the updatedAt field is set.
+     */
+    boolean hasUpdatedAt();
+    /**
+     * <code>optional uint64 updated_at = 16 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     long getUpdatedAt();
@@ -1619,7 +1629,7 @@ public final class ProductProto {
     public static final int METADATA_FIELD_NUMBER = 12;
     private org.megacommerce.products.v1.ProductProto.ProductMetadata metadata_;
     /**
-     * <code>.products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+     * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
      * @return Whether the metadata field is set.
      */
     @java.lang.Override
@@ -1627,7 +1637,7 @@ public final class ProductProto {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+     * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
      * @return The metadata.
      */
     @java.lang.Override
@@ -1635,7 +1645,7 @@ public final class ProductProto {
       return metadata_ == null ? org.megacommerce.products.v1.ProductProto.ProductMetadata.getDefaultInstance() : metadata_;
     }
     /**
-     * <code>.products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+     * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
      */
     @java.lang.Override
     public org.megacommerce.products.v1.ProductProto.ProductMetadataOrBuilder getMetadataOrBuilder() {
@@ -1667,7 +1677,15 @@ public final class ProductProto {
     public static final int PUBLISHED_AT_FIELD_NUMBER = 15;
     private long publishedAt_ = 0L;
     /**
-     * <code>uint64 published_at = 15 [json_name = "publishedAt"];</code>
+     * <code>optional uint64 published_at = 15 [json_name = "publishedAt"];</code>
+     * @return Whether the publishedAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasPublishedAt() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional uint64 published_at = 15 [json_name = "publishedAt"];</code>
      * @return The publishedAt.
      */
     @java.lang.Override
@@ -1678,7 +1696,15 @@ public final class ProductProto {
     public static final int UPDATED_AT_FIELD_NUMBER = 16;
     private long updatedAt_ = 0L;
     /**
-     * <code>uint64 updated_at = 16 [json_name = "updatedAt"];</code>
+     * <code>optional uint64 updated_at = 16 [json_name = "updatedAt"];</code>
+     * @return Whether the updatedAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasUpdatedAt() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional uint64 updated_at = 16 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     @java.lang.Override
@@ -1742,10 +1768,10 @@ public final class ProductProto {
       if (createdAt_ != 0L) {
         output.writeUInt64(14, createdAt_);
       }
-      if (publishedAt_ != 0L) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeUInt64(15, publishedAt_);
       }
-      if (updatedAt_ != 0L) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         output.writeUInt64(16, updatedAt_);
       }
       getUnknownFields().writeTo(output);
@@ -1805,11 +1831,11 @@ public final class ProductProto {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(14, createdAt_);
       }
-      if (publishedAt_ != 0L) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(15, publishedAt_);
       }
-      if (updatedAt_ != 0L) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt64Size(16, updatedAt_);
       }
@@ -1859,10 +1885,16 @@ public final class ProductProto {
           != other.getArEnabled()) return false;
       if (getCreatedAt()
           != other.getCreatedAt()) return false;
-      if (getPublishedAt()
-          != other.getPublishedAt()) return false;
-      if (getUpdatedAt()
-          != other.getUpdatedAt()) return false;
+      if (hasPublishedAt() != other.hasPublishedAt()) return false;
+      if (hasPublishedAt()) {
+        if (getPublishedAt()
+            != other.getPublishedAt()) return false;
+      }
+      if (hasUpdatedAt() != other.hasUpdatedAt()) return false;
+      if (hasUpdatedAt()) {
+        if (getUpdatedAt()
+            != other.getUpdatedAt()) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1908,12 +1940,16 @@ public final class ProductProto {
       hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCreatedAt());
-      hash = (37 * hash) + PUBLISHED_AT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getPublishedAt());
-      hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getUpdatedAt());
+      if (hasPublishedAt()) {
+        hash = (37 * hash) + PUBLISHED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getPublishedAt());
+      }
+      if (hasUpdatedAt()) {
+        hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getUpdatedAt());
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2169,9 +2205,11 @@ public final class ProductProto {
         }
         if (((from_bitField0_ & 0x00004000) != 0)) {
           result.publishedAt_ = publishedAt_;
+          to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00008000) != 0)) {
           result.updatedAt_ = updatedAt_;
+          to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -2269,10 +2307,10 @@ public final class ProductProto {
         if (other.getCreatedAt() != 0L) {
           setCreatedAt(other.getCreatedAt());
         }
-        if (other.getPublishedAt() != 0L) {
+        if (other.hasPublishedAt()) {
           setPublishedAt(other.getPublishedAt());
         }
-        if (other.getUpdatedAt() != 0L) {
+        if (other.hasUpdatedAt()) {
           setUpdatedAt(other.getUpdatedAt());
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -3292,14 +3330,14 @@ public final class ProductProto {
       private com.google.protobuf.SingleFieldBuilder<
           org.megacommerce.products.v1.ProductProto.ProductMetadata, org.megacommerce.products.v1.ProductProto.ProductMetadata.Builder, org.megacommerce.products.v1.ProductProto.ProductMetadataOrBuilder> metadataBuilder_;
       /**
-       * <code>.products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+       * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
        * @return Whether the metadata field is set.
        */
       public boolean hasMetadata() {
         return ((bitField0_ & 0x00000800) != 0);
       }
       /**
-       * <code>.products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+       * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
        * @return The metadata.
        */
       public org.megacommerce.products.v1.ProductProto.ProductMetadata getMetadata() {
@@ -3310,7 +3348,7 @@ public final class ProductProto {
         }
       }
       /**
-       * <code>.products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+       * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
        */
       public Builder setMetadata(org.megacommerce.products.v1.ProductProto.ProductMetadata value) {
         if (metadataBuilder_ == null) {
@@ -3326,7 +3364,7 @@ public final class ProductProto {
         return this;
       }
       /**
-       * <code>.products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+       * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
        */
       public Builder setMetadata(
           org.megacommerce.products.v1.ProductProto.ProductMetadata.Builder builderForValue) {
@@ -3340,7 +3378,7 @@ public final class ProductProto {
         return this;
       }
       /**
-       * <code>.products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+       * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
        */
       public Builder mergeMetadata(org.megacommerce.products.v1.ProductProto.ProductMetadata value) {
         if (metadataBuilder_ == null) {
@@ -3361,7 +3399,7 @@ public final class ProductProto {
         return this;
       }
       /**
-       * <code>.products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+       * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
        */
       public Builder clearMetadata() {
         bitField0_ = (bitField0_ & ~0x00000800);
@@ -3374,7 +3412,7 @@ public final class ProductProto {
         return this;
       }
       /**
-       * <code>.products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+       * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
        */
       public org.megacommerce.products.v1.ProductProto.ProductMetadata.Builder getMetadataBuilder() {
         bitField0_ |= 0x00000800;
@@ -3382,7 +3420,7 @@ public final class ProductProto {
         return internalGetMetadataFieldBuilder().getBuilder();
       }
       /**
-       * <code>.products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+       * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
        */
       public org.megacommerce.products.v1.ProductProto.ProductMetadataOrBuilder getMetadataOrBuilder() {
         if (metadataBuilder_ != null) {
@@ -3393,7 +3431,7 @@ public final class ProductProto {
         }
       }
       /**
-       * <code>.products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
+       * <code>optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           org.megacommerce.products.v1.ProductProto.ProductMetadata, org.megacommerce.products.v1.ProductProto.ProductMetadata.Builder, org.megacommerce.products.v1.ProductProto.ProductMetadataOrBuilder> 
@@ -3475,7 +3513,15 @@ public final class ProductProto {
 
       private long publishedAt_ ;
       /**
-       * <code>uint64 published_at = 15 [json_name = "publishedAt"];</code>
+       * <code>optional uint64 published_at = 15 [json_name = "publishedAt"];</code>
+       * @return Whether the publishedAt field is set.
+       */
+      @java.lang.Override
+      public boolean hasPublishedAt() {
+        return ((bitField0_ & 0x00004000) != 0);
+      }
+      /**
+       * <code>optional uint64 published_at = 15 [json_name = "publishedAt"];</code>
        * @return The publishedAt.
        */
       @java.lang.Override
@@ -3483,7 +3529,7 @@ public final class ProductProto {
         return publishedAt_;
       }
       /**
-       * <code>uint64 published_at = 15 [json_name = "publishedAt"];</code>
+       * <code>optional uint64 published_at = 15 [json_name = "publishedAt"];</code>
        * @param value The publishedAt to set.
        * @return This builder for chaining.
        */
@@ -3495,7 +3541,7 @@ public final class ProductProto {
         return this;
       }
       /**
-       * <code>uint64 published_at = 15 [json_name = "publishedAt"];</code>
+       * <code>optional uint64 published_at = 15 [json_name = "publishedAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPublishedAt() {
@@ -3507,7 +3553,15 @@ public final class ProductProto {
 
       private long updatedAt_ ;
       /**
-       * <code>uint64 updated_at = 16 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 16 [json_name = "updatedAt"];</code>
+       * @return Whether the updatedAt field is set.
+       */
+      @java.lang.Override
+      public boolean hasUpdatedAt() {
+        return ((bitField0_ & 0x00008000) != 0);
+      }
+      /**
+       * <code>optional uint64 updated_at = 16 [json_name = "updatedAt"];</code>
        * @return The updatedAt.
        */
       @java.lang.Override
@@ -3515,7 +3569,7 @@ public final class ProductProto {
         return updatedAt_;
       }
       /**
-       * <code>uint64 updated_at = 16 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 16 [json_name = "updatedAt"];</code>
        * @param value The updatedAt to set.
        * @return This builder for chaining.
        */
@@ -3527,7 +3581,7 @@ public final class ProductProto {
         return this;
       }
       /**
-       * <code>uint64 updated_at = 16 [json_name = "updatedAt"];</code>
+       * <code>optional uint64 updated_at = 16 [json_name = "updatedAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdatedAt() {
@@ -3615,22 +3669,24 @@ public final class ProductProto {
       "\n\031products/v1/product.proto\022\013products.v1" +
       "\"J\n\nProductTag\022\023\n\002id\030\001 \001(\rH\000R\002id\210\001\001\022\027\n\004n" +
       "ame\030\002 \001(\tH\001R\004name\210\001\001B\005\n\003_idB\007\n\005_name\"\021\n\017" +
-      "ProductMetadata\"\344\003\n\007Product\022\016\n\002id\030\001 \001(\tR" +
+      "ProductMetadata\"\240\004\n\007Product\022\016\n\002id\030\001 \001(\tR" +
       "\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\020\n\003sku\030\003 \001(" +
       "\tR\003sku\022\030\n\007version\030\004 \001(\rR\007version\022\026\n\006stat" +
       "us\030\005 \001(\tR\006status\022\024\n\005title\030\006 \001(\tR\005title\022 " +
       "\n\013description\030\007 \001(\tR\013description\022\022\n\004slug" +
       "\030\010 \001(\tR\004slug\022\024\n\005price\030\t \001(\rR\005price\022#\n\rcu" +
       "rrency_code\030\n \001(\tR\014currencyCode\022+\n\004tags\030" +
-      "\013 \003(\0132\027.products.v1.ProductTagR\004tags\0228\n\010" +
+      "\013 \003(\0132\027.products.v1.ProductTagR\004tags\022=\n\010" +
       "metadata\030\014 \001(\0132\034.products.v1.ProductMeta" +
-      "dataR\010metadata\022\035\n\nar_enabled\030\r \001(\010R\tarEn" +
-      "abled\022\035\n\ncreated_at\030\016 \001(\004R\tcreatedAt\022!\n\014" +
-      "published_at\030\017 \001(\004R\013publishedAt\022\035\n\nupdat" +
-      "ed_at\030\020 \001(\004R\tupdatedAtBv\n\034org.megacommer" +
-      "ce.products.v1B\014ProductProtoZEgithub.com" +
-      "/ahmad-khatib0-org/megacommerce-proto/ge" +
-      "n/go/products/v1;v1\370\001\001b\006proto3"
+      "dataH\000R\010metadata\210\001\001\022\035\n\nar_enabled\030\r \001(\010R" +
+      "\tarEnabled\022\035\n\ncreated_at\030\016 \001(\004R\tcreatedA" +
+      "t\022&\n\014published_at\030\017 \001(\004H\001R\013publishedAt\210\001" +
+      "\001\022\"\n\nupdated_at\030\020 \001(\004H\002R\tupdatedAt\210\001\001B\013\n" +
+      "\t_metadataB\017\n\r_published_atB\r\n\013_updated_" +
+      "atBv\n\034org.megacommerce.products.v1B\014Prod" +
+      "uctProtoZEgithub.com/ahmad-khatib0-org/m" +
+      "egacommerce-proto/gen/go/products/v1;v1\370" +
+      "\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

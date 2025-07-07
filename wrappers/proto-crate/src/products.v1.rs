@@ -364,8 +364,8 @@ pub struct Product {
     pub ar_enabled: bool,
     #[prost(uint64, tag = "14")]
     pub created_at: u64,
-    #[prost(uint64, tag = "15")]
-    pub published_at: u64,
-    #[prost(uint64, tag = "16")]
-    pub updated_at: u64,
+    #[prost(uint64, optional, tag = "15")]
+    pub published_at: ::core::option::Option<u64>,
+    #[prost(uint64, optional, tag = "16")]
+    pub updated_at: ::core::option::Option<u64>,
 }
