@@ -54,24 +54,6 @@ struct ProductCreateTagDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateTagDefaultTypeInternal _ProductCreateTag_default_instance_;
-template <typename>
-PROTOBUF_CONSTEXPR ProductCreateResponse::ProductCreateResponse(::_pbi::ConstantInitialized)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::internal::ZeroFieldsBase(ProductCreateResponse_class_data_.base()){}
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::internal::ZeroFieldsBase() {
-}
-#endif  // PROTOBUF_CUSTOM_VTABLE
-struct ProductCreateResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ProductCreateResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ProductCreateResponseDefaultTypeInternal() {}
-  union {
-    ProductCreateResponse _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateResponseDefaultTypeInternal _ProductCreateResponse_default_instance_;
 
 inline constexpr ProductCreateRequest::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -111,6 +93,32 @@ struct ProductCreateRequestDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestDefaultTypeInternal _ProductCreateRequest_default_instance_;
+
+inline constexpr ProductCreateResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : response_{},
+        _cached_size_{0},
+        _oneof_case_{} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateResponse::ProductCreateResponse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductCreateResponse_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductCreateResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateResponseDefaultTypeInternal() {}
+  union {
+    ProductCreateResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateResponseDefaultTypeInternal _ProductCreateResponse_default_instance_;
 }  // namespace v1
 }  // namespace products
 static constexpr const ::_pb::EnumDescriptor *PROTOBUF_NONNULL *PROTOBUF_NULLABLE
@@ -144,7 +152,11 @@ const ::uint32_t
         3,
         ~0u,
         5,
-        0x000, // bitmap
+        0x004, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateResponse, _impl_._oneof_case_[0]),
+        ::_pbi::kInvalidFieldOffsetTag,
+        ::_pbi::kInvalidFieldOffsetTag,
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateResponse, _impl_.response_),
 };
 
 static const ::_pbi::MigrationSchema
@@ -161,30 +173,39 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 const char descriptor_table_protodef_products_2fv1_2fproduct_5fcreate_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n products/v1/product_create.proto\022\013prod"
-    "ucts.v1\"P\n\020ProductCreateTag\022\023\n\002id\030\001 \001(\rH"
-    "\000R\002id\210\001\001\022\027\n\004name\030\002 \001(\tH\001R\004name\210\001\001B\005\n\003_id"
-    "B\007\n\005_name\"\355\001\n\024ProductCreateRequest\022\024\n\005ti"
-    "tle\030\001 \001(\tR\005title\022 \n\013description\030\002 \001(\tR\013d"
-    "escription\022\020\n\003sku\030\003 \001(\tR\003sku\022\024\n\005price\030\004 "
-    "\001(\rR\005price\022#\n\rcurrency_code\030\005 \001(\tR\014curre"
-    "ncyCode\0221\n\004tags\030\006 \003(\0132\035.products.v1.Prod"
-    "uctCreateTagR\004tags\022\035\n\nar_enabled\030\007 \001(\010R\t"
-    "arEnabled\"\027\n\025ProductCreateResponseB|\n\034or"
-    "g.megacommerce.products.v1B\022ProductCreat"
-    "eProtoZEgithub.com/ahmad-khatib0-org/meg"
-    "acommerce-proto/gen/go/products/v1;v1\370\001\001"
-    "b\006proto3"
+    "ucts.v1\032\033google/protobuf/empty.proto\032\025sh"
+    "ared/v1/error.proto\"P\n\020ProductCreateTag\022"
+    "\023\n\002id\030\001 \001(\rH\000R\002id\210\001\001\022\027\n\004name\030\002 \001(\tH\001R\004na"
+    "me\210\001\001B\005\n\003_idB\007\n\005_name\"\355\001\n\024ProductCreateR"
+    "equest\022\024\n\005title\030\001 \001(\tR\005title\022 \n\013descript"
+    "ion\030\002 \001(\tR\013description\022\020\n\003sku\030\003 \001(\tR\003sku"
+    "\022\024\n\005price\030\004 \001(\rR\005price\022#\n\rcurrency_code\030"
+    "\005 \001(\tR\014currencyCode\0221\n\004tags\030\006 \003(\0132\035.prod"
+    "ucts.v1.ProductCreateTagR\004tags\022\035\n\nar_ena"
+    "bled\030\007 \001(\010R\tarEnabled\"~\n\025ProductCreateRe"
+    "sponse\022,\n\004data\030\001 \001(\0132\026.google.protobuf.E"
+    "mptyH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1."
+    "AppErrorH\000R\005errorB\n\n\010responseB|\n\034org.meg"
+    "acommerce.products.v1B\022ProductCreateProt"
+    "oZEgithub.com/ahmad-khatib0-org/megacomm"
+    "erce-proto/gen/go/products/v1;v1\370\001\001b\006pro"
+    "to3"
+};
+static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
+    descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto_deps[2] = {
+        &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
+        &::descriptor_table_shared_2fv1_2ferror_2eproto,
 };
 static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto = {
     false,
     false,
-    528,
+    683,
     descriptor_table_protodef_products_2fv1_2fproduct_5fcreate_2eproto,
     "products/v1/product_create.proto",
     &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto_once,
-    nullptr,
-    0,
+    descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto_deps,
+    2,
     3,
     schemas,
     file_default_instances,
@@ -990,31 +1011,152 @@ void ProductCreateRequest::InternalSwap(ProductCreateRequest* PROTOBUF_RESTRICT 
 
 class ProductCreateResponse::_Internal {
  public:
+  static constexpr ::int32_t kOneofCaseOffset =
+      PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateResponse, _impl_._oneof_case_);
 };
 
+void ProductCreateResponse::set_allocated_data(::google::protobuf::Empty* PROTOBUF_NULLABLE data) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  clear_response();
+  if (data) {
+    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::Message*>(data)->GetArena();
+    if (message_arena != submessage_arena) {
+      data = ::google::protobuf::internal::GetOwnedMessage(message_arena, data, submessage_arena);
+    }
+    set_has_data();
+    _impl_.response_.data_ = data;
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductCreateResponse.data)
+}
+void ProductCreateResponse::clear_data() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (response_case() == kData) {
+    if (GetArena() == nullptr) {
+      delete _impl_.response_.data_;
+    } else if (::google::protobuf::internal::DebugHardenClearOneofMessageOnArena()) {
+      ::google::protobuf::internal::MaybePoisonAfterClear(_impl_.response_.data_);
+    }
+    clear_has_response();
+  }
+}
+void ProductCreateResponse::set_allocated_error(::shared::v1::AppError* PROTOBUF_NULLABLE error) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  clear_response();
+  if (error) {
+    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::Message*>(error)->GetArena();
+    if (message_arena != submessage_arena) {
+      error = ::google::protobuf::internal::GetOwnedMessage(message_arena, error, submessage_arena);
+    }
+    set_has_error();
+    _impl_.response_.error_ = error;
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductCreateResponse.error)
+}
+void ProductCreateResponse::clear_error() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (response_case() == kError) {
+    if (GetArena() == nullptr) {
+      delete _impl_.response_.error_;
+    } else if (::google::protobuf::internal::DebugHardenClearOneofMessageOnArena()) {
+      ::google::protobuf::internal::MaybePoisonAfterClear(_impl_.response_.error_);
+    }
+    clear_has_response();
+  }
+}
 ProductCreateResponse::ProductCreateResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena, ProductCreateResponse_class_data_.base()) {
+    : ::google::protobuf::Message(arena, ProductCreateResponse_class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+    : ::google::protobuf::Message(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:products.v1.ProductCreateResponse)
 }
+PROTOBUF_NDEBUG_INLINE ProductCreateResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::products::v1::ProductCreateResponse& from_msg)
+      : response_{},
+        _cached_size_{0},
+        _oneof_case_{from._oneof_case_[0]} {}
+
 ProductCreateResponse::ProductCreateResponse(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
     const ProductCreateResponse& from)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::internal::ZeroFieldsBase(arena, ProductCreateResponse_class_data_.base()) {
+    : ::google::protobuf::Message(arena, ProductCreateResponse_class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+    : ::google::protobuf::Message(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
   ProductCreateResponse* const _this = this;
   (void)_this;
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  switch (response_case()) {
+    case RESPONSE_NOT_SET:
+      break;
+      case kData:
+        _impl_.response_.data_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.response_.data_);
+        break;
+      case kError:
+        _impl_.response_.error_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.response_.error_);
+        break;
+  }
 
   // @@protoc_insertion_point(copy_constructor:products.v1.ProductCreateResponse)
 }
+PROTOBUF_NDEBUG_INLINE ProductCreateResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : response_{},
+        _cached_size_{0},
+        _oneof_case_{} {}
+
+inline void ProductCreateResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+ProductCreateResponse::~ProductCreateResponse() {
+  // @@protoc_insertion_point(destructor:products.v1.ProductCreateResponse)
+  SharedDtor(*this);
+}
+inline void ProductCreateResponse::SharedDtor(MessageLite& self) {
+  ProductCreateResponse& this_ = static_cast<ProductCreateResponse&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  if (this_.has_response()) {
+    this_.clear_response();
+  }
+  this_._impl_.~Impl_();
+}
+
+void ProductCreateResponse::clear_response() {
+// @@protoc_insertion_point(one_of_clear_start:products.v1.ProductCreateResponse)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  switch (response_case()) {
+    case kData: {
+      if (GetArena() == nullptr) {
+        delete _impl_.response_.data_;
+      } else if (::google::protobuf::internal::DebugHardenClearOneofMessageOnArena()) {
+        ::google::protobuf::internal::MaybePoisonAfterClear(_impl_.response_.data_);
+      }
+      break;
+    }
+    case kError: {
+      if (GetArena() == nullptr) {
+        delete _impl_.response_.error_;
+      } else if (::google::protobuf::internal::DebugHardenClearOneofMessageOnArena()) {
+        ::google::protobuf::internal::MaybePoisonAfterClear(_impl_.response_.error_);
+      }
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  _impl_._oneof_case_[0] = RESPONSE_NOT_SET;
+}
+
 
 inline void* PROTOBUF_NONNULL ProductCreateResponse::PlacementNew_(
     const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
@@ -1033,10 +1175,10 @@ constexpr auto ProductCreateResponse::InternalGenerateClassData_() {
           nullptr,  // OnDemandRegisterArenaDtor
           nullptr,  // IsInitialized
           &ProductCreateResponse::MergeImpl,
-          ::google::protobuf::internal::ZeroFieldsBase::GetNewImpl<ProductCreateResponse>(),
+          ::google::protobuf::Message::GetNewImpl<ProductCreateResponse>(),
 #if defined(PROTOBUF_CUSTOM_VTABLE)
           &ProductCreateResponse::SharedDtor,
-          ::google::protobuf::internal::ZeroFieldsBase::GetClearImpl<ProductCreateResponse>(), &ProductCreateResponse::ByteSizeLong,
+          ::google::protobuf::Message::GetClearImpl<ProductCreateResponse>(), &ProductCreateResponse::ByteSizeLong,
               &ProductCreateResponse::_InternalSerialize,
 #endif  // PROTOBUF_CUSTOM_VTABLE
           PROTOBUF_FIELD_OFFSET(ProductCreateResponse, _impl_._cached_size_),
@@ -1059,18 +1201,18 @@ ProductCreateResponse::GetClassData() const {
   return ProductCreateResponse_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 0, 0, 0, 2>
+const ::_pbi::TcParseTable<0, 2, 2, 0, 2>
 ProductCreateResponse::_table_ = {
   {
     0,  // no _has_bits_
     0, // no _extensions_
-    0, 0,  // max_field_number, fast_idx_mask
+    2, 0,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967295,  // skipmap
-    offsetof(decltype(_table_), field_names),  // no field_entries
-    0,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
     ProductCreateResponse_class_data_.base(),
     nullptr,  // post_loop_handler
     ::_pbi::TcParser::GenericFallback,  // fallback
@@ -1081,19 +1223,167 @@ ProductCreateResponse::_table_ = {
     {::_pbi::TcParser::MiniParse, {}},
   }}, {{
     65535, 65535
-  }}, // no field_entries, or aux_entries
+  }}, {{
+    // .google.protobuf.Empty data = 1 [json_name = "data"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateResponse, _impl_.response_.data_), _Internal::kOneofCaseOffset + 0, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .shared.v1.AppError error = 2 [json_name = "error"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateResponse, _impl_.response_.error_), _Internal::kOneofCaseOffset + 0, 1,
+    (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::google::protobuf::Empty>()},
+      {::_pbi::TcParser::GetTable<::shared::v1::AppError>()},
+  }},
   {{
   }},
 };
+PROTOBUF_NOINLINE void ProductCreateResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.ProductCreateResponse)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  clear_response();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL ProductCreateResponse::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const ProductCreateResponse& this_ = static_cast<const ProductCreateResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL ProductCreateResponse::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const ProductCreateResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductCreateResponse)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  switch (this_.response_case()) {
+    case kData: {
+      target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+          1, *this_._impl_.response_.data_, this_._impl_.response_.data_->GetCachedSize(), target,
+          stream);
+      break;
+    }
+    case kError: {
+      target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+          2, *this_._impl_.response_.error_, this_._impl_.response_.error_->GetCachedSize(), target,
+          stream);
+      break;
+    }
+    default:
+      break;
+  }
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductCreateResponse)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t ProductCreateResponse::ByteSizeLong(const MessageLite& base) {
+  const ProductCreateResponse& this_ = static_cast<const ProductCreateResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t ProductCreateResponse::ByteSizeLong() const {
+  const ProductCreateResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductCreateResponse)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  switch (this_.response_case()) {
+    // .google.protobuf.Empty data = 1 [json_name = "data"];
+    case kData: {
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.response_.data_);
+      break;
+    }
+    // .shared.v1.AppError error = 2 [json_name = "error"];
+    case kError: {
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.response_.error_);
+      break;
+    }
+    case RESPONSE_NOT_SET: {
+      break;
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void ProductCreateResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ProductCreateResponse*>(&to_msg);
+  auto& from = static_cast<const ProductCreateResponse&>(from_msg);
+  ::google::protobuf::Arena* arena = _this->GetArena();
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductCreateResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (const uint32_t oneof_from_case = from._impl_._oneof_case_[0]) {
+    const uint32_t oneof_to_case = _this->_impl_._oneof_case_[0];
+    const bool oneof_needs_init = oneof_to_case != oneof_from_case;
+    if (oneof_needs_init) {
+      if (oneof_to_case != 0) {
+        _this->clear_response();
+      }
+      _this->_impl_._oneof_case_[0] = oneof_from_case;
+    }
+
+    switch (oneof_from_case) {
+      case kData: {
+        if (oneof_needs_init) {
+          _this->_impl_.response_.data_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.response_.data_);
+        } else {
+          _this->_impl_.response_.data_->MergeFrom(*from._impl_.response_.data_);
+        }
+        break;
+      }
+      case kError: {
+        if (oneof_needs_init) {
+          _this->_impl_.response_.error_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.response_.error_);
+        } else {
+          _this->_impl_.response_.error_->MergeFrom(*from._impl_.response_.error_);
+        }
+        break;
+      }
+      case RESPONSE_NOT_SET:
+        break;
+    }
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ProductCreateResponse::CopyFrom(const ProductCreateResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductCreateResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
 
 
-
-
-
-
+void ProductCreateResponse::InternalSwap(ProductCreateResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.response_, other->_impl_.response_);
+  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
+}
 
 ::google::protobuf::Metadata ProductCreateResponse::GetMetadata() const {
-  return ::google::protobuf::internal::ZeroFieldsBase::GetMetadataImpl(GetClassData()->full());
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1

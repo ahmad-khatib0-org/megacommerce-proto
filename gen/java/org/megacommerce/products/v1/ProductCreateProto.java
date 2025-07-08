@@ -2144,6 +2144,38 @@ public final class ProductCreateProto {
   public interface ProductCreateResponseOrBuilder extends
       // @@protoc_insertion_point(interface_extends:products.v1.ProductCreateResponse)
       com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+     * @return Whether the data field is set.
+     */
+    boolean hasData();
+    /**
+     * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+     * @return The data.
+     */
+    com.google.protobuf.Empty getData();
+    /**
+     * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+     */
+    com.google.protobuf.EmptyOrBuilder getDataOrBuilder();
+
+    /**
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return Whether the error field is set.
+     */
+    boolean hasError();
+    /**
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    org.megacommerce.shared.v1.ErrorProto.AppError getError();
+    /**
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+     */
+    org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder();
+
+    org.megacommerce.products.v1.ProductCreateProto.ProductCreateResponse.ResponseCase getResponseCase();
   }
   /**
    * Protobuf type {@code products.v1.ProductCreateResponse}
@@ -2182,6 +2214,110 @@ public final class ProductCreateProto {
               org.megacommerce.products.v1.ProductCreateProto.ProductCreateResponse.class, org.megacommerce.products.v1.ProductCreateProto.ProductCreateResponse.Builder.class);
     }
 
+    private int responseCase_ = 0;
+    @SuppressWarnings("serial")
+    private java.lang.Object response_;
+    public enum ResponseCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      DATA(1),
+      ERROR(2),
+      RESPONSE_NOT_SET(0);
+      private final int value;
+      private ResponseCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ResponseCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ResponseCase forNumber(int value) {
+        switch (value) {
+          case 1: return DATA;
+          case 2: return ERROR;
+          case 0: return RESPONSE_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ResponseCase
+    getResponseCase() {
+      return ResponseCase.forNumber(
+          responseCase_);
+    }
+
+    public static final int DATA_FIELD_NUMBER = 1;
+    /**
+     * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+     * @return Whether the data field is set.
+     */
+    @java.lang.Override
+    public boolean hasData() {
+      return responseCase_ == 1;
+    }
+    /**
+     * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Empty getData() {
+      if (responseCase_ == 1) {
+         return (com.google.protobuf.Empty) response_;
+      }
+      return com.google.protobuf.Empty.getDefaultInstance();
+    }
+    /**
+     * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.EmptyOrBuilder getDataOrBuilder() {
+      if (responseCase_ == 1) {
+         return (com.google.protobuf.Empty) response_;
+      }
+      return com.google.protobuf.Empty.getDefaultInstance();
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 2;
+    /**
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return Whether the error field is set.
+     */
+    @java.lang.Override
+    public boolean hasError() {
+      return responseCase_ == 2;
+    }
+    /**
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.ErrorProto.AppError getError() {
+      if (responseCase_ == 2) {
+         return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
+      }
+      return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
+    }
+    /**
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+      if (responseCase_ == 2) {
+         return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
+      }
+      return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2196,6 +2332,12 @@ public final class ProductCreateProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (responseCase_ == 1) {
+        output.writeMessage(1, (com.google.protobuf.Empty) response_);
+      }
+      if (responseCase_ == 2) {
+        output.writeMessage(2, (org.megacommerce.shared.v1.ErrorProto.AppError) response_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2205,6 +2347,14 @@ public final class ProductCreateProto {
       if (size != -1) return size;
 
       size = 0;
+      if (responseCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (com.google.protobuf.Empty) response_);
+      }
+      if (responseCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (org.megacommerce.shared.v1.ErrorProto.AppError) response_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -2220,6 +2370,19 @@ public final class ProductCreateProto {
       }
       org.megacommerce.products.v1.ProductCreateProto.ProductCreateResponse other = (org.megacommerce.products.v1.ProductCreateProto.ProductCreateResponse) obj;
 
+      if (!getResponseCase().equals(other.getResponseCase())) return false;
+      switch (responseCase_) {
+        case 1:
+          if (!getData()
+              .equals(other.getData())) return false;
+          break;
+        case 2:
+          if (!getError()
+              .equals(other.getError())) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2231,6 +2394,18 @@ public final class ProductCreateProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      switch (responseCase_) {
+        case 1:
+          hash = (37 * hash) + DATA_FIELD_NUMBER;
+          hash = (53 * hash) + getData().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + ERROR_FIELD_NUMBER;
+          hash = (53 * hash) + getError().hashCode();
+          break;
+        case 0:
+        default:
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2361,6 +2536,15 @@ public final class ProductCreateProto {
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
+        if (dataBuilder_ != null) {
+          dataBuilder_.clear();
+        }
+        if (errorBuilder_ != null) {
+          errorBuilder_.clear();
+        }
+        responseCase_ = 0;
+        response_ = null;
         return this;
       }
 
@@ -2387,8 +2571,27 @@ public final class ProductCreateProto {
       @java.lang.Override
       public org.megacommerce.products.v1.ProductCreateProto.ProductCreateResponse buildPartial() {
         org.megacommerce.products.v1.ProductCreateProto.ProductCreateResponse result = new org.megacommerce.products.v1.ProductCreateProto.ProductCreateResponse(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(org.megacommerce.products.v1.ProductCreateProto.ProductCreateResponse result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(org.megacommerce.products.v1.ProductCreateProto.ProductCreateResponse result) {
+        result.responseCase_ = responseCase_;
+        result.response_ = this.response_;
+        if (responseCase_ == 1 &&
+            dataBuilder_ != null) {
+          result.response_ = dataBuilder_.build();
+        }
+        if (responseCase_ == 2 &&
+            errorBuilder_ != null) {
+          result.response_ = errorBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -2403,6 +2606,19 @@ public final class ProductCreateProto {
 
       public Builder mergeFrom(org.megacommerce.products.v1.ProductCreateProto.ProductCreateResponse other) {
         if (other == org.megacommerce.products.v1.ProductCreateProto.ProductCreateResponse.getDefaultInstance()) return this;
+        switch (other.getResponseCase()) {
+          case DATA: {
+            mergeData(other.getData());
+            break;
+          }
+          case ERROR: {
+            mergeError(other.getError());
+            break;
+          }
+          case RESPONSE_NOT_SET: {
+            break;
+          }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2429,6 +2645,20 @@ public final class ProductCreateProto {
               case 0:
                 done = true;
                 break;
+              case 10: {
+                input.readMessage(
+                    internalGetDataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                responseCase_ = 1;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    internalGetErrorFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                responseCase_ = 2;
+                break;
+              } // case 18
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2443,6 +2673,306 @@ public final class ProductCreateProto {
           onChanged();
         } // finally
         return this;
+      }
+      private int responseCase_ = 0;
+      private java.lang.Object response_;
+      public ResponseCase
+          getResponseCase() {
+        return ResponseCase.forNumber(
+            responseCase_);
+      }
+
+      public Builder clearResponse() {
+        responseCase_ = 0;
+        response_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder> dataBuilder_;
+      /**
+       * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+       * @return Whether the data field is set.
+       */
+      @java.lang.Override
+      public boolean hasData() {
+        return responseCase_ == 1;
+      }
+      /**
+       * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+       * @return The data.
+       */
+      @java.lang.Override
+      public com.google.protobuf.Empty getData() {
+        if (dataBuilder_ == null) {
+          if (responseCase_ == 1) {
+            return (com.google.protobuf.Empty) response_;
+          }
+          return com.google.protobuf.Empty.getDefaultInstance();
+        } else {
+          if (responseCase_ == 1) {
+            return dataBuilder_.getMessage();
+          }
+          return com.google.protobuf.Empty.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+       */
+      public Builder setData(com.google.protobuf.Empty value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(value);
+        }
+        responseCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+       */
+      public Builder setData(
+          com.google.protobuf.Empty.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+        responseCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+       */
+      public Builder mergeData(com.google.protobuf.Empty value) {
+        if (dataBuilder_ == null) {
+          if (responseCase_ == 1 &&
+              response_ != com.google.protobuf.Empty.getDefaultInstance()) {
+            response_ = com.google.protobuf.Empty.newBuilder((com.google.protobuf.Empty) response_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          if (responseCase_ == 1) {
+            dataBuilder_.mergeFrom(value);
+          } else {
+            dataBuilder_.setMessage(value);
+          }
+        }
+        responseCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          if (responseCase_ == 1) {
+            responseCase_ = 0;
+            response_ = null;
+            onChanged();
+          }
+        } else {
+          if (responseCase_ == 1) {
+            responseCase_ = 0;
+            response_ = null;
+          }
+          dataBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+       */
+      public com.google.protobuf.Empty.Builder getDataBuilder() {
+        return internalGetDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.EmptyOrBuilder getDataOrBuilder() {
+        if ((responseCase_ == 1) && (dataBuilder_ != null)) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          if (responseCase_ == 1) {
+            return (com.google.protobuf.Empty) response_;
+          }
+          return com.google.protobuf.Empty.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder> 
+          internalGetDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          if (!(responseCase_ == 1)) {
+            response_ = com.google.protobuf.Empty.getDefaultInstance();
+          }
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder>(
+                  (com.google.protobuf.Empty) response_,
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        responseCase_ = 1;
+        onChanged();
+        return dataBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder> errorBuilder_;
+      /**
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+       * @return Whether the error field is set.
+       */
+      @java.lang.Override
+      public boolean hasError() {
+        return responseCase_ == 2;
+      }
+      /**
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+       * @return The error.
+       */
+      @java.lang.Override
+      public org.megacommerce.shared.v1.ErrorProto.AppError getError() {
+        if (errorBuilder_ == null) {
+          if (responseCase_ == 2) {
+            return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
+          }
+          return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
+        } else {
+          if (responseCase_ == 2) {
+            return errorBuilder_.getMessage();
+          }
+          return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder setError(org.megacommerce.shared.v1.ErrorProto.AppError value) {
+        if (errorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          errorBuilder_.setMessage(value);
+        }
+        responseCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder setError(
+          org.megacommerce.shared.v1.ErrorProto.AppError.Builder builderForValue) {
+        if (errorBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          errorBuilder_.setMessage(builderForValue.build());
+        }
+        responseCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder mergeError(org.megacommerce.shared.v1.ErrorProto.AppError value) {
+        if (errorBuilder_ == null) {
+          if (responseCase_ == 2 &&
+              response_ != org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance()) {
+            response_ = org.megacommerce.shared.v1.ErrorProto.AppError.newBuilder((org.megacommerce.shared.v1.ErrorProto.AppError) response_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          if (responseCase_ == 2) {
+            errorBuilder_.mergeFrom(value);
+          } else {
+            errorBuilder_.setMessage(value);
+          }
+        }
+        responseCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder clearError() {
+        if (errorBuilder_ == null) {
+          if (responseCase_ == 2) {
+            responseCase_ = 0;
+            response_ = null;
+            onChanged();
+          }
+        } else {
+          if (responseCase_ == 2) {
+            responseCase_ = 0;
+            response_ = null;
+          }
+          errorBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public org.megacommerce.shared.v1.ErrorProto.AppError.Builder getErrorBuilder() {
+        return internalGetErrorFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+        if ((responseCase_ == 2) && (errorBuilder_ != null)) {
+          return errorBuilder_.getMessageOrBuilder();
+        } else {
+          if (responseCase_ == 2) {
+            return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
+          }
+          return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder> 
+          internalGetErrorFieldBuilder() {
+        if (errorBuilder_ == null) {
+          if (!(responseCase_ == 2)) {
+            response_ = org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
+          }
+          errorBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder>(
+                  (org.megacommerce.shared.v1.ErrorProto.AppError) response_,
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        responseCase_ = 2;
+        onChanged();
+        return errorBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:products.v1.ProductCreateResponse)
@@ -2521,23 +3051,29 @@ public final class ProductCreateProto {
   static {
     java.lang.String[] descriptorData = {
       "\n products/v1/product_create.proto\022\013prod" +
-      "ucts.v1\"P\n\020ProductCreateTag\022\023\n\002id\030\001 \001(\rH" +
-      "\000R\002id\210\001\001\022\027\n\004name\030\002 \001(\tH\001R\004name\210\001\001B\005\n\003_id" +
-      "B\007\n\005_name\"\355\001\n\024ProductCreateRequest\022\024\n\005ti" +
-      "tle\030\001 \001(\tR\005title\022 \n\013description\030\002 \001(\tR\013d" +
-      "escription\022\020\n\003sku\030\003 \001(\tR\003sku\022\024\n\005price\030\004 " +
-      "\001(\rR\005price\022#\n\rcurrency_code\030\005 \001(\tR\014curre" +
-      "ncyCode\0221\n\004tags\030\006 \003(\0132\035.products.v1.Prod" +
-      "uctCreateTagR\004tags\022\035\n\nar_enabled\030\007 \001(\010R\t" +
-      "arEnabled\"\027\n\025ProductCreateResponseB|\n\034or" +
-      "g.megacommerce.products.v1B\022ProductCreat" +
-      "eProtoZEgithub.com/ahmad-khatib0-org/meg" +
-      "acommerce-proto/gen/go/products/v1;v1\370\001\001" +
-      "b\006proto3"
+      "ucts.v1\032\033google/protobuf/empty.proto\032\025sh" +
+      "ared/v1/error.proto\"P\n\020ProductCreateTag\022" +
+      "\023\n\002id\030\001 \001(\rH\000R\002id\210\001\001\022\027\n\004name\030\002 \001(\tH\001R\004na" +
+      "me\210\001\001B\005\n\003_idB\007\n\005_name\"\355\001\n\024ProductCreateR" +
+      "equest\022\024\n\005title\030\001 \001(\tR\005title\022 \n\013descript" +
+      "ion\030\002 \001(\tR\013description\022\020\n\003sku\030\003 \001(\tR\003sku" +
+      "\022\024\n\005price\030\004 \001(\rR\005price\022#\n\rcurrency_code\030" +
+      "\005 \001(\tR\014currencyCode\0221\n\004tags\030\006 \003(\0132\035.prod" +
+      "ucts.v1.ProductCreateTagR\004tags\022\035\n\nar_ena" +
+      "bled\030\007 \001(\010R\tarEnabled\"~\n\025ProductCreateRe" +
+      "sponse\022,\n\004data\030\001 \001(\0132\026.google.protobuf.E" +
+      "mptyH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1." +
+      "AppErrorH\000R\005errorB\n\n\010responseB|\n\034org.meg" +
+      "acommerce.products.v1B\022ProductCreateProt" +
+      "oZEgithub.com/ahmad-khatib0-org/megacomm" +
+      "erce-proto/gen/go/products/v1;v1\370\001\001b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.EmptyProto.getDescriptor(),
+          org.megacommerce.shared.v1.ErrorProto.getDescriptor(),
         });
     internal_static_products_v1_ProductCreateTag_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2556,8 +3092,10 @@ public final class ProductCreateProto {
     internal_static_products_v1_ProductCreateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductCreateResponse_descriptor,
-        new java.lang.String[] { });
+        new java.lang.String[] { "Data", "Error", "Response", });
     descriptor.resolveAllFeaturesImmutable();
+    com.google.protobuf.EmptyProto.getDescriptor();
+    org.megacommerce.shared.v1.ErrorProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

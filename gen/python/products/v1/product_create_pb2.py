@@ -22,9 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
+from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n products/v1/product_create.proto\x12\x0bproducts.v1\"F\n\x10ProductCreateTag\x12\x0f\n\x02id\x18\x01 \x01(\rH\x00\x88\x01\x01\x12\x11\n\x04name\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\x05\n\x03_idB\x07\n\x05_name\"\xae\x01\n\x14ProductCreateRequest\x12\r\n\x05title\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0b\n\x03sku\x18\x03 \x01(\t\x12\r\n\x05price\x18\x04 \x01(\r\x12\x15\n\rcurrency_code\x18\x05 \x01(\t\x12+\n\x04tags\x18\x06 \x03(\x0b\x32\x1d.products.v1.ProductCreateTag\x12\x12\n\nar_enabled\x18\x07 \x01(\x08\"\x17\n\x15ProductCreateResponseB|\n\x1corg.megacommerce.products.v1B\x12ProductCreateProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n products/v1/product_create.proto\x12\x0bproducts.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x15shared/v1/error.proto\"F\n\x10ProductCreateTag\x12\x0f\n\x02id\x18\x01 \x01(\rH\x00\x88\x01\x01\x12\x11\n\x04name\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\x05\n\x03_idB\x07\n\x05_name\"\xae\x01\n\x14ProductCreateRequest\x12\r\n\x05title\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0b\n\x03sku\x18\x03 \x01(\t\x12\r\n\x05price\x18\x04 \x01(\r\x12\x15\n\rcurrency_code\x18\x05 \x01(\t\x12+\n\x04tags\x18\x06 \x03(\x0b\x32\x1d.products.v1.ProductCreateTag\x12\x12\n\nar_enabled\x18\x07 \x01(\x08\"q\n\x15ProductCreateResponse\x12&\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x16.google.protobuf.EmptyH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08responseB|\n\x1corg.megacommerce.products.v1B\x12ProductCreateProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,10 +34,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'products.v1.product_create_
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\034org.megacommerce.products.v1B\022ProductCreateProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\370\001\001'
-  _globals['_PRODUCTCREATETAG']._serialized_start=49
-  _globals['_PRODUCTCREATETAG']._serialized_end=119
-  _globals['_PRODUCTCREATEREQUEST']._serialized_start=122
-  _globals['_PRODUCTCREATEREQUEST']._serialized_end=296
-  _globals['_PRODUCTCREATERESPONSE']._serialized_start=298
-  _globals['_PRODUCTCREATERESPONSE']._serialized_end=321
+  _globals['_PRODUCTCREATETAG']._serialized_start=101
+  _globals['_PRODUCTCREATETAG']._serialized_end=171
+  _globals['_PRODUCTCREATEREQUEST']._serialized_start=174
+  _globals['_PRODUCTCREATEREQUEST']._serialized_end=348
+  _globals['_PRODUCTCREATERESPONSE']._serialized_start=350
+  _globals['_PRODUCTCREATERESPONSE']._serialized_end=463
 # @@protoc_insertion_point(module_scope)

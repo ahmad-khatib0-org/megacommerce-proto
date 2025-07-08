@@ -2,6 +2,8 @@
 // file: products/v1/product_create.proto
 
 import * as jspb from "google-protobuf";
+import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
+import * as shared_v1_error_pb from "../../shared/v1/error_pb";
 
 export class ProductCreateTag extends jspb.Message {
   hasId(): boolean;
@@ -78,6 +80,17 @@ export namespace ProductCreateRequest {
 }
 
 export class ProductCreateResponse extends jspb.Message {
+  hasData(): boolean;
+  clearData(): void;
+  getData(): google_protobuf_empty_pb.Empty | undefined;
+  setData(value?: google_protobuf_empty_pb.Empty): void;
+
+  hasError(): boolean;
+  clearError(): void;
+  getError(): shared_v1_error_pb.AppError | undefined;
+  setError(value?: shared_v1_error_pb.AppError): void;
+
+  getResponseCase(): ProductCreateResponse.ResponseCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductCreateResponse.AsObject;
   static toObject(includeInstance: boolean, msg: ProductCreateResponse): ProductCreateResponse.AsObject;
@@ -90,6 +103,14 @@ export class ProductCreateResponse extends jspb.Message {
 
 export namespace ProductCreateResponse {
   export type AsObject = {
+    data?: google_protobuf_empty_pb.Empty.AsObject,
+    error?: shared_v1_error_pb.AppError.AsObject,
+  }
+
+  export enum ResponseCase {
+    RESPONSE_NOT_SET = 0,
+    DATA = 1,
+    ERROR = 2,
   }
 }
 

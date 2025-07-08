@@ -23,8 +23,21 @@ pub struct ProductCreateRequest {
     #[prost(bool, tag = "7")]
     pub ar_enabled: bool,
 }
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
-pub struct ProductCreateResponse {}
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductCreateResponse {
+    #[prost(oneof = "product_create_response::Response", tags = "1, 2")]
+    pub response: ::core::option::Option<product_create_response::Response>,
+}
+/// Nested message and enum types in `ProductCreateResponse`.
+pub mod product_create_response {
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Response {
+        #[prost(message, tag = "1")]
+        Data(()),
+        #[prost(message, tag = "2")]
+        Error(super::super::super::shared::v1::AppError),
+    }
+}
 /// Generated client implementations.
 pub mod products_service_client {
     #![allow(
