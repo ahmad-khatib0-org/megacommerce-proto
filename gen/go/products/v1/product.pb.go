@@ -119,7 +119,7 @@ type Product struct {
 	Title         string                 `protobuf:"bytes,6,opt,name=title,proto3" json:"title,omitempty"`
 	Description   string                 `protobuf:"bytes,7,opt,name=description,proto3" json:"description,omitempty"`
 	Slug          string                 `protobuf:"bytes,8,opt,name=slug,proto3" json:"slug,omitempty"`
-	Price         uint32                 `protobuf:"varint,9,opt,name=price,proto3" json:"price,omitempty"`
+	Price         string                 `protobuf:"bytes,9,opt,name=price,proto3" json:"price,omitempty"`
 	CurrencyCode  string                 `protobuf:"bytes,10,opt,name=currency_code,json=currencyCode,proto3" json:"currency_code,omitempty"`
 	Tags          []*ProductTag          `protobuf:"bytes,11,rep,name=tags,proto3" json:"tags,omitempty"`
 	Metadata      *ProductMetadata       `protobuf:"bytes,12,opt,name=metadata,proto3,oneof" json:"metadata,omitempty"`
@@ -217,11 +217,11 @@ func (x *Product) GetSlug() string {
 	return ""
 }
 
-func (x *Product) GetPrice() uint32 {
+func (x *Product) GetPrice() string {
 	if x != nil {
 		return x.Price
 	}
-	return 0
+	return ""
 }
 
 func (x *Product) GetCurrencyCode() string {
@@ -294,7 +294,7 @@ const file_products_v1_product_proto_rawDesc = "" +
 	"\x05title\x18\x06 \x01(\tR\x05title\x12 \n" +
 	"\vdescription\x18\a \x01(\tR\vdescription\x12\x12\n" +
 	"\x04slug\x18\b \x01(\tR\x04slug\x12\x14\n" +
-	"\x05price\x18\t \x01(\rR\x05price\x12#\n" +
+	"\x05price\x18\t \x01(\tR\x05price\x12#\n" +
 	"\rcurrency_code\x18\n" +
 	" \x01(\tR\fcurrencyCode\x12+\n" +
 	"\x04tags\x18\v \x03(\v2\x17.products.v1.ProductTagR\x04tags\x12=\n" +

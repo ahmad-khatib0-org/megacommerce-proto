@@ -98,16 +98,18 @@ inline constexpr Product::Impl_::Impl_(
         slug_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
+        price_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
         currency_code_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         metadata_{nullptr},
         version_{0u},
-        price_{0u},
+        ar_enabled_{false},
         created_at_{::uint64_t{0u}},
         published_at_{::uint64_t{0u}},
-        updated_at_{::uint64_t{0u}},
-        ar_enabled_{false} {}
+        updated_at_{::uint64_t{0u}} {}
 
 template <typename>
 PROTOBUF_CONSTEXPR Product::Product(::_pbi::ConstantInitialized)
@@ -167,19 +169,19 @@ const ::uint32_t
         0,
         1,
         2,
-        9,
+        10,
         3,
         4,
         5,
         6,
-        10,
         7,
-        ~0u,
         8,
-        14,
+        ~0u,
+        9,
         11,
         12,
         13,
+        14,
 };
 
 static const ::_pbi::MigrationSchema
@@ -203,7 +205,7 @@ const char descriptor_table_protodef_products_2fv1_2fproduct_2eproto[] ABSL_ATTR
     "\tR\003sku\022\030\n\007version\030\004 \001(\rR\007version\022\026\n\006stat"
     "us\030\005 \001(\tR\006status\022\024\n\005title\030\006 \001(\tR\005title\022 "
     "\n\013description\030\007 \001(\tR\013description\022\022\n\004slug"
-    "\030\010 \001(\tR\004slug\022\024\n\005price\030\t \001(\rR\005price\022#\n\rcu"
+    "\030\010 \001(\tR\004slug\022\024\n\005price\030\t \001(\tR\005price\022#\n\rcu"
     "rrency_code\030\n \001(\tR\014currencyCode\022+\n\004tags\030"
     "\013 \003(\0132\027.products.v1.ProductTagR\004tags\022=\n\010"
     "metadata\030\014 \001(\0132\034.products.v1.ProductMeta"
@@ -659,6 +661,7 @@ PROTOBUF_NDEBUG_INLINE Product::Impl_::Impl_(
         title_(arena, from.title_),
         description_(arena, from.description_),
         slug_(arena, from.slug_),
+        price_(arena, from.price_),
         currency_code_(arena, from.currency_code_) {}
 
 Product::Product(
@@ -675,16 +678,16 @@ Product::Product(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
   ::uint32_t cached_has_bits = _impl_._has_bits_[0];
-  _impl_.metadata_ = ((cached_has_bits & 0x00000100u) != 0)
+  _impl_.metadata_ = ((cached_has_bits & 0x00000200u) != 0)
                 ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.metadata_)
                 : nullptr;
   ::memcpy(reinterpret_cast<char *>(&_impl_) +
                offsetof(Impl_, version_),
            reinterpret_cast<const char *>(&from._impl_) +
                offsetof(Impl_, version_),
-           offsetof(Impl_, ar_enabled_) -
+           offsetof(Impl_, updated_at_) -
                offsetof(Impl_, version_) +
-               sizeof(Impl_::ar_enabled_));
+               sizeof(Impl_::updated_at_));
 
   // @@protoc_insertion_point(copy_constructor:products.v1.Product)
 }
@@ -700,6 +703,7 @@ PROTOBUF_NDEBUG_INLINE Product::Impl_::Impl_(
         title_(arena),
         description_(arena),
         slug_(arena),
+        price_(arena),
         currency_code_(arena) {}
 
 inline void Product::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
@@ -707,9 +711,9 @@ inline void Product::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   ::memset(reinterpret_cast<char *>(&_impl_) +
                offsetof(Impl_, metadata_),
            0,
-           offsetof(Impl_, ar_enabled_) -
+           offsetof(Impl_, updated_at_) -
                offsetof(Impl_, metadata_) +
-               sizeof(Impl_::ar_enabled_));
+               sizeof(Impl_::updated_at_));
 }
 Product::~Product() {
   // @@protoc_insertion_point(destructor:products.v1.Product)
@@ -726,6 +730,7 @@ inline void Product::SharedDtor(MessageLite& self) {
   this_._impl_.title_.Destroy();
   this_._impl_.description_.Destroy();
   this_._impl_.slug_.Destroy();
+  this_._impl_.price_.Destroy();
   this_._impl_.currency_code_.Destroy();
   delete this_._impl_.metadata_;
   this_._impl_.~Impl_();
@@ -786,7 +791,7 @@ Product::GetClassData() const {
   return Product_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<4, 16, 2, 95, 2>
+const ::_pbi::TcParseTable<4, 16, 2, 100, 2>
 Product::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(Product, _impl_._has_bits_),
@@ -807,7 +812,7 @@ Product::_table_ = {
   }, {{
     // optional uint64 updated_at = 16 [json_name = "updatedAt"];
     {::_pbi::TcParser::FastV64S2,
-     {384, 13, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.updated_at_)}},
+     {384, 14, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.updated_at_)}},
     // string id = 1 [json_name = "id"];
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.id_)}},
@@ -818,8 +823,8 @@ Product::_table_ = {
     {::_pbi::TcParser::FastUS1,
      {26, 2, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.sku_)}},
     // uint32 version = 4 [json_name = "version"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Product, _impl_.version_), 9>(),
-     {32, 9, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.version_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Product, _impl_.version_), 10>(),
+     {32, 10, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.version_)}},
     // string status = 5 [json_name = "status"];
     {::_pbi::TcParser::FastUS1,
      {42, 3, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.status_)}},
@@ -832,27 +837,27 @@ Product::_table_ = {
     // string slug = 8 [json_name = "slug"];
     {::_pbi::TcParser::FastUS1,
      {66, 6, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.slug_)}},
-    // uint32 price = 9 [json_name = "price"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Product, _impl_.price_), 10>(),
-     {72, 10, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.price_)}},
+    // string price = 9 [json_name = "price"];
+    {::_pbi::TcParser::FastUS1,
+     {74, 7, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.price_)}},
     // string currency_code = 10 [json_name = "currencyCode"];
     {::_pbi::TcParser::FastUS1,
-     {82, 7, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.currency_code_)}},
+     {82, 8, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.currency_code_)}},
     // repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];
     {::_pbi::TcParser::FastMtR1,
      {90, 63, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.tags_)}},
     // optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];
     {::_pbi::TcParser::FastMtS1,
-     {98, 8, 1, PROTOBUF_FIELD_OFFSET(Product, _impl_.metadata_)}},
+     {98, 9, 1, PROTOBUF_FIELD_OFFSET(Product, _impl_.metadata_)}},
     // bool ar_enabled = 13 [json_name = "arEnabled"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(Product, _impl_.ar_enabled_), 14>(),
-     {104, 14, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.ar_enabled_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(Product, _impl_.ar_enabled_), 11>(),
+     {104, 11, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.ar_enabled_)}},
     // uint64 created_at = 14 [json_name = "createdAt"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Product, _impl_.created_at_), 11>(),
-     {112, 11, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.created_at_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Product, _impl_.created_at_), 12>(),
+     {112, 12, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.created_at_)}},
     // optional uint64 published_at = 15 [json_name = "publishedAt"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Product, _impl_.published_at_), 12>(),
-     {120, 12, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.published_at_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Product, _impl_.published_at_), 13>(),
+     {120, 13, 0, PROTOBUF_FIELD_OFFSET(Product, _impl_.published_at_)}},
   }}, {{
     65535, 65535
   }}, {{
@@ -866,7 +871,7 @@ Product::_table_ = {
     {PROTOBUF_FIELD_OFFSET(Product, _impl_.sku_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // uint32 version = 4 [json_name = "version"];
-    {PROTOBUF_FIELD_OFFSET(Product, _impl_.version_), _Internal::kHasBitsOffset + 9, 0,
+    {PROTOBUF_FIELD_OFFSET(Product, _impl_.version_), _Internal::kHasBitsOffset + 10, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
     // string status = 5 [json_name = "status"];
     {PROTOBUF_FIELD_OFFSET(Product, _impl_.status_), _Internal::kHasBitsOffset + 3, 0,
@@ -880,29 +885,29 @@ Product::_table_ = {
     // string slug = 8 [json_name = "slug"];
     {PROTOBUF_FIELD_OFFSET(Product, _impl_.slug_), _Internal::kHasBitsOffset + 6, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // uint32 price = 9 [json_name = "price"];
-    {PROTOBUF_FIELD_OFFSET(Product, _impl_.price_), _Internal::kHasBitsOffset + 10, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // string price = 9 [json_name = "price"];
+    {PROTOBUF_FIELD_OFFSET(Product, _impl_.price_), _Internal::kHasBitsOffset + 7, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // string currency_code = 10 [json_name = "currencyCode"];
-    {PROTOBUF_FIELD_OFFSET(Product, _impl_.currency_code_), _Internal::kHasBitsOffset + 7, 0,
+    {PROTOBUF_FIELD_OFFSET(Product, _impl_.currency_code_), _Internal::kHasBitsOffset + 8, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // repeated .products.v1.ProductTag tags = 11 [json_name = "tags"];
     {PROTOBUF_FIELD_OFFSET(Product, _impl_.tags_), -1, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
     // optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];
-    {PROTOBUF_FIELD_OFFSET(Product, _impl_.metadata_), _Internal::kHasBitsOffset + 8, 1,
+    {PROTOBUF_FIELD_OFFSET(Product, _impl_.metadata_), _Internal::kHasBitsOffset + 9, 1,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
     // bool ar_enabled = 13 [json_name = "arEnabled"];
-    {PROTOBUF_FIELD_OFFSET(Product, _impl_.ar_enabled_), _Internal::kHasBitsOffset + 14, 0,
+    {PROTOBUF_FIELD_OFFSET(Product, _impl_.ar_enabled_), _Internal::kHasBitsOffset + 11, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
     // uint64 created_at = 14 [json_name = "createdAt"];
-    {PROTOBUF_FIELD_OFFSET(Product, _impl_.created_at_), _Internal::kHasBitsOffset + 11, 0,
+    {PROTOBUF_FIELD_OFFSET(Product, _impl_.created_at_), _Internal::kHasBitsOffset + 12, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
     // optional uint64 published_at = 15 [json_name = "publishedAt"];
-    {PROTOBUF_FIELD_OFFSET(Product, _impl_.published_at_), _Internal::kHasBitsOffset + 12, 0,
+    {PROTOBUF_FIELD_OFFSET(Product, _impl_.published_at_), _Internal::kHasBitsOffset + 13, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
     // optional uint64 updated_at = 16 [json_name = "updatedAt"];
-    {PROTOBUF_FIELD_OFFSET(Product, _impl_.updated_at_), _Internal::kHasBitsOffset + 13, 0,
+    {PROTOBUF_FIELD_OFFSET(Product, _impl_.updated_at_), _Internal::kHasBitsOffset + 14, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
   }},
   {{
@@ -910,7 +915,7 @@ Product::_table_ = {
       {::_pbi::TcParser::GetTable<::products::v1::ProductMetadata>()},
   }},
   {{
-    "\23\2\7\3\0\6\5\13\4\0\15\0\0\0\0\0\0\0\0\0\0\0\0\0"
+    "\23\2\7\3\0\6\5\13\4\5\15\0\0\0\0\0\0\0\0\0\0\0\0\0"
     "products.v1.Product"
     "id"
     "user_id"
@@ -919,6 +924,7 @@ Product::_table_ = {
     "title"
     "description"
     "slug"
+    "price"
     "currency_code"
   }},
 };
@@ -954,17 +960,22 @@ PROTOBUF_NOINLINE void Product::Clear() {
       _impl_.slug_.ClearNonDefaultToEmpty();
     }
     if ((cached_has_bits & 0x00000080u) != 0) {
-      _impl_.currency_code_.ClearNonDefaultToEmpty();
+      _impl_.price_.ClearNonDefaultToEmpty();
     }
   }
-  if ((cached_has_bits & 0x00000100u) != 0) {
-    ABSL_DCHECK(_impl_.metadata_ != nullptr);
-    _impl_.metadata_->Clear();
+  if ((cached_has_bits & 0x00000300u) != 0) {
+    if ((cached_has_bits & 0x00000100u) != 0) {
+      _impl_.currency_code_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000200u) != 0) {
+      ABSL_DCHECK(_impl_.metadata_ != nullptr);
+      _impl_.metadata_->Clear();
+    }
   }
-  if ((cached_has_bits & 0x00007e00u) != 0) {
+  if ((cached_has_bits & 0x00007c00u) != 0) {
     ::memset(&_impl_.version_, 0, static_cast<::size_t>(
-        reinterpret_cast<char*>(&_impl_.ar_enabled_) -
-        reinterpret_cast<char*>(&_impl_.version_)) + sizeof(_impl_.ar_enabled_));
+        reinterpret_cast<char*>(&_impl_.updated_at_) -
+        reinterpret_cast<char*>(&_impl_.version_)) + sizeof(_impl_.updated_at_));
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
@@ -1016,7 +1027,7 @@ PROTOBUF_NOINLINE void Product::Clear() {
   }
 
   // uint32 version = 4 [json_name = "version"];
-  if ((this_._impl_._has_bits_[0] & 0x00000200u) != 0) {
+  if ((this_._impl_._has_bits_[0] & 0x00000400u) != 0) {
     if (this_._internal_version() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
@@ -1064,17 +1075,18 @@ PROTOBUF_NOINLINE void Product::Clear() {
     }
   }
 
-  // uint32 price = 9 [json_name = "price"];
-  if ((this_._impl_._has_bits_[0] & 0x00000400u) != 0) {
-    if (this_._internal_price() != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
-          9, this_._internal_price(), target);
+  // string price = 9 [json_name = "price"];
+  if ((this_._impl_._has_bits_[0] & 0x00000080u) != 0) {
+    if (!this_._internal_price().empty()) {
+      const ::std::string& _s = this_._internal_price();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.Product.price");
+      target = stream->WriteStringMaybeAliased(9, _s, target);
     }
   }
 
   // string currency_code = 10 [json_name = "currencyCode"];
-  if ((this_._impl_._has_bits_[0] & 0x00000080u) != 0) {
+  if ((this_._impl_._has_bits_[0] & 0x00000100u) != 0) {
     if (!this_._internal_currency_code().empty()) {
       const ::std::string& _s = this_._internal_currency_code();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1096,14 +1108,14 @@ PROTOBUF_NOINLINE void Product::Clear() {
 
   cached_has_bits = this_._impl_._has_bits_[0];
   // optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];
-  if ((cached_has_bits & 0x00000100u) != 0) {
+  if ((cached_has_bits & 0x00000200u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
         12, *this_._impl_.metadata_, this_._impl_.metadata_->GetCachedSize(), target,
         stream);
   }
 
   // bool ar_enabled = 13 [json_name = "arEnabled"];
-  if ((cached_has_bits & 0x00004000u) != 0) {
+  if ((cached_has_bits & 0x00000800u) != 0) {
     if (this_._internal_ar_enabled() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteBoolToArray(
@@ -1112,7 +1124,7 @@ PROTOBUF_NOINLINE void Product::Clear() {
   }
 
   // uint64 created_at = 14 [json_name = "createdAt"];
-  if ((cached_has_bits & 0x00000800u) != 0) {
+  if ((cached_has_bits & 0x00001000u) != 0) {
     if (this_._internal_created_at() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
@@ -1121,14 +1133,14 @@ PROTOBUF_NOINLINE void Product::Clear() {
   }
 
   // optional uint64 published_at = 15 [json_name = "publishedAt"];
-  if ((cached_has_bits & 0x00001000u) != 0) {
+  if ((cached_has_bits & 0x00002000u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
         15, this_._internal_published_at(), target);
   }
 
   // optional uint64 updated_at = 16 [json_name = "updatedAt"];
-  if ((cached_has_bits & 0x00002000u) != 0) {
+  if ((cached_has_bits & 0x00004000u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
         16, this_._internal_updated_at(), target);
@@ -1218,56 +1230,56 @@ PROTOBUF_NOINLINE void Product::Clear() {
                                         this_._internal_slug());
       }
     }
-    // string currency_code = 10 [json_name = "currencyCode"];
+    // string price = 9 [json_name = "price"];
     if ((cached_has_bits & 0x00000080u) != 0) {
+      if (!this_._internal_price().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_price());
+      }
+    }
+  }
+  if ((cached_has_bits & 0x00007f00u) != 0) {
+    // string currency_code = 10 [json_name = "currencyCode"];
+    if ((cached_has_bits & 0x00000100u) != 0) {
       if (!this_._internal_currency_code().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_currency_code());
       }
     }
-  }
-  if ((cached_has_bits & 0x00007f00u) != 0) {
     // optional .products.v1.ProductMetadata metadata = 12 [json_name = "metadata"];
-    if ((cached_has_bits & 0x00000100u) != 0) {
+    if ((cached_has_bits & 0x00000200u) != 0) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.metadata_);
     }
     // uint32 version = 4 [json_name = "version"];
-    if ((cached_has_bits & 0x00000200u) != 0) {
+    if ((cached_has_bits & 0x00000400u) != 0) {
       if (this_._internal_version() != 0) {
         total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
             this_._internal_version());
       }
     }
-    // uint32 price = 9 [json_name = "price"];
-    if ((cached_has_bits & 0x00000400u) != 0) {
-      if (this_._internal_price() != 0) {
-        total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
-            this_._internal_price());
+    // bool ar_enabled = 13 [json_name = "arEnabled"];
+    if ((cached_has_bits & 0x00000800u) != 0) {
+      if (this_._internal_ar_enabled() != 0) {
+        total_size += 2;
       }
     }
     // uint64 created_at = 14 [json_name = "createdAt"];
-    if ((cached_has_bits & 0x00000800u) != 0) {
+    if ((cached_has_bits & 0x00001000u) != 0) {
       if (this_._internal_created_at() != 0) {
         total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
             this_._internal_created_at());
       }
     }
     // optional uint64 published_at = 15 [json_name = "publishedAt"];
-    if ((cached_has_bits & 0x00001000u) != 0) {
+    if ((cached_has_bits & 0x00002000u) != 0) {
       total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
           this_._internal_published_at());
     }
     // optional uint64 updated_at = 16 [json_name = "updatedAt"];
-    if ((cached_has_bits & 0x00002000u) != 0) {
+    if ((cached_has_bits & 0x00004000u) != 0) {
       total_size += 2 + ::_pbi::WireFormatLite::UInt64Size(
                                       this_._internal_updated_at());
-    }
-    // bool ar_enabled = 13 [json_name = "arEnabled"];
-    if ((cached_has_bits & 0x00004000u) != 0) {
-      if (this_._internal_ar_enabled() != 0) {
-        total_size += 2;
-      }
     }
   }
   return this_.MaybeComputeUnknownFieldsSize(total_size,
@@ -1351,6 +1363,17 @@ void Product::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google:
       }
     }
     if ((cached_has_bits & 0x00000080u) != 0) {
+      if (!from._internal_price().empty()) {
+        _this->_internal_set_price(from._internal_price());
+      } else {
+        if (_this->_impl_.price_.IsDefault()) {
+          _this->_internal_set_price("");
+        }
+      }
+    }
+  }
+  if ((cached_has_bits & 0x00007f00u) != 0) {
+    if ((cached_has_bits & 0x00000100u) != 0) {
       if (!from._internal_currency_code().empty()) {
         _this->_internal_set_currency_code(from._internal_currency_code());
       } else {
@@ -1359,9 +1382,7 @@ void Product::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google:
         }
       }
     }
-  }
-  if ((cached_has_bits & 0x00007f00u) != 0) {
-    if ((cached_has_bits & 0x00000100u) != 0) {
+    if ((cached_has_bits & 0x00000200u) != 0) {
       ABSL_DCHECK(from._impl_.metadata_ != nullptr);
       if (_this->_impl_.metadata_ == nullptr) {
         _this->_impl_.metadata_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.metadata_);
@@ -1369,31 +1390,26 @@ void Product::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google:
         _this->_impl_.metadata_->MergeFrom(*from._impl_.metadata_);
       }
     }
-    if ((cached_has_bits & 0x00000200u) != 0) {
+    if ((cached_has_bits & 0x00000400u) != 0) {
       if (from._internal_version() != 0) {
         _this->_impl_.version_ = from._impl_.version_;
       }
     }
-    if ((cached_has_bits & 0x00000400u) != 0) {
-      if (from._internal_price() != 0) {
-        _this->_impl_.price_ = from._impl_.price_;
+    if ((cached_has_bits & 0x00000800u) != 0) {
+      if (from._internal_ar_enabled() != 0) {
+        _this->_impl_.ar_enabled_ = from._impl_.ar_enabled_;
       }
     }
-    if ((cached_has_bits & 0x00000800u) != 0) {
+    if ((cached_has_bits & 0x00001000u) != 0) {
       if (from._internal_created_at() != 0) {
         _this->_impl_.created_at_ = from._impl_.created_at_;
       }
     }
-    if ((cached_has_bits & 0x00001000u) != 0) {
+    if ((cached_has_bits & 0x00002000u) != 0) {
       _this->_impl_.published_at_ = from._impl_.published_at_;
     }
-    if ((cached_has_bits & 0x00002000u) != 0) {
-      _this->_impl_.updated_at_ = from._impl_.updated_at_;
-    }
     if ((cached_has_bits & 0x00004000u) != 0) {
-      if (from._internal_ar_enabled() != 0) {
-        _this->_impl_.ar_enabled_ = from._impl_.ar_enabled_;
-      }
+      _this->_impl_.updated_at_ = from._impl_.updated_at_;
     }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -1422,10 +1438,11 @@ void Product::InternalSwap(Product* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.title_, &other->_impl_.title_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.description_, &other->_impl_.description_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.slug_, &other->_impl_.slug_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.price_, &other->_impl_.price_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.currency_code_, &other->_impl_.currency_code_, arena);
   ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Product, _impl_.ar_enabled_)
-      + sizeof(Product::_impl_.ar_enabled_)
+      PROTOBUF_FIELD_OFFSET(Product, _impl_.updated_at_)
+      + sizeof(Product::_impl_.updated_at_)
       - PROTOBUF_FIELD_OFFSET(Product, _impl_.metadata_)>(
           reinterpret_cast<char*>(&_impl_.metadata_),
           reinterpret_cast<char*>(&other->_impl_.metadata_));

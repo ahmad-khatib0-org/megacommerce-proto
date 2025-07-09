@@ -77,8 +77,8 @@ export class Product extends jspb.Message {
   getSlug(): string;
   setSlug(value: string): Product;
 
-  getPrice(): number;
-  setPrice(value: number): Product;
+  getPrice(): string;
+  setPrice(value: string): Product;
 
   getCurrencyCode(): string;
   setCurrencyCode(value: string): Product;
@@ -127,7 +127,7 @@ export namespace Product {
     title: string,
     description: string,
     slug: string,
-    price: number,
+    price: string,
     currencyCode: string,
     tagsList: Array<ProductTag.AsObject>,
     metadata?: ProductMetadata.AsObject,

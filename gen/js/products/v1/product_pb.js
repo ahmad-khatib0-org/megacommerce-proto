@@ -431,7 +431,7 @@ status: jspb.Message.getFieldWithDefault(msg, 5, ""),
 title: jspb.Message.getFieldWithDefault(msg, 6, ""),
 description: jspb.Message.getFieldWithDefault(msg, 7, ""),
 slug: jspb.Message.getFieldWithDefault(msg, 8, ""),
-price: jspb.Message.getFieldWithDefault(msg, 9, 0),
+price: jspb.Message.getFieldWithDefault(msg, 9, ""),
 currencyCode: jspb.Message.getFieldWithDefault(msg, 10, ""),
 tagsList: jspb.Message.toObjectList(msg.getTagsList(),
     proto.products.v1.ProductTag.toObject, includeInstance),
@@ -509,7 +509,7 @@ proto.products.v1.Product.deserializeBinaryFromReader = function(msg, reader) {
       msg.setSlug(value);
       break;
     case 9:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setPrice(value);
       break;
     case 10:
@@ -628,8 +628,8 @@ proto.products.v1.Product.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getPrice();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       9,
       f
     );
@@ -833,20 +833,20 @@ proto.products.v1.Product.prototype.setSlug = function(value) {
 
 
 /**
- * optional uint32 price = 9;
- * @return {number}
+ * optional string price = 9;
+ * @return {string}
  */
 proto.products.v1.Product.prototype.getPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.products.v1.Product} returns this
  */
 proto.products.v1.Product.prototype.setPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 9, value);
+  return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 

@@ -372,8 +372,8 @@ pub struct Product {
     pub description: ::prost::alloc::string::String,
     #[prost(string, tag = "8")]
     pub slug: ::prost::alloc::string::String,
-    #[prost(uint32, tag = "9")]
-    pub price: u32,
+    #[prost(string, tag = "9")]
+    pub price: ::prost::alloc::string::String,
     #[prost(string, tag = "10")]
     pub currency_code: ::prost::alloc::string::String,
     #[prost(message, repeated, tag = "11")]
