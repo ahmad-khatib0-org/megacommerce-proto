@@ -68,10 +68,12 @@ inline constexpr ProductCreateRequest::Impl_::Impl_(
         sku_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
+        price_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
         currency_code_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        price_{0u},
         ar_enabled_{false} {}
 
 template <typename>
@@ -148,8 +150,8 @@ const ::uint32_t
         0,
         1,
         2,
-        4,
         3,
+        4,
         ~0u,
         5,
         0x004, // bitmap
@@ -179,7 +181,7 @@ const char descriptor_table_protodef_products_2fv1_2fproduct_5fcreate_2eproto[] 
     "me\210\001\001B\005\n\003_idB\007\n\005_name\"\355\001\n\024ProductCreateR"
     "equest\022\024\n\005title\030\001 \001(\tR\005title\022 \n\013descript"
     "ion\030\002 \001(\tR\013description\022\020\n\003sku\030\003 \001(\tR\003sku"
-    "\022\024\n\005price\030\004 \001(\rR\005price\022#\n\rcurrency_code\030"
+    "\022\024\n\005price\030\004 \001(\tR\005price\022#\n\rcurrency_code\030"
     "\005 \001(\tR\014currencyCode\0221\n\004tags\030\006 \003(\0132\035.prod"
     "ucts.v1.ProductCreateTagR\004tags\022\035\n\nar_ena"
     "bled\030\007 \001(\010R\tarEnabled\"~\n\025ProductCreateRe"
@@ -525,6 +527,7 @@ PROTOBUF_NDEBUG_INLINE ProductCreateRequest::Impl_::Impl_(
         title_(arena, from.title_),
         description_(arena, from.description_),
         sku_(arena, from.sku_),
+        price_(arena, from.price_),
         currency_code_(arena, from.currency_code_) {}
 
 ProductCreateRequest::ProductCreateRequest(
@@ -540,13 +543,7 @@ ProductCreateRequest::ProductCreateRequest(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
-  ::memcpy(reinterpret_cast<char *>(&_impl_) +
-               offsetof(Impl_, price_),
-           reinterpret_cast<const char *>(&from._impl_) +
-               offsetof(Impl_, price_),
-           offsetof(Impl_, ar_enabled_) -
-               offsetof(Impl_, price_) +
-               sizeof(Impl_::ar_enabled_));
+  _impl_.ar_enabled_ = from._impl_.ar_enabled_;
 
   // @@protoc_insertion_point(copy_constructor:products.v1.ProductCreateRequest)
 }
@@ -558,16 +555,12 @@ PROTOBUF_NDEBUG_INLINE ProductCreateRequest::Impl_::Impl_(
         title_(arena),
         description_(arena),
         sku_(arena),
+        price_(arena),
         currency_code_(arena) {}
 
 inline void ProductCreateRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  ::memset(reinterpret_cast<char *>(&_impl_) +
-               offsetof(Impl_, price_),
-           0,
-           offsetof(Impl_, ar_enabled_) -
-               offsetof(Impl_, price_) +
-               sizeof(Impl_::ar_enabled_));
+  _impl_.ar_enabled_ = {};
 }
 ProductCreateRequest::~ProductCreateRequest() {
   // @@protoc_insertion_point(destructor:products.v1.ProductCreateRequest)
@@ -580,6 +573,7 @@ inline void ProductCreateRequest::SharedDtor(MessageLite& self) {
   this_._impl_.title_.Destroy();
   this_._impl_.description_.Destroy();
   this_._impl_.sku_.Destroy();
+  this_._impl_.price_.Destroy();
   this_._impl_.currency_code_.Destroy();
   this_._impl_.~Impl_();
 }
@@ -639,7 +633,7 @@ ProductCreateRequest::GetClassData() const {
   return ProductCreateRequest_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 7, 1, 73, 2>
+const ::_pbi::TcParseTable<3, 7, 1, 78, 2>
 ProductCreateRequest::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_._has_bits_),
@@ -668,12 +662,12 @@ ProductCreateRequest::_table_ = {
     // string sku = 3 [json_name = "sku"];
     {::_pbi::TcParser::FastUS1,
      {26, 2, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.sku_)}},
-    // uint32 price = 4 [json_name = "price"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ProductCreateRequest, _impl_.price_), 4>(),
-     {32, 4, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.price_)}},
+    // string price = 4 [json_name = "price"];
+    {::_pbi::TcParser::FastUS1,
+     {34, 3, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.price_)}},
     // string currency_code = 5 [json_name = "currencyCode"];
     {::_pbi::TcParser::FastUS1,
-     {42, 3, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.currency_code_)}},
+     {42, 4, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.currency_code_)}},
     // repeated .products.v1.ProductCreateTag tags = 6 [json_name = "tags"];
     {::_pbi::TcParser::FastMtR1,
      {50, 63, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.tags_)}},
@@ -692,11 +686,11 @@ ProductCreateRequest::_table_ = {
     // string sku = 3 [json_name = "sku"];
     {PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.sku_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // uint32 price = 4 [json_name = "price"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.price_), _Internal::kHasBitsOffset + 4, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUInt32)},
+    // string price = 4 [json_name = "price"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.price_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // string currency_code = 5 [json_name = "currencyCode"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.currency_code_), _Internal::kHasBitsOffset + 3, 0,
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.currency_code_), _Internal::kHasBitsOffset + 4, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // repeated .products.v1.ProductCreateTag tags = 6 [json_name = "tags"];
     {PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.tags_), -1, 0,
@@ -709,11 +703,12 @@ ProductCreateRequest::_table_ = {
       {::_pbi::TcParser::GetTable<::products::v1::ProductCreateTag>()},
   }},
   {{
-    "\40\5\13\3\0\15\0\0"
+    "\40\5\13\3\5\15\0\0"
     "products.v1.ProductCreateRequest"
     "title"
     "description"
     "sku"
+    "price"
     "currency_code"
   }},
 };
@@ -726,7 +721,7 @@ PROTOBUF_NOINLINE void ProductCreateRequest::Clear() {
 
   _impl_.tags_.Clear();
   cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x0000000fu) != 0) {
+  if ((cached_has_bits & 0x0000001fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
       _impl_.title_.ClearNonDefaultToEmpty();
     }
@@ -737,14 +732,13 @@ PROTOBUF_NOINLINE void ProductCreateRequest::Clear() {
       _impl_.sku_.ClearNonDefaultToEmpty();
     }
     if ((cached_has_bits & 0x00000008u) != 0) {
+      _impl_.price_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000010u) != 0) {
       _impl_.currency_code_.ClearNonDefaultToEmpty();
     }
   }
-  if ((cached_has_bits & 0x00000030u) != 0) {
-    ::memset(&_impl_.price_, 0, static_cast<::size_t>(
-        reinterpret_cast<char*>(&_impl_.ar_enabled_) -
-        reinterpret_cast<char*>(&_impl_.price_)) + sizeof(_impl_.ar_enabled_));
-  }
+  _impl_.ar_enabled_ = false;
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
@@ -794,17 +788,18 @@ PROTOBUF_NOINLINE void ProductCreateRequest::Clear() {
     }
   }
 
-  // uint32 price = 4 [json_name = "price"];
-  if ((this_._impl_._has_bits_[0] & 0x00000010u) != 0) {
-    if (this_._internal_price() != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
-          4, this_._internal_price(), target);
+  // string price = 4 [json_name = "price"];
+  if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
+    if (!this_._internal_price().empty()) {
+      const ::std::string& _s = this_._internal_price();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequest.price");
+      target = stream->WriteStringMaybeAliased(4, _s, target);
     }
   }
 
   // string currency_code = 5 [json_name = "currencyCode"];
-  if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
+  if ((this_._impl_._has_bits_[0] & 0x00000010u) != 0) {
     if (!this_._internal_currency_code().empty()) {
       const ::std::string& _s = this_._internal_currency_code();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -889,18 +884,18 @@ PROTOBUF_NOINLINE void ProductCreateRequest::Clear() {
                                         this_._internal_sku());
       }
     }
-    // string currency_code = 5 [json_name = "currencyCode"];
+    // string price = 4 [json_name = "price"];
     if ((cached_has_bits & 0x00000008u) != 0) {
+      if (!this_._internal_price().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_price());
+      }
+    }
+    // string currency_code = 5 [json_name = "currencyCode"];
+    if ((cached_has_bits & 0x00000010u) != 0) {
       if (!this_._internal_currency_code().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_currency_code());
-      }
-    }
-    // uint32 price = 4 [json_name = "price"];
-    if ((cached_has_bits & 0x00000010u) != 0) {
-      if (this_._internal_price() != 0) {
-        total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
-            this_._internal_price());
       }
     }
     // bool ar_enabled = 7 [json_name = "arEnabled"];
@@ -954,17 +949,21 @@ void ProductCreateRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, co
       }
     }
     if ((cached_has_bits & 0x00000008u) != 0) {
+      if (!from._internal_price().empty()) {
+        _this->_internal_set_price(from._internal_price());
+      } else {
+        if (_this->_impl_.price_.IsDefault()) {
+          _this->_internal_set_price("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000010u) != 0) {
       if (!from._internal_currency_code().empty()) {
         _this->_internal_set_currency_code(from._internal_currency_code());
       } else {
         if (_this->_impl_.currency_code_.IsDefault()) {
           _this->_internal_set_currency_code("");
         }
-      }
-    }
-    if ((cached_has_bits & 0x00000010u) != 0) {
-      if (from._internal_price() != 0) {
-        _this->_impl_.price_ = from._impl_.price_;
       }
     }
     if ((cached_has_bits & 0x00000020u) != 0) {
@@ -995,13 +994,9 @@ void ProductCreateRequest::InternalSwap(ProductCreateRequest* PROTOBUF_RESTRICT 
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.title_, &other->_impl_.title_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.description_, &other->_impl_.description_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sku_, &other->_impl_.sku_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.price_, &other->_impl_.price_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.currency_code_, &other->_impl_.currency_code_, arena);
-  ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.ar_enabled_)
-      + sizeof(ProductCreateRequest::_impl_.ar_enabled_)
-      - PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.price_)>(
-          reinterpret_cast<char*>(&_impl_.price_),
-          reinterpret_cast<char*>(&other->_impl_.price_));
+  swap(_impl_.ar_enabled_, other->_impl_.ar_enabled_);
 }
 
 ::google::protobuf::Metadata ProductCreateRequest::GetMetadata() const {

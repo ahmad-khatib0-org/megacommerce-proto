@@ -16,8 +16,8 @@ pub struct ProductCreateRequest {
     pub description: ::prost::alloc::string::String,
     #[prost(string, tag = "3")]
     pub sku: ::prost::alloc::string::String,
-    #[prost(uint32, tag = "4")]
-    pub price: u32,
+    #[prost(string, tag = "4")]
+    pub price: ::prost::alloc::string::String,
     #[prost(string, tag = "5")]
     pub currency_code: ::prost::alloc::string::String,
     #[prost(message, repeated, tag = "6")]

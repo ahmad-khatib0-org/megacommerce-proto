@@ -705,10 +705,16 @@ public final class ProductCreateProto {
         getSkuBytes();
 
     /**
-     * <code>uint32 price = 4 [json_name = "price"];</code>
+     * <code>string price = 4 [json_name = "price"];</code>
      * @return The price.
      */
-    int getPrice();
+    java.lang.String getPrice();
+    /**
+     * <code>string price = 4 [json_name = "price"];</code>
+     * @return The bytes for price.
+     */
+    com.google.protobuf.ByteString
+        getPriceBytes();
 
     /**
      * <code>string currency_code = 5 [json_name = "currencyCode"];</code>
@@ -777,6 +783,7 @@ public final class ProductCreateProto {
       title_ = "";
       description_ = "";
       sku_ = "";
+      price_ = "";
       currencyCode_ = "";
       tags_ = java.util.Collections.emptyList();
     }
@@ -912,14 +919,42 @@ public final class ProductCreateProto {
     }
 
     public static final int PRICE_FIELD_NUMBER = 4;
-    private int price_ = 0;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object price_ = "";
     /**
-     * <code>uint32 price = 4 [json_name = "price"];</code>
+     * <code>string price = 4 [json_name = "price"];</code>
      * @return The price.
      */
     @java.lang.Override
-    public int getPrice() {
-      return price_;
+    public java.lang.String getPrice() {
+      java.lang.Object ref = price_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        price_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string price = 4 [json_name = "price"];</code>
+     * @return The bytes for price.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPriceBytes() {
+      java.lang.Object ref = price_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        price_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int CURRENCY_CODE_FIELD_NUMBER = 5;
@@ -1036,8 +1071,8 @@ public final class ProductCreateProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sku_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 3, sku_);
       }
-      if (price_ != 0) {
-        output.writeUInt32(4, price_);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(price_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, price_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(currencyCode_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 5, currencyCode_);
@@ -1066,9 +1101,8 @@ public final class ProductCreateProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(sku_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(3, sku_);
       }
-      if (price_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(4, price_);
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(price_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, price_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(currencyCode_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(5, currencyCode_);
@@ -1102,8 +1136,8 @@ public final class ProductCreateProto {
           .equals(other.getDescription())) return false;
       if (!getSku()
           .equals(other.getSku())) return false;
-      if (getPrice()
-          != other.getPrice()) return false;
+      if (!getPrice()
+          .equals(other.getPrice())) return false;
       if (!getCurrencyCode()
           .equals(other.getCurrencyCode())) return false;
       if (!getTagsList()
@@ -1128,7 +1162,7 @@ public final class ProductCreateProto {
       hash = (37 * hash) + SKU_FIELD_NUMBER;
       hash = (53 * hash) + getSku().hashCode();
       hash = (37 * hash) + PRICE_FIELD_NUMBER;
-      hash = (53 * hash) + getPrice();
+      hash = (53 * hash) + getPrice().hashCode();
       hash = (37 * hash) + CURRENCY_CODE_FIELD_NUMBER;
       hash = (53 * hash) + getCurrencyCode().hashCode();
       if (getTagsCount() > 0) {
@@ -1272,7 +1306,7 @@ public final class ProductCreateProto {
         title_ = "";
         description_ = "";
         sku_ = "";
-        price_ = 0;
+        price_ = "";
         currencyCode_ = "";
         if (tagsBuilder_ == null) {
           tags_ = java.util.Collections.emptyList();
@@ -1375,8 +1409,10 @@ public final class ProductCreateProto {
           bitField0_ |= 0x00000004;
           onChanged();
         }
-        if (other.getPrice() != 0) {
-          setPrice(other.getPrice());
+        if (!other.getPrice().isEmpty()) {
+          price_ = other.price_;
+          bitField0_ |= 0x00000008;
+          onChanged();
         }
         if (!other.getCurrencyCode().isEmpty()) {
           currencyCode_ = other.currencyCode_;
@@ -1453,11 +1489,11 @@ public final class ProductCreateProto {
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
-              case 32: {
-                price_ = input.readUInt32();
+              case 34: {
+                price_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000008;
                 break;
-              } // case 32
+              } // case 34
               case 42: {
                 currencyCode_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000010;
@@ -1714,34 +1750,74 @@ public final class ProductCreateProto {
         return this;
       }
 
-      private int price_ ;
+      private java.lang.Object price_ = "";
       /**
-       * <code>uint32 price = 4 [json_name = "price"];</code>
+       * <code>string price = 4 [json_name = "price"];</code>
        * @return The price.
        */
-      @java.lang.Override
-      public int getPrice() {
-        return price_;
+      public java.lang.String getPrice() {
+        java.lang.Object ref = price_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          price_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>uint32 price = 4 [json_name = "price"];</code>
+       * <code>string price = 4 [json_name = "price"];</code>
+       * @return The bytes for price.
+       */
+      public com.google.protobuf.ByteString
+          getPriceBytes() {
+        java.lang.Object ref = price_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          price_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string price = 4 [json_name = "price"];</code>
        * @param value The price to set.
        * @return This builder for chaining.
        */
-      public Builder setPrice(int value) {
-
+      public Builder setPrice(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
         price_ = value;
         bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
-       * <code>uint32 price = 4 [json_name = "price"];</code>
+       * <code>string price = 4 [json_name = "price"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPrice() {
+        price_ = getDefaultInstance().getPrice();
         bitField0_ = (bitField0_ & ~0x00000008);
-        price_ = 0;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string price = 4 [json_name = "price"];</code>
+       * @param value The bytes for price to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPriceBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        price_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3057,7 +3133,7 @@ public final class ProductCreateProto {
       "me\210\001\001B\005\n\003_idB\007\n\005_name\"\355\001\n\024ProductCreateR" +
       "equest\022\024\n\005title\030\001 \001(\tR\005title\022 \n\013descript" +
       "ion\030\002 \001(\tR\013description\022\020\n\003sku\030\003 \001(\tR\003sku" +
-      "\022\024\n\005price\030\004 \001(\rR\005price\022#\n\rcurrency_code\030" +
+      "\022\024\n\005price\030\004 \001(\tR\005price\022#\n\rcurrency_code\030" +
       "\005 \001(\tR\014currencyCode\0221\n\004tags\030\006 \003(\0132\035.prod" +
       "ucts.v1.ProductCreateTagR\004tags\022\035\n\nar_ena" +
       "bled\030\007 \001(\010R\tarEnabled\"~\n\025ProductCreateRe" +

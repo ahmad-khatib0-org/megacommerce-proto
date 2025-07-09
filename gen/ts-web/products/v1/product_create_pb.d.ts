@@ -50,8 +50,8 @@ export class ProductCreateRequest extends jspb.Message {
   getSku(): string;
   setSku(value: string): ProductCreateRequest;
 
-  getPrice(): number;
-  setPrice(value: number): ProductCreateRequest;
+  getPrice(): string;
+  setPrice(value: string): ProductCreateRequest;
 
   getCurrencyCode(): string;
   setCurrencyCode(value: string): ProductCreateRequest;
@@ -77,7 +77,7 @@ export namespace ProductCreateRequest {
     title: string,
     description: string,
     sku: string,
-    price: number,
+    price: string,
     currencyCode: string,
     tagsList: Array<ProductCreateTag.AsObject>,
     arEnabled: boolean,

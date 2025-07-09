@@ -330,7 +330,7 @@ proto.products.v1.ProductCreateRequest.toObject = function(includeInstance, msg)
 title: jspb.Message.getFieldWithDefault(msg, 1, ""),
 description: jspb.Message.getFieldWithDefault(msg, 2, ""),
 sku: jspb.Message.getFieldWithDefault(msg, 3, ""),
-price: jspb.Message.getFieldWithDefault(msg, 4, 0),
+price: jspb.Message.getFieldWithDefault(msg, 4, ""),
 currencyCode: jspb.Message.getFieldWithDefault(msg, 5, ""),
 tagsList: jspb.Message.toObjectList(msg.getTagsList(),
     proto.products.v1.ProductCreateTag.toObject, includeInstance),
@@ -384,7 +384,7 @@ proto.products.v1.ProductCreateRequest.deserializeBinaryFromReader = function(ms
       msg.setSku(value);
       break;
     case 4:
-      var value = /** @type {number} */ (reader.readUint32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setPrice(value);
       break;
     case 5:
@@ -451,8 +451,8 @@ proto.products.v1.ProductCreateRequest.serializeBinaryToWriter = function(messag
     );
   }
   f = message.getPrice();
-  if (f !== 0) {
-    writer.writeUint32(
+  if (f.length > 0) {
+    writer.writeString(
       4,
       f
     );
@@ -537,20 +537,20 @@ proto.products.v1.ProductCreateRequest.prototype.setSku = function(value) {
 
 
 /**
- * optional uint32 price = 4;
- * @return {number}
+ * optional string price = 4;
+ * @return {string}
  */
 proto.products.v1.ProductCreateRequest.prototype.getPrice = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.products.v1.ProductCreateRequest} returns this
  */
 proto.products.v1.ProductCreateRequest.prototype.setPrice = function(value) {
-  return jspb.Message.setProto3IntField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

@@ -80,7 +80,7 @@ type ProductCreateRequest struct {
 	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
 	Description   string                 `protobuf:"bytes,2,opt,name=description,proto3" json:"description,omitempty"`
 	Sku           string                 `protobuf:"bytes,3,opt,name=sku,proto3" json:"sku,omitempty"`
-	Price         uint32                 `protobuf:"varint,4,opt,name=price,proto3" json:"price,omitempty"`
+	Price         string                 `protobuf:"bytes,4,opt,name=price,proto3" json:"price,omitempty"`
 	CurrencyCode  string                 `protobuf:"bytes,5,opt,name=currency_code,json=currencyCode,proto3" json:"currency_code,omitempty"`
 	Tags          []*ProductCreateTag    `protobuf:"bytes,6,rep,name=tags,proto3" json:"tags,omitempty"`
 	ArEnabled     bool                   `protobuf:"varint,7,opt,name=ar_enabled,json=arEnabled,proto3" json:"ar_enabled,omitempty"`
@@ -139,11 +139,11 @@ func (x *ProductCreateRequest) GetSku() string {
 	return ""
 }
 
-func (x *ProductCreateRequest) GetPrice() uint32 {
+func (x *ProductCreateRequest) GetPrice() string {
 	if x != nil {
 		return x.Price
 	}
-	return 0
+	return ""
 }
 
 func (x *ProductCreateRequest) GetCurrencyCode() string {
@@ -263,7 +263,7 @@ const file_products_v1_product_create_proto_rawDesc = "" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12 \n" +
 	"\vdescription\x18\x02 \x01(\tR\vdescription\x12\x10\n" +
 	"\x03sku\x18\x03 \x01(\tR\x03sku\x12\x14\n" +
-	"\x05price\x18\x04 \x01(\rR\x05price\x12#\n" +
+	"\x05price\x18\x04 \x01(\tR\x05price\x12#\n" +
 	"\rcurrency_code\x18\x05 \x01(\tR\fcurrencyCode\x121\n" +
 	"\x04tags\x18\x06 \x03(\v2\x1d.products.v1.ProductCreateTagR\x04tags\x12\x1d\n" +
 	"\n" +

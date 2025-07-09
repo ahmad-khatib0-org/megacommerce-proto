@@ -440,8 +440,8 @@ class ProductCreateRequest final : public ::google::protobuf::Message
     kTitleFieldNumber = 1,
     kDescriptionFieldNumber = 2,
     kSkuFieldNumber = 3,
-    kCurrencyCodeFieldNumber = 5,
     kPriceFieldNumber = 4,
+    kCurrencyCodeFieldNumber = 5,
     kArEnabledFieldNumber = 7,
   };
   // repeated .products.v1.ProductCreateTag tags = 6 [json_name = "tags"];
@@ -506,6 +506,21 @@ class ProductCreateRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_sku();
 
   public:
+  // string price = 4 [json_name = "price"];
+  void clear_price() ;
+  const ::std::string& price() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_price(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_price();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_price();
+  void set_allocated_price(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_price() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_price(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_price();
+
+  public:
   // string currency_code = 5 [json_name = "currencyCode"];
   void clear_currency_code() ;
   const ::std::string& currency_code() const;
@@ -519,16 +534,6 @@ class ProductCreateRequest final : public ::google::protobuf::Message
   const ::std::string& _internal_currency_code() const;
   PROTOBUF_ALWAYS_INLINE void _internal_set_currency_code(const ::std::string& value);
   ::std::string* PROTOBUF_NONNULL _internal_mutable_currency_code();
-
-  public:
-  // uint32 price = 4 [json_name = "price"];
-  void clear_price() ;
-  ::uint32_t price() const;
-  void set_price(::uint32_t value);
-
-  private:
-  ::uint32_t _internal_price() const;
-  void _internal_set_price(::uint32_t value);
 
   public:
   // bool ar_enabled = 7 [json_name = "arEnabled"];
@@ -546,7 +551,7 @@ class ProductCreateRequest final : public ::google::protobuf::Message
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<3, 7,
-                                   1, 73,
+                                   1, 78,
                                    2>
       _table_;
 
@@ -571,8 +576,8 @@ class ProductCreateRequest final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr title_;
     ::google::protobuf::internal::ArenaStringPtr description_;
     ::google::protobuf::internal::ArenaStringPtr sku_;
+    ::google::protobuf::internal::ArenaStringPtr price_;
     ::google::protobuf::internal::ArenaStringPtr currency_code_;
-    ::uint32_t price_;
     bool ar_enabled_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -1130,35 +1135,76 @@ inline void ProductCreateRequest::set_allocated_sku(::std::string* PROTOBUF_NULL
   // @@protoc_insertion_point(field_set_allocated:products.v1.ProductCreateRequest.sku)
 }
 
-// uint32 price = 4 [json_name = "price"];
+// string price = 4 [json_name = "price"];
 inline void ProductCreateRequest::clear_price() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.price_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000010u;
+  _impl_.price_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000008u;
 }
-inline ::uint32_t ProductCreateRequest::price() const {
+inline const ::std::string& ProductCreateRequest::price() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:products.v1.ProductCreateRequest.price)
   return _internal_price();
 }
-inline void ProductCreateRequest::set_price(::uint32_t value) {
-  _internal_set_price(value);
-  _impl_._has_bits_[0] |= 0x00000010u;
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ProductCreateRequest::set_price(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.price_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:products.v1.ProductCreateRequest.price)
 }
-inline ::uint32_t ProductCreateRequest::_internal_price() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.price_;
+inline ::std::string* PROTOBUF_NONNULL ProductCreateRequest::mutable_price()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_price();
+  // @@protoc_insertion_point(field_mutable:products.v1.ProductCreateRequest.price)
+  return _s;
 }
-inline void ProductCreateRequest::_internal_set_price(::uint32_t value) {
+inline const ::std::string& ProductCreateRequest::_internal_price() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.price_.Get();
+}
+inline void ProductCreateRequest::_internal_set_price(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.price_ = value;
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.price_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ProductCreateRequest::_internal_mutable_price() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  return _impl_.price_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ProductCreateRequest::release_price() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.ProductCreateRequest.price)
+  if ((_impl_._has_bits_[0] & 0x00000008u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000008u;
+  auto* released = _impl_.price_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.price_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ProductCreateRequest::set_allocated_price(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000008u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000008u;
+  }
+  _impl_.price_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.price_.IsDefault()) {
+    _impl_.price_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductCreateRequest.price)
 }
 
 // string currency_code = 5 [json_name = "currencyCode"];
 inline void ProductCreateRequest::clear_currency_code() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.currency_code_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
 }
 inline const ::std::string& ProductCreateRequest::currency_code() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -1168,7 +1214,7 @@ inline const ::std::string& ProductCreateRequest::currency_code() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void ProductCreateRequest::set_currency_code(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000010u;
   _impl_.currency_code_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:products.v1.ProductCreateRequest.currency_code)
 }
@@ -1184,21 +1230,21 @@ inline const ::std::string& ProductCreateRequest::_internal_currency_code() cons
 }
 inline void ProductCreateRequest::_internal_set_currency_code(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000010u;
   _impl_.currency_code_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL ProductCreateRequest::_internal_mutable_currency_code() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000010u;
   return _impl_.currency_code_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE ProductCreateRequest::release_currency_code() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:products.v1.ProductCreateRequest.currency_code)
-  if ((_impl_._has_bits_[0] & 0x00000008u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000010u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
   auto* released = _impl_.currency_code_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.currency_code_.Set("", GetArena());
@@ -1208,9 +1254,9 @@ inline ::std::string* PROTOBUF_NULLABLE ProductCreateRequest::release_currency_c
 inline void ProductCreateRequest::set_allocated_currency_code(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000008u;
+    _impl_._has_bits_[0] |= 0x00000010u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000008u;
+    _impl_._has_bits_[0] &= ~0x00000010u;
   }
   _impl_.currency_code_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.currency_code_.IsDefault()) {
