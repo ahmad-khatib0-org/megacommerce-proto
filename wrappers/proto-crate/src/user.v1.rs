@@ -27,7 +27,7 @@ pub mod supplier_create_response {
     #[derive(Clone, PartialEq, ::prost::Oneof)]
     pub enum Response {
         #[prost(message, tag = "1")]
-        Data(()),
+        Data(super::super::super::google::protobuf::Empty),
         #[prost(message, tag = "2")]
         Error(super::super::super::shared::v1::AppError),
     }
