@@ -1,7 +1,7 @@
 import * as jspb from 'google-protobuf'
 
 import * as shared_v1_error_pb from '../../shared/v1/error_pb'; // proto import: "shared/v1/error.proto"
-import * as google_protobuf_empty_pb from 'google-protobuf/google/protobuf/empty_pb'; // proto import: "google/protobuf/empty.proto"
+import * as shared_v1_types_pb from '../../shared/v1/types_pb'; // proto import: "shared/v1/types.proto"
 
 
 export class SupplierCreateRequest extends jspb.Message {
@@ -43,8 +43,8 @@ export namespace SupplierCreateRequest {
 }
 
 export class SupplierCreateResponse extends jspb.Message {
-  getData(): google_protobuf_empty_pb.Empty | undefined;
-  setData(value?: google_protobuf_empty_pb.Empty): SupplierCreateResponse;
+  getData(): shared_v1_types_pb.Empty | undefined;
+  setData(value?: shared_v1_types_pb.Empty): SupplierCreateResponse;
   hasData(): boolean;
   clearData(): SupplierCreateResponse;
 
@@ -65,7 +65,7 @@ export class SupplierCreateResponse extends jspb.Message {
 
 export namespace SupplierCreateResponse {
   export type AsObject = {
-    data?: google_protobuf_empty_pb.Empty.AsObject,
+    data?: shared_v1_types_pb.Empty.AsObject,
     error?: shared_v1_error_pb.AppError.AsObject,
   }
 

@@ -137,30 +137,29 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 const char descriptor_table_protodef_user_2fv1_2fsupplier_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n\026user/v1/supplier.proto\022\007user.v1\032\025share"
-    "d/v1/error.proto\032\033google/protobuf/empty."
-    "proto\"\301\001\n\025SupplierCreateRequest\022\032\n\010usern"
-    "ame\030\001 \001(\tR\010username\022\024\n\005email\030\002 \001(\tR\005emai"
-    "l\022\035\n\nfirst_name\030\003 \001(\tR\tfirstName\022\033\n\tlast"
-    "_name\030\004 \001(\tR\010lastName\022\032\n\010password\030\005 \001(\tR"
-    "\010password\022\036\n\nmembership\030\006 \001(\tR\nmembershi"
-    "p\"\177\n\026SupplierCreateResponse\022,\n\004data\030\001 \001("
-    "\0132\026.google.protobuf.EmptyH\000R\004data\022+\n\005err"
-    "or\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n"
-    "\n\010responseBo\n\030org.megacommerce.user.v1B\r"
-    "SupplierProtoZAgithub.com/ahmad-khatib0-"
-    "org/megacommerce-proto/gen/go/user/v1;v1"
-    "\370\001\001b\006proto3"
+    "d/v1/error.proto\032\025shared/v1/types.proto\""
+    "\301\001\n\025SupplierCreateRequest\022\032\n\010username\030\001 "
+    "\001(\tR\010username\022\024\n\005email\030\002 \001(\tR\005email\022\035\n\nf"
+    "irst_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_name\030"
+    "\004 \001(\tR\010lastName\022\032\n\010password\030\005 \001(\tR\010passw"
+    "ord\022\036\n\nmembership\030\006 \001(\tR\nmembership\"y\n\026S"
+    "upplierCreateResponse\022&\n\004data\030\001 \001(\0132\020.sh"
+    "ared.v1.EmptyH\000R\004data\022+\n\005error\030\002 \001(\0132\023.s"
+    "hared.v1.AppErrorH\000R\005errorB\n\n\010responseBo"
+    "\n\030org.megacommerce.user.v1B\rSupplierProt"
+    "oZAgithub.com/ahmad-khatib0-org/megacomm"
+    "erce-proto/gen/go/user/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_user_2fv1_2fsupplier_2eproto_deps[2] = {
-        &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
         &::descriptor_table_shared_2fv1_2ferror_2eproto,
+        &::descriptor_table_shared_2fv1_2ftypes_2eproto,
 };
 static ::absl::once_flag descriptor_table_user_2fv1_2fsupplier_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_user_2fv1_2fsupplier_2eproto = {
     false,
     false,
-    531,
+    519,
     descriptor_table_protodef_user_2fv1_2fsupplier_2eproto,
     "user/v1/supplier.proto",
     &descriptor_table_user_2fv1_2fsupplier_2eproto_once,
@@ -652,7 +651,7 @@ class SupplierCreateResponse::_Internal {
       PROTOBUF_FIELD_OFFSET(::user::v1::SupplierCreateResponse, _impl_._oneof_case_);
 };
 
-void SupplierCreateResponse::set_allocated_data(::google::protobuf::Empty* PROTOBUF_NULLABLE data) {
+void SupplierCreateResponse::set_allocated_data(::shared::v1::Empty* PROTOBUF_NULLABLE data) {
   ::google::protobuf::Arena* message_arena = GetArena();
   clear_response();
   if (data) {
@@ -861,7 +860,7 @@ SupplierCreateResponse::_table_ = {
   }}, {{
     65535, 65535
   }}, {{
-    // .google.protobuf.Empty data = 1 [json_name = "data"];
+    // .shared.v1.Empty data = 1 [json_name = "data"];
     {PROTOBUF_FIELD_OFFSET(SupplierCreateResponse, _impl_.response_.data_), _Internal::kOneofCaseOffset + 0, 0,
     (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
     // .shared.v1.AppError error = 2 [json_name = "error"];
@@ -869,7 +868,7 @@ SupplierCreateResponse::_table_ = {
     (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
-      {::_pbi::TcParser::GetTable<::google::protobuf::Empty>()},
+      {::_pbi::TcParser::GetTable<::shared::v1::Empty>()},
       {::_pbi::TcParser::GetTable<::shared::v1::AppError>()},
   }},
   {{
@@ -941,7 +940,7 @@ PROTOBUF_NOINLINE void SupplierCreateResponse::Clear() {
   (void)cached_has_bits;
 
   switch (this_.response_case()) {
-    // .google.protobuf.Empty data = 1 [json_name = "data"];
+    // .shared.v1.Empty data = 1 [json_name = "data"];
     case kData: {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.response_.data_);

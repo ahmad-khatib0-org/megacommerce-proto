@@ -2083,19 +2083,19 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         getTypeBytes();
 
     /**
-     * <code>optional .google.protobuf.Any data = 3 [json_name = "data"];</code>
+     * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
      * @return Whether the data field is set.
      */
     boolean hasData();
     /**
-     * <code>optional .google.protobuf.Any data = 3 [json_name = "data"];</code>
+     * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
      * @return The data.
      */
-    com.google.protobuf.Any getData();
+    org.megacommerce.shared.v1.TypesProto.Any getData();
     /**
-     * <code>optional .google.protobuf.Any data = 3 [json_name = "data"];</code>
+     * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
      */
-    com.google.protobuf.AnyOrBuilder getDataOrBuilder();
+    org.megacommerce.shared.v1.TypesProto.AnyOrBuilder getDataOrBuilder();
   }
   /**
    * Protobuf type {@code products.v1.ProductSubcategoryAttribute}
@@ -2187,9 +2187,9 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
     }
 
     public static final int DATA_FIELD_NUMBER = 3;
-    private com.google.protobuf.Any data_;
+    private org.megacommerce.shared.v1.TypesProto.Any data_;
     /**
-     * <code>optional .google.protobuf.Any data = 3 [json_name = "data"];</code>
+     * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
      * @return Whether the data field is set.
      */
     @java.lang.Override
@@ -2197,19 +2197,19 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>optional .google.protobuf.Any data = 3 [json_name = "data"];</code>
+     * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
      * @return The data.
      */
     @java.lang.Override
-    public com.google.protobuf.Any getData() {
-      return data_ == null ? com.google.protobuf.Any.getDefaultInstance() : data_;
+    public org.megacommerce.shared.v1.TypesProto.Any getData() {
+      return data_ == null ? org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance() : data_;
     }
     /**
-     * <code>optional .google.protobuf.Any data = 3 [json_name = "data"];</code>
+     * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.AnyOrBuilder getDataOrBuilder() {
-      return data_ == null ? com.google.protobuf.Any.getDefaultInstance() : data_;
+    public org.megacommerce.shared.v1.TypesProto.AnyOrBuilder getDataOrBuilder() {
+      return data_ == null ? org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance() : data_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2679,31 +2679,31 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         return this;
       }
 
-      private com.google.protobuf.Any data_;
+      private org.megacommerce.shared.v1.TypesProto.Any data_;
       private com.google.protobuf.SingleFieldBuilder<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> dataBuilder_;
+          org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> dataBuilder_;
       /**
-       * <code>optional .google.protobuf.Any data = 3 [json_name = "data"];</code>
+       * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
        * @return Whether the data field is set.
        */
       public boolean hasData() {
         return ((bitField0_ & 0x00000004) != 0);
       }
       /**
-       * <code>optional .google.protobuf.Any data = 3 [json_name = "data"];</code>
+       * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
        * @return The data.
        */
-      public com.google.protobuf.Any getData() {
+      public org.megacommerce.shared.v1.TypesProto.Any getData() {
         if (dataBuilder_ == null) {
-          return data_ == null ? com.google.protobuf.Any.getDefaultInstance() : data_;
+          return data_ == null ? org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance() : data_;
         } else {
           return dataBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .google.protobuf.Any data = 3 [json_name = "data"];</code>
+       * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
        */
-      public Builder setData(com.google.protobuf.Any value) {
+      public Builder setData(org.megacommerce.shared.v1.TypesProto.Any value) {
         if (dataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2717,10 +2717,10 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Any data = 3 [json_name = "data"];</code>
+       * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
        */
       public Builder setData(
-          com.google.protobuf.Any.Builder builderForValue) {
+          org.megacommerce.shared.v1.TypesProto.Any.Builder builderForValue) {
         if (dataBuilder_ == null) {
           data_ = builderForValue.build();
         } else {
@@ -2731,13 +2731,13 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Any data = 3 [json_name = "data"];</code>
+       * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
        */
-      public Builder mergeData(com.google.protobuf.Any value) {
+      public Builder mergeData(org.megacommerce.shared.v1.TypesProto.Any value) {
         if (dataBuilder_ == null) {
           if (((bitField0_ & 0x00000004) != 0) &&
             data_ != null &&
-            data_ != com.google.protobuf.Any.getDefaultInstance()) {
+            data_ != org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance()) {
             getDataBuilder().mergeFrom(value);
           } else {
             data_ = value;
@@ -2752,7 +2752,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Any data = 3 [json_name = "data"];</code>
+       * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
        */
       public Builder clearData() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -2765,33 +2765,33 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         return this;
       }
       /**
-       * <code>optional .google.protobuf.Any data = 3 [json_name = "data"];</code>
+       * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
        */
-      public com.google.protobuf.Any.Builder getDataBuilder() {
+      public org.megacommerce.shared.v1.TypesProto.Any.Builder getDataBuilder() {
         bitField0_ |= 0x00000004;
         onChanged();
         return internalGetDataFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .google.protobuf.Any data = 3 [json_name = "data"];</code>
+       * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
        */
-      public com.google.protobuf.AnyOrBuilder getDataOrBuilder() {
+      public org.megacommerce.shared.v1.TypesProto.AnyOrBuilder getDataOrBuilder() {
         if (dataBuilder_ != null) {
           return dataBuilder_.getMessageOrBuilder();
         } else {
           return data_ == null ?
-              com.google.protobuf.Any.getDefaultInstance() : data_;
+              org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance() : data_;
         }
       }
       /**
-       * <code>optional .google.protobuf.Any data = 3 [json_name = "data"];</code>
+       * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
+          org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> 
           internalGetDataFieldBuilder() {
         if (dataBuilder_ == null) {
           dataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
+              org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder>(
                   getData(),
                   getParentForChildren(),
                   isClean());
@@ -2881,29 +2881,28 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
   static {
     java.lang.String[] descriptorData = {
       "\n$products/v1/product_categories.proto\022\013" +
-      "products.v1\032\031google/protobuf/any.proto\"|" +
-      "\n\017ProductCategory\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004nam" +
-      "e\030\002 \001(\tR\004name\022E\n\rsubcategories\030\003 \003(\0132\037.p" +
-      "roducts.v1.ProductSubcategoryR\rsubcatego" +
-      "ries\"\362\001\n\022ProductSubcategory\022\016\n\002id\030\001 \001(\tR" +
-      "\002id\022\022\n\004name\030\002 \001(\tR\004name\022O\n\nattributes\030\003 " +
-      "\003(\0132/.products.v1.ProductSubcategory.Att" +
-      "ributesEntryR\nattributes\032g\n\017AttributesEn" +
-      "try\022\020\n\003key\030\001 \001(\tR\003key\022>\n\005value\030\002 \001(\0132(.p" +
-      "roducts.v1.ProductSubcategoryAttributeR\005" +
-      "value:\0028\001\"\205\001\n\033ProductSubcategoryAttribut" +
-      "e\022\032\n\010required\030\001 \001(\010R\010required\022\022\n\004type\030\002 " +
-      "\001(\tR\004type\022-\n\004data\030\003 \001(\0132\024.google.protobu" +
-      "f.AnyH\000R\004data\210\001\001B\007\n\005_dataB\200\001\n\034org.megaco" +
-      "mmerce.products.v1B\026ProductCategoriesPro" +
-      "toZEgithub.com/ahmad-khatib0-org/megacom" +
-      "merce-proto/gen/go/products/v1;v1\370\001\001b\006pr" +
-      "oto3"
+      "products.v1\032\025shared/v1/types.proto\"|\n\017Pr" +
+      "oductCategory\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 " +
+      "\001(\tR\004name\022E\n\rsubcategories\030\003 \003(\0132\037.produ" +
+      "cts.v1.ProductSubcategoryR\rsubcategories" +
+      "\"\362\001\n\022ProductSubcategory\022\016\n\002id\030\001 \001(\tR\002id\022" +
+      "\022\n\004name\030\002 \001(\tR\004name\022O\n\nattributes\030\003 \003(\0132" +
+      "/.products.v1.ProductSubcategory.Attribu" +
+      "tesEntryR\nattributes\032g\n\017AttributesEntry\022" +
+      "\020\n\003key\030\001 \001(\tR\003key\022>\n\005value\030\002 \001(\0132(.produ" +
+      "cts.v1.ProductSubcategoryAttributeR\005valu" +
+      "e:\0028\001\"\177\n\033ProductSubcategoryAttribute\022\032\n\010" +
+      "required\030\001 \001(\010R\010required\022\022\n\004type\030\002 \001(\tR\004" +
+      "type\022\'\n\004data\030\003 \001(\0132\016.shared.v1.AnyH\000R\004da" +
+      "ta\210\001\001B\007\n\005_dataB\200\001\n\034org.megacommerce.prod" +
+      "ucts.v1B\026ProductCategoriesProtoZEgithub." +
+      "com/ahmad-khatib0-org/megacommerce-proto" +
+      "/gen/go/products/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.AnyProto.getDescriptor(),
+          org.megacommerce.shared.v1.TypesProto.getDescriptor(),
         });
     internal_static_products_v1_ProductCategory_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -2930,7 +2929,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         internal_static_products_v1_ProductSubcategoryAttribute_descriptor,
         new java.lang.String[] { "Required", "Type", "Data", });
     descriptor.resolveAllFeaturesImmutable();
-    com.google.protobuf.AnyProto.getDescriptor();
+    org.megacommerce.shared.v1.TypesProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

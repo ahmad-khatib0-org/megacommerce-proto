@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15shared/v1/types.proto\x12\tshared.v1\"f\n\tStringMap\x12,\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x1e.shared.v1.StringMap.DataEntry\x1a+\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x88\x01\n\x0fNestedStringMap\x12\x32\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32$.shared.v1.NestedStringMap.DataEntry\x1a\x41\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.shared.v1.StringMap:\x02\x38\x01\x42p\n\x1aorg.megacommerce.shared.v1B\nTypesProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15shared/v1/types.proto\x12\tshared.v1\"f\n\tStringMap\x12,\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x1e.shared.v1.StringMap.DataEntry\x1a+\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x88\x01\n\x0fNestedStringMap\x12\x32\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32$.shared.v1.NestedStringMap.DataEntry\x1a\x41\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.shared.v1.StringMap:\x02\x38\x01\"&\n\x03\x41ny\x12\x10\n\x08type_url\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c\"\x07\n\x05\x45mptyBp\n\x1aorg.megacommerce.shared.v1B\nTypesProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -44,4 +44,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_NESTEDSTRINGMAP']._serialized_end=277
   _globals['_NESTEDSTRINGMAP_DATAENTRY']._serialized_start=212
   _globals['_NESTEDSTRINGMAP_DATAENTRY']._serialized_end=277
+  _globals['_ANY']._serialized_start=279
+  _globals['_ANY']._serialized_end=317
+  _globals['_EMPTY']._serialized_start=319
+  _globals['_EMPTY']._serialized_end=326
 # @@protoc_insertion_point(module_scope)

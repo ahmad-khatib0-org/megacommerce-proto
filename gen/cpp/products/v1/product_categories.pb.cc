@@ -196,34 +196,33 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 const char descriptor_table_protodef_products_2fv1_2fproduct_5fcategories_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n$products/v1/product_categories.proto\022\013"
-    "products.v1\032\031google/protobuf/any.proto\"|"
-    "\n\017ProductCategory\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004nam"
-    "e\030\002 \001(\tR\004name\022E\n\rsubcategories\030\003 \003(\0132\037.p"
-    "roducts.v1.ProductSubcategoryR\rsubcatego"
-    "ries\"\362\001\n\022ProductSubcategory\022\016\n\002id\030\001 \001(\tR"
-    "\002id\022\022\n\004name\030\002 \001(\tR\004name\022O\n\nattributes\030\003 "
-    "\003(\0132/.products.v1.ProductSubcategory.Att"
-    "ributesEntryR\nattributes\032g\n\017AttributesEn"
-    "try\022\020\n\003key\030\001 \001(\tR\003key\022>\n\005value\030\002 \001(\0132(.p"
-    "roducts.v1.ProductSubcategoryAttributeR\005"
-    "value:\0028\001\"\205\001\n\033ProductSubcategoryAttribut"
-    "e\022\032\n\010required\030\001 \001(\010R\010required\022\022\n\004type\030\002 "
-    "\001(\tR\004type\022-\n\004data\030\003 \001(\0132\024.google.protobu"
-    "f.AnyH\000R\004data\210\001\001B\007\n\005_dataB\200\001\n\034org.megaco"
-    "mmerce.products.v1B\026ProductCategoriesPro"
-    "toZEgithub.com/ahmad-khatib0-org/megacom"
-    "merce-proto/gen/go/products/v1;v1\370\001\001b\006pr"
-    "oto3"
+    "products.v1\032\025shared/v1/types.proto\"|\n\017Pr"
+    "oductCategory\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 "
+    "\001(\tR\004name\022E\n\rsubcategories\030\003 \003(\0132\037.produ"
+    "cts.v1.ProductSubcategoryR\rsubcategories"
+    "\"\362\001\n\022ProductSubcategory\022\016\n\002id\030\001 \001(\tR\002id\022"
+    "\022\n\004name\030\002 \001(\tR\004name\022O\n\nattributes\030\003 \003(\0132"
+    "/.products.v1.ProductSubcategory.Attribu"
+    "tesEntryR\nattributes\032g\n\017AttributesEntry\022"
+    "\020\n\003key\030\001 \001(\tR\003key\022>\n\005value\030\002 \001(\0132(.produ"
+    "cts.v1.ProductSubcategoryAttributeR\005valu"
+    "e:\0028\001\"\177\n\033ProductSubcategoryAttribute\022\032\n\010"
+    "required\030\001 \001(\010R\010required\022\022\n\004type\030\002 \001(\tR\004"
+    "type\022\'\n\004data\030\003 \001(\0132\016.shared.v1.AnyH\000R\004da"
+    "ta\210\001\001B\007\n\005_dataB\200\001\n\034org.megacommerce.prod"
+    "ucts.v1B\026ProductCategoriesProtoZEgithub."
+    "com/ahmad-khatib0-org/megacommerce-proto"
+    "/gen/go/products/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_deps[1] = {
-        &::descriptor_table_google_2fprotobuf_2fany_2eproto,
+        &::descriptor_table_shared_2fv1_2ftypes_2eproto,
 };
 static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto = {
     false,
     false,
-    724,
+    713,
     descriptor_table_protodef_products_2fv1_2fproduct_5fcategories_2eproto,
     "products/v1/product_categories.proto",
     &descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_once,
@@ -1217,7 +1216,7 @@ ProductSubcategoryAttribute::_table_ = {
     // string type = 2 [json_name = "type"];
     {::_pbi::TcParser::FastUS1,
      {18, 0, 0, PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.type_)}},
-    // optional .google.protobuf.Any data = 3 [json_name = "data"];
+    // optional .shared.v1.Any data = 3 [json_name = "data"];
     {::_pbi::TcParser::FastMtS1,
      {26, 1, 0, PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.data_)}},
   }}, {{
@@ -1229,12 +1228,12 @@ ProductSubcategoryAttribute::_table_ = {
     // string type = 2 [json_name = "type"];
     {PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.type_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional .google.protobuf.Any data = 3 [json_name = "data"];
+    // optional .shared.v1.Any data = 3 [json_name = "data"];
     {PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.data_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
-      {::_pbi::TcParser::GetTable<::google::protobuf::Any>()},
+      {::_pbi::TcParser::GetTable<::shared::v1::Any>()},
   }},
   {{
     "\47\0\4\0\0\0\0\0"
@@ -1299,7 +1298,7 @@ PROTOBUF_NOINLINE void ProductSubcategoryAttribute::Clear() {
   }
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // optional .google.protobuf.Any data = 3 [json_name = "data"];
+  // optional .shared.v1.Any data = 3 [json_name = "data"];
   if ((cached_has_bits & 0x00000002u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
         3, *this_._impl_.data_, this_._impl_.data_->GetCachedSize(), target,
@@ -1339,7 +1338,7 @@ PROTOBUF_NOINLINE void ProductSubcategoryAttribute::Clear() {
                                         this_._internal_type());
       }
     }
-    // optional .google.protobuf.Any data = 3 [json_name = "data"];
+    // optional .shared.v1.Any data = 3 [json_name = "data"];
     if ((cached_has_bits & 0x00000002u) != 0) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.data_);

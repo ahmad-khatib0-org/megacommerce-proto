@@ -10,7 +10,6 @@ import (
 	v1 "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	emptypb "google.golang.org/protobuf/types/known/emptypb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -155,7 +154,7 @@ func (x *SupplierCreateResponse) GetResponse() isSupplierCreateResponse_Response
 	return nil
 }
 
-func (x *SupplierCreateResponse) GetData() *emptypb.Empty {
+func (x *SupplierCreateResponse) GetData() *v1.Empty {
 	if x != nil {
 		if x, ok := x.Response.(*SupplierCreateResponse_Data); ok {
 			return x.Data
@@ -178,7 +177,7 @@ type isSupplierCreateResponse_Response interface {
 }
 
 type SupplierCreateResponse_Data struct {
-	Data *emptypb.Empty `protobuf:"bytes,1,opt,name=data,proto3,oneof"`
+	Data *v1.Empty `protobuf:"bytes,1,opt,name=data,proto3,oneof"`
 }
 
 type SupplierCreateResponse_Error struct {
@@ -193,7 +192,7 @@ var File_user_v1_supplier_proto protoreflect.FileDescriptor
 
 const file_user_v1_supplier_proto_rawDesc = "" +
 	"\n" +
-	"\x16user/v1/supplier.proto\x12\auser.v1\x1a\x15shared/v1/error.proto\x1a\x1bgoogle/protobuf/empty.proto\"\xc1\x01\n" +
+	"\x16user/v1/supplier.proto\x12\auser.v1\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"\xc1\x01\n" +
 	"\x15SupplierCreateRequest\x12\x1a\n" +
 	"\busername\x18\x01 \x01(\tR\busername\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email\x12\x1d\n" +
@@ -203,9 +202,9 @@ const file_user_v1_supplier_proto_rawDesc = "" +
 	"\bpassword\x18\x05 \x01(\tR\bpassword\x12\x1e\n" +
 	"\n" +
 	"membership\x18\x06 \x01(\tR\n" +
-	"membership\"\x7f\n" +
-	"\x16SupplierCreateResponse\x12,\n" +
-	"\x04data\x18\x01 \x01(\v2\x16.google.protobuf.EmptyH\x00R\x04data\x12+\n" +
+	"membership\"y\n" +
+	"\x16SupplierCreateResponse\x12&\n" +
+	"\x04data\x18\x01 \x01(\v2\x10.shared.v1.EmptyH\x00R\x04data\x12+\n" +
 	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +
 	"\n" +
 	"\bresponseBo\n" +
@@ -227,11 +226,11 @@ var file_user_v1_supplier_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_user_v1_supplier_proto_goTypes = []any{
 	(*SupplierCreateRequest)(nil),  // 0: user.v1.SupplierCreateRequest
 	(*SupplierCreateResponse)(nil), // 1: user.v1.SupplierCreateResponse
-	(*emptypb.Empty)(nil),          // 2: google.protobuf.Empty
+	(*v1.Empty)(nil),               // 2: shared.v1.Empty
 	(*v1.AppError)(nil),            // 3: shared.v1.AppError
 }
 var file_user_v1_supplier_proto_depIdxs = []int32{
-	2, // 0: user.v1.SupplierCreateResponse.data:type_name -> google.protobuf.Empty
+	2, // 0: user.v1.SupplierCreateResponse.data:type_name -> shared.v1.Empty
 	3, // 1: user.v1.SupplierCreateResponse.error:type_name -> shared.v1.AppError
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type

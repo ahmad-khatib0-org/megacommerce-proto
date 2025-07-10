@@ -33,7 +33,7 @@
 #include "google/protobuf/map_entry.h"
 #include "google/protobuf/map_field.h"
 #include "google/protobuf/unknown_field_set.h"
-#include "google/protobuf/any.pb.h"
+#include "shared/v1/types.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.
@@ -252,19 +252,19 @@ class ProductSubcategoryAttribute final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_type();
 
   public:
-  // optional .google.protobuf.Any data = 3 [json_name = "data"];
+  // optional .shared.v1.Any data = 3 [json_name = "data"];
   bool has_data() const;
   void clear_data() ;
-  const ::google::protobuf::Any& data() const;
-  [[nodiscard]] ::google::protobuf::Any* PROTOBUF_NULLABLE release_data();
-  ::google::protobuf::Any* PROTOBUF_NONNULL mutable_data();
-  void set_allocated_data(::google::protobuf::Any* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_data(::google::protobuf::Any* PROTOBUF_NULLABLE value);
-  ::google::protobuf::Any* PROTOBUF_NULLABLE unsafe_arena_release_data();
+  const ::shared::v1::Any& data() const;
+  [[nodiscard]] ::shared::v1::Any* PROTOBUF_NULLABLE release_data();
+  ::shared::v1::Any* PROTOBUF_NONNULL mutable_data();
+  void set_allocated_data(::shared::v1::Any* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_data(::shared::v1::Any* PROTOBUF_NULLABLE value);
+  ::shared::v1::Any* PROTOBUF_NULLABLE unsafe_arena_release_data();
 
   private:
-  const ::google::protobuf::Any& _internal_data() const;
-  ::google::protobuf::Any* PROTOBUF_NONNULL _internal_mutable_data();
+  const ::shared::v1::Any& _internal_data() const;
+  ::shared::v1::Any* PROTOBUF_NONNULL _internal_mutable_data();
 
   public:
   // bool required = 1 [json_name = "required"];
@@ -304,7 +304,7 @@ class ProductSubcategoryAttribute final : public ::google::protobuf::Message
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::internal::ArenaStringPtr type_;
-    ::google::protobuf::Any* PROTOBUF_NULLABLE data_;
+    ::shared::v1::Any* PROTOBUF_NULLABLE data_;
     bool required_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -1272,28 +1272,28 @@ inline void ProductSubcategoryAttribute::set_allocated_type(::std::string* PROTO
   // @@protoc_insertion_point(field_set_allocated:products.v1.ProductSubcategoryAttribute.type)
 }
 
-// optional .google.protobuf.Any data = 3 [json_name = "data"];
+// optional .shared.v1.Any data = 3 [json_name = "data"];
 inline bool ProductSubcategoryAttribute::has_data() const {
   bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.data_ != nullptr);
   return value;
 }
-inline const ::google::protobuf::Any& ProductSubcategoryAttribute::_internal_data() const {
+inline const ::shared::v1::Any& ProductSubcategoryAttribute::_internal_data() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::google::protobuf::Any* p = _impl_.data_;
-  return p != nullptr ? *p : reinterpret_cast<const ::google::protobuf::Any&>(::google::protobuf::_Any_default_instance_);
+  const ::shared::v1::Any* p = _impl_.data_;
+  return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::Any&>(::shared::v1::_Any_default_instance_);
 }
-inline const ::google::protobuf::Any& ProductSubcategoryAttribute::data() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline const ::shared::v1::Any& ProductSubcategoryAttribute::data() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:products.v1.ProductSubcategoryAttribute.data)
   return _internal_data();
 }
 inline void ProductSubcategoryAttribute::unsafe_arena_set_allocated_data(
-    ::google::protobuf::Any* PROTOBUF_NULLABLE value) {
+    ::shared::v1::Any* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (GetArena() == nullptr) {
     delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.data_);
   }
-  _impl_.data_ = reinterpret_cast<::google::protobuf::Any*>(value);
+  _impl_.data_ = reinterpret_cast<::shared::v1::Any*>(value);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000002u;
   } else {
@@ -1301,11 +1301,11 @@ inline void ProductSubcategoryAttribute::unsafe_arena_set_allocated_data(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:products.v1.ProductSubcategoryAttribute.data)
 }
-inline ::google::protobuf::Any* PROTOBUF_NULLABLE ProductSubcategoryAttribute::release_data() {
+inline ::shared::v1::Any* PROTOBUF_NULLABLE ProductSubcategoryAttribute::release_data() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
   _impl_._has_bits_[0] &= ~0x00000002u;
-  ::google::protobuf::Any* released = _impl_.data_;
+  ::shared::v1::Any* released = _impl_.data_;
   _impl_.data_ = nullptr;
   if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
     auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
@@ -1320,31 +1320,31 @@ inline ::google::protobuf::Any* PROTOBUF_NULLABLE ProductSubcategoryAttribute::r
   }
   return released;
 }
-inline ::google::protobuf::Any* PROTOBUF_NULLABLE ProductSubcategoryAttribute::unsafe_arena_release_data() {
+inline ::shared::v1::Any* PROTOBUF_NULLABLE ProductSubcategoryAttribute::unsafe_arena_release_data() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:products.v1.ProductSubcategoryAttribute.data)
 
   _impl_._has_bits_[0] &= ~0x00000002u;
-  ::google::protobuf::Any* temp = _impl_.data_;
+  ::shared::v1::Any* temp = _impl_.data_;
   _impl_.data_ = nullptr;
   return temp;
 }
-inline ::google::protobuf::Any* PROTOBUF_NONNULL ProductSubcategoryAttribute::_internal_mutable_data() {
+inline ::shared::v1::Any* PROTOBUF_NONNULL ProductSubcategoryAttribute::_internal_mutable_data() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.data_ == nullptr) {
-    auto* p = ::google::protobuf::Message::DefaultConstruct<::google::protobuf::Any>(GetArena());
-    _impl_.data_ = reinterpret_cast<::google::protobuf::Any*>(p);
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::Any>(GetArena());
+    _impl_.data_ = reinterpret_cast<::shared::v1::Any*>(p);
   }
   return _impl_.data_;
 }
-inline ::google::protobuf::Any* PROTOBUF_NONNULL ProductSubcategoryAttribute::mutable_data()
+inline ::shared::v1::Any* PROTOBUF_NONNULL ProductSubcategoryAttribute::mutable_data()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   _impl_._has_bits_[0] |= 0x00000002u;
-  ::google::protobuf::Any* _msg = _internal_mutable_data();
+  ::shared::v1::Any* _msg = _internal_mutable_data();
   // @@protoc_insertion_point(field_mutable:products.v1.ProductSubcategoryAttribute.data)
   return _msg;
 }
-inline void ProductSubcategoryAttribute::set_allocated_data(::google::protobuf::Any* PROTOBUF_NULLABLE value) {
+inline void ProductSubcategoryAttribute::set_allocated_data(::shared::v1::Any* PROTOBUF_NULLABLE value) {
   ::google::protobuf::Arena* message_arena = GetArena();
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (message_arena == nullptr) {
@@ -1361,7 +1361,7 @@ inline void ProductSubcategoryAttribute::set_allocated_data(::google::protobuf::
     _impl_._has_bits_[0] &= ~0x00000002u;
   }
 
-  _impl_.data_ = reinterpret_cast<::google::protobuf::Any*>(value);
+  _impl_.data_ = reinterpret_cast<::shared::v1::Any*>(value);
   // @@protoc_insertion_point(field_set_allocated:products.v1.ProductSubcategoryAttribute.data)
 }
 

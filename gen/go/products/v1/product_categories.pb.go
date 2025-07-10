@@ -7,9 +7,9 @@
 package v1
 
 import (
+	v1 "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	anypb "google.golang.org/protobuf/types/known/anypb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -146,7 +146,7 @@ type ProductSubcategoryAttribute struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Required      bool                   `protobuf:"varint,1,opt,name=required,proto3" json:"required,omitempty"`
 	Type          string                 `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
-	Data          *anypb.Any             `protobuf:"bytes,3,opt,name=data,proto3,oneof" json:"data,omitempty"`
+	Data          *v1.Any                `protobuf:"bytes,3,opt,name=data,proto3,oneof" json:"data,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -195,7 +195,7 @@ func (x *ProductSubcategoryAttribute) GetType() string {
 	return ""
 }
 
-func (x *ProductSubcategoryAttribute) GetData() *anypb.Any {
+func (x *ProductSubcategoryAttribute) GetData() *v1.Any {
 	if x != nil {
 		return x.Data
 	}
@@ -206,7 +206,7 @@ var File_products_v1_product_categories_proto protoreflect.FileDescriptor
 
 const file_products_v1_product_categories_proto_rawDesc = "" +
 	"\n" +
-	"$products/v1/product_categories.proto\x12\vproducts.v1\x1a\x19google/protobuf/any.proto\"|\n" +
+	"$products/v1/product_categories.proto\x12\vproducts.v1\x1a\x15shared/v1/types.proto\"|\n" +
 	"\x0fProductCategory\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12E\n" +
@@ -219,11 +219,11 @@ const file_products_v1_product_categories_proto_rawDesc = "" +
 	"attributes\x1ag\n" +
 	"\x0fAttributesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12>\n" +
-	"\x05value\x18\x02 \x01(\v2(.products.v1.ProductSubcategoryAttributeR\x05value:\x028\x01\"\x85\x01\n" +
+	"\x05value\x18\x02 \x01(\v2(.products.v1.ProductSubcategoryAttributeR\x05value:\x028\x01\"\x7f\n" +
 	"\x1bProductSubcategoryAttribute\x12\x1a\n" +
 	"\brequired\x18\x01 \x01(\bR\brequired\x12\x12\n" +
-	"\x04type\x18\x02 \x01(\tR\x04type\x12-\n" +
-	"\x04data\x18\x03 \x01(\v2\x14.google.protobuf.AnyH\x00R\x04data\x88\x01\x01B\a\n" +
+	"\x04type\x18\x02 \x01(\tR\x04type\x12'\n" +
+	"\x04data\x18\x03 \x01(\v2\x0e.shared.v1.AnyH\x00R\x04data\x88\x01\x01B\a\n" +
 	"\x05_dataB\x80\x01\n" +
 	"\x1corg.megacommerce.products.v1B\x16ProductCategoriesProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01b\x06proto3"
 
@@ -245,12 +245,12 @@ var file_products_v1_product_categories_proto_goTypes = []any{
 	(*ProductSubcategory)(nil),          // 1: products.v1.ProductSubcategory
 	(*ProductSubcategoryAttribute)(nil), // 2: products.v1.ProductSubcategoryAttribute
 	nil,                                 // 3: products.v1.ProductSubcategory.AttributesEntry
-	(*anypb.Any)(nil),                   // 4: google.protobuf.Any
+	(*v1.Any)(nil),                      // 4: shared.v1.Any
 }
 var file_products_v1_product_categories_proto_depIdxs = []int32{
 	1, // 0: products.v1.ProductCategory.subcategories:type_name -> products.v1.ProductSubcategory
 	3, // 1: products.v1.ProductSubcategory.attributes:type_name -> products.v1.ProductSubcategory.AttributesEntry
-	4, // 2: products.v1.ProductSubcategoryAttribute.data:type_name -> google.protobuf.Any
+	4, // 2: products.v1.ProductSubcategoryAttribute.data:type_name -> shared.v1.Any
 	2, // 3: products.v1.ProductSubcategory.AttributesEntry.value:type_name -> products.v1.ProductSubcategoryAttribute
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type

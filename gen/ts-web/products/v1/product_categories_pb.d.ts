@@ -1,6 +1,6 @@
 import * as jspb from 'google-protobuf'
 
-import * as google_protobuf_any_pb from 'google-protobuf/google/protobuf/any_pb'; // proto import: "google/protobuf/any.proto"
+import * as shared_v1_types_pb from '../../shared/v1/types_pb'; // proto import: "shared/v1/types.proto"
 
 
 export class ProductCategory extends jspb.Message {
@@ -64,8 +64,8 @@ export class ProductSubcategoryAttribute extends jspb.Message {
   getType(): string;
   setType(value: string): ProductSubcategoryAttribute;
 
-  getData(): google_protobuf_any_pb.Any | undefined;
-  setData(value?: google_protobuf_any_pb.Any): ProductSubcategoryAttribute;
+  getData(): shared_v1_types_pb.Any | undefined;
+  setData(value?: shared_v1_types_pb.Any): ProductSubcategoryAttribute;
   hasData(): boolean;
   clearData(): ProductSubcategoryAttribute;
 
@@ -81,7 +81,7 @@ export namespace ProductSubcategoryAttribute {
   export type AsObject = {
     required: boolean,
     type: string,
-    data?: google_protobuf_any_pb.Any.AsObject,
+    data?: shared_v1_types_pb.Any.AsObject,
   }
 
   export enum DataCase { 

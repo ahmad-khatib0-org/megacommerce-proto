@@ -37,7 +37,7 @@ pub mod product_create_response {
     #[derive(Clone, PartialEq, ::prost::Oneof)]
     pub enum Response {
         #[prost(message, tag = "1")]
-        Data(super::super::super::google::protobuf::Empty),
+        Data(super::super::super::shared::v1::Empty),
         #[prost(message, tag = "2")]
         Error(super::super::super::shared::v1::AppError),
     }
@@ -73,7 +73,7 @@ pub struct ProductSubcategoryAttribute {
     #[prost(string, tag = "2")]
     pub r#type: ::prost::alloc::string::String,
     #[prost(message, optional, tag = "3")]
-    pub data: ::core::option::Option<super::super::google::protobuf::Any>,
+    pub data: ::core::option::Option<super::super::shared::v1::Any>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

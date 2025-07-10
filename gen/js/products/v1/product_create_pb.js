@@ -21,8 +21,8 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb.js');
-goog.object.extend(proto, google_protobuf_empty_pb);
+var shared_v1_types_pb = require('../../shared/v1/types_pb.js');
+goog.object.extend(proto, shared_v1_types_pb);
 var shared_v1_error_pb = require('../../shared/v1/error_pb.js');
 goog.object.extend(proto, shared_v1_error_pb);
 goog.exportSymbol('proto.products.v1.ProductCreateRequest', null, global);
@@ -686,7 +686,7 @@ proto.products.v1.ProductCreateResponse.prototype.toObject = function(opt_includ
  */
 proto.products.v1.ProductCreateResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-data: (f = msg.getData()) && google_protobuf_empty_pb.Empty.toObject(includeInstance, f),
+data: (f = msg.getData()) && shared_v1_types_pb.Empty.toObject(includeInstance, f),
 error: (f = msg.getError()) && shared_v1_error_pb.AppError.toObject(includeInstance, f)
   };
 
@@ -725,8 +725,8 @@ proto.products.v1.ProductCreateResponse.deserializeBinaryFromReader = function(m
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new google_protobuf_empty_pb.Empty;
-      reader.readMessage(value,google_protobuf_empty_pb.Empty.deserializeBinaryFromReader);
+      var value = new shared_v1_types_pb.Empty;
+      reader.readMessage(value,shared_v1_types_pb.Empty.deserializeBinaryFromReader);
       msg.setData(value);
       break;
     case 2:
@@ -768,7 +768,7 @@ proto.products.v1.ProductCreateResponse.serializeBinaryToWriter = function(messa
     writer.writeMessage(
       1,
       f,
-      google_protobuf_empty_pb.Empty.serializeBinaryToWriter
+      shared_v1_types_pb.Empty.serializeBinaryToWriter
     );
   }
   f = message.getError();
@@ -783,17 +783,17 @@ proto.products.v1.ProductCreateResponse.serializeBinaryToWriter = function(messa
 
 
 /**
- * optional google.protobuf.Empty data = 1;
- * @return {?proto.google.protobuf.Empty}
+ * optional shared.v1.Empty data = 1;
+ * @return {?proto.shared.v1.Empty}
  */
 proto.products.v1.ProductCreateResponse.prototype.getData = function() {
-  return /** @type{?proto.google.protobuf.Empty} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_empty_pb.Empty, 1));
+  return /** @type{?proto.shared.v1.Empty} */ (
+    jspb.Message.getWrapperField(this, shared_v1_types_pb.Empty, 1));
 };
 
 
 /**
- * @param {?proto.google.protobuf.Empty|undefined} value
+ * @param {?proto.shared.v1.Empty|undefined} value
  * @return {!proto.products.v1.ProductCreateResponse} returns this
 */
 proto.products.v1.ProductCreateResponse.prototype.setData = function(value) {

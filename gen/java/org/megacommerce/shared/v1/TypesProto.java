@@ -1403,6 +1403,1008 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
 
   }
 
+  public interface AnyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:shared.v1.Any)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Identifies the type of the serialized message
+     * </pre>
+     *
+     * <code>string type_url = 1 [json_name = "typeUrl"];</code>
+     * @return The typeUrl.
+     */
+    java.lang.String getTypeUrl();
+    /**
+     * <pre>
+     * Identifies the type of the serialized message
+     * </pre>
+     *
+     * <code>string type_url = 1 [json_name = "typeUrl"];</code>
+     * @return The bytes for typeUrl.
+     */
+    com.google.protobuf.ByteString
+        getTypeUrlBytes();
+
+    /**
+     * <pre>
+     * Serialized proto data
+     * </pre>
+     *
+     * <code>bytes value = 2 [json_name = "value"];</code>
+     * @return The value.
+     */
+    com.google.protobuf.ByteString getValue();
+  }
+  /**
+   * <pre>
+   * Custom Any message to avoid google.protobuf.Any issues
+   * </pre>
+   *
+   * Protobuf type {@code shared.v1.Any}
+   */
+  public static final class Any extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:shared.v1.Any)
+      AnyOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        Any.class.getName());
+    }
+    // Use Any.newBuilder() to construct.
+    private Any(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private Any() {
+      typeUrl_ = "";
+      value_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_Any_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_Any_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.shared.v1.TypesProto.Any.class, org.megacommerce.shared.v1.TypesProto.Any.Builder.class);
+    }
+
+    public static final int TYPE_URL_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object typeUrl_ = "";
+    /**
+     * <pre>
+     * Identifies the type of the serialized message
+     * </pre>
+     *
+     * <code>string type_url = 1 [json_name = "typeUrl"];</code>
+     * @return The typeUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getTypeUrl() {
+      java.lang.Object ref = typeUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        typeUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Identifies the type of the serialized message
+     * </pre>
+     *
+     * <code>string type_url = 1 [json_name = "typeUrl"];</code>
+     * @return The bytes for typeUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTypeUrlBytes() {
+      java.lang.Object ref = typeUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        typeUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <pre>
+     * Serialized proto data
+     * </pre>
+     *
+     * <code>bytes value = 2 [json_name = "value"];</code>
+     * @return The value.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getValue() {
+      return value_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(typeUrl_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, typeUrl_);
+      }
+      if (!value_.isEmpty()) {
+        output.writeBytes(2, value_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(typeUrl_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, typeUrl_);
+      }
+      if (!value_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, value_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.shared.v1.TypesProto.Any)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.shared.v1.TypesProto.Any other = (org.megacommerce.shared.v1.TypesProto.Any) obj;
+
+      if (!getTypeUrl()
+          .equals(other.getTypeUrl())) return false;
+      if (!getValue()
+          .equals(other.getValue())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + TYPE_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getTypeUrl().hashCode();
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.shared.v1.TypesProto.Any parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.Any parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.Any parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.Any parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.Any parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.Any parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.Any parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.Any parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.shared.v1.TypesProto.Any parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.shared.v1.TypesProto.Any parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.Any parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.Any parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.shared.v1.TypesProto.Any prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Custom Any message to avoid google.protobuf.Any issues
+     * </pre>
+     *
+     * Protobuf type {@code shared.v1.Any}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:shared.v1.Any)
+        org.megacommerce.shared.v1.TypesProto.AnyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_Any_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_Any_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.shared.v1.TypesProto.Any.class, org.megacommerce.shared.v1.TypesProto.Any.Builder.class);
+      }
+
+      // Construct using org.megacommerce.shared.v1.TypesProto.Any.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        typeUrl_ = "";
+        value_ = com.google.protobuf.ByteString.EMPTY;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_Any_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.Any getDefaultInstanceForType() {
+        return org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.Any build() {
+        org.megacommerce.shared.v1.TypesProto.Any result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.Any buildPartial() {
+        org.megacommerce.shared.v1.TypesProto.Any result = new org.megacommerce.shared.v1.TypesProto.Any(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.shared.v1.TypesProto.Any result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.typeUrl_ = typeUrl_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.value_ = value_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.shared.v1.TypesProto.Any) {
+          return mergeFrom((org.megacommerce.shared.v1.TypesProto.Any)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.shared.v1.TypesProto.Any other) {
+        if (other == org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance()) return this;
+        if (!other.getTypeUrl().isEmpty()) {
+          typeUrl_ = other.typeUrl_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getValue().isEmpty()) {
+          setValue(other.getValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                typeUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                value_ = input.readBytes();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object typeUrl_ = "";
+      /**
+       * <pre>
+       * Identifies the type of the serialized message
+       * </pre>
+       *
+       * <code>string type_url = 1 [json_name = "typeUrl"];</code>
+       * @return The typeUrl.
+       */
+      public java.lang.String getTypeUrl() {
+        java.lang.Object ref = typeUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          typeUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Identifies the type of the serialized message
+       * </pre>
+       *
+       * <code>string type_url = 1 [json_name = "typeUrl"];</code>
+       * @return The bytes for typeUrl.
+       */
+      public com.google.protobuf.ByteString
+          getTypeUrlBytes() {
+        java.lang.Object ref = typeUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          typeUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Identifies the type of the serialized message
+       * </pre>
+       *
+       * <code>string type_url = 1 [json_name = "typeUrl"];</code>
+       * @param value The typeUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeUrl(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        typeUrl_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Identifies the type of the serialized message
+       * </pre>
+       *
+       * <code>string type_url = 1 [json_name = "typeUrl"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTypeUrl() {
+        typeUrl_ = getDefaultInstance().getTypeUrl();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Identifies the type of the serialized message
+       * </pre>
+       *
+       * <code>string type_url = 1 [json_name = "typeUrl"];</code>
+       * @param value The bytes for typeUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        typeUrl_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString value_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * Serialized proto data
+       * </pre>
+       *
+       * <code>bytes value = 2 [json_name = "value"];</code>
+       * @return The value.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getValue() {
+        return value_;
+      }
+      /**
+       * <pre>
+       * Serialized proto data
+       * </pre>
+       *
+       * <code>bytes value = 2 [json_name = "value"];</code>
+       * @param value The value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValue(com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        value_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Serialized proto data
+       * </pre>
+       *
+       * <code>bytes value = 2 [json_name = "value"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearValue() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        value_ = getDefaultInstance().getValue();
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:shared.v1.Any)
+    }
+
+    // @@protoc_insertion_point(class_scope:shared.v1.Any)
+    private static final org.megacommerce.shared.v1.TypesProto.Any DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.shared.v1.TypesProto.Any();
+    }
+
+    public static org.megacommerce.shared.v1.TypesProto.Any getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Any>
+        PARSER = new com.google.protobuf.AbstractParser<Any>() {
+      @java.lang.Override
+      public Any parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<Any> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Any> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.shared.v1.TypesProto.Any getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface EmptyOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:shared.v1.Empty)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code shared.v1.Empty}
+   */
+  public static final class Empty extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:shared.v1.Empty)
+      EmptyOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        Empty.class.getName());
+    }
+    // Use Empty.newBuilder() to construct.
+    private Empty(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private Empty() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_Empty_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_Empty_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.shared.v1.TypesProto.Empty.class, org.megacommerce.shared.v1.TypesProto.Empty.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.shared.v1.TypesProto.Empty)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.shared.v1.TypesProto.Empty other = (org.megacommerce.shared.v1.TypesProto.Empty) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.shared.v1.TypesProto.Empty parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.Empty parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.Empty parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.Empty parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.Empty parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.Empty parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.Empty parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.Empty parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.shared.v1.TypesProto.Empty parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.shared.v1.TypesProto.Empty parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.Empty parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.Empty parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.shared.v1.TypesProto.Empty prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code shared.v1.Empty}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:shared.v1.Empty)
+        org.megacommerce.shared.v1.TypesProto.EmptyOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_Empty_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_Empty_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.shared.v1.TypesProto.Empty.class, org.megacommerce.shared.v1.TypesProto.Empty.Builder.class);
+      }
+
+      // Construct using org.megacommerce.shared.v1.TypesProto.Empty.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_Empty_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.Empty getDefaultInstanceForType() {
+        return org.megacommerce.shared.v1.TypesProto.Empty.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.Empty build() {
+        org.megacommerce.shared.v1.TypesProto.Empty result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.Empty buildPartial() {
+        org.megacommerce.shared.v1.TypesProto.Empty result = new org.megacommerce.shared.v1.TypesProto.Empty(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.shared.v1.TypesProto.Empty) {
+          return mergeFrom((org.megacommerce.shared.v1.TypesProto.Empty)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.shared.v1.TypesProto.Empty other) {
+        if (other == org.megacommerce.shared.v1.TypesProto.Empty.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:shared.v1.Empty)
+    }
+
+    // @@protoc_insertion_point(class_scope:shared.v1.Empty)
+    private static final org.megacommerce.shared.v1.TypesProto.Empty DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.shared.v1.TypesProto.Empty();
+    }
+
+    public static org.megacommerce.shared.v1.TypesProto.Empty getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Empty>
+        PARSER = new com.google.protobuf.AbstractParser<Empty>() {
+      @java.lang.Override
+      public Empty parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<Empty> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Empty> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.shared.v1.TypesProto.Empty getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_shared_v1_StringMap_descriptor;
   private static final 
@@ -1423,6 +2425,16 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_shared_v1_NestedStringMap_DataEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_shared_v1_Any_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_shared_v1_Any_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_shared_v1_Empty_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_shared_v1_Empty_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1439,10 +2451,12 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
       "\017NestedStringMap\0228\n\004data\030\001 \003(\0132$.shared." +
       "v1.NestedStringMap.DataEntryR\004data\032M\n\tDa" +
       "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\013" +
-      "2\024.shared.v1.StringMapR\005value:\0028\001Bp\n\032org" +
-      ".megacommerce.shared.v1B\nTypesProtoZCgit" +
-      "hub.com/ahmad-khatib0-org/megacommerce-p" +
-      "roto/gen/go/shared/v1;v1\370\001\001b\006proto3"
+      "2\024.shared.v1.StringMapR\005value:\0028\001\"6\n\003Any" +
+      "\022\031\n\010type_url\030\001 \001(\tR\007typeUrl\022\024\n\005value\030\002 \001" +
+      "(\014R\005value\"\007\n\005EmptyBp\n\032org.megacommerce.s" +
+      "hared.v1B\nTypesProtoZCgithub.com/ahmad-k" +
+      "hatib0-org/megacommerce-proto/gen/go/sha" +
+      "red/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1472,6 +2486,18 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_NestedStringMap_DataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
+    internal_static_shared_v1_Any_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_shared_v1_Any_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_shared_v1_Any_descriptor,
+        new java.lang.String[] { "TypeUrl", "Value", });
+    internal_static_shared_v1_Empty_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_shared_v1_Empty_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_shared_v1_Empty_descriptor,
+        new java.lang.String[] { });
     descriptor.resolveAllFeaturesImmutable();
   }
 

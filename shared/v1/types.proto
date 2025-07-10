@@ -7,11 +7,14 @@ option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shar
 option java_outer_classname = "TypesProto";
 option java_package = "org.megacommerce.shared.v1";
 
-message StringMap {
-  map<string, string> data = 1;
+message StringMap { map<string, string> data = 1; }
+
+message NestedStringMap { map<string, StringMap> data = 1; }
+
+// Custom Any message to avoid google.protobuf.Any issues
+message Any {
+  string type_url = 1; // Identifies the type of the serialized message
+  bytes value = 2;     // Serialized proto data
 }
 
-message NestedStringMap {
-  map<string, StringMap> data = 1;
-}
-
+message Empty {}

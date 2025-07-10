@@ -175,34 +175,33 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 const char descriptor_table_protodef_products_2fv1_2fproduct_5fcreate_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n products/v1/product_create.proto\022\013prod"
-    "ucts.v1\032\033google/protobuf/empty.proto\032\025sh"
-    "ared/v1/error.proto\"P\n\020ProductCreateTag\022"
-    "\023\n\002id\030\001 \001(\rH\000R\002id\210\001\001\022\027\n\004name\030\002 \001(\tH\001R\004na"
-    "me\210\001\001B\005\n\003_idB\007\n\005_name\"\355\001\n\024ProductCreateR"
-    "equest\022\024\n\005title\030\001 \001(\tR\005title\022 \n\013descript"
-    "ion\030\002 \001(\tR\013description\022\020\n\003sku\030\003 \001(\tR\003sku"
-    "\022\024\n\005price\030\004 \001(\tR\005price\022#\n\rcurrency_code\030"
-    "\005 \001(\tR\014currencyCode\0221\n\004tags\030\006 \003(\0132\035.prod"
-    "ucts.v1.ProductCreateTagR\004tags\022\035\n\nar_ena"
-    "bled\030\007 \001(\010R\tarEnabled\"~\n\025ProductCreateRe"
-    "sponse\022,\n\004data\030\001 \001(\0132\026.google.protobuf.E"
-    "mptyH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1."
-    "AppErrorH\000R\005errorB\n\n\010responseB|\n\034org.meg"
-    "acommerce.products.v1B\022ProductCreateProt"
-    "oZEgithub.com/ahmad-khatib0-org/megacomm"
-    "erce-proto/gen/go/products/v1;v1\370\001\001b\006pro"
-    "to3"
+    "ucts.v1\032\025shared/v1/types.proto\032\025shared/v"
+    "1/error.proto\"P\n\020ProductCreateTag\022\023\n\002id\030"
+    "\001 \001(\rH\000R\002id\210\001\001\022\027\n\004name\030\002 \001(\tH\001R\004name\210\001\001B"
+    "\005\n\003_idB\007\n\005_name\"\355\001\n\024ProductCreateRequest"
+    "\022\024\n\005title\030\001 \001(\tR\005title\022 \n\013description\030\002 "
+    "\001(\tR\013description\022\020\n\003sku\030\003 \001(\tR\003sku\022\024\n\005pr"
+    "ice\030\004 \001(\tR\005price\022#\n\rcurrency_code\030\005 \001(\tR"
+    "\014currencyCode\0221\n\004tags\030\006 \003(\0132\035.products.v"
+    "1.ProductCreateTagR\004tags\022\035\n\nar_enabled\030\007"
+    " \001(\010R\tarEnabled\"x\n\025ProductCreateResponse"
+    "\022&\n\004data\030\001 \001(\0132\020.shared.v1.EmptyH\000R\004data"
+    "\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005"
+    "errorB\n\n\010responseB|\n\034org.megacommerce.pr"
+    "oducts.v1B\022ProductCreateProtoZEgithub.co"
+    "m/ahmad-khatib0-org/megacommerce-proto/g"
+    "en/go/products/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto_deps[2] = {
-        &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
         &::descriptor_table_shared_2fv1_2ferror_2eproto,
+        &::descriptor_table_shared_2fv1_2ftypes_2eproto,
 };
 static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto = {
     false,
     false,
-    683,
+    671,
     descriptor_table_protodef_products_2fv1_2fproduct_5fcreate_2eproto,
     "products/v1/product_create.proto",
     &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto_once,
@@ -1010,7 +1009,7 @@ class ProductCreateResponse::_Internal {
       PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateResponse, _impl_._oneof_case_);
 };
 
-void ProductCreateResponse::set_allocated_data(::google::protobuf::Empty* PROTOBUF_NULLABLE data) {
+void ProductCreateResponse::set_allocated_data(::shared::v1::Empty* PROTOBUF_NULLABLE data) {
   ::google::protobuf::Arena* message_arena = GetArena();
   clear_response();
   if (data) {
@@ -1219,7 +1218,7 @@ ProductCreateResponse::_table_ = {
   }}, {{
     65535, 65535
   }}, {{
-    // .google.protobuf.Empty data = 1 [json_name = "data"];
+    // .shared.v1.Empty data = 1 [json_name = "data"];
     {PROTOBUF_FIELD_OFFSET(ProductCreateResponse, _impl_.response_.data_), _Internal::kOneofCaseOffset + 0, 0,
     (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
     // .shared.v1.AppError error = 2 [json_name = "error"];
@@ -1227,7 +1226,7 @@ ProductCreateResponse::_table_ = {
     (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
-      {::_pbi::TcParser::GetTable<::google::protobuf::Empty>()},
+      {::_pbi::TcParser::GetTable<::shared::v1::Empty>()},
       {::_pbi::TcParser::GetTable<::shared::v1::AppError>()},
   }},
   {{
@@ -1299,7 +1298,7 @@ PROTOBUF_NOINLINE void ProductCreateResponse::Clear() {
   (void)cached_has_bits;
 
   switch (this_.response_case()) {
-    // .google.protobuf.Empty data = 1 [json_name = "data"];
+    // .shared.v1.Empty data = 1 [json_name = "data"];
     case kData: {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.response_.data_);

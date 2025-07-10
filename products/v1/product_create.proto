@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package products.v1;
 
-import "google/protobuf/empty.proto";
+import "shared/v1/types.proto";
 import "shared/v1/error.proto";
 
 option cc_enable_arenas = true;
@@ -27,7 +27,7 @@ message ProductCreateRequest {
 
 message ProductCreateResponse {
   oneof response {
-    google.protobuf.Empty data = 1;
+    shared.v1.Empty data = 1;
     shared.v1.AppError error = 2;
   }
 }

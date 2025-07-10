@@ -21,8 +21,8 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var google_protobuf_any_pb = require('google-protobuf/google/protobuf/any_pb.js');
-goog.object.extend(proto, google_protobuf_any_pb);
+var shared_v1_types_pb = require('../../shared/v1/types_pb.js');
+goog.object.extend(proto, shared_v1_types_pb);
 goog.exportSymbol('proto.products.v1.ProductCategory', null, global);
 goog.exportSymbol('proto.products.v1.ProductSubcategory', null, global);
 goog.exportSymbol('proto.products.v1.ProductSubcategoryAttribute', null, global);
@@ -537,7 +537,7 @@ proto.products.v1.ProductSubcategoryAttribute.toObject = function(includeInstanc
   var f, obj = {
 required: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
 type: jspb.Message.getFieldWithDefault(msg, 2, ""),
-data: (f = msg.getData()) && google_protobuf_any_pb.Any.toObject(includeInstance, f)
+data: (f = msg.getData()) && shared_v1_types_pb.Any.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -583,8 +583,8 @@ proto.products.v1.ProductSubcategoryAttribute.deserializeBinaryFromReader = func
       msg.setType(value);
       break;
     case 3:
-      var value = new google_protobuf_any_pb.Any;
-      reader.readMessage(value,google_protobuf_any_pb.Any.deserializeBinaryFromReader);
+      var value = new shared_v1_types_pb.Any;
+      reader.readMessage(value,shared_v1_types_pb.Any.deserializeBinaryFromReader);
       msg.setData(value);
       break;
     default:
@@ -635,7 +635,7 @@ proto.products.v1.ProductSubcategoryAttribute.serializeBinaryToWriter = function
     writer.writeMessage(
       3,
       f,
-      google_protobuf_any_pb.Any.serializeBinaryToWriter
+      shared_v1_types_pb.Any.serializeBinaryToWriter
     );
   }
 };
@@ -678,17 +678,17 @@ proto.products.v1.ProductSubcategoryAttribute.prototype.setType = function(value
 
 
 /**
- * optional google.protobuf.Any data = 3;
- * @return {?proto.google.protobuf.Any}
+ * optional shared.v1.Any data = 3;
+ * @return {?proto.shared.v1.Any}
  */
 proto.products.v1.ProductSubcategoryAttribute.prototype.getData = function() {
-  return /** @type{?proto.google.protobuf.Any} */ (
-    jspb.Message.getWrapperField(this, google_protobuf_any_pb.Any, 3));
+  return /** @type{?proto.shared.v1.Any} */ (
+    jspb.Message.getWrapperField(this, shared_v1_types_pb.Any, 3));
 };
 
 
 /**
- * @param {?proto.google.protobuf.Any|undefined} value
+ * @param {?proto.shared.v1.Any|undefined} value
  * @return {!proto.products.v1.ProductSubcategoryAttribute} returns this
 */
 proto.products.v1.ProductSubcategoryAttribute.prototype.setData = function(value) {

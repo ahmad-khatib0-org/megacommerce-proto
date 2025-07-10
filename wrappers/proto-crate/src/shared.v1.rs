@@ -14,6 +14,20 @@ pub struct NestedStringMap {
     #[prost(map = "string, message", tag = "1")]
     pub data: ::std::collections::HashMap<::prost::alloc::string::String, StringMap>,
 }
+/// Custom Any message to avoid google.protobuf.Any issues
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Any {
+    /// Identifies the type of the serialized message
+    #[prost(string, tag = "1")]
+    pub type_url: ::prost::alloc::string::String,
+    /// Serialized proto data
+    #[prost(bytes = "vec", tag = "2")]
+    pub value: ::prost::alloc::vec::Vec<u8>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+pub struct Empty {}
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct AppError {

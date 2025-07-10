@@ -12,7 +12,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     .out_dir(out_dir)
     .build_server(true)
     .type_attribute(".", "#[derive(serde::Serialize, serde::Deserialize)]")
-    .compile_well_known_types(true)
     .compile_protos(
       &[
         "common/v1/common.proto",

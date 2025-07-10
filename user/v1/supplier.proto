@@ -3,7 +3,7 @@ syntax = "proto3";
 package user.v1;
 
 import "shared/v1/error.proto";
-import "google/protobuf/empty.proto";
+import "shared/v1/types.proto";
 
 option cc_enable_arenas = true;
 option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/user/v1;v1";
@@ -21,7 +21,7 @@ message SupplierCreateRequest {
 
 message SupplierCreateResponse {
   oneof response {
-    google.protobuf.Empty data = 1;
+    shared.v1.Empty data = 1;
     shared.v1.AppError error = 2;
   }
 }

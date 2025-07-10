@@ -2222,19 +2222,19 @@ public final class ProductCreateProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+     * <code>.shared.v1.Empty data = 1 [json_name = "data"];</code>
      * @return Whether the data field is set.
      */
     boolean hasData();
     /**
-     * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+     * <code>.shared.v1.Empty data = 1 [json_name = "data"];</code>
      * @return The data.
      */
-    com.google.protobuf.Empty getData();
+    org.megacommerce.shared.v1.TypesProto.Empty getData();
     /**
-     * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+     * <code>.shared.v1.Empty data = 1 [json_name = "data"];</code>
      */
-    com.google.protobuf.EmptyOrBuilder getDataOrBuilder();
+    org.megacommerce.shared.v1.TypesProto.EmptyOrBuilder getDataOrBuilder();
 
     /**
      * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
@@ -2334,7 +2334,7 @@ public final class ProductCreateProto {
 
     public static final int DATA_FIELD_NUMBER = 1;
     /**
-     * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+     * <code>.shared.v1.Empty data = 1 [json_name = "data"];</code>
      * @return Whether the data field is set.
      */
     @java.lang.Override
@@ -2342,25 +2342,25 @@ public final class ProductCreateProto {
       return responseCase_ == 1;
     }
     /**
-     * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+     * <code>.shared.v1.Empty data = 1 [json_name = "data"];</code>
      * @return The data.
      */
     @java.lang.Override
-    public com.google.protobuf.Empty getData() {
+    public org.megacommerce.shared.v1.TypesProto.Empty getData() {
       if (responseCase_ == 1) {
-         return (com.google.protobuf.Empty) response_;
+         return (org.megacommerce.shared.v1.TypesProto.Empty) response_;
       }
-      return com.google.protobuf.Empty.getDefaultInstance();
+      return org.megacommerce.shared.v1.TypesProto.Empty.getDefaultInstance();
     }
     /**
-     * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+     * <code>.shared.v1.Empty data = 1 [json_name = "data"];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.EmptyOrBuilder getDataOrBuilder() {
+    public org.megacommerce.shared.v1.TypesProto.EmptyOrBuilder getDataOrBuilder() {
       if (responseCase_ == 1) {
-         return (com.google.protobuf.Empty) response_;
+         return (org.megacommerce.shared.v1.TypesProto.Empty) response_;
       }
-      return com.google.protobuf.Empty.getDefaultInstance();
+      return org.megacommerce.shared.v1.TypesProto.Empty.getDefaultInstance();
     }
 
     public static final int ERROR_FIELD_NUMBER = 2;
@@ -2409,7 +2409,7 @@ public final class ProductCreateProto {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (responseCase_ == 1) {
-        output.writeMessage(1, (com.google.protobuf.Empty) response_);
+        output.writeMessage(1, (org.megacommerce.shared.v1.TypesProto.Empty) response_);
       }
       if (responseCase_ == 2) {
         output.writeMessage(2, (org.megacommerce.shared.v1.ErrorProto.AppError) response_);
@@ -2425,7 +2425,7 @@ public final class ProductCreateProto {
       size = 0;
       if (responseCase_ == 1) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, (com.google.protobuf.Empty) response_);
+          .computeMessageSize(1, (org.megacommerce.shared.v1.TypesProto.Empty) response_);
       }
       if (responseCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
@@ -2768,9 +2768,9 @@ public final class ProductCreateProto {
       private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilder<
-          com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder> dataBuilder_;
+          org.megacommerce.shared.v1.TypesProto.Empty, org.megacommerce.shared.v1.TypesProto.Empty.Builder, org.megacommerce.shared.v1.TypesProto.EmptyOrBuilder> dataBuilder_;
       /**
-       * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+       * <code>.shared.v1.Empty data = 1 [json_name = "data"];</code>
        * @return Whether the data field is set.
        */
       @java.lang.Override
@@ -2778,27 +2778,27 @@ public final class ProductCreateProto {
         return responseCase_ == 1;
       }
       /**
-       * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+       * <code>.shared.v1.Empty data = 1 [json_name = "data"];</code>
        * @return The data.
        */
       @java.lang.Override
-      public com.google.protobuf.Empty getData() {
+      public org.megacommerce.shared.v1.TypesProto.Empty getData() {
         if (dataBuilder_ == null) {
           if (responseCase_ == 1) {
-            return (com.google.protobuf.Empty) response_;
+            return (org.megacommerce.shared.v1.TypesProto.Empty) response_;
           }
-          return com.google.protobuf.Empty.getDefaultInstance();
+          return org.megacommerce.shared.v1.TypesProto.Empty.getDefaultInstance();
         } else {
           if (responseCase_ == 1) {
             return dataBuilder_.getMessage();
           }
-          return com.google.protobuf.Empty.getDefaultInstance();
+          return org.megacommerce.shared.v1.TypesProto.Empty.getDefaultInstance();
         }
       }
       /**
-       * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+       * <code>.shared.v1.Empty data = 1 [json_name = "data"];</code>
        */
-      public Builder setData(com.google.protobuf.Empty value) {
+      public Builder setData(org.megacommerce.shared.v1.TypesProto.Empty value) {
         if (dataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2812,10 +2812,10 @@ public final class ProductCreateProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+       * <code>.shared.v1.Empty data = 1 [json_name = "data"];</code>
        */
       public Builder setData(
-          com.google.protobuf.Empty.Builder builderForValue) {
+          org.megacommerce.shared.v1.TypesProto.Empty.Builder builderForValue) {
         if (dataBuilder_ == null) {
           response_ = builderForValue.build();
           onChanged();
@@ -2826,13 +2826,13 @@ public final class ProductCreateProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+       * <code>.shared.v1.Empty data = 1 [json_name = "data"];</code>
        */
-      public Builder mergeData(com.google.protobuf.Empty value) {
+      public Builder mergeData(org.megacommerce.shared.v1.TypesProto.Empty value) {
         if (dataBuilder_ == null) {
           if (responseCase_ == 1 &&
-              response_ != com.google.protobuf.Empty.getDefaultInstance()) {
-            response_ = com.google.protobuf.Empty.newBuilder((com.google.protobuf.Empty) response_)
+              response_ != org.megacommerce.shared.v1.TypesProto.Empty.getDefaultInstance()) {
+            response_ = org.megacommerce.shared.v1.TypesProto.Empty.newBuilder((org.megacommerce.shared.v1.TypesProto.Empty) response_)
                 .mergeFrom(value).buildPartial();
           } else {
             response_ = value;
@@ -2849,7 +2849,7 @@ public final class ProductCreateProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+       * <code>.shared.v1.Empty data = 1 [json_name = "data"];</code>
        */
       public Builder clearData() {
         if (dataBuilder_ == null) {
@@ -2868,38 +2868,38 @@ public final class ProductCreateProto {
         return this;
       }
       /**
-       * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+       * <code>.shared.v1.Empty data = 1 [json_name = "data"];</code>
        */
-      public com.google.protobuf.Empty.Builder getDataBuilder() {
+      public org.megacommerce.shared.v1.TypesProto.Empty.Builder getDataBuilder() {
         return internalGetDataFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+       * <code>.shared.v1.Empty data = 1 [json_name = "data"];</code>
        */
       @java.lang.Override
-      public com.google.protobuf.EmptyOrBuilder getDataOrBuilder() {
+      public org.megacommerce.shared.v1.TypesProto.EmptyOrBuilder getDataOrBuilder() {
         if ((responseCase_ == 1) && (dataBuilder_ != null)) {
           return dataBuilder_.getMessageOrBuilder();
         } else {
           if (responseCase_ == 1) {
-            return (com.google.protobuf.Empty) response_;
+            return (org.megacommerce.shared.v1.TypesProto.Empty) response_;
           }
-          return com.google.protobuf.Empty.getDefaultInstance();
+          return org.megacommerce.shared.v1.TypesProto.Empty.getDefaultInstance();
         }
       }
       /**
-       * <code>.google.protobuf.Empty data = 1 [json_name = "data"];</code>
+       * <code>.shared.v1.Empty data = 1 [json_name = "data"];</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder> 
+          org.megacommerce.shared.v1.TypesProto.Empty, org.megacommerce.shared.v1.TypesProto.Empty.Builder, org.megacommerce.shared.v1.TypesProto.EmptyOrBuilder> 
           internalGetDataFieldBuilder() {
         if (dataBuilder_ == null) {
           if (!(responseCase_ == 1)) {
-            response_ = com.google.protobuf.Empty.getDefaultInstance();
+            response_ = org.megacommerce.shared.v1.TypesProto.Empty.getDefaultInstance();
           }
           dataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              com.google.protobuf.Empty, com.google.protobuf.Empty.Builder, com.google.protobuf.EmptyOrBuilder>(
-                  (com.google.protobuf.Empty) response_,
+              org.megacommerce.shared.v1.TypesProto.Empty, org.megacommerce.shared.v1.TypesProto.Empty.Builder, org.megacommerce.shared.v1.TypesProto.EmptyOrBuilder>(
+                  (org.megacommerce.shared.v1.TypesProto.Empty) response_,
                   getParentForChildren(),
                   isClean());
           response_ = null;
@@ -3127,28 +3127,27 @@ public final class ProductCreateProto {
   static {
     java.lang.String[] descriptorData = {
       "\n products/v1/product_create.proto\022\013prod" +
-      "ucts.v1\032\033google/protobuf/empty.proto\032\025sh" +
-      "ared/v1/error.proto\"P\n\020ProductCreateTag\022" +
-      "\023\n\002id\030\001 \001(\rH\000R\002id\210\001\001\022\027\n\004name\030\002 \001(\tH\001R\004na" +
-      "me\210\001\001B\005\n\003_idB\007\n\005_name\"\355\001\n\024ProductCreateR" +
-      "equest\022\024\n\005title\030\001 \001(\tR\005title\022 \n\013descript" +
-      "ion\030\002 \001(\tR\013description\022\020\n\003sku\030\003 \001(\tR\003sku" +
-      "\022\024\n\005price\030\004 \001(\tR\005price\022#\n\rcurrency_code\030" +
-      "\005 \001(\tR\014currencyCode\0221\n\004tags\030\006 \003(\0132\035.prod" +
-      "ucts.v1.ProductCreateTagR\004tags\022\035\n\nar_ena" +
-      "bled\030\007 \001(\010R\tarEnabled\"~\n\025ProductCreateRe" +
-      "sponse\022,\n\004data\030\001 \001(\0132\026.google.protobuf.E" +
-      "mptyH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1." +
-      "AppErrorH\000R\005errorB\n\n\010responseB|\n\034org.meg" +
-      "acommerce.products.v1B\022ProductCreateProt" +
-      "oZEgithub.com/ahmad-khatib0-org/megacomm" +
-      "erce-proto/gen/go/products/v1;v1\370\001\001b\006pro" +
-      "to3"
+      "ucts.v1\032\025shared/v1/types.proto\032\025shared/v" +
+      "1/error.proto\"P\n\020ProductCreateTag\022\023\n\002id\030" +
+      "\001 \001(\rH\000R\002id\210\001\001\022\027\n\004name\030\002 \001(\tH\001R\004name\210\001\001B" +
+      "\005\n\003_idB\007\n\005_name\"\355\001\n\024ProductCreateRequest" +
+      "\022\024\n\005title\030\001 \001(\tR\005title\022 \n\013description\030\002 " +
+      "\001(\tR\013description\022\020\n\003sku\030\003 \001(\tR\003sku\022\024\n\005pr" +
+      "ice\030\004 \001(\tR\005price\022#\n\rcurrency_code\030\005 \001(\tR" +
+      "\014currencyCode\0221\n\004tags\030\006 \003(\0132\035.products.v" +
+      "1.ProductCreateTagR\004tags\022\035\n\nar_enabled\030\007" +
+      " \001(\010R\tarEnabled\"x\n\025ProductCreateResponse" +
+      "\022&\n\004data\030\001 \001(\0132\020.shared.v1.EmptyH\000R\004data" +
+      "\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005" +
+      "errorB\n\n\010responseB|\n\034org.megacommerce.pr" +
+      "oducts.v1B\022ProductCreateProtoZEgithub.co" +
+      "m/ahmad-khatib0-org/megacommerce-proto/g" +
+      "en/go/products/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.EmptyProto.getDescriptor(),
+          org.megacommerce.shared.v1.TypesProto.getDescriptor(),
           org.megacommerce.shared.v1.ErrorProto.getDescriptor(),
         });
     internal_static_products_v1_ProductCreateTag_descriptor =
@@ -3170,7 +3169,7 @@ public final class ProductCreateProto {
         internal_static_products_v1_ProductCreateResponse_descriptor,
         new java.lang.String[] { "Data", "Error", "Response", });
     descriptor.resolveAllFeaturesImmutable();
-    com.google.protobuf.EmptyProto.getDescriptor();
+    org.megacommerce.shared.v1.TypesProto.getDescriptor();
     org.megacommerce.shared.v1.ErrorProto.getDescriptor();
   }
 

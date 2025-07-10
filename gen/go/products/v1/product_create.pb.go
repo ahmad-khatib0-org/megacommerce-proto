@@ -10,7 +10,6 @@ import (
 	v1 "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
-	emptypb "google.golang.org/protobuf/types/known/emptypb"
 	reflect "reflect"
 	sync "sync"
 	unsafe "unsafe"
@@ -215,7 +214,7 @@ func (x *ProductCreateResponse) GetResponse() isProductCreateResponse_Response {
 	return nil
 }
 
-func (x *ProductCreateResponse) GetData() *emptypb.Empty {
+func (x *ProductCreateResponse) GetData() *v1.Empty {
 	if x != nil {
 		if x, ok := x.Response.(*ProductCreateResponse_Data); ok {
 			return x.Data
@@ -238,7 +237,7 @@ type isProductCreateResponse_Response interface {
 }
 
 type ProductCreateResponse_Data struct {
-	Data *emptypb.Empty `protobuf:"bytes,1,opt,name=data,proto3,oneof"`
+	Data *v1.Empty `protobuf:"bytes,1,opt,name=data,proto3,oneof"`
 }
 
 type ProductCreateResponse_Error struct {
@@ -253,7 +252,7 @@ var File_products_v1_product_create_proto protoreflect.FileDescriptor
 
 const file_products_v1_product_create_proto_rawDesc = "" +
 	"\n" +
-	" products/v1/product_create.proto\x12\vproducts.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x15shared/v1/error.proto\"P\n" +
+	" products/v1/product_create.proto\x12\vproducts.v1\x1a\x15shared/v1/types.proto\x1a\x15shared/v1/error.proto\"P\n" +
 	"\x10ProductCreateTag\x12\x13\n" +
 	"\x02id\x18\x01 \x01(\rH\x00R\x02id\x88\x01\x01\x12\x17\n" +
 	"\x04name\x18\x02 \x01(\tH\x01R\x04name\x88\x01\x01B\x05\n" +
@@ -267,9 +266,9 @@ const file_products_v1_product_create_proto_rawDesc = "" +
 	"\rcurrency_code\x18\x05 \x01(\tR\fcurrencyCode\x121\n" +
 	"\x04tags\x18\x06 \x03(\v2\x1d.products.v1.ProductCreateTagR\x04tags\x12\x1d\n" +
 	"\n" +
-	"ar_enabled\x18\a \x01(\bR\tarEnabled\"~\n" +
-	"\x15ProductCreateResponse\x12,\n" +
-	"\x04data\x18\x01 \x01(\v2\x16.google.protobuf.EmptyH\x00R\x04data\x12+\n" +
+	"ar_enabled\x18\a \x01(\bR\tarEnabled\"x\n" +
+	"\x15ProductCreateResponse\x12&\n" +
+	"\x04data\x18\x01 \x01(\v2\x10.shared.v1.EmptyH\x00R\x04data\x12+\n" +
 	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +
 	"\n" +
 	"\bresponseB|\n" +
@@ -292,12 +291,12 @@ var file_products_v1_product_create_proto_goTypes = []any{
 	(*ProductCreateTag)(nil),      // 0: products.v1.ProductCreateTag
 	(*ProductCreateRequest)(nil),  // 1: products.v1.ProductCreateRequest
 	(*ProductCreateResponse)(nil), // 2: products.v1.ProductCreateResponse
-	(*emptypb.Empty)(nil),         // 3: google.protobuf.Empty
+	(*v1.Empty)(nil),              // 3: shared.v1.Empty
 	(*v1.AppError)(nil),           // 4: shared.v1.AppError
 }
 var file_products_v1_product_create_proto_depIdxs = []int32{
 	0, // 0: products.v1.ProductCreateRequest.tags:type_name -> products.v1.ProductCreateTag
-	3, // 1: products.v1.ProductCreateResponse.data:type_name -> google.protobuf.Empty
+	3, // 1: products.v1.ProductCreateResponse.data:type_name -> shared.v1.Empty
 	4, // 2: products.v1.ProductCreateResponse.error:type_name -> shared.v1.AppError
 	3, // [3:3] is the sub-list for method output_type
 	3, // [3:3] is the sub-list for method input_type

@@ -2,7 +2,7 @@
 // file: products/v1/product_categories.proto
 
 import * as jspb from "google-protobuf";
-import * as google_protobuf_any_pb from "google-protobuf/google/protobuf/any_pb";
+import * as shared_v1_types_pb from "../../shared/v1/types_pb";
 
 export class ProductCategory extends jspb.Message {
   getId(): string;
@@ -70,8 +70,8 @@ export class ProductSubcategoryAttribute extends jspb.Message {
 
   hasData(): boolean;
   clearData(): void;
-  getData(): google_protobuf_any_pb.Any | undefined;
-  setData(value?: google_protobuf_any_pb.Any): void;
+  getData(): shared_v1_types_pb.Any | undefined;
+  setData(value?: shared_v1_types_pb.Any): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductSubcategoryAttribute.AsObject;
@@ -87,7 +87,7 @@ export namespace ProductSubcategoryAttribute {
   export type AsObject = {
     required: boolean,
     type: string,
-    data?: google_protobuf_any_pb.Any.AsObject,
+    data?: shared_v1_types_pb.Any.AsObject,
   }
 }
 

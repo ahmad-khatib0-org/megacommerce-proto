@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package products.v1;
 
-import "google/protobuf/any.proto";
+import "shared/v1/types.proto";
 
 option cc_enable_arenas = true;
 option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1";
@@ -24,5 +24,5 @@ message ProductSubcategory {
 message ProductSubcategoryAttribute {
   bool required = 1;
   string type = 2;
-  optional google.protobuf.Any data = 3;
+  optional shared.v1.Any data = 3;
 }
