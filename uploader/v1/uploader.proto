@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package uploader.v1;
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/uploader/v1;v1";
+option java_outer_classname = "UploaderProto";
+option java_package = "org.megacommerce.uploader.v1";
+
+service UploaderService {}

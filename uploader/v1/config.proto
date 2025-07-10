@@ -1,0 +1,395 @@
+syntax = "proto3";
+
+package uploader.v1;
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/uploader/v1;v1";
+option java_outer_classname = "ConfigProto";
+option java_package = "org.megacommerce.uploader.v1";
+
+// Enum of available Storage implementations.
+enum AvailableDataStorages {
+  FILE_STORAGE = 0;
+  HYBRID_S3 = 1;
+  S3 = 2;
+}
+
+enum AvailableInfoStorages {
+  FILES = 0;
+  REDIS = 1;
+}
+
+message ExtraKafkaOptions { map<string, string> opts = 1; }
+
+enum Format {
+  DEFAULT = 0;
+  TUSD = 1;
+  V2 = 2;
+}
+
+// Hooks for notifications.
+enum Hook {
+  PRE_CREATE = 0;
+  POST_CREATE = 1;
+  POST_RECEIVE = 2;
+  PRE_TERMINATE = 3;
+  POST_TERMINATE = 4;
+  POST_FINISH = 5;
+}
+
+// Extensions for TUS protocol.
+enum Extensions {
+  GETTING = 0;
+  CREATION = 1;
+  TERMINATION = 2;
+  CREATION_WITH_UPLOAD = 3;
+  CREATION_DEFER_LENGTH = 4;
+  CONCATENATION = 5;
+  CHECKSUM = 6;
+}
+
+message DataStorageOptions {
+  /// Storages are used to store uploads.
+  AvailableDataStorages storage = 1;
+
+  /// This directory is used to store files for all *`file_storage` storages.
+  string data_dir = 2;
+
+  /// Storage directory structure.
+  /// This template shows inner directory structure. You can use following variables:
+  /// day, month, year or even environment variables.
+  /// Example: "/year/month/day/env[HOSTNAME]/".
+  string dir_structure = 3;
+
+  /// Forces fsync call after writing chunk to filesystem. This parameter can help you
+  ///  when working with Network file systems. It guarantees that everything is written
+  ///  on disk correctly.
+  ///
+  /// In most cases this parameter is redundant.
+  bool force_fsync = 4;
+
+  /// S3 bucket to upload files to.
+  /// This parameter is required fo s3-based storages.
+  optional string s3_bucket = 5;
+
+  /// S3 region.
+  ///
+  /// This parameter is required fo s3-based storages.
+  optional string s3_region = 6;
+
+  /// S3 access key.
+  ///
+  /// This parameter is required fo s3-based storages.
+  optional string s3_access_key = 7;
+
+  /// S3 access key path.
+  ///
+  /// This parameter is used fo s3-based storages.
+  /// path to file that has s3-access-key inside.
+  optional string s3_access_key_path = 8;
+
+  /// S3 secret key.
+  ///
+  /// This parameter is required fo s3-based storages.
+  optional string s3_secret_key = 9;
+
+  /// S3 secret key path.
+  ///
+  /// This parameter is required fo s3-based storages.
+  /// path to file that has s3-secret-key inside.
+  optional string s3_secret_key_path = 10;
+
+  /// S3 URL.
+  ///
+  /// This parameter is required fo s3-based storages.
+  optional string s3_url = 11;
+
+  /// S3 force path style.
+  ///
+  /// This parameter is required fo s3-based storages.
+  bool s3_force_path_style = 12;
+
+  /// S3 security token.
+  ///
+  /// This parameter is required fo s3-based storages.
+  optional string s3_security_token = 13;
+
+  /// S3 session token.
+  ///
+  /// This parameter is required fo s3-based storages.
+  optional string s3_session_token = 14;
+
+  /// S3 profile.
+  ///
+  /// This parameter is required fo s3-based storages.
+  optional string s3_profile = 15;
+
+  /// Additional S3 headers.
+  /// These headers are passed to every request to s3.
+  /// Useful for configuring ACLs.
+  ///
+  /// This parameter is required fo s3-based storages.
+  optional string s3_headers = 16;
+
+  /// Number of concurrent downloads of partial files from S3.
+  /// When performing concatenation, Rustus downloads all partial
+  /// files from S3 and concatenates them into a single file.
+  ///
+  /// This parameter controls the number of concurrent downloads.
+  uint32 s3_concat_concurrent_downloads = 17; // usize is represented as uint32
+}
+
+message InfoStoreOptions {
+  /// Type of info storage.
+  ///
+  /// Info storages are used to store information about uploads.
+  ///
+  /// This information is used in HEAD requests.
+  AvailableInfoStorages info_storage = 1;
+
+  /// Rustus info directory
+  ///
+  /// This directory is used to store .info files for `file_info_storage`.
+  string info_dir = 2;
+
+  /// Connection string for remote info storages.
+  ///
+  /// This connection string is used for storages which require connection.
+  /// Examples of such storages are `Postgres`, `MySQL` or `Redis`.
+  ///
+  /// Value must include all connection details.
+  optional string info_db_dsn = 3;
+
+  optional uint32 redis_info_expiration = 4; // usize is represented as uint32
+}
+
+message AMQPHooksOptions {
+  /// Url for AMQP server.
+  optional string url = 1;
+
+  /// Rustus will create exchange if enabled.
+  bool declare_exchange = 2;
+
+  /// Rustus will create all queues for communication and bind them
+  /// to exchange if enabled.
+  bool declare_queues = 3;
+
+  /// Durability type of exchange.
+  bool durable_exchange = 4;
+
+  /// Durability type of queues.
+  bool durable_queues = 5;
+
+  /// Adds celery specific headers.
+  bool celery = 6;
+
+  /// Name of amqp exchange.
+  string exchange = 7;
+
+  /// Exchange kind.
+  string exchange_kind = 8;
+
+  /// Routing key to use when sending message to an exchange.
+  optional string routing_key = 9;
+
+  /// Prefix for all AMQP queues.
+  string queues_prefix = 10;
+
+  /// Maximum number of connections for `RabbitMQ`.
+  uint64 connection_pool_size = 11;
+
+  /// Maximum number of opened channels for each connection.
+  uint64 channel_pool_size = 12;
+
+  /// After this amount of time the connection will be dropped.
+  optional uint64 idle_connection_timeout = 13;
+
+  /// After this amount of time in seconds, the channel will be closed.
+  optional uint64 idle_channels_timeout = 14;
+
+  /// Declares all objects with auto-delete property set.
+  bool auto_delete = 15;
+}
+
+message KafkaHookOptions {
+  /// Kafka urls.
+  /// List of brokers to connect to in the format `host:port`.
+  /// If you have multiple brokers, separate them with commas.
+  /// Corresponds to `bootstrap.servers` in Kafka configuration.
+  optional string urls = 1;
+
+  /// Kafka producer client.id.
+  optional string client_id = 2;
+
+  /// Kafka topic. If specified, all events will be sent to this topic.
+  optional string topic = 3;
+
+  /// Kafka topic prefix. In case if specifeid, prefix will be added to all topics
+  /// and all events will be sent to different topics.
+  optional string prefix = 4;
+
+  /// Kafka required acks.
+  /// This parameter is used to configure how many replicas
+  /// must acknowledge the message.
+  ///
+  /// Corresponds to `request.required.acks` in Kafka configuration.
+  /// Possible values are:
+  /// * -1 - all replicas must acknowledge the message;
+  /// * 0 - no replicas must acknowledge the message;
+  /// * ...1000 - number of replicas that must acknowledge the message.
+  optional string required_acks = 5;
+
+  /// Compression codec.
+  /// This parameter is used to compress messages before sending them to Kafka.
+  /// Possible values are:
+  /// * none - no compression;
+  /// * gzip - gzip compression;
+  /// * snappy - snappy compression.
+  /// * lz4 - lz4 compression.
+  /// * zstd - zstd compression.
+  ///
+  /// Corresponds to `compression.codec` in Kafka configuration.
+  optional string compression = 6;
+
+  /// Kafka idle timeout in seconds.
+  /// After this amount of time in seconds, the connection will be dropped.
+  /// Corresponds to `connections.max.idle.ms` in Kafka configuration.
+  optional uint64 idle_timeout = 7;
+
+  /// Kafka send timeout in seconds.
+  /// After this amount of time in seconds, the message will be dropped.
+  optional uint64 send_timeout = 8;
+
+  /// Extra options for Kafka.
+  /// This parameter is used to pass additional options to Kafka.
+  /// All options must be in the format `key=value`, separated by semicolon.
+  /// Example: `key1=value1;key2=value2`.
+  ///
+  /// You can find all available options at
+  /// <https://github.com/confluentinc/librdkafka/blob/master/CONFIGURATION.md>.
+  optional ExtraKafkaOptions extra_kafka_opts = 9;
+}
+
+message NatsHookOptions {
+  /// List of URLs to connect to NATS. Commas are used as delimiters.
+  repeated string urls = 1;
+
+  /// NATS subject to send messages to. If not specified, hook name will be used.
+  optional string subject = 2;
+
+  /// NATS prefix for all subjects. Will be added to all subjects separated by a dot.
+  optional string prefix = 3;
+
+  /// Wait for replies from NATS.
+  /// If enabled, Rustus will use request-reply pattern and
+  /// wait for replies from NATS.
+  ///
+  /// In that case any reply should respond with "OK" or empty body, otherwise
+  /// Rustus will treat it as an error.
+  bool wait_for_replies = 4;
+
+  /// NATS user to connect to the server.
+  optional string username = 5;
+
+  /// NATS password to connect to the server.
+  optional string password = 6;
+
+  /// NATS token to connect to the server.
+  optional string token = 7;
+}
+
+message NotificationsOptions {
+  /// Notifications format.
+  ///
+  /// This format will be used in all messages about hooks.
+  Format hooks_format = 1;
+
+  /// Enabled hooks for notifications.
+  repeated Hook hooks = 2;
+
+  /// Use this option if you use rustus
+  /// behind any proxy. Like Nginx or Traefik.
+  bool behind_proxy = 3;
+
+  /// List of URLS to send webhooks to.
+  repeated string hooks_http_urls = 4;
+
+  /// Timeout for all HTTP requests in seconds.
+  optional uint64 http_hook_timeout = 5;
+
+  // List of headers to forward from client.
+  repeated string hooks_http_proxy_headers = 6;
+
+  /// Directory for executable hook files.
+  /// This parameter is used to call executables from dir.
+  optional string hooks_dir = 7;
+
+  /// Executable file which must be called for notifying about upload status.
+  optional string hooks_file = 8;
+
+  AMQPHooksOptions amqp_hook_opts = 9;
+  KafkaHookOptions kafka_hook_opts = 10;
+  NatsHookOptions nats_hook_opts = 11;
+}
+
+message SentryOptions {
+  optional string dsn = 1;
+  float sample_rate = 2; // f32 is represented as float
+}
+
+/// Tus protocol implementation.
+///
+/// This program is a web-server that implements protocol for resumable uploads.
+///
+/// You can read more about protocol [here](https://tus.io/).
+message RustusConf {
+  /// Rustus server host
+  string host = 1;
+
+  /// Rustus server port
+  uint32 port = 2;
+
+  bool disable_health_access_log = 3;
+
+  /// Rustus base API url
+  string url = 4;
+
+  /// Allowed hosts for CORS protocol.
+  ///
+  /// By default all hosts are allowed.
+  repeated string cors = 5;
+
+  /// Maximum payload size.
+  ///
+  /// This limit used to reduce amount of consumed memory.
+  uint32 max_body_size = 6;
+
+  /// Rustus maximum log level
+  string log_level = 7;
+
+  /// Number of actix workers default value = number of cpu cores.
+  optional uint32 workers = 8;
+
+  /// Enabled extensions for TUS protocol.
+  repeated Extensions tus_extensions = 9;
+
+  /// Enabling this parameter Will allow creation of empty files
+  /// when Upload-Length header equals to 0.
+  bool allow_empty = 10;
+
+  /// Remove part files after concatenation is done.
+  /// By default rustus does nothing with part files after concatenation.
+  ///
+  /// This parameter is only needed if concatenation extension is enabled.
+  bool remove_parts = 11;
+
+  /// Maximum size of file that can be uploaded.
+  ///
+  /// If not set, file size is unlimited.
+  optional uint32 max_file_size = 12;
+
+  DataStorageOptions storage_opts = 13;
+  InfoStoreOptions info_storage_opts = 14;
+  NotificationsOptions notification_opts = 15;
+  SentryOptions sentry_opts = 16;
+}

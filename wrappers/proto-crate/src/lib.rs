@@ -27,8 +27,15 @@ mod products {
   }
 }
 
+mod uploader {
+  pub mod v1 {
+    include!("uploader.v1.rs");
+  }
+}
+
 // Re-export main types at crate root
 pub use common::v1::*;
 pub use products::v1::*;
 pub use shared::v1::*;
+pub use uploader::v1::*;
 pub use user::v1::*;
