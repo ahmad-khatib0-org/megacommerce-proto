@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package products.v1;
+
+import "shared/v1/error.proto";
+import "products/v1/product_categories.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1";
+option java_outer_classname = "ProductDataProto";
+option java_package = "org.megacommerce.products.v1";
+
+message ProductDataRequest {
+  optional bool get_all_categories = 1;
+  optional string category_name = 2;
+}
+
+message ProductDataResponse {
+  oneof response { 
+    ProductDataResponseData  data = 1;
+    shared.v1.AppError error = 2;
+  }
+}
+
+message ProductDataResponseData {
+  repeated products.v1.ProductCategory categories = 1;
+}

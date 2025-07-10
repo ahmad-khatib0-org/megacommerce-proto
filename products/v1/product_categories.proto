@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package products.v1;
+
+import "google/protobuf/any.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1";
+option java_outer_classname = "ProductCategoriesProto";
+option java_package = "org.megacommerce.products.v1";
+
+message ProductCategory {
+  string id = 1;
+  string name = 2;
+  repeated ProductSubcategory subcategories = 3;
+}
+
+message ProductSubcategory {
+  string id = 1;
+  string name = 2;
+  map<string, ProductSubcategoryAttribute> attributes = 3;
+}
+
+message ProductSubcategoryAttribute {
+  bool required = 1;
+  string type = 2;
+  optional google.protobuf.Any data = 3;
+}

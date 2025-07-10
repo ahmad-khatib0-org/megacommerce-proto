@@ -18,6 +18,7 @@
 import * as grpcWeb from 'grpc-web';
 
 import * as products_v1_product_create_pb from '../../products/v1/product_create_pb'; // proto import: "products/v1/product_create.proto"
+import * as products_v1_product_data_pb from '../../products/v1/product_data_pb'; // proto import: "products/v1/product_data.proto"
 
 
 export class ProductsServiceClient {
@@ -80,6 +81,49 @@ export class ProductsServiceClient {
     request,
     metadata || {},
     this.methodDescriptorProductCreate);
+  }
+
+  methodDescriptorProductData = new grpcWeb.MethodDescriptor(
+    '/products.v1.ProductsService/ProductData',
+    grpcWeb.MethodType.UNARY,
+    products_v1_product_data_pb.ProductDataRequest,
+    products_v1_product_data_pb.ProductDataResponse,
+    (request: products_v1_product_data_pb.ProductDataRequest) => {
+      return request.serializeBinary();
+    },
+    products_v1_product_data_pb.ProductDataResponse.deserializeBinary
+  );
+
+  productData(
+    request: products_v1_product_data_pb.ProductDataRequest,
+    metadata?: grpcWeb.Metadata | null): Promise<products_v1_product_data_pb.ProductDataResponse>;
+
+  productData(
+    request: products_v1_product_data_pb.ProductDataRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: products_v1_product_data_pb.ProductDataResponse) => void): grpcWeb.ClientReadableStream<products_v1_product_data_pb.ProductDataResponse>;
+
+  productData(
+    request: products_v1_product_data_pb.ProductDataRequest,
+    metadata?: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: products_v1_product_data_pb.ProductDataResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/products.v1.ProductsService/ProductData',
+        request,
+        metadata || {},
+        this.methodDescriptorProductData,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/products.v1.ProductsService/ProductData',
+    request,
+    metadata || {},
+    this.methodDescriptorProductData);
   }
 
 }

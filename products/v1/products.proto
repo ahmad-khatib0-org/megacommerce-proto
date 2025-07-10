@@ -3,6 +3,7 @@ syntax = "proto3";
 package products.v1;
 
 import "products/v1/product_create.proto";
+import "products/v1/product_data.proto";
 
 option cc_enable_arenas = true;
 option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1";
@@ -11,4 +12,5 @@ option java_package = "org.megacommerce.products.v1";
 
 service ProductsService {
   rpc ProductCreate(products.v1.ProductCreateRequest) returns (products.v1.ProductCreateResponse);
+  rpc ProductData(products.v1.ProductDataRequest) returns (products.v1.ProductDataResponse);
 }
