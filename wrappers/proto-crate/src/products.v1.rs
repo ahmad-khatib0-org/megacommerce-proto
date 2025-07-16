@@ -44,6 +44,59 @@ pub mod product_create_response {
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductTag {
+    #[prost(uint32, optional, tag = "1")]
+    pub id: ::core::option::Option<u32>,
+    #[prost(string, optional, tag = "2")]
+    pub name: ::core::option::Option<::prost::alloc::string::String>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductTags {
+    #[prost(message, repeated, tag = "1")]
+    pub tags: ::prost::alloc::vec::Vec<ProductTag>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+pub struct ProductMetadata {}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Product {
+    #[prost(string, tag = "1")]
+    pub id: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub user_id: ::prost::alloc::string::String,
+    #[prost(string, tag = "3")]
+    pub sku: ::prost::alloc::string::String,
+    #[prost(uint32, tag = "4")]
+    pub version: u32,
+    #[prost(string, tag = "5")]
+    pub status: ::prost::alloc::string::String,
+    #[prost(string, tag = "6")]
+    pub title: ::prost::alloc::string::String,
+    #[prost(string, tag = "7")]
+    pub description: ::prost::alloc::string::String,
+    #[prost(string, tag = "8")]
+    pub slug: ::prost::alloc::string::String,
+    #[prost(string, tag = "9")]
+    pub price: ::prost::alloc::string::String,
+    #[prost(string, tag = "10")]
+    pub currency_code: ::prost::alloc::string::String,
+    #[prost(message, repeated, tag = "11")]
+    pub tags: ::prost::alloc::vec::Vec<ProductTag>,
+    #[prost(message, optional, tag = "12")]
+    pub metadata: ::core::option::Option<ProductMetadata>,
+    #[prost(bool, tag = "13")]
+    pub ar_enabled: bool,
+    #[prost(uint64, tag = "14")]
+    pub created_at: u64,
+    #[prost(uint64, optional, tag = "15")]
+    pub published_at: ::core::option::Option<u64>,
+    #[prost(uint64, optional, tag = "16")]
+    pub updated_at: ::core::option::Option<u64>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductCategory {
     #[prost(string, tag = "1")]
     pub id: ::prost::alloc::string::String,
@@ -77,6 +130,20 @@ pub struct ProductSubcategoryAttribute {
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductCategories {
+    #[prost(message, repeated, tag = "1")]
+    pub categories: ::prost::alloc::vec::Vec<ProductCategory>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductDataResponseData {
+    #[prost(message, optional, tag = "1")]
+    pub categories: ::core::option::Option<ProductCategories>,
+    #[prost(message, optional, tag = "2")]
+    pub tags: ::core::option::Option<ProductTags>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductDataRequest {
     #[prost(bool, optional, tag = "1")]
     pub get_all_categories: ::core::option::Option<bool>,
@@ -99,12 +166,6 @@ pub mod product_data_response {
         #[prost(message, tag = "2")]
         Error(super::super::super::shared::v1::AppError),
     }
-}
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ProductDataResponseData {
-    #[prost(message, repeated, tag = "1")]
-    pub categories: ::prost::alloc::vec::Vec<ProductCategory>,
 }
 /// Generated client implementations.
 pub mod products_service_client {
@@ -481,51 +542,4 @@ pub mod products_service_server {
     impl<T> tonic::server::NamedService for ProductsServiceServer<T> {
         const NAME: &'static str = SERVICE_NAME;
     }
-}
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ProductTag {
-    #[prost(uint32, optional, tag = "1")]
-    pub id: ::core::option::Option<u32>,
-    #[prost(string, optional, tag = "2")]
-    pub name: ::core::option::Option<::prost::alloc::string::String>,
-}
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
-pub struct ProductMetadata {}
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct Product {
-    #[prost(string, tag = "1")]
-    pub id: ::prost::alloc::string::String,
-    #[prost(string, tag = "2")]
-    pub user_id: ::prost::alloc::string::String,
-    #[prost(string, tag = "3")]
-    pub sku: ::prost::alloc::string::String,
-    #[prost(uint32, tag = "4")]
-    pub version: u32,
-    #[prost(string, tag = "5")]
-    pub status: ::prost::alloc::string::String,
-    #[prost(string, tag = "6")]
-    pub title: ::prost::alloc::string::String,
-    #[prost(string, tag = "7")]
-    pub description: ::prost::alloc::string::String,
-    #[prost(string, tag = "8")]
-    pub slug: ::prost::alloc::string::String,
-    #[prost(string, tag = "9")]
-    pub price: ::prost::alloc::string::String,
-    #[prost(string, tag = "10")]
-    pub currency_code: ::prost::alloc::string::String,
-    #[prost(message, repeated, tag = "11")]
-    pub tags: ::prost::alloc::vec::Vec<ProductTag>,
-    #[prost(message, optional, tag = "12")]
-    pub metadata: ::core::option::Option<ProductMetadata>,
-    #[prost(bool, tag = "13")]
-    pub ar_enabled: bool,
-    #[prost(uint64, tag = "14")]
-    pub created_at: u64,
-    #[prost(uint64, optional, tag = "15")]
-    pub published_at: ::core::option::Option<u64>,
-    #[prost(uint64, optional, tag = "16")]
-    pub updated_at: ::core::option::Option<u64>,
 }

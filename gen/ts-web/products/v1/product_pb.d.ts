@@ -38,6 +38,26 @@ export namespace ProductTag {
   }
 }
 
+export class ProductTags extends jspb.Message {
+  getTagsList(): Array<ProductTag>;
+  setTagsList(value: Array<ProductTag>): ProductTags;
+  clearTagsList(): ProductTags;
+  addTags(value?: ProductTag, index?: number): ProductTag;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ProductTags.AsObject;
+  static toObject(includeInstance: boolean, msg: ProductTags): ProductTags.AsObject;
+  static serializeBinaryToWriter(message: ProductTags, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProductTags;
+  static deserializeBinaryFromReader(message: ProductTags, reader: jspb.BinaryReader): ProductTags;
+}
+
+export namespace ProductTags {
+  export type AsObject = {
+    tagsList: Array<ProductTag.AsObject>,
+  }
+}
+
 export class ProductMetadata extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductMetadata.AsObject;

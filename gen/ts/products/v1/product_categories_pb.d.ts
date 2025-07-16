@@ -91,3 +91,25 @@ export namespace ProductSubcategoryAttribute {
   }
 }
 
+export class ProductCategories extends jspb.Message {
+  clearCategoriesList(): void;
+  getCategoriesList(): Array<ProductCategory>;
+  setCategoriesList(value: Array<ProductCategory>): void;
+  addCategories(value?: ProductCategory, index?: number): ProductCategory;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ProductCategories.AsObject;
+  static toObject(includeInstance: boolean, msg: ProductCategories): ProductCategories.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ProductCategories, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProductCategories;
+  static deserializeBinaryFromReader(message: ProductCategories, reader: jspb.BinaryReader): ProductCategories;
+}
+
+export namespace ProductCategories {
+  export type AsObject = {
+    categoriesList: Array<ProductCategory.AsObject>,
+  }
+}
+

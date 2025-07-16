@@ -22,11 +22,12 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
+from products.v1 import product_pb2 as products_dot_v1_dot_product__pb2
 from products.v1 import product_categories_pb2 as products_dot_v1_dot_product__categories__pb2
+from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1eproducts/v1/product_data.proto\x12\x0bproducts.v1\x1a\x15shared/v1/error.proto\x1a$products/v1/product_categories.proto\"z\n\x12ProductDataRequest\x12\x1f\n\x12get_all_categories\x18\x01 \x01(\x08H\x00\x88\x01\x01\x12\x1a\n\rcategory_name\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\x15\n\x13_get_all_categoriesB\x10\n\x0e_category_name\"}\n\x13ProductDataResponse\x12\x34\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32$.products.v1.ProductDataResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"K\n\x17ProductDataResponseData\x12\x30\n\ncategories\x18\x01 \x03(\x0b\x32\x1c.products.v1.ProductCategoryBz\n\x1corg.megacommerce.products.v1B\x10ProductDataProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1eproducts/v1/product_data.proto\x12\x0bproducts.v1\x1a\x19products/v1/product.proto\x1a$products/v1/product_categories.proto\x1a\x15shared/v1/error.proto\"\x97\x01\n\x17ProductDataResponseData\x12\x37\n\ncategories\x18\x01 \x01(\x0b\x32\x1e.products.v1.ProductCategoriesH\x00\x88\x01\x01\x12+\n\x04tags\x18\x02 \x01(\x0b\x32\x18.products.v1.ProductTagsH\x01\x88\x01\x01\x42\r\n\x0b_categoriesB\x07\n\x05_tags\"z\n\x12ProductDataRequest\x12\x1f\n\x12get_all_categories\x18\x01 \x01(\x08H\x00\x88\x01\x01\x12\x1a\n\rcategory_name\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\x15\n\x13_get_all_categoriesB\x10\n\x0e_category_name\"}\n\x13ProductDataResponse\x12\x34\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32$.products.v1.ProductDataResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08responseBz\n\x1corg.megacommerce.products.v1B\x10ProductDataProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,10 +35,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'products.v1.product_data_pb
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\034org.megacommerce.products.v1B\020ProductDataProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\370\001\001'
-  _globals['_PRODUCTDATAREQUEST']._serialized_start=108
-  _globals['_PRODUCTDATAREQUEST']._serialized_end=230
-  _globals['_PRODUCTDATARESPONSE']._serialized_start=232
-  _globals['_PRODUCTDATARESPONSE']._serialized_end=357
-  _globals['_PRODUCTDATARESPONSEDATA']._serialized_start=359
-  _globals['_PRODUCTDATARESPONSEDATA']._serialized_end=434
+  _globals['_PRODUCTDATARESPONSEDATA']._serialized_start=136
+  _globals['_PRODUCTDATARESPONSEDATA']._serialized_end=287
+  _globals['_PRODUCTDATAREQUEST']._serialized_start=289
+  _globals['_PRODUCTDATAREQUEST']._serialized_end=411
+  _globals['_PRODUCTDATARESPONSE']._serialized_start=413
+  _globals['_PRODUCTDATARESPONSE']._serialized_end=538
 # @@protoc_insertion_point(module_scope)

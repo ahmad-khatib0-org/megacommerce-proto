@@ -1,8 +1,45 @@
 import * as jspb from 'google-protobuf'
 
-import * as shared_v1_error_pb from '../../shared/v1/error_pb'; // proto import: "shared/v1/error.proto"
+import * as products_v1_product_pb from '../../products/v1/product_pb'; // proto import: "products/v1/product.proto"
 import * as products_v1_product_categories_pb from '../../products/v1/product_categories_pb'; // proto import: "products/v1/product_categories.proto"
+import * as shared_v1_error_pb from '../../shared/v1/error_pb'; // proto import: "shared/v1/error.proto"
 
+
+export class ProductDataResponseData extends jspb.Message {
+  getCategories(): products_v1_product_categories_pb.ProductCategories | undefined;
+  setCategories(value?: products_v1_product_categories_pb.ProductCategories): ProductDataResponseData;
+  hasCategories(): boolean;
+  clearCategories(): ProductDataResponseData;
+
+  getTags(): products_v1_product_pb.ProductTags | undefined;
+  setTags(value?: products_v1_product_pb.ProductTags): ProductDataResponseData;
+  hasTags(): boolean;
+  clearTags(): ProductDataResponseData;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ProductDataResponseData.AsObject;
+  static toObject(includeInstance: boolean, msg: ProductDataResponseData): ProductDataResponseData.AsObject;
+  static serializeBinaryToWriter(message: ProductDataResponseData, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProductDataResponseData;
+  static deserializeBinaryFromReader(message: ProductDataResponseData, reader: jspb.BinaryReader): ProductDataResponseData;
+}
+
+export namespace ProductDataResponseData {
+  export type AsObject = {
+    categories?: products_v1_product_categories_pb.ProductCategories.AsObject,
+    tags?: products_v1_product_pb.ProductTags.AsObject,
+  }
+
+  export enum CategoriesCase { 
+    _CATEGORIES_NOT_SET = 0,
+    CATEGORIES = 1,
+  }
+
+  export enum TagsCase { 
+    _TAGS_NOT_SET = 0,
+    TAGS = 2,
+  }
+}
 
 export class ProductDataRequest extends jspb.Message {
   getGetAllCategories(): boolean;
@@ -71,26 +108,6 @@ export namespace ProductDataResponse {
     RESPONSE_NOT_SET = 0,
     DATA = 1,
     ERROR = 2,
-  }
-}
-
-export class ProductDataResponseData extends jspb.Message {
-  getCategoriesList(): Array<products_v1_product_categories_pb.ProductCategory>;
-  setCategoriesList(value: Array<products_v1_product_categories_pb.ProductCategory>): ProductDataResponseData;
-  clearCategoriesList(): ProductDataResponseData;
-  addCategories(value?: products_v1_product_categories_pb.ProductCategory, index?: number): products_v1_product_categories_pb.ProductCategory;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ProductDataResponseData.AsObject;
-  static toObject(includeInstance: boolean, msg: ProductDataResponseData): ProductDataResponseData.AsObject;
-  static serializeBinaryToWriter(message: ProductDataResponseData, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ProductDataResponseData;
-  static deserializeBinaryFromReader(message: ProductDataResponseData, reader: jspb.BinaryReader): ProductDataResponseData;
-}
-
-export namespace ProductDataResponseData {
-  export type AsObject = {
-    categoriesList: Array<products_v1_product_categories_pb.ProductCategory.AsObject>,
   }
 }
 

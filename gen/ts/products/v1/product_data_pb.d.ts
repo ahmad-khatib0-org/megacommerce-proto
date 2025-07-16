@@ -2,8 +2,37 @@
 // file: products/v1/product_data.proto
 
 import * as jspb from "google-protobuf";
-import * as shared_v1_error_pb from "../../shared/v1/error_pb";
+import * as products_v1_product_pb from "../../products/v1/product_pb";
 import * as products_v1_product_categories_pb from "../../products/v1/product_categories_pb";
+import * as shared_v1_error_pb from "../../shared/v1/error_pb";
+
+export class ProductDataResponseData extends jspb.Message {
+  hasCategories(): boolean;
+  clearCategories(): void;
+  getCategories(): products_v1_product_categories_pb.ProductCategories | undefined;
+  setCategories(value?: products_v1_product_categories_pb.ProductCategories): void;
+
+  hasTags(): boolean;
+  clearTags(): void;
+  getTags(): products_v1_product_pb.ProductTags | undefined;
+  setTags(value?: products_v1_product_pb.ProductTags): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ProductDataResponseData.AsObject;
+  static toObject(includeInstance: boolean, msg: ProductDataResponseData): ProductDataResponseData.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ProductDataResponseData, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProductDataResponseData;
+  static deserializeBinaryFromReader(message: ProductDataResponseData, reader: jspb.BinaryReader): ProductDataResponseData;
+}
+
+export namespace ProductDataResponseData {
+  export type AsObject = {
+    categories?: products_v1_product_categories_pb.ProductCategories.AsObject,
+    tags?: products_v1_product_pb.ProductTags.AsObject,
+  }
+}
 
 export class ProductDataRequest extends jspb.Message {
   hasGetAllCategories(): boolean;
@@ -65,28 +94,6 @@ export namespace ProductDataResponse {
     RESPONSE_NOT_SET = 0,
     DATA = 1,
     ERROR = 2,
-  }
-}
-
-export class ProductDataResponseData extends jspb.Message {
-  clearCategoriesList(): void;
-  getCategoriesList(): Array<products_v1_product_categories_pb.ProductCategory>;
-  setCategoriesList(value: Array<products_v1_product_categories_pb.ProductCategory>): void;
-  addCategories(value?: products_v1_product_categories_pb.ProductCategory, index?: number): products_v1_product_categories_pb.ProductCategory;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ProductDataResponseData.AsObject;
-  static toObject(includeInstance: boolean, msg: ProductDataResponseData): ProductDataResponseData.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ProductDataResponseData, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ProductDataResponseData;
-  static deserializeBinaryFromReader(message: ProductDataResponseData, reader: jspb.BinaryReader): ProductDataResponseData;
-}
-
-export namespace ProductDataResponseData {
-  export type AsObject = {
-    categoriesList: Array<products_v1_product_categories_pb.ProductCategory.AsObject>,
   }
 }
 

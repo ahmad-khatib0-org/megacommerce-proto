@@ -12,6 +12,10 @@ message ProductTag {
   optional string name = 2;
 }
 
+message ProductTags {
+  repeated ProductTag tags = 1;
+}
+
 message ProductMetadata {}
 
 message Product {

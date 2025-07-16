@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from shared.v1 import types_pb2 as shared_dot_v1_dot_types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$products/v1/product_categories.proto\x12\x0bproducts.v1\x1a\x15shared/v1/types.proto\"c\n\x0fProductCategory\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x36\n\rsubcategories\x18\x03 \x03(\x0b\x32\x1f.products.v1.ProductSubcategory\"\xd0\x01\n\x12ProductSubcategory\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x43\n\nattributes\x18\x03 \x03(\x0b\x32/.products.v1.ProductSubcategory.AttributesEntry\x1a[\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x37\n\x05value\x18\x02 \x01(\x0b\x32(.products.v1.ProductSubcategoryAttribute:\x02\x38\x01\"i\n\x1bProductSubcategoryAttribute\x12\x10\n\x08required\x18\x01 \x01(\x08\x12\x0c\n\x04type\x18\x02 \x01(\t\x12!\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\x0e.shared.v1.AnyH\x00\x88\x01\x01\x42\x07\n\x05_dataB\x80\x01\n\x1corg.megacommerce.products.v1B\x16ProductCategoriesProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$products/v1/product_categories.proto\x12\x0bproducts.v1\x1a\x15shared/v1/types.proto\"c\n\x0fProductCategory\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x36\n\rsubcategories\x18\x03 \x03(\x0b\x32\x1f.products.v1.ProductSubcategory\"\xd0\x01\n\x12ProductSubcategory\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x43\n\nattributes\x18\x03 \x03(\x0b\x32/.products.v1.ProductSubcategory.AttributesEntry\x1a[\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x37\n\x05value\x18\x02 \x01(\x0b\x32(.products.v1.ProductSubcategoryAttribute:\x02\x38\x01\"i\n\x1bProductSubcategoryAttribute\x12\x10\n\x08required\x18\x01 \x01(\x08\x12\x0c\n\x04type\x18\x02 \x01(\t\x12!\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\x0e.shared.v1.AnyH\x00\x88\x01\x01\x42\x07\n\x05_data\"E\n\x11ProductCategories\x12\x30\n\ncategories\x18\x01 \x03(\x0b\x32\x1c.products.v1.ProductCategoryB\x80\x01\n\x1corg.megacommerce.products.v1B\x16ProductCategoriesProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,4 +43,6 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PRODUCTSUBCATEGORY_ATTRIBUTESENTRY']._serialized_end=386
   _globals['_PRODUCTSUBCATEGORYATTRIBUTE']._serialized_start=388
   _globals['_PRODUCTSUBCATEGORYATTRIBUTE']._serialized_end=493
+  _globals['_PRODUCTCATEGORIES']._serialized_start=495
+  _globals['_PRODUCTCATEGORIES']._serialized_end=564
 # @@protoc_insertion_point(module_scope)

@@ -73,6 +73,50 @@ func (x *ProductTag) GetName() string {
 	return ""
 }
 
+type ProductTags struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Tags          []*ProductTag          `protobuf:"bytes,1,rep,name=tags,proto3" json:"tags,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ProductTags) Reset() {
+	*x = ProductTags{}
+	mi := &file_products_v1_product_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProductTags) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProductTags) ProtoMessage() {}
+
+func (x *ProductTags) ProtoReflect() protoreflect.Message {
+	mi := &file_products_v1_product_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProductTags.ProtoReflect.Descriptor instead.
+func (*ProductTags) Descriptor() ([]byte, []int) {
+	return file_products_v1_product_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *ProductTags) GetTags() []*ProductTag {
+	if x != nil {
+		return x.Tags
+	}
+	return nil
+}
+
 type ProductMetadata struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	unknownFields protoimpl.UnknownFields
@@ -81,7 +125,7 @@ type ProductMetadata struct {
 
 func (x *ProductMetadata) Reset() {
 	*x = ProductMetadata{}
-	mi := &file_products_v1_product_proto_msgTypes[1]
+	mi := &file_products_v1_product_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -93,7 +137,7 @@ func (x *ProductMetadata) String() string {
 func (*ProductMetadata) ProtoMessage() {}
 
 func (x *ProductMetadata) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_product_proto_msgTypes[1]
+	mi := &file_products_v1_product_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -106,7 +150,7 @@ func (x *ProductMetadata) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductMetadata.ProtoReflect.Descriptor instead.
 func (*ProductMetadata) Descriptor() ([]byte, []int) {
-	return file_products_v1_product_proto_rawDescGZIP(), []int{1}
+	return file_products_v1_product_proto_rawDescGZIP(), []int{2}
 }
 
 type Product struct {
@@ -133,7 +177,7 @@ type Product struct {
 
 func (x *Product) Reset() {
 	*x = Product{}
-	mi := &file_products_v1_product_proto_msgTypes[2]
+	mi := &file_products_v1_product_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -145,7 +189,7 @@ func (x *Product) String() string {
 func (*Product) ProtoMessage() {}
 
 func (x *Product) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_product_proto_msgTypes[2]
+	mi := &file_products_v1_product_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -158,7 +202,7 @@ func (x *Product) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Product.ProtoReflect.Descriptor instead.
 func (*Product) Descriptor() ([]byte, []int) {
-	return file_products_v1_product_proto_rawDescGZIP(), []int{2}
+	return file_products_v1_product_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Product) GetId() string {
@@ -283,7 +327,9 @@ const file_products_v1_product_proto_rawDesc = "" +
 	"\x02id\x18\x01 \x01(\rH\x00R\x02id\x88\x01\x01\x12\x17\n" +
 	"\x04name\x18\x02 \x01(\tH\x01R\x04name\x88\x01\x01B\x05\n" +
 	"\x03_idB\a\n" +
-	"\x05_name\"\x11\n" +
+	"\x05_name\":\n" +
+	"\vProductTags\x12+\n" +
+	"\x04tags\x18\x01 \x03(\v2\x17.products.v1.ProductTagR\x04tags\"\x11\n" +
 	"\x0fProductMetadata\"\xa0\x04\n" +
 	"\aProduct\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x17\n" +
@@ -323,20 +369,22 @@ func file_products_v1_product_proto_rawDescGZIP() []byte {
 	return file_products_v1_product_proto_rawDescData
 }
 
-var file_products_v1_product_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_products_v1_product_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_products_v1_product_proto_goTypes = []any{
 	(*ProductTag)(nil),      // 0: products.v1.ProductTag
-	(*ProductMetadata)(nil), // 1: products.v1.ProductMetadata
-	(*Product)(nil),         // 2: products.v1.Product
+	(*ProductTags)(nil),     // 1: products.v1.ProductTags
+	(*ProductMetadata)(nil), // 2: products.v1.ProductMetadata
+	(*Product)(nil),         // 3: products.v1.Product
 }
 var file_products_v1_product_proto_depIdxs = []int32{
-	0, // 0: products.v1.Product.tags:type_name -> products.v1.ProductTag
-	1, // 1: products.v1.Product.metadata:type_name -> products.v1.ProductMetadata
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	0, // 0: products.v1.ProductTags.tags:type_name -> products.v1.ProductTag
+	0, // 1: products.v1.Product.tags:type_name -> products.v1.ProductTag
+	2, // 2: products.v1.Product.metadata:type_name -> products.v1.ProductMetadata
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_products_v1_product_proto_init() }
@@ -345,14 +393,14 @@ func file_products_v1_product_proto_init() {
 		return
 	}
 	file_products_v1_product_proto_msgTypes[0].OneofWrappers = []any{}
-	file_products_v1_product_proto_msgTypes[2].OneofWrappers = []any{}
+	file_products_v1_product_proto_msgTypes[3].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_products_v1_product_proto_rawDesc), len(file_products_v1_product_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

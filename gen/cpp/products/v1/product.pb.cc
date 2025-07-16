@@ -73,6 +73,31 @@ struct ProductMetadataDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductMetadataDefaultTypeInternal _ProductMetadata_default_instance_;
 
+inline constexpr ProductTags::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : tags_{},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductTags::ProductTags(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductTags_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductTagsDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductTagsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductTagsDefaultTypeInternal() {}
+  union {
+    ProductTags _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductTagsDefaultTypeInternal _ProductTags_default_instance_;
+
 inline constexpr Product::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
@@ -147,6 +172,8 @@ const ::uint32_t
         1,
         0,
         0x000, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductTags, _impl_.tags_),
+        0x000, // bitmap
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::Product, _impl_._has_bits_),
         19, // hasbit index offset
@@ -187,11 +214,13 @@ const ::uint32_t
 static const ::_pbi::MigrationSchema
     schemas[] ABSL_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
         {0, sizeof(::products::v1::ProductTag)},
-        {7, sizeof(::products::v1::ProductMetadata)},
-        {8, sizeof(::products::v1::Product)},
+        {7, sizeof(::products::v1::ProductTags)},
+        {9, sizeof(::products::v1::ProductMetadata)},
+        {10, sizeof(::products::v1::Product)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::products::v1::_ProductTag_default_instance_._instance,
+    &::products::v1::_ProductTags_default_instance_._instance,
     &::products::v1::_ProductMetadata_default_instance_._instance,
     &::products::v1::_Product_default_instance_._instance,
 };
@@ -199,37 +228,38 @@ const char descriptor_table_protodef_products_2fv1_2fproduct_2eproto[] ABSL_ATTR
     protodesc_cold) = {
     "\n\031products/v1/product.proto\022\013products.v1"
     "\"J\n\nProductTag\022\023\n\002id\030\001 \001(\rH\000R\002id\210\001\001\022\027\n\004n"
-    "ame\030\002 \001(\tH\001R\004name\210\001\001B\005\n\003_idB\007\n\005_name\"\021\n\017"
-    "ProductMetadata\"\240\004\n\007Product\022\016\n\002id\030\001 \001(\tR"
-    "\002id\022\027\n\007user_id\030\002 \001(\tR\006userId\022\020\n\003sku\030\003 \001("
-    "\tR\003sku\022\030\n\007version\030\004 \001(\rR\007version\022\026\n\006stat"
-    "us\030\005 \001(\tR\006status\022\024\n\005title\030\006 \001(\tR\005title\022 "
-    "\n\013description\030\007 \001(\tR\013description\022\022\n\004slug"
-    "\030\010 \001(\tR\004slug\022\024\n\005price\030\t \001(\tR\005price\022#\n\rcu"
-    "rrency_code\030\n \001(\tR\014currencyCode\022+\n\004tags\030"
-    "\013 \003(\0132\027.products.v1.ProductTagR\004tags\022=\n\010"
-    "metadata\030\014 \001(\0132\034.products.v1.ProductMeta"
-    "dataH\000R\010metadata\210\001\001\022\035\n\nar_enabled\030\r \001(\010R"
-    "\tarEnabled\022\035\n\ncreated_at\030\016 \001(\004R\tcreatedA"
-    "t\022&\n\014published_at\030\017 \001(\004H\001R\013publishedAt\210\001"
-    "\001\022\"\n\nupdated_at\030\020 \001(\004H\002R\tupdatedAt\210\001\001B\013\n"
-    "\t_metadataB\017\n\r_published_atB\r\n\013_updated_"
-    "atBv\n\034org.megacommerce.products.v1B\014Prod"
-    "uctProtoZEgithub.com/ahmad-khatib0-org/m"
-    "egacommerce-proto/gen/go/products/v1;v1\370"
-    "\001\001b\006proto3"
+    "ame\030\002 \001(\tH\001R\004name\210\001\001B\005\n\003_idB\007\n\005_name\":\n\013"
+    "ProductTags\022+\n\004tags\030\001 \003(\0132\027.products.v1."
+    "ProductTagR\004tags\"\021\n\017ProductMetadata\"\240\004\n\007"
+    "Product\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id\030\002 \001(\t"
+    "R\006userId\022\020\n\003sku\030\003 \001(\tR\003sku\022\030\n\007version\030\004 "
+    "\001(\rR\007version\022\026\n\006status\030\005 \001(\tR\006status\022\024\n\005"
+    "title\030\006 \001(\tR\005title\022 \n\013description\030\007 \001(\tR"
+    "\013description\022\022\n\004slug\030\010 \001(\tR\004slug\022\024\n\005pric"
+    "e\030\t \001(\tR\005price\022#\n\rcurrency_code\030\n \001(\tR\014c"
+    "urrencyCode\022+\n\004tags\030\013 \003(\0132\027.products.v1."
+    "ProductTagR\004tags\022=\n\010metadata\030\014 \001(\0132\034.pro"
+    "ducts.v1.ProductMetadataH\000R\010metadata\210\001\001\022"
+    "\035\n\nar_enabled\030\r \001(\010R\tarEnabled\022\035\n\ncreate"
+    "d_at\030\016 \001(\004R\tcreatedAt\022&\n\014published_at\030\017 "
+    "\001(\004H\001R\013publishedAt\210\001\001\022\"\n\nupdated_at\030\020 \001("
+    "\004H\002R\tupdatedAt\210\001\001B\013\n\t_metadataB\017\n\r_publi"
+    "shed_atB\r\n\013_updated_atBv\n\034org.megacommer"
+    "ce.products.v1B\014ProductProtoZEgithub.com"
+    "/ahmad-khatib0-org/megacommerce-proto/ge"
+    "n/go/products/v1;v1\370\001\001b\006proto3"
 };
 static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_2eproto = {
     false,
     false,
-    810,
+    870,
     descriptor_table_protodef_products_2fv1_2fproduct_2eproto,
     "products/v1/product.proto",
     &descriptor_table_products_2fv1_2fproduct_2eproto_once,
     nullptr,
     0,
-    3,
+    4,
     schemas,
     file_default_instances,
     TableStruct_products_2fv1_2fproduct_2eproto::offsets,
@@ -517,6 +547,258 @@ void ProductTag::InternalSwap(ProductTag* PROTOBUF_RESTRICT PROTOBUF_NONNULL oth
 }
 
 ::google::protobuf::Metadata ProductTag::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class ProductTags::_Internal {
+ public:
+};
+
+ProductTags::ProductTags(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductTags_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:products.v1.ProductTags)
+}
+PROTOBUF_NDEBUG_INLINE ProductTags::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::products::v1::ProductTags& from_msg)
+      : tags_{visibility, arena, from.tags_},
+        _cached_size_{0} {}
+
+ProductTags::ProductTags(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const ProductTags& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductTags_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ProductTags* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+
+  // @@protoc_insertion_point(copy_constructor:products.v1.ProductTags)
+}
+PROTOBUF_NDEBUG_INLINE ProductTags::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : tags_{visibility, arena},
+        _cached_size_{0} {}
+
+inline void ProductTags::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+ProductTags::~ProductTags() {
+  // @@protoc_insertion_point(destructor:products.v1.ProductTags)
+  SharedDtor(*this);
+}
+inline void ProductTags::SharedDtor(MessageLite& self) {
+  ProductTags& this_ = static_cast<ProductTags&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL ProductTags::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductTags(arena);
+}
+constexpr auto ProductTags::InternalNewImpl_() {
+  constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
+      PROTOBUF_FIELD_OFFSET(ProductTags, _impl_.tags_) +
+          decltype(ProductTags::_impl_.tags_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+  });
+  if (arena_bits.has_value()) {
+    return ::google::protobuf::internal::MessageCreator::ZeroInit(
+        sizeof(ProductTags), alignof(ProductTags), *arena_bits);
+  } else {
+    return ::google::protobuf::internal::MessageCreator(&ProductTags::PlacementNew_,
+                                 sizeof(ProductTags),
+                                 alignof(ProductTags));
+  }
+}
+constexpr auto ProductTags::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductTags_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductTags::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductTags>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductTags::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<ProductTags>(), &ProductTags::ByteSizeLong,
+              &ProductTags::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductTags, _impl_._cached_size_),
+          false,
+      },
+      &ProductTags::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductTags_class_data_ =
+        ProductTags::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductTags::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductTags_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductTags_class_data_.tc_table);
+  return ProductTags_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 1, 0, 2>
+ProductTags::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductTags_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductTags>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // repeated .products.v1.ProductTag tags = 1 [json_name = "tags"];
+    {::_pbi::TcParser::FastMtR1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(ProductTags, _impl_.tags_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // repeated .products.v1.ProductTag tags = 1 [json_name = "tags"];
+    {PROTOBUF_FIELD_OFFSET(ProductTags, _impl_.tags_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::products::v1::ProductTag>()},
+  }},
+  {{
+  }},
+};
+PROTOBUF_NOINLINE void ProductTags::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.ProductTags)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.tags_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL ProductTags::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const ProductTags& this_ = static_cast<const ProductTags&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL ProductTags::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const ProductTags& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductTags)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // repeated .products.v1.ProductTag tags = 1 [json_name = "tags"];
+  for (unsigned i = 0, n = static_cast<unsigned>(
+                           this_._internal_tags_size());
+       i < n; i++) {
+    const auto& repfield = this_._internal_tags().Get(i);
+    target =
+        ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+            1, repfield, repfield.GetCachedSize(),
+            target, stream);
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductTags)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t ProductTags::ByteSizeLong(const MessageLite& base) {
+  const ProductTags& this_ = static_cast<const ProductTags&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t ProductTags::ByteSizeLong() const {
+  const ProductTags& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductTags)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+   {
+    // repeated .products.v1.ProductTag tags = 1 [json_name = "tags"];
+    {
+      total_size += 1UL * this_._internal_tags_size();
+      for (const auto& msg : this_._internal_tags()) {
+        total_size += ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void ProductTags::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ProductTags*>(&to_msg);
+  auto& from = static_cast<const ProductTags&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductTags)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_tags()->MergeFrom(
+      from._internal_tags());
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ProductTags::CopyFrom(const ProductTags& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductTags)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void ProductTags::InternalSwap(ProductTags* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.tags_.InternalSwap(&other->_impl_.tags_);
+}
+
+::google::protobuf::Metadata ProductTags::GetMetadata() const {
   return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // ===================================================================

@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19products/v1/product.proto\x12\x0bproducts.v1\"@\n\nProductTag\x12\x0f\n\x02id\x18\x01 \x01(\rH\x00\x88\x01\x01\x12\x11\n\x04name\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\x05\n\x03_idB\x07\n\x05_name\"\x11\n\x0fProductMetadata\"\x91\x03\n\x07Product\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\x12\x0b\n\x03sku\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\r\x12\x0e\n\x06status\x18\x05 \x01(\t\x12\r\n\x05title\x18\x06 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x07 \x01(\t\x12\x0c\n\x04slug\x18\x08 \x01(\t\x12\r\n\x05price\x18\t \x01(\t\x12\x15\n\rcurrency_code\x18\n \x01(\t\x12%\n\x04tags\x18\x0b \x03(\x0b\x32\x17.products.v1.ProductTag\x12\x33\n\x08metadata\x18\x0c \x01(\x0b\x32\x1c.products.v1.ProductMetadataH\x00\x88\x01\x01\x12\x12\n\nar_enabled\x18\r \x01(\x08\x12\x12\n\ncreated_at\x18\x0e \x01(\x04\x12\x19\n\x0cpublished_at\x18\x0f \x01(\x04H\x01\x88\x01\x01\x12\x17\n\nupdated_at\x18\x10 \x01(\x04H\x02\x88\x01\x01\x42\x0b\n\t_metadataB\x0f\n\r_published_atB\r\n\x0b_updated_atBv\n\x1corg.megacommerce.products.v1B\x0cProductProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19products/v1/product.proto\x12\x0bproducts.v1\"@\n\nProductTag\x12\x0f\n\x02id\x18\x01 \x01(\rH\x00\x88\x01\x01\x12\x11\n\x04name\x18\x02 \x01(\tH\x01\x88\x01\x01\x42\x05\n\x03_idB\x07\n\x05_name\"4\n\x0bProductTags\x12%\n\x04tags\x18\x01 \x03(\x0b\x32\x17.products.v1.ProductTag\"\x11\n\x0fProductMetadata\"\x91\x03\n\x07Product\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\x12\x0b\n\x03sku\x18\x03 \x01(\t\x12\x0f\n\x07version\x18\x04 \x01(\r\x12\x0e\n\x06status\x18\x05 \x01(\t\x12\r\n\x05title\x18\x06 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x07 \x01(\t\x12\x0c\n\x04slug\x18\x08 \x01(\t\x12\r\n\x05price\x18\t \x01(\t\x12\x15\n\rcurrency_code\x18\n \x01(\t\x12%\n\x04tags\x18\x0b \x03(\x0b\x32\x17.products.v1.ProductTag\x12\x33\n\x08metadata\x18\x0c \x01(\x0b\x32\x1c.products.v1.ProductMetadataH\x00\x88\x01\x01\x12\x12\n\nar_enabled\x18\r \x01(\x08\x12\x12\n\ncreated_at\x18\x0e \x01(\x04\x12\x19\n\x0cpublished_at\x18\x0f \x01(\x04H\x01\x88\x01\x01\x12\x17\n\nupdated_at\x18\x10 \x01(\x04H\x02\x88\x01\x01\x42\x0b\n\t_metadataB\x0f\n\r_published_atB\r\n\x0b_updated_atBv\n\x1corg.megacommerce.products.v1B\x0cProductProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,8 +34,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\034org.megacommerce.products.v1B\014ProductProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\370\001\001'
   _globals['_PRODUCTTAG']._serialized_start=42
   _globals['_PRODUCTTAG']._serialized_end=106
-  _globals['_PRODUCTMETADATA']._serialized_start=108
-  _globals['_PRODUCTMETADATA']._serialized_end=125
-  _globals['_PRODUCT']._serialized_start=128
-  _globals['_PRODUCT']._serialized_end=529
+  _globals['_PRODUCTTAGS']._serialized_start=108
+  _globals['_PRODUCTTAGS']._serialized_end=160
+  _globals['_PRODUCTMETADATA']._serialized_start=162
+  _globals['_PRODUCTMETADATA']._serialized_end=179
+  _globals['_PRODUCT']._serialized_start=182
+  _globals['_PRODUCT']._serialized_end=583
 # @@protoc_insertion_point(module_scope)

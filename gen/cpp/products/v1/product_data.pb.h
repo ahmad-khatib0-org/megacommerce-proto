@@ -29,8 +29,9 @@
 #include "google/protobuf/repeated_field.h"  // IWYU pragma: export
 #include "google/protobuf/extension_set.h"  // IWYU pragma: export
 #include "google/protobuf/unknown_field_set.h"
-#include "shared/v1/error.pb.h"
+#include "products/v1/product.pb.h"
 #include "products/v1/product_categories.pb.h"
+#include "shared/v1/error.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.
@@ -138,7 +139,7 @@ class ProductDataRequest final : public ::google::protobuf::Message
     return *reinterpret_cast<const ProductDataRequest*>(
         &_ProductDataRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 0;
+  static constexpr int kIndexInFileMessages = 1;
   friend void swap(ProductDataRequest& a, ProductDataRequest& b) { a.Swap(&b); }
   inline void Swap(ProductDataRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -348,7 +349,7 @@ class ProductDataResponseData final : public ::google::protobuf::Message
     return *reinterpret_cast<const ProductDataResponseData*>(
         &_ProductDataResponseData_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 2;
+  static constexpr int kIndexInFileMessages = 0;
   friend void swap(ProductDataResponseData& a, ProductDataResponseData& b) { a.Swap(&b); }
   inline void Swap(ProductDataResponseData* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -437,30 +438,44 @@ class ProductDataResponseData final : public ::google::protobuf::Message
   // accessors -------------------------------------------------------
   enum : int {
     kCategoriesFieldNumber = 1,
+    kTagsFieldNumber = 2,
   };
-  // repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];
-  int categories_size() const;
-  private:
-  int _internal_categories_size() const;
-
-  public:
+  // optional .products.v1.ProductCategories categories = 1 [json_name = "categories"];
+  bool has_categories() const;
   void clear_categories() ;
-  ::products::v1::ProductCategory* PROTOBUF_NONNULL mutable_categories(int index);
-  ::google::protobuf::RepeatedPtrField<::products::v1::ProductCategory>* PROTOBUF_NONNULL mutable_categories();
+  const ::products::v1::ProductCategories& categories() const;
+  [[nodiscard]] ::products::v1::ProductCategories* PROTOBUF_NULLABLE release_categories();
+  ::products::v1::ProductCategories* PROTOBUF_NONNULL mutable_categories();
+  void set_allocated_categories(::products::v1::ProductCategories* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_categories(::products::v1::ProductCategories* PROTOBUF_NULLABLE value);
+  ::products::v1::ProductCategories* PROTOBUF_NULLABLE unsafe_arena_release_categories();
 
   private:
-  const ::google::protobuf::RepeatedPtrField<::products::v1::ProductCategory>& _internal_categories() const;
-  ::google::protobuf::RepeatedPtrField<::products::v1::ProductCategory>* PROTOBUF_NONNULL _internal_mutable_categories();
+  const ::products::v1::ProductCategories& _internal_categories() const;
+  ::products::v1::ProductCategories* PROTOBUF_NONNULL _internal_mutable_categories();
+
   public:
-  const ::products::v1::ProductCategory& categories(int index) const;
-  ::products::v1::ProductCategory* PROTOBUF_NONNULL add_categories();
-  const ::google::protobuf::RepeatedPtrField<::products::v1::ProductCategory>& categories() const;
+  // optional .products.v1.ProductTags tags = 2 [json_name = "tags"];
+  bool has_tags() const;
+  void clear_tags() ;
+  const ::products::v1::ProductTags& tags() const;
+  [[nodiscard]] ::products::v1::ProductTags* PROTOBUF_NULLABLE release_tags();
+  ::products::v1::ProductTags* PROTOBUF_NONNULL mutable_tags();
+  void set_allocated_tags(::products::v1::ProductTags* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_tags(::products::v1::ProductTags* PROTOBUF_NULLABLE value);
+  ::products::v1::ProductTags* PROTOBUF_NULLABLE unsafe_arena_release_tags();
+
+  private:
+  const ::products::v1::ProductTags& _internal_tags() const;
+  ::products::v1::ProductTags* PROTOBUF_NONNULL _internal_mutable_tags();
+
+  public:
   // @@protoc_insertion_point(class_scope:products.v1.ProductDataResponseData)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<0, 1,
-                                   1, 0,
+  static const ::google::protobuf::internal::TcParseTable<1, 2,
+                                   2, 0,
                                    2>
       _table_;
 
@@ -479,8 +494,10 @@ class ProductDataResponseData final : public ::google::protobuf::Message
         ::google::protobuf::internal::InternalVisibility visibility,
         ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
         const ProductDataResponseData& from_msg);
-    ::google::protobuf::RepeatedPtrField< ::products::v1::ProductCategory > categories_;
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
+    ::products::v1::ProductCategories* PROTOBUF_NULLABLE categories_;
+    ::products::v1::ProductTags* PROTOBUF_NULLABLE tags_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -550,7 +567,7 @@ class ProductDataResponse final : public ::google::protobuf::Message
     kError = 2,
     RESPONSE_NOT_SET = 0,
   };
-  static constexpr int kIndexInFileMessages = 1;
+  static constexpr int kIndexInFileMessages = 2;
   friend void swap(ProductDataResponse& a, ProductDataResponse& b) { a.Swap(&b); }
   inline void Swap(ProductDataResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -737,6 +754,196 @@ extern const ::google::protobuf::internal::ClassDataFull ProductDataResponse_cla
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// ProductDataResponseData
+
+// optional .products.v1.ProductCategories categories = 1 [json_name = "categories"];
+inline bool ProductDataResponseData::has_categories() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.categories_ != nullptr);
+  return value;
+}
+inline const ::products::v1::ProductCategories& ProductDataResponseData::_internal_categories() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::products::v1::ProductCategories* p = _impl_.categories_;
+  return p != nullptr ? *p : reinterpret_cast<const ::products::v1::ProductCategories&>(::products::v1::_ProductCategories_default_instance_);
+}
+inline const ::products::v1::ProductCategories& ProductDataResponseData::categories() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.ProductDataResponseData.categories)
+  return _internal_categories();
+}
+inline void ProductDataResponseData::unsafe_arena_set_allocated_categories(
+    ::products::v1::ProductCategories* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.categories_);
+  }
+  _impl_.categories_ = reinterpret_cast<::products::v1::ProductCategories*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:products.v1.ProductDataResponseData.categories)
+}
+inline ::products::v1::ProductCategories* PROTOBUF_NULLABLE ProductDataResponseData::release_categories() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::products::v1::ProductCategories* released = _impl_.categories_;
+  _impl_.categories_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::products::v1::ProductCategories* PROTOBUF_NULLABLE ProductDataResponseData::unsafe_arena_release_categories() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.ProductDataResponseData.categories)
+
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  ::products::v1::ProductCategories* temp = _impl_.categories_;
+  _impl_.categories_ = nullptr;
+  return temp;
+}
+inline ::products::v1::ProductCategories* PROTOBUF_NONNULL ProductDataResponseData::_internal_mutable_categories() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.categories_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::products::v1::ProductCategories>(GetArena());
+    _impl_.categories_ = reinterpret_cast<::products::v1::ProductCategories*>(p);
+  }
+  return _impl_.categories_;
+}
+inline ::products::v1::ProductCategories* PROTOBUF_NONNULL ProductDataResponseData::mutable_categories()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  ::products::v1::ProductCategories* _msg = _internal_mutable_categories();
+  // @@protoc_insertion_point(field_mutable:products.v1.ProductDataResponseData.categories)
+  return _msg;
+}
+inline void ProductDataResponseData::set_allocated_categories(::products::v1::ProductCategories* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.categories_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::Message*>(value)->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+
+  _impl_.categories_ = reinterpret_cast<::products::v1::ProductCategories*>(value);
+  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductDataResponseData.categories)
+}
+
+// optional .products.v1.ProductTags tags = 2 [json_name = "tags"];
+inline bool ProductDataResponseData::has_tags() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.tags_ != nullptr);
+  return value;
+}
+inline const ::products::v1::ProductTags& ProductDataResponseData::_internal_tags() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::products::v1::ProductTags* p = _impl_.tags_;
+  return p != nullptr ? *p : reinterpret_cast<const ::products::v1::ProductTags&>(::products::v1::_ProductTags_default_instance_);
+}
+inline const ::products::v1::ProductTags& ProductDataResponseData::tags() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.ProductDataResponseData.tags)
+  return _internal_tags();
+}
+inline void ProductDataResponseData::unsafe_arena_set_allocated_tags(
+    ::products::v1::ProductTags* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.tags_);
+  }
+  _impl_.tags_ = reinterpret_cast<::products::v1::ProductTags*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:products.v1.ProductDataResponseData.tags)
+}
+inline ::products::v1::ProductTags* PROTOBUF_NULLABLE ProductDataResponseData::release_tags() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  ::products::v1::ProductTags* released = _impl_.tags_;
+  _impl_.tags_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::products::v1::ProductTags* PROTOBUF_NULLABLE ProductDataResponseData::unsafe_arena_release_tags() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.ProductDataResponseData.tags)
+
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  ::products::v1::ProductTags* temp = _impl_.tags_;
+  _impl_.tags_ = nullptr;
+  return temp;
+}
+inline ::products::v1::ProductTags* PROTOBUF_NONNULL ProductDataResponseData::_internal_mutable_tags() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.tags_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::products::v1::ProductTags>(GetArena());
+    _impl_.tags_ = reinterpret_cast<::products::v1::ProductTags*>(p);
+  }
+  return _impl_.tags_;
+}
+inline ::products::v1::ProductTags* PROTOBUF_NONNULL ProductDataResponseData::mutable_tags()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  ::products::v1::ProductTags* _msg = _internal_mutable_tags();
+  // @@protoc_insertion_point(field_mutable:products.v1.ProductDataResponseData.tags)
+  return _msg;
+}
+inline void ProductDataResponseData::set_allocated_tags(::products::v1::ProductTags* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.tags_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::Message*>(value)->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+
+  _impl_.tags_ = reinterpret_cast<::products::v1::ProductTags*>(value);
+  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductDataResponseData.tags)
+}
+
 // -------------------------------------------------------------------
 
 // ProductDataRequest
@@ -1002,56 +1209,6 @@ inline void ProductDataResponse::clear_has_response() {
 inline ProductDataResponse::ResponseCase ProductDataResponse::response_case() const {
   return ProductDataResponse::ResponseCase(_impl_._oneof_case_[0]);
 }
-// -------------------------------------------------------------------
-
-// ProductDataResponseData
-
-// repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];
-inline int ProductDataResponseData::_internal_categories_size() const {
-  return _internal_categories().size();
-}
-inline int ProductDataResponseData::categories_size() const {
-  return _internal_categories_size();
-}
-inline ::products::v1::ProductCategory* PROTOBUF_NONNULL ProductDataResponseData::mutable_categories(int index)
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_mutable:products.v1.ProductDataResponseData.categories)
-  return _internal_mutable_categories()->Mutable(index);
-}
-inline ::google::protobuf::RepeatedPtrField<::products::v1::ProductCategory>* PROTOBUF_NONNULL ProductDataResponseData::mutable_categories()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_mutable_list:products.v1.ProductDataResponseData.categories)
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _internal_mutable_categories();
-}
-inline const ::products::v1::ProductCategory& ProductDataResponseData::categories(int index) const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:products.v1.ProductDataResponseData.categories)
-  return _internal_categories().Get(index);
-}
-inline ::products::v1::ProductCategory* PROTOBUF_NONNULL ProductDataResponseData::add_categories()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  ::products::v1::ProductCategory* _add = _internal_mutable_categories()->Add();
-  // @@protoc_insertion_point(field_add:products.v1.ProductDataResponseData.categories)
-  return _add;
-}
-inline const ::google::protobuf::RepeatedPtrField<::products::v1::ProductCategory>& ProductDataResponseData::categories() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_list:products.v1.ProductDataResponseData.categories)
-  return _internal_categories();
-}
-inline const ::google::protobuf::RepeatedPtrField<::products::v1::ProductCategory>&
-ProductDataResponseData::_internal_categories() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.categories_;
-}
-inline ::google::protobuf::RepeatedPtrField<::products::v1::ProductCategory>* PROTOBUF_NONNULL
-ProductDataResponseData::_internal_mutable_categories() {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return &_impl_.categories_;
-}
-
 #ifdef __GNUC__
 #pragma GCC diagnostic pop
 #endif  // __GNUC__

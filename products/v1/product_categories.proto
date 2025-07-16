@@ -26,3 +26,7 @@ message ProductSubcategoryAttribute {
   string type = 2;
   optional shared.v1.Any data = 3;
 }
+
+message ProductCategories {
+  repeated products.v1.ProductCategory categories = 1;
+}

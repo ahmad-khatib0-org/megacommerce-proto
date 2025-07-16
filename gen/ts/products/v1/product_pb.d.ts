@@ -31,6 +31,28 @@ export namespace ProductTag {
   }
 }
 
+export class ProductTags extends jspb.Message {
+  clearTagsList(): void;
+  getTagsList(): Array<ProductTag>;
+  setTagsList(value: Array<ProductTag>): void;
+  addTags(value?: ProductTag, index?: number): ProductTag;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ProductTags.AsObject;
+  static toObject(includeInstance: boolean, msg: ProductTags): ProductTags.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ProductTags, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProductTags;
+  static deserializeBinaryFromReader(message: ProductTags, reader: jspb.BinaryReader): ProductTags;
+}
+
+export namespace ProductTags {
+  export type AsObject = {
+    tagsList: Array<ProductTag.AsObject>,
+  }
+}
+
 export class ProductMetadata extends jspb.Message {
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductMetadata.AsObject;

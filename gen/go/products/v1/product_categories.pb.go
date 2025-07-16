@@ -202,6 +202,50 @@ func (x *ProductSubcategoryAttribute) GetData() *v1.Any {
 	return nil
 }
 
+type ProductCategories struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Categories    []*ProductCategory     `protobuf:"bytes,1,rep,name=categories,proto3" json:"categories,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ProductCategories) Reset() {
+	*x = ProductCategories{}
+	mi := &file_products_v1_product_categories_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProductCategories) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProductCategories) ProtoMessage() {}
+
+func (x *ProductCategories) ProtoReflect() protoreflect.Message {
+	mi := &file_products_v1_product_categories_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProductCategories.ProtoReflect.Descriptor instead.
+func (*ProductCategories) Descriptor() ([]byte, []int) {
+	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *ProductCategories) GetCategories() []*ProductCategory {
+	if x != nil {
+		return x.Categories
+	}
+	return nil
+}
+
 var File_products_v1_product_categories_proto protoreflect.FileDescriptor
 
 const file_products_v1_product_categories_proto_rawDesc = "" +
@@ -224,7 +268,11 @@ const file_products_v1_product_categories_proto_rawDesc = "" +
 	"\brequired\x18\x01 \x01(\bR\brequired\x12\x12\n" +
 	"\x04type\x18\x02 \x01(\tR\x04type\x12'\n" +
 	"\x04data\x18\x03 \x01(\v2\x0e.shared.v1.AnyH\x00R\x04data\x88\x01\x01B\a\n" +
-	"\x05_dataB\x80\x01\n" +
+	"\x05_data\"Q\n" +
+	"\x11ProductCategories\x12<\n" +
+	"\n" +
+	"categories\x18\x01 \x03(\v2\x1c.products.v1.ProductCategoryR\n" +
+	"categoriesB\x80\x01\n" +
 	"\x1corg.megacommerce.products.v1B\x16ProductCategoriesProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
@@ -239,24 +287,26 @@ func file_products_v1_product_categories_proto_rawDescGZIP() []byte {
 	return file_products_v1_product_categories_proto_rawDescData
 }
 
-var file_products_v1_product_categories_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_products_v1_product_categories_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_products_v1_product_categories_proto_goTypes = []any{
 	(*ProductCategory)(nil),             // 0: products.v1.ProductCategory
 	(*ProductSubcategory)(nil),          // 1: products.v1.ProductSubcategory
 	(*ProductSubcategoryAttribute)(nil), // 2: products.v1.ProductSubcategoryAttribute
-	nil,                                 // 3: products.v1.ProductSubcategory.AttributesEntry
-	(*v1.Any)(nil),                      // 4: shared.v1.Any
+	(*ProductCategories)(nil),           // 3: products.v1.ProductCategories
+	nil,                                 // 4: products.v1.ProductSubcategory.AttributesEntry
+	(*v1.Any)(nil),                      // 5: shared.v1.Any
 }
 var file_products_v1_product_categories_proto_depIdxs = []int32{
 	1, // 0: products.v1.ProductCategory.subcategories:type_name -> products.v1.ProductSubcategory
-	3, // 1: products.v1.ProductSubcategory.attributes:type_name -> products.v1.ProductSubcategory.AttributesEntry
-	4, // 2: products.v1.ProductSubcategoryAttribute.data:type_name -> shared.v1.Any
-	2, // 3: products.v1.ProductSubcategory.AttributesEntry.value:type_name -> products.v1.ProductSubcategoryAttribute
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	4, // 1: products.v1.ProductSubcategory.attributes:type_name -> products.v1.ProductSubcategory.AttributesEntry
+	5, // 2: products.v1.ProductSubcategoryAttribute.data:type_name -> shared.v1.Any
+	0, // 3: products.v1.ProductCategories.categories:type_name -> products.v1.ProductCategory
+	2, // 4: products.v1.ProductSubcategory.AttributesEntry.value:type_name -> products.v1.ProductSubcategoryAttribute
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_products_v1_product_categories_proto_init() }
@@ -271,7 +321,7 @@ func file_products_v1_product_categories_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_products_v1_product_categories_proto_rawDesc), len(file_products_v1_product_categories_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

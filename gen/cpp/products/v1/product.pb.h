@@ -67,6 +67,10 @@ class ProductTag;
 struct ProductTagDefaultTypeInternal;
 extern ProductTagDefaultTypeInternal _ProductTag_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull ProductTag_class_data_;
+class ProductTags;
+struct ProductTagsDefaultTypeInternal;
+extern ProductTagsDefaultTypeInternal _ProductTags_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull ProductTags_class_data_;
 }  // namespace v1
 }  // namespace products
 namespace google {
@@ -346,7 +350,7 @@ class ProductMetadata final : public ::google::protobuf::internal::ZeroFieldsBas
     return *reinterpret_cast<const ProductMetadata*>(
         &_ProductMetadata_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 1;
+  static constexpr int kIndexInFileMessages = 2;
   friend void swap(ProductMetadata& a, ProductMetadata& b) { a.Swap(&b); }
   inline void Swap(ProductMetadata* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -438,6 +442,203 @@ class ProductMetadata final : public ::google::protobuf::internal::ZeroFieldsBas
 extern const ::google::protobuf::internal::ClassDataFull ProductMetadata_class_data_;
 // -------------------------------------------------------------------
 
+class ProductTags final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:products.v1.ProductTags) */ {
+ public:
+  inline ProductTags() : ProductTags(nullptr) {}
+  ~ProductTags() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(ProductTags* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(ProductTags));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR ProductTags(::google::protobuf::internal::ConstantInitialized);
+
+  inline ProductTags(const ProductTags& from) : ProductTags(nullptr, from) {}
+  inline ProductTags(ProductTags&& from) noexcept
+      : ProductTags(nullptr, ::std::move(from)) {}
+  inline ProductTags& operator=(const ProductTags& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ProductTags& operator=(ProductTags&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ProductTags& default_instance() {
+    return *reinterpret_cast<const ProductTags*>(
+        &_ProductTags_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 1;
+  friend void swap(ProductTags& a, ProductTags& b) { a.Swap(&b); }
+  inline void Swap(ProductTags* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ProductTags* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ProductTags* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<ProductTags>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const ProductTags& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const ProductTags& from) { ProductTags::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(ProductTags* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "products.v1.ProductTags"; }
+
+ protected:
+  explicit ProductTags(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  ProductTags(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ProductTags& from);
+  ProductTags(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ProductTags&& from) noexcept
+      : ProductTags(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kTagsFieldNumber = 1,
+  };
+  // repeated .products.v1.ProductTag tags = 1 [json_name = "tags"];
+  int tags_size() const;
+  private:
+  int _internal_tags_size() const;
+
+  public:
+  void clear_tags() ;
+  ::products::v1::ProductTag* PROTOBUF_NONNULL mutable_tags(int index);
+  ::google::protobuf::RepeatedPtrField<::products::v1::ProductTag>* PROTOBUF_NONNULL mutable_tags();
+
+  private:
+  const ::google::protobuf::RepeatedPtrField<::products::v1::ProductTag>& _internal_tags() const;
+  ::google::protobuf::RepeatedPtrField<::products::v1::ProductTag>* PROTOBUF_NONNULL _internal_mutable_tags();
+  public:
+  const ::products::v1::ProductTag& tags(int index) const;
+  ::products::v1::ProductTag* PROTOBUF_NONNULL add_tags();
+  const ::google::protobuf::RepeatedPtrField<::products::v1::ProductTag>& tags() const;
+  // @@protoc_insertion_point(class_scope:products.v1.ProductTags)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<0, 1,
+                                   1, 0,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const ProductTags& from_msg);
+    ::google::protobuf::RepeatedPtrField< ::products::v1::ProductTag > tags_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_products_2fv1_2fproduct_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull ProductTags_class_data_;
+// -------------------------------------------------------------------
+
 class Product final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:products.v1.Product) */ {
  public:
@@ -493,7 +694,7 @@ class Product final : public ::google::protobuf::Message
     return *reinterpret_cast<const Product*>(
         &_Product_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 2;
+  static constexpr int kIndexInFileMessages = 3;
   friend void swap(Product& a, Product& b) { a.Swap(&b); }
   inline void Swap(Product* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -978,6 +1179,60 @@ inline void ProductTag::set_allocated_name(::std::string* PROTOBUF_NULLABLE valu
     _impl_.name_.Set("", GetArena());
   }
   // @@protoc_insertion_point(field_set_allocated:products.v1.ProductTag.name)
+}
+
+// -------------------------------------------------------------------
+
+// ProductTags
+
+// repeated .products.v1.ProductTag tags = 1 [json_name = "tags"];
+inline int ProductTags::_internal_tags_size() const {
+  return _internal_tags().size();
+}
+inline int ProductTags::tags_size() const {
+  return _internal_tags_size();
+}
+inline void ProductTags::clear_tags() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.tags_.Clear();
+}
+inline ::products::v1::ProductTag* PROTOBUF_NONNULL ProductTags::mutable_tags(int index)
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable:products.v1.ProductTags.tags)
+  return _internal_mutable_tags()->Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField<::products::v1::ProductTag>* PROTOBUF_NONNULL ProductTags::mutable_tags()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable_list:products.v1.ProductTags.tags)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _internal_mutable_tags();
+}
+inline const ::products::v1::ProductTag& ProductTags::tags(int index) const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.ProductTags.tags)
+  return _internal_tags().Get(index);
+}
+inline ::products::v1::ProductTag* PROTOBUF_NONNULL ProductTags::add_tags()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::products::v1::ProductTag* _add = _internal_mutable_tags()->Add();
+  // @@protoc_insertion_point(field_add:products.v1.ProductTags.tags)
+  return _add;
+}
+inline const ::google::protobuf::RepeatedPtrField<::products::v1::ProductTag>& ProductTags::tags() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_list:products.v1.ProductTags.tags)
+  return _internal_tags();
+}
+inline const ::google::protobuf::RepeatedPtrField<::products::v1::ProductTag>&
+ProductTags::_internal_tags() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.tags_;
+}
+inline ::google::protobuf::RepeatedPtrField<::products::v1::ProductTag>* PROTOBUF_NONNULL
+ProductTags::_internal_mutable_tags() {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return &_impl_.tags_;
 }
 
 // -------------------------------------------------------------------
