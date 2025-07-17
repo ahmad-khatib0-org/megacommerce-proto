@@ -28,5 +28,14 @@ message ProductSubcategoryAttribute {
 }
 
 message ProductCategories {
-  repeated products.v1.ProductCategory categories = 1;
+  repeated ProductCategory categories = 1;
+}
+
+message ProductCategoryWithoutSubcategories {
+  string id = 1;
+  string name = 2;
+}
+
+message ProductCategoriesWithoutSubcategories {
+  repeated ProductCategoryWithoutSubcategories categories = 1;
 }

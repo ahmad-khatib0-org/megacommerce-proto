@@ -113,3 +113,49 @@ export namespace ProductCategories {
   }
 }
 
+export class ProductCategoryWithoutSubcategories extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ProductCategoryWithoutSubcategories.AsObject;
+  static toObject(includeInstance: boolean, msg: ProductCategoryWithoutSubcategories): ProductCategoryWithoutSubcategories.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ProductCategoryWithoutSubcategories, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProductCategoryWithoutSubcategories;
+  static deserializeBinaryFromReader(message: ProductCategoryWithoutSubcategories, reader: jspb.BinaryReader): ProductCategoryWithoutSubcategories;
+}
+
+export namespace ProductCategoryWithoutSubcategories {
+  export type AsObject = {
+    id: string,
+    name: string,
+  }
+}
+
+export class ProductCategoriesWithoutSubcategories extends jspb.Message {
+  clearCategoriesList(): void;
+  getCategoriesList(): Array<ProductCategoryWithoutSubcategories>;
+  setCategoriesList(value: Array<ProductCategoryWithoutSubcategories>): void;
+  addCategories(value?: ProductCategoryWithoutSubcategories, index?: number): ProductCategoryWithoutSubcategories;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ProductCategoriesWithoutSubcategories.AsObject;
+  static toObject(includeInstance: boolean, msg: ProductCategoriesWithoutSubcategories): ProductCategoriesWithoutSubcategories.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ProductCategoriesWithoutSubcategories, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ProductCategoriesWithoutSubcategories;
+  static deserializeBinaryFromReader(message: ProductCategoriesWithoutSubcategories, reader: jspb.BinaryReader): ProductCategoriesWithoutSubcategories;
+}
+
+export namespace ProductCategoriesWithoutSubcategories {
+  export type AsObject = {
+    categoriesList: Array<ProductCategoryWithoutSubcategories.AsObject>,
+  }
+}
+

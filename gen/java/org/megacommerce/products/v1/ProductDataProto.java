@@ -31,32 +31,47 @@ public final class ProductDataProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional .products.v1.ProductCategories categories = 1 [json_name = "categories"];</code>
+     * <code>optional .products.v1.ProductCategoriesWithoutSubcategories categories = 1 [json_name = "categories"];</code>
      * @return Whether the categories field is set.
      */
     boolean hasCategories();
     /**
-     * <code>optional .products.v1.ProductCategories categories = 1 [json_name = "categories"];</code>
+     * <code>optional .products.v1.ProductCategoriesWithoutSubcategories categories = 1 [json_name = "categories"];</code>
      * @return The categories.
      */
-    org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories getCategories();
+    org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories getCategories();
     /**
-     * <code>optional .products.v1.ProductCategories categories = 1 [json_name = "categories"];</code>
+     * <code>optional .products.v1.ProductCategoriesWithoutSubcategories categories = 1 [json_name = "categories"];</code>
      */
-    org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesOrBuilder getCategoriesOrBuilder();
+    org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategoriesOrBuilder getCategoriesOrBuilder();
 
     /**
-     * <code>optional .products.v1.ProductTags tags = 2 [json_name = "tags"];</code>
+     * <code>optional .products.v1.ProductCategory category_data = 2 [json_name = "categoryData"];</code>
+     * @return Whether the categoryData field is set.
+     */
+    boolean hasCategoryData();
+    /**
+     * <code>optional .products.v1.ProductCategory category_data = 2 [json_name = "categoryData"];</code>
+     * @return The categoryData.
+     */
+    org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory getCategoryData();
+    /**
+     * <code>optional .products.v1.ProductCategory category_data = 2 [json_name = "categoryData"];</code>
+     */
+    org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryOrBuilder getCategoryDataOrBuilder();
+
+    /**
+     * <code>optional .products.v1.ProductTags tags = 3 [json_name = "tags"];</code>
      * @return Whether the tags field is set.
      */
     boolean hasTags();
     /**
-     * <code>optional .products.v1.ProductTags tags = 2 [json_name = "tags"];</code>
+     * <code>optional .products.v1.ProductTags tags = 3 [json_name = "tags"];</code>
      * @return The tags.
      */
     org.megacommerce.products.v1.ProductProto.ProductTags getTags();
     /**
-     * <code>optional .products.v1.ProductTags tags = 2 [json_name = "tags"];</code>
+     * <code>optional .products.v1.ProductTags tags = 3 [json_name = "tags"];</code>
      */
     org.megacommerce.products.v1.ProductProto.ProductTagsOrBuilder getTagsOrBuilder();
   }
@@ -99,9 +114,9 @@ public final class ProductDataProto {
 
     private int bitField0_;
     public static final int CATEGORIES_FIELD_NUMBER = 1;
-    private org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories categories_;
+    private org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories categories_;
     /**
-     * <code>optional .products.v1.ProductCategories categories = 1 [json_name = "categories"];</code>
+     * <code>optional .products.v1.ProductCategoriesWithoutSubcategories categories = 1 [json_name = "categories"];</code>
      * @return Whether the categories field is set.
      */
     @java.lang.Override
@@ -109,33 +124,59 @@ public final class ProductDataProto {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>optional .products.v1.ProductCategories categories = 1 [json_name = "categories"];</code>
+     * <code>optional .products.v1.ProductCategoriesWithoutSubcategories categories = 1 [json_name = "categories"];</code>
      * @return The categories.
      */
     @java.lang.Override
-    public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories getCategories() {
-      return categories_ == null ? org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories.getDefaultInstance() : categories_;
+    public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories getCategories() {
+      return categories_ == null ? org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories.getDefaultInstance() : categories_;
     }
     /**
-     * <code>optional .products.v1.ProductCategories categories = 1 [json_name = "categories"];</code>
+     * <code>optional .products.v1.ProductCategoriesWithoutSubcategories categories = 1 [json_name = "categories"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesOrBuilder getCategoriesOrBuilder() {
-      return categories_ == null ? org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories.getDefaultInstance() : categories_;
+    public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategoriesOrBuilder getCategoriesOrBuilder() {
+      return categories_ == null ? org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories.getDefaultInstance() : categories_;
     }
 
-    public static final int TAGS_FIELD_NUMBER = 2;
+    public static final int CATEGORY_DATA_FIELD_NUMBER = 2;
+    private org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory categoryData_;
+    /**
+     * <code>optional .products.v1.ProductCategory category_data = 2 [json_name = "categoryData"];</code>
+     * @return Whether the categoryData field is set.
+     */
+    @java.lang.Override
+    public boolean hasCategoryData() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional .products.v1.ProductCategory category_data = 2 [json_name = "categoryData"];</code>
+     * @return The categoryData.
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory getCategoryData() {
+      return categoryData_ == null ? org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.getDefaultInstance() : categoryData_;
+    }
+    /**
+     * <code>optional .products.v1.ProductCategory category_data = 2 [json_name = "categoryData"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryOrBuilder getCategoryDataOrBuilder() {
+      return categoryData_ == null ? org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.getDefaultInstance() : categoryData_;
+    }
+
+    public static final int TAGS_FIELD_NUMBER = 3;
     private org.megacommerce.products.v1.ProductProto.ProductTags tags_;
     /**
-     * <code>optional .products.v1.ProductTags tags = 2 [json_name = "tags"];</code>
+     * <code>optional .products.v1.ProductTags tags = 3 [json_name = "tags"];</code>
      * @return Whether the tags field is set.
      */
     @java.lang.Override
     public boolean hasTags() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>optional .products.v1.ProductTags tags = 2 [json_name = "tags"];</code>
+     * <code>optional .products.v1.ProductTags tags = 3 [json_name = "tags"];</code>
      * @return The tags.
      */
     @java.lang.Override
@@ -143,7 +184,7 @@ public final class ProductDataProto {
       return tags_ == null ? org.megacommerce.products.v1.ProductProto.ProductTags.getDefaultInstance() : tags_;
     }
     /**
-     * <code>optional .products.v1.ProductTags tags = 2 [json_name = "tags"];</code>
+     * <code>optional .products.v1.ProductTags tags = 3 [json_name = "tags"];</code>
      */
     @java.lang.Override
     public org.megacommerce.products.v1.ProductProto.ProductTagsOrBuilder getTagsOrBuilder() {
@@ -168,7 +209,10 @@ public final class ProductDataProto {
         output.writeMessage(1, getCategories());
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeMessage(2, getTags());
+        output.writeMessage(2, getCategoryData());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(3, getTags());
       }
       getUnknownFields().writeTo(output);
     }
@@ -185,7 +229,11 @@ public final class ProductDataProto {
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getTags());
+          .computeMessageSize(2, getCategoryData());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getTags());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -207,6 +255,11 @@ public final class ProductDataProto {
         if (!getCategories()
             .equals(other.getCategories())) return false;
       }
+      if (hasCategoryData() != other.hasCategoryData()) return false;
+      if (hasCategoryData()) {
+        if (!getCategoryData()
+            .equals(other.getCategoryData())) return false;
+      }
       if (hasTags() != other.hasTags()) return false;
       if (hasTags()) {
         if (!getTags()
@@ -226,6 +279,10 @@ public final class ProductDataProto {
       if (hasCategories()) {
         hash = (37 * hash) + CATEGORIES_FIELD_NUMBER;
         hash = (53 * hash) + getCategories().hashCode();
+      }
+      if (hasCategoryData()) {
+        hash = (37 * hash) + CATEGORY_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + getCategoryData().hashCode();
       }
       if (hasTags()) {
         hash = (37 * hash) + TAGS_FIELD_NUMBER;
@@ -362,6 +419,7 @@ public final class ProductDataProto {
         if (com.google.protobuf.GeneratedMessage
                 .alwaysUseFieldBuilders) {
           internalGetCategoriesFieldBuilder();
+          internalGetCategoryDataFieldBuilder();
           internalGetTagsFieldBuilder();
         }
       }
@@ -373,6 +431,11 @@ public final class ProductDataProto {
         if (categoriesBuilder_ != null) {
           categoriesBuilder_.dispose();
           categoriesBuilder_ = null;
+        }
+        categoryData_ = null;
+        if (categoryDataBuilder_ != null) {
+          categoryDataBuilder_.dispose();
+          categoryDataBuilder_ = null;
         }
         tags_ = null;
         if (tagsBuilder_ != null) {
@@ -420,10 +483,16 @@ public final class ProductDataProto {
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.categoryData_ = categoryDataBuilder_ == null
+              ? categoryData_
+              : categoryDataBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           result.tags_ = tagsBuilder_ == null
               ? tags_
               : tagsBuilder_.build();
-          to_bitField0_ |= 0x00000002;
+          to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -442,6 +511,9 @@ public final class ProductDataProto {
         if (other == org.megacommerce.products.v1.ProductDataProto.ProductDataResponseData.getDefaultInstance()) return this;
         if (other.hasCategories()) {
           mergeCategories(other.getCategories());
+        }
+        if (other.hasCategoryData()) {
+          mergeCategoryData(other.getCategoryData());
         }
         if (other.hasTags()) {
           mergeTags(other.getTags());
@@ -481,11 +553,18 @@ public final class ProductDataProto {
               } // case 10
               case 18: {
                 input.readMessage(
-                    internalGetTagsFieldBuilder().getBuilder(),
+                    internalGetCategoryDataFieldBuilder().getBuilder(),
                     extensionRegistry);
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+              case 26: {
+                input.readMessage(
+                    internalGetTagsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -503,31 +582,31 @@ public final class ProductDataProto {
       }
       private int bitField0_;
 
-      private org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories categories_;
+      private org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories categories_;
       private com.google.protobuf.SingleFieldBuilder<
-          org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesOrBuilder> categoriesBuilder_;
+          org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategoriesOrBuilder> categoriesBuilder_;
       /**
-       * <code>optional .products.v1.ProductCategories categories = 1 [json_name = "categories"];</code>
+       * <code>optional .products.v1.ProductCategoriesWithoutSubcategories categories = 1 [json_name = "categories"];</code>
        * @return Whether the categories field is set.
        */
       public boolean hasCategories() {
         return ((bitField0_ & 0x00000001) != 0);
       }
       /**
-       * <code>optional .products.v1.ProductCategories categories = 1 [json_name = "categories"];</code>
+       * <code>optional .products.v1.ProductCategoriesWithoutSubcategories categories = 1 [json_name = "categories"];</code>
        * @return The categories.
        */
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories getCategories() {
+      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories getCategories() {
         if (categoriesBuilder_ == null) {
-          return categories_ == null ? org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories.getDefaultInstance() : categories_;
+          return categories_ == null ? org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories.getDefaultInstance() : categories_;
         } else {
           return categoriesBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .products.v1.ProductCategories categories = 1 [json_name = "categories"];</code>
+       * <code>optional .products.v1.ProductCategoriesWithoutSubcategories categories = 1 [json_name = "categories"];</code>
        */
-      public Builder setCategories(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories value) {
+      public Builder setCategories(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories value) {
         if (categoriesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -541,10 +620,10 @@ public final class ProductDataProto {
         return this;
       }
       /**
-       * <code>optional .products.v1.ProductCategories categories = 1 [json_name = "categories"];</code>
+       * <code>optional .products.v1.ProductCategoriesWithoutSubcategories categories = 1 [json_name = "categories"];</code>
        */
       public Builder setCategories(
-          org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories.Builder builderForValue) {
+          org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories.Builder builderForValue) {
         if (categoriesBuilder_ == null) {
           categories_ = builderForValue.build();
         } else {
@@ -555,13 +634,13 @@ public final class ProductDataProto {
         return this;
       }
       /**
-       * <code>optional .products.v1.ProductCategories categories = 1 [json_name = "categories"];</code>
+       * <code>optional .products.v1.ProductCategoriesWithoutSubcategories categories = 1 [json_name = "categories"];</code>
        */
-      public Builder mergeCategories(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories value) {
+      public Builder mergeCategories(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories value) {
         if (categoriesBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0) &&
             categories_ != null &&
-            categories_ != org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories.getDefaultInstance()) {
+            categories_ != org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories.getDefaultInstance()) {
             getCategoriesBuilder().mergeFrom(value);
           } else {
             categories_ = value;
@@ -576,7 +655,7 @@ public final class ProductDataProto {
         return this;
       }
       /**
-       * <code>optional .products.v1.ProductCategories categories = 1 [json_name = "categories"];</code>
+       * <code>optional .products.v1.ProductCategoriesWithoutSubcategories categories = 1 [json_name = "categories"];</code>
        */
       public Builder clearCategories() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -589,33 +668,33 @@ public final class ProductDataProto {
         return this;
       }
       /**
-       * <code>optional .products.v1.ProductCategories categories = 1 [json_name = "categories"];</code>
+       * <code>optional .products.v1.ProductCategoriesWithoutSubcategories categories = 1 [json_name = "categories"];</code>
        */
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories.Builder getCategoriesBuilder() {
+      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories.Builder getCategoriesBuilder() {
         bitField0_ |= 0x00000001;
         onChanged();
         return internalGetCategoriesFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .products.v1.ProductCategories categories = 1 [json_name = "categories"];</code>
+       * <code>optional .products.v1.ProductCategoriesWithoutSubcategories categories = 1 [json_name = "categories"];</code>
        */
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesOrBuilder getCategoriesOrBuilder() {
+      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategoriesOrBuilder getCategoriesOrBuilder() {
         if (categoriesBuilder_ != null) {
           return categoriesBuilder_.getMessageOrBuilder();
         } else {
           return categories_ == null ?
-              org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories.getDefaultInstance() : categories_;
+              org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories.getDefaultInstance() : categories_;
         }
       }
       /**
-       * <code>optional .products.v1.ProductCategories categories = 1 [json_name = "categories"];</code>
+       * <code>optional .products.v1.ProductCategoriesWithoutSubcategories categories = 1 [json_name = "categories"];</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesOrBuilder> 
+          org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategoriesOrBuilder> 
           internalGetCategoriesFieldBuilder() {
         if (categoriesBuilder_ == null) {
           categoriesBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesOrBuilder>(
+              org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategoriesOrBuilder>(
                   getCategories(),
                   getParentForChildren(),
                   isClean());
@@ -624,18 +703,139 @@ public final class ProductDataProto {
         return categoriesBuilder_;
       }
 
+      private org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory categoryData_;
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryOrBuilder> categoryDataBuilder_;
+      /**
+       * <code>optional .products.v1.ProductCategory category_data = 2 [json_name = "categoryData"];</code>
+       * @return Whether the categoryData field is set.
+       */
+      public boolean hasCategoryData() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <code>optional .products.v1.ProductCategory category_data = 2 [json_name = "categoryData"];</code>
+       * @return The categoryData.
+       */
+      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory getCategoryData() {
+        if (categoryDataBuilder_ == null) {
+          return categoryData_ == null ? org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.getDefaultInstance() : categoryData_;
+        } else {
+          return categoryDataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .products.v1.ProductCategory category_data = 2 [json_name = "categoryData"];</code>
+       */
+      public Builder setCategoryData(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory value) {
+        if (categoryDataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          categoryData_ = value;
+        } else {
+          categoryDataBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .products.v1.ProductCategory category_data = 2 [json_name = "categoryData"];</code>
+       */
+      public Builder setCategoryData(
+          org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.Builder builderForValue) {
+        if (categoryDataBuilder_ == null) {
+          categoryData_ = builderForValue.build();
+        } else {
+          categoryDataBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .products.v1.ProductCategory category_data = 2 [json_name = "categoryData"];</code>
+       */
+      public Builder mergeCategoryData(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory value) {
+        if (categoryDataBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0) &&
+            categoryData_ != null &&
+            categoryData_ != org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.getDefaultInstance()) {
+            getCategoryDataBuilder().mergeFrom(value);
+          } else {
+            categoryData_ = value;
+          }
+        } else {
+          categoryDataBuilder_.mergeFrom(value);
+        }
+        if (categoryData_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>optional .products.v1.ProductCategory category_data = 2 [json_name = "categoryData"];</code>
+       */
+      public Builder clearCategoryData() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        categoryData_ = null;
+        if (categoryDataBuilder_ != null) {
+          categoryDataBuilder_.dispose();
+          categoryDataBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .products.v1.ProductCategory category_data = 2 [json_name = "categoryData"];</code>
+       */
+      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.Builder getCategoryDataBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return internalGetCategoryDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .products.v1.ProductCategory category_data = 2 [json_name = "categoryData"];</code>
+       */
+      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryOrBuilder getCategoryDataOrBuilder() {
+        if (categoryDataBuilder_ != null) {
+          return categoryDataBuilder_.getMessageOrBuilder();
+        } else {
+          return categoryData_ == null ?
+              org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.getDefaultInstance() : categoryData_;
+        }
+      }
+      /**
+       * <code>optional .products.v1.ProductCategory category_data = 2 [json_name = "categoryData"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryOrBuilder> 
+          internalGetCategoryDataFieldBuilder() {
+        if (categoryDataBuilder_ == null) {
+          categoryDataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryOrBuilder>(
+                  getCategoryData(),
+                  getParentForChildren(),
+                  isClean());
+          categoryData_ = null;
+        }
+        return categoryDataBuilder_;
+      }
+
       private org.megacommerce.products.v1.ProductProto.ProductTags tags_;
       private com.google.protobuf.SingleFieldBuilder<
           org.megacommerce.products.v1.ProductProto.ProductTags, org.megacommerce.products.v1.ProductProto.ProductTags.Builder, org.megacommerce.products.v1.ProductProto.ProductTagsOrBuilder> tagsBuilder_;
       /**
-       * <code>optional .products.v1.ProductTags tags = 2 [json_name = "tags"];</code>
+       * <code>optional .products.v1.ProductTags tags = 3 [json_name = "tags"];</code>
        * @return Whether the tags field is set.
        */
       public boolean hasTags() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000004) != 0);
       }
       /**
-       * <code>optional .products.v1.ProductTags tags = 2 [json_name = "tags"];</code>
+       * <code>optional .products.v1.ProductTags tags = 3 [json_name = "tags"];</code>
        * @return The tags.
        */
       public org.megacommerce.products.v1.ProductProto.ProductTags getTags() {
@@ -646,7 +846,7 @@ public final class ProductDataProto {
         }
       }
       /**
-       * <code>optional .products.v1.ProductTags tags = 2 [json_name = "tags"];</code>
+       * <code>optional .products.v1.ProductTags tags = 3 [json_name = "tags"];</code>
        */
       public Builder setTags(org.megacommerce.products.v1.ProductProto.ProductTags value) {
         if (tagsBuilder_ == null) {
@@ -657,12 +857,12 @@ public final class ProductDataProto {
         } else {
           tagsBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .products.v1.ProductTags tags = 2 [json_name = "tags"];</code>
+       * <code>optional .products.v1.ProductTags tags = 3 [json_name = "tags"];</code>
        */
       public Builder setTags(
           org.megacommerce.products.v1.ProductProto.ProductTags.Builder builderForValue) {
@@ -671,16 +871,16 @@ public final class ProductDataProto {
         } else {
           tagsBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .products.v1.ProductTags tags = 2 [json_name = "tags"];</code>
+       * <code>optional .products.v1.ProductTags tags = 3 [json_name = "tags"];</code>
        */
       public Builder mergeTags(org.megacommerce.products.v1.ProductProto.ProductTags value) {
         if (tagsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
+          if (((bitField0_ & 0x00000004) != 0) &&
             tags_ != null &&
             tags_ != org.megacommerce.products.v1.ProductProto.ProductTags.getDefaultInstance()) {
             getTagsBuilder().mergeFrom(value);
@@ -691,16 +891,16 @@ public final class ProductDataProto {
           tagsBuilder_.mergeFrom(value);
         }
         if (tags_ != null) {
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         return this;
       }
       /**
-       * <code>optional .products.v1.ProductTags tags = 2 [json_name = "tags"];</code>
+       * <code>optional .products.v1.ProductTags tags = 3 [json_name = "tags"];</code>
        */
       public Builder clearTags() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         tags_ = null;
         if (tagsBuilder_ != null) {
           tagsBuilder_.dispose();
@@ -710,15 +910,15 @@ public final class ProductDataProto {
         return this;
       }
       /**
-       * <code>optional .products.v1.ProductTags tags = 2 [json_name = "tags"];</code>
+       * <code>optional .products.v1.ProductTags tags = 3 [json_name = "tags"];</code>
        */
       public org.megacommerce.products.v1.ProductProto.ProductTags.Builder getTagsBuilder() {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return internalGetTagsFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .products.v1.ProductTags tags = 2 [json_name = "tags"];</code>
+       * <code>optional .products.v1.ProductTags tags = 3 [json_name = "tags"];</code>
        */
       public org.megacommerce.products.v1.ProductProto.ProductTagsOrBuilder getTagsOrBuilder() {
         if (tagsBuilder_ != null) {
@@ -729,7 +929,7 @@ public final class ProductDataProto {
         }
       }
       /**
-       * <code>optional .products.v1.ProductTags tags = 2 [json_name = "tags"];</code>
+       * <code>optional .products.v1.ProductTags tags = 3 [json_name = "tags"];</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           org.megacommerce.products.v1.ProductProto.ProductTags, org.megacommerce.products.v1.ProductProto.ProductTags.Builder, org.megacommerce.products.v1.ProductProto.ProductTagsOrBuilder> 
@@ -812,21 +1012,43 @@ public final class ProductDataProto {
     boolean getGetAllCategories();
 
     /**
-     * <code>optional string category_name = 2 [json_name = "categoryName"];</code>
+     * <code>optional bool get_category_data = 2 [json_name = "getCategoryData"];</code>
+     * @return Whether the getCategoryData field is set.
+     */
+    boolean hasGetCategoryData();
+    /**
+     * <code>optional bool get_category_data = 2 [json_name = "getCategoryData"];</code>
+     * @return The getCategoryData.
+     */
+    boolean getGetCategoryData();
+
+    /**
+     * <code>optional string category_name = 3 [json_name = "categoryName"];</code>
      * @return Whether the categoryName field is set.
      */
     boolean hasCategoryName();
     /**
-     * <code>optional string category_name = 2 [json_name = "categoryName"];</code>
+     * <code>optional string category_name = 3 [json_name = "categoryName"];</code>
      * @return The categoryName.
      */
     java.lang.String getCategoryName();
     /**
-     * <code>optional string category_name = 2 [json_name = "categoryName"];</code>
+     * <code>optional string category_name = 3 [json_name = "categoryName"];</code>
      * @return The bytes for categoryName.
      */
     com.google.protobuf.ByteString
         getCategoryNameBytes();
+
+    /**
+     * <code>optional bool get_tags = 4 [json_name = "getTags"];</code>
+     * @return Whether the getTags field is set.
+     */
+    boolean hasGetTags();
+    /**
+     * <code>optional bool get_tags = 4 [json_name = "getTags"];</code>
+     * @return The getTags.
+     */
+    boolean getGetTags();
   }
   /**
    * Protobuf type {@code products.v1.ProductDataRequest}
@@ -886,19 +1108,38 @@ public final class ProductDataProto {
       return getAllCategories_;
     }
 
-    public static final int CATEGORY_NAME_FIELD_NUMBER = 2;
+    public static final int GET_CATEGORY_DATA_FIELD_NUMBER = 2;
+    private boolean getCategoryData_ = false;
+    /**
+     * <code>optional bool get_category_data = 2 [json_name = "getCategoryData"];</code>
+     * @return Whether the getCategoryData field is set.
+     */
+    @java.lang.Override
+    public boolean hasGetCategoryData() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional bool get_category_data = 2 [json_name = "getCategoryData"];</code>
+     * @return The getCategoryData.
+     */
+    @java.lang.Override
+    public boolean getGetCategoryData() {
+      return getCategoryData_;
+    }
+
+    public static final int CATEGORY_NAME_FIELD_NUMBER = 3;
     @SuppressWarnings("serial")
     private volatile java.lang.Object categoryName_ = "";
     /**
-     * <code>optional string category_name = 2 [json_name = "categoryName"];</code>
+     * <code>optional string category_name = 3 [json_name = "categoryName"];</code>
      * @return Whether the categoryName field is set.
      */
     @java.lang.Override
     public boolean hasCategoryName() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>optional string category_name = 2 [json_name = "categoryName"];</code>
+     * <code>optional string category_name = 3 [json_name = "categoryName"];</code>
      * @return The categoryName.
      */
     @java.lang.Override
@@ -915,7 +1156,7 @@ public final class ProductDataProto {
       }
     }
     /**
-     * <code>optional string category_name = 2 [json_name = "categoryName"];</code>
+     * <code>optional string category_name = 3 [json_name = "categoryName"];</code>
      * @return The bytes for categoryName.
      */
     @java.lang.Override
@@ -931,6 +1172,25 @@ public final class ProductDataProto {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int GET_TAGS_FIELD_NUMBER = 4;
+    private boolean getTags_ = false;
+    /**
+     * <code>optional bool get_tags = 4 [json_name = "getTags"];</code>
+     * @return Whether the getTags field is set.
+     */
+    @java.lang.Override
+    public boolean hasGetTags() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>optional bool get_tags = 4 [json_name = "getTags"];</code>
+     * @return The getTags.
+     */
+    @java.lang.Override
+    public boolean getGetTags() {
+      return getTags_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -951,7 +1211,13 @@ public final class ProductDataProto {
         output.writeBool(1, getAllCategories_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 2, categoryName_);
+        output.writeBool(2, getCategoryData_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, categoryName_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeBool(4, getTags_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -967,7 +1233,15 @@ public final class ProductDataProto {
           .computeBoolSize(1, getAllCategories_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, categoryName_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, getCategoryData_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, categoryName_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(4, getTags_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -989,10 +1263,20 @@ public final class ProductDataProto {
         if (getGetAllCategories()
             != other.getGetAllCategories()) return false;
       }
+      if (hasGetCategoryData() != other.hasGetCategoryData()) return false;
+      if (hasGetCategoryData()) {
+        if (getGetCategoryData()
+            != other.getGetCategoryData()) return false;
+      }
       if (hasCategoryName() != other.hasCategoryName()) return false;
       if (hasCategoryName()) {
         if (!getCategoryName()
             .equals(other.getCategoryName())) return false;
+      }
+      if (hasGetTags() != other.hasGetTags()) return false;
+      if (hasGetTags()) {
+        if (getGetTags()
+            != other.getGetTags()) return false;
       }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -1010,9 +1294,19 @@ public final class ProductDataProto {
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getGetAllCategories());
       }
+      if (hasGetCategoryData()) {
+        hash = (37 * hash) + GET_CATEGORY_DATA_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getGetCategoryData());
+      }
       if (hasCategoryName()) {
         hash = (37 * hash) + CATEGORY_NAME_FIELD_NUMBER;
         hash = (53 * hash) + getCategoryName().hashCode();
+      }
+      if (hasGetTags()) {
+        hash = (37 * hash) + GET_TAGS_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getGetTags());
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1146,7 +1440,9 @@ public final class ProductDataProto {
         super.clear();
         bitField0_ = 0;
         getAllCategories_ = false;
+        getCategoryData_ = false;
         categoryName_ = "";
+        getTags_ = false;
         return this;
       }
 
@@ -1186,8 +1482,16 @@ public final class ProductDataProto {
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.categoryName_ = categoryName_;
+          result.getCategoryData_ = getCategoryData_;
           to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.categoryName_ = categoryName_;
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.getTags_ = getTags_;
+          to_bitField0_ |= 0x00000008;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1207,10 +1511,16 @@ public final class ProductDataProto {
         if (other.hasGetAllCategories()) {
           setGetAllCategories(other.getGetAllCategories());
         }
+        if (other.hasGetCategoryData()) {
+          setGetCategoryData(other.getGetCategoryData());
+        }
         if (other.hasCategoryName()) {
           categoryName_ = other.categoryName_;
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           onChanged();
+        }
+        if (other.hasGetTags()) {
+          setGetTags(other.getGetTags());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1243,11 +1553,21 @@ public final class ProductDataProto {
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
-              case 18: {
-                categoryName_ = input.readStringRequireUtf8();
+              case 16: {
+                getCategoryData_ = input.readBool();
                 bitField0_ |= 0x00000002;
                 break;
-              } // case 18
+              } // case 16
+              case 26: {
+                categoryName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 32: {
+                getTags_ = input.readBool();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1305,16 +1625,56 @@ public final class ProductDataProto {
         return this;
       }
 
-      private java.lang.Object categoryName_ = "";
+      private boolean getCategoryData_ ;
       /**
-       * <code>optional string category_name = 2 [json_name = "categoryName"];</code>
-       * @return Whether the categoryName field is set.
+       * <code>optional bool get_category_data = 2 [json_name = "getCategoryData"];</code>
+       * @return Whether the getCategoryData field is set.
        */
-      public boolean hasCategoryName() {
+      @java.lang.Override
+      public boolean hasGetCategoryData() {
         return ((bitField0_ & 0x00000002) != 0);
       }
       /**
-       * <code>optional string category_name = 2 [json_name = "categoryName"];</code>
+       * <code>optional bool get_category_data = 2 [json_name = "getCategoryData"];</code>
+       * @return The getCategoryData.
+       */
+      @java.lang.Override
+      public boolean getGetCategoryData() {
+        return getCategoryData_;
+      }
+      /**
+       * <code>optional bool get_category_data = 2 [json_name = "getCategoryData"];</code>
+       * @param value The getCategoryData to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGetCategoryData(boolean value) {
+
+        getCategoryData_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool get_category_data = 2 [json_name = "getCategoryData"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGetCategoryData() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        getCategoryData_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object categoryName_ = "";
+      /**
+       * <code>optional string category_name = 3 [json_name = "categoryName"];</code>
+       * @return Whether the categoryName field is set.
+       */
+      public boolean hasCategoryName() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>optional string category_name = 3 [json_name = "categoryName"];</code>
        * @return The categoryName.
        */
       public java.lang.String getCategoryName() {
@@ -1330,7 +1690,7 @@ public final class ProductDataProto {
         }
       }
       /**
-       * <code>optional string category_name = 2 [json_name = "categoryName"];</code>
+       * <code>optional string category_name = 3 [json_name = "categoryName"];</code>
        * @return The bytes for categoryName.
        */
       public com.google.protobuf.ByteString
@@ -1347,7 +1707,7 @@ public final class ProductDataProto {
         }
       }
       /**
-       * <code>optional string category_name = 2 [json_name = "categoryName"];</code>
+       * <code>optional string category_name = 3 [json_name = "categoryName"];</code>
        * @param value The categoryName to set.
        * @return This builder for chaining.
        */
@@ -1355,22 +1715,22 @@ public final class ProductDataProto {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         categoryName_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string category_name = 2 [json_name = "categoryName"];</code>
+       * <code>optional string category_name = 3 [json_name = "categoryName"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCategoryName() {
         categoryName_ = getDefaultInstance().getCategoryName();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
       /**
-       * <code>optional string category_name = 2 [json_name = "categoryName"];</code>
+       * <code>optional string category_name = 3 [json_name = "categoryName"];</code>
        * @param value The bytes for categoryName to set.
        * @return This builder for chaining.
        */
@@ -1379,7 +1739,47 @@ public final class ProductDataProto {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         categoryName_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private boolean getTags_ ;
+      /**
+       * <code>optional bool get_tags = 4 [json_name = "getTags"];</code>
+       * @return Whether the getTags field is set.
+       */
+      @java.lang.Override
+      public boolean hasGetTags() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       * <code>optional bool get_tags = 4 [json_name = "getTags"];</code>
+       * @return The getTags.
+       */
+      @java.lang.Override
+      public boolean getGetTags() {
+        return getTags_;
+      }
+      /**
+       * <code>optional bool get_tags = 4 [json_name = "getTags"];</code>
+       * @param value The getTags to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGetTags(boolean value) {
+
+        getTags_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool get_tags = 4 [json_name = "getTags"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearGetTags() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        getTags_ = false;
         onChanged();
         return this;
       }
@@ -2347,22 +2747,28 @@ public final class ProductDataProto {
       "\n\036products/v1/product_data.proto\022\013produc" +
       "ts.v1\032\031products/v1/product.proto\032$produc" +
       "ts/v1/product_categories.proto\032\025shared/v" +
-      "1/error.proto\"\251\001\n\027ProductDataResponseDat" +
-      "a\022C\n\ncategories\030\001 \001(\0132\036.products.v1.Prod" +
-      "uctCategoriesH\000R\ncategories\210\001\001\0221\n\004tags\030\002" +
-      " \001(\0132\030.products.v1.ProductTagsH\001R\004tags\210\001" +
-      "\001B\r\n\013_categoriesB\007\n\005_tags\"\232\001\n\022ProductDat" +
-      "aRequest\0221\n\022get_all_categories\030\001 \001(\010H\000R\020" +
-      "getAllCategories\210\001\001\022(\n\rcategory_name\030\002 \001" +
-      "(\tH\001R\014categoryName\210\001\001B\025\n\023_get_all_catego" +
-      "riesB\020\n\016_category_name\"\212\001\n\023ProductDataRe" +
-      "sponse\022:\n\004data\030\001 \001(\0132$.products.v1.Produ" +
-      "ctDataResponseDataH\000R\004data\022+\n\005error\030\002 \001(" +
-      "\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n\010respo" +
-      "nseBz\n\034org.megacommerce.products.v1B\020Pro" +
-      "ductDataProtoZEgithub.com/ahmad-khatib0-" +
-      "org/megacommerce-proto/gen/go/products/v" +
-      "1;v1\370\001\001b\006proto3"
+      "1/error.proto\"\227\002\n\027ProductDataResponseDat" +
+      "a\022W\n\ncategories\030\001 \001(\01322.products.v1.Prod" +
+      "uctCategoriesWithoutSubcategoriesH\000R\ncat" +
+      "egories\210\001\001\022F\n\rcategory_data\030\002 \001(\0132\034.prod" +
+      "ucts.v1.ProductCategoryH\001R\014categoryData\210" +
+      "\001\001\0221\n\004tags\030\003 \001(\0132\030.products.v1.ProductTa" +
+      "gsH\002R\004tags\210\001\001B\r\n\013_categoriesB\020\n\016_categor" +
+      "y_dataB\007\n\005_tags\"\216\002\n\022ProductDataRequest\0221" +
+      "\n\022get_all_categories\030\001 \001(\010H\000R\020getAllCate" +
+      "gories\210\001\001\022/\n\021get_category_data\030\002 \001(\010H\001R\017" +
+      "getCategoryData\210\001\001\022(\n\rcategory_name\030\003 \001(" +
+      "\tH\002R\014categoryName\210\001\001\022\036\n\010get_tags\030\004 \001(\010H\003" +
+      "R\007getTags\210\001\001B\025\n\023_get_all_categoriesB\024\n\022_" +
+      "get_category_dataB\020\n\016_category_nameB\013\n\t_" +
+      "get_tags\"\212\001\n\023ProductDataResponse\022:\n\004data" +
+      "\030\001 \001(\0132$.products.v1.ProductDataResponse" +
+      "DataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1." +
+      "AppErrorH\000R\005errorB\n\n\010responseBz\n\034org.meg" +
+      "acommerce.products.v1B\020ProductDataProtoZ" +
+      "Egithub.com/ahmad-khatib0-org/megacommer" +
+      "ce-proto/gen/go/products/v1;v1\370\001\001b\006proto" +
+      "3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2376,13 +2782,13 @@ public final class ProductDataProto {
     internal_static_products_v1_ProductDataResponseData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductDataResponseData_descriptor,
-        new java.lang.String[] { "Categories", "Tags", });
+        new java.lang.String[] { "Categories", "CategoryData", "Tags", });
     internal_static_products_v1_ProductDataRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_products_v1_ProductDataRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductDataRequest_descriptor,
-        new java.lang.String[] { "GetAllCategories", "CategoryName", });
+        new java.lang.String[] { "GetAllCategories", "GetCategoryData", "CategoryName", "GetTags", });
     internal_static_products_v1_ProductDataResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_products_v1_ProductDataResponse_fieldAccessorTable = new

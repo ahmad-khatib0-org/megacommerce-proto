@@ -6,10 +6,15 @@ import * as shared_v1_error_pb from '../../shared/v1/error_pb'; // proto import:
 
 
 export class ProductDataResponseData extends jspb.Message {
-  getCategories(): products_v1_product_categories_pb.ProductCategories | undefined;
-  setCategories(value?: products_v1_product_categories_pb.ProductCategories): ProductDataResponseData;
+  getCategories(): products_v1_product_categories_pb.ProductCategoriesWithoutSubcategories | undefined;
+  setCategories(value?: products_v1_product_categories_pb.ProductCategoriesWithoutSubcategories): ProductDataResponseData;
   hasCategories(): boolean;
   clearCategories(): ProductDataResponseData;
+
+  getCategoryData(): products_v1_product_categories_pb.ProductCategory | undefined;
+  setCategoryData(value?: products_v1_product_categories_pb.ProductCategory): ProductDataResponseData;
+  hasCategoryData(): boolean;
+  clearCategoryData(): ProductDataResponseData;
 
   getTags(): products_v1_product_pb.ProductTags | undefined;
   setTags(value?: products_v1_product_pb.ProductTags): ProductDataResponseData;
@@ -26,7 +31,8 @@ export class ProductDataResponseData extends jspb.Message {
 
 export namespace ProductDataResponseData {
   export type AsObject = {
-    categories?: products_v1_product_categories_pb.ProductCategories.AsObject,
+    categories?: products_v1_product_categories_pb.ProductCategoriesWithoutSubcategories.AsObject,
+    categoryData?: products_v1_product_categories_pb.ProductCategory.AsObject,
     tags?: products_v1_product_pb.ProductTags.AsObject,
   }
 
@@ -35,9 +41,14 @@ export namespace ProductDataResponseData {
     CATEGORIES = 1,
   }
 
+  export enum CategoryDataCase { 
+    _CATEGORY_DATA_NOT_SET = 0,
+    CATEGORY_DATA = 2,
+  }
+
   export enum TagsCase { 
     _TAGS_NOT_SET = 0,
-    TAGS = 2,
+    TAGS = 3,
   }
 }
 
@@ -47,10 +58,20 @@ export class ProductDataRequest extends jspb.Message {
   hasGetAllCategories(): boolean;
   clearGetAllCategories(): ProductDataRequest;
 
+  getGetCategoryData(): boolean;
+  setGetCategoryData(value: boolean): ProductDataRequest;
+  hasGetCategoryData(): boolean;
+  clearGetCategoryData(): ProductDataRequest;
+
   getCategoryName(): string;
   setCategoryName(value: string): ProductDataRequest;
   hasCategoryName(): boolean;
   clearCategoryName(): ProductDataRequest;
+
+  getGetTags(): boolean;
+  setGetTags(value: boolean): ProductDataRequest;
+  hasGetTags(): boolean;
+  clearGetTags(): ProductDataRequest;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductDataRequest.AsObject;
@@ -63,7 +84,9 @@ export class ProductDataRequest extends jspb.Message {
 export namespace ProductDataRequest {
   export type AsObject = {
     getAllCategories?: boolean,
+    getCategoryData?: boolean,
     categoryName?: string,
+    getTags?: boolean,
   }
 
   export enum GetAllCategoriesCase { 
@@ -71,9 +94,19 @@ export namespace ProductDataRequest {
     GET_ALL_CATEGORIES = 1,
   }
 
+  export enum GetCategoryDataCase { 
+    _GET_CATEGORY_DATA_NOT_SET = 0,
+    GET_CATEGORY_DATA = 2,
+  }
+
   export enum CategoryNameCase { 
     _CATEGORY_NAME_NOT_SET = 0,
-    CATEGORY_NAME = 2,
+    CATEGORY_NAME = 3,
+  }
+
+  export enum GetTagsCase { 
+    _GET_TAGS_NOT_SET = 0,
+    GET_TAGS = 4,
   }
 }
 

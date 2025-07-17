@@ -9,8 +9,13 @@ import * as shared_v1_error_pb from "../../shared/v1/error_pb";
 export class ProductDataResponseData extends jspb.Message {
   hasCategories(): boolean;
   clearCategories(): void;
-  getCategories(): products_v1_product_categories_pb.ProductCategories | undefined;
-  setCategories(value?: products_v1_product_categories_pb.ProductCategories): void;
+  getCategories(): products_v1_product_categories_pb.ProductCategoriesWithoutSubcategories | undefined;
+  setCategories(value?: products_v1_product_categories_pb.ProductCategoriesWithoutSubcategories): void;
+
+  hasCategoryData(): boolean;
+  clearCategoryData(): void;
+  getCategoryData(): products_v1_product_categories_pb.ProductCategory | undefined;
+  setCategoryData(value?: products_v1_product_categories_pb.ProductCategory): void;
 
   hasTags(): boolean;
   clearTags(): void;
@@ -29,7 +34,8 @@ export class ProductDataResponseData extends jspb.Message {
 
 export namespace ProductDataResponseData {
   export type AsObject = {
-    categories?: products_v1_product_categories_pb.ProductCategories.AsObject,
+    categories?: products_v1_product_categories_pb.ProductCategoriesWithoutSubcategories.AsObject,
+    categoryData?: products_v1_product_categories_pb.ProductCategory.AsObject,
     tags?: products_v1_product_pb.ProductTags.AsObject,
   }
 }
@@ -40,10 +46,20 @@ export class ProductDataRequest extends jspb.Message {
   getGetAllCategories(): boolean;
   setGetAllCategories(value: boolean): void;
 
+  hasGetCategoryData(): boolean;
+  clearGetCategoryData(): void;
+  getGetCategoryData(): boolean;
+  setGetCategoryData(value: boolean): void;
+
   hasCategoryName(): boolean;
   clearCategoryName(): void;
   getCategoryName(): string;
   setCategoryName(value: string): void;
+
+  hasGetTags(): boolean;
+  clearGetTags(): void;
+  getGetTags(): boolean;
+  setGetTags(value: boolean): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductDataRequest.AsObject;
@@ -58,7 +74,9 @@ export class ProductDataRequest extends jspb.Message {
 export namespace ProductDataRequest {
   export type AsObject = {
     getAllCategories: boolean,
+    getCategoryData: boolean,
     categoryName: string,
+    getTags: boolean,
   }
 }
 

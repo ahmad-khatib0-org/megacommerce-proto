@@ -126,7 +126,8 @@ proto.products.v1.ProductDataResponseData.prototype.toObject = function(opt_incl
  */
 proto.products.v1.ProductDataResponseData.toObject = function(includeInstance, msg) {
   var f, obj = {
-categories: (f = msg.getCategories()) && products_v1_product_categories_pb.ProductCategories.toObject(includeInstance, f),
+categories: (f = msg.getCategories()) && products_v1_product_categories_pb.ProductCategoriesWithoutSubcategories.toObject(includeInstance, f),
+categoryData: (f = msg.getCategoryData()) && products_v1_product_categories_pb.ProductCategory.toObject(includeInstance, f),
 tags: (f = msg.getTags()) && products_v1_product_pb.ProductTags.toObject(includeInstance, f)
   };
 
@@ -165,11 +166,16 @@ proto.products.v1.ProductDataResponseData.deserializeBinaryFromReader = function
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new products_v1_product_categories_pb.ProductCategories;
-      reader.readMessage(value,products_v1_product_categories_pb.ProductCategories.deserializeBinaryFromReader);
+      var value = new products_v1_product_categories_pb.ProductCategoriesWithoutSubcategories;
+      reader.readMessage(value,products_v1_product_categories_pb.ProductCategoriesWithoutSubcategories.deserializeBinaryFromReader);
       msg.setCategories(value);
       break;
     case 2:
+      var value = new products_v1_product_categories_pb.ProductCategory;
+      reader.readMessage(value,products_v1_product_categories_pb.ProductCategory.deserializeBinaryFromReader);
+      msg.setCategoryData(value);
+      break;
+    case 3:
       var value = new products_v1_product_pb.ProductTags;
       reader.readMessage(value,products_v1_product_pb.ProductTags.deserializeBinaryFromReader);
       msg.setTags(value);
@@ -208,13 +214,21 @@ proto.products.v1.ProductDataResponseData.serializeBinaryToWriter = function(mes
     writer.writeMessage(
       1,
       f,
-      products_v1_product_categories_pb.ProductCategories.serializeBinaryToWriter
+      products_v1_product_categories_pb.ProductCategoriesWithoutSubcategories.serializeBinaryToWriter
+    );
+  }
+  f = message.getCategoryData();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      products_v1_product_categories_pb.ProductCategory.serializeBinaryToWriter
     );
   }
   f = message.getTags();
   if (f != null) {
     writer.writeMessage(
-      2,
+      3,
       f,
       products_v1_product_pb.ProductTags.serializeBinaryToWriter
     );
@@ -223,17 +237,17 @@ proto.products.v1.ProductDataResponseData.serializeBinaryToWriter = function(mes
 
 
 /**
- * optional ProductCategories categories = 1;
- * @return {?proto.products.v1.ProductCategories}
+ * optional ProductCategoriesWithoutSubcategories categories = 1;
+ * @return {?proto.products.v1.ProductCategoriesWithoutSubcategories}
  */
 proto.products.v1.ProductDataResponseData.prototype.getCategories = function() {
-  return /** @type{?proto.products.v1.ProductCategories} */ (
-    jspb.Message.getWrapperField(this, products_v1_product_categories_pb.ProductCategories, 1));
+  return /** @type{?proto.products.v1.ProductCategoriesWithoutSubcategories} */ (
+    jspb.Message.getWrapperField(this, products_v1_product_categories_pb.ProductCategoriesWithoutSubcategories, 1));
 };
 
 
 /**
- * @param {?proto.products.v1.ProductCategories|undefined} value
+ * @param {?proto.products.v1.ProductCategoriesWithoutSubcategories|undefined} value
  * @return {!proto.products.v1.ProductDataResponseData} returns this
 */
 proto.products.v1.ProductDataResponseData.prototype.setCategories = function(value) {
@@ -260,12 +274,49 @@ proto.products.v1.ProductDataResponseData.prototype.hasCategories = function() {
 
 
 /**
- * optional ProductTags tags = 2;
+ * optional ProductCategory category_data = 2;
+ * @return {?proto.products.v1.ProductCategory}
+ */
+proto.products.v1.ProductDataResponseData.prototype.getCategoryData = function() {
+  return /** @type{?proto.products.v1.ProductCategory} */ (
+    jspb.Message.getWrapperField(this, products_v1_product_categories_pb.ProductCategory, 2));
+};
+
+
+/**
+ * @param {?proto.products.v1.ProductCategory|undefined} value
+ * @return {!proto.products.v1.ProductDataResponseData} returns this
+*/
+proto.products.v1.ProductDataResponseData.prototype.setCategoryData = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.products.v1.ProductDataResponseData} returns this
+ */
+proto.products.v1.ProductDataResponseData.prototype.clearCategoryData = function() {
+  return this.setCategoryData(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.products.v1.ProductDataResponseData.prototype.hasCategoryData = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional ProductTags tags = 3;
  * @return {?proto.products.v1.ProductTags}
  */
 proto.products.v1.ProductDataResponseData.prototype.getTags = function() {
   return /** @type{?proto.products.v1.ProductTags} */ (
-    jspb.Message.getWrapperField(this, products_v1_product_pb.ProductTags, 2));
+    jspb.Message.getWrapperField(this, products_v1_product_pb.ProductTags, 3));
 };
 
 
@@ -274,7 +325,7 @@ proto.products.v1.ProductDataResponseData.prototype.getTags = function() {
  * @return {!proto.products.v1.ProductDataResponseData} returns this
 */
 proto.products.v1.ProductDataResponseData.prototype.setTags = function(value) {
-  return jspb.Message.setWrapperField(this, 2, value);
+  return jspb.Message.setWrapperField(this, 3, value);
 };
 
 
@@ -292,7 +343,7 @@ proto.products.v1.ProductDataResponseData.prototype.clearTags = function() {
  * @return {boolean}
  */
 proto.products.v1.ProductDataResponseData.prototype.hasTags = function() {
-  return jspb.Message.getField(this, 2) != null;
+  return jspb.Message.getField(this, 3) != null;
 };
 
 
@@ -329,7 +380,9 @@ proto.products.v1.ProductDataRequest.prototype.toObject = function(opt_includeIn
 proto.products.v1.ProductDataRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
 getAllCategories: (f = jspb.Message.getBooleanField(msg, 1)) == null ? undefined : f,
-categoryName: (f = jspb.Message.getField(msg, 2)) == null ? undefined : f
+getCategoryData: (f = jspb.Message.getBooleanField(msg, 2)) == null ? undefined : f,
+categoryName: (f = jspb.Message.getField(msg, 3)) == null ? undefined : f,
+getTags: (f = jspb.Message.getBooleanField(msg, 4)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -371,8 +424,16 @@ proto.products.v1.ProductDataRequest.deserializeBinaryFromReader = function(msg,
       msg.setGetAllCategories(value);
       break;
     case 2:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGetCategoryData(value);
+      break;
+    case 3:
       var value = /** @type {string} */ (reader.readString());
       msg.setCategoryName(value);
+      break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGetTags(value);
       break;
     default:
       reader.skipField();
@@ -410,10 +471,24 @@ proto.products.v1.ProductDataRequest.serializeBinaryToWriter = function(message,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 2));
+  if (f != null) {
+    writer.writeBool(
+      2,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 3));
   if (f != null) {
     writer.writeString(
-      2,
+      3,
+      f
+    );
+  }
+  f = /** @type {boolean} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeBool(
+      4,
       f
     );
   }
@@ -457,19 +532,19 @@ proto.products.v1.ProductDataRequest.prototype.hasGetAllCategories = function() 
 
 
 /**
- * optional string category_name = 2;
- * @return {string}
+ * optional bool get_category_data = 2;
+ * @return {boolean}
  */
-proto.products.v1.ProductDataRequest.prototype.getCategoryName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+proto.products.v1.ProductDataRequest.prototype.getGetCategoryData = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 2, false));
 };
 
 
 /**
- * @param {string} value
+ * @param {boolean} value
  * @return {!proto.products.v1.ProductDataRequest} returns this
  */
-proto.products.v1.ProductDataRequest.prototype.setCategoryName = function(value) {
+proto.products.v1.ProductDataRequest.prototype.setGetCategoryData = function(value) {
   return jspb.Message.setField(this, 2, value);
 };
 
@@ -478,7 +553,7 @@ proto.products.v1.ProductDataRequest.prototype.setCategoryName = function(value)
  * Clears the field making it undefined.
  * @return {!proto.products.v1.ProductDataRequest} returns this
  */
-proto.products.v1.ProductDataRequest.prototype.clearCategoryName = function() {
+proto.products.v1.ProductDataRequest.prototype.clearGetCategoryData = function() {
   return jspb.Message.setField(this, 2, undefined);
 };
 
@@ -487,8 +562,80 @@ proto.products.v1.ProductDataRequest.prototype.clearCategoryName = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.products.v1.ProductDataRequest.prototype.hasCategoryName = function() {
+proto.products.v1.ProductDataRequest.prototype.hasGetCategoryData = function() {
   return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string category_name = 3;
+ * @return {string}
+ */
+proto.products.v1.ProductDataRequest.prototype.getCategoryName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.products.v1.ProductDataRequest} returns this
+ */
+proto.products.v1.ProductDataRequest.prototype.setCategoryName = function(value) {
+  return jspb.Message.setField(this, 3, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.products.v1.ProductDataRequest} returns this
+ */
+proto.products.v1.ProductDataRequest.prototype.clearCategoryName = function() {
+  return jspb.Message.setField(this, 3, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.products.v1.ProductDataRequest.prototype.hasCategoryName = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional bool get_tags = 4;
+ * @return {boolean}
+ */
+proto.products.v1.ProductDataRequest.prototype.getGetTags = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.products.v1.ProductDataRequest} returns this
+ */
+proto.products.v1.ProductDataRequest.prototype.setGetTags = function(value) {
+  return jspb.Message.setField(this, 4, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.products.v1.ProductDataRequest} returns this
+ */
+proto.products.v1.ProductDataRequest.prototype.clearGetTags = function() {
+  return jspb.Message.setField(this, 4, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.products.v1.ProductDataRequest.prototype.hasGetTags = function() {
+  return jspb.Message.getField(this, 4) != null;
 };
 
 

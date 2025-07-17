@@ -136,10 +136,26 @@ pub struct ProductCategories {
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductCategoryWithoutSubcategories {
+    #[prost(string, tag = "1")]
+    pub id: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub name: ::prost::alloc::string::String,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductCategoriesWithoutSubcategories {
+    #[prost(message, repeated, tag = "1")]
+    pub categories: ::prost::alloc::vec::Vec<ProductCategoryWithoutSubcategories>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductDataResponseData {
     #[prost(message, optional, tag = "1")]
-    pub categories: ::core::option::Option<ProductCategories>,
+    pub categories: ::core::option::Option<ProductCategoriesWithoutSubcategories>,
     #[prost(message, optional, tag = "2")]
+    pub category_data: ::core::option::Option<ProductCategory>,
+    #[prost(message, optional, tag = "3")]
     pub tags: ::core::option::Option<ProductTags>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
@@ -147,8 +163,12 @@ pub struct ProductDataResponseData {
 pub struct ProductDataRequest {
     #[prost(bool, optional, tag = "1")]
     pub get_all_categories: ::core::option::Option<bool>,
-    #[prost(string, optional, tag = "2")]
+    #[prost(bool, optional, tag = "2")]
+    pub get_category_data: ::core::option::Option<bool>,
+    #[prost(string, optional, tag = "3")]
     pub category_name: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(bool, optional, tag = "4")]
+    pub get_tags: ::core::option::Option<bool>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
