@@ -126,6 +126,7 @@ pub struct ProductSubcategoryAttribute {
     #[prost(string, tag = "2")]
     pub r#type: ::prost::alloc::string::String,
     #[prost(string, repeated, tag = "3")]
+    #[serde(default)]
     pub string_array: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]

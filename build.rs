@@ -12,6 +12,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     .out_dir(out_dir)
     .build_server(true)
     .type_attribute(".", "#[derive(serde::Serialize, serde::Deserialize)]")
+    .field_attribute(
+      "products.v1.ProductSubcategoryAttribute.string_array",
+      "#[serde(default)]",
+    )
     .compile_protos(
       &[
         "common/v1/common.proto",
