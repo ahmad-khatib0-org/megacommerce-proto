@@ -24,9 +24,10 @@ _sym_db = _symbol_database.Default()
 
 from products.v1 import product_create_pb2 as products_dot_v1_dot_product__create__pb2
 from products.v1 import product_data_pb2 as products_dot_v1_dot_product__data__pb2
+from products.v1 import product_list_pb2 as products_dot_v1_dot_product__list__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1aproducts/v1/products.proto\x12\x0bproducts.v1\x1a products/v1/product_create.proto\x1a\x1eproducts/v1/product_data.proto2\xbb\x01\n\x0fProductsService\x12V\n\rProductCreate\x12!.products.v1.ProductCreateRequest\x1a\".products.v1.ProductCreateResponse\x12P\n\x0bProductData\x12\x1f.products.v1.ProductDataRequest\x1a .products.v1.ProductDataResponseBw\n\x1corg.megacommerce.products.v1B\rProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1aproducts/v1/products.proto\x12\x0bproducts.v1\x1a products/v1/product_create.proto\x1a\x1eproducts/v1/product_data.proto\x1a\x1eproducts/v1/product_list.proto2\x8d\x02\n\x0fProductsService\x12V\n\rProductCreate\x12!.products.v1.ProductCreateRequest\x1a\".products.v1.ProductCreateResponse\x12P\n\x0bProductData\x12\x1f.products.v1.ProductDataRequest\x1a .products.v1.ProductDataResponse\x12P\n\x0bProductList\x12\x1f.products.v1.ProductListRequest\x1a .products.v1.ProductListResponseBw\n\x1corg.megacommerce.products.v1B\rProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,6 +35,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'products.v1.products_pb2', 
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\034org.megacommerce.products.v1B\rProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\370\001\001'
-  _globals['_PRODUCTSSERVICE']._serialized_start=110
-  _globals['_PRODUCTSSERVICE']._serialized_end=297
+  _globals['_PRODUCTSSERVICE']._serialized_start=142
+  _globals['_PRODUCTSSERVICE']._serialized_end=411
 # @@protoc_insertion_point(module_scope)

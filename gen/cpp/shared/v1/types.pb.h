@@ -75,6 +75,10 @@ class NestedStringMap_DataEntry_DoNotUse;
 struct NestedStringMap_DataEntry_DoNotUseDefaultTypeInternal;
 extern NestedStringMap_DataEntry_DoNotUseDefaultTypeInternal _NestedStringMap_DataEntry_DoNotUse_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull NestedStringMap_DataEntry_DoNotUse_class_data_;
+class OrderDirection;
+struct OrderDirectionDefaultTypeInternal;
+extern OrderDirectionDefaultTypeInternal _OrderDirection_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull OrderDirection_class_data_;
 class StringMap;
 struct StringMapDefaultTypeInternal;
 extern StringMapDefaultTypeInternal _StringMap_default_instance_;
@@ -137,6 +141,226 @@ class StringMap_DataEntry_DoNotUse final
 extern const ::google::protobuf::internal::ClassDataFull StringMap_DataEntry_DoNotUse_class_data_;
 // -------------------------------------------------------------------
 
+class OrderDirection final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:shared.v1.OrderDirection) */ {
+ public:
+  inline OrderDirection() : OrderDirection(nullptr) {}
+  ~OrderDirection() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(OrderDirection* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(OrderDirection));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR OrderDirection(::google::protobuf::internal::ConstantInitialized);
+
+  inline OrderDirection(const OrderDirection& from) : OrderDirection(nullptr, from) {}
+  inline OrderDirection(OrderDirection&& from) noexcept
+      : OrderDirection(nullptr, ::std::move(from)) {}
+  inline OrderDirection& operator=(const OrderDirection& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline OrderDirection& operator=(OrderDirection&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const OrderDirection& default_instance() {
+    return *reinterpret_cast<const OrderDirection*>(
+        &_OrderDirection_default_instance_);
+  }
+  enum OrderCase {
+    kAsc = 1,
+    kDesc = 2,
+    ORDER_NOT_SET = 0,
+  };
+  static constexpr int kIndexInFileMessages = 4;
+  friend void swap(OrderDirection& a, OrderDirection& b) { a.Swap(&b); }
+  inline void Swap(OrderDirection* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(OrderDirection* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  OrderDirection* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<OrderDirection>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const OrderDirection& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const OrderDirection& from) { OrderDirection::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(OrderDirection* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "shared.v1.OrderDirection"; }
+
+ protected:
+  explicit OrderDirection(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  OrderDirection(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const OrderDirection& from);
+  OrderDirection(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, OrderDirection&& from) noexcept
+      : OrderDirection(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kAscFieldNumber = 1,
+    kDescFieldNumber = 2,
+  };
+  // bool asc = 1 [json_name = "asc"];
+  bool has_asc() const;
+  void clear_asc() ;
+  bool asc() const;
+  void set_asc(bool value);
+
+  private:
+  bool _internal_asc() const;
+  void _internal_set_asc(bool value);
+
+  public:
+  // bool desc = 2 [json_name = "desc"];
+  bool has_desc() const;
+  void clear_desc() ;
+  bool desc() const;
+  void set_desc(bool value);
+
+  private:
+  bool _internal_desc() const;
+  void _internal_set_desc(bool value);
+
+  public:
+  void clear_order();
+  OrderCase order_case() const;
+  // @@protoc_insertion_point(class_scope:shared.v1.OrderDirection)
+ private:
+  class _Internal;
+  void set_has_asc();
+  void set_has_desc();
+  inline bool has_order() const;
+  inline void clear_has_order();
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<0, 2,
+                                   0, 0,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const OrderDirection& from_msg);
+    union OrderUnion {
+      constexpr OrderUnion() : _constinit_{} {}
+      ::google::protobuf::internal::ConstantInitialized _constinit_;
+      bool asc_;
+      bool desc_;
+    } order_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::uint32_t _oneof_case_[1];
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_shared_2fv1_2ftypes_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull OrderDirection_class_data_;
+// -------------------------------------------------------------------
+
 class Empty final : public ::google::protobuf::internal::ZeroFieldsBase
 /* @@protoc_insertion_point(class_definition:shared.v1.Empty) */ {
  public:
@@ -191,7 +415,7 @@ class Empty final : public ::google::protobuf::internal::ZeroFieldsBase
     return *reinterpret_cast<const Empty*>(
         &_Empty_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 5;
+  static constexpr int kIndexInFileMessages = 6;
   friend void swap(Empty& a, Empty& b) { a.Swap(&b); }
   inline void Swap(Empty* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -338,7 +562,7 @@ class Any final : public ::google::protobuf::Message
     return *reinterpret_cast<const Any*>(
         &_Any_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 4;
+  static constexpr int kIndexInFileMessages = 5;
   friend void swap(Any& a, Any& b) { a.Swap(&b); }
   inline void Swap(Any* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1012,6 +1236,85 @@ inline ::google::protobuf::Map<std::string, ::shared::v1::StringMap>* PROTOBUF_N
   return _internal_mutable_data();
 }
 
+// -------------------------------------------------------------------
+
+// OrderDirection
+
+// bool asc = 1 [json_name = "asc"];
+inline bool OrderDirection::has_asc() const {
+  return order_case() == kAsc;
+}
+inline void OrderDirection::set_has_asc() {
+  _impl_._oneof_case_[0] = kAsc;
+}
+inline void OrderDirection::clear_asc() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (order_case() == kAsc) {
+    _impl_.order_.asc_ = false;
+    clear_has_order();
+  }
+}
+inline bool OrderDirection::asc() const {
+  // @@protoc_insertion_point(field_get:shared.v1.OrderDirection.asc)
+  return _internal_asc();
+}
+inline void OrderDirection::set_asc(bool value) {
+  if (order_case() != kAsc) {
+    clear_order();
+    set_has_asc();
+  }
+  _impl_.order_.asc_ = value;
+  // @@protoc_insertion_point(field_set:shared.v1.OrderDirection.asc)
+}
+inline bool OrderDirection::_internal_asc() const {
+  if (order_case() == kAsc) {
+    return _impl_.order_.asc_;
+  }
+  return false;
+}
+
+// bool desc = 2 [json_name = "desc"];
+inline bool OrderDirection::has_desc() const {
+  return order_case() == kDesc;
+}
+inline void OrderDirection::set_has_desc() {
+  _impl_._oneof_case_[0] = kDesc;
+}
+inline void OrderDirection::clear_desc() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (order_case() == kDesc) {
+    _impl_.order_.desc_ = false;
+    clear_has_order();
+  }
+}
+inline bool OrderDirection::desc() const {
+  // @@protoc_insertion_point(field_get:shared.v1.OrderDirection.desc)
+  return _internal_desc();
+}
+inline void OrderDirection::set_desc(bool value) {
+  if (order_case() != kDesc) {
+    clear_order();
+    set_has_desc();
+  }
+  _impl_.order_.desc_ = value;
+  // @@protoc_insertion_point(field_set:shared.v1.OrderDirection.desc)
+}
+inline bool OrderDirection::_internal_desc() const {
+  if (order_case() == kDesc) {
+    return _impl_.order_.desc_;
+  }
+  return false;
+}
+
+inline bool OrderDirection::has_order() const {
+  return order_case() != ORDER_NOT_SET;
+}
+inline void OrderDirection::clear_has_order() {
+  _impl_._oneof_case_[0] = ORDER_NOT_SET;
+}
+inline OrderDirection::OrderCase OrderDirection::order_case() const {
+  return OrderDirection::OrderCase(_impl_._oneof_case_[0]);
+}
 // -------------------------------------------------------------------
 
 // Any

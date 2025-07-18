@@ -11,6 +11,13 @@ message StringMap { map<string, string> data = 1; }
 
 message NestedStringMap { map<string, StringMap> data = 1; }
 
+message OrderDirection {
+  oneof order {
+    bool asc = 1;
+    bool desc = 2;
+  }
+}
+
 // Custom Any message to avoid google.protobuf.Any issues
 message Any {
   string type_url = 1; // Identifies the type of the serialized message

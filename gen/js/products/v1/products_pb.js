@@ -25,3 +25,5 @@ var products_v1_product_create_pb = require('../../products/v1/product_create_pb
 goog.object.extend(proto, products_v1_product_create_pb);
 var products_v1_product_data_pb = require('../../products/v1/product_data_pb.js');
 goog.object.extend(proto, products_v1_product_data_pb);
+var products_v1_product_list_pb = require('../../products/v1/product_list_pb.js');
+goog.object.extend(proto, products_v1_product_list_pb);

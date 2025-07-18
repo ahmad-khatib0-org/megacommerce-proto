@@ -293,45 +293,40 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 const char descriptor_table_protodef_products_2fv1_2fproduct_5fcategories_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n$products/v1/product_categories.proto\022\013"
-    "products.v1\032\025shared/v1/types.proto\"|\n\017Pr"
-    "oductCategory\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 "
-    "\001(\tR\004name\022E\n\rsubcategories\030\003 \003(\0132\037.produ"
-    "cts.v1.ProductSubcategoryR\rsubcategories"
-    "\"\362\001\n\022ProductSubcategory\022\016\n\002id\030\001 \001(\tR\002id\022"
-    "\022\n\004name\030\002 \001(\tR\004name\022O\n\nattributes\030\003 \003(\0132"
-    "/.products.v1.ProductSubcategory.Attribu"
-    "tesEntryR\nattributes\032g\n\017AttributesEntry\022"
-    "\020\n\003key\030\001 \001(\tR\003key\022>\n\005value\030\002 \001(\0132(.produ"
-    "cts.v1.ProductSubcategoryAttributeR\005valu"
-    "e:\0028\001\"p\n\033ProductSubcategoryAttribute\022\032\n\010"
-    "required\030\001 \001(\010R\010required\022\022\n\004type\030\002 \001(\tR\004"
-    "type\022!\n\014string_array\030\003 \003(\tR\013stringArray\""
-    "Q\n\021ProductCategories\022<\n\ncategories\030\001 \003(\013"
-    "2\034.products.v1.ProductCategoryR\ncategori"
-    "es\"I\n#ProductCategoryWithoutSubcategorie"
-    "s\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\"y\n"
-    "%ProductCategoriesWithoutSubcategories\022P"
-    "\n\ncategories\030\001 \003(\01320.products.v1.Product"
-    "CategoryWithoutSubcategoriesR\ncategories"
-    "B\200\001\n\034org.megacommerce.products.v1B\026Produ"
-    "ctCategoriesProtoZEgithub.com/ahmad-khat"
-    "ib0-org/megacommerce-proto/gen/go/produc"
-    "ts/v1;v1\370\001\001b\006proto3"
-};
-static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
-    descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_deps[1] = {
-        &::descriptor_table_shared_2fv1_2ftypes_2eproto,
+    "products.v1\"|\n\017ProductCategory\022\016\n\002id\030\001 \001"
+    "(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022E\n\rsubcategor"
+    "ies\030\003 \003(\0132\037.products.v1.ProductSubcatego"
+    "ryR\rsubcategories\"\362\001\n\022ProductSubcategory"
+    "\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022O\n\n"
+    "attributes\030\003 \003(\0132/.products.v1.ProductSu"
+    "bcategory.AttributesEntryR\nattributes\032g\n"
+    "\017AttributesEntry\022\020\n\003key\030\001 \001(\tR\003key\022>\n\005va"
+    "lue\030\002 \001(\0132(.products.v1.ProductSubcatego"
+    "ryAttributeR\005value:\0028\001\"p\n\033ProductSubcate"
+    "goryAttribute\022\032\n\010required\030\001 \001(\010R\010require"
+    "d\022\022\n\004type\030\002 \001(\tR\004type\022!\n\014string_array\030\003 "
+    "\003(\tR\013stringArray\"Q\n\021ProductCategories\022<\n"
+    "\ncategories\030\001 \003(\0132\034.products.v1.ProductC"
+    "ategoryR\ncategories\"I\n#ProductCategoryWi"
+    "thoutSubcategories\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004na"
+    "me\030\002 \001(\tR\004name\"y\n%ProductCategoriesWitho"
+    "utSubcategories\022P\n\ncategories\030\001 \003(\01320.pr"
+    "oducts.v1.ProductCategoryWithoutSubcateg"
+    "oriesR\ncategoriesB\200\001\n\034org.megacommerce.p"
+    "roducts.v1B\026ProductCategoriesProtoZEgith"
+    "ub.com/ahmad-khatib0-org/megacommerce-pr"
+    "oto/gen/go/products/v1;v1\370\001\001b\006proto3"
 };
 static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto = {
     false,
     false,
-    979,
+    956,
     descriptor_table_protodef_products_2fv1_2fproduct_5fcategories_2eproto,
     "products/v1/product_categories.proto",
     &descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_once,
-    descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_deps,
-    1,
+    nullptr,
+    0,
     7,
     schemas,
     file_default_instances,

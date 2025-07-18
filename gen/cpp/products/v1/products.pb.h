@@ -28,6 +28,7 @@
 #include "google/protobuf/extension_set.h"  // IWYU pragma: export
 #include "products/v1/product_create.pb.h"
 #include "products/v1/product_data.pb.h"
+#include "products/v1/product_list.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.

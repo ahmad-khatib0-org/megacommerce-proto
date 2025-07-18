@@ -31,6 +31,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         "products/v1/product_categories.proto",
         "products/v1/product_create.proto",
         "products/v1/product_data.proto",
+        "products/v1/product_list.proto",
         "uploader/v1/uploader.proto",
       ],
       &[googleapis_path, "."],

@@ -41,6 +41,41 @@ export namespace NestedStringMap {
   }
 }
 
+export class OrderDirection extends jspb.Message {
+  hasAsc(): boolean;
+  clearAsc(): void;
+  getAsc(): boolean;
+  setAsc(value: boolean): void;
+
+  hasDesc(): boolean;
+  clearDesc(): void;
+  getDesc(): boolean;
+  setDesc(value: boolean): void;
+
+  getOrderCase(): OrderDirection.OrderCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OrderDirection.AsObject;
+  static toObject(includeInstance: boolean, msg: OrderDirection): OrderDirection.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OrderDirection, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OrderDirection;
+  static deserializeBinaryFromReader(message: OrderDirection, reader: jspb.BinaryReader): OrderDirection;
+}
+
+export namespace OrderDirection {
+  export type AsObject = {
+    asc: boolean,
+    desc: boolean,
+  }
+
+  export enum OrderCase {
+    ORDER_NOT_SET = 0,
+    ASC = 1,
+    DESC = 2,
+  }
+}
+
 export class Any extends jspb.Message {
   getTypeUrl(): string;
   setTypeUrl(value: string): void;

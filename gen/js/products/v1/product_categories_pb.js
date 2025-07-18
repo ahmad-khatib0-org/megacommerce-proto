@@ -21,8 +21,6 @@ var global =
     (function () { return this; }).call(null) ||
     Function('return this')();
 
-var shared_v1_types_pb = require('../../shared/v1/types_pb.js');
-goog.object.extend(proto, shared_v1_types_pb);
 goog.exportSymbol('proto.products.v1.ProductCategories', null, global);
 goog.exportSymbol('proto.products.v1.ProductCategoriesWithoutSubcategories', null, global);
 goog.exportSymbol('proto.products.v1.ProductCategory', null, global);

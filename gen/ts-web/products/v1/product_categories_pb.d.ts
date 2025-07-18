@@ -1,6 +1,5 @@
 import * as jspb from 'google-protobuf'
 
-import * as shared_v1_types_pb from '../../shared/v1/types_pb'; // proto import: "shared/v1/types.proto"
 
 
 export class ProductCategory extends jspb.Message {

@@ -24,25 +24,30 @@ var File_products_v1_products_proto protoreflect.FileDescriptor
 
 const file_products_v1_products_proto_rawDesc = "" +
 	"\n" +
-	"\x1aproducts/v1/products.proto\x12\vproducts.v1\x1a products/v1/product_create.proto\x1a\x1eproducts/v1/product_data.proto2\xbb\x01\n" +
+	"\x1aproducts/v1/products.proto\x12\vproducts.v1\x1a products/v1/product_create.proto\x1a\x1eproducts/v1/product_data.proto\x1a\x1eproducts/v1/product_list.proto2\x8d\x02\n" +
 	"\x0fProductsService\x12V\n" +
 	"\rProductCreate\x12!.products.v1.ProductCreateRequest\x1a\".products.v1.ProductCreateResponse\x12P\n" +
-	"\vProductData\x12\x1f.products.v1.ProductDataRequest\x1a .products.v1.ProductDataResponseBw\n" +
+	"\vProductData\x12\x1f.products.v1.ProductDataRequest\x1a .products.v1.ProductDataResponse\x12P\n" +
+	"\vProductList\x12\x1f.products.v1.ProductListRequest\x1a .products.v1.ProductListResponseBw\n" +
 	"\x1corg.megacommerce.products.v1B\rProductsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01b\x06proto3"
 
 var file_products_v1_products_proto_goTypes = []any{
 	(*ProductCreateRequest)(nil),  // 0: products.v1.ProductCreateRequest
 	(*ProductDataRequest)(nil),    // 1: products.v1.ProductDataRequest
-	(*ProductCreateResponse)(nil), // 2: products.v1.ProductCreateResponse
-	(*ProductDataResponse)(nil),   // 3: products.v1.ProductDataResponse
+	(*ProductListRequest)(nil),    // 2: products.v1.ProductListRequest
+	(*ProductCreateResponse)(nil), // 3: products.v1.ProductCreateResponse
+	(*ProductDataResponse)(nil),   // 4: products.v1.ProductDataResponse
+	(*ProductListResponse)(nil),   // 5: products.v1.ProductListResponse
 }
 var file_products_v1_products_proto_depIdxs = []int32{
 	0, // 0: products.v1.ProductsService.ProductCreate:input_type -> products.v1.ProductCreateRequest
 	1, // 1: products.v1.ProductsService.ProductData:input_type -> products.v1.ProductDataRequest
-	2, // 2: products.v1.ProductsService.ProductCreate:output_type -> products.v1.ProductCreateResponse
-	3, // 3: products.v1.ProductsService.ProductData:output_type -> products.v1.ProductDataResponse
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
+	2, // 2: products.v1.ProductsService.ProductList:input_type -> products.v1.ProductListRequest
+	3, // 3: products.v1.ProductsService.ProductCreate:output_type -> products.v1.ProductCreateResponse
+	4, // 4: products.v1.ProductsService.ProductData:output_type -> products.v1.ProductDataResponse
+	5, // 5: products.v1.ProductsService.ProductList:output_type -> products.v1.ProductListResponse
+	3, // [3:6] is the sub-list for method output_type
+	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -55,6 +60,7 @@ func file_products_v1_products_proto_init() {
 	}
 	file_products_v1_product_create_proto_init()
 	file_products_v1_product_data_proto_init()
+	file_products_v1_product_list_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

@@ -44,6 +44,32 @@ struct StringMap_DataEntry_DoNotUseDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StringMap_DataEntry_DoNotUseDefaultTypeInternal _StringMap_DataEntry_DoNotUse_default_instance_;
+
+inline constexpr OrderDirection::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : order_{},
+        _cached_size_{0},
+        _oneof_case_{} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR OrderDirection::OrderDirection(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(OrderDirection_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct OrderDirectionDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR OrderDirectionDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~OrderDirectionDefaultTypeInternal() {}
+  union {
+    OrderDirection _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 OrderDirectionDefaultTypeInternal _OrderDirection_default_instance_;
 template <typename>
 PROTOBUF_CONSTEXPR Empty::Empty(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
@@ -187,6 +213,11 @@ const ::uint32_t
         1,
         0x000, // bitmap
         PROTOBUF_FIELD_OFFSET(::shared::v1::NestedStringMap, _impl_.data_),
+        0x004, // bitmap
+        PROTOBUF_FIELD_OFFSET(::shared::v1::OrderDirection, _impl_._oneof_case_[0]),
+        ::_pbi::kInvalidFieldOffsetTag,
+        ::_pbi::kInvalidFieldOffsetTag,
+        PROTOBUF_FIELD_OFFSET(::shared::v1::OrderDirection, _impl_.order_),
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::shared::v1::Any, _impl_._has_bits_),
         5, // hasbit index offset
@@ -203,14 +234,16 @@ static const ::_pbi::MigrationSchema
         {7, sizeof(::shared::v1::StringMap)},
         {9, sizeof(::shared::v1::NestedStringMap_DataEntry_DoNotUse)},
         {16, sizeof(::shared::v1::NestedStringMap)},
-        {18, sizeof(::shared::v1::Any)},
-        {25, sizeof(::shared::v1::Empty)},
+        {18, sizeof(::shared::v1::OrderDirection)},
+        {23, sizeof(::shared::v1::Any)},
+        {30, sizeof(::shared::v1::Empty)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::shared::v1::_StringMap_DataEntry_DoNotUse_default_instance_._instance,
     &::shared::v1::_StringMap_default_instance_._instance,
     &::shared::v1::_NestedStringMap_DataEntry_DoNotUse_default_instance_._instance,
     &::shared::v1::_NestedStringMap_default_instance_._instance,
+    &::shared::v1::_OrderDirection_default_instance_._instance,
     &::shared::v1::_Any_default_instance_._instance,
     &::shared::v1::_Empty_default_instance_._instance,
 };
@@ -223,24 +256,26 @@ const char descriptor_table_protodef_shared_2fv1_2ftypes_2eproto[] ABSL_ATTRIBUT
     "\017NestedStringMap\0228\n\004data\030\001 \003(\0132$.shared."
     "v1.NestedStringMap.DataEntryR\004data\032M\n\tDa"
     "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\013"
-    "2\024.shared.v1.StringMapR\005value:\0028\001\"6\n\003Any"
-    "\022\031\n\010type_url\030\001 \001(\tR\007typeUrl\022\024\n\005value\030\002 \001"
-    "(\014R\005value\"\007\n\005EmptyBp\n\032org.megacommerce.s"
-    "hared.v1B\nTypesProtoZCgithub.com/ahmad-k"
-    "hatib0-org/megacommerce-proto/gen/go/sha"
-    "red/v1;v1\370\001\001b\006proto3"
+    "2\024.shared.v1.StringMapR\005value:\0028\001\"C\n\016Ord"
+    "erDirection\022\022\n\003asc\030\001 \001(\010H\000R\003asc\022\024\n\004desc\030"
+    "\002 \001(\010H\000R\004descB\007\n\005order\"6\n\003Any\022\031\n\010type_ur"
+    "l\030\001 \001(\tR\007typeUrl\022\024\n\005value\030\002 \001(\014R\005value\"\007"
+    "\n\005EmptyBp\n\032org.megacommerce.shared.v1B\nT"
+    "ypesProtoZCgithub.com/ahmad-khatib0-org/"
+    "megacommerce-proto/gen/go/shared/v1;v1\370\001"
+    "\001b\006proto3"
 };
 static ::absl::once_flag descriptor_table_shared_2fv1_2ftypes_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_shared_2fv1_2ftypes_2eproto = {
     false,
     false,
-    500,
+    569,
     descriptor_table_protodef_shared_2fv1_2ftypes_2eproto,
     "shared/v1/types.proto",
     &descriptor_table_shared_2fv1_2ftypes_2eproto_once,
     nullptr,
     0,
-    6,
+    7,
     schemas,
     file_default_instances,
     TableStruct_shared_2fv1_2ftypes_2eproto::offsets,
@@ -1005,6 +1040,291 @@ void NestedStringMap::InternalSwap(NestedStringMap* PROTOBUF_RESTRICT PROTOBUF_N
 }
 
 ::google::protobuf::Metadata NestedStringMap::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class OrderDirection::_Internal {
+ public:
+  static constexpr ::int32_t kOneofCaseOffset =
+      PROTOBUF_FIELD_OFFSET(::shared::v1::OrderDirection, _impl_._oneof_case_);
+};
+
+OrderDirection::OrderDirection(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, OrderDirection_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:shared.v1.OrderDirection)
+}
+OrderDirection::OrderDirection(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const OrderDirection& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, OrderDirection_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(from._impl_) {
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+}
+PROTOBUF_NDEBUG_INLINE OrderDirection::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : order_{},
+        _cached_size_{0},
+        _oneof_case_{} {}
+
+inline void OrderDirection::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+OrderDirection::~OrderDirection() {
+  // @@protoc_insertion_point(destructor:shared.v1.OrderDirection)
+  SharedDtor(*this);
+}
+inline void OrderDirection::SharedDtor(MessageLite& self) {
+  OrderDirection& this_ = static_cast<OrderDirection&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  if (this_.has_order()) {
+    this_.clear_order();
+  }
+  this_._impl_.~Impl_();
+}
+
+void OrderDirection::clear_order() {
+// @@protoc_insertion_point(one_of_clear_start:shared.v1.OrderDirection)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  switch (order_case()) {
+    case kAsc: {
+      // No need to clear
+      break;
+    }
+    case kDesc: {
+      // No need to clear
+      break;
+    }
+    case ORDER_NOT_SET: {
+      break;
+    }
+  }
+  _impl_._oneof_case_[0] = ORDER_NOT_SET;
+}
+
+
+inline void* PROTOBUF_NONNULL OrderDirection::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) OrderDirection(arena);
+}
+constexpr auto OrderDirection::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::ZeroInit(sizeof(OrderDirection),
+                                            alignof(OrderDirection));
+}
+constexpr auto OrderDirection::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_OrderDirection_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &OrderDirection::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<OrderDirection>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &OrderDirection::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<OrderDirection>(), &OrderDirection::ByteSizeLong,
+              &OrderDirection::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(OrderDirection, _impl_._cached_size_),
+          false,
+      },
+      &OrderDirection::kDescriptorMethods,
+      &descriptor_table_shared_2fv1_2ftypes_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull OrderDirection_class_data_ =
+        OrderDirection::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+OrderDirection::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&OrderDirection_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(OrderDirection_class_data_.tc_table);
+  return OrderDirection_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 2, 0, 0, 2>
+OrderDirection::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    2, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    OrderDirection_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::shared::v1::OrderDirection>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // bool asc = 1 [json_name = "asc"];
+    {PROTOBUF_FIELD_OFFSET(OrderDirection, _impl_.order_.asc_), _Internal::kOneofCaseOffset + 0, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+    // bool desc = 2 [json_name = "desc"];
+    {PROTOBUF_FIELD_OFFSET(OrderDirection, _impl_.order_.desc_), _Internal::kOneofCaseOffset + 0, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kBool)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+PROTOBUF_NOINLINE void OrderDirection::Clear() {
+// @@protoc_insertion_point(message_clear_start:shared.v1.OrderDirection)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  clear_order();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL OrderDirection::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const OrderDirection& this_ = static_cast<const OrderDirection&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL OrderDirection::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const OrderDirection& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:shared.v1.OrderDirection)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  switch (this_.order_case()) {
+    case kAsc: {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteBoolToArray(
+          1, this_._internal_asc(), target);
+      break;
+    }
+    case kDesc: {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteBoolToArray(
+          2, this_._internal_desc(), target);
+      break;
+    }
+    default:
+      break;
+  }
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:shared.v1.OrderDirection)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t OrderDirection::ByteSizeLong(const MessageLite& base) {
+  const OrderDirection& this_ = static_cast<const OrderDirection&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t OrderDirection::ByteSizeLong() const {
+  const OrderDirection& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:shared.v1.OrderDirection)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  switch (this_.order_case()) {
+    // bool asc = 1 [json_name = "asc"];
+    case kAsc: {
+      total_size += 2;
+      break;
+    }
+    // bool desc = 2 [json_name = "desc"];
+    case kDesc: {
+      total_size += 2;
+      break;
+    }
+    case ORDER_NOT_SET: {
+      break;
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void OrderDirection::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<OrderDirection*>(&to_msg);
+  auto& from = static_cast<const OrderDirection&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:shared.v1.OrderDirection)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (const uint32_t oneof_from_case = from._impl_._oneof_case_[0]) {
+    const uint32_t oneof_to_case = _this->_impl_._oneof_case_[0];
+    const bool oneof_needs_init = oneof_to_case != oneof_from_case;
+    if (oneof_needs_init) {
+      if (oneof_to_case != 0) {
+        _this->clear_order();
+      }
+      _this->_impl_._oneof_case_[0] = oneof_from_case;
+    }
+
+    switch (oneof_from_case) {
+      case kAsc: {
+        _this->_impl_.order_.asc_ = from._impl_.order_.asc_;
+        break;
+      }
+      case kDesc: {
+        _this->_impl_.order_.desc_ = from._impl_.order_.desc_;
+        break;
+      }
+      case ORDER_NOT_SET:
+        break;
+    }
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void OrderDirection::CopyFrom(const OrderDirection& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:shared.v1.OrderDirection)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void OrderDirection::InternalSwap(OrderDirection* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.order_, other->_impl_.order_);
+  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
+}
+
+::google::protobuf::Metadata OrderDirection::GetMetadata() const {
   return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // ===================================================================

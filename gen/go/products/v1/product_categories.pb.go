@@ -7,7 +7,6 @@
 package v1
 
 import (
-	_ "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -346,7 +345,7 @@ var File_products_v1_product_categories_proto protoreflect.FileDescriptor
 
 const file_products_v1_product_categories_proto_rawDesc = "" +
 	"\n" +
-	"$products/v1/product_categories.proto\x12\vproducts.v1\x1a\x15shared/v1/types.proto\"|\n" +
+	"$products/v1/product_categories.proto\x12\vproducts.v1\"|\n" +
 	"\x0fProductCategory\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12E\n" +

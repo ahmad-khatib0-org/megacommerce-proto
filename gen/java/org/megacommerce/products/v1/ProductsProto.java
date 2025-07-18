@@ -37,25 +37,30 @@ public final class ProductsProto {
     java.lang.String[] descriptorData = {
       "\n\032products/v1/products.proto\022\013products.v" +
       "1\032 products/v1/product_create.proto\032\036pro" +
-      "ducts/v1/product_data.proto2\273\001\n\017Products" +
-      "Service\022V\n\rProductCreate\022!.products.v1.P" +
-      "roductCreateRequest\032\".products.v1.Produc" +
-      "tCreateResponse\022P\n\013ProductData\022\037.product" +
-      "s.v1.ProductDataRequest\032 .products.v1.Pr" +
-      "oductDataResponseBw\n\034org.megacommerce.pr" +
-      "oducts.v1B\rProductsProtoZEgithub.com/ahm" +
-      "ad-khatib0-org/megacommerce-proto/gen/go" +
-      "/products/v1;v1\370\001\001b\006proto3"
+      "ducts/v1/product_data.proto\032\036products/v1" +
+      "/product_list.proto2\215\002\n\017ProductsService\022" +
+      "V\n\rProductCreate\022!.products.v1.ProductCr" +
+      "eateRequest\032\".products.v1.ProductCreateR" +
+      "esponse\022P\n\013ProductData\022\037.products.v1.Pro" +
+      "ductDataRequest\032 .products.v1.ProductDat" +
+      "aResponse\022P\n\013ProductList\022\037.products.v1.P" +
+      "roductListRequest\032 .products.v1.ProductL" +
+      "istResponseBw\n\034org.megacommerce.products" +
+      ".v1B\rProductsProtoZEgithub.com/ahmad-kha" +
+      "tib0-org/megacommerce-proto/gen/go/produ" +
+      "cts/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.megacommerce.products.v1.ProductCreateProto.getDescriptor(),
           org.megacommerce.products.v1.ProductDataProto.getDescriptor(),
+          org.megacommerce.products.v1.ProductListProto.getDescriptor(),
         });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.products.v1.ProductCreateProto.getDescriptor();
     org.megacommerce.products.v1.ProductDataProto.getDescriptor();
+    org.megacommerce.products.v1.ProductListProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

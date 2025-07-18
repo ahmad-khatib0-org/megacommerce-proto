@@ -33,7 +33,6 @@
 #include "google/protobuf/map_entry.h"
 #include "google/protobuf/map_field.h"
 #include "google/protobuf/unknown_field_set.h"
-#include "shared/v1/types.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.

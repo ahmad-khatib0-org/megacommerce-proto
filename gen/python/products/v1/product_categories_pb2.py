@@ -22,10 +22,9 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
-from shared.v1 import types_pb2 as shared_dot_v1_dot_types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$products/v1/product_categories.proto\x12\x0bproducts.v1\x1a\x15shared/v1/types.proto\"c\n\x0fProductCategory\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x36\n\rsubcategories\x18\x03 \x03(\x0b\x32\x1f.products.v1.ProductSubcategory\"\xd0\x01\n\x12ProductSubcategory\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x43\n\nattributes\x18\x03 \x03(\x0b\x32/.products.v1.ProductSubcategory.AttributesEntry\x1a[\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x37\n\x05value\x18\x02 \x01(\x0b\x32(.products.v1.ProductSubcategoryAttribute:\x02\x38\x01\"S\n\x1bProductSubcategoryAttribute\x12\x10\n\x08required\x18\x01 \x01(\x08\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x14\n\x0cstring_array\x18\x03 \x03(\t\"E\n\x11ProductCategories\x12\x30\n\ncategories\x18\x01 \x03(\x0b\x32\x1c.products.v1.ProductCategory\"?\n#ProductCategoryWithoutSubcategories\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"m\n%ProductCategoriesWithoutSubcategories\x12\x44\n\ncategories\x18\x01 \x03(\x0b\x32\x30.products.v1.ProductCategoryWithoutSubcategoriesB\x80\x01\n\x1corg.megacommerce.products.v1B\x16ProductCategoriesProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$products/v1/product_categories.proto\x12\x0bproducts.v1\"c\n\x0fProductCategory\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x36\n\rsubcategories\x18\x03 \x03(\x0b\x32\x1f.products.v1.ProductSubcategory\"\xd0\x01\n\x12ProductSubcategory\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x43\n\nattributes\x18\x03 \x03(\x0b\x32/.products.v1.ProductSubcategory.AttributesEntry\x1a[\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x37\n\x05value\x18\x02 \x01(\x0b\x32(.products.v1.ProductSubcategoryAttribute:\x02\x38\x01\"S\n\x1bProductSubcategoryAttribute\x12\x10\n\x08required\x18\x01 \x01(\x08\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x14\n\x0cstring_array\x18\x03 \x03(\t\"E\n\x11ProductCategories\x12\x30\n\ncategories\x18\x01 \x03(\x0b\x32\x1c.products.v1.ProductCategory\"?\n#ProductCategoryWithoutSubcategories\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"m\n%ProductCategoriesWithoutSubcategories\x12\x44\n\ncategories\x18\x01 \x03(\x0b\x32\x30.products.v1.ProductCategoryWithoutSubcategoriesB\x80\x01\n\x1corg.megacommerce.products.v1B\x16ProductCategoriesProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,18 +34,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\034org.megacommerce.products.v1B\026ProductCategoriesProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\370\001\001'
   _globals['_PRODUCTSUBCATEGORY_ATTRIBUTESENTRY']._loaded_options = None
   _globals['_PRODUCTSUBCATEGORY_ATTRIBUTESENTRY']._serialized_options = b'8\001'
-  _globals['_PRODUCTCATEGORY']._serialized_start=76
-  _globals['_PRODUCTCATEGORY']._serialized_end=175
-  _globals['_PRODUCTSUBCATEGORY']._serialized_start=178
-  _globals['_PRODUCTSUBCATEGORY']._serialized_end=386
-  _globals['_PRODUCTSUBCATEGORY_ATTRIBUTESENTRY']._serialized_start=295
-  _globals['_PRODUCTSUBCATEGORY_ATTRIBUTESENTRY']._serialized_end=386
-  _globals['_PRODUCTSUBCATEGORYATTRIBUTE']._serialized_start=388
-  _globals['_PRODUCTSUBCATEGORYATTRIBUTE']._serialized_end=471
-  _globals['_PRODUCTCATEGORIES']._serialized_start=473
-  _globals['_PRODUCTCATEGORIES']._serialized_end=542
-  _globals['_PRODUCTCATEGORYWITHOUTSUBCATEGORIES']._serialized_start=544
-  _globals['_PRODUCTCATEGORYWITHOUTSUBCATEGORIES']._serialized_end=607
-  _globals['_PRODUCTCATEGORIESWITHOUTSUBCATEGORIES']._serialized_start=609
-  _globals['_PRODUCTCATEGORIESWITHOUTSUBCATEGORIES']._serialized_end=718
+  _globals['_PRODUCTCATEGORY']._serialized_start=53
+  _globals['_PRODUCTCATEGORY']._serialized_end=152
+  _globals['_PRODUCTSUBCATEGORY']._serialized_start=155
+  _globals['_PRODUCTSUBCATEGORY']._serialized_end=363
+  _globals['_PRODUCTSUBCATEGORY_ATTRIBUTESENTRY']._serialized_start=272
+  _globals['_PRODUCTSUBCATEGORY_ATTRIBUTESENTRY']._serialized_end=363
+  _globals['_PRODUCTSUBCATEGORYATTRIBUTE']._serialized_start=365
+  _globals['_PRODUCTSUBCATEGORYATTRIBUTE']._serialized_end=448
+  _globals['_PRODUCTCATEGORIES']._serialized_start=450
+  _globals['_PRODUCTCATEGORIES']._serialized_end=519
+  _globals['_PRODUCTCATEGORYWITHOUTSUBCATEGORIES']._serialized_start=521
+  _globals['_PRODUCTCATEGORYWITHOUTSUBCATEGORIES']._serialized_end=584
+  _globals['_PRODUCTCATEGORIESWITHOUTSUBCATEGORIES']._serialized_start=586
+  _globals['_PRODUCTCATEGORIESWITHOUTSUBCATEGORIES']._serialized_end=695
 # @@protoc_insertion_point(module_scope)

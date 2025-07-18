@@ -19,6 +19,7 @@ import * as grpcWeb from 'grpc-web';
 
 import * as products_v1_product_create_pb from '../../products/v1/product_create_pb'; // proto import: "products/v1/product_create.proto"
 import * as products_v1_product_data_pb from '../../products/v1/product_data_pb'; // proto import: "products/v1/product_data.proto"
+import * as products_v1_product_list_pb from '../../products/v1/product_list_pb'; // proto import: "products/v1/product_list.proto"
 
 
 export class ProductsServiceClient {
@@ -124,6 +125,49 @@ export class ProductsServiceClient {
     request,
     metadata || {},
     this.methodDescriptorProductData);
+  }
+
+  methodDescriptorProductList = new grpcWeb.MethodDescriptor(
+    '/products.v1.ProductsService/ProductList',
+    grpcWeb.MethodType.UNARY,
+    products_v1_product_list_pb.ProductListRequest,
+    products_v1_product_list_pb.ProductListResponse,
+    (request: products_v1_product_list_pb.ProductListRequest) => {
+      return request.serializeBinary();
+    },
+    products_v1_product_list_pb.ProductListResponse.deserializeBinary
+  );
+
+  productList(
+    request: products_v1_product_list_pb.ProductListRequest,
+    metadata?: grpcWeb.Metadata | null): Promise<products_v1_product_list_pb.ProductListResponse>;
+
+  productList(
+    request: products_v1_product_list_pb.ProductListRequest,
+    metadata: grpcWeb.Metadata | null,
+    callback: (err: grpcWeb.RpcError,
+               response: products_v1_product_list_pb.ProductListResponse) => void): grpcWeb.ClientReadableStream<products_v1_product_list_pb.ProductListResponse>;
+
+  productList(
+    request: products_v1_product_list_pb.ProductListRequest,
+    metadata?: grpcWeb.Metadata | null,
+    callback?: (err: grpcWeb.RpcError,
+               response: products_v1_product_list_pb.ProductListResponse) => void) {
+    if (callback !== undefined) {
+      return this.client_.rpcCall(
+        this.hostname_ +
+          '/products.v1.ProductsService/ProductList',
+        request,
+        metadata || {},
+        this.methodDescriptorProductList,
+        callback);
+    }
+    return this.client_.unaryCall(
+    this.hostname_ +
+      '/products.v1.ProductsService/ProductList',
+    request,
+    metadata || {},
+    this.methodDescriptorProductList);
   }
 
 }

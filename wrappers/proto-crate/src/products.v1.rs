@@ -188,6 +188,59 @@ pub mod product_data_response {
         Error(super::super::super::shared::v1::AppError),
     }
 }
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductListItem {
+    #[prost(string, tag = "1")]
+    pub id: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub user_id: ::prost::alloc::string::String,
+    #[prost(string, tag = "6")]
+    pub title: ::prost::alloc::string::String,
+    #[prost(string, tag = "7")]
+    pub description: ::prost::alloc::string::String,
+    #[prost(string, tag = "8")]
+    pub slug: ::prost::alloc::string::String,
+    #[prost(string, tag = "9")]
+    pub price: ::prost::alloc::string::String,
+    #[prost(string, tag = "10")]
+    pub currency_code: ::prost::alloc::string::String,
+    #[prost(bool, tag = "13")]
+    pub ar_enabled: bool,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductListRequest {
+    #[prost(uint32, tag = "1")]
+    pub page: u32,
+    #[prost(string, tag = "2")]
+    pub last_id: ::prost::alloc::string::String,
+    #[prost(message, optional, tag = "3")]
+    pub order_price: ::core::option::Option<super::super::shared::v1::OrderDirection>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductListResponse {
+    #[prost(oneof = "product_list_response::Response", tags = "1, 2")]
+    pub response: ::core::option::Option<product_list_response::Response>,
+}
+/// Nested message and enum types in `ProductListResponse`.
+pub mod product_list_response {
+    #[derive(serde::Serialize, serde::Deserialize)]
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Response {
+        #[prost(message, tag = "1")]
+        Data(super::ProductListResponseData),
+        #[prost(message, tag = "2")]
+        Error(super::super::super::shared::v1::AppError),
+    }
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductListResponseData {
+    #[prost(message, repeated, tag = "1")]
+    pub data: ::prost::alloc::vec::Vec<ProductListItem>,
+}
 /// Generated client implementations.
 pub mod products_service_client {
     #![allow(
@@ -327,6 +380,30 @@ pub mod products_service_client {
                 .insert(GrpcMethod::new("products.v1.ProductsService", "ProductData"));
             self.inner.unary(req, path, codec).await
         }
+        pub async fn product_list(
+            &mut self,
+            request: impl tonic::IntoRequest<super::ProductListRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::ProductListResponse>,
+            tonic::Status,
+        > {
+            self.inner
+                .ready()
+                .await
+                .map_err(|e| {
+                    tonic::Status::unknown(
+                        format!("Service was not ready: {}", e.into()),
+                    )
+                })?;
+            let codec = tonic::codec::ProstCodec::default();
+            let path = http::uri::PathAndQuery::from_static(
+                "/products.v1.ProductsService/ProductList",
+            );
+            let mut req = request.into_request();
+            req.extensions_mut()
+                .insert(GrpcMethod::new("products.v1.ProductsService", "ProductList"));
+            self.inner.unary(req, path, codec).await
+        }
     }
 }
 /// Generated server implementations.
@@ -354,6 +431,13 @@ pub mod products_service_server {
             request: tonic::Request<super::ProductDataRequest>,
         ) -> std::result::Result<
             tonic::Response<super::ProductDataResponse>,
+            tonic::Status,
+        >;
+        async fn product_list(
+            &self,
+            request: tonic::Request<super::ProductListRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::ProductListResponse>,
             tonic::Status,
         >;
     }
@@ -509,6 +593,51 @@ pub mod products_service_server {
                     let inner = self.inner.clone();
                     let fut = async move {
                         let method = ProductDataSvc(inner);
+                        let codec = tonic::codec::ProstCodec::default();
+                        let mut grpc = tonic::server::Grpc::new(codec)
+                            .apply_compression_config(
+                                accept_compression_encodings,
+                                send_compression_encodings,
+                            )
+                            .apply_max_message_size_config(
+                                max_decoding_message_size,
+                                max_encoding_message_size,
+                            );
+                        let res = grpc.unary(method, req).await;
+                        Ok(res)
+                    };
+                    Box::pin(fut)
+                }
+                "/products.v1.ProductsService/ProductList" => {
+                    #[allow(non_camel_case_types)]
+                    struct ProductListSvc<T: ProductsService>(pub Arc<T>);
+                    impl<
+                        T: ProductsService,
+                    > tonic::server::UnaryService<super::ProductListRequest>
+                    for ProductListSvc<T> {
+                        type Response = super::ProductListResponse;
+                        type Future = BoxFuture<
+                            tonic::Response<Self::Response>,
+                            tonic::Status,
+                        >;
+                        fn call(
+                            &mut self,
+                            request: tonic::Request<super::ProductListRequest>,
+                        ) -> Self::Future {
+                            let inner = Arc::clone(&self.0);
+                            let fut = async move {
+                                <T as ProductsService>::product_list(&inner, request).await
+                            };
+                            Box::pin(fut)
+                        }
+                    }
+                    let accept_compression_encodings = self.accept_compression_encodings;
+                    let send_compression_encodings = self.send_compression_encodings;
+                    let max_decoding_message_size = self.max_decoding_message_size;
+                    let max_encoding_message_size = self.max_encoding_message_size;
+                    let inner = self.inner.clone();
+                    let fut = async move {
+                        let method = ProductListSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

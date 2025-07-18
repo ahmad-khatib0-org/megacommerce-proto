@@ -40,31 +40,35 @@ const char descriptor_table_protodef_products_2fv1_2fproducts_2eproto[] ABSL_ATT
     protodesc_cold) = {
     "\n\032products/v1/products.proto\022\013products.v"
     "1\032 products/v1/product_create.proto\032\036pro"
-    "ducts/v1/product_data.proto2\273\001\n\017Products"
-    "Service\022V\n\rProductCreate\022!.products.v1.P"
-    "roductCreateRequest\032\".products.v1.Produc"
-    "tCreateResponse\022P\n\013ProductData\022\037.product"
-    "s.v1.ProductDataRequest\032 .products.v1.Pr"
-    "oductDataResponseBw\n\034org.megacommerce.pr"
-    "oducts.v1B\rProductsProtoZEgithub.com/ahm"
-    "ad-khatib0-org/megacommerce-proto/gen/go"
-    "/products/v1;v1\370\001\001b\006proto3"
+    "ducts/v1/product_data.proto\032\036products/v1"
+    "/product_list.proto2\215\002\n\017ProductsService\022"
+    "V\n\rProductCreate\022!.products.v1.ProductCr"
+    "eateRequest\032\".products.v1.ProductCreateR"
+    "esponse\022P\n\013ProductData\022\037.products.v1.Pro"
+    "ductDataRequest\032 .products.v1.ProductDat"
+    "aResponse\022P\n\013ProductList\022\037.products.v1.P"
+    "roductListRequest\032 .products.v1.ProductL"
+    "istResponseBw\n\034org.megacommerce.products"
+    ".v1B\rProductsProtoZEgithub.com/ahmad-kha"
+    "tib0-org/megacommerce-proto/gen/go/produ"
+    "cts/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
-    descriptor_table_products_2fv1_2fproducts_2eproto_deps[2] = {
+    descriptor_table_products_2fv1_2fproducts_2eproto_deps[3] = {
         &::descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
         &::descriptor_table_products_2fv1_2fproduct_5fdata_2eproto,
+        &::descriptor_table_products_2fv1_2fproduct_5flist_2eproto,
 };
 static ::absl::once_flag descriptor_table_products_2fv1_2fproducts_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproducts_2eproto = {
     false,
     false,
-    426,
+    540,
     descriptor_table_protodef_products_2fv1_2fproducts_2eproto,
     "products/v1/products.proto",
     &descriptor_table_products_2fv1_2fproducts_2eproto_once,
     descriptor_table_products_2fv1_2fproducts_2eproto_deps,
-    2,
+    3,
     0,
     schemas,
     file_default_instances,

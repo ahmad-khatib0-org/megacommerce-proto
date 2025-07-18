@@ -14,6 +14,23 @@ pub struct NestedStringMap {
     #[prost(map = "string, message", tag = "1")]
     pub data: ::std::collections::HashMap<::prost::alloc::string::String, StringMap>,
 }
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+pub struct OrderDirection {
+    #[prost(oneof = "order_direction::Order", tags = "1, 2")]
+    pub order: ::core::option::Option<order_direction::Order>,
+}
+/// Nested message and enum types in `OrderDirection`.
+pub mod order_direction {
+    #[derive(serde::Serialize, serde::Deserialize)]
+    #[derive(Clone, Copy, PartialEq, ::prost::Oneof)]
+    pub enum Order {
+        #[prost(bool, tag = "1")]
+        Asc(bool),
+        #[prost(bool, tag = "2")]
+        Desc(bool),
+    }
+}
 /// Custom Any message to avoid google.protobuf.Any issues
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

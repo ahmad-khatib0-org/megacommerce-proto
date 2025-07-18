@@ -1403,6 +1403,651 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
 
   }
 
+  public interface OrderDirectionOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:shared.v1.OrderDirection)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>bool asc = 1 [json_name = "asc"];</code>
+     * @return Whether the asc field is set.
+     */
+    boolean hasAsc();
+    /**
+     * <code>bool asc = 1 [json_name = "asc"];</code>
+     * @return The asc.
+     */
+    boolean getAsc();
+
+    /**
+     * <code>bool desc = 2 [json_name = "desc"];</code>
+     * @return Whether the desc field is set.
+     */
+    boolean hasDesc();
+    /**
+     * <code>bool desc = 2 [json_name = "desc"];</code>
+     * @return The desc.
+     */
+    boolean getDesc();
+
+    org.megacommerce.shared.v1.TypesProto.OrderDirection.OrderCase getOrderCase();
+  }
+  /**
+   * Protobuf type {@code shared.v1.OrderDirection}
+   */
+  public static final class OrderDirection extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:shared.v1.OrderDirection)
+      OrderDirectionOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        OrderDirection.class.getName());
+    }
+    // Use OrderDirection.newBuilder() to construct.
+    private OrderDirection(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private OrderDirection() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_OrderDirection_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_OrderDirection_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.shared.v1.TypesProto.OrderDirection.class, org.megacommerce.shared.v1.TypesProto.OrderDirection.Builder.class);
+    }
+
+    private int orderCase_ = 0;
+    @SuppressWarnings("serial")
+    private java.lang.Object order_;
+    public enum OrderCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      ASC(1),
+      DESC(2),
+      ORDER_NOT_SET(0);
+      private final int value;
+      private OrderCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static OrderCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static OrderCase forNumber(int value) {
+        switch (value) {
+          case 1: return ASC;
+          case 2: return DESC;
+          case 0: return ORDER_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public OrderCase
+    getOrderCase() {
+      return OrderCase.forNumber(
+          orderCase_);
+    }
+
+    public static final int ASC_FIELD_NUMBER = 1;
+    /**
+     * <code>bool asc = 1 [json_name = "asc"];</code>
+     * @return Whether the asc field is set.
+     */
+    @java.lang.Override
+    public boolean hasAsc() {
+      return orderCase_ == 1;
+    }
+    /**
+     * <code>bool asc = 1 [json_name = "asc"];</code>
+     * @return The asc.
+     */
+    @java.lang.Override
+    public boolean getAsc() {
+      if (orderCase_ == 1) {
+        return (java.lang.Boolean) order_;
+      }
+      return false;
+    }
+
+    public static final int DESC_FIELD_NUMBER = 2;
+    /**
+     * <code>bool desc = 2 [json_name = "desc"];</code>
+     * @return Whether the desc field is set.
+     */
+    @java.lang.Override
+    public boolean hasDesc() {
+      return orderCase_ == 2;
+    }
+    /**
+     * <code>bool desc = 2 [json_name = "desc"];</code>
+     * @return The desc.
+     */
+    @java.lang.Override
+    public boolean getDesc() {
+      if (orderCase_ == 2) {
+        return (java.lang.Boolean) order_;
+      }
+      return false;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (orderCase_ == 1) {
+        output.writeBool(
+            1, (boolean)((java.lang.Boolean) order_));
+      }
+      if (orderCase_ == 2) {
+        output.writeBool(
+            2, (boolean)((java.lang.Boolean) order_));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (orderCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(
+              1, (boolean)((java.lang.Boolean) order_));
+      }
+      if (orderCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(
+              2, (boolean)((java.lang.Boolean) order_));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.shared.v1.TypesProto.OrderDirection)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.shared.v1.TypesProto.OrderDirection other = (org.megacommerce.shared.v1.TypesProto.OrderDirection) obj;
+
+      if (!getOrderCase().equals(other.getOrderCase())) return false;
+      switch (orderCase_) {
+        case 1:
+          if (getAsc()
+              != other.getAsc()) return false;
+          break;
+        case 2:
+          if (getDesc()
+              != other.getDesc()) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (orderCase_) {
+        case 1:
+          hash = (37 * hash) + ASC_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+              getAsc());
+          break;
+        case 2:
+          hash = (37 * hash) + DESC_FIELD_NUMBER;
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+              getDesc());
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.shared.v1.TypesProto.OrderDirection parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.OrderDirection parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.OrderDirection parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.OrderDirection parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.OrderDirection parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.OrderDirection parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.OrderDirection parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.OrderDirection parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.shared.v1.TypesProto.OrderDirection parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.shared.v1.TypesProto.OrderDirection parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.OrderDirection parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.OrderDirection parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.shared.v1.TypesProto.OrderDirection prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code shared.v1.OrderDirection}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:shared.v1.OrderDirection)
+        org.megacommerce.shared.v1.TypesProto.OrderDirectionOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_OrderDirection_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_OrderDirection_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.shared.v1.TypesProto.OrderDirection.class, org.megacommerce.shared.v1.TypesProto.OrderDirection.Builder.class);
+      }
+
+      // Construct using org.megacommerce.shared.v1.TypesProto.OrderDirection.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        orderCase_ = 0;
+        order_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_OrderDirection_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.OrderDirection getDefaultInstanceForType() {
+        return org.megacommerce.shared.v1.TypesProto.OrderDirection.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.OrderDirection build() {
+        org.megacommerce.shared.v1.TypesProto.OrderDirection result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.OrderDirection buildPartial() {
+        org.megacommerce.shared.v1.TypesProto.OrderDirection result = new org.megacommerce.shared.v1.TypesProto.OrderDirection(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.shared.v1.TypesProto.OrderDirection result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(org.megacommerce.shared.v1.TypesProto.OrderDirection result) {
+        result.orderCase_ = orderCase_;
+        result.order_ = this.order_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.shared.v1.TypesProto.OrderDirection) {
+          return mergeFrom((org.megacommerce.shared.v1.TypesProto.OrderDirection)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.shared.v1.TypesProto.OrderDirection other) {
+        if (other == org.megacommerce.shared.v1.TypesProto.OrderDirection.getDefaultInstance()) return this;
+        switch (other.getOrderCase()) {
+          case ASC: {
+            setAsc(other.getAsc());
+            break;
+          }
+          case DESC: {
+            setDesc(other.getDesc());
+            break;
+          }
+          case ORDER_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                order_ = input.readBool();
+                orderCase_ = 1;
+                break;
+              } // case 8
+              case 16: {
+                order_ = input.readBool();
+                orderCase_ = 2;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int orderCase_ = 0;
+      private java.lang.Object order_;
+      public OrderCase
+          getOrderCase() {
+        return OrderCase.forNumber(
+            orderCase_);
+      }
+
+      public Builder clearOrder() {
+        orderCase_ = 0;
+        order_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      /**
+       * <code>bool asc = 1 [json_name = "asc"];</code>
+       * @return Whether the asc field is set.
+       */
+      public boolean hasAsc() {
+        return orderCase_ == 1;
+      }
+      /**
+       * <code>bool asc = 1 [json_name = "asc"];</code>
+       * @return The asc.
+       */
+      public boolean getAsc() {
+        if (orderCase_ == 1) {
+          return (java.lang.Boolean) order_;
+        }
+        return false;
+      }
+      /**
+       * <code>bool asc = 1 [json_name = "asc"];</code>
+       * @param value The asc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAsc(boolean value) {
+
+        orderCase_ = 1;
+        order_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool asc = 1 [json_name = "asc"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAsc() {
+        if (orderCase_ == 1) {
+          orderCase_ = 0;
+          order_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       * <code>bool desc = 2 [json_name = "desc"];</code>
+       * @return Whether the desc field is set.
+       */
+      public boolean hasDesc() {
+        return orderCase_ == 2;
+      }
+      /**
+       * <code>bool desc = 2 [json_name = "desc"];</code>
+       * @return The desc.
+       */
+      public boolean getDesc() {
+        if (orderCase_ == 2) {
+          return (java.lang.Boolean) order_;
+        }
+        return false;
+      }
+      /**
+       * <code>bool desc = 2 [json_name = "desc"];</code>
+       * @param value The desc to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDesc(boolean value) {
+
+        orderCase_ = 2;
+        order_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool desc = 2 [json_name = "desc"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDesc() {
+        if (orderCase_ == 2) {
+          orderCase_ = 0;
+          order_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:shared.v1.OrderDirection)
+    }
+
+    // @@protoc_insertion_point(class_scope:shared.v1.OrderDirection)
+    private static final org.megacommerce.shared.v1.TypesProto.OrderDirection DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.shared.v1.TypesProto.OrderDirection();
+    }
+
+    public static org.megacommerce.shared.v1.TypesProto.OrderDirection getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<OrderDirection>
+        PARSER = new com.google.protobuf.AbstractParser<OrderDirection>() {
+      @java.lang.Override
+      public OrderDirection parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<OrderDirection> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<OrderDirection> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.shared.v1.TypesProto.OrderDirection getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface AnyOrBuilder extends
       // @@protoc_insertion_point(interface_extends:shared.v1.Any)
       com.google.protobuf.MessageOrBuilder {
@@ -2426,6 +3071,11 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_shared_v1_NestedStringMap_DataEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_shared_v1_OrderDirection_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_shared_v1_OrderDirection_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_shared_v1_Any_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -2451,12 +3101,14 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
       "\017NestedStringMap\0228\n\004data\030\001 \003(\0132$.shared." +
       "v1.NestedStringMap.DataEntryR\004data\032M\n\tDa" +
       "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\013" +
-      "2\024.shared.v1.StringMapR\005value:\0028\001\"6\n\003Any" +
-      "\022\031\n\010type_url\030\001 \001(\tR\007typeUrl\022\024\n\005value\030\002 \001" +
-      "(\014R\005value\"\007\n\005EmptyBp\n\032org.megacommerce.s" +
-      "hared.v1B\nTypesProtoZCgithub.com/ahmad-k" +
-      "hatib0-org/megacommerce-proto/gen/go/sha" +
-      "red/v1;v1\370\001\001b\006proto3"
+      "2\024.shared.v1.StringMapR\005value:\0028\001\"C\n\016Ord" +
+      "erDirection\022\022\n\003asc\030\001 \001(\010H\000R\003asc\022\024\n\004desc\030" +
+      "\002 \001(\010H\000R\004descB\007\n\005order\"6\n\003Any\022\031\n\010type_ur" +
+      "l\030\001 \001(\tR\007typeUrl\022\024\n\005value\030\002 \001(\014R\005value\"\007" +
+      "\n\005EmptyBp\n\032org.megacommerce.shared.v1B\nT" +
+      "ypesProtoZCgithub.com/ahmad-khatib0-org/" +
+      "megacommerce-proto/gen/go/shared/v1;v1\370\001" +
+      "\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2486,14 +3138,20 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_NestedStringMap_DataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_shared_v1_Any_descriptor =
+    internal_static_shared_v1_OrderDirection_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_shared_v1_OrderDirection_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_shared_v1_OrderDirection_descriptor,
+        new java.lang.String[] { "Asc", "Desc", "Order", });
+    internal_static_shared_v1_Any_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_shared_v1_Any_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_Any_descriptor,
         new java.lang.String[] { "TypeUrl", "Value", });
     internal_static_shared_v1_Empty_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_shared_v1_Empty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_Empty_descriptor,

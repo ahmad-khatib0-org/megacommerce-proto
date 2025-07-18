@@ -2,7 +2,6 @@
 // file: products/v1/product_categories.proto
 
 import * as jspb from "google-protobuf";
-import * as shared_v1_types_pb from "../../shared/v1/types_pb";
 
 export class ProductCategory extends jspb.Message {
   getId(): string;
