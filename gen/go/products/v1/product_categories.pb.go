@@ -7,7 +7,7 @@
 package v1
 
 import (
-	v1 "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1"
+	_ "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -146,7 +146,7 @@ type ProductSubcategoryAttribute struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Required      bool                   `protobuf:"varint,1,opt,name=required,proto3" json:"required,omitempty"`
 	Type          string                 `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
-	Data          *v1.Any                `protobuf:"bytes,3,opt,name=data,proto3,oneof" json:"data,omitempty"`
+	StringArray   []string               `protobuf:"bytes,3,rep,name=string_array,json=stringArray,proto3" json:"string_array,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -195,9 +195,9 @@ func (x *ProductSubcategoryAttribute) GetType() string {
 	return ""
 }
 
-func (x *ProductSubcategoryAttribute) GetData() *v1.Any {
+func (x *ProductSubcategoryAttribute) GetStringArray() []string {
 	if x != nil {
-		return x.Data
+		return x.StringArray
 	}
 	return nil
 }
@@ -359,12 +359,11 @@ const file_products_v1_product_categories_proto_rawDesc = "" +
 	"attributes\x1ag\n" +
 	"\x0fAttributesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12>\n" +
-	"\x05value\x18\x02 \x01(\v2(.products.v1.ProductSubcategoryAttributeR\x05value:\x028\x01\"\x7f\n" +
+	"\x05value\x18\x02 \x01(\v2(.products.v1.ProductSubcategoryAttributeR\x05value:\x028\x01\"p\n" +
 	"\x1bProductSubcategoryAttribute\x12\x1a\n" +
 	"\brequired\x18\x01 \x01(\bR\brequired\x12\x12\n" +
-	"\x04type\x18\x02 \x01(\tR\x04type\x12'\n" +
-	"\x04data\x18\x03 \x01(\v2\x0e.shared.v1.AnyH\x00R\x04data\x88\x01\x01B\a\n" +
-	"\x05_data\"Q\n" +
+	"\x04type\x18\x02 \x01(\tR\x04type\x12!\n" +
+	"\fstring_array\x18\x03 \x03(\tR\vstringArray\"Q\n" +
 	"\x11ProductCategories\x12<\n" +
 	"\n" +
 	"categories\x18\x01 \x03(\v2\x1c.products.v1.ProductCategoryR\n" +
@@ -398,21 +397,19 @@ var file_products_v1_product_categories_proto_goTypes = []any{
 	(*ProductCategories)(nil),                     // 3: products.v1.ProductCategories
 	(*ProductCategoryWithoutSubcategories)(nil),   // 4: products.v1.ProductCategoryWithoutSubcategories
 	(*ProductCategoriesWithoutSubcategories)(nil), // 5: products.v1.ProductCategoriesWithoutSubcategories
-	nil,            // 6: products.v1.ProductSubcategory.AttributesEntry
-	(*v1.Any)(nil), // 7: shared.v1.Any
+	nil, // 6: products.v1.ProductSubcategory.AttributesEntry
 }
 var file_products_v1_product_categories_proto_depIdxs = []int32{
 	1, // 0: products.v1.ProductCategory.subcategories:type_name -> products.v1.ProductSubcategory
 	6, // 1: products.v1.ProductSubcategory.attributes:type_name -> products.v1.ProductSubcategory.AttributesEntry
-	7, // 2: products.v1.ProductSubcategoryAttribute.data:type_name -> shared.v1.Any
-	0, // 3: products.v1.ProductCategories.categories:type_name -> products.v1.ProductCategory
-	4, // 4: products.v1.ProductCategoriesWithoutSubcategories.categories:type_name -> products.v1.ProductCategoryWithoutSubcategories
-	2, // 5: products.v1.ProductSubcategory.AttributesEntry.value:type_name -> products.v1.ProductSubcategoryAttribute
-	6, // [6:6] is the sub-list for method output_type
-	6, // [6:6] is the sub-list for method input_type
-	6, // [6:6] is the sub-list for extension type_name
-	6, // [6:6] is the sub-list for extension extendee
-	0, // [0:6] is the sub-list for field type_name
+	0, // 2: products.v1.ProductCategories.categories:type_name -> products.v1.ProductCategory
+	4, // 3: products.v1.ProductCategoriesWithoutSubcategories.categories:type_name -> products.v1.ProductCategoryWithoutSubcategories
+	2, // 4: products.v1.ProductSubcategory.AttributesEntry.value:type_name -> products.v1.ProductSubcategoryAttribute
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_products_v1_product_categories_proto_init() }
@@ -420,7 +417,6 @@ func file_products_v1_product_categories_proto_init() {
 	if File_products_v1_product_categories_proto != nil {
 		return
 	}
-	file_products_v1_product_categories_proto_msgTypes[2].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

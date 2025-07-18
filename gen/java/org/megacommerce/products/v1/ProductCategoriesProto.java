@@ -2083,19 +2083,29 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         getTypeBytes();
 
     /**
-     * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
-     * @return Whether the data field is set.
+     * <code>repeated string string_array = 3 [json_name = "stringArray"];</code>
+     * @return A list containing the stringArray.
      */
-    boolean hasData();
+    java.util.List<java.lang.String>
+        getStringArrayList();
     /**
-     * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
-     * @return The data.
+     * <code>repeated string string_array = 3 [json_name = "stringArray"];</code>
+     * @return The count of stringArray.
      */
-    org.megacommerce.shared.v1.TypesProto.Any getData();
+    int getStringArrayCount();
     /**
-     * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
+     * <code>repeated string string_array = 3 [json_name = "stringArray"];</code>
+     * @param index The index of the element to return.
+     * @return The stringArray at the given index.
      */
-    org.megacommerce.shared.v1.TypesProto.AnyOrBuilder getDataOrBuilder();
+    java.lang.String getStringArray(int index);
+    /**
+     * <code>repeated string string_array = 3 [json_name = "stringArray"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the stringArray at the given index.
+     */
+    com.google.protobuf.ByteString
+        getStringArrayBytes(int index);
   }
   /**
    * Protobuf type {@code products.v1.ProductSubcategoryAttribute}
@@ -2120,6 +2130,8 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
     }
     private ProductSubcategoryAttribute() {
       type_ = "";
+      stringArray_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -2135,7 +2147,6 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
               org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute.class, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute.Builder.class);
     }
 
-    private int bitField0_;
     public static final int REQUIRED_FIELD_NUMBER = 1;
     private boolean required_ = false;
     /**
@@ -2186,30 +2197,41 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       }
     }
 
-    public static final int DATA_FIELD_NUMBER = 3;
-    private org.megacommerce.shared.v1.TypesProto.Any data_;
+    public static final int STRING_ARRAY_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList stringArray_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
-     * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
-     * @return Whether the data field is set.
+     * <code>repeated string string_array = 3 [json_name = "stringArray"];</code>
+     * @return A list containing the stringArray.
      */
-    @java.lang.Override
-    public boolean hasData() {
-      return ((bitField0_ & 0x00000001) != 0);
+    public com.google.protobuf.ProtocolStringList
+        getStringArrayList() {
+      return stringArray_;
     }
     /**
-     * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
-     * @return The data.
+     * <code>repeated string string_array = 3 [json_name = "stringArray"];</code>
+     * @return The count of stringArray.
      */
-    @java.lang.Override
-    public org.megacommerce.shared.v1.TypesProto.Any getData() {
-      return data_ == null ? org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance() : data_;
+    public int getStringArrayCount() {
+      return stringArray_.size();
     }
     /**
-     * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
+     * <code>repeated string string_array = 3 [json_name = "stringArray"];</code>
+     * @param index The index of the element to return.
+     * @return The stringArray at the given index.
      */
-    @java.lang.Override
-    public org.megacommerce.shared.v1.TypesProto.AnyOrBuilder getDataOrBuilder() {
-      return data_ == null ? org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance() : data_;
+    public java.lang.String getStringArray(int index) {
+      return stringArray_.get(index);
+    }
+    /**
+     * <code>repeated string string_array = 3 [json_name = "stringArray"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the stringArray at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getStringArrayBytes(int index) {
+      return stringArray_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2232,8 +2254,8 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(type_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 2, type_);
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeMessage(3, getData());
+      for (int i = 0; i < stringArray_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, stringArray_.getRaw(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -2251,9 +2273,13 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(type_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(2, type_);
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getData());
+      {
+        int dataSize = 0;
+        for (int i = 0; i < stringArray_.size(); i++) {
+          dataSize += computeStringSizeNoTag(stringArray_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getStringArrayList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2274,11 +2300,8 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
           != other.getRequired()) return false;
       if (!getType()
           .equals(other.getType())) return false;
-      if (hasData() != other.hasData()) return false;
-      if (hasData()) {
-        if (!getData()
-            .equals(other.getData())) return false;
-      }
+      if (!getStringArrayList()
+          .equals(other.getStringArrayList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2295,9 +2318,9 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
           getRequired());
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
-      if (hasData()) {
-        hash = (37 * hash) + DATA_FIELD_NUMBER;
-        hash = (53 * hash) + getData().hashCode();
+      if (getStringArrayCount() > 0) {
+        hash = (37 * hash) + STRING_ARRAY_FIELD_NUMBER;
+        hash = (53 * hash) + getStringArrayList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -2418,19 +2441,13 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
 
       // Construct using org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage
-                .alwaysUseFieldBuilders) {
-          internalGetDataFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
@@ -2438,11 +2455,8 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         bitField0_ = 0;
         required_ = false;
         type_ = "";
-        data_ = null;
-        if (dataBuilder_ != null) {
-          dataBuilder_.dispose();
-          dataBuilder_ = null;
-        }
+        stringArray_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -2482,14 +2496,10 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.type_ = type_;
         }
-        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.data_ = dataBuilder_ == null
-              ? data_
-              : dataBuilder_.build();
-          to_bitField0_ |= 0x00000001;
+          stringArray_.makeImmutable();
+          result.stringArray_ = stringArray_;
         }
-        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -2512,8 +2522,15 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
           bitField0_ |= 0x00000002;
           onChanged();
         }
-        if (other.hasData()) {
-          mergeData(other.getData());
+        if (!other.stringArray_.isEmpty()) {
+          if (stringArray_.isEmpty()) {
+            stringArray_ = other.stringArray_;
+            bitField0_ |= 0x00000004;
+          } else {
+            ensureStringArrayIsMutable();
+            stringArray_.addAll(other.stringArray_);
+          }
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -2552,10 +2569,9 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
                 break;
               } // case 18
               case 26: {
-                input.readMessage(
-                    internalGetDataFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000004;
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureStringArrayIsMutable();
+                stringArray_.add(s);
                 break;
               } // case 26
               default: {
@@ -2679,125 +2695,115 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         return this;
       }
 
-      private org.megacommerce.shared.v1.TypesProto.Any data_;
-      private com.google.protobuf.SingleFieldBuilder<
-          org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> dataBuilder_;
-      /**
-       * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
-       * @return Whether the data field is set.
-       */
-      public boolean hasData() {
-        return ((bitField0_ & 0x00000004) != 0);
+      private com.google.protobuf.LazyStringArrayList stringArray_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensureStringArrayIsMutable() {
+        if (!stringArray_.isModifiable()) {
+          stringArray_ = new com.google.protobuf.LazyStringArrayList(stringArray_);
+        }
+        bitField0_ |= 0x00000004;
       }
       /**
-       * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
-       * @return The data.
+       * <code>repeated string string_array = 3 [json_name = "stringArray"];</code>
+       * @return A list containing the stringArray.
        */
-      public org.megacommerce.shared.v1.TypesProto.Any getData() {
-        if (dataBuilder_ == null) {
-          return data_ == null ? org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance() : data_;
-        } else {
-          return dataBuilder_.getMessage();
-        }
+      public com.google.protobuf.ProtocolStringList
+          getStringArrayList() {
+        stringArray_.makeImmutable();
+        return stringArray_;
       }
       /**
-       * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
+       * <code>repeated string string_array = 3 [json_name = "stringArray"];</code>
+       * @return The count of stringArray.
        */
-      public Builder setData(org.megacommerce.shared.v1.TypesProto.Any value) {
-        if (dataBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          data_ = value;
-        } else {
-          dataBuilder_.setMessage(value);
-        }
+      public int getStringArrayCount() {
+        return stringArray_.size();
+      }
+      /**
+       * <code>repeated string string_array = 3 [json_name = "stringArray"];</code>
+       * @param index The index of the element to return.
+       * @return The stringArray at the given index.
+       */
+      public java.lang.String getStringArray(int index) {
+        return stringArray_.get(index);
+      }
+      /**
+       * <code>repeated string string_array = 3 [json_name = "stringArray"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the stringArray at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getStringArrayBytes(int index) {
+        return stringArray_.getByteString(index);
+      }
+      /**
+       * <code>repeated string string_array = 3 [json_name = "stringArray"];</code>
+       * @param index The index to set the value at.
+       * @param value The stringArray to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStringArray(
+          int index, java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureStringArrayIsMutable();
+        stringArray_.set(index, value);
         bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
+       * <code>repeated string string_array = 3 [json_name = "stringArray"];</code>
+       * @param value The stringArray to add.
+       * @return This builder for chaining.
        */
-      public Builder setData(
-          org.megacommerce.shared.v1.TypesProto.Any.Builder builderForValue) {
-        if (dataBuilder_ == null) {
-          data_ = builderForValue.build();
-        } else {
-          dataBuilder_.setMessage(builderForValue.build());
-        }
+      public Builder addStringArray(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureStringArrayIsMutable();
+        stringArray_.add(value);
         bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
-       * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
+       * <code>repeated string string_array = 3 [json_name = "stringArray"];</code>
+       * @param values The stringArray to add.
+       * @return This builder for chaining.
        */
-      public Builder mergeData(org.megacommerce.shared.v1.TypesProto.Any value) {
-        if (dataBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0) &&
-            data_ != null &&
-            data_ != org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance()) {
-            getDataBuilder().mergeFrom(value);
-          } else {
-            data_ = value;
-          }
-        } else {
-          dataBuilder_.mergeFrom(value);
-        }
-        if (data_ != null) {
-          bitField0_ |= 0x00000004;
-          onChanged();
-        }
-        return this;
-      }
-      /**
-       * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
-       */
-      public Builder clearData() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        data_ = null;
-        if (dataBuilder_ != null) {
-          dataBuilder_.dispose();
-          dataBuilder_ = null;
-        }
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
-       */
-      public org.megacommerce.shared.v1.TypesProto.Any.Builder getDataBuilder() {
+      public Builder addAllStringArray(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureStringArrayIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, stringArray_);
         bitField0_ |= 0x00000004;
         onChanged();
-        return internalGetDataFieldBuilder().getBuilder();
+        return this;
       }
       /**
-       * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
+       * <code>repeated string string_array = 3 [json_name = "stringArray"];</code>
+       * @return This builder for chaining.
        */
-      public org.megacommerce.shared.v1.TypesProto.AnyOrBuilder getDataOrBuilder() {
-        if (dataBuilder_ != null) {
-          return dataBuilder_.getMessageOrBuilder();
-        } else {
-          return data_ == null ?
-              org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance() : data_;
-        }
+      public Builder clearStringArray() {
+        stringArray_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);;
+        onChanged();
+        return this;
       }
       /**
-       * <code>optional .shared.v1.Any data = 3 [json_name = "data"];</code>
+       * <code>repeated string string_array = 3 [json_name = "stringArray"];</code>
+       * @param value The bytes of the stringArray to add.
+       * @return This builder for chaining.
        */
-      private com.google.protobuf.SingleFieldBuilder<
-          org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> 
-          internalGetDataFieldBuilder() {
-        if (dataBuilder_ == null) {
-          dataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder>(
-                  getData(),
-                  getParentForChildren(),
-                  isClean());
-          data_ = null;
-        }
-        return dataBuilder_;
+      public Builder addStringArrayBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        ensureStringArrayIsMutable();
+        stringArray_.add(value);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:products.v1.ProductSubcategoryAttribute)
@@ -5044,20 +5050,20 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       "tesEntryR\nattributes\032g\n\017AttributesEntry\022" +
       "\020\n\003key\030\001 \001(\tR\003key\022>\n\005value\030\002 \001(\0132(.produ" +
       "cts.v1.ProductSubcategoryAttributeR\005valu" +
-      "e:\0028\001\"\177\n\033ProductSubcategoryAttribute\022\032\n\010" +
+      "e:\0028\001\"p\n\033ProductSubcategoryAttribute\022\032\n\010" +
       "required\030\001 \001(\010R\010required\022\022\n\004type\030\002 \001(\tR\004" +
-      "type\022\'\n\004data\030\003 \001(\0132\016.shared.v1.AnyH\000R\004da" +
-      "ta\210\001\001B\007\n\005_data\"Q\n\021ProductCategories\022<\n\nc" +
-      "ategories\030\001 \003(\0132\034.products.v1.ProductCat" +
-      "egoryR\ncategories\"I\n#ProductCategoryWith" +
-      "outSubcategories\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name" +
-      "\030\002 \001(\tR\004name\"y\n%ProductCategoriesWithout" +
-      "Subcategories\022P\n\ncategories\030\001 \003(\01320.prod" +
-      "ucts.v1.ProductCategoryWithoutSubcategor" +
-      "iesR\ncategoriesB\200\001\n\034org.megacommerce.pro" +
-      "ducts.v1B\026ProductCategoriesProtoZEgithub" +
-      ".com/ahmad-khatib0-org/megacommerce-prot" +
-      "o/gen/go/products/v1;v1\370\001\001b\006proto3"
+      "type\022!\n\014string_array\030\003 \003(\tR\013stringArray\"" +
+      "Q\n\021ProductCategories\022<\n\ncategories\030\001 \003(\013" +
+      "2\034.products.v1.ProductCategoryR\ncategori" +
+      "es\"I\n#ProductCategoryWithoutSubcategorie" +
+      "s\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\"y\n" +
+      "%ProductCategoriesWithoutSubcategories\022P" +
+      "\n\ncategories\030\001 \003(\01320.products.v1.Product" +
+      "CategoryWithoutSubcategoriesR\ncategories" +
+      "B\200\001\n\034org.megacommerce.products.v1B\026Produ" +
+      "ctCategoriesProtoZEgithub.com/ahmad-khat" +
+      "ib0-org/megacommerce-proto/gen/go/produc" +
+      "ts/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5087,7 +5093,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
     internal_static_products_v1_ProductSubcategoryAttribute_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductSubcategoryAttribute_descriptor,
-        new java.lang.String[] { "Required", "Type", "Data", });
+        new java.lang.String[] { "Required", "Type", "StringArray", });
     internal_static_products_v1_ProductCategories_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_products_v1_ProductCategories_fieldAccessorTable = new

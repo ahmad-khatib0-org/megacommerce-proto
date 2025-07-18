@@ -24,7 +24,7 @@ message ProductSubcategory {
 message ProductSubcategoryAttribute {
   bool required = 1;
   string type = 2;
-  optional shared.v1.Any data = 3;
+  repeated string string_array = 3;
 }
 
 message ProductCategories {

@@ -68,10 +68,10 @@ export class ProductSubcategoryAttribute extends jspb.Message {
   getType(): string;
   setType(value: string): void;
 
-  hasData(): boolean;
-  clearData(): void;
-  getData(): shared_v1_types_pb.Any | undefined;
-  setData(value?: shared_v1_types_pb.Any): void;
+  clearStringArrayList(): void;
+  getStringArrayList(): Array<string>;
+  setStringArrayList(value: Array<string>): void;
+  addStringArray(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ProductSubcategoryAttribute.AsObject;
@@ -87,7 +87,7 @@ export namespace ProductSubcategoryAttribute {
   export type AsObject = {
     required: boolean,
     type: string,
-    data?: shared_v1_types_pb.Any.AsObject,
+    stringArrayList: Array<string>,
   }
 }
 

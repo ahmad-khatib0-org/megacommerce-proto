@@ -82,7 +82,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.products.v1.ProductSubcategoryAttribute = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.products.v1.ProductSubcategoryAttribute.repeatedFields_, null);
 };
 goog.inherits(proto.products.v1.ProductSubcategoryAttribute, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -570,6 +570,13 @@ proto.products.v1.ProductSubcategory.prototype.clearAttributesMap = function() {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.products.v1.ProductSubcategoryAttribute.repeatedFields_ = [3];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -603,7 +610,7 @@ proto.products.v1.ProductSubcategoryAttribute.toObject = function(includeInstanc
   var f, obj = {
 required: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
 type: jspb.Message.getFieldWithDefault(msg, 2, ""),
-data: (f = msg.getData()) && shared_v1_types_pb.Any.toObject(includeInstance, f)
+stringArrayList: (f = jspb.Message.getRepeatedField(msg, 3)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -649,9 +656,8 @@ proto.products.v1.ProductSubcategoryAttribute.deserializeBinaryFromReader = func
       msg.setType(value);
       break;
     case 3:
-      var value = new shared_v1_types_pb.Any;
-      reader.readMessage(value,shared_v1_types_pb.Any.deserializeBinaryFromReader);
-      msg.setData(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.addStringArray(value);
       break;
     default:
       reader.skipField();
@@ -696,12 +702,11 @@ proto.products.v1.ProductSubcategoryAttribute.serializeBinaryToWriter = function
       f
     );
   }
-  f = message.getData();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getStringArrayList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
       3,
-      f,
-      shared_v1_types_pb.Any.serializeBinaryToWriter
+      f
     );
   }
 };
@@ -744,39 +749,39 @@ proto.products.v1.ProductSubcategoryAttribute.prototype.setType = function(value
 
 
 /**
- * optional shared.v1.Any data = 3;
- * @return {?proto.shared.v1.Any}
+ * repeated string string_array = 3;
+ * @return {!Array<string>}
  */
-proto.products.v1.ProductSubcategoryAttribute.prototype.getData = function() {
-  return /** @type{?proto.shared.v1.Any} */ (
-    jspb.Message.getWrapperField(this, shared_v1_types_pb.Any, 3));
+proto.products.v1.ProductSubcategoryAttribute.prototype.getStringArrayList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 3));
 };
 
 
 /**
- * @param {?proto.shared.v1.Any|undefined} value
- * @return {!proto.products.v1.ProductSubcategoryAttribute} returns this
-*/
-proto.products.v1.ProductSubcategoryAttribute.prototype.setData = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * @param {!Array<string>} value
  * @return {!proto.products.v1.ProductSubcategoryAttribute} returns this
  */
-proto.products.v1.ProductSubcategoryAttribute.prototype.clearData = function() {
-  return this.setData(undefined);
+proto.products.v1.ProductSubcategoryAttribute.prototype.setStringArrayList = function(value) {
+  return jspb.Message.setField(this, 3, value || []);
 };
 
 
 /**
- * Returns whether this field is set.
- * @return {boolean}
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.products.v1.ProductSubcategoryAttribute} returns this
  */
-proto.products.v1.ProductSubcategoryAttribute.prototype.hasData = function() {
-  return jspb.Message.getField(this, 3) != null;
+proto.products.v1.ProductSubcategoryAttribute.prototype.addStringArray = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 3, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.products.v1.ProductSubcategoryAttribute} returns this
+ */
+proto.products.v1.ProductSubcategoryAttribute.prototype.clearStringArrayList = function() {
+  return this.setStringArrayList([]);
 };
 
 

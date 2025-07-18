@@ -125,8 +125,8 @@ pub struct ProductSubcategoryAttribute {
     pub required: bool,
     #[prost(string, tag = "2")]
     pub r#type: ::prost::alloc::string::String,
-    #[prost(message, optional, tag = "3")]
-    pub data: ::core::option::Option<super::super::shared::v1::Any>,
+    #[prost(string, repeated, tag = "3")]
+    pub string_array: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
