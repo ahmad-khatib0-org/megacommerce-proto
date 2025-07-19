@@ -212,21 +212,29 @@ public final class UserProto {
         getAuthServiceBytes();
 
     /**
-     * <code>optional string roles = 12 [json_name = "roles"];</code>
-     * @return Whether the roles field is set.
+     * <code>repeated string roles = 12 [json_name = "roles"];</code>
+     * @return A list containing the roles.
      */
-    boolean hasRoles();
+    java.util.List<java.lang.String>
+        getRolesList();
     /**
-     * <code>optional string roles = 12 [json_name = "roles"];</code>
-     * @return The roles.
+     * <code>repeated string roles = 12 [json_name = "roles"];</code>
+     * @return The count of roles.
      */
-    java.lang.String getRoles();
+    int getRolesCount();
     /**
-     * <code>optional string roles = 12 [json_name = "roles"];</code>
-     * @return The bytes for roles.
+     * <code>repeated string roles = 12 [json_name = "roles"];</code>
+     * @param index The index of the element to return.
+     * @return The roles at the given index.
+     */
+    java.lang.String getRoles(int index);
+    /**
+     * <code>repeated string roles = 12 [json_name = "roles"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the roles at the given index.
      */
     com.google.protobuf.ByteString
-        getRolesBytes();
+        getRolesBytes(int index);
 
     /**
      * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
@@ -461,7 +469,8 @@ java.lang.String defaultValue);
       password_ = "";
       authData_ = "";
       authService_ = "";
-      roles_ = "";
+      roles_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       locale_ = "";
       mfaSecret_ = "";
     }
@@ -985,49 +994,39 @@ java.lang.String defaultValue);
 
     public static final int ROLES_FIELD_NUMBER = 12;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object roles_ = "";
+    private com.google.protobuf.LazyStringArrayList roles_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
-     * <code>optional string roles = 12 [json_name = "roles"];</code>
-     * @return Whether the roles field is set.
+     * <code>repeated string roles = 12 [json_name = "roles"];</code>
+     * @return A list containing the roles.
      */
-    @java.lang.Override
-    public boolean hasRoles() {
-      return ((bitField0_ & 0x00000800) != 0);
+    public com.google.protobuf.ProtocolStringList
+        getRolesList() {
+      return roles_;
     }
     /**
-     * <code>optional string roles = 12 [json_name = "roles"];</code>
-     * @return The roles.
+     * <code>repeated string roles = 12 [json_name = "roles"];</code>
+     * @return The count of roles.
      */
-    @java.lang.Override
-    public java.lang.String getRoles() {
-      java.lang.Object ref = roles_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        roles_ = s;
-        return s;
-      }
+    public int getRolesCount() {
+      return roles_.size();
     }
     /**
-     * <code>optional string roles = 12 [json_name = "roles"];</code>
-     * @return The bytes for roles.
+     * <code>repeated string roles = 12 [json_name = "roles"];</code>
+     * @param index The index of the element to return.
+     * @return The roles at the given index.
      */
-    @java.lang.Override
+    public java.lang.String getRoles(int index) {
+      return roles_.get(index);
+    }
+    /**
+     * <code>repeated string roles = 12 [json_name = "roles"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the roles at the given index.
+     */
     public com.google.protobuf.ByteString
-        getRolesBytes() {
-      java.lang.Object ref = roles_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        roles_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getRolesBytes(int index) {
+      return roles_.getByteString(index);
     }
 
     public static final int PROPS_FIELD_NUMBER = 13;
@@ -1196,7 +1195,7 @@ java.lang.String defaultValue) {
      */
     @java.lang.Override
     public boolean hasLastPasswordUpdate() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
      * <code>optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];</code>
@@ -1215,7 +1214,7 @@ java.lang.String defaultValue) {
      */
     @java.lang.Override
     public boolean hasLastPictureUpdate() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
      * <code>optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];</code>
@@ -1234,7 +1233,7 @@ java.lang.String defaultValue) {
      */
     @java.lang.Override
     public boolean hasFailedAttempts() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
      * <code>optional int32 failed_attempts = 17 [json_name = "failedAttempts"];</code>
@@ -1254,7 +1253,7 @@ java.lang.String defaultValue) {
      */
     @java.lang.Override
     public boolean hasLocale() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
      * <code>optional string locale = 18 [json_name = "locale"];</code>
@@ -1300,7 +1299,7 @@ java.lang.String defaultValue) {
      */
     @java.lang.Override
     public boolean hasMfaActive() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
      * <code>optional bool mfa_active = 19 [json_name = "mfaActive"];</code>
@@ -1320,7 +1319,7 @@ java.lang.String defaultValue) {
      */
     @java.lang.Override
     public boolean hasMfaSecret() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
      * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
@@ -1366,7 +1365,7 @@ java.lang.String defaultValue) {
      */
     @java.lang.Override
     public boolean hasLastActivityAt() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
      * <code>optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];</code>
@@ -1385,7 +1384,7 @@ java.lang.String defaultValue) {
      */
     @java.lang.Override
     public boolean hasLastLogin() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
      * <code>optional int64 last_login = 22 [json_name = "lastLogin"];</code>
@@ -1404,7 +1403,7 @@ java.lang.String defaultValue) {
      */
     @java.lang.Override
     public boolean hasCreatedAt() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
      * <code>optional int64 created_at = 23 [json_name = "createdAt"];</code>
@@ -1423,7 +1422,7 @@ java.lang.String defaultValue) {
      */
     @java.lang.Override
     public boolean hasUpdatedAt() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
      * <code>optional int64 updated_at = 24 [json_name = "updatedAt"];</code>
@@ -1442,7 +1441,7 @@ java.lang.String defaultValue) {
      */
     @java.lang.Override
     public boolean hasDeletedAt() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
     /**
      * <code>optional int64 deleted_at = 25 [json_name = "deletedAt"];</code>
@@ -1500,8 +1499,8 @@ java.lang.String defaultValue) {
       if (((bitField0_ & 0x00000400) != 0)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 11, authService_);
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 12, roles_);
+      for (int i = 0; i < roles_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 12, roles_.getRaw(i));
       }
       com.google.protobuf.GeneratedMessage
         .serializeStringMapTo(
@@ -1515,37 +1514,37 @@ java.lang.String defaultValue) {
           internalGetNotifyProps(),
           NotifyPropsDefaultEntryHolder.defaultEntry,
           14);
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         output.writeInt64(15, lastPasswordUpdate_);
       }
-      if (((bitField0_ & 0x00002000) != 0)) {
+      if (((bitField0_ & 0x00001000) != 0)) {
         output.writeInt64(16, lastPictureUpdate_);
       }
-      if (((bitField0_ & 0x00004000) != 0)) {
+      if (((bitField0_ & 0x00002000) != 0)) {
         output.writeInt32(17, failedAttempts_);
       }
-      if (((bitField0_ & 0x00008000) != 0)) {
+      if (((bitField0_ & 0x00004000) != 0)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 18, locale_);
       }
-      if (((bitField0_ & 0x00010000) != 0)) {
+      if (((bitField0_ & 0x00008000) != 0)) {
         output.writeBool(19, mfaActive_);
       }
-      if (((bitField0_ & 0x00020000) != 0)) {
+      if (((bitField0_ & 0x00010000) != 0)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 20, mfaSecret_);
       }
-      if (((bitField0_ & 0x00040000) != 0)) {
+      if (((bitField0_ & 0x00020000) != 0)) {
         output.writeInt64(21, lastActivityAt_);
       }
-      if (((bitField0_ & 0x00080000) != 0)) {
+      if (((bitField0_ & 0x00040000) != 0)) {
         output.writeInt64(22, lastLogin_);
       }
-      if (((bitField0_ & 0x00100000) != 0)) {
+      if (((bitField0_ & 0x00080000) != 0)) {
         output.writeInt64(23, createdAt_);
       }
-      if (((bitField0_ & 0x00200000) != 0)) {
+      if (((bitField0_ & 0x00100000) != 0)) {
         output.writeInt64(24, updatedAt_);
       }
-      if (((bitField0_ & 0x00400000) != 0)) {
+      if (((bitField0_ & 0x00200000) != 0)) {
         output.writeInt64(25, deletedAt_);
       }
       getUnknownFields().writeTo(output);
@@ -1591,8 +1590,13 @@ java.lang.String defaultValue) {
       if (((bitField0_ & 0x00000400) != 0)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(11, authService_);
       }
-      if (((bitField0_ & 0x00000800) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(12, roles_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < roles_.size(); i++) {
+          dataSize += computeStringSizeNoTag(roles_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getRolesList().size();
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetProps().getMap().entrySet()) {
@@ -1614,45 +1618,45 @@ java.lang.String defaultValue) {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(14, notifyProps__);
       }
-      if (((bitField0_ & 0x00001000) != 0)) {
+      if (((bitField0_ & 0x00000800) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(15, lastPasswordUpdate_);
       }
-      if (((bitField0_ & 0x00002000) != 0)) {
+      if (((bitField0_ & 0x00001000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(16, lastPictureUpdate_);
       }
-      if (((bitField0_ & 0x00004000) != 0)) {
+      if (((bitField0_ & 0x00002000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(17, failedAttempts_);
       }
-      if (((bitField0_ & 0x00008000) != 0)) {
+      if (((bitField0_ & 0x00004000) != 0)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(18, locale_);
       }
-      if (((bitField0_ & 0x00010000) != 0)) {
+      if (((bitField0_ & 0x00008000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(19, mfaActive_);
       }
-      if (((bitField0_ & 0x00020000) != 0)) {
+      if (((bitField0_ & 0x00010000) != 0)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(20, mfaSecret_);
       }
-      if (((bitField0_ & 0x00040000) != 0)) {
+      if (((bitField0_ & 0x00020000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(21, lastActivityAt_);
       }
-      if (((bitField0_ & 0x00080000) != 0)) {
+      if (((bitField0_ & 0x00040000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(22, lastLogin_);
       }
-      if (((bitField0_ & 0x00100000) != 0)) {
+      if (((bitField0_ & 0x00080000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(23, createdAt_);
       }
-      if (((bitField0_ & 0x00200000) != 0)) {
+      if (((bitField0_ & 0x00100000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(24, updatedAt_);
       }
-      if (((bitField0_ & 0x00400000) != 0)) {
+      if (((bitField0_ & 0x00200000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(25, deletedAt_);
       }
@@ -1726,11 +1730,8 @@ java.lang.String defaultValue) {
         if (!getAuthService()
             .equals(other.getAuthService())) return false;
       }
-      if (hasRoles() != other.hasRoles()) return false;
-      if (hasRoles()) {
-        if (!getRoles()
-            .equals(other.getRoles())) return false;
-      }
+      if (!getRolesList()
+          .equals(other.getRolesList())) return false;
       if (!internalGetProps().equals(
           other.internalGetProps())) return false;
       if (!internalGetNotifyProps().equals(
@@ -1846,9 +1847,9 @@ java.lang.String defaultValue) {
         hash = (37 * hash) + AUTH_SERVICE_FIELD_NUMBER;
         hash = (53 * hash) + getAuthService().hashCode();
       }
-      if (hasRoles()) {
+      if (getRolesCount() > 0) {
         hash = (37 * hash) + ROLES_FIELD_NUMBER;
-        hash = (53 * hash) + getRoles().hashCode();
+        hash = (53 * hash) + getRolesList().hashCode();
       }
       if (!internalGetProps().getMap().isEmpty()) {
         hash = (37 * hash) + PROPS_FIELD_NUMBER;
@@ -2078,7 +2079,8 @@ java.lang.String defaultValue) {
         password_ = "";
         authData_ = "";
         authService_ = "";
-        roles_ = "";
+        roles_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         internalGetMutableProps().clear();
         internalGetMutableNotifyProps().clear();
         lastPasswordUpdate_ = 0L;
@@ -2171,8 +2173,8 @@ java.lang.String defaultValue) {
           to_bitField0_ |= 0x00000400;
         }
         if (((from_bitField0_ & 0x00000800) != 0)) {
+          roles_.makeImmutable();
           result.roles_ = roles_;
-          to_bitField0_ |= 0x00000800;
         }
         if (((from_bitField0_ & 0x00001000) != 0)) {
           result.props_ = internalGetProps();
@@ -2184,47 +2186,47 @@ java.lang.String defaultValue) {
         }
         if (((from_bitField0_ & 0x00004000) != 0)) {
           result.lastPasswordUpdate_ = lastPasswordUpdate_;
-          to_bitField0_ |= 0x00001000;
+          to_bitField0_ |= 0x00000800;
         }
         if (((from_bitField0_ & 0x00008000) != 0)) {
           result.lastPictureUpdate_ = lastPictureUpdate_;
-          to_bitField0_ |= 0x00002000;
+          to_bitField0_ |= 0x00001000;
         }
         if (((from_bitField0_ & 0x00010000) != 0)) {
           result.failedAttempts_ = failedAttempts_;
-          to_bitField0_ |= 0x00004000;
+          to_bitField0_ |= 0x00002000;
         }
         if (((from_bitField0_ & 0x00020000) != 0)) {
           result.locale_ = locale_;
-          to_bitField0_ |= 0x00008000;
+          to_bitField0_ |= 0x00004000;
         }
         if (((from_bitField0_ & 0x00040000) != 0)) {
           result.mfaActive_ = mfaActive_;
-          to_bitField0_ |= 0x00010000;
+          to_bitField0_ |= 0x00008000;
         }
         if (((from_bitField0_ & 0x00080000) != 0)) {
           result.mfaSecret_ = mfaSecret_;
-          to_bitField0_ |= 0x00020000;
+          to_bitField0_ |= 0x00010000;
         }
         if (((from_bitField0_ & 0x00100000) != 0)) {
           result.lastActivityAt_ = lastActivityAt_;
-          to_bitField0_ |= 0x00040000;
+          to_bitField0_ |= 0x00020000;
         }
         if (((from_bitField0_ & 0x00200000) != 0)) {
           result.lastLogin_ = lastLogin_;
-          to_bitField0_ |= 0x00080000;
+          to_bitField0_ |= 0x00040000;
         }
         if (((from_bitField0_ & 0x00400000) != 0)) {
           result.createdAt_ = createdAt_;
-          to_bitField0_ |= 0x00100000;
+          to_bitField0_ |= 0x00080000;
         }
         if (((from_bitField0_ & 0x00800000) != 0)) {
           result.updatedAt_ = updatedAt_;
-          to_bitField0_ |= 0x00200000;
+          to_bitField0_ |= 0x00100000;
         }
         if (((from_bitField0_ & 0x01000000) != 0)) {
           result.deletedAt_ = deletedAt_;
-          to_bitField0_ |= 0x00400000;
+          to_bitField0_ |= 0x00200000;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -2294,9 +2296,14 @@ java.lang.String defaultValue) {
           bitField0_ |= 0x00000400;
           onChanged();
         }
-        if (other.hasRoles()) {
-          roles_ = other.roles_;
-          bitField0_ |= 0x00000800;
+        if (!other.roles_.isEmpty()) {
+          if (roles_.isEmpty()) {
+            roles_ = other.roles_;
+            bitField0_ |= 0x00000800;
+          } else {
+            ensureRolesIsMutable();
+            roles_.addAll(other.roles_);
+          }
           onChanged();
         }
         internalGetMutableProps().mergeFrom(
@@ -2424,8 +2431,9 @@ java.lang.String defaultValue) {
                 break;
               } // case 90
               case 98: {
-                roles_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureRolesIsMutable();
+                roles_.add(s);
                 break;
               } // case 98
               case 106: {
@@ -3348,80 +3356,112 @@ java.lang.String defaultValue) {
         return this;
       }
 
-      private java.lang.Object roles_ = "";
-      /**
-       * <code>optional string roles = 12 [json_name = "roles"];</code>
-       * @return Whether the roles field is set.
-       */
-      public boolean hasRoles() {
-        return ((bitField0_ & 0x00000800) != 0);
-      }
-      /**
-       * <code>optional string roles = 12 [json_name = "roles"];</code>
-       * @return The roles.
-       */
-      public java.lang.String getRoles() {
-        java.lang.Object ref = roles_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          roles_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+      private com.google.protobuf.LazyStringArrayList roles_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensureRolesIsMutable() {
+        if (!roles_.isModifiable()) {
+          roles_ = new com.google.protobuf.LazyStringArrayList(roles_);
         }
+        bitField0_ |= 0x00000800;
       }
       /**
-       * <code>optional string roles = 12 [json_name = "roles"];</code>
-       * @return The bytes for roles.
+       * <code>repeated string roles = 12 [json_name = "roles"];</code>
+       * @return A list containing the roles.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getRolesList() {
+        roles_.makeImmutable();
+        return roles_;
+      }
+      /**
+       * <code>repeated string roles = 12 [json_name = "roles"];</code>
+       * @return The count of roles.
+       */
+      public int getRolesCount() {
+        return roles_.size();
+      }
+      /**
+       * <code>repeated string roles = 12 [json_name = "roles"];</code>
+       * @param index The index of the element to return.
+       * @return The roles at the given index.
+       */
+      public java.lang.String getRoles(int index) {
+        return roles_.get(index);
+      }
+      /**
+       * <code>repeated string roles = 12 [json_name = "roles"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the roles at the given index.
        */
       public com.google.protobuf.ByteString
-          getRolesBytes() {
-        java.lang.Object ref = roles_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          roles_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+          getRolesBytes(int index) {
+        return roles_.getByteString(index);
       }
       /**
-       * <code>optional string roles = 12 [json_name = "roles"];</code>
+       * <code>repeated string roles = 12 [json_name = "roles"];</code>
+       * @param index The index to set the value at.
        * @param value The roles to set.
        * @return This builder for chaining.
        */
       public Builder setRoles(
-          java.lang.String value) {
+          int index, java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        roles_ = value;
+        ensureRolesIsMutable();
+        roles_.set(index, value);
         bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string roles = 12 [json_name = "roles"];</code>
+       * <code>repeated string roles = 12 [json_name = "roles"];</code>
+       * @param value The roles to add.
        * @return This builder for chaining.
        */
-      public Builder clearRoles() {
-        roles_ = getDefaultInstance().getRoles();
-        bitField0_ = (bitField0_ & ~0x00000800);
+      public Builder addRoles(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureRolesIsMutable();
+        roles_.add(value);
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string roles = 12 [json_name = "roles"];</code>
-       * @param value The bytes for roles to set.
+       * <code>repeated string roles = 12 [json_name = "roles"];</code>
+       * @param values The roles to add.
        * @return This builder for chaining.
        */
-      public Builder setRolesBytes(
+      public Builder addAllRoles(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureRolesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, roles_);
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string roles = 12 [json_name = "roles"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRoles() {
+        roles_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000800);;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string roles = 12 [json_name = "roles"];</code>
+       * @param value The bytes of the roles to add.
+       * @return This builder for chaining.
+       */
+      public Builder addRolesBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        roles_ = value;
+        ensureRolesIsMutable();
+        roles_.add(value);
         bitField0_ |= 0x00000800;
         onChanged();
         return this;
@@ -4275,7 +4315,7 @@ java.lang.String defaultValue) {
   static {
     java.lang.String[] descriptorData = {
       "\n\022user/v1/user.proto\022\007user.v1\032\026user/v1/s" +
-      "upplier.proto\"\251\013\n\004User\022\023\n\002id\030\001 \001(\tH\000R\002id" +
+      "upplier.proto\"\232\013\n\004User\022\023\n\002id\030\001 \001(\tH\000R\002id" +
       "\210\001\001\022\037\n\010username\030\002 \001(\tH\001R\010username\210\001\001\022\"\n\n" +
       "first_name\030\003 \001(\tH\002R\tfirstName\210\001\001\022 \n\tlast" +
       "_name\030\004 \001(\tH\003R\010lastName\210\001\001\022\031\n\005email\030\005 \001(" +
@@ -4285,38 +4325,38 @@ java.lang.String defaultValue) {
       "ilVerified\210\001\001\022\037\n\010password\030\t \001(\tH\010R\010passw" +
       "ord\210\001\001\022 \n\tauth_data\030\n \001(\tH\tR\010authData\210\001\001" +
       "\022&\n\014auth_service\030\013 \001(\tH\nR\013authService\210\001\001" +
-      "\022\031\n\005roles\030\014 \001(\tH\013R\005roles\210\001\001\022.\n\005props\030\r \003" +
-      "(\0132\030.user.v1.User.PropsEntryR\005props\022A\n\014n" +
-      "otify_props\030\016 \003(\0132\036.user.v1.User.NotifyP" +
-      "ropsEntryR\013notifyProps\0225\n\024last_password_" +
-      "update\030\017 \001(\003H\014R\022lastPasswordUpdate\210\001\001\0223\n" +
-      "\023last_picture_update\030\020 \001(\003H\rR\021lastPictur" +
-      "eUpdate\210\001\001\022,\n\017failed_attempts\030\021 \001(\005H\016R\016f" +
-      "ailedAttempts\210\001\001\022\033\n\006locale\030\022 \001(\tH\017R\006loca" +
-      "le\210\001\001\022\"\n\nmfa_active\030\023 \001(\010H\020R\tmfaActive\210\001" +
-      "\001\022\"\n\nmfa_secret\030\024 \001(\tH\021R\tmfaSecret\210\001\001\022-\n" +
-      "\020last_activity_at\030\025 \001(\003H\022R\016lastActivityA" +
-      "t\210\001\001\022\"\n\nlast_login\030\026 \001(\003H\023R\tlastLogin\210\001\001" +
-      "\022\"\n\ncreated_at\030\027 \001(\003H\024R\tcreatedAt\210\001\001\022\"\n\n" +
-      "updated_at\030\030 \001(\003H\025R\tupdatedAt\210\001\001\022\"\n\ndele" +
-      "ted_at\030\031 \001(\003H\026R\tdeletedAt\210\001\001\0328\n\nPropsEnt" +
-      "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005val" +
-      "ue:\0028\001\032>\n\020NotifyPropsEntry\022\020\n\003key\030\001 \001(\tR" +
-      "\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\005\n\003_idB\013\n" +
-      "\t_usernameB\r\n\013_first_nameB\014\n\n_last_nameB" +
-      "\010\n\006_emailB\014\n\n_user_typeB\r\n\013_membershipB\024" +
-      "\n\022_is_email_verifiedB\013\n\t_passwordB\014\n\n_au" +
-      "th_dataB\017\n\r_auth_serviceB\010\n\006_rolesB\027\n\025_l" +
-      "ast_password_updateB\026\n\024_last_picture_upd" +
-      "ateB\022\n\020_failed_attemptsB\t\n\007_localeB\r\n\013_m" +
-      "fa_activeB\r\n\013_mfa_secretB\023\n\021_last_activi" +
-      "ty_atB\r\n\013_last_loginB\r\n\013_created_atB\r\n\013_" +
-      "updated_atB\r\n\013_deleted_at2`\n\013UserService" +
-      "\022Q\n\016CreateSupplier\022\036.user.v1.SupplierCre" +
-      "ateRequest\032\037.user.v1.SupplierCreateRespo" +
-      "nseBk\n\030org.megacommerce.user.v1B\tUserPro" +
-      "toZAgithub.com/ahmad-khatib0-org/megacom" +
-      "merce-proto/gen/go/user/v1;v1\370\001\001b\006proto3"
+      "\022\024\n\005roles\030\014 \003(\tR\005roles\022.\n\005props\030\r \003(\0132\030." +
+      "user.v1.User.PropsEntryR\005props\022A\n\014notify" +
+      "_props\030\016 \003(\0132\036.user.v1.User.NotifyPropsE" +
+      "ntryR\013notifyProps\0225\n\024last_password_updat" +
+      "e\030\017 \001(\003H\013R\022lastPasswordUpdate\210\001\001\0223\n\023last" +
+      "_picture_update\030\020 \001(\003H\014R\021lastPictureUpda" +
+      "te\210\001\001\022,\n\017failed_attempts\030\021 \001(\005H\rR\016failed" +
+      "Attempts\210\001\001\022\033\n\006locale\030\022 \001(\tH\016R\006locale\210\001\001" +
+      "\022\"\n\nmfa_active\030\023 \001(\010H\017R\tmfaActive\210\001\001\022\"\n\n" +
+      "mfa_secret\030\024 \001(\tH\020R\tmfaSecret\210\001\001\022-\n\020last" +
+      "_activity_at\030\025 \001(\003H\021R\016lastActivityAt\210\001\001\022" +
+      "\"\n\nlast_login\030\026 \001(\003H\022R\tlastLogin\210\001\001\022\"\n\nc" +
+      "reated_at\030\027 \001(\003H\023R\tcreatedAt\210\001\001\022\"\n\nupdat" +
+      "ed_at\030\030 \001(\003H\024R\tupdatedAt\210\001\001\022\"\n\ndeleted_a" +
+      "t\030\031 \001(\003H\025R\tdeletedAt\210\001\001\0328\n\nPropsEntry\022\020\n" +
+      "\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028" +
+      "\001\032>\n\020NotifyPropsEntry\022\020\n\003key\030\001 \001(\tR\003key\022" +
+      "\024\n\005value\030\002 \001(\tR\005value:\0028\001B\005\n\003_idB\013\n\t_use" +
+      "rnameB\r\n\013_first_nameB\014\n\n_last_nameB\010\n\006_e" +
+      "mailB\014\n\n_user_typeB\r\n\013_membershipB\024\n\022_is" +
+      "_email_verifiedB\013\n\t_passwordB\014\n\n_auth_da" +
+      "taB\017\n\r_auth_serviceB\027\n\025_last_password_up" +
+      "dateB\026\n\024_last_picture_updateB\022\n\020_failed_" +
+      "attemptsB\t\n\007_localeB\r\n\013_mfa_activeB\r\n\013_m" +
+      "fa_secretB\023\n\021_last_activity_atB\r\n\013_last_" +
+      "loginB\r\n\013_created_atB\r\n\013_updated_atB\r\n\013_" +
+      "deleted_at2`\n\013UserService\022Q\n\016CreateSuppl" +
+      "ier\022\036.user.v1.SupplierCreateRequest\032\037.us" +
+      "er.v1.SupplierCreateResponseBk\n\030org.mega" +
+      "commerce.user.v1B\tUserProtoZAgithub.com/" +
+      "ahmad-khatib0-org/megacommerce-proto/gen" +
+      "/go/user/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

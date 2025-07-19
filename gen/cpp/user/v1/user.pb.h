@@ -307,6 +307,7 @@ class User final : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
   enum : int {
+    kRolesFieldNumber = 12,
     kPropsFieldNumber = 13,
     kNotifyPropsFieldNumber = 14,
     kIdFieldNumber = 1,
@@ -319,7 +320,6 @@ class User final : public ::google::protobuf::Message
     kPasswordFieldNumber = 9,
     kAuthDataFieldNumber = 10,
     kAuthServiceFieldNumber = 11,
-    kRolesFieldNumber = 12,
     kLocaleFieldNumber = 18,
     kMfaSecretFieldNumber = 20,
     kIsEmailVerifiedFieldNumber = 8,
@@ -333,6 +333,28 @@ class User final : public ::google::protobuf::Message
     kUpdatedAtFieldNumber = 24,
     kDeletedAtFieldNumber = 25,
   };
+  // repeated string roles = 12 [json_name = "roles"];
+  int roles_size() const;
+  private:
+  int _internal_roles_size() const;
+
+  public:
+  void clear_roles() ;
+  const ::std::string& roles(int index) const;
+  ::std::string* PROTOBUF_NONNULL mutable_roles(int index);
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_roles(int index, Arg_&& value, Args_... args);
+  ::std::string* PROTOBUF_NONNULL add_roles();
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void add_roles(Arg_&& value, Args_... args);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& roles() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL mutable_roles();
+
+  private:
+  const ::google::protobuf::RepeatedPtrField<::std::string>& _internal_roles() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL _internal_mutable_roles();
+
+  public:
   // map<string, string> props = 13 [json_name = "props"];
   int props_size() const;
   private:
@@ -523,22 +545,6 @@ class User final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_auth_service();
 
   public:
-  // optional string roles = 12 [json_name = "roles"];
-  bool has_roles() const;
-  void clear_roles() ;
-  const ::std::string& roles() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_roles(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_roles();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_roles();
-  void set_allocated_roles(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_roles() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_roles(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_roles();
-
-  public:
   // optional string locale = 18 [json_name = "locale"];
   bool has_locale() const;
   void clear_locale() ;
@@ -707,6 +713,7 @@ class User final : public ::google::protobuf::Message
         const User& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::RepeatedPtrField<::std::string> roles_;
     ::google::protobuf::internal::MapField<User_PropsEntry_DoNotUse, std::string, std::string,
                       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
                       ::google::protobuf::internal::WireFormatLite::TYPE_STRING>
@@ -725,7 +732,6 @@ class User final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr password_;
     ::google::protobuf::internal::ArenaStringPtr auth_data_;
     ::google::protobuf::internal::ArenaStringPtr auth_service_;
-    ::google::protobuf::internal::ArenaStringPtr roles_;
     ::google::protobuf::internal::ArenaStringPtr locale_;
     ::google::protobuf::internal::ArenaStringPtr mfa_secret_;
     bool is_email_verified_;
@@ -1251,13 +1257,13 @@ inline void User::set_allocated_membership(::std::string* PROTOBUF_NULLABLE valu
 
 // optional bool is_email_verified = 8 [json_name = "isEmailVerified"];
 inline bool User::has_is_email_verified() const {
-  bool value = (_impl_._has_bits_[0] & 0x00002000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00001000u) != 0;
   return value;
 }
 inline void User::clear_is_email_verified() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.is_email_verified_ = false;
-  _impl_._has_bits_[0] &= ~0x00002000u;
+  _impl_._has_bits_[0] &= ~0x00001000u;
 }
 inline bool User::is_email_verified() const {
   // @@protoc_insertion_point(field_get:user.v1.User.is_email_verified)
@@ -1265,7 +1271,7 @@ inline bool User::is_email_verified() const {
 }
 inline void User::set_is_email_verified(bool value) {
   _internal_set_is_email_verified(value);
-  _impl_._has_bits_[0] |= 0x00002000u;
+  _impl_._has_bits_[0] |= 0x00001000u;
   // @@protoc_insertion_point(field_set:user.v1.User.is_email_verified)
 }
 inline bool User::_internal_is_email_verified() const {
@@ -1484,73 +1490,68 @@ inline void User::set_allocated_auth_service(::std::string* PROTOBUF_NULLABLE va
   // @@protoc_insertion_point(field_set_allocated:user.v1.User.auth_service)
 }
 
-// optional string roles = 12 [json_name = "roles"];
-inline bool User::has_roles() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000400u) != 0;
-  return value;
+// repeated string roles = 12 [json_name = "roles"];
+inline int User::_internal_roles_size() const {
+  return _internal_roles().size();
+}
+inline int User::roles_size() const {
+  return _internal_roles_size();
 }
 inline void User::clear_roles() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.roles_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000400u;
+  _impl_.roles_.Clear();
 }
-inline const ::std::string& User::roles() const
+inline ::std::string* PROTOBUF_NONNULL User::add_roles()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:user.v1.User.roles)
-  return _internal_roles();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void User::set_roles(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000400u;
-  _impl_.roles_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:user.v1.User.roles)
-}
-inline ::std::string* PROTOBUF_NONNULL User::mutable_roles()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_roles();
-  // @@protoc_insertion_point(field_mutable:user.v1.User.roles)
+  ::std::string* _s = _internal_mutable_roles()->Add();
+  // @@protoc_insertion_point(field_add_mutable:user.v1.User.roles)
   return _s;
 }
-inline const ::std::string& User::_internal_roles() const {
+inline const ::std::string& User::roles(int index) const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:user.v1.User.roles)
+  return _internal_roles().Get(index);
+}
+inline ::std::string* PROTOBUF_NONNULL User::mutable_roles(int index)
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable:user.v1.User.roles)
+  return _internal_mutable_roles()->Mutable(index);
+}
+template <typename Arg_, typename... Args_>
+inline void User::set_roles(int index, Arg_&& value, Args_... args) {
+  ::google::protobuf::internal::AssignToString(*_internal_mutable_roles()->Mutable(index), ::std::forward<Arg_>(value),
+                        args... );
+  // @@protoc_insertion_point(field_set:user.v1.User.roles)
+}
+template <typename Arg_, typename... Args_>
+inline void User::add_roles(Arg_&& value, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::google::protobuf::internal::AddToRepeatedPtrField(*_internal_mutable_roles(),
+                               ::std::forward<Arg_>(value),
+                               args... );
+  // @@protoc_insertion_point(field_add:user.v1.User.roles)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>& User::roles()
+    const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_list:user.v1.User.roles)
+  return _internal_roles();
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL
+User::mutable_roles() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable_list:user.v1.User.roles)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _internal_mutable_roles();
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+User::_internal_roles() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.roles_.Get();
+  return _impl_.roles_;
 }
-inline void User::_internal_set_roles(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000400u;
-  _impl_.roles_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL User::_internal_mutable_roles() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000400u;
-  return _impl_.roles_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE User::release_roles() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:user.v1.User.roles)
-  if ((_impl_._has_bits_[0] & 0x00000400u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000400u;
-  auto* released = _impl_.roles_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.roles_.Set("", GetArena());
-  }
-  return released;
-}
-inline void User::set_allocated_roles(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000400u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000400u;
-  }
-  _impl_.roles_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.roles_.IsDefault()) {
-    _impl_.roles_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:user.v1.User.roles)
+inline ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL
+User::_internal_mutable_roles() {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return &_impl_.roles_;
 }
 
 // map<string, string> props = 13 [json_name = "props"];
@@ -1613,13 +1614,13 @@ inline ::google::protobuf::Map<std::string, std::string>* PROTOBUF_NONNULL User:
 
 // optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];
 inline bool User::has_last_password_update() const {
-  bool value = (_impl_._has_bits_[0] & 0x00010000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00008000u) != 0;
   return value;
 }
 inline void User::clear_last_password_update() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.last_password_update_ = ::int64_t{0};
-  _impl_._has_bits_[0] &= ~0x00010000u;
+  _impl_._has_bits_[0] &= ~0x00008000u;
 }
 inline ::int64_t User::last_password_update() const {
   // @@protoc_insertion_point(field_get:user.v1.User.last_password_update)
@@ -1627,7 +1628,7 @@ inline ::int64_t User::last_password_update() const {
 }
 inline void User::set_last_password_update(::int64_t value) {
   _internal_set_last_password_update(value);
-  _impl_._has_bits_[0] |= 0x00010000u;
+  _impl_._has_bits_[0] |= 0x00008000u;
   // @@protoc_insertion_point(field_set:user.v1.User.last_password_update)
 }
 inline ::int64_t User::_internal_last_password_update() const {
@@ -1641,13 +1642,13 @@ inline void User::_internal_set_last_password_update(::int64_t value) {
 
 // optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];
 inline bool User::has_last_picture_update() const {
-  bool value = (_impl_._has_bits_[0] & 0x00020000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00010000u) != 0;
   return value;
 }
 inline void User::clear_last_picture_update() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.last_picture_update_ = ::int64_t{0};
-  _impl_._has_bits_[0] &= ~0x00020000u;
+  _impl_._has_bits_[0] &= ~0x00010000u;
 }
 inline ::int64_t User::last_picture_update() const {
   // @@protoc_insertion_point(field_get:user.v1.User.last_picture_update)
@@ -1655,7 +1656,7 @@ inline ::int64_t User::last_picture_update() const {
 }
 inline void User::set_last_picture_update(::int64_t value) {
   _internal_set_last_picture_update(value);
-  _impl_._has_bits_[0] |= 0x00020000u;
+  _impl_._has_bits_[0] |= 0x00010000u;
   // @@protoc_insertion_point(field_set:user.v1.User.last_picture_update)
 }
 inline ::int64_t User::_internal_last_picture_update() const {
@@ -1669,13 +1670,13 @@ inline void User::_internal_set_last_picture_update(::int64_t value) {
 
 // optional int32 failed_attempts = 17 [json_name = "failedAttempts"];
 inline bool User::has_failed_attempts() const {
-  bool value = (_impl_._has_bits_[0] & 0x00008000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00004000u) != 0;
   return value;
 }
 inline void User::clear_failed_attempts() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.failed_attempts_ = 0;
-  _impl_._has_bits_[0] &= ~0x00008000u;
+  _impl_._has_bits_[0] &= ~0x00004000u;
 }
 inline ::int32_t User::failed_attempts() const {
   // @@protoc_insertion_point(field_get:user.v1.User.failed_attempts)
@@ -1683,7 +1684,7 @@ inline ::int32_t User::failed_attempts() const {
 }
 inline void User::set_failed_attempts(::int32_t value) {
   _internal_set_failed_attempts(value);
-  _impl_._has_bits_[0] |= 0x00008000u;
+  _impl_._has_bits_[0] |= 0x00004000u;
   // @@protoc_insertion_point(field_set:user.v1.User.failed_attempts)
 }
 inline ::int32_t User::_internal_failed_attempts() const {
@@ -1697,13 +1698,13 @@ inline void User::_internal_set_failed_attempts(::int32_t value) {
 
 // optional string locale = 18 [json_name = "locale"];
 inline bool User::has_locale() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000800u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000400u) != 0;
   return value;
 }
 inline void User::clear_locale() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.locale_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000800u;
+  _impl_._has_bits_[0] &= ~0x00000400u;
 }
 inline const ::std::string& User::locale() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -1713,7 +1714,7 @@ inline const ::std::string& User::locale() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void User::set_locale(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000800u;
+  _impl_._has_bits_[0] |= 0x00000400u;
   _impl_.locale_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:user.v1.User.locale)
 }
@@ -1729,21 +1730,21 @@ inline const ::std::string& User::_internal_locale() const {
 }
 inline void User::_internal_set_locale(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000800u;
+  _impl_._has_bits_[0] |= 0x00000400u;
   _impl_.locale_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL User::_internal_mutable_locale() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000800u;
+  _impl_._has_bits_[0] |= 0x00000400u;
   return _impl_.locale_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE User::release_locale() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:user.v1.User.locale)
-  if ((_impl_._has_bits_[0] & 0x00000800u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000400u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000800u;
+  _impl_._has_bits_[0] &= ~0x00000400u;
   auto* released = _impl_.locale_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.locale_.Set("", GetArena());
@@ -1753,9 +1754,9 @@ inline ::std::string* PROTOBUF_NULLABLE User::release_locale() {
 inline void User::set_allocated_locale(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000800u;
+    _impl_._has_bits_[0] |= 0x00000400u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000800u;
+    _impl_._has_bits_[0] &= ~0x00000400u;
   }
   _impl_.locale_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.locale_.IsDefault()) {
@@ -1766,13 +1767,13 @@ inline void User::set_allocated_locale(::std::string* PROTOBUF_NULLABLE value) {
 
 // optional bool mfa_active = 19 [json_name = "mfaActive"];
 inline bool User::has_mfa_active() const {
-  bool value = (_impl_._has_bits_[0] & 0x00004000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00002000u) != 0;
   return value;
 }
 inline void User::clear_mfa_active() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.mfa_active_ = false;
-  _impl_._has_bits_[0] &= ~0x00004000u;
+  _impl_._has_bits_[0] &= ~0x00002000u;
 }
 inline bool User::mfa_active() const {
   // @@protoc_insertion_point(field_get:user.v1.User.mfa_active)
@@ -1780,7 +1781,7 @@ inline bool User::mfa_active() const {
 }
 inline void User::set_mfa_active(bool value) {
   _internal_set_mfa_active(value);
-  _impl_._has_bits_[0] |= 0x00004000u;
+  _impl_._has_bits_[0] |= 0x00002000u;
   // @@protoc_insertion_point(field_set:user.v1.User.mfa_active)
 }
 inline bool User::_internal_mfa_active() const {
@@ -1794,13 +1795,13 @@ inline void User::_internal_set_mfa_active(bool value) {
 
 // optional string mfa_secret = 20 [json_name = "mfaSecret"];
 inline bool User::has_mfa_secret() const {
-  bool value = (_impl_._has_bits_[0] & 0x00001000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000800u) != 0;
   return value;
 }
 inline void User::clear_mfa_secret() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.mfa_secret_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00001000u;
+  _impl_._has_bits_[0] &= ~0x00000800u;
 }
 inline const ::std::string& User::mfa_secret() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -1810,7 +1811,7 @@ inline const ::std::string& User::mfa_secret() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void User::set_mfa_secret(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00001000u;
+  _impl_._has_bits_[0] |= 0x00000800u;
   _impl_.mfa_secret_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:user.v1.User.mfa_secret)
 }
@@ -1826,21 +1827,21 @@ inline const ::std::string& User::_internal_mfa_secret() const {
 }
 inline void User::_internal_set_mfa_secret(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00001000u;
+  _impl_._has_bits_[0] |= 0x00000800u;
   _impl_.mfa_secret_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL User::_internal_mutable_mfa_secret() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00001000u;
+  _impl_._has_bits_[0] |= 0x00000800u;
   return _impl_.mfa_secret_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE User::release_mfa_secret() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:user.v1.User.mfa_secret)
-  if ((_impl_._has_bits_[0] & 0x00001000u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000800u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00001000u;
+  _impl_._has_bits_[0] &= ~0x00000800u;
   auto* released = _impl_.mfa_secret_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.mfa_secret_.Set("", GetArena());
@@ -1850,9 +1851,9 @@ inline ::std::string* PROTOBUF_NULLABLE User::release_mfa_secret() {
 inline void User::set_allocated_mfa_secret(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00001000u;
+    _impl_._has_bits_[0] |= 0x00000800u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00001000u;
+    _impl_._has_bits_[0] &= ~0x00000800u;
   }
   _impl_.mfa_secret_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.mfa_secret_.IsDefault()) {
@@ -1863,13 +1864,13 @@ inline void User::set_allocated_mfa_secret(::std::string* PROTOBUF_NULLABLE valu
 
 // optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];
 inline bool User::has_last_activity_at() const {
-  bool value = (_impl_._has_bits_[0] & 0x00040000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00020000u) != 0;
   return value;
 }
 inline void User::clear_last_activity_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.last_activity_at_ = ::int64_t{0};
-  _impl_._has_bits_[0] &= ~0x00040000u;
+  _impl_._has_bits_[0] &= ~0x00020000u;
 }
 inline ::int64_t User::last_activity_at() const {
   // @@protoc_insertion_point(field_get:user.v1.User.last_activity_at)
@@ -1877,7 +1878,7 @@ inline ::int64_t User::last_activity_at() const {
 }
 inline void User::set_last_activity_at(::int64_t value) {
   _internal_set_last_activity_at(value);
-  _impl_._has_bits_[0] |= 0x00040000u;
+  _impl_._has_bits_[0] |= 0x00020000u;
   // @@protoc_insertion_point(field_set:user.v1.User.last_activity_at)
 }
 inline ::int64_t User::_internal_last_activity_at() const {
@@ -1891,13 +1892,13 @@ inline void User::_internal_set_last_activity_at(::int64_t value) {
 
 // optional int64 last_login = 22 [json_name = "lastLogin"];
 inline bool User::has_last_login() const {
-  bool value = (_impl_._has_bits_[0] & 0x00080000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00040000u) != 0;
   return value;
 }
 inline void User::clear_last_login() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.last_login_ = ::int64_t{0};
-  _impl_._has_bits_[0] &= ~0x00080000u;
+  _impl_._has_bits_[0] &= ~0x00040000u;
 }
 inline ::int64_t User::last_login() const {
   // @@protoc_insertion_point(field_get:user.v1.User.last_login)
@@ -1905,7 +1906,7 @@ inline ::int64_t User::last_login() const {
 }
 inline void User::set_last_login(::int64_t value) {
   _internal_set_last_login(value);
-  _impl_._has_bits_[0] |= 0x00080000u;
+  _impl_._has_bits_[0] |= 0x00040000u;
   // @@protoc_insertion_point(field_set:user.v1.User.last_login)
 }
 inline ::int64_t User::_internal_last_login() const {
@@ -1919,13 +1920,13 @@ inline void User::_internal_set_last_login(::int64_t value) {
 
 // optional int64 created_at = 23 [json_name = "createdAt"];
 inline bool User::has_created_at() const {
-  bool value = (_impl_._has_bits_[0] & 0x00100000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00080000u) != 0;
   return value;
 }
 inline void User::clear_created_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.created_at_ = ::int64_t{0};
-  _impl_._has_bits_[0] &= ~0x00100000u;
+  _impl_._has_bits_[0] &= ~0x00080000u;
 }
 inline ::int64_t User::created_at() const {
   // @@protoc_insertion_point(field_get:user.v1.User.created_at)
@@ -1933,7 +1934,7 @@ inline ::int64_t User::created_at() const {
 }
 inline void User::set_created_at(::int64_t value) {
   _internal_set_created_at(value);
-  _impl_._has_bits_[0] |= 0x00100000u;
+  _impl_._has_bits_[0] |= 0x00080000u;
   // @@protoc_insertion_point(field_set:user.v1.User.created_at)
 }
 inline ::int64_t User::_internal_created_at() const {
@@ -1947,13 +1948,13 @@ inline void User::_internal_set_created_at(::int64_t value) {
 
 // optional int64 updated_at = 24 [json_name = "updatedAt"];
 inline bool User::has_updated_at() const {
-  bool value = (_impl_._has_bits_[0] & 0x00200000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00100000u) != 0;
   return value;
 }
 inline void User::clear_updated_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.updated_at_ = ::int64_t{0};
-  _impl_._has_bits_[0] &= ~0x00200000u;
+  _impl_._has_bits_[0] &= ~0x00100000u;
 }
 inline ::int64_t User::updated_at() const {
   // @@protoc_insertion_point(field_get:user.v1.User.updated_at)
@@ -1961,7 +1962,7 @@ inline ::int64_t User::updated_at() const {
 }
 inline void User::set_updated_at(::int64_t value) {
   _internal_set_updated_at(value);
-  _impl_._has_bits_[0] |= 0x00200000u;
+  _impl_._has_bits_[0] |= 0x00100000u;
   // @@protoc_insertion_point(field_set:user.v1.User.updated_at)
 }
 inline ::int64_t User::_internal_updated_at() const {
@@ -1975,13 +1976,13 @@ inline void User::_internal_set_updated_at(::int64_t value) {
 
 // optional int64 deleted_at = 25 [json_name = "deletedAt"];
 inline bool User::has_deleted_at() const {
-  bool value = (_impl_._has_bits_[0] & 0x00400000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00200000u) != 0;
   return value;
 }
 inline void User::clear_deleted_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.deleted_at_ = ::int64_t{0};
-  _impl_._has_bits_[0] &= ~0x00400000u;
+  _impl_._has_bits_[0] &= ~0x00200000u;
 }
 inline ::int64_t User::deleted_at() const {
   // @@protoc_insertion_point(field_get:user.v1.User.deleted_at)
@@ -1989,7 +1990,7 @@ inline ::int64_t User::deleted_at() const {
 }
 inline void User::set_deleted_at(::int64_t value) {
   _internal_set_deleted_at(value);
-  _impl_._has_bits_[0] |= 0x00400000u;
+  _impl_._has_bits_[0] |= 0x00200000u;
   // @@protoc_insertion_point(field_set:user.v1.User.deleted_at)
 }
 inline ::int64_t User::_internal_deleted_at() const {

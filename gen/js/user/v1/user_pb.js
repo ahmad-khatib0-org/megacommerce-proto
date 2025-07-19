@@ -35,7 +35,7 @@ goog.exportSymbol('proto.user.v1.User', null, global);
  * @constructor
  */
 proto.user.v1.User = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.user.v1.User.repeatedFields_, null);
 };
 goog.inherits(proto.user.v1.User, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -45,6 +45,13 @@ if (goog.DEBUG && !COMPILED) {
    */
   proto.user.v1.User.displayName = 'proto.user.v1.User';
 }
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.user.v1.User.repeatedFields_ = [12];
 
 
 
@@ -88,7 +95,7 @@ isEmailVerified: (f = jspb.Message.getBooleanField(msg, 8)) == null ? undefined 
 password: (f = jspb.Message.getField(msg, 9)) == null ? undefined : f,
 authData: (f = jspb.Message.getField(msg, 10)) == null ? undefined : f,
 authService: (f = jspb.Message.getField(msg, 11)) == null ? undefined : f,
-roles: (f = jspb.Message.getField(msg, 12)) == null ? undefined : f,
+rolesList: (f = jspb.Message.getRepeatedField(msg, 12)) == null ? undefined : f,
 propsMap: (f = msg.getPropsMap()) ? f.toObject(includeInstance, undefined) : [],
 notifyPropsMap: (f = msg.getNotifyPropsMap()) ? f.toObject(includeInstance, undefined) : [],
 lastPasswordUpdate: (f = jspb.Message.getField(msg, 15)) == null ? undefined : f,
@@ -184,7 +191,7 @@ proto.user.v1.User.deserializeBinaryFromReader = function(msg, reader) {
       break;
     case 12:
       var value = /** @type {string} */ (reader.readString());
-      msg.setRoles(value);
+      msg.addRoles(value);
       break;
     case 13:
       var value = msg.getPropsMap();
@@ -348,9 +355,9 @@ proto.user.v1.User.serializeBinaryToWriter = function(message, writer) {
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 12));
-  if (f != null) {
-    writer.writeString(
+  f = message.getRolesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
       12,
       f
     );
@@ -840,38 +847,39 @@ proto.user.v1.User.prototype.hasAuthService = function() {
 
 
 /**
- * optional string roles = 12;
- * @return {string}
+ * repeated string roles = 12;
+ * @return {!Array<string>}
  */
-proto.user.v1.User.prototype.getRoles = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+proto.user.v1.User.prototype.getRolesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 12));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.user.v1.User} returns this
+ */
+proto.user.v1.User.prototype.setRolesList = function(value) {
+  return jspb.Message.setField(this, 12, value || []);
 };
 
 
 /**
  * @param {string} value
+ * @param {number=} opt_index
  * @return {!proto.user.v1.User} returns this
  */
-proto.user.v1.User.prototype.setRoles = function(value) {
-  return jspb.Message.setField(this, 12, value);
+proto.user.v1.User.prototype.addRoles = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 12, value, opt_index);
 };
 
 
 /**
- * Clears the field making it undefined.
+ * Clears the list making it empty but non-null.
  * @return {!proto.user.v1.User} returns this
  */
-proto.user.v1.User.prototype.clearRoles = function() {
-  return jspb.Message.setField(this, 12, undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.user.v1.User.prototype.hasRoles = function() {
-  return jspb.Message.getField(this, 12) != null;
+proto.user.v1.User.prototype.clearRolesList = function() {
+  return this.setRolesList([]);
 };
 
 

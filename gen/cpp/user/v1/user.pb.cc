@@ -66,6 +66,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
 inline constexpr User::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
+        roles_{},
         props_{},
         notify_props_{},
         id_(
@@ -96,9 +97,6 @@ inline constexpr User::Impl_::Impl_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         auth_service_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        roles_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         locale_(
@@ -195,24 +193,24 @@ const ::uint32_t
         4,
         5,
         6,
-        13,
+        12,
         7,
         8,
         9,
-        10,
         ~0u,
         ~0u,
-        16,
-        17,
+        ~0u,
         15,
-        11,
+        16,
         14,
-        12,
+        10,
+        13,
+        11,
+        17,
         18,
         19,
         20,
         21,
-        22,
 };
 
 static const ::_pbi::MigrationSchema
@@ -229,7 +227,7 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 const char descriptor_table_protodef_user_2fv1_2fuser_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n\022user/v1/user.proto\022\007user.v1\032\026user/v1/s"
-    "upplier.proto\"\251\013\n\004User\022\023\n\002id\030\001 \001(\tH\000R\002id"
+    "upplier.proto\"\232\013\n\004User\022\023\n\002id\030\001 \001(\tH\000R\002id"
     "\210\001\001\022\037\n\010username\030\002 \001(\tH\001R\010username\210\001\001\022\"\n\n"
     "first_name\030\003 \001(\tH\002R\tfirstName\210\001\001\022 \n\tlast"
     "_name\030\004 \001(\tH\003R\010lastName\210\001\001\022\031\n\005email\030\005 \001("
@@ -239,38 +237,38 @@ const char descriptor_table_protodef_user_2fv1_2fuser_2eproto[] ABSL_ATTRIBUTE_S
     "ilVerified\210\001\001\022\037\n\010password\030\t \001(\tH\010R\010passw"
     "ord\210\001\001\022 \n\tauth_data\030\n \001(\tH\tR\010authData\210\001\001"
     "\022&\n\014auth_service\030\013 \001(\tH\nR\013authService\210\001\001"
-    "\022\031\n\005roles\030\014 \001(\tH\013R\005roles\210\001\001\022.\n\005props\030\r \003"
-    "(\0132\030.user.v1.User.PropsEntryR\005props\022A\n\014n"
-    "otify_props\030\016 \003(\0132\036.user.v1.User.NotifyP"
-    "ropsEntryR\013notifyProps\0225\n\024last_password_"
-    "update\030\017 \001(\003H\014R\022lastPasswordUpdate\210\001\001\0223\n"
-    "\023last_picture_update\030\020 \001(\003H\rR\021lastPictur"
-    "eUpdate\210\001\001\022,\n\017failed_attempts\030\021 \001(\005H\016R\016f"
-    "ailedAttempts\210\001\001\022\033\n\006locale\030\022 \001(\tH\017R\006loca"
-    "le\210\001\001\022\"\n\nmfa_active\030\023 \001(\010H\020R\tmfaActive\210\001"
-    "\001\022\"\n\nmfa_secret\030\024 \001(\tH\021R\tmfaSecret\210\001\001\022-\n"
-    "\020last_activity_at\030\025 \001(\003H\022R\016lastActivityA"
-    "t\210\001\001\022\"\n\nlast_login\030\026 \001(\003H\023R\tlastLogin\210\001\001"
-    "\022\"\n\ncreated_at\030\027 \001(\003H\024R\tcreatedAt\210\001\001\022\"\n\n"
-    "updated_at\030\030 \001(\003H\025R\tupdatedAt\210\001\001\022\"\n\ndele"
-    "ted_at\030\031 \001(\003H\026R\tdeletedAt\210\001\001\0328\n\nPropsEnt"
-    "ry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005val"
-    "ue:\0028\001\032>\n\020NotifyPropsEntry\022\020\n\003key\030\001 \001(\tR"
-    "\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\005\n\003_idB\013\n"
-    "\t_usernameB\r\n\013_first_nameB\014\n\n_last_nameB"
-    "\010\n\006_emailB\014\n\n_user_typeB\r\n\013_membershipB\024"
-    "\n\022_is_email_verifiedB\013\n\t_passwordB\014\n\n_au"
-    "th_dataB\017\n\r_auth_serviceB\010\n\006_rolesB\027\n\025_l"
-    "ast_password_updateB\026\n\024_last_picture_upd"
-    "ateB\022\n\020_failed_attemptsB\t\n\007_localeB\r\n\013_m"
-    "fa_activeB\r\n\013_mfa_secretB\023\n\021_last_activi"
-    "ty_atB\r\n\013_last_loginB\r\n\013_created_atB\r\n\013_"
-    "updated_atB\r\n\013_deleted_at2`\n\013UserService"
-    "\022Q\n\016CreateSupplier\022\036.user.v1.SupplierCre"
-    "ateRequest\032\037.user.v1.SupplierCreateRespo"
-    "nseBk\n\030org.megacommerce.user.v1B\tUserPro"
-    "toZAgithub.com/ahmad-khatib0-org/megacom"
-    "merce-proto/gen/go/user/v1;v1\370\001\001b\006proto3"
+    "\022\024\n\005roles\030\014 \003(\tR\005roles\022.\n\005props\030\r \003(\0132\030."
+    "user.v1.User.PropsEntryR\005props\022A\n\014notify"
+    "_props\030\016 \003(\0132\036.user.v1.User.NotifyPropsE"
+    "ntryR\013notifyProps\0225\n\024last_password_updat"
+    "e\030\017 \001(\003H\013R\022lastPasswordUpdate\210\001\001\0223\n\023last"
+    "_picture_update\030\020 \001(\003H\014R\021lastPictureUpda"
+    "te\210\001\001\022,\n\017failed_attempts\030\021 \001(\005H\rR\016failed"
+    "Attempts\210\001\001\022\033\n\006locale\030\022 \001(\tH\016R\006locale\210\001\001"
+    "\022\"\n\nmfa_active\030\023 \001(\010H\017R\tmfaActive\210\001\001\022\"\n\n"
+    "mfa_secret\030\024 \001(\tH\020R\tmfaSecret\210\001\001\022-\n\020last"
+    "_activity_at\030\025 \001(\003H\021R\016lastActivityAt\210\001\001\022"
+    "\"\n\nlast_login\030\026 \001(\003H\022R\tlastLogin\210\001\001\022\"\n\nc"
+    "reated_at\030\027 \001(\003H\023R\tcreatedAt\210\001\001\022\"\n\nupdat"
+    "ed_at\030\030 \001(\003H\024R\tupdatedAt\210\001\001\022\"\n\ndeleted_a"
+    "t\030\031 \001(\003H\025R\tdeletedAt\210\001\001\0328\n\nPropsEntry\022\020\n"
+    "\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028"
+    "\001\032>\n\020NotifyPropsEntry\022\020\n\003key\030\001 \001(\tR\003key\022"
+    "\024\n\005value\030\002 \001(\tR\005value:\0028\001B\005\n\003_idB\013\n\t_use"
+    "rnameB\r\n\013_first_nameB\014\n\n_last_nameB\010\n\006_e"
+    "mailB\014\n\n_user_typeB\r\n\013_membershipB\024\n\022_is"
+    "_email_verifiedB\013\n\t_passwordB\014\n\n_auth_da"
+    "taB\017\n\r_auth_serviceB\027\n\025_last_password_up"
+    "dateB\026\n\024_last_picture_updateB\022\n\020_failed_"
+    "attemptsB\t\n\007_localeB\r\n\013_mfa_activeB\r\n\013_m"
+    "fa_secretB\023\n\021_last_activity_atB\r\n\013_last_"
+    "loginB\r\n\013_created_atB\r\n\013_updated_atB\r\n\013_"
+    "deleted_at2`\n\013UserService\022Q\n\016CreateSuppl"
+    "ier\022\036.user.v1.SupplierCreateRequest\032\037.us"
+    "er.v1.SupplierCreateResponseBk\n\030org.mega"
+    "commerce.user.v1B\tUserProtoZAgithub.com/"
+    "ahmad-khatib0-org/megacommerce-proto/gen"
+    "/go/user/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_user_2fv1_2fuser_2eproto_deps[1] = {
@@ -280,7 +278,7 @@ static ::absl::once_flag descriptor_table_user_2fv1_2fuser_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_user_2fv1_2fuser_2eproto = {
     false,
     false,
-    1720,
+    1705,
     descriptor_table_protodef_user_2fv1_2fuser_2eproto,
     "user/v1/user.proto",
     &descriptor_table_user_2fv1_2fuser_2eproto_once,
@@ -516,6 +514,7 @@ PROTOBUF_NDEBUG_INLINE User::Impl_::Impl_(
     const ::user::v1::User& from_msg)
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
+        roles_{visibility, arena, from.roles_},
         props_{visibility, arena, from.props_},
         notify_props_{visibility, arena, from.notify_props_},
         id_(arena, from.id_),
@@ -528,7 +527,6 @@ PROTOBUF_NDEBUG_INLINE User::Impl_::Impl_(
         password_(arena, from.password_),
         auth_data_(arena, from.auth_data_),
         auth_service_(arena, from.auth_service_),
-        roles_(arena, from.roles_),
         locale_(arena, from.locale_),
         mfa_secret_(arena, from.mfa_secret_) {}
 
@@ -559,6 +557,7 @@ PROTOBUF_NDEBUG_INLINE User::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
+        roles_{visibility, arena},
         props_{visibility, arena},
         notify_props_{visibility, arena},
         id_(arena),
@@ -571,7 +570,6 @@ PROTOBUF_NDEBUG_INLINE User::Impl_::Impl_(
         password_(arena),
         auth_data_(arena),
         auth_service_(arena),
-        roles_(arena),
         locale_(arena),
         mfa_secret_(arena) {}
 
@@ -602,7 +600,6 @@ inline void User::SharedDtor(MessageLite& self) {
   this_._impl_.password_.Destroy();
   this_._impl_.auth_data_.Destroy();
   this_._impl_.auth_service_.Destroy();
-  this_._impl_.roles_.Destroy();
   this_._impl_.locale_.Destroy();
   this_._impl_.mfa_secret_.Destroy();
   this_._impl_.~Impl_();
@@ -615,6 +612,10 @@ inline void* PROTOBUF_NONNULL User::PlacementNew_(
 }
 constexpr auto User::InternalNewImpl_() {
   constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
+      PROTOBUF_FIELD_OFFSET(User, _impl_.roles_) +
+          decltype(User::_impl_.roles_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
       PROTOBUF_FIELD_OFFSET(User, _impl_.props_) +
           decltype(User::_impl_.props_)::
               InternalGetArenaOffset(
@@ -717,8 +718,8 @@ User::_table_ = {
     {::_pbi::TcParser::FastUS1,
      {58, 6, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.membership_)}},
     // optional bool is_email_verified = 8 [json_name = "isEmailVerified"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(User, _impl_.is_email_verified_), 13>(),
-     {64, 13, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.is_email_verified_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(User, _impl_.is_email_verified_), 12>(),
+     {64, 12, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.is_email_verified_)}},
     // optional string password = 9 [json_name = "password"];
     {::_pbi::TcParser::FastUS1,
      {74, 7, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.password_)}},
@@ -728,44 +729,44 @@ User::_table_ = {
     // optional string auth_service = 11 [json_name = "authService"];
     {::_pbi::TcParser::FastUS1,
      {90, 9, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.auth_service_)}},
-    // optional string roles = 12 [json_name = "roles"];
-    {::_pbi::TcParser::FastUS1,
-     {98, 10, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.roles_)}},
+    // repeated string roles = 12 [json_name = "roles"];
+    {::_pbi::TcParser::FastUR1,
+     {98, 63, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.roles_)}},
     {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
     // optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(User, _impl_.last_password_update_), 16>(),
-     {120, 16, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.last_password_update_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(User, _impl_.last_password_update_), 15>(),
+     {120, 15, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.last_password_update_)}},
     // optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];
     {::_pbi::TcParser::FastV64S2,
-     {384, 17, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.last_picture_update_)}},
+     {384, 16, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.last_picture_update_)}},
     // optional int32 failed_attempts = 17 [json_name = "failedAttempts"];
     {::_pbi::TcParser::FastV32S2,
-     {392, 15, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.failed_attempts_)}},
+     {392, 14, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.failed_attempts_)}},
     // optional string locale = 18 [json_name = "locale"];
     {::_pbi::TcParser::FastUS2,
-     {402, 11, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.locale_)}},
+     {402, 10, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.locale_)}},
     // optional bool mfa_active = 19 [json_name = "mfaActive"];
     {::_pbi::TcParser::FastV8S2,
-     {408, 14, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.mfa_active_)}},
+     {408, 13, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.mfa_active_)}},
     // optional string mfa_secret = 20 [json_name = "mfaSecret"];
     {::_pbi::TcParser::FastUS2,
-     {418, 12, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.mfa_secret_)}},
+     {418, 11, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.mfa_secret_)}},
     // optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];
     {::_pbi::TcParser::FastV64S2,
-     {424, 18, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.last_activity_at_)}},
+     {424, 17, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.last_activity_at_)}},
     // optional int64 last_login = 22 [json_name = "lastLogin"];
     {::_pbi::TcParser::FastV64S2,
-     {432, 19, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.last_login_)}},
+     {432, 18, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.last_login_)}},
     // optional int64 created_at = 23 [json_name = "createdAt"];
     {::_pbi::TcParser::FastV64S2,
-     {440, 20, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.created_at_)}},
+     {440, 19, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.created_at_)}},
     // optional int64 updated_at = 24 [json_name = "updatedAt"];
     {::_pbi::TcParser::FastV64S2,
-     {448, 21, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.updated_at_)}},
+     {448, 20, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.updated_at_)}},
     // optional int64 deleted_at = 25 [json_name = "deletedAt"];
     {::_pbi::TcParser::FastV64S2,
-     {456, 22, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.deleted_at_)}},
+     {456, 21, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.deleted_at_)}},
     {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
@@ -797,7 +798,7 @@ User::_table_ = {
     {PROTOBUF_FIELD_OFFSET(User, _impl_.membership_), _Internal::kHasBitsOffset + 6, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // optional bool is_email_verified = 8 [json_name = "isEmailVerified"];
-    {PROTOBUF_FIELD_OFFSET(User, _impl_.is_email_verified_), _Internal::kHasBitsOffset + 13, 0,
+    {PROTOBUF_FIELD_OFFSET(User, _impl_.is_email_verified_), _Internal::kHasBitsOffset + 12, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
     // optional string password = 9 [json_name = "password"];
     {PROTOBUF_FIELD_OFFSET(User, _impl_.password_), _Internal::kHasBitsOffset + 7, 0,
@@ -808,9 +809,9 @@ User::_table_ = {
     // optional string auth_service = 11 [json_name = "authService"];
     {PROTOBUF_FIELD_OFFSET(User, _impl_.auth_service_), _Internal::kHasBitsOffset + 9, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional string roles = 12 [json_name = "roles"];
-    {PROTOBUF_FIELD_OFFSET(User, _impl_.roles_), _Internal::kHasBitsOffset + 10, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // repeated string roles = 12 [json_name = "roles"];
+    {PROTOBUF_FIELD_OFFSET(User, _impl_.roles_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kUtf8String | ::_fl::kRepSString)},
     // map<string, string> props = 13 [json_name = "props"];
     {PROTOBUF_FIELD_OFFSET(User, _impl_.props_), -1, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
@@ -818,37 +819,37 @@ User::_table_ = {
     {PROTOBUF_FIELD_OFFSET(User, _impl_.notify_props_), -1, 1,
     (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
     // optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];
-    {PROTOBUF_FIELD_OFFSET(User, _impl_.last_password_update_), _Internal::kHasBitsOffset + 16, 0,
+    {PROTOBUF_FIELD_OFFSET(User, _impl_.last_password_update_), _Internal::kHasBitsOffset + 15, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
     // optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];
-    {PROTOBUF_FIELD_OFFSET(User, _impl_.last_picture_update_), _Internal::kHasBitsOffset + 17, 0,
+    {PROTOBUF_FIELD_OFFSET(User, _impl_.last_picture_update_), _Internal::kHasBitsOffset + 16, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
     // optional int32 failed_attempts = 17 [json_name = "failedAttempts"];
-    {PROTOBUF_FIELD_OFFSET(User, _impl_.failed_attempts_), _Internal::kHasBitsOffset + 15, 0,
+    {PROTOBUF_FIELD_OFFSET(User, _impl_.failed_attempts_), _Internal::kHasBitsOffset + 14, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
     // optional string locale = 18 [json_name = "locale"];
-    {PROTOBUF_FIELD_OFFSET(User, _impl_.locale_), _Internal::kHasBitsOffset + 11, 0,
+    {PROTOBUF_FIELD_OFFSET(User, _impl_.locale_), _Internal::kHasBitsOffset + 10, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // optional bool mfa_active = 19 [json_name = "mfaActive"];
-    {PROTOBUF_FIELD_OFFSET(User, _impl_.mfa_active_), _Internal::kHasBitsOffset + 14, 0,
+    {PROTOBUF_FIELD_OFFSET(User, _impl_.mfa_active_), _Internal::kHasBitsOffset + 13, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
     // optional string mfa_secret = 20 [json_name = "mfaSecret"];
-    {PROTOBUF_FIELD_OFFSET(User, _impl_.mfa_secret_), _Internal::kHasBitsOffset + 12, 0,
+    {PROTOBUF_FIELD_OFFSET(User, _impl_.mfa_secret_), _Internal::kHasBitsOffset + 11, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];
-    {PROTOBUF_FIELD_OFFSET(User, _impl_.last_activity_at_), _Internal::kHasBitsOffset + 18, 0,
+    {PROTOBUF_FIELD_OFFSET(User, _impl_.last_activity_at_), _Internal::kHasBitsOffset + 17, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
     // optional int64 last_login = 22 [json_name = "lastLogin"];
-    {PROTOBUF_FIELD_OFFSET(User, _impl_.last_login_), _Internal::kHasBitsOffset + 19, 0,
+    {PROTOBUF_FIELD_OFFSET(User, _impl_.last_login_), _Internal::kHasBitsOffset + 18, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
     // optional int64 created_at = 23 [json_name = "createdAt"];
-    {PROTOBUF_FIELD_OFFSET(User, _impl_.created_at_), _Internal::kHasBitsOffset + 20, 0,
+    {PROTOBUF_FIELD_OFFSET(User, _impl_.created_at_), _Internal::kHasBitsOffset + 19, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
     // optional int64 updated_at = 24 [json_name = "updatedAt"];
-    {PROTOBUF_FIELD_OFFSET(User, _impl_.updated_at_), _Internal::kHasBitsOffset + 21, 0,
+    {PROTOBUF_FIELD_OFFSET(User, _impl_.updated_at_), _Internal::kHasBitsOffset + 20, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
     // optional int64 deleted_at = 25 [json_name = "deletedAt"];
-    {PROTOBUF_FIELD_OFFSET(User, _impl_.deleted_at_), _Internal::kHasBitsOffset + 22, 0,
+    {PROTOBUF_FIELD_OFFSET(User, _impl_.deleted_at_), _Internal::kHasBitsOffset + 21, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
   }},
   {{
@@ -886,6 +887,7 @@ PROTOBUF_NOINLINE void User::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  _impl_.roles_.Clear();
   _impl_.props_.Clear();
   _impl_.notify_props_.Clear();
   cached_has_bits = _impl_._has_bits_[0];
@@ -915,7 +917,7 @@ PROTOBUF_NOINLINE void User::Clear() {
       _impl_.password_.ClearNonDefaultToEmpty();
     }
   }
-  if ((cached_has_bits & 0x00001f00u) != 0) {
+  if ((cached_has_bits & 0x00000f00u) != 0) {
     if ((cached_has_bits & 0x00000100u) != 0) {
       _impl_.auth_data_.ClearNonDefaultToEmpty();
     }
@@ -923,24 +925,21 @@ PROTOBUF_NOINLINE void User::Clear() {
       _impl_.auth_service_.ClearNonDefaultToEmpty();
     }
     if ((cached_has_bits & 0x00000400u) != 0) {
-      _impl_.roles_.ClearNonDefaultToEmpty();
-    }
-    if ((cached_has_bits & 0x00000800u) != 0) {
       _impl_.locale_.ClearNonDefaultToEmpty();
     }
-    if ((cached_has_bits & 0x00001000u) != 0) {
+    if ((cached_has_bits & 0x00000800u) != 0) {
       _impl_.mfa_secret_.ClearNonDefaultToEmpty();
     }
   }
-  if ((cached_has_bits & 0x0000e000u) != 0) {
+  if ((cached_has_bits & 0x0000f000u) != 0) {
     ::memset(&_impl_.is_email_verified_, 0, static_cast<::size_t>(
-        reinterpret_cast<char*>(&_impl_.failed_attempts_) -
-        reinterpret_cast<char*>(&_impl_.is_email_verified_)) + sizeof(_impl_.failed_attempts_));
+        reinterpret_cast<char*>(&_impl_.last_password_update_) -
+        reinterpret_cast<char*>(&_impl_.is_email_verified_)) + sizeof(_impl_.last_password_update_));
   }
-  if ((cached_has_bits & 0x007f0000u) != 0) {
-    ::memset(&_impl_.last_password_update_, 0, static_cast<::size_t>(
+  if ((cached_has_bits & 0x003f0000u) != 0) {
+    ::memset(&_impl_.last_picture_update_, 0, static_cast<::size_t>(
         reinterpret_cast<char*>(&_impl_.deleted_at_) -
-        reinterpret_cast<char*>(&_impl_.last_password_update_)) + sizeof(_impl_.deleted_at_));
+        reinterpret_cast<char*>(&_impl_.last_picture_update_)) + sizeof(_impl_.deleted_at_));
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
@@ -1019,7 +1018,7 @@ PROTOBUF_NOINLINE void User::Clear() {
   }
 
   // optional bool is_email_verified = 8 [json_name = "isEmailVerified"];
-  if ((cached_has_bits & 0x00002000u) != 0) {
+  if ((cached_has_bits & 0x00001000u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(
         8, this_._internal_is_email_verified(), target);
@@ -1049,12 +1048,12 @@ PROTOBUF_NOINLINE void User::Clear() {
     target = stream->WriteStringMaybeAliased(11, _s, target);
   }
 
-  // optional string roles = 12 [json_name = "roles"];
-  if ((cached_has_bits & 0x00000400u) != 0) {
-    const ::std::string& _s = this_._internal_roles();
+  // repeated string roles = 12 [json_name = "roles"];
+  for (int i = 0, n = this_._internal_roles_size(); i < n; ++i) {
+    const auto& s = this_._internal_roles().Get(i);
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "user.v1.User.roles");
-    target = stream->WriteStringMaybeAliased(12, _s, target);
+        s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "user.v1.User.roles");
+    target = stream->WriteString(12, s, target);
   }
 
   // map<string, string> props = 13 [json_name = "props"];
@@ -1124,28 +1123,28 @@ PROTOBUF_NOINLINE void User::Clear() {
   }
 
   // optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];
-  if ((cached_has_bits & 0x00010000u) != 0) {
+  if ((cached_has_bits & 0x00008000u) != 0) {
     target =
         ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<15>(
             stream, this_._internal_last_password_update(), target);
   }
 
   // optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];
-  if ((cached_has_bits & 0x00020000u) != 0) {
+  if ((cached_has_bits & 0x00010000u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt64ToArray(
         16, this_._internal_last_picture_update(), target);
   }
 
   // optional int32 failed_attempts = 17 [json_name = "failedAttempts"];
-  if ((cached_has_bits & 0x00008000u) != 0) {
+  if ((cached_has_bits & 0x00004000u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(
         17, this_._internal_failed_attempts(), target);
   }
 
   // optional string locale = 18 [json_name = "locale"];
-  if ((cached_has_bits & 0x00000800u) != 0) {
+  if ((cached_has_bits & 0x00000400u) != 0) {
     const ::std::string& _s = this_._internal_locale();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "user.v1.User.locale");
@@ -1153,14 +1152,14 @@ PROTOBUF_NOINLINE void User::Clear() {
   }
 
   // optional bool mfa_active = 19 [json_name = "mfaActive"];
-  if ((cached_has_bits & 0x00004000u) != 0) {
+  if ((cached_has_bits & 0x00002000u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(
         19, this_._internal_mfa_active(), target);
   }
 
   // optional string mfa_secret = 20 [json_name = "mfaSecret"];
-  if ((cached_has_bits & 0x00001000u) != 0) {
+  if ((cached_has_bits & 0x00000800u) != 0) {
     const ::std::string& _s = this_._internal_mfa_secret();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "user.v1.User.mfa_secret");
@@ -1168,35 +1167,35 @@ PROTOBUF_NOINLINE void User::Clear() {
   }
 
   // optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];
-  if ((cached_has_bits & 0x00040000u) != 0) {
+  if ((cached_has_bits & 0x00020000u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt64ToArray(
         21, this_._internal_last_activity_at(), target);
   }
 
   // optional int64 last_login = 22 [json_name = "lastLogin"];
-  if ((cached_has_bits & 0x00080000u) != 0) {
+  if ((cached_has_bits & 0x00040000u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt64ToArray(
         22, this_._internal_last_login(), target);
   }
 
   // optional int64 created_at = 23 [json_name = "createdAt"];
-  if ((cached_has_bits & 0x00100000u) != 0) {
+  if ((cached_has_bits & 0x00080000u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt64ToArray(
         23, this_._internal_created_at(), target);
   }
 
   // optional int64 updated_at = 24 [json_name = "updatedAt"];
-  if ((cached_has_bits & 0x00200000u) != 0) {
+  if ((cached_has_bits & 0x00100000u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt64ToArray(
         24, this_._internal_updated_at(), target);
   }
 
   // optional int64 deleted_at = 25 [json_name = "deletedAt"];
-  if ((cached_has_bits & 0x00400000u) != 0) {
+  if ((cached_has_bits & 0x00200000u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt64ToArray(
         25, this_._internal_deleted_at(), target);
@@ -1227,6 +1226,15 @@ PROTOBUF_NOINLINE void User::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
    {
+    // repeated string roles = 12 [json_name = "roles"];
+    {
+      total_size +=
+          1 * ::google::protobuf::internal::FromIntSize(this_._internal_roles().size());
+      for (int i = 0, n = this_._internal_roles().size(); i < n; ++i) {
+        total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+            this_._internal_roles().Get(i));
+      }
+    }
     // map<string, string> props = 13 [json_name = "props"];
     {
       total_size +=
@@ -1249,8 +1257,8 @@ PROTOBUF_NOINLINE void User::Clear() {
     }
   }
   cached_has_bits = this_._impl_._has_bits_[0];
-  total_size += static_cast<bool>(0x00004000u & cached_has_bits) * 3;
-  total_size += static_cast<bool>(0x00002000u & cached_has_bits) * 2;
+  total_size += static_cast<bool>(0x00002000u & cached_has_bits) * 3;
+  total_size += static_cast<bool>(0x00001000u & cached_has_bits) * 2;
   if ((cached_has_bits & 0x000000ffu) != 0) {
     // optional string id = 1 [json_name = "id"];
     if ((cached_has_bits & 0x00000001u) != 0) {
@@ -1293,7 +1301,7 @@ PROTOBUF_NOINLINE void User::Clear() {
                                       this_._internal_password());
     }
   }
-  if ((cached_has_bits & 0x00009f00u) != 0) {
+  if ((cached_has_bits & 0x0000cf00u) != 0) {
     // optional string auth_data = 10 [json_name = "authData"];
     if ((cached_has_bits & 0x00000100u) != 0) {
       total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
@@ -1304,60 +1312,55 @@ PROTOBUF_NOINLINE void User::Clear() {
       total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                       this_._internal_auth_service());
     }
-    // optional string roles = 12 [json_name = "roles"];
-    if ((cached_has_bits & 0x00000400u) != 0) {
-      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                      this_._internal_roles());
-    }
     // optional string locale = 18 [json_name = "locale"];
-    if ((cached_has_bits & 0x00000800u) != 0) {
+    if ((cached_has_bits & 0x00000400u) != 0) {
       total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                       this_._internal_locale());
     }
     // optional string mfa_secret = 20 [json_name = "mfaSecret"];
-    if ((cached_has_bits & 0x00001000u) != 0) {
+    if ((cached_has_bits & 0x00000800u) != 0) {
       total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                       this_._internal_mfa_secret());
     }
     // optional int32 failed_attempts = 17 [json_name = "failedAttempts"];
-    if ((cached_has_bits & 0x00008000u) != 0) {
+    if ((cached_has_bits & 0x00004000u) != 0) {
       total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
                                       this_._internal_failed_attempts());
     }
-  }
-  if ((cached_has_bits & 0x007f0000u) != 0) {
     // optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];
-    if ((cached_has_bits & 0x00010000u) != 0) {
+    if ((cached_has_bits & 0x00008000u) != 0) {
       total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
           this_._internal_last_password_update());
     }
+  }
+  if ((cached_has_bits & 0x003f0000u) != 0) {
     // optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];
-    if ((cached_has_bits & 0x00020000u) != 0) {
+    if ((cached_has_bits & 0x00010000u) != 0) {
       total_size += 2 + ::_pbi::WireFormatLite::Int64Size(
                                       this_._internal_last_picture_update());
     }
     // optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];
-    if ((cached_has_bits & 0x00040000u) != 0) {
+    if ((cached_has_bits & 0x00020000u) != 0) {
       total_size += 2 + ::_pbi::WireFormatLite::Int64Size(
                                       this_._internal_last_activity_at());
     }
     // optional int64 last_login = 22 [json_name = "lastLogin"];
-    if ((cached_has_bits & 0x00080000u) != 0) {
+    if ((cached_has_bits & 0x00040000u) != 0) {
       total_size += 2 + ::_pbi::WireFormatLite::Int64Size(
                                       this_._internal_last_login());
     }
     // optional int64 created_at = 23 [json_name = "createdAt"];
-    if ((cached_has_bits & 0x00100000u) != 0) {
+    if ((cached_has_bits & 0x00080000u) != 0) {
       total_size += 2 + ::_pbi::WireFormatLite::Int64Size(
                                       this_._internal_created_at());
     }
     // optional int64 updated_at = 24 [json_name = "updatedAt"];
-    if ((cached_has_bits & 0x00200000u) != 0) {
+    if ((cached_has_bits & 0x00100000u) != 0) {
       total_size += 2 + ::_pbi::WireFormatLite::Int64Size(
                                       this_._internal_updated_at());
     }
     // optional int64 deleted_at = 25 [json_name = "deletedAt"];
-    if ((cached_has_bits & 0x00400000u) != 0) {
+    if ((cached_has_bits & 0x00200000u) != 0) {
       total_size += 2 + ::_pbi::WireFormatLite::Int64Size(
                                       this_._internal_deleted_at());
     }
@@ -1374,6 +1377,7 @@ void User::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::pr
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  _this->_internal_mutable_roles()->MergeFrom(from._internal_roles());
   _this->_impl_.props_.MergeFrom(from._impl_.props_);
   _this->_impl_.notify_props_.MergeFrom(from._impl_.notify_props_);
   cached_has_bits = from._impl_._has_bits_[0];
@@ -1411,44 +1415,41 @@ void User::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::pr
       _this->_internal_set_auth_service(from._internal_auth_service());
     }
     if ((cached_has_bits & 0x00000400u) != 0) {
-      _this->_internal_set_roles(from._internal_roles());
-    }
-    if ((cached_has_bits & 0x00000800u) != 0) {
       _this->_internal_set_locale(from._internal_locale());
     }
-    if ((cached_has_bits & 0x00001000u) != 0) {
+    if ((cached_has_bits & 0x00000800u) != 0) {
       _this->_internal_set_mfa_secret(from._internal_mfa_secret());
     }
-    if ((cached_has_bits & 0x00002000u) != 0) {
+    if ((cached_has_bits & 0x00001000u) != 0) {
       _this->_impl_.is_email_verified_ = from._impl_.is_email_verified_;
     }
-    if ((cached_has_bits & 0x00004000u) != 0) {
+    if ((cached_has_bits & 0x00002000u) != 0) {
       _this->_impl_.mfa_active_ = from._impl_.mfa_active_;
     }
-    if ((cached_has_bits & 0x00008000u) != 0) {
+    if ((cached_has_bits & 0x00004000u) != 0) {
       _this->_impl_.failed_attempts_ = from._impl_.failed_attempts_;
     }
-  }
-  if ((cached_has_bits & 0x007f0000u) != 0) {
-    if ((cached_has_bits & 0x00010000u) != 0) {
+    if ((cached_has_bits & 0x00008000u) != 0) {
       _this->_impl_.last_password_update_ = from._impl_.last_password_update_;
     }
-    if ((cached_has_bits & 0x00020000u) != 0) {
+  }
+  if ((cached_has_bits & 0x003f0000u) != 0) {
+    if ((cached_has_bits & 0x00010000u) != 0) {
       _this->_impl_.last_picture_update_ = from._impl_.last_picture_update_;
     }
-    if ((cached_has_bits & 0x00040000u) != 0) {
+    if ((cached_has_bits & 0x00020000u) != 0) {
       _this->_impl_.last_activity_at_ = from._impl_.last_activity_at_;
     }
-    if ((cached_has_bits & 0x00080000u) != 0) {
+    if ((cached_has_bits & 0x00040000u) != 0) {
       _this->_impl_.last_login_ = from._impl_.last_login_;
     }
-    if ((cached_has_bits & 0x00100000u) != 0) {
+    if ((cached_has_bits & 0x00080000u) != 0) {
       _this->_impl_.created_at_ = from._impl_.created_at_;
     }
-    if ((cached_has_bits & 0x00200000u) != 0) {
+    if ((cached_has_bits & 0x00100000u) != 0) {
       _this->_impl_.updated_at_ = from._impl_.updated_at_;
     }
-    if ((cached_has_bits & 0x00400000u) != 0) {
+    if ((cached_has_bits & 0x00200000u) != 0) {
       _this->_impl_.deleted_at_ = from._impl_.deleted_at_;
     }
   }
@@ -1470,6 +1471,7 @@ void User::InternalSwap(User* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.roles_.InternalSwap(&other->_impl_.roles_);
   _impl_.props_.InternalSwap(&other->_impl_.props_);
   _impl_.notify_props_.InternalSwap(&other->_impl_.notify_props_);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.id_, &other->_impl_.id_, arena);
@@ -1482,7 +1484,6 @@ void User::InternalSwap(User* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.password_, &other->_impl_.password_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.auth_data_, &other->_impl_.auth_data_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.auth_service_, &other->_impl_.auth_service_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.roles_, &other->_impl_.roles_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.locale_, &other->_impl_.locale_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.mfa_secret_, &other->_impl_.mfa_secret_, arena);
   ::google::protobuf::internal::memswap<

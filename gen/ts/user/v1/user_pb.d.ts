@@ -60,10 +60,10 @@ export class User extends jspb.Message {
   getAuthService(): string;
   setAuthService(value: string): void;
 
-  hasRoles(): boolean;
-  clearRoles(): void;
-  getRoles(): string;
-  setRoles(value: string): void;
+  clearRolesList(): void;
+  getRolesList(): Array<string>;
+  setRolesList(value: Array<string>): void;
+  addRoles(value: string, index?: number): string;
 
   getPropsMap(): jspb.Map<string, string>;
   clearPropsMap(): void;
@@ -147,7 +147,7 @@ export namespace User {
     password: string,
     authData: string,
     authService: string,
-    roles: string,
+    rolesList: Array<string>,
     propsMap: Array<[string, string]>,
     notifyPropsMap: Array<[string, string]>,
     lastPasswordUpdate: number,

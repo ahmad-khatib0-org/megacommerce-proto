@@ -34,7 +34,7 @@ type User struct {
 	Password           *string                `protobuf:"bytes,9,opt,name=password,proto3,oneof" json:"password,omitempty"`
 	AuthData           *string                `protobuf:"bytes,10,opt,name=auth_data,json=authData,proto3,oneof" json:"auth_data,omitempty"`
 	AuthService        *string                `protobuf:"bytes,11,opt,name=auth_service,json=authService,proto3,oneof" json:"auth_service,omitempty"`
-	Roles              *string                `protobuf:"bytes,12,opt,name=roles,proto3,oneof" json:"roles,omitempty"`
+	Roles              []string               `protobuf:"bytes,12,rep,name=roles,proto3" json:"roles,omitempty"`
 	Props              map[string]string      `protobuf:"bytes,13,rep,name=props,proto3" json:"props,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	NotifyProps        map[string]string      `protobuf:"bytes,14,rep,name=notify_props,json=notifyProps,proto3" json:"notify_props,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	LastPasswordUpdate *int64                 `protobuf:"varint,15,opt,name=last_password_update,json=lastPasswordUpdate,proto3,oneof" json:"last_password_update,omitempty"`
@@ -159,11 +159,11 @@ func (x *User) GetAuthService() string {
 	return ""
 }
 
-func (x *User) GetRoles() string {
-	if x != nil && x.Roles != nil {
-		return *x.Roles
+func (x *User) GetRoles() []string {
+	if x != nil {
+		return x.Roles
 	}
-	return ""
+	return nil
 }
 
 func (x *User) GetProps() map[string]string {
@@ -261,7 +261,7 @@ var File_user_v1_user_proto protoreflect.FileDescriptor
 
 const file_user_v1_user_proto_rawDesc = "" +
 	"\n" +
-	"\x12user/v1/user.proto\x12\auser.v1\x1a\x16user/v1/supplier.proto\"\xa9\v\n" +
+	"\x12user/v1/user.proto\x12\auser.v1\x1a\x16user/v1/supplier.proto\"\x9a\v\n" +
 	"\x04User\x12\x13\n" +
 	"\x02id\x18\x01 \x01(\tH\x00R\x02id\x88\x01\x01\x12\x1f\n" +
 	"\busername\x18\x02 \x01(\tH\x01R\busername\x88\x01\x01\x12\"\n" +
@@ -278,27 +278,27 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\tauth_data\x18\n" +
 	" \x01(\tH\tR\bauthData\x88\x01\x01\x12&\n" +
 	"\fauth_service\x18\v \x01(\tH\n" +
-	"R\vauthService\x88\x01\x01\x12\x19\n" +
-	"\x05roles\x18\f \x01(\tH\vR\x05roles\x88\x01\x01\x12.\n" +
+	"R\vauthService\x88\x01\x01\x12\x14\n" +
+	"\x05roles\x18\f \x03(\tR\x05roles\x12.\n" +
 	"\x05props\x18\r \x03(\v2\x18.user.v1.User.PropsEntryR\x05props\x12A\n" +
 	"\fnotify_props\x18\x0e \x03(\v2\x1e.user.v1.User.NotifyPropsEntryR\vnotifyProps\x125\n" +
-	"\x14last_password_update\x18\x0f \x01(\x03H\fR\x12lastPasswordUpdate\x88\x01\x01\x123\n" +
-	"\x13last_picture_update\x18\x10 \x01(\x03H\rR\x11lastPictureUpdate\x88\x01\x01\x12,\n" +
-	"\x0ffailed_attempts\x18\x11 \x01(\x05H\x0eR\x0efailedAttempts\x88\x01\x01\x12\x1b\n" +
-	"\x06locale\x18\x12 \x01(\tH\x0fR\x06locale\x88\x01\x01\x12\"\n" +
+	"\x14last_password_update\x18\x0f \x01(\x03H\vR\x12lastPasswordUpdate\x88\x01\x01\x123\n" +
+	"\x13last_picture_update\x18\x10 \x01(\x03H\fR\x11lastPictureUpdate\x88\x01\x01\x12,\n" +
+	"\x0ffailed_attempts\x18\x11 \x01(\x05H\rR\x0efailedAttempts\x88\x01\x01\x12\x1b\n" +
+	"\x06locale\x18\x12 \x01(\tH\x0eR\x06locale\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"mfa_active\x18\x13 \x01(\bH\x10R\tmfaActive\x88\x01\x01\x12\"\n" +
+	"mfa_active\x18\x13 \x01(\bH\x0fR\tmfaActive\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"mfa_secret\x18\x14 \x01(\tH\x11R\tmfaSecret\x88\x01\x01\x12-\n" +
-	"\x10last_activity_at\x18\x15 \x01(\x03H\x12R\x0elastActivityAt\x88\x01\x01\x12\"\n" +
+	"mfa_secret\x18\x14 \x01(\tH\x10R\tmfaSecret\x88\x01\x01\x12-\n" +
+	"\x10last_activity_at\x18\x15 \x01(\x03H\x11R\x0elastActivityAt\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"last_login\x18\x16 \x01(\x03H\x13R\tlastLogin\x88\x01\x01\x12\"\n" +
+	"last_login\x18\x16 \x01(\x03H\x12R\tlastLogin\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"created_at\x18\x17 \x01(\x03H\x14R\tcreatedAt\x88\x01\x01\x12\"\n" +
+	"created_at\x18\x17 \x01(\x03H\x13R\tcreatedAt\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"updated_at\x18\x18 \x01(\x03H\x15R\tupdatedAt\x88\x01\x01\x12\"\n" +
+	"updated_at\x18\x18 \x01(\x03H\x14R\tupdatedAt\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"deleted_at\x18\x19 \x01(\x03H\x16R\tdeletedAt\x88\x01\x01\x1a8\n" +
+	"deleted_at\x18\x19 \x01(\x03H\x15R\tdeletedAt\x88\x01\x01\x1a8\n" +
 	"\n" +
 	"PropsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
@@ -319,8 +319,7 @@ const file_user_v1_user_proto_rawDesc = "" +
 	"\t_passwordB\f\n" +
 	"\n" +
 	"_auth_dataB\x0f\n" +
-	"\r_auth_serviceB\b\n" +
-	"\x06_rolesB\x17\n" +
+	"\r_auth_serviceB\x17\n" +
 	"\x15_last_password_updateB\x16\n" +
 	"\x14_last_picture_updateB\x12\n" +
 	"\x10_failed_attemptsB\t\n" +

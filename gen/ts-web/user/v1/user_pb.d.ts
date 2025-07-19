@@ -59,10 +59,10 @@ export class User extends jspb.Message {
   hasAuthService(): boolean;
   clearAuthService(): User;
 
-  getRoles(): string;
-  setRoles(value: string): User;
-  hasRoles(): boolean;
-  clearRoles(): User;
+  getRolesList(): Array<string>;
+  setRolesList(value: Array<string>): User;
+  clearRolesList(): User;
+  addRoles(value: string, index?: number): User;
 
   getPropsMap(): jspb.Map<string, string>;
   clearPropsMap(): User;
@@ -146,7 +146,7 @@ export namespace User {
     password?: string,
     authData?: string,
     authService?: string,
-    roles?: string,
+    rolesList: Array<string>,
     propsMap: Array<[string, string]>,
     notifyPropsMap: Array<[string, string]>,
     lastPasswordUpdate?: number,
@@ -215,11 +215,6 @@ export namespace User {
   export enum AuthServiceCase { 
     _AUTH_SERVICE_NOT_SET = 0,
     AUTH_SERVICE = 11,
-  }
-
-  export enum RolesCase { 
-    _ROLES_NOT_SET = 0,
-    ROLES = 12,
   }
 
   export enum LastPasswordUpdateCase { 

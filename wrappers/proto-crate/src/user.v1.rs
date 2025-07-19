@@ -57,8 +57,8 @@ pub struct User {
     pub auth_data: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "11")]
     pub auth_service: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, optional, tag = "12")]
-    pub roles: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, repeated, tag = "12")]
+    pub roles: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
     #[prost(map = "string, string", tag = "13")]
     pub props: ::std::collections::HashMap<
         ::prost::alloc::string::String,
