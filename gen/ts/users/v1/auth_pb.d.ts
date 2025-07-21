@@ -76,8 +76,8 @@ export namespace EmailConfirmationRequest {
 export class EmailConfirmationResponse extends jspb.Message {
   hasData(): boolean;
   clearData(): void;
-  getData(): shared_v1_types_pb.Empty | undefined;
-  setData(value?: shared_v1_types_pb.Empty): void;
+  getData(): shared_v1_types_pb.SuccessResponse | undefined;
+  setData(value?: shared_v1_types_pb.SuccessResponse): void;
 
   hasError(): boolean;
   clearError(): void;
@@ -97,7 +97,7 @@ export class EmailConfirmationResponse extends jspb.Message {
 
 export namespace EmailConfirmationResponse {
   export type AsObject = {
-    data?: shared_v1_types_pb.Empty.AsObject,
+    data?: shared_v1_types_pb.SuccessResponse.AsObject,
     error?: shared_v1_error_pb.AppError.AsObject,
   }
 

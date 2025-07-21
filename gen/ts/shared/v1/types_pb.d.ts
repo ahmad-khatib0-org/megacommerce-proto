@@ -76,6 +76,31 @@ export namespace OrderDirection {
   }
 }
 
+export class SuccessResponse extends jspb.Message {
+  hasMessage(): boolean;
+  clearMessage(): void;
+  getMessage(): string;
+  setMessage(value: string): void;
+
+  getMetadataMap(): jspb.Map<string, string>;
+  clearMetadataMap(): void;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SuccessResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: SuccessResponse): SuccessResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SuccessResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SuccessResponse;
+  static deserializeBinaryFromReader(message: SuccessResponse, reader: jspb.BinaryReader): SuccessResponse;
+}
+
+export namespace SuccessResponse {
+  export type AsObject = {
+    message: string,
+    metadataMap: Array<[string, string]>,
+  }
+}
+
 export class Any extends jspb.Message {
   getTypeUrl(): string;
   setTypeUrl(value: string): void;

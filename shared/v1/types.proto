@@ -18,6 +18,11 @@ message OrderDirection {
   }
 }
 
+message SuccessResponseData { 
+  optional string message = 1;
+  map<string, string> metadata = 2;
+}
+
 // Custom Any message to avoid google.protobuf.Any issues
 message Any {
   string type_url = 1; // Identifies the type of the serialized message

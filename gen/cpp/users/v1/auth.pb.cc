@@ -182,13 +182,13 @@ const char descriptor_table_protodef_users_2fv1_2fauth_2eproto[] ABSL_ATTRIBUTE_
     "expires_at\030\006 \001(\003R\texpiresAt\"a\n\030EmailConf"
     "irmationRequest\022\024\n\005email\030\001 \001(\tR\005email\022\024\n"
     "\005token\030\002 \001(\tR\005token\022\031\n\010token_id\030\003 \001(\tR\007t"
-    "okenId\"|\n\031EmailConfirmationResponse\022&\n\004d"
-    "ata\030\001 \001(\0132\020.shared.v1.EmptyH\000R\004data\022+\n\005e"
-    "rror\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005error"
-    "B\n\n\010responseBm\n\031org.megacommerce.users.v"
-    "1B\tAuthProtoZBgithub.com/ahmad-khatib0-o"
-    "rg/megacommerce-proto/gen/go/users/v1;v1"
-    "\370\001\001b\006proto3"
+    "okenId\"\206\001\n\031EmailConfirmationResponse\0220\n\004"
+    "data\030\001 \001(\0132\032.shared.v1.SuccessResponseH\000"
+    "R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErr"
+    "orH\000R\005errorB\n\n\010responseBm\n\031org.megacomme"
+    "rce.users.v1B\tAuthProtoZBgithub.com/ahma"
+    "d-khatib0-org/megacommerce-proto/gen/go/"
+    "users/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_users_2fv1_2fauth_2eproto_deps[2] = {
@@ -199,7 +199,7 @@ static ::absl::once_flag descriptor_table_users_2fv1_2fauth_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_users_2fv1_2fauth_2eproto = {
     false,
     false,
-    571,
+    582,
     descriptor_table_protodef_users_2fv1_2fauth_2eproto,
     "users/v1/auth.proto",
     &descriptor_table_users_2fv1_2fauth_2eproto_once,
@@ -1023,7 +1023,7 @@ class EmailConfirmationResponse::_Internal {
       PROTOBUF_FIELD_OFFSET(::users::v1::EmailConfirmationResponse, _impl_._oneof_case_);
 };
 
-void EmailConfirmationResponse::set_allocated_data(::shared::v1::Empty* PROTOBUF_NULLABLE data) {
+void EmailConfirmationResponse::set_allocated_data(::shared::v1::SuccessResponse* PROTOBUF_NULLABLE data) {
   ::google::protobuf::Arena* message_arena = GetArena();
   clear_response();
   if (data) {
@@ -1232,7 +1232,7 @@ EmailConfirmationResponse::_table_ = {
   }}, {{
     65535, 65535
   }}, {{
-    // .shared.v1.Empty data = 1 [json_name = "data"];
+    // .shared.v1.SuccessResponse data = 1 [json_name = "data"];
     {PROTOBUF_FIELD_OFFSET(EmailConfirmationResponse, _impl_.response_.data_), _Internal::kOneofCaseOffset + 0, 0,
     (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
     // .shared.v1.AppError error = 2 [json_name = "error"];
@@ -1240,7 +1240,7 @@ EmailConfirmationResponse::_table_ = {
     (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
-      {::_pbi::TcParser::GetTable<::shared::v1::Empty>()},
+      {::_pbi::TcParser::GetTable<::shared::v1::SuccessResponse>()},
       {::_pbi::TcParser::GetTable<::shared::v1::AppError>()},
   }},
   {{
@@ -1312,7 +1312,7 @@ PROTOBUF_NOINLINE void EmailConfirmationResponse::Clear() {
   (void)cached_has_bits;
 
   switch (this_.response_case()) {
-    // .shared.v1.Empty data = 1 [json_name = "data"];
+    // .shared.v1.SuccessResponse data = 1 [json_name = "data"];
     case kData: {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.response_.data_);

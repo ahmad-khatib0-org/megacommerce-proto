@@ -214,7 +214,7 @@ func (x *EmailConfirmationResponse) GetResponse() isEmailConfirmationResponse_Re
 	return nil
 }
 
-func (x *EmailConfirmationResponse) GetData() *v1.Empty {
+func (x *EmailConfirmationResponse) GetData() *v1.SuccessResponse {
 	if x != nil {
 		if x, ok := x.Response.(*EmailConfirmationResponse_Data); ok {
 			return x.Data
@@ -237,7 +237,7 @@ type isEmailConfirmationResponse_Response interface {
 }
 
 type EmailConfirmationResponse_Data struct {
-	Data *v1.Empty `protobuf:"bytes,1,opt,name=data,proto3,oneof"`
+	Data *v1.SuccessResponse `protobuf:"bytes,1,opt,name=data,proto3,oneof"`
 }
 
 type EmailConfirmationResponse_Error struct {
@@ -265,9 +265,9 @@ const file_users_v1_auth_proto_rawDesc = "" +
 	"\x18EmailConfirmationRequest\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12\x14\n" +
 	"\x05token\x18\x02 \x01(\tR\x05token\x12\x19\n" +
-	"\btoken_id\x18\x03 \x01(\tR\atokenId\"|\n" +
-	"\x19EmailConfirmationResponse\x12&\n" +
-	"\x04data\x18\x01 \x01(\v2\x10.shared.v1.EmptyH\x00R\x04data\x12+\n" +
+	"\btoken_id\x18\x03 \x01(\tR\atokenId\"\x86\x01\n" +
+	"\x19EmailConfirmationResponse\x120\n" +
+	"\x04data\x18\x01 \x01(\v2\x1a.shared.v1.SuccessResponseH\x00R\x04data\x12+\n" +
 	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +
 	"\n" +
 	"\bresponseBm\n" +
@@ -290,11 +290,11 @@ var file_users_v1_auth_proto_goTypes = []any{
 	(*Token)(nil),                     // 0: users.v1.Token
 	(*EmailConfirmationRequest)(nil),  // 1: users.v1.EmailConfirmationRequest
 	(*EmailConfirmationResponse)(nil), // 2: users.v1.EmailConfirmationResponse
-	(*v1.Empty)(nil),                  // 3: shared.v1.Empty
+	(*v1.SuccessResponse)(nil),        // 3: shared.v1.SuccessResponse
 	(*v1.AppError)(nil),               // 4: shared.v1.AppError
 }
 var file_users_v1_auth_proto_depIdxs = []int32{
-	3, // 0: users.v1.EmailConfirmationResponse.data:type_name -> shared.v1.Empty
+	3, // 0: users.v1.EmailConfirmationResponse.data:type_name -> shared.v1.SuccessResponse
 	4, // 1: users.v1.EmailConfirmationResponse.error:type_name -> shared.v1.AppError
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type

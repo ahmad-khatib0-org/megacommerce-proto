@@ -2048,6 +2048,858 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
 
   }
 
+  public interface SuccessResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:shared.v1.SuccessResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string message = 1 [json_name = "message"];</code>
+     * @return Whether the message field is set.
+     */
+    boolean hasMessage();
+    /**
+     * <code>optional string message = 1 [json_name = "message"];</code>
+     * @return The message.
+     */
+    java.lang.String getMessage();
+    /**
+     * <code>optional string message = 1 [json_name = "message"];</code>
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
+
+    /**
+     * <code>map&lt;string, string&gt; metadata = 2 [json_name = "metadata"];</code>
+     */
+    int getMetadataCount();
+    /**
+     * <code>map&lt;string, string&gt; metadata = 2 [json_name = "metadata"];</code>
+     */
+    boolean containsMetadata(
+        java.lang.String key);
+    /**
+     * Use {@link #getMetadataMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getMetadata();
+    /**
+     * <code>map&lt;string, string&gt; metadata = 2 [json_name = "metadata"];</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getMetadataMap();
+    /**
+     * <code>map&lt;string, string&gt; metadata = 2 [json_name = "metadata"];</code>
+     */
+    /* nullable */
+java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; metadata = 2 [json_name = "metadata"];</code>
+     */
+    java.lang.String getMetadataOrThrow(
+        java.lang.String key);
+  }
+  /**
+   * Protobuf type {@code shared.v1.SuccessResponse}
+   */
+  public static final class SuccessResponse extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:shared.v1.SuccessResponse)
+      SuccessResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        SuccessResponse.class.getName());
+    }
+    // Use SuccessResponse.newBuilder() to construct.
+    private SuccessResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private SuccessResponse() {
+      message_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_SuccessResponse_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 2:
+          return internalGetMetadata();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_SuccessResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.shared.v1.TypesProto.SuccessResponse.class, org.megacommerce.shared.v1.TypesProto.SuccessResponse.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int MESSAGE_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object message_ = "";
+    /**
+     * <code>optional string message = 1 [json_name = "message"];</code>
+     * @return Whether the message field is set.
+     */
+    @java.lang.Override
+    public boolean hasMessage() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional string message = 1 [json_name = "message"];</code>
+     * @return The message.
+     */
+    @java.lang.Override
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string message = 1 [json_name = "message"];</code>
+     * @return The bytes for message.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int METADATA_FIELD_NUMBER = 2;
+    private static final class MetadataDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_SuccessResponse_MetadataEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> metadata_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMetadata() {
+      if (metadata_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            MetadataDefaultEntryHolder.defaultEntry);
+      }
+      return metadata_;
+    }
+    public int getMetadataCount() {
+      return internalGetMetadata().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 2 [json_name = "metadata"];</code>
+     */
+    @java.lang.Override
+    public boolean containsMetadata(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetMetadata().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getMetadataMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+      return getMetadataMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 2 [json_name = "metadata"];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+      return internalGetMetadata().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 2 [json_name = "metadata"];</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+java.lang.String defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 2 [json_name = "metadata"];</code>
+     */
+    @java.lang.Override
+    public java.lang.String getMetadataOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, message_);
+      }
+      com.google.protobuf.GeneratedMessage
+        .serializeStringMapTo(
+          output,
+          internalGetMetadata(),
+          MetadataDefaultEntryHolder.defaultEntry,
+          2);
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, message_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetMetadata().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(2, metadata__);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.shared.v1.TypesProto.SuccessResponse)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.shared.v1.TypesProto.SuccessResponse other = (org.megacommerce.shared.v1.TypesProto.SuccessResponse) obj;
+
+      if (hasMessage() != other.hasMessage()) return false;
+      if (hasMessage()) {
+        if (!getMessage()
+            .equals(other.getMessage())) return false;
+      }
+      if (!internalGetMetadata().equals(
+          other.internalGetMetadata())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMessage()) {
+        hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getMessage().hashCode();
+      }
+      if (!internalGetMetadata().getMap().isEmpty()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetMetadata().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.shared.v1.TypesProto.SuccessResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code shared.v1.SuccessResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:shared.v1.SuccessResponse)
+        org.megacommerce.shared.v1.TypesProto.SuccessResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_SuccessResponse_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetMetadata();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 2:
+            return internalGetMutableMetadata();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_SuccessResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.shared.v1.TypesProto.SuccessResponse.class, org.megacommerce.shared.v1.TypesProto.SuccessResponse.Builder.class);
+      }
+
+      // Construct using org.megacommerce.shared.v1.TypesProto.SuccessResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        message_ = "";
+        internalGetMutableMetadata().clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_SuccessResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.SuccessResponse getDefaultInstanceForType() {
+        return org.megacommerce.shared.v1.TypesProto.SuccessResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.SuccessResponse build() {
+        org.megacommerce.shared.v1.TypesProto.SuccessResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.SuccessResponse buildPartial() {
+        org.megacommerce.shared.v1.TypesProto.SuccessResponse result = new org.megacommerce.shared.v1.TypesProto.SuccessResponse(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.shared.v1.TypesProto.SuccessResponse result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.message_ = message_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.metadata_ = internalGetMetadata();
+          result.metadata_.makeImmutable();
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.shared.v1.TypesProto.SuccessResponse) {
+          return mergeFrom((org.megacommerce.shared.v1.TypesProto.SuccessResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.shared.v1.TypesProto.SuccessResponse other) {
+        if (other == org.megacommerce.shared.v1.TypesProto.SuccessResponse.getDefaultInstance()) return this;
+        if (other.hasMessage()) {
+          message_ = other.message_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        internalGetMutableMetadata().mergeFrom(
+            other.internalGetMetadata());
+        bitField0_ |= 0x00000002;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                message_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                metadata__ = input.readMessage(
+                    MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableMetadata().getMutableMap().put(
+                    metadata__.getKey(), metadata__.getValue());
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object message_ = "";
+      /**
+       * <code>optional string message = 1 [json_name = "message"];</code>
+       * @return Whether the message field is set.
+       */
+      public boolean hasMessage() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>optional string message = 1 [json_name = "message"];</code>
+       * @return The message.
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string message = 1 [json_name = "message"];</code>
+       * @return The bytes for message.
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string message = 1 [json_name = "message"];</code>
+       * @param value The message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        message_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string message = 1 [json_name = "message"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMessage() {
+        message_ = getDefaultInstance().getMessage();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string message = 1 [json_name = "message"];</code>
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        message_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> metadata_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetMetadata() {
+        if (metadata_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              MetadataDefaultEntryHolder.defaultEntry);
+        }
+        return metadata_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetMutableMetadata() {
+        if (metadata_ == null) {
+          metadata_ = com.google.protobuf.MapField.newMapField(
+              MetadataDefaultEntryHolder.defaultEntry);
+        }
+        if (!metadata_.isMutable()) {
+          metadata_ = metadata_.copy();
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return metadata_;
+      }
+      public int getMetadataCount() {
+        return internalGetMetadata().getMap().size();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 2 [json_name = "metadata"];</code>
+       */
+      @java.lang.Override
+      public boolean containsMetadata(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetMetadata().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getMetadataMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+        return getMetadataMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 2 [json_name = "metadata"];</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+        return internalGetMetadata().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 2 [json_name = "metadata"];</code>
+       */
+      @java.lang.Override
+      public /* nullable */
+java.lang.String getMetadataOrDefault(
+          java.lang.String key,
+          /* nullable */
+java.lang.String defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetMetadata().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 2 [json_name = "metadata"];</code>
+       */
+      @java.lang.Override
+      public java.lang.String getMetadataOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetMetadata().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+      public Builder clearMetadata() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        internalGetMutableMetadata().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 2 [json_name = "metadata"];</code>
+       */
+      public Builder removeMetadata(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableMetadata().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+          getMutableMetadata() {
+        bitField0_ |= 0x00000002;
+        return internalGetMutableMetadata().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 2 [json_name = "metadata"];</code>
+       */
+      public Builder putMetadata(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) { throw new NullPointerException("map value"); }
+        internalGetMutableMetadata().getMutableMap()
+            .put(key, value);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 2 [json_name = "metadata"];</code>
+       */
+      public Builder putAllMetadata(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableMetadata().getMutableMap()
+            .putAll(values);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:shared.v1.SuccessResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:shared.v1.SuccessResponse)
+    private static final org.megacommerce.shared.v1.TypesProto.SuccessResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.shared.v1.TypesProto.SuccessResponse();
+    }
+
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SuccessResponse>
+        PARSER = new com.google.protobuf.AbstractParser<SuccessResponse>() {
+      @java.lang.Override
+      public SuccessResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<SuccessResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SuccessResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.shared.v1.TypesProto.SuccessResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface AnyOrBuilder extends
       // @@protoc_insertion_point(interface_extends:shared.v1.Any)
       com.google.protobuf.MessageOrBuilder {
@@ -3076,6 +3928,16 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_shared_v1_OrderDirection_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_shared_v1_SuccessResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_shared_v1_SuccessResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_shared_v1_SuccessResponse_MetadataEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_shared_v1_SuccessResponse_MetadataEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_shared_v1_Any_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -3103,12 +3965,17 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
       "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\013" +
       "2\024.shared.v1.StringMapR\005value:\0028\001\"C\n\016Ord" +
       "erDirection\022\022\n\003asc\030\001 \001(\010H\000R\003asc\022\024\n\004desc\030" +
-      "\002 \001(\010H\000R\004descB\007\n\005order\"6\n\003Any\022\031\n\010type_ur" +
-      "l\030\001 \001(\tR\007typeUrl\022\024\n\005value\030\002 \001(\014R\005value\"\007" +
-      "\n\005EmptyBp\n\032org.megacommerce.shared.v1B\nT" +
-      "ypesProtoZCgithub.com/ahmad-khatib0-org/" +
-      "megacommerce-proto/gen/go/shared/v1;v1\370\001" +
-      "\001b\006proto3"
+      "\002 \001(\010H\000R\004descB\007\n\005order\"\277\001\n\017SuccessRespon" +
+      "se\022\035\n\007message\030\001 \001(\tH\000R\007message\210\001\001\022D\n\010met" +
+      "adata\030\002 \003(\0132(.shared.v1.SuccessResponse." +
+      "MetadataEntryR\010metadata\032;\n\rMetadataEntry" +
+      "\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value" +
+      ":\0028\001B\n\n\010_message\"6\n\003Any\022\031\n\010type_url\030\001 \001(" +
+      "\tR\007typeUrl\022\024\n\005value\030\002 \001(\014R\005value\"\007\n\005Empt" +
+      "yBp\n\032org.megacommerce.shared.v1B\nTypesPr" +
+      "otoZCgithub.com/ahmad-khatib0-org/megaco" +
+      "mmerce-proto/gen/go/shared/v1;v1\370\001\001b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3144,14 +4011,26 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_OrderDirection_descriptor,
         new java.lang.String[] { "Asc", "Desc", "Order", });
-    internal_static_shared_v1_Any_descriptor =
+    internal_static_shared_v1_SuccessResponse_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_shared_v1_SuccessResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_shared_v1_SuccessResponse_descriptor,
+        new java.lang.String[] { "Message", "Metadata", });
+    internal_static_shared_v1_SuccessResponse_MetadataEntry_descriptor =
+      internal_static_shared_v1_SuccessResponse_descriptor.getNestedTypes().get(0);
+    internal_static_shared_v1_SuccessResponse_MetadataEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_shared_v1_SuccessResponse_MetadataEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_shared_v1_Any_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_shared_v1_Any_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_Any_descriptor,
         new java.lang.String[] { "TypeUrl", "Value", });
     internal_static_shared_v1_Empty_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_shared_v1_Empty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_Empty_descriptor,
