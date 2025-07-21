@@ -113,6 +113,10 @@ pub struct ConfigSecurity {
     pub session_cache_in_minutes: ::core::option::Option<i32>,
     #[prost(string, optional, tag = "18")]
     pub email_confirmation_url: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(uint32, optional, tag = "19")]
+    pub token_confirmation_expiry_in_hours: ::core::option::Option<u32>,
+    #[prost(uint32, optional, tag = "20")]
+    pub token_password_reset_expiry_in_hours: ::core::option::Option<u32>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

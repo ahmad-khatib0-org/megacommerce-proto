@@ -8064,6 +8064,8 @@ class ConfigSecurity final : public ::google::protobuf::Message
     kCorsDebugFieldNumber = 15,
     kAllowCookiesForSubdomainsFieldNumber = 16,
     kSessionCacheInMinutesFieldNumber = 17,
+    kTokenConfirmationExpiryInHoursFieldNumber = 19,
+    kTokenPasswordResetExpiryInHoursFieldNumber = 20,
   };
   // map<string, string> restricted_usernames = 1 [json_name = "restrictedUsernames"];
   int restricted_usernames_size() const;
@@ -8282,11 +8284,33 @@ class ConfigSecurity final : public ::google::protobuf::Message
   void _internal_set_session_cache_in_minutes(::int32_t value);
 
   public:
+  // optional uint32 token_confirmation_expiry_in_hours = 19 [json_name = "tokenConfirmationExpiryInHours"];
+  bool has_token_confirmation_expiry_in_hours() const;
+  void clear_token_confirmation_expiry_in_hours() ;
+  ::uint32_t token_confirmation_expiry_in_hours() const;
+  void set_token_confirmation_expiry_in_hours(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_token_confirmation_expiry_in_hours() const;
+  void _internal_set_token_confirmation_expiry_in_hours(::uint32_t value);
+
+  public:
+  // optional uint32 token_password_reset_expiry_in_hours = 20 [json_name = "tokenPasswordResetExpiryInHours"];
+  bool has_token_password_reset_expiry_in_hours() const;
+  void clear_token_password_reset_expiry_in_hours() ;
+  ::uint32_t token_password_reset_expiry_in_hours() const;
+  void set_token_password_reset_expiry_in_hours(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_token_password_reset_expiry_in_hours() const;
+  void _internal_set_token_password_reset_expiry_in_hours(::uint32_t value);
+
+  public:
   // @@protoc_insertion_point(class_scope:common.v1.ConfigSecurity)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<5, 18,
+  static const ::google::protobuf::internal::TcParseTable<5, 20,
                                    1, 126,
                                    2>
       _table_;
@@ -8329,6 +8353,8 @@ class ConfigSecurity final : public ::google::protobuf::Message
     bool cors_debug_;
     bool allow_cookies_for_subdomains_;
     ::int32_t session_cache_in_minutes_;
+    ::uint32_t token_confirmation_expiry_in_hours_;
+    ::uint32_t token_password_reset_expiry_in_hours_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -11664,6 +11690,62 @@ inline void ConfigSecurity::set_allocated_email_confirmation_url(::std::string* 
     _impl_.email_confirmation_url_.Set("", GetArena());
   }
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigSecurity.email_confirmation_url)
+}
+
+// optional uint32 token_confirmation_expiry_in_hours = 19 [json_name = "tokenConfirmationExpiryInHours"];
+inline bool ConfigSecurity::has_token_confirmation_expiry_in_hours() const {
+  bool value = (_impl_._has_bits_[0] & 0x00020000u) != 0;
+  return value;
+}
+inline void ConfigSecurity::clear_token_confirmation_expiry_in_hours() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.token_confirmation_expiry_in_hours_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00020000u;
+}
+inline ::uint32_t ConfigSecurity::token_confirmation_expiry_in_hours() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.token_confirmation_expiry_in_hours)
+  return _internal_token_confirmation_expiry_in_hours();
+}
+inline void ConfigSecurity::set_token_confirmation_expiry_in_hours(::uint32_t value) {
+  _internal_set_token_confirmation_expiry_in_hours(value);
+  _impl_._has_bits_[0] |= 0x00020000u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.token_confirmation_expiry_in_hours)
+}
+inline ::uint32_t ConfigSecurity::_internal_token_confirmation_expiry_in_hours() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.token_confirmation_expiry_in_hours_;
+}
+inline void ConfigSecurity::_internal_set_token_confirmation_expiry_in_hours(::uint32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.token_confirmation_expiry_in_hours_ = value;
+}
+
+// optional uint32 token_password_reset_expiry_in_hours = 20 [json_name = "tokenPasswordResetExpiryInHours"];
+inline bool ConfigSecurity::has_token_password_reset_expiry_in_hours() const {
+  bool value = (_impl_._has_bits_[0] & 0x00040000u) != 0;
+  return value;
+}
+inline void ConfigSecurity::clear_token_password_reset_expiry_in_hours() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.token_password_reset_expiry_in_hours_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00040000u;
+}
+inline ::uint32_t ConfigSecurity::token_password_reset_expiry_in_hours() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.token_password_reset_expiry_in_hours)
+  return _internal_token_password_reset_expiry_in_hours();
+}
+inline void ConfigSecurity::set_token_password_reset_expiry_in_hours(::uint32_t value) {
+  _internal_set_token_password_reset_expiry_in_hours(value);
+  _impl_._has_bits_[0] |= 0x00040000u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.token_password_reset_expiry_in_hours)
+}
+inline ::uint32_t ConfigSecurity::_internal_token_password_reset_expiry_in_hours() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.token_password_reset_expiry_in_hours_;
+}
+inline void ConfigSecurity::_internal_set_token_password_reset_expiry_in_hours(::uint32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.token_password_reset_expiry_in_hours_ = value;
 }
 
 // -------------------------------------------------------------------

@@ -292,6 +292,16 @@ export class ConfigSecurity extends jspb.Message {
   getEmailConfirmationUrl(): string;
   setEmailConfirmationUrl(value: string): void;
 
+  hasTokenConfirmationExpiryInHours(): boolean;
+  clearTokenConfirmationExpiryInHours(): void;
+  getTokenConfirmationExpiryInHours(): number;
+  setTokenConfirmationExpiryInHours(value: number): void;
+
+  hasTokenPasswordResetExpiryInHours(): boolean;
+  clearTokenPasswordResetExpiryInHours(): void;
+  getTokenPasswordResetExpiryInHours(): number;
+  setTokenPasswordResetExpiryInHours(value: number): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfigSecurity.AsObject;
   static toObject(includeInstance: boolean, msg: ConfigSecurity): ConfigSecurity.AsObject;
@@ -322,6 +332,8 @@ export namespace ConfigSecurity {
     allowCookiesForSubdomains: boolean,
     sessionCacheInMinutes: number,
     emailConfirmationUrl: string,
+    tokenConfirmationExpiryInHours: number,
+    tokenPasswordResetExpiryInHours: number,
   }
 }
 

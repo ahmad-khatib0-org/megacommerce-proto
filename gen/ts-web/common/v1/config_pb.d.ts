@@ -428,6 +428,16 @@ export class ConfigSecurity extends jspb.Message {
   hasEmailConfirmationUrl(): boolean;
   clearEmailConfirmationUrl(): ConfigSecurity;
 
+  getTokenConfirmationExpiryInHours(): number;
+  setTokenConfirmationExpiryInHours(value: number): ConfigSecurity;
+  hasTokenConfirmationExpiryInHours(): boolean;
+  clearTokenConfirmationExpiryInHours(): ConfigSecurity;
+
+  getTokenPasswordResetExpiryInHours(): number;
+  setTokenPasswordResetExpiryInHours(value: number): ConfigSecurity;
+  hasTokenPasswordResetExpiryInHours(): boolean;
+  clearTokenPasswordResetExpiryInHours(): ConfigSecurity;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConfigSecurity.AsObject;
   static toObject(includeInstance: boolean, msg: ConfigSecurity): ConfigSecurity.AsObject;
@@ -456,6 +466,8 @@ export namespace ConfigSecurity {
     allowCookiesForSubdomains?: boolean,
     sessionCacheInMinutes?: number,
     emailConfirmationUrl?: string,
+    tokenConfirmationExpiryInHours?: number,
+    tokenPasswordResetExpiryInHours?: number,
   }
 
   export enum MaximumLoginAttemptsCase { 
@@ -541,6 +553,16 @@ export namespace ConfigSecurity {
   export enum EmailConfirmationUrlCase { 
     _EMAIL_CONFIRMATION_URL_NOT_SET = 0,
     EMAIL_CONFIRMATION_URL = 18,
+  }
+
+  export enum TokenConfirmationExpiryInHoursCase { 
+    _TOKEN_CONFIRMATION_EXPIRY_IN_HOURS_NOT_SET = 0,
+    TOKEN_CONFIRMATION_EXPIRY_IN_HOURS = 19,
+  }
+
+  export enum TokenPasswordResetExpiryInHoursCase { 
+    _TOKEN_PASSWORD_RESET_EXPIRY_IN_HOURS_NOT_SET = 0,
+    TOKEN_PASSWORD_RESET_EXPIRY_IN_HOURS = 20,
   }
 }
 

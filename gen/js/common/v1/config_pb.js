@@ -2235,7 +2235,9 @@ corsAllowCredentials: (f = jspb.Message.getBooleanField(msg, 14)) == null ? unde
 corsDebug: (f = jspb.Message.getBooleanField(msg, 15)) == null ? undefined : f,
 allowCookiesForSubdomains: (f = jspb.Message.getBooleanField(msg, 16)) == null ? undefined : f,
 sessionCacheInMinutes: (f = jspb.Message.getField(msg, 17)) == null ? undefined : f,
-emailConfirmationUrl: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f
+emailConfirmationUrl: (f = jspb.Message.getField(msg, 18)) == null ? undefined : f,
+tokenConfirmationExpiryInHours: (f = jspb.Message.getField(msg, 19)) == null ? undefined : f,
+tokenPasswordResetExpiryInHours: (f = jspb.Message.getField(msg, 20)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -2345,6 +2347,14 @@ proto.common.v1.ConfigSecurity.deserializeBinaryFromReader = function(msg, reade
     case 18:
       var value = /** @type {string} */ (reader.readString());
       msg.setEmailConfirmationUrl(value);
+      break;
+    case 19:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setTokenConfirmationExpiryInHours(value);
+      break;
+    case 20:
+      var value = /** @type {number} */ (reader.readUint32());
+      msg.setTokenPasswordResetExpiryInHours(value);
       break;
     default:
       reader.skipField();
@@ -2495,6 +2505,20 @@ proto.common.v1.ConfigSecurity.serializeBinaryToWriter = function(message, write
   if (f != null) {
     writer.writeString(
       18,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 19));
+  if (f != null) {
+    writer.writeUint32(
+      19,
+      f
+    );
+  }
+  f = /** @type {number} */ (jspb.Message.getField(message, 20));
+  if (f != null) {
+    writer.writeUint32(
+      20,
       f
     );
   }
@@ -3133,6 +3157,78 @@ proto.common.v1.ConfigSecurity.prototype.clearEmailConfirmationUrl = function() 
  */
 proto.common.v1.ConfigSecurity.prototype.hasEmailConfirmationUrl = function() {
   return jspb.Message.getField(this, 18) != null;
+};
+
+
+/**
+ * optional uint32 token_confirmation_expiry_in_hours = 19;
+ * @return {number}
+ */
+proto.common.v1.ConfigSecurity.prototype.getTokenConfirmationExpiryInHours = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 19, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.common.v1.ConfigSecurity} returns this
+ */
+proto.common.v1.ConfigSecurity.prototype.setTokenConfirmationExpiryInHours = function(value) {
+  return jspb.Message.setField(this, 19, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.common.v1.ConfigSecurity} returns this
+ */
+proto.common.v1.ConfigSecurity.prototype.clearTokenConfirmationExpiryInHours = function() {
+  return jspb.Message.setField(this, 19, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.common.v1.ConfigSecurity.prototype.hasTokenConfirmationExpiryInHours = function() {
+  return jspb.Message.getField(this, 19) != null;
+};
+
+
+/**
+ * optional uint32 token_password_reset_expiry_in_hours = 20;
+ * @return {number}
+ */
+proto.common.v1.ConfigSecurity.prototype.getTokenPasswordResetExpiryInHours = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 20, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.common.v1.ConfigSecurity} returns this
+ */
+proto.common.v1.ConfigSecurity.prototype.setTokenPasswordResetExpiryInHours = function(value) {
+  return jspb.Message.setField(this, 20, value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.common.v1.ConfigSecurity} returns this
+ */
+proto.common.v1.ConfigSecurity.prototype.clearTokenPasswordResetExpiryInHours = function() {
+  return jspb.Message.setField(this, 20, undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.common.v1.ConfigSecurity.prototype.hasTokenPasswordResetExpiryInHours = function() {
+  return jspb.Message.getField(this, 20) != null;
 };
 
 

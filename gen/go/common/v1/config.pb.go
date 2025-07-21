@@ -338,6 +338,8 @@ type ConfigSecurity struct {
 	AllowCookiesForSubdomains         *bool                  `protobuf:"varint,16,opt,name=allow_cookies_for_subdomains,json=allowCookiesForSubdomains,proto3,oneof" json:"allow_cookies_for_subdomains,omitempty"`
 	SessionCacheInMinutes             *int32                 `protobuf:"varint,17,opt,name=session_cache_in_minutes,json=sessionCacheInMinutes,proto3,oneof" json:"session_cache_in_minutes,omitempty"`
 	EmailConfirmationUrl              *string                `protobuf:"bytes,18,opt,name=email_confirmation_url,json=emailConfirmationUrl,proto3,oneof" json:"email_confirmation_url,omitempty"`
+	TokenConfirmationExpiryInHours    *uint32                `protobuf:"varint,19,opt,name=token_confirmation_expiry_in_hours,json=tokenConfirmationExpiryInHours,proto3,oneof" json:"token_confirmation_expiry_in_hours,omitempty"`
+	TokenPasswordResetExpiryInHours   *uint32                `protobuf:"varint,20,opt,name=token_password_reset_expiry_in_hours,json=tokenPasswordResetExpiryInHours,proto3,oneof" json:"token_password_reset_expiry_in_hours,omitempty"`
 	unknownFields                     protoimpl.UnknownFields
 	sizeCache                         protoimpl.SizeCache
 }
@@ -496,6 +498,20 @@ func (x *ConfigSecurity) GetEmailConfirmationUrl() string {
 		return *x.EmailConfirmationUrl
 	}
 	return ""
+}
+
+func (x *ConfigSecurity) GetTokenConfirmationExpiryInHours() uint32 {
+	if x != nil && x.TokenConfirmationExpiryInHours != nil {
+		return *x.TokenConfirmationExpiryInHours
+	}
+	return 0
+}
+
+func (x *ConfigSecurity) GetTokenPasswordResetExpiryInHours() uint32 {
+	if x != nil && x.TokenPasswordResetExpiryInHours != nil {
+		return *x.TokenPasswordResetExpiryInHours
+	}
+	return 0
 }
 
 type CacheConfig struct {
@@ -3493,7 +3509,7 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x15_jaeger_collector_urlB \n" +
 	"\x1e_common_service_prometheus_urlB\x1e\n" +
 	"\x1c_user_service_prometheus_urlB\"\n" +
-	" _products_service_prometheus_url\"\xca\x0e\n" +
+	" _products_service_prometheus_url\"\xbf\x10\n" +
 	"\x0eConfigSecurity\x12e\n" +
 	"\x14restricted_usernames\x18\x01 \x03(\v22.common.v1.ConfigSecurity.RestrictedUsernamesEntryR\x13restrictedUsernames\x129\n" +
 	"\x16maximum_login_attempts\x18\x02 \x01(\x05H\x00R\x14maximumLoginAttempts\x88\x01\x01\x12T\n" +
@@ -3515,7 +3531,9 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"cors_debug\x18\x0f \x01(\bH\rR\tcorsDebug\x88\x01\x01\x12D\n" +
 	"\x1callow_cookies_for_subdomains\x18\x10 \x01(\bH\x0eR\x19allowCookiesForSubdomains\x88\x01\x01\x12<\n" +
 	"\x18session_cache_in_minutes\x18\x11 \x01(\x05H\x0fR\x15sessionCacheInMinutes\x88\x01\x01\x129\n" +
-	"\x16email_confirmation_url\x18\x12 \x01(\tH\x10R\x14emailConfirmationUrl\x88\x01\x01\x1aF\n" +
+	"\x16email_confirmation_url\x18\x12 \x01(\tH\x10R\x14emailConfirmationUrl\x88\x01\x01\x12O\n" +
+	"\"token_confirmation_expiry_in_hours\x18\x13 \x01(\rH\x11R\x1etokenConfirmationExpiryInHours\x88\x01\x01\x12R\n" +
+	"$token_password_reset_expiry_in_hours\x18\x14 \x01(\rH\x12R\x1ftokenPasswordResetExpiryInHours\x88\x01\x01\x1aF\n" +
 	"\x18RestrictedUsernamesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\x19\n" +
@@ -3535,7 +3553,9 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\v_cors_debugB\x1f\n" +
 	"\x1d_allow_cookies_for_subdomainsB\x1b\n" +
 	"\x19_session_cache_in_minutesB\x19\n" +
-	"\x17_email_confirmation_url\"\x82\x03\n" +
+	"\x17_email_confirmation_urlB%\n" +
+	"#_token_confirmation_expiry_in_hoursB'\n" +
+	"%_token_password_reset_expiry_in_hours\"\x82\x03\n" +
 	"\vCacheConfig\x12\"\n" +
 	"\n" +
 	"cache_type\x18\x01 \x01(\tH\x00R\tcacheType\x88\x01\x01\x12(\n" +

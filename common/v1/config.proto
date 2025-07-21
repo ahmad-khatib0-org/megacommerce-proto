@@ -62,6 +62,8 @@ message ConfigSecurity {
   optional bool allow_cookies_for_subdomains = 16;
   optional int32 session_cache_in_minutes = 17;
   optional string email_confirmation_url = 18;
+  optional uint32 token_confirmation_expiry_in_hours = 19;
+  optional uint32 token_password_reset_expiry_in_hours = 20;
 }
 
 message CacheConfig {
