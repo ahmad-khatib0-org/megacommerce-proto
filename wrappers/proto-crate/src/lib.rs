@@ -15,9 +15,9 @@ mod shared {
   }
 }
 
-mod user {
+mod users {
   pub mod v1 {
-    include!("user.v1.rs");
+    include!("users.v1.rs");
   }
 }
 
@@ -38,4 +38,4 @@ pub use common::v1::*;
 pub use products::v1::*;
 pub use shared::v1::*;
 pub use uploader::v1::*;
-pub use user::v1::*;
+pub use users::v1::*;

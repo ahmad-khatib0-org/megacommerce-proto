@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package users.v1;
+
+import "shared/v1/error.proto";
+import "shared/v1/types.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1";
+option java_outer_classname = "SupplierProto";
+option java_package = "org.megacommerce.users.v1";
+
+message SupplierCreateRequest {
+  string username = 1;
+  string email = 2;
+  string first_name = 3;
+  string last_name = 4;
+  string password = 5;
+  string membership = 6;
+}
+
+message SupplierCreateResponse {
+  oneof response {
+    shared.v1.Empty data = 1;
+    shared.v1.AppError error = 2;
+  }
+}
