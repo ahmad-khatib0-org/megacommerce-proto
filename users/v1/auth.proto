@@ -10,6 +10,15 @@ option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/user
 option java_outer_classname = "AuthProto";
 option java_package = "org.megacommerce.users.v1";
 
+message Token {
+  string id = 1;
+  string token = 2;
+  string type = 3;
+  bool used = 4;
+  int64 created_at = 5;
+  int64 expires_at = 6;
+}
+
 message EmailConfirmationRequest {
   string email = 1;
   string token = 2;

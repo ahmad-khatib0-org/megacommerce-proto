@@ -4,6 +4,44 @@ import * as shared_v1_error_pb from '../../shared/v1/error_pb'; // proto import:
 import * as shared_v1_types_pb from '../../shared/v1/types_pb'; // proto import: "shared/v1/types.proto"
 
 
+export class Token extends jspb.Message {
+  getId(): string;
+  setId(value: string): Token;
+
+  getToken(): string;
+  setToken(value: string): Token;
+
+  getType(): string;
+  setType(value: string): Token;
+
+  getUsed(): boolean;
+  setUsed(value: boolean): Token;
+
+  getCreatedAt(): number;
+  setCreatedAt(value: number): Token;
+
+  getExpiresAt(): number;
+  setExpiresAt(value: number): Token;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Token.AsObject;
+  static toObject(includeInstance: boolean, msg: Token): Token.AsObject;
+  static serializeBinaryToWriter(message: Token, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Token;
+  static deserializeBinaryFromReader(message: Token, reader: jspb.BinaryReader): Token;
+}
+
+export namespace Token {
+  export type AsObject = {
+    id: string,
+    token: string,
+    type: string,
+    used: boolean,
+    createdAt: number,
+    expiresAt: number,
+  }
+}
+
 export class EmailConfirmationRequest extends jspb.Message {
   getEmail(): string;
   setEmail(value: string): EmailConfirmationRequest;

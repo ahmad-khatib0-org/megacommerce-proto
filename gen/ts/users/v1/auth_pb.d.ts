@@ -5,6 +5,46 @@ import * as jspb from "google-protobuf";
 import * as shared_v1_error_pb from "../../shared/v1/error_pb";
 import * as shared_v1_types_pb from "../../shared/v1/types_pb";
 
+export class Token extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  getToken(): string;
+  setToken(value: string): void;
+
+  getType(): string;
+  setType(value: string): void;
+
+  getUsed(): boolean;
+  setUsed(value: boolean): void;
+
+  getCreatedAt(): number;
+  setCreatedAt(value: number): void;
+
+  getExpiresAt(): number;
+  setExpiresAt(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Token.AsObject;
+  static toObject(includeInstance: boolean, msg: Token): Token.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Token, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Token;
+  static deserializeBinaryFromReader(message: Token, reader: jspb.BinaryReader): Token;
+}
+
+export namespace Token {
+  export type AsObject = {
+    id: string,
+    token: string,
+    type: string,
+    used: boolean,
+    createdAt: number,
+    expiresAt: number,
+  }
+}
+
 export class EmailConfirmationRequest extends jspb.Message {
   getEmail(): string;
   setEmail(value: string): void;

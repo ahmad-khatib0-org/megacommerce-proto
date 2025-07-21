@@ -34,6 +34,22 @@ pub mod supplier_create_response {
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Token {
+    #[prost(string, tag = "1")]
+    pub id: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub token: ::prost::alloc::string::String,
+    #[prost(string, tag = "3")]
+    pub r#type: ::prost::alloc::string::String,
+    #[prost(bool, tag = "4")]
+    pub used: bool,
+    #[prost(int64, tag = "5")]
+    pub created_at: i64,
+    #[prost(int64, tag = "6")]
+    pub expires_at: i64,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct EmailConfirmationRequest {
     #[prost(string, tag = "1")]
     pub email: ::prost::alloc::string::String,
