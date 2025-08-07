@@ -2048,8 +2048,8 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
 
   }
 
-  public interface SuccessResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:shared.v1.SuccessResponse)
+  public interface SuccessResponseDataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:shared.v1.SuccessResponseData)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2104,12 +2104,12 @@ java.lang.String defaultValue);
         java.lang.String key);
   }
   /**
-   * Protobuf type {@code shared.v1.SuccessResponse}
+   * Protobuf type {@code shared.v1.SuccessResponseData}
    */
-  public static final class SuccessResponse extends
+  public static final class SuccessResponseData extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:shared.v1.SuccessResponse)
-      SuccessResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:shared.v1.SuccessResponseData)
+      SuccessResponseDataOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -2118,19 +2118,19 @@ java.lang.String defaultValue);
         /* minor= */ 31,
         /* patch= */ 1,
         /* suffix= */ "",
-        SuccessResponse.class.getName());
+        SuccessResponseData.class.getName());
     }
-    // Use SuccessResponse.newBuilder() to construct.
-    private SuccessResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use SuccessResponseData.newBuilder() to construct.
+    private SuccessResponseData(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private SuccessResponse() {
+    private SuccessResponseData() {
       message_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_SuccessResponse_descriptor;
+      return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_SuccessResponseData_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -2148,9 +2148,9 @@ java.lang.String defaultValue);
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_SuccessResponse_fieldAccessorTable
+      return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_SuccessResponseData_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.megacommerce.shared.v1.TypesProto.SuccessResponse.class, org.megacommerce.shared.v1.TypesProto.SuccessResponse.Builder.class);
+              org.megacommerce.shared.v1.TypesProto.SuccessResponseData.class, org.megacommerce.shared.v1.TypesProto.SuccessResponseData.Builder.class);
     }
 
     private int bitField0_;
@@ -2207,7 +2207,7 @@ java.lang.String defaultValue);
           java.lang.String, java.lang.String> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.String, java.lang.String>newDefaultInstance(
-                  org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_SuccessResponse_MetadataEntry_descriptor, 
+                  org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_SuccessResponseData_MetadataEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.STRING,
@@ -2335,10 +2335,10 @@ java.lang.String defaultValue) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.megacommerce.shared.v1.TypesProto.SuccessResponse)) {
+      if (!(obj instanceof org.megacommerce.shared.v1.TypesProto.SuccessResponseData)) {
         return super.equals(obj);
       }
-      org.megacommerce.shared.v1.TypesProto.SuccessResponse other = (org.megacommerce.shared.v1.TypesProto.SuccessResponse) obj;
+      org.megacommerce.shared.v1.TypesProto.SuccessResponseData other = (org.megacommerce.shared.v1.TypesProto.SuccessResponseData) obj;
 
       if (hasMessage() != other.hasMessage()) return false;
       if (hasMessage()) {
@@ -2371,44 +2371,44 @@ java.lang.String defaultValue) {
       return hash;
     }
 
-    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseFrom(
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponseData parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseFrom(
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponseData parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseFrom(
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponseData parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseFrom(
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponseData parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseFrom(byte[] data)
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponseData parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseFrom(
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponseData parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseFrom(java.io.InputStream input)
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponseData parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseFrom(
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponseData parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2416,26 +2416,26 @@ java.lang.String defaultValue) {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseDelimitedFrom(java.io.InputStream input)
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponseData parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseDelimitedFrom(
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponseData parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseFrom(
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponseData parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse parseFrom(
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponseData parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2448,7 +2448,7 @@ java.lang.String defaultValue) {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.megacommerce.shared.v1.TypesProto.SuccessResponse prototype) {
+    public static Builder newBuilder(org.megacommerce.shared.v1.TypesProto.SuccessResponseData prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2464,15 +2464,15 @@ java.lang.String defaultValue) {
       return builder;
     }
     /**
-     * Protobuf type {@code shared.v1.SuccessResponse}
+     * Protobuf type {@code shared.v1.SuccessResponseData}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:shared.v1.SuccessResponse)
-        org.megacommerce.shared.v1.TypesProto.SuccessResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:shared.v1.SuccessResponseData)
+        org.megacommerce.shared.v1.TypesProto.SuccessResponseDataOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_SuccessResponse_descriptor;
+        return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_SuccessResponseData_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -2500,12 +2500,12 @@ java.lang.String defaultValue) {
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_SuccessResponse_fieldAccessorTable
+        return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_SuccessResponseData_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.megacommerce.shared.v1.TypesProto.SuccessResponse.class, org.megacommerce.shared.v1.TypesProto.SuccessResponse.Builder.class);
+                org.megacommerce.shared.v1.TypesProto.SuccessResponseData.class, org.megacommerce.shared.v1.TypesProto.SuccessResponseData.Builder.class);
       }
 
-      // Construct using org.megacommerce.shared.v1.TypesProto.SuccessResponse.newBuilder()
+      // Construct using org.megacommerce.shared.v1.TypesProto.SuccessResponseData.newBuilder()
       private Builder() {
 
       }
@@ -2527,17 +2527,17 @@ java.lang.String defaultValue) {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_SuccessResponse_descriptor;
+        return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_SuccessResponseData_descriptor;
       }
 
       @java.lang.Override
-      public org.megacommerce.shared.v1.TypesProto.SuccessResponse getDefaultInstanceForType() {
-        return org.megacommerce.shared.v1.TypesProto.SuccessResponse.getDefaultInstance();
+      public org.megacommerce.shared.v1.TypesProto.SuccessResponseData getDefaultInstanceForType() {
+        return org.megacommerce.shared.v1.TypesProto.SuccessResponseData.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.megacommerce.shared.v1.TypesProto.SuccessResponse build() {
-        org.megacommerce.shared.v1.TypesProto.SuccessResponse result = buildPartial();
+      public org.megacommerce.shared.v1.TypesProto.SuccessResponseData build() {
+        org.megacommerce.shared.v1.TypesProto.SuccessResponseData result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2545,14 +2545,14 @@ java.lang.String defaultValue) {
       }
 
       @java.lang.Override
-      public org.megacommerce.shared.v1.TypesProto.SuccessResponse buildPartial() {
-        org.megacommerce.shared.v1.TypesProto.SuccessResponse result = new org.megacommerce.shared.v1.TypesProto.SuccessResponse(this);
+      public org.megacommerce.shared.v1.TypesProto.SuccessResponseData buildPartial() {
+        org.megacommerce.shared.v1.TypesProto.SuccessResponseData result = new org.megacommerce.shared.v1.TypesProto.SuccessResponseData(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.megacommerce.shared.v1.TypesProto.SuccessResponse result) {
+      private void buildPartial0(org.megacommerce.shared.v1.TypesProto.SuccessResponseData result) {
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
@@ -2568,16 +2568,16 @@ java.lang.String defaultValue) {
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.megacommerce.shared.v1.TypesProto.SuccessResponse) {
-          return mergeFrom((org.megacommerce.shared.v1.TypesProto.SuccessResponse)other);
+        if (other instanceof org.megacommerce.shared.v1.TypesProto.SuccessResponseData) {
+          return mergeFrom((org.megacommerce.shared.v1.TypesProto.SuccessResponseData)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.megacommerce.shared.v1.TypesProto.SuccessResponse other) {
-        if (other == org.megacommerce.shared.v1.TypesProto.SuccessResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.megacommerce.shared.v1.TypesProto.SuccessResponseData other) {
+        if (other == org.megacommerce.shared.v1.TypesProto.SuccessResponseData.getDefaultInstance()) return this;
         if (other.hasMessage()) {
           message_ = other.message_;
           bitField0_ |= 0x00000001;
@@ -2849,23 +2849,23 @@ java.lang.String defaultValue) {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:shared.v1.SuccessResponse)
+      // @@protoc_insertion_point(builder_scope:shared.v1.SuccessResponseData)
     }
 
-    // @@protoc_insertion_point(class_scope:shared.v1.SuccessResponse)
-    private static final org.megacommerce.shared.v1.TypesProto.SuccessResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:shared.v1.SuccessResponseData)
+    private static final org.megacommerce.shared.v1.TypesProto.SuccessResponseData DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.megacommerce.shared.v1.TypesProto.SuccessResponse();
+      DEFAULT_INSTANCE = new org.megacommerce.shared.v1.TypesProto.SuccessResponseData();
     }
 
-    public static org.megacommerce.shared.v1.TypesProto.SuccessResponse getDefaultInstance() {
+    public static org.megacommerce.shared.v1.TypesProto.SuccessResponseData getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SuccessResponse>
-        PARSER = new com.google.protobuf.AbstractParser<SuccessResponse>() {
+    private static final com.google.protobuf.Parser<SuccessResponseData>
+        PARSER = new com.google.protobuf.AbstractParser<SuccessResponseData>() {
       @java.lang.Override
-      public SuccessResponse parsePartialFrom(
+      public SuccessResponseData parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2884,17 +2884,17 @@ java.lang.String defaultValue) {
       }
     };
 
-    public static com.google.protobuf.Parser<SuccessResponse> parser() {
+    public static com.google.protobuf.Parser<SuccessResponseData> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<SuccessResponse> getParserForType() {
+    public com.google.protobuf.Parser<SuccessResponseData> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.megacommerce.shared.v1.TypesProto.SuccessResponse getDefaultInstanceForType() {
+    public org.megacommerce.shared.v1.TypesProto.SuccessResponseData getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3928,15 +3928,15 @@ java.lang.String defaultValue) {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_shared_v1_OrderDirection_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_shared_v1_SuccessResponse_descriptor;
+    internal_static_shared_v1_SuccessResponseData_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_shared_v1_SuccessResponse_fieldAccessorTable;
+      internal_static_shared_v1_SuccessResponseData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_shared_v1_SuccessResponse_MetadataEntry_descriptor;
+    internal_static_shared_v1_SuccessResponseData_MetadataEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_shared_v1_SuccessResponse_MetadataEntry_fieldAccessorTable;
+      internal_static_shared_v1_SuccessResponseData_MetadataEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_shared_v1_Any_descriptor;
   private static final 
@@ -3965,17 +3965,17 @@ java.lang.String defaultValue) {
       "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\013" +
       "2\024.shared.v1.StringMapR\005value:\0028\001\"C\n\016Ord" +
       "erDirection\022\022\n\003asc\030\001 \001(\010H\000R\003asc\022\024\n\004desc\030" +
-      "\002 \001(\010H\000R\004descB\007\n\005order\"\277\001\n\017SuccessRespon" +
-      "se\022\035\n\007message\030\001 \001(\tH\000R\007message\210\001\001\022D\n\010met" +
-      "adata\030\002 \003(\0132(.shared.v1.SuccessResponse." +
-      "MetadataEntryR\010metadata\032;\n\rMetadataEntry" +
-      "\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value" +
-      ":\0028\001B\n\n\010_message\"6\n\003Any\022\031\n\010type_url\030\001 \001(" +
-      "\tR\007typeUrl\022\024\n\005value\030\002 \001(\014R\005value\"\007\n\005Empt" +
-      "yBp\n\032org.megacommerce.shared.v1B\nTypesPr" +
-      "otoZCgithub.com/ahmad-khatib0-org/megaco" +
-      "mmerce-proto/gen/go/shared/v1;v1\370\001\001b\006pro" +
-      "to3"
+      "\002 \001(\010H\000R\004descB\007\n\005order\"\307\001\n\023SuccessRespon" +
+      "seData\022\035\n\007message\030\001 \001(\tH\000R\007message\210\001\001\022H\n" +
+      "\010metadata\030\002 \003(\0132,.shared.v1.SuccessRespo" +
+      "nseData.MetadataEntryR\010metadata\032;\n\rMetad" +
+      "ataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(" +
+      "\tR\005value:\0028\001B\n\n\010_message\"6\n\003Any\022\031\n\010type_" +
+      "url\030\001 \001(\tR\007typeUrl\022\024\n\005value\030\002 \001(\014R\005value" +
+      "\"\007\n\005EmptyBp\n\032org.megacommerce.shared.v1B" +
+      "\nTypesProtoZCgithub.com/ahmad-khatib0-or" +
+      "g/megacommerce-proto/gen/go/shared/v1;v1" +
+      "\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4011,17 +4011,17 @@ java.lang.String defaultValue) {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_OrderDirection_descriptor,
         new java.lang.String[] { "Asc", "Desc", "Order", });
-    internal_static_shared_v1_SuccessResponse_descriptor =
+    internal_static_shared_v1_SuccessResponseData_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_shared_v1_SuccessResponse_fieldAccessorTable = new
+    internal_static_shared_v1_SuccessResponseData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_shared_v1_SuccessResponse_descriptor,
+        internal_static_shared_v1_SuccessResponseData_descriptor,
         new java.lang.String[] { "Message", "Metadata", });
-    internal_static_shared_v1_SuccessResponse_MetadataEntry_descriptor =
-      internal_static_shared_v1_SuccessResponse_descriptor.getNestedTypes().get(0);
-    internal_static_shared_v1_SuccessResponse_MetadataEntry_fieldAccessorTable = new
+    internal_static_shared_v1_SuccessResponseData_MetadataEntry_descriptor =
+      internal_static_shared_v1_SuccessResponseData_descriptor.getNestedTypes().get(0);
+    internal_static_shared_v1_SuccessResponseData_MetadataEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_shared_v1_SuccessResponse_MetadataEntry_descriptor,
+        internal_static_shared_v1_SuccessResponseData_MetadataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_shared_v1_Any_descriptor =
       getDescriptor().getMessageTypes().get(4);

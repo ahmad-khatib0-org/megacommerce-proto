@@ -68,24 +68,24 @@ export namespace OrderDirection {
   }
 }
 
-export class SuccessResponse extends jspb.Message {
+export class SuccessResponseData extends jspb.Message {
   getMessage(): string;
-  setMessage(value: string): SuccessResponse;
+  setMessage(value: string): SuccessResponseData;
   hasMessage(): boolean;
-  clearMessage(): SuccessResponse;
+  clearMessage(): SuccessResponseData;
 
   getMetadataMap(): jspb.Map<string, string>;
-  clearMetadataMap(): SuccessResponse;
+  clearMetadataMap(): SuccessResponseData;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SuccessResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: SuccessResponse): SuccessResponse.AsObject;
-  static serializeBinaryToWriter(message: SuccessResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SuccessResponse;
-  static deserializeBinaryFromReader(message: SuccessResponse, reader: jspb.BinaryReader): SuccessResponse;
+  toObject(includeInstance?: boolean): SuccessResponseData.AsObject;
+  static toObject(includeInstance: boolean, msg: SuccessResponseData): SuccessResponseData.AsObject;
+  static serializeBinaryToWriter(message: SuccessResponseData, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SuccessResponseData;
+  static deserializeBinaryFromReader(message: SuccessResponseData, reader: jspb.BinaryReader): SuccessResponseData;
 }
 
-export namespace SuccessResponse {
+export namespace SuccessResponseData {
   export type AsObject = {
     message?: string,
     metadataMap: Array<[string, string]>,

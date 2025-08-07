@@ -1862,19 +1862,19 @@ public final class AuthProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.shared.v1.SuccessResponse data = 1 [json_name = "data"];</code>
+     * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
      * @return Whether the data field is set.
      */
     boolean hasData();
     /**
-     * <code>.shared.v1.SuccessResponse data = 1 [json_name = "data"];</code>
+     * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
      * @return The data.
      */
-    org.megacommerce.shared.v1.TypesProto.SuccessResponse getData();
+    org.megacommerce.shared.v1.TypesProto.SuccessResponseData getData();
     /**
-     * <code>.shared.v1.SuccessResponse data = 1 [json_name = "data"];</code>
+     * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
      */
-    org.megacommerce.shared.v1.TypesProto.SuccessResponseOrBuilder getDataOrBuilder();
+    org.megacommerce.shared.v1.TypesProto.SuccessResponseDataOrBuilder getDataOrBuilder();
 
     /**
      * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
@@ -1974,7 +1974,7 @@ public final class AuthProto {
 
     public static final int DATA_FIELD_NUMBER = 1;
     /**
-     * <code>.shared.v1.SuccessResponse data = 1 [json_name = "data"];</code>
+     * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
      * @return Whether the data field is set.
      */
     @java.lang.Override
@@ -1982,25 +1982,25 @@ public final class AuthProto {
       return responseCase_ == 1;
     }
     /**
-     * <code>.shared.v1.SuccessResponse data = 1 [json_name = "data"];</code>
+     * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
      * @return The data.
      */
     @java.lang.Override
-    public org.megacommerce.shared.v1.TypesProto.SuccessResponse getData() {
+    public org.megacommerce.shared.v1.TypesProto.SuccessResponseData getData() {
       if (responseCase_ == 1) {
-         return (org.megacommerce.shared.v1.TypesProto.SuccessResponse) response_;
+         return (org.megacommerce.shared.v1.TypesProto.SuccessResponseData) response_;
       }
-      return org.megacommerce.shared.v1.TypesProto.SuccessResponse.getDefaultInstance();
+      return org.megacommerce.shared.v1.TypesProto.SuccessResponseData.getDefaultInstance();
     }
     /**
-     * <code>.shared.v1.SuccessResponse data = 1 [json_name = "data"];</code>
+     * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.shared.v1.TypesProto.SuccessResponseOrBuilder getDataOrBuilder() {
+    public org.megacommerce.shared.v1.TypesProto.SuccessResponseDataOrBuilder getDataOrBuilder() {
       if (responseCase_ == 1) {
-         return (org.megacommerce.shared.v1.TypesProto.SuccessResponse) response_;
+         return (org.megacommerce.shared.v1.TypesProto.SuccessResponseData) response_;
       }
-      return org.megacommerce.shared.v1.TypesProto.SuccessResponse.getDefaultInstance();
+      return org.megacommerce.shared.v1.TypesProto.SuccessResponseData.getDefaultInstance();
     }
 
     public static final int ERROR_FIELD_NUMBER = 2;
@@ -2049,7 +2049,7 @@ public final class AuthProto {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       if (responseCase_ == 1) {
-        output.writeMessage(1, (org.megacommerce.shared.v1.TypesProto.SuccessResponse) response_);
+        output.writeMessage(1, (org.megacommerce.shared.v1.TypesProto.SuccessResponseData) response_);
       }
       if (responseCase_ == 2) {
         output.writeMessage(2, (org.megacommerce.shared.v1.ErrorProto.AppError) response_);
@@ -2065,7 +2065,7 @@ public final class AuthProto {
       size = 0;
       if (responseCase_ == 1) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, (org.megacommerce.shared.v1.TypesProto.SuccessResponse) response_);
+          .computeMessageSize(1, (org.megacommerce.shared.v1.TypesProto.SuccessResponseData) response_);
       }
       if (responseCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
@@ -2408,9 +2408,9 @@ public final class AuthProto {
       private int bitField0_;
 
       private com.google.protobuf.SingleFieldBuilder<
-          org.megacommerce.shared.v1.TypesProto.SuccessResponse, org.megacommerce.shared.v1.TypesProto.SuccessResponse.Builder, org.megacommerce.shared.v1.TypesProto.SuccessResponseOrBuilder> dataBuilder_;
+          org.megacommerce.shared.v1.TypesProto.SuccessResponseData, org.megacommerce.shared.v1.TypesProto.SuccessResponseData.Builder, org.megacommerce.shared.v1.TypesProto.SuccessResponseDataOrBuilder> dataBuilder_;
       /**
-       * <code>.shared.v1.SuccessResponse data = 1 [json_name = "data"];</code>
+       * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
        * @return Whether the data field is set.
        */
       @java.lang.Override
@@ -2418,27 +2418,27 @@ public final class AuthProto {
         return responseCase_ == 1;
       }
       /**
-       * <code>.shared.v1.SuccessResponse data = 1 [json_name = "data"];</code>
+       * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
        * @return The data.
        */
       @java.lang.Override
-      public org.megacommerce.shared.v1.TypesProto.SuccessResponse getData() {
+      public org.megacommerce.shared.v1.TypesProto.SuccessResponseData getData() {
         if (dataBuilder_ == null) {
           if (responseCase_ == 1) {
-            return (org.megacommerce.shared.v1.TypesProto.SuccessResponse) response_;
+            return (org.megacommerce.shared.v1.TypesProto.SuccessResponseData) response_;
           }
-          return org.megacommerce.shared.v1.TypesProto.SuccessResponse.getDefaultInstance();
+          return org.megacommerce.shared.v1.TypesProto.SuccessResponseData.getDefaultInstance();
         } else {
           if (responseCase_ == 1) {
             return dataBuilder_.getMessage();
           }
-          return org.megacommerce.shared.v1.TypesProto.SuccessResponse.getDefaultInstance();
+          return org.megacommerce.shared.v1.TypesProto.SuccessResponseData.getDefaultInstance();
         }
       }
       /**
-       * <code>.shared.v1.SuccessResponse data = 1 [json_name = "data"];</code>
+       * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
        */
-      public Builder setData(org.megacommerce.shared.v1.TypesProto.SuccessResponse value) {
+      public Builder setData(org.megacommerce.shared.v1.TypesProto.SuccessResponseData value) {
         if (dataBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2452,10 +2452,10 @@ public final class AuthProto {
         return this;
       }
       /**
-       * <code>.shared.v1.SuccessResponse data = 1 [json_name = "data"];</code>
+       * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
        */
       public Builder setData(
-          org.megacommerce.shared.v1.TypesProto.SuccessResponse.Builder builderForValue) {
+          org.megacommerce.shared.v1.TypesProto.SuccessResponseData.Builder builderForValue) {
         if (dataBuilder_ == null) {
           response_ = builderForValue.build();
           onChanged();
@@ -2466,13 +2466,13 @@ public final class AuthProto {
         return this;
       }
       /**
-       * <code>.shared.v1.SuccessResponse data = 1 [json_name = "data"];</code>
+       * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
        */
-      public Builder mergeData(org.megacommerce.shared.v1.TypesProto.SuccessResponse value) {
+      public Builder mergeData(org.megacommerce.shared.v1.TypesProto.SuccessResponseData value) {
         if (dataBuilder_ == null) {
           if (responseCase_ == 1 &&
-              response_ != org.megacommerce.shared.v1.TypesProto.SuccessResponse.getDefaultInstance()) {
-            response_ = org.megacommerce.shared.v1.TypesProto.SuccessResponse.newBuilder((org.megacommerce.shared.v1.TypesProto.SuccessResponse) response_)
+              response_ != org.megacommerce.shared.v1.TypesProto.SuccessResponseData.getDefaultInstance()) {
+            response_ = org.megacommerce.shared.v1.TypesProto.SuccessResponseData.newBuilder((org.megacommerce.shared.v1.TypesProto.SuccessResponseData) response_)
                 .mergeFrom(value).buildPartial();
           } else {
             response_ = value;
@@ -2489,7 +2489,7 @@ public final class AuthProto {
         return this;
       }
       /**
-       * <code>.shared.v1.SuccessResponse data = 1 [json_name = "data"];</code>
+       * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
        */
       public Builder clearData() {
         if (dataBuilder_ == null) {
@@ -2508,38 +2508,38 @@ public final class AuthProto {
         return this;
       }
       /**
-       * <code>.shared.v1.SuccessResponse data = 1 [json_name = "data"];</code>
+       * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
        */
-      public org.megacommerce.shared.v1.TypesProto.SuccessResponse.Builder getDataBuilder() {
+      public org.megacommerce.shared.v1.TypesProto.SuccessResponseData.Builder getDataBuilder() {
         return internalGetDataFieldBuilder().getBuilder();
       }
       /**
-       * <code>.shared.v1.SuccessResponse data = 1 [json_name = "data"];</code>
+       * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
        */
       @java.lang.Override
-      public org.megacommerce.shared.v1.TypesProto.SuccessResponseOrBuilder getDataOrBuilder() {
+      public org.megacommerce.shared.v1.TypesProto.SuccessResponseDataOrBuilder getDataOrBuilder() {
         if ((responseCase_ == 1) && (dataBuilder_ != null)) {
           return dataBuilder_.getMessageOrBuilder();
         } else {
           if (responseCase_ == 1) {
-            return (org.megacommerce.shared.v1.TypesProto.SuccessResponse) response_;
+            return (org.megacommerce.shared.v1.TypesProto.SuccessResponseData) response_;
           }
-          return org.megacommerce.shared.v1.TypesProto.SuccessResponse.getDefaultInstance();
+          return org.megacommerce.shared.v1.TypesProto.SuccessResponseData.getDefaultInstance();
         }
       }
       /**
-       * <code>.shared.v1.SuccessResponse data = 1 [json_name = "data"];</code>
+       * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          org.megacommerce.shared.v1.TypesProto.SuccessResponse, org.megacommerce.shared.v1.TypesProto.SuccessResponse.Builder, org.megacommerce.shared.v1.TypesProto.SuccessResponseOrBuilder> 
+          org.megacommerce.shared.v1.TypesProto.SuccessResponseData, org.megacommerce.shared.v1.TypesProto.SuccessResponseData.Builder, org.megacommerce.shared.v1.TypesProto.SuccessResponseDataOrBuilder> 
           internalGetDataFieldBuilder() {
         if (dataBuilder_ == null) {
           if (!(responseCase_ == 1)) {
-            response_ = org.megacommerce.shared.v1.TypesProto.SuccessResponse.getDefaultInstance();
+            response_ = org.megacommerce.shared.v1.TypesProto.SuccessResponseData.getDefaultInstance();
           }
           dataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              org.megacommerce.shared.v1.TypesProto.SuccessResponse, org.megacommerce.shared.v1.TypesProto.SuccessResponse.Builder, org.megacommerce.shared.v1.TypesProto.SuccessResponseOrBuilder>(
-                  (org.megacommerce.shared.v1.TypesProto.SuccessResponse) response_,
+              org.megacommerce.shared.v1.TypesProto.SuccessResponseData, org.megacommerce.shared.v1.TypesProto.SuccessResponseData.Builder, org.megacommerce.shared.v1.TypesProto.SuccessResponseDataOrBuilder>(
+                  (org.megacommerce.shared.v1.TypesProto.SuccessResponseData) response_,
                   getParentForChildren(),
                   isClean());
           response_ = null;
@@ -2774,13 +2774,13 @@ public final class AuthProto {
       "expires_at\030\006 \001(\003R\texpiresAt\"a\n\030EmailConf" +
       "irmationRequest\022\024\n\005email\030\001 \001(\tR\005email\022\024\n" +
       "\005token\030\002 \001(\tR\005token\022\031\n\010token_id\030\003 \001(\tR\007t" +
-      "okenId\"\206\001\n\031EmailConfirmationResponse\0220\n\004" +
-      "data\030\001 \001(\0132\032.shared.v1.SuccessResponseH\000" +
-      "R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErr" +
-      "orH\000R\005errorB\n\n\010responseBm\n\031org.megacomme" +
-      "rce.users.v1B\tAuthProtoZBgithub.com/ahma" +
-      "d-khatib0-org/megacommerce-proto/gen/go/" +
-      "users/v1;v1\370\001\001b\006proto3"
+      "okenId\"\212\001\n\031EmailConfirmationResponse\0224\n\004" +
+      "data\030\001 \001(\0132\036.shared.v1.SuccessResponseDa" +
+      "taH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.Ap" +
+      "pErrorH\000R\005errorB\n\n\010responseBm\n\031org.megac" +
+      "ommerce.users.v1B\tAuthProtoZBgithub.com/" +
+      "ahmad-khatib0-org/megacommerce-proto/gen" +
+      "/go/users/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

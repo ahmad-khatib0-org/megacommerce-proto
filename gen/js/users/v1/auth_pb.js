@@ -620,7 +620,7 @@ proto.users.v1.EmailConfirmationResponse.prototype.toObject = function(opt_inclu
  */
 proto.users.v1.EmailConfirmationResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-data: (f = msg.getData()) && shared_v1_types_pb.SuccessResponse.toObject(includeInstance, f),
+data: (f = msg.getData()) && shared_v1_types_pb.SuccessResponseData.toObject(includeInstance, f),
 error: (f = msg.getError()) && shared_v1_error_pb.AppError.toObject(includeInstance, f)
   };
 
@@ -659,8 +659,8 @@ proto.users.v1.EmailConfirmationResponse.deserializeBinaryFromReader = function(
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new shared_v1_types_pb.SuccessResponse;
-      reader.readMessage(value,shared_v1_types_pb.SuccessResponse.deserializeBinaryFromReader);
+      var value = new shared_v1_types_pb.SuccessResponseData;
+      reader.readMessage(value,shared_v1_types_pb.SuccessResponseData.deserializeBinaryFromReader);
       msg.setData(value);
       break;
     case 2:
@@ -702,7 +702,7 @@ proto.users.v1.EmailConfirmationResponse.serializeBinaryToWriter = function(mess
     writer.writeMessage(
       1,
       f,
-      shared_v1_types_pb.SuccessResponse.serializeBinaryToWriter
+      shared_v1_types_pb.SuccessResponseData.serializeBinaryToWriter
     );
   }
   f = message.getError();
@@ -717,17 +717,17 @@ proto.users.v1.EmailConfirmationResponse.serializeBinaryToWriter = function(mess
 
 
 /**
- * optional shared.v1.SuccessResponse data = 1;
- * @return {?proto.shared.v1.SuccessResponse}
+ * optional shared.v1.SuccessResponseData data = 1;
+ * @return {?proto.shared.v1.SuccessResponseData}
  */
 proto.users.v1.EmailConfirmationResponse.prototype.getData = function() {
-  return /** @type{?proto.shared.v1.SuccessResponse} */ (
-    jspb.Message.getWrapperField(this, shared_v1_types_pb.SuccessResponse, 1));
+  return /** @type{?proto.shared.v1.SuccessResponseData} */ (
+    jspb.Message.getWrapperField(this, shared_v1_types_pb.SuccessResponseData, 1));
 };
 
 
 /**
- * @param {?proto.shared.v1.SuccessResponse|undefined} value
+ * @param {?proto.shared.v1.SuccessResponseData|undefined} value
  * @return {!proto.users.v1.EmailConfirmationResponse} returns this
 */
 proto.users.v1.EmailConfirmationResponse.prototype.setData = function(value) {

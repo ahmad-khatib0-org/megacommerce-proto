@@ -191,7 +191,7 @@ func (*OrderDirection_Asc) isOrderDirection_Order() {}
 
 func (*OrderDirection_Desc) isOrderDirection_Order() {}
 
-type SuccessResponse struct {
+type SuccessResponseData struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Message       *string                `protobuf:"bytes,1,opt,name=message,proto3,oneof" json:"message,omitempty"`
 	Metadata      map[string]string      `protobuf:"bytes,2,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
@@ -199,20 +199,20 @@ type SuccessResponse struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *SuccessResponse) Reset() {
-	*x = SuccessResponse{}
+func (x *SuccessResponseData) Reset() {
+	*x = SuccessResponseData{}
 	mi := &file_shared_v1_types_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *SuccessResponse) String() string {
+func (x *SuccessResponseData) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*SuccessResponse) ProtoMessage() {}
+func (*SuccessResponseData) ProtoMessage() {}
 
-func (x *SuccessResponse) ProtoReflect() protoreflect.Message {
+func (x *SuccessResponseData) ProtoReflect() protoreflect.Message {
 	mi := &file_shared_v1_types_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -224,19 +224,19 @@ func (x *SuccessResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use SuccessResponse.ProtoReflect.Descriptor instead.
-func (*SuccessResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use SuccessResponseData.ProtoReflect.Descriptor instead.
+func (*SuccessResponseData) Descriptor() ([]byte, []int) {
 	return file_shared_v1_types_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *SuccessResponse) GetMessage() string {
+func (x *SuccessResponseData) GetMessage() string {
 	if x != nil && x.Message != nil {
 		return *x.Message
 	}
 	return ""
 }
 
-func (x *SuccessResponse) GetMetadata() map[string]string {
+func (x *SuccessResponseData) GetMetadata() map[string]string {
 	if x != nil {
 		return x.Metadata
 	}
@@ -350,10 +350,10 @@ const file_shared_v1_types_proto_rawDesc = "" +
 	"\x0eOrderDirection\x12\x12\n" +
 	"\x03asc\x18\x01 \x01(\bH\x00R\x03asc\x12\x14\n" +
 	"\x04desc\x18\x02 \x01(\bH\x00R\x04descB\a\n" +
-	"\x05order\"\xbf\x01\n" +
-	"\x0fSuccessResponse\x12\x1d\n" +
-	"\amessage\x18\x01 \x01(\tH\x00R\amessage\x88\x01\x01\x12D\n" +
-	"\bmetadata\x18\x02 \x03(\v2(.shared.v1.SuccessResponse.MetadataEntryR\bmetadata\x1a;\n" +
+	"\x05order\"\xc7\x01\n" +
+	"\x13SuccessResponseData\x12\x1d\n" +
+	"\amessage\x18\x01 \x01(\tH\x00R\amessage\x88\x01\x01\x12H\n" +
+	"\bmetadata\x18\x02 \x03(\v2,.shared.v1.SuccessResponseData.MetadataEntryR\bmetadata\x1a;\n" +
 	"\rMetadataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\n" +
@@ -380,20 +380,20 @@ func file_shared_v1_types_proto_rawDescGZIP() []byte {
 
 var file_shared_v1_types_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_shared_v1_types_proto_goTypes = []any{
-	(*StringMap)(nil),       // 0: shared.v1.StringMap
-	(*NestedStringMap)(nil), // 1: shared.v1.NestedStringMap
-	(*OrderDirection)(nil),  // 2: shared.v1.OrderDirection
-	(*SuccessResponse)(nil), // 3: shared.v1.SuccessResponse
-	(*Any)(nil),             // 4: shared.v1.Any
-	(*Empty)(nil),           // 5: shared.v1.Empty
-	nil,                     // 6: shared.v1.StringMap.DataEntry
-	nil,                     // 7: shared.v1.NestedStringMap.DataEntry
-	nil,                     // 8: shared.v1.SuccessResponse.MetadataEntry
+	(*StringMap)(nil),           // 0: shared.v1.StringMap
+	(*NestedStringMap)(nil),     // 1: shared.v1.NestedStringMap
+	(*OrderDirection)(nil),      // 2: shared.v1.OrderDirection
+	(*SuccessResponseData)(nil), // 3: shared.v1.SuccessResponseData
+	(*Any)(nil),                 // 4: shared.v1.Any
+	(*Empty)(nil),               // 5: shared.v1.Empty
+	nil,                         // 6: shared.v1.StringMap.DataEntry
+	nil,                         // 7: shared.v1.NestedStringMap.DataEntry
+	nil,                         // 8: shared.v1.SuccessResponseData.MetadataEntry
 }
 var file_shared_v1_types_proto_depIdxs = []int32{
 	6, // 0: shared.v1.StringMap.data:type_name -> shared.v1.StringMap.DataEntry
 	7, // 1: shared.v1.NestedStringMap.data:type_name -> shared.v1.NestedStringMap.DataEntry
-	8, // 2: shared.v1.SuccessResponse.metadata:type_name -> shared.v1.SuccessResponse.MetadataEntry
+	8, // 2: shared.v1.SuccessResponseData.metadata:type_name -> shared.v1.SuccessResponseData.MetadataEntry
 	0, // 3: shared.v1.NestedStringMap.DataEntry.value:type_name -> shared.v1.StringMap
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type

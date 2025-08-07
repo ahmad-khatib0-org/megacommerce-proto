@@ -27,23 +27,23 @@ namespace _fl = ::google::protobuf::internal::field_layout;
 namespace shared {
 namespace v1 {
 template <typename>
-PROTOBUF_CONSTEXPR SuccessResponse_MetadataEntry_DoNotUse::SuccessResponse_MetadataEntry_DoNotUse(::_pbi::ConstantInitialized)
+PROTOBUF_CONSTEXPR SuccessResponseData_MetadataEntry_DoNotUse::SuccessResponseData_MetadataEntry_DoNotUse(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : SuccessResponse_MetadataEntry_DoNotUse::MapEntry(SuccessResponse_MetadataEntry_DoNotUse_class_data_.base()){}
+    : SuccessResponseData_MetadataEntry_DoNotUse::MapEntry(SuccessResponseData_MetadataEntry_DoNotUse_class_data_.base()){}
 #else   // PROTOBUF_CUSTOM_VTABLE
-    : SuccessResponse_MetadataEntry_DoNotUse::MapEntry() {
+    : SuccessResponseData_MetadataEntry_DoNotUse::MapEntry() {
 }
 #endif  // PROTOBUF_CUSTOM_VTABLE
-struct SuccessResponse_MetadataEntry_DoNotUseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SuccessResponse_MetadataEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~SuccessResponse_MetadataEntry_DoNotUseDefaultTypeInternal() {}
+struct SuccessResponseData_MetadataEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SuccessResponseData_MetadataEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SuccessResponseData_MetadataEntry_DoNotUseDefaultTypeInternal() {}
   union {
-    SuccessResponse_MetadataEntry_DoNotUse _instance;
+    SuccessResponseData_MetadataEntry_DoNotUse _instance;
   };
 };
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SuccessResponse_MetadataEntry_DoNotUseDefaultTypeInternal _SuccessResponse_MetadataEntry_DoNotUse_default_instance_;
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SuccessResponseData_MetadataEntry_DoNotUseDefaultTypeInternal _SuccessResponseData_MetadataEntry_DoNotUse_default_instance_;
 template <typename>
 PROTOBUF_CONSTEXPR StringMap_DataEntry_DoNotUse::StringMap_DataEntry_DoNotUse(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
@@ -137,7 +137,7 @@ struct AnyDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AnyDefaultTypeInternal _Any_default_instance_;
 
-inline constexpr SuccessResponse::Impl_::Impl_(
+inline constexpr SuccessResponseData::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
         metadata_{},
@@ -146,24 +146,24 @@ inline constexpr SuccessResponse::Impl_::Impl_(
             ::_pbi::ConstantInitialized()) {}
 
 template <typename>
-PROTOBUF_CONSTEXPR SuccessResponse::SuccessResponse(::_pbi::ConstantInitialized)
+PROTOBUF_CONSTEXPR SuccessResponseData::SuccessResponseData(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(SuccessResponse_class_data_.base()),
+    : ::google::protobuf::Message(SuccessResponseData_class_data_.base()),
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(),
 #endif  // PROTOBUF_CUSTOM_VTABLE
       _impl_(::_pbi::ConstantInitialized()) {
 }
-struct SuccessResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR SuccessResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~SuccessResponseDefaultTypeInternal() {}
+struct SuccessResponseDataDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SuccessResponseDataDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SuccessResponseDataDefaultTypeInternal() {}
   union {
-    SuccessResponse _instance;
+    SuccessResponseData _instance;
   };
 };
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SuccessResponseDefaultTypeInternal _SuccessResponse_default_instance_;
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SuccessResponseDataDefaultTypeInternal _SuccessResponseData_default_instance_;
 
 inline constexpr StringMap::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -265,17 +265,17 @@ const ::uint32_t
         ::_pbi::kInvalidFieldOffsetTag,
         PROTOBUF_FIELD_OFFSET(::shared::v1::OrderDirection, _impl_.order_),
         0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::shared::v1::SuccessResponse_MetadataEntry_DoNotUse, _impl_._has_bits_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::SuccessResponseData_MetadataEntry_DoNotUse, _impl_._has_bits_),
         5, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::shared::v1::SuccessResponse_MetadataEntry_DoNotUse, _impl_.key_),
-        PROTOBUF_FIELD_OFFSET(::shared::v1::SuccessResponse_MetadataEntry_DoNotUse, _impl_.value_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::SuccessResponseData_MetadataEntry_DoNotUse, _impl_.key_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::SuccessResponseData_MetadataEntry_DoNotUse, _impl_.value_),
         0,
         1,
         0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::shared::v1::SuccessResponse, _impl_._has_bits_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::SuccessResponseData, _impl_._has_bits_),
         5, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::shared::v1::SuccessResponse, _impl_.message_),
-        PROTOBUF_FIELD_OFFSET(::shared::v1::SuccessResponse, _impl_.metadata_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::SuccessResponseData, _impl_.message_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::SuccessResponseData, _impl_.metadata_),
         0,
         ~0u,
         0x081, // bitmap
@@ -295,8 +295,8 @@ static const ::_pbi::MigrationSchema
         {9, sizeof(::shared::v1::NestedStringMap_DataEntry_DoNotUse)},
         {16, sizeof(::shared::v1::NestedStringMap)},
         {18, sizeof(::shared::v1::OrderDirection)},
-        {23, sizeof(::shared::v1::SuccessResponse_MetadataEntry_DoNotUse)},
-        {30, sizeof(::shared::v1::SuccessResponse)},
+        {23, sizeof(::shared::v1::SuccessResponseData_MetadataEntry_DoNotUse)},
+        {30, sizeof(::shared::v1::SuccessResponseData)},
         {37, sizeof(::shared::v1::Any)},
         {44, sizeof(::shared::v1::Empty)},
 };
@@ -306,8 +306,8 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::shared::v1::_NestedStringMap_DataEntry_DoNotUse_default_instance_._instance,
     &::shared::v1::_NestedStringMap_default_instance_._instance,
     &::shared::v1::_OrderDirection_default_instance_._instance,
-    &::shared::v1::_SuccessResponse_MetadataEntry_DoNotUse_default_instance_._instance,
-    &::shared::v1::_SuccessResponse_default_instance_._instance,
+    &::shared::v1::_SuccessResponseData_MetadataEntry_DoNotUse_default_instance_._instance,
+    &::shared::v1::_SuccessResponseData_default_instance_._instance,
     &::shared::v1::_Any_default_instance_._instance,
     &::shared::v1::_Empty_default_instance_._instance,
 };
@@ -322,23 +322,23 @@ const char descriptor_table_protodef_shared_2fv1_2ftypes_2eproto[] ABSL_ATTRIBUT
     "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\013"
     "2\024.shared.v1.StringMapR\005value:\0028\001\"C\n\016Ord"
     "erDirection\022\022\n\003asc\030\001 \001(\010H\000R\003asc\022\024\n\004desc\030"
-    "\002 \001(\010H\000R\004descB\007\n\005order\"\277\001\n\017SuccessRespon"
-    "se\022\035\n\007message\030\001 \001(\tH\000R\007message\210\001\001\022D\n\010met"
-    "adata\030\002 \003(\0132(.shared.v1.SuccessResponse."
-    "MetadataEntryR\010metadata\032;\n\rMetadataEntry"
-    "\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value"
-    ":\0028\001B\n\n\010_message\"6\n\003Any\022\031\n\010type_url\030\001 \001("
-    "\tR\007typeUrl\022\024\n\005value\030\002 \001(\014R\005value\"\007\n\005Empt"
-    "yBp\n\032org.megacommerce.shared.v1B\nTypesPr"
-    "otoZCgithub.com/ahmad-khatib0-org/megaco"
-    "mmerce-proto/gen/go/shared/v1;v1\370\001\001b\006pro"
-    "to3"
+    "\002 \001(\010H\000R\004descB\007\n\005order\"\307\001\n\023SuccessRespon"
+    "seData\022\035\n\007message\030\001 \001(\tH\000R\007message\210\001\001\022H\n"
+    "\010metadata\030\002 \003(\0132,.shared.v1.SuccessRespo"
+    "nseData.MetadataEntryR\010metadata\032;\n\rMetad"
+    "ataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001("
+    "\tR\005value:\0028\001B\n\n\010_message\"6\n\003Any\022\031\n\010type_"
+    "url\030\001 \001(\tR\007typeUrl\022\024\n\005value\030\002 \001(\014R\005value"
+    "\"\007\n\005EmptyBp\n\032org.megacommerce.shared.v1B"
+    "\nTypesProtoZCgithub.com/ahmad-khatib0-or"
+    "g/megacommerce-proto/gen/go/shared/v1;v1"
+    "\370\001\001b\006proto3"
 };
 static ::absl::once_flag descriptor_table_shared_2fv1_2ftypes_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_shared_2fv1_2ftypes_2eproto = {
     false,
     false,
-    763,
+    771,
     descriptor_table_protodef_shared_2fv1_2ftypes_2eproto,
     "shared/v1/types.proto",
     &descriptor_table_shared_2fv1_2ftypes_2eproto_once,
@@ -1399,62 +1399,62 @@ void OrderDirection::InternalSwap(OrderDirection* PROTOBUF_RESTRICT PROTOBUF_NON
 // ===================================================================
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-SuccessResponse_MetadataEntry_DoNotUse::SuccessResponse_MetadataEntry_DoNotUse()
-    : SuperType(SuccessResponse_MetadataEntry_DoNotUse_class_data_.base()) {}
-SuccessResponse_MetadataEntry_DoNotUse::SuccessResponse_MetadataEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-    : SuperType(arena, SuccessResponse_MetadataEntry_DoNotUse_class_data_.base()) {}
+SuccessResponseData_MetadataEntry_DoNotUse::SuccessResponseData_MetadataEntry_DoNotUse()
+    : SuperType(SuccessResponseData_MetadataEntry_DoNotUse_class_data_.base()) {}
+SuccessResponseData_MetadataEntry_DoNotUse::SuccessResponseData_MetadataEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+    : SuperType(arena, SuccessResponseData_MetadataEntry_DoNotUse_class_data_.base()) {}
 #else   // PROTOBUF_CUSTOM_VTABLE
-SuccessResponse_MetadataEntry_DoNotUse::SuccessResponse_MetadataEntry_DoNotUse() : SuperType() {}
-SuccessResponse_MetadataEntry_DoNotUse::SuccessResponse_MetadataEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena) : SuperType(arena) {}
+SuccessResponseData_MetadataEntry_DoNotUse::SuccessResponseData_MetadataEntry_DoNotUse() : SuperType() {}
+SuccessResponseData_MetadataEntry_DoNotUse::SuccessResponseData_MetadataEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena) : SuperType(arena) {}
 #endif  // PROTOBUF_CUSTOM_VTABLE
-inline void* PROTOBUF_NONNULL SuccessResponse_MetadataEntry_DoNotUse::PlacementNew_(
+inline void* PROTOBUF_NONNULL SuccessResponseData_MetadataEntry_DoNotUse::PlacementNew_(
     const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) SuccessResponse_MetadataEntry_DoNotUse(arena);
+  return ::new (mem) SuccessResponseData_MetadataEntry_DoNotUse(arena);
 }
-constexpr auto SuccessResponse_MetadataEntry_DoNotUse::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(SuccessResponse_MetadataEntry_DoNotUse),
-                                            alignof(SuccessResponse_MetadataEntry_DoNotUse));
+constexpr auto SuccessResponseData_MetadataEntry_DoNotUse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(SuccessResponseData_MetadataEntry_DoNotUse),
+                                            alignof(SuccessResponseData_MetadataEntry_DoNotUse));
 }
-constexpr auto SuccessResponse_MetadataEntry_DoNotUse::InternalGenerateClassData_() {
+constexpr auto SuccessResponseData_MetadataEntry_DoNotUse::InternalGenerateClassData_() {
   return ::google::protobuf::internal::ClassDataFull{
       ::google::protobuf::internal::ClassData{
-          &_SuccessResponse_MetadataEntry_DoNotUse_default_instance_._instance,
+          &_SuccessResponseData_MetadataEntry_DoNotUse_default_instance_._instance,
           &_table_.header,
           nullptr,  // OnDemandRegisterArenaDtor
           nullptr,  // IsInitialized
-          &SuccessResponse_MetadataEntry_DoNotUse::MergeImpl,
-          ::google::protobuf::Message::GetNewImpl<SuccessResponse_MetadataEntry_DoNotUse>(),
+          &SuccessResponseData_MetadataEntry_DoNotUse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<SuccessResponseData_MetadataEntry_DoNotUse>(),
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-          &SuccessResponse_MetadataEntry_DoNotUse::SharedDtor,
-          static_cast<void (::google::protobuf::MessageLite::*)()>(&SuccessResponse_MetadataEntry_DoNotUse::ClearImpl),
+          &SuccessResponseData_MetadataEntry_DoNotUse::SharedDtor,
+          static_cast<void (::google::protobuf::MessageLite::*)()>(&SuccessResponseData_MetadataEntry_DoNotUse::ClearImpl),
               ::google::protobuf::Message::ByteSizeLongImpl, ::google::protobuf::Message::_InternalSerializeImpl
               ,
 #endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(SuccessResponse_MetadataEntry_DoNotUse, _impl_._cached_size_),
+          PROTOBUF_FIELD_OFFSET(SuccessResponseData_MetadataEntry_DoNotUse, _impl_._cached_size_),
           false,
       },
-      &SuccessResponse_MetadataEntry_DoNotUse::kDescriptorMethods,
+      &SuccessResponseData_MetadataEntry_DoNotUse::kDescriptorMethods,
       &descriptor_table_shared_2fv1_2ftypes_2eproto,
       nullptr,  // tracker
   };
 }
 
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull SuccessResponse_MetadataEntry_DoNotUse_class_data_ =
-        SuccessResponse_MetadataEntry_DoNotUse::InternalGenerateClassData_();
+    ::google::protobuf::internal::ClassDataFull SuccessResponseData_MetadataEntry_DoNotUse_class_data_ =
+        SuccessResponseData_MetadataEntry_DoNotUse::InternalGenerateClassData_();
 
 PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-SuccessResponse_MetadataEntry_DoNotUse::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&SuccessResponse_MetadataEntry_DoNotUse_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(SuccessResponse_MetadataEntry_DoNotUse_class_data_.tc_table);
-  return SuccessResponse_MetadataEntry_DoNotUse_class_data_.base();
+SuccessResponseData_MetadataEntry_DoNotUse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&SuccessResponseData_MetadataEntry_DoNotUse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(SuccessResponseData_MetadataEntry_DoNotUse_class_data_.tc_table);
+  return SuccessResponseData_MetadataEntry_DoNotUse_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 56, 2>
-SuccessResponse_MetadataEntry_DoNotUse::_table_ = {
+const ::_pbi::TcParseTable<1, 2, 0, 60, 2>
+SuccessResponseData_MetadataEntry_DoNotUse::_table_ = {
   {
-    PROTOBUF_FIELD_OFFSET(SuccessResponse_MetadataEntry_DoNotUse, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(SuccessResponseData_MetadataEntry_DoNotUse, _impl_._has_bits_),
     0, // no _extensions_
     2, 8,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
@@ -1463,166 +1463,166 @@ SuccessResponse_MetadataEntry_DoNotUse::_table_ = {
     2,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
-    SuccessResponse_MetadataEntry_DoNotUse_class_data_.base(),
+    SuccessResponseData_MetadataEntry_DoNotUse_class_data_.base(),
     nullptr,  // post_loop_handler
     ::_pbi::TcParser::DiscardEverythingFallback,  // fallback
     #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-    ::_pbi::TcParser::GetTable<::shared::v1::SuccessResponse_MetadataEntry_DoNotUse>(),  // to_prefetch
+    ::_pbi::TcParser::GetTable<::shared::v1::SuccessResponseData_MetadataEntry_DoNotUse>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     // string value = 2 [json_name = "value"];
     {::_pbi::TcParser::FastUS1,
-     {18, 1, 0, PROTOBUF_FIELD_OFFSET(SuccessResponse_MetadataEntry_DoNotUse, _impl_.value_)}},
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(SuccessResponseData_MetadataEntry_DoNotUse, _impl_.value_)}},
     // string key = 1 [json_name = "key"];
     {::_pbi::TcParser::FastUS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(SuccessResponse_MetadataEntry_DoNotUse, _impl_.key_)}},
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(SuccessResponseData_MetadataEntry_DoNotUse, _impl_.key_)}},
   }}, {{
     65535, 65535
   }}, {{
     // string key = 1 [json_name = "key"];
-    {PROTOBUF_FIELD_OFFSET(SuccessResponse_MetadataEntry_DoNotUse, _impl_.key_), _Internal::kHasBitsOffset + 0, 0,
+    {PROTOBUF_FIELD_OFFSET(SuccessResponseData_MetadataEntry_DoNotUse, _impl_.key_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // string value = 2 [json_name = "value"];
-    {PROTOBUF_FIELD_OFFSET(SuccessResponse_MetadataEntry_DoNotUse, _impl_.value_), _Internal::kHasBitsOffset + 1, 0,
+    {PROTOBUF_FIELD_OFFSET(SuccessResponseData_MetadataEntry_DoNotUse, _impl_.value_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
   // no aux_entries
   {{
-    "\47\3\5\0\0\0\0\0"
-    "shared.v1.SuccessResponse.MetadataEntry"
+    "\53\3\5\0\0\0\0\0"
+    "shared.v1.SuccessResponseData.MetadataEntry"
     "key"
     "value"
   }},
 };
 // ===================================================================
 
-class SuccessResponse::_Internal {
+class SuccessResponseData::_Internal {
  public:
   using HasBits =
-      decltype(::std::declval<SuccessResponse>()._impl_._has_bits_);
+      decltype(::std::declval<SuccessResponseData>()._impl_._has_bits_);
   static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(SuccessResponse, _impl_._has_bits_);
+      8 * PROTOBUF_FIELD_OFFSET(SuccessResponseData, _impl_._has_bits_);
 };
 
-SuccessResponse::SuccessResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+SuccessResponseData::SuccessResponseData(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena, SuccessResponse_class_data_.base()) {
+    : ::google::protobuf::Message(arena, SuccessResponseData_class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
   SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:shared.v1.SuccessResponse)
+  // @@protoc_insertion_point(arena_constructor:shared.v1.SuccessResponseData)
 }
-PROTOBUF_NDEBUG_INLINE SuccessResponse::Impl_::Impl_(
+PROTOBUF_NDEBUG_INLINE SuccessResponseData::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-    const ::shared::v1::SuccessResponse& from_msg)
+    const ::shared::v1::SuccessResponseData& from_msg)
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
         metadata_{visibility, arena, from.metadata_},
         message_(arena, from.message_) {}
 
-SuccessResponse::SuccessResponse(
+SuccessResponseData::SuccessResponseData(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
-    const SuccessResponse& from)
+    const SuccessResponseData& from)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena, SuccessResponse_class_data_.base()) {
+    : ::google::protobuf::Message(arena, SuccessResponseData_class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  SuccessResponse* const _this = this;
+  SuccessResponseData* const _this = this;
   (void)_this;
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
 
-  // @@protoc_insertion_point(copy_constructor:shared.v1.SuccessResponse)
+  // @@protoc_insertion_point(copy_constructor:shared.v1.SuccessResponseData)
 }
-PROTOBUF_NDEBUG_INLINE SuccessResponse::Impl_::Impl_(
+PROTOBUF_NDEBUG_INLINE SuccessResponseData::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
         metadata_{visibility, arena},
         message_(arena) {}
 
-inline void SuccessResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+inline void SuccessResponseData::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
 }
-SuccessResponse::~SuccessResponse() {
-  // @@protoc_insertion_point(destructor:shared.v1.SuccessResponse)
+SuccessResponseData::~SuccessResponseData() {
+  // @@protoc_insertion_point(destructor:shared.v1.SuccessResponseData)
   SharedDtor(*this);
 }
-inline void SuccessResponse::SharedDtor(MessageLite& self) {
-  SuccessResponse& this_ = static_cast<SuccessResponse&>(self);
+inline void SuccessResponseData::SharedDtor(MessageLite& self) {
+  SuccessResponseData& this_ = static_cast<SuccessResponseData&>(self);
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.message_.Destroy();
   this_._impl_.~Impl_();
 }
 
-inline void* PROTOBUF_NONNULL SuccessResponse::PlacementNew_(
+inline void* PROTOBUF_NONNULL SuccessResponseData::PlacementNew_(
     const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) SuccessResponse(arena);
+  return ::new (mem) SuccessResponseData(arena);
 }
-constexpr auto SuccessResponse::InternalNewImpl_() {
+constexpr auto SuccessResponseData::InternalNewImpl_() {
   constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
-      PROTOBUF_FIELD_OFFSET(SuccessResponse, _impl_.metadata_) +
-          decltype(SuccessResponse::_impl_.metadata_)::
+      PROTOBUF_FIELD_OFFSET(SuccessResponseData, _impl_.metadata_) +
+          decltype(SuccessResponseData::_impl_.metadata_)::
               InternalGetArenaOffset(
                   ::google::protobuf::Message::internal_visibility()),
-      PROTOBUF_FIELD_OFFSET(SuccessResponse, _impl_.metadata_) +
-          decltype(SuccessResponse::_impl_.metadata_)::
+      PROTOBUF_FIELD_OFFSET(SuccessResponseData, _impl_.metadata_) +
+          decltype(SuccessResponseData::_impl_.metadata_)::
               InternalGetArenaOffsetAlt(
                   ::google::protobuf::Message::internal_visibility()),
   });
   if (arena_bits.has_value()) {
     return ::google::protobuf::internal::MessageCreator::CopyInit(
-        sizeof(SuccessResponse), alignof(SuccessResponse), *arena_bits);
+        sizeof(SuccessResponseData), alignof(SuccessResponseData), *arena_bits);
   } else {
-    return ::google::protobuf::internal::MessageCreator(&SuccessResponse::PlacementNew_,
-                                 sizeof(SuccessResponse),
-                                 alignof(SuccessResponse));
+    return ::google::protobuf::internal::MessageCreator(&SuccessResponseData::PlacementNew_,
+                                 sizeof(SuccessResponseData),
+                                 alignof(SuccessResponseData));
   }
 }
-constexpr auto SuccessResponse::InternalGenerateClassData_() {
+constexpr auto SuccessResponseData::InternalGenerateClassData_() {
   return ::google::protobuf::internal::ClassDataFull{
       ::google::protobuf::internal::ClassData{
-          &_SuccessResponse_default_instance_._instance,
+          &_SuccessResponseData_default_instance_._instance,
           &_table_.header,
           nullptr,  // OnDemandRegisterArenaDtor
           nullptr,  // IsInitialized
-          &SuccessResponse::MergeImpl,
-          ::google::protobuf::Message::GetNewImpl<SuccessResponse>(),
+          &SuccessResponseData::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<SuccessResponseData>(),
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-          &SuccessResponse::SharedDtor,
-          ::google::protobuf::Message::GetClearImpl<SuccessResponse>(), &SuccessResponse::ByteSizeLong,
-              &SuccessResponse::_InternalSerialize,
+          &SuccessResponseData::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<SuccessResponseData>(), &SuccessResponseData::ByteSizeLong,
+              &SuccessResponseData::_InternalSerialize,
 #endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(SuccessResponse, _impl_._cached_size_),
+          PROTOBUF_FIELD_OFFSET(SuccessResponseData, _impl_._cached_size_),
           false,
       },
-      &SuccessResponse::kDescriptorMethods,
+      &SuccessResponseData::kDescriptorMethods,
       &descriptor_table_shared_2fv1_2ftypes_2eproto,
       nullptr,  // tracker
   };
 }
 
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull SuccessResponse_class_data_ =
-        SuccessResponse::InternalGenerateClassData_();
+    ::google::protobuf::internal::ClassDataFull SuccessResponseData_class_data_ =
+        SuccessResponseData::InternalGenerateClassData_();
 
 PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-SuccessResponse::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&SuccessResponse_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(SuccessResponse_class_data_.tc_table);
-  return SuccessResponse_class_data_.base();
+SuccessResponseData::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&SuccessResponseData_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(SuccessResponseData_class_data_.tc_table);
+  return SuccessResponseData_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 2, 1, 49, 2>
-SuccessResponse::_table_ = {
+const ::_pbi::TcParseTable<0, 2, 1, 53, 2>
+SuccessResponseData::_table_ = {
   {
-    PROTOBUF_FIELD_OFFSET(SuccessResponse, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(SuccessResponseData, _impl_._has_bits_),
     0, // no _extensions_
     2, 0,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
@@ -1631,24 +1631,24 @@ SuccessResponse::_table_ = {
     2,  // num_field_entries
     1,  // num_aux_entries
     offsetof(decltype(_table_), aux_entries),
-    SuccessResponse_class_data_.base(),
+    SuccessResponseData_class_data_.base(),
     nullptr,  // post_loop_handler
     ::_pbi::TcParser::GenericFallback,  // fallback
     #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-    ::_pbi::TcParser::GetTable<::shared::v1::SuccessResponse>(),  // to_prefetch
+    ::_pbi::TcParser::GetTable<::shared::v1::SuccessResponseData>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     // optional string message = 1 [json_name = "message"];
     {::_pbi::TcParser::FastUS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(SuccessResponse, _impl_.message_)}},
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(SuccessResponseData, _impl_.message_)}},
   }}, {{
     65535, 65535
   }}, {{
     // optional string message = 1 [json_name = "message"];
-    {PROTOBUF_FIELD_OFFSET(SuccessResponse, _impl_.message_), _Internal::kHasBitsOffset + 0, 0,
+    {PROTOBUF_FIELD_OFFSET(SuccessResponseData, _impl_.message_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // map<string, string> metadata = 2 [json_name = "metadata"];
-    {PROTOBUF_FIELD_OFFSET(SuccessResponse, _impl_.metadata_), -1, 0,
+    {PROTOBUF_FIELD_OFFSET(SuccessResponseData, _impl_.metadata_), -1, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
   }},
   {{
@@ -1657,14 +1657,14 @@ SuccessResponse::_table_ = {
                                        0)},
   }},
   {{
-    "\31\7\10\0\0\0\0\0"
-    "shared.v1.SuccessResponse"
+    "\35\7\10\0\0\0\0\0"
+    "shared.v1.SuccessResponseData"
     "message"
     "metadata"
   }},
 };
-PROTOBUF_NOINLINE void SuccessResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:shared.v1.SuccessResponse)
+PROTOBUF_NOINLINE void SuccessResponseData::Clear() {
+// @@protoc_insertion_point(message_clear_start:shared.v1.SuccessResponseData)
   ::google::protobuf::internal::TSanWrite(&_impl_);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
@@ -1680,17 +1680,17 @@ PROTOBUF_NOINLINE void SuccessResponse::Clear() {
 }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-::uint8_t* PROTOBUF_NONNULL SuccessResponse::_InternalSerialize(
+::uint8_t* PROTOBUF_NONNULL SuccessResponseData::_InternalSerialize(
     const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
-  const SuccessResponse& this_ = static_cast<const SuccessResponse&>(base);
+  const SuccessResponseData& this_ = static_cast<const SuccessResponseData&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-::uint8_t* PROTOBUF_NONNULL SuccessResponse::_InternalSerialize(
+::uint8_t* PROTOBUF_NONNULL SuccessResponseData::_InternalSerialize(
     ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-  const SuccessResponse& this_ = *this;
+  const SuccessResponseData& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(serialize_to_array_start:shared.v1.SuccessResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:shared.v1.SuccessResponseData)
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
@@ -1699,7 +1699,7 @@ PROTOBUF_NOINLINE void SuccessResponse::Clear() {
   if ((cached_has_bits & 0x00000001u) != 0) {
     const ::std::string& _s = this_._internal_message();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.SuccessResponse.message");
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.SuccessResponseData.message");
     target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
@@ -1717,10 +1717,10 @@ PROTOBUF_NOINLINE void SuccessResponse::Clear() {
             2, entry.first, entry.second, target, stream);
         ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             entry.first.data(), static_cast<int>(entry.first.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.SuccessResponse.metadata");
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.SuccessResponseData.metadata");
         ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             entry.second.data(), static_cast<int>(entry.second.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.SuccessResponse.metadata");
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.SuccessResponseData.metadata");
       }
     } else {
       for (const auto& entry : field) {
@@ -1728,10 +1728,10 @@ PROTOBUF_NOINLINE void SuccessResponse::Clear() {
             2, entry.first, entry.second, target, stream);
         ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             entry.first.data(), static_cast<int>(entry.first.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.SuccessResponse.metadata");
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.SuccessResponseData.metadata");
         ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             entry.second.data(), static_cast<int>(entry.second.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.SuccessResponse.metadata");
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.SuccessResponseData.metadata");
       }
     }
   }
@@ -1741,18 +1741,18 @@ PROTOBUF_NOINLINE void SuccessResponse::Clear() {
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
             this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:shared.v1.SuccessResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:shared.v1.SuccessResponseData)
   return target;
 }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-::size_t SuccessResponse::ByteSizeLong(const MessageLite& base) {
-  const SuccessResponse& this_ = static_cast<const SuccessResponse&>(base);
+::size_t SuccessResponseData::ByteSizeLong(const MessageLite& base) {
+  const SuccessResponseData& this_ = static_cast<const SuccessResponseData&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-::size_t SuccessResponse::ByteSizeLong() const {
-  const SuccessResponse& this_ = *this;
+::size_t SuccessResponseData::ByteSizeLong() const {
+  const SuccessResponseData& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(message_byte_size_start:shared.v1.SuccessResponse)
+  // @@protoc_insertion_point(message_byte_size_start:shared.v1.SuccessResponseData)
   ::size_t total_size = 0;
 
   ::uint32_t cached_has_bits = 0;
@@ -1784,10 +1784,10 @@ PROTOBUF_NOINLINE void SuccessResponse::Clear() {
                                              &this_._impl_._cached_size_);
 }
 
-void SuccessResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
-  auto* const _this = static_cast<SuccessResponse*>(&to_msg);
-  auto& from = static_cast<const SuccessResponse&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:shared.v1.SuccessResponse)
+void SuccessResponseData::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<SuccessResponseData*>(&to_msg);
+  auto& from = static_cast<const SuccessResponseData&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:shared.v1.SuccessResponseData)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -1801,15 +1801,15 @@ void SuccessResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const :
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void SuccessResponse::CopyFrom(const SuccessResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:shared.v1.SuccessResponse)
+void SuccessResponseData::CopyFrom(const SuccessResponseData& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:shared.v1.SuccessResponseData)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 
-void SuccessResponse::InternalSwap(SuccessResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+void SuccessResponseData::InternalSwap(SuccessResponseData* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   using ::std::swap;
   auto* arena = GetArena();
   ABSL_DCHECK_EQ(arena, other->GetArena());
@@ -1819,7 +1819,7 @@ void SuccessResponse::InternalSwap(SuccessResponse* PROTOBUF_RESTRICT PROTOBUF_N
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_, &other->_impl_.message_, arena);
 }
 
-::google::protobuf::Metadata SuccessResponse::GetMetadata() const {
+::google::protobuf::Metadata SuccessResponseData::GetMetadata() const {
   return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // ===================================================================

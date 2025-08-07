@@ -18,7 +18,7 @@ plugins:
       - import_style=commonjs
 
   - name: ts
-    out: gen/ts
+    out: wrappers/proto-npm/src/gen
     opt:
       - import_style=commonjs
 

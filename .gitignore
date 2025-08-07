@@ -1,2 +1,4 @@
 target
 external_libs
+node_modules
+dist

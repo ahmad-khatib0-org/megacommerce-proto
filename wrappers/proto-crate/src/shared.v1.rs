@@ -33,7 +33,7 @@ pub mod order_direction {
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct SuccessResponse {
+pub struct SuccessResponseData {
     #[prost(string, optional, tag = "1")]
     pub message: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(map = "string, string", tag = "2")]
