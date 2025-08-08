@@ -9,9 +9,7 @@
     "moduleResolution": "Node",
     "esModuleInterop": true,
     "strict": true,
-    "jsx": "react-jsx",
-    "types": [],
-    "skipLibCheck": true, // avoid issues with google-protobuf types
+    "skipLibCheck": true,
     "resolveJsonModule": true
   },
   "include": [

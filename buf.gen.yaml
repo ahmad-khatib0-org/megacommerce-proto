@@ -1,29 +1,27 @@
 ---
 version: v1
 plugins:
-  - plugin: go
+  - name: go
     out: gen/go
     opt: paths=source_relative
 
-  - plugin: go-grpc
+  - name: go-grpc
     out: gen/go
     opt: paths=source_relative
 
   - name: java
     out: gen/java
 
-  - name: js
-    out: gen/js
+  - plugin: buf.build/community/stephenh-ts-proto
+    out: wrappers/proto-npm/src/node
     opt:
-      - import_style=commonjs
-
-  - name: ts
-    out: wrappers/proto-npm/src/gen
-    opt:
-      - import_style=commonjs
+      - env=true
+      - outputServices=grpc-js
+      - forceLong=string
+      - useOptionals=true
 
   - name: grpc-web
-    out: gen/ts-web
+    out: wrappers/proto-npm/src/web
     opt:
       - import_style=typescript
       - mode=grpcwebtext
