@@ -1,1 +1,10 @@
+export * as CommonV1 from './node/common/v1'
+export * as ProductsV1 from './node/products/v1'
+export * as SharedV1 from './node/shared/v1'
+export * as UploaderV1 from './node/uploader/v1'
+export * as UsersV1 from './node/users/v1'
 
+export * as CommonWebV1 from './web/common/v1'
+export * as ProductsWebV1 from './web/products/v1'
+export * as UploaderWebV1 from './web/uploader/v1'
+export * as UsersWebV1 from './web/users/v1'

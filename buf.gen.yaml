@@ -28,6 +28,3 @@ plugins:
 
   - name: cpp
     out: gen/cpp
-
-  - name: python
-    out: gen/python
