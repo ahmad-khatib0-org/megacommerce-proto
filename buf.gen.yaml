@@ -12,6 +12,7 @@ plugins:
   - name: java
     out: gen/java
 
+  # Node.js TypeScript (server-side)
   - plugin: buf.build/community/stephenh-ts-proto
     out: wrappers/proto-npm/src/node
     opt:
@@ -20,6 +21,15 @@ plugins:
       - forceLong=string
       - useOptionals=true
 
+  # Web gRPC (client-side) — two steps required!
+  # 1. Messages (_pb.js)
+  - name: js
+    out: wrappers/proto-npm/src/web
+    opt:
+      - import_style=commonjs
+      - binary
+
+  # 2. Service clients (ServiceClientPb.ts)
   - name: grpc-web
     out: wrappers/proto-npm/src/web
     opt:

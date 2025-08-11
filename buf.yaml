@@ -4,3 +4,5 @@ name: buf.build/ahmad-khatib-org/megacommerce-proto
 
 deps:
   - buf.build/googleapis/googleapis
+  - buf.build/community/grpc-web
+  - buf.build/community/stephenh-ts-proto
