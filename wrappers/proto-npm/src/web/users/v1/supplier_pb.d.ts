@@ -23,6 +23,9 @@ export class SupplierCreateRequest extends jspb.Message {
   getMembership(): string;
   setMembership(value: string): SupplierCreateRequest;
 
+  getImage(): string;
+  setImage(value: string): SupplierCreateRequest;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SupplierCreateRequest.AsObject;
   static toObject(includeInstance: boolean, msg: SupplierCreateRequest): SupplierCreateRequest.AsObject;
@@ -39,6 +42,7 @@ export namespace SupplierCreateRequest {
     lastName: string,
     password: string,
     membership: string,
+    image: string,
   }
 }
 

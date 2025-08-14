@@ -14,6 +14,8 @@ pub struct SupplierCreateRequest {
     pub password: ::prost::alloc::string::String,
     #[prost(string, tag = "6")]
     pub membership: ::prost::alloc::string::String,
+    #[prost(string, tag = "7")]
+    pub image: ::prost::alloc::string::String,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

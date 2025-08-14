@@ -26,7 +26,7 @@ from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
 from shared.v1 import types_pb2 as shared_dot_v1_dot_types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17users/v1/supplier.proto\x12\x08users.v1\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"\x85\x01\n\x15SupplierCreateRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\x12\n\nfirst_name\x18\x03 \x01(\t\x12\x11\n\tlast_name\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x12\n\nmembership\x18\x06 \x01(\t\"l\n\x16SupplierCreateResponse\x12 \n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x10.shared.v1.EmptyH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08responseBq\n\x19org.megacommerce.users.v1B\rSupplierProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17users/v1/supplier.proto\x12\x08users.v1\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"\x94\x01\n\x15SupplierCreateRequest\x12\x10\n\x08username\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\x12\n\nfirst_name\x18\x03 \x01(\t\x12\x11\n\tlast_name\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12\x12\n\nmembership\x18\x06 \x01(\t\x12\r\n\x05image\x18\x07 \x01(\t\"l\n\x16SupplierCreateResponse\x12 \n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x10.shared.v1.EmptyH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08responseBq\n\x19org.megacommerce.users.v1B\rSupplierProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,7 +35,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\031org.megacommerce.users.v1B\rSupplierProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\370\001\001'
   _globals['_SUPPLIERCREATEREQUEST']._serialized_start=84
-  _globals['_SUPPLIERCREATEREQUEST']._serialized_end=217
-  _globals['_SUPPLIERCREATERESPONSE']._serialized_start=219
-  _globals['_SUPPLIERCREATERESPONSE']._serialized_end=327
+  _globals['_SUPPLIERCREATEREQUEST']._serialized_end=232
+  _globals['_SUPPLIERCREATERESPONSE']._serialized_start=234
+  _globals['_SUPPLIERCREATERESPONSE']._serialized_end=342
 # @@protoc_insertion_point(module_scope)

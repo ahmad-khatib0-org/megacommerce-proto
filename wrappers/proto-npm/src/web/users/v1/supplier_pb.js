@@ -107,7 +107,8 @@ email: jspb.Message.getFieldWithDefault(msg, 2, ""),
 firstName: jspb.Message.getFieldWithDefault(msg, 3, ""),
 lastName: jspb.Message.getFieldWithDefault(msg, 4, ""),
 password: jspb.Message.getFieldWithDefault(msg, 5, ""),
-membership: jspb.Message.getFieldWithDefault(msg, 6, "")
+membership: jspb.Message.getFieldWithDefault(msg, 6, ""),
+image: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -167,6 +168,10 @@ proto.users.v1.SupplierCreateRequest.deserializeBinaryFromReader = function(msg,
     case 6:
       var value = /** @type {string} */ (reader.readString());
       msg.setMembership(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setImage(value);
       break;
     default:
       reader.skipField();
@@ -236,6 +241,13 @@ proto.users.v1.SupplierCreateRequest.serializeBinaryToWriter = function(message,
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = message.getImage();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -347,6 +359,24 @@ proto.users.v1.SupplierCreateRequest.prototype.getMembership = function() {
  */
 proto.users.v1.SupplierCreateRequest.prototype.setMembership = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string image = 7;
+ * @return {string}
+ */
+proto.users.v1.SupplierCreateRequest.prototype.getImage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.users.v1.SupplierCreateRequest} returns this
+ */
+proto.users.v1.SupplierCreateRequest.prototype.setImage = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 

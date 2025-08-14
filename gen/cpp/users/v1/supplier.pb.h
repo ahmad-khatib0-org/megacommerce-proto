@@ -228,6 +228,7 @@ class SupplierCreateRequest final : public ::google::protobuf::Message
     kLastNameFieldNumber = 4,
     kPasswordFieldNumber = 5,
     kMembershipFieldNumber = 6,
+    kImageFieldNumber = 7,
   };
   // string username = 1 [json_name = "username"];
   void clear_username() ;
@@ -319,12 +320,27 @@ class SupplierCreateRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_membership();
 
   public:
+  // string image = 7 [json_name = "image"];
+  void clear_image() ;
+  const ::std::string& image() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_image(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_image();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_image();
+  void set_allocated_image(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_image() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_image(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_image();
+
+  public:
   // @@protoc_insertion_point(class_scope:users.v1.SupplierCreateRequest)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<3, 6,
-                                   0, 89,
+  static const ::google::protobuf::internal::TcParseTable<3, 7,
+                                   0, 94,
                                    2>
       _table_;
 
@@ -351,6 +367,7 @@ class SupplierCreateRequest final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr last_name_;
     ::google::protobuf::internal::ArenaStringPtr password_;
     ::google::protobuf::internal::ArenaStringPtr membership_;
+    ::google::protobuf::internal::ArenaStringPtr image_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -999,6 +1016,71 @@ inline void SupplierCreateRequest::set_allocated_membership(::std::string* PROTO
     _impl_.membership_.Set("", GetArena());
   }
   // @@protoc_insertion_point(field_set_allocated:users.v1.SupplierCreateRequest.membership)
+}
+
+// string image = 7 [json_name = "image"];
+inline void SupplierCreateRequest::clear_image() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.image_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000040u;
+}
+inline const ::std::string& SupplierCreateRequest::image() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:users.v1.SupplierCreateRequest.image)
+  return _internal_image();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void SupplierCreateRequest::set_image(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_.image_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:users.v1.SupplierCreateRequest.image)
+}
+inline ::std::string* PROTOBUF_NONNULL SupplierCreateRequest::mutable_image()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_image();
+  // @@protoc_insertion_point(field_mutable:users.v1.SupplierCreateRequest.image)
+  return _s;
+}
+inline const ::std::string& SupplierCreateRequest::_internal_image() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.image_.Get();
+}
+inline void SupplierCreateRequest::_internal_set_image(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_.image_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL SupplierCreateRequest::_internal_mutable_image() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000040u;
+  return _impl_.image_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE SupplierCreateRequest::release_image() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:users.v1.SupplierCreateRequest.image)
+  if ((_impl_._has_bits_[0] & 0x00000040u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000040u;
+  auto* released = _impl_.image_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.image_.Set("", GetArena());
+  }
+  return released;
+}
+inline void SupplierCreateRequest::set_allocated_image(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000040u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000040u;
+  }
+  _impl_.image_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.image_.IsDefault()) {
+    _impl_.image_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:users.v1.SupplierCreateRequest.image)
 }
 
 // -------------------------------------------------------------------

@@ -101,6 +101,18 @@ public final class SupplierProto {
      */
     com.google.protobuf.ByteString
         getMembershipBytes();
+
+    /**
+     * <code>string image = 7 [json_name = "image"];</code>
+     * @return The image.
+     */
+    java.lang.String getImage();
+    /**
+     * <code>string image = 7 [json_name = "image"];</code>
+     * @return The bytes for image.
+     */
+    com.google.protobuf.ByteString
+        getImageBytes();
   }
   /**
    * Protobuf type {@code users.v1.SupplierCreateRequest}
@@ -130,6 +142,7 @@ public final class SupplierProto {
       lastName_ = "";
       password_ = "";
       membership_ = "";
+      image_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -379,6 +392,45 @@ public final class SupplierProto {
       }
     }
 
+    public static final int IMAGE_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object image_ = "";
+    /**
+     * <code>string image = 7 [json_name = "image"];</code>
+     * @return The image.
+     */
+    @java.lang.Override
+    public java.lang.String getImage() {
+      java.lang.Object ref = image_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        image_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string image = 7 [json_name = "image"];</code>
+     * @return The bytes for image.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getImageBytes() {
+      java.lang.Object ref = image_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        image_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -411,6 +463,9 @@ public final class SupplierProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(membership_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 6, membership_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(image_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 7, image_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -437,6 +492,9 @@ public final class SupplierProto {
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(membership_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(6, membership_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(image_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, image_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -465,6 +523,8 @@ public final class SupplierProto {
           .equals(other.getPassword())) return false;
       if (!getMembership()
           .equals(other.getMembership())) return false;
+      if (!getImage()
+          .equals(other.getImage())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -488,6 +548,8 @@ public final class SupplierProto {
       hash = (53 * hash) + getPassword().hashCode();
       hash = (37 * hash) + MEMBERSHIP_FIELD_NUMBER;
       hash = (53 * hash) + getMembership().hashCode();
+      hash = (37 * hash) + IMAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getImage().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -625,6 +687,7 @@ public final class SupplierProto {
         lastName_ = "";
         password_ = "";
         membership_ = "";
+        image_ = "";
         return this;
       }
 
@@ -676,6 +739,9 @@ public final class SupplierProto {
         if (((from_bitField0_ & 0x00000020) != 0)) {
           result.membership_ = membership_;
         }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.image_ = image_;
+        }
       }
 
       @java.lang.Override
@@ -718,6 +784,11 @@ public final class SupplierProto {
         if (!other.getMembership().isEmpty()) {
           membership_ = other.membership_;
           bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        if (!other.getImage().isEmpty()) {
+          image_ = other.image_;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -776,6 +847,11 @@ public final class SupplierProto {
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+              case 58: {
+                image_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1221,6 +1297,78 @@ public final class SupplierProto {
         checkByteStringIsUtf8(value);
         membership_ = value;
         bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object image_ = "";
+      /**
+       * <code>string image = 7 [json_name = "image"];</code>
+       * @return The image.
+       */
+      public java.lang.String getImage() {
+        java.lang.Object ref = image_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          image_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string image = 7 [json_name = "image"];</code>
+       * @return The bytes for image.
+       */
+      public com.google.protobuf.ByteString
+          getImageBytes() {
+        java.lang.Object ref = image_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          image_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string image = 7 [json_name = "image"];</code>
+       * @param value The image to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImage(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        image_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string image = 7 [json_name = "image"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearImage() {
+        image_ = getDefaultInstance().getImage();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string image = 7 [json_name = "image"];</code>
+       * @param value The bytes for image to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        image_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -2182,18 +2330,18 @@ public final class SupplierProto {
     java.lang.String[] descriptorData = {
       "\n\027users/v1/supplier.proto\022\010users.v1\032\025sha" +
       "red/v1/error.proto\032\025shared/v1/types.prot" +
-      "o\"\301\001\n\025SupplierCreateRequest\022\032\n\010username\030" +
+      "o\"\327\001\n\025SupplierCreateRequest\022\032\n\010username\030" +
       "\001 \001(\tR\010username\022\024\n\005email\030\002 \001(\tR\005email\022\035\n" +
       "\nfirst_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_nam" +
       "e\030\004 \001(\tR\010lastName\022\032\n\010password\030\005 \001(\tR\010pas" +
-      "sword\022\036\n\nmembership\030\006 \001(\tR\nmembership\"y\n" +
-      "\026SupplierCreateResponse\022&\n\004data\030\001 \001(\0132\020." +
-      "shared.v1.EmptyH\000R\004data\022+\n\005error\030\002 \001(\0132\023" +
-      ".shared.v1.AppErrorH\000R\005errorB\n\n\010response" +
-      "Bq\n\031org.megacommerce.users.v1B\rSupplierP" +
-      "rotoZBgithub.com/ahmad-khatib0-org/megac" +
-      "ommerce-proto/gen/go/users/v1;v1\370\001\001b\006pro" +
-      "to3"
+      "sword\022\036\n\nmembership\030\006 \001(\tR\nmembership\022\024\n" +
+      "\005image\030\007 \001(\tR\005image\"y\n\026SupplierCreateRes" +
+      "ponse\022&\n\004data\030\001 \001(\0132\020.shared.v1.EmptyH\000R" +
+      "\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErro" +
+      "rH\000R\005errorB\n\n\010responseBq\n\031org.megacommer" +
+      "ce.users.v1B\rSupplierProtoZBgithub.com/a" +
+      "hmad-khatib0-org/megacommerce-proto/gen/" +
+      "go/users/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2206,7 +2354,7 @@ public final class SupplierProto {
     internal_static_users_v1_SupplierCreateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_users_v1_SupplierCreateRequest_descriptor,
-        new java.lang.String[] { "Username", "Email", "FirstName", "LastName", "Password", "Membership", });
+        new java.lang.String[] { "Username", "Email", "FirstName", "LastName", "Password", "Membership", "Image", });
     internal_static_users_v1_SupplierCreateResponse_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_users_v1_SupplierCreateResponse_fieldAccessorTable = new

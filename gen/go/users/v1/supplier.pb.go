@@ -30,6 +30,7 @@ type SupplierCreateRequest struct {
 	LastName      string                 `protobuf:"bytes,4,opt,name=last_name,json=lastName,proto3" json:"last_name,omitempty"`
 	Password      string                 `protobuf:"bytes,5,opt,name=password,proto3" json:"password,omitempty"`
 	Membership    string                 `protobuf:"bytes,6,opt,name=membership,proto3" json:"membership,omitempty"`
+	Image         string                 `protobuf:"bytes,7,opt,name=image,proto3" json:"image,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -102,6 +103,13 @@ func (x *SupplierCreateRequest) GetPassword() string {
 func (x *SupplierCreateRequest) GetMembership() string {
 	if x != nil {
 		return x.Membership
+	}
+	return ""
+}
+
+func (x *SupplierCreateRequest) GetImage() string {
+	if x != nil {
+		return x.Image
 	}
 	return ""
 }
@@ -192,7 +200,7 @@ var File_users_v1_supplier_proto protoreflect.FileDescriptor
 
 const file_users_v1_supplier_proto_rawDesc = "" +
 	"\n" +
-	"\x17users/v1/supplier.proto\x12\busers.v1\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"\xc1\x01\n" +
+	"\x17users/v1/supplier.proto\x12\busers.v1\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"\xd7\x01\n" +
 	"\x15SupplierCreateRequest\x12\x1a\n" +
 	"\busername\x18\x01 \x01(\tR\busername\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email\x12\x1d\n" +
@@ -202,7 +210,8 @@ const file_users_v1_supplier_proto_rawDesc = "" +
 	"\bpassword\x18\x05 \x01(\tR\bpassword\x12\x1e\n" +
 	"\n" +
 	"membership\x18\x06 \x01(\tR\n" +
-	"membership\"y\n" +
+	"membership\x12\x14\n" +
+	"\x05image\x18\a \x01(\tR\x05image\"y\n" +
 	"\x16SupplierCreateResponse\x12&\n" +
 	"\x04data\x18\x01 \x01(\v2\x10.shared.v1.EmptyH\x00R\x04data\x12+\n" +
 	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +

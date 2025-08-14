@@ -18,6 +18,7 @@ export interface SupplierCreateRequest {
   lastName: string;
   password: string;
   membership: string;
+  image: string;
 }
 
 export interface SupplierCreateResponse {
@@ -26,7 +27,7 @@ export interface SupplierCreateResponse {
 }
 
 function createBaseSupplierCreateRequest(): SupplierCreateRequest {
-  return { username: "", email: "", firstName: "", lastName: "", password: "", membership: "" };
+  return { username: "", email: "", firstName: "", lastName: "", password: "", membership: "", image: "" };
 }
 
 export const SupplierCreateRequest: MessageFns<SupplierCreateRequest> = {
@@ -48,6 +49,9 @@ export const SupplierCreateRequest: MessageFns<SupplierCreateRequest> = {
     }
     if (message.membership !== "") {
       writer.uint32(50).string(message.membership);
+    }
+    if (message.image !== "") {
+      writer.uint32(58).string(message.image);
     }
     return writer;
   },
@@ -107,6 +111,14 @@ export const SupplierCreateRequest: MessageFns<SupplierCreateRequest> = {
           message.membership = reader.string();
           continue;
         }
+        case 7: {
+          if (tag !== 58) {
+            break;
+          }
+
+          message.image = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -124,6 +136,7 @@ export const SupplierCreateRequest: MessageFns<SupplierCreateRequest> = {
       lastName: isSet(object.lastName) ? globalThis.String(object.lastName) : "",
       password: isSet(object.password) ? globalThis.String(object.password) : "",
       membership: isSet(object.membership) ? globalThis.String(object.membership) : "",
+      image: isSet(object.image) ? globalThis.String(object.image) : "",
     };
   },
 
@@ -147,6 +160,9 @@ export const SupplierCreateRequest: MessageFns<SupplierCreateRequest> = {
     if (message.membership !== "") {
       obj.membership = message.membership;
     }
+    if (message.image !== "") {
+      obj.image = message.image;
+    }
     return obj;
   },
 
@@ -161,6 +177,7 @@ export const SupplierCreateRequest: MessageFns<SupplierCreateRequest> = {
     message.lastName = object.lastName ?? "";
     message.password = object.password ?? "";
     message.membership = object.membership ?? "";
+    message.image = object.image ?? "";
     return message;
   },
 };

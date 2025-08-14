@@ -17,6 +17,7 @@ message SupplierCreateRequest {
   string last_name = 4;
   string password = 5;
   string membership = 6;
+  string image = 7;
 }
 
 message SupplierCreateResponse {

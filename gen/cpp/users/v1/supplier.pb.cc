@@ -47,6 +47,9 @@ inline constexpr SupplierCreateRequest::Impl_::Impl_(
             ::_pbi::ConstantInitialized()),
         membership_(
             &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        image_(
+            &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()) {}
 
 template <typename>
@@ -105,19 +108,21 @@ const ::uint32_t
         protodesc_cold) = {
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::users::v1::SupplierCreateRequest, _impl_._has_bits_),
-        9, // hasbit index offset
+        10, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::users::v1::SupplierCreateRequest, _impl_.username_),
         PROTOBUF_FIELD_OFFSET(::users::v1::SupplierCreateRequest, _impl_.email_),
         PROTOBUF_FIELD_OFFSET(::users::v1::SupplierCreateRequest, _impl_.first_name_),
         PROTOBUF_FIELD_OFFSET(::users::v1::SupplierCreateRequest, _impl_.last_name_),
         PROTOBUF_FIELD_OFFSET(::users::v1::SupplierCreateRequest, _impl_.password_),
         PROTOBUF_FIELD_OFFSET(::users::v1::SupplierCreateRequest, _impl_.membership_),
+        PROTOBUF_FIELD_OFFSET(::users::v1::SupplierCreateRequest, _impl_.image_),
         0,
         1,
         2,
         3,
         4,
         5,
+        6,
         0x004, // bitmap
         PROTOBUF_FIELD_OFFSET(::users::v1::SupplierCreateResponse, _impl_._oneof_case_[0]),
         ::_pbi::kInvalidFieldOffsetTag,
@@ -128,7 +133,7 @@ const ::uint32_t
 static const ::_pbi::MigrationSchema
     schemas[] ABSL_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
         {0, sizeof(::users::v1::SupplierCreateRequest)},
-        {15, sizeof(::users::v1::SupplierCreateResponse)},
+        {17, sizeof(::users::v1::SupplierCreateResponse)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::users::v1::_SupplierCreateRequest_default_instance_._instance,
@@ -138,18 +143,18 @@ const char descriptor_table_protodef_users_2fv1_2fsupplier_2eproto[] ABSL_ATTRIB
     protodesc_cold) = {
     "\n\027users/v1/supplier.proto\022\010users.v1\032\025sha"
     "red/v1/error.proto\032\025shared/v1/types.prot"
-    "o\"\301\001\n\025SupplierCreateRequest\022\032\n\010username\030"
+    "o\"\327\001\n\025SupplierCreateRequest\022\032\n\010username\030"
     "\001 \001(\tR\010username\022\024\n\005email\030\002 \001(\tR\005email\022\035\n"
     "\nfirst_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_nam"
     "e\030\004 \001(\tR\010lastName\022\032\n\010password\030\005 \001(\tR\010pas"
-    "sword\022\036\n\nmembership\030\006 \001(\tR\nmembership\"y\n"
-    "\026SupplierCreateResponse\022&\n\004data\030\001 \001(\0132\020."
-    "shared.v1.EmptyH\000R\004data\022+\n\005error\030\002 \001(\0132\023"
-    ".shared.v1.AppErrorH\000R\005errorB\n\n\010response"
-    "Bq\n\031org.megacommerce.users.v1B\rSupplierP"
-    "rotoZBgithub.com/ahmad-khatib0-org/megac"
-    "ommerce-proto/gen/go/users/v1;v1\370\001\001b\006pro"
-    "to3"
+    "sword\022\036\n\nmembership\030\006 \001(\tR\nmembership\022\024\n"
+    "\005image\030\007 \001(\tR\005image\"y\n\026SupplierCreateRes"
+    "ponse\022&\n\004data\030\001 \001(\0132\020.shared.v1.EmptyH\000R"
+    "\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErro"
+    "rH\000R\005errorB\n\n\010responseBq\n\031org.megacommer"
+    "ce.users.v1B\rSupplierProtoZBgithub.com/a"
+    "hmad-khatib0-org/megacommerce-proto/gen/"
+    "go/users/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_users_2fv1_2fsupplier_2eproto_deps[2] = {
@@ -160,7 +165,7 @@ static ::absl::once_flag descriptor_table_users_2fv1_2fsupplier_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_users_2fv1_2fsupplier_2eproto = {
     false,
     false,
-    523,
+    545,
     descriptor_table_protodef_users_2fv1_2fsupplier_2eproto,
     "users/v1/supplier.proto",
     &descriptor_table_users_2fv1_2fsupplier_2eproto_once,
@@ -205,7 +210,8 @@ PROTOBUF_NDEBUG_INLINE SupplierCreateRequest::Impl_::Impl_(
         first_name_(arena, from.first_name_),
         last_name_(arena, from.last_name_),
         password_(arena, from.password_),
-        membership_(arena, from.membership_) {}
+        membership_(arena, from.membership_),
+        image_(arena, from.image_) {}
 
 SupplierCreateRequest::SupplierCreateRequest(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -232,7 +238,8 @@ PROTOBUF_NDEBUG_INLINE SupplierCreateRequest::Impl_::Impl_(
         first_name_(arena),
         last_name_(arena),
         password_(arena),
-        membership_(arena) {}
+        membership_(arena),
+        image_(arena) {}
 
 inline void SupplierCreateRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
@@ -251,6 +258,7 @@ inline void SupplierCreateRequest::SharedDtor(MessageLite& self) {
   this_._impl_.last_name_.Destroy();
   this_._impl_.password_.Destroy();
   this_._impl_.membership_.Destroy();
+  this_._impl_.image_.Destroy();
   this_._impl_.~Impl_();
 }
 
@@ -297,16 +305,16 @@ SupplierCreateRequest::GetClassData() const {
   return SupplierCreateRequest_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 6, 0, 89, 2>
+const ::_pbi::TcParseTable<3, 7, 0, 94, 2>
 SupplierCreateRequest::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(SupplierCreateRequest, _impl_._has_bits_),
     0, // no _extensions_
-    6, 56,  // max_field_number, fast_idx_mask
+    7, 56,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967232,  // skipmap
+    4294967168,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    6,  // num_field_entries
+    7,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     SupplierCreateRequest_class_data_.base(),
@@ -335,7 +343,9 @@ SupplierCreateRequest::_table_ = {
     // string membership = 6 [json_name = "membership"];
     {::_pbi::TcParser::FastUS1,
      {50, 5, 0, PROTOBUF_FIELD_OFFSET(SupplierCreateRequest, _impl_.membership_)}},
-    {::_pbi::TcParser::MiniParse, {}},
+    // string image = 7 [json_name = "image"];
+    {::_pbi::TcParser::FastUS1,
+     {58, 6, 0, PROTOBUF_FIELD_OFFSET(SupplierCreateRequest, _impl_.image_)}},
   }}, {{
     65535, 65535
   }}, {{
@@ -357,10 +367,13 @@ SupplierCreateRequest::_table_ = {
     // string membership = 6 [json_name = "membership"];
     {PROTOBUF_FIELD_OFFSET(SupplierCreateRequest, _impl_.membership_), _Internal::kHasBitsOffset + 5, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string image = 7 [json_name = "image"];
+    {PROTOBUF_FIELD_OFFSET(SupplierCreateRequest, _impl_.image_), _Internal::kHasBitsOffset + 6, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
   // no aux_entries
   {{
-    "\36\10\5\12\11\10\12\0"
+    "\36\10\5\12\11\10\12\5"
     "users.v1.SupplierCreateRequest"
     "username"
     "email"
@@ -368,6 +381,7 @@ SupplierCreateRequest::_table_ = {
     "last_name"
     "password"
     "membership"
+    "image"
   }},
 };
 PROTOBUF_NOINLINE void SupplierCreateRequest::Clear() {
@@ -378,7 +392,7 @@ PROTOBUF_NOINLINE void SupplierCreateRequest::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x0000003fu) != 0) {
+  if ((cached_has_bits & 0x0000007fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
       _impl_.username_.ClearNonDefaultToEmpty();
     }
@@ -396,6 +410,9 @@ PROTOBUF_NOINLINE void SupplierCreateRequest::Clear() {
     }
     if ((cached_has_bits & 0x00000020u) != 0) {
       _impl_.membership_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000040u) != 0) {
+      _impl_.image_.ClearNonDefaultToEmpty();
     }
   }
   _impl_._has_bits_.Clear();
@@ -477,6 +494,16 @@ PROTOBUF_NOINLINE void SupplierCreateRequest::Clear() {
     }
   }
 
+  // string image = 7 [json_name = "image"];
+  if ((this_._impl_._has_bits_[0] & 0x00000040u) != 0) {
+    if (!this_._internal_image().empty()) {
+      const ::std::string& _s = this_._internal_image();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "users.v1.SupplierCreateRequest.image");
+      target = stream->WriteStringMaybeAliased(7, _s, target);
+    }
+  }
+
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
     target =
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -502,7 +529,7 @@ PROTOBUF_NOINLINE void SupplierCreateRequest::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x0000003fu) != 0) {
+  if ((cached_has_bits & 0x0000007fu) != 0) {
     // string username = 1 [json_name = "username"];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_username().empty()) {
@@ -545,6 +572,13 @@ PROTOBUF_NOINLINE void SupplierCreateRequest::Clear() {
                                         this_._internal_membership());
       }
     }
+    // string image = 7 [json_name = "image"];
+    if ((cached_has_bits & 0x00000040u) != 0) {
+      if (!this_._internal_image().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_image());
+      }
+    }
   }
   return this_.MaybeComputeUnknownFieldsSize(total_size,
                                              &this_._impl_._cached_size_);
@@ -559,7 +593,7 @@ void SupplierCreateRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, c
   (void) cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x0000003fu) != 0) {
+  if ((cached_has_bits & 0x0000007fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!from._internal_username().empty()) {
         _this->_internal_set_username(from._internal_username());
@@ -614,6 +648,15 @@ void SupplierCreateRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, c
         }
       }
     }
+    if ((cached_has_bits & 0x00000040u) != 0) {
+      if (!from._internal_image().empty()) {
+        _this->_internal_set_image(from._internal_image());
+      } else {
+        if (_this->_impl_.image_.IsDefault()) {
+          _this->_internal_set_image("");
+        }
+      }
+    }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
@@ -639,6 +682,7 @@ void SupplierCreateRequest::InternalSwap(SupplierCreateRequest* PROTOBUF_RESTRIC
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.last_name_, &other->_impl_.last_name_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.password_, &other->_impl_.password_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.membership_, &other->_impl_.membership_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.image_, &other->_impl_.image_, arena);
 }
 
 ::google::protobuf::Metadata SupplierCreateRequest::GetMetadata() const {
