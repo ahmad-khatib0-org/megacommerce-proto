@@ -1,6 +1,6 @@
 ---
 version: v1
-name: buf.build/ahmad-khatib-org/megacommerce-proto
+# name: buf.build/ahmad-khatib-org/megacommerce-proto
 
 deps:
   - buf.build/googleapis/googleapis

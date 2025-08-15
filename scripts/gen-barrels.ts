@@ -3,7 +3,7 @@ import path from 'path'
 
 function toPascalCase(input: string): string {
   return input
-    .replace(/_([a-z])/g, (_, char) => char.toUpperCase())
+    .replace(/[-_]([a-z])/g, (_, char) => char.toUpperCase())
     .replace(/^([a-z])/, (_, char) => char.toUpperCase())
 }
 
@@ -19,9 +19,9 @@ function generateBarrels(rootDir: string) {
         dirs.push(entry.name)
       } else if (
         entry.isFile() &&
-        entry.name.endsWith('.ts') &&
+        (entry.name.endsWith('.ts') || entry.name.endsWith('.js')) &&
         entry.name !== 'index.ts' &&
-        !entry.name.endsWith('.d.ts') // Skip declaration files
+        !entry.name.endsWith('.d.ts')
       ) {
         files.push(entry.name)
       }
@@ -29,13 +29,13 @@ function generateBarrels(rootDir: string) {
 
     if (files.length > 0) {
       const exportLines = files.map((file) => {
-        const base = file.replace(/\.ts$/, '')
+        const base = file.replace(/\.(ts|js)$/, '') // remove extension
         const varName = toPascalCase(base)
         return `import * as ${varName} from './${base}';`
       })
 
       const reexportNames = files.map((file) => {
-        const base = file.replace(/\.ts$/, '')
+        const base = file.replace(/\.(ts|js)$/, '')
         return toPascalCase(base)
       })
 
