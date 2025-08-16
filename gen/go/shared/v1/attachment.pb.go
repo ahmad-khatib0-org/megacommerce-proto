@@ -21,7 +21,7 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type UploadedImage struct {
+type Attachment struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 	Filename        string                 `protobuf:"bytes,2,opt,name=filename,proto3" json:"filename,omitempty"`
@@ -36,20 +36,20 @@ type UploadedImage struct {
 	sizeCache       protoimpl.SizeCache
 }
 
-func (x *UploadedImage) Reset() {
-	*x = UploadedImage{}
+func (x *Attachment) Reset() {
+	*x = Attachment{}
 	mi := &file_shared_v1_attachment_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *UploadedImage) String() string {
+func (x *Attachment) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UploadedImage) ProtoMessage() {}
+func (*Attachment) ProtoMessage() {}
 
-func (x *UploadedImage) ProtoReflect() protoreflect.Message {
+func (x *Attachment) ProtoReflect() protoreflect.Message {
 	mi := &file_shared_v1_attachment_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -61,68 +61,68 @@ func (x *UploadedImage) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UploadedImage.ProtoReflect.Descriptor instead.
-func (*UploadedImage) Descriptor() ([]byte, []int) {
+// Deprecated: Use Attachment.ProtoReflect.Descriptor instead.
+func (*Attachment) Descriptor() ([]byte, []int) {
 	return file_shared_v1_attachment_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *UploadedImage) GetId() string {
+func (x *Attachment) GetId() string {
 	if x != nil {
 		return x.Id
 	}
 	return ""
 }
 
-func (x *UploadedImage) GetFilename() string {
+func (x *Attachment) GetFilename() string {
 	if x != nil {
 		return x.Filename
 	}
 	return ""
 }
 
-func (x *UploadedImage) GetFileType() string {
+func (x *Attachment) GetFileType() string {
 	if x != nil {
 		return x.FileType
 	}
 	return ""
 }
 
-func (x *UploadedImage) GetFileSize() int64 {
+func (x *Attachment) GetFileSize() int64 {
 	if x != nil {
 		return x.FileSize
 	}
 	return 0
 }
 
-func (x *UploadedImage) GetFileExtension() string {
+func (x *Attachment) GetFileExtension() string {
 	if x != nil {
 		return x.FileExtension
 	}
 	return ""
 }
 
-func (x *UploadedImage) GetBase64() string {
+func (x *Attachment) GetBase64() string {
 	if x != nil {
 		return x.Base64
 	}
 	return ""
 }
 
-func (x *UploadedImage) GetExifOrientation() int32 {
+func (x *Attachment) GetExifOrientation() int32 {
 	if x != nil {
 		return x.ExifOrientation
 	}
 	return 0
 }
 
-func (x *UploadedImage) GetCrop() *Crop {
+func (x *Attachment) GetCrop() *Crop {
 	if x != nil {
 		return x.Crop
 	}
 	return nil
 }
 
-func (x *UploadedImage) GetMetadata() *Struct {
+func (x *Attachment) GetMetadata() *Struct {
 	if x != nil {
 		return x.Metadata
 	}
@@ -209,8 +209,9 @@ var File_shared_v1_attachment_proto protoreflect.FileDescriptor
 
 const file_shared_v1_attachment_proto_rawDesc = "" +
 	"\n" +
-	"\x1ashared/v1/attachment.proto\x12\tshared.v1\x1a\x16shared/v1/struct.proto\"\xb3\x02\n" +
-	"\rUploadedImage\x12\x0e\n" +
+	"\x1ashared/v1/attachment.proto\x12\tshared.v1\x1a\x16shared/v1/struct.proto\"\xb0\x02\n" +
+	"\n" +
+	"Attachment\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1a\n" +
 	"\bfilename\x18\x02 \x01(\tR\bfilename\x12\x1b\n" +
 	"\tfile_type\x18\x03 \x01(\tR\bfileType\x12\x1b\n" +
@@ -242,13 +243,13 @@ func file_shared_v1_attachment_proto_rawDescGZIP() []byte {
 
 var file_shared_v1_attachment_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_shared_v1_attachment_proto_goTypes = []any{
-	(*UploadedImage)(nil), // 0: shared.v1.UploadedImage
-	(*Crop)(nil),          // 1: shared.v1.Crop
-	(*Struct)(nil),        // 2: shared.v1.Struct
+	(*Attachment)(nil), // 0: shared.v1.Attachment
+	(*Crop)(nil),       // 1: shared.v1.Crop
+	(*Struct)(nil),     // 2: shared.v1.Struct
 }
 var file_shared_v1_attachment_proto_depIdxs = []int32{
-	1, // 0: shared.v1.UploadedImage.crop:type_name -> shared.v1.Crop
-	2, // 1: shared.v1.UploadedImage.metadata:type_name -> shared.v1.Struct
+	1, // 0: shared.v1.Attachment.crop:type_name -> shared.v1.Crop
+	2, // 1: shared.v1.Attachment.metadata:type_name -> shared.v1.Struct
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name

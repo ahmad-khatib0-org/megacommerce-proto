@@ -56,7 +56,7 @@ struct CropDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CropDefaultTypeInternal _Crop_default_instance_;
 
-inline constexpr UploadedImage::Impl_::Impl_(
+inline constexpr Attachment::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
         id_(
@@ -80,24 +80,24 @@ inline constexpr UploadedImage::Impl_::Impl_(
         exif_orientation_{0} {}
 
 template <typename>
-PROTOBUF_CONSTEXPR UploadedImage::UploadedImage(::_pbi::ConstantInitialized)
+PROTOBUF_CONSTEXPR Attachment::Attachment(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(UploadedImage_class_data_.base()),
+    : ::google::protobuf::Message(Attachment_class_data_.base()),
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(),
 #endif  // PROTOBUF_CUSTOM_VTABLE
       _impl_(::_pbi::ConstantInitialized()) {
 }
-struct UploadedImageDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR UploadedImageDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~UploadedImageDefaultTypeInternal() {}
+struct AttachmentDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR AttachmentDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~AttachmentDefaultTypeInternal() {}
   union {
-    UploadedImage _instance;
+    Attachment _instance;
   };
 };
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UploadedImageDefaultTypeInternal _UploadedImage_default_instance_;
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AttachmentDefaultTypeInternal _Attachment_default_instance_;
 }  // namespace v1
 }  // namespace shared
 static constexpr const ::_pb::EnumDescriptor *PROTOBUF_NONNULL *PROTOBUF_NULLABLE
@@ -108,17 +108,17 @@ const ::uint32_t
     TableStruct_shared_2fv1_2fattachment_2eproto::offsets[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
         protodesc_cold) = {
         0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::shared::v1::UploadedImage, _impl_._has_bits_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::Attachment, _impl_._has_bits_),
         12, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::shared::v1::UploadedImage, _impl_.id_),
-        PROTOBUF_FIELD_OFFSET(::shared::v1::UploadedImage, _impl_.filename_),
-        PROTOBUF_FIELD_OFFSET(::shared::v1::UploadedImage, _impl_.file_type_),
-        PROTOBUF_FIELD_OFFSET(::shared::v1::UploadedImage, _impl_.file_size_),
-        PROTOBUF_FIELD_OFFSET(::shared::v1::UploadedImage, _impl_.file_extension_),
-        PROTOBUF_FIELD_OFFSET(::shared::v1::UploadedImage, _impl_.base64_),
-        PROTOBUF_FIELD_OFFSET(::shared::v1::UploadedImage, _impl_.exif_orientation_),
-        PROTOBUF_FIELD_OFFSET(::shared::v1::UploadedImage, _impl_.crop_),
-        PROTOBUF_FIELD_OFFSET(::shared::v1::UploadedImage, _impl_.metadata_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::Attachment, _impl_.id_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::Attachment, _impl_.filename_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::Attachment, _impl_.file_type_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::Attachment, _impl_.file_size_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::Attachment, _impl_.file_extension_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::Attachment, _impl_.base64_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::Attachment, _impl_.exif_orientation_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::Attachment, _impl_.crop_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::Attachment, _impl_.metadata_),
         0,
         1,
         2,
@@ -145,31 +145,31 @@ const ::uint32_t
 
 static const ::_pbi::MigrationSchema
     schemas[] ABSL_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-        {0, sizeof(::shared::v1::UploadedImage)},
+        {0, sizeof(::shared::v1::Attachment)},
         {21, sizeof(::shared::v1::Crop)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
-    &::shared::v1::_UploadedImage_default_instance_._instance,
+    &::shared::v1::_Attachment_default_instance_._instance,
     &::shared::v1::_Crop_default_instance_._instance,
 };
 const char descriptor_table_protodef_shared_2fv1_2fattachment_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n\032shared/v1/attachment.proto\022\tshared.v1\032"
-    "\026shared/v1/struct.proto\"\263\002\n\rUploadedImag"
-    "e\022\016\n\002id\030\001 \001(\tR\002id\022\032\n\010filename\030\002 \001(\tR\010fil"
-    "ename\022\033\n\tfile_type\030\003 \001(\tR\010fileType\022\033\n\tfi"
-    "le_size\030\004 \001(\003R\010fileSize\022%\n\016file_extensio"
-    "n\030\005 \001(\tR\rfileExtension\022\026\n\006base64\030\006 \001(\tR\006"
-    "base64\022)\n\020exif_orientation\030\007 \001(\005R\017exifOr"
-    "ientation\022#\n\004crop\030\010 \001(\0132\017.shared.v1.Crop"
-    "R\004crop\022-\n\010metadata\030\t \001(\0132\021.shared.v1.Str"
-    "uctR\010metadata\"s\n\004Crop\022\014\n\001x\030\001 \001(\002R\001x\022\014\n\001y"
-    "\030\002 \001(\002R\001y\022\024\n\005width\030\003 \001(\002R\005width\022\026\n\006heigh"
-    "t\030\004 \001(\002R\006height\022!\n\014aspect_ratio\030\005 \001(\002R\013a"
-    "spectRatioBu\n\032org.megacommerce.shared.v1"
-    "B\017AttachmentProtoZCgithub.com/ahmad-khat"
-    "ib0-org/megacommerce-proto/gen/go/shared"
-    "/v1;v1\370\001\001b\006proto3"
+    "\026shared/v1/struct.proto\"\260\002\n\nAttachment\022\016"
+    "\n\002id\030\001 \001(\tR\002id\022\032\n\010filename\030\002 \001(\tR\010filena"
+    "me\022\033\n\tfile_type\030\003 \001(\tR\010fileType\022\033\n\tfile_"
+    "size\030\004 \001(\003R\010fileSize\022%\n\016file_extension\030\005"
+    " \001(\tR\rfileExtension\022\026\n\006base64\030\006 \001(\tR\006bas"
+    "e64\022)\n\020exif_orientation\030\007 \001(\005R\017exifOrien"
+    "tation\022#\n\004crop\030\010 \001(\0132\017.shared.v1.CropR\004c"
+    "rop\022-\n\010metadata\030\t \001(\0132\021.shared.v1.Struct"
+    "R\010metadata\"s\n\004Crop\022\014\n\001x\030\001 \001(\002R\001x\022\014\n\001y\030\002 "
+    "\001(\002R\001y\022\024\n\005width\030\003 \001(\002R\005width\022\026\n\006height\030\004"
+    " \001(\002R\006height\022!\n\014aspect_ratio\030\005 \001(\002R\013aspe"
+    "ctRatioBu\n\032org.megacommerce.shared.v1B\017A"
+    "ttachmentProtoZCgithub.com/ahmad-khatib0"
+    "-org/megacommerce-proto/gen/go/shared/v1"
+    ";v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_shared_2fv1_2fattachment_2eproto_deps[1] = {
@@ -179,7 +179,7 @@ static ::absl::once_flag descriptor_table_shared_2fv1_2fattachment_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_shared_2fv1_2fattachment_2eproto = {
     false,
     false,
-    617,
+    614,
     descriptor_table_protodef_shared_2fv1_2fattachment_2eproto,
     "shared/v1/attachment.proto",
     &descriptor_table_shared_2fv1_2fattachment_2eproto_once,
@@ -196,32 +196,32 @@ namespace shared {
 namespace v1 {
 // ===================================================================
 
-class UploadedImage::_Internal {
+class Attachment::_Internal {
  public:
   using HasBits =
-      decltype(::std::declval<UploadedImage>()._impl_._has_bits_);
+      decltype(::std::declval<Attachment>()._impl_._has_bits_);
   static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_._has_bits_);
+      8 * PROTOBUF_FIELD_OFFSET(Attachment, _impl_._has_bits_);
 };
 
-void UploadedImage::clear_metadata() {
+void Attachment::clear_metadata() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.metadata_ != nullptr) _impl_.metadata_->Clear();
   _impl_._has_bits_[0] &= ~0x00000040u;
 }
-UploadedImage::UploadedImage(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+Attachment::Attachment(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena, UploadedImage_class_data_.base()) {
+    : ::google::protobuf::Message(arena, Attachment_class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
   SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:shared.v1.UploadedImage)
+  // @@protoc_insertion_point(arena_constructor:shared.v1.Attachment)
 }
-PROTOBUF_NDEBUG_INLINE UploadedImage::Impl_::Impl_(
+PROTOBUF_NDEBUG_INLINE Attachment::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-    const ::shared::v1::UploadedImage& from_msg)
+    const ::shared::v1::Attachment& from_msg)
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
         id_(arena, from.id_),
@@ -230,15 +230,15 @@ PROTOBUF_NDEBUG_INLINE UploadedImage::Impl_::Impl_(
         file_extension_(arena, from.file_extension_),
         base64_(arena, from.base64_) {}
 
-UploadedImage::UploadedImage(
+Attachment::Attachment(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
-    const UploadedImage& from)
+    const Attachment& from)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena, UploadedImage_class_data_.base()) {
+    : ::google::protobuf::Message(arena, Attachment_class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  UploadedImage* const _this = this;
+  Attachment* const _this = this;
   (void)_this;
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
@@ -258,9 +258,9 @@ UploadedImage::UploadedImage(
                offsetof(Impl_, file_size_) +
                sizeof(Impl_::exif_orientation_));
 
-  // @@protoc_insertion_point(copy_constructor:shared.v1.UploadedImage)
+  // @@protoc_insertion_point(copy_constructor:shared.v1.Attachment)
 }
-PROTOBUF_NDEBUG_INLINE UploadedImage::Impl_::Impl_(
+PROTOBUF_NDEBUG_INLINE Attachment::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
@@ -270,7 +270,7 @@ PROTOBUF_NDEBUG_INLINE UploadedImage::Impl_::Impl_(
         file_extension_(arena),
         base64_(arena) {}
 
-inline void UploadedImage::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+inline void Attachment::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
   ::memset(reinterpret_cast<char *>(&_impl_) +
                offsetof(Impl_, crop_),
@@ -279,12 +279,12 @@ inline void UploadedImage::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
                offsetof(Impl_, crop_) +
                sizeof(Impl_::exif_orientation_));
 }
-UploadedImage::~UploadedImage() {
-  // @@protoc_insertion_point(destructor:shared.v1.UploadedImage)
+Attachment::~Attachment() {
+  // @@protoc_insertion_point(destructor:shared.v1.Attachment)
   SharedDtor(*this);
 }
-inline void UploadedImage::SharedDtor(MessageLite& self) {
-  UploadedImage& this_ = static_cast<UploadedImage&>(self);
+inline void Attachment::SharedDtor(MessageLite& self) {
+  Attachment& this_ = static_cast<Attachment&>(self);
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.id_.Destroy();
@@ -297,53 +297,53 @@ inline void UploadedImage::SharedDtor(MessageLite& self) {
   this_._impl_.~Impl_();
 }
 
-inline void* PROTOBUF_NONNULL UploadedImage::PlacementNew_(
+inline void* PROTOBUF_NONNULL Attachment::PlacementNew_(
     const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) UploadedImage(arena);
+  return ::new (mem) Attachment(arena);
 }
-constexpr auto UploadedImage::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(UploadedImage),
-                                            alignof(UploadedImage));
+constexpr auto Attachment::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(Attachment),
+                                            alignof(Attachment));
 }
-constexpr auto UploadedImage::InternalGenerateClassData_() {
+constexpr auto Attachment::InternalGenerateClassData_() {
   return ::google::protobuf::internal::ClassDataFull{
       ::google::protobuf::internal::ClassData{
-          &_UploadedImage_default_instance_._instance,
+          &_Attachment_default_instance_._instance,
           &_table_.header,
           nullptr,  // OnDemandRegisterArenaDtor
           nullptr,  // IsInitialized
-          &UploadedImage::MergeImpl,
-          ::google::protobuf::Message::GetNewImpl<UploadedImage>(),
+          &Attachment::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<Attachment>(),
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-          &UploadedImage::SharedDtor,
-          ::google::protobuf::Message::GetClearImpl<UploadedImage>(), &UploadedImage::ByteSizeLong,
-              &UploadedImage::_InternalSerialize,
+          &Attachment::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<Attachment>(), &Attachment::ByteSizeLong,
+              &Attachment::_InternalSerialize,
 #endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_._cached_size_),
+          PROTOBUF_FIELD_OFFSET(Attachment, _impl_._cached_size_),
           false,
       },
-      &UploadedImage::kDescriptorMethods,
+      &Attachment::kDescriptorMethods,
       &descriptor_table_shared_2fv1_2fattachment_2eproto,
       nullptr,  // tracker
   };
 }
 
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull UploadedImage_class_data_ =
-        UploadedImage::InternalGenerateClassData_();
+    ::google::protobuf::internal::ClassDataFull Attachment_class_data_ =
+        Attachment::InternalGenerateClassData_();
 
 PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-UploadedImage::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&UploadedImage_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(UploadedImage_class_data_.tc_table);
-  return UploadedImage_class_data_.base();
+Attachment::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&Attachment_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(Attachment_class_data_.tc_table);
+  return Attachment_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<4, 9, 2, 79, 2>
-UploadedImage::_table_ = {
+const ::_pbi::TcParseTable<4, 9, 2, 76, 2>
+Attachment::_table_ = {
   {
-    PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(Attachment, _impl_._has_bits_),
     0, // no _extensions_
     9, 120,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
@@ -352,41 +352,41 @@ UploadedImage::_table_ = {
     9,  // num_field_entries
     2,  // num_aux_entries
     offsetof(decltype(_table_), aux_entries),
-    UploadedImage_class_data_.base(),
+    Attachment_class_data_.base(),
     nullptr,  // post_loop_handler
     ::_pbi::TcParser::GenericFallback,  // fallback
     #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-    ::_pbi::TcParser::GetTable<::shared::v1::UploadedImage>(),  // to_prefetch
+    ::_pbi::TcParser::GetTable<::shared::v1::Attachment>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     {::_pbi::TcParser::MiniParse, {}},
     // string id = 1 [json_name = "id"];
     {::_pbi::TcParser::FastUS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_.id_)}},
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(Attachment, _impl_.id_)}},
     // string filename = 2 [json_name = "filename"];
     {::_pbi::TcParser::FastUS1,
-     {18, 1, 0, PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_.filename_)}},
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(Attachment, _impl_.filename_)}},
     // string file_type = 3 [json_name = "fileType"];
     {::_pbi::TcParser::FastUS1,
-     {26, 2, 0, PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_.file_type_)}},
+     {26, 2, 0, PROTOBUF_FIELD_OFFSET(Attachment, _impl_.file_type_)}},
     // int64 file_size = 4 [json_name = "fileSize"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(UploadedImage, _impl_.file_size_), 7>(),
-     {32, 7, 0, PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_.file_size_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Attachment, _impl_.file_size_), 7>(),
+     {32, 7, 0, PROTOBUF_FIELD_OFFSET(Attachment, _impl_.file_size_)}},
     // string file_extension = 5 [json_name = "fileExtension"];
     {::_pbi::TcParser::FastUS1,
-     {42, 3, 0, PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_.file_extension_)}},
+     {42, 3, 0, PROTOBUF_FIELD_OFFSET(Attachment, _impl_.file_extension_)}},
     // string base64 = 6 [json_name = "base64"];
     {::_pbi::TcParser::FastUS1,
-     {50, 4, 0, PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_.base64_)}},
+     {50, 4, 0, PROTOBUF_FIELD_OFFSET(Attachment, _impl_.base64_)}},
     // int32 exif_orientation = 7 [json_name = "exifOrientation"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(UploadedImage, _impl_.exif_orientation_), 8>(),
-     {56, 8, 0, PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_.exif_orientation_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(Attachment, _impl_.exif_orientation_), 8>(),
+     {56, 8, 0, PROTOBUF_FIELD_OFFSET(Attachment, _impl_.exif_orientation_)}},
     // .shared.v1.Crop crop = 8 [json_name = "crop"];
     {::_pbi::TcParser::FastMtS1,
-     {66, 5, 0, PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_.crop_)}},
+     {66, 5, 0, PROTOBUF_FIELD_OFFSET(Attachment, _impl_.crop_)}},
     // .shared.v1.Struct metadata = 9 [json_name = "metadata"];
     {::_pbi::TcParser::FastMtS1,
-     {74, 6, 1, PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_.metadata_)}},
+     {74, 6, 1, PROTOBUF_FIELD_OFFSET(Attachment, _impl_.metadata_)}},
     {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
@@ -397,31 +397,31 @@ UploadedImage::_table_ = {
     65535, 65535
   }}, {{
     // string id = 1 [json_name = "id"];
-    {PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
+    {PROTOBUF_FIELD_OFFSET(Attachment, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // string filename = 2 [json_name = "filename"];
-    {PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_.filename_), _Internal::kHasBitsOffset + 1, 0,
+    {PROTOBUF_FIELD_OFFSET(Attachment, _impl_.filename_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // string file_type = 3 [json_name = "fileType"];
-    {PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_.file_type_), _Internal::kHasBitsOffset + 2, 0,
+    {PROTOBUF_FIELD_OFFSET(Attachment, _impl_.file_type_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // int64 file_size = 4 [json_name = "fileSize"];
-    {PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_.file_size_), _Internal::kHasBitsOffset + 7, 0,
+    {PROTOBUF_FIELD_OFFSET(Attachment, _impl_.file_size_), _Internal::kHasBitsOffset + 7, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
     // string file_extension = 5 [json_name = "fileExtension"];
-    {PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_.file_extension_), _Internal::kHasBitsOffset + 3, 0,
+    {PROTOBUF_FIELD_OFFSET(Attachment, _impl_.file_extension_), _Internal::kHasBitsOffset + 3, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // string base64 = 6 [json_name = "base64"];
-    {PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_.base64_), _Internal::kHasBitsOffset + 4, 0,
+    {PROTOBUF_FIELD_OFFSET(Attachment, _impl_.base64_), _Internal::kHasBitsOffset + 4, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // int32 exif_orientation = 7 [json_name = "exifOrientation"];
-    {PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_.exif_orientation_), _Internal::kHasBitsOffset + 8, 0,
+    {PROTOBUF_FIELD_OFFSET(Attachment, _impl_.exif_orientation_), _Internal::kHasBitsOffset + 8, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
     // .shared.v1.Crop crop = 8 [json_name = "crop"];
-    {PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_.crop_), _Internal::kHasBitsOffset + 5, 0,
+    {PROTOBUF_FIELD_OFFSET(Attachment, _impl_.crop_), _Internal::kHasBitsOffset + 5, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
     // .shared.v1.Struct metadata = 9 [json_name = "metadata"];
-    {PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_.metadata_), _Internal::kHasBitsOffset + 6, 1,
+    {PROTOBUF_FIELD_OFFSET(Attachment, _impl_.metadata_), _Internal::kHasBitsOffset + 6, 1,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
@@ -429,8 +429,8 @@ UploadedImage::_table_ = {
       {::_pbi::TcParser::GetTable<::shared::v1::Struct>()},
   }},
   {{
-    "\27\2\10\11\0\16\6\0\0\0\0\0\0\0\0\0"
-    "shared.v1.UploadedImage"
+    "\24\2\10\11\0\16\6\0\0\0\0\0\0\0\0\0"
+    "shared.v1.Attachment"
     "id"
     "filename"
     "file_type"
@@ -438,8 +438,8 @@ UploadedImage::_table_ = {
     "base64"
   }},
 };
-PROTOBUF_NOINLINE void UploadedImage::Clear() {
-// @@protoc_insertion_point(message_clear_start:shared.v1.UploadedImage)
+PROTOBUF_NOINLINE void Attachment::Clear() {
+// @@protoc_insertion_point(message_clear_start:shared.v1.Attachment)
   ::google::protobuf::internal::TSanWrite(&_impl_);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
@@ -478,17 +478,17 @@ PROTOBUF_NOINLINE void UploadedImage::Clear() {
 }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-::uint8_t* PROTOBUF_NONNULL UploadedImage::_InternalSerialize(
+::uint8_t* PROTOBUF_NONNULL Attachment::_InternalSerialize(
     const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
-  const UploadedImage& this_ = static_cast<const UploadedImage&>(base);
+  const Attachment& this_ = static_cast<const Attachment&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-::uint8_t* PROTOBUF_NONNULL UploadedImage::_InternalSerialize(
+::uint8_t* PROTOBUF_NONNULL Attachment::_InternalSerialize(
     ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-  const UploadedImage& this_ = *this;
+  const Attachment& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(serialize_to_array_start:shared.v1.UploadedImage)
+  // @@protoc_insertion_point(serialize_to_array_start:shared.v1.Attachment)
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
@@ -497,7 +497,7 @@ PROTOBUF_NOINLINE void UploadedImage::Clear() {
     if (!this_._internal_id().empty()) {
       const ::std::string& _s = this_._internal_id();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.UploadedImage.id");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.Attachment.id");
       target = stream->WriteStringMaybeAliased(1, _s, target);
     }
   }
@@ -507,7 +507,7 @@ PROTOBUF_NOINLINE void UploadedImage::Clear() {
     if (!this_._internal_filename().empty()) {
       const ::std::string& _s = this_._internal_filename();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.UploadedImage.filename");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.Attachment.filename");
       target = stream->WriteStringMaybeAliased(2, _s, target);
     }
   }
@@ -517,7 +517,7 @@ PROTOBUF_NOINLINE void UploadedImage::Clear() {
     if (!this_._internal_file_type().empty()) {
       const ::std::string& _s = this_._internal_file_type();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.UploadedImage.file_type");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.Attachment.file_type");
       target = stream->WriteStringMaybeAliased(3, _s, target);
     }
   }
@@ -536,7 +536,7 @@ PROTOBUF_NOINLINE void UploadedImage::Clear() {
     if (!this_._internal_file_extension().empty()) {
       const ::std::string& _s = this_._internal_file_extension();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.UploadedImage.file_extension");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.Attachment.file_extension");
       target = stream->WriteStringMaybeAliased(5, _s, target);
     }
   }
@@ -546,7 +546,7 @@ PROTOBUF_NOINLINE void UploadedImage::Clear() {
     if (!this_._internal_base64().empty()) {
       const ::std::string& _s = this_._internal_base64();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.UploadedImage.base64");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.Attachment.base64");
       target = stream->WriteStringMaybeAliased(6, _s, target);
     }
   }
@@ -580,18 +580,18 @@ PROTOBUF_NOINLINE void UploadedImage::Clear() {
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
             this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:shared.v1.UploadedImage)
+  // @@protoc_insertion_point(serialize_to_array_end:shared.v1.Attachment)
   return target;
 }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-::size_t UploadedImage::ByteSizeLong(const MessageLite& base) {
-  const UploadedImage& this_ = static_cast<const UploadedImage&>(base);
+::size_t Attachment::ByteSizeLong(const MessageLite& base) {
+  const Attachment& this_ = static_cast<const Attachment&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-::size_t UploadedImage::ByteSizeLong() const {
-  const UploadedImage& this_ = *this;
+::size_t Attachment::ByteSizeLong() const {
+  const Attachment& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(message_byte_size_start:shared.v1.UploadedImage)
+  // @@protoc_insertion_point(message_byte_size_start:shared.v1.Attachment)
   ::size_t total_size = 0;
 
   ::uint32_t cached_has_bits = 0;
@@ -667,11 +667,11 @@ PROTOBUF_NOINLINE void UploadedImage::Clear() {
                                              &this_._impl_._cached_size_);
 }
 
-void UploadedImage::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
-  auto* const _this = static_cast<UploadedImage*>(&to_msg);
-  auto& from = static_cast<const UploadedImage&>(from_msg);
+void Attachment::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<Attachment*>(&to_msg);
+  auto& from = static_cast<const Attachment&>(from_msg);
   ::google::protobuf::Arena* arena = _this->GetArena();
-  // @@protoc_insertion_point(class_specific_merge_from_start:shared.v1.UploadedImage)
+  // @@protoc_insertion_point(class_specific_merge_from_start:shared.v1.Attachment)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -754,15 +754,15 @@ void UploadedImage::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::g
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void UploadedImage::CopyFrom(const UploadedImage& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:shared.v1.UploadedImage)
+void Attachment::CopyFrom(const Attachment& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:shared.v1.Attachment)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 
-void UploadedImage::InternalSwap(UploadedImage* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+void Attachment::InternalSwap(Attachment* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   using ::std::swap;
   auto* arena = GetArena();
   ABSL_DCHECK_EQ(arena, other->GetArena());
@@ -774,14 +774,14 @@ void UploadedImage::InternalSwap(UploadedImage* PROTOBUF_RESTRICT PROTOBUF_NONNU
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.file_extension_, &other->_impl_.file_extension_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.base64_, &other->_impl_.base64_, arena);
   ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_.exif_orientation_)
-      + sizeof(UploadedImage::_impl_.exif_orientation_)
-      - PROTOBUF_FIELD_OFFSET(UploadedImage, _impl_.crop_)>(
+      PROTOBUF_FIELD_OFFSET(Attachment, _impl_.exif_orientation_)
+      + sizeof(Attachment::_impl_.exif_orientation_)
+      - PROTOBUF_FIELD_OFFSET(Attachment, _impl_.crop_)>(
           reinterpret_cast<char*>(&_impl_.crop_),
           reinterpret_cast<char*>(&other->_impl_.crop_));
 }
 
-::google::protobuf::Metadata UploadedImage::GetMetadata() const {
+::google::protobuf::Metadata Attachment::GetMetadata() const {
   return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // ===================================================================

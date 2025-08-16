@@ -9,7 +9,7 @@ option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shar
 option java_outer_classname = "AttachmentProto";
 option java_package = "org.megacommerce.shared.v1";
 
-message UploadedImage {
+message Attachment {
   string id = 1;
   string filename = 2;
   string file_type = 3;

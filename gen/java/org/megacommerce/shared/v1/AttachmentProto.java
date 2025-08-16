@@ -26,8 +26,8 @@ public final class AttachmentProto {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface UploadedImageOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:shared.v1.UploadedImage)
+  public interface AttachmentOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:shared.v1.Attachment)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -145,12 +145,12 @@ public final class AttachmentProto {
     org.megacommerce.shared.v1.StructProto.StructOrBuilder getMetadataOrBuilder();
   }
   /**
-   * Protobuf type {@code shared.v1.UploadedImage}
+   * Protobuf type {@code shared.v1.Attachment}
    */
-  public static final class UploadedImage extends
+  public static final class Attachment extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:shared.v1.UploadedImage)
-      UploadedImageOrBuilder {
+      // @@protoc_insertion_point(message_implements:shared.v1.Attachment)
+      AttachmentOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -159,13 +159,13 @@ public final class AttachmentProto {
         /* minor= */ 31,
         /* patch= */ 1,
         /* suffix= */ "",
-        UploadedImage.class.getName());
+        Attachment.class.getName());
     }
-    // Use UploadedImage.newBuilder() to construct.
-    private UploadedImage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use Attachment.newBuilder() to construct.
+    private Attachment(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private UploadedImage() {
+    private Attachment() {
       id_ = "";
       filename_ = "";
       fileType_ = "";
@@ -175,15 +175,15 @@ public final class AttachmentProto {
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.megacommerce.shared.v1.AttachmentProto.internal_static_shared_v1_UploadedImage_descriptor;
+      return org.megacommerce.shared.v1.AttachmentProto.internal_static_shared_v1_Attachment_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.megacommerce.shared.v1.AttachmentProto.internal_static_shared_v1_UploadedImage_fieldAccessorTable
+      return org.megacommerce.shared.v1.AttachmentProto.internal_static_shared_v1_Attachment_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.megacommerce.shared.v1.AttachmentProto.UploadedImage.class, org.megacommerce.shared.v1.AttachmentProto.UploadedImage.Builder.class);
+              org.megacommerce.shared.v1.AttachmentProto.Attachment.class, org.megacommerce.shared.v1.AttachmentProto.Attachment.Builder.class);
     }
 
     private int bitField0_;
@@ -559,10 +559,10 @@ public final class AttachmentProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.megacommerce.shared.v1.AttachmentProto.UploadedImage)) {
+      if (!(obj instanceof org.megacommerce.shared.v1.AttachmentProto.Attachment)) {
         return super.equals(obj);
       }
-      org.megacommerce.shared.v1.AttachmentProto.UploadedImage other = (org.megacommerce.shared.v1.AttachmentProto.UploadedImage) obj;
+      org.megacommerce.shared.v1.AttachmentProto.Attachment other = (org.megacommerce.shared.v1.AttachmentProto.Attachment) obj;
 
       if (!getId()
           .equals(other.getId())) return false;
@@ -627,44 +627,44 @@ public final class AttachmentProto {
       return hash;
     }
 
-    public static org.megacommerce.shared.v1.AttachmentProto.UploadedImage parseFrom(
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachment parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.shared.v1.AttachmentProto.UploadedImage parseFrom(
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachment parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.shared.v1.AttachmentProto.UploadedImage parseFrom(
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachment parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.shared.v1.AttachmentProto.UploadedImage parseFrom(
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachment parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.shared.v1.AttachmentProto.UploadedImage parseFrom(byte[] data)
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachment parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.shared.v1.AttachmentProto.UploadedImage parseFrom(
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachment parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.shared.v1.AttachmentProto.UploadedImage parseFrom(java.io.InputStream input)
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachment parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.shared.v1.AttachmentProto.UploadedImage parseFrom(
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachment parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -672,26 +672,26 @@ public final class AttachmentProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.megacommerce.shared.v1.AttachmentProto.UploadedImage parseDelimitedFrom(java.io.InputStream input)
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachment parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.megacommerce.shared.v1.AttachmentProto.UploadedImage parseDelimitedFrom(
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachment parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.megacommerce.shared.v1.AttachmentProto.UploadedImage parseFrom(
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachment parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.shared.v1.AttachmentProto.UploadedImage parseFrom(
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachment parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -704,7 +704,7 @@ public final class AttachmentProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.megacommerce.shared.v1.AttachmentProto.UploadedImage prototype) {
+    public static Builder newBuilder(org.megacommerce.shared.v1.AttachmentProto.Attachment prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -720,26 +720,26 @@ public final class AttachmentProto {
       return builder;
     }
     /**
-     * Protobuf type {@code shared.v1.UploadedImage}
+     * Protobuf type {@code shared.v1.Attachment}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:shared.v1.UploadedImage)
-        org.megacommerce.shared.v1.AttachmentProto.UploadedImageOrBuilder {
+        // @@protoc_insertion_point(builder_implements:shared.v1.Attachment)
+        org.megacommerce.shared.v1.AttachmentProto.AttachmentOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.megacommerce.shared.v1.AttachmentProto.internal_static_shared_v1_UploadedImage_descriptor;
+        return org.megacommerce.shared.v1.AttachmentProto.internal_static_shared_v1_Attachment_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.megacommerce.shared.v1.AttachmentProto.internal_static_shared_v1_UploadedImage_fieldAccessorTable
+        return org.megacommerce.shared.v1.AttachmentProto.internal_static_shared_v1_Attachment_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.megacommerce.shared.v1.AttachmentProto.UploadedImage.class, org.megacommerce.shared.v1.AttachmentProto.UploadedImage.Builder.class);
+                org.megacommerce.shared.v1.AttachmentProto.Attachment.class, org.megacommerce.shared.v1.AttachmentProto.Attachment.Builder.class);
       }
 
-      // Construct using org.megacommerce.shared.v1.AttachmentProto.UploadedImage.newBuilder()
+      // Construct using org.megacommerce.shared.v1.AttachmentProto.Attachment.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -783,17 +783,17 @@ public final class AttachmentProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.megacommerce.shared.v1.AttachmentProto.internal_static_shared_v1_UploadedImage_descriptor;
+        return org.megacommerce.shared.v1.AttachmentProto.internal_static_shared_v1_Attachment_descriptor;
       }
 
       @java.lang.Override
-      public org.megacommerce.shared.v1.AttachmentProto.UploadedImage getDefaultInstanceForType() {
-        return org.megacommerce.shared.v1.AttachmentProto.UploadedImage.getDefaultInstance();
+      public org.megacommerce.shared.v1.AttachmentProto.Attachment getDefaultInstanceForType() {
+        return org.megacommerce.shared.v1.AttachmentProto.Attachment.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.megacommerce.shared.v1.AttachmentProto.UploadedImage build() {
-        org.megacommerce.shared.v1.AttachmentProto.UploadedImage result = buildPartial();
+      public org.megacommerce.shared.v1.AttachmentProto.Attachment build() {
+        org.megacommerce.shared.v1.AttachmentProto.Attachment result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -801,14 +801,14 @@ public final class AttachmentProto {
       }
 
       @java.lang.Override
-      public org.megacommerce.shared.v1.AttachmentProto.UploadedImage buildPartial() {
-        org.megacommerce.shared.v1.AttachmentProto.UploadedImage result = new org.megacommerce.shared.v1.AttachmentProto.UploadedImage(this);
+      public org.megacommerce.shared.v1.AttachmentProto.Attachment buildPartial() {
+        org.megacommerce.shared.v1.AttachmentProto.Attachment result = new org.megacommerce.shared.v1.AttachmentProto.Attachment(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.megacommerce.shared.v1.AttachmentProto.UploadedImage result) {
+      private void buildPartial0(org.megacommerce.shared.v1.AttachmentProto.Attachment result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.id_ = id_;
@@ -849,16 +849,16 @@ public final class AttachmentProto {
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.megacommerce.shared.v1.AttachmentProto.UploadedImage) {
-          return mergeFrom((org.megacommerce.shared.v1.AttachmentProto.UploadedImage)other);
+        if (other instanceof org.megacommerce.shared.v1.AttachmentProto.Attachment) {
+          return mergeFrom((org.megacommerce.shared.v1.AttachmentProto.Attachment)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.megacommerce.shared.v1.AttachmentProto.UploadedImage other) {
-        if (other == org.megacommerce.shared.v1.AttachmentProto.UploadedImage.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.megacommerce.shared.v1.AttachmentProto.Attachment other) {
+        if (other == org.megacommerce.shared.v1.AttachmentProto.Attachment.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           bitField0_ |= 0x00000001;
@@ -1690,23 +1690,23 @@ public final class AttachmentProto {
         return metadataBuilder_;
       }
 
-      // @@protoc_insertion_point(builder_scope:shared.v1.UploadedImage)
+      // @@protoc_insertion_point(builder_scope:shared.v1.Attachment)
     }
 
-    // @@protoc_insertion_point(class_scope:shared.v1.UploadedImage)
-    private static final org.megacommerce.shared.v1.AttachmentProto.UploadedImage DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:shared.v1.Attachment)
+    private static final org.megacommerce.shared.v1.AttachmentProto.Attachment DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.megacommerce.shared.v1.AttachmentProto.UploadedImage();
+      DEFAULT_INSTANCE = new org.megacommerce.shared.v1.AttachmentProto.Attachment();
     }
 
-    public static org.megacommerce.shared.v1.AttachmentProto.UploadedImage getDefaultInstance() {
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachment getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<UploadedImage>
-        PARSER = new com.google.protobuf.AbstractParser<UploadedImage>() {
+    private static final com.google.protobuf.Parser<Attachment>
+        PARSER = new com.google.protobuf.AbstractParser<Attachment>() {
       @java.lang.Override
-      public UploadedImage parsePartialFrom(
+      public Attachment parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1725,17 +1725,17 @@ public final class AttachmentProto {
       }
     };
 
-    public static com.google.protobuf.Parser<UploadedImage> parser() {
+    public static com.google.protobuf.Parser<Attachment> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UploadedImage> getParserForType() {
+    public com.google.protobuf.Parser<Attachment> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.megacommerce.shared.v1.AttachmentProto.UploadedImage getDefaultInstanceForType() {
+    public org.megacommerce.shared.v1.AttachmentProto.Attachment getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2474,10 +2474,10 @@ public final class AttachmentProto {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_shared_v1_UploadedImage_descriptor;
+    internal_static_shared_v1_Attachment_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_shared_v1_UploadedImage_fieldAccessorTable;
+      internal_static_shared_v1_Attachment_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_shared_v1_Crop_descriptor;
   private static final 
@@ -2493,32 +2493,32 @@ public final class AttachmentProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\032shared/v1/attachment.proto\022\tshared.v1\032" +
-      "\026shared/v1/struct.proto\"\263\002\n\rUploadedImag" +
-      "e\022\016\n\002id\030\001 \001(\tR\002id\022\032\n\010filename\030\002 \001(\tR\010fil" +
-      "ename\022\033\n\tfile_type\030\003 \001(\tR\010fileType\022\033\n\tfi" +
-      "le_size\030\004 \001(\003R\010fileSize\022%\n\016file_extensio" +
-      "n\030\005 \001(\tR\rfileExtension\022\026\n\006base64\030\006 \001(\tR\006" +
-      "base64\022)\n\020exif_orientation\030\007 \001(\005R\017exifOr" +
-      "ientation\022#\n\004crop\030\010 \001(\0132\017.shared.v1.Crop" +
-      "R\004crop\022-\n\010metadata\030\t \001(\0132\021.shared.v1.Str" +
-      "uctR\010metadata\"s\n\004Crop\022\014\n\001x\030\001 \001(\002R\001x\022\014\n\001y" +
-      "\030\002 \001(\002R\001y\022\024\n\005width\030\003 \001(\002R\005width\022\026\n\006heigh" +
-      "t\030\004 \001(\002R\006height\022!\n\014aspect_ratio\030\005 \001(\002R\013a" +
-      "spectRatioBu\n\032org.megacommerce.shared.v1" +
-      "B\017AttachmentProtoZCgithub.com/ahmad-khat" +
-      "ib0-org/megacommerce-proto/gen/go/shared" +
-      "/v1;v1\370\001\001b\006proto3"
+      "\026shared/v1/struct.proto\"\260\002\n\nAttachment\022\016" +
+      "\n\002id\030\001 \001(\tR\002id\022\032\n\010filename\030\002 \001(\tR\010filena" +
+      "me\022\033\n\tfile_type\030\003 \001(\tR\010fileType\022\033\n\tfile_" +
+      "size\030\004 \001(\003R\010fileSize\022%\n\016file_extension\030\005" +
+      " \001(\tR\rfileExtension\022\026\n\006base64\030\006 \001(\tR\006bas" +
+      "e64\022)\n\020exif_orientation\030\007 \001(\005R\017exifOrien" +
+      "tation\022#\n\004crop\030\010 \001(\0132\017.shared.v1.CropR\004c" +
+      "rop\022-\n\010metadata\030\t \001(\0132\021.shared.v1.Struct" +
+      "R\010metadata\"s\n\004Crop\022\014\n\001x\030\001 \001(\002R\001x\022\014\n\001y\030\002 " +
+      "\001(\002R\001y\022\024\n\005width\030\003 \001(\002R\005width\022\026\n\006height\030\004" +
+      " \001(\002R\006height\022!\n\014aspect_ratio\030\005 \001(\002R\013aspe" +
+      "ctRatioBu\n\032org.megacommerce.shared.v1B\017A" +
+      "ttachmentProtoZCgithub.com/ahmad-khatib0" +
+      "-org/megacommerce-proto/gen/go/shared/v1" +
+      ";v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.megacommerce.shared.v1.StructProto.getDescriptor(),
         });
-    internal_static_shared_v1_UploadedImage_descriptor =
+    internal_static_shared_v1_Attachment_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_shared_v1_UploadedImage_fieldAccessorTable = new
+    internal_static_shared_v1_Attachment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_shared_v1_UploadedImage_descriptor,
+        internal_static_shared_v1_Attachment_descriptor,
         new java.lang.String[] { "Id", "Filename", "FileType", "FileSize", "FileExtension", "Base64", "ExifOrientation", "Crop", "Metadata", });
     internal_static_shared_v1_Crop_descriptor =
       getDescriptor().getMessageTypes().get(1);

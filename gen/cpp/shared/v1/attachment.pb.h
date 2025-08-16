@@ -55,14 +55,14 @@ extern const ::google::protobuf::internal::DescriptorTable descriptor_table_shar
 }  // extern "C"
 namespace shared {
 namespace v1 {
+class Attachment;
+struct AttachmentDefaultTypeInternal;
+extern AttachmentDefaultTypeInternal _Attachment_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull Attachment_class_data_;
 class Crop;
 struct CropDefaultTypeInternal;
 extern CropDefaultTypeInternal _Crop_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull Crop_class_data_;
-class UploadedImage;
-struct UploadedImageDefaultTypeInternal;
-extern UploadedImageDefaultTypeInternal _UploadedImage_default_instance_;
-extern const ::google::protobuf::internal::ClassDataFull UploadedImage_class_data_;
 }  // namespace v1
 }  // namespace shared
 namespace google {
@@ -317,30 +317,30 @@ class Crop final : public ::google::protobuf::Message
 extern const ::google::protobuf::internal::ClassDataFull Crop_class_data_;
 // -------------------------------------------------------------------
 
-class UploadedImage final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:shared.v1.UploadedImage) */ {
+class Attachment final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:shared.v1.Attachment) */ {
  public:
-  inline UploadedImage() : UploadedImage(nullptr) {}
-  ~UploadedImage() PROTOBUF_FINAL;
+  inline Attachment() : Attachment(nullptr) {}
+  ~Attachment() PROTOBUF_FINAL;
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(UploadedImage* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+  void operator delete(Attachment* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
     SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(UploadedImage));
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(Attachment));
   }
 #endif
 
   template <typename = void>
-  explicit PROTOBUF_CONSTEXPR UploadedImage(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR Attachment(::google::protobuf::internal::ConstantInitialized);
 
-  inline UploadedImage(const UploadedImage& from) : UploadedImage(nullptr, from) {}
-  inline UploadedImage(UploadedImage&& from) noexcept
-      : UploadedImage(nullptr, ::std::move(from)) {}
-  inline UploadedImage& operator=(const UploadedImage& from) {
+  inline Attachment(const Attachment& from) : Attachment(nullptr, from) {}
+  inline Attachment(Attachment&& from) noexcept
+      : Attachment(nullptr, ::std::move(from)) {}
+  inline Attachment& operator=(const Attachment& from) {
     CopyFrom(from);
     return *this;
   }
-  inline UploadedImage& operator=(UploadedImage&& from) noexcept {
+  inline Attachment& operator=(Attachment&& from) noexcept {
     if (this == &from) return *this;
     if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
       InternalSwap(&from);
@@ -368,13 +368,13 @@ class UploadedImage final : public ::google::protobuf::Message
   static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const UploadedImage& default_instance() {
-    return *reinterpret_cast<const UploadedImage*>(
-        &_UploadedImage_default_instance_);
+  static const Attachment& default_instance() {
+    return *reinterpret_cast<const Attachment*>(
+        &_Attachment_default_instance_);
   }
   static constexpr int kIndexInFileMessages = 0;
-  friend void swap(UploadedImage& a, UploadedImage& b) { a.Swap(&b); }
-  inline void Swap(UploadedImage* PROTOBUF_NONNULL other) {
+  friend void swap(Attachment& a, Attachment& b) { a.Swap(&b); }
+  inline void Swap(Attachment* PROTOBUF_NONNULL other) {
     if (other == this) return;
     if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
       InternalSwap(other);
@@ -382,7 +382,7 @@ class UploadedImage final : public ::google::protobuf::Message
       ::google::protobuf::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(UploadedImage* PROTOBUF_NONNULL other) {
+  void UnsafeArenaSwap(Attachment* PROTOBUF_NONNULL other) {
     if (other == this) return;
     ABSL_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -390,13 +390,13 @@ class UploadedImage final : public ::google::protobuf::Message
 
   // implements Message ----------------------------------------------
 
-  UploadedImage* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<UploadedImage>(arena);
+  Attachment* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<Attachment>(arena);
   }
   using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const UploadedImage& from);
+  void CopyFrom(const Attachment& from);
   using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const UploadedImage& from) { UploadedImage::MergeImpl(*this, from); }
+  void MergeFrom(const Attachment& from) { Attachment::MergeImpl(*this, from); }
 
   private:
   static void MergeImpl(::google::protobuf::MessageLite& to_msg,
@@ -432,18 +432,18 @@ class UploadedImage final : public ::google::protobuf::Message
   private:
   void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static void SharedDtor(MessageLite& self);
-  void InternalSwap(UploadedImage* PROTOBUF_NONNULL other);
+  void InternalSwap(Attachment* PROTOBUF_NONNULL other);
  private:
   template <typename T>
   friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() { return "shared.v1.UploadedImage"; }
+  static ::absl::string_view FullMessageName() { return "shared.v1.Attachment"; }
 
  protected:
-  explicit UploadedImage(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  UploadedImage(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const UploadedImage& from);
-  UploadedImage(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, UploadedImage&& from) noexcept
-      : UploadedImage(arena) {
+  explicit Attachment(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  Attachment(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Attachment& from);
+  Attachment(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, Attachment&& from) noexcept
+      : Attachment(arena) {
     *this = ::std::move(from);
   }
   const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
@@ -595,12 +595,12 @@ class UploadedImage final : public ::google::protobuf::Message
   void _internal_set_exif_orientation(::int32_t value);
 
   public:
-  // @@protoc_insertion_point(class_scope:shared.v1.UploadedImage)
+  // @@protoc_insertion_point(class_scope:shared.v1.Attachment)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<4, 9,
-                                   2, 79,
+                                   2, 76,
                                    2>
       _table_;
 
@@ -618,7 +618,7 @@ class UploadedImage final : public ::google::protobuf::Message
     inline explicit Impl_(
         ::google::protobuf::internal::InternalVisibility visibility,
         ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const UploadedImage& from_msg);
+        const Attachment& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::internal::ArenaStringPtr id_;
@@ -636,7 +636,7 @@ class UploadedImage final : public ::google::protobuf::Message
   friend struct ::TableStruct_shared_2fv1_2fattachment_2eproto;
 };
 
-extern const ::google::protobuf::internal::ClassDataFull UploadedImage_class_data_;
+extern const ::google::protobuf::internal::ClassDataFull Attachment_class_data_;
 
 // ===================================================================
 
@@ -652,49 +652,49 @@ extern const ::google::protobuf::internal::ClassDataFull UploadedImage_class_dat
 #endif  // __GNUC__
 // -------------------------------------------------------------------
 
-// UploadedImage
+// Attachment
 
 // string id = 1 [json_name = "id"];
-inline void UploadedImage::clear_id() {
+inline void Attachment::clear_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.id_.ClearToEmpty();
   _impl_._has_bits_[0] &= ~0x00000001u;
 }
-inline const ::std::string& UploadedImage::id() const
+inline const ::std::string& Attachment::id() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:shared.v1.UploadedImage.id)
+  // @@protoc_insertion_point(field_get:shared.v1.Attachment.id)
   return _internal_id();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void UploadedImage::set_id(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void Attachment::set_id(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:shared.v1.UploadedImage.id)
+  // @@protoc_insertion_point(field_set:shared.v1.Attachment.id)
 }
-inline ::std::string* PROTOBUF_NONNULL UploadedImage::mutable_id()
+inline ::std::string* PROTOBUF_NONNULL Attachment::mutable_id()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:shared.v1.UploadedImage.id)
+  // @@protoc_insertion_point(field_mutable:shared.v1.Attachment.id)
   return _s;
 }
-inline const ::std::string& UploadedImage::_internal_id() const {
+inline const ::std::string& Attachment::_internal_id() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.id_.Get();
 }
-inline void UploadedImage::_internal_set_id(const ::std::string& value) {
+inline void Attachment::_internal_set_id(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.id_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL UploadedImage::_internal_mutable_id() {
+inline ::std::string* PROTOBUF_NONNULL Attachment::_internal_mutable_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
   return _impl_.id_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE UploadedImage::release_id() {
+inline ::std::string* PROTOBUF_NULLABLE Attachment::release_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:shared.v1.UploadedImage.id)
+  // @@protoc_insertion_point(field_release:shared.v1.Attachment.id)
   if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
     return nullptr;
   }
@@ -705,7 +705,7 @@ inline ::std::string* PROTOBUF_NULLABLE UploadedImage::release_id() {
   }
   return released;
 }
-inline void UploadedImage::set_allocated_id(::std::string* PROTOBUF_NULLABLE value) {
+inline void Attachment::set_allocated_id(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000001u;
@@ -716,50 +716,50 @@ inline void UploadedImage::set_allocated_id(::std::string* PROTOBUF_NULLABLE val
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.id_.IsDefault()) {
     _impl_.id_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:shared.v1.UploadedImage.id)
+  // @@protoc_insertion_point(field_set_allocated:shared.v1.Attachment.id)
 }
 
 // string filename = 2 [json_name = "filename"];
-inline void UploadedImage::clear_filename() {
+inline void Attachment::clear_filename() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.filename_.ClearToEmpty();
   _impl_._has_bits_[0] &= ~0x00000002u;
 }
-inline const ::std::string& UploadedImage::filename() const
+inline const ::std::string& Attachment::filename() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:shared.v1.UploadedImage.filename)
+  // @@protoc_insertion_point(field_get:shared.v1.Attachment.filename)
   return _internal_filename();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void UploadedImage::set_filename(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void Attachment::set_filename(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.filename_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:shared.v1.UploadedImage.filename)
+  // @@protoc_insertion_point(field_set:shared.v1.Attachment.filename)
 }
-inline ::std::string* PROTOBUF_NONNULL UploadedImage::mutable_filename()
+inline ::std::string* PROTOBUF_NONNULL Attachment::mutable_filename()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::std::string* _s = _internal_mutable_filename();
-  // @@protoc_insertion_point(field_mutable:shared.v1.UploadedImage.filename)
+  // @@protoc_insertion_point(field_mutable:shared.v1.Attachment.filename)
   return _s;
 }
-inline const ::std::string& UploadedImage::_internal_filename() const {
+inline const ::std::string& Attachment::_internal_filename() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.filename_.Get();
 }
-inline void UploadedImage::_internal_set_filename(const ::std::string& value) {
+inline void Attachment::_internal_set_filename(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.filename_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL UploadedImage::_internal_mutable_filename() {
+inline ::std::string* PROTOBUF_NONNULL Attachment::_internal_mutable_filename() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000002u;
   return _impl_.filename_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE UploadedImage::release_filename() {
+inline ::std::string* PROTOBUF_NULLABLE Attachment::release_filename() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:shared.v1.UploadedImage.filename)
+  // @@protoc_insertion_point(field_release:shared.v1.Attachment.filename)
   if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
     return nullptr;
   }
@@ -770,7 +770,7 @@ inline ::std::string* PROTOBUF_NULLABLE UploadedImage::release_filename() {
   }
   return released;
 }
-inline void UploadedImage::set_allocated_filename(::std::string* PROTOBUF_NULLABLE value) {
+inline void Attachment::set_allocated_filename(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000002u;
@@ -781,50 +781,50 @@ inline void UploadedImage::set_allocated_filename(::std::string* PROTOBUF_NULLAB
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.filename_.IsDefault()) {
     _impl_.filename_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:shared.v1.UploadedImage.filename)
+  // @@protoc_insertion_point(field_set_allocated:shared.v1.Attachment.filename)
 }
 
 // string file_type = 3 [json_name = "fileType"];
-inline void UploadedImage::clear_file_type() {
+inline void Attachment::clear_file_type() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.file_type_.ClearToEmpty();
   _impl_._has_bits_[0] &= ~0x00000004u;
 }
-inline const ::std::string& UploadedImage::file_type() const
+inline const ::std::string& Attachment::file_type() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:shared.v1.UploadedImage.file_type)
+  // @@protoc_insertion_point(field_get:shared.v1.Attachment.file_type)
   return _internal_file_type();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void UploadedImage::set_file_type(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void Attachment::set_file_type(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.file_type_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:shared.v1.UploadedImage.file_type)
+  // @@protoc_insertion_point(field_set:shared.v1.Attachment.file_type)
 }
-inline ::std::string* PROTOBUF_NONNULL UploadedImage::mutable_file_type()
+inline ::std::string* PROTOBUF_NONNULL Attachment::mutable_file_type()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::std::string* _s = _internal_mutable_file_type();
-  // @@protoc_insertion_point(field_mutable:shared.v1.UploadedImage.file_type)
+  // @@protoc_insertion_point(field_mutable:shared.v1.Attachment.file_type)
   return _s;
 }
-inline const ::std::string& UploadedImage::_internal_file_type() const {
+inline const ::std::string& Attachment::_internal_file_type() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.file_type_.Get();
 }
-inline void UploadedImage::_internal_set_file_type(const ::std::string& value) {
+inline void Attachment::_internal_set_file_type(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.file_type_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL UploadedImage::_internal_mutable_file_type() {
+inline ::std::string* PROTOBUF_NONNULL Attachment::_internal_mutable_file_type() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000004u;
   return _impl_.file_type_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE UploadedImage::release_file_type() {
+inline ::std::string* PROTOBUF_NULLABLE Attachment::release_file_type() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:shared.v1.UploadedImage.file_type)
+  // @@protoc_insertion_point(field_release:shared.v1.Attachment.file_type)
   if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
     return nullptr;
   }
@@ -835,7 +835,7 @@ inline ::std::string* PROTOBUF_NULLABLE UploadedImage::release_file_type() {
   }
   return released;
 }
-inline void UploadedImage::set_allocated_file_type(::std::string* PROTOBUF_NULLABLE value) {
+inline void Attachment::set_allocated_file_type(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000004u;
@@ -846,74 +846,74 @@ inline void UploadedImage::set_allocated_file_type(::std::string* PROTOBUF_NULLA
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.file_type_.IsDefault()) {
     _impl_.file_type_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:shared.v1.UploadedImage.file_type)
+  // @@protoc_insertion_point(field_set_allocated:shared.v1.Attachment.file_type)
 }
 
 // int64 file_size = 4 [json_name = "fileSize"];
-inline void UploadedImage::clear_file_size() {
+inline void Attachment::clear_file_size() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.file_size_ = ::int64_t{0};
   _impl_._has_bits_[0] &= ~0x00000080u;
 }
-inline ::int64_t UploadedImage::file_size() const {
-  // @@protoc_insertion_point(field_get:shared.v1.UploadedImage.file_size)
+inline ::int64_t Attachment::file_size() const {
+  // @@protoc_insertion_point(field_get:shared.v1.Attachment.file_size)
   return _internal_file_size();
 }
-inline void UploadedImage::set_file_size(::int64_t value) {
+inline void Attachment::set_file_size(::int64_t value) {
   _internal_set_file_size(value);
   _impl_._has_bits_[0] |= 0x00000080u;
-  // @@protoc_insertion_point(field_set:shared.v1.UploadedImage.file_size)
+  // @@protoc_insertion_point(field_set:shared.v1.Attachment.file_size)
 }
-inline ::int64_t UploadedImage::_internal_file_size() const {
+inline ::int64_t Attachment::_internal_file_size() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.file_size_;
 }
-inline void UploadedImage::_internal_set_file_size(::int64_t value) {
+inline void Attachment::_internal_set_file_size(::int64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.file_size_ = value;
 }
 
 // string file_extension = 5 [json_name = "fileExtension"];
-inline void UploadedImage::clear_file_extension() {
+inline void Attachment::clear_file_extension() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.file_extension_.ClearToEmpty();
   _impl_._has_bits_[0] &= ~0x00000008u;
 }
-inline const ::std::string& UploadedImage::file_extension() const
+inline const ::std::string& Attachment::file_extension() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:shared.v1.UploadedImage.file_extension)
+  // @@protoc_insertion_point(field_get:shared.v1.Attachment.file_extension)
   return _internal_file_extension();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void UploadedImage::set_file_extension(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void Attachment::set_file_extension(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.file_extension_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:shared.v1.UploadedImage.file_extension)
+  // @@protoc_insertion_point(field_set:shared.v1.Attachment.file_extension)
 }
-inline ::std::string* PROTOBUF_NONNULL UploadedImage::mutable_file_extension()
+inline ::std::string* PROTOBUF_NONNULL Attachment::mutable_file_extension()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::std::string* _s = _internal_mutable_file_extension();
-  // @@protoc_insertion_point(field_mutable:shared.v1.UploadedImage.file_extension)
+  // @@protoc_insertion_point(field_mutable:shared.v1.Attachment.file_extension)
   return _s;
 }
-inline const ::std::string& UploadedImage::_internal_file_extension() const {
+inline const ::std::string& Attachment::_internal_file_extension() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.file_extension_.Get();
 }
-inline void UploadedImage::_internal_set_file_extension(const ::std::string& value) {
+inline void Attachment::_internal_set_file_extension(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.file_extension_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL UploadedImage::_internal_mutable_file_extension() {
+inline ::std::string* PROTOBUF_NONNULL Attachment::_internal_mutable_file_extension() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000008u;
   return _impl_.file_extension_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE UploadedImage::release_file_extension() {
+inline ::std::string* PROTOBUF_NULLABLE Attachment::release_file_extension() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:shared.v1.UploadedImage.file_extension)
+  // @@protoc_insertion_point(field_release:shared.v1.Attachment.file_extension)
   if ((_impl_._has_bits_[0] & 0x00000008u) == 0) {
     return nullptr;
   }
@@ -924,7 +924,7 @@ inline ::std::string* PROTOBUF_NULLABLE UploadedImage::release_file_extension() 
   }
   return released;
 }
-inline void UploadedImage::set_allocated_file_extension(::std::string* PROTOBUF_NULLABLE value) {
+inline void Attachment::set_allocated_file_extension(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000008u;
@@ -935,50 +935,50 @@ inline void UploadedImage::set_allocated_file_extension(::std::string* PROTOBUF_
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.file_extension_.IsDefault()) {
     _impl_.file_extension_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:shared.v1.UploadedImage.file_extension)
+  // @@protoc_insertion_point(field_set_allocated:shared.v1.Attachment.file_extension)
 }
 
 // string base64 = 6 [json_name = "base64"];
-inline void UploadedImage::clear_base64() {
+inline void Attachment::clear_base64() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.base64_.ClearToEmpty();
   _impl_._has_bits_[0] &= ~0x00000010u;
 }
-inline const ::std::string& UploadedImage::base64() const
+inline const ::std::string& Attachment::base64() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:shared.v1.UploadedImage.base64)
+  // @@protoc_insertion_point(field_get:shared.v1.Attachment.base64)
   return _internal_base64();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void UploadedImage::set_base64(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void Attachment::set_base64(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000010u;
   _impl_.base64_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:shared.v1.UploadedImage.base64)
+  // @@protoc_insertion_point(field_set:shared.v1.Attachment.base64)
 }
-inline ::std::string* PROTOBUF_NONNULL UploadedImage::mutable_base64()
+inline ::std::string* PROTOBUF_NONNULL Attachment::mutable_base64()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::std::string* _s = _internal_mutable_base64();
-  // @@protoc_insertion_point(field_mutable:shared.v1.UploadedImage.base64)
+  // @@protoc_insertion_point(field_mutable:shared.v1.Attachment.base64)
   return _s;
 }
-inline const ::std::string& UploadedImage::_internal_base64() const {
+inline const ::std::string& Attachment::_internal_base64() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.base64_.Get();
 }
-inline void UploadedImage::_internal_set_base64(const ::std::string& value) {
+inline void Attachment::_internal_set_base64(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000010u;
   _impl_.base64_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL UploadedImage::_internal_mutable_base64() {
+inline ::std::string* PROTOBUF_NONNULL Attachment::_internal_mutable_base64() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000010u;
   return _impl_.base64_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE UploadedImage::release_base64() {
+inline ::std::string* PROTOBUF_NULLABLE Attachment::release_base64() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:shared.v1.UploadedImage.base64)
+  // @@protoc_insertion_point(field_release:shared.v1.Attachment.base64)
   if ((_impl_._has_bits_[0] & 0x00000010u) == 0) {
     return nullptr;
   }
@@ -989,7 +989,7 @@ inline ::std::string* PROTOBUF_NULLABLE UploadedImage::release_base64() {
   }
   return released;
 }
-inline void UploadedImage::set_allocated_base64(::std::string* PROTOBUF_NULLABLE value) {
+inline void Attachment::set_allocated_base64(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000010u;
@@ -1000,54 +1000,54 @@ inline void UploadedImage::set_allocated_base64(::std::string* PROTOBUF_NULLABLE
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.base64_.IsDefault()) {
     _impl_.base64_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:shared.v1.UploadedImage.base64)
+  // @@protoc_insertion_point(field_set_allocated:shared.v1.Attachment.base64)
 }
 
 // int32 exif_orientation = 7 [json_name = "exifOrientation"];
-inline void UploadedImage::clear_exif_orientation() {
+inline void Attachment::clear_exif_orientation() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.exif_orientation_ = 0;
   _impl_._has_bits_[0] &= ~0x00000100u;
 }
-inline ::int32_t UploadedImage::exif_orientation() const {
-  // @@protoc_insertion_point(field_get:shared.v1.UploadedImage.exif_orientation)
+inline ::int32_t Attachment::exif_orientation() const {
+  // @@protoc_insertion_point(field_get:shared.v1.Attachment.exif_orientation)
   return _internal_exif_orientation();
 }
-inline void UploadedImage::set_exif_orientation(::int32_t value) {
+inline void Attachment::set_exif_orientation(::int32_t value) {
   _internal_set_exif_orientation(value);
   _impl_._has_bits_[0] |= 0x00000100u;
-  // @@protoc_insertion_point(field_set:shared.v1.UploadedImage.exif_orientation)
+  // @@protoc_insertion_point(field_set:shared.v1.Attachment.exif_orientation)
 }
-inline ::int32_t UploadedImage::_internal_exif_orientation() const {
+inline ::int32_t Attachment::_internal_exif_orientation() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.exif_orientation_;
 }
-inline void UploadedImage::_internal_set_exif_orientation(::int32_t value) {
+inline void Attachment::_internal_set_exif_orientation(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.exif_orientation_ = value;
 }
 
 // .shared.v1.Crop crop = 8 [json_name = "crop"];
-inline bool UploadedImage::has_crop() const {
+inline bool Attachment::has_crop() const {
   bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.crop_ != nullptr);
   return value;
 }
-inline void UploadedImage::clear_crop() {
+inline void Attachment::clear_crop() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.crop_ != nullptr) _impl_.crop_->Clear();
   _impl_._has_bits_[0] &= ~0x00000020u;
 }
-inline const ::shared::v1::Crop& UploadedImage::_internal_crop() const {
+inline const ::shared::v1::Crop& Attachment::_internal_crop() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   const ::shared::v1::Crop* p = _impl_.crop_;
   return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::Crop&>(::shared::v1::_Crop_default_instance_);
 }
-inline const ::shared::v1::Crop& UploadedImage::crop() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:shared.v1.UploadedImage.crop)
+inline const ::shared::v1::Crop& Attachment::crop() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:shared.v1.Attachment.crop)
   return _internal_crop();
 }
-inline void UploadedImage::unsafe_arena_set_allocated_crop(
+inline void Attachment::unsafe_arena_set_allocated_crop(
     ::shared::v1::Crop* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (GetArena() == nullptr) {
@@ -1059,9 +1059,9 @@ inline void UploadedImage::unsafe_arena_set_allocated_crop(
   } else {
     _impl_._has_bits_[0] &= ~0x00000020u;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:shared.v1.UploadedImage.crop)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:shared.v1.Attachment.crop)
 }
-inline ::shared::v1::Crop* PROTOBUF_NULLABLE UploadedImage::release_crop() {
+inline ::shared::v1::Crop* PROTOBUF_NULLABLE Attachment::release_crop() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
   _impl_._has_bits_[0] &= ~0x00000020u;
@@ -1080,16 +1080,16 @@ inline ::shared::v1::Crop* PROTOBUF_NULLABLE UploadedImage::release_crop() {
   }
   return released;
 }
-inline ::shared::v1::Crop* PROTOBUF_NULLABLE UploadedImage::unsafe_arena_release_crop() {
+inline ::shared::v1::Crop* PROTOBUF_NULLABLE Attachment::unsafe_arena_release_crop() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:shared.v1.UploadedImage.crop)
+  // @@protoc_insertion_point(field_release:shared.v1.Attachment.crop)
 
   _impl_._has_bits_[0] &= ~0x00000020u;
   ::shared::v1::Crop* temp = _impl_.crop_;
   _impl_.crop_ = nullptr;
   return temp;
 }
-inline ::shared::v1::Crop* PROTOBUF_NONNULL UploadedImage::_internal_mutable_crop() {
+inline ::shared::v1::Crop* PROTOBUF_NONNULL Attachment::_internal_mutable_crop() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.crop_ == nullptr) {
     auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::Crop>(GetArena());
@@ -1097,14 +1097,14 @@ inline ::shared::v1::Crop* PROTOBUF_NONNULL UploadedImage::_internal_mutable_cro
   }
   return _impl_.crop_;
 }
-inline ::shared::v1::Crop* PROTOBUF_NONNULL UploadedImage::mutable_crop()
+inline ::shared::v1::Crop* PROTOBUF_NONNULL Attachment::mutable_crop()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   _impl_._has_bits_[0] |= 0x00000020u;
   ::shared::v1::Crop* _msg = _internal_mutable_crop();
-  // @@protoc_insertion_point(field_mutable:shared.v1.UploadedImage.crop)
+  // @@protoc_insertion_point(field_mutable:shared.v1.Attachment.crop)
   return _msg;
 }
-inline void UploadedImage::set_allocated_crop(::shared::v1::Crop* PROTOBUF_NULLABLE value) {
+inline void Attachment::set_allocated_crop(::shared::v1::Crop* PROTOBUF_NULLABLE value) {
   ::google::protobuf::Arena* message_arena = GetArena();
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (message_arena == nullptr) {
@@ -1122,25 +1122,25 @@ inline void UploadedImage::set_allocated_crop(::shared::v1::Crop* PROTOBUF_NULLA
   }
 
   _impl_.crop_ = reinterpret_cast<::shared::v1::Crop*>(value);
-  // @@protoc_insertion_point(field_set_allocated:shared.v1.UploadedImage.crop)
+  // @@protoc_insertion_point(field_set_allocated:shared.v1.Attachment.crop)
 }
 
 // .shared.v1.Struct metadata = 9 [json_name = "metadata"];
-inline bool UploadedImage::has_metadata() const {
+inline bool Attachment::has_metadata() const {
   bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.metadata_ != nullptr);
   return value;
 }
-inline const ::shared::v1::Struct& UploadedImage::_internal_metadata() const {
+inline const ::shared::v1::Struct& Attachment::_internal_metadata() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   const ::shared::v1::Struct* p = _impl_.metadata_;
   return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::Struct&>(::shared::v1::_Struct_default_instance_);
 }
-inline const ::shared::v1::Struct& UploadedImage::metadata() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:shared.v1.UploadedImage.metadata)
+inline const ::shared::v1::Struct& Attachment::metadata() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:shared.v1.Attachment.metadata)
   return _internal_metadata();
 }
-inline void UploadedImage::unsafe_arena_set_allocated_metadata(
+inline void Attachment::unsafe_arena_set_allocated_metadata(
     ::shared::v1::Struct* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (GetArena() == nullptr) {
@@ -1152,9 +1152,9 @@ inline void UploadedImage::unsafe_arena_set_allocated_metadata(
   } else {
     _impl_._has_bits_[0] &= ~0x00000040u;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:shared.v1.UploadedImage.metadata)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:shared.v1.Attachment.metadata)
 }
-inline ::shared::v1::Struct* PROTOBUF_NULLABLE UploadedImage::release_metadata() {
+inline ::shared::v1::Struct* PROTOBUF_NULLABLE Attachment::release_metadata() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
   _impl_._has_bits_[0] &= ~0x00000040u;
@@ -1173,16 +1173,16 @@ inline ::shared::v1::Struct* PROTOBUF_NULLABLE UploadedImage::release_metadata()
   }
   return released;
 }
-inline ::shared::v1::Struct* PROTOBUF_NULLABLE UploadedImage::unsafe_arena_release_metadata() {
+inline ::shared::v1::Struct* PROTOBUF_NULLABLE Attachment::unsafe_arena_release_metadata() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:shared.v1.UploadedImage.metadata)
+  // @@protoc_insertion_point(field_release:shared.v1.Attachment.metadata)
 
   _impl_._has_bits_[0] &= ~0x00000040u;
   ::shared::v1::Struct* temp = _impl_.metadata_;
   _impl_.metadata_ = nullptr;
   return temp;
 }
-inline ::shared::v1::Struct* PROTOBUF_NONNULL UploadedImage::_internal_mutable_metadata() {
+inline ::shared::v1::Struct* PROTOBUF_NONNULL Attachment::_internal_mutable_metadata() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.metadata_ == nullptr) {
     auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::Struct>(GetArena());
@@ -1190,14 +1190,14 @@ inline ::shared::v1::Struct* PROTOBUF_NONNULL UploadedImage::_internal_mutable_m
   }
   return _impl_.metadata_;
 }
-inline ::shared::v1::Struct* PROTOBUF_NONNULL UploadedImage::mutable_metadata()
+inline ::shared::v1::Struct* PROTOBUF_NONNULL Attachment::mutable_metadata()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   _impl_._has_bits_[0] |= 0x00000040u;
   ::shared::v1::Struct* _msg = _internal_mutable_metadata();
-  // @@protoc_insertion_point(field_mutable:shared.v1.UploadedImage.metadata)
+  // @@protoc_insertion_point(field_mutable:shared.v1.Attachment.metadata)
   return _msg;
 }
-inline void UploadedImage::set_allocated_metadata(::shared::v1::Struct* PROTOBUF_NULLABLE value) {
+inline void Attachment::set_allocated_metadata(::shared::v1::Struct* PROTOBUF_NULLABLE value) {
   ::google::protobuf::Arena* message_arena = GetArena();
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (message_arena == nullptr) {
@@ -1215,7 +1215,7 @@ inline void UploadedImage::set_allocated_metadata(::shared::v1::Struct* PROTOBUF
   }
 
   _impl_.metadata_ = reinterpret_cast<::shared::v1::Struct*>(value);
-  // @@protoc_insertion_point(field_set_allocated:shared.v1.UploadedImage.metadata)
+  // @@protoc_insertion_point(field_set_allocated:shared.v1.Attachment.metadata)
 }
 
 // -------------------------------------------------------------------

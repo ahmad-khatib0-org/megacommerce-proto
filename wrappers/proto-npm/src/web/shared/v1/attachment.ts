@@ -10,7 +10,7 @@ import { Struct } from "./struct.js";
 
 export const protobufPackage = "shared.v1";
 
-export interface UploadedImage {
+export interface Attachment {
   id: string;
   filename: string;
   fileType: string;
@@ -33,7 +33,7 @@ export interface Crop {
   aspectRatio: number;
 }
 
-function createBaseUploadedImage(): UploadedImage {
+function createBaseAttachment(): Attachment {
   return {
     id: "",
     filename: "",
@@ -47,8 +47,8 @@ function createBaseUploadedImage(): UploadedImage {
   };
 }
 
-export const UploadedImage: MessageFns<UploadedImage> = {
-  encode(message: UploadedImage, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+export const Attachment: MessageFns<Attachment> = {
+  encode(message: Attachment, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.id !== "") {
       writer.uint32(10).string(message.id);
     }
@@ -79,10 +79,10 @@ export const UploadedImage: MessageFns<UploadedImage> = {
     return writer;
   },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): UploadedImage {
+  decode(input: BinaryReader | Uint8Array, length?: number): Attachment {
     const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseUploadedImage();
+    const message = createBaseAttachment();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -167,7 +167,7 @@ export const UploadedImage: MessageFns<UploadedImage> = {
     return message;
   },
 
-  fromJSON(object: any): UploadedImage {
+  fromJSON(object: any): Attachment {
     return {
       id: isSet(object.id) ? globalThis.String(object.id) : "",
       filename: isSet(object.filename) ? globalThis.String(object.filename) : "",
@@ -181,7 +181,7 @@ export const UploadedImage: MessageFns<UploadedImage> = {
     };
   },
 
-  toJSON(message: UploadedImage): unknown {
+  toJSON(message: Attachment): unknown {
     const obj: any = {};
     if (message.id !== "") {
       obj.id = message.id;
@@ -213,11 +213,11 @@ export const UploadedImage: MessageFns<UploadedImage> = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<UploadedImage>, I>>(base?: I): UploadedImage {
-    return UploadedImage.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<Attachment>, I>>(base?: I): Attachment {
+    return Attachment.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<UploadedImage>, I>>(object: I): UploadedImage {
-    const message = createBaseUploadedImage();
+  fromPartial<I extends Exact<DeepPartial<Attachment>, I>>(object: I): Attachment {
+    const message = createBaseAttachment();
     message.id = object.id ?? "";
     message.filename = object.filename ?? "";
     message.fileType = object.fileType ?? "";
