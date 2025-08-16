@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package shared.v1;
+
+import "shared/v1/struct.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1;v1";
+option java_outer_classname = "AttachmentProto";
+option java_package = "org.megacommerce.shared.v1";
+
+message UploadedImage {
+  string id = 1;
+  string filename = 2;
+  string file_type = 3;
+  int64 file_size = 4;
+  string file_extension = 5;
+  string base64 = 6;
+  int32 exif_orientation = 7;
+  Crop crop = 8;
+  shared.v1.Struct metadata = 9; // arbitrary JSON-like object
+}
+
+message Crop {
+  float x = 1;
+  float y = 2;
+  float width = 3;
+  float height = 4;
+  float aspect_ratio = 5;
+}

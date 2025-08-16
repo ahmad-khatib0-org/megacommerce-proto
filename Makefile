@@ -1,6 +1,14 @@
 .PHONY: generate clean
 
+VERSION ?=
+
 generate:
+ifeq ($(VERSION),)
+	@echo "❌ ERROR: No version specified."
+	@echo "Usage: make generate VERSION=0.0.45"
+	@exit 1
+endif
+
 	rm -rf gen/
 	cd wrappers/proto-npm/ && rm -rf dist src/node src/web
 	
@@ -35,6 +43,10 @@ generate:
 	pnpm exec tsx scripts/gen-barrels.ts
 	@echo "Compiling TypeScript (tsc)..."
 	cd wrappers/proto-npm && pnpm run build
+
+	@echo "📦 Updating versions to $(VERSION)..."
+	sed -i.bak 's/^version = ".*"/version = "$(VERSION)"/' ./wrappers/proto-crate/Cargo.toml && rm -f wrappers/proto-crate/Cargo.toml.bak
+	sed -i.bak 's/^\(\s*\)"version": ".*"/\1"version": "$(VERSION)"/' ./wrappers/proto-npm/package.json && rm -f wrappers/proto-npm/package.json.bak
 	
 	@echo "✅ Generation complete"
 
