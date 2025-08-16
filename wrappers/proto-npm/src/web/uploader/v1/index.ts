@@ -1,7 +1,5 @@
-import * as UploaderServiceClientPb from './UploaderServiceClientPb';
-import * as UploaderPb from './uploader_pb';
+import * as Uploader from './uploader';
 
 export {
-  UploaderServiceClientPb,
-  UploaderPb
+  Uploader
 };

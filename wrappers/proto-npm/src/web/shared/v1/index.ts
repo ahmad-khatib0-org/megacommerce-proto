@@ -1,7 +1,7 @@
-import * as ErrorPb from './error_pb';
-import * as TypesPb from './types_pb';
+import * as Error from './error';
+import * as Types from './types';
 
 export {
-  ErrorPb,
-  TypesPb
+  Error,
+  Types
 };

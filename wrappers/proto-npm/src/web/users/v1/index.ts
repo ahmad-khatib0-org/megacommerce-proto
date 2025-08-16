@@ -1,13 +1,11 @@
-import * as UsersServiceClientPb from './UsersServiceClientPb';
-import * as AuthPb from './auth_pb';
-import * as SupplierPb from './supplier_pb';
-import * as UserPb from './user_pb';
-import * as UsersPb from './users_pb';
+import * as Auth from './auth';
+import * as Supplier from './supplier';
+import * as User from './user';
+import * as Users from './users';
 
 export {
-  UsersServiceClientPb,
-  AuthPb,
-  SupplierPb,
-  UserPb,
-  UsersPb
+  Auth,
+  Supplier,
+  User,
+  Users
 };

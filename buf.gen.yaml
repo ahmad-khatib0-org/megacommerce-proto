@@ -21,20 +21,16 @@ plugins:
       - forceLong=string
       - useOptionals=true
 
-  # Web gRPC (client-side) — two steps required!
-  # 1. Messages (_pb.js)
-  - name: js
+  - plugin: buf.build/community/stephenh-ts-proto
     out: wrappers/proto-npm/src/web
     opt:
-      - import_style=commonjs
-      - binary
-
-  # 2. Service clients (ServiceClientPb.ts)
-  - name: grpc-web
-    out: wrappers/proto-npm/src/web
-    opt:
-      - import_style=typescript
-      - mode=grpcwebtext
+      - env=browser
+      - outputClientImpl=grpc-web # <<< THIS makes the client
+      - outputServices=default # interfaces + service defs
+      - forceLong=string
+      - useOptionals=true
+      - esModuleInterop=true # smoother interop
+      - importSuffix=.js # if you ship ESM with .js imports
 
   - name: cpp
     out: gen/cpp

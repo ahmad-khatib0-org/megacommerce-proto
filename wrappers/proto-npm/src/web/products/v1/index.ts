@@ -1,17 +1,15 @@
-import * as ProductsServiceClientPb from './ProductsServiceClientPb';
-import * as ProductCategoriesPb from './product_categories_pb';
-import * as ProductCreatePb from './product_create_pb';
-import * as ProductDataPb from './product_data_pb';
-import * as ProductListPb from './product_list_pb';
-import * as ProductPb from './product_pb';
-import * as ProductsPb from './products_pb';
+import * as Product from './product';
+import * as ProductCategories from './product_categories';
+import * as ProductCreate from './product_create';
+import * as ProductData from './product_data';
+import * as ProductList from './product_list';
+import * as Products from './products';
 
 export {
-  ProductsServiceClientPb,
-  ProductCategoriesPb,
-  ProductCreatePb,
-  ProductDataPb,
-  ProductListPb,
-  ProductPb,
-  ProductsPb
+  Product,
+  ProductCategories,
+  ProductCreate,
+  ProductData,
+  ProductList,
+  Products
 };
