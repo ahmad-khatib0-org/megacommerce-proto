@@ -1,6 +1,6 @@
 {
   "name": "@megacommerce/proto",
-  "version": "0.1.19",
+  "version": "0.1.21",
   "description": "TypeScript Protobuf bindings for MegaCommerce",
   "license": "MIT",
   "types": "dist/index.d.ts",
@@ -32,46 +32,87 @@
   "exports": {
     ".": "./dist/index.js",
     "./products/v1": "./dist/node/products/v1/index.js",
+    "./products/v1/*": "./dist/node/products/v1/*.js",
     "./shared/v1": "./dist/node/shared/v1/index.js",
+    "./shared/v1/*": "./dist/node/shared/v1/*.js",
     "./common/v1": "./dist/node/common/v1/index.js",
+    "./common/v1/*": "./dist/node/common/v1/*.js",
     "./uploader/v1": "./dist/node/uploader/v1/index.js",
+    "./uploader/v1/*": "./dist/node/uploader/v1/*.js",
     "./users/v1": "./dist/node/users/v1/index.js",
+    "./users/v1/*": "./dist/node/users/v1/*.js",
     "./web/products/v1": "./dist/web/products/v1/index.js",
+    "./web/products/v1/*": "./dist/web/products/v1/*.js",
     "./web/shared/v1": "./dist/web/shared/v1/index.js",
+    "./web/shared/v1/*": "./dist/web/shared/v1/*.js",
     "./web/common/v1": "./dist/web/common/v1/index.js",
-    "./web/users/v1": "./dist/web/users/v1/index.js"
+    "./web/common/v1/*": "./dist/web/common/v1/*.js",
+    "./web/uploader/v1": "./dist/web/uploader/v1/index.js",
+    "./web/uploader/v1/*": "./dist/web/uploader/v1/*.js",
+    "./web/users/v1": "./dist/web/users/v1/index.js",
+    "./web/users/v1/*": "./dist/web/users/v1/*.js"
   },
   "typesVersions": {
     "*": {
       "products/v1": [
         "dist/node/products/v1/index.d.ts"
       ],
+      "products/v1/*": [
+        "dist/node/products/v1/*.d.ts"
+      ],
       "shared/v1": [
         "dist/node/shared/v1/index.d.ts"
+      ],
+      "shared/v1/*": [
+        "dist/node/shared/v1/*.d.ts"
       ],
       "common/v1": [
         "dist/node/common/v1/index.d.ts"
       ],
+      "common/v1/*": [
+        "dist/node/common/v1/*.d.ts"
+      ],
       "uploader/v1": [
         "dist/node/uploader/v1/index.d.ts"
+      ],
+      "uploader/v1/*": [
+        "dist/node/uploader/v1/*.d.ts"
       ],
       "users/v1": [
         "dist/node/users/v1/index.d.ts"
       ],
+      "users/v1/*": [
+        "dist/node/users/v1/*.d.ts"
+      ],
       "web/products/v1": [
         "dist/web/products/v1/index.d.ts"
+      ],
+      "web/products/v1/*": [
+        "dist/web/products/v1/*.d.ts"
       ],
       "web/shared/v1": [
         "dist/web/shared/v1/index.d.ts"
       ],
+      "web/shared/v1/*": [
+        "dist/web/shared/v1/*.d.ts"
+      ],
       "web/common/v1": [
         "dist/web/common/v1/index.d.ts"
+      ],
+      "web/common/v1/*": [
+        "dist/web/common/v1/*.d.ts"
       ],
       "web/uploader/v1": [
         "dist/web/uploader/v1/index.d.ts"
       ],
+      "web/uploader/v1/*": [
+        "dist/web/uploader/v1/*.d.ts"
+      ],
       "web/users/v1": [
         "dist/web/users/v1/index.d.ts"
+      ],
+      "web/users/v1/*": [
+        "dist/web/users/v1/*.d.ts"
       ]
     }
   }
