@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package users.v1;
 
+import "shared/v1/attachment.proto";
 import "shared/v1/error.proto";
 import "shared/v1/types.proto";
 
@@ -17,7 +18,7 @@ message SupplierCreateRequest {
   string last_name = 4;
   string password = 5;
   string membership = 6;
-  string image = 7;
+  shared.v1.Attachment image = 7;
 }
 
 message SupplierCreateResponse {

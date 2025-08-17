@@ -29,6 +29,7 @@
 #include "google/protobuf/repeated_field.h"  // IWYU pragma: export
 #include "google/protobuf/extension_set.h"  // IWYU pragma: export
 #include "google/protobuf/unknown_field_set.h"
+#include "shared/v1/attachment.pb.h"
 #include "shared/v1/error.pb.h"
 #include "shared/v1/types.pb.h"
 // @@protoc_insertion_point(includes)
@@ -320,19 +321,19 @@ class SupplierCreateRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_membership();
 
   public:
-  // string image = 7 [json_name = "image"];
+  // .shared.v1.Attachment image = 7 [json_name = "image"];
+  bool has_image() const;
   void clear_image() ;
-  const ::std::string& image() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_image(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_image();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_image();
-  void set_allocated_image(::std::string* PROTOBUF_NULLABLE value);
+  const ::shared::v1::Attachment& image() const;
+  [[nodiscard]] ::shared::v1::Attachment* PROTOBUF_NULLABLE release_image();
+  ::shared::v1::Attachment* PROTOBUF_NONNULL mutable_image();
+  void set_allocated_image(::shared::v1::Attachment* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_image(::shared::v1::Attachment* PROTOBUF_NULLABLE value);
+  ::shared::v1::Attachment* PROTOBUF_NULLABLE unsafe_arena_release_image();
 
   private:
-  const ::std::string& _internal_image() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_image(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_image();
+  const ::shared::v1::Attachment& _internal_image() const;
+  ::shared::v1::Attachment* PROTOBUF_NONNULL _internal_mutable_image();
 
   public:
   // @@protoc_insertion_point(class_scope:users.v1.SupplierCreateRequest)
@@ -340,7 +341,7 @@ class SupplierCreateRequest final : public ::google::protobuf::Message
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<3, 7,
-                                   0, 94,
+                                   1, 89,
                                    2>
       _table_;
 
@@ -367,7 +368,7 @@ class SupplierCreateRequest final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr last_name_;
     ::google::protobuf::internal::ArenaStringPtr password_;
     ::google::protobuf::internal::ArenaStringPtr membership_;
-    ::google::protobuf::internal::ArenaStringPtr image_;
+    ::shared::v1::Attachment* PROTOBUF_NULLABLE image_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -1018,68 +1019,96 @@ inline void SupplierCreateRequest::set_allocated_membership(::std::string* PROTO
   // @@protoc_insertion_point(field_set_allocated:users.v1.SupplierCreateRequest.membership)
 }
 
-// string image = 7 [json_name = "image"];
-inline void SupplierCreateRequest::clear_image() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.image_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000040u;
+// .shared.v1.Attachment image = 7 [json_name = "image"];
+inline bool SupplierCreateRequest::has_image() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.image_ != nullptr);
+  return value;
 }
-inline const ::std::string& SupplierCreateRequest::image() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline const ::shared::v1::Attachment& SupplierCreateRequest::_internal_image() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::shared::v1::Attachment* p = _impl_.image_;
+  return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::Attachment&>(::shared::v1::_Attachment_default_instance_);
+}
+inline const ::shared::v1::Attachment& SupplierCreateRequest::image() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:users.v1.SupplierCreateRequest.image)
   return _internal_image();
 }
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void SupplierCreateRequest::set_image(Arg_&& arg, Args_... args) {
+inline void SupplierCreateRequest::unsafe_arena_set_allocated_image(
+    ::shared::v1::Attachment* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000040u;
-  _impl_.image_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:users.v1.SupplierCreateRequest.image)
-}
-inline ::std::string* PROTOBUF_NONNULL SupplierCreateRequest::mutable_image()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_image();
-  // @@protoc_insertion_point(field_mutable:users.v1.SupplierCreateRequest.image)
-  return _s;
-}
-inline const ::std::string& SupplierCreateRequest::_internal_image() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.image_.Get();
-}
-inline void SupplierCreateRequest::_internal_set_image(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000040u;
-  _impl_.image_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL SupplierCreateRequest::_internal_mutable_image() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000040u;
-  return _impl_.image_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE SupplierCreateRequest::release_image() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:users.v1.SupplierCreateRequest.image)
-  if ((_impl_._has_bits_[0] & 0x00000040u) == 0) {
-    return nullptr;
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.image_);
   }
-  _impl_._has_bits_[0] &= ~0x00000040u;
-  auto* released = _impl_.image_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.image_.Set("", GetArena());
-  }
-  return released;
-}
-inline void SupplierCreateRequest::set_allocated_image(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.image_ = reinterpret_cast<::shared::v1::Attachment*>(value);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000040u;
   } else {
     _impl_._has_bits_[0] &= ~0x00000040u;
   }
-  _impl_.image_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.image_.IsDefault()) {
-    _impl_.image_.Set("", GetArena());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:users.v1.SupplierCreateRequest.image)
+}
+inline ::shared::v1::Attachment* PROTOBUF_NULLABLE SupplierCreateRequest::release_image() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00000040u;
+  ::shared::v1::Attachment* released = _impl_.image_;
+  _impl_.image_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
   }
+  return released;
+}
+inline ::shared::v1::Attachment* PROTOBUF_NULLABLE SupplierCreateRequest::unsafe_arena_release_image() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:users.v1.SupplierCreateRequest.image)
+
+  _impl_._has_bits_[0] &= ~0x00000040u;
+  ::shared::v1::Attachment* temp = _impl_.image_;
+  _impl_.image_ = nullptr;
+  return temp;
+}
+inline ::shared::v1::Attachment* PROTOBUF_NONNULL SupplierCreateRequest::_internal_mutable_image() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.image_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::Attachment>(GetArena());
+    _impl_.image_ = reinterpret_cast<::shared::v1::Attachment*>(p);
+  }
+  return _impl_.image_;
+}
+inline ::shared::v1::Attachment* PROTOBUF_NONNULL SupplierCreateRequest::mutable_image()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00000040u;
+  ::shared::v1::Attachment* _msg = _internal_mutable_image();
+  // @@protoc_insertion_point(field_mutable:users.v1.SupplierCreateRequest.image)
+  return _msg;
+}
+inline void SupplierCreateRequest::set_allocated_image(::shared::v1::Attachment* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.image_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::Message*>(value)->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000040u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000040u;
+  }
+
+  _impl_.image_ = reinterpret_cast<::shared::v1::Attachment*>(value);
   // @@protoc_insertion_point(field_set_allocated:users.v1.SupplierCreateRequest.image)
 }
 

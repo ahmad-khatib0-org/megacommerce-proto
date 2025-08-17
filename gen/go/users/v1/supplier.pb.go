@@ -30,7 +30,7 @@ type SupplierCreateRequest struct {
 	LastName      string                 `protobuf:"bytes,4,opt,name=last_name,json=lastName,proto3" json:"last_name,omitempty"`
 	Password      string                 `protobuf:"bytes,5,opt,name=password,proto3" json:"password,omitempty"`
 	Membership    string                 `protobuf:"bytes,6,opt,name=membership,proto3" json:"membership,omitempty"`
-	Image         string                 `protobuf:"bytes,7,opt,name=image,proto3" json:"image,omitempty"`
+	Image         *v1.Attachment         `protobuf:"bytes,7,opt,name=image,proto3" json:"image,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -107,11 +107,11 @@ func (x *SupplierCreateRequest) GetMembership() string {
 	return ""
 }
 
-func (x *SupplierCreateRequest) GetImage() string {
+func (x *SupplierCreateRequest) GetImage() *v1.Attachment {
 	if x != nil {
 		return x.Image
 	}
-	return ""
+	return nil
 }
 
 type SupplierCreateResponse struct {
@@ -200,7 +200,7 @@ var File_users_v1_supplier_proto protoreflect.FileDescriptor
 
 const file_users_v1_supplier_proto_rawDesc = "" +
 	"\n" +
-	"\x17users/v1/supplier.proto\x12\busers.v1\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"\xd7\x01\n" +
+	"\x17users/v1/supplier.proto\x12\busers.v1\x1a\x1ashared/v1/attachment.proto\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"\xee\x01\n" +
 	"\x15SupplierCreateRequest\x12\x1a\n" +
 	"\busername\x18\x01 \x01(\tR\busername\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email\x12\x1d\n" +
@@ -210,8 +210,8 @@ const file_users_v1_supplier_proto_rawDesc = "" +
 	"\bpassword\x18\x05 \x01(\tR\bpassword\x12\x1e\n" +
 	"\n" +
 	"membership\x18\x06 \x01(\tR\n" +
-	"membership\x12\x14\n" +
-	"\x05image\x18\a \x01(\tR\x05image\"y\n" +
+	"membership\x12+\n" +
+	"\x05image\x18\a \x01(\v2\x15.shared.v1.AttachmentR\x05image\"y\n" +
 	"\x16SupplierCreateResponse\x12&\n" +
 	"\x04data\x18\x01 \x01(\v2\x10.shared.v1.EmptyH\x00R\x04data\x12+\n" +
 	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +
@@ -235,17 +235,19 @@ var file_users_v1_supplier_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_users_v1_supplier_proto_goTypes = []any{
 	(*SupplierCreateRequest)(nil),  // 0: users.v1.SupplierCreateRequest
 	(*SupplierCreateResponse)(nil), // 1: users.v1.SupplierCreateResponse
-	(*v1.Empty)(nil),               // 2: shared.v1.Empty
-	(*v1.AppError)(nil),            // 3: shared.v1.AppError
+	(*v1.Attachment)(nil),          // 2: shared.v1.Attachment
+	(*v1.Empty)(nil),               // 3: shared.v1.Empty
+	(*v1.AppError)(nil),            // 4: shared.v1.AppError
 }
 var file_users_v1_supplier_proto_depIdxs = []int32{
-	2, // 0: users.v1.SupplierCreateResponse.data:type_name -> shared.v1.Empty
-	3, // 1: users.v1.SupplierCreateResponse.error:type_name -> shared.v1.AppError
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	2, // 0: users.v1.SupplierCreateRequest.image:type_name -> shared.v1.Attachment
+	3, // 1: users.v1.SupplierCreateResponse.data:type_name -> shared.v1.Empty
+	4, // 2: users.v1.SupplierCreateResponse.error:type_name -> shared.v1.AppError
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_users_v1_supplier_proto_init() }

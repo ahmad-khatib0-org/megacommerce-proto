@@ -103,16 +103,19 @@ public final class SupplierProto {
         getMembershipBytes();
 
     /**
-     * <code>string image = 7 [json_name = "image"];</code>
+     * <code>.shared.v1.Attachment image = 7 [json_name = "image"];</code>
+     * @return Whether the image field is set.
+     */
+    boolean hasImage();
+    /**
+     * <code>.shared.v1.Attachment image = 7 [json_name = "image"];</code>
      * @return The image.
      */
-    java.lang.String getImage();
+    org.megacommerce.shared.v1.AttachmentProto.Attachment getImage();
     /**
-     * <code>string image = 7 [json_name = "image"];</code>
-     * @return The bytes for image.
+     * <code>.shared.v1.Attachment image = 7 [json_name = "image"];</code>
      */
-    com.google.protobuf.ByteString
-        getImageBytes();
+    org.megacommerce.shared.v1.AttachmentProto.AttachmentOrBuilder getImageOrBuilder();
   }
   /**
    * Protobuf type {@code users.v1.SupplierCreateRequest}
@@ -142,7 +145,6 @@ public final class SupplierProto {
       lastName_ = "";
       password_ = "";
       membership_ = "";
-      image_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -158,6 +160,7 @@ public final class SupplierProto {
               org.megacommerce.users.v1.SupplierProto.SupplierCreateRequest.class, org.megacommerce.users.v1.SupplierProto.SupplierCreateRequest.Builder.class);
     }
 
+    private int bitField0_;
     public static final int USERNAME_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
     private volatile java.lang.Object username_ = "";
@@ -393,42 +396,29 @@ public final class SupplierProto {
     }
 
     public static final int IMAGE_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object image_ = "";
+    private org.megacommerce.shared.v1.AttachmentProto.Attachment image_;
     /**
-     * <code>string image = 7 [json_name = "image"];</code>
+     * <code>.shared.v1.Attachment image = 7 [json_name = "image"];</code>
+     * @return Whether the image field is set.
+     */
+    @java.lang.Override
+    public boolean hasImage() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.shared.v1.Attachment image = 7 [json_name = "image"];</code>
      * @return The image.
      */
     @java.lang.Override
-    public java.lang.String getImage() {
-      java.lang.Object ref = image_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        image_ = s;
-        return s;
-      }
+    public org.megacommerce.shared.v1.AttachmentProto.Attachment getImage() {
+      return image_ == null ? org.megacommerce.shared.v1.AttachmentProto.Attachment.getDefaultInstance() : image_;
     }
     /**
-     * <code>string image = 7 [json_name = "image"];</code>
-     * @return The bytes for image.
+     * <code>.shared.v1.Attachment image = 7 [json_name = "image"];</code>
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getImageBytes() {
-      java.lang.Object ref = image_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        image_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public org.megacommerce.shared.v1.AttachmentProto.AttachmentOrBuilder getImageOrBuilder() {
+      return image_ == null ? org.megacommerce.shared.v1.AttachmentProto.Attachment.getDefaultInstance() : image_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -463,8 +453,8 @@ public final class SupplierProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(membership_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 6, membership_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(image_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 7, image_);
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(7, getImage());
       }
       getUnknownFields().writeTo(output);
     }
@@ -493,8 +483,9 @@ public final class SupplierProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(membership_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(6, membership_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(image_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, image_);
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getImage());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -523,8 +514,11 @@ public final class SupplierProto {
           .equals(other.getPassword())) return false;
       if (!getMembership()
           .equals(other.getMembership())) return false;
-      if (!getImage()
-          .equals(other.getImage())) return false;
+      if (hasImage() != other.hasImage()) return false;
+      if (hasImage()) {
+        if (!getImage()
+            .equals(other.getImage())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -548,8 +542,10 @@ public final class SupplierProto {
       hash = (53 * hash) + getPassword().hashCode();
       hash = (37 * hash) + MEMBERSHIP_FIELD_NUMBER;
       hash = (53 * hash) + getMembership().hashCode();
-      hash = (37 * hash) + IMAGE_FIELD_NUMBER;
-      hash = (53 * hash) + getImage().hashCode();
+      if (hasImage()) {
+        hash = (37 * hash) + IMAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getImage().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -669,13 +665,19 @@ public final class SupplierProto {
 
       // Construct using org.megacommerce.users.v1.SupplierProto.SupplierCreateRequest.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          internalGetImageFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -687,7 +689,11 @@ public final class SupplierProto {
         lastName_ = "";
         password_ = "";
         membership_ = "";
-        image_ = "";
+        image_ = null;
+        if (imageBuilder_ != null) {
+          imageBuilder_.dispose();
+          imageBuilder_ = null;
+        }
         return this;
       }
 
@@ -739,9 +745,14 @@ public final class SupplierProto {
         if (((from_bitField0_ & 0x00000020) != 0)) {
           result.membership_ = membership_;
         }
+        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.image_ = image_;
+          result.image_ = imageBuilder_ == null
+              ? image_
+              : imageBuilder_.build();
+          to_bitField0_ |= 0x00000001;
         }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -786,10 +797,8 @@ public final class SupplierProto {
           bitField0_ |= 0x00000020;
           onChanged();
         }
-        if (!other.getImage().isEmpty()) {
-          image_ = other.image_;
-          bitField0_ |= 0x00000040;
-          onChanged();
+        if (other.hasImage()) {
+          mergeImage(other.getImage());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -848,7 +857,9 @@ public final class SupplierProto {
                 break;
               } // case 50
               case 58: {
-                image_ = input.readStringRequireUtf8();
+                input.readMessage(
+                    internalGetImageFieldBuilder().getBuilder(),
+                    extensionRegistry);
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
@@ -1301,76 +1312,125 @@ public final class SupplierProto {
         return this;
       }
 
-      private java.lang.Object image_ = "";
+      private org.megacommerce.shared.v1.AttachmentProto.Attachment image_;
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.shared.v1.AttachmentProto.Attachment, org.megacommerce.shared.v1.AttachmentProto.Attachment.Builder, org.megacommerce.shared.v1.AttachmentProto.AttachmentOrBuilder> imageBuilder_;
       /**
-       * <code>string image = 7 [json_name = "image"];</code>
+       * <code>.shared.v1.Attachment image = 7 [json_name = "image"];</code>
+       * @return Whether the image field is set.
+       */
+      public boolean hasImage() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+      /**
+       * <code>.shared.v1.Attachment image = 7 [json_name = "image"];</code>
        * @return The image.
        */
-      public java.lang.String getImage() {
-        java.lang.Object ref = image_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          image_ = s;
-          return s;
+      public org.megacommerce.shared.v1.AttachmentProto.Attachment getImage() {
+        if (imageBuilder_ == null) {
+          return image_ == null ? org.megacommerce.shared.v1.AttachmentProto.Attachment.getDefaultInstance() : image_;
         } else {
-          return (java.lang.String) ref;
+          return imageBuilder_.getMessage();
         }
       }
       /**
-       * <code>string image = 7 [json_name = "image"];</code>
-       * @return The bytes for image.
+       * <code>.shared.v1.Attachment image = 7 [json_name = "image"];</code>
        */
-      public com.google.protobuf.ByteString
-          getImageBytes() {
-        java.lang.Object ref = image_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          image_ = b;
-          return b;
+      public Builder setImage(org.megacommerce.shared.v1.AttachmentProto.Attachment value) {
+        if (imageBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          image_ = value;
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          imageBuilder_.setMessage(value);
         }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
       }
       /**
-       * <code>string image = 7 [json_name = "image"];</code>
-       * @param value The image to set.
-       * @return This builder for chaining.
+       * <code>.shared.v1.Attachment image = 7 [json_name = "image"];</code>
        */
       public Builder setImage(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        image_ = value;
+          org.megacommerce.shared.v1.AttachmentProto.Attachment.Builder builderForValue) {
+        if (imageBuilder_ == null) {
+          image_ = builderForValue.build();
+        } else {
+          imageBuilder_.setMessage(builderForValue.build());
+        }
         bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
       /**
-       * <code>string image = 7 [json_name = "image"];</code>
-       * @return This builder for chaining.
+       * <code>.shared.v1.Attachment image = 7 [json_name = "image"];</code>
+       */
+      public Builder mergeImage(org.megacommerce.shared.v1.AttachmentProto.Attachment value) {
+        if (imageBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0) &&
+            image_ != null &&
+            image_ != org.megacommerce.shared.v1.AttachmentProto.Attachment.getDefaultInstance()) {
+            getImageBuilder().mergeFrom(value);
+          } else {
+            image_ = value;
+          }
+        } else {
+          imageBuilder_.mergeFrom(value);
+        }
+        if (image_ != null) {
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.shared.v1.Attachment image = 7 [json_name = "image"];</code>
        */
       public Builder clearImage() {
-        image_ = getDefaultInstance().getImage();
         bitField0_ = (bitField0_ & ~0x00000040);
+        image_ = null;
+        if (imageBuilder_ != null) {
+          imageBuilder_.dispose();
+          imageBuilder_ = null;
+        }
         onChanged();
         return this;
       }
       /**
-       * <code>string image = 7 [json_name = "image"];</code>
-       * @param value The bytes for image to set.
-       * @return This builder for chaining.
+       * <code>.shared.v1.Attachment image = 7 [json_name = "image"];</code>
        */
-      public Builder setImageBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        image_ = value;
+      public org.megacommerce.shared.v1.AttachmentProto.Attachment.Builder getImageBuilder() {
         bitField0_ |= 0x00000040;
         onChanged();
-        return this;
+        return internalGetImageFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.shared.v1.Attachment image = 7 [json_name = "image"];</code>
+       */
+      public org.megacommerce.shared.v1.AttachmentProto.AttachmentOrBuilder getImageOrBuilder() {
+        if (imageBuilder_ != null) {
+          return imageBuilder_.getMessageOrBuilder();
+        } else {
+          return image_ == null ?
+              org.megacommerce.shared.v1.AttachmentProto.Attachment.getDefaultInstance() : image_;
+        }
+      }
+      /**
+       * <code>.shared.v1.Attachment image = 7 [json_name = "image"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.shared.v1.AttachmentProto.Attachment, org.megacommerce.shared.v1.AttachmentProto.Attachment.Builder, org.megacommerce.shared.v1.AttachmentProto.AttachmentOrBuilder> 
+          internalGetImageFieldBuilder() {
+        if (imageBuilder_ == null) {
+          imageBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.shared.v1.AttachmentProto.Attachment, org.megacommerce.shared.v1.AttachmentProto.Attachment.Builder, org.megacommerce.shared.v1.AttachmentProto.AttachmentOrBuilder>(
+                  getImage(),
+                  getParentForChildren(),
+                  isClean());
+          image_ = null;
+        }
+        return imageBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:users.v1.SupplierCreateRequest)
@@ -2328,24 +2388,26 @@ public final class SupplierProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027users/v1/supplier.proto\022\010users.v1\032\025sha" +
-      "red/v1/error.proto\032\025shared/v1/types.prot" +
-      "o\"\327\001\n\025SupplierCreateRequest\022\032\n\010username\030" +
-      "\001 \001(\tR\010username\022\024\n\005email\030\002 \001(\tR\005email\022\035\n" +
-      "\nfirst_name\030\003 \001(\tR\tfirstName\022\033\n\tlast_nam" +
-      "e\030\004 \001(\tR\010lastName\022\032\n\010password\030\005 \001(\tR\010pas" +
-      "sword\022\036\n\nmembership\030\006 \001(\tR\nmembership\022\024\n" +
-      "\005image\030\007 \001(\tR\005image\"y\n\026SupplierCreateRes" +
-      "ponse\022&\n\004data\030\001 \001(\0132\020.shared.v1.EmptyH\000R" +
-      "\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErro" +
-      "rH\000R\005errorB\n\n\010responseBq\n\031org.megacommer" +
-      "ce.users.v1B\rSupplierProtoZBgithub.com/a" +
-      "hmad-khatib0-org/megacommerce-proto/gen/" +
-      "go/users/v1;v1\370\001\001b\006proto3"
+      "\n\027users/v1/supplier.proto\022\010users.v1\032\032sha" +
+      "red/v1/attachment.proto\032\025shared/v1/error" +
+      ".proto\032\025shared/v1/types.proto\"\356\001\n\025Suppli" +
+      "erCreateRequest\022\032\n\010username\030\001 \001(\tR\010usern" +
+      "ame\022\024\n\005email\030\002 \001(\tR\005email\022\035\n\nfirst_name\030" +
+      "\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010las" +
+      "tName\022\032\n\010password\030\005 \001(\tR\010password\022\036\n\nmem" +
+      "bership\030\006 \001(\tR\nmembership\022+\n\005image\030\007 \001(\013" +
+      "2\025.shared.v1.AttachmentR\005image\"y\n\026Suppli" +
+      "erCreateResponse\022&\n\004data\030\001 \001(\0132\020.shared." +
+      "v1.EmptyH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared" +
+      ".v1.AppErrorH\000R\005errorB\n\n\010responseBq\n\031org" +
+      ".megacommerce.users.v1B\rSupplierProtoZBg" +
+      "ithub.com/ahmad-khatib0-org/megacommerce" +
+      "-proto/gen/go/users/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          org.megacommerce.shared.v1.AttachmentProto.getDescriptor(),
           org.megacommerce.shared.v1.ErrorProto.getDescriptor(),
           org.megacommerce.shared.v1.TypesProto.getDescriptor(),
         });
@@ -2362,6 +2424,7 @@ public final class SupplierProto {
         internal_static_users_v1_SupplierCreateResponse_descriptor,
         new java.lang.String[] { "Data", "Error", "Response", });
     descriptor.resolveAllFeaturesImmutable();
+    org.megacommerce.shared.v1.AttachmentProto.getDescriptor();
     org.megacommerce.shared.v1.ErrorProto.getDescriptor();
     org.megacommerce.shared.v1.TypesProto.getDescriptor();
   }

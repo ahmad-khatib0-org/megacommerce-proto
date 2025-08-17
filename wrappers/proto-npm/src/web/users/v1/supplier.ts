@@ -6,6 +6,7 @@
 
 /* eslint-disable */
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
+import { Attachment } from "../../shared/v1/attachment.js";
 import { AppError } from "../../shared/v1/error.js";
 import { Empty } from "../../shared/v1/types.js";
 
@@ -18,7 +19,7 @@ export interface SupplierCreateRequest {
   lastName: string;
   password: string;
   membership: string;
-  image: string;
+  image?: Attachment | undefined;
 }
 
 export interface SupplierCreateResponse {
@@ -27,7 +28,7 @@ export interface SupplierCreateResponse {
 }
 
 function createBaseSupplierCreateRequest(): SupplierCreateRequest {
-  return { username: "", email: "", firstName: "", lastName: "", password: "", membership: "", image: "" };
+  return { username: "", email: "", firstName: "", lastName: "", password: "", membership: "", image: undefined };
 }
 
 export const SupplierCreateRequest: MessageFns<SupplierCreateRequest> = {
@@ -50,8 +51,8 @@ export const SupplierCreateRequest: MessageFns<SupplierCreateRequest> = {
     if (message.membership !== "") {
       writer.uint32(50).string(message.membership);
     }
-    if (message.image !== "") {
-      writer.uint32(58).string(message.image);
+    if (message.image !== undefined) {
+      Attachment.encode(message.image, writer.uint32(58).fork()).join();
     }
     return writer;
   },
@@ -116,7 +117,7 @@ export const SupplierCreateRequest: MessageFns<SupplierCreateRequest> = {
             break;
           }
 
-          message.image = reader.string();
+          message.image = Attachment.decode(reader, reader.uint32());
           continue;
         }
       }
@@ -136,7 +137,7 @@ export const SupplierCreateRequest: MessageFns<SupplierCreateRequest> = {
       lastName: isSet(object.lastName) ? globalThis.String(object.lastName) : "",
       password: isSet(object.password) ? globalThis.String(object.password) : "",
       membership: isSet(object.membership) ? globalThis.String(object.membership) : "",
-      image: isSet(object.image) ? globalThis.String(object.image) : "",
+      image: isSet(object.image) ? Attachment.fromJSON(object.image) : undefined,
     };
   },
 
@@ -160,8 +161,8 @@ export const SupplierCreateRequest: MessageFns<SupplierCreateRequest> = {
     if (message.membership !== "") {
       obj.membership = message.membership;
     }
-    if (message.image !== "") {
-      obj.image = message.image;
+    if (message.image !== undefined) {
+      obj.image = Attachment.toJSON(message.image);
     }
     return obj;
   },
@@ -177,7 +178,9 @@ export const SupplierCreateRequest: MessageFns<SupplierCreateRequest> = {
     message.lastName = object.lastName ?? "";
     message.password = object.password ?? "";
     message.membership = object.membership ?? "";
-    message.image = object.image ?? "";
+    message.image = (object.image !== undefined && object.image !== null)
+      ? Attachment.fromPartial(object.image)
+      : undefined;
     return message;
   },
 };
