@@ -28,3 +28,18 @@ message Crop {
   float height = 4;
   float aspect_ratio = 5;
 }
+
+enum AttachmentErrorType {
+  ATTACHMENT_ERROR_TYPE_UNSPECIFIED = 0;
+  ATTACHMENT_ERROR_TYPE_INVALID_BASE64 = 1;
+  ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE = 2;
+  ATTACHMENT_ERROR_TYPE_BIG_FILE = 3;
+  ATTACHMENT_ERROR_TYPE_DECODE_IMG = 4;
+  ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG = 5;
+  ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE = 6;
+}
+
+message AttachmentError {
+  string id = 1; // the attachment id
+  AttachmentErrorType type = 2;
+}

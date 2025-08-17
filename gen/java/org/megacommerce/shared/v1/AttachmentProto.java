@@ -26,6 +26,168 @@ public final class AttachmentProto {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  /**
+   * Protobuf enum {@code shared.v1.AttachmentErrorType}
+   */
+  public enum AttachmentErrorType
+      implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     * <code>ATTACHMENT_ERROR_TYPE_UNSPECIFIED = 0;</code>
+     */
+    ATTACHMENT_ERROR_TYPE_UNSPECIFIED(0),
+    /**
+     * <code>ATTACHMENT_ERROR_TYPE_INVALID_BASE64 = 1;</code>
+     */
+    ATTACHMENT_ERROR_TYPE_INVALID_BASE64(1),
+    /**
+     * <code>ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE = 2;</code>
+     */
+    ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE(2),
+    /**
+     * <code>ATTACHMENT_ERROR_TYPE_BIG_FILE = 3;</code>
+     */
+    ATTACHMENT_ERROR_TYPE_BIG_FILE(3),
+    /**
+     * <code>ATTACHMENT_ERROR_TYPE_DECODE_IMG = 4;</code>
+     */
+    ATTACHMENT_ERROR_TYPE_DECODE_IMG(4),
+    /**
+     * <code>ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG = 5;</code>
+     */
+    ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG(5),
+    /**
+     * <code>ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE = 6;</code>
+     */
+    ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE(6),
+    UNRECOGNIZED(-1),
+    ;
+
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        AttachmentErrorType.class.getName());
+    }
+    /**
+     * <code>ATTACHMENT_ERROR_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int ATTACHMENT_ERROR_TYPE_UNSPECIFIED_VALUE = 0;
+    /**
+     * <code>ATTACHMENT_ERROR_TYPE_INVALID_BASE64 = 1;</code>
+     */
+    public static final int ATTACHMENT_ERROR_TYPE_INVALID_BASE64_VALUE = 1;
+    /**
+     * <code>ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE = 2;</code>
+     */
+    public static final int ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE_VALUE = 2;
+    /**
+     * <code>ATTACHMENT_ERROR_TYPE_BIG_FILE = 3;</code>
+     */
+    public static final int ATTACHMENT_ERROR_TYPE_BIG_FILE_VALUE = 3;
+    /**
+     * <code>ATTACHMENT_ERROR_TYPE_DECODE_IMG = 4;</code>
+     */
+    public static final int ATTACHMENT_ERROR_TYPE_DECODE_IMG_VALUE = 4;
+    /**
+     * <code>ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG = 5;</code>
+     */
+    public static final int ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG_VALUE = 5;
+    /**
+     * <code>ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE = 6;</code>
+     */
+    public static final int ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE_VALUE = 6;
+
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static AttachmentErrorType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static AttachmentErrorType forNumber(int value) {
+      switch (value) {
+        case 0: return ATTACHMENT_ERROR_TYPE_UNSPECIFIED;
+        case 1: return ATTACHMENT_ERROR_TYPE_INVALID_BASE64;
+        case 2: return ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE;
+        case 3: return ATTACHMENT_ERROR_TYPE_BIG_FILE;
+        case 4: return ATTACHMENT_ERROR_TYPE_DECODE_IMG;
+        case 5: return ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG;
+        case 6: return ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE;
+        default: return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<AttachmentErrorType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+    private static final com.google.protobuf.Internal.EnumLiteMap<
+        AttachmentErrorType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<AttachmentErrorType>() {
+            public AttachmentErrorType findValueByNumber(int number) {
+              return AttachmentErrorType.forNumber(number);
+            }
+          };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor
+        getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+    public final com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptorForType() {
+      return getDescriptor();
+    }
+    public static com.google.protobuf.Descriptors.EnumDescriptor
+        getDescriptor() {
+      return org.megacommerce.shared.v1.AttachmentProto.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final AttachmentErrorType[] VALUES = values();
+
+    public static AttachmentErrorType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException(
+          "EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private AttachmentErrorType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:shared.v1.AttachmentErrorType)
+  }
+
   public interface AttachmentOrBuilder extends
       // @@protoc_insertion_point(interface_extends:shared.v1.Attachment)
       com.google.protobuf.MessageOrBuilder {
@@ -2473,6 +2635,655 @@ public final class AttachmentProto {
 
   }
 
+  public interface AttachmentErrorOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:shared.v1.AttachmentError)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * the attachment id
+     * </pre>
+     *
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
+     */
+    java.lang.String getId();
+    /**
+     * <pre>
+     * the attachment id
+     * </pre>
+     *
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    com.google.protobuf.ByteString
+        getIdBytes();
+
+    /**
+     * <code>.shared.v1.AttachmentErrorType type = 2 [json_name = "type"];</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    int getTypeValue();
+    /**
+     * <code>.shared.v1.AttachmentErrorType type = 2 [json_name = "type"];</code>
+     * @return The type.
+     */
+    org.megacommerce.shared.v1.AttachmentProto.AttachmentErrorType getType();
+  }
+  /**
+   * Protobuf type {@code shared.v1.AttachmentError}
+   */
+  public static final class AttachmentError extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:shared.v1.AttachmentError)
+      AttachmentErrorOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        AttachmentError.class.getName());
+    }
+    // Use AttachmentError.newBuilder() to construct.
+    private AttachmentError(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private AttachmentError() {
+      id_ = "";
+      type_ = 0;
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.shared.v1.AttachmentProto.internal_static_shared_v1_AttachmentError_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.shared.v1.AttachmentProto.internal_static_shared_v1_AttachmentError_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.shared.v1.AttachmentProto.AttachmentError.class, org.megacommerce.shared.v1.AttachmentProto.AttachmentError.Builder.class);
+    }
+
+    public static final int ID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object id_ = "";
+    /**
+     * <pre>
+     * the attachment id
+     * </pre>
+     *
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The id.
+     */
+    @java.lang.Override
+    public java.lang.String getId() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        id_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * the attachment id
+     * </pre>
+     *
+     * <code>string id = 1 [json_name = "id"];</code>
+     * @return The bytes for id.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIdBytes() {
+      java.lang.Object ref = id_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        id_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 2;
+    private int type_ = 0;
+    /**
+     * <code>.shared.v1.AttachmentErrorType type = 2 [json_name = "type"];</code>
+     * @return The enum numeric value on the wire for type.
+     */
+    @java.lang.Override public int getTypeValue() {
+      return type_;
+    }
+    /**
+     * <code>.shared.v1.AttachmentErrorType type = 2 [json_name = "type"];</code>
+     * @return The type.
+     */
+    @java.lang.Override public org.megacommerce.shared.v1.AttachmentProto.AttachmentErrorType getType() {
+      org.megacommerce.shared.v1.AttachmentProto.AttachmentErrorType result = org.megacommerce.shared.v1.AttachmentProto.AttachmentErrorType.forNumber(type_);
+      return result == null ? org.megacommerce.shared.v1.AttachmentProto.AttachmentErrorType.UNRECOGNIZED : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
+      }
+      if (type_ != org.megacommerce.shared.v1.AttachmentProto.AttachmentErrorType.ATTACHMENT_ERROR_TYPE_UNSPECIFIED.getNumber()) {
+        output.writeEnum(2, type_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
+      }
+      if (type_ != org.megacommerce.shared.v1.AttachmentProto.AttachmentErrorType.ATTACHMENT_ERROR_TYPE_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, type_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.shared.v1.AttachmentProto.AttachmentError)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.shared.v1.AttachmentProto.AttachmentError other = (org.megacommerce.shared.v1.AttachmentProto.AttachmentError) obj;
+
+      if (!getId()
+          .equals(other.getId())) return false;
+      if (type_ != other.type_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ID_FIELD_NUMBER;
+      hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + type_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.shared.v1.AttachmentProto.AttachmentError parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.shared.v1.AttachmentProto.AttachmentError parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.AttachmentProto.AttachmentError parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.shared.v1.AttachmentProto.AttachmentError parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.AttachmentProto.AttachmentError parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.shared.v1.AttachmentProto.AttachmentError parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.AttachmentProto.AttachmentError parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.shared.v1.AttachmentProto.AttachmentError parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.shared.v1.AttachmentProto.AttachmentError parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.shared.v1.AttachmentProto.AttachmentError parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.AttachmentProto.AttachmentError parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.shared.v1.AttachmentProto.AttachmentError parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.shared.v1.AttachmentProto.AttachmentError prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code shared.v1.AttachmentError}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:shared.v1.AttachmentError)
+        org.megacommerce.shared.v1.AttachmentProto.AttachmentErrorOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.shared.v1.AttachmentProto.internal_static_shared_v1_AttachmentError_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.shared.v1.AttachmentProto.internal_static_shared_v1_AttachmentError_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.shared.v1.AttachmentProto.AttachmentError.class, org.megacommerce.shared.v1.AttachmentProto.AttachmentError.Builder.class);
+      }
+
+      // Construct using org.megacommerce.shared.v1.AttachmentProto.AttachmentError.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        id_ = "";
+        type_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.shared.v1.AttachmentProto.internal_static_shared_v1_AttachmentError_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.shared.v1.AttachmentProto.AttachmentError getDefaultInstanceForType() {
+        return org.megacommerce.shared.v1.AttachmentProto.AttachmentError.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.shared.v1.AttachmentProto.AttachmentError build() {
+        org.megacommerce.shared.v1.AttachmentProto.AttachmentError result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.shared.v1.AttachmentProto.AttachmentError buildPartial() {
+        org.megacommerce.shared.v1.AttachmentProto.AttachmentError result = new org.megacommerce.shared.v1.AttachmentProto.AttachmentError(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.shared.v1.AttachmentProto.AttachmentError result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.id_ = id_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.type_ = type_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.shared.v1.AttachmentProto.AttachmentError) {
+          return mergeFrom((org.megacommerce.shared.v1.AttachmentProto.AttachmentError)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.shared.v1.AttachmentProto.AttachmentError other) {
+        if (other == org.megacommerce.shared.v1.AttachmentProto.AttachmentError.getDefaultInstance()) return this;
+        if (!other.getId().isEmpty()) {
+          id_ = other.id_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.type_ != 0) {
+          setTypeValue(other.getTypeValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                id_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 16: {
+                type_ = input.readEnum();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object id_ = "";
+      /**
+       * <pre>
+       * the attachment id
+       * </pre>
+       *
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The id.
+       */
+      public java.lang.String getId() {
+        java.lang.Object ref = id_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          id_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the attachment id
+       * </pre>
+       *
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return The bytes for id.
+       */
+      public com.google.protobuf.ByteString
+          getIdBytes() {
+        java.lang.Object ref = id_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          id_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * the attachment id
+       * </pre>
+       *
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the attachment id
+       * </pre>
+       *
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearId() {
+        id_ = getDefaultInstance().getId();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * the attachment id
+       * </pre>
+       *
+       * <code>string id = 1 [json_name = "id"];</code>
+       * @param value The bytes for id to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        id_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int type_ = 0;
+      /**
+       * <code>.shared.v1.AttachmentErrorType type = 2 [json_name = "type"];</code>
+       * @return The enum numeric value on the wire for type.
+       */
+      @java.lang.Override public int getTypeValue() {
+        return type_;
+      }
+      /**
+       * <code>.shared.v1.AttachmentErrorType type = 2 [json_name = "type"];</code>
+       * @param value The enum numeric value on the wire for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeValue(int value) {
+        type_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.shared.v1.AttachmentErrorType type = 2 [json_name = "type"];</code>
+       * @return The type.
+       */
+      @java.lang.Override
+      public org.megacommerce.shared.v1.AttachmentProto.AttachmentErrorType getType() {
+        org.megacommerce.shared.v1.AttachmentProto.AttachmentErrorType result = org.megacommerce.shared.v1.AttachmentProto.AttachmentErrorType.forNumber(type_);
+        return result == null ? org.megacommerce.shared.v1.AttachmentProto.AttachmentErrorType.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>.shared.v1.AttachmentErrorType type = 2 [json_name = "type"];</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(org.megacommerce.shared.v1.AttachmentProto.AttachmentErrorType value) {
+        if (value == null) { throw new NullPointerException(); }
+        bitField0_ |= 0x00000002;
+        type_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.shared.v1.AttachmentErrorType type = 2 [json_name = "type"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:shared.v1.AttachmentError)
+    }
+
+    // @@protoc_insertion_point(class_scope:shared.v1.AttachmentError)
+    private static final org.megacommerce.shared.v1.AttachmentProto.AttachmentError DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.shared.v1.AttachmentProto.AttachmentError();
+    }
+
+    public static org.megacommerce.shared.v1.AttachmentProto.AttachmentError getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AttachmentError>
+        PARSER = new com.google.protobuf.AbstractParser<AttachmentError>() {
+      @java.lang.Override
+      public AttachmentError parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<AttachmentError> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AttachmentError> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.shared.v1.AttachmentProto.AttachmentError getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_shared_v1_Attachment_descriptor;
   private static final 
@@ -2483,6 +3294,11 @@ public final class AttachmentProto {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_shared_v1_Crop_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_shared_v1_AttachmentError_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_shared_v1_AttachmentError_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2504,10 +3320,20 @@ public final class AttachmentProto {
       "R\010metadata\"s\n\004Crop\022\014\n\001x\030\001 \001(\002R\001x\022\014\n\001y\030\002 " +
       "\001(\002R\001y\022\024\n\005width\030\003 \001(\002R\005width\022\026\n\006height\030\004" +
       " \001(\002R\006height\022!\n\014aspect_ratio\030\005 \001(\002R\013aspe" +
-      "ctRatioBu\n\032org.megacommerce.shared.v1B\017A" +
-      "ttachmentProtoZCgithub.com/ahmad-khatib0" +
-      "-org/megacommerce-proto/gen/go/shared/v1" +
-      ";v1\370\001\001b\006proto3"
+      "ctRatio\"U\n\017AttachmentError\022\016\n\002id\030\001 \001(\tR\002" +
+      "id\0222\n\004type\030\002 \001(\0162\036.shared.v1.AttachmentE" +
+      "rrorTypeR\004type*\274\002\n\023AttachmentErrorType\022%" +
+      "\n!ATTACHMENT_ERROR_TYPE_UNSPECIFIED\020\000\022(\n" +
+      "$ATTACHMENT_ERROR_TYPE_INVALID_BASE64\020\001\022" +
+      "+\n\'ATTACHMENT_ERROR_TYPE_INVALID_FILE_TY" +
+      "PE\020\002\022\"\n\036ATTACHMENT_ERROR_TYPE_BIG_FILE\020\003" +
+      "\022$\n ATTACHMENT_ERROR_TYPE_DECODE_IMG\020\004\022," +
+      "\n(ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_I" +
+      "MG\020\005\022/\n+ATTACHMENT_ERROR_TYPE_UNSUPPORTE" +
+      "D_FILE_TYPE\020\006Bu\n\032org.megacommerce.shared" +
+      ".v1B\017AttachmentProtoZCgithub.com/ahmad-k" +
+      "hatib0-org/megacommerce-proto/gen/go/sha" +
+      "red/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -2526,6 +3352,12 @@ public final class AttachmentProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_Crop_descriptor,
         new java.lang.String[] { "X", "Y", "Width", "Height", "AspectRatio", });
+    internal_static_shared_v1_AttachmentError_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_shared_v1_AttachmentError_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_shared_v1_AttachmentError_descriptor,
+        new java.lang.String[] { "Id", "Type", });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.shared.v1.StructProto.getDescriptor();
   }

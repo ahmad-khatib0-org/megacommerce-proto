@@ -10,6 +10,69 @@ import { Struct } from "./struct.js";
 
 export const protobufPackage = "shared.v1";
 
+export enum AttachmentErrorType {
+  ATTACHMENT_ERROR_TYPE_UNSPECIFIED = 0,
+  ATTACHMENT_ERROR_TYPE_INVALID_BASE64 = 1,
+  ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE = 2,
+  ATTACHMENT_ERROR_TYPE_BIG_FILE = 3,
+  ATTACHMENT_ERROR_TYPE_DECODE_IMG = 4,
+  ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG = 5,
+  ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE = 6,
+  UNRECOGNIZED = -1,
+}
+
+export function attachmentErrorTypeFromJSON(object: any): AttachmentErrorType {
+  switch (object) {
+    case 0:
+    case "ATTACHMENT_ERROR_TYPE_UNSPECIFIED":
+      return AttachmentErrorType.ATTACHMENT_ERROR_TYPE_UNSPECIFIED;
+    case 1:
+    case "ATTACHMENT_ERROR_TYPE_INVALID_BASE64":
+      return AttachmentErrorType.ATTACHMENT_ERROR_TYPE_INVALID_BASE64;
+    case 2:
+    case "ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE":
+      return AttachmentErrorType.ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE;
+    case 3:
+    case "ATTACHMENT_ERROR_TYPE_BIG_FILE":
+      return AttachmentErrorType.ATTACHMENT_ERROR_TYPE_BIG_FILE;
+    case 4:
+    case "ATTACHMENT_ERROR_TYPE_DECODE_IMG":
+      return AttachmentErrorType.ATTACHMENT_ERROR_TYPE_DECODE_IMG;
+    case 5:
+    case "ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG":
+      return AttachmentErrorType.ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG;
+    case 6:
+    case "ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE":
+      return AttachmentErrorType.ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE;
+    case -1:
+    case "UNRECOGNIZED":
+    default:
+      return AttachmentErrorType.UNRECOGNIZED;
+  }
+}
+
+export function attachmentErrorTypeToJSON(object: AttachmentErrorType): string {
+  switch (object) {
+    case AttachmentErrorType.ATTACHMENT_ERROR_TYPE_UNSPECIFIED:
+      return "ATTACHMENT_ERROR_TYPE_UNSPECIFIED";
+    case AttachmentErrorType.ATTACHMENT_ERROR_TYPE_INVALID_BASE64:
+      return "ATTACHMENT_ERROR_TYPE_INVALID_BASE64";
+    case AttachmentErrorType.ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE:
+      return "ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE";
+    case AttachmentErrorType.ATTACHMENT_ERROR_TYPE_BIG_FILE:
+      return "ATTACHMENT_ERROR_TYPE_BIG_FILE";
+    case AttachmentErrorType.ATTACHMENT_ERROR_TYPE_DECODE_IMG:
+      return "ATTACHMENT_ERROR_TYPE_DECODE_IMG";
+    case AttachmentErrorType.ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG:
+      return "ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG";
+    case AttachmentErrorType.ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE:
+      return "ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE";
+    case AttachmentErrorType.UNRECOGNIZED:
+    default:
+      return "UNRECOGNIZED";
+  }
+}
+
 export interface Attachment {
   id: string;
   filename: string;
@@ -31,6 +94,12 @@ export interface Crop {
   width: number;
   height: number;
   aspectRatio: number;
+}
+
+export interface AttachmentError {
+  /** the attachment id */
+  id: string;
+  type: AttachmentErrorType;
 }
 
 function createBaseAttachment(): Attachment {
@@ -353,6 +422,82 @@ export const Crop: MessageFns<Crop> = {
     message.width = object.width ?? 0;
     message.height = object.height ?? 0;
     message.aspectRatio = object.aspectRatio ?? 0;
+    return message;
+  },
+};
+
+function createBaseAttachmentError(): AttachmentError {
+  return { id: "", type: 0 };
+}
+
+export const AttachmentError: MessageFns<AttachmentError> = {
+  encode(message: AttachmentError, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.id !== "") {
+      writer.uint32(10).string(message.id);
+    }
+    if (message.type !== 0) {
+      writer.uint32(16).int32(message.type);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): AttachmentError {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseAttachmentError();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.id = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 16) {
+            break;
+          }
+
+          message.type = reader.int32() as any;
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): AttachmentError {
+    return {
+      id: isSet(object.id) ? globalThis.String(object.id) : "",
+      type: isSet(object.type) ? attachmentErrorTypeFromJSON(object.type) : 0,
+    };
+  },
+
+  toJSON(message: AttachmentError): unknown {
+    const obj: any = {};
+    if (message.id !== "") {
+      obj.id = message.id;
+    }
+    if (message.type !== 0) {
+      obj.type = attachmentErrorTypeToJSON(message.type);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<AttachmentError>, I>>(base?: I): AttachmentError {
+    return AttachmentError.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<AttachmentError>, I>>(object: I): AttachmentError {
+    const message = createBaseAttachmentError();
+    message.id = object.id ?? "";
+    message.type = object.type ?? 0;
     return message;
   },
 };
