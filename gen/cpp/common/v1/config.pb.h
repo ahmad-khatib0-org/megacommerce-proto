@@ -6039,34 +6039,27 @@ class ConfigFile final : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
   enum : int {
-    kDriverNameFieldNumber = 7,
-    kDirectoryFieldNumber = 8,
-    kPublicLinkSaltFieldNumber = 12,
-    kInitialFontFieldNumber = 13,
-    kAmazonS3AccessKeyIdFieldNumber = 14,
-    kAmazonS3SecretAccessKeyFieldNumber = 15,
-    kAmazonS3BucketFieldNumber = 16,
-    kAmazonS3PathPrefixFieldNumber = 17,
-    kAmazonS3RegionFieldNumber = 18,
-    kAmazonS3EndpointFieldNumber = 19,
-    kAmazonS3StorageClassFieldNumber = 26,
-    kMaxFileSizeFieldNumber = 4,
-    kMaxImageResolutionFieldNumber = 5,
-    kMaxImageDecoderConcurrencyFieldNumber = 6,
+    kDriverNameFieldNumber = 6,
+    kAmazonS3AccessKeyIdFieldNumber = 7,
+    kAmazonS3SecretAccessKeyFieldNumber = 8,
+    kAmazonS3BucketFieldNumber = 9,
+    kAmazonS3PathPrefixFieldNumber = 10,
+    kAmazonS3RegionFieldNumber = 11,
+    kAmazonS3EndpointFieldNumber = 12,
+    kAmazonS3StorageClassFieldNumber = 19,
+    kMaxImageResolutionFieldNumber = 4,
+    kMaxImageDecoderConcurrencyFieldNumber = 5,
     kEnableFileAttachmentsFieldNumber = 1,
     kEnableMobileUploadFieldNumber = 2,
     kEnableMobileDownloadFieldNumber = 3,
-    kEnablePublicLinkFieldNumber = 9,
-    kExtractContentFieldNumber = 10,
-    kArchiveRecursionFieldNumber = 11,
-    kAmazonS3SslFieldNumber = 20,
-    kAmazonS3SignV2FieldNumber = 21,
-    kAmazonS3RequestTimeoutMillisecondsFieldNumber = 24,
-    kAmazonS3UploadPartSizeBytesFieldNumber = 25,
-    kAmazonS3SseFieldNumber = 22,
-    kAmazonS3TraceFieldNumber = 23,
+    kAmazonS3SslFieldNumber = 13,
+    kAmazonS3SignV2FieldNumber = 14,
+    kAmazonS3SseFieldNumber = 15,
+    kAmazonS3TraceFieldNumber = 16,
+    kAmazonS3RequestTimeoutMillisecondsFieldNumber = 17,
+    kAmazonS3UploadPartSizeBytesFieldNumber = 18,
   };
-  // optional string driver_name = 7 [json_name = "driverName"];
+  // optional string driver_name = 6 [json_name = "driverName"];
   bool has_driver_name() const;
   void clear_driver_name() ;
   const ::std::string& driver_name() const;
@@ -6082,55 +6075,7 @@ class ConfigFile final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_driver_name();
 
   public:
-  // optional string directory = 8 [json_name = "directory"];
-  bool has_directory() const;
-  void clear_directory() ;
-  const ::std::string& directory() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_directory(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_directory();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_directory();
-  void set_allocated_directory(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_directory() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_directory(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_directory();
-
-  public:
-  // optional string public_link_salt = 12 [json_name = "publicLinkSalt"];
-  bool has_public_link_salt() const;
-  void clear_public_link_salt() ;
-  const ::std::string& public_link_salt() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_public_link_salt(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_public_link_salt();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_public_link_salt();
-  void set_allocated_public_link_salt(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_public_link_salt() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_public_link_salt(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_public_link_salt();
-
-  public:
-  // optional string initial_font = 13 [json_name = "initialFont"];
-  bool has_initial_font() const;
-  void clear_initial_font() ;
-  const ::std::string& initial_font() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_initial_font(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_initial_font();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_initial_font();
-  void set_allocated_initial_font(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_initial_font() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_initial_font(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_initial_font();
-
-  public:
-  // optional string amazon_s3_access_key_id = 14 [json_name = "amazonS3AccessKeyId"];
+  // optional string amazon_s3_access_key_id = 7 [json_name = "amazonS3AccessKeyId"];
   bool has_amazon_s3_access_key_id() const;
   void clear_amazon_s3_access_key_id() ;
   const ::std::string& amazon_s3_access_key_id() const;
@@ -6146,7 +6091,7 @@ class ConfigFile final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_amazon_s3_access_key_id();
 
   public:
-  // optional string amazon_s3_secret_access_key = 15 [json_name = "amazonS3SecretAccessKey"];
+  // optional string amazon_s3_secret_access_key = 8 [json_name = "amazonS3SecretAccessKey"];
   bool has_amazon_s3_secret_access_key() const;
   void clear_amazon_s3_secret_access_key() ;
   const ::std::string& amazon_s3_secret_access_key() const;
@@ -6162,7 +6107,7 @@ class ConfigFile final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_amazon_s3_secret_access_key();
 
   public:
-  // optional string amazon_s3_bucket = 16 [json_name = "amazonS3Bucket"];
+  // optional string amazon_s3_bucket = 9 [json_name = "amazonS3Bucket"];
   bool has_amazon_s3_bucket() const;
   void clear_amazon_s3_bucket() ;
   const ::std::string& amazon_s3_bucket() const;
@@ -6178,7 +6123,7 @@ class ConfigFile final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_amazon_s3_bucket();
 
   public:
-  // optional string amazon_s3_path_prefix = 17 [json_name = "amazonS3PathPrefix"];
+  // optional string amazon_s3_path_prefix = 10 [json_name = "amazonS3PathPrefix"];
   bool has_amazon_s3_path_prefix() const;
   void clear_amazon_s3_path_prefix() ;
   const ::std::string& amazon_s3_path_prefix() const;
@@ -6194,7 +6139,7 @@ class ConfigFile final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_amazon_s3_path_prefix();
 
   public:
-  // optional string amazon_s3_region = 18 [json_name = "amazonS3Region"];
+  // optional string amazon_s3_region = 11 [json_name = "amazonS3Region"];
   bool has_amazon_s3_region() const;
   void clear_amazon_s3_region() ;
   const ::std::string& amazon_s3_region() const;
@@ -6210,7 +6155,7 @@ class ConfigFile final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_amazon_s3_region();
 
   public:
-  // optional string amazon_s3_endpoint = 19 [json_name = "amazonS3Endpoint"];
+  // optional string amazon_s3_endpoint = 12 [json_name = "amazonS3Endpoint"];
   bool has_amazon_s3_endpoint() const;
   void clear_amazon_s3_endpoint() ;
   const ::std::string& amazon_s3_endpoint() const;
@@ -6226,7 +6171,7 @@ class ConfigFile final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_amazon_s3_endpoint();
 
   public:
-  // optional string amazon_s3_storage_class = 26 [json_name = "amazonS3StorageClass"];
+  // optional string amazon_s3_storage_class = 19 [json_name = "amazonS3StorageClass"];
   bool has_amazon_s3_storage_class() const;
   void clear_amazon_s3_storage_class() ;
   const ::std::string& amazon_s3_storage_class() const;
@@ -6242,18 +6187,7 @@ class ConfigFile final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_amazon_s3_storage_class();
 
   public:
-  // optional int64 max_file_size = 4 [json_name = "maxFileSize"];
-  bool has_max_file_size() const;
-  void clear_max_file_size() ;
-  ::int64_t max_file_size() const;
-  void set_max_file_size(::int64_t value);
-
-  private:
-  ::int64_t _internal_max_file_size() const;
-  void _internal_set_max_file_size(::int64_t value);
-
-  public:
-  // optional int64 max_image_resolution = 5 [json_name = "maxImageResolution"];
+  // optional int64 max_image_resolution = 4 [json_name = "maxImageResolution"];
   bool has_max_image_resolution() const;
   void clear_max_image_resolution() ;
   ::int64_t max_image_resolution() const;
@@ -6264,7 +6198,7 @@ class ConfigFile final : public ::google::protobuf::Message
   void _internal_set_max_image_resolution(::int64_t value);
 
   public:
-  // optional int64 max_image_decoder_concurrency = 6 [json_name = "maxImageDecoderConcurrency"];
+  // optional int64 max_image_decoder_concurrency = 5 [json_name = "maxImageDecoderConcurrency"];
   bool has_max_image_decoder_concurrency() const;
   void clear_max_image_decoder_concurrency() ;
   ::int64_t max_image_decoder_concurrency() const;
@@ -6308,40 +6242,7 @@ class ConfigFile final : public ::google::protobuf::Message
   void _internal_set_enable_mobile_download(bool value);
 
   public:
-  // optional bool enable_public_link = 9 [json_name = "enablePublicLink"];
-  bool has_enable_public_link() const;
-  void clear_enable_public_link() ;
-  bool enable_public_link() const;
-  void set_enable_public_link(bool value);
-
-  private:
-  bool _internal_enable_public_link() const;
-  void _internal_set_enable_public_link(bool value);
-
-  public:
-  // optional bool extract_content = 10 [json_name = "extractContent"];
-  bool has_extract_content() const;
-  void clear_extract_content() ;
-  bool extract_content() const;
-  void set_extract_content(bool value);
-
-  private:
-  bool _internal_extract_content() const;
-  void _internal_set_extract_content(bool value);
-
-  public:
-  // optional bool archive_recursion = 11 [json_name = "archiveRecursion"];
-  bool has_archive_recursion() const;
-  void clear_archive_recursion() ;
-  bool archive_recursion() const;
-  void set_archive_recursion(bool value);
-
-  private:
-  bool _internal_archive_recursion() const;
-  void _internal_set_archive_recursion(bool value);
-
-  public:
-  // optional bool amazon_s3_ssl = 20 [json_name = "amazonS3Ssl"];
+  // optional bool amazon_s3_ssl = 13 [json_name = "amazonS3Ssl"];
   bool has_amazon_s3_ssl() const;
   void clear_amazon_s3_ssl() ;
   bool amazon_s3_ssl() const;
@@ -6352,7 +6253,7 @@ class ConfigFile final : public ::google::protobuf::Message
   void _internal_set_amazon_s3_ssl(bool value);
 
   public:
-  // optional bool amazon_s3_sign_v2 = 21 [json_name = "amazonS3SignV2"];
+  // optional bool amazon_s3_sign_v2 = 14 [json_name = "amazonS3SignV2"];
   bool has_amazon_s3_sign_v2() const;
   void clear_amazon_s3_sign_v2() ;
   bool amazon_s3_sign_v2() const;
@@ -6363,29 +6264,7 @@ class ConfigFile final : public ::google::protobuf::Message
   void _internal_set_amazon_s3_sign_v2(bool value);
 
   public:
-  // optional int64 amazon_s3_request_timeout_milliseconds = 24 [json_name = "amazonS3RequestTimeoutMilliseconds"];
-  bool has_amazon_s3_request_timeout_milliseconds() const;
-  void clear_amazon_s3_request_timeout_milliseconds() ;
-  ::int64_t amazon_s3_request_timeout_milliseconds() const;
-  void set_amazon_s3_request_timeout_milliseconds(::int64_t value);
-
-  private:
-  ::int64_t _internal_amazon_s3_request_timeout_milliseconds() const;
-  void _internal_set_amazon_s3_request_timeout_milliseconds(::int64_t value);
-
-  public:
-  // optional int64 amazon_s3_upload_part_size_bytes = 25 [json_name = "amazonS3UploadPartSizeBytes"];
-  bool has_amazon_s3_upload_part_size_bytes() const;
-  void clear_amazon_s3_upload_part_size_bytes() ;
-  ::int64_t amazon_s3_upload_part_size_bytes() const;
-  void set_amazon_s3_upload_part_size_bytes(::int64_t value);
-
-  private:
-  ::int64_t _internal_amazon_s3_upload_part_size_bytes() const;
-  void _internal_set_amazon_s3_upload_part_size_bytes(::int64_t value);
-
-  public:
-  // optional bool amazon_s3_sse = 22 [json_name = "amazonS3Sse"];
+  // optional bool amazon_s3_sse = 15 [json_name = "amazonS3Sse"];
   bool has_amazon_s3_sse() const;
   void clear_amazon_s3_sse() ;
   bool amazon_s3_sse() const;
@@ -6396,7 +6275,7 @@ class ConfigFile final : public ::google::protobuf::Message
   void _internal_set_amazon_s3_sse(bool value);
 
   public:
-  // optional bool amazon_s3_trace = 23 [json_name = "amazonS3Trace"];
+  // optional bool amazon_s3_trace = 16 [json_name = "amazonS3Trace"];
   bool has_amazon_s3_trace() const;
   void clear_amazon_s3_trace() ;
   bool amazon_s3_trace() const;
@@ -6407,12 +6286,34 @@ class ConfigFile final : public ::google::protobuf::Message
   void _internal_set_amazon_s3_trace(bool value);
 
   public:
+  // optional int64 amazon_s3_request_timeout_milliseconds = 17 [json_name = "amazonS3RequestTimeoutMilliseconds"];
+  bool has_amazon_s3_request_timeout_milliseconds() const;
+  void clear_amazon_s3_request_timeout_milliseconds() ;
+  ::int64_t amazon_s3_request_timeout_milliseconds() const;
+  void set_amazon_s3_request_timeout_milliseconds(::int64_t value);
+
+  private:
+  ::int64_t _internal_amazon_s3_request_timeout_milliseconds() const;
+  void _internal_set_amazon_s3_request_timeout_milliseconds(::int64_t value);
+
+  public:
+  // optional int64 amazon_s3_upload_part_size_bytes = 18 [json_name = "amazonS3UploadPartSizeBytes"];
+  bool has_amazon_s3_upload_part_size_bytes() const;
+  void clear_amazon_s3_upload_part_size_bytes() ;
+  ::int64_t amazon_s3_upload_part_size_bytes() const;
+  void set_amazon_s3_upload_part_size_bytes(::int64_t value);
+
+  private:
+  ::int64_t _internal_amazon_s3_upload_part_size_bytes() const;
+  void _internal_set_amazon_s3_upload_part_size_bytes(::int64_t value);
+
+  public:
   // @@protoc_insertion_point(class_scope:common.v1.ConfigFile)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<5, 26,
-                                   0, 245,
+  static const ::google::protobuf::internal::TcParseTable<5, 19,
+                                   0, 200,
                                    2>
       _table_;
 
@@ -6434,9 +6335,6 @@ class ConfigFile final : public ::google::protobuf::Message
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::internal::ArenaStringPtr driver_name_;
-    ::google::protobuf::internal::ArenaStringPtr directory_;
-    ::google::protobuf::internal::ArenaStringPtr public_link_salt_;
-    ::google::protobuf::internal::ArenaStringPtr initial_font_;
     ::google::protobuf::internal::ArenaStringPtr amazon_s3_access_key_id_;
     ::google::protobuf::internal::ArenaStringPtr amazon_s3_secret_access_key_;
     ::google::protobuf::internal::ArenaStringPtr amazon_s3_bucket_;
@@ -6444,21 +6342,17 @@ class ConfigFile final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr amazon_s3_region_;
     ::google::protobuf::internal::ArenaStringPtr amazon_s3_endpoint_;
     ::google::protobuf::internal::ArenaStringPtr amazon_s3_storage_class_;
-    ::int64_t max_file_size_;
     ::int64_t max_image_resolution_;
     ::int64_t max_image_decoder_concurrency_;
     bool enable_file_attachments_;
     bool enable_mobile_upload_;
     bool enable_mobile_download_;
-    bool enable_public_link_;
-    bool extract_content_;
-    bool archive_recursion_;
     bool amazon_s3_ssl_;
     bool amazon_s3_sign_v2_;
-    ::int64_t amazon_s3_request_timeout_milliseconds_;
-    ::int64_t amazon_s3_upload_part_size_bytes_;
     bool amazon_s3_sse_;
     bool amazon_s3_trace_;
+    ::int64_t amazon_s3_request_timeout_milliseconds_;
+    ::int64_t amazon_s3_upload_part_size_bytes_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -13599,13 +13493,13 @@ inline void ConfigPassword::_internal_set_enable_forgot_link(bool value) {
 
 // optional bool enable_file_attachments = 1 [json_name = "enableFileAttachments"];
 inline bool ConfigFile::has_enable_file_attachments() const {
-  bool value = (_impl_._has_bits_[0] & 0x00004000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000400u) != 0;
   return value;
 }
 inline void ConfigFile::clear_enable_file_attachments() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.enable_file_attachments_ = false;
-  _impl_._has_bits_[0] &= ~0x00004000u;
+  _impl_._has_bits_[0] &= ~0x00000400u;
 }
 inline bool ConfigFile::enable_file_attachments() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigFile.enable_file_attachments)
@@ -13613,7 +13507,7 @@ inline bool ConfigFile::enable_file_attachments() const {
 }
 inline void ConfigFile::set_enable_file_attachments(bool value) {
   _internal_set_enable_file_attachments(value);
-  _impl_._has_bits_[0] |= 0x00004000u;
+  _impl_._has_bits_[0] |= 0x00000400u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigFile.enable_file_attachments)
 }
 inline bool ConfigFile::_internal_enable_file_attachments() const {
@@ -13627,13 +13521,13 @@ inline void ConfigFile::_internal_set_enable_file_attachments(bool value) {
 
 // optional bool enable_mobile_upload = 2 [json_name = "enableMobileUpload"];
 inline bool ConfigFile::has_enable_mobile_upload() const {
-  bool value = (_impl_._has_bits_[0] & 0x00008000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000800u) != 0;
   return value;
 }
 inline void ConfigFile::clear_enable_mobile_upload() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.enable_mobile_upload_ = false;
-  _impl_._has_bits_[0] &= ~0x00008000u;
+  _impl_._has_bits_[0] &= ~0x00000800u;
 }
 inline bool ConfigFile::enable_mobile_upload() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigFile.enable_mobile_upload)
@@ -13641,7 +13535,7 @@ inline bool ConfigFile::enable_mobile_upload() const {
 }
 inline void ConfigFile::set_enable_mobile_upload(bool value) {
   _internal_set_enable_mobile_upload(value);
-  _impl_._has_bits_[0] |= 0x00008000u;
+  _impl_._has_bits_[0] |= 0x00000800u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigFile.enable_mobile_upload)
 }
 inline bool ConfigFile::_internal_enable_mobile_upload() const {
@@ -13655,13 +13549,13 @@ inline void ConfigFile::_internal_set_enable_mobile_upload(bool value) {
 
 // optional bool enable_mobile_download = 3 [json_name = "enableMobileDownload"];
 inline bool ConfigFile::has_enable_mobile_download() const {
-  bool value = (_impl_._has_bits_[0] & 0x00010000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00001000u) != 0;
   return value;
 }
 inline void ConfigFile::clear_enable_mobile_download() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.enable_mobile_download_ = false;
-  _impl_._has_bits_[0] &= ~0x00010000u;
+  _impl_._has_bits_[0] &= ~0x00001000u;
 }
 inline bool ConfigFile::enable_mobile_download() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigFile.enable_mobile_download)
@@ -13669,7 +13563,7 @@ inline bool ConfigFile::enable_mobile_download() const {
 }
 inline void ConfigFile::set_enable_mobile_download(bool value) {
   _internal_set_enable_mobile_download(value);
-  _impl_._has_bits_[0] |= 0x00010000u;
+  _impl_._has_bits_[0] |= 0x00001000u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigFile.enable_mobile_download)
 }
 inline bool ConfigFile::_internal_enable_mobile_download() const {
@@ -13681,43 +13575,15 @@ inline void ConfigFile::_internal_set_enable_mobile_download(bool value) {
   _impl_.enable_mobile_download_ = value;
 }
 
-// optional int64 max_file_size = 4 [json_name = "maxFileSize"];
-inline bool ConfigFile::has_max_file_size() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000800u) != 0;
-  return value;
-}
-inline void ConfigFile::clear_max_file_size() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.max_file_size_ = ::int64_t{0};
-  _impl_._has_bits_[0] &= ~0x00000800u;
-}
-inline ::int64_t ConfigFile::max_file_size() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigFile.max_file_size)
-  return _internal_max_file_size();
-}
-inline void ConfigFile::set_max_file_size(::int64_t value) {
-  _internal_set_max_file_size(value);
-  _impl_._has_bits_[0] |= 0x00000800u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigFile.max_file_size)
-}
-inline ::int64_t ConfigFile::_internal_max_file_size() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.max_file_size_;
-}
-inline void ConfigFile::_internal_set_max_file_size(::int64_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.max_file_size_ = value;
-}
-
-// optional int64 max_image_resolution = 5 [json_name = "maxImageResolution"];
+// optional int64 max_image_resolution = 4 [json_name = "maxImageResolution"];
 inline bool ConfigFile::has_max_image_resolution() const {
-  bool value = (_impl_._has_bits_[0] & 0x00001000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
   return value;
 }
 inline void ConfigFile::clear_max_image_resolution() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.max_image_resolution_ = ::int64_t{0};
-  _impl_._has_bits_[0] &= ~0x00001000u;
+  _impl_._has_bits_[0] &= ~0x00000100u;
 }
 inline ::int64_t ConfigFile::max_image_resolution() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigFile.max_image_resolution)
@@ -13725,7 +13591,7 @@ inline ::int64_t ConfigFile::max_image_resolution() const {
 }
 inline void ConfigFile::set_max_image_resolution(::int64_t value) {
   _internal_set_max_image_resolution(value);
-  _impl_._has_bits_[0] |= 0x00001000u;
+  _impl_._has_bits_[0] |= 0x00000100u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigFile.max_image_resolution)
 }
 inline ::int64_t ConfigFile::_internal_max_image_resolution() const {
@@ -13737,15 +13603,15 @@ inline void ConfigFile::_internal_set_max_image_resolution(::int64_t value) {
   _impl_.max_image_resolution_ = value;
 }
 
-// optional int64 max_image_decoder_concurrency = 6 [json_name = "maxImageDecoderConcurrency"];
+// optional int64 max_image_decoder_concurrency = 5 [json_name = "maxImageDecoderConcurrency"];
 inline bool ConfigFile::has_max_image_decoder_concurrency() const {
-  bool value = (_impl_._has_bits_[0] & 0x00002000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
   return value;
 }
 inline void ConfigFile::clear_max_image_decoder_concurrency() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.max_image_decoder_concurrency_ = ::int64_t{0};
-  _impl_._has_bits_[0] &= ~0x00002000u;
+  _impl_._has_bits_[0] &= ~0x00000200u;
 }
 inline ::int64_t ConfigFile::max_image_decoder_concurrency() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigFile.max_image_decoder_concurrency)
@@ -13753,7 +13619,7 @@ inline ::int64_t ConfigFile::max_image_decoder_concurrency() const {
 }
 inline void ConfigFile::set_max_image_decoder_concurrency(::int64_t value) {
   _internal_set_max_image_decoder_concurrency(value);
-  _impl_._has_bits_[0] |= 0x00002000u;
+  _impl_._has_bits_[0] |= 0x00000200u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigFile.max_image_decoder_concurrency)
 }
 inline ::int64_t ConfigFile::_internal_max_image_decoder_concurrency() const {
@@ -13765,7 +13631,7 @@ inline void ConfigFile::_internal_set_max_image_decoder_concurrency(::int64_t va
   _impl_.max_image_decoder_concurrency_ = value;
 }
 
-// optional string driver_name = 7 [json_name = "driverName"];
+// optional string driver_name = 6 [json_name = "driverName"];
 inline bool ConfigFile::has_driver_name() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   return value;
@@ -13834,306 +13700,15 @@ inline void ConfigFile::set_allocated_driver_name(::std::string* PROTOBUF_NULLAB
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigFile.driver_name)
 }
 
-// optional string directory = 8 [json_name = "directory"];
-inline bool ConfigFile::has_directory() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
-  return value;
-}
-inline void ConfigFile::clear_directory() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.directory_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000002u;
-}
-inline const ::std::string& ConfigFile::directory() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigFile.directory)
-  return _internal_directory();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void ConfigFile::set_directory(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.directory_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:common.v1.ConfigFile.directory)
-}
-inline ::std::string* PROTOBUF_NONNULL ConfigFile::mutable_directory()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_directory();
-  // @@protoc_insertion_point(field_mutable:common.v1.ConfigFile.directory)
-  return _s;
-}
-inline const ::std::string& ConfigFile::_internal_directory() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.directory_.Get();
-}
-inline void ConfigFile::_internal_set_directory(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.directory_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL ConfigFile::_internal_mutable_directory() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
-  return _impl_.directory_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE ConfigFile::release_directory() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:common.v1.ConfigFile.directory)
-  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000002u;
-  auto* released = _impl_.directory_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.directory_.Set("", GetArena());
-  }
-  return released;
-}
-inline void ConfigFile::set_allocated_directory(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000002u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000002u;
-  }
-  _impl_.directory_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.directory_.IsDefault()) {
-    _impl_.directory_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigFile.directory)
-}
-
-// optional bool enable_public_link = 9 [json_name = "enablePublicLink"];
-inline bool ConfigFile::has_enable_public_link() const {
-  bool value = (_impl_._has_bits_[0] & 0x00020000u) != 0;
-  return value;
-}
-inline void ConfigFile::clear_enable_public_link() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.enable_public_link_ = false;
-  _impl_._has_bits_[0] &= ~0x00020000u;
-}
-inline bool ConfigFile::enable_public_link() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigFile.enable_public_link)
-  return _internal_enable_public_link();
-}
-inline void ConfigFile::set_enable_public_link(bool value) {
-  _internal_set_enable_public_link(value);
-  _impl_._has_bits_[0] |= 0x00020000u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigFile.enable_public_link)
-}
-inline bool ConfigFile::_internal_enable_public_link() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.enable_public_link_;
-}
-inline void ConfigFile::_internal_set_enable_public_link(bool value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.enable_public_link_ = value;
-}
-
-// optional bool extract_content = 10 [json_name = "extractContent"];
-inline bool ConfigFile::has_extract_content() const {
-  bool value = (_impl_._has_bits_[0] & 0x00040000u) != 0;
-  return value;
-}
-inline void ConfigFile::clear_extract_content() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.extract_content_ = false;
-  _impl_._has_bits_[0] &= ~0x00040000u;
-}
-inline bool ConfigFile::extract_content() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigFile.extract_content)
-  return _internal_extract_content();
-}
-inline void ConfigFile::set_extract_content(bool value) {
-  _internal_set_extract_content(value);
-  _impl_._has_bits_[0] |= 0x00040000u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigFile.extract_content)
-}
-inline bool ConfigFile::_internal_extract_content() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.extract_content_;
-}
-inline void ConfigFile::_internal_set_extract_content(bool value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.extract_content_ = value;
-}
-
-// optional bool archive_recursion = 11 [json_name = "archiveRecursion"];
-inline bool ConfigFile::has_archive_recursion() const {
-  bool value = (_impl_._has_bits_[0] & 0x00080000u) != 0;
-  return value;
-}
-inline void ConfigFile::clear_archive_recursion() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.archive_recursion_ = false;
-  _impl_._has_bits_[0] &= ~0x00080000u;
-}
-inline bool ConfigFile::archive_recursion() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigFile.archive_recursion)
-  return _internal_archive_recursion();
-}
-inline void ConfigFile::set_archive_recursion(bool value) {
-  _internal_set_archive_recursion(value);
-  _impl_._has_bits_[0] |= 0x00080000u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigFile.archive_recursion)
-}
-inline bool ConfigFile::_internal_archive_recursion() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.archive_recursion_;
-}
-inline void ConfigFile::_internal_set_archive_recursion(bool value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.archive_recursion_ = value;
-}
-
-// optional string public_link_salt = 12 [json_name = "publicLinkSalt"];
-inline bool ConfigFile::has_public_link_salt() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
-  return value;
-}
-inline void ConfigFile::clear_public_link_salt() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.public_link_salt_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000004u;
-}
-inline const ::std::string& ConfigFile::public_link_salt() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigFile.public_link_salt)
-  return _internal_public_link_salt();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void ConfigFile::set_public_link_salt(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
-  _impl_.public_link_salt_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:common.v1.ConfigFile.public_link_salt)
-}
-inline ::std::string* PROTOBUF_NONNULL ConfigFile::mutable_public_link_salt()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_public_link_salt();
-  // @@protoc_insertion_point(field_mutable:common.v1.ConfigFile.public_link_salt)
-  return _s;
-}
-inline const ::std::string& ConfigFile::_internal_public_link_salt() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.public_link_salt_.Get();
-}
-inline void ConfigFile::_internal_set_public_link_salt(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
-  _impl_.public_link_salt_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL ConfigFile::_internal_mutable_public_link_salt() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
-  return _impl_.public_link_salt_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE ConfigFile::release_public_link_salt() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:common.v1.ConfigFile.public_link_salt)
-  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000004u;
-  auto* released = _impl_.public_link_salt_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.public_link_salt_.Set("", GetArena());
-  }
-  return released;
-}
-inline void ConfigFile::set_allocated_public_link_salt(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000004u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000004u;
-  }
-  _impl_.public_link_salt_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.public_link_salt_.IsDefault()) {
-    _impl_.public_link_salt_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigFile.public_link_salt)
-}
-
-// optional string initial_font = 13 [json_name = "initialFont"];
-inline bool ConfigFile::has_initial_font() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
-  return value;
-}
-inline void ConfigFile::clear_initial_font() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.initial_font_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000008u;
-}
-inline const ::std::string& ConfigFile::initial_font() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigFile.initial_font)
-  return _internal_initial_font();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void ConfigFile::set_initial_font(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000008u;
-  _impl_.initial_font_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:common.v1.ConfigFile.initial_font)
-}
-inline ::std::string* PROTOBUF_NONNULL ConfigFile::mutable_initial_font()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_initial_font();
-  // @@protoc_insertion_point(field_mutable:common.v1.ConfigFile.initial_font)
-  return _s;
-}
-inline const ::std::string& ConfigFile::_internal_initial_font() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.initial_font_.Get();
-}
-inline void ConfigFile::_internal_set_initial_font(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000008u;
-  _impl_.initial_font_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL ConfigFile::_internal_mutable_initial_font() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000008u;
-  return _impl_.initial_font_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE ConfigFile::release_initial_font() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:common.v1.ConfigFile.initial_font)
-  if ((_impl_._has_bits_[0] & 0x00000008u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000008u;
-  auto* released = _impl_.initial_font_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.initial_font_.Set("", GetArena());
-  }
-  return released;
-}
-inline void ConfigFile::set_allocated_initial_font(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000008u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000008u;
-  }
-  _impl_.initial_font_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.initial_font_.IsDefault()) {
-    _impl_.initial_font_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigFile.initial_font)
-}
-
-// optional string amazon_s3_access_key_id = 14 [json_name = "amazonS3AccessKeyId"];
+// optional string amazon_s3_access_key_id = 7 [json_name = "amazonS3AccessKeyId"];
 inline bool ConfigFile::has_amazon_s3_access_key_id() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
 }
 inline void ConfigFile::clear_amazon_s3_access_key_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.amazon_s3_access_key_id_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000010u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 inline const ::std::string& ConfigFile::amazon_s3_access_key_id() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -14143,7 +13718,7 @@ inline const ::std::string& ConfigFile::amazon_s3_access_key_id() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void ConfigFile::set_amazon_s3_access_key_id(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.amazon_s3_access_key_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:common.v1.ConfigFile.amazon_s3_access_key_id)
 }
@@ -14159,21 +13734,21 @@ inline const ::std::string& ConfigFile::_internal_amazon_s3_access_key_id() cons
 }
 inline void ConfigFile::_internal_set_amazon_s3_access_key_id(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.amazon_s3_access_key_id_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL ConfigFile::_internal_mutable_amazon_s3_access_key_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   return _impl_.amazon_s3_access_key_id_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE ConfigFile::release_amazon_s3_access_key_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:common.v1.ConfigFile.amazon_s3_access_key_id)
-  if ((_impl_._has_bits_[0] & 0x00000010u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000010u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
   auto* released = _impl_.amazon_s3_access_key_id_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.amazon_s3_access_key_id_.Set("", GetArena());
@@ -14183,9 +13758,9 @@ inline ::std::string* PROTOBUF_NULLABLE ConfigFile::release_amazon_s3_access_key
 inline void ConfigFile::set_allocated_amazon_s3_access_key_id(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000010u;
+    _impl_._has_bits_[0] |= 0x00000002u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000010u;
+    _impl_._has_bits_[0] &= ~0x00000002u;
   }
   _impl_.amazon_s3_access_key_id_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.amazon_s3_access_key_id_.IsDefault()) {
@@ -14194,15 +13769,15 @@ inline void ConfigFile::set_allocated_amazon_s3_access_key_id(::std::string* PRO
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigFile.amazon_s3_access_key_id)
 }
 
-// optional string amazon_s3_secret_access_key = 15 [json_name = "amazonS3SecretAccessKey"];
+// optional string amazon_s3_secret_access_key = 8 [json_name = "amazonS3SecretAccessKey"];
 inline bool ConfigFile::has_amazon_s3_secret_access_key() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
 inline void ConfigFile::clear_amazon_s3_secret_access_key() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.amazon_s3_secret_access_key_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000020u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline const ::std::string& ConfigFile::amazon_s3_secret_access_key() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -14212,7 +13787,7 @@ inline const ::std::string& ConfigFile::amazon_s3_secret_access_key() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void ConfigFile::set_amazon_s3_secret_access_key(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.amazon_s3_secret_access_key_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:common.v1.ConfigFile.amazon_s3_secret_access_key)
 }
@@ -14228,21 +13803,21 @@ inline const ::std::string& ConfigFile::_internal_amazon_s3_secret_access_key() 
 }
 inline void ConfigFile::_internal_set_amazon_s3_secret_access_key(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.amazon_s3_secret_access_key_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL ConfigFile::_internal_mutable_amazon_s3_secret_access_key() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   return _impl_.amazon_s3_secret_access_key_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE ConfigFile::release_amazon_s3_secret_access_key() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:common.v1.ConfigFile.amazon_s3_secret_access_key)
-  if ((_impl_._has_bits_[0] & 0x00000020u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000020u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
   auto* released = _impl_.amazon_s3_secret_access_key_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.amazon_s3_secret_access_key_.Set("", GetArena());
@@ -14252,9 +13827,9 @@ inline ::std::string* PROTOBUF_NULLABLE ConfigFile::release_amazon_s3_secret_acc
 inline void ConfigFile::set_allocated_amazon_s3_secret_access_key(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000020u;
+    _impl_._has_bits_[0] |= 0x00000004u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000020u;
+    _impl_._has_bits_[0] &= ~0x00000004u;
   }
   _impl_.amazon_s3_secret_access_key_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.amazon_s3_secret_access_key_.IsDefault()) {
@@ -14263,15 +13838,15 @@ inline void ConfigFile::set_allocated_amazon_s3_secret_access_key(::std::string*
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigFile.amazon_s3_secret_access_key)
 }
 
-// optional string amazon_s3_bucket = 16 [json_name = "amazonS3Bucket"];
+// optional string amazon_s3_bucket = 9 [json_name = "amazonS3Bucket"];
 inline bool ConfigFile::has_amazon_s3_bucket() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
 inline void ConfigFile::clear_amazon_s3_bucket() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.amazon_s3_bucket_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000040u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
 }
 inline const ::std::string& ConfigFile::amazon_s3_bucket() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -14281,7 +13856,7 @@ inline const ::std::string& ConfigFile::amazon_s3_bucket() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void ConfigFile::set_amazon_s3_bucket(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.amazon_s3_bucket_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:common.v1.ConfigFile.amazon_s3_bucket)
 }
@@ -14297,21 +13872,21 @@ inline const ::std::string& ConfigFile::_internal_amazon_s3_bucket() const {
 }
 inline void ConfigFile::_internal_set_amazon_s3_bucket(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.amazon_s3_bucket_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL ConfigFile::_internal_mutable_amazon_s3_bucket() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_._has_bits_[0] |= 0x00000008u;
   return _impl_.amazon_s3_bucket_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE ConfigFile::release_amazon_s3_bucket() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:common.v1.ConfigFile.amazon_s3_bucket)
-  if ((_impl_._has_bits_[0] & 0x00000040u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000008u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000040u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
   auto* released = _impl_.amazon_s3_bucket_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.amazon_s3_bucket_.Set("", GetArena());
@@ -14321,9 +13896,9 @@ inline ::std::string* PROTOBUF_NULLABLE ConfigFile::release_amazon_s3_bucket() {
 inline void ConfigFile::set_allocated_amazon_s3_bucket(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000040u;
+    _impl_._has_bits_[0] |= 0x00000008u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000040u;
+    _impl_._has_bits_[0] &= ~0x00000008u;
   }
   _impl_.amazon_s3_bucket_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.amazon_s3_bucket_.IsDefault()) {
@@ -14332,15 +13907,15 @@ inline void ConfigFile::set_allocated_amazon_s3_bucket(::std::string* PROTOBUF_N
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigFile.amazon_s3_bucket)
 }
 
-// optional string amazon_s3_path_prefix = 17 [json_name = "amazonS3PathPrefix"];
+// optional string amazon_s3_path_prefix = 10 [json_name = "amazonS3PathPrefix"];
 inline bool ConfigFile::has_amazon_s3_path_prefix() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
   return value;
 }
 inline void ConfigFile::clear_amazon_s3_path_prefix() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.amazon_s3_path_prefix_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000080u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
 }
 inline const ::std::string& ConfigFile::amazon_s3_path_prefix() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -14350,7 +13925,7 @@ inline const ::std::string& ConfigFile::amazon_s3_path_prefix() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void ConfigFile::set_amazon_s3_path_prefix(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_._has_bits_[0] |= 0x00000010u;
   _impl_.amazon_s3_path_prefix_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:common.v1.ConfigFile.amazon_s3_path_prefix)
 }
@@ -14366,21 +13941,21 @@ inline const ::std::string& ConfigFile::_internal_amazon_s3_path_prefix() const 
 }
 inline void ConfigFile::_internal_set_amazon_s3_path_prefix(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_._has_bits_[0] |= 0x00000010u;
   _impl_.amazon_s3_path_prefix_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL ConfigFile::_internal_mutable_amazon_s3_path_prefix() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_._has_bits_[0] |= 0x00000010u;
   return _impl_.amazon_s3_path_prefix_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE ConfigFile::release_amazon_s3_path_prefix() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:common.v1.ConfigFile.amazon_s3_path_prefix)
-  if ((_impl_._has_bits_[0] & 0x00000080u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000010u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000080u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
   auto* released = _impl_.amazon_s3_path_prefix_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.amazon_s3_path_prefix_.Set("", GetArena());
@@ -14390,9 +13965,9 @@ inline ::std::string* PROTOBUF_NULLABLE ConfigFile::release_amazon_s3_path_prefi
 inline void ConfigFile::set_allocated_amazon_s3_path_prefix(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000080u;
+    _impl_._has_bits_[0] |= 0x00000010u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000080u;
+    _impl_._has_bits_[0] &= ~0x00000010u;
   }
   _impl_.amazon_s3_path_prefix_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.amazon_s3_path_prefix_.IsDefault()) {
@@ -14401,15 +13976,15 @@ inline void ConfigFile::set_allocated_amazon_s3_path_prefix(::std::string* PROTO
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigFile.amazon_s3_path_prefix)
 }
 
-// optional string amazon_s3_region = 18 [json_name = "amazonS3Region"];
+// optional string amazon_s3_region = 11 [json_name = "amazonS3Region"];
 inline bool ConfigFile::has_amazon_s3_region() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
 inline void ConfigFile::clear_amazon_s3_region() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.amazon_s3_region_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000100u;
+  _impl_._has_bits_[0] &= ~0x00000020u;
 }
 inline const ::std::string& ConfigFile::amazon_s3_region() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -14419,7 +13994,7 @@ inline const ::std::string& ConfigFile::amazon_s3_region() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void ConfigFile::set_amazon_s3_region(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000100u;
+  _impl_._has_bits_[0] |= 0x00000020u;
   _impl_.amazon_s3_region_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:common.v1.ConfigFile.amazon_s3_region)
 }
@@ -14435,21 +14010,21 @@ inline const ::std::string& ConfigFile::_internal_amazon_s3_region() const {
 }
 inline void ConfigFile::_internal_set_amazon_s3_region(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000100u;
+  _impl_._has_bits_[0] |= 0x00000020u;
   _impl_.amazon_s3_region_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL ConfigFile::_internal_mutable_amazon_s3_region() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000100u;
+  _impl_._has_bits_[0] |= 0x00000020u;
   return _impl_.amazon_s3_region_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE ConfigFile::release_amazon_s3_region() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:common.v1.ConfigFile.amazon_s3_region)
-  if ((_impl_._has_bits_[0] & 0x00000100u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000020u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000100u;
+  _impl_._has_bits_[0] &= ~0x00000020u;
   auto* released = _impl_.amazon_s3_region_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.amazon_s3_region_.Set("", GetArena());
@@ -14459,9 +14034,9 @@ inline ::std::string* PROTOBUF_NULLABLE ConfigFile::release_amazon_s3_region() {
 inline void ConfigFile::set_allocated_amazon_s3_region(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000100u;
+    _impl_._has_bits_[0] |= 0x00000020u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000100u;
+    _impl_._has_bits_[0] &= ~0x00000020u;
   }
   _impl_.amazon_s3_region_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.amazon_s3_region_.IsDefault()) {
@@ -14470,15 +14045,15 @@ inline void ConfigFile::set_allocated_amazon_s3_region(::std::string* PROTOBUF_N
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigFile.amazon_s3_region)
 }
 
-// optional string amazon_s3_endpoint = 19 [json_name = "amazonS3Endpoint"];
+// optional string amazon_s3_endpoint = 12 [json_name = "amazonS3Endpoint"];
 inline bool ConfigFile::has_amazon_s3_endpoint() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
   return value;
 }
 inline void ConfigFile::clear_amazon_s3_endpoint() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.amazon_s3_endpoint_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000200u;
+  _impl_._has_bits_[0] &= ~0x00000040u;
 }
 inline const ::std::string& ConfigFile::amazon_s3_endpoint() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -14488,7 +14063,7 @@ inline const ::std::string& ConfigFile::amazon_s3_endpoint() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void ConfigFile::set_amazon_s3_endpoint(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000200u;
+  _impl_._has_bits_[0] |= 0x00000040u;
   _impl_.amazon_s3_endpoint_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:common.v1.ConfigFile.amazon_s3_endpoint)
 }
@@ -14504,21 +14079,21 @@ inline const ::std::string& ConfigFile::_internal_amazon_s3_endpoint() const {
 }
 inline void ConfigFile::_internal_set_amazon_s3_endpoint(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000200u;
+  _impl_._has_bits_[0] |= 0x00000040u;
   _impl_.amazon_s3_endpoint_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL ConfigFile::_internal_mutable_amazon_s3_endpoint() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000200u;
+  _impl_._has_bits_[0] |= 0x00000040u;
   return _impl_.amazon_s3_endpoint_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE ConfigFile::release_amazon_s3_endpoint() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:common.v1.ConfigFile.amazon_s3_endpoint)
-  if ((_impl_._has_bits_[0] & 0x00000200u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000040u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000200u;
+  _impl_._has_bits_[0] &= ~0x00000040u;
   auto* released = _impl_.amazon_s3_endpoint_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.amazon_s3_endpoint_.Set("", GetArena());
@@ -14528,9 +14103,9 @@ inline ::std::string* PROTOBUF_NULLABLE ConfigFile::release_amazon_s3_endpoint()
 inline void ConfigFile::set_allocated_amazon_s3_endpoint(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000200u;
+    _impl_._has_bits_[0] |= 0x00000040u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000200u;
+    _impl_._has_bits_[0] &= ~0x00000040u;
   }
   _impl_.amazon_s3_endpoint_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.amazon_s3_endpoint_.IsDefault()) {
@@ -14539,15 +14114,15 @@ inline void ConfigFile::set_allocated_amazon_s3_endpoint(::std::string* PROTOBUF
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigFile.amazon_s3_endpoint)
 }
 
-// optional bool amazon_s3_ssl = 20 [json_name = "amazonS3Ssl"];
+// optional bool amazon_s3_ssl = 13 [json_name = "amazonS3Ssl"];
 inline bool ConfigFile::has_amazon_s3_ssl() const {
-  bool value = (_impl_._has_bits_[0] & 0x00100000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00002000u) != 0;
   return value;
 }
 inline void ConfigFile::clear_amazon_s3_ssl() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.amazon_s3_ssl_ = false;
-  _impl_._has_bits_[0] &= ~0x00100000u;
+  _impl_._has_bits_[0] &= ~0x00002000u;
 }
 inline bool ConfigFile::amazon_s3_ssl() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigFile.amazon_s3_ssl)
@@ -14555,7 +14130,7 @@ inline bool ConfigFile::amazon_s3_ssl() const {
 }
 inline void ConfigFile::set_amazon_s3_ssl(bool value) {
   _internal_set_amazon_s3_ssl(value);
-  _impl_._has_bits_[0] |= 0x00100000u;
+  _impl_._has_bits_[0] |= 0x00002000u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigFile.amazon_s3_ssl)
 }
 inline bool ConfigFile::_internal_amazon_s3_ssl() const {
@@ -14567,15 +14142,15 @@ inline void ConfigFile::_internal_set_amazon_s3_ssl(bool value) {
   _impl_.amazon_s3_ssl_ = value;
 }
 
-// optional bool amazon_s3_sign_v2 = 21 [json_name = "amazonS3SignV2"];
+// optional bool amazon_s3_sign_v2 = 14 [json_name = "amazonS3SignV2"];
 inline bool ConfigFile::has_amazon_s3_sign_v2() const {
-  bool value = (_impl_._has_bits_[0] & 0x00200000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00004000u) != 0;
   return value;
 }
 inline void ConfigFile::clear_amazon_s3_sign_v2() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.amazon_s3_sign_v2_ = false;
-  _impl_._has_bits_[0] &= ~0x00200000u;
+  _impl_._has_bits_[0] &= ~0x00004000u;
 }
 inline bool ConfigFile::amazon_s3_sign_v2() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigFile.amazon_s3_sign_v2)
@@ -14583,7 +14158,7 @@ inline bool ConfigFile::amazon_s3_sign_v2() const {
 }
 inline void ConfigFile::set_amazon_s3_sign_v2(bool value) {
   _internal_set_amazon_s3_sign_v2(value);
-  _impl_._has_bits_[0] |= 0x00200000u;
+  _impl_._has_bits_[0] |= 0x00004000u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigFile.amazon_s3_sign_v2)
 }
 inline bool ConfigFile::_internal_amazon_s3_sign_v2() const {
@@ -14595,15 +14170,15 @@ inline void ConfigFile::_internal_set_amazon_s3_sign_v2(bool value) {
   _impl_.amazon_s3_sign_v2_ = value;
 }
 
-// optional bool amazon_s3_sse = 22 [json_name = "amazonS3Sse"];
+// optional bool amazon_s3_sse = 15 [json_name = "amazonS3Sse"];
 inline bool ConfigFile::has_amazon_s3_sse() const {
-  bool value = (_impl_._has_bits_[0] & 0x01000000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00008000u) != 0;
   return value;
 }
 inline void ConfigFile::clear_amazon_s3_sse() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.amazon_s3_sse_ = false;
-  _impl_._has_bits_[0] &= ~0x01000000u;
+  _impl_._has_bits_[0] &= ~0x00008000u;
 }
 inline bool ConfigFile::amazon_s3_sse() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigFile.amazon_s3_sse)
@@ -14611,7 +14186,7 @@ inline bool ConfigFile::amazon_s3_sse() const {
 }
 inline void ConfigFile::set_amazon_s3_sse(bool value) {
   _internal_set_amazon_s3_sse(value);
-  _impl_._has_bits_[0] |= 0x01000000u;
+  _impl_._has_bits_[0] |= 0x00008000u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigFile.amazon_s3_sse)
 }
 inline bool ConfigFile::_internal_amazon_s3_sse() const {
@@ -14623,15 +14198,15 @@ inline void ConfigFile::_internal_set_amazon_s3_sse(bool value) {
   _impl_.amazon_s3_sse_ = value;
 }
 
-// optional bool amazon_s3_trace = 23 [json_name = "amazonS3Trace"];
+// optional bool amazon_s3_trace = 16 [json_name = "amazonS3Trace"];
 inline bool ConfigFile::has_amazon_s3_trace() const {
-  bool value = (_impl_._has_bits_[0] & 0x02000000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00010000u) != 0;
   return value;
 }
 inline void ConfigFile::clear_amazon_s3_trace() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.amazon_s3_trace_ = false;
-  _impl_._has_bits_[0] &= ~0x02000000u;
+  _impl_._has_bits_[0] &= ~0x00010000u;
 }
 inline bool ConfigFile::amazon_s3_trace() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigFile.amazon_s3_trace)
@@ -14639,7 +14214,7 @@ inline bool ConfigFile::amazon_s3_trace() const {
 }
 inline void ConfigFile::set_amazon_s3_trace(bool value) {
   _internal_set_amazon_s3_trace(value);
-  _impl_._has_bits_[0] |= 0x02000000u;
+  _impl_._has_bits_[0] |= 0x00010000u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigFile.amazon_s3_trace)
 }
 inline bool ConfigFile::_internal_amazon_s3_trace() const {
@@ -14651,15 +14226,15 @@ inline void ConfigFile::_internal_set_amazon_s3_trace(bool value) {
   _impl_.amazon_s3_trace_ = value;
 }
 
-// optional int64 amazon_s3_request_timeout_milliseconds = 24 [json_name = "amazonS3RequestTimeoutMilliseconds"];
+// optional int64 amazon_s3_request_timeout_milliseconds = 17 [json_name = "amazonS3RequestTimeoutMilliseconds"];
 inline bool ConfigFile::has_amazon_s3_request_timeout_milliseconds() const {
-  bool value = (_impl_._has_bits_[0] & 0x00400000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00020000u) != 0;
   return value;
 }
 inline void ConfigFile::clear_amazon_s3_request_timeout_milliseconds() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.amazon_s3_request_timeout_milliseconds_ = ::int64_t{0};
-  _impl_._has_bits_[0] &= ~0x00400000u;
+  _impl_._has_bits_[0] &= ~0x00020000u;
 }
 inline ::int64_t ConfigFile::amazon_s3_request_timeout_milliseconds() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigFile.amazon_s3_request_timeout_milliseconds)
@@ -14667,7 +14242,7 @@ inline ::int64_t ConfigFile::amazon_s3_request_timeout_milliseconds() const {
 }
 inline void ConfigFile::set_amazon_s3_request_timeout_milliseconds(::int64_t value) {
   _internal_set_amazon_s3_request_timeout_milliseconds(value);
-  _impl_._has_bits_[0] |= 0x00400000u;
+  _impl_._has_bits_[0] |= 0x00020000u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigFile.amazon_s3_request_timeout_milliseconds)
 }
 inline ::int64_t ConfigFile::_internal_amazon_s3_request_timeout_milliseconds() const {
@@ -14679,15 +14254,15 @@ inline void ConfigFile::_internal_set_amazon_s3_request_timeout_milliseconds(::i
   _impl_.amazon_s3_request_timeout_milliseconds_ = value;
 }
 
-// optional int64 amazon_s3_upload_part_size_bytes = 25 [json_name = "amazonS3UploadPartSizeBytes"];
+// optional int64 amazon_s3_upload_part_size_bytes = 18 [json_name = "amazonS3UploadPartSizeBytes"];
 inline bool ConfigFile::has_amazon_s3_upload_part_size_bytes() const {
-  bool value = (_impl_._has_bits_[0] & 0x00800000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00040000u) != 0;
   return value;
 }
 inline void ConfigFile::clear_amazon_s3_upload_part_size_bytes() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.amazon_s3_upload_part_size_bytes_ = ::int64_t{0};
-  _impl_._has_bits_[0] &= ~0x00800000u;
+  _impl_._has_bits_[0] &= ~0x00040000u;
 }
 inline ::int64_t ConfigFile::amazon_s3_upload_part_size_bytes() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigFile.amazon_s3_upload_part_size_bytes)
@@ -14695,7 +14270,7 @@ inline ::int64_t ConfigFile::amazon_s3_upload_part_size_bytes() const {
 }
 inline void ConfigFile::set_amazon_s3_upload_part_size_bytes(::int64_t value) {
   _internal_set_amazon_s3_upload_part_size_bytes(value);
-  _impl_._has_bits_[0] |= 0x00800000u;
+  _impl_._has_bits_[0] |= 0x00040000u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigFile.amazon_s3_upload_part_size_bytes)
 }
 inline ::int64_t ConfigFile::_internal_amazon_s3_upload_part_size_bytes() const {
@@ -14707,15 +14282,15 @@ inline void ConfigFile::_internal_set_amazon_s3_upload_part_size_bytes(::int64_t
   _impl_.amazon_s3_upload_part_size_bytes_ = value;
 }
 
-// optional string amazon_s3_storage_class = 26 [json_name = "amazonS3StorageClass"];
+// optional string amazon_s3_storage_class = 19 [json_name = "amazonS3StorageClass"];
 inline bool ConfigFile::has_amazon_s3_storage_class() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000400u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
   return value;
 }
 inline void ConfigFile::clear_amazon_s3_storage_class() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.amazon_s3_storage_class_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000400u;
+  _impl_._has_bits_[0] &= ~0x00000080u;
 }
 inline const ::std::string& ConfigFile::amazon_s3_storage_class() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -14725,7 +14300,7 @@ inline const ::std::string& ConfigFile::amazon_s3_storage_class() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void ConfigFile::set_amazon_s3_storage_class(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000400u;
+  _impl_._has_bits_[0] |= 0x00000080u;
   _impl_.amazon_s3_storage_class_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:common.v1.ConfigFile.amazon_s3_storage_class)
 }
@@ -14741,21 +14316,21 @@ inline const ::std::string& ConfigFile::_internal_amazon_s3_storage_class() cons
 }
 inline void ConfigFile::_internal_set_amazon_s3_storage_class(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000400u;
+  _impl_._has_bits_[0] |= 0x00000080u;
   _impl_.amazon_s3_storage_class_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL ConfigFile::_internal_mutable_amazon_s3_storage_class() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000400u;
+  _impl_._has_bits_[0] |= 0x00000080u;
   return _impl_.amazon_s3_storage_class_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE ConfigFile::release_amazon_s3_storage_class() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:common.v1.ConfigFile.amazon_s3_storage_class)
-  if ((_impl_._has_bits_[0] & 0x00000400u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000080u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000400u;
+  _impl_._has_bits_[0] &= ~0x00000080u;
   auto* released = _impl_.amazon_s3_storage_class_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.amazon_s3_storage_class_.Set("", GetArena());
@@ -14765,9 +14340,9 @@ inline ::std::string* PROTOBUF_NULLABLE ConfigFile::release_amazon_s3_storage_cl
 inline void ConfigFile::set_allocated_amazon_s3_storage_class(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000400u;
+    _impl_._has_bits_[0] |= 0x00000080u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000400u;
+    _impl_._has_bits_[0] &= ~0x00000080u;
   }
   _impl_.amazon_s3_storage_class_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.amazon_s3_storage_class_.IsDefault()) {

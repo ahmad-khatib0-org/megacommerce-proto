@@ -130,16 +130,9 @@ export interface ConfigFile {
   enableFileAttachments?: boolean | undefined;
   enableMobileUpload?: boolean | undefined;
   enableMobileDownload?: boolean | undefined;
-  maxFileSize?: string | undefined;
   maxImageResolution?: string | undefined;
   maxImageDecoderConcurrency?: string | undefined;
   driverName?: string | undefined;
-  directory?: string | undefined;
-  enablePublicLink?: boolean | undefined;
-  extractContent?: boolean | undefined;
-  archiveRecursion?: boolean | undefined;
-  publicLinkSalt?: string | undefined;
-  initialFont?: string | undefined;
   amazonS3AccessKeyId?: string | undefined;
   amazonS3SecretAccessKey?: string | undefined;
   amazonS3Bucket?: string | undefined;
@@ -2440,16 +2433,9 @@ function createBaseConfigFile(): ConfigFile {
     enableFileAttachments: undefined,
     enableMobileUpload: undefined,
     enableMobileDownload: undefined,
-    maxFileSize: undefined,
     maxImageResolution: undefined,
     maxImageDecoderConcurrency: undefined,
     driverName: undefined,
-    directory: undefined,
-    enablePublicLink: undefined,
-    extractContent: undefined,
-    archiveRecursion: undefined,
-    publicLinkSalt: undefined,
-    initialFont: undefined,
     amazonS3AccessKeyId: undefined,
     amazonS3SecretAccessKey: undefined,
     amazonS3Bucket: undefined,
@@ -2477,74 +2463,53 @@ export const ConfigFile: MessageFns<ConfigFile> = {
     if (message.enableMobileDownload !== undefined) {
       writer.uint32(24).bool(message.enableMobileDownload);
     }
-    if (message.maxFileSize !== undefined) {
-      writer.uint32(32).int64(message.maxFileSize);
-    }
     if (message.maxImageResolution !== undefined) {
-      writer.uint32(40).int64(message.maxImageResolution);
+      writer.uint32(32).int64(message.maxImageResolution);
     }
     if (message.maxImageDecoderConcurrency !== undefined) {
-      writer.uint32(48).int64(message.maxImageDecoderConcurrency);
+      writer.uint32(40).int64(message.maxImageDecoderConcurrency);
     }
     if (message.driverName !== undefined) {
-      writer.uint32(58).string(message.driverName);
-    }
-    if (message.directory !== undefined) {
-      writer.uint32(66).string(message.directory);
-    }
-    if (message.enablePublicLink !== undefined) {
-      writer.uint32(72).bool(message.enablePublicLink);
-    }
-    if (message.extractContent !== undefined) {
-      writer.uint32(80).bool(message.extractContent);
-    }
-    if (message.archiveRecursion !== undefined) {
-      writer.uint32(88).bool(message.archiveRecursion);
-    }
-    if (message.publicLinkSalt !== undefined) {
-      writer.uint32(98).string(message.publicLinkSalt);
-    }
-    if (message.initialFont !== undefined) {
-      writer.uint32(106).string(message.initialFont);
+      writer.uint32(50).string(message.driverName);
     }
     if (message.amazonS3AccessKeyId !== undefined) {
-      writer.uint32(114).string(message.amazonS3AccessKeyId);
+      writer.uint32(58).string(message.amazonS3AccessKeyId);
     }
     if (message.amazonS3SecretAccessKey !== undefined) {
-      writer.uint32(122).string(message.amazonS3SecretAccessKey);
+      writer.uint32(66).string(message.amazonS3SecretAccessKey);
     }
     if (message.amazonS3Bucket !== undefined) {
-      writer.uint32(130).string(message.amazonS3Bucket);
+      writer.uint32(74).string(message.amazonS3Bucket);
     }
     if (message.amazonS3PathPrefix !== undefined) {
-      writer.uint32(138).string(message.amazonS3PathPrefix);
+      writer.uint32(82).string(message.amazonS3PathPrefix);
     }
     if (message.amazonS3Region !== undefined) {
-      writer.uint32(146).string(message.amazonS3Region);
+      writer.uint32(90).string(message.amazonS3Region);
     }
     if (message.amazonS3Endpoint !== undefined) {
-      writer.uint32(154).string(message.amazonS3Endpoint);
+      writer.uint32(98).string(message.amazonS3Endpoint);
     }
     if (message.amazonS3Ssl !== undefined) {
-      writer.uint32(160).bool(message.amazonS3Ssl);
+      writer.uint32(104).bool(message.amazonS3Ssl);
     }
     if (message.amazonS3SignV2 !== undefined) {
-      writer.uint32(168).bool(message.amazonS3SignV2);
+      writer.uint32(112).bool(message.amazonS3SignV2);
     }
     if (message.amazonS3Sse !== undefined) {
-      writer.uint32(176).bool(message.amazonS3Sse);
+      writer.uint32(120).bool(message.amazonS3Sse);
     }
     if (message.amazonS3Trace !== undefined) {
-      writer.uint32(184).bool(message.amazonS3Trace);
+      writer.uint32(128).bool(message.amazonS3Trace);
     }
     if (message.amazonS3RequestTimeoutMilliseconds !== undefined) {
-      writer.uint32(192).int64(message.amazonS3RequestTimeoutMilliseconds);
+      writer.uint32(136).int64(message.amazonS3RequestTimeoutMilliseconds);
     }
     if (message.amazonS3UploadPartSizeBytes !== undefined) {
-      writer.uint32(200).int64(message.amazonS3UploadPartSizeBytes);
+      writer.uint32(144).int64(message.amazonS3UploadPartSizeBytes);
     }
     if (message.amazonS3StorageClass !== undefined) {
-      writer.uint32(210).string(message.amazonS3StorageClass);
+      writer.uint32(154).string(message.amazonS3StorageClass);
     }
     return writer;
   },
@@ -2585,7 +2550,7 @@ export const ConfigFile: MessageFns<ConfigFile> = {
             break;
           }
 
-          message.maxFileSize = reader.int64().toString();
+          message.maxImageResolution = reader.int64().toString();
           continue;
         }
         case 5: {
@@ -2593,15 +2558,15 @@ export const ConfigFile: MessageFns<ConfigFile> = {
             break;
           }
 
-          message.maxImageResolution = reader.int64().toString();
+          message.maxImageDecoderConcurrency = reader.int64().toString();
           continue;
         }
         case 6: {
-          if (tag !== 48) {
+          if (tag !== 50) {
             break;
           }
 
-          message.maxImageDecoderConcurrency = reader.int64().toString();
+          message.driverName = reader.string();
           continue;
         }
         case 7: {
@@ -2609,7 +2574,7 @@ export const ConfigFile: MessageFns<ConfigFile> = {
             break;
           }
 
-          message.driverName = reader.string();
+          message.amazonS3AccessKeyId = reader.string();
           continue;
         }
         case 8: {
@@ -2617,31 +2582,31 @@ export const ConfigFile: MessageFns<ConfigFile> = {
             break;
           }
 
-          message.directory = reader.string();
+          message.amazonS3SecretAccessKey = reader.string();
           continue;
         }
         case 9: {
-          if (tag !== 72) {
+          if (tag !== 74) {
             break;
           }
 
-          message.enablePublicLink = reader.bool();
+          message.amazonS3Bucket = reader.string();
           continue;
         }
         case 10: {
-          if (tag !== 80) {
+          if (tag !== 82) {
             break;
           }
 
-          message.extractContent = reader.bool();
+          message.amazonS3PathPrefix = reader.string();
           continue;
         }
         case 11: {
-          if (tag !== 88) {
+          if (tag !== 90) {
             break;
           }
 
-          message.archiveRecursion = reader.bool();
+          message.amazonS3Region = reader.string();
           continue;
         }
         case 12: {
@@ -2649,115 +2614,59 @@ export const ConfigFile: MessageFns<ConfigFile> = {
             break;
           }
 
-          message.publicLinkSalt = reader.string();
-          continue;
-        }
-        case 13: {
-          if (tag !== 106) {
-            break;
-          }
-
-          message.initialFont = reader.string();
-          continue;
-        }
-        case 14: {
-          if (tag !== 114) {
-            break;
-          }
-
-          message.amazonS3AccessKeyId = reader.string();
-          continue;
-        }
-        case 15: {
-          if (tag !== 122) {
-            break;
-          }
-
-          message.amazonS3SecretAccessKey = reader.string();
-          continue;
-        }
-        case 16: {
-          if (tag !== 130) {
-            break;
-          }
-
-          message.amazonS3Bucket = reader.string();
-          continue;
-        }
-        case 17: {
-          if (tag !== 138) {
-            break;
-          }
-
-          message.amazonS3PathPrefix = reader.string();
-          continue;
-        }
-        case 18: {
-          if (tag !== 146) {
-            break;
-          }
-
-          message.amazonS3Region = reader.string();
-          continue;
-        }
-        case 19: {
-          if (tag !== 154) {
-            break;
-          }
-
           message.amazonS3Endpoint = reader.string();
           continue;
         }
-        case 20: {
-          if (tag !== 160) {
+        case 13: {
+          if (tag !== 104) {
             break;
           }
 
           message.amazonS3Ssl = reader.bool();
           continue;
         }
-        case 21: {
-          if (tag !== 168) {
+        case 14: {
+          if (tag !== 112) {
             break;
           }
 
           message.amazonS3SignV2 = reader.bool();
           continue;
         }
-        case 22: {
-          if (tag !== 176) {
+        case 15: {
+          if (tag !== 120) {
             break;
           }
 
           message.amazonS3Sse = reader.bool();
           continue;
         }
-        case 23: {
-          if (tag !== 184) {
+        case 16: {
+          if (tag !== 128) {
             break;
           }
 
           message.amazonS3Trace = reader.bool();
           continue;
         }
-        case 24: {
-          if (tag !== 192) {
+        case 17: {
+          if (tag !== 136) {
             break;
           }
 
           message.amazonS3RequestTimeoutMilliseconds = reader.int64().toString();
           continue;
         }
-        case 25: {
-          if (tag !== 200) {
+        case 18: {
+          if (tag !== 144) {
             break;
           }
 
           message.amazonS3UploadPartSizeBytes = reader.int64().toString();
           continue;
         }
-        case 26: {
-          if (tag !== 210) {
+        case 19: {
+          if (tag !== 154) {
             break;
           }
 
@@ -2782,18 +2691,11 @@ export const ConfigFile: MessageFns<ConfigFile> = {
       enableMobileDownload: isSet(object.enableMobileDownload)
         ? globalThis.Boolean(object.enableMobileDownload)
         : undefined,
-      maxFileSize: isSet(object.maxFileSize) ? globalThis.String(object.maxFileSize) : undefined,
       maxImageResolution: isSet(object.maxImageResolution) ? globalThis.String(object.maxImageResolution) : undefined,
       maxImageDecoderConcurrency: isSet(object.maxImageDecoderConcurrency)
         ? globalThis.String(object.maxImageDecoderConcurrency)
         : undefined,
       driverName: isSet(object.driverName) ? globalThis.String(object.driverName) : undefined,
-      directory: isSet(object.directory) ? globalThis.String(object.directory) : undefined,
-      enablePublicLink: isSet(object.enablePublicLink) ? globalThis.Boolean(object.enablePublicLink) : undefined,
-      extractContent: isSet(object.extractContent) ? globalThis.Boolean(object.extractContent) : undefined,
-      archiveRecursion: isSet(object.archiveRecursion) ? globalThis.Boolean(object.archiveRecursion) : undefined,
-      publicLinkSalt: isSet(object.publicLinkSalt) ? globalThis.String(object.publicLinkSalt) : undefined,
-      initialFont: isSet(object.initialFont) ? globalThis.String(object.initialFont) : undefined,
       amazonS3AccessKeyId: isSet(object.amazonS3AccessKeyId)
         ? globalThis.String(object.amazonS3AccessKeyId)
         : undefined,
@@ -2831,9 +2733,6 @@ export const ConfigFile: MessageFns<ConfigFile> = {
     if (message.enableMobileDownload !== undefined) {
       obj.enableMobileDownload = message.enableMobileDownload;
     }
-    if (message.maxFileSize !== undefined) {
-      obj.maxFileSize = message.maxFileSize;
-    }
     if (message.maxImageResolution !== undefined) {
       obj.maxImageResolution = message.maxImageResolution;
     }
@@ -2842,24 +2741,6 @@ export const ConfigFile: MessageFns<ConfigFile> = {
     }
     if (message.driverName !== undefined) {
       obj.driverName = message.driverName;
-    }
-    if (message.directory !== undefined) {
-      obj.directory = message.directory;
-    }
-    if (message.enablePublicLink !== undefined) {
-      obj.enablePublicLink = message.enablePublicLink;
-    }
-    if (message.extractContent !== undefined) {
-      obj.extractContent = message.extractContent;
-    }
-    if (message.archiveRecursion !== undefined) {
-      obj.archiveRecursion = message.archiveRecursion;
-    }
-    if (message.publicLinkSalt !== undefined) {
-      obj.publicLinkSalt = message.publicLinkSalt;
-    }
-    if (message.initialFont !== undefined) {
-      obj.initialFont = message.initialFont;
     }
     if (message.amazonS3AccessKeyId !== undefined) {
       obj.amazonS3AccessKeyId = message.amazonS3AccessKeyId;
@@ -2911,16 +2792,9 @@ export const ConfigFile: MessageFns<ConfigFile> = {
     message.enableFileAttachments = object.enableFileAttachments ?? undefined;
     message.enableMobileUpload = object.enableMobileUpload ?? undefined;
     message.enableMobileDownload = object.enableMobileDownload ?? undefined;
-    message.maxFileSize = object.maxFileSize ?? undefined;
     message.maxImageResolution = object.maxImageResolution ?? undefined;
     message.maxImageDecoderConcurrency = object.maxImageDecoderConcurrency ?? undefined;
     message.driverName = object.driverName ?? undefined;
-    message.directory = object.directory ?? undefined;
-    message.enablePublicLink = object.enablePublicLink ?? undefined;
-    message.extractContent = object.extractContent ?? undefined;
-    message.archiveRecursion = object.archiveRecursion ?? undefined;
-    message.publicLinkSalt = object.publicLinkSalt ?? undefined;
-    message.initialFont = object.initialFont ?? undefined;
     message.amazonS3AccessKeyId = object.amazonS3AccessKeyId ?? undefined;
     message.amazonS3SecretAccessKey = object.amazonS3SecretAccessKey ?? undefined;
     message.amazonS3Bucket = object.amazonS3Bucket ?? undefined;

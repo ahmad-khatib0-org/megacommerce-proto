@@ -226,52 +226,38 @@ pub struct ConfigFile {
     #[prost(bool, optional, tag = "3")]
     pub enable_mobile_download: ::core::option::Option<bool>,
     #[prost(int64, optional, tag = "4")]
-    pub max_file_size: ::core::option::Option<i64>,
-    #[prost(int64, optional, tag = "5")]
     pub max_image_resolution: ::core::option::Option<i64>,
-    #[prost(int64, optional, tag = "6")]
+    #[prost(int64, optional, tag = "5")]
     pub max_image_decoder_concurrency: ::core::option::Option<i64>,
-    #[prost(string, optional, tag = "7")]
+    #[prost(string, optional, tag = "6")]
     pub driver_name: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, optional, tag = "8")]
-    pub directory: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(bool, optional, tag = "9")]
-    pub enable_public_link: ::core::option::Option<bool>,
-    #[prost(bool, optional, tag = "10")]
-    pub extract_content: ::core::option::Option<bool>,
-    #[prost(bool, optional, tag = "11")]
-    pub archive_recursion: ::core::option::Option<bool>,
-    #[prost(string, optional, tag = "12")]
-    pub public_link_salt: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, optional, tag = "13")]
-    pub initial_font: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, optional, tag = "14")]
+    #[prost(string, optional, tag = "7")]
     pub amazon_s3_access_key_id: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, optional, tag = "15")]
+    #[prost(string, optional, tag = "8")]
     pub amazon_s3_secret_access_key: ::core::option::Option<
         ::prost::alloc::string::String,
     >,
-    #[prost(string, optional, tag = "16")]
+    #[prost(string, optional, tag = "9")]
     pub amazon_s3_bucket: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, optional, tag = "17")]
+    #[prost(string, optional, tag = "10")]
     pub amazon_s3_path_prefix: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, optional, tag = "18")]
+    #[prost(string, optional, tag = "11")]
     pub amazon_s3_region: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, optional, tag = "19")]
+    #[prost(string, optional, tag = "12")]
     pub amazon_s3_endpoint: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(bool, optional, tag = "20")]
+    #[prost(bool, optional, tag = "13")]
     pub amazon_s3_ssl: ::core::option::Option<bool>,
-    #[prost(bool, optional, tag = "21")]
+    #[prost(bool, optional, tag = "14")]
     pub amazon_s3_sign_v2: ::core::option::Option<bool>,
-    #[prost(bool, optional, tag = "22")]
+    #[prost(bool, optional, tag = "15")]
     pub amazon_s3_sse: ::core::option::Option<bool>,
-    #[prost(bool, optional, tag = "23")]
+    #[prost(bool, optional, tag = "16")]
     pub amazon_s3_trace: ::core::option::Option<bool>,
-    #[prost(int64, optional, tag = "24")]
+    #[prost(int64, optional, tag = "17")]
     pub amazon_s3_request_timeout_milliseconds: ::core::option::Option<i64>,
-    #[prost(int64, optional, tag = "25")]
+    #[prost(int64, optional, tag = "18")]
     pub amazon_s3_upload_part_size_bytes: ::core::option::Option<i64>,
-    #[prost(string, optional, tag = "26")]
+    #[prost(string, optional, tag = "19")]
     pub amazon_s3_storage_class: ::core::option::Option<::prost::alloc::string::String>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]

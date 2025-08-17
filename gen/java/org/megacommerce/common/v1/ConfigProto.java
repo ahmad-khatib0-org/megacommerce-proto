@@ -14285,319 +14285,224 @@ java.lang.String defaultValue) {
     boolean getEnableMobileDownload();
 
     /**
-     * <code>optional int64 max_file_size = 4 [json_name = "maxFileSize"];</code>
-     * @return Whether the maxFileSize field is set.
-     */
-    boolean hasMaxFileSize();
-    /**
-     * <code>optional int64 max_file_size = 4 [json_name = "maxFileSize"];</code>
-     * @return The maxFileSize.
-     */
-    long getMaxFileSize();
-
-    /**
-     * <code>optional int64 max_image_resolution = 5 [json_name = "maxImageResolution"];</code>
+     * <code>optional int64 max_image_resolution = 4 [json_name = "maxImageResolution"];</code>
      * @return Whether the maxImageResolution field is set.
      */
     boolean hasMaxImageResolution();
     /**
-     * <code>optional int64 max_image_resolution = 5 [json_name = "maxImageResolution"];</code>
+     * <code>optional int64 max_image_resolution = 4 [json_name = "maxImageResolution"];</code>
      * @return The maxImageResolution.
      */
     long getMaxImageResolution();
 
     /**
-     * <code>optional int64 max_image_decoder_concurrency = 6 [json_name = "maxImageDecoderConcurrency"];</code>
+     * <code>optional int64 max_image_decoder_concurrency = 5 [json_name = "maxImageDecoderConcurrency"];</code>
      * @return Whether the maxImageDecoderConcurrency field is set.
      */
     boolean hasMaxImageDecoderConcurrency();
     /**
-     * <code>optional int64 max_image_decoder_concurrency = 6 [json_name = "maxImageDecoderConcurrency"];</code>
+     * <code>optional int64 max_image_decoder_concurrency = 5 [json_name = "maxImageDecoderConcurrency"];</code>
      * @return The maxImageDecoderConcurrency.
      */
     long getMaxImageDecoderConcurrency();
 
     /**
-     * <code>optional string driver_name = 7 [json_name = "driverName"];</code>
+     * <code>optional string driver_name = 6 [json_name = "driverName"];</code>
      * @return Whether the driverName field is set.
      */
     boolean hasDriverName();
     /**
-     * <code>optional string driver_name = 7 [json_name = "driverName"];</code>
+     * <code>optional string driver_name = 6 [json_name = "driverName"];</code>
      * @return The driverName.
      */
     java.lang.String getDriverName();
     /**
-     * <code>optional string driver_name = 7 [json_name = "driverName"];</code>
+     * <code>optional string driver_name = 6 [json_name = "driverName"];</code>
      * @return The bytes for driverName.
      */
     com.google.protobuf.ByteString
         getDriverNameBytes();
 
     /**
-     * <code>optional string directory = 8 [json_name = "directory"];</code>
-     * @return Whether the directory field is set.
-     */
-    boolean hasDirectory();
-    /**
-     * <code>optional string directory = 8 [json_name = "directory"];</code>
-     * @return The directory.
-     */
-    java.lang.String getDirectory();
-    /**
-     * <code>optional string directory = 8 [json_name = "directory"];</code>
-     * @return The bytes for directory.
-     */
-    com.google.protobuf.ByteString
-        getDirectoryBytes();
-
-    /**
-     * <code>optional bool enable_public_link = 9 [json_name = "enablePublicLink"];</code>
-     * @return Whether the enablePublicLink field is set.
-     */
-    boolean hasEnablePublicLink();
-    /**
-     * <code>optional bool enable_public_link = 9 [json_name = "enablePublicLink"];</code>
-     * @return The enablePublicLink.
-     */
-    boolean getEnablePublicLink();
-
-    /**
-     * <code>optional bool extract_content = 10 [json_name = "extractContent"];</code>
-     * @return Whether the extractContent field is set.
-     */
-    boolean hasExtractContent();
-    /**
-     * <code>optional bool extract_content = 10 [json_name = "extractContent"];</code>
-     * @return The extractContent.
-     */
-    boolean getExtractContent();
-
-    /**
-     * <code>optional bool archive_recursion = 11 [json_name = "archiveRecursion"];</code>
-     * @return Whether the archiveRecursion field is set.
-     */
-    boolean hasArchiveRecursion();
-    /**
-     * <code>optional bool archive_recursion = 11 [json_name = "archiveRecursion"];</code>
-     * @return The archiveRecursion.
-     */
-    boolean getArchiveRecursion();
-
-    /**
-     * <code>optional string public_link_salt = 12 [json_name = "publicLinkSalt"];</code>
-     * @return Whether the publicLinkSalt field is set.
-     */
-    boolean hasPublicLinkSalt();
-    /**
-     * <code>optional string public_link_salt = 12 [json_name = "publicLinkSalt"];</code>
-     * @return The publicLinkSalt.
-     */
-    java.lang.String getPublicLinkSalt();
-    /**
-     * <code>optional string public_link_salt = 12 [json_name = "publicLinkSalt"];</code>
-     * @return The bytes for publicLinkSalt.
-     */
-    com.google.protobuf.ByteString
-        getPublicLinkSaltBytes();
-
-    /**
-     * <code>optional string initial_font = 13 [json_name = "initialFont"];</code>
-     * @return Whether the initialFont field is set.
-     */
-    boolean hasInitialFont();
-    /**
-     * <code>optional string initial_font = 13 [json_name = "initialFont"];</code>
-     * @return The initialFont.
-     */
-    java.lang.String getInitialFont();
-    /**
-     * <code>optional string initial_font = 13 [json_name = "initialFont"];</code>
-     * @return The bytes for initialFont.
-     */
-    com.google.protobuf.ByteString
-        getInitialFontBytes();
-
-    /**
-     * <code>optional string amazon_s3_access_key_id = 14 [json_name = "amazonS3AccessKeyId"];</code>
+     * <code>optional string amazon_s3_access_key_id = 7 [json_name = "amazonS3AccessKeyId"];</code>
      * @return Whether the amazonS3AccessKeyId field is set.
      */
     boolean hasAmazonS3AccessKeyId();
     /**
-     * <code>optional string amazon_s3_access_key_id = 14 [json_name = "amazonS3AccessKeyId"];</code>
+     * <code>optional string amazon_s3_access_key_id = 7 [json_name = "amazonS3AccessKeyId"];</code>
      * @return The amazonS3AccessKeyId.
      */
     java.lang.String getAmazonS3AccessKeyId();
     /**
-     * <code>optional string amazon_s3_access_key_id = 14 [json_name = "amazonS3AccessKeyId"];</code>
+     * <code>optional string amazon_s3_access_key_id = 7 [json_name = "amazonS3AccessKeyId"];</code>
      * @return The bytes for amazonS3AccessKeyId.
      */
     com.google.protobuf.ByteString
         getAmazonS3AccessKeyIdBytes();
 
     /**
-     * <code>optional string amazon_s3_secret_access_key = 15 [json_name = "amazonS3SecretAccessKey"];</code>
+     * <code>optional string amazon_s3_secret_access_key = 8 [json_name = "amazonS3SecretAccessKey"];</code>
      * @return Whether the amazonS3SecretAccessKey field is set.
      */
     boolean hasAmazonS3SecretAccessKey();
     /**
-     * <code>optional string amazon_s3_secret_access_key = 15 [json_name = "amazonS3SecretAccessKey"];</code>
+     * <code>optional string amazon_s3_secret_access_key = 8 [json_name = "amazonS3SecretAccessKey"];</code>
      * @return The amazonS3SecretAccessKey.
      */
     java.lang.String getAmazonS3SecretAccessKey();
     /**
-     * <code>optional string amazon_s3_secret_access_key = 15 [json_name = "amazonS3SecretAccessKey"];</code>
+     * <code>optional string amazon_s3_secret_access_key = 8 [json_name = "amazonS3SecretAccessKey"];</code>
      * @return The bytes for amazonS3SecretAccessKey.
      */
     com.google.protobuf.ByteString
         getAmazonS3SecretAccessKeyBytes();
 
     /**
-     * <code>optional string amazon_s3_bucket = 16 [json_name = "amazonS3Bucket"];</code>
+     * <code>optional string amazon_s3_bucket = 9 [json_name = "amazonS3Bucket"];</code>
      * @return Whether the amazonS3Bucket field is set.
      */
     boolean hasAmazonS3Bucket();
     /**
-     * <code>optional string amazon_s3_bucket = 16 [json_name = "amazonS3Bucket"];</code>
+     * <code>optional string amazon_s3_bucket = 9 [json_name = "amazonS3Bucket"];</code>
      * @return The amazonS3Bucket.
      */
     java.lang.String getAmazonS3Bucket();
     /**
-     * <code>optional string amazon_s3_bucket = 16 [json_name = "amazonS3Bucket"];</code>
+     * <code>optional string amazon_s3_bucket = 9 [json_name = "amazonS3Bucket"];</code>
      * @return The bytes for amazonS3Bucket.
      */
     com.google.protobuf.ByteString
         getAmazonS3BucketBytes();
 
     /**
-     * <code>optional string amazon_s3_path_prefix = 17 [json_name = "amazonS3PathPrefix"];</code>
+     * <code>optional string amazon_s3_path_prefix = 10 [json_name = "amazonS3PathPrefix"];</code>
      * @return Whether the amazonS3PathPrefix field is set.
      */
     boolean hasAmazonS3PathPrefix();
     /**
-     * <code>optional string amazon_s3_path_prefix = 17 [json_name = "amazonS3PathPrefix"];</code>
+     * <code>optional string amazon_s3_path_prefix = 10 [json_name = "amazonS3PathPrefix"];</code>
      * @return The amazonS3PathPrefix.
      */
     java.lang.String getAmazonS3PathPrefix();
     /**
-     * <code>optional string amazon_s3_path_prefix = 17 [json_name = "amazonS3PathPrefix"];</code>
+     * <code>optional string amazon_s3_path_prefix = 10 [json_name = "amazonS3PathPrefix"];</code>
      * @return The bytes for amazonS3PathPrefix.
      */
     com.google.protobuf.ByteString
         getAmazonS3PathPrefixBytes();
 
     /**
-     * <code>optional string amazon_s3_region = 18 [json_name = "amazonS3Region"];</code>
+     * <code>optional string amazon_s3_region = 11 [json_name = "amazonS3Region"];</code>
      * @return Whether the amazonS3Region field is set.
      */
     boolean hasAmazonS3Region();
     /**
-     * <code>optional string amazon_s3_region = 18 [json_name = "amazonS3Region"];</code>
+     * <code>optional string amazon_s3_region = 11 [json_name = "amazonS3Region"];</code>
      * @return The amazonS3Region.
      */
     java.lang.String getAmazonS3Region();
     /**
-     * <code>optional string amazon_s3_region = 18 [json_name = "amazonS3Region"];</code>
+     * <code>optional string amazon_s3_region = 11 [json_name = "amazonS3Region"];</code>
      * @return The bytes for amazonS3Region.
      */
     com.google.protobuf.ByteString
         getAmazonS3RegionBytes();
 
     /**
-     * <code>optional string amazon_s3_endpoint = 19 [json_name = "amazonS3Endpoint"];</code>
+     * <code>optional string amazon_s3_endpoint = 12 [json_name = "amazonS3Endpoint"];</code>
      * @return Whether the amazonS3Endpoint field is set.
      */
     boolean hasAmazonS3Endpoint();
     /**
-     * <code>optional string amazon_s3_endpoint = 19 [json_name = "amazonS3Endpoint"];</code>
+     * <code>optional string amazon_s3_endpoint = 12 [json_name = "amazonS3Endpoint"];</code>
      * @return The amazonS3Endpoint.
      */
     java.lang.String getAmazonS3Endpoint();
     /**
-     * <code>optional string amazon_s3_endpoint = 19 [json_name = "amazonS3Endpoint"];</code>
+     * <code>optional string amazon_s3_endpoint = 12 [json_name = "amazonS3Endpoint"];</code>
      * @return The bytes for amazonS3Endpoint.
      */
     com.google.protobuf.ByteString
         getAmazonS3EndpointBytes();
 
     /**
-     * <code>optional bool amazon_s3_ssl = 20 [json_name = "amazonS3Ssl"];</code>
+     * <code>optional bool amazon_s3_ssl = 13 [json_name = "amazonS3Ssl"];</code>
      * @return Whether the amazonS3Ssl field is set.
      */
     boolean hasAmazonS3Ssl();
     /**
-     * <code>optional bool amazon_s3_ssl = 20 [json_name = "amazonS3Ssl"];</code>
+     * <code>optional bool amazon_s3_ssl = 13 [json_name = "amazonS3Ssl"];</code>
      * @return The amazonS3Ssl.
      */
     boolean getAmazonS3Ssl();
 
     /**
-     * <code>optional bool amazon_s3_sign_v2 = 21 [json_name = "amazonS3SignV2"];</code>
+     * <code>optional bool amazon_s3_sign_v2 = 14 [json_name = "amazonS3SignV2"];</code>
      * @return Whether the amazonS3SignV2 field is set.
      */
     boolean hasAmazonS3SignV2();
     /**
-     * <code>optional bool amazon_s3_sign_v2 = 21 [json_name = "amazonS3SignV2"];</code>
+     * <code>optional bool amazon_s3_sign_v2 = 14 [json_name = "amazonS3SignV2"];</code>
      * @return The amazonS3SignV2.
      */
     boolean getAmazonS3SignV2();
 
     /**
-     * <code>optional bool amazon_s3_sse = 22 [json_name = "amazonS3Sse"];</code>
+     * <code>optional bool amazon_s3_sse = 15 [json_name = "amazonS3Sse"];</code>
      * @return Whether the amazonS3Sse field is set.
      */
     boolean hasAmazonS3Sse();
     /**
-     * <code>optional bool amazon_s3_sse = 22 [json_name = "amazonS3Sse"];</code>
+     * <code>optional bool amazon_s3_sse = 15 [json_name = "amazonS3Sse"];</code>
      * @return The amazonS3Sse.
      */
     boolean getAmazonS3Sse();
 
     /**
-     * <code>optional bool amazon_s3_trace = 23 [json_name = "amazonS3Trace"];</code>
+     * <code>optional bool amazon_s3_trace = 16 [json_name = "amazonS3Trace"];</code>
      * @return Whether the amazonS3Trace field is set.
      */
     boolean hasAmazonS3Trace();
     /**
-     * <code>optional bool amazon_s3_trace = 23 [json_name = "amazonS3Trace"];</code>
+     * <code>optional bool amazon_s3_trace = 16 [json_name = "amazonS3Trace"];</code>
      * @return The amazonS3Trace.
      */
     boolean getAmazonS3Trace();
 
     /**
-     * <code>optional int64 amazon_s3_request_timeout_milliseconds = 24 [json_name = "amazonS3RequestTimeoutMilliseconds"];</code>
+     * <code>optional int64 amazon_s3_request_timeout_milliseconds = 17 [json_name = "amazonS3RequestTimeoutMilliseconds"];</code>
      * @return Whether the amazonS3RequestTimeoutMilliseconds field is set.
      */
     boolean hasAmazonS3RequestTimeoutMilliseconds();
     /**
-     * <code>optional int64 amazon_s3_request_timeout_milliseconds = 24 [json_name = "amazonS3RequestTimeoutMilliseconds"];</code>
+     * <code>optional int64 amazon_s3_request_timeout_milliseconds = 17 [json_name = "amazonS3RequestTimeoutMilliseconds"];</code>
      * @return The amazonS3RequestTimeoutMilliseconds.
      */
     long getAmazonS3RequestTimeoutMilliseconds();
 
     /**
-     * <code>optional int64 amazon_s3_upload_part_size_bytes = 25 [json_name = "amazonS3UploadPartSizeBytes"];</code>
+     * <code>optional int64 amazon_s3_upload_part_size_bytes = 18 [json_name = "amazonS3UploadPartSizeBytes"];</code>
      * @return Whether the amazonS3UploadPartSizeBytes field is set.
      */
     boolean hasAmazonS3UploadPartSizeBytes();
     /**
-     * <code>optional int64 amazon_s3_upload_part_size_bytes = 25 [json_name = "amazonS3UploadPartSizeBytes"];</code>
+     * <code>optional int64 amazon_s3_upload_part_size_bytes = 18 [json_name = "amazonS3UploadPartSizeBytes"];</code>
      * @return The amazonS3UploadPartSizeBytes.
      */
     long getAmazonS3UploadPartSizeBytes();
 
     /**
-     * <code>optional string amazon_s3_storage_class = 26 [json_name = "amazonS3StorageClass"];</code>
+     * <code>optional string amazon_s3_storage_class = 19 [json_name = "amazonS3StorageClass"];</code>
      * @return Whether the amazonS3StorageClass field is set.
      */
     boolean hasAmazonS3StorageClass();
     /**
-     * <code>optional string amazon_s3_storage_class = 26 [json_name = "amazonS3StorageClass"];</code>
+     * <code>optional string amazon_s3_storage_class = 19 [json_name = "amazonS3StorageClass"];</code>
      * @return The amazonS3StorageClass.
      */
     java.lang.String getAmazonS3StorageClass();
     /**
-     * <code>optional string amazon_s3_storage_class = 26 [json_name = "amazonS3StorageClass"];</code>
+     * <code>optional string amazon_s3_storage_class = 19 [json_name = "amazonS3StorageClass"];</code>
      * @return The bytes for amazonS3StorageClass.
      */
     com.google.protobuf.ByteString
@@ -14626,9 +14531,6 @@ java.lang.String defaultValue) {
     }
     private ConfigFile() {
       driverName_ = "";
-      directory_ = "";
-      publicLinkSalt_ = "";
-      initialFont_ = "";
       amazonS3AccessKeyId_ = "";
       amazonS3SecretAccessKey_ = "";
       amazonS3Bucket_ = "";
@@ -14709,37 +14611,18 @@ java.lang.String defaultValue) {
       return enableMobileDownload_;
     }
 
-    public static final int MAX_FILE_SIZE_FIELD_NUMBER = 4;
-    private long maxFileSize_ = 0L;
-    /**
-     * <code>optional int64 max_file_size = 4 [json_name = "maxFileSize"];</code>
-     * @return Whether the maxFileSize field is set.
-     */
-    @java.lang.Override
-    public boolean hasMaxFileSize() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <code>optional int64 max_file_size = 4 [json_name = "maxFileSize"];</code>
-     * @return The maxFileSize.
-     */
-    @java.lang.Override
-    public long getMaxFileSize() {
-      return maxFileSize_;
-    }
-
-    public static final int MAX_IMAGE_RESOLUTION_FIELD_NUMBER = 5;
+    public static final int MAX_IMAGE_RESOLUTION_FIELD_NUMBER = 4;
     private long maxImageResolution_ = 0L;
     /**
-     * <code>optional int64 max_image_resolution = 5 [json_name = "maxImageResolution"];</code>
+     * <code>optional int64 max_image_resolution = 4 [json_name = "maxImageResolution"];</code>
      * @return Whether the maxImageResolution field is set.
      */
     @java.lang.Override
     public boolean hasMaxImageResolution() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>optional int64 max_image_resolution = 5 [json_name = "maxImageResolution"];</code>
+     * <code>optional int64 max_image_resolution = 4 [json_name = "maxImageResolution"];</code>
      * @return The maxImageResolution.
      */
     @java.lang.Override
@@ -14747,18 +14630,18 @@ java.lang.String defaultValue) {
       return maxImageResolution_;
     }
 
-    public static final int MAX_IMAGE_DECODER_CONCURRENCY_FIELD_NUMBER = 6;
+    public static final int MAX_IMAGE_DECODER_CONCURRENCY_FIELD_NUMBER = 5;
     private long maxImageDecoderConcurrency_ = 0L;
     /**
-     * <code>optional int64 max_image_decoder_concurrency = 6 [json_name = "maxImageDecoderConcurrency"];</code>
+     * <code>optional int64 max_image_decoder_concurrency = 5 [json_name = "maxImageDecoderConcurrency"];</code>
      * @return Whether the maxImageDecoderConcurrency field is set.
      */
     @java.lang.Override
     public boolean hasMaxImageDecoderConcurrency() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>optional int64 max_image_decoder_concurrency = 6 [json_name = "maxImageDecoderConcurrency"];</code>
+     * <code>optional int64 max_image_decoder_concurrency = 5 [json_name = "maxImageDecoderConcurrency"];</code>
      * @return The maxImageDecoderConcurrency.
      */
     @java.lang.Override
@@ -14766,19 +14649,19 @@ java.lang.String defaultValue) {
       return maxImageDecoderConcurrency_;
     }
 
-    public static final int DRIVER_NAME_FIELD_NUMBER = 7;
+    public static final int DRIVER_NAME_FIELD_NUMBER = 6;
     @SuppressWarnings("serial")
     private volatile java.lang.Object driverName_ = "";
     /**
-     * <code>optional string driver_name = 7 [json_name = "driverName"];</code>
+     * <code>optional string driver_name = 6 [json_name = "driverName"];</code>
      * @return Whether the driverName field is set.
      */
     @java.lang.Override
     public boolean hasDriverName() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
-     * <code>optional string driver_name = 7 [json_name = "driverName"];</code>
+     * <code>optional string driver_name = 6 [json_name = "driverName"];</code>
      * @return The driverName.
      */
     @java.lang.Override
@@ -14795,7 +14678,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string driver_name = 7 [json_name = "driverName"];</code>
+     * <code>optional string driver_name = 6 [json_name = "driverName"];</code>
      * @return The bytes for driverName.
      */
     @java.lang.Override
@@ -14813,217 +14696,19 @@ java.lang.String defaultValue) {
       }
     }
 
-    public static final int DIRECTORY_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object directory_ = "";
-    /**
-     * <code>optional string directory = 8 [json_name = "directory"];</code>
-     * @return Whether the directory field is set.
-     */
-    @java.lang.Override
-    public boolean hasDirectory() {
-      return ((bitField0_ & 0x00000080) != 0);
-    }
-    /**
-     * <code>optional string directory = 8 [json_name = "directory"];</code>
-     * @return The directory.
-     */
-    @java.lang.Override
-    public java.lang.String getDirectory() {
-      java.lang.Object ref = directory_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        directory_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string directory = 8 [json_name = "directory"];</code>
-     * @return The bytes for directory.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDirectoryBytes() {
-      java.lang.Object ref = directory_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        directory_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int ENABLE_PUBLIC_LINK_FIELD_NUMBER = 9;
-    private boolean enablePublicLink_ = false;
-    /**
-     * <code>optional bool enable_public_link = 9 [json_name = "enablePublicLink"];</code>
-     * @return Whether the enablePublicLink field is set.
-     */
-    @java.lang.Override
-    public boolean hasEnablePublicLink() {
-      return ((bitField0_ & 0x00000100) != 0);
-    }
-    /**
-     * <code>optional bool enable_public_link = 9 [json_name = "enablePublicLink"];</code>
-     * @return The enablePublicLink.
-     */
-    @java.lang.Override
-    public boolean getEnablePublicLink() {
-      return enablePublicLink_;
-    }
-
-    public static final int EXTRACT_CONTENT_FIELD_NUMBER = 10;
-    private boolean extractContent_ = false;
-    /**
-     * <code>optional bool extract_content = 10 [json_name = "extractContent"];</code>
-     * @return Whether the extractContent field is set.
-     */
-    @java.lang.Override
-    public boolean hasExtractContent() {
-      return ((bitField0_ & 0x00000200) != 0);
-    }
-    /**
-     * <code>optional bool extract_content = 10 [json_name = "extractContent"];</code>
-     * @return The extractContent.
-     */
-    @java.lang.Override
-    public boolean getExtractContent() {
-      return extractContent_;
-    }
-
-    public static final int ARCHIVE_RECURSION_FIELD_NUMBER = 11;
-    private boolean archiveRecursion_ = false;
-    /**
-     * <code>optional bool archive_recursion = 11 [json_name = "archiveRecursion"];</code>
-     * @return Whether the archiveRecursion field is set.
-     */
-    @java.lang.Override
-    public boolean hasArchiveRecursion() {
-      return ((bitField0_ & 0x00000400) != 0);
-    }
-    /**
-     * <code>optional bool archive_recursion = 11 [json_name = "archiveRecursion"];</code>
-     * @return The archiveRecursion.
-     */
-    @java.lang.Override
-    public boolean getArchiveRecursion() {
-      return archiveRecursion_;
-    }
-
-    public static final int PUBLIC_LINK_SALT_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object publicLinkSalt_ = "";
-    /**
-     * <code>optional string public_link_salt = 12 [json_name = "publicLinkSalt"];</code>
-     * @return Whether the publicLinkSalt field is set.
-     */
-    @java.lang.Override
-    public boolean hasPublicLinkSalt() {
-      return ((bitField0_ & 0x00000800) != 0);
-    }
-    /**
-     * <code>optional string public_link_salt = 12 [json_name = "publicLinkSalt"];</code>
-     * @return The publicLinkSalt.
-     */
-    @java.lang.Override
-    public java.lang.String getPublicLinkSalt() {
-      java.lang.Object ref = publicLinkSalt_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        publicLinkSalt_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string public_link_salt = 12 [json_name = "publicLinkSalt"];</code>
-     * @return The bytes for publicLinkSalt.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getPublicLinkSaltBytes() {
-      java.lang.Object ref = publicLinkSalt_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        publicLinkSalt_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int INITIAL_FONT_FIELD_NUMBER = 13;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object initialFont_ = "";
-    /**
-     * <code>optional string initial_font = 13 [json_name = "initialFont"];</code>
-     * @return Whether the initialFont field is set.
-     */
-    @java.lang.Override
-    public boolean hasInitialFont() {
-      return ((bitField0_ & 0x00001000) != 0);
-    }
-    /**
-     * <code>optional string initial_font = 13 [json_name = "initialFont"];</code>
-     * @return The initialFont.
-     */
-    @java.lang.Override
-    public java.lang.String getInitialFont() {
-      java.lang.Object ref = initialFont_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        initialFont_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string initial_font = 13 [json_name = "initialFont"];</code>
-     * @return The bytes for initialFont.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getInitialFontBytes() {
-      java.lang.Object ref = initialFont_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        initialFont_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int AMAZON_S3_ACCESS_KEY_ID_FIELD_NUMBER = 14;
+    public static final int AMAZON_S3_ACCESS_KEY_ID_FIELD_NUMBER = 7;
     @SuppressWarnings("serial")
     private volatile java.lang.Object amazonS3AccessKeyId_ = "";
     /**
-     * <code>optional string amazon_s3_access_key_id = 14 [json_name = "amazonS3AccessKeyId"];</code>
+     * <code>optional string amazon_s3_access_key_id = 7 [json_name = "amazonS3AccessKeyId"];</code>
      * @return Whether the amazonS3AccessKeyId field is set.
      */
     @java.lang.Override
     public boolean hasAmazonS3AccessKeyId() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
-     * <code>optional string amazon_s3_access_key_id = 14 [json_name = "amazonS3AccessKeyId"];</code>
+     * <code>optional string amazon_s3_access_key_id = 7 [json_name = "amazonS3AccessKeyId"];</code>
      * @return The amazonS3AccessKeyId.
      */
     @java.lang.Override
@@ -15040,7 +14725,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string amazon_s3_access_key_id = 14 [json_name = "amazonS3AccessKeyId"];</code>
+     * <code>optional string amazon_s3_access_key_id = 7 [json_name = "amazonS3AccessKeyId"];</code>
      * @return The bytes for amazonS3AccessKeyId.
      */
     @java.lang.Override
@@ -15058,19 +14743,19 @@ java.lang.String defaultValue) {
       }
     }
 
-    public static final int AMAZON_S3_SECRET_ACCESS_KEY_FIELD_NUMBER = 15;
+    public static final int AMAZON_S3_SECRET_ACCESS_KEY_FIELD_NUMBER = 8;
     @SuppressWarnings("serial")
     private volatile java.lang.Object amazonS3SecretAccessKey_ = "";
     /**
-     * <code>optional string amazon_s3_secret_access_key = 15 [json_name = "amazonS3SecretAccessKey"];</code>
+     * <code>optional string amazon_s3_secret_access_key = 8 [json_name = "amazonS3SecretAccessKey"];</code>
      * @return Whether the amazonS3SecretAccessKey field is set.
      */
     @java.lang.Override
     public boolean hasAmazonS3SecretAccessKey() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>optional string amazon_s3_secret_access_key = 15 [json_name = "amazonS3SecretAccessKey"];</code>
+     * <code>optional string amazon_s3_secret_access_key = 8 [json_name = "amazonS3SecretAccessKey"];</code>
      * @return The amazonS3SecretAccessKey.
      */
     @java.lang.Override
@@ -15087,7 +14772,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string amazon_s3_secret_access_key = 15 [json_name = "amazonS3SecretAccessKey"];</code>
+     * <code>optional string amazon_s3_secret_access_key = 8 [json_name = "amazonS3SecretAccessKey"];</code>
      * @return The bytes for amazonS3SecretAccessKey.
      */
     @java.lang.Override
@@ -15105,19 +14790,19 @@ java.lang.String defaultValue) {
       }
     }
 
-    public static final int AMAZON_S3_BUCKET_FIELD_NUMBER = 16;
+    public static final int AMAZON_S3_BUCKET_FIELD_NUMBER = 9;
     @SuppressWarnings("serial")
     private volatile java.lang.Object amazonS3Bucket_ = "";
     /**
-     * <code>optional string amazon_s3_bucket = 16 [json_name = "amazonS3Bucket"];</code>
+     * <code>optional string amazon_s3_bucket = 9 [json_name = "amazonS3Bucket"];</code>
      * @return Whether the amazonS3Bucket field is set.
      */
     @java.lang.Override
     public boolean hasAmazonS3Bucket() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
-     * <code>optional string amazon_s3_bucket = 16 [json_name = "amazonS3Bucket"];</code>
+     * <code>optional string amazon_s3_bucket = 9 [json_name = "amazonS3Bucket"];</code>
      * @return The amazonS3Bucket.
      */
     @java.lang.Override
@@ -15134,7 +14819,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string amazon_s3_bucket = 16 [json_name = "amazonS3Bucket"];</code>
+     * <code>optional string amazon_s3_bucket = 9 [json_name = "amazonS3Bucket"];</code>
      * @return The bytes for amazonS3Bucket.
      */
     @java.lang.Override
@@ -15152,19 +14837,19 @@ java.lang.String defaultValue) {
       }
     }
 
-    public static final int AMAZON_S3_PATH_PREFIX_FIELD_NUMBER = 17;
+    public static final int AMAZON_S3_PATH_PREFIX_FIELD_NUMBER = 10;
     @SuppressWarnings("serial")
     private volatile java.lang.Object amazonS3PathPrefix_ = "";
     /**
-     * <code>optional string amazon_s3_path_prefix = 17 [json_name = "amazonS3PathPrefix"];</code>
+     * <code>optional string amazon_s3_path_prefix = 10 [json_name = "amazonS3PathPrefix"];</code>
      * @return Whether the amazonS3PathPrefix field is set.
      */
     @java.lang.Override
     public boolean hasAmazonS3PathPrefix() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
-     * <code>optional string amazon_s3_path_prefix = 17 [json_name = "amazonS3PathPrefix"];</code>
+     * <code>optional string amazon_s3_path_prefix = 10 [json_name = "amazonS3PathPrefix"];</code>
      * @return The amazonS3PathPrefix.
      */
     @java.lang.Override
@@ -15181,7 +14866,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string amazon_s3_path_prefix = 17 [json_name = "amazonS3PathPrefix"];</code>
+     * <code>optional string amazon_s3_path_prefix = 10 [json_name = "amazonS3PathPrefix"];</code>
      * @return The bytes for amazonS3PathPrefix.
      */
     @java.lang.Override
@@ -15199,19 +14884,19 @@ java.lang.String defaultValue) {
       }
     }
 
-    public static final int AMAZON_S3_REGION_FIELD_NUMBER = 18;
+    public static final int AMAZON_S3_REGION_FIELD_NUMBER = 11;
     @SuppressWarnings("serial")
     private volatile java.lang.Object amazonS3Region_ = "";
     /**
-     * <code>optional string amazon_s3_region = 18 [json_name = "amazonS3Region"];</code>
+     * <code>optional string amazon_s3_region = 11 [json_name = "amazonS3Region"];</code>
      * @return Whether the amazonS3Region field is set.
      */
     @java.lang.Override
     public boolean hasAmazonS3Region() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
-     * <code>optional string amazon_s3_region = 18 [json_name = "amazonS3Region"];</code>
+     * <code>optional string amazon_s3_region = 11 [json_name = "amazonS3Region"];</code>
      * @return The amazonS3Region.
      */
     @java.lang.Override
@@ -15228,7 +14913,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string amazon_s3_region = 18 [json_name = "amazonS3Region"];</code>
+     * <code>optional string amazon_s3_region = 11 [json_name = "amazonS3Region"];</code>
      * @return The bytes for amazonS3Region.
      */
     @java.lang.Override
@@ -15246,19 +14931,19 @@ java.lang.String defaultValue) {
       }
     }
 
-    public static final int AMAZON_S3_ENDPOINT_FIELD_NUMBER = 19;
+    public static final int AMAZON_S3_ENDPOINT_FIELD_NUMBER = 12;
     @SuppressWarnings("serial")
     private volatile java.lang.Object amazonS3Endpoint_ = "";
     /**
-     * <code>optional string amazon_s3_endpoint = 19 [json_name = "amazonS3Endpoint"];</code>
+     * <code>optional string amazon_s3_endpoint = 12 [json_name = "amazonS3Endpoint"];</code>
      * @return Whether the amazonS3Endpoint field is set.
      */
     @java.lang.Override
     public boolean hasAmazonS3Endpoint() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
-     * <code>optional string amazon_s3_endpoint = 19 [json_name = "amazonS3Endpoint"];</code>
+     * <code>optional string amazon_s3_endpoint = 12 [json_name = "amazonS3Endpoint"];</code>
      * @return The amazonS3Endpoint.
      */
     @java.lang.Override
@@ -15275,7 +14960,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string amazon_s3_endpoint = 19 [json_name = "amazonS3Endpoint"];</code>
+     * <code>optional string amazon_s3_endpoint = 12 [json_name = "amazonS3Endpoint"];</code>
      * @return The bytes for amazonS3Endpoint.
      */
     @java.lang.Override
@@ -15293,18 +14978,18 @@ java.lang.String defaultValue) {
       }
     }
 
-    public static final int AMAZON_S3_SSL_FIELD_NUMBER = 20;
+    public static final int AMAZON_S3_SSL_FIELD_NUMBER = 13;
     private boolean amazonS3Ssl_ = false;
     /**
-     * <code>optional bool amazon_s3_ssl = 20 [json_name = "amazonS3Ssl"];</code>
+     * <code>optional bool amazon_s3_ssl = 13 [json_name = "amazonS3Ssl"];</code>
      * @return Whether the amazonS3Ssl field is set.
      */
     @java.lang.Override
     public boolean hasAmazonS3Ssl() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
-     * <code>optional bool amazon_s3_ssl = 20 [json_name = "amazonS3Ssl"];</code>
+     * <code>optional bool amazon_s3_ssl = 13 [json_name = "amazonS3Ssl"];</code>
      * @return The amazonS3Ssl.
      */
     @java.lang.Override
@@ -15312,18 +14997,18 @@ java.lang.String defaultValue) {
       return amazonS3Ssl_;
     }
 
-    public static final int AMAZON_S3_SIGN_V2_FIELD_NUMBER = 21;
+    public static final int AMAZON_S3_SIGN_V2_FIELD_NUMBER = 14;
     private boolean amazonS3SignV2_ = false;
     /**
-     * <code>optional bool amazon_s3_sign_v2 = 21 [json_name = "amazonS3SignV2"];</code>
+     * <code>optional bool amazon_s3_sign_v2 = 14 [json_name = "amazonS3SignV2"];</code>
      * @return Whether the amazonS3SignV2 field is set.
      */
     @java.lang.Override
     public boolean hasAmazonS3SignV2() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
-     * <code>optional bool amazon_s3_sign_v2 = 21 [json_name = "amazonS3SignV2"];</code>
+     * <code>optional bool amazon_s3_sign_v2 = 14 [json_name = "amazonS3SignV2"];</code>
      * @return The amazonS3SignV2.
      */
     @java.lang.Override
@@ -15331,18 +15016,18 @@ java.lang.String defaultValue) {
       return amazonS3SignV2_;
     }
 
-    public static final int AMAZON_S3_SSE_FIELD_NUMBER = 22;
+    public static final int AMAZON_S3_SSE_FIELD_NUMBER = 15;
     private boolean amazonS3Sse_ = false;
     /**
-     * <code>optional bool amazon_s3_sse = 22 [json_name = "amazonS3Sse"];</code>
+     * <code>optional bool amazon_s3_sse = 15 [json_name = "amazonS3Sse"];</code>
      * @return Whether the amazonS3Sse field is set.
      */
     @java.lang.Override
     public boolean hasAmazonS3Sse() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
-     * <code>optional bool amazon_s3_sse = 22 [json_name = "amazonS3Sse"];</code>
+     * <code>optional bool amazon_s3_sse = 15 [json_name = "amazonS3Sse"];</code>
      * @return The amazonS3Sse.
      */
     @java.lang.Override
@@ -15350,18 +15035,18 @@ java.lang.String defaultValue) {
       return amazonS3Sse_;
     }
 
-    public static final int AMAZON_S3_TRACE_FIELD_NUMBER = 23;
+    public static final int AMAZON_S3_TRACE_FIELD_NUMBER = 16;
     private boolean amazonS3Trace_ = false;
     /**
-     * <code>optional bool amazon_s3_trace = 23 [json_name = "amazonS3Trace"];</code>
+     * <code>optional bool amazon_s3_trace = 16 [json_name = "amazonS3Trace"];</code>
      * @return Whether the amazonS3Trace field is set.
      */
     @java.lang.Override
     public boolean hasAmazonS3Trace() {
-      return ((bitField0_ & 0x00400000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
-     * <code>optional bool amazon_s3_trace = 23 [json_name = "amazonS3Trace"];</code>
+     * <code>optional bool amazon_s3_trace = 16 [json_name = "amazonS3Trace"];</code>
      * @return The amazonS3Trace.
      */
     @java.lang.Override
@@ -15369,18 +15054,18 @@ java.lang.String defaultValue) {
       return amazonS3Trace_;
     }
 
-    public static final int AMAZON_S3_REQUEST_TIMEOUT_MILLISECONDS_FIELD_NUMBER = 24;
+    public static final int AMAZON_S3_REQUEST_TIMEOUT_MILLISECONDS_FIELD_NUMBER = 17;
     private long amazonS3RequestTimeoutMilliseconds_ = 0L;
     /**
-     * <code>optional int64 amazon_s3_request_timeout_milliseconds = 24 [json_name = "amazonS3RequestTimeoutMilliseconds"];</code>
+     * <code>optional int64 amazon_s3_request_timeout_milliseconds = 17 [json_name = "amazonS3RequestTimeoutMilliseconds"];</code>
      * @return Whether the amazonS3RequestTimeoutMilliseconds field is set.
      */
     @java.lang.Override
     public boolean hasAmazonS3RequestTimeoutMilliseconds() {
-      return ((bitField0_ & 0x00800000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
-     * <code>optional int64 amazon_s3_request_timeout_milliseconds = 24 [json_name = "amazonS3RequestTimeoutMilliseconds"];</code>
+     * <code>optional int64 amazon_s3_request_timeout_milliseconds = 17 [json_name = "amazonS3RequestTimeoutMilliseconds"];</code>
      * @return The amazonS3RequestTimeoutMilliseconds.
      */
     @java.lang.Override
@@ -15388,18 +15073,18 @@ java.lang.String defaultValue) {
       return amazonS3RequestTimeoutMilliseconds_;
     }
 
-    public static final int AMAZON_S3_UPLOAD_PART_SIZE_BYTES_FIELD_NUMBER = 25;
+    public static final int AMAZON_S3_UPLOAD_PART_SIZE_BYTES_FIELD_NUMBER = 18;
     private long amazonS3UploadPartSizeBytes_ = 0L;
     /**
-     * <code>optional int64 amazon_s3_upload_part_size_bytes = 25 [json_name = "amazonS3UploadPartSizeBytes"];</code>
+     * <code>optional int64 amazon_s3_upload_part_size_bytes = 18 [json_name = "amazonS3UploadPartSizeBytes"];</code>
      * @return Whether the amazonS3UploadPartSizeBytes field is set.
      */
     @java.lang.Override
     public boolean hasAmazonS3UploadPartSizeBytes() {
-      return ((bitField0_ & 0x01000000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
-     * <code>optional int64 amazon_s3_upload_part_size_bytes = 25 [json_name = "amazonS3UploadPartSizeBytes"];</code>
+     * <code>optional int64 amazon_s3_upload_part_size_bytes = 18 [json_name = "amazonS3UploadPartSizeBytes"];</code>
      * @return The amazonS3UploadPartSizeBytes.
      */
     @java.lang.Override
@@ -15407,19 +15092,19 @@ java.lang.String defaultValue) {
       return amazonS3UploadPartSizeBytes_;
     }
 
-    public static final int AMAZON_S3_STORAGE_CLASS_FIELD_NUMBER = 26;
+    public static final int AMAZON_S3_STORAGE_CLASS_FIELD_NUMBER = 19;
     @SuppressWarnings("serial")
     private volatile java.lang.Object amazonS3StorageClass_ = "";
     /**
-     * <code>optional string amazon_s3_storage_class = 26 [json_name = "amazonS3StorageClass"];</code>
+     * <code>optional string amazon_s3_storage_class = 19 [json_name = "amazonS3StorageClass"];</code>
      * @return Whether the amazonS3StorageClass field is set.
      */
     @java.lang.Override
     public boolean hasAmazonS3StorageClass() {
-      return ((bitField0_ & 0x02000000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
-     * <code>optional string amazon_s3_storage_class = 26 [json_name = "amazonS3StorageClass"];</code>
+     * <code>optional string amazon_s3_storage_class = 19 [json_name = "amazonS3StorageClass"];</code>
      * @return The amazonS3StorageClass.
      */
     @java.lang.Override
@@ -15436,7 +15121,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string amazon_s3_storage_class = 26 [json_name = "amazonS3StorageClass"];</code>
+     * <code>optional string amazon_s3_storage_class = 19 [json_name = "amazonS3StorageClass"];</code>
      * @return The bytes for amazonS3StorageClass.
      */
     @java.lang.Override
@@ -15478,73 +15163,52 @@ java.lang.String defaultValue) {
         output.writeBool(3, enableMobileDownload_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
-        output.writeInt64(4, maxFileSize_);
+        output.writeInt64(4, maxImageResolution_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
-        output.writeInt64(5, maxImageResolution_);
+        output.writeInt64(5, maxImageDecoderConcurrency_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
-        output.writeInt64(6, maxImageDecoderConcurrency_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 6, driverName_);
       }
       if (((bitField0_ & 0x00000040) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 7, driverName_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 7, amazonS3AccessKeyId_);
       }
       if (((bitField0_ & 0x00000080) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 8, directory_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 8, amazonS3SecretAccessKey_);
       }
       if (((bitField0_ & 0x00000100) != 0)) {
-        output.writeBool(9, enablePublicLink_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 9, amazonS3Bucket_);
       }
       if (((bitField0_ & 0x00000200) != 0)) {
-        output.writeBool(10, extractContent_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 10, amazonS3PathPrefix_);
       }
       if (((bitField0_ & 0x00000400) != 0)) {
-        output.writeBool(11, archiveRecursion_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 11, amazonS3Region_);
       }
       if (((bitField0_ & 0x00000800) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 12, publicLinkSalt_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 12, amazonS3Endpoint_);
       }
       if (((bitField0_ & 0x00001000) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 13, initialFont_);
+        output.writeBool(13, amazonS3Ssl_);
       }
       if (((bitField0_ & 0x00002000) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 14, amazonS3AccessKeyId_);
+        output.writeBool(14, amazonS3SignV2_);
       }
       if (((bitField0_ & 0x00004000) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 15, amazonS3SecretAccessKey_);
+        output.writeBool(15, amazonS3Sse_);
       }
       if (((bitField0_ & 0x00008000) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 16, amazonS3Bucket_);
+        output.writeBool(16, amazonS3Trace_);
       }
       if (((bitField0_ & 0x00010000) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 17, amazonS3PathPrefix_);
+        output.writeInt64(17, amazonS3RequestTimeoutMilliseconds_);
       }
       if (((bitField0_ & 0x00020000) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 18, amazonS3Region_);
+        output.writeInt64(18, amazonS3UploadPartSizeBytes_);
       }
       if (((bitField0_ & 0x00040000) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 19, amazonS3Endpoint_);
-      }
-      if (((bitField0_ & 0x00080000) != 0)) {
-        output.writeBool(20, amazonS3Ssl_);
-      }
-      if (((bitField0_ & 0x00100000) != 0)) {
-        output.writeBool(21, amazonS3SignV2_);
-      }
-      if (((bitField0_ & 0x00200000) != 0)) {
-        output.writeBool(22, amazonS3Sse_);
-      }
-      if (((bitField0_ & 0x00400000) != 0)) {
-        output.writeBool(23, amazonS3Trace_);
-      }
-      if (((bitField0_ & 0x00800000) != 0)) {
-        output.writeInt64(24, amazonS3RequestTimeoutMilliseconds_);
-      }
-      if (((bitField0_ & 0x01000000) != 0)) {
-        output.writeInt64(25, amazonS3UploadPartSizeBytes_);
-      }
-      if (((bitField0_ & 0x02000000) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 26, amazonS3StorageClass_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 19, amazonS3StorageClass_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -15569,84 +15233,59 @@ java.lang.String defaultValue) {
       }
       if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, maxFileSize_);
+          .computeInt64Size(4, maxImageResolution_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, maxImageResolution_);
+          .computeInt64Size(5, maxImageDecoderConcurrency_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, maxImageDecoderConcurrency_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(6, driverName_);
       }
       if (((bitField0_ & 0x00000040) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, driverName_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, amazonS3AccessKeyId_);
       }
       if (((bitField0_ & 0x00000080) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(8, directory_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(8, amazonS3SecretAccessKey_);
       }
       if (((bitField0_ & 0x00000100) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, enablePublicLink_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(9, amazonS3Bucket_);
       }
       if (((bitField0_ & 0x00000200) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, extractContent_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(10, amazonS3PathPrefix_);
       }
       if (((bitField0_ & 0x00000400) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(11, archiveRecursion_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(11, amazonS3Region_);
       }
       if (((bitField0_ & 0x00000800) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(12, publicLinkSalt_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(12, amazonS3Endpoint_);
       }
       if (((bitField0_ & 0x00001000) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(13, initialFont_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(13, amazonS3Ssl_);
       }
       if (((bitField0_ & 0x00002000) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(14, amazonS3AccessKeyId_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(14, amazonS3SignV2_);
       }
       if (((bitField0_ & 0x00004000) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(15, amazonS3SecretAccessKey_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(15, amazonS3Sse_);
       }
       if (((bitField0_ & 0x00008000) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(16, amazonS3Bucket_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(16, amazonS3Trace_);
       }
       if (((bitField0_ & 0x00010000) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(17, amazonS3PathPrefix_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(17, amazonS3RequestTimeoutMilliseconds_);
       }
       if (((bitField0_ & 0x00020000) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(18, amazonS3Region_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(18, amazonS3UploadPartSizeBytes_);
       }
       if (((bitField0_ & 0x00040000) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(19, amazonS3Endpoint_);
-      }
-      if (((bitField0_ & 0x00080000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(20, amazonS3Ssl_);
-      }
-      if (((bitField0_ & 0x00100000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(21, amazonS3SignV2_);
-      }
-      if (((bitField0_ & 0x00200000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(22, amazonS3Sse_);
-      }
-      if (((bitField0_ & 0x00400000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(23, amazonS3Trace_);
-      }
-      if (((bitField0_ & 0x00800000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(24, amazonS3RequestTimeoutMilliseconds_);
-      }
-      if (((bitField0_ & 0x01000000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(25, amazonS3UploadPartSizeBytes_);
-      }
-      if (((bitField0_ & 0x02000000) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(26, amazonS3StorageClass_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(19, amazonS3StorageClass_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -15678,11 +15317,6 @@ java.lang.String defaultValue) {
         if (getEnableMobileDownload()
             != other.getEnableMobileDownload()) return false;
       }
-      if (hasMaxFileSize() != other.hasMaxFileSize()) return false;
-      if (hasMaxFileSize()) {
-        if (getMaxFileSize()
-            != other.getMaxFileSize()) return false;
-      }
       if (hasMaxImageResolution() != other.hasMaxImageResolution()) return false;
       if (hasMaxImageResolution()) {
         if (getMaxImageResolution()
@@ -15697,36 +15331,6 @@ java.lang.String defaultValue) {
       if (hasDriverName()) {
         if (!getDriverName()
             .equals(other.getDriverName())) return false;
-      }
-      if (hasDirectory() != other.hasDirectory()) return false;
-      if (hasDirectory()) {
-        if (!getDirectory()
-            .equals(other.getDirectory())) return false;
-      }
-      if (hasEnablePublicLink() != other.hasEnablePublicLink()) return false;
-      if (hasEnablePublicLink()) {
-        if (getEnablePublicLink()
-            != other.getEnablePublicLink()) return false;
-      }
-      if (hasExtractContent() != other.hasExtractContent()) return false;
-      if (hasExtractContent()) {
-        if (getExtractContent()
-            != other.getExtractContent()) return false;
-      }
-      if (hasArchiveRecursion() != other.hasArchiveRecursion()) return false;
-      if (hasArchiveRecursion()) {
-        if (getArchiveRecursion()
-            != other.getArchiveRecursion()) return false;
-      }
-      if (hasPublicLinkSalt() != other.hasPublicLinkSalt()) return false;
-      if (hasPublicLinkSalt()) {
-        if (!getPublicLinkSalt()
-            .equals(other.getPublicLinkSalt())) return false;
-      }
-      if (hasInitialFont() != other.hasInitialFont()) return false;
-      if (hasInitialFont()) {
-        if (!getInitialFont()
-            .equals(other.getInitialFont())) return false;
       }
       if (hasAmazonS3AccessKeyId() != other.hasAmazonS3AccessKeyId()) return false;
       if (hasAmazonS3AccessKeyId()) {
@@ -15819,11 +15423,6 @@ java.lang.String defaultValue) {
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getEnableMobileDownload());
       }
-      if (hasMaxFileSize()) {
-        hash = (37 * hash) + MAX_FILE_SIZE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-            getMaxFileSize());
-      }
       if (hasMaxImageResolution()) {
         hash = (37 * hash) + MAX_IMAGE_RESOLUTION_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
@@ -15837,33 +15436,6 @@ java.lang.String defaultValue) {
       if (hasDriverName()) {
         hash = (37 * hash) + DRIVER_NAME_FIELD_NUMBER;
         hash = (53 * hash) + getDriverName().hashCode();
-      }
-      if (hasDirectory()) {
-        hash = (37 * hash) + DIRECTORY_FIELD_NUMBER;
-        hash = (53 * hash) + getDirectory().hashCode();
-      }
-      if (hasEnablePublicLink()) {
-        hash = (37 * hash) + ENABLE_PUBLIC_LINK_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getEnablePublicLink());
-      }
-      if (hasExtractContent()) {
-        hash = (37 * hash) + EXTRACT_CONTENT_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getExtractContent());
-      }
-      if (hasArchiveRecursion()) {
-        hash = (37 * hash) + ARCHIVE_RECURSION_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getArchiveRecursion());
-      }
-      if (hasPublicLinkSalt()) {
-        hash = (37 * hash) + PUBLIC_LINK_SALT_FIELD_NUMBER;
-        hash = (53 * hash) + getPublicLinkSalt().hashCode();
-      }
-      if (hasInitialFont()) {
-        hash = (37 * hash) + INITIAL_FONT_FIELD_NUMBER;
-        hash = (53 * hash) + getInitialFont().hashCode();
       }
       if (hasAmazonS3AccessKeyId()) {
         hash = (37 * hash) + AMAZON_S3_ACCESS_KEY_ID_FIELD_NUMBER;
@@ -16057,16 +15629,9 @@ java.lang.String defaultValue) {
         enableFileAttachments_ = false;
         enableMobileUpload_ = false;
         enableMobileDownload_ = false;
-        maxFileSize_ = 0L;
         maxImageResolution_ = 0L;
         maxImageDecoderConcurrency_ = 0L;
         driverName_ = "";
-        directory_ = "";
-        enablePublicLink_ = false;
-        extractContent_ = false;
-        archiveRecursion_ = false;
-        publicLinkSalt_ = "";
-        initialFont_ = "";
         amazonS3AccessKeyId_ = "";
         amazonS3SecretAccessKey_ = "";
         amazonS3Bucket_ = "";
@@ -16127,96 +15692,68 @@ java.lang.String defaultValue) {
           to_bitField0_ |= 0x00000004;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.maxFileSize_ = maxFileSize_;
+          result.maxImageResolution_ = maxImageResolution_;
           to_bitField0_ |= 0x00000008;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.maxImageResolution_ = maxImageResolution_;
+          result.maxImageDecoderConcurrency_ = maxImageDecoderConcurrency_;
           to_bitField0_ |= 0x00000010;
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.maxImageDecoderConcurrency_ = maxImageDecoderConcurrency_;
+          result.driverName_ = driverName_;
           to_bitField0_ |= 0x00000020;
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.driverName_ = driverName_;
+          result.amazonS3AccessKeyId_ = amazonS3AccessKeyId_;
           to_bitField0_ |= 0x00000040;
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.directory_ = directory_;
+          result.amazonS3SecretAccessKey_ = amazonS3SecretAccessKey_;
           to_bitField0_ |= 0x00000080;
         }
         if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.enablePublicLink_ = enablePublicLink_;
+          result.amazonS3Bucket_ = amazonS3Bucket_;
           to_bitField0_ |= 0x00000100;
         }
         if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.extractContent_ = extractContent_;
+          result.amazonS3PathPrefix_ = amazonS3PathPrefix_;
           to_bitField0_ |= 0x00000200;
         }
         if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.archiveRecursion_ = archiveRecursion_;
+          result.amazonS3Region_ = amazonS3Region_;
           to_bitField0_ |= 0x00000400;
         }
         if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.publicLinkSalt_ = publicLinkSalt_;
+          result.amazonS3Endpoint_ = amazonS3Endpoint_;
           to_bitField0_ |= 0x00000800;
         }
         if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.initialFont_ = initialFont_;
+          result.amazonS3Ssl_ = amazonS3Ssl_;
           to_bitField0_ |= 0x00001000;
         }
         if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.amazonS3AccessKeyId_ = amazonS3AccessKeyId_;
+          result.amazonS3SignV2_ = amazonS3SignV2_;
           to_bitField0_ |= 0x00002000;
         }
         if (((from_bitField0_ & 0x00004000) != 0)) {
-          result.amazonS3SecretAccessKey_ = amazonS3SecretAccessKey_;
+          result.amazonS3Sse_ = amazonS3Sse_;
           to_bitField0_ |= 0x00004000;
         }
         if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.amazonS3Bucket_ = amazonS3Bucket_;
+          result.amazonS3Trace_ = amazonS3Trace_;
           to_bitField0_ |= 0x00008000;
         }
         if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.amazonS3PathPrefix_ = amazonS3PathPrefix_;
+          result.amazonS3RequestTimeoutMilliseconds_ = amazonS3RequestTimeoutMilliseconds_;
           to_bitField0_ |= 0x00010000;
         }
         if (((from_bitField0_ & 0x00020000) != 0)) {
-          result.amazonS3Region_ = amazonS3Region_;
+          result.amazonS3UploadPartSizeBytes_ = amazonS3UploadPartSizeBytes_;
           to_bitField0_ |= 0x00020000;
         }
         if (((from_bitField0_ & 0x00040000) != 0)) {
-          result.amazonS3Endpoint_ = amazonS3Endpoint_;
-          to_bitField0_ |= 0x00040000;
-        }
-        if (((from_bitField0_ & 0x00080000) != 0)) {
-          result.amazonS3Ssl_ = amazonS3Ssl_;
-          to_bitField0_ |= 0x00080000;
-        }
-        if (((from_bitField0_ & 0x00100000) != 0)) {
-          result.amazonS3SignV2_ = amazonS3SignV2_;
-          to_bitField0_ |= 0x00100000;
-        }
-        if (((from_bitField0_ & 0x00200000) != 0)) {
-          result.amazonS3Sse_ = amazonS3Sse_;
-          to_bitField0_ |= 0x00200000;
-        }
-        if (((from_bitField0_ & 0x00400000) != 0)) {
-          result.amazonS3Trace_ = amazonS3Trace_;
-          to_bitField0_ |= 0x00400000;
-        }
-        if (((from_bitField0_ & 0x00800000) != 0)) {
-          result.amazonS3RequestTimeoutMilliseconds_ = amazonS3RequestTimeoutMilliseconds_;
-          to_bitField0_ |= 0x00800000;
-        }
-        if (((from_bitField0_ & 0x01000000) != 0)) {
-          result.amazonS3UploadPartSizeBytes_ = amazonS3UploadPartSizeBytes_;
-          to_bitField0_ |= 0x01000000;
-        }
-        if (((from_bitField0_ & 0x02000000) != 0)) {
           result.amazonS3StorageClass_ = amazonS3StorageClass_;
-          to_bitField0_ |= 0x02000000;
+          to_bitField0_ |= 0x00040000;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -16242,9 +15779,6 @@ java.lang.String defaultValue) {
         if (other.hasEnableMobileDownload()) {
           setEnableMobileDownload(other.getEnableMobileDownload());
         }
-        if (other.hasMaxFileSize()) {
-          setMaxFileSize(other.getMaxFileSize());
-        }
         if (other.hasMaxImageResolution()) {
           setMaxImageResolution(other.getMaxImageResolution());
         }
@@ -16253,61 +15787,37 @@ java.lang.String defaultValue) {
         }
         if (other.hasDriverName()) {
           driverName_ = other.driverName_;
-          bitField0_ |= 0x00000040;
-          onChanged();
-        }
-        if (other.hasDirectory()) {
-          directory_ = other.directory_;
-          bitField0_ |= 0x00000080;
-          onChanged();
-        }
-        if (other.hasEnablePublicLink()) {
-          setEnablePublicLink(other.getEnablePublicLink());
-        }
-        if (other.hasExtractContent()) {
-          setExtractContent(other.getExtractContent());
-        }
-        if (other.hasArchiveRecursion()) {
-          setArchiveRecursion(other.getArchiveRecursion());
-        }
-        if (other.hasPublicLinkSalt()) {
-          publicLinkSalt_ = other.publicLinkSalt_;
-          bitField0_ |= 0x00000800;
-          onChanged();
-        }
-        if (other.hasInitialFont()) {
-          initialFont_ = other.initialFont_;
-          bitField0_ |= 0x00001000;
+          bitField0_ |= 0x00000020;
           onChanged();
         }
         if (other.hasAmazonS3AccessKeyId()) {
           amazonS3AccessKeyId_ = other.amazonS3AccessKeyId_;
-          bitField0_ |= 0x00002000;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         if (other.hasAmazonS3SecretAccessKey()) {
           amazonS3SecretAccessKey_ = other.amazonS3SecretAccessKey_;
-          bitField0_ |= 0x00004000;
+          bitField0_ |= 0x00000080;
           onChanged();
         }
         if (other.hasAmazonS3Bucket()) {
           amazonS3Bucket_ = other.amazonS3Bucket_;
-          bitField0_ |= 0x00008000;
+          bitField0_ |= 0x00000100;
           onChanged();
         }
         if (other.hasAmazonS3PathPrefix()) {
           amazonS3PathPrefix_ = other.amazonS3PathPrefix_;
-          bitField0_ |= 0x00010000;
+          bitField0_ |= 0x00000200;
           onChanged();
         }
         if (other.hasAmazonS3Region()) {
           amazonS3Region_ = other.amazonS3Region_;
-          bitField0_ |= 0x00020000;
+          bitField0_ |= 0x00000400;
           onChanged();
         }
         if (other.hasAmazonS3Endpoint()) {
           amazonS3Endpoint_ = other.amazonS3Endpoint_;
-          bitField0_ |= 0x00040000;
+          bitField0_ |= 0x00000800;
           onChanged();
         }
         if (other.hasAmazonS3Ssl()) {
@@ -16330,7 +15840,7 @@ java.lang.String defaultValue) {
         }
         if (other.hasAmazonS3StorageClass()) {
           amazonS3StorageClass_ = other.amazonS3StorageClass_;
-          bitField0_ |= 0x02000000;
+          bitField0_ |= 0x00040000;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -16375,120 +15885,85 @@ java.lang.String defaultValue) {
                 break;
               } // case 24
               case 32: {
-                maxFileSize_ = input.readInt64();
+                maxImageResolution_ = input.readInt64();
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
               case 40: {
-                maxImageResolution_ = input.readInt64();
+                maxImageDecoderConcurrency_ = input.readInt64();
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
-              case 48: {
-                maxImageDecoderConcurrency_ = input.readInt64();
+              case 50: {
+                driverName_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000020;
                 break;
-              } // case 48
+              } // case 50
               case 58: {
-                driverName_ = input.readStringRequireUtf8();
+                amazonS3AccessKeyId_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
               case 66: {
-                directory_ = input.readStringRequireUtf8();
+                amazonS3SecretAccessKey_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
-              case 72: {
-                enablePublicLink_ = input.readBool();
+              case 74: {
+                amazonS3Bucket_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000100;
                 break;
-              } // case 72
-              case 80: {
-                extractContent_ = input.readBool();
+              } // case 74
+              case 82: {
+                amazonS3PathPrefix_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000200;
                 break;
-              } // case 80
-              case 88: {
-                archiveRecursion_ = input.readBool();
+              } // case 82
+              case 90: {
+                amazonS3Region_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000400;
                 break;
-              } // case 88
+              } // case 90
               case 98: {
-                publicLinkSalt_ = input.readStringRequireUtf8();
+                amazonS3Endpoint_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000800;
                 break;
               } // case 98
-              case 106: {
-                initialFont_ = input.readStringRequireUtf8();
+              case 104: {
+                amazonS3Ssl_ = input.readBool();
                 bitField0_ |= 0x00001000;
                 break;
-              } // case 106
-              case 114: {
-                amazonS3AccessKeyId_ = input.readStringRequireUtf8();
+              } // case 104
+              case 112: {
+                amazonS3SignV2_ = input.readBool();
                 bitField0_ |= 0x00002000;
                 break;
-              } // case 114
-              case 122: {
-                amazonS3SecretAccessKey_ = input.readStringRequireUtf8();
+              } // case 112
+              case 120: {
+                amazonS3Sse_ = input.readBool();
                 bitField0_ |= 0x00004000;
                 break;
-              } // case 122
-              case 130: {
-                amazonS3Bucket_ = input.readStringRequireUtf8();
+              } // case 120
+              case 128: {
+                amazonS3Trace_ = input.readBool();
                 bitField0_ |= 0x00008000;
                 break;
-              } // case 130
-              case 138: {
-                amazonS3PathPrefix_ = input.readStringRequireUtf8();
+              } // case 128
+              case 136: {
+                amazonS3RequestTimeoutMilliseconds_ = input.readInt64();
                 bitField0_ |= 0x00010000;
                 break;
-              } // case 138
-              case 146: {
-                amazonS3Region_ = input.readStringRequireUtf8();
+              } // case 136
+              case 144: {
+                amazonS3UploadPartSizeBytes_ = input.readInt64();
                 bitField0_ |= 0x00020000;
                 break;
-              } // case 146
+              } // case 144
               case 154: {
-                amazonS3Endpoint_ = input.readStringRequireUtf8();
+                amazonS3StorageClass_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00040000;
                 break;
               } // case 154
-              case 160: {
-                amazonS3Ssl_ = input.readBool();
-                bitField0_ |= 0x00080000;
-                break;
-              } // case 160
-              case 168: {
-                amazonS3SignV2_ = input.readBool();
-                bitField0_ |= 0x00100000;
-                break;
-              } // case 168
-              case 176: {
-                amazonS3Sse_ = input.readBool();
-                bitField0_ |= 0x00200000;
-                break;
-              } // case 176
-              case 184: {
-                amazonS3Trace_ = input.readBool();
-                bitField0_ |= 0x00400000;
-                break;
-              } // case 184
-              case 192: {
-                amazonS3RequestTimeoutMilliseconds_ = input.readInt64();
-                bitField0_ |= 0x00800000;
-                break;
-              } // case 192
-              case 200: {
-                amazonS3UploadPartSizeBytes_ = input.readInt64();
-                bitField0_ |= 0x01000000;
-                break;
-              } // case 200
-              case 210: {
-                amazonS3StorageClass_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x02000000;
-                break;
-              } // case 210
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -16626,57 +16101,17 @@ java.lang.String defaultValue) {
         return this;
       }
 
-      private long maxFileSize_ ;
-      /**
-       * <code>optional int64 max_file_size = 4 [json_name = "maxFileSize"];</code>
-       * @return Whether the maxFileSize field is set.
-       */
-      @java.lang.Override
-      public boolean hasMaxFileSize() {
-        return ((bitField0_ & 0x00000008) != 0);
-      }
-      /**
-       * <code>optional int64 max_file_size = 4 [json_name = "maxFileSize"];</code>
-       * @return The maxFileSize.
-       */
-      @java.lang.Override
-      public long getMaxFileSize() {
-        return maxFileSize_;
-      }
-      /**
-       * <code>optional int64 max_file_size = 4 [json_name = "maxFileSize"];</code>
-       * @param value The maxFileSize to set.
-       * @return This builder for chaining.
-       */
-      public Builder setMaxFileSize(long value) {
-
-        maxFileSize_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int64 max_file_size = 4 [json_name = "maxFileSize"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMaxFileSize() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        maxFileSize_ = 0L;
-        onChanged();
-        return this;
-      }
-
       private long maxImageResolution_ ;
       /**
-       * <code>optional int64 max_image_resolution = 5 [json_name = "maxImageResolution"];</code>
+       * <code>optional int64 max_image_resolution = 4 [json_name = "maxImageResolution"];</code>
        * @return Whether the maxImageResolution field is set.
        */
       @java.lang.Override
       public boolean hasMaxImageResolution() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
-       * <code>optional int64 max_image_resolution = 5 [json_name = "maxImageResolution"];</code>
+       * <code>optional int64 max_image_resolution = 4 [json_name = "maxImageResolution"];</code>
        * @return The maxImageResolution.
        */
       @java.lang.Override
@@ -16684,23 +16119,23 @@ java.lang.String defaultValue) {
         return maxImageResolution_;
       }
       /**
-       * <code>optional int64 max_image_resolution = 5 [json_name = "maxImageResolution"];</code>
+       * <code>optional int64 max_image_resolution = 4 [json_name = "maxImageResolution"];</code>
        * @param value The maxImageResolution to set.
        * @return This builder for chaining.
        */
       public Builder setMaxImageResolution(long value) {
 
         maxImageResolution_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 max_image_resolution = 5 [json_name = "maxImageResolution"];</code>
+       * <code>optional int64 max_image_resolution = 4 [json_name = "maxImageResolution"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMaxImageResolution() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000008);
         maxImageResolution_ = 0L;
         onChanged();
         return this;
@@ -16708,15 +16143,15 @@ java.lang.String defaultValue) {
 
       private long maxImageDecoderConcurrency_ ;
       /**
-       * <code>optional int64 max_image_decoder_concurrency = 6 [json_name = "maxImageDecoderConcurrency"];</code>
+       * <code>optional int64 max_image_decoder_concurrency = 5 [json_name = "maxImageDecoderConcurrency"];</code>
        * @return Whether the maxImageDecoderConcurrency field is set.
        */
       @java.lang.Override
       public boolean hasMaxImageDecoderConcurrency() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
-       * <code>optional int64 max_image_decoder_concurrency = 6 [json_name = "maxImageDecoderConcurrency"];</code>
+       * <code>optional int64 max_image_decoder_concurrency = 5 [json_name = "maxImageDecoderConcurrency"];</code>
        * @return The maxImageDecoderConcurrency.
        */
       @java.lang.Override
@@ -16724,23 +16159,23 @@ java.lang.String defaultValue) {
         return maxImageDecoderConcurrency_;
       }
       /**
-       * <code>optional int64 max_image_decoder_concurrency = 6 [json_name = "maxImageDecoderConcurrency"];</code>
+       * <code>optional int64 max_image_decoder_concurrency = 5 [json_name = "maxImageDecoderConcurrency"];</code>
        * @param value The maxImageDecoderConcurrency to set.
        * @return This builder for chaining.
        */
       public Builder setMaxImageDecoderConcurrency(long value) {
 
         maxImageDecoderConcurrency_ = value;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 max_image_decoder_concurrency = 6 [json_name = "maxImageDecoderConcurrency"];</code>
+       * <code>optional int64 max_image_decoder_concurrency = 5 [json_name = "maxImageDecoderConcurrency"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMaxImageDecoderConcurrency() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000010);
         maxImageDecoderConcurrency_ = 0L;
         onChanged();
         return this;
@@ -16748,14 +16183,14 @@ java.lang.String defaultValue) {
 
       private java.lang.Object driverName_ = "";
       /**
-       * <code>optional string driver_name = 7 [json_name = "driverName"];</code>
+       * <code>optional string driver_name = 6 [json_name = "driverName"];</code>
        * @return Whether the driverName field is set.
        */
       public boolean hasDriverName() {
-        return ((bitField0_ & 0x00000040) != 0);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
-       * <code>optional string driver_name = 7 [json_name = "driverName"];</code>
+       * <code>optional string driver_name = 6 [json_name = "driverName"];</code>
        * @return The driverName.
        */
       public java.lang.String getDriverName() {
@@ -16771,7 +16206,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string driver_name = 7 [json_name = "driverName"];</code>
+       * <code>optional string driver_name = 6 [json_name = "driverName"];</code>
        * @return The bytes for driverName.
        */
       public com.google.protobuf.ByteString
@@ -16788,7 +16223,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string driver_name = 7 [json_name = "driverName"];</code>
+       * <code>optional string driver_name = 6 [json_name = "driverName"];</code>
        * @param value The driverName to set.
        * @return This builder for chaining.
        */
@@ -16796,22 +16231,22 @@ java.lang.String defaultValue) {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         driverName_ = value;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string driver_name = 7 [json_name = "driverName"];</code>
+       * <code>optional string driver_name = 6 [json_name = "driverName"];</code>
        * @return This builder for chaining.
        */
       public Builder clearDriverName() {
         driverName_ = getDefaultInstance().getDriverName();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
       /**
-       * <code>optional string driver_name = 7 [json_name = "driverName"];</code>
+       * <code>optional string driver_name = 6 [json_name = "driverName"];</code>
        * @param value The bytes for driverName to set.
        * @return This builder for chaining.
        */
@@ -16820,378 +16255,21 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         driverName_ = value;
-        bitField0_ |= 0x00000040;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object directory_ = "";
-      /**
-       * <code>optional string directory = 8 [json_name = "directory"];</code>
-       * @return Whether the directory field is set.
-       */
-      public boolean hasDirectory() {
-        return ((bitField0_ & 0x00000080) != 0);
-      }
-      /**
-       * <code>optional string directory = 8 [json_name = "directory"];</code>
-       * @return The directory.
-       */
-      public java.lang.String getDirectory() {
-        java.lang.Object ref = directory_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          directory_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string directory = 8 [json_name = "directory"];</code>
-       * @return The bytes for directory.
-       */
-      public com.google.protobuf.ByteString
-          getDirectoryBytes() {
-        java.lang.Object ref = directory_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          directory_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string directory = 8 [json_name = "directory"];</code>
-       * @param value The directory to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDirectory(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        directory_ = value;
-        bitField0_ |= 0x00000080;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string directory = 8 [json_name = "directory"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDirectory() {
-        directory_ = getDefaultInstance().getDirectory();
-        bitField0_ = (bitField0_ & ~0x00000080);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string directory = 8 [json_name = "directory"];</code>
-       * @param value The bytes for directory to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDirectoryBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        directory_ = value;
-        bitField0_ |= 0x00000080;
-        onChanged();
-        return this;
-      }
-
-      private boolean enablePublicLink_ ;
-      /**
-       * <code>optional bool enable_public_link = 9 [json_name = "enablePublicLink"];</code>
-       * @return Whether the enablePublicLink field is set.
-       */
-      @java.lang.Override
-      public boolean hasEnablePublicLink() {
-        return ((bitField0_ & 0x00000100) != 0);
-      }
-      /**
-       * <code>optional bool enable_public_link = 9 [json_name = "enablePublicLink"];</code>
-       * @return The enablePublicLink.
-       */
-      @java.lang.Override
-      public boolean getEnablePublicLink() {
-        return enablePublicLink_;
-      }
-      /**
-       * <code>optional bool enable_public_link = 9 [json_name = "enablePublicLink"];</code>
-       * @param value The enablePublicLink to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnablePublicLink(boolean value) {
-
-        enablePublicLink_ = value;
-        bitField0_ |= 0x00000100;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bool enable_public_link = 9 [json_name = "enablePublicLink"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEnablePublicLink() {
-        bitField0_ = (bitField0_ & ~0x00000100);
-        enablePublicLink_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean extractContent_ ;
-      /**
-       * <code>optional bool extract_content = 10 [json_name = "extractContent"];</code>
-       * @return Whether the extractContent field is set.
-       */
-      @java.lang.Override
-      public boolean hasExtractContent() {
-        return ((bitField0_ & 0x00000200) != 0);
-      }
-      /**
-       * <code>optional bool extract_content = 10 [json_name = "extractContent"];</code>
-       * @return The extractContent.
-       */
-      @java.lang.Override
-      public boolean getExtractContent() {
-        return extractContent_;
-      }
-      /**
-       * <code>optional bool extract_content = 10 [json_name = "extractContent"];</code>
-       * @param value The extractContent to set.
-       * @return This builder for chaining.
-       */
-      public Builder setExtractContent(boolean value) {
-
-        extractContent_ = value;
-        bitField0_ |= 0x00000200;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bool extract_content = 10 [json_name = "extractContent"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearExtractContent() {
-        bitField0_ = (bitField0_ & ~0x00000200);
-        extractContent_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean archiveRecursion_ ;
-      /**
-       * <code>optional bool archive_recursion = 11 [json_name = "archiveRecursion"];</code>
-       * @return Whether the archiveRecursion field is set.
-       */
-      @java.lang.Override
-      public boolean hasArchiveRecursion() {
-        return ((bitField0_ & 0x00000400) != 0);
-      }
-      /**
-       * <code>optional bool archive_recursion = 11 [json_name = "archiveRecursion"];</code>
-       * @return The archiveRecursion.
-       */
-      @java.lang.Override
-      public boolean getArchiveRecursion() {
-        return archiveRecursion_;
-      }
-      /**
-       * <code>optional bool archive_recursion = 11 [json_name = "archiveRecursion"];</code>
-       * @param value The archiveRecursion to set.
-       * @return This builder for chaining.
-       */
-      public Builder setArchiveRecursion(boolean value) {
-
-        archiveRecursion_ = value;
-        bitField0_ |= 0x00000400;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bool archive_recursion = 11 [json_name = "archiveRecursion"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearArchiveRecursion() {
-        bitField0_ = (bitField0_ & ~0x00000400);
-        archiveRecursion_ = false;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object publicLinkSalt_ = "";
-      /**
-       * <code>optional string public_link_salt = 12 [json_name = "publicLinkSalt"];</code>
-       * @return Whether the publicLinkSalt field is set.
-       */
-      public boolean hasPublicLinkSalt() {
-        return ((bitField0_ & 0x00000800) != 0);
-      }
-      /**
-       * <code>optional string public_link_salt = 12 [json_name = "publicLinkSalt"];</code>
-       * @return The publicLinkSalt.
-       */
-      public java.lang.String getPublicLinkSalt() {
-        java.lang.Object ref = publicLinkSalt_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          publicLinkSalt_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string public_link_salt = 12 [json_name = "publicLinkSalt"];</code>
-       * @return The bytes for publicLinkSalt.
-       */
-      public com.google.protobuf.ByteString
-          getPublicLinkSaltBytes() {
-        java.lang.Object ref = publicLinkSalt_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          publicLinkSalt_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string public_link_salt = 12 [json_name = "publicLinkSalt"];</code>
-       * @param value The publicLinkSalt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPublicLinkSalt(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        publicLinkSalt_ = value;
-        bitField0_ |= 0x00000800;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string public_link_salt = 12 [json_name = "publicLinkSalt"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearPublicLinkSalt() {
-        publicLinkSalt_ = getDefaultInstance().getPublicLinkSalt();
-        bitField0_ = (bitField0_ & ~0x00000800);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string public_link_salt = 12 [json_name = "publicLinkSalt"];</code>
-       * @param value The bytes for publicLinkSalt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setPublicLinkSaltBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        publicLinkSalt_ = value;
-        bitField0_ |= 0x00000800;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object initialFont_ = "";
-      /**
-       * <code>optional string initial_font = 13 [json_name = "initialFont"];</code>
-       * @return Whether the initialFont field is set.
-       */
-      public boolean hasInitialFont() {
-        return ((bitField0_ & 0x00001000) != 0);
-      }
-      /**
-       * <code>optional string initial_font = 13 [json_name = "initialFont"];</code>
-       * @return The initialFont.
-       */
-      public java.lang.String getInitialFont() {
-        java.lang.Object ref = initialFont_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          initialFont_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string initial_font = 13 [json_name = "initialFont"];</code>
-       * @return The bytes for initialFont.
-       */
-      public com.google.protobuf.ByteString
-          getInitialFontBytes() {
-        java.lang.Object ref = initialFont_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          initialFont_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string initial_font = 13 [json_name = "initialFont"];</code>
-       * @param value The initialFont to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInitialFont(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        initialFont_ = value;
-        bitField0_ |= 0x00001000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string initial_font = 13 [json_name = "initialFont"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearInitialFont() {
-        initialFont_ = getDefaultInstance().getInitialFont();
-        bitField0_ = (bitField0_ & ~0x00001000);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string initial_font = 13 [json_name = "initialFont"];</code>
-       * @param value The bytes for initialFont to set.
-       * @return This builder for chaining.
-       */
-      public Builder setInitialFontBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        initialFont_ = value;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
 
       private java.lang.Object amazonS3AccessKeyId_ = "";
       /**
-       * <code>optional string amazon_s3_access_key_id = 14 [json_name = "amazonS3AccessKeyId"];</code>
+       * <code>optional string amazon_s3_access_key_id = 7 [json_name = "amazonS3AccessKeyId"];</code>
        * @return Whether the amazonS3AccessKeyId field is set.
        */
       public boolean hasAmazonS3AccessKeyId() {
-        return ((bitField0_ & 0x00002000) != 0);
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
-       * <code>optional string amazon_s3_access_key_id = 14 [json_name = "amazonS3AccessKeyId"];</code>
+       * <code>optional string amazon_s3_access_key_id = 7 [json_name = "amazonS3AccessKeyId"];</code>
        * @return The amazonS3AccessKeyId.
        */
       public java.lang.String getAmazonS3AccessKeyId() {
@@ -17207,7 +16285,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string amazon_s3_access_key_id = 14 [json_name = "amazonS3AccessKeyId"];</code>
+       * <code>optional string amazon_s3_access_key_id = 7 [json_name = "amazonS3AccessKeyId"];</code>
        * @return The bytes for amazonS3AccessKeyId.
        */
       public com.google.protobuf.ByteString
@@ -17224,7 +16302,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string amazon_s3_access_key_id = 14 [json_name = "amazonS3AccessKeyId"];</code>
+       * <code>optional string amazon_s3_access_key_id = 7 [json_name = "amazonS3AccessKeyId"];</code>
        * @param value The amazonS3AccessKeyId to set.
        * @return This builder for chaining.
        */
@@ -17232,22 +16310,22 @@ java.lang.String defaultValue) {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         amazonS3AccessKeyId_ = value;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string amazon_s3_access_key_id = 14 [json_name = "amazonS3AccessKeyId"];</code>
+       * <code>optional string amazon_s3_access_key_id = 7 [json_name = "amazonS3AccessKeyId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmazonS3AccessKeyId() {
         amazonS3AccessKeyId_ = getDefaultInstance().getAmazonS3AccessKeyId();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
       /**
-       * <code>optional string amazon_s3_access_key_id = 14 [json_name = "amazonS3AccessKeyId"];</code>
+       * <code>optional string amazon_s3_access_key_id = 7 [json_name = "amazonS3AccessKeyId"];</code>
        * @param value The bytes for amazonS3AccessKeyId to set.
        * @return This builder for chaining.
        */
@@ -17256,21 +16334,21 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         amazonS3AccessKeyId_ = value;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
 
       private java.lang.Object amazonS3SecretAccessKey_ = "";
       /**
-       * <code>optional string amazon_s3_secret_access_key = 15 [json_name = "amazonS3SecretAccessKey"];</code>
+       * <code>optional string amazon_s3_secret_access_key = 8 [json_name = "amazonS3SecretAccessKey"];</code>
        * @return Whether the amazonS3SecretAccessKey field is set.
        */
       public boolean hasAmazonS3SecretAccessKey() {
-        return ((bitField0_ & 0x00004000) != 0);
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
-       * <code>optional string amazon_s3_secret_access_key = 15 [json_name = "amazonS3SecretAccessKey"];</code>
+       * <code>optional string amazon_s3_secret_access_key = 8 [json_name = "amazonS3SecretAccessKey"];</code>
        * @return The amazonS3SecretAccessKey.
        */
       public java.lang.String getAmazonS3SecretAccessKey() {
@@ -17286,7 +16364,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string amazon_s3_secret_access_key = 15 [json_name = "amazonS3SecretAccessKey"];</code>
+       * <code>optional string amazon_s3_secret_access_key = 8 [json_name = "amazonS3SecretAccessKey"];</code>
        * @return The bytes for amazonS3SecretAccessKey.
        */
       public com.google.protobuf.ByteString
@@ -17303,7 +16381,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string amazon_s3_secret_access_key = 15 [json_name = "amazonS3SecretAccessKey"];</code>
+       * <code>optional string amazon_s3_secret_access_key = 8 [json_name = "amazonS3SecretAccessKey"];</code>
        * @param value The amazonS3SecretAccessKey to set.
        * @return This builder for chaining.
        */
@@ -17311,22 +16389,22 @@ java.lang.String defaultValue) {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         amazonS3SecretAccessKey_ = value;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string amazon_s3_secret_access_key = 15 [json_name = "amazonS3SecretAccessKey"];</code>
+       * <code>optional string amazon_s3_secret_access_key = 8 [json_name = "amazonS3SecretAccessKey"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmazonS3SecretAccessKey() {
         amazonS3SecretAccessKey_ = getDefaultInstance().getAmazonS3SecretAccessKey();
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
       /**
-       * <code>optional string amazon_s3_secret_access_key = 15 [json_name = "amazonS3SecretAccessKey"];</code>
+       * <code>optional string amazon_s3_secret_access_key = 8 [json_name = "amazonS3SecretAccessKey"];</code>
        * @param value The bytes for amazonS3SecretAccessKey to set.
        * @return This builder for chaining.
        */
@@ -17335,21 +16413,21 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         amazonS3SecretAccessKey_ = value;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
 
       private java.lang.Object amazonS3Bucket_ = "";
       /**
-       * <code>optional string amazon_s3_bucket = 16 [json_name = "amazonS3Bucket"];</code>
+       * <code>optional string amazon_s3_bucket = 9 [json_name = "amazonS3Bucket"];</code>
        * @return Whether the amazonS3Bucket field is set.
        */
       public boolean hasAmazonS3Bucket() {
-        return ((bitField0_ & 0x00008000) != 0);
+        return ((bitField0_ & 0x00000100) != 0);
       }
       /**
-       * <code>optional string amazon_s3_bucket = 16 [json_name = "amazonS3Bucket"];</code>
+       * <code>optional string amazon_s3_bucket = 9 [json_name = "amazonS3Bucket"];</code>
        * @return The amazonS3Bucket.
        */
       public java.lang.String getAmazonS3Bucket() {
@@ -17365,7 +16443,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string amazon_s3_bucket = 16 [json_name = "amazonS3Bucket"];</code>
+       * <code>optional string amazon_s3_bucket = 9 [json_name = "amazonS3Bucket"];</code>
        * @return The bytes for amazonS3Bucket.
        */
       public com.google.protobuf.ByteString
@@ -17382,7 +16460,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string amazon_s3_bucket = 16 [json_name = "amazonS3Bucket"];</code>
+       * <code>optional string amazon_s3_bucket = 9 [json_name = "amazonS3Bucket"];</code>
        * @param value The amazonS3Bucket to set.
        * @return This builder for chaining.
        */
@@ -17390,22 +16468,22 @@ java.lang.String defaultValue) {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         amazonS3Bucket_ = value;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string amazon_s3_bucket = 16 [json_name = "amazonS3Bucket"];</code>
+       * <code>optional string amazon_s3_bucket = 9 [json_name = "amazonS3Bucket"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmazonS3Bucket() {
         amazonS3Bucket_ = getDefaultInstance().getAmazonS3Bucket();
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
         return this;
       }
       /**
-       * <code>optional string amazon_s3_bucket = 16 [json_name = "amazonS3Bucket"];</code>
+       * <code>optional string amazon_s3_bucket = 9 [json_name = "amazonS3Bucket"];</code>
        * @param value The bytes for amazonS3Bucket to set.
        * @return This builder for chaining.
        */
@@ -17414,21 +16492,21 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         amazonS3Bucket_ = value;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
 
       private java.lang.Object amazonS3PathPrefix_ = "";
       /**
-       * <code>optional string amazon_s3_path_prefix = 17 [json_name = "amazonS3PathPrefix"];</code>
+       * <code>optional string amazon_s3_path_prefix = 10 [json_name = "amazonS3PathPrefix"];</code>
        * @return Whether the amazonS3PathPrefix field is set.
        */
       public boolean hasAmazonS3PathPrefix() {
-        return ((bitField0_ & 0x00010000) != 0);
+        return ((bitField0_ & 0x00000200) != 0);
       }
       /**
-       * <code>optional string amazon_s3_path_prefix = 17 [json_name = "amazonS3PathPrefix"];</code>
+       * <code>optional string amazon_s3_path_prefix = 10 [json_name = "amazonS3PathPrefix"];</code>
        * @return The amazonS3PathPrefix.
        */
       public java.lang.String getAmazonS3PathPrefix() {
@@ -17444,7 +16522,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string amazon_s3_path_prefix = 17 [json_name = "amazonS3PathPrefix"];</code>
+       * <code>optional string amazon_s3_path_prefix = 10 [json_name = "amazonS3PathPrefix"];</code>
        * @return The bytes for amazonS3PathPrefix.
        */
       public com.google.protobuf.ByteString
@@ -17461,7 +16539,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string amazon_s3_path_prefix = 17 [json_name = "amazonS3PathPrefix"];</code>
+       * <code>optional string amazon_s3_path_prefix = 10 [json_name = "amazonS3PathPrefix"];</code>
        * @param value The amazonS3PathPrefix to set.
        * @return This builder for chaining.
        */
@@ -17469,22 +16547,22 @@ java.lang.String defaultValue) {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         amazonS3PathPrefix_ = value;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string amazon_s3_path_prefix = 17 [json_name = "amazonS3PathPrefix"];</code>
+       * <code>optional string amazon_s3_path_prefix = 10 [json_name = "amazonS3PathPrefix"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmazonS3PathPrefix() {
         amazonS3PathPrefix_ = getDefaultInstance().getAmazonS3PathPrefix();
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00000200);
         onChanged();
         return this;
       }
       /**
-       * <code>optional string amazon_s3_path_prefix = 17 [json_name = "amazonS3PathPrefix"];</code>
+       * <code>optional string amazon_s3_path_prefix = 10 [json_name = "amazonS3PathPrefix"];</code>
        * @param value The bytes for amazonS3PathPrefix to set.
        * @return This builder for chaining.
        */
@@ -17493,21 +16571,21 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         amazonS3PathPrefix_ = value;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
 
       private java.lang.Object amazonS3Region_ = "";
       /**
-       * <code>optional string amazon_s3_region = 18 [json_name = "amazonS3Region"];</code>
+       * <code>optional string amazon_s3_region = 11 [json_name = "amazonS3Region"];</code>
        * @return Whether the amazonS3Region field is set.
        */
       public boolean hasAmazonS3Region() {
-        return ((bitField0_ & 0x00020000) != 0);
+        return ((bitField0_ & 0x00000400) != 0);
       }
       /**
-       * <code>optional string amazon_s3_region = 18 [json_name = "amazonS3Region"];</code>
+       * <code>optional string amazon_s3_region = 11 [json_name = "amazonS3Region"];</code>
        * @return The amazonS3Region.
        */
       public java.lang.String getAmazonS3Region() {
@@ -17523,7 +16601,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string amazon_s3_region = 18 [json_name = "amazonS3Region"];</code>
+       * <code>optional string amazon_s3_region = 11 [json_name = "amazonS3Region"];</code>
        * @return The bytes for amazonS3Region.
        */
       public com.google.protobuf.ByteString
@@ -17540,7 +16618,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string amazon_s3_region = 18 [json_name = "amazonS3Region"];</code>
+       * <code>optional string amazon_s3_region = 11 [json_name = "amazonS3Region"];</code>
        * @param value The amazonS3Region to set.
        * @return This builder for chaining.
        */
@@ -17548,22 +16626,22 @@ java.lang.String defaultValue) {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         amazonS3Region_ = value;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string amazon_s3_region = 18 [json_name = "amazonS3Region"];</code>
+       * <code>optional string amazon_s3_region = 11 [json_name = "amazonS3Region"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmazonS3Region() {
         amazonS3Region_ = getDefaultInstance().getAmazonS3Region();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
         return this;
       }
       /**
-       * <code>optional string amazon_s3_region = 18 [json_name = "amazonS3Region"];</code>
+       * <code>optional string amazon_s3_region = 11 [json_name = "amazonS3Region"];</code>
        * @param value The bytes for amazonS3Region to set.
        * @return This builder for chaining.
        */
@@ -17572,21 +16650,21 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         amazonS3Region_ = value;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
 
       private java.lang.Object amazonS3Endpoint_ = "";
       /**
-       * <code>optional string amazon_s3_endpoint = 19 [json_name = "amazonS3Endpoint"];</code>
+       * <code>optional string amazon_s3_endpoint = 12 [json_name = "amazonS3Endpoint"];</code>
        * @return Whether the amazonS3Endpoint field is set.
        */
       public boolean hasAmazonS3Endpoint() {
-        return ((bitField0_ & 0x00040000) != 0);
+        return ((bitField0_ & 0x00000800) != 0);
       }
       /**
-       * <code>optional string amazon_s3_endpoint = 19 [json_name = "amazonS3Endpoint"];</code>
+       * <code>optional string amazon_s3_endpoint = 12 [json_name = "amazonS3Endpoint"];</code>
        * @return The amazonS3Endpoint.
        */
       public java.lang.String getAmazonS3Endpoint() {
@@ -17602,7 +16680,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string amazon_s3_endpoint = 19 [json_name = "amazonS3Endpoint"];</code>
+       * <code>optional string amazon_s3_endpoint = 12 [json_name = "amazonS3Endpoint"];</code>
        * @return The bytes for amazonS3Endpoint.
        */
       public com.google.protobuf.ByteString
@@ -17619,7 +16697,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string amazon_s3_endpoint = 19 [json_name = "amazonS3Endpoint"];</code>
+       * <code>optional string amazon_s3_endpoint = 12 [json_name = "amazonS3Endpoint"];</code>
        * @param value The amazonS3Endpoint to set.
        * @return This builder for chaining.
        */
@@ -17627,22 +16705,22 @@ java.lang.String defaultValue) {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         amazonS3Endpoint_ = value;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string amazon_s3_endpoint = 19 [json_name = "amazonS3Endpoint"];</code>
+       * <code>optional string amazon_s3_endpoint = 12 [json_name = "amazonS3Endpoint"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmazonS3Endpoint() {
         amazonS3Endpoint_ = getDefaultInstance().getAmazonS3Endpoint();
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
         return this;
       }
       /**
-       * <code>optional string amazon_s3_endpoint = 19 [json_name = "amazonS3Endpoint"];</code>
+       * <code>optional string amazon_s3_endpoint = 12 [json_name = "amazonS3Endpoint"];</code>
        * @param value The bytes for amazonS3Endpoint to set.
        * @return This builder for chaining.
        */
@@ -17651,22 +16729,22 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         amazonS3Endpoint_ = value;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
 
       private boolean amazonS3Ssl_ ;
       /**
-       * <code>optional bool amazon_s3_ssl = 20 [json_name = "amazonS3Ssl"];</code>
+       * <code>optional bool amazon_s3_ssl = 13 [json_name = "amazonS3Ssl"];</code>
        * @return Whether the amazonS3Ssl field is set.
        */
       @java.lang.Override
       public boolean hasAmazonS3Ssl() {
-        return ((bitField0_ & 0x00080000) != 0);
+        return ((bitField0_ & 0x00001000) != 0);
       }
       /**
-       * <code>optional bool amazon_s3_ssl = 20 [json_name = "amazonS3Ssl"];</code>
+       * <code>optional bool amazon_s3_ssl = 13 [json_name = "amazonS3Ssl"];</code>
        * @return The amazonS3Ssl.
        */
       @java.lang.Override
@@ -17674,23 +16752,23 @@ java.lang.String defaultValue) {
         return amazonS3Ssl_;
       }
       /**
-       * <code>optional bool amazon_s3_ssl = 20 [json_name = "amazonS3Ssl"];</code>
+       * <code>optional bool amazon_s3_ssl = 13 [json_name = "amazonS3Ssl"];</code>
        * @param value The amazonS3Ssl to set.
        * @return This builder for chaining.
        */
       public Builder setAmazonS3Ssl(boolean value) {
 
         amazonS3Ssl_ = value;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool amazon_s3_ssl = 20 [json_name = "amazonS3Ssl"];</code>
+       * <code>optional bool amazon_s3_ssl = 13 [json_name = "amazonS3Ssl"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmazonS3Ssl() {
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00001000);
         amazonS3Ssl_ = false;
         onChanged();
         return this;
@@ -17698,15 +16776,15 @@ java.lang.String defaultValue) {
 
       private boolean amazonS3SignV2_ ;
       /**
-       * <code>optional bool amazon_s3_sign_v2 = 21 [json_name = "amazonS3SignV2"];</code>
+       * <code>optional bool amazon_s3_sign_v2 = 14 [json_name = "amazonS3SignV2"];</code>
        * @return Whether the amazonS3SignV2 field is set.
        */
       @java.lang.Override
       public boolean hasAmazonS3SignV2() {
-        return ((bitField0_ & 0x00100000) != 0);
+        return ((bitField0_ & 0x00002000) != 0);
       }
       /**
-       * <code>optional bool amazon_s3_sign_v2 = 21 [json_name = "amazonS3SignV2"];</code>
+       * <code>optional bool amazon_s3_sign_v2 = 14 [json_name = "amazonS3SignV2"];</code>
        * @return The amazonS3SignV2.
        */
       @java.lang.Override
@@ -17714,23 +16792,23 @@ java.lang.String defaultValue) {
         return amazonS3SignV2_;
       }
       /**
-       * <code>optional bool amazon_s3_sign_v2 = 21 [json_name = "amazonS3SignV2"];</code>
+       * <code>optional bool amazon_s3_sign_v2 = 14 [json_name = "amazonS3SignV2"];</code>
        * @param value The amazonS3SignV2 to set.
        * @return This builder for chaining.
        */
       public Builder setAmazonS3SignV2(boolean value) {
 
         amazonS3SignV2_ = value;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool amazon_s3_sign_v2 = 21 [json_name = "amazonS3SignV2"];</code>
+       * <code>optional bool amazon_s3_sign_v2 = 14 [json_name = "amazonS3SignV2"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmazonS3SignV2() {
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00002000);
         amazonS3SignV2_ = false;
         onChanged();
         return this;
@@ -17738,15 +16816,15 @@ java.lang.String defaultValue) {
 
       private boolean amazonS3Sse_ ;
       /**
-       * <code>optional bool amazon_s3_sse = 22 [json_name = "amazonS3Sse"];</code>
+       * <code>optional bool amazon_s3_sse = 15 [json_name = "amazonS3Sse"];</code>
        * @return Whether the amazonS3Sse field is set.
        */
       @java.lang.Override
       public boolean hasAmazonS3Sse() {
-        return ((bitField0_ & 0x00200000) != 0);
+        return ((bitField0_ & 0x00004000) != 0);
       }
       /**
-       * <code>optional bool amazon_s3_sse = 22 [json_name = "amazonS3Sse"];</code>
+       * <code>optional bool amazon_s3_sse = 15 [json_name = "amazonS3Sse"];</code>
        * @return The amazonS3Sse.
        */
       @java.lang.Override
@@ -17754,23 +16832,23 @@ java.lang.String defaultValue) {
         return amazonS3Sse_;
       }
       /**
-       * <code>optional bool amazon_s3_sse = 22 [json_name = "amazonS3Sse"];</code>
+       * <code>optional bool amazon_s3_sse = 15 [json_name = "amazonS3Sse"];</code>
        * @param value The amazonS3Sse to set.
        * @return This builder for chaining.
        */
       public Builder setAmazonS3Sse(boolean value) {
 
         amazonS3Sse_ = value;
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00004000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool amazon_s3_sse = 22 [json_name = "amazonS3Sse"];</code>
+       * <code>optional bool amazon_s3_sse = 15 [json_name = "amazonS3Sse"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmazonS3Sse() {
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         amazonS3Sse_ = false;
         onChanged();
         return this;
@@ -17778,15 +16856,15 @@ java.lang.String defaultValue) {
 
       private boolean amazonS3Trace_ ;
       /**
-       * <code>optional bool amazon_s3_trace = 23 [json_name = "amazonS3Trace"];</code>
+       * <code>optional bool amazon_s3_trace = 16 [json_name = "amazonS3Trace"];</code>
        * @return Whether the amazonS3Trace field is set.
        */
       @java.lang.Override
       public boolean hasAmazonS3Trace() {
-        return ((bitField0_ & 0x00400000) != 0);
+        return ((bitField0_ & 0x00008000) != 0);
       }
       /**
-       * <code>optional bool amazon_s3_trace = 23 [json_name = "amazonS3Trace"];</code>
+       * <code>optional bool amazon_s3_trace = 16 [json_name = "amazonS3Trace"];</code>
        * @return The amazonS3Trace.
        */
       @java.lang.Override
@@ -17794,23 +16872,23 @@ java.lang.String defaultValue) {
         return amazonS3Trace_;
       }
       /**
-       * <code>optional bool amazon_s3_trace = 23 [json_name = "amazonS3Trace"];</code>
+       * <code>optional bool amazon_s3_trace = 16 [json_name = "amazonS3Trace"];</code>
        * @param value The amazonS3Trace to set.
        * @return This builder for chaining.
        */
       public Builder setAmazonS3Trace(boolean value) {
 
         amazonS3Trace_ = value;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x00008000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool amazon_s3_trace = 23 [json_name = "amazonS3Trace"];</code>
+       * <code>optional bool amazon_s3_trace = 16 [json_name = "amazonS3Trace"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmazonS3Trace() {
-        bitField0_ = (bitField0_ & ~0x00400000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         amazonS3Trace_ = false;
         onChanged();
         return this;
@@ -17818,15 +16896,15 @@ java.lang.String defaultValue) {
 
       private long amazonS3RequestTimeoutMilliseconds_ ;
       /**
-       * <code>optional int64 amazon_s3_request_timeout_milliseconds = 24 [json_name = "amazonS3RequestTimeoutMilliseconds"];</code>
+       * <code>optional int64 amazon_s3_request_timeout_milliseconds = 17 [json_name = "amazonS3RequestTimeoutMilliseconds"];</code>
        * @return Whether the amazonS3RequestTimeoutMilliseconds field is set.
        */
       @java.lang.Override
       public boolean hasAmazonS3RequestTimeoutMilliseconds() {
-        return ((bitField0_ & 0x00800000) != 0);
+        return ((bitField0_ & 0x00010000) != 0);
       }
       /**
-       * <code>optional int64 amazon_s3_request_timeout_milliseconds = 24 [json_name = "amazonS3RequestTimeoutMilliseconds"];</code>
+       * <code>optional int64 amazon_s3_request_timeout_milliseconds = 17 [json_name = "amazonS3RequestTimeoutMilliseconds"];</code>
        * @return The amazonS3RequestTimeoutMilliseconds.
        */
       @java.lang.Override
@@ -17834,23 +16912,23 @@ java.lang.String defaultValue) {
         return amazonS3RequestTimeoutMilliseconds_;
       }
       /**
-       * <code>optional int64 amazon_s3_request_timeout_milliseconds = 24 [json_name = "amazonS3RequestTimeoutMilliseconds"];</code>
+       * <code>optional int64 amazon_s3_request_timeout_milliseconds = 17 [json_name = "amazonS3RequestTimeoutMilliseconds"];</code>
        * @param value The amazonS3RequestTimeoutMilliseconds to set.
        * @return This builder for chaining.
        */
       public Builder setAmazonS3RequestTimeoutMilliseconds(long value) {
 
         amazonS3RequestTimeoutMilliseconds_ = value;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 amazon_s3_request_timeout_milliseconds = 24 [json_name = "amazonS3RequestTimeoutMilliseconds"];</code>
+       * <code>optional int64 amazon_s3_request_timeout_milliseconds = 17 [json_name = "amazonS3RequestTimeoutMilliseconds"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmazonS3RequestTimeoutMilliseconds() {
-        bitField0_ = (bitField0_ & ~0x00800000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         amazonS3RequestTimeoutMilliseconds_ = 0L;
         onChanged();
         return this;
@@ -17858,15 +16936,15 @@ java.lang.String defaultValue) {
 
       private long amazonS3UploadPartSizeBytes_ ;
       /**
-       * <code>optional int64 amazon_s3_upload_part_size_bytes = 25 [json_name = "amazonS3UploadPartSizeBytes"];</code>
+       * <code>optional int64 amazon_s3_upload_part_size_bytes = 18 [json_name = "amazonS3UploadPartSizeBytes"];</code>
        * @return Whether the amazonS3UploadPartSizeBytes field is set.
        */
       @java.lang.Override
       public boolean hasAmazonS3UploadPartSizeBytes() {
-        return ((bitField0_ & 0x01000000) != 0);
+        return ((bitField0_ & 0x00020000) != 0);
       }
       /**
-       * <code>optional int64 amazon_s3_upload_part_size_bytes = 25 [json_name = "amazonS3UploadPartSizeBytes"];</code>
+       * <code>optional int64 amazon_s3_upload_part_size_bytes = 18 [json_name = "amazonS3UploadPartSizeBytes"];</code>
        * @return The amazonS3UploadPartSizeBytes.
        */
       @java.lang.Override
@@ -17874,23 +16952,23 @@ java.lang.String defaultValue) {
         return amazonS3UploadPartSizeBytes_;
       }
       /**
-       * <code>optional int64 amazon_s3_upload_part_size_bytes = 25 [json_name = "amazonS3UploadPartSizeBytes"];</code>
+       * <code>optional int64 amazon_s3_upload_part_size_bytes = 18 [json_name = "amazonS3UploadPartSizeBytes"];</code>
        * @param value The amazonS3UploadPartSizeBytes to set.
        * @return This builder for chaining.
        */
       public Builder setAmazonS3UploadPartSizeBytes(long value) {
 
         amazonS3UploadPartSizeBytes_ = value;
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x00020000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 amazon_s3_upload_part_size_bytes = 25 [json_name = "amazonS3UploadPartSizeBytes"];</code>
+       * <code>optional int64 amazon_s3_upload_part_size_bytes = 18 [json_name = "amazonS3UploadPartSizeBytes"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmazonS3UploadPartSizeBytes() {
-        bitField0_ = (bitField0_ & ~0x01000000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         amazonS3UploadPartSizeBytes_ = 0L;
         onChanged();
         return this;
@@ -17898,14 +16976,14 @@ java.lang.String defaultValue) {
 
       private java.lang.Object amazonS3StorageClass_ = "";
       /**
-       * <code>optional string amazon_s3_storage_class = 26 [json_name = "amazonS3StorageClass"];</code>
+       * <code>optional string amazon_s3_storage_class = 19 [json_name = "amazonS3StorageClass"];</code>
        * @return Whether the amazonS3StorageClass field is set.
        */
       public boolean hasAmazonS3StorageClass() {
-        return ((bitField0_ & 0x02000000) != 0);
+        return ((bitField0_ & 0x00040000) != 0);
       }
       /**
-       * <code>optional string amazon_s3_storage_class = 26 [json_name = "amazonS3StorageClass"];</code>
+       * <code>optional string amazon_s3_storage_class = 19 [json_name = "amazonS3StorageClass"];</code>
        * @return The amazonS3StorageClass.
        */
       public java.lang.String getAmazonS3StorageClass() {
@@ -17921,7 +16999,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string amazon_s3_storage_class = 26 [json_name = "amazonS3StorageClass"];</code>
+       * <code>optional string amazon_s3_storage_class = 19 [json_name = "amazonS3StorageClass"];</code>
        * @return The bytes for amazonS3StorageClass.
        */
       public com.google.protobuf.ByteString
@@ -17938,7 +17016,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string amazon_s3_storage_class = 26 [json_name = "amazonS3StorageClass"];</code>
+       * <code>optional string amazon_s3_storage_class = 19 [json_name = "amazonS3StorageClass"];</code>
        * @param value The amazonS3StorageClass to set.
        * @return This builder for chaining.
        */
@@ -17946,22 +17024,22 @@ java.lang.String defaultValue) {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         amazonS3StorageClass_ = value;
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x00040000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string amazon_s3_storage_class = 26 [json_name = "amazonS3StorageClass"];</code>
+       * <code>optional string amazon_s3_storage_class = 19 [json_name = "amazonS3StorageClass"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAmazonS3StorageClass() {
         amazonS3StorageClass_ = getDefaultInstance().getAmazonS3StorageClass();
-        bitField0_ = (bitField0_ & ~0x02000000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         onChanged();
         return this;
       }
       /**
-       * <code>optional string amazon_s3_storage_class = 26 [json_name = "amazonS3StorageClass"];</code>
+       * <code>optional string amazon_s3_storage_class = 19 [json_name = "amazonS3StorageClass"];</code>
        * @param value The bytes for amazonS3StorageClass to set.
        * @return This builder for chaining.
        */
@@ -17970,7 +17048,7 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         amazonS3StorageClass_ = value;
-        bitField0_ |= 0x02000000;
+        bitField0_ |= 0x00040000;
         onChanged();
         return this;
       }
@@ -52810,380 +51888,368 @@ java.lang.String defaultValue) {
       "nable_forgot_link\030\007 \001(\010H\006R\020enableForgotL" +
       "ink\210\001\001B\021\n\017_minimum_lengthB\021\n\017_maximum_le" +
       "ngthB\014\n\n_lowercaseB\t\n\007_numberB\014\n\n_upperc" +
-      "aseB\t\n\007_symbolB\025\n\023_enable_forgot_link\"\340\017" +
+      "aseB\t\n\007_symbolB\025\n\023_enable_forgot_link\"\243\014" +
       "\n\nConfigFile\022;\n\027enable_file_attachments\030" +
       "\001 \001(\010H\000R\025enableFileAttachments\210\001\001\0225\n\024ena" +
       "ble_mobile_upload\030\002 \001(\010H\001R\022enableMobileU" +
       "pload\210\001\001\0229\n\026enable_mobile_download\030\003 \001(\010" +
-      "H\002R\024enableMobileDownload\210\001\001\022\'\n\rmax_file_" +
-      "size\030\004 \001(\003H\003R\013maxFileSize\210\001\001\0225\n\024max_imag" +
-      "e_resolution\030\005 \001(\003H\004R\022maxImageResolution" +
-      "\210\001\001\022F\n\035max_image_decoder_concurrency\030\006 \001" +
-      "(\003H\005R\032maxImageDecoderConcurrency\210\001\001\022$\n\013d" +
-      "river_name\030\007 \001(\tH\006R\ndriverName\210\001\001\022!\n\tdir" +
-      "ectory\030\010 \001(\tH\007R\tdirectory\210\001\001\0221\n\022enable_p" +
-      "ublic_link\030\t \001(\010H\010R\020enablePublicLink\210\001\001\022" +
-      ",\n\017extract_content\030\n \001(\010H\tR\016extractConte" +
-      "nt\210\001\001\0220\n\021archive_recursion\030\013 \001(\010H\nR\020arch" +
-      "iveRecursion\210\001\001\022-\n\020public_link_salt\030\014 \001(" +
-      "\tH\013R\016publicLinkSalt\210\001\001\022&\n\014initial_font\030\r" +
-      " \001(\tH\014R\013initialFont\210\001\001\0229\n\027amazon_s3_acce" +
-      "ss_key_id\030\016 \001(\tH\rR\023amazonS3AccessKeyId\210\001" +
-      "\001\022A\n\033amazon_s3_secret_access_key\030\017 \001(\tH\016" +
-      "R\027amazonS3SecretAccessKey\210\001\001\022-\n\020amazon_s" +
-      "3_bucket\030\020 \001(\tH\017R\016amazonS3Bucket\210\001\001\0226\n\025a" +
-      "mazon_s3_path_prefix\030\021 \001(\tH\020R\022amazonS3Pa" +
-      "thPrefix\210\001\001\022-\n\020amazon_s3_region\030\022 \001(\tH\021R" +
-      "\016amazonS3Region\210\001\001\0221\n\022amazon_s3_endpoint" +
-      "\030\023 \001(\tH\022R\020amazonS3Endpoint\210\001\001\022\'\n\ramazon_" +
-      "s3_ssl\030\024 \001(\010H\023R\013amazonS3Ssl\210\001\001\022.\n\021amazon" +
-      "_s3_sign_v2\030\025 \001(\010H\024R\016amazonS3SignV2\210\001\001\022\'" +
-      "\n\ramazon_s3_sse\030\026 \001(\010H\025R\013amazonS3Sse\210\001\001\022" +
-      "+\n\017amazon_s3_trace\030\027 \001(\010H\026R\ramazonS3Trac" +
-      "e\210\001\001\022W\n&amazon_s3_request_timeout_millis" +
-      "econds\030\030 \001(\003H\027R\"amazonS3RequestTimeoutMi" +
-      "lliseconds\210\001\001\022J\n amazon_s3_upload_part_s" +
-      "ize_bytes\030\031 \001(\003H\030R\033amazonS3UploadPartSiz" +
-      "eBytes\210\001\001\022:\n\027amazon_s3_storage_class\030\032 \001" +
-      "(\tH\031R\024amazonS3StorageClass\210\001\001B\032\n\030_enable" +
-      "_file_attachmentsB\027\n\025_enable_mobile_uplo" +
-      "adB\031\n\027_enable_mobile_downloadB\020\n\016_max_fi" +
-      "le_sizeB\027\n\025_max_image_resolutionB \n\036_max" +
-      "_image_decoder_concurrencyB\016\n\014_driver_na" +
-      "meB\014\n\n_directoryB\025\n\023_enable_public_linkB" +
-      "\022\n\020_extract_contentB\024\n\022_archive_recursio" +
-      "nB\023\n\021_public_link_saltB\017\n\r_initial_fontB" +
-      "\032\n\030_amazon_s3_access_key_idB\036\n\034_amazon_s" +
-      "3_secret_access_keyB\023\n\021_amazon_s3_bucket" +
-      "B\030\n\026_amazon_s3_path_prefixB\023\n\021_amazon_s3" +
-      "_regionB\025\n\023_amazon_s3_endpointB\020\n\016_amazo" +
-      "n_s3_sslB\024\n\022_amazon_s3_sign_v2B\020\n\016_amazo" +
-      "n_s3_sseB\022\n\020_amazon_s3_traceB)\n\'_amazon_" +
-      "s3_request_timeout_millisecondsB#\n!_amaz" +
-      "on_s3_upload_part_size_bytesB\032\n\030_amazon_" +
-      "s3_storage_class\"\210\021\n\013ConfigEmail\022=\n\030send" +
-      "_email_notifications\030\001 \001(\010H\000R\026sendEmailN" +
-      "otifications\210\001\001\022A\n\032require_email_verific" +
-      "ation\030\002 \001(\010H\001R\030requireEmailVerification\210" +
-      "\001\001\022*\n\016feedback_email\030\003 \001(\tH\002R\rfeedbackEm" +
-      "ail\210\001\001\022-\n\020reply_to_address\030\004 \001(\tH\003R\016repl" +
-      "yToAddress\210\001\001\022-\n\020enable_smtp_auth\030\005 \001(\010H" +
-      "\004R\016enableSmtpAuth\210\001\001\022(\n\rsmtp_username\030\006 " +
-      "\001(\tH\005R\014smtpUsername\210\001\001\022(\n\rsmtp_password\030" +
-      "\007 \001(\tH\006R\014smtpPassword\210\001\001\022$\n\013smtp_server\030" +
-      "\010 \001(\tH\007R\nsmtpServer\210\001\001\022 \n\tsmtp_port\030\t \001(" +
-      "\tH\010R\010smtpPort\210\001\001\0223\n\023smtp_server_timeout\030" +
-      "\n \001(\005H\tR\021smtpServerTimeout\210\001\001\0224\n\023connect" +
-      "ion_security\030\013 \001(\tH\nR\022connectionSecurity" +
-      "\210\001\001\022;\n\027send_push_notifications\030\014 \001(\010H\013R\025" +
-      "sendPushNotifications\210\001\001\022=\n\030push_notific" +
-      "ation_server\030\r \001(\tH\014R\026pushNotificationSe" +
-      "rver\210\001\001\022A\n\032push_notification_contents\030\016 " +
-      "\001(\tH\rR\030pushNotificationContents\210\001\001\022=\n\030pu" +
-      "sh_notification_buffer\030\017 \001(\005H\016R\026pushNoti" +
-      "ficationBuffer\210\001\001\0227\n\025enable_email_batchi" +
-      "ng\030\020 \001(\010H\017R\023enableEmailBatching\210\001\001\022@\n\032em" +
-      "ail_batching_buffer_size\030\021 \001(\005H\020R\027emailB" +
-      "atchingBufferSize\210\001\001\022;\n\027email_batching_i" +
-      "nterval\030\022 \001(\005H\021R\025emailBatchingInterval\210\001" +
-      "\001\022T\n$skip_server_certificate_verificatio" +
-      "n\030\023 \001(\010H\022R!skipServerCertificateVerifica" +
-      "tion\210\001\001\022L\n email_notification_contents_t" +
-      "ype\030\024 \001(\tH\023R\035emailNotificationContentsTy" +
-      "pe\210\001\001\0221\n\022login_button_color\030\025 \001(\tH\024R\020log" +
-      "inButtonColor\210\001\001\022>\n\031login_button_border_" +
-      "color\030\026 \001(\tH\025R\026loginButtonBorderColor\210\001\001" +
-      "\022:\n\027login_button_text_color\030\027 \001(\tH\026R\024log" +
-      "inButtonTextColor\210\001\001\022>\n\031rate_limiting_me" +
-      "mory_size\030\030 \001(\005H\027R\026rateLimitingMemorySiz" +
-      "e\210\001\001\0228\n\026rate_limiting_per_hour\030\031 \001(\005H\030R\023" +
-      "rateLimitingPerHour\210\001\001\022:\n\027rate_limiting_" +
-      "max_burst\030\032 \001(\005H\031R\024rateLimitingMaxBurst\210" +
-      "\001\001B\033\n\031_send_email_notificationsB\035\n\033_requ" +
-      "ire_email_verificationB\021\n\017_feedback_emai" +
-      "lB\023\n\021_reply_to_addressB\023\n\021_enable_smtp_a" +
-      "uthB\020\n\016_smtp_usernameB\020\n\016_smtp_passwordB" +
-      "\016\n\014_smtp_serverB\014\n\n_smtp_portB\026\n\024_smtp_s" +
-      "erver_timeoutB\026\n\024_connection_securityB\032\n" +
-      "\030_send_push_notificationsB\033\n\031_push_notif" +
-      "ication_serverB\035\n\033_push_notification_con" +
-      "tentsB\033\n\031_push_notification_bufferB\030\n\026_e" +
-      "nable_email_batchingB\035\n\033_email_batching_" +
-      "buffer_sizeB\032\n\030_email_batching_intervalB" +
-      "\'\n%_skip_server_certificate_verification" +
-      "B#\n!_email_notification_contents_typeB\025\n" +
+      "H\002R\024enableMobileDownload\210\001\001\0225\n\024max_image" +
+      "_resolution\030\004 \001(\003H\003R\022maxImageResolution\210" +
+      "\001\001\022F\n\035max_image_decoder_concurrency\030\005 \001(" +
+      "\003H\004R\032maxImageDecoderConcurrency\210\001\001\022$\n\013dr" +
+      "iver_name\030\006 \001(\tH\005R\ndriverName\210\001\001\0229\n\027amaz" +
+      "on_s3_access_key_id\030\007 \001(\tH\006R\023amazonS3Acc" +
+      "essKeyId\210\001\001\022A\n\033amazon_s3_secret_access_k" +
+      "ey\030\010 \001(\tH\007R\027amazonS3SecretAccessKey\210\001\001\022-" +
+      "\n\020amazon_s3_bucket\030\t \001(\tH\010R\016amazonS3Buck" +
+      "et\210\001\001\0226\n\025amazon_s3_path_prefix\030\n \001(\tH\tR\022" +
+      "amazonS3PathPrefix\210\001\001\022-\n\020amazon_s3_regio" +
+      "n\030\013 \001(\tH\nR\016amazonS3Region\210\001\001\0221\n\022amazon_s" +
+      "3_endpoint\030\014 \001(\tH\013R\020amazonS3Endpoint\210\001\001\022" +
+      "\'\n\ramazon_s3_ssl\030\r \001(\010H\014R\013amazonS3Ssl\210\001\001" +
+      "\022.\n\021amazon_s3_sign_v2\030\016 \001(\010H\rR\016amazonS3S" +
+      "ignV2\210\001\001\022\'\n\ramazon_s3_sse\030\017 \001(\010H\016R\013amazo" +
+      "nS3Sse\210\001\001\022+\n\017amazon_s3_trace\030\020 \001(\010H\017R\ram" +
+      "azonS3Trace\210\001\001\022W\n&amazon_s3_request_time" +
+      "out_milliseconds\030\021 \001(\003H\020R\"amazonS3Reques" +
+      "tTimeoutMilliseconds\210\001\001\022J\n amazon_s3_upl" +
+      "oad_part_size_bytes\030\022 \001(\003H\021R\033amazonS3Upl" +
+      "oadPartSizeBytes\210\001\001\022:\n\027amazon_s3_storage" +
+      "_class\030\023 \001(\tH\022R\024amazonS3StorageClass\210\001\001B" +
+      "\032\n\030_enable_file_attachmentsB\027\n\025_enable_m" +
+      "obile_uploadB\031\n\027_enable_mobile_downloadB" +
+      "\027\n\025_max_image_resolutionB \n\036_max_image_d" +
+      "ecoder_concurrencyB\016\n\014_driver_nameB\032\n\030_a" +
+      "mazon_s3_access_key_idB\036\n\034_amazon_s3_sec" +
+      "ret_access_keyB\023\n\021_amazon_s3_bucketB\030\n\026_" +
+      "amazon_s3_path_prefixB\023\n\021_amazon_s3_regi" +
+      "onB\025\n\023_amazon_s3_endpointB\020\n\016_amazon_s3_" +
+      "sslB\024\n\022_amazon_s3_sign_v2B\020\n\016_amazon_s3_" +
+      "sseB\022\n\020_amazon_s3_traceB)\n\'_amazon_s3_re" +
+      "quest_timeout_millisecondsB#\n!_amazon_s3" +
+      "_upload_part_size_bytesB\032\n\030_amazon_s3_st" +
+      "orage_class\"\210\021\n\013ConfigEmail\022=\n\030send_emai" +
+      "l_notifications\030\001 \001(\010H\000R\026sendEmailNotifi" +
+      "cations\210\001\001\022A\n\032require_email_verification" +
+      "\030\002 \001(\010H\001R\030requireEmailVerification\210\001\001\022*\n" +
+      "\016feedback_email\030\003 \001(\tH\002R\rfeedbackEmail\210\001" +
+      "\001\022-\n\020reply_to_address\030\004 \001(\tH\003R\016replyToAd" +
+      "dress\210\001\001\022-\n\020enable_smtp_auth\030\005 \001(\010H\004R\016en" +
+      "ableSmtpAuth\210\001\001\022(\n\rsmtp_username\030\006 \001(\tH\005" +
+      "R\014smtpUsername\210\001\001\022(\n\rsmtp_password\030\007 \001(\t" +
+      "H\006R\014smtpPassword\210\001\001\022$\n\013smtp_server\030\010 \001(\t" +
+      "H\007R\nsmtpServer\210\001\001\022 \n\tsmtp_port\030\t \001(\tH\010R\010" +
+      "smtpPort\210\001\001\0223\n\023smtp_server_timeout\030\n \001(\005" +
+      "H\tR\021smtpServerTimeout\210\001\001\0224\n\023connection_s" +
+      "ecurity\030\013 \001(\tH\nR\022connectionSecurity\210\001\001\022;" +
+      "\n\027send_push_notifications\030\014 \001(\010H\013R\025sendP" +
+      "ushNotifications\210\001\001\022=\n\030push_notification" +
+      "_server\030\r \001(\tH\014R\026pushNotificationServer\210" +
+      "\001\001\022A\n\032push_notification_contents\030\016 \001(\tH\r" +
+      "R\030pushNotificationContents\210\001\001\022=\n\030push_no" +
+      "tification_buffer\030\017 \001(\005H\016R\026pushNotificat" +
+      "ionBuffer\210\001\001\0227\n\025enable_email_batching\030\020 " +
+      "\001(\010H\017R\023enableEmailBatching\210\001\001\022@\n\032email_b" +
+      "atching_buffer_size\030\021 \001(\005H\020R\027emailBatchi" +
+      "ngBufferSize\210\001\001\022;\n\027email_batching_interv" +
+      "al\030\022 \001(\005H\021R\025emailBatchingInterval\210\001\001\022T\n$" +
+      "skip_server_certificate_verification\030\023 \001" +
+      "(\010H\022R!skipServerCertificateVerification\210" +
+      "\001\001\022L\n email_notification_contents_type\030\024" +
+      " \001(\tH\023R\035emailNotificationContentsType\210\001\001" +
+      "\0221\n\022login_button_color\030\025 \001(\tH\024R\020loginBut" +
+      "tonColor\210\001\001\022>\n\031login_button_border_color" +
+      "\030\026 \001(\tH\025R\026loginButtonBorderColor\210\001\001\022:\n\027l" +
+      "ogin_button_text_color\030\027 \001(\tH\026R\024loginBut" +
+      "tonTextColor\210\001\001\022>\n\031rate_limiting_memory_" +
+      "size\030\030 \001(\005H\027R\026rateLimitingMemorySize\210\001\001\022" +
+      "8\n\026rate_limiting_per_hour\030\031 \001(\005H\030R\023rateL" +
+      "imitingPerHour\210\001\001\022:\n\027rate_limiting_max_b" +
+      "urst\030\032 \001(\005H\031R\024rateLimitingMaxBurst\210\001\001B\033\n" +
+      "\031_send_email_notificationsB\035\n\033_require_e" +
+      "mail_verificationB\021\n\017_feedback_emailB\023\n\021" +
+      "_reply_to_addressB\023\n\021_enable_smtp_authB\020" +
+      "\n\016_smtp_usernameB\020\n\016_smtp_passwordB\016\n\014_s" +
+      "mtp_serverB\014\n\n_smtp_portB\026\n\024_smtp_server" +
+      "_timeoutB\026\n\024_connection_securityB\032\n\030_sen" +
+      "d_push_notificationsB\033\n\031_push_notificati" +
+      "on_serverB\035\n\033_push_notification_contents" +
+      "B\033\n\031_push_notification_bufferB\030\n\026_enable" +
+      "_email_batchingB\035\n\033_email_batching_buffe" +
+      "r_sizeB\032\n\030_email_batching_intervalB\'\n%_s" +
+      "kip_server_certificate_verificationB#\n!_" +
+      "email_notification_contents_typeB\025\n\023_log" +
+      "in_button_colorB\034\n\032_login_button_border_" +
+      "colorB\032\n\030_login_button_text_colorB\034\n\032_ra" +
+      "te_limiting_memory_sizeB\031\n\027_rate_limitin" +
+      "g_per_hourB\032\n\030_rate_limiting_max_burst\"\204" +
+      "\003\n\017ConfigRateLimit\022\033\n\006enable\030\001 \001(\010H\000R\006en" +
+      "able\210\001\001\022\034\n\007per_sec\030\002 \001(\005H\001R\006perSec\210\001\001\022 \n" +
+      "\tmax_burst\030\003 \001(\005H\002R\010maxBurst\210\001\001\022/\n\021memor" +
+      "y_store_size\030\004 \001(\005H\003R\017memoryStoreSize\210\001\001" +
+      "\0222\n\023vary_by_remote_addr\030\005 \001(\010H\004R\020varyByR" +
+      "emoteAddr\210\001\001\022%\n\014vary_by_user\030\006 \001(\010H\005R\nva" +
+      "ryByUser\210\001\001\022$\n\016vary_by_header\030\007 \001(\tR\014var" +
+      "yByHeaderB\t\n\007_enableB\n\n\010_per_secB\014\n\n_max" +
+      "_burstB\024\n\022_memory_store_sizeB\026\n\024_vary_by" +
+      "_remote_addrB\017\n\r_vary_by_user\"\227\001\n\rConfig" +
+      "Privacy\0221\n\022show_email_address\030\001 \001(\010H\000R\020s" +
+      "howEmailAddress\210\001\001\022)\n\016show_full_name\030\002 \001" +
+      "(\010H\001R\014showFullName\210\001\001B\025\n\023_show_email_add" +
+      "ressB\021\n\017_show_full_name\"\357\003\n\rConfigSuppor" +
+      "t\0226\n\025terms_of_service_link\030\001 \001(\tH\000R\022term" +
+      "sOfServiceLink\210\001\001\0223\n\023privacy_policy_link" +
+      "\030\002 \001(\tH\001R\021privacyPolicyLink\210\001\001\022\"\n\nabout_" +
+      "link\030\003 \001(\tH\002R\taboutLink\210\001\001\022 \n\thelp_link\030" +
+      "\004 \001(\tH\003R\010helpLink\210\001\001\0226\n\025report_a_problem" +
+      "_link\030\005 \001(\tH\004R\022reportAProblemLink\210\001\001\0225\n\024" +
+      "forgot_password_link\030\006 \001(\tH\005R\022forgotPass" +
+      "wordLink\210\001\001\022(\n\rsupport_email\030\007 \001(\tH\006R\014su" +
+      "pportEmail\210\001\001B\030\n\026_terms_of_service_linkB" +
+      "\026\n\024_privacy_policy_linkB\r\n\013_about_linkB\014" +
+      "\n\n_help_linkB\030\n\026_report_a_problem_linkB\027" +
+      "\n\025_forgot_password_linkB\020\n\016_support_emai" +
+      "l\"\202\002\n\022ConfigLocalization\0227\n\025default_serv" +
+      "er_locale\030\001 \001(\tH\000R\023defaultServerLocale\210\001" +
+      "\001\0227\n\025default_client_locale\030\002 \001(\tH\001R\023defa" +
+      "ultClientLocale\210\001\001\0220\n\021available_locales\030" +
+      "\003 \001(\tH\002R\020availableLocales\210\001\001B\030\n\026_default" +
+      "_server_localeB\030\n\026_default_client_locale" +
+      "B\024\n\022_available_locales\"\325\020\n\nConfigLdap\022\033\n" +
+      "\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022$\n\013enable_syn" +
+      "c\030\002 \001(\010H\001R\nenableSync\210\001\001\022$\n\013ldap_server\030" +
+      "\003 \001(\tH\002R\nldapServer\210\001\001\022 \n\tldap_port\030\004 \001(" +
+      "\005H\003R\010ldapPort\210\001\001\0224\n\023connection_security\030" +
+      "\005 \001(\tH\004R\022connectionSecurity\210\001\001\022\034\n\007base_d" +
+      "n\030\006 \001(\tH\005R\006baseDn\210\001\001\022(\n\rbind_username\030\007 " +
+      "\001(\tH\006R\014bindUsername\210\001\001\022(\n\rbind_password\030" +
+      "\010 \001(\tH\007R\014bindPassword\210\001\001\0229\n\026maximum_logi" +
+      "n_attempts\030\t \001(\005H\010R\024maximumLoginAttempts" +
+      "\210\001\001\022$\n\013user_filter\030\n \001(\tH\tR\nuserFilter\210\001" +
+      "\001\022&\n\014group_filter\030\013 \001(\tH\nR\013groupFilter\210\001" +
+      "\001\0223\n\023enable_admin_filter\030\014 \001(\010H\013R\021enable" +
+      "AdminFilter\210\001\001\022&\n\014admin_filter\030\r \001(\tH\014R\013" +
+      "adminFilter\210\001\001\022D\n\034group_display_name_att" +
+      "ribute\030\016 \001(\tH\rR\031groupDisplayNameAttribut" +
+      "e\210\001\001\0221\n\022group_id_attribute\030\017 \001(\tH\016R\020grou" +
+      "pIdAttribute\210\001\001\0225\n\024first_name_attribute\030" +
+      "\020 \001(\tH\017R\022firstNameAttribute\210\001\001\0223\n\023last_n" +
+      "ame_attribute\030\021 \001(\tH\020R\021lastNameAttribute" +
+      "\210\001\001\022,\n\017email_attribute\030\022 \001(\tH\021R\016emailAtt" +
+      "ribute\210\001\001\0222\n\022username_attribute\030\023 \001(\tH\022R" +
+      "\021usernameAttribute\210\001\001\0222\n\022nickname_attrib" +
+      "ute\030\024 \001(\tH\023R\021nicknameAttribute\210\001\001\022&\n\014id_" +
+      "attribute\030\025 \001(\tH\024R\013idAttribute\210\001\001\0222\n\022pos" +
+      "ition_attribute\030\026 \001(\tH\025R\021positionAttribu" +
+      "te\210\001\001\0221\n\022login_id_attribute\030\027 \001(\tH\026R\020log" +
+      "inIdAttribute\210\001\001\0220\n\021picture_attribute\030\030 " +
+      "\001(\tH\027R\020pictureAttribute\210\001\001\0227\n\025sync_inter" +
+      "val_minutes\030\031 \001(\005H\030R\023syncIntervalMinutes" +
+      "\210\001\001\022(\n\rquery_timeout\030\032 \001(\005H\031R\014queryTimeo" +
+      "ut\210\001\001\022\'\n\rmax_page_size\030\033 \001(\005H\032R\013maxPageS" +
+      "ize\210\001\001\022-\n\020login_field_name\030\034 \001(\tH\033R\016logi" +
+      "nFieldName\210\001\001\0221\n\022login_button_color\030\035 \001(" +
+      "\tH\034R\020loginButtonColor\210\001\001\022>\n\031login_button" +
+      "_border_color\030\036 \001(\tH\035R\026loginButtonBorder" +
+      "Color\210\001\001\022:\n\027login_button_text_color\030\037 \001(" +
+      "\tH\036R\024loginButtonTextColor\210\001\001B\t\n\007_enableB" +
+      "\016\n\014_enable_syncB\016\n\014_ldap_serverB\014\n\n_ldap" +
+      "_portB\026\n\024_connection_securityB\n\n\010_base_d" +
+      "nB\020\n\016_bind_usernameB\020\n\016_bind_passwordB\031\n" +
+      "\027_maximum_login_attemptsB\016\n\014_user_filter" +
+      "B\017\n\r_group_filterB\026\n\024_enable_admin_filte" +
+      "rB\017\n\r_admin_filterB\037\n\035_group_display_nam" +
+      "e_attributeB\025\n\023_group_id_attributeB\027\n\025_f" +
+      "irst_name_attributeB\026\n\024_last_name_attrib" +
+      "uteB\022\n\020_email_attributeB\025\n\023_username_att" +
+      "ributeB\025\n\023_nickname_attributeB\017\n\r_id_att" +
+      "ributeB\025\n\023_position_attributeB\025\n\023_login_" +
+      "id_attributeB\024\n\022_picture_attributeB\030\n\026_s" +
+      "ync_interval_minutesB\020\n\016_query_timeoutB\020" +
+      "\n\016_max_page_sizeB\023\n\021_login_field_nameB\025\n" +
       "\023_login_button_colorB\034\n\032_login_button_bo" +
-      "rder_colorB\032\n\030_login_button_text_colorB\034" +
-      "\n\032_rate_limiting_memory_sizeB\031\n\027_rate_li" +
-      "miting_per_hourB\032\n\030_rate_limiting_max_bu" +
-      "rst\"\204\003\n\017ConfigRateLimit\022\033\n\006enable\030\001 \001(\010H" +
-      "\000R\006enable\210\001\001\022\034\n\007per_sec\030\002 \001(\005H\001R\006perSec\210" +
-      "\001\001\022 \n\tmax_burst\030\003 \001(\005H\002R\010maxBurst\210\001\001\022/\n\021" +
-      "memory_store_size\030\004 \001(\005H\003R\017memoryStoreSi" +
-      "ze\210\001\001\0222\n\023vary_by_remote_addr\030\005 \001(\010H\004R\020va" +
-      "ryByRemoteAddr\210\001\001\022%\n\014vary_by_user\030\006 \001(\010H" +
-      "\005R\nvaryByUser\210\001\001\022$\n\016vary_by_header\030\007 \001(\t" +
-      "R\014varyByHeaderB\t\n\007_enableB\n\n\010_per_secB\014\n" +
-      "\n_max_burstB\024\n\022_memory_store_sizeB\026\n\024_va" +
-      "ry_by_remote_addrB\017\n\r_vary_by_user\"\227\001\n\rC" +
-      "onfigPrivacy\0221\n\022show_email_address\030\001 \001(\010" +
-      "H\000R\020showEmailAddress\210\001\001\022)\n\016show_full_nam" +
-      "e\030\002 \001(\010H\001R\014showFullName\210\001\001B\025\n\023_show_emai" +
-      "l_addressB\021\n\017_show_full_name\"\357\003\n\rConfigS" +
-      "upport\0226\n\025terms_of_service_link\030\001 \001(\tH\000R" +
-      "\022termsOfServiceLink\210\001\001\0223\n\023privacy_policy" +
-      "_link\030\002 \001(\tH\001R\021privacyPolicyLink\210\001\001\022\"\n\na" +
-      "bout_link\030\003 \001(\tH\002R\taboutLink\210\001\001\022 \n\thelp_" +
-      "link\030\004 \001(\tH\003R\010helpLink\210\001\001\0226\n\025report_a_pr" +
-      "oblem_link\030\005 \001(\tH\004R\022reportAProblemLink\210\001" +
-      "\001\0225\n\024forgot_password_link\030\006 \001(\tH\005R\022forgo" +
-      "tPasswordLink\210\001\001\022(\n\rsupport_email\030\007 \001(\tH" +
-      "\006R\014supportEmail\210\001\001B\030\n\026_terms_of_service_" +
-      "linkB\026\n\024_privacy_policy_linkB\r\n\013_about_l" +
-      "inkB\014\n\n_help_linkB\030\n\026_report_a_problem_l" +
-      "inkB\027\n\025_forgot_password_linkB\020\n\016_support" +
-      "_email\"\202\002\n\022ConfigLocalization\0227\n\025default" +
-      "_server_locale\030\001 \001(\tH\000R\023defaultServerLoc" +
-      "ale\210\001\001\0227\n\025default_client_locale\030\002 \001(\tH\001R" +
-      "\023defaultClientLocale\210\001\001\0220\n\021available_loc" +
-      "ales\030\003 \001(\tH\002R\020availableLocales\210\001\001B\030\n\026_de" +
-      "fault_server_localeB\030\n\026_default_client_l" +
-      "ocaleB\024\n\022_available_locales\"\325\020\n\nConfigLd" +
-      "ap\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022$\n\013enabl" +
-      "e_sync\030\002 \001(\010H\001R\nenableSync\210\001\001\022$\n\013ldap_se" +
-      "rver\030\003 \001(\tH\002R\nldapServer\210\001\001\022 \n\tldap_port" +
-      "\030\004 \001(\005H\003R\010ldapPort\210\001\001\0224\n\023connection_secu" +
-      "rity\030\005 \001(\tH\004R\022connectionSecurity\210\001\001\022\034\n\007b" +
-      "ase_dn\030\006 \001(\tH\005R\006baseDn\210\001\001\022(\n\rbind_userna" +
-      "me\030\007 \001(\tH\006R\014bindUsername\210\001\001\022(\n\rbind_pass" +
-      "word\030\010 \001(\tH\007R\014bindPassword\210\001\001\0229\n\026maximum" +
-      "_login_attempts\030\t \001(\005H\010R\024maximumLoginAtt" +
-      "empts\210\001\001\022$\n\013user_filter\030\n \001(\tH\tR\nuserFil" +
-      "ter\210\001\001\022&\n\014group_filter\030\013 \001(\tH\nR\013groupFil" +
-      "ter\210\001\001\0223\n\023enable_admin_filter\030\014 \001(\010H\013R\021e" +
-      "nableAdminFilter\210\001\001\022&\n\014admin_filter\030\r \001(" +
-      "\tH\014R\013adminFilter\210\001\001\022D\n\034group_display_nam" +
-      "e_attribute\030\016 \001(\tH\rR\031groupDisplayNameAtt" +
-      "ribute\210\001\001\0221\n\022group_id_attribute\030\017 \001(\tH\016R" +
-      "\020groupIdAttribute\210\001\001\0225\n\024first_name_attri" +
-      "bute\030\020 \001(\tH\017R\022firstNameAttribute\210\001\001\0223\n\023l" +
-      "ast_name_attribute\030\021 \001(\tH\020R\021lastNameAttr" +
-      "ibute\210\001\001\022,\n\017email_attribute\030\022 \001(\tH\021R\016ema" +
-      "ilAttribute\210\001\001\0222\n\022username_attribute\030\023 \001" +
-      "(\tH\022R\021usernameAttribute\210\001\001\0222\n\022nickname_a" +
-      "ttribute\030\024 \001(\tH\023R\021nicknameAttribute\210\001\001\022&" +
-      "\n\014id_attribute\030\025 \001(\tH\024R\013idAttribute\210\001\001\0222" +
-      "\n\022position_attribute\030\026 \001(\tH\025R\021positionAt" +
-      "tribute\210\001\001\0221\n\022login_id_attribute\030\027 \001(\tH\026" +
-      "R\020loginIdAttribute\210\001\001\0220\n\021picture_attribu" +
-      "te\030\030 \001(\tH\027R\020pictureAttribute\210\001\001\0227\n\025sync_" +
-      "interval_minutes\030\031 \001(\005H\030R\023syncIntervalMi" +
-      "nutes\210\001\001\022(\n\rquery_timeout\030\032 \001(\005H\031R\014query" +
-      "Timeout\210\001\001\022\'\n\rmax_page_size\030\033 \001(\005H\032R\013max" +
-      "PageSize\210\001\001\022-\n\020login_field_name\030\034 \001(\tH\033R" +
-      "\016loginFieldName\210\001\001\0221\n\022login_button_color" +
-      "\030\035 \001(\tH\034R\020loginButtonColor\210\001\001\022>\n\031login_b" +
-      "utton_border_color\030\036 \001(\tH\035R\026loginButtonB" +
-      "orderColor\210\001\001\022:\n\027login_button_text_color" +
-      "\030\037 \001(\tH\036R\024loginButtonTextColor\210\001\001B\t\n\007_en" +
-      "ableB\016\n\014_enable_syncB\016\n\014_ldap_serverB\014\n\n" +
-      "_ldap_portB\026\n\024_connection_securityB\n\n\010_b" +
-      "ase_dnB\020\n\016_bind_usernameB\020\n\016_bind_passwo" +
-      "rdB\031\n\027_maximum_login_attemptsB\016\n\014_user_f" +
-      "ilterB\017\n\r_group_filterB\026\n\024_enable_admin_" +
-      "filterB\017\n\r_admin_filterB\037\n\035_group_displa" +
-      "y_name_attributeB\025\n\023_group_id_attributeB" +
-      "\027\n\025_first_name_attributeB\026\n\024_last_name_a" +
-      "ttributeB\022\n\020_email_attributeB\025\n\023_usernam" +
-      "e_attributeB\025\n\023_nickname_attributeB\017\n\r_i" +
-      "d_attributeB\025\n\023_position_attributeB\025\n\023_l" +
-      "ogin_id_attributeB\024\n\022_picture_attributeB" +
-      "\030\n\026_sync_interval_minutesB\020\n\016_query_time" +
-      "outB\020\n\016_max_page_sizeB\023\n\021_login_field_na" +
-      "meB\025\n\023_login_button_colorB\034\n\032_login_butt" +
-      "on_border_colorB\032\n\030_login_button_text_co" +
-      "lor\"\255\023\n\nConfigSaml\022\033\n\006enable\030\001 \001(\010H\000R\006en" +
-      "able\210\001\001\0226\n\025enable_sync_with_ldap\030\002 \001(\010H\001" +
-      "R\022enableSyncWithLdap\210\001\001\022N\n\"enable_sync_w" +
-      "ith_ldap_include_auth\030\003 \001(\010H\002R\035enableSyn" +
-      "cWithLdapIncludeAuth\210\001\001\022:\n\027ignore_guests" +
-      "_ldap_sync\030\004 \001(\010H\003R\024ignoreGuestsLdapSync" +
-      "\210\001\001\022\033\n\006verify\030\005 \001(\010H\004R\006verify\210\001\001\022\035\n\007encr" +
-      "ypt\030\006 \001(\010H\005R\007encrypt\210\001\001\022&\n\014sign_request\030" +
-      "\007 \001(\010H\006R\013signRequest\210\001\001\022\034\n\007idp_url\030\010 \001(\t" +
-      "H\007R\006idpUrl\210\001\001\0221\n\022idp_descriptor_url\030\t \001(" +
-      "\tH\010R\020idpDescriptorUrl\210\001\001\022-\n\020idp_metadata" +
-      "_url\030\n \001(\tH\tR\016idpMetadataUrl\210\001\001\022C\n\033servi" +
-      "ce_provider_identifier\030\013 \001(\tH\nR\031serviceP" +
-      "roviderIdentifier\210\001\001\022H\n\036assertion_consum" +
-      "er_service_url\030\014 \001(\tH\013R\033assertionConsume" +
-      "rServiceUrl\210\001\001\0224\n\023signature_algorithm\030\r " +
-      "\001(\tH\014R\022signatureAlgorithm\210\001\001\0224\n\023canonica" +
-      "l_algorithm\030\016 \001(\tH\rR\022canonicalAlgorithm\210" +
-      "\001\001\022:\n\027scoping_idp_provider_id\030\017 \001(\tH\016R\024s" +
-      "copingIdpProviderId\210\001\001\022-\n\020scoping_idp_na" +
-      "me\030\020 \001(\tH\017R\016scopingIdpName\210\001\001\0225\n\024idp_cer" +
-      "tificate_file\030\021 \001(\tH\020R\022idpCertificateFil" +
-      "e\210\001\001\022;\n\027public_certificate_file\030\022 \001(\tH\021R" +
-      "\025publicCertificateFile\210\001\001\022-\n\020private_key" +
-      "_file\030\023 \001(\tH\022R\016privateKeyFile\210\001\001\022&\n\014id_a" +
-      "ttribute\030\024 \001(\tH\023R\013idAttribute\210\001\001\0229\n\026enab" +
-      "le_admin_attribute\030\025 \001(\010H\024R\024enableAdminA" +
-      "ttribute\210\001\001\022,\n\017admin_attribute\030\026 \001(\tH\025R\016",
-      "adminAttribute\210\001\001\0225\n\024first_name_attribut" +
-      "e\030\027 \001(\tH\026R\022firstNameAttribute\210\001\001\0223\n\023last" +
-      "_name_attribute\030\030 \001(\tH\027R\021lastNameAttribu" +
-      "te\210\001\001\022,\n\017email_attribute\030\031 \001(\tH\030R\016emailA" +
-      "ttribute\210\001\001\0222\n\022username_attribute\030\032 \001(\tH" +
-      "\031R\021usernameAttribute\210\001\001\0222\n\022nickname_attr" +
-      "ibute\030\033 \001(\tH\032R\021nicknameAttribute\210\001\001\022.\n\020l" +
-      "ocale_attribute\030\034 \001(\tH\033R\017localeAttribute" +
-      "\210\001\001\0222\n\022position_attribute\030\035 \001(\tH\034R\021posit" +
-      "ionAttribute\210\001\001\022/\n\021login_button_text\030\036 \001" +
-      "(\tH\035R\017loginButtonText\210\001\001\0221\n\022login_button" +
-      "_color\030\037 \001(\tH\036R\020loginButtonColor\210\001\001\022>\n\031l" +
-      "ogin_button_border_color\030  \001(\tH\037R\026loginB" +
-      "uttonBorderColor\210\001\001\022:\n\027login_button_text" +
-      "_color\030! \001(\tH R\024loginButtonTextColor\210\001\001B" +
-      "\t\n\007_enableB\030\n\026_enable_sync_with_ldapB%\n#" +
-      "_enable_sync_with_ldap_include_authB\032\n\030_" +
-      "ignore_guests_ldap_syncB\t\n\007_verifyB\n\n\010_e" +
-      "ncryptB\017\n\r_sign_requestB\n\n\010_idp_urlB\025\n\023_" +
-      "idp_descriptor_urlB\023\n\021_idp_metadata_urlB" +
-      "\036\n\034_service_provider_identifierB!\n\037_asse" +
-      "rtion_consumer_service_urlB\026\n\024_signature" +
-      "_algorithmB\026\n\024_canonical_algorithmB\032\n\030_s" +
-      "coping_idp_provider_idB\023\n\021_scoping_idp_n" +
-      "ameB\027\n\025_idp_certificate_fileB\032\n\030_public_" +
-      "certificate_fileB\023\n\021_private_key_fileB\017\n" +
-      "\r_id_attributeB\031\n\027_enable_admin_attribut" +
-      "eB\022\n\020_admin_attributeB\027\n\025_first_name_att" +
-      "ributeB\026\n\024_last_name_attributeB\022\n\020_email" +
-      "_attributeB\025\n\023_username_attributeB\025\n\023_ni" +
-      "ckname_attributeB\023\n\021_locale_attributeB\025\n" +
-      "\023_position_attributeB\024\n\022_login_button_te" +
-      "xtB\025\n\023_login_button_colorB\034\n\032_login_butt" +
-      "on_border_colorB\032\n\030_login_button_text_co" +
-      "lor\"\301\005\n\017ConfigNativeApp\0223\n\026app_custom_ur" +
-      "l_schemes\030\001 \003(\tR\023appCustomUrlSchemes\022/\n\021" +
-      "app_download_link\030\002 \001(\tH\000R\017appDownloadLi" +
-      "nk\210\001\001\022>\n\031android_app_download_link\030\003 \001(\t" +
-      "H\001R\026androidAppDownloadLink\210\001\001\0226\n\025ios_app" +
-      "_download_link\030\004 \001(\tH\002R\022iosAppDownloadLi" +
-      "nk\210\001\001\022;\n\027mobile_external_browser\030\005 \001(\010H\003" +
-      "R\025mobileExternalBrowser\210\001\001\022=\n\030mobile_ena" +
-      "ble_biometrics\030\006 \001(\010H\004R\026mobileEnableBiom" +
-      "etrics\210\001\001\022F\n\035mobile_prevent_screen_captu" +
-      "re\030\007 \001(\010H\005R\032mobilePreventScreenCapture\210\001" +
-      "\001\022C\n\033mobile_jailbreak_protection\030\010 \001(\010H\006" +
-      "R\031mobileJailbreakProtection\210\001\001B\024\n\022_app_d" +
-      "ownload_linkB\034\n\032_android_app_download_li" +
-      "nkB\030\n\026_ios_app_download_linkB\032\n\030_mobile_" +
-      "external_browserB\033\n\031_mobile_enable_biome" +
-      "tricsB \n\036_mobile_prevent_screen_captureB" +
-      "\036\n\034_mobile_jailbreak_protection\"\253\005\n\021Conf" +
-      "igMeilisearch\022#\n\nserver_url\030\001 \001(\tH\000R\nser" +
-      "ver_url\210\001\001\022\"\n\nmaster_key\030\002 \001(\tH\001R\tmaster" +
-      "Key\210\001\001\022,\n\017enable_indexing\030\003 \001(\010H\002R\016enabl" +
-      "eIndexing\210\001\001\022.\n\020enable_searching\030\004 \001(\010H\003" +
-      "R\017enableSearching\210\001\001\0224\n\023enable_autocompl" +
-      "ete\030\005 \001(\010H\004R\022enableAutocomplete\210\001\001\022\"\n\nba" +
-      "tch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001\022;\n\027reques" +
-      "t_timeout_seconds\030\007 \001(\005H\006R\025requestTimeou" +
-      "tSeconds\210\001\001\022&\n\014index_prefix\030\010 \001(\tH\007R\013ind" +
-      "exPrefix\210\001\001\022-\n\020search_cutoff_ms\030\t \001(\005H\010R" +
-      "\016searchCutoffMs\210\001\001\0227\n\025enable_typo_tolera" +
-      "nce\030\n \001(\010H\tR\023enableTypoTolerance\210\001\001B\r\n\013_" +
-      "server_urlB\r\n\013_master_keyB\022\n\020_enable_ind" +
-      "exingB\023\n\021_enable_searchingB\026\n\024_enable_au" +
-      "tocompleteB\r\n\013_batch_sizeB\032\n\030_request_ti" +
-      "meout_secondsB\017\n\r_index_prefixB\023\n\021_searc" +
-      "h_cutoff_msB\030\n\026_enable_typo_tolerance\"\272\003" +
-      "\n\013ConfigBleve\022 \n\tindex_dir\030\001 \001(\tH\000R\010inde" +
-      "xDir\210\001\001\022,\n\017enable_indexing\030\002 \001(\010H\001R\016enab" +
-      "leIndexing\210\001\001\022.\n\020enable_searching\030\003 \001(\010H" +
-      "\002R\017enableSearching\210\001\001\0224\n\023enable_autocomp" +
-      "lete\030\004 \001(\010H\003R\022enableAutocomplete\210\001\001\022M\n!b" +
-      "ulk_indexing_time_window_seconds\030\005 \001(\005H\004" +
-      "R\035bulkIndexingTimeWindowSeconds\210\001\001\022\"\n\nba" +
-      "tch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001B\014\n\n_index" +
-      "_dirB\022\n\020_enable_indexingB\023\n\021_enable_sear" +
-      "chingB\026\n\024_enable_autocompleteB$\n\"_bulk_i" +
-      "ndexing_time_window_secondsB\r\n\013_batch_si" +
-      "ze\"\354\006\n\023ConfigDataRetention\022;\n\027enable_mes" +
-      "sage_deletion\030\001 \001(\010H\000R\025enableMessageDele" +
-      "tion\210\001\001\0225\n\024enable_file_deletion\030\002 \001(\010H\001R" +
-      "\022enableFileDeletion\210\001\001\0229\n\026enable_boards_" +
-      "deletion\030\003 \001(\010H\002R\024enableBoardsDeletion\210\001" +
-      "\001\022;\n\027message_retention_hours\030\004 \001(\005H\003R\025me" +
-      "ssageRetentionHours\210\001\001\0225\n\024file_retention" +
-      "_hours\030\005 \001(\005H\004R\022fileRetentionHours\210\001\001\0227\n" +
-      "\025boards_retention_days\030\006 \001(\005H\005R\023boardsRe" +
-      "tentionDays\210\001\001\022:\n\027deletion_job_start_tim" +
-      "e\030\007 \001(\tH\006R\024deletionJobStartTime\210\001\001\022\"\n\nba" +
-      "tch_size\030\010 \001(\005H\007R\tbatchSize\210\001\001\022N\n!time_b" +
-      "etween_batches_milliseconds\030\t \001(\005H\010R\036tim" +
-      "eBetweenBatchesMilliseconds\210\001\001\022<\n\030retent" +
-      "ion_ids_batch_size\030\n \001(\005H\tR\025retentionIds" +
-      "BatchSize\210\001\001B\032\n\030_enable_message_deletion" +
-      "B\027\n\025_enable_file_deletionB\031\n\027_enable_boa" +
-      "rds_deletionB\032\n\030_message_retention_hours" +
-      "B\027\n\025_file_retention_hoursB\030\n\026_boards_ret" +
-      "ention_daysB\032\n\030_deletion_job_start_timeB" +
-      "\r\n\013_batch_sizeB$\n\"_time_between_batches_" +
-      "millisecondsB\033\n\031_retention_ids_batch_siz" +
-      "e\"\264\002\n\020ConfigImageProxy\022\033\n\006enable\030\001 \001(\010H\000" +
-      "R\006enable\210\001\001\022-\n\020image_proxy_type\030\002 \001(\tH\001R" +
-      "\016imageProxyType\210\001\001\0228\n\026remote_image_proxy" +
-      "_url\030\003 \001(\tH\002R\023remoteImageProxyUrl\210\001\001\022@\n\032" +
-      "remote_image_proxy_options\030\004 \001(\tH\003R\027remo" +
-      "teImageProxyOptions\210\001\001B\t\n\007_enableB\023\n\021_im" +
-      "age_proxy_typeB\031\n\027_remote_image_proxy_ur" +
-      "lB\035\n\033_remote_image_proxy_options\"\315\010\n\006Con" +
-      "fig\022)\n\004main\030\001 \001(\0132\025.common.v1.ConfigMain" +
-      "R\004main\0225\n\010services\030\002 \001(\0132\031.common.v1.Con" +
-      "figServicesR\010services\0225\n\010security\030\003 \001(\0132" +
-      "\031.common.v1.ConfigSecurityR\010security\022,\n\005" +
-      "cache\030\004 \001(\0132\026.common.v1.CacheConfigR\005cac" +
-      "he\0222\n\007metrics\030\005 \001(\0132\030.common.v1.ConfigMe" +
-      "tricsR\007metrics\022&\n\003sso\030\006 \001(\0132\024.common.v1." +
-      "ConfigSSOR\003sso\022&\n\003sql\030\007 \001(\0132\024.common.v1." +
-      "ConfigSqlR\003sql\0225\n\010password\030\010 \001(\0132\031.commo" +
-      "n.v1.ConfigPasswordR\010password\022)\n\004file\030\t " +
-      "\001(\0132\025.common.v1.ConfigFileR\004file\022,\n\005emai" +
-      "l\030\n \001(\0132\026.common.v1.ConfigEmailR\005email\0229" +
-      "\n\nrate_limit\030\013 \001(\0132\032.common.v1.ConfigRat" +
-      "eLimitR\trateLimit\0222\n\007privacy\030\014 \001(\0132\030.com" +
-      "mon.v1.ConfigPrivacyR\007privacy\0222\n\007support" +
-      "\030\r \001(\0132\030.common.v1.ConfigSupportR\007suppor" +
-      "t\022A\n\014localization\030\016 \001(\0132\035.common.v1.Conf" +
-      "igLocalizationR\014localization\022)\n\004ldap\030\017 \001" +
-      "(\0132\025.common.v1.ConfigLdapR\004ldap\022)\n\004saml\030" +
-      "\020 \001(\0132\025.common.v1.ConfigSamlR\004saml\0229\n\nna" +
-      "tive_app\030\021 \001(\0132\032.common.v1.ConfigNativeA" +
-      "ppR\tnativeApp\022>\n\013meilisearch\030\022 \001(\0132\034.com" +
-      "mon.v1.ConfigMeilisearchR\013meilisearch\022,\n" +
-      "\005bleve\030\023 \001(\0132\026.common.v1.ConfigBleveR\005bl" +
-      "eve\022E\n\016data_retention\030\024 \001(\0132\036.common.v1." +
-      "ConfigDataRetentionR\rdataRetention\022<\n\013im" +
-      "age_proxy\030\025 \001(\0132\033.common.v1.ConfigImageP" +
-      "roxyR\nimageProxy\"\022\n\020ConfigGetRequest\"u\n\021" +
-      "ConfigGetResponse\022\'\n\004data\030\001 \001(\0132\021.common" +
-      ".v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shar" +
-      "ed.v1.AppErrorH\000R\005errorB\n\n\010response\"@\n\023C" +
-      "onfigUpdateRequest\022)\n\006config\030\001 \001(\0132\021.com" +
-      "mon.v1.ConfigR\006config\"x\n\024ConfigUpdateRes" +
-      "ponse\022\'\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000" +
-      "R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErr" +
-      "orH\000R\005errorB\n\n\010response\"z\n\026ConfigListene" +
-      "rResponse\022\'\n\004data\030\001 \001(\0132\021.common.v1.Conf" +
-      "igH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.Ap" +
-      "pErrorH\000R\005errorB\n\n\010response\"4\n\025ConfigLis" +
-      "tenerRequest\022\033\n\tclient_id\030\001 \001(\tR\010clientI" +
-      "dBq\n\032org.megacommerce.common.v1B\013ConfigP" +
-      "rotoZCgithub.com/ahmad-khatib0-org/megac" +
-      "ommerce-proto/gen/go/common/v1;v1\370\001\001b\006pr" +
-      "oto3"
+      "rder_colorB\032\n\030_login_button_text_color\"\255" +
+      "\023\n\nConfigSaml\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210" +
+      "\001\001\0226\n\025enable_sync_with_ldap\030\002 \001(\010H\001R\022ena" +
+      "bleSyncWithLdap\210\001\001\022N\n\"enable_sync_with_l" +
+      "dap_include_auth\030\003 \001(\010H\002R\035enableSyncWith" +
+      "LdapIncludeAuth\210\001\001\022:\n\027ignore_guests_ldap" +
+      "_sync\030\004 \001(\010H\003R\024ignoreGuestsLdapSync\210\001\001\022\033" +
+      "\n\006verify\030\005 \001(\010H\004R\006verify\210\001\001\022\035\n\007encrypt\030\006" +
+      " \001(\010H\005R\007encrypt\210\001\001\022&\n\014sign_request\030\007 \001(\010" +
+      "H\006R\013signRequest\210\001\001\022\034\n\007idp_url\030\010 \001(\tH\007R\006i" +
+      "dpUrl\210\001\001\0221\n\022idp_descriptor_url\030\t \001(\tH\010R\020" +
+      "idpDescriptorUrl\210\001\001\022-\n\020idp_metadata_url\030" +
+      "\n \001(\tH\tR\016idpMetadataUrl\210\001\001\022C\n\033service_pr" +
+      "ovider_identifier\030\013 \001(\tH\nR\031serviceProvid" +
+      "erIdentifier\210\001\001\022H\n\036assertion_consumer_se" +
+      "rvice_url\030\014 \001(\tH\013R\033assertionConsumerServ" +
+      "iceUrl\210\001\001\0224\n\023signature_algorithm\030\r \001(\tH\014" +
+      "R\022signatureAlgorithm\210\001\001\0224\n\023canonical_alg" +
+      "orithm\030\016 \001(\tH\rR\022canonicalAlgorithm\210\001\001\022:\n" +
+      "\027scoping_idp_provider_id\030\017 \001(\tH\016R\024scopin" +
+      "gIdpProviderId\210\001\001\022-\n\020scoping_idp_name\030\020 " +
+      "\001(\tH\017R\016scopingIdpName\210\001\001\0225\n\024idp_certific" +
+      "ate_file\030\021 \001(\tH\020R\022idpCertificateFile\210\001\001\022" +
+      ";\n\027public_certificate_file\030\022 \001(\tH\021R\025publ" +
+      "icCertificateFile\210\001\001\022-\n\020private_key_file" +
+      "\030\023 \001(\tH\022R\016privateKeyFile\210\001\001\022&\n\014id_attrib" +
+      "ute\030\024 \001(\tH\023R\013idAttribute\210\001\001\0229\n\026enable_ad" +
+      "min_attribute\030\025 \001(\010H\024R\024enableAdminAttrib" +
+      "ute\210\001\001\022,\n\017admin_attribute\030\026 \001(\tH\025R\016admin" +
+      "Attribute\210\001\001\0225\n\024first_name_attribute\030\027 \001" +
+      "(\tH\026R\022firstNameAttribute\210\001\001\0223\n\023last_name" +
+      "_attribute\030\030 \001(\tH\027R\021lastNameAttribute\210\001\001" +
+      "\022,\n\017email_attribute\030\031 \001(\tH\030R\016emailAttrib" +
+      "ute\210\001\001\0222\n\022username_attribute\030\032 \001(\tH\031R\021us" +
+      "ernameAttribute\210\001\001\0222\n\022nickname_attribute" +
+      "\030\033 \001(\tH\032R\021nicknameAttribute\210\001\001\022.\n\020locale" +
+      "_attribute\030\034 \001(\tH\033R\017localeAttribute\210\001\001\0222" +
+      "\n\022position_attribute\030\035 \001(\tH\034R\021positionAt" +
+      "tribute\210\001\001\022/\n\021login_button_text\030\036 \001(\tH\035R" +
+      "\017loginButtonText\210\001\001\0221\n\022login_button_colo",
+      "r\030\037 \001(\tH\036R\020loginButtonColor\210\001\001\022>\n\031login_" +
+      "button_border_color\030  \001(\tH\037R\026loginButton" +
+      "BorderColor\210\001\001\022:\n\027login_button_text_colo" +
+      "r\030! \001(\tH R\024loginButtonTextColor\210\001\001B\t\n\007_e" +
+      "nableB\030\n\026_enable_sync_with_ldapB%\n#_enab" +
+      "le_sync_with_ldap_include_authB\032\n\030_ignor" +
+      "e_guests_ldap_syncB\t\n\007_verifyB\n\n\010_encryp" +
+      "tB\017\n\r_sign_requestB\n\n\010_idp_urlB\025\n\023_idp_d" +
+      "escriptor_urlB\023\n\021_idp_metadata_urlB\036\n\034_s" +
+      "ervice_provider_identifierB!\n\037_assertion" +
+      "_consumer_service_urlB\026\n\024_signature_algo" +
+      "rithmB\026\n\024_canonical_algorithmB\032\n\030_scopin" +
+      "g_idp_provider_idB\023\n\021_scoping_idp_nameB\027" +
+      "\n\025_idp_certificate_fileB\032\n\030_public_certi" +
+      "ficate_fileB\023\n\021_private_key_fileB\017\n\r_id_" +
+      "attributeB\031\n\027_enable_admin_attributeB\022\n\020" +
+      "_admin_attributeB\027\n\025_first_name_attribut" +
+      "eB\026\n\024_last_name_attributeB\022\n\020_email_attr" +
+      "ibuteB\025\n\023_username_attributeB\025\n\023_nicknam" +
+      "e_attributeB\023\n\021_locale_attributeB\025\n\023_pos" +
+      "ition_attributeB\024\n\022_login_button_textB\025\n" +
+      "\023_login_button_colorB\034\n\032_login_button_bo" +
+      "rder_colorB\032\n\030_login_button_text_color\"\301" +
+      "\005\n\017ConfigNativeApp\0223\n\026app_custom_url_sch" +
+      "emes\030\001 \003(\tR\023appCustomUrlSchemes\022/\n\021app_d" +
+      "ownload_link\030\002 \001(\tH\000R\017appDownloadLink\210\001\001" +
+      "\022>\n\031android_app_download_link\030\003 \001(\tH\001R\026a" +
+      "ndroidAppDownloadLink\210\001\001\0226\n\025ios_app_down" +
+      "load_link\030\004 \001(\tH\002R\022iosAppDownloadLink\210\001\001" +
+      "\022;\n\027mobile_external_browser\030\005 \001(\010H\003R\025mob" +
+      "ileExternalBrowser\210\001\001\022=\n\030mobile_enable_b" +
+      "iometrics\030\006 \001(\010H\004R\026mobileEnableBiometric" +
+      "s\210\001\001\022F\n\035mobile_prevent_screen_capture\030\007 " +
+      "\001(\010H\005R\032mobilePreventScreenCapture\210\001\001\022C\n\033" +
+      "mobile_jailbreak_protection\030\010 \001(\010H\006R\031mob" +
+      "ileJailbreakProtection\210\001\001B\024\n\022_app_downlo" +
+      "ad_linkB\034\n\032_android_app_download_linkB\030\n" +
+      "\026_ios_app_download_linkB\032\n\030_mobile_exter" +
+      "nal_browserB\033\n\031_mobile_enable_biometrics" +
+      "B \n\036_mobile_prevent_screen_captureB\036\n\034_m" +
+      "obile_jailbreak_protection\"\253\005\n\021ConfigMei" +
+      "lisearch\022#\n\nserver_url\030\001 \001(\tH\000R\nserver_u" +
+      "rl\210\001\001\022\"\n\nmaster_key\030\002 \001(\tH\001R\tmasterKey\210\001" +
+      "\001\022,\n\017enable_indexing\030\003 \001(\010H\002R\016enableInde" +
+      "xing\210\001\001\022.\n\020enable_searching\030\004 \001(\010H\003R\017ena" +
+      "bleSearching\210\001\001\0224\n\023enable_autocomplete\030\005" +
+      " \001(\010H\004R\022enableAutocomplete\210\001\001\022\"\n\nbatch_s" +
+      "ize\030\006 \001(\005H\005R\tbatchSize\210\001\001\022;\n\027request_tim" +
+      "eout_seconds\030\007 \001(\005H\006R\025requestTimeoutSeco" +
+      "nds\210\001\001\022&\n\014index_prefix\030\010 \001(\tH\007R\013indexPre" +
+      "fix\210\001\001\022-\n\020search_cutoff_ms\030\t \001(\005H\010R\016sear" +
+      "chCutoffMs\210\001\001\0227\n\025enable_typo_tolerance\030\n" +
+      " \001(\010H\tR\023enableTypoTolerance\210\001\001B\r\n\013_serve" +
+      "r_urlB\r\n\013_master_keyB\022\n\020_enable_indexing" +
+      "B\023\n\021_enable_searchingB\026\n\024_enable_autocom" +
+      "pleteB\r\n\013_batch_sizeB\032\n\030_request_timeout" +
+      "_secondsB\017\n\r_index_prefixB\023\n\021_search_cut" +
+      "off_msB\030\n\026_enable_typo_tolerance\"\272\003\n\013Con" +
+      "figBleve\022 \n\tindex_dir\030\001 \001(\tH\000R\010indexDir\210" +
+      "\001\001\022,\n\017enable_indexing\030\002 \001(\010H\001R\016enableInd" +
+      "exing\210\001\001\022.\n\020enable_searching\030\003 \001(\010H\002R\017en" +
+      "ableSearching\210\001\001\0224\n\023enable_autocomplete\030" +
+      "\004 \001(\010H\003R\022enableAutocomplete\210\001\001\022M\n!bulk_i" +
+      "ndexing_time_window_seconds\030\005 \001(\005H\004R\035bul" +
+      "kIndexingTimeWindowSeconds\210\001\001\022\"\n\nbatch_s" +
+      "ize\030\006 \001(\005H\005R\tbatchSize\210\001\001B\014\n\n_index_dirB" +
+      "\022\n\020_enable_indexingB\023\n\021_enable_searching" +
+      "B\026\n\024_enable_autocompleteB$\n\"_bulk_indexi" +
+      "ng_time_window_secondsB\r\n\013_batch_size\"\354\006" +
+      "\n\023ConfigDataRetention\022;\n\027enable_message_" +
+      "deletion\030\001 \001(\010H\000R\025enableMessageDeletion\210" +
+      "\001\001\0225\n\024enable_file_deletion\030\002 \001(\010H\001R\022enab" +
+      "leFileDeletion\210\001\001\0229\n\026enable_boards_delet" +
+      "ion\030\003 \001(\010H\002R\024enableBoardsDeletion\210\001\001\022;\n\027" +
+      "message_retention_hours\030\004 \001(\005H\003R\025message" +
+      "RetentionHours\210\001\001\0225\n\024file_retention_hour" +
+      "s\030\005 \001(\005H\004R\022fileRetentionHours\210\001\001\0227\n\025boar" +
+      "ds_retention_days\030\006 \001(\005H\005R\023boardsRetenti" +
+      "onDays\210\001\001\022:\n\027deletion_job_start_time\030\007 \001" +
+      "(\tH\006R\024deletionJobStartTime\210\001\001\022\"\n\nbatch_s" +
+      "ize\030\010 \001(\005H\007R\tbatchSize\210\001\001\022N\n!time_betwee" +
+      "n_batches_milliseconds\030\t \001(\005H\010R\036timeBetw" +
+      "eenBatchesMilliseconds\210\001\001\022<\n\030retention_i" +
+      "ds_batch_size\030\n \001(\005H\tR\025retentionIdsBatch" +
+      "Size\210\001\001B\032\n\030_enable_message_deletionB\027\n\025_" +
+      "enable_file_deletionB\031\n\027_enable_boards_d" +
+      "eletionB\032\n\030_message_retention_hoursB\027\n\025_" +
+      "file_retention_hoursB\030\n\026_boards_retentio" +
+      "n_daysB\032\n\030_deletion_job_start_timeB\r\n\013_b" +
+      "atch_sizeB$\n\"_time_between_batches_milli" +
+      "secondsB\033\n\031_retention_ids_batch_size\"\264\002\n" +
+      "\020ConfigImageProxy\022\033\n\006enable\030\001 \001(\010H\000R\006ena" +
+      "ble\210\001\001\022-\n\020image_proxy_type\030\002 \001(\tH\001R\016imag" +
+      "eProxyType\210\001\001\0228\n\026remote_image_proxy_url\030" +
+      "\003 \001(\tH\002R\023remoteImageProxyUrl\210\001\001\022@\n\032remot" +
+      "e_image_proxy_options\030\004 \001(\tH\003R\027remoteIma" +
+      "geProxyOptions\210\001\001B\t\n\007_enableB\023\n\021_image_p" +
+      "roxy_typeB\031\n\027_remote_image_proxy_urlB\035\n\033" +
+      "_remote_image_proxy_options\"\315\010\n\006Config\022)" +
+      "\n\004main\030\001 \001(\0132\025.common.v1.ConfigMainR\004mai" +
+      "n\0225\n\010services\030\002 \001(\0132\031.common.v1.ConfigSe" +
+      "rvicesR\010services\0225\n\010security\030\003 \001(\0132\031.com" +
+      "mon.v1.ConfigSecurityR\010security\022,\n\005cache" +
+      "\030\004 \001(\0132\026.common.v1.CacheConfigR\005cache\0222\n" +
+      "\007metrics\030\005 \001(\0132\030.common.v1.ConfigMetrics" +
+      "R\007metrics\022&\n\003sso\030\006 \001(\0132\024.common.v1.Confi" +
+      "gSSOR\003sso\022&\n\003sql\030\007 \001(\0132\024.common.v1.Confi" +
+      "gSqlR\003sql\0225\n\010password\030\010 \001(\0132\031.common.v1." +
+      "ConfigPasswordR\010password\022)\n\004file\030\t \001(\0132\025" +
+      ".common.v1.ConfigFileR\004file\022,\n\005email\030\n \001" +
+      "(\0132\026.common.v1.ConfigEmailR\005email\0229\n\nrat" +
+      "e_limit\030\013 \001(\0132\032.common.v1.ConfigRateLimi" +
+      "tR\trateLimit\0222\n\007privacy\030\014 \001(\0132\030.common.v" +
+      "1.ConfigPrivacyR\007privacy\0222\n\007support\030\r \001(" +
+      "\0132\030.common.v1.ConfigSupportR\007support\022A\n\014" +
+      "localization\030\016 \001(\0132\035.common.v1.ConfigLoc" +
+      "alizationR\014localization\022)\n\004ldap\030\017 \001(\0132\025." +
+      "common.v1.ConfigLdapR\004ldap\022)\n\004saml\030\020 \001(\013" +
+      "2\025.common.v1.ConfigSamlR\004saml\0229\n\nnative_" +
+      "app\030\021 \001(\0132\032.common.v1.ConfigNativeAppR\tn" +
+      "ativeApp\022>\n\013meilisearch\030\022 \001(\0132\034.common.v" +
+      "1.ConfigMeilisearchR\013meilisearch\022,\n\005blev" +
+      "e\030\023 \001(\0132\026.common.v1.ConfigBleveR\005bleve\022E" +
+      "\n\016data_retention\030\024 \001(\0132\036.common.v1.Confi" +
+      "gDataRetentionR\rdataRetention\022<\n\013image_p" +
+      "roxy\030\025 \001(\0132\033.common.v1.ConfigImageProxyR" +
+      "\nimageProxy\"\022\n\020ConfigGetRequest\"u\n\021Confi" +
+      "gGetResponse\022\'\n\004data\030\001 \001(\0132\021.common.v1.C" +
+      "onfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1" +
+      ".AppErrorH\000R\005errorB\n\n\010response\"@\n\023Config" +
+      "UpdateRequest\022)\n\006config\030\001 \001(\0132\021.common.v" +
+      "1.ConfigR\006config\"x\n\024ConfigUpdateResponse" +
+      "\022\'\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R\004dat" +
+      "a\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R" +
+      "\005errorB\n\n\010response\"z\n\026ConfigListenerResp" +
+      "onse\022\'\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R" +
+      "\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErro" +
+      "rH\000R\005errorB\n\n\010response\"4\n\025ConfigListener" +
+      "Request\022\033\n\tclient_id\030\001 \001(\tR\010clientIdBq\n\032" +
+      "org.megacommerce.common.v1B\013ConfigProtoZ" +
+      "Cgithub.com/ahmad-khatib0-org/megacommer" +
+      "ce-proto/gen/go/common/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -53249,7 +52315,7 @@ java.lang.String defaultValue) {
     internal_static_common_v1_ConfigFile_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigFile_descriptor,
-        new java.lang.String[] { "EnableFileAttachments", "EnableMobileUpload", "EnableMobileDownload", "MaxFileSize", "MaxImageResolution", "MaxImageDecoderConcurrency", "DriverName", "Directory", "EnablePublicLink", "ExtractContent", "ArchiveRecursion", "PublicLinkSalt", "InitialFont", "AmazonS3AccessKeyId", "AmazonS3SecretAccessKey", "AmazonS3Bucket", "AmazonS3PathPrefix", "AmazonS3Region", "AmazonS3Endpoint", "AmazonS3Ssl", "AmazonS3SignV2", "AmazonS3Sse", "AmazonS3Trace", "AmazonS3RequestTimeoutMilliseconds", "AmazonS3UploadPartSizeBytes", "AmazonS3StorageClass", });
+        new java.lang.String[] { "EnableFileAttachments", "EnableMobileUpload", "EnableMobileDownload", "MaxImageResolution", "MaxImageDecoderConcurrency", "DriverName", "AmazonS3AccessKeyId", "AmazonS3SecretAccessKey", "AmazonS3Bucket", "AmazonS3PathPrefix", "AmazonS3Region", "AmazonS3Endpoint", "AmazonS3Ssl", "AmazonS3SignV2", "AmazonS3Sse", "AmazonS3Trace", "AmazonS3RequestTimeoutMilliseconds", "AmazonS3UploadPartSizeBytes", "AmazonS3StorageClass", });
     internal_static_common_v1_ConfigEmail_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_common_v1_ConfigEmail_fieldAccessorTable = new

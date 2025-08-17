@@ -1011,29 +1011,22 @@ type ConfigFile struct {
 	EnableFileAttachments              *bool                  `protobuf:"varint,1,opt,name=enable_file_attachments,json=enableFileAttachments,proto3,oneof" json:"enable_file_attachments,omitempty"`
 	EnableMobileUpload                 *bool                  `protobuf:"varint,2,opt,name=enable_mobile_upload,json=enableMobileUpload,proto3,oneof" json:"enable_mobile_upload,omitempty"`
 	EnableMobileDownload               *bool                  `protobuf:"varint,3,opt,name=enable_mobile_download,json=enableMobileDownload,proto3,oneof" json:"enable_mobile_download,omitempty"`
-	MaxFileSize                        *int64                 `protobuf:"varint,4,opt,name=max_file_size,json=maxFileSize,proto3,oneof" json:"max_file_size,omitempty"`
-	MaxImageResolution                 *int64                 `protobuf:"varint,5,opt,name=max_image_resolution,json=maxImageResolution,proto3,oneof" json:"max_image_resolution,omitempty"`
-	MaxImageDecoderConcurrency         *int64                 `protobuf:"varint,6,opt,name=max_image_decoder_concurrency,json=maxImageDecoderConcurrency,proto3,oneof" json:"max_image_decoder_concurrency,omitempty"`
-	DriverName                         *string                `protobuf:"bytes,7,opt,name=driver_name,json=driverName,proto3,oneof" json:"driver_name,omitempty"`
-	Directory                          *string                `protobuf:"bytes,8,opt,name=directory,proto3,oneof" json:"directory,omitempty"`
-	EnablePublicLink                   *bool                  `protobuf:"varint,9,opt,name=enable_public_link,json=enablePublicLink,proto3,oneof" json:"enable_public_link,omitempty"`
-	ExtractContent                     *bool                  `protobuf:"varint,10,opt,name=extract_content,json=extractContent,proto3,oneof" json:"extract_content,omitempty"`
-	ArchiveRecursion                   *bool                  `protobuf:"varint,11,opt,name=archive_recursion,json=archiveRecursion,proto3,oneof" json:"archive_recursion,omitempty"`
-	PublicLinkSalt                     *string                `protobuf:"bytes,12,opt,name=public_link_salt,json=publicLinkSalt,proto3,oneof" json:"public_link_salt,omitempty"`
-	InitialFont                        *string                `protobuf:"bytes,13,opt,name=initial_font,json=initialFont,proto3,oneof" json:"initial_font,omitempty"`
-	AmazonS3AccessKeyId                *string                `protobuf:"bytes,14,opt,name=amazon_s3_access_key_id,json=amazonS3AccessKeyId,proto3,oneof" json:"amazon_s3_access_key_id,omitempty"`
-	AmazonS3SecretAccessKey            *string                `protobuf:"bytes,15,opt,name=amazon_s3_secret_access_key,json=amazonS3SecretAccessKey,proto3,oneof" json:"amazon_s3_secret_access_key,omitempty"`
-	AmazonS3Bucket                     *string                `protobuf:"bytes,16,opt,name=amazon_s3_bucket,json=amazonS3Bucket,proto3,oneof" json:"amazon_s3_bucket,omitempty"`
-	AmazonS3PathPrefix                 *string                `protobuf:"bytes,17,opt,name=amazon_s3_path_prefix,json=amazonS3PathPrefix,proto3,oneof" json:"amazon_s3_path_prefix,omitempty"`
-	AmazonS3Region                     *string                `protobuf:"bytes,18,opt,name=amazon_s3_region,json=amazonS3Region,proto3,oneof" json:"amazon_s3_region,omitempty"`
-	AmazonS3Endpoint                   *string                `protobuf:"bytes,19,opt,name=amazon_s3_endpoint,json=amazonS3Endpoint,proto3,oneof" json:"amazon_s3_endpoint,omitempty"`
-	AmazonS3Ssl                        *bool                  `protobuf:"varint,20,opt,name=amazon_s3_ssl,json=amazonS3Ssl,proto3,oneof" json:"amazon_s3_ssl,omitempty"`
-	AmazonS3SignV2                     *bool                  `protobuf:"varint,21,opt,name=amazon_s3_sign_v2,json=amazonS3SignV2,proto3,oneof" json:"amazon_s3_sign_v2,omitempty"`
-	AmazonS3Sse                        *bool                  `protobuf:"varint,22,opt,name=amazon_s3_sse,json=amazonS3Sse,proto3,oneof" json:"amazon_s3_sse,omitempty"`
-	AmazonS3Trace                      *bool                  `protobuf:"varint,23,opt,name=amazon_s3_trace,json=amazonS3Trace,proto3,oneof" json:"amazon_s3_trace,omitempty"`
-	AmazonS3RequestTimeoutMilliseconds *int64                 `protobuf:"varint,24,opt,name=amazon_s3_request_timeout_milliseconds,json=amazonS3RequestTimeoutMilliseconds,proto3,oneof" json:"amazon_s3_request_timeout_milliseconds,omitempty"`
-	AmazonS3UploadPartSizeBytes        *int64                 `protobuf:"varint,25,opt,name=amazon_s3_upload_part_size_bytes,json=amazonS3UploadPartSizeBytes,proto3,oneof" json:"amazon_s3_upload_part_size_bytes,omitempty"`
-	AmazonS3StorageClass               *string                `protobuf:"bytes,26,opt,name=amazon_s3_storage_class,json=amazonS3StorageClass,proto3,oneof" json:"amazon_s3_storage_class,omitempty"`
+	MaxImageResolution                 *int64                 `protobuf:"varint,4,opt,name=max_image_resolution,json=maxImageResolution,proto3,oneof" json:"max_image_resolution,omitempty"`
+	MaxImageDecoderConcurrency         *int64                 `protobuf:"varint,5,opt,name=max_image_decoder_concurrency,json=maxImageDecoderConcurrency,proto3,oneof" json:"max_image_decoder_concurrency,omitempty"`
+	DriverName                         *string                `protobuf:"bytes,6,opt,name=driver_name,json=driverName,proto3,oneof" json:"driver_name,omitempty"`
+	AmazonS3AccessKeyId                *string                `protobuf:"bytes,7,opt,name=amazon_s3_access_key_id,json=amazonS3AccessKeyId,proto3,oneof" json:"amazon_s3_access_key_id,omitempty"`
+	AmazonS3SecretAccessKey            *string                `protobuf:"bytes,8,opt,name=amazon_s3_secret_access_key,json=amazonS3SecretAccessKey,proto3,oneof" json:"amazon_s3_secret_access_key,omitempty"`
+	AmazonS3Bucket                     *string                `protobuf:"bytes,9,opt,name=amazon_s3_bucket,json=amazonS3Bucket,proto3,oneof" json:"amazon_s3_bucket,omitempty"`
+	AmazonS3PathPrefix                 *string                `protobuf:"bytes,10,opt,name=amazon_s3_path_prefix,json=amazonS3PathPrefix,proto3,oneof" json:"amazon_s3_path_prefix,omitempty"`
+	AmazonS3Region                     *string                `protobuf:"bytes,11,opt,name=amazon_s3_region,json=amazonS3Region,proto3,oneof" json:"amazon_s3_region,omitempty"`
+	AmazonS3Endpoint                   *string                `protobuf:"bytes,12,opt,name=amazon_s3_endpoint,json=amazonS3Endpoint,proto3,oneof" json:"amazon_s3_endpoint,omitempty"`
+	AmazonS3Ssl                        *bool                  `protobuf:"varint,13,opt,name=amazon_s3_ssl,json=amazonS3Ssl,proto3,oneof" json:"amazon_s3_ssl,omitempty"`
+	AmazonS3SignV2                     *bool                  `protobuf:"varint,14,opt,name=amazon_s3_sign_v2,json=amazonS3SignV2,proto3,oneof" json:"amazon_s3_sign_v2,omitempty"`
+	AmazonS3Sse                        *bool                  `protobuf:"varint,15,opt,name=amazon_s3_sse,json=amazonS3Sse,proto3,oneof" json:"amazon_s3_sse,omitempty"`
+	AmazonS3Trace                      *bool                  `protobuf:"varint,16,opt,name=amazon_s3_trace,json=amazonS3Trace,proto3,oneof" json:"amazon_s3_trace,omitempty"`
+	AmazonS3RequestTimeoutMilliseconds *int64                 `protobuf:"varint,17,opt,name=amazon_s3_request_timeout_milliseconds,json=amazonS3RequestTimeoutMilliseconds,proto3,oneof" json:"amazon_s3_request_timeout_milliseconds,omitempty"`
+	AmazonS3UploadPartSizeBytes        *int64                 `protobuf:"varint,18,opt,name=amazon_s3_upload_part_size_bytes,json=amazonS3UploadPartSizeBytes,proto3,oneof" json:"amazon_s3_upload_part_size_bytes,omitempty"`
+	AmazonS3StorageClass               *string                `protobuf:"bytes,19,opt,name=amazon_s3_storage_class,json=amazonS3StorageClass,proto3,oneof" json:"amazon_s3_storage_class,omitempty"`
 	unknownFields                      protoimpl.UnknownFields
 	sizeCache                          protoimpl.SizeCache
 }
@@ -1089,13 +1082,6 @@ func (x *ConfigFile) GetEnableMobileDownload() bool {
 	return false
 }
 
-func (x *ConfigFile) GetMaxFileSize() int64 {
-	if x != nil && x.MaxFileSize != nil {
-		return *x.MaxFileSize
-	}
-	return 0
-}
-
 func (x *ConfigFile) GetMaxImageResolution() int64 {
 	if x != nil && x.MaxImageResolution != nil {
 		return *x.MaxImageResolution
@@ -1113,48 +1099,6 @@ func (x *ConfigFile) GetMaxImageDecoderConcurrency() int64 {
 func (x *ConfigFile) GetDriverName() string {
 	if x != nil && x.DriverName != nil {
 		return *x.DriverName
-	}
-	return ""
-}
-
-func (x *ConfigFile) GetDirectory() string {
-	if x != nil && x.Directory != nil {
-		return *x.Directory
-	}
-	return ""
-}
-
-func (x *ConfigFile) GetEnablePublicLink() bool {
-	if x != nil && x.EnablePublicLink != nil {
-		return *x.EnablePublicLink
-	}
-	return false
-}
-
-func (x *ConfigFile) GetExtractContent() bool {
-	if x != nil && x.ExtractContent != nil {
-		return *x.ExtractContent
-	}
-	return false
-}
-
-func (x *ConfigFile) GetArchiveRecursion() bool {
-	if x != nil && x.ArchiveRecursion != nil {
-		return *x.ArchiveRecursion
-	}
-	return false
-}
-
-func (x *ConfigFile) GetPublicLinkSalt() string {
-	if x != nil && x.PublicLinkSalt != nil {
-		return *x.PublicLinkSalt
-	}
-	return ""
-}
-
-func (x *ConfigFile) GetInitialFont() string {
-	if x != nil && x.InitialFont != nil {
-		return *x.InitialFont
 	}
 	return ""
 }
@@ -3645,52 +3589,37 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\n" +
 	"_uppercaseB\t\n" +
 	"\a_symbolB\x15\n" +
-	"\x13_enable_forgot_link\"\xe0\x0f\n" +
+	"\x13_enable_forgot_link\"\xa3\f\n" +
 	"\n" +
 	"ConfigFile\x12;\n" +
 	"\x17enable_file_attachments\x18\x01 \x01(\bH\x00R\x15enableFileAttachments\x88\x01\x01\x125\n" +
 	"\x14enable_mobile_upload\x18\x02 \x01(\bH\x01R\x12enableMobileUpload\x88\x01\x01\x129\n" +
-	"\x16enable_mobile_download\x18\x03 \x01(\bH\x02R\x14enableMobileDownload\x88\x01\x01\x12'\n" +
-	"\rmax_file_size\x18\x04 \x01(\x03H\x03R\vmaxFileSize\x88\x01\x01\x125\n" +
-	"\x14max_image_resolution\x18\x05 \x01(\x03H\x04R\x12maxImageResolution\x88\x01\x01\x12F\n" +
-	"\x1dmax_image_decoder_concurrency\x18\x06 \x01(\x03H\x05R\x1amaxImageDecoderConcurrency\x88\x01\x01\x12$\n" +
-	"\vdriver_name\x18\a \x01(\tH\x06R\n" +
-	"driverName\x88\x01\x01\x12!\n" +
-	"\tdirectory\x18\b \x01(\tH\aR\tdirectory\x88\x01\x01\x121\n" +
-	"\x12enable_public_link\x18\t \x01(\bH\bR\x10enablePublicLink\x88\x01\x01\x12,\n" +
-	"\x0fextract_content\x18\n" +
-	" \x01(\bH\tR\x0eextractContent\x88\x01\x01\x120\n" +
-	"\x11archive_recursion\x18\v \x01(\bH\n" +
-	"R\x10archiveRecursion\x88\x01\x01\x12-\n" +
-	"\x10public_link_salt\x18\f \x01(\tH\vR\x0epublicLinkSalt\x88\x01\x01\x12&\n" +
-	"\finitial_font\x18\r \x01(\tH\fR\vinitialFont\x88\x01\x01\x129\n" +
-	"\x17amazon_s3_access_key_id\x18\x0e \x01(\tH\rR\x13amazonS3AccessKeyId\x88\x01\x01\x12A\n" +
-	"\x1bamazon_s3_secret_access_key\x18\x0f \x01(\tH\x0eR\x17amazonS3SecretAccessKey\x88\x01\x01\x12-\n" +
-	"\x10amazon_s3_bucket\x18\x10 \x01(\tH\x0fR\x0eamazonS3Bucket\x88\x01\x01\x126\n" +
-	"\x15amazon_s3_path_prefix\x18\x11 \x01(\tH\x10R\x12amazonS3PathPrefix\x88\x01\x01\x12-\n" +
-	"\x10amazon_s3_region\x18\x12 \x01(\tH\x11R\x0eamazonS3Region\x88\x01\x01\x121\n" +
-	"\x12amazon_s3_endpoint\x18\x13 \x01(\tH\x12R\x10amazonS3Endpoint\x88\x01\x01\x12'\n" +
-	"\ramazon_s3_ssl\x18\x14 \x01(\bH\x13R\vamazonS3Ssl\x88\x01\x01\x12.\n" +
-	"\x11amazon_s3_sign_v2\x18\x15 \x01(\bH\x14R\x0eamazonS3SignV2\x88\x01\x01\x12'\n" +
-	"\ramazon_s3_sse\x18\x16 \x01(\bH\x15R\vamazonS3Sse\x88\x01\x01\x12+\n" +
-	"\x0famazon_s3_trace\x18\x17 \x01(\bH\x16R\ramazonS3Trace\x88\x01\x01\x12W\n" +
-	"&amazon_s3_request_timeout_milliseconds\x18\x18 \x01(\x03H\x17R\"amazonS3RequestTimeoutMilliseconds\x88\x01\x01\x12J\n" +
-	" amazon_s3_upload_part_size_bytes\x18\x19 \x01(\x03H\x18R\x1bamazonS3UploadPartSizeBytes\x88\x01\x01\x12:\n" +
-	"\x17amazon_s3_storage_class\x18\x1a \x01(\tH\x19R\x14amazonS3StorageClass\x88\x01\x01B\x1a\n" +
+	"\x16enable_mobile_download\x18\x03 \x01(\bH\x02R\x14enableMobileDownload\x88\x01\x01\x125\n" +
+	"\x14max_image_resolution\x18\x04 \x01(\x03H\x03R\x12maxImageResolution\x88\x01\x01\x12F\n" +
+	"\x1dmax_image_decoder_concurrency\x18\x05 \x01(\x03H\x04R\x1amaxImageDecoderConcurrency\x88\x01\x01\x12$\n" +
+	"\vdriver_name\x18\x06 \x01(\tH\x05R\n" +
+	"driverName\x88\x01\x01\x129\n" +
+	"\x17amazon_s3_access_key_id\x18\a \x01(\tH\x06R\x13amazonS3AccessKeyId\x88\x01\x01\x12A\n" +
+	"\x1bamazon_s3_secret_access_key\x18\b \x01(\tH\aR\x17amazonS3SecretAccessKey\x88\x01\x01\x12-\n" +
+	"\x10amazon_s3_bucket\x18\t \x01(\tH\bR\x0eamazonS3Bucket\x88\x01\x01\x126\n" +
+	"\x15amazon_s3_path_prefix\x18\n" +
+	" \x01(\tH\tR\x12amazonS3PathPrefix\x88\x01\x01\x12-\n" +
+	"\x10amazon_s3_region\x18\v \x01(\tH\n" +
+	"R\x0eamazonS3Region\x88\x01\x01\x121\n" +
+	"\x12amazon_s3_endpoint\x18\f \x01(\tH\vR\x10amazonS3Endpoint\x88\x01\x01\x12'\n" +
+	"\ramazon_s3_ssl\x18\r \x01(\bH\fR\vamazonS3Ssl\x88\x01\x01\x12.\n" +
+	"\x11amazon_s3_sign_v2\x18\x0e \x01(\bH\rR\x0eamazonS3SignV2\x88\x01\x01\x12'\n" +
+	"\ramazon_s3_sse\x18\x0f \x01(\bH\x0eR\vamazonS3Sse\x88\x01\x01\x12+\n" +
+	"\x0famazon_s3_trace\x18\x10 \x01(\bH\x0fR\ramazonS3Trace\x88\x01\x01\x12W\n" +
+	"&amazon_s3_request_timeout_milliseconds\x18\x11 \x01(\x03H\x10R\"amazonS3RequestTimeoutMilliseconds\x88\x01\x01\x12J\n" +
+	" amazon_s3_upload_part_size_bytes\x18\x12 \x01(\x03H\x11R\x1bamazonS3UploadPartSizeBytes\x88\x01\x01\x12:\n" +
+	"\x17amazon_s3_storage_class\x18\x13 \x01(\tH\x12R\x14amazonS3StorageClass\x88\x01\x01B\x1a\n" +
 	"\x18_enable_file_attachmentsB\x17\n" +
 	"\x15_enable_mobile_uploadB\x19\n" +
-	"\x17_enable_mobile_downloadB\x10\n" +
-	"\x0e_max_file_sizeB\x17\n" +
+	"\x17_enable_mobile_downloadB\x17\n" +
 	"\x15_max_image_resolutionB \n" +
 	"\x1e_max_image_decoder_concurrencyB\x0e\n" +
-	"\f_driver_nameB\f\n" +
-	"\n" +
-	"_directoryB\x15\n" +
-	"\x13_enable_public_linkB\x12\n" +
-	"\x10_extract_contentB\x14\n" +
-	"\x12_archive_recursionB\x13\n" +
-	"\x11_public_link_saltB\x0f\n" +
-	"\r_initial_fontB\x1a\n" +
+	"\f_driver_nameB\x1a\n" +
 	"\x18_amazon_s3_access_key_idB\x1e\n" +
 	"\x1c_amazon_s3_secret_access_keyB\x13\n" +
 	"\x11_amazon_s3_bucketB\x18\n" +

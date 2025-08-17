@@ -124,29 +124,22 @@ message ConfigFile {
   optional bool enable_file_attachments = 1;
   optional bool enable_mobile_upload = 2;
   optional bool enable_mobile_download = 3;
-  optional int64 max_file_size = 4;
-  optional int64 max_image_resolution = 5;
-  optional int64 max_image_decoder_concurrency = 6;
-  optional string driver_name = 7;
-  optional string directory = 8;
-  optional bool enable_public_link = 9;
-  optional bool extract_content = 10;
-  optional bool archive_recursion = 11;
-  optional string public_link_salt = 12;
-  optional string initial_font = 13;
-  optional string amazon_s3_access_key_id = 14;
-  optional string amazon_s3_secret_access_key = 15;
-  optional string amazon_s3_bucket = 16;
-  optional string amazon_s3_path_prefix = 17;
-  optional string amazon_s3_region = 18;
-  optional string amazon_s3_endpoint = 19;
-  optional bool amazon_s3_ssl = 20;
-  optional bool amazon_s3_sign_v2 = 21;
-  optional bool amazon_s3_sse = 22;
-  optional bool amazon_s3_trace = 23;
-  optional int64 amazon_s3_request_timeout_milliseconds = 24;
-  optional int64 amazon_s3_upload_part_size_bytes = 25;
-  optional string amazon_s3_storage_class = 26;
+  optional int64 max_image_resolution = 4;
+  optional int64 max_image_decoder_concurrency = 5;
+  optional string driver_name = 6;
+  optional string amazon_s3_access_key_id = 7;
+  optional string amazon_s3_secret_access_key = 8;
+  optional string amazon_s3_bucket = 9;
+  optional string amazon_s3_path_prefix = 10;
+  optional string amazon_s3_region = 11;
+  optional string amazon_s3_endpoint = 12;
+  optional bool amazon_s3_ssl = 13;
+  optional bool amazon_s3_sign_v2 = 14;
+  optional bool amazon_s3_sse = 15;
+  optional bool amazon_s3_trace = 16;
+  optional int64 amazon_s3_request_timeout_milliseconds = 17;
+  optional int64 amazon_s3_upload_part_size_bytes = 18;
+  optional string amazon_s3_storage_class = 19;
 }
 
 message ConfigEmail {

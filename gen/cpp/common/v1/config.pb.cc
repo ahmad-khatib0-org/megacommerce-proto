@@ -806,15 +806,6 @@ inline constexpr ConfigFile::Impl_::Impl_(
         driver_name_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        directory_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        public_link_salt_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        initial_font_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
         amazon_s3_access_key_id_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
@@ -836,21 +827,17 @@ inline constexpr ConfigFile::Impl_::Impl_(
         amazon_s3_storage_class_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        max_file_size_{::int64_t{0}},
         max_image_resolution_{::int64_t{0}},
         max_image_decoder_concurrency_{::int64_t{0}},
         enable_file_attachments_{false},
         enable_mobile_upload_{false},
         enable_mobile_download_{false},
-        enable_public_link_{false},
-        extract_content_{false},
-        archive_recursion_{false},
         amazon_s3_ssl_{false},
         amazon_s3_sign_v2_{false},
-        amazon_s3_request_timeout_milliseconds_{::int64_t{0}},
-        amazon_s3_upload_part_size_bytes_{::int64_t{0}},
         amazon_s3_sse_{false},
-        amazon_s3_trace_{false} {}
+        amazon_s3_trace_{false},
+        amazon_s3_request_timeout_milliseconds_{::int64_t{0}},
+        amazon_s3_upload_part_size_bytes_{::int64_t{0}} {}
 
 template <typename>
 PROTOBUF_CONSTEXPR ConfigFile::ConfigFile(::_pbi::ConstantInitialized)
@@ -1467,20 +1454,13 @@ const ::uint32_t
         6,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigFile, _impl_._has_bits_),
-        29, // hasbit index offset
+        22, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigFile, _impl_.enable_file_attachments_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigFile, _impl_.enable_mobile_upload_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigFile, _impl_.enable_mobile_download_),
-        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigFile, _impl_.max_file_size_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigFile, _impl_.max_image_resolution_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigFile, _impl_.max_image_decoder_concurrency_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigFile, _impl_.driver_name_),
-        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigFile, _impl_.directory_),
-        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigFile, _impl_.enable_public_link_),
-        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigFile, _impl_.extract_content_),
-        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigFile, _impl_.archive_recursion_),
-        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigFile, _impl_.public_link_salt_),
-        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigFile, _impl_.initial_font_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigFile, _impl_.amazon_s3_access_key_id_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigFile, _impl_.amazon_s3_secret_access_key_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigFile, _impl_.amazon_s3_bucket_),
@@ -1494,32 +1474,25 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigFile, _impl_.amazon_s3_request_timeout_milliseconds_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigFile, _impl_.amazon_s3_upload_part_size_bytes_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigFile, _impl_.amazon_s3_storage_class_),
-        14,
-        15,
-        16,
+        10,
         11,
         12,
-        13,
+        8,
+        9,
         0,
         1,
-        17,
-        18,
-        19,
         2,
         3,
         4,
         5,
         6,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
         7,
-        8,
-        9,
-        20,
-        21,
-        24,
-        25,
-        22,
-        23,
-        10,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigEmail, _impl_._has_bits_),
         29, // hasbit index offset
@@ -1935,25 +1908,25 @@ static const ::_pbi::MigrationSchema
         {165, sizeof(::common::v1::ConfigSql)},
         {188, sizeof(::common::v1::ConfigPassword)},
         {205, sizeof(::common::v1::ConfigFile)},
-        {260, sizeof(::common::v1::ConfigEmail)},
-        {315, sizeof(::common::v1::ConfigRateLimit)},
-        {332, sizeof(::common::v1::ConfigPrivacy)},
-        {339, sizeof(::common::v1::ConfigSupport)},
-        {356, sizeof(::common::v1::ConfigLocalization)},
-        {365, sizeof(::common::v1::ConfigLdap)},
-        {430, sizeof(::common::v1::ConfigSaml)},
-        {499, sizeof(::common::v1::ConfigNativeApp)},
-        {518, sizeof(::common::v1::ConfigMeilisearch)},
-        {541, sizeof(::common::v1::ConfigBleve)},
-        {556, sizeof(::common::v1::ConfigDataRetention)},
-        {579, sizeof(::common::v1::ConfigImageProxy)},
-        {590, sizeof(::common::v1::Config)},
-        {635, sizeof(::common::v1::ConfigGetRequest)},
-        {636, sizeof(::common::v1::ConfigGetResponse)},
-        {641, sizeof(::common::v1::ConfigUpdateRequest)},
-        {646, sizeof(::common::v1::ConfigUpdateResponse)},
-        {651, sizeof(::common::v1::ConfigListenerResponse)},
-        {656, sizeof(::common::v1::ConfigListenerRequest)},
+        {246, sizeof(::common::v1::ConfigEmail)},
+        {301, sizeof(::common::v1::ConfigRateLimit)},
+        {318, sizeof(::common::v1::ConfigPrivacy)},
+        {325, sizeof(::common::v1::ConfigSupport)},
+        {342, sizeof(::common::v1::ConfigLocalization)},
+        {351, sizeof(::common::v1::ConfigLdap)},
+        {416, sizeof(::common::v1::ConfigSaml)},
+        {485, sizeof(::common::v1::ConfigNativeApp)},
+        {504, sizeof(::common::v1::ConfigMeilisearch)},
+        {527, sizeof(::common::v1::ConfigBleve)},
+        {542, sizeof(::common::v1::ConfigDataRetention)},
+        {565, sizeof(::common::v1::ConfigImageProxy)},
+        {576, sizeof(::common::v1::Config)},
+        {621, sizeof(::common::v1::ConfigGetRequest)},
+        {622, sizeof(::common::v1::ConfigGetResponse)},
+        {627, sizeof(::common::v1::ConfigUpdateRequest)},
+        {632, sizeof(::common::v1::ConfigUpdateResponse)},
+        {637, sizeof(::common::v1::ConfigListenerResponse)},
+        {642, sizeof(::common::v1::ConfigListenerRequest)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::common::v1::_ConfigMain_default_instance_._instance,
@@ -2168,380 +2141,368 @@ const char descriptor_table_protodef_common_2fv1_2fconfig_2eproto[] ABSL_ATTRIBU
     "nable_forgot_link\030\007 \001(\010H\006R\020enableForgotL"
     "ink\210\001\001B\021\n\017_minimum_lengthB\021\n\017_maximum_le"
     "ngthB\014\n\n_lowercaseB\t\n\007_numberB\014\n\n_upperc"
-    "aseB\t\n\007_symbolB\025\n\023_enable_forgot_link\"\340\017"
+    "aseB\t\n\007_symbolB\025\n\023_enable_forgot_link\"\243\014"
     "\n\nConfigFile\022;\n\027enable_file_attachments\030"
     "\001 \001(\010H\000R\025enableFileAttachments\210\001\001\0225\n\024ena"
     "ble_mobile_upload\030\002 \001(\010H\001R\022enableMobileU"
     "pload\210\001\001\0229\n\026enable_mobile_download\030\003 \001(\010"
-    "H\002R\024enableMobileDownload\210\001\001\022\'\n\rmax_file_"
-    "size\030\004 \001(\003H\003R\013maxFileSize\210\001\001\0225\n\024max_imag"
-    "e_resolution\030\005 \001(\003H\004R\022maxImageResolution"
-    "\210\001\001\022F\n\035max_image_decoder_concurrency\030\006 \001"
-    "(\003H\005R\032maxImageDecoderConcurrency\210\001\001\022$\n\013d"
-    "river_name\030\007 \001(\tH\006R\ndriverName\210\001\001\022!\n\tdir"
-    "ectory\030\010 \001(\tH\007R\tdirectory\210\001\001\0221\n\022enable_p"
-    "ublic_link\030\t \001(\010H\010R\020enablePublicLink\210\001\001\022"
-    ",\n\017extract_content\030\n \001(\010H\tR\016extractConte"
-    "nt\210\001\001\0220\n\021archive_recursion\030\013 \001(\010H\nR\020arch"
-    "iveRecursion\210\001\001\022-\n\020public_link_salt\030\014 \001("
-    "\tH\013R\016publicLinkSalt\210\001\001\022&\n\014initial_font\030\r"
-    " \001(\tH\014R\013initialFont\210\001\001\0229\n\027amazon_s3_acce"
-    "ss_key_id\030\016 \001(\tH\rR\023amazonS3AccessKeyId\210\001"
-    "\001\022A\n\033amazon_s3_secret_access_key\030\017 \001(\tH\016"
-    "R\027amazonS3SecretAccessKey\210\001\001\022-\n\020amazon_s"
-    "3_bucket\030\020 \001(\tH\017R\016amazonS3Bucket\210\001\001\0226\n\025a"
-    "mazon_s3_path_prefix\030\021 \001(\tH\020R\022amazonS3Pa"
-    "thPrefix\210\001\001\022-\n\020amazon_s3_region\030\022 \001(\tH\021R"
-    "\016amazonS3Region\210\001\001\0221\n\022amazon_s3_endpoint"
-    "\030\023 \001(\tH\022R\020amazonS3Endpoint\210\001\001\022\'\n\ramazon_"
-    "s3_ssl\030\024 \001(\010H\023R\013amazonS3Ssl\210\001\001\022.\n\021amazon"
-    "_s3_sign_v2\030\025 \001(\010H\024R\016amazonS3SignV2\210\001\001\022\'"
-    "\n\ramazon_s3_sse\030\026 \001(\010H\025R\013amazonS3Sse\210\001\001\022"
-    "+\n\017amazon_s3_trace\030\027 \001(\010H\026R\ramazonS3Trac"
-    "e\210\001\001\022W\n&amazon_s3_request_timeout_millis"
-    "econds\030\030 \001(\003H\027R\"amazonS3RequestTimeoutMi"
-    "lliseconds\210\001\001\022J\n amazon_s3_upload_part_s"
-    "ize_bytes\030\031 \001(\003H\030R\033amazonS3UploadPartSiz"
-    "eBytes\210\001\001\022:\n\027amazon_s3_storage_class\030\032 \001"
-    "(\tH\031R\024amazonS3StorageClass\210\001\001B\032\n\030_enable"
-    "_file_attachmentsB\027\n\025_enable_mobile_uplo"
-    "adB\031\n\027_enable_mobile_downloadB\020\n\016_max_fi"
-    "le_sizeB\027\n\025_max_image_resolutionB \n\036_max"
-    "_image_decoder_concurrencyB\016\n\014_driver_na"
-    "meB\014\n\n_directoryB\025\n\023_enable_public_linkB"
-    "\022\n\020_extract_contentB\024\n\022_archive_recursio"
-    "nB\023\n\021_public_link_saltB\017\n\r_initial_fontB"
-    "\032\n\030_amazon_s3_access_key_idB\036\n\034_amazon_s"
-    "3_secret_access_keyB\023\n\021_amazon_s3_bucket"
-    "B\030\n\026_amazon_s3_path_prefixB\023\n\021_amazon_s3"
-    "_regionB\025\n\023_amazon_s3_endpointB\020\n\016_amazo"
-    "n_s3_sslB\024\n\022_amazon_s3_sign_v2B\020\n\016_amazo"
-    "n_s3_sseB\022\n\020_amazon_s3_traceB)\n\'_amazon_"
-    "s3_request_timeout_millisecondsB#\n!_amaz"
-    "on_s3_upload_part_size_bytesB\032\n\030_amazon_"
-    "s3_storage_class\"\210\021\n\013ConfigEmail\022=\n\030send"
-    "_email_notifications\030\001 \001(\010H\000R\026sendEmailN"
-    "otifications\210\001\001\022A\n\032require_email_verific"
-    "ation\030\002 \001(\010H\001R\030requireEmailVerification\210"
-    "\001\001\022*\n\016feedback_email\030\003 \001(\tH\002R\rfeedbackEm"
-    "ail\210\001\001\022-\n\020reply_to_address\030\004 \001(\tH\003R\016repl"
-    "yToAddress\210\001\001\022-\n\020enable_smtp_auth\030\005 \001(\010H"
-    "\004R\016enableSmtpAuth\210\001\001\022(\n\rsmtp_username\030\006 "
-    "\001(\tH\005R\014smtpUsername\210\001\001\022(\n\rsmtp_password\030"
-    "\007 \001(\tH\006R\014smtpPassword\210\001\001\022$\n\013smtp_server\030"
-    "\010 \001(\tH\007R\nsmtpServer\210\001\001\022 \n\tsmtp_port\030\t \001("
-    "\tH\010R\010smtpPort\210\001\001\0223\n\023smtp_server_timeout\030"
-    "\n \001(\005H\tR\021smtpServerTimeout\210\001\001\0224\n\023connect"
-    "ion_security\030\013 \001(\tH\nR\022connectionSecurity"
-    "\210\001\001\022;\n\027send_push_notifications\030\014 \001(\010H\013R\025"
-    "sendPushNotifications\210\001\001\022=\n\030push_notific"
-    "ation_server\030\r \001(\tH\014R\026pushNotificationSe"
-    "rver\210\001\001\022A\n\032push_notification_contents\030\016 "
-    "\001(\tH\rR\030pushNotificationContents\210\001\001\022=\n\030pu"
-    "sh_notification_buffer\030\017 \001(\005H\016R\026pushNoti"
-    "ficationBuffer\210\001\001\0227\n\025enable_email_batchi"
-    "ng\030\020 \001(\010H\017R\023enableEmailBatching\210\001\001\022@\n\032em"
-    "ail_batching_buffer_size\030\021 \001(\005H\020R\027emailB"
-    "atchingBufferSize\210\001\001\022;\n\027email_batching_i"
-    "nterval\030\022 \001(\005H\021R\025emailBatchingInterval\210\001"
-    "\001\022T\n$skip_server_certificate_verificatio"
-    "n\030\023 \001(\010H\022R!skipServerCertificateVerifica"
-    "tion\210\001\001\022L\n email_notification_contents_t"
-    "ype\030\024 \001(\tH\023R\035emailNotificationContentsTy"
-    "pe\210\001\001\0221\n\022login_button_color\030\025 \001(\tH\024R\020log"
-    "inButtonColor\210\001\001\022>\n\031login_button_border_"
-    "color\030\026 \001(\tH\025R\026loginButtonBorderColor\210\001\001"
-    "\022:\n\027login_button_text_color\030\027 \001(\tH\026R\024log"
-    "inButtonTextColor\210\001\001\022>\n\031rate_limiting_me"
-    "mory_size\030\030 \001(\005H\027R\026rateLimitingMemorySiz"
-    "e\210\001\001\0228\n\026rate_limiting_per_hour\030\031 \001(\005H\030R\023"
-    "rateLimitingPerHour\210\001\001\022:\n\027rate_limiting_"
-    "max_burst\030\032 \001(\005H\031R\024rateLimitingMaxBurst\210"
-    "\001\001B\033\n\031_send_email_notificationsB\035\n\033_requ"
-    "ire_email_verificationB\021\n\017_feedback_emai"
-    "lB\023\n\021_reply_to_addressB\023\n\021_enable_smtp_a"
-    "uthB\020\n\016_smtp_usernameB\020\n\016_smtp_passwordB"
-    "\016\n\014_smtp_serverB\014\n\n_smtp_portB\026\n\024_smtp_s"
-    "erver_timeoutB\026\n\024_connection_securityB\032\n"
-    "\030_send_push_notificationsB\033\n\031_push_notif"
-    "ication_serverB\035\n\033_push_notification_con"
-    "tentsB\033\n\031_push_notification_bufferB\030\n\026_e"
-    "nable_email_batchingB\035\n\033_email_batching_"
-    "buffer_sizeB\032\n\030_email_batching_intervalB"
-    "\'\n%_skip_server_certificate_verification"
-    "B#\n!_email_notification_contents_typeB\025\n"
+    "H\002R\024enableMobileDownload\210\001\001\0225\n\024max_image"
+    "_resolution\030\004 \001(\003H\003R\022maxImageResolution\210"
+    "\001\001\022F\n\035max_image_decoder_concurrency\030\005 \001("
+    "\003H\004R\032maxImageDecoderConcurrency\210\001\001\022$\n\013dr"
+    "iver_name\030\006 \001(\tH\005R\ndriverName\210\001\001\0229\n\027amaz"
+    "on_s3_access_key_id\030\007 \001(\tH\006R\023amazonS3Acc"
+    "essKeyId\210\001\001\022A\n\033amazon_s3_secret_access_k"
+    "ey\030\010 \001(\tH\007R\027amazonS3SecretAccessKey\210\001\001\022-"
+    "\n\020amazon_s3_bucket\030\t \001(\tH\010R\016amazonS3Buck"
+    "et\210\001\001\0226\n\025amazon_s3_path_prefix\030\n \001(\tH\tR\022"
+    "amazonS3PathPrefix\210\001\001\022-\n\020amazon_s3_regio"
+    "n\030\013 \001(\tH\nR\016amazonS3Region\210\001\001\0221\n\022amazon_s"
+    "3_endpoint\030\014 \001(\tH\013R\020amazonS3Endpoint\210\001\001\022"
+    "\'\n\ramazon_s3_ssl\030\r \001(\010H\014R\013amazonS3Ssl\210\001\001"
+    "\022.\n\021amazon_s3_sign_v2\030\016 \001(\010H\rR\016amazonS3S"
+    "ignV2\210\001\001\022\'\n\ramazon_s3_sse\030\017 \001(\010H\016R\013amazo"
+    "nS3Sse\210\001\001\022+\n\017amazon_s3_trace\030\020 \001(\010H\017R\ram"
+    "azonS3Trace\210\001\001\022W\n&amazon_s3_request_time"
+    "out_milliseconds\030\021 \001(\003H\020R\"amazonS3Reques"
+    "tTimeoutMilliseconds\210\001\001\022J\n amazon_s3_upl"
+    "oad_part_size_bytes\030\022 \001(\003H\021R\033amazonS3Upl"
+    "oadPartSizeBytes\210\001\001\022:\n\027amazon_s3_storage"
+    "_class\030\023 \001(\tH\022R\024amazonS3StorageClass\210\001\001B"
+    "\032\n\030_enable_file_attachmentsB\027\n\025_enable_m"
+    "obile_uploadB\031\n\027_enable_mobile_downloadB"
+    "\027\n\025_max_image_resolutionB \n\036_max_image_d"
+    "ecoder_concurrencyB\016\n\014_driver_nameB\032\n\030_a"
+    "mazon_s3_access_key_idB\036\n\034_amazon_s3_sec"
+    "ret_access_keyB\023\n\021_amazon_s3_bucketB\030\n\026_"
+    "amazon_s3_path_prefixB\023\n\021_amazon_s3_regi"
+    "onB\025\n\023_amazon_s3_endpointB\020\n\016_amazon_s3_"
+    "sslB\024\n\022_amazon_s3_sign_v2B\020\n\016_amazon_s3_"
+    "sseB\022\n\020_amazon_s3_traceB)\n\'_amazon_s3_re"
+    "quest_timeout_millisecondsB#\n!_amazon_s3"
+    "_upload_part_size_bytesB\032\n\030_amazon_s3_st"
+    "orage_class\"\210\021\n\013ConfigEmail\022=\n\030send_emai"
+    "l_notifications\030\001 \001(\010H\000R\026sendEmailNotifi"
+    "cations\210\001\001\022A\n\032require_email_verification"
+    "\030\002 \001(\010H\001R\030requireEmailVerification\210\001\001\022*\n"
+    "\016feedback_email\030\003 \001(\tH\002R\rfeedbackEmail\210\001"
+    "\001\022-\n\020reply_to_address\030\004 \001(\tH\003R\016replyToAd"
+    "dress\210\001\001\022-\n\020enable_smtp_auth\030\005 \001(\010H\004R\016en"
+    "ableSmtpAuth\210\001\001\022(\n\rsmtp_username\030\006 \001(\tH\005"
+    "R\014smtpUsername\210\001\001\022(\n\rsmtp_password\030\007 \001(\t"
+    "H\006R\014smtpPassword\210\001\001\022$\n\013smtp_server\030\010 \001(\t"
+    "H\007R\nsmtpServer\210\001\001\022 \n\tsmtp_port\030\t \001(\tH\010R\010"
+    "smtpPort\210\001\001\0223\n\023smtp_server_timeout\030\n \001(\005"
+    "H\tR\021smtpServerTimeout\210\001\001\0224\n\023connection_s"
+    "ecurity\030\013 \001(\tH\nR\022connectionSecurity\210\001\001\022;"
+    "\n\027send_push_notifications\030\014 \001(\010H\013R\025sendP"
+    "ushNotifications\210\001\001\022=\n\030push_notification"
+    "_server\030\r \001(\tH\014R\026pushNotificationServer\210"
+    "\001\001\022A\n\032push_notification_contents\030\016 \001(\tH\r"
+    "R\030pushNotificationContents\210\001\001\022=\n\030push_no"
+    "tification_buffer\030\017 \001(\005H\016R\026pushNotificat"
+    "ionBuffer\210\001\001\0227\n\025enable_email_batching\030\020 "
+    "\001(\010H\017R\023enableEmailBatching\210\001\001\022@\n\032email_b"
+    "atching_buffer_size\030\021 \001(\005H\020R\027emailBatchi"
+    "ngBufferSize\210\001\001\022;\n\027email_batching_interv"
+    "al\030\022 \001(\005H\021R\025emailBatchingInterval\210\001\001\022T\n$"
+    "skip_server_certificate_verification\030\023 \001"
+    "(\010H\022R!skipServerCertificateVerification\210"
+    "\001\001\022L\n email_notification_contents_type\030\024"
+    " \001(\tH\023R\035emailNotificationContentsType\210\001\001"
+    "\0221\n\022login_button_color\030\025 \001(\tH\024R\020loginBut"
+    "tonColor\210\001\001\022>\n\031login_button_border_color"
+    "\030\026 \001(\tH\025R\026loginButtonBorderColor\210\001\001\022:\n\027l"
+    "ogin_button_text_color\030\027 \001(\tH\026R\024loginBut"
+    "tonTextColor\210\001\001\022>\n\031rate_limiting_memory_"
+    "size\030\030 \001(\005H\027R\026rateLimitingMemorySize\210\001\001\022"
+    "8\n\026rate_limiting_per_hour\030\031 \001(\005H\030R\023rateL"
+    "imitingPerHour\210\001\001\022:\n\027rate_limiting_max_b"
+    "urst\030\032 \001(\005H\031R\024rateLimitingMaxBurst\210\001\001B\033\n"
+    "\031_send_email_notificationsB\035\n\033_require_e"
+    "mail_verificationB\021\n\017_feedback_emailB\023\n\021"
+    "_reply_to_addressB\023\n\021_enable_smtp_authB\020"
+    "\n\016_smtp_usernameB\020\n\016_smtp_passwordB\016\n\014_s"
+    "mtp_serverB\014\n\n_smtp_portB\026\n\024_smtp_server"
+    "_timeoutB\026\n\024_connection_securityB\032\n\030_sen"
+    "d_push_notificationsB\033\n\031_push_notificati"
+    "on_serverB\035\n\033_push_notification_contents"
+    "B\033\n\031_push_notification_bufferB\030\n\026_enable"
+    "_email_batchingB\035\n\033_email_batching_buffe"
+    "r_sizeB\032\n\030_email_batching_intervalB\'\n%_s"
+    "kip_server_certificate_verificationB#\n!_"
+    "email_notification_contents_typeB\025\n\023_log"
+    "in_button_colorB\034\n\032_login_button_border_"
+    "colorB\032\n\030_login_button_text_colorB\034\n\032_ra"
+    "te_limiting_memory_sizeB\031\n\027_rate_limitin"
+    "g_per_hourB\032\n\030_rate_limiting_max_burst\"\204"
+    "\003\n\017ConfigRateLimit\022\033\n\006enable\030\001 \001(\010H\000R\006en"
+    "able\210\001\001\022\034\n\007per_sec\030\002 \001(\005H\001R\006perSec\210\001\001\022 \n"
+    "\tmax_burst\030\003 \001(\005H\002R\010maxBurst\210\001\001\022/\n\021memor"
+    "y_store_size\030\004 \001(\005H\003R\017memoryStoreSize\210\001\001"
+    "\0222\n\023vary_by_remote_addr\030\005 \001(\010H\004R\020varyByR"
+    "emoteAddr\210\001\001\022%\n\014vary_by_user\030\006 \001(\010H\005R\nva"
+    "ryByUser\210\001\001\022$\n\016vary_by_header\030\007 \001(\tR\014var"
+    "yByHeaderB\t\n\007_enableB\n\n\010_per_secB\014\n\n_max"
+    "_burstB\024\n\022_memory_store_sizeB\026\n\024_vary_by"
+    "_remote_addrB\017\n\r_vary_by_user\"\227\001\n\rConfig"
+    "Privacy\0221\n\022show_email_address\030\001 \001(\010H\000R\020s"
+    "howEmailAddress\210\001\001\022)\n\016show_full_name\030\002 \001"
+    "(\010H\001R\014showFullName\210\001\001B\025\n\023_show_email_add"
+    "ressB\021\n\017_show_full_name\"\357\003\n\rConfigSuppor"
+    "t\0226\n\025terms_of_service_link\030\001 \001(\tH\000R\022term"
+    "sOfServiceLink\210\001\001\0223\n\023privacy_policy_link"
+    "\030\002 \001(\tH\001R\021privacyPolicyLink\210\001\001\022\"\n\nabout_"
+    "link\030\003 \001(\tH\002R\taboutLink\210\001\001\022 \n\thelp_link\030"
+    "\004 \001(\tH\003R\010helpLink\210\001\001\0226\n\025report_a_problem"
+    "_link\030\005 \001(\tH\004R\022reportAProblemLink\210\001\001\0225\n\024"
+    "forgot_password_link\030\006 \001(\tH\005R\022forgotPass"
+    "wordLink\210\001\001\022(\n\rsupport_email\030\007 \001(\tH\006R\014su"
+    "pportEmail\210\001\001B\030\n\026_terms_of_service_linkB"
+    "\026\n\024_privacy_policy_linkB\r\n\013_about_linkB\014"
+    "\n\n_help_linkB\030\n\026_report_a_problem_linkB\027"
+    "\n\025_forgot_password_linkB\020\n\016_support_emai"
+    "l\"\202\002\n\022ConfigLocalization\0227\n\025default_serv"
+    "er_locale\030\001 \001(\tH\000R\023defaultServerLocale\210\001"
+    "\001\0227\n\025default_client_locale\030\002 \001(\tH\001R\023defa"
+    "ultClientLocale\210\001\001\0220\n\021available_locales\030"
+    "\003 \001(\tH\002R\020availableLocales\210\001\001B\030\n\026_default"
+    "_server_localeB\030\n\026_default_client_locale"
+    "B\024\n\022_available_locales\"\325\020\n\nConfigLdap\022\033\n"
+    "\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022$\n\013enable_syn"
+    "c\030\002 \001(\010H\001R\nenableSync\210\001\001\022$\n\013ldap_server\030"
+    "\003 \001(\tH\002R\nldapServer\210\001\001\022 \n\tldap_port\030\004 \001("
+    "\005H\003R\010ldapPort\210\001\001\0224\n\023connection_security\030"
+    "\005 \001(\tH\004R\022connectionSecurity\210\001\001\022\034\n\007base_d"
+    "n\030\006 \001(\tH\005R\006baseDn\210\001\001\022(\n\rbind_username\030\007 "
+    "\001(\tH\006R\014bindUsername\210\001\001\022(\n\rbind_password\030"
+    "\010 \001(\tH\007R\014bindPassword\210\001\001\0229\n\026maximum_logi"
+    "n_attempts\030\t \001(\005H\010R\024maximumLoginAttempts"
+    "\210\001\001\022$\n\013user_filter\030\n \001(\tH\tR\nuserFilter\210\001"
+    "\001\022&\n\014group_filter\030\013 \001(\tH\nR\013groupFilter\210\001"
+    "\001\0223\n\023enable_admin_filter\030\014 \001(\010H\013R\021enable"
+    "AdminFilter\210\001\001\022&\n\014admin_filter\030\r \001(\tH\014R\013"
+    "adminFilter\210\001\001\022D\n\034group_display_name_att"
+    "ribute\030\016 \001(\tH\rR\031groupDisplayNameAttribut"
+    "e\210\001\001\0221\n\022group_id_attribute\030\017 \001(\tH\016R\020grou"
+    "pIdAttribute\210\001\001\0225\n\024first_name_attribute\030"
+    "\020 \001(\tH\017R\022firstNameAttribute\210\001\001\0223\n\023last_n"
+    "ame_attribute\030\021 \001(\tH\020R\021lastNameAttribute"
+    "\210\001\001\022,\n\017email_attribute\030\022 \001(\tH\021R\016emailAtt"
+    "ribute\210\001\001\0222\n\022username_attribute\030\023 \001(\tH\022R"
+    "\021usernameAttribute\210\001\001\0222\n\022nickname_attrib"
+    "ute\030\024 \001(\tH\023R\021nicknameAttribute\210\001\001\022&\n\014id_"
+    "attribute\030\025 \001(\tH\024R\013idAttribute\210\001\001\0222\n\022pos"
+    "ition_attribute\030\026 \001(\tH\025R\021positionAttribu"
+    "te\210\001\001\0221\n\022login_id_attribute\030\027 \001(\tH\026R\020log"
+    "inIdAttribute\210\001\001\0220\n\021picture_attribute\030\030 "
+    "\001(\tH\027R\020pictureAttribute\210\001\001\0227\n\025sync_inter"
+    "val_minutes\030\031 \001(\005H\030R\023syncIntervalMinutes"
+    "\210\001\001\022(\n\rquery_timeout\030\032 \001(\005H\031R\014queryTimeo"
+    "ut\210\001\001\022\'\n\rmax_page_size\030\033 \001(\005H\032R\013maxPageS"
+    "ize\210\001\001\022-\n\020login_field_name\030\034 \001(\tH\033R\016logi"
+    "nFieldName\210\001\001\0221\n\022login_button_color\030\035 \001("
+    "\tH\034R\020loginButtonColor\210\001\001\022>\n\031login_button"
+    "_border_color\030\036 \001(\tH\035R\026loginButtonBorder"
+    "Color\210\001\001\022:\n\027login_button_text_color\030\037 \001("
+    "\tH\036R\024loginButtonTextColor\210\001\001B\t\n\007_enableB"
+    "\016\n\014_enable_syncB\016\n\014_ldap_serverB\014\n\n_ldap"
+    "_portB\026\n\024_connection_securityB\n\n\010_base_d"
+    "nB\020\n\016_bind_usernameB\020\n\016_bind_passwordB\031\n"
+    "\027_maximum_login_attemptsB\016\n\014_user_filter"
+    "B\017\n\r_group_filterB\026\n\024_enable_admin_filte"
+    "rB\017\n\r_admin_filterB\037\n\035_group_display_nam"
+    "e_attributeB\025\n\023_group_id_attributeB\027\n\025_f"
+    "irst_name_attributeB\026\n\024_last_name_attrib"
+    "uteB\022\n\020_email_attributeB\025\n\023_username_att"
+    "ributeB\025\n\023_nickname_attributeB\017\n\r_id_att"
+    "ributeB\025\n\023_position_attributeB\025\n\023_login_"
+    "id_attributeB\024\n\022_picture_attributeB\030\n\026_s"
+    "ync_interval_minutesB\020\n\016_query_timeoutB\020"
+    "\n\016_max_page_sizeB\023\n\021_login_field_nameB\025\n"
     "\023_login_button_colorB\034\n\032_login_button_bo"
-    "rder_colorB\032\n\030_login_button_text_colorB\034"
-    "\n\032_rate_limiting_memory_sizeB\031\n\027_rate_li"
-    "miting_per_hourB\032\n\030_rate_limiting_max_bu"
-    "rst\"\204\003\n\017ConfigRateLimit\022\033\n\006enable\030\001 \001(\010H"
-    "\000R\006enable\210\001\001\022\034\n\007per_sec\030\002 \001(\005H\001R\006perSec\210"
-    "\001\001\022 \n\tmax_burst\030\003 \001(\005H\002R\010maxBurst\210\001\001\022/\n\021"
-    "memory_store_size\030\004 \001(\005H\003R\017memoryStoreSi"
-    "ze\210\001\001\0222\n\023vary_by_remote_addr\030\005 \001(\010H\004R\020va"
-    "ryByRemoteAddr\210\001\001\022%\n\014vary_by_user\030\006 \001(\010H"
-    "\005R\nvaryByUser\210\001\001\022$\n\016vary_by_header\030\007 \001(\t"
-    "R\014varyByHeaderB\t\n\007_enableB\n\n\010_per_secB\014\n"
-    "\n_max_burstB\024\n\022_memory_store_sizeB\026\n\024_va"
-    "ry_by_remote_addrB\017\n\r_vary_by_user\"\227\001\n\rC"
-    "onfigPrivacy\0221\n\022show_email_address\030\001 \001(\010"
-    "H\000R\020showEmailAddress\210\001\001\022)\n\016show_full_nam"
-    "e\030\002 \001(\010H\001R\014showFullName\210\001\001B\025\n\023_show_emai"
-    "l_addressB\021\n\017_show_full_name\"\357\003\n\rConfigS"
-    "upport\0226\n\025terms_of_service_link\030\001 \001(\tH\000R"
-    "\022termsOfServiceLink\210\001\001\0223\n\023privacy_policy"
-    "_link\030\002 \001(\tH\001R\021privacyPolicyLink\210\001\001\022\"\n\na"
-    "bout_link\030\003 \001(\tH\002R\taboutLink\210\001\001\022 \n\thelp_"
-    "link\030\004 \001(\tH\003R\010helpLink\210\001\001\0226\n\025report_a_pr"
-    "oblem_link\030\005 \001(\tH\004R\022reportAProblemLink\210\001"
-    "\001\0225\n\024forgot_password_link\030\006 \001(\tH\005R\022forgo"
-    "tPasswordLink\210\001\001\022(\n\rsupport_email\030\007 \001(\tH"
-    "\006R\014supportEmail\210\001\001B\030\n\026_terms_of_service_"
-    "linkB\026\n\024_privacy_policy_linkB\r\n\013_about_l"
-    "inkB\014\n\n_help_linkB\030\n\026_report_a_problem_l"
-    "inkB\027\n\025_forgot_password_linkB\020\n\016_support"
-    "_email\"\202\002\n\022ConfigLocalization\0227\n\025default"
-    "_server_locale\030\001 \001(\tH\000R\023defaultServerLoc"
-    "ale\210\001\001\0227\n\025default_client_locale\030\002 \001(\tH\001R"
-    "\023defaultClientLocale\210\001\001\0220\n\021available_loc"
-    "ales\030\003 \001(\tH\002R\020availableLocales\210\001\001B\030\n\026_de"
-    "fault_server_localeB\030\n\026_default_client_l"
-    "ocaleB\024\n\022_available_locales\"\325\020\n\nConfigLd"
-    "ap\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022$\n\013enabl"
-    "e_sync\030\002 \001(\010H\001R\nenableSync\210\001\001\022$\n\013ldap_se"
-    "rver\030\003 \001(\tH\002R\nldapServer\210\001\001\022 \n\tldap_port"
-    "\030\004 \001(\005H\003R\010ldapPort\210\001\001\0224\n\023connection_secu"
-    "rity\030\005 \001(\tH\004R\022connectionSecurity\210\001\001\022\034\n\007b"
-    "ase_dn\030\006 \001(\tH\005R\006baseDn\210\001\001\022(\n\rbind_userna"
-    "me\030\007 \001(\tH\006R\014bindUsername\210\001\001\022(\n\rbind_pass"
-    "word\030\010 \001(\tH\007R\014bindPassword\210\001\001\0229\n\026maximum"
-    "_login_attempts\030\t \001(\005H\010R\024maximumLoginAtt"
-    "empts\210\001\001\022$\n\013user_filter\030\n \001(\tH\tR\nuserFil"
-    "ter\210\001\001\022&\n\014group_filter\030\013 \001(\tH\nR\013groupFil"
-    "ter\210\001\001\0223\n\023enable_admin_filter\030\014 \001(\010H\013R\021e"
-    "nableAdminFilter\210\001\001\022&\n\014admin_filter\030\r \001("
-    "\tH\014R\013adminFilter\210\001\001\022D\n\034group_display_nam"
-    "e_attribute\030\016 \001(\tH\rR\031groupDisplayNameAtt"
-    "ribute\210\001\001\0221\n\022group_id_attribute\030\017 \001(\tH\016R"
-    "\020groupIdAttribute\210\001\001\0225\n\024first_name_attri"
-    "bute\030\020 \001(\tH\017R\022firstNameAttribute\210\001\001\0223\n\023l"
-    "ast_name_attribute\030\021 \001(\tH\020R\021lastNameAttr"
-    "ibute\210\001\001\022,\n\017email_attribute\030\022 \001(\tH\021R\016ema"
-    "ilAttribute\210\001\001\0222\n\022username_attribute\030\023 \001"
-    "(\tH\022R\021usernameAttribute\210\001\001\0222\n\022nickname_a"
-    "ttribute\030\024 \001(\tH\023R\021nicknameAttribute\210\001\001\022&"
-    "\n\014id_attribute\030\025 \001(\tH\024R\013idAttribute\210\001\001\0222"
-    "\n\022position_attribute\030\026 \001(\tH\025R\021positionAt"
-    "tribute\210\001\001\0221\n\022login_id_attribute\030\027 \001(\tH\026"
-    "R\020loginIdAttribute\210\001\001\0220\n\021picture_attribu"
-    "te\030\030 \001(\tH\027R\020pictureAttribute\210\001\001\0227\n\025sync_"
-    "interval_minutes\030\031 \001(\005H\030R\023syncIntervalMi"
-    "nutes\210\001\001\022(\n\rquery_timeout\030\032 \001(\005H\031R\014query"
-    "Timeout\210\001\001\022\'\n\rmax_page_size\030\033 \001(\005H\032R\013max"
-    "PageSize\210\001\001\022-\n\020login_field_name\030\034 \001(\tH\033R"
-    "\016loginFieldName\210\001\001\0221\n\022login_button_color"
-    "\030\035 \001(\tH\034R\020loginButtonColor\210\001\001\022>\n\031login_b"
-    "utton_border_color\030\036 \001(\tH\035R\026loginButtonB"
-    "orderColor\210\001\001\022:\n\027login_button_text_color"
-    "\030\037 \001(\tH\036R\024loginButtonTextColor\210\001\001B\t\n\007_en"
-    "ableB\016\n\014_enable_syncB\016\n\014_ldap_serverB\014\n\n"
-    "_ldap_portB\026\n\024_connection_securityB\n\n\010_b"
-    "ase_dnB\020\n\016_bind_usernameB\020\n\016_bind_passwo"
-    "rdB\031\n\027_maximum_login_attemptsB\016\n\014_user_f"
-    "ilterB\017\n\r_group_filterB\026\n\024_enable_admin_"
-    "filterB\017\n\r_admin_filterB\037\n\035_group_displa"
-    "y_name_attributeB\025\n\023_group_id_attributeB"
-    "\027\n\025_first_name_attributeB\026\n\024_last_name_a"
-    "ttributeB\022\n\020_email_attributeB\025\n\023_usernam"
-    "e_attributeB\025\n\023_nickname_attributeB\017\n\r_i"
-    "d_attributeB\025\n\023_position_attributeB\025\n\023_l"
-    "ogin_id_attributeB\024\n\022_picture_attributeB"
-    "\030\n\026_sync_interval_minutesB\020\n\016_query_time"
-    "outB\020\n\016_max_page_sizeB\023\n\021_login_field_na"
-    "meB\025\n\023_login_button_colorB\034\n\032_login_butt"
-    "on_border_colorB\032\n\030_login_button_text_co"
-    "lor\"\255\023\n\nConfigSaml\022\033\n\006enable\030\001 \001(\010H\000R\006en"
-    "able\210\001\001\0226\n\025enable_sync_with_ldap\030\002 \001(\010H\001"
-    "R\022enableSyncWithLdap\210\001\001\022N\n\"enable_sync_w"
-    "ith_ldap_include_auth\030\003 \001(\010H\002R\035enableSyn"
-    "cWithLdapIncludeAuth\210\001\001\022:\n\027ignore_guests"
-    "_ldap_sync\030\004 \001(\010H\003R\024ignoreGuestsLdapSync"
-    "\210\001\001\022\033\n\006verify\030\005 \001(\010H\004R\006verify\210\001\001\022\035\n\007encr"
-    "ypt\030\006 \001(\010H\005R\007encrypt\210\001\001\022&\n\014sign_request\030"
-    "\007 \001(\010H\006R\013signRequest\210\001\001\022\034\n\007idp_url\030\010 \001(\t"
-    "H\007R\006idpUrl\210\001\001\0221\n\022idp_descriptor_url\030\t \001("
-    "\tH\010R\020idpDescriptorUrl\210\001\001\022-\n\020idp_metadata"
-    "_url\030\n \001(\tH\tR\016idpMetadataUrl\210\001\001\022C\n\033servi"
-    "ce_provider_identifier\030\013 \001(\tH\nR\031serviceP"
-    "roviderIdentifier\210\001\001\022H\n\036assertion_consum"
-    "er_service_url\030\014 \001(\tH\013R\033assertionConsume"
-    "rServiceUrl\210\001\001\0224\n\023signature_algorithm\030\r "
-    "\001(\tH\014R\022signatureAlgorithm\210\001\001\0224\n\023canonica"
-    "l_algorithm\030\016 \001(\tH\rR\022canonicalAlgorithm\210"
-    "\001\001\022:\n\027scoping_idp_provider_id\030\017 \001(\tH\016R\024s"
-    "copingIdpProviderId\210\001\001\022-\n\020scoping_idp_na"
-    "me\030\020 \001(\tH\017R\016scopingIdpName\210\001\001\0225\n\024idp_cer"
-    "tificate_file\030\021 \001(\tH\020R\022idpCertificateFil"
-    "e\210\001\001\022;\n\027public_certificate_file\030\022 \001(\tH\021R"
-    "\025publicCertificateFile\210\001\001\022-\n\020private_key"
-    "_file\030\023 \001(\tH\022R\016privateKeyFile\210\001\001\022&\n\014id_a"
-    "ttribute\030\024 \001(\tH\023R\013idAttribute\210\001\001\0229\n\026enab"
-    "le_admin_attribute\030\025 \001(\010H\024R\024enableAdminA"
-    "ttribute\210\001\001\022,\n\017admin_attribute\030\026 \001(\tH\025R\016"
-    "adminAttribute\210\001\001\0225\n\024first_name_attribut"
-    "e\030\027 \001(\tH\026R\022firstNameAttribute\210\001\001\0223\n\023last"
-    "_name_attribute\030\030 \001(\tH\027R\021lastNameAttribu"
-    "te\210\001\001\022,\n\017email_attribute\030\031 \001(\tH\030R\016emailA"
-    "ttribute\210\001\001\0222\n\022username_attribute\030\032 \001(\tH"
-    "\031R\021usernameAttribute\210\001\001\0222\n\022nickname_attr"
-    "ibute\030\033 \001(\tH\032R\021nicknameAttribute\210\001\001\022.\n\020l"
-    "ocale_attribute\030\034 \001(\tH\033R\017localeAttribute"
-    "\210\001\001\0222\n\022position_attribute\030\035 \001(\tH\034R\021posit"
-    "ionAttribute\210\001\001\022/\n\021login_button_text\030\036 \001"
-    "(\tH\035R\017loginButtonText\210\001\001\0221\n\022login_button"
-    "_color\030\037 \001(\tH\036R\020loginButtonColor\210\001\001\022>\n\031l"
-    "ogin_button_border_color\030  \001(\tH\037R\026loginB"
-    "uttonBorderColor\210\001\001\022:\n\027login_button_text"
-    "_color\030! \001(\tH R\024loginButtonTextColor\210\001\001B"
-    "\t\n\007_enableB\030\n\026_enable_sync_with_ldapB%\n#"
-    "_enable_sync_with_ldap_include_authB\032\n\030_"
-    "ignore_guests_ldap_syncB\t\n\007_verifyB\n\n\010_e"
-    "ncryptB\017\n\r_sign_requestB\n\n\010_idp_urlB\025\n\023_"
-    "idp_descriptor_urlB\023\n\021_idp_metadata_urlB"
-    "\036\n\034_service_provider_identifierB!\n\037_asse"
-    "rtion_consumer_service_urlB\026\n\024_signature"
-    "_algorithmB\026\n\024_canonical_algorithmB\032\n\030_s"
-    "coping_idp_provider_idB\023\n\021_scoping_idp_n"
-    "ameB\027\n\025_idp_certificate_fileB\032\n\030_public_"
-    "certificate_fileB\023\n\021_private_key_fileB\017\n"
-    "\r_id_attributeB\031\n\027_enable_admin_attribut"
-    "eB\022\n\020_admin_attributeB\027\n\025_first_name_att"
-    "ributeB\026\n\024_last_name_attributeB\022\n\020_email"
-    "_attributeB\025\n\023_username_attributeB\025\n\023_ni"
-    "ckname_attributeB\023\n\021_locale_attributeB\025\n"
-    "\023_position_attributeB\024\n\022_login_button_te"
-    "xtB\025\n\023_login_button_colorB\034\n\032_login_butt"
-    "on_border_colorB\032\n\030_login_button_text_co"
-    "lor\"\301\005\n\017ConfigNativeApp\0223\n\026app_custom_ur"
-    "l_schemes\030\001 \003(\tR\023appCustomUrlSchemes\022/\n\021"
-    "app_download_link\030\002 \001(\tH\000R\017appDownloadLi"
-    "nk\210\001\001\022>\n\031android_app_download_link\030\003 \001(\t"
-    "H\001R\026androidAppDownloadLink\210\001\001\0226\n\025ios_app"
-    "_download_link\030\004 \001(\tH\002R\022iosAppDownloadLi"
-    "nk\210\001\001\022;\n\027mobile_external_browser\030\005 \001(\010H\003"
-    "R\025mobileExternalBrowser\210\001\001\022=\n\030mobile_ena"
-    "ble_biometrics\030\006 \001(\010H\004R\026mobileEnableBiom"
-    "etrics\210\001\001\022F\n\035mobile_prevent_screen_captu"
-    "re\030\007 \001(\010H\005R\032mobilePreventScreenCapture\210\001"
-    "\001\022C\n\033mobile_jailbreak_protection\030\010 \001(\010H\006"
-    "R\031mobileJailbreakProtection\210\001\001B\024\n\022_app_d"
-    "ownload_linkB\034\n\032_android_app_download_li"
-    "nkB\030\n\026_ios_app_download_linkB\032\n\030_mobile_"
-    "external_browserB\033\n\031_mobile_enable_biome"
-    "tricsB \n\036_mobile_prevent_screen_captureB"
-    "\036\n\034_mobile_jailbreak_protection\"\253\005\n\021Conf"
-    "igMeilisearch\022#\n\nserver_url\030\001 \001(\tH\000R\nser"
-    "ver_url\210\001\001\022\"\n\nmaster_key\030\002 \001(\tH\001R\tmaster"
-    "Key\210\001\001\022,\n\017enable_indexing\030\003 \001(\010H\002R\016enabl"
-    "eIndexing\210\001\001\022.\n\020enable_searching\030\004 \001(\010H\003"
-    "R\017enableSearching\210\001\001\0224\n\023enable_autocompl"
-    "ete\030\005 \001(\010H\004R\022enableAutocomplete\210\001\001\022\"\n\nba"
-    "tch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001\022;\n\027reques"
-    "t_timeout_seconds\030\007 \001(\005H\006R\025requestTimeou"
-    "tSeconds\210\001\001\022&\n\014index_prefix\030\010 \001(\tH\007R\013ind"
-    "exPrefix\210\001\001\022-\n\020search_cutoff_ms\030\t \001(\005H\010R"
-    "\016searchCutoffMs\210\001\001\0227\n\025enable_typo_tolera"
-    "nce\030\n \001(\010H\tR\023enableTypoTolerance\210\001\001B\r\n\013_"
-    "server_urlB\r\n\013_master_keyB\022\n\020_enable_ind"
-    "exingB\023\n\021_enable_searchingB\026\n\024_enable_au"
-    "tocompleteB\r\n\013_batch_sizeB\032\n\030_request_ti"
-    "meout_secondsB\017\n\r_index_prefixB\023\n\021_searc"
-    "h_cutoff_msB\030\n\026_enable_typo_tolerance\"\272\003"
-    "\n\013ConfigBleve\022 \n\tindex_dir\030\001 \001(\tH\000R\010inde"
-    "xDir\210\001\001\022,\n\017enable_indexing\030\002 \001(\010H\001R\016enab"
-    "leIndexing\210\001\001\022.\n\020enable_searching\030\003 \001(\010H"
-    "\002R\017enableSearching\210\001\001\0224\n\023enable_autocomp"
-    "lete\030\004 \001(\010H\003R\022enableAutocomplete\210\001\001\022M\n!b"
-    "ulk_indexing_time_window_seconds\030\005 \001(\005H\004"
-    "R\035bulkIndexingTimeWindowSeconds\210\001\001\022\"\n\nba"
-    "tch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001B\014\n\n_index"
-    "_dirB\022\n\020_enable_indexingB\023\n\021_enable_sear"
-    "chingB\026\n\024_enable_autocompleteB$\n\"_bulk_i"
-    "ndexing_time_window_secondsB\r\n\013_batch_si"
-    "ze\"\354\006\n\023ConfigDataRetention\022;\n\027enable_mes"
-    "sage_deletion\030\001 \001(\010H\000R\025enableMessageDele"
-    "tion\210\001\001\0225\n\024enable_file_deletion\030\002 \001(\010H\001R"
-    "\022enableFileDeletion\210\001\001\0229\n\026enable_boards_"
-    "deletion\030\003 \001(\010H\002R\024enableBoardsDeletion\210\001"
-    "\001\022;\n\027message_retention_hours\030\004 \001(\005H\003R\025me"
-    "ssageRetentionHours\210\001\001\0225\n\024file_retention"
-    "_hours\030\005 \001(\005H\004R\022fileRetentionHours\210\001\001\0227\n"
-    "\025boards_retention_days\030\006 \001(\005H\005R\023boardsRe"
-    "tentionDays\210\001\001\022:\n\027deletion_job_start_tim"
-    "e\030\007 \001(\tH\006R\024deletionJobStartTime\210\001\001\022\"\n\nba"
-    "tch_size\030\010 \001(\005H\007R\tbatchSize\210\001\001\022N\n!time_b"
-    "etween_batches_milliseconds\030\t \001(\005H\010R\036tim"
-    "eBetweenBatchesMilliseconds\210\001\001\022<\n\030retent"
-    "ion_ids_batch_size\030\n \001(\005H\tR\025retentionIds"
-    "BatchSize\210\001\001B\032\n\030_enable_message_deletion"
-    "B\027\n\025_enable_file_deletionB\031\n\027_enable_boa"
-    "rds_deletionB\032\n\030_message_retention_hours"
-    "B\027\n\025_file_retention_hoursB\030\n\026_boards_ret"
-    "ention_daysB\032\n\030_deletion_job_start_timeB"
-    "\r\n\013_batch_sizeB$\n\"_time_between_batches_"
-    "millisecondsB\033\n\031_retention_ids_batch_siz"
-    "e\"\264\002\n\020ConfigImageProxy\022\033\n\006enable\030\001 \001(\010H\000"
-    "R\006enable\210\001\001\022-\n\020image_proxy_type\030\002 \001(\tH\001R"
-    "\016imageProxyType\210\001\001\0228\n\026remote_image_proxy"
-    "_url\030\003 \001(\tH\002R\023remoteImageProxyUrl\210\001\001\022@\n\032"
-    "remote_image_proxy_options\030\004 \001(\tH\003R\027remo"
-    "teImageProxyOptions\210\001\001B\t\n\007_enableB\023\n\021_im"
-    "age_proxy_typeB\031\n\027_remote_image_proxy_ur"
-    "lB\035\n\033_remote_image_proxy_options\"\315\010\n\006Con"
-    "fig\022)\n\004main\030\001 \001(\0132\025.common.v1.ConfigMain"
-    "R\004main\0225\n\010services\030\002 \001(\0132\031.common.v1.Con"
-    "figServicesR\010services\0225\n\010security\030\003 \001(\0132"
-    "\031.common.v1.ConfigSecurityR\010security\022,\n\005"
-    "cache\030\004 \001(\0132\026.common.v1.CacheConfigR\005cac"
-    "he\0222\n\007metrics\030\005 \001(\0132\030.common.v1.ConfigMe"
-    "tricsR\007metrics\022&\n\003sso\030\006 \001(\0132\024.common.v1."
-    "ConfigSSOR\003sso\022&\n\003sql\030\007 \001(\0132\024.common.v1."
-    "ConfigSqlR\003sql\0225\n\010password\030\010 \001(\0132\031.commo"
-    "n.v1.ConfigPasswordR\010password\022)\n\004file\030\t "
-    "\001(\0132\025.common.v1.ConfigFileR\004file\022,\n\005emai"
-    "l\030\n \001(\0132\026.common.v1.ConfigEmailR\005email\0229"
-    "\n\nrate_limit\030\013 \001(\0132\032.common.v1.ConfigRat"
-    "eLimitR\trateLimit\0222\n\007privacy\030\014 \001(\0132\030.com"
-    "mon.v1.ConfigPrivacyR\007privacy\0222\n\007support"
-    "\030\r \001(\0132\030.common.v1.ConfigSupportR\007suppor"
-    "t\022A\n\014localization\030\016 \001(\0132\035.common.v1.Conf"
-    "igLocalizationR\014localization\022)\n\004ldap\030\017 \001"
-    "(\0132\025.common.v1.ConfigLdapR\004ldap\022)\n\004saml\030"
-    "\020 \001(\0132\025.common.v1.ConfigSamlR\004saml\0229\n\nna"
-    "tive_app\030\021 \001(\0132\032.common.v1.ConfigNativeA"
-    "ppR\tnativeApp\022>\n\013meilisearch\030\022 \001(\0132\034.com"
-    "mon.v1.ConfigMeilisearchR\013meilisearch\022,\n"
-    "\005bleve\030\023 \001(\0132\026.common.v1.ConfigBleveR\005bl"
-    "eve\022E\n\016data_retention\030\024 \001(\0132\036.common.v1."
-    "ConfigDataRetentionR\rdataRetention\022<\n\013im"
-    "age_proxy\030\025 \001(\0132\033.common.v1.ConfigImageP"
-    "roxyR\nimageProxy\"\022\n\020ConfigGetRequest\"u\n\021"
-    "ConfigGetResponse\022\'\n\004data\030\001 \001(\0132\021.common"
-    ".v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shar"
-    "ed.v1.AppErrorH\000R\005errorB\n\n\010response\"@\n\023C"
-    "onfigUpdateRequest\022)\n\006config\030\001 \001(\0132\021.com"
-    "mon.v1.ConfigR\006config\"x\n\024ConfigUpdateRes"
-    "ponse\022\'\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000"
-    "R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErr"
-    "orH\000R\005errorB\n\n\010response\"z\n\026ConfigListene"
-    "rResponse\022\'\n\004data\030\001 \001(\0132\021.common.v1.Conf"
-    "igH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.Ap"
-    "pErrorH\000R\005errorB\n\n\010response\"4\n\025ConfigLis"
-    "tenerRequest\022\033\n\tclient_id\030\001 \001(\tR\010clientI"
-    "dBq\n\032org.megacommerce.common.v1B\013ConfigP"
-    "rotoZCgithub.com/ahmad-khatib0-org/megac"
-    "ommerce-proto/gen/go/common/v1;v1\370\001\001b\006pr"
-    "oto3"
+    "rder_colorB\032\n\030_login_button_text_color\"\255"
+    "\023\n\nConfigSaml\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210"
+    "\001\001\0226\n\025enable_sync_with_ldap\030\002 \001(\010H\001R\022ena"
+    "bleSyncWithLdap\210\001\001\022N\n\"enable_sync_with_l"
+    "dap_include_auth\030\003 \001(\010H\002R\035enableSyncWith"
+    "LdapIncludeAuth\210\001\001\022:\n\027ignore_guests_ldap"
+    "_sync\030\004 \001(\010H\003R\024ignoreGuestsLdapSync\210\001\001\022\033"
+    "\n\006verify\030\005 \001(\010H\004R\006verify\210\001\001\022\035\n\007encrypt\030\006"
+    " \001(\010H\005R\007encrypt\210\001\001\022&\n\014sign_request\030\007 \001(\010"
+    "H\006R\013signRequest\210\001\001\022\034\n\007idp_url\030\010 \001(\tH\007R\006i"
+    "dpUrl\210\001\001\0221\n\022idp_descriptor_url\030\t \001(\tH\010R\020"
+    "idpDescriptorUrl\210\001\001\022-\n\020idp_metadata_url\030"
+    "\n \001(\tH\tR\016idpMetadataUrl\210\001\001\022C\n\033service_pr"
+    "ovider_identifier\030\013 \001(\tH\nR\031serviceProvid"
+    "erIdentifier\210\001\001\022H\n\036assertion_consumer_se"
+    "rvice_url\030\014 \001(\tH\013R\033assertionConsumerServ"
+    "iceUrl\210\001\001\0224\n\023signature_algorithm\030\r \001(\tH\014"
+    "R\022signatureAlgorithm\210\001\001\0224\n\023canonical_alg"
+    "orithm\030\016 \001(\tH\rR\022canonicalAlgorithm\210\001\001\022:\n"
+    "\027scoping_idp_provider_id\030\017 \001(\tH\016R\024scopin"
+    "gIdpProviderId\210\001\001\022-\n\020scoping_idp_name\030\020 "
+    "\001(\tH\017R\016scopingIdpName\210\001\001\0225\n\024idp_certific"
+    "ate_file\030\021 \001(\tH\020R\022idpCertificateFile\210\001\001\022"
+    ";\n\027public_certificate_file\030\022 \001(\tH\021R\025publ"
+    "icCertificateFile\210\001\001\022-\n\020private_key_file"
+    "\030\023 \001(\tH\022R\016privateKeyFile\210\001\001\022&\n\014id_attrib"
+    "ute\030\024 \001(\tH\023R\013idAttribute\210\001\001\0229\n\026enable_ad"
+    "min_attribute\030\025 \001(\010H\024R\024enableAdminAttrib"
+    "ute\210\001\001\022,\n\017admin_attribute\030\026 \001(\tH\025R\016admin"
+    "Attribute\210\001\001\0225\n\024first_name_attribute\030\027 \001"
+    "(\tH\026R\022firstNameAttribute\210\001\001\0223\n\023last_name"
+    "_attribute\030\030 \001(\tH\027R\021lastNameAttribute\210\001\001"
+    "\022,\n\017email_attribute\030\031 \001(\tH\030R\016emailAttrib"
+    "ute\210\001\001\0222\n\022username_attribute\030\032 \001(\tH\031R\021us"
+    "ernameAttribute\210\001\001\0222\n\022nickname_attribute"
+    "\030\033 \001(\tH\032R\021nicknameAttribute\210\001\001\022.\n\020locale"
+    "_attribute\030\034 \001(\tH\033R\017localeAttribute\210\001\001\0222"
+    "\n\022position_attribute\030\035 \001(\tH\034R\021positionAt"
+    "tribute\210\001\001\022/\n\021login_button_text\030\036 \001(\tH\035R"
+    "\017loginButtonText\210\001\001\0221\n\022login_button_colo"
+    "r\030\037 \001(\tH\036R\020loginButtonColor\210\001\001\022>\n\031login_"
+    "button_border_color\030  \001(\tH\037R\026loginButton"
+    "BorderColor\210\001\001\022:\n\027login_button_text_colo"
+    "r\030! \001(\tH R\024loginButtonTextColor\210\001\001B\t\n\007_e"
+    "nableB\030\n\026_enable_sync_with_ldapB%\n#_enab"
+    "le_sync_with_ldap_include_authB\032\n\030_ignor"
+    "e_guests_ldap_syncB\t\n\007_verifyB\n\n\010_encryp"
+    "tB\017\n\r_sign_requestB\n\n\010_idp_urlB\025\n\023_idp_d"
+    "escriptor_urlB\023\n\021_idp_metadata_urlB\036\n\034_s"
+    "ervice_provider_identifierB!\n\037_assertion"
+    "_consumer_service_urlB\026\n\024_signature_algo"
+    "rithmB\026\n\024_canonical_algorithmB\032\n\030_scopin"
+    "g_idp_provider_idB\023\n\021_scoping_idp_nameB\027"
+    "\n\025_idp_certificate_fileB\032\n\030_public_certi"
+    "ficate_fileB\023\n\021_private_key_fileB\017\n\r_id_"
+    "attributeB\031\n\027_enable_admin_attributeB\022\n\020"
+    "_admin_attributeB\027\n\025_first_name_attribut"
+    "eB\026\n\024_last_name_attributeB\022\n\020_email_attr"
+    "ibuteB\025\n\023_username_attributeB\025\n\023_nicknam"
+    "e_attributeB\023\n\021_locale_attributeB\025\n\023_pos"
+    "ition_attributeB\024\n\022_login_button_textB\025\n"
+    "\023_login_button_colorB\034\n\032_login_button_bo"
+    "rder_colorB\032\n\030_login_button_text_color\"\301"
+    "\005\n\017ConfigNativeApp\0223\n\026app_custom_url_sch"
+    "emes\030\001 \003(\tR\023appCustomUrlSchemes\022/\n\021app_d"
+    "ownload_link\030\002 \001(\tH\000R\017appDownloadLink\210\001\001"
+    "\022>\n\031android_app_download_link\030\003 \001(\tH\001R\026a"
+    "ndroidAppDownloadLink\210\001\001\0226\n\025ios_app_down"
+    "load_link\030\004 \001(\tH\002R\022iosAppDownloadLink\210\001\001"
+    "\022;\n\027mobile_external_browser\030\005 \001(\010H\003R\025mob"
+    "ileExternalBrowser\210\001\001\022=\n\030mobile_enable_b"
+    "iometrics\030\006 \001(\010H\004R\026mobileEnableBiometric"
+    "s\210\001\001\022F\n\035mobile_prevent_screen_capture\030\007 "
+    "\001(\010H\005R\032mobilePreventScreenCapture\210\001\001\022C\n\033"
+    "mobile_jailbreak_protection\030\010 \001(\010H\006R\031mob"
+    "ileJailbreakProtection\210\001\001B\024\n\022_app_downlo"
+    "ad_linkB\034\n\032_android_app_download_linkB\030\n"
+    "\026_ios_app_download_linkB\032\n\030_mobile_exter"
+    "nal_browserB\033\n\031_mobile_enable_biometrics"
+    "B \n\036_mobile_prevent_screen_captureB\036\n\034_m"
+    "obile_jailbreak_protection\"\253\005\n\021ConfigMei"
+    "lisearch\022#\n\nserver_url\030\001 \001(\tH\000R\nserver_u"
+    "rl\210\001\001\022\"\n\nmaster_key\030\002 \001(\tH\001R\tmasterKey\210\001"
+    "\001\022,\n\017enable_indexing\030\003 \001(\010H\002R\016enableInde"
+    "xing\210\001\001\022.\n\020enable_searching\030\004 \001(\010H\003R\017ena"
+    "bleSearching\210\001\001\0224\n\023enable_autocomplete\030\005"
+    " \001(\010H\004R\022enableAutocomplete\210\001\001\022\"\n\nbatch_s"
+    "ize\030\006 \001(\005H\005R\tbatchSize\210\001\001\022;\n\027request_tim"
+    "eout_seconds\030\007 \001(\005H\006R\025requestTimeoutSeco"
+    "nds\210\001\001\022&\n\014index_prefix\030\010 \001(\tH\007R\013indexPre"
+    "fix\210\001\001\022-\n\020search_cutoff_ms\030\t \001(\005H\010R\016sear"
+    "chCutoffMs\210\001\001\0227\n\025enable_typo_tolerance\030\n"
+    " \001(\010H\tR\023enableTypoTolerance\210\001\001B\r\n\013_serve"
+    "r_urlB\r\n\013_master_keyB\022\n\020_enable_indexing"
+    "B\023\n\021_enable_searchingB\026\n\024_enable_autocom"
+    "pleteB\r\n\013_batch_sizeB\032\n\030_request_timeout"
+    "_secondsB\017\n\r_index_prefixB\023\n\021_search_cut"
+    "off_msB\030\n\026_enable_typo_tolerance\"\272\003\n\013Con"
+    "figBleve\022 \n\tindex_dir\030\001 \001(\tH\000R\010indexDir\210"
+    "\001\001\022,\n\017enable_indexing\030\002 \001(\010H\001R\016enableInd"
+    "exing\210\001\001\022.\n\020enable_searching\030\003 \001(\010H\002R\017en"
+    "ableSearching\210\001\001\0224\n\023enable_autocomplete\030"
+    "\004 \001(\010H\003R\022enableAutocomplete\210\001\001\022M\n!bulk_i"
+    "ndexing_time_window_seconds\030\005 \001(\005H\004R\035bul"
+    "kIndexingTimeWindowSeconds\210\001\001\022\"\n\nbatch_s"
+    "ize\030\006 \001(\005H\005R\tbatchSize\210\001\001B\014\n\n_index_dirB"
+    "\022\n\020_enable_indexingB\023\n\021_enable_searching"
+    "B\026\n\024_enable_autocompleteB$\n\"_bulk_indexi"
+    "ng_time_window_secondsB\r\n\013_batch_size\"\354\006"
+    "\n\023ConfigDataRetention\022;\n\027enable_message_"
+    "deletion\030\001 \001(\010H\000R\025enableMessageDeletion\210"
+    "\001\001\0225\n\024enable_file_deletion\030\002 \001(\010H\001R\022enab"
+    "leFileDeletion\210\001\001\0229\n\026enable_boards_delet"
+    "ion\030\003 \001(\010H\002R\024enableBoardsDeletion\210\001\001\022;\n\027"
+    "message_retention_hours\030\004 \001(\005H\003R\025message"
+    "RetentionHours\210\001\001\0225\n\024file_retention_hour"
+    "s\030\005 \001(\005H\004R\022fileRetentionHours\210\001\001\0227\n\025boar"
+    "ds_retention_days\030\006 \001(\005H\005R\023boardsRetenti"
+    "onDays\210\001\001\022:\n\027deletion_job_start_time\030\007 \001"
+    "(\tH\006R\024deletionJobStartTime\210\001\001\022\"\n\nbatch_s"
+    "ize\030\010 \001(\005H\007R\tbatchSize\210\001\001\022N\n!time_betwee"
+    "n_batches_milliseconds\030\t \001(\005H\010R\036timeBetw"
+    "eenBatchesMilliseconds\210\001\001\022<\n\030retention_i"
+    "ds_batch_size\030\n \001(\005H\tR\025retentionIdsBatch"
+    "Size\210\001\001B\032\n\030_enable_message_deletionB\027\n\025_"
+    "enable_file_deletionB\031\n\027_enable_boards_d"
+    "eletionB\032\n\030_message_retention_hoursB\027\n\025_"
+    "file_retention_hoursB\030\n\026_boards_retentio"
+    "n_daysB\032\n\030_deletion_job_start_timeB\r\n\013_b"
+    "atch_sizeB$\n\"_time_between_batches_milli"
+    "secondsB\033\n\031_retention_ids_batch_size\"\264\002\n"
+    "\020ConfigImageProxy\022\033\n\006enable\030\001 \001(\010H\000R\006ena"
+    "ble\210\001\001\022-\n\020image_proxy_type\030\002 \001(\tH\001R\016imag"
+    "eProxyType\210\001\001\0228\n\026remote_image_proxy_url\030"
+    "\003 \001(\tH\002R\023remoteImageProxyUrl\210\001\001\022@\n\032remot"
+    "e_image_proxy_options\030\004 \001(\tH\003R\027remoteIma"
+    "geProxyOptions\210\001\001B\t\n\007_enableB\023\n\021_image_p"
+    "roxy_typeB\031\n\027_remote_image_proxy_urlB\035\n\033"
+    "_remote_image_proxy_options\"\315\010\n\006Config\022)"
+    "\n\004main\030\001 \001(\0132\025.common.v1.ConfigMainR\004mai"
+    "n\0225\n\010services\030\002 \001(\0132\031.common.v1.ConfigSe"
+    "rvicesR\010services\0225\n\010security\030\003 \001(\0132\031.com"
+    "mon.v1.ConfigSecurityR\010security\022,\n\005cache"
+    "\030\004 \001(\0132\026.common.v1.CacheConfigR\005cache\0222\n"
+    "\007metrics\030\005 \001(\0132\030.common.v1.ConfigMetrics"
+    "R\007metrics\022&\n\003sso\030\006 \001(\0132\024.common.v1.Confi"
+    "gSSOR\003sso\022&\n\003sql\030\007 \001(\0132\024.common.v1.Confi"
+    "gSqlR\003sql\0225\n\010password\030\010 \001(\0132\031.common.v1."
+    "ConfigPasswordR\010password\022)\n\004file\030\t \001(\0132\025"
+    ".common.v1.ConfigFileR\004file\022,\n\005email\030\n \001"
+    "(\0132\026.common.v1.ConfigEmailR\005email\0229\n\nrat"
+    "e_limit\030\013 \001(\0132\032.common.v1.ConfigRateLimi"
+    "tR\trateLimit\0222\n\007privacy\030\014 \001(\0132\030.common.v"
+    "1.ConfigPrivacyR\007privacy\0222\n\007support\030\r \001("
+    "\0132\030.common.v1.ConfigSupportR\007support\022A\n\014"
+    "localization\030\016 \001(\0132\035.common.v1.ConfigLoc"
+    "alizationR\014localization\022)\n\004ldap\030\017 \001(\0132\025."
+    "common.v1.ConfigLdapR\004ldap\022)\n\004saml\030\020 \001(\013"
+    "2\025.common.v1.ConfigSamlR\004saml\0229\n\nnative_"
+    "app\030\021 \001(\0132\032.common.v1.ConfigNativeAppR\tn"
+    "ativeApp\022>\n\013meilisearch\030\022 \001(\0132\034.common.v"
+    "1.ConfigMeilisearchR\013meilisearch\022,\n\005blev"
+    "e\030\023 \001(\0132\026.common.v1.ConfigBleveR\005bleve\022E"
+    "\n\016data_retention\030\024 \001(\0132\036.common.v1.Confi"
+    "gDataRetentionR\rdataRetention\022<\n\013image_p"
+    "roxy\030\025 \001(\0132\033.common.v1.ConfigImageProxyR"
+    "\nimageProxy\"\022\n\020ConfigGetRequest\"u\n\021Confi"
+    "gGetResponse\022\'\n\004data\030\001 \001(\0132\021.common.v1.C"
+    "onfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1"
+    ".AppErrorH\000R\005errorB\n\n\010response\"@\n\023Config"
+    "UpdateRequest\022)\n\006config\030\001 \001(\0132\021.common.v"
+    "1.ConfigR\006config\"x\n\024ConfigUpdateResponse"
+    "\022\'\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R\004dat"
+    "a\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R"
+    "\005errorB\n\n\010response\"z\n\026ConfigListenerResp"
+    "onse\022\'\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R"
+    "\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErro"
+    "rH\000R\005errorB\n\n\010response\"4\n\025ConfigListener"
+    "Request\022\033\n\tclient_id\030\001 \001(\tR\010clientIdBq\n\032"
+    "org.megacommerce.common.v1B\013ConfigProtoZ"
+    "Cgithub.com/ahmad-khatib0-org/megacommer"
+    "ce-proto/gen/go/common/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_common_2fv1_2fconfig_2eproto_deps[1] = {
@@ -2551,7 +2512,7 @@ static ::absl::once_flag descriptor_table_common_2fv1_2fconfig_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_common_2fv1_2fconfig_2eproto = {
     false,
     false,
-    22124,
+    21679,
     descriptor_table_protodef_common_2fv1_2fconfig_2eproto,
     "common/v1/config.proto",
     &descriptor_table_common_2fv1_2fconfig_2eproto_once,
@@ -6751,9 +6712,6 @@ PROTOBUF_NDEBUG_INLINE ConfigFile::Impl_::Impl_(
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
         driver_name_(arena, from.driver_name_),
-        directory_(arena, from.directory_),
-        public_link_salt_(arena, from.public_link_salt_),
-        initial_font_(arena, from.initial_font_),
         amazon_s3_access_key_id_(arena, from.amazon_s3_access_key_id_),
         amazon_s3_secret_access_key_(arena, from.amazon_s3_secret_access_key_),
         amazon_s3_bucket_(arena, from.amazon_s3_bucket_),
@@ -6776,12 +6734,12 @@ ConfigFile::ConfigFile(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
   ::memcpy(reinterpret_cast<char *>(&_impl_) +
-               offsetof(Impl_, max_file_size_),
+               offsetof(Impl_, max_image_resolution_),
            reinterpret_cast<const char *>(&from._impl_) +
-               offsetof(Impl_, max_file_size_),
-           offsetof(Impl_, amazon_s3_trace_) -
-               offsetof(Impl_, max_file_size_) +
-               sizeof(Impl_::amazon_s3_trace_));
+               offsetof(Impl_, max_image_resolution_),
+           offsetof(Impl_, amazon_s3_upload_part_size_bytes_) -
+               offsetof(Impl_, max_image_resolution_) +
+               sizeof(Impl_::amazon_s3_upload_part_size_bytes_));
 
   // @@protoc_insertion_point(copy_constructor:common.v1.ConfigFile)
 }
@@ -6790,9 +6748,6 @@ PROTOBUF_NDEBUG_INLINE ConfigFile::Impl_::Impl_(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
         driver_name_(arena),
-        directory_(arena),
-        public_link_salt_(arena),
-        initial_font_(arena),
         amazon_s3_access_key_id_(arena),
         amazon_s3_secret_access_key_(arena),
         amazon_s3_bucket_(arena),
@@ -6804,11 +6759,11 @@ PROTOBUF_NDEBUG_INLINE ConfigFile::Impl_::Impl_(
 inline void ConfigFile::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
   ::memset(reinterpret_cast<char *>(&_impl_) +
-               offsetof(Impl_, max_file_size_),
+               offsetof(Impl_, max_image_resolution_),
            0,
-           offsetof(Impl_, amazon_s3_trace_) -
-               offsetof(Impl_, max_file_size_) +
-               sizeof(Impl_::amazon_s3_trace_));
+           offsetof(Impl_, amazon_s3_upload_part_size_bytes_) -
+               offsetof(Impl_, max_image_resolution_) +
+               sizeof(Impl_::amazon_s3_upload_part_size_bytes_));
 }
 ConfigFile::~ConfigFile() {
   // @@protoc_insertion_point(destructor:common.v1.ConfigFile)
@@ -6819,9 +6774,6 @@ inline void ConfigFile::SharedDtor(MessageLite& self) {
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.driver_name_.Destroy();
-  this_._impl_.directory_.Destroy();
-  this_._impl_.public_link_salt_.Destroy();
-  this_._impl_.initial_font_.Destroy();
   this_._impl_.amazon_s3_access_key_id_.Destroy();
   this_._impl_.amazon_s3_secret_access_key_.Destroy();
   this_._impl_.amazon_s3_bucket_.Destroy();
@@ -6875,16 +6827,16 @@ ConfigFile::GetClassData() const {
   return ConfigFile_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<5, 26, 0, 245, 2>
+const ::_pbi::TcParseTable<5, 19, 0, 200, 2>
 ConfigFile::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_._has_bits_),
     0, // no _extensions_
-    26, 248,  // max_field_number, fast_idx_mask
+    19, 248,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4227858432,  // skipmap
+    4294443008,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    26,  // num_field_entries
+    19,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     ConfigFile_class_data_.base(),
@@ -6896,83 +6848,69 @@ ConfigFile::_table_ = {
   }, {{
     {::_pbi::TcParser::MiniParse, {}},
     // optional bool enable_file_attachments = 1 [json_name = "enableFileAttachments"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ConfigFile, _impl_.enable_file_attachments_), 14>(),
-     {8, 14, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.enable_file_attachments_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ConfigFile, _impl_.enable_file_attachments_), 10>(),
+     {8, 10, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.enable_file_attachments_)}},
     // optional bool enable_mobile_upload = 2 [json_name = "enableMobileUpload"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ConfigFile, _impl_.enable_mobile_upload_), 15>(),
-     {16, 15, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.enable_mobile_upload_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ConfigFile, _impl_.enable_mobile_upload_), 11>(),
+     {16, 11, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.enable_mobile_upload_)}},
     // optional bool enable_mobile_download = 3 [json_name = "enableMobileDownload"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ConfigFile, _impl_.enable_mobile_download_), 16>(),
-     {24, 16, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.enable_mobile_download_)}},
-    // optional int64 max_file_size = 4 [json_name = "maxFileSize"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ConfigFile, _impl_.max_file_size_), 11>(),
-     {32, 11, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.max_file_size_)}},
-    // optional int64 max_image_resolution = 5 [json_name = "maxImageResolution"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ConfigFile, _impl_.max_image_resolution_), 12>(),
-     {40, 12, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.max_image_resolution_)}},
-    // optional int64 max_image_decoder_concurrency = 6 [json_name = "maxImageDecoderConcurrency"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ConfigFile, _impl_.max_image_decoder_concurrency_), 13>(),
-     {48, 13, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.max_image_decoder_concurrency_)}},
-    // optional string driver_name = 7 [json_name = "driverName"];
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ConfigFile, _impl_.enable_mobile_download_), 12>(),
+     {24, 12, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.enable_mobile_download_)}},
+    // optional int64 max_image_resolution = 4 [json_name = "maxImageResolution"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ConfigFile, _impl_.max_image_resolution_), 8>(),
+     {32, 8, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.max_image_resolution_)}},
+    // optional int64 max_image_decoder_concurrency = 5 [json_name = "maxImageDecoderConcurrency"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ConfigFile, _impl_.max_image_decoder_concurrency_), 9>(),
+     {40, 9, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.max_image_decoder_concurrency_)}},
+    // optional string driver_name = 6 [json_name = "driverName"];
     {::_pbi::TcParser::FastUS1,
-     {58, 0, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.driver_name_)}},
-    // optional string directory = 8 [json_name = "directory"];
+     {50, 0, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.driver_name_)}},
+    // optional string amazon_s3_access_key_id = 7 [json_name = "amazonS3AccessKeyId"];
     {::_pbi::TcParser::FastUS1,
-     {66, 1, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.directory_)}},
-    // optional bool enable_public_link = 9 [json_name = "enablePublicLink"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ConfigFile, _impl_.enable_public_link_), 17>(),
-     {72, 17, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.enable_public_link_)}},
-    // optional bool extract_content = 10 [json_name = "extractContent"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ConfigFile, _impl_.extract_content_), 18>(),
-     {80, 18, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.extract_content_)}},
-    // optional bool archive_recursion = 11 [json_name = "archiveRecursion"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ConfigFile, _impl_.archive_recursion_), 19>(),
-     {88, 19, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.archive_recursion_)}},
-    // optional string public_link_salt = 12 [json_name = "publicLinkSalt"];
+     {58, 1, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_access_key_id_)}},
+    // optional string amazon_s3_secret_access_key = 8 [json_name = "amazonS3SecretAccessKey"];
     {::_pbi::TcParser::FastUS1,
-     {98, 2, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.public_link_salt_)}},
-    // optional string initial_font = 13 [json_name = "initialFont"];
+     {66, 2, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_secret_access_key_)}},
+    // optional string amazon_s3_bucket = 9 [json_name = "amazonS3Bucket"];
     {::_pbi::TcParser::FastUS1,
-     {106, 3, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.initial_font_)}},
-    // optional string amazon_s3_access_key_id = 14 [json_name = "amazonS3AccessKeyId"];
+     {74, 3, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_bucket_)}},
+    // optional string amazon_s3_path_prefix = 10 [json_name = "amazonS3PathPrefix"];
     {::_pbi::TcParser::FastUS1,
-     {114, 4, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_access_key_id_)}},
-    // optional string amazon_s3_secret_access_key = 15 [json_name = "amazonS3SecretAccessKey"];
+     {82, 4, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_path_prefix_)}},
+    // optional string amazon_s3_region = 11 [json_name = "amazonS3Region"];
     {::_pbi::TcParser::FastUS1,
-     {122, 5, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_secret_access_key_)}},
-    // optional string amazon_s3_bucket = 16 [json_name = "amazonS3Bucket"];
-    {::_pbi::TcParser::FastUS2,
-     {386, 6, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_bucket_)}},
-    // optional string amazon_s3_path_prefix = 17 [json_name = "amazonS3PathPrefix"];
-    {::_pbi::TcParser::FastUS2,
-     {394, 7, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_path_prefix_)}},
-    // optional string amazon_s3_region = 18 [json_name = "amazonS3Region"];
-    {::_pbi::TcParser::FastUS2,
-     {402, 8, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_region_)}},
-    // optional string amazon_s3_endpoint = 19 [json_name = "amazonS3Endpoint"];
-    {::_pbi::TcParser::FastUS2,
-     {410, 9, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_endpoint_)}},
-    // optional bool amazon_s3_ssl = 20 [json_name = "amazonS3Ssl"];
+     {90, 5, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_region_)}},
+    // optional string amazon_s3_endpoint = 12 [json_name = "amazonS3Endpoint"];
+    {::_pbi::TcParser::FastUS1,
+     {98, 6, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_endpoint_)}},
+    // optional bool amazon_s3_ssl = 13 [json_name = "amazonS3Ssl"];
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ConfigFile, _impl_.amazon_s3_ssl_), 13>(),
+     {104, 13, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_ssl_)}},
+    // optional bool amazon_s3_sign_v2 = 14 [json_name = "amazonS3SignV2"];
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ConfigFile, _impl_.amazon_s3_sign_v2_), 14>(),
+     {112, 14, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_sign_v2_)}},
+    // optional bool amazon_s3_sse = 15 [json_name = "amazonS3Sse"];
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ConfigFile, _impl_.amazon_s3_sse_), 15>(),
+     {120, 15, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_sse_)}},
+    // optional bool amazon_s3_trace = 16 [json_name = "amazonS3Trace"];
     {::_pbi::TcParser::FastV8S2,
-     {416, 20, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_ssl_)}},
-    // optional bool amazon_s3_sign_v2 = 21 [json_name = "amazonS3SignV2"];
-    {::_pbi::TcParser::FastV8S2,
-     {424, 21, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_sign_v2_)}},
-    // optional bool amazon_s3_sse = 22 [json_name = "amazonS3Sse"];
-    {::_pbi::TcParser::FastV8S2,
-     {432, 24, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_sse_)}},
-    // optional bool amazon_s3_trace = 23 [json_name = "amazonS3Trace"];
-    {::_pbi::TcParser::FastV8S2,
-     {440, 25, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_trace_)}},
-    // optional int64 amazon_s3_request_timeout_milliseconds = 24 [json_name = "amazonS3RequestTimeoutMilliseconds"];
+     {384, 16, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_trace_)}},
+    // optional int64 amazon_s3_request_timeout_milliseconds = 17 [json_name = "amazonS3RequestTimeoutMilliseconds"];
     {::_pbi::TcParser::FastV64S2,
-     {448, 22, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_request_timeout_milliseconds_)}},
-    // optional int64 amazon_s3_upload_part_size_bytes = 25 [json_name = "amazonS3UploadPartSizeBytes"];
+     {392, 17, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_request_timeout_milliseconds_)}},
+    // optional int64 amazon_s3_upload_part_size_bytes = 18 [json_name = "amazonS3UploadPartSizeBytes"];
     {::_pbi::TcParser::FastV64S2,
-     {456, 23, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_upload_part_size_bytes_)}},
-    // optional string amazon_s3_storage_class = 26 [json_name = "amazonS3StorageClass"];
+     {400, 18, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_upload_part_size_bytes_)}},
+    // optional string amazon_s3_storage_class = 19 [json_name = "amazonS3StorageClass"];
     {::_pbi::TcParser::FastUS2,
-     {466, 10, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_storage_class_)}},
+     {410, 7, 0, PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_storage_class_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
@@ -6982,92 +6920,68 @@ ConfigFile::_table_ = {
     65535, 65535
   }}, {{
     // optional bool enable_file_attachments = 1 [json_name = "enableFileAttachments"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.enable_file_attachments_), _Internal::kHasBitsOffset + 14, 0,
+    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.enable_file_attachments_), _Internal::kHasBitsOffset + 10, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
     // optional bool enable_mobile_upload = 2 [json_name = "enableMobileUpload"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.enable_mobile_upload_), _Internal::kHasBitsOffset + 15, 0,
+    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.enable_mobile_upload_), _Internal::kHasBitsOffset + 11, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
     // optional bool enable_mobile_download = 3 [json_name = "enableMobileDownload"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.enable_mobile_download_), _Internal::kHasBitsOffset + 16, 0,
+    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.enable_mobile_download_), _Internal::kHasBitsOffset + 12, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
-    // optional int64 max_file_size = 4 [json_name = "maxFileSize"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.max_file_size_), _Internal::kHasBitsOffset + 11, 0,
+    // optional int64 max_image_resolution = 4 [json_name = "maxImageResolution"];
+    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.max_image_resolution_), _Internal::kHasBitsOffset + 8, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
-    // optional int64 max_image_resolution = 5 [json_name = "maxImageResolution"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.max_image_resolution_), _Internal::kHasBitsOffset + 12, 0,
+    // optional int64 max_image_decoder_concurrency = 5 [json_name = "maxImageDecoderConcurrency"];
+    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.max_image_decoder_concurrency_), _Internal::kHasBitsOffset + 9, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
-    // optional int64 max_image_decoder_concurrency = 6 [json_name = "maxImageDecoderConcurrency"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.max_image_decoder_concurrency_), _Internal::kHasBitsOffset + 13, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
-    // optional string driver_name = 7 [json_name = "driverName"];
+    // optional string driver_name = 6 [json_name = "driverName"];
     {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.driver_name_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional string directory = 8 [json_name = "directory"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.directory_), _Internal::kHasBitsOffset + 1, 0,
+    // optional string amazon_s3_access_key_id = 7 [json_name = "amazonS3AccessKeyId"];
+    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_access_key_id_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional bool enable_public_link = 9 [json_name = "enablePublicLink"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.enable_public_link_), _Internal::kHasBitsOffset + 17, 0,
+    // optional string amazon_s3_secret_access_key = 8 [json_name = "amazonS3SecretAccessKey"];
+    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_secret_access_key_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional string amazon_s3_bucket = 9 [json_name = "amazonS3Bucket"];
+    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_bucket_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional string amazon_s3_path_prefix = 10 [json_name = "amazonS3PathPrefix"];
+    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_path_prefix_), _Internal::kHasBitsOffset + 4, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional string amazon_s3_region = 11 [json_name = "amazonS3Region"];
+    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_region_), _Internal::kHasBitsOffset + 5, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional string amazon_s3_endpoint = 12 [json_name = "amazonS3Endpoint"];
+    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_endpoint_), _Internal::kHasBitsOffset + 6, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional bool amazon_s3_ssl = 13 [json_name = "amazonS3Ssl"];
+    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_ssl_), _Internal::kHasBitsOffset + 13, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
-    // optional bool extract_content = 10 [json_name = "extractContent"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.extract_content_), _Internal::kHasBitsOffset + 18, 0,
+    // optional bool amazon_s3_sign_v2 = 14 [json_name = "amazonS3SignV2"];
+    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_sign_v2_), _Internal::kHasBitsOffset + 14, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
-    // optional bool archive_recursion = 11 [json_name = "archiveRecursion"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.archive_recursion_), _Internal::kHasBitsOffset + 19, 0,
+    // optional bool amazon_s3_sse = 15 [json_name = "amazonS3Sse"];
+    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_sse_), _Internal::kHasBitsOffset + 15, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
-    // optional string public_link_salt = 12 [json_name = "publicLinkSalt"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.public_link_salt_), _Internal::kHasBitsOffset + 2, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional string initial_font = 13 [json_name = "initialFont"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.initial_font_), _Internal::kHasBitsOffset + 3, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional string amazon_s3_access_key_id = 14 [json_name = "amazonS3AccessKeyId"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_access_key_id_), _Internal::kHasBitsOffset + 4, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional string amazon_s3_secret_access_key = 15 [json_name = "amazonS3SecretAccessKey"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_secret_access_key_), _Internal::kHasBitsOffset + 5, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional string amazon_s3_bucket = 16 [json_name = "amazonS3Bucket"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_bucket_), _Internal::kHasBitsOffset + 6, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional string amazon_s3_path_prefix = 17 [json_name = "amazonS3PathPrefix"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_path_prefix_), _Internal::kHasBitsOffset + 7, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional string amazon_s3_region = 18 [json_name = "amazonS3Region"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_region_), _Internal::kHasBitsOffset + 8, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional string amazon_s3_endpoint = 19 [json_name = "amazonS3Endpoint"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_endpoint_), _Internal::kHasBitsOffset + 9, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional bool amazon_s3_ssl = 20 [json_name = "amazonS3Ssl"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_ssl_), _Internal::kHasBitsOffset + 20, 0,
+    // optional bool amazon_s3_trace = 16 [json_name = "amazonS3Trace"];
+    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_trace_), _Internal::kHasBitsOffset + 16, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
-    // optional bool amazon_s3_sign_v2 = 21 [json_name = "amazonS3SignV2"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_sign_v2_), _Internal::kHasBitsOffset + 21, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kBool)},
-    // optional bool amazon_s3_sse = 22 [json_name = "amazonS3Sse"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_sse_), _Internal::kHasBitsOffset + 24, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kBool)},
-    // optional bool amazon_s3_trace = 23 [json_name = "amazonS3Trace"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_trace_), _Internal::kHasBitsOffset + 25, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kBool)},
-    // optional int64 amazon_s3_request_timeout_milliseconds = 24 [json_name = "amazonS3RequestTimeoutMilliseconds"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_request_timeout_milliseconds_), _Internal::kHasBitsOffset + 22, 0,
+    // optional int64 amazon_s3_request_timeout_milliseconds = 17 [json_name = "amazonS3RequestTimeoutMilliseconds"];
+    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_request_timeout_milliseconds_), _Internal::kHasBitsOffset + 17, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
-    // optional int64 amazon_s3_upload_part_size_bytes = 25 [json_name = "amazonS3UploadPartSizeBytes"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_upload_part_size_bytes_), _Internal::kHasBitsOffset + 23, 0,
+    // optional int64 amazon_s3_upload_part_size_bytes = 18 [json_name = "amazonS3UploadPartSizeBytes"];
+    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_upload_part_size_bytes_), _Internal::kHasBitsOffset + 18, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
-    // optional string amazon_s3_storage_class = 26 [json_name = "amazonS3StorageClass"];
-    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_storage_class_), _Internal::kHasBitsOffset + 10, 0,
+    // optional string amazon_s3_storage_class = 19 [json_name = "amazonS3StorageClass"];
+    {PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_storage_class_), _Internal::kHasBitsOffset + 7, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
   // no aux_entries
   {{
-    "\24\0\0\0\0\0\0\13\11\0\0\0\20\14\27\33\20\25\20\22\0\0\0\0\0\0\27\0\0\0\0\0"
+    "\24\0\0\0\0\0\13\27\33\20\25\20\22\0\0\0\0\0\0\27\0\0\0\0"
     "common.v1.ConfigFile"
     "driver_name"
-    "directory"
-    "public_link_salt"
-    "initial_font"
     "amazon_s3_access_key_id"
     "amazon_s3_secret_access_key"
     "amazon_s3_bucket"
@@ -7090,52 +7004,36 @@ PROTOBUF_NOINLINE void ConfigFile::Clear() {
       _impl_.driver_name_.ClearNonDefaultToEmpty();
     }
     if ((cached_has_bits & 0x00000002u) != 0) {
-      _impl_.directory_.ClearNonDefaultToEmpty();
-    }
-    if ((cached_has_bits & 0x00000004u) != 0) {
-      _impl_.public_link_salt_.ClearNonDefaultToEmpty();
-    }
-    if ((cached_has_bits & 0x00000008u) != 0) {
-      _impl_.initial_font_.ClearNonDefaultToEmpty();
-    }
-    if ((cached_has_bits & 0x00000010u) != 0) {
       _impl_.amazon_s3_access_key_id_.ClearNonDefaultToEmpty();
     }
-    if ((cached_has_bits & 0x00000020u) != 0) {
+    if ((cached_has_bits & 0x00000004u) != 0) {
       _impl_.amazon_s3_secret_access_key_.ClearNonDefaultToEmpty();
     }
-    if ((cached_has_bits & 0x00000040u) != 0) {
+    if ((cached_has_bits & 0x00000008u) != 0) {
       _impl_.amazon_s3_bucket_.ClearNonDefaultToEmpty();
     }
-    if ((cached_has_bits & 0x00000080u) != 0) {
+    if ((cached_has_bits & 0x00000010u) != 0) {
       _impl_.amazon_s3_path_prefix_.ClearNonDefaultToEmpty();
     }
-  }
-  if ((cached_has_bits & 0x00000700u) != 0) {
-    if ((cached_has_bits & 0x00000100u) != 0) {
+    if ((cached_has_bits & 0x00000020u) != 0) {
       _impl_.amazon_s3_region_.ClearNonDefaultToEmpty();
     }
-    if ((cached_has_bits & 0x00000200u) != 0) {
+    if ((cached_has_bits & 0x00000040u) != 0) {
       _impl_.amazon_s3_endpoint_.ClearNonDefaultToEmpty();
     }
-    if ((cached_has_bits & 0x00000400u) != 0) {
+    if ((cached_has_bits & 0x00000080u) != 0) {
       _impl_.amazon_s3_storage_class_.ClearNonDefaultToEmpty();
     }
   }
-  if ((cached_has_bits & 0x0000f800u) != 0) {
-    ::memset(&_impl_.max_file_size_, 0, static_cast<::size_t>(
-        reinterpret_cast<char*>(&_impl_.enable_mobile_upload_) -
-        reinterpret_cast<char*>(&_impl_.max_file_size_)) + sizeof(_impl_.enable_mobile_upload_));
+  if ((cached_has_bits & 0x0000ff00u) != 0) {
+    ::memset(&_impl_.max_image_resolution_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.amazon_s3_sse_) -
+        reinterpret_cast<char*>(&_impl_.max_image_resolution_)) + sizeof(_impl_.amazon_s3_sse_));
   }
-  if ((cached_has_bits & 0x00ff0000u) != 0) {
-    ::memset(&_impl_.enable_mobile_download_, 0, static_cast<::size_t>(
+  if ((cached_has_bits & 0x00070000u) != 0) {
+    ::memset(&_impl_.amazon_s3_trace_, 0, static_cast<::size_t>(
         reinterpret_cast<char*>(&_impl_.amazon_s3_upload_part_size_bytes_) -
-        reinterpret_cast<char*>(&_impl_.enable_mobile_download_)) + sizeof(_impl_.amazon_s3_upload_part_size_bytes_));
-  }
-  if ((cached_has_bits & 0x03000000u) != 0) {
-    ::memset(&_impl_.amazon_s3_sse_, 0, static_cast<::size_t>(
-        reinterpret_cast<char*>(&_impl_.amazon_s3_trace_) -
-        reinterpret_cast<char*>(&_impl_.amazon_s3_sse_)) + sizeof(_impl_.amazon_s3_trace_));
+        reinterpret_cast<char*>(&_impl_.amazon_s3_trace_)) + sizeof(_impl_.amazon_s3_upload_part_size_bytes_));
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
@@ -7158,196 +7056,144 @@ PROTOBUF_NOINLINE void ConfigFile::Clear() {
 
   cached_has_bits = this_._impl_._has_bits_[0];
   // optional bool enable_file_attachments = 1 [json_name = "enableFileAttachments"];
-  if ((cached_has_bits & 0x00004000u) != 0) {
+  if ((cached_has_bits & 0x00000400u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(
         1, this_._internal_enable_file_attachments(), target);
   }
 
   // optional bool enable_mobile_upload = 2 [json_name = "enableMobileUpload"];
-  if ((cached_has_bits & 0x00008000u) != 0) {
+  if ((cached_has_bits & 0x00000800u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(
         2, this_._internal_enable_mobile_upload(), target);
   }
 
   // optional bool enable_mobile_download = 3 [json_name = "enableMobileDownload"];
-  if ((cached_has_bits & 0x00010000u) != 0) {
+  if ((cached_has_bits & 0x00001000u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(
         3, this_._internal_enable_mobile_download(), target);
   }
 
-  // optional int64 max_file_size = 4 [json_name = "maxFileSize"];
-  if ((cached_has_bits & 0x00000800u) != 0) {
+  // optional int64 max_image_resolution = 4 [json_name = "maxImageResolution"];
+  if ((cached_has_bits & 0x00000100u) != 0) {
     target =
         ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<4>(
-            stream, this_._internal_max_file_size(), target);
-  }
-
-  // optional int64 max_image_resolution = 5 [json_name = "maxImageResolution"];
-  if ((cached_has_bits & 0x00001000u) != 0) {
-    target =
-        ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<5>(
             stream, this_._internal_max_image_resolution(), target);
   }
 
-  // optional int64 max_image_decoder_concurrency = 6 [json_name = "maxImageDecoderConcurrency"];
-  if ((cached_has_bits & 0x00002000u) != 0) {
+  // optional int64 max_image_decoder_concurrency = 5 [json_name = "maxImageDecoderConcurrency"];
+  if ((cached_has_bits & 0x00000200u) != 0) {
     target =
-        ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<6>(
+        ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<5>(
             stream, this_._internal_max_image_decoder_concurrency(), target);
   }
 
-  // optional string driver_name = 7 [json_name = "driverName"];
+  // optional string driver_name = 6 [json_name = "driverName"];
   if ((cached_has_bits & 0x00000001u) != 0) {
     const ::std::string& _s = this_._internal_driver_name();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigFile.driver_name");
-    target = stream->WriteStringMaybeAliased(7, _s, target);
+    target = stream->WriteStringMaybeAliased(6, _s, target);
   }
 
-  // optional string directory = 8 [json_name = "directory"];
+  // optional string amazon_s3_access_key_id = 7 [json_name = "amazonS3AccessKeyId"];
   if ((cached_has_bits & 0x00000002u) != 0) {
-    const ::std::string& _s = this_._internal_directory();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigFile.directory");
-    target = stream->WriteStringMaybeAliased(8, _s, target);
-  }
-
-  // optional bool enable_public_link = 9 [json_name = "enablePublicLink"];
-  if ((cached_has_bits & 0x00020000u) != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        9, this_._internal_enable_public_link(), target);
-  }
-
-  // optional bool extract_content = 10 [json_name = "extractContent"];
-  if ((cached_has_bits & 0x00040000u) != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        10, this_._internal_extract_content(), target);
-  }
-
-  // optional bool archive_recursion = 11 [json_name = "archiveRecursion"];
-  if ((cached_has_bits & 0x00080000u) != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        11, this_._internal_archive_recursion(), target);
-  }
-
-  // optional string public_link_salt = 12 [json_name = "publicLinkSalt"];
-  if ((cached_has_bits & 0x00000004u) != 0) {
-    const ::std::string& _s = this_._internal_public_link_salt();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigFile.public_link_salt");
-    target = stream->WriteStringMaybeAliased(12, _s, target);
-  }
-
-  // optional string initial_font = 13 [json_name = "initialFont"];
-  if ((cached_has_bits & 0x00000008u) != 0) {
-    const ::std::string& _s = this_._internal_initial_font();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigFile.initial_font");
-    target = stream->WriteStringMaybeAliased(13, _s, target);
-  }
-
-  // optional string amazon_s3_access_key_id = 14 [json_name = "amazonS3AccessKeyId"];
-  if ((cached_has_bits & 0x00000010u) != 0) {
     const ::std::string& _s = this_._internal_amazon_s3_access_key_id();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigFile.amazon_s3_access_key_id");
-    target = stream->WriteStringMaybeAliased(14, _s, target);
+    target = stream->WriteStringMaybeAliased(7, _s, target);
   }
 
-  // optional string amazon_s3_secret_access_key = 15 [json_name = "amazonS3SecretAccessKey"];
-  if ((cached_has_bits & 0x00000020u) != 0) {
+  // optional string amazon_s3_secret_access_key = 8 [json_name = "amazonS3SecretAccessKey"];
+  if ((cached_has_bits & 0x00000004u) != 0) {
     const ::std::string& _s = this_._internal_amazon_s3_secret_access_key();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigFile.amazon_s3_secret_access_key");
-    target = stream->WriteStringMaybeAliased(15, _s, target);
+    target = stream->WriteStringMaybeAliased(8, _s, target);
   }
 
-  // optional string amazon_s3_bucket = 16 [json_name = "amazonS3Bucket"];
-  if ((cached_has_bits & 0x00000040u) != 0) {
+  // optional string amazon_s3_bucket = 9 [json_name = "amazonS3Bucket"];
+  if ((cached_has_bits & 0x00000008u) != 0) {
     const ::std::string& _s = this_._internal_amazon_s3_bucket();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigFile.amazon_s3_bucket");
-    target = stream->WriteStringMaybeAliased(16, _s, target);
+    target = stream->WriteStringMaybeAliased(9, _s, target);
   }
 
-  // optional string amazon_s3_path_prefix = 17 [json_name = "amazonS3PathPrefix"];
-  if ((cached_has_bits & 0x00000080u) != 0) {
+  // optional string amazon_s3_path_prefix = 10 [json_name = "amazonS3PathPrefix"];
+  if ((cached_has_bits & 0x00000010u) != 0) {
     const ::std::string& _s = this_._internal_amazon_s3_path_prefix();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigFile.amazon_s3_path_prefix");
-    target = stream->WriteStringMaybeAliased(17, _s, target);
+    target = stream->WriteStringMaybeAliased(10, _s, target);
   }
 
-  // optional string amazon_s3_region = 18 [json_name = "amazonS3Region"];
-  if ((cached_has_bits & 0x00000100u) != 0) {
+  // optional string amazon_s3_region = 11 [json_name = "amazonS3Region"];
+  if ((cached_has_bits & 0x00000020u) != 0) {
     const ::std::string& _s = this_._internal_amazon_s3_region();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigFile.amazon_s3_region");
-    target = stream->WriteStringMaybeAliased(18, _s, target);
+    target = stream->WriteStringMaybeAliased(11, _s, target);
   }
 
-  // optional string amazon_s3_endpoint = 19 [json_name = "amazonS3Endpoint"];
-  if ((cached_has_bits & 0x00000200u) != 0) {
+  // optional string amazon_s3_endpoint = 12 [json_name = "amazonS3Endpoint"];
+  if ((cached_has_bits & 0x00000040u) != 0) {
     const ::std::string& _s = this_._internal_amazon_s3_endpoint();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigFile.amazon_s3_endpoint");
-    target = stream->WriteStringMaybeAliased(19, _s, target);
+    target = stream->WriteStringMaybeAliased(12, _s, target);
   }
 
-  // optional bool amazon_s3_ssl = 20 [json_name = "amazonS3Ssl"];
-  if ((cached_has_bits & 0x00100000u) != 0) {
+  // optional bool amazon_s3_ssl = 13 [json_name = "amazonS3Ssl"];
+  if ((cached_has_bits & 0x00002000u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        20, this_._internal_amazon_s3_ssl(), target);
+        13, this_._internal_amazon_s3_ssl(), target);
   }
 
-  // optional bool amazon_s3_sign_v2 = 21 [json_name = "amazonS3SignV2"];
-  if ((cached_has_bits & 0x00200000u) != 0) {
+  // optional bool amazon_s3_sign_v2 = 14 [json_name = "amazonS3SignV2"];
+  if ((cached_has_bits & 0x00004000u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        21, this_._internal_amazon_s3_sign_v2(), target);
+        14, this_._internal_amazon_s3_sign_v2(), target);
   }
 
-  // optional bool amazon_s3_sse = 22 [json_name = "amazonS3Sse"];
-  if ((cached_has_bits & 0x01000000u) != 0) {
+  // optional bool amazon_s3_sse = 15 [json_name = "amazonS3Sse"];
+  if ((cached_has_bits & 0x00008000u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        22, this_._internal_amazon_s3_sse(), target);
+        15, this_._internal_amazon_s3_sse(), target);
   }
 
-  // optional bool amazon_s3_trace = 23 [json_name = "amazonS3Trace"];
-  if ((cached_has_bits & 0x02000000u) != 0) {
+  // optional bool amazon_s3_trace = 16 [json_name = "amazonS3Trace"];
+  if ((cached_has_bits & 0x00010000u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        23, this_._internal_amazon_s3_trace(), target);
+        16, this_._internal_amazon_s3_trace(), target);
   }
 
-  // optional int64 amazon_s3_request_timeout_milliseconds = 24 [json_name = "amazonS3RequestTimeoutMilliseconds"];
-  if ((cached_has_bits & 0x00400000u) != 0) {
+  // optional int64 amazon_s3_request_timeout_milliseconds = 17 [json_name = "amazonS3RequestTimeoutMilliseconds"];
+  if ((cached_has_bits & 0x00020000u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt64ToArray(
-        24, this_._internal_amazon_s3_request_timeout_milliseconds(), target);
+        17, this_._internal_amazon_s3_request_timeout_milliseconds(), target);
   }
 
-  // optional int64 amazon_s3_upload_part_size_bytes = 25 [json_name = "amazonS3UploadPartSizeBytes"];
-  if ((cached_has_bits & 0x00800000u) != 0) {
+  // optional int64 amazon_s3_upload_part_size_bytes = 18 [json_name = "amazonS3UploadPartSizeBytes"];
+  if ((cached_has_bits & 0x00040000u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt64ToArray(
-        25, this_._internal_amazon_s3_upload_part_size_bytes(), target);
+        18, this_._internal_amazon_s3_upload_part_size_bytes(), target);
   }
 
-  // optional string amazon_s3_storage_class = 26 [json_name = "amazonS3StorageClass"];
-  if ((cached_has_bits & 0x00000400u) != 0) {
+  // optional string amazon_s3_storage_class = 19 [json_name = "amazonS3StorageClass"];
+  if ((cached_has_bits & 0x00000080u) != 0) {
     const ::std::string& _s = this_._internal_amazon_s3_storage_class();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigFile.amazon_s3_storage_class");
-    target = stream->WriteStringMaybeAliased(26, _s, target);
+    target = stream->WriteStringMaybeAliased(19, _s, target);
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -7375,90 +7221,70 @@ PROTOBUF_NOINLINE void ConfigFile::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  total_size += ::absl::popcount(0x03300000u & cached_has_bits) * 3;
-  total_size += ::absl::popcount(0x000fc000u & cached_has_bits) * 2;
+  total_size += static_cast<bool>(0x00010000u & cached_has_bits) * 3;
+  total_size += ::absl::popcount(0x0000fc00u & cached_has_bits) * 2;
   if ((cached_has_bits & 0x000000ffu) != 0) {
-    // optional string driver_name = 7 [json_name = "driverName"];
+    // optional string driver_name = 6 [json_name = "driverName"];
     if ((cached_has_bits & 0x00000001u) != 0) {
       total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                       this_._internal_driver_name());
     }
-    // optional string directory = 8 [json_name = "directory"];
+    // optional string amazon_s3_access_key_id = 7 [json_name = "amazonS3AccessKeyId"];
     if ((cached_has_bits & 0x00000002u) != 0) {
-      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                      this_._internal_directory());
-    }
-    // optional string public_link_salt = 12 [json_name = "publicLinkSalt"];
-    if ((cached_has_bits & 0x00000004u) != 0) {
-      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                      this_._internal_public_link_salt());
-    }
-    // optional string initial_font = 13 [json_name = "initialFont"];
-    if ((cached_has_bits & 0x00000008u) != 0) {
-      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                      this_._internal_initial_font());
-    }
-    // optional string amazon_s3_access_key_id = 14 [json_name = "amazonS3AccessKeyId"];
-    if ((cached_has_bits & 0x00000010u) != 0) {
       total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                       this_._internal_amazon_s3_access_key_id());
     }
-    // optional string amazon_s3_secret_access_key = 15 [json_name = "amazonS3SecretAccessKey"];
-    if ((cached_has_bits & 0x00000020u) != 0) {
+    // optional string amazon_s3_secret_access_key = 8 [json_name = "amazonS3SecretAccessKey"];
+    if ((cached_has_bits & 0x00000004u) != 0) {
       total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                       this_._internal_amazon_s3_secret_access_key());
     }
-    // optional string amazon_s3_bucket = 16 [json_name = "amazonS3Bucket"];
-    if ((cached_has_bits & 0x00000040u) != 0) {
-      total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
+    // optional string amazon_s3_bucket = 9 [json_name = "amazonS3Bucket"];
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                       this_._internal_amazon_s3_bucket());
     }
-    // optional string amazon_s3_path_prefix = 17 [json_name = "amazonS3PathPrefix"];
-    if ((cached_has_bits & 0x00000080u) != 0) {
-      total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
+    // optional string amazon_s3_path_prefix = 10 [json_name = "amazonS3PathPrefix"];
+    if ((cached_has_bits & 0x00000010u) != 0) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                       this_._internal_amazon_s3_path_prefix());
     }
-  }
-  if ((cached_has_bits & 0x00003f00u) != 0) {
-    // optional string amazon_s3_region = 18 [json_name = "amazonS3Region"];
-    if ((cached_has_bits & 0x00000100u) != 0) {
-      total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
+    // optional string amazon_s3_region = 11 [json_name = "amazonS3Region"];
+    if ((cached_has_bits & 0x00000020u) != 0) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                       this_._internal_amazon_s3_region());
     }
-    // optional string amazon_s3_endpoint = 19 [json_name = "amazonS3Endpoint"];
-    if ((cached_has_bits & 0x00000200u) != 0) {
-      total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
+    // optional string amazon_s3_endpoint = 12 [json_name = "amazonS3Endpoint"];
+    if ((cached_has_bits & 0x00000040u) != 0) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                       this_._internal_amazon_s3_endpoint());
     }
-    // optional string amazon_s3_storage_class = 26 [json_name = "amazonS3StorageClass"];
-    if ((cached_has_bits & 0x00000400u) != 0) {
+    // optional string amazon_s3_storage_class = 19 [json_name = "amazonS3StorageClass"];
+    if ((cached_has_bits & 0x00000080u) != 0) {
       total_size += 2 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                       this_._internal_amazon_s3_storage_class());
     }
-    // optional int64 max_file_size = 4 [json_name = "maxFileSize"];
-    if ((cached_has_bits & 0x00000800u) != 0) {
-      total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
-          this_._internal_max_file_size());
-    }
-    // optional int64 max_image_resolution = 5 [json_name = "maxImageResolution"];
-    if ((cached_has_bits & 0x00001000u) != 0) {
+  }
+  if ((cached_has_bits & 0x00000300u) != 0) {
+    // optional int64 max_image_resolution = 4 [json_name = "maxImageResolution"];
+    if ((cached_has_bits & 0x00000100u) != 0) {
       total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
           this_._internal_max_image_resolution());
     }
-    // optional int64 max_image_decoder_concurrency = 6 [json_name = "maxImageDecoderConcurrency"];
-    if ((cached_has_bits & 0x00002000u) != 0) {
+    // optional int64 max_image_decoder_concurrency = 5 [json_name = "maxImageDecoderConcurrency"];
+    if ((cached_has_bits & 0x00000200u) != 0) {
       total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
           this_._internal_max_image_decoder_concurrency());
     }
   }
-  if ((cached_has_bits & 0x00c00000u) != 0) {
-    // optional int64 amazon_s3_request_timeout_milliseconds = 24 [json_name = "amazonS3RequestTimeoutMilliseconds"];
-    if ((cached_has_bits & 0x00400000u) != 0) {
+  if ((cached_has_bits & 0x00060000u) != 0) {
+    // optional int64 amazon_s3_request_timeout_milliseconds = 17 [json_name = "amazonS3RequestTimeoutMilliseconds"];
+    if ((cached_has_bits & 0x00020000u) != 0) {
       total_size += 2 + ::_pbi::WireFormatLite::Int64Size(
                                       this_._internal_amazon_s3_request_timeout_milliseconds());
     }
-    // optional int64 amazon_s3_upload_part_size_bytes = 25 [json_name = "amazonS3UploadPartSizeBytes"];
-    if ((cached_has_bits & 0x00800000u) != 0) {
+    // optional int64 amazon_s3_upload_part_size_bytes = 18 [json_name = "amazonS3UploadPartSizeBytes"];
+    if ((cached_has_bits & 0x00040000u) != 0) {
       total_size += 2 + ::_pbi::WireFormatLite::Int64Size(
                                       this_._internal_amazon_s3_upload_part_size_bytes());
     }
@@ -7481,85 +7307,62 @@ void ConfigFile::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::goog
       _this->_internal_set_driver_name(from._internal_driver_name());
     }
     if ((cached_has_bits & 0x00000002u) != 0) {
-      _this->_internal_set_directory(from._internal_directory());
-    }
-    if ((cached_has_bits & 0x00000004u) != 0) {
-      _this->_internal_set_public_link_salt(from._internal_public_link_salt());
-    }
-    if ((cached_has_bits & 0x00000008u) != 0) {
-      _this->_internal_set_initial_font(from._internal_initial_font());
-    }
-    if ((cached_has_bits & 0x00000010u) != 0) {
       _this->_internal_set_amazon_s3_access_key_id(from._internal_amazon_s3_access_key_id());
     }
-    if ((cached_has_bits & 0x00000020u) != 0) {
+    if ((cached_has_bits & 0x00000004u) != 0) {
       _this->_internal_set_amazon_s3_secret_access_key(from._internal_amazon_s3_secret_access_key());
     }
-    if ((cached_has_bits & 0x00000040u) != 0) {
+    if ((cached_has_bits & 0x00000008u) != 0) {
       _this->_internal_set_amazon_s3_bucket(from._internal_amazon_s3_bucket());
     }
-    if ((cached_has_bits & 0x00000080u) != 0) {
+    if ((cached_has_bits & 0x00000010u) != 0) {
       _this->_internal_set_amazon_s3_path_prefix(from._internal_amazon_s3_path_prefix());
+    }
+    if ((cached_has_bits & 0x00000020u) != 0) {
+      _this->_internal_set_amazon_s3_region(from._internal_amazon_s3_region());
+    }
+    if ((cached_has_bits & 0x00000040u) != 0) {
+      _this->_internal_set_amazon_s3_endpoint(from._internal_amazon_s3_endpoint());
+    }
+    if ((cached_has_bits & 0x00000080u) != 0) {
+      _this->_internal_set_amazon_s3_storage_class(from._internal_amazon_s3_storage_class());
     }
   }
   if ((cached_has_bits & 0x0000ff00u) != 0) {
     if ((cached_has_bits & 0x00000100u) != 0) {
-      _this->_internal_set_amazon_s3_region(from._internal_amazon_s3_region());
-    }
-    if ((cached_has_bits & 0x00000200u) != 0) {
-      _this->_internal_set_amazon_s3_endpoint(from._internal_amazon_s3_endpoint());
-    }
-    if ((cached_has_bits & 0x00000400u) != 0) {
-      _this->_internal_set_amazon_s3_storage_class(from._internal_amazon_s3_storage_class());
-    }
-    if ((cached_has_bits & 0x00000800u) != 0) {
-      _this->_impl_.max_file_size_ = from._impl_.max_file_size_;
-    }
-    if ((cached_has_bits & 0x00001000u) != 0) {
       _this->_impl_.max_image_resolution_ = from._impl_.max_image_resolution_;
     }
-    if ((cached_has_bits & 0x00002000u) != 0) {
+    if ((cached_has_bits & 0x00000200u) != 0) {
       _this->_impl_.max_image_decoder_concurrency_ = from._impl_.max_image_decoder_concurrency_;
     }
-    if ((cached_has_bits & 0x00004000u) != 0) {
+    if ((cached_has_bits & 0x00000400u) != 0) {
       _this->_impl_.enable_file_attachments_ = from._impl_.enable_file_attachments_;
     }
-    if ((cached_has_bits & 0x00008000u) != 0) {
+    if ((cached_has_bits & 0x00000800u) != 0) {
       _this->_impl_.enable_mobile_upload_ = from._impl_.enable_mobile_upload_;
     }
-  }
-  if ((cached_has_bits & 0x00ff0000u) != 0) {
-    if ((cached_has_bits & 0x00010000u) != 0) {
+    if ((cached_has_bits & 0x00001000u) != 0) {
       _this->_impl_.enable_mobile_download_ = from._impl_.enable_mobile_download_;
     }
-    if ((cached_has_bits & 0x00020000u) != 0) {
-      _this->_impl_.enable_public_link_ = from._impl_.enable_public_link_;
-    }
-    if ((cached_has_bits & 0x00040000u) != 0) {
-      _this->_impl_.extract_content_ = from._impl_.extract_content_;
-    }
-    if ((cached_has_bits & 0x00080000u) != 0) {
-      _this->_impl_.archive_recursion_ = from._impl_.archive_recursion_;
-    }
-    if ((cached_has_bits & 0x00100000u) != 0) {
+    if ((cached_has_bits & 0x00002000u) != 0) {
       _this->_impl_.amazon_s3_ssl_ = from._impl_.amazon_s3_ssl_;
     }
-    if ((cached_has_bits & 0x00200000u) != 0) {
+    if ((cached_has_bits & 0x00004000u) != 0) {
       _this->_impl_.amazon_s3_sign_v2_ = from._impl_.amazon_s3_sign_v2_;
     }
-    if ((cached_has_bits & 0x00400000u) != 0) {
-      _this->_impl_.amazon_s3_request_timeout_milliseconds_ = from._impl_.amazon_s3_request_timeout_milliseconds_;
-    }
-    if ((cached_has_bits & 0x00800000u) != 0) {
-      _this->_impl_.amazon_s3_upload_part_size_bytes_ = from._impl_.amazon_s3_upload_part_size_bytes_;
-    }
-  }
-  if ((cached_has_bits & 0x03000000u) != 0) {
-    if ((cached_has_bits & 0x01000000u) != 0) {
+    if ((cached_has_bits & 0x00008000u) != 0) {
       _this->_impl_.amazon_s3_sse_ = from._impl_.amazon_s3_sse_;
     }
-    if ((cached_has_bits & 0x02000000u) != 0) {
+  }
+  if ((cached_has_bits & 0x00070000u) != 0) {
+    if ((cached_has_bits & 0x00010000u) != 0) {
       _this->_impl_.amazon_s3_trace_ = from._impl_.amazon_s3_trace_;
+    }
+    if ((cached_has_bits & 0x00020000u) != 0) {
+      _this->_impl_.amazon_s3_request_timeout_milliseconds_ = from._impl_.amazon_s3_request_timeout_milliseconds_;
+    }
+    if ((cached_has_bits & 0x00040000u) != 0) {
+      _this->_impl_.amazon_s3_upload_part_size_bytes_ = from._impl_.amazon_s3_upload_part_size_bytes_;
     }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -7581,9 +7384,6 @@ void ConfigFile::InternalSwap(ConfigFile* PROTOBUF_RESTRICT PROTOBUF_NONNULL oth
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.driver_name_, &other->_impl_.driver_name_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.directory_, &other->_impl_.directory_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.public_link_salt_, &other->_impl_.public_link_salt_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.initial_font_, &other->_impl_.initial_font_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.amazon_s3_access_key_id_, &other->_impl_.amazon_s3_access_key_id_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.amazon_s3_secret_access_key_, &other->_impl_.amazon_s3_secret_access_key_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.amazon_s3_bucket_, &other->_impl_.amazon_s3_bucket_, arena);
@@ -7592,11 +7392,11 @@ void ConfigFile::InternalSwap(ConfigFile* PROTOBUF_RESTRICT PROTOBUF_NONNULL oth
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.amazon_s3_endpoint_, &other->_impl_.amazon_s3_endpoint_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.amazon_s3_storage_class_, &other->_impl_.amazon_s3_storage_class_, arena);
   ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_trace_)
-      + sizeof(ConfigFile::_impl_.amazon_s3_trace_)
-      - PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.max_file_size_)>(
-          reinterpret_cast<char*>(&_impl_.max_file_size_),
-          reinterpret_cast<char*>(&other->_impl_.max_file_size_));
+      PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.amazon_s3_upload_part_size_bytes_)
+      + sizeof(ConfigFile::_impl_.amazon_s3_upload_part_size_bytes_)
+      - PROTOBUF_FIELD_OFFSET(ConfigFile, _impl_.max_image_resolution_)>(
+          reinterpret_cast<char*>(&_impl_.max_image_resolution_),
+          reinterpret_cast<char*>(&other->_impl_.max_image_resolution_));
 }
 
 ::google::protobuf::Metadata ConfigFile::GetMetadata() const {
