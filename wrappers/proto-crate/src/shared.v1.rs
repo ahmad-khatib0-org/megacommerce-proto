@@ -242,27 +242,25 @@ impl AttachmentErrorType {
     /// (if the ProtoBuf definition does not change) and safe for programmatic use.
     pub fn as_str_name(&self) -> &'static str {
         match self {
-            Self::Unspecified => "ATTACHMENT_ERROR_TYPE_UNSPECIFIED",
-            Self::InvalidBase64 => "ATTACHMENT_ERROR_TYPE_INVALID_BASE64",
-            Self::InvalidFileType => "ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE",
-            Self::BigFile => "ATTACHMENT_ERROR_TYPE_BIG_FILE",
-            Self::DecodeImg => "ATTACHMENT_ERROR_TYPE_DECODE_IMG",
-            Self::BigDimensionsImg => "ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG",
-            Self::UnsupportedFileType => "ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE",
+            Self::Unspecified => "UNSPECIFIED",
+            Self::InvalidBase64 => "INVALID_BASE64",
+            Self::InvalidFileType => "INVALID_FILE_TYPE",
+            Self::BigFile => "BIG_FILE",
+            Self::DecodeImg => "DECODE_IMG",
+            Self::BigDimensionsImg => "BIG_DIMENSIONS_IMG",
+            Self::UnsupportedFileType => "UNSUPPORTED_FILE_TYPE",
         }
     }
     /// Creates an enum from field names used in the ProtoBuf definition.
     pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
         match value {
-            "ATTACHMENT_ERROR_TYPE_UNSPECIFIED" => Some(Self::Unspecified),
-            "ATTACHMENT_ERROR_TYPE_INVALID_BASE64" => Some(Self::InvalidBase64),
-            "ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE" => Some(Self::InvalidFileType),
-            "ATTACHMENT_ERROR_TYPE_BIG_FILE" => Some(Self::BigFile),
-            "ATTACHMENT_ERROR_TYPE_DECODE_IMG" => Some(Self::DecodeImg),
-            "ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG" => Some(Self::BigDimensionsImg),
-            "ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE" => {
-                Some(Self::UnsupportedFileType)
-            }
+            "UNSPECIFIED" => Some(Self::Unspecified),
+            "INVALID_BASE64" => Some(Self::InvalidBase64),
+            "INVALID_FILE_TYPE" => Some(Self::InvalidFileType),
+            "BIG_FILE" => Some(Self::BigFile),
+            "DECODE_IMG" => Some(Self::DecodeImg),
+            "BIG_DIMENSIONS_IMG" => Some(Self::BigDimensionsImg),
+            "UNSUPPORTED_FILE_TYPE" => Some(Self::UnsupportedFileType),
             _ => None,
         }
     }

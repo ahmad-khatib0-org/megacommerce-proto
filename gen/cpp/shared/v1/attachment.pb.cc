@@ -205,18 +205,14 @@ const char descriptor_table_protodef_shared_2fv1_2fattachment_2eproto[] ABSL_ATT
     " \001(\002R\006height\022!\n\014aspect_ratio\030\005 \001(\002R\013aspe"
     "ctRatio\"U\n\017AttachmentError\022\016\n\002id\030\001 \001(\tR\002"
     "id\0222\n\004type\030\002 \001(\0162\036.shared.v1.AttachmentE"
-    "rrorTypeR\004type*\274\002\n\023AttachmentErrorType\022%"
-    "\n!ATTACHMENT_ERROR_TYPE_UNSPECIFIED\020\000\022(\n"
-    "$ATTACHMENT_ERROR_TYPE_INVALID_BASE64\020\001\022"
-    "+\n\'ATTACHMENT_ERROR_TYPE_INVALID_FILE_TY"
-    "PE\020\002\022\"\n\036ATTACHMENT_ERROR_TYPE_BIG_FILE\020\003"
-    "\022$\n ATTACHMENT_ERROR_TYPE_DECODE_IMG\020\004\022,"
-    "\n(ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_I"
-    "MG\020\005\022/\n+ATTACHMENT_ERROR_TYPE_UNSUPPORTE"
-    "D_FILE_TYPE\020\006Bu\n\032org.megacommerce.shared"
-    ".v1B\017AttachmentProtoZCgithub.com/ahmad-k"
-    "hatib0-org/megacommerce-proto/gen/go/sha"
-    "red/v1;v1\370\001\001b\006proto3"
+    "rrorTypeR\004type*\242\001\n\023AttachmentErrorType\022\017"
+    "\n\013UNSPECIFIED\020\000\022\022\n\016INVALID_BASE64\020\001\022\025\n\021I"
+    "NVALID_FILE_TYPE\020\002\022\014\n\010BIG_FILE\020\003\022\016\n\nDECO"
+    "DE_IMG\020\004\022\026\n\022BIG_DIMENSIONS_IMG\020\005\022\031\n\025UNSU"
+    "PPORTED_FILE_TYPE\020\006Bu\n\032org.megacommerce."
+    "shared.v1B\017AttachmentProtoZCgithub.com/a"
+    "hmad-khatib0-org/megacommerce-proto/gen/"
+    "go/shared/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_shared_2fv1_2fattachment_2eproto_deps[1] = {
@@ -226,7 +222,7 @@ static ::absl::once_flag descriptor_table_shared_2fv1_2fattachment_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_shared_2fv1_2fattachment_2eproto = {
     false,
     false,
-    1020,
+    866,
     descriptor_table_protodef_shared_2fv1_2fattachment_2eproto,
     "shared/v1/attachment.proto",
     &descriptor_table_shared_2fv1_2fattachment_2eproto_once,

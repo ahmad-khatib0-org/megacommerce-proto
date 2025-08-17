@@ -32,33 +32,33 @@ public final class AttachmentProto {
   public enum AttachmentErrorType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>ATTACHMENT_ERROR_TYPE_UNSPECIFIED = 0;</code>
+     * <code>UNSPECIFIED = 0;</code>
      */
-    ATTACHMENT_ERROR_TYPE_UNSPECIFIED(0),
+    UNSPECIFIED(0),
     /**
-     * <code>ATTACHMENT_ERROR_TYPE_INVALID_BASE64 = 1;</code>
+     * <code>INVALID_BASE64 = 1;</code>
      */
-    ATTACHMENT_ERROR_TYPE_INVALID_BASE64(1),
+    INVALID_BASE64(1),
     /**
-     * <code>ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE = 2;</code>
+     * <code>INVALID_FILE_TYPE = 2;</code>
      */
-    ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE(2),
+    INVALID_FILE_TYPE(2),
     /**
-     * <code>ATTACHMENT_ERROR_TYPE_BIG_FILE = 3;</code>
+     * <code>BIG_FILE = 3;</code>
      */
-    ATTACHMENT_ERROR_TYPE_BIG_FILE(3),
+    BIG_FILE(3),
     /**
-     * <code>ATTACHMENT_ERROR_TYPE_DECODE_IMG = 4;</code>
+     * <code>DECODE_IMG = 4;</code>
      */
-    ATTACHMENT_ERROR_TYPE_DECODE_IMG(4),
+    DECODE_IMG(4),
     /**
-     * <code>ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG = 5;</code>
+     * <code>BIG_DIMENSIONS_IMG = 5;</code>
      */
-    ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG(5),
+    BIG_DIMENSIONS_IMG(5),
     /**
-     * <code>ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE = 6;</code>
+     * <code>UNSUPPORTED_FILE_TYPE = 6;</code>
      */
-    ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE(6),
+    UNSUPPORTED_FILE_TYPE(6),
     UNRECOGNIZED(-1),
     ;
 
@@ -72,33 +72,33 @@ public final class AttachmentProto {
         AttachmentErrorType.class.getName());
     }
     /**
-     * <code>ATTACHMENT_ERROR_TYPE_UNSPECIFIED = 0;</code>
+     * <code>UNSPECIFIED = 0;</code>
      */
-    public static final int ATTACHMENT_ERROR_TYPE_UNSPECIFIED_VALUE = 0;
+    public static final int UNSPECIFIED_VALUE = 0;
     /**
-     * <code>ATTACHMENT_ERROR_TYPE_INVALID_BASE64 = 1;</code>
+     * <code>INVALID_BASE64 = 1;</code>
      */
-    public static final int ATTACHMENT_ERROR_TYPE_INVALID_BASE64_VALUE = 1;
+    public static final int INVALID_BASE64_VALUE = 1;
     /**
-     * <code>ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE = 2;</code>
+     * <code>INVALID_FILE_TYPE = 2;</code>
      */
-    public static final int ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE_VALUE = 2;
+    public static final int INVALID_FILE_TYPE_VALUE = 2;
     /**
-     * <code>ATTACHMENT_ERROR_TYPE_BIG_FILE = 3;</code>
+     * <code>BIG_FILE = 3;</code>
      */
-    public static final int ATTACHMENT_ERROR_TYPE_BIG_FILE_VALUE = 3;
+    public static final int BIG_FILE_VALUE = 3;
     /**
-     * <code>ATTACHMENT_ERROR_TYPE_DECODE_IMG = 4;</code>
+     * <code>DECODE_IMG = 4;</code>
      */
-    public static final int ATTACHMENT_ERROR_TYPE_DECODE_IMG_VALUE = 4;
+    public static final int DECODE_IMG_VALUE = 4;
     /**
-     * <code>ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG = 5;</code>
+     * <code>BIG_DIMENSIONS_IMG = 5;</code>
      */
-    public static final int ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG_VALUE = 5;
+    public static final int BIG_DIMENSIONS_IMG_VALUE = 5;
     /**
-     * <code>ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE = 6;</code>
+     * <code>UNSUPPORTED_FILE_TYPE = 6;</code>
      */
-    public static final int ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE_VALUE = 6;
+    public static final int UNSUPPORTED_FILE_TYPE_VALUE = 6;
 
 
     public final int getNumber() {
@@ -125,13 +125,13 @@ public final class AttachmentProto {
      */
     public static AttachmentErrorType forNumber(int value) {
       switch (value) {
-        case 0: return ATTACHMENT_ERROR_TYPE_UNSPECIFIED;
-        case 1: return ATTACHMENT_ERROR_TYPE_INVALID_BASE64;
-        case 2: return ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE;
-        case 3: return ATTACHMENT_ERROR_TYPE_BIG_FILE;
-        case 4: return ATTACHMENT_ERROR_TYPE_DECODE_IMG;
-        case 5: return ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG;
-        case 6: return ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE;
+        case 0: return UNSPECIFIED;
+        case 1: return INVALID_BASE64;
+        case 2: return INVALID_FILE_TYPE;
+        case 3: return BIG_FILE;
+        case 4: return DECODE_IMG;
+        case 5: return BIG_DIMENSIONS_IMG;
+        case 6: return UNSUPPORTED_FILE_TYPE;
         default: return null;
       }
     }
@@ -2791,7 +2791,7 @@ public final class AttachmentProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
       }
-      if (type_ != org.megacommerce.shared.v1.AttachmentProto.AttachmentErrorType.ATTACHMENT_ERROR_TYPE_UNSPECIFIED.getNumber()) {
+      if (type_ != org.megacommerce.shared.v1.AttachmentProto.AttachmentErrorType.UNSPECIFIED.getNumber()) {
         output.writeEnum(2, type_);
       }
       getUnknownFields().writeTo(output);
@@ -2806,7 +2806,7 @@ public final class AttachmentProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
       }
-      if (type_ != org.megacommerce.shared.v1.AttachmentProto.AttachmentErrorType.ATTACHMENT_ERROR_TYPE_UNSPECIFIED.getNumber()) {
+      if (type_ != org.megacommerce.shared.v1.AttachmentProto.AttachmentErrorType.UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, type_);
       }
@@ -3322,18 +3322,14 @@ public final class AttachmentProto {
       " \001(\002R\006height\022!\n\014aspect_ratio\030\005 \001(\002R\013aspe" +
       "ctRatio\"U\n\017AttachmentError\022\016\n\002id\030\001 \001(\tR\002" +
       "id\0222\n\004type\030\002 \001(\0162\036.shared.v1.AttachmentE" +
-      "rrorTypeR\004type*\274\002\n\023AttachmentErrorType\022%" +
-      "\n!ATTACHMENT_ERROR_TYPE_UNSPECIFIED\020\000\022(\n" +
-      "$ATTACHMENT_ERROR_TYPE_INVALID_BASE64\020\001\022" +
-      "+\n\'ATTACHMENT_ERROR_TYPE_INVALID_FILE_TY" +
-      "PE\020\002\022\"\n\036ATTACHMENT_ERROR_TYPE_BIG_FILE\020\003" +
-      "\022$\n ATTACHMENT_ERROR_TYPE_DECODE_IMG\020\004\022," +
-      "\n(ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_I" +
-      "MG\020\005\022/\n+ATTACHMENT_ERROR_TYPE_UNSUPPORTE" +
-      "D_FILE_TYPE\020\006Bu\n\032org.megacommerce.shared" +
-      ".v1B\017AttachmentProtoZCgithub.com/ahmad-k" +
-      "hatib0-org/megacommerce-proto/gen/go/sha" +
-      "red/v1;v1\370\001\001b\006proto3"
+      "rrorTypeR\004type*\242\001\n\023AttachmentErrorType\022\017" +
+      "\n\013UNSPECIFIED\020\000\022\022\n\016INVALID_BASE64\020\001\022\025\n\021I" +
+      "NVALID_FILE_TYPE\020\002\022\014\n\010BIG_FILE\020\003\022\016\n\nDECO" +
+      "DE_IMG\020\004\022\026\n\022BIG_DIMENSIONS_IMG\020\005\022\031\n\025UNSU" +
+      "PPORTED_FILE_TYPE\020\006Bu\n\032org.megacommerce." +
+      "shared.v1B\017AttachmentProtoZCgithub.com/a" +
+      "hmad-khatib0-org/megacommerce-proto/gen/" +
+      "go/shared/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

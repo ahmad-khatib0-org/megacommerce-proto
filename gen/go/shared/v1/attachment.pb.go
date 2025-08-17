@@ -24,34 +24,34 @@ const (
 type AttachmentErrorType int32
 
 const (
-	AttachmentErrorType_ATTACHMENT_ERROR_TYPE_UNSPECIFIED           AttachmentErrorType = 0
-	AttachmentErrorType_ATTACHMENT_ERROR_TYPE_INVALID_BASE64        AttachmentErrorType = 1
-	AttachmentErrorType_ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE     AttachmentErrorType = 2
-	AttachmentErrorType_ATTACHMENT_ERROR_TYPE_BIG_FILE              AttachmentErrorType = 3
-	AttachmentErrorType_ATTACHMENT_ERROR_TYPE_DECODE_IMG            AttachmentErrorType = 4
-	AttachmentErrorType_ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG    AttachmentErrorType = 5
-	AttachmentErrorType_ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE AttachmentErrorType = 6
+	AttachmentErrorType_UNSPECIFIED           AttachmentErrorType = 0
+	AttachmentErrorType_INVALID_BASE64        AttachmentErrorType = 1
+	AttachmentErrorType_INVALID_FILE_TYPE     AttachmentErrorType = 2
+	AttachmentErrorType_BIG_FILE              AttachmentErrorType = 3
+	AttachmentErrorType_DECODE_IMG            AttachmentErrorType = 4
+	AttachmentErrorType_BIG_DIMENSIONS_IMG    AttachmentErrorType = 5
+	AttachmentErrorType_UNSUPPORTED_FILE_TYPE AttachmentErrorType = 6
 )
 
 // Enum value maps for AttachmentErrorType.
 var (
 	AttachmentErrorType_name = map[int32]string{
-		0: "ATTACHMENT_ERROR_TYPE_UNSPECIFIED",
-		1: "ATTACHMENT_ERROR_TYPE_INVALID_BASE64",
-		2: "ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE",
-		3: "ATTACHMENT_ERROR_TYPE_BIG_FILE",
-		4: "ATTACHMENT_ERROR_TYPE_DECODE_IMG",
-		5: "ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG",
-		6: "ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE",
+		0: "UNSPECIFIED",
+		1: "INVALID_BASE64",
+		2: "INVALID_FILE_TYPE",
+		3: "BIG_FILE",
+		4: "DECODE_IMG",
+		5: "BIG_DIMENSIONS_IMG",
+		6: "UNSUPPORTED_FILE_TYPE",
 	}
 	AttachmentErrorType_value = map[string]int32{
-		"ATTACHMENT_ERROR_TYPE_UNSPECIFIED":           0,
-		"ATTACHMENT_ERROR_TYPE_INVALID_BASE64":        1,
-		"ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE":     2,
-		"ATTACHMENT_ERROR_TYPE_BIG_FILE":              3,
-		"ATTACHMENT_ERROR_TYPE_DECODE_IMG":            4,
-		"ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG":    5,
-		"ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE": 6,
+		"UNSPECIFIED":           0,
+		"INVALID_BASE64":        1,
+		"INVALID_FILE_TYPE":     2,
+		"BIG_FILE":              3,
+		"DECODE_IMG":            4,
+		"BIG_DIMENSIONS_IMG":    5,
+		"UNSUPPORTED_FILE_TYPE": 6,
 	}
 )
 
@@ -315,7 +315,7 @@ func (x *AttachmentError) GetType() AttachmentErrorType {
 	if x != nil {
 		return x.Type
 	}
-	return AttachmentErrorType_ATTACHMENT_ERROR_TYPE_UNSPECIFIED
+	return AttachmentErrorType_UNSPECIFIED
 }
 
 var File_shared_v1_attachment_proto protoreflect.FileDescriptor
@@ -342,15 +342,16 @@ const file_shared_v1_attachment_proto_rawDesc = "" +
 	"\faspect_ratio\x18\x05 \x01(\x02R\vaspectRatio\"U\n" +
 	"\x0fAttachmentError\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x122\n" +
-	"\x04type\x18\x02 \x01(\x0e2\x1e.shared.v1.AttachmentErrorTypeR\x04type*\xbc\x02\n" +
-	"\x13AttachmentErrorType\x12%\n" +
-	"!ATTACHMENT_ERROR_TYPE_UNSPECIFIED\x10\x00\x12(\n" +
-	"$ATTACHMENT_ERROR_TYPE_INVALID_BASE64\x10\x01\x12+\n" +
-	"'ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE\x10\x02\x12\"\n" +
-	"\x1eATTACHMENT_ERROR_TYPE_BIG_FILE\x10\x03\x12$\n" +
-	" ATTACHMENT_ERROR_TYPE_DECODE_IMG\x10\x04\x12,\n" +
-	"(ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG\x10\x05\x12/\n" +
-	"+ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE\x10\x06Bu\n" +
+	"\x04type\x18\x02 \x01(\x0e2\x1e.shared.v1.AttachmentErrorTypeR\x04type*\xa2\x01\n" +
+	"\x13AttachmentErrorType\x12\x0f\n" +
+	"\vUNSPECIFIED\x10\x00\x12\x12\n" +
+	"\x0eINVALID_BASE64\x10\x01\x12\x15\n" +
+	"\x11INVALID_FILE_TYPE\x10\x02\x12\f\n" +
+	"\bBIG_FILE\x10\x03\x12\x0e\n" +
+	"\n" +
+	"DECODE_IMG\x10\x04\x12\x16\n" +
+	"\x12BIG_DIMENSIONS_IMG\x10\x05\x12\x19\n" +
+	"\x15UNSUPPORTED_FILE_TYPE\x10\x06Bu\n" +
 	"\x1aorg.megacommerce.shared.v1B\x0fAttachmentProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (

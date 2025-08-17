@@ -11,39 +11,39 @@ import { Struct } from "./struct";
 export const protobufPackage = "shared.v1";
 
 export enum AttachmentErrorType {
-  ATTACHMENT_ERROR_TYPE_UNSPECIFIED = 0,
-  ATTACHMENT_ERROR_TYPE_INVALID_BASE64 = 1,
-  ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE = 2,
-  ATTACHMENT_ERROR_TYPE_BIG_FILE = 3,
-  ATTACHMENT_ERROR_TYPE_DECODE_IMG = 4,
-  ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG = 5,
-  ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE = 6,
+  UNSPECIFIED = 0,
+  INVALID_BASE64 = 1,
+  INVALID_FILE_TYPE = 2,
+  BIG_FILE = 3,
+  DECODE_IMG = 4,
+  BIG_DIMENSIONS_IMG = 5,
+  UNSUPPORTED_FILE_TYPE = 6,
   UNRECOGNIZED = -1,
 }
 
 export function attachmentErrorTypeFromJSON(object: any): AttachmentErrorType {
   switch (object) {
     case 0:
-    case "ATTACHMENT_ERROR_TYPE_UNSPECIFIED":
-      return AttachmentErrorType.ATTACHMENT_ERROR_TYPE_UNSPECIFIED;
+    case "UNSPECIFIED":
+      return AttachmentErrorType.UNSPECIFIED;
     case 1:
-    case "ATTACHMENT_ERROR_TYPE_INVALID_BASE64":
-      return AttachmentErrorType.ATTACHMENT_ERROR_TYPE_INVALID_BASE64;
+    case "INVALID_BASE64":
+      return AttachmentErrorType.INVALID_BASE64;
     case 2:
-    case "ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE":
-      return AttachmentErrorType.ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE;
+    case "INVALID_FILE_TYPE":
+      return AttachmentErrorType.INVALID_FILE_TYPE;
     case 3:
-    case "ATTACHMENT_ERROR_TYPE_BIG_FILE":
-      return AttachmentErrorType.ATTACHMENT_ERROR_TYPE_BIG_FILE;
+    case "BIG_FILE":
+      return AttachmentErrorType.BIG_FILE;
     case 4:
-    case "ATTACHMENT_ERROR_TYPE_DECODE_IMG":
-      return AttachmentErrorType.ATTACHMENT_ERROR_TYPE_DECODE_IMG;
+    case "DECODE_IMG":
+      return AttachmentErrorType.DECODE_IMG;
     case 5:
-    case "ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG":
-      return AttachmentErrorType.ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG;
+    case "BIG_DIMENSIONS_IMG":
+      return AttachmentErrorType.BIG_DIMENSIONS_IMG;
     case 6:
-    case "ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE":
-      return AttachmentErrorType.ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE;
+    case "UNSUPPORTED_FILE_TYPE":
+      return AttachmentErrorType.UNSUPPORTED_FILE_TYPE;
     case -1:
     case "UNRECOGNIZED":
     default:
@@ -53,20 +53,20 @@ export function attachmentErrorTypeFromJSON(object: any): AttachmentErrorType {
 
 export function attachmentErrorTypeToJSON(object: AttachmentErrorType): string {
   switch (object) {
-    case AttachmentErrorType.ATTACHMENT_ERROR_TYPE_UNSPECIFIED:
-      return "ATTACHMENT_ERROR_TYPE_UNSPECIFIED";
-    case AttachmentErrorType.ATTACHMENT_ERROR_TYPE_INVALID_BASE64:
-      return "ATTACHMENT_ERROR_TYPE_INVALID_BASE64";
-    case AttachmentErrorType.ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE:
-      return "ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE";
-    case AttachmentErrorType.ATTACHMENT_ERROR_TYPE_BIG_FILE:
-      return "ATTACHMENT_ERROR_TYPE_BIG_FILE";
-    case AttachmentErrorType.ATTACHMENT_ERROR_TYPE_DECODE_IMG:
-      return "ATTACHMENT_ERROR_TYPE_DECODE_IMG";
-    case AttachmentErrorType.ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG:
-      return "ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG";
-    case AttachmentErrorType.ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE:
-      return "ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE";
+    case AttachmentErrorType.UNSPECIFIED:
+      return "UNSPECIFIED";
+    case AttachmentErrorType.INVALID_BASE64:
+      return "INVALID_BASE64";
+    case AttachmentErrorType.INVALID_FILE_TYPE:
+      return "INVALID_FILE_TYPE";
+    case AttachmentErrorType.BIG_FILE:
+      return "BIG_FILE";
+    case AttachmentErrorType.DECODE_IMG:
+      return "DECODE_IMG";
+    case AttachmentErrorType.BIG_DIMENSIONS_IMG:
+      return "BIG_DIMENSIONS_IMG";
+    case AttachmentErrorType.UNSUPPORTED_FILE_TYPE:
+      return "UNSUPPORTED_FILE_TYPE";
     case AttachmentErrorType.UNRECOGNIZED:
     default:
       return "UNRECOGNIZED";

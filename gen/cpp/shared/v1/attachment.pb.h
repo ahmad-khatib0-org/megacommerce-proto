@@ -83,13 +83,13 @@ internal::EnumTraitsT<::shared::v1::AttachmentErrorType_internal_data_>
 namespace shared {
 namespace v1 {
 enum AttachmentErrorType : int {
-  ATTACHMENT_ERROR_TYPE_UNSPECIFIED = 0,
-  ATTACHMENT_ERROR_TYPE_INVALID_BASE64 = 1,
-  ATTACHMENT_ERROR_TYPE_INVALID_FILE_TYPE = 2,
-  ATTACHMENT_ERROR_TYPE_BIG_FILE = 3,
-  ATTACHMENT_ERROR_TYPE_DECODE_IMG = 4,
-  ATTACHMENT_ERROR_TYPE_BIG_DIMENSIONS_IMG = 5,
-  ATTACHMENT_ERROR_TYPE_UNSUPPORTED_FILE_TYPE = 6,
+  UNSPECIFIED = 0,
+  INVALID_BASE64 = 1,
+  INVALID_FILE_TYPE = 2,
+  BIG_FILE = 3,
+  DECODE_IMG = 4,
+  BIG_DIMENSIONS_IMG = 5,
+  UNSUPPORTED_FILE_TYPE = 6,
   AttachmentErrorType_INT_MIN_SENTINEL_DO_NOT_USE_ =
       ::std::numeric_limits<::int32_t>::min(),
   AttachmentErrorType_INT_MAX_SENTINEL_DO_NOT_USE_ =
