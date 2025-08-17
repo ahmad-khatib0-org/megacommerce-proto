@@ -62,6 +62,12 @@ inline constexpr AttachmentError::Impl_::Impl_(
         id_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
+        message_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        error_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
         type_{static_cast< ::shared::v1::AttachmentErrorType >(0)} {}
 
 template <typename>
@@ -171,11 +177,15 @@ const ::uint32_t
         4,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::shared::v1::AttachmentError, _impl_._has_bits_),
-        5, // hasbit index offset
+        7, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::shared::v1::AttachmentError, _impl_.id_),
         PROTOBUF_FIELD_OFFSET(::shared::v1::AttachmentError, _impl_.type_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::AttachmentError, _impl_.message_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::AttachmentError, _impl_.error_),
         0,
+        3,
         1,
+        2,
 };
 
 static const ::_pbi::MigrationSchema
@@ -203,16 +213,17 @@ const char descriptor_table_protodef_shared_2fv1_2fattachment_2eproto[] ABSL_ATT
     "R\010metadata\"s\n\004Crop\022\014\n\001x\030\001 \001(\002R\001x\022\014\n\001y\030\002 "
     "\001(\002R\001y\022\024\n\005width\030\003 \001(\002R\005width\022\026\n\006height\030\004"
     " \001(\002R\006height\022!\n\014aspect_ratio\030\005 \001(\002R\013aspe"
-    "ctRatio\"U\n\017AttachmentError\022\016\n\002id\030\001 \001(\tR\002"
-    "id\0222\n\004type\030\002 \001(\0162\036.shared.v1.AttachmentE"
-    "rrorTypeR\004type*\242\001\n\023AttachmentErrorType\022\017"
-    "\n\013UNSPECIFIED\020\000\022\022\n\016INVALID_BASE64\020\001\022\025\n\021I"
-    "NVALID_FILE_TYPE\020\002\022\014\n\010BIG_FILE\020\003\022\016\n\nDECO"
-    "DE_IMG\020\004\022\026\n\022BIG_DIMENSIONS_IMG\020\005\022\031\n\025UNSU"
-    "PPORTED_FILE_TYPE\020\006Bu\n\032org.megacommerce."
-    "shared.v1B\017AttachmentProtoZCgithub.com/a"
-    "hmad-khatib0-org/megacommerce-proto/gen/"
-    "go/shared/v1;v1\370\001\001b\006proto3"
+    "ctRatio\"\205\001\n\017AttachmentError\022\016\n\002id\030\001 \001(\tR"
+    "\002id\0222\n\004type\030\002 \001(\0162\036.shared.v1.Attachment"
+    "ErrorTypeR\004type\022\030\n\007message\030\003 \001(\tR\007messag"
+    "e\022\024\n\005error\030\004 \001(\tR\005error*\242\001\n\023AttachmentEr"
+    "rorType\022\017\n\013UNSPECIFIED\020\000\022\022\n\016INVALID_BASE"
+    "64\020\001\022\025\n\021INVALID_FILE_TYPE\020\002\022\014\n\010BIG_FILE\020"
+    "\003\022\016\n\nDECODE_IMG\020\004\022\026\n\022BIG_DIMENSIONS_IMG\020"
+    "\005\022\031\n\025UNSUPPORTED_FILE_TYPE\020\006Bu\n\032org.mega"
+    "commerce.shared.v1B\017AttachmentProtoZCgit"
+    "hub.com/ahmad-khatib0-org/megacommerce-p"
+    "roto/gen/go/shared/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_shared_2fv1_2fattachment_2eproto_deps[1] = {
@@ -222,7 +233,7 @@ static ::absl::once_flag descriptor_table_shared_2fv1_2fattachment_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_shared_2fv1_2fattachment_2eproto = {
     false,
     false,
-    866,
+    915,
     descriptor_table_protodef_shared_2fv1_2fattachment_2eproto,
     "shared/v1/attachment.proto",
     &descriptor_table_shared_2fv1_2fattachment_2eproto_once,
@@ -1217,7 +1228,9 @@ PROTOBUF_NDEBUG_INLINE AttachmentError::Impl_::Impl_(
     const ::shared::v1::AttachmentError& from_msg)
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
-        id_(arena, from.id_) {}
+        id_(arena, from.id_),
+        message_(arena, from.message_),
+        error_(arena, from.error_) {}
 
 AttachmentError::AttachmentError(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -1240,7 +1253,9 @@ PROTOBUF_NDEBUG_INLINE AttachmentError::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
-        id_(arena) {}
+        id_(arena),
+        message_(arena),
+        error_(arena) {}
 
 inline void AttachmentError::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
@@ -1255,6 +1270,8 @@ inline void AttachmentError::SharedDtor(MessageLite& self) {
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.id_.Destroy();
+  this_._impl_.message_.Destroy();
+  this_._impl_.error_.Destroy();
   this_._impl_.~Impl_();
 }
 
@@ -1301,16 +1318,16 @@ AttachmentError::GetClassData() const {
   return AttachmentError_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 36, 2>
+const ::_pbi::TcParseTable<2, 4, 0, 48, 2>
 AttachmentError::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(AttachmentError, _impl_._has_bits_),
     0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
+    4, 24,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
+    4294967280,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
+    4,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     AttachmentError_class_data_.base(),
@@ -1320,12 +1337,18 @@ AttachmentError::_table_ = {
     ::_pbi::TcParser::GetTable<::shared::v1::AttachmentError>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // .shared.v1.AttachmentErrorType type = 2 [json_name = "type"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(AttachmentError, _impl_.type_), 1>(),
-     {16, 1, 0, PROTOBUF_FIELD_OFFSET(AttachmentError, _impl_.type_)}},
+    // string error = 4 [json_name = "error"];
+    {::_pbi::TcParser::FastUS1,
+     {34, 2, 0, PROTOBUF_FIELD_OFFSET(AttachmentError, _impl_.error_)}},
     // string id = 1 [json_name = "id"];
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(AttachmentError, _impl_.id_)}},
+    // .shared.v1.AttachmentErrorType type = 2 [json_name = "type"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(AttachmentError, _impl_.type_), 3>(),
+     {16, 3, 0, PROTOBUF_FIELD_OFFSET(AttachmentError, _impl_.type_)}},
+    // string message = 3 [json_name = "message"];
+    {::_pbi::TcParser::FastUS1,
+     {26, 1, 0, PROTOBUF_FIELD_OFFSET(AttachmentError, _impl_.message_)}},
   }}, {{
     65535, 65535
   }}, {{
@@ -1333,14 +1356,22 @@ AttachmentError::_table_ = {
     {PROTOBUF_FIELD_OFFSET(AttachmentError, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // .shared.v1.AttachmentErrorType type = 2 [json_name = "type"];
-    {PROTOBUF_FIELD_OFFSET(AttachmentError, _impl_.type_), _Internal::kHasBitsOffset + 1, 0,
+    {PROTOBUF_FIELD_OFFSET(AttachmentError, _impl_.type_), _Internal::kHasBitsOffset + 3, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
+    // string message = 3 [json_name = "message"];
+    {PROTOBUF_FIELD_OFFSET(AttachmentError, _impl_.message_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string error = 4 [json_name = "error"];
+    {PROTOBUF_FIELD_OFFSET(AttachmentError, _impl_.error_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
   // no aux_entries
   {{
-    "\31\2\0\0\0\0\0\0"
+    "\31\2\0\7\5\0\0\0"
     "shared.v1.AttachmentError"
     "id"
+    "message"
+    "error"
   }},
 };
 PROTOBUF_NOINLINE void AttachmentError::Clear() {
@@ -1351,8 +1382,16 @@ PROTOBUF_NOINLINE void AttachmentError::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000001u) != 0) {
-    _impl_.id_.ClearNonDefaultToEmpty();
+  if ((cached_has_bits & 0x00000007u) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      _impl_.id_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      _impl_.message_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      _impl_.error_.ClearNonDefaultToEmpty();
+    }
   }
   _impl_.type_ = 0;
   _impl_._has_bits_.Clear();
@@ -1385,11 +1424,31 @@ PROTOBUF_NOINLINE void AttachmentError::Clear() {
   }
 
   // .shared.v1.AttachmentErrorType type = 2 [json_name = "type"];
-  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
+  if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
     if (this_._internal_type() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteEnumToArray(
           2, this_._internal_type(), target);
+    }
+  }
+
+  // string message = 3 [json_name = "message"];
+  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    if (!this_._internal_message().empty()) {
+      const ::std::string& _s = this_._internal_message();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.AttachmentError.message");
+      target = stream->WriteStringMaybeAliased(3, _s, target);
+    }
+  }
+
+  // string error = 4 [json_name = "error"];
+  if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
+    if (!this_._internal_error().empty()) {
+      const ::std::string& _s = this_._internal_error();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.AttachmentError.error");
+      target = stream->WriteStringMaybeAliased(4, _s, target);
     }
   }
 
@@ -1418,7 +1477,7 @@ PROTOBUF_NOINLINE void AttachmentError::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000003u) != 0) {
+  if ((cached_has_bits & 0x0000000fu) != 0) {
     // string id = 1 [json_name = "id"];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_id().empty()) {
@@ -1426,8 +1485,22 @@ PROTOBUF_NOINLINE void AttachmentError::Clear() {
                                         this_._internal_id());
       }
     }
-    // .shared.v1.AttachmentErrorType type = 2 [json_name = "type"];
+    // string message = 3 [json_name = "message"];
     if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!this_._internal_message().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_message());
+      }
+    }
+    // string error = 4 [json_name = "error"];
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      if (!this_._internal_error().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_error());
+      }
+    }
+    // .shared.v1.AttachmentErrorType type = 2 [json_name = "type"];
+    if ((cached_has_bits & 0x00000008u) != 0) {
       if (this_._internal_type() != 0) {
         total_size += 1 +
                       ::_pbi::WireFormatLite::EnumSize(this_._internal_type());
@@ -1447,7 +1520,7 @@ void AttachmentError::MergeImpl(::google::protobuf::MessageLite& to_msg, const :
   (void) cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000003u) != 0) {
+  if ((cached_has_bits & 0x0000000fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!from._internal_id().empty()) {
         _this->_internal_set_id(from._internal_id());
@@ -1458,6 +1531,24 @@ void AttachmentError::MergeImpl(::google::protobuf::MessageLite& to_msg, const :
       }
     }
     if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!from._internal_message().empty()) {
+        _this->_internal_set_message(from._internal_message());
+      } else {
+        if (_this->_impl_.message_.IsDefault()) {
+          _this->_internal_set_message("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      if (!from._internal_error().empty()) {
+        _this->_internal_set_error(from._internal_error());
+      } else {
+        if (_this->_impl_.error_.IsDefault()) {
+          _this->_internal_set_error("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000008u) != 0) {
       if (from._internal_type() != 0) {
         _this->_impl_.type_ = from._impl_.type_;
       }
@@ -1482,6 +1573,8 @@ void AttachmentError::InternalSwap(AttachmentError* PROTOBUF_RESTRICT PROTOBUF_N
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.id_, &other->_impl_.id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.message_, &other->_impl_.message_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.error_, &other->_impl_.error_, arena);
   swap(_impl_.type_, other->_impl_.type_);
 }
 

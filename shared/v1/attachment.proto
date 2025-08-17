@@ -42,4 +42,6 @@ enum AttachmentErrorType {
 message AttachmentError {
   string id = 1; // the attachment id
   AttachmentErrorType type = 2;
+  string message = 3; // shown to the user
+  string error = 4; // used for the backend
 }

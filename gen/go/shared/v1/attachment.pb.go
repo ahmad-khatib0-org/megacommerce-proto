@@ -270,6 +270,8 @@ type AttachmentError struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // the attachment id
 	Type          AttachmentErrorType    `protobuf:"varint,2,opt,name=type,proto3,enum=shared.v1.AttachmentErrorType" json:"type,omitempty"`
+	Message       string                 `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"` // shown to the user
+	Error         string                 `protobuf:"bytes,4,opt,name=error,proto3" json:"error,omitempty"`     // used for the backend
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -318,6 +320,20 @@ func (x *AttachmentError) GetType() AttachmentErrorType {
 	return AttachmentErrorType_UNSPECIFIED
 }
 
+func (x *AttachmentError) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+func (x *AttachmentError) GetError() string {
+	if x != nil {
+		return x.Error
+	}
+	return ""
+}
+
 var File_shared_v1_attachment_proto protoreflect.FileDescriptor
 
 const file_shared_v1_attachment_proto_rawDesc = "" +
@@ -339,10 +355,12 @@ const file_shared_v1_attachment_proto_rawDesc = "" +
 	"\x01y\x18\x02 \x01(\x02R\x01y\x12\x14\n" +
 	"\x05width\x18\x03 \x01(\x02R\x05width\x12\x16\n" +
 	"\x06height\x18\x04 \x01(\x02R\x06height\x12!\n" +
-	"\faspect_ratio\x18\x05 \x01(\x02R\vaspectRatio\"U\n" +
+	"\faspect_ratio\x18\x05 \x01(\x02R\vaspectRatio\"\x85\x01\n" +
 	"\x0fAttachmentError\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x122\n" +
-	"\x04type\x18\x02 \x01(\x0e2\x1e.shared.v1.AttachmentErrorTypeR\x04type*\xa2\x01\n" +
+	"\x04type\x18\x02 \x01(\x0e2\x1e.shared.v1.AttachmentErrorTypeR\x04type\x12\x18\n" +
+	"\amessage\x18\x03 \x01(\tR\amessage\x12\x14\n" +
+	"\x05error\x18\x04 \x01(\tR\x05error*\xa2\x01\n" +
 	"\x13AttachmentErrorType\x12\x0f\n" +
 	"\vUNSPECIFIED\x10\x00\x12\x12\n" +
 	"\x0eINVALID_BASE64\x10\x01\x12\x15\n" +

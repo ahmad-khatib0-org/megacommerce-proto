@@ -100,6 +100,10 @@ export interface AttachmentError {
   /** the attachment id */
   id: string;
   type: AttachmentErrorType;
+  /** shown to the user */
+  message: string;
+  /** used for the backend */
+  error: string;
 }
 
 function createBaseAttachment(): Attachment {
@@ -427,7 +431,7 @@ export const Crop: MessageFns<Crop> = {
 };
 
 function createBaseAttachmentError(): AttachmentError {
-  return { id: "", type: 0 };
+  return { id: "", type: 0, message: "", error: "" };
 }
 
 export const AttachmentError: MessageFns<AttachmentError> = {
@@ -437,6 +441,12 @@ export const AttachmentError: MessageFns<AttachmentError> = {
     }
     if (message.type !== 0) {
       writer.uint32(16).int32(message.type);
+    }
+    if (message.message !== "") {
+      writer.uint32(26).string(message.message);
+    }
+    if (message.error !== "") {
+      writer.uint32(34).string(message.error);
     }
     return writer;
   },
@@ -464,6 +474,22 @@ export const AttachmentError: MessageFns<AttachmentError> = {
           message.type = reader.int32() as any;
           continue;
         }
+        case 3: {
+          if (tag !== 26) {
+            break;
+          }
+
+          message.message = reader.string();
+          continue;
+        }
+        case 4: {
+          if (tag !== 34) {
+            break;
+          }
+
+          message.error = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -477,6 +503,8 @@ export const AttachmentError: MessageFns<AttachmentError> = {
     return {
       id: isSet(object.id) ? globalThis.String(object.id) : "",
       type: isSet(object.type) ? attachmentErrorTypeFromJSON(object.type) : 0,
+      message: isSet(object.message) ? globalThis.String(object.message) : "",
+      error: isSet(object.error) ? globalThis.String(object.error) : "",
     };
   },
 
@@ -488,6 +516,12 @@ export const AttachmentError: MessageFns<AttachmentError> = {
     if (message.type !== 0) {
       obj.type = attachmentErrorTypeToJSON(message.type);
     }
+    if (message.message !== "") {
+      obj.message = message.message;
+    }
+    if (message.error !== "") {
+      obj.error = message.error;
+    }
     return obj;
   },
 
@@ -498,6 +532,8 @@ export const AttachmentError: MessageFns<AttachmentError> = {
     const message = createBaseAttachmentError();
     message.id = object.id ?? "";
     message.type = object.type ?? 0;
+    message.message = object.message ?? "";
+    message.error = object.error ?? "";
     return message;
   },
 };

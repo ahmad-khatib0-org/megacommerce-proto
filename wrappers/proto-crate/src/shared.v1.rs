@@ -222,6 +222,12 @@ pub struct AttachmentError {
     pub id: ::prost::alloc::string::String,
     #[prost(enumeration = "AttachmentErrorType", tag = "2")]
     pub r#type: i32,
+    /// shown to the user
+    #[prost(string, tag = "3")]
+    pub message: ::prost::alloc::string::String,
+    /// used for the backend
+    #[prost(string, tag = "4")]
+    pub error: ::prost::alloc::string::String,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]

@@ -2669,6 +2669,46 @@ public final class AttachmentProto {
      * @return The type.
      */
     org.megacommerce.shared.v1.AttachmentProto.AttachmentErrorType getType();
+
+    /**
+     * <pre>
+     * shown to the user
+     * </pre>
+     *
+     * <code>string message = 3 [json_name = "message"];</code>
+     * @return The message.
+     */
+    java.lang.String getMessage();
+    /**
+     * <pre>
+     * shown to the user
+     * </pre>
+     *
+     * <code>string message = 3 [json_name = "message"];</code>
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
+
+    /**
+     * <pre>
+     * used for the backend
+     * </pre>
+     *
+     * <code>string error = 4 [json_name = "error"];</code>
+     * @return The error.
+     */
+    java.lang.String getError();
+    /**
+     * <pre>
+     * used for the backend
+     * </pre>
+     *
+     * <code>string error = 4 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    com.google.protobuf.ByteString
+        getErrorBytes();
   }
   /**
    * Protobuf type {@code shared.v1.AttachmentError}
@@ -2694,6 +2734,8 @@ public final class AttachmentProto {
     private AttachmentError() {
       id_ = "";
       type_ = 0;
+      message_ = "";
+      error_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -2774,6 +2816,100 @@ public final class AttachmentProto {
       return result == null ? org.megacommerce.shared.v1.AttachmentProto.AttachmentErrorType.UNRECOGNIZED : result;
     }
 
+    public static final int MESSAGE_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object message_ = "";
+    /**
+     * <pre>
+     * shown to the user
+     * </pre>
+     *
+     * <code>string message = 3 [json_name = "message"];</code>
+     * @return The message.
+     */
+    @java.lang.Override
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * shown to the user
+     * </pre>
+     *
+     * <code>string message = 3 [json_name = "message"];</code>
+     * @return The bytes for message.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object error_ = "";
+    /**
+     * <pre>
+     * used for the backend
+     * </pre>
+     *
+     * <code>string error = 4 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public java.lang.String getError() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        error_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * used for the backend
+     * </pre>
+     *
+     * <code>string error = 4 [json_name = "error"];</code>
+     * @return The bytes for error.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getErrorBytes() {
+      java.lang.Object ref = error_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        error_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -2794,6 +2930,12 @@ public final class AttachmentProto {
       if (type_ != org.megacommerce.shared.v1.AttachmentProto.AttachmentErrorType.UNSPECIFIED.getNumber()) {
         output.writeEnum(2, type_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(message_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, message_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(error_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, error_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -2809,6 +2951,12 @@ public final class AttachmentProto {
       if (type_ != org.megacommerce.shared.v1.AttachmentProto.AttachmentErrorType.UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, type_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(message_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, message_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(error_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, error_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2828,6 +2976,10 @@ public final class AttachmentProto {
       if (!getId()
           .equals(other.getId())) return false;
       if (type_ != other.type_) return false;
+      if (!getMessage()
+          .equals(other.getMessage())) return false;
+      if (!getError()
+          .equals(other.getError())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2843,6 +2995,10 @@ public final class AttachmentProto {
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + type_;
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      hash = (37 * hash) + ERROR_FIELD_NUMBER;
+      hash = (53 * hash) + getError().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2976,6 +3132,8 @@ public final class AttachmentProto {
         bitField0_ = 0;
         id_ = "";
         type_ = 0;
+        message_ = "";
+        error_ = "";
         return this;
       }
 
@@ -3015,6 +3173,12 @@ public final class AttachmentProto {
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.type_ = type_;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.message_ = message_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.error_ = error_;
+        }
       }
 
       @java.lang.Override
@@ -3036,6 +3200,16 @@ public final class AttachmentProto {
         }
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
+        }
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getError().isEmpty()) {
+          error_ = other.error_;
+          bitField0_ |= 0x00000008;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -3073,6 +3247,16 @@ public final class AttachmentProto {
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+              case 26: {
+                message_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                error_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3233,6 +3417,190 @@ public final class AttachmentProto {
         return this;
       }
 
+      private java.lang.Object message_ = "";
+      /**
+       * <pre>
+       * shown to the user
+       * </pre>
+       *
+       * <code>string message = 3 [json_name = "message"];</code>
+       * @return The message.
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * shown to the user
+       * </pre>
+       *
+       * <code>string message = 3 [json_name = "message"];</code>
+       * @return The bytes for message.
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * shown to the user
+       * </pre>
+       *
+       * <code>string message = 3 [json_name = "message"];</code>
+       * @param value The message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        message_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * shown to the user
+       * </pre>
+       *
+       * <code>string message = 3 [json_name = "message"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMessage() {
+        message_ = getDefaultInstance().getMessage();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * shown to the user
+       * </pre>
+       *
+       * <code>string message = 3 [json_name = "message"];</code>
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        message_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object error_ = "";
+      /**
+       * <pre>
+       * used for the backend
+       * </pre>
+       *
+       * <code>string error = 4 [json_name = "error"];</code>
+       * @return The error.
+       */
+      public java.lang.String getError() {
+        java.lang.Object ref = error_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          error_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * used for the backend
+       * </pre>
+       *
+       * <code>string error = 4 [json_name = "error"];</code>
+       * @return The bytes for error.
+       */
+      public com.google.protobuf.ByteString
+          getErrorBytes() {
+        java.lang.Object ref = error_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          error_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * used for the backend
+       * </pre>
+       *
+       * <code>string error = 4 [json_name = "error"];</code>
+       * @param value The error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setError(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        error_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * used for the backend
+       * </pre>
+       *
+       * <code>string error = 4 [json_name = "error"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearError() {
+        error_ = getDefaultInstance().getError();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * used for the backend
+       * </pre>
+       *
+       * <code>string error = 4 [json_name = "error"];</code>
+       * @param value The bytes for error to set.
+       * @return This builder for chaining.
+       */
+      public Builder setErrorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        error_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:shared.v1.AttachmentError)
     }
 
@@ -3320,16 +3688,17 @@ public final class AttachmentProto {
       "R\010metadata\"s\n\004Crop\022\014\n\001x\030\001 \001(\002R\001x\022\014\n\001y\030\002 " +
       "\001(\002R\001y\022\024\n\005width\030\003 \001(\002R\005width\022\026\n\006height\030\004" +
       " \001(\002R\006height\022!\n\014aspect_ratio\030\005 \001(\002R\013aspe" +
-      "ctRatio\"U\n\017AttachmentError\022\016\n\002id\030\001 \001(\tR\002" +
-      "id\0222\n\004type\030\002 \001(\0162\036.shared.v1.AttachmentE" +
-      "rrorTypeR\004type*\242\001\n\023AttachmentErrorType\022\017" +
-      "\n\013UNSPECIFIED\020\000\022\022\n\016INVALID_BASE64\020\001\022\025\n\021I" +
-      "NVALID_FILE_TYPE\020\002\022\014\n\010BIG_FILE\020\003\022\016\n\nDECO" +
-      "DE_IMG\020\004\022\026\n\022BIG_DIMENSIONS_IMG\020\005\022\031\n\025UNSU" +
-      "PPORTED_FILE_TYPE\020\006Bu\n\032org.megacommerce." +
-      "shared.v1B\017AttachmentProtoZCgithub.com/a" +
-      "hmad-khatib0-org/megacommerce-proto/gen/" +
-      "go/shared/v1;v1\370\001\001b\006proto3"
+      "ctRatio\"\205\001\n\017AttachmentError\022\016\n\002id\030\001 \001(\tR" +
+      "\002id\0222\n\004type\030\002 \001(\0162\036.shared.v1.Attachment" +
+      "ErrorTypeR\004type\022\030\n\007message\030\003 \001(\tR\007messag" +
+      "e\022\024\n\005error\030\004 \001(\tR\005error*\242\001\n\023AttachmentEr" +
+      "rorType\022\017\n\013UNSPECIFIED\020\000\022\022\n\016INVALID_BASE" +
+      "64\020\001\022\025\n\021INVALID_FILE_TYPE\020\002\022\014\n\010BIG_FILE\020" +
+      "\003\022\016\n\nDECODE_IMG\020\004\022\026\n\022BIG_DIMENSIONS_IMG\020" +
+      "\005\022\031\n\025UNSUPPORTED_FILE_TYPE\020\006Bu\n\032org.mega" +
+      "commerce.shared.v1B\017AttachmentProtoZCgit" +
+      "hub.com/ahmad-khatib0-org/megacommerce-p" +
+      "roto/gen/go/shared/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3353,7 +3722,7 @@ public final class AttachmentProto {
     internal_static_shared_v1_AttachmentError_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_AttachmentError_descriptor,
-        new java.lang.String[] { "Id", "Type", });
+        new java.lang.String[] { "Id", "Type", "Message", "Error", });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.shared.v1.StructProto.getDescriptor();
   }
