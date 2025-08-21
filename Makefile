@@ -47,6 +47,7 @@ endif
 	@echo "📦 Updating versions to $(VERSION)..."
 	sed -i.bak 's/^version = ".*"/version = "$(VERSION)"/' ./wrappers/proto-crate/Cargo.toml && rm -f wrappers/proto-crate/Cargo.toml.bak
 	sed -i.bak 's/^\(\s*\)"version": ".*"/\1"version": "$(VERSION)"/' ./wrappers/proto-npm/package.json && rm -f wrappers/proto-npm/package.json.bak
+	sed -i.bak 's/^    version=["'"'"'][^"'"'"']*["'"'"'],/    version="$(VERSION)",/' setup.py && rm -f setup.py.bak
 	
 	@echo "✅ Generation complete"
 

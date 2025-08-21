@@ -199,7 +199,7 @@ message ConfigSupport {
 message ConfigLocalization {
   optional string default_server_locale = 1;
   optional string default_client_locale = 2;
-  optional string available_locales = 3;
+  repeated string available_locales = 3;
 }
 
 message ConfigLdap {

@@ -4521,10 +4521,32 @@ class ConfigLocalization final : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
   enum : int {
+    kAvailableLocalesFieldNumber = 3,
     kDefaultServerLocaleFieldNumber = 1,
     kDefaultClientLocaleFieldNumber = 2,
-    kAvailableLocalesFieldNumber = 3,
   };
+  // repeated string available_locales = 3 [json_name = "availableLocales"];
+  int available_locales_size() const;
+  private:
+  int _internal_available_locales_size() const;
+
+  public:
+  void clear_available_locales() ;
+  const ::std::string& available_locales(int index) const;
+  ::std::string* PROTOBUF_NONNULL mutable_available_locales(int index);
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_available_locales(int index, Arg_&& value, Args_... args);
+  ::std::string* PROTOBUF_NONNULL add_available_locales();
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void add_available_locales(Arg_&& value, Args_... args);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& available_locales() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL mutable_available_locales();
+
+  private:
+  const ::google::protobuf::RepeatedPtrField<::std::string>& _internal_available_locales() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL _internal_mutable_available_locales();
+
+  public:
   // optional string default_server_locale = 1 [json_name = "defaultServerLocale"];
   bool has_default_server_locale() const;
   void clear_default_server_locale() ;
@@ -4557,22 +4579,6 @@ class ConfigLocalization final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_default_client_locale();
 
   public:
-  // optional string available_locales = 3 [json_name = "availableLocales"];
-  bool has_available_locales() const;
-  void clear_available_locales() ;
-  const ::std::string& available_locales() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_available_locales(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_available_locales();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_available_locales();
-  void set_allocated_available_locales(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_available_locales() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_available_locales(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_available_locales();
-
-  public:
   // @@protoc_insertion_point(class_scope:common.v1.ConfigLocalization)
  private:
   class _Internal;
@@ -4599,9 +4605,9 @@ class ConfigLocalization final : public ::google::protobuf::Message
         const ConfigLocalization& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::RepeatedPtrField<::std::string> available_locales_;
     ::google::protobuf::internal::ArenaStringPtr default_server_locale_;
     ::google::protobuf::internal::ArenaStringPtr default_client_locale_;
-    ::google::protobuf::internal::ArenaStringPtr available_locales_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -16542,73 +16548,68 @@ inline void ConfigLocalization::set_allocated_default_client_locale(::std::strin
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigLocalization.default_client_locale)
 }
 
-// optional string available_locales = 3 [json_name = "availableLocales"];
-inline bool ConfigLocalization::has_available_locales() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
-  return value;
+// repeated string available_locales = 3 [json_name = "availableLocales"];
+inline int ConfigLocalization::_internal_available_locales_size() const {
+  return _internal_available_locales().size();
+}
+inline int ConfigLocalization::available_locales_size() const {
+  return _internal_available_locales_size();
 }
 inline void ConfigLocalization::clear_available_locales() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.available_locales_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_.available_locales_.Clear();
 }
-inline const ::std::string& ConfigLocalization::available_locales() const
+inline ::std::string* PROTOBUF_NONNULL ConfigLocalization::add_available_locales()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigLocalization.available_locales)
-  return _internal_available_locales();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void ConfigLocalization::set_available_locales(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
-  _impl_.available_locales_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:common.v1.ConfigLocalization.available_locales)
-}
-inline ::std::string* PROTOBUF_NONNULL ConfigLocalization::mutable_available_locales()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_available_locales();
-  // @@protoc_insertion_point(field_mutable:common.v1.ConfigLocalization.available_locales)
+  ::std::string* _s = _internal_mutable_available_locales()->Add();
+  // @@protoc_insertion_point(field_add_mutable:common.v1.ConfigLocalization.available_locales)
   return _s;
 }
-inline const ::std::string& ConfigLocalization::_internal_available_locales() const {
+inline const ::std::string& ConfigLocalization::available_locales(int index) const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigLocalization.available_locales)
+  return _internal_available_locales().Get(index);
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigLocalization::mutable_available_locales(int index)
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigLocalization.available_locales)
+  return _internal_mutable_available_locales()->Mutable(index);
+}
+template <typename Arg_, typename... Args_>
+inline void ConfigLocalization::set_available_locales(int index, Arg_&& value, Args_... args) {
+  ::google::protobuf::internal::AssignToString(*_internal_mutable_available_locales()->Mutable(index), ::std::forward<Arg_>(value),
+                        args... );
+  // @@protoc_insertion_point(field_set:common.v1.ConfigLocalization.available_locales)
+}
+template <typename Arg_, typename... Args_>
+inline void ConfigLocalization::add_available_locales(Arg_&& value, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::google::protobuf::internal::AddToRepeatedPtrField(*_internal_mutable_available_locales(),
+                               ::std::forward<Arg_>(value),
+                               args... );
+  // @@protoc_insertion_point(field_add:common.v1.ConfigLocalization.available_locales)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>& ConfigLocalization::available_locales()
+    const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_list:common.v1.ConfigLocalization.available_locales)
+  return _internal_available_locales();
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL
+ConfigLocalization::mutable_available_locales() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable_list:common.v1.ConfigLocalization.available_locales)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _internal_mutable_available_locales();
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+ConfigLocalization::_internal_available_locales() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.available_locales_.Get();
+  return _impl_.available_locales_;
 }
-inline void ConfigLocalization::_internal_set_available_locales(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
-  _impl_.available_locales_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL ConfigLocalization::_internal_mutable_available_locales() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
-  return _impl_.available_locales_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE ConfigLocalization::release_available_locales() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:common.v1.ConfigLocalization.available_locales)
-  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000004u;
-  auto* released = _impl_.available_locales_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.available_locales_.Set("", GetArena());
-  }
-  return released;
-}
-inline void ConfigLocalization::set_allocated_available_locales(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000004u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000004u;
-  }
-  _impl_.available_locales_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.available_locales_.IsDefault()) {
-    _impl_.available_locales_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigLocalization.available_locales)
+inline ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL
+ConfigLocalization::_internal_mutable_available_locales() {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return &_impl_.available_locales_;
 }
 
 // -------------------------------------------------------------------

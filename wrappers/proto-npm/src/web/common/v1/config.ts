@@ -205,7 +205,7 @@ export interface ConfigSupport {
 export interface ConfigLocalization {
   defaultServerLocale?: string | undefined;
   defaultClientLocale?: string | undefined;
-  availableLocales?: string | undefined;
+  availableLocales: string[];
 }
 
 export interface ConfigLdap {
@@ -3736,7 +3736,7 @@ export const ConfigSupport: MessageFns<ConfigSupport> = {
 };
 
 function createBaseConfigLocalization(): ConfigLocalization {
-  return { defaultServerLocale: undefined, defaultClientLocale: undefined, availableLocales: undefined };
+  return { defaultServerLocale: undefined, defaultClientLocale: undefined, availableLocales: [] };
 }
 
 export const ConfigLocalization: MessageFns<ConfigLocalization> = {
@@ -3747,8 +3747,8 @@ export const ConfigLocalization: MessageFns<ConfigLocalization> = {
     if (message.defaultClientLocale !== undefined) {
       writer.uint32(18).string(message.defaultClientLocale);
     }
-    if (message.availableLocales !== undefined) {
-      writer.uint32(26).string(message.availableLocales);
+    for (const v of message.availableLocales) {
+      writer.uint32(26).string(v!);
     }
     return writer;
   },
@@ -3781,7 +3781,7 @@ export const ConfigLocalization: MessageFns<ConfigLocalization> = {
             break;
           }
 
-          message.availableLocales = reader.string();
+          message.availableLocales.push(reader.string());
           continue;
         }
       }
@@ -3801,7 +3801,9 @@ export const ConfigLocalization: MessageFns<ConfigLocalization> = {
       defaultClientLocale: isSet(object.defaultClientLocale)
         ? globalThis.String(object.defaultClientLocale)
         : undefined,
-      availableLocales: isSet(object.availableLocales) ? globalThis.String(object.availableLocales) : undefined,
+      availableLocales: globalThis.Array.isArray(object?.availableLocales)
+        ? object.availableLocales.map((e: any) => globalThis.String(e))
+        : [],
     };
   },
 
@@ -3813,7 +3815,7 @@ export const ConfigLocalization: MessageFns<ConfigLocalization> = {
     if (message.defaultClientLocale !== undefined) {
       obj.defaultClientLocale = message.defaultClientLocale;
     }
-    if (message.availableLocales !== undefined) {
+    if (message.availableLocales?.length) {
       obj.availableLocales = message.availableLocales;
     }
     return obj;
@@ -3826,7 +3828,7 @@ export const ConfigLocalization: MessageFns<ConfigLocalization> = {
     const message = createBaseConfigLocalization();
     message.defaultServerLocale = object.defaultServerLocale ?? undefined;
     message.defaultClientLocale = object.defaultClientLocale ?? undefined;
-    message.availableLocales = object.availableLocales ?? undefined;
+    message.availableLocales = object.availableLocales?.map((e) => e) || [];
     return message;
   },
 };

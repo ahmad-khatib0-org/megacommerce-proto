@@ -24321,21 +24321,29 @@ java.lang.String defaultValue) {
         getDefaultClientLocaleBytes();
 
     /**
-     * <code>optional string available_locales = 3 [json_name = "availableLocales"];</code>
-     * @return Whether the availableLocales field is set.
+     * <code>repeated string available_locales = 3 [json_name = "availableLocales"];</code>
+     * @return A list containing the availableLocales.
      */
-    boolean hasAvailableLocales();
+    java.util.List<java.lang.String>
+        getAvailableLocalesList();
     /**
-     * <code>optional string available_locales = 3 [json_name = "availableLocales"];</code>
-     * @return The availableLocales.
+     * <code>repeated string available_locales = 3 [json_name = "availableLocales"];</code>
+     * @return The count of availableLocales.
      */
-    java.lang.String getAvailableLocales();
+    int getAvailableLocalesCount();
     /**
-     * <code>optional string available_locales = 3 [json_name = "availableLocales"];</code>
-     * @return The bytes for availableLocales.
+     * <code>repeated string available_locales = 3 [json_name = "availableLocales"];</code>
+     * @param index The index of the element to return.
+     * @return The availableLocales at the given index.
+     */
+    java.lang.String getAvailableLocales(int index);
+    /**
+     * <code>repeated string available_locales = 3 [json_name = "availableLocales"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the availableLocales at the given index.
      */
     com.google.protobuf.ByteString
-        getAvailableLocalesBytes();
+        getAvailableLocalesBytes(int index);
   }
   /**
    * Protobuf type {@code common.v1.ConfigLocalization}
@@ -24361,7 +24369,8 @@ java.lang.String defaultValue) {
     private ConfigLocalization() {
       defaultServerLocale_ = "";
       defaultClientLocale_ = "";
-      availableLocales_ = "";
+      availableLocales_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -24474,49 +24483,39 @@ java.lang.String defaultValue) {
 
     public static final int AVAILABLE_LOCALES_FIELD_NUMBER = 3;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object availableLocales_ = "";
+    private com.google.protobuf.LazyStringArrayList availableLocales_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
-     * <code>optional string available_locales = 3 [json_name = "availableLocales"];</code>
-     * @return Whether the availableLocales field is set.
+     * <code>repeated string available_locales = 3 [json_name = "availableLocales"];</code>
+     * @return A list containing the availableLocales.
      */
-    @java.lang.Override
-    public boolean hasAvailableLocales() {
-      return ((bitField0_ & 0x00000004) != 0);
+    public com.google.protobuf.ProtocolStringList
+        getAvailableLocalesList() {
+      return availableLocales_;
     }
     /**
-     * <code>optional string available_locales = 3 [json_name = "availableLocales"];</code>
-     * @return The availableLocales.
+     * <code>repeated string available_locales = 3 [json_name = "availableLocales"];</code>
+     * @return The count of availableLocales.
      */
-    @java.lang.Override
-    public java.lang.String getAvailableLocales() {
-      java.lang.Object ref = availableLocales_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        availableLocales_ = s;
-        return s;
-      }
+    public int getAvailableLocalesCount() {
+      return availableLocales_.size();
     }
     /**
-     * <code>optional string available_locales = 3 [json_name = "availableLocales"];</code>
-     * @return The bytes for availableLocales.
+     * <code>repeated string available_locales = 3 [json_name = "availableLocales"];</code>
+     * @param index The index of the element to return.
+     * @return The availableLocales at the given index.
      */
-    @java.lang.Override
+    public java.lang.String getAvailableLocales(int index) {
+      return availableLocales_.get(index);
+    }
+    /**
+     * <code>repeated string available_locales = 3 [json_name = "availableLocales"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the availableLocales at the given index.
+     */
     public com.google.protobuf.ByteString
-        getAvailableLocalesBytes() {
-      java.lang.Object ref = availableLocales_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        availableLocales_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getAvailableLocalesBytes(int index) {
+      return availableLocales_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -24539,8 +24538,8 @@ java.lang.String defaultValue) {
       if (((bitField0_ & 0x00000002) != 0)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 2, defaultClientLocale_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 3, availableLocales_);
+      for (int i = 0; i < availableLocales_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, availableLocales_.getRaw(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -24557,8 +24556,13 @@ java.lang.String defaultValue) {
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(2, defaultClientLocale_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, availableLocales_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < availableLocales_.size(); i++) {
+          dataSize += computeStringSizeNoTag(availableLocales_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getAvailableLocalesList().size();
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -24585,11 +24589,8 @@ java.lang.String defaultValue) {
         if (!getDefaultClientLocale()
             .equals(other.getDefaultClientLocale())) return false;
       }
-      if (hasAvailableLocales() != other.hasAvailableLocales()) return false;
-      if (hasAvailableLocales()) {
-        if (!getAvailableLocales()
-            .equals(other.getAvailableLocales())) return false;
-      }
+      if (!getAvailableLocalesList()
+          .equals(other.getAvailableLocalesList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -24609,9 +24610,9 @@ java.lang.String defaultValue) {
         hash = (37 * hash) + DEFAULT_CLIENT_LOCALE_FIELD_NUMBER;
         hash = (53 * hash) + getDefaultClientLocale().hashCode();
       }
-      if (hasAvailableLocales()) {
+      if (getAvailableLocalesCount() > 0) {
         hash = (37 * hash) + AVAILABLE_LOCALES_FIELD_NUMBER;
-        hash = (53 * hash) + getAvailableLocales().hashCode();
+        hash = (53 * hash) + getAvailableLocalesList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -24746,7 +24747,8 @@ java.lang.String defaultValue) {
         bitField0_ = 0;
         defaultServerLocale_ = "";
         defaultClientLocale_ = "";
-        availableLocales_ = "";
+        availableLocales_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -24790,8 +24792,8 @@ java.lang.String defaultValue) {
           to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
+          availableLocales_.makeImmutable();
           result.availableLocales_ = availableLocales_;
-          to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -24818,9 +24820,14 @@ java.lang.String defaultValue) {
           bitField0_ |= 0x00000002;
           onChanged();
         }
-        if (other.hasAvailableLocales()) {
-          availableLocales_ = other.availableLocales_;
-          bitField0_ |= 0x00000004;
+        if (!other.availableLocales_.isEmpty()) {
+          if (availableLocales_.isEmpty()) {
+            availableLocales_ = other.availableLocales_;
+            bitField0_ |= 0x00000004;
+          } else {
+            ensureAvailableLocalesIsMutable();
+            availableLocales_.addAll(other.availableLocales_);
+          }
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -24860,8 +24867,9 @@ java.lang.String defaultValue) {
                 break;
               } // case 18
               case 26: {
-                availableLocales_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAvailableLocalesIsMutable();
+                availableLocales_.add(s);
                 break;
               } // case 26
               default: {
@@ -25039,80 +25047,112 @@ java.lang.String defaultValue) {
         return this;
       }
 
-      private java.lang.Object availableLocales_ = "";
-      /**
-       * <code>optional string available_locales = 3 [json_name = "availableLocales"];</code>
-       * @return Whether the availableLocales field is set.
-       */
-      public boolean hasAvailableLocales() {
-        return ((bitField0_ & 0x00000004) != 0);
-      }
-      /**
-       * <code>optional string available_locales = 3 [json_name = "availableLocales"];</code>
-       * @return The availableLocales.
-       */
-      public java.lang.String getAvailableLocales() {
-        java.lang.Object ref = availableLocales_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          availableLocales_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+      private com.google.protobuf.LazyStringArrayList availableLocales_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensureAvailableLocalesIsMutable() {
+        if (!availableLocales_.isModifiable()) {
+          availableLocales_ = new com.google.protobuf.LazyStringArrayList(availableLocales_);
         }
+        bitField0_ |= 0x00000004;
       }
       /**
-       * <code>optional string available_locales = 3 [json_name = "availableLocales"];</code>
-       * @return The bytes for availableLocales.
+       * <code>repeated string available_locales = 3 [json_name = "availableLocales"];</code>
+       * @return A list containing the availableLocales.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getAvailableLocalesList() {
+        availableLocales_.makeImmutable();
+        return availableLocales_;
+      }
+      /**
+       * <code>repeated string available_locales = 3 [json_name = "availableLocales"];</code>
+       * @return The count of availableLocales.
+       */
+      public int getAvailableLocalesCount() {
+        return availableLocales_.size();
+      }
+      /**
+       * <code>repeated string available_locales = 3 [json_name = "availableLocales"];</code>
+       * @param index The index of the element to return.
+       * @return The availableLocales at the given index.
+       */
+      public java.lang.String getAvailableLocales(int index) {
+        return availableLocales_.get(index);
+      }
+      /**
+       * <code>repeated string available_locales = 3 [json_name = "availableLocales"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the availableLocales at the given index.
        */
       public com.google.protobuf.ByteString
-          getAvailableLocalesBytes() {
-        java.lang.Object ref = availableLocales_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          availableLocales_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+          getAvailableLocalesBytes(int index) {
+        return availableLocales_.getByteString(index);
       }
       /**
-       * <code>optional string available_locales = 3 [json_name = "availableLocales"];</code>
+       * <code>repeated string available_locales = 3 [json_name = "availableLocales"];</code>
+       * @param index The index to set the value at.
        * @param value The availableLocales to set.
        * @return This builder for chaining.
        */
       public Builder setAvailableLocales(
-          java.lang.String value) {
+          int index, java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        availableLocales_ = value;
+        ensureAvailableLocalesIsMutable();
+        availableLocales_.set(index, value);
         bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string available_locales = 3 [json_name = "availableLocales"];</code>
+       * <code>repeated string available_locales = 3 [json_name = "availableLocales"];</code>
+       * @param value The availableLocales to add.
        * @return This builder for chaining.
        */
-      public Builder clearAvailableLocales() {
-        availableLocales_ = getDefaultInstance().getAvailableLocales();
-        bitField0_ = (bitField0_ & ~0x00000004);
+      public Builder addAvailableLocales(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureAvailableLocalesIsMutable();
+        availableLocales_.add(value);
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string available_locales = 3 [json_name = "availableLocales"];</code>
-       * @param value The bytes for availableLocales to set.
+       * <code>repeated string available_locales = 3 [json_name = "availableLocales"];</code>
+       * @param values The availableLocales to add.
        * @return This builder for chaining.
        */
-      public Builder setAvailableLocalesBytes(
+      public Builder addAllAvailableLocales(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureAvailableLocalesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, availableLocales_);
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string available_locales = 3 [json_name = "availableLocales"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAvailableLocales() {
+        availableLocales_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string available_locales = 3 [json_name = "availableLocales"];</code>
+       * @param value The bytes of the availableLocales to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAvailableLocalesBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        availableLocales_ = value;
+        ensureAvailableLocalesIsMutable();
+        availableLocales_.add(value);
         bitField0_ |= 0x00000004;
         onChanged();
         return this;
@@ -52009,247 +52049,247 @@ java.lang.String defaultValue) {
       "\026\n\024_privacy_policy_linkB\r\n\013_about_linkB\014" +
       "\n\n_help_linkB\030\n\026_report_a_problem_linkB\027" +
       "\n\025_forgot_password_linkB\020\n\016_support_emai" +
-      "l\"\202\002\n\022ConfigLocalization\0227\n\025default_serv" +
+      "l\"\347\001\n\022ConfigLocalization\0227\n\025default_serv" +
       "er_locale\030\001 \001(\tH\000R\023defaultServerLocale\210\001" +
       "\001\0227\n\025default_client_locale\030\002 \001(\tH\001R\023defa" +
-      "ultClientLocale\210\001\001\0220\n\021available_locales\030" +
-      "\003 \001(\tH\002R\020availableLocales\210\001\001B\030\n\026_default" +
-      "_server_localeB\030\n\026_default_client_locale" +
-      "B\024\n\022_available_locales\"\325\020\n\nConfigLdap\022\033\n" +
-      "\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022$\n\013enable_syn" +
-      "c\030\002 \001(\010H\001R\nenableSync\210\001\001\022$\n\013ldap_server\030" +
-      "\003 \001(\tH\002R\nldapServer\210\001\001\022 \n\tldap_port\030\004 \001(" +
-      "\005H\003R\010ldapPort\210\001\001\0224\n\023connection_security\030" +
-      "\005 \001(\tH\004R\022connectionSecurity\210\001\001\022\034\n\007base_d" +
-      "n\030\006 \001(\tH\005R\006baseDn\210\001\001\022(\n\rbind_username\030\007 " +
-      "\001(\tH\006R\014bindUsername\210\001\001\022(\n\rbind_password\030" +
-      "\010 \001(\tH\007R\014bindPassword\210\001\001\0229\n\026maximum_logi" +
-      "n_attempts\030\t \001(\005H\010R\024maximumLoginAttempts" +
-      "\210\001\001\022$\n\013user_filter\030\n \001(\tH\tR\nuserFilter\210\001" +
-      "\001\022&\n\014group_filter\030\013 \001(\tH\nR\013groupFilter\210\001" +
-      "\001\0223\n\023enable_admin_filter\030\014 \001(\010H\013R\021enable" +
-      "AdminFilter\210\001\001\022&\n\014admin_filter\030\r \001(\tH\014R\013" +
-      "adminFilter\210\001\001\022D\n\034group_display_name_att" +
-      "ribute\030\016 \001(\tH\rR\031groupDisplayNameAttribut" +
-      "e\210\001\001\0221\n\022group_id_attribute\030\017 \001(\tH\016R\020grou" +
-      "pIdAttribute\210\001\001\0225\n\024first_name_attribute\030" +
-      "\020 \001(\tH\017R\022firstNameAttribute\210\001\001\0223\n\023last_n" +
-      "ame_attribute\030\021 \001(\tH\020R\021lastNameAttribute" +
-      "\210\001\001\022,\n\017email_attribute\030\022 \001(\tH\021R\016emailAtt" +
-      "ribute\210\001\001\0222\n\022username_attribute\030\023 \001(\tH\022R" +
-      "\021usernameAttribute\210\001\001\0222\n\022nickname_attrib" +
-      "ute\030\024 \001(\tH\023R\021nicknameAttribute\210\001\001\022&\n\014id_" +
-      "attribute\030\025 \001(\tH\024R\013idAttribute\210\001\001\0222\n\022pos" +
-      "ition_attribute\030\026 \001(\tH\025R\021positionAttribu" +
-      "te\210\001\001\0221\n\022login_id_attribute\030\027 \001(\tH\026R\020log" +
-      "inIdAttribute\210\001\001\0220\n\021picture_attribute\030\030 " +
-      "\001(\tH\027R\020pictureAttribute\210\001\001\0227\n\025sync_inter" +
-      "val_minutes\030\031 \001(\005H\030R\023syncIntervalMinutes" +
-      "\210\001\001\022(\n\rquery_timeout\030\032 \001(\005H\031R\014queryTimeo" +
-      "ut\210\001\001\022\'\n\rmax_page_size\030\033 \001(\005H\032R\013maxPageS" +
-      "ize\210\001\001\022-\n\020login_field_name\030\034 \001(\tH\033R\016logi" +
-      "nFieldName\210\001\001\0221\n\022login_button_color\030\035 \001(" +
-      "\tH\034R\020loginButtonColor\210\001\001\022>\n\031login_button" +
-      "_border_color\030\036 \001(\tH\035R\026loginButtonBorder" +
-      "Color\210\001\001\022:\n\027login_button_text_color\030\037 \001(" +
-      "\tH\036R\024loginButtonTextColor\210\001\001B\t\n\007_enableB" +
-      "\016\n\014_enable_syncB\016\n\014_ldap_serverB\014\n\n_ldap" +
-      "_portB\026\n\024_connection_securityB\n\n\010_base_d" +
-      "nB\020\n\016_bind_usernameB\020\n\016_bind_passwordB\031\n" +
-      "\027_maximum_login_attemptsB\016\n\014_user_filter" +
-      "B\017\n\r_group_filterB\026\n\024_enable_admin_filte" +
-      "rB\017\n\r_admin_filterB\037\n\035_group_display_nam" +
-      "e_attributeB\025\n\023_group_id_attributeB\027\n\025_f" +
-      "irst_name_attributeB\026\n\024_last_name_attrib" +
-      "uteB\022\n\020_email_attributeB\025\n\023_username_att" +
-      "ributeB\025\n\023_nickname_attributeB\017\n\r_id_att" +
-      "ributeB\025\n\023_position_attributeB\025\n\023_login_" +
-      "id_attributeB\024\n\022_picture_attributeB\030\n\026_s" +
-      "ync_interval_minutesB\020\n\016_query_timeoutB\020" +
-      "\n\016_max_page_sizeB\023\n\021_login_field_nameB\025\n" +
-      "\023_login_button_colorB\034\n\032_login_button_bo" +
-      "rder_colorB\032\n\030_login_button_text_color\"\255" +
-      "\023\n\nConfigSaml\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210" +
-      "\001\001\0226\n\025enable_sync_with_ldap\030\002 \001(\010H\001R\022ena" +
-      "bleSyncWithLdap\210\001\001\022N\n\"enable_sync_with_l" +
-      "dap_include_auth\030\003 \001(\010H\002R\035enableSyncWith" +
-      "LdapIncludeAuth\210\001\001\022:\n\027ignore_guests_ldap" +
-      "_sync\030\004 \001(\010H\003R\024ignoreGuestsLdapSync\210\001\001\022\033" +
-      "\n\006verify\030\005 \001(\010H\004R\006verify\210\001\001\022\035\n\007encrypt\030\006" +
-      " \001(\010H\005R\007encrypt\210\001\001\022&\n\014sign_request\030\007 \001(\010" +
-      "H\006R\013signRequest\210\001\001\022\034\n\007idp_url\030\010 \001(\tH\007R\006i" +
-      "dpUrl\210\001\001\0221\n\022idp_descriptor_url\030\t \001(\tH\010R\020" +
-      "idpDescriptorUrl\210\001\001\022-\n\020idp_metadata_url\030" +
-      "\n \001(\tH\tR\016idpMetadataUrl\210\001\001\022C\n\033service_pr" +
-      "ovider_identifier\030\013 \001(\tH\nR\031serviceProvid" +
-      "erIdentifier\210\001\001\022H\n\036assertion_consumer_se" +
-      "rvice_url\030\014 \001(\tH\013R\033assertionConsumerServ" +
-      "iceUrl\210\001\001\0224\n\023signature_algorithm\030\r \001(\tH\014" +
-      "R\022signatureAlgorithm\210\001\001\0224\n\023canonical_alg" +
-      "orithm\030\016 \001(\tH\rR\022canonicalAlgorithm\210\001\001\022:\n" +
-      "\027scoping_idp_provider_id\030\017 \001(\tH\016R\024scopin" +
-      "gIdpProviderId\210\001\001\022-\n\020scoping_idp_name\030\020 " +
-      "\001(\tH\017R\016scopingIdpName\210\001\001\0225\n\024idp_certific" +
-      "ate_file\030\021 \001(\tH\020R\022idpCertificateFile\210\001\001\022" +
-      ";\n\027public_certificate_file\030\022 \001(\tH\021R\025publ" +
-      "icCertificateFile\210\001\001\022-\n\020private_key_file" +
-      "\030\023 \001(\tH\022R\016privateKeyFile\210\001\001\022&\n\014id_attrib" +
-      "ute\030\024 \001(\tH\023R\013idAttribute\210\001\001\0229\n\026enable_ad" +
-      "min_attribute\030\025 \001(\010H\024R\024enableAdminAttrib" +
-      "ute\210\001\001\022,\n\017admin_attribute\030\026 \001(\tH\025R\016admin" +
-      "Attribute\210\001\001\0225\n\024first_name_attribute\030\027 \001" +
-      "(\tH\026R\022firstNameAttribute\210\001\001\0223\n\023last_name" +
-      "_attribute\030\030 \001(\tH\027R\021lastNameAttribute\210\001\001" +
-      "\022,\n\017email_attribute\030\031 \001(\tH\030R\016emailAttrib" +
-      "ute\210\001\001\0222\n\022username_attribute\030\032 \001(\tH\031R\021us" +
-      "ernameAttribute\210\001\001\0222\n\022nickname_attribute" +
-      "\030\033 \001(\tH\032R\021nicknameAttribute\210\001\001\022.\n\020locale" +
-      "_attribute\030\034 \001(\tH\033R\017localeAttribute\210\001\001\0222" +
-      "\n\022position_attribute\030\035 \001(\tH\034R\021positionAt" +
-      "tribute\210\001\001\022/\n\021login_button_text\030\036 \001(\tH\035R" +
-      "\017loginButtonText\210\001\001\0221\n\022login_button_colo",
-      "r\030\037 \001(\tH\036R\020loginButtonColor\210\001\001\022>\n\031login_" +
-      "button_border_color\030  \001(\tH\037R\026loginButton" +
-      "BorderColor\210\001\001\022:\n\027login_button_text_colo" +
-      "r\030! \001(\tH R\024loginButtonTextColor\210\001\001B\t\n\007_e" +
-      "nableB\030\n\026_enable_sync_with_ldapB%\n#_enab" +
-      "le_sync_with_ldap_include_authB\032\n\030_ignor" +
-      "e_guests_ldap_syncB\t\n\007_verifyB\n\n\010_encryp" +
-      "tB\017\n\r_sign_requestB\n\n\010_idp_urlB\025\n\023_idp_d" +
-      "escriptor_urlB\023\n\021_idp_metadata_urlB\036\n\034_s" +
-      "ervice_provider_identifierB!\n\037_assertion" +
-      "_consumer_service_urlB\026\n\024_signature_algo" +
-      "rithmB\026\n\024_canonical_algorithmB\032\n\030_scopin" +
-      "g_idp_provider_idB\023\n\021_scoping_idp_nameB\027" +
-      "\n\025_idp_certificate_fileB\032\n\030_public_certi" +
-      "ficate_fileB\023\n\021_private_key_fileB\017\n\r_id_" +
-      "attributeB\031\n\027_enable_admin_attributeB\022\n\020" +
-      "_admin_attributeB\027\n\025_first_name_attribut" +
-      "eB\026\n\024_last_name_attributeB\022\n\020_email_attr" +
-      "ibuteB\025\n\023_username_attributeB\025\n\023_nicknam" +
-      "e_attributeB\023\n\021_locale_attributeB\025\n\023_pos" +
-      "ition_attributeB\024\n\022_login_button_textB\025\n" +
-      "\023_login_button_colorB\034\n\032_login_button_bo" +
-      "rder_colorB\032\n\030_login_button_text_color\"\301" +
-      "\005\n\017ConfigNativeApp\0223\n\026app_custom_url_sch" +
-      "emes\030\001 \003(\tR\023appCustomUrlSchemes\022/\n\021app_d" +
-      "ownload_link\030\002 \001(\tH\000R\017appDownloadLink\210\001\001" +
-      "\022>\n\031android_app_download_link\030\003 \001(\tH\001R\026a" +
-      "ndroidAppDownloadLink\210\001\001\0226\n\025ios_app_down" +
-      "load_link\030\004 \001(\tH\002R\022iosAppDownloadLink\210\001\001" +
-      "\022;\n\027mobile_external_browser\030\005 \001(\010H\003R\025mob" +
-      "ileExternalBrowser\210\001\001\022=\n\030mobile_enable_b" +
-      "iometrics\030\006 \001(\010H\004R\026mobileEnableBiometric" +
-      "s\210\001\001\022F\n\035mobile_prevent_screen_capture\030\007 " +
-      "\001(\010H\005R\032mobilePreventScreenCapture\210\001\001\022C\n\033" +
-      "mobile_jailbreak_protection\030\010 \001(\010H\006R\031mob" +
-      "ileJailbreakProtection\210\001\001B\024\n\022_app_downlo" +
-      "ad_linkB\034\n\032_android_app_download_linkB\030\n" +
-      "\026_ios_app_download_linkB\032\n\030_mobile_exter" +
-      "nal_browserB\033\n\031_mobile_enable_biometrics" +
-      "B \n\036_mobile_prevent_screen_captureB\036\n\034_m" +
-      "obile_jailbreak_protection\"\253\005\n\021ConfigMei" +
-      "lisearch\022#\n\nserver_url\030\001 \001(\tH\000R\nserver_u" +
-      "rl\210\001\001\022\"\n\nmaster_key\030\002 \001(\tH\001R\tmasterKey\210\001" +
-      "\001\022,\n\017enable_indexing\030\003 \001(\010H\002R\016enableInde" +
-      "xing\210\001\001\022.\n\020enable_searching\030\004 \001(\010H\003R\017ena" +
-      "bleSearching\210\001\001\0224\n\023enable_autocomplete\030\005" +
-      " \001(\010H\004R\022enableAutocomplete\210\001\001\022\"\n\nbatch_s" +
-      "ize\030\006 \001(\005H\005R\tbatchSize\210\001\001\022;\n\027request_tim" +
-      "eout_seconds\030\007 \001(\005H\006R\025requestTimeoutSeco" +
-      "nds\210\001\001\022&\n\014index_prefix\030\010 \001(\tH\007R\013indexPre" +
-      "fix\210\001\001\022-\n\020search_cutoff_ms\030\t \001(\005H\010R\016sear" +
-      "chCutoffMs\210\001\001\0227\n\025enable_typo_tolerance\030\n" +
-      " \001(\010H\tR\023enableTypoTolerance\210\001\001B\r\n\013_serve" +
-      "r_urlB\r\n\013_master_keyB\022\n\020_enable_indexing" +
-      "B\023\n\021_enable_searchingB\026\n\024_enable_autocom" +
-      "pleteB\r\n\013_batch_sizeB\032\n\030_request_timeout" +
-      "_secondsB\017\n\r_index_prefixB\023\n\021_search_cut" +
-      "off_msB\030\n\026_enable_typo_tolerance\"\272\003\n\013Con" +
-      "figBleve\022 \n\tindex_dir\030\001 \001(\tH\000R\010indexDir\210" +
-      "\001\001\022,\n\017enable_indexing\030\002 \001(\010H\001R\016enableInd" +
-      "exing\210\001\001\022.\n\020enable_searching\030\003 \001(\010H\002R\017en" +
-      "ableSearching\210\001\001\0224\n\023enable_autocomplete\030" +
-      "\004 \001(\010H\003R\022enableAutocomplete\210\001\001\022M\n!bulk_i" +
-      "ndexing_time_window_seconds\030\005 \001(\005H\004R\035bul" +
-      "kIndexingTimeWindowSeconds\210\001\001\022\"\n\nbatch_s" +
-      "ize\030\006 \001(\005H\005R\tbatchSize\210\001\001B\014\n\n_index_dirB" +
-      "\022\n\020_enable_indexingB\023\n\021_enable_searching" +
-      "B\026\n\024_enable_autocompleteB$\n\"_bulk_indexi" +
-      "ng_time_window_secondsB\r\n\013_batch_size\"\354\006" +
-      "\n\023ConfigDataRetention\022;\n\027enable_message_" +
-      "deletion\030\001 \001(\010H\000R\025enableMessageDeletion\210" +
-      "\001\001\0225\n\024enable_file_deletion\030\002 \001(\010H\001R\022enab" +
-      "leFileDeletion\210\001\001\0229\n\026enable_boards_delet" +
-      "ion\030\003 \001(\010H\002R\024enableBoardsDeletion\210\001\001\022;\n\027" +
-      "message_retention_hours\030\004 \001(\005H\003R\025message" +
-      "RetentionHours\210\001\001\0225\n\024file_retention_hour" +
-      "s\030\005 \001(\005H\004R\022fileRetentionHours\210\001\001\0227\n\025boar" +
-      "ds_retention_days\030\006 \001(\005H\005R\023boardsRetenti" +
-      "onDays\210\001\001\022:\n\027deletion_job_start_time\030\007 \001" +
-      "(\tH\006R\024deletionJobStartTime\210\001\001\022\"\n\nbatch_s" +
-      "ize\030\010 \001(\005H\007R\tbatchSize\210\001\001\022N\n!time_betwee" +
-      "n_batches_milliseconds\030\t \001(\005H\010R\036timeBetw" +
-      "eenBatchesMilliseconds\210\001\001\022<\n\030retention_i" +
-      "ds_batch_size\030\n \001(\005H\tR\025retentionIdsBatch" +
-      "Size\210\001\001B\032\n\030_enable_message_deletionB\027\n\025_" +
-      "enable_file_deletionB\031\n\027_enable_boards_d" +
-      "eletionB\032\n\030_message_retention_hoursB\027\n\025_" +
-      "file_retention_hoursB\030\n\026_boards_retentio" +
-      "n_daysB\032\n\030_deletion_job_start_timeB\r\n\013_b" +
-      "atch_sizeB$\n\"_time_between_batches_milli" +
-      "secondsB\033\n\031_retention_ids_batch_size\"\264\002\n" +
-      "\020ConfigImageProxy\022\033\n\006enable\030\001 \001(\010H\000R\006ena" +
-      "ble\210\001\001\022-\n\020image_proxy_type\030\002 \001(\tH\001R\016imag" +
-      "eProxyType\210\001\001\0228\n\026remote_image_proxy_url\030" +
-      "\003 \001(\tH\002R\023remoteImageProxyUrl\210\001\001\022@\n\032remot" +
-      "e_image_proxy_options\030\004 \001(\tH\003R\027remoteIma" +
-      "geProxyOptions\210\001\001B\t\n\007_enableB\023\n\021_image_p" +
-      "roxy_typeB\031\n\027_remote_image_proxy_urlB\035\n\033" +
-      "_remote_image_proxy_options\"\315\010\n\006Config\022)" +
-      "\n\004main\030\001 \001(\0132\025.common.v1.ConfigMainR\004mai" +
-      "n\0225\n\010services\030\002 \001(\0132\031.common.v1.ConfigSe" +
-      "rvicesR\010services\0225\n\010security\030\003 \001(\0132\031.com" +
-      "mon.v1.ConfigSecurityR\010security\022,\n\005cache" +
-      "\030\004 \001(\0132\026.common.v1.CacheConfigR\005cache\0222\n" +
-      "\007metrics\030\005 \001(\0132\030.common.v1.ConfigMetrics" +
-      "R\007metrics\022&\n\003sso\030\006 \001(\0132\024.common.v1.Confi" +
-      "gSSOR\003sso\022&\n\003sql\030\007 \001(\0132\024.common.v1.Confi" +
-      "gSqlR\003sql\0225\n\010password\030\010 \001(\0132\031.common.v1." +
-      "ConfigPasswordR\010password\022)\n\004file\030\t \001(\0132\025" +
-      ".common.v1.ConfigFileR\004file\022,\n\005email\030\n \001" +
-      "(\0132\026.common.v1.ConfigEmailR\005email\0229\n\nrat" +
-      "e_limit\030\013 \001(\0132\032.common.v1.ConfigRateLimi" +
-      "tR\trateLimit\0222\n\007privacy\030\014 \001(\0132\030.common.v" +
-      "1.ConfigPrivacyR\007privacy\0222\n\007support\030\r \001(" +
-      "\0132\030.common.v1.ConfigSupportR\007support\022A\n\014" +
-      "localization\030\016 \001(\0132\035.common.v1.ConfigLoc" +
-      "alizationR\014localization\022)\n\004ldap\030\017 \001(\0132\025." +
-      "common.v1.ConfigLdapR\004ldap\022)\n\004saml\030\020 \001(\013" +
-      "2\025.common.v1.ConfigSamlR\004saml\0229\n\nnative_" +
-      "app\030\021 \001(\0132\032.common.v1.ConfigNativeAppR\tn" +
-      "ativeApp\022>\n\013meilisearch\030\022 \001(\0132\034.common.v" +
-      "1.ConfigMeilisearchR\013meilisearch\022,\n\005blev" +
-      "e\030\023 \001(\0132\026.common.v1.ConfigBleveR\005bleve\022E" +
-      "\n\016data_retention\030\024 \001(\0132\036.common.v1.Confi" +
-      "gDataRetentionR\rdataRetention\022<\n\013image_p" +
-      "roxy\030\025 \001(\0132\033.common.v1.ConfigImageProxyR" +
-      "\nimageProxy\"\022\n\020ConfigGetRequest\"u\n\021Confi" +
-      "gGetResponse\022\'\n\004data\030\001 \001(\0132\021.common.v1.C" +
-      "onfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1" +
-      ".AppErrorH\000R\005errorB\n\n\010response\"@\n\023Config" +
-      "UpdateRequest\022)\n\006config\030\001 \001(\0132\021.common.v" +
-      "1.ConfigR\006config\"x\n\024ConfigUpdateResponse" +
-      "\022\'\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R\004dat" +
-      "a\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R" +
-      "\005errorB\n\n\010response\"z\n\026ConfigListenerResp" +
-      "onse\022\'\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R" +
-      "\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErro" +
-      "rH\000R\005errorB\n\n\010response\"4\n\025ConfigListener" +
-      "Request\022\033\n\tclient_id\030\001 \001(\tR\010clientIdBq\n\032" +
-      "org.megacommerce.common.v1B\013ConfigProtoZ" +
-      "Cgithub.com/ahmad-khatib0-org/megacommer" +
-      "ce-proto/gen/go/common/v1;v1\370\001\001b\006proto3"
+      "ultClientLocale\210\001\001\022+\n\021available_locales\030" +
+      "\003 \003(\tR\020availableLocalesB\030\n\026_default_serv" +
+      "er_localeB\030\n\026_default_client_locale\"\325\020\n\n" +
+      "ConfigLdap\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022" +
+      "$\n\013enable_sync\030\002 \001(\010H\001R\nenableSync\210\001\001\022$\n" +
+      "\013ldap_server\030\003 \001(\tH\002R\nldapServer\210\001\001\022 \n\tl" +
+      "dap_port\030\004 \001(\005H\003R\010ldapPort\210\001\001\0224\n\023connect" +
+      "ion_security\030\005 \001(\tH\004R\022connectionSecurity" +
+      "\210\001\001\022\034\n\007base_dn\030\006 \001(\tH\005R\006baseDn\210\001\001\022(\n\rbin" +
+      "d_username\030\007 \001(\tH\006R\014bindUsername\210\001\001\022(\n\rb" +
+      "ind_password\030\010 \001(\tH\007R\014bindPassword\210\001\001\0229\n" +
+      "\026maximum_login_attempts\030\t \001(\005H\010R\024maximum" +
+      "LoginAttempts\210\001\001\022$\n\013user_filter\030\n \001(\tH\tR" +
+      "\nuserFilter\210\001\001\022&\n\014group_filter\030\013 \001(\tH\nR\013" +
+      "groupFilter\210\001\001\0223\n\023enable_admin_filter\030\014 " +
+      "\001(\010H\013R\021enableAdminFilter\210\001\001\022&\n\014admin_fil" +
+      "ter\030\r \001(\tH\014R\013adminFilter\210\001\001\022D\n\034group_dis" +
+      "play_name_attribute\030\016 \001(\tH\rR\031groupDispla" +
+      "yNameAttribute\210\001\001\0221\n\022group_id_attribute\030" +
+      "\017 \001(\tH\016R\020groupIdAttribute\210\001\001\0225\n\024first_na" +
+      "me_attribute\030\020 \001(\tH\017R\022firstNameAttribute" +
+      "\210\001\001\0223\n\023last_name_attribute\030\021 \001(\tH\020R\021last" +
+      "NameAttribute\210\001\001\022,\n\017email_attribute\030\022 \001(" +
+      "\tH\021R\016emailAttribute\210\001\001\0222\n\022username_attri" +
+      "bute\030\023 \001(\tH\022R\021usernameAttribute\210\001\001\0222\n\022ni" +
+      "ckname_attribute\030\024 \001(\tH\023R\021nicknameAttrib" +
+      "ute\210\001\001\022&\n\014id_attribute\030\025 \001(\tH\024R\013idAttrib" +
+      "ute\210\001\001\0222\n\022position_attribute\030\026 \001(\tH\025R\021po" +
+      "sitionAttribute\210\001\001\0221\n\022login_id_attribute" +
+      "\030\027 \001(\tH\026R\020loginIdAttribute\210\001\001\0220\n\021picture" +
+      "_attribute\030\030 \001(\tH\027R\020pictureAttribute\210\001\001\022" +
+      "7\n\025sync_interval_minutes\030\031 \001(\005H\030R\023syncIn" +
+      "tervalMinutes\210\001\001\022(\n\rquery_timeout\030\032 \001(\005H" +
+      "\031R\014queryTimeout\210\001\001\022\'\n\rmax_page_size\030\033 \001(" +
+      "\005H\032R\013maxPageSize\210\001\001\022-\n\020login_field_name\030" +
+      "\034 \001(\tH\033R\016loginFieldName\210\001\001\0221\n\022login_butt" +
+      "on_color\030\035 \001(\tH\034R\020loginButtonColor\210\001\001\022>\n" +
+      "\031login_button_border_color\030\036 \001(\tH\035R\026logi" +
+      "nButtonBorderColor\210\001\001\022:\n\027login_button_te" +
+      "xt_color\030\037 \001(\tH\036R\024loginButtonTextColor\210\001" +
+      "\001B\t\n\007_enableB\016\n\014_enable_syncB\016\n\014_ldap_se" +
+      "rverB\014\n\n_ldap_portB\026\n\024_connection_securi" +
+      "tyB\n\n\010_base_dnB\020\n\016_bind_usernameB\020\n\016_bin" +
+      "d_passwordB\031\n\027_maximum_login_attemptsB\016\n" +
+      "\014_user_filterB\017\n\r_group_filterB\026\n\024_enabl" +
+      "e_admin_filterB\017\n\r_admin_filterB\037\n\035_grou" +
+      "p_display_name_attributeB\025\n\023_group_id_at" +
+      "tributeB\027\n\025_first_name_attributeB\026\n\024_las" +
+      "t_name_attributeB\022\n\020_email_attributeB\025\n\023" +
+      "_username_attributeB\025\n\023_nickname_attribu" +
+      "teB\017\n\r_id_attributeB\025\n\023_position_attribu" +
+      "teB\025\n\023_login_id_attributeB\024\n\022_picture_at" +
+      "tributeB\030\n\026_sync_interval_minutesB\020\n\016_qu" +
+      "ery_timeoutB\020\n\016_max_page_sizeB\023\n\021_login_" +
+      "field_nameB\025\n\023_login_button_colorB\034\n\032_lo" +
+      "gin_button_border_colorB\032\n\030_login_button" +
+      "_text_color\"\255\023\n\nConfigSaml\022\033\n\006enable\030\001 \001" +
+      "(\010H\000R\006enable\210\001\001\0226\n\025enable_sync_with_ldap" +
+      "\030\002 \001(\010H\001R\022enableSyncWithLdap\210\001\001\022N\n\"enabl" +
+      "e_sync_with_ldap_include_auth\030\003 \001(\010H\002R\035e" +
+      "nableSyncWithLdapIncludeAuth\210\001\001\022:\n\027ignor" +
+      "e_guests_ldap_sync\030\004 \001(\010H\003R\024ignoreGuests" +
+      "LdapSync\210\001\001\022\033\n\006verify\030\005 \001(\010H\004R\006verify\210\001\001" +
+      "\022\035\n\007encrypt\030\006 \001(\010H\005R\007encrypt\210\001\001\022&\n\014sign_" +
+      "request\030\007 \001(\010H\006R\013signRequest\210\001\001\022\034\n\007idp_u" +
+      "rl\030\010 \001(\tH\007R\006idpUrl\210\001\001\0221\n\022idp_descriptor_" +
+      "url\030\t \001(\tH\010R\020idpDescriptorUrl\210\001\001\022-\n\020idp_" +
+      "metadata_url\030\n \001(\tH\tR\016idpMetadataUrl\210\001\001\022" +
+      "C\n\033service_provider_identifier\030\013 \001(\tH\nR\031" +
+      "serviceProviderIdentifier\210\001\001\022H\n\036assertio" +
+      "n_consumer_service_url\030\014 \001(\tH\013R\033assertio" +
+      "nConsumerServiceUrl\210\001\001\0224\n\023signature_algo" +
+      "rithm\030\r \001(\tH\014R\022signatureAlgorithm\210\001\001\0224\n\023" +
+      "canonical_algorithm\030\016 \001(\tH\rR\022canonicalAl" +
+      "gorithm\210\001\001\022:\n\027scoping_idp_provider_id\030\017 " +
+      "\001(\tH\016R\024scopingIdpProviderId\210\001\001\022-\n\020scopin" +
+      "g_idp_name\030\020 \001(\tH\017R\016scopingIdpName\210\001\001\0225\n" +
+      "\024idp_certificate_file\030\021 \001(\tH\020R\022idpCertif" +
+      "icateFile\210\001\001\022;\n\027public_certificate_file\030" +
+      "\022 \001(\tH\021R\025publicCertificateFile\210\001\001\022-\n\020pri" +
+      "vate_key_file\030\023 \001(\tH\022R\016privateKeyFile\210\001\001" +
+      "\022&\n\014id_attribute\030\024 \001(\tH\023R\013idAttribute\210\001\001" +
+      "\0229\n\026enable_admin_attribute\030\025 \001(\010H\024R\024enab" +
+      "leAdminAttribute\210\001\001\022,\n\017admin_attribute\030\026" +
+      " \001(\tH\025R\016adminAttribute\210\001\001\0225\n\024first_name_" +
+      "attribute\030\027 \001(\tH\026R\022firstNameAttribute\210\001\001" +
+      "\0223\n\023last_name_attribute\030\030 \001(\tH\027R\021lastNam" +
+      "eAttribute\210\001\001\022,\n\017email_attribute\030\031 \001(\tH\030" +
+      "R\016emailAttribute\210\001\001\0222\n\022username_attribut" +
+      "e\030\032 \001(\tH\031R\021usernameAttribute\210\001\001\0222\n\022nickn" +
+      "ame_attribute\030\033 \001(\tH\032R\021nicknameAttribute" +
+      "\210\001\001\022.\n\020locale_attribute\030\034 \001(\tH\033R\017localeA" +
+      "ttribute\210\001\001\0222\n\022position_attribute\030\035 \001(\tH" +
+      "\034R\021positionAttribute\210\001\001\022/\n\021login_button_" +
+      "text\030\036 \001(\tH\035R\017loginButtonText\210\001\001\0221\n\022logi" +
+      "n_button_color\030\037 \001(\tH\036R\020loginButtonColor",
+      "\210\001\001\022>\n\031login_button_border_color\030  \001(\tH\037" +
+      "R\026loginButtonBorderColor\210\001\001\022:\n\027login_but" +
+      "ton_text_color\030! \001(\tH R\024loginButtonTextC" +
+      "olor\210\001\001B\t\n\007_enableB\030\n\026_enable_sync_with_" +
+      "ldapB%\n#_enable_sync_with_ldap_include_a" +
+      "uthB\032\n\030_ignore_guests_ldap_syncB\t\n\007_veri" +
+      "fyB\n\n\010_encryptB\017\n\r_sign_requestB\n\n\010_idp_" +
+      "urlB\025\n\023_idp_descriptor_urlB\023\n\021_idp_metad" +
+      "ata_urlB\036\n\034_service_provider_identifierB" +
+      "!\n\037_assertion_consumer_service_urlB\026\n\024_s" +
+      "ignature_algorithmB\026\n\024_canonical_algorit" +
+      "hmB\032\n\030_scoping_idp_provider_idB\023\n\021_scopi" +
+      "ng_idp_nameB\027\n\025_idp_certificate_fileB\032\n\030" +
+      "_public_certificate_fileB\023\n\021_private_key" +
+      "_fileB\017\n\r_id_attributeB\031\n\027_enable_admin_" +
+      "attributeB\022\n\020_admin_attributeB\027\n\025_first_" +
+      "name_attributeB\026\n\024_last_name_attributeB\022" +
+      "\n\020_email_attributeB\025\n\023_username_attribut" +
+      "eB\025\n\023_nickname_attributeB\023\n\021_locale_attr" +
+      "ibuteB\025\n\023_position_attributeB\024\n\022_login_b" +
+      "utton_textB\025\n\023_login_button_colorB\034\n\032_lo" +
+      "gin_button_border_colorB\032\n\030_login_button" +
+      "_text_color\"\301\005\n\017ConfigNativeApp\0223\n\026app_c" +
+      "ustom_url_schemes\030\001 \003(\tR\023appCustomUrlSch" +
+      "emes\022/\n\021app_download_link\030\002 \001(\tH\000R\017appDo" +
+      "wnloadLink\210\001\001\022>\n\031android_app_download_li" +
+      "nk\030\003 \001(\tH\001R\026androidAppDownloadLink\210\001\001\0226\n" +
+      "\025ios_app_download_link\030\004 \001(\tH\002R\022iosAppDo" +
+      "wnloadLink\210\001\001\022;\n\027mobile_external_browser" +
+      "\030\005 \001(\010H\003R\025mobileExternalBrowser\210\001\001\022=\n\030mo" +
+      "bile_enable_biometrics\030\006 \001(\010H\004R\026mobileEn" +
+      "ableBiometrics\210\001\001\022F\n\035mobile_prevent_scre" +
+      "en_capture\030\007 \001(\010H\005R\032mobilePreventScreenC" +
+      "apture\210\001\001\022C\n\033mobile_jailbreak_protection" +
+      "\030\010 \001(\010H\006R\031mobileJailbreakProtection\210\001\001B\024" +
+      "\n\022_app_download_linkB\034\n\032_android_app_dow" +
+      "nload_linkB\030\n\026_ios_app_download_linkB\032\n\030" +
+      "_mobile_external_browserB\033\n\031_mobile_enab" +
+      "le_biometricsB \n\036_mobile_prevent_screen_" +
+      "captureB\036\n\034_mobile_jailbreak_protection\"" +
+      "\253\005\n\021ConfigMeilisearch\022#\n\nserver_url\030\001 \001(" +
+      "\tH\000R\nserver_url\210\001\001\022\"\n\nmaster_key\030\002 \001(\tH\001" +
+      "R\tmasterKey\210\001\001\022,\n\017enable_indexing\030\003 \001(\010H" +
+      "\002R\016enableIndexing\210\001\001\022.\n\020enable_searching" +
+      "\030\004 \001(\010H\003R\017enableSearching\210\001\001\0224\n\023enable_a" +
+      "utocomplete\030\005 \001(\010H\004R\022enableAutocomplete\210" +
+      "\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001\022;" +
+      "\n\027request_timeout_seconds\030\007 \001(\005H\006R\025reque" +
+      "stTimeoutSeconds\210\001\001\022&\n\014index_prefix\030\010 \001(" +
+      "\tH\007R\013indexPrefix\210\001\001\022-\n\020search_cutoff_ms\030" +
+      "\t \001(\005H\010R\016searchCutoffMs\210\001\001\0227\n\025enable_typ" +
+      "o_tolerance\030\n \001(\010H\tR\023enableTypoTolerance" +
+      "\210\001\001B\r\n\013_server_urlB\r\n\013_master_keyB\022\n\020_en" +
+      "able_indexingB\023\n\021_enable_searchingB\026\n\024_e" +
+      "nable_autocompleteB\r\n\013_batch_sizeB\032\n\030_re" +
+      "quest_timeout_secondsB\017\n\r_index_prefixB\023" +
+      "\n\021_search_cutoff_msB\030\n\026_enable_typo_tole" +
+      "rance\"\272\003\n\013ConfigBleve\022 \n\tindex_dir\030\001 \001(\t" +
+      "H\000R\010indexDir\210\001\001\022,\n\017enable_indexing\030\002 \001(\010" +
+      "H\001R\016enableIndexing\210\001\001\022.\n\020enable_searchin" +
+      "g\030\003 \001(\010H\002R\017enableSearching\210\001\001\0224\n\023enable_" +
+      "autocomplete\030\004 \001(\010H\003R\022enableAutocomplete" +
+      "\210\001\001\022M\n!bulk_indexing_time_window_seconds" +
+      "\030\005 \001(\005H\004R\035bulkIndexingTimeWindowSeconds\210" +
+      "\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001B\014" +
+      "\n\n_index_dirB\022\n\020_enable_indexingB\023\n\021_ena" +
+      "ble_searchingB\026\n\024_enable_autocompleteB$\n" +
+      "\"_bulk_indexing_time_window_secondsB\r\n\013_" +
+      "batch_size\"\354\006\n\023ConfigDataRetention\022;\n\027en" +
+      "able_message_deletion\030\001 \001(\010H\000R\025enableMes" +
+      "sageDeletion\210\001\001\0225\n\024enable_file_deletion\030" +
+      "\002 \001(\010H\001R\022enableFileDeletion\210\001\001\0229\n\026enable" +
+      "_boards_deletion\030\003 \001(\010H\002R\024enableBoardsDe" +
+      "letion\210\001\001\022;\n\027message_retention_hours\030\004 \001" +
+      "(\005H\003R\025messageRetentionHours\210\001\001\0225\n\024file_r" +
+      "etention_hours\030\005 \001(\005H\004R\022fileRetentionHou" +
+      "rs\210\001\001\0227\n\025boards_retention_days\030\006 \001(\005H\005R\023" +
+      "boardsRetentionDays\210\001\001\022:\n\027deletion_job_s" +
+      "tart_time\030\007 \001(\tH\006R\024deletionJobStartTime\210" +
+      "\001\001\022\"\n\nbatch_size\030\010 \001(\005H\007R\tbatchSize\210\001\001\022N" +
+      "\n!time_between_batches_milliseconds\030\t \001(" +
+      "\005H\010R\036timeBetweenBatchesMilliseconds\210\001\001\022<" +
+      "\n\030retention_ids_batch_size\030\n \001(\005H\tR\025rete" +
+      "ntionIdsBatchSize\210\001\001B\032\n\030_enable_message_" +
+      "deletionB\027\n\025_enable_file_deletionB\031\n\027_en" +
+      "able_boards_deletionB\032\n\030_message_retenti" +
+      "on_hoursB\027\n\025_file_retention_hoursB\030\n\026_bo" +
+      "ards_retention_daysB\032\n\030_deletion_job_sta" +
+      "rt_timeB\r\n\013_batch_sizeB$\n\"_time_between_" +
+      "batches_millisecondsB\033\n\031_retention_ids_b" +
+      "atch_size\"\264\002\n\020ConfigImageProxy\022\033\n\006enable" +
+      "\030\001 \001(\010H\000R\006enable\210\001\001\022-\n\020image_proxy_type\030" +
+      "\002 \001(\tH\001R\016imageProxyType\210\001\001\0228\n\026remote_ima" +
+      "ge_proxy_url\030\003 \001(\tH\002R\023remoteImageProxyUr" +
+      "l\210\001\001\022@\n\032remote_image_proxy_options\030\004 \001(\t" +
+      "H\003R\027remoteImageProxyOptions\210\001\001B\t\n\007_enabl" +
+      "eB\023\n\021_image_proxy_typeB\031\n\027_remote_image_" +
+      "proxy_urlB\035\n\033_remote_image_proxy_options" +
+      "\"\315\010\n\006Config\022)\n\004main\030\001 \001(\0132\025.common.v1.Co" +
+      "nfigMainR\004main\0225\n\010services\030\002 \001(\0132\031.commo" +
+      "n.v1.ConfigServicesR\010services\0225\n\010securit" +
+      "y\030\003 \001(\0132\031.common.v1.ConfigSecurityR\010secu" +
+      "rity\022,\n\005cache\030\004 \001(\0132\026.common.v1.CacheCon" +
+      "figR\005cache\0222\n\007metrics\030\005 \001(\0132\030.common.v1." +
+      "ConfigMetricsR\007metrics\022&\n\003sso\030\006 \001(\0132\024.co" +
+      "mmon.v1.ConfigSSOR\003sso\022&\n\003sql\030\007 \001(\0132\024.co" +
+      "mmon.v1.ConfigSqlR\003sql\0225\n\010password\030\010 \001(\013" +
+      "2\031.common.v1.ConfigPasswordR\010password\022)\n" +
+      "\004file\030\t \001(\0132\025.common.v1.ConfigFileR\004file" +
+      "\022,\n\005email\030\n \001(\0132\026.common.v1.ConfigEmailR" +
+      "\005email\0229\n\nrate_limit\030\013 \001(\0132\032.common.v1.C" +
+      "onfigRateLimitR\trateLimit\0222\n\007privacy\030\014 \001" +
+      "(\0132\030.common.v1.ConfigPrivacyR\007privacy\0222\n" +
+      "\007support\030\r \001(\0132\030.common.v1.ConfigSupport" +
+      "R\007support\022A\n\014localization\030\016 \001(\0132\035.common" +
+      ".v1.ConfigLocalizationR\014localization\022)\n\004" +
+      "ldap\030\017 \001(\0132\025.common.v1.ConfigLdapR\004ldap\022" +
+      ")\n\004saml\030\020 \001(\0132\025.common.v1.ConfigSamlR\004sa" +
+      "ml\0229\n\nnative_app\030\021 \001(\0132\032.common.v1.Confi" +
+      "gNativeAppR\tnativeApp\022>\n\013meilisearch\030\022 \001" +
+      "(\0132\034.common.v1.ConfigMeilisearchR\013meilis" +
+      "earch\022,\n\005bleve\030\023 \001(\0132\026.common.v1.ConfigB" +
+      "leveR\005bleve\022E\n\016data_retention\030\024 \001(\0132\036.co" +
+      "mmon.v1.ConfigDataRetentionR\rdataRetenti" +
+      "on\022<\n\013image_proxy\030\025 \001(\0132\033.common.v1.Conf" +
+      "igImageProxyR\nimageProxy\"\022\n\020ConfigGetReq" +
+      "uest\"u\n\021ConfigGetResponse\022\'\n\004data\030\001 \001(\0132" +
+      "\021.common.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(" +
+      "\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n\010respo" +
+      "nse\"@\n\023ConfigUpdateRequest\022)\n\006config\030\001 \001" +
+      "(\0132\021.common.v1.ConfigR\006config\"x\n\024ConfigU" +
+      "pdateResponse\022\'\n\004data\030\001 \001(\0132\021.common.v1." +
+      "ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v" +
+      "1.AppErrorH\000R\005errorB\n\n\010response\"z\n\026Confi" +
+      "gListenerResponse\022\'\n\004data\030\001 \001(\0132\021.common" +
+      ".v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shar" +
+      "ed.v1.AppErrorH\000R\005errorB\n\n\010response\"4\n\025C" +
+      "onfigListenerRequest\022\033\n\tclient_id\030\001 \001(\tR" +
+      "\010clientIdBq\n\032org.megacommerce.common.v1B" +
+      "\013ConfigProtoZCgithub.com/ahmad-khatib0-o" +
+      "rg/megacommerce-proto/gen/go/common/v1;v" +
+      "1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -1678,7 +1678,7 @@ type ConfigLocalization struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
 	DefaultServerLocale *string                `protobuf:"bytes,1,opt,name=default_server_locale,json=defaultServerLocale,proto3,oneof" json:"default_server_locale,omitempty"`
 	DefaultClientLocale *string                `protobuf:"bytes,2,opt,name=default_client_locale,json=defaultClientLocale,proto3,oneof" json:"default_client_locale,omitempty"`
-	AvailableLocales    *string                `protobuf:"bytes,3,opt,name=available_locales,json=availableLocales,proto3,oneof" json:"available_locales,omitempty"`
+	AvailableLocales    []string               `protobuf:"bytes,3,rep,name=available_locales,json=availableLocales,proto3" json:"available_locales,omitempty"`
 	unknownFields       protoimpl.UnknownFields
 	sizeCache           protoimpl.SizeCache
 }
@@ -1727,11 +1727,11 @@ func (x *ConfigLocalization) GetDefaultClientLocale() string {
 	return ""
 }
 
-func (x *ConfigLocalization) GetAvailableLocales() string {
-	if x != nil && x.AvailableLocales != nil {
-		return *x.AvailableLocales
+func (x *ConfigLocalization) GetAvailableLocales() []string {
+	if x != nil {
+		return x.AvailableLocales
 	}
-	return ""
+	return nil
 }
 
 type ConfigLdap struct {
@@ -3728,14 +3728,13 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"_help_linkB\x18\n" +
 	"\x16_report_a_problem_linkB\x17\n" +
 	"\x15_forgot_password_linkB\x10\n" +
-	"\x0e_support_email\"\x82\x02\n" +
+	"\x0e_support_email\"\xe7\x01\n" +
 	"\x12ConfigLocalization\x127\n" +
 	"\x15default_server_locale\x18\x01 \x01(\tH\x00R\x13defaultServerLocale\x88\x01\x01\x127\n" +
-	"\x15default_client_locale\x18\x02 \x01(\tH\x01R\x13defaultClientLocale\x88\x01\x01\x120\n" +
-	"\x11available_locales\x18\x03 \x01(\tH\x02R\x10availableLocales\x88\x01\x01B\x18\n" +
+	"\x15default_client_locale\x18\x02 \x01(\tH\x01R\x13defaultClientLocale\x88\x01\x01\x12+\n" +
+	"\x11available_locales\x18\x03 \x03(\tR\x10availableLocalesB\x18\n" +
 	"\x16_default_server_localeB\x18\n" +
-	"\x16_default_client_localeB\x14\n" +
-	"\x12_available_locales\"\xd5\x10\n" +
+	"\x16_default_client_locale\"\xd5\x10\n" +
 	"\n" +
 	"ConfigLdap\x12\x1b\n" +
 	"\x06enable\x18\x01 \x01(\bH\x00R\x06enable\x88\x01\x01\x12$\n" +
