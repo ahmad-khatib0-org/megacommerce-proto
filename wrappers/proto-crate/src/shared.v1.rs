@@ -199,6 +199,12 @@ pub struct Attachment {
     /// arbitrary JSON-like object
     #[prost(message, optional, tag = "9")]
     pub metadata: ::core::option::Option<Struct>,
+    /// usually set by the backend
+    #[prost(bytes = "vec", tag = "10")]
+    pub data: ::prost::alloc::vec::Vec<u8>,
+    /// usually set by the backend
+    #[prost(string, tag = "11")]
+    pub mime: ::prost::alloc::string::String,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]

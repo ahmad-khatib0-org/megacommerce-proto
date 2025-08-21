@@ -305,6 +305,36 @@ public final class AttachmentProto {
      * <code>.shared.v1.Struct metadata = 9 [json_name = "metadata"];</code>
      */
     org.megacommerce.shared.v1.StructProto.StructOrBuilder getMetadataOrBuilder();
+
+    /**
+     * <pre>
+     * usually set by the backend
+     * </pre>
+     *
+     * <code>bytes data = 10 [json_name = "data"];</code>
+     * @return The data.
+     */
+    com.google.protobuf.ByteString getData();
+
+    /**
+     * <pre>
+     * usually set by the backend
+     * </pre>
+     *
+     * <code>string mime = 11 [json_name = "mime"];</code>
+     * @return The mime.
+     */
+    java.lang.String getMime();
+    /**
+     * <pre>
+     * usually set by the backend
+     * </pre>
+     *
+     * <code>string mime = 11 [json_name = "mime"];</code>
+     * @return The bytes for mime.
+     */
+    com.google.protobuf.ByteString
+        getMimeBytes();
   }
   /**
    * Protobuf type {@code shared.v1.Attachment}
@@ -333,6 +363,8 @@ public final class AttachmentProto {
       fileType_ = "";
       fileExtension_ = "";
       base64_ = "";
+      data_ = com.google.protobuf.ByteString.EMPTY;
+      mime_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -630,6 +662,68 @@ public final class AttachmentProto {
       return metadata_ == null ? org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : metadata_;
     }
 
+    public static final int DATA_FIELD_NUMBER = 10;
+    private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <pre>
+     * usually set by the backend
+     * </pre>
+     *
+     * <code>bytes data = 10 [json_name = "data"];</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getData() {
+      return data_;
+    }
+
+    public static final int MIME_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object mime_ = "";
+    /**
+     * <pre>
+     * usually set by the backend
+     * </pre>
+     *
+     * <code>string mime = 11 [json_name = "mime"];</code>
+     * @return The mime.
+     */
+    @java.lang.Override
+    public java.lang.String getMime() {
+      java.lang.Object ref = mime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mime_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * usually set by the backend
+     * </pre>
+     *
+     * <code>string mime = 11 [json_name = "mime"];</code>
+     * @return The bytes for mime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMimeBytes() {
+      java.lang.Object ref = mime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -671,6 +765,12 @@ public final class AttachmentProto {
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(9, getMetadata());
       }
+      if (!data_.isEmpty()) {
+        output.writeBytes(10, data_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mime_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 11, mime_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -711,6 +811,13 @@ public final class AttachmentProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(9, getMetadata());
       }
+      if (!data_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(10, data_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mime_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(11, mime_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -750,6 +857,10 @@ public final class AttachmentProto {
         if (!getMetadata()
             .equals(other.getMetadata())) return false;
       }
+      if (!getData()
+          .equals(other.getData())) return false;
+      if (!getMime()
+          .equals(other.getMime())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -784,6 +895,10 @@ public final class AttachmentProto {
         hash = (37 * hash) + METADATA_FIELD_NUMBER;
         hash = (53 * hash) + getMetadata().hashCode();
       }
+      hash = (37 * hash) + DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getData().hashCode();
+      hash = (37 * hash) + MIME_FIELD_NUMBER;
+      hash = (53 * hash) + getMime().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -939,6 +1054,8 @@ public final class AttachmentProto {
           metadataBuilder_.dispose();
           metadataBuilder_ = null;
         }
+        data_ = com.google.protobuf.ByteString.EMPTY;
+        mime_ = "";
         return this;
       }
 
@@ -1006,6 +1123,12 @@ public final class AttachmentProto {
               : metadataBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.data_ = data_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.mime_ = mime_;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -1057,6 +1180,14 @@ public final class AttachmentProto {
         }
         if (other.hasMetadata()) {
           mergeMetadata(other.getMetadata());
+        }
+        if (!other.getData().isEmpty()) {
+          setData(other.getData());
+        }
+        if (!other.getMime().isEmpty()) {
+          mime_ = other.mime_;
+          bitField0_ |= 0x00000400;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1133,6 +1264,16 @@ public final class AttachmentProto {
                 bitField0_ |= 0x00000100;
                 break;
               } // case 74
+              case 82: {
+                data_ = input.readBytes();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
+              case 90: {
+                mime_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1850,6 +1991,142 @@ public final class AttachmentProto {
           metadata_ = null;
         }
         return metadataBuilder_;
+      }
+
+      private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * usually set by the backend
+       * </pre>
+       *
+       * <code>bytes data = 10 [json_name = "data"];</code>
+       * @return The data.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getData() {
+        return data_;
+      }
+      /**
+       * <pre>
+       * usually set by the backend
+       * </pre>
+       *
+       * <code>bytes data = 10 [json_name = "data"];</code>
+       * @param value The data to set.
+       * @return This builder for chaining.
+       */
+      public Builder setData(com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        data_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * usually set by the backend
+       * </pre>
+       *
+       * <code>bytes data = 10 [json_name = "data"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearData() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        data_ = getDefaultInstance().getData();
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object mime_ = "";
+      /**
+       * <pre>
+       * usually set by the backend
+       * </pre>
+       *
+       * <code>string mime = 11 [json_name = "mime"];</code>
+       * @return The mime.
+       */
+      public java.lang.String getMime() {
+        java.lang.Object ref = mime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * usually set by the backend
+       * </pre>
+       *
+       * <code>string mime = 11 [json_name = "mime"];</code>
+       * @return The bytes for mime.
+       */
+      public com.google.protobuf.ByteString
+          getMimeBytes() {
+        java.lang.Object ref = mime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * usually set by the backend
+       * </pre>
+       *
+       * <code>string mime = 11 [json_name = "mime"];</code>
+       * @param value The mime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMime(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        mime_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * usually set by the backend
+       * </pre>
+       *
+       * <code>string mime = 11 [json_name = "mime"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMime() {
+        mime_ = getDefaultInstance().getMime();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * usually set by the backend
+       * </pre>
+       *
+       * <code>string mime = 11 [json_name = "mime"];</code>
+       * @param value The bytes for mime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        mime_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
       }
 
       // @@protoc_insertion_point(builder_scope:shared.v1.Attachment)
@@ -3677,7 +3954,7 @@ public final class AttachmentProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\032shared/v1/attachment.proto\022\tshared.v1\032" +
-      "\026shared/v1/struct.proto\"\260\002\n\nAttachment\022\016" +
+      "\026shared/v1/struct.proto\"\330\002\n\nAttachment\022\016" +
       "\n\002id\030\001 \001(\tR\002id\022\032\n\010filename\030\002 \001(\tR\010filena" +
       "me\022\033\n\tfile_type\030\003 \001(\tR\010fileType\022\033\n\tfile_" +
       "size\030\004 \001(\003R\010fileSize\022%\n\016file_extension\030\005" +
@@ -3685,7 +3962,8 @@ public final class AttachmentProto {
       "e64\022)\n\020exif_orientation\030\007 \001(\005R\017exifOrien" +
       "tation\022#\n\004crop\030\010 \001(\0132\017.shared.v1.CropR\004c" +
       "rop\022-\n\010metadata\030\t \001(\0132\021.shared.v1.Struct" +
-      "R\010metadata\"s\n\004Crop\022\014\n\001x\030\001 \001(\002R\001x\022\014\n\001y\030\002 " +
+      "R\010metadata\022\022\n\004data\030\n \001(\014R\004data\022\022\n\004mime\030\013" +
+      " \001(\tR\004mime\"s\n\004Crop\022\014\n\001x\030\001 \001(\002R\001x\022\014\n\001y\030\002 " +
       "\001(\002R\001y\022\024\n\005width\030\003 \001(\002R\005width\022\026\n\006height\030\004" +
       " \001(\002R\006height\022!\n\014aspect_ratio\030\005 \001(\002R\013aspe" +
       "ctRatio\"\205\001\n\017AttachmentError\022\016\n\002id\030\001 \001(\tR" +
@@ -3710,7 +3988,7 @@ public final class AttachmentProto {
     internal_static_shared_v1_Attachment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_Attachment_descriptor,
-        new java.lang.String[] { "Id", "Filename", "FileType", "FileSize", "FileExtension", "Base64", "ExifOrientation", "Crop", "Metadata", });
+        new java.lang.String[] { "Id", "Filename", "FileType", "FileSize", "FileExtension", "Base64", "ExifOrientation", "Crop", "Metadata", "Data", "Mime", });
     internal_static_shared_v1_Crop_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_shared_v1_Crop_fieldAccessorTable = new

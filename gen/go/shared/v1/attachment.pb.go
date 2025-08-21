@@ -93,6 +93,8 @@ type Attachment struct {
 	ExifOrientation int32                  `protobuf:"varint,7,opt,name=exif_orientation,json=exifOrientation,proto3" json:"exif_orientation,omitempty"`
 	Crop            *Crop                  `protobuf:"bytes,8,opt,name=crop,proto3" json:"crop,omitempty"`
 	Metadata        *Struct                `protobuf:"bytes,9,opt,name=metadata,proto3" json:"metadata,omitempty"` // arbitrary JSON-like object
+	Data            []byte                 `protobuf:"bytes,10,opt,name=data,proto3" json:"data,omitempty"`        // usually set by the backend
+	Mime            string                 `protobuf:"bytes,11,opt,name=mime,proto3" json:"mime,omitempty"`        // usually set by the backend
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -188,6 +190,20 @@ func (x *Attachment) GetMetadata() *Struct {
 		return x.Metadata
 	}
 	return nil
+}
+
+func (x *Attachment) GetData() []byte {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
+func (x *Attachment) GetMime() string {
+	if x != nil {
+		return x.Mime
+	}
+	return ""
 }
 
 type Crop struct {
@@ -338,7 +354,7 @@ var File_shared_v1_attachment_proto protoreflect.FileDescriptor
 
 const file_shared_v1_attachment_proto_rawDesc = "" +
 	"\n" +
-	"\x1ashared/v1/attachment.proto\x12\tshared.v1\x1a\x16shared/v1/struct.proto\"\xb0\x02\n" +
+	"\x1ashared/v1/attachment.proto\x12\tshared.v1\x1a\x16shared/v1/struct.proto\"\xd8\x02\n" +
 	"\n" +
 	"Attachment\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1a\n" +
@@ -349,7 +365,10 @@ const file_shared_v1_attachment_proto_rawDesc = "" +
 	"\x06base64\x18\x06 \x01(\tR\x06base64\x12)\n" +
 	"\x10exif_orientation\x18\a \x01(\x05R\x0fexifOrientation\x12#\n" +
 	"\x04crop\x18\b \x01(\v2\x0f.shared.v1.CropR\x04crop\x12-\n" +
-	"\bmetadata\x18\t \x01(\v2\x11.shared.v1.StructR\bmetadata\"s\n" +
+	"\bmetadata\x18\t \x01(\v2\x11.shared.v1.StructR\bmetadata\x12\x12\n" +
+	"\x04data\x18\n" +
+	" \x01(\fR\x04data\x12\x12\n" +
+	"\x04mime\x18\v \x01(\tR\x04mime\"s\n" +
 	"\x04Crop\x12\f\n" +
 	"\x01x\x18\x01 \x01(\x02R\x01x\x12\f\n" +
 	"\x01y\x18\x02 \x01(\x02R\x01y\x12\x14\n" +

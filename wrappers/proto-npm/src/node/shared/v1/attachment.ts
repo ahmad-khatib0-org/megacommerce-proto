@@ -85,7 +85,13 @@ export interface Attachment {
     | Crop
     | undefined;
   /** arbitrary JSON-like object */
-  metadata?: Struct | undefined;
+  metadata?:
+    | Struct
+    | undefined;
+  /** usually set by the backend */
+  data: Uint8Array;
+  /** usually set by the backend */
+  mime: string;
 }
 
 export interface Crop {
@@ -117,6 +123,8 @@ function createBaseAttachment(): Attachment {
     exifOrientation: 0,
     crop: undefined,
     metadata: undefined,
+    data: new Uint8Array(0),
+    mime: "",
   };
 }
 
@@ -148,6 +156,12 @@ export const Attachment: MessageFns<Attachment> = {
     }
     if (message.metadata !== undefined) {
       Struct.encode(message.metadata, writer.uint32(74).fork()).join();
+    }
+    if (message.data.length !== 0) {
+      writer.uint32(82).bytes(message.data);
+    }
+    if (message.mime !== "") {
+      writer.uint32(90).string(message.mime);
     }
     return writer;
   },
@@ -231,6 +245,22 @@ export const Attachment: MessageFns<Attachment> = {
           message.metadata = Struct.decode(reader, reader.uint32());
           continue;
         }
+        case 10: {
+          if (tag !== 82) {
+            break;
+          }
+
+          message.data = reader.bytes();
+          continue;
+        }
+        case 11: {
+          if (tag !== 90) {
+            break;
+          }
+
+          message.mime = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -251,6 +281,8 @@ export const Attachment: MessageFns<Attachment> = {
       exifOrientation: isSet(object.exifOrientation) ? globalThis.Number(object.exifOrientation) : 0,
       crop: isSet(object.crop) ? Crop.fromJSON(object.crop) : undefined,
       metadata: isSet(object.metadata) ? Struct.fromJSON(object.metadata) : undefined,
+      data: isSet(object.data) ? bytesFromBase64(object.data) : new Uint8Array(0),
+      mime: isSet(object.mime) ? globalThis.String(object.mime) : "",
     };
   },
 
@@ -283,6 +315,12 @@ export const Attachment: MessageFns<Attachment> = {
     if (message.metadata !== undefined) {
       obj.metadata = Struct.toJSON(message.metadata);
     }
+    if (message.data.length !== 0) {
+      obj.data = base64FromBytes(message.data);
+    }
+    if (message.mime !== "") {
+      obj.mime = message.mime;
+    }
     return obj;
   },
 
@@ -302,6 +340,8 @@ export const Attachment: MessageFns<Attachment> = {
     message.metadata = (object.metadata !== undefined && object.metadata !== null)
       ? Struct.fromPartial(object.metadata)
       : undefined;
+    message.data = object.data ?? new Uint8Array(0);
+    message.mime = object.mime ?? "";
     return message;
   },
 };
@@ -537,6 +577,31 @@ export const AttachmentError: MessageFns<AttachmentError> = {
     return message;
   },
 };
+
+function bytesFromBase64(b64: string): Uint8Array {
+  if ((globalThis as any).Buffer) {
+    return Uint8Array.from(globalThis.Buffer.from(b64, "base64"));
+  } else {
+    const bin = globalThis.atob(b64);
+    const arr = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; ++i) {
+      arr[i] = bin.charCodeAt(i);
+    }
+    return arr;
+  }
+}
+
+function base64FromBytes(arr: Uint8Array): string {
+  if ((globalThis as any).Buffer) {
+    return globalThis.Buffer.from(arr).toString("base64");
+  } else {
+    const bin: string[] = [];
+    arr.forEach((byte) => {
+      bin.push(globalThis.String.fromCharCode(byte));
+    });
+    return globalThis.btoa(bin.join(""));
+  }
+}
 
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 

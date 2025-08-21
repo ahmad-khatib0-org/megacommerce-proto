@@ -19,6 +19,8 @@ message Attachment {
   int32 exif_orientation = 7;
   Crop crop = 8;
   shared.v1.Struct metadata = 9; // arbitrary JSON-like object
+  bytes data = 10; // usually set by the backend
+  string mime = 11; // usually set by the backend
 }
 
 message Crop {
