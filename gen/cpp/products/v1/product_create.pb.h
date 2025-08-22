@@ -739,23 +739,23 @@ class ProductCreateResponse final : public ::google::protobuf::Message
     kDataFieldNumber = 1,
     kErrorFieldNumber = 2,
   };
-  // .shared.v1.Empty data = 1 [json_name = "data"];
+  // .shared.v1.SuccessResponseData data = 1 [json_name = "data"];
   bool has_data() const;
   private:
   bool _internal_has_data() const;
 
   public:
   void clear_data() ;
-  const ::shared::v1::Empty& data() const;
-  [[nodiscard]] ::shared::v1::Empty* PROTOBUF_NULLABLE release_data();
-  ::shared::v1::Empty* PROTOBUF_NONNULL mutable_data();
-  void set_allocated_data(::shared::v1::Empty* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_data(::shared::v1::Empty* PROTOBUF_NULLABLE value);
-  ::shared::v1::Empty* PROTOBUF_NULLABLE unsafe_arena_release_data();
+  const ::shared::v1::SuccessResponseData& data() const;
+  [[nodiscard]] ::shared::v1::SuccessResponseData* PROTOBUF_NULLABLE release_data();
+  ::shared::v1::SuccessResponseData* PROTOBUF_NONNULL mutable_data();
+  void set_allocated_data(::shared::v1::SuccessResponseData* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_data(::shared::v1::SuccessResponseData* PROTOBUF_NULLABLE value);
+  ::shared::v1::SuccessResponseData* PROTOBUF_NULLABLE unsafe_arena_release_data();
 
   private:
-  const ::shared::v1::Empty& _internal_data() const;
-  ::shared::v1::Empty* PROTOBUF_NONNULL _internal_mutable_data();
+  const ::shared::v1::SuccessResponseData& _internal_data() const;
+  ::shared::v1::SuccessResponseData* PROTOBUF_NONNULL _internal_mutable_data();
 
   public:
   // .shared.v1.AppError error = 2 [json_name = "error"];
@@ -810,7 +810,7 @@ class ProductCreateResponse final : public ::google::protobuf::Message
     union ResponseUnion {
       constexpr ResponseUnion() : _constinit_{} {}
       ::google::protobuf::internal::ConstantInitialized _constinit_;
-      ::shared::v1::Empty* PROTOBUF_NULLABLE data_;
+      ::shared::v1::SuccessResponseData* PROTOBUF_NULLABLE data_;
       ::shared::v1::AppError* PROTOBUF_NULLABLE error_;
     } response_;
     ::google::protobuf::internal::CachedSize _cached_size_;
@@ -1343,7 +1343,7 @@ inline void ProductCreateRequest::_internal_set_ar_enabled(bool value) {
 
 // ProductCreateResponse
 
-// .shared.v1.Empty data = 1 [json_name = "data"];
+// .shared.v1.SuccessResponseData data = 1 [json_name = "data"];
 inline bool ProductCreateResponse::has_data() const {
   return response_case() == kData;
 }
@@ -1353,7 +1353,7 @@ inline bool ProductCreateResponse::_internal_has_data() const {
 inline void ProductCreateResponse::set_has_data() {
   _impl_._oneof_case_[0] = kData;
 }
-inline ::shared::v1::Empty* PROTOBUF_NULLABLE ProductCreateResponse::release_data() {
+inline ::shared::v1::SuccessResponseData* PROTOBUF_NULLABLE ProductCreateResponse::release_data() {
   // @@protoc_insertion_point(field_release:products.v1.ProductCreateResponse.data)
   if (response_case() == kData) {
     clear_has_response();
@@ -1367,14 +1367,14 @@ inline ::shared::v1::Empty* PROTOBUF_NULLABLE ProductCreateResponse::release_dat
     return nullptr;
   }
 }
-inline const ::shared::v1::Empty& ProductCreateResponse::_internal_data() const {
-  return response_case() == kData ? *_impl_.response_.data_ : reinterpret_cast<::shared::v1::Empty&>(::shared::v1::_Empty_default_instance_);
+inline const ::shared::v1::SuccessResponseData& ProductCreateResponse::_internal_data() const {
+  return response_case() == kData ? *_impl_.response_.data_ : reinterpret_cast<::shared::v1::SuccessResponseData&>(::shared::v1::_SuccessResponseData_default_instance_);
 }
-inline const ::shared::v1::Empty& ProductCreateResponse::data() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline const ::shared::v1::SuccessResponseData& ProductCreateResponse::data() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:products.v1.ProductCreateResponse.data)
   return _internal_data();
 }
-inline ::shared::v1::Empty* PROTOBUF_NULLABLE ProductCreateResponse::unsafe_arena_release_data() {
+inline ::shared::v1::SuccessResponseData* PROTOBUF_NULLABLE ProductCreateResponse::unsafe_arena_release_data() {
   // @@protoc_insertion_point(field_unsafe_arena_release:products.v1.ProductCreateResponse.data)
   if (response_case() == kData) {
     clear_has_response();
@@ -1386,7 +1386,7 @@ inline ::shared::v1::Empty* PROTOBUF_NULLABLE ProductCreateResponse::unsafe_aren
   }
 }
 inline void ProductCreateResponse::unsafe_arena_set_allocated_data(
-    ::shared::v1::Empty* PROTOBUF_NULLABLE value) {
+    ::shared::v1::SuccessResponseData* PROTOBUF_NULLABLE value) {
   // We rely on the oneof clear method to free the earlier contents
   // of this oneof. We can directly use the pointer we're given to
   // set the new value.
@@ -1397,18 +1397,18 @@ inline void ProductCreateResponse::unsafe_arena_set_allocated_data(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:products.v1.ProductCreateResponse.data)
 }
-inline ::shared::v1::Empty* PROTOBUF_NONNULL ProductCreateResponse::_internal_mutable_data() {
+inline ::shared::v1::SuccessResponseData* PROTOBUF_NONNULL ProductCreateResponse::_internal_mutable_data() {
   if (response_case() != kData) {
     clear_response();
     set_has_data();
     _impl_.response_.data_ = 
-        ::google::protobuf::Message::DefaultConstruct<::shared::v1::Empty>(GetArena());
+        ::google::protobuf::Message::DefaultConstruct<::shared::v1::SuccessResponseData>(GetArena());
   }
   return _impl_.response_.data_;
 }
-inline ::shared::v1::Empty* PROTOBUF_NONNULL ProductCreateResponse::mutable_data()
+inline ::shared::v1::SuccessResponseData* PROTOBUF_NONNULL ProductCreateResponse::mutable_data()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::shared::v1::Empty* _msg = _internal_mutable_data();
+  ::shared::v1::SuccessResponseData* _msg = _internal_mutable_data();
   // @@protoc_insertion_point(field_mutable:products.v1.ProductCreateResponse.data)
   return _msg;
 }

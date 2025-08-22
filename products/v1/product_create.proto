@@ -27,7 +27,7 @@ message ProductCreateRequest {
 
 message ProductCreateResponse {
   oneof response {
-    shared.v1.Empty data = 1;
+    shared.v1.SuccessResponseData data = 1;
     shared.v1.AppError error = 2;
   }
 }

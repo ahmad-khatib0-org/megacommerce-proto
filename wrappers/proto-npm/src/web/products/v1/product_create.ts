@@ -7,7 +7,7 @@
 /* eslint-disable */
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import { AppError } from "../../shared/v1/error.js";
-import { Empty } from "../../shared/v1/types.js";
+import { SuccessResponseData } from "../../shared/v1/types.js";
 
 export const protobufPackage = "products.v1";
 
@@ -27,7 +27,7 @@ export interface ProductCreateRequest {
 }
 
 export interface ProductCreateResponse {
-  data?: Empty | undefined;
+  data?: SuccessResponseData | undefined;
   error?: AppError | undefined;
 }
 
@@ -270,7 +270,7 @@ function createBaseProductCreateResponse(): ProductCreateResponse {
 export const ProductCreateResponse: MessageFns<ProductCreateResponse> = {
   encode(message: ProductCreateResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.data !== undefined) {
-      Empty.encode(message.data, writer.uint32(10).fork()).join();
+      SuccessResponseData.encode(message.data, writer.uint32(10).fork()).join();
     }
     if (message.error !== undefined) {
       AppError.encode(message.error, writer.uint32(18).fork()).join();
@@ -290,7 +290,7 @@ export const ProductCreateResponse: MessageFns<ProductCreateResponse> = {
             break;
           }
 
-          message.data = Empty.decode(reader, reader.uint32());
+          message.data = SuccessResponseData.decode(reader, reader.uint32());
           continue;
         }
         case 2: {
@@ -312,7 +312,7 @@ export const ProductCreateResponse: MessageFns<ProductCreateResponse> = {
 
   fromJSON(object: any): ProductCreateResponse {
     return {
-      data: isSet(object.data) ? Empty.fromJSON(object.data) : undefined,
+      data: isSet(object.data) ? SuccessResponseData.fromJSON(object.data) : undefined,
       error: isSet(object.error) ? AppError.fromJSON(object.error) : undefined,
     };
   },
@@ -320,7 +320,7 @@ export const ProductCreateResponse: MessageFns<ProductCreateResponse> = {
   toJSON(message: ProductCreateResponse): unknown {
     const obj: any = {};
     if (message.data !== undefined) {
-      obj.data = Empty.toJSON(message.data);
+      obj.data = SuccessResponseData.toJSON(message.data);
     }
     if (message.error !== undefined) {
       obj.error = AppError.toJSON(message.error);
@@ -333,7 +333,9 @@ export const ProductCreateResponse: MessageFns<ProductCreateResponse> = {
   },
   fromPartial<I extends Exact<DeepPartial<ProductCreateResponse>, I>>(object: I): ProductCreateResponse {
     const message = createBaseProductCreateResponse();
-    message.data = (object.data !== undefined && object.data !== null) ? Empty.fromPartial(object.data) : undefined;
+    message.data = (object.data !== undefined && object.data !== null)
+      ? SuccessResponseData.fromPartial(object.data)
+      : undefined;
     message.error = (object.error !== undefined && object.error !== null)
       ? AppError.fromPartial(object.error)
       : undefined;

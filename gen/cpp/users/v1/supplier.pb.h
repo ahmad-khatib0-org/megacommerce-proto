@@ -529,23 +529,23 @@ class SupplierCreateResponse final : public ::google::protobuf::Message
     kDataFieldNumber = 1,
     kErrorFieldNumber = 2,
   };
-  // .shared.v1.Empty data = 1 [json_name = "data"];
+  // .shared.v1.SuccessResponseData data = 1 [json_name = "data"];
   bool has_data() const;
   private:
   bool _internal_has_data() const;
 
   public:
   void clear_data() ;
-  const ::shared::v1::Empty& data() const;
-  [[nodiscard]] ::shared::v1::Empty* PROTOBUF_NULLABLE release_data();
-  ::shared::v1::Empty* PROTOBUF_NONNULL mutable_data();
-  void set_allocated_data(::shared::v1::Empty* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_data(::shared::v1::Empty* PROTOBUF_NULLABLE value);
-  ::shared::v1::Empty* PROTOBUF_NULLABLE unsafe_arena_release_data();
+  const ::shared::v1::SuccessResponseData& data() const;
+  [[nodiscard]] ::shared::v1::SuccessResponseData* PROTOBUF_NULLABLE release_data();
+  ::shared::v1::SuccessResponseData* PROTOBUF_NONNULL mutable_data();
+  void set_allocated_data(::shared::v1::SuccessResponseData* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_data(::shared::v1::SuccessResponseData* PROTOBUF_NULLABLE value);
+  ::shared::v1::SuccessResponseData* PROTOBUF_NULLABLE unsafe_arena_release_data();
 
   private:
-  const ::shared::v1::Empty& _internal_data() const;
-  ::shared::v1::Empty* PROTOBUF_NONNULL _internal_mutable_data();
+  const ::shared::v1::SuccessResponseData& _internal_data() const;
+  ::shared::v1::SuccessResponseData* PROTOBUF_NONNULL _internal_mutable_data();
 
   public:
   // .shared.v1.AppError error = 2 [json_name = "error"];
@@ -600,7 +600,7 @@ class SupplierCreateResponse final : public ::google::protobuf::Message
     union ResponseUnion {
       constexpr ResponseUnion() : _constinit_{} {}
       ::google::protobuf::internal::ConstantInitialized _constinit_;
-      ::shared::v1::Empty* PROTOBUF_NULLABLE data_;
+      ::shared::v1::SuccessResponseData* PROTOBUF_NULLABLE data_;
       ::shared::v1::AppError* PROTOBUF_NULLABLE error_;
     } response_;
     ::google::protobuf::internal::CachedSize _cached_size_;
@@ -1116,7 +1116,7 @@ inline void SupplierCreateRequest::set_allocated_image(::shared::v1::Attachment*
 
 // SupplierCreateResponse
 
-// .shared.v1.Empty data = 1 [json_name = "data"];
+// .shared.v1.SuccessResponseData data = 1 [json_name = "data"];
 inline bool SupplierCreateResponse::has_data() const {
   return response_case() == kData;
 }
@@ -1126,7 +1126,7 @@ inline bool SupplierCreateResponse::_internal_has_data() const {
 inline void SupplierCreateResponse::set_has_data() {
   _impl_._oneof_case_[0] = kData;
 }
-inline ::shared::v1::Empty* PROTOBUF_NULLABLE SupplierCreateResponse::release_data() {
+inline ::shared::v1::SuccessResponseData* PROTOBUF_NULLABLE SupplierCreateResponse::release_data() {
   // @@protoc_insertion_point(field_release:users.v1.SupplierCreateResponse.data)
   if (response_case() == kData) {
     clear_has_response();
@@ -1140,14 +1140,14 @@ inline ::shared::v1::Empty* PROTOBUF_NULLABLE SupplierCreateResponse::release_da
     return nullptr;
   }
 }
-inline const ::shared::v1::Empty& SupplierCreateResponse::_internal_data() const {
-  return response_case() == kData ? *_impl_.response_.data_ : reinterpret_cast<::shared::v1::Empty&>(::shared::v1::_Empty_default_instance_);
+inline const ::shared::v1::SuccessResponseData& SupplierCreateResponse::_internal_data() const {
+  return response_case() == kData ? *_impl_.response_.data_ : reinterpret_cast<::shared::v1::SuccessResponseData&>(::shared::v1::_SuccessResponseData_default_instance_);
 }
-inline const ::shared::v1::Empty& SupplierCreateResponse::data() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline const ::shared::v1::SuccessResponseData& SupplierCreateResponse::data() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:users.v1.SupplierCreateResponse.data)
   return _internal_data();
 }
-inline ::shared::v1::Empty* PROTOBUF_NULLABLE SupplierCreateResponse::unsafe_arena_release_data() {
+inline ::shared::v1::SuccessResponseData* PROTOBUF_NULLABLE SupplierCreateResponse::unsafe_arena_release_data() {
   // @@protoc_insertion_point(field_unsafe_arena_release:users.v1.SupplierCreateResponse.data)
   if (response_case() == kData) {
     clear_has_response();
@@ -1159,7 +1159,7 @@ inline ::shared::v1::Empty* PROTOBUF_NULLABLE SupplierCreateResponse::unsafe_are
   }
 }
 inline void SupplierCreateResponse::unsafe_arena_set_allocated_data(
-    ::shared::v1::Empty* PROTOBUF_NULLABLE value) {
+    ::shared::v1::SuccessResponseData* PROTOBUF_NULLABLE value) {
   // We rely on the oneof clear method to free the earlier contents
   // of this oneof. We can directly use the pointer we're given to
   // set the new value.
@@ -1170,18 +1170,18 @@ inline void SupplierCreateResponse::unsafe_arena_set_allocated_data(
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:users.v1.SupplierCreateResponse.data)
 }
-inline ::shared::v1::Empty* PROTOBUF_NONNULL SupplierCreateResponse::_internal_mutable_data() {
+inline ::shared::v1::SuccessResponseData* PROTOBUF_NONNULL SupplierCreateResponse::_internal_mutable_data() {
   if (response_case() != kData) {
     clear_response();
     set_has_data();
     _impl_.response_.data_ = 
-        ::google::protobuf::Message::DefaultConstruct<::shared::v1::Empty>(GetArena());
+        ::google::protobuf::Message::DefaultConstruct<::shared::v1::SuccessResponseData>(GetArena());
   }
   return _impl_.response_.data_;
 }
-inline ::shared::v1::Empty* PROTOBUF_NONNULL SupplierCreateResponse::mutable_data()
+inline ::shared::v1::SuccessResponseData* PROTOBUF_NONNULL SupplierCreateResponse::mutable_data()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::shared::v1::Empty* _msg = _internal_mutable_data();
+  ::shared::v1::SuccessResponseData* _msg = _internal_mutable_data();
   // @@protoc_insertion_point(field_mutable:users.v1.SupplierCreateResponse.data)
   return _msg;
 }

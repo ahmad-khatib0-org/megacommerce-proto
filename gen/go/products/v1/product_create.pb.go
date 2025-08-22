@@ -214,7 +214,7 @@ func (x *ProductCreateResponse) GetResponse() isProductCreateResponse_Response {
 	return nil
 }
 
-func (x *ProductCreateResponse) GetData() *v1.Empty {
+func (x *ProductCreateResponse) GetData() *v1.SuccessResponseData {
 	if x != nil {
 		if x, ok := x.Response.(*ProductCreateResponse_Data); ok {
 			return x.Data
@@ -237,7 +237,7 @@ type isProductCreateResponse_Response interface {
 }
 
 type ProductCreateResponse_Data struct {
-	Data *v1.Empty `protobuf:"bytes,1,opt,name=data,proto3,oneof"`
+	Data *v1.SuccessResponseData `protobuf:"bytes,1,opt,name=data,proto3,oneof"`
 }
 
 type ProductCreateResponse_Error struct {
@@ -266,9 +266,9 @@ const file_products_v1_product_create_proto_rawDesc = "" +
 	"\rcurrency_code\x18\x05 \x01(\tR\fcurrencyCode\x121\n" +
 	"\x04tags\x18\x06 \x03(\v2\x1d.products.v1.ProductCreateTagR\x04tags\x12\x1d\n" +
 	"\n" +
-	"ar_enabled\x18\a \x01(\bR\tarEnabled\"x\n" +
-	"\x15ProductCreateResponse\x12&\n" +
-	"\x04data\x18\x01 \x01(\v2\x10.shared.v1.EmptyH\x00R\x04data\x12+\n" +
+	"ar_enabled\x18\a \x01(\bR\tarEnabled\"\x86\x01\n" +
+	"\x15ProductCreateResponse\x124\n" +
+	"\x04data\x18\x01 \x01(\v2\x1e.shared.v1.SuccessResponseDataH\x00R\x04data\x12+\n" +
 	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +
 	"\n" +
 	"\bresponseB|\n" +
@@ -288,15 +288,15 @@ func file_products_v1_product_create_proto_rawDescGZIP() []byte {
 
 var file_products_v1_product_create_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_products_v1_product_create_proto_goTypes = []any{
-	(*ProductCreateTag)(nil),      // 0: products.v1.ProductCreateTag
-	(*ProductCreateRequest)(nil),  // 1: products.v1.ProductCreateRequest
-	(*ProductCreateResponse)(nil), // 2: products.v1.ProductCreateResponse
-	(*v1.Empty)(nil),              // 3: shared.v1.Empty
-	(*v1.AppError)(nil),           // 4: shared.v1.AppError
+	(*ProductCreateTag)(nil),       // 0: products.v1.ProductCreateTag
+	(*ProductCreateRequest)(nil),   // 1: products.v1.ProductCreateRequest
+	(*ProductCreateResponse)(nil),  // 2: products.v1.ProductCreateResponse
+	(*v1.SuccessResponseData)(nil), // 3: shared.v1.SuccessResponseData
+	(*v1.AppError)(nil),            // 4: shared.v1.AppError
 }
 var file_products_v1_product_create_proto_depIdxs = []int32{
 	0, // 0: products.v1.ProductCreateRequest.tags:type_name -> products.v1.ProductCreateTag
-	3, // 1: products.v1.ProductCreateResponse.data:type_name -> shared.v1.Empty
+	3, // 1: products.v1.ProductCreateResponse.data:type_name -> shared.v1.SuccessResponseData
 	4, // 2: products.v1.ProductCreateResponse.error:type_name -> shared.v1.AppError
 	3, // [3:3] is the sub-list for method output_type
 	3, // [3:3] is the sub-list for method input_type

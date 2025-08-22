@@ -147,13 +147,14 @@ const char descriptor_table_protodef_users_2fv1_2fsupplier_2eproto[] ABSL_ATTRIB
     "\003 \001(\tR\tfirstName\022\033\n\tlast_name\030\004 \001(\tR\010las"
     "tName\022\032\n\010password\030\005 \001(\tR\010password\022\036\n\nmem"
     "bership\030\006 \001(\tR\nmembership\022+\n\005image\030\007 \001(\013"
-    "2\025.shared.v1.AttachmentR\005image\"y\n\026Suppli"
-    "erCreateResponse\022&\n\004data\030\001 \001(\0132\020.shared."
-    "v1.EmptyH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared"
-    ".v1.AppErrorH\000R\005errorB\n\n\010responseBq\n\031org"
-    ".megacommerce.users.v1B\rSupplierProtoZBg"
-    "ithub.com/ahmad-khatib0-org/megacommerce"
-    "-proto/gen/go/users/v1;v1\370\001\001b\006proto3"
+    "2\025.shared.v1.AttachmentR\005image\"\207\001\n\026Suppl"
+    "ierCreateResponse\0224\n\004data\030\001 \001(\0132\036.shared"
+    ".v1.SuccessResponseDataH\000R\004data\022+\n\005error"
+    "\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n\010"
+    "responseBq\n\031org.megacommerce.users.v1B\rS"
+    "upplierProtoZBgithub.com/ahmad-khatib0-o"
+    "rg/megacommerce-proto/gen/go/users/v1;v1"
+    "\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_users_2fv1_2fsupplier_2eproto_deps[3] = {
@@ -165,7 +166,7 @@ static ::absl::once_flag descriptor_table_users_2fv1_2fsupplier_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_users_2fv1_2fsupplier_2eproto = {
     false,
     false,
-    596,
+    611,
     descriptor_table_protodef_users_2fv1_2fsupplier_2eproto,
     "users/v1/supplier.proto",
     &descriptor_table_users_2fv1_2fsupplier_2eproto_once,
@@ -702,7 +703,7 @@ class SupplierCreateResponse::_Internal {
       PROTOBUF_FIELD_OFFSET(::users::v1::SupplierCreateResponse, _impl_._oneof_case_);
 };
 
-void SupplierCreateResponse::set_allocated_data(::shared::v1::Empty* PROTOBUF_NULLABLE data) {
+void SupplierCreateResponse::set_allocated_data(::shared::v1::SuccessResponseData* PROTOBUF_NULLABLE data) {
   ::google::protobuf::Arena* message_arena = GetArena();
   clear_response();
   if (data) {
@@ -911,7 +912,7 @@ SupplierCreateResponse::_table_ = {
   }}, {{
     65535, 65535
   }}, {{
-    // .shared.v1.Empty data = 1 [json_name = "data"];
+    // .shared.v1.SuccessResponseData data = 1 [json_name = "data"];
     {PROTOBUF_FIELD_OFFSET(SupplierCreateResponse, _impl_.response_.data_), _Internal::kOneofCaseOffset + 0, 0,
     (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
     // .shared.v1.AppError error = 2 [json_name = "error"];
@@ -919,7 +920,7 @@ SupplierCreateResponse::_table_ = {
     (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
-      {::_pbi::TcParser::GetTable<::shared::v1::Empty>()},
+      {::_pbi::TcParser::GetTable<::shared::v1::SuccessResponseData>()},
       {::_pbi::TcParser::GetTable<::shared::v1::AppError>()},
   }},
   {{
@@ -991,7 +992,7 @@ PROTOBUF_NOINLINE void SupplierCreateResponse::Clear() {
   (void)cached_has_bits;
 
   switch (this_.response_case()) {
-    // .shared.v1.Empty data = 1 [json_name = "data"];
+    // .shared.v1.SuccessResponseData data = 1 [json_name = "data"];
     case kData: {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.response_.data_);

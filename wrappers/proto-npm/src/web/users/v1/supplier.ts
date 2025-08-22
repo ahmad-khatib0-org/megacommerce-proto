@@ -8,7 +8,7 @@
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import { Attachment } from "../../shared/v1/attachment.js";
 import { AppError } from "../../shared/v1/error.js";
-import { Empty } from "../../shared/v1/types.js";
+import { SuccessResponseData } from "../../shared/v1/types.js";
 
 export const protobufPackage = "users.v1";
 
@@ -23,7 +23,7 @@ export interface SupplierCreateRequest {
 }
 
 export interface SupplierCreateResponse {
-  data?: Empty | undefined;
+  data?: SuccessResponseData | undefined;
   error?: AppError | undefined;
 }
 
@@ -192,7 +192,7 @@ function createBaseSupplierCreateResponse(): SupplierCreateResponse {
 export const SupplierCreateResponse: MessageFns<SupplierCreateResponse> = {
   encode(message: SupplierCreateResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.data !== undefined) {
-      Empty.encode(message.data, writer.uint32(10).fork()).join();
+      SuccessResponseData.encode(message.data, writer.uint32(10).fork()).join();
     }
     if (message.error !== undefined) {
       AppError.encode(message.error, writer.uint32(18).fork()).join();
@@ -212,7 +212,7 @@ export const SupplierCreateResponse: MessageFns<SupplierCreateResponse> = {
             break;
           }
 
-          message.data = Empty.decode(reader, reader.uint32());
+          message.data = SuccessResponseData.decode(reader, reader.uint32());
           continue;
         }
         case 2: {
@@ -234,7 +234,7 @@ export const SupplierCreateResponse: MessageFns<SupplierCreateResponse> = {
 
   fromJSON(object: any): SupplierCreateResponse {
     return {
-      data: isSet(object.data) ? Empty.fromJSON(object.data) : undefined,
+      data: isSet(object.data) ? SuccessResponseData.fromJSON(object.data) : undefined,
       error: isSet(object.error) ? AppError.fromJSON(object.error) : undefined,
     };
   },
@@ -242,7 +242,7 @@ export const SupplierCreateResponse: MessageFns<SupplierCreateResponse> = {
   toJSON(message: SupplierCreateResponse): unknown {
     const obj: any = {};
     if (message.data !== undefined) {
-      obj.data = Empty.toJSON(message.data);
+      obj.data = SuccessResponseData.toJSON(message.data);
     }
     if (message.error !== undefined) {
       obj.error = AppError.toJSON(message.error);
@@ -255,7 +255,9 @@ export const SupplierCreateResponse: MessageFns<SupplierCreateResponse> = {
   },
   fromPartial<I extends Exact<DeepPartial<SupplierCreateResponse>, I>>(object: I): SupplierCreateResponse {
     const message = createBaseSupplierCreateResponse();
-    message.data = (object.data !== undefined && object.data !== null) ? Empty.fromPartial(object.data) : undefined;
+    message.data = (object.data !== undefined && object.data !== null)
+      ? SuccessResponseData.fromPartial(object.data)
+      : undefined;
     message.error = (object.error !== undefined && object.error !== null)
       ? AppError.fromPartial(object.error)
       : undefined;
