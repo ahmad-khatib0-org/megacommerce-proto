@@ -26,6 +26,733 @@ public final class UserProto {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface UserImageMetadataOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:users.v1.UserImageMetadata)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string mime = 1 [json_name = "mime"];</code>
+     * @return The mime.
+     */
+    java.lang.String getMime();
+    /**
+     * <code>string mime = 1 [json_name = "mime"];</code>
+     * @return The bytes for mime.
+     */
+    com.google.protobuf.ByteString
+        getMimeBytes();
+
+    /**
+     * <code>int32 height = 2 [json_name = "height"];</code>
+     * @return The height.
+     */
+    int getHeight();
+
+    /**
+     * <code>int32 widht = 3 [json_name = "widht"];</code>
+     * @return The widht.
+     */
+    int getWidht();
+
+    /**
+     * <code>int64 size_bytes = 4 [json_name = "sizeBytes"];</code>
+     * @return The sizeBytes.
+     */
+    long getSizeBytes();
+  }
+  /**
+   * Protobuf type {@code users.v1.UserImageMetadata}
+   */
+  public static final class UserImageMetadata extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:users.v1.UserImageMetadata)
+      UserImageMetadataOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        UserImageMetadata.class.getName());
+    }
+    // Use UserImageMetadata.newBuilder() to construct.
+    private UserImageMetadata(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private UserImageMetadata() {
+      mime_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.users.v1.UserProto.internal_static_users_v1_UserImageMetadata_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.users.v1.UserProto.internal_static_users_v1_UserImageMetadata_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.users.v1.UserProto.UserImageMetadata.class, org.megacommerce.users.v1.UserProto.UserImageMetadata.Builder.class);
+    }
+
+    public static final int MIME_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object mime_ = "";
+    /**
+     * <code>string mime = 1 [json_name = "mime"];</code>
+     * @return The mime.
+     */
+    @java.lang.Override
+    public java.lang.String getMime() {
+      java.lang.Object ref = mime_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mime_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string mime = 1 [json_name = "mime"];</code>
+     * @return The bytes for mime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMimeBytes() {
+      java.lang.Object ref = mime_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mime_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HEIGHT_FIELD_NUMBER = 2;
+    private int height_ = 0;
+    /**
+     * <code>int32 height = 2 [json_name = "height"];</code>
+     * @return The height.
+     */
+    @java.lang.Override
+    public int getHeight() {
+      return height_;
+    }
+
+    public static final int WIDHT_FIELD_NUMBER = 3;
+    private int widht_ = 0;
+    /**
+     * <code>int32 widht = 3 [json_name = "widht"];</code>
+     * @return The widht.
+     */
+    @java.lang.Override
+    public int getWidht() {
+      return widht_;
+    }
+
+    public static final int SIZE_BYTES_FIELD_NUMBER = 4;
+    private long sizeBytes_ = 0L;
+    /**
+     * <code>int64 size_bytes = 4 [json_name = "sizeBytes"];</code>
+     * @return The sizeBytes.
+     */
+    @java.lang.Override
+    public long getSizeBytes() {
+      return sizeBytes_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mime_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, mime_);
+      }
+      if (height_ != 0) {
+        output.writeInt32(2, height_);
+      }
+      if (widht_ != 0) {
+        output.writeInt32(3, widht_);
+      }
+      if (sizeBytes_ != 0L) {
+        output.writeInt64(4, sizeBytes_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mime_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, mime_);
+      }
+      if (height_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, height_);
+      }
+      if (widht_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, widht_);
+      }
+      if (sizeBytes_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, sizeBytes_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.users.v1.UserProto.UserImageMetadata)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.users.v1.UserProto.UserImageMetadata other = (org.megacommerce.users.v1.UserProto.UserImageMetadata) obj;
+
+      if (!getMime()
+          .equals(other.getMime())) return false;
+      if (getHeight()
+          != other.getHeight()) return false;
+      if (getWidht()
+          != other.getWidht()) return false;
+      if (getSizeBytes()
+          != other.getSizeBytes()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MIME_FIELD_NUMBER;
+      hash = (53 * hash) + getMime().hashCode();
+      hash = (37 * hash) + HEIGHT_FIELD_NUMBER;
+      hash = (53 * hash) + getHeight();
+      hash = (37 * hash) + WIDHT_FIELD_NUMBER;
+      hash = (53 * hash) + getWidht();
+      hash = (37 * hash) + SIZE_BYTES_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getSizeBytes());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.users.v1.UserProto.UserImageMetadata parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.users.v1.UserProto.UserImageMetadata parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.users.v1.UserProto.UserImageMetadata parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.users.v1.UserProto.UserImageMetadata parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.users.v1.UserProto.UserImageMetadata parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.users.v1.UserProto.UserImageMetadata parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.users.v1.UserProto.UserImageMetadata parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.users.v1.UserProto.UserImageMetadata parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.users.v1.UserProto.UserImageMetadata parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.users.v1.UserProto.UserImageMetadata parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.users.v1.UserProto.UserImageMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.users.v1.UserProto.UserImageMetadata parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.users.v1.UserProto.UserImageMetadata prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code users.v1.UserImageMetadata}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:users.v1.UserImageMetadata)
+        org.megacommerce.users.v1.UserProto.UserImageMetadataOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.users.v1.UserProto.internal_static_users_v1_UserImageMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.users.v1.UserProto.internal_static_users_v1_UserImageMetadata_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.users.v1.UserProto.UserImageMetadata.class, org.megacommerce.users.v1.UserProto.UserImageMetadata.Builder.class);
+      }
+
+      // Construct using org.megacommerce.users.v1.UserProto.UserImageMetadata.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        mime_ = "";
+        height_ = 0;
+        widht_ = 0;
+        sizeBytes_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.users.v1.UserProto.internal_static_users_v1_UserImageMetadata_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.users.v1.UserProto.UserImageMetadata getDefaultInstanceForType() {
+        return org.megacommerce.users.v1.UserProto.UserImageMetadata.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.users.v1.UserProto.UserImageMetadata build() {
+        org.megacommerce.users.v1.UserProto.UserImageMetadata result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.users.v1.UserProto.UserImageMetadata buildPartial() {
+        org.megacommerce.users.v1.UserProto.UserImageMetadata result = new org.megacommerce.users.v1.UserProto.UserImageMetadata(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.users.v1.UserProto.UserImageMetadata result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.mime_ = mime_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.height_ = height_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.widht_ = widht_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.sizeBytes_ = sizeBytes_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.users.v1.UserProto.UserImageMetadata) {
+          return mergeFrom((org.megacommerce.users.v1.UserProto.UserImageMetadata)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.users.v1.UserProto.UserImageMetadata other) {
+        if (other == org.megacommerce.users.v1.UserProto.UserImageMetadata.getDefaultInstance()) return this;
+        if (!other.getMime().isEmpty()) {
+          mime_ = other.mime_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getHeight() != 0) {
+          setHeight(other.getHeight());
+        }
+        if (other.getWidht() != 0) {
+          setWidht(other.getWidht());
+        }
+        if (other.getSizeBytes() != 0L) {
+          setSizeBytes(other.getSizeBytes());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                mime_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 16: {
+                height_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              case 24: {
+                widht_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 32: {
+                sizeBytes_ = input.readInt64();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 32
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object mime_ = "";
+      /**
+       * <code>string mime = 1 [json_name = "mime"];</code>
+       * @return The mime.
+       */
+      public java.lang.String getMime() {
+        java.lang.Object ref = mime_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mime_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string mime = 1 [json_name = "mime"];</code>
+       * @return The bytes for mime.
+       */
+      public com.google.protobuf.ByteString
+          getMimeBytes() {
+        java.lang.Object ref = mime_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mime_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string mime = 1 [json_name = "mime"];</code>
+       * @param value The mime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMime(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        mime_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mime = 1 [json_name = "mime"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMime() {
+        mime_ = getDefaultInstance().getMime();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mime = 1 [json_name = "mime"];</code>
+       * @param value The bytes for mime to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMimeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        mime_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int height_ ;
+      /**
+       * <code>int32 height = 2 [json_name = "height"];</code>
+       * @return The height.
+       */
+      @java.lang.Override
+      public int getHeight() {
+        return height_;
+      }
+      /**
+       * <code>int32 height = 2 [json_name = "height"];</code>
+       * @param value The height to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHeight(int value) {
+
+        height_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 height = 2 [json_name = "height"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearHeight() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        height_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int widht_ ;
+      /**
+       * <code>int32 widht = 3 [json_name = "widht"];</code>
+       * @return The widht.
+       */
+      @java.lang.Override
+      public int getWidht() {
+        return widht_;
+      }
+      /**
+       * <code>int32 widht = 3 [json_name = "widht"];</code>
+       * @param value The widht to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWidht(int value) {
+
+        widht_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 widht = 3 [json_name = "widht"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWidht() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        widht_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long sizeBytes_ ;
+      /**
+       * <code>int64 size_bytes = 4 [json_name = "sizeBytes"];</code>
+       * @return The sizeBytes.
+       */
+      @java.lang.Override
+      public long getSizeBytes() {
+        return sizeBytes_;
+      }
+      /**
+       * <code>int64 size_bytes = 4 [json_name = "sizeBytes"];</code>
+       * @param value The sizeBytes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSizeBytes(long value) {
+
+        sizeBytes_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 size_bytes = 4 [json_name = "sizeBytes"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSizeBytes() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        sizeBytes_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:users.v1.UserImageMetadata)
+    }
+
+    // @@protoc_insertion_point(class_scope:users.v1.UserImageMetadata)
+    private static final org.megacommerce.users.v1.UserProto.UserImageMetadata DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.users.v1.UserProto.UserImageMetadata();
+    }
+
+    public static org.megacommerce.users.v1.UserProto.UserImageMetadata getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UserImageMetadata>
+        PARSER = new com.google.protobuf.AbstractParser<UserImageMetadata>() {
+      @java.lang.Override
+      public UserImageMetadata parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<UserImageMetadata> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserImageMetadata> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.users.v1.UserProto.UserImageMetadata getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface UserOrBuilder extends
       // @@protoc_insertion_point(interface_extends:users.v1.User)
       com.google.protobuf.MessageOrBuilder {
@@ -133,103 +860,135 @@ public final class UserProto {
         getUserTypeBytes();
 
     /**
-     * <code>optional string membership = 7 [json_name = "membership"];</code>
+     * <code>optional string image = 7 [json_name = "image"];</code>
+     * @return Whether the image field is set.
+     */
+    boolean hasImage();
+    /**
+     * <code>optional string image = 7 [json_name = "image"];</code>
+     * @return The image.
+     */
+    java.lang.String getImage();
+    /**
+     * <code>optional string image = 7 [json_name = "image"];</code>
+     * @return The bytes for image.
+     */
+    com.google.protobuf.ByteString
+        getImageBytes();
+
+    /**
+     * <code>optional .users.v1.UserImageMetadata image_metadata = 8 [json_name = "imageMetadata"];</code>
+     * @return Whether the imageMetadata field is set.
+     */
+    boolean hasImageMetadata();
+    /**
+     * <code>optional .users.v1.UserImageMetadata image_metadata = 8 [json_name = "imageMetadata"];</code>
+     * @return The imageMetadata.
+     */
+    org.megacommerce.users.v1.UserProto.UserImageMetadata getImageMetadata();
+    /**
+     * <code>optional .users.v1.UserImageMetadata image_metadata = 8 [json_name = "imageMetadata"];</code>
+     */
+    org.megacommerce.users.v1.UserProto.UserImageMetadataOrBuilder getImageMetadataOrBuilder();
+
+    /**
+     * <code>optional string membership = 9 [json_name = "membership"];</code>
      * @return Whether the membership field is set.
      */
     boolean hasMembership();
     /**
-     * <code>optional string membership = 7 [json_name = "membership"];</code>
+     * <code>optional string membership = 9 [json_name = "membership"];</code>
      * @return The membership.
      */
     java.lang.String getMembership();
     /**
-     * <code>optional string membership = 7 [json_name = "membership"];</code>
+     * <code>optional string membership = 9 [json_name = "membership"];</code>
      * @return The bytes for membership.
      */
     com.google.protobuf.ByteString
         getMembershipBytes();
 
     /**
-     * <code>optional bool is_email_verified = 8 [json_name = "isEmailVerified"];</code>
+     * <code>optional bool is_email_verified = 10 [json_name = "isEmailVerified"];</code>
      * @return Whether the isEmailVerified field is set.
      */
     boolean hasIsEmailVerified();
     /**
-     * <code>optional bool is_email_verified = 8 [json_name = "isEmailVerified"];</code>
+     * <code>optional bool is_email_verified = 10 [json_name = "isEmailVerified"];</code>
      * @return The isEmailVerified.
      */
     boolean getIsEmailVerified();
 
     /**
-     * <code>optional string password = 9 [json_name = "password"];</code>
+     * <code>optional string password = 11 [json_name = "password"];</code>
      * @return Whether the password field is set.
      */
     boolean hasPassword();
     /**
-     * <code>optional string password = 9 [json_name = "password"];</code>
+     * <code>optional string password = 11 [json_name = "password"];</code>
      * @return The password.
      */
     java.lang.String getPassword();
     /**
-     * <code>optional string password = 9 [json_name = "password"];</code>
+     * <code>optional string password = 11 [json_name = "password"];</code>
      * @return The bytes for password.
      */
     com.google.protobuf.ByteString
         getPasswordBytes();
 
     /**
-     * <code>optional string auth_data = 10 [json_name = "authData"];</code>
+     * <code>optional string auth_data = 12 [json_name = "authData"];</code>
      * @return Whether the authData field is set.
      */
     boolean hasAuthData();
     /**
-     * <code>optional string auth_data = 10 [json_name = "authData"];</code>
+     * <code>optional string auth_data = 12 [json_name = "authData"];</code>
      * @return The authData.
      */
     java.lang.String getAuthData();
     /**
-     * <code>optional string auth_data = 10 [json_name = "authData"];</code>
+     * <code>optional string auth_data = 12 [json_name = "authData"];</code>
      * @return The bytes for authData.
      */
     com.google.protobuf.ByteString
         getAuthDataBytes();
 
     /**
-     * <code>optional string auth_service = 11 [json_name = "authService"];</code>
+     * <code>optional string auth_service = 13 [json_name = "authService"];</code>
      * @return Whether the authService field is set.
      */
     boolean hasAuthService();
     /**
-     * <code>optional string auth_service = 11 [json_name = "authService"];</code>
+     * <code>optional string auth_service = 13 [json_name = "authService"];</code>
      * @return The authService.
      */
     java.lang.String getAuthService();
     /**
-     * <code>optional string auth_service = 11 [json_name = "authService"];</code>
+     * <code>optional string auth_service = 13 [json_name = "authService"];</code>
      * @return The bytes for authService.
      */
     com.google.protobuf.ByteString
         getAuthServiceBytes();
 
     /**
-     * <code>repeated string roles = 12 [json_name = "roles"];</code>
+     * <code>repeated string roles = 14 [json_name = "roles"];</code>
      * @return A list containing the roles.
      */
     java.util.List<java.lang.String>
         getRolesList();
     /**
-     * <code>repeated string roles = 12 [json_name = "roles"];</code>
+     * <code>repeated string roles = 14 [json_name = "roles"];</code>
      * @return The count of roles.
      */
     int getRolesCount();
     /**
-     * <code>repeated string roles = 12 [json_name = "roles"];</code>
+     * <code>repeated string roles = 14 [json_name = "roles"];</code>
      * @param index The index of the element to return.
      * @return The roles at the given index.
      */
     java.lang.String getRoles(int index);
     /**
-     * <code>repeated string roles = 12 [json_name = "roles"];</code>
+     * <code>repeated string roles = 14 [json_name = "roles"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the roles at the given index.
      */
@@ -237,11 +996,11 @@ public final class UserProto {
         getRolesBytes(int index);
 
     /**
-     * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
+     * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
      */
     int getPropsCount();
     /**
-     * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
+     * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
      */
     boolean containsProps(
         java.lang.String key);
@@ -252,12 +1011,12 @@ public final class UserProto {
     java.util.Map<java.lang.String, java.lang.String>
     getProps();
     /**
-     * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
+     * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getPropsMap();
     /**
-     * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
+     * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
      */
     /* nullable */
 java.lang.String getPropsOrDefault(
@@ -265,17 +1024,17 @@ java.lang.String getPropsOrDefault(
         /* nullable */
 java.lang.String defaultValue);
     /**
-     * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
+     * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
      */
     java.lang.String getPropsOrThrow(
         java.lang.String key);
 
     /**
-     * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
+     * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
      */
     int getNotifyPropsCount();
     /**
-     * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
+     * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
      */
     boolean containsNotifyProps(
         java.lang.String key);
@@ -286,12 +1045,12 @@ java.lang.String defaultValue);
     java.util.Map<java.lang.String, java.lang.String>
     getNotifyProps();
     /**
-     * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
+     * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getNotifyPropsMap();
     /**
-     * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
+     * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
      */
     /* nullable */
 java.lang.String getNotifyPropsOrDefault(
@@ -299,140 +1058,140 @@ java.lang.String getNotifyPropsOrDefault(
         /* nullable */
 java.lang.String defaultValue);
     /**
-     * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
+     * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
      */
     java.lang.String getNotifyPropsOrThrow(
         java.lang.String key);
 
     /**
-     * <code>optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];</code>
+     * <code>optional int64 last_password_update = 17 [json_name = "lastPasswordUpdate"];</code>
      * @return Whether the lastPasswordUpdate field is set.
      */
     boolean hasLastPasswordUpdate();
     /**
-     * <code>optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];</code>
+     * <code>optional int64 last_password_update = 17 [json_name = "lastPasswordUpdate"];</code>
      * @return The lastPasswordUpdate.
      */
     long getLastPasswordUpdate();
 
     /**
-     * <code>optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];</code>
+     * <code>optional int64 last_picture_update = 18 [json_name = "lastPictureUpdate"];</code>
      * @return Whether the lastPictureUpdate field is set.
      */
     boolean hasLastPictureUpdate();
     /**
-     * <code>optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];</code>
+     * <code>optional int64 last_picture_update = 18 [json_name = "lastPictureUpdate"];</code>
      * @return The lastPictureUpdate.
      */
     long getLastPictureUpdate();
 
     /**
-     * <code>optional int32 failed_attempts = 17 [json_name = "failedAttempts"];</code>
+     * <code>optional int32 failed_attempts = 19 [json_name = "failedAttempts"];</code>
      * @return Whether the failedAttempts field is set.
      */
     boolean hasFailedAttempts();
     /**
-     * <code>optional int32 failed_attempts = 17 [json_name = "failedAttempts"];</code>
+     * <code>optional int32 failed_attempts = 19 [json_name = "failedAttempts"];</code>
      * @return The failedAttempts.
      */
     int getFailedAttempts();
 
     /**
-     * <code>optional string locale = 18 [json_name = "locale"];</code>
+     * <code>optional string locale = 20 [json_name = "locale"];</code>
      * @return Whether the locale field is set.
      */
     boolean hasLocale();
     /**
-     * <code>optional string locale = 18 [json_name = "locale"];</code>
+     * <code>optional string locale = 20 [json_name = "locale"];</code>
      * @return The locale.
      */
     java.lang.String getLocale();
     /**
-     * <code>optional string locale = 18 [json_name = "locale"];</code>
+     * <code>optional string locale = 20 [json_name = "locale"];</code>
      * @return The bytes for locale.
      */
     com.google.protobuf.ByteString
         getLocaleBytes();
 
     /**
-     * <code>optional bool mfa_active = 19 [json_name = "mfaActive"];</code>
+     * <code>optional bool mfa_active = 21 [json_name = "mfaActive"];</code>
      * @return Whether the mfaActive field is set.
      */
     boolean hasMfaActive();
     /**
-     * <code>optional bool mfa_active = 19 [json_name = "mfaActive"];</code>
+     * <code>optional bool mfa_active = 21 [json_name = "mfaActive"];</code>
      * @return The mfaActive.
      */
     boolean getMfaActive();
 
     /**
-     * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
+     * <code>optional string mfa_secret = 22 [json_name = "mfaSecret"];</code>
      * @return Whether the mfaSecret field is set.
      */
     boolean hasMfaSecret();
     /**
-     * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
+     * <code>optional string mfa_secret = 22 [json_name = "mfaSecret"];</code>
      * @return The mfaSecret.
      */
     java.lang.String getMfaSecret();
     /**
-     * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
+     * <code>optional string mfa_secret = 22 [json_name = "mfaSecret"];</code>
      * @return The bytes for mfaSecret.
      */
     com.google.protobuf.ByteString
         getMfaSecretBytes();
 
     /**
-     * <code>optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];</code>
+     * <code>optional int64 last_activity_at = 23 [json_name = "lastActivityAt"];</code>
      * @return Whether the lastActivityAt field is set.
      */
     boolean hasLastActivityAt();
     /**
-     * <code>optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];</code>
+     * <code>optional int64 last_activity_at = 23 [json_name = "lastActivityAt"];</code>
      * @return The lastActivityAt.
      */
     long getLastActivityAt();
 
     /**
-     * <code>optional int64 last_login = 22 [json_name = "lastLogin"];</code>
+     * <code>optional int64 last_login = 24 [json_name = "lastLogin"];</code>
      * @return Whether the lastLogin field is set.
      */
     boolean hasLastLogin();
     /**
-     * <code>optional int64 last_login = 22 [json_name = "lastLogin"];</code>
+     * <code>optional int64 last_login = 24 [json_name = "lastLogin"];</code>
      * @return The lastLogin.
      */
     long getLastLogin();
 
     /**
-     * <code>optional int64 created_at = 23 [json_name = "createdAt"];</code>
+     * <code>optional int64 created_at = 25 [json_name = "createdAt"];</code>
      * @return Whether the createdAt field is set.
      */
     boolean hasCreatedAt();
     /**
-     * <code>optional int64 created_at = 23 [json_name = "createdAt"];</code>
+     * <code>optional int64 created_at = 25 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     long getCreatedAt();
 
     /**
-     * <code>optional int64 updated_at = 24 [json_name = "updatedAt"];</code>
+     * <code>optional int64 updated_at = 26 [json_name = "updatedAt"];</code>
      * @return Whether the updatedAt field is set.
      */
     boolean hasUpdatedAt();
     /**
-     * <code>optional int64 updated_at = 24 [json_name = "updatedAt"];</code>
+     * <code>optional int64 updated_at = 26 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     long getUpdatedAt();
 
     /**
-     * <code>optional int64 deleted_at = 25 [json_name = "deletedAt"];</code>
+     * <code>optional int64 deleted_at = 27 [json_name = "deletedAt"];</code>
      * @return Whether the deletedAt field is set.
      */
     boolean hasDeletedAt();
     /**
-     * <code>optional int64 deleted_at = 25 [json_name = "deletedAt"];</code>
+     * <code>optional int64 deleted_at = 27 [json_name = "deletedAt"];</code>
      * @return The deletedAt.
      */
     long getDeletedAt();
@@ -465,6 +1224,7 @@ java.lang.String defaultValue);
       lastName_ = "";
       email_ = "";
       userType_ = "";
+      image_ = "";
       membership_ = "";
       password_ = "";
       authData_ = "";
@@ -485,9 +1245,9 @@ java.lang.String defaultValue);
     protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
         int number) {
       switch (number) {
-        case 13:
+        case 15:
           return internalGetProps();
-        case 14:
+        case 16:
           return internalGetNotifyProps();
         default:
           throw new RuntimeException(
@@ -785,19 +1545,92 @@ java.lang.String defaultValue);
       }
     }
 
-    public static final int MEMBERSHIP_FIELD_NUMBER = 7;
+    public static final int IMAGE_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object image_ = "";
+    /**
+     * <code>optional string image = 7 [json_name = "image"];</code>
+     * @return Whether the image field is set.
+     */
+    @java.lang.Override
+    public boolean hasImage() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>optional string image = 7 [json_name = "image"];</code>
+     * @return The image.
+     */
+    @java.lang.Override
+    public java.lang.String getImage() {
+      java.lang.Object ref = image_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        image_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string image = 7 [json_name = "image"];</code>
+     * @return The bytes for image.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getImageBytes() {
+      java.lang.Object ref = image_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        image_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int IMAGE_METADATA_FIELD_NUMBER = 8;
+    private org.megacommerce.users.v1.UserProto.UserImageMetadata imageMetadata_;
+    /**
+     * <code>optional .users.v1.UserImageMetadata image_metadata = 8 [json_name = "imageMetadata"];</code>
+     * @return Whether the imageMetadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasImageMetadata() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <code>optional .users.v1.UserImageMetadata image_metadata = 8 [json_name = "imageMetadata"];</code>
+     * @return The imageMetadata.
+     */
+    @java.lang.Override
+    public org.megacommerce.users.v1.UserProto.UserImageMetadata getImageMetadata() {
+      return imageMetadata_ == null ? org.megacommerce.users.v1.UserProto.UserImageMetadata.getDefaultInstance() : imageMetadata_;
+    }
+    /**
+     * <code>optional .users.v1.UserImageMetadata image_metadata = 8 [json_name = "imageMetadata"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.users.v1.UserProto.UserImageMetadataOrBuilder getImageMetadataOrBuilder() {
+      return imageMetadata_ == null ? org.megacommerce.users.v1.UserProto.UserImageMetadata.getDefaultInstance() : imageMetadata_;
+    }
+
+    public static final int MEMBERSHIP_FIELD_NUMBER = 9;
     @SuppressWarnings("serial")
     private volatile java.lang.Object membership_ = "";
     /**
-     * <code>optional string membership = 7 [json_name = "membership"];</code>
+     * <code>optional string membership = 9 [json_name = "membership"];</code>
      * @return Whether the membership field is set.
      */
     @java.lang.Override
     public boolean hasMembership() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
-     * <code>optional string membership = 7 [json_name = "membership"];</code>
+     * <code>optional string membership = 9 [json_name = "membership"];</code>
      * @return The membership.
      */
     @java.lang.Override
@@ -814,7 +1647,7 @@ java.lang.String defaultValue);
       }
     }
     /**
-     * <code>optional string membership = 7 [json_name = "membership"];</code>
+     * <code>optional string membership = 9 [json_name = "membership"];</code>
      * @return The bytes for membership.
      */
     @java.lang.Override
@@ -832,18 +1665,18 @@ java.lang.String defaultValue);
       }
     }
 
-    public static final int IS_EMAIL_VERIFIED_FIELD_NUMBER = 8;
+    public static final int IS_EMAIL_VERIFIED_FIELD_NUMBER = 10;
     private boolean isEmailVerified_ = false;
     /**
-     * <code>optional bool is_email_verified = 8 [json_name = "isEmailVerified"];</code>
+     * <code>optional bool is_email_verified = 10 [json_name = "isEmailVerified"];</code>
      * @return Whether the isEmailVerified field is set.
      */
     @java.lang.Override
     public boolean hasIsEmailVerified() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
-     * <code>optional bool is_email_verified = 8 [json_name = "isEmailVerified"];</code>
+     * <code>optional bool is_email_verified = 10 [json_name = "isEmailVerified"];</code>
      * @return The isEmailVerified.
      */
     @java.lang.Override
@@ -851,19 +1684,19 @@ java.lang.String defaultValue);
       return isEmailVerified_;
     }
 
-    public static final int PASSWORD_FIELD_NUMBER = 9;
+    public static final int PASSWORD_FIELD_NUMBER = 11;
     @SuppressWarnings("serial")
     private volatile java.lang.Object password_ = "";
     /**
-     * <code>optional string password = 9 [json_name = "password"];</code>
+     * <code>optional string password = 11 [json_name = "password"];</code>
      * @return Whether the password field is set.
      */
     @java.lang.Override
     public boolean hasPassword() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
     /**
-     * <code>optional string password = 9 [json_name = "password"];</code>
+     * <code>optional string password = 11 [json_name = "password"];</code>
      * @return The password.
      */
     @java.lang.Override
@@ -880,7 +1713,7 @@ java.lang.String defaultValue);
       }
     }
     /**
-     * <code>optional string password = 9 [json_name = "password"];</code>
+     * <code>optional string password = 11 [json_name = "password"];</code>
      * @return The bytes for password.
      */
     @java.lang.Override
@@ -898,19 +1731,19 @@ java.lang.String defaultValue);
       }
     }
 
-    public static final int AUTH_DATA_FIELD_NUMBER = 10;
+    public static final int AUTH_DATA_FIELD_NUMBER = 12;
     @SuppressWarnings("serial")
     private volatile java.lang.Object authData_ = "";
     /**
-     * <code>optional string auth_data = 10 [json_name = "authData"];</code>
+     * <code>optional string auth_data = 12 [json_name = "authData"];</code>
      * @return Whether the authData field is set.
      */
     @java.lang.Override
     public boolean hasAuthData() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
     /**
-     * <code>optional string auth_data = 10 [json_name = "authData"];</code>
+     * <code>optional string auth_data = 12 [json_name = "authData"];</code>
      * @return The authData.
      */
     @java.lang.Override
@@ -927,7 +1760,7 @@ java.lang.String defaultValue);
       }
     }
     /**
-     * <code>optional string auth_data = 10 [json_name = "authData"];</code>
+     * <code>optional string auth_data = 12 [json_name = "authData"];</code>
      * @return The bytes for authData.
      */
     @java.lang.Override
@@ -945,19 +1778,19 @@ java.lang.String defaultValue);
       }
     }
 
-    public static final int AUTH_SERVICE_FIELD_NUMBER = 11;
+    public static final int AUTH_SERVICE_FIELD_NUMBER = 13;
     @SuppressWarnings("serial")
     private volatile java.lang.Object authService_ = "";
     /**
-     * <code>optional string auth_service = 11 [json_name = "authService"];</code>
+     * <code>optional string auth_service = 13 [json_name = "authService"];</code>
      * @return Whether the authService field is set.
      */
     @java.lang.Override
     public boolean hasAuthService() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
     /**
-     * <code>optional string auth_service = 11 [json_name = "authService"];</code>
+     * <code>optional string auth_service = 13 [json_name = "authService"];</code>
      * @return The authService.
      */
     @java.lang.Override
@@ -974,7 +1807,7 @@ java.lang.String defaultValue);
       }
     }
     /**
-     * <code>optional string auth_service = 11 [json_name = "authService"];</code>
+     * <code>optional string auth_service = 13 [json_name = "authService"];</code>
      * @return The bytes for authService.
      */
     @java.lang.Override
@@ -992,12 +1825,12 @@ java.lang.String defaultValue);
       }
     }
 
-    public static final int ROLES_FIELD_NUMBER = 12;
+    public static final int ROLES_FIELD_NUMBER = 14;
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList roles_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
     /**
-     * <code>repeated string roles = 12 [json_name = "roles"];</code>
+     * <code>repeated string roles = 14 [json_name = "roles"];</code>
      * @return A list containing the roles.
      */
     public com.google.protobuf.ProtocolStringList
@@ -1005,14 +1838,14 @@ java.lang.String defaultValue);
       return roles_;
     }
     /**
-     * <code>repeated string roles = 12 [json_name = "roles"];</code>
+     * <code>repeated string roles = 14 [json_name = "roles"];</code>
      * @return The count of roles.
      */
     public int getRolesCount() {
       return roles_.size();
     }
     /**
-     * <code>repeated string roles = 12 [json_name = "roles"];</code>
+     * <code>repeated string roles = 14 [json_name = "roles"];</code>
      * @param index The index of the element to return.
      * @return The roles at the given index.
      */
@@ -1020,7 +1853,7 @@ java.lang.String defaultValue);
       return roles_.get(index);
     }
     /**
-     * <code>repeated string roles = 12 [json_name = "roles"];</code>
+     * <code>repeated string roles = 14 [json_name = "roles"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the roles at the given index.
      */
@@ -1029,7 +1862,7 @@ java.lang.String defaultValue);
       return roles_.getByteString(index);
     }
 
-    public static final int PROPS_FIELD_NUMBER = 13;
+    public static final int PROPS_FIELD_NUMBER = 15;
     private static final class PropsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.String> defaultEntry =
@@ -1056,7 +1889,7 @@ java.lang.String defaultValue);
       return internalGetProps().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
+     * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
      */
     @java.lang.Override
     public boolean containsProps(
@@ -1073,14 +1906,14 @@ java.lang.String defaultValue);
       return getPropsMap();
     }
     /**
-     * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
+     * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getPropsMap() {
       return internalGetProps().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
+     * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
      */
     @java.lang.Override
     public /* nullable */
@@ -1094,7 +1927,7 @@ java.lang.String defaultValue) {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
+     * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
      */
     @java.lang.Override
     public java.lang.String getPropsOrThrow(
@@ -1108,7 +1941,7 @@ java.lang.String defaultValue) {
       return map.get(key);
     }
 
-    public static final int NOTIFY_PROPS_FIELD_NUMBER = 14;
+    public static final int NOTIFY_PROPS_FIELD_NUMBER = 16;
     private static final class NotifyPropsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.String> defaultEntry =
@@ -1135,7 +1968,7 @@ java.lang.String defaultValue) {
       return internalGetNotifyProps().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
+     * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
      */
     @java.lang.Override
     public boolean containsNotifyProps(
@@ -1152,14 +1985,14 @@ java.lang.String defaultValue) {
       return getNotifyPropsMap();
     }
     /**
-     * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
+     * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getNotifyPropsMap() {
       return internalGetNotifyProps().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
+     * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
      */
     @java.lang.Override
     public /* nullable */
@@ -1173,7 +2006,7 @@ java.lang.String defaultValue) {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
+     * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
      */
     @java.lang.Override
     public java.lang.String getNotifyPropsOrThrow(
@@ -1187,18 +2020,18 @@ java.lang.String defaultValue) {
       return map.get(key);
     }
 
-    public static final int LAST_PASSWORD_UPDATE_FIELD_NUMBER = 15;
+    public static final int LAST_PASSWORD_UPDATE_FIELD_NUMBER = 17;
     private long lastPasswordUpdate_ = 0L;
     /**
-     * <code>optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];</code>
+     * <code>optional int64 last_password_update = 17 [json_name = "lastPasswordUpdate"];</code>
      * @return Whether the lastPasswordUpdate field is set.
      */
     @java.lang.Override
     public boolean hasLastPasswordUpdate() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
     /**
-     * <code>optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];</code>
+     * <code>optional int64 last_password_update = 17 [json_name = "lastPasswordUpdate"];</code>
      * @return The lastPasswordUpdate.
      */
     @java.lang.Override
@@ -1206,18 +2039,18 @@ java.lang.String defaultValue) {
       return lastPasswordUpdate_;
     }
 
-    public static final int LAST_PICTURE_UPDATE_FIELD_NUMBER = 16;
+    public static final int LAST_PICTURE_UPDATE_FIELD_NUMBER = 18;
     private long lastPictureUpdate_ = 0L;
     /**
-     * <code>optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];</code>
+     * <code>optional int64 last_picture_update = 18 [json_name = "lastPictureUpdate"];</code>
      * @return Whether the lastPictureUpdate field is set.
      */
     @java.lang.Override
     public boolean hasLastPictureUpdate() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
     /**
-     * <code>optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];</code>
+     * <code>optional int64 last_picture_update = 18 [json_name = "lastPictureUpdate"];</code>
      * @return The lastPictureUpdate.
      */
     @java.lang.Override
@@ -1225,18 +2058,18 @@ java.lang.String defaultValue) {
       return lastPictureUpdate_;
     }
 
-    public static final int FAILED_ATTEMPTS_FIELD_NUMBER = 17;
+    public static final int FAILED_ATTEMPTS_FIELD_NUMBER = 19;
     private int failedAttempts_ = 0;
     /**
-     * <code>optional int32 failed_attempts = 17 [json_name = "failedAttempts"];</code>
+     * <code>optional int32 failed_attempts = 19 [json_name = "failedAttempts"];</code>
      * @return Whether the failedAttempts field is set.
      */
     @java.lang.Override
     public boolean hasFailedAttempts() {
-      return ((bitField0_ & 0x00002000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
     /**
-     * <code>optional int32 failed_attempts = 17 [json_name = "failedAttempts"];</code>
+     * <code>optional int32 failed_attempts = 19 [json_name = "failedAttempts"];</code>
      * @return The failedAttempts.
      */
     @java.lang.Override
@@ -1244,19 +2077,19 @@ java.lang.String defaultValue) {
       return failedAttempts_;
     }
 
-    public static final int LOCALE_FIELD_NUMBER = 18;
+    public static final int LOCALE_FIELD_NUMBER = 20;
     @SuppressWarnings("serial")
     private volatile java.lang.Object locale_ = "";
     /**
-     * <code>optional string locale = 18 [json_name = "locale"];</code>
+     * <code>optional string locale = 20 [json_name = "locale"];</code>
      * @return Whether the locale field is set.
      */
     @java.lang.Override
     public boolean hasLocale() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
     /**
-     * <code>optional string locale = 18 [json_name = "locale"];</code>
+     * <code>optional string locale = 20 [json_name = "locale"];</code>
      * @return The locale.
      */
     @java.lang.Override
@@ -1273,7 +2106,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string locale = 18 [json_name = "locale"];</code>
+     * <code>optional string locale = 20 [json_name = "locale"];</code>
      * @return The bytes for locale.
      */
     @java.lang.Override
@@ -1291,18 +2124,18 @@ java.lang.String defaultValue) {
       }
     }
 
-    public static final int MFA_ACTIVE_FIELD_NUMBER = 19;
+    public static final int MFA_ACTIVE_FIELD_NUMBER = 21;
     private boolean mfaActive_ = false;
     /**
-     * <code>optional bool mfa_active = 19 [json_name = "mfaActive"];</code>
+     * <code>optional bool mfa_active = 21 [json_name = "mfaActive"];</code>
      * @return Whether the mfaActive field is set.
      */
     @java.lang.Override
     public boolean hasMfaActive() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
     /**
-     * <code>optional bool mfa_active = 19 [json_name = "mfaActive"];</code>
+     * <code>optional bool mfa_active = 21 [json_name = "mfaActive"];</code>
      * @return The mfaActive.
      */
     @java.lang.Override
@@ -1310,19 +2143,19 @@ java.lang.String defaultValue) {
       return mfaActive_;
     }
 
-    public static final int MFA_SECRET_FIELD_NUMBER = 20;
+    public static final int MFA_SECRET_FIELD_NUMBER = 22;
     @SuppressWarnings("serial")
     private volatile java.lang.Object mfaSecret_ = "";
     /**
-     * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
+     * <code>optional string mfa_secret = 22 [json_name = "mfaSecret"];</code>
      * @return Whether the mfaSecret field is set.
      */
     @java.lang.Override
     public boolean hasMfaSecret() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
     /**
-     * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
+     * <code>optional string mfa_secret = 22 [json_name = "mfaSecret"];</code>
      * @return The mfaSecret.
      */
     @java.lang.Override
@@ -1339,7 +2172,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
+     * <code>optional string mfa_secret = 22 [json_name = "mfaSecret"];</code>
      * @return The bytes for mfaSecret.
      */
     @java.lang.Override
@@ -1357,18 +2190,18 @@ java.lang.String defaultValue) {
       }
     }
 
-    public static final int LAST_ACTIVITY_AT_FIELD_NUMBER = 21;
+    public static final int LAST_ACTIVITY_AT_FIELD_NUMBER = 23;
     private long lastActivityAt_ = 0L;
     /**
-     * <code>optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];</code>
+     * <code>optional int64 last_activity_at = 23 [json_name = "lastActivityAt"];</code>
      * @return Whether the lastActivityAt field is set.
      */
     @java.lang.Override
     public boolean hasLastActivityAt() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
     /**
-     * <code>optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];</code>
+     * <code>optional int64 last_activity_at = 23 [json_name = "lastActivityAt"];</code>
      * @return The lastActivityAt.
      */
     @java.lang.Override
@@ -1376,18 +2209,18 @@ java.lang.String defaultValue) {
       return lastActivityAt_;
     }
 
-    public static final int LAST_LOGIN_FIELD_NUMBER = 22;
+    public static final int LAST_LOGIN_FIELD_NUMBER = 24;
     private long lastLogin_ = 0L;
     /**
-     * <code>optional int64 last_login = 22 [json_name = "lastLogin"];</code>
+     * <code>optional int64 last_login = 24 [json_name = "lastLogin"];</code>
      * @return Whether the lastLogin field is set.
      */
     @java.lang.Override
     public boolean hasLastLogin() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
     /**
-     * <code>optional int64 last_login = 22 [json_name = "lastLogin"];</code>
+     * <code>optional int64 last_login = 24 [json_name = "lastLogin"];</code>
      * @return The lastLogin.
      */
     @java.lang.Override
@@ -1395,18 +2228,18 @@ java.lang.String defaultValue) {
       return lastLogin_;
     }
 
-    public static final int CREATED_AT_FIELD_NUMBER = 23;
+    public static final int CREATED_AT_FIELD_NUMBER = 25;
     private long createdAt_ = 0L;
     /**
-     * <code>optional int64 created_at = 23 [json_name = "createdAt"];</code>
+     * <code>optional int64 created_at = 25 [json_name = "createdAt"];</code>
      * @return Whether the createdAt field is set.
      */
     @java.lang.Override
     public boolean hasCreatedAt() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00200000) != 0);
     }
     /**
-     * <code>optional int64 created_at = 23 [json_name = "createdAt"];</code>
+     * <code>optional int64 created_at = 25 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     @java.lang.Override
@@ -1414,18 +2247,18 @@ java.lang.String defaultValue) {
       return createdAt_;
     }
 
-    public static final int UPDATED_AT_FIELD_NUMBER = 24;
+    public static final int UPDATED_AT_FIELD_NUMBER = 26;
     private long updatedAt_ = 0L;
     /**
-     * <code>optional int64 updated_at = 24 [json_name = "updatedAt"];</code>
+     * <code>optional int64 updated_at = 26 [json_name = "updatedAt"];</code>
      * @return Whether the updatedAt field is set.
      */
     @java.lang.Override
     public boolean hasUpdatedAt() {
-      return ((bitField0_ & 0x00100000) != 0);
+      return ((bitField0_ & 0x00400000) != 0);
     }
     /**
-     * <code>optional int64 updated_at = 24 [json_name = "updatedAt"];</code>
+     * <code>optional int64 updated_at = 26 [json_name = "updatedAt"];</code>
      * @return The updatedAt.
      */
     @java.lang.Override
@@ -1433,18 +2266,18 @@ java.lang.String defaultValue) {
       return updatedAt_;
     }
 
-    public static final int DELETED_AT_FIELD_NUMBER = 25;
+    public static final int DELETED_AT_FIELD_NUMBER = 27;
     private long deletedAt_ = 0L;
     /**
-     * <code>optional int64 deleted_at = 25 [json_name = "deletedAt"];</code>
+     * <code>optional int64 deleted_at = 27 [json_name = "deletedAt"];</code>
      * @return Whether the deletedAt field is set.
      */
     @java.lang.Override
     public boolean hasDeletedAt() {
-      return ((bitField0_ & 0x00200000) != 0);
+      return ((bitField0_ & 0x00800000) != 0);
     }
     /**
-     * <code>optional int64 deleted_at = 25 [json_name = "deletedAt"];</code>
+     * <code>optional int64 deleted_at = 27 [json_name = "deletedAt"];</code>
      * @return The deletedAt.
      */
     @java.lang.Override
@@ -1485,67 +2318,73 @@ java.lang.String defaultValue) {
         com.google.protobuf.GeneratedMessage.writeString(output, 6, userType_);
       }
       if (((bitField0_ & 0x00000040) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 7, membership_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 7, image_);
       }
       if (((bitField0_ & 0x00000080) != 0)) {
-        output.writeBool(8, isEmailVerified_);
+        output.writeMessage(8, getImageMetadata());
       }
       if (((bitField0_ & 0x00000100) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 9, password_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 9, membership_);
       }
       if (((bitField0_ & 0x00000200) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 10, authData_);
+        output.writeBool(10, isEmailVerified_);
       }
       if (((bitField0_ & 0x00000400) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 11, authService_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 11, password_);
+      }
+      if (((bitField0_ & 0x00000800) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 12, authData_);
+      }
+      if (((bitField0_ & 0x00001000) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 13, authService_);
       }
       for (int i = 0; i < roles_.size(); i++) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 12, roles_.getRaw(i));
+        com.google.protobuf.GeneratedMessage.writeString(output, 14, roles_.getRaw(i));
       }
       com.google.protobuf.GeneratedMessage
         .serializeStringMapTo(
           output,
           internalGetProps(),
           PropsDefaultEntryHolder.defaultEntry,
-          13);
+          15);
       com.google.protobuf.GeneratedMessage
         .serializeStringMapTo(
           output,
           internalGetNotifyProps(),
           NotifyPropsDefaultEntryHolder.defaultEntry,
-          14);
-      if (((bitField0_ & 0x00000800) != 0)) {
-        output.writeInt64(15, lastPasswordUpdate_);
-      }
-      if (((bitField0_ & 0x00001000) != 0)) {
-        output.writeInt64(16, lastPictureUpdate_);
-      }
+          16);
       if (((bitField0_ & 0x00002000) != 0)) {
-        output.writeInt32(17, failedAttempts_);
+        output.writeInt64(17, lastPasswordUpdate_);
       }
       if (((bitField0_ & 0x00004000) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 18, locale_);
+        output.writeInt64(18, lastPictureUpdate_);
       }
       if (((bitField0_ & 0x00008000) != 0)) {
-        output.writeBool(19, mfaActive_);
+        output.writeInt32(19, failedAttempts_);
       }
       if (((bitField0_ & 0x00010000) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 20, mfaSecret_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 20, locale_);
       }
       if (((bitField0_ & 0x00020000) != 0)) {
-        output.writeInt64(21, lastActivityAt_);
+        output.writeBool(21, mfaActive_);
       }
       if (((bitField0_ & 0x00040000) != 0)) {
-        output.writeInt64(22, lastLogin_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 22, mfaSecret_);
       }
       if (((bitField0_ & 0x00080000) != 0)) {
-        output.writeInt64(23, createdAt_);
+        output.writeInt64(23, lastActivityAt_);
       }
       if (((bitField0_ & 0x00100000) != 0)) {
-        output.writeInt64(24, updatedAt_);
+        output.writeInt64(24, lastLogin_);
       }
       if (((bitField0_ & 0x00200000) != 0)) {
-        output.writeInt64(25, deletedAt_);
+        output.writeInt64(25, createdAt_);
+      }
+      if (((bitField0_ & 0x00400000) != 0)) {
+        output.writeInt64(26, updatedAt_);
+      }
+      if (((bitField0_ & 0x00800000) != 0)) {
+        output.writeInt64(27, deletedAt_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1575,20 +2414,27 @@ java.lang.String defaultValue) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(6, userType_);
       }
       if (((bitField0_ & 0x00000040) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, membership_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, image_);
       }
       if (((bitField0_ & 0x00000080) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, isEmailVerified_);
+          .computeMessageSize(8, getImageMetadata());
       }
       if (((bitField0_ & 0x00000100) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(9, password_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(9, membership_);
       }
       if (((bitField0_ & 0x00000200) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(10, authData_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(10, isEmailVerified_);
       }
       if (((bitField0_ & 0x00000400) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(11, authService_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(11, password_);
+      }
+      if (((bitField0_ & 0x00000800) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(12, authData_);
+      }
+      if (((bitField0_ & 0x00001000) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(13, authService_);
       }
       {
         int dataSize = 0;
@@ -1606,7 +2452,7 @@ java.lang.String defaultValue) {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(13, props__);
+            .computeMessageSize(15, props__);
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetNotifyProps().getMap().entrySet()) {
@@ -1616,49 +2462,49 @@ java.lang.String defaultValue) {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(14, notifyProps__);
-      }
-      if (((bitField0_ & 0x00000800) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(15, lastPasswordUpdate_);
-      }
-      if (((bitField0_ & 0x00001000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(16, lastPictureUpdate_);
+            .computeMessageSize(16, notifyProps__);
       }
       if (((bitField0_ & 0x00002000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(17, failedAttempts_);
+          .computeInt64Size(17, lastPasswordUpdate_);
       }
       if (((bitField0_ & 0x00004000) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(18, locale_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(18, lastPictureUpdate_);
       }
       if (((bitField0_ & 0x00008000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(19, mfaActive_);
+          .computeInt32Size(19, failedAttempts_);
       }
       if (((bitField0_ & 0x00010000) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(20, mfaSecret_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(20, locale_);
       }
       if (((bitField0_ & 0x00020000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(21, lastActivityAt_);
+          .computeBoolSize(21, mfaActive_);
       }
       if (((bitField0_ & 0x00040000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(22, lastLogin_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(22, mfaSecret_);
       }
       if (((bitField0_ & 0x00080000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(23, createdAt_);
+          .computeInt64Size(23, lastActivityAt_);
       }
       if (((bitField0_ & 0x00100000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(24, updatedAt_);
+          .computeInt64Size(24, lastLogin_);
       }
       if (((bitField0_ & 0x00200000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(25, deletedAt_);
+          .computeInt64Size(25, createdAt_);
+      }
+      if (((bitField0_ & 0x00400000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(26, updatedAt_);
+      }
+      if (((bitField0_ & 0x00800000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(27, deletedAt_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1704,6 +2550,16 @@ java.lang.String defaultValue) {
       if (hasUserType()) {
         if (!getUserType()
             .equals(other.getUserType())) return false;
+      }
+      if (hasImage() != other.hasImage()) return false;
+      if (hasImage()) {
+        if (!getImage()
+            .equals(other.getImage())) return false;
+      }
+      if (hasImageMetadata() != other.hasImageMetadata()) return false;
+      if (hasImageMetadata()) {
+        if (!getImageMetadata()
+            .equals(other.getImageMetadata())) return false;
       }
       if (hasMembership() != other.hasMembership()) return false;
       if (hasMembership()) {
@@ -1825,6 +2681,14 @@ java.lang.String defaultValue) {
       if (hasUserType()) {
         hash = (37 * hash) + USER_TYPE_FIELD_NUMBER;
         hash = (53 * hash) + getUserType().hashCode();
+      }
+      if (hasImage()) {
+        hash = (37 * hash) + IMAGE_FIELD_NUMBER;
+        hash = (53 * hash) + getImage().hashCode();
+      }
+      if (hasImageMetadata()) {
+        hash = (37 * hash) + IMAGE_METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + getImageMetadata().hashCode();
       }
       if (hasMembership()) {
         hash = (37 * hash) + MEMBERSHIP_FIELD_NUMBER;
@@ -2024,9 +2888,9 @@ java.lang.String defaultValue) {
       protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
           int number) {
         switch (number) {
-          case 13:
+          case 15:
             return internalGetProps();
-          case 14:
+          case 16:
             return internalGetNotifyProps();
           default:
             throw new RuntimeException(
@@ -2037,9 +2901,9 @@ java.lang.String defaultValue) {
       protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
           int number) {
         switch (number) {
-          case 13:
+          case 15:
             return internalGetMutableProps();
-          case 14:
+          case 16:
             return internalGetMutableNotifyProps();
           default:
             throw new RuntimeException(
@@ -2056,13 +2920,19 @@ java.lang.String defaultValue) {
 
       // Construct using org.megacommerce.users.v1.UserProto.User.newBuilder()
       private Builder() {
-
+        maybeForceBuilderInitialization();
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
-
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          internalGetImageMetadataFieldBuilder();
+        }
       }
       @java.lang.Override
       public Builder clear() {
@@ -2074,6 +2944,12 @@ java.lang.String defaultValue) {
         lastName_ = "";
         email_ = "";
         userType_ = "";
+        image_ = "";
+        imageMetadata_ = null;
+        if (imageMetadataBuilder_ != null) {
+          imageMetadataBuilder_.dispose();
+          imageMetadataBuilder_ = null;
+        }
         membership_ = "";
         isEmailVerified_ = false;
         password_ = "";
@@ -2153,80 +3029,90 @@ java.lang.String defaultValue) {
           to_bitField0_ |= 0x00000020;
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.membership_ = membership_;
+          result.image_ = image_;
           to_bitField0_ |= 0x00000040;
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.isEmailVerified_ = isEmailVerified_;
+          result.imageMetadata_ = imageMetadataBuilder_ == null
+              ? imageMetadata_
+              : imageMetadataBuilder_.build();
           to_bitField0_ |= 0x00000080;
         }
         if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.password_ = password_;
+          result.membership_ = membership_;
           to_bitField0_ |= 0x00000100;
         }
         if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.authData_ = authData_;
+          result.isEmailVerified_ = isEmailVerified_;
           to_bitField0_ |= 0x00000200;
         }
         if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.authService_ = authService_;
+          result.password_ = password_;
           to_bitField0_ |= 0x00000400;
         }
         if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.authData_ = authData_;
+          to_bitField0_ |= 0x00000800;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.authService_ = authService_;
+          to_bitField0_ |= 0x00001000;
+        }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
           roles_.makeImmutable();
           result.roles_ = roles_;
         }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
+        if (((from_bitField0_ & 0x00004000) != 0)) {
           result.props_ = internalGetProps();
           result.props_.makeImmutable();
         }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
+        if (((from_bitField0_ & 0x00008000) != 0)) {
           result.notifyProps_ = internalGetNotifyProps();
           result.notifyProps_.makeImmutable();
         }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
-          result.lastPasswordUpdate_ = lastPasswordUpdate_;
-          to_bitField0_ |= 0x00000800;
-        }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.lastPictureUpdate_ = lastPictureUpdate_;
-          to_bitField0_ |= 0x00001000;
-        }
         if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.failedAttempts_ = failedAttempts_;
+          result.lastPasswordUpdate_ = lastPasswordUpdate_;
           to_bitField0_ |= 0x00002000;
         }
         if (((from_bitField0_ & 0x00020000) != 0)) {
-          result.locale_ = locale_;
+          result.lastPictureUpdate_ = lastPictureUpdate_;
           to_bitField0_ |= 0x00004000;
         }
         if (((from_bitField0_ & 0x00040000) != 0)) {
-          result.mfaActive_ = mfaActive_;
+          result.failedAttempts_ = failedAttempts_;
           to_bitField0_ |= 0x00008000;
         }
         if (((from_bitField0_ & 0x00080000) != 0)) {
-          result.mfaSecret_ = mfaSecret_;
+          result.locale_ = locale_;
           to_bitField0_ |= 0x00010000;
         }
         if (((from_bitField0_ & 0x00100000) != 0)) {
-          result.lastActivityAt_ = lastActivityAt_;
+          result.mfaActive_ = mfaActive_;
           to_bitField0_ |= 0x00020000;
         }
         if (((from_bitField0_ & 0x00200000) != 0)) {
-          result.lastLogin_ = lastLogin_;
+          result.mfaSecret_ = mfaSecret_;
           to_bitField0_ |= 0x00040000;
         }
         if (((from_bitField0_ & 0x00400000) != 0)) {
-          result.createdAt_ = createdAt_;
+          result.lastActivityAt_ = lastActivityAt_;
           to_bitField0_ |= 0x00080000;
         }
         if (((from_bitField0_ & 0x00800000) != 0)) {
-          result.updatedAt_ = updatedAt_;
+          result.lastLogin_ = lastLogin_;
           to_bitField0_ |= 0x00100000;
         }
         if (((from_bitField0_ & 0x01000000) != 0)) {
-          result.deletedAt_ = deletedAt_;
+          result.createdAt_ = createdAt_;
           to_bitField0_ |= 0x00200000;
+        }
+        if (((from_bitField0_ & 0x02000000) != 0)) {
+          result.updatedAt_ = updatedAt_;
+          to_bitField0_ |= 0x00400000;
+        }
+        if (((from_bitField0_ & 0x04000000) != 0)) {
+          result.deletedAt_ = deletedAt_;
+          to_bitField0_ |= 0x00800000;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -2273,9 +3159,17 @@ java.lang.String defaultValue) {
           bitField0_ |= 0x00000020;
           onChanged();
         }
+        if (other.hasImage()) {
+          image_ = other.image_;
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        if (other.hasImageMetadata()) {
+          mergeImageMetadata(other.getImageMetadata());
+        }
         if (other.hasMembership()) {
           membership_ = other.membership_;
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000100;
           onChanged();
         }
         if (other.hasIsEmailVerified()) {
@@ -2283,23 +3177,23 @@ java.lang.String defaultValue) {
         }
         if (other.hasPassword()) {
           password_ = other.password_;
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000400;
           onChanged();
         }
         if (other.hasAuthData()) {
           authData_ = other.authData_;
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000800;
           onChanged();
         }
         if (other.hasAuthService()) {
           authService_ = other.authService_;
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00001000;
           onChanged();
         }
         if (!other.roles_.isEmpty()) {
           if (roles_.isEmpty()) {
             roles_ = other.roles_;
-            bitField0_ |= 0x00000800;
+            bitField0_ |= 0x00002000;
           } else {
             ensureRolesIsMutable();
             roles_.addAll(other.roles_);
@@ -2308,10 +3202,10 @@ java.lang.String defaultValue) {
         }
         internalGetMutableProps().mergeFrom(
             other.internalGetProps());
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00004000;
         internalGetMutableNotifyProps().mergeFrom(
             other.internalGetNotifyProps());
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00008000;
         if (other.hasLastPasswordUpdate()) {
           setLastPasswordUpdate(other.getLastPasswordUpdate());
         }
@@ -2323,7 +3217,7 @@ java.lang.String defaultValue) {
         }
         if (other.hasLocale()) {
           locale_ = other.locale_;
-          bitField0_ |= 0x00020000;
+          bitField0_ |= 0x00080000;
           onChanged();
         }
         if (other.hasMfaActive()) {
@@ -2331,7 +3225,7 @@ java.lang.String defaultValue) {
         }
         if (other.hasMfaSecret()) {
           mfaSecret_ = other.mfaSecret_;
-          bitField0_ |= 0x00080000;
+          bitField0_ |= 0x00200000;
           onChanged();
         }
         if (other.hasLastActivityAt()) {
@@ -2406,109 +3300,121 @@ java.lang.String defaultValue) {
                 break;
               } // case 50
               case 58: {
-                membership_ = input.readStringRequireUtf8();
+                image_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
-              case 64: {
-                isEmailVerified_ = input.readBool();
+              case 66: {
+                input.readMessage(
+                    internalGetImageMetadataFieldBuilder().getBuilder(),
+                    extensionRegistry);
                 bitField0_ |= 0x00000080;
                 break;
-              } // case 64
+              } // case 66
               case 74: {
-                password_ = input.readStringRequireUtf8();
+                membership_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000100;
                 break;
               } // case 74
-              case 82: {
-                authData_ = input.readStringRequireUtf8();
+              case 80: {
+                isEmailVerified_ = input.readBool();
                 bitField0_ |= 0x00000200;
                 break;
-              } // case 82
+              } // case 80
               case 90: {
-                authService_ = input.readStringRequireUtf8();
+                password_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000400;
                 break;
               } // case 90
               case 98: {
+                authData_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
+              case 106: {
+                authService_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
+              case 114: {
                 java.lang.String s = input.readStringRequireUtf8();
                 ensureRolesIsMutable();
                 roles_.add(s);
                 break;
-              } // case 98
-              case 106: {
+              } // case 114
+              case 122: {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
                 props__ = input.readMessage(
                     PropsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableProps().getMutableMap().put(
                     props__.getKey(), props__.getValue());
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00004000;
                 break;
-              } // case 106
-              case 114: {
+              } // case 122
+              case 130: {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
                 notifyProps__ = input.readMessage(
                     NotifyPropsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableNotifyProps().getMutableMap().put(
                     notifyProps__.getKey(), notifyProps__.getValue());
-                bitField0_ |= 0x00002000;
-                break;
-              } // case 114
-              case 120: {
-                lastPasswordUpdate_ = input.readInt64();
-                bitField0_ |= 0x00004000;
-                break;
-              } // case 120
-              case 128: {
-                lastPictureUpdate_ = input.readInt64();
                 bitField0_ |= 0x00008000;
                 break;
-              } // case 128
+              } // case 130
               case 136: {
-                failedAttempts_ = input.readInt32();
+                lastPasswordUpdate_ = input.readInt64();
                 bitField0_ |= 0x00010000;
                 break;
               } // case 136
-              case 146: {
-                locale_ = input.readStringRequireUtf8();
+              case 144: {
+                lastPictureUpdate_ = input.readInt64();
                 bitField0_ |= 0x00020000;
                 break;
-              } // case 146
+              } // case 144
               case 152: {
-                mfaActive_ = input.readBool();
+                failedAttempts_ = input.readInt32();
                 bitField0_ |= 0x00040000;
                 break;
               } // case 152
               case 162: {
-                mfaSecret_ = input.readStringRequireUtf8();
+                locale_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00080000;
                 break;
               } // case 162
               case 168: {
-                lastActivityAt_ = input.readInt64();
+                mfaActive_ = input.readBool();
                 bitField0_ |= 0x00100000;
                 break;
               } // case 168
-              case 176: {
-                lastLogin_ = input.readInt64();
+              case 178: {
+                mfaSecret_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00200000;
                 break;
-              } // case 176
+              } // case 178
               case 184: {
-                createdAt_ = input.readInt64();
+                lastActivityAt_ = input.readInt64();
                 bitField0_ |= 0x00400000;
                 break;
               } // case 184
               case 192: {
-                updatedAt_ = input.readInt64();
+                lastLogin_ = input.readInt64();
                 bitField0_ |= 0x00800000;
                 break;
               } // case 192
               case 200: {
-                deletedAt_ = input.readInt64();
+                createdAt_ = input.readInt64();
                 bitField0_ |= 0x01000000;
                 break;
               } // case 200
+              case 208: {
+                updatedAt_ = input.readInt64();
+                bitField0_ |= 0x02000000;
+                break;
+              } // case 208
+              case 216: {
+                deletedAt_ = input.readInt64();
+                bitField0_ |= 0x04000000;
+                break;
+              } // case 216
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3000,16 +3906,216 @@ java.lang.String defaultValue) {
         return this;
       }
 
-      private java.lang.Object membership_ = "";
+      private java.lang.Object image_ = "";
       /**
-       * <code>optional string membership = 7 [json_name = "membership"];</code>
-       * @return Whether the membership field is set.
+       * <code>optional string image = 7 [json_name = "image"];</code>
+       * @return Whether the image field is set.
        */
-      public boolean hasMembership() {
+      public boolean hasImage() {
         return ((bitField0_ & 0x00000040) != 0);
       }
       /**
-       * <code>optional string membership = 7 [json_name = "membership"];</code>
+       * <code>optional string image = 7 [json_name = "image"];</code>
+       * @return The image.
+       */
+      public java.lang.String getImage() {
+        java.lang.Object ref = image_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          image_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string image = 7 [json_name = "image"];</code>
+       * @return The bytes for image.
+       */
+      public com.google.protobuf.ByteString
+          getImageBytes() {
+        java.lang.Object ref = image_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          image_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string image = 7 [json_name = "image"];</code>
+       * @param value The image to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImage(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        image_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string image = 7 [json_name = "image"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearImage() {
+        image_ = getDefaultInstance().getImage();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string image = 7 [json_name = "image"];</code>
+       * @param value The bytes for image to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        image_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      private org.megacommerce.users.v1.UserProto.UserImageMetadata imageMetadata_;
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.users.v1.UserProto.UserImageMetadata, org.megacommerce.users.v1.UserProto.UserImageMetadata.Builder, org.megacommerce.users.v1.UserProto.UserImageMetadataOrBuilder> imageMetadataBuilder_;
+      /**
+       * <code>optional .users.v1.UserImageMetadata image_metadata = 8 [json_name = "imageMetadata"];</code>
+       * @return Whether the imageMetadata field is set.
+       */
+      public boolean hasImageMetadata() {
+        return ((bitField0_ & 0x00000080) != 0);
+      }
+      /**
+       * <code>optional .users.v1.UserImageMetadata image_metadata = 8 [json_name = "imageMetadata"];</code>
+       * @return The imageMetadata.
+       */
+      public org.megacommerce.users.v1.UserProto.UserImageMetadata getImageMetadata() {
+        if (imageMetadataBuilder_ == null) {
+          return imageMetadata_ == null ? org.megacommerce.users.v1.UserProto.UserImageMetadata.getDefaultInstance() : imageMetadata_;
+        } else {
+          return imageMetadataBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>optional .users.v1.UserImageMetadata image_metadata = 8 [json_name = "imageMetadata"];</code>
+       */
+      public Builder setImageMetadata(org.megacommerce.users.v1.UserProto.UserImageMetadata value) {
+        if (imageMetadataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          imageMetadata_ = value;
+        } else {
+          imageMetadataBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .users.v1.UserImageMetadata image_metadata = 8 [json_name = "imageMetadata"];</code>
+       */
+      public Builder setImageMetadata(
+          org.megacommerce.users.v1.UserProto.UserImageMetadata.Builder builderForValue) {
+        if (imageMetadataBuilder_ == null) {
+          imageMetadata_ = builderForValue.build();
+        } else {
+          imageMetadataBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .users.v1.UserImageMetadata image_metadata = 8 [json_name = "imageMetadata"];</code>
+       */
+      public Builder mergeImageMetadata(org.megacommerce.users.v1.UserProto.UserImageMetadata value) {
+        if (imageMetadataBuilder_ == null) {
+          if (((bitField0_ & 0x00000080) != 0) &&
+            imageMetadata_ != null &&
+            imageMetadata_ != org.megacommerce.users.v1.UserProto.UserImageMetadata.getDefaultInstance()) {
+            getImageMetadataBuilder().mergeFrom(value);
+          } else {
+            imageMetadata_ = value;
+          }
+        } else {
+          imageMetadataBuilder_.mergeFrom(value);
+        }
+        if (imageMetadata_ != null) {
+          bitField0_ |= 0x00000080;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>optional .users.v1.UserImageMetadata image_metadata = 8 [json_name = "imageMetadata"];</code>
+       */
+      public Builder clearImageMetadata() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        imageMetadata_ = null;
+        if (imageMetadataBuilder_ != null) {
+          imageMetadataBuilder_.dispose();
+          imageMetadataBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .users.v1.UserImageMetadata image_metadata = 8 [json_name = "imageMetadata"];</code>
+       */
+      public org.megacommerce.users.v1.UserProto.UserImageMetadata.Builder getImageMetadataBuilder() {
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return internalGetImageMetadataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>optional .users.v1.UserImageMetadata image_metadata = 8 [json_name = "imageMetadata"];</code>
+       */
+      public org.megacommerce.users.v1.UserProto.UserImageMetadataOrBuilder getImageMetadataOrBuilder() {
+        if (imageMetadataBuilder_ != null) {
+          return imageMetadataBuilder_.getMessageOrBuilder();
+        } else {
+          return imageMetadata_ == null ?
+              org.megacommerce.users.v1.UserProto.UserImageMetadata.getDefaultInstance() : imageMetadata_;
+        }
+      }
+      /**
+       * <code>optional .users.v1.UserImageMetadata image_metadata = 8 [json_name = "imageMetadata"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.users.v1.UserProto.UserImageMetadata, org.megacommerce.users.v1.UserProto.UserImageMetadata.Builder, org.megacommerce.users.v1.UserProto.UserImageMetadataOrBuilder> 
+          internalGetImageMetadataFieldBuilder() {
+        if (imageMetadataBuilder_ == null) {
+          imageMetadataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.users.v1.UserProto.UserImageMetadata, org.megacommerce.users.v1.UserProto.UserImageMetadata.Builder, org.megacommerce.users.v1.UserProto.UserImageMetadataOrBuilder>(
+                  getImageMetadata(),
+                  getParentForChildren(),
+                  isClean());
+          imageMetadata_ = null;
+        }
+        return imageMetadataBuilder_;
+      }
+
+      private java.lang.Object membership_ = "";
+      /**
+       * <code>optional string membership = 9 [json_name = "membership"];</code>
+       * @return Whether the membership field is set.
+       */
+      public boolean hasMembership() {
+        return ((bitField0_ & 0x00000100) != 0);
+      }
+      /**
+       * <code>optional string membership = 9 [json_name = "membership"];</code>
        * @return The membership.
        */
       public java.lang.String getMembership() {
@@ -3025,7 +4131,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string membership = 7 [json_name = "membership"];</code>
+       * <code>optional string membership = 9 [json_name = "membership"];</code>
        * @return The bytes for membership.
        */
       public com.google.protobuf.ByteString
@@ -3042,7 +4148,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string membership = 7 [json_name = "membership"];</code>
+       * <code>optional string membership = 9 [json_name = "membership"];</code>
        * @param value The membership to set.
        * @return This builder for chaining.
        */
@@ -3050,22 +4156,22 @@ java.lang.String defaultValue) {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         membership_ = value;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string membership = 7 [json_name = "membership"];</code>
+       * <code>optional string membership = 9 [json_name = "membership"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMembership() {
         membership_ = getDefaultInstance().getMembership();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
         return this;
       }
       /**
-       * <code>optional string membership = 7 [json_name = "membership"];</code>
+       * <code>optional string membership = 9 [json_name = "membership"];</code>
        * @param value The bytes for membership to set.
        * @return This builder for chaining.
        */
@@ -3074,22 +4180,22 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         membership_ = value;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
 
       private boolean isEmailVerified_ ;
       /**
-       * <code>optional bool is_email_verified = 8 [json_name = "isEmailVerified"];</code>
+       * <code>optional bool is_email_verified = 10 [json_name = "isEmailVerified"];</code>
        * @return Whether the isEmailVerified field is set.
        */
       @java.lang.Override
       public boolean hasIsEmailVerified() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000200) != 0);
       }
       /**
-       * <code>optional bool is_email_verified = 8 [json_name = "isEmailVerified"];</code>
+       * <code>optional bool is_email_verified = 10 [json_name = "isEmailVerified"];</code>
        * @return The isEmailVerified.
        */
       @java.lang.Override
@@ -3097,23 +4203,23 @@ java.lang.String defaultValue) {
         return isEmailVerified_;
       }
       /**
-       * <code>optional bool is_email_verified = 8 [json_name = "isEmailVerified"];</code>
+       * <code>optional bool is_email_verified = 10 [json_name = "isEmailVerified"];</code>
        * @param value The isEmailVerified to set.
        * @return This builder for chaining.
        */
       public Builder setIsEmailVerified(boolean value) {
 
         isEmailVerified_ = value;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000200;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool is_email_verified = 8 [json_name = "isEmailVerified"];</code>
+       * <code>optional bool is_email_verified = 10 [json_name = "isEmailVerified"];</code>
        * @return This builder for chaining.
        */
       public Builder clearIsEmailVerified() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000200);
         isEmailVerified_ = false;
         onChanged();
         return this;
@@ -3121,14 +4227,14 @@ java.lang.String defaultValue) {
 
       private java.lang.Object password_ = "";
       /**
-       * <code>optional string password = 9 [json_name = "password"];</code>
+       * <code>optional string password = 11 [json_name = "password"];</code>
        * @return Whether the password field is set.
        */
       public boolean hasPassword() {
-        return ((bitField0_ & 0x00000100) != 0);
+        return ((bitField0_ & 0x00000400) != 0);
       }
       /**
-       * <code>optional string password = 9 [json_name = "password"];</code>
+       * <code>optional string password = 11 [json_name = "password"];</code>
        * @return The password.
        */
       public java.lang.String getPassword() {
@@ -3144,7 +4250,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string password = 9 [json_name = "password"];</code>
+       * <code>optional string password = 11 [json_name = "password"];</code>
        * @return The bytes for password.
        */
       public com.google.protobuf.ByteString
@@ -3161,7 +4267,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string password = 9 [json_name = "password"];</code>
+       * <code>optional string password = 11 [json_name = "password"];</code>
        * @param value The password to set.
        * @return This builder for chaining.
        */
@@ -3169,22 +4275,22 @@ java.lang.String defaultValue) {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         password_ = value;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string password = 9 [json_name = "password"];</code>
+       * <code>optional string password = 11 [json_name = "password"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPassword() {
         password_ = getDefaultInstance().getPassword();
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
         return this;
       }
       /**
-       * <code>optional string password = 9 [json_name = "password"];</code>
+       * <code>optional string password = 11 [json_name = "password"];</code>
        * @param value The bytes for password to set.
        * @return This builder for chaining.
        */
@@ -3193,21 +4299,21 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         password_ = value;
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000400;
         onChanged();
         return this;
       }
 
       private java.lang.Object authData_ = "";
       /**
-       * <code>optional string auth_data = 10 [json_name = "authData"];</code>
+       * <code>optional string auth_data = 12 [json_name = "authData"];</code>
        * @return Whether the authData field is set.
        */
       public boolean hasAuthData() {
-        return ((bitField0_ & 0x00000200) != 0);
+        return ((bitField0_ & 0x00000800) != 0);
       }
       /**
-       * <code>optional string auth_data = 10 [json_name = "authData"];</code>
+       * <code>optional string auth_data = 12 [json_name = "authData"];</code>
        * @return The authData.
        */
       public java.lang.String getAuthData() {
@@ -3223,7 +4329,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string auth_data = 10 [json_name = "authData"];</code>
+       * <code>optional string auth_data = 12 [json_name = "authData"];</code>
        * @return The bytes for authData.
        */
       public com.google.protobuf.ByteString
@@ -3240,7 +4346,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string auth_data = 10 [json_name = "authData"];</code>
+       * <code>optional string auth_data = 12 [json_name = "authData"];</code>
        * @param value The authData to set.
        * @return This builder for chaining.
        */
@@ -3248,22 +4354,22 @@ java.lang.String defaultValue) {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         authData_ = value;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string auth_data = 10 [json_name = "authData"];</code>
+       * <code>optional string auth_data = 12 [json_name = "authData"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAuthData() {
         authData_ = getDefaultInstance().getAuthData();
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
         return this;
       }
       /**
-       * <code>optional string auth_data = 10 [json_name = "authData"];</code>
+       * <code>optional string auth_data = 12 [json_name = "authData"];</code>
        * @param value The bytes for authData to set.
        * @return This builder for chaining.
        */
@@ -3272,21 +4378,21 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         authData_ = value;
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000800;
         onChanged();
         return this;
       }
 
       private java.lang.Object authService_ = "";
       /**
-       * <code>optional string auth_service = 11 [json_name = "authService"];</code>
+       * <code>optional string auth_service = 13 [json_name = "authService"];</code>
        * @return Whether the authService field is set.
        */
       public boolean hasAuthService() {
-        return ((bitField0_ & 0x00000400) != 0);
+        return ((bitField0_ & 0x00001000) != 0);
       }
       /**
-       * <code>optional string auth_service = 11 [json_name = "authService"];</code>
+       * <code>optional string auth_service = 13 [json_name = "authService"];</code>
        * @return The authService.
        */
       public java.lang.String getAuthService() {
@@ -3302,7 +4408,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string auth_service = 11 [json_name = "authService"];</code>
+       * <code>optional string auth_service = 13 [json_name = "authService"];</code>
        * @return The bytes for authService.
        */
       public com.google.protobuf.ByteString
@@ -3319,7 +4425,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string auth_service = 11 [json_name = "authService"];</code>
+       * <code>optional string auth_service = 13 [json_name = "authService"];</code>
        * @param value The authService to set.
        * @return This builder for chaining.
        */
@@ -3327,22 +4433,22 @@ java.lang.String defaultValue) {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         authService_ = value;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string auth_service = 11 [json_name = "authService"];</code>
+       * <code>optional string auth_service = 13 [json_name = "authService"];</code>
        * @return This builder for chaining.
        */
       public Builder clearAuthService() {
         authService_ = getDefaultInstance().getAuthService();
-        bitField0_ = (bitField0_ & ~0x00000400);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
         return this;
       }
       /**
-       * <code>optional string auth_service = 11 [json_name = "authService"];</code>
+       * <code>optional string auth_service = 13 [json_name = "authService"];</code>
        * @param value The bytes for authService to set.
        * @return This builder for chaining.
        */
@@ -3351,7 +4457,7 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         authService_ = value;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00001000;
         onChanged();
         return this;
       }
@@ -3362,10 +4468,10 @@ java.lang.String defaultValue) {
         if (!roles_.isModifiable()) {
           roles_ = new com.google.protobuf.LazyStringArrayList(roles_);
         }
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00002000;
       }
       /**
-       * <code>repeated string roles = 12 [json_name = "roles"];</code>
+       * <code>repeated string roles = 14 [json_name = "roles"];</code>
        * @return A list containing the roles.
        */
       public com.google.protobuf.ProtocolStringList
@@ -3374,14 +4480,14 @@ java.lang.String defaultValue) {
         return roles_;
       }
       /**
-       * <code>repeated string roles = 12 [json_name = "roles"];</code>
+       * <code>repeated string roles = 14 [json_name = "roles"];</code>
        * @return The count of roles.
        */
       public int getRolesCount() {
         return roles_.size();
       }
       /**
-       * <code>repeated string roles = 12 [json_name = "roles"];</code>
+       * <code>repeated string roles = 14 [json_name = "roles"];</code>
        * @param index The index of the element to return.
        * @return The roles at the given index.
        */
@@ -3389,7 +4495,7 @@ java.lang.String defaultValue) {
         return roles_.get(index);
       }
       /**
-       * <code>repeated string roles = 12 [json_name = "roles"];</code>
+       * <code>repeated string roles = 14 [json_name = "roles"];</code>
        * @param index The index of the value to return.
        * @return The bytes of the roles at the given index.
        */
@@ -3398,7 +4504,7 @@ java.lang.String defaultValue) {
         return roles_.getByteString(index);
       }
       /**
-       * <code>repeated string roles = 12 [json_name = "roles"];</code>
+       * <code>repeated string roles = 14 [json_name = "roles"];</code>
        * @param index The index to set the value at.
        * @param value The roles to set.
        * @return This builder for chaining.
@@ -3408,12 +4514,12 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException(); }
         ensureRolesIsMutable();
         roles_.set(index, value);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string roles = 12 [json_name = "roles"];</code>
+       * <code>repeated string roles = 14 [json_name = "roles"];</code>
        * @param value The roles to add.
        * @return This builder for chaining.
        */
@@ -3422,12 +4528,12 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException(); }
         ensureRolesIsMutable();
         roles_.add(value);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string roles = 12 [json_name = "roles"];</code>
+       * <code>repeated string roles = 14 [json_name = "roles"];</code>
        * @param values The roles to add.
        * @return This builder for chaining.
        */
@@ -3436,23 +4542,23 @@ java.lang.String defaultValue) {
         ensureRolesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, roles_);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string roles = 12 [json_name = "roles"];</code>
+       * <code>repeated string roles = 14 [json_name = "roles"];</code>
        * @return This builder for chaining.
        */
       public Builder clearRoles() {
         roles_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);;
+        bitField0_ = (bitField0_ & ~0x00002000);;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string roles = 12 [json_name = "roles"];</code>
+       * <code>repeated string roles = 14 [json_name = "roles"];</code>
        * @param value The bytes of the roles to add.
        * @return This builder for chaining.
        */
@@ -3462,7 +4568,7 @@ java.lang.String defaultValue) {
         checkByteStringIsUtf8(value);
         ensureRolesIsMutable();
         roles_.add(value);
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
@@ -3486,7 +4592,7 @@ java.lang.String defaultValue) {
         if (!props_.isMutable()) {
           props_ = props_.copy();
         }
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00004000;
         onChanged();
         return props_;
       }
@@ -3494,7 +4600,7 @@ java.lang.String defaultValue) {
         return internalGetProps().getMap().size();
       }
       /**
-       * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
+       * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
        */
       @java.lang.Override
       public boolean containsProps(
@@ -3511,14 +4617,14 @@ java.lang.String defaultValue) {
         return getPropsMap();
       }
       /**
-       * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
+       * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
        */
       @java.lang.Override
       public java.util.Map<java.lang.String, java.lang.String> getPropsMap() {
         return internalGetProps().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
+       * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
        */
       @java.lang.Override
       public /* nullable */
@@ -3532,7 +4638,7 @@ java.lang.String defaultValue) {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
+       * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
        */
       @java.lang.Override
       public java.lang.String getPropsOrThrow(
@@ -3546,13 +4652,13 @@ java.lang.String defaultValue) {
         return map.get(key);
       }
       public Builder clearProps() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00004000);
         internalGetMutableProps().getMutableMap()
             .clear();
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
+       * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
        */
       public Builder removeProps(
           java.lang.String key) {
@@ -3567,11 +4673,11 @@ java.lang.String defaultValue) {
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String>
           getMutableProps() {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00004000;
         return internalGetMutableProps().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
+       * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
        */
       public Builder putProps(
           java.lang.String key,
@@ -3580,17 +4686,17 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableProps().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00004000;
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; props = 13 [json_name = "props"];</code>
+       * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
        */
       public Builder putAllProps(
           java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableProps().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00004000;
         return this;
       }
 
@@ -3613,7 +4719,7 @@ java.lang.String defaultValue) {
         if (!notifyProps_.isMutable()) {
           notifyProps_ = notifyProps_.copy();
         }
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00008000;
         onChanged();
         return notifyProps_;
       }
@@ -3621,7 +4727,7 @@ java.lang.String defaultValue) {
         return internalGetNotifyProps().getMap().size();
       }
       /**
-       * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
+       * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
        */
       @java.lang.Override
       public boolean containsNotifyProps(
@@ -3638,14 +4744,14 @@ java.lang.String defaultValue) {
         return getNotifyPropsMap();
       }
       /**
-       * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
+       * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
        */
       @java.lang.Override
       public java.util.Map<java.lang.String, java.lang.String> getNotifyPropsMap() {
         return internalGetNotifyProps().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
+       * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
        */
       @java.lang.Override
       public /* nullable */
@@ -3659,7 +4765,7 @@ java.lang.String defaultValue) {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
+       * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
        */
       @java.lang.Override
       public java.lang.String getNotifyPropsOrThrow(
@@ -3673,13 +4779,13 @@ java.lang.String defaultValue) {
         return map.get(key);
       }
       public Builder clearNotifyProps() {
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00008000);
         internalGetMutableNotifyProps().getMutableMap()
             .clear();
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
+       * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
        */
       public Builder removeNotifyProps(
           java.lang.String key) {
@@ -3694,11 +4800,11 @@ java.lang.String defaultValue) {
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String>
           getMutableNotifyProps() {
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00008000;
         return internalGetMutableNotifyProps().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
+       * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
        */
       public Builder putNotifyProps(
           java.lang.String key,
@@ -3707,31 +4813,31 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableNotifyProps().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00008000;
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; notify_props = 14 [json_name = "notifyProps"];</code>
+       * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
        */
       public Builder putAllNotifyProps(
           java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableNotifyProps().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00008000;
         return this;
       }
 
       private long lastPasswordUpdate_ ;
       /**
-       * <code>optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];</code>
+       * <code>optional int64 last_password_update = 17 [json_name = "lastPasswordUpdate"];</code>
        * @return Whether the lastPasswordUpdate field is set.
        */
       @java.lang.Override
       public boolean hasLastPasswordUpdate() {
-        return ((bitField0_ & 0x00004000) != 0);
+        return ((bitField0_ & 0x00010000) != 0);
       }
       /**
-       * <code>optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];</code>
+       * <code>optional int64 last_password_update = 17 [json_name = "lastPasswordUpdate"];</code>
        * @return The lastPasswordUpdate.
        */
       @java.lang.Override
@@ -3739,23 +4845,23 @@ java.lang.String defaultValue) {
         return lastPasswordUpdate_;
       }
       /**
-       * <code>optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];</code>
+       * <code>optional int64 last_password_update = 17 [json_name = "lastPasswordUpdate"];</code>
        * @param value The lastPasswordUpdate to set.
        * @return This builder for chaining.
        */
       public Builder setLastPasswordUpdate(long value) {
 
         lastPasswordUpdate_ = value;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00010000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 last_password_update = 15 [json_name = "lastPasswordUpdate"];</code>
+       * <code>optional int64 last_password_update = 17 [json_name = "lastPasswordUpdate"];</code>
        * @return This builder for chaining.
        */
       public Builder clearLastPasswordUpdate() {
-        bitField0_ = (bitField0_ & ~0x00004000);
+        bitField0_ = (bitField0_ & ~0x00010000);
         lastPasswordUpdate_ = 0L;
         onChanged();
         return this;
@@ -3763,15 +4869,15 @@ java.lang.String defaultValue) {
 
       private long lastPictureUpdate_ ;
       /**
-       * <code>optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];</code>
+       * <code>optional int64 last_picture_update = 18 [json_name = "lastPictureUpdate"];</code>
        * @return Whether the lastPictureUpdate field is set.
        */
       @java.lang.Override
       public boolean hasLastPictureUpdate() {
-        return ((bitField0_ & 0x00008000) != 0);
+        return ((bitField0_ & 0x00020000) != 0);
       }
       /**
-       * <code>optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];</code>
+       * <code>optional int64 last_picture_update = 18 [json_name = "lastPictureUpdate"];</code>
        * @return The lastPictureUpdate.
        */
       @java.lang.Override
@@ -3779,23 +4885,23 @@ java.lang.String defaultValue) {
         return lastPictureUpdate_;
       }
       /**
-       * <code>optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];</code>
+       * <code>optional int64 last_picture_update = 18 [json_name = "lastPictureUpdate"];</code>
        * @param value The lastPictureUpdate to set.
        * @return This builder for chaining.
        */
       public Builder setLastPictureUpdate(long value) {
 
         lastPictureUpdate_ = value;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00020000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 last_picture_update = 16 [json_name = "lastPictureUpdate"];</code>
+       * <code>optional int64 last_picture_update = 18 [json_name = "lastPictureUpdate"];</code>
        * @return This builder for chaining.
        */
       public Builder clearLastPictureUpdate() {
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         lastPictureUpdate_ = 0L;
         onChanged();
         return this;
@@ -3803,15 +4909,15 @@ java.lang.String defaultValue) {
 
       private int failedAttempts_ ;
       /**
-       * <code>optional int32 failed_attempts = 17 [json_name = "failedAttempts"];</code>
+       * <code>optional int32 failed_attempts = 19 [json_name = "failedAttempts"];</code>
        * @return Whether the failedAttempts field is set.
        */
       @java.lang.Override
       public boolean hasFailedAttempts() {
-        return ((bitField0_ & 0x00010000) != 0);
+        return ((bitField0_ & 0x00040000) != 0);
       }
       /**
-       * <code>optional int32 failed_attempts = 17 [json_name = "failedAttempts"];</code>
+       * <code>optional int32 failed_attempts = 19 [json_name = "failedAttempts"];</code>
        * @return The failedAttempts.
        */
       @java.lang.Override
@@ -3819,23 +4925,23 @@ java.lang.String defaultValue) {
         return failedAttempts_;
       }
       /**
-       * <code>optional int32 failed_attempts = 17 [json_name = "failedAttempts"];</code>
+       * <code>optional int32 failed_attempts = 19 [json_name = "failedAttempts"];</code>
        * @param value The failedAttempts to set.
        * @return This builder for chaining.
        */
       public Builder setFailedAttempts(int value) {
 
         failedAttempts_ = value;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00040000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 failed_attempts = 17 [json_name = "failedAttempts"];</code>
+       * <code>optional int32 failed_attempts = 19 [json_name = "failedAttempts"];</code>
        * @return This builder for chaining.
        */
       public Builder clearFailedAttempts() {
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00040000);
         failedAttempts_ = 0;
         onChanged();
         return this;
@@ -3843,14 +4949,14 @@ java.lang.String defaultValue) {
 
       private java.lang.Object locale_ = "";
       /**
-       * <code>optional string locale = 18 [json_name = "locale"];</code>
+       * <code>optional string locale = 20 [json_name = "locale"];</code>
        * @return Whether the locale field is set.
        */
       public boolean hasLocale() {
-        return ((bitField0_ & 0x00020000) != 0);
+        return ((bitField0_ & 0x00080000) != 0);
       }
       /**
-       * <code>optional string locale = 18 [json_name = "locale"];</code>
+       * <code>optional string locale = 20 [json_name = "locale"];</code>
        * @return The locale.
        */
       public java.lang.String getLocale() {
@@ -3866,7 +4972,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string locale = 18 [json_name = "locale"];</code>
+       * <code>optional string locale = 20 [json_name = "locale"];</code>
        * @return The bytes for locale.
        */
       public com.google.protobuf.ByteString
@@ -3883,7 +4989,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string locale = 18 [json_name = "locale"];</code>
+       * <code>optional string locale = 20 [json_name = "locale"];</code>
        * @param value The locale to set.
        * @return This builder for chaining.
        */
@@ -3891,22 +4997,22 @@ java.lang.String defaultValue) {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         locale_ = value;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00080000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string locale = 18 [json_name = "locale"];</code>
+       * <code>optional string locale = 20 [json_name = "locale"];</code>
        * @return This builder for chaining.
        */
       public Builder clearLocale() {
         locale_ = getDefaultInstance().getLocale();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         onChanged();
         return this;
       }
       /**
-       * <code>optional string locale = 18 [json_name = "locale"];</code>
+       * <code>optional string locale = 20 [json_name = "locale"];</code>
        * @param value The bytes for locale to set.
        * @return This builder for chaining.
        */
@@ -3915,22 +5021,22 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         locale_ = value;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00080000;
         onChanged();
         return this;
       }
 
       private boolean mfaActive_ ;
       /**
-       * <code>optional bool mfa_active = 19 [json_name = "mfaActive"];</code>
+       * <code>optional bool mfa_active = 21 [json_name = "mfaActive"];</code>
        * @return Whether the mfaActive field is set.
        */
       @java.lang.Override
       public boolean hasMfaActive() {
-        return ((bitField0_ & 0x00040000) != 0);
+        return ((bitField0_ & 0x00100000) != 0);
       }
       /**
-       * <code>optional bool mfa_active = 19 [json_name = "mfaActive"];</code>
+       * <code>optional bool mfa_active = 21 [json_name = "mfaActive"];</code>
        * @return The mfaActive.
        */
       @java.lang.Override
@@ -3938,23 +5044,23 @@ java.lang.String defaultValue) {
         return mfaActive_;
       }
       /**
-       * <code>optional bool mfa_active = 19 [json_name = "mfaActive"];</code>
+       * <code>optional bool mfa_active = 21 [json_name = "mfaActive"];</code>
        * @param value The mfaActive to set.
        * @return This builder for chaining.
        */
       public Builder setMfaActive(boolean value) {
 
         mfaActive_ = value;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00100000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool mfa_active = 19 [json_name = "mfaActive"];</code>
+       * <code>optional bool mfa_active = 21 [json_name = "mfaActive"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMfaActive() {
-        bitField0_ = (bitField0_ & ~0x00040000);
+        bitField0_ = (bitField0_ & ~0x00100000);
         mfaActive_ = false;
         onChanged();
         return this;
@@ -3962,14 +5068,14 @@ java.lang.String defaultValue) {
 
       private java.lang.Object mfaSecret_ = "";
       /**
-       * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
+       * <code>optional string mfa_secret = 22 [json_name = "mfaSecret"];</code>
        * @return Whether the mfaSecret field is set.
        */
       public boolean hasMfaSecret() {
-        return ((bitField0_ & 0x00080000) != 0);
+        return ((bitField0_ & 0x00200000) != 0);
       }
       /**
-       * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
+       * <code>optional string mfa_secret = 22 [json_name = "mfaSecret"];</code>
        * @return The mfaSecret.
        */
       public java.lang.String getMfaSecret() {
@@ -3985,7 +5091,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
+       * <code>optional string mfa_secret = 22 [json_name = "mfaSecret"];</code>
        * @return The bytes for mfaSecret.
        */
       public com.google.protobuf.ByteString
@@ -4002,7 +5108,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
+       * <code>optional string mfa_secret = 22 [json_name = "mfaSecret"];</code>
        * @param value The mfaSecret to set.
        * @return This builder for chaining.
        */
@@ -4010,22 +5116,22 @@ java.lang.String defaultValue) {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         mfaSecret_ = value;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00200000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
+       * <code>optional string mfa_secret = 22 [json_name = "mfaSecret"];</code>
        * @return This builder for chaining.
        */
       public Builder clearMfaSecret() {
         mfaSecret_ = getDefaultInstance().getMfaSecret();
-        bitField0_ = (bitField0_ & ~0x00080000);
+        bitField0_ = (bitField0_ & ~0x00200000);
         onChanged();
         return this;
       }
       /**
-       * <code>optional string mfa_secret = 20 [json_name = "mfaSecret"];</code>
+       * <code>optional string mfa_secret = 22 [json_name = "mfaSecret"];</code>
        * @param value The bytes for mfaSecret to set.
        * @return This builder for chaining.
        */
@@ -4034,22 +5140,22 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         mfaSecret_ = value;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00200000;
         onChanged();
         return this;
       }
 
       private long lastActivityAt_ ;
       /**
-       * <code>optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];</code>
+       * <code>optional int64 last_activity_at = 23 [json_name = "lastActivityAt"];</code>
        * @return Whether the lastActivityAt field is set.
        */
       @java.lang.Override
       public boolean hasLastActivityAt() {
-        return ((bitField0_ & 0x00100000) != 0);
+        return ((bitField0_ & 0x00400000) != 0);
       }
       /**
-       * <code>optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];</code>
+       * <code>optional int64 last_activity_at = 23 [json_name = "lastActivityAt"];</code>
        * @return The lastActivityAt.
        */
       @java.lang.Override
@@ -4057,23 +5163,23 @@ java.lang.String defaultValue) {
         return lastActivityAt_;
       }
       /**
-       * <code>optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];</code>
+       * <code>optional int64 last_activity_at = 23 [json_name = "lastActivityAt"];</code>
        * @param value The lastActivityAt to set.
        * @return This builder for chaining.
        */
       public Builder setLastActivityAt(long value) {
 
         lastActivityAt_ = value;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00400000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 last_activity_at = 21 [json_name = "lastActivityAt"];</code>
+       * <code>optional int64 last_activity_at = 23 [json_name = "lastActivityAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearLastActivityAt() {
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00400000);
         lastActivityAt_ = 0L;
         onChanged();
         return this;
@@ -4081,15 +5187,15 @@ java.lang.String defaultValue) {
 
       private long lastLogin_ ;
       /**
-       * <code>optional int64 last_login = 22 [json_name = "lastLogin"];</code>
+       * <code>optional int64 last_login = 24 [json_name = "lastLogin"];</code>
        * @return Whether the lastLogin field is set.
        */
       @java.lang.Override
       public boolean hasLastLogin() {
-        return ((bitField0_ & 0x00200000) != 0);
+        return ((bitField0_ & 0x00800000) != 0);
       }
       /**
-       * <code>optional int64 last_login = 22 [json_name = "lastLogin"];</code>
+       * <code>optional int64 last_login = 24 [json_name = "lastLogin"];</code>
        * @return The lastLogin.
        */
       @java.lang.Override
@@ -4097,23 +5203,23 @@ java.lang.String defaultValue) {
         return lastLogin_;
       }
       /**
-       * <code>optional int64 last_login = 22 [json_name = "lastLogin"];</code>
+       * <code>optional int64 last_login = 24 [json_name = "lastLogin"];</code>
        * @param value The lastLogin to set.
        * @return This builder for chaining.
        */
       public Builder setLastLogin(long value) {
 
         lastLogin_ = value;
-        bitField0_ |= 0x00200000;
+        bitField0_ |= 0x00800000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 last_login = 22 [json_name = "lastLogin"];</code>
+       * <code>optional int64 last_login = 24 [json_name = "lastLogin"];</code>
        * @return This builder for chaining.
        */
       public Builder clearLastLogin() {
-        bitField0_ = (bitField0_ & ~0x00200000);
+        bitField0_ = (bitField0_ & ~0x00800000);
         lastLogin_ = 0L;
         onChanged();
         return this;
@@ -4121,15 +5227,15 @@ java.lang.String defaultValue) {
 
       private long createdAt_ ;
       /**
-       * <code>optional int64 created_at = 23 [json_name = "createdAt"];</code>
+       * <code>optional int64 created_at = 25 [json_name = "createdAt"];</code>
        * @return Whether the createdAt field is set.
        */
       @java.lang.Override
       public boolean hasCreatedAt() {
-        return ((bitField0_ & 0x00400000) != 0);
+        return ((bitField0_ & 0x01000000) != 0);
       }
       /**
-       * <code>optional int64 created_at = 23 [json_name = "createdAt"];</code>
+       * <code>optional int64 created_at = 25 [json_name = "createdAt"];</code>
        * @return The createdAt.
        */
       @java.lang.Override
@@ -4137,23 +5243,23 @@ java.lang.String defaultValue) {
         return createdAt_;
       }
       /**
-       * <code>optional int64 created_at = 23 [json_name = "createdAt"];</code>
+       * <code>optional int64 created_at = 25 [json_name = "createdAt"];</code>
        * @param value The createdAt to set.
        * @return This builder for chaining.
        */
       public Builder setCreatedAt(long value) {
 
         createdAt_ = value;
-        bitField0_ |= 0x00400000;
+        bitField0_ |= 0x01000000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 created_at = 23 [json_name = "createdAt"];</code>
+       * <code>optional int64 created_at = 25 [json_name = "createdAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCreatedAt() {
-        bitField0_ = (bitField0_ & ~0x00400000);
+        bitField0_ = (bitField0_ & ~0x01000000);
         createdAt_ = 0L;
         onChanged();
         return this;
@@ -4161,15 +5267,15 @@ java.lang.String defaultValue) {
 
       private long updatedAt_ ;
       /**
-       * <code>optional int64 updated_at = 24 [json_name = "updatedAt"];</code>
+       * <code>optional int64 updated_at = 26 [json_name = "updatedAt"];</code>
        * @return Whether the updatedAt field is set.
        */
       @java.lang.Override
       public boolean hasUpdatedAt() {
-        return ((bitField0_ & 0x00800000) != 0);
+        return ((bitField0_ & 0x02000000) != 0);
       }
       /**
-       * <code>optional int64 updated_at = 24 [json_name = "updatedAt"];</code>
+       * <code>optional int64 updated_at = 26 [json_name = "updatedAt"];</code>
        * @return The updatedAt.
        */
       @java.lang.Override
@@ -4177,23 +5283,23 @@ java.lang.String defaultValue) {
         return updatedAt_;
       }
       /**
-       * <code>optional int64 updated_at = 24 [json_name = "updatedAt"];</code>
+       * <code>optional int64 updated_at = 26 [json_name = "updatedAt"];</code>
        * @param value The updatedAt to set.
        * @return This builder for chaining.
        */
       public Builder setUpdatedAt(long value) {
 
         updatedAt_ = value;
-        bitField0_ |= 0x00800000;
+        bitField0_ |= 0x02000000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 updated_at = 24 [json_name = "updatedAt"];</code>
+       * <code>optional int64 updated_at = 26 [json_name = "updatedAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUpdatedAt() {
-        bitField0_ = (bitField0_ & ~0x00800000);
+        bitField0_ = (bitField0_ & ~0x02000000);
         updatedAt_ = 0L;
         onChanged();
         return this;
@@ -4201,15 +5307,15 @@ java.lang.String defaultValue) {
 
       private long deletedAt_ ;
       /**
-       * <code>optional int64 deleted_at = 25 [json_name = "deletedAt"];</code>
+       * <code>optional int64 deleted_at = 27 [json_name = "deletedAt"];</code>
        * @return Whether the deletedAt field is set.
        */
       @java.lang.Override
       public boolean hasDeletedAt() {
-        return ((bitField0_ & 0x01000000) != 0);
+        return ((bitField0_ & 0x04000000) != 0);
       }
       /**
-       * <code>optional int64 deleted_at = 25 [json_name = "deletedAt"];</code>
+       * <code>optional int64 deleted_at = 27 [json_name = "deletedAt"];</code>
        * @return The deletedAt.
        */
       @java.lang.Override
@@ -4217,23 +5323,23 @@ java.lang.String defaultValue) {
         return deletedAt_;
       }
       /**
-       * <code>optional int64 deleted_at = 25 [json_name = "deletedAt"];</code>
+       * <code>optional int64 deleted_at = 27 [json_name = "deletedAt"];</code>
        * @param value The deletedAt to set.
        * @return This builder for chaining.
        */
       public Builder setDeletedAt(long value) {
 
         deletedAt_ = value;
-        bitField0_ |= 0x01000000;
+        bitField0_ |= 0x04000000;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int64 deleted_at = 25 [json_name = "deletedAt"];</code>
+       * <code>optional int64 deleted_at = 27 [json_name = "deletedAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearDeletedAt() {
-        bitField0_ = (bitField0_ & ~0x01000000);
+        bitField0_ = (bitField0_ & ~0x04000000);
         deletedAt_ = 0L;
         onChanged();
         return this;
@@ -4291,6 +5397,11 @@ java.lang.String defaultValue) {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_users_v1_UserImageMetadata_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_users_v1_UserImageMetadata_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_users_v1_User_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -4314,57 +5425,69 @@ java.lang.String defaultValue) {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023users/v1/user.proto\022\010users.v1\"\234\013\n\004User" +
-      "\022\023\n\002id\030\001 \001(\tH\000R\002id\210\001\001\022\037\n\010username\030\002 \001(\tH" +
-      "\001R\010username\210\001\001\022\"\n\nfirst_name\030\003 \001(\tH\002R\tfi" +
-      "rstName\210\001\001\022 \n\tlast_name\030\004 \001(\tH\003R\010lastNam" +
-      "e\210\001\001\022\031\n\005email\030\005 \001(\tH\004R\005email\210\001\001\022 \n\tuser_" +
-      "type\030\006 \001(\tH\005R\010userType\210\001\001\022#\n\nmembership\030" +
-      "\007 \001(\tH\006R\nmembership\210\001\001\022/\n\021is_email_verif" +
-      "ied\030\010 \001(\010H\007R\017isEmailVerified\210\001\001\022\037\n\010passw" +
-      "ord\030\t \001(\tH\010R\010password\210\001\001\022 \n\tauth_data\030\n " +
-      "\001(\tH\tR\010authData\210\001\001\022&\n\014auth_service\030\013 \001(\t" +
-      "H\nR\013authService\210\001\001\022\024\n\005roles\030\014 \003(\tR\005roles" +
-      "\022/\n\005props\030\r \003(\0132\031.users.v1.User.PropsEnt" +
-      "ryR\005props\022B\n\014notify_props\030\016 \003(\0132\037.users." +
-      "v1.User.NotifyPropsEntryR\013notifyProps\0225\n" +
-      "\024last_password_update\030\017 \001(\003H\013R\022lastPassw" +
-      "ordUpdate\210\001\001\0223\n\023last_picture_update\030\020 \001(" +
-      "\003H\014R\021lastPictureUpdate\210\001\001\022,\n\017failed_atte" +
-      "mpts\030\021 \001(\005H\rR\016failedAttempts\210\001\001\022\033\n\006local" +
-      "e\030\022 \001(\tH\016R\006locale\210\001\001\022\"\n\nmfa_active\030\023 \001(\010" +
-      "H\017R\tmfaActive\210\001\001\022\"\n\nmfa_secret\030\024 \001(\tH\020R\t" +
-      "mfaSecret\210\001\001\022-\n\020last_activity_at\030\025 \001(\003H\021" +
-      "R\016lastActivityAt\210\001\001\022\"\n\nlast_login\030\026 \001(\003H" +
-      "\022R\tlastLogin\210\001\001\022\"\n\ncreated_at\030\027 \001(\003H\023R\tc" +
-      "reatedAt\210\001\001\022\"\n\nupdated_at\030\030 \001(\003H\024R\tupdat" +
-      "edAt\210\001\001\022\"\n\ndeleted_at\030\031 \001(\003H\025R\tdeletedAt" +
-      "\210\001\001\0328\n\nPropsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005v" +
-      "alue\030\002 \001(\tR\005value:\0028\001\032>\n\020NotifyPropsEntr" +
-      "y\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005valu" +
-      "e:\0028\001B\005\n\003_idB\013\n\t_usernameB\r\n\013_first_name" +
-      "B\014\n\n_last_nameB\010\n\006_emailB\014\n\n_user_typeB\r" +
-      "\n\013_membershipB\024\n\022_is_email_verifiedB\013\n\t_" +
-      "passwordB\014\n\n_auth_dataB\017\n\r_auth_serviceB" +
-      "\027\n\025_last_password_updateB\026\n\024_last_pictur" +
-      "e_updateB\022\n\020_failed_attemptsB\t\n\007_localeB" +
-      "\r\n\013_mfa_activeB\r\n\013_mfa_secretB\023\n\021_last_a" +
-      "ctivity_atB\r\n\013_last_loginB\r\n\013_created_at" +
-      "B\r\n\013_updated_atB\r\n\013_deleted_atBm\n\031org.me" +
-      "gacommerce.users.v1B\tUserProtoZBgithub.c" +
-      "om/ahmad-khatib0-org/megacommerce-proto/" +
-      "gen/go/users/v1;v1\370\001\001b\006proto3"
+      "\n\023users/v1/user.proto\022\010users.v1\"t\n\021UserI" +
+      "mageMetadata\022\022\n\004mime\030\001 \001(\tR\004mime\022\026\n\006heig" +
+      "ht\030\002 \001(\005R\006height\022\024\n\005widht\030\003 \001(\005R\005widht\022\035" +
+      "\n\nsize_bytes\030\004 \001(\003R\tsizeBytes\"\235\014\n\004User\022\023" +
+      "\n\002id\030\001 \001(\tH\000R\002id\210\001\001\022\037\n\010username\030\002 \001(\tH\001R" +
+      "\010username\210\001\001\022\"\n\nfirst_name\030\003 \001(\tH\002R\tfirs" +
+      "tName\210\001\001\022 \n\tlast_name\030\004 \001(\tH\003R\010lastName\210" +
+      "\001\001\022\031\n\005email\030\005 \001(\tH\004R\005email\210\001\001\022 \n\tuser_ty" +
+      "pe\030\006 \001(\tH\005R\010userType\210\001\001\022\031\n\005image\030\007 \001(\tH\006" +
+      "R\005image\210\001\001\022G\n\016image_metadata\030\010 \001(\0132\033.use" +
+      "rs.v1.UserImageMetadataH\007R\rimageMetadata" +
+      "\210\001\001\022#\n\nmembership\030\t \001(\tH\010R\nmembership\210\001\001" +
+      "\022/\n\021is_email_verified\030\n \001(\010H\tR\017isEmailVe" +
+      "rified\210\001\001\022\037\n\010password\030\013 \001(\tH\nR\010password\210" +
+      "\001\001\022 \n\tauth_data\030\014 \001(\tH\013R\010authData\210\001\001\022&\n\014" +
+      "auth_service\030\r \001(\tH\014R\013authService\210\001\001\022\024\n\005" +
+      "roles\030\016 \003(\tR\005roles\022/\n\005props\030\017 \003(\0132\031.user" +
+      "s.v1.User.PropsEntryR\005props\022B\n\014notify_pr" +
+      "ops\030\020 \003(\0132\037.users.v1.User.NotifyPropsEnt" +
+      "ryR\013notifyProps\0225\n\024last_password_update\030" +
+      "\021 \001(\003H\rR\022lastPasswordUpdate\210\001\001\0223\n\023last_p" +
+      "icture_update\030\022 \001(\003H\016R\021lastPictureUpdate" +
+      "\210\001\001\022,\n\017failed_attempts\030\023 \001(\005H\017R\016failedAt" +
+      "tempts\210\001\001\022\033\n\006locale\030\024 \001(\tH\020R\006locale\210\001\001\022\"" +
+      "\n\nmfa_active\030\025 \001(\010H\021R\tmfaActive\210\001\001\022\"\n\nmf" +
+      "a_secret\030\026 \001(\tH\022R\tmfaSecret\210\001\001\022-\n\020last_a" +
+      "ctivity_at\030\027 \001(\003H\023R\016lastActivityAt\210\001\001\022\"\n" +
+      "\nlast_login\030\030 \001(\003H\024R\tlastLogin\210\001\001\022\"\n\ncre" +
+      "ated_at\030\031 \001(\003H\025R\tcreatedAt\210\001\001\022\"\n\nupdated" +
+      "_at\030\032 \001(\003H\026R\tupdatedAt\210\001\001\022\"\n\ndeleted_at\030" +
+      "\033 \001(\003H\027R\tdeletedAt\210\001\001\0328\n\nPropsEntry\022\020\n\003k" +
+      "ey\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032" +
+      ">\n\020NotifyPropsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n" +
+      "\005value\030\002 \001(\tR\005value:\0028\001B\005\n\003_idB\013\n\t_usern" +
+      "ameB\r\n\013_first_nameB\014\n\n_last_nameB\010\n\006_ema" +
+      "ilB\014\n\n_user_typeB\010\n\006_imageB\021\n\017_image_met" +
+      "adataB\r\n\013_membershipB\024\n\022_is_email_verifi" +
+      "edB\013\n\t_passwordB\014\n\n_auth_dataB\017\n\r_auth_s" +
+      "erviceB\027\n\025_last_password_updateB\026\n\024_last" +
+      "_picture_updateB\022\n\020_failed_attemptsB\t\n\007_" +
+      "localeB\r\n\013_mfa_activeB\r\n\013_mfa_secretB\023\n\021" +
+      "_last_activity_atB\r\n\013_last_loginB\r\n\013_cre" +
+      "ated_atB\r\n\013_updated_atB\r\n\013_deleted_atBm\n" +
+      "\031org.megacommerce.users.v1B\tUserProtoZBg" +
+      "ithub.com/ahmad-khatib0-org/megacommerce" +
+      "-proto/gen/go/users/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_users_v1_User_descriptor =
+    internal_static_users_v1_UserImageMetadata_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_users_v1_UserImageMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_users_v1_UserImageMetadata_descriptor,
+        new java.lang.String[] { "Mime", "Height", "Widht", "SizeBytes", });
+    internal_static_users_v1_User_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_users_v1_User_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_users_v1_User_descriptor,
-        new java.lang.String[] { "Id", "Username", "FirstName", "LastName", "Email", "UserType", "Membership", "IsEmailVerified", "Password", "AuthData", "AuthService", "Roles", "Props", "NotifyProps", "LastPasswordUpdate", "LastPictureUpdate", "FailedAttempts", "Locale", "MfaActive", "MfaSecret", "LastActivityAt", "LastLogin", "CreatedAt", "UpdatedAt", "DeletedAt", });
+        new java.lang.String[] { "Id", "Username", "FirstName", "LastName", "Email", "UserType", "Image", "ImageMetadata", "Membership", "IsEmailVerified", "Password", "AuthData", "AuthService", "Roles", "Props", "NotifyProps", "LastPasswordUpdate", "LastPictureUpdate", "FailedAttempts", "Locale", "MfaActive", "MfaSecret", "LastActivityAt", "LastLogin", "CreatedAt", "UpdatedAt", "DeletedAt", });
     internal_static_users_v1_User_PropsEntry_descriptor =
       internal_static_users_v1_User_descriptor.getNestedTypes().get(0);
     internal_static_users_v1_User_PropsEntry_fieldAccessorTable = new

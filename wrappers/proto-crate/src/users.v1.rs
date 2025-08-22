@@ -455,6 +455,18 @@ pub mod users_service_server {
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct UserImageMetadata {
+    #[prost(string, tag = "1")]
+    pub mime: ::prost::alloc::string::String,
+    #[prost(int32, tag = "2")]
+    pub height: i32,
+    #[prost(int32, tag = "3")]
+    pub widht: i32,
+    #[prost(int64, tag = "4")]
+    pub size_bytes: i64,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct User {
     #[prost(string, optional, tag = "1")]
     pub id: ::core::option::Option<::prost::alloc::string::String>,
@@ -469,47 +481,51 @@ pub struct User {
     #[prost(string, optional, tag = "6")]
     pub user_type: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "7")]
-    pub membership: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(bool, optional, tag = "8")]
-    pub is_email_verified: ::core::option::Option<bool>,
+    pub image: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(message, optional, tag = "8")]
+    pub image_metadata: ::core::option::Option<UserImageMetadata>,
     #[prost(string, optional, tag = "9")]
-    pub password: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, optional, tag = "10")]
-    pub auth_data: ::core::option::Option<::prost::alloc::string::String>,
+    pub membership: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(bool, optional, tag = "10")]
+    pub is_email_verified: ::core::option::Option<bool>,
     #[prost(string, optional, tag = "11")]
+    pub password: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "12")]
+    pub auth_data: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "13")]
     pub auth_service: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, repeated, tag = "12")]
+    #[prost(string, repeated, tag = "14")]
     pub roles: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
-    #[prost(map = "string, string", tag = "13")]
+    #[prost(map = "string, string", tag = "15")]
     pub props: ::std::collections::HashMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,
-    #[prost(map = "string, string", tag = "14")]
+    #[prost(map = "string, string", tag = "16")]
     pub notify_props: ::std::collections::HashMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,
-    #[prost(int64, optional, tag = "15")]
+    #[prost(int64, optional, tag = "17")]
     pub last_password_update: ::core::option::Option<i64>,
-    #[prost(int64, optional, tag = "16")]
+    #[prost(int64, optional, tag = "18")]
     pub last_picture_update: ::core::option::Option<i64>,
-    #[prost(int32, optional, tag = "17")]
+    #[prost(int32, optional, tag = "19")]
     pub failed_attempts: ::core::option::Option<i32>,
-    #[prost(string, optional, tag = "18")]
-    pub locale: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(bool, optional, tag = "19")]
-    pub mfa_active: ::core::option::Option<bool>,
     #[prost(string, optional, tag = "20")]
+    pub locale: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(bool, optional, tag = "21")]
+    pub mfa_active: ::core::option::Option<bool>,
+    #[prost(string, optional, tag = "22")]
     pub mfa_secret: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(int64, optional, tag = "21")]
-    pub last_activity_at: ::core::option::Option<i64>,
-    #[prost(int64, optional, tag = "22")]
-    pub last_login: ::core::option::Option<i64>,
     #[prost(int64, optional, tag = "23")]
-    pub created_at: ::core::option::Option<i64>,
+    pub last_activity_at: ::core::option::Option<i64>,
     #[prost(int64, optional, tag = "24")]
-    pub updated_at: ::core::option::Option<i64>,
+    pub last_login: ::core::option::Option<i64>,
     #[prost(int64, optional, tag = "25")]
+    pub created_at: ::core::option::Option<i64>,
+    #[prost(int64, optional, tag = "26")]
+    pub updated_at: ::core::option::Option<i64>,
+    #[prost(int64, optional, tag = "27")]
     pub deleted_at: ::core::option::Option<i64>,
 }

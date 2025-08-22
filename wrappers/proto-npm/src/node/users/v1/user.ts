@@ -9,6 +9,13 @@ import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 
 export const protobufPackage = "users.v1";
 
+export interface UserImageMetadata {
+  mime: string;
+  height: number;
+  widht: number;
+  sizeBytes: string;
+}
+
 export interface User {
   id?: string | undefined;
   username?: string | undefined;
@@ -16,6 +23,8 @@ export interface User {
   lastName?: string | undefined;
   email?: string | undefined;
   userType?: string | undefined;
+  image?: string | undefined;
+  imageMetadata?: UserImageMetadata | undefined;
   membership?: string | undefined;
   isEmailVerified?: boolean | undefined;
   password?: string | undefined;
@@ -47,6 +56,114 @@ export interface User_NotifyPropsEntry {
   value: string;
 }
 
+function createBaseUserImageMetadata(): UserImageMetadata {
+  return { mime: "", height: 0, widht: 0, sizeBytes: "0" };
+}
+
+export const UserImageMetadata: MessageFns<UserImageMetadata> = {
+  encode(message: UserImageMetadata, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.mime !== "") {
+      writer.uint32(10).string(message.mime);
+    }
+    if (message.height !== 0) {
+      writer.uint32(16).int32(message.height);
+    }
+    if (message.widht !== 0) {
+      writer.uint32(24).int32(message.widht);
+    }
+    if (message.sizeBytes !== "0") {
+      writer.uint32(32).int64(message.sizeBytes);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): UserImageMetadata {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseUserImageMetadata();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.mime = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 16) {
+            break;
+          }
+
+          message.height = reader.int32();
+          continue;
+        }
+        case 3: {
+          if (tag !== 24) {
+            break;
+          }
+
+          message.widht = reader.int32();
+          continue;
+        }
+        case 4: {
+          if (tag !== 32) {
+            break;
+          }
+
+          message.sizeBytes = reader.int64().toString();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): UserImageMetadata {
+    return {
+      mime: isSet(object.mime) ? globalThis.String(object.mime) : "",
+      height: isSet(object.height) ? globalThis.Number(object.height) : 0,
+      widht: isSet(object.widht) ? globalThis.Number(object.widht) : 0,
+      sizeBytes: isSet(object.sizeBytes) ? globalThis.String(object.sizeBytes) : "0",
+    };
+  },
+
+  toJSON(message: UserImageMetadata): unknown {
+    const obj: any = {};
+    if (message.mime !== "") {
+      obj.mime = message.mime;
+    }
+    if (message.height !== 0) {
+      obj.height = Math.round(message.height);
+    }
+    if (message.widht !== 0) {
+      obj.widht = Math.round(message.widht);
+    }
+    if (message.sizeBytes !== "0") {
+      obj.sizeBytes = message.sizeBytes;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<UserImageMetadata>, I>>(base?: I): UserImageMetadata {
+    return UserImageMetadata.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<UserImageMetadata>, I>>(object: I): UserImageMetadata {
+    const message = createBaseUserImageMetadata();
+    message.mime = object.mime ?? "";
+    message.height = object.height ?? 0;
+    message.widht = object.widht ?? 0;
+    message.sizeBytes = object.sizeBytes ?? "0";
+    return message;
+  },
+};
+
 function createBaseUser(): User {
   return {
     id: undefined,
@@ -55,6 +172,8 @@ function createBaseUser(): User {
     lastName: undefined,
     email: undefined,
     userType: undefined,
+    image: undefined,
+    imageMetadata: undefined,
     membership: undefined,
     isEmailVerified: undefined,
     password: undefined,
@@ -97,62 +216,68 @@ export const User: MessageFns<User> = {
     if (message.userType !== undefined) {
       writer.uint32(50).string(message.userType);
     }
+    if (message.image !== undefined) {
+      writer.uint32(58).string(message.image);
+    }
+    if (message.imageMetadata !== undefined) {
+      UserImageMetadata.encode(message.imageMetadata, writer.uint32(66).fork()).join();
+    }
     if (message.membership !== undefined) {
-      writer.uint32(58).string(message.membership);
+      writer.uint32(74).string(message.membership);
     }
     if (message.isEmailVerified !== undefined) {
-      writer.uint32(64).bool(message.isEmailVerified);
+      writer.uint32(80).bool(message.isEmailVerified);
     }
     if (message.password !== undefined) {
-      writer.uint32(74).string(message.password);
+      writer.uint32(90).string(message.password);
     }
     if (message.authData !== undefined) {
-      writer.uint32(82).string(message.authData);
+      writer.uint32(98).string(message.authData);
     }
     if (message.authService !== undefined) {
-      writer.uint32(90).string(message.authService);
+      writer.uint32(106).string(message.authService);
     }
     for (const v of message.roles) {
-      writer.uint32(98).string(v!);
+      writer.uint32(114).string(v!);
     }
     Object.entries(message.props).forEach(([key, value]) => {
-      User_PropsEntry.encode({ key: key as any, value }, writer.uint32(106).fork()).join();
+      User_PropsEntry.encode({ key: key as any, value }, writer.uint32(122).fork()).join();
     });
     Object.entries(message.notifyProps).forEach(([key, value]) => {
-      User_NotifyPropsEntry.encode({ key: key as any, value }, writer.uint32(114).fork()).join();
+      User_NotifyPropsEntry.encode({ key: key as any, value }, writer.uint32(130).fork()).join();
     });
     if (message.lastPasswordUpdate !== undefined) {
-      writer.uint32(120).int64(message.lastPasswordUpdate);
+      writer.uint32(136).int64(message.lastPasswordUpdate);
     }
     if (message.lastPictureUpdate !== undefined) {
-      writer.uint32(128).int64(message.lastPictureUpdate);
+      writer.uint32(144).int64(message.lastPictureUpdate);
     }
     if (message.failedAttempts !== undefined) {
-      writer.uint32(136).int32(message.failedAttempts);
+      writer.uint32(152).int32(message.failedAttempts);
     }
     if (message.locale !== undefined) {
-      writer.uint32(146).string(message.locale);
+      writer.uint32(162).string(message.locale);
     }
     if (message.mfaActive !== undefined) {
-      writer.uint32(152).bool(message.mfaActive);
+      writer.uint32(168).bool(message.mfaActive);
     }
     if (message.mfaSecret !== undefined) {
-      writer.uint32(162).string(message.mfaSecret);
+      writer.uint32(178).string(message.mfaSecret);
     }
     if (message.lastActivityAt !== undefined) {
-      writer.uint32(168).int64(message.lastActivityAt);
+      writer.uint32(184).int64(message.lastActivityAt);
     }
     if (message.lastLogin !== undefined) {
-      writer.uint32(176).int64(message.lastLogin);
+      writer.uint32(192).int64(message.lastLogin);
     }
     if (message.createdAt !== undefined) {
-      writer.uint32(184).int64(message.createdAt);
+      writer.uint32(200).int64(message.createdAt);
     }
     if (message.updatedAt !== undefined) {
-      writer.uint32(192).int64(message.updatedAt);
+      writer.uint32(208).int64(message.updatedAt);
     }
     if (message.deletedAt !== undefined) {
-      writer.uint32(200).int64(message.deletedAt);
+      writer.uint32(216).int64(message.deletedAt);
     }
     return writer;
   },
@@ -217,15 +342,15 @@ export const User: MessageFns<User> = {
             break;
           }
 
-          message.membership = reader.string();
+          message.image = reader.string();
           continue;
         }
         case 8: {
-          if (tag !== 64) {
+          if (tag !== 66) {
             break;
           }
 
-          message.isEmailVerified = reader.bool();
+          message.imageMetadata = UserImageMetadata.decode(reader, reader.uint32());
           continue;
         }
         case 9: {
@@ -233,15 +358,15 @@ export const User: MessageFns<User> = {
             break;
           }
 
-          message.password = reader.string();
+          message.membership = reader.string();
           continue;
         }
         case 10: {
-          if (tag !== 82) {
+          if (tag !== 80) {
             break;
           }
 
-          message.authData = reader.string();
+          message.isEmailVerified = reader.bool();
           continue;
         }
         case 11: {
@@ -249,7 +374,7 @@ export const User: MessageFns<User> = {
             break;
           }
 
-          message.authService = reader.string();
+          message.password = reader.string();
           continue;
         }
         case 12: {
@@ -257,7 +382,7 @@ export const User: MessageFns<User> = {
             break;
           }
 
-          message.roles.push(reader.string());
+          message.authData = reader.string();
           continue;
         }
         case 13: {
@@ -265,10 +390,7 @@ export const User: MessageFns<User> = {
             break;
           }
 
-          const entry13 = User_PropsEntry.decode(reader, reader.uint32());
-          if (entry13.value !== undefined) {
-            message.props[entry13.key] = entry13.value;
-          }
+          message.authService = reader.string();
           continue;
         }
         case 14: {
@@ -276,26 +398,29 @@ export const User: MessageFns<User> = {
             break;
           }
 
-          const entry14 = User_NotifyPropsEntry.decode(reader, reader.uint32());
-          if (entry14.value !== undefined) {
-            message.notifyProps[entry14.key] = entry14.value;
-          }
+          message.roles.push(reader.string());
           continue;
         }
         case 15: {
-          if (tag !== 120) {
+          if (tag !== 122) {
             break;
           }
 
-          message.lastPasswordUpdate = reader.int64().toString();
+          const entry15 = User_PropsEntry.decode(reader, reader.uint32());
+          if (entry15.value !== undefined) {
+            message.props[entry15.key] = entry15.value;
+          }
           continue;
         }
         case 16: {
-          if (tag !== 128) {
+          if (tag !== 130) {
             break;
           }
 
-          message.lastPictureUpdate = reader.int64().toString();
+          const entry16 = User_NotifyPropsEntry.decode(reader, reader.uint32());
+          if (entry16.value !== undefined) {
+            message.notifyProps[entry16.key] = entry16.value;
+          }
           continue;
         }
         case 17: {
@@ -303,15 +428,15 @@ export const User: MessageFns<User> = {
             break;
           }
 
-          message.failedAttempts = reader.int32();
+          message.lastPasswordUpdate = reader.int64().toString();
           continue;
         }
         case 18: {
-          if (tag !== 146) {
+          if (tag !== 144) {
             break;
           }
 
-          message.locale = reader.string();
+          message.lastPictureUpdate = reader.int64().toString();
           continue;
         }
         case 19: {
@@ -319,7 +444,7 @@ export const User: MessageFns<User> = {
             break;
           }
 
-          message.mfaActive = reader.bool();
+          message.failedAttempts = reader.int32();
           continue;
         }
         case 20: {
@@ -327,7 +452,7 @@ export const User: MessageFns<User> = {
             break;
           }
 
-          message.mfaSecret = reader.string();
+          message.locale = reader.string();
           continue;
         }
         case 21: {
@@ -335,15 +460,15 @@ export const User: MessageFns<User> = {
             break;
           }
 
-          message.lastActivityAt = reader.int64().toString();
+          message.mfaActive = reader.bool();
           continue;
         }
         case 22: {
-          if (tag !== 176) {
+          if (tag !== 178) {
             break;
           }
 
-          message.lastLogin = reader.int64().toString();
+          message.mfaSecret = reader.string();
           continue;
         }
         case 23: {
@@ -351,7 +476,7 @@ export const User: MessageFns<User> = {
             break;
           }
 
-          message.createdAt = reader.int64().toString();
+          message.lastActivityAt = reader.int64().toString();
           continue;
         }
         case 24: {
@@ -359,11 +484,27 @@ export const User: MessageFns<User> = {
             break;
           }
 
-          message.updatedAt = reader.int64().toString();
+          message.lastLogin = reader.int64().toString();
           continue;
         }
         case 25: {
           if (tag !== 200) {
+            break;
+          }
+
+          message.createdAt = reader.int64().toString();
+          continue;
+        }
+        case 26: {
+          if (tag !== 208) {
+            break;
+          }
+
+          message.updatedAt = reader.int64().toString();
+          continue;
+        }
+        case 27: {
+          if (tag !== 216) {
             break;
           }
 
@@ -387,6 +528,8 @@ export const User: MessageFns<User> = {
       lastName: isSet(object.lastName) ? globalThis.String(object.lastName) : undefined,
       email: isSet(object.email) ? globalThis.String(object.email) : undefined,
       userType: isSet(object.userType) ? globalThis.String(object.userType) : undefined,
+      image: isSet(object.image) ? globalThis.String(object.image) : undefined,
+      imageMetadata: isSet(object.imageMetadata) ? UserImageMetadata.fromJSON(object.imageMetadata) : undefined,
       membership: isSet(object.membership) ? globalThis.String(object.membership) : undefined,
       isEmailVerified: isSet(object.isEmailVerified) ? globalThis.Boolean(object.isEmailVerified) : undefined,
       password: isSet(object.password) ? globalThis.String(object.password) : undefined,
@@ -438,6 +581,12 @@ export const User: MessageFns<User> = {
     }
     if (message.userType !== undefined) {
       obj.userType = message.userType;
+    }
+    if (message.image !== undefined) {
+      obj.image = message.image;
+    }
+    if (message.imageMetadata !== undefined) {
+      obj.imageMetadata = UserImageMetadata.toJSON(message.imageMetadata);
     }
     if (message.membership !== undefined) {
       obj.membership = message.membership;
@@ -522,6 +671,10 @@ export const User: MessageFns<User> = {
     message.lastName = object.lastName ?? undefined;
     message.email = object.email ?? undefined;
     message.userType = object.userType ?? undefined;
+    message.image = object.image ?? undefined;
+    message.imageMetadata = (object.imageMetadata !== undefined && object.imageMetadata !== null)
+      ? UserImageMetadata.fromPartial(object.imageMetadata)
+      : undefined;
     message.membership = object.membership ?? undefined;
     message.isEmailVerified = object.isEmailVerified ?? undefined;
     message.password = object.password ?? undefined;

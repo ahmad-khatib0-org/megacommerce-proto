@@ -7,6 +7,13 @@ option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/user
 option java_outer_classname = "UserProto";
 option java_package = "org.megacommerce.users.v1";
 
+message UserImageMetadata {
+  string mime = 1;
+  int32 height = 2;
+  int32 widht = 3;
+  int64 size_bytes = 4;
+}
+
 message User {
   optional string id = 1;
   optional string username = 2;
@@ -14,23 +21,25 @@ message User {
   optional string last_name = 4;
   optional string email = 5;
   optional string user_type = 6;
-  optional string membership = 7;
-  optional bool is_email_verified = 8;
-  optional string password = 9;
-  optional string auth_data = 10;
-  optional string auth_service = 11;
-  repeated string roles = 12;
-  map<string, string> props = 13;
-  map<string, string> notify_props = 14;
-  optional int64 last_password_update = 15;
-  optional int64 last_picture_update = 16;
-  optional int32 failed_attempts = 17;
-  optional string locale = 18;
-  optional bool mfa_active = 19;
-  optional string mfa_secret = 20;
-  optional int64 last_activity_at = 21;
-  optional int64 last_login = 22;
-  optional int64 created_at = 23;
-  optional int64 updated_at = 24;
-  optional int64 deleted_at = 25;
+  optional string image = 7;
+  optional UserImageMetadata image_metadata = 8;
+  optional string membership = 9;
+  optional bool is_email_verified = 10;
+  optional string password = 11;
+  optional string auth_data = 12;
+  optional string auth_service = 13;
+  repeated string roles = 14;
+  map<string, string> props = 15;
+  map<string, string> notify_props = 16;
+  optional int64 last_password_update = 17;
+  optional int64 last_picture_update = 18;
+  optional int32 failed_attempts = 19;
+  optional string locale = 20;
+  optional bool mfa_active = 21;
+  optional string mfa_secret = 22;
+  optional int64 last_activity_at = 23;
+  optional int64 last_login = 24;
+  optional int64 created_at = 25;
+  optional int64 updated_at = 26;
+  optional int64 deleted_at = 27;
 }

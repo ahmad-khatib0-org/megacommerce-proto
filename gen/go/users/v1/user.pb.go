@@ -21,6 +21,74 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type UserImageMetadata struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Mime          string                 `protobuf:"bytes,1,opt,name=mime,proto3" json:"mime,omitempty"`
+	Height        int32                  `protobuf:"varint,2,opt,name=height,proto3" json:"height,omitempty"`
+	Widht         int32                  `protobuf:"varint,3,opt,name=widht,proto3" json:"widht,omitempty"`
+	SizeBytes     int64                  `protobuf:"varint,4,opt,name=size_bytes,json=sizeBytes,proto3" json:"size_bytes,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *UserImageMetadata) Reset() {
+	*x = UserImageMetadata{}
+	mi := &file_users_v1_user_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *UserImageMetadata) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserImageMetadata) ProtoMessage() {}
+
+func (x *UserImageMetadata) ProtoReflect() protoreflect.Message {
+	mi := &file_users_v1_user_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserImageMetadata.ProtoReflect.Descriptor instead.
+func (*UserImageMetadata) Descriptor() ([]byte, []int) {
+	return file_users_v1_user_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *UserImageMetadata) GetMime() string {
+	if x != nil {
+		return x.Mime
+	}
+	return ""
+}
+
+func (x *UserImageMetadata) GetHeight() int32 {
+	if x != nil {
+		return x.Height
+	}
+	return 0
+}
+
+func (x *UserImageMetadata) GetWidht() int32 {
+	if x != nil {
+		return x.Widht
+	}
+	return 0
+}
+
+func (x *UserImageMetadata) GetSizeBytes() int64 {
+	if x != nil {
+		return x.SizeBytes
+	}
+	return 0
+}
+
 type User struct {
 	state              protoimpl.MessageState `protogen:"open.v1"`
 	Id                 *string                `protobuf:"bytes,1,opt,name=id,proto3,oneof" json:"id,omitempty"`
@@ -29,32 +97,34 @@ type User struct {
 	LastName           *string                `protobuf:"bytes,4,opt,name=last_name,json=lastName,proto3,oneof" json:"last_name,omitempty"`
 	Email              *string                `protobuf:"bytes,5,opt,name=email,proto3,oneof" json:"email,omitempty"`
 	UserType           *string                `protobuf:"bytes,6,opt,name=user_type,json=userType,proto3,oneof" json:"user_type,omitempty"`
-	Membership         *string                `protobuf:"bytes,7,opt,name=membership,proto3,oneof" json:"membership,omitempty"`
-	IsEmailVerified    *bool                  `protobuf:"varint,8,opt,name=is_email_verified,json=isEmailVerified,proto3,oneof" json:"is_email_verified,omitempty"`
-	Password           *string                `protobuf:"bytes,9,opt,name=password,proto3,oneof" json:"password,omitempty"`
-	AuthData           *string                `protobuf:"bytes,10,opt,name=auth_data,json=authData,proto3,oneof" json:"auth_data,omitempty"`
-	AuthService        *string                `protobuf:"bytes,11,opt,name=auth_service,json=authService,proto3,oneof" json:"auth_service,omitempty"`
-	Roles              []string               `protobuf:"bytes,12,rep,name=roles,proto3" json:"roles,omitempty"`
-	Props              map[string]string      `protobuf:"bytes,13,rep,name=props,proto3" json:"props,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	NotifyProps        map[string]string      `protobuf:"bytes,14,rep,name=notify_props,json=notifyProps,proto3" json:"notify_props,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	LastPasswordUpdate *int64                 `protobuf:"varint,15,opt,name=last_password_update,json=lastPasswordUpdate,proto3,oneof" json:"last_password_update,omitempty"`
-	LastPictureUpdate  *int64                 `protobuf:"varint,16,opt,name=last_picture_update,json=lastPictureUpdate,proto3,oneof" json:"last_picture_update,omitempty"`
-	FailedAttempts     *int32                 `protobuf:"varint,17,opt,name=failed_attempts,json=failedAttempts,proto3,oneof" json:"failed_attempts,omitempty"`
-	Locale             *string                `protobuf:"bytes,18,opt,name=locale,proto3,oneof" json:"locale,omitempty"`
-	MfaActive          *bool                  `protobuf:"varint,19,opt,name=mfa_active,json=mfaActive,proto3,oneof" json:"mfa_active,omitempty"`
-	MfaSecret          *string                `protobuf:"bytes,20,opt,name=mfa_secret,json=mfaSecret,proto3,oneof" json:"mfa_secret,omitempty"`
-	LastActivityAt     *int64                 `protobuf:"varint,21,opt,name=last_activity_at,json=lastActivityAt,proto3,oneof" json:"last_activity_at,omitempty"`
-	LastLogin          *int64                 `protobuf:"varint,22,opt,name=last_login,json=lastLogin,proto3,oneof" json:"last_login,omitempty"`
-	CreatedAt          *int64                 `protobuf:"varint,23,opt,name=created_at,json=createdAt,proto3,oneof" json:"created_at,omitempty"`
-	UpdatedAt          *int64                 `protobuf:"varint,24,opt,name=updated_at,json=updatedAt,proto3,oneof" json:"updated_at,omitempty"`
-	DeletedAt          *int64                 `protobuf:"varint,25,opt,name=deleted_at,json=deletedAt,proto3,oneof" json:"deleted_at,omitempty"`
+	Image              *string                `protobuf:"bytes,7,opt,name=image,proto3,oneof" json:"image,omitempty"`
+	ImageMetadata      *UserImageMetadata     `protobuf:"bytes,8,opt,name=image_metadata,json=imageMetadata,proto3,oneof" json:"image_metadata,omitempty"`
+	Membership         *string                `protobuf:"bytes,9,opt,name=membership,proto3,oneof" json:"membership,omitempty"`
+	IsEmailVerified    *bool                  `protobuf:"varint,10,opt,name=is_email_verified,json=isEmailVerified,proto3,oneof" json:"is_email_verified,omitempty"`
+	Password           *string                `protobuf:"bytes,11,opt,name=password,proto3,oneof" json:"password,omitempty"`
+	AuthData           *string                `protobuf:"bytes,12,opt,name=auth_data,json=authData,proto3,oneof" json:"auth_data,omitempty"`
+	AuthService        *string                `protobuf:"bytes,13,opt,name=auth_service,json=authService,proto3,oneof" json:"auth_service,omitempty"`
+	Roles              []string               `protobuf:"bytes,14,rep,name=roles,proto3" json:"roles,omitempty"`
+	Props              map[string]string      `protobuf:"bytes,15,rep,name=props,proto3" json:"props,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	NotifyProps        map[string]string      `protobuf:"bytes,16,rep,name=notify_props,json=notifyProps,proto3" json:"notify_props,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	LastPasswordUpdate *int64                 `protobuf:"varint,17,opt,name=last_password_update,json=lastPasswordUpdate,proto3,oneof" json:"last_password_update,omitempty"`
+	LastPictureUpdate  *int64                 `protobuf:"varint,18,opt,name=last_picture_update,json=lastPictureUpdate,proto3,oneof" json:"last_picture_update,omitempty"`
+	FailedAttempts     *int32                 `protobuf:"varint,19,opt,name=failed_attempts,json=failedAttempts,proto3,oneof" json:"failed_attempts,omitempty"`
+	Locale             *string                `protobuf:"bytes,20,opt,name=locale,proto3,oneof" json:"locale,omitempty"`
+	MfaActive          *bool                  `protobuf:"varint,21,opt,name=mfa_active,json=mfaActive,proto3,oneof" json:"mfa_active,omitempty"`
+	MfaSecret          *string                `protobuf:"bytes,22,opt,name=mfa_secret,json=mfaSecret,proto3,oneof" json:"mfa_secret,omitempty"`
+	LastActivityAt     *int64                 `protobuf:"varint,23,opt,name=last_activity_at,json=lastActivityAt,proto3,oneof" json:"last_activity_at,omitempty"`
+	LastLogin          *int64                 `protobuf:"varint,24,opt,name=last_login,json=lastLogin,proto3,oneof" json:"last_login,omitempty"`
+	CreatedAt          *int64                 `protobuf:"varint,25,opt,name=created_at,json=createdAt,proto3,oneof" json:"created_at,omitempty"`
+	UpdatedAt          *int64                 `protobuf:"varint,26,opt,name=updated_at,json=updatedAt,proto3,oneof" json:"updated_at,omitempty"`
+	DeletedAt          *int64                 `protobuf:"varint,27,opt,name=deleted_at,json=deletedAt,proto3,oneof" json:"deleted_at,omitempty"`
 	unknownFields      protoimpl.UnknownFields
 	sizeCache          protoimpl.SizeCache
 }
 
 func (x *User) Reset() {
 	*x = User{}
-	mi := &file_users_v1_user_proto_msgTypes[0]
+	mi := &file_users_v1_user_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -66,7 +136,7 @@ func (x *User) String() string {
 func (*User) ProtoMessage() {}
 
 func (x *User) ProtoReflect() protoreflect.Message {
-	mi := &file_users_v1_user_proto_msgTypes[0]
+	mi := &file_users_v1_user_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -79,7 +149,7 @@ func (x *User) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use User.ProtoReflect.Descriptor instead.
 func (*User) Descriptor() ([]byte, []int) {
-	return file_users_v1_user_proto_rawDescGZIP(), []int{0}
+	return file_users_v1_user_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *User) GetId() string {
@@ -122,6 +192,20 @@ func (x *User) GetUserType() string {
 		return *x.UserType
 	}
 	return ""
+}
+
+func (x *User) GetImage() string {
+	if x != nil && x.Image != nil {
+		return *x.Image
+	}
+	return ""
+}
+
+func (x *User) GetImageMetadata() *UserImageMetadata {
+	if x != nil {
+		return x.ImageMetadata
+	}
+	return nil
 }
 
 func (x *User) GetMembership() string {
@@ -261,7 +345,13 @@ var File_users_v1_user_proto protoreflect.FileDescriptor
 
 const file_users_v1_user_proto_rawDesc = "" +
 	"\n" +
-	"\x13users/v1/user.proto\x12\busers.v1\"\x9c\v\n" +
+	"\x13users/v1/user.proto\x12\busers.v1\"t\n" +
+	"\x11UserImageMetadata\x12\x12\n" +
+	"\x04mime\x18\x01 \x01(\tR\x04mime\x12\x16\n" +
+	"\x06height\x18\x02 \x01(\x05R\x06height\x12\x14\n" +
+	"\x05widht\x18\x03 \x01(\x05R\x05widht\x12\x1d\n" +
+	"\n" +
+	"size_bytes\x18\x04 \x01(\x03R\tsizeBytes\"\x9d\f\n" +
 	"\x04User\x12\x13\n" +
 	"\x02id\x18\x01 \x01(\tH\x00R\x02id\x88\x01\x01\x12\x1f\n" +
 	"\busername\x18\x02 \x01(\tH\x01R\busername\x88\x01\x01\x12\"\n" +
@@ -269,36 +359,38 @@ const file_users_v1_user_proto_rawDesc = "" +
 	"first_name\x18\x03 \x01(\tH\x02R\tfirstName\x88\x01\x01\x12 \n" +
 	"\tlast_name\x18\x04 \x01(\tH\x03R\blastName\x88\x01\x01\x12\x19\n" +
 	"\x05email\x18\x05 \x01(\tH\x04R\x05email\x88\x01\x01\x12 \n" +
-	"\tuser_type\x18\x06 \x01(\tH\x05R\buserType\x88\x01\x01\x12#\n" +
+	"\tuser_type\x18\x06 \x01(\tH\x05R\buserType\x88\x01\x01\x12\x19\n" +
+	"\x05image\x18\a \x01(\tH\x06R\x05image\x88\x01\x01\x12G\n" +
+	"\x0eimage_metadata\x18\b \x01(\v2\x1b.users.v1.UserImageMetadataH\aR\rimageMetadata\x88\x01\x01\x12#\n" +
 	"\n" +
-	"membership\x18\a \x01(\tH\x06R\n" +
+	"membership\x18\t \x01(\tH\bR\n" +
 	"membership\x88\x01\x01\x12/\n" +
-	"\x11is_email_verified\x18\b \x01(\bH\aR\x0fisEmailVerified\x88\x01\x01\x12\x1f\n" +
-	"\bpassword\x18\t \x01(\tH\bR\bpassword\x88\x01\x01\x12 \n" +
-	"\tauth_data\x18\n" +
-	" \x01(\tH\tR\bauthData\x88\x01\x01\x12&\n" +
-	"\fauth_service\x18\v \x01(\tH\n" +
-	"R\vauthService\x88\x01\x01\x12\x14\n" +
-	"\x05roles\x18\f \x03(\tR\x05roles\x12/\n" +
-	"\x05props\x18\r \x03(\v2\x19.users.v1.User.PropsEntryR\x05props\x12B\n" +
-	"\fnotify_props\x18\x0e \x03(\v2\x1f.users.v1.User.NotifyPropsEntryR\vnotifyProps\x125\n" +
-	"\x14last_password_update\x18\x0f \x01(\x03H\vR\x12lastPasswordUpdate\x88\x01\x01\x123\n" +
-	"\x13last_picture_update\x18\x10 \x01(\x03H\fR\x11lastPictureUpdate\x88\x01\x01\x12,\n" +
-	"\x0ffailed_attempts\x18\x11 \x01(\x05H\rR\x0efailedAttempts\x88\x01\x01\x12\x1b\n" +
-	"\x06locale\x18\x12 \x01(\tH\x0eR\x06locale\x88\x01\x01\x12\"\n" +
+	"\x11is_email_verified\x18\n" +
+	" \x01(\bH\tR\x0fisEmailVerified\x88\x01\x01\x12\x1f\n" +
+	"\bpassword\x18\v \x01(\tH\n" +
+	"R\bpassword\x88\x01\x01\x12 \n" +
+	"\tauth_data\x18\f \x01(\tH\vR\bauthData\x88\x01\x01\x12&\n" +
+	"\fauth_service\x18\r \x01(\tH\fR\vauthService\x88\x01\x01\x12\x14\n" +
+	"\x05roles\x18\x0e \x03(\tR\x05roles\x12/\n" +
+	"\x05props\x18\x0f \x03(\v2\x19.users.v1.User.PropsEntryR\x05props\x12B\n" +
+	"\fnotify_props\x18\x10 \x03(\v2\x1f.users.v1.User.NotifyPropsEntryR\vnotifyProps\x125\n" +
+	"\x14last_password_update\x18\x11 \x01(\x03H\rR\x12lastPasswordUpdate\x88\x01\x01\x123\n" +
+	"\x13last_picture_update\x18\x12 \x01(\x03H\x0eR\x11lastPictureUpdate\x88\x01\x01\x12,\n" +
+	"\x0ffailed_attempts\x18\x13 \x01(\x05H\x0fR\x0efailedAttempts\x88\x01\x01\x12\x1b\n" +
+	"\x06locale\x18\x14 \x01(\tH\x10R\x06locale\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"mfa_active\x18\x13 \x01(\bH\x0fR\tmfaActive\x88\x01\x01\x12\"\n" +
+	"mfa_active\x18\x15 \x01(\bH\x11R\tmfaActive\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"mfa_secret\x18\x14 \x01(\tH\x10R\tmfaSecret\x88\x01\x01\x12-\n" +
-	"\x10last_activity_at\x18\x15 \x01(\x03H\x11R\x0elastActivityAt\x88\x01\x01\x12\"\n" +
+	"mfa_secret\x18\x16 \x01(\tH\x12R\tmfaSecret\x88\x01\x01\x12-\n" +
+	"\x10last_activity_at\x18\x17 \x01(\x03H\x13R\x0elastActivityAt\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"last_login\x18\x16 \x01(\x03H\x12R\tlastLogin\x88\x01\x01\x12\"\n" +
+	"last_login\x18\x18 \x01(\x03H\x14R\tlastLogin\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"created_at\x18\x17 \x01(\x03H\x13R\tcreatedAt\x88\x01\x01\x12\"\n" +
+	"created_at\x18\x19 \x01(\x03H\x15R\tcreatedAt\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"updated_at\x18\x18 \x01(\x03H\x14R\tupdatedAt\x88\x01\x01\x12\"\n" +
+	"updated_at\x18\x1a \x01(\x03H\x16R\tupdatedAt\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"deleted_at\x18\x19 \x01(\x03H\x15R\tdeletedAt\x88\x01\x01\x1a8\n" +
+	"deleted_at\x18\x1b \x01(\x03H\x17R\tdeletedAt\x88\x01\x01\x1a8\n" +
 	"\n" +
 	"PropsEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
@@ -313,7 +405,9 @@ const file_users_v1_user_proto_rawDesc = "" +
 	"_last_nameB\b\n" +
 	"\x06_emailB\f\n" +
 	"\n" +
-	"_user_typeB\r\n" +
+	"_user_typeB\b\n" +
+	"\x06_imageB\x11\n" +
+	"\x0f_image_metadataB\r\n" +
 	"\v_membershipB\x14\n" +
 	"\x12_is_email_verifiedB\v\n" +
 	"\t_passwordB\f\n" +
@@ -345,20 +439,22 @@ func file_users_v1_user_proto_rawDescGZIP() []byte {
 	return file_users_v1_user_proto_rawDescData
 }
 
-var file_users_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_users_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_users_v1_user_proto_goTypes = []any{
-	(*User)(nil), // 0: users.v1.User
-	nil,          // 1: users.v1.User.PropsEntry
-	nil,          // 2: users.v1.User.NotifyPropsEntry
+	(*UserImageMetadata)(nil), // 0: users.v1.UserImageMetadata
+	(*User)(nil),              // 1: users.v1.User
+	nil,                       // 2: users.v1.User.PropsEntry
+	nil,                       // 3: users.v1.User.NotifyPropsEntry
 }
 var file_users_v1_user_proto_depIdxs = []int32{
-	1, // 0: users.v1.User.props:type_name -> users.v1.User.PropsEntry
-	2, // 1: users.v1.User.notify_props:type_name -> users.v1.User.NotifyPropsEntry
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	0, // 0: users.v1.User.image_metadata:type_name -> users.v1.UserImageMetadata
+	2, // 1: users.v1.User.props:type_name -> users.v1.User.PropsEntry
+	3, // 2: users.v1.User.notify_props:type_name -> users.v1.User.NotifyPropsEntry
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_users_v1_user_proto_init() }
@@ -366,14 +462,14 @@ func file_users_v1_user_proto_init() {
 	if File_users_v1_user_proto != nil {
 		return
 	}
-	file_users_v1_user_proto_msgTypes[0].OneofWrappers = []any{}
+	file_users_v1_user_proto_msgTypes[1].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_users_v1_user_proto_rawDesc), len(file_users_v1_user_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
