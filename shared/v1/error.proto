@@ -11,20 +11,12 @@ option java_package = "org.megacommerce.shared.v1";
 
 message AppError {
   string id = 1;
-  // Message to be display to the end user without debugging information
-  string message = 2;
-  // Internal debug info
-  string detailed_error = 3;
-  // For correlation
-  string request_id = 4;
-  // HTTP-like status code
-  int32 status_code = 5;
-  // Code path or func name
-  string where = 6;
-  // If false, i18n may not apply
-  bool skip_translation = 7;
-
-  shared.v1.StringMap params = 8;
-
-  shared.v1.NestedStringMap nested_params = 9;
+  string message = 2; // displayed to the end user without debugging info
+  string detailed_error = 3; // Internal debug info
+  string request_id = 4; // For correlation
+  int32 status_code = 5; // grpc status code
+  string where = 6; // Code path or func name
+  bool skip_translation = 7; // If false, i18n may not apply
+  shared.v1.StringMap errors = 8;
+  shared.v1.NestedStringMap errors_nested = 9;
 }

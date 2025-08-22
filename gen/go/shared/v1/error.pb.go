@@ -22,22 +22,16 @@ const (
 )
 
 type AppError struct {
-	state protoimpl.MessageState `protogen:"open.v1"`
-	Id    string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
-	// Message to be display to the end user without debugging information
-	Message string `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
-	// Internal debug info
-	DetailedError string `protobuf:"bytes,3,opt,name=detailed_error,json=detailedError,proto3" json:"detailed_error,omitempty"`
-	// For correlation
-	RequestId string `protobuf:"bytes,4,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`
-	// HTTP-like status code
-	StatusCode int32 `protobuf:"varint,5,opt,name=status_code,json=statusCode,proto3" json:"status_code,omitempty"`
-	// Code path or func name
-	Where string `protobuf:"bytes,6,opt,name=where,proto3" json:"where,omitempty"`
-	// If false, i18n may not apply
-	SkipTranslation bool             `protobuf:"varint,7,opt,name=skip_translation,json=skipTranslation,proto3" json:"skip_translation,omitempty"`
-	Params          *StringMap       `protobuf:"bytes,8,opt,name=params,proto3" json:"params,omitempty"`
-	NestedParams    *NestedStringMap `protobuf:"bytes,9,opt,name=nested_params,json=nestedParams,proto3" json:"nested_params,omitempty"`
+	state           protoimpl.MessageState `protogen:"open.v1"`
+	Id              string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Message         string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`                                         // displayed to the end user without debugging info
+	DetailedError   string                 `protobuf:"bytes,3,opt,name=detailed_error,json=detailedError,proto3" json:"detailed_error,omitempty"`        // Internal debug info
+	RequestId       string                 `protobuf:"bytes,4,opt,name=request_id,json=requestId,proto3" json:"request_id,omitempty"`                    // For correlation
+	StatusCode      int32                  `protobuf:"varint,5,opt,name=status_code,json=statusCode,proto3" json:"status_code,omitempty"`                // grpc status code
+	Where           string                 `protobuf:"bytes,6,opt,name=where,proto3" json:"where,omitempty"`                                             // Code path or func name
+	SkipTranslation bool                   `protobuf:"varint,7,opt,name=skip_translation,json=skipTranslation,proto3" json:"skip_translation,omitempty"` // If false, i18n may not apply
+	Errors          *StringMap             `protobuf:"bytes,8,opt,name=errors,proto3" json:"errors,omitempty"`
+	ErrorsNested    *NestedStringMap       `protobuf:"bytes,9,opt,name=errors_nested,json=errorsNested,proto3" json:"errors_nested,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -121,16 +115,16 @@ func (x *AppError) GetSkipTranslation() bool {
 	return false
 }
 
-func (x *AppError) GetParams() *StringMap {
+func (x *AppError) GetErrors() *StringMap {
 	if x != nil {
-		return x.Params
+		return x.Errors
 	}
 	return nil
 }
 
-func (x *AppError) GetNestedParams() *NestedStringMap {
+func (x *AppError) GetErrorsNested() *NestedStringMap {
 	if x != nil {
-		return x.NestedParams
+		return x.ErrorsNested
 	}
 	return nil
 }
@@ -150,8 +144,8 @@ const file_shared_v1_error_proto_rawDesc = "" +
 	"statusCode\x12\x14\n" +
 	"\x05where\x18\x06 \x01(\tR\x05where\x12)\n" +
 	"\x10skip_translation\x18\a \x01(\bR\x0fskipTranslation\x12,\n" +
-	"\x06params\x18\b \x01(\v2\x14.shared.v1.StringMapR\x06params\x12?\n" +
-	"\rnested_params\x18\t \x01(\v2\x1a.shared.v1.NestedStringMapR\fnestedParamsBp\n" +
+	"\x06errors\x18\b \x01(\v2\x14.shared.v1.StringMapR\x06errors\x12?\n" +
+	"\rerrors_nested\x18\t \x01(\v2\x1a.shared.v1.NestedStringMapR\ferrorsNestedBp\n" +
 	"\x1aorg.megacommerce.shared.v1B\n" +
 	"ErrorProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1;v1\xf8\x01\x01b\x06proto3"
 
@@ -174,8 +168,8 @@ var file_shared_v1_error_proto_goTypes = []any{
 	(*NestedStringMap)(nil), // 2: shared.v1.NestedStringMap
 }
 var file_shared_v1_error_proto_depIdxs = []int32{
-	1, // 0: shared.v1.AppError.params:type_name -> shared.v1.StringMap
-	2, // 1: shared.v1.AppError.nested_params:type_name -> shared.v1.NestedStringMap
+	1, // 0: shared.v1.AppError.errors:type_name -> shared.v1.StringMap
+	2, // 1: shared.v1.AppError.errors_nested:type_name -> shared.v1.NestedStringMap
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name

@@ -222,8 +222,8 @@ class AppError final : public ::google::protobuf::Message
     kDetailedErrorFieldNumber = 3,
     kRequestIdFieldNumber = 4,
     kWhereFieldNumber = 6,
-    kParamsFieldNumber = 8,
-    kNestedParamsFieldNumber = 9,
+    kErrorsFieldNumber = 8,
+    kErrorsNestedFieldNumber = 9,
     kStatusCodeFieldNumber = 5,
     kSkipTranslationFieldNumber = 7,
   };
@@ -302,34 +302,34 @@ class AppError final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_where();
 
   public:
-  // .shared.v1.StringMap params = 8 [json_name = "params"];
-  bool has_params() const;
-  void clear_params() ;
-  const ::shared::v1::StringMap& params() const;
-  [[nodiscard]] ::shared::v1::StringMap* PROTOBUF_NULLABLE release_params();
-  ::shared::v1::StringMap* PROTOBUF_NONNULL mutable_params();
-  void set_allocated_params(::shared::v1::StringMap* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_params(::shared::v1::StringMap* PROTOBUF_NULLABLE value);
-  ::shared::v1::StringMap* PROTOBUF_NULLABLE unsafe_arena_release_params();
+  // .shared.v1.StringMap errors = 8 [json_name = "errors"];
+  bool has_errors() const;
+  void clear_errors() ;
+  const ::shared::v1::StringMap& errors() const;
+  [[nodiscard]] ::shared::v1::StringMap* PROTOBUF_NULLABLE release_errors();
+  ::shared::v1::StringMap* PROTOBUF_NONNULL mutable_errors();
+  void set_allocated_errors(::shared::v1::StringMap* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_errors(::shared::v1::StringMap* PROTOBUF_NULLABLE value);
+  ::shared::v1::StringMap* PROTOBUF_NULLABLE unsafe_arena_release_errors();
 
   private:
-  const ::shared::v1::StringMap& _internal_params() const;
-  ::shared::v1::StringMap* PROTOBUF_NONNULL _internal_mutable_params();
+  const ::shared::v1::StringMap& _internal_errors() const;
+  ::shared::v1::StringMap* PROTOBUF_NONNULL _internal_mutable_errors();
 
   public:
-  // .shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];
-  bool has_nested_params() const;
-  void clear_nested_params() ;
-  const ::shared::v1::NestedStringMap& nested_params() const;
-  [[nodiscard]] ::shared::v1::NestedStringMap* PROTOBUF_NULLABLE release_nested_params();
-  ::shared::v1::NestedStringMap* PROTOBUF_NONNULL mutable_nested_params();
-  void set_allocated_nested_params(::shared::v1::NestedStringMap* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_nested_params(::shared::v1::NestedStringMap* PROTOBUF_NULLABLE value);
-  ::shared::v1::NestedStringMap* PROTOBUF_NULLABLE unsafe_arena_release_nested_params();
+  // .shared.v1.NestedStringMap errors_nested = 9 [json_name = "errorsNested"];
+  bool has_errors_nested() const;
+  void clear_errors_nested() ;
+  const ::shared::v1::NestedStringMap& errors_nested() const;
+  [[nodiscard]] ::shared::v1::NestedStringMap* PROTOBUF_NULLABLE release_errors_nested();
+  ::shared::v1::NestedStringMap* PROTOBUF_NONNULL mutable_errors_nested();
+  void set_allocated_errors_nested(::shared::v1::NestedStringMap* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_errors_nested(::shared::v1::NestedStringMap* PROTOBUF_NULLABLE value);
+  ::shared::v1::NestedStringMap* PROTOBUF_NULLABLE unsafe_arena_release_errors_nested();
 
   private:
-  const ::shared::v1::NestedStringMap& _internal_nested_params() const;
-  ::shared::v1::NestedStringMap* PROTOBUF_NONNULL _internal_mutable_nested_params();
+  const ::shared::v1::NestedStringMap& _internal_errors_nested() const;
+  ::shared::v1::NestedStringMap* PROTOBUF_NONNULL _internal_mutable_errors_nested();
 
   public:
   // int32 status_code = 5 [json_name = "statusCode"];
@@ -383,8 +383,8 @@ class AppError final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr detailed_error_;
     ::google::protobuf::internal::ArenaStringPtr request_id_;
     ::google::protobuf::internal::ArenaStringPtr where_;
-    ::shared::v1::StringMap* PROTOBUF_NULLABLE params_;
-    ::shared::v1::NestedStringMap* PROTOBUF_NULLABLE nested_params_;
+    ::shared::v1::StringMap* PROTOBUF_NULLABLE errors_;
+    ::shared::v1::NestedStringMap* PROTOBUF_NULLABLE errors_nested_;
     ::int32_t status_code_;
     bool skip_translation_;
     PROTOBUF_TSAN_DECLARE_MEMBER
@@ -784,41 +784,41 @@ inline void AppError::_internal_set_skip_translation(bool value) {
   _impl_.skip_translation_ = value;
 }
 
-// .shared.v1.StringMap params = 8 [json_name = "params"];
-inline bool AppError::has_params() const {
+// .shared.v1.StringMap errors = 8 [json_name = "errors"];
+inline bool AppError::has_errors() const {
   bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
-  PROTOBUF_ASSUME(!value || _impl_.params_ != nullptr);
+  PROTOBUF_ASSUME(!value || _impl_.errors_ != nullptr);
   return value;
 }
-inline const ::shared::v1::StringMap& AppError::_internal_params() const {
+inline const ::shared::v1::StringMap& AppError::_internal_errors() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::shared::v1::StringMap* p = _impl_.params_;
+  const ::shared::v1::StringMap* p = _impl_.errors_;
   return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::StringMap&>(::shared::v1::_StringMap_default_instance_);
 }
-inline const ::shared::v1::StringMap& AppError::params() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:shared.v1.AppError.params)
-  return _internal_params();
+inline const ::shared::v1::StringMap& AppError::errors() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:shared.v1.AppError.errors)
+  return _internal_errors();
 }
-inline void AppError::unsafe_arena_set_allocated_params(
+inline void AppError::unsafe_arena_set_allocated_errors(
     ::shared::v1::StringMap* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.params_);
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.errors_);
   }
-  _impl_.params_ = reinterpret_cast<::shared::v1::StringMap*>(value);
+  _impl_.errors_ = reinterpret_cast<::shared::v1::StringMap*>(value);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000020u;
   } else {
     _impl_._has_bits_[0] &= ~0x00000020u;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:shared.v1.AppError.params)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:shared.v1.AppError.errors)
 }
-inline ::shared::v1::StringMap* PROTOBUF_NULLABLE AppError::release_params() {
+inline ::shared::v1::StringMap* PROTOBUF_NULLABLE AppError::release_errors() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
   _impl_._has_bits_[0] &= ~0x00000020u;
-  ::shared::v1::StringMap* released = _impl_.params_;
-  _impl_.params_ = nullptr;
+  ::shared::v1::StringMap* released = _impl_.errors_;
+  _impl_.errors_ = nullptr;
   if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
     auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
     released = ::google::protobuf::internal::DuplicateIfNonNull(released);
@@ -832,35 +832,35 @@ inline ::shared::v1::StringMap* PROTOBUF_NULLABLE AppError::release_params() {
   }
   return released;
 }
-inline ::shared::v1::StringMap* PROTOBUF_NULLABLE AppError::unsafe_arena_release_params() {
+inline ::shared::v1::StringMap* PROTOBUF_NULLABLE AppError::unsafe_arena_release_errors() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:shared.v1.AppError.params)
+  // @@protoc_insertion_point(field_release:shared.v1.AppError.errors)
 
   _impl_._has_bits_[0] &= ~0x00000020u;
-  ::shared::v1::StringMap* temp = _impl_.params_;
-  _impl_.params_ = nullptr;
+  ::shared::v1::StringMap* temp = _impl_.errors_;
+  _impl_.errors_ = nullptr;
   return temp;
 }
-inline ::shared::v1::StringMap* PROTOBUF_NONNULL AppError::_internal_mutable_params() {
+inline ::shared::v1::StringMap* PROTOBUF_NONNULL AppError::_internal_mutable_errors() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.params_ == nullptr) {
+  if (_impl_.errors_ == nullptr) {
     auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::StringMap>(GetArena());
-    _impl_.params_ = reinterpret_cast<::shared::v1::StringMap*>(p);
+    _impl_.errors_ = reinterpret_cast<::shared::v1::StringMap*>(p);
   }
-  return _impl_.params_;
+  return _impl_.errors_;
 }
-inline ::shared::v1::StringMap* PROTOBUF_NONNULL AppError::mutable_params()
+inline ::shared::v1::StringMap* PROTOBUF_NONNULL AppError::mutable_errors()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   _impl_._has_bits_[0] |= 0x00000020u;
-  ::shared::v1::StringMap* _msg = _internal_mutable_params();
-  // @@protoc_insertion_point(field_mutable:shared.v1.AppError.params)
+  ::shared::v1::StringMap* _msg = _internal_mutable_errors();
+  // @@protoc_insertion_point(field_mutable:shared.v1.AppError.errors)
   return _msg;
 }
-inline void AppError::set_allocated_params(::shared::v1::StringMap* PROTOBUF_NULLABLE value) {
+inline void AppError::set_allocated_errors(::shared::v1::StringMap* PROTOBUF_NULLABLE value) {
   ::google::protobuf::Arena* message_arena = GetArena();
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.params_);
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.errors_);
   }
 
   if (value != nullptr) {
@@ -873,45 +873,45 @@ inline void AppError::set_allocated_params(::shared::v1::StringMap* PROTOBUF_NUL
     _impl_._has_bits_[0] &= ~0x00000020u;
   }
 
-  _impl_.params_ = reinterpret_cast<::shared::v1::StringMap*>(value);
-  // @@protoc_insertion_point(field_set_allocated:shared.v1.AppError.params)
+  _impl_.errors_ = reinterpret_cast<::shared::v1::StringMap*>(value);
+  // @@protoc_insertion_point(field_set_allocated:shared.v1.AppError.errors)
 }
 
-// .shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];
-inline bool AppError::has_nested_params() const {
+// .shared.v1.NestedStringMap errors_nested = 9 [json_name = "errorsNested"];
+inline bool AppError::has_errors_nested() const {
   bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
-  PROTOBUF_ASSUME(!value || _impl_.nested_params_ != nullptr);
+  PROTOBUF_ASSUME(!value || _impl_.errors_nested_ != nullptr);
   return value;
 }
-inline const ::shared::v1::NestedStringMap& AppError::_internal_nested_params() const {
+inline const ::shared::v1::NestedStringMap& AppError::_internal_errors_nested() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::shared::v1::NestedStringMap* p = _impl_.nested_params_;
+  const ::shared::v1::NestedStringMap* p = _impl_.errors_nested_;
   return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::NestedStringMap&>(::shared::v1::_NestedStringMap_default_instance_);
 }
-inline const ::shared::v1::NestedStringMap& AppError::nested_params() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:shared.v1.AppError.nested_params)
-  return _internal_nested_params();
+inline const ::shared::v1::NestedStringMap& AppError::errors_nested() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:shared.v1.AppError.errors_nested)
+  return _internal_errors_nested();
 }
-inline void AppError::unsafe_arena_set_allocated_nested_params(
+inline void AppError::unsafe_arena_set_allocated_errors_nested(
     ::shared::v1::NestedStringMap* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.nested_params_);
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.errors_nested_);
   }
-  _impl_.nested_params_ = reinterpret_cast<::shared::v1::NestedStringMap*>(value);
+  _impl_.errors_nested_ = reinterpret_cast<::shared::v1::NestedStringMap*>(value);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000040u;
   } else {
     _impl_._has_bits_[0] &= ~0x00000040u;
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:shared.v1.AppError.nested_params)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:shared.v1.AppError.errors_nested)
 }
-inline ::shared::v1::NestedStringMap* PROTOBUF_NULLABLE AppError::release_nested_params() {
+inline ::shared::v1::NestedStringMap* PROTOBUF_NULLABLE AppError::release_errors_nested() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
 
   _impl_._has_bits_[0] &= ~0x00000040u;
-  ::shared::v1::NestedStringMap* released = _impl_.nested_params_;
-  _impl_.nested_params_ = nullptr;
+  ::shared::v1::NestedStringMap* released = _impl_.errors_nested_;
+  _impl_.errors_nested_ = nullptr;
   if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
     auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
     released = ::google::protobuf::internal::DuplicateIfNonNull(released);
@@ -925,35 +925,35 @@ inline ::shared::v1::NestedStringMap* PROTOBUF_NULLABLE AppError::release_nested
   }
   return released;
 }
-inline ::shared::v1::NestedStringMap* PROTOBUF_NULLABLE AppError::unsafe_arena_release_nested_params() {
+inline ::shared::v1::NestedStringMap* PROTOBUF_NULLABLE AppError::unsafe_arena_release_errors_nested() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:shared.v1.AppError.nested_params)
+  // @@protoc_insertion_point(field_release:shared.v1.AppError.errors_nested)
 
   _impl_._has_bits_[0] &= ~0x00000040u;
-  ::shared::v1::NestedStringMap* temp = _impl_.nested_params_;
-  _impl_.nested_params_ = nullptr;
+  ::shared::v1::NestedStringMap* temp = _impl_.errors_nested_;
+  _impl_.errors_nested_ = nullptr;
   return temp;
 }
-inline ::shared::v1::NestedStringMap* PROTOBUF_NONNULL AppError::_internal_mutable_nested_params() {
+inline ::shared::v1::NestedStringMap* PROTOBUF_NONNULL AppError::_internal_mutable_errors_nested() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.nested_params_ == nullptr) {
+  if (_impl_.errors_nested_ == nullptr) {
     auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::NestedStringMap>(GetArena());
-    _impl_.nested_params_ = reinterpret_cast<::shared::v1::NestedStringMap*>(p);
+    _impl_.errors_nested_ = reinterpret_cast<::shared::v1::NestedStringMap*>(p);
   }
-  return _impl_.nested_params_;
+  return _impl_.errors_nested_;
 }
-inline ::shared::v1::NestedStringMap* PROTOBUF_NONNULL AppError::mutable_nested_params()
+inline ::shared::v1::NestedStringMap* PROTOBUF_NONNULL AppError::mutable_errors_nested()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   _impl_._has_bits_[0] |= 0x00000040u;
-  ::shared::v1::NestedStringMap* _msg = _internal_mutable_nested_params();
-  // @@protoc_insertion_point(field_mutable:shared.v1.AppError.nested_params)
+  ::shared::v1::NestedStringMap* _msg = _internal_mutable_errors_nested();
+  // @@protoc_insertion_point(field_mutable:shared.v1.AppError.errors_nested)
   return _msg;
 }
-inline void AppError::set_allocated_nested_params(::shared::v1::NestedStringMap* PROTOBUF_NULLABLE value) {
+inline void AppError::set_allocated_errors_nested(::shared::v1::NestedStringMap* PROTOBUF_NULLABLE value) {
   ::google::protobuf::Arena* message_arena = GetArena();
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.nested_params_);
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.errors_nested_);
   }
 
   if (value != nullptr) {
@@ -966,8 +966,8 @@ inline void AppError::set_allocated_nested_params(::shared::v1::NestedStringMap*
     _impl_._has_bits_[0] &= ~0x00000040u;
   }
 
-  _impl_.nested_params_ = reinterpret_cast<::shared::v1::NestedStringMap*>(value);
-  // @@protoc_insertion_point(field_set_allocated:shared.v1.AppError.nested_params)
+  _impl_.errors_nested_ = reinterpret_cast<::shared::v1::NestedStringMap*>(value);
+  // @@protoc_insertion_point(field_set_allocated:shared.v1.AppError.errors_nested)
 }
 
 #ifdef __GNUC__

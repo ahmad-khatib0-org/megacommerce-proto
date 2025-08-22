@@ -12,20 +12,20 @@ export const protobufPackage = "shared.v1";
 
 export interface AppError {
   id: string;
-  /** Message to be display to the end user without debugging information */
+  /** displayed to the end user without debugging info */
   message: string;
   /** Internal debug info */
   detailedError: string;
   /** For correlation */
   requestId: string;
-  /** HTTP-like status code */
+  /** grpc status code */
   statusCode: number;
   /** Code path or func name */
   where: string;
   /** If false, i18n may not apply */
   skipTranslation: boolean;
-  params?: StringMap | undefined;
-  nestedParams?: NestedStringMap | undefined;
+  errors?: StringMap | undefined;
+  errorsNested?: NestedStringMap | undefined;
 }
 
 function createBaseAppError(): AppError {
@@ -37,8 +37,8 @@ function createBaseAppError(): AppError {
     statusCode: 0,
     where: "",
     skipTranslation: false,
-    params: undefined,
-    nestedParams: undefined,
+    errors: undefined,
+    errorsNested: undefined,
   };
 }
 
@@ -65,11 +65,11 @@ export const AppError: MessageFns<AppError> = {
     if (message.skipTranslation !== false) {
       writer.uint32(56).bool(message.skipTranslation);
     }
-    if (message.params !== undefined) {
-      StringMap.encode(message.params, writer.uint32(66).fork()).join();
+    if (message.errors !== undefined) {
+      StringMap.encode(message.errors, writer.uint32(66).fork()).join();
     }
-    if (message.nestedParams !== undefined) {
-      NestedStringMap.encode(message.nestedParams, writer.uint32(74).fork()).join();
+    if (message.errorsNested !== undefined) {
+      NestedStringMap.encode(message.errorsNested, writer.uint32(74).fork()).join();
     }
     return writer;
   },
@@ -142,7 +142,7 @@ export const AppError: MessageFns<AppError> = {
             break;
           }
 
-          message.params = StringMap.decode(reader, reader.uint32());
+          message.errors = StringMap.decode(reader, reader.uint32());
           continue;
         }
         case 9: {
@@ -150,7 +150,7 @@ export const AppError: MessageFns<AppError> = {
             break;
           }
 
-          message.nestedParams = NestedStringMap.decode(reader, reader.uint32());
+          message.errorsNested = NestedStringMap.decode(reader, reader.uint32());
           continue;
         }
       }
@@ -171,8 +171,8 @@ export const AppError: MessageFns<AppError> = {
       statusCode: isSet(object.statusCode) ? globalThis.Number(object.statusCode) : 0,
       where: isSet(object.where) ? globalThis.String(object.where) : "",
       skipTranslation: isSet(object.skipTranslation) ? globalThis.Boolean(object.skipTranslation) : false,
-      params: isSet(object.params) ? StringMap.fromJSON(object.params) : undefined,
-      nestedParams: isSet(object.nestedParams) ? NestedStringMap.fromJSON(object.nestedParams) : undefined,
+      errors: isSet(object.errors) ? StringMap.fromJSON(object.errors) : undefined,
+      errorsNested: isSet(object.errorsNested) ? NestedStringMap.fromJSON(object.errorsNested) : undefined,
     };
   },
 
@@ -199,11 +199,11 @@ export const AppError: MessageFns<AppError> = {
     if (message.skipTranslation !== false) {
       obj.skipTranslation = message.skipTranslation;
     }
-    if (message.params !== undefined) {
-      obj.params = StringMap.toJSON(message.params);
+    if (message.errors !== undefined) {
+      obj.errors = StringMap.toJSON(message.errors);
     }
-    if (message.nestedParams !== undefined) {
-      obj.nestedParams = NestedStringMap.toJSON(message.nestedParams);
+    if (message.errorsNested !== undefined) {
+      obj.errorsNested = NestedStringMap.toJSON(message.errorsNested);
     }
     return obj;
   },
@@ -220,11 +220,11 @@ export const AppError: MessageFns<AppError> = {
     message.statusCode = object.statusCode ?? 0;
     message.where = object.where ?? "";
     message.skipTranslation = object.skipTranslation ?? false;
-    message.params = (object.params !== undefined && object.params !== null)
-      ? StringMap.fromPartial(object.params)
+    message.errors = (object.errors !== undefined && object.errors !== null)
+      ? StringMap.fromPartial(object.errors)
       : undefined;
-    message.nestedParams = (object.nestedParams !== undefined && object.nestedParams !== null)
-      ? NestedStringMap.fromPartial(object.nestedParams)
+    message.errorsNested = (object.errorsNested !== undefined && object.errorsNested !== null)
+      ? NestedStringMap.fromPartial(object.errorsNested)
       : undefined;
     return message;
   },

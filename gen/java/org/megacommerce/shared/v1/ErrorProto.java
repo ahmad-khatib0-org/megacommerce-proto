@@ -44,7 +44,7 @@ public final class ErrorProto {
 
     /**
      * <pre>
-     * Message to be display to the end user without debugging information
+     * displayed to the end user without debugging info
      * </pre>
      *
      * <code>string message = 2 [json_name = "message"];</code>
@@ -53,7 +53,7 @@ public final class ErrorProto {
     java.lang.String getMessage();
     /**
      * <pre>
-     * Message to be display to the end user without debugging information
+     * displayed to the end user without debugging info
      * </pre>
      *
      * <code>string message = 2 [json_name = "message"];</code>
@@ -104,7 +104,7 @@ public final class ErrorProto {
 
     /**
      * <pre>
-     * HTTP-like status code
+     * grpc status code
      * </pre>
      *
      * <code>int32 status_code = 5 [json_name = "statusCode"];</code>
@@ -143,34 +143,34 @@ public final class ErrorProto {
     boolean getSkipTranslation();
 
     /**
-     * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
-     * @return Whether the params field is set.
+     * <code>.shared.v1.StringMap errors = 8 [json_name = "errors"];</code>
+     * @return Whether the errors field is set.
      */
-    boolean hasParams();
+    boolean hasErrors();
     /**
-     * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
-     * @return The params.
+     * <code>.shared.v1.StringMap errors = 8 [json_name = "errors"];</code>
+     * @return The errors.
      */
-    org.megacommerce.shared.v1.TypesProto.StringMap getParams();
+    org.megacommerce.shared.v1.TypesProto.StringMap getErrors();
     /**
-     * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
+     * <code>.shared.v1.StringMap errors = 8 [json_name = "errors"];</code>
      */
-    org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder getParamsOrBuilder();
+    org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder getErrorsOrBuilder();
 
     /**
-     * <code>.shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];</code>
-     * @return Whether the nestedParams field is set.
+     * <code>.shared.v1.NestedStringMap errors_nested = 9 [json_name = "errorsNested"];</code>
+     * @return Whether the errorsNested field is set.
      */
-    boolean hasNestedParams();
+    boolean hasErrorsNested();
     /**
-     * <code>.shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];</code>
-     * @return The nestedParams.
+     * <code>.shared.v1.NestedStringMap errors_nested = 9 [json_name = "errorsNested"];</code>
+     * @return The errorsNested.
      */
-    org.megacommerce.shared.v1.TypesProto.NestedStringMap getNestedParams();
+    org.megacommerce.shared.v1.TypesProto.NestedStringMap getErrorsNested();
     /**
-     * <code>.shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];</code>
+     * <code>.shared.v1.NestedStringMap errors_nested = 9 [json_name = "errorsNested"];</code>
      */
-    org.megacommerce.shared.v1.TypesProto.NestedStringMapOrBuilder getNestedParamsOrBuilder();
+    org.megacommerce.shared.v1.TypesProto.NestedStringMapOrBuilder getErrorsNestedOrBuilder();
   }
   /**
    * Protobuf type {@code shared.v1.AppError}
@@ -259,7 +259,7 @@ public final class ErrorProto {
     private volatile java.lang.Object message_ = "";
     /**
      * <pre>
-     * Message to be display to the end user without debugging information
+     * displayed to the end user without debugging info
      * </pre>
      *
      * <code>string message = 2 [json_name = "message"];</code>
@@ -280,7 +280,7 @@ public final class ErrorProto {
     }
     /**
      * <pre>
-     * Message to be display to the end user without debugging information
+     * displayed to the end user without debugging info
      * </pre>
      *
      * <code>string message = 2 [json_name = "message"];</code>
@@ -399,7 +399,7 @@ public final class ErrorProto {
     private int statusCode_ = 0;
     /**
      * <pre>
-     * HTTP-like status code
+     * grpc status code
      * </pre>
      *
      * <code>int32 status_code = 5 [json_name = "statusCode"];</code>
@@ -472,56 +472,56 @@ public final class ErrorProto {
       return skipTranslation_;
     }
 
-    public static final int PARAMS_FIELD_NUMBER = 8;
-    private org.megacommerce.shared.v1.TypesProto.StringMap params_;
+    public static final int ERRORS_FIELD_NUMBER = 8;
+    private org.megacommerce.shared.v1.TypesProto.StringMap errors_;
     /**
-     * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
-     * @return Whether the params field is set.
+     * <code>.shared.v1.StringMap errors = 8 [json_name = "errors"];</code>
+     * @return Whether the errors field is set.
      */
     @java.lang.Override
-    public boolean hasParams() {
+    public boolean hasErrors() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
-     * @return The params.
+     * <code>.shared.v1.StringMap errors = 8 [json_name = "errors"];</code>
+     * @return The errors.
      */
     @java.lang.Override
-    public org.megacommerce.shared.v1.TypesProto.StringMap getParams() {
-      return params_ == null ? org.megacommerce.shared.v1.TypesProto.StringMap.getDefaultInstance() : params_;
+    public org.megacommerce.shared.v1.TypesProto.StringMap getErrors() {
+      return errors_ == null ? org.megacommerce.shared.v1.TypesProto.StringMap.getDefaultInstance() : errors_;
     }
     /**
-     * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
+     * <code>.shared.v1.StringMap errors = 8 [json_name = "errors"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder getParamsOrBuilder() {
-      return params_ == null ? org.megacommerce.shared.v1.TypesProto.StringMap.getDefaultInstance() : params_;
+    public org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder getErrorsOrBuilder() {
+      return errors_ == null ? org.megacommerce.shared.v1.TypesProto.StringMap.getDefaultInstance() : errors_;
     }
 
-    public static final int NESTED_PARAMS_FIELD_NUMBER = 9;
-    private org.megacommerce.shared.v1.TypesProto.NestedStringMap nestedParams_;
+    public static final int ERRORS_NESTED_FIELD_NUMBER = 9;
+    private org.megacommerce.shared.v1.TypesProto.NestedStringMap errorsNested_;
     /**
-     * <code>.shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];</code>
-     * @return Whether the nestedParams field is set.
+     * <code>.shared.v1.NestedStringMap errors_nested = 9 [json_name = "errorsNested"];</code>
+     * @return Whether the errorsNested field is set.
      */
     @java.lang.Override
-    public boolean hasNestedParams() {
+    public boolean hasErrorsNested() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>.shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];</code>
-     * @return The nestedParams.
+     * <code>.shared.v1.NestedStringMap errors_nested = 9 [json_name = "errorsNested"];</code>
+     * @return The errorsNested.
      */
     @java.lang.Override
-    public org.megacommerce.shared.v1.TypesProto.NestedStringMap getNestedParams() {
-      return nestedParams_ == null ? org.megacommerce.shared.v1.TypesProto.NestedStringMap.getDefaultInstance() : nestedParams_;
+    public org.megacommerce.shared.v1.TypesProto.NestedStringMap getErrorsNested() {
+      return errorsNested_ == null ? org.megacommerce.shared.v1.TypesProto.NestedStringMap.getDefaultInstance() : errorsNested_;
     }
     /**
-     * <code>.shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];</code>
+     * <code>.shared.v1.NestedStringMap errors_nested = 9 [json_name = "errorsNested"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.shared.v1.TypesProto.NestedStringMapOrBuilder getNestedParamsOrBuilder() {
-      return nestedParams_ == null ? org.megacommerce.shared.v1.TypesProto.NestedStringMap.getDefaultInstance() : nestedParams_;
+    public org.megacommerce.shared.v1.TypesProto.NestedStringMapOrBuilder getErrorsNestedOrBuilder() {
+      return errorsNested_ == null ? org.megacommerce.shared.v1.TypesProto.NestedStringMap.getDefaultInstance() : errorsNested_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -560,10 +560,10 @@ public final class ErrorProto {
         output.writeBool(7, skipTranslation_);
       }
       if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeMessage(8, getParams());
+        output.writeMessage(8, getErrors());
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeMessage(9, getNestedParams());
+        output.writeMessage(9, getErrorsNested());
       }
       getUnknownFields().writeTo(output);
     }
@@ -599,11 +599,11 @@ public final class ErrorProto {
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getParams());
+          .computeMessageSize(8, getErrors());
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getNestedParams());
+          .computeMessageSize(9, getErrorsNested());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -634,15 +634,15 @@ public final class ErrorProto {
           .equals(other.getWhere())) return false;
       if (getSkipTranslation()
           != other.getSkipTranslation()) return false;
-      if (hasParams() != other.hasParams()) return false;
-      if (hasParams()) {
-        if (!getParams()
-            .equals(other.getParams())) return false;
+      if (hasErrors() != other.hasErrors()) return false;
+      if (hasErrors()) {
+        if (!getErrors()
+            .equals(other.getErrors())) return false;
       }
-      if (hasNestedParams() != other.hasNestedParams()) return false;
-      if (hasNestedParams()) {
-        if (!getNestedParams()
-            .equals(other.getNestedParams())) return false;
+      if (hasErrorsNested() != other.hasErrorsNested()) return false;
+      if (hasErrorsNested()) {
+        if (!getErrorsNested()
+            .equals(other.getErrorsNested())) return false;
       }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -670,13 +670,13 @@ public final class ErrorProto {
       hash = (37 * hash) + SKIP_TRANSLATION_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getSkipTranslation());
-      if (hasParams()) {
-        hash = (37 * hash) + PARAMS_FIELD_NUMBER;
-        hash = (53 * hash) + getParams().hashCode();
+      if (hasErrors()) {
+        hash = (37 * hash) + ERRORS_FIELD_NUMBER;
+        hash = (53 * hash) + getErrors().hashCode();
       }
-      if (hasNestedParams()) {
-        hash = (37 * hash) + NESTED_PARAMS_FIELD_NUMBER;
-        hash = (53 * hash) + getNestedParams().hashCode();
+      if (hasErrorsNested()) {
+        hash = (37 * hash) + ERRORS_NESTED_FIELD_NUMBER;
+        hash = (53 * hash) + getErrorsNested().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -808,8 +808,8 @@ public final class ErrorProto {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessage
                 .alwaysUseFieldBuilders) {
-          internalGetParamsFieldBuilder();
-          internalGetNestedParamsFieldBuilder();
+          internalGetErrorsFieldBuilder();
+          internalGetErrorsNestedFieldBuilder();
         }
       }
       @java.lang.Override
@@ -823,15 +823,15 @@ public final class ErrorProto {
         statusCode_ = 0;
         where_ = "";
         skipTranslation_ = false;
-        params_ = null;
-        if (paramsBuilder_ != null) {
-          paramsBuilder_.dispose();
-          paramsBuilder_ = null;
+        errors_ = null;
+        if (errorsBuilder_ != null) {
+          errorsBuilder_.dispose();
+          errorsBuilder_ = null;
         }
-        nestedParams_ = null;
-        if (nestedParamsBuilder_ != null) {
-          nestedParamsBuilder_.dispose();
-          nestedParamsBuilder_ = null;
+        errorsNested_ = null;
+        if (errorsNestedBuilder_ != null) {
+          errorsNestedBuilder_.dispose();
+          errorsNestedBuilder_ = null;
         }
         return this;
       }
@@ -889,15 +889,15 @@ public final class ErrorProto {
         }
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.params_ = paramsBuilder_ == null
-              ? params_
-              : paramsBuilder_.build();
+          result.errors_ = errorsBuilder_ == null
+              ? errors_
+              : errorsBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.nestedParams_ = nestedParamsBuilder_ == null
-              ? nestedParams_
-              : nestedParamsBuilder_.build();
+          result.errorsNested_ = errorsNestedBuilder_ == null
+              ? errorsNested_
+              : errorsNestedBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
         result.bitField0_ |= to_bitField0_;
@@ -946,11 +946,11 @@ public final class ErrorProto {
         if (other.getSkipTranslation() != false) {
           setSkipTranslation(other.getSkipTranslation());
         }
-        if (other.hasParams()) {
-          mergeParams(other.getParams());
+        if (other.hasErrors()) {
+          mergeErrors(other.getErrors());
         }
-        if (other.hasNestedParams()) {
-          mergeNestedParams(other.getNestedParams());
+        if (other.hasErrorsNested()) {
+          mergeErrorsNested(other.getErrorsNested());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -1015,14 +1015,14 @@ public final class ErrorProto {
               } // case 56
               case 66: {
                 input.readMessage(
-                    internalGetParamsFieldBuilder().getBuilder(),
+                    internalGetErrorsFieldBuilder().getBuilder(),
                     extensionRegistry);
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
               case 74: {
                 input.readMessage(
-                    internalGetNestedParamsFieldBuilder().getBuilder(),
+                    internalGetErrorsNestedFieldBuilder().getBuilder(),
                     extensionRegistry);
                 bitField0_ |= 0x00000100;
                 break;
@@ -1119,7 +1119,7 @@ public final class ErrorProto {
       private java.lang.Object message_ = "";
       /**
        * <pre>
-       * Message to be display to the end user without debugging information
+       * displayed to the end user without debugging info
        * </pre>
        *
        * <code>string message = 2 [json_name = "message"];</code>
@@ -1139,7 +1139,7 @@ public final class ErrorProto {
       }
       /**
        * <pre>
-       * Message to be display to the end user without debugging information
+       * displayed to the end user without debugging info
        * </pre>
        *
        * <code>string message = 2 [json_name = "message"];</code>
@@ -1160,7 +1160,7 @@ public final class ErrorProto {
       }
       /**
        * <pre>
-       * Message to be display to the end user without debugging information
+       * displayed to the end user without debugging info
        * </pre>
        *
        * <code>string message = 2 [json_name = "message"];</code>
@@ -1177,7 +1177,7 @@ public final class ErrorProto {
       }
       /**
        * <pre>
-       * Message to be display to the end user without debugging information
+       * displayed to the end user without debugging info
        * </pre>
        *
        * <code>string message = 2 [json_name = "message"];</code>
@@ -1191,7 +1191,7 @@ public final class ErrorProto {
       }
       /**
        * <pre>
-       * Message to be display to the end user without debugging information
+       * displayed to the end user without debugging info
        * </pre>
        *
        * <code>string message = 2 [json_name = "message"];</code>
@@ -1395,7 +1395,7 @@ public final class ErrorProto {
       private int statusCode_ ;
       /**
        * <pre>
-       * HTTP-like status code
+       * grpc status code
        * </pre>
        *
        * <code>int32 status_code = 5 [json_name = "statusCode"];</code>
@@ -1407,7 +1407,7 @@ public final class ErrorProto {
       }
       /**
        * <pre>
-       * HTTP-like status code
+       * grpc status code
        * </pre>
        *
        * <code>int32 status_code = 5 [json_name = "statusCode"];</code>
@@ -1423,7 +1423,7 @@ public final class ErrorProto {
       }
       /**
        * <pre>
-       * HTTP-like status code
+       * grpc status code
        * </pre>
        *
        * <code>int32 status_code = 5 [json_name = "statusCode"];</code>
@@ -1572,246 +1572,246 @@ public final class ErrorProto {
         return this;
       }
 
-      private org.megacommerce.shared.v1.TypesProto.StringMap params_;
+      private org.megacommerce.shared.v1.TypesProto.StringMap errors_;
       private com.google.protobuf.SingleFieldBuilder<
-          org.megacommerce.shared.v1.TypesProto.StringMap, org.megacommerce.shared.v1.TypesProto.StringMap.Builder, org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder> paramsBuilder_;
+          org.megacommerce.shared.v1.TypesProto.StringMap, org.megacommerce.shared.v1.TypesProto.StringMap.Builder, org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder> errorsBuilder_;
       /**
-       * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
-       * @return Whether the params field is set.
+       * <code>.shared.v1.StringMap errors = 8 [json_name = "errors"];</code>
+       * @return Whether the errors field is set.
        */
-      public boolean hasParams() {
+      public boolean hasErrors() {
         return ((bitField0_ & 0x00000080) != 0);
       }
       /**
-       * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
-       * @return The params.
+       * <code>.shared.v1.StringMap errors = 8 [json_name = "errors"];</code>
+       * @return The errors.
        */
-      public org.megacommerce.shared.v1.TypesProto.StringMap getParams() {
-        if (paramsBuilder_ == null) {
-          return params_ == null ? org.megacommerce.shared.v1.TypesProto.StringMap.getDefaultInstance() : params_;
+      public org.megacommerce.shared.v1.TypesProto.StringMap getErrors() {
+        if (errorsBuilder_ == null) {
+          return errors_ == null ? org.megacommerce.shared.v1.TypesProto.StringMap.getDefaultInstance() : errors_;
         } else {
-          return paramsBuilder_.getMessage();
+          return errorsBuilder_.getMessage();
         }
       }
       /**
-       * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
+       * <code>.shared.v1.StringMap errors = 8 [json_name = "errors"];</code>
        */
-      public Builder setParams(org.megacommerce.shared.v1.TypesProto.StringMap value) {
-        if (paramsBuilder_ == null) {
+      public Builder setErrors(org.megacommerce.shared.v1.TypesProto.StringMap value) {
+        if (errorsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          params_ = value;
+          errors_ = value;
         } else {
-          paramsBuilder_.setMessage(value);
+          errorsBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
       /**
-       * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
+       * <code>.shared.v1.StringMap errors = 8 [json_name = "errors"];</code>
        */
-      public Builder setParams(
+      public Builder setErrors(
           org.megacommerce.shared.v1.TypesProto.StringMap.Builder builderForValue) {
-        if (paramsBuilder_ == null) {
-          params_ = builderForValue.build();
+        if (errorsBuilder_ == null) {
+          errors_ = builderForValue.build();
         } else {
-          paramsBuilder_.setMessage(builderForValue.build());
+          errorsBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
       /**
-       * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
+       * <code>.shared.v1.StringMap errors = 8 [json_name = "errors"];</code>
        */
-      public Builder mergeParams(org.megacommerce.shared.v1.TypesProto.StringMap value) {
-        if (paramsBuilder_ == null) {
+      public Builder mergeErrors(org.megacommerce.shared.v1.TypesProto.StringMap value) {
+        if (errorsBuilder_ == null) {
           if (((bitField0_ & 0x00000080) != 0) &&
-            params_ != null &&
-            params_ != org.megacommerce.shared.v1.TypesProto.StringMap.getDefaultInstance()) {
-            getParamsBuilder().mergeFrom(value);
+            errors_ != null &&
+            errors_ != org.megacommerce.shared.v1.TypesProto.StringMap.getDefaultInstance()) {
+            getErrorsBuilder().mergeFrom(value);
           } else {
-            params_ = value;
+            errors_ = value;
           }
         } else {
-          paramsBuilder_.mergeFrom(value);
+          errorsBuilder_.mergeFrom(value);
         }
-        if (params_ != null) {
+        if (errors_ != null) {
           bitField0_ |= 0x00000080;
           onChanged();
         }
         return this;
       }
       /**
-       * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
+       * <code>.shared.v1.StringMap errors = 8 [json_name = "errors"];</code>
        */
-      public Builder clearParams() {
+      public Builder clearErrors() {
         bitField0_ = (bitField0_ & ~0x00000080);
-        params_ = null;
-        if (paramsBuilder_ != null) {
-          paramsBuilder_.dispose();
-          paramsBuilder_ = null;
+        errors_ = null;
+        if (errorsBuilder_ != null) {
+          errorsBuilder_.dispose();
+          errorsBuilder_ = null;
         }
         onChanged();
         return this;
       }
       /**
-       * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
+       * <code>.shared.v1.StringMap errors = 8 [json_name = "errors"];</code>
        */
-      public org.megacommerce.shared.v1.TypesProto.StringMap.Builder getParamsBuilder() {
+      public org.megacommerce.shared.v1.TypesProto.StringMap.Builder getErrorsBuilder() {
         bitField0_ |= 0x00000080;
         onChanged();
-        return internalGetParamsFieldBuilder().getBuilder();
+        return internalGetErrorsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
+       * <code>.shared.v1.StringMap errors = 8 [json_name = "errors"];</code>
        */
-      public org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder getParamsOrBuilder() {
-        if (paramsBuilder_ != null) {
-          return paramsBuilder_.getMessageOrBuilder();
+      public org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder getErrorsOrBuilder() {
+        if (errorsBuilder_ != null) {
+          return errorsBuilder_.getMessageOrBuilder();
         } else {
-          return params_ == null ?
-              org.megacommerce.shared.v1.TypesProto.StringMap.getDefaultInstance() : params_;
+          return errors_ == null ?
+              org.megacommerce.shared.v1.TypesProto.StringMap.getDefaultInstance() : errors_;
         }
       }
       /**
-       * <code>.shared.v1.StringMap params = 8 [json_name = "params"];</code>
+       * <code>.shared.v1.StringMap errors = 8 [json_name = "errors"];</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           org.megacommerce.shared.v1.TypesProto.StringMap, org.megacommerce.shared.v1.TypesProto.StringMap.Builder, org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder> 
-          internalGetParamsFieldBuilder() {
-        if (paramsBuilder_ == null) {
-          paramsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          internalGetErrorsFieldBuilder() {
+        if (errorsBuilder_ == null) {
+          errorsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               org.megacommerce.shared.v1.TypesProto.StringMap, org.megacommerce.shared.v1.TypesProto.StringMap.Builder, org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder>(
-                  getParams(),
+                  getErrors(),
                   getParentForChildren(),
                   isClean());
-          params_ = null;
+          errors_ = null;
         }
-        return paramsBuilder_;
+        return errorsBuilder_;
       }
 
-      private org.megacommerce.shared.v1.TypesProto.NestedStringMap nestedParams_;
+      private org.megacommerce.shared.v1.TypesProto.NestedStringMap errorsNested_;
       private com.google.protobuf.SingleFieldBuilder<
-          org.megacommerce.shared.v1.TypesProto.NestedStringMap, org.megacommerce.shared.v1.TypesProto.NestedStringMap.Builder, org.megacommerce.shared.v1.TypesProto.NestedStringMapOrBuilder> nestedParamsBuilder_;
+          org.megacommerce.shared.v1.TypesProto.NestedStringMap, org.megacommerce.shared.v1.TypesProto.NestedStringMap.Builder, org.megacommerce.shared.v1.TypesProto.NestedStringMapOrBuilder> errorsNestedBuilder_;
       /**
-       * <code>.shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];</code>
-       * @return Whether the nestedParams field is set.
+       * <code>.shared.v1.NestedStringMap errors_nested = 9 [json_name = "errorsNested"];</code>
+       * @return Whether the errorsNested field is set.
        */
-      public boolean hasNestedParams() {
+      public boolean hasErrorsNested() {
         return ((bitField0_ & 0x00000100) != 0);
       }
       /**
-       * <code>.shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];</code>
-       * @return The nestedParams.
+       * <code>.shared.v1.NestedStringMap errors_nested = 9 [json_name = "errorsNested"];</code>
+       * @return The errorsNested.
        */
-      public org.megacommerce.shared.v1.TypesProto.NestedStringMap getNestedParams() {
-        if (nestedParamsBuilder_ == null) {
-          return nestedParams_ == null ? org.megacommerce.shared.v1.TypesProto.NestedStringMap.getDefaultInstance() : nestedParams_;
+      public org.megacommerce.shared.v1.TypesProto.NestedStringMap getErrorsNested() {
+        if (errorsNestedBuilder_ == null) {
+          return errorsNested_ == null ? org.megacommerce.shared.v1.TypesProto.NestedStringMap.getDefaultInstance() : errorsNested_;
         } else {
-          return nestedParamsBuilder_.getMessage();
+          return errorsNestedBuilder_.getMessage();
         }
       }
       /**
-       * <code>.shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];</code>
+       * <code>.shared.v1.NestedStringMap errors_nested = 9 [json_name = "errorsNested"];</code>
        */
-      public Builder setNestedParams(org.megacommerce.shared.v1.TypesProto.NestedStringMap value) {
-        if (nestedParamsBuilder_ == null) {
+      public Builder setErrorsNested(org.megacommerce.shared.v1.TypesProto.NestedStringMap value) {
+        if (errorsNestedBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          nestedParams_ = value;
+          errorsNested_ = value;
         } else {
-          nestedParamsBuilder_.setMessage(value);
+          errorsNestedBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
       /**
-       * <code>.shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];</code>
+       * <code>.shared.v1.NestedStringMap errors_nested = 9 [json_name = "errorsNested"];</code>
        */
-      public Builder setNestedParams(
+      public Builder setErrorsNested(
           org.megacommerce.shared.v1.TypesProto.NestedStringMap.Builder builderForValue) {
-        if (nestedParamsBuilder_ == null) {
-          nestedParams_ = builderForValue.build();
+        if (errorsNestedBuilder_ == null) {
+          errorsNested_ = builderForValue.build();
         } else {
-          nestedParamsBuilder_.setMessage(builderForValue.build());
+          errorsNestedBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
       /**
-       * <code>.shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];</code>
+       * <code>.shared.v1.NestedStringMap errors_nested = 9 [json_name = "errorsNested"];</code>
        */
-      public Builder mergeNestedParams(org.megacommerce.shared.v1.TypesProto.NestedStringMap value) {
-        if (nestedParamsBuilder_ == null) {
+      public Builder mergeErrorsNested(org.megacommerce.shared.v1.TypesProto.NestedStringMap value) {
+        if (errorsNestedBuilder_ == null) {
           if (((bitField0_ & 0x00000100) != 0) &&
-            nestedParams_ != null &&
-            nestedParams_ != org.megacommerce.shared.v1.TypesProto.NestedStringMap.getDefaultInstance()) {
-            getNestedParamsBuilder().mergeFrom(value);
+            errorsNested_ != null &&
+            errorsNested_ != org.megacommerce.shared.v1.TypesProto.NestedStringMap.getDefaultInstance()) {
+            getErrorsNestedBuilder().mergeFrom(value);
           } else {
-            nestedParams_ = value;
+            errorsNested_ = value;
           }
         } else {
-          nestedParamsBuilder_.mergeFrom(value);
+          errorsNestedBuilder_.mergeFrom(value);
         }
-        if (nestedParams_ != null) {
+        if (errorsNested_ != null) {
           bitField0_ |= 0x00000100;
           onChanged();
         }
         return this;
       }
       /**
-       * <code>.shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];</code>
+       * <code>.shared.v1.NestedStringMap errors_nested = 9 [json_name = "errorsNested"];</code>
        */
-      public Builder clearNestedParams() {
+      public Builder clearErrorsNested() {
         bitField0_ = (bitField0_ & ~0x00000100);
-        nestedParams_ = null;
-        if (nestedParamsBuilder_ != null) {
-          nestedParamsBuilder_.dispose();
-          nestedParamsBuilder_ = null;
+        errorsNested_ = null;
+        if (errorsNestedBuilder_ != null) {
+          errorsNestedBuilder_.dispose();
+          errorsNestedBuilder_ = null;
         }
         onChanged();
         return this;
       }
       /**
-       * <code>.shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];</code>
+       * <code>.shared.v1.NestedStringMap errors_nested = 9 [json_name = "errorsNested"];</code>
        */
-      public org.megacommerce.shared.v1.TypesProto.NestedStringMap.Builder getNestedParamsBuilder() {
+      public org.megacommerce.shared.v1.TypesProto.NestedStringMap.Builder getErrorsNestedBuilder() {
         bitField0_ |= 0x00000100;
         onChanged();
-        return internalGetNestedParamsFieldBuilder().getBuilder();
+        return internalGetErrorsNestedFieldBuilder().getBuilder();
       }
       /**
-       * <code>.shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];</code>
+       * <code>.shared.v1.NestedStringMap errors_nested = 9 [json_name = "errorsNested"];</code>
        */
-      public org.megacommerce.shared.v1.TypesProto.NestedStringMapOrBuilder getNestedParamsOrBuilder() {
-        if (nestedParamsBuilder_ != null) {
-          return nestedParamsBuilder_.getMessageOrBuilder();
+      public org.megacommerce.shared.v1.TypesProto.NestedStringMapOrBuilder getErrorsNestedOrBuilder() {
+        if (errorsNestedBuilder_ != null) {
+          return errorsNestedBuilder_.getMessageOrBuilder();
         } else {
-          return nestedParams_ == null ?
-              org.megacommerce.shared.v1.TypesProto.NestedStringMap.getDefaultInstance() : nestedParams_;
+          return errorsNested_ == null ?
+              org.megacommerce.shared.v1.TypesProto.NestedStringMap.getDefaultInstance() : errorsNested_;
         }
       }
       /**
-       * <code>.shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];</code>
+       * <code>.shared.v1.NestedStringMap errors_nested = 9 [json_name = "errorsNested"];</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           org.megacommerce.shared.v1.TypesProto.NestedStringMap, org.megacommerce.shared.v1.TypesProto.NestedStringMap.Builder, org.megacommerce.shared.v1.TypesProto.NestedStringMapOrBuilder> 
-          internalGetNestedParamsFieldBuilder() {
-        if (nestedParamsBuilder_ == null) {
-          nestedParamsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+          internalGetErrorsNestedFieldBuilder() {
+        if (errorsNestedBuilder_ == null) {
+          errorsNestedBuilder_ = new com.google.protobuf.SingleFieldBuilder<
               org.megacommerce.shared.v1.TypesProto.NestedStringMap, org.megacommerce.shared.v1.TypesProto.NestedStringMap.Builder, org.megacommerce.shared.v1.TypesProto.NestedStringMapOrBuilder>(
-                  getNestedParams(),
+                  getErrorsNested(),
                   getParentForChildren(),
                   isClean());
-          nestedParams_ = null;
+          errorsNested_ = null;
         }
-        return nestedParamsBuilder_;
+        return errorsNestedBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:shared.v1.AppError)
@@ -1886,9 +1886,9 @@ public final class ErrorProto {
       "st_id\030\004 \001(\tR\trequestId\022\037\n\013status_code\030\005 " +
       "\001(\005R\nstatusCode\022\024\n\005where\030\006 \001(\tR\005where\022)\n" +
       "\020skip_translation\030\007 \001(\010R\017skipTranslation" +
-      "\022,\n\006params\030\010 \001(\0132\024.shared.v1.StringMapR\006" +
-      "params\022?\n\rnested_params\030\t \001(\0132\032.shared.v" +
-      "1.NestedStringMapR\014nestedParamsBp\n\032org.m" +
+      "\022,\n\006errors\030\010 \001(\0132\024.shared.v1.StringMapR\006" +
+      "errors\022?\n\rerrors_nested\030\t \001(\0132\032.shared.v" +
+      "1.NestedStringMapR\014errorsNestedBp\n\032org.m" +
       "egacommerce.shared.v1B\nErrorProtoZCgithu" +
       "b.com/ahmad-khatib0-org/megacommerce-pro" +
       "to/gen/go/shared/v1;v1\370\001\001b\006proto3"
@@ -1903,7 +1903,7 @@ public final class ErrorProto {
     internal_static_shared_v1_AppError_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_AppError_descriptor,
-        new java.lang.String[] { "Id", "Message", "DetailedError", "RequestId", "StatusCode", "Where", "SkipTranslation", "Params", "NestedParams", });
+        new java.lang.String[] { "Id", "Message", "DetailedError", "RequestId", "StatusCode", "Where", "SkipTranslation", "Errors", "ErrorsNested", });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.shared.v1.TypesProto.getDescriptor();
   }

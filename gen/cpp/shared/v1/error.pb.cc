@@ -45,8 +45,8 @@ inline constexpr AppError::Impl_::Impl_(
         where_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        params_{nullptr},
-        nested_params_{nullptr},
+        errors_{nullptr},
+        errors_nested_{nullptr},
         status_code_{0},
         skip_translation_{false} {}
 
@@ -88,8 +88,8 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::shared::v1::AppError, _impl_.status_code_),
         PROTOBUF_FIELD_OFFSET(::shared::v1::AppError, _impl_.where_),
         PROTOBUF_FIELD_OFFSET(::shared::v1::AppError, _impl_.skip_translation_),
-        PROTOBUF_FIELD_OFFSET(::shared::v1::AppError, _impl_.params_),
-        PROTOBUF_FIELD_OFFSET(::shared::v1::AppError, _impl_.nested_params_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::AppError, _impl_.errors_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::AppError, _impl_.errors_nested_),
         0,
         1,
         2,
@@ -117,9 +117,9 @@ const char descriptor_table_protodef_shared_2fv1_2ferror_2eproto[] ABSL_ATTRIBUT
     "st_id\030\004 \001(\tR\trequestId\022\037\n\013status_code\030\005 "
     "\001(\005R\nstatusCode\022\024\n\005where\030\006 \001(\tR\005where\022)\n"
     "\020skip_translation\030\007 \001(\010R\017skipTranslation"
-    "\022,\n\006params\030\010 \001(\0132\024.shared.v1.StringMapR\006"
-    "params\022\?\n\rnested_params\030\t \001(\0132\032.shared.v"
-    "1.NestedStringMapR\014nestedParamsBp\n\032org.m"
+    "\022,\n\006errors\030\010 \001(\0132\024.shared.v1.StringMapR\006"
+    "errors\022\?\n\rerrors_nested\030\t \001(\0132\032.shared.v"
+    "1.NestedStringMapR\014errorsNestedBp\n\032org.m"
     "egacommerce.shared.v1B\nErrorProtoZCgithu"
     "b.com/ahmad-khatib0-org/megacommerce-pro"
     "to/gen/go/shared/v1;v1\370\001\001b\006proto3"
@@ -157,14 +157,14 @@ class AppError::_Internal {
       8 * PROTOBUF_FIELD_OFFSET(AppError, _impl_._has_bits_);
 };
 
-void AppError::clear_params() {
+void AppError::clear_errors() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.params_ != nullptr) _impl_.params_->Clear();
+  if (_impl_.errors_ != nullptr) _impl_.errors_->Clear();
   _impl_._has_bits_[0] &= ~0x00000020u;
 }
-void AppError::clear_nested_params() {
+void AppError::clear_errors_nested() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.nested_params_ != nullptr) _impl_.nested_params_->Clear();
+  if (_impl_.errors_nested_ != nullptr) _impl_.errors_nested_->Clear();
   _impl_._has_bits_[0] &= ~0x00000040u;
 }
 AppError::AppError(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
@@ -202,11 +202,11 @@ AppError::AppError(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
   ::uint32_t cached_has_bits = _impl_._has_bits_[0];
-  _impl_.params_ = ((cached_has_bits & 0x00000020u) != 0)
-                ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.params_)
+  _impl_.errors_ = ((cached_has_bits & 0x00000020u) != 0)
+                ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.errors_)
                 : nullptr;
-  _impl_.nested_params_ = ((cached_has_bits & 0x00000040u) != 0)
-                ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.nested_params_)
+  _impl_.errors_nested_ = ((cached_has_bits & 0x00000040u) != 0)
+                ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.errors_nested_)
                 : nullptr;
   ::memcpy(reinterpret_cast<char *>(&_impl_) +
                offsetof(Impl_, status_code_),
@@ -231,10 +231,10 @@ PROTOBUF_NDEBUG_INLINE AppError::Impl_::Impl_(
 inline void AppError::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
   ::memset(reinterpret_cast<char *>(&_impl_) +
-               offsetof(Impl_, params_),
+               offsetof(Impl_, errors_),
            0,
            offsetof(Impl_, skip_translation_) -
-               offsetof(Impl_, params_) +
+               offsetof(Impl_, errors_) +
                sizeof(Impl_::skip_translation_));
 }
 AppError::~AppError() {
@@ -250,8 +250,8 @@ inline void AppError::SharedDtor(MessageLite& self) {
   this_._impl_.detailed_error_.Destroy();
   this_._impl_.request_id_.Destroy();
   this_._impl_.where_.Destroy();
-  delete this_._impl_.params_;
-  delete this_._impl_.nested_params_;
+  delete this_._impl_.errors_;
+  delete this_._impl_.errors_nested_;
   this_._impl_.~Impl_();
 }
 
@@ -339,12 +339,12 @@ AppError::_table_ = {
     // bool skip_translation = 7 [json_name = "skipTranslation"];
     {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(AppError, _impl_.skip_translation_), 8>(),
      {56, 8, 0, PROTOBUF_FIELD_OFFSET(AppError, _impl_.skip_translation_)}},
-    // .shared.v1.StringMap params = 8 [json_name = "params"];
+    // .shared.v1.StringMap errors = 8 [json_name = "errors"];
     {::_pbi::TcParser::FastMtS1,
-     {66, 5, 0, PROTOBUF_FIELD_OFFSET(AppError, _impl_.params_)}},
-    // .shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];
+     {66, 5, 0, PROTOBUF_FIELD_OFFSET(AppError, _impl_.errors_)}},
+    // .shared.v1.NestedStringMap errors_nested = 9 [json_name = "errorsNested"];
     {::_pbi::TcParser::FastMtS1,
-     {74, 6, 1, PROTOBUF_FIELD_OFFSET(AppError, _impl_.nested_params_)}},
+     {74, 6, 1, PROTOBUF_FIELD_OFFSET(AppError, _impl_.errors_nested_)}},
     {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
@@ -375,11 +375,11 @@ AppError::_table_ = {
     // bool skip_translation = 7 [json_name = "skipTranslation"];
     {PROTOBUF_FIELD_OFFSET(AppError, _impl_.skip_translation_), _Internal::kHasBitsOffset + 8, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
-    // .shared.v1.StringMap params = 8 [json_name = "params"];
-    {PROTOBUF_FIELD_OFFSET(AppError, _impl_.params_), _Internal::kHasBitsOffset + 5, 0,
+    // .shared.v1.StringMap errors = 8 [json_name = "errors"];
+    {PROTOBUF_FIELD_OFFSET(AppError, _impl_.errors_), _Internal::kHasBitsOffset + 5, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];
-    {PROTOBUF_FIELD_OFFSET(AppError, _impl_.nested_params_), _Internal::kHasBitsOffset + 6, 1,
+    // .shared.v1.NestedStringMap errors_nested = 9 [json_name = "errorsNested"];
+    {PROTOBUF_FIELD_OFFSET(AppError, _impl_.errors_nested_), _Internal::kHasBitsOffset + 6, 1,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
@@ -421,12 +421,12 @@ PROTOBUF_NOINLINE void AppError::Clear() {
       _impl_.where_.ClearNonDefaultToEmpty();
     }
     if ((cached_has_bits & 0x00000020u) != 0) {
-      ABSL_DCHECK(_impl_.params_ != nullptr);
-      _impl_.params_->Clear();
+      ABSL_DCHECK(_impl_.errors_ != nullptr);
+      _impl_.errors_->Clear();
     }
     if ((cached_has_bits & 0x00000040u) != 0) {
-      ABSL_DCHECK(_impl_.nested_params_ != nullptr);
-      _impl_.nested_params_->Clear();
+      ABSL_DCHECK(_impl_.errors_nested_ != nullptr);
+      _impl_.errors_nested_->Clear();
     }
   }
   _impl_.status_code_ = 0;
@@ -519,17 +519,17 @@ PROTOBUF_NOINLINE void AppError::Clear() {
   }
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // .shared.v1.StringMap params = 8 [json_name = "params"];
+  // .shared.v1.StringMap errors = 8 [json_name = "errors"];
   if ((cached_has_bits & 0x00000020u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        8, *this_._impl_.params_, this_._impl_.params_->GetCachedSize(), target,
+        8, *this_._impl_.errors_, this_._impl_.errors_->GetCachedSize(), target,
         stream);
   }
 
-  // .shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];
+  // .shared.v1.NestedStringMap errors_nested = 9 [json_name = "errorsNested"];
   if ((cached_has_bits & 0x00000040u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        9, *this_._impl_.nested_params_, this_._impl_.nested_params_->GetCachedSize(), target,
+        9, *this_._impl_.errors_nested_, this_._impl_.errors_nested_->GetCachedSize(), target,
         stream);
   }
 
@@ -594,15 +594,15 @@ PROTOBUF_NOINLINE void AppError::Clear() {
                                         this_._internal_where());
       }
     }
-    // .shared.v1.StringMap params = 8 [json_name = "params"];
+    // .shared.v1.StringMap errors = 8 [json_name = "errors"];
     if ((cached_has_bits & 0x00000020u) != 0) {
       total_size += 1 +
-                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.params_);
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.errors_);
     }
-    // .shared.v1.NestedStringMap nested_params = 9 [json_name = "nestedParams"];
+    // .shared.v1.NestedStringMap errors_nested = 9 [json_name = "errorsNested"];
     if ((cached_has_bits & 0x00000040u) != 0) {
       total_size += 1 +
-                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.nested_params_);
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.errors_nested_);
     }
     // int32 status_code = 5 [json_name = "statusCode"];
     if ((cached_has_bits & 0x00000080u) != 0) {
@@ -681,19 +681,19 @@ void AppError::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google
       }
     }
     if ((cached_has_bits & 0x00000020u) != 0) {
-      ABSL_DCHECK(from._impl_.params_ != nullptr);
-      if (_this->_impl_.params_ == nullptr) {
-        _this->_impl_.params_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.params_);
+      ABSL_DCHECK(from._impl_.errors_ != nullptr);
+      if (_this->_impl_.errors_ == nullptr) {
+        _this->_impl_.errors_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.errors_);
       } else {
-        _this->_impl_.params_->MergeFrom(*from._impl_.params_);
+        _this->_impl_.errors_->MergeFrom(*from._impl_.errors_);
       }
     }
     if ((cached_has_bits & 0x00000040u) != 0) {
-      ABSL_DCHECK(from._impl_.nested_params_ != nullptr);
-      if (_this->_impl_.nested_params_ == nullptr) {
-        _this->_impl_.nested_params_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.nested_params_);
+      ABSL_DCHECK(from._impl_.errors_nested_ != nullptr);
+      if (_this->_impl_.errors_nested_ == nullptr) {
+        _this->_impl_.errors_nested_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.errors_nested_);
       } else {
-        _this->_impl_.nested_params_->MergeFrom(*from._impl_.nested_params_);
+        _this->_impl_.errors_nested_->MergeFrom(*from._impl_.errors_nested_);
       }
     }
     if ((cached_has_bits & 0x00000080u) != 0) {
@@ -733,9 +733,9 @@ void AppError::InternalSwap(AppError* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) 
   ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(AppError, _impl_.skip_translation_)
       + sizeof(AppError::_impl_.skip_translation_)
-      - PROTOBUF_FIELD_OFFSET(AppError, _impl_.params_)>(
-          reinterpret_cast<char*>(&_impl_.params_),
-          reinterpret_cast<char*>(&other->_impl_.params_));
+      - PROTOBUF_FIELD_OFFSET(AppError, _impl_.errors_)>(
+          reinterpret_cast<char*>(&_impl_.errors_),
+          reinterpret_cast<char*>(&other->_impl_.errors_));
 }
 
 ::google::protobuf::Metadata AppError::GetMetadata() const {

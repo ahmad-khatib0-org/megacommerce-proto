@@ -61,7 +61,7 @@ pub struct Empty {}
 pub struct AppError {
     #[prost(string, tag = "1")]
     pub id: ::prost::alloc::string::String,
-    /// Message to be display to the end user without debugging information
+    /// displayed to the end user without debugging info
     #[prost(string, tag = "2")]
     pub message: ::prost::alloc::string::String,
     /// Internal debug info
@@ -70,7 +70,7 @@ pub struct AppError {
     /// For correlation
     #[prost(string, tag = "4")]
     pub request_id: ::prost::alloc::string::String,
-    /// HTTP-like status code
+    /// grpc status code
     #[prost(int32, tag = "5")]
     pub status_code: i32,
     /// Code path or func name
@@ -80,9 +80,9 @@ pub struct AppError {
     #[prost(bool, tag = "7")]
     pub skip_translation: bool,
     #[prost(message, optional, tag = "8")]
-    pub params: ::core::option::Option<StringMap>,
+    pub errors: ::core::option::Option<StringMap>,
     #[prost(message, optional, tag = "9")]
-    pub nested_params: ::core::option::Option<NestedStringMap>,
+    pub errors_nested: ::core::option::Option<NestedStringMap>,
 }
 /// `Struct` represents a structured data value, consisting of fields
 /// which map to dynamically typed values. In some languages, `Struct`
