@@ -42,6 +42,7 @@ export interface ConfigServices {
   commonServicePrometheusUrl?: string | undefined;
   userServicePrometheusUrl?: string | undefined;
   productsServicePrometheusUrl?: string | undefined;
+  usersServiceMaxReceiveMessageSizeBytes?: string | undefined;
 }
 
 export interface ConfigSecurity {
@@ -844,6 +845,7 @@ function createBaseConfigServices(): ConfigServices {
     commonServicePrometheusUrl: undefined,
     userServicePrometheusUrl: undefined,
     productsServicePrometheusUrl: undefined,
+    usersServiceMaxReceiveMessageSizeBytes: undefined,
   };
 }
 
@@ -869,6 +871,9 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     }
     if (message.productsServicePrometheusUrl !== undefined) {
       writer.uint32(58).string(message.productsServicePrometheusUrl);
+    }
+    if (message.usersServiceMaxReceiveMessageSizeBytes !== undefined) {
+      writer.uint32(66).string(message.usersServiceMaxReceiveMessageSizeBytes);
     }
     return writer;
   },
@@ -936,6 +941,14 @@ export const ConfigServices: MessageFns<ConfigServices> = {
           message.productsServicePrometheusUrl = reader.string();
           continue;
         }
+        case 8: {
+          if (tag !== 66) {
+            break;
+          }
+
+          message.usersServiceMaxReceiveMessageSizeBytes = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -964,6 +977,9 @@ export const ConfigServices: MessageFns<ConfigServices> = {
       productsServicePrometheusUrl: isSet(object.productsServicePrometheusUrl)
         ? globalThis.String(object.productsServicePrometheusUrl)
         : undefined,
+      usersServiceMaxReceiveMessageSizeBytes: isSet(object.usersServiceMaxReceiveMessageSizeBytes)
+        ? globalThis.String(object.usersServiceMaxReceiveMessageSizeBytes)
+        : undefined,
     };
   },
 
@@ -990,6 +1006,9 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     if (message.productsServicePrometheusUrl !== undefined) {
       obj.productsServicePrometheusUrl = message.productsServicePrometheusUrl;
     }
+    if (message.usersServiceMaxReceiveMessageSizeBytes !== undefined) {
+      obj.usersServiceMaxReceiveMessageSizeBytes = message.usersServiceMaxReceiveMessageSizeBytes;
+    }
     return obj;
   },
 
@@ -1005,6 +1024,7 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     message.commonServicePrometheusUrl = object.commonServicePrometheusUrl ?? undefined;
     message.userServicePrometheusUrl = object.userServicePrometheusUrl ?? undefined;
     message.productsServicePrometheusUrl = object.productsServicePrometheusUrl ?? undefined;
+    message.usersServiceMaxReceiveMessageSizeBytes = object.usersServiceMaxReceiveMessageSizeBytes ?? undefined;
     return message;
   },
 };

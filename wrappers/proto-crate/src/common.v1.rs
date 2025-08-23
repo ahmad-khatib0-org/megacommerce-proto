@@ -70,6 +70,10 @@ pub struct ConfigServices {
     pub products_service_prometheus_url: ::core::option::Option<
         ::prost::alloc::string::String,
     >,
+    #[prost(string, optional, tag = "8")]
+    pub users_service_max_receive_message_size_bytes: ::core::option::Option<
+        ::prost::alloc::string::String,
+    >,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

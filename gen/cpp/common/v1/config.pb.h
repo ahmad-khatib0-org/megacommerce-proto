@@ -970,6 +970,7 @@ class ConfigServices final : public ::google::protobuf::Message
     kCommonServicePrometheusUrlFieldNumber = 5,
     kUserServicePrometheusUrlFieldNumber = 6,
     kProductsServicePrometheusUrlFieldNumber = 7,
+    kUsersServiceMaxReceiveMessageSizeBytesFieldNumber = 8,
   };
   // optional string common_service_grpc_url = 1 [json_name = "commonServiceGrpcUrl"];
   bool has_common_service_grpc_url() const;
@@ -1083,12 +1084,28 @@ class ConfigServices final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_products_service_prometheus_url();
 
   public:
+  // optional string users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];
+  bool has_users_service_max_receive_message_size_bytes() const;
+  void clear_users_service_max_receive_message_size_bytes() ;
+  const ::std::string& users_service_max_receive_message_size_bytes() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_users_service_max_receive_message_size_bytes(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_users_service_max_receive_message_size_bytes();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_users_service_max_receive_message_size_bytes();
+  void set_allocated_users_service_max_receive_message_size_bytes(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_users_service_max_receive_message_size_bytes() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_users_service_max_receive_message_size_bytes(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_users_service_max_receive_message_size_bytes();
+
+  public:
   // @@protoc_insertion_point(class_scope:common.v1.ConfigServices)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<3, 7,
-                                   0, 209,
+  static const ::google::protobuf::internal::TcParseTable<3, 8,
+                                   0, 261,
                                    2>
       _table_;
 
@@ -1116,6 +1133,7 @@ class ConfigServices final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr common_service_prometheus_url_;
     ::google::protobuf::internal::ArenaStringPtr user_service_prometheus_url_;
     ::google::protobuf::internal::ArenaStringPtr products_service_prometheus_url_;
+    ::google::protobuf::internal::ArenaStringPtr users_service_max_receive_message_size_bytes_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -10956,6 +10974,75 @@ inline void ConfigServices::set_allocated_products_service_prometheus_url(::std:
     _impl_.products_service_prometheus_url_.Set("", GetArena());
   }
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.products_service_prometheus_url)
+}
+
+// optional string users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];
+inline bool ConfigServices::has_users_service_max_receive_message_size_bytes() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
+  return value;
+}
+inline void ConfigServices::clear_users_service_max_receive_message_size_bytes() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.users_service_max_receive_message_size_bytes_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000080u;
+}
+inline const ::std::string& ConfigServices::users_service_max_receive_message_size_bytes() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.users_service_max_receive_message_size_bytes)
+  return _internal_users_service_max_receive_message_size_bytes();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigServices::set_users_service_max_receive_message_size_bytes(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_.users_service_max_receive_message_size_bytes_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.users_service_max_receive_message_size_bytes)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigServices::mutable_users_service_max_receive_message_size_bytes()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_users_service_max_receive_message_size_bytes();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.users_service_max_receive_message_size_bytes)
+  return _s;
+}
+inline const ::std::string& ConfigServices::_internal_users_service_max_receive_message_size_bytes() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.users_service_max_receive_message_size_bytes_.Get();
+}
+inline void ConfigServices::_internal_set_users_service_max_receive_message_size_bytes(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_.users_service_max_receive_message_size_bytes_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigServices::_internal_mutable_users_service_max_receive_message_size_bytes() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000080u;
+  return _impl_.users_service_max_receive_message_size_bytes_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigServices::release_users_service_max_receive_message_size_bytes() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.users_service_max_receive_message_size_bytes)
+  if ((_impl_._has_bits_[0] & 0x00000080u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000080u;
+  auto* released = _impl_.users_service_max_receive_message_size_bytes_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.users_service_max_receive_message_size_bytes_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigServices::set_allocated_users_service_max_receive_message_size_bytes(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000080u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000080u;
+  }
+  _impl_.users_service_max_receive_message_size_bytes_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.users_service_max_receive_message_size_bytes_.IsDefault()) {
+    _impl_.users_service_max_receive_message_size_bytes_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.users_service_max_receive_message_size_bytes)
 }
 
 // -------------------------------------------------------------------
