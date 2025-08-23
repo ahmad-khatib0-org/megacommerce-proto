@@ -873,7 +873,7 @@ export const ConfigServices: MessageFns<ConfigServices> = {
       writer.uint32(58).string(message.productsServicePrometheusUrl);
     }
     if (message.usersServiceMaxReceiveMessageSizeBytes !== undefined) {
-      writer.uint32(66).string(message.usersServiceMaxReceiveMessageSizeBytes);
+      writer.uint32(64).int64(message.usersServiceMaxReceiveMessageSizeBytes);
     }
     return writer;
   },
@@ -942,11 +942,11 @@ export const ConfigServices: MessageFns<ConfigServices> = {
           continue;
         }
         case 8: {
-          if (tag !== 66) {
+          if (tag !== 64) {
             break;
           }
 
-          message.usersServiceMaxReceiveMessageSizeBytes = reader.string();
+          message.usersServiceMaxReceiveMessageSizeBytes = reader.int64().toString();
           continue;
         }
       }

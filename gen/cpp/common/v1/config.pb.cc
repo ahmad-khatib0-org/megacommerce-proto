@@ -136,9 +136,7 @@ inline constexpr ConfigServices::Impl_::Impl_(
         products_service_prometheus_url_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        users_service_max_receive_message_size_bytes_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()) {}
+        users_service_max_receive_message_size_bytes_{::int64_t{0}} {}
 
 template <typename>
 PROTOBUF_CONSTEXPR ConfigServices::ConfigServices(::_pbi::ConstantInitialized)
@@ -2026,7 +2024,7 @@ const char descriptor_table_protodef_common_2fv1_2fconfig_2eproto[] ABSL_ATTRIBU
     "roducts_service_prometheus_url\030\007 \001(\tH\006R\034"
     "productsServicePrometheusUrl\210\001\001\022a\n,users"
     "_service_max_receive_message_size_bytes\030"
-    "\010 \001(\tH\007R&usersServiceMaxReceiveMessageSi"
+    "\010 \001(\003H\007R&usersServiceMaxReceiveMessageSi"
     "zeBytes\210\001\001B\032\n\030_common_service_grpc_urlB\030"
     "\n\026_user_service_grpc_urlB\034\n\032_products_se"
     "rvice_grpc_urlB\027\n\025_jaeger_collector_urlB"
@@ -3264,8 +3262,7 @@ PROTOBUF_NDEBUG_INLINE ConfigServices::Impl_::Impl_(
         jaeger_collector_url_(arena, from.jaeger_collector_url_),
         common_service_prometheus_url_(arena, from.common_service_prometheus_url_),
         user_service_prometheus_url_(arena, from.user_service_prometheus_url_),
-        products_service_prometheus_url_(arena, from.products_service_prometheus_url_),
-        users_service_max_receive_message_size_bytes_(arena, from.users_service_max_receive_message_size_bytes_) {}
+        products_service_prometheus_url_(arena, from.products_service_prometheus_url_) {}
 
 ConfigServices::ConfigServices(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -3280,6 +3277,7 @@ ConfigServices::ConfigServices(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.users_service_max_receive_message_size_bytes_ = from._impl_.users_service_max_receive_message_size_bytes_;
 
   // @@protoc_insertion_point(copy_constructor:common.v1.ConfigServices)
 }
@@ -3293,11 +3291,11 @@ PROTOBUF_NDEBUG_INLINE ConfigServices::Impl_::Impl_(
         jaeger_collector_url_(arena),
         common_service_prometheus_url_(arena),
         user_service_prometheus_url_(arena),
-        products_service_prometheus_url_(arena),
-        users_service_max_receive_message_size_bytes_(arena) {}
+        products_service_prometheus_url_(arena) {}
 
 inline void ConfigServices::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.users_service_max_receive_message_size_bytes_ = {};
 }
 ConfigServices::~ConfigServices() {
   // @@protoc_insertion_point(destructor:common.v1.ConfigServices)
@@ -3314,7 +3312,6 @@ inline void ConfigServices::SharedDtor(MessageLite& self) {
   this_._impl_.common_service_prometheus_url_.Destroy();
   this_._impl_.user_service_prometheus_url_.Destroy();
   this_._impl_.products_service_prometheus_url_.Destroy();
-  this_._impl_.users_service_max_receive_message_size_bytes_.Destroy();
   this_._impl_.~Impl_();
 }
 
@@ -3361,7 +3358,7 @@ ConfigServices::GetClassData() const {
   return ConfigServices_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 8, 0, 261, 2>
+const ::_pbi::TcParseTable<3, 8, 0, 217, 2>
 ConfigServices::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_._has_bits_),
@@ -3380,9 +3377,9 @@ ConfigServices::_table_ = {
     ::_pbi::TcParser::GetTable<::common::v1::ConfigServices>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // optional string users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];
-    {::_pbi::TcParser::FastUS1,
-     {66, 7, 0, PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_.users_service_max_receive_message_size_bytes_)}},
+    // optional int64 users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ConfigServices, _impl_.users_service_max_receive_message_size_bytes_), 7>(),
+     {64, 7, 0, PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_.users_service_max_receive_message_size_bytes_)}},
     // optional string common_service_grpc_url = 1 [json_name = "commonServiceGrpcUrl"];
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_.common_service_grpc_url_)}},
@@ -3428,13 +3425,13 @@ ConfigServices::_table_ = {
     // optional string products_service_prometheus_url = 7 [json_name = "productsServicePrometheusUrl"];
     {PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_.products_service_prometheus_url_), _Internal::kHasBitsOffset + 6, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional string users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];
+    // optional int64 users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];
     {PROTOBUF_FIELD_OFFSET(ConfigServices, _impl_.users_service_max_receive_message_size_bytes_), _Internal::kHasBitsOffset + 7, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
   }},
   // no aux_entries
   {{
-    "\30\27\25\31\24\35\33\37\54\0\0\0\0\0\0\0"
+    "\30\27\25\31\24\35\33\37\0\0\0\0\0\0\0\0"
     "common.v1.ConfigServices"
     "common_service_grpc_url"
     "user_service_grpc_url"
@@ -3443,7 +3440,6 @@ ConfigServices::_table_ = {
     "common_service_prometheus_url"
     "user_service_prometheus_url"
     "products_service_prometheus_url"
-    "users_service_max_receive_message_size_bytes"
   }},
 };
 PROTOBUF_NOINLINE void ConfigServices::Clear() {
@@ -3454,7 +3450,7 @@ PROTOBUF_NOINLINE void ConfigServices::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x000000ffu) != 0) {
+  if ((cached_has_bits & 0x0000007fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
       _impl_.common_service_grpc_url_.ClearNonDefaultToEmpty();
     }
@@ -3476,10 +3472,8 @@ PROTOBUF_NOINLINE void ConfigServices::Clear() {
     if ((cached_has_bits & 0x00000040u) != 0) {
       _impl_.products_service_prometheus_url_.ClearNonDefaultToEmpty();
     }
-    if ((cached_has_bits & 0x00000080u) != 0) {
-      _impl_.users_service_max_receive_message_size_bytes_.ClearNonDefaultToEmpty();
-    }
   }
+  _impl_.users_service_max_receive_message_size_bytes_ = ::int64_t{0};
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
@@ -3556,12 +3550,11 @@ PROTOBUF_NOINLINE void ConfigServices::Clear() {
     target = stream->WriteStringMaybeAliased(7, _s, target);
   }
 
-  // optional string users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];
+  // optional int64 users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];
   if ((cached_has_bits & 0x00000080u) != 0) {
-    const ::std::string& _s = this_._internal_users_service_max_receive_message_size_bytes();
-    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigServices.users_service_max_receive_message_size_bytes");
-    target = stream->WriteStringMaybeAliased(8, _s, target);
+    target =
+        ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<8>(
+            stream, this_._internal_users_service_max_receive_message_size_bytes(), target);
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -3625,10 +3618,10 @@ PROTOBUF_NOINLINE void ConfigServices::Clear() {
       total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                       this_._internal_products_service_prometheus_url());
     }
-    // optional string users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];
+    // optional int64 users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];
     if ((cached_has_bits & 0x00000080u) != 0) {
-      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                      this_._internal_users_service_max_receive_message_size_bytes());
+      total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+          this_._internal_users_service_max_receive_message_size_bytes());
     }
   }
   return this_.MaybeComputeUnknownFieldsSize(total_size,
@@ -3667,7 +3660,7 @@ void ConfigServices::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::
       _this->_internal_set_products_service_prometheus_url(from._internal_products_service_prometheus_url());
     }
     if ((cached_has_bits & 0x00000080u) != 0) {
-      _this->_internal_set_users_service_max_receive_message_size_bytes(from._internal_users_service_max_receive_message_size_bytes());
+      _this->_impl_.users_service_max_receive_message_size_bytes_ = from._impl_.users_service_max_receive_message_size_bytes_;
     }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -3695,7 +3688,7 @@ void ConfigServices::InternalSwap(ConfigServices* PROTOBUF_RESTRICT PROTOBUF_NON
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.common_service_prometheus_url_, &other->_impl_.common_service_prometheus_url_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.user_service_prometheus_url_, &other->_impl_.user_service_prometheus_url_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.products_service_prometheus_url_, &other->_impl_.products_service_prometheus_url_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.users_service_max_receive_message_size_bytes_, &other->_impl_.users_service_max_receive_message_size_bytes_, arena);
+  swap(_impl_.users_service_max_receive_message_size_bytes_, other->_impl_.users_service_max_receive_message_size_bytes_);
 }
 
 ::google::protobuf::Metadata ConfigServices::GetMetadata() const {

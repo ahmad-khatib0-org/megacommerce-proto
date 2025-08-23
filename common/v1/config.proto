@@ -41,7 +41,7 @@ message ConfigServices {
   optional string common_service_prometheus_url = 5;
   optional string user_service_prometheus_url = 6;
   optional string products_service_prometheus_url = 7;
-  optional string users_service_max_receive_message_size_bytes = 8;
+  optional int64 users_service_max_receive_message_size_bytes = 8;
 }
 
 message ConfigSecurity {

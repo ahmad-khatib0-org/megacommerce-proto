@@ -2907,21 +2907,15 @@ public final class ConfigProto {
         getProductsServicePrometheusUrlBytes();
 
     /**
-     * <code>optional string users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];</code>
+     * <code>optional int64 users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];</code>
      * @return Whether the usersServiceMaxReceiveMessageSizeBytes field is set.
      */
     boolean hasUsersServiceMaxReceiveMessageSizeBytes();
     /**
-     * <code>optional string users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];</code>
+     * <code>optional int64 users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];</code>
      * @return The usersServiceMaxReceiveMessageSizeBytes.
      */
-    java.lang.String getUsersServiceMaxReceiveMessageSizeBytes();
-    /**
-     * <code>optional string users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];</code>
-     * @return The bytes for usersServiceMaxReceiveMessageSizeBytes.
-     */
-    com.google.protobuf.ByteString
-        getUsersServiceMaxReceiveMessageSizeBytesBytes();
+    long getUsersServiceMaxReceiveMessageSizeBytes();
   }
   /**
    * Protobuf type {@code common.v1.ConfigServices}
@@ -2952,7 +2946,6 @@ public final class ConfigProto {
       commonServicePrometheusUrl_ = "";
       userServicePrometheusUrl_ = "";
       productsServicePrometheusUrl_ = "";
-      usersServiceMaxReceiveMessageSizeBytes_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -3299,10 +3292,9 @@ public final class ConfigProto {
     }
 
     public static final int USERS_SERVICE_MAX_RECEIVE_MESSAGE_SIZE_BYTES_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object usersServiceMaxReceiveMessageSizeBytes_ = "";
+    private long usersServiceMaxReceiveMessageSizeBytes_ = 0L;
     /**
-     * <code>optional string users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];</code>
+     * <code>optional int64 users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];</code>
      * @return Whether the usersServiceMaxReceiveMessageSizeBytes field is set.
      */
     @java.lang.Override
@@ -3310,39 +3302,12 @@ public final class ConfigProto {
       return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>optional string users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];</code>
+     * <code>optional int64 users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];</code>
      * @return The usersServiceMaxReceiveMessageSizeBytes.
      */
     @java.lang.Override
-    public java.lang.String getUsersServiceMaxReceiveMessageSizeBytes() {
-      java.lang.Object ref = usersServiceMaxReceiveMessageSizeBytes_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        usersServiceMaxReceiveMessageSizeBytes_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];</code>
-     * @return The bytes for usersServiceMaxReceiveMessageSizeBytes.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUsersServiceMaxReceiveMessageSizeBytesBytes() {
-      java.lang.Object ref = usersServiceMaxReceiveMessageSizeBytes_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        usersServiceMaxReceiveMessageSizeBytes_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getUsersServiceMaxReceiveMessageSizeBytes() {
+      return usersServiceMaxReceiveMessageSizeBytes_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3381,7 +3346,7 @@ public final class ConfigProto {
         com.google.protobuf.GeneratedMessage.writeString(output, 7, productsServicePrometheusUrl_);
       }
       if (((bitField0_ & 0x00000080) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 8, usersServiceMaxReceiveMessageSizeBytes_);
+        output.writeInt64(8, usersServiceMaxReceiveMessageSizeBytes_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -3414,7 +3379,8 @@ public final class ConfigProto {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(7, productsServicePrometheusUrl_);
       }
       if (((bitField0_ & 0x00000080) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(8, usersServiceMaxReceiveMessageSizeBytes_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(8, usersServiceMaxReceiveMessageSizeBytes_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3468,8 +3434,8 @@ public final class ConfigProto {
       }
       if (hasUsersServiceMaxReceiveMessageSizeBytes() != other.hasUsersServiceMaxReceiveMessageSizeBytes()) return false;
       if (hasUsersServiceMaxReceiveMessageSizeBytes()) {
-        if (!getUsersServiceMaxReceiveMessageSizeBytes()
-            .equals(other.getUsersServiceMaxReceiveMessageSizeBytes())) return false;
+        if (getUsersServiceMaxReceiveMessageSizeBytes()
+            != other.getUsersServiceMaxReceiveMessageSizeBytes()) return false;
       }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -3512,7 +3478,8 @@ public final class ConfigProto {
       }
       if (hasUsersServiceMaxReceiveMessageSizeBytes()) {
         hash = (37 * hash) + USERS_SERVICE_MAX_RECEIVE_MESSAGE_SIZE_BYTES_FIELD_NUMBER;
-        hash = (53 * hash) + getUsersServiceMaxReceiveMessageSizeBytes().hashCode();
+        hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+            getUsersServiceMaxReceiveMessageSizeBytes());
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -3652,7 +3619,7 @@ public final class ConfigProto {
         commonServicePrometheusUrl_ = "";
         userServicePrometheusUrl_ = "";
         productsServicePrometheusUrl_ = "";
-        usersServiceMaxReceiveMessageSizeBytes_ = "";
+        usersServiceMaxReceiveMessageSizeBytes_ = 0L;
         return this;
       }
 
@@ -3770,9 +3737,7 @@ public final class ConfigProto {
           onChanged();
         }
         if (other.hasUsersServiceMaxReceiveMessageSizeBytes()) {
-          usersServiceMaxReceiveMessageSizeBytes_ = other.usersServiceMaxReceiveMessageSizeBytes_;
-          bitField0_ |= 0x00000080;
-          onChanged();
+          setUsersServiceMaxReceiveMessageSizeBytes(other.getUsersServiceMaxReceiveMessageSizeBytes());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -3835,11 +3800,11 @@ public final class ConfigProto {
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
-              case 66: {
-                usersServiceMaxReceiveMessageSizeBytes_ = input.readStringRequireUtf8();
+              case 64: {
+                usersServiceMaxReceiveMessageSizeBytes_ = input.readInt64();
                 bitField0_ |= 0x00000080;
                 break;
-              } // case 66
+              } // case 64
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -4410,81 +4375,42 @@ public final class ConfigProto {
         return this;
       }
 
-      private java.lang.Object usersServiceMaxReceiveMessageSizeBytes_ = "";
+      private long usersServiceMaxReceiveMessageSizeBytes_ ;
       /**
-       * <code>optional string users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];</code>
+       * <code>optional int64 users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];</code>
        * @return Whether the usersServiceMaxReceiveMessageSizeBytes field is set.
        */
+      @java.lang.Override
       public boolean hasUsersServiceMaxReceiveMessageSizeBytes() {
         return ((bitField0_ & 0x00000080) != 0);
       }
       /**
-       * <code>optional string users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];</code>
+       * <code>optional int64 users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];</code>
        * @return The usersServiceMaxReceiveMessageSizeBytes.
        */
-      public java.lang.String getUsersServiceMaxReceiveMessageSizeBytes() {
-        java.lang.Object ref = usersServiceMaxReceiveMessageSizeBytes_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          usersServiceMaxReceiveMessageSizeBytes_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public long getUsersServiceMaxReceiveMessageSizeBytes() {
+        return usersServiceMaxReceiveMessageSizeBytes_;
       }
       /**
-       * <code>optional string users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];</code>
-       * @return The bytes for usersServiceMaxReceiveMessageSizeBytes.
-       */
-      public com.google.protobuf.ByteString
-          getUsersServiceMaxReceiveMessageSizeBytesBytes() {
-        java.lang.Object ref = usersServiceMaxReceiveMessageSizeBytes_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          usersServiceMaxReceiveMessageSizeBytes_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];</code>
+       * <code>optional int64 users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];</code>
        * @param value The usersServiceMaxReceiveMessageSizeBytes to set.
        * @return This builder for chaining.
        */
-      public Builder setUsersServiceMaxReceiveMessageSizeBytes(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+      public Builder setUsersServiceMaxReceiveMessageSizeBytes(long value) {
+
         usersServiceMaxReceiveMessageSizeBytes_ = value;
         bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];</code>
+       * <code>optional int64 users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUsersServiceMaxReceiveMessageSizeBytes() {
-        usersServiceMaxReceiveMessageSizeBytes_ = getDefaultInstance().getUsersServiceMaxReceiveMessageSizeBytes();
         bitField0_ = (bitField0_ & ~0x00000080);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];</code>
-       * @param value The bytes for usersServiceMaxReceiveMessageSizeBytes to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUsersServiceMaxReceiveMessageSizeBytesBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        usersServiceMaxReceiveMessageSizeBytes_ = value;
-        bitField0_ |= 0x00000080;
+        usersServiceMaxReceiveMessageSizeBytes_ = 0L;
         onChanged();
         return this;
       }
@@ -51984,7 +51910,7 @@ java.lang.String defaultValue) {
       "roducts_service_prometheus_url\030\007 \001(\tH\006R\034" +
       "productsServicePrometheusUrl\210\001\001\022a\n,users" +
       "_service_max_receive_message_size_bytes\030" +
-      "\010 \001(\tH\007R&usersServiceMaxReceiveMessageSi" +
+      "\010 \001(\003H\007R&usersServiceMaxReceiveMessageSi" +
       "zeBytes\210\001\001B\032\n\030_common_service_grpc_urlB\030" +
       "\n\026_user_service_grpc_urlB\034\n\032_products_se" +
       "rvice_grpc_urlB\027\n\025_jaeger_collector_urlB" +

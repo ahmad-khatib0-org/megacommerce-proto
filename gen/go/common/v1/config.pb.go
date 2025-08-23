@@ -235,7 +235,7 @@ type ConfigServices struct {
 	CommonServicePrometheusUrl             *string                `protobuf:"bytes,5,opt,name=common_service_prometheus_url,json=commonServicePrometheusUrl,proto3,oneof" json:"common_service_prometheus_url,omitempty"`
 	UserServicePrometheusUrl               *string                `protobuf:"bytes,6,opt,name=user_service_prometheus_url,json=userServicePrometheusUrl,proto3,oneof" json:"user_service_prometheus_url,omitempty"`
 	ProductsServicePrometheusUrl           *string                `protobuf:"bytes,7,opt,name=products_service_prometheus_url,json=productsServicePrometheusUrl,proto3,oneof" json:"products_service_prometheus_url,omitempty"`
-	UsersServiceMaxReceiveMessageSizeBytes *string                `protobuf:"bytes,8,opt,name=users_service_max_receive_message_size_bytes,json=usersServiceMaxReceiveMessageSizeBytes,proto3,oneof" json:"users_service_max_receive_message_size_bytes,omitempty"`
+	UsersServiceMaxReceiveMessageSizeBytes *int64                 `protobuf:"varint,8,opt,name=users_service_max_receive_message_size_bytes,json=usersServiceMaxReceiveMessageSizeBytes,proto3,oneof" json:"users_service_max_receive_message_size_bytes,omitempty"`
 	unknownFields                          protoimpl.UnknownFields
 	sizeCache                              protoimpl.SizeCache
 }
@@ -319,11 +319,11 @@ func (x *ConfigServices) GetProductsServicePrometheusUrl() string {
 	return ""
 }
 
-func (x *ConfigServices) GetUsersServiceMaxReceiveMessageSizeBytes() string {
+func (x *ConfigServices) GetUsersServiceMaxReceiveMessageSizeBytes() int64 {
 	if x != nil && x.UsersServiceMaxReceiveMessageSizeBytes != nil {
 		return *x.UsersServiceMaxReceiveMessageSizeBytes
 	}
-	return ""
+	return 0
 }
 
 type ConfigSecurity struct {
@@ -3455,7 +3455,7 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x1dcommon_service_prometheus_url\x18\x05 \x01(\tH\x04R\x1acommonServicePrometheusUrl\x88\x01\x01\x12B\n" +
 	"\x1buser_service_prometheus_url\x18\x06 \x01(\tH\x05R\x18userServicePrometheusUrl\x88\x01\x01\x12J\n" +
 	"\x1fproducts_service_prometheus_url\x18\a \x01(\tH\x06R\x1cproductsServicePrometheusUrl\x88\x01\x01\x12a\n" +
-	",users_service_max_receive_message_size_bytes\x18\b \x01(\tH\aR&usersServiceMaxReceiveMessageSizeBytes\x88\x01\x01B\x1a\n" +
+	",users_service_max_receive_message_size_bytes\x18\b \x01(\x03H\aR&usersServiceMaxReceiveMessageSizeBytes\x88\x01\x01B\x1a\n" +
 	"\x18_common_service_grpc_urlB\x18\n" +
 	"\x16_user_service_grpc_urlB\x1c\n" +
 	"\x1a_products_service_grpc_urlB\x17\n" +
