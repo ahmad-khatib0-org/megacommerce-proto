@@ -7,7 +7,12 @@
 /* eslint-disable */
 import { grpc } from "@improbable-eng/grpc-web";
 import { BrowserHeaders } from "browser-headers";
-import { EmailConfirmationRequest, EmailConfirmationResponse } from "./auth.js";
+import {
+  EmailConfirmationRequest,
+  EmailConfirmationResponse,
+  ForgotPasswordRequest,
+  ForgotPasswordResponse,
+} from "./auth.js";
 import { SupplierCreateRequest, SupplierCreateResponse } from "./supplier.js";
 
 export const protobufPackage = "users.v1";
@@ -21,6 +26,10 @@ export interface UsersService {
     request: DeepPartial<EmailConfirmationRequest>,
     metadata?: grpc.Metadata,
   ): Promise<EmailConfirmationResponse>;
+  ForgotPassword(
+    request: DeepPartial<ForgotPasswordRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<ForgotPasswordResponse>;
 }
 
 export class UsersServiceClientImpl implements UsersService {
@@ -30,6 +39,7 @@ export class UsersServiceClientImpl implements UsersService {
     this.rpc = rpc;
     this.CreateSupplier = this.CreateSupplier.bind(this);
     this.EmailConfirmation = this.EmailConfirmation.bind(this);
+    this.ForgotPassword = this.ForgotPassword.bind(this);
   }
 
   CreateSupplier(
@@ -44,6 +54,13 @@ export class UsersServiceClientImpl implements UsersService {
     metadata?: grpc.Metadata,
   ): Promise<EmailConfirmationResponse> {
     return this.rpc.unary(UsersServiceEmailConfirmationDesc, EmailConfirmationRequest.fromPartial(request), metadata);
+  }
+
+  ForgotPassword(
+    request: DeepPartial<ForgotPasswordRequest>,
+    metadata?: grpc.Metadata,
+  ): Promise<ForgotPasswordResponse> {
+    return this.rpc.unary(UsersServiceForgotPasswordDesc, ForgotPasswordRequest.fromPartial(request), metadata);
   }
 }
 
@@ -85,6 +102,29 @@ export const UsersServiceEmailConfirmationDesc: UnaryMethodDefinitionish = {
   responseType: {
     deserializeBinary(data: Uint8Array) {
       const value = EmailConfirmationResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const UsersServiceForgotPasswordDesc: UnaryMethodDefinitionish = {
+  methodName: "ForgotPassword",
+  service: UsersServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return ForgotPasswordRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = ForgotPasswordResponse.decode(data);
       return {
         ...value,
         toObject() {

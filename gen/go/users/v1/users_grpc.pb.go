@@ -21,6 +21,7 @@ const _ = grpc.SupportPackageIsVersion9
 const (
 	UsersService_CreateSupplier_FullMethodName    = "/users.v1.UsersService/CreateSupplier"
 	UsersService_EmailConfirmation_FullMethodName = "/users.v1.UsersService/EmailConfirmation"
+	UsersService_ForgotPassword_FullMethodName    = "/users.v1.UsersService/ForgotPassword"
 )
 
 // UsersServiceClient is the client API for UsersService service.
@@ -29,6 +30,7 @@ const (
 type UsersServiceClient interface {
 	CreateSupplier(ctx context.Context, in *SupplierCreateRequest, opts ...grpc.CallOption) (*SupplierCreateResponse, error)
 	EmailConfirmation(ctx context.Context, in *EmailConfirmationRequest, opts ...grpc.CallOption) (*EmailConfirmationResponse, error)
+	ForgotPassword(ctx context.Context, in *ForgotPasswordRequest, opts ...grpc.CallOption) (*ForgotPasswordResponse, error)
 }
 
 type usersServiceClient struct {
@@ -59,12 +61,23 @@ func (c *usersServiceClient) EmailConfirmation(ctx context.Context, in *EmailCon
 	return out, nil
 }
 
+func (c *usersServiceClient) ForgotPassword(ctx context.Context, in *ForgotPasswordRequest, opts ...grpc.CallOption) (*ForgotPasswordResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ForgotPasswordResponse)
+	err := c.cc.Invoke(ctx, UsersService_ForgotPassword_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UsersServiceServer is the server API for UsersService service.
 // All implementations must embed UnimplementedUsersServiceServer
 // for forward compatibility.
 type UsersServiceServer interface {
 	CreateSupplier(context.Context, *SupplierCreateRequest) (*SupplierCreateResponse, error)
 	EmailConfirmation(context.Context, *EmailConfirmationRequest) (*EmailConfirmationResponse, error)
+	ForgotPassword(context.Context, *ForgotPasswordRequest) (*ForgotPasswordResponse, error)
 	mustEmbedUnimplementedUsersServiceServer()
 }
 
@@ -80,6 +93,9 @@ func (UnimplementedUsersServiceServer) CreateSupplier(context.Context, *Supplier
 }
 func (UnimplementedUsersServiceServer) EmailConfirmation(context.Context, *EmailConfirmationRequest) (*EmailConfirmationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method EmailConfirmation not implemented")
+}
+func (UnimplementedUsersServiceServer) ForgotPassword(context.Context, *ForgotPasswordRequest) (*ForgotPasswordResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ForgotPassword not implemented")
 }
 func (UnimplementedUsersServiceServer) mustEmbedUnimplementedUsersServiceServer() {}
 func (UnimplementedUsersServiceServer) testEmbeddedByValue()                      {}
@@ -138,6 +154,24 @@ func _UsersService_EmailConfirmation_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UsersService_ForgotPassword_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ForgotPasswordRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UsersServiceServer).ForgotPassword(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: UsersService_ForgotPassword_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UsersServiceServer).ForgotPassword(ctx, req.(*ForgotPasswordRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // UsersService_ServiceDesc is the grpc.ServiceDesc for UsersService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -152,6 +186,10 @@ var UsersService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "EmailConfirmation",
 			Handler:    _UsersService_EmailConfirmation_Handler,
+		},
+		{
+			MethodName: "ForgotPassword",
+			Handler:    _UsersService_ForgotPassword_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -24,26 +24,31 @@ var File_users_v1_users_proto protoreflect.FileDescriptor
 
 const file_users_v1_users_proto_rawDesc = "" +
 	"\n" +
-	"\x14users/v1/users.proto\x12\busers.v1\x1a\x17users/v1/supplier.proto\x1a\x13users/v1/auth.proto2\xc1\x01\n" +
+	"\x14users/v1/users.proto\x12\busers.v1\x1a\x13users/v1/auth.proto\x1a\x17users/v1/supplier.proto2\x96\x02\n" +
 	"\fUsersService\x12S\n" +
 	"\x0eCreateSupplier\x12\x1f.users.v1.SupplierCreateRequest\x1a .users.v1.SupplierCreateResponse\x12\\\n" +
-	"\x11EmailConfirmation\x12\".users.v1.EmailConfirmationRequest\x1a#.users.v1.EmailConfirmationResponseBn\n" +
+	"\x11EmailConfirmation\x12\".users.v1.EmailConfirmationRequest\x1a#.users.v1.EmailConfirmationResponse\x12S\n" +
+	"\x0eForgotPassword\x12\x1f.users.v1.ForgotPasswordRequest\x1a .users.v1.ForgotPasswordResponseBn\n" +
 	"\x19org.megacommerce.users.v1B\n" +
 	"UsersProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\xf8\x01\x01b\x06proto3"
 
 var file_users_v1_users_proto_goTypes = []any{
 	(*SupplierCreateRequest)(nil),     // 0: users.v1.SupplierCreateRequest
 	(*EmailConfirmationRequest)(nil),  // 1: users.v1.EmailConfirmationRequest
-	(*SupplierCreateResponse)(nil),    // 2: users.v1.SupplierCreateResponse
-	(*EmailConfirmationResponse)(nil), // 3: users.v1.EmailConfirmationResponse
+	(*ForgotPasswordRequest)(nil),     // 2: users.v1.ForgotPasswordRequest
+	(*SupplierCreateResponse)(nil),    // 3: users.v1.SupplierCreateResponse
+	(*EmailConfirmationResponse)(nil), // 4: users.v1.EmailConfirmationResponse
+	(*ForgotPasswordResponse)(nil),    // 5: users.v1.ForgotPasswordResponse
 }
 var file_users_v1_users_proto_depIdxs = []int32{
 	0, // 0: users.v1.UsersService.CreateSupplier:input_type -> users.v1.SupplierCreateRequest
 	1, // 1: users.v1.UsersService.EmailConfirmation:input_type -> users.v1.EmailConfirmationRequest
-	2, // 2: users.v1.UsersService.CreateSupplier:output_type -> users.v1.SupplierCreateResponse
-	3, // 3: users.v1.UsersService.EmailConfirmation:output_type -> users.v1.EmailConfirmationResponse
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
+	2, // 2: users.v1.UsersService.ForgotPassword:input_type -> users.v1.ForgotPasswordRequest
+	3, // 3: users.v1.UsersService.CreateSupplier:output_type -> users.v1.SupplierCreateResponse
+	4, // 4: users.v1.UsersService.EmailConfirmation:output_type -> users.v1.EmailConfirmationResponse
+	5, // 5: users.v1.UsersService.ForgotPassword:output_type -> users.v1.ForgotPasswordResponse
+	3, // [3:6] is the sub-list for method output_type
+	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -54,8 +59,8 @@ func file_users_v1_users_proto_init() {
 	if File_users_v1_users_proto != nil {
 		return
 	}
-	file_users_v1_supplier_proto_init()
 	file_users_v1_auth_proto_init()
+	file_users_v1_supplier_proto_init()
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{

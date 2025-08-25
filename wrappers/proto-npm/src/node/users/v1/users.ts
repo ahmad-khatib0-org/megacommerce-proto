@@ -17,7 +17,12 @@ import {
   type ServiceError,
   type UntypedServiceImplementation,
 } from "@grpc/grpc-js";
-import { EmailConfirmationRequest, EmailConfirmationResponse } from "./auth";
+import {
+  EmailConfirmationRequest,
+  EmailConfirmationResponse,
+  ForgotPasswordRequest,
+  ForgotPasswordResponse,
+} from "./auth";
 import { SupplierCreateRequest, SupplierCreateResponse } from "./supplier";
 
 export const protobufPackage = "users.v1";
@@ -43,11 +48,21 @@ export const UsersServiceService = {
       Buffer.from(EmailConfirmationResponse.encode(value).finish()),
     responseDeserialize: (value: Buffer) => EmailConfirmationResponse.decode(value),
   },
+  forgotPassword: {
+    path: "/users.v1.UsersService/ForgotPassword",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: ForgotPasswordRequest) => Buffer.from(ForgotPasswordRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer) => ForgotPasswordRequest.decode(value),
+    responseSerialize: (value: ForgotPasswordResponse) => Buffer.from(ForgotPasswordResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer) => ForgotPasswordResponse.decode(value),
+  },
 } as const;
 
 export interface UsersServiceServer extends UntypedServiceImplementation {
   createSupplier: handleUnaryCall<SupplierCreateRequest, SupplierCreateResponse>;
   emailConfirmation: handleUnaryCall<EmailConfirmationRequest, EmailConfirmationResponse>;
+  forgotPassword: handleUnaryCall<ForgotPasswordRequest, ForgotPasswordResponse>;
 }
 
 export interface UsersServiceClient extends Client {
@@ -80,6 +95,21 @@ export interface UsersServiceClient extends Client {
     metadata: Metadata,
     options: Partial<CallOptions>,
     callback: (error: ServiceError | null, response: EmailConfirmationResponse) => void,
+  ): ClientUnaryCall;
+  forgotPassword(
+    request: ForgotPasswordRequest,
+    callback: (error: ServiceError | null, response: ForgotPasswordResponse) => void,
+  ): ClientUnaryCall;
+  forgotPassword(
+    request: ForgotPasswordRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: ForgotPasswordResponse) => void,
+  ): ClientUnaryCall;
+  forgotPassword(
+    request: ForgotPasswordRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: ForgotPasswordResponse) => void,
   ): ClientUnaryCall;
 }
 

@@ -2,8 +2,8 @@ syntax = "proto3";
 
 package users.v1;
 
-import "users/v1/supplier.proto";
 import "users/v1/auth.proto";
+import "users/v1/supplier.proto";
 
 option cc_enable_arenas = true;
 option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1";
@@ -13,5 +13,5 @@ option java_package = "org.megacommerce.users.v1";
 service UsersService {
   rpc CreateSupplier(users.v1.SupplierCreateRequest) returns (users.v1.SupplierCreateResponse);
   rpc EmailConfirmation(users.v1.EmailConfirmationRequest) returns (users.v1.EmailConfirmationResponse);
+  rpc ForgotPassword(users.v1.ForgotPasswordRequest) returns (users.v1.ForgotPasswordResponse);
 }
-

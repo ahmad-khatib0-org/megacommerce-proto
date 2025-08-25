@@ -248,6 +248,132 @@ func (*EmailConfirmationResponse_Data) isEmailConfirmationResponse_Response() {}
 
 func (*EmailConfirmationResponse_Error) isEmailConfirmationResponse_Response() {}
 
+type ForgotPasswordRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ForgotPasswordRequest) Reset() {
+	*x = ForgotPasswordRequest{}
+	mi := &file_users_v1_auth_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ForgotPasswordRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ForgotPasswordRequest) ProtoMessage() {}
+
+func (x *ForgotPasswordRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_users_v1_auth_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ForgotPasswordRequest.ProtoReflect.Descriptor instead.
+func (*ForgotPasswordRequest) Descriptor() ([]byte, []int) {
+	return file_users_v1_auth_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *ForgotPasswordRequest) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
+}
+
+type ForgotPasswordResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Types that are valid to be assigned to Response:
+	//
+	//	*ForgotPasswordResponse_Data
+	//	*ForgotPasswordResponse_Error
+	Response      isForgotPasswordResponse_Response `protobuf_oneof:"response"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ForgotPasswordResponse) Reset() {
+	*x = ForgotPasswordResponse{}
+	mi := &file_users_v1_auth_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ForgotPasswordResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ForgotPasswordResponse) ProtoMessage() {}
+
+func (x *ForgotPasswordResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_users_v1_auth_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ForgotPasswordResponse.ProtoReflect.Descriptor instead.
+func (*ForgotPasswordResponse) Descriptor() ([]byte, []int) {
+	return file_users_v1_auth_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *ForgotPasswordResponse) GetResponse() isForgotPasswordResponse_Response {
+	if x != nil {
+		return x.Response
+	}
+	return nil
+}
+
+func (x *ForgotPasswordResponse) GetData() *v1.SuccessResponseData {
+	if x != nil {
+		if x, ok := x.Response.(*ForgotPasswordResponse_Data); ok {
+			return x.Data
+		}
+	}
+	return nil
+}
+
+func (x *ForgotPasswordResponse) GetError() *v1.AppError {
+	if x != nil {
+		if x, ok := x.Response.(*ForgotPasswordResponse_Error); ok {
+			return x.Error
+		}
+	}
+	return nil
+}
+
+type isForgotPasswordResponse_Response interface {
+	isForgotPasswordResponse_Response()
+}
+
+type ForgotPasswordResponse_Data struct {
+	Data *v1.SuccessResponseData `protobuf:"bytes,1,opt,name=data,proto3,oneof"`
+}
+
+type ForgotPasswordResponse_Error struct {
+	Error *v1.AppError `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
+}
+
+func (*ForgotPasswordResponse_Data) isForgotPasswordResponse_Response() {}
+
+func (*ForgotPasswordResponse_Error) isForgotPasswordResponse_Response() {}
+
 var File_users_v1_auth_proto protoreflect.FileDescriptor
 
 const file_users_v1_auth_proto_rawDesc = "" +
@@ -270,6 +396,13 @@ const file_users_v1_auth_proto_rawDesc = "" +
 	"\x04data\x18\x01 \x01(\v2\x1e.shared.v1.SuccessResponseDataH\x00R\x04data\x12+\n" +
 	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +
 	"\n" +
+	"\bresponse\"-\n" +
+	"\x15ForgotPasswordRequest\x12\x14\n" +
+	"\x05email\x18\x01 \x01(\tR\x05email\"\x87\x01\n" +
+	"\x16ForgotPasswordResponse\x124\n" +
+	"\x04data\x18\x01 \x01(\v2\x1e.shared.v1.SuccessResponseDataH\x00R\x04data\x12+\n" +
+	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +
+	"\n" +
 	"\bresponseBm\n" +
 	"\x19org.megacommerce.users.v1B\tAuthProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\xf8\x01\x01b\x06proto3"
 
@@ -285,22 +418,26 @@ func file_users_v1_auth_proto_rawDescGZIP() []byte {
 	return file_users_v1_auth_proto_rawDescData
 }
 
-var file_users_v1_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_users_v1_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_users_v1_auth_proto_goTypes = []any{
 	(*Token)(nil),                     // 0: users.v1.Token
 	(*EmailConfirmationRequest)(nil),  // 1: users.v1.EmailConfirmationRequest
 	(*EmailConfirmationResponse)(nil), // 2: users.v1.EmailConfirmationResponse
-	(*v1.SuccessResponseData)(nil),    // 3: shared.v1.SuccessResponseData
-	(*v1.AppError)(nil),               // 4: shared.v1.AppError
+	(*ForgotPasswordRequest)(nil),     // 3: users.v1.ForgotPasswordRequest
+	(*ForgotPasswordResponse)(nil),    // 4: users.v1.ForgotPasswordResponse
+	(*v1.SuccessResponseData)(nil),    // 5: shared.v1.SuccessResponseData
+	(*v1.AppError)(nil),               // 6: shared.v1.AppError
 }
 var file_users_v1_auth_proto_depIdxs = []int32{
-	3, // 0: users.v1.EmailConfirmationResponse.data:type_name -> shared.v1.SuccessResponseData
-	4, // 1: users.v1.EmailConfirmationResponse.error:type_name -> shared.v1.AppError
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	5, // 0: users.v1.EmailConfirmationResponse.data:type_name -> shared.v1.SuccessResponseData
+	6, // 1: users.v1.EmailConfirmationResponse.error:type_name -> shared.v1.AppError
+	5, // 2: users.v1.ForgotPasswordResponse.data:type_name -> shared.v1.SuccessResponseData
+	6, // 3: users.v1.ForgotPasswordResponse.error:type_name -> shared.v1.AppError
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_users_v1_auth_proto_init() }
@@ -312,13 +449,17 @@ func file_users_v1_auth_proto_init() {
 		(*EmailConfirmationResponse_Data)(nil),
 		(*EmailConfirmationResponse_Error)(nil),
 	}
+	file_users_v1_auth_proto_msgTypes[4].OneofWrappers = []any{
+		(*ForgotPasswordResponse_Data)(nil),
+		(*ForgotPasswordResponse_Error)(nil),
+	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_users_v1_auth_proto_rawDesc), len(file_users_v1_auth_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

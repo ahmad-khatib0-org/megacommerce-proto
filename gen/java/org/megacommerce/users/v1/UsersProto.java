@@ -35,26 +35,28 @@ public final class UsersProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024users/v1/users.proto\022\010users.v1\032\027users/" +
-      "v1/supplier.proto\032\023users/v1/auth.proto2\301" +
-      "\001\n\014UsersService\022S\n\016CreateSupplier\022\037.user" +
+      "\n\024users/v1/users.proto\022\010users.v1\032\023users/" +
+      "v1/auth.proto\032\027users/v1/supplier.proto2\226" +
+      "\002\n\014UsersService\022S\n\016CreateSupplier\022\037.user" +
       "s.v1.SupplierCreateRequest\032 .users.v1.Su" +
       "pplierCreateResponse\022\\\n\021EmailConfirmatio" +
       "n\022\".users.v1.EmailConfirmationRequest\032#." +
-      "users.v1.EmailConfirmationResponseBn\n\031or" +
-      "g.megacommerce.users.v1B\nUsersProtoZBgit" +
-      "hub.com/ahmad-khatib0-org/megacommerce-p" +
-      "roto/gen/go/users/v1;v1\370\001\001b\006proto3"
+      "users.v1.EmailConfirmationResponse\022S\n\016Fo" +
+      "rgotPassword\022\037.users.v1.ForgotPasswordRe" +
+      "quest\032 .users.v1.ForgotPasswordResponseB" +
+      "n\n\031org.megacommerce.users.v1B\nUsersProto" +
+      "ZBgithub.com/ahmad-khatib0-org/megacomme" +
+      "rce-proto/gen/go/users/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          org.megacommerce.users.v1.SupplierProto.getDescriptor(),
           org.megacommerce.users.v1.AuthProto.getDescriptor(),
+          org.megacommerce.users.v1.SupplierProto.getDescriptor(),
         });
     descriptor.resolveAllFeaturesImmutable();
-    org.megacommerce.users.v1.SupplierProto.getDescriptor();
     org.megacommerce.users.v1.AuthProto.getDescriptor();
+    org.megacommerce.users.v1.SupplierProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
