@@ -66,6 +66,7 @@ export interface ConfigSecurity {
   emailConfirmationUrl?: string | undefined;
   tokenConfirmationExpiryInHours?: number | undefined;
   tokenPasswordResetExpiryInHours?: number | undefined;
+  passwordResetUrl?: string | undefined;
 }
 
 export interface ConfigSecurity_RestrictedUsernamesEntry {
@@ -1051,6 +1052,7 @@ function createBaseConfigSecurity(): ConfigSecurity {
     emailConfirmationUrl: undefined,
     tokenConfirmationExpiryInHours: undefined,
     tokenPasswordResetExpiryInHours: undefined,
+    passwordResetUrl: undefined,
   };
 }
 
@@ -1115,6 +1117,9 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
     }
     if (message.tokenPasswordResetExpiryInHours !== undefined) {
       writer.uint32(160).uint32(message.tokenPasswordResetExpiryInHours);
+    }
+    if (message.passwordResetUrl !== undefined) {
+      writer.uint32(170).string(message.passwordResetUrl);
     }
     return writer;
   },
@@ -1289,6 +1294,14 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
           message.tokenPasswordResetExpiryInHours = reader.uint32();
           continue;
         }
+        case 21: {
+          if (tag !== 170) {
+            break;
+          }
+
+          message.passwordResetUrl = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -1357,6 +1370,7 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
       tokenPasswordResetExpiryInHours: isSet(object.tokenPasswordResetExpiryInHours)
         ? globalThis.Number(object.tokenPasswordResetExpiryInHours)
         : undefined,
+      passwordResetUrl: isSet(object.passwordResetUrl) ? globalThis.String(object.passwordResetUrl) : undefined,
     };
   },
 
@@ -1428,6 +1442,9 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
     if (message.tokenPasswordResetExpiryInHours !== undefined) {
       obj.tokenPasswordResetExpiryInHours = Math.round(message.tokenPasswordResetExpiryInHours);
     }
+    if (message.passwordResetUrl !== undefined) {
+      obj.passwordResetUrl = message.passwordResetUrl;
+    }
     return obj;
   },
 
@@ -1464,6 +1481,7 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
     message.emailConfirmationUrl = object.emailConfirmationUrl ?? undefined;
     message.tokenConfirmationExpiryInHours = object.tokenConfirmationExpiryInHours ?? undefined;
     message.tokenPasswordResetExpiryInHours = object.tokenPasswordResetExpiryInHours ?? undefined;
+    message.passwordResetUrl = object.passwordResetUrl ?? undefined;
     return message;
   },
 };

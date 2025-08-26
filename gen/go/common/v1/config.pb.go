@@ -348,6 +348,7 @@ type ConfigSecurity struct {
 	EmailConfirmationUrl              *string                `protobuf:"bytes,18,opt,name=email_confirmation_url,json=emailConfirmationUrl,proto3,oneof" json:"email_confirmation_url,omitempty"`
 	TokenConfirmationExpiryInHours    *uint32                `protobuf:"varint,19,opt,name=token_confirmation_expiry_in_hours,json=tokenConfirmationExpiryInHours,proto3,oneof" json:"token_confirmation_expiry_in_hours,omitempty"`
 	TokenPasswordResetExpiryInHours   *uint32                `protobuf:"varint,20,opt,name=token_password_reset_expiry_in_hours,json=tokenPasswordResetExpiryInHours,proto3,oneof" json:"token_password_reset_expiry_in_hours,omitempty"`
+	PasswordResetUrl                  *string                `protobuf:"bytes,21,opt,name=password_reset_url,json=passwordResetUrl,proto3,oneof" json:"password_reset_url,omitempty"`
 	unknownFields                     protoimpl.UnknownFields
 	sizeCache                         protoimpl.SizeCache
 }
@@ -520,6 +521,13 @@ func (x *ConfigSecurity) GetTokenPasswordResetExpiryInHours() uint32 {
 		return *x.TokenPasswordResetExpiryInHours
 	}
 	return 0
+}
+
+func (x *ConfigSecurity) GetPasswordResetUrl() string {
+	if x != nil && x.PasswordResetUrl != nil {
+		return *x.PasswordResetUrl
+	}
+	return ""
 }
 
 type CacheConfig struct {
@@ -3463,7 +3471,7 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x1e_common_service_prometheus_urlB\x1e\n" +
 	"\x1c_user_service_prometheus_urlB\"\n" +
 	" _products_service_prometheus_urlB/\n" +
-	"-_users_service_max_receive_message_size_bytes\"\xbf\x10\n" +
+	"-_users_service_max_receive_message_size_bytes\"\x89\x11\n" +
 	"\x0eConfigSecurity\x12e\n" +
 	"\x14restricted_usernames\x18\x01 \x03(\v22.common.v1.ConfigSecurity.RestrictedUsernamesEntryR\x13restrictedUsernames\x129\n" +
 	"\x16maximum_login_attempts\x18\x02 \x01(\x05H\x00R\x14maximumLoginAttempts\x88\x01\x01\x12T\n" +
@@ -3487,7 +3495,8 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x18session_cache_in_minutes\x18\x11 \x01(\x05H\x0fR\x15sessionCacheInMinutes\x88\x01\x01\x129\n" +
 	"\x16email_confirmation_url\x18\x12 \x01(\tH\x10R\x14emailConfirmationUrl\x88\x01\x01\x12O\n" +
 	"\"token_confirmation_expiry_in_hours\x18\x13 \x01(\rH\x11R\x1etokenConfirmationExpiryInHours\x88\x01\x01\x12R\n" +
-	"$token_password_reset_expiry_in_hours\x18\x14 \x01(\rH\x12R\x1ftokenPasswordResetExpiryInHours\x88\x01\x01\x1aF\n" +
+	"$token_password_reset_expiry_in_hours\x18\x14 \x01(\rH\x12R\x1ftokenPasswordResetExpiryInHours\x88\x01\x01\x121\n" +
+	"\x12password_reset_url\x18\x15 \x01(\tH\x13R\x10passwordResetUrl\x88\x01\x01\x1aF\n" +
 	"\x18RestrictedUsernamesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\x19\n" +
@@ -3509,7 +3518,8 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x19_session_cache_in_minutesB\x19\n" +
 	"\x17_email_confirmation_urlB%\n" +
 	"#_token_confirmation_expiry_in_hoursB'\n" +
-	"%_token_password_reset_expiry_in_hours\"\x82\x03\n" +
+	"%_token_password_reset_expiry_in_hoursB\x15\n" +
+	"\x13_password_reset_url\"\x82\x03\n" +
 	"\vCacheConfig\x12\"\n" +
 	"\n" +
 	"cache_type\x18\x01 \x01(\tH\x00R\tcacheType\x88\x01\x01\x12(\n" +
