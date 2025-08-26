@@ -31,11 +31,11 @@ export interface EmailConfirmationResponse {
   error?: AppError | undefined;
 }
 
-export interface ForgotPasswordRequest {
+export interface PasswordForgotRequest {
   email: string;
 }
 
-export interface ForgotPasswordResponse {
+export interface PasswordForgotResponse {
   data?: SuccessResponseData | undefined;
   error?: AppError | undefined;
 }
@@ -352,22 +352,22 @@ export const EmailConfirmationResponse: MessageFns<EmailConfirmationResponse> = 
   },
 };
 
-function createBaseForgotPasswordRequest(): ForgotPasswordRequest {
+function createBasePasswordForgotRequest(): PasswordForgotRequest {
   return { email: "" };
 }
 
-export const ForgotPasswordRequest: MessageFns<ForgotPasswordRequest> = {
-  encode(message: ForgotPasswordRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+export const PasswordForgotRequest: MessageFns<PasswordForgotRequest> = {
+  encode(message: PasswordForgotRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.email !== "") {
       writer.uint32(10).string(message.email);
     }
     return writer;
   },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): ForgotPasswordRequest {
+  decode(input: BinaryReader | Uint8Array, length?: number): PasswordForgotRequest {
     const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseForgotPasswordRequest();
+    const message = createBasePasswordForgotRequest();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -388,11 +388,11 @@ export const ForgotPasswordRequest: MessageFns<ForgotPasswordRequest> = {
     return message;
   },
 
-  fromJSON(object: any): ForgotPasswordRequest {
+  fromJSON(object: any): PasswordForgotRequest {
     return { email: isSet(object.email) ? globalThis.String(object.email) : "" };
   },
 
-  toJSON(message: ForgotPasswordRequest): unknown {
+  toJSON(message: PasswordForgotRequest): unknown {
     const obj: any = {};
     if (message.email !== "") {
       obj.email = message.email;
@@ -400,22 +400,22 @@ export const ForgotPasswordRequest: MessageFns<ForgotPasswordRequest> = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<ForgotPasswordRequest>, I>>(base?: I): ForgotPasswordRequest {
-    return ForgotPasswordRequest.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<PasswordForgotRequest>, I>>(base?: I): PasswordForgotRequest {
+    return PasswordForgotRequest.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<ForgotPasswordRequest>, I>>(object: I): ForgotPasswordRequest {
-    const message = createBaseForgotPasswordRequest();
+  fromPartial<I extends Exact<DeepPartial<PasswordForgotRequest>, I>>(object: I): PasswordForgotRequest {
+    const message = createBasePasswordForgotRequest();
     message.email = object.email ?? "";
     return message;
   },
 };
 
-function createBaseForgotPasswordResponse(): ForgotPasswordResponse {
+function createBasePasswordForgotResponse(): PasswordForgotResponse {
   return { data: undefined, error: undefined };
 }
 
-export const ForgotPasswordResponse: MessageFns<ForgotPasswordResponse> = {
-  encode(message: ForgotPasswordResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+export const PasswordForgotResponse: MessageFns<PasswordForgotResponse> = {
+  encode(message: PasswordForgotResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.data !== undefined) {
       SuccessResponseData.encode(message.data, writer.uint32(10).fork()).join();
     }
@@ -425,10 +425,10 @@ export const ForgotPasswordResponse: MessageFns<ForgotPasswordResponse> = {
     return writer;
   },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): ForgotPasswordResponse {
+  decode(input: BinaryReader | Uint8Array, length?: number): PasswordForgotResponse {
     const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseForgotPasswordResponse();
+    const message = createBasePasswordForgotResponse();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -457,14 +457,14 @@ export const ForgotPasswordResponse: MessageFns<ForgotPasswordResponse> = {
     return message;
   },
 
-  fromJSON(object: any): ForgotPasswordResponse {
+  fromJSON(object: any): PasswordForgotResponse {
     return {
       data: isSet(object.data) ? SuccessResponseData.fromJSON(object.data) : undefined,
       error: isSet(object.error) ? AppError.fromJSON(object.error) : undefined,
     };
   },
 
-  toJSON(message: ForgotPasswordResponse): unknown {
+  toJSON(message: PasswordForgotResponse): unknown {
     const obj: any = {};
     if (message.data !== undefined) {
       obj.data = SuccessResponseData.toJSON(message.data);
@@ -475,11 +475,11 @@ export const ForgotPasswordResponse: MessageFns<ForgotPasswordResponse> = {
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<ForgotPasswordResponse>, I>>(base?: I): ForgotPasswordResponse {
-    return ForgotPasswordResponse.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<PasswordForgotResponse>, I>>(base?: I): PasswordForgotResponse {
+    return PasswordForgotResponse.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<ForgotPasswordResponse>, I>>(object: I): ForgotPasswordResponse {
-    const message = createBaseForgotPasswordResponse();
+  fromPartial<I extends Exact<DeepPartial<PasswordForgotResponse>, I>>(object: I): PasswordForgotResponse {
+    const message = createBasePasswordForgotResponse();
     message.data = (object.data !== undefined && object.data !== null)
       ? SuccessResponseData.fromPartial(object.data)
       : undefined;

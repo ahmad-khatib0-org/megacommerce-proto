@@ -26,7 +26,7 @@ from users.v1 import auth_pb2 as users_dot_v1_dot_auth__pb2
 from users.v1 import supplier_pb2 as users_dot_v1_dot_supplier__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14users/v1/users.proto\x12\x08users.v1\x1a\x13users/v1/auth.proto\x1a\x17users/v1/supplier.proto2\x96\x02\n\x0cUsersService\x12S\n\x0e\x43reateSupplier\x12\x1f.users.v1.SupplierCreateRequest\x1a .users.v1.SupplierCreateResponse\x12\\\n\x11\x45mailConfirmation\x12\".users.v1.EmailConfirmationRequest\x1a#.users.v1.EmailConfirmationResponse\x12S\n\x0e\x46orgotPassword\x12\x1f.users.v1.ForgotPasswordRequest\x1a .users.v1.ForgotPasswordResponseBn\n\x19org.megacommerce.users.v1B\nUsersProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14users/v1/users.proto\x12\x08users.v1\x1a\x13users/v1/auth.proto\x1a\x17users/v1/supplier.proto2\x96\x02\n\x0cUsersService\x12S\n\x0e\x43reateSupplier\x12\x1f.users.v1.SupplierCreateRequest\x1a .users.v1.SupplierCreateResponse\x12\\\n\x11\x45mailConfirmation\x12\".users.v1.EmailConfirmationRequest\x1a#.users.v1.EmailConfirmationResponse\x12S\n\x0ePasswordForgot\x12\x1f.users.v1.PasswordForgotRequest\x1a .users.v1.PasswordForgotResponseBn\n\x19org.megacommerce.users.v1B\nUsersProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)

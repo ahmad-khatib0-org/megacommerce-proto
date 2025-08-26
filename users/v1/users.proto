@@ -13,5 +13,5 @@ option java_package = "org.megacommerce.users.v1";
 service UsersService {
   rpc CreateSupplier(users.v1.SupplierCreateRequest) returns (users.v1.SupplierCreateResponse);
   rpc EmailConfirmation(users.v1.EmailConfirmationRequest) returns (users.v1.EmailConfirmationResponse);
-  rpc ForgotPassword(users.v1.ForgotPasswordRequest) returns (users.v1.ForgotPasswordResponse);
+  rpc PasswordForgot(users.v1.PasswordForgotRequest) returns (users.v1.PasswordForgotResponse);
 }

@@ -44,18 +44,18 @@ pub mod email_confirmation_response {
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ForgotPasswordRequest {
+pub struct PasswordForgotRequest {
     #[prost(string, tag = "1")]
     pub email: ::prost::alloc::string::String,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ForgotPasswordResponse {
-    #[prost(oneof = "forgot_password_response::Response", tags = "1, 2")]
-    pub response: ::core::option::Option<forgot_password_response::Response>,
+pub struct PasswordForgotResponse {
+    #[prost(oneof = "password_forgot_response::Response", tags = "1, 2")]
+    pub response: ::core::option::Option<password_forgot_response::Response>,
 }
-/// Nested message and enum types in `ForgotPasswordResponse`.
-pub mod forgot_password_response {
+/// Nested message and enum types in `PasswordForgotResponse`.
+pub mod password_forgot_response {
     #[derive(serde::Serialize, serde::Deserialize)]
     #[derive(Clone, PartialEq, ::prost::Oneof)]
     pub enum Response {
@@ -239,11 +239,11 @@ pub mod users_service_client {
                 .insert(GrpcMethod::new("users.v1.UsersService", "EmailConfirmation"));
             self.inner.unary(req, path, codec).await
         }
-        pub async fn forgot_password(
+        pub async fn password_forgot(
             &mut self,
-            request: impl tonic::IntoRequest<super::ForgotPasswordRequest>,
+            request: impl tonic::IntoRequest<super::PasswordForgotRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::ForgotPasswordResponse>,
+            tonic::Response<super::PasswordForgotResponse>,
             tonic::Status,
         > {
             self.inner
@@ -256,11 +256,11 @@ pub mod users_service_client {
                 })?;
             let codec = tonic::codec::ProstCodec::default();
             let path = http::uri::PathAndQuery::from_static(
-                "/users.v1.UsersService/ForgotPassword",
+                "/users.v1.UsersService/PasswordForgot",
             );
             let mut req = request.into_request();
             req.extensions_mut()
-                .insert(GrpcMethod::new("users.v1.UsersService", "ForgotPassword"));
+                .insert(GrpcMethod::new("users.v1.UsersService", "PasswordForgot"));
             self.inner.unary(req, path, codec).await
         }
     }
@@ -292,11 +292,11 @@ pub mod users_service_server {
             tonic::Response<super::EmailConfirmationResponse>,
             tonic::Status,
         >;
-        async fn forgot_password(
+        async fn password_forgot(
             &self,
-            request: tonic::Request<super::ForgotPasswordRequest>,
+            request: tonic::Request<super::PasswordForgotRequest>,
         ) -> std::result::Result<
-            tonic::Response<super::ForgotPasswordResponse>,
+            tonic::Response<super::PasswordForgotResponse>,
             tonic::Status,
         >;
     }
@@ -467,25 +467,25 @@ pub mod users_service_server {
                     };
                     Box::pin(fut)
                 }
-                "/users.v1.UsersService/ForgotPassword" => {
+                "/users.v1.UsersService/PasswordForgot" => {
                     #[allow(non_camel_case_types)]
-                    struct ForgotPasswordSvc<T: UsersService>(pub Arc<T>);
+                    struct PasswordForgotSvc<T: UsersService>(pub Arc<T>);
                     impl<
                         T: UsersService,
-                    > tonic::server::UnaryService<super::ForgotPasswordRequest>
-                    for ForgotPasswordSvc<T> {
-                        type Response = super::ForgotPasswordResponse;
+                    > tonic::server::UnaryService<super::PasswordForgotRequest>
+                    for PasswordForgotSvc<T> {
+                        type Response = super::PasswordForgotResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::ForgotPasswordRequest>,
+                            request: tonic::Request<super::PasswordForgotRequest>,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {
-                                <T as UsersService>::forgot_password(&inner, request).await
+                                <T as UsersService>::password_forgot(&inner, request).await
                             };
                             Box::pin(fut)
                         }
@@ -496,7 +496,7 @@ pub mod users_service_server {
                     let max_encoding_message_size = self.max_encoding_message_size;
                     let inner = self.inner.clone();
                     let fut = async move {
-                        let method = ForgotPasswordSvc(inner);
+                        let method = PasswordForgotSvc(inner);
                         let codec = tonic::codec::ProstCodec::default();
                         let mut grpc = tonic::server::Grpc::new(codec)
                             .apply_compression_config(

@@ -32,11 +32,11 @@ message EmailConfirmationResponse {
   }
 }
 
-message ForgotPasswordRequest {
+message PasswordForgotRequest {
   string email = 1;
 }
 
-message ForgotPasswordResponse {
+message PasswordForgotResponse {
   oneof response {
     shared.v1.SuccessResponseData data = 1;
     shared.v1.AppError error = 2;

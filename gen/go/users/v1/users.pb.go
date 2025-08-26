@@ -28,25 +28,25 @@ const file_users_v1_users_proto_rawDesc = "" +
 	"\fUsersService\x12S\n" +
 	"\x0eCreateSupplier\x12\x1f.users.v1.SupplierCreateRequest\x1a .users.v1.SupplierCreateResponse\x12\\\n" +
 	"\x11EmailConfirmation\x12\".users.v1.EmailConfirmationRequest\x1a#.users.v1.EmailConfirmationResponse\x12S\n" +
-	"\x0eForgotPassword\x12\x1f.users.v1.ForgotPasswordRequest\x1a .users.v1.ForgotPasswordResponseBn\n" +
+	"\x0ePasswordForgot\x12\x1f.users.v1.PasswordForgotRequest\x1a .users.v1.PasswordForgotResponseBn\n" +
 	"\x19org.megacommerce.users.v1B\n" +
 	"UsersProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\xf8\x01\x01b\x06proto3"
 
 var file_users_v1_users_proto_goTypes = []any{
 	(*SupplierCreateRequest)(nil),     // 0: users.v1.SupplierCreateRequest
 	(*EmailConfirmationRequest)(nil),  // 1: users.v1.EmailConfirmationRequest
-	(*ForgotPasswordRequest)(nil),     // 2: users.v1.ForgotPasswordRequest
+	(*PasswordForgotRequest)(nil),     // 2: users.v1.PasswordForgotRequest
 	(*SupplierCreateResponse)(nil),    // 3: users.v1.SupplierCreateResponse
 	(*EmailConfirmationResponse)(nil), // 4: users.v1.EmailConfirmationResponse
-	(*ForgotPasswordResponse)(nil),    // 5: users.v1.ForgotPasswordResponse
+	(*PasswordForgotResponse)(nil),    // 5: users.v1.PasswordForgotResponse
 }
 var file_users_v1_users_proto_depIdxs = []int32{
 	0, // 0: users.v1.UsersService.CreateSupplier:input_type -> users.v1.SupplierCreateRequest
 	1, // 1: users.v1.UsersService.EmailConfirmation:input_type -> users.v1.EmailConfirmationRequest
-	2, // 2: users.v1.UsersService.ForgotPassword:input_type -> users.v1.ForgotPasswordRequest
+	2, // 2: users.v1.UsersService.PasswordForgot:input_type -> users.v1.PasswordForgotRequest
 	3, // 3: users.v1.UsersService.CreateSupplier:output_type -> users.v1.SupplierCreateResponse
 	4, // 4: users.v1.UsersService.EmailConfirmation:output_type -> users.v1.EmailConfirmationResponse
-	5, // 5: users.v1.UsersService.ForgotPassword:output_type -> users.v1.ForgotPasswordResponse
+	5, // 5: users.v1.UsersService.PasswordForgot:output_type -> users.v1.PasswordForgotResponse
 	3, // [3:6] is the sub-list for method output_type
 	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name

@@ -45,10 +45,10 @@ class UsersServiceStub(object):
                 request_serializer=users_dot_v1_dot_auth__pb2.EmailConfirmationRequest.SerializeToString,
                 response_deserializer=users_dot_v1_dot_auth__pb2.EmailConfirmationResponse.FromString,
                 _registered_method=True)
-        self.ForgotPassword = channel.unary_unary(
-                '/users.v1.UsersService/ForgotPassword',
-                request_serializer=users_dot_v1_dot_auth__pb2.ForgotPasswordRequest.SerializeToString,
-                response_deserializer=users_dot_v1_dot_auth__pb2.ForgotPasswordResponse.FromString,
+        self.PasswordForgot = channel.unary_unary(
+                '/users.v1.UsersService/PasswordForgot',
+                request_serializer=users_dot_v1_dot_auth__pb2.PasswordForgotRequest.SerializeToString,
+                response_deserializer=users_dot_v1_dot_auth__pb2.PasswordForgotResponse.FromString,
                 _registered_method=True)
 
 
@@ -67,7 +67,7 @@ class UsersServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ForgotPassword(self, request, context):
+    def PasswordForgot(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -86,10 +86,10 @@ def add_UsersServiceServicer_to_server(servicer, server):
                     request_deserializer=users_dot_v1_dot_auth__pb2.EmailConfirmationRequest.FromString,
                     response_serializer=users_dot_v1_dot_auth__pb2.EmailConfirmationResponse.SerializeToString,
             ),
-            'ForgotPassword': grpc.unary_unary_rpc_method_handler(
-                    servicer.ForgotPassword,
-                    request_deserializer=users_dot_v1_dot_auth__pb2.ForgotPasswordRequest.FromString,
-                    response_serializer=users_dot_v1_dot_auth__pb2.ForgotPasswordResponse.SerializeToString,
+            'PasswordForgot': grpc.unary_unary_rpc_method_handler(
+                    servicer.PasswordForgot,
+                    request_deserializer=users_dot_v1_dot_auth__pb2.PasswordForgotRequest.FromString,
+                    response_serializer=users_dot_v1_dot_auth__pb2.PasswordForgotResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -157,7 +157,7 @@ class UsersService(object):
             _registered_method=True)
 
     @staticmethod
-    def ForgotPassword(request,
+    def PasswordForgot(request,
             target,
             options=(),
             channel_credentials=None,
@@ -170,9 +170,9 @@ class UsersService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/users.v1.UsersService/ForgotPassword',
-            users_dot_v1_dot_auth__pb2.ForgotPasswordRequest.SerializeToString,
-            users_dot_v1_dot_auth__pb2.ForgotPasswordResponse.FromString,
+            '/users.v1.UsersService/PasswordForgot',
+            users_dot_v1_dot_auth__pb2.PasswordForgotRequest.SerializeToString,
+            users_dot_v1_dot_auth__pb2.PasswordForgotResponse.FromString,
             options,
             channel_credentials,
             insecure,

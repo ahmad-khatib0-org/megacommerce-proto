@@ -10,8 +10,8 @@ import { BrowserHeaders } from "browser-headers";
 import {
   EmailConfirmationRequest,
   EmailConfirmationResponse,
-  ForgotPasswordRequest,
-  ForgotPasswordResponse,
+  PasswordForgotRequest,
+  PasswordForgotResponse,
 } from "./auth.js";
 import { SupplierCreateRequest, SupplierCreateResponse } from "./supplier.js";
 
@@ -26,10 +26,10 @@ export interface UsersService {
     request: DeepPartial<EmailConfirmationRequest>,
     metadata?: grpc.Metadata,
   ): Promise<EmailConfirmationResponse>;
-  ForgotPassword(
-    request: DeepPartial<ForgotPasswordRequest>,
+  PasswordForgot(
+    request: DeepPartial<PasswordForgotRequest>,
     metadata?: grpc.Metadata,
-  ): Promise<ForgotPasswordResponse>;
+  ): Promise<PasswordForgotResponse>;
 }
 
 export class UsersServiceClientImpl implements UsersService {
@@ -39,7 +39,7 @@ export class UsersServiceClientImpl implements UsersService {
     this.rpc = rpc;
     this.CreateSupplier = this.CreateSupplier.bind(this);
     this.EmailConfirmation = this.EmailConfirmation.bind(this);
-    this.ForgotPassword = this.ForgotPassword.bind(this);
+    this.PasswordForgot = this.PasswordForgot.bind(this);
   }
 
   CreateSupplier(
@@ -56,11 +56,11 @@ export class UsersServiceClientImpl implements UsersService {
     return this.rpc.unary(UsersServiceEmailConfirmationDesc, EmailConfirmationRequest.fromPartial(request), metadata);
   }
 
-  ForgotPassword(
-    request: DeepPartial<ForgotPasswordRequest>,
+  PasswordForgot(
+    request: DeepPartial<PasswordForgotRequest>,
     metadata?: grpc.Metadata,
-  ): Promise<ForgotPasswordResponse> {
-    return this.rpc.unary(UsersServiceForgotPasswordDesc, ForgotPasswordRequest.fromPartial(request), metadata);
+  ): Promise<PasswordForgotResponse> {
+    return this.rpc.unary(UsersServicePasswordForgotDesc, PasswordForgotRequest.fromPartial(request), metadata);
   }
 }
 
@@ -112,19 +112,19 @@ export const UsersServiceEmailConfirmationDesc: UnaryMethodDefinitionish = {
   } as any,
 };
 
-export const UsersServiceForgotPasswordDesc: UnaryMethodDefinitionish = {
-  methodName: "ForgotPassword",
+export const UsersServicePasswordForgotDesc: UnaryMethodDefinitionish = {
+  methodName: "PasswordForgot",
   service: UsersServiceDesc,
   requestStream: false,
   responseStream: false,
   requestType: {
     serializeBinary() {
-      return ForgotPasswordRequest.encode(this).finish();
+      return PasswordForgotRequest.encode(this).finish();
     },
   } as any,
   responseType: {
     deserializeBinary(data: Uint8Array) {
-      const value = ForgotPasswordResponse.decode(data);
+      const value = PasswordForgotResponse.decode(data);
       return {
         ...value,
         toObject() {

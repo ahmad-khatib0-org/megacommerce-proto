@@ -20,8 +20,8 @@ import {
 import {
   EmailConfirmationRequest,
   EmailConfirmationResponse,
-  ForgotPasswordRequest,
-  ForgotPasswordResponse,
+  PasswordForgotRequest,
+  PasswordForgotResponse,
 } from "./auth";
 import { SupplierCreateRequest, SupplierCreateResponse } from "./supplier";
 
@@ -48,21 +48,21 @@ export const UsersServiceService = {
       Buffer.from(EmailConfirmationResponse.encode(value).finish()),
     responseDeserialize: (value: Buffer) => EmailConfirmationResponse.decode(value),
   },
-  forgotPassword: {
-    path: "/users.v1.UsersService/ForgotPassword",
+  passwordForgot: {
+    path: "/users.v1.UsersService/PasswordForgot",
     requestStream: false,
     responseStream: false,
-    requestSerialize: (value: ForgotPasswordRequest) => Buffer.from(ForgotPasswordRequest.encode(value).finish()),
-    requestDeserialize: (value: Buffer) => ForgotPasswordRequest.decode(value),
-    responseSerialize: (value: ForgotPasswordResponse) => Buffer.from(ForgotPasswordResponse.encode(value).finish()),
-    responseDeserialize: (value: Buffer) => ForgotPasswordResponse.decode(value),
+    requestSerialize: (value: PasswordForgotRequest) => Buffer.from(PasswordForgotRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer) => PasswordForgotRequest.decode(value),
+    responseSerialize: (value: PasswordForgotResponse) => Buffer.from(PasswordForgotResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer) => PasswordForgotResponse.decode(value),
   },
 } as const;
 
 export interface UsersServiceServer extends UntypedServiceImplementation {
   createSupplier: handleUnaryCall<SupplierCreateRequest, SupplierCreateResponse>;
   emailConfirmation: handleUnaryCall<EmailConfirmationRequest, EmailConfirmationResponse>;
-  forgotPassword: handleUnaryCall<ForgotPasswordRequest, ForgotPasswordResponse>;
+  passwordForgot: handleUnaryCall<PasswordForgotRequest, PasswordForgotResponse>;
 }
 
 export interface UsersServiceClient extends Client {
@@ -96,20 +96,20 @@ export interface UsersServiceClient extends Client {
     options: Partial<CallOptions>,
     callback: (error: ServiceError | null, response: EmailConfirmationResponse) => void,
   ): ClientUnaryCall;
-  forgotPassword(
-    request: ForgotPasswordRequest,
-    callback: (error: ServiceError | null, response: ForgotPasswordResponse) => void,
+  passwordForgot(
+    request: PasswordForgotRequest,
+    callback: (error: ServiceError | null, response: PasswordForgotResponse) => void,
   ): ClientUnaryCall;
-  forgotPassword(
-    request: ForgotPasswordRequest,
+  passwordForgot(
+    request: PasswordForgotRequest,
     metadata: Metadata,
-    callback: (error: ServiceError | null, response: ForgotPasswordResponse) => void,
+    callback: (error: ServiceError | null, response: PasswordForgotResponse) => void,
   ): ClientUnaryCall;
-  forgotPassword(
-    request: ForgotPasswordRequest,
+  passwordForgot(
+    request: PasswordForgotRequest,
     metadata: Metadata,
     options: Partial<CallOptions>,
-    callback: (error: ServiceError | null, response: ForgotPasswordResponse) => void,
+    callback: (error: ServiceError | null, response: PasswordForgotResponse) => void,
   ): ClientUnaryCall;
 }
 

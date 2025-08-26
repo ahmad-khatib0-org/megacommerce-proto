@@ -21,7 +21,7 @@ const _ = grpc.SupportPackageIsVersion9
 const (
 	UsersService_CreateSupplier_FullMethodName    = "/users.v1.UsersService/CreateSupplier"
 	UsersService_EmailConfirmation_FullMethodName = "/users.v1.UsersService/EmailConfirmation"
-	UsersService_ForgotPassword_FullMethodName    = "/users.v1.UsersService/ForgotPassword"
+	UsersService_PasswordForgot_FullMethodName    = "/users.v1.UsersService/PasswordForgot"
 )
 
 // UsersServiceClient is the client API for UsersService service.
@@ -30,7 +30,7 @@ const (
 type UsersServiceClient interface {
 	CreateSupplier(ctx context.Context, in *SupplierCreateRequest, opts ...grpc.CallOption) (*SupplierCreateResponse, error)
 	EmailConfirmation(ctx context.Context, in *EmailConfirmationRequest, opts ...grpc.CallOption) (*EmailConfirmationResponse, error)
-	ForgotPassword(ctx context.Context, in *ForgotPasswordRequest, opts ...grpc.CallOption) (*ForgotPasswordResponse, error)
+	PasswordForgot(ctx context.Context, in *PasswordForgotRequest, opts ...grpc.CallOption) (*PasswordForgotResponse, error)
 }
 
 type usersServiceClient struct {
@@ -61,10 +61,10 @@ func (c *usersServiceClient) EmailConfirmation(ctx context.Context, in *EmailCon
 	return out, nil
 }
 
-func (c *usersServiceClient) ForgotPassword(ctx context.Context, in *ForgotPasswordRequest, opts ...grpc.CallOption) (*ForgotPasswordResponse, error) {
+func (c *usersServiceClient) PasswordForgot(ctx context.Context, in *PasswordForgotRequest, opts ...grpc.CallOption) (*PasswordForgotResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(ForgotPasswordResponse)
-	err := c.cc.Invoke(ctx, UsersService_ForgotPassword_FullMethodName, in, out, cOpts...)
+	out := new(PasswordForgotResponse)
+	err := c.cc.Invoke(ctx, UsersService_PasswordForgot_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -77,7 +77,7 @@ func (c *usersServiceClient) ForgotPassword(ctx context.Context, in *ForgotPassw
 type UsersServiceServer interface {
 	CreateSupplier(context.Context, *SupplierCreateRequest) (*SupplierCreateResponse, error)
 	EmailConfirmation(context.Context, *EmailConfirmationRequest) (*EmailConfirmationResponse, error)
-	ForgotPassword(context.Context, *ForgotPasswordRequest) (*ForgotPasswordResponse, error)
+	PasswordForgot(context.Context, *PasswordForgotRequest) (*PasswordForgotResponse, error)
 	mustEmbedUnimplementedUsersServiceServer()
 }
 
@@ -94,8 +94,8 @@ func (UnimplementedUsersServiceServer) CreateSupplier(context.Context, *Supplier
 func (UnimplementedUsersServiceServer) EmailConfirmation(context.Context, *EmailConfirmationRequest) (*EmailConfirmationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method EmailConfirmation not implemented")
 }
-func (UnimplementedUsersServiceServer) ForgotPassword(context.Context, *ForgotPasswordRequest) (*ForgotPasswordResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ForgotPassword not implemented")
+func (UnimplementedUsersServiceServer) PasswordForgot(context.Context, *PasswordForgotRequest) (*PasswordForgotResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PasswordForgot not implemented")
 }
 func (UnimplementedUsersServiceServer) mustEmbedUnimplementedUsersServiceServer() {}
 func (UnimplementedUsersServiceServer) testEmbeddedByValue()                      {}
@@ -154,20 +154,20 @@ func _UsersService_EmailConfirmation_Handler(srv interface{}, ctx context.Contex
 	return interceptor(ctx, in, info, handler)
 }
 
-func _UsersService_ForgotPassword_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ForgotPasswordRequest)
+func _UsersService_PasswordForgot_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PasswordForgotRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(UsersServiceServer).ForgotPassword(ctx, in)
+		return srv.(UsersServiceServer).PasswordForgot(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: UsersService_ForgotPassword_FullMethodName,
+		FullMethod: UsersService_PasswordForgot_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UsersServiceServer).ForgotPassword(ctx, req.(*ForgotPasswordRequest))
+		return srv.(UsersServiceServer).PasswordForgot(ctx, req.(*PasswordForgotRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -188,8 +188,8 @@ var UsersService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _UsersService_EmailConfirmation_Handler,
 		},
 		{
-			MethodName: "ForgotPassword",
-			Handler:    _UsersService_ForgotPassword_Handler,
+			MethodName: "PasswordForgot",
+			Handler:    _UsersService_PasswordForgot_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

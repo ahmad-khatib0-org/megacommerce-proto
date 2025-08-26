@@ -2742,8 +2742,8 @@ public final class AuthProto {
 
   }
 
-  public interface ForgotPasswordRequestOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:users.v1.ForgotPasswordRequest)
+  public interface PasswordForgotRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:users.v1.PasswordForgotRequest)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2759,12 +2759,12 @@ public final class AuthProto {
         getEmailBytes();
   }
   /**
-   * Protobuf type {@code users.v1.ForgotPasswordRequest}
+   * Protobuf type {@code users.v1.PasswordForgotRequest}
    */
-  public static final class ForgotPasswordRequest extends
+  public static final class PasswordForgotRequest extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:users.v1.ForgotPasswordRequest)
-      ForgotPasswordRequestOrBuilder {
+      // @@protoc_insertion_point(message_implements:users.v1.PasswordForgotRequest)
+      PasswordForgotRequestOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -2773,27 +2773,27 @@ public final class AuthProto {
         /* minor= */ 31,
         /* patch= */ 1,
         /* suffix= */ "",
-        ForgotPasswordRequest.class.getName());
+        PasswordForgotRequest.class.getName());
     }
-    // Use ForgotPasswordRequest.newBuilder() to construct.
-    private ForgotPasswordRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use PasswordForgotRequest.newBuilder() to construct.
+    private PasswordForgotRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private ForgotPasswordRequest() {
+    private PasswordForgotRequest() {
       email_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_ForgotPasswordRequest_descriptor;
+      return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_PasswordForgotRequest_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_ForgotPasswordRequest_fieldAccessorTable
+      return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_PasswordForgotRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest.class, org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest.Builder.class);
+              org.megacommerce.users.v1.AuthProto.PasswordForgotRequest.class, org.megacommerce.users.v1.AuthProto.PasswordForgotRequest.Builder.class);
     }
 
     public static final int EMAIL_FIELD_NUMBER = 1;
@@ -2874,10 +2874,10 @@ public final class AuthProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest)) {
+      if (!(obj instanceof org.megacommerce.users.v1.AuthProto.PasswordForgotRequest)) {
         return super.equals(obj);
       }
-      org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest other = (org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest) obj;
+      org.megacommerce.users.v1.AuthProto.PasswordForgotRequest other = (org.megacommerce.users.v1.AuthProto.PasswordForgotRequest) obj;
 
       if (!getEmail()
           .equals(other.getEmail())) return false;
@@ -2899,44 +2899,44 @@ public final class AuthProto {
       return hash;
     }
 
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest parseFrom(
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotRequest parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest parseFrom(
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotRequest parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest parseFrom(
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotRequest parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest parseFrom(
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotRequest parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest parseFrom(byte[] data)
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotRequest parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest parseFrom(
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotRequest parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest parseFrom(java.io.InputStream input)
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotRequest parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest parseFrom(
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotRequest parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2944,26 +2944,26 @@ public final class AuthProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest parseDelimitedFrom(java.io.InputStream input)
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotRequest parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest parseDelimitedFrom(
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotRequest parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest parseFrom(
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotRequest parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest parseFrom(
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotRequest parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2976,7 +2976,7 @@ public final class AuthProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest prototype) {
+    public static Builder newBuilder(org.megacommerce.users.v1.AuthProto.PasswordForgotRequest prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2992,26 +2992,26 @@ public final class AuthProto {
       return builder;
     }
     /**
-     * Protobuf type {@code users.v1.ForgotPasswordRequest}
+     * Protobuf type {@code users.v1.PasswordForgotRequest}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:users.v1.ForgotPasswordRequest)
-        org.megacommerce.users.v1.AuthProto.ForgotPasswordRequestOrBuilder {
+        // @@protoc_insertion_point(builder_implements:users.v1.PasswordForgotRequest)
+        org.megacommerce.users.v1.AuthProto.PasswordForgotRequestOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_ForgotPasswordRequest_descriptor;
+        return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_PasswordForgotRequest_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_ForgotPasswordRequest_fieldAccessorTable
+        return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_PasswordForgotRequest_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest.class, org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest.Builder.class);
+                org.megacommerce.users.v1.AuthProto.PasswordForgotRequest.class, org.megacommerce.users.v1.AuthProto.PasswordForgotRequest.Builder.class);
       }
 
-      // Construct using org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest.newBuilder()
+      // Construct using org.megacommerce.users.v1.AuthProto.PasswordForgotRequest.newBuilder()
       private Builder() {
 
       }
@@ -3032,17 +3032,17 @@ public final class AuthProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_ForgotPasswordRequest_descriptor;
+        return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_PasswordForgotRequest_descriptor;
       }
 
       @java.lang.Override
-      public org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest getDefaultInstanceForType() {
-        return org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest.getDefaultInstance();
+      public org.megacommerce.users.v1.AuthProto.PasswordForgotRequest getDefaultInstanceForType() {
+        return org.megacommerce.users.v1.AuthProto.PasswordForgotRequest.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest build() {
-        org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest result = buildPartial();
+      public org.megacommerce.users.v1.AuthProto.PasswordForgotRequest build() {
+        org.megacommerce.users.v1.AuthProto.PasswordForgotRequest result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3050,14 +3050,14 @@ public final class AuthProto {
       }
 
       @java.lang.Override
-      public org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest buildPartial() {
-        org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest result = new org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest(this);
+      public org.megacommerce.users.v1.AuthProto.PasswordForgotRequest buildPartial() {
+        org.megacommerce.users.v1.AuthProto.PasswordForgotRequest result = new org.megacommerce.users.v1.AuthProto.PasswordForgotRequest(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest result) {
+      private void buildPartial0(org.megacommerce.users.v1.AuthProto.PasswordForgotRequest result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.email_ = email_;
@@ -3066,16 +3066,16 @@ public final class AuthProto {
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest) {
-          return mergeFrom((org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest)other);
+        if (other instanceof org.megacommerce.users.v1.AuthProto.PasswordForgotRequest) {
+          return mergeFrom((org.megacommerce.users.v1.AuthProto.PasswordForgotRequest)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest other) {
-        if (other == org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.megacommerce.users.v1.AuthProto.PasswordForgotRequest other) {
+        if (other == org.megacommerce.users.v1.AuthProto.PasswordForgotRequest.getDefaultInstance()) return this;
         if (!other.getEmail().isEmpty()) {
           email_ = other.email_;
           bitField0_ |= 0x00000001;
@@ -3201,23 +3201,23 @@ public final class AuthProto {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:users.v1.ForgotPasswordRequest)
+      // @@protoc_insertion_point(builder_scope:users.v1.PasswordForgotRequest)
     }
 
-    // @@protoc_insertion_point(class_scope:users.v1.ForgotPasswordRequest)
-    private static final org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:users.v1.PasswordForgotRequest)
+    private static final org.megacommerce.users.v1.AuthProto.PasswordForgotRequest DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest();
+      DEFAULT_INSTANCE = new org.megacommerce.users.v1.AuthProto.PasswordForgotRequest();
     }
 
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest getDefaultInstance() {
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotRequest getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ForgotPasswordRequest>
-        PARSER = new com.google.protobuf.AbstractParser<ForgotPasswordRequest>() {
+    private static final com.google.protobuf.Parser<PasswordForgotRequest>
+        PARSER = new com.google.protobuf.AbstractParser<PasswordForgotRequest>() {
       @java.lang.Override
-      public ForgotPasswordRequest parsePartialFrom(
+      public PasswordForgotRequest parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3236,24 +3236,24 @@ public final class AuthProto {
       }
     };
 
-    public static com.google.protobuf.Parser<ForgotPasswordRequest> parser() {
+    public static com.google.protobuf.Parser<PasswordForgotRequest> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ForgotPasswordRequest> getParserForType() {
+    public com.google.protobuf.Parser<PasswordForgotRequest> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.megacommerce.users.v1.AuthProto.ForgotPasswordRequest getDefaultInstanceForType() {
+    public org.megacommerce.users.v1.AuthProto.PasswordForgotRequest getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface ForgotPasswordResponseOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:users.v1.ForgotPasswordResponse)
+  public interface PasswordForgotResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:users.v1.PasswordForgotResponse)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -3286,15 +3286,15 @@ public final class AuthProto {
      */
     org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder();
 
-    org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse.ResponseCase getResponseCase();
+    org.megacommerce.users.v1.AuthProto.PasswordForgotResponse.ResponseCase getResponseCase();
   }
   /**
-   * Protobuf type {@code users.v1.ForgotPasswordResponse}
+   * Protobuf type {@code users.v1.PasswordForgotResponse}
    */
-  public static final class ForgotPasswordResponse extends
+  public static final class PasswordForgotResponse extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:users.v1.ForgotPasswordResponse)
-      ForgotPasswordResponseOrBuilder {
+      // @@protoc_insertion_point(message_implements:users.v1.PasswordForgotResponse)
+      PasswordForgotResponseOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -3303,26 +3303,26 @@ public final class AuthProto {
         /* minor= */ 31,
         /* patch= */ 1,
         /* suffix= */ "",
-        ForgotPasswordResponse.class.getName());
+        PasswordForgotResponse.class.getName());
     }
-    // Use ForgotPasswordResponse.newBuilder() to construct.
-    private ForgotPasswordResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use PasswordForgotResponse.newBuilder() to construct.
+    private PasswordForgotResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private ForgotPasswordResponse() {
+    private PasswordForgotResponse() {
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_ForgotPasswordResponse_descriptor;
+      return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_PasswordForgotResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_ForgotPasswordResponse_fieldAccessorTable
+      return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_PasswordForgotResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse.class, org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse.Builder.class);
+              org.megacommerce.users.v1.AuthProto.PasswordForgotResponse.class, org.megacommerce.users.v1.AuthProto.PasswordForgotResponse.Builder.class);
     }
 
     private int responseCase_ = 0;
@@ -3476,10 +3476,10 @@ public final class AuthProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse)) {
+      if (!(obj instanceof org.megacommerce.users.v1.AuthProto.PasswordForgotResponse)) {
         return super.equals(obj);
       }
-      org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse other = (org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse) obj;
+      org.megacommerce.users.v1.AuthProto.PasswordForgotResponse other = (org.megacommerce.users.v1.AuthProto.PasswordForgotResponse) obj;
 
       if (!getResponseCase().equals(other.getResponseCase())) return false;
       switch (responseCase_) {
@@ -3522,44 +3522,44 @@ public final class AuthProto {
       return hash;
     }
 
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse parseFrom(
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotResponse parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse parseFrom(
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotResponse parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse parseFrom(
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotResponse parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse parseFrom(
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotResponse parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse parseFrom(byte[] data)
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotResponse parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse parseFrom(
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotResponse parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse parseFrom(java.io.InputStream input)
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotResponse parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse parseFrom(
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotResponse parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3567,26 +3567,26 @@ public final class AuthProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse parseDelimitedFrom(java.io.InputStream input)
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotResponse parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse parseDelimitedFrom(
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotResponse parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse parseFrom(
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotResponse parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse parseFrom(
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotResponse parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3599,7 +3599,7 @@ public final class AuthProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse prototype) {
+    public static Builder newBuilder(org.megacommerce.users.v1.AuthProto.PasswordForgotResponse prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3615,26 +3615,26 @@ public final class AuthProto {
       return builder;
     }
     /**
-     * Protobuf type {@code users.v1.ForgotPasswordResponse}
+     * Protobuf type {@code users.v1.PasswordForgotResponse}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:users.v1.ForgotPasswordResponse)
-        org.megacommerce.users.v1.AuthProto.ForgotPasswordResponseOrBuilder {
+        // @@protoc_insertion_point(builder_implements:users.v1.PasswordForgotResponse)
+        org.megacommerce.users.v1.AuthProto.PasswordForgotResponseOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_ForgotPasswordResponse_descriptor;
+        return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_PasswordForgotResponse_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_ForgotPasswordResponse_fieldAccessorTable
+        return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_PasswordForgotResponse_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse.class, org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse.Builder.class);
+                org.megacommerce.users.v1.AuthProto.PasswordForgotResponse.class, org.megacommerce.users.v1.AuthProto.PasswordForgotResponse.Builder.class);
       }
 
-      // Construct using org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse.newBuilder()
+      // Construct using org.megacommerce.users.v1.AuthProto.PasswordForgotResponse.newBuilder()
       private Builder() {
 
       }
@@ -3662,17 +3662,17 @@ public final class AuthProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_ForgotPasswordResponse_descriptor;
+        return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_PasswordForgotResponse_descriptor;
       }
 
       @java.lang.Override
-      public org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse getDefaultInstanceForType() {
-        return org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse.getDefaultInstance();
+      public org.megacommerce.users.v1.AuthProto.PasswordForgotResponse getDefaultInstanceForType() {
+        return org.megacommerce.users.v1.AuthProto.PasswordForgotResponse.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse build() {
-        org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse result = buildPartial();
+      public org.megacommerce.users.v1.AuthProto.PasswordForgotResponse build() {
+        org.megacommerce.users.v1.AuthProto.PasswordForgotResponse result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3680,19 +3680,19 @@ public final class AuthProto {
       }
 
       @java.lang.Override
-      public org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse buildPartial() {
-        org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse result = new org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse(this);
+      public org.megacommerce.users.v1.AuthProto.PasswordForgotResponse buildPartial() {
+        org.megacommerce.users.v1.AuthProto.PasswordForgotResponse result = new org.megacommerce.users.v1.AuthProto.PasswordForgotResponse(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         buildPartialOneofs(result);
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse result) {
+      private void buildPartial0(org.megacommerce.users.v1.AuthProto.PasswordForgotResponse result) {
         int from_bitField0_ = bitField0_;
       }
 
-      private void buildPartialOneofs(org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse result) {
+      private void buildPartialOneofs(org.megacommerce.users.v1.AuthProto.PasswordForgotResponse result) {
         result.responseCase_ = responseCase_;
         result.response_ = this.response_;
         if (responseCase_ == 1 &&
@@ -3707,16 +3707,16 @@ public final class AuthProto {
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse) {
-          return mergeFrom((org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse)other);
+        if (other instanceof org.megacommerce.users.v1.AuthProto.PasswordForgotResponse) {
+          return mergeFrom((org.megacommerce.users.v1.AuthProto.PasswordForgotResponse)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse other) {
-        if (other == org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.megacommerce.users.v1.AuthProto.PasswordForgotResponse other) {
+        if (other == org.megacommerce.users.v1.AuthProto.PasswordForgotResponse.getDefaultInstance()) return this;
         switch (other.getResponseCase()) {
           case DATA: {
             mergeData(other.getData());
@@ -4086,23 +4086,23 @@ public final class AuthProto {
         return errorBuilder_;
       }
 
-      // @@protoc_insertion_point(builder_scope:users.v1.ForgotPasswordResponse)
+      // @@protoc_insertion_point(builder_scope:users.v1.PasswordForgotResponse)
     }
 
-    // @@protoc_insertion_point(class_scope:users.v1.ForgotPasswordResponse)
-    private static final org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:users.v1.PasswordForgotResponse)
+    private static final org.megacommerce.users.v1.AuthProto.PasswordForgotResponse DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse();
+      DEFAULT_INSTANCE = new org.megacommerce.users.v1.AuthProto.PasswordForgotResponse();
     }
 
-    public static org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse getDefaultInstance() {
+    public static org.megacommerce.users.v1.AuthProto.PasswordForgotResponse getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ForgotPasswordResponse>
-        PARSER = new com.google.protobuf.AbstractParser<ForgotPasswordResponse>() {
+    private static final com.google.protobuf.Parser<PasswordForgotResponse>
+        PARSER = new com.google.protobuf.AbstractParser<PasswordForgotResponse>() {
       @java.lang.Override
-      public ForgotPasswordResponse parsePartialFrom(
+      public PasswordForgotResponse parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4121,17 +4121,17 @@ public final class AuthProto {
       }
     };
 
-    public static com.google.protobuf.Parser<ForgotPasswordResponse> parser() {
+    public static com.google.protobuf.Parser<PasswordForgotResponse> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ForgotPasswordResponse> getParserForType() {
+    public com.google.protobuf.Parser<PasswordForgotResponse> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.megacommerce.users.v1.AuthProto.ForgotPasswordResponse getDefaultInstanceForType() {
+    public org.megacommerce.users.v1.AuthProto.PasswordForgotResponse getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4153,15 +4153,15 @@ public final class AuthProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_users_v1_EmailConfirmationResponse_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_users_v1_ForgotPasswordRequest_descriptor;
+    internal_static_users_v1_PasswordForgotRequest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_users_v1_ForgotPasswordRequest_fieldAccessorTable;
+      internal_static_users_v1_PasswordForgotRequest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_users_v1_ForgotPasswordResponse_descriptor;
+    internal_static_users_v1_PasswordForgotResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_users_v1_ForgotPasswordResponse_fieldAccessorTable;
+      internal_static_users_v1_PasswordForgotResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4182,9 +4182,9 @@ public final class AuthProto {
       "okenId\"\212\001\n\031EmailConfirmationResponse\0224\n\004" +
       "data\030\001 \001(\0132\036.shared.v1.SuccessResponseDa" +
       "taH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.Ap" +
-      "pErrorH\000R\005errorB\n\n\010response\"-\n\025ForgotPas" +
-      "swordRequest\022\024\n\005email\030\001 \001(\tR\005email\"\207\001\n\026F" +
-      "orgotPasswordResponse\0224\n\004data\030\001 \001(\0132\036.sh" +
+      "pErrorH\000R\005errorB\n\n\010response\"-\n\025PasswordF" +
+      "orgotRequest\022\024\n\005email\030\001 \001(\tR\005email\"\207\001\n\026P" +
+      "asswordForgotResponse\0224\n\004data\030\001 \001(\0132\036.sh" +
       "ared.v1.SuccessResponseDataH\000R\004data\022+\n\005e" +
       "rror\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005error" +
       "B\n\n\010responseBm\n\031org.megacommerce.users.v" +
@@ -4216,17 +4216,17 @@ public final class AuthProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_users_v1_EmailConfirmationResponse_descriptor,
         new java.lang.String[] { "Data", "Error", "Response", });
-    internal_static_users_v1_ForgotPasswordRequest_descriptor =
+    internal_static_users_v1_PasswordForgotRequest_descriptor =
       getDescriptor().getMessageTypes().get(3);
-    internal_static_users_v1_ForgotPasswordRequest_fieldAccessorTable = new
+    internal_static_users_v1_PasswordForgotRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_users_v1_ForgotPasswordRequest_descriptor,
+        internal_static_users_v1_PasswordForgotRequest_descriptor,
         new java.lang.String[] { "Email", });
-    internal_static_users_v1_ForgotPasswordResponse_descriptor =
+    internal_static_users_v1_PasswordForgotResponse_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_users_v1_ForgotPasswordResponse_fieldAccessorTable = new
+    internal_static_users_v1_PasswordForgotResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_users_v1_ForgotPasswordResponse_descriptor,
+        internal_static_users_v1_PasswordForgotResponse_descriptor,
         new java.lang.String[] { "Data", "Error", "Response", });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.shared.v1.ErrorProto.getDescriptor();

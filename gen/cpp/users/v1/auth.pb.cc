@@ -63,7 +63,7 @@ struct TokenDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TokenDefaultTypeInternal _Token_default_instance_;
 
-inline constexpr ForgotPasswordRequest::Impl_::Impl_(
+inline constexpr PasswordForgotRequest::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
         email_(
@@ -71,24 +71,24 @@ inline constexpr ForgotPasswordRequest::Impl_::Impl_(
             ::_pbi::ConstantInitialized()) {}
 
 template <typename>
-PROTOBUF_CONSTEXPR ForgotPasswordRequest::ForgotPasswordRequest(::_pbi::ConstantInitialized)
+PROTOBUF_CONSTEXPR PasswordForgotRequest::PasswordForgotRequest(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(ForgotPasswordRequest_class_data_.base()),
+    : ::google::protobuf::Message(PasswordForgotRequest_class_data_.base()),
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(),
 #endif  // PROTOBUF_CUSTOM_VTABLE
       _impl_(::_pbi::ConstantInitialized()) {
 }
-struct ForgotPasswordRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ForgotPasswordRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ForgotPasswordRequestDefaultTypeInternal() {}
+struct PasswordForgotRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR PasswordForgotRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~PasswordForgotRequestDefaultTypeInternal() {}
   union {
-    ForgotPasswordRequest _instance;
+    PasswordForgotRequest _instance;
   };
 };
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ForgotPasswordRequestDefaultTypeInternal _ForgotPasswordRequest_default_instance_;
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PasswordForgotRequestDefaultTypeInternal _PasswordForgotRequest_default_instance_;
 
 inline constexpr EmailConfirmationRequest::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -123,31 +123,31 @@ struct EmailConfirmationRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 EmailConfirmationRequestDefaultTypeInternal _EmailConfirmationRequest_default_instance_;
 
-inline constexpr ForgotPasswordResponse::Impl_::Impl_(
+inline constexpr PasswordForgotResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : response_{},
         _cached_size_{0},
         _oneof_case_{} {}
 
 template <typename>
-PROTOBUF_CONSTEXPR ForgotPasswordResponse::ForgotPasswordResponse(::_pbi::ConstantInitialized)
+PROTOBUF_CONSTEXPR PasswordForgotResponse::PasswordForgotResponse(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(ForgotPasswordResponse_class_data_.base()),
+    : ::google::protobuf::Message(PasswordForgotResponse_class_data_.base()),
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(),
 #endif  // PROTOBUF_CUSTOM_VTABLE
       _impl_(::_pbi::ConstantInitialized()) {
 }
-struct ForgotPasswordResponseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ForgotPasswordResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ForgotPasswordResponseDefaultTypeInternal() {}
+struct PasswordForgotResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR PasswordForgotResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~PasswordForgotResponseDefaultTypeInternal() {}
   union {
-    ForgotPasswordResponse _instance;
+    PasswordForgotResponse _instance;
   };
 };
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ForgotPasswordResponseDefaultTypeInternal _ForgotPasswordResponse_default_instance_;
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PasswordForgotResponseDefaultTypeInternal _PasswordForgotResponse_default_instance_;
 
 inline constexpr EmailConfirmationResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -213,15 +213,15 @@ const ::uint32_t
         ::_pbi::kInvalidFieldOffsetTag,
         PROTOBUF_FIELD_OFFSET(::users::v1::EmailConfirmationResponse, _impl_.response_),
         0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::users::v1::ForgotPasswordRequest, _impl_._has_bits_),
+        PROTOBUF_FIELD_OFFSET(::users::v1::PasswordForgotRequest, _impl_._has_bits_),
         4, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::users::v1::ForgotPasswordRequest, _impl_.email_),
+        PROTOBUF_FIELD_OFFSET(::users::v1::PasswordForgotRequest, _impl_.email_),
         0,
         0x004, // bitmap
-        PROTOBUF_FIELD_OFFSET(::users::v1::ForgotPasswordResponse, _impl_._oneof_case_[0]),
+        PROTOBUF_FIELD_OFFSET(::users::v1::PasswordForgotResponse, _impl_._oneof_case_[0]),
         ::_pbi::kInvalidFieldOffsetTag,
         ::_pbi::kInvalidFieldOffsetTag,
-        PROTOBUF_FIELD_OFFSET(::users::v1::ForgotPasswordResponse, _impl_.response_),
+        PROTOBUF_FIELD_OFFSET(::users::v1::PasswordForgotResponse, _impl_.response_),
 };
 
 static const ::_pbi::MigrationSchema
@@ -229,15 +229,15 @@ static const ::_pbi::MigrationSchema
         {0, sizeof(::users::v1::Token)},
         {15, sizeof(::users::v1::EmailConfirmationRequest)},
         {24, sizeof(::users::v1::EmailConfirmationResponse)},
-        {29, sizeof(::users::v1::ForgotPasswordRequest)},
-        {34, sizeof(::users::v1::ForgotPasswordResponse)},
+        {29, sizeof(::users::v1::PasswordForgotRequest)},
+        {34, sizeof(::users::v1::PasswordForgotResponse)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::users::v1::_Token_default_instance_._instance,
     &::users::v1::_EmailConfirmationRequest_default_instance_._instance,
     &::users::v1::_EmailConfirmationResponse_default_instance_._instance,
-    &::users::v1::_ForgotPasswordRequest_default_instance_._instance,
-    &::users::v1::_ForgotPasswordResponse_default_instance_._instance,
+    &::users::v1::_PasswordForgotRequest_default_instance_._instance,
+    &::users::v1::_PasswordForgotResponse_default_instance_._instance,
 };
 const char descriptor_table_protodef_users_2fv1_2fauth_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
@@ -252,9 +252,9 @@ const char descriptor_table_protodef_users_2fv1_2fauth_2eproto[] ABSL_ATTRIBUTE_
     "okenId\"\212\001\n\031EmailConfirmationResponse\0224\n\004"
     "data\030\001 \001(\0132\036.shared.v1.SuccessResponseDa"
     "taH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.Ap"
-    "pErrorH\000R\005errorB\n\n\010response\"-\n\025ForgotPas"
-    "swordRequest\022\024\n\005email\030\001 \001(\tR\005email\"\207\001\n\026F"
-    "orgotPasswordResponse\0224\n\004data\030\001 \001(\0132\036.sh"
+    "pErrorH\000R\005errorB\n\n\010response\"-\n\025PasswordF"
+    "orgotRequest\022\024\n\005email\030\001 \001(\tR\005email\"\207\001\n\026P"
+    "asswordForgotResponse\0224\n\004data\030\001 \001(\0132\036.sh"
     "ared.v1.SuccessResponseDataH\000R\004data\022+\n\005e"
     "rror\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005error"
     "B\n\n\010responseBm\n\031org.megacommerce.users.v"
@@ -1467,115 +1467,115 @@ void EmailConfirmationResponse::InternalSwap(EmailConfirmationResponse* PROTOBUF
 }
 // ===================================================================
 
-class ForgotPasswordRequest::_Internal {
+class PasswordForgotRequest::_Internal {
  public:
   using HasBits =
-      decltype(::std::declval<ForgotPasswordRequest>()._impl_._has_bits_);
+      decltype(::std::declval<PasswordForgotRequest>()._impl_._has_bits_);
   static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(ForgotPasswordRequest, _impl_._has_bits_);
+      8 * PROTOBUF_FIELD_OFFSET(PasswordForgotRequest, _impl_._has_bits_);
 };
 
-ForgotPasswordRequest::ForgotPasswordRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+PasswordForgotRequest::PasswordForgotRequest(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena, ForgotPasswordRequest_class_data_.base()) {
+    : ::google::protobuf::Message(arena, PasswordForgotRequest_class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
   SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:users.v1.ForgotPasswordRequest)
+  // @@protoc_insertion_point(arena_constructor:users.v1.PasswordForgotRequest)
 }
-PROTOBUF_NDEBUG_INLINE ForgotPasswordRequest::Impl_::Impl_(
+PROTOBUF_NDEBUG_INLINE PasswordForgotRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-    const ::users::v1::ForgotPasswordRequest& from_msg)
+    const ::users::v1::PasswordForgotRequest& from_msg)
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
         email_(arena, from.email_) {}
 
-ForgotPasswordRequest::ForgotPasswordRequest(
+PasswordForgotRequest::PasswordForgotRequest(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
-    const ForgotPasswordRequest& from)
+    const PasswordForgotRequest& from)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena, ForgotPasswordRequest_class_data_.base()) {
+    : ::google::protobuf::Message(arena, PasswordForgotRequest_class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  ForgotPasswordRequest* const _this = this;
+  PasswordForgotRequest* const _this = this;
   (void)_this;
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
 
-  // @@protoc_insertion_point(copy_constructor:users.v1.ForgotPasswordRequest)
+  // @@protoc_insertion_point(copy_constructor:users.v1.PasswordForgotRequest)
 }
-PROTOBUF_NDEBUG_INLINE ForgotPasswordRequest::Impl_::Impl_(
+PROTOBUF_NDEBUG_INLINE PasswordForgotRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
         email_(arena) {}
 
-inline void ForgotPasswordRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+inline void PasswordForgotRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
 }
-ForgotPasswordRequest::~ForgotPasswordRequest() {
-  // @@protoc_insertion_point(destructor:users.v1.ForgotPasswordRequest)
+PasswordForgotRequest::~PasswordForgotRequest() {
+  // @@protoc_insertion_point(destructor:users.v1.PasswordForgotRequest)
   SharedDtor(*this);
 }
-inline void ForgotPasswordRequest::SharedDtor(MessageLite& self) {
-  ForgotPasswordRequest& this_ = static_cast<ForgotPasswordRequest&>(self);
+inline void PasswordForgotRequest::SharedDtor(MessageLite& self) {
+  PasswordForgotRequest& this_ = static_cast<PasswordForgotRequest&>(self);
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.email_.Destroy();
   this_._impl_.~Impl_();
 }
 
-inline void* PROTOBUF_NONNULL ForgotPasswordRequest::PlacementNew_(
+inline void* PROTOBUF_NONNULL PasswordForgotRequest::PlacementNew_(
     const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) ForgotPasswordRequest(arena);
+  return ::new (mem) PasswordForgotRequest(arena);
 }
-constexpr auto ForgotPasswordRequest::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(ForgotPasswordRequest),
-                                            alignof(ForgotPasswordRequest));
+constexpr auto PasswordForgotRequest::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(PasswordForgotRequest),
+                                            alignof(PasswordForgotRequest));
 }
-constexpr auto ForgotPasswordRequest::InternalGenerateClassData_() {
+constexpr auto PasswordForgotRequest::InternalGenerateClassData_() {
   return ::google::protobuf::internal::ClassDataFull{
       ::google::protobuf::internal::ClassData{
-          &_ForgotPasswordRequest_default_instance_._instance,
+          &_PasswordForgotRequest_default_instance_._instance,
           &_table_.header,
           nullptr,  // OnDemandRegisterArenaDtor
           nullptr,  // IsInitialized
-          &ForgotPasswordRequest::MergeImpl,
-          ::google::protobuf::Message::GetNewImpl<ForgotPasswordRequest>(),
+          &PasswordForgotRequest::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<PasswordForgotRequest>(),
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-          &ForgotPasswordRequest::SharedDtor,
-          ::google::protobuf::Message::GetClearImpl<ForgotPasswordRequest>(), &ForgotPasswordRequest::ByteSizeLong,
-              &ForgotPasswordRequest::_InternalSerialize,
+          &PasswordForgotRequest::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<PasswordForgotRequest>(), &PasswordForgotRequest::ByteSizeLong,
+              &PasswordForgotRequest::_InternalSerialize,
 #endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(ForgotPasswordRequest, _impl_._cached_size_),
+          PROTOBUF_FIELD_OFFSET(PasswordForgotRequest, _impl_._cached_size_),
           false,
       },
-      &ForgotPasswordRequest::kDescriptorMethods,
+      &PasswordForgotRequest::kDescriptorMethods,
       &descriptor_table_users_2fv1_2fauth_2eproto,
       nullptr,  // tracker
   };
 }
 
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull ForgotPasswordRequest_class_data_ =
-        ForgotPasswordRequest::InternalGenerateClassData_();
+    ::google::protobuf::internal::ClassDataFull PasswordForgotRequest_class_data_ =
+        PasswordForgotRequest::InternalGenerateClassData_();
 
 PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-ForgotPasswordRequest::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&ForgotPasswordRequest_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(ForgotPasswordRequest_class_data_.tc_table);
-  return ForgotPasswordRequest_class_data_.base();
+PasswordForgotRequest::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&PasswordForgotRequest_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(PasswordForgotRequest_class_data_.tc_table);
+  return PasswordForgotRequest_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
 const ::_pbi::TcParseTable<0, 1, 0, 44, 2>
-ForgotPasswordRequest::_table_ = {
+PasswordForgotRequest::_table_ = {
   {
-    PROTOBUF_FIELD_OFFSET(ForgotPasswordRequest, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(PasswordForgotRequest, _impl_._has_bits_),
     0, // no _extensions_
     1, 0,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
@@ -1584,32 +1584,32 @@ ForgotPasswordRequest::_table_ = {
     1,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
-    ForgotPasswordRequest_class_data_.base(),
+    PasswordForgotRequest_class_data_.base(),
     nullptr,  // post_loop_handler
     ::_pbi::TcParser::GenericFallback,  // fallback
     #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-    ::_pbi::TcParser::GetTable<::users::v1::ForgotPasswordRequest>(),  // to_prefetch
+    ::_pbi::TcParser::GetTable<::users::v1::PasswordForgotRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     // string email = 1 [json_name = "email"];
     {::_pbi::TcParser::FastUS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ForgotPasswordRequest, _impl_.email_)}},
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(PasswordForgotRequest, _impl_.email_)}},
   }}, {{
     65535, 65535
   }}, {{
     // string email = 1 [json_name = "email"];
-    {PROTOBUF_FIELD_OFFSET(ForgotPasswordRequest, _impl_.email_), _Internal::kHasBitsOffset + 0, 0,
+    {PROTOBUF_FIELD_OFFSET(PasswordForgotRequest, _impl_.email_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
   // no aux_entries
   {{
     "\36\5\0\0\0\0\0\0"
-    "users.v1.ForgotPasswordRequest"
+    "users.v1.PasswordForgotRequest"
     "email"
   }},
 };
-PROTOBUF_NOINLINE void ForgotPasswordRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:users.v1.ForgotPasswordRequest)
+PROTOBUF_NOINLINE void PasswordForgotRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:users.v1.PasswordForgotRequest)
   ::google::protobuf::internal::TSanWrite(&_impl_);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
@@ -1624,17 +1624,17 @@ PROTOBUF_NOINLINE void ForgotPasswordRequest::Clear() {
 }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-::uint8_t* PROTOBUF_NONNULL ForgotPasswordRequest::_InternalSerialize(
+::uint8_t* PROTOBUF_NONNULL PasswordForgotRequest::_InternalSerialize(
     const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
-  const ForgotPasswordRequest& this_ = static_cast<const ForgotPasswordRequest&>(base);
+  const PasswordForgotRequest& this_ = static_cast<const PasswordForgotRequest&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-::uint8_t* PROTOBUF_NONNULL ForgotPasswordRequest::_InternalSerialize(
+::uint8_t* PROTOBUF_NONNULL PasswordForgotRequest::_InternalSerialize(
     ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-  const ForgotPasswordRequest& this_ = *this;
+  const PasswordForgotRequest& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(serialize_to_array_start:users.v1.ForgotPasswordRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:users.v1.PasswordForgotRequest)
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
@@ -1643,7 +1643,7 @@ PROTOBUF_NOINLINE void ForgotPasswordRequest::Clear() {
     if (!this_._internal_email().empty()) {
       const ::std::string& _s = this_._internal_email();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "users.v1.ForgotPasswordRequest.email");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "users.v1.PasswordForgotRequest.email");
       target = stream->WriteStringMaybeAliased(1, _s, target);
     }
   }
@@ -1653,18 +1653,18 @@ PROTOBUF_NOINLINE void ForgotPasswordRequest::Clear() {
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
             this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:users.v1.ForgotPasswordRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:users.v1.PasswordForgotRequest)
   return target;
 }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-::size_t ForgotPasswordRequest::ByteSizeLong(const MessageLite& base) {
-  const ForgotPasswordRequest& this_ = static_cast<const ForgotPasswordRequest&>(base);
+::size_t PasswordForgotRequest::ByteSizeLong(const MessageLite& base) {
+  const PasswordForgotRequest& this_ = static_cast<const PasswordForgotRequest&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-::size_t ForgotPasswordRequest::ByteSizeLong() const {
-  const ForgotPasswordRequest& this_ = *this;
+::size_t PasswordForgotRequest::ByteSizeLong() const {
+  const PasswordForgotRequest& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(message_byte_size_start:users.v1.ForgotPasswordRequest)
+  // @@protoc_insertion_point(message_byte_size_start:users.v1.PasswordForgotRequest)
   ::size_t total_size = 0;
 
   ::uint32_t cached_has_bits = 0;
@@ -1685,10 +1685,10 @@ PROTOBUF_NOINLINE void ForgotPasswordRequest::Clear() {
                                              &this_._impl_._cached_size_);
 }
 
-void ForgotPasswordRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
-  auto* const _this = static_cast<ForgotPasswordRequest*>(&to_msg);
-  auto& from = static_cast<const ForgotPasswordRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:users.v1.ForgotPasswordRequest)
+void PasswordForgotRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<PasswordForgotRequest*>(&to_msg);
+  auto& from = static_cast<const PasswordForgotRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:users.v1.PasswordForgotRequest)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -1707,15 +1707,15 @@ void ForgotPasswordRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, c
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void ForgotPasswordRequest::CopyFrom(const ForgotPasswordRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:users.v1.ForgotPasswordRequest)
+void PasswordForgotRequest::CopyFrom(const PasswordForgotRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:users.v1.PasswordForgotRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 
-void ForgotPasswordRequest::InternalSwap(ForgotPasswordRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+void PasswordForgotRequest::InternalSwap(PasswordForgotRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   using ::std::swap;
   auto* arena = GetArena();
   ABSL_DCHECK_EQ(arena, other->GetArena());
@@ -1724,18 +1724,18 @@ void ForgotPasswordRequest::InternalSwap(ForgotPasswordRequest* PROTOBUF_RESTRIC
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.email_, &other->_impl_.email_, arena);
 }
 
-::google::protobuf::Metadata ForgotPasswordRequest::GetMetadata() const {
+::google::protobuf::Metadata PasswordForgotRequest::GetMetadata() const {
   return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // ===================================================================
 
-class ForgotPasswordResponse::_Internal {
+class PasswordForgotResponse::_Internal {
  public:
   static constexpr ::int32_t kOneofCaseOffset =
-      PROTOBUF_FIELD_OFFSET(::users::v1::ForgotPasswordResponse, _impl_._oneof_case_);
+      PROTOBUF_FIELD_OFFSET(::users::v1::PasswordForgotResponse, _impl_._oneof_case_);
 };
 
-void ForgotPasswordResponse::set_allocated_data(::shared::v1::SuccessResponseData* PROTOBUF_NULLABLE data) {
+void PasswordForgotResponse::set_allocated_data(::shared::v1::SuccessResponseData* PROTOBUF_NULLABLE data) {
   ::google::protobuf::Arena* message_arena = GetArena();
   clear_response();
   if (data) {
@@ -1746,9 +1746,9 @@ void ForgotPasswordResponse::set_allocated_data(::shared::v1::SuccessResponseDat
     set_has_data();
     _impl_.response_.data_ = data;
   }
-  // @@protoc_insertion_point(field_set_allocated:users.v1.ForgotPasswordResponse.data)
+  // @@protoc_insertion_point(field_set_allocated:users.v1.PasswordForgotResponse.data)
 }
-void ForgotPasswordResponse::clear_data() {
+void PasswordForgotResponse::clear_data() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (response_case() == kData) {
     if (GetArena() == nullptr) {
@@ -1759,7 +1759,7 @@ void ForgotPasswordResponse::clear_data() {
     clear_has_response();
   }
 }
-void ForgotPasswordResponse::set_allocated_error(::shared::v1::AppError* PROTOBUF_NULLABLE error) {
+void PasswordForgotResponse::set_allocated_error(::shared::v1::AppError* PROTOBUF_NULLABLE error) {
   ::google::protobuf::Arena* message_arena = GetArena();
   clear_response();
   if (error) {
@@ -1770,9 +1770,9 @@ void ForgotPasswordResponse::set_allocated_error(::shared::v1::AppError* PROTOBU
     set_has_error();
     _impl_.response_.error_ = error;
   }
-  // @@protoc_insertion_point(field_set_allocated:users.v1.ForgotPasswordResponse.error)
+  // @@protoc_insertion_point(field_set_allocated:users.v1.PasswordForgotResponse.error)
 }
-void ForgotPasswordResponse::clear_error() {
+void PasswordForgotResponse::clear_error() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (response_case() == kError) {
     if (GetArena() == nullptr) {
@@ -1783,32 +1783,32 @@ void ForgotPasswordResponse::clear_error() {
     clear_has_response();
   }
 }
-ForgotPasswordResponse::ForgotPasswordResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+PasswordForgotResponse::PasswordForgotResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena, ForgotPasswordResponse_class_data_.base()) {
+    : ::google::protobuf::Message(arena, PasswordForgotResponse_class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
   SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:users.v1.ForgotPasswordResponse)
+  // @@protoc_insertion_point(arena_constructor:users.v1.PasswordForgotResponse)
 }
-PROTOBUF_NDEBUG_INLINE ForgotPasswordResponse::Impl_::Impl_(
+PROTOBUF_NDEBUG_INLINE PasswordForgotResponse::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-    const ::users::v1::ForgotPasswordResponse& from_msg)
+    const ::users::v1::PasswordForgotResponse& from_msg)
       : response_{},
         _cached_size_{0},
         _oneof_case_{from._oneof_case_[0]} {}
 
-ForgotPasswordResponse::ForgotPasswordResponse(
+PasswordForgotResponse::PasswordForgotResponse(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
-    const ForgotPasswordResponse& from)
+    const PasswordForgotResponse& from)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena, ForgotPasswordResponse_class_data_.base()) {
+    : ::google::protobuf::Message(arena, PasswordForgotResponse_class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  ForgotPasswordResponse* const _this = this;
+  PasswordForgotResponse* const _this = this;
   (void)_this;
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
@@ -1824,24 +1824,24 @@ ForgotPasswordResponse::ForgotPasswordResponse(
         break;
   }
 
-  // @@protoc_insertion_point(copy_constructor:users.v1.ForgotPasswordResponse)
+  // @@protoc_insertion_point(copy_constructor:users.v1.PasswordForgotResponse)
 }
-PROTOBUF_NDEBUG_INLINE ForgotPasswordResponse::Impl_::Impl_(
+PROTOBUF_NDEBUG_INLINE PasswordForgotResponse::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : response_{},
         _cached_size_{0},
         _oneof_case_{} {}
 
-inline void ForgotPasswordResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+inline void PasswordForgotResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
 }
-ForgotPasswordResponse::~ForgotPasswordResponse() {
-  // @@protoc_insertion_point(destructor:users.v1.ForgotPasswordResponse)
+PasswordForgotResponse::~PasswordForgotResponse() {
+  // @@protoc_insertion_point(destructor:users.v1.PasswordForgotResponse)
   SharedDtor(*this);
 }
-inline void ForgotPasswordResponse::SharedDtor(MessageLite& self) {
-  ForgotPasswordResponse& this_ = static_cast<ForgotPasswordResponse&>(self);
+inline void PasswordForgotResponse::SharedDtor(MessageLite& self) {
+  PasswordForgotResponse& this_ = static_cast<PasswordForgotResponse&>(self);
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   if (this_.has_response()) {
@@ -1850,8 +1850,8 @@ inline void ForgotPasswordResponse::SharedDtor(MessageLite& self) {
   this_._impl_.~Impl_();
 }
 
-void ForgotPasswordResponse::clear_response() {
-// @@protoc_insertion_point(one_of_clear_start:users.v1.ForgotPasswordResponse)
+void PasswordForgotResponse::clear_response() {
+// @@protoc_insertion_point(one_of_clear_start:users.v1.PasswordForgotResponse)
   ::google::protobuf::internal::TSanWrite(&_impl_);
   switch (response_case()) {
     case kData: {
@@ -1878,51 +1878,51 @@ void ForgotPasswordResponse::clear_response() {
 }
 
 
-inline void* PROTOBUF_NONNULL ForgotPasswordResponse::PlacementNew_(
+inline void* PROTOBUF_NONNULL PasswordForgotResponse::PlacementNew_(
     const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) ForgotPasswordResponse(arena);
+  return ::new (mem) PasswordForgotResponse(arena);
 }
-constexpr auto ForgotPasswordResponse::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::ZeroInit(sizeof(ForgotPasswordResponse),
-                                            alignof(ForgotPasswordResponse));
+constexpr auto PasswordForgotResponse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::ZeroInit(sizeof(PasswordForgotResponse),
+                                            alignof(PasswordForgotResponse));
 }
-constexpr auto ForgotPasswordResponse::InternalGenerateClassData_() {
+constexpr auto PasswordForgotResponse::InternalGenerateClassData_() {
   return ::google::protobuf::internal::ClassDataFull{
       ::google::protobuf::internal::ClassData{
-          &_ForgotPasswordResponse_default_instance_._instance,
+          &_PasswordForgotResponse_default_instance_._instance,
           &_table_.header,
           nullptr,  // OnDemandRegisterArenaDtor
           nullptr,  // IsInitialized
-          &ForgotPasswordResponse::MergeImpl,
-          ::google::protobuf::Message::GetNewImpl<ForgotPasswordResponse>(),
+          &PasswordForgotResponse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<PasswordForgotResponse>(),
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-          &ForgotPasswordResponse::SharedDtor,
-          ::google::protobuf::Message::GetClearImpl<ForgotPasswordResponse>(), &ForgotPasswordResponse::ByteSizeLong,
-              &ForgotPasswordResponse::_InternalSerialize,
+          &PasswordForgotResponse::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<PasswordForgotResponse>(), &PasswordForgotResponse::ByteSizeLong,
+              &PasswordForgotResponse::_InternalSerialize,
 #endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(ForgotPasswordResponse, _impl_._cached_size_),
+          PROTOBUF_FIELD_OFFSET(PasswordForgotResponse, _impl_._cached_size_),
           false,
       },
-      &ForgotPasswordResponse::kDescriptorMethods,
+      &PasswordForgotResponse::kDescriptorMethods,
       &descriptor_table_users_2fv1_2fauth_2eproto,
       nullptr,  // tracker
   };
 }
 
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull ForgotPasswordResponse_class_data_ =
-        ForgotPasswordResponse::InternalGenerateClassData_();
+    ::google::protobuf::internal::ClassDataFull PasswordForgotResponse_class_data_ =
+        PasswordForgotResponse::InternalGenerateClassData_();
 
 PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-ForgotPasswordResponse::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&ForgotPasswordResponse_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(ForgotPasswordResponse_class_data_.tc_table);
-  return ForgotPasswordResponse_class_data_.base();
+PasswordForgotResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&PasswordForgotResponse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(PasswordForgotResponse_class_data_.tc_table);
+  return PasswordForgotResponse_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
 const ::_pbi::TcParseTable<0, 2, 2, 0, 2>
-ForgotPasswordResponse::_table_ = {
+PasswordForgotResponse::_table_ = {
   {
     0,  // no _has_bits_
     0, // no _extensions_
@@ -1933,11 +1933,11 @@ ForgotPasswordResponse::_table_ = {
     2,  // num_field_entries
     2,  // num_aux_entries
     offsetof(decltype(_table_), aux_entries),
-    ForgotPasswordResponse_class_data_.base(),
+    PasswordForgotResponse_class_data_.base(),
     nullptr,  // post_loop_handler
     ::_pbi::TcParser::GenericFallback,  // fallback
     #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-    ::_pbi::TcParser::GetTable<::users::v1::ForgotPasswordResponse>(),  // to_prefetch
+    ::_pbi::TcParser::GetTable<::users::v1::PasswordForgotResponse>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     {::_pbi::TcParser::MiniParse, {}},
@@ -1945,10 +1945,10 @@ ForgotPasswordResponse::_table_ = {
     65535, 65535
   }}, {{
     // .shared.v1.SuccessResponseData data = 1 [json_name = "data"];
-    {PROTOBUF_FIELD_OFFSET(ForgotPasswordResponse, _impl_.response_.data_), _Internal::kOneofCaseOffset + 0, 0,
+    {PROTOBUF_FIELD_OFFSET(PasswordForgotResponse, _impl_.response_.data_), _Internal::kOneofCaseOffset + 0, 0,
     (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
     // .shared.v1.AppError error = 2 [json_name = "error"];
-    {PROTOBUF_FIELD_OFFSET(ForgotPasswordResponse, _impl_.response_.error_), _Internal::kOneofCaseOffset + 0, 1,
+    {PROTOBUF_FIELD_OFFSET(PasswordForgotResponse, _impl_.response_.error_), _Internal::kOneofCaseOffset + 0, 1,
     (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
@@ -1958,8 +1958,8 @@ ForgotPasswordResponse::_table_ = {
   {{
   }},
 };
-PROTOBUF_NOINLINE void ForgotPasswordResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:users.v1.ForgotPasswordResponse)
+PROTOBUF_NOINLINE void PasswordForgotResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:users.v1.PasswordForgotResponse)
   ::google::protobuf::internal::TSanWrite(&_impl_);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
@@ -1970,17 +1970,17 @@ PROTOBUF_NOINLINE void ForgotPasswordResponse::Clear() {
 }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-::uint8_t* PROTOBUF_NONNULL ForgotPasswordResponse::_InternalSerialize(
+::uint8_t* PROTOBUF_NONNULL PasswordForgotResponse::_InternalSerialize(
     const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
-  const ForgotPasswordResponse& this_ = static_cast<const ForgotPasswordResponse&>(base);
+  const PasswordForgotResponse& this_ = static_cast<const PasswordForgotResponse&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-::uint8_t* PROTOBUF_NONNULL ForgotPasswordResponse::_InternalSerialize(
+::uint8_t* PROTOBUF_NONNULL PasswordForgotResponse::_InternalSerialize(
     ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-  const ForgotPasswordResponse& this_ = *this;
+  const PasswordForgotResponse& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(serialize_to_array_start:users.v1.ForgotPasswordResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:users.v1.PasswordForgotResponse)
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
@@ -2005,18 +2005,18 @@ PROTOBUF_NOINLINE void ForgotPasswordResponse::Clear() {
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
             this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:users.v1.ForgotPasswordResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:users.v1.PasswordForgotResponse)
   return target;
 }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-::size_t ForgotPasswordResponse::ByteSizeLong(const MessageLite& base) {
-  const ForgotPasswordResponse& this_ = static_cast<const ForgotPasswordResponse&>(base);
+::size_t PasswordForgotResponse::ByteSizeLong(const MessageLite& base) {
+  const PasswordForgotResponse& this_ = static_cast<const PasswordForgotResponse&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-::size_t ForgotPasswordResponse::ByteSizeLong() const {
-  const ForgotPasswordResponse& this_ = *this;
+::size_t PasswordForgotResponse::ByteSizeLong() const {
+  const PasswordForgotResponse& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(message_byte_size_start:users.v1.ForgotPasswordResponse)
+  // @@protoc_insertion_point(message_byte_size_start:users.v1.PasswordForgotResponse)
   ::size_t total_size = 0;
 
   ::uint32_t cached_has_bits = 0;
@@ -2044,11 +2044,11 @@ PROTOBUF_NOINLINE void ForgotPasswordResponse::Clear() {
                                              &this_._impl_._cached_size_);
 }
 
-void ForgotPasswordResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
-  auto* const _this = static_cast<ForgotPasswordResponse*>(&to_msg);
-  auto& from = static_cast<const ForgotPasswordResponse&>(from_msg);
+void PasswordForgotResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<PasswordForgotResponse*>(&to_msg);
+  auto& from = static_cast<const PasswordForgotResponse&>(from_msg);
   ::google::protobuf::Arena* arena = _this->GetArena();
-  // @@protoc_insertion_point(class_specific_merge_from_start:users.v1.ForgotPasswordResponse)
+  // @@protoc_insertion_point(class_specific_merge_from_start:users.v1.PasswordForgotResponse)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -2087,22 +2087,22 @@ void ForgotPasswordResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, 
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void ForgotPasswordResponse::CopyFrom(const ForgotPasswordResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:users.v1.ForgotPasswordResponse)
+void PasswordForgotResponse::CopyFrom(const PasswordForgotResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:users.v1.PasswordForgotResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 
-void ForgotPasswordResponse::InternalSwap(ForgotPasswordResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+void PasswordForgotResponse::InternalSwap(PasswordForgotResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   using ::std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_.response_, other->_impl_.response_);
   swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
 }
 
-::google::protobuf::Metadata ForgotPasswordResponse::GetMetadata() const {
+::google::protobuf::Metadata PasswordForgotResponse::GetMetadata() const {
   return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // @@protoc_insertion_point(namespace_scope)
