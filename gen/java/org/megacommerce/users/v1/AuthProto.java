@@ -43,43 +43,55 @@ public final class AuthProto {
         getIdBytes();
 
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return The userId.
+     */
+    java.lang.String getUserId();
+    /**
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return The bytes for userId.
+     */
+    com.google.protobuf.ByteString
+        getUserIdBytes();
+
+    /**
+     * <code>string token = 3 [json_name = "token"];</code>
      * @return The token.
      */
     java.lang.String getToken();
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
+     * <code>string token = 3 [json_name = "token"];</code>
      * @return The bytes for token.
      */
     com.google.protobuf.ByteString
         getTokenBytes();
 
     /**
-     * <code>string type = 3 [json_name = "type"];</code>
+     * <code>string type = 4 [json_name = "type"];</code>
      * @return The type.
      */
     java.lang.String getType();
     /**
-     * <code>string type = 3 [json_name = "type"];</code>
+     * <code>string type = 4 [json_name = "type"];</code>
      * @return The bytes for type.
      */
     com.google.protobuf.ByteString
         getTypeBytes();
 
     /**
-     * <code>bool used = 4 [json_name = "used"];</code>
+     * <code>bool used = 5 [json_name = "used"];</code>
      * @return The used.
      */
     boolean getUsed();
 
     /**
-     * <code>int64 created_at = 5 [json_name = "createdAt"];</code>
+     * <code>int64 created_at = 6 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     long getCreatedAt();
 
     /**
-     * <code>int64 expires_at = 6 [json_name = "expiresAt"];</code>
+     * <code>int64 expires_at = 7 [json_name = "expiresAt"];</code>
      * @return The expiresAt.
      */
     long getExpiresAt();
@@ -107,6 +119,7 @@ public final class AuthProto {
     }
     private Token() {
       id_ = "";
+      userId_ = "";
       token_ = "";
       type_ = "";
     }
@@ -163,11 +176,50 @@ public final class AuthProto {
       }
     }
 
-    public static final int TOKEN_FIELD_NUMBER = 2;
+    public static final int USER_ID_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object userId_ = "";
+    /**
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return The userId.
+     */
+    @java.lang.Override
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        userId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string user_id = 2 [json_name = "userId"];</code>
+     * @return The bytes for userId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        userId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TOKEN_FIELD_NUMBER = 3;
     @SuppressWarnings("serial")
     private volatile java.lang.Object token_ = "";
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
+     * <code>string token = 3 [json_name = "token"];</code>
      * @return The token.
      */
     @java.lang.Override
@@ -184,7 +236,7 @@ public final class AuthProto {
       }
     }
     /**
-     * <code>string token = 2 [json_name = "token"];</code>
+     * <code>string token = 3 [json_name = "token"];</code>
      * @return The bytes for token.
      */
     @java.lang.Override
@@ -202,11 +254,11 @@ public final class AuthProto {
       }
     }
 
-    public static final int TYPE_FIELD_NUMBER = 3;
+    public static final int TYPE_FIELD_NUMBER = 4;
     @SuppressWarnings("serial")
     private volatile java.lang.Object type_ = "";
     /**
-     * <code>string type = 3 [json_name = "type"];</code>
+     * <code>string type = 4 [json_name = "type"];</code>
      * @return The type.
      */
     @java.lang.Override
@@ -223,7 +275,7 @@ public final class AuthProto {
       }
     }
     /**
-     * <code>string type = 3 [json_name = "type"];</code>
+     * <code>string type = 4 [json_name = "type"];</code>
      * @return The bytes for type.
      */
     @java.lang.Override
@@ -241,10 +293,10 @@ public final class AuthProto {
       }
     }
 
-    public static final int USED_FIELD_NUMBER = 4;
+    public static final int USED_FIELD_NUMBER = 5;
     private boolean used_ = false;
     /**
-     * <code>bool used = 4 [json_name = "used"];</code>
+     * <code>bool used = 5 [json_name = "used"];</code>
      * @return The used.
      */
     @java.lang.Override
@@ -252,10 +304,10 @@ public final class AuthProto {
       return used_;
     }
 
-    public static final int CREATED_AT_FIELD_NUMBER = 5;
+    public static final int CREATED_AT_FIELD_NUMBER = 6;
     private long createdAt_ = 0L;
     /**
-     * <code>int64 created_at = 5 [json_name = "createdAt"];</code>
+     * <code>int64 created_at = 6 [json_name = "createdAt"];</code>
      * @return The createdAt.
      */
     @java.lang.Override
@@ -263,10 +315,10 @@ public final class AuthProto {
       return createdAt_;
     }
 
-    public static final int EXPIRES_AT_FIELD_NUMBER = 6;
+    public static final int EXPIRES_AT_FIELD_NUMBER = 7;
     private long expiresAt_ = 0L;
     /**
-     * <code>int64 expires_at = 6 [json_name = "expiresAt"];</code>
+     * <code>int64 expires_at = 7 [json_name = "expiresAt"];</code>
      * @return The expiresAt.
      */
     @java.lang.Override
@@ -291,20 +343,23 @@ public final class AuthProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, userId_);
+      }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(token_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 2, token_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, token_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(type_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 3, type_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, type_);
       }
       if (used_ != false) {
-        output.writeBool(4, used_);
+        output.writeBool(5, used_);
       }
       if (createdAt_ != 0L) {
-        output.writeInt64(5, createdAt_);
+        output.writeInt64(6, createdAt_);
       }
       if (expiresAt_ != 0L) {
-        output.writeInt64(6, expiresAt_);
+        output.writeInt64(7, expiresAt_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -318,23 +373,26 @@ public final class AuthProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(userId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, userId_);
+      }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(token_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, token_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, token_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(type_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, type_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, type_);
       }
       if (used_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, used_);
+          .computeBoolSize(5, used_);
       }
       if (createdAt_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(5, createdAt_);
+          .computeInt64Size(6, createdAt_);
       }
       if (expiresAt_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, expiresAt_);
+          .computeInt64Size(7, expiresAt_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -353,6 +411,8 @@ public final class AuthProto {
 
       if (!getId()
           .equals(other.getId())) return false;
+      if (!getUserId()
+          .equals(other.getUserId())) return false;
       if (!getToken()
           .equals(other.getToken())) return false;
       if (!getType()
@@ -376,6 +436,8 @@ public final class AuthProto {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + ID_FIELD_NUMBER;
       hash = (53 * hash) + getId().hashCode();
+      hash = (37 * hash) + USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
       hash = (37 * hash) + TOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getToken().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
@@ -521,6 +583,7 @@ public final class AuthProto {
         super.clear();
         bitField0_ = 0;
         id_ = "";
+        userId_ = "";
         token_ = "";
         type_ = "";
         used_ = false;
@@ -563,18 +626,21 @@ public final class AuthProto {
           result.id_ = id_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.token_ = token_;
+          result.userId_ = userId_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.type_ = type_;
+          result.token_ = token_;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.used_ = used_;
+          result.type_ = type_;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.createdAt_ = createdAt_;
+          result.used_ = used_;
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.createdAt_ = createdAt_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
           result.expiresAt_ = expiresAt_;
         }
       }
@@ -596,14 +662,19 @@ public final class AuthProto {
           bitField0_ |= 0x00000001;
           onChanged();
         }
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
         if (!other.getToken().isEmpty()) {
           token_ = other.token_;
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         if (!other.getType().isEmpty()) {
           type_ = other.type_;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (other.getUsed() != false) {
@@ -647,30 +718,35 @@ public final class AuthProto {
                 break;
               } // case 10
               case 18: {
-                token_ = input.readStringRequireUtf8();
+                userId_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
               case 26: {
-                type_ = input.readStringRequireUtf8();
+                token_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
-              case 32: {
-                used_ = input.readBool();
+              case 34: {
+                type_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000008;
                 break;
-              } // case 32
+              } // case 34
               case 40: {
-                createdAt_ = input.readInt64();
+                used_ = input.readBool();
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
               case 48: {
-                expiresAt_ = input.readInt64();
+                createdAt_ = input.readInt64();
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
+              case 56: {
+                expiresAt_ = input.readInt64();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 56
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -760,9 +836,81 @@ public final class AuthProto {
         return this;
       }
 
+      private java.lang.Object userId_ = "";
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @return The userId.
+       */
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          userId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @return The bytes for userId.
+       */
+      public com.google.protobuf.ByteString
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          userId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @param value The userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        userId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUserId() {
+        userId_ = getDefaultInstance().getUserId();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string user_id = 2 [json_name = "userId"];</code>
+       * @param value The bytes for userId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUserIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        userId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object token_ = "";
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
+       * <code>string token = 3 [json_name = "token"];</code>
        * @return The token.
        */
       public java.lang.String getToken() {
@@ -778,7 +926,7 @@ public final class AuthProto {
         }
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
+       * <code>string token = 3 [json_name = "token"];</code>
        * @return The bytes for token.
        */
       public com.google.protobuf.ByteString
@@ -795,7 +943,7 @@ public final class AuthProto {
         }
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
+       * <code>string token = 3 [json_name = "token"];</code>
        * @param value The token to set.
        * @return This builder for chaining.
        */
@@ -803,22 +951,22 @@ public final class AuthProto {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         token_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
+       * <code>string token = 3 [json_name = "token"];</code>
        * @return This builder for chaining.
        */
       public Builder clearToken() {
         token_ = getDefaultInstance().getToken();
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
       /**
-       * <code>string token = 2 [json_name = "token"];</code>
+       * <code>string token = 3 [json_name = "token"];</code>
        * @param value The bytes for token to set.
        * @return This builder for chaining.
        */
@@ -827,14 +975,14 @@ public final class AuthProto {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         token_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
 
       private java.lang.Object type_ = "";
       /**
-       * <code>string type = 3 [json_name = "type"];</code>
+       * <code>string type = 4 [json_name = "type"];</code>
        * @return The type.
        */
       public java.lang.String getType() {
@@ -850,7 +998,7 @@ public final class AuthProto {
         }
       }
       /**
-       * <code>string type = 3 [json_name = "type"];</code>
+       * <code>string type = 4 [json_name = "type"];</code>
        * @return The bytes for type.
        */
       public com.google.protobuf.ByteString
@@ -867,7 +1015,7 @@ public final class AuthProto {
         }
       }
       /**
-       * <code>string type = 3 [json_name = "type"];</code>
+       * <code>string type = 4 [json_name = "type"];</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
@@ -875,22 +1023,22 @@ public final class AuthProto {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         type_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
-       * <code>string type = 3 [json_name = "type"];</code>
+       * <code>string type = 4 [json_name = "type"];</code>
        * @return This builder for chaining.
        */
       public Builder clearType() {
         type_ = getDefaultInstance().getType();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
       /**
-       * <code>string type = 3 [json_name = "type"];</code>
+       * <code>string type = 4 [json_name = "type"];</code>
        * @param value The bytes for type to set.
        * @return This builder for chaining.
        */
@@ -899,14 +1047,14 @@ public final class AuthProto {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         type_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
 
       private boolean used_ ;
       /**
-       * <code>bool used = 4 [json_name = "used"];</code>
+       * <code>bool used = 5 [json_name = "used"];</code>
        * @return The used.
        */
       @java.lang.Override
@@ -914,23 +1062,23 @@ public final class AuthProto {
         return used_;
       }
       /**
-       * <code>bool used = 4 [json_name = "used"];</code>
+       * <code>bool used = 5 [json_name = "used"];</code>
        * @param value The used to set.
        * @return This builder for chaining.
        */
       public Builder setUsed(boolean value) {
 
         used_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
       /**
-       * <code>bool used = 4 [json_name = "used"];</code>
+       * <code>bool used = 5 [json_name = "used"];</code>
        * @return This builder for chaining.
        */
       public Builder clearUsed() {
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000010);
         used_ = false;
         onChanged();
         return this;
@@ -938,7 +1086,7 @@ public final class AuthProto {
 
       private long createdAt_ ;
       /**
-       * <code>int64 created_at = 5 [json_name = "createdAt"];</code>
+       * <code>int64 created_at = 6 [json_name = "createdAt"];</code>
        * @return The createdAt.
        */
       @java.lang.Override
@@ -946,23 +1094,23 @@ public final class AuthProto {
         return createdAt_;
       }
       /**
-       * <code>int64 created_at = 5 [json_name = "createdAt"];</code>
+       * <code>int64 created_at = 6 [json_name = "createdAt"];</code>
        * @param value The createdAt to set.
        * @return This builder for chaining.
        */
       public Builder setCreatedAt(long value) {
 
         createdAt_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 created_at = 5 [json_name = "createdAt"];</code>
+       * <code>int64 created_at = 6 [json_name = "createdAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearCreatedAt() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         createdAt_ = 0L;
         onChanged();
         return this;
@@ -970,7 +1118,7 @@ public final class AuthProto {
 
       private long expiresAt_ ;
       /**
-       * <code>int64 expires_at = 6 [json_name = "expiresAt"];</code>
+       * <code>int64 expires_at = 7 [json_name = "expiresAt"];</code>
        * @return The expiresAt.
        */
       @java.lang.Override
@@ -978,23 +1126,23 @@ public final class AuthProto {
         return expiresAt_;
       }
       /**
-       * <code>int64 expires_at = 6 [json_name = "expiresAt"];</code>
+       * <code>int64 expires_at = 7 [json_name = "expiresAt"];</code>
        * @param value The expiresAt to set.
        * @return This builder for chaining.
        */
       public Builder setExpiresAt(long value) {
 
         expiresAt_ = value;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
       /**
-       * <code>int64 expires_at = 6 [json_name = "expiresAt"];</code>
+       * <code>int64 expires_at = 7 [json_name = "expiresAt"];</code>
        * @return This builder for chaining.
        */
       public Builder clearExpiresAt() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         expiresAt_ = 0L;
         onChanged();
         return this;
@@ -4172,25 +4320,25 @@ public final class AuthProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\023users/v1/auth.proto\022\010users.v1\032\025shared/" +
-      "v1/error.proto\032\025shared/v1/types.proto\"\223\001" +
-      "\n\005Token\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005token\030\002 \001(\tR\005" +
-      "token\022\022\n\004type\030\003 \001(\tR\004type\022\022\n\004used\030\004 \001(\010R" +
-      "\004used\022\035\n\ncreated_at\030\005 \001(\003R\tcreatedAt\022\035\n\n" +
-      "expires_at\030\006 \001(\003R\texpiresAt\"a\n\030EmailConf" +
-      "irmationRequest\022\024\n\005email\030\001 \001(\tR\005email\022\024\n" +
-      "\005token\030\002 \001(\tR\005token\022\031\n\010token_id\030\003 \001(\tR\007t" +
-      "okenId\"\212\001\n\031EmailConfirmationResponse\0224\n\004" +
-      "data\030\001 \001(\0132\036.shared.v1.SuccessResponseDa" +
-      "taH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.Ap" +
-      "pErrorH\000R\005errorB\n\n\010response\"-\n\025PasswordF" +
-      "orgotRequest\022\024\n\005email\030\001 \001(\tR\005email\"\207\001\n\026P" +
-      "asswordForgotResponse\0224\n\004data\030\001 \001(\0132\036.sh" +
+      "v1/error.proto\032\025shared/v1/types.proto\"\254\001" +
+      "\n\005Token\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id\030\002 \001(\t" +
+      "R\006userId\022\024\n\005token\030\003 \001(\tR\005token\022\022\n\004type\030\004" +
+      " \001(\tR\004type\022\022\n\004used\030\005 \001(\010R\004used\022\035\n\ncreate" +
+      "d_at\030\006 \001(\003R\tcreatedAt\022\035\n\nexpires_at\030\007 \001(" +
+      "\003R\texpiresAt\"a\n\030EmailConfirmationRequest" +
+      "\022\024\n\005email\030\001 \001(\tR\005email\022\024\n\005token\030\002 \001(\tR\005t" +
+      "oken\022\031\n\010token_id\030\003 \001(\tR\007tokenId\"\212\001\n\031Emai" +
+      "lConfirmationResponse\0224\n\004data\030\001 \001(\0132\036.sh" +
       "ared.v1.SuccessResponseDataH\000R\004data\022+\n\005e" +
       "rror\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005error" +
-      "B\n\n\010responseBm\n\031org.megacommerce.users.v" +
-      "1B\tAuthProtoZBgithub.com/ahmad-khatib0-o" +
-      "rg/megacommerce-proto/gen/go/users/v1;v1" +
-      "\370\001\001b\006proto3"
+      "B\n\n\010response\"-\n\025PasswordForgotRequest\022\024\n" +
+      "\005email\030\001 \001(\tR\005email\"\207\001\n\026PasswordForgotRe" +
+      "sponse\0224\n\004data\030\001 \001(\0132\036.shared.v1.Success" +
+      "ResponseDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.sh" +
+      "ared.v1.AppErrorH\000R\005errorB\n\n\010responseBm\n" +
+      "\031org.megacommerce.users.v1B\tAuthProtoZBg" +
+      "ithub.com/ahmad-khatib0-org/megacommerce" +
+      "-proto/gen/go/users/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4203,7 +4351,7 @@ public final class AuthProto {
     internal_static_users_v1_Token_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_users_v1_Token_descriptor,
-        new java.lang.String[] { "Id", "Token", "Type", "Used", "CreatedAt", "ExpiresAt", });
+        new java.lang.String[] { "Id", "UserId", "Token", "Type", "Used", "CreatedAt", "ExpiresAt", });
     internal_static_users_v1_EmailConfirmationRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_users_v1_EmailConfirmationRequest_fieldAccessorTable = new

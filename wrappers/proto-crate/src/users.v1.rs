@@ -5,14 +5,16 @@ pub struct Token {
     #[prost(string, tag = "1")]
     pub id: ::prost::alloc::string::String,
     #[prost(string, tag = "2")]
-    pub token: ::prost::alloc::string::String,
+    pub user_id: ::prost::alloc::string::String,
     #[prost(string, tag = "3")]
+    pub token: ::prost::alloc::string::String,
+    #[prost(string, tag = "4")]
     pub r#type: ::prost::alloc::string::String,
-    #[prost(bool, tag = "4")]
+    #[prost(bool, tag = "5")]
     pub used: bool,
-    #[prost(int64, tag = "5")]
-    pub created_at: i64,
     #[prost(int64, tag = "6")]
+    pub created_at: i64,
+    #[prost(int64, tag = "7")]
     pub expires_at: i64,
 }
 #[derive(serde::Serialize, serde::Deserialize)]

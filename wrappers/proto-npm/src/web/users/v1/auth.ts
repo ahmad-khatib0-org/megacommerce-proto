@@ -13,6 +13,7 @@ export const protobufPackage = "users.v1";
 
 export interface Token {
   id: string;
+  userId: string;
   token: string;
   type: string;
   used: boolean;
@@ -41,7 +42,7 @@ export interface PasswordForgotResponse {
 }
 
 function createBaseToken(): Token {
-  return { id: "", token: "", type: "", used: false, createdAt: "0", expiresAt: "0" };
+  return { id: "", userId: "", token: "", type: "", used: false, createdAt: "0", expiresAt: "0" };
 }
 
 export const Token: MessageFns<Token> = {
@@ -49,20 +50,23 @@ export const Token: MessageFns<Token> = {
     if (message.id !== "") {
       writer.uint32(10).string(message.id);
     }
+    if (message.userId !== "") {
+      writer.uint32(18).string(message.userId);
+    }
     if (message.token !== "") {
-      writer.uint32(18).string(message.token);
+      writer.uint32(26).string(message.token);
     }
     if (message.type !== "") {
-      writer.uint32(26).string(message.type);
+      writer.uint32(34).string(message.type);
     }
     if (message.used !== false) {
-      writer.uint32(32).bool(message.used);
+      writer.uint32(40).bool(message.used);
     }
     if (message.createdAt !== "0") {
-      writer.uint32(40).int64(message.createdAt);
+      writer.uint32(48).int64(message.createdAt);
     }
     if (message.expiresAt !== "0") {
-      writer.uint32(48).int64(message.expiresAt);
+      writer.uint32(56).int64(message.expiresAt);
     }
     return writer;
   },
@@ -87,7 +91,7 @@ export const Token: MessageFns<Token> = {
             break;
           }
 
-          message.token = reader.string();
+          message.userId = reader.string();
           continue;
         }
         case 3: {
@@ -95,15 +99,15 @@ export const Token: MessageFns<Token> = {
             break;
           }
 
-          message.type = reader.string();
+          message.token = reader.string();
           continue;
         }
         case 4: {
-          if (tag !== 32) {
+          if (tag !== 34) {
             break;
           }
 
-          message.used = reader.bool();
+          message.type = reader.string();
           continue;
         }
         case 5: {
@@ -111,11 +115,19 @@ export const Token: MessageFns<Token> = {
             break;
           }
 
-          message.createdAt = reader.int64().toString();
+          message.used = reader.bool();
           continue;
         }
         case 6: {
           if (tag !== 48) {
+            break;
+          }
+
+          message.createdAt = reader.int64().toString();
+          continue;
+        }
+        case 7: {
+          if (tag !== 56) {
             break;
           }
 
@@ -134,6 +146,7 @@ export const Token: MessageFns<Token> = {
   fromJSON(object: any): Token {
     return {
       id: isSet(object.id) ? globalThis.String(object.id) : "",
+      userId: isSet(object.userId) ? globalThis.String(object.userId) : "",
       token: isSet(object.token) ? globalThis.String(object.token) : "",
       type: isSet(object.type) ? globalThis.String(object.type) : "",
       used: isSet(object.used) ? globalThis.Boolean(object.used) : false,
@@ -146,6 +159,9 @@ export const Token: MessageFns<Token> = {
     const obj: any = {};
     if (message.id !== "") {
       obj.id = message.id;
+    }
+    if (message.userId !== "") {
+      obj.userId = message.userId;
     }
     if (message.token !== "") {
       obj.token = message.token;
@@ -171,6 +187,7 @@ export const Token: MessageFns<Token> = {
   fromPartial<I extends Exact<DeepPartial<Token>, I>>(object: I): Token {
     const message = createBaseToken();
     message.id = object.id ?? "";
+    message.userId = object.userId ?? "";
     message.token = object.token ?? "";
     message.type = object.type ?? "";
     message.used = object.used ?? false;

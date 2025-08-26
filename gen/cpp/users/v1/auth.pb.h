@@ -235,11 +235,12 @@ class Token final : public ::google::protobuf::Message
   // accessors -------------------------------------------------------
   enum : int {
     kIdFieldNumber = 1,
-    kTokenFieldNumber = 2,
-    kTypeFieldNumber = 3,
-    kCreatedAtFieldNumber = 5,
-    kExpiresAtFieldNumber = 6,
-    kUsedFieldNumber = 4,
+    kUserIdFieldNumber = 2,
+    kTokenFieldNumber = 3,
+    kTypeFieldNumber = 4,
+    kCreatedAtFieldNumber = 6,
+    kExpiresAtFieldNumber = 7,
+    kUsedFieldNumber = 5,
   };
   // string id = 1 [json_name = "id"];
   void clear_id() ;
@@ -256,7 +257,22 @@ class Token final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_id();
 
   public:
-  // string token = 2 [json_name = "token"];
+  // string user_id = 2 [json_name = "userId"];
+  void clear_user_id() ;
+  const ::std::string& user_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_user_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_user_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_user_id();
+  void set_allocated_user_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_user_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_user_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_user_id();
+
+  public:
+  // string token = 3 [json_name = "token"];
   void clear_token() ;
   const ::std::string& token() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -271,7 +287,7 @@ class Token final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_token();
 
   public:
-  // string type = 3 [json_name = "type"];
+  // string type = 4 [json_name = "type"];
   void clear_type() ;
   const ::std::string& type() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -286,7 +302,7 @@ class Token final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_type();
 
   public:
-  // int64 created_at = 5 [json_name = "createdAt"];
+  // int64 created_at = 6 [json_name = "createdAt"];
   void clear_created_at() ;
   ::int64_t created_at() const;
   void set_created_at(::int64_t value);
@@ -296,7 +312,7 @@ class Token final : public ::google::protobuf::Message
   void _internal_set_created_at(::int64_t value);
 
   public:
-  // int64 expires_at = 6 [json_name = "expiresAt"];
+  // int64 expires_at = 7 [json_name = "expiresAt"];
   void clear_expires_at() ;
   ::int64_t expires_at() const;
   void set_expires_at(::int64_t value);
@@ -306,7 +322,7 @@ class Token final : public ::google::protobuf::Message
   void _internal_set_expires_at(::int64_t value);
 
   public:
-  // bool used = 4 [json_name = "used"];
+  // bool used = 5 [json_name = "used"];
   void clear_used() ;
   bool used() const;
   void set_used(bool value);
@@ -320,8 +336,8 @@ class Token final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<3, 6,
-                                   0, 34,
+  static const ::google::protobuf::internal::TcParseTable<3, 7,
+                                   0, 41,
                                    2>
       _table_;
 
@@ -343,6 +359,7 @@ class Token final : public ::google::protobuf::Message
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::internal::ArenaStringPtr id_;
+    ::google::protobuf::internal::ArenaStringPtr user_id_;
     ::google::protobuf::internal::ArenaStringPtr token_;
     ::google::protobuf::internal::ArenaStringPtr type_;
     ::int64_t created_at_;
@@ -1335,11 +1352,76 @@ inline void Token::set_allocated_id(::std::string* PROTOBUF_NULLABLE value) {
   // @@protoc_insertion_point(field_set_allocated:users.v1.Token.id)
 }
 
-// string token = 2 [json_name = "token"];
+// string user_id = 2 [json_name = "userId"];
+inline void Token::clear_user_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.user_id_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const ::std::string& Token::user_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:users.v1.Token.user_id)
+  return _internal_user_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void Token::set_user_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.user_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:users.v1.Token.user_id)
+}
+inline ::std::string* PROTOBUF_NONNULL Token::mutable_user_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_user_id();
+  // @@protoc_insertion_point(field_mutable:users.v1.Token.user_id)
+  return _s;
+}
+inline const ::std::string& Token::_internal_user_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.user_id_.Get();
+}
+inline void Token::_internal_set_user_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.user_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL Token::_internal_mutable_user_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.user_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE Token::release_user_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:users.v1.Token.user_id)
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* released = _impl_.user_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.user_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void Token::set_allocated_user_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.user_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.user_id_.IsDefault()) {
+    _impl_.user_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:users.v1.Token.user_id)
+}
+
+// string token = 3 [json_name = "token"];
 inline void Token::clear_token() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.token_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline const ::std::string& Token::token() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -1349,7 +1431,7 @@ inline const ::std::string& Token::token() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void Token::set_token(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.token_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:users.v1.Token.token)
 }
@@ -1365,21 +1447,21 @@ inline const ::std::string& Token::_internal_token() const {
 }
 inline void Token::_internal_set_token(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.token_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL Token::_internal_mutable_token() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   return _impl_.token_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE Token::release_token() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:users.v1.Token.token)
-  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
   auto* released = _impl_.token_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.token_.Set("", GetArena());
@@ -1389,9 +1471,9 @@ inline ::std::string* PROTOBUF_NULLABLE Token::release_token() {
 inline void Token::set_allocated_token(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000002u;
+    _impl_._has_bits_[0] |= 0x00000004u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000002u;
+    _impl_._has_bits_[0] &= ~0x00000004u;
   }
   _impl_.token_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.token_.IsDefault()) {
@@ -1400,11 +1482,11 @@ inline void Token::set_allocated_token(::std::string* PROTOBUF_NULLABLE value) {
   // @@protoc_insertion_point(field_set_allocated:users.v1.Token.token)
 }
 
-// string type = 3 [json_name = "type"];
+// string type = 4 [json_name = "type"];
 inline void Token::clear_type() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.type_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
 }
 inline const ::std::string& Token::type() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -1414,7 +1496,7 @@ inline const ::std::string& Token::type() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void Token::set_type(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.type_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:users.v1.Token.type)
 }
@@ -1430,21 +1512,21 @@ inline const ::std::string& Token::_internal_type() const {
 }
 inline void Token::_internal_set_type(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.type_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL Token::_internal_mutable_type() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000008u;
   return _impl_.type_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE Token::release_type() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:users.v1.Token.type)
-  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000008u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
   auto* released = _impl_.type_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.type_.Set("", GetArena());
@@ -1454,9 +1536,9 @@ inline ::std::string* PROTOBUF_NULLABLE Token::release_type() {
 inline void Token::set_allocated_type(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000004u;
+    _impl_._has_bits_[0] |= 0x00000008u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000004u;
+    _impl_._has_bits_[0] &= ~0x00000008u;
   }
   _impl_.type_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.type_.IsDefault()) {
@@ -1465,11 +1547,11 @@ inline void Token::set_allocated_type(::std::string* PROTOBUF_NULLABLE value) {
   // @@protoc_insertion_point(field_set_allocated:users.v1.Token.type)
 }
 
-// bool used = 4 [json_name = "used"];
+// bool used = 5 [json_name = "used"];
 inline void Token::clear_used() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.used_ = false;
-  _impl_._has_bits_[0] &= ~0x00000020u;
+  _impl_._has_bits_[0] &= ~0x00000040u;
 }
 inline bool Token::used() const {
   // @@protoc_insertion_point(field_get:users.v1.Token.used)
@@ -1477,7 +1559,7 @@ inline bool Token::used() const {
 }
 inline void Token::set_used(bool value) {
   _internal_set_used(value);
-  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_._has_bits_[0] |= 0x00000040u;
   // @@protoc_insertion_point(field_set:users.v1.Token.used)
 }
 inline bool Token::_internal_used() const {
@@ -1489,11 +1571,11 @@ inline void Token::_internal_set_used(bool value) {
   _impl_.used_ = value;
 }
 
-// int64 created_at = 5 [json_name = "createdAt"];
+// int64 created_at = 6 [json_name = "createdAt"];
 inline void Token::clear_created_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.created_at_ = ::int64_t{0};
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
 }
 inline ::int64_t Token::created_at() const {
   // @@protoc_insertion_point(field_get:users.v1.Token.created_at)
@@ -1501,7 +1583,7 @@ inline ::int64_t Token::created_at() const {
 }
 inline void Token::set_created_at(::int64_t value) {
   _internal_set_created_at(value);
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000010u;
   // @@protoc_insertion_point(field_set:users.v1.Token.created_at)
 }
 inline ::int64_t Token::_internal_created_at() const {
@@ -1513,11 +1595,11 @@ inline void Token::_internal_set_created_at(::int64_t value) {
   _impl_.created_at_ = value;
 }
 
-// int64 expires_at = 6 [json_name = "expiresAt"];
+// int64 expires_at = 7 [json_name = "expiresAt"];
 inline void Token::clear_expires_at() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.expires_at_ = ::int64_t{0};
-  _impl_._has_bits_[0] &= ~0x00000010u;
+  _impl_._has_bits_[0] &= ~0x00000020u;
 }
 inline ::int64_t Token::expires_at() const {
   // @@protoc_insertion_point(field_get:users.v1.Token.expires_at)
@@ -1525,7 +1607,7 @@ inline ::int64_t Token::expires_at() const {
 }
 inline void Token::set_expires_at(::int64_t value) {
   _internal_set_expires_at(value);
-  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_._has_bits_[0] |= 0x00000020u;
   // @@protoc_insertion_point(field_set:users.v1.Token.expires_at)
 }
 inline ::int64_t Token::_internal_expires_at() const {

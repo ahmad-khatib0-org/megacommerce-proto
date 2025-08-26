@@ -33,6 +33,9 @@ inline constexpr Token::Impl_::Impl_(
         id_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
+        user_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
         token_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
@@ -185,8 +188,9 @@ const ::uint32_t
         protodesc_cold) = {
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::users::v1::Token, _impl_._has_bits_),
-        9, // hasbit index offset
+        10, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::users::v1::Token, _impl_.id_),
+        PROTOBUF_FIELD_OFFSET(::users::v1::Token, _impl_.user_id_),
         PROTOBUF_FIELD_OFFSET(::users::v1::Token, _impl_.token_),
         PROTOBUF_FIELD_OFFSET(::users::v1::Token, _impl_.type_),
         PROTOBUF_FIELD_OFFSET(::users::v1::Token, _impl_.used_),
@@ -195,9 +199,10 @@ const ::uint32_t
         0,
         1,
         2,
-        5,
         3,
+        6,
         4,
+        5,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::users::v1::EmailConfirmationRequest, _impl_._has_bits_),
         6, // hasbit index offset
@@ -227,10 +232,10 @@ const ::uint32_t
 static const ::_pbi::MigrationSchema
     schemas[] ABSL_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
         {0, sizeof(::users::v1::Token)},
-        {15, sizeof(::users::v1::EmailConfirmationRequest)},
-        {24, sizeof(::users::v1::EmailConfirmationResponse)},
-        {29, sizeof(::users::v1::PasswordForgotRequest)},
-        {34, sizeof(::users::v1::PasswordForgotResponse)},
+        {17, sizeof(::users::v1::EmailConfirmationRequest)},
+        {26, sizeof(::users::v1::EmailConfirmationResponse)},
+        {31, sizeof(::users::v1::PasswordForgotRequest)},
+        {36, sizeof(::users::v1::PasswordForgotResponse)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::users::v1::_Token_default_instance_._instance,
@@ -242,25 +247,25 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 const char descriptor_table_protodef_users_2fv1_2fauth_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n\023users/v1/auth.proto\022\010users.v1\032\025shared/"
-    "v1/error.proto\032\025shared/v1/types.proto\"\223\001"
-    "\n\005Token\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005token\030\002 \001(\tR\005"
-    "token\022\022\n\004type\030\003 \001(\tR\004type\022\022\n\004used\030\004 \001(\010R"
-    "\004used\022\035\n\ncreated_at\030\005 \001(\003R\tcreatedAt\022\035\n\n"
-    "expires_at\030\006 \001(\003R\texpiresAt\"a\n\030EmailConf"
-    "irmationRequest\022\024\n\005email\030\001 \001(\tR\005email\022\024\n"
-    "\005token\030\002 \001(\tR\005token\022\031\n\010token_id\030\003 \001(\tR\007t"
-    "okenId\"\212\001\n\031EmailConfirmationResponse\0224\n\004"
-    "data\030\001 \001(\0132\036.shared.v1.SuccessResponseDa"
-    "taH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.Ap"
-    "pErrorH\000R\005errorB\n\n\010response\"-\n\025PasswordF"
-    "orgotRequest\022\024\n\005email\030\001 \001(\tR\005email\"\207\001\n\026P"
-    "asswordForgotResponse\0224\n\004data\030\001 \001(\0132\036.sh"
+    "v1/error.proto\032\025shared/v1/types.proto\"\254\001"
+    "\n\005Token\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id\030\002 \001(\t"
+    "R\006userId\022\024\n\005token\030\003 \001(\tR\005token\022\022\n\004type\030\004"
+    " \001(\tR\004type\022\022\n\004used\030\005 \001(\010R\004used\022\035\n\ncreate"
+    "d_at\030\006 \001(\003R\tcreatedAt\022\035\n\nexpires_at\030\007 \001("
+    "\003R\texpiresAt\"a\n\030EmailConfirmationRequest"
+    "\022\024\n\005email\030\001 \001(\tR\005email\022\024\n\005token\030\002 \001(\tR\005t"
+    "oken\022\031\n\010token_id\030\003 \001(\tR\007tokenId\"\212\001\n\031Emai"
+    "lConfirmationResponse\0224\n\004data\030\001 \001(\0132\036.sh"
     "ared.v1.SuccessResponseDataH\000R\004data\022+\n\005e"
     "rror\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005error"
-    "B\n\n\010responseBm\n\031org.megacommerce.users.v"
-    "1B\tAuthProtoZBgithub.com/ahmad-khatib0-o"
-    "rg/megacommerce-proto/gen/go/users/v1;v1"
-    "\370\001\001b\006proto3"
+    "B\n\n\010response\"-\n\025PasswordForgotRequest\022\024\n"
+    "\005email\030\001 \001(\tR\005email\"\207\001\n\026PasswordForgotRe"
+    "sponse\0224\n\004data\030\001 \001(\0132\036.shared.v1.Success"
+    "ResponseDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.sh"
+    "ared.v1.AppErrorH\000R\005errorB\n\n\010responseBm\n"
+    "\031org.megacommerce.users.v1B\tAuthProtoZBg"
+    "ithub.com/ahmad-khatib0-org/megacommerce"
+    "-proto/gen/go/users/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_users_2fv1_2fauth_2eproto_deps[2] = {
@@ -271,7 +276,7 @@ static ::absl::once_flag descriptor_table_users_2fv1_2fauth_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_users_2fv1_2fauth_2eproto = {
     false,
     false,
-    771,
+    796,
     descriptor_table_protodef_users_2fv1_2fauth_2eproto,
     "users/v1/auth.proto",
     &descriptor_table_users_2fv1_2fauth_2eproto_once,
@@ -312,6 +317,7 @@ PROTOBUF_NDEBUG_INLINE Token::Impl_::Impl_(
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
         id_(arena, from.id_),
+        user_id_(arena, from.user_id_),
         token_(arena, from.token_),
         type_(arena, from.type_) {}
 
@@ -343,6 +349,7 @@ PROTOBUF_NDEBUG_INLINE Token::Impl_::Impl_(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
         id_(arena),
+        user_id_(arena),
         token_(arena),
         type_(arena) {}
 
@@ -364,6 +371,7 @@ inline void Token::SharedDtor(MessageLite& self) {
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.id_.Destroy();
+  this_._impl_.user_id_.Destroy();
   this_._impl_.token_.Destroy();
   this_._impl_.type_.Destroy();
   this_._impl_.~Impl_();
@@ -412,16 +420,16 @@ Token::GetClassData() const {
   return Token_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 6, 0, 34, 2>
+const ::_pbi::TcParseTable<3, 7, 0, 41, 2>
 Token::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(Token, _impl_._has_bits_),
     0, // no _extensions_
-    6, 56,  // max_field_number, fast_idx_mask
+    7, 56,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967232,  // skipmap
+    4294967168,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    6,  // num_field_entries
+    7,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     Token_class_data_.base(),
@@ -435,49 +443,55 @@ Token::_table_ = {
     // string id = 1 [json_name = "id"];
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.id_)}},
-    // string token = 2 [json_name = "token"];
+    // string user_id = 2 [json_name = "userId"];
     {::_pbi::TcParser::FastUS1,
-     {18, 1, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.token_)}},
-    // string type = 3 [json_name = "type"];
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.user_id_)}},
+    // string token = 3 [json_name = "token"];
     {::_pbi::TcParser::FastUS1,
-     {26, 2, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.type_)}},
-    // bool used = 4 [json_name = "used"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(Token, _impl_.used_), 5>(),
-     {32, 5, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.used_)}},
-    // int64 created_at = 5 [json_name = "createdAt"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Token, _impl_.created_at_), 3>(),
-     {40, 3, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.created_at_)}},
-    // int64 expires_at = 6 [json_name = "expiresAt"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Token, _impl_.expires_at_), 4>(),
-     {48, 4, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.expires_at_)}},
-    {::_pbi::TcParser::MiniParse, {}},
+     {26, 2, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.token_)}},
+    // string type = 4 [json_name = "type"];
+    {::_pbi::TcParser::FastUS1,
+     {34, 3, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.type_)}},
+    // bool used = 5 [json_name = "used"];
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(Token, _impl_.used_), 6>(),
+     {40, 6, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.used_)}},
+    // int64 created_at = 6 [json_name = "createdAt"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Token, _impl_.created_at_), 4>(),
+     {48, 4, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.created_at_)}},
+    // int64 expires_at = 7 [json_name = "expiresAt"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(Token, _impl_.expires_at_), 5>(),
+     {56, 5, 0, PROTOBUF_FIELD_OFFSET(Token, _impl_.expires_at_)}},
   }}, {{
     65535, 65535
   }}, {{
     // string id = 1 [json_name = "id"];
     {PROTOBUF_FIELD_OFFSET(Token, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string token = 2 [json_name = "token"];
-    {PROTOBUF_FIELD_OFFSET(Token, _impl_.token_), _Internal::kHasBitsOffset + 1, 0,
+    // string user_id = 2 [json_name = "userId"];
+    {PROTOBUF_FIELD_OFFSET(Token, _impl_.user_id_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string type = 3 [json_name = "type"];
-    {PROTOBUF_FIELD_OFFSET(Token, _impl_.type_), _Internal::kHasBitsOffset + 2, 0,
+    // string token = 3 [json_name = "token"];
+    {PROTOBUF_FIELD_OFFSET(Token, _impl_.token_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // bool used = 4 [json_name = "used"];
-    {PROTOBUF_FIELD_OFFSET(Token, _impl_.used_), _Internal::kHasBitsOffset + 5, 0,
+    // string type = 4 [json_name = "type"];
+    {PROTOBUF_FIELD_OFFSET(Token, _impl_.type_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // bool used = 5 [json_name = "used"];
+    {PROTOBUF_FIELD_OFFSET(Token, _impl_.used_), _Internal::kHasBitsOffset + 6, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
-    // int64 created_at = 5 [json_name = "createdAt"];
-    {PROTOBUF_FIELD_OFFSET(Token, _impl_.created_at_), _Internal::kHasBitsOffset + 3, 0,
+    // int64 created_at = 6 [json_name = "createdAt"];
+    {PROTOBUF_FIELD_OFFSET(Token, _impl_.created_at_), _Internal::kHasBitsOffset + 4, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
-    // int64 expires_at = 6 [json_name = "expiresAt"];
-    {PROTOBUF_FIELD_OFFSET(Token, _impl_.expires_at_), _Internal::kHasBitsOffset + 4, 0,
+    // int64 expires_at = 7 [json_name = "expiresAt"];
+    {PROTOBUF_FIELD_OFFSET(Token, _impl_.expires_at_), _Internal::kHasBitsOffset + 5, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
   }},
   // no aux_entries
   {{
-    "\16\2\5\4\0\0\0\0"
+    "\16\2\7\5\4\0\0\0"
     "users.v1.Token"
     "id"
+    "user_id"
     "token"
     "type"
   }},
@@ -490,18 +504,21 @@ PROTOBUF_NOINLINE void Token::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000007u) != 0) {
+  if ((cached_has_bits & 0x0000000fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
       _impl_.id_.ClearNonDefaultToEmpty();
     }
     if ((cached_has_bits & 0x00000002u) != 0) {
-      _impl_.token_.ClearNonDefaultToEmpty();
+      _impl_.user_id_.ClearNonDefaultToEmpty();
     }
     if ((cached_has_bits & 0x00000004u) != 0) {
+      _impl_.token_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000008u) != 0) {
       _impl_.type_.ClearNonDefaultToEmpty();
     }
   }
-  if ((cached_has_bits & 0x00000038u) != 0) {
+  if ((cached_has_bits & 0x00000070u) != 0) {
     ::memset(&_impl_.created_at_, 0, static_cast<::size_t>(
         reinterpret_cast<char*>(&_impl_.used_) -
         reinterpret_cast<char*>(&_impl_.created_at_)) + sizeof(_impl_.used_));
@@ -535,49 +552,59 @@ PROTOBUF_NOINLINE void Token::Clear() {
     }
   }
 
-  // string token = 2 [json_name = "token"];
+  // string user_id = 2 [json_name = "userId"];
   if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
-    if (!this_._internal_token().empty()) {
-      const ::std::string& _s = this_._internal_token();
+    if (!this_._internal_user_id().empty()) {
+      const ::std::string& _s = this_._internal_user_id();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "users.v1.Token.token");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "users.v1.Token.user_id");
       target = stream->WriteStringMaybeAliased(2, _s, target);
     }
   }
 
-  // string type = 3 [json_name = "type"];
+  // string token = 3 [json_name = "token"];
   if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
-    if (!this_._internal_type().empty()) {
-      const ::std::string& _s = this_._internal_type();
+    if (!this_._internal_token().empty()) {
+      const ::std::string& _s = this_._internal_token();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "users.v1.Token.type");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "users.v1.Token.token");
       target = stream->WriteStringMaybeAliased(3, _s, target);
     }
   }
 
-  // bool used = 4 [json_name = "used"];
-  if ((this_._impl_._has_bits_[0] & 0x00000020u) != 0) {
-    if (this_._internal_used() != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteBoolToArray(
-          4, this_._internal_used(), target);
+  // string type = 4 [json_name = "type"];
+  if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
+    if (!this_._internal_type().empty()) {
+      const ::std::string& _s = this_._internal_type();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "users.v1.Token.type");
+      target = stream->WriteStringMaybeAliased(4, _s, target);
     }
   }
 
-  // int64 created_at = 5 [json_name = "createdAt"];
-  if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
+  // bool used = 5 [json_name = "used"];
+  if ((this_._impl_._has_bits_[0] & 0x00000040u) != 0) {
+    if (this_._internal_used() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteBoolToArray(
+          5, this_._internal_used(), target);
+    }
+  }
+
+  // int64 created_at = 6 [json_name = "createdAt"];
+  if ((this_._impl_._has_bits_[0] & 0x00000010u) != 0) {
     if (this_._internal_created_at() != 0) {
       target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<5>(
+          ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<6>(
               stream, this_._internal_created_at(), target);
     }
   }
 
-  // int64 expires_at = 6 [json_name = "expiresAt"];
-  if ((this_._impl_._has_bits_[0] & 0x00000010u) != 0) {
+  // int64 expires_at = 7 [json_name = "expiresAt"];
+  if ((this_._impl_._has_bits_[0] & 0x00000020u) != 0) {
     if (this_._internal_expires_at() != 0) {
       target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<6>(
+          ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<7>(
               stream, this_._internal_expires_at(), target);
     }
   }
@@ -607,7 +634,7 @@ PROTOBUF_NOINLINE void Token::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x0000003fu) != 0) {
+  if ((cached_has_bits & 0x0000007fu) != 0) {
     // string id = 1 [json_name = "id"];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_id().empty()) {
@@ -615,36 +642,43 @@ PROTOBUF_NOINLINE void Token::Clear() {
                                         this_._internal_id());
       }
     }
-    // string token = 2 [json_name = "token"];
+    // string user_id = 2 [json_name = "userId"];
     if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!this_._internal_user_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_user_id());
+      }
+    }
+    // string token = 3 [json_name = "token"];
+    if ((cached_has_bits & 0x00000004u) != 0) {
       if (!this_._internal_token().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_token());
       }
     }
-    // string type = 3 [json_name = "type"];
-    if ((cached_has_bits & 0x00000004u) != 0) {
+    // string type = 4 [json_name = "type"];
+    if ((cached_has_bits & 0x00000008u) != 0) {
       if (!this_._internal_type().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_type());
       }
     }
-    // int64 created_at = 5 [json_name = "createdAt"];
-    if ((cached_has_bits & 0x00000008u) != 0) {
+    // int64 created_at = 6 [json_name = "createdAt"];
+    if ((cached_has_bits & 0x00000010u) != 0) {
       if (this_._internal_created_at() != 0) {
         total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
             this_._internal_created_at());
       }
     }
-    // int64 expires_at = 6 [json_name = "expiresAt"];
-    if ((cached_has_bits & 0x00000010u) != 0) {
+    // int64 expires_at = 7 [json_name = "expiresAt"];
+    if ((cached_has_bits & 0x00000020u) != 0) {
       if (this_._internal_expires_at() != 0) {
         total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
             this_._internal_expires_at());
       }
     }
-    // bool used = 4 [json_name = "used"];
-    if ((cached_has_bits & 0x00000020u) != 0) {
+    // bool used = 5 [json_name = "used"];
+    if ((cached_has_bits & 0x00000040u) != 0) {
       if (this_._internal_used() != 0) {
         total_size += 2;
       }
@@ -663,7 +697,7 @@ void Token::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::p
   (void) cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x0000003fu) != 0) {
+  if ((cached_has_bits & 0x0000007fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!from._internal_id().empty()) {
         _this->_internal_set_id(from._internal_id());
@@ -674,6 +708,15 @@ void Token::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::p
       }
     }
     if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!from._internal_user_id().empty()) {
+        _this->_internal_set_user_id(from._internal_user_id());
+      } else {
+        if (_this->_impl_.user_id_.IsDefault()) {
+          _this->_internal_set_user_id("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000004u) != 0) {
       if (!from._internal_token().empty()) {
         _this->_internal_set_token(from._internal_token());
       } else {
@@ -682,7 +725,7 @@ void Token::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::p
         }
       }
     }
-    if ((cached_has_bits & 0x00000004u) != 0) {
+    if ((cached_has_bits & 0x00000008u) != 0) {
       if (!from._internal_type().empty()) {
         _this->_internal_set_type(from._internal_type());
       } else {
@@ -691,17 +734,17 @@ void Token::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::p
         }
       }
     }
-    if ((cached_has_bits & 0x00000008u) != 0) {
+    if ((cached_has_bits & 0x00000010u) != 0) {
       if (from._internal_created_at() != 0) {
         _this->_impl_.created_at_ = from._impl_.created_at_;
       }
     }
-    if ((cached_has_bits & 0x00000010u) != 0) {
+    if ((cached_has_bits & 0x00000020u) != 0) {
       if (from._internal_expires_at() != 0) {
         _this->_impl_.expires_at_ = from._impl_.expires_at_;
       }
     }
-    if ((cached_has_bits & 0x00000020u) != 0) {
+    if ((cached_has_bits & 0x00000040u) != 0) {
       if (from._internal_used() != 0) {
         _this->_impl_.used_ = from._impl_.used_;
       }
@@ -726,6 +769,7 @@ void Token::InternalSwap(Token* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.id_, &other->_impl_.id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.user_id_, &other->_impl_.user_id_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.token_, &other->_impl_.token_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.type_, &other->_impl_.type_, arena);
   ::google::protobuf::internal::memswap<
