@@ -11,7 +11,14 @@
   "license": "ISC",
   "packageManager": "pnpm@10.10.0",
   "devDependencies": {
+    "@bufbuild/protoc-gen-es": "^2.7.0",
     "ts-node": "^10.9.2",
     "tsx": "^4.20.3"
+  },
+  "dependencies": {
+    "@bufbuild/connect": "^0.13.0",
+    "@bufbuild/protobuf": "^2.7.0",
+    "@grpc/grpc-js": "^1.13.4",
+    "@improbable-eng/grpc-web": "^0.15.0"
   }
 }
