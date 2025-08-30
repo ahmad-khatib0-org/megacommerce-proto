@@ -10,6 +10,8 @@ import { BrowserHeaders } from "browser-headers";
 import {
   EmailConfirmationRequest,
   EmailConfirmationResponse,
+  LoginRequest,
+  LoginResponse,
   PasswordForgotRequest,
   PasswordForgotResponse,
 } from "./auth.js";
@@ -30,6 +32,7 @@ export interface UsersService {
     request: DeepPartial<PasswordForgotRequest>,
     metadata?: grpc.Metadata,
   ): Promise<PasswordForgotResponse>;
+  Login(request: DeepPartial<LoginRequest>, metadata?: grpc.Metadata): Promise<LoginResponse>;
 }
 
 export class UsersServiceClientImpl implements UsersService {
@@ -40,6 +43,7 @@ export class UsersServiceClientImpl implements UsersService {
     this.CreateSupplier = this.CreateSupplier.bind(this);
     this.EmailConfirmation = this.EmailConfirmation.bind(this);
     this.PasswordForgot = this.PasswordForgot.bind(this);
+    this.Login = this.Login.bind(this);
   }
 
   CreateSupplier(
@@ -61,6 +65,10 @@ export class UsersServiceClientImpl implements UsersService {
     metadata?: grpc.Metadata,
   ): Promise<PasswordForgotResponse> {
     return this.rpc.unary(UsersServicePasswordForgotDesc, PasswordForgotRequest.fromPartial(request), metadata);
+  }
+
+  Login(request: DeepPartial<LoginRequest>, metadata?: grpc.Metadata): Promise<LoginResponse> {
+    return this.rpc.unary(UsersServiceLoginDesc, LoginRequest.fromPartial(request), metadata);
   }
 }
 
@@ -125,6 +133,29 @@ export const UsersServicePasswordForgotDesc: UnaryMethodDefinitionish = {
   responseType: {
     deserializeBinary(data: Uint8Array) {
       const value = PasswordForgotResponse.decode(data);
+      return {
+        ...value,
+        toObject() {
+          return value;
+        },
+      };
+    },
+  } as any,
+};
+
+export const UsersServiceLoginDesc: UnaryMethodDefinitionish = {
+  methodName: "Login",
+  service: UsersServiceDesc,
+  requestStream: false,
+  responseStream: false,
+  requestType: {
+    serializeBinary() {
+      return LoginRequest.encode(this).finish();
+    },
+  } as any,
+  responseType: {
+    deserializeBinary(data: Uint8Array) {
+      const value = LoginResponse.decode(data);
       return {
         ...value,
         toObject() {

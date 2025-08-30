@@ -77,6 +77,7 @@ endif
 	  git tag -a "v$(VERSION)" -m "proto gen $(VERSION)"; \
 	fi
 	git push origin --tags || true
+	git push origin main
 	@echo "✅ Release complete"
 
 

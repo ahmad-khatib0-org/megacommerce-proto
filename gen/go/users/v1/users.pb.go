@@ -24,11 +24,12 @@ var File_users_v1_users_proto protoreflect.FileDescriptor
 
 const file_users_v1_users_proto_rawDesc = "" +
 	"\n" +
-	"\x14users/v1/users.proto\x12\busers.v1\x1a\x13users/v1/auth.proto\x1a\x17users/v1/supplier.proto2\x96\x02\n" +
+	"\x14users/v1/users.proto\x12\busers.v1\x1a\x13users/v1/auth.proto\x1a\x17users/v1/supplier.proto2\xd0\x02\n" +
 	"\fUsersService\x12S\n" +
 	"\x0eCreateSupplier\x12\x1f.users.v1.SupplierCreateRequest\x1a .users.v1.SupplierCreateResponse\x12\\\n" +
 	"\x11EmailConfirmation\x12\".users.v1.EmailConfirmationRequest\x1a#.users.v1.EmailConfirmationResponse\x12S\n" +
-	"\x0ePasswordForgot\x12\x1f.users.v1.PasswordForgotRequest\x1a .users.v1.PasswordForgotResponseBn\n" +
+	"\x0ePasswordForgot\x12\x1f.users.v1.PasswordForgotRequest\x1a .users.v1.PasswordForgotResponse\x128\n" +
+	"\x05Login\x12\x16.users.v1.LoginRequest\x1a\x17.users.v1.LoginResponseBn\n" +
 	"\x19org.megacommerce.users.v1B\n" +
 	"UsersProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\xf8\x01\x01b\x06proto3"
 
@@ -36,19 +37,23 @@ var file_users_v1_users_proto_goTypes = []any{
 	(*SupplierCreateRequest)(nil),     // 0: users.v1.SupplierCreateRequest
 	(*EmailConfirmationRequest)(nil),  // 1: users.v1.EmailConfirmationRequest
 	(*PasswordForgotRequest)(nil),     // 2: users.v1.PasswordForgotRequest
-	(*SupplierCreateResponse)(nil),    // 3: users.v1.SupplierCreateResponse
-	(*EmailConfirmationResponse)(nil), // 4: users.v1.EmailConfirmationResponse
-	(*PasswordForgotResponse)(nil),    // 5: users.v1.PasswordForgotResponse
+	(*LoginRequest)(nil),              // 3: users.v1.LoginRequest
+	(*SupplierCreateResponse)(nil),    // 4: users.v1.SupplierCreateResponse
+	(*EmailConfirmationResponse)(nil), // 5: users.v1.EmailConfirmationResponse
+	(*PasswordForgotResponse)(nil),    // 6: users.v1.PasswordForgotResponse
+	(*LoginResponse)(nil),             // 7: users.v1.LoginResponse
 }
 var file_users_v1_users_proto_depIdxs = []int32{
 	0, // 0: users.v1.UsersService.CreateSupplier:input_type -> users.v1.SupplierCreateRequest
 	1, // 1: users.v1.UsersService.EmailConfirmation:input_type -> users.v1.EmailConfirmationRequest
 	2, // 2: users.v1.UsersService.PasswordForgot:input_type -> users.v1.PasswordForgotRequest
-	3, // 3: users.v1.UsersService.CreateSupplier:output_type -> users.v1.SupplierCreateResponse
-	4, // 4: users.v1.UsersService.EmailConfirmation:output_type -> users.v1.EmailConfirmationResponse
-	5, // 5: users.v1.UsersService.PasswordForgot:output_type -> users.v1.PasswordForgotResponse
-	3, // [3:6] is the sub-list for method output_type
-	0, // [0:3] is the sub-list for method input_type
+	3, // 3: users.v1.UsersService.Login:input_type -> users.v1.LoginRequest
+	4, // 4: users.v1.UsersService.CreateSupplier:output_type -> users.v1.SupplierCreateResponse
+	5, // 5: users.v1.UsersService.EmailConfirmation:output_type -> users.v1.EmailConfirmationResponse
+	6, // 6: users.v1.UsersService.PasswordForgot:output_type -> users.v1.PasswordForgotResponse
+	7, // 7: users.v1.UsersService.Login:output_type -> users.v1.LoginResponse
+	4, // [4:8] is the sub-list for method output_type
+	0, // [0:4] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name

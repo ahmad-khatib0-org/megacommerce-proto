@@ -41,6 +41,17 @@ export interface PasswordForgotResponse {
   error?: AppError | undefined;
 }
 
+export interface LoginRequest {
+  email: string;
+  password: string;
+  mfa: string;
+}
+
+export interface LoginResponse {
+  data?: SuccessResponseData | undefined;
+  error?: AppError | undefined;
+}
+
 function createBaseToken(): Token {
   return { id: "", userId: "", token: "", type: "", used: false, createdAt: "0", expiresAt: "0" };
 }
@@ -497,6 +508,178 @@ export const PasswordForgotResponse: MessageFns<PasswordForgotResponse> = {
   },
   fromPartial<I extends Exact<DeepPartial<PasswordForgotResponse>, I>>(object: I): PasswordForgotResponse {
     const message = createBasePasswordForgotResponse();
+    message.data = (object.data !== undefined && object.data !== null)
+      ? SuccessResponseData.fromPartial(object.data)
+      : undefined;
+    message.error = (object.error !== undefined && object.error !== null)
+      ? AppError.fromPartial(object.error)
+      : undefined;
+    return message;
+  },
+};
+
+function createBaseLoginRequest(): LoginRequest {
+  return { email: "", password: "", mfa: "" };
+}
+
+export const LoginRequest: MessageFns<LoginRequest> = {
+  encode(message: LoginRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.email !== "") {
+      writer.uint32(10).string(message.email);
+    }
+    if (message.password !== "") {
+      writer.uint32(18).string(message.password);
+    }
+    if (message.mfa !== "") {
+      writer.uint32(26).string(message.mfa);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): LoginRequest {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseLoginRequest();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.email = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.password = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 26) {
+            break;
+          }
+
+          message.mfa = reader.string();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): LoginRequest {
+    return {
+      email: isSet(object.email) ? globalThis.String(object.email) : "",
+      password: isSet(object.password) ? globalThis.String(object.password) : "",
+      mfa: isSet(object.mfa) ? globalThis.String(object.mfa) : "",
+    };
+  },
+
+  toJSON(message: LoginRequest): unknown {
+    const obj: any = {};
+    if (message.email !== "") {
+      obj.email = message.email;
+    }
+    if (message.password !== "") {
+      obj.password = message.password;
+    }
+    if (message.mfa !== "") {
+      obj.mfa = message.mfa;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<LoginRequest>, I>>(base?: I): LoginRequest {
+    return LoginRequest.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<LoginRequest>, I>>(object: I): LoginRequest {
+    const message = createBaseLoginRequest();
+    message.email = object.email ?? "";
+    message.password = object.password ?? "";
+    message.mfa = object.mfa ?? "";
+    return message;
+  },
+};
+
+function createBaseLoginResponse(): LoginResponse {
+  return { data: undefined, error: undefined };
+}
+
+export const LoginResponse: MessageFns<LoginResponse> = {
+  encode(message: LoginResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.data !== undefined) {
+      SuccessResponseData.encode(message.data, writer.uint32(10).fork()).join();
+    }
+    if (message.error !== undefined) {
+      AppError.encode(message.error, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): LoginResponse {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseLoginResponse();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.data = SuccessResponseData.decode(reader, reader.uint32());
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.error = AppError.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): LoginResponse {
+    return {
+      data: isSet(object.data) ? SuccessResponseData.fromJSON(object.data) : undefined,
+      error: isSet(object.error) ? AppError.fromJSON(object.error) : undefined,
+    };
+  },
+
+  toJSON(message: LoginResponse): unknown {
+    const obj: any = {};
+    if (message.data !== undefined) {
+      obj.data = SuccessResponseData.toJSON(message.data);
+    }
+    if (message.error !== undefined) {
+      obj.error = AppError.toJSON(message.error);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<LoginResponse>, I>>(base?: I): LoginResponse {
+    return LoginResponse.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<LoginResponse>, I>>(object: I): LoginResponse {
+    const message = createBaseLoginResponse();
     message.data = (object.data !== undefined && object.data !== null)
       ? SuccessResponseData.fromPartial(object.data)
       : undefined;

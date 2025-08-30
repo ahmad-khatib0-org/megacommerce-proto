@@ -20,6 +20,8 @@ import {
 import {
   EmailConfirmationRequest,
   EmailConfirmationResponse,
+  LoginRequest,
+  LoginResponse,
   PasswordForgotRequest,
   PasswordForgotResponse,
 } from "./auth";
@@ -57,12 +59,22 @@ export const UsersServiceService = {
     responseSerialize: (value: PasswordForgotResponse) => Buffer.from(PasswordForgotResponse.encode(value).finish()),
     responseDeserialize: (value: Buffer) => PasswordForgotResponse.decode(value),
   },
+  login: {
+    path: "/users.v1.UsersService/Login",
+    requestStream: false,
+    responseStream: false,
+    requestSerialize: (value: LoginRequest) => Buffer.from(LoginRequest.encode(value).finish()),
+    requestDeserialize: (value: Buffer) => LoginRequest.decode(value),
+    responseSerialize: (value: LoginResponse) => Buffer.from(LoginResponse.encode(value).finish()),
+    responseDeserialize: (value: Buffer) => LoginResponse.decode(value),
+  },
 } as const;
 
 export interface UsersServiceServer extends UntypedServiceImplementation {
   createSupplier: handleUnaryCall<SupplierCreateRequest, SupplierCreateResponse>;
   emailConfirmation: handleUnaryCall<EmailConfirmationRequest, EmailConfirmationResponse>;
   passwordForgot: handleUnaryCall<PasswordForgotRequest, PasswordForgotResponse>;
+  login: handleUnaryCall<LoginRequest, LoginResponse>;
 }
 
 export interface UsersServiceClient extends Client {
@@ -110,6 +122,21 @@ export interface UsersServiceClient extends Client {
     metadata: Metadata,
     options: Partial<CallOptions>,
     callback: (error: ServiceError | null, response: PasswordForgotResponse) => void,
+  ): ClientUnaryCall;
+  login(
+    request: LoginRequest,
+    callback: (error: ServiceError | null, response: LoginResponse) => void,
+  ): ClientUnaryCall;
+  login(
+    request: LoginRequest,
+    metadata: Metadata,
+    callback: (error: ServiceError | null, response: LoginResponse) => void,
+  ): ClientUnaryCall;
+  login(
+    request: LoginRequest,
+    metadata: Metadata,
+    options: Partial<CallOptions>,
+    callback: (error: ServiceError | null, response: LoginResponse) => void,
   ): ClientUnaryCall;
 }
 

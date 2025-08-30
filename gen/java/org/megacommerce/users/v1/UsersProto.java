@@ -36,17 +36,19 @@ public final class UsersProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\024users/v1/users.proto\022\010users.v1\032\023users/" +
-      "v1/auth.proto\032\027users/v1/supplier.proto2\226" +
+      "v1/auth.proto\032\027users/v1/supplier.proto2\320" +
       "\002\n\014UsersService\022S\n\016CreateSupplier\022\037.user" +
       "s.v1.SupplierCreateRequest\032 .users.v1.Su" +
       "pplierCreateResponse\022\\\n\021EmailConfirmatio" +
       "n\022\".users.v1.EmailConfirmationRequest\032#." +
       "users.v1.EmailConfirmationResponse\022S\n\016Pa" +
       "sswordForgot\022\037.users.v1.PasswordForgotRe" +
-      "quest\032 .users.v1.PasswordForgotResponseB" +
-      "n\n\031org.megacommerce.users.v1B\nUsersProto" +
-      "ZBgithub.com/ahmad-khatib0-org/megacomme" +
-      "rce-proto/gen/go/users/v1;v1\370\001\001b\006proto3"
+      "quest\032 .users.v1.PasswordForgotResponse\022" +
+      "8\n\005Login\022\026.users.v1.LoginRequest\032\027.users" +
+      ".v1.LoginResponseBn\n\031org.megacommerce.us" +
+      "ers.v1B\nUsersProtoZBgithub.com/ahmad-kha" +
+      "tib0-org/megacommerce-proto/gen/go/users" +
+      "/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

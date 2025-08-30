@@ -4285,6 +4285,1697 @@ public final class AuthProto {
 
   }
 
+  public interface LoginRequestOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:users.v1.LoginRequest)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string email = 1 [json_name = "email"];</code>
+     * @return The email.
+     */
+    java.lang.String getEmail();
+    /**
+     * <code>string email = 1 [json_name = "email"];</code>
+     * @return The bytes for email.
+     */
+    com.google.protobuf.ByteString
+        getEmailBytes();
+
+    /**
+     * <code>string password = 2 [json_name = "password"];</code>
+     * @return The password.
+     */
+    java.lang.String getPassword();
+    /**
+     * <code>string password = 2 [json_name = "password"];</code>
+     * @return The bytes for password.
+     */
+    com.google.protobuf.ByteString
+        getPasswordBytes();
+
+    /**
+     * <code>string mfa = 3 [json_name = "mfa"];</code>
+     * @return The mfa.
+     */
+    java.lang.String getMfa();
+    /**
+     * <code>string mfa = 3 [json_name = "mfa"];</code>
+     * @return The bytes for mfa.
+     */
+    com.google.protobuf.ByteString
+        getMfaBytes();
+  }
+  /**
+   * Protobuf type {@code users.v1.LoginRequest}
+   */
+  public static final class LoginRequest extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:users.v1.LoginRequest)
+      LoginRequestOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        LoginRequest.class.getName());
+    }
+    // Use LoginRequest.newBuilder() to construct.
+    private LoginRequest(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private LoginRequest() {
+      email_ = "";
+      password_ = "";
+      mfa_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_LoginRequest_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_LoginRequest_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.users.v1.AuthProto.LoginRequest.class, org.megacommerce.users.v1.AuthProto.LoginRequest.Builder.class);
+    }
+
+    public static final int EMAIL_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object email_ = "";
+    /**
+     * <code>string email = 1 [json_name = "email"];</code>
+     * @return The email.
+     */
+    @java.lang.Override
+    public java.lang.String getEmail() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        email_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string email = 1 [json_name = "email"];</code>
+     * @return The bytes for email.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getEmailBytes() {
+      java.lang.Object ref = email_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        email_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PASSWORD_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object password_ = "";
+    /**
+     * <code>string password = 2 [json_name = "password"];</code>
+     * @return The password.
+     */
+    @java.lang.Override
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        password_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string password = 2 [json_name = "password"];</code>
+     * @return The bytes for password.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPasswordBytes() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        password_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MFA_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object mfa_ = "";
+    /**
+     * <code>string mfa = 3 [json_name = "mfa"];</code>
+     * @return The mfa.
+     */
+    @java.lang.Override
+    public java.lang.String getMfa() {
+      java.lang.Object ref = mfa_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        mfa_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string mfa = 3 [json_name = "mfa"];</code>
+     * @return The bytes for mfa.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMfaBytes() {
+      java.lang.Object ref = mfa_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        mfa_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(email_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, email_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(password_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, password_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mfa_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, mfa_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(email_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, email_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(password_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, password_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mfa_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, mfa_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.users.v1.AuthProto.LoginRequest)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.users.v1.AuthProto.LoginRequest other = (org.megacommerce.users.v1.AuthProto.LoginRequest) obj;
+
+      if (!getEmail()
+          .equals(other.getEmail())) return false;
+      if (!getPassword()
+          .equals(other.getPassword())) return false;
+      if (!getMfa()
+          .equals(other.getMfa())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getEmail().hashCode();
+      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getPassword().hashCode();
+      hash = (37 * hash) + MFA_FIELD_NUMBER;
+      hash = (53 * hash) + getMfa().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.users.v1.AuthProto.LoginRequest parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.users.v1.AuthProto.LoginRequest parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.users.v1.AuthProto.LoginRequest parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.users.v1.AuthProto.LoginRequest parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.users.v1.AuthProto.LoginRequest parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.users.v1.AuthProto.LoginRequest parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.users.v1.AuthProto.LoginRequest parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.users.v1.AuthProto.LoginRequest parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.users.v1.AuthProto.LoginRequest parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.users.v1.AuthProto.LoginRequest parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.users.v1.AuthProto.LoginRequest parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.users.v1.AuthProto.LoginRequest parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.users.v1.AuthProto.LoginRequest prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code users.v1.LoginRequest}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:users.v1.LoginRequest)
+        org.megacommerce.users.v1.AuthProto.LoginRequestOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_LoginRequest_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_LoginRequest_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.users.v1.AuthProto.LoginRequest.class, org.megacommerce.users.v1.AuthProto.LoginRequest.Builder.class);
+      }
+
+      // Construct using org.megacommerce.users.v1.AuthProto.LoginRequest.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        email_ = "";
+        password_ = "";
+        mfa_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_LoginRequest_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.users.v1.AuthProto.LoginRequest getDefaultInstanceForType() {
+        return org.megacommerce.users.v1.AuthProto.LoginRequest.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.users.v1.AuthProto.LoginRequest build() {
+        org.megacommerce.users.v1.AuthProto.LoginRequest result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.users.v1.AuthProto.LoginRequest buildPartial() {
+        org.megacommerce.users.v1.AuthProto.LoginRequest result = new org.megacommerce.users.v1.AuthProto.LoginRequest(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.users.v1.AuthProto.LoginRequest result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.email_ = email_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.password_ = password_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.mfa_ = mfa_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.users.v1.AuthProto.LoginRequest) {
+          return mergeFrom((org.megacommerce.users.v1.AuthProto.LoginRequest)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.users.v1.AuthProto.LoginRequest other) {
+        if (other == org.megacommerce.users.v1.AuthProto.LoginRequest.getDefaultInstance()) return this;
+        if (!other.getEmail().isEmpty()) {
+          email_ = other.email_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getPassword().isEmpty()) {
+          password_ = other.password_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getMfa().isEmpty()) {
+          mfa_ = other.mfa_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                email_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                password_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                mfa_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object email_ = "";
+      /**
+       * <code>string email = 1 [json_name = "email"];</code>
+       * @return The email.
+       */
+      public java.lang.String getEmail() {
+        java.lang.Object ref = email_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          email_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string email = 1 [json_name = "email"];</code>
+       * @return The bytes for email.
+       */
+      public com.google.protobuf.ByteString
+          getEmailBytes() {
+        java.lang.Object ref = email_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          email_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string email = 1 [json_name = "email"];</code>
+       * @param value The email to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEmail(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        email_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string email = 1 [json_name = "email"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEmail() {
+        email_ = getDefaultInstance().getEmail();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string email = 1 [json_name = "email"];</code>
+       * @param value The bytes for email to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEmailBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        email_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object password_ = "";
+      /**
+       * <code>string password = 2 [json_name = "password"];</code>
+       * @return The password.
+       */
+      public java.lang.String getPassword() {
+        java.lang.Object ref = password_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          password_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string password = 2 [json_name = "password"];</code>
+       * @return The bytes for password.
+       */
+      public com.google.protobuf.ByteString
+          getPasswordBytes() {
+        java.lang.Object ref = password_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          password_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string password = 2 [json_name = "password"];</code>
+       * @param value The password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPassword(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        password_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string password = 2 [json_name = "password"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPassword() {
+        password_ = getDefaultInstance().getPassword();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string password = 2 [json_name = "password"];</code>
+       * @param value The bytes for password to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPasswordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        password_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object mfa_ = "";
+      /**
+       * <code>string mfa = 3 [json_name = "mfa"];</code>
+       * @return The mfa.
+       */
+      public java.lang.String getMfa() {
+        java.lang.Object ref = mfa_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          mfa_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string mfa = 3 [json_name = "mfa"];</code>
+       * @return The bytes for mfa.
+       */
+      public com.google.protobuf.ByteString
+          getMfaBytes() {
+        java.lang.Object ref = mfa_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          mfa_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string mfa = 3 [json_name = "mfa"];</code>
+       * @param value The mfa to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMfa(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        mfa_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mfa = 3 [json_name = "mfa"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMfa() {
+        mfa_ = getDefaultInstance().getMfa();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string mfa = 3 [json_name = "mfa"];</code>
+       * @param value The bytes for mfa to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMfaBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        mfa_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:users.v1.LoginRequest)
+    }
+
+    // @@protoc_insertion_point(class_scope:users.v1.LoginRequest)
+    private static final org.megacommerce.users.v1.AuthProto.LoginRequest DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.users.v1.AuthProto.LoginRequest();
+    }
+
+    public static org.megacommerce.users.v1.AuthProto.LoginRequest getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LoginRequest>
+        PARSER = new com.google.protobuf.AbstractParser<LoginRequest>() {
+      @java.lang.Override
+      public LoginRequest parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<LoginRequest> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LoginRequest> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.users.v1.AuthProto.LoginRequest getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface LoginResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:users.v1.LoginResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
+     * @return Whether the data field is set.
+     */
+    boolean hasData();
+    /**
+     * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
+     * @return The data.
+     */
+    org.megacommerce.shared.v1.TypesProto.SuccessResponseData getData();
+    /**
+     * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
+     */
+    org.megacommerce.shared.v1.TypesProto.SuccessResponseDataOrBuilder getDataOrBuilder();
+
+    /**
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return Whether the error field is set.
+     */
+    boolean hasError();
+    /**
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    org.megacommerce.shared.v1.ErrorProto.AppError getError();
+    /**
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+     */
+    org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder();
+
+    org.megacommerce.users.v1.AuthProto.LoginResponse.ResponseCase getResponseCase();
+  }
+  /**
+   * Protobuf type {@code users.v1.LoginResponse}
+   */
+  public static final class LoginResponse extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:users.v1.LoginResponse)
+      LoginResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        LoginResponse.class.getName());
+    }
+    // Use LoginResponse.newBuilder() to construct.
+    private LoginResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private LoginResponse() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_LoginResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_LoginResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.users.v1.AuthProto.LoginResponse.class, org.megacommerce.users.v1.AuthProto.LoginResponse.Builder.class);
+    }
+
+    private int responseCase_ = 0;
+    @SuppressWarnings("serial")
+    private java.lang.Object response_;
+    public enum ResponseCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      DATA(1),
+      ERROR(2),
+      RESPONSE_NOT_SET(0);
+      private final int value;
+      private ResponseCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ResponseCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ResponseCase forNumber(int value) {
+        switch (value) {
+          case 1: return DATA;
+          case 2: return ERROR;
+          case 0: return RESPONSE_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ResponseCase
+    getResponseCase() {
+      return ResponseCase.forNumber(
+          responseCase_);
+    }
+
+    public static final int DATA_FIELD_NUMBER = 1;
+    /**
+     * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
+     * @return Whether the data field is set.
+     */
+    @java.lang.Override
+    public boolean hasData() {
+      return responseCase_ == 1;
+    }
+    /**
+     * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.TypesProto.SuccessResponseData getData() {
+      if (responseCase_ == 1) {
+         return (org.megacommerce.shared.v1.TypesProto.SuccessResponseData) response_;
+      }
+      return org.megacommerce.shared.v1.TypesProto.SuccessResponseData.getDefaultInstance();
+    }
+    /**
+     * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.TypesProto.SuccessResponseDataOrBuilder getDataOrBuilder() {
+      if (responseCase_ == 1) {
+         return (org.megacommerce.shared.v1.TypesProto.SuccessResponseData) response_;
+      }
+      return org.megacommerce.shared.v1.TypesProto.SuccessResponseData.getDefaultInstance();
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 2;
+    /**
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return Whether the error field is set.
+     */
+    @java.lang.Override
+    public boolean hasError() {
+      return responseCase_ == 2;
+    }
+    /**
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.ErrorProto.AppError getError() {
+      if (responseCase_ == 2) {
+         return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
+      }
+      return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
+    }
+    /**
+     * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+      if (responseCase_ == 2) {
+         return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
+      }
+      return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (responseCase_ == 1) {
+        output.writeMessage(1, (org.megacommerce.shared.v1.TypesProto.SuccessResponseData) response_);
+      }
+      if (responseCase_ == 2) {
+        output.writeMessage(2, (org.megacommerce.shared.v1.ErrorProto.AppError) response_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (responseCase_ == 1) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, (org.megacommerce.shared.v1.TypesProto.SuccessResponseData) response_);
+      }
+      if (responseCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (org.megacommerce.shared.v1.ErrorProto.AppError) response_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.users.v1.AuthProto.LoginResponse)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.users.v1.AuthProto.LoginResponse other = (org.megacommerce.users.v1.AuthProto.LoginResponse) obj;
+
+      if (!getResponseCase().equals(other.getResponseCase())) return false;
+      switch (responseCase_) {
+        case 1:
+          if (!getData()
+              .equals(other.getData())) return false;
+          break;
+        case 2:
+          if (!getError()
+              .equals(other.getError())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (responseCase_) {
+        case 1:
+          hash = (37 * hash) + DATA_FIELD_NUMBER;
+          hash = (53 * hash) + getData().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + ERROR_FIELD_NUMBER;
+          hash = (53 * hash) + getError().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.users.v1.AuthProto.LoginResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.users.v1.AuthProto.LoginResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.users.v1.AuthProto.LoginResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.users.v1.AuthProto.LoginResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.users.v1.AuthProto.LoginResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.users.v1.AuthProto.LoginResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.users.v1.AuthProto.LoginResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.users.v1.AuthProto.LoginResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.users.v1.AuthProto.LoginResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.users.v1.AuthProto.LoginResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.users.v1.AuthProto.LoginResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.users.v1.AuthProto.LoginResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.users.v1.AuthProto.LoginResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code users.v1.LoginResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:users.v1.LoginResponse)
+        org.megacommerce.users.v1.AuthProto.LoginResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_LoginResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_LoginResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.users.v1.AuthProto.LoginResponse.class, org.megacommerce.users.v1.AuthProto.LoginResponse.Builder.class);
+      }
+
+      // Construct using org.megacommerce.users.v1.AuthProto.LoginResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (dataBuilder_ != null) {
+          dataBuilder_.clear();
+        }
+        if (errorBuilder_ != null) {
+          errorBuilder_.clear();
+        }
+        responseCase_ = 0;
+        response_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.users.v1.AuthProto.internal_static_users_v1_LoginResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.users.v1.AuthProto.LoginResponse getDefaultInstanceForType() {
+        return org.megacommerce.users.v1.AuthProto.LoginResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.users.v1.AuthProto.LoginResponse build() {
+        org.megacommerce.users.v1.AuthProto.LoginResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.users.v1.AuthProto.LoginResponse buildPartial() {
+        org.megacommerce.users.v1.AuthProto.LoginResponse result = new org.megacommerce.users.v1.AuthProto.LoginResponse(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.users.v1.AuthProto.LoginResponse result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(org.megacommerce.users.v1.AuthProto.LoginResponse result) {
+        result.responseCase_ = responseCase_;
+        result.response_ = this.response_;
+        if (responseCase_ == 1 &&
+            dataBuilder_ != null) {
+          result.response_ = dataBuilder_.build();
+        }
+        if (responseCase_ == 2 &&
+            errorBuilder_ != null) {
+          result.response_ = errorBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.users.v1.AuthProto.LoginResponse) {
+          return mergeFrom((org.megacommerce.users.v1.AuthProto.LoginResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.users.v1.AuthProto.LoginResponse other) {
+        if (other == org.megacommerce.users.v1.AuthProto.LoginResponse.getDefaultInstance()) return this;
+        switch (other.getResponseCase()) {
+          case DATA: {
+            mergeData(other.getData());
+            break;
+          }
+          case ERROR: {
+            mergeError(other.getError());
+            break;
+          }
+          case RESPONSE_NOT_SET: {
+            break;
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                input.readMessage(
+                    internalGetDataFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                responseCase_ = 1;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    internalGetErrorFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                responseCase_ = 2;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int responseCase_ = 0;
+      private java.lang.Object response_;
+      public ResponseCase
+          getResponseCase() {
+        return ResponseCase.forNumber(
+            responseCase_);
+      }
+
+      public Builder clearResponse() {
+        responseCase_ = 0;
+        response_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.shared.v1.TypesProto.SuccessResponseData, org.megacommerce.shared.v1.TypesProto.SuccessResponseData.Builder, org.megacommerce.shared.v1.TypesProto.SuccessResponseDataOrBuilder> dataBuilder_;
+      /**
+       * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
+       * @return Whether the data field is set.
+       */
+      @java.lang.Override
+      public boolean hasData() {
+        return responseCase_ == 1;
+      }
+      /**
+       * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
+       * @return The data.
+       */
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.SuccessResponseData getData() {
+        if (dataBuilder_ == null) {
+          if (responseCase_ == 1) {
+            return (org.megacommerce.shared.v1.TypesProto.SuccessResponseData) response_;
+          }
+          return org.megacommerce.shared.v1.TypesProto.SuccessResponseData.getDefaultInstance();
+        } else {
+          if (responseCase_ == 1) {
+            return dataBuilder_.getMessage();
+          }
+          return org.megacommerce.shared.v1.TypesProto.SuccessResponseData.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
+       */
+      public Builder setData(org.megacommerce.shared.v1.TypesProto.SuccessResponseData value) {
+        if (dataBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(value);
+        }
+        responseCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
+       */
+      public Builder setData(
+          org.megacommerce.shared.v1.TypesProto.SuccessResponseData.Builder builderForValue) {
+        if (dataBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          dataBuilder_.setMessage(builderForValue.build());
+        }
+        responseCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
+       */
+      public Builder mergeData(org.megacommerce.shared.v1.TypesProto.SuccessResponseData value) {
+        if (dataBuilder_ == null) {
+          if (responseCase_ == 1 &&
+              response_ != org.megacommerce.shared.v1.TypesProto.SuccessResponseData.getDefaultInstance()) {
+            response_ = org.megacommerce.shared.v1.TypesProto.SuccessResponseData.newBuilder((org.megacommerce.shared.v1.TypesProto.SuccessResponseData) response_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          if (responseCase_ == 1) {
+            dataBuilder_.mergeFrom(value);
+          } else {
+            dataBuilder_.setMessage(value);
+          }
+        }
+        responseCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
+       */
+      public Builder clearData() {
+        if (dataBuilder_ == null) {
+          if (responseCase_ == 1) {
+            responseCase_ = 0;
+            response_ = null;
+            onChanged();
+          }
+        } else {
+          if (responseCase_ == 1) {
+            responseCase_ = 0;
+            response_ = null;
+          }
+          dataBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
+       */
+      public org.megacommerce.shared.v1.TypesProto.SuccessResponseData.Builder getDataBuilder() {
+        return internalGetDataFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.SuccessResponseDataOrBuilder getDataOrBuilder() {
+        if ((responseCase_ == 1) && (dataBuilder_ != null)) {
+          return dataBuilder_.getMessageOrBuilder();
+        } else {
+          if (responseCase_ == 1) {
+            return (org.megacommerce.shared.v1.TypesProto.SuccessResponseData) response_;
+          }
+          return org.megacommerce.shared.v1.TypesProto.SuccessResponseData.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.shared.v1.SuccessResponseData data = 1 [json_name = "data"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.shared.v1.TypesProto.SuccessResponseData, org.megacommerce.shared.v1.TypesProto.SuccessResponseData.Builder, org.megacommerce.shared.v1.TypesProto.SuccessResponseDataOrBuilder> 
+          internalGetDataFieldBuilder() {
+        if (dataBuilder_ == null) {
+          if (!(responseCase_ == 1)) {
+            response_ = org.megacommerce.shared.v1.TypesProto.SuccessResponseData.getDefaultInstance();
+          }
+          dataBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.shared.v1.TypesProto.SuccessResponseData, org.megacommerce.shared.v1.TypesProto.SuccessResponseData.Builder, org.megacommerce.shared.v1.TypesProto.SuccessResponseDataOrBuilder>(
+                  (org.megacommerce.shared.v1.TypesProto.SuccessResponseData) response_,
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        responseCase_ = 1;
+        onChanged();
+        return dataBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder> errorBuilder_;
+      /**
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+       * @return Whether the error field is set.
+       */
+      @java.lang.Override
+      public boolean hasError() {
+        return responseCase_ == 2;
+      }
+      /**
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+       * @return The error.
+       */
+      @java.lang.Override
+      public org.megacommerce.shared.v1.ErrorProto.AppError getError() {
+        if (errorBuilder_ == null) {
+          if (responseCase_ == 2) {
+            return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
+          }
+          return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
+        } else {
+          if (responseCase_ == 2) {
+            return errorBuilder_.getMessage();
+          }
+          return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder setError(org.megacommerce.shared.v1.ErrorProto.AppError value) {
+        if (errorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          response_ = value;
+          onChanged();
+        } else {
+          errorBuilder_.setMessage(value);
+        }
+        responseCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder setError(
+          org.megacommerce.shared.v1.ErrorProto.AppError.Builder builderForValue) {
+        if (errorBuilder_ == null) {
+          response_ = builderForValue.build();
+          onChanged();
+        } else {
+          errorBuilder_.setMessage(builderForValue.build());
+        }
+        responseCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder mergeError(org.megacommerce.shared.v1.ErrorProto.AppError value) {
+        if (errorBuilder_ == null) {
+          if (responseCase_ == 2 &&
+              response_ != org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance()) {
+            response_ = org.megacommerce.shared.v1.ErrorProto.AppError.newBuilder((org.megacommerce.shared.v1.ErrorProto.AppError) response_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            response_ = value;
+          }
+          onChanged();
+        } else {
+          if (responseCase_ == 2) {
+            errorBuilder_.mergeFrom(value);
+          } else {
+            errorBuilder_.setMessage(value);
+          }
+        }
+        responseCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public Builder clearError() {
+        if (errorBuilder_ == null) {
+          if (responseCase_ == 2) {
+            responseCase_ = 0;
+            response_ = null;
+            onChanged();
+          }
+        } else {
+          if (responseCase_ == 2) {
+            responseCase_ = 0;
+            response_ = null;
+          }
+          errorBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      public org.megacommerce.shared.v1.ErrorProto.AppError.Builder getErrorBuilder() {
+        return internalGetErrorFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder getErrorOrBuilder() {
+        if ((responseCase_ == 2) && (errorBuilder_ != null)) {
+          return errorBuilder_.getMessageOrBuilder();
+        } else {
+          if (responseCase_ == 2) {
+            return (org.megacommerce.shared.v1.ErrorProto.AppError) response_;
+          }
+          return org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.shared.v1.AppError error = 2 [json_name = "error"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder> 
+          internalGetErrorFieldBuilder() {
+        if (errorBuilder_ == null) {
+          if (!(responseCase_ == 2)) {
+            response_ = org.megacommerce.shared.v1.ErrorProto.AppError.getDefaultInstance();
+          }
+          errorBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.shared.v1.ErrorProto.AppError, org.megacommerce.shared.v1.ErrorProto.AppError.Builder, org.megacommerce.shared.v1.ErrorProto.AppErrorOrBuilder>(
+                  (org.megacommerce.shared.v1.ErrorProto.AppError) response_,
+                  getParentForChildren(),
+                  isClean());
+          response_ = null;
+        }
+        responseCase_ = 2;
+        onChanged();
+        return errorBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:users.v1.LoginResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:users.v1.LoginResponse)
+    private static final org.megacommerce.users.v1.AuthProto.LoginResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.users.v1.AuthProto.LoginResponse();
+    }
+
+    public static org.megacommerce.users.v1.AuthProto.LoginResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<LoginResponse>
+        PARSER = new com.google.protobuf.AbstractParser<LoginResponse>() {
+      @java.lang.Override
+      public LoginResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<LoginResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<LoginResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.users.v1.AuthProto.LoginResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_users_v1_Token_descriptor;
   private static final 
@@ -4310,6 +6001,16 @@ public final class AuthProto {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_users_v1_PasswordForgotResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_users_v1_LoginRequest_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_users_v1_LoginRequest_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_users_v1_LoginResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_users_v1_LoginResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4335,10 +6036,16 @@ public final class AuthProto {
       "\005email\030\001 \001(\tR\005email\"\207\001\n\026PasswordForgotRe" +
       "sponse\0224\n\004data\030\001 \001(\0132\036.shared.v1.Success" +
       "ResponseDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.sh" +
-      "ared.v1.AppErrorH\000R\005errorB\n\n\010responseBm\n" +
-      "\031org.megacommerce.users.v1B\tAuthProtoZBg" +
-      "ithub.com/ahmad-khatib0-org/megacommerce" +
-      "-proto/gen/go/users/v1;v1\370\001\001b\006proto3"
+      "ared.v1.AppErrorH\000R\005errorB\n\n\010response\"R\n" +
+      "\014LoginRequest\022\024\n\005email\030\001 \001(\tR\005email\022\032\n\010p" +
+      "assword\030\002 \001(\tR\010password\022\020\n\003mfa\030\003 \001(\tR\003mf" +
+      "a\"~\n\rLoginResponse\0224\n\004data\030\001 \001(\0132\036.share" +
+      "d.v1.SuccessResponseDataH\000R\004data\022+\n\005erro" +
+      "r\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n" +
+      "\010responseBm\n\031org.megacommerce.users.v1B\t" +
+      "AuthProtoZBgithub.com/ahmad-khatib0-org/" +
+      "megacommerce-proto/gen/go/users/v1;v1\370\001\001" +
+      "b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4375,6 +6082,18 @@ public final class AuthProto {
     internal_static_users_v1_PasswordForgotResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_users_v1_PasswordForgotResponse_descriptor,
+        new java.lang.String[] { "Data", "Error", "Response", });
+    internal_static_users_v1_LoginRequest_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_users_v1_LoginRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_users_v1_LoginRequest_descriptor,
+        new java.lang.String[] { "Email", "Password", "Mfa", });
+    internal_static_users_v1_LoginResponse_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_users_v1_LoginResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_users_v1_LoginResponse_descriptor,
         new java.lang.String[] { "Data", "Error", "Response", });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.shared.v1.ErrorProto.getDescriptor();

@@ -382,6 +382,148 @@ func (*PasswordForgotResponse_Data) isPasswordForgotResponse_Response() {}
 
 func (*PasswordForgotResponse_Error) isPasswordForgotResponse_Response() {}
 
+type LoginRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
+	Password      string                 `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
+	Mfa           string                 `protobuf:"bytes,3,opt,name=mfa,proto3" json:"mfa,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LoginRequest) Reset() {
+	*x = LoginRequest{}
+	mi := &file_users_v1_auth_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LoginRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LoginRequest) ProtoMessage() {}
+
+func (x *LoginRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_users_v1_auth_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LoginRequest.ProtoReflect.Descriptor instead.
+func (*LoginRequest) Descriptor() ([]byte, []int) {
+	return file_users_v1_auth_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *LoginRequest) GetEmail() string {
+	if x != nil {
+		return x.Email
+	}
+	return ""
+}
+
+func (x *LoginRequest) GetPassword() string {
+	if x != nil {
+		return x.Password
+	}
+	return ""
+}
+
+func (x *LoginRequest) GetMfa() string {
+	if x != nil {
+		return x.Mfa
+	}
+	return ""
+}
+
+type LoginResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Types that are valid to be assigned to Response:
+	//
+	//	*LoginResponse_Data
+	//	*LoginResponse_Error
+	Response      isLoginResponse_Response `protobuf_oneof:"response"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *LoginResponse) Reset() {
+	*x = LoginResponse{}
+	mi := &file_users_v1_auth_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *LoginResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*LoginResponse) ProtoMessage() {}
+
+func (x *LoginResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_users_v1_auth_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use LoginResponse.ProtoReflect.Descriptor instead.
+func (*LoginResponse) Descriptor() ([]byte, []int) {
+	return file_users_v1_auth_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *LoginResponse) GetResponse() isLoginResponse_Response {
+	if x != nil {
+		return x.Response
+	}
+	return nil
+}
+
+func (x *LoginResponse) GetData() *v1.SuccessResponseData {
+	if x != nil {
+		if x, ok := x.Response.(*LoginResponse_Data); ok {
+			return x.Data
+		}
+	}
+	return nil
+}
+
+func (x *LoginResponse) GetError() *v1.AppError {
+	if x != nil {
+		if x, ok := x.Response.(*LoginResponse_Error); ok {
+			return x.Error
+		}
+	}
+	return nil
+}
+
+type isLoginResponse_Response interface {
+	isLoginResponse_Response()
+}
+
+type LoginResponse_Data struct {
+	Data *v1.SuccessResponseData `protobuf:"bytes,1,opt,name=data,proto3,oneof"`
+}
+
+type LoginResponse_Error struct {
+	Error *v1.AppError `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
+}
+
+func (*LoginResponse_Data) isLoginResponse_Response() {}
+
+func (*LoginResponse_Error) isLoginResponse_Response() {}
+
 var File_users_v1_auth_proto protoreflect.FileDescriptor
 
 const file_users_v1_auth_proto_rawDesc = "" +
@@ -412,6 +554,15 @@ const file_users_v1_auth_proto_rawDesc = "" +
 	"\x04data\x18\x01 \x01(\v2\x1e.shared.v1.SuccessResponseDataH\x00R\x04data\x12+\n" +
 	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +
 	"\n" +
+	"\bresponse\"R\n" +
+	"\fLoginRequest\x12\x14\n" +
+	"\x05email\x18\x01 \x01(\tR\x05email\x12\x1a\n" +
+	"\bpassword\x18\x02 \x01(\tR\bpassword\x12\x10\n" +
+	"\x03mfa\x18\x03 \x01(\tR\x03mfa\"~\n" +
+	"\rLoginResponse\x124\n" +
+	"\x04data\x18\x01 \x01(\v2\x1e.shared.v1.SuccessResponseDataH\x00R\x04data\x12+\n" +
+	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +
+	"\n" +
 	"\bresponseBm\n" +
 	"\x19org.megacommerce.users.v1B\tAuthProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\xf8\x01\x01b\x06proto3"
 
@@ -427,26 +578,30 @@ func file_users_v1_auth_proto_rawDescGZIP() []byte {
 	return file_users_v1_auth_proto_rawDescData
 }
 
-var file_users_v1_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
+var file_users_v1_auth_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_users_v1_auth_proto_goTypes = []any{
 	(*Token)(nil),                     // 0: users.v1.Token
 	(*EmailConfirmationRequest)(nil),  // 1: users.v1.EmailConfirmationRequest
 	(*EmailConfirmationResponse)(nil), // 2: users.v1.EmailConfirmationResponse
 	(*PasswordForgotRequest)(nil),     // 3: users.v1.PasswordForgotRequest
 	(*PasswordForgotResponse)(nil),    // 4: users.v1.PasswordForgotResponse
-	(*v1.SuccessResponseData)(nil),    // 5: shared.v1.SuccessResponseData
-	(*v1.AppError)(nil),               // 6: shared.v1.AppError
+	(*LoginRequest)(nil),              // 5: users.v1.LoginRequest
+	(*LoginResponse)(nil),             // 6: users.v1.LoginResponse
+	(*v1.SuccessResponseData)(nil),    // 7: shared.v1.SuccessResponseData
+	(*v1.AppError)(nil),               // 8: shared.v1.AppError
 }
 var file_users_v1_auth_proto_depIdxs = []int32{
-	5, // 0: users.v1.EmailConfirmationResponse.data:type_name -> shared.v1.SuccessResponseData
-	6, // 1: users.v1.EmailConfirmationResponse.error:type_name -> shared.v1.AppError
-	5, // 2: users.v1.PasswordForgotResponse.data:type_name -> shared.v1.SuccessResponseData
-	6, // 3: users.v1.PasswordForgotResponse.error:type_name -> shared.v1.AppError
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	7, // 0: users.v1.EmailConfirmationResponse.data:type_name -> shared.v1.SuccessResponseData
+	8, // 1: users.v1.EmailConfirmationResponse.error:type_name -> shared.v1.AppError
+	7, // 2: users.v1.PasswordForgotResponse.data:type_name -> shared.v1.SuccessResponseData
+	8, // 3: users.v1.PasswordForgotResponse.error:type_name -> shared.v1.AppError
+	7, // 4: users.v1.LoginResponse.data:type_name -> shared.v1.SuccessResponseData
+	8, // 5: users.v1.LoginResponse.error:type_name -> shared.v1.AppError
+	6, // [6:6] is the sub-list for method output_type
+	6, // [6:6] is the sub-list for method input_type
+	6, // [6:6] is the sub-list for extension type_name
+	6, // [6:6] is the sub-list for extension extendee
+	0, // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_users_v1_auth_proto_init() }
@@ -462,13 +617,17 @@ func file_users_v1_auth_proto_init() {
 		(*PasswordForgotResponse_Data)(nil),
 		(*PasswordForgotResponse_Error)(nil),
 	}
+	file_users_v1_auth_proto_msgTypes[6].OneofWrappers = []any{
+		(*LoginResponse_Data)(nil),
+		(*LoginResponse_Error)(nil),
+	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_users_v1_auth_proto_rawDesc), len(file_users_v1_auth_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   5,
+			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
