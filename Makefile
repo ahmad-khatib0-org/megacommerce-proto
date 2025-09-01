@@ -18,23 +18,18 @@ generate:
 	# Update deps and lockfile 
 	buf dep update .
 
-	# Generate your own proto files
-	buf generate \
-	  --exclude-path node_modules/ \
-	  --exclude-path wrappers/proto-npm/node_modules/
-
-	# Generate Envoy API protos (remote module) into gen/cpp/envoy
-	buf generate buf.build/envoyproxy/envoy --template buf.gen.envoy.yaml --include-imports
+	buf generate 
 
 	@echo "Generating Rust protobuf files..."
 	find wrappers/proto-crate/src -name "*.rs" -not -name "lib.rs" -o -name "descriptor.bin" -delete
-	cargo build
+	cargo build --verbose
 	
 	@echo "Generating Python protobuf files..."
 	mkdir -p gen/python
 	find . -name "*.proto" \
 	-not -path "./**/node_modules/*" \
 	-not -path "./wrappers/proto-npm/node_modules/*" \
+	-not -path "./third_party/*" \
 	| while read -r file; do \
 		python -m grpc_tools.protoc \
 			--proto_path=. \

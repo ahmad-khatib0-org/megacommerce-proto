@@ -1,11 +1,12 @@
 ---
 version: v1
-# name: buf.build/ahmad-khatib-org/megacommerce-proto
-
-deps:
-  - buf.build/envoyproxy/envoy
+name: buf.build/ahmad-khatib-org/megacommerce-proto
 
 build:
   excludes:
     - node_modules
     - wrappers/proto-npm/node_modules
+    - third_party/proto/envoyproxy
+    - third_party/proto/googleapis
+    - third_party/proto/udpa
+    - third_party/proto/validate

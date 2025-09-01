@@ -1,5 +1,5 @@
 target
-external_libs
+third_party
 node_modules
 dist
 
