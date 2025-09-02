@@ -72,6 +72,12 @@ pub struct ConfigServices {
     >,
     #[prost(int64, optional, tag = "8")]
     pub users_service_max_receive_message_size_bytes: ::core::option::Option<i64>,
+    #[prost(string, optional, tag = "9")]
+    pub auth_service_grpc_url: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "10")]
+    pub auth_service_prometheus_url: ::core::option::Option<
+        ::prost::alloc::string::String,
+    >,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

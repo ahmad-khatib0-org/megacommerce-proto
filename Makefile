@@ -1,4 +1,4 @@
-.PHONY: generate release clean
+.PHONY: generate release clean publish
 
 VERSION ?=
 MSG ?=
@@ -75,6 +75,12 @@ endif
 	git push origin main
 	@echo "✅ Release complete"
 
+publish:
+	@echo "Publishing npm package..."
+	cd wrappers/proto-npm && npm publish
+	@echo "Publishing rust crate..."
+	cd wrappers/proto-crate && cargo publish
+	@echo "Publishing done successfully"
 
 # -----------------------------------------------------------------------------
 # Clean generated artifacts

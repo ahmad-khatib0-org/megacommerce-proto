@@ -236,6 +236,8 @@ type ConfigServices struct {
 	UserServicePrometheusUrl               *string                `protobuf:"bytes,6,opt,name=user_service_prometheus_url,json=userServicePrometheusUrl,proto3,oneof" json:"user_service_prometheus_url,omitempty"`
 	ProductsServicePrometheusUrl           *string                `protobuf:"bytes,7,opt,name=products_service_prometheus_url,json=productsServicePrometheusUrl,proto3,oneof" json:"products_service_prometheus_url,omitempty"`
 	UsersServiceMaxReceiveMessageSizeBytes *int64                 `protobuf:"varint,8,opt,name=users_service_max_receive_message_size_bytes,json=usersServiceMaxReceiveMessageSizeBytes,proto3,oneof" json:"users_service_max_receive_message_size_bytes,omitempty"`
+	AuthServiceGrpcUrl                     *string                `protobuf:"bytes,9,opt,name=auth_service_grpc_url,json=authServiceGrpcUrl,proto3,oneof" json:"auth_service_grpc_url,omitempty"`
+	AuthServicePrometheusUrl               *string                `protobuf:"bytes,10,opt,name=auth_service_prometheus_url,json=authServicePrometheusUrl,proto3,oneof" json:"auth_service_prometheus_url,omitempty"`
 	unknownFields                          protoimpl.UnknownFields
 	sizeCache                              protoimpl.SizeCache
 }
@@ -324,6 +326,20 @@ func (x *ConfigServices) GetUsersServiceMaxReceiveMessageSizeBytes() int64 {
 		return *x.UsersServiceMaxReceiveMessageSizeBytes
 	}
 	return 0
+}
+
+func (x *ConfigServices) GetAuthServiceGrpcUrl() string {
+	if x != nil && x.AuthServiceGrpcUrl != nil {
+		return *x.AuthServiceGrpcUrl
+	}
+	return ""
+}
+
+func (x *ConfigServices) GetAuthServicePrometheusUrl() string {
+	if x != nil && x.AuthServicePrometheusUrl != nil {
+		return *x.AuthServicePrometheusUrl
+	}
+	return ""
 }
 
 type ConfigSecurity struct {
@@ -3454,7 +3470,7 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\"_persistent_notification_max_countB)\n" +
 	"'_persistent_notification_max_recipientsB%\n" +
 	"#_feature_flag_sync_interval_secondsB\x16\n" +
-	"\x14_allow_synced_drafts\"\xba\x06\n" +
+	"\x14_allow_synced_drafts\"\xf0\a\n" +
 	"\x0eConfigServices\x12:\n" +
 	"\x17common_service_grpc_url\x18\x01 \x01(\tH\x00R\x14commonServiceGrpcUrl\x88\x01\x01\x126\n" +
 	"\x15user_service_grpc_url\x18\x02 \x01(\tH\x01R\x12userServiceGrpcUrl\x88\x01\x01\x12>\n" +
@@ -3463,7 +3479,10 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x1dcommon_service_prometheus_url\x18\x05 \x01(\tH\x04R\x1acommonServicePrometheusUrl\x88\x01\x01\x12B\n" +
 	"\x1buser_service_prometheus_url\x18\x06 \x01(\tH\x05R\x18userServicePrometheusUrl\x88\x01\x01\x12J\n" +
 	"\x1fproducts_service_prometheus_url\x18\a \x01(\tH\x06R\x1cproductsServicePrometheusUrl\x88\x01\x01\x12a\n" +
-	",users_service_max_receive_message_size_bytes\x18\b \x01(\x03H\aR&usersServiceMaxReceiveMessageSizeBytes\x88\x01\x01B\x1a\n" +
+	",users_service_max_receive_message_size_bytes\x18\b \x01(\x03H\aR&usersServiceMaxReceiveMessageSizeBytes\x88\x01\x01\x126\n" +
+	"\x15auth_service_grpc_url\x18\t \x01(\tH\bR\x12authServiceGrpcUrl\x88\x01\x01\x12B\n" +
+	"\x1bauth_service_prometheus_url\x18\n" +
+	" \x01(\tH\tR\x18authServicePrometheusUrl\x88\x01\x01B\x1a\n" +
 	"\x18_common_service_grpc_urlB\x18\n" +
 	"\x16_user_service_grpc_urlB\x1c\n" +
 	"\x1a_products_service_grpc_urlB\x17\n" +
@@ -3471,7 +3490,9 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x1e_common_service_prometheus_urlB\x1e\n" +
 	"\x1c_user_service_prometheus_urlB\"\n" +
 	" _products_service_prometheus_urlB/\n" +
-	"-_users_service_max_receive_message_size_bytes\"\x89\x11\n" +
+	"-_users_service_max_receive_message_size_bytesB\x18\n" +
+	"\x16_auth_service_grpc_urlB\x1e\n" +
+	"\x1c_auth_service_prometheus_url\"\x89\x11\n" +
 	"\x0eConfigSecurity\x12e\n" +
 	"\x14restricted_usernames\x18\x01 \x03(\v22.common.v1.ConfigSecurity.RestrictedUsernamesEntryR\x13restrictedUsernames\x129\n" +
 	"\x16maximum_login_attempts\x18\x02 \x01(\x05H\x00R\x14maximumLoginAttempts\x88\x01\x01\x12T\n" +

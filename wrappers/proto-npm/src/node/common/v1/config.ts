@@ -43,6 +43,8 @@ export interface ConfigServices {
   userServicePrometheusUrl?: string | undefined;
   productsServicePrometheusUrl?: string | undefined;
   usersServiceMaxReceiveMessageSizeBytes?: string | undefined;
+  authServiceGrpcUrl?: string | undefined;
+  authServicePrometheusUrl?: string | undefined;
 }
 
 export interface ConfigSecurity {
@@ -847,6 +849,8 @@ function createBaseConfigServices(): ConfigServices {
     userServicePrometheusUrl: undefined,
     productsServicePrometheusUrl: undefined,
     usersServiceMaxReceiveMessageSizeBytes: undefined,
+    authServiceGrpcUrl: undefined,
+    authServicePrometheusUrl: undefined,
   };
 }
 
@@ -875,6 +879,12 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     }
     if (message.usersServiceMaxReceiveMessageSizeBytes !== undefined) {
       writer.uint32(64).int64(message.usersServiceMaxReceiveMessageSizeBytes);
+    }
+    if (message.authServiceGrpcUrl !== undefined) {
+      writer.uint32(74).string(message.authServiceGrpcUrl);
+    }
+    if (message.authServicePrometheusUrl !== undefined) {
+      writer.uint32(82).string(message.authServicePrometheusUrl);
     }
     return writer;
   },
@@ -950,6 +960,22 @@ export const ConfigServices: MessageFns<ConfigServices> = {
           message.usersServiceMaxReceiveMessageSizeBytes = reader.int64().toString();
           continue;
         }
+        case 9: {
+          if (tag !== 74) {
+            break;
+          }
+
+          message.authServiceGrpcUrl = reader.string();
+          continue;
+        }
+        case 10: {
+          if (tag !== 82) {
+            break;
+          }
+
+          message.authServicePrometheusUrl = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -981,6 +1007,10 @@ export const ConfigServices: MessageFns<ConfigServices> = {
       usersServiceMaxReceiveMessageSizeBytes: isSet(object.usersServiceMaxReceiveMessageSizeBytes)
         ? globalThis.String(object.usersServiceMaxReceiveMessageSizeBytes)
         : undefined,
+      authServiceGrpcUrl: isSet(object.authServiceGrpcUrl) ? globalThis.String(object.authServiceGrpcUrl) : undefined,
+      authServicePrometheusUrl: isSet(object.authServicePrometheusUrl)
+        ? globalThis.String(object.authServicePrometheusUrl)
+        : undefined,
     };
   },
 
@@ -1010,6 +1040,12 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     if (message.usersServiceMaxReceiveMessageSizeBytes !== undefined) {
       obj.usersServiceMaxReceiveMessageSizeBytes = message.usersServiceMaxReceiveMessageSizeBytes;
     }
+    if (message.authServiceGrpcUrl !== undefined) {
+      obj.authServiceGrpcUrl = message.authServiceGrpcUrl;
+    }
+    if (message.authServicePrometheusUrl !== undefined) {
+      obj.authServicePrometheusUrl = message.authServicePrometheusUrl;
+    }
     return obj;
   },
 
@@ -1026,6 +1062,8 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     message.userServicePrometheusUrl = object.userServicePrometheusUrl ?? undefined;
     message.productsServicePrometheusUrl = object.productsServicePrometheusUrl ?? undefined;
     message.usersServiceMaxReceiveMessageSizeBytes = object.usersServiceMaxReceiveMessageSizeBytes ?? undefined;
+    message.authServiceGrpcUrl = object.authServiceGrpcUrl ?? undefined;
+    message.authServicePrometheusUrl = object.authServicePrometheusUrl ?? undefined;
     return message;
   },
 };

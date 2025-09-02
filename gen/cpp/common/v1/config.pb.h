@@ -970,6 +970,8 @@ class ConfigServices final : public ::google::protobuf::Message
     kCommonServicePrometheusUrlFieldNumber = 5,
     kUserServicePrometheusUrlFieldNumber = 6,
     kProductsServicePrometheusUrlFieldNumber = 7,
+    kAuthServiceGrpcUrlFieldNumber = 9,
+    kAuthServicePrometheusUrlFieldNumber = 10,
     kUsersServiceMaxReceiveMessageSizeBytesFieldNumber = 8,
   };
   // optional string common_service_grpc_url = 1 [json_name = "commonServiceGrpcUrl"];
@@ -1084,6 +1086,38 @@ class ConfigServices final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_products_service_prometheus_url();
 
   public:
+  // optional string auth_service_grpc_url = 9 [json_name = "authServiceGrpcUrl"];
+  bool has_auth_service_grpc_url() const;
+  void clear_auth_service_grpc_url() ;
+  const ::std::string& auth_service_grpc_url() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_auth_service_grpc_url(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_auth_service_grpc_url();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_auth_service_grpc_url();
+  void set_allocated_auth_service_grpc_url(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_auth_service_grpc_url() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_auth_service_grpc_url(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_auth_service_grpc_url();
+
+  public:
+  // optional string auth_service_prometheus_url = 10 [json_name = "authServicePrometheusUrl"];
+  bool has_auth_service_prometheus_url() const;
+  void clear_auth_service_prometheus_url() ;
+  const ::std::string& auth_service_prometheus_url() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_auth_service_prometheus_url(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_auth_service_prometheus_url();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_auth_service_prometheus_url();
+  void set_allocated_auth_service_prometheus_url(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_auth_service_prometheus_url() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_auth_service_prometheus_url(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_auth_service_prometheus_url();
+
+  public:
   // optional int64 users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];
   bool has_users_service_max_receive_message_size_bytes() const;
   void clear_users_service_max_receive_message_size_bytes() ;
@@ -1099,8 +1133,8 @@ class ConfigServices final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<3, 8,
-                                   0, 217,
+  static const ::google::protobuf::internal::TcParseTable<4, 10,
+                                   0, 265,
                                    2>
       _table_;
 
@@ -1128,6 +1162,8 @@ class ConfigServices final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr common_service_prometheus_url_;
     ::google::protobuf::internal::ArenaStringPtr user_service_prometheus_url_;
     ::google::protobuf::internal::ArenaStringPtr products_service_prometheus_url_;
+    ::google::protobuf::internal::ArenaStringPtr auth_service_grpc_url_;
+    ::google::protobuf::internal::ArenaStringPtr auth_service_prometheus_url_;
     ::int64_t users_service_max_receive_message_size_bytes_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -10991,13 +11027,13 @@ inline void ConfigServices::set_allocated_products_service_prometheus_url(::std:
 
 // optional int64 users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];
 inline bool ConfigServices::has_users_service_max_receive_message_size_bytes() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
   return value;
 }
 inline void ConfigServices::clear_users_service_max_receive_message_size_bytes() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.users_service_max_receive_message_size_bytes_ = ::int64_t{0};
-  _impl_._has_bits_[0] &= ~0x00000080u;
+  _impl_._has_bits_[0] &= ~0x00000200u;
 }
 inline ::int64_t ConfigServices::users_service_max_receive_message_size_bytes() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigServices.users_service_max_receive_message_size_bytes)
@@ -11005,7 +11041,7 @@ inline ::int64_t ConfigServices::users_service_max_receive_message_size_bytes() 
 }
 inline void ConfigServices::set_users_service_max_receive_message_size_bytes(::int64_t value) {
   _internal_set_users_service_max_receive_message_size_bytes(value);
-  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_._has_bits_[0] |= 0x00000200u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigServices.users_service_max_receive_message_size_bytes)
 }
 inline ::int64_t ConfigServices::_internal_users_service_max_receive_message_size_bytes() const {
@@ -11015,6 +11051,144 @@ inline ::int64_t ConfigServices::_internal_users_service_max_receive_message_siz
 inline void ConfigServices::_internal_set_users_service_max_receive_message_size_bytes(::int64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.users_service_max_receive_message_size_bytes_ = value;
+}
+
+// optional string auth_service_grpc_url = 9 [json_name = "authServiceGrpcUrl"];
+inline bool ConfigServices::has_auth_service_grpc_url() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
+  return value;
+}
+inline void ConfigServices::clear_auth_service_grpc_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.auth_service_grpc_url_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000080u;
+}
+inline const ::std::string& ConfigServices::auth_service_grpc_url() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.auth_service_grpc_url)
+  return _internal_auth_service_grpc_url();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigServices::set_auth_service_grpc_url(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_.auth_service_grpc_url_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.auth_service_grpc_url)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigServices::mutable_auth_service_grpc_url()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_auth_service_grpc_url();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.auth_service_grpc_url)
+  return _s;
+}
+inline const ::std::string& ConfigServices::_internal_auth_service_grpc_url() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.auth_service_grpc_url_.Get();
+}
+inline void ConfigServices::_internal_set_auth_service_grpc_url(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_.auth_service_grpc_url_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigServices::_internal_mutable_auth_service_grpc_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000080u;
+  return _impl_.auth_service_grpc_url_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigServices::release_auth_service_grpc_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.auth_service_grpc_url)
+  if ((_impl_._has_bits_[0] & 0x00000080u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000080u;
+  auto* released = _impl_.auth_service_grpc_url_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.auth_service_grpc_url_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigServices::set_allocated_auth_service_grpc_url(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000080u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000080u;
+  }
+  _impl_.auth_service_grpc_url_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.auth_service_grpc_url_.IsDefault()) {
+    _impl_.auth_service_grpc_url_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.auth_service_grpc_url)
+}
+
+// optional string auth_service_prometheus_url = 10 [json_name = "authServicePrometheusUrl"];
+inline bool ConfigServices::has_auth_service_prometheus_url() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
+  return value;
+}
+inline void ConfigServices::clear_auth_service_prometheus_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.auth_service_prometheus_url_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000100u;
+}
+inline const ::std::string& ConfigServices::auth_service_prometheus_url() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.auth_service_prometheus_url)
+  return _internal_auth_service_prometheus_url();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigServices::set_auth_service_prometheus_url(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000100u;
+  _impl_.auth_service_prometheus_url_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.auth_service_prometheus_url)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigServices::mutable_auth_service_prometheus_url()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_auth_service_prometheus_url();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.auth_service_prometheus_url)
+  return _s;
+}
+inline const ::std::string& ConfigServices::_internal_auth_service_prometheus_url() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.auth_service_prometheus_url_.Get();
+}
+inline void ConfigServices::_internal_set_auth_service_prometheus_url(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000100u;
+  _impl_.auth_service_prometheus_url_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigServices::_internal_mutable_auth_service_prometheus_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000100u;
+  return _impl_.auth_service_prometheus_url_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigServices::release_auth_service_prometheus_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.auth_service_prometheus_url)
+  if ((_impl_._has_bits_[0] & 0x00000100u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000100u;
+  auto* released = _impl_.auth_service_prometheus_url_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.auth_service_prometheus_url_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigServices::set_allocated_auth_service_prometheus_url(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000100u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000100u;
+  }
+  _impl_.auth_service_prometheus_url_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.auth_service_prometheus_url_.IsDefault()) {
+    _impl_.auth_service_prometheus_url_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.auth_service_prometheus_url)
 }
 
 // -------------------------------------------------------------------
