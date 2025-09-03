@@ -45,6 +45,7 @@ export interface ConfigServices {
   usersServiceMaxReceiveMessageSizeBytes?: string | undefined;
   authServiceGrpcUrl?: string | undefined;
   authServicePrometheusUrl?: string | undefined;
+  oauthProviderUrl?: string | undefined;
 }
 
 export interface ConfigSecurity {
@@ -851,6 +852,7 @@ function createBaseConfigServices(): ConfigServices {
     usersServiceMaxReceiveMessageSizeBytes: undefined,
     authServiceGrpcUrl: undefined,
     authServicePrometheusUrl: undefined,
+    oauthProviderUrl: undefined,
   };
 }
 
@@ -885,6 +887,9 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     }
     if (message.authServicePrometheusUrl !== undefined) {
       writer.uint32(82).string(message.authServicePrometheusUrl);
+    }
+    if (message.oauthProviderUrl !== undefined) {
+      writer.uint32(90).string(message.oauthProviderUrl);
     }
     return writer;
   },
@@ -976,6 +981,14 @@ export const ConfigServices: MessageFns<ConfigServices> = {
           message.authServicePrometheusUrl = reader.string();
           continue;
         }
+        case 11: {
+          if (tag !== 90) {
+            break;
+          }
+
+          message.oauthProviderUrl = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -1011,6 +1024,7 @@ export const ConfigServices: MessageFns<ConfigServices> = {
       authServicePrometheusUrl: isSet(object.authServicePrometheusUrl)
         ? globalThis.String(object.authServicePrometheusUrl)
         : undefined,
+      oauthProviderUrl: isSet(object.oauthProviderUrl) ? globalThis.String(object.oauthProviderUrl) : undefined,
     };
   },
 
@@ -1046,6 +1060,9 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     if (message.authServicePrometheusUrl !== undefined) {
       obj.authServicePrometheusUrl = message.authServicePrometheusUrl;
     }
+    if (message.oauthProviderUrl !== undefined) {
+      obj.oauthProviderUrl = message.oauthProviderUrl;
+    }
     return obj;
   },
 
@@ -1064,6 +1081,7 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     message.usersServiceMaxReceiveMessageSizeBytes = object.usersServiceMaxReceiveMessageSizeBytes ?? undefined;
     message.authServiceGrpcUrl = object.authServiceGrpcUrl ?? undefined;
     message.authServicePrometheusUrl = object.authServicePrometheusUrl ?? undefined;
+    message.oauthProviderUrl = object.oauthProviderUrl ?? undefined;
     return message;
   },
 };

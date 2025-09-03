@@ -238,6 +238,7 @@ type ConfigServices struct {
 	UsersServiceMaxReceiveMessageSizeBytes *int64                 `protobuf:"varint,8,opt,name=users_service_max_receive_message_size_bytes,json=usersServiceMaxReceiveMessageSizeBytes,proto3,oneof" json:"users_service_max_receive_message_size_bytes,omitempty"`
 	AuthServiceGrpcUrl                     *string                `protobuf:"bytes,9,opt,name=auth_service_grpc_url,json=authServiceGrpcUrl,proto3,oneof" json:"auth_service_grpc_url,omitempty"`
 	AuthServicePrometheusUrl               *string                `protobuf:"bytes,10,opt,name=auth_service_prometheus_url,json=authServicePrometheusUrl,proto3,oneof" json:"auth_service_prometheus_url,omitempty"`
+	OauthProviderUrl                       *string                `protobuf:"bytes,11,opt,name=oauth_provider_url,json=oauthProviderUrl,proto3,oneof" json:"oauth_provider_url,omitempty"`
 	unknownFields                          protoimpl.UnknownFields
 	sizeCache                              protoimpl.SizeCache
 }
@@ -338,6 +339,13 @@ func (x *ConfigServices) GetAuthServiceGrpcUrl() string {
 func (x *ConfigServices) GetAuthServicePrometheusUrl() string {
 	if x != nil && x.AuthServicePrometheusUrl != nil {
 		return *x.AuthServicePrometheusUrl
+	}
+	return ""
+}
+
+func (x *ConfigServices) GetOauthProviderUrl() string {
+	if x != nil && x.OauthProviderUrl != nil {
+		return *x.OauthProviderUrl
 	}
 	return ""
 }
@@ -3470,7 +3478,7 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\"_persistent_notification_max_countB)\n" +
 	"'_persistent_notification_max_recipientsB%\n" +
 	"#_feature_flag_sync_interval_secondsB\x16\n" +
-	"\x14_allow_synced_drafts\"\xf0\a\n" +
+	"\x14_allow_synced_drafts\"\xba\b\n" +
 	"\x0eConfigServices\x12:\n" +
 	"\x17common_service_grpc_url\x18\x01 \x01(\tH\x00R\x14commonServiceGrpcUrl\x88\x01\x01\x126\n" +
 	"\x15user_service_grpc_url\x18\x02 \x01(\tH\x01R\x12userServiceGrpcUrl\x88\x01\x01\x12>\n" +
@@ -3482,7 +3490,9 @@ const file_common_v1_config_proto_rawDesc = "" +
 	",users_service_max_receive_message_size_bytes\x18\b \x01(\x03H\aR&usersServiceMaxReceiveMessageSizeBytes\x88\x01\x01\x126\n" +
 	"\x15auth_service_grpc_url\x18\t \x01(\tH\bR\x12authServiceGrpcUrl\x88\x01\x01\x12B\n" +
 	"\x1bauth_service_prometheus_url\x18\n" +
-	" \x01(\tH\tR\x18authServicePrometheusUrl\x88\x01\x01B\x1a\n" +
+	" \x01(\tH\tR\x18authServicePrometheusUrl\x88\x01\x01\x121\n" +
+	"\x12oauth_provider_url\x18\v \x01(\tH\n" +
+	"R\x10oauthProviderUrl\x88\x01\x01B\x1a\n" +
 	"\x18_common_service_grpc_urlB\x18\n" +
 	"\x16_user_service_grpc_urlB\x1c\n" +
 	"\x1a_products_service_grpc_urlB\x17\n" +
@@ -3492,7 +3502,8 @@ const file_common_v1_config_proto_rawDesc = "" +
 	" _products_service_prometheus_urlB/\n" +
 	"-_users_service_max_receive_message_size_bytesB\x18\n" +
 	"\x16_auth_service_grpc_urlB\x1e\n" +
-	"\x1c_auth_service_prometheus_url\"\x89\x11\n" +
+	"\x1c_auth_service_prometheus_urlB\x15\n" +
+	"\x13_oauth_provider_url\"\x89\x11\n" +
 	"\x0eConfigSecurity\x12e\n" +
 	"\x14restricted_usernames\x18\x01 \x03(\v22.common.v1.ConfigSecurity.RestrictedUsernamesEntryR\x13restrictedUsernames\x129\n" +
 	"\x16maximum_login_attempts\x18\x02 \x01(\x05H\x00R\x14maximumLoginAttempts\x88\x01\x01\x12T\n" +

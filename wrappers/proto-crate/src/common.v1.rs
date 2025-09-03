@@ -78,6 +78,8 @@ pub struct ConfigServices {
     pub auth_service_prometheus_url: ::core::option::Option<
         ::prost::alloc::string::String,
     >,
+    #[prost(string, optional, tag = "11")]
+    pub oauth_provider_url: ::core::option::Option<::prost::alloc::string::String>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
