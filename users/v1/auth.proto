@@ -10,36 +10,6 @@ option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/user
 option java_outer_classname = "AuthProto";
 option java_package = "org.megacommerce.users.v1";
 
-message CachedUserSession {
-  string id = 1; // token id
-  string token = 2;
-  int64 created_at = 3;
-  int64 expires_at = 4;
-  string device_id = 5;
-}
-
-message CachedUserData {
-  string id = 1; // user id
-  bool is_oauth = 2;
-  string roles = 3;
-  string props = 4; // like: theme:light,mobile_notification:true
-}
-
-message CachedUser {
-  CachedUserSession session = 1;
-  CachedUserData user = 2;
-}
-
-message Token {
-  string id = 1;
-  string user_id = 2;
-  string token = 3;
-  string type = 4;
-  bool used = 5;
-  int64 created_at = 6;
-  int64 expires_at = 7;
-}
-
 message EmailConfirmationRequest {
   string email = 1;
   string token = 2;

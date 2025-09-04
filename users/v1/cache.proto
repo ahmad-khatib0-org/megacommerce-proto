@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package users.v1;
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1";
+option java_outer_classname = "CacheProto";
+option java_package = "org.megacommerce.users.v1";
+
+message CachedUserSession {
+  string id = 1; // token id
+  string token = 2;
+  int64 created_at = 3;
+  int64 expires_at = 4;
+  string device_id = 5;
+}
+
+message CachedUserData {
+  string id = 1; // user id
+  bool is_oauth = 2;
+  string roles = 3;
+  string props = 4; // like: theme:light,mobile_notification:true
+}
+
+message CachedUser {
+  CachedUserSession session = 1;
+  CachedUserData user = 2;
+}

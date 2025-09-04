@@ -47,9 +47,9 @@ generate:
 	@echo "✅ Generation complete"
 
 # -----------------------------------------------------------------------------
-# Release: generate + commit + tag + push
+# Release: commit + tag + push
 # -----------------------------------------------------------------------------
-release: generate
+release:
 ifeq ($(VERSION),)
 	@echo "❌ ERROR: No version specified for release."
 	@exit 1
@@ -59,6 +59,12 @@ endif
 	sed -i.bak 's/^version = ".*"/version = "$(VERSION)"/' ./wrappers/proto-crate/Cargo.toml && rm -f wrappers/proto-crate/Cargo.toml.bak
 	sed -i.bak 's/^\(\s*\)"version": ".*"/\1"version": "$(VERSION)"/' ./wrappers/proto-npm/package.json && rm -f wrappers/proto-npm/package.json.bak
 	sed -i.bak 's/^    version=["'"'"'][^"'"'"']*["'"'"'],/    version="$(VERSION)",/' setup.py && rm -f setup.py.bak
+
+	@echo "Generating updated Cargo.lock..."
+	cargo check  # This will update Cargo.lock with the new version
+
+	@echo "Waiting some seconds before commiting..."
+	sleep 5
 
 	@echo "Committing generated files and tagging release..."
 	git add -A

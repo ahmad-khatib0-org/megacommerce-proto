@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package users.v1;
+
+import "shared/v1/struct.proto";
+import "shared/v1/time.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1";
+option java_outer_classname = "TokenProto";
+option java_package = "org.megacommerce.users.v1";
+
+// Represents the standard JWT claims set (RFC 7519).
+message JwtClaims {
+  // "iss" (Issuer) - string or URI
+  string iss = 1;
+
+  // "sub" (Subject)
+  string sub = 2;
+
+  // "aud" (Audience) - could be a list
+  repeated string aud = 3;
+
+  // "exp" (Expiration time)
+  shared.v1.Timestamp exp = 4;
+
+  // "nbf" (Not before)
+  shared.v1.Timestamp nbf = 5;
+
+  // "iat" (Issued at)
+  shared.v1.Timestamp iat = 6;
+
+  // "jti" (JWT ID)
+  string jti = 7;
+
+  // Custom claims (flexible map, e.g. roles, tenant_id, etc.)
+  map<string, shared.v1.Value> custom = 100;
+}
+message Token {
+  string id = 1;
+  string user_id = 2;
+  string token = 3;
+  string type = 4;
+  bool used = 5;
+  int64 created_at = 6;
+  int64 expires_at = 7;
+}

@@ -26,7 +26,7 @@ from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
 from shared.v1 import types_pb2 as shared_dot_v1_dot_types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13users/v1/auth.proto\x12\x08users.v1\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"i\n\x11\x43\x61\x63hedUserSession\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05token\x18\x02 \x01(\t\x12\x12\n\ncreated_at\x18\x03 \x01(\x03\x12\x12\n\nexpires_at\x18\x04 \x01(\x03\x12\x11\n\tdevice_id\x18\x05 \x01(\t\"L\n\x0e\x43\x61\x63hedUserData\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08is_oauth\x18\x02 \x01(\x08\x12\r\n\x05roles\x18\x03 \x01(\t\x12\r\n\x05props\x18\x04 \x01(\t\"b\n\nCachedUser\x12,\n\x07session\x18\x01 \x01(\x0b\x32\x1b.users.v1.CachedUserSession\x12&\n\x04user\x18\x02 \x01(\x0b\x32\x18.users.v1.CachedUserData\"w\n\x05Token\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\x12\r\n\x05token\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\x0c\n\x04used\x18\x05 \x01(\x08\x12\x12\n\ncreated_at\x18\x06 \x01(\x03\x12\x12\n\nexpires_at\x18\x07 \x01(\x03\"J\n\x18\x45mailConfirmationRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\r\n\x05token\x18\x02 \x01(\t\x12\x10\n\x08token_id\x18\x03 \x01(\t\"}\n\x19\x45mailConfirmationResponse\x12.\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x1e.shared.v1.SuccessResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"&\n\x15PasswordForgotRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"z\n\x16PasswordForgotResponse\x12.\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x1e.shared.v1.SuccessResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"<\n\x0cLoginRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x0b\n\x03mfa\x18\x03 \x01(\t\"q\n\rLoginResponse\x12.\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x1e.shared.v1.SuccessResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08responseBm\n\x19org.megacommerce.users.v1B\tAuthProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13users/v1/auth.proto\x12\x08users.v1\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"J\n\x18\x45mailConfirmationRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\r\n\x05token\x18\x02 \x01(\t\x12\x10\n\x08token_id\x18\x03 \x01(\t\"}\n\x19\x45mailConfirmationResponse\x12.\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x1e.shared.v1.SuccessResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"&\n\x15PasswordForgotRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"z\n\x16PasswordForgotResponse\x12.\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x1e.shared.v1.SuccessResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"<\n\x0cLoginRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x0b\n\x03mfa\x18\x03 \x01(\t\"q\n\rLoginResponse\x12.\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x1e.shared.v1.SuccessResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08responseBm\n\x19org.megacommerce.users.v1B\tAuthProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,24 +34,16 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'users.v1.auth_pb2', _global
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\031org.megacommerce.users.v1B\tAuthProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\370\001\001'
-  _globals['_CACHEDUSERSESSION']._serialized_start=79
-  _globals['_CACHEDUSERSESSION']._serialized_end=184
-  _globals['_CACHEDUSERDATA']._serialized_start=186
-  _globals['_CACHEDUSERDATA']._serialized_end=262
-  _globals['_CACHEDUSER']._serialized_start=264
-  _globals['_CACHEDUSER']._serialized_end=362
-  _globals['_TOKEN']._serialized_start=364
-  _globals['_TOKEN']._serialized_end=483
-  _globals['_EMAILCONFIRMATIONREQUEST']._serialized_start=485
-  _globals['_EMAILCONFIRMATIONREQUEST']._serialized_end=559
-  _globals['_EMAILCONFIRMATIONRESPONSE']._serialized_start=561
-  _globals['_EMAILCONFIRMATIONRESPONSE']._serialized_end=686
-  _globals['_PASSWORDFORGOTREQUEST']._serialized_start=688
-  _globals['_PASSWORDFORGOTREQUEST']._serialized_end=726
-  _globals['_PASSWORDFORGOTRESPONSE']._serialized_start=728
-  _globals['_PASSWORDFORGOTRESPONSE']._serialized_end=850
-  _globals['_LOGINREQUEST']._serialized_start=852
-  _globals['_LOGINREQUEST']._serialized_end=912
-  _globals['_LOGINRESPONSE']._serialized_start=914
-  _globals['_LOGINRESPONSE']._serialized_end=1027
+  _globals['_EMAILCONFIRMATIONREQUEST']._serialized_start=79
+  _globals['_EMAILCONFIRMATIONREQUEST']._serialized_end=153
+  _globals['_EMAILCONFIRMATIONRESPONSE']._serialized_start=155
+  _globals['_EMAILCONFIRMATIONRESPONSE']._serialized_end=280
+  _globals['_PASSWORDFORGOTREQUEST']._serialized_start=282
+  _globals['_PASSWORDFORGOTREQUEST']._serialized_end=320
+  _globals['_PASSWORDFORGOTRESPONSE']._serialized_start=322
+  _globals['_PASSWORDFORGOTRESPONSE']._serialized_end=444
+  _globals['_LOGINREQUEST']._serialized_start=446
+  _globals['_LOGINREQUEST']._serialized_end=506
+  _globals['_LOGINRESPONSE']._serialized_start=508
+  _globals['_LOGINRESPONSE']._serialized_end=621
 # @@protoc_insertion_point(module_scope)
