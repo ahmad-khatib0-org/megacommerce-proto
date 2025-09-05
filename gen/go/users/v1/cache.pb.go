@@ -21,95 +21,18 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type CachedUserSession struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // token id
-	Token         string                 `protobuf:"bytes,2,opt,name=token,proto3" json:"token,omitempty"`
-	CreatedAt     int64                  `protobuf:"varint,3,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
-	ExpiresAt     int64                  `protobuf:"varint,4,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
-	DeviceId      string                 `protobuf:"bytes,5,opt,name=device_id,json=deviceId,proto3" json:"device_id,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *CachedUserSession) Reset() {
-	*x = CachedUserSession{}
-	mi := &file_users_v1_cache_proto_msgTypes[0]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *CachedUserSession) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CachedUserSession) ProtoMessage() {}
-
-func (x *CachedUserSession) ProtoReflect() protoreflect.Message {
-	mi := &file_users_v1_cache_proto_msgTypes[0]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CachedUserSession.ProtoReflect.Descriptor instead.
-func (*CachedUserSession) Descriptor() ([]byte, []int) {
-	return file_users_v1_cache_proto_rawDescGZIP(), []int{0}
-}
-
-func (x *CachedUserSession) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
-}
-
-func (x *CachedUserSession) GetToken() string {
-	if x != nil {
-		return x.Token
-	}
-	return ""
-}
-
-func (x *CachedUserSession) GetCreatedAt() int64 {
-	if x != nil {
-		return x.CreatedAt
-	}
-	return 0
-}
-
-func (x *CachedUserSession) GetExpiresAt() int64 {
-	if x != nil {
-		return x.ExpiresAt
-	}
-	return 0
-}
-
-func (x *CachedUserSession) GetDeviceId() string {
-	if x != nil {
-		return x.DeviceId
-	}
-	return ""
-}
-
 type CachedUserData struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"` // user id
-	IsOauth       bool                   `protobuf:"varint,2,opt,name=is_oauth,json=isOauth,proto3" json:"is_oauth,omitempty"`
-	Roles         string                 `protobuf:"bytes,3,opt,name=roles,proto3" json:"roles,omitempty"`
-	Props         string                 `protobuf:"bytes,4,opt,name=props,proto3" json:"props,omitempty"` // like: theme:light,mobile_notification:true
+	IsOauth       bool                   `protobuf:"varint,1,opt,name=is_oauth,json=isOauth,proto3" json:"is_oauth,omitempty"`
+	Roles         string                 `protobuf:"bytes,2,opt,name=roles,proto3" json:"roles,omitempty"`
+	Props         string                 `protobuf:"bytes,3,opt,name=props,proto3" json:"props,omitempty"` // like: theme:light,mobile_notification:true
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *CachedUserData) Reset() {
 	*x = CachedUserData{}
-	mi := &file_users_v1_cache_proto_msgTypes[1]
+	mi := &file_users_v1_cache_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -121,7 +44,7 @@ func (x *CachedUserData) String() string {
 func (*CachedUserData) ProtoMessage() {}
 
 func (x *CachedUserData) ProtoReflect() protoreflect.Message {
-	mi := &file_users_v1_cache_proto_msgTypes[1]
+	mi := &file_users_v1_cache_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -134,14 +57,7 @@ func (x *CachedUserData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CachedUserData.ProtoReflect.Descriptor instead.
 func (*CachedUserData) Descriptor() ([]byte, []int) {
-	return file_users_v1_cache_proto_rawDescGZIP(), []int{1}
-}
-
-func (x *CachedUserData) GetId() string {
-	if x != nil {
-		return x.Id
-	}
-	return ""
+	return file_users_v1_cache_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *CachedUserData) GetIsOauth() bool {
@@ -165,29 +81,30 @@ func (x *CachedUserData) GetProps() string {
 	return ""
 }
 
-type CachedUser struct {
+type CachedTokenStatus struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Session       *CachedUserSession     `protobuf:"bytes,1,opt,name=session,proto3" json:"session,omitempty"`
-	User          *CachedUserData        `protobuf:"bytes,2,opt,name=user,proto3" json:"user,omitempty"`
+	DevId         string                 `protobuf:"bytes,1,opt,name=dev_id,json=devId,proto3" json:"dev_id,omitempty"`
+	LastChecked   string                 `protobuf:"bytes,2,opt,name=last_checked,json=lastChecked,proto3" json:"last_checked,omitempty"`
+	Revoked       bool                   `protobuf:"varint,3,opt,name=revoked,proto3" json:"revoked,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *CachedUser) Reset() {
-	*x = CachedUser{}
-	mi := &file_users_v1_cache_proto_msgTypes[2]
+func (x *CachedTokenStatus) Reset() {
+	*x = CachedTokenStatus{}
+	mi := &file_users_v1_cache_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CachedUser) String() string {
+func (x *CachedTokenStatus) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CachedUser) ProtoMessage() {}
+func (*CachedTokenStatus) ProtoMessage() {}
 
-func (x *CachedUser) ProtoReflect() protoreflect.Message {
-	mi := &file_users_v1_cache_proto_msgTypes[2]
+func (x *CachedTokenStatus) ProtoReflect() protoreflect.Message {
+	mi := &file_users_v1_cache_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -198,47 +115,45 @@ func (x *CachedUser) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CachedUser.ProtoReflect.Descriptor instead.
-func (*CachedUser) Descriptor() ([]byte, []int) {
-	return file_users_v1_cache_proto_rawDescGZIP(), []int{2}
+// Deprecated: Use CachedTokenStatus.ProtoReflect.Descriptor instead.
+func (*CachedTokenStatus) Descriptor() ([]byte, []int) {
+	return file_users_v1_cache_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *CachedUser) GetSession() *CachedUserSession {
+func (x *CachedTokenStatus) GetDevId() string {
 	if x != nil {
-		return x.Session
+		return x.DevId
 	}
-	return nil
+	return ""
 }
 
-func (x *CachedUser) GetUser() *CachedUserData {
+func (x *CachedTokenStatus) GetLastChecked() string {
 	if x != nil {
-		return x.User
+		return x.LastChecked
 	}
-	return nil
+	return ""
+}
+
+func (x *CachedTokenStatus) GetRevoked() bool {
+	if x != nil {
+		return x.Revoked
+	}
+	return false
 }
 
 var File_users_v1_cache_proto protoreflect.FileDescriptor
 
 const file_users_v1_cache_proto_rawDesc = "" +
 	"\n" +
-	"\x14users/v1/cache.proto\x12\busers.v1\"\x94\x01\n" +
-	"\x11CachedUserSession\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
-	"\x05token\x18\x02 \x01(\tR\x05token\x12\x1d\n" +
-	"\n" +
-	"created_at\x18\x03 \x01(\x03R\tcreatedAt\x12\x1d\n" +
-	"\n" +
-	"expires_at\x18\x04 \x01(\x03R\texpiresAt\x12\x1b\n" +
-	"\tdevice_id\x18\x05 \x01(\tR\bdeviceId\"g\n" +
-	"\x0eCachedUserData\x12\x0e\n" +
-	"\x02id\x18\x01 \x01(\tR\x02id\x12\x19\n" +
-	"\bis_oauth\x18\x02 \x01(\bR\aisOauth\x12\x14\n" +
-	"\x05roles\x18\x03 \x01(\tR\x05roles\x12\x14\n" +
-	"\x05props\x18\x04 \x01(\tR\x05props\"q\n" +
-	"\n" +
-	"CachedUser\x125\n" +
-	"\asession\x18\x01 \x01(\v2\x1b.users.v1.CachedUserSessionR\asession\x12,\n" +
-	"\x04user\x18\x02 \x01(\v2\x18.users.v1.CachedUserDataR\x04userBn\n" +
+	"\x14users/v1/cache.proto\x12\busers.v1\"W\n" +
+	"\x0eCachedUserData\x12\x19\n" +
+	"\bis_oauth\x18\x01 \x01(\bR\aisOauth\x12\x14\n" +
+	"\x05roles\x18\x02 \x01(\tR\x05roles\x12\x14\n" +
+	"\x05props\x18\x03 \x01(\tR\x05props\"g\n" +
+	"\x11CachedTokenStatus\x12\x15\n" +
+	"\x06dev_id\x18\x01 \x01(\tR\x05devId\x12!\n" +
+	"\flast_checked\x18\x02 \x01(\tR\vlastChecked\x12\x18\n" +
+	"\arevoked\x18\x03 \x01(\bR\arevokedBn\n" +
 	"\x19org.megacommerce.users.v1B\n" +
 	"CacheProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\xf8\x01\x01b\x06proto3"
 
@@ -254,20 +169,17 @@ func file_users_v1_cache_proto_rawDescGZIP() []byte {
 	return file_users_v1_cache_proto_rawDescData
 }
 
-var file_users_v1_cache_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_users_v1_cache_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_users_v1_cache_proto_goTypes = []any{
-	(*CachedUserSession)(nil), // 0: users.v1.CachedUserSession
-	(*CachedUserData)(nil),    // 1: users.v1.CachedUserData
-	(*CachedUser)(nil),        // 2: users.v1.CachedUser
+	(*CachedUserData)(nil),    // 0: users.v1.CachedUserData
+	(*CachedTokenStatus)(nil), // 1: users.v1.CachedTokenStatus
 }
 var file_users_v1_cache_proto_depIdxs = []int32{
-	0, // 0: users.v1.CachedUser.session:type_name -> users.v1.CachedUserSession
-	1, // 1: users.v1.CachedUser.user:type_name -> users.v1.CachedUserData
-	2, // [2:2] is the sub-list for method output_type
-	2, // [2:2] is the sub-list for method input_type
-	2, // [2:2] is the sub-list for extension type_name
-	2, // [2:2] is the sub-list for extension extendee
-	0, // [0:2] is the sub-list for field type_name
+	0, // [0:0] is the sub-list for method output_type
+	0, // [0:0] is the sub-list for method input_type
+	0, // [0:0] is the sub-list for extension type_name
+	0, // [0:0] is the sub-list for extension extendee
+	0, // [0:0] is the sub-list for field type_name
 }
 
 func init() { file_users_v1_cache_proto_init() }
@@ -281,7 +193,7 @@ func file_users_v1_cache_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_users_v1_cache_proto_rawDesc), len(file_users_v1_cache_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

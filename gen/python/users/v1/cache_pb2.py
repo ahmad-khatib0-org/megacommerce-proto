@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14users/v1/cache.proto\x12\x08users.v1\"i\n\x11\x43\x61\x63hedUserSession\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05token\x18\x02 \x01(\t\x12\x12\n\ncreated_at\x18\x03 \x01(\x03\x12\x12\n\nexpires_at\x18\x04 \x01(\x03\x12\x11\n\tdevice_id\x18\x05 \x01(\t\"L\n\x0e\x43\x61\x63hedUserData\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08is_oauth\x18\x02 \x01(\x08\x12\r\n\x05roles\x18\x03 \x01(\t\x12\r\n\x05props\x18\x04 \x01(\t\"b\n\nCachedUser\x12,\n\x07session\x18\x01 \x01(\x0b\x32\x1b.users.v1.CachedUserSession\x12&\n\x04user\x18\x02 \x01(\x0b\x32\x18.users.v1.CachedUserDataBn\n\x19org.megacommerce.users.v1B\nCacheProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14users/v1/cache.proto\x12\x08users.v1\"@\n\x0e\x43\x61\x63hedUserData\x12\x10\n\x08is_oauth\x18\x01 \x01(\x08\x12\r\n\x05roles\x18\x02 \x01(\t\x12\r\n\x05props\x18\x03 \x01(\t\"J\n\x11\x43\x61\x63hedTokenStatus\x12\x0e\n\x06\x64\x65v_id\x18\x01 \x01(\t\x12\x14\n\x0clast_checked\x18\x02 \x01(\t\x12\x0f\n\x07revoked\x18\x03 \x01(\x08\x42n\n\x19org.megacommerce.users.v1B\nCacheProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,10 +32,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'users.v1.cache_pb2', _globa
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\031org.megacommerce.users.v1B\nCacheProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\370\001\001'
-  _globals['_CACHEDUSERSESSION']._serialized_start=34
-  _globals['_CACHEDUSERSESSION']._serialized_end=139
-  _globals['_CACHEDUSERDATA']._serialized_start=141
-  _globals['_CACHEDUSERDATA']._serialized_end=217
-  _globals['_CACHEDUSER']._serialized_start=219
-  _globals['_CACHEDUSER']._serialized_end=317
+  _globals['_CACHEDUSERDATA']._serialized_start=34
+  _globals['_CACHEDUSERDATA']._serialized_end=98
+  _globals['_CACHEDTOKENSTATUS']._serialized_start=100
+  _globals['_CACHEDTOKENSTATUS']._serialized_end=174
 # @@protoc_insertion_point(module_scope)

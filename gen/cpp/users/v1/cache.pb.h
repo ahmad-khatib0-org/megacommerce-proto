@@ -54,18 +54,14 @@ extern const ::google::protobuf::internal::DescriptorTable descriptor_table_user
 }  // extern "C"
 namespace users {
 namespace v1 {
-class CachedUser;
-struct CachedUserDefaultTypeInternal;
-extern CachedUserDefaultTypeInternal _CachedUser_default_instance_;
-extern const ::google::protobuf::internal::ClassDataFull CachedUser_class_data_;
+class CachedTokenStatus;
+struct CachedTokenStatusDefaultTypeInternal;
+extern CachedTokenStatusDefaultTypeInternal _CachedTokenStatus_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull CachedTokenStatus_class_data_;
 class CachedUserData;
 struct CachedUserDataDefaultTypeInternal;
 extern CachedUserDataDefaultTypeInternal _CachedUserData_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull CachedUserData_class_data_;
-class CachedUserSession;
-struct CachedUserSessionDefaultTypeInternal;
-extern CachedUserSessionDefaultTypeInternal _CachedUserSession_default_instance_;
-extern const ::google::protobuf::internal::ClassDataFull CachedUserSession_class_data_;
 }  // namespace v1
 }  // namespace users
 namespace google {
@@ -79,260 +75,6 @@ namespace v1 {
 // ===================================================================
 
 
-// -------------------------------------------------------------------
-
-class CachedUserSession final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:users.v1.CachedUserSession) */ {
- public:
-  inline CachedUserSession() : CachedUserSession(nullptr) {}
-  ~CachedUserSession() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(CachedUserSession* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(CachedUserSession));
-  }
-#endif
-
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR CachedUserSession(::google::protobuf::internal::ConstantInitialized);
-
-  inline CachedUserSession(const CachedUserSession& from) : CachedUserSession(nullptr, from) {}
-  inline CachedUserSession(CachedUserSession&& from) noexcept
-      : CachedUserSession(nullptr, ::std::move(from)) {}
-  inline CachedUserSession& operator=(const CachedUserSession& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline CachedUserSession& operator=(CachedUserSession&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const CachedUserSession& default_instance() {
-    return *reinterpret_cast<const CachedUserSession*>(
-        &_CachedUserSession_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 0;
-  friend void swap(CachedUserSession& a, CachedUserSession& b) { a.Swap(&b); }
-  inline void Swap(CachedUserSession* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(CachedUserSession* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  CachedUserSession* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<CachedUserSession>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const CachedUserSession& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const CachedUserSession& from) { CachedUserSession::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
-                        const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
-
-  public:
-  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  ::size_t ByteSizeLong() const final;
-  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(CachedUserSession* PROTOBUF_NONNULL other);
- private:
-  template <typename T>
-  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() { return "users.v1.CachedUserSession"; }
-
- protected:
-  explicit CachedUserSession(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  CachedUserSession(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const CachedUserSession& from);
-  CachedUserSession(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, CachedUserSession&& from) noexcept
-      : CachedUserSession(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-
- public:
-  static constexpr auto InternalGenerateClassData_();
-
-  ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kIdFieldNumber = 1,
-    kTokenFieldNumber = 2,
-    kDeviceIdFieldNumber = 5,
-    kCreatedAtFieldNumber = 3,
-    kExpiresAtFieldNumber = 4,
-  };
-  // string id = 1 [json_name = "id"];
-  void clear_id() ;
-  const ::std::string& id() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_id(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_id();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_id();
-  void set_allocated_id(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_id() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_id(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_id();
-
-  public:
-  // string token = 2 [json_name = "token"];
-  void clear_token() ;
-  const ::std::string& token() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_token(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_token();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_token();
-  void set_allocated_token(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_token() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_token(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_token();
-
-  public:
-  // string device_id = 5 [json_name = "deviceId"];
-  void clear_device_id() ;
-  const ::std::string& device_id() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_device_id(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_device_id();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_device_id();
-  void set_allocated_device_id(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_device_id() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_device_id(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_device_id();
-
-  public:
-  // int64 created_at = 3 [json_name = "createdAt"];
-  void clear_created_at() ;
-  ::int64_t created_at() const;
-  void set_created_at(::int64_t value);
-
-  private:
-  ::int64_t _internal_created_at() const;
-  void _internal_set_created_at(::int64_t value);
-
-  public:
-  // int64 expires_at = 4 [json_name = "expiresAt"];
-  void clear_expires_at() ;
-  ::int64_t expires_at() const;
-  void set_expires_at(::int64_t value);
-
-  private:
-  ::int64_t _internal_expires_at() const;
-  void _internal_set_expires_at(::int64_t value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:users.v1.CachedUserSession)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<3, 5,
-                                   0, 51,
-                                   2>
-      _table_;
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const CachedUserSession& from_msg);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr id_;
-    ::google::protobuf::internal::ArenaStringPtr token_;
-    ::google::protobuf::internal::ArenaStringPtr device_id_;
-    ::int64_t created_at_;
-    ::int64_t expires_at_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_users_2fv1_2fcache_2eproto;
-};
-
-extern const ::google::protobuf::internal::ClassDataFull CachedUserSession_class_data_;
 // -------------------------------------------------------------------
 
 class CachedUserData final : public ::google::protobuf::Message
@@ -390,7 +132,7 @@ class CachedUserData final : public ::google::protobuf::Message
     return *reinterpret_cast<const CachedUserData*>(
         &_CachedUserData_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 1;
+  static constexpr int kIndexInFileMessages = 0;
   friend void swap(CachedUserData& a, CachedUserData& b) { a.Swap(&b); }
   inline void Swap(CachedUserData* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -478,27 +220,11 @@ class CachedUserData final : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
   enum : int {
-    kIdFieldNumber = 1,
-    kRolesFieldNumber = 3,
-    kPropsFieldNumber = 4,
-    kIsOauthFieldNumber = 2,
+    kRolesFieldNumber = 2,
+    kPropsFieldNumber = 3,
+    kIsOauthFieldNumber = 1,
   };
-  // string id = 1 [json_name = "id"];
-  void clear_id() ;
-  const ::std::string& id() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_id(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_id();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_id();
-  void set_allocated_id(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_id() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_id(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_id();
-
-  public:
-  // string roles = 3 [json_name = "roles"];
+  // string roles = 2 [json_name = "roles"];
   void clear_roles() ;
   const ::std::string& roles() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -513,7 +239,7 @@ class CachedUserData final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_roles();
 
   public:
-  // string props = 4 [json_name = "props"];
+  // string props = 3 [json_name = "props"];
   void clear_props() ;
   const ::std::string& props() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
@@ -528,7 +254,7 @@ class CachedUserData final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_props();
 
   public:
-  // bool is_oauth = 2 [json_name = "isOauth"];
+  // bool is_oauth = 1 [json_name = "isOauth"];
   void clear_is_oauth() ;
   bool is_oauth() const;
   void set_is_oauth(bool value);
@@ -542,8 +268,8 @@ class CachedUserData final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<2, 4,
-                                   0, 44,
+  static const ::google::protobuf::internal::TcParseTable<2, 3,
+                                   0, 42,
                                    2>
       _table_;
 
@@ -564,7 +290,6 @@ class CachedUserData final : public ::google::protobuf::Message
         const CachedUserData& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr id_;
     ::google::protobuf::internal::ArenaStringPtr roles_;
     ::google::protobuf::internal::ArenaStringPtr props_;
     bool is_oauth_;
@@ -577,30 +302,30 @@ class CachedUserData final : public ::google::protobuf::Message
 extern const ::google::protobuf::internal::ClassDataFull CachedUserData_class_data_;
 // -------------------------------------------------------------------
 
-class CachedUser final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:users.v1.CachedUser) */ {
+class CachedTokenStatus final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:users.v1.CachedTokenStatus) */ {
  public:
-  inline CachedUser() : CachedUser(nullptr) {}
-  ~CachedUser() PROTOBUF_FINAL;
+  inline CachedTokenStatus() : CachedTokenStatus(nullptr) {}
+  ~CachedTokenStatus() PROTOBUF_FINAL;
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(CachedUser* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+  void operator delete(CachedTokenStatus* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
     SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(CachedUser));
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(CachedTokenStatus));
   }
 #endif
 
   template <typename = void>
-  explicit PROTOBUF_CONSTEXPR CachedUser(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR CachedTokenStatus(::google::protobuf::internal::ConstantInitialized);
 
-  inline CachedUser(const CachedUser& from) : CachedUser(nullptr, from) {}
-  inline CachedUser(CachedUser&& from) noexcept
-      : CachedUser(nullptr, ::std::move(from)) {}
-  inline CachedUser& operator=(const CachedUser& from) {
+  inline CachedTokenStatus(const CachedTokenStatus& from) : CachedTokenStatus(nullptr, from) {}
+  inline CachedTokenStatus(CachedTokenStatus&& from) noexcept
+      : CachedTokenStatus(nullptr, ::std::move(from)) {}
+  inline CachedTokenStatus& operator=(const CachedTokenStatus& from) {
     CopyFrom(from);
     return *this;
   }
-  inline CachedUser& operator=(CachedUser&& from) noexcept {
+  inline CachedTokenStatus& operator=(CachedTokenStatus&& from) noexcept {
     if (this == &from) return *this;
     if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
       InternalSwap(&from);
@@ -628,13 +353,13 @@ class CachedUser final : public ::google::protobuf::Message
   static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const CachedUser& default_instance() {
-    return *reinterpret_cast<const CachedUser*>(
-        &_CachedUser_default_instance_);
+  static const CachedTokenStatus& default_instance() {
+    return *reinterpret_cast<const CachedTokenStatus*>(
+        &_CachedTokenStatus_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 2;
-  friend void swap(CachedUser& a, CachedUser& b) { a.Swap(&b); }
-  inline void Swap(CachedUser* PROTOBUF_NONNULL other) {
+  static constexpr int kIndexInFileMessages = 1;
+  friend void swap(CachedTokenStatus& a, CachedTokenStatus& b) { a.Swap(&b); }
+  inline void Swap(CachedTokenStatus* PROTOBUF_NONNULL other) {
     if (other == this) return;
     if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
       InternalSwap(other);
@@ -642,7 +367,7 @@ class CachedUser final : public ::google::protobuf::Message
       ::google::protobuf::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(CachedUser* PROTOBUF_NONNULL other) {
+  void UnsafeArenaSwap(CachedTokenStatus* PROTOBUF_NONNULL other) {
     if (other == this) return;
     ABSL_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -650,13 +375,13 @@ class CachedUser final : public ::google::protobuf::Message
 
   // implements Message ----------------------------------------------
 
-  CachedUser* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<CachedUser>(arena);
+  CachedTokenStatus* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<CachedTokenStatus>(arena);
   }
   using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const CachedUser& from);
+  void CopyFrom(const CachedTokenStatus& from);
   using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const CachedUser& from) { CachedUser::MergeImpl(*this, from); }
+  void MergeFrom(const CachedTokenStatus& from) { CachedTokenStatus::MergeImpl(*this, from); }
 
   private:
   static void MergeImpl(::google::protobuf::MessageLite& to_msg,
@@ -692,18 +417,18 @@ class CachedUser final : public ::google::protobuf::Message
   private:
   void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static void SharedDtor(MessageLite& self);
-  void InternalSwap(CachedUser* PROTOBUF_NONNULL other);
+  void InternalSwap(CachedTokenStatus* PROTOBUF_NONNULL other);
  private:
   template <typename T>
   friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() { return "users.v1.CachedUser"; }
+  static ::absl::string_view FullMessageName() { return "users.v1.CachedTokenStatus"; }
 
  protected:
-  explicit CachedUser(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  CachedUser(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const CachedUser& from);
-  CachedUser(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, CachedUser&& from) noexcept
-      : CachedUser(arena) {
+  explicit CachedTokenStatus(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  CachedTokenStatus(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const CachedTokenStatus& from);
+  CachedTokenStatus(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, CachedTokenStatus&& from) noexcept
+      : CachedTokenStatus(arena) {
     *this = ::std::move(from);
   }
   const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
@@ -720,45 +445,56 @@ class CachedUser final : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
   enum : int {
-    kSessionFieldNumber = 1,
-    kUserFieldNumber = 2,
+    kDevIdFieldNumber = 1,
+    kLastCheckedFieldNumber = 2,
+    kRevokedFieldNumber = 3,
   };
-  // .users.v1.CachedUserSession session = 1 [json_name = "session"];
-  bool has_session() const;
-  void clear_session() ;
-  const ::users::v1::CachedUserSession& session() const;
-  [[nodiscard]] ::users::v1::CachedUserSession* PROTOBUF_NULLABLE release_session();
-  ::users::v1::CachedUserSession* PROTOBUF_NONNULL mutable_session();
-  void set_allocated_session(::users::v1::CachedUserSession* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_session(::users::v1::CachedUserSession* PROTOBUF_NULLABLE value);
-  ::users::v1::CachedUserSession* PROTOBUF_NULLABLE unsafe_arena_release_session();
+  // string dev_id = 1 [json_name = "devId"];
+  void clear_dev_id() ;
+  const ::std::string& dev_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_dev_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_dev_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_dev_id();
+  void set_allocated_dev_id(::std::string* PROTOBUF_NULLABLE value);
 
   private:
-  const ::users::v1::CachedUserSession& _internal_session() const;
-  ::users::v1::CachedUserSession* PROTOBUF_NONNULL _internal_mutable_session();
+  const ::std::string& _internal_dev_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_dev_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_dev_id();
 
   public:
-  // .users.v1.CachedUserData user = 2 [json_name = "user"];
-  bool has_user() const;
-  void clear_user() ;
-  const ::users::v1::CachedUserData& user() const;
-  [[nodiscard]] ::users::v1::CachedUserData* PROTOBUF_NULLABLE release_user();
-  ::users::v1::CachedUserData* PROTOBUF_NONNULL mutable_user();
-  void set_allocated_user(::users::v1::CachedUserData* PROTOBUF_NULLABLE value);
-  void unsafe_arena_set_allocated_user(::users::v1::CachedUserData* PROTOBUF_NULLABLE value);
-  ::users::v1::CachedUserData* PROTOBUF_NULLABLE unsafe_arena_release_user();
+  // string last_checked = 2 [json_name = "lastChecked"];
+  void clear_last_checked() ;
+  const ::std::string& last_checked() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_last_checked(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_last_checked();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_last_checked();
+  void set_allocated_last_checked(::std::string* PROTOBUF_NULLABLE value);
 
   private:
-  const ::users::v1::CachedUserData& _internal_user() const;
-  ::users::v1::CachedUserData* PROTOBUF_NONNULL _internal_mutable_user();
+  const ::std::string& _internal_last_checked() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_last_checked(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_last_checked();
 
   public:
-  // @@protoc_insertion_point(class_scope:users.v1.CachedUser)
+  // bool revoked = 3 [json_name = "revoked"];
+  void clear_revoked() ;
+  bool revoked() const;
+  void set_revoked(bool value);
+
+  private:
+  bool _internal_revoked() const;
+  void _internal_set_revoked(bool value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:users.v1.CachedTokenStatus)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<1, 2,
-                                   2, 0,
+  static const ::google::protobuf::internal::TcParseTable<2, 3,
+                                   0, 53,
                                    2>
       _table_;
 
@@ -776,18 +512,19 @@ class CachedUser final : public ::google::protobuf::Message
     inline explicit Impl_(
         ::google::protobuf::internal::InternalVisibility visibility,
         ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const CachedUser& from_msg);
+        const CachedTokenStatus& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
-    ::users::v1::CachedUserSession* PROTOBUF_NULLABLE session_;
-    ::users::v1::CachedUserData* PROTOBUF_NULLABLE user_;
+    ::google::protobuf::internal::ArenaStringPtr dev_id_;
+    ::google::protobuf::internal::ArenaStringPtr last_checked_;
+    bool revoked_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_users_2fv1_2fcache_2eproto;
 };
 
-extern const ::google::protobuf::internal::ClassDataFull CachedUser_class_data_;
+extern const ::google::protobuf::internal::ClassDataFull CachedTokenStatus_class_data_;
 
 // ===================================================================
 
@@ -803,325 +540,13 @@ extern const ::google::protobuf::internal::ClassDataFull CachedUser_class_data_;
 #endif  // __GNUC__
 // -------------------------------------------------------------------
 
-// CachedUserSession
-
-// string id = 1 [json_name = "id"];
-inline void CachedUserSession::clear_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.id_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000001u;
-}
-inline const ::std::string& CachedUserSession::id() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:users.v1.CachedUserSession.id)
-  return _internal_id();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void CachedUserSession::set_id(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:users.v1.CachedUserSession.id)
-}
-inline ::std::string* PROTOBUF_NONNULL CachedUserSession::mutable_id()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:users.v1.CachedUserSession.id)
-  return _s;
-}
-inline const ::std::string& CachedUserSession::_internal_id() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.id_.Get();
-}
-inline void CachedUserSession::_internal_set_id(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.id_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL CachedUserSession::_internal_mutable_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  return _impl_.id_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE CachedUserSession::release_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:users.v1.CachedUserSession.id)
-  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  auto* released = _impl_.id_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.id_.Set("", GetArena());
-  }
-  return released;
-}
-inline void CachedUserSession::set_allocated_id(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000001u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
-  }
-  _impl_.id_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.id_.IsDefault()) {
-    _impl_.id_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:users.v1.CachedUserSession.id)
-}
-
-// string token = 2 [json_name = "token"];
-inline void CachedUserSession::clear_token() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.token_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000002u;
-}
-inline const ::std::string& CachedUserSession::token() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:users.v1.CachedUserSession.token)
-  return _internal_token();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void CachedUserSession::set_token(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.token_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:users.v1.CachedUserSession.token)
-}
-inline ::std::string* PROTOBUF_NONNULL CachedUserSession::mutable_token()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_token();
-  // @@protoc_insertion_point(field_mutable:users.v1.CachedUserSession.token)
-  return _s;
-}
-inline const ::std::string& CachedUserSession::_internal_token() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.token_.Get();
-}
-inline void CachedUserSession::_internal_set_token(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.token_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL CachedUserSession::_internal_mutable_token() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
-  return _impl_.token_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE CachedUserSession::release_token() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:users.v1.CachedUserSession.token)
-  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000002u;
-  auto* released = _impl_.token_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.token_.Set("", GetArena());
-  }
-  return released;
-}
-inline void CachedUserSession::set_allocated_token(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000002u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000002u;
-  }
-  _impl_.token_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.token_.IsDefault()) {
-    _impl_.token_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:users.v1.CachedUserSession.token)
-}
-
-// int64 created_at = 3 [json_name = "createdAt"];
-inline void CachedUserSession::clear_created_at() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.created_at_ = ::int64_t{0};
-  _impl_._has_bits_[0] &= ~0x00000008u;
-}
-inline ::int64_t CachedUserSession::created_at() const {
-  // @@protoc_insertion_point(field_get:users.v1.CachedUserSession.created_at)
-  return _internal_created_at();
-}
-inline void CachedUserSession::set_created_at(::int64_t value) {
-  _internal_set_created_at(value);
-  _impl_._has_bits_[0] |= 0x00000008u;
-  // @@protoc_insertion_point(field_set:users.v1.CachedUserSession.created_at)
-}
-inline ::int64_t CachedUserSession::_internal_created_at() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.created_at_;
-}
-inline void CachedUserSession::_internal_set_created_at(::int64_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.created_at_ = value;
-}
-
-// int64 expires_at = 4 [json_name = "expiresAt"];
-inline void CachedUserSession::clear_expires_at() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.expires_at_ = ::int64_t{0};
-  _impl_._has_bits_[0] &= ~0x00000010u;
-}
-inline ::int64_t CachedUserSession::expires_at() const {
-  // @@protoc_insertion_point(field_get:users.v1.CachedUserSession.expires_at)
-  return _internal_expires_at();
-}
-inline void CachedUserSession::set_expires_at(::int64_t value) {
-  _internal_set_expires_at(value);
-  _impl_._has_bits_[0] |= 0x00000010u;
-  // @@protoc_insertion_point(field_set:users.v1.CachedUserSession.expires_at)
-}
-inline ::int64_t CachedUserSession::_internal_expires_at() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.expires_at_;
-}
-inline void CachedUserSession::_internal_set_expires_at(::int64_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.expires_at_ = value;
-}
-
-// string device_id = 5 [json_name = "deviceId"];
-inline void CachedUserSession::clear_device_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.device_id_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000004u;
-}
-inline const ::std::string& CachedUserSession::device_id() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:users.v1.CachedUserSession.device_id)
-  return _internal_device_id();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void CachedUserSession::set_device_id(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
-  _impl_.device_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:users.v1.CachedUserSession.device_id)
-}
-inline ::std::string* PROTOBUF_NONNULL CachedUserSession::mutable_device_id()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_device_id();
-  // @@protoc_insertion_point(field_mutable:users.v1.CachedUserSession.device_id)
-  return _s;
-}
-inline const ::std::string& CachedUserSession::_internal_device_id() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.device_id_.Get();
-}
-inline void CachedUserSession::_internal_set_device_id(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
-  _impl_.device_id_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL CachedUserSession::_internal_mutable_device_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
-  return _impl_.device_id_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE CachedUserSession::release_device_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:users.v1.CachedUserSession.device_id)
-  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000004u;
-  auto* released = _impl_.device_id_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.device_id_.Set("", GetArena());
-  }
-  return released;
-}
-inline void CachedUserSession::set_allocated_device_id(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000004u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000004u;
-  }
-  _impl_.device_id_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.device_id_.IsDefault()) {
-    _impl_.device_id_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:users.v1.CachedUserSession.device_id)
-}
-
-// -------------------------------------------------------------------
-
 // CachedUserData
 
-// string id = 1 [json_name = "id"];
-inline void CachedUserData::clear_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.id_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000001u;
-}
-inline const ::std::string& CachedUserData::id() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:users.v1.CachedUserData.id)
-  return _internal_id();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void CachedUserData::set_id(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:users.v1.CachedUserData.id)
-}
-inline ::std::string* PROTOBUF_NONNULL CachedUserData::mutable_id()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_id();
-  // @@protoc_insertion_point(field_mutable:users.v1.CachedUserData.id)
-  return _s;
-}
-inline const ::std::string& CachedUserData::_internal_id() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.id_.Get();
-}
-inline void CachedUserData::_internal_set_id(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.id_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL CachedUserData::_internal_mutable_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  return _impl_.id_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE CachedUserData::release_id() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:users.v1.CachedUserData.id)
-  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  auto* released = _impl_.id_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.id_.Set("", GetArena());
-  }
-  return released;
-}
-inline void CachedUserData::set_allocated_id(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000001u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
-  }
-  _impl_.id_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.id_.IsDefault()) {
-    _impl_.id_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:users.v1.CachedUserData.id)
-}
-
-// bool is_oauth = 2 [json_name = "isOauth"];
+// bool is_oauth = 1 [json_name = "isOauth"];
 inline void CachedUserData::clear_is_oauth() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.is_oauth_ = false;
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline bool CachedUserData::is_oauth() const {
   // @@protoc_insertion_point(field_get:users.v1.CachedUserData.is_oauth)
@@ -1129,7 +554,7 @@ inline bool CachedUserData::is_oauth() const {
 }
 inline void CachedUserData::set_is_oauth(bool value) {
   _internal_set_is_oauth(value);
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   // @@protoc_insertion_point(field_set:users.v1.CachedUserData.is_oauth)
 }
 inline bool CachedUserData::_internal_is_oauth() const {
@@ -1141,11 +566,11 @@ inline void CachedUserData::_internal_set_is_oauth(bool value) {
   _impl_.is_oauth_ = value;
 }
 
-// string roles = 3 [json_name = "roles"];
+// string roles = 2 [json_name = "roles"];
 inline void CachedUserData::clear_roles() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.roles_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
 }
 inline const ::std::string& CachedUserData::roles() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -1155,7 +580,7 @@ inline const ::std::string& CachedUserData::roles() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void CachedUserData::set_roles(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.roles_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:users.v1.CachedUserData.roles)
 }
@@ -1171,21 +596,21 @@ inline const ::std::string& CachedUserData::_internal_roles() const {
 }
 inline void CachedUserData::_internal_set_roles(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.roles_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL CachedUserData::_internal_mutable_roles() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000001u;
   return _impl_.roles_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE CachedUserData::release_roles() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:users.v1.CachedUserData.roles)
-  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
   auto* released = _impl_.roles_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.roles_.Set("", GetArena());
@@ -1195,9 +620,9 @@ inline ::std::string* PROTOBUF_NULLABLE CachedUserData::release_roles() {
 inline void CachedUserData::set_allocated_roles(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000002u;
+    _impl_._has_bits_[0] |= 0x00000001u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000002u;
+    _impl_._has_bits_[0] &= ~0x00000001u;
   }
   _impl_.roles_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.roles_.IsDefault()) {
@@ -1206,11 +631,11 @@ inline void CachedUserData::set_allocated_roles(::std::string* PROTOBUF_NULLABLE
   // @@protoc_insertion_point(field_set_allocated:users.v1.CachedUserData.roles)
 }
 
-// string props = 4 [json_name = "props"];
+// string props = 3 [json_name = "props"];
 inline void CachedUserData::clear_props() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.props_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 inline const ::std::string& CachedUserData::props() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -1220,7 +645,7 @@ inline const ::std::string& CachedUserData::props() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void CachedUserData::set_props(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.props_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:users.v1.CachedUserData.props)
 }
@@ -1236,21 +661,21 @@ inline const ::std::string& CachedUserData::_internal_props() const {
 }
 inline void CachedUserData::_internal_set_props(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.props_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL CachedUserData::_internal_mutable_props() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   return _impl_.props_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE CachedUserData::release_props() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:users.v1.CachedUserData.props)
-  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
   auto* released = _impl_.props_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.props_.Set("", GetArena());
@@ -1260,9 +685,9 @@ inline ::std::string* PROTOBUF_NULLABLE CachedUserData::release_props() {
 inline void CachedUserData::set_allocated_props(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000004u;
+    _impl_._has_bits_[0] |= 0x00000002u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000004u;
+    _impl_._has_bits_[0] &= ~0x00000002u;
   }
   _impl_.props_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.props_.IsDefault()) {
@@ -1273,202 +698,160 @@ inline void CachedUserData::set_allocated_props(::std::string* PROTOBUF_NULLABLE
 
 // -------------------------------------------------------------------
 
-// CachedUser
+// CachedTokenStatus
 
-// .users.v1.CachedUserSession session = 1 [json_name = "session"];
-inline bool CachedUser::has_session() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  PROTOBUF_ASSUME(!value || _impl_.session_ != nullptr);
-  return value;
-}
-inline void CachedUser::clear_session() {
+// string dev_id = 1 [json_name = "devId"];
+inline void CachedTokenStatus::clear_dev_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.session_ != nullptr) _impl_.session_->Clear();
+  _impl_.dev_id_.ClearToEmpty();
   _impl_._has_bits_[0] &= ~0x00000001u;
 }
-inline const ::users::v1::CachedUserSession& CachedUser::_internal_session() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::users::v1::CachedUserSession* p = _impl_.session_;
-  return p != nullptr ? *p : reinterpret_cast<const ::users::v1::CachedUserSession&>(::users::v1::_CachedUserSession_default_instance_);
-}
-inline const ::users::v1::CachedUserSession& CachedUser::session() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:users.v1.CachedUser.session)
-  return _internal_session();
-}
-inline void CachedUser::unsafe_arena_set_allocated_session(
-    ::users::v1::CachedUserSession* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.session_);
-  }
-  _impl_.session_ = reinterpret_cast<::users::v1::CachedUserSession*>(value);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000001u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:users.v1.CachedUser.session)
-}
-inline ::users::v1::CachedUserSession* PROTOBUF_NULLABLE CachedUser::release_session() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  ::users::v1::CachedUserSession* released = _impl_.session_;
-  _impl_.session_ = nullptr;
-  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
-    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    if (GetArena() == nullptr) {
-      delete old;
-    }
-  } else {
-    if (GetArena() != nullptr) {
-      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    }
-  }
-  return released;
-}
-inline ::users::v1::CachedUserSession* PROTOBUF_NULLABLE CachedUser::unsafe_arena_release_session() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:users.v1.CachedUser.session)
-
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  ::users::v1::CachedUserSession* temp = _impl_.session_;
-  _impl_.session_ = nullptr;
-  return temp;
-}
-inline ::users::v1::CachedUserSession* PROTOBUF_NONNULL CachedUser::_internal_mutable_session() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.session_ == nullptr) {
-    auto* p = ::google::protobuf::Message::DefaultConstruct<::users::v1::CachedUserSession>(GetArena());
-    _impl_.session_ = reinterpret_cast<::users::v1::CachedUserSession*>(p);
-  }
-  return _impl_.session_;
-}
-inline ::users::v1::CachedUserSession* PROTOBUF_NONNULL CachedUser::mutable_session()
+inline const ::std::string& CachedTokenStatus::dev_id() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:users.v1.CachedTokenStatus.dev_id)
+  return _internal_dev_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void CachedTokenStatus::set_dev_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000001u;
-  ::users::v1::CachedUserSession* _msg = _internal_mutable_session();
-  // @@protoc_insertion_point(field_mutable:users.v1.CachedUser.session)
-  return _msg;
+  _impl_.dev_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:users.v1.CachedTokenStatus.dev_id)
 }
-inline void CachedUser::set_allocated_session(::users::v1::CachedUserSession* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::Arena* message_arena = GetArena();
+inline ::std::string* PROTOBUF_NONNULL CachedTokenStatus::mutable_dev_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_dev_id();
+  // @@protoc_insertion_point(field_mutable:users.v1.CachedTokenStatus.dev_id)
+  return _s;
+}
+inline const ::std::string& CachedTokenStatus::_internal_dev_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.dev_id_.Get();
+}
+inline void CachedTokenStatus::_internal_set_dev_id(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.session_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.dev_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL CachedTokenStatus::_internal_mutable_dev_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.dev_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE CachedTokenStatus::release_dev_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:users.v1.CachedTokenStatus.dev_id)
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
+    return nullptr;
   }
-
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* released = _impl_.dev_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.dev_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void CachedTokenStatus::set_allocated_dev_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena = value->GetArena();
-    if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
-    }
     _impl_._has_bits_[0] |= 0x00000001u;
   } else {
     _impl_._has_bits_[0] &= ~0x00000001u;
   }
-
-  _impl_.session_ = reinterpret_cast<::users::v1::CachedUserSession*>(value);
-  // @@protoc_insertion_point(field_set_allocated:users.v1.CachedUser.session)
+  _impl_.dev_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.dev_id_.IsDefault()) {
+    _impl_.dev_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:users.v1.CachedTokenStatus.dev_id)
 }
 
-// .users.v1.CachedUserData user = 2 [json_name = "user"];
-inline bool CachedUser::has_user() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
-  PROTOBUF_ASSUME(!value || _impl_.user_ != nullptr);
-  return value;
-}
-inline void CachedUser::clear_user() {
+// string last_checked = 2 [json_name = "lastChecked"];
+inline void CachedTokenStatus::clear_last_checked() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.user_ != nullptr) _impl_.user_->Clear();
+  _impl_.last_checked_.ClearToEmpty();
   _impl_._has_bits_[0] &= ~0x00000002u;
 }
-inline const ::users::v1::CachedUserData& CachedUser::_internal_user() const {
+inline const ::std::string& CachedTokenStatus::last_checked() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:users.v1.CachedTokenStatus.last_checked)
+  return _internal_last_checked();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void CachedTokenStatus::set_last_checked(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.last_checked_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:users.v1.CachedTokenStatus.last_checked)
+}
+inline ::std::string* PROTOBUF_NONNULL CachedTokenStatus::mutable_last_checked()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_last_checked();
+  // @@protoc_insertion_point(field_mutable:users.v1.CachedTokenStatus.last_checked)
+  return _s;
+}
+inline const ::std::string& CachedTokenStatus::_internal_last_checked() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  const ::users::v1::CachedUserData* p = _impl_.user_;
-  return p != nullptr ? *p : reinterpret_cast<const ::users::v1::CachedUserData&>(::users::v1::_CachedUserData_default_instance_);
+  return _impl_.last_checked_.Get();
 }
-inline const ::users::v1::CachedUserData& CachedUser::user() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:users.v1.CachedUser.user)
-  return _internal_user();
-}
-inline void CachedUser::unsafe_arena_set_allocated_user(
-    ::users::v1::CachedUserData* PROTOBUF_NULLABLE value) {
+inline void CachedTokenStatus::_internal_set_last_checked(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.user_);
-  }
-  _impl_.user_ = reinterpret_cast<::users::v1::CachedUserData*>(value);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000002u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000002u;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:users.v1.CachedUser.user)
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.last_checked_.Set(value, GetArena());
 }
-inline ::users::v1::CachedUserData* PROTOBUF_NULLABLE CachedUser::release_user() {
+inline ::std::string* PROTOBUF_NONNULL CachedTokenStatus::_internal_mutable_last_checked() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.last_checked_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE CachedTokenStatus::release_last_checked() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:users.v1.CachedTokenStatus.last_checked)
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
+    return nullptr;
+  }
   _impl_._has_bits_[0] &= ~0x00000002u;
-  ::users::v1::CachedUserData* released = _impl_.user_;
-  _impl_.user_ = nullptr;
-  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
-    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    if (GetArena() == nullptr) {
-      delete old;
-    }
-  } else {
-    if (GetArena() != nullptr) {
-      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-    }
+  auto* released = _impl_.last_checked_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.last_checked_.Set("", GetArena());
   }
   return released;
 }
-inline ::users::v1::CachedUserData* PROTOBUF_NULLABLE CachedUser::unsafe_arena_release_user() {
+inline void CachedTokenStatus::set_allocated_last_checked(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:users.v1.CachedUser.user)
-
-  _impl_._has_bits_[0] &= ~0x00000002u;
-  ::users::v1::CachedUserData* temp = _impl_.user_;
-  _impl_.user_ = nullptr;
-  return temp;
-}
-inline ::users::v1::CachedUserData* PROTOBUF_NONNULL CachedUser::_internal_mutable_user() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.user_ == nullptr) {
-    auto* p = ::google::protobuf::Message::DefaultConstruct<::users::v1::CachedUserData>(GetArena());
-    _impl_.user_ = reinterpret_cast<::users::v1::CachedUserData*>(p);
-  }
-  return _impl_.user_;
-}
-inline ::users::v1::CachedUserData* PROTOBUF_NONNULL CachedUser::mutable_user()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  _impl_._has_bits_[0] |= 0x00000002u;
-  ::users::v1::CachedUserData* _msg = _internal_mutable_user();
-  // @@protoc_insertion_point(field_mutable:users.v1.CachedUser.user)
-  return _msg;
-}
-inline void CachedUser::set_allocated_user(::users::v1::CachedUserData* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (message_arena == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.user_);
-  }
-
   if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena = value->GetArena();
-    if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
-    }
     _impl_._has_bits_[0] |= 0x00000002u;
   } else {
     _impl_._has_bits_[0] &= ~0x00000002u;
   }
+  _impl_.last_checked_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.last_checked_.IsDefault()) {
+    _impl_.last_checked_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:users.v1.CachedTokenStatus.last_checked)
+}
 
-  _impl_.user_ = reinterpret_cast<::users::v1::CachedUserData*>(value);
-  // @@protoc_insertion_point(field_set_allocated:users.v1.CachedUser.user)
+// bool revoked = 3 [json_name = "revoked"];
+inline void CachedTokenStatus::clear_revoked() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.revoked_ = false;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline bool CachedTokenStatus::revoked() const {
+  // @@protoc_insertion_point(field_get:users.v1.CachedTokenStatus.revoked)
+  return _internal_revoked();
+}
+inline void CachedTokenStatus::set_revoked(bool value) {
+  _internal_set_revoked(value);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  // @@protoc_insertion_point(field_set:users.v1.CachedTokenStatus.revoked)
+}
+inline bool CachedTokenStatus::_internal_revoked() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.revoked_;
+}
+inline void CachedTokenStatus::_internal_set_revoked(bool value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.revoked_ = value;
 }
 
 #ifdef __GNUC__

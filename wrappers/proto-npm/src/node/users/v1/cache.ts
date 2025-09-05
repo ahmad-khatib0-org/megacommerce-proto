@@ -9,170 +9,33 @@ import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 
 export const protobufPackage = "users.v1";
 
-export interface CachedUserSession {
-  /** token id */
-  id: string;
-  token: string;
-  createdAt: string;
-  expiresAt: string;
-  deviceId: string;
-}
-
 export interface CachedUserData {
-  /** user id */
-  id: string;
   isOauth: boolean;
   roles: string;
   /** like: theme:light,mobile_notification:true */
   props: string;
 }
 
-export interface CachedUser {
-  session?: CachedUserSession | undefined;
-  user?: CachedUserData | undefined;
+export interface CachedTokenStatus {
+  devId: string;
+  lastChecked: string;
+  revoked: boolean;
 }
-
-function createBaseCachedUserSession(): CachedUserSession {
-  return { id: "", token: "", createdAt: "0", expiresAt: "0", deviceId: "" };
-}
-
-export const CachedUserSession: MessageFns<CachedUserSession> = {
-  encode(message: CachedUserSession, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.id !== "") {
-      writer.uint32(10).string(message.id);
-    }
-    if (message.token !== "") {
-      writer.uint32(18).string(message.token);
-    }
-    if (message.createdAt !== "0") {
-      writer.uint32(24).int64(message.createdAt);
-    }
-    if (message.expiresAt !== "0") {
-      writer.uint32(32).int64(message.expiresAt);
-    }
-    if (message.deviceId !== "") {
-      writer.uint32(42).string(message.deviceId);
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): CachedUserSession {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCachedUserSession();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.id = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.token = reader.string();
-          continue;
-        }
-        case 3: {
-          if (tag !== 24) {
-            break;
-          }
-
-          message.createdAt = reader.int64().toString();
-          continue;
-        }
-        case 4: {
-          if (tag !== 32) {
-            break;
-          }
-
-          message.expiresAt = reader.int64().toString();
-          continue;
-        }
-        case 5: {
-          if (tag !== 42) {
-            break;
-          }
-
-          message.deviceId = reader.string();
-          continue;
-        }
-      }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
-      }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
-
-  fromJSON(object: any): CachedUserSession {
-    return {
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
-      token: isSet(object.token) ? globalThis.String(object.token) : "",
-      createdAt: isSet(object.createdAt) ? globalThis.String(object.createdAt) : "0",
-      expiresAt: isSet(object.expiresAt) ? globalThis.String(object.expiresAt) : "0",
-      deviceId: isSet(object.deviceId) ? globalThis.String(object.deviceId) : "",
-    };
-  },
-
-  toJSON(message: CachedUserSession): unknown {
-    const obj: any = {};
-    if (message.id !== "") {
-      obj.id = message.id;
-    }
-    if (message.token !== "") {
-      obj.token = message.token;
-    }
-    if (message.createdAt !== "0") {
-      obj.createdAt = message.createdAt;
-    }
-    if (message.expiresAt !== "0") {
-      obj.expiresAt = message.expiresAt;
-    }
-    if (message.deviceId !== "") {
-      obj.deviceId = message.deviceId;
-    }
-    return obj;
-  },
-
-  create<I extends Exact<DeepPartial<CachedUserSession>, I>>(base?: I): CachedUserSession {
-    return CachedUserSession.fromPartial(base ?? ({} as any));
-  },
-  fromPartial<I extends Exact<DeepPartial<CachedUserSession>, I>>(object: I): CachedUserSession {
-    const message = createBaseCachedUserSession();
-    message.id = object.id ?? "";
-    message.token = object.token ?? "";
-    message.createdAt = object.createdAt ?? "0";
-    message.expiresAt = object.expiresAt ?? "0";
-    message.deviceId = object.deviceId ?? "";
-    return message;
-  },
-};
 
 function createBaseCachedUserData(): CachedUserData {
-  return { id: "", isOauth: false, roles: "", props: "" };
+  return { isOauth: false, roles: "", props: "" };
 }
 
 export const CachedUserData: MessageFns<CachedUserData> = {
   encode(message: CachedUserData, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.id !== "") {
-      writer.uint32(10).string(message.id);
-    }
     if (message.isOauth !== false) {
-      writer.uint32(16).bool(message.isOauth);
+      writer.uint32(8).bool(message.isOauth);
     }
     if (message.roles !== "") {
-      writer.uint32(26).string(message.roles);
+      writer.uint32(18).string(message.roles);
     }
     if (message.props !== "") {
-      writer.uint32(34).string(message.props);
+      writer.uint32(26).string(message.props);
     }
     return writer;
   },
@@ -185,31 +48,23 @@ export const CachedUserData: MessageFns<CachedUserData> = {
       const tag = reader.uint32();
       switch (tag >>> 3) {
         case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.id = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 16) {
+          if (tag !== 8) {
             break;
           }
 
           message.isOauth = reader.bool();
           continue;
         }
-        case 3: {
-          if (tag !== 26) {
+        case 2: {
+          if (tag !== 18) {
             break;
           }
 
           message.roles = reader.string();
           continue;
         }
-        case 4: {
-          if (tag !== 34) {
+        case 3: {
+          if (tag !== 26) {
             break;
           }
 
@@ -227,7 +82,6 @@ export const CachedUserData: MessageFns<CachedUserData> = {
 
   fromJSON(object: any): CachedUserData {
     return {
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
       isOauth: isSet(object.isOauth) ? globalThis.Boolean(object.isOauth) : false,
       roles: isSet(object.roles) ? globalThis.String(object.roles) : "",
       props: isSet(object.props) ? globalThis.String(object.props) : "",
@@ -236,9 +90,6 @@ export const CachedUserData: MessageFns<CachedUserData> = {
 
   toJSON(message: CachedUserData): unknown {
     const obj: any = {};
-    if (message.id !== "") {
-      obj.id = message.id;
-    }
     if (message.isOauth !== false) {
       obj.isOauth = message.isOauth;
     }
@@ -256,7 +107,6 @@ export const CachedUserData: MessageFns<CachedUserData> = {
   },
   fromPartial<I extends Exact<DeepPartial<CachedUserData>, I>>(object: I): CachedUserData {
     const message = createBaseCachedUserData();
-    message.id = object.id ?? "";
     message.isOauth = object.isOauth ?? false;
     message.roles = object.roles ?? "";
     message.props = object.props ?? "";
@@ -264,25 +114,28 @@ export const CachedUserData: MessageFns<CachedUserData> = {
   },
 };
 
-function createBaseCachedUser(): CachedUser {
-  return { session: undefined, user: undefined };
+function createBaseCachedTokenStatus(): CachedTokenStatus {
+  return { devId: "", lastChecked: "", revoked: false };
 }
 
-export const CachedUser: MessageFns<CachedUser> = {
-  encode(message: CachedUser, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.session !== undefined) {
-      CachedUserSession.encode(message.session, writer.uint32(10).fork()).join();
+export const CachedTokenStatus: MessageFns<CachedTokenStatus> = {
+  encode(message: CachedTokenStatus, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.devId !== "") {
+      writer.uint32(10).string(message.devId);
     }
-    if (message.user !== undefined) {
-      CachedUserData.encode(message.user, writer.uint32(18).fork()).join();
+    if (message.lastChecked !== "") {
+      writer.uint32(18).string(message.lastChecked);
+    }
+    if (message.revoked !== false) {
+      writer.uint32(24).bool(message.revoked);
     }
     return writer;
   },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): CachedUser {
+  decode(input: BinaryReader | Uint8Array, length?: number): CachedTokenStatus {
     const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     let end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseCachedUser();
+    const message = createBaseCachedTokenStatus();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -291,7 +144,7 @@ export const CachedUser: MessageFns<CachedUser> = {
             break;
           }
 
-          message.session = CachedUserSession.decode(reader, reader.uint32());
+          message.devId = reader.string();
           continue;
         }
         case 2: {
@@ -299,7 +152,15 @@ export const CachedUser: MessageFns<CachedUser> = {
             break;
           }
 
-          message.user = CachedUserData.decode(reader, reader.uint32());
+          message.lastChecked = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 24) {
+            break;
+          }
+
+          message.revoked = reader.bool();
           continue;
         }
       }
@@ -311,35 +172,36 @@ export const CachedUser: MessageFns<CachedUser> = {
     return message;
   },
 
-  fromJSON(object: any): CachedUser {
+  fromJSON(object: any): CachedTokenStatus {
     return {
-      session: isSet(object.session) ? CachedUserSession.fromJSON(object.session) : undefined,
-      user: isSet(object.user) ? CachedUserData.fromJSON(object.user) : undefined,
+      devId: isSet(object.devId) ? globalThis.String(object.devId) : "",
+      lastChecked: isSet(object.lastChecked) ? globalThis.String(object.lastChecked) : "",
+      revoked: isSet(object.revoked) ? globalThis.Boolean(object.revoked) : false,
     };
   },
 
-  toJSON(message: CachedUser): unknown {
+  toJSON(message: CachedTokenStatus): unknown {
     const obj: any = {};
-    if (message.session !== undefined) {
-      obj.session = CachedUserSession.toJSON(message.session);
+    if (message.devId !== "") {
+      obj.devId = message.devId;
     }
-    if (message.user !== undefined) {
-      obj.user = CachedUserData.toJSON(message.user);
+    if (message.lastChecked !== "") {
+      obj.lastChecked = message.lastChecked;
+    }
+    if (message.revoked !== false) {
+      obj.revoked = message.revoked;
     }
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<CachedUser>, I>>(base?: I): CachedUser {
-    return CachedUser.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<CachedTokenStatus>, I>>(base?: I): CachedTokenStatus {
+    return CachedTokenStatus.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<CachedUser>, I>>(object: I): CachedUser {
-    const message = createBaseCachedUser();
-    message.session = (object.session !== undefined && object.session !== null)
-      ? CachedUserSession.fromPartial(object.session)
-      : undefined;
-    message.user = (object.user !== undefined && object.user !== null)
-      ? CachedUserData.fromPartial(object.user)
-      : undefined;
+  fromPartial<I extends Exact<DeepPartial<CachedTokenStatus>, I>>(object: I): CachedTokenStatus {
+    const message = createBaseCachedTokenStatus();
+    message.devId = object.devId ?? "";
+    message.lastChecked = object.lastChecked ?? "";
+    message.revoked = object.revoked ?? false;
     return message;
   },
 };

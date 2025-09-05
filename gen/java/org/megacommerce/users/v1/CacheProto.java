@@ -26,1031 +26,23 @@ public final class CacheProto {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface CachedUserSessionOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:users.v1.CachedUserSession)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <pre>
-     * token id
-     * </pre>
-     *
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The id.
-     */
-    java.lang.String getId();
-    /**
-     * <pre>
-     * token id
-     * </pre>
-     *
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The bytes for id.
-     */
-    com.google.protobuf.ByteString
-        getIdBytes();
-
-    /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The token.
-     */
-    java.lang.String getToken();
-    /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The bytes for token.
-     */
-    com.google.protobuf.ByteString
-        getTokenBytes();
-
-    /**
-     * <code>int64 created_at = 3 [json_name = "createdAt"];</code>
-     * @return The createdAt.
-     */
-    long getCreatedAt();
-
-    /**
-     * <code>int64 expires_at = 4 [json_name = "expiresAt"];</code>
-     * @return The expiresAt.
-     */
-    long getExpiresAt();
-
-    /**
-     * <code>string device_id = 5 [json_name = "deviceId"];</code>
-     * @return The deviceId.
-     */
-    java.lang.String getDeviceId();
-    /**
-     * <code>string device_id = 5 [json_name = "deviceId"];</code>
-     * @return The bytes for deviceId.
-     */
-    com.google.protobuf.ByteString
-        getDeviceIdBytes();
-  }
-  /**
-   * Protobuf type {@code users.v1.CachedUserSession}
-   */
-  public static final class CachedUserSession extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:users.v1.CachedUserSession)
-      CachedUserSessionOrBuilder {
-  private static final long serialVersionUID = 0L;
-    static {
-      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
-        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
-        /* major= */ 4,
-        /* minor= */ 31,
-        /* patch= */ 1,
-        /* suffix= */ "",
-        CachedUserSession.class.getName());
-    }
-    // Use CachedUserSession.newBuilder() to construct.
-    private CachedUserSession(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-    }
-    private CachedUserSession() {
-      id_ = "";
-      token_ = "";
-      deviceId_ = "";
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return org.megacommerce.users.v1.CacheProto.internal_static_users_v1_CachedUserSession_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return org.megacommerce.users.v1.CacheProto.internal_static_users_v1_CachedUserSession_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              org.megacommerce.users.v1.CacheProto.CachedUserSession.class, org.megacommerce.users.v1.CacheProto.CachedUserSession.Builder.class);
-    }
-
-    public static final int ID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object id_ = "";
-    /**
-     * <pre>
-     * token id
-     * </pre>
-     *
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The id.
-     */
-    @java.lang.Override
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * token id
-     * </pre>
-     *
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The bytes for id.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TOKEN_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object token_ = "";
-    /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The token.
-     */
-    @java.lang.Override
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        token_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string token = 2 [json_name = "token"];</code>
-     * @return The bytes for token.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        token_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CREATED_AT_FIELD_NUMBER = 3;
-    private long createdAt_ = 0L;
-    /**
-     * <code>int64 created_at = 3 [json_name = "createdAt"];</code>
-     * @return The createdAt.
-     */
-    @java.lang.Override
-    public long getCreatedAt() {
-      return createdAt_;
-    }
-
-    public static final int EXPIRES_AT_FIELD_NUMBER = 4;
-    private long expiresAt_ = 0L;
-    /**
-     * <code>int64 expires_at = 4 [json_name = "expiresAt"];</code>
-     * @return The expiresAt.
-     */
-    @java.lang.Override
-    public long getExpiresAt() {
-      return expiresAt_;
-    }
-
-    public static final int DEVICE_ID_FIELD_NUMBER = 5;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object deviceId_ = "";
-    /**
-     * <code>string device_id = 5 [json_name = "deviceId"];</code>
-     * @return The deviceId.
-     */
-    @java.lang.Override
-    public java.lang.String getDeviceId() {
-      java.lang.Object ref = deviceId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        deviceId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string device_id = 5 [json_name = "deviceId"];</code>
-     * @return The bytes for deviceId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getDeviceIdBytes() {
-      java.lang.Object ref = deviceId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        deviceId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(token_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 2, token_);
-      }
-      if (createdAt_ != 0L) {
-        output.writeInt64(3, createdAt_);
-      }
-      if (expiresAt_ != 0L) {
-        output.writeInt64(4, expiresAt_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deviceId_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 5, deviceId_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(token_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, token_);
-      }
-      if (createdAt_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, createdAt_);
-      }
-      if (expiresAt_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, expiresAt_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(deviceId_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, deviceId_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof org.megacommerce.users.v1.CacheProto.CachedUserSession)) {
-        return super.equals(obj);
-      }
-      org.megacommerce.users.v1.CacheProto.CachedUserSession other = (org.megacommerce.users.v1.CacheProto.CachedUserSession) obj;
-
-      if (!getId()
-          .equals(other.getId())) return false;
-      if (!getToken()
-          .equals(other.getToken())) return false;
-      if (getCreatedAt()
-          != other.getCreatedAt()) return false;
-      if (getExpiresAt()
-          != other.getExpiresAt()) return false;
-      if (!getDeviceId()
-          .equals(other.getDeviceId())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-      hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getToken().hashCode();
-      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCreatedAt());
-      hash = (37 * hash) + EXPIRES_AT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getExpiresAt());
-      hash = (37 * hash) + DEVICE_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getDeviceId().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static org.megacommerce.users.v1.CacheProto.CachedUserSession parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.megacommerce.users.v1.CacheProto.CachedUserSession parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.megacommerce.users.v1.CacheProto.CachedUserSession parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.megacommerce.users.v1.CacheProto.CachedUserSession parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.megacommerce.users.v1.CacheProto.CachedUserSession parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.megacommerce.users.v1.CacheProto.CachedUserSession parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.megacommerce.users.v1.CacheProto.CachedUserSession parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.megacommerce.users.v1.CacheProto.CachedUserSession parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static org.megacommerce.users.v1.CacheProto.CachedUserSession parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static org.megacommerce.users.v1.CacheProto.CachedUserSession parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static org.megacommerce.users.v1.CacheProto.CachedUserSession parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.megacommerce.users.v1.CacheProto.CachedUserSession parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(org.megacommerce.users.v1.CacheProto.CachedUserSession prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code users.v1.CachedUserSession}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:users.v1.CachedUserSession)
-        org.megacommerce.users.v1.CacheProto.CachedUserSessionOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return org.megacommerce.users.v1.CacheProto.internal_static_users_v1_CachedUserSession_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return org.megacommerce.users.v1.CacheProto.internal_static_users_v1_CachedUserSession_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                org.megacommerce.users.v1.CacheProto.CachedUserSession.class, org.megacommerce.users.v1.CacheProto.CachedUserSession.Builder.class);
-      }
-
-      // Construct using org.megacommerce.users.v1.CacheProto.CachedUserSession.newBuilder()
-      private Builder() {
-
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        id_ = "";
-        token_ = "";
-        createdAt_ = 0L;
-        expiresAt_ = 0L;
-        deviceId_ = "";
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return org.megacommerce.users.v1.CacheProto.internal_static_users_v1_CachedUserSession_descriptor;
-      }
-
-      @java.lang.Override
-      public org.megacommerce.users.v1.CacheProto.CachedUserSession getDefaultInstanceForType() {
-        return org.megacommerce.users.v1.CacheProto.CachedUserSession.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public org.megacommerce.users.v1.CacheProto.CachedUserSession build() {
-        org.megacommerce.users.v1.CacheProto.CachedUserSession result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public org.megacommerce.users.v1.CacheProto.CachedUserSession buildPartial() {
-        org.megacommerce.users.v1.CacheProto.CachedUserSession result = new org.megacommerce.users.v1.CacheProto.CachedUserSession(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartial0(org.megacommerce.users.v1.CacheProto.CachedUserSession result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.token_ = token_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.createdAt_ = createdAt_;
-        }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.expiresAt_ = expiresAt_;
-        }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.deviceId_ = deviceId_;
-        }
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.megacommerce.users.v1.CacheProto.CachedUserSession) {
-          return mergeFrom((org.megacommerce.users.v1.CacheProto.CachedUserSession)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(org.megacommerce.users.v1.CacheProto.CachedUserSession other) {
-        if (other == org.megacommerce.users.v1.CacheProto.CachedUserSession.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
-          id_ = other.id_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
-        if (!other.getToken().isEmpty()) {
-          token_ = other.token_;
-          bitField0_ |= 0x00000002;
-          onChanged();
-        }
-        if (other.getCreatedAt() != 0L) {
-          setCreatedAt(other.getCreatedAt());
-        }
-        if (other.getExpiresAt() != 0L) {
-          setExpiresAt(other.getExpiresAt());
-        }
-        if (!other.getDeviceId().isEmpty()) {
-          deviceId_ = other.deviceId_;
-          bitField0_ |= 0x00000010;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                id_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                token_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 24: {
-                createdAt_ = input.readInt64();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 24
-              case 32: {
-                expiresAt_ = input.readInt64();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 32
-              case 42: {
-                deviceId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
-                break;
-              } // case 42
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object id_ = "";
-      /**
-       * <pre>
-       * token id
-       * </pre>
-       *
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @return The id.
-       */
-      public java.lang.String getId() {
-        java.lang.Object ref = id_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          id_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * token id
-       * </pre>
-       *
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @return The bytes for id.
-       */
-      public com.google.protobuf.ByteString
-          getIdBytes() {
-        java.lang.Object ref = id_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          id_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * token id
-       * </pre>
-       *
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setId(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        id_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * token id
-       * </pre>
-       *
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearId() {
-        id_ = getDefaultInstance().getId();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * token id
-       * </pre>
-       *
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @param value The bytes for id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        id_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object token_ = "";
-      /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @return The token.
-       */
-      public java.lang.String getToken() {
-        java.lang.Object ref = token_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          token_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @return The bytes for token.
-       */
-      public com.google.protobuf.ByteString
-          getTokenBytes() {
-        java.lang.Object ref = token_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          token_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @param value The token to set.
-       * @return This builder for chaining.
-       */
-      public Builder setToken(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        token_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearToken() {
-        token_ = getDefaultInstance().getToken();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string token = 2 [json_name = "token"];</code>
-       * @param value The bytes for token to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        token_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-
-      private long createdAt_ ;
-      /**
-       * <code>int64 created_at = 3 [json_name = "createdAt"];</code>
-       * @return The createdAt.
-       */
-      @java.lang.Override
-      public long getCreatedAt() {
-        return createdAt_;
-      }
-      /**
-       * <code>int64 created_at = 3 [json_name = "createdAt"];</code>
-       * @param value The createdAt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCreatedAt(long value) {
-
-        createdAt_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 created_at = 3 [json_name = "createdAt"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCreatedAt() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        createdAt_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private long expiresAt_ ;
-      /**
-       * <code>int64 expires_at = 4 [json_name = "expiresAt"];</code>
-       * @return The expiresAt.
-       */
-      @java.lang.Override
-      public long getExpiresAt() {
-        return expiresAt_;
-      }
-      /**
-       * <code>int64 expires_at = 4 [json_name = "expiresAt"];</code>
-       * @param value The expiresAt to set.
-       * @return This builder for chaining.
-       */
-      public Builder setExpiresAt(long value) {
-
-        expiresAt_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 expires_at = 4 [json_name = "expiresAt"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearExpiresAt() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        expiresAt_ = 0L;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object deviceId_ = "";
-      /**
-       * <code>string device_id = 5 [json_name = "deviceId"];</code>
-       * @return The deviceId.
-       */
-      public java.lang.String getDeviceId() {
-        java.lang.Object ref = deviceId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          deviceId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string device_id = 5 [json_name = "deviceId"];</code>
-       * @return The bytes for deviceId.
-       */
-      public com.google.protobuf.ByteString
-          getDeviceIdBytes() {
-        java.lang.Object ref = deviceId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          deviceId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string device_id = 5 [json_name = "deviceId"];</code>
-       * @param value The deviceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDeviceId(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        deviceId_ = value;
-        bitField0_ |= 0x00000010;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string device_id = 5 [json_name = "deviceId"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearDeviceId() {
-        deviceId_ = getDefaultInstance().getDeviceId();
-        bitField0_ = (bitField0_ & ~0x00000010);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string device_id = 5 [json_name = "deviceId"];</code>
-       * @param value The bytes for deviceId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setDeviceIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        deviceId_ = value;
-        bitField0_ |= 0x00000010;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:users.v1.CachedUserSession)
-    }
-
-    // @@protoc_insertion_point(class_scope:users.v1.CachedUserSession)
-    private static final org.megacommerce.users.v1.CacheProto.CachedUserSession DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new org.megacommerce.users.v1.CacheProto.CachedUserSession();
-    }
-
-    public static org.megacommerce.users.v1.CacheProto.CachedUserSession getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CachedUserSession>
-        PARSER = new com.google.protobuf.AbstractParser<CachedUserSession>() {
-      @java.lang.Override
-      public CachedUserSession parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<CachedUserSession> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CachedUserSession> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public org.megacommerce.users.v1.CacheProto.CachedUserSession getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
   public interface CachedUserDataOrBuilder extends
       // @@protoc_insertion_point(interface_extends:users.v1.CachedUserData)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * user id
-     * </pre>
-     *
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The id.
-     */
-    java.lang.String getId();
-    /**
-     * <pre>
-     * user id
-     * </pre>
-     *
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The bytes for id.
-     */
-    com.google.protobuf.ByteString
-        getIdBytes();
-
-    /**
-     * <code>bool is_oauth = 2 [json_name = "isOauth"];</code>
+     * <code>bool is_oauth = 1 [json_name = "isOauth"];</code>
      * @return The isOauth.
      */
     boolean getIsOauth();
 
     /**
-     * <code>string roles = 3 [json_name = "roles"];</code>
+     * <code>string roles = 2 [json_name = "roles"];</code>
      * @return The roles.
      */
     java.lang.String getRoles();
     /**
-     * <code>string roles = 3 [json_name = "roles"];</code>
+     * <code>string roles = 2 [json_name = "roles"];</code>
      * @return The bytes for roles.
      */
     com.google.protobuf.ByteString
@@ -1061,7 +53,7 @@ public final class CacheProto {
      * like: theme:light,mobile_notification:true
      * </pre>
      *
-     * <code>string props = 4 [json_name = "props"];</code>
+     * <code>string props = 3 [json_name = "props"];</code>
      * @return The props.
      */
     java.lang.String getProps();
@@ -1070,7 +62,7 @@ public final class CacheProto {
      * like: theme:light,mobile_notification:true
      * </pre>
      *
-     * <code>string props = 4 [json_name = "props"];</code>
+     * <code>string props = 3 [json_name = "props"];</code>
      * @return The bytes for props.
      */
     com.google.protobuf.ByteString
@@ -1098,7 +90,6 @@ public final class CacheProto {
       super(builder);
     }
     private CachedUserData() {
-      id_ = "";
       roles_ = "";
       props_ = "";
     }
@@ -1116,57 +107,10 @@ public final class CacheProto {
               org.megacommerce.users.v1.CacheProto.CachedUserData.class, org.megacommerce.users.v1.CacheProto.CachedUserData.Builder.class);
     }
 
-    public static final int ID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object id_ = "";
-    /**
-     * <pre>
-     * user id
-     * </pre>
-     *
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The id.
-     */
-    @java.lang.Override
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * user id
-     * </pre>
-     *
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The bytes for id.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int IS_OAUTH_FIELD_NUMBER = 2;
+    public static final int IS_OAUTH_FIELD_NUMBER = 1;
     private boolean isOauth_ = false;
     /**
-     * <code>bool is_oauth = 2 [json_name = "isOauth"];</code>
+     * <code>bool is_oauth = 1 [json_name = "isOauth"];</code>
      * @return The isOauth.
      */
     @java.lang.Override
@@ -1174,11 +118,11 @@ public final class CacheProto {
       return isOauth_;
     }
 
-    public static final int ROLES_FIELD_NUMBER = 3;
+    public static final int ROLES_FIELD_NUMBER = 2;
     @SuppressWarnings("serial")
     private volatile java.lang.Object roles_ = "";
     /**
-     * <code>string roles = 3 [json_name = "roles"];</code>
+     * <code>string roles = 2 [json_name = "roles"];</code>
      * @return The roles.
      */
     @java.lang.Override
@@ -1195,7 +139,7 @@ public final class CacheProto {
       }
     }
     /**
-     * <code>string roles = 3 [json_name = "roles"];</code>
+     * <code>string roles = 2 [json_name = "roles"];</code>
      * @return The bytes for roles.
      */
     @java.lang.Override
@@ -1213,7 +157,7 @@ public final class CacheProto {
       }
     }
 
-    public static final int PROPS_FIELD_NUMBER = 4;
+    public static final int PROPS_FIELD_NUMBER = 3;
     @SuppressWarnings("serial")
     private volatile java.lang.Object props_ = "";
     /**
@@ -1221,7 +165,7 @@ public final class CacheProto {
      * like: theme:light,mobile_notification:true
      * </pre>
      *
-     * <code>string props = 4 [json_name = "props"];</code>
+     * <code>string props = 3 [json_name = "props"];</code>
      * @return The props.
      */
     @java.lang.Override
@@ -1242,7 +186,7 @@ public final class CacheProto {
      * like: theme:light,mobile_notification:true
      * </pre>
      *
-     * <code>string props = 4 [json_name = "props"];</code>
+     * <code>string props = 3 [json_name = "props"];</code>
      * @return The bytes for props.
      */
     @java.lang.Override
@@ -1274,17 +218,14 @@ public final class CacheProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
-      }
       if (isOauth_ != false) {
-        output.writeBool(2, isOauth_);
+        output.writeBool(1, isOauth_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(roles_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 3, roles_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, roles_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(props_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 4, props_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, props_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1295,18 +236,15 @@ public final class CacheProto {
       if (size != -1) return size;
 
       size = 0;
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
-      }
       if (isOauth_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, isOauth_);
+          .computeBoolSize(1, isOauth_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(roles_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, roles_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, roles_);
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(props_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, props_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, props_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1323,8 +261,6 @@ public final class CacheProto {
       }
       org.megacommerce.users.v1.CacheProto.CachedUserData other = (org.megacommerce.users.v1.CacheProto.CachedUserData) obj;
 
-      if (!getId()
-          .equals(other.getId())) return false;
       if (getIsOauth()
           != other.getIsOauth()) return false;
       if (!getRoles()
@@ -1342,8 +278,6 @@ public final class CacheProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + IS_OAUTH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOauth());
@@ -1482,7 +416,6 @@ public final class CacheProto {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        id_ = "";
         isOauth_ = false;
         roles_ = "";
         props_ = "";
@@ -1520,15 +453,12 @@ public final class CacheProto {
       private void buildPartial0(org.megacommerce.users.v1.CacheProto.CachedUserData result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
           result.isOauth_ = isOauth_;
         }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
+        if (((from_bitField0_ & 0x00000002) != 0)) {
           result.roles_ = roles_;
         }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (((from_bitField0_ & 0x00000004) != 0)) {
           result.props_ = props_;
         }
       }
@@ -1545,22 +475,17 @@ public final class CacheProto {
 
       public Builder mergeFrom(org.megacommerce.users.v1.CacheProto.CachedUserData other) {
         if (other == org.megacommerce.users.v1.CacheProto.CachedUserData.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
-          id_ = other.id_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
         if (other.getIsOauth() != false) {
           setIsOauth(other.getIsOauth());
         }
         if (!other.getRoles().isEmpty()) {
           roles_ = other.roles_;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000002;
           onChanged();
         }
         if (!other.getProps().isEmpty()) {
           props_ = other.props_;
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000004;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1589,26 +514,21 @@ public final class CacheProto {
               case 0:
                 done = true;
                 break;
-              case 10: {
-                id_ = input.readStringRequireUtf8();
+              case 8: {
+                isOauth_ = input.readBool();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 10
-              case 16: {
-                isOauth_ = input.readBool();
+              } // case 8
+              case 18: {
+                roles_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
                 break;
-              } // case 16
+              } // case 18
               case 26: {
-                roles_ = input.readStringRequireUtf8();
+                props_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
-              case 34: {
-                props_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1626,101 +546,9 @@ public final class CacheProto {
       }
       private int bitField0_;
 
-      private java.lang.Object id_ = "";
-      /**
-       * <pre>
-       * user id
-       * </pre>
-       *
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @return The id.
-       */
-      public java.lang.String getId() {
-        java.lang.Object ref = id_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          id_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * user id
-       * </pre>
-       *
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @return The bytes for id.
-       */
-      public com.google.protobuf.ByteString
-          getIdBytes() {
-        java.lang.Object ref = id_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          id_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * user id
-       * </pre>
-       *
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setId(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        id_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * user id
-       * </pre>
-       *
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearId() {
-        id_ = getDefaultInstance().getId();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * user id
-       * </pre>
-       *
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @param value The bytes for id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        id_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
       private boolean isOauth_ ;
       /**
-       * <code>bool is_oauth = 2 [json_name = "isOauth"];</code>
+       * <code>bool is_oauth = 1 [json_name = "isOauth"];</code>
        * @return The isOauth.
        */
       @java.lang.Override
@@ -1728,23 +556,23 @@ public final class CacheProto {
         return isOauth_;
       }
       /**
-       * <code>bool is_oauth = 2 [json_name = "isOauth"];</code>
+       * <code>bool is_oauth = 1 [json_name = "isOauth"];</code>
        * @param value The isOauth to set.
        * @return This builder for chaining.
        */
       public Builder setIsOauth(boolean value) {
 
         isOauth_ = value;
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>bool is_oauth = 2 [json_name = "isOauth"];</code>
+       * <code>bool is_oauth = 1 [json_name = "isOauth"];</code>
        * @return This builder for chaining.
        */
       public Builder clearIsOauth() {
-        bitField0_ = (bitField0_ & ~0x00000002);
+        bitField0_ = (bitField0_ & ~0x00000001);
         isOauth_ = false;
         onChanged();
         return this;
@@ -1752,7 +580,7 @@ public final class CacheProto {
 
       private java.lang.Object roles_ = "";
       /**
-       * <code>string roles = 3 [json_name = "roles"];</code>
+       * <code>string roles = 2 [json_name = "roles"];</code>
        * @return The roles.
        */
       public java.lang.String getRoles() {
@@ -1768,7 +596,7 @@ public final class CacheProto {
         }
       }
       /**
-       * <code>string roles = 3 [json_name = "roles"];</code>
+       * <code>string roles = 2 [json_name = "roles"];</code>
        * @return The bytes for roles.
        */
       public com.google.protobuf.ByteString
@@ -1785,7 +613,7 @@ public final class CacheProto {
         }
       }
       /**
-       * <code>string roles = 3 [json_name = "roles"];</code>
+       * <code>string roles = 2 [json_name = "roles"];</code>
        * @param value The roles to set.
        * @return This builder for chaining.
        */
@@ -1793,22 +621,22 @@ public final class CacheProto {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         roles_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>string roles = 3 [json_name = "roles"];</code>
+       * <code>string roles = 2 [json_name = "roles"];</code>
        * @return This builder for chaining.
        */
       public Builder clearRoles() {
         roles_ = getDefaultInstance().getRoles();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
       /**
-       * <code>string roles = 3 [json_name = "roles"];</code>
+       * <code>string roles = 2 [json_name = "roles"];</code>
        * @param value The bytes for roles to set.
        * @return This builder for chaining.
        */
@@ -1817,7 +645,7 @@ public final class CacheProto {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         roles_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1828,7 +656,7 @@ public final class CacheProto {
        * like: theme:light,mobile_notification:true
        * </pre>
        *
-       * <code>string props = 4 [json_name = "props"];</code>
+       * <code>string props = 3 [json_name = "props"];</code>
        * @return The props.
        */
       public java.lang.String getProps() {
@@ -1848,7 +676,7 @@ public final class CacheProto {
        * like: theme:light,mobile_notification:true
        * </pre>
        *
-       * <code>string props = 4 [json_name = "props"];</code>
+       * <code>string props = 3 [json_name = "props"];</code>
        * @return The bytes for props.
        */
       public com.google.protobuf.ByteString
@@ -1869,7 +697,7 @@ public final class CacheProto {
        * like: theme:light,mobile_notification:true
        * </pre>
        *
-       * <code>string props = 4 [json_name = "props"];</code>
+       * <code>string props = 3 [json_name = "props"];</code>
        * @param value The props to set.
        * @return This builder for chaining.
        */
@@ -1877,7 +705,7 @@ public final class CacheProto {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         props_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1886,12 +714,12 @@ public final class CacheProto {
        * like: theme:light,mobile_notification:true
        * </pre>
        *
-       * <code>string props = 4 [json_name = "props"];</code>
+       * <code>string props = 3 [json_name = "props"];</code>
        * @return This builder for chaining.
        */
       public Builder clearProps() {
         props_ = getDefaultInstance().getProps();
-        bitField0_ = (bitField0_ & ~0x00000008);
+        bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
       }
@@ -1900,7 +728,7 @@ public final class CacheProto {
        * like: theme:light,mobile_notification:true
        * </pre>
        *
-       * <code>string props = 4 [json_name = "props"];</code>
+       * <code>string props = 3 [json_name = "props"];</code>
        * @param value The bytes for props to set.
        * @return This builder for chaining.
        */
@@ -1909,7 +737,7 @@ public final class CacheProto {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         props_ = value;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         onChanged();
         return this;
       }
@@ -1965,47 +793,47 @@ public final class CacheProto {
 
   }
 
-  public interface CachedUserOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:users.v1.CachedUser)
+  public interface CachedTokenStatusOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:users.v1.CachedTokenStatus)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.users.v1.CachedUserSession session = 1 [json_name = "session"];</code>
-     * @return Whether the session field is set.
+     * <code>string dev_id = 1 [json_name = "devId"];</code>
+     * @return The devId.
      */
-    boolean hasSession();
+    java.lang.String getDevId();
     /**
-     * <code>.users.v1.CachedUserSession session = 1 [json_name = "session"];</code>
-     * @return The session.
+     * <code>string dev_id = 1 [json_name = "devId"];</code>
+     * @return The bytes for devId.
      */
-    org.megacommerce.users.v1.CacheProto.CachedUserSession getSession();
-    /**
-     * <code>.users.v1.CachedUserSession session = 1 [json_name = "session"];</code>
-     */
-    org.megacommerce.users.v1.CacheProto.CachedUserSessionOrBuilder getSessionOrBuilder();
+    com.google.protobuf.ByteString
+        getDevIdBytes();
 
     /**
-     * <code>.users.v1.CachedUserData user = 2 [json_name = "user"];</code>
-     * @return Whether the user field is set.
+     * <code>string last_checked = 2 [json_name = "lastChecked"];</code>
+     * @return The lastChecked.
      */
-    boolean hasUser();
+    java.lang.String getLastChecked();
     /**
-     * <code>.users.v1.CachedUserData user = 2 [json_name = "user"];</code>
-     * @return The user.
+     * <code>string last_checked = 2 [json_name = "lastChecked"];</code>
+     * @return The bytes for lastChecked.
      */
-    org.megacommerce.users.v1.CacheProto.CachedUserData getUser();
+    com.google.protobuf.ByteString
+        getLastCheckedBytes();
+
     /**
-     * <code>.users.v1.CachedUserData user = 2 [json_name = "user"];</code>
+     * <code>bool revoked = 3 [json_name = "revoked"];</code>
+     * @return The revoked.
      */
-    org.megacommerce.users.v1.CacheProto.CachedUserDataOrBuilder getUserOrBuilder();
+    boolean getRevoked();
   }
   /**
-   * Protobuf type {@code users.v1.CachedUser}
+   * Protobuf type {@code users.v1.CachedTokenStatus}
    */
-  public static final class CachedUser extends
+  public static final class CachedTokenStatus extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:users.v1.CachedUser)
-      CachedUserOrBuilder {
+      // @@protoc_insertion_point(message_implements:users.v1.CachedTokenStatus)
+      CachedTokenStatusOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -2014,79 +842,117 @@ public final class CacheProto {
         /* minor= */ 31,
         /* patch= */ 1,
         /* suffix= */ "",
-        CachedUser.class.getName());
+        CachedTokenStatus.class.getName());
     }
-    // Use CachedUser.newBuilder() to construct.
-    private CachedUser(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use CachedTokenStatus.newBuilder() to construct.
+    private CachedTokenStatus(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private CachedUser() {
+    private CachedTokenStatus() {
+      devId_ = "";
+      lastChecked_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.megacommerce.users.v1.CacheProto.internal_static_users_v1_CachedUser_descriptor;
+      return org.megacommerce.users.v1.CacheProto.internal_static_users_v1_CachedTokenStatus_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.megacommerce.users.v1.CacheProto.internal_static_users_v1_CachedUser_fieldAccessorTable
+      return org.megacommerce.users.v1.CacheProto.internal_static_users_v1_CachedTokenStatus_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.megacommerce.users.v1.CacheProto.CachedUser.class, org.megacommerce.users.v1.CacheProto.CachedUser.Builder.class);
+              org.megacommerce.users.v1.CacheProto.CachedTokenStatus.class, org.megacommerce.users.v1.CacheProto.CachedTokenStatus.Builder.class);
     }
 
-    private int bitField0_;
-    public static final int SESSION_FIELD_NUMBER = 1;
-    private org.megacommerce.users.v1.CacheProto.CachedUserSession session_;
+    public static final int DEV_ID_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object devId_ = "";
     /**
-     * <code>.users.v1.CachedUserSession session = 1 [json_name = "session"];</code>
-     * @return Whether the session field is set.
+     * <code>string dev_id = 1 [json_name = "devId"];</code>
+     * @return The devId.
      */
     @java.lang.Override
-    public boolean hasSession() {
-      return ((bitField0_ & 0x00000001) != 0);
+    public java.lang.String getDevId() {
+      java.lang.Object ref = devId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        devId_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.users.v1.CachedUserSession session = 1 [json_name = "session"];</code>
-     * @return The session.
+     * <code>string dev_id = 1 [json_name = "devId"];</code>
+     * @return The bytes for devId.
      */
     @java.lang.Override
-    public org.megacommerce.users.v1.CacheProto.CachedUserSession getSession() {
-      return session_ == null ? org.megacommerce.users.v1.CacheProto.CachedUserSession.getDefaultInstance() : session_;
-    }
-    /**
-     * <code>.users.v1.CachedUserSession session = 1 [json_name = "session"];</code>
-     */
-    @java.lang.Override
-    public org.megacommerce.users.v1.CacheProto.CachedUserSessionOrBuilder getSessionOrBuilder() {
-      return session_ == null ? org.megacommerce.users.v1.CacheProto.CachedUserSession.getDefaultInstance() : session_;
+    public com.google.protobuf.ByteString
+        getDevIdBytes() {
+      java.lang.Object ref = devId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        devId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
-    public static final int USER_FIELD_NUMBER = 2;
-    private org.megacommerce.users.v1.CacheProto.CachedUserData user_;
+    public static final int LAST_CHECKED_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object lastChecked_ = "";
     /**
-     * <code>.users.v1.CachedUserData user = 2 [json_name = "user"];</code>
-     * @return Whether the user field is set.
+     * <code>string last_checked = 2 [json_name = "lastChecked"];</code>
+     * @return The lastChecked.
      */
     @java.lang.Override
-    public boolean hasUser() {
-      return ((bitField0_ & 0x00000002) != 0);
+    public java.lang.String getLastChecked() {
+      java.lang.Object ref = lastChecked_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        lastChecked_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.users.v1.CachedUserData user = 2 [json_name = "user"];</code>
-     * @return The user.
+     * <code>string last_checked = 2 [json_name = "lastChecked"];</code>
+     * @return The bytes for lastChecked.
      */
     @java.lang.Override
-    public org.megacommerce.users.v1.CacheProto.CachedUserData getUser() {
-      return user_ == null ? org.megacommerce.users.v1.CacheProto.CachedUserData.getDefaultInstance() : user_;
+    public com.google.protobuf.ByteString
+        getLastCheckedBytes() {
+      java.lang.Object ref = lastChecked_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        lastChecked_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
+
+    public static final int REVOKED_FIELD_NUMBER = 3;
+    private boolean revoked_ = false;
     /**
-     * <code>.users.v1.CachedUserData user = 2 [json_name = "user"];</code>
+     * <code>bool revoked = 3 [json_name = "revoked"];</code>
+     * @return The revoked.
      */
     @java.lang.Override
-    public org.megacommerce.users.v1.CacheProto.CachedUserDataOrBuilder getUserOrBuilder() {
-      return user_ == null ? org.megacommerce.users.v1.CacheProto.CachedUserData.getDefaultInstance() : user_;
+    public boolean getRevoked() {
+      return revoked_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2103,11 +969,14 @@ public final class CacheProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeMessage(1, getSession());
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(devId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, devId_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeMessage(2, getUser());
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(lastChecked_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, lastChecked_);
+      }
+      if (revoked_ != false) {
+        output.writeBool(3, revoked_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -2118,13 +987,15 @@ public final class CacheProto {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getSession());
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(devId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, devId_);
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(lastChecked_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, lastChecked_);
+      }
+      if (revoked_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getUser());
+          .computeBoolSize(3, revoked_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2136,21 +1007,17 @@ public final class CacheProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.megacommerce.users.v1.CacheProto.CachedUser)) {
+      if (!(obj instanceof org.megacommerce.users.v1.CacheProto.CachedTokenStatus)) {
         return super.equals(obj);
       }
-      org.megacommerce.users.v1.CacheProto.CachedUser other = (org.megacommerce.users.v1.CacheProto.CachedUser) obj;
+      org.megacommerce.users.v1.CacheProto.CachedTokenStatus other = (org.megacommerce.users.v1.CacheProto.CachedTokenStatus) obj;
 
-      if (hasSession() != other.hasSession()) return false;
-      if (hasSession()) {
-        if (!getSession()
-            .equals(other.getSession())) return false;
-      }
-      if (hasUser() != other.hasUser()) return false;
-      if (hasUser()) {
-        if (!getUser()
-            .equals(other.getUser())) return false;
-      }
+      if (!getDevId()
+          .equals(other.getDevId())) return false;
+      if (!getLastChecked()
+          .equals(other.getLastChecked())) return false;
+      if (getRevoked()
+          != other.getRevoked()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2162,57 +1029,56 @@ public final class CacheProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasSession()) {
-        hash = (37 * hash) + SESSION_FIELD_NUMBER;
-        hash = (53 * hash) + getSession().hashCode();
-      }
-      if (hasUser()) {
-        hash = (37 * hash) + USER_FIELD_NUMBER;
-        hash = (53 * hash) + getUser().hashCode();
-      }
+      hash = (37 * hash) + DEV_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDevId().hashCode();
+      hash = (37 * hash) + LAST_CHECKED_FIELD_NUMBER;
+      hash = (53 * hash) + getLastChecked().hashCode();
+      hash = (37 * hash) + REVOKED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getRevoked());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
-    public static org.megacommerce.users.v1.CacheProto.CachedUser parseFrom(
+    public static org.megacommerce.users.v1.CacheProto.CachedTokenStatus parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.users.v1.CacheProto.CachedUser parseFrom(
+    public static org.megacommerce.users.v1.CacheProto.CachedTokenStatus parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.users.v1.CacheProto.CachedUser parseFrom(
+    public static org.megacommerce.users.v1.CacheProto.CachedTokenStatus parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.users.v1.CacheProto.CachedUser parseFrom(
+    public static org.megacommerce.users.v1.CacheProto.CachedTokenStatus parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.users.v1.CacheProto.CachedUser parseFrom(byte[] data)
+    public static org.megacommerce.users.v1.CacheProto.CachedTokenStatus parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.users.v1.CacheProto.CachedUser parseFrom(
+    public static org.megacommerce.users.v1.CacheProto.CachedTokenStatus parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.users.v1.CacheProto.CachedUser parseFrom(java.io.InputStream input)
+    public static org.megacommerce.users.v1.CacheProto.CachedTokenStatus parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.users.v1.CacheProto.CachedUser parseFrom(
+    public static org.megacommerce.users.v1.CacheProto.CachedTokenStatus parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2220,26 +1086,26 @@ public final class CacheProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.megacommerce.users.v1.CacheProto.CachedUser parseDelimitedFrom(java.io.InputStream input)
+    public static org.megacommerce.users.v1.CacheProto.CachedTokenStatus parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.megacommerce.users.v1.CacheProto.CachedUser parseDelimitedFrom(
+    public static org.megacommerce.users.v1.CacheProto.CachedTokenStatus parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.megacommerce.users.v1.CacheProto.CachedUser parseFrom(
+    public static org.megacommerce.users.v1.CacheProto.CachedTokenStatus parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.users.v1.CacheProto.CachedUser parseFrom(
+    public static org.megacommerce.users.v1.CacheProto.CachedTokenStatus parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2252,7 +1118,7 @@ public final class CacheProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.megacommerce.users.v1.CacheProto.CachedUser prototype) {
+    public static Builder newBuilder(org.megacommerce.users.v1.CacheProto.CachedTokenStatus prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2268,73 +1134,59 @@ public final class CacheProto {
       return builder;
     }
     /**
-     * Protobuf type {@code users.v1.CachedUser}
+     * Protobuf type {@code users.v1.CachedTokenStatus}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:users.v1.CachedUser)
-        org.megacommerce.users.v1.CacheProto.CachedUserOrBuilder {
+        // @@protoc_insertion_point(builder_implements:users.v1.CachedTokenStatus)
+        org.megacommerce.users.v1.CacheProto.CachedTokenStatusOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.megacommerce.users.v1.CacheProto.internal_static_users_v1_CachedUser_descriptor;
+        return org.megacommerce.users.v1.CacheProto.internal_static_users_v1_CachedTokenStatus_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.megacommerce.users.v1.CacheProto.internal_static_users_v1_CachedUser_fieldAccessorTable
+        return org.megacommerce.users.v1.CacheProto.internal_static_users_v1_CachedTokenStatus_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.megacommerce.users.v1.CacheProto.CachedUser.class, org.megacommerce.users.v1.CacheProto.CachedUser.Builder.class);
+                org.megacommerce.users.v1.CacheProto.CachedTokenStatus.class, org.megacommerce.users.v1.CacheProto.CachedTokenStatus.Builder.class);
       }
 
-      // Construct using org.megacommerce.users.v1.CacheProto.CachedUser.newBuilder()
+      // Construct using org.megacommerce.users.v1.CacheProto.CachedTokenStatus.newBuilder()
       private Builder() {
-        maybeForceBuilderInitialization();
+
       }
 
       private Builder(
           com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessage
-                .alwaysUseFieldBuilders) {
-          internalGetSessionFieldBuilder();
-          internalGetUserFieldBuilder();
-        }
+
       }
       @java.lang.Override
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        session_ = null;
-        if (sessionBuilder_ != null) {
-          sessionBuilder_.dispose();
-          sessionBuilder_ = null;
-        }
-        user_ = null;
-        if (userBuilder_ != null) {
-          userBuilder_.dispose();
-          userBuilder_ = null;
-        }
+        devId_ = "";
+        lastChecked_ = "";
+        revoked_ = false;
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.megacommerce.users.v1.CacheProto.internal_static_users_v1_CachedUser_descriptor;
+        return org.megacommerce.users.v1.CacheProto.internal_static_users_v1_CachedTokenStatus_descriptor;
       }
 
       @java.lang.Override
-      public org.megacommerce.users.v1.CacheProto.CachedUser getDefaultInstanceForType() {
-        return org.megacommerce.users.v1.CacheProto.CachedUser.getDefaultInstance();
+      public org.megacommerce.users.v1.CacheProto.CachedTokenStatus getDefaultInstanceForType() {
+        return org.megacommerce.users.v1.CacheProto.CachedTokenStatus.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.megacommerce.users.v1.CacheProto.CachedUser build() {
-        org.megacommerce.users.v1.CacheProto.CachedUser result = buildPartial();
+      public org.megacommerce.users.v1.CacheProto.CachedTokenStatus build() {
+        org.megacommerce.users.v1.CacheProto.CachedTokenStatus result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2342,48 +1194,50 @@ public final class CacheProto {
       }
 
       @java.lang.Override
-      public org.megacommerce.users.v1.CacheProto.CachedUser buildPartial() {
-        org.megacommerce.users.v1.CacheProto.CachedUser result = new org.megacommerce.users.v1.CacheProto.CachedUser(this);
+      public org.megacommerce.users.v1.CacheProto.CachedTokenStatus buildPartial() {
+        org.megacommerce.users.v1.CacheProto.CachedTokenStatus result = new org.megacommerce.users.v1.CacheProto.CachedTokenStatus(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.megacommerce.users.v1.CacheProto.CachedUser result) {
+      private void buildPartial0(org.megacommerce.users.v1.CacheProto.CachedTokenStatus result) {
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.session_ = sessionBuilder_ == null
-              ? session_
-              : sessionBuilder_.build();
-          to_bitField0_ |= 0x00000001;
+          result.devId_ = devId_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.user_ = userBuilder_ == null
-              ? user_
-              : userBuilder_.build();
-          to_bitField0_ |= 0x00000002;
+          result.lastChecked_ = lastChecked_;
         }
-        result.bitField0_ |= to_bitField0_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.revoked_ = revoked_;
+        }
       }
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.megacommerce.users.v1.CacheProto.CachedUser) {
-          return mergeFrom((org.megacommerce.users.v1.CacheProto.CachedUser)other);
+        if (other instanceof org.megacommerce.users.v1.CacheProto.CachedTokenStatus) {
+          return mergeFrom((org.megacommerce.users.v1.CacheProto.CachedTokenStatus)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.megacommerce.users.v1.CacheProto.CachedUser other) {
-        if (other == org.megacommerce.users.v1.CacheProto.CachedUser.getDefaultInstance()) return this;
-        if (other.hasSession()) {
-          mergeSession(other.getSession());
+      public Builder mergeFrom(org.megacommerce.users.v1.CacheProto.CachedTokenStatus other) {
+        if (other == org.megacommerce.users.v1.CacheProto.CachedTokenStatus.getDefaultInstance()) return this;
+        if (!other.getDevId().isEmpty()) {
+          devId_ = other.devId_;
+          bitField0_ |= 0x00000001;
+          onChanged();
         }
-        if (other.hasUser()) {
-          mergeUser(other.getUser());
+        if (!other.getLastChecked().isEmpty()) {
+          lastChecked_ = other.lastChecked_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.getRevoked() != false) {
+          setRevoked(other.getRevoked());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -2412,19 +1266,20 @@ public final class CacheProto {
                 done = true;
                 break;
               case 10: {
-                input.readMessage(
-                    internalGetSessionFieldBuilder().getBuilder(),
-                    extensionRegistry);
+                devId_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
               case 18: {
-                input.readMessage(
-                    internalGetUserFieldBuilder().getBuilder(),
-                    extensionRegistry);
+                lastChecked_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+              case 24: {
+                revoked_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2442,265 +1297,199 @@ public final class CacheProto {
       }
       private int bitField0_;
 
-      private org.megacommerce.users.v1.CacheProto.CachedUserSession session_;
-      private com.google.protobuf.SingleFieldBuilder<
-          org.megacommerce.users.v1.CacheProto.CachedUserSession, org.megacommerce.users.v1.CacheProto.CachedUserSession.Builder, org.megacommerce.users.v1.CacheProto.CachedUserSessionOrBuilder> sessionBuilder_;
+      private java.lang.Object devId_ = "";
       /**
-       * <code>.users.v1.CachedUserSession session = 1 [json_name = "session"];</code>
-       * @return Whether the session field is set.
+       * <code>string dev_id = 1 [json_name = "devId"];</code>
+       * @return The devId.
        */
-      public boolean hasSession() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <code>.users.v1.CachedUserSession session = 1 [json_name = "session"];</code>
-       * @return The session.
-       */
-      public org.megacommerce.users.v1.CacheProto.CachedUserSession getSession() {
-        if (sessionBuilder_ == null) {
-          return session_ == null ? org.megacommerce.users.v1.CacheProto.CachedUserSession.getDefaultInstance() : session_;
+      public java.lang.String getDevId() {
+        java.lang.Object ref = devId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          devId_ = s;
+          return s;
         } else {
-          return sessionBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>.users.v1.CachedUserSession session = 1 [json_name = "session"];</code>
+       * <code>string dev_id = 1 [json_name = "devId"];</code>
+       * @return The bytes for devId.
        */
-      public Builder setSession(org.megacommerce.users.v1.CacheProto.CachedUserSession value) {
-        if (sessionBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          session_ = value;
+      public com.google.protobuf.ByteString
+          getDevIdBytes() {
+        java.lang.Object ref = devId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          devId_ = b;
+          return b;
         } else {
-          sessionBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
+      }
+      /**
+       * <code>string dev_id = 1 [json_name = "devId"];</code>
+       * @param value The devId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDevId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        devId_ = value;
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>.users.v1.CachedUserSession session = 1 [json_name = "session"];</code>
+       * <code>string dev_id = 1 [json_name = "devId"];</code>
+       * @return This builder for chaining.
        */
-      public Builder setSession(
-          org.megacommerce.users.v1.CacheProto.CachedUserSession.Builder builderForValue) {
-        if (sessionBuilder_ == null) {
-          session_ = builderForValue.build();
-        } else {
-          sessionBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.users.v1.CachedUserSession session = 1 [json_name = "session"];</code>
-       */
-      public Builder mergeSession(org.megacommerce.users.v1.CacheProto.CachedUserSession value) {
-        if (sessionBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0) &&
-            session_ != null &&
-            session_ != org.megacommerce.users.v1.CacheProto.CachedUserSession.getDefaultInstance()) {
-            getSessionBuilder().mergeFrom(value);
-          } else {
-            session_ = value;
-          }
-        } else {
-          sessionBuilder_.mergeFrom(value);
-        }
-        if (session_ != null) {
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
-        return this;
-      }
-      /**
-       * <code>.users.v1.CachedUserSession session = 1 [json_name = "session"];</code>
-       */
-      public Builder clearSession() {
+      public Builder clearDevId() {
+        devId_ = getDefaultInstance().getDevId();
         bitField0_ = (bitField0_ & ~0x00000001);
-        session_ = null;
-        if (sessionBuilder_ != null) {
-          sessionBuilder_.dispose();
-          sessionBuilder_ = null;
-        }
         onChanged();
         return this;
       }
       /**
-       * <code>.users.v1.CachedUserSession session = 1 [json_name = "session"];</code>
+       * <code>string dev_id = 1 [json_name = "devId"];</code>
+       * @param value The bytes for devId to set.
+       * @return This builder for chaining.
        */
-      public org.megacommerce.users.v1.CacheProto.CachedUserSession.Builder getSessionBuilder() {
+      public Builder setDevIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        devId_ = value;
         bitField0_ |= 0x00000001;
         onChanged();
-        return internalGetSessionFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.users.v1.CachedUserSession session = 1 [json_name = "session"];</code>
-       */
-      public org.megacommerce.users.v1.CacheProto.CachedUserSessionOrBuilder getSessionOrBuilder() {
-        if (sessionBuilder_ != null) {
-          return sessionBuilder_.getMessageOrBuilder();
-        } else {
-          return session_ == null ?
-              org.megacommerce.users.v1.CacheProto.CachedUserSession.getDefaultInstance() : session_;
-        }
-      }
-      /**
-       * <code>.users.v1.CachedUserSession session = 1 [json_name = "session"];</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          org.megacommerce.users.v1.CacheProto.CachedUserSession, org.megacommerce.users.v1.CacheProto.CachedUserSession.Builder, org.megacommerce.users.v1.CacheProto.CachedUserSessionOrBuilder> 
-          internalGetSessionFieldBuilder() {
-        if (sessionBuilder_ == null) {
-          sessionBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              org.megacommerce.users.v1.CacheProto.CachedUserSession, org.megacommerce.users.v1.CacheProto.CachedUserSession.Builder, org.megacommerce.users.v1.CacheProto.CachedUserSessionOrBuilder>(
-                  getSession(),
-                  getParentForChildren(),
-                  isClean());
-          session_ = null;
-        }
-        return sessionBuilder_;
+        return this;
       }
 
-      private org.megacommerce.users.v1.CacheProto.CachedUserData user_;
-      private com.google.protobuf.SingleFieldBuilder<
-          org.megacommerce.users.v1.CacheProto.CachedUserData, org.megacommerce.users.v1.CacheProto.CachedUserData.Builder, org.megacommerce.users.v1.CacheProto.CachedUserDataOrBuilder> userBuilder_;
+      private java.lang.Object lastChecked_ = "";
       /**
-       * <code>.users.v1.CachedUserData user = 2 [json_name = "user"];</code>
-       * @return Whether the user field is set.
+       * <code>string last_checked = 2 [json_name = "lastChecked"];</code>
+       * @return The lastChecked.
        */
-      public boolean hasUser() {
-        return ((bitField0_ & 0x00000002) != 0);
-      }
-      /**
-       * <code>.users.v1.CachedUserData user = 2 [json_name = "user"];</code>
-       * @return The user.
-       */
-      public org.megacommerce.users.v1.CacheProto.CachedUserData getUser() {
-        if (userBuilder_ == null) {
-          return user_ == null ? org.megacommerce.users.v1.CacheProto.CachedUserData.getDefaultInstance() : user_;
+      public java.lang.String getLastChecked() {
+        java.lang.Object ref = lastChecked_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          lastChecked_ = s;
+          return s;
         } else {
-          return userBuilder_.getMessage();
+          return (java.lang.String) ref;
         }
       }
       /**
-       * <code>.users.v1.CachedUserData user = 2 [json_name = "user"];</code>
+       * <code>string last_checked = 2 [json_name = "lastChecked"];</code>
+       * @return The bytes for lastChecked.
        */
-      public Builder setUser(org.megacommerce.users.v1.CacheProto.CachedUserData value) {
-        if (userBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          user_ = value;
+      public com.google.protobuf.ByteString
+          getLastCheckedBytes() {
+        java.lang.Object ref = lastChecked_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          lastChecked_ = b;
+          return b;
         } else {
-          userBuilder_.setMessage(value);
+          return (com.google.protobuf.ByteString) ref;
         }
+      }
+      /**
+       * <code>string last_checked = 2 [json_name = "lastChecked"];</code>
+       * @param value The lastChecked to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLastChecked(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        lastChecked_ = value;
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>.users.v1.CachedUserData user = 2 [json_name = "user"];</code>
+       * <code>string last_checked = 2 [json_name = "lastChecked"];</code>
+       * @return This builder for chaining.
        */
-      public Builder setUser(
-          org.megacommerce.users.v1.CacheProto.CachedUserData.Builder builderForValue) {
-        if (userBuilder_ == null) {
-          user_ = builderForValue.build();
-        } else {
-          userBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.users.v1.CachedUserData user = 2 [json_name = "user"];</code>
-       */
-      public Builder mergeUser(org.megacommerce.users.v1.CacheProto.CachedUserData value) {
-        if (userBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) != 0) &&
-            user_ != null &&
-            user_ != org.megacommerce.users.v1.CacheProto.CachedUserData.getDefaultInstance()) {
-            getUserBuilder().mergeFrom(value);
-          } else {
-            user_ = value;
-          }
-        } else {
-          userBuilder_.mergeFrom(value);
-        }
-        if (user_ != null) {
-          bitField0_ |= 0x00000002;
-          onChanged();
-        }
-        return this;
-      }
-      /**
-       * <code>.users.v1.CachedUserData user = 2 [json_name = "user"];</code>
-       */
-      public Builder clearUser() {
+      public Builder clearLastChecked() {
+        lastChecked_ = getDefaultInstance().getLastChecked();
         bitField0_ = (bitField0_ & ~0x00000002);
-        user_ = null;
-        if (userBuilder_ != null) {
-          userBuilder_.dispose();
-          userBuilder_ = null;
-        }
         onChanged();
         return this;
       }
       /**
-       * <code>.users.v1.CachedUserData user = 2 [json_name = "user"];</code>
+       * <code>string last_checked = 2 [json_name = "lastChecked"];</code>
+       * @param value The bytes for lastChecked to set.
+       * @return This builder for chaining.
        */
-      public org.megacommerce.users.v1.CacheProto.CachedUserData.Builder getUserBuilder() {
+      public Builder setLastCheckedBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        lastChecked_ = value;
         bitField0_ |= 0x00000002;
         onChanged();
-        return internalGetUserFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.users.v1.CachedUserData user = 2 [json_name = "user"];</code>
-       */
-      public org.megacommerce.users.v1.CacheProto.CachedUserDataOrBuilder getUserOrBuilder() {
-        if (userBuilder_ != null) {
-          return userBuilder_.getMessageOrBuilder();
-        } else {
-          return user_ == null ?
-              org.megacommerce.users.v1.CacheProto.CachedUserData.getDefaultInstance() : user_;
-        }
-      }
-      /**
-       * <code>.users.v1.CachedUserData user = 2 [json_name = "user"];</code>
-       */
-      private com.google.protobuf.SingleFieldBuilder<
-          org.megacommerce.users.v1.CacheProto.CachedUserData, org.megacommerce.users.v1.CacheProto.CachedUserData.Builder, org.megacommerce.users.v1.CacheProto.CachedUserDataOrBuilder> 
-          internalGetUserFieldBuilder() {
-        if (userBuilder_ == null) {
-          userBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              org.megacommerce.users.v1.CacheProto.CachedUserData, org.megacommerce.users.v1.CacheProto.CachedUserData.Builder, org.megacommerce.users.v1.CacheProto.CachedUserDataOrBuilder>(
-                  getUser(),
-                  getParentForChildren(),
-                  isClean());
-          user_ = null;
-        }
-        return userBuilder_;
+        return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:users.v1.CachedUser)
+      private boolean revoked_ ;
+      /**
+       * <code>bool revoked = 3 [json_name = "revoked"];</code>
+       * @return The revoked.
+       */
+      @java.lang.Override
+      public boolean getRevoked() {
+        return revoked_;
+      }
+      /**
+       * <code>bool revoked = 3 [json_name = "revoked"];</code>
+       * @param value The revoked to set.
+       * @return This builder for chaining.
+       */
+      public Builder setRevoked(boolean value) {
+
+        revoked_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool revoked = 3 [json_name = "revoked"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearRevoked() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        revoked_ = false;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:users.v1.CachedTokenStatus)
     }
 
-    // @@protoc_insertion_point(class_scope:users.v1.CachedUser)
-    private static final org.megacommerce.users.v1.CacheProto.CachedUser DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:users.v1.CachedTokenStatus)
+    private static final org.megacommerce.users.v1.CacheProto.CachedTokenStatus DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.megacommerce.users.v1.CacheProto.CachedUser();
+      DEFAULT_INSTANCE = new org.megacommerce.users.v1.CacheProto.CachedTokenStatus();
     }
 
-    public static org.megacommerce.users.v1.CacheProto.CachedUser getDefaultInstance() {
+    public static org.megacommerce.users.v1.CacheProto.CachedTokenStatus getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<CachedUser>
-        PARSER = new com.google.protobuf.AbstractParser<CachedUser>() {
+    private static final com.google.protobuf.Parser<CachedTokenStatus>
+        PARSER = new com.google.protobuf.AbstractParser<CachedTokenStatus>() {
       @java.lang.Override
-      public CachedUser parsePartialFrom(
+      public CachedTokenStatus parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2719,37 +1508,32 @@ public final class CacheProto {
       }
     };
 
-    public static com.google.protobuf.Parser<CachedUser> parser() {
+    public static com.google.protobuf.Parser<CachedTokenStatus> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<CachedUser> getParserForType() {
+    public com.google.protobuf.Parser<CachedTokenStatus> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.megacommerce.users.v1.CacheProto.CachedUser getDefaultInstanceForType() {
+    public org.megacommerce.users.v1.CacheProto.CachedTokenStatus getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_users_v1_CachedUserSession_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_users_v1_CachedUserSession_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_users_v1_CachedUserData_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_users_v1_CachedUserData_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_users_v1_CachedUser_descriptor;
+    internal_static_users_v1_CachedTokenStatus_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_users_v1_CachedUser_fieldAccessorTable;
+      internal_static_users_v1_CachedTokenStatus_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -2759,43 +1543,32 @@ public final class CacheProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024users/v1/cache.proto\022\010users.v1\"\224\001\n\021Cac" +
-      "hedUserSession\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005token\030" +
-      "\002 \001(\tR\005token\022\035\n\ncreated_at\030\003 \001(\003R\tcreate" +
-      "dAt\022\035\n\nexpires_at\030\004 \001(\003R\texpiresAt\022\033\n\tde" +
-      "vice_id\030\005 \001(\tR\010deviceId\"g\n\016CachedUserDat" +
-      "a\022\016\n\002id\030\001 \001(\tR\002id\022\031\n\010is_oauth\030\002 \001(\010R\007isO" +
-      "auth\022\024\n\005roles\030\003 \001(\tR\005roles\022\024\n\005props\030\004 \001(" +
-      "\tR\005props\"q\n\nCachedUser\0225\n\007session\030\001 \001(\0132" +
-      "\033.users.v1.CachedUserSessionR\007session\022,\n" +
-      "\004user\030\002 \001(\0132\030.users.v1.CachedUserDataR\004u" +
-      "serBn\n\031org.megacommerce.users.v1B\nCacheP" +
-      "rotoZBgithub.com/ahmad-khatib0-org/megac" +
-      "ommerce-proto/gen/go/users/v1;v1\370\001\001b\006pro" +
-      "to3"
+      "\n\024users/v1/cache.proto\022\010users.v1\"W\n\016Cach" +
+      "edUserData\022\031\n\010is_oauth\030\001 \001(\010R\007isOauth\022\024\n" +
+      "\005roles\030\002 \001(\tR\005roles\022\024\n\005props\030\003 \001(\tR\005prop" +
+      "s\"g\n\021CachedTokenStatus\022\025\n\006dev_id\030\001 \001(\tR\005" +
+      "devId\022!\n\014last_checked\030\002 \001(\tR\013lastChecked" +
+      "\022\030\n\007revoked\030\003 \001(\010R\007revokedBn\n\031org.megaco" +
+      "mmerce.users.v1B\nCacheProtoZBgithub.com/" +
+      "ahmad-khatib0-org/megacommerce-proto/gen" +
+      "/go/users/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
         });
-    internal_static_users_v1_CachedUserSession_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_users_v1_CachedUserSession_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_users_v1_CachedUserSession_descriptor,
-        new java.lang.String[] { "Id", "Token", "CreatedAt", "ExpiresAt", "DeviceId", });
     internal_static_users_v1_CachedUserData_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(0);
     internal_static_users_v1_CachedUserData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_users_v1_CachedUserData_descriptor,
-        new java.lang.String[] { "Id", "IsOauth", "Roles", "Props", });
-    internal_static_users_v1_CachedUser_descriptor =
-      getDescriptor().getMessageTypes().get(2);
-    internal_static_users_v1_CachedUser_fieldAccessorTable = new
+        new java.lang.String[] { "IsOauth", "Roles", "Props", });
+    internal_static_users_v1_CachedTokenStatus_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_users_v1_CachedTokenStatus_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_users_v1_CachedUser_descriptor,
-        new java.lang.String[] { "Session", "User", });
+        internal_static_users_v1_CachedTokenStatus_descriptor,
+        new java.lang.String[] { "DevId", "LastChecked", "Revoked", });
     descriptor.resolveAllFeaturesImmutable();
   }
 
