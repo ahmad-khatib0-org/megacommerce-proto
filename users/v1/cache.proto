@@ -15,6 +15,6 @@ message CachedUserData {
 
 message CachedTokenStatus {
   string dev_id = 1;
-  string last_checked = 2;
+  int64 last_checked = 2;
   bool revoked = 3;
 }

@@ -464,19 +464,14 @@ class CachedTokenStatus final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_dev_id();
 
   public:
-  // string last_checked = 2 [json_name = "lastChecked"];
+  // int64 last_checked = 2 [json_name = "lastChecked"];
   void clear_last_checked() ;
-  const ::std::string& last_checked() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_last_checked(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_last_checked();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_last_checked();
-  void set_allocated_last_checked(::std::string* PROTOBUF_NULLABLE value);
+  ::int64_t last_checked() const;
+  void set_last_checked(::int64_t value);
 
   private:
-  const ::std::string& _internal_last_checked() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_last_checked(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_last_checked();
+  ::int64_t _internal_last_checked() const;
+  void _internal_set_last_checked(::int64_t value);
 
   public:
   // bool revoked = 3 [json_name = "revoked"];
@@ -494,7 +489,7 @@ class CachedTokenStatus final : public ::google::protobuf::Message
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<2, 3,
-                                   0, 53,
+                                   0, 41,
                                    2>
       _table_;
 
@@ -516,7 +511,7 @@ class CachedTokenStatus final : public ::google::protobuf::Message
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::internal::ArenaStringPtr dev_id_;
-    ::google::protobuf::internal::ArenaStringPtr last_checked_;
+    ::int64_t last_checked_;
     bool revoked_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -765,69 +760,28 @@ inline void CachedTokenStatus::set_allocated_dev_id(::std::string* PROTOBUF_NULL
   // @@protoc_insertion_point(field_set_allocated:users.v1.CachedTokenStatus.dev_id)
 }
 
-// string last_checked = 2 [json_name = "lastChecked"];
+// int64 last_checked = 2 [json_name = "lastChecked"];
 inline void CachedTokenStatus::clear_last_checked() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.last_checked_.ClearToEmpty();
+  _impl_.last_checked_ = ::int64_t{0};
   _impl_._has_bits_[0] &= ~0x00000002u;
 }
-inline const ::std::string& CachedTokenStatus::last_checked() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+inline ::int64_t CachedTokenStatus::last_checked() const {
   // @@protoc_insertion_point(field_get:users.v1.CachedTokenStatus.last_checked)
   return _internal_last_checked();
 }
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void CachedTokenStatus::set_last_checked(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
+inline void CachedTokenStatus::set_last_checked(::int64_t value) {
+  _internal_set_last_checked(value);
   _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.last_checked_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:users.v1.CachedTokenStatus.last_checked)
 }
-inline ::std::string* PROTOBUF_NONNULL CachedTokenStatus::mutable_last_checked()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_last_checked();
-  // @@protoc_insertion_point(field_mutable:users.v1.CachedTokenStatus.last_checked)
-  return _s;
-}
-inline const ::std::string& CachedTokenStatus::_internal_last_checked() const {
+inline ::int64_t CachedTokenStatus::_internal_last_checked() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.last_checked_.Get();
+  return _impl_.last_checked_;
 }
-inline void CachedTokenStatus::_internal_set_last_checked(const ::std::string& value) {
+inline void CachedTokenStatus::_internal_set_last_checked(::int64_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.last_checked_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL CachedTokenStatus::_internal_mutable_last_checked() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
-  return _impl_.last_checked_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE CachedTokenStatus::release_last_checked() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:users.v1.CachedTokenStatus.last_checked)
-  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000002u;
-  auto* released = _impl_.last_checked_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.last_checked_.Set("", GetArena());
-  }
-  return released;
-}
-inline void CachedTokenStatus::set_allocated_last_checked(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000002u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000002u;
-  }
-  _impl_.last_checked_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.last_checked_.IsDefault()) {
-    _impl_.last_checked_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:users.v1.CachedTokenStatus.last_checked)
+  _impl_.last_checked_ = value;
 }
 
 // bool revoked = 3 [json_name = "revoked"];

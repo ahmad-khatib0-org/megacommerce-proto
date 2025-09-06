@@ -64,9 +64,7 @@ inline constexpr CachedTokenStatus::Impl_::Impl_(
         dev_id_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        last_checked_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
+        last_checked_{::int64_t{0}},
         revoked_{false} {}
 
 template <typename>
@@ -132,7 +130,7 @@ const char descriptor_table_protodef_users_2fv1_2fcache_2eproto[] ABSL_ATTRIBUTE
     "edUserData\022\031\n\010is_oauth\030\001 \001(\010R\007isOauth\022\024\n"
     "\005roles\030\002 \001(\tR\005roles\022\024\n\005props\030\003 \001(\tR\005prop"
     "s\"g\n\021CachedTokenStatus\022\025\n\006dev_id\030\001 \001(\tR\005"
-    "devId\022!\n\014last_checked\030\002 \001(\tR\013lastChecked"
+    "devId\022!\n\014last_checked\030\002 \001(\003R\013lastChecked"
     "\022\030\n\007revoked\030\003 \001(\010R\007revokedBn\n\031org.megaco"
     "mmerce.users.v1B\nCacheProtoZBgithub.com/"
     "ahmad-khatib0-org/megacommerce-proto/gen"
@@ -520,8 +518,7 @@ PROTOBUF_NDEBUG_INLINE CachedTokenStatus::Impl_::Impl_(
     const ::users::v1::CachedTokenStatus& from_msg)
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
-        dev_id_(arena, from.dev_id_),
-        last_checked_(arena, from.last_checked_) {}
+        dev_id_(arena, from.dev_id_) {}
 
 CachedTokenStatus::CachedTokenStatus(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -536,7 +533,13 @@ CachedTokenStatus::CachedTokenStatus(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
-  _impl_.revoked_ = from._impl_.revoked_;
+  ::memcpy(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, last_checked_),
+           reinterpret_cast<const char *>(&from._impl_) +
+               offsetof(Impl_, last_checked_),
+           offsetof(Impl_, revoked_) -
+               offsetof(Impl_, last_checked_) +
+               sizeof(Impl_::revoked_));
 
   // @@protoc_insertion_point(copy_constructor:users.v1.CachedTokenStatus)
 }
@@ -544,12 +547,16 @@ PROTOBUF_NDEBUG_INLINE CachedTokenStatus::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
-        dev_id_(arena),
-        last_checked_(arena) {}
+        dev_id_(arena) {}
 
 inline void CachedTokenStatus::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  _impl_.revoked_ = {};
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, last_checked_),
+           0,
+           offsetof(Impl_, revoked_) -
+               offsetof(Impl_, last_checked_) +
+               sizeof(Impl_::revoked_));
 }
 CachedTokenStatus::~CachedTokenStatus() {
   // @@protoc_insertion_point(destructor:users.v1.CachedTokenStatus)
@@ -560,7 +567,6 @@ inline void CachedTokenStatus::SharedDtor(MessageLite& self) {
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.dev_id_.Destroy();
-  this_._impl_.last_checked_.Destroy();
   this_._impl_.~Impl_();
 }
 
@@ -607,7 +613,7 @@ CachedTokenStatus::GetClassData() const {
   return CachedTokenStatus_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 0, 53, 2>
+const ::_pbi::TcParseTable<2, 3, 0, 41, 2>
 CachedTokenStatus::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(CachedTokenStatus, _impl_._has_bits_),
@@ -630,9 +636,9 @@ CachedTokenStatus::_table_ = {
     // string dev_id = 1 [json_name = "devId"];
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(CachedTokenStatus, _impl_.dev_id_)}},
-    // string last_checked = 2 [json_name = "lastChecked"];
-    {::_pbi::TcParser::FastUS1,
-     {18, 1, 0, PROTOBUF_FIELD_OFFSET(CachedTokenStatus, _impl_.last_checked_)}},
+    // int64 last_checked = 2 [json_name = "lastChecked"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(CachedTokenStatus, _impl_.last_checked_), 1>(),
+     {16, 1, 0, PROTOBUF_FIELD_OFFSET(CachedTokenStatus, _impl_.last_checked_)}},
     // bool revoked = 3 [json_name = "revoked"];
     {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(CachedTokenStatus, _impl_.revoked_), 2>(),
      {24, 2, 0, PROTOBUF_FIELD_OFFSET(CachedTokenStatus, _impl_.revoked_)}},
@@ -642,19 +648,18 @@ CachedTokenStatus::_table_ = {
     // string dev_id = 1 [json_name = "devId"];
     {PROTOBUF_FIELD_OFFSET(CachedTokenStatus, _impl_.dev_id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string last_checked = 2 [json_name = "lastChecked"];
+    // int64 last_checked = 2 [json_name = "lastChecked"];
     {PROTOBUF_FIELD_OFFSET(CachedTokenStatus, _impl_.last_checked_), _Internal::kHasBitsOffset + 1, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
     // bool revoked = 3 [json_name = "revoked"];
     {PROTOBUF_FIELD_OFFSET(CachedTokenStatus, _impl_.revoked_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
   }},
   // no aux_entries
   {{
-    "\32\6\14\0\0\0\0\0"
+    "\32\6\0\0\0\0\0\0"
     "users.v1.CachedTokenStatus"
     "dev_id"
-    "last_checked"
   }},
 };
 PROTOBUF_NOINLINE void CachedTokenStatus::Clear() {
@@ -665,15 +670,14 @@ PROTOBUF_NOINLINE void CachedTokenStatus::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000003u) != 0) {
-    if ((cached_has_bits & 0x00000001u) != 0) {
-      _impl_.dev_id_.ClearNonDefaultToEmpty();
-    }
-    if ((cached_has_bits & 0x00000002u) != 0) {
-      _impl_.last_checked_.ClearNonDefaultToEmpty();
-    }
+  if ((cached_has_bits & 0x00000001u) != 0) {
+    _impl_.dev_id_.ClearNonDefaultToEmpty();
   }
-  _impl_.revoked_ = false;
+  if ((cached_has_bits & 0x00000006u) != 0) {
+    ::memset(&_impl_.last_checked_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.revoked_) -
+        reinterpret_cast<char*>(&_impl_.last_checked_)) + sizeof(_impl_.revoked_));
+  }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
@@ -703,13 +707,12 @@ PROTOBUF_NOINLINE void CachedTokenStatus::Clear() {
     }
   }
 
-  // string last_checked = 2 [json_name = "lastChecked"];
+  // int64 last_checked = 2 [json_name = "lastChecked"];
   if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
-    if (!this_._internal_last_checked().empty()) {
-      const ::std::string& _s = this_._internal_last_checked();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "users.v1.CachedTokenStatus.last_checked");
-      target = stream->WriteStringMaybeAliased(2, _s, target);
+    if (this_._internal_last_checked() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt64ToArrayWithField<2>(
+              stream, this_._internal_last_checked(), target);
     }
   }
 
@@ -755,11 +758,11 @@ PROTOBUF_NOINLINE void CachedTokenStatus::Clear() {
                                         this_._internal_dev_id());
       }
     }
-    // string last_checked = 2 [json_name = "lastChecked"];
+    // int64 last_checked = 2 [json_name = "lastChecked"];
     if ((cached_has_bits & 0x00000002u) != 0) {
-      if (!this_._internal_last_checked().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_last_checked());
+      if (this_._internal_last_checked() != 0) {
+        total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(
+            this_._internal_last_checked());
       }
     }
     // bool revoked = 3 [json_name = "revoked"];
@@ -793,12 +796,8 @@ void CachedTokenStatus::MergeImpl(::google::protobuf::MessageLite& to_msg, const
       }
     }
     if ((cached_has_bits & 0x00000002u) != 0) {
-      if (!from._internal_last_checked().empty()) {
-        _this->_internal_set_last_checked(from._internal_last_checked());
-      } else {
-        if (_this->_impl_.last_checked_.IsDefault()) {
-          _this->_internal_set_last_checked("");
-        }
+      if (from._internal_last_checked() != 0) {
+        _this->_impl_.last_checked_ = from._impl_.last_checked_;
       }
     }
     if ((cached_has_bits & 0x00000004u) != 0) {
@@ -826,8 +825,12 @@ void CachedTokenStatus::InternalSwap(CachedTokenStatus* PROTOBUF_RESTRICT PROTOB
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.dev_id_, &other->_impl_.dev_id_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.last_checked_, &other->_impl_.last_checked_, arena);
-  swap(_impl_.revoked_, other->_impl_.revoked_);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(CachedTokenStatus, _impl_.revoked_)
+      + sizeof(CachedTokenStatus::_impl_.revoked_)
+      - PROTOBUF_FIELD_OFFSET(CachedTokenStatus, _impl_.last_checked_)>(
+          reinterpret_cast<char*>(&_impl_.last_checked_),
+          reinterpret_cast<char*>(&other->_impl_.last_checked_));
 }
 
 ::google::protobuf::Metadata CachedTokenStatus::GetMetadata() const {

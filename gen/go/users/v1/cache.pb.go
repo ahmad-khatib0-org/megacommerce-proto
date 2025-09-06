@@ -84,7 +84,7 @@ func (x *CachedUserData) GetProps() string {
 type CachedTokenStatus struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	DevId         string                 `protobuf:"bytes,1,opt,name=dev_id,json=devId,proto3" json:"dev_id,omitempty"`
-	LastChecked   string                 `protobuf:"bytes,2,opt,name=last_checked,json=lastChecked,proto3" json:"last_checked,omitempty"`
+	LastChecked   int64                  `protobuf:"varint,2,opt,name=last_checked,json=lastChecked,proto3" json:"last_checked,omitempty"`
 	Revoked       bool                   `protobuf:"varint,3,opt,name=revoked,proto3" json:"revoked,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -127,11 +127,11 @@ func (x *CachedTokenStatus) GetDevId() string {
 	return ""
 }
 
-func (x *CachedTokenStatus) GetLastChecked() string {
+func (x *CachedTokenStatus) GetLastChecked() int64 {
 	if x != nil {
 		return x.LastChecked
 	}
-	return ""
+	return 0
 }
 
 func (x *CachedTokenStatus) GetRevoked() bool {
@@ -152,7 +152,7 @@ const file_users_v1_cache_proto_rawDesc = "" +
 	"\x05props\x18\x03 \x01(\tR\x05props\"g\n" +
 	"\x11CachedTokenStatus\x12\x15\n" +
 	"\x06dev_id\x18\x01 \x01(\tR\x05devId\x12!\n" +
-	"\flast_checked\x18\x02 \x01(\tR\vlastChecked\x12\x18\n" +
+	"\flast_checked\x18\x02 \x01(\x03R\vlastChecked\x12\x18\n" +
 	"\arevoked\x18\x03 \x01(\bR\arevokedBn\n" +
 	"\x19org.megacommerce.users.v1B\n" +
 	"CacheProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\xf8\x01\x01b\x06proto3"

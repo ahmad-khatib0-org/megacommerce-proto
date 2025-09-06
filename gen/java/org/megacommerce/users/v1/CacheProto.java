@@ -810,16 +810,10 @@ public final class CacheProto {
         getDevIdBytes();
 
     /**
-     * <code>string last_checked = 2 [json_name = "lastChecked"];</code>
+     * <code>int64 last_checked = 2 [json_name = "lastChecked"];</code>
      * @return The lastChecked.
      */
-    java.lang.String getLastChecked();
-    /**
-     * <code>string last_checked = 2 [json_name = "lastChecked"];</code>
-     * @return The bytes for lastChecked.
-     */
-    com.google.protobuf.ByteString
-        getLastCheckedBytes();
+    long getLastChecked();
 
     /**
      * <code>bool revoked = 3 [json_name = "revoked"];</code>
@@ -850,7 +844,6 @@ public final class CacheProto {
     }
     private CachedTokenStatus() {
       devId_ = "";
-      lastChecked_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -906,42 +899,14 @@ public final class CacheProto {
     }
 
     public static final int LAST_CHECKED_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object lastChecked_ = "";
+    private long lastChecked_ = 0L;
     /**
-     * <code>string last_checked = 2 [json_name = "lastChecked"];</code>
+     * <code>int64 last_checked = 2 [json_name = "lastChecked"];</code>
      * @return The lastChecked.
      */
     @java.lang.Override
-    public java.lang.String getLastChecked() {
-      java.lang.Object ref = lastChecked_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        lastChecked_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string last_checked = 2 [json_name = "lastChecked"];</code>
-     * @return The bytes for lastChecked.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getLastCheckedBytes() {
-      java.lang.Object ref = lastChecked_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        lastChecked_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public long getLastChecked() {
+      return lastChecked_;
     }
 
     public static final int REVOKED_FIELD_NUMBER = 3;
@@ -972,8 +937,8 @@ public final class CacheProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(devId_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 1, devId_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(lastChecked_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 2, lastChecked_);
+      if (lastChecked_ != 0L) {
+        output.writeInt64(2, lastChecked_);
       }
       if (revoked_ != false) {
         output.writeBool(3, revoked_);
@@ -990,8 +955,9 @@ public final class CacheProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(devId_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(1, devId_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(lastChecked_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, lastChecked_);
+      if (lastChecked_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(2, lastChecked_);
       }
       if (revoked_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -1014,8 +980,8 @@ public final class CacheProto {
 
       if (!getDevId()
           .equals(other.getDevId())) return false;
-      if (!getLastChecked()
-          .equals(other.getLastChecked())) return false;
+      if (getLastChecked()
+          != other.getLastChecked()) return false;
       if (getRevoked()
           != other.getRevoked()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -1032,7 +998,8 @@ public final class CacheProto {
       hash = (37 * hash) + DEV_ID_FIELD_NUMBER;
       hash = (53 * hash) + getDevId().hashCode();
       hash = (37 * hash) + LAST_CHECKED_FIELD_NUMBER;
-      hash = (53 * hash) + getLastChecked().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getLastChecked());
       hash = (37 * hash) + REVOKED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getRevoked());
@@ -1168,7 +1135,7 @@ public final class CacheProto {
         super.clear();
         bitField0_ = 0;
         devId_ = "";
-        lastChecked_ = "";
+        lastChecked_ = 0L;
         revoked_ = false;
         return this;
       }
@@ -1231,10 +1198,8 @@ public final class CacheProto {
           bitField0_ |= 0x00000001;
           onChanged();
         }
-        if (!other.getLastChecked().isEmpty()) {
-          lastChecked_ = other.lastChecked_;
-          bitField0_ |= 0x00000002;
-          onChanged();
+        if (other.getLastChecked() != 0L) {
+          setLastChecked(other.getLastChecked());
         }
         if (other.getRevoked() != false) {
           setRevoked(other.getRevoked());
@@ -1270,11 +1235,11 @@ public final class CacheProto {
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
-              case 18: {
-                lastChecked_ = input.readStringRequireUtf8();
+              case 16: {
+                lastChecked_ = input.readInt64();
                 bitField0_ |= 0x00000002;
                 break;
-              } // case 18
+              } // case 16
               case 24: {
                 revoked_ = input.readBool();
                 bitField0_ |= 0x00000004;
@@ -1369,74 +1334,34 @@ public final class CacheProto {
         return this;
       }
 
-      private java.lang.Object lastChecked_ = "";
+      private long lastChecked_ ;
       /**
-       * <code>string last_checked = 2 [json_name = "lastChecked"];</code>
+       * <code>int64 last_checked = 2 [json_name = "lastChecked"];</code>
        * @return The lastChecked.
        */
-      public java.lang.String getLastChecked() {
-        java.lang.Object ref = lastChecked_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          lastChecked_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
+      @java.lang.Override
+      public long getLastChecked() {
+        return lastChecked_;
       }
       /**
-       * <code>string last_checked = 2 [json_name = "lastChecked"];</code>
-       * @return The bytes for lastChecked.
-       */
-      public com.google.protobuf.ByteString
-          getLastCheckedBytes() {
-        java.lang.Object ref = lastChecked_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          lastChecked_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string last_checked = 2 [json_name = "lastChecked"];</code>
+       * <code>int64 last_checked = 2 [json_name = "lastChecked"];</code>
        * @param value The lastChecked to set.
        * @return This builder for chaining.
        */
-      public Builder setLastChecked(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
+      public Builder setLastChecked(long value) {
+
         lastChecked_ = value;
         bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>string last_checked = 2 [json_name = "lastChecked"];</code>
+       * <code>int64 last_checked = 2 [json_name = "lastChecked"];</code>
        * @return This builder for chaining.
        */
       public Builder clearLastChecked() {
-        lastChecked_ = getDefaultInstance().getLastChecked();
         bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string last_checked = 2 [json_name = "lastChecked"];</code>
-       * @param value The bytes for lastChecked to set.
-       * @return This builder for chaining.
-       */
-      public Builder setLastCheckedBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        lastChecked_ = value;
-        bitField0_ |= 0x00000002;
+        lastChecked_ = 0L;
         onChanged();
         return this;
       }
@@ -1547,7 +1472,7 @@ public final class CacheProto {
       "edUserData\022\031\n\010is_oauth\030\001 \001(\010R\007isOauth\022\024\n" +
       "\005roles\030\002 \001(\tR\005roles\022\024\n\005props\030\003 \001(\tR\005prop" +
       "s\"g\n\021CachedTokenStatus\022\025\n\006dev_id\030\001 \001(\tR\005" +
-      "devId\022!\n\014last_checked\030\002 \001(\tR\013lastChecked" +
+      "devId\022!\n\014last_checked\030\002 \001(\003R\013lastChecked" +
       "\022\030\n\007revoked\030\003 \001(\010R\007revokedBn\n\031org.megaco" +
       "mmerce.users.v1B\nCacheProtoZBgithub.com/" +
       "ahmad-khatib0-org/megacommerce-proto/gen" +

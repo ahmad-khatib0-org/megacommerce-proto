@@ -115,7 +115,7 @@ export const CachedUserData: MessageFns<CachedUserData> = {
 };
 
 function createBaseCachedTokenStatus(): CachedTokenStatus {
-  return { devId: "", lastChecked: "", revoked: false };
+  return { devId: "", lastChecked: "0", revoked: false };
 }
 
 export const CachedTokenStatus: MessageFns<CachedTokenStatus> = {
@@ -123,8 +123,8 @@ export const CachedTokenStatus: MessageFns<CachedTokenStatus> = {
     if (message.devId !== "") {
       writer.uint32(10).string(message.devId);
     }
-    if (message.lastChecked !== "") {
-      writer.uint32(18).string(message.lastChecked);
+    if (message.lastChecked !== "0") {
+      writer.uint32(16).int64(message.lastChecked);
     }
     if (message.revoked !== false) {
       writer.uint32(24).bool(message.revoked);
@@ -148,11 +148,11 @@ export const CachedTokenStatus: MessageFns<CachedTokenStatus> = {
           continue;
         }
         case 2: {
-          if (tag !== 18) {
+          if (tag !== 16) {
             break;
           }
 
-          message.lastChecked = reader.string();
+          message.lastChecked = reader.int64().toString();
           continue;
         }
         case 3: {
@@ -175,7 +175,7 @@ export const CachedTokenStatus: MessageFns<CachedTokenStatus> = {
   fromJSON(object: any): CachedTokenStatus {
     return {
       devId: isSet(object.devId) ? globalThis.String(object.devId) : "",
-      lastChecked: isSet(object.lastChecked) ? globalThis.String(object.lastChecked) : "",
+      lastChecked: isSet(object.lastChecked) ? globalThis.String(object.lastChecked) : "0",
       revoked: isSet(object.revoked) ? globalThis.Boolean(object.revoked) : false,
     };
   },
@@ -185,7 +185,7 @@ export const CachedTokenStatus: MessageFns<CachedTokenStatus> = {
     if (message.devId !== "") {
       obj.devId = message.devId;
     }
-    if (message.lastChecked !== "") {
+    if (message.lastChecked !== "0") {
       obj.lastChecked = message.lastChecked;
     }
     if (message.revoked !== false) {
@@ -200,7 +200,7 @@ export const CachedTokenStatus: MessageFns<CachedTokenStatus> = {
   fromPartial<I extends Exact<DeepPartial<CachedTokenStatus>, I>>(object: I): CachedTokenStatus {
     const message = createBaseCachedTokenStatus();
     message.devId = object.devId ?? "";
-    message.lastChecked = object.lastChecked ?? "";
+    message.lastChecked = object.lastChecked ?? "0";
     message.revoked = object.revoked ?? false;
     return message;
   },

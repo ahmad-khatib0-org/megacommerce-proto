@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14users/v1/cache.proto\x12\x08users.v1\"@\n\x0e\x43\x61\x63hedUserData\x12\x10\n\x08is_oauth\x18\x01 \x01(\x08\x12\r\n\x05roles\x18\x02 \x01(\t\x12\r\n\x05props\x18\x03 \x01(\t\"J\n\x11\x43\x61\x63hedTokenStatus\x12\x0e\n\x06\x64\x65v_id\x18\x01 \x01(\t\x12\x14\n\x0clast_checked\x18\x02 \x01(\t\x12\x0f\n\x07revoked\x18\x03 \x01(\x08\x42n\n\x19org.megacommerce.users.v1B\nCacheProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14users/v1/cache.proto\x12\x08users.v1\"@\n\x0e\x43\x61\x63hedUserData\x12\x10\n\x08is_oauth\x18\x01 \x01(\x08\x12\r\n\x05roles\x18\x02 \x01(\t\x12\r\n\x05props\x18\x03 \x01(\t\"J\n\x11\x43\x61\x63hedTokenStatus\x12\x0e\n\x06\x64\x65v_id\x18\x01 \x01(\t\x12\x14\n\x0clast_checked\x18\x02 \x01(\x03\x12\x0f\n\x07revoked\x18\x03 \x01(\x08\x42n\n\x19org.megacommerce.users.v1B\nCacheProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)

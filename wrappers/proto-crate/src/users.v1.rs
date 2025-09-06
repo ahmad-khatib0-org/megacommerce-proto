@@ -648,8 +648,8 @@ pub struct CachedUserData {
 pub struct CachedTokenStatus {
     #[prost(string, tag = "1")]
     pub dev_id: ::prost::alloc::string::String,
-    #[prost(string, tag = "2")]
-    pub last_checked: ::prost::alloc::string::String,
+    #[prost(int64, tag = "2")]
+    pub last_checked: i64,
     #[prost(bool, tag = "3")]
     pub revoked: bool,
 }
