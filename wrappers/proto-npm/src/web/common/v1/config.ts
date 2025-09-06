@@ -46,6 +46,9 @@ export interface ConfigServices {
   authServiceGrpcUrl?: string | undefined;
   authServicePrometheusUrl?: string | undefined;
   oauthProviderUrl?: string | undefined;
+  oauthClientId?: string | undefined;
+  oauthClientSecret?: string | undefined;
+  oauthDbDsn?: string | undefined;
 }
 
 export interface ConfigSecurity {
@@ -853,6 +856,9 @@ function createBaseConfigServices(): ConfigServices {
     authServiceGrpcUrl: undefined,
     authServicePrometheusUrl: undefined,
     oauthProviderUrl: undefined,
+    oauthClientId: undefined,
+    oauthClientSecret: undefined,
+    oauthDbDsn: undefined,
   };
 }
 
@@ -890,6 +896,15 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     }
     if (message.oauthProviderUrl !== undefined) {
       writer.uint32(90).string(message.oauthProviderUrl);
+    }
+    if (message.oauthClientId !== undefined) {
+      writer.uint32(98).string(message.oauthClientId);
+    }
+    if (message.oauthClientSecret !== undefined) {
+      writer.uint32(106).string(message.oauthClientSecret);
+    }
+    if (message.oauthDbDsn !== undefined) {
+      writer.uint32(114).string(message.oauthDbDsn);
     }
     return writer;
   },
@@ -989,6 +1004,30 @@ export const ConfigServices: MessageFns<ConfigServices> = {
           message.oauthProviderUrl = reader.string();
           continue;
         }
+        case 12: {
+          if (tag !== 98) {
+            break;
+          }
+
+          message.oauthClientId = reader.string();
+          continue;
+        }
+        case 13: {
+          if (tag !== 106) {
+            break;
+          }
+
+          message.oauthClientSecret = reader.string();
+          continue;
+        }
+        case 14: {
+          if (tag !== 114) {
+            break;
+          }
+
+          message.oauthDbDsn = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -1025,6 +1064,9 @@ export const ConfigServices: MessageFns<ConfigServices> = {
         ? globalThis.String(object.authServicePrometheusUrl)
         : undefined,
       oauthProviderUrl: isSet(object.oauthProviderUrl) ? globalThis.String(object.oauthProviderUrl) : undefined,
+      oauthClientId: isSet(object.oauthClientId) ? globalThis.String(object.oauthClientId) : undefined,
+      oauthClientSecret: isSet(object.oauthClientSecret) ? globalThis.String(object.oauthClientSecret) : undefined,
+      oauthDbDsn: isSet(object.oauthDbDsn) ? globalThis.String(object.oauthDbDsn) : undefined,
     };
   },
 
@@ -1063,6 +1105,15 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     if (message.oauthProviderUrl !== undefined) {
       obj.oauthProviderUrl = message.oauthProviderUrl;
     }
+    if (message.oauthClientId !== undefined) {
+      obj.oauthClientId = message.oauthClientId;
+    }
+    if (message.oauthClientSecret !== undefined) {
+      obj.oauthClientSecret = message.oauthClientSecret;
+    }
+    if (message.oauthDbDsn !== undefined) {
+      obj.oauthDbDsn = message.oauthDbDsn;
+    }
     return obj;
   },
 
@@ -1082,6 +1133,9 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     message.authServiceGrpcUrl = object.authServiceGrpcUrl ?? undefined;
     message.authServicePrometheusUrl = object.authServicePrometheusUrl ?? undefined;
     message.oauthProviderUrl = object.oauthProviderUrl ?? undefined;
+    message.oauthClientId = object.oauthClientId ?? undefined;
+    message.oauthClientSecret = object.oauthClientSecret ?? undefined;
+    message.oauthDbDsn = object.oauthDbDsn ?? undefined;
     return message;
   },
 };

@@ -45,6 +45,9 @@ message ConfigServices {
   optional string auth_service_grpc_url = 9;
   optional string auth_service_prometheus_url = 10;
   optional string oauth_provider_url = 11;
+  optional string oauth_client_id = 12;
+  optional string oauth_client_secret = 13;
+  optional string oauth_db_dsn = 14;
 }
 
 message ConfigSecurity {
