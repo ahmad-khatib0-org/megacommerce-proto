@@ -65,6 +65,9 @@ inline constexpr LoginRequest::Impl_::Impl_(
             ::_pbi::ConstantInitialized()),
         mfa_(
             &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        login_challenge_(
+            &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()) {}
 
 template <typename>
@@ -232,13 +235,15 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::users::v1::PasswordForgotResponse, _impl_.response_),
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::users::v1::LoginRequest, _impl_._has_bits_),
-        6, // hasbit index offset
+        7, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::users::v1::LoginRequest, _impl_.email_),
         PROTOBUF_FIELD_OFFSET(::users::v1::LoginRequest, _impl_.password_),
         PROTOBUF_FIELD_OFFSET(::users::v1::LoginRequest, _impl_.mfa_),
+        PROTOBUF_FIELD_OFFSET(::users::v1::LoginRequest, _impl_.login_challenge_),
         0,
         1,
         2,
+        3,
         0x004, // bitmap
         PROTOBUF_FIELD_OFFSET(::users::v1::LoginResponse, _impl_._oneof_case_[0]),
         ::_pbi::kInvalidFieldOffsetTag,
@@ -253,7 +258,7 @@ static const ::_pbi::MigrationSchema
         {14, sizeof(::users::v1::PasswordForgotRequest)},
         {19, sizeof(::users::v1::PasswordForgotResponse)},
         {24, sizeof(::users::v1::LoginRequest)},
-        {33, sizeof(::users::v1::LoginResponse)},
+        {35, sizeof(::users::v1::LoginResponse)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::users::v1::_EmailConfirmationRequest_default_instance_._instance,
@@ -277,15 +282,16 @@ const char descriptor_table_protodef_users_2fv1_2fauth_2eproto[] ABSL_ATTRIBUTE_
     "mail\"\207\001\n\026PasswordForgotResponse\0224\n\004data\030"
     "\001 \001(\0132\036.shared.v1.SuccessResponseDataH\000R"
     "\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErro"
-    "rH\000R\005errorB\n\n\010response\"R\n\014LoginRequest\022\024"
+    "rH\000R\005errorB\n\n\010response\"{\n\014LoginRequest\022\024"
     "\n\005email\030\001 \001(\tR\005email\022\032\n\010password\030\002 \001(\tR\010"
-    "password\022\020\n\003mfa\030\003 \001(\tR\003mfa\"~\n\rLoginRespo"
-    "nse\0224\n\004data\030\001 \001(\0132\036.shared.v1.SuccessRes"
-    "ponseDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.share"
-    "d.v1.AppErrorH\000R\005errorB\n\n\010responseBm\n\031or"
-    "g.megacommerce.users.v1B\tAuthProtoZBgith"
-    "ub.com/ahmad-khatib0-org/megacommerce-pr"
-    "oto/gen/go/users/v1;v1\370\001\001b\006proto3"
+    "password\022\020\n\003mfa\030\003 \001(\tR\003mfa\022\'\n\017login_chal"
+    "lenge\030\004 \001(\tR\016loginChallenge\"~\n\rLoginResp"
+    "onse\0224\n\004data\030\001 \001(\0132\036.shared.v1.SuccessRe"
+    "sponseDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shar"
+    "ed.v1.AppErrorH\000R\005errorB\n\n\010responseBm\n\031o"
+    "rg.megacommerce.users.v1B\tAuthProtoZBgit"
+    "hub.com/ahmad-khatib0-org/megacommerce-p"
+    "roto/gen/go/users/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_users_2fv1_2fauth_2eproto_deps[2] = {
@@ -296,7 +302,7 @@ static ::absl::once_flag descriptor_table_users_2fv1_2fauth_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_users_2fv1_2fauth_2eproto = {
     false,
     false,
-    833,
+    874,
     descriptor_table_protodef_users_2fv1_2fauth_2eproto,
     "users/v1/auth.proto",
     &descriptor_table_users_2fv1_2fauth_2eproto_once,
@@ -1704,7 +1710,8 @@ PROTOBUF_NDEBUG_INLINE LoginRequest::Impl_::Impl_(
         _cached_size_{0},
         email_(arena, from.email_),
         password_(arena, from.password_),
-        mfa_(arena, from.mfa_) {}
+        mfa_(arena, from.mfa_),
+        login_challenge_(arena, from.login_challenge_) {}
 
 LoginRequest::LoginRequest(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -1728,7 +1735,8 @@ PROTOBUF_NDEBUG_INLINE LoginRequest::Impl_::Impl_(
       : _cached_size_{0},
         email_(arena),
         password_(arena),
-        mfa_(arena) {}
+        mfa_(arena),
+        login_challenge_(arena) {}
 
 inline void LoginRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
@@ -1744,6 +1752,7 @@ inline void LoginRequest::SharedDtor(MessageLite& self) {
   this_._impl_.email_.Destroy();
   this_._impl_.password_.Destroy();
   this_._impl_.mfa_.Destroy();
+  this_._impl_.login_challenge_.Destroy();
   this_._impl_.~Impl_();
 }
 
@@ -1790,16 +1799,16 @@ LoginRequest::GetClassData() const {
   return LoginRequest_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 0, 46, 2>
+const ::_pbi::TcParseTable<2, 4, 0, 61, 2>
 LoginRequest::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(LoginRequest, _impl_._has_bits_),
     0, // no _extensions_
-    3, 24,  // max_field_number, fast_idx_mask
+    4, 24,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
+    4294967280,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
+    4,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     LoginRequest_class_data_.base(),
@@ -1809,7 +1818,9 @@ LoginRequest::_table_ = {
     ::_pbi::TcParser::GetTable<::users::v1::LoginRequest>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    {::_pbi::TcParser::MiniParse, {}},
+    // string login_challenge = 4 [json_name = "loginChallenge"];
+    {::_pbi::TcParser::FastUS1,
+     {34, 3, 0, PROTOBUF_FIELD_OFFSET(LoginRequest, _impl_.login_challenge_)}},
     // string email = 1 [json_name = "email"];
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(LoginRequest, _impl_.email_)}},
@@ -1831,14 +1842,18 @@ LoginRequest::_table_ = {
     // string mfa = 3 [json_name = "mfa"];
     {PROTOBUF_FIELD_OFFSET(LoginRequest, _impl_.mfa_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string login_challenge = 4 [json_name = "loginChallenge"];
+    {PROTOBUF_FIELD_OFFSET(LoginRequest, _impl_.login_challenge_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
   // no aux_entries
   {{
-    "\25\5\10\3\0\0\0\0"
+    "\25\5\10\3\17\0\0\0"
     "users.v1.LoginRequest"
     "email"
     "password"
     "mfa"
+    "login_challenge"
   }},
 };
 PROTOBUF_NOINLINE void LoginRequest::Clear() {
@@ -1849,7 +1864,7 @@ PROTOBUF_NOINLINE void LoginRequest::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000007u) != 0) {
+  if ((cached_has_bits & 0x0000000fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
       _impl_.email_.ClearNonDefaultToEmpty();
     }
@@ -1858,6 +1873,9 @@ PROTOBUF_NOINLINE void LoginRequest::Clear() {
     }
     if ((cached_has_bits & 0x00000004u) != 0) {
       _impl_.mfa_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      _impl_.login_challenge_.ClearNonDefaultToEmpty();
     }
   }
   _impl_._has_bits_.Clear();
@@ -1909,6 +1927,16 @@ PROTOBUF_NOINLINE void LoginRequest::Clear() {
     }
   }
 
+  // string login_challenge = 4 [json_name = "loginChallenge"];
+  if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
+    if (!this_._internal_login_challenge().empty()) {
+      const ::std::string& _s = this_._internal_login_challenge();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "users.v1.LoginRequest.login_challenge");
+      target = stream->WriteStringMaybeAliased(4, _s, target);
+    }
+  }
+
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
     target =
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
@@ -1934,7 +1962,7 @@ PROTOBUF_NOINLINE void LoginRequest::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000007u) != 0) {
+  if ((cached_has_bits & 0x0000000fu) != 0) {
     // string email = 1 [json_name = "email"];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_email().empty()) {
@@ -1956,6 +1984,13 @@ PROTOBUF_NOINLINE void LoginRequest::Clear() {
                                         this_._internal_mfa());
       }
     }
+    // string login_challenge = 4 [json_name = "loginChallenge"];
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      if (!this_._internal_login_challenge().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_login_challenge());
+      }
+    }
   }
   return this_.MaybeComputeUnknownFieldsSize(total_size,
                                              &this_._impl_._cached_size_);
@@ -1970,7 +2005,7 @@ void LoginRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::go
   (void) cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000007u) != 0) {
+  if ((cached_has_bits & 0x0000000fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!from._internal_email().empty()) {
         _this->_internal_set_email(from._internal_email());
@@ -1998,6 +2033,15 @@ void LoginRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::go
         }
       }
     }
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      if (!from._internal_login_challenge().empty()) {
+        _this->_internal_set_login_challenge(from._internal_login_challenge());
+      } else {
+        if (_this->_impl_.login_challenge_.IsDefault()) {
+          _this->_internal_set_login_challenge("");
+        }
+      }
+    }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
@@ -2020,6 +2064,7 @@ void LoginRequest::InternalSwap(LoginRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.email_, &other->_impl_.email_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.password_, &other->_impl_.password_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.mfa_, &other->_impl_.mfa_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.login_challenge_, &other->_impl_.login_challenge_, arena);
 }
 
 ::google::protobuf::Metadata LoginRequest::GetMetadata() const {

@@ -3151,6 +3151,18 @@ public final class AuthProto {
      */
     com.google.protobuf.ByteString
         getMfaBytes();
+
+    /**
+     * <code>string login_challenge = 4 [json_name = "loginChallenge"];</code>
+     * @return The loginChallenge.
+     */
+    java.lang.String getLoginChallenge();
+    /**
+     * <code>string login_challenge = 4 [json_name = "loginChallenge"];</code>
+     * @return The bytes for loginChallenge.
+     */
+    com.google.protobuf.ByteString
+        getLoginChallengeBytes();
   }
   /**
    * Protobuf type {@code users.v1.LoginRequest}
@@ -3177,6 +3189,7 @@ public final class AuthProto {
       email_ = "";
       password_ = "";
       mfa_ = "";
+      loginChallenge_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -3309,6 +3322,45 @@ public final class AuthProto {
       }
     }
 
+    public static final int LOGIN_CHALLENGE_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object loginChallenge_ = "";
+    /**
+     * <code>string login_challenge = 4 [json_name = "loginChallenge"];</code>
+     * @return The loginChallenge.
+     */
+    @java.lang.Override
+    public java.lang.String getLoginChallenge() {
+      java.lang.Object ref = loginChallenge_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        loginChallenge_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string login_challenge = 4 [json_name = "loginChallenge"];</code>
+     * @return The bytes for loginChallenge.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLoginChallengeBytes() {
+      java.lang.Object ref = loginChallenge_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        loginChallenge_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3332,6 +3384,9 @@ public final class AuthProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mfa_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 3, mfa_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(loginChallenge_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, loginChallenge_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3349,6 +3404,9 @@ public final class AuthProto {
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mfa_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(3, mfa_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(loginChallenge_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, loginChallenge_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3371,6 +3429,8 @@ public final class AuthProto {
           .equals(other.getPassword())) return false;
       if (!getMfa()
           .equals(other.getMfa())) return false;
+      if (!getLoginChallenge()
+          .equals(other.getLoginChallenge())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3388,6 +3448,8 @@ public final class AuthProto {
       hash = (53 * hash) + getPassword().hashCode();
       hash = (37 * hash) + MFA_FIELD_NUMBER;
       hash = (53 * hash) + getMfa().hashCode();
+      hash = (37 * hash) + LOGIN_CHALLENGE_FIELD_NUMBER;
+      hash = (53 * hash) + getLoginChallenge().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3522,6 +3584,7 @@ public final class AuthProto {
         email_ = "";
         password_ = "";
         mfa_ = "";
+        loginChallenge_ = "";
         return this;
       }
 
@@ -3564,6 +3627,9 @@ public final class AuthProto {
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.mfa_ = mfa_;
         }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.loginChallenge_ = loginChallenge_;
+        }
       }
 
       @java.lang.Override
@@ -3591,6 +3657,11 @@ public final class AuthProto {
         if (!other.getMfa().isEmpty()) {
           mfa_ = other.mfa_;
           bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getLoginChallenge().isEmpty()) {
+          loginChallenge_ = other.loginChallenge_;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -3634,6 +3705,11 @@ public final class AuthProto {
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+              case 34: {
+                loginChallenge_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3863,6 +3939,78 @@ public final class AuthProto {
         checkByteStringIsUtf8(value);
         mfa_ = value;
         bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object loginChallenge_ = "";
+      /**
+       * <code>string login_challenge = 4 [json_name = "loginChallenge"];</code>
+       * @return The loginChallenge.
+       */
+      public java.lang.String getLoginChallenge() {
+        java.lang.Object ref = loginChallenge_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          loginChallenge_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string login_challenge = 4 [json_name = "loginChallenge"];</code>
+       * @return The bytes for loginChallenge.
+       */
+      public com.google.protobuf.ByteString
+          getLoginChallengeBytes() {
+        java.lang.Object ref = loginChallenge_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          loginChallenge_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string login_challenge = 4 [json_name = "loginChallenge"];</code>
+       * @param value The loginChallenge to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLoginChallenge(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        loginChallenge_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string login_challenge = 4 [json_name = "loginChallenge"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLoginChallenge() {
+        loginChallenge_ = getDefaultInstance().getLoginChallenge();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string login_challenge = 4 [json_name = "loginChallenge"];</code>
+       * @param value The bytes for loginChallenge to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLoginChallengeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        loginChallenge_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -4854,15 +5002,16 @@ public final class AuthProto {
       "mail\"\207\001\n\026PasswordForgotResponse\0224\n\004data\030" +
       "\001 \001(\0132\036.shared.v1.SuccessResponseDataH\000R" +
       "\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErro" +
-      "rH\000R\005errorB\n\n\010response\"R\n\014LoginRequest\022\024" +
+      "rH\000R\005errorB\n\n\010response\"{\n\014LoginRequest\022\024" +
       "\n\005email\030\001 \001(\tR\005email\022\032\n\010password\030\002 \001(\tR\010" +
-      "password\022\020\n\003mfa\030\003 \001(\tR\003mfa\"~\n\rLoginRespo" +
-      "nse\0224\n\004data\030\001 \001(\0132\036.shared.v1.SuccessRes" +
-      "ponseDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.share" +
-      "d.v1.AppErrorH\000R\005errorB\n\n\010responseBm\n\031or" +
-      "g.megacommerce.users.v1B\tAuthProtoZBgith" +
-      "ub.com/ahmad-khatib0-org/megacommerce-pr" +
-      "oto/gen/go/users/v1;v1\370\001\001b\006proto3"
+      "password\022\020\n\003mfa\030\003 \001(\tR\003mfa\022\'\n\017login_chal" +
+      "lenge\030\004 \001(\tR\016loginChallenge\"~\n\rLoginResp" +
+      "onse\0224\n\004data\030\001 \001(\0132\036.shared.v1.SuccessRe" +
+      "sponseDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shar" +
+      "ed.v1.AppErrorH\000R\005errorB\n\n\010responseBm\n\031o" +
+      "rg.megacommerce.users.v1B\tAuthProtoZBgit" +
+      "hub.com/ahmad-khatib0-org/megacommerce-p" +
+      "roto/gen/go/users/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4899,7 +5048,7 @@ public final class AuthProto {
     internal_static_users_v1_LoginRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_users_v1_LoginRequest_descriptor,
-        new java.lang.String[] { "Email", "Password", "Mfa", });
+        new java.lang.String[] { "Email", "Password", "Mfa", "LoginChallenge", });
     internal_static_users_v1_LoginResponse_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_users_v1_LoginResponse_fieldAccessorTable = new

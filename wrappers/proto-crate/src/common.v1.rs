@@ -78,14 +78,30 @@ pub struct ConfigServices {
     pub auth_service_prometheus_url: ::core::option::Option<
         ::prost::alloc::string::String,
     >,
-    #[prost(string, optional, tag = "11")]
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ConfigOAuth {
+    #[prost(string, optional, tag = "1")]
     pub oauth_provider_url: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, optional, tag = "12")]
+    #[prost(string, optional, tag = "2")]
     pub oauth_client_id: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, optional, tag = "13")]
+    #[prost(string, optional, tag = "3")]
     pub oauth_client_secret: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, optional, tag = "14")]
+    #[prost(string, optional, tag = "4")]
     pub oauth_db_dsn: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "5")]
+    pub oauth_redirect_url: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "6")]
+    pub oauth_login_url: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "7")]
+    pub oauth_consent_url: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "8")]
+    pub oauth_response_type: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, repeated, tag = "9")]
+    pub oauth_scope: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "10")]
+    pub oauth_admin_url: ::core::option::Option<::prost::alloc::string::String>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -697,6 +713,8 @@ pub struct Config {
     pub data_retention: ::core::option::Option<ConfigDataRetention>,
     #[prost(message, optional, tag = "21")]
     pub image_proxy: ::core::option::Option<ConfigImageProxy>,
+    #[prost(message, optional, tag = "22")]
+    pub oauth: ::core::option::Option<ConfigOAuth>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]

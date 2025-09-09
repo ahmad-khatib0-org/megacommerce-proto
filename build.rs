@@ -23,6 +23,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
       "products.v1.ProductSubcategoryAttribute.string_array",
       "#[serde(default)]",
     )
+    .file_descriptor_set_path(format!("{}/descriptor.bin", out_dir)) // Add this line
     .compile_protos(
       &[
         "common/v1/common.proto",
@@ -56,6 +57,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     .out_dir(format!("{}/envoy", out_dir))
     .build_server(true)
     .compile_well_known_types(true)
+    .file_descriptor_set_path(format!("{}/envoy_descriptor.bin", out_dir))
     .compile_protos(
       &["envoy/service/auth/v3/external_auth.proto"], // path relative to include folder
       includes,

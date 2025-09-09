@@ -26,7 +26,7 @@ from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
 from shared.v1 import types_pb2 as shared_dot_v1_dot_types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13users/v1/auth.proto\x12\x08users.v1\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"J\n\x18\x45mailConfirmationRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\r\n\x05token\x18\x02 \x01(\t\x12\x10\n\x08token_id\x18\x03 \x01(\t\"}\n\x19\x45mailConfirmationResponse\x12.\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x1e.shared.v1.SuccessResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"&\n\x15PasswordForgotRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"z\n\x16PasswordForgotResponse\x12.\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x1e.shared.v1.SuccessResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"<\n\x0cLoginRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x0b\n\x03mfa\x18\x03 \x01(\t\"q\n\rLoginResponse\x12.\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x1e.shared.v1.SuccessResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08responseBm\n\x19org.megacommerce.users.v1B\tAuthProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13users/v1/auth.proto\x12\x08users.v1\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"J\n\x18\x45mailConfirmationRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\r\n\x05token\x18\x02 \x01(\t\x12\x10\n\x08token_id\x18\x03 \x01(\t\"}\n\x19\x45mailConfirmationResponse\x12.\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x1e.shared.v1.SuccessResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"&\n\x15PasswordForgotRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"z\n\x16PasswordForgotResponse\x12.\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x1e.shared.v1.SuccessResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"U\n\x0cLoginRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x0b\n\x03mfa\x18\x03 \x01(\t\x12\x17\n\x0flogin_challenge\x18\x04 \x01(\t\"q\n\rLoginResponse\x12.\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x1e.shared.v1.SuccessResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08responseBm\n\x19org.megacommerce.users.v1B\tAuthProtoZBgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/users/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,7 +43,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PASSWORDFORGOTRESPONSE']._serialized_start=322
   _globals['_PASSWORDFORGOTRESPONSE']._serialized_end=444
   _globals['_LOGINREQUEST']._serialized_start=446
-  _globals['_LOGINREQUEST']._serialized_end=506
-  _globals['_LOGINRESPONSE']._serialized_start=508
-  _globals['_LOGINRESPONSE']._serialized_end=621
+  _globals['_LOGINREQUEST']._serialized_end=531
+  _globals['_LOGINRESPONSE']._serialized_start=533
+  _globals['_LOGINRESPONSE']._serialized_end=646
 # @@protoc_insertion_point(module_scope)

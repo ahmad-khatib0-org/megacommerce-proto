@@ -437,6 +437,7 @@ class LoginRequest final : public ::google::protobuf::Message
     kEmailFieldNumber = 1,
     kPasswordFieldNumber = 2,
     kMfaFieldNumber = 3,
+    kLoginChallengeFieldNumber = 4,
   };
   // string email = 1 [json_name = "email"];
   void clear_email() ;
@@ -483,12 +484,27 @@ class LoginRequest final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_mfa();
 
   public:
+  // string login_challenge = 4 [json_name = "loginChallenge"];
+  void clear_login_challenge() ;
+  const ::std::string& login_challenge() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_login_challenge(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_login_challenge();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_login_challenge();
+  void set_allocated_login_challenge(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_login_challenge() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_login_challenge(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_login_challenge();
+
+  public:
   // @@protoc_insertion_point(class_scope:users.v1.LoginRequest)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<2, 3,
-                                   0, 46,
+  static const ::google::protobuf::internal::TcParseTable<2, 4,
+                                   0, 61,
                                    2>
       _table_;
 
@@ -512,6 +528,7 @@ class LoginRequest final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr email_;
     ::google::protobuf::internal::ArenaStringPtr password_;
     ::google::protobuf::internal::ArenaStringPtr mfa_;
+    ::google::protobuf::internal::ArenaStringPtr login_challenge_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -2241,6 +2258,71 @@ inline void LoginRequest::set_allocated_mfa(::std::string* PROTOBUF_NULLABLE val
     _impl_.mfa_.Set("", GetArena());
   }
   // @@protoc_insertion_point(field_set_allocated:users.v1.LoginRequest.mfa)
+}
+
+// string login_challenge = 4 [json_name = "loginChallenge"];
+inline void LoginRequest::clear_login_challenge() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.login_challenge_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline const ::std::string& LoginRequest::login_challenge() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:users.v1.LoginRequest.login_challenge)
+  return _internal_login_challenge();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void LoginRequest::set_login_challenge(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.login_challenge_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:users.v1.LoginRequest.login_challenge)
+}
+inline ::std::string* PROTOBUF_NONNULL LoginRequest::mutable_login_challenge()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_login_challenge();
+  // @@protoc_insertion_point(field_mutable:users.v1.LoginRequest.login_challenge)
+  return _s;
+}
+inline const ::std::string& LoginRequest::_internal_login_challenge() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.login_challenge_.Get();
+}
+inline void LoginRequest::_internal_set_login_challenge(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.login_challenge_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL LoginRequest::_internal_mutable_login_challenge() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  return _impl_.login_challenge_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE LoginRequest::release_login_challenge() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:users.v1.LoginRequest.login_challenge)
+  if ((_impl_._has_bits_[0] & 0x00000008u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000008u;
+  auto* released = _impl_.login_challenge_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.login_challenge_.Set("", GetArena());
+  }
+  return released;
+}
+inline void LoginRequest::set_allocated_login_challenge(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000008u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000008u;
+  }
+  _impl_.login_challenge_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.login_challenge_.IsDefault()) {
+    _impl_.login_challenge_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:users.v1.LoginRequest.login_challenge)
 }
 
 // -------------------------------------------------------------------

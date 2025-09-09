@@ -291,12 +291,13 @@ func (*PasswordForgotResponse_Data) isPasswordForgotResponse_Response() {}
 func (*PasswordForgotResponse_Error) isPasswordForgotResponse_Response() {}
 
 type LoginRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
-	Password      string                 `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
-	Mfa           string                 `protobuf:"bytes,3,opt,name=mfa,proto3" json:"mfa,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state          protoimpl.MessageState `protogen:"open.v1"`
+	Email          string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
+	Password       string                 `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
+	Mfa            string                 `protobuf:"bytes,3,opt,name=mfa,proto3" json:"mfa,omitempty"`
+	LoginChallenge string                 `protobuf:"bytes,4,opt,name=login_challenge,json=loginChallenge,proto3" json:"login_challenge,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *LoginRequest) Reset() {
@@ -346,6 +347,13 @@ func (x *LoginRequest) GetPassword() string {
 func (x *LoginRequest) GetMfa() string {
 	if x != nil {
 		return x.Mfa
+	}
+	return ""
+}
+
+func (x *LoginRequest) GetLoginChallenge() string {
+	if x != nil {
+		return x.LoginChallenge
 	}
 	return ""
 }
@@ -452,11 +460,12 @@ const file_users_v1_auth_proto_rawDesc = "" +
 	"\x04data\x18\x01 \x01(\v2\x1e.shared.v1.SuccessResponseDataH\x00R\x04data\x12+\n" +
 	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +
 	"\n" +
-	"\bresponse\"R\n" +
+	"\bresponse\"{\n" +
 	"\fLoginRequest\x12\x14\n" +
 	"\x05email\x18\x01 \x01(\tR\x05email\x12\x1a\n" +
 	"\bpassword\x18\x02 \x01(\tR\bpassword\x12\x10\n" +
-	"\x03mfa\x18\x03 \x01(\tR\x03mfa\"~\n" +
+	"\x03mfa\x18\x03 \x01(\tR\x03mfa\x12'\n" +
+	"\x0flogin_challenge\x18\x04 \x01(\tR\x0eloginChallenge\"~\n" +
 	"\rLoginResponse\x124\n" +
 	"\x04data\x18\x01 \x01(\v2\x1e.shared.v1.SuccessResponseDataH\x00R\x04data\x12+\n" +
 	"\x05error\x18\x02 \x01(\v2\x13.shared.v1.AppErrorH\x00R\x05errorB\n" +

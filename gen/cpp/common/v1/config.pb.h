@@ -128,6 +128,10 @@ class ConfigNativeApp;
 struct ConfigNativeAppDefaultTypeInternal;
 extern ConfigNativeAppDefaultTypeInternal _ConfigNativeApp_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull ConfigNativeApp_class_data_;
+class ConfigOAuth;
+struct ConfigOAuthDefaultTypeInternal;
+extern ConfigOAuthDefaultTypeInternal _ConfigOAuth_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull ConfigOAuth_class_data_;
 class ConfigPassword;
 struct ConfigPasswordDefaultTypeInternal;
 extern ConfigPasswordDefaultTypeInternal _ConfigPassword_default_instance_;
@@ -246,7 +250,7 @@ class ConfigSupport final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigSupport*>(
         &_ConfigSupport_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 13;
+  static constexpr int kIndexInFileMessages = 14;
   friend void swap(ConfigSupport& a, ConfigSupport& b) { a.Swap(&b); }
   inline void Swap(ConfigSupport* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -551,7 +555,7 @@ class ConfigSql final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigSql*>(
         &_ConfigSql_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 7;
+  static constexpr int kIndexInFileMessages = 8;
   friend void swap(ConfigSql& a, ConfigSql& b) { a.Swap(&b); }
   inline void Swap(ConfigSql* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -972,10 +976,6 @@ class ConfigServices final : public ::google::protobuf::Message
     kProductsServicePrometheusUrlFieldNumber = 7,
     kAuthServiceGrpcUrlFieldNumber = 9,
     kAuthServicePrometheusUrlFieldNumber = 10,
-    kOauthProviderUrlFieldNumber = 11,
-    kOauthClientIdFieldNumber = 12,
-    kOauthClientSecretFieldNumber = 13,
-    kOauthDbDsnFieldNumber = 14,
     kUsersServiceMaxReceiveMessageSizeBytesFieldNumber = 8,
   };
   // optional string common_service_grpc_url = 1 [json_name = "commonServiceGrpcUrl"];
@@ -1122,70 +1122,6 @@ class ConfigServices final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_auth_service_prometheus_url();
 
   public:
-  // optional string oauth_provider_url = 11 [json_name = "oauthProviderUrl"];
-  bool has_oauth_provider_url() const;
-  void clear_oauth_provider_url() ;
-  const ::std::string& oauth_provider_url() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_oauth_provider_url(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_oauth_provider_url();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_oauth_provider_url();
-  void set_allocated_oauth_provider_url(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_oauth_provider_url() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_oauth_provider_url(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_oauth_provider_url();
-
-  public:
-  // optional string oauth_client_id = 12 [json_name = "oauthClientId"];
-  bool has_oauth_client_id() const;
-  void clear_oauth_client_id() ;
-  const ::std::string& oauth_client_id() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_oauth_client_id(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_oauth_client_id();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_oauth_client_id();
-  void set_allocated_oauth_client_id(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_oauth_client_id() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_oauth_client_id(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_oauth_client_id();
-
-  public:
-  // optional string oauth_client_secret = 13 [json_name = "oauthClientSecret"];
-  bool has_oauth_client_secret() const;
-  void clear_oauth_client_secret() ;
-  const ::std::string& oauth_client_secret() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_oauth_client_secret(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_oauth_client_secret();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_oauth_client_secret();
-  void set_allocated_oauth_client_secret(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_oauth_client_secret() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_oauth_client_secret(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_oauth_client_secret();
-
-  public:
-  // optional string oauth_db_dsn = 14 [json_name = "oauthDbDsn"];
-  bool has_oauth_db_dsn() const;
-  void clear_oauth_db_dsn() ;
-  const ::std::string& oauth_db_dsn() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_oauth_db_dsn(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_oauth_db_dsn();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_oauth_db_dsn();
-  void set_allocated_oauth_db_dsn(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_oauth_db_dsn() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_oauth_db_dsn(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_oauth_db_dsn();
-
-  public:
   // optional int64 users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];
   bool has_users_service_max_receive_message_size_bytes() const;
   void clear_users_service_max_receive_message_size_bytes() ;
@@ -1201,8 +1137,8 @@ class ConfigServices final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<4, 14,
-                                   0, 329,
+  static const ::google::protobuf::internal::TcParseTable<4, 10,
+                                   0, 265,
                                    2>
       _table_;
 
@@ -1232,10 +1168,6 @@ class ConfigServices final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr products_service_prometheus_url_;
     ::google::protobuf::internal::ArenaStringPtr auth_service_grpc_url_;
     ::google::protobuf::internal::ArenaStringPtr auth_service_prometheus_url_;
-    ::google::protobuf::internal::ArenaStringPtr oauth_provider_url_;
-    ::google::protobuf::internal::ArenaStringPtr oauth_client_id_;
-    ::google::protobuf::internal::ArenaStringPtr oauth_client_secret_;
-    ::google::protobuf::internal::ArenaStringPtr oauth_db_dsn_;
     ::int64_t users_service_max_receive_message_size_bytes_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -1340,7 +1272,7 @@ class ConfigSaml final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigSaml*>(
         &_ConfigSaml_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 16;
+  static constexpr int kIndexInFileMessages = 17;
   friend void swap(ConfigSaml& a, ConfigSaml& b) { a.Swap(&b); }
   inline void Swap(ConfigSaml* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -2073,7 +2005,7 @@ class ConfigSSO final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigSSO*>(
         &_ConfigSSO_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 6;
+  static constexpr int kIndexInFileMessages = 7;
   friend void swap(ConfigSSO& a, ConfigSSO& b) { a.Swap(&b); }
   inline void Swap(ConfigSSO* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -2427,7 +2359,7 @@ class ConfigRateLimit final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigRateLimit*>(
         &_ConfigRateLimit_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 11;
+  static constexpr int kIndexInFileMessages = 12;
   friend void swap(ConfigRateLimit& a, ConfigRateLimit& b) { a.Swap(&b); }
   inline void Swap(ConfigRateLimit* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -2701,7 +2633,7 @@ class ConfigPrivacy final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigPrivacy*>(
         &_ConfigPrivacy_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 12;
+  static constexpr int kIndexInFileMessages = 13;
   friend void swap(ConfigPrivacy& a, ConfigPrivacy& b) { a.Swap(&b); }
   inline void Swap(ConfigPrivacy* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -2906,7 +2838,7 @@ class ConfigPassword final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigPassword*>(
         &_ConfigPassword_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 8;
+  static constexpr int kIndexInFileMessages = 9;
   friend void swap(ConfigPassword& a, ConfigPassword& b) { a.Swap(&b); }
   inline void Swap(ConfigPassword* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3121,6 +3053,371 @@ class ConfigPassword final : public ::google::protobuf::Message
 extern const ::google::protobuf::internal::ClassDataFull ConfigPassword_class_data_;
 // -------------------------------------------------------------------
 
+class ConfigOAuth final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:common.v1.ConfigOAuth) */ {
+ public:
+  inline ConfigOAuth() : ConfigOAuth(nullptr) {}
+  ~ConfigOAuth() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(ConfigOAuth* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(ConfigOAuth));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR ConfigOAuth(::google::protobuf::internal::ConstantInitialized);
+
+  inline ConfigOAuth(const ConfigOAuth& from) : ConfigOAuth(nullptr, from) {}
+  inline ConfigOAuth(ConfigOAuth&& from) noexcept
+      : ConfigOAuth(nullptr, ::std::move(from)) {}
+  inline ConfigOAuth& operator=(const ConfigOAuth& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ConfigOAuth& operator=(ConfigOAuth&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ConfigOAuth& default_instance() {
+    return *reinterpret_cast<const ConfigOAuth*>(
+        &_ConfigOAuth_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 2;
+  friend void swap(ConfigOAuth& a, ConfigOAuth& b) { a.Swap(&b); }
+  inline void Swap(ConfigOAuth* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ConfigOAuth* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ConfigOAuth* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<ConfigOAuth>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const ConfigOAuth& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const ConfigOAuth& from) { ConfigOAuth::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(ConfigOAuth* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "common.v1.ConfigOAuth"; }
+
+ protected:
+  explicit ConfigOAuth(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  ConfigOAuth(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ConfigOAuth& from);
+  ConfigOAuth(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ConfigOAuth&& from) noexcept
+      : ConfigOAuth(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kOauthScopeFieldNumber = 9,
+    kOauthProviderUrlFieldNumber = 1,
+    kOauthClientIdFieldNumber = 2,
+    kOauthClientSecretFieldNumber = 3,
+    kOauthDbDsnFieldNumber = 4,
+    kOauthRedirectUrlFieldNumber = 5,
+    kOauthLoginUrlFieldNumber = 6,
+    kOauthConsentUrlFieldNumber = 7,
+    kOauthResponseTypeFieldNumber = 8,
+    kOauthAdminUrlFieldNumber = 10,
+  };
+  // repeated string oauth_scope = 9 [json_name = "oauthScope"];
+  int oauth_scope_size() const;
+  private:
+  int _internal_oauth_scope_size() const;
+
+  public:
+  void clear_oauth_scope() ;
+  const ::std::string& oauth_scope(int index) const;
+  ::std::string* PROTOBUF_NONNULL mutable_oauth_scope(int index);
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_oauth_scope(int index, Arg_&& value, Args_... args);
+  ::std::string* PROTOBUF_NONNULL add_oauth_scope();
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void add_oauth_scope(Arg_&& value, Args_... args);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& oauth_scope() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL mutable_oauth_scope();
+
+  private:
+  const ::google::protobuf::RepeatedPtrField<::std::string>& _internal_oauth_scope() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL _internal_mutable_oauth_scope();
+
+  public:
+  // optional string oauth_provider_url = 1 [json_name = "oauthProviderUrl"];
+  bool has_oauth_provider_url() const;
+  void clear_oauth_provider_url() ;
+  const ::std::string& oauth_provider_url() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_oauth_provider_url(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_oauth_provider_url();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_oauth_provider_url();
+  void set_allocated_oauth_provider_url(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_oauth_provider_url() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_oauth_provider_url(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_oauth_provider_url();
+
+  public:
+  // optional string oauth_client_id = 2 [json_name = "oauthClientId"];
+  bool has_oauth_client_id() const;
+  void clear_oauth_client_id() ;
+  const ::std::string& oauth_client_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_oauth_client_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_oauth_client_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_oauth_client_id();
+  void set_allocated_oauth_client_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_oauth_client_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_oauth_client_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_oauth_client_id();
+
+  public:
+  // optional string oauth_client_secret = 3 [json_name = "oauthClientSecret"];
+  bool has_oauth_client_secret() const;
+  void clear_oauth_client_secret() ;
+  const ::std::string& oauth_client_secret() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_oauth_client_secret(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_oauth_client_secret();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_oauth_client_secret();
+  void set_allocated_oauth_client_secret(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_oauth_client_secret() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_oauth_client_secret(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_oauth_client_secret();
+
+  public:
+  // optional string oauth_db_dsn = 4 [json_name = "oauthDbDsn"];
+  bool has_oauth_db_dsn() const;
+  void clear_oauth_db_dsn() ;
+  const ::std::string& oauth_db_dsn() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_oauth_db_dsn(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_oauth_db_dsn();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_oauth_db_dsn();
+  void set_allocated_oauth_db_dsn(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_oauth_db_dsn() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_oauth_db_dsn(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_oauth_db_dsn();
+
+  public:
+  // optional string oauth_redirect_url = 5 [json_name = "oauthRedirectUrl"];
+  bool has_oauth_redirect_url() const;
+  void clear_oauth_redirect_url() ;
+  const ::std::string& oauth_redirect_url() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_oauth_redirect_url(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_oauth_redirect_url();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_oauth_redirect_url();
+  void set_allocated_oauth_redirect_url(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_oauth_redirect_url() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_oauth_redirect_url(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_oauth_redirect_url();
+
+  public:
+  // optional string oauth_login_url = 6 [json_name = "oauthLoginUrl"];
+  bool has_oauth_login_url() const;
+  void clear_oauth_login_url() ;
+  const ::std::string& oauth_login_url() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_oauth_login_url(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_oauth_login_url();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_oauth_login_url();
+  void set_allocated_oauth_login_url(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_oauth_login_url() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_oauth_login_url(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_oauth_login_url();
+
+  public:
+  // optional string oauth_consent_url = 7 [json_name = "oauthConsentUrl"];
+  bool has_oauth_consent_url() const;
+  void clear_oauth_consent_url() ;
+  const ::std::string& oauth_consent_url() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_oauth_consent_url(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_oauth_consent_url();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_oauth_consent_url();
+  void set_allocated_oauth_consent_url(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_oauth_consent_url() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_oauth_consent_url(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_oauth_consent_url();
+
+  public:
+  // optional string oauth_response_type = 8 [json_name = "oauthResponseType"];
+  bool has_oauth_response_type() const;
+  void clear_oauth_response_type() ;
+  const ::std::string& oauth_response_type() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_oauth_response_type(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_oauth_response_type();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_oauth_response_type();
+  void set_allocated_oauth_response_type(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_oauth_response_type() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_oauth_response_type(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_oauth_response_type();
+
+  public:
+  // optional string oauth_admin_url = 10 [json_name = "oauthAdminUrl"];
+  bool has_oauth_admin_url() const;
+  void clear_oauth_admin_url() ;
+  const ::std::string& oauth_admin_url() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_oauth_admin_url(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_oauth_admin_url();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_oauth_admin_url();
+  void set_allocated_oauth_admin_url(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_oauth_admin_url() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_oauth_admin_url(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_oauth_admin_url();
+
+  public:
+  // @@protoc_insertion_point(class_scope:common.v1.ConfigOAuth)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<4, 10,
+                                   0, 197,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const ConfigOAuth& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::RepeatedPtrField<::std::string> oauth_scope_;
+    ::google::protobuf::internal::ArenaStringPtr oauth_provider_url_;
+    ::google::protobuf::internal::ArenaStringPtr oauth_client_id_;
+    ::google::protobuf::internal::ArenaStringPtr oauth_client_secret_;
+    ::google::protobuf::internal::ArenaStringPtr oauth_db_dsn_;
+    ::google::protobuf::internal::ArenaStringPtr oauth_redirect_url_;
+    ::google::protobuf::internal::ArenaStringPtr oauth_login_url_;
+    ::google::protobuf::internal::ArenaStringPtr oauth_consent_url_;
+    ::google::protobuf::internal::ArenaStringPtr oauth_response_type_;
+    ::google::protobuf::internal::ArenaStringPtr oauth_admin_url_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_common_2fv1_2fconfig_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull ConfigOAuth_class_data_;
+// -------------------------------------------------------------------
+
 class ConfigNativeApp final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:common.v1.ConfigNativeApp) */ {
  public:
@@ -3176,7 +3473,7 @@ class ConfigNativeApp final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigNativeApp*>(
         &_ConfigNativeApp_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 17;
+  static constexpr int kIndexInFileMessages = 18;
   friend void swap(ConfigNativeApp& a, ConfigNativeApp& b) { a.Swap(&b); }
   inline void Swap(ConfigNativeApp* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3485,7 +3782,7 @@ class ConfigMetrics final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigMetrics*>(
         &_ConfigMetrics_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 5;
+  static constexpr int kIndexInFileMessages = 6;
   friend void swap(ConfigMetrics& a, ConfigMetrics& b) { a.Swap(&b); }
   inline void Swap(ConfigMetrics* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3758,7 +4055,7 @@ class ConfigMeilisearch final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigMeilisearch*>(
         &_ConfigMeilisearch_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 18;
+  static constexpr int kIndexInFileMessages = 19;
   friend void swap(ConfigMeilisearch& a, ConfigMeilisearch& b) { a.Swap(&b); }
   inline void Swap(ConfigMeilisearch* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -4554,7 +4851,7 @@ class ConfigLocalization final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigLocalization*>(
         &_ConfigLocalization_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 14;
+  static constexpr int kIndexInFileMessages = 15;
   friend void swap(ConfigLocalization& a, ConfigLocalization& b) { a.Swap(&b); }
   inline void Swap(ConfigLocalization* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -4793,7 +5090,7 @@ class ConfigListenerRequest final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigListenerRequest*>(
         &_ConfigListenerRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 28;
+  static constexpr int kIndexInFileMessages = 29;
   friend void swap(ConfigListenerRequest& a, ConfigListenerRequest& b) { a.Swap(&b); }
   inline void Swap(ConfigListenerRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -4989,7 +5286,7 @@ class ConfigLdap final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigLdap*>(
         &_ConfigLdap_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 15;
+  static constexpr int kIndexInFileMessages = 16;
   friend void swap(ConfigLdap& a, ConfigLdap& b) { a.Swap(&b); }
   inline void Swap(ConfigLdap* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -5686,7 +5983,7 @@ class ConfigImageProxy final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigImageProxy*>(
         &_ConfigImageProxy_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 21;
+  static constexpr int kIndexInFileMessages = 22;
   friend void swap(ConfigImageProxy& a, ConfigImageProxy& b) { a.Swap(&b); }
   inline void Swap(ConfigImageProxy* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -5931,7 +6228,7 @@ class ConfigGetRequest final : public ::google::protobuf::internal::ZeroFieldsBa
     return *reinterpret_cast<const ConfigGetRequest*>(
         &_ConfigGetRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 23;
+  static constexpr int kIndexInFileMessages = 24;
   friend void swap(ConfigGetRequest& a, ConfigGetRequest& b) { a.Swap(&b); }
   inline void Swap(ConfigGetRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -6078,7 +6375,7 @@ class ConfigFile final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigFile*>(
         &_ConfigFile_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 9;
+  static constexpr int kIndexInFileMessages = 10;
   friend void swap(ConfigFile& a, ConfigFile& b) { a.Swap(&b); }
   inline void Swap(ConfigFile* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -6544,7 +6841,7 @@ class ConfigEmail final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigEmail*>(
         &_ConfigEmail_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 10;
+  static constexpr int kIndexInFileMessages = 11;
   friend void swap(ConfigEmail& a, ConfigEmail& b) { a.Swap(&b); }
   inline void Swap(ConfigEmail* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -7126,7 +7423,7 @@ class ConfigDataRetention final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigDataRetention*>(
         &_ConfigDataRetention_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 20;
+  static constexpr int kIndexInFileMessages = 21;
   friend void swap(ConfigDataRetention& a, ConfigDataRetention& b) { a.Swap(&b); }
   inline void Swap(ConfigDataRetention* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -7440,7 +7737,7 @@ class ConfigBleve final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigBleve*>(
         &_ConfigBleve_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 19;
+  static constexpr int kIndexInFileMessages = 20;
   friend void swap(ConfigBleve& a, ConfigBleve& b) { a.Swap(&b); }
   inline void Swap(ConfigBleve* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -7702,7 +7999,7 @@ class CacheConfig final : public ::google::protobuf::Message
     return *reinterpret_cast<const CacheConfig*>(
         &_CacheConfig_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 4;
+  static constexpr int kIndexInFileMessages = 5;
   friend void swap(CacheConfig& a, CacheConfig& b) { a.Swap(&b); }
   inline void Swap(CacheConfig* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -7979,7 +8276,7 @@ class ConfigSecurity final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigSecurity*>(
         &_ConfigSecurity_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 3;
+  static constexpr int kIndexInFileMessages = 4;
   friend void swap(ConfigSecurity& a, ConfigSecurity& b) { a.Swap(&b); }
   inline void Swap(ConfigSecurity* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -8458,7 +8755,7 @@ class Config final : public ::google::protobuf::Message
     return *reinterpret_cast<const Config*>(
         &_Config_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 22;
+  static constexpr int kIndexInFileMessages = 23;
   friend void swap(Config& a, Config& b) { a.Swap(&b); }
   inline void Swap(Config* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -8567,6 +8864,7 @@ class Config final : public ::google::protobuf::Message
     kBleveFieldNumber = 19,
     kDataRetentionFieldNumber = 20,
     kImageProxyFieldNumber = 21,
+    kOauthFieldNumber = 22,
   };
   // .common.v1.ConfigMain main = 1 [json_name = "main"];
   bool has_main() const;
@@ -8883,12 +9181,27 @@ class Config final : public ::google::protobuf::Message
   ::common::v1::ConfigImageProxy* PROTOBUF_NONNULL _internal_mutable_image_proxy();
 
   public:
+  // .common.v1.ConfigOAuth oauth = 22 [json_name = "oauth"];
+  bool has_oauth() const;
+  void clear_oauth() ;
+  const ::common::v1::ConfigOAuth& oauth() const;
+  [[nodiscard]] ::common::v1::ConfigOAuth* PROTOBUF_NULLABLE release_oauth();
+  ::common::v1::ConfigOAuth* PROTOBUF_NONNULL mutable_oauth();
+  void set_allocated_oauth(::common::v1::ConfigOAuth* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_oauth(::common::v1::ConfigOAuth* PROTOBUF_NULLABLE value);
+  ::common::v1::ConfigOAuth* PROTOBUF_NULLABLE unsafe_arena_release_oauth();
+
+  private:
+  const ::common::v1::ConfigOAuth& _internal_oauth() const;
+  ::common::v1::ConfigOAuth* PROTOBUF_NONNULL _internal_mutable_oauth();
+
+  public:
   // @@protoc_insertion_point(class_scope:common.v1.Config)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<5, 21,
-                                   21, 0,
+  static const ::google::protobuf::internal::TcParseTable<5, 22,
+                                   22, 0,
                                    2>
       _table_;
 
@@ -8930,6 +9243,7 @@ class Config final : public ::google::protobuf::Message
     ::common::v1::ConfigBleve* PROTOBUF_NULLABLE bleve_;
     ::common::v1::ConfigDataRetention* PROTOBUF_NULLABLE data_retention_;
     ::common::v1::ConfigImageProxy* PROTOBUF_NULLABLE image_proxy_;
+    ::common::v1::ConfigOAuth* PROTOBUF_NULLABLE oauth_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -8994,7 +9308,7 @@ class ConfigUpdateRequest final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigUpdateRequest*>(
         &_ConfigUpdateRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 25;
+  static constexpr int kIndexInFileMessages = 26;
   friend void swap(ConfigUpdateRequest& a, ConfigUpdateRequest& b) { a.Swap(&b); }
   inline void Swap(ConfigUpdateRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -9195,7 +9509,7 @@ class ConfigUpdateResponse final : public ::google::protobuf::Message
     kError = 2,
     RESPONSE_NOT_SET = 0,
   };
-  static constexpr int kIndexInFileMessages = 26;
+  static constexpr int kIndexInFileMessages = 27;
   friend void swap(ConfigUpdateResponse& a, ConfigUpdateResponse& b) { a.Swap(&b); }
   inline void Swap(ConfigUpdateResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -9431,7 +9745,7 @@ class ConfigListenerResponse final : public ::google::protobuf::Message
     kError = 2,
     RESPONSE_NOT_SET = 0,
   };
-  static constexpr int kIndexInFileMessages = 27;
+  static constexpr int kIndexInFileMessages = 28;
   friend void swap(ConfigListenerResponse& a, ConfigListenerResponse& b) { a.Swap(&b); }
   inline void Swap(ConfigListenerResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -9667,7 +9981,7 @@ class ConfigGetResponse final : public ::google::protobuf::Message
     kError = 2,
     RESPONSE_NOT_SET = 0,
   };
-  static constexpr int kIndexInFileMessages = 24;
+  static constexpr int kIndexInFileMessages = 25;
   friend void swap(ConfigGetResponse& a, ConfigGetResponse& b) { a.Swap(&b); }
   inline void Swap(ConfigGetResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -11099,13 +11413,13 @@ inline void ConfigServices::set_allocated_products_service_prometheus_url(::std:
 
 // optional int64 users_service_max_receive_message_size_bytes = 8 [json_name = "usersServiceMaxReceiveMessageSizeBytes"];
 inline bool ConfigServices::has_users_service_max_receive_message_size_bytes() const {
-  bool value = (_impl_._has_bits_[0] & 0x00002000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
   return value;
 }
 inline void ConfigServices::clear_users_service_max_receive_message_size_bytes() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.users_service_max_receive_message_size_bytes_ = ::int64_t{0};
-  _impl_._has_bits_[0] &= ~0x00002000u;
+  _impl_._has_bits_[0] &= ~0x00000200u;
 }
 inline ::int64_t ConfigServices::users_service_max_receive_message_size_bytes() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigServices.users_service_max_receive_message_size_bytes)
@@ -11113,7 +11427,7 @@ inline ::int64_t ConfigServices::users_service_max_receive_message_size_bytes() 
 }
 inline void ConfigServices::set_users_service_max_receive_message_size_bytes(::int64_t value) {
   _internal_set_users_service_max_receive_message_size_bytes(value);
-  _impl_._has_bits_[0] |= 0x00002000u;
+  _impl_._has_bits_[0] |= 0x00000200u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigServices.users_service_max_receive_message_size_bytes)
 }
 inline ::int64_t ConfigServices::_internal_users_service_max_receive_message_size_bytes() const {
@@ -11263,280 +11577,693 @@ inline void ConfigServices::set_allocated_auth_service_prometheus_url(::std::str
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.auth_service_prometheus_url)
 }
 
-// optional string oauth_provider_url = 11 [json_name = "oauthProviderUrl"];
-inline bool ConfigServices::has_oauth_provider_url() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
+// -------------------------------------------------------------------
+
+// ConfigOAuth
+
+// optional string oauth_provider_url = 1 [json_name = "oauthProviderUrl"];
+inline bool ConfigOAuth::has_oauth_provider_url() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   return value;
 }
-inline void ConfigServices::clear_oauth_provider_url() {
+inline void ConfigOAuth::clear_oauth_provider_url() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.oauth_provider_url_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000200u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
 }
-inline const ::std::string& ConfigServices::oauth_provider_url() const
+inline const ::std::string& ConfigOAuth::oauth_provider_url() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.oauth_provider_url)
+  // @@protoc_insertion_point(field_get:common.v1.ConfigOAuth.oauth_provider_url)
   return _internal_oauth_provider_url();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void ConfigServices::set_oauth_provider_url(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void ConfigOAuth::set_oauth_provider_url(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000200u;
+  _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.oauth_provider_url_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.oauth_provider_url)
+  // @@protoc_insertion_point(field_set:common.v1.ConfigOAuth.oauth_provider_url)
 }
-inline ::std::string* PROTOBUF_NONNULL ConfigServices::mutable_oauth_provider_url()
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::mutable_oauth_provider_url()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::std::string* _s = _internal_mutable_oauth_provider_url();
-  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.oauth_provider_url)
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigOAuth.oauth_provider_url)
   return _s;
 }
-inline const ::std::string& ConfigServices::_internal_oauth_provider_url() const {
+inline const ::std::string& ConfigOAuth::_internal_oauth_provider_url() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.oauth_provider_url_.Get();
 }
-inline void ConfigServices::_internal_set_oauth_provider_url(const ::std::string& value) {
+inline void ConfigOAuth::_internal_set_oauth_provider_url(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000200u;
+  _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.oauth_provider_url_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL ConfigServices::_internal_mutable_oauth_provider_url() {
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::_internal_mutable_oauth_provider_url() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000200u;
+  _impl_._has_bits_[0] |= 0x00000001u;
   return _impl_.oauth_provider_url_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE ConfigServices::release_oauth_provider_url() {
+inline ::std::string* PROTOBUF_NULLABLE ConfigOAuth::release_oauth_provider_url() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.oauth_provider_url)
-  if ((_impl_._has_bits_[0] & 0x00000200u) == 0) {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigOAuth.oauth_provider_url)
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000200u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
   auto* released = _impl_.oauth_provider_url_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.oauth_provider_url_.Set("", GetArena());
   }
   return released;
 }
-inline void ConfigServices::set_allocated_oauth_provider_url(::std::string* PROTOBUF_NULLABLE value) {
+inline void ConfigOAuth::set_allocated_oauth_provider_url(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000200u;
+    _impl_._has_bits_[0] |= 0x00000001u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000200u;
+    _impl_._has_bits_[0] &= ~0x00000001u;
   }
   _impl_.oauth_provider_url_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.oauth_provider_url_.IsDefault()) {
     _impl_.oauth_provider_url_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.oauth_provider_url)
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigOAuth.oauth_provider_url)
 }
 
-// optional string oauth_client_id = 12 [json_name = "oauthClientId"];
-inline bool ConfigServices::has_oauth_client_id() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000400u) != 0;
+// optional string oauth_client_id = 2 [json_name = "oauthClientId"];
+inline bool ConfigOAuth::has_oauth_client_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
 }
-inline void ConfigServices::clear_oauth_client_id() {
+inline void ConfigOAuth::clear_oauth_client_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.oauth_client_id_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000400u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
-inline const ::std::string& ConfigServices::oauth_client_id() const
+inline const ::std::string& ConfigOAuth::oauth_client_id() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.oauth_client_id)
+  // @@protoc_insertion_point(field_get:common.v1.ConfigOAuth.oauth_client_id)
   return _internal_oauth_client_id();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void ConfigServices::set_oauth_client_id(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void ConfigOAuth::set_oauth_client_id(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000400u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.oauth_client_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.oauth_client_id)
+  // @@protoc_insertion_point(field_set:common.v1.ConfigOAuth.oauth_client_id)
 }
-inline ::std::string* PROTOBUF_NONNULL ConfigServices::mutable_oauth_client_id()
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::mutable_oauth_client_id()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::std::string* _s = _internal_mutable_oauth_client_id();
-  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.oauth_client_id)
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigOAuth.oauth_client_id)
   return _s;
 }
-inline const ::std::string& ConfigServices::_internal_oauth_client_id() const {
+inline const ::std::string& ConfigOAuth::_internal_oauth_client_id() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.oauth_client_id_.Get();
 }
-inline void ConfigServices::_internal_set_oauth_client_id(const ::std::string& value) {
+inline void ConfigOAuth::_internal_set_oauth_client_id(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000400u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.oauth_client_id_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL ConfigServices::_internal_mutable_oauth_client_id() {
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::_internal_mutable_oauth_client_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000400u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   return _impl_.oauth_client_id_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE ConfigServices::release_oauth_client_id() {
+inline ::std::string* PROTOBUF_NULLABLE ConfigOAuth::release_oauth_client_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.oauth_client_id)
-  if ((_impl_._has_bits_[0] & 0x00000400u) == 0) {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigOAuth.oauth_client_id)
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000400u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
   auto* released = _impl_.oauth_client_id_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.oauth_client_id_.Set("", GetArena());
   }
   return released;
 }
-inline void ConfigServices::set_allocated_oauth_client_id(::std::string* PROTOBUF_NULLABLE value) {
+inline void ConfigOAuth::set_allocated_oauth_client_id(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000400u;
+    _impl_._has_bits_[0] |= 0x00000002u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000400u;
+    _impl_._has_bits_[0] &= ~0x00000002u;
   }
   _impl_.oauth_client_id_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.oauth_client_id_.IsDefault()) {
     _impl_.oauth_client_id_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.oauth_client_id)
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigOAuth.oauth_client_id)
 }
 
-// optional string oauth_client_secret = 13 [json_name = "oauthClientSecret"];
-inline bool ConfigServices::has_oauth_client_secret() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000800u) != 0;
+// optional string oauth_client_secret = 3 [json_name = "oauthClientSecret"];
+inline bool ConfigOAuth::has_oauth_client_secret() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
-inline void ConfigServices::clear_oauth_client_secret() {
+inline void ConfigOAuth::clear_oauth_client_secret() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.oauth_client_secret_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000800u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
-inline const ::std::string& ConfigServices::oauth_client_secret() const
+inline const ::std::string& ConfigOAuth::oauth_client_secret() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.oauth_client_secret)
+  // @@protoc_insertion_point(field_get:common.v1.ConfigOAuth.oauth_client_secret)
   return _internal_oauth_client_secret();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void ConfigServices::set_oauth_client_secret(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void ConfigOAuth::set_oauth_client_secret(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000800u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.oauth_client_secret_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.oauth_client_secret)
+  // @@protoc_insertion_point(field_set:common.v1.ConfigOAuth.oauth_client_secret)
 }
-inline ::std::string* PROTOBUF_NONNULL ConfigServices::mutable_oauth_client_secret()
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::mutable_oauth_client_secret()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::std::string* _s = _internal_mutable_oauth_client_secret();
-  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.oauth_client_secret)
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigOAuth.oauth_client_secret)
   return _s;
 }
-inline const ::std::string& ConfigServices::_internal_oauth_client_secret() const {
+inline const ::std::string& ConfigOAuth::_internal_oauth_client_secret() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.oauth_client_secret_.Get();
 }
-inline void ConfigServices::_internal_set_oauth_client_secret(const ::std::string& value) {
+inline void ConfigOAuth::_internal_set_oauth_client_secret(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000800u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.oauth_client_secret_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL ConfigServices::_internal_mutable_oauth_client_secret() {
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::_internal_mutable_oauth_client_secret() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000800u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   return _impl_.oauth_client_secret_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE ConfigServices::release_oauth_client_secret() {
+inline ::std::string* PROTOBUF_NULLABLE ConfigOAuth::release_oauth_client_secret() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.oauth_client_secret)
-  if ((_impl_._has_bits_[0] & 0x00000800u) == 0) {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigOAuth.oauth_client_secret)
+  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000800u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
   auto* released = _impl_.oauth_client_secret_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.oauth_client_secret_.Set("", GetArena());
   }
   return released;
 }
-inline void ConfigServices::set_allocated_oauth_client_secret(::std::string* PROTOBUF_NULLABLE value) {
+inline void ConfigOAuth::set_allocated_oauth_client_secret(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000800u;
+    _impl_._has_bits_[0] |= 0x00000004u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000800u;
+    _impl_._has_bits_[0] &= ~0x00000004u;
   }
   _impl_.oauth_client_secret_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.oauth_client_secret_.IsDefault()) {
     _impl_.oauth_client_secret_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.oauth_client_secret)
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigOAuth.oauth_client_secret)
 }
 
-// optional string oauth_db_dsn = 14 [json_name = "oauthDbDsn"];
-inline bool ConfigServices::has_oauth_db_dsn() const {
-  bool value = (_impl_._has_bits_[0] & 0x00001000u) != 0;
+// optional string oauth_db_dsn = 4 [json_name = "oauthDbDsn"];
+inline bool ConfigOAuth::has_oauth_db_dsn() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
-inline void ConfigServices::clear_oauth_db_dsn() {
+inline void ConfigOAuth::clear_oauth_db_dsn() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.oauth_db_dsn_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00001000u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
 }
-inline const ::std::string& ConfigServices::oauth_db_dsn() const
+inline const ::std::string& ConfigOAuth::oauth_db_dsn() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigServices.oauth_db_dsn)
+  // @@protoc_insertion_point(field_get:common.v1.ConfigOAuth.oauth_db_dsn)
   return _internal_oauth_db_dsn();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void ConfigServices::set_oauth_db_dsn(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void ConfigOAuth::set_oauth_db_dsn(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00001000u;
+  _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.oauth_db_dsn_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:common.v1.ConfigServices.oauth_db_dsn)
+  // @@protoc_insertion_point(field_set:common.v1.ConfigOAuth.oauth_db_dsn)
 }
-inline ::std::string* PROTOBUF_NONNULL ConfigServices::mutable_oauth_db_dsn()
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::mutable_oauth_db_dsn()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::std::string* _s = _internal_mutable_oauth_db_dsn();
-  // @@protoc_insertion_point(field_mutable:common.v1.ConfigServices.oauth_db_dsn)
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigOAuth.oauth_db_dsn)
   return _s;
 }
-inline const ::std::string& ConfigServices::_internal_oauth_db_dsn() const {
+inline const ::std::string& ConfigOAuth::_internal_oauth_db_dsn() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.oauth_db_dsn_.Get();
 }
-inline void ConfigServices::_internal_set_oauth_db_dsn(const ::std::string& value) {
+inline void ConfigOAuth::_internal_set_oauth_db_dsn(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00001000u;
+  _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.oauth_db_dsn_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL ConfigServices::_internal_mutable_oauth_db_dsn() {
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::_internal_mutable_oauth_db_dsn() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00001000u;
+  _impl_._has_bits_[0] |= 0x00000008u;
   return _impl_.oauth_db_dsn_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE ConfigServices::release_oauth_db_dsn() {
+inline ::std::string* PROTOBUF_NULLABLE ConfigOAuth::release_oauth_db_dsn() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:common.v1.ConfigServices.oauth_db_dsn)
-  if ((_impl_._has_bits_[0] & 0x00001000u) == 0) {
+  // @@protoc_insertion_point(field_release:common.v1.ConfigOAuth.oauth_db_dsn)
+  if ((_impl_._has_bits_[0] & 0x00000008u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00001000u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
   auto* released = _impl_.oauth_db_dsn_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.oauth_db_dsn_.Set("", GetArena());
   }
   return released;
 }
-inline void ConfigServices::set_allocated_oauth_db_dsn(::std::string* PROTOBUF_NULLABLE value) {
+inline void ConfigOAuth::set_allocated_oauth_db_dsn(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00001000u;
+    _impl_._has_bits_[0] |= 0x00000008u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00001000u;
+    _impl_._has_bits_[0] &= ~0x00000008u;
   }
   _impl_.oauth_db_dsn_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.oauth_db_dsn_.IsDefault()) {
     _impl_.oauth_db_dsn_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigServices.oauth_db_dsn)
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigOAuth.oauth_db_dsn)
+}
+
+// optional string oauth_redirect_url = 5 [json_name = "oauthRedirectUrl"];
+inline bool ConfigOAuth::has_oauth_redirect_url() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  return value;
+}
+inline void ConfigOAuth::clear_oauth_redirect_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.oauth_redirect_url_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000010u;
+}
+inline const ::std::string& ConfigOAuth::oauth_redirect_url() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigOAuth.oauth_redirect_url)
+  return _internal_oauth_redirect_url();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigOAuth::set_oauth_redirect_url(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_.oauth_redirect_url_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigOAuth.oauth_redirect_url)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::mutable_oauth_redirect_url()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_oauth_redirect_url();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigOAuth.oauth_redirect_url)
+  return _s;
+}
+inline const ::std::string& ConfigOAuth::_internal_oauth_redirect_url() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.oauth_redirect_url_.Get();
+}
+inline void ConfigOAuth::_internal_set_oauth_redirect_url(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_.oauth_redirect_url_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::_internal_mutable_oauth_redirect_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000010u;
+  return _impl_.oauth_redirect_url_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigOAuth::release_oauth_redirect_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigOAuth.oauth_redirect_url)
+  if ((_impl_._has_bits_[0] & 0x00000010u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000010u;
+  auto* released = _impl_.oauth_redirect_url_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.oauth_redirect_url_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigOAuth::set_allocated_oauth_redirect_url(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000010u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000010u;
+  }
+  _impl_.oauth_redirect_url_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.oauth_redirect_url_.IsDefault()) {
+    _impl_.oauth_redirect_url_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigOAuth.oauth_redirect_url)
+}
+
+// optional string oauth_login_url = 6 [json_name = "oauthLoginUrl"];
+inline bool ConfigOAuth::has_oauth_login_url() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  return value;
+}
+inline void ConfigOAuth::clear_oauth_login_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.oauth_login_url_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000020u;
+}
+inline const ::std::string& ConfigOAuth::oauth_login_url() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigOAuth.oauth_login_url)
+  return _internal_oauth_login_url();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigOAuth::set_oauth_login_url(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_.oauth_login_url_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigOAuth.oauth_login_url)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::mutable_oauth_login_url()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_oauth_login_url();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigOAuth.oauth_login_url)
+  return _s;
+}
+inline const ::std::string& ConfigOAuth::_internal_oauth_login_url() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.oauth_login_url_.Get();
+}
+inline void ConfigOAuth::_internal_set_oauth_login_url(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_.oauth_login_url_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::_internal_mutable_oauth_login_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000020u;
+  return _impl_.oauth_login_url_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigOAuth::release_oauth_login_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigOAuth.oauth_login_url)
+  if ((_impl_._has_bits_[0] & 0x00000020u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000020u;
+  auto* released = _impl_.oauth_login_url_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.oauth_login_url_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigOAuth::set_allocated_oauth_login_url(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000020u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000020u;
+  }
+  _impl_.oauth_login_url_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.oauth_login_url_.IsDefault()) {
+    _impl_.oauth_login_url_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigOAuth.oauth_login_url)
+}
+
+// optional string oauth_consent_url = 7 [json_name = "oauthConsentUrl"];
+inline bool ConfigOAuth::has_oauth_consent_url() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
+  return value;
+}
+inline void ConfigOAuth::clear_oauth_consent_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.oauth_consent_url_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000040u;
+}
+inline const ::std::string& ConfigOAuth::oauth_consent_url() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigOAuth.oauth_consent_url)
+  return _internal_oauth_consent_url();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigOAuth::set_oauth_consent_url(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_.oauth_consent_url_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigOAuth.oauth_consent_url)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::mutable_oauth_consent_url()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_oauth_consent_url();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigOAuth.oauth_consent_url)
+  return _s;
+}
+inline const ::std::string& ConfigOAuth::_internal_oauth_consent_url() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.oauth_consent_url_.Get();
+}
+inline void ConfigOAuth::_internal_set_oauth_consent_url(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_.oauth_consent_url_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::_internal_mutable_oauth_consent_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000040u;
+  return _impl_.oauth_consent_url_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigOAuth::release_oauth_consent_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigOAuth.oauth_consent_url)
+  if ((_impl_._has_bits_[0] & 0x00000040u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000040u;
+  auto* released = _impl_.oauth_consent_url_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.oauth_consent_url_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigOAuth::set_allocated_oauth_consent_url(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000040u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000040u;
+  }
+  _impl_.oauth_consent_url_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.oauth_consent_url_.IsDefault()) {
+    _impl_.oauth_consent_url_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigOAuth.oauth_consent_url)
+}
+
+// optional string oauth_response_type = 8 [json_name = "oauthResponseType"];
+inline bool ConfigOAuth::has_oauth_response_type() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
+  return value;
+}
+inline void ConfigOAuth::clear_oauth_response_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.oauth_response_type_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000080u;
+}
+inline const ::std::string& ConfigOAuth::oauth_response_type() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigOAuth.oauth_response_type)
+  return _internal_oauth_response_type();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigOAuth::set_oauth_response_type(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_.oauth_response_type_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigOAuth.oauth_response_type)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::mutable_oauth_response_type()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_oauth_response_type();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigOAuth.oauth_response_type)
+  return _s;
+}
+inline const ::std::string& ConfigOAuth::_internal_oauth_response_type() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.oauth_response_type_.Get();
+}
+inline void ConfigOAuth::_internal_set_oauth_response_type(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_.oauth_response_type_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::_internal_mutable_oauth_response_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000080u;
+  return _impl_.oauth_response_type_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigOAuth::release_oauth_response_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigOAuth.oauth_response_type)
+  if ((_impl_._has_bits_[0] & 0x00000080u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000080u;
+  auto* released = _impl_.oauth_response_type_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.oauth_response_type_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigOAuth::set_allocated_oauth_response_type(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000080u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000080u;
+  }
+  _impl_.oauth_response_type_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.oauth_response_type_.IsDefault()) {
+    _impl_.oauth_response_type_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigOAuth.oauth_response_type)
+}
+
+// repeated string oauth_scope = 9 [json_name = "oauthScope"];
+inline int ConfigOAuth::_internal_oauth_scope_size() const {
+  return _internal_oauth_scope().size();
+}
+inline int ConfigOAuth::oauth_scope_size() const {
+  return _internal_oauth_scope_size();
+}
+inline void ConfigOAuth::clear_oauth_scope() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.oauth_scope_.Clear();
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::add_oauth_scope()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::std::string* _s = _internal_mutable_oauth_scope()->Add();
+  // @@protoc_insertion_point(field_add_mutable:common.v1.ConfigOAuth.oauth_scope)
+  return _s;
+}
+inline const ::std::string& ConfigOAuth::oauth_scope(int index) const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigOAuth.oauth_scope)
+  return _internal_oauth_scope().Get(index);
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::mutable_oauth_scope(int index)
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigOAuth.oauth_scope)
+  return _internal_mutable_oauth_scope()->Mutable(index);
+}
+template <typename Arg_, typename... Args_>
+inline void ConfigOAuth::set_oauth_scope(int index, Arg_&& value, Args_... args) {
+  ::google::protobuf::internal::AssignToString(*_internal_mutable_oauth_scope()->Mutable(index), ::std::forward<Arg_>(value),
+                        args... );
+  // @@protoc_insertion_point(field_set:common.v1.ConfigOAuth.oauth_scope)
+}
+template <typename Arg_, typename... Args_>
+inline void ConfigOAuth::add_oauth_scope(Arg_&& value, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::google::protobuf::internal::AddToRepeatedPtrField(*_internal_mutable_oauth_scope(),
+                               ::std::forward<Arg_>(value),
+                               args... );
+  // @@protoc_insertion_point(field_add:common.v1.ConfigOAuth.oauth_scope)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>& ConfigOAuth::oauth_scope()
+    const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_list:common.v1.ConfigOAuth.oauth_scope)
+  return _internal_oauth_scope();
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL
+ConfigOAuth::mutable_oauth_scope() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable_list:common.v1.ConfigOAuth.oauth_scope)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _internal_mutable_oauth_scope();
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+ConfigOAuth::_internal_oauth_scope() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.oauth_scope_;
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL
+ConfigOAuth::_internal_mutable_oauth_scope() {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return &_impl_.oauth_scope_;
+}
+
+// optional string oauth_admin_url = 10 [json_name = "oauthAdminUrl"];
+inline bool ConfigOAuth::has_oauth_admin_url() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
+  return value;
+}
+inline void ConfigOAuth::clear_oauth_admin_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.oauth_admin_url_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000100u;
+}
+inline const ::std::string& ConfigOAuth::oauth_admin_url() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigOAuth.oauth_admin_url)
+  return _internal_oauth_admin_url();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigOAuth::set_oauth_admin_url(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000100u;
+  _impl_.oauth_admin_url_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigOAuth.oauth_admin_url)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::mutable_oauth_admin_url()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_oauth_admin_url();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigOAuth.oauth_admin_url)
+  return _s;
+}
+inline const ::std::string& ConfigOAuth::_internal_oauth_admin_url() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.oauth_admin_url_.Get();
+}
+inline void ConfigOAuth::_internal_set_oauth_admin_url(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000100u;
+  _impl_.oauth_admin_url_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::_internal_mutable_oauth_admin_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000100u;
+  return _impl_.oauth_admin_url_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigOAuth::release_oauth_admin_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigOAuth.oauth_admin_url)
+  if ((_impl_._has_bits_[0] & 0x00000100u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000100u;
+  auto* released = _impl_.oauth_admin_url_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.oauth_admin_url_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigOAuth::set_allocated_oauth_admin_url(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000100u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000100u;
+  }
+  _impl_.oauth_admin_url_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.oauth_admin_url_.IsDefault()) {
+    _impl_.oauth_admin_url_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigOAuth.oauth_admin_url)
 }
 
 // -------------------------------------------------------------------
@@ -24661,6 +25388,104 @@ inline void Config::set_allocated_image_proxy(::common::v1::ConfigImageProxy* PR
 
   _impl_.image_proxy_ = reinterpret_cast<::common::v1::ConfigImageProxy*>(value);
   // @@protoc_insertion_point(field_set_allocated:common.v1.Config.image_proxy)
+}
+
+// .common.v1.ConfigOAuth oauth = 22 [json_name = "oauth"];
+inline bool Config::has_oauth() const {
+  bool value = (_impl_._has_bits_[0] & 0x00200000u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.oauth_ != nullptr);
+  return value;
+}
+inline void Config::clear_oauth() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.oauth_ != nullptr) _impl_.oauth_->Clear();
+  _impl_._has_bits_[0] &= ~0x00200000u;
+}
+inline const ::common::v1::ConfigOAuth& Config::_internal_oauth() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::common::v1::ConfigOAuth* p = _impl_.oauth_;
+  return p != nullptr ? *p : reinterpret_cast<const ::common::v1::ConfigOAuth&>(::common::v1::_ConfigOAuth_default_instance_);
+}
+inline const ::common::v1::ConfigOAuth& Config::oauth() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.Config.oauth)
+  return _internal_oauth();
+}
+inline void Config::unsafe_arena_set_allocated_oauth(
+    ::common::v1::ConfigOAuth* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.oauth_);
+  }
+  _impl_.oauth_ = reinterpret_cast<::common::v1::ConfigOAuth*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00200000u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00200000u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:common.v1.Config.oauth)
+}
+inline ::common::v1::ConfigOAuth* PROTOBUF_NULLABLE Config::release_oauth() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00200000u;
+  ::common::v1::ConfigOAuth* released = _impl_.oauth_;
+  _impl_.oauth_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::common::v1::ConfigOAuth* PROTOBUF_NULLABLE Config::unsafe_arena_release_oauth() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.Config.oauth)
+
+  _impl_._has_bits_[0] &= ~0x00200000u;
+  ::common::v1::ConfigOAuth* temp = _impl_.oauth_;
+  _impl_.oauth_ = nullptr;
+  return temp;
+}
+inline ::common::v1::ConfigOAuth* PROTOBUF_NONNULL Config::_internal_mutable_oauth() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.oauth_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::common::v1::ConfigOAuth>(GetArena());
+    _impl_.oauth_ = reinterpret_cast<::common::v1::ConfigOAuth*>(p);
+  }
+  return _impl_.oauth_;
+}
+inline ::common::v1::ConfigOAuth* PROTOBUF_NONNULL Config::mutable_oauth()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00200000u;
+  ::common::v1::ConfigOAuth* _msg = _internal_mutable_oauth();
+  // @@protoc_insertion_point(field_mutable:common.v1.Config.oauth)
+  return _msg;
+}
+inline void Config::set_allocated_oauth(::common::v1::ConfigOAuth* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.oauth_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = value->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00200000u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00200000u;
+  }
+
+  _impl_.oauth_ = reinterpret_cast<::common::v1::ConfigOAuth*>(value);
+  // @@protoc_insertion_point(field_set_allocated:common.v1.Config.oauth)
 }
 
 // -------------------------------------------------------------------

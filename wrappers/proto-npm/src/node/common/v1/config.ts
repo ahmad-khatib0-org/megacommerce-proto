@@ -45,10 +45,19 @@ export interface ConfigServices {
   usersServiceMaxReceiveMessageSizeBytes?: string | undefined;
   authServiceGrpcUrl?: string | undefined;
   authServicePrometheusUrl?: string | undefined;
+}
+
+export interface ConfigOAuth {
   oauthProviderUrl?: string | undefined;
   oauthClientId?: string | undefined;
   oauthClientSecret?: string | undefined;
   oauthDbDsn?: string | undefined;
+  oauthRedirectUrl?: string | undefined;
+  oauthLoginUrl?: string | undefined;
+  oauthConsentUrl?: string | undefined;
+  oauthResponseType?: string | undefined;
+  oauthScope: string[];
+  oauthAdminUrl?: string | undefined;
 }
 
 export interface ConfigSecurity {
@@ -393,6 +402,7 @@ export interface Config {
   bleve?: ConfigBleve | undefined;
   dataRetention?: ConfigDataRetention | undefined;
   imageProxy?: ConfigImageProxy | undefined;
+  oauth?: ConfigOAuth | undefined;
 }
 
 export interface ConfigGetRequest {
@@ -855,10 +865,6 @@ function createBaseConfigServices(): ConfigServices {
     usersServiceMaxReceiveMessageSizeBytes: undefined,
     authServiceGrpcUrl: undefined,
     authServicePrometheusUrl: undefined,
-    oauthProviderUrl: undefined,
-    oauthClientId: undefined,
-    oauthClientSecret: undefined,
-    oauthDbDsn: undefined,
   };
 }
 
@@ -893,18 +899,6 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     }
     if (message.authServicePrometheusUrl !== undefined) {
       writer.uint32(82).string(message.authServicePrometheusUrl);
-    }
-    if (message.oauthProviderUrl !== undefined) {
-      writer.uint32(90).string(message.oauthProviderUrl);
-    }
-    if (message.oauthClientId !== undefined) {
-      writer.uint32(98).string(message.oauthClientId);
-    }
-    if (message.oauthClientSecret !== undefined) {
-      writer.uint32(106).string(message.oauthClientSecret);
-    }
-    if (message.oauthDbDsn !== undefined) {
-      writer.uint32(114).string(message.oauthDbDsn);
     }
     return writer;
   },
@@ -996,38 +990,6 @@ export const ConfigServices: MessageFns<ConfigServices> = {
           message.authServicePrometheusUrl = reader.string();
           continue;
         }
-        case 11: {
-          if (tag !== 90) {
-            break;
-          }
-
-          message.oauthProviderUrl = reader.string();
-          continue;
-        }
-        case 12: {
-          if (tag !== 98) {
-            break;
-          }
-
-          message.oauthClientId = reader.string();
-          continue;
-        }
-        case 13: {
-          if (tag !== 106) {
-            break;
-          }
-
-          message.oauthClientSecret = reader.string();
-          continue;
-        }
-        case 14: {
-          if (tag !== 114) {
-            break;
-          }
-
-          message.oauthDbDsn = reader.string();
-          continue;
-        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -1063,10 +1025,6 @@ export const ConfigServices: MessageFns<ConfigServices> = {
       authServicePrometheusUrl: isSet(object.authServicePrometheusUrl)
         ? globalThis.String(object.authServicePrometheusUrl)
         : undefined,
-      oauthProviderUrl: isSet(object.oauthProviderUrl) ? globalThis.String(object.oauthProviderUrl) : undefined,
-      oauthClientId: isSet(object.oauthClientId) ? globalThis.String(object.oauthClientId) : undefined,
-      oauthClientSecret: isSet(object.oauthClientSecret) ? globalThis.String(object.oauthClientSecret) : undefined,
-      oauthDbDsn: isSet(object.oauthDbDsn) ? globalThis.String(object.oauthDbDsn) : undefined,
     };
   },
 
@@ -1102,18 +1060,6 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     if (message.authServicePrometheusUrl !== undefined) {
       obj.authServicePrometheusUrl = message.authServicePrometheusUrl;
     }
-    if (message.oauthProviderUrl !== undefined) {
-      obj.oauthProviderUrl = message.oauthProviderUrl;
-    }
-    if (message.oauthClientId !== undefined) {
-      obj.oauthClientId = message.oauthClientId;
-    }
-    if (message.oauthClientSecret !== undefined) {
-      obj.oauthClientSecret = message.oauthClientSecret;
-    }
-    if (message.oauthDbDsn !== undefined) {
-      obj.oauthDbDsn = message.oauthDbDsn;
-    }
     return obj;
   },
 
@@ -1132,10 +1078,223 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     message.usersServiceMaxReceiveMessageSizeBytes = object.usersServiceMaxReceiveMessageSizeBytes ?? undefined;
     message.authServiceGrpcUrl = object.authServiceGrpcUrl ?? undefined;
     message.authServicePrometheusUrl = object.authServicePrometheusUrl ?? undefined;
+    return message;
+  },
+};
+
+function createBaseConfigOAuth(): ConfigOAuth {
+  return {
+    oauthProviderUrl: undefined,
+    oauthClientId: undefined,
+    oauthClientSecret: undefined,
+    oauthDbDsn: undefined,
+    oauthRedirectUrl: undefined,
+    oauthLoginUrl: undefined,
+    oauthConsentUrl: undefined,
+    oauthResponseType: undefined,
+    oauthScope: [],
+    oauthAdminUrl: undefined,
+  };
+}
+
+export const ConfigOAuth: MessageFns<ConfigOAuth> = {
+  encode(message: ConfigOAuth, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.oauthProviderUrl !== undefined) {
+      writer.uint32(10).string(message.oauthProviderUrl);
+    }
+    if (message.oauthClientId !== undefined) {
+      writer.uint32(18).string(message.oauthClientId);
+    }
+    if (message.oauthClientSecret !== undefined) {
+      writer.uint32(26).string(message.oauthClientSecret);
+    }
+    if (message.oauthDbDsn !== undefined) {
+      writer.uint32(34).string(message.oauthDbDsn);
+    }
+    if (message.oauthRedirectUrl !== undefined) {
+      writer.uint32(42).string(message.oauthRedirectUrl);
+    }
+    if (message.oauthLoginUrl !== undefined) {
+      writer.uint32(50).string(message.oauthLoginUrl);
+    }
+    if (message.oauthConsentUrl !== undefined) {
+      writer.uint32(58).string(message.oauthConsentUrl);
+    }
+    if (message.oauthResponseType !== undefined) {
+      writer.uint32(66).string(message.oauthResponseType);
+    }
+    for (const v of message.oauthScope) {
+      writer.uint32(74).string(v!);
+    }
+    if (message.oauthAdminUrl !== undefined) {
+      writer.uint32(82).string(message.oauthAdminUrl);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ConfigOAuth {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    let end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseConfigOAuth();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.oauthProviderUrl = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.oauthClientId = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 26) {
+            break;
+          }
+
+          message.oauthClientSecret = reader.string();
+          continue;
+        }
+        case 4: {
+          if (tag !== 34) {
+            break;
+          }
+
+          message.oauthDbDsn = reader.string();
+          continue;
+        }
+        case 5: {
+          if (tag !== 42) {
+            break;
+          }
+
+          message.oauthRedirectUrl = reader.string();
+          continue;
+        }
+        case 6: {
+          if (tag !== 50) {
+            break;
+          }
+
+          message.oauthLoginUrl = reader.string();
+          continue;
+        }
+        case 7: {
+          if (tag !== 58) {
+            break;
+          }
+
+          message.oauthConsentUrl = reader.string();
+          continue;
+        }
+        case 8: {
+          if (tag !== 66) {
+            break;
+          }
+
+          message.oauthResponseType = reader.string();
+          continue;
+        }
+        case 9: {
+          if (tag !== 74) {
+            break;
+          }
+
+          message.oauthScope.push(reader.string());
+          continue;
+        }
+        case 10: {
+          if (tag !== 82) {
+            break;
+          }
+
+          message.oauthAdminUrl = reader.string();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ConfigOAuth {
+    return {
+      oauthProviderUrl: isSet(object.oauthProviderUrl) ? globalThis.String(object.oauthProviderUrl) : undefined,
+      oauthClientId: isSet(object.oauthClientId) ? globalThis.String(object.oauthClientId) : undefined,
+      oauthClientSecret: isSet(object.oauthClientSecret) ? globalThis.String(object.oauthClientSecret) : undefined,
+      oauthDbDsn: isSet(object.oauthDbDsn) ? globalThis.String(object.oauthDbDsn) : undefined,
+      oauthRedirectUrl: isSet(object.oauthRedirectUrl) ? globalThis.String(object.oauthRedirectUrl) : undefined,
+      oauthLoginUrl: isSet(object.oauthLoginUrl) ? globalThis.String(object.oauthLoginUrl) : undefined,
+      oauthConsentUrl: isSet(object.oauthConsentUrl) ? globalThis.String(object.oauthConsentUrl) : undefined,
+      oauthResponseType: isSet(object.oauthResponseType) ? globalThis.String(object.oauthResponseType) : undefined,
+      oauthScope: globalThis.Array.isArray(object?.oauthScope)
+        ? object.oauthScope.map((e: any) => globalThis.String(e))
+        : [],
+      oauthAdminUrl: isSet(object.oauthAdminUrl) ? globalThis.String(object.oauthAdminUrl) : undefined,
+    };
+  },
+
+  toJSON(message: ConfigOAuth): unknown {
+    const obj: any = {};
+    if (message.oauthProviderUrl !== undefined) {
+      obj.oauthProviderUrl = message.oauthProviderUrl;
+    }
+    if (message.oauthClientId !== undefined) {
+      obj.oauthClientId = message.oauthClientId;
+    }
+    if (message.oauthClientSecret !== undefined) {
+      obj.oauthClientSecret = message.oauthClientSecret;
+    }
+    if (message.oauthDbDsn !== undefined) {
+      obj.oauthDbDsn = message.oauthDbDsn;
+    }
+    if (message.oauthRedirectUrl !== undefined) {
+      obj.oauthRedirectUrl = message.oauthRedirectUrl;
+    }
+    if (message.oauthLoginUrl !== undefined) {
+      obj.oauthLoginUrl = message.oauthLoginUrl;
+    }
+    if (message.oauthConsentUrl !== undefined) {
+      obj.oauthConsentUrl = message.oauthConsentUrl;
+    }
+    if (message.oauthResponseType !== undefined) {
+      obj.oauthResponseType = message.oauthResponseType;
+    }
+    if (message.oauthScope?.length) {
+      obj.oauthScope = message.oauthScope;
+    }
+    if (message.oauthAdminUrl !== undefined) {
+      obj.oauthAdminUrl = message.oauthAdminUrl;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ConfigOAuth>, I>>(base?: I): ConfigOAuth {
+    return ConfigOAuth.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ConfigOAuth>, I>>(object: I): ConfigOAuth {
+    const message = createBaseConfigOAuth();
     message.oauthProviderUrl = object.oauthProviderUrl ?? undefined;
     message.oauthClientId = object.oauthClientId ?? undefined;
     message.oauthClientSecret = object.oauthClientSecret ?? undefined;
     message.oauthDbDsn = object.oauthDbDsn ?? undefined;
+    message.oauthRedirectUrl = object.oauthRedirectUrl ?? undefined;
+    message.oauthLoginUrl = object.oauthLoginUrl ?? undefined;
+    message.oauthConsentUrl = object.oauthConsentUrl ?? undefined;
+    message.oauthResponseType = object.oauthResponseType ?? undefined;
+    message.oauthScope = object.oauthScope?.map((e) => e) || [];
+    message.oauthAdminUrl = object.oauthAdminUrl ?? undefined;
     return message;
   },
 };
@@ -6117,6 +6276,7 @@ function createBaseConfig(): Config {
     bleve: undefined,
     dataRetention: undefined,
     imageProxy: undefined,
+    oauth: undefined,
   };
 }
 
@@ -6184,6 +6344,9 @@ export const Config: MessageFns<Config> = {
     }
     if (message.imageProxy !== undefined) {
       ConfigImageProxy.encode(message.imageProxy, writer.uint32(170).fork()).join();
+    }
+    if (message.oauth !== undefined) {
+      ConfigOAuth.encode(message.oauth, writer.uint32(178).fork()).join();
     }
     return writer;
   },
@@ -6363,6 +6526,14 @@ export const Config: MessageFns<Config> = {
           message.imageProxy = ConfigImageProxy.decode(reader, reader.uint32());
           continue;
         }
+        case 22: {
+          if (tag !== 178) {
+            break;
+          }
+
+          message.oauth = ConfigOAuth.decode(reader, reader.uint32());
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -6395,6 +6566,7 @@ export const Config: MessageFns<Config> = {
       bleve: isSet(object.bleve) ? ConfigBleve.fromJSON(object.bleve) : undefined,
       dataRetention: isSet(object.dataRetention) ? ConfigDataRetention.fromJSON(object.dataRetention) : undefined,
       imageProxy: isSet(object.imageProxy) ? ConfigImageProxy.fromJSON(object.imageProxy) : undefined,
+      oauth: isSet(object.oauth) ? ConfigOAuth.fromJSON(object.oauth) : undefined,
     };
   },
 
@@ -6463,6 +6635,9 @@ export const Config: MessageFns<Config> = {
     if (message.imageProxy !== undefined) {
       obj.imageProxy = ConfigImageProxy.toJSON(message.imageProxy);
     }
+    if (message.oauth !== undefined) {
+      obj.oauth = ConfigOAuth.toJSON(message.oauth);
+    }
     return obj;
   },
 
@@ -6529,6 +6704,9 @@ export const Config: MessageFns<Config> = {
       : undefined;
     message.imageProxy = (object.imageProxy !== undefined && object.imageProxy !== null)
       ? ConfigImageProxy.fromPartial(object.imageProxy)
+      : undefined;
+    message.oauth = (object.oauth !== undefined && object.oauth !== null)
+      ? ConfigOAuth.fromPartial(object.oauth)
       : undefined;
     return message;
   },

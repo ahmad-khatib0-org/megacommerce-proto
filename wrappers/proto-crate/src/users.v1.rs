@@ -58,6 +58,8 @@ pub struct LoginRequest {
     pub password: ::prost::alloc::string::String,
     #[prost(string, tag = "3")]
     pub mfa: ::prost::alloc::string::String,
+    #[prost(string, tag = "4")]
+    pub login_challenge: ::prost::alloc::string::String,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

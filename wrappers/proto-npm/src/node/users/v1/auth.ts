@@ -35,6 +35,7 @@ export interface LoginRequest {
   email: string;
   password: string;
   mfa: string;
+  loginChallenge: string;
 }
 
 export interface LoginResponse {
@@ -353,7 +354,7 @@ export const PasswordForgotResponse: MessageFns<PasswordForgotResponse> = {
 };
 
 function createBaseLoginRequest(): LoginRequest {
-  return { email: "", password: "", mfa: "" };
+  return { email: "", password: "", mfa: "", loginChallenge: "" };
 }
 
 export const LoginRequest: MessageFns<LoginRequest> = {
@@ -366,6 +367,9 @@ export const LoginRequest: MessageFns<LoginRequest> = {
     }
     if (message.mfa !== "") {
       writer.uint32(26).string(message.mfa);
+    }
+    if (message.loginChallenge !== "") {
+      writer.uint32(34).string(message.loginChallenge);
     }
     return writer;
   },
@@ -401,6 +405,14 @@ export const LoginRequest: MessageFns<LoginRequest> = {
           message.mfa = reader.string();
           continue;
         }
+        case 4: {
+          if (tag !== 34) {
+            break;
+          }
+
+          message.loginChallenge = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -415,6 +427,7 @@ export const LoginRequest: MessageFns<LoginRequest> = {
       email: isSet(object.email) ? globalThis.String(object.email) : "",
       password: isSet(object.password) ? globalThis.String(object.password) : "",
       mfa: isSet(object.mfa) ? globalThis.String(object.mfa) : "",
+      loginChallenge: isSet(object.loginChallenge) ? globalThis.String(object.loginChallenge) : "",
     };
   },
 
@@ -429,6 +442,9 @@ export const LoginRequest: MessageFns<LoginRequest> = {
     if (message.mfa !== "") {
       obj.mfa = message.mfa;
     }
+    if (message.loginChallenge !== "") {
+      obj.loginChallenge = message.loginChallenge;
+    }
     return obj;
   },
 
@@ -440,6 +456,7 @@ export const LoginRequest: MessageFns<LoginRequest> = {
     message.email = object.email ?? "";
     message.password = object.password ?? "";
     message.mfa = object.mfa ?? "";
+    message.loginChallenge = object.loginChallenge ?? "";
     return message;
   },
 };

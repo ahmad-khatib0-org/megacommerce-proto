@@ -21,7 +21,7 @@ generate:
 	buf generate 
 
 	@echo "Generating Rust protobuf files..."
-	find wrappers/proto-crate/src -name "*.rs" -not -name "lib.rs" -o -name "descriptor.bin" -delete
+	find wrappers/proto-crate/src -name "*.rs" -not -name "lib.rs" -o -name "descriptor.bin" -o -name "envoy_descriptor.bin" -delete
 	cargo build --verbose
 	
 	@echo "Generating Python protobuf files..."

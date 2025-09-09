@@ -2950,74 +2950,6 @@ public final class ConfigProto {
      */
     com.google.protobuf.ByteString
         getAuthServicePrometheusUrlBytes();
-
-    /**
-     * <code>optional string oauth_provider_url = 11 [json_name = "oauthProviderUrl"];</code>
-     * @return Whether the oauthProviderUrl field is set.
-     */
-    boolean hasOauthProviderUrl();
-    /**
-     * <code>optional string oauth_provider_url = 11 [json_name = "oauthProviderUrl"];</code>
-     * @return The oauthProviderUrl.
-     */
-    java.lang.String getOauthProviderUrl();
-    /**
-     * <code>optional string oauth_provider_url = 11 [json_name = "oauthProviderUrl"];</code>
-     * @return The bytes for oauthProviderUrl.
-     */
-    com.google.protobuf.ByteString
-        getOauthProviderUrlBytes();
-
-    /**
-     * <code>optional string oauth_client_id = 12 [json_name = "oauthClientId"];</code>
-     * @return Whether the oauthClientId field is set.
-     */
-    boolean hasOauthClientId();
-    /**
-     * <code>optional string oauth_client_id = 12 [json_name = "oauthClientId"];</code>
-     * @return The oauthClientId.
-     */
-    java.lang.String getOauthClientId();
-    /**
-     * <code>optional string oauth_client_id = 12 [json_name = "oauthClientId"];</code>
-     * @return The bytes for oauthClientId.
-     */
-    com.google.protobuf.ByteString
-        getOauthClientIdBytes();
-
-    /**
-     * <code>optional string oauth_client_secret = 13 [json_name = "oauthClientSecret"];</code>
-     * @return Whether the oauthClientSecret field is set.
-     */
-    boolean hasOauthClientSecret();
-    /**
-     * <code>optional string oauth_client_secret = 13 [json_name = "oauthClientSecret"];</code>
-     * @return The oauthClientSecret.
-     */
-    java.lang.String getOauthClientSecret();
-    /**
-     * <code>optional string oauth_client_secret = 13 [json_name = "oauthClientSecret"];</code>
-     * @return The bytes for oauthClientSecret.
-     */
-    com.google.protobuf.ByteString
-        getOauthClientSecretBytes();
-
-    /**
-     * <code>optional string oauth_db_dsn = 14 [json_name = "oauthDbDsn"];</code>
-     * @return Whether the oauthDbDsn field is set.
-     */
-    boolean hasOauthDbDsn();
-    /**
-     * <code>optional string oauth_db_dsn = 14 [json_name = "oauthDbDsn"];</code>
-     * @return The oauthDbDsn.
-     */
-    java.lang.String getOauthDbDsn();
-    /**
-     * <code>optional string oauth_db_dsn = 14 [json_name = "oauthDbDsn"];</code>
-     * @return The bytes for oauthDbDsn.
-     */
-    com.google.protobuf.ByteString
-        getOauthDbDsnBytes();
   }
   /**
    * Protobuf type {@code common.v1.ConfigServices}
@@ -3050,10 +2982,6 @@ public final class ConfigProto {
       productsServicePrometheusUrl_ = "";
       authServiceGrpcUrl_ = "";
       authServicePrometheusUrl_ = "";
-      oauthProviderUrl_ = "";
-      oauthClientId_ = "";
-      oauthClientSecret_ = "";
-      oauthDbDsn_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -3512,194 +3440,6 @@ public final class ConfigProto {
       }
     }
 
-    public static final int OAUTH_PROVIDER_URL_FIELD_NUMBER = 11;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object oauthProviderUrl_ = "";
-    /**
-     * <code>optional string oauth_provider_url = 11 [json_name = "oauthProviderUrl"];</code>
-     * @return Whether the oauthProviderUrl field is set.
-     */
-    @java.lang.Override
-    public boolean hasOauthProviderUrl() {
-      return ((bitField0_ & 0x00000400) != 0);
-    }
-    /**
-     * <code>optional string oauth_provider_url = 11 [json_name = "oauthProviderUrl"];</code>
-     * @return The oauthProviderUrl.
-     */
-    @java.lang.Override
-    public java.lang.String getOauthProviderUrl() {
-      java.lang.Object ref = oauthProviderUrl_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        oauthProviderUrl_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string oauth_provider_url = 11 [json_name = "oauthProviderUrl"];</code>
-     * @return The bytes for oauthProviderUrl.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getOauthProviderUrlBytes() {
-      java.lang.Object ref = oauthProviderUrl_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        oauthProviderUrl_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int OAUTH_CLIENT_ID_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object oauthClientId_ = "";
-    /**
-     * <code>optional string oauth_client_id = 12 [json_name = "oauthClientId"];</code>
-     * @return Whether the oauthClientId field is set.
-     */
-    @java.lang.Override
-    public boolean hasOauthClientId() {
-      return ((bitField0_ & 0x00000800) != 0);
-    }
-    /**
-     * <code>optional string oauth_client_id = 12 [json_name = "oauthClientId"];</code>
-     * @return The oauthClientId.
-     */
-    @java.lang.Override
-    public java.lang.String getOauthClientId() {
-      java.lang.Object ref = oauthClientId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        oauthClientId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string oauth_client_id = 12 [json_name = "oauthClientId"];</code>
-     * @return The bytes for oauthClientId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getOauthClientIdBytes() {
-      java.lang.Object ref = oauthClientId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        oauthClientId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int OAUTH_CLIENT_SECRET_FIELD_NUMBER = 13;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object oauthClientSecret_ = "";
-    /**
-     * <code>optional string oauth_client_secret = 13 [json_name = "oauthClientSecret"];</code>
-     * @return Whether the oauthClientSecret field is set.
-     */
-    @java.lang.Override
-    public boolean hasOauthClientSecret() {
-      return ((bitField0_ & 0x00001000) != 0);
-    }
-    /**
-     * <code>optional string oauth_client_secret = 13 [json_name = "oauthClientSecret"];</code>
-     * @return The oauthClientSecret.
-     */
-    @java.lang.Override
-    public java.lang.String getOauthClientSecret() {
-      java.lang.Object ref = oauthClientSecret_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        oauthClientSecret_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string oauth_client_secret = 13 [json_name = "oauthClientSecret"];</code>
-     * @return The bytes for oauthClientSecret.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getOauthClientSecretBytes() {
-      java.lang.Object ref = oauthClientSecret_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        oauthClientSecret_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int OAUTH_DB_DSN_FIELD_NUMBER = 14;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object oauthDbDsn_ = "";
-    /**
-     * <code>optional string oauth_db_dsn = 14 [json_name = "oauthDbDsn"];</code>
-     * @return Whether the oauthDbDsn field is set.
-     */
-    @java.lang.Override
-    public boolean hasOauthDbDsn() {
-      return ((bitField0_ & 0x00002000) != 0);
-    }
-    /**
-     * <code>optional string oauth_db_dsn = 14 [json_name = "oauthDbDsn"];</code>
-     * @return The oauthDbDsn.
-     */
-    @java.lang.Override
-    public java.lang.String getOauthDbDsn() {
-      java.lang.Object ref = oauthDbDsn_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        oauthDbDsn_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string oauth_db_dsn = 14 [json_name = "oauthDbDsn"];</code>
-     * @return The bytes for oauthDbDsn.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getOauthDbDsnBytes() {
-      java.lang.Object ref = oauthDbDsn_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        oauthDbDsn_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -3744,18 +3484,6 @@ public final class ConfigProto {
       if (((bitField0_ & 0x00000200) != 0)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 10, authServicePrometheusUrl_);
       }
-      if (((bitField0_ & 0x00000400) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 11, oauthProviderUrl_);
-      }
-      if (((bitField0_ & 0x00000800) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 12, oauthClientId_);
-      }
-      if (((bitField0_ & 0x00001000) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 13, oauthClientSecret_);
-      }
-      if (((bitField0_ & 0x00002000) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 14, oauthDbDsn_);
-      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3795,18 +3523,6 @@ public final class ConfigProto {
       }
       if (((bitField0_ & 0x00000200) != 0)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(10, authServicePrometheusUrl_);
-      }
-      if (((bitField0_ & 0x00000400) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(11, oauthProviderUrl_);
-      }
-      if (((bitField0_ & 0x00000800) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(12, oauthClientId_);
-      }
-      if (((bitField0_ & 0x00001000) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(13, oauthClientSecret_);
-      }
-      if (((bitField0_ & 0x00002000) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(14, oauthDbDsn_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3873,26 +3589,6 @@ public final class ConfigProto {
         if (!getAuthServicePrometheusUrl()
             .equals(other.getAuthServicePrometheusUrl())) return false;
       }
-      if (hasOauthProviderUrl() != other.hasOauthProviderUrl()) return false;
-      if (hasOauthProviderUrl()) {
-        if (!getOauthProviderUrl()
-            .equals(other.getOauthProviderUrl())) return false;
-      }
-      if (hasOauthClientId() != other.hasOauthClientId()) return false;
-      if (hasOauthClientId()) {
-        if (!getOauthClientId()
-            .equals(other.getOauthClientId())) return false;
-      }
-      if (hasOauthClientSecret() != other.hasOauthClientSecret()) return false;
-      if (hasOauthClientSecret()) {
-        if (!getOauthClientSecret()
-            .equals(other.getOauthClientSecret())) return false;
-      }
-      if (hasOauthDbDsn() != other.hasOauthDbDsn()) return false;
-      if (hasOauthDbDsn()) {
-        if (!getOauthDbDsn()
-            .equals(other.getOauthDbDsn())) return false;
-      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3944,22 +3640,6 @@ public final class ConfigProto {
       if (hasAuthServicePrometheusUrl()) {
         hash = (37 * hash) + AUTH_SERVICE_PROMETHEUS_URL_FIELD_NUMBER;
         hash = (53 * hash) + getAuthServicePrometheusUrl().hashCode();
-      }
-      if (hasOauthProviderUrl()) {
-        hash = (37 * hash) + OAUTH_PROVIDER_URL_FIELD_NUMBER;
-        hash = (53 * hash) + getOauthProviderUrl().hashCode();
-      }
-      if (hasOauthClientId()) {
-        hash = (37 * hash) + OAUTH_CLIENT_ID_FIELD_NUMBER;
-        hash = (53 * hash) + getOauthClientId().hashCode();
-      }
-      if (hasOauthClientSecret()) {
-        hash = (37 * hash) + OAUTH_CLIENT_SECRET_FIELD_NUMBER;
-        hash = (53 * hash) + getOauthClientSecret().hashCode();
-      }
-      if (hasOauthDbDsn()) {
-        hash = (37 * hash) + OAUTH_DB_DSN_FIELD_NUMBER;
-        hash = (53 * hash) + getOauthDbDsn().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -4102,10 +3782,6 @@ public final class ConfigProto {
         usersServiceMaxReceiveMessageSizeBytes_ = 0L;
         authServiceGrpcUrl_ = "";
         authServicePrometheusUrl_ = "";
-        oauthProviderUrl_ = "";
-        oauthClientId_ = "";
-        oauthClientSecret_ = "";
-        oauthDbDsn_ = "";
         return this;
       }
 
@@ -4180,22 +3856,6 @@ public final class ConfigProto {
           result.authServicePrometheusUrl_ = authServicePrometheusUrl_;
           to_bitField0_ |= 0x00000200;
         }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.oauthProviderUrl_ = oauthProviderUrl_;
-          to_bitField0_ |= 0x00000400;
-        }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.oauthClientId_ = oauthClientId_;
-          to_bitField0_ |= 0x00000800;
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.oauthClientSecret_ = oauthClientSecret_;
-          to_bitField0_ |= 0x00001000;
-        }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.oauthDbDsn_ = oauthDbDsn_;
-          to_bitField0_ |= 0x00002000;
-        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -4257,26 +3917,6 @@ public final class ConfigProto {
         if (other.hasAuthServicePrometheusUrl()) {
           authServicePrometheusUrl_ = other.authServicePrometheusUrl_;
           bitField0_ |= 0x00000200;
-          onChanged();
-        }
-        if (other.hasOauthProviderUrl()) {
-          oauthProviderUrl_ = other.oauthProviderUrl_;
-          bitField0_ |= 0x00000400;
-          onChanged();
-        }
-        if (other.hasOauthClientId()) {
-          oauthClientId_ = other.oauthClientId_;
-          bitField0_ |= 0x00000800;
-          onChanged();
-        }
-        if (other.hasOauthClientSecret()) {
-          oauthClientSecret_ = other.oauthClientSecret_;
-          bitField0_ |= 0x00001000;
-          onChanged();
-        }
-        if (other.hasOauthDbDsn()) {
-          oauthDbDsn_ = other.oauthDbDsn_;
-          bitField0_ |= 0x00002000;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -4355,26 +3995,6 @@ public final class ConfigProto {
                 bitField0_ |= 0x00000200;
                 break;
               } // case 82
-              case 90: {
-                oauthProviderUrl_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 90
-              case 98: {
-                oauthClientId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 98
-              case 106: {
-                oauthClientSecret_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
-                break;
-              } // case 106
-              case 114: {
-                oauthDbDsn_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
-                break;
-              } // case 114
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -5143,322 +4763,6 @@ public final class ConfigProto {
         return this;
       }
 
-      private java.lang.Object oauthProviderUrl_ = "";
-      /**
-       * <code>optional string oauth_provider_url = 11 [json_name = "oauthProviderUrl"];</code>
-       * @return Whether the oauthProviderUrl field is set.
-       */
-      public boolean hasOauthProviderUrl() {
-        return ((bitField0_ & 0x00000400) != 0);
-      }
-      /**
-       * <code>optional string oauth_provider_url = 11 [json_name = "oauthProviderUrl"];</code>
-       * @return The oauthProviderUrl.
-       */
-      public java.lang.String getOauthProviderUrl() {
-        java.lang.Object ref = oauthProviderUrl_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          oauthProviderUrl_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string oauth_provider_url = 11 [json_name = "oauthProviderUrl"];</code>
-       * @return The bytes for oauthProviderUrl.
-       */
-      public com.google.protobuf.ByteString
-          getOauthProviderUrlBytes() {
-        java.lang.Object ref = oauthProviderUrl_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          oauthProviderUrl_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string oauth_provider_url = 11 [json_name = "oauthProviderUrl"];</code>
-       * @param value The oauthProviderUrl to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOauthProviderUrl(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        oauthProviderUrl_ = value;
-        bitField0_ |= 0x00000400;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string oauth_provider_url = 11 [json_name = "oauthProviderUrl"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOauthProviderUrl() {
-        oauthProviderUrl_ = getDefaultInstance().getOauthProviderUrl();
-        bitField0_ = (bitField0_ & ~0x00000400);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string oauth_provider_url = 11 [json_name = "oauthProviderUrl"];</code>
-       * @param value The bytes for oauthProviderUrl to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOauthProviderUrlBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        oauthProviderUrl_ = value;
-        bitField0_ |= 0x00000400;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object oauthClientId_ = "";
-      /**
-       * <code>optional string oauth_client_id = 12 [json_name = "oauthClientId"];</code>
-       * @return Whether the oauthClientId field is set.
-       */
-      public boolean hasOauthClientId() {
-        return ((bitField0_ & 0x00000800) != 0);
-      }
-      /**
-       * <code>optional string oauth_client_id = 12 [json_name = "oauthClientId"];</code>
-       * @return The oauthClientId.
-       */
-      public java.lang.String getOauthClientId() {
-        java.lang.Object ref = oauthClientId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          oauthClientId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string oauth_client_id = 12 [json_name = "oauthClientId"];</code>
-       * @return The bytes for oauthClientId.
-       */
-      public com.google.protobuf.ByteString
-          getOauthClientIdBytes() {
-        java.lang.Object ref = oauthClientId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          oauthClientId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string oauth_client_id = 12 [json_name = "oauthClientId"];</code>
-       * @param value The oauthClientId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOauthClientId(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        oauthClientId_ = value;
-        bitField0_ |= 0x00000800;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string oauth_client_id = 12 [json_name = "oauthClientId"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOauthClientId() {
-        oauthClientId_ = getDefaultInstance().getOauthClientId();
-        bitField0_ = (bitField0_ & ~0x00000800);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string oauth_client_id = 12 [json_name = "oauthClientId"];</code>
-       * @param value The bytes for oauthClientId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOauthClientIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        oauthClientId_ = value;
-        bitField0_ |= 0x00000800;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object oauthClientSecret_ = "";
-      /**
-       * <code>optional string oauth_client_secret = 13 [json_name = "oauthClientSecret"];</code>
-       * @return Whether the oauthClientSecret field is set.
-       */
-      public boolean hasOauthClientSecret() {
-        return ((bitField0_ & 0x00001000) != 0);
-      }
-      /**
-       * <code>optional string oauth_client_secret = 13 [json_name = "oauthClientSecret"];</code>
-       * @return The oauthClientSecret.
-       */
-      public java.lang.String getOauthClientSecret() {
-        java.lang.Object ref = oauthClientSecret_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          oauthClientSecret_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string oauth_client_secret = 13 [json_name = "oauthClientSecret"];</code>
-       * @return The bytes for oauthClientSecret.
-       */
-      public com.google.protobuf.ByteString
-          getOauthClientSecretBytes() {
-        java.lang.Object ref = oauthClientSecret_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          oauthClientSecret_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string oauth_client_secret = 13 [json_name = "oauthClientSecret"];</code>
-       * @param value The oauthClientSecret to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOauthClientSecret(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        oauthClientSecret_ = value;
-        bitField0_ |= 0x00001000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string oauth_client_secret = 13 [json_name = "oauthClientSecret"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOauthClientSecret() {
-        oauthClientSecret_ = getDefaultInstance().getOauthClientSecret();
-        bitField0_ = (bitField0_ & ~0x00001000);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string oauth_client_secret = 13 [json_name = "oauthClientSecret"];</code>
-       * @param value The bytes for oauthClientSecret to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOauthClientSecretBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        oauthClientSecret_ = value;
-        bitField0_ |= 0x00001000;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object oauthDbDsn_ = "";
-      /**
-       * <code>optional string oauth_db_dsn = 14 [json_name = "oauthDbDsn"];</code>
-       * @return Whether the oauthDbDsn field is set.
-       */
-      public boolean hasOauthDbDsn() {
-        return ((bitField0_ & 0x00002000) != 0);
-      }
-      /**
-       * <code>optional string oauth_db_dsn = 14 [json_name = "oauthDbDsn"];</code>
-       * @return The oauthDbDsn.
-       */
-      public java.lang.String getOauthDbDsn() {
-        java.lang.Object ref = oauthDbDsn_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          oauthDbDsn_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string oauth_db_dsn = 14 [json_name = "oauthDbDsn"];</code>
-       * @return The bytes for oauthDbDsn.
-       */
-      public com.google.protobuf.ByteString
-          getOauthDbDsnBytes() {
-        java.lang.Object ref = oauthDbDsn_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          oauthDbDsn_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string oauth_db_dsn = 14 [json_name = "oauthDbDsn"];</code>
-       * @param value The oauthDbDsn to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOauthDbDsn(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        oauthDbDsn_ = value;
-        bitField0_ |= 0x00002000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string oauth_db_dsn = 14 [json_name = "oauthDbDsn"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearOauthDbDsn() {
-        oauthDbDsn_ = getDefaultInstance().getOauthDbDsn();
-        bitField0_ = (bitField0_ & ~0x00002000);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string oauth_db_dsn = 14 [json_name = "oauthDbDsn"];</code>
-       * @param value The bytes for oauthDbDsn to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOauthDbDsnBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        oauthDbDsn_ = value;
-        bitField0_ |= 0x00002000;
-        onChanged();
-        return this;
-      }
-
       // @@protoc_insertion_point(builder_scope:common.v1.ConfigServices)
     }
 
@@ -5505,6 +4809,2151 @@ public final class ConfigProto {
 
     @java.lang.Override
     public org.megacommerce.common.v1.ConfigProto.ConfigServices getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ConfigOAuthOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:common.v1.ConfigOAuth)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string oauth_provider_url = 1 [json_name = "oauthProviderUrl"];</code>
+     * @return Whether the oauthProviderUrl field is set.
+     */
+    boolean hasOauthProviderUrl();
+    /**
+     * <code>optional string oauth_provider_url = 1 [json_name = "oauthProviderUrl"];</code>
+     * @return The oauthProviderUrl.
+     */
+    java.lang.String getOauthProviderUrl();
+    /**
+     * <code>optional string oauth_provider_url = 1 [json_name = "oauthProviderUrl"];</code>
+     * @return The bytes for oauthProviderUrl.
+     */
+    com.google.protobuf.ByteString
+        getOauthProviderUrlBytes();
+
+    /**
+     * <code>optional string oauth_client_id = 2 [json_name = "oauthClientId"];</code>
+     * @return Whether the oauthClientId field is set.
+     */
+    boolean hasOauthClientId();
+    /**
+     * <code>optional string oauth_client_id = 2 [json_name = "oauthClientId"];</code>
+     * @return The oauthClientId.
+     */
+    java.lang.String getOauthClientId();
+    /**
+     * <code>optional string oauth_client_id = 2 [json_name = "oauthClientId"];</code>
+     * @return The bytes for oauthClientId.
+     */
+    com.google.protobuf.ByteString
+        getOauthClientIdBytes();
+
+    /**
+     * <code>optional string oauth_client_secret = 3 [json_name = "oauthClientSecret"];</code>
+     * @return Whether the oauthClientSecret field is set.
+     */
+    boolean hasOauthClientSecret();
+    /**
+     * <code>optional string oauth_client_secret = 3 [json_name = "oauthClientSecret"];</code>
+     * @return The oauthClientSecret.
+     */
+    java.lang.String getOauthClientSecret();
+    /**
+     * <code>optional string oauth_client_secret = 3 [json_name = "oauthClientSecret"];</code>
+     * @return The bytes for oauthClientSecret.
+     */
+    com.google.protobuf.ByteString
+        getOauthClientSecretBytes();
+
+    /**
+     * <code>optional string oauth_db_dsn = 4 [json_name = "oauthDbDsn"];</code>
+     * @return Whether the oauthDbDsn field is set.
+     */
+    boolean hasOauthDbDsn();
+    /**
+     * <code>optional string oauth_db_dsn = 4 [json_name = "oauthDbDsn"];</code>
+     * @return The oauthDbDsn.
+     */
+    java.lang.String getOauthDbDsn();
+    /**
+     * <code>optional string oauth_db_dsn = 4 [json_name = "oauthDbDsn"];</code>
+     * @return The bytes for oauthDbDsn.
+     */
+    com.google.protobuf.ByteString
+        getOauthDbDsnBytes();
+
+    /**
+     * <code>optional string oauth_redirect_url = 5 [json_name = "oauthRedirectUrl"];</code>
+     * @return Whether the oauthRedirectUrl field is set.
+     */
+    boolean hasOauthRedirectUrl();
+    /**
+     * <code>optional string oauth_redirect_url = 5 [json_name = "oauthRedirectUrl"];</code>
+     * @return The oauthRedirectUrl.
+     */
+    java.lang.String getOauthRedirectUrl();
+    /**
+     * <code>optional string oauth_redirect_url = 5 [json_name = "oauthRedirectUrl"];</code>
+     * @return The bytes for oauthRedirectUrl.
+     */
+    com.google.protobuf.ByteString
+        getOauthRedirectUrlBytes();
+
+    /**
+     * <code>optional string oauth_login_url = 6 [json_name = "oauthLoginUrl"];</code>
+     * @return Whether the oauthLoginUrl field is set.
+     */
+    boolean hasOauthLoginUrl();
+    /**
+     * <code>optional string oauth_login_url = 6 [json_name = "oauthLoginUrl"];</code>
+     * @return The oauthLoginUrl.
+     */
+    java.lang.String getOauthLoginUrl();
+    /**
+     * <code>optional string oauth_login_url = 6 [json_name = "oauthLoginUrl"];</code>
+     * @return The bytes for oauthLoginUrl.
+     */
+    com.google.protobuf.ByteString
+        getOauthLoginUrlBytes();
+
+    /**
+     * <code>optional string oauth_consent_url = 7 [json_name = "oauthConsentUrl"];</code>
+     * @return Whether the oauthConsentUrl field is set.
+     */
+    boolean hasOauthConsentUrl();
+    /**
+     * <code>optional string oauth_consent_url = 7 [json_name = "oauthConsentUrl"];</code>
+     * @return The oauthConsentUrl.
+     */
+    java.lang.String getOauthConsentUrl();
+    /**
+     * <code>optional string oauth_consent_url = 7 [json_name = "oauthConsentUrl"];</code>
+     * @return The bytes for oauthConsentUrl.
+     */
+    com.google.protobuf.ByteString
+        getOauthConsentUrlBytes();
+
+    /**
+     * <code>optional string oauth_response_type = 8 [json_name = "oauthResponseType"];</code>
+     * @return Whether the oauthResponseType field is set.
+     */
+    boolean hasOauthResponseType();
+    /**
+     * <code>optional string oauth_response_type = 8 [json_name = "oauthResponseType"];</code>
+     * @return The oauthResponseType.
+     */
+    java.lang.String getOauthResponseType();
+    /**
+     * <code>optional string oauth_response_type = 8 [json_name = "oauthResponseType"];</code>
+     * @return The bytes for oauthResponseType.
+     */
+    com.google.protobuf.ByteString
+        getOauthResponseTypeBytes();
+
+    /**
+     * <code>repeated string oauth_scope = 9 [json_name = "oauthScope"];</code>
+     * @return A list containing the oauthScope.
+     */
+    java.util.List<java.lang.String>
+        getOauthScopeList();
+    /**
+     * <code>repeated string oauth_scope = 9 [json_name = "oauthScope"];</code>
+     * @return The count of oauthScope.
+     */
+    int getOauthScopeCount();
+    /**
+     * <code>repeated string oauth_scope = 9 [json_name = "oauthScope"];</code>
+     * @param index The index of the element to return.
+     * @return The oauthScope at the given index.
+     */
+    java.lang.String getOauthScope(int index);
+    /**
+     * <code>repeated string oauth_scope = 9 [json_name = "oauthScope"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the oauthScope at the given index.
+     */
+    com.google.protobuf.ByteString
+        getOauthScopeBytes(int index);
+
+    /**
+     * <code>optional string oauth_admin_url = 10 [json_name = "oauthAdminUrl"];</code>
+     * @return Whether the oauthAdminUrl field is set.
+     */
+    boolean hasOauthAdminUrl();
+    /**
+     * <code>optional string oauth_admin_url = 10 [json_name = "oauthAdminUrl"];</code>
+     * @return The oauthAdminUrl.
+     */
+    java.lang.String getOauthAdminUrl();
+    /**
+     * <code>optional string oauth_admin_url = 10 [json_name = "oauthAdminUrl"];</code>
+     * @return The bytes for oauthAdminUrl.
+     */
+    com.google.protobuf.ByteString
+        getOauthAdminUrlBytes();
+  }
+  /**
+   * Protobuf type {@code common.v1.ConfigOAuth}
+   */
+  public static final class ConfigOAuth extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:common.v1.ConfigOAuth)
+      ConfigOAuthOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ConfigOAuth.class.getName());
+    }
+    // Use ConfigOAuth.newBuilder() to construct.
+    private ConfigOAuth(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ConfigOAuth() {
+      oauthProviderUrl_ = "";
+      oauthClientId_ = "";
+      oauthClientSecret_ = "";
+      oauthDbDsn_ = "";
+      oauthRedirectUrl_ = "";
+      oauthLoginUrl_ = "";
+      oauthConsentUrl_ = "";
+      oauthResponseType_ = "";
+      oauthScope_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      oauthAdminUrl_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigOAuth_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigOAuth_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.common.v1.ConfigProto.ConfigOAuth.class, org.megacommerce.common.v1.ConfigProto.ConfigOAuth.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int OAUTH_PROVIDER_URL_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object oauthProviderUrl_ = "";
+    /**
+     * <code>optional string oauth_provider_url = 1 [json_name = "oauthProviderUrl"];</code>
+     * @return Whether the oauthProviderUrl field is set.
+     */
+    @java.lang.Override
+    public boolean hasOauthProviderUrl() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional string oauth_provider_url = 1 [json_name = "oauthProviderUrl"];</code>
+     * @return The oauthProviderUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getOauthProviderUrl() {
+      java.lang.Object ref = oauthProviderUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        oauthProviderUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string oauth_provider_url = 1 [json_name = "oauthProviderUrl"];</code>
+     * @return The bytes for oauthProviderUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOauthProviderUrlBytes() {
+      java.lang.Object ref = oauthProviderUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        oauthProviderUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OAUTH_CLIENT_ID_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object oauthClientId_ = "";
+    /**
+     * <code>optional string oauth_client_id = 2 [json_name = "oauthClientId"];</code>
+     * @return Whether the oauthClientId field is set.
+     */
+    @java.lang.Override
+    public boolean hasOauthClientId() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional string oauth_client_id = 2 [json_name = "oauthClientId"];</code>
+     * @return The oauthClientId.
+     */
+    @java.lang.Override
+    public java.lang.String getOauthClientId() {
+      java.lang.Object ref = oauthClientId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        oauthClientId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string oauth_client_id = 2 [json_name = "oauthClientId"];</code>
+     * @return The bytes for oauthClientId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOauthClientIdBytes() {
+      java.lang.Object ref = oauthClientId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        oauthClientId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OAUTH_CLIENT_SECRET_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object oauthClientSecret_ = "";
+    /**
+     * <code>optional string oauth_client_secret = 3 [json_name = "oauthClientSecret"];</code>
+     * @return Whether the oauthClientSecret field is set.
+     */
+    @java.lang.Override
+    public boolean hasOauthClientSecret() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional string oauth_client_secret = 3 [json_name = "oauthClientSecret"];</code>
+     * @return The oauthClientSecret.
+     */
+    @java.lang.Override
+    public java.lang.String getOauthClientSecret() {
+      java.lang.Object ref = oauthClientSecret_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        oauthClientSecret_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string oauth_client_secret = 3 [json_name = "oauthClientSecret"];</code>
+     * @return The bytes for oauthClientSecret.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOauthClientSecretBytes() {
+      java.lang.Object ref = oauthClientSecret_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        oauthClientSecret_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OAUTH_DB_DSN_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object oauthDbDsn_ = "";
+    /**
+     * <code>optional string oauth_db_dsn = 4 [json_name = "oauthDbDsn"];</code>
+     * @return Whether the oauthDbDsn field is set.
+     */
+    @java.lang.Override
+    public boolean hasOauthDbDsn() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>optional string oauth_db_dsn = 4 [json_name = "oauthDbDsn"];</code>
+     * @return The oauthDbDsn.
+     */
+    @java.lang.Override
+    public java.lang.String getOauthDbDsn() {
+      java.lang.Object ref = oauthDbDsn_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        oauthDbDsn_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string oauth_db_dsn = 4 [json_name = "oauthDbDsn"];</code>
+     * @return The bytes for oauthDbDsn.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOauthDbDsnBytes() {
+      java.lang.Object ref = oauthDbDsn_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        oauthDbDsn_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OAUTH_REDIRECT_URL_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object oauthRedirectUrl_ = "";
+    /**
+     * <code>optional string oauth_redirect_url = 5 [json_name = "oauthRedirectUrl"];</code>
+     * @return Whether the oauthRedirectUrl field is set.
+     */
+    @java.lang.Override
+    public boolean hasOauthRedirectUrl() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>optional string oauth_redirect_url = 5 [json_name = "oauthRedirectUrl"];</code>
+     * @return The oauthRedirectUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getOauthRedirectUrl() {
+      java.lang.Object ref = oauthRedirectUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        oauthRedirectUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string oauth_redirect_url = 5 [json_name = "oauthRedirectUrl"];</code>
+     * @return The bytes for oauthRedirectUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOauthRedirectUrlBytes() {
+      java.lang.Object ref = oauthRedirectUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        oauthRedirectUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OAUTH_LOGIN_URL_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object oauthLoginUrl_ = "";
+    /**
+     * <code>optional string oauth_login_url = 6 [json_name = "oauthLoginUrl"];</code>
+     * @return Whether the oauthLoginUrl field is set.
+     */
+    @java.lang.Override
+    public boolean hasOauthLoginUrl() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <code>optional string oauth_login_url = 6 [json_name = "oauthLoginUrl"];</code>
+     * @return The oauthLoginUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getOauthLoginUrl() {
+      java.lang.Object ref = oauthLoginUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        oauthLoginUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string oauth_login_url = 6 [json_name = "oauthLoginUrl"];</code>
+     * @return The bytes for oauthLoginUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOauthLoginUrlBytes() {
+      java.lang.Object ref = oauthLoginUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        oauthLoginUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OAUTH_CONSENT_URL_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object oauthConsentUrl_ = "";
+    /**
+     * <code>optional string oauth_consent_url = 7 [json_name = "oauthConsentUrl"];</code>
+     * @return Whether the oauthConsentUrl field is set.
+     */
+    @java.lang.Override
+    public boolean hasOauthConsentUrl() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+    /**
+     * <code>optional string oauth_consent_url = 7 [json_name = "oauthConsentUrl"];</code>
+     * @return The oauthConsentUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getOauthConsentUrl() {
+      java.lang.Object ref = oauthConsentUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        oauthConsentUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string oauth_consent_url = 7 [json_name = "oauthConsentUrl"];</code>
+     * @return The bytes for oauthConsentUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOauthConsentUrlBytes() {
+      java.lang.Object ref = oauthConsentUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        oauthConsentUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OAUTH_RESPONSE_TYPE_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object oauthResponseType_ = "";
+    /**
+     * <code>optional string oauth_response_type = 8 [json_name = "oauthResponseType"];</code>
+     * @return Whether the oauthResponseType field is set.
+     */
+    @java.lang.Override
+    public boolean hasOauthResponseType() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+    /**
+     * <code>optional string oauth_response_type = 8 [json_name = "oauthResponseType"];</code>
+     * @return The oauthResponseType.
+     */
+    @java.lang.Override
+    public java.lang.String getOauthResponseType() {
+      java.lang.Object ref = oauthResponseType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        oauthResponseType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string oauth_response_type = 8 [json_name = "oauthResponseType"];</code>
+     * @return The bytes for oauthResponseType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOauthResponseTypeBytes() {
+      java.lang.Object ref = oauthResponseType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        oauthResponseType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int OAUTH_SCOPE_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList oauthScope_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     * <code>repeated string oauth_scope = 9 [json_name = "oauthScope"];</code>
+     * @return A list containing the oauthScope.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getOauthScopeList() {
+      return oauthScope_;
+    }
+    /**
+     * <code>repeated string oauth_scope = 9 [json_name = "oauthScope"];</code>
+     * @return The count of oauthScope.
+     */
+    public int getOauthScopeCount() {
+      return oauthScope_.size();
+    }
+    /**
+     * <code>repeated string oauth_scope = 9 [json_name = "oauthScope"];</code>
+     * @param index The index of the element to return.
+     * @return The oauthScope at the given index.
+     */
+    public java.lang.String getOauthScope(int index) {
+      return oauthScope_.get(index);
+    }
+    /**
+     * <code>repeated string oauth_scope = 9 [json_name = "oauthScope"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the oauthScope at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getOauthScopeBytes(int index) {
+      return oauthScope_.getByteString(index);
+    }
+
+    public static final int OAUTH_ADMIN_URL_FIELD_NUMBER = 10;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object oauthAdminUrl_ = "";
+    /**
+     * <code>optional string oauth_admin_url = 10 [json_name = "oauthAdminUrl"];</code>
+     * @return Whether the oauthAdminUrl field is set.
+     */
+    @java.lang.Override
+    public boolean hasOauthAdminUrl() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     * <code>optional string oauth_admin_url = 10 [json_name = "oauthAdminUrl"];</code>
+     * @return The oauthAdminUrl.
+     */
+    @java.lang.Override
+    public java.lang.String getOauthAdminUrl() {
+      java.lang.Object ref = oauthAdminUrl_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        oauthAdminUrl_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string oauth_admin_url = 10 [json_name = "oauthAdminUrl"];</code>
+     * @return The bytes for oauthAdminUrl.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOauthAdminUrlBytes() {
+      java.lang.Object ref = oauthAdminUrl_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        oauthAdminUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, oauthProviderUrl_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, oauthClientId_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, oauthClientSecret_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, oauthDbDsn_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, oauthRedirectUrl_);
+      }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 6, oauthLoginUrl_);
+      }
+      if (((bitField0_ & 0x00000040) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 7, oauthConsentUrl_);
+      }
+      if (((bitField0_ & 0x00000080) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 8, oauthResponseType_);
+      }
+      for (int i = 0; i < oauthScope_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 9, oauthScope_.getRaw(i));
+      }
+      if (((bitField0_ & 0x00000100) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 10, oauthAdminUrl_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, oauthProviderUrl_);
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, oauthClientId_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, oauthClientSecret_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, oauthDbDsn_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, oauthRedirectUrl_);
+      }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(6, oauthLoginUrl_);
+      }
+      if (((bitField0_ & 0x00000040) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, oauthConsentUrl_);
+      }
+      if (((bitField0_ & 0x00000080) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(8, oauthResponseType_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < oauthScope_.size(); i++) {
+          dataSize += computeStringSizeNoTag(oauthScope_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getOauthScopeList().size();
+      }
+      if (((bitField0_ & 0x00000100) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(10, oauthAdminUrl_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.common.v1.ConfigProto.ConfigOAuth)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.common.v1.ConfigProto.ConfigOAuth other = (org.megacommerce.common.v1.ConfigProto.ConfigOAuth) obj;
+
+      if (hasOauthProviderUrl() != other.hasOauthProviderUrl()) return false;
+      if (hasOauthProviderUrl()) {
+        if (!getOauthProviderUrl()
+            .equals(other.getOauthProviderUrl())) return false;
+      }
+      if (hasOauthClientId() != other.hasOauthClientId()) return false;
+      if (hasOauthClientId()) {
+        if (!getOauthClientId()
+            .equals(other.getOauthClientId())) return false;
+      }
+      if (hasOauthClientSecret() != other.hasOauthClientSecret()) return false;
+      if (hasOauthClientSecret()) {
+        if (!getOauthClientSecret()
+            .equals(other.getOauthClientSecret())) return false;
+      }
+      if (hasOauthDbDsn() != other.hasOauthDbDsn()) return false;
+      if (hasOauthDbDsn()) {
+        if (!getOauthDbDsn()
+            .equals(other.getOauthDbDsn())) return false;
+      }
+      if (hasOauthRedirectUrl() != other.hasOauthRedirectUrl()) return false;
+      if (hasOauthRedirectUrl()) {
+        if (!getOauthRedirectUrl()
+            .equals(other.getOauthRedirectUrl())) return false;
+      }
+      if (hasOauthLoginUrl() != other.hasOauthLoginUrl()) return false;
+      if (hasOauthLoginUrl()) {
+        if (!getOauthLoginUrl()
+            .equals(other.getOauthLoginUrl())) return false;
+      }
+      if (hasOauthConsentUrl() != other.hasOauthConsentUrl()) return false;
+      if (hasOauthConsentUrl()) {
+        if (!getOauthConsentUrl()
+            .equals(other.getOauthConsentUrl())) return false;
+      }
+      if (hasOauthResponseType() != other.hasOauthResponseType()) return false;
+      if (hasOauthResponseType()) {
+        if (!getOauthResponseType()
+            .equals(other.getOauthResponseType())) return false;
+      }
+      if (!getOauthScopeList()
+          .equals(other.getOauthScopeList())) return false;
+      if (hasOauthAdminUrl() != other.hasOauthAdminUrl()) return false;
+      if (hasOauthAdminUrl()) {
+        if (!getOauthAdminUrl()
+            .equals(other.getOauthAdminUrl())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasOauthProviderUrl()) {
+        hash = (37 * hash) + OAUTH_PROVIDER_URL_FIELD_NUMBER;
+        hash = (53 * hash) + getOauthProviderUrl().hashCode();
+      }
+      if (hasOauthClientId()) {
+        hash = (37 * hash) + OAUTH_CLIENT_ID_FIELD_NUMBER;
+        hash = (53 * hash) + getOauthClientId().hashCode();
+      }
+      if (hasOauthClientSecret()) {
+        hash = (37 * hash) + OAUTH_CLIENT_SECRET_FIELD_NUMBER;
+        hash = (53 * hash) + getOauthClientSecret().hashCode();
+      }
+      if (hasOauthDbDsn()) {
+        hash = (37 * hash) + OAUTH_DB_DSN_FIELD_NUMBER;
+        hash = (53 * hash) + getOauthDbDsn().hashCode();
+      }
+      if (hasOauthRedirectUrl()) {
+        hash = (37 * hash) + OAUTH_REDIRECT_URL_FIELD_NUMBER;
+        hash = (53 * hash) + getOauthRedirectUrl().hashCode();
+      }
+      if (hasOauthLoginUrl()) {
+        hash = (37 * hash) + OAUTH_LOGIN_URL_FIELD_NUMBER;
+        hash = (53 * hash) + getOauthLoginUrl().hashCode();
+      }
+      if (hasOauthConsentUrl()) {
+        hash = (37 * hash) + OAUTH_CONSENT_URL_FIELD_NUMBER;
+        hash = (53 * hash) + getOauthConsentUrl().hashCode();
+      }
+      if (hasOauthResponseType()) {
+        hash = (37 * hash) + OAUTH_RESPONSE_TYPE_FIELD_NUMBER;
+        hash = (53 * hash) + getOauthResponseType().hashCode();
+      }
+      if (getOauthScopeCount() > 0) {
+        hash = (37 * hash) + OAUTH_SCOPE_FIELD_NUMBER;
+        hash = (53 * hash) + getOauthScopeList().hashCode();
+      }
+      if (hasOauthAdminUrl()) {
+        hash = (37 * hash) + OAUTH_ADMIN_URL_FIELD_NUMBER;
+        hash = (53 * hash) + getOauthAdminUrl().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.common.v1.ConfigProto.ConfigOAuth parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigOAuth parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigOAuth parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigOAuth parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigOAuth parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigOAuth parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigOAuth parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigOAuth parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.common.v1.ConfigProto.ConfigOAuth parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.common.v1.ConfigProto.ConfigOAuth parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigOAuth parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.common.v1.ConfigProto.ConfigOAuth parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.common.v1.ConfigProto.ConfigOAuth prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code common.v1.ConfigOAuth}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:common.v1.ConfigOAuth)
+        org.megacommerce.common.v1.ConfigProto.ConfigOAuthOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigOAuth_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigOAuth_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.common.v1.ConfigProto.ConfigOAuth.class, org.megacommerce.common.v1.ConfigProto.ConfigOAuth.Builder.class);
+      }
+
+      // Construct using org.megacommerce.common.v1.ConfigProto.ConfigOAuth.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        oauthProviderUrl_ = "";
+        oauthClientId_ = "";
+        oauthClientSecret_ = "";
+        oauthDbDsn_ = "";
+        oauthRedirectUrl_ = "";
+        oauthLoginUrl_ = "";
+        oauthConsentUrl_ = "";
+        oauthResponseType_ = "";
+        oauthScope_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+        oauthAdminUrl_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigOAuth_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigOAuth getDefaultInstanceForType() {
+        return org.megacommerce.common.v1.ConfigProto.ConfigOAuth.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigOAuth build() {
+        org.megacommerce.common.v1.ConfigProto.ConfigOAuth result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.common.v1.ConfigProto.ConfigOAuth buildPartial() {
+        org.megacommerce.common.v1.ConfigProto.ConfigOAuth result = new org.megacommerce.common.v1.ConfigProto.ConfigOAuth(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.common.v1.ConfigProto.ConfigOAuth result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.oauthProviderUrl_ = oauthProviderUrl_;
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.oauthClientId_ = oauthClientId_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.oauthClientSecret_ = oauthClientSecret_;
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.oauthDbDsn_ = oauthDbDsn_;
+          to_bitField0_ |= 0x00000008;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.oauthRedirectUrl_ = oauthRedirectUrl_;
+          to_bitField0_ |= 0x00000010;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.oauthLoginUrl_ = oauthLoginUrl_;
+          to_bitField0_ |= 0x00000020;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.oauthConsentUrl_ = oauthConsentUrl_;
+          to_bitField0_ |= 0x00000040;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.oauthResponseType_ = oauthResponseType_;
+          to_bitField0_ |= 0x00000080;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          oauthScope_.makeImmutable();
+          result.oauthScope_ = oauthScope_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.oauthAdminUrl_ = oauthAdminUrl_;
+          to_bitField0_ |= 0x00000100;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.common.v1.ConfigProto.ConfigOAuth) {
+          return mergeFrom((org.megacommerce.common.v1.ConfigProto.ConfigOAuth)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.common.v1.ConfigProto.ConfigOAuth other) {
+        if (other == org.megacommerce.common.v1.ConfigProto.ConfigOAuth.getDefaultInstance()) return this;
+        if (other.hasOauthProviderUrl()) {
+          oauthProviderUrl_ = other.oauthProviderUrl_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.hasOauthClientId()) {
+          oauthClientId_ = other.oauthClientId_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.hasOauthClientSecret()) {
+          oauthClientSecret_ = other.oauthClientSecret_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (other.hasOauthDbDsn()) {
+          oauthDbDsn_ = other.oauthDbDsn_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (other.hasOauthRedirectUrl()) {
+          oauthRedirectUrl_ = other.oauthRedirectUrl_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        if (other.hasOauthLoginUrl()) {
+          oauthLoginUrl_ = other.oauthLoginUrl_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        if (other.hasOauthConsentUrl()) {
+          oauthConsentUrl_ = other.oauthConsentUrl_;
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        if (other.hasOauthResponseType()) {
+          oauthResponseType_ = other.oauthResponseType_;
+          bitField0_ |= 0x00000080;
+          onChanged();
+        }
+        if (!other.oauthScope_.isEmpty()) {
+          if (oauthScope_.isEmpty()) {
+            oauthScope_ = other.oauthScope_;
+            bitField0_ |= 0x00000100;
+          } else {
+            ensureOauthScopeIsMutable();
+            oauthScope_.addAll(other.oauthScope_);
+          }
+          onChanged();
+        }
+        if (other.hasOauthAdminUrl()) {
+          oauthAdminUrl_ = other.oauthAdminUrl_;
+          bitField0_ |= 0x00000200;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                oauthProviderUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                oauthClientId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                oauthClientSecret_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                oauthDbDsn_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 42: {
+                oauthRedirectUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              case 50: {
+                oauthLoginUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+              case 58: {
+                oauthConsentUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+              case 66: {
+                oauthResponseType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+              case 74: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureOauthScopeIsMutable();
+                oauthScope_.add(s);
+                break;
+              } // case 74
+              case 82: {
+                oauthAdminUrl_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object oauthProviderUrl_ = "";
+      /**
+       * <code>optional string oauth_provider_url = 1 [json_name = "oauthProviderUrl"];</code>
+       * @return Whether the oauthProviderUrl field is set.
+       */
+      public boolean hasOauthProviderUrl() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+      /**
+       * <code>optional string oauth_provider_url = 1 [json_name = "oauthProviderUrl"];</code>
+       * @return The oauthProviderUrl.
+       */
+      public java.lang.String getOauthProviderUrl() {
+        java.lang.Object ref = oauthProviderUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          oauthProviderUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string oauth_provider_url = 1 [json_name = "oauthProviderUrl"];</code>
+       * @return The bytes for oauthProviderUrl.
+       */
+      public com.google.protobuf.ByteString
+          getOauthProviderUrlBytes() {
+        java.lang.Object ref = oauthProviderUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          oauthProviderUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string oauth_provider_url = 1 [json_name = "oauthProviderUrl"];</code>
+       * @param value The oauthProviderUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOauthProviderUrl(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        oauthProviderUrl_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string oauth_provider_url = 1 [json_name = "oauthProviderUrl"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOauthProviderUrl() {
+        oauthProviderUrl_ = getDefaultInstance().getOauthProviderUrl();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string oauth_provider_url = 1 [json_name = "oauthProviderUrl"];</code>
+       * @param value The bytes for oauthProviderUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOauthProviderUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        oauthProviderUrl_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object oauthClientId_ = "";
+      /**
+       * <code>optional string oauth_client_id = 2 [json_name = "oauthClientId"];</code>
+       * @return Whether the oauthClientId field is set.
+       */
+      public boolean hasOauthClientId() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <code>optional string oauth_client_id = 2 [json_name = "oauthClientId"];</code>
+       * @return The oauthClientId.
+       */
+      public java.lang.String getOauthClientId() {
+        java.lang.Object ref = oauthClientId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          oauthClientId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string oauth_client_id = 2 [json_name = "oauthClientId"];</code>
+       * @return The bytes for oauthClientId.
+       */
+      public com.google.protobuf.ByteString
+          getOauthClientIdBytes() {
+        java.lang.Object ref = oauthClientId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          oauthClientId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string oauth_client_id = 2 [json_name = "oauthClientId"];</code>
+       * @param value The oauthClientId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOauthClientId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        oauthClientId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string oauth_client_id = 2 [json_name = "oauthClientId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOauthClientId() {
+        oauthClientId_ = getDefaultInstance().getOauthClientId();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string oauth_client_id = 2 [json_name = "oauthClientId"];</code>
+       * @param value The bytes for oauthClientId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOauthClientIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        oauthClientId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object oauthClientSecret_ = "";
+      /**
+       * <code>optional string oauth_client_secret = 3 [json_name = "oauthClientSecret"];</code>
+       * @return Whether the oauthClientSecret field is set.
+       */
+      public boolean hasOauthClientSecret() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>optional string oauth_client_secret = 3 [json_name = "oauthClientSecret"];</code>
+       * @return The oauthClientSecret.
+       */
+      public java.lang.String getOauthClientSecret() {
+        java.lang.Object ref = oauthClientSecret_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          oauthClientSecret_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string oauth_client_secret = 3 [json_name = "oauthClientSecret"];</code>
+       * @return The bytes for oauthClientSecret.
+       */
+      public com.google.protobuf.ByteString
+          getOauthClientSecretBytes() {
+        java.lang.Object ref = oauthClientSecret_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          oauthClientSecret_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string oauth_client_secret = 3 [json_name = "oauthClientSecret"];</code>
+       * @param value The oauthClientSecret to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOauthClientSecret(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        oauthClientSecret_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string oauth_client_secret = 3 [json_name = "oauthClientSecret"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOauthClientSecret() {
+        oauthClientSecret_ = getDefaultInstance().getOauthClientSecret();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string oauth_client_secret = 3 [json_name = "oauthClientSecret"];</code>
+       * @param value The bytes for oauthClientSecret to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOauthClientSecretBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        oauthClientSecret_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object oauthDbDsn_ = "";
+      /**
+       * <code>optional string oauth_db_dsn = 4 [json_name = "oauthDbDsn"];</code>
+       * @return Whether the oauthDbDsn field is set.
+       */
+      public boolean hasOauthDbDsn() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+      /**
+       * <code>optional string oauth_db_dsn = 4 [json_name = "oauthDbDsn"];</code>
+       * @return The oauthDbDsn.
+       */
+      public java.lang.String getOauthDbDsn() {
+        java.lang.Object ref = oauthDbDsn_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          oauthDbDsn_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string oauth_db_dsn = 4 [json_name = "oauthDbDsn"];</code>
+       * @return The bytes for oauthDbDsn.
+       */
+      public com.google.protobuf.ByteString
+          getOauthDbDsnBytes() {
+        java.lang.Object ref = oauthDbDsn_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          oauthDbDsn_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string oauth_db_dsn = 4 [json_name = "oauthDbDsn"];</code>
+       * @param value The oauthDbDsn to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOauthDbDsn(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        oauthDbDsn_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string oauth_db_dsn = 4 [json_name = "oauthDbDsn"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOauthDbDsn() {
+        oauthDbDsn_ = getDefaultInstance().getOauthDbDsn();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string oauth_db_dsn = 4 [json_name = "oauthDbDsn"];</code>
+       * @param value The bytes for oauthDbDsn to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOauthDbDsnBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        oauthDbDsn_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object oauthRedirectUrl_ = "";
+      /**
+       * <code>optional string oauth_redirect_url = 5 [json_name = "oauthRedirectUrl"];</code>
+       * @return Whether the oauthRedirectUrl field is set.
+       */
+      public boolean hasOauthRedirectUrl() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       * <code>optional string oauth_redirect_url = 5 [json_name = "oauthRedirectUrl"];</code>
+       * @return The oauthRedirectUrl.
+       */
+      public java.lang.String getOauthRedirectUrl() {
+        java.lang.Object ref = oauthRedirectUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          oauthRedirectUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string oauth_redirect_url = 5 [json_name = "oauthRedirectUrl"];</code>
+       * @return The bytes for oauthRedirectUrl.
+       */
+      public com.google.protobuf.ByteString
+          getOauthRedirectUrlBytes() {
+        java.lang.Object ref = oauthRedirectUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          oauthRedirectUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string oauth_redirect_url = 5 [json_name = "oauthRedirectUrl"];</code>
+       * @param value The oauthRedirectUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOauthRedirectUrl(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        oauthRedirectUrl_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string oauth_redirect_url = 5 [json_name = "oauthRedirectUrl"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOauthRedirectUrl() {
+        oauthRedirectUrl_ = getDefaultInstance().getOauthRedirectUrl();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string oauth_redirect_url = 5 [json_name = "oauthRedirectUrl"];</code>
+       * @param value The bytes for oauthRedirectUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOauthRedirectUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        oauthRedirectUrl_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object oauthLoginUrl_ = "";
+      /**
+       * <code>optional string oauth_login_url = 6 [json_name = "oauthLoginUrl"];</code>
+       * @return Whether the oauthLoginUrl field is set.
+       */
+      public boolean hasOauthLoginUrl() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       * <code>optional string oauth_login_url = 6 [json_name = "oauthLoginUrl"];</code>
+       * @return The oauthLoginUrl.
+       */
+      public java.lang.String getOauthLoginUrl() {
+        java.lang.Object ref = oauthLoginUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          oauthLoginUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string oauth_login_url = 6 [json_name = "oauthLoginUrl"];</code>
+       * @return The bytes for oauthLoginUrl.
+       */
+      public com.google.protobuf.ByteString
+          getOauthLoginUrlBytes() {
+        java.lang.Object ref = oauthLoginUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          oauthLoginUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string oauth_login_url = 6 [json_name = "oauthLoginUrl"];</code>
+       * @param value The oauthLoginUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOauthLoginUrl(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        oauthLoginUrl_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string oauth_login_url = 6 [json_name = "oauthLoginUrl"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOauthLoginUrl() {
+        oauthLoginUrl_ = getDefaultInstance().getOauthLoginUrl();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string oauth_login_url = 6 [json_name = "oauthLoginUrl"];</code>
+       * @param value The bytes for oauthLoginUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOauthLoginUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        oauthLoginUrl_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object oauthConsentUrl_ = "";
+      /**
+       * <code>optional string oauth_consent_url = 7 [json_name = "oauthConsentUrl"];</code>
+       * @return Whether the oauthConsentUrl field is set.
+       */
+      public boolean hasOauthConsentUrl() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+      /**
+       * <code>optional string oauth_consent_url = 7 [json_name = "oauthConsentUrl"];</code>
+       * @return The oauthConsentUrl.
+       */
+      public java.lang.String getOauthConsentUrl() {
+        java.lang.Object ref = oauthConsentUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          oauthConsentUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string oauth_consent_url = 7 [json_name = "oauthConsentUrl"];</code>
+       * @return The bytes for oauthConsentUrl.
+       */
+      public com.google.protobuf.ByteString
+          getOauthConsentUrlBytes() {
+        java.lang.Object ref = oauthConsentUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          oauthConsentUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string oauth_consent_url = 7 [json_name = "oauthConsentUrl"];</code>
+       * @param value The oauthConsentUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOauthConsentUrl(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        oauthConsentUrl_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string oauth_consent_url = 7 [json_name = "oauthConsentUrl"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOauthConsentUrl() {
+        oauthConsentUrl_ = getDefaultInstance().getOauthConsentUrl();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string oauth_consent_url = 7 [json_name = "oauthConsentUrl"];</code>
+       * @param value The bytes for oauthConsentUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOauthConsentUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        oauthConsentUrl_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object oauthResponseType_ = "";
+      /**
+       * <code>optional string oauth_response_type = 8 [json_name = "oauthResponseType"];</code>
+       * @return Whether the oauthResponseType field is set.
+       */
+      public boolean hasOauthResponseType() {
+        return ((bitField0_ & 0x00000080) != 0);
+      }
+      /**
+       * <code>optional string oauth_response_type = 8 [json_name = "oauthResponseType"];</code>
+       * @return The oauthResponseType.
+       */
+      public java.lang.String getOauthResponseType() {
+        java.lang.Object ref = oauthResponseType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          oauthResponseType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string oauth_response_type = 8 [json_name = "oauthResponseType"];</code>
+       * @return The bytes for oauthResponseType.
+       */
+      public com.google.protobuf.ByteString
+          getOauthResponseTypeBytes() {
+        java.lang.Object ref = oauthResponseType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          oauthResponseType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string oauth_response_type = 8 [json_name = "oauthResponseType"];</code>
+       * @param value The oauthResponseType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOauthResponseType(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        oauthResponseType_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string oauth_response_type = 8 [json_name = "oauthResponseType"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOauthResponseType() {
+        oauthResponseType_ = getDefaultInstance().getOauthResponseType();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string oauth_response_type = 8 [json_name = "oauthResponseType"];</code>
+       * @param value The bytes for oauthResponseType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOauthResponseTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        oauthResponseType_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList oauthScope_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensureOauthScopeIsMutable() {
+        if (!oauthScope_.isModifiable()) {
+          oauthScope_ = new com.google.protobuf.LazyStringArrayList(oauthScope_);
+        }
+        bitField0_ |= 0x00000100;
+      }
+      /**
+       * <code>repeated string oauth_scope = 9 [json_name = "oauthScope"];</code>
+       * @return A list containing the oauthScope.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getOauthScopeList() {
+        oauthScope_.makeImmutable();
+        return oauthScope_;
+      }
+      /**
+       * <code>repeated string oauth_scope = 9 [json_name = "oauthScope"];</code>
+       * @return The count of oauthScope.
+       */
+      public int getOauthScopeCount() {
+        return oauthScope_.size();
+      }
+      /**
+       * <code>repeated string oauth_scope = 9 [json_name = "oauthScope"];</code>
+       * @param index The index of the element to return.
+       * @return The oauthScope at the given index.
+       */
+      public java.lang.String getOauthScope(int index) {
+        return oauthScope_.get(index);
+      }
+      /**
+       * <code>repeated string oauth_scope = 9 [json_name = "oauthScope"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the oauthScope at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getOauthScopeBytes(int index) {
+        return oauthScope_.getByteString(index);
+      }
+      /**
+       * <code>repeated string oauth_scope = 9 [json_name = "oauthScope"];</code>
+       * @param index The index to set the value at.
+       * @param value The oauthScope to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOauthScope(
+          int index, java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureOauthScopeIsMutable();
+        oauthScope_.set(index, value);
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string oauth_scope = 9 [json_name = "oauthScope"];</code>
+       * @param value The oauthScope to add.
+       * @return This builder for chaining.
+       */
+      public Builder addOauthScope(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureOauthScopeIsMutable();
+        oauthScope_.add(value);
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string oauth_scope = 9 [json_name = "oauthScope"];</code>
+       * @param values The oauthScope to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllOauthScope(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureOauthScopeIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, oauthScope_);
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string oauth_scope = 9 [json_name = "oauthScope"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOauthScope() {
+        oauthScope_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string oauth_scope = 9 [json_name = "oauthScope"];</code>
+       * @param value The bytes of the oauthScope to add.
+       * @return This builder for chaining.
+       */
+      public Builder addOauthScopeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        ensureOauthScopeIsMutable();
+        oauthScope_.add(value);
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object oauthAdminUrl_ = "";
+      /**
+       * <code>optional string oauth_admin_url = 10 [json_name = "oauthAdminUrl"];</code>
+       * @return Whether the oauthAdminUrl field is set.
+       */
+      public boolean hasOauthAdminUrl() {
+        return ((bitField0_ & 0x00000200) != 0);
+      }
+      /**
+       * <code>optional string oauth_admin_url = 10 [json_name = "oauthAdminUrl"];</code>
+       * @return The oauthAdminUrl.
+       */
+      public java.lang.String getOauthAdminUrl() {
+        java.lang.Object ref = oauthAdminUrl_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          oauthAdminUrl_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string oauth_admin_url = 10 [json_name = "oauthAdminUrl"];</code>
+       * @return The bytes for oauthAdminUrl.
+       */
+      public com.google.protobuf.ByteString
+          getOauthAdminUrlBytes() {
+        java.lang.Object ref = oauthAdminUrl_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          oauthAdminUrl_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string oauth_admin_url = 10 [json_name = "oauthAdminUrl"];</code>
+       * @param value The oauthAdminUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOauthAdminUrl(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        oauthAdminUrl_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string oauth_admin_url = 10 [json_name = "oauthAdminUrl"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearOauthAdminUrl() {
+        oauthAdminUrl_ = getDefaultInstance().getOauthAdminUrl();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string oauth_admin_url = 10 [json_name = "oauthAdminUrl"];</code>
+       * @param value The bytes for oauthAdminUrl to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOauthAdminUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        oauthAdminUrl_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:common.v1.ConfigOAuth)
+    }
+
+    // @@protoc_insertion_point(class_scope:common.v1.ConfigOAuth)
+    private static final org.megacommerce.common.v1.ConfigProto.ConfigOAuth DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.common.v1.ConfigProto.ConfigOAuth();
+    }
+
+    public static org.megacommerce.common.v1.ConfigProto.ConfigOAuth getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConfigOAuth>
+        PARSER = new com.google.protobuf.AbstractParser<ConfigOAuth>() {
+      @java.lang.Override
+      public ConfigOAuth parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ConfigOAuth> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConfigOAuth> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.ConfigOAuth getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -44570,6 +46019,21 @@ java.lang.String defaultValue) {
      * <code>.common.v1.ConfigImageProxy image_proxy = 21 [json_name = "imageProxy"];</code>
      */
     org.megacommerce.common.v1.ConfigProto.ConfigImageProxyOrBuilder getImageProxyOrBuilder();
+
+    /**
+     * <code>.common.v1.ConfigOAuth oauth = 22 [json_name = "oauth"];</code>
+     * @return Whether the oauth field is set.
+     */
+    boolean hasOauth();
+    /**
+     * <code>.common.v1.ConfigOAuth oauth = 22 [json_name = "oauth"];</code>
+     * @return The oauth.
+     */
+    org.megacommerce.common.v1.ConfigProto.ConfigOAuth getOauth();
+    /**
+     * <code>.common.v1.ConfigOAuth oauth = 22 [json_name = "oauth"];</code>
+     */
+    org.megacommerce.common.v1.ConfigProto.ConfigOAuthOrBuilder getOauthOrBuilder();
   }
   /**
    * Protobuf type {@code common.v1.Config}
@@ -45155,6 +46619,32 @@ java.lang.String defaultValue) {
       return imageProxy_ == null ? org.megacommerce.common.v1.ConfigProto.ConfigImageProxy.getDefaultInstance() : imageProxy_;
     }
 
+    public static final int OAUTH_FIELD_NUMBER = 22;
+    private org.megacommerce.common.v1.ConfigProto.ConfigOAuth oauth_;
+    /**
+     * <code>.common.v1.ConfigOAuth oauth = 22 [json_name = "oauth"];</code>
+     * @return Whether the oauth field is set.
+     */
+    @java.lang.Override
+    public boolean hasOauth() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+    /**
+     * <code>.common.v1.ConfigOAuth oauth = 22 [json_name = "oauth"];</code>
+     * @return The oauth.
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.ConfigOAuth getOauth() {
+      return oauth_ == null ? org.megacommerce.common.v1.ConfigProto.ConfigOAuth.getDefaultInstance() : oauth_;
+    }
+    /**
+     * <code>.common.v1.ConfigOAuth oauth = 22 [json_name = "oauth"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.common.v1.ConfigProto.ConfigOAuthOrBuilder getOauthOrBuilder() {
+      return oauth_ == null ? org.megacommerce.common.v1.ConfigProto.ConfigOAuth.getDefaultInstance() : oauth_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -45231,6 +46721,9 @@ java.lang.String defaultValue) {
       }
       if (((bitField0_ & 0x00100000) != 0)) {
         output.writeMessage(21, getImageProxy());
+      }
+      if (((bitField0_ & 0x00200000) != 0)) {
+        output.writeMessage(22, getOauth());
       }
       getUnknownFields().writeTo(output);
     }
@@ -45324,6 +46817,10 @@ java.lang.String defaultValue) {
       if (((bitField0_ & 0x00100000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(21, getImageProxy());
+      }
+      if (((bitField0_ & 0x00200000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(22, getOauth());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -45445,6 +46942,11 @@ java.lang.String defaultValue) {
         if (!getImageProxy()
             .equals(other.getImageProxy())) return false;
       }
+      if (hasOauth() != other.hasOauth()) return false;
+      if (hasOauth()) {
+        if (!getOauth()
+            .equals(other.getOauth())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -45539,6 +47041,10 @@ java.lang.String defaultValue) {
       if (hasImageProxy()) {
         hash = (37 * hash) + IMAGE_PROXY_FIELD_NUMBER;
         hash = (53 * hash) + getImageProxy().hashCode();
+      }
+      if (hasOauth()) {
+        hash = (37 * hash) + OAUTH_FIELD_NUMBER;
+        hash = (53 * hash) + getOauth().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -45691,6 +47197,7 @@ java.lang.String defaultValue) {
           internalGetBleveFieldBuilder();
           internalGetDataRetentionFieldBuilder();
           internalGetImageProxyFieldBuilder();
+          internalGetOauthFieldBuilder();
         }
       }
       @java.lang.Override
@@ -45801,6 +47308,11 @@ java.lang.String defaultValue) {
         if (imageProxyBuilder_ != null) {
           imageProxyBuilder_.dispose();
           imageProxyBuilder_ = null;
+        }
+        oauth_ = null;
+        if (oauthBuilder_ != null) {
+          oauthBuilder_.dispose();
+          oauthBuilder_ = null;
         }
         return this;
       }
@@ -45962,6 +47474,12 @@ java.lang.String defaultValue) {
               : imageProxyBuilder_.build();
           to_bitField0_ |= 0x00100000;
         }
+        if (((from_bitField0_ & 0x00200000) != 0)) {
+          result.oauth_ = oauthBuilder_ == null
+              ? oauth_
+              : oauthBuilder_.build();
+          to_bitField0_ |= 0x00200000;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -46039,6 +47557,9 @@ java.lang.String defaultValue) {
         }
         if (other.hasImageProxy()) {
           mergeImageProxy(other.getImageProxy());
+        }
+        if (other.hasOauth()) {
+          mergeOauth(other.getOauth());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -46213,6 +47734,13 @@ java.lang.String defaultValue) {
                 bitField0_ |= 0x00100000;
                 break;
               } // case 170
+              case 178: {
+                input.readMessage(
+                    internalGetOauthFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 178
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -48769,6 +50297,127 @@ java.lang.String defaultValue) {
           imageProxy_ = null;
         }
         return imageProxyBuilder_;
+      }
+
+      private org.megacommerce.common.v1.ConfigProto.ConfigOAuth oauth_;
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.common.v1.ConfigProto.ConfigOAuth, org.megacommerce.common.v1.ConfigProto.ConfigOAuth.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOAuthOrBuilder> oauthBuilder_;
+      /**
+       * <code>.common.v1.ConfigOAuth oauth = 22 [json_name = "oauth"];</code>
+       * @return Whether the oauth field is set.
+       */
+      public boolean hasOauth() {
+        return ((bitField0_ & 0x00200000) != 0);
+      }
+      /**
+       * <code>.common.v1.ConfigOAuth oauth = 22 [json_name = "oauth"];</code>
+       * @return The oauth.
+       */
+      public org.megacommerce.common.v1.ConfigProto.ConfigOAuth getOauth() {
+        if (oauthBuilder_ == null) {
+          return oauth_ == null ? org.megacommerce.common.v1.ConfigProto.ConfigOAuth.getDefaultInstance() : oauth_;
+        } else {
+          return oauthBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.common.v1.ConfigOAuth oauth = 22 [json_name = "oauth"];</code>
+       */
+      public Builder setOauth(org.megacommerce.common.v1.ConfigProto.ConfigOAuth value) {
+        if (oauthBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          oauth_ = value;
+        } else {
+          oauthBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00200000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.common.v1.ConfigOAuth oauth = 22 [json_name = "oauth"];</code>
+       */
+      public Builder setOauth(
+          org.megacommerce.common.v1.ConfigProto.ConfigOAuth.Builder builderForValue) {
+        if (oauthBuilder_ == null) {
+          oauth_ = builderForValue.build();
+        } else {
+          oauthBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00200000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.common.v1.ConfigOAuth oauth = 22 [json_name = "oauth"];</code>
+       */
+      public Builder mergeOauth(org.megacommerce.common.v1.ConfigProto.ConfigOAuth value) {
+        if (oauthBuilder_ == null) {
+          if (((bitField0_ & 0x00200000) != 0) &&
+            oauth_ != null &&
+            oauth_ != org.megacommerce.common.v1.ConfigProto.ConfigOAuth.getDefaultInstance()) {
+            getOauthBuilder().mergeFrom(value);
+          } else {
+            oauth_ = value;
+          }
+        } else {
+          oauthBuilder_.mergeFrom(value);
+        }
+        if (oauth_ != null) {
+          bitField0_ |= 0x00200000;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.common.v1.ConfigOAuth oauth = 22 [json_name = "oauth"];</code>
+       */
+      public Builder clearOauth() {
+        bitField0_ = (bitField0_ & ~0x00200000);
+        oauth_ = null;
+        if (oauthBuilder_ != null) {
+          oauthBuilder_.dispose();
+          oauthBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.common.v1.ConfigOAuth oauth = 22 [json_name = "oauth"];</code>
+       */
+      public org.megacommerce.common.v1.ConfigProto.ConfigOAuth.Builder getOauthBuilder() {
+        bitField0_ |= 0x00200000;
+        onChanged();
+        return internalGetOauthFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.common.v1.ConfigOAuth oauth = 22 [json_name = "oauth"];</code>
+       */
+      public org.megacommerce.common.v1.ConfigProto.ConfigOAuthOrBuilder getOauthOrBuilder() {
+        if (oauthBuilder_ != null) {
+          return oauthBuilder_.getMessageOrBuilder();
+        } else {
+          return oauth_ == null ?
+              org.megacommerce.common.v1.ConfigProto.ConfigOAuth.getDefaultInstance() : oauth_;
+        }
+      }
+      /**
+       * <code>.common.v1.ConfigOAuth oauth = 22 [json_name = "oauth"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.common.v1.ConfigProto.ConfigOAuth, org.megacommerce.common.v1.ConfigProto.ConfigOAuth.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOAuthOrBuilder> 
+          internalGetOauthFieldBuilder() {
+        if (oauthBuilder_ == null) {
+          oauthBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.common.v1.ConfigProto.ConfigOAuth, org.megacommerce.common.v1.ConfigProto.ConfigOAuth.Builder, org.megacommerce.common.v1.ConfigProto.ConfigOAuthOrBuilder>(
+                  getOauth(),
+                  getParentForChildren(),
+                  isClean());
+          oauth_ = null;
+        }
+        return oauthBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:common.v1.Config)
@@ -52923,6 +54572,11 @@ java.lang.String defaultValue) {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_common_v1_ConfigServices_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_common_v1_ConfigOAuth_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_common_v1_ConfigOAuth_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_v1_ConfigSecurity_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -53115,7 +54769,7 @@ java.lang.String defaultValue) {
       "ation_max_countB)\n\'_persistent_notificat" +
       "ion_max_recipientsB%\n#_feature_flag_sync" +
       "_interval_secondsB\026\n\024_allow_synced_draft" +
-      "s\"\200\n\n\016ConfigServices\022:\n\027common_service_g" +
+      "s\"\360\007\n\016ConfigServices\022:\n\027common_service_g" +
       "rpc_url\030\001 \001(\tH\000R\024commonServiceGrpcUrl\210\001\001" +
       "\0226\n\025user_service_grpc_url\030\002 \001(\tH\001R\022userS" +
       "erviceGrpcUrl\210\001\001\022>\n\031products_service_grp" +
@@ -53132,499 +54786,510 @@ java.lang.String defaultValue) {
       "zeBytes\210\001\001\0226\n\025auth_service_grpc_url\030\t \001(" +
       "\tH\010R\022authServiceGrpcUrl\210\001\001\022B\n\033auth_servi" +
       "ce_prometheus_url\030\n \001(\tH\tR\030authServicePr" +
-      "ometheusUrl\210\001\001\0221\n\022oauth_provider_url\030\013 \001" +
-      "(\tH\nR\020oauthProviderUrl\210\001\001\022+\n\017oauth_clien" +
-      "t_id\030\014 \001(\tH\013R\roauthClientId\210\001\001\0223\n\023oauth_" +
-      "client_secret\030\r \001(\tH\014R\021oauthClientSecret" +
-      "\210\001\001\022%\n\014oauth_db_dsn\030\016 \001(\tH\rR\noauthDbDsn\210" +
-      "\001\001B\032\n\030_common_service_grpc_urlB\030\n\026_user_" +
-      "service_grpc_urlB\034\n\032_products_service_gr" +
-      "pc_urlB\027\n\025_jaeger_collector_urlB \n\036_comm" +
-      "on_service_prometheus_urlB\036\n\034_user_servi" +
-      "ce_prometheus_urlB\"\n _products_service_p" +
-      "rometheus_urlB/\n-_users_service_max_rece" +
-      "ive_message_size_bytesB\030\n\026_auth_service_" +
-      "grpc_urlB\036\n\034_auth_service_prometheus_url" +
-      "B\025\n\023_oauth_provider_urlB\022\n\020_oauth_client" +
-      "_idB\026\n\024_oauth_client_secretB\017\n\r_oauth_db" +
-      "_dsn\"\211\021\n\016ConfigSecurity\022e\n\024restricted_us" +
-      "ernames\030\001 \003(\01322.common.v1.ConfigSecurity" +
-      ".RestrictedUsernamesEntryR\023restrictedUse" +
-      "rnames\0229\n\026maximum_login_attempts\030\002 \001(\005H\000" +
-      "R\024maximumLoginAttempts\210\001\001\022T\n$enable_inse" +
-      "cure_outgoing_connections\030\003 \001(\010H\001R!enabl" +
-      "eInsecureOutgoingConnections\210\001\001\022O\n!enabl" +
-      "e_multifactor_authentication\030\004 \001(\010H\002R\037en" +
-      "ableMultifactorAuthentication\210\001\001\022Q\n\"enfo" +
-      "rce_multifactor_authentication\030\005 \001(\010H\003R " +
-      "enforceMultifactorAuthentication\210\001\001\022F\n\035e" +
-      "nable_oauth_service_provider\030\006 \001(\010H\004R\032en" +
-      "ableOauthServiceProvider\210\001\001\022N\n!enable_ou" +
-      "tgoing_oauth_connections\030\007 \001(\010H\005R\036enable" +
-      "OutgoingOauthConnections\210\001\001\022U\n%terminate" +
-      "_sessions_on_password_change\030\010 \001(\010H\006R!te" +
-      "rminateSessionsOnPasswordChange\210\001\001\022A\n\033se" +
-      "ssion_length_web_in_hours\030\t \001(\005H\007R\027sessi" +
-      "onLengthWebInHours\210\001\001\022G\n\036session_length_" +
-      "mobile_in_hours\030\n \001(\005H\010R\032sessionLengthMo" +
-      "bileInHours\210\001\001\022A\n\033session_length_sso_in_" +
-      "hours\030\013 \001(\005H\tR\027sessionLengthSsoInHours\210\001" +
-      "\001\022+\n\017allow_cors_from\030\014 \001(\tH\nR\rallowCorsF" +
-      "rom\210\001\001\0225\n\024cors_exposed_headers\030\r \001(\tH\013R\022" +
-      "corsExposedHeaders\210\001\001\0229\n\026cors_allow_cred" +
-      "entials\030\016 \001(\010H\014R\024corsAllowCredentials\210\001\001" +
-      "\022\"\n\ncors_debug\030\017 \001(\010H\rR\tcorsDebug\210\001\001\022D\n\034" +
-      "allow_cookies_for_subdomains\030\020 \001(\010H\016R\031al" +
-      "lowCookiesForSubdomains\210\001\001\022<\n\030session_ca" +
-      "che_in_minutes\030\021 \001(\005H\017R\025sessionCacheInMi" +
-      "nutes\210\001\001\0229\n\026email_confirmation_url\030\022 \001(\t" +
-      "H\020R\024emailConfirmationUrl\210\001\001\022O\n\"token_con" +
-      "firmation_expiry_in_hours\030\023 \001(\rH\021R\036token" +
-      "ConfirmationExpiryInHours\210\001\001\022R\n$token_pa" +
-      "ssword_reset_expiry_in_hours\030\024 \001(\rH\022R\037to" +
-      "kenPasswordResetExpiryInHours\210\001\001\0221\n\022pass" +
-      "word_reset_url\030\025 \001(\tH\023R\020passwordResetUrl" +
-      "\210\001\001\032F\n\030RestrictedUsernamesEntry\022\020\n\003key\030\001" +
-      " \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\031\n\027_" +
-      "maximum_login_attemptsB\'\n%_enable_insecu" +
-      "re_outgoing_connectionsB$\n\"_enable_multi" +
-      "factor_authenticationB%\n#_enforce_multif" +
-      "actor_authenticationB \n\036_enable_oauth_se" +
-      "rvice_providerB$\n\"_enable_outgoing_oauth" +
-      "_connectionsB(\n&_terminate_sessions_on_p" +
-      "assword_changeB\036\n\034_session_length_web_in" +
-      "_hoursB!\n\037_session_length_mobile_in_hour" +
-      "sB\036\n\034_session_length_sso_in_hoursB\022\n\020_al" +
-      "low_cors_fromB\027\n\025_cors_exposed_headersB\031" +
-      "\n\027_cors_allow_credentialsB\r\n\013_cors_debug" +
-      "B\037\n\035_allow_cookies_for_subdomainsB\033\n\031_se" +
-      "ssion_cache_in_minutesB\031\n\027_email_confirm" +
-      "ation_urlB%\n#_token_confirmation_expiry_" +
-      "in_hoursB\'\n%_token_password_reset_expiry" +
-      "_in_hoursB\025\n\023_password_reset_url\"\202\003\n\013Cac" +
-      "heConfig\022\"\n\ncache_type\030\001 \001(\tH\000R\tcacheTyp" +
-      "e\210\001\001\022(\n\rredis_address\030\002 \001(\tH\001R\014redisAddr" +
-      "ess\210\001\001\022*\n\016redis_password\030\003 \001(\tH\002R\rredisP" +
-      "assword\210\001\001\022\036\n\010redis_db\030\004 \001(\005H\003R\007redisDb\210" +
-      "\001\001\0221\n\022redis_cache_prefix\030\005 \001(\tH\004R\020redisC" +
-      "achePrefix\210\001\001\0225\n\024disable_client_cache\030\006 " +
-      "\001(\010H\005R\022disableClientCache\210\001\001B\r\n\013_cache_t" +
-      "ypeB\020\n\016_redis_addressB\021\n\017_redis_password" +
-      "B\013\n\t_redis_dbB\025\n\023_redis_cache_prefixB\027\n\025" +
-      "_disable_client_cache\"\251\003\n\rConfigMetrics\022" +
-      "\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\0221\n\022block_pr" +
-      "ofile_rate\030\002 \001(\005H\001R\020blockProfileRate\210\001\001\022" +
-      "*\n\016listen_address\030\003 \001(\tH\002R\rlistenAddress" +
-      "\210\001\001\0227\n\025enable_client_metrics\030\004 \001(\010H\003R\023en" +
-      "ableClientMetrics\210\001\001\022C\n\033enable_notificat" +
-      "ion_metrics\030\005 \001(\010H\004R\031enableNotificationM" +
-      "etrics\210\001\001\022/\n\024client_side_user_ids\030\006 \003(\tR" +
-      "\021clientSideUserIdsB\t\n\007_enableB\025\n\023_block_" +
-      "profile_rateB\021\n\017_listen_addressB\030\n\026_enab" +
-      "le_client_metricsB\036\n\034_enable_notificatio" +
-      "n_metrics\"\230\004\n\tConfigSSO\022\033\n\006enable\030\001 \001(\010H" +
-      "\000R\006enable\210\001\001\022\033\n\006secret\030\002 \001(\tH\001R\006secret\210\001" +
-      "\001\022\023\n\002id\030\003 \001(\tH\002R\002id\210\001\001\022\031\n\005scope\030\004 \001(\tH\003R" +
-      "\005scope\210\001\001\022(\n\rauth_endpoint\030\005 \001(\tH\004R\014auth" +
-      "Endpoint\210\001\001\022*\n\016token_endpoint\030\006 \001(\tH\005R\rt" +
-      "okenEndpoint\210\001\001\022/\n\021user_api_endpoint\030\007 \001" +
-      "(\tH\006R\017userApiEndpoint\210\001\001\0222\n\022discovery_en" +
-      "dpoint\030\010 \001(\tH\007R\021discoveryEndpoint\210\001\001\022$\n\013" +
-      "button_text\030\t \001(\tH\010R\nbuttonText\210\001\001\022&\n\014bu" +
-      "tton_color\030\n \001(\tH\tR\013buttonColor\210\001\001B\t\n\007_e" +
-      "nableB\t\n\007_secretB\005\n\003_idB\010\n\006_scopeB\020\n\016_au" +
-      "th_endpointB\021\n\017_token_endpointB\024\n\022_user_" +
-      "api_endpointB\025\n\023_discovery_endpointB\016\n\014_" +
-      "button_textB\017\n\r_button_color\"\325\005\n\tConfigS" +
-      "ql\022$\n\013driver_name\030\001 \001(\tH\000R\ndriverName\210\001\001" +
-      "\022$\n\013data_source\030\002 \001(\tH\001R\ndataSource\210\001\001\022)" +
-      "\n\016max_idle_conns\030\003 \001(\005H\002R\014maxIdleConns\210\001" +
-      "\001\022H\n\036conn_max_lifetime_milliseconds\030\004 \001(" +
-      "\005H\003R\033connMaxLifetimeMilliseconds\210\001\001\022I\n\037c" +
-      "onn_max_idle_time_milliseconds\030\005 \001(\005H\004R\033" +
-      "connMaxIdleTimeMilliseconds\210\001\001\022)\n\016max_op" +
-      "en_conns\030\006 \001(\005H\005R\014maxOpenConns\210\001\001\022\031\n\005tra" +
-      "ce\030\007 \001(\010H\006R\005trace\210\001\001\0222\n\023at_rest_encrypt_" +
-      "key\030\010 \001(\tH\007R\020atRestEncryptKey\210\001\001\022(\n\rquer" +
-      "y_timeout\030\t \001(\005H\010R\014queryTimeout\210\001\001\022;\n\027di" +
-      "sable_database_search\030\n \001(\010H\tR\025disableDa" +
-      "tabaseSearch\210\001\001B\016\n\014_driver_nameB\016\n\014_data" +
-      "_sourceB\021\n\017_max_idle_connsB!\n\037_conn_max_" +
-      "lifetime_millisecondsB\"\n _conn_max_idle_" +
-      "time_millisecondsB\021\n\017_max_open_connsB\010\n\006" +
-      "_traceB\026\n\024_at_rest_encrypt_keyB\020\n\016_query" +
-      "_timeoutB\032\n\030_disable_database_search\"\212\003\n" +
-      "\016ConfigPassword\022*\n\016minimum_length\030\001 \001(\005H" +
-      "\000R\rminimumLength\210\001\001\022*\n\016maximum_length\030\002 " +
-      "\001(\005H\001R\rmaximumLength\210\001\001\022!\n\tlowercase\030\003 \001" +
-      "(\010H\002R\tlowercase\210\001\001\022\033\n\006number\030\004 \001(\010H\003R\006nu" +
-      "mber\210\001\001\022!\n\tuppercase\030\005 \001(\010H\004R\tuppercase\210" +
-      "\001\001\022\033\n\006symbol\030\006 \001(\010H\005R\006symbol\210\001\001\0221\n\022enabl" +
-      "e_forgot_link\030\007 \001(\010H\006R\020enableForgotLink\210" +
-      "\001\001B\021\n\017_minimum_lengthB\021\n\017_maximum_length" +
-      "B\014\n\n_lowercaseB\t\n\007_numberB\014\n\n_uppercaseB" +
-      "\t\n\007_symbolB\025\n\023_enable_forgot_link\"\243\014\n\nCo" +
-      "nfigFile\022;\n\027enable_file_attachments\030\001 \001(" +
-      "\010H\000R\025enableFileAttachments\210\001\001\0225\n\024enable_" +
-      "mobile_upload\030\002 \001(\010H\001R\022enableMobileUploa" +
-      "d\210\001\001\0229\n\026enable_mobile_download\030\003 \001(\010H\002R\024" +
-      "enableMobileDownload\210\001\001\0225\n\024max_image_res" +
-      "olution\030\004 \001(\003H\003R\022maxImageResolution\210\001\001\022F" +
-      "\n\035max_image_decoder_concurrency\030\005 \001(\003H\004R" +
-      "\032maxImageDecoderConcurrency\210\001\001\022$\n\013driver" +
-      "_name\030\006 \001(\tH\005R\ndriverName\210\001\001\0229\n\027amazon_s" +
-      "3_access_key_id\030\007 \001(\tH\006R\023amazonS3AccessK" +
-      "eyId\210\001\001\022A\n\033amazon_s3_secret_access_key\030\010" +
-      " \001(\tH\007R\027amazonS3SecretAccessKey\210\001\001\022-\n\020am" +
-      "azon_s3_bucket\030\t \001(\tH\010R\016amazonS3Bucket\210\001" +
-      "\001\0226\n\025amazon_s3_path_prefix\030\n \001(\tH\tR\022amaz" +
-      "onS3PathPrefix\210\001\001\022-\n\020amazon_s3_region\030\013 " +
-      "\001(\tH\nR\016amazonS3Region\210\001\001\0221\n\022amazon_s3_en" +
-      "dpoint\030\014 \001(\tH\013R\020amazonS3Endpoint\210\001\001\022\'\n\ra" +
-      "mazon_s3_ssl\030\r \001(\010H\014R\013amazonS3Ssl\210\001\001\022.\n\021" +
-      "amazon_s3_sign_v2\030\016 \001(\010H\rR\016amazonS3SignV" +
-      "2\210\001\001\022\'\n\ramazon_s3_sse\030\017 \001(\010H\016R\013amazonS3S" +
-      "se\210\001\001\022+\n\017amazon_s3_trace\030\020 \001(\010H\017R\ramazon" +
-      "S3Trace\210\001\001\022W\n&amazon_s3_request_timeout_" +
-      "milliseconds\030\021 \001(\003H\020R\"amazonS3RequestTim" +
-      "eoutMilliseconds\210\001\001\022J\n amazon_s3_upload_" +
-      "part_size_bytes\030\022 \001(\003H\021R\033amazonS3UploadP" +
-      "artSizeBytes\210\001\001\022:\n\027amazon_s3_storage_cla" +
-      "ss\030\023 \001(\tH\022R\024amazonS3StorageClass\210\001\001B\032\n\030_" +
-      "enable_file_attachmentsB\027\n\025_enable_mobil" +
-      "e_uploadB\031\n\027_enable_mobile_downloadB\027\n\025_" +
-      "max_image_resolutionB \n\036_max_image_decod" +
-      "er_concurrencyB\016\n\014_driver_nameB\032\n\030_amazo" +
-      "n_s3_access_key_idB\036\n\034_amazon_s3_secret_" +
-      "access_keyB\023\n\021_amazon_s3_bucketB\030\n\026_amaz" +
-      "on_s3_path_prefixB\023\n\021_amazon_s3_regionB\025" +
-      "\n\023_amazon_s3_endpointB\020\n\016_amazon_s3_sslB" +
-      "\024\n\022_amazon_s3_sign_v2B\020\n\016_amazon_s3_sseB" +
-      "\022\n\020_amazon_s3_traceB)\n\'_amazon_s3_reques" +
-      "t_timeout_millisecondsB#\n!_amazon_s3_upl" +
-      "oad_part_size_bytesB\032\n\030_amazon_s3_storag" +
-      "e_class\"\210\021\n\013ConfigEmail\022=\n\030send_email_no" +
-      "tifications\030\001 \001(\010H\000R\026sendEmailNotificati" +
-      "ons\210\001\001\022A\n\032require_email_verification\030\002 \001" +
-      "(\010H\001R\030requireEmailVerification\210\001\001\022*\n\016fee" +
-      "dback_email\030\003 \001(\tH\002R\rfeedbackEmail\210\001\001\022-\n" +
-      "\020reply_to_address\030\004 \001(\tH\003R\016replyToAddres" +
-      "s\210\001\001\022-\n\020enable_smtp_auth\030\005 \001(\010H\004R\016enable" +
-      "SmtpAuth\210\001\001\022(\n\rsmtp_username\030\006 \001(\tH\005R\014sm" +
-      "tpUsername\210\001\001\022(\n\rsmtp_password\030\007 \001(\tH\006R\014" +
-      "smtpPassword\210\001\001\022$\n\013smtp_server\030\010 \001(\tH\007R\n" +
-      "smtpServer\210\001\001\022 \n\tsmtp_port\030\t \001(\tH\010R\010smtp" +
-      "Port\210\001\001\0223\n\023smtp_server_timeout\030\n \001(\005H\tR\021" +
-      "smtpServerTimeout\210\001\001\0224\n\023connection_secur" +
-      "ity\030\013 \001(\tH\nR\022connectionSecurity\210\001\001\022;\n\027se" +
-      "nd_push_notifications\030\014 \001(\010H\013R\025sendPushN" +
-      "otifications\210\001\001\022=\n\030push_notification_ser" +
-      "ver\030\r \001(\tH\014R\026pushNotificationServer\210\001\001\022A" +
-      "\n\032push_notification_contents\030\016 \001(\tH\rR\030pu" +
-      "shNotificationContents\210\001\001\022=\n\030push_notifi" +
-      "cation_buffer\030\017 \001(\005H\016R\026pushNotificationB" +
-      "uffer\210\001\001\0227\n\025enable_email_batching\030\020 \001(\010H" +
-      "\017R\023enableEmailBatching\210\001\001\022@\n\032email_batch" +
-      "ing_buffer_size\030\021 \001(\005H\020R\027emailBatchingBu" +
-      "fferSize\210\001\001\022;\n\027email_batching_interval\030\022" +
-      " \001(\005H\021R\025emailBatchingInterval\210\001\001\022T\n$skip" +
-      "_server_certificate_verification\030\023 \001(\010H\022" +
-      "R!skipServerCertificateVerification\210\001\001\022L" +
-      "\n email_notification_contents_type\030\024 \001(\t" +
-      "H\023R\035emailNotificationContentsType\210\001\001\0221\n\022" +
-      "login_button_color\030\025 \001(\tH\024R\020loginButtonC" +
-      "olor\210\001\001\022>\n\031login_button_border_color\030\026 \001" +
-      "(\tH\025R\026loginButtonBorderColor\210\001\001\022:\n\027login" +
-      "_button_text_color\030\027 \001(\tH\026R\024loginButtonT" +
-      "extColor\210\001\001\022>\n\031rate_limiting_memory_size" +
-      "\030\030 \001(\005H\027R\026rateLimitingMemorySize\210\001\001\0228\n\026r" +
-      "ate_limiting_per_hour\030\031 \001(\005H\030R\023rateLimit" +
-      "ingPerHour\210\001\001\022:\n\027rate_limiting_max_burst" +
-      "\030\032 \001(\005H\031R\024rateLimitingMaxBurst\210\001\001B\033\n\031_se" +
-      "nd_email_notificationsB\035\n\033_require_email" +
-      "_verificationB\021\n\017_feedback_emailB\023\n\021_rep" +
-      "ly_to_addressB\023\n\021_enable_smtp_authB\020\n\016_s" +
-      "mtp_usernameB\020\n\016_smtp_passwordB\016\n\014_smtp_" +
-      "serverB\014\n\n_smtp_portB\026\n\024_smtp_server_tim" +
-      "eoutB\026\n\024_connection_securityB\032\n\030_send_pu" +
-      "sh_notificationsB\033\n\031_push_notification_s" +
-      "erverB\035\n\033_push_notification_contentsB\033\n\031" +
-      "_push_notification_bufferB\030\n\026_enable_ema" +
-      "il_batchingB\035\n\033_email_batching_buffer_si" +
-      "zeB\032\n\030_email_batching_intervalB\'\n%_skip_" +
-      "server_certificate_verificationB#\n!_emai" +
-      "l_notification_contents_typeB\025\n\023_login_b" +
-      "utton_colorB\034\n\032_login_button_border_colo" +
-      "rB\032\n\030_login_button_text_colorB\034\n\032_rate_l" +
-      "imiting_memory_sizeB\031\n\027_rate_limiting_pe" +
-      "r_hourB\032\n\030_rate_limiting_max_burst\"\204\003\n\017C" +
-      "onfigRateLimit\022\033\n\006enable\030\001 \001(\010H\000R\006enable" +
-      "\210\001\001\022\034\n\007per_sec\030\002 \001(\005H\001R\006perSec\210\001\001\022 \n\tmax" +
-      "_burst\030\003 \001(\005H\002R\010maxBurst\210\001\001\022/\n\021memory_st" +
-      "ore_size\030\004 \001(\005H\003R\017memoryStoreSize\210\001\001\0222\n\023" +
-      "vary_by_remote_addr\030\005 \001(\010H\004R\020varyByRemot" +
-      "eAddr\210\001\001\022%\n\014vary_by_user\030\006 \001(\010H\005R\nvaryBy" +
-      "User\210\001\001\022$\n\016vary_by_header\030\007 \001(\tR\014varyByH" +
-      "eaderB\t\n\007_enableB\n\n\010_per_secB\014\n\n_max_bur" +
-      "stB\024\n\022_memory_store_sizeB\026\n\024_vary_by_rem" +
-      "ote_addrB\017\n\r_vary_by_user\"\227\001\n\rConfigPriv" +
-      "acy\0221\n\022show_email_address\030\001 \001(\010H\000R\020showE" +
-      "mailAddress\210\001\001\022)\n\016show_full_name\030\002 \001(\010H\001" +
-      "R\014showFullName\210\001\001B\025\n\023_show_email_address" +
-      "B\021\n\017_show_full_name\"\357\003\n\rConfigSupport\0226\n" +
-      "\025terms_of_service_link\030\001 \001(\tH\000R\022termsOfS" +
-      "erviceLink\210\001\001\0223\n\023privacy_policy_link\030\002 \001" +
-      "(\tH\001R\021privacyPolicyLink\210\001\001\022\"\n\nabout_link" +
-      "\030\003 \001(\tH\002R\taboutLink\210\001\001\022 \n\thelp_link\030\004 \001(" +
-      "\tH\003R\010helpLink\210\001\001\0226\n\025report_a_problem_lin" +
-      "k\030\005 \001(\tH\004R\022reportAProblemLink\210\001\001\0225\n\024forg" +
-      "ot_password_link\030\006 \001(\tH\005R\022forgotPassword" +
-      "Link\210\001\001\022(\n\rsupport_email\030\007 \001(\tH\006R\014suppor" +
-      "tEmail\210\001\001B\030\n\026_terms_of_service_linkB\026\n\024_" +
-      "privacy_policy_linkB\r\n\013_about_linkB\014\n\n_h" +
-      "elp_linkB\030\n\026_report_a_problem_linkB\027\n\025_f" +
-      "orgot_password_linkB\020\n\016_support_email\"\347\001" +
-      "\n\022ConfigLocalization\0227\n\025default_server_l" +
-      "ocale\030\001 \001(\tH\000R\023defaultServerLocale\210\001\001\0227\n" +
-      "\025default_client_locale\030\002 \001(\tH\001R\023defaultC" +
-      "lientLocale\210\001\001\022+\n\021available_locales\030\003 \003(" +
-      "\tR\020availableLocalesB\030\n\026_default_server_l" +
-      "ocaleB\030\n\026_default_client_locale\"\325\020\n\nConf" +
-      "igLdap\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022$\n\013e" +
-      "nable_sync\030\002 \001(\010H\001R\nenableSync\210\001\001\022$\n\013lda" +
-      "p_server\030\003 \001(\tH\002R\nldapServer\210\001\001\022 \n\tldap_" +
-      "port\030\004 \001(\005H\003R\010ldapPort\210\001\001\0224\n\023connection_" +
-      "security\030\005 \001(\tH\004R\022connectionSecurity\210\001\001\022" +
-      "\034\n\007base_dn\030\006 \001(\tH\005R\006baseDn\210\001\001\022(\n\rbind_us" +
-      "ername\030\007 \001(\tH\006R\014bindUsername\210\001\001\022(\n\rbind_" +
-      "password\030\010 \001(\tH\007R\014bindPassword\210\001\001\0229\n\026max" +
-      "imum_login_attempts\030\t \001(\005H\010R\024maximumLogi" +
-      "nAttempts\210\001\001\022$\n\013user_filter\030\n \001(\tH\tR\nuse" +
-      "rFilter\210\001\001\022&\n\014group_filter\030\013 \001(\tH\nR\013grou" +
-      "pFilter\210\001\001\0223\n\023enable_admin_filter\030\014 \001(\010H" +
-      "\013R\021enableAdminFilter\210\001\001\022&\n\014admin_filter\030" +
-      "\r \001(\tH\014R\013adminFilter\210\001\001\022D\n\034group_display" +
-      "_name_attribute\030\016 \001(\tH\rR\031groupDisplayNam" +
-      "eAttribute\210\001\001\0221\n\022group_id_attribute\030\017 \001(" +
-      "\tH\016R\020groupIdAttribute\210\001\001\0225\n\024first_name_a" +
-      "ttribute\030\020 \001(\tH\017R\022firstNameAttribute\210\001\001\022" +
-      "3\n\023last_name_attribute\030\021 \001(\tH\020R\021lastName" +
-      "Attribute\210\001\001\022,\n\017email_attribute\030\022 \001(\tH\021R" +
-      "\016emailAttribute\210\001\001\0222\n\022username_attribute" +
-      "\030\023 \001(\tH\022R\021usernameAttribute\210\001\001\0222\n\022nickna" +
-      "me_attribute\030\024 \001(\tH\023R\021nicknameAttribute\210" +
-      "\001\001\022&\n\014id_attribute\030\025 \001(\tH\024R\013idAttribute\210" +
-      "\001\001\0222\n\022position_attribute\030\026 \001(\tH\025R\021positi" +
-      "onAttribute\210\001\001\0221\n\022login_id_attribute\030\027 \001" +
-      "(\tH\026R\020loginIdAttribute\210\001\001\0220\n\021picture_att" +
-      "ribute\030\030 \001(\tH\027R\020pictureAttribute\210\001\001\0227\n\025s" +
-      "ync_interval_minutes\030\031 \001(\005H\030R\023syncInterv" +
-      "alMinutes\210\001\001\022(\n\rquery_timeout\030\032 \001(\005H\031R\014q" +
-      "ueryTimeout\210\001\001\022\'\n\rmax_page_size\030\033 \001(\005H\032R" +
-      "\013maxPageSize\210\001\001\022-\n\020login_field_name\030\034 \001(" +
-      "\tH\033R\016loginFieldName\210\001\001\0221\n\022login_button_c" +
-      "olor\030\035 \001(\tH\034R\020loginButtonColor\210\001\001\022>\n\031log" +
-      "in_button_border_color\030\036 \001(\tH\035R\026loginBut" +
-      "tonBorderColor\210\001\001\022:\n\027login_button_text_c" +
-      "olor\030\037 \001(\tH\036R\024loginButtonTextColor\210\001\001B\t\n" +
-      "\007_enableB\016\n\014_enable_syncB\016\n\014_ldap_server" +
-      "B\014\n\n_ldap_portB\026\n\024_connection_securityB\n" +
-      "\n\010_base_dnB\020\n\016_bind_usernameB\020\n\016_bind_pa" +
-      "sswordB\031\n\027_maximum_login_attemptsB\016\n\014_us" +
-      "er_filterB\017\n\r_group_filterB\026\n\024_enable_ad" +
-      "min_filterB\017\n\r_admin_filterB\037\n\035_group_di" +
-      "splay_name_attributeB\025\n\023_group_id_attrib" +
-      "uteB\027\n\025_first_name_attributeB\026\n\024_last_na" +
-      "me_attributeB\022\n\020_email_attributeB\025\n\023_use" +
-      "rname_attributeB\025\n\023_nickname_attributeB\017" +
-      "\n\r_id_attributeB\025\n\023_position_attributeB\025" +
-      "\n\023_login_id_attributeB\024\n\022_picture_attrib" +
-      "uteB\030\n\026_sync_interval_minutesB\020\n\016_query_" +
-      "timeoutB\020\n\016_max_page_sizeB\023\n\021_login_fiel" +
-      "d_nameB\025\n\023_login_button_colorB\034\n\032_login_" +
-      "button_border_colorB\032\n\030_login_button_tex" +
-      "t_color\"\255\023\n\nConfigSaml\022\033\n\006enable\030\001 \001(\010H\000" +
-      "R\006enable\210\001\001\0226\n\025enable_sync_with_ldap\030\002 \001" +
-      "(\010H\001R\022enableSyncWithLdap\210\001\001\022N\n\"enable_sy" +
-      "nc_with_ldap_include_auth\030\003 \001(\010H\002R\035enabl" +
-      "eSyncWithLdapIncludeAuth\210\001\001\022:\n\027ignore_gu" +
-      "ests_ldap_sync\030\004 \001(\010H\003R\024ignoreGuestsLdap" +
-      "Sync\210\001\001\022\033\n\006verify\030\005 \001(\010H\004R\006verify\210\001\001\022\035\n\007" +
-      "encrypt\030\006 \001(\010H\005R\007encrypt\210\001\001\022&\n\014sign_requ" +
-      "est\030\007 \001(\010H\006R\013signRequest\210\001\001\022\034\n\007idp_url\030\010" +
-      " \001(\tH\007R\006idpUrl\210\001\001\0221\n\022idp_descriptor_url\030" +
-      "\t \001(\tH\010R\020idpDescriptorUrl\210\001\001\022-\n\020idp_meta" +
-      "data_url\030\n \001(\tH\tR\016idpMetadataUrl\210\001\001\022C\n\033s" +
-      "ervice_provider_identifier\030\013 \001(\tH\nR\031serv" +
-      "iceProviderIdentifier\210\001\001\022H\n\036assertion_co" +
-      "nsumer_service_url\030\014 \001(\tH\013R\033assertionCon" +
-      "sumerServiceUrl\210\001\001\0224\n\023signature_algorith" +
-      "m\030\r \001(\tH\014R\022signatureAlgorithm\210\001\001\0224\n\023cano" +
-      "nical_algorithm\030\016 \001(\tH\rR\022canonicalAlgori" +
-      "thm\210\001\001\022:\n\027scoping_idp_provider_id\030\017 \001(\tH" +
-      "\016R\024scopingIdpProviderId\210\001\001\022-\n\020scoping_id" +
-      "p_name\030\020 \001(\tH\017R\016scopingIdpName\210\001\001\0225\n\024idp" +
-      "_certificate_file\030\021 \001(\tH\020R\022idpCertificat" +
-      "eFile\210\001\001\022;\n\027public_certificate_file\030\022 \001(",
-      "\tH\021R\025publicCertificateFile\210\001\001\022-\n\020private" +
-      "_key_file\030\023 \001(\tH\022R\016privateKeyFile\210\001\001\022&\n\014" +
-      "id_attribute\030\024 \001(\tH\023R\013idAttribute\210\001\001\0229\n\026" +
-      "enable_admin_attribute\030\025 \001(\010H\024R\024enableAd" +
-      "minAttribute\210\001\001\022,\n\017admin_attribute\030\026 \001(\t" +
-      "H\025R\016adminAttribute\210\001\001\0225\n\024first_name_attr" +
-      "ibute\030\027 \001(\tH\026R\022firstNameAttribute\210\001\001\0223\n\023" +
-      "last_name_attribute\030\030 \001(\tH\027R\021lastNameAtt" +
-      "ribute\210\001\001\022,\n\017email_attribute\030\031 \001(\tH\030R\016em" +
-      "ailAttribute\210\001\001\0222\n\022username_attribute\030\032 " +
-      "\001(\tH\031R\021usernameAttribute\210\001\001\0222\n\022nickname_" +
-      "attribute\030\033 \001(\tH\032R\021nicknameAttribute\210\001\001\022" +
-      ".\n\020locale_attribute\030\034 \001(\tH\033R\017localeAttri" +
-      "bute\210\001\001\0222\n\022position_attribute\030\035 \001(\tH\034R\021p" +
-      "ositionAttribute\210\001\001\022/\n\021login_button_text" +
-      "\030\036 \001(\tH\035R\017loginButtonText\210\001\001\0221\n\022login_bu" +
-      "tton_color\030\037 \001(\tH\036R\020loginButtonColor\210\001\001\022" +
-      ">\n\031login_button_border_color\030  \001(\tH\037R\026lo" +
-      "ginButtonBorderColor\210\001\001\022:\n\027login_button_" +
-      "text_color\030! \001(\tH R\024loginButtonTextColor" +
-      "\210\001\001B\t\n\007_enableB\030\n\026_enable_sync_with_ldap" +
-      "B%\n#_enable_sync_with_ldap_include_authB" +
-      "\032\n\030_ignore_guests_ldap_syncB\t\n\007_verifyB\n" +
-      "\n\010_encryptB\017\n\r_sign_requestB\n\n\010_idp_urlB" +
-      "\025\n\023_idp_descriptor_urlB\023\n\021_idp_metadata_" +
-      "urlB\036\n\034_service_provider_identifierB!\n\037_" +
-      "assertion_consumer_service_urlB\026\n\024_signa" +
-      "ture_algorithmB\026\n\024_canonical_algorithmB\032" +
-      "\n\030_scoping_idp_provider_idB\023\n\021_scoping_i" +
-      "dp_nameB\027\n\025_idp_certificate_fileB\032\n\030_pub" +
-      "lic_certificate_fileB\023\n\021_private_key_fil" +
-      "eB\017\n\r_id_attributeB\031\n\027_enable_admin_attr" +
-      "ibuteB\022\n\020_admin_attributeB\027\n\025_first_name" +
-      "_attributeB\026\n\024_last_name_attributeB\022\n\020_e" +
-      "mail_attributeB\025\n\023_username_attributeB\025\n" +
-      "\023_nickname_attributeB\023\n\021_locale_attribut" +
-      "eB\025\n\023_position_attributeB\024\n\022_login_butto" +
-      "n_textB\025\n\023_login_button_colorB\034\n\032_login_" +
-      "button_border_colorB\032\n\030_login_button_tex" +
-      "t_color\"\301\005\n\017ConfigNativeApp\0223\n\026app_custo" +
-      "m_url_schemes\030\001 \003(\tR\023appCustomUrlSchemes" +
-      "\022/\n\021app_download_link\030\002 \001(\tH\000R\017appDownlo" +
-      "adLink\210\001\001\022>\n\031android_app_download_link\030\003" +
-      " \001(\tH\001R\026androidAppDownloadLink\210\001\001\0226\n\025ios" +
-      "_app_download_link\030\004 \001(\tH\002R\022iosAppDownlo" +
-      "adLink\210\001\001\022;\n\027mobile_external_browser\030\005 \001" +
-      "(\010H\003R\025mobileExternalBrowser\210\001\001\022=\n\030mobile" +
-      "_enable_biometrics\030\006 \001(\010H\004R\026mobileEnable" +
-      "Biometrics\210\001\001\022F\n\035mobile_prevent_screen_c" +
-      "apture\030\007 \001(\010H\005R\032mobilePreventScreenCaptu" +
-      "re\210\001\001\022C\n\033mobile_jailbreak_protection\030\010 \001" +
-      "(\010H\006R\031mobileJailbreakProtection\210\001\001B\024\n\022_a" +
-      "pp_download_linkB\034\n\032_android_app_downloa" +
-      "d_linkB\030\n\026_ios_app_download_linkB\032\n\030_mob" +
-      "ile_external_browserB\033\n\031_mobile_enable_b" +
-      "iometricsB \n\036_mobile_prevent_screen_capt" +
-      "ureB\036\n\034_mobile_jailbreak_protection\"\253\005\n\021" +
-      "ConfigMeilisearch\022#\n\nserver_url\030\001 \001(\tH\000R" +
-      "\nserver_url\210\001\001\022\"\n\nmaster_key\030\002 \001(\tH\001R\tma" +
-      "sterKey\210\001\001\022,\n\017enable_indexing\030\003 \001(\010H\002R\016e" +
-      "nableIndexing\210\001\001\022.\n\020enable_searching\030\004 \001" +
-      "(\010H\003R\017enableSearching\210\001\001\0224\n\023enable_autoc" +
-      "omplete\030\005 \001(\010H\004R\022enableAutocomplete\210\001\001\022\"" +
-      "\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001\022;\n\027re" +
-      "quest_timeout_seconds\030\007 \001(\005H\006R\025requestTi" +
-      "meoutSeconds\210\001\001\022&\n\014index_prefix\030\010 \001(\tH\007R" +
-      "\013indexPrefix\210\001\001\022-\n\020search_cutoff_ms\030\t \001(" +
-      "\005H\010R\016searchCutoffMs\210\001\001\0227\n\025enable_typo_to" +
-      "lerance\030\n \001(\010H\tR\023enableTypoTolerance\210\001\001B" +
-      "\r\n\013_server_urlB\r\n\013_master_keyB\022\n\020_enable" +
-      "_indexingB\023\n\021_enable_searchingB\026\n\024_enabl" +
-      "e_autocompleteB\r\n\013_batch_sizeB\032\n\030_reques" +
-      "t_timeout_secondsB\017\n\r_index_prefixB\023\n\021_s" +
-      "earch_cutoff_msB\030\n\026_enable_typo_toleranc" +
-      "e\"\272\003\n\013ConfigBleve\022 \n\tindex_dir\030\001 \001(\tH\000R\010" +
-      "indexDir\210\001\001\022,\n\017enable_indexing\030\002 \001(\010H\001R\016" +
-      "enableIndexing\210\001\001\022.\n\020enable_searching\030\003 " +
-      "\001(\010H\002R\017enableSearching\210\001\001\0224\n\023enable_auto" +
-      "complete\030\004 \001(\010H\003R\022enableAutocomplete\210\001\001\022" +
-      "M\n!bulk_indexing_time_window_seconds\030\005 \001" +
-      "(\005H\004R\035bulkIndexingTimeWindowSeconds\210\001\001\022\"" +
-      "\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001B\014\n\n_i" +
-      "ndex_dirB\022\n\020_enable_indexingB\023\n\021_enable_" +
-      "searchingB\026\n\024_enable_autocompleteB$\n\"_bu" +
-      "lk_indexing_time_window_secondsB\r\n\013_batc" +
-      "h_size\"\354\006\n\023ConfigDataRetention\022;\n\027enable" +
-      "_message_deletion\030\001 \001(\010H\000R\025enableMessage" +
-      "Deletion\210\001\001\0225\n\024enable_file_deletion\030\002 \001(" +
-      "\010H\001R\022enableFileDeletion\210\001\001\0229\n\026enable_boa" +
-      "rds_deletion\030\003 \001(\010H\002R\024enableBoardsDeleti" +
-      "on\210\001\001\022;\n\027message_retention_hours\030\004 \001(\005H\003" +
-      "R\025messageRetentionHours\210\001\001\0225\n\024file_reten" +
-      "tion_hours\030\005 \001(\005H\004R\022fileRetentionHours\210\001" +
-      "\001\0227\n\025boards_retention_days\030\006 \001(\005H\005R\023boar" +
-      "dsRetentionDays\210\001\001\022:\n\027deletion_job_start" +
-      "_time\030\007 \001(\tH\006R\024deletionJobStartTime\210\001\001\022\"" +
-      "\n\nbatch_size\030\010 \001(\005H\007R\tbatchSize\210\001\001\022N\n!ti" +
-      "me_between_batches_milliseconds\030\t \001(\005H\010R" +
-      "\036timeBetweenBatchesMilliseconds\210\001\001\022<\n\030re" +
-      "tention_ids_batch_size\030\n \001(\005H\tR\025retentio" +
-      "nIdsBatchSize\210\001\001B\032\n\030_enable_message_dele" +
-      "tionB\027\n\025_enable_file_deletionB\031\n\027_enable" +
-      "_boards_deletionB\032\n\030_message_retention_h" +
-      "oursB\027\n\025_file_retention_hoursB\030\n\026_boards" +
-      "_retention_daysB\032\n\030_deletion_job_start_t" +
-      "imeB\r\n\013_batch_sizeB$\n\"_time_between_batc" +
-      "hes_millisecondsB\033\n\031_retention_ids_batch" +
-      "_size\"\264\002\n\020ConfigImageProxy\022\033\n\006enable\030\001 \001" +
-      "(\010H\000R\006enable\210\001\001\022-\n\020image_proxy_type\030\002 \001(" +
-      "\tH\001R\016imageProxyType\210\001\001\0228\n\026remote_image_p" +
-      "roxy_url\030\003 \001(\tH\002R\023remoteImageProxyUrl\210\001\001" +
-      "\022@\n\032remote_image_proxy_options\030\004 \001(\tH\003R\027" +
-      "remoteImageProxyOptions\210\001\001B\t\n\007_enableB\023\n" +
-      "\021_image_proxy_typeB\031\n\027_remote_image_prox" +
-      "y_urlB\035\n\033_remote_image_proxy_options\"\315\010\n" +
-      "\006Config\022)\n\004main\030\001 \001(\0132\025.common.v1.Config" +
-      "MainR\004main\0225\n\010services\030\002 \001(\0132\031.common.v1" +
-      ".ConfigServicesR\010services\0225\n\010security\030\003 " +
-      "\001(\0132\031.common.v1.ConfigSecurityR\010security" +
-      "\022,\n\005cache\030\004 \001(\0132\026.common.v1.CacheConfigR" +
-      "\005cache\0222\n\007metrics\030\005 \001(\0132\030.common.v1.Conf" +
-      "igMetricsR\007metrics\022&\n\003sso\030\006 \001(\0132\024.common" +
-      ".v1.ConfigSSOR\003sso\022&\n\003sql\030\007 \001(\0132\024.common" +
-      ".v1.ConfigSqlR\003sql\0225\n\010password\030\010 \001(\0132\031.c" +
-      "ommon.v1.ConfigPasswordR\010password\022)\n\004fil" +
-      "e\030\t \001(\0132\025.common.v1.ConfigFileR\004file\022,\n\005" +
-      "email\030\n \001(\0132\026.common.v1.ConfigEmailR\005ema" +
-      "il\0229\n\nrate_limit\030\013 \001(\0132\032.common.v1.Confi" +
-      "gRateLimitR\trateLimit\0222\n\007privacy\030\014 \001(\0132\030" +
-      ".common.v1.ConfigPrivacyR\007privacy\0222\n\007sup" +
-      "port\030\r \001(\0132\030.common.v1.ConfigSupportR\007su" +
-      "pport\022A\n\014localization\030\016 \001(\0132\035.common.v1." +
-      "ConfigLocalizationR\014localization\022)\n\004ldap" +
-      "\030\017 \001(\0132\025.common.v1.ConfigLdapR\004ldap\022)\n\004s" +
-      "aml\030\020 \001(\0132\025.common.v1.ConfigSamlR\004saml\0229" +
-      "\n\nnative_app\030\021 \001(\0132\032.common.v1.ConfigNat" +
-      "iveAppR\tnativeApp\022>\n\013meilisearch\030\022 \001(\0132\034" +
-      ".common.v1.ConfigMeilisearchR\013meilisearc" +
-      "h\022,\n\005bleve\030\023 \001(\0132\026.common.v1.ConfigBleve" +
-      "R\005bleve\022E\n\016data_retention\030\024 \001(\0132\036.common" +
-      ".v1.ConfigDataRetentionR\rdataRetention\022<" +
-      "\n\013image_proxy\030\025 \001(\0132\033.common.v1.ConfigIm" +
-      "ageProxyR\nimageProxy\"\022\n\020ConfigGetRequest" +
-      "\"u\n\021ConfigGetResponse\022\'\n\004data\030\001 \001(\0132\021.co" +
-      "mmon.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023." +
-      "shared.v1.AppErrorH\000R\005errorB\n\n\010response\"" +
-      "@\n\023ConfigUpdateRequest\022)\n\006config\030\001 \001(\0132\021" +
-      ".common.v1.ConfigR\006config\"x\n\024ConfigUpdat" +
-      "eResponse\022\'\n\004data\030\001 \001(\0132\021.common.v1.Conf" +
-      "igH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.Ap" +
-      "pErrorH\000R\005errorB\n\n\010response\"z\n\026ConfigLis" +
-      "tenerResponse\022\'\n\004data\030\001 \001(\0132\021.common.v1." +
-      "ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v" +
-      "1.AppErrorH\000R\005errorB\n\n\010response\"4\n\025Confi" +
-      "gListenerRequest\022\033\n\tclient_id\030\001 \001(\tR\010cli" +
-      "entIdBq\n\032org.megacommerce.common.v1B\013Con" +
-      "figProtoZCgithub.com/ahmad-khatib0-org/m" +
-      "egacommerce-proto/gen/go/common/v1;v1\370\001\001" +
-      "b\006proto3"
+      "ometheusUrl\210\001\001B\032\n\030_common_service_grpc_u" +
+      "rlB\030\n\026_user_service_grpc_urlB\034\n\032_product" +
+      "s_service_grpc_urlB\027\n\025_jaeger_collector_" +
+      "urlB \n\036_common_service_prometheus_urlB\036\n" +
+      "\034_user_service_prometheus_urlB\"\n _produc" +
+      "ts_service_prometheus_urlB/\n-_users_serv" +
+      "ice_max_receive_message_size_bytesB\030\n\026_a" +
+      "uth_service_grpc_urlB\036\n\034_auth_service_pr" +
+      "ometheus_url\"\236\005\n\013ConfigOAuth\0221\n\022oauth_pr" +
+      "ovider_url\030\001 \001(\tH\000R\020oauthProviderUrl\210\001\001\022" +
+      "+\n\017oauth_client_id\030\002 \001(\tH\001R\roauthClientI" +
+      "d\210\001\001\0223\n\023oauth_client_secret\030\003 \001(\tH\002R\021oau" +
+      "thClientSecret\210\001\001\022%\n\014oauth_db_dsn\030\004 \001(\tH" +
+      "\003R\noauthDbDsn\210\001\001\0221\n\022oauth_redirect_url\030\005" +
+      " \001(\tH\004R\020oauthRedirectUrl\210\001\001\022+\n\017oauth_log" +
+      "in_url\030\006 \001(\tH\005R\roauthLoginUrl\210\001\001\022/\n\021oaut" +
+      "h_consent_url\030\007 \001(\tH\006R\017oauthConsentUrl\210\001" +
+      "\001\0223\n\023oauth_response_type\030\010 \001(\tH\007R\021oauthR" +
+      "esponseType\210\001\001\022\037\n\013oauth_scope\030\t \003(\tR\noau" +
+      "thScope\022+\n\017oauth_admin_url\030\n \001(\tH\010R\roaut" +
+      "hAdminUrl\210\001\001B\025\n\023_oauth_provider_urlB\022\n\020_" +
+      "oauth_client_idB\026\n\024_oauth_client_secretB" +
+      "\017\n\r_oauth_db_dsnB\025\n\023_oauth_redirect_urlB" +
+      "\022\n\020_oauth_login_urlB\024\n\022_oauth_consent_ur" +
+      "lB\026\n\024_oauth_response_typeB\022\n\020_oauth_admi" +
+      "n_url\"\211\021\n\016ConfigSecurity\022e\n\024restricted_u" +
+      "sernames\030\001 \003(\01322.common.v1.ConfigSecurit" +
+      "y.RestrictedUsernamesEntryR\023restrictedUs" +
+      "ernames\0229\n\026maximum_login_attempts\030\002 \001(\005H" +
+      "\000R\024maximumLoginAttempts\210\001\001\022T\n$enable_ins" +
+      "ecure_outgoing_connections\030\003 \001(\010H\001R!enab" +
+      "leInsecureOutgoingConnections\210\001\001\022O\n!enab" +
+      "le_multifactor_authentication\030\004 \001(\010H\002R\037e" +
+      "nableMultifactorAuthentication\210\001\001\022Q\n\"enf" +
+      "orce_multifactor_authentication\030\005 \001(\010H\003R" +
+      " enforceMultifactorAuthentication\210\001\001\022F\n\035" +
+      "enable_oauth_service_provider\030\006 \001(\010H\004R\032e" +
+      "nableOauthServiceProvider\210\001\001\022N\n!enable_o" +
+      "utgoing_oauth_connections\030\007 \001(\010H\005R\036enabl" +
+      "eOutgoingOauthConnections\210\001\001\022U\n%terminat" +
+      "e_sessions_on_password_change\030\010 \001(\010H\006R!t" +
+      "erminateSessionsOnPasswordChange\210\001\001\022A\n\033s" +
+      "ession_length_web_in_hours\030\t \001(\005H\007R\027sess" +
+      "ionLengthWebInHours\210\001\001\022G\n\036session_length" +
+      "_mobile_in_hours\030\n \001(\005H\010R\032sessionLengthM" +
+      "obileInHours\210\001\001\022A\n\033session_length_sso_in" +
+      "_hours\030\013 \001(\005H\tR\027sessionLengthSsoInHours\210" +
+      "\001\001\022+\n\017allow_cors_from\030\014 \001(\tH\nR\rallowCors" +
+      "From\210\001\001\0225\n\024cors_exposed_headers\030\r \001(\tH\013R" +
+      "\022corsExposedHeaders\210\001\001\0229\n\026cors_allow_cre" +
+      "dentials\030\016 \001(\010H\014R\024corsAllowCredentials\210\001" +
+      "\001\022\"\n\ncors_debug\030\017 \001(\010H\rR\tcorsDebug\210\001\001\022D\n" +
+      "\034allow_cookies_for_subdomains\030\020 \001(\010H\016R\031a" +
+      "llowCookiesForSubdomains\210\001\001\022<\n\030session_c" +
+      "ache_in_minutes\030\021 \001(\005H\017R\025sessionCacheInM" +
+      "inutes\210\001\001\0229\n\026email_confirmation_url\030\022 \001(" +
+      "\tH\020R\024emailConfirmationUrl\210\001\001\022O\n\"token_co" +
+      "nfirmation_expiry_in_hours\030\023 \001(\rH\021R\036toke" +
+      "nConfirmationExpiryInHours\210\001\001\022R\n$token_p" +
+      "assword_reset_expiry_in_hours\030\024 \001(\rH\022R\037t" +
+      "okenPasswordResetExpiryInHours\210\001\001\0221\n\022pas" +
+      "sword_reset_url\030\025 \001(\tH\023R\020passwordResetUr" +
+      "l\210\001\001\032F\n\030RestrictedUsernamesEntry\022\020\n\003key\030" +
+      "\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\031\n\027" +
+      "_maximum_login_attemptsB\'\n%_enable_insec" +
+      "ure_outgoing_connectionsB$\n\"_enable_mult" +
+      "ifactor_authenticationB%\n#_enforce_multi" +
+      "factor_authenticationB \n\036_enable_oauth_s" +
+      "ervice_providerB$\n\"_enable_outgoing_oaut" +
+      "h_connectionsB(\n&_terminate_sessions_on_" +
+      "password_changeB\036\n\034_session_length_web_i" +
+      "n_hoursB!\n\037_session_length_mobile_in_hou" +
+      "rsB\036\n\034_session_length_sso_in_hoursB\022\n\020_a" +
+      "llow_cors_fromB\027\n\025_cors_exposed_headersB" +
+      "\031\n\027_cors_allow_credentialsB\r\n\013_cors_debu" +
+      "gB\037\n\035_allow_cookies_for_subdomainsB\033\n\031_s" +
+      "ession_cache_in_minutesB\031\n\027_email_confir" +
+      "mation_urlB%\n#_token_confirmation_expiry" +
+      "_in_hoursB\'\n%_token_password_reset_expir" +
+      "y_in_hoursB\025\n\023_password_reset_url\"\202\003\n\013Ca" +
+      "cheConfig\022\"\n\ncache_type\030\001 \001(\tH\000R\tcacheTy" +
+      "pe\210\001\001\022(\n\rredis_address\030\002 \001(\tH\001R\014redisAdd" +
+      "ress\210\001\001\022*\n\016redis_password\030\003 \001(\tH\002R\rredis" +
+      "Password\210\001\001\022\036\n\010redis_db\030\004 \001(\005H\003R\007redisDb" +
+      "\210\001\001\0221\n\022redis_cache_prefix\030\005 \001(\tH\004R\020redis" +
+      "CachePrefix\210\001\001\0225\n\024disable_client_cache\030\006" +
+      " \001(\010H\005R\022disableClientCache\210\001\001B\r\n\013_cache_" +
+      "typeB\020\n\016_redis_addressB\021\n\017_redis_passwor" +
+      "dB\013\n\t_redis_dbB\025\n\023_redis_cache_prefixB\027\n" +
+      "\025_disable_client_cache\"\251\003\n\rConfigMetrics" +
+      "\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\0221\n\022block_p" +
+      "rofile_rate\030\002 \001(\005H\001R\020blockProfileRate\210\001\001" +
+      "\022*\n\016listen_address\030\003 \001(\tH\002R\rlistenAddres" +
+      "s\210\001\001\0227\n\025enable_client_metrics\030\004 \001(\010H\003R\023e" +
+      "nableClientMetrics\210\001\001\022C\n\033enable_notifica" +
+      "tion_metrics\030\005 \001(\010H\004R\031enableNotification" +
+      "Metrics\210\001\001\022/\n\024client_side_user_ids\030\006 \003(\t" +
+      "R\021clientSideUserIdsB\t\n\007_enableB\025\n\023_block" +
+      "_profile_rateB\021\n\017_listen_addressB\030\n\026_ena" +
+      "ble_client_metricsB\036\n\034_enable_notificati" +
+      "on_metrics\"\230\004\n\tConfigSSO\022\033\n\006enable\030\001 \001(\010" +
+      "H\000R\006enable\210\001\001\022\033\n\006secret\030\002 \001(\tH\001R\006secret\210" +
+      "\001\001\022\023\n\002id\030\003 \001(\tH\002R\002id\210\001\001\022\031\n\005scope\030\004 \001(\tH\003" +
+      "R\005scope\210\001\001\022(\n\rauth_endpoint\030\005 \001(\tH\004R\014aut" +
+      "hEndpoint\210\001\001\022*\n\016token_endpoint\030\006 \001(\tH\005R\r" +
+      "tokenEndpoint\210\001\001\022/\n\021user_api_endpoint\030\007 " +
+      "\001(\tH\006R\017userApiEndpoint\210\001\001\0222\n\022discovery_e" +
+      "ndpoint\030\010 \001(\tH\007R\021discoveryEndpoint\210\001\001\022$\n" +
+      "\013button_text\030\t \001(\tH\010R\nbuttonText\210\001\001\022&\n\014b" +
+      "utton_color\030\n \001(\tH\tR\013buttonColor\210\001\001B\t\n\007_" +
+      "enableB\t\n\007_secretB\005\n\003_idB\010\n\006_scopeB\020\n\016_a" +
+      "uth_endpointB\021\n\017_token_endpointB\024\n\022_user" +
+      "_api_endpointB\025\n\023_discovery_endpointB\016\n\014" +
+      "_button_textB\017\n\r_button_color\"\325\005\n\tConfig" +
+      "Sql\022$\n\013driver_name\030\001 \001(\tH\000R\ndriverName\210\001" +
+      "\001\022$\n\013data_source\030\002 \001(\tH\001R\ndataSource\210\001\001\022" +
+      ")\n\016max_idle_conns\030\003 \001(\005H\002R\014maxIdleConns\210" +
+      "\001\001\022H\n\036conn_max_lifetime_milliseconds\030\004 \001" +
+      "(\005H\003R\033connMaxLifetimeMilliseconds\210\001\001\022I\n\037" +
+      "conn_max_idle_time_milliseconds\030\005 \001(\005H\004R" +
+      "\033connMaxIdleTimeMilliseconds\210\001\001\022)\n\016max_o" +
+      "pen_conns\030\006 \001(\005H\005R\014maxOpenConns\210\001\001\022\031\n\005tr" +
+      "ace\030\007 \001(\010H\006R\005trace\210\001\001\0222\n\023at_rest_encrypt" +
+      "_key\030\010 \001(\tH\007R\020atRestEncryptKey\210\001\001\022(\n\rque" +
+      "ry_timeout\030\t \001(\005H\010R\014queryTimeout\210\001\001\022;\n\027d" +
+      "isable_database_search\030\n \001(\010H\tR\025disableD" +
+      "atabaseSearch\210\001\001B\016\n\014_driver_nameB\016\n\014_dat" +
+      "a_sourceB\021\n\017_max_idle_connsB!\n\037_conn_max" +
+      "_lifetime_millisecondsB\"\n _conn_max_idle" +
+      "_time_millisecondsB\021\n\017_max_open_connsB\010\n" +
+      "\006_traceB\026\n\024_at_rest_encrypt_keyB\020\n\016_quer" +
+      "y_timeoutB\032\n\030_disable_database_search\"\212\003" +
+      "\n\016ConfigPassword\022*\n\016minimum_length\030\001 \001(\005" +
+      "H\000R\rminimumLength\210\001\001\022*\n\016maximum_length\030\002" +
+      " \001(\005H\001R\rmaximumLength\210\001\001\022!\n\tlowercase\030\003 " +
+      "\001(\010H\002R\tlowercase\210\001\001\022\033\n\006number\030\004 \001(\010H\003R\006n" +
+      "umber\210\001\001\022!\n\tuppercase\030\005 \001(\010H\004R\tuppercase" +
+      "\210\001\001\022\033\n\006symbol\030\006 \001(\010H\005R\006symbol\210\001\001\0221\n\022enab" +
+      "le_forgot_link\030\007 \001(\010H\006R\020enableForgotLink" +
+      "\210\001\001B\021\n\017_minimum_lengthB\021\n\017_maximum_lengt" +
+      "hB\014\n\n_lowercaseB\t\n\007_numberB\014\n\n_uppercase" +
+      "B\t\n\007_symbolB\025\n\023_enable_forgot_link\"\243\014\n\nC" +
+      "onfigFile\022;\n\027enable_file_attachments\030\001 \001" +
+      "(\010H\000R\025enableFileAttachments\210\001\001\0225\n\024enable" +
+      "_mobile_upload\030\002 \001(\010H\001R\022enableMobileUplo" +
+      "ad\210\001\001\0229\n\026enable_mobile_download\030\003 \001(\010H\002R" +
+      "\024enableMobileDownload\210\001\001\0225\n\024max_image_re" +
+      "solution\030\004 \001(\003H\003R\022maxImageResolution\210\001\001\022" +
+      "F\n\035max_image_decoder_concurrency\030\005 \001(\003H\004" +
+      "R\032maxImageDecoderConcurrency\210\001\001\022$\n\013drive" +
+      "r_name\030\006 \001(\tH\005R\ndriverName\210\001\001\0229\n\027amazon_" +
+      "s3_access_key_id\030\007 \001(\tH\006R\023amazonS3Access" +
+      "KeyId\210\001\001\022A\n\033amazon_s3_secret_access_key\030" +
+      "\010 \001(\tH\007R\027amazonS3SecretAccessKey\210\001\001\022-\n\020a" +
+      "mazon_s3_bucket\030\t \001(\tH\010R\016amazonS3Bucket\210" +
+      "\001\001\0226\n\025amazon_s3_path_prefix\030\n \001(\tH\tR\022ama" +
+      "zonS3PathPrefix\210\001\001\022-\n\020amazon_s3_region\030\013" +
+      " \001(\tH\nR\016amazonS3Region\210\001\001\0221\n\022amazon_s3_e" +
+      "ndpoint\030\014 \001(\tH\013R\020amazonS3Endpoint\210\001\001\022\'\n\r" +
+      "amazon_s3_ssl\030\r \001(\010H\014R\013amazonS3Ssl\210\001\001\022.\n" +
+      "\021amazon_s3_sign_v2\030\016 \001(\010H\rR\016amazonS3Sign" +
+      "V2\210\001\001\022\'\n\ramazon_s3_sse\030\017 \001(\010H\016R\013amazonS3" +
+      "Sse\210\001\001\022+\n\017amazon_s3_trace\030\020 \001(\010H\017R\ramazo" +
+      "nS3Trace\210\001\001\022W\n&amazon_s3_request_timeout" +
+      "_milliseconds\030\021 \001(\003H\020R\"amazonS3RequestTi" +
+      "meoutMilliseconds\210\001\001\022J\n amazon_s3_upload" +
+      "_part_size_bytes\030\022 \001(\003H\021R\033amazonS3Upload" +
+      "PartSizeBytes\210\001\001\022:\n\027amazon_s3_storage_cl" +
+      "ass\030\023 \001(\tH\022R\024amazonS3StorageClass\210\001\001B\032\n\030" +
+      "_enable_file_attachmentsB\027\n\025_enable_mobi" +
+      "le_uploadB\031\n\027_enable_mobile_downloadB\027\n\025" +
+      "_max_image_resolutionB \n\036_max_image_deco" +
+      "der_concurrencyB\016\n\014_driver_nameB\032\n\030_amaz" +
+      "on_s3_access_key_idB\036\n\034_amazon_s3_secret" +
+      "_access_keyB\023\n\021_amazon_s3_bucketB\030\n\026_ama" +
+      "zon_s3_path_prefixB\023\n\021_amazon_s3_regionB" +
+      "\025\n\023_amazon_s3_endpointB\020\n\016_amazon_s3_ssl" +
+      "B\024\n\022_amazon_s3_sign_v2B\020\n\016_amazon_s3_sse" +
+      "B\022\n\020_amazon_s3_traceB)\n\'_amazon_s3_reque" +
+      "st_timeout_millisecondsB#\n!_amazon_s3_up" +
+      "load_part_size_bytesB\032\n\030_amazon_s3_stora" +
+      "ge_class\"\210\021\n\013ConfigEmail\022=\n\030send_email_n" +
+      "otifications\030\001 \001(\010H\000R\026sendEmailNotificat" +
+      "ions\210\001\001\022A\n\032require_email_verification\030\002 " +
+      "\001(\010H\001R\030requireEmailVerification\210\001\001\022*\n\016fe" +
+      "edback_email\030\003 \001(\tH\002R\rfeedbackEmail\210\001\001\022-" +
+      "\n\020reply_to_address\030\004 \001(\tH\003R\016replyToAddre" +
+      "ss\210\001\001\022-\n\020enable_smtp_auth\030\005 \001(\010H\004R\016enabl" +
+      "eSmtpAuth\210\001\001\022(\n\rsmtp_username\030\006 \001(\tH\005R\014s" +
+      "mtpUsername\210\001\001\022(\n\rsmtp_password\030\007 \001(\tH\006R" +
+      "\014smtpPassword\210\001\001\022$\n\013smtp_server\030\010 \001(\tH\007R" +
+      "\nsmtpServer\210\001\001\022 \n\tsmtp_port\030\t \001(\tH\010R\010smt" +
+      "pPort\210\001\001\0223\n\023smtp_server_timeout\030\n \001(\005H\tR" +
+      "\021smtpServerTimeout\210\001\001\0224\n\023connection_secu" +
+      "rity\030\013 \001(\tH\nR\022connectionSecurity\210\001\001\022;\n\027s" +
+      "end_push_notifications\030\014 \001(\010H\013R\025sendPush" +
+      "Notifications\210\001\001\022=\n\030push_notification_se" +
+      "rver\030\r \001(\tH\014R\026pushNotificationServer\210\001\001\022" +
+      "A\n\032push_notification_contents\030\016 \001(\tH\rR\030p" +
+      "ushNotificationContents\210\001\001\022=\n\030push_notif" +
+      "ication_buffer\030\017 \001(\005H\016R\026pushNotification" +
+      "Buffer\210\001\001\0227\n\025enable_email_batching\030\020 \001(\010" +
+      "H\017R\023enableEmailBatching\210\001\001\022@\n\032email_batc" +
+      "hing_buffer_size\030\021 \001(\005H\020R\027emailBatchingB" +
+      "ufferSize\210\001\001\022;\n\027email_batching_interval\030" +
+      "\022 \001(\005H\021R\025emailBatchingInterval\210\001\001\022T\n$ski" +
+      "p_server_certificate_verification\030\023 \001(\010H" +
+      "\022R!skipServerCertificateVerification\210\001\001\022" +
+      "L\n email_notification_contents_type\030\024 \001(" +
+      "\tH\023R\035emailNotificationContentsType\210\001\001\0221\n" +
+      "\022login_button_color\030\025 \001(\tH\024R\020loginButton" +
+      "Color\210\001\001\022>\n\031login_button_border_color\030\026 " +
+      "\001(\tH\025R\026loginButtonBorderColor\210\001\001\022:\n\027logi" +
+      "n_button_text_color\030\027 \001(\tH\026R\024loginButton" +
+      "TextColor\210\001\001\022>\n\031rate_limiting_memory_siz" +
+      "e\030\030 \001(\005H\027R\026rateLimitingMemorySize\210\001\001\0228\n\026" +
+      "rate_limiting_per_hour\030\031 \001(\005H\030R\023rateLimi" +
+      "tingPerHour\210\001\001\022:\n\027rate_limiting_max_burs" +
+      "t\030\032 \001(\005H\031R\024rateLimitingMaxBurst\210\001\001B\033\n\031_s" +
+      "end_email_notificationsB\035\n\033_require_emai" +
+      "l_verificationB\021\n\017_feedback_emailB\023\n\021_re" +
+      "ply_to_addressB\023\n\021_enable_smtp_authB\020\n\016_" +
+      "smtp_usernameB\020\n\016_smtp_passwordB\016\n\014_smtp" +
+      "_serverB\014\n\n_smtp_portB\026\n\024_smtp_server_ti" +
+      "meoutB\026\n\024_connection_securityB\032\n\030_send_p" +
+      "ush_notificationsB\033\n\031_push_notification_" +
+      "serverB\035\n\033_push_notification_contentsB\033\n" +
+      "\031_push_notification_bufferB\030\n\026_enable_em" +
+      "ail_batchingB\035\n\033_email_batching_buffer_s" +
+      "izeB\032\n\030_email_batching_intervalB\'\n%_skip" +
+      "_server_certificate_verificationB#\n!_ema" +
+      "il_notification_contents_typeB\025\n\023_login_" +
+      "button_colorB\034\n\032_login_button_border_col" +
+      "orB\032\n\030_login_button_text_colorB\034\n\032_rate_" +
+      "limiting_memory_sizeB\031\n\027_rate_limiting_p" +
+      "er_hourB\032\n\030_rate_limiting_max_burst\"\204\003\n\017" +
+      "ConfigRateLimit\022\033\n\006enable\030\001 \001(\010H\000R\006enabl" +
+      "e\210\001\001\022\034\n\007per_sec\030\002 \001(\005H\001R\006perSec\210\001\001\022 \n\tma" +
+      "x_burst\030\003 \001(\005H\002R\010maxBurst\210\001\001\022/\n\021memory_s" +
+      "tore_size\030\004 \001(\005H\003R\017memoryStoreSize\210\001\001\0222\n" +
+      "\023vary_by_remote_addr\030\005 \001(\010H\004R\020varyByRemo" +
+      "teAddr\210\001\001\022%\n\014vary_by_user\030\006 \001(\010H\005R\nvaryB" +
+      "yUser\210\001\001\022$\n\016vary_by_header\030\007 \001(\tR\014varyBy" +
+      "HeaderB\t\n\007_enableB\n\n\010_per_secB\014\n\n_max_bu" +
+      "rstB\024\n\022_memory_store_sizeB\026\n\024_vary_by_re" +
+      "mote_addrB\017\n\r_vary_by_user\"\227\001\n\rConfigPri" +
+      "vacy\0221\n\022show_email_address\030\001 \001(\010H\000R\020show" +
+      "EmailAddress\210\001\001\022)\n\016show_full_name\030\002 \001(\010H" +
+      "\001R\014showFullName\210\001\001B\025\n\023_show_email_addres" +
+      "sB\021\n\017_show_full_name\"\357\003\n\rConfigSupport\0226" +
+      "\n\025terms_of_service_link\030\001 \001(\tH\000R\022termsOf" +
+      "ServiceLink\210\001\001\0223\n\023privacy_policy_link\030\002 " +
+      "\001(\tH\001R\021privacyPolicyLink\210\001\001\022\"\n\nabout_lin" +
+      "k\030\003 \001(\tH\002R\taboutLink\210\001\001\022 \n\thelp_link\030\004 \001" +
+      "(\tH\003R\010helpLink\210\001\001\0226\n\025report_a_problem_li" +
+      "nk\030\005 \001(\tH\004R\022reportAProblemLink\210\001\001\0225\n\024for" +
+      "got_password_link\030\006 \001(\tH\005R\022forgotPasswor" +
+      "dLink\210\001\001\022(\n\rsupport_email\030\007 \001(\tH\006R\014suppo" +
+      "rtEmail\210\001\001B\030\n\026_terms_of_service_linkB\026\n\024" +
+      "_privacy_policy_linkB\r\n\013_about_linkB\014\n\n_" +
+      "help_linkB\030\n\026_report_a_problem_linkB\027\n\025_" +
+      "forgot_password_linkB\020\n\016_support_email\"\347" +
+      "\001\n\022ConfigLocalization\0227\n\025default_server_" +
+      "locale\030\001 \001(\tH\000R\023defaultServerLocale\210\001\001\0227" +
+      "\n\025default_client_locale\030\002 \001(\tH\001R\023default" +
+      "ClientLocale\210\001\001\022+\n\021available_locales\030\003 \003" +
+      "(\tR\020availableLocalesB\030\n\026_default_server_" +
+      "localeB\030\n\026_default_client_locale\"\325\020\n\nCon" +
+      "figLdap\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022$\n\013" +
+      "enable_sync\030\002 \001(\010H\001R\nenableSync\210\001\001\022$\n\013ld" +
+      "ap_server\030\003 \001(\tH\002R\nldapServer\210\001\001\022 \n\tldap" +
+      "_port\030\004 \001(\005H\003R\010ldapPort\210\001\001\0224\n\023connection" +
+      "_security\030\005 \001(\tH\004R\022connectionSecurity\210\001\001" +
+      "\022\034\n\007base_dn\030\006 \001(\tH\005R\006baseDn\210\001\001\022(\n\rbind_u" +
+      "sername\030\007 \001(\tH\006R\014bindUsername\210\001\001\022(\n\rbind" +
+      "_password\030\010 \001(\tH\007R\014bindPassword\210\001\001\0229\n\026ma" +
+      "ximum_login_attempts\030\t \001(\005H\010R\024maximumLog" +
+      "inAttempts\210\001\001\022$\n\013user_filter\030\n \001(\tH\tR\nus" +
+      "erFilter\210\001\001\022&\n\014group_filter\030\013 \001(\tH\nR\013gro" +
+      "upFilter\210\001\001\0223\n\023enable_admin_filter\030\014 \001(\010" +
+      "H\013R\021enableAdminFilter\210\001\001\022&\n\014admin_filter" +
+      "\030\r \001(\tH\014R\013adminFilter\210\001\001\022D\n\034group_displa" +
+      "y_name_attribute\030\016 \001(\tH\rR\031groupDisplayNa" +
+      "meAttribute\210\001\001\0221\n\022group_id_attribute\030\017 \001" +
+      "(\tH\016R\020groupIdAttribute\210\001\001\0225\n\024first_name_" +
+      "attribute\030\020 \001(\tH\017R\022firstNameAttribute\210\001\001" +
+      "\0223\n\023last_name_attribute\030\021 \001(\tH\020R\021lastNam" +
+      "eAttribute\210\001\001\022,\n\017email_attribute\030\022 \001(\tH\021" +
+      "R\016emailAttribute\210\001\001\0222\n\022username_attribut" +
+      "e\030\023 \001(\tH\022R\021usernameAttribute\210\001\001\0222\n\022nickn" +
+      "ame_attribute\030\024 \001(\tH\023R\021nicknameAttribute" +
+      "\210\001\001\022&\n\014id_attribute\030\025 \001(\tH\024R\013idAttribute" +
+      "\210\001\001\0222\n\022position_attribute\030\026 \001(\tH\025R\021posit" +
+      "ionAttribute\210\001\001\0221\n\022login_id_attribute\030\027 " +
+      "\001(\tH\026R\020loginIdAttribute\210\001\001\0220\n\021picture_at" +
+      "tribute\030\030 \001(\tH\027R\020pictureAttribute\210\001\001\0227\n\025" +
+      "sync_interval_minutes\030\031 \001(\005H\030R\023syncInter" +
+      "valMinutes\210\001\001\022(\n\rquery_timeout\030\032 \001(\005H\031R\014" +
+      "queryTimeout\210\001\001\022\'\n\rmax_page_size\030\033 \001(\005H\032" +
+      "R\013maxPageSize\210\001\001\022-\n\020login_field_name\030\034 \001" +
+      "(\tH\033R\016loginFieldName\210\001\001\0221\n\022login_button_" +
+      "color\030\035 \001(\tH\034R\020loginButtonColor\210\001\001\022>\n\031lo" +
+      "gin_button_border_color\030\036 \001(\tH\035R\026loginBu" +
+      "ttonBorderColor\210\001\001\022:\n\027login_button_text_" +
+      "color\030\037 \001(\tH\036R\024loginButtonTextColor\210\001\001B\t" +
+      "\n\007_enableB\016\n\014_enable_syncB\016\n\014_ldap_serve" +
+      "rB\014\n\n_ldap_portB\026\n\024_connection_securityB" +
+      "\n\n\010_base_dnB\020\n\016_bind_usernameB\020\n\016_bind_p" +
+      "asswordB\031\n\027_maximum_login_attemptsB\016\n\014_u" +
+      "ser_filterB\017\n\r_group_filterB\026\n\024_enable_a" +
+      "dmin_filterB\017\n\r_admin_filterB\037\n\035_group_d" +
+      "isplay_name_attributeB\025\n\023_group_id_attri" +
+      "buteB\027\n\025_first_name_attributeB\026\n\024_last_n" +
+      "ame_attributeB\022\n\020_email_attributeB\025\n\023_us" +
+      "ername_attributeB\025\n\023_nickname_attributeB" +
+      "\017\n\r_id_attributeB\025\n\023_position_attributeB" +
+      "\025\n\023_login_id_attributeB\024\n\022_picture_attri" +
+      "buteB\030\n\026_sync_interval_minutesB\020\n\016_query" +
+      "_timeoutB\020\n\016_max_page_sizeB\023\n\021_login_fie" +
+      "ld_nameB\025\n\023_login_button_colorB\034\n\032_login" +
+      "_button_border_colorB\032\n\030_login_button_te" +
+      "xt_color\"\255\023\n\nConfigSaml\022\033\n\006enable\030\001 \001(\010H" +
+      "\000R\006enable\210\001\001\0226\n\025enable_sync_with_ldap\030\002 " +
+      "\001(\010H\001R\022enableSyncWithLdap\210\001\001\022N\n\"enable_s" +
+      "ync_with_ldap_include_auth\030\003 \001(\010H\002R\035enab" +
+      "leSyncWithLdapIncludeAuth\210\001\001\022:\n\027ignore_g" +
+      "uests_ldap_sync\030\004 \001(\010H\003R\024ignoreGuestsLda" +
+      "pSync\210\001\001\022\033\n\006verify\030\005 \001(\010H\004R\006verify\210\001\001\022\035\n" +
+      "\007encrypt\030\006 \001(\010H\005R\007encrypt\210\001\001\022&\n\014sign_req" +
+      "uest\030\007 \001(\010H\006R\013signRequest\210\001\001\022\034\n\007idp_url\030" +
+      "\010 \001(\tH\007R\006idpUrl\210\001\001\0221\n\022idp_descriptor_url" +
+      "\030\t \001(\tH\010R\020idpDescriptorUrl\210\001\001\022-\n\020idp_met" +
+      "adata_url\030\n \001(\tH\tR\016idpMetadataUrl\210\001\001\022C\n\033" +
+      "service_provider_identifier\030\013 \001(\tH\nR\031ser",
+      "viceProviderIdentifier\210\001\001\022H\n\036assertion_c" +
+      "onsumer_service_url\030\014 \001(\tH\013R\033assertionCo" +
+      "nsumerServiceUrl\210\001\001\0224\n\023signature_algorit" +
+      "hm\030\r \001(\tH\014R\022signatureAlgorithm\210\001\001\0224\n\023can" +
+      "onical_algorithm\030\016 \001(\tH\rR\022canonicalAlgor" +
+      "ithm\210\001\001\022:\n\027scoping_idp_provider_id\030\017 \001(\t" +
+      "H\016R\024scopingIdpProviderId\210\001\001\022-\n\020scoping_i" +
+      "dp_name\030\020 \001(\tH\017R\016scopingIdpName\210\001\001\0225\n\024id" +
+      "p_certificate_file\030\021 \001(\tH\020R\022idpCertifica" +
+      "teFile\210\001\001\022;\n\027public_certificate_file\030\022 \001" +
+      "(\tH\021R\025publicCertificateFile\210\001\001\022-\n\020privat" +
+      "e_key_file\030\023 \001(\tH\022R\016privateKeyFile\210\001\001\022&\n" +
+      "\014id_attribute\030\024 \001(\tH\023R\013idAttribute\210\001\001\0229\n" +
+      "\026enable_admin_attribute\030\025 \001(\010H\024R\024enableA" +
+      "dminAttribute\210\001\001\022,\n\017admin_attribute\030\026 \001(" +
+      "\tH\025R\016adminAttribute\210\001\001\0225\n\024first_name_att" +
+      "ribute\030\027 \001(\tH\026R\022firstNameAttribute\210\001\001\0223\n" +
+      "\023last_name_attribute\030\030 \001(\tH\027R\021lastNameAt" +
+      "tribute\210\001\001\022,\n\017email_attribute\030\031 \001(\tH\030R\016e" +
+      "mailAttribute\210\001\001\0222\n\022username_attribute\030\032" +
+      " \001(\tH\031R\021usernameAttribute\210\001\001\0222\n\022nickname" +
+      "_attribute\030\033 \001(\tH\032R\021nicknameAttribute\210\001\001" +
+      "\022.\n\020locale_attribute\030\034 \001(\tH\033R\017localeAttr" +
+      "ibute\210\001\001\0222\n\022position_attribute\030\035 \001(\tH\034R\021" +
+      "positionAttribute\210\001\001\022/\n\021login_button_tex" +
+      "t\030\036 \001(\tH\035R\017loginButtonText\210\001\001\0221\n\022login_b" +
+      "utton_color\030\037 \001(\tH\036R\020loginButtonColor\210\001\001" +
+      "\022>\n\031login_button_border_color\030  \001(\tH\037R\026l" +
+      "oginButtonBorderColor\210\001\001\022:\n\027login_button" +
+      "_text_color\030! \001(\tH R\024loginButtonTextColo" +
+      "r\210\001\001B\t\n\007_enableB\030\n\026_enable_sync_with_lda" +
+      "pB%\n#_enable_sync_with_ldap_include_auth" +
+      "B\032\n\030_ignore_guests_ldap_syncB\t\n\007_verifyB" +
+      "\n\n\010_encryptB\017\n\r_sign_requestB\n\n\010_idp_url" +
+      "B\025\n\023_idp_descriptor_urlB\023\n\021_idp_metadata" +
+      "_urlB\036\n\034_service_provider_identifierB!\n\037" +
+      "_assertion_consumer_service_urlB\026\n\024_sign" +
+      "ature_algorithmB\026\n\024_canonical_algorithmB" +
+      "\032\n\030_scoping_idp_provider_idB\023\n\021_scoping_" +
+      "idp_nameB\027\n\025_idp_certificate_fileB\032\n\030_pu" +
+      "blic_certificate_fileB\023\n\021_private_key_fi" +
+      "leB\017\n\r_id_attributeB\031\n\027_enable_admin_att" +
+      "ributeB\022\n\020_admin_attributeB\027\n\025_first_nam" +
+      "e_attributeB\026\n\024_last_name_attributeB\022\n\020_" +
+      "email_attributeB\025\n\023_username_attributeB\025" +
+      "\n\023_nickname_attributeB\023\n\021_locale_attribu" +
+      "teB\025\n\023_position_attributeB\024\n\022_login_butt" +
+      "on_textB\025\n\023_login_button_colorB\034\n\032_login" +
+      "_button_border_colorB\032\n\030_login_button_te" +
+      "xt_color\"\301\005\n\017ConfigNativeApp\0223\n\026app_cust" +
+      "om_url_schemes\030\001 \003(\tR\023appCustomUrlScheme" +
+      "s\022/\n\021app_download_link\030\002 \001(\tH\000R\017appDownl" +
+      "oadLink\210\001\001\022>\n\031android_app_download_link\030" +
+      "\003 \001(\tH\001R\026androidAppDownloadLink\210\001\001\0226\n\025io" +
+      "s_app_download_link\030\004 \001(\tH\002R\022iosAppDownl" +
+      "oadLink\210\001\001\022;\n\027mobile_external_browser\030\005 " +
+      "\001(\010H\003R\025mobileExternalBrowser\210\001\001\022=\n\030mobil" +
+      "e_enable_biometrics\030\006 \001(\010H\004R\026mobileEnabl" +
+      "eBiometrics\210\001\001\022F\n\035mobile_prevent_screen_" +
+      "capture\030\007 \001(\010H\005R\032mobilePreventScreenCapt" +
+      "ure\210\001\001\022C\n\033mobile_jailbreak_protection\030\010 " +
+      "\001(\010H\006R\031mobileJailbreakProtection\210\001\001B\024\n\022_" +
+      "app_download_linkB\034\n\032_android_app_downlo" +
+      "ad_linkB\030\n\026_ios_app_download_linkB\032\n\030_mo" +
+      "bile_external_browserB\033\n\031_mobile_enable_" +
+      "biometricsB \n\036_mobile_prevent_screen_cap" +
+      "tureB\036\n\034_mobile_jailbreak_protection\"\253\005\n" +
+      "\021ConfigMeilisearch\022#\n\nserver_url\030\001 \001(\tH\000" +
+      "R\nserver_url\210\001\001\022\"\n\nmaster_key\030\002 \001(\tH\001R\tm" +
+      "asterKey\210\001\001\022,\n\017enable_indexing\030\003 \001(\010H\002R\016" +
+      "enableIndexing\210\001\001\022.\n\020enable_searching\030\004 " +
+      "\001(\010H\003R\017enableSearching\210\001\001\0224\n\023enable_auto" +
+      "complete\030\005 \001(\010H\004R\022enableAutocomplete\210\001\001\022" +
+      "\"\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001\022;\n\027r" +
+      "equest_timeout_seconds\030\007 \001(\005H\006R\025requestT" +
+      "imeoutSeconds\210\001\001\022&\n\014index_prefix\030\010 \001(\tH\007" +
+      "R\013indexPrefix\210\001\001\022-\n\020search_cutoff_ms\030\t \001" +
+      "(\005H\010R\016searchCutoffMs\210\001\001\0227\n\025enable_typo_t" +
+      "olerance\030\n \001(\010H\tR\023enableTypoTolerance\210\001\001" +
+      "B\r\n\013_server_urlB\r\n\013_master_keyB\022\n\020_enabl" +
+      "e_indexingB\023\n\021_enable_searchingB\026\n\024_enab" +
+      "le_autocompleteB\r\n\013_batch_sizeB\032\n\030_reque" +
+      "st_timeout_secondsB\017\n\r_index_prefixB\023\n\021_" +
+      "search_cutoff_msB\030\n\026_enable_typo_toleran" +
+      "ce\"\272\003\n\013ConfigBleve\022 \n\tindex_dir\030\001 \001(\tH\000R" +
+      "\010indexDir\210\001\001\022,\n\017enable_indexing\030\002 \001(\010H\001R" +
+      "\016enableIndexing\210\001\001\022.\n\020enable_searching\030\003" +
+      " \001(\010H\002R\017enableSearching\210\001\001\0224\n\023enable_aut" +
+      "ocomplete\030\004 \001(\010H\003R\022enableAutocomplete\210\001\001" +
+      "\022M\n!bulk_indexing_time_window_seconds\030\005 " +
+      "\001(\005H\004R\035bulkIndexingTimeWindowSeconds\210\001\001\022" +
+      "\"\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001B\014\n\n_" +
+      "index_dirB\022\n\020_enable_indexingB\023\n\021_enable" +
+      "_searchingB\026\n\024_enable_autocompleteB$\n\"_b" +
+      "ulk_indexing_time_window_secondsB\r\n\013_bat" +
+      "ch_size\"\354\006\n\023ConfigDataRetention\022;\n\027enabl" +
+      "e_message_deletion\030\001 \001(\010H\000R\025enableMessag" +
+      "eDeletion\210\001\001\0225\n\024enable_file_deletion\030\002 \001" +
+      "(\010H\001R\022enableFileDeletion\210\001\001\0229\n\026enable_bo" +
+      "ards_deletion\030\003 \001(\010H\002R\024enableBoardsDelet" +
+      "ion\210\001\001\022;\n\027message_retention_hours\030\004 \001(\005H" +
+      "\003R\025messageRetentionHours\210\001\001\0225\n\024file_rete" +
+      "ntion_hours\030\005 \001(\005H\004R\022fileRetentionHours\210" +
+      "\001\001\0227\n\025boards_retention_days\030\006 \001(\005H\005R\023boa" +
+      "rdsRetentionDays\210\001\001\022:\n\027deletion_job_star" +
+      "t_time\030\007 \001(\tH\006R\024deletionJobStartTime\210\001\001\022" +
+      "\"\n\nbatch_size\030\010 \001(\005H\007R\tbatchSize\210\001\001\022N\n!t" +
+      "ime_between_batches_milliseconds\030\t \001(\005H\010" +
+      "R\036timeBetweenBatchesMilliseconds\210\001\001\022<\n\030r" +
+      "etention_ids_batch_size\030\n \001(\005H\tR\025retenti" +
+      "onIdsBatchSize\210\001\001B\032\n\030_enable_message_del" +
+      "etionB\027\n\025_enable_file_deletionB\031\n\027_enabl" +
+      "e_boards_deletionB\032\n\030_message_retention_" +
+      "hoursB\027\n\025_file_retention_hoursB\030\n\026_board" +
+      "s_retention_daysB\032\n\030_deletion_job_start_" +
+      "timeB\r\n\013_batch_sizeB$\n\"_time_between_bat" +
+      "ches_millisecondsB\033\n\031_retention_ids_batc" +
+      "h_size\"\264\002\n\020ConfigImageProxy\022\033\n\006enable\030\001 " +
+      "\001(\010H\000R\006enable\210\001\001\022-\n\020image_proxy_type\030\002 \001" +
+      "(\tH\001R\016imageProxyType\210\001\001\0228\n\026remote_image_" +
+      "proxy_url\030\003 \001(\tH\002R\023remoteImageProxyUrl\210\001" +
+      "\001\022@\n\032remote_image_proxy_options\030\004 \001(\tH\003R" +
+      "\027remoteImageProxyOptions\210\001\001B\t\n\007_enableB\023" +
+      "\n\021_image_proxy_typeB\031\n\027_remote_image_pro" +
+      "xy_urlB\035\n\033_remote_image_proxy_options\"\373\010" +
+      "\n\006Config\022)\n\004main\030\001 \001(\0132\025.common.v1.Confi" +
+      "gMainR\004main\0225\n\010services\030\002 \001(\0132\031.common.v" +
+      "1.ConfigServicesR\010services\0225\n\010security\030\003" +
+      " \001(\0132\031.common.v1.ConfigSecurityR\010securit" +
+      "y\022,\n\005cache\030\004 \001(\0132\026.common.v1.CacheConfig" +
+      "R\005cache\0222\n\007metrics\030\005 \001(\0132\030.common.v1.Con" +
+      "figMetricsR\007metrics\022&\n\003sso\030\006 \001(\0132\024.commo" +
+      "n.v1.ConfigSSOR\003sso\022&\n\003sql\030\007 \001(\0132\024.commo" +
+      "n.v1.ConfigSqlR\003sql\0225\n\010password\030\010 \001(\0132\031." +
+      "common.v1.ConfigPasswordR\010password\022)\n\004fi" +
+      "le\030\t \001(\0132\025.common.v1.ConfigFileR\004file\022,\n" +
+      "\005email\030\n \001(\0132\026.common.v1.ConfigEmailR\005em" +
+      "ail\0229\n\nrate_limit\030\013 \001(\0132\032.common.v1.Conf" +
+      "igRateLimitR\trateLimit\0222\n\007privacy\030\014 \001(\0132" +
+      "\030.common.v1.ConfigPrivacyR\007privacy\0222\n\007su" +
+      "pport\030\r \001(\0132\030.common.v1.ConfigSupportR\007s" +
+      "upport\022A\n\014localization\030\016 \001(\0132\035.common.v1" +
+      ".ConfigLocalizationR\014localization\022)\n\004lda" +
+      "p\030\017 \001(\0132\025.common.v1.ConfigLdapR\004ldap\022)\n\004" +
+      "saml\030\020 \001(\0132\025.common.v1.ConfigSamlR\004saml\022" +
+      "9\n\nnative_app\030\021 \001(\0132\032.common.v1.ConfigNa" +
+      "tiveAppR\tnativeApp\022>\n\013meilisearch\030\022 \001(\0132" +
+      "\034.common.v1.ConfigMeilisearchR\013meilisear" +
+      "ch\022,\n\005bleve\030\023 \001(\0132\026.common.v1.ConfigBlev" +
+      "eR\005bleve\022E\n\016data_retention\030\024 \001(\0132\036.commo" +
+      "n.v1.ConfigDataRetentionR\rdataRetention\022" +
+      "<\n\013image_proxy\030\025 \001(\0132\033.common.v1.ConfigI" +
+      "mageProxyR\nimageProxy\022,\n\005oauth\030\026 \001(\0132\026.c" +
+      "ommon.v1.ConfigOAuthR\005oauth\"\022\n\020ConfigGet" +
+      "Request\"u\n\021ConfigGetResponse\022\'\n\004data\030\001 \001" +
+      "(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005error\030\002" +
+      " \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n\010re" +
+      "sponse\"@\n\023ConfigUpdateRequest\022)\n\006config\030" +
+      "\001 \001(\0132\021.common.v1.ConfigR\006config\"x\n\024Conf" +
+      "igUpdateResponse\022\'\n\004data\030\001 \001(\0132\021.common." +
+      "v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.share" +
+      "d.v1.AppErrorH\000R\005errorB\n\n\010response\"z\n\026Co" +
+      "nfigListenerResponse\022\'\n\004data\030\001 \001(\0132\021.com" +
+      "mon.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.s" +
+      "hared.v1.AppErrorH\000R\005errorB\n\n\010response\"4" +
+      "\n\025ConfigListenerRequest\022\033\n\tclient_id\030\001 \001" +
+      "(\tR\010clientIdBq\n\032org.megacommerce.common." +
+      "v1B\013ConfigProtoZCgithub.com/ahmad-khatib" +
+      "0-org/megacommerce-proto/gen/go/common/v" +
+      "1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -53642,9 +55307,15 @@ java.lang.String defaultValue) {
     internal_static_common_v1_ConfigServices_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigServices_descriptor,
-        new java.lang.String[] { "CommonServiceGrpcUrl", "UserServiceGrpcUrl", "ProductsServiceGrpcUrl", "JaegerCollectorUrl", "CommonServicePrometheusUrl", "UserServicePrometheusUrl", "ProductsServicePrometheusUrl", "UsersServiceMaxReceiveMessageSizeBytes", "AuthServiceGrpcUrl", "AuthServicePrometheusUrl", "OauthProviderUrl", "OauthClientId", "OauthClientSecret", "OauthDbDsn", });
-    internal_static_common_v1_ConfigSecurity_descriptor =
+        new java.lang.String[] { "CommonServiceGrpcUrl", "UserServiceGrpcUrl", "ProductsServiceGrpcUrl", "JaegerCollectorUrl", "CommonServicePrometheusUrl", "UserServicePrometheusUrl", "ProductsServicePrometheusUrl", "UsersServiceMaxReceiveMessageSizeBytes", "AuthServiceGrpcUrl", "AuthServicePrometheusUrl", });
+    internal_static_common_v1_ConfigOAuth_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_common_v1_ConfigOAuth_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_common_v1_ConfigOAuth_descriptor,
+        new java.lang.String[] { "OauthProviderUrl", "OauthClientId", "OauthClientSecret", "OauthDbDsn", "OauthRedirectUrl", "OauthLoginUrl", "OauthConsentUrl", "OauthResponseType", "OauthScope", "OauthAdminUrl", });
+    internal_static_common_v1_ConfigSecurity_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_common_v1_ConfigSecurity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigSecurity_descriptor,
@@ -53656,151 +55327,151 @@ java.lang.String defaultValue) {
         internal_static_common_v1_ConfigSecurity_RestrictedUsernamesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_common_v1_CacheConfig_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_common_v1_CacheConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_CacheConfig_descriptor,
         new java.lang.String[] { "CacheType", "RedisAddress", "RedisPassword", "RedisDb", "RedisCachePrefix", "DisableClientCache", });
     internal_static_common_v1_ConfigMetrics_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_common_v1_ConfigMetrics_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigMetrics_descriptor,
         new java.lang.String[] { "Enable", "BlockProfileRate", "ListenAddress", "EnableClientMetrics", "EnableNotificationMetrics", "ClientSideUserIds", });
     internal_static_common_v1_ConfigSSO_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_common_v1_ConfigSSO_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigSSO_descriptor,
         new java.lang.String[] { "Enable", "Secret", "Id", "Scope", "AuthEndpoint", "TokenEndpoint", "UserApiEndpoint", "DiscoveryEndpoint", "ButtonText", "ButtonColor", });
     internal_static_common_v1_ConfigSql_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_common_v1_ConfigSql_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigSql_descriptor,
         new java.lang.String[] { "DriverName", "DataSource", "MaxIdleConns", "ConnMaxLifetimeMilliseconds", "ConnMaxIdleTimeMilliseconds", "MaxOpenConns", "Trace", "AtRestEncryptKey", "QueryTimeout", "DisableDatabaseSearch", });
     internal_static_common_v1_ConfigPassword_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_common_v1_ConfigPassword_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigPassword_descriptor,
         new java.lang.String[] { "MinimumLength", "MaximumLength", "Lowercase", "Number", "Uppercase", "Symbol", "EnableForgotLink", });
     internal_static_common_v1_ConfigFile_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_common_v1_ConfigFile_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigFile_descriptor,
         new java.lang.String[] { "EnableFileAttachments", "EnableMobileUpload", "EnableMobileDownload", "MaxImageResolution", "MaxImageDecoderConcurrency", "DriverName", "AmazonS3AccessKeyId", "AmazonS3SecretAccessKey", "AmazonS3Bucket", "AmazonS3PathPrefix", "AmazonS3Region", "AmazonS3Endpoint", "AmazonS3Ssl", "AmazonS3SignV2", "AmazonS3Sse", "AmazonS3Trace", "AmazonS3RequestTimeoutMilliseconds", "AmazonS3UploadPartSizeBytes", "AmazonS3StorageClass", });
     internal_static_common_v1_ConfigEmail_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_common_v1_ConfigEmail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigEmail_descriptor,
         new java.lang.String[] { "SendEmailNotifications", "RequireEmailVerification", "FeedbackEmail", "ReplyToAddress", "EnableSmtpAuth", "SmtpUsername", "SmtpPassword", "SmtpServer", "SmtpPort", "SmtpServerTimeout", "ConnectionSecurity", "SendPushNotifications", "PushNotificationServer", "PushNotificationContents", "PushNotificationBuffer", "EnableEmailBatching", "EmailBatchingBufferSize", "EmailBatchingInterval", "SkipServerCertificateVerification", "EmailNotificationContentsType", "LoginButtonColor", "LoginButtonBorderColor", "LoginButtonTextColor", "RateLimitingMemorySize", "RateLimitingPerHour", "RateLimitingMaxBurst", });
     internal_static_common_v1_ConfigRateLimit_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_common_v1_ConfigRateLimit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigRateLimit_descriptor,
         new java.lang.String[] { "Enable", "PerSec", "MaxBurst", "MemoryStoreSize", "VaryByRemoteAddr", "VaryByUser", "VaryByHeader", });
     internal_static_common_v1_ConfigPrivacy_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_common_v1_ConfigPrivacy_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigPrivacy_descriptor,
         new java.lang.String[] { "ShowEmailAddress", "ShowFullName", });
     internal_static_common_v1_ConfigSupport_descriptor =
-      getDescriptor().getMessageTypes().get(12);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_common_v1_ConfigSupport_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigSupport_descriptor,
         new java.lang.String[] { "TermsOfServiceLink", "PrivacyPolicyLink", "AboutLink", "HelpLink", "ReportAProblemLink", "ForgotPasswordLink", "SupportEmail", });
     internal_static_common_v1_ConfigLocalization_descriptor =
-      getDescriptor().getMessageTypes().get(13);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_common_v1_ConfigLocalization_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigLocalization_descriptor,
         new java.lang.String[] { "DefaultServerLocale", "DefaultClientLocale", "AvailableLocales", });
     internal_static_common_v1_ConfigLdap_descriptor =
-      getDescriptor().getMessageTypes().get(14);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_common_v1_ConfigLdap_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigLdap_descriptor,
         new java.lang.String[] { "Enable", "EnableSync", "LdapServer", "LdapPort", "ConnectionSecurity", "BaseDn", "BindUsername", "BindPassword", "MaximumLoginAttempts", "UserFilter", "GroupFilter", "EnableAdminFilter", "AdminFilter", "GroupDisplayNameAttribute", "GroupIdAttribute", "FirstNameAttribute", "LastNameAttribute", "EmailAttribute", "UsernameAttribute", "NicknameAttribute", "IdAttribute", "PositionAttribute", "LoginIdAttribute", "PictureAttribute", "SyncIntervalMinutes", "QueryTimeout", "MaxPageSize", "LoginFieldName", "LoginButtonColor", "LoginButtonBorderColor", "LoginButtonTextColor", });
     internal_static_common_v1_ConfigSaml_descriptor =
-      getDescriptor().getMessageTypes().get(15);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_common_v1_ConfigSaml_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigSaml_descriptor,
         new java.lang.String[] { "Enable", "EnableSyncWithLdap", "EnableSyncWithLdapIncludeAuth", "IgnoreGuestsLdapSync", "Verify", "Encrypt", "SignRequest", "IdpUrl", "IdpDescriptorUrl", "IdpMetadataUrl", "ServiceProviderIdentifier", "AssertionConsumerServiceUrl", "SignatureAlgorithm", "CanonicalAlgorithm", "ScopingIdpProviderId", "ScopingIdpName", "IdpCertificateFile", "PublicCertificateFile", "PrivateKeyFile", "IdAttribute", "EnableAdminAttribute", "AdminAttribute", "FirstNameAttribute", "LastNameAttribute", "EmailAttribute", "UsernameAttribute", "NicknameAttribute", "LocaleAttribute", "PositionAttribute", "LoginButtonText", "LoginButtonColor", "LoginButtonBorderColor", "LoginButtonTextColor", });
     internal_static_common_v1_ConfigNativeApp_descriptor =
-      getDescriptor().getMessageTypes().get(16);
+      getDescriptor().getMessageTypes().get(17);
     internal_static_common_v1_ConfigNativeApp_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigNativeApp_descriptor,
         new java.lang.String[] { "AppCustomUrlSchemes", "AppDownloadLink", "AndroidAppDownloadLink", "IosAppDownloadLink", "MobileExternalBrowser", "MobileEnableBiometrics", "MobilePreventScreenCapture", "MobileJailbreakProtection", });
     internal_static_common_v1_ConfigMeilisearch_descriptor =
-      getDescriptor().getMessageTypes().get(17);
+      getDescriptor().getMessageTypes().get(18);
     internal_static_common_v1_ConfigMeilisearch_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigMeilisearch_descriptor,
         new java.lang.String[] { "ServerUrl", "MasterKey", "EnableIndexing", "EnableSearching", "EnableAutocomplete", "BatchSize", "RequestTimeoutSeconds", "IndexPrefix", "SearchCutoffMs", "EnableTypoTolerance", });
     internal_static_common_v1_ConfigBleve_descriptor =
-      getDescriptor().getMessageTypes().get(18);
+      getDescriptor().getMessageTypes().get(19);
     internal_static_common_v1_ConfigBleve_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigBleve_descriptor,
         new java.lang.String[] { "IndexDir", "EnableIndexing", "EnableSearching", "EnableAutocomplete", "BulkIndexingTimeWindowSeconds", "BatchSize", });
     internal_static_common_v1_ConfigDataRetention_descriptor =
-      getDescriptor().getMessageTypes().get(19);
+      getDescriptor().getMessageTypes().get(20);
     internal_static_common_v1_ConfigDataRetention_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigDataRetention_descriptor,
         new java.lang.String[] { "EnableMessageDeletion", "EnableFileDeletion", "EnableBoardsDeletion", "MessageRetentionHours", "FileRetentionHours", "BoardsRetentionDays", "DeletionJobStartTime", "BatchSize", "TimeBetweenBatchesMilliseconds", "RetentionIdsBatchSize", });
     internal_static_common_v1_ConfigImageProxy_descriptor =
-      getDescriptor().getMessageTypes().get(20);
+      getDescriptor().getMessageTypes().get(21);
     internal_static_common_v1_ConfigImageProxy_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigImageProxy_descriptor,
         new java.lang.String[] { "Enable", "ImageProxyType", "RemoteImageProxyUrl", "RemoteImageProxyOptions", });
     internal_static_common_v1_Config_descriptor =
-      getDescriptor().getMessageTypes().get(21);
+      getDescriptor().getMessageTypes().get(22);
     internal_static_common_v1_Config_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_Config_descriptor,
-        new java.lang.String[] { "Main", "Services", "Security", "Cache", "Metrics", "Sso", "Sql", "Password", "File", "Email", "RateLimit", "Privacy", "Support", "Localization", "Ldap", "Saml", "NativeApp", "Meilisearch", "Bleve", "DataRetention", "ImageProxy", });
+        new java.lang.String[] { "Main", "Services", "Security", "Cache", "Metrics", "Sso", "Sql", "Password", "File", "Email", "RateLimit", "Privacy", "Support", "Localization", "Ldap", "Saml", "NativeApp", "Meilisearch", "Bleve", "DataRetention", "ImageProxy", "Oauth", });
     internal_static_common_v1_ConfigGetRequest_descriptor =
-      getDescriptor().getMessageTypes().get(22);
+      getDescriptor().getMessageTypes().get(23);
     internal_static_common_v1_ConfigGetRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigGetRequest_descriptor,
         new java.lang.String[] { });
     internal_static_common_v1_ConfigGetResponse_descriptor =
-      getDescriptor().getMessageTypes().get(23);
+      getDescriptor().getMessageTypes().get(24);
     internal_static_common_v1_ConfigGetResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigGetResponse_descriptor,
         new java.lang.String[] { "Data", "Error", "Response", });
     internal_static_common_v1_ConfigUpdateRequest_descriptor =
-      getDescriptor().getMessageTypes().get(24);
+      getDescriptor().getMessageTypes().get(25);
     internal_static_common_v1_ConfigUpdateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigUpdateRequest_descriptor,
         new java.lang.String[] { "Config", });
     internal_static_common_v1_ConfigUpdateResponse_descriptor =
-      getDescriptor().getMessageTypes().get(25);
+      getDescriptor().getMessageTypes().get(26);
     internal_static_common_v1_ConfigUpdateResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigUpdateResponse_descriptor,
         new java.lang.String[] { "Data", "Error", "Response", });
     internal_static_common_v1_ConfigListenerResponse_descriptor =
-      getDescriptor().getMessageTypes().get(26);
+      getDescriptor().getMessageTypes().get(27);
     internal_static_common_v1_ConfigListenerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigListenerResponse_descriptor,
         new java.lang.String[] { "Data", "Error", "Response", });
     internal_static_common_v1_ConfigListenerRequest_descriptor =
-      getDescriptor().getMessageTypes().get(27);
+      getDescriptor().getMessageTypes().get(28);
     internal_static_common_v1_ConfigListenerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigListenerRequest_descriptor,
