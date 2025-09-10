@@ -3206,6 +3206,7 @@ class ConfigOAuth final : public ::google::protobuf::Message
     kOauthConsentUrlFieldNumber = 7,
     kOauthResponseTypeFieldNumber = 8,
     kOauthAdminUrlFieldNumber = 10,
+    kOauthBackendUrlFieldNumber = 11,
   };
   // repeated string oauth_scope = 9 [json_name = "oauthScope"];
   int oauth_scope_size() const;
@@ -3373,12 +3374,28 @@ class ConfigOAuth final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_oauth_admin_url();
 
   public:
+  // optional string oauth_backend_url = 11 [json_name = "oauthBackendUrl"];
+  bool has_oauth_backend_url() const;
+  void clear_oauth_backend_url() ;
+  const ::std::string& oauth_backend_url() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_oauth_backend_url(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_oauth_backend_url();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_oauth_backend_url();
+  void set_allocated_oauth_backend_url(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_oauth_backend_url() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_oauth_backend_url(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_oauth_backend_url();
+
+  public:
   // @@protoc_insertion_point(class_scope:common.v1.ConfigOAuth)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<4, 10,
-                                   0, 197,
+  static const ::google::protobuf::internal::TcParseTable<4, 11,
+                                   0, 214,
                                    2>
       _table_;
 
@@ -3409,6 +3426,7 @@ class ConfigOAuth final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr oauth_consent_url_;
     ::google::protobuf::internal::ArenaStringPtr oauth_response_type_;
     ::google::protobuf::internal::ArenaStringPtr oauth_admin_url_;
+    ::google::protobuf::internal::ArenaStringPtr oauth_backend_url_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -12264,6 +12282,75 @@ inline void ConfigOAuth::set_allocated_oauth_admin_url(::std::string* PROTOBUF_N
     _impl_.oauth_admin_url_.Set("", GetArena());
   }
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigOAuth.oauth_admin_url)
+}
+
+// optional string oauth_backend_url = 11 [json_name = "oauthBackendUrl"];
+inline bool ConfigOAuth::has_oauth_backend_url() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
+  return value;
+}
+inline void ConfigOAuth::clear_oauth_backend_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.oauth_backend_url_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000200u;
+}
+inline const ::std::string& ConfigOAuth::oauth_backend_url() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigOAuth.oauth_backend_url)
+  return _internal_oauth_backend_url();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigOAuth::set_oauth_backend_url(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000200u;
+  _impl_.oauth_backend_url_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigOAuth.oauth_backend_url)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::mutable_oauth_backend_url()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_oauth_backend_url();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigOAuth.oauth_backend_url)
+  return _s;
+}
+inline const ::std::string& ConfigOAuth::_internal_oauth_backend_url() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.oauth_backend_url_.Get();
+}
+inline void ConfigOAuth::_internal_set_oauth_backend_url(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000200u;
+  _impl_.oauth_backend_url_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::_internal_mutable_oauth_backend_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000200u;
+  return _impl_.oauth_backend_url_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigOAuth::release_oauth_backend_url() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigOAuth.oauth_backend_url)
+  if ((_impl_._has_bits_[0] & 0x00000200u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000200u;
+  auto* released = _impl_.oauth_backend_url_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.oauth_backend_url_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigOAuth::set_allocated_oauth_backend_url(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000200u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000200u;
+  }
+  _impl_.oauth_backend_url_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.oauth_backend_url_.IsDefault()) {
+    _impl_.oauth_backend_url_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigOAuth.oauth_backend_url)
 }
 
 // -------------------------------------------------------------------

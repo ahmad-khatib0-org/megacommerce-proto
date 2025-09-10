@@ -57,6 +57,7 @@ message ConfigOAuth {
   optional string oauth_response_type = 8;
   repeated string oauth_scope = 9;
   optional string oauth_admin_url = 10;
+  optional string oauth_backend_url = 11;
 }
 
 message ConfigSecurity {
