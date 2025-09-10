@@ -1,6 +1,6 @@
 [package]
 name = "megacommerce-proto"
-version = "0.1.71"
+version = "0.1.73"
 edition = "2021"
 description = "Generated gRPC protobuf definitions for MegaCommerce"
 license = "MIT OR Apache-2.0"
