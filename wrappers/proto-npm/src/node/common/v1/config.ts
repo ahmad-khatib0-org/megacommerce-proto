@@ -59,6 +59,7 @@ export interface ConfigOAuth {
   oauthScope: string[];
   oauthAdminUrl?: string | undefined;
   oauthBackendUrl?: string | undefined;
+  frontendLoginUrl?: string | undefined;
 }
 
 export interface ConfigSecurity {
@@ -1096,6 +1097,7 @@ function createBaseConfigOAuth(): ConfigOAuth {
     oauthScope: [],
     oauthAdminUrl: undefined,
     oauthBackendUrl: undefined,
+    frontendLoginUrl: undefined,
   };
 }
 
@@ -1133,6 +1135,9 @@ export const ConfigOAuth: MessageFns<ConfigOAuth> = {
     }
     if (message.oauthBackendUrl !== undefined) {
       writer.uint32(90).string(message.oauthBackendUrl);
+    }
+    if (message.frontendLoginUrl !== undefined) {
+      writer.uint32(98).string(message.frontendLoginUrl);
     }
     return writer;
   },
@@ -1232,6 +1237,14 @@ export const ConfigOAuth: MessageFns<ConfigOAuth> = {
           message.oauthBackendUrl = reader.string();
           continue;
         }
+        case 12: {
+          if (tag !== 98) {
+            break;
+          }
+
+          message.frontendLoginUrl = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -1256,6 +1269,7 @@ export const ConfigOAuth: MessageFns<ConfigOAuth> = {
         : [],
       oauthAdminUrl: isSet(object.oauthAdminUrl) ? globalThis.String(object.oauthAdminUrl) : undefined,
       oauthBackendUrl: isSet(object.oauthBackendUrl) ? globalThis.String(object.oauthBackendUrl) : undefined,
+      frontendLoginUrl: isSet(object.frontendLoginUrl) ? globalThis.String(object.frontendLoginUrl) : undefined,
     };
   },
 
@@ -1294,6 +1308,9 @@ export const ConfigOAuth: MessageFns<ConfigOAuth> = {
     if (message.oauthBackendUrl !== undefined) {
       obj.oauthBackendUrl = message.oauthBackendUrl;
     }
+    if (message.frontendLoginUrl !== undefined) {
+      obj.frontendLoginUrl = message.frontendLoginUrl;
+    }
     return obj;
   },
 
@@ -1313,6 +1330,7 @@ export const ConfigOAuth: MessageFns<ConfigOAuth> = {
     message.oauthScope = object.oauthScope?.map((e) => e) || [];
     message.oauthAdminUrl = object.oauthAdminUrl ?? undefined;
     message.oauthBackendUrl = object.oauthBackendUrl ?? undefined;
+    message.frontendLoginUrl = object.frontendLoginUrl ?? undefined;
     return message;
   },
 };

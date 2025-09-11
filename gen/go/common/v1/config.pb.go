@@ -355,6 +355,7 @@ type ConfigOAuth struct {
 	OauthScope        []string               `protobuf:"bytes,9,rep,name=oauth_scope,json=oauthScope,proto3" json:"oauth_scope,omitempty"`
 	OauthAdminUrl     *string                `protobuf:"bytes,10,opt,name=oauth_admin_url,json=oauthAdminUrl,proto3,oneof" json:"oauth_admin_url,omitempty"`
 	OauthBackendUrl   *string                `protobuf:"bytes,11,opt,name=oauth_backend_url,json=oauthBackendUrl,proto3,oneof" json:"oauth_backend_url,omitempty"`
+	FrontendLoginUrl  *string                `protobuf:"bytes,12,opt,name=frontend_login_url,json=frontendLoginUrl,proto3,oneof" json:"frontend_login_url,omitempty"`
 	unknownFields     protoimpl.UnknownFields
 	sizeCache         protoimpl.SizeCache
 }
@@ -462,6 +463,13 @@ func (x *ConfigOAuth) GetOauthAdminUrl() string {
 func (x *ConfigOAuth) GetOauthBackendUrl() string {
 	if x != nil && x.OauthBackendUrl != nil {
 		return *x.OauthBackendUrl
+	}
+	return ""
+}
+
+func (x *ConfigOAuth) GetFrontendLoginUrl() string {
+	if x != nil && x.FrontendLoginUrl != nil {
+		return *x.FrontendLoginUrl
 	}
 	return ""
 }
@@ -3624,7 +3632,7 @@ const file_common_v1_config_proto_rawDesc = "" +
 	" _products_service_prometheus_urlB/\n" +
 	"-_users_service_max_receive_message_size_bytesB\x18\n" +
 	"\x16_auth_service_grpc_urlB\x1e\n" +
-	"\x1c_auth_service_prometheus_url\"\xe5\x05\n" +
+	"\x1c_auth_service_prometheus_url\"\xaf\x06\n" +
 	"\vConfigOAuth\x121\n" +
 	"\x12oauth_provider_url\x18\x01 \x01(\tH\x00R\x10oauthProviderUrl\x88\x01\x01\x12+\n" +
 	"\x0foauth_client_id\x18\x02 \x01(\tH\x01R\roauthClientId\x88\x01\x01\x123\n" +
@@ -3639,7 +3647,9 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"oauthScope\x12+\n" +
 	"\x0foauth_admin_url\x18\n" +
 	" \x01(\tH\bR\roauthAdminUrl\x88\x01\x01\x12/\n" +
-	"\x11oauth_backend_url\x18\v \x01(\tH\tR\x0foauthBackendUrl\x88\x01\x01B\x15\n" +
+	"\x11oauth_backend_url\x18\v \x01(\tH\tR\x0foauthBackendUrl\x88\x01\x01\x121\n" +
+	"\x12frontend_login_url\x18\f \x01(\tH\n" +
+	"R\x10frontendLoginUrl\x88\x01\x01B\x15\n" +
 	"\x13_oauth_provider_urlB\x12\n" +
 	"\x10_oauth_client_idB\x16\n" +
 	"\x14_oauth_client_secretB\x0f\n" +
@@ -3649,7 +3659,8 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x12_oauth_consent_urlB\x16\n" +
 	"\x14_oauth_response_typeB\x12\n" +
 	"\x10_oauth_admin_urlB\x14\n" +
-	"\x12_oauth_backend_url\"\x89\x11\n" +
+	"\x12_oauth_backend_urlB\x15\n" +
+	"\x13_frontend_login_url\"\x89\x11\n" +
 	"\x0eConfigSecurity\x12e\n" +
 	"\x14restricted_usernames\x18\x01 \x03(\v22.common.v1.ConfigSecurity.RestrictedUsernamesEntryR\x13restrictedUsernames\x129\n" +
 	"\x16maximum_login_attempts\x18\x02 \x01(\x05H\x00R\x14maximumLoginAttempts\x88\x01\x01\x12T\n" +
