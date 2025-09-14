@@ -1317,9 +1317,9 @@ class ConfigSecurity final : public ::google::protobuf::Message
     kPasswordResetUrlFieldNumber = 8,
     kAllowCorsFromFieldNumber = 16,
     kCorsExposedHeadersFieldNumber = 17,
-    kAccesssTokenExpiryWebInHoursFieldNumber = 1,
-    kAccesssTokenExpiryMobileInHoursFieldNumber = 2,
-    kAccesssTokenExpirySsoInHoursFieldNumber = 3,
+    kAccessTokenExpiryWebInHoursFieldNumber = 1,
+    kAccessTokenExpiryMobileInHoursFieldNumber = 2,
+    kAccessTokenExpirySsoInHoursFieldNumber = 3,
     kAccessTokenCacheInMinutesFieldNumber = 4,
     kMaximumLoginAttemptsFieldNumber = 5,
     kTokenConfirmationExpiryInHoursFieldNumber = 9,
@@ -1398,37 +1398,37 @@ class ConfigSecurity final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_cors_exposed_headers();
 
   public:
-  // optional int32 accesss_token_expiry_web_in_hours = 1 [json_name = "accesssTokenExpiryWebInHours"];
-  bool has_accesss_token_expiry_web_in_hours() const;
-  void clear_accesss_token_expiry_web_in_hours() ;
-  ::int32_t accesss_token_expiry_web_in_hours() const;
-  void set_accesss_token_expiry_web_in_hours(::int32_t value);
+  // optional int32 access_token_expiry_web_in_hours = 1 [json_name = "accessTokenExpiryWebInHours"];
+  bool has_access_token_expiry_web_in_hours() const;
+  void clear_access_token_expiry_web_in_hours() ;
+  ::int32_t access_token_expiry_web_in_hours() const;
+  void set_access_token_expiry_web_in_hours(::int32_t value);
 
   private:
-  ::int32_t _internal_accesss_token_expiry_web_in_hours() const;
-  void _internal_set_accesss_token_expiry_web_in_hours(::int32_t value);
+  ::int32_t _internal_access_token_expiry_web_in_hours() const;
+  void _internal_set_access_token_expiry_web_in_hours(::int32_t value);
 
   public:
-  // optional int32 accesss_token_expiry_mobile_in_hours = 2 [json_name = "accesssTokenExpiryMobileInHours"];
-  bool has_accesss_token_expiry_mobile_in_hours() const;
-  void clear_accesss_token_expiry_mobile_in_hours() ;
-  ::int32_t accesss_token_expiry_mobile_in_hours() const;
-  void set_accesss_token_expiry_mobile_in_hours(::int32_t value);
+  // optional int32 access_token_expiry_mobile_in_hours = 2 [json_name = "accessTokenExpiryMobileInHours"];
+  bool has_access_token_expiry_mobile_in_hours() const;
+  void clear_access_token_expiry_mobile_in_hours() ;
+  ::int32_t access_token_expiry_mobile_in_hours() const;
+  void set_access_token_expiry_mobile_in_hours(::int32_t value);
 
   private:
-  ::int32_t _internal_accesss_token_expiry_mobile_in_hours() const;
-  void _internal_set_accesss_token_expiry_mobile_in_hours(::int32_t value);
+  ::int32_t _internal_access_token_expiry_mobile_in_hours() const;
+  void _internal_set_access_token_expiry_mobile_in_hours(::int32_t value);
 
   public:
-  // optional int32 accesss_token_expiry_sso_in_hours = 3 [json_name = "accesssTokenExpirySsoInHours"];
-  bool has_accesss_token_expiry_sso_in_hours() const;
-  void clear_accesss_token_expiry_sso_in_hours() ;
-  ::int32_t accesss_token_expiry_sso_in_hours() const;
-  void set_accesss_token_expiry_sso_in_hours(::int32_t value);
+  // optional int32 access_token_expiry_sso_in_hours = 3 [json_name = "accessTokenExpirySsoInHours"];
+  bool has_access_token_expiry_sso_in_hours() const;
+  void clear_access_token_expiry_sso_in_hours() ;
+  ::int32_t access_token_expiry_sso_in_hours() const;
+  void set_access_token_expiry_sso_in_hours(::int32_t value);
 
   private:
-  ::int32_t _internal_accesss_token_expiry_sso_in_hours() const;
-  void _internal_set_accesss_token_expiry_sso_in_hours(::int32_t value);
+  ::int32_t _internal_access_token_expiry_sso_in_hours() const;
+  void _internal_set_access_token_expiry_sso_in_hours(::int32_t value);
 
   public:
   // optional int32 access_token_cache_in_minutes = 4 [json_name = "accessTokenCacheInMinutes"];
@@ -1604,9 +1604,9 @@ class ConfigSecurity final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr password_reset_url_;
     ::google::protobuf::internal::ArenaStringPtr allow_cors_from_;
     ::google::protobuf::internal::ArenaStringPtr cors_exposed_headers_;
-    ::int32_t accesss_token_expiry_web_in_hours_;
-    ::int32_t accesss_token_expiry_mobile_in_hours_;
-    ::int32_t accesss_token_expiry_sso_in_hours_;
+    ::int32_t access_token_expiry_web_in_hours_;
+    ::int32_t access_token_expiry_mobile_in_hours_;
+    ::int32_t access_token_expiry_sso_in_hours_;
     ::int32_t access_token_cache_in_minutes_;
     ::int32_t maximum_login_attempts_;
     ::uint32_t token_confirmation_expiry_in_hours_;
@@ -12464,88 +12464,88 @@ inline void ConfigOAuth::set_allocated_frontend_login_error_url(::std::string* P
 
 // ConfigSecurity
 
-// optional int32 accesss_token_expiry_web_in_hours = 1 [json_name = "accesssTokenExpiryWebInHours"];
-inline bool ConfigSecurity::has_accesss_token_expiry_web_in_hours() const {
+// optional int32 access_token_expiry_web_in_hours = 1 [json_name = "accessTokenExpiryWebInHours"];
+inline bool ConfigSecurity::has_access_token_expiry_web_in_hours() const {
   bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
   return value;
 }
-inline void ConfigSecurity::clear_accesss_token_expiry_web_in_hours() {
+inline void ConfigSecurity::clear_access_token_expiry_web_in_hours() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.accesss_token_expiry_web_in_hours_ = 0;
+  _impl_.access_token_expiry_web_in_hours_ = 0;
   _impl_._has_bits_[0] &= ~0x00000010u;
 }
-inline ::int32_t ConfigSecurity::accesss_token_expiry_web_in_hours() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.accesss_token_expiry_web_in_hours)
-  return _internal_accesss_token_expiry_web_in_hours();
+inline ::int32_t ConfigSecurity::access_token_expiry_web_in_hours() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.access_token_expiry_web_in_hours)
+  return _internal_access_token_expiry_web_in_hours();
 }
-inline void ConfigSecurity::set_accesss_token_expiry_web_in_hours(::int32_t value) {
-  _internal_set_accesss_token_expiry_web_in_hours(value);
+inline void ConfigSecurity::set_access_token_expiry_web_in_hours(::int32_t value) {
+  _internal_set_access_token_expiry_web_in_hours(value);
   _impl_._has_bits_[0] |= 0x00000010u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.accesss_token_expiry_web_in_hours)
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.access_token_expiry_web_in_hours)
 }
-inline ::int32_t ConfigSecurity::_internal_accesss_token_expiry_web_in_hours() const {
+inline ::int32_t ConfigSecurity::_internal_access_token_expiry_web_in_hours() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.accesss_token_expiry_web_in_hours_;
+  return _impl_.access_token_expiry_web_in_hours_;
 }
-inline void ConfigSecurity::_internal_set_accesss_token_expiry_web_in_hours(::int32_t value) {
+inline void ConfigSecurity::_internal_set_access_token_expiry_web_in_hours(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.accesss_token_expiry_web_in_hours_ = value;
+  _impl_.access_token_expiry_web_in_hours_ = value;
 }
 
-// optional int32 accesss_token_expiry_mobile_in_hours = 2 [json_name = "accesssTokenExpiryMobileInHours"];
-inline bool ConfigSecurity::has_accesss_token_expiry_mobile_in_hours() const {
+// optional int32 access_token_expiry_mobile_in_hours = 2 [json_name = "accessTokenExpiryMobileInHours"];
+inline bool ConfigSecurity::has_access_token_expiry_mobile_in_hours() const {
   bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
-inline void ConfigSecurity::clear_accesss_token_expiry_mobile_in_hours() {
+inline void ConfigSecurity::clear_access_token_expiry_mobile_in_hours() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.accesss_token_expiry_mobile_in_hours_ = 0;
+  _impl_.access_token_expiry_mobile_in_hours_ = 0;
   _impl_._has_bits_[0] &= ~0x00000020u;
 }
-inline ::int32_t ConfigSecurity::accesss_token_expiry_mobile_in_hours() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.accesss_token_expiry_mobile_in_hours)
-  return _internal_accesss_token_expiry_mobile_in_hours();
+inline ::int32_t ConfigSecurity::access_token_expiry_mobile_in_hours() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.access_token_expiry_mobile_in_hours)
+  return _internal_access_token_expiry_mobile_in_hours();
 }
-inline void ConfigSecurity::set_accesss_token_expiry_mobile_in_hours(::int32_t value) {
-  _internal_set_accesss_token_expiry_mobile_in_hours(value);
+inline void ConfigSecurity::set_access_token_expiry_mobile_in_hours(::int32_t value) {
+  _internal_set_access_token_expiry_mobile_in_hours(value);
   _impl_._has_bits_[0] |= 0x00000020u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.accesss_token_expiry_mobile_in_hours)
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.access_token_expiry_mobile_in_hours)
 }
-inline ::int32_t ConfigSecurity::_internal_accesss_token_expiry_mobile_in_hours() const {
+inline ::int32_t ConfigSecurity::_internal_access_token_expiry_mobile_in_hours() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.accesss_token_expiry_mobile_in_hours_;
+  return _impl_.access_token_expiry_mobile_in_hours_;
 }
-inline void ConfigSecurity::_internal_set_accesss_token_expiry_mobile_in_hours(::int32_t value) {
+inline void ConfigSecurity::_internal_set_access_token_expiry_mobile_in_hours(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.accesss_token_expiry_mobile_in_hours_ = value;
+  _impl_.access_token_expiry_mobile_in_hours_ = value;
 }
 
-// optional int32 accesss_token_expiry_sso_in_hours = 3 [json_name = "accesssTokenExpirySsoInHours"];
-inline bool ConfigSecurity::has_accesss_token_expiry_sso_in_hours() const {
+// optional int32 access_token_expiry_sso_in_hours = 3 [json_name = "accessTokenExpirySsoInHours"];
+inline bool ConfigSecurity::has_access_token_expiry_sso_in_hours() const {
   bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
   return value;
 }
-inline void ConfigSecurity::clear_accesss_token_expiry_sso_in_hours() {
+inline void ConfigSecurity::clear_access_token_expiry_sso_in_hours() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.accesss_token_expiry_sso_in_hours_ = 0;
+  _impl_.access_token_expiry_sso_in_hours_ = 0;
   _impl_._has_bits_[0] &= ~0x00000040u;
 }
-inline ::int32_t ConfigSecurity::accesss_token_expiry_sso_in_hours() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.accesss_token_expiry_sso_in_hours)
-  return _internal_accesss_token_expiry_sso_in_hours();
+inline ::int32_t ConfigSecurity::access_token_expiry_sso_in_hours() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.access_token_expiry_sso_in_hours)
+  return _internal_access_token_expiry_sso_in_hours();
 }
-inline void ConfigSecurity::set_accesss_token_expiry_sso_in_hours(::int32_t value) {
-  _internal_set_accesss_token_expiry_sso_in_hours(value);
+inline void ConfigSecurity::set_access_token_expiry_sso_in_hours(::int32_t value) {
+  _internal_set_access_token_expiry_sso_in_hours(value);
   _impl_._has_bits_[0] |= 0x00000040u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.accesss_token_expiry_sso_in_hours)
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.access_token_expiry_sso_in_hours)
 }
-inline ::int32_t ConfigSecurity::_internal_accesss_token_expiry_sso_in_hours() const {
+inline ::int32_t ConfigSecurity::_internal_access_token_expiry_sso_in_hours() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.accesss_token_expiry_sso_in_hours_;
+  return _impl_.access_token_expiry_sso_in_hours_;
 }
-inline void ConfigSecurity::_internal_set_accesss_token_expiry_sso_in_hours(::int32_t value) {
+inline void ConfigSecurity::_internal_set_access_token_expiry_sso_in_hours(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.accesss_token_expiry_sso_in_hours_ = value;
+  _impl_.access_token_expiry_sso_in_hours_ = value;
 }
 
 // optional int32 access_token_cache_in_minutes = 4 [json_name = "accessTokenCacheInMinutes"];

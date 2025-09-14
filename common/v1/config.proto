@@ -63,9 +63,9 @@ message ConfigOAuth {
 }
 
 message ConfigSecurity {
-  optional int32 accesss_token_expiry_web_in_hours = 1;
-  optional int32 accesss_token_expiry_mobile_in_hours = 2;
-  optional int32 accesss_token_expiry_sso_in_hours = 3;
+  optional int32 access_token_expiry_web_in_hours = 1;
+  optional int32 access_token_expiry_mobile_in_hours = 2;
+  optional int32 access_token_expiry_sso_in_hours = 3;
   optional int32 access_token_cache_in_minutes = 4;
   optional int32 maximum_login_attempts = 5;
   optional bool terminate_sessions_on_password_change = 6;

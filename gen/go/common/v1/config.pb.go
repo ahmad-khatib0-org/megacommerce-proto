@@ -484,9 +484,9 @@ func (x *ConfigOAuth) GetFrontendLoginErrorUrl() string {
 
 type ConfigSecurity struct {
 	state                             protoimpl.MessageState `protogen:"open.v1"`
-	AccesssTokenExpiryWebInHours      *int32                 `protobuf:"varint,1,opt,name=accesss_token_expiry_web_in_hours,json=accesssTokenExpiryWebInHours,proto3,oneof" json:"accesss_token_expiry_web_in_hours,omitempty"`
-	AccesssTokenExpiryMobileInHours   *int32                 `protobuf:"varint,2,opt,name=accesss_token_expiry_mobile_in_hours,json=accesssTokenExpiryMobileInHours,proto3,oneof" json:"accesss_token_expiry_mobile_in_hours,omitempty"`
-	AccesssTokenExpirySsoInHours      *int32                 `protobuf:"varint,3,opt,name=accesss_token_expiry_sso_in_hours,json=accesssTokenExpirySsoInHours,proto3,oneof" json:"accesss_token_expiry_sso_in_hours,omitempty"`
+	AccessTokenExpiryWebInHours       *int32                 `protobuf:"varint,1,opt,name=access_token_expiry_web_in_hours,json=accessTokenExpiryWebInHours,proto3,oneof" json:"access_token_expiry_web_in_hours,omitempty"`
+	AccessTokenExpiryMobileInHours    *int32                 `protobuf:"varint,2,opt,name=access_token_expiry_mobile_in_hours,json=accessTokenExpiryMobileInHours,proto3,oneof" json:"access_token_expiry_mobile_in_hours,omitempty"`
+	AccessTokenExpirySsoInHours       *int32                 `protobuf:"varint,3,opt,name=access_token_expiry_sso_in_hours,json=accessTokenExpirySsoInHours,proto3,oneof" json:"access_token_expiry_sso_in_hours,omitempty"`
 	AccessTokenCacheInMinutes         *int32                 `protobuf:"varint,4,opt,name=access_token_cache_in_minutes,json=accessTokenCacheInMinutes,proto3,oneof" json:"access_token_cache_in_minutes,omitempty"`
 	MaximumLoginAttempts              *int32                 `protobuf:"varint,5,opt,name=maximum_login_attempts,json=maximumLoginAttempts,proto3,oneof" json:"maximum_login_attempts,omitempty"`
 	TerminateSessionsOnPasswordChange *bool                  `protobuf:"varint,6,opt,name=terminate_sessions_on_password_change,json=terminateSessionsOnPasswordChange,proto3,oneof" json:"terminate_sessions_on_password_change,omitempty"`
@@ -538,23 +538,23 @@ func (*ConfigSecurity) Descriptor() ([]byte, []int) {
 	return file_common_v1_config_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *ConfigSecurity) GetAccesssTokenExpiryWebInHours() int32 {
-	if x != nil && x.AccesssTokenExpiryWebInHours != nil {
-		return *x.AccesssTokenExpiryWebInHours
+func (x *ConfigSecurity) GetAccessTokenExpiryWebInHours() int32 {
+	if x != nil && x.AccessTokenExpiryWebInHours != nil {
+		return *x.AccessTokenExpiryWebInHours
 	}
 	return 0
 }
 
-func (x *ConfigSecurity) GetAccesssTokenExpiryMobileInHours() int32 {
-	if x != nil && x.AccesssTokenExpiryMobileInHours != nil {
-		return *x.AccesssTokenExpiryMobileInHours
+func (x *ConfigSecurity) GetAccessTokenExpiryMobileInHours() int32 {
+	if x != nil && x.AccessTokenExpiryMobileInHours != nil {
+		return *x.AccessTokenExpiryMobileInHours
 	}
 	return 0
 }
 
-func (x *ConfigSecurity) GetAccesssTokenExpirySsoInHours() int32 {
-	if x != nil && x.AccesssTokenExpirySsoInHours != nil {
-		return *x.AccesssTokenExpirySsoInHours
+func (x *ConfigSecurity) GetAccessTokenExpirySsoInHours() int32 {
+	if x != nil && x.AccessTokenExpirySsoInHours != nil {
+		return *x.AccessTokenExpirySsoInHours
 	}
 	return 0
 }
@@ -3662,11 +3662,11 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x10_oauth_admin_urlB\x14\n" +
 	"\x12_oauth_backend_urlB\x15\n" +
 	"\x13_frontend_login_urlB\x1b\n" +
-	"\x19_frontend_login_error_url\"\x9b\x10\n" +
-	"\x0eConfigSecurity\x12L\n" +
-	"!accesss_token_expiry_web_in_hours\x18\x01 \x01(\x05H\x00R\x1caccesssTokenExpiryWebInHours\x88\x01\x01\x12R\n" +
-	"$accesss_token_expiry_mobile_in_hours\x18\x02 \x01(\x05H\x01R\x1faccesssTokenExpiryMobileInHours\x88\x01\x01\x12L\n" +
-	"!accesss_token_expiry_sso_in_hours\x18\x03 \x01(\x05H\x02R\x1caccesssTokenExpirySsoInHours\x88\x01\x01\x12E\n" +
+	"\x19_frontend_login_error_url\"\x92\x10\n" +
+	"\x0eConfigSecurity\x12J\n" +
+	" access_token_expiry_web_in_hours\x18\x01 \x01(\x05H\x00R\x1baccessTokenExpiryWebInHours\x88\x01\x01\x12P\n" +
+	"#access_token_expiry_mobile_in_hours\x18\x02 \x01(\x05H\x01R\x1eaccessTokenExpiryMobileInHours\x88\x01\x01\x12J\n" +
+	" access_token_expiry_sso_in_hours\x18\x03 \x01(\x05H\x02R\x1baccessTokenExpirySsoInHours\x88\x01\x01\x12E\n" +
 	"\x1daccess_token_cache_in_minutes\x18\x04 \x01(\x05H\x03R\x19accessTokenCacheInMinutes\x88\x01\x01\x129\n" +
 	"\x16maximum_login_attempts\x18\x05 \x01(\x05H\x04R\x14maximumLoginAttempts\x88\x01\x01\x12U\n" +
 	"%terminate_sessions_on_password_change\x18\x06 \x01(\bH\x05R!terminateSessionsOnPasswordChange\x88\x01\x01\x129\n" +
@@ -3686,10 +3686,10 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x16cors_allow_credentials\x18\x12 \x01(\bH\x11R\x14corsAllowCredentials\x88\x01\x01\x12\"\n" +
 	"\n" +
 	"cors_debug\x18\x13 \x01(\bH\x12R\tcorsDebug\x88\x01\x01\x12D\n" +
-	"\x1callow_cookies_for_subdomains\x18\x14 \x01(\bH\x13R\x19allowCookiesForSubdomains\x88\x01\x01B$\n" +
-	"\"_accesss_token_expiry_web_in_hoursB'\n" +
-	"%_accesss_token_expiry_mobile_in_hoursB$\n" +
-	"\"_accesss_token_expiry_sso_in_hoursB \n" +
+	"\x1callow_cookies_for_subdomains\x18\x14 \x01(\bH\x13R\x19allowCookiesForSubdomains\x88\x01\x01B#\n" +
+	"!_access_token_expiry_web_in_hoursB&\n" +
+	"$_access_token_expiry_mobile_in_hoursB#\n" +
+	"!_access_token_expiry_sso_in_hoursB \n" +
 	"\x1e_access_token_cache_in_minutesB\x19\n" +
 	"\x17_maximum_login_attemptsB(\n" +
 	"&_terminate_sessions_on_password_changeB\x19\n" +

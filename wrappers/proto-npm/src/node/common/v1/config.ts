@@ -64,9 +64,9 @@ export interface ConfigOAuth {
 }
 
 export interface ConfigSecurity {
-  accesssTokenExpiryWebInHours?: number | undefined;
-  accesssTokenExpiryMobileInHours?: number | undefined;
-  accesssTokenExpirySsoInHours?: number | undefined;
+  accessTokenExpiryWebInHours?: number | undefined;
+  accessTokenExpiryMobileInHours?: number | undefined;
+  accessTokenExpirySsoInHours?: number | undefined;
   accessTokenCacheInMinutes?: number | undefined;
   maximumLoginAttempts?: number | undefined;
   terminateSessionsOnPasswordChange?: boolean | undefined;
@@ -1351,9 +1351,9 @@ export const ConfigOAuth: MessageFns<ConfigOAuth> = {
 
 function createBaseConfigSecurity(): ConfigSecurity {
   return {
-    accesssTokenExpiryWebInHours: undefined,
-    accesssTokenExpiryMobileInHours: undefined,
-    accesssTokenExpirySsoInHours: undefined,
+    accessTokenExpiryWebInHours: undefined,
+    accessTokenExpiryMobileInHours: undefined,
+    accessTokenExpirySsoInHours: undefined,
     accessTokenCacheInMinutes: undefined,
     maximumLoginAttempts: undefined,
     terminateSessionsOnPasswordChange: undefined,
@@ -1376,14 +1376,14 @@ function createBaseConfigSecurity(): ConfigSecurity {
 
 export const ConfigSecurity: MessageFns<ConfigSecurity> = {
   encode(message: ConfigSecurity, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.accesssTokenExpiryWebInHours !== undefined) {
-      writer.uint32(8).int32(message.accesssTokenExpiryWebInHours);
+    if (message.accessTokenExpiryWebInHours !== undefined) {
+      writer.uint32(8).int32(message.accessTokenExpiryWebInHours);
     }
-    if (message.accesssTokenExpiryMobileInHours !== undefined) {
-      writer.uint32(16).int32(message.accesssTokenExpiryMobileInHours);
+    if (message.accessTokenExpiryMobileInHours !== undefined) {
+      writer.uint32(16).int32(message.accessTokenExpiryMobileInHours);
     }
-    if (message.accesssTokenExpirySsoInHours !== undefined) {
-      writer.uint32(24).int32(message.accesssTokenExpirySsoInHours);
+    if (message.accessTokenExpirySsoInHours !== undefined) {
+      writer.uint32(24).int32(message.accessTokenExpirySsoInHours);
     }
     if (message.accessTokenCacheInMinutes !== undefined) {
       writer.uint32(32).int32(message.accessTokenCacheInMinutes);
@@ -1451,7 +1451,7 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.accesssTokenExpiryWebInHours = reader.int32();
+          message.accessTokenExpiryWebInHours = reader.int32();
           continue;
         }
         case 2: {
@@ -1459,7 +1459,7 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.accesssTokenExpiryMobileInHours = reader.int32();
+          message.accessTokenExpiryMobileInHours = reader.int32();
           continue;
         }
         case 3: {
@@ -1467,7 +1467,7 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.accesssTokenExpirySsoInHours = reader.int32();
+          message.accessTokenExpirySsoInHours = reader.int32();
           continue;
         }
         case 4: {
@@ -1617,14 +1617,14 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
 
   fromJSON(object: any): ConfigSecurity {
     return {
-      accesssTokenExpiryWebInHours: isSet(object.accesssTokenExpiryWebInHours)
-        ? globalThis.Number(object.accesssTokenExpiryWebInHours)
+      accessTokenExpiryWebInHours: isSet(object.accessTokenExpiryWebInHours)
+        ? globalThis.Number(object.accessTokenExpiryWebInHours)
         : undefined,
-      accesssTokenExpiryMobileInHours: isSet(object.accesssTokenExpiryMobileInHours)
-        ? globalThis.Number(object.accesssTokenExpiryMobileInHours)
+      accessTokenExpiryMobileInHours: isSet(object.accessTokenExpiryMobileInHours)
+        ? globalThis.Number(object.accessTokenExpiryMobileInHours)
         : undefined,
-      accesssTokenExpirySsoInHours: isSet(object.accesssTokenExpirySsoInHours)
-        ? globalThis.Number(object.accesssTokenExpirySsoInHours)
+      accessTokenExpirySsoInHours: isSet(object.accessTokenExpirySsoInHours)
+        ? globalThis.Number(object.accessTokenExpirySsoInHours)
         : undefined,
       accessTokenCacheInMinutes: isSet(object.accessTokenCacheInMinutes)
         ? globalThis.Number(object.accessTokenCacheInMinutes)
@@ -1674,14 +1674,14 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
 
   toJSON(message: ConfigSecurity): unknown {
     const obj: any = {};
-    if (message.accesssTokenExpiryWebInHours !== undefined) {
-      obj.accesssTokenExpiryWebInHours = Math.round(message.accesssTokenExpiryWebInHours);
+    if (message.accessTokenExpiryWebInHours !== undefined) {
+      obj.accessTokenExpiryWebInHours = Math.round(message.accessTokenExpiryWebInHours);
     }
-    if (message.accesssTokenExpiryMobileInHours !== undefined) {
-      obj.accesssTokenExpiryMobileInHours = Math.round(message.accesssTokenExpiryMobileInHours);
+    if (message.accessTokenExpiryMobileInHours !== undefined) {
+      obj.accessTokenExpiryMobileInHours = Math.round(message.accessTokenExpiryMobileInHours);
     }
-    if (message.accesssTokenExpirySsoInHours !== undefined) {
-      obj.accesssTokenExpirySsoInHours = Math.round(message.accesssTokenExpirySsoInHours);
+    if (message.accessTokenExpirySsoInHours !== undefined) {
+      obj.accessTokenExpirySsoInHours = Math.round(message.accessTokenExpirySsoInHours);
     }
     if (message.accessTokenCacheInMinutes !== undefined) {
       obj.accessTokenCacheInMinutes = Math.round(message.accessTokenCacheInMinutes);
@@ -1742,9 +1742,9 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
   },
   fromPartial<I extends Exact<DeepPartial<ConfigSecurity>, I>>(object: I): ConfigSecurity {
     const message = createBaseConfigSecurity();
-    message.accesssTokenExpiryWebInHours = object.accesssTokenExpiryWebInHours ?? undefined;
-    message.accesssTokenExpiryMobileInHours = object.accesssTokenExpiryMobileInHours ?? undefined;
-    message.accesssTokenExpirySsoInHours = object.accesssTokenExpirySsoInHours ?? undefined;
+    message.accessTokenExpiryWebInHours = object.accessTokenExpiryWebInHours ?? undefined;
+    message.accessTokenExpiryMobileInHours = object.accessTokenExpiryMobileInHours ?? undefined;
+    message.accessTokenExpirySsoInHours = object.accessTokenExpirySsoInHours ?? undefined;
     message.accessTokenCacheInMinutes = object.accessTokenCacheInMinutes ?? undefined;
     message.maximumLoginAttempts = object.maximumLoginAttempts ?? undefined;
     message.terminateSessionsOnPasswordChange = object.terminateSessionsOnPasswordChange ?? undefined;

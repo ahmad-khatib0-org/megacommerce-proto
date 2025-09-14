@@ -113,11 +113,11 @@ pub struct ConfigOAuth {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfigSecurity {
     #[prost(int32, optional, tag = "1")]
-    pub accesss_token_expiry_web_in_hours: ::core::option::Option<i32>,
+    pub access_token_expiry_web_in_hours: ::core::option::Option<i32>,
     #[prost(int32, optional, tag = "2")]
-    pub accesss_token_expiry_mobile_in_hours: ::core::option::Option<i32>,
+    pub access_token_expiry_mobile_in_hours: ::core::option::Option<i32>,
     #[prost(int32, optional, tag = "3")]
-    pub accesss_token_expiry_sso_in_hours: ::core::option::Option<i32>,
+    pub access_token_expiry_sso_in_hours: ::core::option::Option<i32>,
     #[prost(int32, optional, tag = "4")]
     pub access_token_cache_in_minutes: ::core::option::Option<i32>,
     #[prost(int32, optional, tag = "5")]

@@ -83,7 +83,8 @@ endif
 
 publish:
 	@echo "Publishing npm package..."
-	cd wrappers/proto-npm && npm publish
+	# cd wrappers/proto-npm && npm publish
+	cd ./wrappers/proto-npm && npm publish --registry http://localhost:4873/ --access=restricted
 	@echo "Publishing rust crate..."
 	cd wrappers/proto-crate && cargo publish
 	@echo "Publishing done successfully"
