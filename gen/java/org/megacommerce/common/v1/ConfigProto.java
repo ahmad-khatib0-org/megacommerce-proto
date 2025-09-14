@@ -7486,282 +7486,248 @@ public final class ConfigProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     * <code>optional int32 accesss_token_expiry_web_in_hours = 1 [json_name = "accesssTokenExpiryWebInHours"];</code>
+     * @return Whether the accesssTokenExpiryWebInHours field is set.
      */
-    int getRestrictedUsernamesCount();
+    boolean hasAccesssTokenExpiryWebInHours();
     /**
-     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     * <code>optional int32 accesss_token_expiry_web_in_hours = 1 [json_name = "accesssTokenExpiryWebInHours"];</code>
+     * @return The accesssTokenExpiryWebInHours.
      */
-    boolean containsRestrictedUsernames(
-        java.lang.String key);
-    /**
-     * Use {@link #getRestrictedUsernamesMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getRestrictedUsernames();
-    /**
-     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getRestrictedUsernamesMap();
-    /**
-     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
-     */
-    /* nullable */
-java.lang.String getRestrictedUsernamesOrDefault(
-        java.lang.String key,
-        /* nullable */
-java.lang.String defaultValue);
-    /**
-     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
-     */
-    java.lang.String getRestrictedUsernamesOrThrow(
-        java.lang.String key);
+    int getAccesssTokenExpiryWebInHours();
 
     /**
-     * <code>optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];</code>
+     * <code>optional int32 accesss_token_expiry_mobile_in_hours = 2 [json_name = "accesssTokenExpiryMobileInHours"];</code>
+     * @return Whether the accesssTokenExpiryMobileInHours field is set.
+     */
+    boolean hasAccesssTokenExpiryMobileInHours();
+    /**
+     * <code>optional int32 accesss_token_expiry_mobile_in_hours = 2 [json_name = "accesssTokenExpiryMobileInHours"];</code>
+     * @return The accesssTokenExpiryMobileInHours.
+     */
+    int getAccesssTokenExpiryMobileInHours();
+
+    /**
+     * <code>optional int32 accesss_token_expiry_sso_in_hours = 3 [json_name = "accesssTokenExpirySsoInHours"];</code>
+     * @return Whether the accesssTokenExpirySsoInHours field is set.
+     */
+    boolean hasAccesssTokenExpirySsoInHours();
+    /**
+     * <code>optional int32 accesss_token_expiry_sso_in_hours = 3 [json_name = "accesssTokenExpirySsoInHours"];</code>
+     * @return The accesssTokenExpirySsoInHours.
+     */
+    int getAccesssTokenExpirySsoInHours();
+
+    /**
+     * <code>optional int32 access_token_cache_in_minutes = 4 [json_name = "accessTokenCacheInMinutes"];</code>
+     * @return Whether the accessTokenCacheInMinutes field is set.
+     */
+    boolean hasAccessTokenCacheInMinutes();
+    /**
+     * <code>optional int32 access_token_cache_in_minutes = 4 [json_name = "accessTokenCacheInMinutes"];</code>
+     * @return The accessTokenCacheInMinutes.
+     */
+    int getAccessTokenCacheInMinutes();
+
+    /**
+     * <code>optional int32 maximum_login_attempts = 5 [json_name = "maximumLoginAttempts"];</code>
      * @return Whether the maximumLoginAttempts field is set.
      */
     boolean hasMaximumLoginAttempts();
     /**
-     * <code>optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];</code>
+     * <code>optional int32 maximum_login_attempts = 5 [json_name = "maximumLoginAttempts"];</code>
      * @return The maximumLoginAttempts.
      */
     int getMaximumLoginAttempts();
 
     /**
-     * <code>optional bool enable_insecure_outgoing_connections = 3 [json_name = "enableInsecureOutgoingConnections"];</code>
-     * @return Whether the enableInsecureOutgoingConnections field is set.
-     */
-    boolean hasEnableInsecureOutgoingConnections();
-    /**
-     * <code>optional bool enable_insecure_outgoing_connections = 3 [json_name = "enableInsecureOutgoingConnections"];</code>
-     * @return The enableInsecureOutgoingConnections.
-     */
-    boolean getEnableInsecureOutgoingConnections();
-
-    /**
-     * <code>optional bool enable_multifactor_authentication = 4 [json_name = "enableMultifactorAuthentication"];</code>
-     * @return Whether the enableMultifactorAuthentication field is set.
-     */
-    boolean hasEnableMultifactorAuthentication();
-    /**
-     * <code>optional bool enable_multifactor_authentication = 4 [json_name = "enableMultifactorAuthentication"];</code>
-     * @return The enableMultifactorAuthentication.
-     */
-    boolean getEnableMultifactorAuthentication();
-
-    /**
-     * <code>optional bool enforce_multifactor_authentication = 5 [json_name = "enforceMultifactorAuthentication"];</code>
-     * @return Whether the enforceMultifactorAuthentication field is set.
-     */
-    boolean hasEnforceMultifactorAuthentication();
-    /**
-     * <code>optional bool enforce_multifactor_authentication = 5 [json_name = "enforceMultifactorAuthentication"];</code>
-     * @return The enforceMultifactorAuthentication.
-     */
-    boolean getEnforceMultifactorAuthentication();
-
-    /**
-     * <code>optional bool enable_oauth_service_provider = 6 [json_name = "enableOauthServiceProvider"];</code>
-     * @return Whether the enableOauthServiceProvider field is set.
-     */
-    boolean hasEnableOauthServiceProvider();
-    /**
-     * <code>optional bool enable_oauth_service_provider = 6 [json_name = "enableOauthServiceProvider"];</code>
-     * @return The enableOauthServiceProvider.
-     */
-    boolean getEnableOauthServiceProvider();
-
-    /**
-     * <code>optional bool enable_outgoing_oauth_connections = 7 [json_name = "enableOutgoingOauthConnections"];</code>
-     * @return Whether the enableOutgoingOauthConnections field is set.
-     */
-    boolean hasEnableOutgoingOauthConnections();
-    /**
-     * <code>optional bool enable_outgoing_oauth_connections = 7 [json_name = "enableOutgoingOauthConnections"];</code>
-     * @return The enableOutgoingOauthConnections.
-     */
-    boolean getEnableOutgoingOauthConnections();
-
-    /**
-     * <code>optional bool terminate_sessions_on_password_change = 8 [json_name = "terminateSessionsOnPasswordChange"];</code>
+     * <code>optional bool terminate_sessions_on_password_change = 6 [json_name = "terminateSessionsOnPasswordChange"];</code>
      * @return Whether the terminateSessionsOnPasswordChange field is set.
      */
     boolean hasTerminateSessionsOnPasswordChange();
     /**
-     * <code>optional bool terminate_sessions_on_password_change = 8 [json_name = "terminateSessionsOnPasswordChange"];</code>
+     * <code>optional bool terminate_sessions_on_password_change = 6 [json_name = "terminateSessionsOnPasswordChange"];</code>
      * @return The terminateSessionsOnPasswordChange.
      */
     boolean getTerminateSessionsOnPasswordChange();
 
     /**
-     * <code>optional int32 session_length_web_in_hours = 9 [json_name = "sessionLengthWebInHours"];</code>
-     * @return Whether the sessionLengthWebInHours field is set.
-     */
-    boolean hasSessionLengthWebInHours();
-    /**
-     * <code>optional int32 session_length_web_in_hours = 9 [json_name = "sessionLengthWebInHours"];</code>
-     * @return The sessionLengthWebInHours.
-     */
-    int getSessionLengthWebInHours();
-
-    /**
-     * <code>optional int32 session_length_mobile_in_hours = 10 [json_name = "sessionLengthMobileInHours"];</code>
-     * @return Whether the sessionLengthMobileInHours field is set.
-     */
-    boolean hasSessionLengthMobileInHours();
-    /**
-     * <code>optional int32 session_length_mobile_in_hours = 10 [json_name = "sessionLengthMobileInHours"];</code>
-     * @return The sessionLengthMobileInHours.
-     */
-    int getSessionLengthMobileInHours();
-
-    /**
-     * <code>optional int32 session_length_sso_in_hours = 11 [json_name = "sessionLengthSsoInHours"];</code>
-     * @return Whether the sessionLengthSsoInHours field is set.
-     */
-    boolean hasSessionLengthSsoInHours();
-    /**
-     * <code>optional int32 session_length_sso_in_hours = 11 [json_name = "sessionLengthSsoInHours"];</code>
-     * @return The sessionLengthSsoInHours.
-     */
-    int getSessionLengthSsoInHours();
-
-    /**
-     * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
-     * @return Whether the allowCorsFrom field is set.
-     */
-    boolean hasAllowCorsFrom();
-    /**
-     * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
-     * @return The allowCorsFrom.
-     */
-    java.lang.String getAllowCorsFrom();
-    /**
-     * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
-     * @return The bytes for allowCorsFrom.
-     */
-    com.google.protobuf.ByteString
-        getAllowCorsFromBytes();
-
-    /**
-     * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
-     * @return Whether the corsExposedHeaders field is set.
-     */
-    boolean hasCorsExposedHeaders();
-    /**
-     * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
-     * @return The corsExposedHeaders.
-     */
-    java.lang.String getCorsExposedHeaders();
-    /**
-     * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
-     * @return The bytes for corsExposedHeaders.
-     */
-    com.google.protobuf.ByteString
-        getCorsExposedHeadersBytes();
-
-    /**
-     * <code>optional bool cors_allow_credentials = 14 [json_name = "corsAllowCredentials"];</code>
-     * @return Whether the corsAllowCredentials field is set.
-     */
-    boolean hasCorsAllowCredentials();
-    /**
-     * <code>optional bool cors_allow_credentials = 14 [json_name = "corsAllowCredentials"];</code>
-     * @return The corsAllowCredentials.
-     */
-    boolean getCorsAllowCredentials();
-
-    /**
-     * <code>optional bool cors_debug = 15 [json_name = "corsDebug"];</code>
-     * @return Whether the corsDebug field is set.
-     */
-    boolean hasCorsDebug();
-    /**
-     * <code>optional bool cors_debug = 15 [json_name = "corsDebug"];</code>
-     * @return The corsDebug.
-     */
-    boolean getCorsDebug();
-
-    /**
-     * <code>optional bool allow_cookies_for_subdomains = 16 [json_name = "allowCookiesForSubdomains"];</code>
-     * @return Whether the allowCookiesForSubdomains field is set.
-     */
-    boolean hasAllowCookiesForSubdomains();
-    /**
-     * <code>optional bool allow_cookies_for_subdomains = 16 [json_name = "allowCookiesForSubdomains"];</code>
-     * @return The allowCookiesForSubdomains.
-     */
-    boolean getAllowCookiesForSubdomains();
-
-    /**
-     * <code>optional int32 session_cache_in_minutes = 17 [json_name = "sessionCacheInMinutes"];</code>
-     * @return Whether the sessionCacheInMinutes field is set.
-     */
-    boolean hasSessionCacheInMinutes();
-    /**
-     * <code>optional int32 session_cache_in_minutes = 17 [json_name = "sessionCacheInMinutes"];</code>
-     * @return The sessionCacheInMinutes.
-     */
-    int getSessionCacheInMinutes();
-
-    /**
-     * <code>optional string email_confirmation_url = 18 [json_name = "emailConfirmationUrl"];</code>
+     * <code>optional string email_confirmation_url = 7 [json_name = "emailConfirmationUrl"];</code>
      * @return Whether the emailConfirmationUrl field is set.
      */
     boolean hasEmailConfirmationUrl();
     /**
-     * <code>optional string email_confirmation_url = 18 [json_name = "emailConfirmationUrl"];</code>
+     * <code>optional string email_confirmation_url = 7 [json_name = "emailConfirmationUrl"];</code>
      * @return The emailConfirmationUrl.
      */
     java.lang.String getEmailConfirmationUrl();
     /**
-     * <code>optional string email_confirmation_url = 18 [json_name = "emailConfirmationUrl"];</code>
+     * <code>optional string email_confirmation_url = 7 [json_name = "emailConfirmationUrl"];</code>
      * @return The bytes for emailConfirmationUrl.
      */
     com.google.protobuf.ByteString
         getEmailConfirmationUrlBytes();
 
     /**
-     * <code>optional uint32 token_confirmation_expiry_in_hours = 19 [json_name = "tokenConfirmationExpiryInHours"];</code>
+     * <code>optional string password_reset_url = 8 [json_name = "passwordResetUrl"];</code>
+     * @return Whether the passwordResetUrl field is set.
+     */
+    boolean hasPasswordResetUrl();
+    /**
+     * <code>optional string password_reset_url = 8 [json_name = "passwordResetUrl"];</code>
+     * @return The passwordResetUrl.
+     */
+    java.lang.String getPasswordResetUrl();
+    /**
+     * <code>optional string password_reset_url = 8 [json_name = "passwordResetUrl"];</code>
+     * @return The bytes for passwordResetUrl.
+     */
+    com.google.protobuf.ByteString
+        getPasswordResetUrlBytes();
+
+    /**
+     * <code>optional uint32 token_confirmation_expiry_in_hours = 9 [json_name = "tokenConfirmationExpiryInHours"];</code>
      * @return Whether the tokenConfirmationExpiryInHours field is set.
      */
     boolean hasTokenConfirmationExpiryInHours();
     /**
-     * <code>optional uint32 token_confirmation_expiry_in_hours = 19 [json_name = "tokenConfirmationExpiryInHours"];</code>
+     * <code>optional uint32 token_confirmation_expiry_in_hours = 9 [json_name = "tokenConfirmationExpiryInHours"];</code>
      * @return The tokenConfirmationExpiryInHours.
      */
     int getTokenConfirmationExpiryInHours();
 
     /**
-     * <code>optional uint32 token_password_reset_expiry_in_hours = 20 [json_name = "tokenPasswordResetExpiryInHours"];</code>
+     * <code>optional uint32 token_password_reset_expiry_in_hours = 10 [json_name = "tokenPasswordResetExpiryInHours"];</code>
      * @return Whether the tokenPasswordResetExpiryInHours field is set.
      */
     boolean hasTokenPasswordResetExpiryInHours();
     /**
-     * <code>optional uint32 token_password_reset_expiry_in_hours = 20 [json_name = "tokenPasswordResetExpiryInHours"];</code>
+     * <code>optional uint32 token_password_reset_expiry_in_hours = 10 [json_name = "tokenPasswordResetExpiryInHours"];</code>
      * @return The tokenPasswordResetExpiryInHours.
      */
     int getTokenPasswordResetExpiryInHours();
 
     /**
-     * <code>optional string password_reset_url = 21 [json_name = "passwordResetUrl"];</code>
-     * @return Whether the passwordResetUrl field is set.
+     * <code>optional bool enable_insecure_outgoing_connections = 11 [json_name = "enableInsecureOutgoingConnections"];</code>
+     * @return Whether the enableInsecureOutgoingConnections field is set.
      */
-    boolean hasPasswordResetUrl();
+    boolean hasEnableInsecureOutgoingConnections();
     /**
-     * <code>optional string password_reset_url = 21 [json_name = "passwordResetUrl"];</code>
-     * @return The passwordResetUrl.
+     * <code>optional bool enable_insecure_outgoing_connections = 11 [json_name = "enableInsecureOutgoingConnections"];</code>
+     * @return The enableInsecureOutgoingConnections.
      */
-    java.lang.String getPasswordResetUrl();
+    boolean getEnableInsecureOutgoingConnections();
+
     /**
-     * <code>optional string password_reset_url = 21 [json_name = "passwordResetUrl"];</code>
-     * @return The bytes for passwordResetUrl.
+     * <code>optional bool enable_multifactor_authentication = 12 [json_name = "enableMultifactorAuthentication"];</code>
+     * @return Whether the enableMultifactorAuthentication field is set.
+     */
+    boolean hasEnableMultifactorAuthentication();
+    /**
+     * <code>optional bool enable_multifactor_authentication = 12 [json_name = "enableMultifactorAuthentication"];</code>
+     * @return The enableMultifactorAuthentication.
+     */
+    boolean getEnableMultifactorAuthentication();
+
+    /**
+     * <code>optional bool enforce_multifactor_authentication = 13 [json_name = "enforceMultifactorAuthentication"];</code>
+     * @return Whether the enforceMultifactorAuthentication field is set.
+     */
+    boolean hasEnforceMultifactorAuthentication();
+    /**
+     * <code>optional bool enforce_multifactor_authentication = 13 [json_name = "enforceMultifactorAuthentication"];</code>
+     * @return The enforceMultifactorAuthentication.
+     */
+    boolean getEnforceMultifactorAuthentication();
+
+    /**
+     * <code>optional bool enable_oauth_service_provider = 14 [json_name = "enableOauthServiceProvider"];</code>
+     * @return Whether the enableOauthServiceProvider field is set.
+     */
+    boolean hasEnableOauthServiceProvider();
+    /**
+     * <code>optional bool enable_oauth_service_provider = 14 [json_name = "enableOauthServiceProvider"];</code>
+     * @return The enableOauthServiceProvider.
+     */
+    boolean getEnableOauthServiceProvider();
+
+    /**
+     * <code>optional bool enable_outgoing_oauth_connections = 15 [json_name = "enableOutgoingOauthConnections"];</code>
+     * @return Whether the enableOutgoingOauthConnections field is set.
+     */
+    boolean hasEnableOutgoingOauthConnections();
+    /**
+     * <code>optional bool enable_outgoing_oauth_connections = 15 [json_name = "enableOutgoingOauthConnections"];</code>
+     * @return The enableOutgoingOauthConnections.
+     */
+    boolean getEnableOutgoingOauthConnections();
+
+    /**
+     * <code>optional string allow_cors_from = 16 [json_name = "allowCorsFrom"];</code>
+     * @return Whether the allowCorsFrom field is set.
+     */
+    boolean hasAllowCorsFrom();
+    /**
+     * <code>optional string allow_cors_from = 16 [json_name = "allowCorsFrom"];</code>
+     * @return The allowCorsFrom.
+     */
+    java.lang.String getAllowCorsFrom();
+    /**
+     * <code>optional string allow_cors_from = 16 [json_name = "allowCorsFrom"];</code>
+     * @return The bytes for allowCorsFrom.
      */
     com.google.protobuf.ByteString
-        getPasswordResetUrlBytes();
+        getAllowCorsFromBytes();
+
+    /**
+     * <code>optional string cors_exposed_headers = 17 [json_name = "corsExposedHeaders"];</code>
+     * @return Whether the corsExposedHeaders field is set.
+     */
+    boolean hasCorsExposedHeaders();
+    /**
+     * <code>optional string cors_exposed_headers = 17 [json_name = "corsExposedHeaders"];</code>
+     * @return The corsExposedHeaders.
+     */
+    java.lang.String getCorsExposedHeaders();
+    /**
+     * <code>optional string cors_exposed_headers = 17 [json_name = "corsExposedHeaders"];</code>
+     * @return The bytes for corsExposedHeaders.
+     */
+    com.google.protobuf.ByteString
+        getCorsExposedHeadersBytes();
+
+    /**
+     * <code>optional bool cors_allow_credentials = 18 [json_name = "corsAllowCredentials"];</code>
+     * @return Whether the corsAllowCredentials field is set.
+     */
+    boolean hasCorsAllowCredentials();
+    /**
+     * <code>optional bool cors_allow_credentials = 18 [json_name = "corsAllowCredentials"];</code>
+     * @return The corsAllowCredentials.
+     */
+    boolean getCorsAllowCredentials();
+
+    /**
+     * <code>optional bool cors_debug = 19 [json_name = "corsDebug"];</code>
+     * @return Whether the corsDebug field is set.
+     */
+    boolean hasCorsDebug();
+    /**
+     * <code>optional bool cors_debug = 19 [json_name = "corsDebug"];</code>
+     * @return The corsDebug.
+     */
+    boolean getCorsDebug();
+
+    /**
+     * <code>optional bool allow_cookies_for_subdomains = 20 [json_name = "allowCookiesForSubdomains"];</code>
+     * @return Whether the allowCookiesForSubdomains field is set.
+     */
+    boolean hasAllowCookiesForSubdomains();
+    /**
+     * <code>optional bool allow_cookies_for_subdomains = 20 [json_name = "allowCookiesForSubdomains"];</code>
+     * @return The allowCookiesForSubdomains.
+     */
+    boolean getAllowCookiesForSubdomains();
   }
   /**
    * Protobuf type {@code common.v1.ConfigSecurity}
@@ -7785,10 +7751,10 @@ java.lang.String defaultValue);
       super(builder);
     }
     private ConfigSecurity() {
-      allowCorsFrom_ = "";
-      corsExposedHeaders_ = "";
       emailConfirmationUrl_ = "";
       passwordResetUrl_ = "";
+      allowCorsFrom_ = "";
+      corsExposedHeaders_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -7796,18 +7762,6 @@ java.lang.String defaultValue);
       return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigSecurity_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
-        int number) {
-      switch (number) {
-        case 1:
-          return internalGetRestrictedUsernames();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -7817,97 +7771,94 @@ java.lang.String defaultValue);
     }
 
     private int bitField0_;
-    public static final int RESTRICTED_USERNAMES_FIELD_NUMBER = 1;
-    private static final class RestrictedUsernamesDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigSecurity_RestrictedUsernamesEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
-    }
-    @SuppressWarnings("serial")
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> restrictedUsernames_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetRestrictedUsernames() {
-      if (restrictedUsernames_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            RestrictedUsernamesDefaultEntryHolder.defaultEntry);
-      }
-      return restrictedUsernames_;
-    }
-    public int getRestrictedUsernamesCount() {
-      return internalGetRestrictedUsernames().getMap().size();
-    }
+    public static final int ACCESSS_TOKEN_EXPIRY_WEB_IN_HOURS_FIELD_NUMBER = 1;
+    private int accesssTokenExpiryWebInHours_ = 0;
     /**
-     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+     * <code>optional int32 accesss_token_expiry_web_in_hours = 1 [json_name = "accesssTokenExpiryWebInHours"];</code>
+     * @return Whether the accesssTokenExpiryWebInHours field is set.
      */
     @java.lang.Override
-    public boolean containsRestrictedUsernames(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      return internalGetRestrictedUsernames().getMap().containsKey(key);
+    public boolean hasAccesssTokenExpiryWebInHours() {
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * Use {@link #getRestrictedUsernamesMap()} instead.
+     * <code>optional int32 accesss_token_expiry_web_in_hours = 1 [json_name = "accesssTokenExpiryWebInHours"];</code>
+     * @return The accesssTokenExpiryWebInHours.
      */
     @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getRestrictedUsernames() {
-      return getRestrictedUsernamesMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
-     */
-    @java.lang.Override
-    public java.util.Map<java.lang.String, java.lang.String> getRestrictedUsernamesMap() {
-      return internalGetRestrictedUsernames().getMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
-     */
-    @java.lang.Override
-    public /* nullable */
-java.lang.String getRestrictedUsernamesOrDefault(
-        java.lang.String key,
-        /* nullable */
-java.lang.String defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetRestrictedUsernames().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
-     */
-    @java.lang.Override
-    public java.lang.String getRestrictedUsernamesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetRestrictedUsernames().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
+    public int getAccesssTokenExpiryWebInHours() {
+      return accesssTokenExpiryWebInHours_;
     }
 
-    public static final int MAXIMUM_LOGIN_ATTEMPTS_FIELD_NUMBER = 2;
+    public static final int ACCESSS_TOKEN_EXPIRY_MOBILE_IN_HOURS_FIELD_NUMBER = 2;
+    private int accesssTokenExpiryMobileInHours_ = 0;
+    /**
+     * <code>optional int32 accesss_token_expiry_mobile_in_hours = 2 [json_name = "accesssTokenExpiryMobileInHours"];</code>
+     * @return Whether the accesssTokenExpiryMobileInHours field is set.
+     */
+    @java.lang.Override
+    public boolean hasAccesssTokenExpiryMobileInHours() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <code>optional int32 accesss_token_expiry_mobile_in_hours = 2 [json_name = "accesssTokenExpiryMobileInHours"];</code>
+     * @return The accesssTokenExpiryMobileInHours.
+     */
+    @java.lang.Override
+    public int getAccesssTokenExpiryMobileInHours() {
+      return accesssTokenExpiryMobileInHours_;
+    }
+
+    public static final int ACCESSS_TOKEN_EXPIRY_SSO_IN_HOURS_FIELD_NUMBER = 3;
+    private int accesssTokenExpirySsoInHours_ = 0;
+    /**
+     * <code>optional int32 accesss_token_expiry_sso_in_hours = 3 [json_name = "accesssTokenExpirySsoInHours"];</code>
+     * @return Whether the accesssTokenExpirySsoInHours field is set.
+     */
+    @java.lang.Override
+    public boolean hasAccesssTokenExpirySsoInHours() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional int32 accesss_token_expiry_sso_in_hours = 3 [json_name = "accesssTokenExpirySsoInHours"];</code>
+     * @return The accesssTokenExpirySsoInHours.
+     */
+    @java.lang.Override
+    public int getAccesssTokenExpirySsoInHours() {
+      return accesssTokenExpirySsoInHours_;
+    }
+
+    public static final int ACCESS_TOKEN_CACHE_IN_MINUTES_FIELD_NUMBER = 4;
+    private int accessTokenCacheInMinutes_ = 0;
+    /**
+     * <code>optional int32 access_token_cache_in_minutes = 4 [json_name = "accessTokenCacheInMinutes"];</code>
+     * @return Whether the accessTokenCacheInMinutes field is set.
+     */
+    @java.lang.Override
+    public boolean hasAccessTokenCacheInMinutes() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <code>optional int32 access_token_cache_in_minutes = 4 [json_name = "accessTokenCacheInMinutes"];</code>
+     * @return The accessTokenCacheInMinutes.
+     */
+    @java.lang.Override
+    public int getAccessTokenCacheInMinutes() {
+      return accessTokenCacheInMinutes_;
+    }
+
+    public static final int MAXIMUM_LOGIN_ATTEMPTS_FIELD_NUMBER = 5;
     private int maximumLoginAttempts_ = 0;
     /**
-     * <code>optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];</code>
+     * <code>optional int32 maximum_login_attempts = 5 [json_name = "maximumLoginAttempts"];</code>
      * @return Whether the maximumLoginAttempts field is set.
      */
     @java.lang.Override
     public boolean hasMaximumLoginAttempts() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];</code>
+     * <code>optional int32 maximum_login_attempts = 5 [json_name = "maximumLoginAttempts"];</code>
      * @return The maximumLoginAttempts.
      */
     @java.lang.Override
@@ -7915,113 +7866,18 @@ java.lang.String defaultValue) {
       return maximumLoginAttempts_;
     }
 
-    public static final int ENABLE_INSECURE_OUTGOING_CONNECTIONS_FIELD_NUMBER = 3;
-    private boolean enableInsecureOutgoingConnections_ = false;
-    /**
-     * <code>optional bool enable_insecure_outgoing_connections = 3 [json_name = "enableInsecureOutgoingConnections"];</code>
-     * @return Whether the enableInsecureOutgoingConnections field is set.
-     */
-    @java.lang.Override
-    public boolean hasEnableInsecureOutgoingConnections() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>optional bool enable_insecure_outgoing_connections = 3 [json_name = "enableInsecureOutgoingConnections"];</code>
-     * @return The enableInsecureOutgoingConnections.
-     */
-    @java.lang.Override
-    public boolean getEnableInsecureOutgoingConnections() {
-      return enableInsecureOutgoingConnections_;
-    }
-
-    public static final int ENABLE_MULTIFACTOR_AUTHENTICATION_FIELD_NUMBER = 4;
-    private boolean enableMultifactorAuthentication_ = false;
-    /**
-     * <code>optional bool enable_multifactor_authentication = 4 [json_name = "enableMultifactorAuthentication"];</code>
-     * @return Whether the enableMultifactorAuthentication field is set.
-     */
-    @java.lang.Override
-    public boolean hasEnableMultifactorAuthentication() {
-      return ((bitField0_ & 0x00000004) != 0);
-    }
-    /**
-     * <code>optional bool enable_multifactor_authentication = 4 [json_name = "enableMultifactorAuthentication"];</code>
-     * @return The enableMultifactorAuthentication.
-     */
-    @java.lang.Override
-    public boolean getEnableMultifactorAuthentication() {
-      return enableMultifactorAuthentication_;
-    }
-
-    public static final int ENFORCE_MULTIFACTOR_AUTHENTICATION_FIELD_NUMBER = 5;
-    private boolean enforceMultifactorAuthentication_ = false;
-    /**
-     * <code>optional bool enforce_multifactor_authentication = 5 [json_name = "enforceMultifactorAuthentication"];</code>
-     * @return Whether the enforceMultifactorAuthentication field is set.
-     */
-    @java.lang.Override
-    public boolean hasEnforceMultifactorAuthentication() {
-      return ((bitField0_ & 0x00000008) != 0);
-    }
-    /**
-     * <code>optional bool enforce_multifactor_authentication = 5 [json_name = "enforceMultifactorAuthentication"];</code>
-     * @return The enforceMultifactorAuthentication.
-     */
-    @java.lang.Override
-    public boolean getEnforceMultifactorAuthentication() {
-      return enforceMultifactorAuthentication_;
-    }
-
-    public static final int ENABLE_OAUTH_SERVICE_PROVIDER_FIELD_NUMBER = 6;
-    private boolean enableOauthServiceProvider_ = false;
-    /**
-     * <code>optional bool enable_oauth_service_provider = 6 [json_name = "enableOauthServiceProvider"];</code>
-     * @return Whether the enableOauthServiceProvider field is set.
-     */
-    @java.lang.Override
-    public boolean hasEnableOauthServiceProvider() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     * <code>optional bool enable_oauth_service_provider = 6 [json_name = "enableOauthServiceProvider"];</code>
-     * @return The enableOauthServiceProvider.
-     */
-    @java.lang.Override
-    public boolean getEnableOauthServiceProvider() {
-      return enableOauthServiceProvider_;
-    }
-
-    public static final int ENABLE_OUTGOING_OAUTH_CONNECTIONS_FIELD_NUMBER = 7;
-    private boolean enableOutgoingOauthConnections_ = false;
-    /**
-     * <code>optional bool enable_outgoing_oauth_connections = 7 [json_name = "enableOutgoingOauthConnections"];</code>
-     * @return Whether the enableOutgoingOauthConnections field is set.
-     */
-    @java.lang.Override
-    public boolean hasEnableOutgoingOauthConnections() {
-      return ((bitField0_ & 0x00000020) != 0);
-    }
-    /**
-     * <code>optional bool enable_outgoing_oauth_connections = 7 [json_name = "enableOutgoingOauthConnections"];</code>
-     * @return The enableOutgoingOauthConnections.
-     */
-    @java.lang.Override
-    public boolean getEnableOutgoingOauthConnections() {
-      return enableOutgoingOauthConnections_;
-    }
-
-    public static final int TERMINATE_SESSIONS_ON_PASSWORD_CHANGE_FIELD_NUMBER = 8;
+    public static final int TERMINATE_SESSIONS_ON_PASSWORD_CHANGE_FIELD_NUMBER = 6;
     private boolean terminateSessionsOnPasswordChange_ = false;
     /**
-     * <code>optional bool terminate_sessions_on_password_change = 8 [json_name = "terminateSessionsOnPasswordChange"];</code>
+     * <code>optional bool terminate_sessions_on_password_change = 6 [json_name = "terminateSessionsOnPasswordChange"];</code>
      * @return Whether the terminateSessionsOnPasswordChange field is set.
      */
     @java.lang.Override
     public boolean hasTerminateSessionsOnPasswordChange() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
-     * <code>optional bool terminate_sessions_on_password_change = 8 [json_name = "terminateSessionsOnPasswordChange"];</code>
+     * <code>optional bool terminate_sessions_on_password_change = 6 [json_name = "terminateSessionsOnPasswordChange"];</code>
      * @return The terminateSessionsOnPasswordChange.
      */
     @java.lang.Override
@@ -8029,246 +7885,19 @@ java.lang.String defaultValue) {
       return terminateSessionsOnPasswordChange_;
     }
 
-    public static final int SESSION_LENGTH_WEB_IN_HOURS_FIELD_NUMBER = 9;
-    private int sessionLengthWebInHours_ = 0;
-    /**
-     * <code>optional int32 session_length_web_in_hours = 9 [json_name = "sessionLengthWebInHours"];</code>
-     * @return Whether the sessionLengthWebInHours field is set.
-     */
-    @java.lang.Override
-    public boolean hasSessionLengthWebInHours() {
-      return ((bitField0_ & 0x00000080) != 0);
-    }
-    /**
-     * <code>optional int32 session_length_web_in_hours = 9 [json_name = "sessionLengthWebInHours"];</code>
-     * @return The sessionLengthWebInHours.
-     */
-    @java.lang.Override
-    public int getSessionLengthWebInHours() {
-      return sessionLengthWebInHours_;
-    }
-
-    public static final int SESSION_LENGTH_MOBILE_IN_HOURS_FIELD_NUMBER = 10;
-    private int sessionLengthMobileInHours_ = 0;
-    /**
-     * <code>optional int32 session_length_mobile_in_hours = 10 [json_name = "sessionLengthMobileInHours"];</code>
-     * @return Whether the sessionLengthMobileInHours field is set.
-     */
-    @java.lang.Override
-    public boolean hasSessionLengthMobileInHours() {
-      return ((bitField0_ & 0x00000100) != 0);
-    }
-    /**
-     * <code>optional int32 session_length_mobile_in_hours = 10 [json_name = "sessionLengthMobileInHours"];</code>
-     * @return The sessionLengthMobileInHours.
-     */
-    @java.lang.Override
-    public int getSessionLengthMobileInHours() {
-      return sessionLengthMobileInHours_;
-    }
-
-    public static final int SESSION_LENGTH_SSO_IN_HOURS_FIELD_NUMBER = 11;
-    private int sessionLengthSsoInHours_ = 0;
-    /**
-     * <code>optional int32 session_length_sso_in_hours = 11 [json_name = "sessionLengthSsoInHours"];</code>
-     * @return Whether the sessionLengthSsoInHours field is set.
-     */
-    @java.lang.Override
-    public boolean hasSessionLengthSsoInHours() {
-      return ((bitField0_ & 0x00000200) != 0);
-    }
-    /**
-     * <code>optional int32 session_length_sso_in_hours = 11 [json_name = "sessionLengthSsoInHours"];</code>
-     * @return The sessionLengthSsoInHours.
-     */
-    @java.lang.Override
-    public int getSessionLengthSsoInHours() {
-      return sessionLengthSsoInHours_;
-    }
-
-    public static final int ALLOW_CORS_FROM_FIELD_NUMBER = 12;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object allowCorsFrom_ = "";
-    /**
-     * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
-     * @return Whether the allowCorsFrom field is set.
-     */
-    @java.lang.Override
-    public boolean hasAllowCorsFrom() {
-      return ((bitField0_ & 0x00000400) != 0);
-    }
-    /**
-     * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
-     * @return The allowCorsFrom.
-     */
-    @java.lang.Override
-    public java.lang.String getAllowCorsFrom() {
-      java.lang.Object ref = allowCorsFrom_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        allowCorsFrom_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
-     * @return The bytes for allowCorsFrom.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAllowCorsFromBytes() {
-      java.lang.Object ref = allowCorsFrom_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        allowCorsFrom_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CORS_EXPOSED_HEADERS_FIELD_NUMBER = 13;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object corsExposedHeaders_ = "";
-    /**
-     * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
-     * @return Whether the corsExposedHeaders field is set.
-     */
-    @java.lang.Override
-    public boolean hasCorsExposedHeaders() {
-      return ((bitField0_ & 0x00000800) != 0);
-    }
-    /**
-     * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
-     * @return The corsExposedHeaders.
-     */
-    @java.lang.Override
-    public java.lang.String getCorsExposedHeaders() {
-      java.lang.Object ref = corsExposedHeaders_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        corsExposedHeaders_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
-     * @return The bytes for corsExposedHeaders.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getCorsExposedHeadersBytes() {
-      java.lang.Object ref = corsExposedHeaders_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        corsExposedHeaders_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CORS_ALLOW_CREDENTIALS_FIELD_NUMBER = 14;
-    private boolean corsAllowCredentials_ = false;
-    /**
-     * <code>optional bool cors_allow_credentials = 14 [json_name = "corsAllowCredentials"];</code>
-     * @return Whether the corsAllowCredentials field is set.
-     */
-    @java.lang.Override
-    public boolean hasCorsAllowCredentials() {
-      return ((bitField0_ & 0x00001000) != 0);
-    }
-    /**
-     * <code>optional bool cors_allow_credentials = 14 [json_name = "corsAllowCredentials"];</code>
-     * @return The corsAllowCredentials.
-     */
-    @java.lang.Override
-    public boolean getCorsAllowCredentials() {
-      return corsAllowCredentials_;
-    }
-
-    public static final int CORS_DEBUG_FIELD_NUMBER = 15;
-    private boolean corsDebug_ = false;
-    /**
-     * <code>optional bool cors_debug = 15 [json_name = "corsDebug"];</code>
-     * @return Whether the corsDebug field is set.
-     */
-    @java.lang.Override
-    public boolean hasCorsDebug() {
-      return ((bitField0_ & 0x00002000) != 0);
-    }
-    /**
-     * <code>optional bool cors_debug = 15 [json_name = "corsDebug"];</code>
-     * @return The corsDebug.
-     */
-    @java.lang.Override
-    public boolean getCorsDebug() {
-      return corsDebug_;
-    }
-
-    public static final int ALLOW_COOKIES_FOR_SUBDOMAINS_FIELD_NUMBER = 16;
-    private boolean allowCookiesForSubdomains_ = false;
-    /**
-     * <code>optional bool allow_cookies_for_subdomains = 16 [json_name = "allowCookiesForSubdomains"];</code>
-     * @return Whether the allowCookiesForSubdomains field is set.
-     */
-    @java.lang.Override
-    public boolean hasAllowCookiesForSubdomains() {
-      return ((bitField0_ & 0x00004000) != 0);
-    }
-    /**
-     * <code>optional bool allow_cookies_for_subdomains = 16 [json_name = "allowCookiesForSubdomains"];</code>
-     * @return The allowCookiesForSubdomains.
-     */
-    @java.lang.Override
-    public boolean getAllowCookiesForSubdomains() {
-      return allowCookiesForSubdomains_;
-    }
-
-    public static final int SESSION_CACHE_IN_MINUTES_FIELD_NUMBER = 17;
-    private int sessionCacheInMinutes_ = 0;
-    /**
-     * <code>optional int32 session_cache_in_minutes = 17 [json_name = "sessionCacheInMinutes"];</code>
-     * @return Whether the sessionCacheInMinutes field is set.
-     */
-    @java.lang.Override
-    public boolean hasSessionCacheInMinutes() {
-      return ((bitField0_ & 0x00008000) != 0);
-    }
-    /**
-     * <code>optional int32 session_cache_in_minutes = 17 [json_name = "sessionCacheInMinutes"];</code>
-     * @return The sessionCacheInMinutes.
-     */
-    @java.lang.Override
-    public int getSessionCacheInMinutes() {
-      return sessionCacheInMinutes_;
-    }
-
-    public static final int EMAIL_CONFIRMATION_URL_FIELD_NUMBER = 18;
+    public static final int EMAIL_CONFIRMATION_URL_FIELD_NUMBER = 7;
     @SuppressWarnings("serial")
     private volatile java.lang.Object emailConfirmationUrl_ = "";
     /**
-     * <code>optional string email_confirmation_url = 18 [json_name = "emailConfirmationUrl"];</code>
+     * <code>optional string email_confirmation_url = 7 [json_name = "emailConfirmationUrl"];</code>
      * @return Whether the emailConfirmationUrl field is set.
      */
     @java.lang.Override
     public boolean hasEmailConfirmationUrl() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
-     * <code>optional string email_confirmation_url = 18 [json_name = "emailConfirmationUrl"];</code>
+     * <code>optional string email_confirmation_url = 7 [json_name = "emailConfirmationUrl"];</code>
      * @return The emailConfirmationUrl.
      */
     @java.lang.Override
@@ -8285,7 +7914,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string email_confirmation_url = 18 [json_name = "emailConfirmationUrl"];</code>
+     * <code>optional string email_confirmation_url = 7 [json_name = "emailConfirmationUrl"];</code>
      * @return The bytes for emailConfirmationUrl.
      */
     @java.lang.Override
@@ -8303,57 +7932,19 @@ java.lang.String defaultValue) {
       }
     }
 
-    public static final int TOKEN_CONFIRMATION_EXPIRY_IN_HOURS_FIELD_NUMBER = 19;
-    private int tokenConfirmationExpiryInHours_ = 0;
-    /**
-     * <code>optional uint32 token_confirmation_expiry_in_hours = 19 [json_name = "tokenConfirmationExpiryInHours"];</code>
-     * @return Whether the tokenConfirmationExpiryInHours field is set.
-     */
-    @java.lang.Override
-    public boolean hasTokenConfirmationExpiryInHours() {
-      return ((bitField0_ & 0x00020000) != 0);
-    }
-    /**
-     * <code>optional uint32 token_confirmation_expiry_in_hours = 19 [json_name = "tokenConfirmationExpiryInHours"];</code>
-     * @return The tokenConfirmationExpiryInHours.
-     */
-    @java.lang.Override
-    public int getTokenConfirmationExpiryInHours() {
-      return tokenConfirmationExpiryInHours_;
-    }
-
-    public static final int TOKEN_PASSWORD_RESET_EXPIRY_IN_HOURS_FIELD_NUMBER = 20;
-    private int tokenPasswordResetExpiryInHours_ = 0;
-    /**
-     * <code>optional uint32 token_password_reset_expiry_in_hours = 20 [json_name = "tokenPasswordResetExpiryInHours"];</code>
-     * @return Whether the tokenPasswordResetExpiryInHours field is set.
-     */
-    @java.lang.Override
-    public boolean hasTokenPasswordResetExpiryInHours() {
-      return ((bitField0_ & 0x00040000) != 0);
-    }
-    /**
-     * <code>optional uint32 token_password_reset_expiry_in_hours = 20 [json_name = "tokenPasswordResetExpiryInHours"];</code>
-     * @return The tokenPasswordResetExpiryInHours.
-     */
-    @java.lang.Override
-    public int getTokenPasswordResetExpiryInHours() {
-      return tokenPasswordResetExpiryInHours_;
-    }
-
-    public static final int PASSWORD_RESET_URL_FIELD_NUMBER = 21;
+    public static final int PASSWORD_RESET_URL_FIELD_NUMBER = 8;
     @SuppressWarnings("serial")
     private volatile java.lang.Object passwordResetUrl_ = "";
     /**
-     * <code>optional string password_reset_url = 21 [json_name = "passwordResetUrl"];</code>
+     * <code>optional string password_reset_url = 8 [json_name = "passwordResetUrl"];</code>
      * @return Whether the passwordResetUrl field is set.
      */
     @java.lang.Override
     public boolean hasPasswordResetUrl() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
-     * <code>optional string password_reset_url = 21 [json_name = "passwordResetUrl"];</code>
+     * <code>optional string password_reset_url = 8 [json_name = "passwordResetUrl"];</code>
      * @return The passwordResetUrl.
      */
     @java.lang.Override
@@ -8370,7 +7961,7 @@ java.lang.String defaultValue) {
       }
     }
     /**
-     * <code>optional string password_reset_url = 21 [json_name = "passwordResetUrl"];</code>
+     * <code>optional string password_reset_url = 8 [json_name = "passwordResetUrl"];</code>
      * @return The bytes for passwordResetUrl.
      */
     @java.lang.Override
@@ -8388,6 +7979,290 @@ java.lang.String defaultValue) {
       }
     }
 
+    public static final int TOKEN_CONFIRMATION_EXPIRY_IN_HOURS_FIELD_NUMBER = 9;
+    private int tokenConfirmationExpiryInHours_ = 0;
+    /**
+     * <code>optional uint32 token_confirmation_expiry_in_hours = 9 [json_name = "tokenConfirmationExpiryInHours"];</code>
+     * @return Whether the tokenConfirmationExpiryInHours field is set.
+     */
+    @java.lang.Override
+    public boolean hasTokenConfirmationExpiryInHours() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+    /**
+     * <code>optional uint32 token_confirmation_expiry_in_hours = 9 [json_name = "tokenConfirmationExpiryInHours"];</code>
+     * @return The tokenConfirmationExpiryInHours.
+     */
+    @java.lang.Override
+    public int getTokenConfirmationExpiryInHours() {
+      return tokenConfirmationExpiryInHours_;
+    }
+
+    public static final int TOKEN_PASSWORD_RESET_EXPIRY_IN_HOURS_FIELD_NUMBER = 10;
+    private int tokenPasswordResetExpiryInHours_ = 0;
+    /**
+     * <code>optional uint32 token_password_reset_expiry_in_hours = 10 [json_name = "tokenPasswordResetExpiryInHours"];</code>
+     * @return Whether the tokenPasswordResetExpiryInHours field is set.
+     */
+    @java.lang.Override
+    public boolean hasTokenPasswordResetExpiryInHours() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     * <code>optional uint32 token_password_reset_expiry_in_hours = 10 [json_name = "tokenPasswordResetExpiryInHours"];</code>
+     * @return The tokenPasswordResetExpiryInHours.
+     */
+    @java.lang.Override
+    public int getTokenPasswordResetExpiryInHours() {
+      return tokenPasswordResetExpiryInHours_;
+    }
+
+    public static final int ENABLE_INSECURE_OUTGOING_CONNECTIONS_FIELD_NUMBER = 11;
+    private boolean enableInsecureOutgoingConnections_ = false;
+    /**
+     * <code>optional bool enable_insecure_outgoing_connections = 11 [json_name = "enableInsecureOutgoingConnections"];</code>
+     * @return Whether the enableInsecureOutgoingConnections field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableInsecureOutgoingConnections() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     * <code>optional bool enable_insecure_outgoing_connections = 11 [json_name = "enableInsecureOutgoingConnections"];</code>
+     * @return The enableInsecureOutgoingConnections.
+     */
+    @java.lang.Override
+    public boolean getEnableInsecureOutgoingConnections() {
+      return enableInsecureOutgoingConnections_;
+    }
+
+    public static final int ENABLE_MULTIFACTOR_AUTHENTICATION_FIELD_NUMBER = 12;
+    private boolean enableMultifactorAuthentication_ = false;
+    /**
+     * <code>optional bool enable_multifactor_authentication = 12 [json_name = "enableMultifactorAuthentication"];</code>
+     * @return Whether the enableMultifactorAuthentication field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableMultifactorAuthentication() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     * <code>optional bool enable_multifactor_authentication = 12 [json_name = "enableMultifactorAuthentication"];</code>
+     * @return The enableMultifactorAuthentication.
+     */
+    @java.lang.Override
+    public boolean getEnableMultifactorAuthentication() {
+      return enableMultifactorAuthentication_;
+    }
+
+    public static final int ENFORCE_MULTIFACTOR_AUTHENTICATION_FIELD_NUMBER = 13;
+    private boolean enforceMultifactorAuthentication_ = false;
+    /**
+     * <code>optional bool enforce_multifactor_authentication = 13 [json_name = "enforceMultifactorAuthentication"];</code>
+     * @return Whether the enforceMultifactorAuthentication field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnforceMultifactorAuthentication() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     * <code>optional bool enforce_multifactor_authentication = 13 [json_name = "enforceMultifactorAuthentication"];</code>
+     * @return The enforceMultifactorAuthentication.
+     */
+    @java.lang.Override
+    public boolean getEnforceMultifactorAuthentication() {
+      return enforceMultifactorAuthentication_;
+    }
+
+    public static final int ENABLE_OAUTH_SERVICE_PROVIDER_FIELD_NUMBER = 14;
+    private boolean enableOauthServiceProvider_ = false;
+    /**
+     * <code>optional bool enable_oauth_service_provider = 14 [json_name = "enableOauthServiceProvider"];</code>
+     * @return Whether the enableOauthServiceProvider field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableOauthServiceProvider() {
+      return ((bitField0_ & 0x00002000) != 0);
+    }
+    /**
+     * <code>optional bool enable_oauth_service_provider = 14 [json_name = "enableOauthServiceProvider"];</code>
+     * @return The enableOauthServiceProvider.
+     */
+    @java.lang.Override
+    public boolean getEnableOauthServiceProvider() {
+      return enableOauthServiceProvider_;
+    }
+
+    public static final int ENABLE_OUTGOING_OAUTH_CONNECTIONS_FIELD_NUMBER = 15;
+    private boolean enableOutgoingOauthConnections_ = false;
+    /**
+     * <code>optional bool enable_outgoing_oauth_connections = 15 [json_name = "enableOutgoingOauthConnections"];</code>
+     * @return Whether the enableOutgoingOauthConnections field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnableOutgoingOauthConnections() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+    /**
+     * <code>optional bool enable_outgoing_oauth_connections = 15 [json_name = "enableOutgoingOauthConnections"];</code>
+     * @return The enableOutgoingOauthConnections.
+     */
+    @java.lang.Override
+    public boolean getEnableOutgoingOauthConnections() {
+      return enableOutgoingOauthConnections_;
+    }
+
+    public static final int ALLOW_CORS_FROM_FIELD_NUMBER = 16;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object allowCorsFrom_ = "";
+    /**
+     * <code>optional string allow_cors_from = 16 [json_name = "allowCorsFrom"];</code>
+     * @return Whether the allowCorsFrom field is set.
+     */
+    @java.lang.Override
+    public boolean hasAllowCorsFrom() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+    /**
+     * <code>optional string allow_cors_from = 16 [json_name = "allowCorsFrom"];</code>
+     * @return The allowCorsFrom.
+     */
+    @java.lang.Override
+    public java.lang.String getAllowCorsFrom() {
+      java.lang.Object ref = allowCorsFrom_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        allowCorsFrom_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string allow_cors_from = 16 [json_name = "allowCorsFrom"];</code>
+     * @return The bytes for allowCorsFrom.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAllowCorsFromBytes() {
+      java.lang.Object ref = allowCorsFrom_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        allowCorsFrom_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CORS_EXPOSED_HEADERS_FIELD_NUMBER = 17;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object corsExposedHeaders_ = "";
+    /**
+     * <code>optional string cors_exposed_headers = 17 [json_name = "corsExposedHeaders"];</code>
+     * @return Whether the corsExposedHeaders field is set.
+     */
+    @java.lang.Override
+    public boolean hasCorsExposedHeaders() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+    /**
+     * <code>optional string cors_exposed_headers = 17 [json_name = "corsExposedHeaders"];</code>
+     * @return The corsExposedHeaders.
+     */
+    @java.lang.Override
+    public java.lang.String getCorsExposedHeaders() {
+      java.lang.Object ref = corsExposedHeaders_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        corsExposedHeaders_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string cors_exposed_headers = 17 [json_name = "corsExposedHeaders"];</code>
+     * @return The bytes for corsExposedHeaders.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCorsExposedHeadersBytes() {
+      java.lang.Object ref = corsExposedHeaders_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        corsExposedHeaders_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CORS_ALLOW_CREDENTIALS_FIELD_NUMBER = 18;
+    private boolean corsAllowCredentials_ = false;
+    /**
+     * <code>optional bool cors_allow_credentials = 18 [json_name = "corsAllowCredentials"];</code>
+     * @return Whether the corsAllowCredentials field is set.
+     */
+    @java.lang.Override
+    public boolean hasCorsAllowCredentials() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+    /**
+     * <code>optional bool cors_allow_credentials = 18 [json_name = "corsAllowCredentials"];</code>
+     * @return The corsAllowCredentials.
+     */
+    @java.lang.Override
+    public boolean getCorsAllowCredentials() {
+      return corsAllowCredentials_;
+    }
+
+    public static final int CORS_DEBUG_FIELD_NUMBER = 19;
+    private boolean corsDebug_ = false;
+    /**
+     * <code>optional bool cors_debug = 19 [json_name = "corsDebug"];</code>
+     * @return Whether the corsDebug field is set.
+     */
+    @java.lang.Override
+    public boolean hasCorsDebug() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+    /**
+     * <code>optional bool cors_debug = 19 [json_name = "corsDebug"];</code>
+     * @return The corsDebug.
+     */
+    @java.lang.Override
+    public boolean getCorsDebug() {
+      return corsDebug_;
+    }
+
+    public static final int ALLOW_COOKIES_FOR_SUBDOMAINS_FIELD_NUMBER = 20;
+    private boolean allowCookiesForSubdomains_ = false;
+    /**
+     * <code>optional bool allow_cookies_for_subdomains = 20 [json_name = "allowCookiesForSubdomains"];</code>
+     * @return Whether the allowCookiesForSubdomains field is set.
+     */
+    @java.lang.Override
+    public boolean hasAllowCookiesForSubdomains() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+    /**
+     * <code>optional bool allow_cookies_for_subdomains = 20 [json_name = "allowCookiesForSubdomains"];</code>
+     * @return The allowCookiesForSubdomains.
+     */
+    @java.lang.Override
+    public boolean getAllowCookiesForSubdomains() {
+      return allowCookiesForSubdomains_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -8402,71 +8277,65 @@ java.lang.String defaultValue) {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      com.google.protobuf.GeneratedMessage
-        .serializeStringMapTo(
-          output,
-          internalGetRestrictedUsernames(),
-          RestrictedUsernamesDefaultEntryHolder.defaultEntry,
-          1);
       if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeInt32(2, maximumLoginAttempts_);
+        output.writeInt32(1, accesssTokenExpiryWebInHours_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeBool(3, enableInsecureOutgoingConnections_);
+        output.writeInt32(2, accesssTokenExpiryMobileInHours_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeBool(4, enableMultifactorAuthentication_);
+        output.writeInt32(3, accesssTokenExpirySsoInHours_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
-        output.writeBool(5, enforceMultifactorAuthentication_);
+        output.writeInt32(4, accessTokenCacheInMinutes_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
-        output.writeBool(6, enableOauthServiceProvider_);
+        output.writeInt32(5, maximumLoginAttempts_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
-        output.writeBool(7, enableOutgoingOauthConnections_);
+        output.writeBool(6, terminateSessionsOnPasswordChange_);
       }
       if (((bitField0_ & 0x00000040) != 0)) {
-        output.writeBool(8, terminateSessionsOnPasswordChange_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 7, emailConfirmationUrl_);
       }
       if (((bitField0_ & 0x00000080) != 0)) {
-        output.writeInt32(9, sessionLengthWebInHours_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 8, passwordResetUrl_);
       }
       if (((bitField0_ & 0x00000100) != 0)) {
-        output.writeInt32(10, sessionLengthMobileInHours_);
+        output.writeUInt32(9, tokenConfirmationExpiryInHours_);
       }
       if (((bitField0_ & 0x00000200) != 0)) {
-        output.writeInt32(11, sessionLengthSsoInHours_);
+        output.writeUInt32(10, tokenPasswordResetExpiryInHours_);
       }
       if (((bitField0_ & 0x00000400) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 12, allowCorsFrom_);
+        output.writeBool(11, enableInsecureOutgoingConnections_);
       }
       if (((bitField0_ & 0x00000800) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 13, corsExposedHeaders_);
+        output.writeBool(12, enableMultifactorAuthentication_);
       }
       if (((bitField0_ & 0x00001000) != 0)) {
-        output.writeBool(14, corsAllowCredentials_);
+        output.writeBool(13, enforceMultifactorAuthentication_);
       }
       if (((bitField0_ & 0x00002000) != 0)) {
-        output.writeBool(15, corsDebug_);
+        output.writeBool(14, enableOauthServiceProvider_);
       }
       if (((bitField0_ & 0x00004000) != 0)) {
-        output.writeBool(16, allowCookiesForSubdomains_);
+        output.writeBool(15, enableOutgoingOauthConnections_);
       }
       if (((bitField0_ & 0x00008000) != 0)) {
-        output.writeInt32(17, sessionCacheInMinutes_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 16, allowCorsFrom_);
       }
       if (((bitField0_ & 0x00010000) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 18, emailConfirmationUrl_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 17, corsExposedHeaders_);
       }
       if (((bitField0_ & 0x00020000) != 0)) {
-        output.writeUInt32(19, tokenConfirmationExpiryInHours_);
+        output.writeBool(18, corsAllowCredentials_);
       }
       if (((bitField0_ & 0x00040000) != 0)) {
-        output.writeUInt32(20, tokenPasswordResetExpiryInHours_);
+        output.writeBool(19, corsDebug_);
       }
       if (((bitField0_ & 0x00080000) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 21, passwordResetUrl_);
+        output.writeBool(20, allowCookiesForSubdomains_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -8477,91 +8346,81 @@ java.lang.String defaultValue) {
       if (size != -1) return size;
 
       size = 0;
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetRestrictedUsernames().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        restrictedUsernames__ = RestrictedUsernamesDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, restrictedUsernames__);
-      }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, maximumLoginAttempts_);
+          .computeInt32Size(1, accesssTokenExpiryWebInHours_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, enableInsecureOutgoingConnections_);
+          .computeInt32Size(2, accesssTokenExpiryMobileInHours_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, enableMultifactorAuthentication_);
+          .computeInt32Size(3, accesssTokenExpirySsoInHours_);
       }
       if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, enforceMultifactorAuthentication_);
+          .computeInt32Size(4, accessTokenCacheInMinutes_);
       }
       if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, enableOauthServiceProvider_);
+          .computeInt32Size(5, maximumLoginAttempts_);
       }
       if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, enableOutgoingOauthConnections_);
+          .computeBoolSize(6, terminateSessionsOnPasswordChange_);
       }
       if (((bitField0_ & 0x00000040) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, terminateSessionsOnPasswordChange_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, emailConfirmationUrl_);
       }
       if (((bitField0_ & 0x00000080) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, sessionLengthWebInHours_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(8, passwordResetUrl_);
       }
       if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, sessionLengthMobileInHours_);
+          .computeUInt32Size(9, tokenConfirmationExpiryInHours_);
       }
       if (((bitField0_ & 0x00000200) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, sessionLengthSsoInHours_);
+          .computeUInt32Size(10, tokenPasswordResetExpiryInHours_);
       }
       if (((bitField0_ & 0x00000400) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(12, allowCorsFrom_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(11, enableInsecureOutgoingConnections_);
       }
       if (((bitField0_ & 0x00000800) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(13, corsExposedHeaders_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, enableMultifactorAuthentication_);
       }
       if (((bitField0_ & 0x00001000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(14, corsAllowCredentials_);
+          .computeBoolSize(13, enforceMultifactorAuthentication_);
       }
       if (((bitField0_ & 0x00002000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(15, corsDebug_);
+          .computeBoolSize(14, enableOauthServiceProvider_);
       }
       if (((bitField0_ & 0x00004000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(16, allowCookiesForSubdomains_);
+          .computeBoolSize(15, enableOutgoingOauthConnections_);
       }
       if (((bitField0_ & 0x00008000) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(17, sessionCacheInMinutes_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(16, allowCorsFrom_);
       }
       if (((bitField0_ & 0x00010000) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(18, emailConfirmationUrl_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(17, corsExposedHeaders_);
       }
       if (((bitField0_ & 0x00020000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(19, tokenConfirmationExpiryInHours_);
+          .computeBoolSize(18, corsAllowCredentials_);
       }
       if (((bitField0_ & 0x00040000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeUInt32Size(20, tokenPasswordResetExpiryInHours_);
+          .computeBoolSize(19, corsDebug_);
       }
       if (((bitField0_ & 0x00080000) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(21, passwordResetUrl_);
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(20, allowCookiesForSubdomains_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -8578,12 +8437,55 @@ java.lang.String defaultValue) {
       }
       org.megacommerce.common.v1.ConfigProto.ConfigSecurity other = (org.megacommerce.common.v1.ConfigProto.ConfigSecurity) obj;
 
-      if (!internalGetRestrictedUsernames().equals(
-          other.internalGetRestrictedUsernames())) return false;
+      if (hasAccesssTokenExpiryWebInHours() != other.hasAccesssTokenExpiryWebInHours()) return false;
+      if (hasAccesssTokenExpiryWebInHours()) {
+        if (getAccesssTokenExpiryWebInHours()
+            != other.getAccesssTokenExpiryWebInHours()) return false;
+      }
+      if (hasAccesssTokenExpiryMobileInHours() != other.hasAccesssTokenExpiryMobileInHours()) return false;
+      if (hasAccesssTokenExpiryMobileInHours()) {
+        if (getAccesssTokenExpiryMobileInHours()
+            != other.getAccesssTokenExpiryMobileInHours()) return false;
+      }
+      if (hasAccesssTokenExpirySsoInHours() != other.hasAccesssTokenExpirySsoInHours()) return false;
+      if (hasAccesssTokenExpirySsoInHours()) {
+        if (getAccesssTokenExpirySsoInHours()
+            != other.getAccesssTokenExpirySsoInHours()) return false;
+      }
+      if (hasAccessTokenCacheInMinutes() != other.hasAccessTokenCacheInMinutes()) return false;
+      if (hasAccessTokenCacheInMinutes()) {
+        if (getAccessTokenCacheInMinutes()
+            != other.getAccessTokenCacheInMinutes()) return false;
+      }
       if (hasMaximumLoginAttempts() != other.hasMaximumLoginAttempts()) return false;
       if (hasMaximumLoginAttempts()) {
         if (getMaximumLoginAttempts()
             != other.getMaximumLoginAttempts()) return false;
+      }
+      if (hasTerminateSessionsOnPasswordChange() != other.hasTerminateSessionsOnPasswordChange()) return false;
+      if (hasTerminateSessionsOnPasswordChange()) {
+        if (getTerminateSessionsOnPasswordChange()
+            != other.getTerminateSessionsOnPasswordChange()) return false;
+      }
+      if (hasEmailConfirmationUrl() != other.hasEmailConfirmationUrl()) return false;
+      if (hasEmailConfirmationUrl()) {
+        if (!getEmailConfirmationUrl()
+            .equals(other.getEmailConfirmationUrl())) return false;
+      }
+      if (hasPasswordResetUrl() != other.hasPasswordResetUrl()) return false;
+      if (hasPasswordResetUrl()) {
+        if (!getPasswordResetUrl()
+            .equals(other.getPasswordResetUrl())) return false;
+      }
+      if (hasTokenConfirmationExpiryInHours() != other.hasTokenConfirmationExpiryInHours()) return false;
+      if (hasTokenConfirmationExpiryInHours()) {
+        if (getTokenConfirmationExpiryInHours()
+            != other.getTokenConfirmationExpiryInHours()) return false;
+      }
+      if (hasTokenPasswordResetExpiryInHours() != other.hasTokenPasswordResetExpiryInHours()) return false;
+      if (hasTokenPasswordResetExpiryInHours()) {
+        if (getTokenPasswordResetExpiryInHours()
+            != other.getTokenPasswordResetExpiryInHours()) return false;
       }
       if (hasEnableInsecureOutgoingConnections() != other.hasEnableInsecureOutgoingConnections()) return false;
       if (hasEnableInsecureOutgoingConnections()) {
@@ -8610,26 +8512,6 @@ java.lang.String defaultValue) {
         if (getEnableOutgoingOauthConnections()
             != other.getEnableOutgoingOauthConnections()) return false;
       }
-      if (hasTerminateSessionsOnPasswordChange() != other.hasTerminateSessionsOnPasswordChange()) return false;
-      if (hasTerminateSessionsOnPasswordChange()) {
-        if (getTerminateSessionsOnPasswordChange()
-            != other.getTerminateSessionsOnPasswordChange()) return false;
-      }
-      if (hasSessionLengthWebInHours() != other.hasSessionLengthWebInHours()) return false;
-      if (hasSessionLengthWebInHours()) {
-        if (getSessionLengthWebInHours()
-            != other.getSessionLengthWebInHours()) return false;
-      }
-      if (hasSessionLengthMobileInHours() != other.hasSessionLengthMobileInHours()) return false;
-      if (hasSessionLengthMobileInHours()) {
-        if (getSessionLengthMobileInHours()
-            != other.getSessionLengthMobileInHours()) return false;
-      }
-      if (hasSessionLengthSsoInHours() != other.hasSessionLengthSsoInHours()) return false;
-      if (hasSessionLengthSsoInHours()) {
-        if (getSessionLengthSsoInHours()
-            != other.getSessionLengthSsoInHours()) return false;
-      }
       if (hasAllowCorsFrom() != other.hasAllowCorsFrom()) return false;
       if (hasAllowCorsFrom()) {
         if (!getAllowCorsFrom()
@@ -8655,31 +8537,6 @@ java.lang.String defaultValue) {
         if (getAllowCookiesForSubdomains()
             != other.getAllowCookiesForSubdomains()) return false;
       }
-      if (hasSessionCacheInMinutes() != other.hasSessionCacheInMinutes()) return false;
-      if (hasSessionCacheInMinutes()) {
-        if (getSessionCacheInMinutes()
-            != other.getSessionCacheInMinutes()) return false;
-      }
-      if (hasEmailConfirmationUrl() != other.hasEmailConfirmationUrl()) return false;
-      if (hasEmailConfirmationUrl()) {
-        if (!getEmailConfirmationUrl()
-            .equals(other.getEmailConfirmationUrl())) return false;
-      }
-      if (hasTokenConfirmationExpiryInHours() != other.hasTokenConfirmationExpiryInHours()) return false;
-      if (hasTokenConfirmationExpiryInHours()) {
-        if (getTokenConfirmationExpiryInHours()
-            != other.getTokenConfirmationExpiryInHours()) return false;
-      }
-      if (hasTokenPasswordResetExpiryInHours() != other.hasTokenPasswordResetExpiryInHours()) return false;
-      if (hasTokenPasswordResetExpiryInHours()) {
-        if (getTokenPasswordResetExpiryInHours()
-            != other.getTokenPasswordResetExpiryInHours()) return false;
-      }
-      if (hasPasswordResetUrl() != other.hasPasswordResetUrl()) return false;
-      if (hasPasswordResetUrl()) {
-        if (!getPasswordResetUrl()
-            .equals(other.getPasswordResetUrl())) return false;
-      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -8691,13 +8548,46 @@ java.lang.String defaultValue) {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (!internalGetRestrictedUsernames().getMap().isEmpty()) {
-        hash = (37 * hash) + RESTRICTED_USERNAMES_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetRestrictedUsernames().hashCode();
+      if (hasAccesssTokenExpiryWebInHours()) {
+        hash = (37 * hash) + ACCESSS_TOKEN_EXPIRY_WEB_IN_HOURS_FIELD_NUMBER;
+        hash = (53 * hash) + getAccesssTokenExpiryWebInHours();
+      }
+      if (hasAccesssTokenExpiryMobileInHours()) {
+        hash = (37 * hash) + ACCESSS_TOKEN_EXPIRY_MOBILE_IN_HOURS_FIELD_NUMBER;
+        hash = (53 * hash) + getAccesssTokenExpiryMobileInHours();
+      }
+      if (hasAccesssTokenExpirySsoInHours()) {
+        hash = (37 * hash) + ACCESSS_TOKEN_EXPIRY_SSO_IN_HOURS_FIELD_NUMBER;
+        hash = (53 * hash) + getAccesssTokenExpirySsoInHours();
+      }
+      if (hasAccessTokenCacheInMinutes()) {
+        hash = (37 * hash) + ACCESS_TOKEN_CACHE_IN_MINUTES_FIELD_NUMBER;
+        hash = (53 * hash) + getAccessTokenCacheInMinutes();
       }
       if (hasMaximumLoginAttempts()) {
         hash = (37 * hash) + MAXIMUM_LOGIN_ATTEMPTS_FIELD_NUMBER;
         hash = (53 * hash) + getMaximumLoginAttempts();
+      }
+      if (hasTerminateSessionsOnPasswordChange()) {
+        hash = (37 * hash) + TERMINATE_SESSIONS_ON_PASSWORD_CHANGE_FIELD_NUMBER;
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+            getTerminateSessionsOnPasswordChange());
+      }
+      if (hasEmailConfirmationUrl()) {
+        hash = (37 * hash) + EMAIL_CONFIRMATION_URL_FIELD_NUMBER;
+        hash = (53 * hash) + getEmailConfirmationUrl().hashCode();
+      }
+      if (hasPasswordResetUrl()) {
+        hash = (37 * hash) + PASSWORD_RESET_URL_FIELD_NUMBER;
+        hash = (53 * hash) + getPasswordResetUrl().hashCode();
+      }
+      if (hasTokenConfirmationExpiryInHours()) {
+        hash = (37 * hash) + TOKEN_CONFIRMATION_EXPIRY_IN_HOURS_FIELD_NUMBER;
+        hash = (53 * hash) + getTokenConfirmationExpiryInHours();
+      }
+      if (hasTokenPasswordResetExpiryInHours()) {
+        hash = (37 * hash) + TOKEN_PASSWORD_RESET_EXPIRY_IN_HOURS_FIELD_NUMBER;
+        hash = (53 * hash) + getTokenPasswordResetExpiryInHours();
       }
       if (hasEnableInsecureOutgoingConnections()) {
         hash = (37 * hash) + ENABLE_INSECURE_OUTGOING_CONNECTIONS_FIELD_NUMBER;
@@ -8724,23 +8614,6 @@ java.lang.String defaultValue) {
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getEnableOutgoingOauthConnections());
       }
-      if (hasTerminateSessionsOnPasswordChange()) {
-        hash = (37 * hash) + TERMINATE_SESSIONS_ON_PASSWORD_CHANGE_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getTerminateSessionsOnPasswordChange());
-      }
-      if (hasSessionLengthWebInHours()) {
-        hash = (37 * hash) + SESSION_LENGTH_WEB_IN_HOURS_FIELD_NUMBER;
-        hash = (53 * hash) + getSessionLengthWebInHours();
-      }
-      if (hasSessionLengthMobileInHours()) {
-        hash = (37 * hash) + SESSION_LENGTH_MOBILE_IN_HOURS_FIELD_NUMBER;
-        hash = (53 * hash) + getSessionLengthMobileInHours();
-      }
-      if (hasSessionLengthSsoInHours()) {
-        hash = (37 * hash) + SESSION_LENGTH_SSO_IN_HOURS_FIELD_NUMBER;
-        hash = (53 * hash) + getSessionLengthSsoInHours();
-      }
       if (hasAllowCorsFrom()) {
         hash = (37 * hash) + ALLOW_CORS_FROM_FIELD_NUMBER;
         hash = (53 * hash) + getAllowCorsFrom().hashCode();
@@ -8763,26 +8636,6 @@ java.lang.String defaultValue) {
         hash = (37 * hash) + ALLOW_COOKIES_FOR_SUBDOMAINS_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getAllowCookiesForSubdomains());
-      }
-      if (hasSessionCacheInMinutes()) {
-        hash = (37 * hash) + SESSION_CACHE_IN_MINUTES_FIELD_NUMBER;
-        hash = (53 * hash) + getSessionCacheInMinutes();
-      }
-      if (hasEmailConfirmationUrl()) {
-        hash = (37 * hash) + EMAIL_CONFIRMATION_URL_FIELD_NUMBER;
-        hash = (53 * hash) + getEmailConfirmationUrl().hashCode();
-      }
-      if (hasTokenConfirmationExpiryInHours()) {
-        hash = (37 * hash) + TOKEN_CONFIRMATION_EXPIRY_IN_HOURS_FIELD_NUMBER;
-        hash = (53 * hash) + getTokenConfirmationExpiryInHours();
-      }
-      if (hasTokenPasswordResetExpiryInHours()) {
-        hash = (37 * hash) + TOKEN_PASSWORD_RESET_EXPIRY_IN_HOURS_FIELD_NUMBER;
-        hash = (53 * hash) + getTokenPasswordResetExpiryInHours();
-      }
-      if (hasPasswordResetUrl()) {
-        hash = (37 * hash) + PASSWORD_RESET_URL_FIELD_NUMBER;
-        hash = (53 * hash) + getPasswordResetUrl().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -8893,28 +8746,6 @@ java.lang.String defaultValue) {
         return org.megacommerce.common.v1.ConfigProto.internal_static_common_v1_ConfigSecurity_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetRestrictedUsernames();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
-          int number) {
-        switch (number) {
-          case 1:
-            return internalGetMutableRestrictedUsernames();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -8937,27 +8768,26 @@ java.lang.String defaultValue) {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        internalGetMutableRestrictedUsernames().clear();
+        accesssTokenExpiryWebInHours_ = 0;
+        accesssTokenExpiryMobileInHours_ = 0;
+        accesssTokenExpirySsoInHours_ = 0;
+        accessTokenCacheInMinutes_ = 0;
         maximumLoginAttempts_ = 0;
+        terminateSessionsOnPasswordChange_ = false;
+        emailConfirmationUrl_ = "";
+        passwordResetUrl_ = "";
+        tokenConfirmationExpiryInHours_ = 0;
+        tokenPasswordResetExpiryInHours_ = 0;
         enableInsecureOutgoingConnections_ = false;
         enableMultifactorAuthentication_ = false;
         enforceMultifactorAuthentication_ = false;
         enableOauthServiceProvider_ = false;
         enableOutgoingOauthConnections_ = false;
-        terminateSessionsOnPasswordChange_ = false;
-        sessionLengthWebInHours_ = 0;
-        sessionLengthMobileInHours_ = 0;
-        sessionLengthSsoInHours_ = 0;
         allowCorsFrom_ = "";
         corsExposedHeaders_ = "";
         corsAllowCredentials_ = false;
         corsDebug_ = false;
         allowCookiesForSubdomains_ = false;
-        sessionCacheInMinutes_ = 0;
-        emailConfirmationUrl_ = "";
-        tokenConfirmationExpiryInHours_ = 0;
-        tokenPasswordResetExpiryInHours_ = 0;
-        passwordResetUrl_ = "";
         return this;
       }
 
@@ -8991,89 +8821,85 @@ java.lang.String defaultValue) {
 
       private void buildPartial0(org.megacommerce.common.v1.ConfigProto.ConfigSecurity result) {
         int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.restrictedUsernames_ = internalGetRestrictedUsernames();
-          result.restrictedUsernames_.makeImmutable();
-        }
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.maximumLoginAttempts_ = maximumLoginAttempts_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.accesssTokenExpiryWebInHours_ = accesssTokenExpiryWebInHours_;
           to_bitField0_ |= 0x00000001;
         }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.enableInsecureOutgoingConnections_ = enableInsecureOutgoingConnections_;
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.accesssTokenExpiryMobileInHours_ = accesssTokenExpiryMobileInHours_;
           to_bitField0_ |= 0x00000002;
         }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.enableMultifactorAuthentication_ = enableMultifactorAuthentication_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.accesssTokenExpirySsoInHours_ = accesssTokenExpirySsoInHours_;
           to_bitField0_ |= 0x00000004;
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.enforceMultifactorAuthentication_ = enforceMultifactorAuthentication_;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.accessTokenCacheInMinutes_ = accessTokenCacheInMinutes_;
           to_bitField0_ |= 0x00000008;
         }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.enableOauthServiceProvider_ = enableOauthServiceProvider_;
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.maximumLoginAttempts_ = maximumLoginAttempts_;
           to_bitField0_ |= 0x00000010;
         }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.enableOutgoingOauthConnections_ = enableOutgoingOauthConnections_;
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.terminateSessionsOnPasswordChange_ = terminateSessionsOnPasswordChange_;
           to_bitField0_ |= 0x00000020;
         }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.terminateSessionsOnPasswordChange_ = terminateSessionsOnPasswordChange_;
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.emailConfirmationUrl_ = emailConfirmationUrl_;
           to_bitField0_ |= 0x00000040;
         }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.sessionLengthWebInHours_ = sessionLengthWebInHours_;
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.passwordResetUrl_ = passwordResetUrl_;
           to_bitField0_ |= 0x00000080;
         }
-        if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.sessionLengthMobileInHours_ = sessionLengthMobileInHours_;
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.tokenConfirmationExpiryInHours_ = tokenConfirmationExpiryInHours_;
           to_bitField0_ |= 0x00000100;
         }
-        if (((from_bitField0_ & 0x00000400) != 0)) {
-          result.sessionLengthSsoInHours_ = sessionLengthSsoInHours_;
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.tokenPasswordResetExpiryInHours_ = tokenPasswordResetExpiryInHours_;
           to_bitField0_ |= 0x00000200;
         }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.allowCorsFrom_ = allowCorsFrom_;
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.enableInsecureOutgoingConnections_ = enableInsecureOutgoingConnections_;
           to_bitField0_ |= 0x00000400;
         }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.corsExposedHeaders_ = corsExposedHeaders_;
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.enableMultifactorAuthentication_ = enableMultifactorAuthentication_;
           to_bitField0_ |= 0x00000800;
         }
-        if (((from_bitField0_ & 0x00002000) != 0)) {
-          result.corsAllowCredentials_ = corsAllowCredentials_;
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.enforceMultifactorAuthentication_ = enforceMultifactorAuthentication_;
           to_bitField0_ |= 0x00001000;
         }
-        if (((from_bitField0_ & 0x00004000) != 0)) {
-          result.corsDebug_ = corsDebug_;
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.enableOauthServiceProvider_ = enableOauthServiceProvider_;
           to_bitField0_ |= 0x00002000;
         }
-        if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.allowCookiesForSubdomains_ = allowCookiesForSubdomains_;
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.enableOutgoingOauthConnections_ = enableOutgoingOauthConnections_;
           to_bitField0_ |= 0x00004000;
         }
-        if (((from_bitField0_ & 0x00010000) != 0)) {
-          result.sessionCacheInMinutes_ = sessionCacheInMinutes_;
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          result.allowCorsFrom_ = allowCorsFrom_;
           to_bitField0_ |= 0x00008000;
         }
-        if (((from_bitField0_ & 0x00020000) != 0)) {
-          result.emailConfirmationUrl_ = emailConfirmationUrl_;
+        if (((from_bitField0_ & 0x00010000) != 0)) {
+          result.corsExposedHeaders_ = corsExposedHeaders_;
           to_bitField0_ |= 0x00010000;
         }
-        if (((from_bitField0_ & 0x00040000) != 0)) {
-          result.tokenConfirmationExpiryInHours_ = tokenConfirmationExpiryInHours_;
+        if (((from_bitField0_ & 0x00020000) != 0)) {
+          result.corsAllowCredentials_ = corsAllowCredentials_;
           to_bitField0_ |= 0x00020000;
         }
-        if (((from_bitField0_ & 0x00080000) != 0)) {
-          result.tokenPasswordResetExpiryInHours_ = tokenPasswordResetExpiryInHours_;
+        if (((from_bitField0_ & 0x00040000) != 0)) {
+          result.corsDebug_ = corsDebug_;
           to_bitField0_ |= 0x00040000;
         }
-        if (((from_bitField0_ & 0x00100000) != 0)) {
-          result.passwordResetUrl_ = passwordResetUrl_;
+        if (((from_bitField0_ & 0x00080000) != 0)) {
+          result.allowCookiesForSubdomains_ = allowCookiesForSubdomains_;
           to_bitField0_ |= 0x00080000;
         }
         result.bitField0_ |= to_bitField0_;
@@ -9091,11 +8917,39 @@ java.lang.String defaultValue) {
 
       public Builder mergeFrom(org.megacommerce.common.v1.ConfigProto.ConfigSecurity other) {
         if (other == org.megacommerce.common.v1.ConfigProto.ConfigSecurity.getDefaultInstance()) return this;
-        internalGetMutableRestrictedUsernames().mergeFrom(
-            other.internalGetRestrictedUsernames());
-        bitField0_ |= 0x00000001;
+        if (other.hasAccesssTokenExpiryWebInHours()) {
+          setAccesssTokenExpiryWebInHours(other.getAccesssTokenExpiryWebInHours());
+        }
+        if (other.hasAccesssTokenExpiryMobileInHours()) {
+          setAccesssTokenExpiryMobileInHours(other.getAccesssTokenExpiryMobileInHours());
+        }
+        if (other.hasAccesssTokenExpirySsoInHours()) {
+          setAccesssTokenExpirySsoInHours(other.getAccesssTokenExpirySsoInHours());
+        }
+        if (other.hasAccessTokenCacheInMinutes()) {
+          setAccessTokenCacheInMinutes(other.getAccessTokenCacheInMinutes());
+        }
         if (other.hasMaximumLoginAttempts()) {
           setMaximumLoginAttempts(other.getMaximumLoginAttempts());
+        }
+        if (other.hasTerminateSessionsOnPasswordChange()) {
+          setTerminateSessionsOnPasswordChange(other.getTerminateSessionsOnPasswordChange());
+        }
+        if (other.hasEmailConfirmationUrl()) {
+          emailConfirmationUrl_ = other.emailConfirmationUrl_;
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        if (other.hasPasswordResetUrl()) {
+          passwordResetUrl_ = other.passwordResetUrl_;
+          bitField0_ |= 0x00000080;
+          onChanged();
+        }
+        if (other.hasTokenConfirmationExpiryInHours()) {
+          setTokenConfirmationExpiryInHours(other.getTokenConfirmationExpiryInHours());
+        }
+        if (other.hasTokenPasswordResetExpiryInHours()) {
+          setTokenPasswordResetExpiryInHours(other.getTokenPasswordResetExpiryInHours());
         }
         if (other.hasEnableInsecureOutgoingConnections()) {
           setEnableInsecureOutgoingConnections(other.getEnableInsecureOutgoingConnections());
@@ -9112,26 +8966,14 @@ java.lang.String defaultValue) {
         if (other.hasEnableOutgoingOauthConnections()) {
           setEnableOutgoingOauthConnections(other.getEnableOutgoingOauthConnections());
         }
-        if (other.hasTerminateSessionsOnPasswordChange()) {
-          setTerminateSessionsOnPasswordChange(other.getTerminateSessionsOnPasswordChange());
-        }
-        if (other.hasSessionLengthWebInHours()) {
-          setSessionLengthWebInHours(other.getSessionLengthWebInHours());
-        }
-        if (other.hasSessionLengthMobileInHours()) {
-          setSessionLengthMobileInHours(other.getSessionLengthMobileInHours());
-        }
-        if (other.hasSessionLengthSsoInHours()) {
-          setSessionLengthSsoInHours(other.getSessionLengthSsoInHours());
-        }
         if (other.hasAllowCorsFrom()) {
           allowCorsFrom_ = other.allowCorsFrom_;
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00008000;
           onChanged();
         }
         if (other.hasCorsExposedHeaders()) {
           corsExposedHeaders_ = other.corsExposedHeaders_;
-          bitField0_ |= 0x00001000;
+          bitField0_ |= 0x00010000;
           onChanged();
         }
         if (other.hasCorsAllowCredentials()) {
@@ -9142,25 +8984,6 @@ java.lang.String defaultValue) {
         }
         if (other.hasAllowCookiesForSubdomains()) {
           setAllowCookiesForSubdomains(other.getAllowCookiesForSubdomains());
-        }
-        if (other.hasSessionCacheInMinutes()) {
-          setSessionCacheInMinutes(other.getSessionCacheInMinutes());
-        }
-        if (other.hasEmailConfirmationUrl()) {
-          emailConfirmationUrl_ = other.emailConfirmationUrl_;
-          bitField0_ |= 0x00020000;
-          onChanged();
-        }
-        if (other.hasTokenConfirmationExpiryInHours()) {
-          setTokenConfirmationExpiryInHours(other.getTokenConfirmationExpiryInHours());
-        }
-        if (other.hasTokenPasswordResetExpiryInHours()) {
-          setTokenPasswordResetExpiryInHours(other.getTokenPasswordResetExpiryInHours());
-        }
-        if (other.hasPasswordResetUrl()) {
-          passwordResetUrl_ = other.passwordResetUrl_;
-          bitField0_ |= 0x00100000;
-          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -9188,115 +9011,106 @@ java.lang.String defaultValue) {
               case 0:
                 done = true;
                 break;
-              case 10: {
-                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-                restrictedUsernames__ = input.readMessage(
-                    RestrictedUsernamesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableRestrictedUsernames().getMutableMap().put(
-                    restrictedUsernames__.getKey(), restrictedUsernames__.getValue());
+              case 8: {
+                accesssTokenExpiryWebInHours_ = input.readInt32();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 10
+              } // case 8
               case 16: {
-                maximumLoginAttempts_ = input.readInt32();
+                accesssTokenExpiryMobileInHours_ = input.readInt32();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
               case 24: {
-                enableInsecureOutgoingConnections_ = input.readBool();
+                accesssTokenExpirySsoInHours_ = input.readInt32();
                 bitField0_ |= 0x00000004;
                 break;
               } // case 24
               case 32: {
-                enableMultifactorAuthentication_ = input.readBool();
+                accessTokenCacheInMinutes_ = input.readInt32();
                 bitField0_ |= 0x00000008;
                 break;
               } // case 32
               case 40: {
-                enforceMultifactorAuthentication_ = input.readBool();
+                maximumLoginAttempts_ = input.readInt32();
                 bitField0_ |= 0x00000010;
                 break;
               } // case 40
               case 48: {
-                enableOauthServiceProvider_ = input.readBool();
+                terminateSessionsOnPasswordChange_ = input.readBool();
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
-              case 56: {
-                enableOutgoingOauthConnections_ = input.readBool();
+              case 58: {
+                emailConfirmationUrl_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000040;
                 break;
-              } // case 56
-              case 64: {
-                terminateSessionsOnPasswordChange_ = input.readBool();
+              } // case 58
+              case 66: {
+                passwordResetUrl_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000080;
                 break;
-              } // case 64
+              } // case 66
               case 72: {
-                sessionLengthWebInHours_ = input.readInt32();
+                tokenConfirmationExpiryInHours_ = input.readUInt32();
                 bitField0_ |= 0x00000100;
                 break;
               } // case 72
               case 80: {
-                sessionLengthMobileInHours_ = input.readInt32();
+                tokenPasswordResetExpiryInHours_ = input.readUInt32();
                 bitField0_ |= 0x00000200;
                 break;
               } // case 80
               case 88: {
-                sessionLengthSsoInHours_ = input.readInt32();
+                enableInsecureOutgoingConnections_ = input.readBool();
                 bitField0_ |= 0x00000400;
                 break;
               } // case 88
-              case 98: {
-                allowCorsFrom_ = input.readStringRequireUtf8();
+              case 96: {
+                enableMultifactorAuthentication_ = input.readBool();
                 bitField0_ |= 0x00000800;
                 break;
-              } // case 98
-              case 106: {
-                corsExposedHeaders_ = input.readStringRequireUtf8();
+              } // case 96
+              case 104: {
+                enforceMultifactorAuthentication_ = input.readBool();
                 bitField0_ |= 0x00001000;
                 break;
-              } // case 106
+              } // case 104
               case 112: {
-                corsAllowCredentials_ = input.readBool();
+                enableOauthServiceProvider_ = input.readBool();
                 bitField0_ |= 0x00002000;
                 break;
               } // case 112
               case 120: {
-                corsDebug_ = input.readBool();
+                enableOutgoingOauthConnections_ = input.readBool();
                 bitField0_ |= 0x00004000;
                 break;
               } // case 120
-              case 128: {
-                allowCookiesForSubdomains_ = input.readBool();
+              case 130: {
+                allowCorsFrom_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00008000;
                 break;
-              } // case 128
-              case 136: {
-                sessionCacheInMinutes_ = input.readInt32();
+              } // case 130
+              case 138: {
+                corsExposedHeaders_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00010000;
                 break;
-              } // case 136
-              case 146: {
-                emailConfirmationUrl_ = input.readStringRequireUtf8();
+              } // case 138
+              case 144: {
+                corsAllowCredentials_ = input.readBool();
                 bitField0_ |= 0x00020000;
                 break;
-              } // case 146
+              } // case 144
               case 152: {
-                tokenConfirmationExpiryInHours_ = input.readUInt32();
+                corsDebug_ = input.readBool();
                 bitField0_ |= 0x00040000;
                 break;
               } // case 152
               case 160: {
-                tokenPasswordResetExpiryInHours_ = input.readUInt32();
+                allowCookiesForSubdomains_ = input.readBool();
                 bitField0_ |= 0x00080000;
                 break;
               } // case 160
-              case 170: {
-                passwordResetUrl_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00100000;
-                break;
-              } // case 170
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -9314,144 +9128,177 @@ java.lang.String defaultValue) {
       }
       private int bitField0_;
 
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> restrictedUsernames_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-          internalGetRestrictedUsernames() {
-        if (restrictedUsernames_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              RestrictedUsernamesDefaultEntryHolder.defaultEntry);
-        }
-        return restrictedUsernames_;
+      private int accesssTokenExpiryWebInHours_ ;
+      /**
+       * <code>optional int32 accesss_token_expiry_web_in_hours = 1 [json_name = "accesssTokenExpiryWebInHours"];</code>
+       * @return Whether the accesssTokenExpiryWebInHours field is set.
+       */
+      @java.lang.Override
+      public boolean hasAccesssTokenExpiryWebInHours() {
+        return ((bitField0_ & 0x00000001) != 0);
       }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-          internalGetMutableRestrictedUsernames() {
-        if (restrictedUsernames_ == null) {
-          restrictedUsernames_ = com.google.protobuf.MapField.newMapField(
-              RestrictedUsernamesDefaultEntryHolder.defaultEntry);
-        }
-        if (!restrictedUsernames_.isMutable()) {
-          restrictedUsernames_ = restrictedUsernames_.copy();
-        }
+      /**
+       * <code>optional int32 accesss_token_expiry_web_in_hours = 1 [json_name = "accesssTokenExpiryWebInHours"];</code>
+       * @return The accesssTokenExpiryWebInHours.
+       */
+      @java.lang.Override
+      public int getAccesssTokenExpiryWebInHours() {
+        return accesssTokenExpiryWebInHours_;
+      }
+      /**
+       * <code>optional int32 accesss_token_expiry_web_in_hours = 1 [json_name = "accesssTokenExpiryWebInHours"];</code>
+       * @param value The accesssTokenExpiryWebInHours to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccesssTokenExpiryWebInHours(int value) {
+
+        accesssTokenExpiryWebInHours_ = value;
         bitField0_ |= 0x00000001;
         onChanged();
-        return restrictedUsernames_;
-      }
-      public int getRestrictedUsernamesCount() {
-        return internalGetRestrictedUsernames().getMap().size();
+        return this;
       }
       /**
-       * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       * <code>optional int32 accesss_token_expiry_web_in_hours = 1 [json_name = "accesssTokenExpiryWebInHours"];</code>
+       * @return This builder for chaining.
        */
-      @java.lang.Override
-      public boolean containsRestrictedUsernames(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        return internalGetRestrictedUsernames().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getRestrictedUsernamesMap()} instead.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getRestrictedUsernames() {
-        return getRestrictedUsernamesMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
-       */
-      @java.lang.Override
-      public java.util.Map<java.lang.String, java.lang.String> getRestrictedUsernamesMap() {
-        return internalGetRestrictedUsernames().getMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
-       */
-      @java.lang.Override
-      public /* nullable */
-java.lang.String getRestrictedUsernamesOrDefault(
-          java.lang.String key,
-          /* nullable */
-java.lang.String defaultValue) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetRestrictedUsernames().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
-       */
-      @java.lang.Override
-      public java.lang.String getRestrictedUsernamesOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetRestrictedUsernames().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-      public Builder clearRestrictedUsernames() {
+      public Builder clearAccesssTokenExpiryWebInHours() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        internalGetMutableRestrictedUsernames().getMutableMap()
-            .clear();
+        accesssTokenExpiryWebInHours_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int accesssTokenExpiryMobileInHours_ ;
+      /**
+       * <code>optional int32 accesss_token_expiry_mobile_in_hours = 2 [json_name = "accesssTokenExpiryMobileInHours"];</code>
+       * @return Whether the accesssTokenExpiryMobileInHours field is set.
+       */
+      @java.lang.Override
+      public boolean hasAccesssTokenExpiryMobileInHours() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <code>optional int32 accesss_token_expiry_mobile_in_hours = 2 [json_name = "accesssTokenExpiryMobileInHours"];</code>
+       * @return The accesssTokenExpiryMobileInHours.
+       */
+      @java.lang.Override
+      public int getAccesssTokenExpiryMobileInHours() {
+        return accesssTokenExpiryMobileInHours_;
+      }
+      /**
+       * <code>optional int32 accesss_token_expiry_mobile_in_hours = 2 [json_name = "accesssTokenExpiryMobileInHours"];</code>
+       * @param value The accesssTokenExpiryMobileInHours to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccesssTokenExpiryMobileInHours(int value) {
+
+        accesssTokenExpiryMobileInHours_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       * <code>optional int32 accesss_token_expiry_mobile_in_hours = 2 [json_name = "accesssTokenExpiryMobileInHours"];</code>
+       * @return This builder for chaining.
        */
-      public Builder removeRestrictedUsernames(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        internalGetMutableRestrictedUsernames().getMutableMap()
-            .remove(key);
+      public Builder clearAccesssTokenExpiryMobileInHours() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        accesssTokenExpiryMobileInHours_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int accesssTokenExpirySsoInHours_ ;
+      /**
+       * <code>optional int32 accesss_token_expiry_sso_in_hours = 3 [json_name = "accesssTokenExpirySsoInHours"];</code>
+       * @return Whether the accesssTokenExpirySsoInHours field is set.
+       */
+      @java.lang.Override
+      public boolean hasAccesssTokenExpirySsoInHours() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <code>optional int32 accesss_token_expiry_sso_in_hours = 3 [json_name = "accesssTokenExpirySsoInHours"];</code>
+       * @return The accesssTokenExpirySsoInHours.
+       */
+      @java.lang.Override
+      public int getAccesssTokenExpirySsoInHours() {
+        return accesssTokenExpirySsoInHours_;
+      }
+      /**
+       * <code>optional int32 accesss_token_expiry_sso_in_hours = 3 [json_name = "accesssTokenExpirySsoInHours"];</code>
+       * @param value The accesssTokenExpirySsoInHours to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccesssTokenExpirySsoInHours(int value) {
+
+        accesssTokenExpirySsoInHours_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
         return this;
       }
       /**
-       * Use alternate mutation accessors instead.
+       * <code>optional int32 accesss_token_expiry_sso_in_hours = 3 [json_name = "accesssTokenExpirySsoInHours"];</code>
+       * @return This builder for chaining.
        */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-          getMutableRestrictedUsernames() {
-        bitField0_ |= 0x00000001;
-        return internalGetMutableRestrictedUsernames().getMutableMap();
+      public Builder clearAccesssTokenExpirySsoInHours() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        accesssTokenExpirySsoInHours_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int accessTokenCacheInMinutes_ ;
+      /**
+       * <code>optional int32 access_token_cache_in_minutes = 4 [json_name = "accessTokenCacheInMinutes"];</code>
+       * @return Whether the accessTokenCacheInMinutes field is set.
+       */
+      @java.lang.Override
+      public boolean hasAccessTokenCacheInMinutes() {
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
-       * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       * <code>optional int32 access_token_cache_in_minutes = 4 [json_name = "accessTokenCacheInMinutes"];</code>
+       * @return The accessTokenCacheInMinutes.
        */
-      public Builder putRestrictedUsernames(
-          java.lang.String key,
-          java.lang.String value) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        if (value == null) { throw new NullPointerException("map value"); }
-        internalGetMutableRestrictedUsernames().getMutableMap()
-            .put(key, value);
-        bitField0_ |= 0x00000001;
+      @java.lang.Override
+      public int getAccessTokenCacheInMinutes() {
+        return accessTokenCacheInMinutes_;
+      }
+      /**
+       * <code>optional int32 access_token_cache_in_minutes = 4 [json_name = "accessTokenCacheInMinutes"];</code>
+       * @param value The accessTokenCacheInMinutes to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAccessTokenCacheInMinutes(int value) {
+
+        accessTokenCacheInMinutes_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; restricted_usernames = 1 [json_name = "restrictedUsernames"];</code>
+       * <code>optional int32 access_token_cache_in_minutes = 4 [json_name = "accessTokenCacheInMinutes"];</code>
+       * @return This builder for chaining.
        */
-      public Builder putAllRestrictedUsernames(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableRestrictedUsernames().getMutableMap()
-            .putAll(values);
-        bitField0_ |= 0x00000001;
+      public Builder clearAccessTokenCacheInMinutes() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        accessTokenCacheInMinutes_ = 0;
+        onChanged();
         return this;
       }
 
       private int maximumLoginAttempts_ ;
       /**
-       * <code>optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];</code>
+       * <code>optional int32 maximum_login_attempts = 5 [json_name = "maximumLoginAttempts"];</code>
        * @return Whether the maximumLoginAttempts field is set.
        */
       @java.lang.Override
       public boolean hasMaximumLoginAttempts() {
-        return ((bitField0_ & 0x00000002) != 0);
+        return ((bitField0_ & 0x00000010) != 0);
       }
       /**
-       * <code>optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];</code>
+       * <code>optional int32 maximum_login_attempts = 5 [json_name = "maximumLoginAttempts"];</code>
        * @return The maximumLoginAttempts.
        */
       @java.lang.Override
@@ -9459,239 +9306,39 @@ java.lang.String defaultValue) {
         return maximumLoginAttempts_;
       }
       /**
-       * <code>optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];</code>
+       * <code>optional int32 maximum_login_attempts = 5 [json_name = "maximumLoginAttempts"];</code>
        * @param value The maximumLoginAttempts to set.
        * @return This builder for chaining.
        */
       public Builder setMaximumLoginAttempts(int value) {
 
         maximumLoginAttempts_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearMaximumLoginAttempts() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        maximumLoginAttempts_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private boolean enableInsecureOutgoingConnections_ ;
-      /**
-       * <code>optional bool enable_insecure_outgoing_connections = 3 [json_name = "enableInsecureOutgoingConnections"];</code>
-       * @return Whether the enableInsecureOutgoingConnections field is set.
-       */
-      @java.lang.Override
-      public boolean hasEnableInsecureOutgoingConnections() {
-        return ((bitField0_ & 0x00000004) != 0);
-      }
-      /**
-       * <code>optional bool enable_insecure_outgoing_connections = 3 [json_name = "enableInsecureOutgoingConnections"];</code>
-       * @return The enableInsecureOutgoingConnections.
-       */
-      @java.lang.Override
-      public boolean getEnableInsecureOutgoingConnections() {
-        return enableInsecureOutgoingConnections_;
-      }
-      /**
-       * <code>optional bool enable_insecure_outgoing_connections = 3 [json_name = "enableInsecureOutgoingConnections"];</code>
-       * @param value The enableInsecureOutgoingConnections to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnableInsecureOutgoingConnections(boolean value) {
-
-        enableInsecureOutgoingConnections_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bool enable_insecure_outgoing_connections = 3 [json_name = "enableInsecureOutgoingConnections"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEnableInsecureOutgoingConnections() {
-        bitField0_ = (bitField0_ & ~0x00000004);
-        enableInsecureOutgoingConnections_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean enableMultifactorAuthentication_ ;
-      /**
-       * <code>optional bool enable_multifactor_authentication = 4 [json_name = "enableMultifactorAuthentication"];</code>
-       * @return Whether the enableMultifactorAuthentication field is set.
-       */
-      @java.lang.Override
-      public boolean hasEnableMultifactorAuthentication() {
-        return ((bitField0_ & 0x00000008) != 0);
-      }
-      /**
-       * <code>optional bool enable_multifactor_authentication = 4 [json_name = "enableMultifactorAuthentication"];</code>
-       * @return The enableMultifactorAuthentication.
-       */
-      @java.lang.Override
-      public boolean getEnableMultifactorAuthentication() {
-        return enableMultifactorAuthentication_;
-      }
-      /**
-       * <code>optional bool enable_multifactor_authentication = 4 [json_name = "enableMultifactorAuthentication"];</code>
-       * @param value The enableMultifactorAuthentication to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnableMultifactorAuthentication(boolean value) {
-
-        enableMultifactorAuthentication_ = value;
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bool enable_multifactor_authentication = 4 [json_name = "enableMultifactorAuthentication"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEnableMultifactorAuthentication() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        enableMultifactorAuthentication_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean enforceMultifactorAuthentication_ ;
-      /**
-       * <code>optional bool enforce_multifactor_authentication = 5 [json_name = "enforceMultifactorAuthentication"];</code>
-       * @return Whether the enforceMultifactorAuthentication field is set.
-       */
-      @java.lang.Override
-      public boolean hasEnforceMultifactorAuthentication() {
-        return ((bitField0_ & 0x00000010) != 0);
-      }
-      /**
-       * <code>optional bool enforce_multifactor_authentication = 5 [json_name = "enforceMultifactorAuthentication"];</code>
-       * @return The enforceMultifactorAuthentication.
-       */
-      @java.lang.Override
-      public boolean getEnforceMultifactorAuthentication() {
-        return enforceMultifactorAuthentication_;
-      }
-      /**
-       * <code>optional bool enforce_multifactor_authentication = 5 [json_name = "enforceMultifactorAuthentication"];</code>
-       * @param value The enforceMultifactorAuthentication to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnforceMultifactorAuthentication(boolean value) {
-
-        enforceMultifactorAuthentication_ = value;
         bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool enforce_multifactor_authentication = 5 [json_name = "enforceMultifactorAuthentication"];</code>
+       * <code>optional int32 maximum_login_attempts = 5 [json_name = "maximumLoginAttempts"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearEnforceMultifactorAuthentication() {
+      public Builder clearMaximumLoginAttempts() {
         bitField0_ = (bitField0_ & ~0x00000010);
-        enforceMultifactorAuthentication_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean enableOauthServiceProvider_ ;
-      /**
-       * <code>optional bool enable_oauth_service_provider = 6 [json_name = "enableOauthServiceProvider"];</code>
-       * @return Whether the enableOauthServiceProvider field is set.
-       */
-      @java.lang.Override
-      public boolean hasEnableOauthServiceProvider() {
-        return ((bitField0_ & 0x00000020) != 0);
-      }
-      /**
-       * <code>optional bool enable_oauth_service_provider = 6 [json_name = "enableOauthServiceProvider"];</code>
-       * @return The enableOauthServiceProvider.
-       */
-      @java.lang.Override
-      public boolean getEnableOauthServiceProvider() {
-        return enableOauthServiceProvider_;
-      }
-      /**
-       * <code>optional bool enable_oauth_service_provider = 6 [json_name = "enableOauthServiceProvider"];</code>
-       * @param value The enableOauthServiceProvider to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnableOauthServiceProvider(boolean value) {
-
-        enableOauthServiceProvider_ = value;
-        bitField0_ |= 0x00000020;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bool enable_oauth_service_provider = 6 [json_name = "enableOauthServiceProvider"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEnableOauthServiceProvider() {
-        bitField0_ = (bitField0_ & ~0x00000020);
-        enableOauthServiceProvider_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean enableOutgoingOauthConnections_ ;
-      /**
-       * <code>optional bool enable_outgoing_oauth_connections = 7 [json_name = "enableOutgoingOauthConnections"];</code>
-       * @return Whether the enableOutgoingOauthConnections field is set.
-       */
-      @java.lang.Override
-      public boolean hasEnableOutgoingOauthConnections() {
-        return ((bitField0_ & 0x00000040) != 0);
-      }
-      /**
-       * <code>optional bool enable_outgoing_oauth_connections = 7 [json_name = "enableOutgoingOauthConnections"];</code>
-       * @return The enableOutgoingOauthConnections.
-       */
-      @java.lang.Override
-      public boolean getEnableOutgoingOauthConnections() {
-        return enableOutgoingOauthConnections_;
-      }
-      /**
-       * <code>optional bool enable_outgoing_oauth_connections = 7 [json_name = "enableOutgoingOauthConnections"];</code>
-       * @param value The enableOutgoingOauthConnections to set.
-       * @return This builder for chaining.
-       */
-      public Builder setEnableOutgoingOauthConnections(boolean value) {
-
-        enableOutgoingOauthConnections_ = value;
-        bitField0_ |= 0x00000040;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bool enable_outgoing_oauth_connections = 7 [json_name = "enableOutgoingOauthConnections"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearEnableOutgoingOauthConnections() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        enableOutgoingOauthConnections_ = false;
+        maximumLoginAttempts_ = 0;
         onChanged();
         return this;
       }
 
       private boolean terminateSessionsOnPasswordChange_ ;
       /**
-       * <code>optional bool terminate_sessions_on_password_change = 8 [json_name = "terminateSessionsOnPasswordChange"];</code>
+       * <code>optional bool terminate_sessions_on_password_change = 6 [json_name = "terminateSessionsOnPasswordChange"];</code>
        * @return Whether the terminateSessionsOnPasswordChange field is set.
        */
       @java.lang.Override
       public boolean hasTerminateSessionsOnPasswordChange() {
-        return ((bitField0_ & 0x00000080) != 0);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
-       * <code>optional bool terminate_sessions_on_password_change = 8 [json_name = "terminateSessionsOnPasswordChange"];</code>
+       * <code>optional bool terminate_sessions_on_password_change = 6 [json_name = "terminateSessionsOnPasswordChange"];</code>
        * @return The terminateSessionsOnPasswordChange.
        */
       @java.lang.Override
@@ -9699,476 +9346,38 @@ java.lang.String defaultValue) {
         return terminateSessionsOnPasswordChange_;
       }
       /**
-       * <code>optional bool terminate_sessions_on_password_change = 8 [json_name = "terminateSessionsOnPasswordChange"];</code>
+       * <code>optional bool terminate_sessions_on_password_change = 6 [json_name = "terminateSessionsOnPasswordChange"];</code>
        * @param value The terminateSessionsOnPasswordChange to set.
        * @return This builder for chaining.
        */
       public Builder setTerminateSessionsOnPasswordChange(boolean value) {
 
         terminateSessionsOnPasswordChange_ = value;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
       /**
-       * <code>optional bool terminate_sessions_on_password_change = 8 [json_name = "terminateSessionsOnPasswordChange"];</code>
+       * <code>optional bool terminate_sessions_on_password_change = 6 [json_name = "terminateSessionsOnPasswordChange"];</code>
        * @return This builder for chaining.
        */
       public Builder clearTerminateSessionsOnPasswordChange() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000020);
         terminateSessionsOnPasswordChange_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int sessionLengthWebInHours_ ;
-      /**
-       * <code>optional int32 session_length_web_in_hours = 9 [json_name = "sessionLengthWebInHours"];</code>
-       * @return Whether the sessionLengthWebInHours field is set.
-       */
-      @java.lang.Override
-      public boolean hasSessionLengthWebInHours() {
-        return ((bitField0_ & 0x00000100) != 0);
-      }
-      /**
-       * <code>optional int32 session_length_web_in_hours = 9 [json_name = "sessionLengthWebInHours"];</code>
-       * @return The sessionLengthWebInHours.
-       */
-      @java.lang.Override
-      public int getSessionLengthWebInHours() {
-        return sessionLengthWebInHours_;
-      }
-      /**
-       * <code>optional int32 session_length_web_in_hours = 9 [json_name = "sessionLengthWebInHours"];</code>
-       * @param value The sessionLengthWebInHours to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSessionLengthWebInHours(int value) {
-
-        sessionLengthWebInHours_ = value;
-        bitField0_ |= 0x00000100;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 session_length_web_in_hours = 9 [json_name = "sessionLengthWebInHours"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSessionLengthWebInHours() {
-        bitField0_ = (bitField0_ & ~0x00000100);
-        sessionLengthWebInHours_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int sessionLengthMobileInHours_ ;
-      /**
-       * <code>optional int32 session_length_mobile_in_hours = 10 [json_name = "sessionLengthMobileInHours"];</code>
-       * @return Whether the sessionLengthMobileInHours field is set.
-       */
-      @java.lang.Override
-      public boolean hasSessionLengthMobileInHours() {
-        return ((bitField0_ & 0x00000200) != 0);
-      }
-      /**
-       * <code>optional int32 session_length_mobile_in_hours = 10 [json_name = "sessionLengthMobileInHours"];</code>
-       * @return The sessionLengthMobileInHours.
-       */
-      @java.lang.Override
-      public int getSessionLengthMobileInHours() {
-        return sessionLengthMobileInHours_;
-      }
-      /**
-       * <code>optional int32 session_length_mobile_in_hours = 10 [json_name = "sessionLengthMobileInHours"];</code>
-       * @param value The sessionLengthMobileInHours to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSessionLengthMobileInHours(int value) {
-
-        sessionLengthMobileInHours_ = value;
-        bitField0_ |= 0x00000200;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 session_length_mobile_in_hours = 10 [json_name = "sessionLengthMobileInHours"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSessionLengthMobileInHours() {
-        bitField0_ = (bitField0_ & ~0x00000200);
-        sessionLengthMobileInHours_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int sessionLengthSsoInHours_ ;
-      /**
-       * <code>optional int32 session_length_sso_in_hours = 11 [json_name = "sessionLengthSsoInHours"];</code>
-       * @return Whether the sessionLengthSsoInHours field is set.
-       */
-      @java.lang.Override
-      public boolean hasSessionLengthSsoInHours() {
-        return ((bitField0_ & 0x00000400) != 0);
-      }
-      /**
-       * <code>optional int32 session_length_sso_in_hours = 11 [json_name = "sessionLengthSsoInHours"];</code>
-       * @return The sessionLengthSsoInHours.
-       */
-      @java.lang.Override
-      public int getSessionLengthSsoInHours() {
-        return sessionLengthSsoInHours_;
-      }
-      /**
-       * <code>optional int32 session_length_sso_in_hours = 11 [json_name = "sessionLengthSsoInHours"];</code>
-       * @param value The sessionLengthSsoInHours to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSessionLengthSsoInHours(int value) {
-
-        sessionLengthSsoInHours_ = value;
-        bitField0_ |= 0x00000400;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 session_length_sso_in_hours = 11 [json_name = "sessionLengthSsoInHours"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSessionLengthSsoInHours() {
-        bitField0_ = (bitField0_ & ~0x00000400);
-        sessionLengthSsoInHours_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object allowCorsFrom_ = "";
-      /**
-       * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
-       * @return Whether the allowCorsFrom field is set.
-       */
-      public boolean hasAllowCorsFrom() {
-        return ((bitField0_ & 0x00000800) != 0);
-      }
-      /**
-       * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
-       * @return The allowCorsFrom.
-       */
-      public java.lang.String getAllowCorsFrom() {
-        java.lang.Object ref = allowCorsFrom_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          allowCorsFrom_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
-       * @return The bytes for allowCorsFrom.
-       */
-      public com.google.protobuf.ByteString
-          getAllowCorsFromBytes() {
-        java.lang.Object ref = allowCorsFrom_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          allowCorsFrom_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
-       * @param value The allowCorsFrom to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAllowCorsFrom(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        allowCorsFrom_ = value;
-        bitField0_ |= 0x00000800;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAllowCorsFrom() {
-        allowCorsFrom_ = getDefaultInstance().getAllowCorsFrom();
-        bitField0_ = (bitField0_ & ~0x00000800);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];</code>
-       * @param value The bytes for allowCorsFrom to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAllowCorsFromBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        allowCorsFrom_ = value;
-        bitField0_ |= 0x00000800;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object corsExposedHeaders_ = "";
-      /**
-       * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
-       * @return Whether the corsExposedHeaders field is set.
-       */
-      public boolean hasCorsExposedHeaders() {
-        return ((bitField0_ & 0x00001000) != 0);
-      }
-      /**
-       * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
-       * @return The corsExposedHeaders.
-       */
-      public java.lang.String getCorsExposedHeaders() {
-        java.lang.Object ref = corsExposedHeaders_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          corsExposedHeaders_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
-       * @return The bytes for corsExposedHeaders.
-       */
-      public com.google.protobuf.ByteString
-          getCorsExposedHeadersBytes() {
-        java.lang.Object ref = corsExposedHeaders_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          corsExposedHeaders_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
-       * @param value The corsExposedHeaders to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCorsExposedHeaders(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        corsExposedHeaders_ = value;
-        bitField0_ |= 0x00001000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCorsExposedHeaders() {
-        corsExposedHeaders_ = getDefaultInstance().getCorsExposedHeaders();
-        bitField0_ = (bitField0_ & ~0x00001000);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];</code>
-       * @param value The bytes for corsExposedHeaders to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCorsExposedHeadersBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        corsExposedHeaders_ = value;
-        bitField0_ |= 0x00001000;
-        onChanged();
-        return this;
-      }
-
-      private boolean corsAllowCredentials_ ;
-      /**
-       * <code>optional bool cors_allow_credentials = 14 [json_name = "corsAllowCredentials"];</code>
-       * @return Whether the corsAllowCredentials field is set.
-       */
-      @java.lang.Override
-      public boolean hasCorsAllowCredentials() {
-        return ((bitField0_ & 0x00002000) != 0);
-      }
-      /**
-       * <code>optional bool cors_allow_credentials = 14 [json_name = "corsAllowCredentials"];</code>
-       * @return The corsAllowCredentials.
-       */
-      @java.lang.Override
-      public boolean getCorsAllowCredentials() {
-        return corsAllowCredentials_;
-      }
-      /**
-       * <code>optional bool cors_allow_credentials = 14 [json_name = "corsAllowCredentials"];</code>
-       * @param value The corsAllowCredentials to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCorsAllowCredentials(boolean value) {
-
-        corsAllowCredentials_ = value;
-        bitField0_ |= 0x00002000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bool cors_allow_credentials = 14 [json_name = "corsAllowCredentials"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCorsAllowCredentials() {
-        bitField0_ = (bitField0_ & ~0x00002000);
-        corsAllowCredentials_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean corsDebug_ ;
-      /**
-       * <code>optional bool cors_debug = 15 [json_name = "corsDebug"];</code>
-       * @return Whether the corsDebug field is set.
-       */
-      @java.lang.Override
-      public boolean hasCorsDebug() {
-        return ((bitField0_ & 0x00004000) != 0);
-      }
-      /**
-       * <code>optional bool cors_debug = 15 [json_name = "corsDebug"];</code>
-       * @return The corsDebug.
-       */
-      @java.lang.Override
-      public boolean getCorsDebug() {
-        return corsDebug_;
-      }
-      /**
-       * <code>optional bool cors_debug = 15 [json_name = "corsDebug"];</code>
-       * @param value The corsDebug to set.
-       * @return This builder for chaining.
-       */
-      public Builder setCorsDebug(boolean value) {
-
-        corsDebug_ = value;
-        bitField0_ |= 0x00004000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bool cors_debug = 15 [json_name = "corsDebug"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearCorsDebug() {
-        bitField0_ = (bitField0_ & ~0x00004000);
-        corsDebug_ = false;
-        onChanged();
-        return this;
-      }
-
-      private boolean allowCookiesForSubdomains_ ;
-      /**
-       * <code>optional bool allow_cookies_for_subdomains = 16 [json_name = "allowCookiesForSubdomains"];</code>
-       * @return Whether the allowCookiesForSubdomains field is set.
-       */
-      @java.lang.Override
-      public boolean hasAllowCookiesForSubdomains() {
-        return ((bitField0_ & 0x00008000) != 0);
-      }
-      /**
-       * <code>optional bool allow_cookies_for_subdomains = 16 [json_name = "allowCookiesForSubdomains"];</code>
-       * @return The allowCookiesForSubdomains.
-       */
-      @java.lang.Override
-      public boolean getAllowCookiesForSubdomains() {
-        return allowCookiesForSubdomains_;
-      }
-      /**
-       * <code>optional bool allow_cookies_for_subdomains = 16 [json_name = "allowCookiesForSubdomains"];</code>
-       * @param value The allowCookiesForSubdomains to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAllowCookiesForSubdomains(boolean value) {
-
-        allowCookiesForSubdomains_ = value;
-        bitField0_ |= 0x00008000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional bool allow_cookies_for_subdomains = 16 [json_name = "allowCookiesForSubdomains"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAllowCookiesForSubdomains() {
-        bitField0_ = (bitField0_ & ~0x00008000);
-        allowCookiesForSubdomains_ = false;
-        onChanged();
-        return this;
-      }
-
-      private int sessionCacheInMinutes_ ;
-      /**
-       * <code>optional int32 session_cache_in_minutes = 17 [json_name = "sessionCacheInMinutes"];</code>
-       * @return Whether the sessionCacheInMinutes field is set.
-       */
-      @java.lang.Override
-      public boolean hasSessionCacheInMinutes() {
-        return ((bitField0_ & 0x00010000) != 0);
-      }
-      /**
-       * <code>optional int32 session_cache_in_minutes = 17 [json_name = "sessionCacheInMinutes"];</code>
-       * @return The sessionCacheInMinutes.
-       */
-      @java.lang.Override
-      public int getSessionCacheInMinutes() {
-        return sessionCacheInMinutes_;
-      }
-      /**
-       * <code>optional int32 session_cache_in_minutes = 17 [json_name = "sessionCacheInMinutes"];</code>
-       * @param value The sessionCacheInMinutes to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSessionCacheInMinutes(int value) {
-
-        sessionCacheInMinutes_ = value;
-        bitField0_ |= 0x00010000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional int32 session_cache_in_minutes = 17 [json_name = "sessionCacheInMinutes"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSessionCacheInMinutes() {
-        bitField0_ = (bitField0_ & ~0x00010000);
-        sessionCacheInMinutes_ = 0;
         onChanged();
         return this;
       }
 
       private java.lang.Object emailConfirmationUrl_ = "";
       /**
-       * <code>optional string email_confirmation_url = 18 [json_name = "emailConfirmationUrl"];</code>
+       * <code>optional string email_confirmation_url = 7 [json_name = "emailConfirmationUrl"];</code>
        * @return Whether the emailConfirmationUrl field is set.
        */
       public boolean hasEmailConfirmationUrl() {
-        return ((bitField0_ & 0x00020000) != 0);
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
-       * <code>optional string email_confirmation_url = 18 [json_name = "emailConfirmationUrl"];</code>
+       * <code>optional string email_confirmation_url = 7 [json_name = "emailConfirmationUrl"];</code>
        * @return The emailConfirmationUrl.
        */
       public java.lang.String getEmailConfirmationUrl() {
@@ -10184,7 +9393,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string email_confirmation_url = 18 [json_name = "emailConfirmationUrl"];</code>
+       * <code>optional string email_confirmation_url = 7 [json_name = "emailConfirmationUrl"];</code>
        * @return The bytes for emailConfirmationUrl.
        */
       public com.google.protobuf.ByteString
@@ -10201,7 +9410,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string email_confirmation_url = 18 [json_name = "emailConfirmationUrl"];</code>
+       * <code>optional string email_confirmation_url = 7 [json_name = "emailConfirmationUrl"];</code>
        * @param value The emailConfirmationUrl to set.
        * @return This builder for chaining.
        */
@@ -10209,22 +9418,22 @@ java.lang.String defaultValue) {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         emailConfirmationUrl_ = value;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string email_confirmation_url = 18 [json_name = "emailConfirmationUrl"];</code>
+       * <code>optional string email_confirmation_url = 7 [json_name = "emailConfirmationUrl"];</code>
        * @return This builder for chaining.
        */
       public Builder clearEmailConfirmationUrl() {
         emailConfirmationUrl_ = getDefaultInstance().getEmailConfirmationUrl();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
       /**
-       * <code>optional string email_confirmation_url = 18 [json_name = "emailConfirmationUrl"];</code>
+       * <code>optional string email_confirmation_url = 7 [json_name = "emailConfirmationUrl"];</code>
        * @param value The bytes for emailConfirmationUrl to set.
        * @return This builder for chaining.
        */
@@ -10233,101 +9442,21 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         emailConfirmationUrl_ = value;
-        bitField0_ |= 0x00020000;
-        onChanged();
-        return this;
-      }
-
-      private int tokenConfirmationExpiryInHours_ ;
-      /**
-       * <code>optional uint32 token_confirmation_expiry_in_hours = 19 [json_name = "tokenConfirmationExpiryInHours"];</code>
-       * @return Whether the tokenConfirmationExpiryInHours field is set.
-       */
-      @java.lang.Override
-      public boolean hasTokenConfirmationExpiryInHours() {
-        return ((bitField0_ & 0x00040000) != 0);
-      }
-      /**
-       * <code>optional uint32 token_confirmation_expiry_in_hours = 19 [json_name = "tokenConfirmationExpiryInHours"];</code>
-       * @return The tokenConfirmationExpiryInHours.
-       */
-      @java.lang.Override
-      public int getTokenConfirmationExpiryInHours() {
-        return tokenConfirmationExpiryInHours_;
-      }
-      /**
-       * <code>optional uint32 token_confirmation_expiry_in_hours = 19 [json_name = "tokenConfirmationExpiryInHours"];</code>
-       * @param value The tokenConfirmationExpiryInHours to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenConfirmationExpiryInHours(int value) {
-
-        tokenConfirmationExpiryInHours_ = value;
-        bitField0_ |= 0x00040000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional uint32 token_confirmation_expiry_in_hours = 19 [json_name = "tokenConfirmationExpiryInHours"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTokenConfirmationExpiryInHours() {
-        bitField0_ = (bitField0_ & ~0x00040000);
-        tokenConfirmationExpiryInHours_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private int tokenPasswordResetExpiryInHours_ ;
-      /**
-       * <code>optional uint32 token_password_reset_expiry_in_hours = 20 [json_name = "tokenPasswordResetExpiryInHours"];</code>
-       * @return Whether the tokenPasswordResetExpiryInHours field is set.
-       */
-      @java.lang.Override
-      public boolean hasTokenPasswordResetExpiryInHours() {
-        return ((bitField0_ & 0x00080000) != 0);
-      }
-      /**
-       * <code>optional uint32 token_password_reset_expiry_in_hours = 20 [json_name = "tokenPasswordResetExpiryInHours"];</code>
-       * @return The tokenPasswordResetExpiryInHours.
-       */
-      @java.lang.Override
-      public int getTokenPasswordResetExpiryInHours() {
-        return tokenPasswordResetExpiryInHours_;
-      }
-      /**
-       * <code>optional uint32 token_password_reset_expiry_in_hours = 20 [json_name = "tokenPasswordResetExpiryInHours"];</code>
-       * @param value The tokenPasswordResetExpiryInHours to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTokenPasswordResetExpiryInHours(int value) {
-
-        tokenPasswordResetExpiryInHours_ = value;
-        bitField0_ |= 0x00080000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>optional uint32 token_password_reset_expiry_in_hours = 20 [json_name = "tokenPasswordResetExpiryInHours"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTokenPasswordResetExpiryInHours() {
-        bitField0_ = (bitField0_ & ~0x00080000);
-        tokenPasswordResetExpiryInHours_ = 0;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
 
       private java.lang.Object passwordResetUrl_ = "";
       /**
-       * <code>optional string password_reset_url = 21 [json_name = "passwordResetUrl"];</code>
+       * <code>optional string password_reset_url = 8 [json_name = "passwordResetUrl"];</code>
        * @return Whether the passwordResetUrl field is set.
        */
       public boolean hasPasswordResetUrl() {
-        return ((bitField0_ & 0x00100000) != 0);
+        return ((bitField0_ & 0x00000080) != 0);
       }
       /**
-       * <code>optional string password_reset_url = 21 [json_name = "passwordResetUrl"];</code>
+       * <code>optional string password_reset_url = 8 [json_name = "passwordResetUrl"];</code>
        * @return The passwordResetUrl.
        */
       public java.lang.String getPasswordResetUrl() {
@@ -10343,7 +9472,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string password_reset_url = 21 [json_name = "passwordResetUrl"];</code>
+       * <code>optional string password_reset_url = 8 [json_name = "passwordResetUrl"];</code>
        * @return The bytes for passwordResetUrl.
        */
       public com.google.protobuf.ByteString
@@ -10360,7 +9489,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>optional string password_reset_url = 21 [json_name = "passwordResetUrl"];</code>
+       * <code>optional string password_reset_url = 8 [json_name = "passwordResetUrl"];</code>
        * @param value The passwordResetUrl to set.
        * @return This builder for chaining.
        */
@@ -10368,22 +9497,22 @@ java.lang.String defaultValue) {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         passwordResetUrl_ = value;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string password_reset_url = 21 [json_name = "passwordResetUrl"];</code>
+       * <code>optional string password_reset_url = 8 [json_name = "passwordResetUrl"];</code>
        * @return This builder for chaining.
        */
       public Builder clearPasswordResetUrl() {
         passwordResetUrl_ = getDefaultInstance().getPasswordResetUrl();
-        bitField0_ = (bitField0_ & ~0x00100000);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
       /**
-       * <code>optional string password_reset_url = 21 [json_name = "passwordResetUrl"];</code>
+       * <code>optional string password_reset_url = 8 [json_name = "passwordResetUrl"];</code>
        * @param value The bytes for passwordResetUrl to set.
        * @return This builder for chaining.
        */
@@ -10392,7 +9521,565 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         passwordResetUrl_ = value;
-        bitField0_ |= 0x00100000;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      private int tokenConfirmationExpiryInHours_ ;
+      /**
+       * <code>optional uint32 token_confirmation_expiry_in_hours = 9 [json_name = "tokenConfirmationExpiryInHours"];</code>
+       * @return Whether the tokenConfirmationExpiryInHours field is set.
+       */
+      @java.lang.Override
+      public boolean hasTokenConfirmationExpiryInHours() {
+        return ((bitField0_ & 0x00000100) != 0);
+      }
+      /**
+       * <code>optional uint32 token_confirmation_expiry_in_hours = 9 [json_name = "tokenConfirmationExpiryInHours"];</code>
+       * @return The tokenConfirmationExpiryInHours.
+       */
+      @java.lang.Override
+      public int getTokenConfirmationExpiryInHours() {
+        return tokenConfirmationExpiryInHours_;
+      }
+      /**
+       * <code>optional uint32 token_confirmation_expiry_in_hours = 9 [json_name = "tokenConfirmationExpiryInHours"];</code>
+       * @param value The tokenConfirmationExpiryInHours to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTokenConfirmationExpiryInHours(int value) {
+
+        tokenConfirmationExpiryInHours_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 token_confirmation_expiry_in_hours = 9 [json_name = "tokenConfirmationExpiryInHours"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTokenConfirmationExpiryInHours() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        tokenConfirmationExpiryInHours_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int tokenPasswordResetExpiryInHours_ ;
+      /**
+       * <code>optional uint32 token_password_reset_expiry_in_hours = 10 [json_name = "tokenPasswordResetExpiryInHours"];</code>
+       * @return Whether the tokenPasswordResetExpiryInHours field is set.
+       */
+      @java.lang.Override
+      public boolean hasTokenPasswordResetExpiryInHours() {
+        return ((bitField0_ & 0x00000200) != 0);
+      }
+      /**
+       * <code>optional uint32 token_password_reset_expiry_in_hours = 10 [json_name = "tokenPasswordResetExpiryInHours"];</code>
+       * @return The tokenPasswordResetExpiryInHours.
+       */
+      @java.lang.Override
+      public int getTokenPasswordResetExpiryInHours() {
+        return tokenPasswordResetExpiryInHours_;
+      }
+      /**
+       * <code>optional uint32 token_password_reset_expiry_in_hours = 10 [json_name = "tokenPasswordResetExpiryInHours"];</code>
+       * @param value The tokenPasswordResetExpiryInHours to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTokenPasswordResetExpiryInHours(int value) {
+
+        tokenPasswordResetExpiryInHours_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional uint32 token_password_reset_expiry_in_hours = 10 [json_name = "tokenPasswordResetExpiryInHours"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTokenPasswordResetExpiryInHours() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        tokenPasswordResetExpiryInHours_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableInsecureOutgoingConnections_ ;
+      /**
+       * <code>optional bool enable_insecure_outgoing_connections = 11 [json_name = "enableInsecureOutgoingConnections"];</code>
+       * @return Whether the enableInsecureOutgoingConnections field is set.
+       */
+      @java.lang.Override
+      public boolean hasEnableInsecureOutgoingConnections() {
+        return ((bitField0_ & 0x00000400) != 0);
+      }
+      /**
+       * <code>optional bool enable_insecure_outgoing_connections = 11 [json_name = "enableInsecureOutgoingConnections"];</code>
+       * @return The enableInsecureOutgoingConnections.
+       */
+      @java.lang.Override
+      public boolean getEnableInsecureOutgoingConnections() {
+        return enableInsecureOutgoingConnections_;
+      }
+      /**
+       * <code>optional bool enable_insecure_outgoing_connections = 11 [json_name = "enableInsecureOutgoingConnections"];</code>
+       * @param value The enableInsecureOutgoingConnections to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableInsecureOutgoingConnections(boolean value) {
+
+        enableInsecureOutgoingConnections_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool enable_insecure_outgoing_connections = 11 [json_name = "enableInsecureOutgoingConnections"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableInsecureOutgoingConnections() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        enableInsecureOutgoingConnections_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableMultifactorAuthentication_ ;
+      /**
+       * <code>optional bool enable_multifactor_authentication = 12 [json_name = "enableMultifactorAuthentication"];</code>
+       * @return Whether the enableMultifactorAuthentication field is set.
+       */
+      @java.lang.Override
+      public boolean hasEnableMultifactorAuthentication() {
+        return ((bitField0_ & 0x00000800) != 0);
+      }
+      /**
+       * <code>optional bool enable_multifactor_authentication = 12 [json_name = "enableMultifactorAuthentication"];</code>
+       * @return The enableMultifactorAuthentication.
+       */
+      @java.lang.Override
+      public boolean getEnableMultifactorAuthentication() {
+        return enableMultifactorAuthentication_;
+      }
+      /**
+       * <code>optional bool enable_multifactor_authentication = 12 [json_name = "enableMultifactorAuthentication"];</code>
+       * @param value The enableMultifactorAuthentication to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableMultifactorAuthentication(boolean value) {
+
+        enableMultifactorAuthentication_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool enable_multifactor_authentication = 12 [json_name = "enableMultifactorAuthentication"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableMultifactorAuthentication() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        enableMultifactorAuthentication_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean enforceMultifactorAuthentication_ ;
+      /**
+       * <code>optional bool enforce_multifactor_authentication = 13 [json_name = "enforceMultifactorAuthentication"];</code>
+       * @return Whether the enforceMultifactorAuthentication field is set.
+       */
+      @java.lang.Override
+      public boolean hasEnforceMultifactorAuthentication() {
+        return ((bitField0_ & 0x00001000) != 0);
+      }
+      /**
+       * <code>optional bool enforce_multifactor_authentication = 13 [json_name = "enforceMultifactorAuthentication"];</code>
+       * @return The enforceMultifactorAuthentication.
+       */
+      @java.lang.Override
+      public boolean getEnforceMultifactorAuthentication() {
+        return enforceMultifactorAuthentication_;
+      }
+      /**
+       * <code>optional bool enforce_multifactor_authentication = 13 [json_name = "enforceMultifactorAuthentication"];</code>
+       * @param value The enforceMultifactorAuthentication to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnforceMultifactorAuthentication(boolean value) {
+
+        enforceMultifactorAuthentication_ = value;
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool enforce_multifactor_authentication = 13 [json_name = "enforceMultifactorAuthentication"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnforceMultifactorAuthentication() {
+        bitField0_ = (bitField0_ & ~0x00001000);
+        enforceMultifactorAuthentication_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableOauthServiceProvider_ ;
+      /**
+       * <code>optional bool enable_oauth_service_provider = 14 [json_name = "enableOauthServiceProvider"];</code>
+       * @return Whether the enableOauthServiceProvider field is set.
+       */
+      @java.lang.Override
+      public boolean hasEnableOauthServiceProvider() {
+        return ((bitField0_ & 0x00002000) != 0);
+      }
+      /**
+       * <code>optional bool enable_oauth_service_provider = 14 [json_name = "enableOauthServiceProvider"];</code>
+       * @return The enableOauthServiceProvider.
+       */
+      @java.lang.Override
+      public boolean getEnableOauthServiceProvider() {
+        return enableOauthServiceProvider_;
+      }
+      /**
+       * <code>optional bool enable_oauth_service_provider = 14 [json_name = "enableOauthServiceProvider"];</code>
+       * @param value The enableOauthServiceProvider to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableOauthServiceProvider(boolean value) {
+
+        enableOauthServiceProvider_ = value;
+        bitField0_ |= 0x00002000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool enable_oauth_service_provider = 14 [json_name = "enableOauthServiceProvider"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableOauthServiceProvider() {
+        bitField0_ = (bitField0_ & ~0x00002000);
+        enableOauthServiceProvider_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean enableOutgoingOauthConnections_ ;
+      /**
+       * <code>optional bool enable_outgoing_oauth_connections = 15 [json_name = "enableOutgoingOauthConnections"];</code>
+       * @return Whether the enableOutgoingOauthConnections field is set.
+       */
+      @java.lang.Override
+      public boolean hasEnableOutgoingOauthConnections() {
+        return ((bitField0_ & 0x00004000) != 0);
+      }
+      /**
+       * <code>optional bool enable_outgoing_oauth_connections = 15 [json_name = "enableOutgoingOauthConnections"];</code>
+       * @return The enableOutgoingOauthConnections.
+       */
+      @java.lang.Override
+      public boolean getEnableOutgoingOauthConnections() {
+        return enableOutgoingOauthConnections_;
+      }
+      /**
+       * <code>optional bool enable_outgoing_oauth_connections = 15 [json_name = "enableOutgoingOauthConnections"];</code>
+       * @param value The enableOutgoingOauthConnections to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnableOutgoingOauthConnections(boolean value) {
+
+        enableOutgoingOauthConnections_ = value;
+        bitField0_ |= 0x00004000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool enable_outgoing_oauth_connections = 15 [json_name = "enableOutgoingOauthConnections"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearEnableOutgoingOauthConnections() {
+        bitField0_ = (bitField0_ & ~0x00004000);
+        enableOutgoingOauthConnections_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object allowCorsFrom_ = "";
+      /**
+       * <code>optional string allow_cors_from = 16 [json_name = "allowCorsFrom"];</code>
+       * @return Whether the allowCorsFrom field is set.
+       */
+      public boolean hasAllowCorsFrom() {
+        return ((bitField0_ & 0x00008000) != 0);
+      }
+      /**
+       * <code>optional string allow_cors_from = 16 [json_name = "allowCorsFrom"];</code>
+       * @return The allowCorsFrom.
+       */
+      public java.lang.String getAllowCorsFrom() {
+        java.lang.Object ref = allowCorsFrom_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          allowCorsFrom_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string allow_cors_from = 16 [json_name = "allowCorsFrom"];</code>
+       * @return The bytes for allowCorsFrom.
+       */
+      public com.google.protobuf.ByteString
+          getAllowCorsFromBytes() {
+        java.lang.Object ref = allowCorsFrom_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          allowCorsFrom_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string allow_cors_from = 16 [json_name = "allowCorsFrom"];</code>
+       * @param value The allowCorsFrom to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllowCorsFrom(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        allowCorsFrom_ = value;
+        bitField0_ |= 0x00008000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string allow_cors_from = 16 [json_name = "allowCorsFrom"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAllowCorsFrom() {
+        allowCorsFrom_ = getDefaultInstance().getAllowCorsFrom();
+        bitField0_ = (bitField0_ & ~0x00008000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string allow_cors_from = 16 [json_name = "allowCorsFrom"];</code>
+       * @param value The bytes for allowCorsFrom to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllowCorsFromBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        allowCorsFrom_ = value;
+        bitField0_ |= 0x00008000;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object corsExposedHeaders_ = "";
+      /**
+       * <code>optional string cors_exposed_headers = 17 [json_name = "corsExposedHeaders"];</code>
+       * @return Whether the corsExposedHeaders field is set.
+       */
+      public boolean hasCorsExposedHeaders() {
+        return ((bitField0_ & 0x00010000) != 0);
+      }
+      /**
+       * <code>optional string cors_exposed_headers = 17 [json_name = "corsExposedHeaders"];</code>
+       * @return The corsExposedHeaders.
+       */
+      public java.lang.String getCorsExposedHeaders() {
+        java.lang.Object ref = corsExposedHeaders_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          corsExposedHeaders_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string cors_exposed_headers = 17 [json_name = "corsExposedHeaders"];</code>
+       * @return The bytes for corsExposedHeaders.
+       */
+      public com.google.protobuf.ByteString
+          getCorsExposedHeadersBytes() {
+        java.lang.Object ref = corsExposedHeaders_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          corsExposedHeaders_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string cors_exposed_headers = 17 [json_name = "corsExposedHeaders"];</code>
+       * @param value The corsExposedHeaders to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCorsExposedHeaders(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        corsExposedHeaders_ = value;
+        bitField0_ |= 0x00010000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string cors_exposed_headers = 17 [json_name = "corsExposedHeaders"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCorsExposedHeaders() {
+        corsExposedHeaders_ = getDefaultInstance().getCorsExposedHeaders();
+        bitField0_ = (bitField0_ & ~0x00010000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string cors_exposed_headers = 17 [json_name = "corsExposedHeaders"];</code>
+       * @param value The bytes for corsExposedHeaders to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCorsExposedHeadersBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        corsExposedHeaders_ = value;
+        bitField0_ |= 0x00010000;
+        onChanged();
+        return this;
+      }
+
+      private boolean corsAllowCredentials_ ;
+      /**
+       * <code>optional bool cors_allow_credentials = 18 [json_name = "corsAllowCredentials"];</code>
+       * @return Whether the corsAllowCredentials field is set.
+       */
+      @java.lang.Override
+      public boolean hasCorsAllowCredentials() {
+        return ((bitField0_ & 0x00020000) != 0);
+      }
+      /**
+       * <code>optional bool cors_allow_credentials = 18 [json_name = "corsAllowCredentials"];</code>
+       * @return The corsAllowCredentials.
+       */
+      @java.lang.Override
+      public boolean getCorsAllowCredentials() {
+        return corsAllowCredentials_;
+      }
+      /**
+       * <code>optional bool cors_allow_credentials = 18 [json_name = "corsAllowCredentials"];</code>
+       * @param value The corsAllowCredentials to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCorsAllowCredentials(boolean value) {
+
+        corsAllowCredentials_ = value;
+        bitField0_ |= 0x00020000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool cors_allow_credentials = 18 [json_name = "corsAllowCredentials"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCorsAllowCredentials() {
+        bitField0_ = (bitField0_ & ~0x00020000);
+        corsAllowCredentials_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean corsDebug_ ;
+      /**
+       * <code>optional bool cors_debug = 19 [json_name = "corsDebug"];</code>
+       * @return Whether the corsDebug field is set.
+       */
+      @java.lang.Override
+      public boolean hasCorsDebug() {
+        return ((bitField0_ & 0x00040000) != 0);
+      }
+      /**
+       * <code>optional bool cors_debug = 19 [json_name = "corsDebug"];</code>
+       * @return The corsDebug.
+       */
+      @java.lang.Override
+      public boolean getCorsDebug() {
+        return corsDebug_;
+      }
+      /**
+       * <code>optional bool cors_debug = 19 [json_name = "corsDebug"];</code>
+       * @param value The corsDebug to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCorsDebug(boolean value) {
+
+        corsDebug_ = value;
+        bitField0_ |= 0x00040000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool cors_debug = 19 [json_name = "corsDebug"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCorsDebug() {
+        bitField0_ = (bitField0_ & ~0x00040000);
+        corsDebug_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean allowCookiesForSubdomains_ ;
+      /**
+       * <code>optional bool allow_cookies_for_subdomains = 20 [json_name = "allowCookiesForSubdomains"];</code>
+       * @return Whether the allowCookiesForSubdomains field is set.
+       */
+      @java.lang.Override
+      public boolean hasAllowCookiesForSubdomains() {
+        return ((bitField0_ & 0x00080000) != 0);
+      }
+      /**
+       * <code>optional bool allow_cookies_for_subdomains = 20 [json_name = "allowCookiesForSubdomains"];</code>
+       * @return The allowCookiesForSubdomains.
+       */
+      @java.lang.Override
+      public boolean getAllowCookiesForSubdomains() {
+        return allowCookiesForSubdomains_;
+      }
+      /**
+       * <code>optional bool allow_cookies_for_subdomains = 20 [json_name = "allowCookiesForSubdomains"];</code>
+       * @param value The allowCookiesForSubdomains to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAllowCookiesForSubdomains(boolean value) {
+
+        allowCookiesForSubdomains_ = value;
+        bitField0_ |= 0x00080000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool allow_cookies_for_subdomains = 20 [json_name = "allowCookiesForSubdomains"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAllowCookiesForSubdomains() {
+        bitField0_ = (bitField0_ & ~0x00080000);
+        allowCookiesForSubdomains_ = false;
         onChanged();
         return this;
       }
@@ -55104,11 +54791,6 @@ java.lang.String defaultValue) {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_common_v1_ConfigSecurity_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_common_v1_ConfigSecurity_RestrictedUsernamesEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_common_v1_ConfigSecurity_RestrictedUsernamesEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_common_v1_CacheConfig_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -55339,485 +55021,482 @@ java.lang.String defaultValue) {
       "urlB\026\n\024_oauth_response_typeB\022\n\020_oauth_ad" +
       "min_urlB\024\n\022_oauth_backend_urlB\025\n\023_fronte" +
       "nd_login_urlB\033\n\031_frontend_login_error_ur" +
-      "l\"\211\021\n\016ConfigSecurity\022e\n\024restricted_usern" +
-      "ames\030\001 \003(\01322.common.v1.ConfigSecurity.Re" +
-      "strictedUsernamesEntryR\023restrictedUserna" +
-      "mes\0229\n\026maximum_login_attempts\030\002 \001(\005H\000R\024m" +
-      "aximumLoginAttempts\210\001\001\022T\n$enable_insecur" +
-      "e_outgoing_connections\030\003 \001(\010H\001R!enableIn" +
-      "secureOutgoingConnections\210\001\001\022O\n!enable_m" +
-      "ultifactor_authentication\030\004 \001(\010H\002R\037enabl" +
-      "eMultifactorAuthentication\210\001\001\022Q\n\"enforce" +
-      "_multifactor_authentication\030\005 \001(\010H\003R enf" +
-      "orceMultifactorAuthentication\210\001\001\022F\n\035enab" +
-      "le_oauth_service_provider\030\006 \001(\010H\004R\032enabl" +
-      "eOauthServiceProvider\210\001\001\022N\n!enable_outgo" +
-      "ing_oauth_connections\030\007 \001(\010H\005R\036enableOut" +
-      "goingOauthConnections\210\001\001\022U\n%terminate_se" +
-      "ssions_on_password_change\030\010 \001(\010H\006R!termi" +
-      "nateSessionsOnPasswordChange\210\001\001\022A\n\033sessi" +
-      "on_length_web_in_hours\030\t \001(\005H\007R\027sessionL" +
-      "engthWebInHours\210\001\001\022G\n\036session_length_mob" +
-      "ile_in_hours\030\n \001(\005H\010R\032sessionLengthMobil" +
-      "eInHours\210\001\001\022A\n\033session_length_sso_in_hou" +
-      "rs\030\013 \001(\005H\tR\027sessionLengthSsoInHours\210\001\001\022+" +
-      "\n\017allow_cors_from\030\014 \001(\tH\nR\rallowCorsFrom" +
-      "\210\001\001\0225\n\024cors_exposed_headers\030\r \001(\tH\013R\022cor" +
-      "sExposedHeaders\210\001\001\0229\n\026cors_allow_credent" +
-      "ials\030\016 \001(\010H\014R\024corsAllowCredentials\210\001\001\022\"\n" +
-      "\ncors_debug\030\017 \001(\010H\rR\tcorsDebug\210\001\001\022D\n\034all" +
-      "ow_cookies_for_subdomains\030\020 \001(\010H\016R\031allow" +
-      "CookiesForSubdomains\210\001\001\022<\n\030session_cache" +
-      "_in_minutes\030\021 \001(\005H\017R\025sessionCacheInMinut" +
-      "es\210\001\001\0229\n\026email_confirmation_url\030\022 \001(\tH\020R" +
-      "\024emailConfirmationUrl\210\001\001\022O\n\"token_confir" +
-      "mation_expiry_in_hours\030\023 \001(\rH\021R\036tokenCon" +
-      "firmationExpiryInHours\210\001\001\022R\n$token_passw" +
-      "ord_reset_expiry_in_hours\030\024 \001(\rH\022R\037token" +
-      "PasswordResetExpiryInHours\210\001\001\0221\n\022passwor" +
-      "d_reset_url\030\025 \001(\tH\023R\020passwordResetUrl\210\001\001" +
-      "\032F\n\030RestrictedUsernamesEntry\022\020\n\003key\030\001 \001(" +
-      "\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001B\031\n\027_max" +
-      "imum_login_attemptsB\'\n%_enable_insecure_" +
-      "outgoing_connectionsB$\n\"_enable_multifac" +
-      "tor_authenticationB%\n#_enforce_multifact" +
-      "or_authenticationB \n\036_enable_oauth_servi" +
-      "ce_providerB$\n\"_enable_outgoing_oauth_co" +
-      "nnectionsB(\n&_terminate_sessions_on_pass" +
-      "word_changeB\036\n\034_session_length_web_in_ho" +
-      "ursB!\n\037_session_length_mobile_in_hoursB\036" +
-      "\n\034_session_length_sso_in_hoursB\022\n\020_allow" +
-      "_cors_fromB\027\n\025_cors_exposed_headersB\031\n\027_" +
-      "cors_allow_credentialsB\r\n\013_cors_debugB\037\n" +
-      "\035_allow_cookies_for_subdomainsB\033\n\031_sessi" +
-      "on_cache_in_minutesB\031\n\027_email_confirmati" +
-      "on_urlB%\n#_token_confirmation_expiry_in_" +
-      "hoursB\'\n%_token_password_reset_expiry_in" +
-      "_hoursB\025\n\023_password_reset_url\"\202\003\n\013CacheC" +
-      "onfig\022\"\n\ncache_type\030\001 \001(\tH\000R\tcacheType\210\001" +
-      "\001\022(\n\rredis_address\030\002 \001(\tH\001R\014redisAddress" +
-      "\210\001\001\022*\n\016redis_password\030\003 \001(\tH\002R\rredisPass" +
-      "word\210\001\001\022\036\n\010redis_db\030\004 \001(\005H\003R\007redisDb\210\001\001\022" +
-      "1\n\022redis_cache_prefix\030\005 \001(\tH\004R\020redisCach" +
-      "ePrefix\210\001\001\0225\n\024disable_client_cache\030\006 \001(\010" +
-      "H\005R\022disableClientCache\210\001\001B\r\n\013_cache_type" +
-      "B\020\n\016_redis_addressB\021\n\017_redis_passwordB\013\n" +
-      "\t_redis_dbB\025\n\023_redis_cache_prefixB\027\n\025_di" +
-      "sable_client_cache\"\251\003\n\rConfigMetrics\022\033\n\006" +
-      "enable\030\001 \001(\010H\000R\006enable\210\001\001\0221\n\022block_profi" +
-      "le_rate\030\002 \001(\005H\001R\020blockProfileRate\210\001\001\022*\n\016" +
-      "listen_address\030\003 \001(\tH\002R\rlistenAddress\210\001\001" +
-      "\0227\n\025enable_client_metrics\030\004 \001(\010H\003R\023enabl" +
-      "eClientMetrics\210\001\001\022C\n\033enable_notification" +
-      "_metrics\030\005 \001(\010H\004R\031enableNotificationMetr" +
-      "ics\210\001\001\022/\n\024client_side_user_ids\030\006 \003(\tR\021cl" +
-      "ientSideUserIdsB\t\n\007_enableB\025\n\023_block_pro" +
-      "file_rateB\021\n\017_listen_addressB\030\n\026_enable_" +
-      "client_metricsB\036\n\034_enable_notification_m" +
-      "etrics\"\230\004\n\tConfigSSO\022\033\n\006enable\030\001 \001(\010H\000R\006" +
-      "enable\210\001\001\022\033\n\006secret\030\002 \001(\tH\001R\006secret\210\001\001\022\023" +
-      "\n\002id\030\003 \001(\tH\002R\002id\210\001\001\022\031\n\005scope\030\004 \001(\tH\003R\005sc" +
-      "ope\210\001\001\022(\n\rauth_endpoint\030\005 \001(\tH\004R\014authEnd" +
-      "point\210\001\001\022*\n\016token_endpoint\030\006 \001(\tH\005R\rtoke" +
-      "nEndpoint\210\001\001\022/\n\021user_api_endpoint\030\007 \001(\tH" +
-      "\006R\017userApiEndpoint\210\001\001\0222\n\022discovery_endpo" +
-      "int\030\010 \001(\tH\007R\021discoveryEndpoint\210\001\001\022$\n\013but" +
-      "ton_text\030\t \001(\tH\010R\nbuttonText\210\001\001\022&\n\014butto" +
-      "n_color\030\n \001(\tH\tR\013buttonColor\210\001\001B\t\n\007_enab" +
-      "leB\t\n\007_secretB\005\n\003_idB\010\n\006_scopeB\020\n\016_auth_" +
-      "endpointB\021\n\017_token_endpointB\024\n\022_user_api" +
-      "_endpointB\025\n\023_discovery_endpointB\016\n\014_but" +
-      "ton_textB\017\n\r_button_color\"\325\005\n\tConfigSql\022" +
-      "$\n\013driver_name\030\001 \001(\tH\000R\ndriverName\210\001\001\022$\n" +
-      "\013data_source\030\002 \001(\tH\001R\ndataSource\210\001\001\022)\n\016m" +
-      "ax_idle_conns\030\003 \001(\005H\002R\014maxIdleConns\210\001\001\022H" +
-      "\n\036conn_max_lifetime_milliseconds\030\004 \001(\005H\003" +
-      "R\033connMaxLifetimeMilliseconds\210\001\001\022I\n\037conn" +
-      "_max_idle_time_milliseconds\030\005 \001(\005H\004R\033con" +
-      "nMaxIdleTimeMilliseconds\210\001\001\022)\n\016max_open_" +
-      "conns\030\006 \001(\005H\005R\014maxOpenConns\210\001\001\022\031\n\005trace\030" +
-      "\007 \001(\010H\006R\005trace\210\001\001\0222\n\023at_rest_encrypt_key" +
-      "\030\010 \001(\tH\007R\020atRestEncryptKey\210\001\001\022(\n\rquery_t" +
-      "imeout\030\t \001(\005H\010R\014queryTimeout\210\001\001\022;\n\027disab" +
-      "le_database_search\030\n \001(\010H\tR\025disableDatab" +
-      "aseSearch\210\001\001B\016\n\014_driver_nameB\016\n\014_data_so" +
-      "urceB\021\n\017_max_idle_connsB!\n\037_conn_max_lif" +
-      "etime_millisecondsB\"\n _conn_max_idle_tim" +
-      "e_millisecondsB\021\n\017_max_open_connsB\010\n\006_tr" +
-      "aceB\026\n\024_at_rest_encrypt_keyB\020\n\016_query_ti" +
-      "meoutB\032\n\030_disable_database_search\"\212\003\n\016Co" +
-      "nfigPassword\022*\n\016minimum_length\030\001 \001(\005H\000R\r" +
-      "minimumLength\210\001\001\022*\n\016maximum_length\030\002 \001(\005" +
-      "H\001R\rmaximumLength\210\001\001\022!\n\tlowercase\030\003 \001(\010H" +
-      "\002R\tlowercase\210\001\001\022\033\n\006number\030\004 \001(\010H\003R\006numbe" +
-      "r\210\001\001\022!\n\tuppercase\030\005 \001(\010H\004R\tuppercase\210\001\001\022" +
-      "\033\n\006symbol\030\006 \001(\010H\005R\006symbol\210\001\001\0221\n\022enable_f" +
-      "orgot_link\030\007 \001(\010H\006R\020enableForgotLink\210\001\001B" +
-      "\021\n\017_minimum_lengthB\021\n\017_maximum_lengthB\014\n" +
-      "\n_lowercaseB\t\n\007_numberB\014\n\n_uppercaseB\t\n\007" +
-      "_symbolB\025\n\023_enable_forgot_link\"\243\014\n\nConfi" +
-      "gFile\022;\n\027enable_file_attachments\030\001 \001(\010H\000" +
-      "R\025enableFileAttachments\210\001\001\0225\n\024enable_mob" +
-      "ile_upload\030\002 \001(\010H\001R\022enableMobileUpload\210\001" +
-      "\001\0229\n\026enable_mobile_download\030\003 \001(\010H\002R\024ena" +
-      "bleMobileDownload\210\001\001\0225\n\024max_image_resolu" +
-      "tion\030\004 \001(\003H\003R\022maxImageResolution\210\001\001\022F\n\035m" +
-      "ax_image_decoder_concurrency\030\005 \001(\003H\004R\032ma" +
-      "xImageDecoderConcurrency\210\001\001\022$\n\013driver_na" +
-      "me\030\006 \001(\tH\005R\ndriverName\210\001\001\0229\n\027amazon_s3_a" +
-      "ccess_key_id\030\007 \001(\tH\006R\023amazonS3AccessKeyI" +
-      "d\210\001\001\022A\n\033amazon_s3_secret_access_key\030\010 \001(" +
-      "\tH\007R\027amazonS3SecretAccessKey\210\001\001\022-\n\020amazo" +
-      "n_s3_bucket\030\t \001(\tH\010R\016amazonS3Bucket\210\001\001\0226" +
-      "\n\025amazon_s3_path_prefix\030\n \001(\tH\tR\022amazonS" +
-      "3PathPrefix\210\001\001\022-\n\020amazon_s3_region\030\013 \001(\t" +
-      "H\nR\016amazonS3Region\210\001\001\0221\n\022amazon_s3_endpo" +
-      "int\030\014 \001(\tH\013R\020amazonS3Endpoint\210\001\001\022\'\n\ramaz" +
-      "on_s3_ssl\030\r \001(\010H\014R\013amazonS3Ssl\210\001\001\022.\n\021ama" +
-      "zon_s3_sign_v2\030\016 \001(\010H\rR\016amazonS3SignV2\210\001" +
-      "\001\022\'\n\ramazon_s3_sse\030\017 \001(\010H\016R\013amazonS3Sse\210" +
-      "\001\001\022+\n\017amazon_s3_trace\030\020 \001(\010H\017R\ramazonS3T" +
-      "race\210\001\001\022W\n&amazon_s3_request_timeout_mil" +
-      "liseconds\030\021 \001(\003H\020R\"amazonS3RequestTimeou" +
-      "tMilliseconds\210\001\001\022J\n amazon_s3_upload_par" +
-      "t_size_bytes\030\022 \001(\003H\021R\033amazonS3UploadPart" +
-      "SizeBytes\210\001\001\022:\n\027amazon_s3_storage_class\030" +
-      "\023 \001(\tH\022R\024amazonS3StorageClass\210\001\001B\032\n\030_ena" +
-      "ble_file_attachmentsB\027\n\025_enable_mobile_u" +
-      "ploadB\031\n\027_enable_mobile_downloadB\027\n\025_max" +
-      "_image_resolutionB \n\036_max_image_decoder_" +
-      "concurrencyB\016\n\014_driver_nameB\032\n\030_amazon_s" +
-      "3_access_key_idB\036\n\034_amazon_s3_secret_acc" +
-      "ess_keyB\023\n\021_amazon_s3_bucketB\030\n\026_amazon_" +
-      "s3_path_prefixB\023\n\021_amazon_s3_regionB\025\n\023_" +
-      "amazon_s3_endpointB\020\n\016_amazon_s3_sslB\024\n\022" +
-      "_amazon_s3_sign_v2B\020\n\016_amazon_s3_sseB\022\n\020" +
-      "_amazon_s3_traceB)\n\'_amazon_s3_request_t" +
-      "imeout_millisecondsB#\n!_amazon_s3_upload" +
-      "_part_size_bytesB\032\n\030_amazon_s3_storage_c" +
-      "lass\"\210\021\n\013ConfigEmail\022=\n\030send_email_notif" +
-      "ications\030\001 \001(\010H\000R\026sendEmailNotifications" +
-      "\210\001\001\022A\n\032require_email_verification\030\002 \001(\010H" +
-      "\001R\030requireEmailVerification\210\001\001\022*\n\016feedba" +
-      "ck_email\030\003 \001(\tH\002R\rfeedbackEmail\210\001\001\022-\n\020re" +
-      "ply_to_address\030\004 \001(\tH\003R\016replyToAddress\210\001" +
-      "\001\022-\n\020enable_smtp_auth\030\005 \001(\010H\004R\016enableSmt" +
-      "pAuth\210\001\001\022(\n\rsmtp_username\030\006 \001(\tH\005R\014smtpU" +
-      "sername\210\001\001\022(\n\rsmtp_password\030\007 \001(\tH\006R\014smt" +
-      "pPassword\210\001\001\022$\n\013smtp_server\030\010 \001(\tH\007R\nsmt" +
-      "pServer\210\001\001\022 \n\tsmtp_port\030\t \001(\tH\010R\010smtpPor" +
-      "t\210\001\001\0223\n\023smtp_server_timeout\030\n \001(\005H\tR\021smt" +
-      "pServerTimeout\210\001\001\0224\n\023connection_security" +
-      "\030\013 \001(\tH\nR\022connectionSecurity\210\001\001\022;\n\027send_" +
-      "push_notifications\030\014 \001(\010H\013R\025sendPushNoti" +
-      "fications\210\001\001\022=\n\030push_notification_server" +
-      "\030\r \001(\tH\014R\026pushNotificationServer\210\001\001\022A\n\032p" +
-      "ush_notification_contents\030\016 \001(\tH\rR\030pushN" +
-      "otificationContents\210\001\001\022=\n\030push_notificat" +
-      "ion_buffer\030\017 \001(\005H\016R\026pushNotificationBuff" +
-      "er\210\001\001\0227\n\025enable_email_batching\030\020 \001(\010H\017R\023" +
-      "enableEmailBatching\210\001\001\022@\n\032email_batching" +
-      "_buffer_size\030\021 \001(\005H\020R\027emailBatchingBuffe" +
-      "rSize\210\001\001\022;\n\027email_batching_interval\030\022 \001(" +
-      "\005H\021R\025emailBatchingInterval\210\001\001\022T\n$skip_se" +
-      "rver_certificate_verification\030\023 \001(\010H\022R!s" +
-      "kipServerCertificateVerification\210\001\001\022L\n e" +
-      "mail_notification_contents_type\030\024 \001(\tH\023R" +
-      "\035emailNotificationContentsType\210\001\001\0221\n\022log" +
-      "in_button_color\030\025 \001(\tH\024R\020loginButtonColo" +
-      "r\210\001\001\022>\n\031login_button_border_color\030\026 \001(\tH" +
-      "\025R\026loginButtonBorderColor\210\001\001\022:\n\027login_bu" +
-      "tton_text_color\030\027 \001(\tH\026R\024loginButtonText" +
-      "Color\210\001\001\022>\n\031rate_limiting_memory_size\030\030 " +
-      "\001(\005H\027R\026rateLimitingMemorySize\210\001\001\0228\n\026rate" +
-      "_limiting_per_hour\030\031 \001(\005H\030R\023rateLimiting" +
-      "PerHour\210\001\001\022:\n\027rate_limiting_max_burst\030\032 " +
-      "\001(\005H\031R\024rateLimitingMaxBurst\210\001\001B\033\n\031_send_" +
-      "email_notificationsB\035\n\033_require_email_ve" +
-      "rificationB\021\n\017_feedback_emailB\023\n\021_reply_" +
-      "to_addressB\023\n\021_enable_smtp_authB\020\n\016_smtp" +
-      "_usernameB\020\n\016_smtp_passwordB\016\n\014_smtp_ser" +
-      "verB\014\n\n_smtp_portB\026\n\024_smtp_server_timeou" +
-      "tB\026\n\024_connection_securityB\032\n\030_send_push_" +
-      "notificationsB\033\n\031_push_notification_serv" +
-      "erB\035\n\033_push_notification_contentsB\033\n\031_pu" +
-      "sh_notification_bufferB\030\n\026_enable_email_" +
-      "batchingB\035\n\033_email_batching_buffer_sizeB" +
-      "\032\n\030_email_batching_intervalB\'\n%_skip_ser" +
-      "ver_certificate_verificationB#\n!_email_n" +
-      "otification_contents_typeB\025\n\023_login_butt" +
-      "on_colorB\034\n\032_login_button_border_colorB\032" +
-      "\n\030_login_button_text_colorB\034\n\032_rate_limi" +
-      "ting_memory_sizeB\031\n\027_rate_limiting_per_h" +
-      "ourB\032\n\030_rate_limiting_max_burst\"\204\003\n\017Conf" +
-      "igRateLimit\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001" +
-      "\022\034\n\007per_sec\030\002 \001(\005H\001R\006perSec\210\001\001\022 \n\tmax_bu" +
-      "rst\030\003 \001(\005H\002R\010maxBurst\210\001\001\022/\n\021memory_store" +
-      "_size\030\004 \001(\005H\003R\017memoryStoreSize\210\001\001\0222\n\023var" +
-      "y_by_remote_addr\030\005 \001(\010H\004R\020varyByRemoteAd" +
-      "dr\210\001\001\022%\n\014vary_by_user\030\006 \001(\010H\005R\nvaryByUse" +
-      "r\210\001\001\022$\n\016vary_by_header\030\007 \001(\tR\014varyByHead" +
-      "erB\t\n\007_enableB\n\n\010_per_secB\014\n\n_max_burstB" +
-      "\024\n\022_memory_store_sizeB\026\n\024_vary_by_remote" +
-      "_addrB\017\n\r_vary_by_user\"\227\001\n\rConfigPrivacy" +
-      "\0221\n\022show_email_address\030\001 \001(\010H\000R\020showEmai" +
-      "lAddress\210\001\001\022)\n\016show_full_name\030\002 \001(\010H\001R\014s" +
-      "howFullName\210\001\001B\025\n\023_show_email_addressB\021\n" +
-      "\017_show_full_name\"\357\003\n\rConfigSupport\0226\n\025te" +
-      "rms_of_service_link\030\001 \001(\tH\000R\022termsOfServ" +
-      "iceLink\210\001\001\0223\n\023privacy_policy_link\030\002 \001(\tH" +
-      "\001R\021privacyPolicyLink\210\001\001\022\"\n\nabout_link\030\003 " +
-      "\001(\tH\002R\taboutLink\210\001\001\022 \n\thelp_link\030\004 \001(\tH\003" +
-      "R\010helpLink\210\001\001\0226\n\025report_a_problem_link\030\005" +
-      " \001(\tH\004R\022reportAProblemLink\210\001\001\0225\n\024forgot_" +
-      "password_link\030\006 \001(\tH\005R\022forgotPasswordLin" +
-      "k\210\001\001\022(\n\rsupport_email\030\007 \001(\tH\006R\014supportEm" +
-      "ail\210\001\001B\030\n\026_terms_of_service_linkB\026\n\024_pri" +
-      "vacy_policy_linkB\r\n\013_about_linkB\014\n\n_help" +
-      "_linkB\030\n\026_report_a_problem_linkB\027\n\025_forg" +
-      "ot_password_linkB\020\n\016_support_email\"\347\001\n\022C" +
-      "onfigLocalization\0227\n\025default_server_loca" +
-      "le\030\001 \001(\tH\000R\023defaultServerLocale\210\001\001\0227\n\025de" +
-      "fault_client_locale\030\002 \001(\tH\001R\023defaultClie" +
-      "ntLocale\210\001\001\022+\n\021available_locales\030\003 \003(\tR\020" +
-      "availableLocalesB\030\n\026_default_server_loca" +
-      "leB\030\n\026_default_client_locale\"\325\020\n\nConfigL" +
-      "dap\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022$\n\013enab" +
-      "le_sync\030\002 \001(\010H\001R\nenableSync\210\001\001\022$\n\013ldap_s" +
-      "erver\030\003 \001(\tH\002R\nldapServer\210\001\001\022 \n\tldap_por" +
-      "t\030\004 \001(\005H\003R\010ldapPort\210\001\001\0224\n\023connection_sec" +
-      "urity\030\005 \001(\tH\004R\022connectionSecurity\210\001\001\022\034\n\007" +
-      "base_dn\030\006 \001(\tH\005R\006baseDn\210\001\001\022(\n\rbind_usern" +
-      "ame\030\007 \001(\tH\006R\014bindUsername\210\001\001\022(\n\rbind_pas" +
-      "sword\030\010 \001(\tH\007R\014bindPassword\210\001\001\0229\n\026maximu" +
-      "m_login_attempts\030\t \001(\005H\010R\024maximumLoginAt" +
-      "tempts\210\001\001\022$\n\013user_filter\030\n \001(\tH\tR\nuserFi" +
-      "lter\210\001\001\022&\n\014group_filter\030\013 \001(\tH\nR\013groupFi" +
-      "lter\210\001\001\0223\n\023enable_admin_filter\030\014 \001(\010H\013R\021" +
-      "enableAdminFilter\210\001\001\022&\n\014admin_filter\030\r \001" +
-      "(\tH\014R\013adminFilter\210\001\001\022D\n\034group_display_na" +
-      "me_attribute\030\016 \001(\tH\rR\031groupDisplayNameAt" +
-      "tribute\210\001\001\0221\n\022group_id_attribute\030\017 \001(\tH\016" +
-      "R\020groupIdAttribute\210\001\001\0225\n\024first_name_attr" +
-      "ibute\030\020 \001(\tH\017R\022firstNameAttribute\210\001\001\0223\n\023" +
-      "last_name_attribute\030\021 \001(\tH\020R\021lastNameAtt" +
-      "ribute\210\001\001\022,\n\017email_attribute\030\022 \001(\tH\021R\016em" +
-      "ailAttribute\210\001\001\0222\n\022username_attribute\030\023 " +
-      "\001(\tH\022R\021usernameAttribute\210\001\001\0222\n\022nickname_" +
-      "attribute\030\024 \001(\tH\023R\021nicknameAttribute\210\001\001\022" +
-      "&\n\014id_attribute\030\025 \001(\tH\024R\013idAttribute\210\001\001\022" +
-      "2\n\022position_attribute\030\026 \001(\tH\025R\021positionA" +
-      "ttribute\210\001\001\0221\n\022login_id_attribute\030\027 \001(\tH" +
-      "\026R\020loginIdAttribute\210\001\001\0220\n\021picture_attrib" +
-      "ute\030\030 \001(\tH\027R\020pictureAttribute\210\001\001\0227\n\025sync" +
-      "_interval_minutes\030\031 \001(\005H\030R\023syncIntervalM" +
-      "inutes\210\001\001\022(\n\rquery_timeout\030\032 \001(\005H\031R\014quer" +
-      "yTimeout\210\001\001\022\'\n\rmax_page_size\030\033 \001(\005H\032R\013ma" +
-      "xPageSize\210\001\001\022-\n\020login_field_name\030\034 \001(\tH\033" +
-      "R\016loginFieldName\210\001\001\0221\n\022login_button_colo" +
-      "r\030\035 \001(\tH\034R\020loginButtonColor\210\001\001\022>\n\031login_" +
-      "button_border_color\030\036 \001(\tH\035R\026loginButton" +
-      "BorderColor\210\001\001\022:\n\027login_button_text_colo" +
-      "r\030\037 \001(\tH\036R\024loginButtonTextColor\210\001\001B\t\n\007_e" +
-      "nableB\016\n\014_enable_syncB\016\n\014_ldap_serverB\014\n" +
-      "\n_ldap_portB\026\n\024_connection_securityB\n\n\010_" +
-      "base_dnB\020\n\016_bind_usernameB\020\n\016_bind_passw" +
-      "ordB\031\n\027_maximum_login_attemptsB\016\n\014_user_" +
-      "filterB\017\n\r_group_filterB\026\n\024_enable_admin" +
-      "_filterB\017\n\r_admin_filterB\037\n\035_group_displ" +
-      "ay_name_attributeB\025\n\023_group_id_attribute" +
-      "B\027\n\025_first_name_attributeB\026\n\024_last_name_" +
-      "attributeB\022\n\020_email_attributeB\025\n\023_userna" +
-      "me_attributeB\025\n\023_nickname_attributeB\017\n\r_" +
-      "id_attributeB\025\n\023_position_attributeB\025\n\023_" +
-      "login_id_attributeB\024\n\022_picture_attribute" +
-      "B\030\n\026_sync_interval_minutesB\020\n\016_query_tim" +
-      "eoutB\020\n\016_max_page_sizeB\023\n\021_login_field_n" +
-      "ameB\025\n\023_login_button_colorB\034\n\032_login_but" +
-      "ton_border_colorB\032\n\030_login_button_text_c" +
-      "olor\"\255\023\n\nConfigSaml\022\033\n\006enable\030\001 \001(\010H\000R\006e" +
-      "nable\210\001\001\0226\n\025enable_sync_with_ldap\030\002 \001(\010H" +
-      "\001R\022enableSyncWithLdap\210\001\001\022N\n\"enable_sync_" +
-      "with_ldap_include_auth\030\003 \001(\010H\002R\035enableSy" +
-      "ncWithLdapIncludeAuth\210\001\001\022:\n\027ignore_guest" +
-      "s_ldap_sync\030\004 \001(\010H\003R\024ignoreGuestsLdapSyn" +
-      "c\210\001\001\022\033\n\006verify\030\005 \001(\010H\004R\006verify\210\001\001\022\035\n\007enc",
-      "rypt\030\006 \001(\010H\005R\007encrypt\210\001\001\022&\n\014sign_request" +
-      "\030\007 \001(\010H\006R\013signRequest\210\001\001\022\034\n\007idp_url\030\010 \001(" +
-      "\tH\007R\006idpUrl\210\001\001\0221\n\022idp_descriptor_url\030\t \001" +
-      "(\tH\010R\020idpDescriptorUrl\210\001\001\022-\n\020idp_metadat" +
-      "a_url\030\n \001(\tH\tR\016idpMetadataUrl\210\001\001\022C\n\033serv" +
-      "ice_provider_identifier\030\013 \001(\tH\nR\031service" +
-      "ProviderIdentifier\210\001\001\022H\n\036assertion_consu" +
-      "mer_service_url\030\014 \001(\tH\013R\033assertionConsum" +
-      "erServiceUrl\210\001\001\0224\n\023signature_algorithm\030\r" +
-      " \001(\tH\014R\022signatureAlgorithm\210\001\001\0224\n\023canonic" +
-      "al_algorithm\030\016 \001(\tH\rR\022canonicalAlgorithm" +
-      "\210\001\001\022:\n\027scoping_idp_provider_id\030\017 \001(\tH\016R\024" +
-      "scopingIdpProviderId\210\001\001\022-\n\020scoping_idp_n" +
-      "ame\030\020 \001(\tH\017R\016scopingIdpName\210\001\001\0225\n\024idp_ce" +
-      "rtificate_file\030\021 \001(\tH\020R\022idpCertificateFi" +
-      "le\210\001\001\022;\n\027public_certificate_file\030\022 \001(\tH\021" +
-      "R\025publicCertificateFile\210\001\001\022-\n\020private_ke" +
-      "y_file\030\023 \001(\tH\022R\016privateKeyFile\210\001\001\022&\n\014id_" +
-      "attribute\030\024 \001(\tH\023R\013idAttribute\210\001\001\0229\n\026ena" +
-      "ble_admin_attribute\030\025 \001(\010H\024R\024enableAdmin" +
-      "Attribute\210\001\001\022,\n\017admin_attribute\030\026 \001(\tH\025R" +
-      "\016adminAttribute\210\001\001\0225\n\024first_name_attribu" +
-      "te\030\027 \001(\tH\026R\022firstNameAttribute\210\001\001\0223\n\023las" +
-      "t_name_attribute\030\030 \001(\tH\027R\021lastNameAttrib" +
-      "ute\210\001\001\022,\n\017email_attribute\030\031 \001(\tH\030R\016email" +
-      "Attribute\210\001\001\0222\n\022username_attribute\030\032 \001(\t" +
-      "H\031R\021usernameAttribute\210\001\001\0222\n\022nickname_att" +
-      "ribute\030\033 \001(\tH\032R\021nicknameAttribute\210\001\001\022.\n\020" +
-      "locale_attribute\030\034 \001(\tH\033R\017localeAttribut" +
-      "e\210\001\001\0222\n\022position_attribute\030\035 \001(\tH\034R\021posi" +
-      "tionAttribute\210\001\001\022/\n\021login_button_text\030\036 " +
-      "\001(\tH\035R\017loginButtonText\210\001\001\0221\n\022login_butto" +
-      "n_color\030\037 \001(\tH\036R\020loginButtonColor\210\001\001\022>\n\031" +
-      "login_button_border_color\030  \001(\tH\037R\026login" +
-      "ButtonBorderColor\210\001\001\022:\n\027login_button_tex" +
-      "t_color\030! \001(\tH R\024loginButtonTextColor\210\001\001" +
-      "B\t\n\007_enableB\030\n\026_enable_sync_with_ldapB%\n" +
-      "#_enable_sync_with_ldap_include_authB\032\n\030" +
-      "_ignore_guests_ldap_syncB\t\n\007_verifyB\n\n\010_" +
-      "encryptB\017\n\r_sign_requestB\n\n\010_idp_urlB\025\n\023" +
-      "_idp_descriptor_urlB\023\n\021_idp_metadata_url" +
-      "B\036\n\034_service_provider_identifierB!\n\037_ass" +
-      "ertion_consumer_service_urlB\026\n\024_signatur" +
-      "e_algorithmB\026\n\024_canonical_algorithmB\032\n\030_" +
-      "scoping_idp_provider_idB\023\n\021_scoping_idp_" +
-      "nameB\027\n\025_idp_certificate_fileB\032\n\030_public" +
-      "_certificate_fileB\023\n\021_private_key_fileB\017" +
-      "\n\r_id_attributeB\031\n\027_enable_admin_attribu" +
-      "teB\022\n\020_admin_attributeB\027\n\025_first_name_at" +
-      "tributeB\026\n\024_last_name_attributeB\022\n\020_emai" +
-      "l_attributeB\025\n\023_username_attributeB\025\n\023_n" +
-      "ickname_attributeB\023\n\021_locale_attributeB\025" +
-      "\n\023_position_attributeB\024\n\022_login_button_t" +
-      "extB\025\n\023_login_button_colorB\034\n\032_login_but" +
-      "ton_border_colorB\032\n\030_login_button_text_c" +
-      "olor\"\301\005\n\017ConfigNativeApp\0223\n\026app_custom_u" +
-      "rl_schemes\030\001 \003(\tR\023appCustomUrlSchemes\022/\n" +
-      "\021app_download_link\030\002 \001(\tH\000R\017appDownloadL" +
-      "ink\210\001\001\022>\n\031android_app_download_link\030\003 \001(" +
-      "\tH\001R\026androidAppDownloadLink\210\001\001\0226\n\025ios_ap" +
-      "p_download_link\030\004 \001(\tH\002R\022iosAppDownloadL" +
-      "ink\210\001\001\022;\n\027mobile_external_browser\030\005 \001(\010H" +
-      "\003R\025mobileExternalBrowser\210\001\001\022=\n\030mobile_en" +
-      "able_biometrics\030\006 \001(\010H\004R\026mobileEnableBio" +
-      "metrics\210\001\001\022F\n\035mobile_prevent_screen_capt" +
-      "ure\030\007 \001(\010H\005R\032mobilePreventScreenCapture\210" +
-      "\001\001\022C\n\033mobile_jailbreak_protection\030\010 \001(\010H" +
-      "\006R\031mobileJailbreakProtection\210\001\001B\024\n\022_app_" +
-      "download_linkB\034\n\032_android_app_download_l" +
-      "inkB\030\n\026_ios_app_download_linkB\032\n\030_mobile" +
-      "_external_browserB\033\n\031_mobile_enable_biom" +
-      "etricsB \n\036_mobile_prevent_screen_capture" +
-      "B\036\n\034_mobile_jailbreak_protection\"\253\005\n\021Con" +
-      "figMeilisearch\022#\n\nserver_url\030\001 \001(\tH\000R\nse" +
-      "rver_url\210\001\001\022\"\n\nmaster_key\030\002 \001(\tH\001R\tmaste" +
-      "rKey\210\001\001\022,\n\017enable_indexing\030\003 \001(\010H\002R\016enab" +
-      "leIndexing\210\001\001\022.\n\020enable_searching\030\004 \001(\010H" +
-      "\003R\017enableSearching\210\001\001\0224\n\023enable_autocomp" +
-      "lete\030\005 \001(\010H\004R\022enableAutocomplete\210\001\001\022\"\n\nb" +
-      "atch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001\022;\n\027reque" +
-      "st_timeout_seconds\030\007 \001(\005H\006R\025requestTimeo" +
-      "utSeconds\210\001\001\022&\n\014index_prefix\030\010 \001(\tH\007R\013in" +
-      "dexPrefix\210\001\001\022-\n\020search_cutoff_ms\030\t \001(\005H\010" +
-      "R\016searchCutoffMs\210\001\001\0227\n\025enable_typo_toler" +
-      "ance\030\n \001(\010H\tR\023enableTypoTolerance\210\001\001B\r\n\013" +
-      "_server_urlB\r\n\013_master_keyB\022\n\020_enable_in" +
-      "dexingB\023\n\021_enable_searchingB\026\n\024_enable_a" +
-      "utocompleteB\r\n\013_batch_sizeB\032\n\030_request_t" +
-      "imeout_secondsB\017\n\r_index_prefixB\023\n\021_sear" +
-      "ch_cutoff_msB\030\n\026_enable_typo_tolerance\"\272" +
-      "\003\n\013ConfigBleve\022 \n\tindex_dir\030\001 \001(\tH\000R\010ind" +
-      "exDir\210\001\001\022,\n\017enable_indexing\030\002 \001(\010H\001R\016ena" +
-      "bleIndexing\210\001\001\022.\n\020enable_searching\030\003 \001(\010" +
-      "H\002R\017enableSearching\210\001\001\0224\n\023enable_autocom" +
-      "plete\030\004 \001(\010H\003R\022enableAutocomplete\210\001\001\022M\n!" +
-      "bulk_indexing_time_window_seconds\030\005 \001(\005H" +
-      "\004R\035bulkIndexingTimeWindowSeconds\210\001\001\022\"\n\nb" +
-      "atch_size\030\006 \001(\005H\005R\tbatchSize\210\001\001B\014\n\n_inde" +
-      "x_dirB\022\n\020_enable_indexingB\023\n\021_enable_sea" +
-      "rchingB\026\n\024_enable_autocompleteB$\n\"_bulk_" +
-      "indexing_time_window_secondsB\r\n\013_batch_s" +
-      "ize\"\354\006\n\023ConfigDataRetention\022;\n\027enable_me" +
-      "ssage_deletion\030\001 \001(\010H\000R\025enableMessageDel" +
-      "etion\210\001\001\0225\n\024enable_file_deletion\030\002 \001(\010H\001" +
-      "R\022enableFileDeletion\210\001\001\0229\n\026enable_boards" +
-      "_deletion\030\003 \001(\010H\002R\024enableBoardsDeletion\210" +
-      "\001\001\022;\n\027message_retention_hours\030\004 \001(\005H\003R\025m" +
-      "essageRetentionHours\210\001\001\0225\n\024file_retentio" +
-      "n_hours\030\005 \001(\005H\004R\022fileRetentionHours\210\001\001\0227" +
-      "\n\025boards_retention_days\030\006 \001(\005H\005R\023boardsR" +
-      "etentionDays\210\001\001\022:\n\027deletion_job_start_ti" +
-      "me\030\007 \001(\tH\006R\024deletionJobStartTime\210\001\001\022\"\n\nb" +
-      "atch_size\030\010 \001(\005H\007R\tbatchSize\210\001\001\022N\n!time_" +
-      "between_batches_milliseconds\030\t \001(\005H\010R\036ti" +
-      "meBetweenBatchesMilliseconds\210\001\001\022<\n\030reten" +
-      "tion_ids_batch_size\030\n \001(\005H\tR\025retentionId" +
-      "sBatchSize\210\001\001B\032\n\030_enable_message_deletio" +
-      "nB\027\n\025_enable_file_deletionB\031\n\027_enable_bo" +
-      "ards_deletionB\032\n\030_message_retention_hour" +
-      "sB\027\n\025_file_retention_hoursB\030\n\026_boards_re" +
-      "tention_daysB\032\n\030_deletion_job_start_time" +
-      "B\r\n\013_batch_sizeB$\n\"_time_between_batches" +
-      "_millisecondsB\033\n\031_retention_ids_batch_si" +
-      "ze\"\264\002\n\020ConfigImageProxy\022\033\n\006enable\030\001 \001(\010H" +
-      "\000R\006enable\210\001\001\022-\n\020image_proxy_type\030\002 \001(\tH\001" +
-      "R\016imageProxyType\210\001\001\0228\n\026remote_image_prox" +
-      "y_url\030\003 \001(\tH\002R\023remoteImageProxyUrl\210\001\001\022@\n" +
-      "\032remote_image_proxy_options\030\004 \001(\tH\003R\027rem" +
-      "oteImageProxyOptions\210\001\001B\t\n\007_enableB\023\n\021_i" +
-      "mage_proxy_typeB\031\n\027_remote_image_proxy_u" +
-      "rlB\035\n\033_remote_image_proxy_options\"\373\010\n\006Co" +
-      "nfig\022)\n\004main\030\001 \001(\0132\025.common.v1.ConfigMai" +
-      "nR\004main\0225\n\010services\030\002 \001(\0132\031.common.v1.Co" +
-      "nfigServicesR\010services\0225\n\010security\030\003 \001(\013" +
-      "2\031.common.v1.ConfigSecurityR\010security\022,\n" +
-      "\005cache\030\004 \001(\0132\026.common.v1.CacheConfigR\005ca" +
-      "che\0222\n\007metrics\030\005 \001(\0132\030.common.v1.ConfigM" +
-      "etricsR\007metrics\022&\n\003sso\030\006 \001(\0132\024.common.v1" +
-      ".ConfigSSOR\003sso\022&\n\003sql\030\007 \001(\0132\024.common.v1" +
-      ".ConfigSqlR\003sql\0225\n\010password\030\010 \001(\0132\031.comm" +
-      "on.v1.ConfigPasswordR\010password\022)\n\004file\030\t" +
-      " \001(\0132\025.common.v1.ConfigFileR\004file\022,\n\005ema" +
-      "il\030\n \001(\0132\026.common.v1.ConfigEmailR\005email\022" +
-      "9\n\nrate_limit\030\013 \001(\0132\032.common.v1.ConfigRa" +
-      "teLimitR\trateLimit\0222\n\007privacy\030\014 \001(\0132\030.co" +
-      "mmon.v1.ConfigPrivacyR\007privacy\0222\n\007suppor" +
-      "t\030\r \001(\0132\030.common.v1.ConfigSupportR\007suppo" +
-      "rt\022A\n\014localization\030\016 \001(\0132\035.common.v1.Con" +
-      "figLocalizationR\014localization\022)\n\004ldap\030\017 " +
-      "\001(\0132\025.common.v1.ConfigLdapR\004ldap\022)\n\004saml" +
-      "\030\020 \001(\0132\025.common.v1.ConfigSamlR\004saml\0229\n\nn" +
-      "ative_app\030\021 \001(\0132\032.common.v1.ConfigNative" +
-      "AppR\tnativeApp\022>\n\013meilisearch\030\022 \001(\0132\034.co" +
-      "mmon.v1.ConfigMeilisearchR\013meilisearch\022," +
-      "\n\005bleve\030\023 \001(\0132\026.common.v1.ConfigBleveR\005b" +
-      "leve\022E\n\016data_retention\030\024 \001(\0132\036.common.v1" +
-      ".ConfigDataRetentionR\rdataRetention\022<\n\013i" +
-      "mage_proxy\030\025 \001(\0132\033.common.v1.ConfigImage" +
-      "ProxyR\nimageProxy\022,\n\005oauth\030\026 \001(\0132\026.commo" +
-      "n.v1.ConfigOAuthR\005oauth\"\022\n\020ConfigGetRequ" +
-      "est\"u\n\021ConfigGetResponse\022\'\n\004data\030\001 \001(\0132\021" +
-      ".common.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\013" +
-      "2\023.shared.v1.AppErrorH\000R\005errorB\n\n\010respon" +
-      "se\"@\n\023ConfigUpdateRequest\022)\n\006config\030\001 \001(" +
-      "\0132\021.common.v1.ConfigR\006config\"x\n\024ConfigUp" +
-      "dateResponse\022\'\n\004data\030\001 \001(\0132\021.common.v1.C" +
-      "onfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1" +
-      ".AppErrorH\000R\005errorB\n\n\010response\"z\n\026Config" +
-      "ListenerResponse\022\'\n\004data\030\001 \001(\0132\021.common." +
-      "v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023.share" +
-      "d.v1.AppErrorH\000R\005errorB\n\n\010response\"4\n\025Co" +
-      "nfigListenerRequest\022\033\n\tclient_id\030\001 \001(\tR\010" +
-      "clientIdBq\n\032org.megacommerce.common.v1B\013" +
-      "ConfigProtoZCgithub.com/ahmad-khatib0-or" +
-      "g/megacommerce-proto/gen/go/common/v1;v1" +
-      "\370\001\001b\006proto3"
+      "l\"\233\020\n\016ConfigSecurity\022L\n!accesss_token_ex" +
+      "piry_web_in_hours\030\001 \001(\005H\000R\034accesssTokenE" +
+      "xpiryWebInHours\210\001\001\022R\n$accesss_token_expi" +
+      "ry_mobile_in_hours\030\002 \001(\005H\001R\037accesssToken" +
+      "ExpiryMobileInHours\210\001\001\022L\n!accesss_token_" +
+      "expiry_sso_in_hours\030\003 \001(\005H\002R\034accesssToke" +
+      "nExpirySsoInHours\210\001\001\022E\n\035access_token_cac" +
+      "he_in_minutes\030\004 \001(\005H\003R\031accessTokenCacheI" +
+      "nMinutes\210\001\001\0229\n\026maximum_login_attempts\030\005 " +
+      "\001(\005H\004R\024maximumLoginAttempts\210\001\001\022U\n%termin" +
+      "ate_sessions_on_password_change\030\006 \001(\010H\005R" +
+      "!terminateSessionsOnPasswordChange\210\001\001\0229\n" +
+      "\026email_confirmation_url\030\007 \001(\tH\006R\024emailCo" +
+      "nfirmationUrl\210\001\001\0221\n\022password_reset_url\030\010" +
+      " \001(\tH\007R\020passwordResetUrl\210\001\001\022O\n\"token_con" +
+      "firmation_expiry_in_hours\030\t \001(\rH\010R\036token" +
+      "ConfirmationExpiryInHours\210\001\001\022R\n$token_pa" +
+      "ssword_reset_expiry_in_hours\030\n \001(\rH\tR\037to" +
+      "kenPasswordResetExpiryInHours\210\001\001\022T\n$enab" +
+      "le_insecure_outgoing_connections\030\013 \001(\010H\n" +
+      "R!enableInsecureOutgoingConnections\210\001\001\022O" +
+      "\n!enable_multifactor_authentication\030\014 \001(" +
+      "\010H\013R\037enableMultifactorAuthentication\210\001\001\022" +
+      "Q\n\"enforce_multifactor_authentication\030\r " +
+      "\001(\010H\014R enforceMultifactorAuthentication\210" +
+      "\001\001\022F\n\035enable_oauth_service_provider\030\016 \001(" +
+      "\010H\rR\032enableOauthServiceProvider\210\001\001\022N\n!en" +
+      "able_outgoing_oauth_connections\030\017 \001(\010H\016R" +
+      "\036enableOutgoingOauthConnections\210\001\001\022+\n\017al" +
+      "low_cors_from\030\020 \001(\tH\017R\rallowCorsFrom\210\001\001\022" +
+      "5\n\024cors_exposed_headers\030\021 \001(\tH\020R\022corsExp" +
+      "osedHeaders\210\001\001\0229\n\026cors_allow_credentials" +
+      "\030\022 \001(\010H\021R\024corsAllowCredentials\210\001\001\022\"\n\ncor" +
+      "s_debug\030\023 \001(\010H\022R\tcorsDebug\210\001\001\022D\n\034allow_c" +
+      "ookies_for_subdomains\030\024 \001(\010H\023R\031allowCook" +
+      "iesForSubdomains\210\001\001B$\n\"_accesss_token_ex" +
+      "piry_web_in_hoursB\'\n%_accesss_token_expi" +
+      "ry_mobile_in_hoursB$\n\"_accesss_token_exp" +
+      "iry_sso_in_hoursB \n\036_access_token_cache_" +
+      "in_minutesB\031\n\027_maximum_login_attemptsB(\n" +
+      "&_terminate_sessions_on_password_changeB" +
+      "\031\n\027_email_confirmation_urlB\025\n\023_password_" +
+      "reset_urlB%\n#_token_confirmation_expiry_" +
+      "in_hoursB\'\n%_token_password_reset_expiry" +
+      "_in_hoursB\'\n%_enable_insecure_outgoing_c" +
+      "onnectionsB$\n\"_enable_multifactor_authen" +
+      "ticationB%\n#_enforce_multifactor_authent" +
+      "icationB \n\036_enable_oauth_service_provide" +
+      "rB$\n\"_enable_outgoing_oauth_connectionsB" +
+      "\022\n\020_allow_cors_fromB\027\n\025_cors_exposed_hea" +
+      "dersB\031\n\027_cors_allow_credentialsB\r\n\013_cors" +
+      "_debugB\037\n\035_allow_cookies_for_subdomains\"" +
+      "\202\003\n\013CacheConfig\022\"\n\ncache_type\030\001 \001(\tH\000R\tc" +
+      "acheType\210\001\001\022(\n\rredis_address\030\002 \001(\tH\001R\014re" +
+      "disAddress\210\001\001\022*\n\016redis_password\030\003 \001(\tH\002R" +
+      "\rredisPassword\210\001\001\022\036\n\010redis_db\030\004 \001(\005H\003R\007r" +
+      "edisDb\210\001\001\0221\n\022redis_cache_prefix\030\005 \001(\tH\004R" +
+      "\020redisCachePrefix\210\001\001\0225\n\024disable_client_c" +
+      "ache\030\006 \001(\010H\005R\022disableClientCache\210\001\001B\r\n\013_" +
+      "cache_typeB\020\n\016_redis_addressB\021\n\017_redis_p" +
+      "asswordB\013\n\t_redis_dbB\025\n\023_redis_cache_pre" +
+      "fixB\027\n\025_disable_client_cache\"\251\003\n\rConfigM" +
+      "etrics\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\0221\n\022b" +
+      "lock_profile_rate\030\002 \001(\005H\001R\020blockProfileR" +
+      "ate\210\001\001\022*\n\016listen_address\030\003 \001(\tH\002R\rlisten" +
+      "Address\210\001\001\0227\n\025enable_client_metrics\030\004 \001(" +
+      "\010H\003R\023enableClientMetrics\210\001\001\022C\n\033enable_no" +
+      "tification_metrics\030\005 \001(\010H\004R\031enableNotifi" +
+      "cationMetrics\210\001\001\022/\n\024client_side_user_ids" +
+      "\030\006 \003(\tR\021clientSideUserIdsB\t\n\007_enableB\025\n\023" +
+      "_block_profile_rateB\021\n\017_listen_addressB\030" +
+      "\n\026_enable_client_metricsB\036\n\034_enable_noti" +
+      "fication_metrics\"\230\004\n\tConfigSSO\022\033\n\006enable" +
+      "\030\001 \001(\010H\000R\006enable\210\001\001\022\033\n\006secret\030\002 \001(\tH\001R\006s" +
+      "ecret\210\001\001\022\023\n\002id\030\003 \001(\tH\002R\002id\210\001\001\022\031\n\005scope\030\004" +
+      " \001(\tH\003R\005scope\210\001\001\022(\n\rauth_endpoint\030\005 \001(\tH" +
+      "\004R\014authEndpoint\210\001\001\022*\n\016token_endpoint\030\006 \001" +
+      "(\tH\005R\rtokenEndpoint\210\001\001\022/\n\021user_api_endpo" +
+      "int\030\007 \001(\tH\006R\017userApiEndpoint\210\001\001\0222\n\022disco" +
+      "very_endpoint\030\010 \001(\tH\007R\021discoveryEndpoint" +
+      "\210\001\001\022$\n\013button_text\030\t \001(\tH\010R\nbuttonText\210\001" +
+      "\001\022&\n\014button_color\030\n \001(\tH\tR\013buttonColor\210\001" +
+      "\001B\t\n\007_enableB\t\n\007_secretB\005\n\003_idB\010\n\006_scope" +
+      "B\020\n\016_auth_endpointB\021\n\017_token_endpointB\024\n" +
+      "\022_user_api_endpointB\025\n\023_discovery_endpoi" +
+      "ntB\016\n\014_button_textB\017\n\r_button_color\"\325\005\n\t" +
+      "ConfigSql\022$\n\013driver_name\030\001 \001(\tH\000R\ndriver" +
+      "Name\210\001\001\022$\n\013data_source\030\002 \001(\tH\001R\ndataSour" +
+      "ce\210\001\001\022)\n\016max_idle_conns\030\003 \001(\005H\002R\014maxIdle" +
+      "Conns\210\001\001\022H\n\036conn_max_lifetime_millisecon" +
+      "ds\030\004 \001(\005H\003R\033connMaxLifetimeMilliseconds\210" +
+      "\001\001\022I\n\037conn_max_idle_time_milliseconds\030\005 " +
+      "\001(\005H\004R\033connMaxIdleTimeMilliseconds\210\001\001\022)\n" +
+      "\016max_open_conns\030\006 \001(\005H\005R\014maxOpenConns\210\001\001" +
+      "\022\031\n\005trace\030\007 \001(\010H\006R\005trace\210\001\001\0222\n\023at_rest_e" +
+      "ncrypt_key\030\010 \001(\tH\007R\020atRestEncryptKey\210\001\001\022" +
+      "(\n\rquery_timeout\030\t \001(\005H\010R\014queryTimeout\210\001" +
+      "\001\022;\n\027disable_database_search\030\n \001(\010H\tR\025di" +
+      "sableDatabaseSearch\210\001\001B\016\n\014_driver_nameB\016" +
+      "\n\014_data_sourceB\021\n\017_max_idle_connsB!\n\037_co" +
+      "nn_max_lifetime_millisecondsB\"\n _conn_ma" +
+      "x_idle_time_millisecondsB\021\n\017_max_open_co" +
+      "nnsB\010\n\006_traceB\026\n\024_at_rest_encrypt_keyB\020\n" +
+      "\016_query_timeoutB\032\n\030_disable_database_sea" +
+      "rch\"\212\003\n\016ConfigPassword\022*\n\016minimum_length" +
+      "\030\001 \001(\005H\000R\rminimumLength\210\001\001\022*\n\016maximum_le" +
+      "ngth\030\002 \001(\005H\001R\rmaximumLength\210\001\001\022!\n\tlowerc" +
+      "ase\030\003 \001(\010H\002R\tlowercase\210\001\001\022\033\n\006number\030\004 \001(" +
+      "\010H\003R\006number\210\001\001\022!\n\tuppercase\030\005 \001(\010H\004R\tupp" +
+      "ercase\210\001\001\022\033\n\006symbol\030\006 \001(\010H\005R\006symbol\210\001\001\0221" +
+      "\n\022enable_forgot_link\030\007 \001(\010H\006R\020enableForg" +
+      "otLink\210\001\001B\021\n\017_minimum_lengthB\021\n\017_maximum" +
+      "_lengthB\014\n\n_lowercaseB\t\n\007_numberB\014\n\n_upp" +
+      "ercaseB\t\n\007_symbolB\025\n\023_enable_forgot_link" +
+      "\"\243\014\n\nConfigFile\022;\n\027enable_file_attachmen" +
+      "ts\030\001 \001(\010H\000R\025enableFileAttachments\210\001\001\0225\n\024" +
+      "enable_mobile_upload\030\002 \001(\010H\001R\022enableMobi" +
+      "leUpload\210\001\001\0229\n\026enable_mobile_download\030\003 " +
+      "\001(\010H\002R\024enableMobileDownload\210\001\001\0225\n\024max_im" +
+      "age_resolution\030\004 \001(\003H\003R\022maxImageResoluti" +
+      "on\210\001\001\022F\n\035max_image_decoder_concurrency\030\005" +
+      " \001(\003H\004R\032maxImageDecoderConcurrency\210\001\001\022$\n" +
+      "\013driver_name\030\006 \001(\tH\005R\ndriverName\210\001\001\0229\n\027a" +
+      "mazon_s3_access_key_id\030\007 \001(\tH\006R\023amazonS3" +
+      "AccessKeyId\210\001\001\022A\n\033amazon_s3_secret_acces" +
+      "s_key\030\010 \001(\tH\007R\027amazonS3SecretAccessKey\210\001" +
+      "\001\022-\n\020amazon_s3_bucket\030\t \001(\tH\010R\016amazonS3B" +
+      "ucket\210\001\001\0226\n\025amazon_s3_path_prefix\030\n \001(\tH" +
+      "\tR\022amazonS3PathPrefix\210\001\001\022-\n\020amazon_s3_re" +
+      "gion\030\013 \001(\tH\nR\016amazonS3Region\210\001\001\0221\n\022amazo" +
+      "n_s3_endpoint\030\014 \001(\tH\013R\020amazonS3Endpoint\210" +
+      "\001\001\022\'\n\ramazon_s3_ssl\030\r \001(\010H\014R\013amazonS3Ssl" +
+      "\210\001\001\022.\n\021amazon_s3_sign_v2\030\016 \001(\010H\rR\016amazon" +
+      "S3SignV2\210\001\001\022\'\n\ramazon_s3_sse\030\017 \001(\010H\016R\013am" +
+      "azonS3Sse\210\001\001\022+\n\017amazon_s3_trace\030\020 \001(\010H\017R" +
+      "\ramazonS3Trace\210\001\001\022W\n&amazon_s3_request_t" +
+      "imeout_milliseconds\030\021 \001(\003H\020R\"amazonS3Req" +
+      "uestTimeoutMilliseconds\210\001\001\022J\n amazon_s3_" +
+      "upload_part_size_bytes\030\022 \001(\003H\021R\033amazonS3" +
+      "UploadPartSizeBytes\210\001\001\022:\n\027amazon_s3_stor" +
+      "age_class\030\023 \001(\tH\022R\024amazonS3StorageClass\210" +
+      "\001\001B\032\n\030_enable_file_attachmentsB\027\n\025_enabl" +
+      "e_mobile_uploadB\031\n\027_enable_mobile_downlo" +
+      "adB\027\n\025_max_image_resolutionB \n\036_max_imag" +
+      "e_decoder_concurrencyB\016\n\014_driver_nameB\032\n" +
+      "\030_amazon_s3_access_key_idB\036\n\034_amazon_s3_" +
+      "secret_access_keyB\023\n\021_amazon_s3_bucketB\030" +
+      "\n\026_amazon_s3_path_prefixB\023\n\021_amazon_s3_r" +
+      "egionB\025\n\023_amazon_s3_endpointB\020\n\016_amazon_" +
+      "s3_sslB\024\n\022_amazon_s3_sign_v2B\020\n\016_amazon_" +
+      "s3_sseB\022\n\020_amazon_s3_traceB)\n\'_amazon_s3" +
+      "_request_timeout_millisecondsB#\n!_amazon" +
+      "_s3_upload_part_size_bytesB\032\n\030_amazon_s3" +
+      "_storage_class\"\210\021\n\013ConfigEmail\022=\n\030send_e" +
+      "mail_notifications\030\001 \001(\010H\000R\026sendEmailNot" +
+      "ifications\210\001\001\022A\n\032require_email_verificat" +
+      "ion\030\002 \001(\010H\001R\030requireEmailVerification\210\001\001" +
+      "\022*\n\016feedback_email\030\003 \001(\tH\002R\rfeedbackEmai" +
+      "l\210\001\001\022-\n\020reply_to_address\030\004 \001(\tH\003R\016replyT" +
+      "oAddress\210\001\001\022-\n\020enable_smtp_auth\030\005 \001(\010H\004R" +
+      "\016enableSmtpAuth\210\001\001\022(\n\rsmtp_username\030\006 \001(" +
+      "\tH\005R\014smtpUsername\210\001\001\022(\n\rsmtp_password\030\007 " +
+      "\001(\tH\006R\014smtpPassword\210\001\001\022$\n\013smtp_server\030\010 " +
+      "\001(\tH\007R\nsmtpServer\210\001\001\022 \n\tsmtp_port\030\t \001(\tH" +
+      "\010R\010smtpPort\210\001\001\0223\n\023smtp_server_timeout\030\n " +
+      "\001(\005H\tR\021smtpServerTimeout\210\001\001\0224\n\023connectio" +
+      "n_security\030\013 \001(\tH\nR\022connectionSecurity\210\001" +
+      "\001\022;\n\027send_push_notifications\030\014 \001(\010H\013R\025se" +
+      "ndPushNotifications\210\001\001\022=\n\030push_notificat" +
+      "ion_server\030\r \001(\tH\014R\026pushNotificationServ" +
+      "er\210\001\001\022A\n\032push_notification_contents\030\016 \001(" +
+      "\tH\rR\030pushNotificationContents\210\001\001\022=\n\030push" +
+      "_notification_buffer\030\017 \001(\005H\016R\026pushNotifi" +
+      "cationBuffer\210\001\001\0227\n\025enable_email_batching" +
+      "\030\020 \001(\010H\017R\023enableEmailBatching\210\001\001\022@\n\032emai" +
+      "l_batching_buffer_size\030\021 \001(\005H\020R\027emailBat" +
+      "chingBufferSize\210\001\001\022;\n\027email_batching_int" +
+      "erval\030\022 \001(\005H\021R\025emailBatchingInterval\210\001\001\022" +
+      "T\n$skip_server_certificate_verification\030" +
+      "\023 \001(\010H\022R!skipServerCertificateVerificati" +
+      "on\210\001\001\022L\n email_notification_contents_typ" +
+      "e\030\024 \001(\tH\023R\035emailNotificationContentsType" +
+      "\210\001\001\0221\n\022login_button_color\030\025 \001(\tH\024R\020login" +
+      "ButtonColor\210\001\001\022>\n\031login_button_border_co" +
+      "lor\030\026 \001(\tH\025R\026loginButtonBorderColor\210\001\001\022:" +
+      "\n\027login_button_text_color\030\027 \001(\tH\026R\024login" +
+      "ButtonTextColor\210\001\001\022>\n\031rate_limiting_memo" +
+      "ry_size\030\030 \001(\005H\027R\026rateLimitingMemorySize\210" +
+      "\001\001\0228\n\026rate_limiting_per_hour\030\031 \001(\005H\030R\023ra" +
+      "teLimitingPerHour\210\001\001\022:\n\027rate_limiting_ma" +
+      "x_burst\030\032 \001(\005H\031R\024rateLimitingMaxBurst\210\001\001" +
+      "B\033\n\031_send_email_notificationsB\035\n\033_requir" +
+      "e_email_verificationB\021\n\017_feedback_emailB" +
+      "\023\n\021_reply_to_addressB\023\n\021_enable_smtp_aut" +
+      "hB\020\n\016_smtp_usernameB\020\n\016_smtp_passwordB\016\n" +
+      "\014_smtp_serverB\014\n\n_smtp_portB\026\n\024_smtp_ser" +
+      "ver_timeoutB\026\n\024_connection_securityB\032\n\030_" +
+      "send_push_notificationsB\033\n\031_push_notific" +
+      "ation_serverB\035\n\033_push_notification_conte" +
+      "ntsB\033\n\031_push_notification_bufferB\030\n\026_ena" +
+      "ble_email_batchingB\035\n\033_email_batching_bu" +
+      "ffer_sizeB\032\n\030_email_batching_intervalB\'\n" +
+      "%_skip_server_certificate_verificationB#" +
+      "\n!_email_notification_contents_typeB\025\n\023_" +
+      "login_button_colorB\034\n\032_login_button_bord" +
+      "er_colorB\032\n\030_login_button_text_colorB\034\n\032" +
+      "_rate_limiting_memory_sizeB\031\n\027_rate_limi" +
+      "ting_per_hourB\032\n\030_rate_limiting_max_burs" +
+      "t\"\204\003\n\017ConfigRateLimit\022\033\n\006enable\030\001 \001(\010H\000R" +
+      "\006enable\210\001\001\022\034\n\007per_sec\030\002 \001(\005H\001R\006perSec\210\001\001" +
+      "\022 \n\tmax_burst\030\003 \001(\005H\002R\010maxBurst\210\001\001\022/\n\021me" +
+      "mory_store_size\030\004 \001(\005H\003R\017memoryStoreSize" +
+      "\210\001\001\0222\n\023vary_by_remote_addr\030\005 \001(\010H\004R\020vary" +
+      "ByRemoteAddr\210\001\001\022%\n\014vary_by_user\030\006 \001(\010H\005R" +
+      "\nvaryByUser\210\001\001\022$\n\016vary_by_header\030\007 \001(\tR\014" +
+      "varyByHeaderB\t\n\007_enableB\n\n\010_per_secB\014\n\n_" +
+      "max_burstB\024\n\022_memory_store_sizeB\026\n\024_vary" +
+      "_by_remote_addrB\017\n\r_vary_by_user\"\227\001\n\rCon" +
+      "figPrivacy\0221\n\022show_email_address\030\001 \001(\010H\000" +
+      "R\020showEmailAddress\210\001\001\022)\n\016show_full_name\030" +
+      "\002 \001(\010H\001R\014showFullName\210\001\001B\025\n\023_show_email_" +
+      "addressB\021\n\017_show_full_name\"\357\003\n\rConfigSup" +
+      "port\0226\n\025terms_of_service_link\030\001 \001(\tH\000R\022t" +
+      "ermsOfServiceLink\210\001\001\0223\n\023privacy_policy_l" +
+      "ink\030\002 \001(\tH\001R\021privacyPolicyLink\210\001\001\022\"\n\nabo" +
+      "ut_link\030\003 \001(\tH\002R\taboutLink\210\001\001\022 \n\thelp_li" +
+      "nk\030\004 \001(\tH\003R\010helpLink\210\001\001\0226\n\025report_a_prob" +
+      "lem_link\030\005 \001(\tH\004R\022reportAProblemLink\210\001\001\022" +
+      "5\n\024forgot_password_link\030\006 \001(\tH\005R\022forgotP" +
+      "asswordLink\210\001\001\022(\n\rsupport_email\030\007 \001(\tH\006R" +
+      "\014supportEmail\210\001\001B\030\n\026_terms_of_service_li" +
+      "nkB\026\n\024_privacy_policy_linkB\r\n\013_about_lin" +
+      "kB\014\n\n_help_linkB\030\n\026_report_a_problem_lin" +
+      "kB\027\n\025_forgot_password_linkB\020\n\016_support_e" +
+      "mail\"\347\001\n\022ConfigLocalization\0227\n\025default_s" +
+      "erver_locale\030\001 \001(\tH\000R\023defaultServerLocal" +
+      "e\210\001\001\0227\n\025default_client_locale\030\002 \001(\tH\001R\023d" +
+      "efaultClientLocale\210\001\001\022+\n\021available_local" +
+      "es\030\003 \003(\tR\020availableLocalesB\030\n\026_default_s" +
+      "erver_localeB\030\n\026_default_client_locale\"\325" +
+      "\020\n\nConfigLdap\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210" +
+      "\001\001\022$\n\013enable_sync\030\002 \001(\010H\001R\nenableSync\210\001\001" +
+      "\022$\n\013ldap_server\030\003 \001(\tH\002R\nldapServer\210\001\001\022 " +
+      "\n\tldap_port\030\004 \001(\005H\003R\010ldapPort\210\001\001\0224\n\023conn" +
+      "ection_security\030\005 \001(\tH\004R\022connectionSecur" +
+      "ity\210\001\001\022\034\n\007base_dn\030\006 \001(\tH\005R\006baseDn\210\001\001\022(\n\r" +
+      "bind_username\030\007 \001(\tH\006R\014bindUsername\210\001\001\022(" +
+      "\n\rbind_password\030\010 \001(\tH\007R\014bindPassword\210\001\001" +
+      "\0229\n\026maximum_login_attempts\030\t \001(\005H\010R\024maxi" +
+      "mumLoginAttempts\210\001\001\022$\n\013user_filter\030\n \001(\t" +
+      "H\tR\nuserFilter\210\001\001\022&\n\014group_filter\030\013 \001(\tH" +
+      "\nR\013groupFilter\210\001\001\0223\n\023enable_admin_filter" +
+      "\030\014 \001(\010H\013R\021enableAdminFilter\210\001\001\022&\n\014admin_" +
+      "filter\030\r \001(\tH\014R\013adminFilter\210\001\001\022D\n\034group_" +
+      "display_name_attribute\030\016 \001(\tH\rR\031groupDis" +
+      "playNameAttribute\210\001\001\0221\n\022group_id_attribu" +
+      "te\030\017 \001(\tH\016R\020groupIdAttribute\210\001\001\0225\n\024first" +
+      "_name_attribute\030\020 \001(\tH\017R\022firstNameAttrib" +
+      "ute\210\001\001\0223\n\023last_name_attribute\030\021 \001(\tH\020R\021l" +
+      "astNameAttribute\210\001\001\022,\n\017email_attribute\030\022" +
+      " \001(\tH\021R\016emailAttribute\210\001\001\0222\n\022username_at" +
+      "tribute\030\023 \001(\tH\022R\021usernameAttribute\210\001\001\0222\n" +
+      "\022nickname_attribute\030\024 \001(\tH\023R\021nicknameAtt" +
+      "ribute\210\001\001\022&\n\014id_attribute\030\025 \001(\tH\024R\013idAtt" +
+      "ribute\210\001\001\0222\n\022position_attribute\030\026 \001(\tH\025R" +
+      "\021positionAttribute\210\001\001\0221\n\022login_id_attrib" +
+      "ute\030\027 \001(\tH\026R\020loginIdAttribute\210\001\001\0220\n\021pict" +
+      "ure_attribute\030\030 \001(\tH\027R\020pictureAttribute\210" +
+      "\001\001\0227\n\025sync_interval_minutes\030\031 \001(\005H\030R\023syn" +
+      "cIntervalMinutes\210\001\001\022(\n\rquery_timeout\030\032 \001" +
+      "(\005H\031R\014queryTimeout\210\001\001\022\'\n\rmax_page_size\030\033" +
+      " \001(\005H\032R\013maxPageSize\210\001\001\022-\n\020login_field_na" +
+      "me\030\034 \001(\tH\033R\016loginFieldName\210\001\001\0221\n\022login_b" +
+      "utton_color\030\035 \001(\tH\034R\020loginButtonColor\210\001\001" +
+      "\022>\n\031login_button_border_color\030\036 \001(\tH\035R\026l" +
+      "oginButtonBorderColor\210\001\001\022:\n\027login_button" +
+      "_text_color\030\037 \001(\tH\036R\024loginButtonTextColo" +
+      "r\210\001\001B\t\n\007_enableB\016\n\014_enable_syncB\016\n\014_ldap" +
+      "_serverB\014\n\n_ldap_portB\026\n\024_connection_sec" +
+      "urityB\n\n\010_base_dnB\020\n\016_bind_usernameB\020\n\016_" +
+      "bind_passwordB\031\n\027_maximum_login_attempts" +
+      "B\016\n\014_user_filterB\017\n\r_group_filterB\026\n\024_en" +
+      "able_admin_filterB\017\n\r_admin_filterB\037\n\035_g" +
+      "roup_display_name_attributeB\025\n\023_group_id" +
+      "_attributeB\027\n\025_first_name_attributeB\026\n\024_" +
+      "last_name_attributeB\022\n\020_email_attributeB" +
+      "\025\n\023_username_attributeB\025\n\023_nickname_attr" +
+      "ibuteB\017\n\r_id_attributeB\025\n\023_position_attr" +
+      "ibuteB\025\n\023_login_id_attributeB\024\n\022_picture" +
+      "_attributeB\030\n\026_sync_interval_minutesB\020\n\016" +
+      "_query_timeoutB\020\n\016_max_page_sizeB\023\n\021_log" +
+      "in_field_nameB\025\n\023_login_button_colorB\034\n\032" +
+      "_login_button_border_colorB\032\n\030_login_but" +
+      "ton_text_color\"\255\023\n\nConfigSaml\022\033\n\006enable\030" +
+      "\001 \001(\010H\000R\006enable\210\001\001\0226\n\025enable_sync_with_l" +
+      "dap\030\002 \001(\010H\001R\022enableSyncWithLdap\210\001\001\022N\n\"en" +
+      "able_sync_with_ldap_include_auth\030\003 \001(\010H\002" +
+      "R\035enableSyncWithLdapIncludeAuth\210\001\001\022:\n\027ig" +
+      "nore_guests_ldap_sync\030\004 \001(\010H\003R\024ignoreGue" +
+      "stsLdapSync\210\001\001\022\033\n\006verify\030\005 \001(\010H\004R\006verify" +
+      "\210\001\001\022\035\n\007encrypt\030\006 \001(\010H\005R\007encrypt\210\001\001\022&\n\014si" +
+      "gn_request\030\007 \001(\010H\006R\013signRequest\210\001\001\022\034\n\007id" +
+      "p_url\030\010 \001(\tH\007R\006idpUrl\210\001\001\0221\n\022idp_descript",
+      "or_url\030\t \001(\tH\010R\020idpDescriptorUrl\210\001\001\022-\n\020i" +
+      "dp_metadata_url\030\n \001(\tH\tR\016idpMetadataUrl\210" +
+      "\001\001\022C\n\033service_provider_identifier\030\013 \001(\tH" +
+      "\nR\031serviceProviderIdentifier\210\001\001\022H\n\036asser" +
+      "tion_consumer_service_url\030\014 \001(\tH\013R\033asser" +
+      "tionConsumerServiceUrl\210\001\001\0224\n\023signature_a" +
+      "lgorithm\030\r \001(\tH\014R\022signatureAlgorithm\210\001\001\022" +
+      "4\n\023canonical_algorithm\030\016 \001(\tH\rR\022canonica" +
+      "lAlgorithm\210\001\001\022:\n\027scoping_idp_provider_id" +
+      "\030\017 \001(\tH\016R\024scopingIdpProviderId\210\001\001\022-\n\020sco" +
+      "ping_idp_name\030\020 \001(\tH\017R\016scopingIdpName\210\001\001" +
+      "\0225\n\024idp_certificate_file\030\021 \001(\tH\020R\022idpCer" +
+      "tificateFile\210\001\001\022;\n\027public_certificate_fi" +
+      "le\030\022 \001(\tH\021R\025publicCertificateFile\210\001\001\022-\n\020" +
+      "private_key_file\030\023 \001(\tH\022R\016privateKeyFile" +
+      "\210\001\001\022&\n\014id_attribute\030\024 \001(\tH\023R\013idAttribute" +
+      "\210\001\001\0229\n\026enable_admin_attribute\030\025 \001(\010H\024R\024e" +
+      "nableAdminAttribute\210\001\001\022,\n\017admin_attribut" +
+      "e\030\026 \001(\tH\025R\016adminAttribute\210\001\001\0225\n\024first_na" +
+      "me_attribute\030\027 \001(\tH\026R\022firstNameAttribute" +
+      "\210\001\001\0223\n\023last_name_attribute\030\030 \001(\tH\027R\021last" +
+      "NameAttribute\210\001\001\022,\n\017email_attribute\030\031 \001(" +
+      "\tH\030R\016emailAttribute\210\001\001\0222\n\022username_attri" +
+      "bute\030\032 \001(\tH\031R\021usernameAttribute\210\001\001\0222\n\022ni" +
+      "ckname_attribute\030\033 \001(\tH\032R\021nicknameAttrib" +
+      "ute\210\001\001\022.\n\020locale_attribute\030\034 \001(\tH\033R\017loca" +
+      "leAttribute\210\001\001\0222\n\022position_attribute\030\035 \001" +
+      "(\tH\034R\021positionAttribute\210\001\001\022/\n\021login_butt" +
+      "on_text\030\036 \001(\tH\035R\017loginButtonText\210\001\001\0221\n\022l" +
+      "ogin_button_color\030\037 \001(\tH\036R\020loginButtonCo" +
+      "lor\210\001\001\022>\n\031login_button_border_color\030  \001(" +
+      "\tH\037R\026loginButtonBorderColor\210\001\001\022:\n\027login_" +
+      "button_text_color\030! \001(\tH R\024loginButtonTe" +
+      "xtColor\210\001\001B\t\n\007_enableB\030\n\026_enable_sync_wi" +
+      "th_ldapB%\n#_enable_sync_with_ldap_includ" +
+      "e_authB\032\n\030_ignore_guests_ldap_syncB\t\n\007_v" +
+      "erifyB\n\n\010_encryptB\017\n\r_sign_requestB\n\n\010_i" +
+      "dp_urlB\025\n\023_idp_descriptor_urlB\023\n\021_idp_me" +
+      "tadata_urlB\036\n\034_service_provider_identifi" +
+      "erB!\n\037_assertion_consumer_service_urlB\026\n" +
+      "\024_signature_algorithmB\026\n\024_canonical_algo" +
+      "rithmB\032\n\030_scoping_idp_provider_idB\023\n\021_sc" +
+      "oping_idp_nameB\027\n\025_idp_certificate_fileB" +
+      "\032\n\030_public_certificate_fileB\023\n\021_private_" +
+      "key_fileB\017\n\r_id_attributeB\031\n\027_enable_adm" +
+      "in_attributeB\022\n\020_admin_attributeB\027\n\025_fir" +
+      "st_name_attributeB\026\n\024_last_name_attribut" +
+      "eB\022\n\020_email_attributeB\025\n\023_username_attri" +
+      "buteB\025\n\023_nickname_attributeB\023\n\021_locale_a" +
+      "ttributeB\025\n\023_position_attributeB\024\n\022_logi" +
+      "n_button_textB\025\n\023_login_button_colorB\034\n\032" +
+      "_login_button_border_colorB\032\n\030_login_but" +
+      "ton_text_color\"\301\005\n\017ConfigNativeApp\0223\n\026ap" +
+      "p_custom_url_schemes\030\001 \003(\tR\023appCustomUrl" +
+      "Schemes\022/\n\021app_download_link\030\002 \001(\tH\000R\017ap" +
+      "pDownloadLink\210\001\001\022>\n\031android_app_download" +
+      "_link\030\003 \001(\tH\001R\026androidAppDownloadLink\210\001\001" +
+      "\0226\n\025ios_app_download_link\030\004 \001(\tH\002R\022iosAp" +
+      "pDownloadLink\210\001\001\022;\n\027mobile_external_brow" +
+      "ser\030\005 \001(\010H\003R\025mobileExternalBrowser\210\001\001\022=\n" +
+      "\030mobile_enable_biometrics\030\006 \001(\010H\004R\026mobil" +
+      "eEnableBiometrics\210\001\001\022F\n\035mobile_prevent_s" +
+      "creen_capture\030\007 \001(\010H\005R\032mobilePreventScre" +
+      "enCapture\210\001\001\022C\n\033mobile_jailbreak_protect" +
+      "ion\030\010 \001(\010H\006R\031mobileJailbreakProtection\210\001" +
+      "\001B\024\n\022_app_download_linkB\034\n\032_android_app_" +
+      "download_linkB\030\n\026_ios_app_download_linkB" +
+      "\032\n\030_mobile_external_browserB\033\n\031_mobile_e" +
+      "nable_biometricsB \n\036_mobile_prevent_scre" +
+      "en_captureB\036\n\034_mobile_jailbreak_protecti" +
+      "on\"\253\005\n\021ConfigMeilisearch\022#\n\nserver_url\030\001" +
+      " \001(\tH\000R\nserver_url\210\001\001\022\"\n\nmaster_key\030\002 \001(" +
+      "\tH\001R\tmasterKey\210\001\001\022,\n\017enable_indexing\030\003 \001" +
+      "(\010H\002R\016enableIndexing\210\001\001\022.\n\020enable_search" +
+      "ing\030\004 \001(\010H\003R\017enableSearching\210\001\001\0224\n\023enabl" +
+      "e_autocomplete\030\005 \001(\010H\004R\022enableAutocomple" +
+      "te\210\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001" +
+      "\001\022;\n\027request_timeout_seconds\030\007 \001(\005H\006R\025re" +
+      "questTimeoutSeconds\210\001\001\022&\n\014index_prefix\030\010" +
+      " \001(\tH\007R\013indexPrefix\210\001\001\022-\n\020search_cutoff_" +
+      "ms\030\t \001(\005H\010R\016searchCutoffMs\210\001\001\0227\n\025enable_" +
+      "typo_tolerance\030\n \001(\010H\tR\023enableTypoTolera" +
+      "nce\210\001\001B\r\n\013_server_urlB\r\n\013_master_keyB\022\n\020" +
+      "_enable_indexingB\023\n\021_enable_searchingB\026\n" +
+      "\024_enable_autocompleteB\r\n\013_batch_sizeB\032\n\030" +
+      "_request_timeout_secondsB\017\n\r_index_prefi" +
+      "xB\023\n\021_search_cutoff_msB\030\n\026_enable_typo_t" +
+      "olerance\"\272\003\n\013ConfigBleve\022 \n\tindex_dir\030\001 " +
+      "\001(\tH\000R\010indexDir\210\001\001\022,\n\017enable_indexing\030\002 " +
+      "\001(\010H\001R\016enableIndexing\210\001\001\022.\n\020enable_searc" +
+      "hing\030\003 \001(\010H\002R\017enableSearching\210\001\001\0224\n\023enab" +
+      "le_autocomplete\030\004 \001(\010H\003R\022enableAutocompl" +
+      "ete\210\001\001\022M\n!bulk_indexing_time_window_seco" +
+      "nds\030\005 \001(\005H\004R\035bulkIndexingTimeWindowSecon" +
+      "ds\210\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210\001" +
+      "\001B\014\n\n_index_dirB\022\n\020_enable_indexingB\023\n\021_" +
+      "enable_searchingB\026\n\024_enable_autocomplete" +
+      "B$\n\"_bulk_indexing_time_window_secondsB\r" +
+      "\n\013_batch_size\"\354\006\n\023ConfigDataRetention\022;\n" +
+      "\027enable_message_deletion\030\001 \001(\010H\000R\025enable" +
+      "MessageDeletion\210\001\001\0225\n\024enable_file_deleti" +
+      "on\030\002 \001(\010H\001R\022enableFileDeletion\210\001\001\0229\n\026ena" +
+      "ble_boards_deletion\030\003 \001(\010H\002R\024enableBoard" +
+      "sDeletion\210\001\001\022;\n\027message_retention_hours\030" +
+      "\004 \001(\005H\003R\025messageRetentionHours\210\001\001\0225\n\024fil" +
+      "e_retention_hours\030\005 \001(\005H\004R\022fileRetention" +
+      "Hours\210\001\001\0227\n\025boards_retention_days\030\006 \001(\005H" +
+      "\005R\023boardsRetentionDays\210\001\001\022:\n\027deletion_jo" +
+      "b_start_time\030\007 \001(\tH\006R\024deletionJobStartTi" +
+      "me\210\001\001\022\"\n\nbatch_size\030\010 \001(\005H\007R\tbatchSize\210\001" +
+      "\001\022N\n!time_between_batches_milliseconds\030\t" +
+      " \001(\005H\010R\036timeBetweenBatchesMilliseconds\210\001" +
+      "\001\022<\n\030retention_ids_batch_size\030\n \001(\005H\tR\025r" +
+      "etentionIdsBatchSize\210\001\001B\032\n\030_enable_messa" +
+      "ge_deletionB\027\n\025_enable_file_deletionB\031\n\027" +
+      "_enable_boards_deletionB\032\n\030_message_rete" +
+      "ntion_hoursB\027\n\025_file_retention_hoursB\030\n\026" +
+      "_boards_retention_daysB\032\n\030_deletion_job_" +
+      "start_timeB\r\n\013_batch_sizeB$\n\"_time_betwe" +
+      "en_batches_millisecondsB\033\n\031_retention_id" +
+      "s_batch_size\"\264\002\n\020ConfigImageProxy\022\033\n\006ena" +
+      "ble\030\001 \001(\010H\000R\006enable\210\001\001\022-\n\020image_proxy_ty" +
+      "pe\030\002 \001(\tH\001R\016imageProxyType\210\001\001\0228\n\026remote_" +
+      "image_proxy_url\030\003 \001(\tH\002R\023remoteImageProx" +
+      "yUrl\210\001\001\022@\n\032remote_image_proxy_options\030\004 " +
+      "\001(\tH\003R\027remoteImageProxyOptions\210\001\001B\t\n\007_en" +
+      "ableB\023\n\021_image_proxy_typeB\031\n\027_remote_ima" +
+      "ge_proxy_urlB\035\n\033_remote_image_proxy_opti" +
+      "ons\"\373\010\n\006Config\022)\n\004main\030\001 \001(\0132\025.common.v1" +
+      ".ConfigMainR\004main\0225\n\010services\030\002 \001(\0132\031.co" +
+      "mmon.v1.ConfigServicesR\010services\0225\n\010secu" +
+      "rity\030\003 \001(\0132\031.common.v1.ConfigSecurityR\010s" +
+      "ecurity\022,\n\005cache\030\004 \001(\0132\026.common.v1.Cache" +
+      "ConfigR\005cache\0222\n\007metrics\030\005 \001(\0132\030.common." +
+      "v1.ConfigMetricsR\007metrics\022&\n\003sso\030\006 \001(\0132\024" +
+      ".common.v1.ConfigSSOR\003sso\022&\n\003sql\030\007 \001(\0132\024" +
+      ".common.v1.ConfigSqlR\003sql\0225\n\010password\030\010 " +
+      "\001(\0132\031.common.v1.ConfigPasswordR\010password" +
+      "\022)\n\004file\030\t \001(\0132\025.common.v1.ConfigFileR\004f" +
+      "ile\022,\n\005email\030\n \001(\0132\026.common.v1.ConfigEma" +
+      "ilR\005email\0229\n\nrate_limit\030\013 \001(\0132\032.common.v" +
+      "1.ConfigRateLimitR\trateLimit\0222\n\007privacy\030" +
+      "\014 \001(\0132\030.common.v1.ConfigPrivacyR\007privacy" +
+      "\0222\n\007support\030\r \001(\0132\030.common.v1.ConfigSupp" +
+      "ortR\007support\022A\n\014localization\030\016 \001(\0132\035.com" +
+      "mon.v1.ConfigLocalizationR\014localization\022" +
+      ")\n\004ldap\030\017 \001(\0132\025.common.v1.ConfigLdapR\004ld" +
+      "ap\022)\n\004saml\030\020 \001(\0132\025.common.v1.ConfigSamlR" +
+      "\004saml\0229\n\nnative_app\030\021 \001(\0132\032.common.v1.Co" +
+      "nfigNativeAppR\tnativeApp\022>\n\013meilisearch\030" +
+      "\022 \001(\0132\034.common.v1.ConfigMeilisearchR\013mei" +
+      "lisearch\022,\n\005bleve\030\023 \001(\0132\026.common.v1.Conf" +
+      "igBleveR\005bleve\022E\n\016data_retention\030\024 \001(\0132\036" +
+      ".common.v1.ConfigDataRetentionR\rdataRete" +
+      "ntion\022<\n\013image_proxy\030\025 \001(\0132\033.common.v1.C" +
+      "onfigImageProxyR\nimageProxy\022,\n\005oauth\030\026 \001" +
+      "(\0132\026.common.v1.ConfigOAuthR\005oauth\"\022\n\020Con" +
+      "figGetRequest\"u\n\021ConfigGetResponse\022\'\n\004da" +
+      "ta\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005e" +
+      "rror\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005error" +
+      "B\n\n\010response\"@\n\023ConfigUpdateRequest\022)\n\006c" +
+      "onfig\030\001 \001(\0132\021.common.v1.ConfigR\006config\"x" +
+      "\n\024ConfigUpdateResponse\022\'\n\004data\030\001 \001(\0132\021.c" +
+      "ommon.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132\023" +
+      ".shared.v1.AppErrorH\000R\005errorB\n\n\010response" +
+      "\"z\n\026ConfigListenerResponse\022\'\n\004data\030\001 \001(\013" +
+      "2\021.common.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001" +
+      "(\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n\010resp" +
+      "onse\"4\n\025ConfigListenerRequest\022\033\n\tclient_" +
+      "id\030\001 \001(\tR\010clientIdBq\n\032org.megacommerce.c" +
+      "ommon.v1B\013ConfigProtoZCgithub.com/ahmad-" +
+      "khatib0-org/megacommerce-proto/gen/go/co" +
+      "mmon/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -55847,13 +55526,7 @@ java.lang.String defaultValue) {
     internal_static_common_v1_ConfigSecurity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigSecurity_descriptor,
-        new java.lang.String[] { "RestrictedUsernames", "MaximumLoginAttempts", "EnableInsecureOutgoingConnections", "EnableMultifactorAuthentication", "EnforceMultifactorAuthentication", "EnableOauthServiceProvider", "EnableOutgoingOauthConnections", "TerminateSessionsOnPasswordChange", "SessionLengthWebInHours", "SessionLengthMobileInHours", "SessionLengthSsoInHours", "AllowCorsFrom", "CorsExposedHeaders", "CorsAllowCredentials", "CorsDebug", "AllowCookiesForSubdomains", "SessionCacheInMinutes", "EmailConfirmationUrl", "TokenConfirmationExpiryInHours", "TokenPasswordResetExpiryInHours", "PasswordResetUrl", });
-    internal_static_common_v1_ConfigSecurity_RestrictedUsernamesEntry_descriptor =
-      internal_static_common_v1_ConfigSecurity_descriptor.getNestedTypes().get(0);
-    internal_static_common_v1_ConfigSecurity_RestrictedUsernamesEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_common_v1_ConfigSecurity_RestrictedUsernamesEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
+        new java.lang.String[] { "AccesssTokenExpiryWebInHours", "AccesssTokenExpiryMobileInHours", "AccesssTokenExpirySsoInHours", "AccessTokenCacheInMinutes", "MaximumLoginAttempts", "TerminateSessionsOnPasswordChange", "EmailConfirmationUrl", "PasswordResetUrl", "TokenConfirmationExpiryInHours", "TokenPasswordResetExpiryInHours", "EnableInsecureOutgoingConnections", "EnableMultifactorAuthentication", "EnforceMultifactorAuthentication", "EnableOauthServiceProvider", "EnableOutgoingOauthConnections", "AllowCorsFrom", "CorsExposedHeaders", "CorsAllowCredentials", "CorsDebug", "AllowCookiesForSubdomains", });
     internal_static_common_v1_CacheConfig_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_common_v1_CacheConfig_fieldAccessorTable = new

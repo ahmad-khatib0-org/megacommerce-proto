@@ -112,51 +112,46 @@ pub struct ConfigOAuth {
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfigSecurity {
-    #[prost(map = "string, string", tag = "1")]
-    pub restricted_usernames: ::std::collections::HashMap<
-        ::prost::alloc::string::String,
-        ::prost::alloc::string::String,
-    >,
+    #[prost(int32, optional, tag = "1")]
+    pub accesss_token_expiry_web_in_hours: ::core::option::Option<i32>,
     #[prost(int32, optional, tag = "2")]
+    pub accesss_token_expiry_mobile_in_hours: ::core::option::Option<i32>,
+    #[prost(int32, optional, tag = "3")]
+    pub accesss_token_expiry_sso_in_hours: ::core::option::Option<i32>,
+    #[prost(int32, optional, tag = "4")]
+    pub access_token_cache_in_minutes: ::core::option::Option<i32>,
+    #[prost(int32, optional, tag = "5")]
     pub maximum_login_attempts: ::core::option::Option<i32>,
-    #[prost(bool, optional, tag = "3")]
-    pub enable_insecure_outgoing_connections: ::core::option::Option<bool>,
-    #[prost(bool, optional, tag = "4")]
-    pub enable_multifactor_authentication: ::core::option::Option<bool>,
-    #[prost(bool, optional, tag = "5")]
-    pub enforce_multifactor_authentication: ::core::option::Option<bool>,
     #[prost(bool, optional, tag = "6")]
-    pub enable_oauth_service_provider: ::core::option::Option<bool>,
-    #[prost(bool, optional, tag = "7")]
-    pub enable_outgoing_oauth_connections: ::core::option::Option<bool>,
-    #[prost(bool, optional, tag = "8")]
     pub terminate_sessions_on_password_change: ::core::option::Option<bool>,
-    #[prost(int32, optional, tag = "9")]
-    pub session_length_web_in_hours: ::core::option::Option<i32>,
-    #[prost(int32, optional, tag = "10")]
-    pub session_length_mobile_in_hours: ::core::option::Option<i32>,
-    #[prost(int32, optional, tag = "11")]
-    pub session_length_sso_in_hours: ::core::option::Option<i32>,
-    #[prost(string, optional, tag = "12")]
-    pub allow_cors_from: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(string, optional, tag = "13")]
-    pub cors_exposed_headers: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(bool, optional, tag = "14")]
-    pub cors_allow_credentials: ::core::option::Option<bool>,
-    #[prost(bool, optional, tag = "15")]
-    pub cors_debug: ::core::option::Option<bool>,
-    #[prost(bool, optional, tag = "16")]
-    pub allow_cookies_for_subdomains: ::core::option::Option<bool>,
-    #[prost(int32, optional, tag = "17")]
-    pub session_cache_in_minutes: ::core::option::Option<i32>,
-    #[prost(string, optional, tag = "18")]
+    #[prost(string, optional, tag = "7")]
     pub email_confirmation_url: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(uint32, optional, tag = "19")]
-    pub token_confirmation_expiry_in_hours: ::core::option::Option<u32>,
-    #[prost(uint32, optional, tag = "20")]
-    pub token_password_reset_expiry_in_hours: ::core::option::Option<u32>,
-    #[prost(string, optional, tag = "21")]
+    #[prost(string, optional, tag = "8")]
     pub password_reset_url: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(uint32, optional, tag = "9")]
+    pub token_confirmation_expiry_in_hours: ::core::option::Option<u32>,
+    #[prost(uint32, optional, tag = "10")]
+    pub token_password_reset_expiry_in_hours: ::core::option::Option<u32>,
+    #[prost(bool, optional, tag = "11")]
+    pub enable_insecure_outgoing_connections: ::core::option::Option<bool>,
+    #[prost(bool, optional, tag = "12")]
+    pub enable_multifactor_authentication: ::core::option::Option<bool>,
+    #[prost(bool, optional, tag = "13")]
+    pub enforce_multifactor_authentication: ::core::option::Option<bool>,
+    #[prost(bool, optional, tag = "14")]
+    pub enable_oauth_service_provider: ::core::option::Option<bool>,
+    #[prost(bool, optional, tag = "15")]
+    pub enable_outgoing_oauth_connections: ::core::option::Option<bool>,
+    #[prost(string, optional, tag = "16")]
+    pub allow_cors_from: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "17")]
+    pub cors_exposed_headers: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(bool, optional, tag = "18")]
+    pub cors_allow_credentials: ::core::option::Option<bool>,
+    #[prost(bool, optional, tag = "19")]
+    pub cors_debug: ::core::option::Option<bool>,
+    #[prost(bool, optional, tag = "20")]
+    pub allow_cookies_for_subdomains: ::core::option::Option<bool>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

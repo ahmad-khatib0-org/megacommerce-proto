@@ -64,32 +64,26 @@ export interface ConfigOAuth {
 }
 
 export interface ConfigSecurity {
-  restrictedUsernames: { [key: string]: string };
+  accesssTokenExpiryWebInHours?: number | undefined;
+  accesssTokenExpiryMobileInHours?: number | undefined;
+  accesssTokenExpirySsoInHours?: number | undefined;
+  accessTokenCacheInMinutes?: number | undefined;
   maximumLoginAttempts?: number | undefined;
+  terminateSessionsOnPasswordChange?: boolean | undefined;
+  emailConfirmationUrl?: string | undefined;
+  passwordResetUrl?: string | undefined;
+  tokenConfirmationExpiryInHours?: number | undefined;
+  tokenPasswordResetExpiryInHours?: number | undefined;
   enableInsecureOutgoingConnections?: boolean | undefined;
   enableMultifactorAuthentication?: boolean | undefined;
   enforceMultifactorAuthentication?: boolean | undefined;
   enableOauthServiceProvider?: boolean | undefined;
   enableOutgoingOauthConnections?: boolean | undefined;
-  terminateSessionsOnPasswordChange?: boolean | undefined;
-  sessionLengthWebInHours?: number | undefined;
-  sessionLengthMobileInHours?: number | undefined;
-  sessionLengthSsoInHours?: number | undefined;
   allowCorsFrom?: string | undefined;
   corsExposedHeaders?: string | undefined;
   corsAllowCredentials?: boolean | undefined;
   corsDebug?: boolean | undefined;
   allowCookiesForSubdomains?: boolean | undefined;
-  sessionCacheInMinutes?: number | undefined;
-  emailConfirmationUrl?: string | undefined;
-  tokenConfirmationExpiryInHours?: number | undefined;
-  tokenPasswordResetExpiryInHours?: number | undefined;
-  passwordResetUrl?: string | undefined;
-}
-
-export interface ConfigSecurity_RestrictedUsernamesEntry {
-  key: string;
-  value: string;
 }
 
 export interface CacheConfig {
@@ -1357,94 +1351,90 @@ export const ConfigOAuth: MessageFns<ConfigOAuth> = {
 
 function createBaseConfigSecurity(): ConfigSecurity {
   return {
-    restrictedUsernames: {},
+    accesssTokenExpiryWebInHours: undefined,
+    accesssTokenExpiryMobileInHours: undefined,
+    accesssTokenExpirySsoInHours: undefined,
+    accessTokenCacheInMinutes: undefined,
     maximumLoginAttempts: undefined,
+    terminateSessionsOnPasswordChange: undefined,
+    emailConfirmationUrl: undefined,
+    passwordResetUrl: undefined,
+    tokenConfirmationExpiryInHours: undefined,
+    tokenPasswordResetExpiryInHours: undefined,
     enableInsecureOutgoingConnections: undefined,
     enableMultifactorAuthentication: undefined,
     enforceMultifactorAuthentication: undefined,
     enableOauthServiceProvider: undefined,
     enableOutgoingOauthConnections: undefined,
-    terminateSessionsOnPasswordChange: undefined,
-    sessionLengthWebInHours: undefined,
-    sessionLengthMobileInHours: undefined,
-    sessionLengthSsoInHours: undefined,
     allowCorsFrom: undefined,
     corsExposedHeaders: undefined,
     corsAllowCredentials: undefined,
     corsDebug: undefined,
     allowCookiesForSubdomains: undefined,
-    sessionCacheInMinutes: undefined,
-    emailConfirmationUrl: undefined,
-    tokenConfirmationExpiryInHours: undefined,
-    tokenPasswordResetExpiryInHours: undefined,
-    passwordResetUrl: undefined,
   };
 }
 
 export const ConfigSecurity: MessageFns<ConfigSecurity> = {
   encode(message: ConfigSecurity, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    Object.entries(message.restrictedUsernames).forEach(([key, value]) => {
-      ConfigSecurity_RestrictedUsernamesEntry.encode({ key: key as any, value }, writer.uint32(10).fork()).join();
-    });
+    if (message.accesssTokenExpiryWebInHours !== undefined) {
+      writer.uint32(8).int32(message.accesssTokenExpiryWebInHours);
+    }
+    if (message.accesssTokenExpiryMobileInHours !== undefined) {
+      writer.uint32(16).int32(message.accesssTokenExpiryMobileInHours);
+    }
+    if (message.accesssTokenExpirySsoInHours !== undefined) {
+      writer.uint32(24).int32(message.accesssTokenExpirySsoInHours);
+    }
+    if (message.accessTokenCacheInMinutes !== undefined) {
+      writer.uint32(32).int32(message.accessTokenCacheInMinutes);
+    }
     if (message.maximumLoginAttempts !== undefined) {
-      writer.uint32(16).int32(message.maximumLoginAttempts);
-    }
-    if (message.enableInsecureOutgoingConnections !== undefined) {
-      writer.uint32(24).bool(message.enableInsecureOutgoingConnections);
-    }
-    if (message.enableMultifactorAuthentication !== undefined) {
-      writer.uint32(32).bool(message.enableMultifactorAuthentication);
-    }
-    if (message.enforceMultifactorAuthentication !== undefined) {
-      writer.uint32(40).bool(message.enforceMultifactorAuthentication);
-    }
-    if (message.enableOauthServiceProvider !== undefined) {
-      writer.uint32(48).bool(message.enableOauthServiceProvider);
-    }
-    if (message.enableOutgoingOauthConnections !== undefined) {
-      writer.uint32(56).bool(message.enableOutgoingOauthConnections);
+      writer.uint32(40).int32(message.maximumLoginAttempts);
     }
     if (message.terminateSessionsOnPasswordChange !== undefined) {
-      writer.uint32(64).bool(message.terminateSessionsOnPasswordChange);
-    }
-    if (message.sessionLengthWebInHours !== undefined) {
-      writer.uint32(72).int32(message.sessionLengthWebInHours);
-    }
-    if (message.sessionLengthMobileInHours !== undefined) {
-      writer.uint32(80).int32(message.sessionLengthMobileInHours);
-    }
-    if (message.sessionLengthSsoInHours !== undefined) {
-      writer.uint32(88).int32(message.sessionLengthSsoInHours);
-    }
-    if (message.allowCorsFrom !== undefined) {
-      writer.uint32(98).string(message.allowCorsFrom);
-    }
-    if (message.corsExposedHeaders !== undefined) {
-      writer.uint32(106).string(message.corsExposedHeaders);
-    }
-    if (message.corsAllowCredentials !== undefined) {
-      writer.uint32(112).bool(message.corsAllowCredentials);
-    }
-    if (message.corsDebug !== undefined) {
-      writer.uint32(120).bool(message.corsDebug);
-    }
-    if (message.allowCookiesForSubdomains !== undefined) {
-      writer.uint32(128).bool(message.allowCookiesForSubdomains);
-    }
-    if (message.sessionCacheInMinutes !== undefined) {
-      writer.uint32(136).int32(message.sessionCacheInMinutes);
+      writer.uint32(48).bool(message.terminateSessionsOnPasswordChange);
     }
     if (message.emailConfirmationUrl !== undefined) {
-      writer.uint32(146).string(message.emailConfirmationUrl);
-    }
-    if (message.tokenConfirmationExpiryInHours !== undefined) {
-      writer.uint32(152).uint32(message.tokenConfirmationExpiryInHours);
-    }
-    if (message.tokenPasswordResetExpiryInHours !== undefined) {
-      writer.uint32(160).uint32(message.tokenPasswordResetExpiryInHours);
+      writer.uint32(58).string(message.emailConfirmationUrl);
     }
     if (message.passwordResetUrl !== undefined) {
-      writer.uint32(170).string(message.passwordResetUrl);
+      writer.uint32(66).string(message.passwordResetUrl);
+    }
+    if (message.tokenConfirmationExpiryInHours !== undefined) {
+      writer.uint32(72).uint32(message.tokenConfirmationExpiryInHours);
+    }
+    if (message.tokenPasswordResetExpiryInHours !== undefined) {
+      writer.uint32(80).uint32(message.tokenPasswordResetExpiryInHours);
+    }
+    if (message.enableInsecureOutgoingConnections !== undefined) {
+      writer.uint32(88).bool(message.enableInsecureOutgoingConnections);
+    }
+    if (message.enableMultifactorAuthentication !== undefined) {
+      writer.uint32(96).bool(message.enableMultifactorAuthentication);
+    }
+    if (message.enforceMultifactorAuthentication !== undefined) {
+      writer.uint32(104).bool(message.enforceMultifactorAuthentication);
+    }
+    if (message.enableOauthServiceProvider !== undefined) {
+      writer.uint32(112).bool(message.enableOauthServiceProvider);
+    }
+    if (message.enableOutgoingOauthConnections !== undefined) {
+      writer.uint32(120).bool(message.enableOutgoingOauthConnections);
+    }
+    if (message.allowCorsFrom !== undefined) {
+      writer.uint32(130).string(message.allowCorsFrom);
+    }
+    if (message.corsExposedHeaders !== undefined) {
+      writer.uint32(138).string(message.corsExposedHeaders);
+    }
+    if (message.corsAllowCredentials !== undefined) {
+      writer.uint32(144).bool(message.corsAllowCredentials);
+    }
+    if (message.corsDebug !== undefined) {
+      writer.uint32(152).bool(message.corsDebug);
+    }
+    if (message.allowCookiesForSubdomains !== undefined) {
+      writer.uint32(160).bool(message.allowCookiesForSubdomains);
     }
     return writer;
   },
@@ -1457,14 +1447,11 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
       const tag = reader.uint32();
       switch (tag >>> 3) {
         case 1: {
-          if (tag !== 10) {
+          if (tag !== 8) {
             break;
           }
 
-          const entry1 = ConfigSecurity_RestrictedUsernamesEntry.decode(reader, reader.uint32());
-          if (entry1.value !== undefined) {
-            message.restrictedUsernames[entry1.key] = entry1.value;
-          }
+          message.accesssTokenExpiryWebInHours = reader.int32();
           continue;
         }
         case 2: {
@@ -1472,7 +1459,7 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.maximumLoginAttempts = reader.int32();
+          message.accesssTokenExpiryMobileInHours = reader.int32();
           continue;
         }
         case 3: {
@@ -1480,7 +1467,7 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.enableInsecureOutgoingConnections = reader.bool();
+          message.accesssTokenExpirySsoInHours = reader.int32();
           continue;
         }
         case 4: {
@@ -1488,7 +1475,7 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.enableMultifactorAuthentication = reader.bool();
+          message.accessTokenCacheInMinutes = reader.int32();
           continue;
         }
         case 5: {
@@ -1496,7 +1483,7 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.enforceMultifactorAuthentication = reader.bool();
+          message.maximumLoginAttempts = reader.int32();
           continue;
         }
         case 6: {
@@ -1504,23 +1491,23 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.enableOauthServiceProvider = reader.bool();
+          message.terminateSessionsOnPasswordChange = reader.bool();
           continue;
         }
         case 7: {
-          if (tag !== 56) {
+          if (tag !== 58) {
             break;
           }
 
-          message.enableOutgoingOauthConnections = reader.bool();
+          message.emailConfirmationUrl = reader.string();
           continue;
         }
         case 8: {
-          if (tag !== 64) {
+          if (tag !== 66) {
             break;
           }
 
-          message.terminateSessionsOnPasswordChange = reader.bool();
+          message.passwordResetUrl = reader.string();
           continue;
         }
         case 9: {
@@ -1528,7 +1515,7 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.sessionLengthWebInHours = reader.int32();
+          message.tokenConfirmationExpiryInHours = reader.uint32();
           continue;
         }
         case 10: {
@@ -1536,7 +1523,7 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.sessionLengthMobileInHours = reader.int32();
+          message.tokenPasswordResetExpiryInHours = reader.uint32();
           continue;
         }
         case 11: {
@@ -1544,23 +1531,23 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.sessionLengthSsoInHours = reader.int32();
+          message.enableInsecureOutgoingConnections = reader.bool();
           continue;
         }
         case 12: {
-          if (tag !== 98) {
+          if (tag !== 96) {
             break;
           }
 
-          message.allowCorsFrom = reader.string();
+          message.enableMultifactorAuthentication = reader.bool();
           continue;
         }
         case 13: {
-          if (tag !== 106) {
+          if (tag !== 104) {
             break;
           }
 
-          message.corsExposedHeaders = reader.string();
+          message.enforceMultifactorAuthentication = reader.bool();
           continue;
         }
         case 14: {
@@ -1568,7 +1555,7 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.corsAllowCredentials = reader.bool();
+          message.enableOauthServiceProvider = reader.bool();
           continue;
         }
         case 15: {
@@ -1576,31 +1563,31 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.corsDebug = reader.bool();
+          message.enableOutgoingOauthConnections = reader.bool();
           continue;
         }
         case 16: {
-          if (tag !== 128) {
+          if (tag !== 130) {
             break;
           }
 
-          message.allowCookiesForSubdomains = reader.bool();
+          message.allowCorsFrom = reader.string();
           continue;
         }
         case 17: {
-          if (tag !== 136) {
+          if (tag !== 138) {
             break;
           }
 
-          message.sessionCacheInMinutes = reader.int32();
+          message.corsExposedHeaders = reader.string();
           continue;
         }
         case 18: {
-          if (tag !== 146) {
+          if (tag !== 144) {
             break;
           }
 
-          message.emailConfirmationUrl = reader.string();
+          message.corsAllowCredentials = reader.bool();
           continue;
         }
         case 19: {
@@ -1608,7 +1595,7 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.tokenConfirmationExpiryInHours = reader.uint32();
+          message.corsDebug = reader.bool();
           continue;
         }
         case 20: {
@@ -1616,15 +1603,7 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.tokenPasswordResetExpiryInHours = reader.uint32();
-          continue;
-        }
-        case 21: {
-          if (tag !== 170) {
-            break;
-          }
-
-          message.passwordResetUrl = reader.string();
+          message.allowCookiesForSubdomains = reader.bool();
           continue;
         }
       }
@@ -1638,14 +1617,33 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
 
   fromJSON(object: any): ConfigSecurity {
     return {
-      restrictedUsernames: isObject(object.restrictedUsernames)
-        ? Object.entries(object.restrictedUsernames).reduce<{ [key: string]: string }>((acc, [key, value]) => {
-          acc[key] = String(value);
-          return acc;
-        }, {})
-        : {},
+      accesssTokenExpiryWebInHours: isSet(object.accesssTokenExpiryWebInHours)
+        ? globalThis.Number(object.accesssTokenExpiryWebInHours)
+        : undefined,
+      accesssTokenExpiryMobileInHours: isSet(object.accesssTokenExpiryMobileInHours)
+        ? globalThis.Number(object.accesssTokenExpiryMobileInHours)
+        : undefined,
+      accesssTokenExpirySsoInHours: isSet(object.accesssTokenExpirySsoInHours)
+        ? globalThis.Number(object.accesssTokenExpirySsoInHours)
+        : undefined,
+      accessTokenCacheInMinutes: isSet(object.accessTokenCacheInMinutes)
+        ? globalThis.Number(object.accessTokenCacheInMinutes)
+        : undefined,
       maximumLoginAttempts: isSet(object.maximumLoginAttempts)
         ? globalThis.Number(object.maximumLoginAttempts)
+        : undefined,
+      terminateSessionsOnPasswordChange: isSet(object.terminateSessionsOnPasswordChange)
+        ? globalThis.Boolean(object.terminateSessionsOnPasswordChange)
+        : undefined,
+      emailConfirmationUrl: isSet(object.emailConfirmationUrl)
+        ? globalThis.String(object.emailConfirmationUrl)
+        : undefined,
+      passwordResetUrl: isSet(object.passwordResetUrl) ? globalThis.String(object.passwordResetUrl) : undefined,
+      tokenConfirmationExpiryInHours: isSet(object.tokenConfirmationExpiryInHours)
+        ? globalThis.Number(object.tokenConfirmationExpiryInHours)
+        : undefined,
+      tokenPasswordResetExpiryInHours: isSet(object.tokenPasswordResetExpiryInHours)
+        ? globalThis.Number(object.tokenPasswordResetExpiryInHours)
         : undefined,
       enableInsecureOutgoingConnections: isSet(object.enableInsecureOutgoingConnections)
         ? globalThis.Boolean(object.enableInsecureOutgoingConnections)
@@ -1662,18 +1660,6 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
       enableOutgoingOauthConnections: isSet(object.enableOutgoingOauthConnections)
         ? globalThis.Boolean(object.enableOutgoingOauthConnections)
         : undefined,
-      terminateSessionsOnPasswordChange: isSet(object.terminateSessionsOnPasswordChange)
-        ? globalThis.Boolean(object.terminateSessionsOnPasswordChange)
-        : undefined,
-      sessionLengthWebInHours: isSet(object.sessionLengthWebInHours)
-        ? globalThis.Number(object.sessionLengthWebInHours)
-        : undefined,
-      sessionLengthMobileInHours: isSet(object.sessionLengthMobileInHours)
-        ? globalThis.Number(object.sessionLengthMobileInHours)
-        : undefined,
-      sessionLengthSsoInHours: isSet(object.sessionLengthSsoInHours)
-        ? globalThis.Number(object.sessionLengthSsoInHours)
-        : undefined,
       allowCorsFrom: isSet(object.allowCorsFrom) ? globalThis.String(object.allowCorsFrom) : undefined,
       corsExposedHeaders: isSet(object.corsExposedHeaders) ? globalThis.String(object.corsExposedHeaders) : undefined,
       corsAllowCredentials: isSet(object.corsAllowCredentials)
@@ -1683,35 +1669,40 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
       allowCookiesForSubdomains: isSet(object.allowCookiesForSubdomains)
         ? globalThis.Boolean(object.allowCookiesForSubdomains)
         : undefined,
-      sessionCacheInMinutes: isSet(object.sessionCacheInMinutes)
-        ? globalThis.Number(object.sessionCacheInMinutes)
-        : undefined,
-      emailConfirmationUrl: isSet(object.emailConfirmationUrl)
-        ? globalThis.String(object.emailConfirmationUrl)
-        : undefined,
-      tokenConfirmationExpiryInHours: isSet(object.tokenConfirmationExpiryInHours)
-        ? globalThis.Number(object.tokenConfirmationExpiryInHours)
-        : undefined,
-      tokenPasswordResetExpiryInHours: isSet(object.tokenPasswordResetExpiryInHours)
-        ? globalThis.Number(object.tokenPasswordResetExpiryInHours)
-        : undefined,
-      passwordResetUrl: isSet(object.passwordResetUrl) ? globalThis.String(object.passwordResetUrl) : undefined,
     };
   },
 
   toJSON(message: ConfigSecurity): unknown {
     const obj: any = {};
-    if (message.restrictedUsernames) {
-      const entries = Object.entries(message.restrictedUsernames);
-      if (entries.length > 0) {
-        obj.restrictedUsernames = {};
-        entries.forEach(([k, v]) => {
-          obj.restrictedUsernames[k] = v;
-        });
-      }
+    if (message.accesssTokenExpiryWebInHours !== undefined) {
+      obj.accesssTokenExpiryWebInHours = Math.round(message.accesssTokenExpiryWebInHours);
+    }
+    if (message.accesssTokenExpiryMobileInHours !== undefined) {
+      obj.accesssTokenExpiryMobileInHours = Math.round(message.accesssTokenExpiryMobileInHours);
+    }
+    if (message.accesssTokenExpirySsoInHours !== undefined) {
+      obj.accesssTokenExpirySsoInHours = Math.round(message.accesssTokenExpirySsoInHours);
+    }
+    if (message.accessTokenCacheInMinutes !== undefined) {
+      obj.accessTokenCacheInMinutes = Math.round(message.accessTokenCacheInMinutes);
     }
     if (message.maximumLoginAttempts !== undefined) {
       obj.maximumLoginAttempts = Math.round(message.maximumLoginAttempts);
+    }
+    if (message.terminateSessionsOnPasswordChange !== undefined) {
+      obj.terminateSessionsOnPasswordChange = message.terminateSessionsOnPasswordChange;
+    }
+    if (message.emailConfirmationUrl !== undefined) {
+      obj.emailConfirmationUrl = message.emailConfirmationUrl;
+    }
+    if (message.passwordResetUrl !== undefined) {
+      obj.passwordResetUrl = message.passwordResetUrl;
+    }
+    if (message.tokenConfirmationExpiryInHours !== undefined) {
+      obj.tokenConfirmationExpiryInHours = Math.round(message.tokenConfirmationExpiryInHours);
+    }
+    if (message.tokenPasswordResetExpiryInHours !== undefined) {
+      obj.tokenPasswordResetExpiryInHours = Math.round(message.tokenPasswordResetExpiryInHours);
     }
     if (message.enableInsecureOutgoingConnections !== undefined) {
       obj.enableInsecureOutgoingConnections = message.enableInsecureOutgoingConnections;
@@ -1728,18 +1719,6 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
     if (message.enableOutgoingOauthConnections !== undefined) {
       obj.enableOutgoingOauthConnections = message.enableOutgoingOauthConnections;
     }
-    if (message.terminateSessionsOnPasswordChange !== undefined) {
-      obj.terminateSessionsOnPasswordChange = message.terminateSessionsOnPasswordChange;
-    }
-    if (message.sessionLengthWebInHours !== undefined) {
-      obj.sessionLengthWebInHours = Math.round(message.sessionLengthWebInHours);
-    }
-    if (message.sessionLengthMobileInHours !== undefined) {
-      obj.sessionLengthMobileInHours = Math.round(message.sessionLengthMobileInHours);
-    }
-    if (message.sessionLengthSsoInHours !== undefined) {
-      obj.sessionLengthSsoInHours = Math.round(message.sessionLengthSsoInHours);
-    }
     if (message.allowCorsFrom !== undefined) {
       obj.allowCorsFrom = message.allowCorsFrom;
     }
@@ -1755,21 +1734,6 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
     if (message.allowCookiesForSubdomains !== undefined) {
       obj.allowCookiesForSubdomains = message.allowCookiesForSubdomains;
     }
-    if (message.sessionCacheInMinutes !== undefined) {
-      obj.sessionCacheInMinutes = Math.round(message.sessionCacheInMinutes);
-    }
-    if (message.emailConfirmationUrl !== undefined) {
-      obj.emailConfirmationUrl = message.emailConfirmationUrl;
-    }
-    if (message.tokenConfirmationExpiryInHours !== undefined) {
-      obj.tokenConfirmationExpiryInHours = Math.round(message.tokenConfirmationExpiryInHours);
-    }
-    if (message.tokenPasswordResetExpiryInHours !== undefined) {
-      obj.tokenPasswordResetExpiryInHours = Math.round(message.tokenPasswordResetExpiryInHours);
-    }
-    if (message.passwordResetUrl !== undefined) {
-      obj.passwordResetUrl = message.passwordResetUrl;
-    }
     return obj;
   },
 
@@ -1778,115 +1742,26 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
   },
   fromPartial<I extends Exact<DeepPartial<ConfigSecurity>, I>>(object: I): ConfigSecurity {
     const message = createBaseConfigSecurity();
-    message.restrictedUsernames = Object.entries(object.restrictedUsernames ?? {}).reduce<{ [key: string]: string }>(
-      (acc, [key, value]) => {
-        if (value !== undefined) {
-          acc[key] = globalThis.String(value);
-        }
-        return acc;
-      },
-      {},
-    );
+    message.accesssTokenExpiryWebInHours = object.accesssTokenExpiryWebInHours ?? undefined;
+    message.accesssTokenExpiryMobileInHours = object.accesssTokenExpiryMobileInHours ?? undefined;
+    message.accesssTokenExpirySsoInHours = object.accesssTokenExpirySsoInHours ?? undefined;
+    message.accessTokenCacheInMinutes = object.accessTokenCacheInMinutes ?? undefined;
     message.maximumLoginAttempts = object.maximumLoginAttempts ?? undefined;
+    message.terminateSessionsOnPasswordChange = object.terminateSessionsOnPasswordChange ?? undefined;
+    message.emailConfirmationUrl = object.emailConfirmationUrl ?? undefined;
+    message.passwordResetUrl = object.passwordResetUrl ?? undefined;
+    message.tokenConfirmationExpiryInHours = object.tokenConfirmationExpiryInHours ?? undefined;
+    message.tokenPasswordResetExpiryInHours = object.tokenPasswordResetExpiryInHours ?? undefined;
     message.enableInsecureOutgoingConnections = object.enableInsecureOutgoingConnections ?? undefined;
     message.enableMultifactorAuthentication = object.enableMultifactorAuthentication ?? undefined;
     message.enforceMultifactorAuthentication = object.enforceMultifactorAuthentication ?? undefined;
     message.enableOauthServiceProvider = object.enableOauthServiceProvider ?? undefined;
     message.enableOutgoingOauthConnections = object.enableOutgoingOauthConnections ?? undefined;
-    message.terminateSessionsOnPasswordChange = object.terminateSessionsOnPasswordChange ?? undefined;
-    message.sessionLengthWebInHours = object.sessionLengthWebInHours ?? undefined;
-    message.sessionLengthMobileInHours = object.sessionLengthMobileInHours ?? undefined;
-    message.sessionLengthSsoInHours = object.sessionLengthSsoInHours ?? undefined;
     message.allowCorsFrom = object.allowCorsFrom ?? undefined;
     message.corsExposedHeaders = object.corsExposedHeaders ?? undefined;
     message.corsAllowCredentials = object.corsAllowCredentials ?? undefined;
     message.corsDebug = object.corsDebug ?? undefined;
     message.allowCookiesForSubdomains = object.allowCookiesForSubdomains ?? undefined;
-    message.sessionCacheInMinutes = object.sessionCacheInMinutes ?? undefined;
-    message.emailConfirmationUrl = object.emailConfirmationUrl ?? undefined;
-    message.tokenConfirmationExpiryInHours = object.tokenConfirmationExpiryInHours ?? undefined;
-    message.tokenPasswordResetExpiryInHours = object.tokenPasswordResetExpiryInHours ?? undefined;
-    message.passwordResetUrl = object.passwordResetUrl ?? undefined;
-    return message;
-  },
-};
-
-function createBaseConfigSecurity_RestrictedUsernamesEntry(): ConfigSecurity_RestrictedUsernamesEntry {
-  return { key: "", value: "" };
-}
-
-export const ConfigSecurity_RestrictedUsernamesEntry: MessageFns<ConfigSecurity_RestrictedUsernamesEntry> = {
-  encode(message: ConfigSecurity_RestrictedUsernamesEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.key !== "") {
-      writer.uint32(10).string(message.key);
-    }
-    if (message.value !== "") {
-      writer.uint32(18).string(message.value);
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): ConfigSecurity_RestrictedUsernamesEntry {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseConfigSecurity_RestrictedUsernamesEntry();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.key = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.value = reader.string();
-          continue;
-        }
-      }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
-      }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
-
-  fromJSON(object: any): ConfigSecurity_RestrictedUsernamesEntry {
-    return {
-      key: isSet(object.key) ? globalThis.String(object.key) : "",
-      value: isSet(object.value) ? globalThis.String(object.value) : "",
-    };
-  },
-
-  toJSON(message: ConfigSecurity_RestrictedUsernamesEntry): unknown {
-    const obj: any = {};
-    if (message.key !== "") {
-      obj.key = message.key;
-    }
-    if (message.value !== "") {
-      obj.value = message.value;
-    }
-    return obj;
-  },
-
-  create<I extends Exact<DeepPartial<ConfigSecurity_RestrictedUsernamesEntry>, I>>(
-    base?: I,
-  ): ConfigSecurity_RestrictedUsernamesEntry {
-    return ConfigSecurity_RestrictedUsernamesEntry.fromPartial(base ?? ({} as any));
-  },
-  fromPartial<I extends Exact<DeepPartial<ConfigSecurity_RestrictedUsernamesEntry>, I>>(
-    object: I,
-  ): ConfigSecurity_RestrictedUsernamesEntry {
-    const message = createBaseConfigSecurity_RestrictedUsernamesEntry();
-    message.key = object.key ?? "";
-    message.value = object.value ?? "";
     return message;
   },
 };
@@ -7174,10 +7049,6 @@ export type DeepPartial<T> = T extends Builtin ? T
 type KeysOfUnion<T> = T extends T ? keyof T : never;
 export type Exact<P, I extends P> = P extends Builtin ? P
   : P & { [K in keyof P]: Exact<P[K], I[K]> } & { [K in Exclude<keyof I, KeysOfUnion<P>>]: never };
-
-function isObject(value: any): boolean {
-  return typeof value === "object" && value !== null;
-}
 
 function isSet(value: any): boolean {
   return value !== null && value !== undefined;

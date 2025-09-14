@@ -29,10 +29,6 @@
 #include "google/protobuf/message_lite.h"
 #include "google/protobuf/repeated_field.h"  // IWYU pragma: export
 #include "google/protobuf/extension_set.h"  // IWYU pragma: export
-#include "google/protobuf/map.h"  // IWYU pragma: export
-#include "google/protobuf/map_type_handler.h"  // IWYU pragma: export
-#include "google/protobuf/map_entry.h"
-#include "google/protobuf/map_field.h"
 #include "google/protobuf/unknown_field_set.h"
 #include "shared/v1/error.pb.h"
 // @@protoc_insertion_point(includes)
@@ -156,10 +152,6 @@ class ConfigSecurity;
 struct ConfigSecurityDefaultTypeInternal;
 extern ConfigSecurityDefaultTypeInternal _ConfigSecurity_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull ConfigSecurity_class_data_;
-class ConfigSecurity_RestrictedUsernamesEntry_DoNotUse;
-struct ConfigSecurity_RestrictedUsernamesEntry_DoNotUseDefaultTypeInternal;
-extern ConfigSecurity_RestrictedUsernamesEntry_DoNotUseDefaultTypeInternal _ConfigSecurity_RestrictedUsernamesEntry_DoNotUse_default_instance_;
-extern const ::google::protobuf::internal::ClassDataFull ConfigSecurity_RestrictedUsernamesEntry_DoNotUse_class_data_;
 class ConfigServices;
 struct ConfigServicesDefaultTypeInternal;
 extern ConfigServicesDefaultTypeInternal _ConfigServices_default_instance_;
@@ -250,7 +242,7 @@ class ConfigSupport final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigSupport*>(
         &_ConfigSupport_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 14;
+  static constexpr int kIndexInFileMessages = 13;
   friend void swap(ConfigSupport& a, ConfigSupport& b) { a.Swap(&b); }
   inline void Swap(ConfigSupport* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -555,7 +547,7 @@ class ConfigSql final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigSql*>(
         &_ConfigSql_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 8;
+  static constexpr int kIndexInFileMessages = 7;
   friend void swap(ConfigSql& a, ConfigSql& b) { a.Swap(&b); }
   inline void Swap(ConfigSql* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1178,43 +1170,463 @@ class ConfigServices final : public ::google::protobuf::Message
 extern const ::google::protobuf::internal::ClassDataFull ConfigServices_class_data_;
 // -------------------------------------------------------------------
 
-class ConfigSecurity_RestrictedUsernamesEntry_DoNotUse final
-    : public ::google::protobuf::internal::MapEntry<std::string, std::string,
-                             ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-                             ::google::protobuf::internal::WireFormatLite::TYPE_STRING> {
+class ConfigSecurity final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:common.v1.ConfigSecurity) */ {
  public:
-  using SuperType =
-      ::google::protobuf::internal::MapEntry<std::string, std::string,
-                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING>;
-  ConfigSecurity_RestrictedUsernamesEntry_DoNotUse();
+  inline ConfigSecurity() : ConfigSecurity(nullptr) {}
+  ~ConfigSecurity() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(ConfigSecurity* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(ConfigSecurity));
+  }
+#endif
+
   template <typename = void>
-  explicit PROTOBUF_CONSTEXPR ConfigSecurity_RestrictedUsernamesEntry_DoNotUse(::google::protobuf::internal::ConstantInitialized);
-  explicit ConfigSecurity_RestrictedUsernamesEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr const void* PROTOBUF_NONNULL internal_default_instance() {
-    return &_ConfigSecurity_RestrictedUsernamesEntry_DoNotUse_default_instance_;
+  explicit PROTOBUF_CONSTEXPR ConfigSecurity(::google::protobuf::internal::ConstantInitialized);
+
+  inline ConfigSecurity(const ConfigSecurity& from) : ConfigSecurity(nullptr, from) {}
+  inline ConfigSecurity(ConfigSecurity&& from) noexcept
+      : ConfigSecurity(nullptr, ::std::move(from)) {}
+  inline ConfigSecurity& operator=(const ConfigSecurity& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ConfigSecurity& operator=(ConfigSecurity&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
   }
 
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
 
-  static constexpr auto InternalGenerateClassData_();
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ConfigSecurity& default_instance() {
+    return *reinterpret_cast<const ConfigSecurity*>(
+        &_ConfigSecurity_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 3;
+  friend void swap(ConfigSecurity& a, ConfigSecurity& b) { a.Swap(&b); }
+  inline void Swap(ConfigSecurity* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ConfigSecurity* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
 
+  // implements Message ----------------------------------------------
+
+  ConfigSecurity* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<ConfigSecurity>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const ConfigSecurity& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const ConfigSecurity& from) { ConfigSecurity::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(ConfigSecurity* PROTOBUF_NONNULL other);
  private:
-  friend class ::google::protobuf::MessageLite;
-  friend struct ::TableStruct_common_2fv1_2fconfig_2eproto;
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "common.v1.ConfigSecurity"; }
 
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<1, 2,
-                                   0, 66,
-                                   2>
-      _table_;
-
+ protected:
+  explicit ConfigSecurity(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  ConfigSecurity(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ConfigSecurity& from);
+  ConfigSecurity(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ConfigSecurity&& from) noexcept
+      : ConfigSecurity(arena) {
+    *this = ::std::move(from);
+  }
   const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
   static void* PROTOBUF_NONNULL PlacementNew_(
       const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
       ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kEmailConfirmationUrlFieldNumber = 7,
+    kPasswordResetUrlFieldNumber = 8,
+    kAllowCorsFromFieldNumber = 16,
+    kCorsExposedHeadersFieldNumber = 17,
+    kAccesssTokenExpiryWebInHoursFieldNumber = 1,
+    kAccesssTokenExpiryMobileInHoursFieldNumber = 2,
+    kAccesssTokenExpirySsoInHoursFieldNumber = 3,
+    kAccessTokenCacheInMinutesFieldNumber = 4,
+    kMaximumLoginAttemptsFieldNumber = 5,
+    kTokenConfirmationExpiryInHoursFieldNumber = 9,
+    kTokenPasswordResetExpiryInHoursFieldNumber = 10,
+    kTerminateSessionsOnPasswordChangeFieldNumber = 6,
+    kEnableInsecureOutgoingConnectionsFieldNumber = 11,
+    kEnableMultifactorAuthenticationFieldNumber = 12,
+    kEnforceMultifactorAuthenticationFieldNumber = 13,
+    kEnableOauthServiceProviderFieldNumber = 14,
+    kEnableOutgoingOauthConnectionsFieldNumber = 15,
+    kCorsAllowCredentialsFieldNumber = 18,
+    kCorsDebugFieldNumber = 19,
+    kAllowCookiesForSubdomainsFieldNumber = 20,
+  };
+  // optional string email_confirmation_url = 7 [json_name = "emailConfirmationUrl"];
+  bool has_email_confirmation_url() const;
+  void clear_email_confirmation_url() ;
+  const ::std::string& email_confirmation_url() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_email_confirmation_url(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_email_confirmation_url();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_email_confirmation_url();
+  void set_allocated_email_confirmation_url(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_email_confirmation_url() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_email_confirmation_url(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_email_confirmation_url();
+
+  public:
+  // optional string password_reset_url = 8 [json_name = "passwordResetUrl"];
+  bool has_password_reset_url() const;
+  void clear_password_reset_url() ;
+  const ::std::string& password_reset_url() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_password_reset_url(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_password_reset_url();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_password_reset_url();
+  void set_allocated_password_reset_url(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_password_reset_url() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_password_reset_url(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_password_reset_url();
+
+  public:
+  // optional string allow_cors_from = 16 [json_name = "allowCorsFrom"];
+  bool has_allow_cors_from() const;
+  void clear_allow_cors_from() ;
+  const ::std::string& allow_cors_from() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_allow_cors_from(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_allow_cors_from();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_allow_cors_from();
+  void set_allocated_allow_cors_from(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_allow_cors_from() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_allow_cors_from(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_allow_cors_from();
+
+  public:
+  // optional string cors_exposed_headers = 17 [json_name = "corsExposedHeaders"];
+  bool has_cors_exposed_headers() const;
+  void clear_cors_exposed_headers() ;
+  const ::std::string& cors_exposed_headers() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_cors_exposed_headers(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_cors_exposed_headers();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_cors_exposed_headers();
+  void set_allocated_cors_exposed_headers(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_cors_exposed_headers() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_cors_exposed_headers(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_cors_exposed_headers();
+
+  public:
+  // optional int32 accesss_token_expiry_web_in_hours = 1 [json_name = "accesssTokenExpiryWebInHours"];
+  bool has_accesss_token_expiry_web_in_hours() const;
+  void clear_accesss_token_expiry_web_in_hours() ;
+  ::int32_t accesss_token_expiry_web_in_hours() const;
+  void set_accesss_token_expiry_web_in_hours(::int32_t value);
+
+  private:
+  ::int32_t _internal_accesss_token_expiry_web_in_hours() const;
+  void _internal_set_accesss_token_expiry_web_in_hours(::int32_t value);
+
+  public:
+  // optional int32 accesss_token_expiry_mobile_in_hours = 2 [json_name = "accesssTokenExpiryMobileInHours"];
+  bool has_accesss_token_expiry_mobile_in_hours() const;
+  void clear_accesss_token_expiry_mobile_in_hours() ;
+  ::int32_t accesss_token_expiry_mobile_in_hours() const;
+  void set_accesss_token_expiry_mobile_in_hours(::int32_t value);
+
+  private:
+  ::int32_t _internal_accesss_token_expiry_mobile_in_hours() const;
+  void _internal_set_accesss_token_expiry_mobile_in_hours(::int32_t value);
+
+  public:
+  // optional int32 accesss_token_expiry_sso_in_hours = 3 [json_name = "accesssTokenExpirySsoInHours"];
+  bool has_accesss_token_expiry_sso_in_hours() const;
+  void clear_accesss_token_expiry_sso_in_hours() ;
+  ::int32_t accesss_token_expiry_sso_in_hours() const;
+  void set_accesss_token_expiry_sso_in_hours(::int32_t value);
+
+  private:
+  ::int32_t _internal_accesss_token_expiry_sso_in_hours() const;
+  void _internal_set_accesss_token_expiry_sso_in_hours(::int32_t value);
+
+  public:
+  // optional int32 access_token_cache_in_minutes = 4 [json_name = "accessTokenCacheInMinutes"];
+  bool has_access_token_cache_in_minutes() const;
+  void clear_access_token_cache_in_minutes() ;
+  ::int32_t access_token_cache_in_minutes() const;
+  void set_access_token_cache_in_minutes(::int32_t value);
+
+  private:
+  ::int32_t _internal_access_token_cache_in_minutes() const;
+  void _internal_set_access_token_cache_in_minutes(::int32_t value);
+
+  public:
+  // optional int32 maximum_login_attempts = 5 [json_name = "maximumLoginAttempts"];
+  bool has_maximum_login_attempts() const;
+  void clear_maximum_login_attempts() ;
+  ::int32_t maximum_login_attempts() const;
+  void set_maximum_login_attempts(::int32_t value);
+
+  private:
+  ::int32_t _internal_maximum_login_attempts() const;
+  void _internal_set_maximum_login_attempts(::int32_t value);
+
+  public:
+  // optional uint32 token_confirmation_expiry_in_hours = 9 [json_name = "tokenConfirmationExpiryInHours"];
+  bool has_token_confirmation_expiry_in_hours() const;
+  void clear_token_confirmation_expiry_in_hours() ;
+  ::uint32_t token_confirmation_expiry_in_hours() const;
+  void set_token_confirmation_expiry_in_hours(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_token_confirmation_expiry_in_hours() const;
+  void _internal_set_token_confirmation_expiry_in_hours(::uint32_t value);
+
+  public:
+  // optional uint32 token_password_reset_expiry_in_hours = 10 [json_name = "tokenPasswordResetExpiryInHours"];
+  bool has_token_password_reset_expiry_in_hours() const;
+  void clear_token_password_reset_expiry_in_hours() ;
+  ::uint32_t token_password_reset_expiry_in_hours() const;
+  void set_token_password_reset_expiry_in_hours(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_token_password_reset_expiry_in_hours() const;
+  void _internal_set_token_password_reset_expiry_in_hours(::uint32_t value);
+
+  public:
+  // optional bool terminate_sessions_on_password_change = 6 [json_name = "terminateSessionsOnPasswordChange"];
+  bool has_terminate_sessions_on_password_change() const;
+  void clear_terminate_sessions_on_password_change() ;
+  bool terminate_sessions_on_password_change() const;
+  void set_terminate_sessions_on_password_change(bool value);
+
+  private:
+  bool _internal_terminate_sessions_on_password_change() const;
+  void _internal_set_terminate_sessions_on_password_change(bool value);
+
+  public:
+  // optional bool enable_insecure_outgoing_connections = 11 [json_name = "enableInsecureOutgoingConnections"];
+  bool has_enable_insecure_outgoing_connections() const;
+  void clear_enable_insecure_outgoing_connections() ;
+  bool enable_insecure_outgoing_connections() const;
+  void set_enable_insecure_outgoing_connections(bool value);
+
+  private:
+  bool _internal_enable_insecure_outgoing_connections() const;
+  void _internal_set_enable_insecure_outgoing_connections(bool value);
+
+  public:
+  // optional bool enable_multifactor_authentication = 12 [json_name = "enableMultifactorAuthentication"];
+  bool has_enable_multifactor_authentication() const;
+  void clear_enable_multifactor_authentication() ;
+  bool enable_multifactor_authentication() const;
+  void set_enable_multifactor_authentication(bool value);
+
+  private:
+  bool _internal_enable_multifactor_authentication() const;
+  void _internal_set_enable_multifactor_authentication(bool value);
+
+  public:
+  // optional bool enforce_multifactor_authentication = 13 [json_name = "enforceMultifactorAuthentication"];
+  bool has_enforce_multifactor_authentication() const;
+  void clear_enforce_multifactor_authentication() ;
+  bool enforce_multifactor_authentication() const;
+  void set_enforce_multifactor_authentication(bool value);
+
+  private:
+  bool _internal_enforce_multifactor_authentication() const;
+  void _internal_set_enforce_multifactor_authentication(bool value);
+
+  public:
+  // optional bool enable_oauth_service_provider = 14 [json_name = "enableOauthServiceProvider"];
+  bool has_enable_oauth_service_provider() const;
+  void clear_enable_oauth_service_provider() ;
+  bool enable_oauth_service_provider() const;
+  void set_enable_oauth_service_provider(bool value);
+
+  private:
+  bool _internal_enable_oauth_service_provider() const;
+  void _internal_set_enable_oauth_service_provider(bool value);
+
+  public:
+  // optional bool enable_outgoing_oauth_connections = 15 [json_name = "enableOutgoingOauthConnections"];
+  bool has_enable_outgoing_oauth_connections() const;
+  void clear_enable_outgoing_oauth_connections() ;
+  bool enable_outgoing_oauth_connections() const;
+  void set_enable_outgoing_oauth_connections(bool value);
+
+  private:
+  bool _internal_enable_outgoing_oauth_connections() const;
+  void _internal_set_enable_outgoing_oauth_connections(bool value);
+
+  public:
+  // optional bool cors_allow_credentials = 18 [json_name = "corsAllowCredentials"];
+  bool has_cors_allow_credentials() const;
+  void clear_cors_allow_credentials() ;
+  bool cors_allow_credentials() const;
+  void set_cors_allow_credentials(bool value);
+
+  private:
+  bool _internal_cors_allow_credentials() const;
+  void _internal_set_cors_allow_credentials(bool value);
+
+  public:
+  // optional bool cors_debug = 19 [json_name = "corsDebug"];
+  bool has_cors_debug() const;
+  void clear_cors_debug() ;
+  bool cors_debug() const;
+  void set_cors_debug(bool value);
+
+  private:
+  bool _internal_cors_debug() const;
+  void _internal_set_cors_debug(bool value);
+
+  public:
+  // optional bool allow_cookies_for_subdomains = 20 [json_name = "allowCookiesForSubdomains"];
+  bool has_allow_cookies_for_subdomains() const;
+  void clear_allow_cookies_for_subdomains() ;
+  bool allow_cookies_for_subdomains() const;
+  void set_allow_cookies_for_subdomains(bool value);
+
+  private:
+  bool _internal_allow_cookies_for_subdomains() const;
+  void _internal_set_allow_cookies_for_subdomains(bool value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:common.v1.ConfigSecurity)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<5, 20,
+                                   0, 124,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const ConfigSecurity& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr email_confirmation_url_;
+    ::google::protobuf::internal::ArenaStringPtr password_reset_url_;
+    ::google::protobuf::internal::ArenaStringPtr allow_cors_from_;
+    ::google::protobuf::internal::ArenaStringPtr cors_exposed_headers_;
+    ::int32_t accesss_token_expiry_web_in_hours_;
+    ::int32_t accesss_token_expiry_mobile_in_hours_;
+    ::int32_t accesss_token_expiry_sso_in_hours_;
+    ::int32_t access_token_cache_in_minutes_;
+    ::int32_t maximum_login_attempts_;
+    ::uint32_t token_confirmation_expiry_in_hours_;
+    ::uint32_t token_password_reset_expiry_in_hours_;
+    bool terminate_sessions_on_password_change_;
+    bool enable_insecure_outgoing_connections_;
+    bool enable_multifactor_authentication_;
+    bool enforce_multifactor_authentication_;
+    bool enable_oauth_service_provider_;
+    bool enable_outgoing_oauth_connections_;
+    bool cors_allow_credentials_;
+    bool cors_debug_;
+    bool allow_cookies_for_subdomains_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_common_2fv1_2fconfig_2eproto;
 };
-extern const ::google::protobuf::internal::ClassDataFull ConfigSecurity_RestrictedUsernamesEntry_DoNotUse_class_data_;
+
+extern const ::google::protobuf::internal::ClassDataFull ConfigSecurity_class_data_;
 // -------------------------------------------------------------------
 
 class ConfigSaml final : public ::google::protobuf::Message
@@ -1272,7 +1684,7 @@ class ConfigSaml final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigSaml*>(
         &_ConfigSaml_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 17;
+  static constexpr int kIndexInFileMessages = 16;
   friend void swap(ConfigSaml& a, ConfigSaml& b) { a.Swap(&b); }
   inline void Swap(ConfigSaml* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -2005,7 +2417,7 @@ class ConfigSSO final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigSSO*>(
         &_ConfigSSO_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 7;
+  static constexpr int kIndexInFileMessages = 6;
   friend void swap(ConfigSSO& a, ConfigSSO& b) { a.Swap(&b); }
   inline void Swap(ConfigSSO* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -2359,7 +2771,7 @@ class ConfigRateLimit final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigRateLimit*>(
         &_ConfigRateLimit_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 12;
+  static constexpr int kIndexInFileMessages = 11;
   friend void swap(ConfigRateLimit& a, ConfigRateLimit& b) { a.Swap(&b); }
   inline void Swap(ConfigRateLimit* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -2633,7 +3045,7 @@ class ConfigPrivacy final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigPrivacy*>(
         &_ConfigPrivacy_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 13;
+  static constexpr int kIndexInFileMessages = 12;
   friend void swap(ConfigPrivacy& a, ConfigPrivacy& b) { a.Swap(&b); }
   inline void Swap(ConfigPrivacy* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -2838,7 +3250,7 @@ class ConfigPassword final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigPassword*>(
         &_ConfigPassword_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 9;
+  static constexpr int kIndexInFileMessages = 8;
   friend void swap(ConfigPassword& a, ConfigPassword& b) { a.Swap(&b); }
   inline void Swap(ConfigPassword* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3527,7 +3939,7 @@ class ConfigNativeApp final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigNativeApp*>(
         &_ConfigNativeApp_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 18;
+  static constexpr int kIndexInFileMessages = 17;
   friend void swap(ConfigNativeApp& a, ConfigNativeApp& b) { a.Swap(&b); }
   inline void Swap(ConfigNativeApp* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3836,7 +4248,7 @@ class ConfigMetrics final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigMetrics*>(
         &_ConfigMetrics_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 6;
+  static constexpr int kIndexInFileMessages = 5;
   friend void swap(ConfigMetrics& a, ConfigMetrics& b) { a.Swap(&b); }
   inline void Swap(ConfigMetrics* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -4109,7 +4521,7 @@ class ConfigMeilisearch final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigMeilisearch*>(
         &_ConfigMeilisearch_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 19;
+  static constexpr int kIndexInFileMessages = 18;
   friend void swap(ConfigMeilisearch& a, ConfigMeilisearch& b) { a.Swap(&b); }
   inline void Swap(ConfigMeilisearch* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -4905,7 +5317,7 @@ class ConfigLocalization final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigLocalization*>(
         &_ConfigLocalization_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 15;
+  static constexpr int kIndexInFileMessages = 14;
   friend void swap(ConfigLocalization& a, ConfigLocalization& b) { a.Swap(&b); }
   inline void Swap(ConfigLocalization* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -5144,7 +5556,7 @@ class ConfigListenerRequest final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigListenerRequest*>(
         &_ConfigListenerRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 29;
+  static constexpr int kIndexInFileMessages = 28;
   friend void swap(ConfigListenerRequest& a, ConfigListenerRequest& b) { a.Swap(&b); }
   inline void Swap(ConfigListenerRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -5340,7 +5752,7 @@ class ConfigLdap final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigLdap*>(
         &_ConfigLdap_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 16;
+  static constexpr int kIndexInFileMessages = 15;
   friend void swap(ConfigLdap& a, ConfigLdap& b) { a.Swap(&b); }
   inline void Swap(ConfigLdap* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -6037,7 +6449,7 @@ class ConfigImageProxy final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigImageProxy*>(
         &_ConfigImageProxy_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 22;
+  static constexpr int kIndexInFileMessages = 21;
   friend void swap(ConfigImageProxy& a, ConfigImageProxy& b) { a.Swap(&b); }
   inline void Swap(ConfigImageProxy* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -6282,7 +6694,7 @@ class ConfigGetRequest final : public ::google::protobuf::internal::ZeroFieldsBa
     return *reinterpret_cast<const ConfigGetRequest*>(
         &_ConfigGetRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 24;
+  static constexpr int kIndexInFileMessages = 23;
   friend void swap(ConfigGetRequest& a, ConfigGetRequest& b) { a.Swap(&b); }
   inline void Swap(ConfigGetRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -6429,7 +6841,7 @@ class ConfigFile final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigFile*>(
         &_ConfigFile_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 10;
+  static constexpr int kIndexInFileMessages = 9;
   friend void swap(ConfigFile& a, ConfigFile& b) { a.Swap(&b); }
   inline void Swap(ConfigFile* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -6895,7 +7307,7 @@ class ConfigEmail final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigEmail*>(
         &_ConfigEmail_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 11;
+  static constexpr int kIndexInFileMessages = 10;
   friend void swap(ConfigEmail& a, ConfigEmail& b) { a.Swap(&b); }
   inline void Swap(ConfigEmail* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -7477,7 +7889,7 @@ class ConfigDataRetention final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigDataRetention*>(
         &_ConfigDataRetention_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 21;
+  static constexpr int kIndexInFileMessages = 20;
   friend void swap(ConfigDataRetention& a, ConfigDataRetention& b) { a.Swap(&b); }
   inline void Swap(ConfigDataRetention* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -7791,7 +8203,7 @@ class ConfigBleve final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigBleve*>(
         &_ConfigBleve_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 20;
+  static constexpr int kIndexInFileMessages = 19;
   friend void swap(ConfigBleve& a, ConfigBleve& b) { a.Swap(&b); }
   inline void Swap(ConfigBleve* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -8053,7 +8465,7 @@ class CacheConfig final : public ::google::protobuf::Message
     return *reinterpret_cast<const CacheConfig*>(
         &_CacheConfig_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 5;
+  static constexpr int kIndexInFileMessages = 4;
   friend void swap(CacheConfig& a, CacheConfig& b) { a.Swap(&b); }
   inline void Swap(CacheConfig* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -8275,485 +8687,6 @@ class CacheConfig final : public ::google::protobuf::Message
 extern const ::google::protobuf::internal::ClassDataFull CacheConfig_class_data_;
 // -------------------------------------------------------------------
 
-class ConfigSecurity final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:common.v1.ConfigSecurity) */ {
- public:
-  inline ConfigSecurity() : ConfigSecurity(nullptr) {}
-  ~ConfigSecurity() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(ConfigSecurity* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(ConfigSecurity));
-  }
-#endif
-
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR ConfigSecurity(::google::protobuf::internal::ConstantInitialized);
-
-  inline ConfigSecurity(const ConfigSecurity& from) : ConfigSecurity(nullptr, from) {}
-  inline ConfigSecurity(ConfigSecurity&& from) noexcept
-      : ConfigSecurity(nullptr, ::std::move(from)) {}
-  inline ConfigSecurity& operator=(const ConfigSecurity& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline ConfigSecurity& operator=(ConfigSecurity&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const ConfigSecurity& default_instance() {
-    return *reinterpret_cast<const ConfigSecurity*>(
-        &_ConfigSecurity_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 4;
-  friend void swap(ConfigSecurity& a, ConfigSecurity& b) { a.Swap(&b); }
-  inline void Swap(ConfigSecurity* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(ConfigSecurity* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  ConfigSecurity* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<ConfigSecurity>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const ConfigSecurity& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const ConfigSecurity& from) { ConfigSecurity::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
-                        const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
-
-  public:
-  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  ::size_t ByteSizeLong() const final;
-  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(ConfigSecurity* PROTOBUF_NONNULL other);
- private:
-  template <typename T>
-  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() { return "common.v1.ConfigSecurity"; }
-
- protected:
-  explicit ConfigSecurity(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  ConfigSecurity(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ConfigSecurity& from);
-  ConfigSecurity(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ConfigSecurity&& from) noexcept
-      : ConfigSecurity(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-
- public:
-  static constexpr auto InternalGenerateClassData_();
-
-  ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kRestrictedUsernamesFieldNumber = 1,
-    kAllowCorsFromFieldNumber = 12,
-    kCorsExposedHeadersFieldNumber = 13,
-    kEmailConfirmationUrlFieldNumber = 18,
-    kPasswordResetUrlFieldNumber = 21,
-    kMaximumLoginAttemptsFieldNumber = 2,
-    kEnableInsecureOutgoingConnectionsFieldNumber = 3,
-    kEnableMultifactorAuthenticationFieldNumber = 4,
-    kEnforceMultifactorAuthenticationFieldNumber = 5,
-    kEnableOauthServiceProviderFieldNumber = 6,
-    kSessionLengthWebInHoursFieldNumber = 9,
-    kSessionLengthMobileInHoursFieldNumber = 10,
-    kSessionLengthSsoInHoursFieldNumber = 11,
-    kEnableOutgoingOauthConnectionsFieldNumber = 7,
-    kTerminateSessionsOnPasswordChangeFieldNumber = 8,
-    kCorsAllowCredentialsFieldNumber = 14,
-    kCorsDebugFieldNumber = 15,
-    kAllowCookiesForSubdomainsFieldNumber = 16,
-    kSessionCacheInMinutesFieldNumber = 17,
-    kTokenConfirmationExpiryInHoursFieldNumber = 19,
-    kTokenPasswordResetExpiryInHoursFieldNumber = 20,
-  };
-  // map<string, string> restricted_usernames = 1 [json_name = "restrictedUsernames"];
-  int restricted_usernames_size() const;
-  private:
-  int _internal_restricted_usernames_size() const;
-
-  public:
-  void clear_restricted_usernames() ;
-  const ::google::protobuf::Map<std::string, std::string>& restricted_usernames() const;
-  ::google::protobuf::Map<std::string, std::string>* PROTOBUF_NONNULL mutable_restricted_usernames();
-
-  private:
-  const ::google::protobuf::Map<std::string, std::string>& _internal_restricted_usernames() const;
-  ::google::protobuf::Map<std::string, std::string>* PROTOBUF_NONNULL _internal_mutable_restricted_usernames();
-
-  public:
-  // optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];
-  bool has_allow_cors_from() const;
-  void clear_allow_cors_from() ;
-  const ::std::string& allow_cors_from() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_allow_cors_from(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_allow_cors_from();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_allow_cors_from();
-  void set_allocated_allow_cors_from(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_allow_cors_from() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_allow_cors_from(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_allow_cors_from();
-
-  public:
-  // optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];
-  bool has_cors_exposed_headers() const;
-  void clear_cors_exposed_headers() ;
-  const ::std::string& cors_exposed_headers() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_cors_exposed_headers(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_cors_exposed_headers();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_cors_exposed_headers();
-  void set_allocated_cors_exposed_headers(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_cors_exposed_headers() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_cors_exposed_headers(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_cors_exposed_headers();
-
-  public:
-  // optional string email_confirmation_url = 18 [json_name = "emailConfirmationUrl"];
-  bool has_email_confirmation_url() const;
-  void clear_email_confirmation_url() ;
-  const ::std::string& email_confirmation_url() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_email_confirmation_url(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_email_confirmation_url();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_email_confirmation_url();
-  void set_allocated_email_confirmation_url(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_email_confirmation_url() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_email_confirmation_url(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_email_confirmation_url();
-
-  public:
-  // optional string password_reset_url = 21 [json_name = "passwordResetUrl"];
-  bool has_password_reset_url() const;
-  void clear_password_reset_url() ;
-  const ::std::string& password_reset_url() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_password_reset_url(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_password_reset_url();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_password_reset_url();
-  void set_allocated_password_reset_url(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_password_reset_url() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_password_reset_url(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_password_reset_url();
-
-  public:
-  // optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];
-  bool has_maximum_login_attempts() const;
-  void clear_maximum_login_attempts() ;
-  ::int32_t maximum_login_attempts() const;
-  void set_maximum_login_attempts(::int32_t value);
-
-  private:
-  ::int32_t _internal_maximum_login_attempts() const;
-  void _internal_set_maximum_login_attempts(::int32_t value);
-
-  public:
-  // optional bool enable_insecure_outgoing_connections = 3 [json_name = "enableInsecureOutgoingConnections"];
-  bool has_enable_insecure_outgoing_connections() const;
-  void clear_enable_insecure_outgoing_connections() ;
-  bool enable_insecure_outgoing_connections() const;
-  void set_enable_insecure_outgoing_connections(bool value);
-
-  private:
-  bool _internal_enable_insecure_outgoing_connections() const;
-  void _internal_set_enable_insecure_outgoing_connections(bool value);
-
-  public:
-  // optional bool enable_multifactor_authentication = 4 [json_name = "enableMultifactorAuthentication"];
-  bool has_enable_multifactor_authentication() const;
-  void clear_enable_multifactor_authentication() ;
-  bool enable_multifactor_authentication() const;
-  void set_enable_multifactor_authentication(bool value);
-
-  private:
-  bool _internal_enable_multifactor_authentication() const;
-  void _internal_set_enable_multifactor_authentication(bool value);
-
-  public:
-  // optional bool enforce_multifactor_authentication = 5 [json_name = "enforceMultifactorAuthentication"];
-  bool has_enforce_multifactor_authentication() const;
-  void clear_enforce_multifactor_authentication() ;
-  bool enforce_multifactor_authentication() const;
-  void set_enforce_multifactor_authentication(bool value);
-
-  private:
-  bool _internal_enforce_multifactor_authentication() const;
-  void _internal_set_enforce_multifactor_authentication(bool value);
-
-  public:
-  // optional bool enable_oauth_service_provider = 6 [json_name = "enableOauthServiceProvider"];
-  bool has_enable_oauth_service_provider() const;
-  void clear_enable_oauth_service_provider() ;
-  bool enable_oauth_service_provider() const;
-  void set_enable_oauth_service_provider(bool value);
-
-  private:
-  bool _internal_enable_oauth_service_provider() const;
-  void _internal_set_enable_oauth_service_provider(bool value);
-
-  public:
-  // optional int32 session_length_web_in_hours = 9 [json_name = "sessionLengthWebInHours"];
-  bool has_session_length_web_in_hours() const;
-  void clear_session_length_web_in_hours() ;
-  ::int32_t session_length_web_in_hours() const;
-  void set_session_length_web_in_hours(::int32_t value);
-
-  private:
-  ::int32_t _internal_session_length_web_in_hours() const;
-  void _internal_set_session_length_web_in_hours(::int32_t value);
-
-  public:
-  // optional int32 session_length_mobile_in_hours = 10 [json_name = "sessionLengthMobileInHours"];
-  bool has_session_length_mobile_in_hours() const;
-  void clear_session_length_mobile_in_hours() ;
-  ::int32_t session_length_mobile_in_hours() const;
-  void set_session_length_mobile_in_hours(::int32_t value);
-
-  private:
-  ::int32_t _internal_session_length_mobile_in_hours() const;
-  void _internal_set_session_length_mobile_in_hours(::int32_t value);
-
-  public:
-  // optional int32 session_length_sso_in_hours = 11 [json_name = "sessionLengthSsoInHours"];
-  bool has_session_length_sso_in_hours() const;
-  void clear_session_length_sso_in_hours() ;
-  ::int32_t session_length_sso_in_hours() const;
-  void set_session_length_sso_in_hours(::int32_t value);
-
-  private:
-  ::int32_t _internal_session_length_sso_in_hours() const;
-  void _internal_set_session_length_sso_in_hours(::int32_t value);
-
-  public:
-  // optional bool enable_outgoing_oauth_connections = 7 [json_name = "enableOutgoingOauthConnections"];
-  bool has_enable_outgoing_oauth_connections() const;
-  void clear_enable_outgoing_oauth_connections() ;
-  bool enable_outgoing_oauth_connections() const;
-  void set_enable_outgoing_oauth_connections(bool value);
-
-  private:
-  bool _internal_enable_outgoing_oauth_connections() const;
-  void _internal_set_enable_outgoing_oauth_connections(bool value);
-
-  public:
-  // optional bool terminate_sessions_on_password_change = 8 [json_name = "terminateSessionsOnPasswordChange"];
-  bool has_terminate_sessions_on_password_change() const;
-  void clear_terminate_sessions_on_password_change() ;
-  bool terminate_sessions_on_password_change() const;
-  void set_terminate_sessions_on_password_change(bool value);
-
-  private:
-  bool _internal_terminate_sessions_on_password_change() const;
-  void _internal_set_terminate_sessions_on_password_change(bool value);
-
-  public:
-  // optional bool cors_allow_credentials = 14 [json_name = "corsAllowCredentials"];
-  bool has_cors_allow_credentials() const;
-  void clear_cors_allow_credentials() ;
-  bool cors_allow_credentials() const;
-  void set_cors_allow_credentials(bool value);
-
-  private:
-  bool _internal_cors_allow_credentials() const;
-  void _internal_set_cors_allow_credentials(bool value);
-
-  public:
-  // optional bool cors_debug = 15 [json_name = "corsDebug"];
-  bool has_cors_debug() const;
-  void clear_cors_debug() ;
-  bool cors_debug() const;
-  void set_cors_debug(bool value);
-
-  private:
-  bool _internal_cors_debug() const;
-  void _internal_set_cors_debug(bool value);
-
-  public:
-  // optional bool allow_cookies_for_subdomains = 16 [json_name = "allowCookiesForSubdomains"];
-  bool has_allow_cookies_for_subdomains() const;
-  void clear_allow_cookies_for_subdomains() ;
-  bool allow_cookies_for_subdomains() const;
-  void set_allow_cookies_for_subdomains(bool value);
-
-  private:
-  bool _internal_allow_cookies_for_subdomains() const;
-  void _internal_set_allow_cookies_for_subdomains(bool value);
-
-  public:
-  // optional int32 session_cache_in_minutes = 17 [json_name = "sessionCacheInMinutes"];
-  bool has_session_cache_in_minutes() const;
-  void clear_session_cache_in_minutes() ;
-  ::int32_t session_cache_in_minutes() const;
-  void set_session_cache_in_minutes(::int32_t value);
-
-  private:
-  ::int32_t _internal_session_cache_in_minutes() const;
-  void _internal_set_session_cache_in_minutes(::int32_t value);
-
-  public:
-  // optional uint32 token_confirmation_expiry_in_hours = 19 [json_name = "tokenConfirmationExpiryInHours"];
-  bool has_token_confirmation_expiry_in_hours() const;
-  void clear_token_confirmation_expiry_in_hours() ;
-  ::uint32_t token_confirmation_expiry_in_hours() const;
-  void set_token_confirmation_expiry_in_hours(::uint32_t value);
-
-  private:
-  ::uint32_t _internal_token_confirmation_expiry_in_hours() const;
-  void _internal_set_token_confirmation_expiry_in_hours(::uint32_t value);
-
-  public:
-  // optional uint32 token_password_reset_expiry_in_hours = 20 [json_name = "tokenPasswordResetExpiryInHours"];
-  bool has_token_password_reset_expiry_in_hours() const;
-  void clear_token_password_reset_expiry_in_hours() ;
-  ::uint32_t token_password_reset_expiry_in_hours() const;
-  void set_token_password_reset_expiry_in_hours(::uint32_t value);
-
-  private:
-  ::uint32_t _internal_token_password_reset_expiry_in_hours() const;
-  void _internal_set_token_password_reset_expiry_in_hours(::uint32_t value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:common.v1.ConfigSecurity)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<5, 21,
-                                   1, 144,
-                                   2>
-      _table_;
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const ConfigSecurity& from_msg);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::MapField<ConfigSecurity_RestrictedUsernamesEntry_DoNotUse, std::string, std::string,
-                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING>
-        restricted_usernames_;
-    ::google::protobuf::internal::ArenaStringPtr allow_cors_from_;
-    ::google::protobuf::internal::ArenaStringPtr cors_exposed_headers_;
-    ::google::protobuf::internal::ArenaStringPtr email_confirmation_url_;
-    ::google::protobuf::internal::ArenaStringPtr password_reset_url_;
-    ::int32_t maximum_login_attempts_;
-    bool enable_insecure_outgoing_connections_;
-    bool enable_multifactor_authentication_;
-    bool enforce_multifactor_authentication_;
-    bool enable_oauth_service_provider_;
-    ::int32_t session_length_web_in_hours_;
-    ::int32_t session_length_mobile_in_hours_;
-    ::int32_t session_length_sso_in_hours_;
-    bool enable_outgoing_oauth_connections_;
-    bool terminate_sessions_on_password_change_;
-    bool cors_allow_credentials_;
-    bool cors_debug_;
-    bool allow_cookies_for_subdomains_;
-    ::int32_t session_cache_in_minutes_;
-    ::uint32_t token_confirmation_expiry_in_hours_;
-    ::uint32_t token_password_reset_expiry_in_hours_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_common_2fv1_2fconfig_2eproto;
-};
-
-extern const ::google::protobuf::internal::ClassDataFull ConfigSecurity_class_data_;
-// -------------------------------------------------------------------
-
 class Config final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:common.v1.Config) */ {
  public:
@@ -8809,7 +8742,7 @@ class Config final : public ::google::protobuf::Message
     return *reinterpret_cast<const Config*>(
         &_Config_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 23;
+  static constexpr int kIndexInFileMessages = 22;
   friend void swap(Config& a, Config& b) { a.Swap(&b); }
   inline void Swap(Config* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -9362,7 +9295,7 @@ class ConfigUpdateRequest final : public ::google::protobuf::Message
     return *reinterpret_cast<const ConfigUpdateRequest*>(
         &_ConfigUpdateRequest_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 26;
+  static constexpr int kIndexInFileMessages = 25;
   friend void swap(ConfigUpdateRequest& a, ConfigUpdateRequest& b) { a.Swap(&b); }
   inline void Swap(ConfigUpdateRequest* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -9563,7 +9496,7 @@ class ConfigUpdateResponse final : public ::google::protobuf::Message
     kError = 2,
     RESPONSE_NOT_SET = 0,
   };
-  static constexpr int kIndexInFileMessages = 27;
+  static constexpr int kIndexInFileMessages = 26;
   friend void swap(ConfigUpdateResponse& a, ConfigUpdateResponse& b) { a.Swap(&b); }
   inline void Swap(ConfigUpdateResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -9799,7 +9732,7 @@ class ConfigListenerResponse final : public ::google::protobuf::Message
     kError = 2,
     RESPONSE_NOT_SET = 0,
   };
-  static constexpr int kIndexInFileMessages = 28;
+  static constexpr int kIndexInFileMessages = 27;
   friend void swap(ConfigListenerResponse& a, ConfigListenerResponse& b) { a.Swap(&b); }
   inline void Swap(ConfigListenerResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -10035,7 +9968,7 @@ class ConfigGetResponse final : public ::google::protobuf::Message
     kError = 2,
     RESPONSE_NOT_SET = 0,
   };
-  static constexpr int kIndexInFileMessages = 25;
+  static constexpr int kIndexInFileMessages = 24;
   friend void swap(ConfigGetResponse& a, ConfigGetResponse& b) { a.Swap(&b); }
   inline void Swap(ConfigGetResponse* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -12529,48 +12462,129 @@ inline void ConfigOAuth::set_allocated_frontend_login_error_url(::std::string* P
 
 // -------------------------------------------------------------------
 
-// -------------------------------------------------------------------
-
 // ConfigSecurity
 
-// map<string, string> restricted_usernames = 1 [json_name = "restrictedUsernames"];
-inline int ConfigSecurity::_internal_restricted_usernames_size() const {
-  return _internal_restricted_usernames().size();
+// optional int32 accesss_token_expiry_web_in_hours = 1 [json_name = "accesssTokenExpiryWebInHours"];
+inline bool ConfigSecurity::has_accesss_token_expiry_web_in_hours() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  return value;
 }
-inline int ConfigSecurity::restricted_usernames_size() const {
-  return _internal_restricted_usernames_size();
-}
-inline void ConfigSecurity::clear_restricted_usernames() {
+inline void ConfigSecurity::clear_accesss_token_expiry_web_in_hours() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.restricted_usernames_.Clear();
+  _impl_.accesss_token_expiry_web_in_hours_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000010u;
 }
-inline const ::google::protobuf::Map<std::string, std::string>& ConfigSecurity::_internal_restricted_usernames() const {
+inline ::int32_t ConfigSecurity::accesss_token_expiry_web_in_hours() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.accesss_token_expiry_web_in_hours)
+  return _internal_accesss_token_expiry_web_in_hours();
+}
+inline void ConfigSecurity::set_accesss_token_expiry_web_in_hours(::int32_t value) {
+  _internal_set_accesss_token_expiry_web_in_hours(value);
+  _impl_._has_bits_[0] |= 0x00000010u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.accesss_token_expiry_web_in_hours)
+}
+inline ::int32_t ConfigSecurity::_internal_accesss_token_expiry_web_in_hours() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.restricted_usernames_.GetMap();
+  return _impl_.accesss_token_expiry_web_in_hours_;
 }
-inline const ::google::protobuf::Map<std::string, std::string>& ConfigSecurity::restricted_usernames() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_map:common.v1.ConfigSecurity.restricted_usernames)
-  return _internal_restricted_usernames();
-}
-inline ::google::protobuf::Map<std::string, std::string>* PROTOBUF_NONNULL ConfigSecurity::_internal_mutable_restricted_usernames() {
+inline void ConfigSecurity::_internal_set_accesss_token_expiry_web_in_hours(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.restricted_usernames_.MutableMap();
-}
-inline ::google::protobuf::Map<std::string, std::string>* PROTOBUF_NONNULL ConfigSecurity::mutable_restricted_usernames()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_mutable_map:common.v1.ConfigSecurity.restricted_usernames)
-  return _internal_mutable_restricted_usernames();
+  _impl_.accesss_token_expiry_web_in_hours_ = value;
 }
 
-// optional int32 maximum_login_attempts = 2 [json_name = "maximumLoginAttempts"];
+// optional int32 accesss_token_expiry_mobile_in_hours = 2 [json_name = "accesssTokenExpiryMobileInHours"];
+inline bool ConfigSecurity::has_accesss_token_expiry_mobile_in_hours() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  return value;
+}
+inline void ConfigSecurity::clear_accesss_token_expiry_mobile_in_hours() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.accesss_token_expiry_mobile_in_hours_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000020u;
+}
+inline ::int32_t ConfigSecurity::accesss_token_expiry_mobile_in_hours() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.accesss_token_expiry_mobile_in_hours)
+  return _internal_accesss_token_expiry_mobile_in_hours();
+}
+inline void ConfigSecurity::set_accesss_token_expiry_mobile_in_hours(::int32_t value) {
+  _internal_set_accesss_token_expiry_mobile_in_hours(value);
+  _impl_._has_bits_[0] |= 0x00000020u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.accesss_token_expiry_mobile_in_hours)
+}
+inline ::int32_t ConfigSecurity::_internal_accesss_token_expiry_mobile_in_hours() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.accesss_token_expiry_mobile_in_hours_;
+}
+inline void ConfigSecurity::_internal_set_accesss_token_expiry_mobile_in_hours(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.accesss_token_expiry_mobile_in_hours_ = value;
+}
+
+// optional int32 accesss_token_expiry_sso_in_hours = 3 [json_name = "accesssTokenExpirySsoInHours"];
+inline bool ConfigSecurity::has_accesss_token_expiry_sso_in_hours() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
+  return value;
+}
+inline void ConfigSecurity::clear_accesss_token_expiry_sso_in_hours() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.accesss_token_expiry_sso_in_hours_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000040u;
+}
+inline ::int32_t ConfigSecurity::accesss_token_expiry_sso_in_hours() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.accesss_token_expiry_sso_in_hours)
+  return _internal_accesss_token_expiry_sso_in_hours();
+}
+inline void ConfigSecurity::set_accesss_token_expiry_sso_in_hours(::int32_t value) {
+  _internal_set_accesss_token_expiry_sso_in_hours(value);
+  _impl_._has_bits_[0] |= 0x00000040u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.accesss_token_expiry_sso_in_hours)
+}
+inline ::int32_t ConfigSecurity::_internal_accesss_token_expiry_sso_in_hours() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.accesss_token_expiry_sso_in_hours_;
+}
+inline void ConfigSecurity::_internal_set_accesss_token_expiry_sso_in_hours(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.accesss_token_expiry_sso_in_hours_ = value;
+}
+
+// optional int32 access_token_cache_in_minutes = 4 [json_name = "accessTokenCacheInMinutes"];
+inline bool ConfigSecurity::has_access_token_cache_in_minutes() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
+  return value;
+}
+inline void ConfigSecurity::clear_access_token_cache_in_minutes() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.access_token_cache_in_minutes_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000080u;
+}
+inline ::int32_t ConfigSecurity::access_token_cache_in_minutes() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.access_token_cache_in_minutes)
+  return _internal_access_token_cache_in_minutes();
+}
+inline void ConfigSecurity::set_access_token_cache_in_minutes(::int32_t value) {
+  _internal_set_access_token_cache_in_minutes(value);
+  _impl_._has_bits_[0] |= 0x00000080u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.access_token_cache_in_minutes)
+}
+inline ::int32_t ConfigSecurity::_internal_access_token_cache_in_minutes() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.access_token_cache_in_minutes_;
+}
+inline void ConfigSecurity::_internal_set_access_token_cache_in_minutes(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.access_token_cache_in_minutes_ = value;
+}
+
+// optional int32 maximum_login_attempts = 5 [json_name = "maximumLoginAttempts"];
 inline bool ConfigSecurity::has_maximum_login_attempts() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
   return value;
 }
 inline void ConfigSecurity::clear_maximum_login_attempts() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.maximum_login_attempts_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000010u;
+  _impl_._has_bits_[0] &= ~0x00000100u;
 }
 inline ::int32_t ConfigSecurity::maximum_login_attempts() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.maximum_login_attempts)
@@ -12578,7 +12592,7 @@ inline ::int32_t ConfigSecurity::maximum_login_attempts() const {
 }
 inline void ConfigSecurity::set_maximum_login_attempts(::int32_t value) {
   _internal_set_maximum_login_attempts(value);
-  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_._has_bits_[0] |= 0x00000100u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.maximum_login_attempts)
 }
 inline ::int32_t ConfigSecurity::_internal_maximum_login_attempts() const {
@@ -12590,155 +12604,15 @@ inline void ConfigSecurity::_internal_set_maximum_login_attempts(::int32_t value
   _impl_.maximum_login_attempts_ = value;
 }
 
-// optional bool enable_insecure_outgoing_connections = 3 [json_name = "enableInsecureOutgoingConnections"];
-inline bool ConfigSecurity::has_enable_insecure_outgoing_connections() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
-  return value;
-}
-inline void ConfigSecurity::clear_enable_insecure_outgoing_connections() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.enable_insecure_outgoing_connections_ = false;
-  _impl_._has_bits_[0] &= ~0x00000020u;
-}
-inline bool ConfigSecurity::enable_insecure_outgoing_connections() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.enable_insecure_outgoing_connections)
-  return _internal_enable_insecure_outgoing_connections();
-}
-inline void ConfigSecurity::set_enable_insecure_outgoing_connections(bool value) {
-  _internal_set_enable_insecure_outgoing_connections(value);
-  _impl_._has_bits_[0] |= 0x00000020u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.enable_insecure_outgoing_connections)
-}
-inline bool ConfigSecurity::_internal_enable_insecure_outgoing_connections() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.enable_insecure_outgoing_connections_;
-}
-inline void ConfigSecurity::_internal_set_enable_insecure_outgoing_connections(bool value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.enable_insecure_outgoing_connections_ = value;
-}
-
-// optional bool enable_multifactor_authentication = 4 [json_name = "enableMultifactorAuthentication"];
-inline bool ConfigSecurity::has_enable_multifactor_authentication() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
-  return value;
-}
-inline void ConfigSecurity::clear_enable_multifactor_authentication() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.enable_multifactor_authentication_ = false;
-  _impl_._has_bits_[0] &= ~0x00000040u;
-}
-inline bool ConfigSecurity::enable_multifactor_authentication() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.enable_multifactor_authentication)
-  return _internal_enable_multifactor_authentication();
-}
-inline void ConfigSecurity::set_enable_multifactor_authentication(bool value) {
-  _internal_set_enable_multifactor_authentication(value);
-  _impl_._has_bits_[0] |= 0x00000040u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.enable_multifactor_authentication)
-}
-inline bool ConfigSecurity::_internal_enable_multifactor_authentication() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.enable_multifactor_authentication_;
-}
-inline void ConfigSecurity::_internal_set_enable_multifactor_authentication(bool value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.enable_multifactor_authentication_ = value;
-}
-
-// optional bool enforce_multifactor_authentication = 5 [json_name = "enforceMultifactorAuthentication"];
-inline bool ConfigSecurity::has_enforce_multifactor_authentication() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
-  return value;
-}
-inline void ConfigSecurity::clear_enforce_multifactor_authentication() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.enforce_multifactor_authentication_ = false;
-  _impl_._has_bits_[0] &= ~0x00000080u;
-}
-inline bool ConfigSecurity::enforce_multifactor_authentication() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.enforce_multifactor_authentication)
-  return _internal_enforce_multifactor_authentication();
-}
-inline void ConfigSecurity::set_enforce_multifactor_authentication(bool value) {
-  _internal_set_enforce_multifactor_authentication(value);
-  _impl_._has_bits_[0] |= 0x00000080u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.enforce_multifactor_authentication)
-}
-inline bool ConfigSecurity::_internal_enforce_multifactor_authentication() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.enforce_multifactor_authentication_;
-}
-inline void ConfigSecurity::_internal_set_enforce_multifactor_authentication(bool value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.enforce_multifactor_authentication_ = value;
-}
-
-// optional bool enable_oauth_service_provider = 6 [json_name = "enableOauthServiceProvider"];
-inline bool ConfigSecurity::has_enable_oauth_service_provider() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
-  return value;
-}
-inline void ConfigSecurity::clear_enable_oauth_service_provider() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.enable_oauth_service_provider_ = false;
-  _impl_._has_bits_[0] &= ~0x00000100u;
-}
-inline bool ConfigSecurity::enable_oauth_service_provider() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.enable_oauth_service_provider)
-  return _internal_enable_oauth_service_provider();
-}
-inline void ConfigSecurity::set_enable_oauth_service_provider(bool value) {
-  _internal_set_enable_oauth_service_provider(value);
-  _impl_._has_bits_[0] |= 0x00000100u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.enable_oauth_service_provider)
-}
-inline bool ConfigSecurity::_internal_enable_oauth_service_provider() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.enable_oauth_service_provider_;
-}
-inline void ConfigSecurity::_internal_set_enable_oauth_service_provider(bool value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.enable_oauth_service_provider_ = value;
-}
-
-// optional bool enable_outgoing_oauth_connections = 7 [json_name = "enableOutgoingOauthConnections"];
-inline bool ConfigSecurity::has_enable_outgoing_oauth_connections() const {
-  bool value = (_impl_._has_bits_[0] & 0x00001000u) != 0;
-  return value;
-}
-inline void ConfigSecurity::clear_enable_outgoing_oauth_connections() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.enable_outgoing_oauth_connections_ = false;
-  _impl_._has_bits_[0] &= ~0x00001000u;
-}
-inline bool ConfigSecurity::enable_outgoing_oauth_connections() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.enable_outgoing_oauth_connections)
-  return _internal_enable_outgoing_oauth_connections();
-}
-inline void ConfigSecurity::set_enable_outgoing_oauth_connections(bool value) {
-  _internal_set_enable_outgoing_oauth_connections(value);
-  _impl_._has_bits_[0] |= 0x00001000u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.enable_outgoing_oauth_connections)
-}
-inline bool ConfigSecurity::_internal_enable_outgoing_oauth_connections() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.enable_outgoing_oauth_connections_;
-}
-inline void ConfigSecurity::_internal_set_enable_outgoing_oauth_connections(bool value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.enable_outgoing_oauth_connections_ = value;
-}
-
-// optional bool terminate_sessions_on_password_change = 8 [json_name = "terminateSessionsOnPasswordChange"];
+// optional bool terminate_sessions_on_password_change = 6 [json_name = "terminateSessionsOnPasswordChange"];
 inline bool ConfigSecurity::has_terminate_sessions_on_password_change() const {
-  bool value = (_impl_._has_bits_[0] & 0x00002000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000800u) != 0;
   return value;
 }
 inline void ConfigSecurity::clear_terminate_sessions_on_password_change() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.terminate_sessions_on_password_change_ = false;
-  _impl_._has_bits_[0] &= ~0x00002000u;
+  _impl_._has_bits_[0] &= ~0x00000800u;
 }
 inline bool ConfigSecurity::terminate_sessions_on_password_change() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.terminate_sessions_on_password_change)
@@ -12746,7 +12620,7 @@ inline bool ConfigSecurity::terminate_sessions_on_password_change() const {
 }
 inline void ConfigSecurity::set_terminate_sessions_on_password_change(bool value) {
   _internal_set_terminate_sessions_on_password_change(value);
-  _impl_._has_bits_[0] |= 0x00002000u;
+  _impl_._has_bits_[0] |= 0x00000800u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.terminate_sessions_on_password_change)
 }
 inline bool ConfigSecurity::_internal_terminate_sessions_on_password_change() const {
@@ -12758,349 +12632,15 @@ inline void ConfigSecurity::_internal_set_terminate_sessions_on_password_change(
   _impl_.terminate_sessions_on_password_change_ = value;
 }
 
-// optional int32 session_length_web_in_hours = 9 [json_name = "sessionLengthWebInHours"];
-inline bool ConfigSecurity::has_session_length_web_in_hours() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
-  return value;
-}
-inline void ConfigSecurity::clear_session_length_web_in_hours() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.session_length_web_in_hours_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000200u;
-}
-inline ::int32_t ConfigSecurity::session_length_web_in_hours() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.session_length_web_in_hours)
-  return _internal_session_length_web_in_hours();
-}
-inline void ConfigSecurity::set_session_length_web_in_hours(::int32_t value) {
-  _internal_set_session_length_web_in_hours(value);
-  _impl_._has_bits_[0] |= 0x00000200u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.session_length_web_in_hours)
-}
-inline ::int32_t ConfigSecurity::_internal_session_length_web_in_hours() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.session_length_web_in_hours_;
-}
-inline void ConfigSecurity::_internal_set_session_length_web_in_hours(::int32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.session_length_web_in_hours_ = value;
-}
-
-// optional int32 session_length_mobile_in_hours = 10 [json_name = "sessionLengthMobileInHours"];
-inline bool ConfigSecurity::has_session_length_mobile_in_hours() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000400u) != 0;
-  return value;
-}
-inline void ConfigSecurity::clear_session_length_mobile_in_hours() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.session_length_mobile_in_hours_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000400u;
-}
-inline ::int32_t ConfigSecurity::session_length_mobile_in_hours() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.session_length_mobile_in_hours)
-  return _internal_session_length_mobile_in_hours();
-}
-inline void ConfigSecurity::set_session_length_mobile_in_hours(::int32_t value) {
-  _internal_set_session_length_mobile_in_hours(value);
-  _impl_._has_bits_[0] |= 0x00000400u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.session_length_mobile_in_hours)
-}
-inline ::int32_t ConfigSecurity::_internal_session_length_mobile_in_hours() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.session_length_mobile_in_hours_;
-}
-inline void ConfigSecurity::_internal_set_session_length_mobile_in_hours(::int32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.session_length_mobile_in_hours_ = value;
-}
-
-// optional int32 session_length_sso_in_hours = 11 [json_name = "sessionLengthSsoInHours"];
-inline bool ConfigSecurity::has_session_length_sso_in_hours() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000800u) != 0;
-  return value;
-}
-inline void ConfigSecurity::clear_session_length_sso_in_hours() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.session_length_sso_in_hours_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000800u;
-}
-inline ::int32_t ConfigSecurity::session_length_sso_in_hours() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.session_length_sso_in_hours)
-  return _internal_session_length_sso_in_hours();
-}
-inline void ConfigSecurity::set_session_length_sso_in_hours(::int32_t value) {
-  _internal_set_session_length_sso_in_hours(value);
-  _impl_._has_bits_[0] |= 0x00000800u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.session_length_sso_in_hours)
-}
-inline ::int32_t ConfigSecurity::_internal_session_length_sso_in_hours() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.session_length_sso_in_hours_;
-}
-inline void ConfigSecurity::_internal_set_session_length_sso_in_hours(::int32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.session_length_sso_in_hours_ = value;
-}
-
-// optional string allow_cors_from = 12 [json_name = "allowCorsFrom"];
-inline bool ConfigSecurity::has_allow_cors_from() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  return value;
-}
-inline void ConfigSecurity::clear_allow_cors_from() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.allow_cors_from_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000001u;
-}
-inline const ::std::string& ConfigSecurity::allow_cors_from() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.allow_cors_from)
-  return _internal_allow_cors_from();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void ConfigSecurity::set_allow_cors_from(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.allow_cors_from_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.allow_cors_from)
-}
-inline ::std::string* PROTOBUF_NONNULL ConfigSecurity::mutable_allow_cors_from()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_allow_cors_from();
-  // @@protoc_insertion_point(field_mutable:common.v1.ConfigSecurity.allow_cors_from)
-  return _s;
-}
-inline const ::std::string& ConfigSecurity::_internal_allow_cors_from() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.allow_cors_from_.Get();
-}
-inline void ConfigSecurity::_internal_set_allow_cors_from(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.allow_cors_from_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL ConfigSecurity::_internal_mutable_allow_cors_from() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  return _impl_.allow_cors_from_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE ConfigSecurity::release_allow_cors_from() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:common.v1.ConfigSecurity.allow_cors_from)
-  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  auto* released = _impl_.allow_cors_from_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.allow_cors_from_.Set("", GetArena());
-  }
-  return released;
-}
-inline void ConfigSecurity::set_allocated_allow_cors_from(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000001u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
-  }
-  _impl_.allow_cors_from_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.allow_cors_from_.IsDefault()) {
-    _impl_.allow_cors_from_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigSecurity.allow_cors_from)
-}
-
-// optional string cors_exposed_headers = 13 [json_name = "corsExposedHeaders"];
-inline bool ConfigSecurity::has_cors_exposed_headers() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
-  return value;
-}
-inline void ConfigSecurity::clear_cors_exposed_headers() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.cors_exposed_headers_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000002u;
-}
-inline const ::std::string& ConfigSecurity::cors_exposed_headers() const
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.cors_exposed_headers)
-  return _internal_cors_exposed_headers();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void ConfigSecurity::set_cors_exposed_headers(Arg_&& arg, Args_... args) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.cors_exposed_headers_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.cors_exposed_headers)
-}
-inline ::std::string* PROTOBUF_NONNULL ConfigSecurity::mutable_cors_exposed_headers()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_cors_exposed_headers();
-  // @@protoc_insertion_point(field_mutable:common.v1.ConfigSecurity.cors_exposed_headers)
-  return _s;
-}
-inline const ::std::string& ConfigSecurity::_internal_cors_exposed_headers() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.cors_exposed_headers_.Get();
-}
-inline void ConfigSecurity::_internal_set_cors_exposed_headers(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.cors_exposed_headers_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL ConfigSecurity::_internal_mutable_cors_exposed_headers() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
-  return _impl_.cors_exposed_headers_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE ConfigSecurity::release_cors_exposed_headers() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:common.v1.ConfigSecurity.cors_exposed_headers)
-  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000002u;
-  auto* released = _impl_.cors_exposed_headers_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.cors_exposed_headers_.Set("", GetArena());
-  }
-  return released;
-}
-inline void ConfigSecurity::set_allocated_cors_exposed_headers(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000002u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000002u;
-  }
-  _impl_.cors_exposed_headers_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.cors_exposed_headers_.IsDefault()) {
-    _impl_.cors_exposed_headers_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigSecurity.cors_exposed_headers)
-}
-
-// optional bool cors_allow_credentials = 14 [json_name = "corsAllowCredentials"];
-inline bool ConfigSecurity::has_cors_allow_credentials() const {
-  bool value = (_impl_._has_bits_[0] & 0x00004000u) != 0;
-  return value;
-}
-inline void ConfigSecurity::clear_cors_allow_credentials() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.cors_allow_credentials_ = false;
-  _impl_._has_bits_[0] &= ~0x00004000u;
-}
-inline bool ConfigSecurity::cors_allow_credentials() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.cors_allow_credentials)
-  return _internal_cors_allow_credentials();
-}
-inline void ConfigSecurity::set_cors_allow_credentials(bool value) {
-  _internal_set_cors_allow_credentials(value);
-  _impl_._has_bits_[0] |= 0x00004000u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.cors_allow_credentials)
-}
-inline bool ConfigSecurity::_internal_cors_allow_credentials() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.cors_allow_credentials_;
-}
-inline void ConfigSecurity::_internal_set_cors_allow_credentials(bool value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.cors_allow_credentials_ = value;
-}
-
-// optional bool cors_debug = 15 [json_name = "corsDebug"];
-inline bool ConfigSecurity::has_cors_debug() const {
-  bool value = (_impl_._has_bits_[0] & 0x00008000u) != 0;
-  return value;
-}
-inline void ConfigSecurity::clear_cors_debug() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.cors_debug_ = false;
-  _impl_._has_bits_[0] &= ~0x00008000u;
-}
-inline bool ConfigSecurity::cors_debug() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.cors_debug)
-  return _internal_cors_debug();
-}
-inline void ConfigSecurity::set_cors_debug(bool value) {
-  _internal_set_cors_debug(value);
-  _impl_._has_bits_[0] |= 0x00008000u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.cors_debug)
-}
-inline bool ConfigSecurity::_internal_cors_debug() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.cors_debug_;
-}
-inline void ConfigSecurity::_internal_set_cors_debug(bool value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.cors_debug_ = value;
-}
-
-// optional bool allow_cookies_for_subdomains = 16 [json_name = "allowCookiesForSubdomains"];
-inline bool ConfigSecurity::has_allow_cookies_for_subdomains() const {
-  bool value = (_impl_._has_bits_[0] & 0x00010000u) != 0;
-  return value;
-}
-inline void ConfigSecurity::clear_allow_cookies_for_subdomains() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.allow_cookies_for_subdomains_ = false;
-  _impl_._has_bits_[0] &= ~0x00010000u;
-}
-inline bool ConfigSecurity::allow_cookies_for_subdomains() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.allow_cookies_for_subdomains)
-  return _internal_allow_cookies_for_subdomains();
-}
-inline void ConfigSecurity::set_allow_cookies_for_subdomains(bool value) {
-  _internal_set_allow_cookies_for_subdomains(value);
-  _impl_._has_bits_[0] |= 0x00010000u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.allow_cookies_for_subdomains)
-}
-inline bool ConfigSecurity::_internal_allow_cookies_for_subdomains() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.allow_cookies_for_subdomains_;
-}
-inline void ConfigSecurity::_internal_set_allow_cookies_for_subdomains(bool value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.allow_cookies_for_subdomains_ = value;
-}
-
-// optional int32 session_cache_in_minutes = 17 [json_name = "sessionCacheInMinutes"];
-inline bool ConfigSecurity::has_session_cache_in_minutes() const {
-  bool value = (_impl_._has_bits_[0] & 0x00020000u) != 0;
-  return value;
-}
-inline void ConfigSecurity::clear_session_cache_in_minutes() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.session_cache_in_minutes_ = 0;
-  _impl_._has_bits_[0] &= ~0x00020000u;
-}
-inline ::int32_t ConfigSecurity::session_cache_in_minutes() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.session_cache_in_minutes)
-  return _internal_session_cache_in_minutes();
-}
-inline void ConfigSecurity::set_session_cache_in_minutes(::int32_t value) {
-  _internal_set_session_cache_in_minutes(value);
-  _impl_._has_bits_[0] |= 0x00020000u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.session_cache_in_minutes)
-}
-inline ::int32_t ConfigSecurity::_internal_session_cache_in_minutes() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.session_cache_in_minutes_;
-}
-inline void ConfigSecurity::_internal_set_session_cache_in_minutes(::int32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.session_cache_in_minutes_ = value;
-}
-
-// optional string email_confirmation_url = 18 [json_name = "emailConfirmationUrl"];
+// optional string email_confirmation_url = 7 [json_name = "emailConfirmationUrl"];
 inline bool ConfigSecurity::has_email_confirmation_url() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   return value;
 }
 inline void ConfigSecurity::clear_email_confirmation_url() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.email_confirmation_url_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
 }
 inline const ::std::string& ConfigSecurity::email_confirmation_url() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -13110,7 +12650,7 @@ inline const ::std::string& ConfigSecurity::email_confirmation_url() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void ConfigSecurity::set_email_confirmation_url(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.email_confirmation_url_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.email_confirmation_url)
 }
@@ -13126,21 +12666,21 @@ inline const ::std::string& ConfigSecurity::_internal_email_confirmation_url() c
 }
 inline void ConfigSecurity::_internal_set_email_confirmation_url(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.email_confirmation_url_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL ConfigSecurity::_internal_mutable_email_confirmation_url() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000001u;
   return _impl_.email_confirmation_url_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE ConfigSecurity::release_email_confirmation_url() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:common.v1.ConfigSecurity.email_confirmation_url)
-  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
   auto* released = _impl_.email_confirmation_url_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.email_confirmation_url_.Set("", GetArena());
@@ -13150,9 +12690,9 @@ inline ::std::string* PROTOBUF_NULLABLE ConfigSecurity::release_email_confirmati
 inline void ConfigSecurity::set_allocated_email_confirmation_url(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000004u;
+    _impl_._has_bits_[0] |= 0x00000001u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000004u;
+    _impl_._has_bits_[0] &= ~0x00000001u;
   }
   _impl_.email_confirmation_url_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.email_confirmation_url_.IsDefault()) {
@@ -13161,71 +12701,15 @@ inline void ConfigSecurity::set_allocated_email_confirmation_url(::std::string* 
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigSecurity.email_confirmation_url)
 }
 
-// optional uint32 token_confirmation_expiry_in_hours = 19 [json_name = "tokenConfirmationExpiryInHours"];
-inline bool ConfigSecurity::has_token_confirmation_expiry_in_hours() const {
-  bool value = (_impl_._has_bits_[0] & 0x00040000u) != 0;
-  return value;
-}
-inline void ConfigSecurity::clear_token_confirmation_expiry_in_hours() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.token_confirmation_expiry_in_hours_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00040000u;
-}
-inline ::uint32_t ConfigSecurity::token_confirmation_expiry_in_hours() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.token_confirmation_expiry_in_hours)
-  return _internal_token_confirmation_expiry_in_hours();
-}
-inline void ConfigSecurity::set_token_confirmation_expiry_in_hours(::uint32_t value) {
-  _internal_set_token_confirmation_expiry_in_hours(value);
-  _impl_._has_bits_[0] |= 0x00040000u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.token_confirmation_expiry_in_hours)
-}
-inline ::uint32_t ConfigSecurity::_internal_token_confirmation_expiry_in_hours() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.token_confirmation_expiry_in_hours_;
-}
-inline void ConfigSecurity::_internal_set_token_confirmation_expiry_in_hours(::uint32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.token_confirmation_expiry_in_hours_ = value;
-}
-
-// optional uint32 token_password_reset_expiry_in_hours = 20 [json_name = "tokenPasswordResetExpiryInHours"];
-inline bool ConfigSecurity::has_token_password_reset_expiry_in_hours() const {
-  bool value = (_impl_._has_bits_[0] & 0x00080000u) != 0;
-  return value;
-}
-inline void ConfigSecurity::clear_token_password_reset_expiry_in_hours() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.token_password_reset_expiry_in_hours_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00080000u;
-}
-inline ::uint32_t ConfigSecurity::token_password_reset_expiry_in_hours() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.token_password_reset_expiry_in_hours)
-  return _internal_token_password_reset_expiry_in_hours();
-}
-inline void ConfigSecurity::set_token_password_reset_expiry_in_hours(::uint32_t value) {
-  _internal_set_token_password_reset_expiry_in_hours(value);
-  _impl_._has_bits_[0] |= 0x00080000u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.token_password_reset_expiry_in_hours)
-}
-inline ::uint32_t ConfigSecurity::_internal_token_password_reset_expiry_in_hours() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.token_password_reset_expiry_in_hours_;
-}
-inline void ConfigSecurity::_internal_set_token_password_reset_expiry_in_hours(::uint32_t value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.token_password_reset_expiry_in_hours_ = value;
-}
-
-// optional string password_reset_url = 21 [json_name = "passwordResetUrl"];
+// optional string password_reset_url = 8 [json_name = "passwordResetUrl"];
 inline bool ConfigSecurity::has_password_reset_url() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
 }
 inline void ConfigSecurity::clear_password_reset_url() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.password_reset_url_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 inline const ::std::string& ConfigSecurity::password_reset_url() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -13235,7 +12719,7 @@ inline const ::std::string& ConfigSecurity::password_reset_url() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void ConfigSecurity::set_password_reset_url(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.password_reset_url_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.password_reset_url)
 }
@@ -13251,21 +12735,21 @@ inline const ::std::string& ConfigSecurity::_internal_password_reset_url() const
 }
 inline void ConfigSecurity::_internal_set_password_reset_url(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.password_reset_url_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL ConfigSecurity::_internal_mutable_password_reset_url() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   return _impl_.password_reset_url_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE ConfigSecurity::release_password_reset_url() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:common.v1.ConfigSecurity.password_reset_url)
-  if ((_impl_._has_bits_[0] & 0x00000008u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
   auto* released = _impl_.password_reset_url_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.password_reset_url_.Set("", GetArena());
@@ -13275,15 +12759,433 @@ inline ::std::string* PROTOBUF_NULLABLE ConfigSecurity::release_password_reset_u
 inline void ConfigSecurity::set_allocated_password_reset_url(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000008u;
+    _impl_._has_bits_[0] |= 0x00000002u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000008u;
+    _impl_._has_bits_[0] &= ~0x00000002u;
   }
   _impl_.password_reset_url_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.password_reset_url_.IsDefault()) {
     _impl_.password_reset_url_.Set("", GetArena());
   }
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigSecurity.password_reset_url)
+}
+
+// optional uint32 token_confirmation_expiry_in_hours = 9 [json_name = "tokenConfirmationExpiryInHours"];
+inline bool ConfigSecurity::has_token_confirmation_expiry_in_hours() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
+  return value;
+}
+inline void ConfigSecurity::clear_token_confirmation_expiry_in_hours() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.token_confirmation_expiry_in_hours_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000200u;
+}
+inline ::uint32_t ConfigSecurity::token_confirmation_expiry_in_hours() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.token_confirmation_expiry_in_hours)
+  return _internal_token_confirmation_expiry_in_hours();
+}
+inline void ConfigSecurity::set_token_confirmation_expiry_in_hours(::uint32_t value) {
+  _internal_set_token_confirmation_expiry_in_hours(value);
+  _impl_._has_bits_[0] |= 0x00000200u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.token_confirmation_expiry_in_hours)
+}
+inline ::uint32_t ConfigSecurity::_internal_token_confirmation_expiry_in_hours() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.token_confirmation_expiry_in_hours_;
+}
+inline void ConfigSecurity::_internal_set_token_confirmation_expiry_in_hours(::uint32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.token_confirmation_expiry_in_hours_ = value;
+}
+
+// optional uint32 token_password_reset_expiry_in_hours = 10 [json_name = "tokenPasswordResetExpiryInHours"];
+inline bool ConfigSecurity::has_token_password_reset_expiry_in_hours() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000400u) != 0;
+  return value;
+}
+inline void ConfigSecurity::clear_token_password_reset_expiry_in_hours() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.token_password_reset_expiry_in_hours_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000400u;
+}
+inline ::uint32_t ConfigSecurity::token_password_reset_expiry_in_hours() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.token_password_reset_expiry_in_hours)
+  return _internal_token_password_reset_expiry_in_hours();
+}
+inline void ConfigSecurity::set_token_password_reset_expiry_in_hours(::uint32_t value) {
+  _internal_set_token_password_reset_expiry_in_hours(value);
+  _impl_._has_bits_[0] |= 0x00000400u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.token_password_reset_expiry_in_hours)
+}
+inline ::uint32_t ConfigSecurity::_internal_token_password_reset_expiry_in_hours() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.token_password_reset_expiry_in_hours_;
+}
+inline void ConfigSecurity::_internal_set_token_password_reset_expiry_in_hours(::uint32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.token_password_reset_expiry_in_hours_ = value;
+}
+
+// optional bool enable_insecure_outgoing_connections = 11 [json_name = "enableInsecureOutgoingConnections"];
+inline bool ConfigSecurity::has_enable_insecure_outgoing_connections() const {
+  bool value = (_impl_._has_bits_[0] & 0x00001000u) != 0;
+  return value;
+}
+inline void ConfigSecurity::clear_enable_insecure_outgoing_connections() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.enable_insecure_outgoing_connections_ = false;
+  _impl_._has_bits_[0] &= ~0x00001000u;
+}
+inline bool ConfigSecurity::enable_insecure_outgoing_connections() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.enable_insecure_outgoing_connections)
+  return _internal_enable_insecure_outgoing_connections();
+}
+inline void ConfigSecurity::set_enable_insecure_outgoing_connections(bool value) {
+  _internal_set_enable_insecure_outgoing_connections(value);
+  _impl_._has_bits_[0] |= 0x00001000u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.enable_insecure_outgoing_connections)
+}
+inline bool ConfigSecurity::_internal_enable_insecure_outgoing_connections() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.enable_insecure_outgoing_connections_;
+}
+inline void ConfigSecurity::_internal_set_enable_insecure_outgoing_connections(bool value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.enable_insecure_outgoing_connections_ = value;
+}
+
+// optional bool enable_multifactor_authentication = 12 [json_name = "enableMultifactorAuthentication"];
+inline bool ConfigSecurity::has_enable_multifactor_authentication() const {
+  bool value = (_impl_._has_bits_[0] & 0x00002000u) != 0;
+  return value;
+}
+inline void ConfigSecurity::clear_enable_multifactor_authentication() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.enable_multifactor_authentication_ = false;
+  _impl_._has_bits_[0] &= ~0x00002000u;
+}
+inline bool ConfigSecurity::enable_multifactor_authentication() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.enable_multifactor_authentication)
+  return _internal_enable_multifactor_authentication();
+}
+inline void ConfigSecurity::set_enable_multifactor_authentication(bool value) {
+  _internal_set_enable_multifactor_authentication(value);
+  _impl_._has_bits_[0] |= 0x00002000u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.enable_multifactor_authentication)
+}
+inline bool ConfigSecurity::_internal_enable_multifactor_authentication() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.enable_multifactor_authentication_;
+}
+inline void ConfigSecurity::_internal_set_enable_multifactor_authentication(bool value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.enable_multifactor_authentication_ = value;
+}
+
+// optional bool enforce_multifactor_authentication = 13 [json_name = "enforceMultifactorAuthentication"];
+inline bool ConfigSecurity::has_enforce_multifactor_authentication() const {
+  bool value = (_impl_._has_bits_[0] & 0x00004000u) != 0;
+  return value;
+}
+inline void ConfigSecurity::clear_enforce_multifactor_authentication() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.enforce_multifactor_authentication_ = false;
+  _impl_._has_bits_[0] &= ~0x00004000u;
+}
+inline bool ConfigSecurity::enforce_multifactor_authentication() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.enforce_multifactor_authentication)
+  return _internal_enforce_multifactor_authentication();
+}
+inline void ConfigSecurity::set_enforce_multifactor_authentication(bool value) {
+  _internal_set_enforce_multifactor_authentication(value);
+  _impl_._has_bits_[0] |= 0x00004000u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.enforce_multifactor_authentication)
+}
+inline bool ConfigSecurity::_internal_enforce_multifactor_authentication() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.enforce_multifactor_authentication_;
+}
+inline void ConfigSecurity::_internal_set_enforce_multifactor_authentication(bool value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.enforce_multifactor_authentication_ = value;
+}
+
+// optional bool enable_oauth_service_provider = 14 [json_name = "enableOauthServiceProvider"];
+inline bool ConfigSecurity::has_enable_oauth_service_provider() const {
+  bool value = (_impl_._has_bits_[0] & 0x00008000u) != 0;
+  return value;
+}
+inline void ConfigSecurity::clear_enable_oauth_service_provider() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.enable_oauth_service_provider_ = false;
+  _impl_._has_bits_[0] &= ~0x00008000u;
+}
+inline bool ConfigSecurity::enable_oauth_service_provider() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.enable_oauth_service_provider)
+  return _internal_enable_oauth_service_provider();
+}
+inline void ConfigSecurity::set_enable_oauth_service_provider(bool value) {
+  _internal_set_enable_oauth_service_provider(value);
+  _impl_._has_bits_[0] |= 0x00008000u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.enable_oauth_service_provider)
+}
+inline bool ConfigSecurity::_internal_enable_oauth_service_provider() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.enable_oauth_service_provider_;
+}
+inline void ConfigSecurity::_internal_set_enable_oauth_service_provider(bool value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.enable_oauth_service_provider_ = value;
+}
+
+// optional bool enable_outgoing_oauth_connections = 15 [json_name = "enableOutgoingOauthConnections"];
+inline bool ConfigSecurity::has_enable_outgoing_oauth_connections() const {
+  bool value = (_impl_._has_bits_[0] & 0x00010000u) != 0;
+  return value;
+}
+inline void ConfigSecurity::clear_enable_outgoing_oauth_connections() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.enable_outgoing_oauth_connections_ = false;
+  _impl_._has_bits_[0] &= ~0x00010000u;
+}
+inline bool ConfigSecurity::enable_outgoing_oauth_connections() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.enable_outgoing_oauth_connections)
+  return _internal_enable_outgoing_oauth_connections();
+}
+inline void ConfigSecurity::set_enable_outgoing_oauth_connections(bool value) {
+  _internal_set_enable_outgoing_oauth_connections(value);
+  _impl_._has_bits_[0] |= 0x00010000u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.enable_outgoing_oauth_connections)
+}
+inline bool ConfigSecurity::_internal_enable_outgoing_oauth_connections() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.enable_outgoing_oauth_connections_;
+}
+inline void ConfigSecurity::_internal_set_enable_outgoing_oauth_connections(bool value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.enable_outgoing_oauth_connections_ = value;
+}
+
+// optional string allow_cors_from = 16 [json_name = "allowCorsFrom"];
+inline bool ConfigSecurity::has_allow_cors_from() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline void ConfigSecurity::clear_allow_cors_from() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.allow_cors_from_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline const ::std::string& ConfigSecurity::allow_cors_from() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.allow_cors_from)
+  return _internal_allow_cors_from();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigSecurity::set_allow_cors_from(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.allow_cors_from_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.allow_cors_from)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigSecurity::mutable_allow_cors_from()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_allow_cors_from();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigSecurity.allow_cors_from)
+  return _s;
+}
+inline const ::std::string& ConfigSecurity::_internal_allow_cors_from() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.allow_cors_from_.Get();
+}
+inline void ConfigSecurity::_internal_set_allow_cors_from(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.allow_cors_from_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigSecurity::_internal_mutable_allow_cors_from() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  return _impl_.allow_cors_from_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigSecurity::release_allow_cors_from() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigSecurity.allow_cors_from)
+  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  auto* released = _impl_.allow_cors_from_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.allow_cors_from_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigSecurity::set_allocated_allow_cors_from(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+  _impl_.allow_cors_from_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.allow_cors_from_.IsDefault()) {
+    _impl_.allow_cors_from_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigSecurity.allow_cors_from)
+}
+
+// optional string cors_exposed_headers = 17 [json_name = "corsExposedHeaders"];
+inline bool ConfigSecurity::has_cors_exposed_headers() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline void ConfigSecurity::clear_cors_exposed_headers() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.cors_exposed_headers_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline const ::std::string& ConfigSecurity::cors_exposed_headers() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.cors_exposed_headers)
+  return _internal_cors_exposed_headers();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigSecurity::set_cors_exposed_headers(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.cors_exposed_headers_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.cors_exposed_headers)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigSecurity::mutable_cors_exposed_headers()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_cors_exposed_headers();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigSecurity.cors_exposed_headers)
+  return _s;
+}
+inline const ::std::string& ConfigSecurity::_internal_cors_exposed_headers() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.cors_exposed_headers_.Get();
+}
+inline void ConfigSecurity::_internal_set_cors_exposed_headers(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.cors_exposed_headers_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigSecurity::_internal_mutable_cors_exposed_headers() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  return _impl_.cors_exposed_headers_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigSecurity::release_cors_exposed_headers() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigSecurity.cors_exposed_headers)
+  if ((_impl_._has_bits_[0] & 0x00000008u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000008u;
+  auto* released = _impl_.cors_exposed_headers_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.cors_exposed_headers_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigSecurity::set_allocated_cors_exposed_headers(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000008u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000008u;
+  }
+  _impl_.cors_exposed_headers_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.cors_exposed_headers_.IsDefault()) {
+    _impl_.cors_exposed_headers_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigSecurity.cors_exposed_headers)
+}
+
+// optional bool cors_allow_credentials = 18 [json_name = "corsAllowCredentials"];
+inline bool ConfigSecurity::has_cors_allow_credentials() const {
+  bool value = (_impl_._has_bits_[0] & 0x00020000u) != 0;
+  return value;
+}
+inline void ConfigSecurity::clear_cors_allow_credentials() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.cors_allow_credentials_ = false;
+  _impl_._has_bits_[0] &= ~0x00020000u;
+}
+inline bool ConfigSecurity::cors_allow_credentials() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.cors_allow_credentials)
+  return _internal_cors_allow_credentials();
+}
+inline void ConfigSecurity::set_cors_allow_credentials(bool value) {
+  _internal_set_cors_allow_credentials(value);
+  _impl_._has_bits_[0] |= 0x00020000u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.cors_allow_credentials)
+}
+inline bool ConfigSecurity::_internal_cors_allow_credentials() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.cors_allow_credentials_;
+}
+inline void ConfigSecurity::_internal_set_cors_allow_credentials(bool value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.cors_allow_credentials_ = value;
+}
+
+// optional bool cors_debug = 19 [json_name = "corsDebug"];
+inline bool ConfigSecurity::has_cors_debug() const {
+  bool value = (_impl_._has_bits_[0] & 0x00040000u) != 0;
+  return value;
+}
+inline void ConfigSecurity::clear_cors_debug() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.cors_debug_ = false;
+  _impl_._has_bits_[0] &= ~0x00040000u;
+}
+inline bool ConfigSecurity::cors_debug() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.cors_debug)
+  return _internal_cors_debug();
+}
+inline void ConfigSecurity::set_cors_debug(bool value) {
+  _internal_set_cors_debug(value);
+  _impl_._has_bits_[0] |= 0x00040000u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.cors_debug)
+}
+inline bool ConfigSecurity::_internal_cors_debug() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.cors_debug_;
+}
+inline void ConfigSecurity::_internal_set_cors_debug(bool value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.cors_debug_ = value;
+}
+
+// optional bool allow_cookies_for_subdomains = 20 [json_name = "allowCookiesForSubdomains"];
+inline bool ConfigSecurity::has_allow_cookies_for_subdomains() const {
+  bool value = (_impl_._has_bits_[0] & 0x00080000u) != 0;
+  return value;
+}
+inline void ConfigSecurity::clear_allow_cookies_for_subdomains() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.allow_cookies_for_subdomains_ = false;
+  _impl_._has_bits_[0] &= ~0x00080000u;
+}
+inline bool ConfigSecurity::allow_cookies_for_subdomains() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.allow_cookies_for_subdomains)
+  return _internal_allow_cookies_for_subdomains();
+}
+inline void ConfigSecurity::set_allow_cookies_for_subdomains(bool value) {
+  _internal_set_allow_cookies_for_subdomains(value);
+  _impl_._has_bits_[0] |= 0x00080000u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.allow_cookies_for_subdomains)
+}
+inline bool ConfigSecurity::_internal_allow_cookies_for_subdomains() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.allow_cookies_for_subdomains_;
+}
+inline void ConfigSecurity::_internal_set_allow_cookies_for_subdomains(bool value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.allow_cookies_for_subdomains_ = value;
 }
 
 // -------------------------------------------------------------------

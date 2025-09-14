@@ -63,27 +63,26 @@ message ConfigOAuth {
 }
 
 message ConfigSecurity {
-  map<string, string> restricted_usernames = 1;
-  optional int32 maximum_login_attempts = 2;
-  optional bool enable_insecure_outgoing_connections = 3;
-  optional bool enable_multifactor_authentication = 4;
-  optional bool enforce_multifactor_authentication = 5;
-  optional bool enable_oauth_service_provider = 6;
-  optional bool enable_outgoing_oauth_connections = 7;
-  optional bool terminate_sessions_on_password_change = 8;
-  optional int32 session_length_web_in_hours = 9;
-  optional int32 session_length_mobile_in_hours = 10;
-  optional int32 session_length_sso_in_hours = 11;
-  optional string allow_cors_from = 12;
-  optional string cors_exposed_headers = 13;
-  optional bool cors_allow_credentials = 14;
-  optional bool cors_debug = 15;
-  optional bool allow_cookies_for_subdomains = 16;
-  optional int32 session_cache_in_minutes = 17;
-  optional string email_confirmation_url = 18;
-  optional uint32 token_confirmation_expiry_in_hours = 19;
-  optional uint32 token_password_reset_expiry_in_hours = 20;
-  optional string password_reset_url = 21;
+  optional int32 accesss_token_expiry_web_in_hours = 1;
+  optional int32 accesss_token_expiry_mobile_in_hours = 2;
+  optional int32 accesss_token_expiry_sso_in_hours = 3;
+  optional int32 access_token_cache_in_minutes = 4;
+  optional int32 maximum_login_attempts = 5;
+  optional bool terminate_sessions_on_password_change = 6;
+  optional string email_confirmation_url = 7;
+  optional string password_reset_url = 8;
+  optional uint32 token_confirmation_expiry_in_hours = 9;
+  optional uint32 token_password_reset_expiry_in_hours = 10;
+  optional bool enable_insecure_outgoing_connections = 11;
+  optional bool enable_multifactor_authentication = 12;
+  optional bool enforce_multifactor_authentication = 13;
+  optional bool enable_oauth_service_provider = 14;
+  optional bool enable_outgoing_oauth_connections = 15;
+  optional string allow_cors_from = 16;
+  optional string cors_exposed_headers = 17;
+  optional bool cors_allow_credentials = 18;
+  optional bool cors_debug = 19;
+  optional bool allow_cookies_for_subdomains = 20;
 }
 
 message CacheConfig {
