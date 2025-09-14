@@ -13,7 +13,9 @@ plugins:
     out: gen/java
 
   # Node.js TypeScript (server-side)
-  - plugin: buf.build/community/stephenh-ts-proto
+  - name: ts
+    # - plugin: buf.build/community/stephenh-ts-proto
+    path: ./node_modules/.bin/protoc-gen-ts_proto
     out: wrappers/proto-npm/src/node
     opt:
       - env=true
@@ -21,7 +23,9 @@ plugins:
       - forceLong=string
       - useOptionals=true
 
-  - plugin: buf.build/community/stephenh-ts-proto
+  - name: ts
+    # - plugin: buf.build/community/stephenh-ts-proto
+    path: ./node_modules/.bin/protoc-gen-ts_proto
     out: wrappers/proto-npm/src/web
     opt:
       - env=browser

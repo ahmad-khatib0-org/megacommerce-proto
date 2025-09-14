@@ -106,6 +106,8 @@ pub struct ConfigOAuth {
     pub oauth_backend_url: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, optional, tag = "12")]
     pub frontend_login_url: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "13")]
+    pub frontend_login_error_url: ::core::option::Option<::prost::alloc::string::String>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

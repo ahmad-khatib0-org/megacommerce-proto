@@ -343,21 +343,22 @@ func (x *ConfigServices) GetAuthServicePrometheusUrl() string {
 }
 
 type ConfigOAuth struct {
-	state             protoimpl.MessageState `protogen:"open.v1"`
-	OauthProviderUrl  *string                `protobuf:"bytes,1,opt,name=oauth_provider_url,json=oauthProviderUrl,proto3,oneof" json:"oauth_provider_url,omitempty"`
-	OauthClientId     *string                `protobuf:"bytes,2,opt,name=oauth_client_id,json=oauthClientId,proto3,oneof" json:"oauth_client_id,omitempty"`
-	OauthClientSecret *string                `protobuf:"bytes,3,opt,name=oauth_client_secret,json=oauthClientSecret,proto3,oneof" json:"oauth_client_secret,omitempty"`
-	OauthDbDsn        *string                `protobuf:"bytes,4,opt,name=oauth_db_dsn,json=oauthDbDsn,proto3,oneof" json:"oauth_db_dsn,omitempty"`
-	OauthRedirectUrl  *string                `protobuf:"bytes,5,opt,name=oauth_redirect_url,json=oauthRedirectUrl,proto3,oneof" json:"oauth_redirect_url,omitempty"`
-	OauthLoginUrl     *string                `protobuf:"bytes,6,opt,name=oauth_login_url,json=oauthLoginUrl,proto3,oneof" json:"oauth_login_url,omitempty"`
-	OauthConsentUrl   *string                `protobuf:"bytes,7,opt,name=oauth_consent_url,json=oauthConsentUrl,proto3,oneof" json:"oauth_consent_url,omitempty"`
-	OauthResponseType *string                `protobuf:"bytes,8,opt,name=oauth_response_type,json=oauthResponseType,proto3,oneof" json:"oauth_response_type,omitempty"`
-	OauthScope        []string               `protobuf:"bytes,9,rep,name=oauth_scope,json=oauthScope,proto3" json:"oauth_scope,omitempty"`
-	OauthAdminUrl     *string                `protobuf:"bytes,10,opt,name=oauth_admin_url,json=oauthAdminUrl,proto3,oneof" json:"oauth_admin_url,omitempty"`
-	OauthBackendUrl   *string                `protobuf:"bytes,11,opt,name=oauth_backend_url,json=oauthBackendUrl,proto3,oneof" json:"oauth_backend_url,omitempty"`
-	FrontendLoginUrl  *string                `protobuf:"bytes,12,opt,name=frontend_login_url,json=frontendLoginUrl,proto3,oneof" json:"frontend_login_url,omitempty"`
-	unknownFields     protoimpl.UnknownFields
-	sizeCache         protoimpl.SizeCache
+	state                 protoimpl.MessageState `protogen:"open.v1"`
+	OauthProviderUrl      *string                `protobuf:"bytes,1,opt,name=oauth_provider_url,json=oauthProviderUrl,proto3,oneof" json:"oauth_provider_url,omitempty"`
+	OauthClientId         *string                `protobuf:"bytes,2,opt,name=oauth_client_id,json=oauthClientId,proto3,oneof" json:"oauth_client_id,omitempty"`
+	OauthClientSecret     *string                `protobuf:"bytes,3,opt,name=oauth_client_secret,json=oauthClientSecret,proto3,oneof" json:"oauth_client_secret,omitempty"`
+	OauthDbDsn            *string                `protobuf:"bytes,4,opt,name=oauth_db_dsn,json=oauthDbDsn,proto3,oneof" json:"oauth_db_dsn,omitempty"`
+	OauthRedirectUrl      *string                `protobuf:"bytes,5,opt,name=oauth_redirect_url,json=oauthRedirectUrl,proto3,oneof" json:"oauth_redirect_url,omitempty"`
+	OauthLoginUrl         *string                `protobuf:"bytes,6,opt,name=oauth_login_url,json=oauthLoginUrl,proto3,oneof" json:"oauth_login_url,omitempty"`
+	OauthConsentUrl       *string                `protobuf:"bytes,7,opt,name=oauth_consent_url,json=oauthConsentUrl,proto3,oneof" json:"oauth_consent_url,omitempty"`
+	OauthResponseType     *string                `protobuf:"bytes,8,opt,name=oauth_response_type,json=oauthResponseType,proto3,oneof" json:"oauth_response_type,omitempty"`
+	OauthScope            []string               `protobuf:"bytes,9,rep,name=oauth_scope,json=oauthScope,proto3" json:"oauth_scope,omitempty"`
+	OauthAdminUrl         *string                `protobuf:"bytes,10,opt,name=oauth_admin_url,json=oauthAdminUrl,proto3,oneof" json:"oauth_admin_url,omitempty"`
+	OauthBackendUrl       *string                `protobuf:"bytes,11,opt,name=oauth_backend_url,json=oauthBackendUrl,proto3,oneof" json:"oauth_backend_url,omitempty"`
+	FrontendLoginUrl      *string                `protobuf:"bytes,12,opt,name=frontend_login_url,json=frontendLoginUrl,proto3,oneof" json:"frontend_login_url,omitempty"`
+	FrontendLoginErrorUrl *string                `protobuf:"bytes,13,opt,name=frontend_login_error_url,json=frontendLoginErrorUrl,proto3,oneof" json:"frontend_login_error_url,omitempty"`
+	unknownFields         protoimpl.UnknownFields
+	sizeCache             protoimpl.SizeCache
 }
 
 func (x *ConfigOAuth) Reset() {
@@ -470,6 +471,13 @@ func (x *ConfigOAuth) GetOauthBackendUrl() string {
 func (x *ConfigOAuth) GetFrontendLoginUrl() string {
 	if x != nil && x.FrontendLoginUrl != nil {
 		return *x.FrontendLoginUrl
+	}
+	return ""
+}
+
+func (x *ConfigOAuth) GetFrontendLoginErrorUrl() string {
+	if x != nil && x.FrontendLoginErrorUrl != nil {
+		return *x.FrontendLoginErrorUrl
 	}
 	return ""
 }
@@ -3632,7 +3640,7 @@ const file_common_v1_config_proto_rawDesc = "" +
 	" _products_service_prometheus_urlB/\n" +
 	"-_users_service_max_receive_message_size_bytesB\x18\n" +
 	"\x16_auth_service_grpc_urlB\x1e\n" +
-	"\x1c_auth_service_prometheus_url\"\xaf\x06\n" +
+	"\x1c_auth_service_prometheus_url\"\x8a\a\n" +
 	"\vConfigOAuth\x121\n" +
 	"\x12oauth_provider_url\x18\x01 \x01(\tH\x00R\x10oauthProviderUrl\x88\x01\x01\x12+\n" +
 	"\x0foauth_client_id\x18\x02 \x01(\tH\x01R\roauthClientId\x88\x01\x01\x123\n" +
@@ -3649,7 +3657,8 @@ const file_common_v1_config_proto_rawDesc = "" +
 	" \x01(\tH\bR\roauthAdminUrl\x88\x01\x01\x12/\n" +
 	"\x11oauth_backend_url\x18\v \x01(\tH\tR\x0foauthBackendUrl\x88\x01\x01\x121\n" +
 	"\x12frontend_login_url\x18\f \x01(\tH\n" +
-	"R\x10frontendLoginUrl\x88\x01\x01B\x15\n" +
+	"R\x10frontendLoginUrl\x88\x01\x01\x12<\n" +
+	"\x18frontend_login_error_url\x18\r \x01(\tH\vR\x15frontendLoginErrorUrl\x88\x01\x01B\x15\n" +
 	"\x13_oauth_provider_urlB\x12\n" +
 	"\x10_oauth_client_idB\x16\n" +
 	"\x14_oauth_client_secretB\x0f\n" +
@@ -3660,7 +3669,8 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x14_oauth_response_typeB\x12\n" +
 	"\x10_oauth_admin_urlB\x14\n" +
 	"\x12_oauth_backend_urlB\x15\n" +
-	"\x13_frontend_login_url\"\x89\x11\n" +
+	"\x13_frontend_login_urlB\x1b\n" +
+	"\x19_frontend_login_error_url\"\x89\x11\n" +
 	"\x0eConfigSecurity\x12e\n" +
 	"\x14restricted_usernames\x18\x01 \x03(\v22.common.v1.ConfigSecurity.RestrictedUsernamesEntryR\x13restrictedUsernames\x129\n" +
 	"\x16maximum_login_attempts\x18\x02 \x01(\x05H\x00R\x14maximumLoginAttempts\x88\x01\x01\x12T\n" +

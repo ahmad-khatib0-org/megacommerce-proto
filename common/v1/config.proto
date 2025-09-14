@@ -59,6 +59,7 @@ message ConfigOAuth {
   optional string oauth_admin_url = 10;
   optional string oauth_backend_url = 11;
   optional string frontend_login_url = 12;
+  optional string frontend_login_error_url = 13;
 }
 
 message ConfigSecurity {

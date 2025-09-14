@@ -13,6 +13,7 @@
   "devDependencies": {
     "@bufbuild/protoc-gen-es": "^2.7.0",
     "ts-node": "^10.9.2",
+    "ts-proto": "^2.7.7",
     "tsx": "^4.20.3"
   },
   "dependencies": {
