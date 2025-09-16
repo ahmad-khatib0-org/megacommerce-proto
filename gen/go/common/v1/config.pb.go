@@ -488,22 +488,23 @@ type ConfigSecurity struct {
 	AccessTokenExpiryMobileInHours    *int32                 `protobuf:"varint,2,opt,name=access_token_expiry_mobile_in_hours,json=accessTokenExpiryMobileInHours,proto3,oneof" json:"access_token_expiry_mobile_in_hours,omitempty"`
 	AccessTokenExpirySsoInHours       *int32                 `protobuf:"varint,3,opt,name=access_token_expiry_sso_in_hours,json=accessTokenExpirySsoInHours,proto3,oneof" json:"access_token_expiry_sso_in_hours,omitempty"`
 	AccessTokenCacheInMinutes         *int32                 `protobuf:"varint,4,opt,name=access_token_cache_in_minutes,json=accessTokenCacheInMinutes,proto3,oneof" json:"access_token_cache_in_minutes,omitempty"`
-	MaximumLoginAttempts              *int32                 `protobuf:"varint,5,opt,name=maximum_login_attempts,json=maximumLoginAttempts,proto3,oneof" json:"maximum_login_attempts,omitempty"`
-	TerminateSessionsOnPasswordChange *bool                  `protobuf:"varint,6,opt,name=terminate_sessions_on_password_change,json=terminateSessionsOnPasswordChange,proto3,oneof" json:"terminate_sessions_on_password_change,omitempty"`
-	EmailConfirmationUrl              *string                `protobuf:"bytes,7,opt,name=email_confirmation_url,json=emailConfirmationUrl,proto3,oneof" json:"email_confirmation_url,omitempty"`
-	PasswordResetUrl                  *string                `protobuf:"bytes,8,opt,name=password_reset_url,json=passwordResetUrl,proto3,oneof" json:"password_reset_url,omitempty"`
-	TokenConfirmationExpiryInHours    *uint32                `protobuf:"varint,9,opt,name=token_confirmation_expiry_in_hours,json=tokenConfirmationExpiryInHours,proto3,oneof" json:"token_confirmation_expiry_in_hours,omitempty"`
-	TokenPasswordResetExpiryInHours   *uint32                `protobuf:"varint,10,opt,name=token_password_reset_expiry_in_hours,json=tokenPasswordResetExpiryInHours,proto3,oneof" json:"token_password_reset_expiry_in_hours,omitempty"`
-	EnableInsecureOutgoingConnections *bool                  `protobuf:"varint,11,opt,name=enable_insecure_outgoing_connections,json=enableInsecureOutgoingConnections,proto3,oneof" json:"enable_insecure_outgoing_connections,omitempty"`
-	EnableMultifactorAuthentication   *bool                  `protobuf:"varint,12,opt,name=enable_multifactor_authentication,json=enableMultifactorAuthentication,proto3,oneof" json:"enable_multifactor_authentication,omitempty"`
-	EnforceMultifactorAuthentication  *bool                  `protobuf:"varint,13,opt,name=enforce_multifactor_authentication,json=enforceMultifactorAuthentication,proto3,oneof" json:"enforce_multifactor_authentication,omitempty"`
-	EnableOauthServiceProvider        *bool                  `protobuf:"varint,14,opt,name=enable_oauth_service_provider,json=enableOauthServiceProvider,proto3,oneof" json:"enable_oauth_service_provider,omitempty"`
-	EnableOutgoingOauthConnections    *bool                  `protobuf:"varint,15,opt,name=enable_outgoing_oauth_connections,json=enableOutgoingOauthConnections,proto3,oneof" json:"enable_outgoing_oauth_connections,omitempty"`
-	AllowCorsFrom                     *string                `protobuf:"bytes,16,opt,name=allow_cors_from,json=allowCorsFrom,proto3,oneof" json:"allow_cors_from,omitempty"`
-	CorsExposedHeaders                *string                `protobuf:"bytes,17,opt,name=cors_exposed_headers,json=corsExposedHeaders,proto3,oneof" json:"cors_exposed_headers,omitempty"`
-	CorsAllowCredentials              *bool                  `protobuf:"varint,18,opt,name=cors_allow_credentials,json=corsAllowCredentials,proto3,oneof" json:"cors_allow_credentials,omitempty"`
-	CorsDebug                         *bool                  `protobuf:"varint,19,opt,name=cors_debug,json=corsDebug,proto3,oneof" json:"cors_debug,omitempty"`
-	AllowCookiesForSubdomains         *bool                  `protobuf:"varint,20,opt,name=allow_cookies_for_subdomains,json=allowCookiesForSubdomains,proto3,oneof" json:"allow_cookies_for_subdomains,omitempty"`
+	RefreshTokenExpiryInHours         *int32                 `protobuf:"varint,5,opt,name=refresh_token_expiry_in_hours,json=refreshTokenExpiryInHours,proto3,oneof" json:"refresh_token_expiry_in_hours,omitempty"`
+	MaximumLoginAttempts              *int32                 `protobuf:"varint,6,opt,name=maximum_login_attempts,json=maximumLoginAttempts,proto3,oneof" json:"maximum_login_attempts,omitempty"`
+	TerminateSessionsOnPasswordChange *bool                  `protobuf:"varint,7,opt,name=terminate_sessions_on_password_change,json=terminateSessionsOnPasswordChange,proto3,oneof" json:"terminate_sessions_on_password_change,omitempty"`
+	EmailConfirmationUrl              *string                `protobuf:"bytes,8,opt,name=email_confirmation_url,json=emailConfirmationUrl,proto3,oneof" json:"email_confirmation_url,omitempty"`
+	PasswordResetUrl                  *string                `protobuf:"bytes,9,opt,name=password_reset_url,json=passwordResetUrl,proto3,oneof" json:"password_reset_url,omitempty"`
+	TokenConfirmationExpiryInHours    *uint32                `protobuf:"varint,10,opt,name=token_confirmation_expiry_in_hours,json=tokenConfirmationExpiryInHours,proto3,oneof" json:"token_confirmation_expiry_in_hours,omitempty"`
+	TokenPasswordResetExpiryInHours   *uint32                `protobuf:"varint,11,opt,name=token_password_reset_expiry_in_hours,json=tokenPasswordResetExpiryInHours,proto3,oneof" json:"token_password_reset_expiry_in_hours,omitempty"`
+	EnableInsecureOutgoingConnections *bool                  `protobuf:"varint,12,opt,name=enable_insecure_outgoing_connections,json=enableInsecureOutgoingConnections,proto3,oneof" json:"enable_insecure_outgoing_connections,omitempty"`
+	EnableMultifactorAuthentication   *bool                  `protobuf:"varint,13,opt,name=enable_multifactor_authentication,json=enableMultifactorAuthentication,proto3,oneof" json:"enable_multifactor_authentication,omitempty"`
+	EnforceMultifactorAuthentication  *bool                  `protobuf:"varint,14,opt,name=enforce_multifactor_authentication,json=enforceMultifactorAuthentication,proto3,oneof" json:"enforce_multifactor_authentication,omitempty"`
+	EnableOauthServiceProvider        *bool                  `protobuf:"varint,15,opt,name=enable_oauth_service_provider,json=enableOauthServiceProvider,proto3,oneof" json:"enable_oauth_service_provider,omitempty"`
+	EnableOutgoingOauthConnections    *bool                  `protobuf:"varint,16,opt,name=enable_outgoing_oauth_connections,json=enableOutgoingOauthConnections,proto3,oneof" json:"enable_outgoing_oauth_connections,omitempty"`
+	AllowCorsFrom                     *string                `protobuf:"bytes,17,opt,name=allow_cors_from,json=allowCorsFrom,proto3,oneof" json:"allow_cors_from,omitempty"`
+	CorsExposedHeaders                *string                `protobuf:"bytes,18,opt,name=cors_exposed_headers,json=corsExposedHeaders,proto3,oneof" json:"cors_exposed_headers,omitempty"`
+	CorsAllowCredentials              *bool                  `protobuf:"varint,19,opt,name=cors_allow_credentials,json=corsAllowCredentials,proto3,oneof" json:"cors_allow_credentials,omitempty"`
+	CorsDebug                         *bool                  `protobuf:"varint,20,opt,name=cors_debug,json=corsDebug,proto3,oneof" json:"cors_debug,omitempty"`
+	AllowCookiesForSubdomains         *bool                  `protobuf:"varint,21,opt,name=allow_cookies_for_subdomains,json=allowCookiesForSubdomains,proto3,oneof" json:"allow_cookies_for_subdomains,omitempty"`
 	unknownFields                     protoimpl.UnknownFields
 	sizeCache                         protoimpl.SizeCache
 }
@@ -562,6 +563,13 @@ func (x *ConfigSecurity) GetAccessTokenExpirySsoInHours() int32 {
 func (x *ConfigSecurity) GetAccessTokenCacheInMinutes() int32 {
 	if x != nil && x.AccessTokenCacheInMinutes != nil {
 		return *x.AccessTokenCacheInMinutes
+	}
+	return 0
+}
+
+func (x *ConfigSecurity) GetRefreshTokenExpiryInHours() int32 {
+	if x != nil && x.RefreshTokenExpiryInHours != nil {
+		return *x.RefreshTokenExpiryInHours
 	}
 	return 0
 }
@@ -3662,35 +3670,37 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x10_oauth_admin_urlB\x14\n" +
 	"\x12_oauth_backend_urlB\x15\n" +
 	"\x13_frontend_login_urlB\x1b\n" +
-	"\x19_frontend_login_error_url\"\x92\x10\n" +
+	"\x19_frontend_login_error_url\"\xfb\x10\n" +
 	"\x0eConfigSecurity\x12J\n" +
 	" access_token_expiry_web_in_hours\x18\x01 \x01(\x05H\x00R\x1baccessTokenExpiryWebInHours\x88\x01\x01\x12P\n" +
 	"#access_token_expiry_mobile_in_hours\x18\x02 \x01(\x05H\x01R\x1eaccessTokenExpiryMobileInHours\x88\x01\x01\x12J\n" +
 	" access_token_expiry_sso_in_hours\x18\x03 \x01(\x05H\x02R\x1baccessTokenExpirySsoInHours\x88\x01\x01\x12E\n" +
-	"\x1daccess_token_cache_in_minutes\x18\x04 \x01(\x05H\x03R\x19accessTokenCacheInMinutes\x88\x01\x01\x129\n" +
-	"\x16maximum_login_attempts\x18\x05 \x01(\x05H\x04R\x14maximumLoginAttempts\x88\x01\x01\x12U\n" +
-	"%terminate_sessions_on_password_change\x18\x06 \x01(\bH\x05R!terminateSessionsOnPasswordChange\x88\x01\x01\x129\n" +
-	"\x16email_confirmation_url\x18\a \x01(\tH\x06R\x14emailConfirmationUrl\x88\x01\x01\x121\n" +
-	"\x12password_reset_url\x18\b \x01(\tH\aR\x10passwordResetUrl\x88\x01\x01\x12O\n" +
-	"\"token_confirmation_expiry_in_hours\x18\t \x01(\rH\bR\x1etokenConfirmationExpiryInHours\x88\x01\x01\x12R\n" +
-	"$token_password_reset_expiry_in_hours\x18\n" +
-	" \x01(\rH\tR\x1ftokenPasswordResetExpiryInHours\x88\x01\x01\x12T\n" +
-	"$enable_insecure_outgoing_connections\x18\v \x01(\bH\n" +
-	"R!enableInsecureOutgoingConnections\x88\x01\x01\x12O\n" +
-	"!enable_multifactor_authentication\x18\f \x01(\bH\vR\x1fenableMultifactorAuthentication\x88\x01\x01\x12Q\n" +
-	"\"enforce_multifactor_authentication\x18\r \x01(\bH\fR enforceMultifactorAuthentication\x88\x01\x01\x12F\n" +
-	"\x1denable_oauth_service_provider\x18\x0e \x01(\bH\rR\x1aenableOauthServiceProvider\x88\x01\x01\x12N\n" +
-	"!enable_outgoing_oauth_connections\x18\x0f \x01(\bH\x0eR\x1eenableOutgoingOauthConnections\x88\x01\x01\x12+\n" +
-	"\x0fallow_cors_from\x18\x10 \x01(\tH\x0fR\rallowCorsFrom\x88\x01\x01\x125\n" +
-	"\x14cors_exposed_headers\x18\x11 \x01(\tH\x10R\x12corsExposedHeaders\x88\x01\x01\x129\n" +
-	"\x16cors_allow_credentials\x18\x12 \x01(\bH\x11R\x14corsAllowCredentials\x88\x01\x01\x12\"\n" +
+	"\x1daccess_token_cache_in_minutes\x18\x04 \x01(\x05H\x03R\x19accessTokenCacheInMinutes\x88\x01\x01\x12E\n" +
+	"\x1drefresh_token_expiry_in_hours\x18\x05 \x01(\x05H\x04R\x19refreshTokenExpiryInHours\x88\x01\x01\x129\n" +
+	"\x16maximum_login_attempts\x18\x06 \x01(\x05H\x05R\x14maximumLoginAttempts\x88\x01\x01\x12U\n" +
+	"%terminate_sessions_on_password_change\x18\a \x01(\bH\x06R!terminateSessionsOnPasswordChange\x88\x01\x01\x129\n" +
+	"\x16email_confirmation_url\x18\b \x01(\tH\aR\x14emailConfirmationUrl\x88\x01\x01\x121\n" +
+	"\x12password_reset_url\x18\t \x01(\tH\bR\x10passwordResetUrl\x88\x01\x01\x12O\n" +
+	"\"token_confirmation_expiry_in_hours\x18\n" +
+	" \x01(\rH\tR\x1etokenConfirmationExpiryInHours\x88\x01\x01\x12R\n" +
+	"$token_password_reset_expiry_in_hours\x18\v \x01(\rH\n" +
+	"R\x1ftokenPasswordResetExpiryInHours\x88\x01\x01\x12T\n" +
+	"$enable_insecure_outgoing_connections\x18\f \x01(\bH\vR!enableInsecureOutgoingConnections\x88\x01\x01\x12O\n" +
+	"!enable_multifactor_authentication\x18\r \x01(\bH\fR\x1fenableMultifactorAuthentication\x88\x01\x01\x12Q\n" +
+	"\"enforce_multifactor_authentication\x18\x0e \x01(\bH\rR enforceMultifactorAuthentication\x88\x01\x01\x12F\n" +
+	"\x1denable_oauth_service_provider\x18\x0f \x01(\bH\x0eR\x1aenableOauthServiceProvider\x88\x01\x01\x12N\n" +
+	"!enable_outgoing_oauth_connections\x18\x10 \x01(\bH\x0fR\x1eenableOutgoingOauthConnections\x88\x01\x01\x12+\n" +
+	"\x0fallow_cors_from\x18\x11 \x01(\tH\x10R\rallowCorsFrom\x88\x01\x01\x125\n" +
+	"\x14cors_exposed_headers\x18\x12 \x01(\tH\x11R\x12corsExposedHeaders\x88\x01\x01\x129\n" +
+	"\x16cors_allow_credentials\x18\x13 \x01(\bH\x12R\x14corsAllowCredentials\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"cors_debug\x18\x13 \x01(\bH\x12R\tcorsDebug\x88\x01\x01\x12D\n" +
-	"\x1callow_cookies_for_subdomains\x18\x14 \x01(\bH\x13R\x19allowCookiesForSubdomains\x88\x01\x01B#\n" +
+	"cors_debug\x18\x14 \x01(\bH\x13R\tcorsDebug\x88\x01\x01\x12D\n" +
+	"\x1callow_cookies_for_subdomains\x18\x15 \x01(\bH\x14R\x19allowCookiesForSubdomains\x88\x01\x01B#\n" +
 	"!_access_token_expiry_web_in_hoursB&\n" +
 	"$_access_token_expiry_mobile_in_hoursB#\n" +
 	"!_access_token_expiry_sso_in_hoursB \n" +
-	"\x1e_access_token_cache_in_minutesB\x19\n" +
+	"\x1e_access_token_cache_in_minutesB \n" +
+	"\x1e_refresh_token_expiry_in_hoursB\x19\n" +
 	"\x17_maximum_login_attemptsB(\n" +
 	"&_terminate_sessions_on_password_changeB\x19\n" +
 	"\x17_email_confirmation_urlB\x15\n" +

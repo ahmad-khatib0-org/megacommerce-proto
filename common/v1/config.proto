@@ -67,22 +67,23 @@ message ConfigSecurity {
   optional int32 access_token_expiry_mobile_in_hours = 2;
   optional int32 access_token_expiry_sso_in_hours = 3;
   optional int32 access_token_cache_in_minutes = 4;
-  optional int32 maximum_login_attempts = 5;
-  optional bool terminate_sessions_on_password_change = 6;
-  optional string email_confirmation_url = 7;
-  optional string password_reset_url = 8;
-  optional uint32 token_confirmation_expiry_in_hours = 9;
-  optional uint32 token_password_reset_expiry_in_hours = 10;
-  optional bool enable_insecure_outgoing_connections = 11;
-  optional bool enable_multifactor_authentication = 12;
-  optional bool enforce_multifactor_authentication = 13;
-  optional bool enable_oauth_service_provider = 14;
-  optional bool enable_outgoing_oauth_connections = 15;
-  optional string allow_cors_from = 16;
-  optional string cors_exposed_headers = 17;
-  optional bool cors_allow_credentials = 18;
-  optional bool cors_debug = 19;
-  optional bool allow_cookies_for_subdomains = 20;
+  optional int32 refresh_token_expiry_in_hours = 5;
+  optional int32 maximum_login_attempts = 6;
+  optional bool terminate_sessions_on_password_change = 7;
+  optional string email_confirmation_url = 8;
+  optional string password_reset_url = 9;
+  optional uint32 token_confirmation_expiry_in_hours = 10;
+  optional uint32 token_password_reset_expiry_in_hours = 11;
+  optional bool enable_insecure_outgoing_connections = 12;
+  optional bool enable_multifactor_authentication = 13;
+  optional bool enforce_multifactor_authentication = 14;
+  optional bool enable_oauth_service_provider = 15;
+  optional bool enable_outgoing_oauth_connections = 16;
+  optional string allow_cors_from = 17;
+  optional string cors_exposed_headers = 18;
+  optional bool cors_allow_credentials = 19;
+  optional bool cors_debug = 20;
+  optional bool allow_cookies_for_subdomains = 21;
 }
 
 message CacheConfig {

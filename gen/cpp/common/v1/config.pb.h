@@ -1313,28 +1313,29 @@ class ConfigSecurity final : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
   enum : int {
-    kEmailConfirmationUrlFieldNumber = 7,
-    kPasswordResetUrlFieldNumber = 8,
-    kAllowCorsFromFieldNumber = 16,
-    kCorsExposedHeadersFieldNumber = 17,
+    kEmailConfirmationUrlFieldNumber = 8,
+    kPasswordResetUrlFieldNumber = 9,
+    kAllowCorsFromFieldNumber = 17,
+    kCorsExposedHeadersFieldNumber = 18,
     kAccessTokenExpiryWebInHoursFieldNumber = 1,
     kAccessTokenExpiryMobileInHoursFieldNumber = 2,
     kAccessTokenExpirySsoInHoursFieldNumber = 3,
     kAccessTokenCacheInMinutesFieldNumber = 4,
-    kMaximumLoginAttemptsFieldNumber = 5,
-    kTokenConfirmationExpiryInHoursFieldNumber = 9,
-    kTokenPasswordResetExpiryInHoursFieldNumber = 10,
-    kTerminateSessionsOnPasswordChangeFieldNumber = 6,
-    kEnableInsecureOutgoingConnectionsFieldNumber = 11,
-    kEnableMultifactorAuthenticationFieldNumber = 12,
-    kEnforceMultifactorAuthenticationFieldNumber = 13,
-    kEnableOauthServiceProviderFieldNumber = 14,
-    kEnableOutgoingOauthConnectionsFieldNumber = 15,
-    kCorsAllowCredentialsFieldNumber = 18,
-    kCorsDebugFieldNumber = 19,
-    kAllowCookiesForSubdomainsFieldNumber = 20,
+    kRefreshTokenExpiryInHoursFieldNumber = 5,
+    kMaximumLoginAttemptsFieldNumber = 6,
+    kTokenConfirmationExpiryInHoursFieldNumber = 10,
+    kTokenPasswordResetExpiryInHoursFieldNumber = 11,
+    kTerminateSessionsOnPasswordChangeFieldNumber = 7,
+    kEnableInsecureOutgoingConnectionsFieldNumber = 12,
+    kEnableMultifactorAuthenticationFieldNumber = 13,
+    kEnforceMultifactorAuthenticationFieldNumber = 14,
+    kEnableOauthServiceProviderFieldNumber = 15,
+    kEnableOutgoingOauthConnectionsFieldNumber = 16,
+    kCorsAllowCredentialsFieldNumber = 19,
+    kCorsDebugFieldNumber = 20,
+    kAllowCookiesForSubdomainsFieldNumber = 21,
   };
-  // optional string email_confirmation_url = 7 [json_name = "emailConfirmationUrl"];
+  // optional string email_confirmation_url = 8 [json_name = "emailConfirmationUrl"];
   bool has_email_confirmation_url() const;
   void clear_email_confirmation_url() ;
   const ::std::string& email_confirmation_url() const;
@@ -1350,7 +1351,7 @@ class ConfigSecurity final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_email_confirmation_url();
 
   public:
-  // optional string password_reset_url = 8 [json_name = "passwordResetUrl"];
+  // optional string password_reset_url = 9 [json_name = "passwordResetUrl"];
   bool has_password_reset_url() const;
   void clear_password_reset_url() ;
   const ::std::string& password_reset_url() const;
@@ -1366,7 +1367,7 @@ class ConfigSecurity final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_password_reset_url();
 
   public:
-  // optional string allow_cors_from = 16 [json_name = "allowCorsFrom"];
+  // optional string allow_cors_from = 17 [json_name = "allowCorsFrom"];
   bool has_allow_cors_from() const;
   void clear_allow_cors_from() ;
   const ::std::string& allow_cors_from() const;
@@ -1382,7 +1383,7 @@ class ConfigSecurity final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_allow_cors_from();
 
   public:
-  // optional string cors_exposed_headers = 17 [json_name = "corsExposedHeaders"];
+  // optional string cors_exposed_headers = 18 [json_name = "corsExposedHeaders"];
   bool has_cors_exposed_headers() const;
   void clear_cors_exposed_headers() ;
   const ::std::string& cors_exposed_headers() const;
@@ -1442,7 +1443,18 @@ class ConfigSecurity final : public ::google::protobuf::Message
   void _internal_set_access_token_cache_in_minutes(::int32_t value);
 
   public:
-  // optional int32 maximum_login_attempts = 5 [json_name = "maximumLoginAttempts"];
+  // optional int32 refresh_token_expiry_in_hours = 5 [json_name = "refreshTokenExpiryInHours"];
+  bool has_refresh_token_expiry_in_hours() const;
+  void clear_refresh_token_expiry_in_hours() ;
+  ::int32_t refresh_token_expiry_in_hours() const;
+  void set_refresh_token_expiry_in_hours(::int32_t value);
+
+  private:
+  ::int32_t _internal_refresh_token_expiry_in_hours() const;
+  void _internal_set_refresh_token_expiry_in_hours(::int32_t value);
+
+  public:
+  // optional int32 maximum_login_attempts = 6 [json_name = "maximumLoginAttempts"];
   bool has_maximum_login_attempts() const;
   void clear_maximum_login_attempts() ;
   ::int32_t maximum_login_attempts() const;
@@ -1453,7 +1465,7 @@ class ConfigSecurity final : public ::google::protobuf::Message
   void _internal_set_maximum_login_attempts(::int32_t value);
 
   public:
-  // optional uint32 token_confirmation_expiry_in_hours = 9 [json_name = "tokenConfirmationExpiryInHours"];
+  // optional uint32 token_confirmation_expiry_in_hours = 10 [json_name = "tokenConfirmationExpiryInHours"];
   bool has_token_confirmation_expiry_in_hours() const;
   void clear_token_confirmation_expiry_in_hours() ;
   ::uint32_t token_confirmation_expiry_in_hours() const;
@@ -1464,7 +1476,7 @@ class ConfigSecurity final : public ::google::protobuf::Message
   void _internal_set_token_confirmation_expiry_in_hours(::uint32_t value);
 
   public:
-  // optional uint32 token_password_reset_expiry_in_hours = 10 [json_name = "tokenPasswordResetExpiryInHours"];
+  // optional uint32 token_password_reset_expiry_in_hours = 11 [json_name = "tokenPasswordResetExpiryInHours"];
   bool has_token_password_reset_expiry_in_hours() const;
   void clear_token_password_reset_expiry_in_hours() ;
   ::uint32_t token_password_reset_expiry_in_hours() const;
@@ -1475,7 +1487,7 @@ class ConfigSecurity final : public ::google::protobuf::Message
   void _internal_set_token_password_reset_expiry_in_hours(::uint32_t value);
 
   public:
-  // optional bool terminate_sessions_on_password_change = 6 [json_name = "terminateSessionsOnPasswordChange"];
+  // optional bool terminate_sessions_on_password_change = 7 [json_name = "terminateSessionsOnPasswordChange"];
   bool has_terminate_sessions_on_password_change() const;
   void clear_terminate_sessions_on_password_change() ;
   bool terminate_sessions_on_password_change() const;
@@ -1486,7 +1498,7 @@ class ConfigSecurity final : public ::google::protobuf::Message
   void _internal_set_terminate_sessions_on_password_change(bool value);
 
   public:
-  // optional bool enable_insecure_outgoing_connections = 11 [json_name = "enableInsecureOutgoingConnections"];
+  // optional bool enable_insecure_outgoing_connections = 12 [json_name = "enableInsecureOutgoingConnections"];
   bool has_enable_insecure_outgoing_connections() const;
   void clear_enable_insecure_outgoing_connections() ;
   bool enable_insecure_outgoing_connections() const;
@@ -1497,7 +1509,7 @@ class ConfigSecurity final : public ::google::protobuf::Message
   void _internal_set_enable_insecure_outgoing_connections(bool value);
 
   public:
-  // optional bool enable_multifactor_authentication = 12 [json_name = "enableMultifactorAuthentication"];
+  // optional bool enable_multifactor_authentication = 13 [json_name = "enableMultifactorAuthentication"];
   bool has_enable_multifactor_authentication() const;
   void clear_enable_multifactor_authentication() ;
   bool enable_multifactor_authentication() const;
@@ -1508,7 +1520,7 @@ class ConfigSecurity final : public ::google::protobuf::Message
   void _internal_set_enable_multifactor_authentication(bool value);
 
   public:
-  // optional bool enforce_multifactor_authentication = 13 [json_name = "enforceMultifactorAuthentication"];
+  // optional bool enforce_multifactor_authentication = 14 [json_name = "enforceMultifactorAuthentication"];
   bool has_enforce_multifactor_authentication() const;
   void clear_enforce_multifactor_authentication() ;
   bool enforce_multifactor_authentication() const;
@@ -1519,7 +1531,7 @@ class ConfigSecurity final : public ::google::protobuf::Message
   void _internal_set_enforce_multifactor_authentication(bool value);
 
   public:
-  // optional bool enable_oauth_service_provider = 14 [json_name = "enableOauthServiceProvider"];
+  // optional bool enable_oauth_service_provider = 15 [json_name = "enableOauthServiceProvider"];
   bool has_enable_oauth_service_provider() const;
   void clear_enable_oauth_service_provider() ;
   bool enable_oauth_service_provider() const;
@@ -1530,7 +1542,7 @@ class ConfigSecurity final : public ::google::protobuf::Message
   void _internal_set_enable_oauth_service_provider(bool value);
 
   public:
-  // optional bool enable_outgoing_oauth_connections = 15 [json_name = "enableOutgoingOauthConnections"];
+  // optional bool enable_outgoing_oauth_connections = 16 [json_name = "enableOutgoingOauthConnections"];
   bool has_enable_outgoing_oauth_connections() const;
   void clear_enable_outgoing_oauth_connections() ;
   bool enable_outgoing_oauth_connections() const;
@@ -1541,7 +1553,7 @@ class ConfigSecurity final : public ::google::protobuf::Message
   void _internal_set_enable_outgoing_oauth_connections(bool value);
 
   public:
-  // optional bool cors_allow_credentials = 18 [json_name = "corsAllowCredentials"];
+  // optional bool cors_allow_credentials = 19 [json_name = "corsAllowCredentials"];
   bool has_cors_allow_credentials() const;
   void clear_cors_allow_credentials() ;
   bool cors_allow_credentials() const;
@@ -1552,7 +1564,7 @@ class ConfigSecurity final : public ::google::protobuf::Message
   void _internal_set_cors_allow_credentials(bool value);
 
   public:
-  // optional bool cors_debug = 19 [json_name = "corsDebug"];
+  // optional bool cors_debug = 20 [json_name = "corsDebug"];
   bool has_cors_debug() const;
   void clear_cors_debug() ;
   bool cors_debug() const;
@@ -1563,7 +1575,7 @@ class ConfigSecurity final : public ::google::protobuf::Message
   void _internal_set_cors_debug(bool value);
 
   public:
-  // optional bool allow_cookies_for_subdomains = 20 [json_name = "allowCookiesForSubdomains"];
+  // optional bool allow_cookies_for_subdomains = 21 [json_name = "allowCookiesForSubdomains"];
   bool has_allow_cookies_for_subdomains() const;
   void clear_allow_cookies_for_subdomains() ;
   bool allow_cookies_for_subdomains() const;
@@ -1578,7 +1590,7 @@ class ConfigSecurity final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<5, 20,
+  static const ::google::protobuf::internal::TcParseTable<5, 21,
                                    0, 124,
                                    2>
       _table_;
@@ -1608,6 +1620,7 @@ class ConfigSecurity final : public ::google::protobuf::Message
     ::int32_t access_token_expiry_mobile_in_hours_;
     ::int32_t access_token_expiry_sso_in_hours_;
     ::int32_t access_token_cache_in_minutes_;
+    ::int32_t refresh_token_expiry_in_hours_;
     ::int32_t maximum_login_attempts_;
     ::uint32_t token_confirmation_expiry_in_hours_;
     ::uint32_t token_password_reset_expiry_in_hours_;
@@ -12576,15 +12589,43 @@ inline void ConfigSecurity::_internal_set_access_token_cache_in_minutes(::int32_
   _impl_.access_token_cache_in_minutes_ = value;
 }
 
-// optional int32 maximum_login_attempts = 5 [json_name = "maximumLoginAttempts"];
-inline bool ConfigSecurity::has_maximum_login_attempts() const {
+// optional int32 refresh_token_expiry_in_hours = 5 [json_name = "refreshTokenExpiryInHours"];
+inline bool ConfigSecurity::has_refresh_token_expiry_in_hours() const {
   bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
+  return value;
+}
+inline void ConfigSecurity::clear_refresh_token_expiry_in_hours() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.refresh_token_expiry_in_hours_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000100u;
+}
+inline ::int32_t ConfigSecurity::refresh_token_expiry_in_hours() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.refresh_token_expiry_in_hours)
+  return _internal_refresh_token_expiry_in_hours();
+}
+inline void ConfigSecurity::set_refresh_token_expiry_in_hours(::int32_t value) {
+  _internal_set_refresh_token_expiry_in_hours(value);
+  _impl_._has_bits_[0] |= 0x00000100u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.refresh_token_expiry_in_hours)
+}
+inline ::int32_t ConfigSecurity::_internal_refresh_token_expiry_in_hours() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.refresh_token_expiry_in_hours_;
+}
+inline void ConfigSecurity::_internal_set_refresh_token_expiry_in_hours(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.refresh_token_expiry_in_hours_ = value;
+}
+
+// optional int32 maximum_login_attempts = 6 [json_name = "maximumLoginAttempts"];
+inline bool ConfigSecurity::has_maximum_login_attempts() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
   return value;
 }
 inline void ConfigSecurity::clear_maximum_login_attempts() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.maximum_login_attempts_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000100u;
+  _impl_._has_bits_[0] &= ~0x00000200u;
 }
 inline ::int32_t ConfigSecurity::maximum_login_attempts() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.maximum_login_attempts)
@@ -12592,7 +12633,7 @@ inline ::int32_t ConfigSecurity::maximum_login_attempts() const {
 }
 inline void ConfigSecurity::set_maximum_login_attempts(::int32_t value) {
   _internal_set_maximum_login_attempts(value);
-  _impl_._has_bits_[0] |= 0x00000100u;
+  _impl_._has_bits_[0] |= 0x00000200u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.maximum_login_attempts)
 }
 inline ::int32_t ConfigSecurity::_internal_maximum_login_attempts() const {
@@ -12604,15 +12645,15 @@ inline void ConfigSecurity::_internal_set_maximum_login_attempts(::int32_t value
   _impl_.maximum_login_attempts_ = value;
 }
 
-// optional bool terminate_sessions_on_password_change = 6 [json_name = "terminateSessionsOnPasswordChange"];
+// optional bool terminate_sessions_on_password_change = 7 [json_name = "terminateSessionsOnPasswordChange"];
 inline bool ConfigSecurity::has_terminate_sessions_on_password_change() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000800u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00001000u) != 0;
   return value;
 }
 inline void ConfigSecurity::clear_terminate_sessions_on_password_change() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.terminate_sessions_on_password_change_ = false;
-  _impl_._has_bits_[0] &= ~0x00000800u;
+  _impl_._has_bits_[0] &= ~0x00001000u;
 }
 inline bool ConfigSecurity::terminate_sessions_on_password_change() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.terminate_sessions_on_password_change)
@@ -12620,7 +12661,7 @@ inline bool ConfigSecurity::terminate_sessions_on_password_change() const {
 }
 inline void ConfigSecurity::set_terminate_sessions_on_password_change(bool value) {
   _internal_set_terminate_sessions_on_password_change(value);
-  _impl_._has_bits_[0] |= 0x00000800u;
+  _impl_._has_bits_[0] |= 0x00001000u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.terminate_sessions_on_password_change)
 }
 inline bool ConfigSecurity::_internal_terminate_sessions_on_password_change() const {
@@ -12632,7 +12673,7 @@ inline void ConfigSecurity::_internal_set_terminate_sessions_on_password_change(
   _impl_.terminate_sessions_on_password_change_ = value;
 }
 
-// optional string email_confirmation_url = 7 [json_name = "emailConfirmationUrl"];
+// optional string email_confirmation_url = 8 [json_name = "emailConfirmationUrl"];
 inline bool ConfigSecurity::has_email_confirmation_url() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   return value;
@@ -12701,7 +12742,7 @@ inline void ConfigSecurity::set_allocated_email_confirmation_url(::std::string* 
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigSecurity.email_confirmation_url)
 }
 
-// optional string password_reset_url = 8 [json_name = "passwordResetUrl"];
+// optional string password_reset_url = 9 [json_name = "passwordResetUrl"];
 inline bool ConfigSecurity::has_password_reset_url() const {
   bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
@@ -12770,15 +12811,15 @@ inline void ConfigSecurity::set_allocated_password_reset_url(::std::string* PROT
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigSecurity.password_reset_url)
 }
 
-// optional uint32 token_confirmation_expiry_in_hours = 9 [json_name = "tokenConfirmationExpiryInHours"];
+// optional uint32 token_confirmation_expiry_in_hours = 10 [json_name = "tokenConfirmationExpiryInHours"];
 inline bool ConfigSecurity::has_token_confirmation_expiry_in_hours() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000400u) != 0;
   return value;
 }
 inline void ConfigSecurity::clear_token_confirmation_expiry_in_hours() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.token_confirmation_expiry_in_hours_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000200u;
+  _impl_._has_bits_[0] &= ~0x00000400u;
 }
 inline ::uint32_t ConfigSecurity::token_confirmation_expiry_in_hours() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.token_confirmation_expiry_in_hours)
@@ -12786,7 +12827,7 @@ inline ::uint32_t ConfigSecurity::token_confirmation_expiry_in_hours() const {
 }
 inline void ConfigSecurity::set_token_confirmation_expiry_in_hours(::uint32_t value) {
   _internal_set_token_confirmation_expiry_in_hours(value);
-  _impl_._has_bits_[0] |= 0x00000200u;
+  _impl_._has_bits_[0] |= 0x00000400u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.token_confirmation_expiry_in_hours)
 }
 inline ::uint32_t ConfigSecurity::_internal_token_confirmation_expiry_in_hours() const {
@@ -12798,15 +12839,15 @@ inline void ConfigSecurity::_internal_set_token_confirmation_expiry_in_hours(::u
   _impl_.token_confirmation_expiry_in_hours_ = value;
 }
 
-// optional uint32 token_password_reset_expiry_in_hours = 10 [json_name = "tokenPasswordResetExpiryInHours"];
+// optional uint32 token_password_reset_expiry_in_hours = 11 [json_name = "tokenPasswordResetExpiryInHours"];
 inline bool ConfigSecurity::has_token_password_reset_expiry_in_hours() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000400u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000800u) != 0;
   return value;
 }
 inline void ConfigSecurity::clear_token_password_reset_expiry_in_hours() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.token_password_reset_expiry_in_hours_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000400u;
+  _impl_._has_bits_[0] &= ~0x00000800u;
 }
 inline ::uint32_t ConfigSecurity::token_password_reset_expiry_in_hours() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.token_password_reset_expiry_in_hours)
@@ -12814,7 +12855,7 @@ inline ::uint32_t ConfigSecurity::token_password_reset_expiry_in_hours() const {
 }
 inline void ConfigSecurity::set_token_password_reset_expiry_in_hours(::uint32_t value) {
   _internal_set_token_password_reset_expiry_in_hours(value);
-  _impl_._has_bits_[0] |= 0x00000400u;
+  _impl_._has_bits_[0] |= 0x00000800u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.token_password_reset_expiry_in_hours)
 }
 inline ::uint32_t ConfigSecurity::_internal_token_password_reset_expiry_in_hours() const {
@@ -12826,15 +12867,15 @@ inline void ConfigSecurity::_internal_set_token_password_reset_expiry_in_hours(:
   _impl_.token_password_reset_expiry_in_hours_ = value;
 }
 
-// optional bool enable_insecure_outgoing_connections = 11 [json_name = "enableInsecureOutgoingConnections"];
+// optional bool enable_insecure_outgoing_connections = 12 [json_name = "enableInsecureOutgoingConnections"];
 inline bool ConfigSecurity::has_enable_insecure_outgoing_connections() const {
-  bool value = (_impl_._has_bits_[0] & 0x00001000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00002000u) != 0;
   return value;
 }
 inline void ConfigSecurity::clear_enable_insecure_outgoing_connections() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.enable_insecure_outgoing_connections_ = false;
-  _impl_._has_bits_[0] &= ~0x00001000u;
+  _impl_._has_bits_[0] &= ~0x00002000u;
 }
 inline bool ConfigSecurity::enable_insecure_outgoing_connections() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.enable_insecure_outgoing_connections)
@@ -12842,7 +12883,7 @@ inline bool ConfigSecurity::enable_insecure_outgoing_connections() const {
 }
 inline void ConfigSecurity::set_enable_insecure_outgoing_connections(bool value) {
   _internal_set_enable_insecure_outgoing_connections(value);
-  _impl_._has_bits_[0] |= 0x00001000u;
+  _impl_._has_bits_[0] |= 0x00002000u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.enable_insecure_outgoing_connections)
 }
 inline bool ConfigSecurity::_internal_enable_insecure_outgoing_connections() const {
@@ -12854,15 +12895,15 @@ inline void ConfigSecurity::_internal_set_enable_insecure_outgoing_connections(b
   _impl_.enable_insecure_outgoing_connections_ = value;
 }
 
-// optional bool enable_multifactor_authentication = 12 [json_name = "enableMultifactorAuthentication"];
+// optional bool enable_multifactor_authentication = 13 [json_name = "enableMultifactorAuthentication"];
 inline bool ConfigSecurity::has_enable_multifactor_authentication() const {
-  bool value = (_impl_._has_bits_[0] & 0x00002000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00004000u) != 0;
   return value;
 }
 inline void ConfigSecurity::clear_enable_multifactor_authentication() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.enable_multifactor_authentication_ = false;
-  _impl_._has_bits_[0] &= ~0x00002000u;
+  _impl_._has_bits_[0] &= ~0x00004000u;
 }
 inline bool ConfigSecurity::enable_multifactor_authentication() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.enable_multifactor_authentication)
@@ -12870,7 +12911,7 @@ inline bool ConfigSecurity::enable_multifactor_authentication() const {
 }
 inline void ConfigSecurity::set_enable_multifactor_authentication(bool value) {
   _internal_set_enable_multifactor_authentication(value);
-  _impl_._has_bits_[0] |= 0x00002000u;
+  _impl_._has_bits_[0] |= 0x00004000u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.enable_multifactor_authentication)
 }
 inline bool ConfigSecurity::_internal_enable_multifactor_authentication() const {
@@ -12882,15 +12923,15 @@ inline void ConfigSecurity::_internal_set_enable_multifactor_authentication(bool
   _impl_.enable_multifactor_authentication_ = value;
 }
 
-// optional bool enforce_multifactor_authentication = 13 [json_name = "enforceMultifactorAuthentication"];
+// optional bool enforce_multifactor_authentication = 14 [json_name = "enforceMultifactorAuthentication"];
 inline bool ConfigSecurity::has_enforce_multifactor_authentication() const {
-  bool value = (_impl_._has_bits_[0] & 0x00004000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00008000u) != 0;
   return value;
 }
 inline void ConfigSecurity::clear_enforce_multifactor_authentication() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.enforce_multifactor_authentication_ = false;
-  _impl_._has_bits_[0] &= ~0x00004000u;
+  _impl_._has_bits_[0] &= ~0x00008000u;
 }
 inline bool ConfigSecurity::enforce_multifactor_authentication() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.enforce_multifactor_authentication)
@@ -12898,7 +12939,7 @@ inline bool ConfigSecurity::enforce_multifactor_authentication() const {
 }
 inline void ConfigSecurity::set_enforce_multifactor_authentication(bool value) {
   _internal_set_enforce_multifactor_authentication(value);
-  _impl_._has_bits_[0] |= 0x00004000u;
+  _impl_._has_bits_[0] |= 0x00008000u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.enforce_multifactor_authentication)
 }
 inline bool ConfigSecurity::_internal_enforce_multifactor_authentication() const {
@@ -12910,15 +12951,15 @@ inline void ConfigSecurity::_internal_set_enforce_multifactor_authentication(boo
   _impl_.enforce_multifactor_authentication_ = value;
 }
 
-// optional bool enable_oauth_service_provider = 14 [json_name = "enableOauthServiceProvider"];
+// optional bool enable_oauth_service_provider = 15 [json_name = "enableOauthServiceProvider"];
 inline bool ConfigSecurity::has_enable_oauth_service_provider() const {
-  bool value = (_impl_._has_bits_[0] & 0x00008000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00010000u) != 0;
   return value;
 }
 inline void ConfigSecurity::clear_enable_oauth_service_provider() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.enable_oauth_service_provider_ = false;
-  _impl_._has_bits_[0] &= ~0x00008000u;
+  _impl_._has_bits_[0] &= ~0x00010000u;
 }
 inline bool ConfigSecurity::enable_oauth_service_provider() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.enable_oauth_service_provider)
@@ -12926,7 +12967,7 @@ inline bool ConfigSecurity::enable_oauth_service_provider() const {
 }
 inline void ConfigSecurity::set_enable_oauth_service_provider(bool value) {
   _internal_set_enable_oauth_service_provider(value);
-  _impl_._has_bits_[0] |= 0x00008000u;
+  _impl_._has_bits_[0] |= 0x00010000u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.enable_oauth_service_provider)
 }
 inline bool ConfigSecurity::_internal_enable_oauth_service_provider() const {
@@ -12938,15 +12979,15 @@ inline void ConfigSecurity::_internal_set_enable_oauth_service_provider(bool val
   _impl_.enable_oauth_service_provider_ = value;
 }
 
-// optional bool enable_outgoing_oauth_connections = 15 [json_name = "enableOutgoingOauthConnections"];
+// optional bool enable_outgoing_oauth_connections = 16 [json_name = "enableOutgoingOauthConnections"];
 inline bool ConfigSecurity::has_enable_outgoing_oauth_connections() const {
-  bool value = (_impl_._has_bits_[0] & 0x00010000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00020000u) != 0;
   return value;
 }
 inline void ConfigSecurity::clear_enable_outgoing_oauth_connections() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.enable_outgoing_oauth_connections_ = false;
-  _impl_._has_bits_[0] &= ~0x00010000u;
+  _impl_._has_bits_[0] &= ~0x00020000u;
 }
 inline bool ConfigSecurity::enable_outgoing_oauth_connections() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.enable_outgoing_oauth_connections)
@@ -12954,7 +12995,7 @@ inline bool ConfigSecurity::enable_outgoing_oauth_connections() const {
 }
 inline void ConfigSecurity::set_enable_outgoing_oauth_connections(bool value) {
   _internal_set_enable_outgoing_oauth_connections(value);
-  _impl_._has_bits_[0] |= 0x00010000u;
+  _impl_._has_bits_[0] |= 0x00020000u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.enable_outgoing_oauth_connections)
 }
 inline bool ConfigSecurity::_internal_enable_outgoing_oauth_connections() const {
@@ -12966,7 +13007,7 @@ inline void ConfigSecurity::_internal_set_enable_outgoing_oauth_connections(bool
   _impl_.enable_outgoing_oauth_connections_ = value;
 }
 
-// optional string allow_cors_from = 16 [json_name = "allowCorsFrom"];
+// optional string allow_cors_from = 17 [json_name = "allowCorsFrom"];
 inline bool ConfigSecurity::has_allow_cors_from() const {
   bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
   return value;
@@ -13035,7 +13076,7 @@ inline void ConfigSecurity::set_allocated_allow_cors_from(::std::string* PROTOBU
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigSecurity.allow_cors_from)
 }
 
-// optional string cors_exposed_headers = 17 [json_name = "corsExposedHeaders"];
+// optional string cors_exposed_headers = 18 [json_name = "corsExposedHeaders"];
 inline bool ConfigSecurity::has_cors_exposed_headers() const {
   bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
   return value;
@@ -13104,15 +13145,15 @@ inline void ConfigSecurity::set_allocated_cors_exposed_headers(::std::string* PR
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigSecurity.cors_exposed_headers)
 }
 
-// optional bool cors_allow_credentials = 18 [json_name = "corsAllowCredentials"];
+// optional bool cors_allow_credentials = 19 [json_name = "corsAllowCredentials"];
 inline bool ConfigSecurity::has_cors_allow_credentials() const {
-  bool value = (_impl_._has_bits_[0] & 0x00020000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00040000u) != 0;
   return value;
 }
 inline void ConfigSecurity::clear_cors_allow_credentials() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.cors_allow_credentials_ = false;
-  _impl_._has_bits_[0] &= ~0x00020000u;
+  _impl_._has_bits_[0] &= ~0x00040000u;
 }
 inline bool ConfigSecurity::cors_allow_credentials() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.cors_allow_credentials)
@@ -13120,7 +13161,7 @@ inline bool ConfigSecurity::cors_allow_credentials() const {
 }
 inline void ConfigSecurity::set_cors_allow_credentials(bool value) {
   _internal_set_cors_allow_credentials(value);
-  _impl_._has_bits_[0] |= 0x00020000u;
+  _impl_._has_bits_[0] |= 0x00040000u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.cors_allow_credentials)
 }
 inline bool ConfigSecurity::_internal_cors_allow_credentials() const {
@@ -13132,15 +13173,15 @@ inline void ConfigSecurity::_internal_set_cors_allow_credentials(bool value) {
   _impl_.cors_allow_credentials_ = value;
 }
 
-// optional bool cors_debug = 19 [json_name = "corsDebug"];
+// optional bool cors_debug = 20 [json_name = "corsDebug"];
 inline bool ConfigSecurity::has_cors_debug() const {
-  bool value = (_impl_._has_bits_[0] & 0x00040000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00080000u) != 0;
   return value;
 }
 inline void ConfigSecurity::clear_cors_debug() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.cors_debug_ = false;
-  _impl_._has_bits_[0] &= ~0x00040000u;
+  _impl_._has_bits_[0] &= ~0x00080000u;
 }
 inline bool ConfigSecurity::cors_debug() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.cors_debug)
@@ -13148,7 +13189,7 @@ inline bool ConfigSecurity::cors_debug() const {
 }
 inline void ConfigSecurity::set_cors_debug(bool value) {
   _internal_set_cors_debug(value);
-  _impl_._has_bits_[0] |= 0x00040000u;
+  _impl_._has_bits_[0] |= 0x00080000u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.cors_debug)
 }
 inline bool ConfigSecurity::_internal_cors_debug() const {
@@ -13160,15 +13201,15 @@ inline void ConfigSecurity::_internal_set_cors_debug(bool value) {
   _impl_.cors_debug_ = value;
 }
 
-// optional bool allow_cookies_for_subdomains = 20 [json_name = "allowCookiesForSubdomains"];
+// optional bool allow_cookies_for_subdomains = 21 [json_name = "allowCookiesForSubdomains"];
 inline bool ConfigSecurity::has_allow_cookies_for_subdomains() const {
-  bool value = (_impl_._has_bits_[0] & 0x00080000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00100000u) != 0;
   return value;
 }
 inline void ConfigSecurity::clear_allow_cookies_for_subdomains() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.allow_cookies_for_subdomains_ = false;
-  _impl_._has_bits_[0] &= ~0x00080000u;
+  _impl_._has_bits_[0] &= ~0x00100000u;
 }
 inline bool ConfigSecurity::allow_cookies_for_subdomains() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigSecurity.allow_cookies_for_subdomains)
@@ -13176,7 +13217,7 @@ inline bool ConfigSecurity::allow_cookies_for_subdomains() const {
 }
 inline void ConfigSecurity::set_allow_cookies_for_subdomains(bool value) {
   _internal_set_allow_cookies_for_subdomains(value);
-  _impl_._has_bits_[0] |= 0x00080000u;
+  _impl_._has_bits_[0] |= 0x00100000u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigSecurity.allow_cookies_for_subdomains)
 }
 inline bool ConfigSecurity::_internal_allow_cookies_for_subdomains() const {

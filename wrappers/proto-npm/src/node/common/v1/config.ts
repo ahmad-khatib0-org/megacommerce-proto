@@ -68,6 +68,7 @@ export interface ConfigSecurity {
   accessTokenExpiryMobileInHours?: number | undefined;
   accessTokenExpirySsoInHours?: number | undefined;
   accessTokenCacheInMinutes?: number | undefined;
+  refreshTokenExpiryInHours?: number | undefined;
   maximumLoginAttempts?: number | undefined;
   terminateSessionsOnPasswordChange?: boolean | undefined;
   emailConfirmationUrl?: string | undefined;
@@ -1355,6 +1356,7 @@ function createBaseConfigSecurity(): ConfigSecurity {
     accessTokenExpiryMobileInHours: undefined,
     accessTokenExpirySsoInHours: undefined,
     accessTokenCacheInMinutes: undefined,
+    refreshTokenExpiryInHours: undefined,
     maximumLoginAttempts: undefined,
     terminateSessionsOnPasswordChange: undefined,
     emailConfirmationUrl: undefined,
@@ -1388,53 +1390,56 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
     if (message.accessTokenCacheInMinutes !== undefined) {
       writer.uint32(32).int32(message.accessTokenCacheInMinutes);
     }
+    if (message.refreshTokenExpiryInHours !== undefined) {
+      writer.uint32(40).int32(message.refreshTokenExpiryInHours);
+    }
     if (message.maximumLoginAttempts !== undefined) {
-      writer.uint32(40).int32(message.maximumLoginAttempts);
+      writer.uint32(48).int32(message.maximumLoginAttempts);
     }
     if (message.terminateSessionsOnPasswordChange !== undefined) {
-      writer.uint32(48).bool(message.terminateSessionsOnPasswordChange);
+      writer.uint32(56).bool(message.terminateSessionsOnPasswordChange);
     }
     if (message.emailConfirmationUrl !== undefined) {
-      writer.uint32(58).string(message.emailConfirmationUrl);
+      writer.uint32(66).string(message.emailConfirmationUrl);
     }
     if (message.passwordResetUrl !== undefined) {
-      writer.uint32(66).string(message.passwordResetUrl);
+      writer.uint32(74).string(message.passwordResetUrl);
     }
     if (message.tokenConfirmationExpiryInHours !== undefined) {
-      writer.uint32(72).uint32(message.tokenConfirmationExpiryInHours);
+      writer.uint32(80).uint32(message.tokenConfirmationExpiryInHours);
     }
     if (message.tokenPasswordResetExpiryInHours !== undefined) {
-      writer.uint32(80).uint32(message.tokenPasswordResetExpiryInHours);
+      writer.uint32(88).uint32(message.tokenPasswordResetExpiryInHours);
     }
     if (message.enableInsecureOutgoingConnections !== undefined) {
-      writer.uint32(88).bool(message.enableInsecureOutgoingConnections);
+      writer.uint32(96).bool(message.enableInsecureOutgoingConnections);
     }
     if (message.enableMultifactorAuthentication !== undefined) {
-      writer.uint32(96).bool(message.enableMultifactorAuthentication);
+      writer.uint32(104).bool(message.enableMultifactorAuthentication);
     }
     if (message.enforceMultifactorAuthentication !== undefined) {
-      writer.uint32(104).bool(message.enforceMultifactorAuthentication);
+      writer.uint32(112).bool(message.enforceMultifactorAuthentication);
     }
     if (message.enableOauthServiceProvider !== undefined) {
-      writer.uint32(112).bool(message.enableOauthServiceProvider);
+      writer.uint32(120).bool(message.enableOauthServiceProvider);
     }
     if (message.enableOutgoingOauthConnections !== undefined) {
-      writer.uint32(120).bool(message.enableOutgoingOauthConnections);
+      writer.uint32(128).bool(message.enableOutgoingOauthConnections);
     }
     if (message.allowCorsFrom !== undefined) {
-      writer.uint32(130).string(message.allowCorsFrom);
+      writer.uint32(138).string(message.allowCorsFrom);
     }
     if (message.corsExposedHeaders !== undefined) {
-      writer.uint32(138).string(message.corsExposedHeaders);
+      writer.uint32(146).string(message.corsExposedHeaders);
     }
     if (message.corsAllowCredentials !== undefined) {
-      writer.uint32(144).bool(message.corsAllowCredentials);
+      writer.uint32(152).bool(message.corsAllowCredentials);
     }
     if (message.corsDebug !== undefined) {
-      writer.uint32(152).bool(message.corsDebug);
+      writer.uint32(160).bool(message.corsDebug);
     }
     if (message.allowCookiesForSubdomains !== undefined) {
-      writer.uint32(160).bool(message.allowCookiesForSubdomains);
+      writer.uint32(168).bool(message.allowCookiesForSubdomains);
     }
     return writer;
   },
@@ -1483,7 +1488,7 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.maximumLoginAttempts = reader.int32();
+          message.refreshTokenExpiryInHours = reader.int32();
           continue;
         }
         case 6: {
@@ -1491,15 +1496,15 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.terminateSessionsOnPasswordChange = reader.bool();
+          message.maximumLoginAttempts = reader.int32();
           continue;
         }
         case 7: {
-          if (tag !== 58) {
+          if (tag !== 56) {
             break;
           }
 
-          message.emailConfirmationUrl = reader.string();
+          message.terminateSessionsOnPasswordChange = reader.bool();
           continue;
         }
         case 8: {
@@ -1507,15 +1512,15 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.passwordResetUrl = reader.string();
+          message.emailConfirmationUrl = reader.string();
           continue;
         }
         case 9: {
-          if (tag !== 72) {
+          if (tag !== 74) {
             break;
           }
 
-          message.tokenConfirmationExpiryInHours = reader.uint32();
+          message.passwordResetUrl = reader.string();
           continue;
         }
         case 10: {
@@ -1523,7 +1528,7 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.tokenPasswordResetExpiryInHours = reader.uint32();
+          message.tokenConfirmationExpiryInHours = reader.uint32();
           continue;
         }
         case 11: {
@@ -1531,7 +1536,7 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.enableInsecureOutgoingConnections = reader.bool();
+          message.tokenPasswordResetExpiryInHours = reader.uint32();
           continue;
         }
         case 12: {
@@ -1539,7 +1544,7 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.enableMultifactorAuthentication = reader.bool();
+          message.enableInsecureOutgoingConnections = reader.bool();
           continue;
         }
         case 13: {
@@ -1547,7 +1552,7 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.enforceMultifactorAuthentication = reader.bool();
+          message.enableMultifactorAuthentication = reader.bool();
           continue;
         }
         case 14: {
@@ -1555,7 +1560,7 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.enableOauthServiceProvider = reader.bool();
+          message.enforceMultifactorAuthentication = reader.bool();
           continue;
         }
         case 15: {
@@ -1563,15 +1568,15 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.enableOutgoingOauthConnections = reader.bool();
+          message.enableOauthServiceProvider = reader.bool();
           continue;
         }
         case 16: {
-          if (tag !== 130) {
+          if (tag !== 128) {
             break;
           }
 
-          message.allowCorsFrom = reader.string();
+          message.enableOutgoingOauthConnections = reader.bool();
           continue;
         }
         case 17: {
@@ -1579,15 +1584,15 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.corsExposedHeaders = reader.string();
+          message.allowCorsFrom = reader.string();
           continue;
         }
         case 18: {
-          if (tag !== 144) {
+          if (tag !== 146) {
             break;
           }
 
-          message.corsAllowCredentials = reader.bool();
+          message.corsExposedHeaders = reader.string();
           continue;
         }
         case 19: {
@@ -1595,11 +1600,19 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
             break;
           }
 
-          message.corsDebug = reader.bool();
+          message.corsAllowCredentials = reader.bool();
           continue;
         }
         case 20: {
           if (tag !== 160) {
+            break;
+          }
+
+          message.corsDebug = reader.bool();
+          continue;
+        }
+        case 21: {
+          if (tag !== 168) {
             break;
           }
 
@@ -1628,6 +1641,9 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
         : undefined,
       accessTokenCacheInMinutes: isSet(object.accessTokenCacheInMinutes)
         ? globalThis.Number(object.accessTokenCacheInMinutes)
+        : undefined,
+      refreshTokenExpiryInHours: isSet(object.refreshTokenExpiryInHours)
+        ? globalThis.Number(object.refreshTokenExpiryInHours)
         : undefined,
       maximumLoginAttempts: isSet(object.maximumLoginAttempts)
         ? globalThis.Number(object.maximumLoginAttempts)
@@ -1685,6 +1701,9 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
     }
     if (message.accessTokenCacheInMinutes !== undefined) {
       obj.accessTokenCacheInMinutes = Math.round(message.accessTokenCacheInMinutes);
+    }
+    if (message.refreshTokenExpiryInHours !== undefined) {
+      obj.refreshTokenExpiryInHours = Math.round(message.refreshTokenExpiryInHours);
     }
     if (message.maximumLoginAttempts !== undefined) {
       obj.maximumLoginAttempts = Math.round(message.maximumLoginAttempts);
@@ -1746,6 +1765,7 @@ export const ConfigSecurity: MessageFns<ConfigSecurity> = {
     message.accessTokenExpiryMobileInHours = object.accessTokenExpiryMobileInHours ?? undefined;
     message.accessTokenExpirySsoInHours = object.accessTokenExpirySsoInHours ?? undefined;
     message.accessTokenCacheInMinutes = object.accessTokenCacheInMinutes ?? undefined;
+    message.refreshTokenExpiryInHours = object.refreshTokenExpiryInHours ?? undefined;
     message.maximumLoginAttempts = object.maximumLoginAttempts ?? undefined;
     message.terminateSessionsOnPasswordChange = object.terminateSessionsOnPasswordChange ?? undefined;
     message.emailConfirmationUrl = object.emailConfirmationUrl ?? undefined;
