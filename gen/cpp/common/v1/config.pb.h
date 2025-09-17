@@ -3622,6 +3622,7 @@ class ConfigOAuth final : public ::google::protobuf::Message
   // accessors -------------------------------------------------------
   enum : int {
     kOauthScopeFieldNumber = 9,
+    kOauthGrantAccessTokenAudienceFieldNumber = 14,
     kOauthProviderUrlFieldNumber = 1,
     kOauthClientIdFieldNumber = 2,
     kOauthClientSecretFieldNumber = 3,
@@ -3655,6 +3656,28 @@ class ConfigOAuth final : public ::google::protobuf::Message
   private:
   const ::google::protobuf::RepeatedPtrField<::std::string>& _internal_oauth_scope() const;
   ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL _internal_mutable_oauth_scope();
+
+  public:
+  // repeated string oauth_grant_access_token_audience = 14 [json_name = "oauthGrantAccessTokenAudience"];
+  int oauth_grant_access_token_audience_size() const;
+  private:
+  int _internal_oauth_grant_access_token_audience_size() const;
+
+  public:
+  void clear_oauth_grant_access_token_audience() ;
+  const ::std::string& oauth_grant_access_token_audience(int index) const;
+  ::std::string* PROTOBUF_NONNULL mutable_oauth_grant_access_token_audience(int index);
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_oauth_grant_access_token_audience(int index, Arg_&& value, Args_... args);
+  ::std::string* PROTOBUF_NONNULL add_oauth_grant_access_token_audience();
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void add_oauth_grant_access_token_audience(Arg_&& value, Args_... args);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& oauth_grant_access_token_audience() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL mutable_oauth_grant_access_token_audience();
+
+  private:
+  const ::google::protobuf::RepeatedPtrField<::std::string>& _internal_oauth_grant_access_token_audience() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL _internal_mutable_oauth_grant_access_token_audience();
 
   public:
   // optional string oauth_provider_url = 1 [json_name = "oauthProviderUrl"];
@@ -3853,8 +3876,8 @@ class ConfigOAuth final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<4, 13,
-                                   0, 256,
+  static const ::google::protobuf::internal::TcParseTable<4, 14,
+                                   0, 289,
                                    2>
       _table_;
 
@@ -3876,6 +3899,7 @@ class ConfigOAuth final : public ::google::protobuf::Message
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::RepeatedPtrField<::std::string> oauth_scope_;
+    ::google::protobuf::RepeatedPtrField<::std::string> oauth_grant_access_token_audience_;
     ::google::protobuf::internal::ArenaStringPtr oauth_provider_url_;
     ::google::protobuf::internal::ArenaStringPtr oauth_client_id_;
     ::google::protobuf::internal::ArenaStringPtr oauth_client_secret_;
@@ -12471,6 +12495,70 @@ inline void ConfigOAuth::set_allocated_frontend_login_error_url(::std::string* P
     _impl_.frontend_login_error_url_.Set("", GetArena());
   }
   // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigOAuth.frontend_login_error_url)
+}
+
+// repeated string oauth_grant_access_token_audience = 14 [json_name = "oauthGrantAccessTokenAudience"];
+inline int ConfigOAuth::_internal_oauth_grant_access_token_audience_size() const {
+  return _internal_oauth_grant_access_token_audience().size();
+}
+inline int ConfigOAuth::oauth_grant_access_token_audience_size() const {
+  return _internal_oauth_grant_access_token_audience_size();
+}
+inline void ConfigOAuth::clear_oauth_grant_access_token_audience() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.oauth_grant_access_token_audience_.Clear();
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::add_oauth_grant_access_token_audience()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::std::string* _s = _internal_mutable_oauth_grant_access_token_audience()->Add();
+  // @@protoc_insertion_point(field_add_mutable:common.v1.ConfigOAuth.oauth_grant_access_token_audience)
+  return _s;
+}
+inline const ::std::string& ConfigOAuth::oauth_grant_access_token_audience(int index) const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigOAuth.oauth_grant_access_token_audience)
+  return _internal_oauth_grant_access_token_audience().Get(index);
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigOAuth::mutable_oauth_grant_access_token_audience(int index)
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigOAuth.oauth_grant_access_token_audience)
+  return _internal_mutable_oauth_grant_access_token_audience()->Mutable(index);
+}
+template <typename Arg_, typename... Args_>
+inline void ConfigOAuth::set_oauth_grant_access_token_audience(int index, Arg_&& value, Args_... args) {
+  ::google::protobuf::internal::AssignToString(*_internal_mutable_oauth_grant_access_token_audience()->Mutable(index), ::std::forward<Arg_>(value),
+                        args... );
+  // @@protoc_insertion_point(field_set:common.v1.ConfigOAuth.oauth_grant_access_token_audience)
+}
+template <typename Arg_, typename... Args_>
+inline void ConfigOAuth::add_oauth_grant_access_token_audience(Arg_&& value, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::google::protobuf::internal::AddToRepeatedPtrField(*_internal_mutable_oauth_grant_access_token_audience(),
+                               ::std::forward<Arg_>(value),
+                               args... );
+  // @@protoc_insertion_point(field_add:common.v1.ConfigOAuth.oauth_grant_access_token_audience)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>& ConfigOAuth::oauth_grant_access_token_audience()
+    const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_list:common.v1.ConfigOAuth.oauth_grant_access_token_audience)
+  return _internal_oauth_grant_access_token_audience();
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL
+ConfigOAuth::mutable_oauth_grant_access_token_audience() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable_list:common.v1.ConfigOAuth.oauth_grant_access_token_audience)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _internal_mutable_oauth_grant_access_token_audience();
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+ConfigOAuth::_internal_oauth_grant_access_token_audience() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.oauth_grant_access_token_audience_;
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL
+ConfigOAuth::_internal_mutable_oauth_grant_access_token_audience() {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return &_impl_.oauth_grant_access_token_audience_;
 }
 
 // -------------------------------------------------------------------

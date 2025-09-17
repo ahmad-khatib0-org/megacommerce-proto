@@ -61,6 +61,7 @@ export interface ConfigOAuth {
   oauthBackendUrl?: string | undefined;
   frontendLoginUrl?: string | undefined;
   frontendLoginErrorUrl?: string | undefined;
+  oauthGrantAccessTokenAudience: string[];
 }
 
 export interface ConfigSecurity {
@@ -1095,6 +1096,7 @@ function createBaseConfigOAuth(): ConfigOAuth {
     oauthBackendUrl: undefined,
     frontendLoginUrl: undefined,
     frontendLoginErrorUrl: undefined,
+    oauthGrantAccessTokenAudience: [],
   };
 }
 
@@ -1138,6 +1140,9 @@ export const ConfigOAuth: MessageFns<ConfigOAuth> = {
     }
     if (message.frontendLoginErrorUrl !== undefined) {
       writer.uint32(106).string(message.frontendLoginErrorUrl);
+    }
+    for (const v of message.oauthGrantAccessTokenAudience) {
+      writer.uint32(114).string(v!);
     }
     return writer;
   },
@@ -1253,6 +1258,14 @@ export const ConfigOAuth: MessageFns<ConfigOAuth> = {
           message.frontendLoginErrorUrl = reader.string();
           continue;
         }
+        case 14: {
+          if (tag !== 114) {
+            break;
+          }
+
+          message.oauthGrantAccessTokenAudience.push(reader.string());
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -1281,6 +1294,9 @@ export const ConfigOAuth: MessageFns<ConfigOAuth> = {
       frontendLoginErrorUrl: isSet(object.frontendLoginErrorUrl)
         ? globalThis.String(object.frontendLoginErrorUrl)
         : undefined,
+      oauthGrantAccessTokenAudience: globalThis.Array.isArray(object?.oauthGrantAccessTokenAudience)
+        ? object.oauthGrantAccessTokenAudience.map((e: any) => globalThis.String(e))
+        : [],
     };
   },
 
@@ -1325,6 +1341,9 @@ export const ConfigOAuth: MessageFns<ConfigOAuth> = {
     if (message.frontendLoginErrorUrl !== undefined) {
       obj.frontendLoginErrorUrl = message.frontendLoginErrorUrl;
     }
+    if (message.oauthGrantAccessTokenAudience?.length) {
+      obj.oauthGrantAccessTokenAudience = message.oauthGrantAccessTokenAudience;
+    }
     return obj;
   },
 
@@ -1346,6 +1365,7 @@ export const ConfigOAuth: MessageFns<ConfigOAuth> = {
     message.oauthBackendUrl = object.oauthBackendUrl ?? undefined;
     message.frontendLoginUrl = object.frontendLoginUrl ?? undefined;
     message.frontendLoginErrorUrl = object.frontendLoginErrorUrl ?? undefined;
+    message.oauthGrantAccessTokenAudience = object.oauthGrantAccessTokenAudience?.map((e) => e) || [];
     return message;
   },
 };

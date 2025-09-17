@@ -26,4 +26,3 @@ tonic-build = "0.13.1"
 
 [dependencies]
 tonic-build = "0.13.1"
-

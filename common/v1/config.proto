@@ -60,6 +60,7 @@ message ConfigOAuth {
   optional string oauth_backend_url = 11;
   optional string frontend_login_url = 12;
   optional string frontend_login_error_url = 13;
+  repeated string oauth_grant_access_token_audience = 14;
 }
 
 message ConfigSecurity {
