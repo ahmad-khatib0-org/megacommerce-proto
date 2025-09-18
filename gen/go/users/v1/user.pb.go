@@ -105,8 +105,8 @@ type User struct {
 	AuthData           *string                `protobuf:"bytes,12,opt,name=auth_data,json=authData,proto3,oneof" json:"auth_data,omitempty"`
 	AuthService        *string                `protobuf:"bytes,13,opt,name=auth_service,json=authService,proto3,oneof" json:"auth_service,omitempty"`
 	Roles              []string               `protobuf:"bytes,14,rep,name=roles,proto3" json:"roles,omitempty"`
-	Props              map[string]string      `protobuf:"bytes,15,rep,name=props,proto3" json:"props,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	NotifyProps        map[string]string      `protobuf:"bytes,16,rep,name=notify_props,json=notifyProps,proto3" json:"notify_props,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	Props              []string               `protobuf:"bytes,15,rep,name=props,proto3" json:"props,omitempty"`
+	NotifyProps        []string               `protobuf:"bytes,16,rep,name=notify_props,json=notifyProps,proto3" json:"notify_props,omitempty"`
 	LastPasswordUpdate *int64                 `protobuf:"varint,17,opt,name=last_password_update,json=lastPasswordUpdate,proto3,oneof" json:"last_password_update,omitempty"`
 	LastPictureUpdate  *int64                 `protobuf:"varint,18,opt,name=last_picture_update,json=lastPictureUpdate,proto3,oneof" json:"last_picture_update,omitempty"`
 	FailedAttempts     *int32                 `protobuf:"varint,19,opt,name=failed_attempts,json=failedAttempts,proto3,oneof" json:"failed_attempts,omitempty"`
@@ -250,14 +250,14 @@ func (x *User) GetRoles() []string {
 	return nil
 }
 
-func (x *User) GetProps() map[string]string {
+func (x *User) GetProps() []string {
 	if x != nil {
 		return x.Props
 	}
 	return nil
 }
 
-func (x *User) GetNotifyProps() map[string]string {
+func (x *User) GetNotifyProps() []string {
 	if x != nil {
 		return x.NotifyProps
 	}
@@ -351,7 +351,8 @@ const file_users_v1_user_proto_rawDesc = "" +
 	"\x06height\x18\x02 \x01(\x05R\x06height\x12\x14\n" +
 	"\x05widht\x18\x03 \x01(\x05R\x05widht\x12\x1d\n" +
 	"\n" +
-	"size_bytes\x18\x04 \x01(\x03R\tsizeBytes\"\x9d\f\n" +
+	"size_bytes\x18\x04 \x01(\x03R\tsizeBytes\"\xe7\n" +
+	"\n" +
 	"\x04User\x12\x13\n" +
 	"\x02id\x18\x01 \x01(\tH\x00R\x02id\x88\x01\x01\x12\x1f\n" +
 	"\busername\x18\x02 \x01(\tH\x01R\busername\x88\x01\x01\x12\"\n" +
@@ -371,9 +372,9 @@ const file_users_v1_user_proto_rawDesc = "" +
 	"R\bpassword\x88\x01\x01\x12 \n" +
 	"\tauth_data\x18\f \x01(\tH\vR\bauthData\x88\x01\x01\x12&\n" +
 	"\fauth_service\x18\r \x01(\tH\fR\vauthService\x88\x01\x01\x12\x14\n" +
-	"\x05roles\x18\x0e \x03(\tR\x05roles\x12/\n" +
-	"\x05props\x18\x0f \x03(\v2\x19.users.v1.User.PropsEntryR\x05props\x12B\n" +
-	"\fnotify_props\x18\x10 \x03(\v2\x1f.users.v1.User.NotifyPropsEntryR\vnotifyProps\x125\n" +
+	"\x05roles\x18\x0e \x03(\tR\x05roles\x12\x14\n" +
+	"\x05props\x18\x0f \x03(\tR\x05props\x12!\n" +
+	"\fnotify_props\x18\x10 \x03(\tR\vnotifyProps\x125\n" +
 	"\x14last_password_update\x18\x11 \x01(\x03H\rR\x12lastPasswordUpdate\x88\x01\x01\x123\n" +
 	"\x13last_picture_update\x18\x12 \x01(\x03H\x0eR\x11lastPictureUpdate\x88\x01\x01\x12,\n" +
 	"\x0ffailed_attempts\x18\x13 \x01(\x05H\x0fR\x0efailedAttempts\x88\x01\x01\x12\x1b\n" +
@@ -390,14 +391,7 @@ const file_users_v1_user_proto_rawDesc = "" +
 	"\n" +
 	"updated_at\x18\x1a \x01(\x03H\x16R\tupdatedAt\x88\x01\x01\x12\"\n" +
 	"\n" +
-	"deleted_at\x18\x1b \x01(\x03H\x17R\tdeletedAt\x88\x01\x01\x1a8\n" +
-	"\n" +
-	"PropsEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\x1a>\n" +
-	"\x10NotifyPropsEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\x05\n" +
+	"deleted_at\x18\x1b \x01(\x03H\x17R\tdeletedAt\x88\x01\x01B\x05\n" +
 	"\x03_idB\v\n" +
 	"\t_usernameB\r\n" +
 	"\v_first_nameB\f\n" +
@@ -439,22 +433,18 @@ func file_users_v1_user_proto_rawDescGZIP() []byte {
 	return file_users_v1_user_proto_rawDescData
 }
 
-var file_users_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_users_v1_user_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_users_v1_user_proto_goTypes = []any{
 	(*UserImageMetadata)(nil), // 0: users.v1.UserImageMetadata
 	(*User)(nil),              // 1: users.v1.User
-	nil,                       // 2: users.v1.User.PropsEntry
-	nil,                       // 3: users.v1.User.NotifyPropsEntry
 }
 var file_users_v1_user_proto_depIdxs = []int32{
 	0, // 0: users.v1.User.image_metadata:type_name -> users.v1.UserImageMetadata
-	2, // 1: users.v1.User.props:type_name -> users.v1.User.PropsEntry
-	3, // 2: users.v1.User.notify_props:type_name -> users.v1.User.NotifyPropsEntry
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	1, // [1:1] is the sub-list for method output_type
+	1, // [1:1] is the sub-list for method input_type
+	1, // [1:1] is the sub-list for extension type_name
+	1, // [1:1] is the sub-list for extension extendee
+	0, // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_users_v1_user_proto_init() }
@@ -469,7 +459,7 @@ func file_users_v1_user_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_users_v1_user_proto_rawDesc), len(file_users_v1_user_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

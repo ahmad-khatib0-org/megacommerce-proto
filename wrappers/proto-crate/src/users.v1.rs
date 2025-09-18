@@ -698,16 +698,10 @@ pub struct User {
     pub auth_service: ::core::option::Option<::prost::alloc::string::String>,
     #[prost(string, repeated, tag = "14")]
     pub roles: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
-    #[prost(map = "string, string", tag = "15")]
-    pub props: ::std::collections::HashMap<
-        ::prost::alloc::string::String,
-        ::prost::alloc::string::String,
-    >,
-    #[prost(map = "string, string", tag = "16")]
-    pub notify_props: ::std::collections::HashMap<
-        ::prost::alloc::string::String,
-        ::prost::alloc::string::String,
-    >,
+    #[prost(string, repeated, tag = "15")]
+    pub props: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    #[prost(string, repeated, tag = "16")]
+    pub notify_props: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
     #[prost(int64, optional, tag = "17")]
     pub last_password_update: ::core::option::Option<i64>,
     #[prost(int64, optional, tag = "18")]

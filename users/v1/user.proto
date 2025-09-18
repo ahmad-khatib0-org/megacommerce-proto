@@ -29,8 +29,8 @@ message User {
   optional string auth_data = 12;
   optional string auth_service = 13;
   repeated string roles = 14;
-  map<string, string> props = 15;
-  map<string, string> notify_props = 16;
+  repeated string props = 15;
+  repeated string notify_props = 16;
   optional int64 last_password_update = 17;
   optional int64 last_picture_update = 18;
   optional int32 failed_attempts = 19;

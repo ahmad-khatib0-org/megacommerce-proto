@@ -996,72 +996,54 @@ public final class UserProto {
         getRolesBytes(int index);
 
     /**
-     * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
+     * <code>repeated string props = 15 [json_name = "props"];</code>
+     * @return A list containing the props.
+     */
+    java.util.List<java.lang.String>
+        getPropsList();
+    /**
+     * <code>repeated string props = 15 [json_name = "props"];</code>
+     * @return The count of props.
      */
     int getPropsCount();
     /**
-     * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
+     * <code>repeated string props = 15 [json_name = "props"];</code>
+     * @param index The index of the element to return.
+     * @return The props at the given index.
      */
-    boolean containsProps(
-        java.lang.String key);
+    java.lang.String getProps(int index);
     /**
-     * Use {@link #getPropsMap()} instead.
+     * <code>repeated string props = 15 [json_name = "props"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the props at the given index.
      */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getProps();
-    /**
-     * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getPropsMap();
-    /**
-     * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
-     */
-    /* nullable */
-java.lang.String getPropsOrDefault(
-        java.lang.String key,
-        /* nullable */
-java.lang.String defaultValue);
-    /**
-     * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
-     */
-    java.lang.String getPropsOrThrow(
-        java.lang.String key);
+    com.google.protobuf.ByteString
+        getPropsBytes(int index);
 
     /**
-     * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
+     * <code>repeated string notify_props = 16 [json_name = "notifyProps"];</code>
+     * @return A list containing the notifyProps.
+     */
+    java.util.List<java.lang.String>
+        getNotifyPropsList();
+    /**
+     * <code>repeated string notify_props = 16 [json_name = "notifyProps"];</code>
+     * @return The count of notifyProps.
      */
     int getNotifyPropsCount();
     /**
-     * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
+     * <code>repeated string notify_props = 16 [json_name = "notifyProps"];</code>
+     * @param index The index of the element to return.
+     * @return The notifyProps at the given index.
      */
-    boolean containsNotifyProps(
-        java.lang.String key);
+    java.lang.String getNotifyProps(int index);
     /**
-     * Use {@link #getNotifyPropsMap()} instead.
+     * <code>repeated string notify_props = 16 [json_name = "notifyProps"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the notifyProps at the given index.
      */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
-    getNotifyProps();
-    /**
-     * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
-     */
-    java.util.Map<java.lang.String, java.lang.String>
-    getNotifyPropsMap();
-    /**
-     * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
-     */
-    /* nullable */
-java.lang.String getNotifyPropsOrDefault(
-        java.lang.String key,
-        /* nullable */
-java.lang.String defaultValue);
-    /**
-     * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
-     */
-    java.lang.String getNotifyPropsOrThrow(
-        java.lang.String key);
+    com.google.protobuf.ByteString
+        getNotifyPropsBytes(int index);
 
     /**
      * <code>optional int64 last_password_update = 17 [json_name = "lastPasswordUpdate"];</code>
@@ -1231,6 +1213,10 @@ java.lang.String defaultValue);
       authService_ = "";
       roles_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
+      props_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      notifyProps_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       locale_ = "";
       mfaSecret_ = "";
     }
@@ -1240,20 +1226,6 @@ java.lang.String defaultValue);
       return org.megacommerce.users.v1.UserProto.internal_static_users_v1_User_descriptor;
     }
 
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
-        int number) {
-      switch (number) {
-        case 15:
-          return internalGetProps();
-        case 16:
-          return internalGetNotifyProps();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1863,161 +1835,77 @@ java.lang.String defaultValue);
     }
 
     public static final int PROPS_FIELD_NUMBER = 15;
-    private static final class PropsDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  org.megacommerce.users.v1.UserProto.internal_static_users_v1_User_PropsEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
-    }
     @SuppressWarnings("serial")
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> props_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetProps() {
-      if (props_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            PropsDefaultEntryHolder.defaultEntry);
-      }
+    private com.google.protobuf.LazyStringArrayList props_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     * <code>repeated string props = 15 [json_name = "props"];</code>
+     * @return A list containing the props.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getPropsList() {
       return props_;
     }
+    /**
+     * <code>repeated string props = 15 [json_name = "props"];</code>
+     * @return The count of props.
+     */
     public int getPropsCount() {
-      return internalGetProps().getMap().size();
+      return props_.size();
     }
     /**
-     * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
+     * <code>repeated string props = 15 [json_name = "props"];</code>
+     * @param index The index of the element to return.
+     * @return The props at the given index.
      */
-    @java.lang.Override
-    public boolean containsProps(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      return internalGetProps().getMap().containsKey(key);
+    public java.lang.String getProps(int index) {
+      return props_.get(index);
     }
     /**
-     * Use {@link #getPropsMap()} instead.
+     * <code>repeated string props = 15 [json_name = "props"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the props at the given index.
      */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getProps() {
-      return getPropsMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
-     */
-    @java.lang.Override
-    public java.util.Map<java.lang.String, java.lang.String> getPropsMap() {
-      return internalGetProps().getMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
-     */
-    @java.lang.Override
-    public /* nullable */
-java.lang.String getPropsOrDefault(
-        java.lang.String key,
-        /* nullable */
-java.lang.String defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetProps().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
-     */
-    @java.lang.Override
-    public java.lang.String getPropsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetProps().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
+    public com.google.protobuf.ByteString
+        getPropsBytes(int index) {
+      return props_.getByteString(index);
     }
 
     public static final int NOTIFY_PROPS_FIELD_NUMBER = 16;
-    private static final class NotifyPropsDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
-                  org.megacommerce.users.v1.UserProto.internal_static_users_v1_User_NotifyPropsEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
-    }
     @SuppressWarnings("serial")
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> notifyProps_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetNotifyProps() {
-      if (notifyProps_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            NotifyPropsDefaultEntryHolder.defaultEntry);
-      }
+    private com.google.protobuf.LazyStringArrayList notifyProps_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     * <code>repeated string notify_props = 16 [json_name = "notifyProps"];</code>
+     * @return A list containing the notifyProps.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getNotifyPropsList() {
       return notifyProps_;
     }
+    /**
+     * <code>repeated string notify_props = 16 [json_name = "notifyProps"];</code>
+     * @return The count of notifyProps.
+     */
     public int getNotifyPropsCount() {
-      return internalGetNotifyProps().getMap().size();
+      return notifyProps_.size();
     }
     /**
-     * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
+     * <code>repeated string notify_props = 16 [json_name = "notifyProps"];</code>
+     * @param index The index of the element to return.
+     * @return The notifyProps at the given index.
      */
-    @java.lang.Override
-    public boolean containsNotifyProps(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      return internalGetNotifyProps().getMap().containsKey(key);
+    public java.lang.String getNotifyProps(int index) {
+      return notifyProps_.get(index);
     }
     /**
-     * Use {@link #getNotifyPropsMap()} instead.
+     * <code>repeated string notify_props = 16 [json_name = "notifyProps"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the notifyProps at the given index.
      */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getNotifyProps() {
-      return getNotifyPropsMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
-     */
-    @java.lang.Override
-    public java.util.Map<java.lang.String, java.lang.String> getNotifyPropsMap() {
-      return internalGetNotifyProps().getMap();
-    }
-    /**
-     * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
-     */
-    @java.lang.Override
-    public /* nullable */
-java.lang.String getNotifyPropsOrDefault(
-        java.lang.String key,
-        /* nullable */
-java.lang.String defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetNotifyProps().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
-     */
-    @java.lang.Override
-    public java.lang.String getNotifyPropsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetNotifyProps().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
+    public com.google.protobuf.ByteString
+        getNotifyPropsBytes(int index) {
+      return notifyProps_.getByteString(index);
     }
 
     public static final int LAST_PASSWORD_UPDATE_FIELD_NUMBER = 17;
@@ -2341,18 +2229,12 @@ java.lang.String defaultValue) {
       for (int i = 0; i < roles_.size(); i++) {
         com.google.protobuf.GeneratedMessage.writeString(output, 14, roles_.getRaw(i));
       }
-      com.google.protobuf.GeneratedMessage
-        .serializeStringMapTo(
-          output,
-          internalGetProps(),
-          PropsDefaultEntryHolder.defaultEntry,
-          15);
-      com.google.protobuf.GeneratedMessage
-        .serializeStringMapTo(
-          output,
-          internalGetNotifyProps(),
-          NotifyPropsDefaultEntryHolder.defaultEntry,
-          16);
+      for (int i = 0; i < props_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 15, props_.getRaw(i));
+      }
+      for (int i = 0; i < notifyProps_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 16, notifyProps_.getRaw(i));
+      }
       if (((bitField0_ & 0x00002000) != 0)) {
         output.writeInt64(17, lastPasswordUpdate_);
       }
@@ -2444,25 +2326,21 @@ java.lang.String defaultValue) {
         size += dataSize;
         size += 1 * getRolesList().size();
       }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetProps().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        props__ = PropsDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(15, props__);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < props_.size(); i++) {
+          dataSize += computeStringSizeNoTag(props_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getPropsList().size();
       }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetNotifyProps().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        notifyProps__ = NotifyPropsDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(16, notifyProps__);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < notifyProps_.size(); i++) {
+          dataSize += computeStringSizeNoTag(notifyProps_.getRaw(i));
+        }
+        size += dataSize;
+        size += 2 * getNotifyPropsList().size();
       }
       if (((bitField0_ & 0x00002000) != 0)) {
         size += com.google.protobuf.CodedOutputStream
@@ -2588,10 +2466,10 @@ java.lang.String defaultValue) {
       }
       if (!getRolesList()
           .equals(other.getRolesList())) return false;
-      if (!internalGetProps().equals(
-          other.internalGetProps())) return false;
-      if (!internalGetNotifyProps().equals(
-          other.internalGetNotifyProps())) return false;
+      if (!getPropsList()
+          .equals(other.getPropsList())) return false;
+      if (!getNotifyPropsList()
+          .equals(other.getNotifyPropsList())) return false;
       if (hasLastPasswordUpdate() != other.hasLastPasswordUpdate()) return false;
       if (hasLastPasswordUpdate()) {
         if (getLastPasswordUpdate()
@@ -2715,13 +2593,13 @@ java.lang.String defaultValue) {
         hash = (37 * hash) + ROLES_FIELD_NUMBER;
         hash = (53 * hash) + getRolesList().hashCode();
       }
-      if (!internalGetProps().getMap().isEmpty()) {
+      if (getPropsCount() > 0) {
         hash = (37 * hash) + PROPS_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetProps().hashCode();
+        hash = (53 * hash) + getPropsList().hashCode();
       }
-      if (!internalGetNotifyProps().getMap().isEmpty()) {
+      if (getNotifyPropsCount() > 0) {
         hash = (37 * hash) + NOTIFY_PROPS_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetNotifyProps().hashCode();
+        hash = (53 * hash) + getNotifyPropsList().hashCode();
       }
       if (hasLastPasswordUpdate()) {
         hash = (37 * hash) + LAST_PASSWORD_UPDATE_FIELD_NUMBER;
@@ -2884,32 +2762,6 @@ java.lang.String defaultValue) {
         return org.megacommerce.users.v1.UserProto.internal_static_users_v1_User_descriptor;
       }
 
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
-          int number) {
-        switch (number) {
-          case 15:
-            return internalGetProps();
-          case 16:
-            return internalGetNotifyProps();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
-          int number) {
-        switch (number) {
-          case 15:
-            return internalGetMutableProps();
-          case 16:
-            return internalGetMutableNotifyProps();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -2957,8 +2809,10 @@ java.lang.String defaultValue) {
         authService_ = "";
         roles_ =
             com.google.protobuf.LazyStringArrayList.emptyList();
-        internalGetMutableProps().clear();
-        internalGetMutableNotifyProps().clear();
+        props_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+        notifyProps_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         lastPasswordUpdate_ = 0L;
         lastPictureUpdate_ = 0L;
         failedAttempts_ = 0;
@@ -3063,12 +2917,12 @@ java.lang.String defaultValue) {
           result.roles_ = roles_;
         }
         if (((from_bitField0_ & 0x00004000) != 0)) {
-          result.props_ = internalGetProps();
-          result.props_.makeImmutable();
+          props_.makeImmutable();
+          result.props_ = props_;
         }
         if (((from_bitField0_ & 0x00008000) != 0)) {
-          result.notifyProps_ = internalGetNotifyProps();
-          result.notifyProps_.makeImmutable();
+          notifyProps_.makeImmutable();
+          result.notifyProps_ = notifyProps_;
         }
         if (((from_bitField0_ & 0x00010000) != 0)) {
           result.lastPasswordUpdate_ = lastPasswordUpdate_;
@@ -3200,12 +3054,26 @@ java.lang.String defaultValue) {
           }
           onChanged();
         }
-        internalGetMutableProps().mergeFrom(
-            other.internalGetProps());
-        bitField0_ |= 0x00004000;
-        internalGetMutableNotifyProps().mergeFrom(
-            other.internalGetNotifyProps());
-        bitField0_ |= 0x00008000;
+        if (!other.props_.isEmpty()) {
+          if (props_.isEmpty()) {
+            props_ = other.props_;
+            bitField0_ |= 0x00004000;
+          } else {
+            ensurePropsIsMutable();
+            props_.addAll(other.props_);
+          }
+          onChanged();
+        }
+        if (!other.notifyProps_.isEmpty()) {
+          if (notifyProps_.isEmpty()) {
+            notifyProps_ = other.notifyProps_;
+            bitField0_ |= 0x00008000;
+          } else {
+            ensureNotifyPropsIsMutable();
+            notifyProps_.addAll(other.notifyProps_);
+          }
+          onChanged();
+        }
         if (other.hasLastPasswordUpdate()) {
           setLastPasswordUpdate(other.getLastPasswordUpdate());
         }
@@ -3343,21 +3211,15 @@ java.lang.String defaultValue) {
                 break;
               } // case 114
               case 122: {
-                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-                props__ = input.readMessage(
-                    PropsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableProps().getMutableMap().put(
-                    props__.getKey(), props__.getValue());
-                bitField0_ |= 0x00004000;
+                java.lang.String s = input.readStringRequireUtf8();
+                ensurePropsIsMutable();
+                props_.add(s);
                 break;
               } // case 122
               case 130: {
-                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-                notifyProps__ = input.readMessage(
-                    NotifyPropsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableNotifyProps().getMutableMap().put(
-                    notifyProps__.getKey(), notifyProps__.getValue());
-                bitField0_ |= 0x00008000;
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureNotifyPropsIsMutable();
+                notifyProps_.add(s);
                 break;
               } // case 130
               case 136: {
@@ -4573,257 +4435,225 @@ java.lang.String defaultValue) {
         return this;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> props_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-          internalGetProps() {
-        if (props_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              PropsDefaultEntryHolder.defaultEntry);
+      private com.google.protobuf.LazyStringArrayList props_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensurePropsIsMutable() {
+        if (!props_.isModifiable()) {
+          props_ = new com.google.protobuf.LazyStringArrayList(props_);
         }
+        bitField0_ |= 0x00004000;
+      }
+      /**
+       * <code>repeated string props = 15 [json_name = "props"];</code>
+       * @return A list containing the props.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getPropsList() {
+        props_.makeImmutable();
         return props_;
       }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-          internalGetMutableProps() {
-        if (props_ == null) {
-          props_ = com.google.protobuf.MapField.newMapField(
-              PropsDefaultEntryHolder.defaultEntry);
-        }
-        if (!props_.isMutable()) {
-          props_ = props_.copy();
-        }
+      /**
+       * <code>repeated string props = 15 [json_name = "props"];</code>
+       * @return The count of props.
+       */
+      public int getPropsCount() {
+        return props_.size();
+      }
+      /**
+       * <code>repeated string props = 15 [json_name = "props"];</code>
+       * @param index The index of the element to return.
+       * @return The props at the given index.
+       */
+      public java.lang.String getProps(int index) {
+        return props_.get(index);
+      }
+      /**
+       * <code>repeated string props = 15 [json_name = "props"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the props at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getPropsBytes(int index) {
+        return props_.getByteString(index);
+      }
+      /**
+       * <code>repeated string props = 15 [json_name = "props"];</code>
+       * @param index The index to set the value at.
+       * @param value The props to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProps(
+          int index, java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensurePropsIsMutable();
+        props_.set(index, value);
         bitField0_ |= 0x00004000;
         onChanged();
-        return props_;
-      }
-      public int getPropsCount() {
-        return internalGetProps().getMap().size();
-      }
-      /**
-       * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
-       */
-      @java.lang.Override
-      public boolean containsProps(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        return internalGetProps().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getPropsMap()} instead.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getProps() {
-        return getPropsMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
-       */
-      @java.lang.Override
-      public java.util.Map<java.lang.String, java.lang.String> getPropsMap() {
-        return internalGetProps().getMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
-       */
-      @java.lang.Override
-      public /* nullable */
-java.lang.String getPropsOrDefault(
-          java.lang.String key,
-          /* nullable */
-java.lang.String defaultValue) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetProps().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
-       */
-      @java.lang.Override
-      public java.lang.String getPropsOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetProps().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-      public Builder clearProps() {
-        bitField0_ = (bitField0_ & ~0x00004000);
-        internalGetMutableProps().getMutableMap()
-            .clear();
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
+       * <code>repeated string props = 15 [json_name = "props"];</code>
+       * @param value The props to add.
+       * @return This builder for chaining.
        */
-      public Builder removeProps(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        internalGetMutableProps().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-          getMutableProps() {
-        bitField0_ |= 0x00004000;
-        return internalGetMutableProps().getMutableMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
-       */
-      public Builder putProps(
-          java.lang.String key,
+      public Builder addProps(
           java.lang.String value) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        if (value == null) { throw new NullPointerException("map value"); }
-        internalGetMutableProps().getMutableMap()
-            .put(key, value);
+        if (value == null) { throw new NullPointerException(); }
+        ensurePropsIsMutable();
+        props_.add(value);
         bitField0_ |= 0x00004000;
+        onChanged();
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; props = 15 [json_name = "props"];</code>
+       * <code>repeated string props = 15 [json_name = "props"];</code>
+       * @param values The props to add.
+       * @return This builder for chaining.
        */
-      public Builder putAllProps(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableProps().getMutableMap()
-            .putAll(values);
+      public Builder addAllProps(
+          java.lang.Iterable<java.lang.String> values) {
+        ensurePropsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, props_);
         bitField0_ |= 0x00004000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string props = 15 [json_name = "props"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProps() {
+        props_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00004000);;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string props = 15 [json_name = "props"];</code>
+       * @param value The bytes of the props to add.
+       * @return This builder for chaining.
+       */
+      public Builder addPropsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        ensurePropsIsMutable();
+        props_.add(value);
+        bitField0_ |= 0x00004000;
+        onChanged();
         return this;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> notifyProps_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-          internalGetNotifyProps() {
-        if (notifyProps_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              NotifyPropsDefaultEntryHolder.defaultEntry);
+      private com.google.protobuf.LazyStringArrayList notifyProps_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensureNotifyPropsIsMutable() {
+        if (!notifyProps_.isModifiable()) {
+          notifyProps_ = new com.google.protobuf.LazyStringArrayList(notifyProps_);
         }
+        bitField0_ |= 0x00008000;
+      }
+      /**
+       * <code>repeated string notify_props = 16 [json_name = "notifyProps"];</code>
+       * @return A list containing the notifyProps.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getNotifyPropsList() {
+        notifyProps_.makeImmutable();
         return notifyProps_;
       }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-          internalGetMutableNotifyProps() {
-        if (notifyProps_ == null) {
-          notifyProps_ = com.google.protobuf.MapField.newMapField(
-              NotifyPropsDefaultEntryHolder.defaultEntry);
-        }
-        if (!notifyProps_.isMutable()) {
-          notifyProps_ = notifyProps_.copy();
-        }
+      /**
+       * <code>repeated string notify_props = 16 [json_name = "notifyProps"];</code>
+       * @return The count of notifyProps.
+       */
+      public int getNotifyPropsCount() {
+        return notifyProps_.size();
+      }
+      /**
+       * <code>repeated string notify_props = 16 [json_name = "notifyProps"];</code>
+       * @param index The index of the element to return.
+       * @return The notifyProps at the given index.
+       */
+      public java.lang.String getNotifyProps(int index) {
+        return notifyProps_.get(index);
+      }
+      /**
+       * <code>repeated string notify_props = 16 [json_name = "notifyProps"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the notifyProps at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getNotifyPropsBytes(int index) {
+        return notifyProps_.getByteString(index);
+      }
+      /**
+       * <code>repeated string notify_props = 16 [json_name = "notifyProps"];</code>
+       * @param index The index to set the value at.
+       * @param value The notifyProps to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNotifyProps(
+          int index, java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureNotifyPropsIsMutable();
+        notifyProps_.set(index, value);
         bitField0_ |= 0x00008000;
         onChanged();
-        return notifyProps_;
-      }
-      public int getNotifyPropsCount() {
-        return internalGetNotifyProps().getMap().size();
-      }
-      /**
-       * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
-       */
-      @java.lang.Override
-      public boolean containsNotifyProps(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        return internalGetNotifyProps().getMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getNotifyPropsMap()} instead.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getNotifyProps() {
-        return getNotifyPropsMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
-       */
-      @java.lang.Override
-      public java.util.Map<java.lang.String, java.lang.String> getNotifyPropsMap() {
-        return internalGetNotifyProps().getMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
-       */
-      @java.lang.Override
-      public /* nullable */
-java.lang.String getNotifyPropsOrDefault(
-          java.lang.String key,
-          /* nullable */
-java.lang.String defaultValue) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetNotifyProps().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
-       */
-      @java.lang.Override
-      public java.lang.String getNotifyPropsOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetNotifyProps().getMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return map.get(key);
-      }
-      public Builder clearNotifyProps() {
-        bitField0_ = (bitField0_ & ~0x00008000);
-        internalGetMutableNotifyProps().getMutableMap()
-            .clear();
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
+       * <code>repeated string notify_props = 16 [json_name = "notifyProps"];</code>
+       * @param value The notifyProps to add.
+       * @return This builder for chaining.
        */
-      public Builder removeNotifyProps(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        internalGetMutableNotifyProps().getMutableMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
-          getMutableNotifyProps() {
-        bitField0_ |= 0x00008000;
-        return internalGetMutableNotifyProps().getMutableMap();
-      }
-      /**
-       * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
-       */
-      public Builder putNotifyProps(
-          java.lang.String key,
+      public Builder addNotifyProps(
           java.lang.String value) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        if (value == null) { throw new NullPointerException("map value"); }
-        internalGetMutableNotifyProps().getMutableMap()
-            .put(key, value);
+        if (value == null) { throw new NullPointerException(); }
+        ensureNotifyPropsIsMutable();
+        notifyProps_.add(value);
         bitField0_ |= 0x00008000;
+        onChanged();
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; notify_props = 16 [json_name = "notifyProps"];</code>
+       * <code>repeated string notify_props = 16 [json_name = "notifyProps"];</code>
+       * @param values The notifyProps to add.
+       * @return This builder for chaining.
        */
-      public Builder putAllNotifyProps(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableNotifyProps().getMutableMap()
-            .putAll(values);
+      public Builder addAllNotifyProps(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureNotifyPropsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, notifyProps_);
         bitField0_ |= 0x00008000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string notify_props = 16 [json_name = "notifyProps"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNotifyProps() {
+        notifyProps_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00008000);;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string notify_props = 16 [json_name = "notifyProps"];</code>
+       * @param value The bytes of the notifyProps to add.
+       * @return This builder for chaining.
+       */
+      public Builder addNotifyPropsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        ensureNotifyPropsIsMutable();
+        notifyProps_.add(value);
+        bitField0_ |= 0x00008000;
+        onChanged();
         return this;
       }
 
@@ -5406,16 +5236,6 @@ java.lang.String defaultValue) {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_users_v1_User_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_users_v1_User_PropsEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_users_v1_User_PropsEntry_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_users_v1_User_NotifyPropsEntry_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_users_v1_User_NotifyPropsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5428,7 +5248,7 @@ java.lang.String defaultValue) {
       "\n\023users/v1/user.proto\022\010users.v1\"t\n\021UserI" +
       "mageMetadata\022\022\n\004mime\030\001 \001(\tR\004mime\022\026\n\006heig" +
       "ht\030\002 \001(\005R\006height\022\024\n\005widht\030\003 \001(\005R\005widht\022\035" +
-      "\n\nsize_bytes\030\004 \001(\003R\tsizeBytes\"\235\014\n\004User\022\023" +
+      "\n\nsize_bytes\030\004 \001(\003R\tsizeBytes\"\347\n\n\004User\022\023" +
       "\n\002id\030\001 \001(\tH\000R\002id\210\001\001\022\037\n\010username\030\002 \001(\tH\001R" +
       "\010username\210\001\001\022\"\n\nfirst_name\030\003 \001(\tH\002R\tfirs" +
       "tName\210\001\001\022 \n\tlast_name\030\004 \001(\tH\003R\010lastName\210" +
@@ -5441,36 +5261,32 @@ java.lang.String defaultValue) {
       "rified\210\001\001\022\037\n\010password\030\013 \001(\tH\nR\010password\210" +
       "\001\001\022 \n\tauth_data\030\014 \001(\tH\013R\010authData\210\001\001\022&\n\014" +
       "auth_service\030\r \001(\tH\014R\013authService\210\001\001\022\024\n\005" +
-      "roles\030\016 \003(\tR\005roles\022/\n\005props\030\017 \003(\0132\031.user" +
-      "s.v1.User.PropsEntryR\005props\022B\n\014notify_pr" +
-      "ops\030\020 \003(\0132\037.users.v1.User.NotifyPropsEnt" +
-      "ryR\013notifyProps\0225\n\024last_password_update\030" +
-      "\021 \001(\003H\rR\022lastPasswordUpdate\210\001\001\0223\n\023last_p" +
-      "icture_update\030\022 \001(\003H\016R\021lastPictureUpdate" +
-      "\210\001\001\022,\n\017failed_attempts\030\023 \001(\005H\017R\016failedAt" +
-      "tempts\210\001\001\022\033\n\006locale\030\024 \001(\tH\020R\006locale\210\001\001\022\"" +
-      "\n\nmfa_active\030\025 \001(\010H\021R\tmfaActive\210\001\001\022\"\n\nmf" +
-      "a_secret\030\026 \001(\tH\022R\tmfaSecret\210\001\001\022-\n\020last_a" +
-      "ctivity_at\030\027 \001(\003H\023R\016lastActivityAt\210\001\001\022\"\n" +
-      "\nlast_login\030\030 \001(\003H\024R\tlastLogin\210\001\001\022\"\n\ncre" +
-      "ated_at\030\031 \001(\003H\025R\tcreatedAt\210\001\001\022\"\n\nupdated" +
-      "_at\030\032 \001(\003H\026R\tupdatedAt\210\001\001\022\"\n\ndeleted_at\030" +
-      "\033 \001(\003H\027R\tdeletedAt\210\001\001\0328\n\nPropsEntry\022\020\n\003k" +
-      "ey\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032" +
-      ">\n\020NotifyPropsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n" +
-      "\005value\030\002 \001(\tR\005value:\0028\001B\005\n\003_idB\013\n\t_usern" +
-      "ameB\r\n\013_first_nameB\014\n\n_last_nameB\010\n\006_ema" +
-      "ilB\014\n\n_user_typeB\010\n\006_imageB\021\n\017_image_met" +
-      "adataB\r\n\013_membershipB\024\n\022_is_email_verifi" +
-      "edB\013\n\t_passwordB\014\n\n_auth_dataB\017\n\r_auth_s" +
-      "erviceB\027\n\025_last_password_updateB\026\n\024_last" +
-      "_picture_updateB\022\n\020_failed_attemptsB\t\n\007_" +
-      "localeB\r\n\013_mfa_activeB\r\n\013_mfa_secretB\023\n\021" +
-      "_last_activity_atB\r\n\013_last_loginB\r\n\013_cre" +
-      "ated_atB\r\n\013_updated_atB\r\n\013_deleted_atBm\n" +
-      "\031org.megacommerce.users.v1B\tUserProtoZBg" +
-      "ithub.com/ahmad-khatib0-org/megacommerce" +
-      "-proto/gen/go/users/v1;v1\370\001\001b\006proto3"
+      "roles\030\016 \003(\tR\005roles\022\024\n\005props\030\017 \003(\tR\005props" +
+      "\022!\n\014notify_props\030\020 \003(\tR\013notifyProps\0225\n\024l" +
+      "ast_password_update\030\021 \001(\003H\rR\022lastPasswor" +
+      "dUpdate\210\001\001\0223\n\023last_picture_update\030\022 \001(\003H" +
+      "\016R\021lastPictureUpdate\210\001\001\022,\n\017failed_attemp" +
+      "ts\030\023 \001(\005H\017R\016failedAttempts\210\001\001\022\033\n\006locale\030" +
+      "\024 \001(\tH\020R\006locale\210\001\001\022\"\n\nmfa_active\030\025 \001(\010H\021" +
+      "R\tmfaActive\210\001\001\022\"\n\nmfa_secret\030\026 \001(\tH\022R\tmf" +
+      "aSecret\210\001\001\022-\n\020last_activity_at\030\027 \001(\003H\023R\016" +
+      "lastActivityAt\210\001\001\022\"\n\nlast_login\030\030 \001(\003H\024R" +
+      "\tlastLogin\210\001\001\022\"\n\ncreated_at\030\031 \001(\003H\025R\tcre" +
+      "atedAt\210\001\001\022\"\n\nupdated_at\030\032 \001(\003H\026R\tupdated" +
+      "At\210\001\001\022\"\n\ndeleted_at\030\033 \001(\003H\027R\tdeletedAt\210\001" +
+      "\001B\005\n\003_idB\013\n\t_usernameB\r\n\013_first_nameB\014\n\n" +
+      "_last_nameB\010\n\006_emailB\014\n\n_user_typeB\010\n\006_i" +
+      "mageB\021\n\017_image_metadataB\r\n\013_membershipB\024" +
+      "\n\022_is_email_verifiedB\013\n\t_passwordB\014\n\n_au" +
+      "th_dataB\017\n\r_auth_serviceB\027\n\025_last_passwo" +
+      "rd_updateB\026\n\024_last_picture_updateB\022\n\020_fa" +
+      "iled_attemptsB\t\n\007_localeB\r\n\013_mfa_activeB" +
+      "\r\n\013_mfa_secretB\023\n\021_last_activity_atB\r\n\013_" +
+      "last_loginB\r\n\013_created_atB\r\n\013_updated_at" +
+      "B\r\n\013_deleted_atBm\n\031org.megacommerce.user" +
+      "s.v1B\tUserProtoZBgithub.com/ahmad-khatib" +
+      "0-org/megacommerce-proto/gen/go/users/v1" +
+      ";v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5488,18 +5304,6 @@ java.lang.String defaultValue) {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_users_v1_User_descriptor,
         new java.lang.String[] { "Id", "Username", "FirstName", "LastName", "Email", "UserType", "Image", "ImageMetadata", "Membership", "IsEmailVerified", "Password", "AuthData", "AuthService", "Roles", "Props", "NotifyProps", "LastPasswordUpdate", "LastPictureUpdate", "FailedAttempts", "Locale", "MfaActive", "MfaSecret", "LastActivityAt", "LastLogin", "CreatedAt", "UpdatedAt", "DeletedAt", });
-    internal_static_users_v1_User_PropsEntry_descriptor =
-      internal_static_users_v1_User_descriptor.getNestedTypes().get(0);
-    internal_static_users_v1_User_PropsEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_users_v1_User_PropsEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_users_v1_User_NotifyPropsEntry_descriptor =
-      internal_static_users_v1_User_descriptor.getNestedTypes().get(1);
-    internal_static_users_v1_User_NotifyPropsEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_users_v1_User_NotifyPropsEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
     descriptor.resolveAllFeaturesImmutable();
   }
 

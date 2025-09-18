@@ -31,8 +31,8 @@ export interface User {
   authData?: string | undefined;
   authService?: string | undefined;
   roles: string[];
-  props: { [key: string]: string };
-  notifyProps: { [key: string]: string };
+  props: string[];
+  notifyProps: string[];
   lastPasswordUpdate?: string | undefined;
   lastPictureUpdate?: string | undefined;
   failedAttempts?: number | undefined;
@@ -44,16 +44,6 @@ export interface User {
   createdAt?: string | undefined;
   updatedAt?: string | undefined;
   deletedAt?: string | undefined;
-}
-
-export interface User_PropsEntry {
-  key: string;
-  value: string;
-}
-
-export interface User_NotifyPropsEntry {
-  key: string;
-  value: string;
 }
 
 function createBaseUserImageMetadata(): UserImageMetadata {
@@ -180,8 +170,8 @@ function createBaseUser(): User {
     authData: undefined,
     authService: undefined,
     roles: [],
-    props: {},
-    notifyProps: {},
+    props: [],
+    notifyProps: [],
     lastPasswordUpdate: undefined,
     lastPictureUpdate: undefined,
     failedAttempts: undefined,
@@ -240,12 +230,12 @@ export const User: MessageFns<User> = {
     for (const v of message.roles) {
       writer.uint32(114).string(v!);
     }
-    Object.entries(message.props).forEach(([key, value]) => {
-      User_PropsEntry.encode({ key: key as any, value }, writer.uint32(122).fork()).join();
-    });
-    Object.entries(message.notifyProps).forEach(([key, value]) => {
-      User_NotifyPropsEntry.encode({ key: key as any, value }, writer.uint32(130).fork()).join();
-    });
+    for (const v of message.props) {
+      writer.uint32(122).string(v!);
+    }
+    for (const v of message.notifyProps) {
+      writer.uint32(130).string(v!);
+    }
     if (message.lastPasswordUpdate !== undefined) {
       writer.uint32(136).int64(message.lastPasswordUpdate);
     }
@@ -406,10 +396,7 @@ export const User: MessageFns<User> = {
             break;
           }
 
-          const entry15 = User_PropsEntry.decode(reader, reader.uint32());
-          if (entry15.value !== undefined) {
-            message.props[entry15.key] = entry15.value;
-          }
+          message.props.push(reader.string());
           continue;
         }
         case 16: {
@@ -417,10 +404,7 @@ export const User: MessageFns<User> = {
             break;
           }
 
-          const entry16 = User_NotifyPropsEntry.decode(reader, reader.uint32());
-          if (entry16.value !== undefined) {
-            message.notifyProps[entry16.key] = entry16.value;
-          }
+          message.notifyProps.push(reader.string());
           continue;
         }
         case 17: {
@@ -536,18 +520,10 @@ export const User: MessageFns<User> = {
       authData: isSet(object.authData) ? globalThis.String(object.authData) : undefined,
       authService: isSet(object.authService) ? globalThis.String(object.authService) : undefined,
       roles: globalThis.Array.isArray(object?.roles) ? object.roles.map((e: any) => globalThis.String(e)) : [],
-      props: isObject(object.props)
-        ? Object.entries(object.props).reduce<{ [key: string]: string }>((acc, [key, value]) => {
-          acc[key] = String(value);
-          return acc;
-        }, {})
-        : {},
-      notifyProps: isObject(object.notifyProps)
-        ? Object.entries(object.notifyProps).reduce<{ [key: string]: string }>((acc, [key, value]) => {
-          acc[key] = String(value);
-          return acc;
-        }, {})
-        : {},
+      props: globalThis.Array.isArray(object?.props) ? object.props.map((e: any) => globalThis.String(e)) : [],
+      notifyProps: globalThis.Array.isArray(object?.notifyProps)
+        ? object.notifyProps.map((e: any) => globalThis.String(e))
+        : [],
       lastPasswordUpdate: isSet(object.lastPasswordUpdate) ? globalThis.String(object.lastPasswordUpdate) : undefined,
       lastPictureUpdate: isSet(object.lastPictureUpdate) ? globalThis.String(object.lastPictureUpdate) : undefined,
       failedAttempts: isSet(object.failedAttempts) ? globalThis.Number(object.failedAttempts) : undefined,
@@ -606,23 +582,11 @@ export const User: MessageFns<User> = {
     if (message.roles?.length) {
       obj.roles = message.roles;
     }
-    if (message.props) {
-      const entries = Object.entries(message.props);
-      if (entries.length > 0) {
-        obj.props = {};
-        entries.forEach(([k, v]) => {
-          obj.props[k] = v;
-        });
-      }
+    if (message.props?.length) {
+      obj.props = message.props;
     }
-    if (message.notifyProps) {
-      const entries = Object.entries(message.notifyProps);
-      if (entries.length > 0) {
-        obj.notifyProps = {};
-        entries.forEach(([k, v]) => {
-          obj.notifyProps[k] = v;
-        });
-      }
+    if (message.notifyProps?.length) {
+      obj.notifyProps = message.notifyProps;
     }
     if (message.lastPasswordUpdate !== undefined) {
       obj.lastPasswordUpdate = message.lastPasswordUpdate;
@@ -681,21 +645,8 @@ export const User: MessageFns<User> = {
     message.authData = object.authData ?? undefined;
     message.authService = object.authService ?? undefined;
     message.roles = object.roles?.map((e) => e) || [];
-    message.props = Object.entries(object.props ?? {}).reduce<{ [key: string]: string }>((acc, [key, value]) => {
-      if (value !== undefined) {
-        acc[key] = globalThis.String(value);
-      }
-      return acc;
-    }, {});
-    message.notifyProps = Object.entries(object.notifyProps ?? {}).reduce<{ [key: string]: string }>(
-      (acc, [key, value]) => {
-        if (value !== undefined) {
-          acc[key] = globalThis.String(value);
-        }
-        return acc;
-      },
-      {},
-    );
+    message.props = object.props?.map((e) => e) || [];
+    message.notifyProps = object.notifyProps?.map((e) => e) || [];
     message.lastPasswordUpdate = object.lastPasswordUpdate ?? undefined;
     message.lastPictureUpdate = object.lastPictureUpdate ?? undefined;
     message.failedAttempts = object.failedAttempts ?? undefined;
@@ -711,158 +662,6 @@ export const User: MessageFns<User> = {
   },
 };
 
-function createBaseUser_PropsEntry(): User_PropsEntry {
-  return { key: "", value: "" };
-}
-
-export const User_PropsEntry: MessageFns<User_PropsEntry> = {
-  encode(message: User_PropsEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.key !== "") {
-      writer.uint32(10).string(message.key);
-    }
-    if (message.value !== "") {
-      writer.uint32(18).string(message.value);
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): User_PropsEntry {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseUser_PropsEntry();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.key = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.value = reader.string();
-          continue;
-        }
-      }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
-      }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
-
-  fromJSON(object: any): User_PropsEntry {
-    return {
-      key: isSet(object.key) ? globalThis.String(object.key) : "",
-      value: isSet(object.value) ? globalThis.String(object.value) : "",
-    };
-  },
-
-  toJSON(message: User_PropsEntry): unknown {
-    const obj: any = {};
-    if (message.key !== "") {
-      obj.key = message.key;
-    }
-    if (message.value !== "") {
-      obj.value = message.value;
-    }
-    return obj;
-  },
-
-  create<I extends Exact<DeepPartial<User_PropsEntry>, I>>(base?: I): User_PropsEntry {
-    return User_PropsEntry.fromPartial(base ?? ({} as any));
-  },
-  fromPartial<I extends Exact<DeepPartial<User_PropsEntry>, I>>(object: I): User_PropsEntry {
-    const message = createBaseUser_PropsEntry();
-    message.key = object.key ?? "";
-    message.value = object.value ?? "";
-    return message;
-  },
-};
-
-function createBaseUser_NotifyPropsEntry(): User_NotifyPropsEntry {
-  return { key: "", value: "" };
-}
-
-export const User_NotifyPropsEntry: MessageFns<User_NotifyPropsEntry> = {
-  encode(message: User_NotifyPropsEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.key !== "") {
-      writer.uint32(10).string(message.key);
-    }
-    if (message.value !== "") {
-      writer.uint32(18).string(message.value);
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): User_NotifyPropsEntry {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseUser_NotifyPropsEntry();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.key = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.value = reader.string();
-          continue;
-        }
-      }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
-      }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
-
-  fromJSON(object: any): User_NotifyPropsEntry {
-    return {
-      key: isSet(object.key) ? globalThis.String(object.key) : "",
-      value: isSet(object.value) ? globalThis.String(object.value) : "",
-    };
-  },
-
-  toJSON(message: User_NotifyPropsEntry): unknown {
-    const obj: any = {};
-    if (message.key !== "") {
-      obj.key = message.key;
-    }
-    if (message.value !== "") {
-      obj.value = message.value;
-    }
-    return obj;
-  },
-
-  create<I extends Exact<DeepPartial<User_NotifyPropsEntry>, I>>(base?: I): User_NotifyPropsEntry {
-    return User_NotifyPropsEntry.fromPartial(base ?? ({} as any));
-  },
-  fromPartial<I extends Exact<DeepPartial<User_NotifyPropsEntry>, I>>(object: I): User_NotifyPropsEntry {
-    const message = createBaseUser_NotifyPropsEntry();
-    message.key = object.key ?? "";
-    message.value = object.value ?? "";
-    return message;
-  },
-};
-
 type Builtin = Date | Function | Uint8Array | string | number | boolean | undefined;
 
 export type DeepPartial<T> = T extends Builtin ? T
@@ -874,10 +673,6 @@ export type DeepPartial<T> = T extends Builtin ? T
 type KeysOfUnion<T> = T extends T ? keyof T : never;
 export type Exact<P, I extends P> = P extends Builtin ? P
   : P & { [K in keyof P]: Exact<P[K], I[K]> } & { [K in Exclude<keyof I, KeysOfUnion<P>>]: never };
-
-function isObject(value: any): boolean {
-  return typeof value === "object" && value !== null;
-}
 
 function isSet(value: any): boolean {
   return value !== null && value !== undefined;

@@ -56,42 +56,6 @@ struct UserImageMetadataDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UserImageMetadataDefaultTypeInternal _UserImageMetadata_default_instance_;
-template <typename>
-PROTOBUF_CONSTEXPR User_PropsEntry_DoNotUse::User_PropsEntry_DoNotUse(::_pbi::ConstantInitialized)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : User_PropsEntry_DoNotUse::MapEntry(User_PropsEntry_DoNotUse_class_data_.base()){}
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : User_PropsEntry_DoNotUse::MapEntry() {
-}
-#endif  // PROTOBUF_CUSTOM_VTABLE
-struct User_PropsEntry_DoNotUseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR User_PropsEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~User_PropsEntry_DoNotUseDefaultTypeInternal() {}
-  union {
-    User_PropsEntry_DoNotUse _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 User_PropsEntry_DoNotUseDefaultTypeInternal _User_PropsEntry_DoNotUse_default_instance_;
-template <typename>
-PROTOBUF_CONSTEXPR User_NotifyPropsEntry_DoNotUse::User_NotifyPropsEntry_DoNotUse(::_pbi::ConstantInitialized)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : User_NotifyPropsEntry_DoNotUse::MapEntry(User_NotifyPropsEntry_DoNotUse_class_data_.base()){}
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : User_NotifyPropsEntry_DoNotUse::MapEntry() {
-}
-#endif  // PROTOBUF_CUSTOM_VTABLE
-struct User_NotifyPropsEntry_DoNotUseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR User_NotifyPropsEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~User_NotifyPropsEntry_DoNotUseDefaultTypeInternal() {}
-  union {
-    User_NotifyPropsEntry_DoNotUse _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 User_NotifyPropsEntry_DoNotUseDefaultTypeInternal _User_NotifyPropsEntry_DoNotUse_default_instance_;
 
 inline constexpr User::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -190,20 +154,6 @@ const ::uint32_t
         2,
         3,
         0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::users::v1::User_PropsEntry_DoNotUse, _impl_._has_bits_),
-        5, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::users::v1::User_PropsEntry_DoNotUse, _impl_.key_),
-        PROTOBUF_FIELD_OFFSET(::users::v1::User_PropsEntry_DoNotUse, _impl_.value_),
-        0,
-        1,
-        0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::users::v1::User_NotifyPropsEntry_DoNotUse, _impl_._has_bits_),
-        5, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::users::v1::User_NotifyPropsEntry_DoNotUse, _impl_.key_),
-        PROTOBUF_FIELD_OFFSET(::users::v1::User_NotifyPropsEntry_DoNotUse, _impl_.value_),
-        0,
-        1,
-        0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::users::v1::User, _impl_._has_bits_),
         30, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::users::v1::User, _impl_.id_),
@@ -265,14 +215,10 @@ const ::uint32_t
 static const ::_pbi::MigrationSchema
     schemas[] ABSL_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
         {0, sizeof(::users::v1::UserImageMetadata)},
-        {11, sizeof(::users::v1::User_PropsEntry_DoNotUse)},
-        {18, sizeof(::users::v1::User_NotifyPropsEntry_DoNotUse)},
-        {25, sizeof(::users::v1::User)},
+        {11, sizeof(::users::v1::User)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::users::v1::_UserImageMetadata_default_instance_._instance,
-    &::users::v1::_User_PropsEntry_DoNotUse_default_instance_._instance,
-    &::users::v1::_User_NotifyPropsEntry_DoNotUse_default_instance_._instance,
     &::users::v1::_User_default_instance_._instance,
 };
 const char descriptor_table_protodef_users_2fv1_2fuser_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
@@ -280,7 +226,7 @@ const char descriptor_table_protodef_users_2fv1_2fuser_2eproto[] ABSL_ATTRIBUTE_
     "\n\023users/v1/user.proto\022\010users.v1\"t\n\021UserI"
     "mageMetadata\022\022\n\004mime\030\001 \001(\tR\004mime\022\026\n\006heig"
     "ht\030\002 \001(\005R\006height\022\024\n\005widht\030\003 \001(\005R\005widht\022\035"
-    "\n\nsize_bytes\030\004 \001(\003R\tsizeBytes\"\235\014\n\004User\022\023"
+    "\n\nsize_bytes\030\004 \001(\003R\tsizeBytes\"\347\n\n\004User\022\023"
     "\n\002id\030\001 \001(\tH\000R\002id\210\001\001\022\037\n\010username\030\002 \001(\tH\001R"
     "\010username\210\001\001\022\"\n\nfirst_name\030\003 \001(\tH\002R\tfirs"
     "tName\210\001\001\022 \n\tlast_name\030\004 \001(\tH\003R\010lastName\210"
@@ -293,48 +239,44 @@ const char descriptor_table_protodef_users_2fv1_2fuser_2eproto[] ABSL_ATTRIBUTE_
     "rified\210\001\001\022\037\n\010password\030\013 \001(\tH\nR\010password\210"
     "\001\001\022 \n\tauth_data\030\014 \001(\tH\013R\010authData\210\001\001\022&\n\014"
     "auth_service\030\r \001(\tH\014R\013authService\210\001\001\022\024\n\005"
-    "roles\030\016 \003(\tR\005roles\022/\n\005props\030\017 \003(\0132\031.user"
-    "s.v1.User.PropsEntryR\005props\022B\n\014notify_pr"
-    "ops\030\020 \003(\0132\037.users.v1.User.NotifyPropsEnt"
-    "ryR\013notifyProps\0225\n\024last_password_update\030"
-    "\021 \001(\003H\rR\022lastPasswordUpdate\210\001\001\0223\n\023last_p"
-    "icture_update\030\022 \001(\003H\016R\021lastPictureUpdate"
-    "\210\001\001\022,\n\017failed_attempts\030\023 \001(\005H\017R\016failedAt"
-    "tempts\210\001\001\022\033\n\006locale\030\024 \001(\tH\020R\006locale\210\001\001\022\""
-    "\n\nmfa_active\030\025 \001(\010H\021R\tmfaActive\210\001\001\022\"\n\nmf"
-    "a_secret\030\026 \001(\tH\022R\tmfaSecret\210\001\001\022-\n\020last_a"
-    "ctivity_at\030\027 \001(\003H\023R\016lastActivityAt\210\001\001\022\"\n"
-    "\nlast_login\030\030 \001(\003H\024R\tlastLogin\210\001\001\022\"\n\ncre"
-    "ated_at\030\031 \001(\003H\025R\tcreatedAt\210\001\001\022\"\n\nupdated"
-    "_at\030\032 \001(\003H\026R\tupdatedAt\210\001\001\022\"\n\ndeleted_at\030"
-    "\033 \001(\003H\027R\tdeletedAt\210\001\001\0328\n\nPropsEntry\022\020\n\003k"
-    "ey\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032"
-    ">\n\020NotifyPropsEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n"
-    "\005value\030\002 \001(\tR\005value:\0028\001B\005\n\003_idB\013\n\t_usern"
-    "ameB\r\n\013_first_nameB\014\n\n_last_nameB\010\n\006_ema"
-    "ilB\014\n\n_user_typeB\010\n\006_imageB\021\n\017_image_met"
-    "adataB\r\n\013_membershipB\024\n\022_is_email_verifi"
-    "edB\013\n\t_passwordB\014\n\n_auth_dataB\017\n\r_auth_s"
-    "erviceB\027\n\025_last_password_updateB\026\n\024_last"
-    "_picture_updateB\022\n\020_failed_attemptsB\t\n\007_"
-    "localeB\r\n\013_mfa_activeB\r\n\013_mfa_secretB\023\n\021"
-    "_last_activity_atB\r\n\013_last_loginB\r\n\013_cre"
-    "ated_atB\r\n\013_updated_atB\r\n\013_deleted_atBm\n"
-    "\031org.megacommerce.users.v1B\tUserProtoZBg"
-    "ithub.com/ahmad-khatib0-org/megacommerce"
-    "-proto/gen/go/users/v1;v1\370\001\001b\006proto3"
+    "roles\030\016 \003(\tR\005roles\022\024\n\005props\030\017 \003(\tR\005props"
+    "\022!\n\014notify_props\030\020 \003(\tR\013notifyProps\0225\n\024l"
+    "ast_password_update\030\021 \001(\003H\rR\022lastPasswor"
+    "dUpdate\210\001\001\0223\n\023last_picture_update\030\022 \001(\003H"
+    "\016R\021lastPictureUpdate\210\001\001\022,\n\017failed_attemp"
+    "ts\030\023 \001(\005H\017R\016failedAttempts\210\001\001\022\033\n\006locale\030"
+    "\024 \001(\tH\020R\006locale\210\001\001\022\"\n\nmfa_active\030\025 \001(\010H\021"
+    "R\tmfaActive\210\001\001\022\"\n\nmfa_secret\030\026 \001(\tH\022R\tmf"
+    "aSecret\210\001\001\022-\n\020last_activity_at\030\027 \001(\003H\023R\016"
+    "lastActivityAt\210\001\001\022\"\n\nlast_login\030\030 \001(\003H\024R"
+    "\tlastLogin\210\001\001\022\"\n\ncreated_at\030\031 \001(\003H\025R\tcre"
+    "atedAt\210\001\001\022\"\n\nupdated_at\030\032 \001(\003H\026R\tupdated"
+    "At\210\001\001\022\"\n\ndeleted_at\030\033 \001(\003H\027R\tdeletedAt\210\001"
+    "\001B\005\n\003_idB\013\n\t_usernameB\r\n\013_first_nameB\014\n\n"
+    "_last_nameB\010\n\006_emailB\014\n\n_user_typeB\010\n\006_i"
+    "mageB\021\n\017_image_metadataB\r\n\013_membershipB\024"
+    "\n\022_is_email_verifiedB\013\n\t_passwordB\014\n\n_au"
+    "th_dataB\017\n\r_auth_serviceB\027\n\025_last_passwo"
+    "rd_updateB\026\n\024_last_picture_updateB\022\n\020_fa"
+    "iled_attemptsB\t\n\007_localeB\r\n\013_mfa_activeB"
+    "\r\n\013_mfa_secretB\023\n\021_last_activity_atB\r\n\013_"
+    "last_loginB\r\n\013_created_atB\r\n\013_updated_at"
+    "B\r\n\013_deleted_atBm\n\031org.megacommerce.user"
+    "s.v1B\tUserProtoZBgithub.com/ahmad-khatib"
+    "0-org/megacommerce-proto/gen/go/users/v1"
+    ";v1\370\001\001b\006proto3"
 };
 static ::absl::once_flag descriptor_table_users_2fv1_2fuser_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_users_2fv1_2fuser_2eproto = {
     false,
     false,
-    1836,
+    1654,
     descriptor_table_protodef_users_2fv1_2fuser_2eproto,
     "users/v1/user.proto",
     &descriptor_table_users_2fv1_2fuser_2eproto_once,
     nullptr,
     0,
-    4,
+    2,
     schemas,
     file_default_instances,
     TableStruct_users_2fv1_2fuser_2eproto::offsets,
@@ -715,202 +657,6 @@ void UserImageMetadata::InternalSwap(UserImageMetadata* PROTOBUF_RESTRICT PROTOB
 }
 // ===================================================================
 
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-User_PropsEntry_DoNotUse::User_PropsEntry_DoNotUse()
-    : SuperType(User_PropsEntry_DoNotUse_class_data_.base()) {}
-User_PropsEntry_DoNotUse::User_PropsEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-    : SuperType(arena, User_PropsEntry_DoNotUse_class_data_.base()) {}
-#else   // PROTOBUF_CUSTOM_VTABLE
-User_PropsEntry_DoNotUse::User_PropsEntry_DoNotUse() : SuperType() {}
-User_PropsEntry_DoNotUse::User_PropsEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena) : SuperType(arena) {}
-#endif  // PROTOBUF_CUSTOM_VTABLE
-inline void* PROTOBUF_NONNULL User_PropsEntry_DoNotUse::PlacementNew_(
-    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) User_PropsEntry_DoNotUse(arena);
-}
-constexpr auto User_PropsEntry_DoNotUse::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(User_PropsEntry_DoNotUse),
-                                            alignof(User_PropsEntry_DoNotUse));
-}
-constexpr auto User_PropsEntry_DoNotUse::InternalGenerateClassData_() {
-  return ::google::protobuf::internal::ClassDataFull{
-      ::google::protobuf::internal::ClassData{
-          &_User_PropsEntry_DoNotUse_default_instance_._instance,
-          &_table_.header,
-          nullptr,  // OnDemandRegisterArenaDtor
-          nullptr,  // IsInitialized
-          &User_PropsEntry_DoNotUse::MergeImpl,
-          ::google::protobuf::Message::GetNewImpl<User_PropsEntry_DoNotUse>(),
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          &User_PropsEntry_DoNotUse::SharedDtor,
-          static_cast<void (::google::protobuf::MessageLite::*)()>(&User_PropsEntry_DoNotUse::ClearImpl),
-              ::google::protobuf::Message::ByteSizeLongImpl, ::google::protobuf::Message::_InternalSerializeImpl
-              ,
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(User_PropsEntry_DoNotUse, _impl_._cached_size_),
-          false,
-      },
-      &User_PropsEntry_DoNotUse::kDescriptorMethods,
-      &descriptor_table_users_2fv1_2fuser_2eproto,
-      nullptr,  // tracker
-  };
-}
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull User_PropsEntry_DoNotUse_class_data_ =
-        User_PropsEntry_DoNotUse::InternalGenerateClassData_();
-
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-User_PropsEntry_DoNotUse::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&User_PropsEntry_DoNotUse_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(User_PropsEntry_DoNotUse_class_data_.tc_table);
-  return User_PropsEntry_DoNotUse_class_data_.base();
-}
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 41, 2>
-User_PropsEntry_DoNotUse::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(User_PropsEntry_DoNotUse, _impl_._has_bits_),
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    User_PropsEntry_DoNotUse_class_data_.base(),
-    nullptr,  // post_loop_handler
-    ::_pbi::TcParser::DiscardEverythingFallback,  // fallback
-    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-    ::_pbi::TcParser::GetTable<::users::v1::User_PropsEntry_DoNotUse>(),  // to_prefetch
-    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
-  }, {{
-    // string value = 2 [json_name = "value"];
-    {::_pbi::TcParser::FastUS1,
-     {18, 1, 0, PROTOBUF_FIELD_OFFSET(User_PropsEntry_DoNotUse, _impl_.value_)}},
-    // string key = 1 [json_name = "key"];
-    {::_pbi::TcParser::FastUS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(User_PropsEntry_DoNotUse, _impl_.key_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // string key = 1 [json_name = "key"];
-    {PROTOBUF_FIELD_OFFSET(User_PropsEntry_DoNotUse, _impl_.key_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string value = 2 [json_name = "value"];
-    {PROTOBUF_FIELD_OFFSET(User_PropsEntry_DoNotUse, _impl_.value_), _Internal::kHasBitsOffset + 1, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-  }},
-  // no aux_entries
-  {{
-    "\30\3\5\0\0\0\0\0"
-    "users.v1.User.PropsEntry"
-    "key"
-    "value"
-  }},
-};
-// ===================================================================
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-User_NotifyPropsEntry_DoNotUse::User_NotifyPropsEntry_DoNotUse()
-    : SuperType(User_NotifyPropsEntry_DoNotUse_class_data_.base()) {}
-User_NotifyPropsEntry_DoNotUse::User_NotifyPropsEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-    : SuperType(arena, User_NotifyPropsEntry_DoNotUse_class_data_.base()) {}
-#else   // PROTOBUF_CUSTOM_VTABLE
-User_NotifyPropsEntry_DoNotUse::User_NotifyPropsEntry_DoNotUse() : SuperType() {}
-User_NotifyPropsEntry_DoNotUse::User_NotifyPropsEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena) : SuperType(arena) {}
-#endif  // PROTOBUF_CUSTOM_VTABLE
-inline void* PROTOBUF_NONNULL User_NotifyPropsEntry_DoNotUse::PlacementNew_(
-    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) User_NotifyPropsEntry_DoNotUse(arena);
-}
-constexpr auto User_NotifyPropsEntry_DoNotUse::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(User_NotifyPropsEntry_DoNotUse),
-                                            alignof(User_NotifyPropsEntry_DoNotUse));
-}
-constexpr auto User_NotifyPropsEntry_DoNotUse::InternalGenerateClassData_() {
-  return ::google::protobuf::internal::ClassDataFull{
-      ::google::protobuf::internal::ClassData{
-          &_User_NotifyPropsEntry_DoNotUse_default_instance_._instance,
-          &_table_.header,
-          nullptr,  // OnDemandRegisterArenaDtor
-          nullptr,  // IsInitialized
-          &User_NotifyPropsEntry_DoNotUse::MergeImpl,
-          ::google::protobuf::Message::GetNewImpl<User_NotifyPropsEntry_DoNotUse>(),
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          &User_NotifyPropsEntry_DoNotUse::SharedDtor,
-          static_cast<void (::google::protobuf::MessageLite::*)()>(&User_NotifyPropsEntry_DoNotUse::ClearImpl),
-              ::google::protobuf::Message::ByteSizeLongImpl, ::google::protobuf::Message::_InternalSerializeImpl
-              ,
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(User_NotifyPropsEntry_DoNotUse, _impl_._cached_size_),
-          false,
-      },
-      &User_NotifyPropsEntry_DoNotUse::kDescriptorMethods,
-      &descriptor_table_users_2fv1_2fuser_2eproto,
-      nullptr,  // tracker
-  };
-}
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull User_NotifyPropsEntry_DoNotUse_class_data_ =
-        User_NotifyPropsEntry_DoNotUse::InternalGenerateClassData_();
-
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-User_NotifyPropsEntry_DoNotUse::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&User_NotifyPropsEntry_DoNotUse_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(User_NotifyPropsEntry_DoNotUse_class_data_.tc_table);
-  return User_NotifyPropsEntry_DoNotUse_class_data_.base();
-}
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 47, 2>
-User_NotifyPropsEntry_DoNotUse::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(User_NotifyPropsEntry_DoNotUse, _impl_._has_bits_),
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    User_NotifyPropsEntry_DoNotUse_class_data_.base(),
-    nullptr,  // post_loop_handler
-    ::_pbi::TcParser::DiscardEverythingFallback,  // fallback
-    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-    ::_pbi::TcParser::GetTable<::users::v1::User_NotifyPropsEntry_DoNotUse>(),  // to_prefetch
-    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
-  }, {{
-    // string value = 2 [json_name = "value"];
-    {::_pbi::TcParser::FastUS1,
-     {18, 1, 0, PROTOBUF_FIELD_OFFSET(User_NotifyPropsEntry_DoNotUse, _impl_.value_)}},
-    // string key = 1 [json_name = "key"];
-    {::_pbi::TcParser::FastUS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(User_NotifyPropsEntry_DoNotUse, _impl_.key_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // string key = 1 [json_name = "key"];
-    {PROTOBUF_FIELD_OFFSET(User_NotifyPropsEntry_DoNotUse, _impl_.key_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string value = 2 [json_name = "value"];
-    {PROTOBUF_FIELD_OFFSET(User_NotifyPropsEntry_DoNotUse, _impl_.value_), _Internal::kHasBitsOffset + 1, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-  }},
-  // no aux_entries
-  {{
-    "\36\3\5\0\0\0\0\0"
-    "users.v1.User.NotifyPropsEntry"
-    "key"
-    "value"
-  }},
-};
-// ===================================================================
-
 class User::_Internal {
  public:
   using HasBits =
@@ -1048,17 +794,9 @@ constexpr auto User::InternalNewImpl_() {
           decltype(User::_impl_.props_)::
               InternalGetArenaOffset(
                   ::google::protobuf::Message::internal_visibility()),
-      PROTOBUF_FIELD_OFFSET(User, _impl_.props_) +
-          decltype(User::_impl_.props_)::
-              InternalGetArenaOffsetAlt(
-                  ::google::protobuf::Message::internal_visibility()),
       PROTOBUF_FIELD_OFFSET(User, _impl_.notify_props_) +
           decltype(User::_impl_.notify_props_)::
               InternalGetArenaOffset(
-                  ::google::protobuf::Message::internal_visibility()),
-      PROTOBUF_FIELD_OFFSET(User, _impl_.notify_props_) +
-          decltype(User::_impl_.notify_props_)::
-              InternalGetArenaOffsetAlt(
                   ::google::protobuf::Message::internal_visibility()),
   });
   if (arena_bits.has_value()) {
@@ -1104,7 +842,7 @@ User::GetClassData() const {
   return User_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<5, 27, 3, 171, 2>
+const ::_pbi::TcParseTable<5, 27, 1, 171, 2>
 User::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(User, _impl_._has_bits_),
@@ -1114,7 +852,7 @@ User::_table_ = {
     4160749568,  // skipmap
     offsetof(decltype(_table_), field_entries),
     27,  // num_field_entries
-    3,  // num_aux_entries
+    1,  // num_aux_entries
     offsetof(decltype(_table_), aux_entries),
     User_class_data_.base(),
     nullptr,  // post_loop_handler
@@ -1166,8 +904,12 @@ User::_table_ = {
     // repeated string roles = 14 [json_name = "roles"];
     {::_pbi::TcParser::FastUR1,
      {114, 63, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.roles_)}},
-    {::_pbi::TcParser::MiniParse, {}},
-    {::_pbi::TcParser::MiniParse, {}},
+    // repeated string props = 15 [json_name = "props"];
+    {::_pbi::TcParser::FastUR1,
+     {122, 63, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.props_)}},
+    // repeated string notify_props = 16 [json_name = "notifyProps"];
+    {::_pbi::TcParser::FastUR2,
+     {386, 63, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.notify_props_)}},
     // optional int64 last_password_update = 17 [json_name = "lastPasswordUpdate"];
     {::_pbi::TcParser::FastV64S2,
      {392, 17, 0, PROTOBUF_FIELD_OFFSET(User, _impl_.last_password_update_)}},
@@ -1250,12 +992,12 @@ User::_table_ = {
     // repeated string roles = 14 [json_name = "roles"];
     {PROTOBUF_FIELD_OFFSET(User, _impl_.roles_), -1, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kUtf8String | ::_fl::kRepSString)},
-    // map<string, string> props = 15 [json_name = "props"];
-    {PROTOBUF_FIELD_OFFSET(User, _impl_.props_), -1, 1,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
-    // map<string, string> notify_props = 16 [json_name = "notifyProps"];
-    {PROTOBUF_FIELD_OFFSET(User, _impl_.notify_props_), -1, 2,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
+    // repeated string props = 15 [json_name = "props"];
+    {PROTOBUF_FIELD_OFFSET(User, _impl_.props_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kUtf8String | ::_fl::kRepSString)},
+    // repeated string notify_props = 16 [json_name = "notifyProps"];
+    {PROTOBUF_FIELD_OFFSET(User, _impl_.notify_props_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kUtf8String | ::_fl::kRepSString)},
     // optional int64 last_password_update = 17 [json_name = "lastPasswordUpdate"];
     {PROTOBUF_FIELD_OFFSET(User, _impl_.last_password_update_), _Internal::kHasBitsOffset + 17, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt64)},
@@ -1292,12 +1034,6 @@ User::_table_ = {
   }},
   {{
       {::_pbi::TcParser::GetTable<::users::v1::UserImageMetadata>()},
-      {::_pbi::TcParser::GetMapAuxInfo(1, 0, 0,
-                                       9, 9,
-                                       0)},
-      {::_pbi::TcParser::GetMapAuxInfo(1, 0, 0,
-                                       9, 9,
-                                       0)},
   }},
   {{
     "\15\2\10\12\11\5\11\5\0\12\0\10\11\14\5\5\14\0\0\0\6\0\12\0\0\0\0\0\0\0\0\0"
@@ -1518,70 +1254,20 @@ PROTOBUF_NOINLINE void User::Clear() {
     target = stream->WriteString(14, s, target);
   }
 
-  // map<string, string> props = 15 [json_name = "props"];
-  if (!this_._internal_props().empty()) {
-    using MapType = ::google::protobuf::Map<std::string, std::string>;
-    using WireHelper = _pbi::MapEntryFuncs<std::string, std::string,
-                                   _pbi::WireFormatLite::TYPE_STRING,
-                                   _pbi::WireFormatLite::TYPE_STRING>;
-    const auto& field = this_._internal_props();
-
-    if (stream->IsSerializationDeterministic() && field.size() > 1) {
-      for (const auto& entry : ::google::protobuf::internal::MapSorterPtr<MapType>(field)) {
-        target = WireHelper::InternalSerialize(
-            15, entry.first, entry.second, target, stream);
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            entry.first.data(), static_cast<int>(entry.first.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "users.v1.User.props");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            entry.second.data(), static_cast<int>(entry.second.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "users.v1.User.props");
-      }
-    } else {
-      for (const auto& entry : field) {
-        target = WireHelper::InternalSerialize(
-            15, entry.first, entry.second, target, stream);
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            entry.first.data(), static_cast<int>(entry.first.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "users.v1.User.props");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            entry.second.data(), static_cast<int>(entry.second.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "users.v1.User.props");
-      }
-    }
+  // repeated string props = 15 [json_name = "props"];
+  for (int i = 0, n = this_._internal_props_size(); i < n; ++i) {
+    const auto& s = this_._internal_props().Get(i);
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "users.v1.User.props");
+    target = stream->WriteString(15, s, target);
   }
 
-  // map<string, string> notify_props = 16 [json_name = "notifyProps"];
-  if (!this_._internal_notify_props().empty()) {
-    using MapType = ::google::protobuf::Map<std::string, std::string>;
-    using WireHelper = _pbi::MapEntryFuncs<std::string, std::string,
-                                   _pbi::WireFormatLite::TYPE_STRING,
-                                   _pbi::WireFormatLite::TYPE_STRING>;
-    const auto& field = this_._internal_notify_props();
-
-    if (stream->IsSerializationDeterministic() && field.size() > 1) {
-      for (const auto& entry : ::google::protobuf::internal::MapSorterPtr<MapType>(field)) {
-        target = WireHelper::InternalSerialize(
-            16, entry.first, entry.second, target, stream);
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            entry.first.data(), static_cast<int>(entry.first.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "users.v1.User.notify_props");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            entry.second.data(), static_cast<int>(entry.second.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "users.v1.User.notify_props");
-      }
-    } else {
-      for (const auto& entry : field) {
-        target = WireHelper::InternalSerialize(
-            16, entry.first, entry.second, target, stream);
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            entry.first.data(), static_cast<int>(entry.first.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "users.v1.User.notify_props");
-        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-            entry.second.data(), static_cast<int>(entry.second.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "users.v1.User.notify_props");
-      }
-    }
+  // repeated string notify_props = 16 [json_name = "notifyProps"];
+  for (int i = 0, n = this_._internal_notify_props_size(); i < n; ++i) {
+    const auto& s = this_._internal_notify_props().Get(i);
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "users.v1.User.notify_props");
+    target = stream->WriteString(16, s, target);
   }
 
   // optional int64 last_password_update = 17 [json_name = "lastPasswordUpdate"];
@@ -1697,24 +1383,22 @@ PROTOBUF_NOINLINE void User::Clear() {
             this_._internal_roles().Get(i));
       }
     }
-    // map<string, string> props = 15 [json_name = "props"];
+    // repeated string props = 15 [json_name = "props"];
     {
       total_size +=
-          1 * ::google::protobuf::internal::FromIntSize(this_._internal_props_size());
-      for (const auto& entry : this_._internal_props()) {
-        total_size += _pbi::MapEntryFuncs<std::string, std::string,
-                                       _pbi::WireFormatLite::TYPE_STRING,
-                                       _pbi::WireFormatLite::TYPE_STRING>::ByteSizeLong(entry.first, entry.second);
+          1 * ::google::protobuf::internal::FromIntSize(this_._internal_props().size());
+      for (int i = 0, n = this_._internal_props().size(); i < n; ++i) {
+        total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+            this_._internal_props().Get(i));
       }
     }
-    // map<string, string> notify_props = 16 [json_name = "notifyProps"];
+    // repeated string notify_props = 16 [json_name = "notifyProps"];
     {
       total_size +=
-          2 * ::google::protobuf::internal::FromIntSize(this_._internal_notify_props_size());
-      for (const auto& entry : this_._internal_notify_props()) {
-        total_size += _pbi::MapEntryFuncs<std::string, std::string,
-                                       _pbi::WireFormatLite::TYPE_STRING,
-                                       _pbi::WireFormatLite::TYPE_STRING>::ByteSizeLong(entry.first, entry.second);
+          2 * ::google::protobuf::internal::FromIntSize(this_._internal_notify_props().size());
+      for (int i = 0, n = this_._internal_notify_props().size(); i < n; ++i) {
+        total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+            this_._internal_notify_props().Get(i));
       }
     }
   }
@@ -1851,8 +1535,8 @@ void User::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::pr
   (void) cached_has_bits;
 
   _this->_internal_mutable_roles()->MergeFrom(from._internal_roles());
-  _this->_impl_.props_.MergeFrom(from._impl_.props_);
-  _this->_impl_.notify_props_.MergeFrom(from._impl_.notify_props_);
+  _this->_internal_mutable_props()->MergeFrom(from._internal_props());
+  _this->_internal_mutable_notify_props()->MergeFrom(from._internal_notify_props());
   cached_has_bits = from._impl_._has_bits_[0];
   if ((cached_has_bits & 0x000000ffu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
