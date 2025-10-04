@@ -11,6 +11,108 @@ import { OrderDirection } from "../../shared/v1/types.js";
 
 export const protobufPackage = "products.v1";
 
+export enum ProductShippingMethod {
+  STANDARD = 0,
+  EXPRESS = 1,
+  UNRECOGNIZED = -1,
+}
+
+export function productShippingMethodFromJSON(object: any): ProductShippingMethod {
+  switch (object) {
+    case 0:
+    case "STANDARD":
+      return ProductShippingMethod.STANDARD;
+    case 1:
+    case "EXPRESS":
+      return ProductShippingMethod.EXPRESS;
+    case -1:
+    case "UNRECOGNIZED":
+    default:
+      return ProductShippingMethod.UNRECOGNIZED;
+  }
+}
+
+export function productShippingMethodToJSON(object: ProductShippingMethod): string {
+  switch (object) {
+    case ProductShippingMethod.STANDARD:
+      return "STANDARD";
+    case ProductShippingMethod.EXPRESS:
+      return "EXPRESS";
+    case ProductShippingMethod.UNRECOGNIZED:
+    default:
+      return "UNRECOGNIZED";
+  }
+}
+
+export enum ProductItemMetadataType {
+  CUPON = 0,
+  NEW_SHOPPER = 1,
+  BUNDLE = 2,
+  UNRECOGNIZED = -1,
+}
+
+export function productItemMetadataTypeFromJSON(object: any): ProductItemMetadataType {
+  switch (object) {
+    case 0:
+    case "CUPON":
+      return ProductItemMetadataType.CUPON;
+    case 1:
+    case "NEW_SHOPPER":
+      return ProductItemMetadataType.NEW_SHOPPER;
+    case 2:
+    case "BUNDLE":
+      return ProductItemMetadataType.BUNDLE;
+    case -1:
+    case "UNRECOGNIZED":
+    default:
+      return ProductItemMetadataType.UNRECOGNIZED;
+  }
+}
+
+export function productItemMetadataTypeToJSON(object: ProductItemMetadataType): string {
+  switch (object) {
+    case ProductItemMetadataType.CUPON:
+      return "CUPON";
+    case ProductItemMetadataType.NEW_SHOPPER:
+      return "NEW_SHOPPER";
+    case ProductItemMetadataType.BUNDLE:
+      return "BUNDLE";
+    case ProductItemMetadataType.UNRECOGNIZED:
+    default:
+      return "UNRECOGNIZED";
+  }
+}
+
+export interface ProductPrice {
+  amount: number;
+  formatted: string;
+  discountPrice?: number | undefined;
+  saveAmount?: number | undefined;
+  savePercentage?: number | undefined;
+}
+
+export interface ProductShippingInfo {
+  free: boolean;
+  method: ProductShippingMethod;
+  origin: string;
+  minEstimatedDays: number;
+  maxEstimatedDays: number;
+}
+
+export interface ProductItemMetadata {
+  type: ProductItemMetadataType;
+  label: string;
+}
+
+export interface ProductItem {
+  title: string;
+  image: string;
+  price?: ProductPrice | undefined;
+  rating?: number | undefined;
+  sold?: number | undefined;
+  meta: ProductItemMetadata[];
+}
+
 export interface ProductListItem {
   id: string;
   userId: string;
@@ -36,6 +138,472 @@ export interface ProductListResponse {
 export interface ProductListResponseData {
   data: ProductListItem[];
 }
+
+function createBaseProductPrice(): ProductPrice {
+  return { amount: 0, formatted: "", discountPrice: undefined, saveAmount: undefined, savePercentage: undefined };
+}
+
+export const ProductPrice: MessageFns<ProductPrice> = {
+  encode(message: ProductPrice, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.amount !== 0) {
+      writer.uint32(13).float(message.amount);
+    }
+    if (message.formatted !== "") {
+      writer.uint32(18).string(message.formatted);
+    }
+    if (message.discountPrice !== undefined) {
+      writer.uint32(29).float(message.discountPrice);
+    }
+    if (message.saveAmount !== undefined) {
+      writer.uint32(37).float(message.saveAmount);
+    }
+    if (message.savePercentage !== undefined) {
+      writer.uint32(45).float(message.savePercentage);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductPrice {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductPrice();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 13) {
+            break;
+          }
+
+          message.amount = reader.float();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.formatted = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 29) {
+            break;
+          }
+
+          message.discountPrice = reader.float();
+          continue;
+        }
+        case 4: {
+          if (tag !== 37) {
+            break;
+          }
+
+          message.saveAmount = reader.float();
+          continue;
+        }
+        case 5: {
+          if (tag !== 45) {
+            break;
+          }
+
+          message.savePercentage = reader.float();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductPrice {
+    return {
+      amount: isSet(object.amount) ? globalThis.Number(object.amount) : 0,
+      formatted: isSet(object.formatted) ? globalThis.String(object.formatted) : "",
+      discountPrice: isSet(object.discountPrice) ? globalThis.Number(object.discountPrice) : undefined,
+      saveAmount: isSet(object.saveAmount) ? globalThis.Number(object.saveAmount) : undefined,
+      savePercentage: isSet(object.savePercentage) ? globalThis.Number(object.savePercentage) : undefined,
+    };
+  },
+
+  toJSON(message: ProductPrice): unknown {
+    const obj: any = {};
+    if (message.amount !== 0) {
+      obj.amount = message.amount;
+    }
+    if (message.formatted !== "") {
+      obj.formatted = message.formatted;
+    }
+    if (message.discountPrice !== undefined) {
+      obj.discountPrice = message.discountPrice;
+    }
+    if (message.saveAmount !== undefined) {
+      obj.saveAmount = message.saveAmount;
+    }
+    if (message.savePercentage !== undefined) {
+      obj.savePercentage = message.savePercentage;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductPrice>, I>>(base?: I): ProductPrice {
+    return ProductPrice.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductPrice>, I>>(object: I): ProductPrice {
+    const message = createBaseProductPrice();
+    message.amount = object.amount ?? 0;
+    message.formatted = object.formatted ?? "";
+    message.discountPrice = object.discountPrice ?? undefined;
+    message.saveAmount = object.saveAmount ?? undefined;
+    message.savePercentage = object.savePercentage ?? undefined;
+    return message;
+  },
+};
+
+function createBaseProductShippingInfo(): ProductShippingInfo {
+  return { free: false, method: 0, origin: "", minEstimatedDays: 0, maxEstimatedDays: 0 };
+}
+
+export const ProductShippingInfo: MessageFns<ProductShippingInfo> = {
+  encode(message: ProductShippingInfo, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.free !== false) {
+      writer.uint32(8).bool(message.free);
+    }
+    if (message.method !== 0) {
+      writer.uint32(16).int32(message.method);
+    }
+    if (message.origin !== "") {
+      writer.uint32(26).string(message.origin);
+    }
+    if (message.minEstimatedDays !== 0) {
+      writer.uint32(32).int32(message.minEstimatedDays);
+    }
+    if (message.maxEstimatedDays !== 0) {
+      writer.uint32(40).int32(message.maxEstimatedDays);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductShippingInfo {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductShippingInfo();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 8) {
+            break;
+          }
+
+          message.free = reader.bool();
+          continue;
+        }
+        case 2: {
+          if (tag !== 16) {
+            break;
+          }
+
+          message.method = reader.int32() as any;
+          continue;
+        }
+        case 3: {
+          if (tag !== 26) {
+            break;
+          }
+
+          message.origin = reader.string();
+          continue;
+        }
+        case 4: {
+          if (tag !== 32) {
+            break;
+          }
+
+          message.minEstimatedDays = reader.int32();
+          continue;
+        }
+        case 5: {
+          if (tag !== 40) {
+            break;
+          }
+
+          message.maxEstimatedDays = reader.int32();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductShippingInfo {
+    return {
+      free: isSet(object.free) ? globalThis.Boolean(object.free) : false,
+      method: isSet(object.method) ? productShippingMethodFromJSON(object.method) : 0,
+      origin: isSet(object.origin) ? globalThis.String(object.origin) : "",
+      minEstimatedDays: isSet(object.minEstimatedDays) ? globalThis.Number(object.minEstimatedDays) : 0,
+      maxEstimatedDays: isSet(object.maxEstimatedDays) ? globalThis.Number(object.maxEstimatedDays) : 0,
+    };
+  },
+
+  toJSON(message: ProductShippingInfo): unknown {
+    const obj: any = {};
+    if (message.free !== false) {
+      obj.free = message.free;
+    }
+    if (message.method !== 0) {
+      obj.method = productShippingMethodToJSON(message.method);
+    }
+    if (message.origin !== "") {
+      obj.origin = message.origin;
+    }
+    if (message.minEstimatedDays !== 0) {
+      obj.minEstimatedDays = Math.round(message.minEstimatedDays);
+    }
+    if (message.maxEstimatedDays !== 0) {
+      obj.maxEstimatedDays = Math.round(message.maxEstimatedDays);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductShippingInfo>, I>>(base?: I): ProductShippingInfo {
+    return ProductShippingInfo.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductShippingInfo>, I>>(object: I): ProductShippingInfo {
+    const message = createBaseProductShippingInfo();
+    message.free = object.free ?? false;
+    message.method = object.method ?? 0;
+    message.origin = object.origin ?? "";
+    message.minEstimatedDays = object.minEstimatedDays ?? 0;
+    message.maxEstimatedDays = object.maxEstimatedDays ?? 0;
+    return message;
+  },
+};
+
+function createBaseProductItemMetadata(): ProductItemMetadata {
+  return { type: 0, label: "" };
+}
+
+export const ProductItemMetadata: MessageFns<ProductItemMetadata> = {
+  encode(message: ProductItemMetadata, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.type !== 0) {
+      writer.uint32(8).int32(message.type);
+    }
+    if (message.label !== "") {
+      writer.uint32(18).string(message.label);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductItemMetadata {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductItemMetadata();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 8) {
+            break;
+          }
+
+          message.type = reader.int32() as any;
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.label = reader.string();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductItemMetadata {
+    return {
+      type: isSet(object.type) ? productItemMetadataTypeFromJSON(object.type) : 0,
+      label: isSet(object.label) ? globalThis.String(object.label) : "",
+    };
+  },
+
+  toJSON(message: ProductItemMetadata): unknown {
+    const obj: any = {};
+    if (message.type !== 0) {
+      obj.type = productItemMetadataTypeToJSON(message.type);
+    }
+    if (message.label !== "") {
+      obj.label = message.label;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductItemMetadata>, I>>(base?: I): ProductItemMetadata {
+    return ProductItemMetadata.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductItemMetadata>, I>>(object: I): ProductItemMetadata {
+    const message = createBaseProductItemMetadata();
+    message.type = object.type ?? 0;
+    message.label = object.label ?? "";
+    return message;
+  },
+};
+
+function createBaseProductItem(): ProductItem {
+  return { title: "", image: "", price: undefined, rating: undefined, sold: undefined, meta: [] };
+}
+
+export const ProductItem: MessageFns<ProductItem> = {
+  encode(message: ProductItem, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.title !== "") {
+      writer.uint32(10).string(message.title);
+    }
+    if (message.image !== "") {
+      writer.uint32(18).string(message.image);
+    }
+    if (message.price !== undefined) {
+      ProductPrice.encode(message.price, writer.uint32(26).fork()).join();
+    }
+    if (message.rating !== undefined) {
+      writer.uint32(37).float(message.rating);
+    }
+    if (message.sold !== undefined) {
+      writer.uint32(40).int32(message.sold);
+    }
+    for (const v of message.meta) {
+      ProductItemMetadata.encode(v!, writer.uint32(50).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductItem {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductItem();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.title = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.image = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 26) {
+            break;
+          }
+
+          message.price = ProductPrice.decode(reader, reader.uint32());
+          continue;
+        }
+        case 4: {
+          if (tag !== 37) {
+            break;
+          }
+
+          message.rating = reader.float();
+          continue;
+        }
+        case 5: {
+          if (tag !== 40) {
+            break;
+          }
+
+          message.sold = reader.int32();
+          continue;
+        }
+        case 6: {
+          if (tag !== 50) {
+            break;
+          }
+
+          message.meta.push(ProductItemMetadata.decode(reader, reader.uint32()));
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductItem {
+    return {
+      title: isSet(object.title) ? globalThis.String(object.title) : "",
+      image: isSet(object.image) ? globalThis.String(object.image) : "",
+      price: isSet(object.price) ? ProductPrice.fromJSON(object.price) : undefined,
+      rating: isSet(object.rating) ? globalThis.Number(object.rating) : undefined,
+      sold: isSet(object.sold) ? globalThis.Number(object.sold) : undefined,
+      meta: globalThis.Array.isArray(object?.meta) ? object.meta.map((e: any) => ProductItemMetadata.fromJSON(e)) : [],
+    };
+  },
+
+  toJSON(message: ProductItem): unknown {
+    const obj: any = {};
+    if (message.title !== "") {
+      obj.title = message.title;
+    }
+    if (message.image !== "") {
+      obj.image = message.image;
+    }
+    if (message.price !== undefined) {
+      obj.price = ProductPrice.toJSON(message.price);
+    }
+    if (message.rating !== undefined) {
+      obj.rating = message.rating;
+    }
+    if (message.sold !== undefined) {
+      obj.sold = Math.round(message.sold);
+    }
+    if (message.meta?.length) {
+      obj.meta = message.meta.map((e) => ProductItemMetadata.toJSON(e));
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductItem>, I>>(base?: I): ProductItem {
+    return ProductItem.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductItem>, I>>(object: I): ProductItem {
+    const message = createBaseProductItem();
+    message.title = object.title ?? "";
+    message.image = object.image ?? "";
+    message.price = (object.price !== undefined && object.price !== null)
+      ? ProductPrice.fromPartial(object.price)
+      : undefined;
+    message.rating = object.rating ?? undefined;
+    message.sold = object.sold ?? undefined;
+    message.meta = object.meta?.map((e) => ProductItemMetadata.fromPartial(e)) || [];
+    return message;
+  },
+};
 
 function createBaseProductListItem(): ProductListItem {
   return { id: "", userId: "", title: "", description: "", slug: "", price: "", currencyCode: "", arEnabled: false };

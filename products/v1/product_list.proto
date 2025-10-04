@@ -10,6 +10,47 @@ option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/prod
 option java_outer_classname = "ProductListProto";
 option java_package = "org.megacommerce.products.v1";
 
+message ProductPrice {
+  float amount = 1;
+  string formatted = 2;
+  optional float discount_price = 3;
+  optional float save_amount = 4;
+  optional float save_percentage = 5;
+}
+
+enum ProductShippingMethod {
+  STANDARD = 0;
+  EXPRESS = 1;
+}
+
+message ProductShippingInfo {
+  bool free = 1;
+  ProductShippingMethod method = 2;
+  string origin = 3;
+  int32 min_estimated_days = 4;
+  int32 max_estimated_days = 5;
+}
+
+enum ProductItemMetadataType {
+  CUPON = 0;
+  NEW_SHOPPER = 1;
+  BUNDLE = 2;
+}
+
+message ProductItemMetadata {
+  ProductItemMetadataType type = 1;
+  string label = 2;
+}
+
+message ProductItem {
+  string title = 1;
+  string image = 2;
+  ProductPrice price = 3;
+  optional float rating = 4;
+  optional int32 sold = 5;
+  repeated ProductItemMetadata meta = 6;
+}
+
 message ProductListItem {
   string id = 1;
   string user_id = 2;

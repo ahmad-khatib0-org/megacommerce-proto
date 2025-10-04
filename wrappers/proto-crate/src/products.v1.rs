@@ -190,6 +190,58 @@ pub mod product_data_response {
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductPrice {
+    #[prost(float, tag = "1")]
+    pub amount: f32,
+    #[prost(string, tag = "2")]
+    pub formatted: ::prost::alloc::string::String,
+    #[prost(float, optional, tag = "3")]
+    pub discount_price: ::core::option::Option<f32>,
+    #[prost(float, optional, tag = "4")]
+    pub save_amount: ::core::option::Option<f32>,
+    #[prost(float, optional, tag = "5")]
+    pub save_percentage: ::core::option::Option<f32>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductShippingInfo {
+    #[prost(bool, tag = "1")]
+    pub free: bool,
+    #[prost(enumeration = "ProductShippingMethod", tag = "2")]
+    pub method: i32,
+    #[prost(string, tag = "3")]
+    pub origin: ::prost::alloc::string::String,
+    #[prost(int32, tag = "4")]
+    pub min_estimated_days: i32,
+    #[prost(int32, tag = "5")]
+    pub max_estimated_days: i32,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductItemMetadata {
+    #[prost(enumeration = "ProductItemMetadataType", tag = "1")]
+    pub r#type: i32,
+    #[prost(string, tag = "2")]
+    pub label: ::prost::alloc::string::String,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductItem {
+    #[prost(string, tag = "1")]
+    pub title: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub image: ::prost::alloc::string::String,
+    #[prost(message, optional, tag = "3")]
+    pub price: ::core::option::Option<ProductPrice>,
+    #[prost(float, optional, tag = "4")]
+    pub rating: ::core::option::Option<f32>,
+    #[prost(int32, optional, tag = "5")]
+    pub sold: ::core::option::Option<i32>,
+    #[prost(message, repeated, tag = "6")]
+    pub meta: ::prost::alloc::vec::Vec<ProductItemMetadata>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductListItem {
     #[prost(string, tag = "1")]
     pub id: ::prost::alloc::string::String,
@@ -240,6 +292,63 @@ pub mod product_list_response {
 pub struct ProductListResponseData {
     #[prost(message, repeated, tag = "1")]
     pub data: ::prost::alloc::vec::Vec<ProductListItem>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+#[repr(i32)]
+pub enum ProductShippingMethod {
+    Standard = 0,
+    Express = 1,
+}
+impl ProductShippingMethod {
+    /// String value of the enum field names used in the ProtoBuf definition.
+    ///
+    /// The values are not transformed in any way and thus are considered stable
+    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
+    pub fn as_str_name(&self) -> &'static str {
+        match self {
+            Self::Standard => "STANDARD",
+            Self::Express => "EXPRESS",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "STANDARD" => Some(Self::Standard),
+            "EXPRESS" => Some(Self::Express),
+            _ => None,
+        }
+    }
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+#[repr(i32)]
+pub enum ProductItemMetadataType {
+    Cupon = 0,
+    NewShopper = 1,
+    Bundle = 2,
+}
+impl ProductItemMetadataType {
+    /// String value of the enum field names used in the ProtoBuf definition.
+    ///
+    /// The values are not transformed in any way and thus are considered stable
+    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
+    pub fn as_str_name(&self) -> &'static str {
+        match self {
+            Self::Cupon => "CUPON",
+            Self::NewShopper => "NEW_SHOPPER",
+            Self::Bundle => "BUNDLE",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "CUPON" => Some(Self::Cupon),
+            "NEW_SHOPPER" => Some(Self::NewShopper),
+            "BUNDLE" => Some(Self::Bundle),
+            _ => None,
+        }
+    }
 }
 /// Generated client implementations.
 pub mod products_service_client {
