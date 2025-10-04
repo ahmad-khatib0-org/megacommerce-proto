@@ -26,7 +26,7 @@ from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
 from shared.v1 import types_pb2 as shared_dot_v1_dot_types__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1eproducts/v1/product_list.proto\x12\x0bproducts.v1\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"\xbd\x01\n\x0cProductPrice\x12\x0e\n\x06\x61mount\x18\x01 \x01(\x02\x12\x11\n\tformatted\x18\x02 \x01(\t\x12\x1b\n\x0e\x64iscount_price\x18\x03 \x01(\x02H\x00\x88\x01\x01\x12\x18\n\x0bsave_amount\x18\x04 \x01(\x02H\x01\x88\x01\x01\x12\x1c\n\x0fsave_percentage\x18\x05 \x01(\x02H\x02\x88\x01\x01\x42\x11\n\x0f_discount_priceB\x0e\n\x0c_save_amountB\x12\n\x10_save_percentage\"\x9f\x01\n\x13ProductShippingInfo\x12\x0c\n\x04\x66ree\x18\x01 \x01(\x08\x12\x32\n\x06method\x18\x02 \x01(\x0e\x32\".products.v1.ProductShippingMethod\x12\x0e\n\x06origin\x18\x03 \x01(\t\x12\x1a\n\x12min_estimated_days\x18\x04 \x01(\x05\x12\x1a\n\x12max_estimated_days\x18\x05 \x01(\x05\"X\n\x13ProductItemMetadata\x12\x32\n\x04type\x18\x01 \x01(\x0e\x32$.products.v1.ProductItemMetadataType\x12\r\n\x05label\x18\x02 \x01(\t\"\xc1\x01\n\x0bProductItem\x12\r\n\x05title\x18\x01 \x01(\t\x12\r\n\x05image\x18\x02 \x01(\t\x12(\n\x05price\x18\x03 \x01(\x0b\x32\x19.products.v1.ProductPrice\x12\x13\n\x06rating\x18\x04 \x01(\x02H\x00\x88\x01\x01\x12\x11\n\x04sold\x18\x05 \x01(\x05H\x01\x88\x01\x01\x12.\n\x04meta\x18\x06 \x03(\x0b\x32 .products.v1.ProductItemMetadataB\t\n\x07_ratingB\x07\n\x05_sold\"\x9a\x01\n\x0fProductListItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\x12\r\n\x05title\x18\x06 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x07 \x01(\t\x12\x0c\n\x04slug\x18\x08 \x01(\t\x12\r\n\x05price\x18\t \x01(\t\x12\x15\n\rcurrency_code\x18\n \x01(\t\x12\x12\n\nar_enabled\x18\r \x01(\x08\"x\n\x12ProductListRequest\x12\x0c\n\x04page\x18\x01 \x01(\r\x12\x0f\n\x07last_id\x18\x02 \x01(\t\x12\x33\n\x0border_price\x18\x03 \x01(\x0b\x32\x19.shared.v1.OrderDirectionH\x00\x88\x01\x01\x42\x0e\n\x0c_order_price\"}\n\x13ProductListResponse\x12\x34\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32$.products.v1.ProductListResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"E\n\x17ProductListResponseData\x12*\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x1c.products.v1.ProductListItem*2\n\x15ProductShippingMethod\x12\x0c\n\x08STANDARD\x10\x00\x12\x0b\n\x07\x45XPRESS\x10\x01*A\n\x17ProductItemMetadataType\x12\t\n\x05\x43UPON\x10\x00\x12\x0f\n\x0bNEW_SHOPPER\x10\x01\x12\n\n\x06\x42UNDLE\x10\x02\x42z\n\x1corg.megacommerce.products.v1B\x10ProductListProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1eproducts/v1/product_list.proto\x12\x0bproducts.v1\x1a\x15shared/v1/error.proto\x1a\x15shared/v1/types.proto\"\xbd\x01\n\x0cProductPrice\x12\x0e\n\x06\x61mount\x18\x01 \x01(\x02\x12\x11\n\tformatted\x18\x02 \x01(\t\x12\x1b\n\x0e\x64iscount_price\x18\x03 \x01(\x02H\x00\x88\x01\x01\x12\x18\n\x0bsave_amount\x18\x04 \x01(\x02H\x01\x88\x01\x01\x12\x1c\n\x0fsave_percentage\x18\x05 \x01(\x02H\x02\x88\x01\x01\x42\x11\n\x0f_discount_priceB\x0e\n\x0c_save_amountB\x12\n\x10_save_percentage\"\x9f\x01\n\x13ProductShippingInfo\x12\x0c\n\x04\x66ree\x18\x01 \x01(\x08\x12\x32\n\x06method\x18\x02 \x01(\x0e\x32\".products.v1.ProductShippingMethod\x12\x0e\n\x06origin\x18\x03 \x01(\t\x12\x1a\n\x12min_estimated_days\x18\x04 \x01(\x05\x12\x1a\n\x12max_estimated_days\x18\x05 \x01(\x05\"X\n\x13ProductItemMetadata\x12\x32\n\x04type\x18\x01 \x01(\x0e\x32$.products.v1.ProductItemMetadataType\x12\r\n\x05label\x18\x02 \x01(\t\"\xcd\x01\n\x0bProductItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\r\n\x05image\x18\x03 \x01(\t\x12(\n\x05price\x18\x04 \x01(\x0b\x32\x19.products.v1.ProductPrice\x12\x13\n\x06rating\x18\x05 \x01(\x02H\x00\x88\x01\x01\x12\x11\n\x04sold\x18\x06 \x01(\x05H\x01\x88\x01\x01\x12.\n\x04meta\x18\x07 \x03(\x0b\x32 .products.v1.ProductItemMetadataB\t\n\x07_ratingB\x07\n\x05_sold\"\x9a\x01\n\x0fProductListItem\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\x12\r\n\x05title\x18\x06 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x07 \x01(\t\x12\x0c\n\x04slug\x18\x08 \x01(\t\x12\r\n\x05price\x18\t \x01(\t\x12\x15\n\rcurrency_code\x18\n \x01(\t\x12\x12\n\nar_enabled\x18\r \x01(\x08\"x\n\x12ProductListRequest\x12\x0c\n\x04page\x18\x01 \x01(\r\x12\x0f\n\x07last_id\x18\x02 \x01(\t\x12\x33\n\x0border_price\x18\x03 \x01(\x0b\x32\x19.shared.v1.OrderDirectionH\x00\x88\x01\x01\x42\x0e\n\x0c_order_price\"}\n\x13ProductListResponse\x12\x34\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32$.products.v1.ProductListResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08response\"E\n\x17ProductListResponseData\x12*\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x1c.products.v1.ProductListItem*2\n\x15ProductShippingMethod\x12\x0c\n\x08STANDARD\x10\x00\x12\x0b\n\x07\x45XPRESS\x10\x01*A\n\x17ProductItemMetadataType\x12\t\n\x05\x43UPON\x10\x00\x12\x0f\n\x0bNEW_SHOPPER\x10\x01\x12\n\n\x06\x42UNDLE\x10\x02\x42z\n\x1corg.megacommerce.products.v1B\x10ProductListProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,10 +34,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'products.v1.product_list_pb
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\034org.megacommerce.products.v1B\020ProductListProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\370\001\001'
-  _globals['_PRODUCTSHIPPINGMETHOD']._serialized_start=1210
-  _globals['_PRODUCTSHIPPINGMETHOD']._serialized_end=1260
-  _globals['_PRODUCTITEMMETADATATYPE']._serialized_start=1262
-  _globals['_PRODUCTITEMMETADATATYPE']._serialized_end=1327
+  _globals['_PRODUCTSHIPPINGMETHOD']._serialized_start=1222
+  _globals['_PRODUCTSHIPPINGMETHOD']._serialized_end=1272
+  _globals['_PRODUCTITEMMETADATATYPE']._serialized_start=1274
+  _globals['_PRODUCTITEMMETADATATYPE']._serialized_end=1339
   _globals['_PRODUCTPRICE']._serialized_start=94
   _globals['_PRODUCTPRICE']._serialized_end=283
   _globals['_PRODUCTSHIPPINGINFO']._serialized_start=286
@@ -45,13 +45,13 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PRODUCTITEMMETADATA']._serialized_start=447
   _globals['_PRODUCTITEMMETADATA']._serialized_end=535
   _globals['_PRODUCTITEM']._serialized_start=538
-  _globals['_PRODUCTITEM']._serialized_end=731
-  _globals['_PRODUCTLISTITEM']._serialized_start=734
-  _globals['_PRODUCTLISTITEM']._serialized_end=888
-  _globals['_PRODUCTLISTREQUEST']._serialized_start=890
-  _globals['_PRODUCTLISTREQUEST']._serialized_end=1010
-  _globals['_PRODUCTLISTRESPONSE']._serialized_start=1012
-  _globals['_PRODUCTLISTRESPONSE']._serialized_end=1137
-  _globals['_PRODUCTLISTRESPONSEDATA']._serialized_start=1139
-  _globals['_PRODUCTLISTRESPONSEDATA']._serialized_end=1208
+  _globals['_PRODUCTITEM']._serialized_end=743
+  _globals['_PRODUCTLISTITEM']._serialized_start=746
+  _globals['_PRODUCTLISTITEM']._serialized_end=900
+  _globals['_PRODUCTLISTREQUEST']._serialized_start=902
+  _globals['_PRODUCTLISTREQUEST']._serialized_end=1022
+  _globals['_PRODUCTLISTRESPONSE']._serialized_start=1024
+  _globals['_PRODUCTLISTRESPONSE']._serialized_end=1149
+  _globals['_PRODUCTLISTRESPONSEDATA']._serialized_start=1151
+  _globals['_PRODUCTLISTRESPONSEDATA']._serialized_end=1220
 # @@protoc_insertion_point(module_scope)

@@ -323,12 +323,13 @@ func (x *ProductItemMetadata) GetLabel() string {
 
 type ProductItem struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Title         string                 `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
-	Image         string                 `protobuf:"bytes,2,opt,name=image,proto3" json:"image,omitempty"`
-	Price         *ProductPrice          `protobuf:"bytes,3,opt,name=price,proto3" json:"price,omitempty"`
-	Rating        *float32               `protobuf:"fixed32,4,opt,name=rating,proto3,oneof" json:"rating,omitempty"`
-	Sold          *int32                 `protobuf:"varint,5,opt,name=sold,proto3,oneof" json:"sold,omitempty"`
-	Meta          []*ProductItemMetadata `protobuf:"bytes,6,rep,name=meta,proto3" json:"meta,omitempty"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Title         string                 `protobuf:"bytes,2,opt,name=title,proto3" json:"title,omitempty"`
+	Image         string                 `protobuf:"bytes,3,opt,name=image,proto3" json:"image,omitempty"`
+	Price         *ProductPrice          `protobuf:"bytes,4,opt,name=price,proto3" json:"price,omitempty"`
+	Rating        *float32               `protobuf:"fixed32,5,opt,name=rating,proto3,oneof" json:"rating,omitempty"`
+	Sold          *int32                 `protobuf:"varint,6,opt,name=sold,proto3,oneof" json:"sold,omitempty"`
+	Meta          []*ProductItemMetadata `protobuf:"bytes,7,rep,name=meta,proto3" json:"meta,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -361,6 +362,13 @@ func (x *ProductItem) ProtoReflect() protoreflect.Message {
 // Deprecated: Use ProductItem.ProtoReflect.Descriptor instead.
 func (*ProductItem) Descriptor() ([]byte, []int) {
 	return file_products_v1_product_list_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *ProductItem) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
 }
 
 func (x *ProductItem) GetTitle() string {
@@ -714,14 +722,15 @@ const file_products_v1_product_list_proto_rawDesc = "" +
 	"\x12max_estimated_days\x18\x05 \x01(\x05R\x10maxEstimatedDays\"e\n" +
 	"\x13ProductItemMetadata\x128\n" +
 	"\x04type\x18\x01 \x01(\x0e2$.products.v1.ProductItemMetadataTypeR\x04type\x12\x14\n" +
-	"\x05label\x18\x02 \x01(\tR\x05label\"\xea\x01\n" +
-	"\vProductItem\x12\x14\n" +
-	"\x05title\x18\x01 \x01(\tR\x05title\x12\x14\n" +
-	"\x05image\x18\x02 \x01(\tR\x05image\x12/\n" +
-	"\x05price\x18\x03 \x01(\v2\x19.products.v1.ProductPriceR\x05price\x12\x1b\n" +
-	"\x06rating\x18\x04 \x01(\x02H\x00R\x06rating\x88\x01\x01\x12\x17\n" +
-	"\x04sold\x18\x05 \x01(\x05H\x01R\x04sold\x88\x01\x01\x124\n" +
-	"\x04meta\x18\x06 \x03(\v2 .products.v1.ProductItemMetadataR\x04metaB\t\n" +
+	"\x05label\x18\x02 \x01(\tR\x05label\"\xfa\x01\n" +
+	"\vProductItem\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x14\n" +
+	"\x05title\x18\x02 \x01(\tR\x05title\x12\x14\n" +
+	"\x05image\x18\x03 \x01(\tR\x05image\x12/\n" +
+	"\x05price\x18\x04 \x01(\v2\x19.products.v1.ProductPriceR\x05price\x12\x1b\n" +
+	"\x06rating\x18\x05 \x01(\x02H\x00R\x06rating\x88\x01\x01\x12\x17\n" +
+	"\x04sold\x18\x06 \x01(\x05H\x01R\x04sold\x88\x01\x01\x124\n" +
+	"\x04meta\x18\a \x03(\v2 .products.v1.ProductItemMetadataR\x04metaB\t\n" +
 	"\a_ratingB\a\n" +
 	"\x05_sold\"\xe0\x01\n" +
 	"\x0fProductListItem\x12\x0e\n" +

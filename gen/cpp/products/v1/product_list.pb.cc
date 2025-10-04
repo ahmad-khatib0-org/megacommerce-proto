@@ -221,6 +221,9 @@ inline constexpr ProductItem::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
         meta_{},
+        id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
         title_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
@@ -320,7 +323,8 @@ const ::uint32_t
         0,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductItem, _impl_._has_bits_),
-        9, // hasbit index offset
+        10, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductItem, _impl_.id_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductItem, _impl_.title_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductItem, _impl_.image_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductItem, _impl_.price_),
@@ -332,6 +336,7 @@ const ::uint32_t
         2,
         3,
         4,
+        5,
         ~0u,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductListItem, _impl_._has_bits_),
@@ -376,10 +381,10 @@ static const ::_pbi::MigrationSchema
         {13, sizeof(::products::v1::ProductShippingInfo)},
         {26, sizeof(::products::v1::ProductItemMetadata)},
         {33, sizeof(::products::v1::ProductItem)},
-        {48, sizeof(::products::v1::ProductListItem)},
-        {67, sizeof(::products::v1::ProductListRequest)},
-        {76, sizeof(::products::v1::ProductListResponse)},
-        {81, sizeof(::products::v1::ProductListResponseData)},
+        {50, sizeof(::products::v1::ProductListItem)},
+        {69, sizeof(::products::v1::ProductListRequest)},
+        {78, sizeof(::products::v1::ProductListResponse)},
+        {83, sizeof(::products::v1::ProductListResponseData)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::products::v1::_ProductPrice_default_instance_._instance,
@@ -409,34 +414,35 @@ const char descriptor_table_protodef_products_2fv1_2fproduct_5flist_2eproto[] AB
     ",\n\022max_estimated_days\030\005 \001(\005R\020maxEstimate"
     "dDays\"e\n\023ProductItemMetadata\0228\n\004type\030\001 \001"
     "(\0162$.products.v1.ProductItemMetadataType"
-    "R\004type\022\024\n\005label\030\002 \001(\tR\005label\"\352\001\n\013Product"
-    "Item\022\024\n\005title\030\001 \001(\tR\005title\022\024\n\005image\030\002 \001("
-    "\tR\005image\022/\n\005price\030\003 \001(\0132\031.products.v1.Pr"
-    "oductPriceR\005price\022\033\n\006rating\030\004 \001(\002H\000R\006rat"
-    "ing\210\001\001\022\027\n\004sold\030\005 \001(\005H\001R\004sold\210\001\001\0224\n\004meta\030"
-    "\006 \003(\0132 .products.v1.ProductItemMetadataR"
-    "\004metaB\t\n\007_ratingB\007\n\005_sold\"\340\001\n\017ProductLis"
-    "tItem\022\016\n\002id\030\001 \001(\tR\002id\022\027\n\007user_id\030\002 \001(\tR\006"
-    "userId\022\024\n\005title\030\006 \001(\tR\005title\022 \n\013descript"
-    "ion\030\007 \001(\tR\013description\022\022\n\004slug\030\010 \001(\tR\004sl"
-    "ug\022\024\n\005price\030\t \001(\tR\005price\022#\n\rcurrency_cod"
-    "e\030\n \001(\tR\014currencyCode\022\035\n\nar_enabled\030\r \001("
-    "\010R\tarEnabled\"\222\001\n\022ProductListRequest\022\022\n\004p"
-    "age\030\001 \001(\rR\004page\022\027\n\007last_id\030\002 \001(\tR\006lastId"
-    "\022\?\n\013order_price\030\003 \001(\0132\031.shared.v1.OrderD"
-    "irectionH\000R\norderPrice\210\001\001B\016\n\014_order_pric"
-    "e\"\212\001\n\023ProductListResponse\022:\n\004data\030\001 \001(\0132"
-    "$.products.v1.ProductListResponseDataH\000R"
-    "\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErro"
-    "rH\000R\005errorB\n\n\010response\"K\n\027ProductListRes"
-    "ponseData\0220\n\004data\030\001 \003(\0132\034.products.v1.Pr"
-    "oductListItemR\004data*2\n\025ProductShippingMe"
-    "thod\022\014\n\010STANDARD\020\000\022\013\n\007EXPRESS\020\001*A\n\027Produ"
-    "ctItemMetadataType\022\t\n\005CUPON\020\000\022\017\n\013NEW_SHO"
-    "PPER\020\001\022\n\n\006BUNDLE\020\002Bz\n\034org.megacommerce.p"
-    "roducts.v1B\020ProductListProtoZEgithub.com"
-    "/ahmad-khatib0-org/megacommerce-proto/ge"
-    "n/go/products/v1;v1\370\001\001b\006proto3"
+    "R\004type\022\024\n\005label\030\002 \001(\tR\005label\"\372\001\n\013Product"
+    "Item\022\016\n\002id\030\001 \001(\tR\002id\022\024\n\005title\030\002 \001(\tR\005tit"
+    "le\022\024\n\005image\030\003 \001(\tR\005image\022/\n\005price\030\004 \001(\0132"
+    "\031.products.v1.ProductPriceR\005price\022\033\n\006rat"
+    "ing\030\005 \001(\002H\000R\006rating\210\001\001\022\027\n\004sold\030\006 \001(\005H\001R\004"
+    "sold\210\001\001\0224\n\004meta\030\007 \003(\0132 .products.v1.Prod"
+    "uctItemMetadataR\004metaB\t\n\007_ratingB\007\n\005_sol"
+    "d\"\340\001\n\017ProductListItem\022\016\n\002id\030\001 \001(\tR\002id\022\027\n"
+    "\007user_id\030\002 \001(\tR\006userId\022\024\n\005title\030\006 \001(\tR\005t"
+    "itle\022 \n\013description\030\007 \001(\tR\013description\022\022"
+    "\n\004slug\030\010 \001(\tR\004slug\022\024\n\005price\030\t \001(\tR\005price"
+    "\022#\n\rcurrency_code\030\n \001(\tR\014currencyCode\022\035\n"
+    "\nar_enabled\030\r \001(\010R\tarEnabled\"\222\001\n\022Product"
+    "ListRequest\022\022\n\004page\030\001 \001(\rR\004page\022\027\n\007last_"
+    "id\030\002 \001(\tR\006lastId\022\?\n\013order_price\030\003 \001(\0132\031."
+    "shared.v1.OrderDirectionH\000R\norderPrice\210\001"
+    "\001B\016\n\014_order_price\"\212\001\n\023ProductListRespons"
+    "e\022:\n\004data\030\001 \001(\0132$.products.v1.ProductLis"
+    "tResponseDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.s"
+    "hared.v1.AppErrorH\000R\005errorB\n\n\010response\"K"
+    "\n\027ProductListResponseData\0220\n\004data\030\001 \003(\0132"
+    "\034.products.v1.ProductListItemR\004data*2\n\025P"
+    "roductShippingMethod\022\014\n\010STANDARD\020\000\022\013\n\007EX"
+    "PRESS\020\001*A\n\027ProductItemMetadataType\022\t\n\005CU"
+    "PON\020\000\022\017\n\013NEW_SHOPPER\020\001\022\n\n\006BUNDLE\020\002Bz\n\034or"
+    "g.megacommerce.products.v1B\020ProductListP"
+    "rotoZEgithub.com/ahmad-khatib0-org/megac"
+    "ommerce-proto/gen/go/products/v1;v1\370\001\001b\006"
+    "proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_products_2fv1_2fproduct_5flist_2eproto_deps[2] = {
@@ -447,7 +453,7 @@ static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_5flist_2eproto
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_5flist_2eproto = {
     false,
     false,
-    1750,
+    1766,
     descriptor_table_protodef_products_2fv1_2fproduct_5flist_2eproto,
     "products/v1/product_list.proto",
     &descriptor_table_products_2fv1_2fproduct_5flist_2eproto_once,
@@ -1563,6 +1569,7 @@ PROTOBUF_NDEBUG_INLINE ProductItem::Impl_::Impl_(
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
         meta_{visibility, arena, from.meta_},
+        id_(arena, from.id_),
         title_(arena, from.title_),
         image_(arena, from.image_) {}
 
@@ -1580,7 +1587,7 @@ ProductItem::ProductItem(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
   ::uint32_t cached_has_bits = _impl_._has_bits_[0];
-  _impl_.price_ = ((cached_has_bits & 0x00000004u) != 0)
+  _impl_.price_ = ((cached_has_bits & 0x00000008u) != 0)
                 ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.price_)
                 : nullptr;
   ::memcpy(reinterpret_cast<char *>(&_impl_) +
@@ -1598,6 +1605,7 @@ PROTOBUF_NDEBUG_INLINE ProductItem::Impl_::Impl_(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
         meta_{visibility, arena},
+        id_(arena),
         title_(arena),
         image_(arena) {}
 
@@ -1618,6 +1626,7 @@ inline void ProductItem::SharedDtor(MessageLite& self) {
   ProductItem& this_ = static_cast<ProductItem&>(self);
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.id_.Destroy();
   this_._impl_.title_.Destroy();
   this_._impl_.image_.Destroy();
   delete this_._impl_.price_;
@@ -1679,16 +1688,16 @@ ProductItem::GetClassData() const {
   return ProductItem_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 6, 2, 42, 2>
+const ::_pbi::TcParseTable<3, 7, 2, 44, 2>
 ProductItem::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(ProductItem, _impl_._has_bits_),
     0, // no _extensions_
-    6, 56,  // max_field_number, fast_idx_mask
+    7, 56,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967232,  // skipmap
+    4294967168,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    6,  // num_field_entries
+    7,  // num_field_entries
     2,  // num_aux_entries
     offsetof(decltype(_table_), aux_entries),
     ProductItem_class_data_.base(),
@@ -1699,44 +1708,49 @@ ProductItem::_table_ = {
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     {::_pbi::TcParser::MiniParse, {}},
-    // string title = 1 [json_name = "title"];
+    // string id = 1 [json_name = "id"];
     {::_pbi::TcParser::FastUS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.title_)}},
-    // string image = 2 [json_name = "image"];
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.id_)}},
+    // string title = 2 [json_name = "title"];
     {::_pbi::TcParser::FastUS1,
-     {18, 1, 0, PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.image_)}},
-    // .products.v1.ProductPrice price = 3 [json_name = "price"];
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.title_)}},
+    // string image = 3 [json_name = "image"];
+    {::_pbi::TcParser::FastUS1,
+     {26, 2, 0, PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.image_)}},
+    // .products.v1.ProductPrice price = 4 [json_name = "price"];
     {::_pbi::TcParser::FastMtS1,
-     {26, 2, 0, PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.price_)}},
-    // optional float rating = 4 [json_name = "rating"];
+     {34, 3, 0, PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.price_)}},
+    // optional float rating = 5 [json_name = "rating"];
     {::_pbi::TcParser::FastF32S1,
-     {37, 3, 0, PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.rating_)}},
-    // optional int32 sold = 5 [json_name = "sold"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ProductItem, _impl_.sold_), 4>(),
-     {40, 4, 0, PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.sold_)}},
-    // repeated .products.v1.ProductItemMetadata meta = 6 [json_name = "meta"];
+     {45, 4, 0, PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.rating_)}},
+    // optional int32 sold = 6 [json_name = "sold"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ProductItem, _impl_.sold_), 5>(),
+     {48, 5, 0, PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.sold_)}},
+    // repeated .products.v1.ProductItemMetadata meta = 7 [json_name = "meta"];
     {::_pbi::TcParser::FastMtR1,
-     {50, 63, 1, PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.meta_)}},
-    {::_pbi::TcParser::MiniParse, {}},
+     {58, 63, 1, PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.meta_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // string title = 1 [json_name = "title"];
-    {PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.title_), _Internal::kHasBitsOffset + 0, 0,
+    // string id = 1 [json_name = "id"];
+    {PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string image = 2 [json_name = "image"];
-    {PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.image_), _Internal::kHasBitsOffset + 1, 0,
+    // string title = 2 [json_name = "title"];
+    {PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.title_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // .products.v1.ProductPrice price = 3 [json_name = "price"];
-    {PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.price_), _Internal::kHasBitsOffset + 2, 0,
+    // string image = 3 [json_name = "image"];
+    {PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.image_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // .products.v1.ProductPrice price = 4 [json_name = "price"];
+    {PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.price_), _Internal::kHasBitsOffset + 3, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
-    // optional float rating = 4 [json_name = "rating"];
-    {PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.rating_), _Internal::kHasBitsOffset + 3, 0,
+    // optional float rating = 5 [json_name = "rating"];
+    {PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.rating_), _Internal::kHasBitsOffset + 4, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
-    // optional int32 sold = 5 [json_name = "sold"];
-    {PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.sold_), _Internal::kHasBitsOffset + 4, 0,
+    // optional int32 sold = 6 [json_name = "sold"];
+    {PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.sold_), _Internal::kHasBitsOffset + 5, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-    // repeated .products.v1.ProductItemMetadata meta = 6 [json_name = "meta"];
+    // repeated .products.v1.ProductItemMetadata meta = 7 [json_name = "meta"];
     {PROTOBUF_FIELD_OFFSET(ProductItem, _impl_.meta_), -1, 1,
     (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
@@ -1745,8 +1759,9 @@ ProductItem::_table_ = {
       {::_pbi::TcParser::GetTable<::products::v1::ProductItemMetadata>()},
   }},
   {{
-    "\27\5\5\0\0\0\0\0"
+    "\27\2\5\5\0\0\0\0"
     "products.v1.ProductItem"
+    "id"
     "title"
     "image"
   }},
@@ -1760,19 +1775,22 @@ PROTOBUF_NOINLINE void ProductItem::Clear() {
 
   _impl_.meta_.Clear();
   cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000007u) != 0) {
+  if ((cached_has_bits & 0x0000000fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
-      _impl_.title_.ClearNonDefaultToEmpty();
+      _impl_.id_.ClearNonDefaultToEmpty();
     }
     if ((cached_has_bits & 0x00000002u) != 0) {
-      _impl_.image_.ClearNonDefaultToEmpty();
+      _impl_.title_.ClearNonDefaultToEmpty();
     }
     if ((cached_has_bits & 0x00000004u) != 0) {
+      _impl_.image_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000008u) != 0) {
       ABSL_DCHECK(_impl_.price_ != nullptr);
       _impl_.price_->Clear();
     }
   }
-  if ((cached_has_bits & 0x00000018u) != 0) {
+  if ((cached_has_bits & 0x00000030u) != 0) {
     ::memset(&_impl_.rating_, 0, static_cast<::size_t>(
         reinterpret_cast<char*>(&_impl_.sold_) -
         reinterpret_cast<char*>(&_impl_.rating_)) + sizeof(_impl_.sold_));
@@ -1796,56 +1814,66 @@ PROTOBUF_NOINLINE void ProductItem::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string title = 1 [json_name = "title"];
+  // string id = 1 [json_name = "id"];
   if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    if (!this_._internal_title().empty()) {
-      const ::std::string& _s = this_._internal_title();
+    if (!this_._internal_id().empty()) {
+      const ::std::string& _s = this_._internal_id();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductItem.title");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductItem.id");
       target = stream->WriteStringMaybeAliased(1, _s, target);
     }
   }
 
-  // string image = 2 [json_name = "image"];
+  // string title = 2 [json_name = "title"];
   if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
-    if (!this_._internal_image().empty()) {
-      const ::std::string& _s = this_._internal_image();
+    if (!this_._internal_title().empty()) {
+      const ::std::string& _s = this_._internal_title();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductItem.image");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductItem.title");
       target = stream->WriteStringMaybeAliased(2, _s, target);
     }
   }
 
+  // string image = 3 [json_name = "image"];
+  if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
+    if (!this_._internal_image().empty()) {
+      const ::std::string& _s = this_._internal_image();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductItem.image");
+      target = stream->WriteStringMaybeAliased(3, _s, target);
+    }
+  }
+
   cached_has_bits = this_._impl_._has_bits_[0];
-  // .products.v1.ProductPrice price = 3 [json_name = "price"];
-  if ((cached_has_bits & 0x00000004u) != 0) {
+  // .products.v1.ProductPrice price = 4 [json_name = "price"];
+  if ((cached_has_bits & 0x00000008u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        3, *this_._impl_.price_, this_._impl_.price_->GetCachedSize(), target,
+        4, *this_._impl_.price_, this_._impl_.price_->GetCachedSize(), target,
         stream);
   }
 
-  // optional float rating = 4 [json_name = "rating"];
-  if ((cached_has_bits & 0x00000008u) != 0) {
+  // optional float rating = 5 [json_name = "rating"];
+  if ((cached_has_bits & 0x00000010u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteFloatToArray(
-        4, this_._internal_rating(), target);
+        5, this_._internal_rating(), target);
   }
 
-  // optional int32 sold = 5 [json_name = "sold"];
-  if ((cached_has_bits & 0x00000010u) != 0) {
+  // optional int32 sold = 6 [json_name = "sold"];
+  if ((cached_has_bits & 0x00000020u) != 0) {
     target =
-        ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<5>(
+        ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<6>(
             stream, this_._internal_sold(), target);
   }
 
-  // repeated .products.v1.ProductItemMetadata meta = 6 [json_name = "meta"];
+  // repeated .products.v1.ProductItemMetadata meta = 7 [json_name = "meta"];
   for (unsigned i = 0, n = static_cast<unsigned>(
                            this_._internal_meta_size());
        i < n; i++) {
     const auto& repfield = this_._internal_meta().Get(i);
     target =
         ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-            6, repfield, repfield.GetCachedSize(),
+            7, repfield, repfield.GetCachedSize(),
             target, stream);
   }
 
@@ -1874,7 +1902,7 @@ PROTOBUF_NOINLINE void ProductItem::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
    {
-    // repeated .products.v1.ProductItemMetadata meta = 6 [json_name = "meta"];
+    // repeated .products.v1.ProductItemMetadata meta = 7 [json_name = "meta"];
     {
       total_size += 1UL * this_._internal_meta_size();
       for (const auto& msg : this_._internal_meta()) {
@@ -1883,29 +1911,36 @@ PROTOBUF_NOINLINE void ProductItem::Clear() {
     }
   }
   cached_has_bits = this_._impl_._has_bits_[0];
-  total_size += static_cast<bool>(0x00000008u & cached_has_bits) * 5;
-  if ((cached_has_bits & 0x00000017u) != 0) {
-    // string title = 1 [json_name = "title"];
+  total_size += static_cast<bool>(0x00000010u & cached_has_bits) * 5;
+  if ((cached_has_bits & 0x0000002fu) != 0) {
+    // string id = 1 [json_name = "id"];
     if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!this_._internal_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_id());
+      }
+    }
+    // string title = 2 [json_name = "title"];
+    if ((cached_has_bits & 0x00000002u) != 0) {
       if (!this_._internal_title().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_title());
       }
     }
-    // string image = 2 [json_name = "image"];
-    if ((cached_has_bits & 0x00000002u) != 0) {
+    // string image = 3 [json_name = "image"];
+    if ((cached_has_bits & 0x00000004u) != 0) {
       if (!this_._internal_image().empty()) {
         total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                         this_._internal_image());
       }
     }
-    // .products.v1.ProductPrice price = 3 [json_name = "price"];
-    if ((cached_has_bits & 0x00000004u) != 0) {
+    // .products.v1.ProductPrice price = 4 [json_name = "price"];
+    if ((cached_has_bits & 0x00000008u) != 0) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.price_);
     }
-    // optional int32 sold = 5 [json_name = "sold"];
-    if ((cached_has_bits & 0x00000010u) != 0) {
+    // optional int32 sold = 6 [json_name = "sold"];
+    if ((cached_has_bits & 0x00000020u) != 0) {
       total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
           this_._internal_sold());
     }
@@ -1926,8 +1961,17 @@ void ProductItem::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::goo
   _this->_internal_mutable_meta()->MergeFrom(
       from._internal_meta());
   cached_has_bits = from._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x0000001fu) != 0) {
+  if ((cached_has_bits & 0x0000003fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!from._internal_id().empty()) {
+        _this->_internal_set_id(from._internal_id());
+      } else {
+        if (_this->_impl_.id_.IsDefault()) {
+          _this->_internal_set_id("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
       if (!from._internal_title().empty()) {
         _this->_internal_set_title(from._internal_title());
       } else {
@@ -1936,7 +1980,7 @@ void ProductItem::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::goo
         }
       }
     }
-    if ((cached_has_bits & 0x00000002u) != 0) {
+    if ((cached_has_bits & 0x00000004u) != 0) {
       if (!from._internal_image().empty()) {
         _this->_internal_set_image(from._internal_image());
       } else {
@@ -1945,7 +1989,7 @@ void ProductItem::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::goo
         }
       }
     }
-    if ((cached_has_bits & 0x00000004u) != 0) {
+    if ((cached_has_bits & 0x00000008u) != 0) {
       ABSL_DCHECK(from._impl_.price_ != nullptr);
       if (_this->_impl_.price_ == nullptr) {
         _this->_impl_.price_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.price_);
@@ -1953,10 +1997,10 @@ void ProductItem::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::goo
         _this->_impl_.price_->MergeFrom(*from._impl_.price_);
       }
     }
-    if ((cached_has_bits & 0x00000008u) != 0) {
+    if ((cached_has_bits & 0x00000010u) != 0) {
       _this->_impl_.rating_ = from._impl_.rating_;
     }
-    if ((cached_has_bits & 0x00000010u) != 0) {
+    if ((cached_has_bits & 0x00000020u) != 0) {
       _this->_impl_.sold_ = from._impl_.sold_;
     }
   }
@@ -1979,6 +2023,7 @@ void ProductItem::InternalSwap(ProductItem* PROTOBUF_RESTRICT PROTOBUF_NONNULL o
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.meta_.InternalSwap(&other->_impl_.meta_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.id_, &other->_impl_.id_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.title_, &other->_impl_.title_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.image_, &other->_impl_.image_, arena);
   ::google::protobuf::internal::memswap<

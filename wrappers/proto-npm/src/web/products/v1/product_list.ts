@@ -105,6 +105,7 @@ export interface ProductItemMetadata {
 }
 
 export interface ProductItem {
+  id: string;
   title: string;
   image: string;
   price?: ProductPrice | undefined;
@@ -464,28 +465,31 @@ export const ProductItemMetadata: MessageFns<ProductItemMetadata> = {
 };
 
 function createBaseProductItem(): ProductItem {
-  return { title: "", image: "", price: undefined, rating: undefined, sold: undefined, meta: [] };
+  return { id: "", title: "", image: "", price: undefined, rating: undefined, sold: undefined, meta: [] };
 }
 
 export const ProductItem: MessageFns<ProductItem> = {
   encode(message: ProductItem, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.id !== "") {
+      writer.uint32(10).string(message.id);
+    }
     if (message.title !== "") {
-      writer.uint32(10).string(message.title);
+      writer.uint32(18).string(message.title);
     }
     if (message.image !== "") {
-      writer.uint32(18).string(message.image);
+      writer.uint32(26).string(message.image);
     }
     if (message.price !== undefined) {
-      ProductPrice.encode(message.price, writer.uint32(26).fork()).join();
+      ProductPrice.encode(message.price, writer.uint32(34).fork()).join();
     }
     if (message.rating !== undefined) {
-      writer.uint32(37).float(message.rating);
+      writer.uint32(45).float(message.rating);
     }
     if (message.sold !== undefined) {
-      writer.uint32(40).int32(message.sold);
+      writer.uint32(48).int32(message.sold);
     }
     for (const v of message.meta) {
-      ProductItemMetadata.encode(v!, writer.uint32(50).fork()).join();
+      ProductItemMetadata.encode(v!, writer.uint32(58).fork()).join();
     }
     return writer;
   },
@@ -502,7 +506,7 @@ export const ProductItem: MessageFns<ProductItem> = {
             break;
           }
 
-          message.title = reader.string();
+          message.id = reader.string();
           continue;
         }
         case 2: {
@@ -510,7 +514,7 @@ export const ProductItem: MessageFns<ProductItem> = {
             break;
           }
 
-          message.image = reader.string();
+          message.title = reader.string();
           continue;
         }
         case 3: {
@@ -518,27 +522,35 @@ export const ProductItem: MessageFns<ProductItem> = {
             break;
           }
 
-          message.price = ProductPrice.decode(reader, reader.uint32());
+          message.image = reader.string();
           continue;
         }
         case 4: {
-          if (tag !== 37) {
+          if (tag !== 34) {
+            break;
+          }
+
+          message.price = ProductPrice.decode(reader, reader.uint32());
+          continue;
+        }
+        case 5: {
+          if (tag !== 45) {
             break;
           }
 
           message.rating = reader.float();
           continue;
         }
-        case 5: {
-          if (tag !== 40) {
+        case 6: {
+          if (tag !== 48) {
             break;
           }
 
           message.sold = reader.int32();
           continue;
         }
-        case 6: {
-          if (tag !== 50) {
+        case 7: {
+          if (tag !== 58) {
             break;
           }
 
@@ -556,6 +568,7 @@ export const ProductItem: MessageFns<ProductItem> = {
 
   fromJSON(object: any): ProductItem {
     return {
+      id: isSet(object.id) ? globalThis.String(object.id) : "",
       title: isSet(object.title) ? globalThis.String(object.title) : "",
       image: isSet(object.image) ? globalThis.String(object.image) : "",
       price: isSet(object.price) ? ProductPrice.fromJSON(object.price) : undefined,
@@ -567,6 +580,9 @@ export const ProductItem: MessageFns<ProductItem> = {
 
   toJSON(message: ProductItem): unknown {
     const obj: any = {};
+    if (message.id !== "") {
+      obj.id = message.id;
+    }
     if (message.title !== "") {
       obj.title = message.title;
     }
@@ -593,6 +609,7 @@ export const ProductItem: MessageFns<ProductItem> = {
   },
   fromPartial<I extends Exact<DeepPartial<ProductItem>, I>>(object: I): ProductItem {
     const message = createBaseProductItem();
+    message.id = object.id ?? "";
     message.title = object.title ?? "";
     message.image = object.image ?? "";
     message.price = (object.price !== undefined && object.price !== null)

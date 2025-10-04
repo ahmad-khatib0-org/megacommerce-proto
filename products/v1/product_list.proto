@@ -43,12 +43,13 @@ message ProductItemMetadata {
 }
 
 message ProductItem {
-  string title = 1;
-  string image = 2;
-  ProductPrice price = 3;
-  optional float rating = 4;
-  optional int32 sold = 5;
-  repeated ProductItemMetadata meta = 6;
+  string id = 1;
+  string title = 2;
+  string image = 3;
+  ProductPrice price = 4;
+  optional float rating = 5;
+  optional int32 sold = 6;
+  repeated ProductItemMetadata meta = 7;
 }
 
 message ProductListItem {

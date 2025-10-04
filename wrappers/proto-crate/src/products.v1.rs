@@ -228,16 +228,18 @@ pub struct ProductItemMetadata {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductItem {
     #[prost(string, tag = "1")]
-    pub title: ::prost::alloc::string::String,
+    pub id: ::prost::alloc::string::String,
     #[prost(string, tag = "2")]
+    pub title: ::prost::alloc::string::String,
+    #[prost(string, tag = "3")]
     pub image: ::prost::alloc::string::String,
-    #[prost(message, optional, tag = "3")]
+    #[prost(message, optional, tag = "4")]
     pub price: ::core::option::Option<ProductPrice>,
-    #[prost(float, optional, tag = "4")]
+    #[prost(float, optional, tag = "5")]
     pub rating: ::core::option::Option<f32>,
-    #[prost(int32, optional, tag = "5")]
+    #[prost(int32, optional, tag = "6")]
     pub sold: ::core::option::Option<i32>,
-    #[prost(message, repeated, tag = "6")]
+    #[prost(message, repeated, tag = "7")]
     pub meta: ::prost::alloc::vec::Vec<ProductItemMetadata>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
