@@ -303,26 +303,38 @@ public final class ProductListProto {
     float getDiscountPrice();
 
     /**
-     * <code>optional float save_amount = 4 [json_name = "saveAmount"];</code>
+     * <code>optional string save_amount = 4 [json_name = "saveAmount"];</code>
      * @return Whether the saveAmount field is set.
      */
     boolean hasSaveAmount();
     /**
-     * <code>optional float save_amount = 4 [json_name = "saveAmount"];</code>
+     * <code>optional string save_amount = 4 [json_name = "saveAmount"];</code>
      * @return The saveAmount.
      */
-    float getSaveAmount();
+    java.lang.String getSaveAmount();
+    /**
+     * <code>optional string save_amount = 4 [json_name = "saveAmount"];</code>
+     * @return The bytes for saveAmount.
+     */
+    com.google.protobuf.ByteString
+        getSaveAmountBytes();
 
     /**
-     * <code>optional float save_percentage = 5 [json_name = "savePercentage"];</code>
+     * <code>optional string save_percentage = 5 [json_name = "savePercentage"];</code>
      * @return Whether the savePercentage field is set.
      */
     boolean hasSavePercentage();
     /**
-     * <code>optional float save_percentage = 5 [json_name = "savePercentage"];</code>
+     * <code>optional string save_percentage = 5 [json_name = "savePercentage"];</code>
      * @return The savePercentage.
      */
-    float getSavePercentage();
+    java.lang.String getSavePercentage();
+    /**
+     * <code>optional string save_percentage = 5 [json_name = "savePercentage"];</code>
+     * @return The bytes for savePercentage.
+     */
+    com.google.protobuf.ByteString
+        getSavePercentageBytes();
   }
   /**
    * Protobuf type {@code products.v1.ProductPrice}
@@ -347,6 +359,8 @@ public final class ProductListProto {
     }
     private ProductPrice() {
       formatted_ = "";
+      saveAmount_ = "";
+      savePercentage_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -433,9 +447,10 @@ public final class ProductListProto {
     }
 
     public static final int SAVE_AMOUNT_FIELD_NUMBER = 4;
-    private float saveAmount_ = 0F;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object saveAmount_ = "";
     /**
-     * <code>optional float save_amount = 4 [json_name = "saveAmount"];</code>
+     * <code>optional string save_amount = 4 [json_name = "saveAmount"];</code>
      * @return Whether the saveAmount field is set.
      */
     @java.lang.Override
@@ -443,18 +458,46 @@ public final class ProductListProto {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>optional float save_amount = 4 [json_name = "saveAmount"];</code>
+     * <code>optional string save_amount = 4 [json_name = "saveAmount"];</code>
      * @return The saveAmount.
      */
     @java.lang.Override
-    public float getSaveAmount() {
-      return saveAmount_;
+    public java.lang.String getSaveAmount() {
+      java.lang.Object ref = saveAmount_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        saveAmount_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string save_amount = 4 [json_name = "saveAmount"];</code>
+     * @return The bytes for saveAmount.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSaveAmountBytes() {
+      java.lang.Object ref = saveAmount_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        saveAmount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int SAVE_PERCENTAGE_FIELD_NUMBER = 5;
-    private float savePercentage_ = 0F;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object savePercentage_ = "";
     /**
-     * <code>optional float save_percentage = 5 [json_name = "savePercentage"];</code>
+     * <code>optional string save_percentage = 5 [json_name = "savePercentage"];</code>
      * @return Whether the savePercentage field is set.
      */
     @java.lang.Override
@@ -462,12 +505,39 @@ public final class ProductListProto {
       return ((bitField0_ & 0x00000004) != 0);
     }
     /**
-     * <code>optional float save_percentage = 5 [json_name = "savePercentage"];</code>
+     * <code>optional string save_percentage = 5 [json_name = "savePercentage"];</code>
      * @return The savePercentage.
      */
     @java.lang.Override
-    public float getSavePercentage() {
-      return savePercentage_;
+    public java.lang.String getSavePercentage() {
+      java.lang.Object ref = savePercentage_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        savePercentage_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string save_percentage = 5 [json_name = "savePercentage"];</code>
+     * @return The bytes for savePercentage.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSavePercentageBytes() {
+      java.lang.Object ref = savePercentage_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        savePercentage_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -494,10 +564,10 @@ public final class ProductListProto {
         output.writeFloat(3, discountPrice_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeFloat(4, saveAmount_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, saveAmount_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeFloat(5, savePercentage_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, savePercentage_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -520,12 +590,10 @@ public final class ProductListProto {
           .computeFloatSize(3, discountPrice_);
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(4, saveAmount_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, saveAmount_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(5, savePercentage_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, savePercentage_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -555,15 +623,13 @@ public final class ProductListProto {
       }
       if (hasSaveAmount() != other.hasSaveAmount()) return false;
       if (hasSaveAmount()) {
-        if (java.lang.Float.floatToIntBits(getSaveAmount())
-            != java.lang.Float.floatToIntBits(
-                other.getSaveAmount())) return false;
+        if (!getSaveAmount()
+            .equals(other.getSaveAmount())) return false;
       }
       if (hasSavePercentage() != other.hasSavePercentage()) return false;
       if (hasSavePercentage()) {
-        if (java.lang.Float.floatToIntBits(getSavePercentage())
-            != java.lang.Float.floatToIntBits(
-                other.getSavePercentage())) return false;
+        if (!getSavePercentage()
+            .equals(other.getSavePercentage())) return false;
       }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
@@ -588,13 +654,11 @@ public final class ProductListProto {
       }
       if (hasSaveAmount()) {
         hash = (37 * hash) + SAVE_AMOUNT_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getSaveAmount());
+        hash = (53 * hash) + getSaveAmount().hashCode();
       }
       if (hasSavePercentage()) {
         hash = (37 * hash) + SAVE_PERCENTAGE_FIELD_NUMBER;
-        hash = (53 * hash) + java.lang.Float.floatToIntBits(
-            getSavePercentage());
+        hash = (53 * hash) + getSavePercentage().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -730,8 +794,8 @@ public final class ProductListProto {
         amount_ = 0F;
         formatted_ = "";
         discountPrice_ = 0F;
-        saveAmount_ = 0F;
-        savePercentage_ = 0F;
+        saveAmount_ = "";
+        savePercentage_ = "";
         return this;
       }
 
@@ -811,10 +875,14 @@ public final class ProductListProto {
           setDiscountPrice(other.getDiscountPrice());
         }
         if (other.hasSaveAmount()) {
-          setSaveAmount(other.getSaveAmount());
+          saveAmount_ = other.saveAmount_;
+          bitField0_ |= 0x00000008;
+          onChanged();
         }
         if (other.hasSavePercentage()) {
-          setSavePercentage(other.getSavePercentage());
+          savePercentage_ = other.savePercentage_;
+          bitField0_ |= 0x00000010;
+          onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -857,16 +925,16 @@ public final class ProductListProto {
                 bitField0_ |= 0x00000004;
                 break;
               } // case 29
-              case 37: {
-                saveAmount_ = input.readFloat();
+              case 34: {
+                saveAmount_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000008;
                 break;
-              } // case 37
-              case 45: {
-                savePercentage_ = input.readFloat();
+              } // case 34
+              case 42: {
+                savePercentage_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000010;
                 break;
-              } // case 45
+              } // case 42
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1028,82 +1096,160 @@ public final class ProductListProto {
         return this;
       }
 
-      private float saveAmount_ ;
+      private java.lang.Object saveAmount_ = "";
       /**
-       * <code>optional float save_amount = 4 [json_name = "saveAmount"];</code>
+       * <code>optional string save_amount = 4 [json_name = "saveAmount"];</code>
        * @return Whether the saveAmount field is set.
        */
-      @java.lang.Override
       public boolean hasSaveAmount() {
         return ((bitField0_ & 0x00000008) != 0);
       }
       /**
-       * <code>optional float save_amount = 4 [json_name = "saveAmount"];</code>
+       * <code>optional string save_amount = 4 [json_name = "saveAmount"];</code>
        * @return The saveAmount.
        */
-      @java.lang.Override
-      public float getSaveAmount() {
-        return saveAmount_;
+      public java.lang.String getSaveAmount() {
+        java.lang.Object ref = saveAmount_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          saveAmount_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional float save_amount = 4 [json_name = "saveAmount"];</code>
+       * <code>optional string save_amount = 4 [json_name = "saveAmount"];</code>
+       * @return The bytes for saveAmount.
+       */
+      public com.google.protobuf.ByteString
+          getSaveAmountBytes() {
+        java.lang.Object ref = saveAmount_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          saveAmount_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string save_amount = 4 [json_name = "saveAmount"];</code>
        * @param value The saveAmount to set.
        * @return This builder for chaining.
        */
-      public Builder setSaveAmount(float value) {
-
+      public Builder setSaveAmount(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
         saveAmount_ = value;
         bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
-       * <code>optional float save_amount = 4 [json_name = "saveAmount"];</code>
+       * <code>optional string save_amount = 4 [json_name = "saveAmount"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSaveAmount() {
+        saveAmount_ = getDefaultInstance().getSaveAmount();
         bitField0_ = (bitField0_ & ~0x00000008);
-        saveAmount_ = 0F;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string save_amount = 4 [json_name = "saveAmount"];</code>
+       * @param value The bytes for saveAmount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSaveAmountBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        saveAmount_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
 
-      private float savePercentage_ ;
+      private java.lang.Object savePercentage_ = "";
       /**
-       * <code>optional float save_percentage = 5 [json_name = "savePercentage"];</code>
+       * <code>optional string save_percentage = 5 [json_name = "savePercentage"];</code>
        * @return Whether the savePercentage field is set.
        */
-      @java.lang.Override
       public boolean hasSavePercentage() {
         return ((bitField0_ & 0x00000010) != 0);
       }
       /**
-       * <code>optional float save_percentage = 5 [json_name = "savePercentage"];</code>
+       * <code>optional string save_percentage = 5 [json_name = "savePercentage"];</code>
        * @return The savePercentage.
        */
-      @java.lang.Override
-      public float getSavePercentage() {
-        return savePercentage_;
+      public java.lang.String getSavePercentage() {
+        java.lang.Object ref = savePercentage_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          savePercentage_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>optional float save_percentage = 5 [json_name = "savePercentage"];</code>
+       * <code>optional string save_percentage = 5 [json_name = "savePercentage"];</code>
+       * @return The bytes for savePercentage.
+       */
+      public com.google.protobuf.ByteString
+          getSavePercentageBytes() {
+        java.lang.Object ref = savePercentage_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          savePercentage_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string save_percentage = 5 [json_name = "savePercentage"];</code>
        * @param value The savePercentage to set.
        * @return This builder for chaining.
        */
-      public Builder setSavePercentage(float value) {
-
+      public Builder setSavePercentage(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
         savePercentage_ = value;
         bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
       /**
-       * <code>optional float save_percentage = 5 [json_name = "savePercentage"];</code>
+       * <code>optional string save_percentage = 5 [json_name = "savePercentage"];</code>
        * @return This builder for chaining.
        */
       public Builder clearSavePercentage() {
+        savePercentage_ = getDefaultInstance().getSavePercentage();
         bitField0_ = (bitField0_ & ~0x00000010);
-        savePercentage_ = 0F;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string save_percentage = 5 [json_name = "savePercentage"];</code>
+       * @param value The bytes for savePercentage to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSavePercentageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        savePercentage_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -8135,8 +8281,8 @@ public final class ProductListProto {
       "types.proto\"\373\001\n\014ProductPrice\022\026\n\006amount\030\001" +
       " \001(\002R\006amount\022\034\n\tformatted\030\002 \001(\tR\tformatt" +
       "ed\022*\n\016discount_price\030\003 \001(\002H\000R\rdiscountPr" +
-      "ice\210\001\001\022$\n\013save_amount\030\004 \001(\002H\001R\nsaveAmoun" +
-      "t\210\001\001\022,\n\017save_percentage\030\005 \001(\002H\002R\016savePer" +
+      "ice\210\001\001\022$\n\013save_amount\030\004 \001(\tH\001R\nsaveAmoun" +
+      "t\210\001\001\022,\n\017save_percentage\030\005 \001(\tH\002R\016savePer" +
       "centage\210\001\001B\021\n\017_discount_priceB\016\n\014_save_a" +
       "mountB\022\n\020_save_percentage\"\331\001\n\023ProductShi" +
       "ppingInfo\022\022\n\004free\030\001 \001(\010R\004free\022:\n\006method\030" +

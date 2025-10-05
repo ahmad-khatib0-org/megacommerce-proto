@@ -64,10 +64,14 @@ inline constexpr ProductPrice::Impl_::Impl_(
         formatted_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
+        save_amount_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        save_percentage_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
         amount_{0},
-        discount_price_{0},
-        save_amount_{0},
-        save_percentage_{0} {}
+        discount_price_{0} {}
 
 template <typename>
 PROTOBUF_CONSTEXPR ProductPrice::ProductPrice(::_pbi::ConstantInitialized)
@@ -296,11 +300,11 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductPrice, _impl_.discount_price_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductPrice, _impl_.save_amount_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductPrice, _impl_.save_percentage_),
-        1,
-        0,
-        2,
         3,
+        0,
         4,
+        1,
+        2,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductShippingInfo, _impl_._has_bits_),
         8, // hasbit index offset
@@ -403,8 +407,8 @@ const char descriptor_table_protodef_products_2fv1_2fproduct_5flist_2eproto[] AB
     "types.proto\"\373\001\n\014ProductPrice\022\026\n\006amount\030\001"
     " \001(\002R\006amount\022\034\n\tformatted\030\002 \001(\tR\tformatt"
     "ed\022*\n\016discount_price\030\003 \001(\002H\000R\rdiscountPr"
-    "ice\210\001\001\022$\n\013save_amount\030\004 \001(\002H\001R\nsaveAmoun"
-    "t\210\001\001\022,\n\017save_percentage\030\005 \001(\002H\002R\016savePer"
+    "ice\210\001\001\022$\n\013save_amount\030\004 \001(\tH\001R\nsaveAmoun"
+    "t\210\001\001\022,\n\017save_percentage\030\005 \001(\tH\002R\016savePer"
     "centage\210\001\001B\021\n\017_discount_priceB\016\n\014_save_a"
     "mountB\022\n\020_save_percentage\"\331\001\n\023ProductShi"
     "ppingInfo\022\022\n\004free\030\001 \001(\010R\004free\022:\n\006method\030"
@@ -505,7 +509,9 @@ PROTOBUF_NDEBUG_INLINE ProductPrice::Impl_::Impl_(
     const ::products::v1::ProductPrice& from_msg)
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
-        formatted_(arena, from.formatted_) {}
+        formatted_(arena, from.formatted_),
+        save_amount_(arena, from.save_amount_),
+        save_percentage_(arena, from.save_percentage_) {}
 
 ProductPrice::ProductPrice(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -524,9 +530,9 @@ ProductPrice::ProductPrice(
                offsetof(Impl_, amount_),
            reinterpret_cast<const char *>(&from._impl_) +
                offsetof(Impl_, amount_),
-           offsetof(Impl_, save_percentage_) -
+           offsetof(Impl_, discount_price_) -
                offsetof(Impl_, amount_) +
-               sizeof(Impl_::save_percentage_));
+               sizeof(Impl_::discount_price_));
 
   // @@protoc_insertion_point(copy_constructor:products.v1.ProductPrice)
 }
@@ -534,16 +540,18 @@ PROTOBUF_NDEBUG_INLINE ProductPrice::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
-        formatted_(arena) {}
+        formatted_(arena),
+        save_amount_(arena),
+        save_percentage_(arena) {}
 
 inline void ProductPrice::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
   ::memset(reinterpret_cast<char *>(&_impl_) +
                offsetof(Impl_, amount_),
            0,
-           offsetof(Impl_, save_percentage_) -
+           offsetof(Impl_, discount_price_) -
                offsetof(Impl_, amount_) +
-               sizeof(Impl_::save_percentage_));
+               sizeof(Impl_::discount_price_));
 }
 ProductPrice::~ProductPrice() {
   // @@protoc_insertion_point(destructor:products.v1.ProductPrice)
@@ -554,6 +562,8 @@ inline void ProductPrice::SharedDtor(MessageLite& self) {
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.formatted_.Destroy();
+  this_._impl_.save_amount_.Destroy();
+  this_._impl_.save_percentage_.Destroy();
   this_._impl_.~Impl_();
 }
 
@@ -600,7 +610,7 @@ ProductPrice::GetClassData() const {
   return ProductPrice_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 5, 0, 42, 2>
+const ::_pbi::TcParseTable<3, 5, 0, 68, 2>
 ProductPrice::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_._has_bits_),
@@ -622,45 +632,47 @@ ProductPrice::_table_ = {
     {::_pbi::TcParser::MiniParse, {}},
     // float amount = 1 [json_name = "amount"];
     {::_pbi::TcParser::FastF32S1,
-     {13, 1, 0, PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.amount_)}},
+     {13, 3, 0, PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.amount_)}},
     // string formatted = 2 [json_name = "formatted"];
     {::_pbi::TcParser::FastUS1,
      {18, 0, 0, PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.formatted_)}},
     // optional float discount_price = 3 [json_name = "discountPrice"];
     {::_pbi::TcParser::FastF32S1,
-     {29, 2, 0, PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.discount_price_)}},
-    // optional float save_amount = 4 [json_name = "saveAmount"];
-    {::_pbi::TcParser::FastF32S1,
-     {37, 3, 0, PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.save_amount_)}},
-    // optional float save_percentage = 5 [json_name = "savePercentage"];
-    {::_pbi::TcParser::FastF32S1,
-     {45, 4, 0, PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.save_percentage_)}},
+     {29, 4, 0, PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.discount_price_)}},
+    // optional string save_amount = 4 [json_name = "saveAmount"];
+    {::_pbi::TcParser::FastUS1,
+     {34, 1, 0, PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.save_amount_)}},
+    // optional string save_percentage = 5 [json_name = "savePercentage"];
+    {::_pbi::TcParser::FastUS1,
+     {42, 2, 0, PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.save_percentage_)}},
     {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
   }}, {{
     65535, 65535
   }}, {{
     // float amount = 1 [json_name = "amount"];
-    {PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.amount_), _Internal::kHasBitsOffset + 1, 0,
+    {PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.amount_), _Internal::kHasBitsOffset + 3, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
     // string formatted = 2 [json_name = "formatted"];
     {PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.formatted_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // optional float discount_price = 3 [json_name = "discountPrice"];
-    {PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.discount_price_), _Internal::kHasBitsOffset + 2, 0,
+    {PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.discount_price_), _Internal::kHasBitsOffset + 4, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
-    // optional float save_amount = 4 [json_name = "saveAmount"];
-    {PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.save_amount_), _Internal::kHasBitsOffset + 3, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
-    // optional float save_percentage = 5 [json_name = "savePercentage"];
-    {PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.save_percentage_), _Internal::kHasBitsOffset + 4, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kFloat)},
+    // optional string save_amount = 4 [json_name = "saveAmount"];
+    {PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.save_amount_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional string save_percentage = 5 [json_name = "savePercentage"];
+    {PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.save_percentage_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
   // no aux_entries
   {{
-    "\30\0\11\0\0\0\0\0"
+    "\30\0\11\0\13\17\0\0"
     "products.v1.ProductPrice"
     "formatted"
+    "save_amount"
+    "save_percentage"
   }},
 };
 PROTOBUF_NOINLINE void ProductPrice::Clear() {
@@ -671,13 +683,21 @@ PROTOBUF_NOINLINE void ProductPrice::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000001u) != 0) {
-    _impl_.formatted_.ClearNonDefaultToEmpty();
+  if ((cached_has_bits & 0x00000007u) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      _impl_.formatted_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      _impl_.save_amount_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      _impl_.save_percentage_.ClearNonDefaultToEmpty();
+    }
   }
-  if ((cached_has_bits & 0x0000001eu) != 0) {
+  if ((cached_has_bits & 0x00000018u) != 0) {
     ::memset(&_impl_.amount_, 0, static_cast<::size_t>(
-        reinterpret_cast<char*>(&_impl_.save_percentage_) -
-        reinterpret_cast<char*>(&_impl_.amount_)) + sizeof(_impl_.save_percentage_));
+        reinterpret_cast<char*>(&_impl_.discount_price_) -
+        reinterpret_cast<char*>(&_impl_.amount_)) + sizeof(_impl_.discount_price_));
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
@@ -699,7 +719,7 @@ PROTOBUF_NOINLINE void ProductPrice::Clear() {
   (void)cached_has_bits;
 
   // float amount = 1 [json_name = "amount"];
-  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
+  if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
     if (::absl::bit_cast<::uint32_t>(this_._internal_amount()) != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteFloatToArray(
@@ -719,24 +739,26 @@ PROTOBUF_NOINLINE void ProductPrice::Clear() {
 
   cached_has_bits = this_._impl_._has_bits_[0];
   // optional float discount_price = 3 [json_name = "discountPrice"];
-  if ((cached_has_bits & 0x00000004u) != 0) {
+  if ((cached_has_bits & 0x00000010u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteFloatToArray(
         3, this_._internal_discount_price(), target);
   }
 
-  // optional float save_amount = 4 [json_name = "saveAmount"];
-  if ((cached_has_bits & 0x00000008u) != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(
-        4, this_._internal_save_amount(), target);
+  // optional string save_amount = 4 [json_name = "saveAmount"];
+  if ((cached_has_bits & 0x00000002u) != 0) {
+    const ::std::string& _s = this_._internal_save_amount();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductPrice.save_amount");
+    target = stream->WriteStringMaybeAliased(4, _s, target);
   }
 
-  // optional float save_percentage = 5 [json_name = "savePercentage"];
-  if ((cached_has_bits & 0x00000010u) != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(
-        5, this_._internal_save_percentage(), target);
+  // optional string save_percentage = 5 [json_name = "savePercentage"];
+  if ((cached_has_bits & 0x00000004u) != 0) {
+    const ::std::string& _s = this_._internal_save_percentage();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductPrice.save_percentage");
+    target = stream->WriteStringMaybeAliased(5, _s, target);
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -764,8 +786,8 @@ PROTOBUF_NOINLINE void ProductPrice::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
-  total_size += ::absl::popcount(0x0000001cu & cached_has_bits) * 5;
-  if ((cached_has_bits & 0x00000003u) != 0) {
+  total_size += static_cast<bool>(0x00000010u & cached_has_bits) * 5;
+  if ((cached_has_bits & 0x0000000fu) != 0) {
     // string formatted = 2 [json_name = "formatted"];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_formatted().empty()) {
@@ -773,8 +795,18 @@ PROTOBUF_NOINLINE void ProductPrice::Clear() {
                                         this_._internal_formatted());
       }
     }
-    // float amount = 1 [json_name = "amount"];
+    // optional string save_amount = 4 [json_name = "saveAmount"];
     if ((cached_has_bits & 0x00000002u) != 0) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_save_amount());
+    }
+    // optional string save_percentage = 5 [json_name = "savePercentage"];
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_save_percentage());
+    }
+    // float amount = 1 [json_name = "amount"];
+    if ((cached_has_bits & 0x00000008u) != 0) {
       if (::absl::bit_cast<::uint32_t>(this_._internal_amount()) != 0) {
         total_size += 5;
       }
@@ -804,18 +836,18 @@ void ProductPrice::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::go
       }
     }
     if ((cached_has_bits & 0x00000002u) != 0) {
+      _this->_internal_set_save_amount(from._internal_save_amount());
+    }
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      _this->_internal_set_save_percentage(from._internal_save_percentage());
+    }
+    if ((cached_has_bits & 0x00000008u) != 0) {
       if (::absl::bit_cast<::uint32_t>(from._internal_amount()) != 0) {
         _this->_impl_.amount_ = from._impl_.amount_;
       }
     }
-    if ((cached_has_bits & 0x00000004u) != 0) {
-      _this->_impl_.discount_price_ = from._impl_.discount_price_;
-    }
-    if ((cached_has_bits & 0x00000008u) != 0) {
-      _this->_impl_.save_amount_ = from._impl_.save_amount_;
-    }
     if ((cached_has_bits & 0x00000010u) != 0) {
-      _this->_impl_.save_percentage_ = from._impl_.save_percentage_;
+      _this->_impl_.discount_price_ = from._impl_.discount_price_;
     }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -837,9 +869,11 @@ void ProductPrice::InternalSwap(ProductPrice* PROTOBUF_RESTRICT PROTOBUF_NONNULL
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.formatted_, &other->_impl_.formatted_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.save_amount_, &other->_impl_.save_amount_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.save_percentage_, &other->_impl_.save_percentage_, arena);
   ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.save_percentage_)
-      + sizeof(ProductPrice::_impl_.save_percentage_)
+      PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.discount_price_)
+      + sizeof(ProductPrice::_impl_.discount_price_)
       - PROTOBUF_FIELD_OFFSET(ProductPrice, _impl_.amount_)>(
           reinterpret_cast<char*>(&_impl_.amount_),
           reinterpret_cast<char*>(&other->_impl_.amount_));

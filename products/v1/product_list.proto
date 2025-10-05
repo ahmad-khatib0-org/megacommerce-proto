@@ -14,8 +14,8 @@ message ProductPrice {
   float amount = 1;
   string formatted = 2;
   optional float discount_price = 3;
-  optional float save_amount = 4;
-  optional float save_percentage = 5;
+  optional string save_amount = 4;
+  optional string save_percentage = 5;
 }
 
 enum ProductShippingMethod {

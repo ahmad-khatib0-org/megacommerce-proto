@@ -87,8 +87,8 @@ export interface ProductPrice {
   amount: number;
   formatted: string;
   discountPrice?: number | undefined;
-  saveAmount?: number | undefined;
-  savePercentage?: number | undefined;
+  saveAmount?: string | undefined;
+  savePercentage?: string | undefined;
 }
 
 export interface ProductShippingInfo {
@@ -156,10 +156,10 @@ export const ProductPrice: MessageFns<ProductPrice> = {
       writer.uint32(29).float(message.discountPrice);
     }
     if (message.saveAmount !== undefined) {
-      writer.uint32(37).float(message.saveAmount);
+      writer.uint32(34).string(message.saveAmount);
     }
     if (message.savePercentage !== undefined) {
-      writer.uint32(45).float(message.savePercentage);
+      writer.uint32(42).string(message.savePercentage);
     }
     return writer;
   },
@@ -196,19 +196,19 @@ export const ProductPrice: MessageFns<ProductPrice> = {
           continue;
         }
         case 4: {
-          if (tag !== 37) {
+          if (tag !== 34) {
             break;
           }
 
-          message.saveAmount = reader.float();
+          message.saveAmount = reader.string();
           continue;
         }
         case 5: {
-          if (tag !== 45) {
+          if (tag !== 42) {
             break;
           }
 
-          message.savePercentage = reader.float();
+          message.savePercentage = reader.string();
           continue;
         }
       }
@@ -225,8 +225,8 @@ export const ProductPrice: MessageFns<ProductPrice> = {
       amount: isSet(object.amount) ? globalThis.Number(object.amount) : 0,
       formatted: isSet(object.formatted) ? globalThis.String(object.formatted) : "",
       discountPrice: isSet(object.discountPrice) ? globalThis.Number(object.discountPrice) : undefined,
-      saveAmount: isSet(object.saveAmount) ? globalThis.Number(object.saveAmount) : undefined,
-      savePercentage: isSet(object.savePercentage) ? globalThis.Number(object.savePercentage) : undefined,
+      saveAmount: isSet(object.saveAmount) ? globalThis.String(object.saveAmount) : undefined,
+      savePercentage: isSet(object.savePercentage) ? globalThis.String(object.savePercentage) : undefined,
     };
   },
 

@@ -575,10 +575,10 @@ class ProductPrice final : public ::google::protobuf::Message
   // accessors -------------------------------------------------------
   enum : int {
     kFormattedFieldNumber = 2,
-    kAmountFieldNumber = 1,
-    kDiscountPriceFieldNumber = 3,
     kSaveAmountFieldNumber = 4,
     kSavePercentageFieldNumber = 5,
+    kAmountFieldNumber = 1,
+    kDiscountPriceFieldNumber = 3,
   };
   // string formatted = 2 [json_name = "formatted"];
   void clear_formatted() ;
@@ -593,6 +593,38 @@ class ProductPrice final : public ::google::protobuf::Message
   const ::std::string& _internal_formatted() const;
   PROTOBUF_ALWAYS_INLINE void _internal_set_formatted(const ::std::string& value);
   ::std::string* PROTOBUF_NONNULL _internal_mutable_formatted();
+
+  public:
+  // optional string save_amount = 4 [json_name = "saveAmount"];
+  bool has_save_amount() const;
+  void clear_save_amount() ;
+  const ::std::string& save_amount() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_save_amount(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_save_amount();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_save_amount();
+  void set_allocated_save_amount(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_save_amount() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_save_amount(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_save_amount();
+
+  public:
+  // optional string save_percentage = 5 [json_name = "savePercentage"];
+  bool has_save_percentage() const;
+  void clear_save_percentage() ;
+  const ::std::string& save_percentage() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_save_percentage(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_save_percentage();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_save_percentage();
+  void set_allocated_save_percentage(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_save_percentage() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_save_percentage(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_save_percentage();
 
   public:
   // float amount = 1 [json_name = "amount"];
@@ -616,34 +648,12 @@ class ProductPrice final : public ::google::protobuf::Message
   void _internal_set_discount_price(float value);
 
   public:
-  // optional float save_amount = 4 [json_name = "saveAmount"];
-  bool has_save_amount() const;
-  void clear_save_amount() ;
-  float save_amount() const;
-  void set_save_amount(float value);
-
-  private:
-  float _internal_save_amount() const;
-  void _internal_set_save_amount(float value);
-
-  public:
-  // optional float save_percentage = 5 [json_name = "savePercentage"];
-  bool has_save_percentage() const;
-  void clear_save_percentage() ;
-  float save_percentage() const;
-  void set_save_percentage(float value);
-
-  private:
-  float _internal_save_percentage() const;
-  void _internal_set_save_percentage(float value);
-
-  public:
   // @@protoc_insertion_point(class_scope:products.v1.ProductPrice)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<3, 5,
-                                   0, 42,
+                                   0, 68,
                                    2>
       _table_;
 
@@ -665,10 +675,10 @@ class ProductPrice final : public ::google::protobuf::Message
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::internal::ArenaStringPtr formatted_;
+    ::google::protobuf::internal::ArenaStringPtr save_amount_;
+    ::google::protobuf::internal::ArenaStringPtr save_percentage_;
     float amount_;
     float discount_price_;
-    float save_amount_;
-    float save_percentage_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -2165,7 +2175,7 @@ extern const ::google::protobuf::internal::ClassDataFull ProductListResponse_cla
 inline void ProductPrice::clear_amount() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.amount_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
 }
 inline float ProductPrice::amount() const {
   // @@protoc_insertion_point(field_get:products.v1.ProductPrice.amount)
@@ -2173,7 +2183,7 @@ inline float ProductPrice::amount() const {
 }
 inline void ProductPrice::set_amount(float value) {
   _internal_set_amount(value);
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000008u;
   // @@protoc_insertion_point(field_set:products.v1.ProductPrice.amount)
 }
 inline float ProductPrice::_internal_amount() const {
@@ -2252,13 +2262,13 @@ inline void ProductPrice::set_allocated_formatted(::std::string* PROTOBUF_NULLAB
 
 // optional float discount_price = 3 [json_name = "discountPrice"];
 inline bool ProductPrice::has_discount_price() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
   return value;
 }
 inline void ProductPrice::clear_discount_price() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.discount_price_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
 }
 inline float ProductPrice::discount_price() const {
   // @@protoc_insertion_point(field_get:products.v1.ProductPrice.discount_price)
@@ -2266,7 +2276,7 @@ inline float ProductPrice::discount_price() const {
 }
 inline void ProductPrice::set_discount_price(float value) {
   _internal_set_discount_price(value);
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000010u;
   // @@protoc_insertion_point(field_set:products.v1.ProductPrice.discount_price)
 }
 inline float ProductPrice::_internal_discount_price() const {
@@ -2278,60 +2288,142 @@ inline void ProductPrice::_internal_set_discount_price(float value) {
   _impl_.discount_price_ = value;
 }
 
-// optional float save_amount = 4 [json_name = "saveAmount"];
+// optional string save_amount = 4 [json_name = "saveAmount"];
 inline bool ProductPrice::has_save_amount() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
 }
 inline void ProductPrice::clear_save_amount() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.save_amount_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_.save_amount_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
-inline float ProductPrice::save_amount() const {
+inline const ::std::string& ProductPrice::save_amount() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:products.v1.ProductPrice.save_amount)
   return _internal_save_amount();
 }
-inline void ProductPrice::set_save_amount(float value) {
-  _internal_set_save_amount(value);
-  _impl_._has_bits_[0] |= 0x00000008u;
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ProductPrice::set_save_amount(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.save_amount_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:products.v1.ProductPrice.save_amount)
 }
-inline float ProductPrice::_internal_save_amount() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.save_amount_;
+inline ::std::string* PROTOBUF_NONNULL ProductPrice::mutable_save_amount()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_save_amount();
+  // @@protoc_insertion_point(field_mutable:products.v1.ProductPrice.save_amount)
+  return _s;
 }
-inline void ProductPrice::_internal_set_save_amount(float value) {
+inline const ::std::string& ProductPrice::_internal_save_amount() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.save_amount_.Get();
+}
+inline void ProductPrice::_internal_set_save_amount(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.save_amount_ = value;
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.save_amount_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ProductPrice::_internal_mutable_save_amount() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.save_amount_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ProductPrice::release_save_amount() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.ProductPrice.save_amount)
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* released = _impl_.save_amount_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.save_amount_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ProductPrice::set_allocated_save_amount(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.save_amount_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.save_amount_.IsDefault()) {
+    _impl_.save_amount_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductPrice.save_amount)
 }
 
-// optional float save_percentage = 5 [json_name = "savePercentage"];
+// optional string save_percentage = 5 [json_name = "savePercentage"];
 inline bool ProductPrice::has_save_percentage() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
 inline void ProductPrice::clear_save_percentage() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.save_percentage_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000010u;
+  _impl_.save_percentage_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
-inline float ProductPrice::save_percentage() const {
+inline const ::std::string& ProductPrice::save_percentage() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:products.v1.ProductPrice.save_percentage)
   return _internal_save_percentage();
 }
-inline void ProductPrice::set_save_percentage(float value) {
-  _internal_set_save_percentage(value);
-  _impl_._has_bits_[0] |= 0x00000010u;
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ProductPrice::set_save_percentage(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.save_percentage_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:products.v1.ProductPrice.save_percentage)
 }
-inline float ProductPrice::_internal_save_percentage() const {
-  ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.save_percentage_;
+inline ::std::string* PROTOBUF_NONNULL ProductPrice::mutable_save_percentage()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_save_percentage();
+  // @@protoc_insertion_point(field_mutable:products.v1.ProductPrice.save_percentage)
+  return _s;
 }
-inline void ProductPrice::_internal_set_save_percentage(float value) {
+inline const ::std::string& ProductPrice::_internal_save_percentage() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.save_percentage_.Get();
+}
+inline void ProductPrice::_internal_set_save_percentage(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.save_percentage_ = value;
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.save_percentage_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ProductPrice::_internal_mutable_save_percentage() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  return _impl_.save_percentage_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ProductPrice::release_save_percentage() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.ProductPrice.save_percentage)
+  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  auto* released = _impl_.save_percentage_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.save_percentage_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ProductPrice::set_allocated_save_percentage(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+  _impl_.save_percentage_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.save_percentage_.IsDefault()) {
+    _impl_.save_percentage_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductPrice.save_percentage)
 }
 
 // -------------------------------------------------------------------

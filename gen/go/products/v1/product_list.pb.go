@@ -122,8 +122,8 @@ type ProductPrice struct {
 	Amount         float32                `protobuf:"fixed32,1,opt,name=amount,proto3" json:"amount,omitempty"`
 	Formatted      string                 `protobuf:"bytes,2,opt,name=formatted,proto3" json:"formatted,omitempty"`
 	DiscountPrice  *float32               `protobuf:"fixed32,3,opt,name=discount_price,json=discountPrice,proto3,oneof" json:"discount_price,omitempty"`
-	SaveAmount     *float32               `protobuf:"fixed32,4,opt,name=save_amount,json=saveAmount,proto3,oneof" json:"save_amount,omitempty"`
-	SavePercentage *float32               `protobuf:"fixed32,5,opt,name=save_percentage,json=savePercentage,proto3,oneof" json:"save_percentage,omitempty"`
+	SaveAmount     *string                `protobuf:"bytes,4,opt,name=save_amount,json=saveAmount,proto3,oneof" json:"save_amount,omitempty"`
+	SavePercentage *string                `protobuf:"bytes,5,opt,name=save_percentage,json=savePercentage,proto3,oneof" json:"save_percentage,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -179,18 +179,18 @@ func (x *ProductPrice) GetDiscountPrice() float32 {
 	return 0
 }
 
-func (x *ProductPrice) GetSaveAmount() float32 {
+func (x *ProductPrice) GetSaveAmount() string {
 	if x != nil && x.SaveAmount != nil {
 		return *x.SaveAmount
 	}
-	return 0
+	return ""
 }
 
-func (x *ProductPrice) GetSavePercentage() float32 {
+func (x *ProductPrice) GetSavePercentage() string {
 	if x != nil && x.SavePercentage != nil {
 		return *x.SavePercentage
 	}
-	return 0
+	return ""
 }
 
 type ProductShippingInfo struct {
@@ -708,9 +708,9 @@ const file_products_v1_product_list_proto_rawDesc = "" +
 	"\x06amount\x18\x01 \x01(\x02R\x06amount\x12\x1c\n" +
 	"\tformatted\x18\x02 \x01(\tR\tformatted\x12*\n" +
 	"\x0ediscount_price\x18\x03 \x01(\x02H\x00R\rdiscountPrice\x88\x01\x01\x12$\n" +
-	"\vsave_amount\x18\x04 \x01(\x02H\x01R\n" +
+	"\vsave_amount\x18\x04 \x01(\tH\x01R\n" +
 	"saveAmount\x88\x01\x01\x12,\n" +
-	"\x0fsave_percentage\x18\x05 \x01(\x02H\x02R\x0esavePercentage\x88\x01\x01B\x11\n" +
+	"\x0fsave_percentage\x18\x05 \x01(\tH\x02R\x0esavePercentage\x88\x01\x01B\x11\n" +
 	"\x0f_discount_priceB\x0e\n" +
 	"\f_save_amountB\x12\n" +
 	"\x10_save_percentage\"\xd9\x01\n" +

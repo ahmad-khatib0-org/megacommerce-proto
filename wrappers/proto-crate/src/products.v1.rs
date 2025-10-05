@@ -197,10 +197,10 @@ pub struct ProductPrice {
     pub formatted: ::prost::alloc::string::String,
     #[prost(float, optional, tag = "3")]
     pub discount_price: ::core::option::Option<f32>,
-    #[prost(float, optional, tag = "4")]
-    pub save_amount: ::core::option::Option<f32>,
-    #[prost(float, optional, tag = "5")]
-    pub save_percentage: ::core::option::Option<f32>,
+    #[prost(string, optional, tag = "4")]
+    pub save_amount: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "5")]
+    pub save_percentage: ::core::option::Option<::prost::alloc::string::String>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
