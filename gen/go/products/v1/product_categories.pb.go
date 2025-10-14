@@ -21,6 +21,150 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type ProductAttributeValidationType int32
+
+const (
+	ProductAttributeValidationType_PRODUCT_ATTRIBUTE_VALIDATION_TYPE_NUMERIC ProductAttributeValidationType = 0
+	ProductAttributeValidationType_PRODUCT_ATTRIBUTE_VALIDATION_TYPE_STRING  ProductAttributeValidationType = 1
+)
+
+// Enum value maps for ProductAttributeValidationType.
+var (
+	ProductAttributeValidationType_name = map[int32]string{
+		0: "PRODUCT_ATTRIBUTE_VALIDATION_TYPE_NUMERIC",
+		1: "PRODUCT_ATTRIBUTE_VALIDATION_TYPE_STRING",
+	}
+	ProductAttributeValidationType_value = map[string]int32{
+		"PRODUCT_ATTRIBUTE_VALIDATION_TYPE_NUMERIC": 0,
+		"PRODUCT_ATTRIBUTE_VALIDATION_TYPE_STRING":  1,
+	}
+)
+
+func (x ProductAttributeValidationType) Enum() *ProductAttributeValidationType {
+	p := new(ProductAttributeValidationType)
+	*p = x
+	return p
+}
+
+func (x ProductAttributeValidationType) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ProductAttributeValidationType) Descriptor() protoreflect.EnumDescriptor {
+	return file_products_v1_product_categories_proto_enumTypes[0].Descriptor()
+}
+
+func (ProductAttributeValidationType) Type() protoreflect.EnumType {
+	return &file_products_v1_product_categories_proto_enumTypes[0]
+}
+
+func (x ProductAttributeValidationType) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ProductAttributeValidationType.Descriptor instead.
+func (ProductAttributeValidationType) EnumDescriptor() ([]byte, []int) {
+	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{0}
+}
+
+type ProductAttributeNumericValidationRule int32
+
+const (
+	ProductAttributeNumericValidationRule_PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN         ProductAttributeNumericValidationRule = 0
+	ProductAttributeNumericValidationRule_PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX         ProductAttributeNumericValidationRule = 1
+	ProductAttributeNumericValidationRule_PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_BIGGER_THAN ProductAttributeNumericValidationRule = 2
+	ProductAttributeNumericValidationRule_PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LESS_THAN   ProductAttributeNumericValidationRule = 3
+)
+
+// Enum value maps for ProductAttributeNumericValidationRule.
+var (
+	ProductAttributeNumericValidationRule_name = map[int32]string{
+		0: "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN",
+		1: "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX",
+		2: "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_BIGGER_THAN",
+		3: "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LESS_THAN",
+	}
+	ProductAttributeNumericValidationRule_value = map[string]int32{
+		"PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN":         0,
+		"PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX":         1,
+		"PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_BIGGER_THAN": 2,
+		"PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LESS_THAN":   3,
+	}
+)
+
+func (x ProductAttributeNumericValidationRule) Enum() *ProductAttributeNumericValidationRule {
+	p := new(ProductAttributeNumericValidationRule)
+	*p = x
+	return p
+}
+
+func (x ProductAttributeNumericValidationRule) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ProductAttributeNumericValidationRule) Descriptor() protoreflect.EnumDescriptor {
+	return file_products_v1_product_categories_proto_enumTypes[1].Descriptor()
+}
+
+func (ProductAttributeNumericValidationRule) Type() protoreflect.EnumType {
+	return &file_products_v1_product_categories_proto_enumTypes[1]
+}
+
+func (x ProductAttributeNumericValidationRule) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ProductAttributeNumericValidationRule.Descriptor instead.
+func (ProductAttributeNumericValidationRule) EnumDescriptor() ([]byte, []int) {
+	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{1}
+}
+
+type ProductAttributeStringValidationRule int32
+
+const (
+	ProductAttributeStringValidationRule_PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN ProductAttributeStringValidationRule = 0
+	ProductAttributeStringValidationRule_PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX ProductAttributeStringValidationRule = 1
+)
+
+// Enum value maps for ProductAttributeStringValidationRule.
+var (
+	ProductAttributeStringValidationRule_name = map[int32]string{
+		0: "PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN",
+		1: "PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX",
+	}
+	ProductAttributeStringValidationRule_value = map[string]int32{
+		"PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN": 0,
+		"PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX": 1,
+	}
+)
+
+func (x ProductAttributeStringValidationRule) Enum() *ProductAttributeStringValidationRule {
+	p := new(ProductAttributeStringValidationRule)
+	*p = x
+	return p
+}
+
+func (x ProductAttributeStringValidationRule) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (ProductAttributeStringValidationRule) Descriptor() protoreflect.EnumDescriptor {
+	return file_products_v1_product_categories_proto_enumTypes[2].Descriptor()
+}
+
+func (ProductAttributeStringValidationRule) Type() protoreflect.EnumType {
+	return &file_products_v1_product_categories_proto_enumTypes[2]
+}
+
+func (x ProductAttributeStringValidationRule) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use ProductAttributeStringValidationRule.Descriptor instead.
+func (ProductAttributeStringValidationRule) EnumDescriptor() ([]byte, []int) {
+	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{2}
+}
+
 type ProductCategory struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -142,10 +286,11 @@ func (x *ProductSubcategory) GetAttributes() map[string]*ProductSubcategoryAttri
 }
 
 type ProductSubcategoryAttribute struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Required      bool                   `protobuf:"varint,1,opt,name=required,proto3" json:"required,omitempty"`
-	Type          string                 `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
-	StringArray   []string               `protobuf:"bytes,3,rep,name=string_array,json=stringArray,proto3" json:"string_array,omitempty"`
+	state         protoimpl.MessageState      `protogen:"open.v1"`
+	Required      bool                        `protobuf:"varint,1,opt,name=required,proto3" json:"required,omitempty"`
+	Type          string                      `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
+	StringArray   []string                    `protobuf:"bytes,3,rep,name=string_array,json=stringArray,proto3" json:"string_array,omitempty"`
+	Validation    *ProductAttributeValidation `protobuf:"bytes,4,opt,name=validation,proto3" json:"validation,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -201,6 +346,153 @@ func (x *ProductSubcategoryAttribute) GetStringArray() []string {
 	return nil
 }
 
+func (x *ProductSubcategoryAttribute) GetValidation() *ProductAttributeValidation {
+	if x != nil {
+		return x.Validation
+	}
+	return nil
+}
+
+type ProductAttributeValidation struct {
+	state         protoimpl.MessageState         `protogen:"open.v1"`
+	Type          ProductAttributeValidationType `protobuf:"varint,1,opt,name=type,proto3,enum=products.v1.ProductAttributeValidationType" json:"type,omitempty"`
+	Value         string                         `protobuf:"bytes,2,opt,name=value,proto3" json:"value,omitempty"` // can be integer, float, string ...
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ProductAttributeValidation) Reset() {
+	*x = ProductAttributeValidation{}
+	mi := &file_products_v1_product_categories_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProductAttributeValidation) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProductAttributeValidation) ProtoMessage() {}
+
+func (x *ProductAttributeValidation) ProtoReflect() protoreflect.Message {
+	mi := &file_products_v1_product_categories_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProductAttributeValidation.ProtoReflect.Descriptor instead.
+func (*ProductAttributeValidation) Descriptor() ([]byte, []int) {
+	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *ProductAttributeValidation) GetType() ProductAttributeValidationType {
+	if x != nil {
+		return x.Type
+	}
+	return ProductAttributeValidationType_PRODUCT_ATTRIBUTE_VALIDATION_TYPE_NUMERIC
+}
+
+func (x *ProductAttributeValidation) GetValue() string {
+	if x != nil {
+		return x.Value
+	}
+	return ""
+}
+
+type ProductAttributeValidationNumeric struct {
+	state         protoimpl.MessageState                `protogen:"open.v1"`
+	Rule          ProductAttributeNumericValidationRule `protobuf:"varint,1,opt,name=rule,proto3,enum=products.v1.ProductAttributeNumericValidationRule" json:"rule,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ProductAttributeValidationNumeric) Reset() {
+	*x = ProductAttributeValidationNumeric{}
+	mi := &file_products_v1_product_categories_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProductAttributeValidationNumeric) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProductAttributeValidationNumeric) ProtoMessage() {}
+
+func (x *ProductAttributeValidationNumeric) ProtoReflect() protoreflect.Message {
+	mi := &file_products_v1_product_categories_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProductAttributeValidationNumeric.ProtoReflect.Descriptor instead.
+func (*ProductAttributeValidationNumeric) Descriptor() ([]byte, []int) {
+	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *ProductAttributeValidationNumeric) GetRule() ProductAttributeNumericValidationRule {
+	if x != nil {
+		return x.Rule
+	}
+	return ProductAttributeNumericValidationRule_PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN
+}
+
+type ProductAttributeValidationString struct {
+	state         protoimpl.MessageState                `protogen:"open.v1"`
+	Rule          ProductAttributeNumericValidationRule `protobuf:"varint,1,opt,name=rule,proto3,enum=products.v1.ProductAttributeNumericValidationRule" json:"rule,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ProductAttributeValidationString) Reset() {
+	*x = ProductAttributeValidationString{}
+	mi := &file_products_v1_product_categories_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProductAttributeValidationString) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProductAttributeValidationString) ProtoMessage() {}
+
+func (x *ProductAttributeValidationString) ProtoReflect() protoreflect.Message {
+	mi := &file_products_v1_product_categories_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProductAttributeValidationString.ProtoReflect.Descriptor instead.
+func (*ProductAttributeValidationString) Descriptor() ([]byte, []int) {
+	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *ProductAttributeValidationString) GetRule() ProductAttributeNumericValidationRule {
+	if x != nil {
+		return x.Rule
+	}
+	return ProductAttributeNumericValidationRule_PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN
+}
+
 type ProductCategories struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Categories    []*ProductCategory     `protobuf:"bytes,1,rep,name=categories,proto3" json:"categories,omitempty"`
@@ -210,7 +502,7 @@ type ProductCategories struct {
 
 func (x *ProductCategories) Reset() {
 	*x = ProductCategories{}
-	mi := &file_products_v1_product_categories_proto_msgTypes[3]
+	mi := &file_products_v1_product_categories_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -222,7 +514,7 @@ func (x *ProductCategories) String() string {
 func (*ProductCategories) ProtoMessage() {}
 
 func (x *ProductCategories) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_product_categories_proto_msgTypes[3]
+	mi := &file_products_v1_product_categories_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -235,7 +527,7 @@ func (x *ProductCategories) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductCategories.ProtoReflect.Descriptor instead.
 func (*ProductCategories) Descriptor() ([]byte, []int) {
-	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{3}
+	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *ProductCategories) GetCategories() []*ProductCategory {
@@ -255,7 +547,7 @@ type ProductCategoryWithoutSubcategories struct {
 
 func (x *ProductCategoryWithoutSubcategories) Reset() {
 	*x = ProductCategoryWithoutSubcategories{}
-	mi := &file_products_v1_product_categories_proto_msgTypes[4]
+	mi := &file_products_v1_product_categories_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -267,7 +559,7 @@ func (x *ProductCategoryWithoutSubcategories) String() string {
 func (*ProductCategoryWithoutSubcategories) ProtoMessage() {}
 
 func (x *ProductCategoryWithoutSubcategories) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_product_categories_proto_msgTypes[4]
+	mi := &file_products_v1_product_categories_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -280,7 +572,7 @@ func (x *ProductCategoryWithoutSubcategories) ProtoReflect() protoreflect.Messag
 
 // Deprecated: Use ProductCategoryWithoutSubcategories.ProtoReflect.Descriptor instead.
 func (*ProductCategoryWithoutSubcategories) Descriptor() ([]byte, []int) {
-	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{4}
+	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ProductCategoryWithoutSubcategories) GetId() string {
@@ -306,7 +598,7 @@ type ProductCategoriesWithoutSubcategories struct {
 
 func (x *ProductCategoriesWithoutSubcategories) Reset() {
 	*x = ProductCategoriesWithoutSubcategories{}
-	mi := &file_products_v1_product_categories_proto_msgTypes[5]
+	mi := &file_products_v1_product_categories_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -318,7 +610,7 @@ func (x *ProductCategoriesWithoutSubcategories) String() string {
 func (*ProductCategoriesWithoutSubcategories) ProtoMessage() {}
 
 func (x *ProductCategoriesWithoutSubcategories) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_product_categories_proto_msgTypes[5]
+	mi := &file_products_v1_product_categories_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -331,7 +623,7 @@ func (x *ProductCategoriesWithoutSubcategories) ProtoReflect() protoreflect.Mess
 
 // Deprecated: Use ProductCategoriesWithoutSubcategories.ProtoReflect.Descriptor instead.
 func (*ProductCategoriesWithoutSubcategories) Descriptor() ([]byte, []int) {
-	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{5}
+	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ProductCategoriesWithoutSubcategories) GetCategories() []*ProductCategoryWithoutSubcategories {
@@ -358,11 +650,21 @@ const file_products_v1_product_categories_proto_rawDesc = "" +
 	"attributes\x1ag\n" +
 	"\x0fAttributesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12>\n" +
-	"\x05value\x18\x02 \x01(\v2(.products.v1.ProductSubcategoryAttributeR\x05value:\x028\x01\"p\n" +
+	"\x05value\x18\x02 \x01(\v2(.products.v1.ProductSubcategoryAttributeR\x05value:\x028\x01\"\xb9\x01\n" +
 	"\x1bProductSubcategoryAttribute\x12\x1a\n" +
 	"\brequired\x18\x01 \x01(\bR\brequired\x12\x12\n" +
 	"\x04type\x18\x02 \x01(\tR\x04type\x12!\n" +
-	"\fstring_array\x18\x03 \x03(\tR\vstringArray\"Q\n" +
+	"\fstring_array\x18\x03 \x03(\tR\vstringArray\x12G\n" +
+	"\n" +
+	"validation\x18\x04 \x01(\v2'.products.v1.ProductAttributeValidationR\n" +
+	"validation\"s\n" +
+	"\x1aProductAttributeValidation\x12?\n" +
+	"\x04type\x18\x01 \x01(\x0e2+.products.v1.ProductAttributeValidationTypeR\x04type\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value\"k\n" +
+	"!ProductAttributeValidationNumeric\x12F\n" +
+	"\x04rule\x18\x01 \x01(\x0e22.products.v1.ProductAttributeNumericValidationRuleR\x04rule\"j\n" +
+	" ProductAttributeValidationString\x12F\n" +
+	"\x04rule\x18\x01 \x01(\x0e22.products.v1.ProductAttributeNumericValidationRuleR\x04rule\"Q\n" +
 	"\x11ProductCategories\x12<\n" +
 	"\n" +
 	"categories\x18\x01 \x03(\v2\x1c.products.v1.ProductCategoryR\n" +
@@ -373,7 +675,18 @@ const file_products_v1_product_categories_proto_rawDesc = "" +
 	"%ProductCategoriesWithoutSubcategories\x12P\n" +
 	"\n" +
 	"categories\x18\x01 \x03(\v20.products.v1.ProductCategoryWithoutSubcategoriesR\n" +
-	"categoriesB\x80\x01\n" +
+	"categories*}\n" +
+	"\x1eProductAttributeValidationType\x12-\n" +
+	")PRODUCT_ATTRIBUTE_VALIDATION_TYPE_NUMERIC\x10\x00\x12,\n" +
+	"(PRODUCT_ATTRIBUTE_VALIDATION_TYPE_STRING\x10\x01*\x81\x02\n" +
+	"%ProductAttributeNumericValidationRule\x121\n" +
+	"-PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN\x10\x00\x121\n" +
+	"-PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX\x10\x01\x129\n" +
+	"5PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_BIGGER_THAN\x10\x02\x127\n" +
+	"3PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LESS_THAN\x10\x03*\x8a\x01\n" +
+	"$ProductAttributeStringValidationRule\x120\n" +
+	",PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN\x10\x00\x120\n" +
+	",PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX\x10\x01B\x80\x01\n" +
 	"\x1corg.megacommerce.products.v1B\x16ProductCategoriesProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
@@ -388,27 +701,38 @@ func file_products_v1_product_categories_proto_rawDescGZIP() []byte {
 	return file_products_v1_product_categories_proto_rawDescData
 }
 
-var file_products_v1_product_categories_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_products_v1_product_categories_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
+var file_products_v1_product_categories_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_products_v1_product_categories_proto_goTypes = []any{
-	(*ProductCategory)(nil),                       // 0: products.v1.ProductCategory
-	(*ProductSubcategory)(nil),                    // 1: products.v1.ProductSubcategory
-	(*ProductSubcategoryAttribute)(nil),           // 2: products.v1.ProductSubcategoryAttribute
-	(*ProductCategories)(nil),                     // 3: products.v1.ProductCategories
-	(*ProductCategoryWithoutSubcategories)(nil),   // 4: products.v1.ProductCategoryWithoutSubcategories
-	(*ProductCategoriesWithoutSubcategories)(nil), // 5: products.v1.ProductCategoriesWithoutSubcategories
-	nil, // 6: products.v1.ProductSubcategory.AttributesEntry
+	(ProductAttributeValidationType)(0),           // 0: products.v1.ProductAttributeValidationType
+	(ProductAttributeNumericValidationRule)(0),    // 1: products.v1.ProductAttributeNumericValidationRule
+	(ProductAttributeStringValidationRule)(0),     // 2: products.v1.ProductAttributeStringValidationRule
+	(*ProductCategory)(nil),                       // 3: products.v1.ProductCategory
+	(*ProductSubcategory)(nil),                    // 4: products.v1.ProductSubcategory
+	(*ProductSubcategoryAttribute)(nil),           // 5: products.v1.ProductSubcategoryAttribute
+	(*ProductAttributeValidation)(nil),            // 6: products.v1.ProductAttributeValidation
+	(*ProductAttributeValidationNumeric)(nil),     // 7: products.v1.ProductAttributeValidationNumeric
+	(*ProductAttributeValidationString)(nil),      // 8: products.v1.ProductAttributeValidationString
+	(*ProductCategories)(nil),                     // 9: products.v1.ProductCategories
+	(*ProductCategoryWithoutSubcategories)(nil),   // 10: products.v1.ProductCategoryWithoutSubcategories
+	(*ProductCategoriesWithoutSubcategories)(nil), // 11: products.v1.ProductCategoriesWithoutSubcategories
+	nil, // 12: products.v1.ProductSubcategory.AttributesEntry
 }
 var file_products_v1_product_categories_proto_depIdxs = []int32{
-	1, // 0: products.v1.ProductCategory.subcategories:type_name -> products.v1.ProductSubcategory
-	6, // 1: products.v1.ProductSubcategory.attributes:type_name -> products.v1.ProductSubcategory.AttributesEntry
-	0, // 2: products.v1.ProductCategories.categories:type_name -> products.v1.ProductCategory
-	4, // 3: products.v1.ProductCategoriesWithoutSubcategories.categories:type_name -> products.v1.ProductCategoryWithoutSubcategories
-	2, // 4: products.v1.ProductSubcategory.AttributesEntry.value:type_name -> products.v1.ProductSubcategoryAttribute
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	4,  // 0: products.v1.ProductCategory.subcategories:type_name -> products.v1.ProductSubcategory
+	12, // 1: products.v1.ProductSubcategory.attributes:type_name -> products.v1.ProductSubcategory.AttributesEntry
+	6,  // 2: products.v1.ProductSubcategoryAttribute.validation:type_name -> products.v1.ProductAttributeValidation
+	0,  // 3: products.v1.ProductAttributeValidation.type:type_name -> products.v1.ProductAttributeValidationType
+	1,  // 4: products.v1.ProductAttributeValidationNumeric.rule:type_name -> products.v1.ProductAttributeNumericValidationRule
+	1,  // 5: products.v1.ProductAttributeValidationString.rule:type_name -> products.v1.ProductAttributeNumericValidationRule
+	3,  // 6: products.v1.ProductCategories.categories:type_name -> products.v1.ProductCategory
+	10, // 7: products.v1.ProductCategoriesWithoutSubcategories.categories:type_name -> products.v1.ProductCategoryWithoutSubcategories
+	5,  // 8: products.v1.ProductSubcategory.AttributesEntry.value:type_name -> products.v1.ProductSubcategoryAttribute
+	9,  // [9:9] is the sub-list for method output_type
+	9,  // [9:9] is the sub-list for method input_type
+	9,  // [9:9] is the sub-list for extension type_name
+	9,  // [9:9] is the sub-list for extension extendee
+	0,  // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_products_v1_product_categories_proto_init() }
@@ -421,13 +745,14 @@ func file_products_v1_product_categories_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_products_v1_product_categories_proto_rawDesc), len(file_products_v1_product_categories_proto_rawDesc)),
-			NumEnums:      0,
-			NumMessages:   7,
+			NumEnums:      3,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_products_v1_product_categories_proto_goTypes,
 		DependencyIndexes: file_products_v1_product_categories_proto_depIdxs,
+		EnumInfos:         file_products_v1_product_categories_proto_enumTypes,
 		MessageInfos:      file_products_v1_product_categories_proto_msgTypes,
 	}.Build()
 	File_products_v1_product_categories_proto = out.File

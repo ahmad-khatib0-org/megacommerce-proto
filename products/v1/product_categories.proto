@@ -23,7 +23,40 @@ message ProductSubcategoryAttribute {
   bool required = 1;
   string type = 2;
   repeated string string_array = 3;
+  ProductAttributeValidation validation = 4;
 }
+
+message ProductAttributeValidation {
+  ProductAttributeValidationType type = 1;
+  string value = 2; // can be integer, float, string ...
+}
+
+enum ProductAttributeValidationType {
+  PRODUCT_ATTRIBUTE_VALIDATION_TYPE_NUMERIC = 0;
+  PRODUCT_ATTRIBUTE_VALIDATION_TYPE_STRING = 1;
+}
+
+message ProductAttributeValidationNumeric {
+  ProductAttributeNumericValidationRule rule = 1;
+}
+
+enum ProductAttributeNumericValidationRule {
+  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN = 0;
+  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX = 1;
+  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_BIGGER_THAN = 2;
+  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LESS_THAN = 3;
+}
+
+message ProductAttributeValidationString {
+  ProductAttributeNumericValidationRule rule = 1;
+}
+
+enum ProductAttributeStringValidationRule {
+  PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN = 0;
+  PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX = 1;
+}
+
+// not related to database
 
 message ProductCategories {
   repeated ProductCategory categories = 1;

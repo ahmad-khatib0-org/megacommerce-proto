@@ -32,6 +32,7 @@
 #include "google/protobuf/map_type_handler.h"  // IWYU pragma: export
 #include "google/protobuf/map_entry.h"
 #include "google/protobuf/map_field.h"
+#include "google/protobuf/generated_enum_reflection.h"
 #include "google/protobuf/unknown_field_set.h"
 // @@protoc_insertion_point(includes)
 
@@ -58,6 +59,24 @@ extern const ::google::protobuf::internal::DescriptorTable descriptor_table_prod
 }  // extern "C"
 namespace products {
 namespace v1 {
+enum ProductAttributeNumericValidationRule : int;
+extern const uint32_t ProductAttributeNumericValidationRule_internal_data_[];
+enum ProductAttributeStringValidationRule : int;
+extern const uint32_t ProductAttributeStringValidationRule_internal_data_[];
+enum ProductAttributeValidationType : int;
+extern const uint32_t ProductAttributeValidationType_internal_data_[];
+class ProductAttributeValidation;
+struct ProductAttributeValidationDefaultTypeInternal;
+extern ProductAttributeValidationDefaultTypeInternal _ProductAttributeValidation_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull ProductAttributeValidation_class_data_;
+class ProductAttributeValidationNumeric;
+struct ProductAttributeValidationNumericDefaultTypeInternal;
+extern ProductAttributeValidationNumericDefaultTypeInternal _ProductAttributeValidationNumeric_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull ProductAttributeValidationNumeric_class_data_;
+class ProductAttributeValidationString;
+struct ProductAttributeValidationStringDefaultTypeInternal;
+extern ProductAttributeValidationStringDefaultTypeInternal _ProductAttributeValidationString_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull ProductAttributeValidationString_class_data_;
 class ProductCategories;
 struct ProductCategoriesDefaultTypeInternal;
 extern ProductCategoriesDefaultTypeInternal _ProductCategories_default_instance_;
@@ -90,247 +109,134 @@ extern const ::google::protobuf::internal::ClassDataFull ProductSubcategory_Attr
 }  // namespace products
 namespace google {
 namespace protobuf {
+template <>
+internal::EnumTraitsT<::products::v1::ProductAttributeNumericValidationRule_internal_data_>
+    internal::EnumTraitsImpl::value<::products::v1::ProductAttributeNumericValidationRule>;
+template <>
+internal::EnumTraitsT<::products::v1::ProductAttributeStringValidationRule_internal_data_>
+    internal::EnumTraitsImpl::value<::products::v1::ProductAttributeStringValidationRule>;
+template <>
+internal::EnumTraitsT<::products::v1::ProductAttributeValidationType_internal_data_>
+    internal::EnumTraitsImpl::value<::products::v1::ProductAttributeValidationType>;
 }  // namespace protobuf
 }  // namespace google
 
 namespace products {
 namespace v1 {
+enum ProductAttributeValidationType : int {
+  PRODUCT_ATTRIBUTE_VALIDATION_TYPE_NUMERIC = 0,
+  PRODUCT_ATTRIBUTE_VALIDATION_TYPE_STRING = 1,
+  ProductAttributeValidationType_INT_MIN_SENTINEL_DO_NOT_USE_ =
+      ::std::numeric_limits<::int32_t>::min(),
+  ProductAttributeValidationType_INT_MAX_SENTINEL_DO_NOT_USE_ =
+      ::std::numeric_limits<::int32_t>::max(),
+};
+
+extern const uint32_t ProductAttributeValidationType_internal_data_[];
+inline constexpr ProductAttributeValidationType ProductAttributeValidationType_MIN =
+    static_cast<ProductAttributeValidationType>(0);
+inline constexpr ProductAttributeValidationType ProductAttributeValidationType_MAX =
+    static_cast<ProductAttributeValidationType>(1);
+inline bool ProductAttributeValidationType_IsValid(int value) {
+  return 0 <= value && value <= 1;
+}
+inline constexpr int ProductAttributeValidationType_ARRAYSIZE = 1 + 1;
+const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL ProductAttributeValidationType_descriptor();
+template <typename T>
+const ::std::string& ProductAttributeValidationType_Name(T value) {
+  static_assert(::std::is_same<T, ProductAttributeValidationType>::value ||
+                    ::std::is_integral<T>::value,
+                "Incorrect type passed to ProductAttributeValidationType_Name().");
+  return ProductAttributeValidationType_Name(static_cast<ProductAttributeValidationType>(value));
+}
+template <>
+inline const ::std::string& ProductAttributeValidationType_Name(ProductAttributeValidationType value) {
+  return ::google::protobuf::internal::NameOfDenseEnum<ProductAttributeValidationType_descriptor, 0, 1>(
+      static_cast<int>(value));
+}
+inline bool ProductAttributeValidationType_Parse(
+    ::absl::string_view name, ProductAttributeValidationType* PROTOBUF_NONNULL value) {
+  return ::google::protobuf::internal::ParseNamedEnum<ProductAttributeValidationType>(ProductAttributeValidationType_descriptor(), name,
+                                           value);
+}
+enum ProductAttributeNumericValidationRule : int {
+  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN = 0,
+  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX = 1,
+  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_BIGGER_THAN = 2,
+  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LESS_THAN = 3,
+  ProductAttributeNumericValidationRule_INT_MIN_SENTINEL_DO_NOT_USE_ =
+      ::std::numeric_limits<::int32_t>::min(),
+  ProductAttributeNumericValidationRule_INT_MAX_SENTINEL_DO_NOT_USE_ =
+      ::std::numeric_limits<::int32_t>::max(),
+};
+
+extern const uint32_t ProductAttributeNumericValidationRule_internal_data_[];
+inline constexpr ProductAttributeNumericValidationRule ProductAttributeNumericValidationRule_MIN =
+    static_cast<ProductAttributeNumericValidationRule>(0);
+inline constexpr ProductAttributeNumericValidationRule ProductAttributeNumericValidationRule_MAX =
+    static_cast<ProductAttributeNumericValidationRule>(3);
+inline bool ProductAttributeNumericValidationRule_IsValid(int value) {
+  return 0 <= value && value <= 3;
+}
+inline constexpr int ProductAttributeNumericValidationRule_ARRAYSIZE = 3 + 1;
+const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL ProductAttributeNumericValidationRule_descriptor();
+template <typename T>
+const ::std::string& ProductAttributeNumericValidationRule_Name(T value) {
+  static_assert(::std::is_same<T, ProductAttributeNumericValidationRule>::value ||
+                    ::std::is_integral<T>::value,
+                "Incorrect type passed to ProductAttributeNumericValidationRule_Name().");
+  return ProductAttributeNumericValidationRule_Name(static_cast<ProductAttributeNumericValidationRule>(value));
+}
+template <>
+inline const ::std::string& ProductAttributeNumericValidationRule_Name(ProductAttributeNumericValidationRule value) {
+  return ::google::protobuf::internal::NameOfDenseEnum<ProductAttributeNumericValidationRule_descriptor, 0, 3>(
+      static_cast<int>(value));
+}
+inline bool ProductAttributeNumericValidationRule_Parse(
+    ::absl::string_view name, ProductAttributeNumericValidationRule* PROTOBUF_NONNULL value) {
+  return ::google::protobuf::internal::ParseNamedEnum<ProductAttributeNumericValidationRule>(ProductAttributeNumericValidationRule_descriptor(), name,
+                                           value);
+}
+enum ProductAttributeStringValidationRule : int {
+  PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN = 0,
+  PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX = 1,
+  ProductAttributeStringValidationRule_INT_MIN_SENTINEL_DO_NOT_USE_ =
+      ::std::numeric_limits<::int32_t>::min(),
+  ProductAttributeStringValidationRule_INT_MAX_SENTINEL_DO_NOT_USE_ =
+      ::std::numeric_limits<::int32_t>::max(),
+};
+
+extern const uint32_t ProductAttributeStringValidationRule_internal_data_[];
+inline constexpr ProductAttributeStringValidationRule ProductAttributeStringValidationRule_MIN =
+    static_cast<ProductAttributeStringValidationRule>(0);
+inline constexpr ProductAttributeStringValidationRule ProductAttributeStringValidationRule_MAX =
+    static_cast<ProductAttributeStringValidationRule>(1);
+inline bool ProductAttributeStringValidationRule_IsValid(int value) {
+  return 0 <= value && value <= 1;
+}
+inline constexpr int ProductAttributeStringValidationRule_ARRAYSIZE = 1 + 1;
+const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL ProductAttributeStringValidationRule_descriptor();
+template <typename T>
+const ::std::string& ProductAttributeStringValidationRule_Name(T value) {
+  static_assert(::std::is_same<T, ProductAttributeStringValidationRule>::value ||
+                    ::std::is_integral<T>::value,
+                "Incorrect type passed to ProductAttributeStringValidationRule_Name().");
+  return ProductAttributeStringValidationRule_Name(static_cast<ProductAttributeStringValidationRule>(value));
+}
+template <>
+inline const ::std::string& ProductAttributeStringValidationRule_Name(ProductAttributeStringValidationRule value) {
+  return ::google::protobuf::internal::NameOfDenseEnum<ProductAttributeStringValidationRule_descriptor, 0, 1>(
+      static_cast<int>(value));
+}
+inline bool ProductAttributeStringValidationRule_Parse(
+    ::absl::string_view name, ProductAttributeStringValidationRule* PROTOBUF_NONNULL value) {
+  return ::google::protobuf::internal::ParseNamedEnum<ProductAttributeStringValidationRule>(ProductAttributeStringValidationRule_descriptor(), name,
+                                           value);
+}
 
 // ===================================================================
 
 
-// -------------------------------------------------------------------
-
-class ProductSubcategoryAttribute final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:products.v1.ProductSubcategoryAttribute) */ {
- public:
-  inline ProductSubcategoryAttribute() : ProductSubcategoryAttribute(nullptr) {}
-  ~ProductSubcategoryAttribute() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(ProductSubcategoryAttribute* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(ProductSubcategoryAttribute));
-  }
-#endif
-
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR ProductSubcategoryAttribute(::google::protobuf::internal::ConstantInitialized);
-
-  inline ProductSubcategoryAttribute(const ProductSubcategoryAttribute& from) : ProductSubcategoryAttribute(nullptr, from) {}
-  inline ProductSubcategoryAttribute(ProductSubcategoryAttribute&& from) noexcept
-      : ProductSubcategoryAttribute(nullptr, ::std::move(from)) {}
-  inline ProductSubcategoryAttribute& operator=(const ProductSubcategoryAttribute& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline ProductSubcategoryAttribute& operator=(ProductSubcategoryAttribute&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const ProductSubcategoryAttribute& default_instance() {
-    return *reinterpret_cast<const ProductSubcategoryAttribute*>(
-        &_ProductSubcategoryAttribute_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 3;
-  friend void swap(ProductSubcategoryAttribute& a, ProductSubcategoryAttribute& b) { a.Swap(&b); }
-  inline void Swap(ProductSubcategoryAttribute* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(ProductSubcategoryAttribute* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  ProductSubcategoryAttribute* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<ProductSubcategoryAttribute>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const ProductSubcategoryAttribute& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const ProductSubcategoryAttribute& from) { ProductSubcategoryAttribute::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
-                        const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
-
-  public:
-  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  ::size_t ByteSizeLong() const final;
-  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(ProductSubcategoryAttribute* PROTOBUF_NONNULL other);
- private:
-  template <typename T>
-  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() { return "products.v1.ProductSubcategoryAttribute"; }
-
- protected:
-  explicit ProductSubcategoryAttribute(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  ProductSubcategoryAttribute(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ProductSubcategoryAttribute& from);
-  ProductSubcategoryAttribute(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ProductSubcategoryAttribute&& from) noexcept
-      : ProductSubcategoryAttribute(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-
- public:
-  static constexpr auto InternalGenerateClassData_();
-
-  ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kStringArrayFieldNumber = 3,
-    kTypeFieldNumber = 2,
-    kRequiredFieldNumber = 1,
-  };
-  // repeated string string_array = 3 [json_name = "stringArray"];
-  int string_array_size() const;
-  private:
-  int _internal_string_array_size() const;
-
-  public:
-  void clear_string_array() ;
-  const ::std::string& string_array(int index) const;
-  ::std::string* PROTOBUF_NONNULL mutable_string_array(int index);
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_string_array(int index, Arg_&& value, Args_... args);
-  ::std::string* PROTOBUF_NONNULL add_string_array();
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void add_string_array(Arg_&& value, Args_... args);
-  const ::google::protobuf::RepeatedPtrField<::std::string>& string_array() const;
-  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL mutable_string_array();
-
-  private:
-  const ::google::protobuf::RepeatedPtrField<::std::string>& _internal_string_array() const;
-  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL _internal_mutable_string_array();
-
-  public:
-  // string type = 2 [json_name = "type"];
-  void clear_type() ;
-  const ::std::string& type() const;
-  template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_type(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_type();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_type();
-  void set_allocated_type(::std::string* PROTOBUF_NULLABLE value);
-
-  private:
-  const ::std::string& _internal_type() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_type(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_type();
-
-  public:
-  // bool required = 1 [json_name = "required"];
-  void clear_required() ;
-  bool required() const;
-  void set_required(bool value);
-
-  private:
-  bool _internal_required() const;
-  void _internal_set_required(bool value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:products.v1.ProductSubcategoryAttribute)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<2, 3,
-                                   0, 64,
-                                   2>
-      _table_;
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const ProductSubcategoryAttribute& from_msg);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::RepeatedPtrField<::std::string> string_array_;
-    ::google::protobuf::internal::ArenaStringPtr type_;
-    bool required_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_products_2fv1_2fproduct_5fcategories_2eproto;
-};
-
-extern const ::google::protobuf::internal::ClassDataFull ProductSubcategoryAttribute_class_data_;
 // -------------------------------------------------------------------
 
 class ProductCategoryWithoutSubcategories final : public ::google::protobuf::Message
@@ -388,7 +294,7 @@ class ProductCategoryWithoutSubcategories final : public ::google::protobuf::Mes
     return *reinterpret_cast<const ProductCategoryWithoutSubcategories*>(
         &_ProductCategoryWithoutSubcategories_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 5;
+  static constexpr int kIndexInFileMessages = 8;
   friend void swap(ProductCategoryWithoutSubcategories& a, ProductCategoryWithoutSubcategories& b) { a.Swap(&b); }
   inline void Swap(ProductCategoryWithoutSubcategories* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -546,43 +452,843 @@ class ProductCategoryWithoutSubcategories final : public ::google::protobuf::Mes
 extern const ::google::protobuf::internal::ClassDataFull ProductCategoryWithoutSubcategories_class_data_;
 // -------------------------------------------------------------------
 
-class ProductSubcategory_AttributesEntry_DoNotUse final
-    : public ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
-                             ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-                             ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE> {
+class ProductAttributeValidationString final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:products.v1.ProductAttributeValidationString) */ {
  public:
-  using SuperType =
-      ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
-                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-                      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE>;
-  ProductSubcategory_AttributesEntry_DoNotUse();
+  inline ProductAttributeValidationString() : ProductAttributeValidationString(nullptr) {}
+  ~ProductAttributeValidationString() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(ProductAttributeValidationString* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(ProductAttributeValidationString));
+  }
+#endif
+
   template <typename = void>
-  explicit PROTOBUF_CONSTEXPR ProductSubcategory_AttributesEntry_DoNotUse(::google::protobuf::internal::ConstantInitialized);
-  explicit ProductSubcategory_AttributesEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr const void* PROTOBUF_NONNULL internal_default_instance() {
-    return &_ProductSubcategory_AttributesEntry_DoNotUse_default_instance_;
+  explicit PROTOBUF_CONSTEXPR ProductAttributeValidationString(::google::protobuf::internal::ConstantInitialized);
+
+  inline ProductAttributeValidationString(const ProductAttributeValidationString& from) : ProductAttributeValidationString(nullptr, from) {}
+  inline ProductAttributeValidationString(ProductAttributeValidationString&& from) noexcept
+      : ProductAttributeValidationString(nullptr, ::std::move(from)) {}
+  inline ProductAttributeValidationString& operator=(const ProductAttributeValidationString& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ProductAttributeValidationString& operator=(ProductAttributeValidationString&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
   }
 
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
 
-  static constexpr auto InternalGenerateClassData_();
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ProductAttributeValidationString& default_instance() {
+    return *reinterpret_cast<const ProductAttributeValidationString*>(
+        &_ProductAttributeValidationString_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 6;
+  friend void swap(ProductAttributeValidationString& a, ProductAttributeValidationString& b) { a.Swap(&b); }
+  inline void Swap(ProductAttributeValidationString* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ProductAttributeValidationString* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
 
+  // implements Message ----------------------------------------------
+
+  ProductAttributeValidationString* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<ProductAttributeValidationString>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const ProductAttributeValidationString& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const ProductAttributeValidationString& from) { ProductAttributeValidationString::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(ProductAttributeValidationString* PROTOBUF_NONNULL other);
  private:
-  friend class ::google::protobuf::MessageLite;
-  friend struct ::TableStruct_products_2fv1_2fproduct_5fcategories_2eproto;
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "products.v1.ProductAttributeValidationString"; }
 
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<1, 2,
-                                   1, 58,
-                                   2>
-      _table_;
-
+ protected:
+  explicit ProductAttributeValidationString(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  ProductAttributeValidationString(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ProductAttributeValidationString& from);
+  ProductAttributeValidationString(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ProductAttributeValidationString&& from) noexcept
+      : ProductAttributeValidationString(arena) {
+    *this = ::std::move(from);
+  }
   const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
   static void* PROTOBUF_NONNULL PlacementNew_(
       const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
       ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kRuleFieldNumber = 1,
+  };
+  // .products.v1.ProductAttributeNumericValidationRule rule = 1 [json_name = "rule"];
+  void clear_rule() ;
+  ::products::v1::ProductAttributeNumericValidationRule rule() const;
+  void set_rule(::products::v1::ProductAttributeNumericValidationRule value);
+
+  private:
+  ::products::v1::ProductAttributeNumericValidationRule _internal_rule() const;
+  void _internal_set_rule(::products::v1::ProductAttributeNumericValidationRule value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:products.v1.ProductAttributeValidationString)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<0, 1,
+                                   0, 0,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const ProductAttributeValidationString& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    int rule_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_products_2fv1_2fproduct_5fcategories_2eproto;
 };
-extern const ::google::protobuf::internal::ClassDataFull ProductSubcategory_AttributesEntry_DoNotUse_class_data_;
+
+extern const ::google::protobuf::internal::ClassDataFull ProductAttributeValidationString_class_data_;
+// -------------------------------------------------------------------
+
+class ProductAttributeValidationNumeric final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:products.v1.ProductAttributeValidationNumeric) */ {
+ public:
+  inline ProductAttributeValidationNumeric() : ProductAttributeValidationNumeric(nullptr) {}
+  ~ProductAttributeValidationNumeric() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(ProductAttributeValidationNumeric* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(ProductAttributeValidationNumeric));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR ProductAttributeValidationNumeric(::google::protobuf::internal::ConstantInitialized);
+
+  inline ProductAttributeValidationNumeric(const ProductAttributeValidationNumeric& from) : ProductAttributeValidationNumeric(nullptr, from) {}
+  inline ProductAttributeValidationNumeric(ProductAttributeValidationNumeric&& from) noexcept
+      : ProductAttributeValidationNumeric(nullptr, ::std::move(from)) {}
+  inline ProductAttributeValidationNumeric& operator=(const ProductAttributeValidationNumeric& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ProductAttributeValidationNumeric& operator=(ProductAttributeValidationNumeric&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ProductAttributeValidationNumeric& default_instance() {
+    return *reinterpret_cast<const ProductAttributeValidationNumeric*>(
+        &_ProductAttributeValidationNumeric_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 5;
+  friend void swap(ProductAttributeValidationNumeric& a, ProductAttributeValidationNumeric& b) { a.Swap(&b); }
+  inline void Swap(ProductAttributeValidationNumeric* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ProductAttributeValidationNumeric* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ProductAttributeValidationNumeric* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<ProductAttributeValidationNumeric>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const ProductAttributeValidationNumeric& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const ProductAttributeValidationNumeric& from) { ProductAttributeValidationNumeric::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(ProductAttributeValidationNumeric* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "products.v1.ProductAttributeValidationNumeric"; }
+
+ protected:
+  explicit ProductAttributeValidationNumeric(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  ProductAttributeValidationNumeric(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ProductAttributeValidationNumeric& from);
+  ProductAttributeValidationNumeric(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ProductAttributeValidationNumeric&& from) noexcept
+      : ProductAttributeValidationNumeric(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kRuleFieldNumber = 1,
+  };
+  // .products.v1.ProductAttributeNumericValidationRule rule = 1 [json_name = "rule"];
+  void clear_rule() ;
+  ::products::v1::ProductAttributeNumericValidationRule rule() const;
+  void set_rule(::products::v1::ProductAttributeNumericValidationRule value);
+
+  private:
+  ::products::v1::ProductAttributeNumericValidationRule _internal_rule() const;
+  void _internal_set_rule(::products::v1::ProductAttributeNumericValidationRule value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:products.v1.ProductAttributeValidationNumeric)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<0, 1,
+                                   0, 0,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const ProductAttributeValidationNumeric& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    int rule_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_products_2fv1_2fproduct_5fcategories_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull ProductAttributeValidationNumeric_class_data_;
+// -------------------------------------------------------------------
+
+class ProductAttributeValidation final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:products.v1.ProductAttributeValidation) */ {
+ public:
+  inline ProductAttributeValidation() : ProductAttributeValidation(nullptr) {}
+  ~ProductAttributeValidation() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(ProductAttributeValidation* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(ProductAttributeValidation));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR ProductAttributeValidation(::google::protobuf::internal::ConstantInitialized);
+
+  inline ProductAttributeValidation(const ProductAttributeValidation& from) : ProductAttributeValidation(nullptr, from) {}
+  inline ProductAttributeValidation(ProductAttributeValidation&& from) noexcept
+      : ProductAttributeValidation(nullptr, ::std::move(from)) {}
+  inline ProductAttributeValidation& operator=(const ProductAttributeValidation& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ProductAttributeValidation& operator=(ProductAttributeValidation&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ProductAttributeValidation& default_instance() {
+    return *reinterpret_cast<const ProductAttributeValidation*>(
+        &_ProductAttributeValidation_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 4;
+  friend void swap(ProductAttributeValidation& a, ProductAttributeValidation& b) { a.Swap(&b); }
+  inline void Swap(ProductAttributeValidation* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ProductAttributeValidation* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ProductAttributeValidation* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<ProductAttributeValidation>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const ProductAttributeValidation& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const ProductAttributeValidation& from) { ProductAttributeValidation::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(ProductAttributeValidation* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "products.v1.ProductAttributeValidation"; }
+
+ protected:
+  explicit ProductAttributeValidation(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  ProductAttributeValidation(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ProductAttributeValidation& from);
+  ProductAttributeValidation(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ProductAttributeValidation&& from) noexcept
+      : ProductAttributeValidation(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kValueFieldNumber = 2,
+    kTypeFieldNumber = 1,
+  };
+  // string value = 2 [json_name = "value"];
+  void clear_value() ;
+  const ::std::string& value() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_value(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_value();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_value();
+  void set_allocated_value(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_value() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_value(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_value();
+
+  public:
+  // .products.v1.ProductAttributeValidationType type = 1 [json_name = "type"];
+  void clear_type() ;
+  ::products::v1::ProductAttributeValidationType type() const;
+  void set_type(::products::v1::ProductAttributeValidationType value);
+
+  private:
+  ::products::v1::ProductAttributeValidationType _internal_type() const;
+  void _internal_set_type(::products::v1::ProductAttributeValidationType value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:products.v1.ProductAttributeValidation)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<1, 2,
+                                   0, 52,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const ProductAttributeValidation& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr value_;
+    int type_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_products_2fv1_2fproduct_5fcategories_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull ProductAttributeValidation_class_data_;
+// -------------------------------------------------------------------
+
+class ProductSubcategoryAttribute final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:products.v1.ProductSubcategoryAttribute) */ {
+ public:
+  inline ProductSubcategoryAttribute() : ProductSubcategoryAttribute(nullptr) {}
+  ~ProductSubcategoryAttribute() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(ProductSubcategoryAttribute* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(ProductSubcategoryAttribute));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR ProductSubcategoryAttribute(::google::protobuf::internal::ConstantInitialized);
+
+  inline ProductSubcategoryAttribute(const ProductSubcategoryAttribute& from) : ProductSubcategoryAttribute(nullptr, from) {}
+  inline ProductSubcategoryAttribute(ProductSubcategoryAttribute&& from) noexcept
+      : ProductSubcategoryAttribute(nullptr, ::std::move(from)) {}
+  inline ProductSubcategoryAttribute& operator=(const ProductSubcategoryAttribute& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ProductSubcategoryAttribute& operator=(ProductSubcategoryAttribute&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ProductSubcategoryAttribute& default_instance() {
+    return *reinterpret_cast<const ProductSubcategoryAttribute*>(
+        &_ProductSubcategoryAttribute_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 3;
+  friend void swap(ProductSubcategoryAttribute& a, ProductSubcategoryAttribute& b) { a.Swap(&b); }
+  inline void Swap(ProductSubcategoryAttribute* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ProductSubcategoryAttribute* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ProductSubcategoryAttribute* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<ProductSubcategoryAttribute>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const ProductSubcategoryAttribute& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const ProductSubcategoryAttribute& from) { ProductSubcategoryAttribute::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(ProductSubcategoryAttribute* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "products.v1.ProductSubcategoryAttribute"; }
+
+ protected:
+  explicit ProductSubcategoryAttribute(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  ProductSubcategoryAttribute(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ProductSubcategoryAttribute& from);
+  ProductSubcategoryAttribute(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ProductSubcategoryAttribute&& from) noexcept
+      : ProductSubcategoryAttribute(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kStringArrayFieldNumber = 3,
+    kTypeFieldNumber = 2,
+    kValidationFieldNumber = 4,
+    kRequiredFieldNumber = 1,
+  };
+  // repeated string string_array = 3 [json_name = "stringArray"];
+  int string_array_size() const;
+  private:
+  int _internal_string_array_size() const;
+
+  public:
+  void clear_string_array() ;
+  const ::std::string& string_array(int index) const;
+  ::std::string* PROTOBUF_NONNULL mutable_string_array(int index);
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_string_array(int index, Arg_&& value, Args_... args);
+  ::std::string* PROTOBUF_NONNULL add_string_array();
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void add_string_array(Arg_&& value, Args_... args);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& string_array() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL mutable_string_array();
+
+  private:
+  const ::google::protobuf::RepeatedPtrField<::std::string>& _internal_string_array() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL _internal_mutable_string_array();
+
+  public:
+  // string type = 2 [json_name = "type"];
+  void clear_type() ;
+  const ::std::string& type() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_type(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_type();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_type();
+  void set_allocated_type(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_type() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_type(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_type();
+
+  public:
+  // .products.v1.ProductAttributeValidation validation = 4 [json_name = "validation"];
+  bool has_validation() const;
+  void clear_validation() ;
+  const ::products::v1::ProductAttributeValidation& validation() const;
+  [[nodiscard]] ::products::v1::ProductAttributeValidation* PROTOBUF_NULLABLE release_validation();
+  ::products::v1::ProductAttributeValidation* PROTOBUF_NONNULL mutable_validation();
+  void set_allocated_validation(::products::v1::ProductAttributeValidation* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_validation(::products::v1::ProductAttributeValidation* PROTOBUF_NULLABLE value);
+  ::products::v1::ProductAttributeValidation* PROTOBUF_NULLABLE unsafe_arena_release_validation();
+
+  private:
+  const ::products::v1::ProductAttributeValidation& _internal_validation() const;
+  ::products::v1::ProductAttributeValidation* PROTOBUF_NONNULL _internal_mutable_validation();
+
+  public:
+  // bool required = 1 [json_name = "required"];
+  void clear_required() ;
+  bool required() const;
+  void set_required(bool value);
+
+  private:
+  bool _internal_required() const;
+  void _internal_set_required(bool value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:products.v1.ProductSubcategoryAttribute)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<2, 4,
+                                   1, 64,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const ProductSubcategoryAttribute& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::RepeatedPtrField<::std::string> string_array_;
+    ::google::protobuf::internal::ArenaStringPtr type_;
+    ::products::v1::ProductAttributeValidation* PROTOBUF_NULLABLE validation_;
+    bool required_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_products_2fv1_2fproduct_5fcategories_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull ProductSubcategoryAttribute_class_data_;
 // -------------------------------------------------------------------
 
 class ProductCategoriesWithoutSubcategories final : public ::google::protobuf::Message
@@ -640,7 +1346,7 @@ class ProductCategoriesWithoutSubcategories final : public ::google::protobuf::M
     return *reinterpret_cast<const ProductCategoriesWithoutSubcategories*>(
         &_ProductCategoriesWithoutSubcategories_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 6;
+  static constexpr int kIndexInFileMessages = 9;
   friend void swap(ProductCategoriesWithoutSubcategories& a, ProductCategoriesWithoutSubcategories& b) { a.Swap(&b); }
   inline void Swap(ProductCategoriesWithoutSubcategories* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -780,6 +1486,45 @@ class ProductCategoriesWithoutSubcategories final : public ::google::protobuf::M
 };
 
 extern const ::google::protobuf::internal::ClassDataFull ProductCategoriesWithoutSubcategories_class_data_;
+// -------------------------------------------------------------------
+
+class ProductSubcategory_AttributesEntry_DoNotUse final
+    : public ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
+                             ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+                             ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE> {
+ public:
+  using SuperType =
+      ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE>;
+  ProductSubcategory_AttributesEntry_DoNotUse();
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR ProductSubcategory_AttributesEntry_DoNotUse(::google::protobuf::internal::ConstantInitialized);
+  explicit ProductSubcategory_AttributesEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr const void* PROTOBUF_NONNULL internal_default_instance() {
+    return &_ProductSubcategory_AttributesEntry_DoNotUse_default_instance_;
+  }
+
+
+  static constexpr auto InternalGenerateClassData_();
+
+ private:
+  friend class ::google::protobuf::MessageLite;
+  friend struct ::TableStruct_products_2fv1_2fproduct_5fcategories_2eproto;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<1, 2,
+                                   1, 58,
+                                   2>
+      _table_;
+
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+};
+extern const ::google::protobuf::internal::ClassDataFull ProductSubcategory_AttributesEntry_DoNotUse_class_data_;
 // -------------------------------------------------------------------
 
 class ProductSubcategory final : public ::google::protobuf::Message
@@ -1302,7 +2047,7 @@ class ProductCategories final : public ::google::protobuf::Message
     return *reinterpret_cast<const ProductCategories*>(
         &_ProductCategories_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 4;
+  static constexpr int kIndexInFileMessages = 7;
   friend void swap(ProductCategories& a, ProductCategories& b) { a.Swap(&b); }
   inline void Swap(ProductCategories* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1812,7 +2557,7 @@ inline ::google::protobuf::Map<std::string, ::products::v1::ProductSubcategoryAt
 inline void ProductSubcategoryAttribute::clear_required() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.required_ = false;
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline bool ProductSubcategoryAttribute::required() const {
   // @@protoc_insertion_point(field_get:products.v1.ProductSubcategoryAttribute.required)
@@ -1820,7 +2565,7 @@ inline bool ProductSubcategoryAttribute::required() const {
 }
 inline void ProductSubcategoryAttribute::set_required(bool value) {
   _internal_set_required(value);
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   // @@protoc_insertion_point(field_set:products.v1.ProductSubcategoryAttribute.required)
 }
 inline bool ProductSubcategoryAttribute::_internal_required() const {
@@ -1959,6 +2704,253 @@ inline ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL
 ProductSubcategoryAttribute::_internal_mutable_string_array() {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return &_impl_.string_array_;
+}
+
+// .products.v1.ProductAttributeValidation validation = 4 [json_name = "validation"];
+inline bool ProductSubcategoryAttribute::has_validation() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.validation_ != nullptr);
+  return value;
+}
+inline void ProductSubcategoryAttribute::clear_validation() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.validation_ != nullptr) _impl_.validation_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const ::products::v1::ProductAttributeValidation& ProductSubcategoryAttribute::_internal_validation() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::products::v1::ProductAttributeValidation* p = _impl_.validation_;
+  return p != nullptr ? *p : reinterpret_cast<const ::products::v1::ProductAttributeValidation&>(::products::v1::_ProductAttributeValidation_default_instance_);
+}
+inline const ::products::v1::ProductAttributeValidation& ProductSubcategoryAttribute::validation() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.ProductSubcategoryAttribute.validation)
+  return _internal_validation();
+}
+inline void ProductSubcategoryAttribute::unsafe_arena_set_allocated_validation(
+    ::products::v1::ProductAttributeValidation* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.validation_);
+  }
+  _impl_.validation_ = reinterpret_cast<::products::v1::ProductAttributeValidation*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:products.v1.ProductSubcategoryAttribute.validation)
+}
+inline ::products::v1::ProductAttributeValidation* PROTOBUF_NULLABLE ProductSubcategoryAttribute::release_validation() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  ::products::v1::ProductAttributeValidation* released = _impl_.validation_;
+  _impl_.validation_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::products::v1::ProductAttributeValidation* PROTOBUF_NULLABLE ProductSubcategoryAttribute::unsafe_arena_release_validation() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.ProductSubcategoryAttribute.validation)
+
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  ::products::v1::ProductAttributeValidation* temp = _impl_.validation_;
+  _impl_.validation_ = nullptr;
+  return temp;
+}
+inline ::products::v1::ProductAttributeValidation* PROTOBUF_NONNULL ProductSubcategoryAttribute::_internal_mutable_validation() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.validation_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::products::v1::ProductAttributeValidation>(GetArena());
+    _impl_.validation_ = reinterpret_cast<::products::v1::ProductAttributeValidation*>(p);
+  }
+  return _impl_.validation_;
+}
+inline ::products::v1::ProductAttributeValidation* PROTOBUF_NONNULL ProductSubcategoryAttribute::mutable_validation()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  ::products::v1::ProductAttributeValidation* _msg = _internal_mutable_validation();
+  // @@protoc_insertion_point(field_mutable:products.v1.ProductSubcategoryAttribute.validation)
+  return _msg;
+}
+inline void ProductSubcategoryAttribute::set_allocated_validation(::products::v1::ProductAttributeValidation* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.validation_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = value->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+
+  _impl_.validation_ = reinterpret_cast<::products::v1::ProductAttributeValidation*>(value);
+  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductSubcategoryAttribute.validation)
+}
+
+// -------------------------------------------------------------------
+
+// ProductAttributeValidation
+
+// .products.v1.ProductAttributeValidationType type = 1 [json_name = "type"];
+inline void ProductAttributeValidation::clear_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.type_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline ::products::v1::ProductAttributeValidationType ProductAttributeValidation::type() const {
+  // @@protoc_insertion_point(field_get:products.v1.ProductAttributeValidation.type)
+  return _internal_type();
+}
+inline void ProductAttributeValidation::set_type(::products::v1::ProductAttributeValidationType value) {
+  _internal_set_type(value);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  // @@protoc_insertion_point(field_set:products.v1.ProductAttributeValidation.type)
+}
+inline ::products::v1::ProductAttributeValidationType ProductAttributeValidation::_internal_type() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return static_cast<::products::v1::ProductAttributeValidationType>(_impl_.type_);
+}
+inline void ProductAttributeValidation::_internal_set_type(::products::v1::ProductAttributeValidationType value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.type_ = value;
+}
+
+// string value = 2 [json_name = "value"];
+inline void ProductAttributeValidation::clear_value() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.value_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const ::std::string& ProductAttributeValidation::value() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.ProductAttributeValidation.value)
+  return _internal_value();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ProductAttributeValidation::set_value(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.value_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:products.v1.ProductAttributeValidation.value)
+}
+inline ::std::string* PROTOBUF_NONNULL ProductAttributeValidation::mutable_value()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_value();
+  // @@protoc_insertion_point(field_mutable:products.v1.ProductAttributeValidation.value)
+  return _s;
+}
+inline const ::std::string& ProductAttributeValidation::_internal_value() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.value_.Get();
+}
+inline void ProductAttributeValidation::_internal_set_value(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.value_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ProductAttributeValidation::_internal_mutable_value() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.value_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ProductAttributeValidation::release_value() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.ProductAttributeValidation.value)
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* released = _impl_.value_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.value_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ProductAttributeValidation::set_allocated_value(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.value_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.value_.IsDefault()) {
+    _impl_.value_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductAttributeValidation.value)
+}
+
+// -------------------------------------------------------------------
+
+// ProductAttributeValidationNumeric
+
+// .products.v1.ProductAttributeNumericValidationRule rule = 1 [json_name = "rule"];
+inline void ProductAttributeValidationNumeric::clear_rule() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.rule_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline ::products::v1::ProductAttributeNumericValidationRule ProductAttributeValidationNumeric::rule() const {
+  // @@protoc_insertion_point(field_get:products.v1.ProductAttributeValidationNumeric.rule)
+  return _internal_rule();
+}
+inline void ProductAttributeValidationNumeric::set_rule(::products::v1::ProductAttributeNumericValidationRule value) {
+  _internal_set_rule(value);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  // @@protoc_insertion_point(field_set:products.v1.ProductAttributeValidationNumeric.rule)
+}
+inline ::products::v1::ProductAttributeNumericValidationRule ProductAttributeValidationNumeric::_internal_rule() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return static_cast<::products::v1::ProductAttributeNumericValidationRule>(_impl_.rule_);
+}
+inline void ProductAttributeValidationNumeric::_internal_set_rule(::products::v1::ProductAttributeNumericValidationRule value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.rule_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// ProductAttributeValidationString
+
+// .products.v1.ProductAttributeNumericValidationRule rule = 1 [json_name = "rule"];
+inline void ProductAttributeValidationString::clear_rule() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.rule_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline ::products::v1::ProductAttributeNumericValidationRule ProductAttributeValidationString::rule() const {
+  // @@protoc_insertion_point(field_get:products.v1.ProductAttributeValidationString.rule)
+  return _internal_rule();
+}
+inline void ProductAttributeValidationString::set_rule(::products::v1::ProductAttributeNumericValidationRule value) {
+  _internal_set_rule(value);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  // @@protoc_insertion_point(field_set:products.v1.ProductAttributeValidationString.rule)
+}
+inline ::products::v1::ProductAttributeNumericValidationRule ProductAttributeValidationString::_internal_rule() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return static_cast<::products::v1::ProductAttributeNumericValidationRule>(_impl_.rule_);
+}
+inline void ProductAttributeValidationString::_internal_set_rule(::products::v1::ProductAttributeNumericValidationRule value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.rule_ = value;
 }
 
 // -------------------------------------------------------------------
@@ -2211,6 +3203,31 @@ ProductCategoriesWithoutSubcategories::_internal_mutable_categories() {
 }  // namespace v1
 }  // namespace products
 
+
+namespace google {
+namespace protobuf {
+
+template <>
+struct is_proto_enum<::products::v1::ProductAttributeValidationType> : std::true_type {};
+template <>
+inline const EnumDescriptor* PROTOBUF_NONNULL GetEnumDescriptor<::products::v1::ProductAttributeValidationType>() {
+  return ::products::v1::ProductAttributeValidationType_descriptor();
+}
+template <>
+struct is_proto_enum<::products::v1::ProductAttributeNumericValidationRule> : std::true_type {};
+template <>
+inline const EnumDescriptor* PROTOBUF_NONNULL GetEnumDescriptor<::products::v1::ProductAttributeNumericValidationRule>() {
+  return ::products::v1::ProductAttributeNumericValidationRule_descriptor();
+}
+template <>
+struct is_proto_enum<::products::v1::ProductAttributeStringValidationRule> : std::true_type {};
+template <>
+inline const EnumDescriptor* PROTOBUF_NONNULL GetEnumDescriptor<::products::v1::ProductAttributeStringValidationRule>() {
+  return ::products::v1::ProductAttributeStringValidationRule_descriptor();
+}
+
+}  // namespace protobuf
+}  // namespace google
 
 // @@protoc_insertion_point(global_scope)
 
