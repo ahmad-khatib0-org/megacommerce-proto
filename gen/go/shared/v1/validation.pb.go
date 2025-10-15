@@ -21,101 +21,101 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-type ValidationFieldNumericRuleType int32
+type NumericRuleType int32
 
 const (
-	ValidationFieldNumericRuleType_PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN ValidationFieldNumericRuleType = 0
-	ValidationFieldNumericRuleType_PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX ValidationFieldNumericRuleType = 1
-	ValidationFieldNumericRuleType_PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT  ValidationFieldNumericRuleType = 2
-	ValidationFieldNumericRuleType_PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT  ValidationFieldNumericRuleType = 3
+	NumericRuleType_NUMERIC_RULE_TYPE_MIN NumericRuleType = 0
+	NumericRuleType_NUMERIC_RULE_TYPE_MAX NumericRuleType = 1
+	NumericRuleType_NUMERIC_RULE_TYPE_GT  NumericRuleType = 2 // greater than
+	NumericRuleType_NUMERIC_RULE_TYPE_LT  NumericRuleType = 3 // less than
 )
 
-// Enum value maps for ValidationFieldNumericRuleType.
+// Enum value maps for NumericRuleType.
 var (
-	ValidationFieldNumericRuleType_name = map[int32]string{
-		0: "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN",
-		1: "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX",
-		2: "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT",
-		3: "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT",
+	NumericRuleType_name = map[int32]string{
+		0: "NUMERIC_RULE_TYPE_MIN",
+		1: "NUMERIC_RULE_TYPE_MAX",
+		2: "NUMERIC_RULE_TYPE_GT",
+		3: "NUMERIC_RULE_TYPE_LT",
 	}
-	ValidationFieldNumericRuleType_value = map[string]int32{
-		"PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN": 0,
-		"PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX": 1,
-		"PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT":  2,
-		"PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT":  3,
+	NumericRuleType_value = map[string]int32{
+		"NUMERIC_RULE_TYPE_MIN": 0,
+		"NUMERIC_RULE_TYPE_MAX": 1,
+		"NUMERIC_RULE_TYPE_GT":  2,
+		"NUMERIC_RULE_TYPE_LT":  3,
 	}
 )
 
-func (x ValidationFieldNumericRuleType) Enum() *ValidationFieldNumericRuleType {
-	p := new(ValidationFieldNumericRuleType)
+func (x NumericRuleType) Enum() *NumericRuleType {
+	p := new(NumericRuleType)
 	*p = x
 	return p
 }
 
-func (x ValidationFieldNumericRuleType) String() string {
+func (x NumericRuleType) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (ValidationFieldNumericRuleType) Descriptor() protoreflect.EnumDescriptor {
+func (NumericRuleType) Descriptor() protoreflect.EnumDescriptor {
 	return file_shared_v1_validation_proto_enumTypes[0].Descriptor()
 }
 
-func (ValidationFieldNumericRuleType) Type() protoreflect.EnumType {
+func (NumericRuleType) Type() protoreflect.EnumType {
 	return &file_shared_v1_validation_proto_enumTypes[0]
 }
 
-func (x ValidationFieldNumericRuleType) Number() protoreflect.EnumNumber {
+func (x NumericRuleType) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use ValidationFieldNumericRuleType.Descriptor instead.
-func (ValidationFieldNumericRuleType) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use NumericRuleType.Descriptor instead.
+func (NumericRuleType) EnumDescriptor() ([]byte, []int) {
 	return file_shared_v1_validation_proto_rawDescGZIP(), []int{0}
 }
 
-type ValidationFieldStringRuleType int32
+type StringRuleType int32
 
 const (
-	ValidationFieldStringRuleType_PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN ValidationFieldStringRuleType = 0
-	ValidationFieldStringRuleType_PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX ValidationFieldStringRuleType = 1
+	StringRuleType_STRING_RULE_TYPE_MIN StringRuleType = 0
+	StringRuleType_STRING_RULE_TYPE_MAX StringRuleType = 1
 )
 
-// Enum value maps for ValidationFieldStringRuleType.
+// Enum value maps for StringRuleType.
 var (
-	ValidationFieldStringRuleType_name = map[int32]string{
-		0: "PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN",
-		1: "PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX",
+	StringRuleType_name = map[int32]string{
+		0: "STRING_RULE_TYPE_MIN",
+		1: "STRING_RULE_TYPE_MAX",
 	}
-	ValidationFieldStringRuleType_value = map[string]int32{
-		"PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN": 0,
-		"PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX": 1,
+	StringRuleType_value = map[string]int32{
+		"STRING_RULE_TYPE_MIN": 0,
+		"STRING_RULE_TYPE_MAX": 1,
 	}
 )
 
-func (x ValidationFieldStringRuleType) Enum() *ValidationFieldStringRuleType {
-	p := new(ValidationFieldStringRuleType)
+func (x StringRuleType) Enum() *StringRuleType {
+	p := new(StringRuleType)
 	*p = x
 	return p
 }
 
-func (x ValidationFieldStringRuleType) String() string {
+func (x StringRuleType) String() string {
 	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
 }
 
-func (ValidationFieldStringRuleType) Descriptor() protoreflect.EnumDescriptor {
+func (StringRuleType) Descriptor() protoreflect.EnumDescriptor {
 	return file_shared_v1_validation_proto_enumTypes[1].Descriptor()
 }
 
-func (ValidationFieldStringRuleType) Type() protoreflect.EnumType {
+func (StringRuleType) Type() protoreflect.EnumType {
 	return &file_shared_v1_validation_proto_enumTypes[1]
 }
 
-func (x ValidationFieldStringRuleType) Number() protoreflect.EnumNumber {
+func (x StringRuleType) Number() protoreflect.EnumNumber {
 	return protoreflect.EnumNumber(x)
 }
 
-// Deprecated: Use ValidationFieldStringRuleType.Descriptor instead.
-func (ValidationFieldStringRuleType) EnumDescriptor() ([]byte, []int) {
+// Deprecated: Use StringRuleType.Descriptor instead.
+func (StringRuleType) EnumDescriptor() ([]byte, []int) {
 	return file_shared_v1_validation_proto_rawDescGZIP(), []int{1}
 }
 
@@ -220,8 +220,8 @@ func (*ValidationField_Regex) isValidationField_Rule() {}
 
 // Numeric rule (min/max, etc.)
 type ValidationFieldNumeric struct {
-	state         protoimpl.MessageState        `protogen:"open.v1"`
-	Rules         []*ValidationFieldNumericRule `protobuf:"bytes,1,rep,name=rules,proto3" json:"rules,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Rules         []*NumericRule         `protobuf:"bytes,1,rep,name=rules,proto3" json:"rules,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -256,35 +256,35 @@ func (*ValidationFieldNumeric) Descriptor() ([]byte, []int) {
 	return file_shared_v1_validation_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *ValidationFieldNumeric) GetRules() []*ValidationFieldNumericRule {
+func (x *ValidationFieldNumeric) GetRules() []*NumericRule {
 	if x != nil {
 		return x.Rules
 	}
 	return nil
 }
 
-type ValidationFieldNumericRule struct {
-	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Type          ValidationFieldNumericRuleType `protobuf:"varint,1,opt,name=type,proto3,enum=shared.v1.ValidationFieldNumericRuleType" json:"type,omitempty"`
-	Value         float64                        `protobuf:"fixed64,2,opt,name=value,proto3" json:"value,omitempty"` // numeric parameter (double to accept int/float)
+type NumericRule struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Type          NumericRuleType        `protobuf:"varint,1,opt,name=type,proto3,enum=shared.v1.NumericRuleType" json:"type,omitempty"`
+	Value         float64                `protobuf:"fixed64,2,opt,name=value,proto3" json:"value,omitempty"` // numeric parameter (double to accept int/float)
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ValidationFieldNumericRule) Reset() {
-	*x = ValidationFieldNumericRule{}
+func (x *NumericRule) Reset() {
+	*x = NumericRule{}
 	mi := &file_shared_v1_validation_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ValidationFieldNumericRule) String() string {
+func (x *NumericRule) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ValidationFieldNumericRule) ProtoMessage() {}
+func (*NumericRule) ProtoMessage() {}
 
-func (x *ValidationFieldNumericRule) ProtoReflect() protoreflect.Message {
+func (x *NumericRule) ProtoReflect() protoreflect.Message {
 	mi := &file_shared_v1_validation_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -296,19 +296,19 @@ func (x *ValidationFieldNumericRule) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ValidationFieldNumericRule.ProtoReflect.Descriptor instead.
-func (*ValidationFieldNumericRule) Descriptor() ([]byte, []int) {
+// Deprecated: Use NumericRule.ProtoReflect.Descriptor instead.
+func (*NumericRule) Descriptor() ([]byte, []int) {
 	return file_shared_v1_validation_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *ValidationFieldNumericRule) GetType() ValidationFieldNumericRuleType {
+func (x *NumericRule) GetType() NumericRuleType {
 	if x != nil {
 		return x.Type
 	}
-	return ValidationFieldNumericRuleType_PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN
+	return NumericRuleType_NUMERIC_RULE_TYPE_MIN
 }
 
-func (x *ValidationFieldNumericRule) GetValue() float64 {
+func (x *NumericRule) GetValue() float64 {
 	if x != nil {
 		return x.Value
 	}
@@ -317,8 +317,8 @@ func (x *ValidationFieldNumericRule) GetValue() float64 {
 
 // String rule (min/max length)
 type ValidationFieldString struct {
-	state         protoimpl.MessageState       `protogen:"open.v1"`
-	Rules         []*ValidationFieldStringRule `protobuf:"bytes,1,rep,name=rules,proto3" json:"rules,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Rules         []*StringRule          `protobuf:"bytes,1,rep,name=rules,proto3" json:"rules,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -353,35 +353,35 @@ func (*ValidationFieldString) Descriptor() ([]byte, []int) {
 	return file_shared_v1_validation_proto_rawDescGZIP(), []int{3}
 }
 
-func (x *ValidationFieldString) GetRules() []*ValidationFieldStringRule {
+func (x *ValidationFieldString) GetRules() []*StringRule {
 	if x != nil {
 		return x.Rules
 	}
 	return nil
 }
 
-type ValidationFieldStringRule struct {
-	state         protoimpl.MessageState         `protogen:"open.v1"`
-	Type          ValidationFieldNumericRuleType `protobuf:"varint,1,opt,name=type,proto3,enum=shared.v1.ValidationFieldNumericRuleType" json:"type,omitempty"`
-	Value         float64                        `protobuf:"fixed64,2,opt,name=value,proto3" json:"value,omitempty"` // numeric parameter (double to accept int/float)
+type StringRule struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Type          StringRuleType         `protobuf:"varint,1,opt,name=type,proto3,enum=shared.v1.StringRuleType" json:"type,omitempty"`
+	Value         float64                `protobuf:"fixed64,2,opt,name=value,proto3" json:"value,omitempty"` // numeric parameter (double to accept int/float)
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ValidationFieldStringRule) Reset() {
-	*x = ValidationFieldStringRule{}
+func (x *StringRule) Reset() {
+	*x = StringRule{}
 	mi := &file_shared_v1_validation_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ValidationFieldStringRule) String() string {
+func (x *StringRule) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ValidationFieldStringRule) ProtoMessage() {}
+func (*StringRule) ProtoMessage() {}
 
-func (x *ValidationFieldStringRule) ProtoReflect() protoreflect.Message {
+func (x *StringRule) ProtoReflect() protoreflect.Message {
 	mi := &file_shared_v1_validation_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -393,19 +393,19 @@ func (x *ValidationFieldStringRule) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ValidationFieldStringRule.ProtoReflect.Descriptor instead.
-func (*ValidationFieldStringRule) Descriptor() ([]byte, []int) {
+// Deprecated: Use StringRule.ProtoReflect.Descriptor instead.
+func (*StringRule) Descriptor() ([]byte, []int) {
 	return file_shared_v1_validation_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *ValidationFieldStringRule) GetType() ValidationFieldNumericRuleType {
+func (x *StringRule) GetType() StringRuleType {
 	if x != nil {
 		return x.Type
 	}
-	return ValidationFieldNumericRuleType_PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN
+	return StringRuleType_STRING_RULE_TYPE_MIN
 }
 
-func (x *ValidationFieldStringRule) GetValue() float64 {
+func (x *StringRule) GetValue() float64 {
 	if x != nil {
 		return x.Value
 	}
@@ -474,28 +474,29 @@ const file_shared_v1_validation_proto_rawDesc = "" +
 	"\anumeric\x18\x01 \x01(\v2!.shared.v1.ValidationFieldNumericH\x00R\anumeric\x124\n" +
 	"\x03str\x18\x02 \x01(\v2 .shared.v1.ValidationFieldStringH\x00R\x03str\x127\n" +
 	"\x05regex\x18\x03 \x01(\v2\x1f.shared.v1.ValidationFieldRegexH\x00R\x05regexB\x06\n" +
-	"\x04rule\"U\n" +
-	"\x16ValidationFieldNumeric\x12;\n" +
-	"\x05rules\x18\x01 \x03(\v2%.shared.v1.ValidationFieldNumericRuleR\x05rules\"q\n" +
-	"\x1aValidationFieldNumericRule\x12=\n" +
-	"\x04type\x18\x01 \x01(\x0e2).shared.v1.ValidationFieldNumericRuleTypeR\x04type\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\x01R\x05value\"S\n" +
-	"\x15ValidationFieldString\x12:\n" +
-	"\x05rules\x18\x01 \x03(\v2$.shared.v1.ValidationFieldStringRuleR\x05rules\"p\n" +
-	"\x19ValidationFieldStringRule\x12=\n" +
-	"\x04type\x18\x01 \x01(\x0e2).shared.v1.ValidationFieldNumericRuleTypeR\x04type\x12\x14\n" +
+	"\x04rule\"F\n" +
+	"\x16ValidationFieldNumeric\x12,\n" +
+	"\x05rules\x18\x01 \x03(\v2\x16.shared.v1.NumericRuleR\x05rules\"S\n" +
+	"\vNumericRule\x12.\n" +
+	"\x04type\x18\x01 \x01(\x0e2\x1a.shared.v1.NumericRuleTypeR\x04type\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\x01R\x05value\"D\n" +
+	"\x15ValidationFieldString\x12+\n" +
+	"\x05rules\x18\x01 \x03(\v2\x15.shared.v1.StringRuleR\x05rules\"Q\n" +
+	"\n" +
+	"StringRule\x12-\n" +
+	"\x04type\x18\x01 \x01(\x0e2\x19.shared.v1.StringRuleTypeR\x04type\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\x01R\x05value\"W\n" +
 	"\x14ValidationFieldRegex\x12\x18\n" +
 	"\apattern\x18\x01 \x01(\tR\apattern\x12%\n" +
-	"\x0ecase_sensitive\x18\x02 \x01(\bR\rcaseSensitive*\xea\x01\n" +
-	"\x1eValidationFieldNumericRuleType\x121\n" +
-	"-PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN\x10\x00\x121\n" +
-	"-PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX\x10\x01\x120\n" +
-	",PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT\x10\x02\x120\n" +
-	",PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT\x10\x03*\x83\x01\n" +
-	"\x1dValidationFieldStringRuleType\x120\n" +
-	",PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN\x10\x00\x120\n" +
-	",PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX\x10\x01Bu\n" +
+	"\x0ecase_sensitive\x18\x02 \x01(\bR\rcaseSensitive*{\n" +
+	"\x0fNumericRuleType\x12\x19\n" +
+	"\x15NUMERIC_RULE_TYPE_MIN\x10\x00\x12\x19\n" +
+	"\x15NUMERIC_RULE_TYPE_MAX\x10\x01\x12\x18\n" +
+	"\x14NUMERIC_RULE_TYPE_GT\x10\x02\x12\x18\n" +
+	"\x14NUMERIC_RULE_TYPE_LT\x10\x03*D\n" +
+	"\x0eStringRuleType\x12\x18\n" +
+	"\x14STRING_RULE_TYPE_MIN\x10\x00\x12\x18\n" +
+	"\x14STRING_RULE_TYPE_MAX\x10\x01Bu\n" +
 	"\x1aorg.megacommerce.shared.v1B\x0fValidationProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
@@ -513,23 +514,23 @@ func file_shared_v1_validation_proto_rawDescGZIP() []byte {
 var file_shared_v1_validation_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
 var file_shared_v1_validation_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_shared_v1_validation_proto_goTypes = []any{
-	(ValidationFieldNumericRuleType)(0), // 0: shared.v1.ValidationFieldNumericRuleType
-	(ValidationFieldStringRuleType)(0),  // 1: shared.v1.ValidationFieldStringRuleType
-	(*ValidationField)(nil),             // 2: shared.v1.ValidationField
-	(*ValidationFieldNumeric)(nil),      // 3: shared.v1.ValidationFieldNumeric
-	(*ValidationFieldNumericRule)(nil),  // 4: shared.v1.ValidationFieldNumericRule
-	(*ValidationFieldString)(nil),       // 5: shared.v1.ValidationFieldString
-	(*ValidationFieldStringRule)(nil),   // 6: shared.v1.ValidationFieldStringRule
-	(*ValidationFieldRegex)(nil),        // 7: shared.v1.ValidationFieldRegex
+	(NumericRuleType)(0),           // 0: shared.v1.NumericRuleType
+	(StringRuleType)(0),            // 1: shared.v1.StringRuleType
+	(*ValidationField)(nil),        // 2: shared.v1.ValidationField
+	(*ValidationFieldNumeric)(nil), // 3: shared.v1.ValidationFieldNumeric
+	(*NumericRule)(nil),            // 4: shared.v1.NumericRule
+	(*ValidationFieldString)(nil),  // 5: shared.v1.ValidationFieldString
+	(*StringRule)(nil),             // 6: shared.v1.StringRule
+	(*ValidationFieldRegex)(nil),   // 7: shared.v1.ValidationFieldRegex
 }
 var file_shared_v1_validation_proto_depIdxs = []int32{
 	3, // 0: shared.v1.ValidationField.numeric:type_name -> shared.v1.ValidationFieldNumeric
 	5, // 1: shared.v1.ValidationField.str:type_name -> shared.v1.ValidationFieldString
 	7, // 2: shared.v1.ValidationField.regex:type_name -> shared.v1.ValidationFieldRegex
-	4, // 3: shared.v1.ValidationFieldNumeric.rules:type_name -> shared.v1.ValidationFieldNumericRule
-	0, // 4: shared.v1.ValidationFieldNumericRule.type:type_name -> shared.v1.ValidationFieldNumericRuleType
-	6, // 5: shared.v1.ValidationFieldString.rules:type_name -> shared.v1.ValidationFieldStringRule
-	0, // 6: shared.v1.ValidationFieldStringRule.type:type_name -> shared.v1.ValidationFieldNumericRuleType
+	4, // 3: shared.v1.ValidationFieldNumeric.rules:type_name -> shared.v1.NumericRule
+	0, // 4: shared.v1.NumericRule.type:type_name -> shared.v1.NumericRuleType
+	6, // 5: shared.v1.ValidationFieldString.rules:type_name -> shared.v1.StringRule
+	1, // 6: shared.v1.StringRule.type:type_name -> shared.v1.StringRuleType
 	7, // [7:7] is the sub-list for method output_type
 	7, // [7:7] is the sub-list for method input_type
 	7, // [7:7] is the sub-list for extension type_name

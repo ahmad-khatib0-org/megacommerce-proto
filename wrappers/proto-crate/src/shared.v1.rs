@@ -405,12 +405,12 @@ pub mod validation_field {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ValidationFieldNumeric {
     #[prost(message, repeated, tag = "1")]
-    pub rules: ::prost::alloc::vec::Vec<ValidationFieldNumericRule>,
+    pub rules: ::prost::alloc::vec::Vec<NumericRule>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]
-pub struct ValidationFieldNumericRule {
-    #[prost(enumeration = "ValidationFieldNumericRuleType", tag = "1")]
+pub struct NumericRule {
+    #[prost(enumeration = "NumericRuleType", tag = "1")]
     pub r#type: i32,
     /// numeric parameter (double to accept int/float)
     #[prost(double, tag = "2")]
@@ -421,12 +421,12 @@ pub struct ValidationFieldNumericRule {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ValidationFieldString {
     #[prost(message, repeated, tag = "1")]
-    pub rules: ::prost::alloc::vec::Vec<ValidationFieldStringRule>,
+    pub rules: ::prost::alloc::vec::Vec<StringRule>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]
-pub struct ValidationFieldStringRule {
-    #[prost(enumeration = "ValidationFieldNumericRuleType", tag = "1")]
+pub struct StringRule {
+    #[prost(enumeration = "StringRuleType", tag = "1")]
     pub r#type: i32,
     /// numeric parameter (double to accept int/float)
     #[prost(double, tag = "2")]
@@ -444,48 +444,34 @@ pub struct ValidationFieldRegex {
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
-pub enum ValidationFieldNumericRuleType {
-    ProductAttributeNumericValidationRuleMin = 0,
-    ProductAttributeNumericValidationRuleMax = 1,
-    ProductAttributeNumericValidationRuleGt = 2,
-    ProductAttributeNumericValidationRuleLt = 3,
+pub enum NumericRuleType {
+    Min = 0,
+    Max = 1,
+    /// greater than
+    Gt = 2,
+    /// less than
+    Lt = 3,
 }
-impl ValidationFieldNumericRuleType {
+impl NumericRuleType {
     /// String value of the enum field names used in the ProtoBuf definition.
     ///
     /// The values are not transformed in any way and thus are considered stable
     /// (if the ProtoBuf definition does not change) and safe for programmatic use.
     pub fn as_str_name(&self) -> &'static str {
         match self {
-            Self::ProductAttributeNumericValidationRuleMin => {
-                "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN"
-            }
-            Self::ProductAttributeNumericValidationRuleMax => {
-                "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX"
-            }
-            Self::ProductAttributeNumericValidationRuleGt => {
-                "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT"
-            }
-            Self::ProductAttributeNumericValidationRuleLt => {
-                "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT"
-            }
+            Self::Min => "NUMERIC_RULE_TYPE_MIN",
+            Self::Max => "NUMERIC_RULE_TYPE_MAX",
+            Self::Gt => "NUMERIC_RULE_TYPE_GT",
+            Self::Lt => "NUMERIC_RULE_TYPE_LT",
         }
     }
     /// Creates an enum from field names used in the ProtoBuf definition.
     pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
         match value {
-            "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN" => {
-                Some(Self::ProductAttributeNumericValidationRuleMin)
-            }
-            "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX" => {
-                Some(Self::ProductAttributeNumericValidationRuleMax)
-            }
-            "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT" => {
-                Some(Self::ProductAttributeNumericValidationRuleGt)
-            }
-            "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT" => {
-                Some(Self::ProductAttributeNumericValidationRuleLt)
-            }
+            "NUMERIC_RULE_TYPE_MIN" => Some(Self::Min),
+            "NUMERIC_RULE_TYPE_MAX" => Some(Self::Max),
+            "NUMERIC_RULE_TYPE_GT" => Some(Self::Gt),
+            "NUMERIC_RULE_TYPE_LT" => Some(Self::Lt),
             _ => None,
         }
     }
@@ -493,34 +479,26 @@ impl ValidationFieldNumericRuleType {
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
 #[repr(i32)]
-pub enum ValidationFieldStringRuleType {
-    ProductAttributeStringValidationRuleMin = 0,
-    ProductAttributeStringValidationRuleMax = 1,
+pub enum StringRuleType {
+    Min = 0,
+    Max = 1,
 }
-impl ValidationFieldStringRuleType {
+impl StringRuleType {
     /// String value of the enum field names used in the ProtoBuf definition.
     ///
     /// The values are not transformed in any way and thus are considered stable
     /// (if the ProtoBuf definition does not change) and safe for programmatic use.
     pub fn as_str_name(&self) -> &'static str {
         match self {
-            Self::ProductAttributeStringValidationRuleMin => {
-                "PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN"
-            }
-            Self::ProductAttributeStringValidationRuleMax => {
-                "PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX"
-            }
+            Self::Min => "STRING_RULE_TYPE_MIN",
+            Self::Max => "STRING_RULE_TYPE_MAX",
         }
     }
     /// Creates an enum from field names used in the ProtoBuf definition.
     pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
         match value {
-            "PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN" => {
-                Some(Self::ProductAttributeStringValidationRuleMin)
-            }
-            "PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX" => {
-                Some(Self::ProductAttributeStringValidationRuleMax)
-            }
+            "STRING_RULE_TYPE_MIN" => Some(Self::Min),
+            "STRING_RULE_TYPE_MAX" => Some(Self::Max),
             _ => None,
         }
     }

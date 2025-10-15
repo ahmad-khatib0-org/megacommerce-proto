@@ -9,79 +9,81 @@ import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 
 export const protobufPackage = "shared.v1";
 
-export enum ValidationFieldNumericRuleType {
-  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN = 0,
-  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX = 1,
-  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT = 2,
-  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT = 3,
+export enum NumericRuleType {
+  NUMERIC_RULE_TYPE_MIN = 0,
+  NUMERIC_RULE_TYPE_MAX = 1,
+  /** NUMERIC_RULE_TYPE_GT - greater than */
+  NUMERIC_RULE_TYPE_GT = 2,
+  /** NUMERIC_RULE_TYPE_LT - less than */
+  NUMERIC_RULE_TYPE_LT = 3,
   UNRECOGNIZED = -1,
 }
 
-export function validationFieldNumericRuleTypeFromJSON(object: any): ValidationFieldNumericRuleType {
+export function numericRuleTypeFromJSON(object: any): NumericRuleType {
   switch (object) {
     case 0:
-    case "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN":
-      return ValidationFieldNumericRuleType.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN;
+    case "NUMERIC_RULE_TYPE_MIN":
+      return NumericRuleType.NUMERIC_RULE_TYPE_MIN;
     case 1:
-    case "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX":
-      return ValidationFieldNumericRuleType.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX;
+    case "NUMERIC_RULE_TYPE_MAX":
+      return NumericRuleType.NUMERIC_RULE_TYPE_MAX;
     case 2:
-    case "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT":
-      return ValidationFieldNumericRuleType.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT;
+    case "NUMERIC_RULE_TYPE_GT":
+      return NumericRuleType.NUMERIC_RULE_TYPE_GT;
     case 3:
-    case "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT":
-      return ValidationFieldNumericRuleType.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT;
+    case "NUMERIC_RULE_TYPE_LT":
+      return NumericRuleType.NUMERIC_RULE_TYPE_LT;
     case -1:
     case "UNRECOGNIZED":
     default:
-      return ValidationFieldNumericRuleType.UNRECOGNIZED;
+      return NumericRuleType.UNRECOGNIZED;
   }
 }
 
-export function validationFieldNumericRuleTypeToJSON(object: ValidationFieldNumericRuleType): string {
+export function numericRuleTypeToJSON(object: NumericRuleType): string {
   switch (object) {
-    case ValidationFieldNumericRuleType.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN:
-      return "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN";
-    case ValidationFieldNumericRuleType.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX:
-      return "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX";
-    case ValidationFieldNumericRuleType.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT:
-      return "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT";
-    case ValidationFieldNumericRuleType.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT:
-      return "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT";
-    case ValidationFieldNumericRuleType.UNRECOGNIZED:
+    case NumericRuleType.NUMERIC_RULE_TYPE_MIN:
+      return "NUMERIC_RULE_TYPE_MIN";
+    case NumericRuleType.NUMERIC_RULE_TYPE_MAX:
+      return "NUMERIC_RULE_TYPE_MAX";
+    case NumericRuleType.NUMERIC_RULE_TYPE_GT:
+      return "NUMERIC_RULE_TYPE_GT";
+    case NumericRuleType.NUMERIC_RULE_TYPE_LT:
+      return "NUMERIC_RULE_TYPE_LT";
+    case NumericRuleType.UNRECOGNIZED:
     default:
       return "UNRECOGNIZED";
   }
 }
 
-export enum ValidationFieldStringRuleType {
-  PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN = 0,
-  PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX = 1,
+export enum StringRuleType {
+  STRING_RULE_TYPE_MIN = 0,
+  STRING_RULE_TYPE_MAX = 1,
   UNRECOGNIZED = -1,
 }
 
-export function validationFieldStringRuleTypeFromJSON(object: any): ValidationFieldStringRuleType {
+export function stringRuleTypeFromJSON(object: any): StringRuleType {
   switch (object) {
     case 0:
-    case "PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN":
-      return ValidationFieldStringRuleType.PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN;
+    case "STRING_RULE_TYPE_MIN":
+      return StringRuleType.STRING_RULE_TYPE_MIN;
     case 1:
-    case "PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX":
-      return ValidationFieldStringRuleType.PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX;
+    case "STRING_RULE_TYPE_MAX":
+      return StringRuleType.STRING_RULE_TYPE_MAX;
     case -1:
     case "UNRECOGNIZED":
     default:
-      return ValidationFieldStringRuleType.UNRECOGNIZED;
+      return StringRuleType.UNRECOGNIZED;
   }
 }
 
-export function validationFieldStringRuleTypeToJSON(object: ValidationFieldStringRuleType): string {
+export function stringRuleTypeToJSON(object: StringRuleType): string {
   switch (object) {
-    case ValidationFieldStringRuleType.PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN:
-      return "PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN";
-    case ValidationFieldStringRuleType.PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX:
-      return "PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX";
-    case ValidationFieldStringRuleType.UNRECOGNIZED:
+    case StringRuleType.STRING_RULE_TYPE_MIN:
+      return "STRING_RULE_TYPE_MIN";
+    case StringRuleType.STRING_RULE_TYPE_MAX:
+      return "STRING_RULE_TYPE_MAX";
+    case StringRuleType.UNRECOGNIZED:
     default:
       return "UNRECOGNIZED";
   }
@@ -96,22 +98,22 @@ export interface ValidationField {
 
 /** Numeric rule (min/max, etc.) */
 export interface ValidationFieldNumeric {
-  rules: ValidationFieldNumericRule[];
+  rules: NumericRule[];
 }
 
-export interface ValidationFieldNumericRule {
-  type: ValidationFieldNumericRuleType;
+export interface NumericRule {
+  type: NumericRuleType;
   /** numeric parameter (double to accept int/float) */
   value: number;
 }
 
 /** String rule (min/max length) */
 export interface ValidationFieldString {
-  rules: ValidationFieldStringRule[];
+  rules: StringRule[];
 }
 
-export interface ValidationFieldStringRule {
-  type: ValidationFieldNumericRuleType;
+export interface StringRule {
+  type: StringRuleType;
   /** numeric parameter (double to accept int/float) */
   value: number;
 }
@@ -227,7 +229,7 @@ function createBaseValidationFieldNumeric(): ValidationFieldNumeric {
 export const ValidationFieldNumeric: MessageFns<ValidationFieldNumeric> = {
   encode(message: ValidationFieldNumeric, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     for (const v of message.rules) {
-      ValidationFieldNumericRule.encode(v!, writer.uint32(10).fork()).join();
+      NumericRule.encode(v!, writer.uint32(10).fork()).join();
     }
     return writer;
   },
@@ -244,7 +246,7 @@ export const ValidationFieldNumeric: MessageFns<ValidationFieldNumeric> = {
             break;
           }
 
-          message.rules.push(ValidationFieldNumericRule.decode(reader, reader.uint32()));
+          message.rules.push(NumericRule.decode(reader, reader.uint32()));
           continue;
         }
       }
@@ -258,16 +260,14 @@ export const ValidationFieldNumeric: MessageFns<ValidationFieldNumeric> = {
 
   fromJSON(object: any): ValidationFieldNumeric {
     return {
-      rules: globalThis.Array.isArray(object?.rules)
-        ? object.rules.map((e: any) => ValidationFieldNumericRule.fromJSON(e))
-        : [],
+      rules: globalThis.Array.isArray(object?.rules) ? object.rules.map((e: any) => NumericRule.fromJSON(e)) : [],
     };
   },
 
   toJSON(message: ValidationFieldNumeric): unknown {
     const obj: any = {};
     if (message.rules?.length) {
-      obj.rules = message.rules.map((e) => ValidationFieldNumericRule.toJSON(e));
+      obj.rules = message.rules.map((e) => NumericRule.toJSON(e));
     }
     return obj;
   },
@@ -277,17 +277,17 @@ export const ValidationFieldNumeric: MessageFns<ValidationFieldNumeric> = {
   },
   fromPartial<I extends Exact<DeepPartial<ValidationFieldNumeric>, I>>(object: I): ValidationFieldNumeric {
     const message = createBaseValidationFieldNumeric();
-    message.rules = object.rules?.map((e) => ValidationFieldNumericRule.fromPartial(e)) || [];
+    message.rules = object.rules?.map((e) => NumericRule.fromPartial(e)) || [];
     return message;
   },
 };
 
-function createBaseValidationFieldNumericRule(): ValidationFieldNumericRule {
+function createBaseNumericRule(): NumericRule {
   return { type: 0, value: 0 };
 }
 
-export const ValidationFieldNumericRule: MessageFns<ValidationFieldNumericRule> = {
-  encode(message: ValidationFieldNumericRule, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+export const NumericRule: MessageFns<NumericRule> = {
+  encode(message: NumericRule, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.type !== 0) {
       writer.uint32(8).int32(message.type);
     }
@@ -297,10 +297,10 @@ export const ValidationFieldNumericRule: MessageFns<ValidationFieldNumericRule> 
     return writer;
   },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): ValidationFieldNumericRule {
+  decode(input: BinaryReader | Uint8Array, length?: number): NumericRule {
     const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseValidationFieldNumericRule();
+    const message = createBaseNumericRule();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -329,17 +329,17 @@ export const ValidationFieldNumericRule: MessageFns<ValidationFieldNumericRule> 
     return message;
   },
 
-  fromJSON(object: any): ValidationFieldNumericRule {
+  fromJSON(object: any): NumericRule {
     return {
-      type: isSet(object.type) ? validationFieldNumericRuleTypeFromJSON(object.type) : 0,
+      type: isSet(object.type) ? numericRuleTypeFromJSON(object.type) : 0,
       value: isSet(object.value) ? globalThis.Number(object.value) : 0,
     };
   },
 
-  toJSON(message: ValidationFieldNumericRule): unknown {
+  toJSON(message: NumericRule): unknown {
     const obj: any = {};
     if (message.type !== 0) {
-      obj.type = validationFieldNumericRuleTypeToJSON(message.type);
+      obj.type = numericRuleTypeToJSON(message.type);
     }
     if (message.value !== 0) {
       obj.value = message.value;
@@ -347,11 +347,11 @@ export const ValidationFieldNumericRule: MessageFns<ValidationFieldNumericRule> 
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<ValidationFieldNumericRule>, I>>(base?: I): ValidationFieldNumericRule {
-    return ValidationFieldNumericRule.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<NumericRule>, I>>(base?: I): NumericRule {
+    return NumericRule.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<ValidationFieldNumericRule>, I>>(object: I): ValidationFieldNumericRule {
-    const message = createBaseValidationFieldNumericRule();
+  fromPartial<I extends Exact<DeepPartial<NumericRule>, I>>(object: I): NumericRule {
+    const message = createBaseNumericRule();
     message.type = object.type ?? 0;
     message.value = object.value ?? 0;
     return message;
@@ -365,7 +365,7 @@ function createBaseValidationFieldString(): ValidationFieldString {
 export const ValidationFieldString: MessageFns<ValidationFieldString> = {
   encode(message: ValidationFieldString, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     for (const v of message.rules) {
-      ValidationFieldStringRule.encode(v!, writer.uint32(10).fork()).join();
+      StringRule.encode(v!, writer.uint32(10).fork()).join();
     }
     return writer;
   },
@@ -382,7 +382,7 @@ export const ValidationFieldString: MessageFns<ValidationFieldString> = {
             break;
           }
 
-          message.rules.push(ValidationFieldStringRule.decode(reader, reader.uint32()));
+          message.rules.push(StringRule.decode(reader, reader.uint32()));
           continue;
         }
       }
@@ -396,16 +396,14 @@ export const ValidationFieldString: MessageFns<ValidationFieldString> = {
 
   fromJSON(object: any): ValidationFieldString {
     return {
-      rules: globalThis.Array.isArray(object?.rules)
-        ? object.rules.map((e: any) => ValidationFieldStringRule.fromJSON(e))
-        : [],
+      rules: globalThis.Array.isArray(object?.rules) ? object.rules.map((e: any) => StringRule.fromJSON(e)) : [],
     };
   },
 
   toJSON(message: ValidationFieldString): unknown {
     const obj: any = {};
     if (message.rules?.length) {
-      obj.rules = message.rules.map((e) => ValidationFieldStringRule.toJSON(e));
+      obj.rules = message.rules.map((e) => StringRule.toJSON(e));
     }
     return obj;
   },
@@ -415,17 +413,17 @@ export const ValidationFieldString: MessageFns<ValidationFieldString> = {
   },
   fromPartial<I extends Exact<DeepPartial<ValidationFieldString>, I>>(object: I): ValidationFieldString {
     const message = createBaseValidationFieldString();
-    message.rules = object.rules?.map((e) => ValidationFieldStringRule.fromPartial(e)) || [];
+    message.rules = object.rules?.map((e) => StringRule.fromPartial(e)) || [];
     return message;
   },
 };
 
-function createBaseValidationFieldStringRule(): ValidationFieldStringRule {
+function createBaseStringRule(): StringRule {
   return { type: 0, value: 0 };
 }
 
-export const ValidationFieldStringRule: MessageFns<ValidationFieldStringRule> = {
-  encode(message: ValidationFieldStringRule, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+export const StringRule: MessageFns<StringRule> = {
+  encode(message: StringRule, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.type !== 0) {
       writer.uint32(8).int32(message.type);
     }
@@ -435,10 +433,10 @@ export const ValidationFieldStringRule: MessageFns<ValidationFieldStringRule> = 
     return writer;
   },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): ValidationFieldStringRule {
+  decode(input: BinaryReader | Uint8Array, length?: number): StringRule {
     const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseValidationFieldStringRule();
+    const message = createBaseStringRule();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -467,17 +465,17 @@ export const ValidationFieldStringRule: MessageFns<ValidationFieldStringRule> = 
     return message;
   },
 
-  fromJSON(object: any): ValidationFieldStringRule {
+  fromJSON(object: any): StringRule {
     return {
-      type: isSet(object.type) ? validationFieldNumericRuleTypeFromJSON(object.type) : 0,
+      type: isSet(object.type) ? stringRuleTypeFromJSON(object.type) : 0,
       value: isSet(object.value) ? globalThis.Number(object.value) : 0,
     };
   },
 
-  toJSON(message: ValidationFieldStringRule): unknown {
+  toJSON(message: StringRule): unknown {
     const obj: any = {};
     if (message.type !== 0) {
-      obj.type = validationFieldNumericRuleTypeToJSON(message.type);
+      obj.type = stringRuleTypeToJSON(message.type);
     }
     if (message.value !== 0) {
       obj.value = message.value;
@@ -485,11 +483,11 @@ export const ValidationFieldStringRule: MessageFns<ValidationFieldStringRule> = 
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<ValidationFieldStringRule>, I>>(base?: I): ValidationFieldStringRule {
-    return ValidationFieldStringRule.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<StringRule>, I>>(base?: I): StringRule {
+    return StringRule.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<ValidationFieldStringRule>, I>>(object: I): ValidationFieldStringRule {
-    const message = createBaseValidationFieldStringRule();
+  fromPartial<I extends Exact<DeepPartial<StringRule>, I>>(object: I): StringRule {
+    const message = createBaseStringRule();
     message.type = object.type ?? 0;
     message.value = object.value ?? 0;
     return message;

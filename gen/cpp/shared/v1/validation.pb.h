@@ -55,10 +55,18 @@ extern const ::google::protobuf::internal::DescriptorTable descriptor_table_shar
 }  // extern "C"
 namespace shared {
 namespace v1 {
-enum ValidationFieldNumericRuleType : int;
-extern const uint32_t ValidationFieldNumericRuleType_internal_data_[];
-enum ValidationFieldStringRuleType : int;
-extern const uint32_t ValidationFieldStringRuleType_internal_data_[];
+enum NumericRuleType : int;
+extern const uint32_t NumericRuleType_internal_data_[];
+enum StringRuleType : int;
+extern const uint32_t StringRuleType_internal_data_[];
+class NumericRule;
+struct NumericRuleDefaultTypeInternal;
+extern NumericRuleDefaultTypeInternal _NumericRule_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull NumericRule_class_data_;
+class StringRule;
+struct StringRuleDefaultTypeInternal;
+extern StringRuleDefaultTypeInternal _StringRule_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull StringRule_class_data_;
 class ValidationField;
 struct ValidationFieldDefaultTypeInternal;
 extern ValidationFieldDefaultTypeInternal _ValidationField_default_instance_;
@@ -67,10 +75,6 @@ class ValidationFieldNumeric;
 struct ValidationFieldNumericDefaultTypeInternal;
 extern ValidationFieldNumericDefaultTypeInternal _ValidationFieldNumeric_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull ValidationFieldNumeric_class_data_;
-class ValidationFieldNumericRule;
-struct ValidationFieldNumericRuleDefaultTypeInternal;
-extern ValidationFieldNumericRuleDefaultTypeInternal _ValidationFieldNumericRule_default_instance_;
-extern const ::google::protobuf::internal::ClassDataFull ValidationFieldNumericRule_class_data_;
 class ValidationFieldRegex;
 struct ValidationFieldRegexDefaultTypeInternal;
 extern ValidationFieldRegexDefaultTypeInternal _ValidationFieldRegex_default_instance_;
@@ -79,306 +83,99 @@ class ValidationFieldString;
 struct ValidationFieldStringDefaultTypeInternal;
 extern ValidationFieldStringDefaultTypeInternal _ValidationFieldString_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull ValidationFieldString_class_data_;
-class ValidationFieldStringRule;
-struct ValidationFieldStringRuleDefaultTypeInternal;
-extern ValidationFieldStringRuleDefaultTypeInternal _ValidationFieldStringRule_default_instance_;
-extern const ::google::protobuf::internal::ClassDataFull ValidationFieldStringRule_class_data_;
 }  // namespace v1
 }  // namespace shared
 namespace google {
 namespace protobuf {
 template <>
-internal::EnumTraitsT<::shared::v1::ValidationFieldNumericRuleType_internal_data_>
-    internal::EnumTraitsImpl::value<::shared::v1::ValidationFieldNumericRuleType>;
+internal::EnumTraitsT<::shared::v1::NumericRuleType_internal_data_>
+    internal::EnumTraitsImpl::value<::shared::v1::NumericRuleType>;
 template <>
-internal::EnumTraitsT<::shared::v1::ValidationFieldStringRuleType_internal_data_>
-    internal::EnumTraitsImpl::value<::shared::v1::ValidationFieldStringRuleType>;
+internal::EnumTraitsT<::shared::v1::StringRuleType_internal_data_>
+    internal::EnumTraitsImpl::value<::shared::v1::StringRuleType>;
 }  // namespace protobuf
 }  // namespace google
 
 namespace shared {
 namespace v1 {
-enum ValidationFieldNumericRuleType : int {
-  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN = 0,
-  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX = 1,
-  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT = 2,
-  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT = 3,
-  ValidationFieldNumericRuleType_INT_MIN_SENTINEL_DO_NOT_USE_ =
+enum NumericRuleType : int {
+  NUMERIC_RULE_TYPE_MIN = 0,
+  NUMERIC_RULE_TYPE_MAX = 1,
+  NUMERIC_RULE_TYPE_GT = 2,
+  NUMERIC_RULE_TYPE_LT = 3,
+  NumericRuleType_INT_MIN_SENTINEL_DO_NOT_USE_ =
       ::std::numeric_limits<::int32_t>::min(),
-  ValidationFieldNumericRuleType_INT_MAX_SENTINEL_DO_NOT_USE_ =
+  NumericRuleType_INT_MAX_SENTINEL_DO_NOT_USE_ =
       ::std::numeric_limits<::int32_t>::max(),
 };
 
-extern const uint32_t ValidationFieldNumericRuleType_internal_data_[];
-inline constexpr ValidationFieldNumericRuleType ValidationFieldNumericRuleType_MIN =
-    static_cast<ValidationFieldNumericRuleType>(0);
-inline constexpr ValidationFieldNumericRuleType ValidationFieldNumericRuleType_MAX =
-    static_cast<ValidationFieldNumericRuleType>(3);
-inline bool ValidationFieldNumericRuleType_IsValid(int value) {
+extern const uint32_t NumericRuleType_internal_data_[];
+inline constexpr NumericRuleType NumericRuleType_MIN =
+    static_cast<NumericRuleType>(0);
+inline constexpr NumericRuleType NumericRuleType_MAX =
+    static_cast<NumericRuleType>(3);
+inline bool NumericRuleType_IsValid(int value) {
   return 0 <= value && value <= 3;
 }
-inline constexpr int ValidationFieldNumericRuleType_ARRAYSIZE = 3 + 1;
-const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL ValidationFieldNumericRuleType_descriptor();
+inline constexpr int NumericRuleType_ARRAYSIZE = 3 + 1;
+const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL NumericRuleType_descriptor();
 template <typename T>
-const ::std::string& ValidationFieldNumericRuleType_Name(T value) {
-  static_assert(::std::is_same<T, ValidationFieldNumericRuleType>::value ||
+const ::std::string& NumericRuleType_Name(T value) {
+  static_assert(::std::is_same<T, NumericRuleType>::value ||
                     ::std::is_integral<T>::value,
-                "Incorrect type passed to ValidationFieldNumericRuleType_Name().");
-  return ValidationFieldNumericRuleType_Name(static_cast<ValidationFieldNumericRuleType>(value));
+                "Incorrect type passed to NumericRuleType_Name().");
+  return NumericRuleType_Name(static_cast<NumericRuleType>(value));
 }
 template <>
-inline const ::std::string& ValidationFieldNumericRuleType_Name(ValidationFieldNumericRuleType value) {
-  return ::google::protobuf::internal::NameOfDenseEnum<ValidationFieldNumericRuleType_descriptor, 0, 3>(
+inline const ::std::string& NumericRuleType_Name(NumericRuleType value) {
+  return ::google::protobuf::internal::NameOfDenseEnum<NumericRuleType_descriptor, 0, 3>(
       static_cast<int>(value));
 }
-inline bool ValidationFieldNumericRuleType_Parse(
-    ::absl::string_view name, ValidationFieldNumericRuleType* PROTOBUF_NONNULL value) {
-  return ::google::protobuf::internal::ParseNamedEnum<ValidationFieldNumericRuleType>(ValidationFieldNumericRuleType_descriptor(), name,
+inline bool NumericRuleType_Parse(
+    ::absl::string_view name, NumericRuleType* PROTOBUF_NONNULL value) {
+  return ::google::protobuf::internal::ParseNamedEnum<NumericRuleType>(NumericRuleType_descriptor(), name,
                                            value);
 }
-enum ValidationFieldStringRuleType : int {
-  PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN = 0,
-  PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX = 1,
-  ValidationFieldStringRuleType_INT_MIN_SENTINEL_DO_NOT_USE_ =
+enum StringRuleType : int {
+  STRING_RULE_TYPE_MIN = 0,
+  STRING_RULE_TYPE_MAX = 1,
+  StringRuleType_INT_MIN_SENTINEL_DO_NOT_USE_ =
       ::std::numeric_limits<::int32_t>::min(),
-  ValidationFieldStringRuleType_INT_MAX_SENTINEL_DO_NOT_USE_ =
+  StringRuleType_INT_MAX_SENTINEL_DO_NOT_USE_ =
       ::std::numeric_limits<::int32_t>::max(),
 };
 
-extern const uint32_t ValidationFieldStringRuleType_internal_data_[];
-inline constexpr ValidationFieldStringRuleType ValidationFieldStringRuleType_MIN =
-    static_cast<ValidationFieldStringRuleType>(0);
-inline constexpr ValidationFieldStringRuleType ValidationFieldStringRuleType_MAX =
-    static_cast<ValidationFieldStringRuleType>(1);
-inline bool ValidationFieldStringRuleType_IsValid(int value) {
+extern const uint32_t StringRuleType_internal_data_[];
+inline constexpr StringRuleType StringRuleType_MIN =
+    static_cast<StringRuleType>(0);
+inline constexpr StringRuleType StringRuleType_MAX =
+    static_cast<StringRuleType>(1);
+inline bool StringRuleType_IsValid(int value) {
   return 0 <= value && value <= 1;
 }
-inline constexpr int ValidationFieldStringRuleType_ARRAYSIZE = 1 + 1;
-const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL ValidationFieldStringRuleType_descriptor();
+inline constexpr int StringRuleType_ARRAYSIZE = 1 + 1;
+const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL StringRuleType_descriptor();
 template <typename T>
-const ::std::string& ValidationFieldStringRuleType_Name(T value) {
-  static_assert(::std::is_same<T, ValidationFieldStringRuleType>::value ||
+const ::std::string& StringRuleType_Name(T value) {
+  static_assert(::std::is_same<T, StringRuleType>::value ||
                     ::std::is_integral<T>::value,
-                "Incorrect type passed to ValidationFieldStringRuleType_Name().");
-  return ValidationFieldStringRuleType_Name(static_cast<ValidationFieldStringRuleType>(value));
+                "Incorrect type passed to StringRuleType_Name().");
+  return StringRuleType_Name(static_cast<StringRuleType>(value));
 }
 template <>
-inline const ::std::string& ValidationFieldStringRuleType_Name(ValidationFieldStringRuleType value) {
-  return ::google::protobuf::internal::NameOfDenseEnum<ValidationFieldStringRuleType_descriptor, 0, 1>(
+inline const ::std::string& StringRuleType_Name(StringRuleType value) {
+  return ::google::protobuf::internal::NameOfDenseEnum<StringRuleType_descriptor, 0, 1>(
       static_cast<int>(value));
 }
-inline bool ValidationFieldStringRuleType_Parse(
-    ::absl::string_view name, ValidationFieldStringRuleType* PROTOBUF_NONNULL value) {
-  return ::google::protobuf::internal::ParseNamedEnum<ValidationFieldStringRuleType>(ValidationFieldStringRuleType_descriptor(), name,
+inline bool StringRuleType_Parse(
+    ::absl::string_view name, StringRuleType* PROTOBUF_NONNULL value) {
+  return ::google::protobuf::internal::ParseNamedEnum<StringRuleType>(StringRuleType_descriptor(), name,
                                            value);
 }
 
 // ===================================================================
 
 
-// -------------------------------------------------------------------
-
-class ValidationFieldStringRule final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:shared.v1.ValidationFieldStringRule) */ {
- public:
-  inline ValidationFieldStringRule() : ValidationFieldStringRule(nullptr) {}
-  ~ValidationFieldStringRule() PROTOBUF_FINAL;
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(ValidationFieldStringRule* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
-    SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(ValidationFieldStringRule));
-  }
-#endif
-
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR ValidationFieldStringRule(::google::protobuf::internal::ConstantInitialized);
-
-  inline ValidationFieldStringRule(const ValidationFieldStringRule& from) : ValidationFieldStringRule(nullptr, from) {}
-  inline ValidationFieldStringRule(ValidationFieldStringRule&& from) noexcept
-      : ValidationFieldStringRule(nullptr, ::std::move(from)) {}
-  inline ValidationFieldStringRule& operator=(const ValidationFieldStringRule& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline ValidationFieldStringRule& operator=(ValidationFieldStringRule&& from) noexcept {
-    if (this == &from) return *this;
-    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const ValidationFieldStringRule& default_instance() {
-    return *reinterpret_cast<const ValidationFieldStringRule*>(
-        &_ValidationFieldStringRule_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages = 4;
-  friend void swap(ValidationFieldStringRule& a, ValidationFieldStringRule& b) { a.Swap(&b); }
-  inline void Swap(ValidationFieldStringRule* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(ValidationFieldStringRule* PROTOBUF_NONNULL other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  ValidationFieldStringRule* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<ValidationFieldStringRule>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const ValidationFieldStringRule& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const ValidationFieldStringRule& from) { ValidationFieldStringRule::MergeImpl(*this, from); }
-
-  private:
-  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
-                        const ::google::protobuf::MessageLite& from_msg);
-
-  public:
-  bool IsInitialized() const {
-    return true;
-  }
-  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
-  #if defined(PROTOBUF_CUSTOM_VTABLE)
-  private:
-  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
-  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
-
-  public:
-  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
-  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-    return _InternalSerialize(*this, target, stream);
-  }
-  #else   // PROTOBUF_CUSTOM_VTABLE
-  ::size_t ByteSizeLong() const final;
-  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
-      ::uint8_t* PROTOBUF_NONNULL target,
-      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
-  #endif  // PROTOBUF_CUSTOM_VTABLE
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static void SharedDtor(MessageLite& self);
-  void InternalSwap(ValidationFieldStringRule* PROTOBUF_NONNULL other);
- private:
-  template <typename T>
-  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() { return "shared.v1.ValidationFieldStringRule"; }
-
- protected:
-  explicit ValidationFieldStringRule(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  ValidationFieldStringRule(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ValidationFieldStringRule& from);
-  ValidationFieldStringRule(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ValidationFieldStringRule&& from) noexcept
-      : ValidationFieldStringRule(arena) {
-    *this = ::std::move(from);
-  }
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-
- public:
-  static constexpr auto InternalGenerateClassData_();
-
-  ::google::protobuf::Metadata GetMetadata() const;
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-  enum : int {
-    kValueFieldNumber = 2,
-    kTypeFieldNumber = 1,
-  };
-  // double value = 2 [json_name = "value"];
-  void clear_value() ;
-  double value() const;
-  void set_value(double value);
-
-  private:
-  double _internal_value() const;
-  void _internal_set_value(double value);
-
-  public:
-  // .shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];
-  void clear_type() ;
-  ::shared::v1::ValidationFieldNumericRuleType type() const;
-  void set_type(::shared::v1::ValidationFieldNumericRuleType value);
-
-  private:
-  ::shared::v1::ValidationFieldNumericRuleType _internal_type() const;
-  void _internal_set_type(::shared::v1::ValidationFieldNumericRuleType value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:shared.v1.ValidationFieldStringRule)
- private:
-  class _Internal;
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<1, 2,
-                                   0, 0,
-                                   2>
-      _table_;
-
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-    inline explicit Impl_(
-        ::google::protobuf::internal::InternalVisibility visibility,
-        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const ValidationFieldStringRule& from_msg);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    ::google::protobuf::internal::CachedSize _cached_size_;
-    double value_;
-    int type_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_shared_2fv1_2fvalidation_2eproto;
-};
-
-extern const ::google::protobuf::internal::ClassDataFull ValidationFieldStringRule_class_data_;
 // -------------------------------------------------------------------
 
 class ValidationFieldRegex final : public ::google::protobuf::Message
@@ -589,30 +386,30 @@ class ValidationFieldRegex final : public ::google::protobuf::Message
 extern const ::google::protobuf::internal::ClassDataFull ValidationFieldRegex_class_data_;
 // -------------------------------------------------------------------
 
-class ValidationFieldNumericRule final : public ::google::protobuf::Message
-/* @@protoc_insertion_point(class_definition:shared.v1.ValidationFieldNumericRule) */ {
+class StringRule final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:shared.v1.StringRule) */ {
  public:
-  inline ValidationFieldNumericRule() : ValidationFieldNumericRule(nullptr) {}
-  ~ValidationFieldNumericRule() PROTOBUF_FINAL;
+  inline StringRule() : StringRule(nullptr) {}
+  ~StringRule() PROTOBUF_FINAL;
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-  void operator delete(ValidationFieldNumericRule* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+  void operator delete(StringRule* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
     SharedDtor(*msg);
-    ::google::protobuf::internal::SizedDelete(msg, sizeof(ValidationFieldNumericRule));
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(StringRule));
   }
 #endif
 
   template <typename = void>
-  explicit PROTOBUF_CONSTEXPR ValidationFieldNumericRule(::google::protobuf::internal::ConstantInitialized);
+  explicit PROTOBUF_CONSTEXPR StringRule(::google::protobuf::internal::ConstantInitialized);
 
-  inline ValidationFieldNumericRule(const ValidationFieldNumericRule& from) : ValidationFieldNumericRule(nullptr, from) {}
-  inline ValidationFieldNumericRule(ValidationFieldNumericRule&& from) noexcept
-      : ValidationFieldNumericRule(nullptr, ::std::move(from)) {}
-  inline ValidationFieldNumericRule& operator=(const ValidationFieldNumericRule& from) {
+  inline StringRule(const StringRule& from) : StringRule(nullptr, from) {}
+  inline StringRule(StringRule&& from) noexcept
+      : StringRule(nullptr, ::std::move(from)) {}
+  inline StringRule& operator=(const StringRule& from) {
     CopyFrom(from);
     return *this;
   }
-  inline ValidationFieldNumericRule& operator=(ValidationFieldNumericRule&& from) noexcept {
+  inline StringRule& operator=(StringRule&& from) noexcept {
     if (this == &from) return *this;
     if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
       InternalSwap(&from);
@@ -640,13 +437,13 @@ class ValidationFieldNumericRule final : public ::google::protobuf::Message
   static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const ValidationFieldNumericRule& default_instance() {
-    return *reinterpret_cast<const ValidationFieldNumericRule*>(
-        &_ValidationFieldNumericRule_default_instance_);
+  static const StringRule& default_instance() {
+    return *reinterpret_cast<const StringRule*>(
+        &_StringRule_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 2;
-  friend void swap(ValidationFieldNumericRule& a, ValidationFieldNumericRule& b) { a.Swap(&b); }
-  inline void Swap(ValidationFieldNumericRule* PROTOBUF_NONNULL other) {
+  static constexpr int kIndexInFileMessages = 4;
+  friend void swap(StringRule& a, StringRule& b) { a.Swap(&b); }
+  inline void Swap(StringRule* PROTOBUF_NONNULL other) {
     if (other == this) return;
     if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
       InternalSwap(other);
@@ -654,7 +451,7 @@ class ValidationFieldNumericRule final : public ::google::protobuf::Message
       ::google::protobuf::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(ValidationFieldNumericRule* PROTOBUF_NONNULL other) {
+  void UnsafeArenaSwap(StringRule* PROTOBUF_NONNULL other) {
     if (other == this) return;
     ABSL_DCHECK(GetArena() == other->GetArena());
     InternalSwap(other);
@@ -662,13 +459,13 @@ class ValidationFieldNumericRule final : public ::google::protobuf::Message
 
   // implements Message ----------------------------------------------
 
-  ValidationFieldNumericRule* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
-    return ::google::protobuf::Message::DefaultConstruct<ValidationFieldNumericRule>(arena);
+  StringRule* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<StringRule>(arena);
   }
   using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const ValidationFieldNumericRule& from);
+  void CopyFrom(const StringRule& from);
   using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom(const ValidationFieldNumericRule& from) { ValidationFieldNumericRule::MergeImpl(*this, from); }
+  void MergeFrom(const StringRule& from) { StringRule::MergeImpl(*this, from); }
 
   private:
   static void MergeImpl(::google::protobuf::MessageLite& to_msg,
@@ -704,18 +501,18 @@ class ValidationFieldNumericRule final : public ::google::protobuf::Message
   private:
   void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static void SharedDtor(MessageLite& self);
-  void InternalSwap(ValidationFieldNumericRule* PROTOBUF_NONNULL other);
+  void InternalSwap(StringRule* PROTOBUF_NONNULL other);
  private:
   template <typename T>
   friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
-  static ::absl::string_view FullMessageName() { return "shared.v1.ValidationFieldNumericRule"; }
+  static ::absl::string_view FullMessageName() { return "shared.v1.StringRule"; }
 
  protected:
-  explicit ValidationFieldNumericRule(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  ValidationFieldNumericRule(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ValidationFieldNumericRule& from);
-  ValidationFieldNumericRule(
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ValidationFieldNumericRule&& from) noexcept
-      : ValidationFieldNumericRule(arena) {
+  explicit StringRule(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  StringRule(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const StringRule& from);
+  StringRule(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, StringRule&& from) noexcept
+      : StringRule(arena) {
     *this = ::std::move(from);
   }
   const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
@@ -745,17 +542,17 @@ class ValidationFieldNumericRule final : public ::google::protobuf::Message
   void _internal_set_value(double value);
 
   public:
-  // .shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];
+  // .shared.v1.StringRuleType type = 1 [json_name = "type"];
   void clear_type() ;
-  ::shared::v1::ValidationFieldNumericRuleType type() const;
-  void set_type(::shared::v1::ValidationFieldNumericRuleType value);
+  ::shared::v1::StringRuleType type() const;
+  void set_type(::shared::v1::StringRuleType value);
 
   private:
-  ::shared::v1::ValidationFieldNumericRuleType _internal_type() const;
-  void _internal_set_type(::shared::v1::ValidationFieldNumericRuleType value);
+  ::shared::v1::StringRuleType _internal_type() const;
+  void _internal_set_type(::shared::v1::StringRuleType value);
 
   public:
-  // @@protoc_insertion_point(class_scope:shared.v1.ValidationFieldNumericRule)
+  // @@protoc_insertion_point(class_scope:shared.v1.StringRule)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
@@ -778,7 +575,7 @@ class ValidationFieldNumericRule final : public ::google::protobuf::Message
     inline explicit Impl_(
         ::google::protobuf::internal::InternalVisibility visibility,
         ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-        const ValidationFieldNumericRule& from_msg);
+        const StringRule& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     double value_;
@@ -789,7 +586,210 @@ class ValidationFieldNumericRule final : public ::google::protobuf::Message
   friend struct ::TableStruct_shared_2fv1_2fvalidation_2eproto;
 };
 
-extern const ::google::protobuf::internal::ClassDataFull ValidationFieldNumericRule_class_data_;
+extern const ::google::protobuf::internal::ClassDataFull StringRule_class_data_;
+// -------------------------------------------------------------------
+
+class NumericRule final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:shared.v1.NumericRule) */ {
+ public:
+  inline NumericRule() : NumericRule(nullptr) {}
+  ~NumericRule() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(NumericRule* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(NumericRule));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR NumericRule(::google::protobuf::internal::ConstantInitialized);
+
+  inline NumericRule(const NumericRule& from) : NumericRule(nullptr, from) {}
+  inline NumericRule(NumericRule&& from) noexcept
+      : NumericRule(nullptr, ::std::move(from)) {}
+  inline NumericRule& operator=(const NumericRule& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline NumericRule& operator=(NumericRule&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const NumericRule& default_instance() {
+    return *reinterpret_cast<const NumericRule*>(
+        &_NumericRule_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 2;
+  friend void swap(NumericRule& a, NumericRule& b) { a.Swap(&b); }
+  inline void Swap(NumericRule* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(NumericRule* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  NumericRule* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<NumericRule>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const NumericRule& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const NumericRule& from) { NumericRule::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(NumericRule* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "shared.v1.NumericRule"; }
+
+ protected:
+  explicit NumericRule(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  NumericRule(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const NumericRule& from);
+  NumericRule(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, NumericRule&& from) noexcept
+      : NumericRule(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kValueFieldNumber = 2,
+    kTypeFieldNumber = 1,
+  };
+  // double value = 2 [json_name = "value"];
+  void clear_value() ;
+  double value() const;
+  void set_value(double value);
+
+  private:
+  double _internal_value() const;
+  void _internal_set_value(double value);
+
+  public:
+  // .shared.v1.NumericRuleType type = 1 [json_name = "type"];
+  void clear_type() ;
+  ::shared::v1::NumericRuleType type() const;
+  void set_type(::shared::v1::NumericRuleType value);
+
+  private:
+  ::shared::v1::NumericRuleType _internal_type() const;
+  void _internal_set_type(::shared::v1::NumericRuleType value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:shared.v1.NumericRule)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<1, 2,
+                                   0, 0,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const NumericRule& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    double value_;
+    int type_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_shared_2fv1_2fvalidation_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull NumericRule_class_data_;
 // -------------------------------------------------------------------
 
 class ValidationFieldString final : public ::google::protobuf::Message
@@ -937,23 +937,23 @@ class ValidationFieldString final : public ::google::protobuf::Message
   enum : int {
     kRulesFieldNumber = 1,
   };
-  // repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];
+  // repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];
   int rules_size() const;
   private:
   int _internal_rules_size() const;
 
   public:
   void clear_rules() ;
-  ::shared::v1::ValidationFieldStringRule* PROTOBUF_NONNULL mutable_rules(int index);
-  ::google::protobuf::RepeatedPtrField<::shared::v1::ValidationFieldStringRule>* PROTOBUF_NONNULL mutable_rules();
+  ::shared::v1::StringRule* PROTOBUF_NONNULL mutable_rules(int index);
+  ::google::protobuf::RepeatedPtrField<::shared::v1::StringRule>* PROTOBUF_NONNULL mutable_rules();
 
   private:
-  const ::google::protobuf::RepeatedPtrField<::shared::v1::ValidationFieldStringRule>& _internal_rules() const;
-  ::google::protobuf::RepeatedPtrField<::shared::v1::ValidationFieldStringRule>* PROTOBUF_NONNULL _internal_mutable_rules();
+  const ::google::protobuf::RepeatedPtrField<::shared::v1::StringRule>& _internal_rules() const;
+  ::google::protobuf::RepeatedPtrField<::shared::v1::StringRule>* PROTOBUF_NONNULL _internal_mutable_rules();
   public:
-  const ::shared::v1::ValidationFieldStringRule& rules(int index) const;
-  ::shared::v1::ValidationFieldStringRule* PROTOBUF_NONNULL add_rules();
-  const ::google::protobuf::RepeatedPtrField<::shared::v1::ValidationFieldStringRule>& rules() const;
+  const ::shared::v1::StringRule& rules(int index) const;
+  ::shared::v1::StringRule* PROTOBUF_NONNULL add_rules();
+  const ::google::protobuf::RepeatedPtrField<::shared::v1::StringRule>& rules() const;
   // @@protoc_insertion_point(class_scope:shared.v1.ValidationFieldString)
  private:
   class _Internal;
@@ -978,7 +978,7 @@ class ValidationFieldString final : public ::google::protobuf::Message
         ::google::protobuf::internal::InternalVisibility visibility,
         ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
         const ValidationFieldString& from_msg);
-    ::google::protobuf::RepeatedPtrField< ::shared::v1::ValidationFieldStringRule > rules_;
+    ::google::protobuf::RepeatedPtrField< ::shared::v1::StringRule > rules_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -1134,23 +1134,23 @@ class ValidationFieldNumeric final : public ::google::protobuf::Message
   enum : int {
     kRulesFieldNumber = 1,
   };
-  // repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];
+  // repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];
   int rules_size() const;
   private:
   int _internal_rules_size() const;
 
   public:
   void clear_rules() ;
-  ::shared::v1::ValidationFieldNumericRule* PROTOBUF_NONNULL mutable_rules(int index);
-  ::google::protobuf::RepeatedPtrField<::shared::v1::ValidationFieldNumericRule>* PROTOBUF_NONNULL mutable_rules();
+  ::shared::v1::NumericRule* PROTOBUF_NONNULL mutable_rules(int index);
+  ::google::protobuf::RepeatedPtrField<::shared::v1::NumericRule>* PROTOBUF_NONNULL mutable_rules();
 
   private:
-  const ::google::protobuf::RepeatedPtrField<::shared::v1::ValidationFieldNumericRule>& _internal_rules() const;
-  ::google::protobuf::RepeatedPtrField<::shared::v1::ValidationFieldNumericRule>* PROTOBUF_NONNULL _internal_mutable_rules();
+  const ::google::protobuf::RepeatedPtrField<::shared::v1::NumericRule>& _internal_rules() const;
+  ::google::protobuf::RepeatedPtrField<::shared::v1::NumericRule>* PROTOBUF_NONNULL _internal_mutable_rules();
   public:
-  const ::shared::v1::ValidationFieldNumericRule& rules(int index) const;
-  ::shared::v1::ValidationFieldNumericRule* PROTOBUF_NONNULL add_rules();
-  const ::google::protobuf::RepeatedPtrField<::shared::v1::ValidationFieldNumericRule>& rules() const;
+  const ::shared::v1::NumericRule& rules(int index) const;
+  ::shared::v1::NumericRule* PROTOBUF_NONNULL add_rules();
+  const ::google::protobuf::RepeatedPtrField<::shared::v1::NumericRule>& rules() const;
   // @@protoc_insertion_point(class_scope:shared.v1.ValidationFieldNumeric)
  private:
   class _Internal;
@@ -1175,7 +1175,7 @@ class ValidationFieldNumeric final : public ::google::protobuf::Message
         ::google::protobuf::internal::InternalVisibility visibility,
         ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
         const ValidationFieldNumeric& from_msg);
-    ::google::protobuf::RepeatedPtrField< ::shared::v1::ValidationFieldNumericRule > rules_;
+    ::google::protobuf::RepeatedPtrField< ::shared::v1::NumericRule > rules_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -1716,7 +1716,7 @@ inline ValidationField::RuleCase ValidationField::rule_case() const {
 
 // ValidationFieldNumeric
 
-// repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];
+// repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];
 inline int ValidationFieldNumeric::_internal_rules_size() const {
   return _internal_rules().size();
 }
@@ -1727,40 +1727,40 @@ inline void ValidationFieldNumeric::clear_rules() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.rules_.Clear();
 }
-inline ::shared::v1::ValidationFieldNumericRule* PROTOBUF_NONNULL ValidationFieldNumeric::mutable_rules(int index)
+inline ::shared::v1::NumericRule* PROTOBUF_NONNULL ValidationFieldNumeric::mutable_rules(int index)
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable:shared.v1.ValidationFieldNumeric.rules)
   return _internal_mutable_rules()->Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField<::shared::v1::ValidationFieldNumericRule>* PROTOBUF_NONNULL ValidationFieldNumeric::mutable_rules()
+inline ::google::protobuf::RepeatedPtrField<::shared::v1::NumericRule>* PROTOBUF_NONNULL ValidationFieldNumeric::mutable_rules()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable_list:shared.v1.ValidationFieldNumeric.rules)
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _internal_mutable_rules();
 }
-inline const ::shared::v1::ValidationFieldNumericRule& ValidationFieldNumeric::rules(int index) const
+inline const ::shared::v1::NumericRule& ValidationFieldNumeric::rules(int index) const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:shared.v1.ValidationFieldNumeric.rules)
   return _internal_rules().Get(index);
 }
-inline ::shared::v1::ValidationFieldNumericRule* PROTOBUF_NONNULL ValidationFieldNumeric::add_rules()
+inline ::shared::v1::NumericRule* PROTOBUF_NONNULL ValidationFieldNumeric::add_rules()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  ::shared::v1::ValidationFieldNumericRule* _add = _internal_mutable_rules()->Add();
+  ::shared::v1::NumericRule* _add = _internal_mutable_rules()->Add();
   // @@protoc_insertion_point(field_add:shared.v1.ValidationFieldNumeric.rules)
   return _add;
 }
-inline const ::google::protobuf::RepeatedPtrField<::shared::v1::ValidationFieldNumericRule>& ValidationFieldNumeric::rules() const
+inline const ::google::protobuf::RepeatedPtrField<::shared::v1::NumericRule>& ValidationFieldNumeric::rules() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_list:shared.v1.ValidationFieldNumeric.rules)
   return _internal_rules();
 }
-inline const ::google::protobuf::RepeatedPtrField<::shared::v1::ValidationFieldNumericRule>&
+inline const ::google::protobuf::RepeatedPtrField<::shared::v1::NumericRule>&
 ValidationFieldNumeric::_internal_rules() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.rules_;
 }
-inline ::google::protobuf::RepeatedPtrField<::shared::v1::ValidationFieldNumericRule>* PROTOBUF_NONNULL
+inline ::google::protobuf::RepeatedPtrField<::shared::v1::NumericRule>* PROTOBUF_NONNULL
 ValidationFieldNumeric::_internal_mutable_rules() {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return &_impl_.rules_;
@@ -1768,52 +1768,52 @@ ValidationFieldNumeric::_internal_mutable_rules() {
 
 // -------------------------------------------------------------------
 
-// ValidationFieldNumericRule
+// NumericRule
 
-// .shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];
-inline void ValidationFieldNumericRule::clear_type() {
+// .shared.v1.NumericRuleType type = 1 [json_name = "type"];
+inline void NumericRule::clear_type() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.type_ = 0;
   _impl_._has_bits_[0] &= ~0x00000002u;
 }
-inline ::shared::v1::ValidationFieldNumericRuleType ValidationFieldNumericRule::type() const {
-  // @@protoc_insertion_point(field_get:shared.v1.ValidationFieldNumericRule.type)
+inline ::shared::v1::NumericRuleType NumericRule::type() const {
+  // @@protoc_insertion_point(field_get:shared.v1.NumericRule.type)
   return _internal_type();
 }
-inline void ValidationFieldNumericRule::set_type(::shared::v1::ValidationFieldNumericRuleType value) {
+inline void NumericRule::set_type(::shared::v1::NumericRuleType value) {
   _internal_set_type(value);
   _impl_._has_bits_[0] |= 0x00000002u;
-  // @@protoc_insertion_point(field_set:shared.v1.ValidationFieldNumericRule.type)
+  // @@protoc_insertion_point(field_set:shared.v1.NumericRule.type)
 }
-inline ::shared::v1::ValidationFieldNumericRuleType ValidationFieldNumericRule::_internal_type() const {
+inline ::shared::v1::NumericRuleType NumericRule::_internal_type() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return static_cast<::shared::v1::ValidationFieldNumericRuleType>(_impl_.type_);
+  return static_cast<::shared::v1::NumericRuleType>(_impl_.type_);
 }
-inline void ValidationFieldNumericRule::_internal_set_type(::shared::v1::ValidationFieldNumericRuleType value) {
+inline void NumericRule::_internal_set_type(::shared::v1::NumericRuleType value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.type_ = value;
 }
 
 // double value = 2 [json_name = "value"];
-inline void ValidationFieldNumericRule::clear_value() {
+inline void NumericRule::clear_value() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.value_ = 0;
   _impl_._has_bits_[0] &= ~0x00000001u;
 }
-inline double ValidationFieldNumericRule::value() const {
-  // @@protoc_insertion_point(field_get:shared.v1.ValidationFieldNumericRule.value)
+inline double NumericRule::value() const {
+  // @@protoc_insertion_point(field_get:shared.v1.NumericRule.value)
   return _internal_value();
 }
-inline void ValidationFieldNumericRule::set_value(double value) {
+inline void NumericRule::set_value(double value) {
   _internal_set_value(value);
   _impl_._has_bits_[0] |= 0x00000001u;
-  // @@protoc_insertion_point(field_set:shared.v1.ValidationFieldNumericRule.value)
+  // @@protoc_insertion_point(field_set:shared.v1.NumericRule.value)
 }
-inline double ValidationFieldNumericRule::_internal_value() const {
+inline double NumericRule::_internal_value() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.value_;
 }
-inline void ValidationFieldNumericRule::_internal_set_value(double value) {
+inline void NumericRule::_internal_set_value(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.value_ = value;
 }
@@ -1822,7 +1822,7 @@ inline void ValidationFieldNumericRule::_internal_set_value(double value) {
 
 // ValidationFieldString
 
-// repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];
+// repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];
 inline int ValidationFieldString::_internal_rules_size() const {
   return _internal_rules().size();
 }
@@ -1833,40 +1833,40 @@ inline void ValidationFieldString::clear_rules() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.rules_.Clear();
 }
-inline ::shared::v1::ValidationFieldStringRule* PROTOBUF_NONNULL ValidationFieldString::mutable_rules(int index)
+inline ::shared::v1::StringRule* PROTOBUF_NONNULL ValidationFieldString::mutable_rules(int index)
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable:shared.v1.ValidationFieldString.rules)
   return _internal_mutable_rules()->Mutable(index);
 }
-inline ::google::protobuf::RepeatedPtrField<::shared::v1::ValidationFieldStringRule>* PROTOBUF_NONNULL ValidationFieldString::mutable_rules()
+inline ::google::protobuf::RepeatedPtrField<::shared::v1::StringRule>* PROTOBUF_NONNULL ValidationFieldString::mutable_rules()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable_list:shared.v1.ValidationFieldString.rules)
   ::google::protobuf::internal::TSanWrite(&_impl_);
   return _internal_mutable_rules();
 }
-inline const ::shared::v1::ValidationFieldStringRule& ValidationFieldString::rules(int index) const
+inline const ::shared::v1::StringRule& ValidationFieldString::rules(int index) const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:shared.v1.ValidationFieldString.rules)
   return _internal_rules().Get(index);
 }
-inline ::shared::v1::ValidationFieldStringRule* PROTOBUF_NONNULL ValidationFieldString::add_rules()
+inline ::shared::v1::StringRule* PROTOBUF_NONNULL ValidationFieldString::add_rules()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  ::shared::v1::ValidationFieldStringRule* _add = _internal_mutable_rules()->Add();
+  ::shared::v1::StringRule* _add = _internal_mutable_rules()->Add();
   // @@protoc_insertion_point(field_add:shared.v1.ValidationFieldString.rules)
   return _add;
 }
-inline const ::google::protobuf::RepeatedPtrField<::shared::v1::ValidationFieldStringRule>& ValidationFieldString::rules() const
+inline const ::google::protobuf::RepeatedPtrField<::shared::v1::StringRule>& ValidationFieldString::rules() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_list:shared.v1.ValidationFieldString.rules)
   return _internal_rules();
 }
-inline const ::google::protobuf::RepeatedPtrField<::shared::v1::ValidationFieldStringRule>&
+inline const ::google::protobuf::RepeatedPtrField<::shared::v1::StringRule>&
 ValidationFieldString::_internal_rules() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.rules_;
 }
-inline ::google::protobuf::RepeatedPtrField<::shared::v1::ValidationFieldStringRule>* PROTOBUF_NONNULL
+inline ::google::protobuf::RepeatedPtrField<::shared::v1::StringRule>* PROTOBUF_NONNULL
 ValidationFieldString::_internal_mutable_rules() {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return &_impl_.rules_;
@@ -1874,52 +1874,52 @@ ValidationFieldString::_internal_mutable_rules() {
 
 // -------------------------------------------------------------------
 
-// ValidationFieldStringRule
+// StringRule
 
-// .shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];
-inline void ValidationFieldStringRule::clear_type() {
+// .shared.v1.StringRuleType type = 1 [json_name = "type"];
+inline void StringRule::clear_type() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.type_ = 0;
   _impl_._has_bits_[0] &= ~0x00000002u;
 }
-inline ::shared::v1::ValidationFieldNumericRuleType ValidationFieldStringRule::type() const {
-  // @@protoc_insertion_point(field_get:shared.v1.ValidationFieldStringRule.type)
+inline ::shared::v1::StringRuleType StringRule::type() const {
+  // @@protoc_insertion_point(field_get:shared.v1.StringRule.type)
   return _internal_type();
 }
-inline void ValidationFieldStringRule::set_type(::shared::v1::ValidationFieldNumericRuleType value) {
+inline void StringRule::set_type(::shared::v1::StringRuleType value) {
   _internal_set_type(value);
   _impl_._has_bits_[0] |= 0x00000002u;
-  // @@protoc_insertion_point(field_set:shared.v1.ValidationFieldStringRule.type)
+  // @@protoc_insertion_point(field_set:shared.v1.StringRule.type)
 }
-inline ::shared::v1::ValidationFieldNumericRuleType ValidationFieldStringRule::_internal_type() const {
+inline ::shared::v1::StringRuleType StringRule::_internal_type() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return static_cast<::shared::v1::ValidationFieldNumericRuleType>(_impl_.type_);
+  return static_cast<::shared::v1::StringRuleType>(_impl_.type_);
 }
-inline void ValidationFieldStringRule::_internal_set_type(::shared::v1::ValidationFieldNumericRuleType value) {
+inline void StringRule::_internal_set_type(::shared::v1::StringRuleType value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.type_ = value;
 }
 
 // double value = 2 [json_name = "value"];
-inline void ValidationFieldStringRule::clear_value() {
+inline void StringRule::clear_value() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.value_ = 0;
   _impl_._has_bits_[0] &= ~0x00000001u;
 }
-inline double ValidationFieldStringRule::value() const {
-  // @@protoc_insertion_point(field_get:shared.v1.ValidationFieldStringRule.value)
+inline double StringRule::value() const {
+  // @@protoc_insertion_point(field_get:shared.v1.StringRule.value)
   return _internal_value();
 }
-inline void ValidationFieldStringRule::set_value(double value) {
+inline void StringRule::set_value(double value) {
   _internal_set_value(value);
   _impl_._has_bits_[0] |= 0x00000001u;
-  // @@protoc_insertion_point(field_set:shared.v1.ValidationFieldStringRule.value)
+  // @@protoc_insertion_point(field_set:shared.v1.StringRule.value)
 }
-inline double ValidationFieldStringRule::_internal_value() const {
+inline double StringRule::_internal_value() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return _impl_.value_;
 }
-inline void ValidationFieldStringRule::_internal_set_value(double value) {
+inline void StringRule::_internal_set_value(double value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.value_ = value;
 }
@@ -2030,16 +2030,16 @@ namespace google {
 namespace protobuf {
 
 template <>
-struct is_proto_enum<::shared::v1::ValidationFieldNumericRuleType> : std::true_type {};
+struct is_proto_enum<::shared::v1::NumericRuleType> : std::true_type {};
 template <>
-inline const EnumDescriptor* PROTOBUF_NONNULL GetEnumDescriptor<::shared::v1::ValidationFieldNumericRuleType>() {
-  return ::shared::v1::ValidationFieldNumericRuleType_descriptor();
+inline const EnumDescriptor* PROTOBUF_NONNULL GetEnumDescriptor<::shared::v1::NumericRuleType>() {
+  return ::shared::v1::NumericRuleType_descriptor();
 }
 template <>
-struct is_proto_enum<::shared::v1::ValidationFieldStringRuleType> : std::true_type {};
+struct is_proto_enum<::shared::v1::StringRuleType> : std::true_type {};
 template <>
-inline const EnumDescriptor* PROTOBUF_NONNULL GetEnumDescriptor<::shared::v1::ValidationFieldStringRuleType>() {
-  return ::shared::v1::ValidationFieldStringRuleType_descriptor();
+inline const EnumDescriptor* PROTOBUF_NONNULL GetEnumDescriptor<::shared::v1::StringRuleType>() {
+  return ::shared::v1::StringRuleType_descriptor();
 }
 
 }  // namespace protobuf

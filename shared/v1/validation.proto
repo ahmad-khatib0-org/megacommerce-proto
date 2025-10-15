@@ -18,34 +18,34 @@ message ValidationField {
 
 // Numeric rule (min/max, etc.)
 message ValidationFieldNumeric {
-  repeated ValidationFieldNumericRule rules = 1;
+  repeated NumericRule rules = 1;
 }
 
-message ValidationFieldNumericRule {
-  ValidationFieldNumericRuleType type = 1;
+message NumericRule {
+  NumericRuleType type = 1;
   double value = 2; // numeric parameter (double to accept int/float)
 }
 
-enum ValidationFieldNumericRuleType {
-  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN = 0;
-  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX = 1;
-  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT = 2;
-  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT = 3;
+enum NumericRuleType {
+  NUMERIC_RULE_TYPE_MIN = 0;
+  NUMERIC_RULE_TYPE_MAX = 1;
+  NUMERIC_RULE_TYPE_GT = 2; // greater than
+  NUMERIC_RULE_TYPE_LT = 3; // less than
 }
 
 // String rule (min/max length)
 message ValidationFieldString {
-  repeated ValidationFieldStringRule rules = 1;
+  repeated StringRule rules = 1;
 }
 
-message ValidationFieldStringRule {
-  ValidationFieldNumericRuleType type = 1;
+message StringRule {
+  StringRuleType type = 1;
   double value = 2; // numeric parameter (double to accept int/float)
 }
 
-enum ValidationFieldStringRuleType {
-  PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN = 0;
-  PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX = 1;
+enum StringRuleType {
+  STRING_RULE_TYPE_MIN = 0;
+  STRING_RULE_TYPE_MAX = 1;
 }
 
 // Regex rule (pattern)

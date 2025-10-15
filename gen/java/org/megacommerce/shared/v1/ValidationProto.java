@@ -27,26 +27,34 @@ public final class ValidationProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
-   * Protobuf enum {@code shared.v1.ValidationFieldNumericRuleType}
+   * Protobuf enum {@code shared.v1.NumericRuleType}
    */
-  public enum ValidationFieldNumericRuleType
+  public enum NumericRuleType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN = 0;</code>
+     * <code>NUMERIC_RULE_TYPE_MIN = 0;</code>
      */
-    PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN(0),
+    NUMERIC_RULE_TYPE_MIN(0),
     /**
-     * <code>PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX = 1;</code>
+     * <code>NUMERIC_RULE_TYPE_MAX = 1;</code>
      */
-    PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX(1),
+    NUMERIC_RULE_TYPE_MAX(1),
     /**
-     * <code>PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT = 2;</code>
+     * <pre>
+     * greater than
+     * </pre>
+     *
+     * <code>NUMERIC_RULE_TYPE_GT = 2;</code>
      */
-    PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT(2),
+    NUMERIC_RULE_TYPE_GT(2),
     /**
-     * <code>PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT = 3;</code>
+     * <pre>
+     * less than
+     * </pre>
+     *
+     * <code>NUMERIC_RULE_TYPE_LT = 3;</code>
      */
-    PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT(3),
+    NUMERIC_RULE_TYPE_LT(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -57,24 +65,32 @@ public final class ValidationProto {
         /* minor= */ 31,
         /* patch= */ 1,
         /* suffix= */ "",
-        ValidationFieldNumericRuleType.class.getName());
+        NumericRuleType.class.getName());
     }
     /**
-     * <code>PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN = 0;</code>
+     * <code>NUMERIC_RULE_TYPE_MIN = 0;</code>
      */
-    public static final int PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN_VALUE = 0;
+    public static final int NUMERIC_RULE_TYPE_MIN_VALUE = 0;
     /**
-     * <code>PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX = 1;</code>
+     * <code>NUMERIC_RULE_TYPE_MAX = 1;</code>
      */
-    public static final int PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX_VALUE = 1;
+    public static final int NUMERIC_RULE_TYPE_MAX_VALUE = 1;
     /**
-     * <code>PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT = 2;</code>
+     * <pre>
+     * greater than
+     * </pre>
+     *
+     * <code>NUMERIC_RULE_TYPE_GT = 2;</code>
      */
-    public static final int PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT_VALUE = 2;
+    public static final int NUMERIC_RULE_TYPE_GT_VALUE = 2;
     /**
-     * <code>PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT = 3;</code>
+     * <pre>
+     * less than
+     * </pre>
+     *
+     * <code>NUMERIC_RULE_TYPE_LT = 3;</code>
      */
-    public static final int PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT_VALUE = 3;
+    public static final int NUMERIC_RULE_TYPE_LT_VALUE = 3;
 
 
     public final int getNumber() {
@@ -91,7 +107,7 @@ public final class ValidationProto {
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static ValidationFieldNumericRuleType valueOf(int value) {
+    public static NumericRuleType valueOf(int value) {
       return forNumber(value);
     }
 
@@ -99,25 +115,25 @@ public final class ValidationProto {
      * @param value The numeric wire value of the corresponding enum entry.
      * @return The enum associated with the given numeric wire value.
      */
-    public static ValidationFieldNumericRuleType forNumber(int value) {
+    public static NumericRuleType forNumber(int value) {
       switch (value) {
-        case 0: return PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN;
-        case 1: return PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX;
-        case 2: return PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT;
-        case 3: return PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT;
+        case 0: return NUMERIC_RULE_TYPE_MIN;
+        case 1: return NUMERIC_RULE_TYPE_MAX;
+        case 2: return NUMERIC_RULE_TYPE_GT;
+        case 3: return NUMERIC_RULE_TYPE_LT;
         default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<ValidationFieldNumericRuleType>
+    public static com.google.protobuf.Internal.EnumLiteMap<NumericRuleType>
         internalGetValueMap() {
       return internalValueMap;
     }
     private static final com.google.protobuf.Internal.EnumLiteMap<
-        ValidationFieldNumericRuleType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<ValidationFieldNumericRuleType>() {
-            public ValidationFieldNumericRuleType findValueByNumber(int number) {
-              return ValidationFieldNumericRuleType.forNumber(number);
+        NumericRuleType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<NumericRuleType>() {
+            public NumericRuleType findValueByNumber(int number) {
+              return NumericRuleType.forNumber(number);
             }
           };
 
@@ -138,9 +154,9 @@ public final class ValidationProto {
       return org.megacommerce.shared.v1.ValidationProto.getDescriptor().getEnumTypes().get(0);
     }
 
-    private static final ValidationFieldNumericRuleType[] VALUES = values();
+    private static final NumericRuleType[] VALUES = values();
 
-    public static ValidationFieldNumericRuleType valueOf(
+    public static NumericRuleType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException(
@@ -154,26 +170,26 @@ public final class ValidationProto {
 
     private final int value;
 
-    private ValidationFieldNumericRuleType(int value) {
+    private NumericRuleType(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:shared.v1.ValidationFieldNumericRuleType)
+    // @@protoc_insertion_point(enum_scope:shared.v1.NumericRuleType)
   }
 
   /**
-   * Protobuf enum {@code shared.v1.ValidationFieldStringRuleType}
+   * Protobuf enum {@code shared.v1.StringRuleType}
    */
-  public enum ValidationFieldStringRuleType
+  public enum StringRuleType
       implements com.google.protobuf.ProtocolMessageEnum {
     /**
-     * <code>PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN = 0;</code>
+     * <code>STRING_RULE_TYPE_MIN = 0;</code>
      */
-    PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN(0),
+    STRING_RULE_TYPE_MIN(0),
     /**
-     * <code>PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX = 1;</code>
+     * <code>STRING_RULE_TYPE_MAX = 1;</code>
      */
-    PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX(1),
+    STRING_RULE_TYPE_MAX(1),
     UNRECOGNIZED(-1),
     ;
 
@@ -184,16 +200,16 @@ public final class ValidationProto {
         /* minor= */ 31,
         /* patch= */ 1,
         /* suffix= */ "",
-        ValidationFieldStringRuleType.class.getName());
+        StringRuleType.class.getName());
     }
     /**
-     * <code>PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN = 0;</code>
+     * <code>STRING_RULE_TYPE_MIN = 0;</code>
      */
-    public static final int PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN_VALUE = 0;
+    public static final int STRING_RULE_TYPE_MIN_VALUE = 0;
     /**
-     * <code>PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX = 1;</code>
+     * <code>STRING_RULE_TYPE_MAX = 1;</code>
      */
-    public static final int PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX_VALUE = 1;
+    public static final int STRING_RULE_TYPE_MAX_VALUE = 1;
 
 
     public final int getNumber() {
@@ -210,7 +226,7 @@ public final class ValidationProto {
      * @deprecated Use {@link #forNumber(int)} instead.
      */
     @java.lang.Deprecated
-    public static ValidationFieldStringRuleType valueOf(int value) {
+    public static StringRuleType valueOf(int value) {
       return forNumber(value);
     }
 
@@ -218,23 +234,23 @@ public final class ValidationProto {
      * @param value The numeric wire value of the corresponding enum entry.
      * @return The enum associated with the given numeric wire value.
      */
-    public static ValidationFieldStringRuleType forNumber(int value) {
+    public static StringRuleType forNumber(int value) {
       switch (value) {
-        case 0: return PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN;
-        case 1: return PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX;
+        case 0: return STRING_RULE_TYPE_MIN;
+        case 1: return STRING_RULE_TYPE_MAX;
         default: return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<ValidationFieldStringRuleType>
+    public static com.google.protobuf.Internal.EnumLiteMap<StringRuleType>
         internalGetValueMap() {
       return internalValueMap;
     }
     private static final com.google.protobuf.Internal.EnumLiteMap<
-        ValidationFieldStringRuleType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<ValidationFieldStringRuleType>() {
-            public ValidationFieldStringRuleType findValueByNumber(int number) {
-              return ValidationFieldStringRuleType.forNumber(number);
+        StringRuleType> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<StringRuleType>() {
+            public StringRuleType findValueByNumber(int number) {
+              return StringRuleType.forNumber(number);
             }
           };
 
@@ -255,9 +271,9 @@ public final class ValidationProto {
       return org.megacommerce.shared.v1.ValidationProto.getDescriptor().getEnumTypes().get(1);
     }
 
-    private static final ValidationFieldStringRuleType[] VALUES = values();
+    private static final StringRuleType[] VALUES = values();
 
-    public static ValidationFieldStringRuleType valueOf(
+    public static StringRuleType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
         throw new java.lang.IllegalArgumentException(
@@ -271,11 +287,11 @@ public final class ValidationProto {
 
     private final int value;
 
-    private ValidationFieldStringRuleType(int value) {
+    private StringRuleType(int value) {
       this.value = value;
     }
 
-    // @@protoc_insertion_point(enum_scope:shared.v1.ValidationFieldStringRuleType)
+    // @@protoc_insertion_point(enum_scope:shared.v1.StringRuleType)
   }
 
   public interface ValidationFieldOrBuilder extends
@@ -1399,27 +1415,27 @@ public final class ValidationProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+     * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
      */
-    java.util.List<org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule> 
+    java.util.List<org.megacommerce.shared.v1.ValidationProto.NumericRule> 
         getRulesList();
     /**
-     * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+     * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
      */
-    org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule getRules(int index);
+    org.megacommerce.shared.v1.ValidationProto.NumericRule getRules(int index);
     /**
-     * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+     * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
      */
     int getRulesCount();
     /**
-     * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+     * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
      */
-    java.util.List<? extends org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleOrBuilder> 
+    java.util.List<? extends org.megacommerce.shared.v1.ValidationProto.NumericRuleOrBuilder> 
         getRulesOrBuilderList();
     /**
-     * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+     * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
      */
-    org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleOrBuilder getRulesOrBuilder(
+    org.megacommerce.shared.v1.ValidationProto.NumericRuleOrBuilder getRulesOrBuilder(
         int index);
   }
   /**
@@ -1466,41 +1482,41 @@ public final class ValidationProto {
 
     public static final int RULES_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private java.util.List<org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule> rules_;
+    private java.util.List<org.megacommerce.shared.v1.ValidationProto.NumericRule> rules_;
     /**
-     * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+     * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
      */
     @java.lang.Override
-    public java.util.List<org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule> getRulesList() {
+    public java.util.List<org.megacommerce.shared.v1.ValidationProto.NumericRule> getRulesList() {
       return rules_;
     }
     /**
-     * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+     * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleOrBuilder> 
+    public java.util.List<? extends org.megacommerce.shared.v1.ValidationProto.NumericRuleOrBuilder> 
         getRulesOrBuilderList() {
       return rules_;
     }
     /**
-     * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+     * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
      */
     @java.lang.Override
     public int getRulesCount() {
       return rules_.size();
     }
     /**
-     * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+     * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule getRules(int index) {
+    public org.megacommerce.shared.v1.ValidationProto.NumericRule getRules(int index) {
       return rules_.get(index);
     }
     /**
-     * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+     * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleOrBuilder getRulesOrBuilder(
+    public org.megacommerce.shared.v1.ValidationProto.NumericRuleOrBuilder getRulesOrBuilder(
         int index) {
       return rules_.get(index);
     }
@@ -1822,9 +1838,9 @@ public final class ValidationProto {
                 done = true;
                 break;
               case 10: {
-                org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule m =
+                org.megacommerce.shared.v1.ValidationProto.NumericRule m =
                     input.readMessage(
-                        org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule.parser(),
+                        org.megacommerce.shared.v1.ValidationProto.NumericRule.parser(),
                         extensionRegistry);
                 if (rulesBuilder_ == null) {
                   ensureRulesIsMutable();
@@ -1851,22 +1867,22 @@ public final class ValidationProto {
       }
       private int bitField0_;
 
-      private java.util.List<org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule> rules_ =
+      private java.util.List<org.megacommerce.shared.v1.ValidationProto.NumericRule> rules_ =
         java.util.Collections.emptyList();
       private void ensureRulesIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          rules_ = new java.util.ArrayList<org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule>(rules_);
+          rules_ = new java.util.ArrayList<org.megacommerce.shared.v1.ValidationProto.NumericRule>(rules_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule, org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule.Builder, org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleOrBuilder> rulesBuilder_;
+          org.megacommerce.shared.v1.ValidationProto.NumericRule, org.megacommerce.shared.v1.ValidationProto.NumericRule.Builder, org.megacommerce.shared.v1.ValidationProto.NumericRuleOrBuilder> rulesBuilder_;
 
       /**
-       * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
        */
-      public java.util.List<org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule> getRulesList() {
+      public java.util.List<org.megacommerce.shared.v1.ValidationProto.NumericRule> getRulesList() {
         if (rulesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(rules_);
         } else {
@@ -1874,7 +1890,7 @@ public final class ValidationProto {
         }
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
        */
       public int getRulesCount() {
         if (rulesBuilder_ == null) {
@@ -1884,9 +1900,9 @@ public final class ValidationProto {
         }
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
        */
-      public org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule getRules(int index) {
+      public org.megacommerce.shared.v1.ValidationProto.NumericRule getRules(int index) {
         if (rulesBuilder_ == null) {
           return rules_.get(index);
         } else {
@@ -1894,10 +1910,10 @@ public final class ValidationProto {
         }
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
        */
       public Builder setRules(
-          int index, org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule value) {
+          int index, org.megacommerce.shared.v1.ValidationProto.NumericRule value) {
         if (rulesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1911,10 +1927,10 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
        */
       public Builder setRules(
-          int index, org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule.Builder builderForValue) {
+          int index, org.megacommerce.shared.v1.ValidationProto.NumericRule.Builder builderForValue) {
         if (rulesBuilder_ == null) {
           ensureRulesIsMutable();
           rules_.set(index, builderForValue.build());
@@ -1925,9 +1941,9 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
        */
-      public Builder addRules(org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule value) {
+      public Builder addRules(org.megacommerce.shared.v1.ValidationProto.NumericRule value) {
         if (rulesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1941,10 +1957,10 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
        */
       public Builder addRules(
-          int index, org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule value) {
+          int index, org.megacommerce.shared.v1.ValidationProto.NumericRule value) {
         if (rulesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -1958,10 +1974,10 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
        */
       public Builder addRules(
-          org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule.Builder builderForValue) {
+          org.megacommerce.shared.v1.ValidationProto.NumericRule.Builder builderForValue) {
         if (rulesBuilder_ == null) {
           ensureRulesIsMutable();
           rules_.add(builderForValue.build());
@@ -1972,10 +1988,10 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
        */
       public Builder addRules(
-          int index, org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule.Builder builderForValue) {
+          int index, org.megacommerce.shared.v1.ValidationProto.NumericRule.Builder builderForValue) {
         if (rulesBuilder_ == null) {
           ensureRulesIsMutable();
           rules_.add(index, builderForValue.build());
@@ -1986,10 +2002,10 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
        */
       public Builder addAllRules(
-          java.lang.Iterable<? extends org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule> values) {
+          java.lang.Iterable<? extends org.megacommerce.shared.v1.ValidationProto.NumericRule> values) {
         if (rulesBuilder_ == null) {
           ensureRulesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -2001,7 +2017,7 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
        */
       public Builder clearRules() {
         if (rulesBuilder_ == null) {
@@ -2014,7 +2030,7 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
        */
       public Builder removeRules(int index) {
         if (rulesBuilder_ == null) {
@@ -2027,16 +2043,16 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
        */
-      public org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule.Builder getRulesBuilder(
+      public org.megacommerce.shared.v1.ValidationProto.NumericRule.Builder getRulesBuilder(
           int index) {
         return internalGetRulesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
        */
-      public org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleOrBuilder getRulesOrBuilder(
+      public org.megacommerce.shared.v1.ValidationProto.NumericRuleOrBuilder getRulesOrBuilder(
           int index) {
         if (rulesBuilder_ == null) {
           return rules_.get(index);  } else {
@@ -2044,9 +2060,9 @@ public final class ValidationProto {
         }
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
        */
-      public java.util.List<? extends org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleOrBuilder> 
+      public java.util.List<? extends org.megacommerce.shared.v1.ValidationProto.NumericRuleOrBuilder> 
            getRulesOrBuilderList() {
         if (rulesBuilder_ != null) {
           return rulesBuilder_.getMessageOrBuilderList();
@@ -2055,33 +2071,33 @@ public final class ValidationProto {
         }
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
        */
-      public org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule.Builder addRulesBuilder() {
+      public org.megacommerce.shared.v1.ValidationProto.NumericRule.Builder addRulesBuilder() {
         return internalGetRulesFieldBuilder().addBuilder(
-            org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule.getDefaultInstance());
+            org.megacommerce.shared.v1.ValidationProto.NumericRule.getDefaultInstance());
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
        */
-      public org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule.Builder addRulesBuilder(
+      public org.megacommerce.shared.v1.ValidationProto.NumericRule.Builder addRulesBuilder(
           int index) {
         return internalGetRulesFieldBuilder().addBuilder(
-            index, org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule.getDefaultInstance());
+            index, org.megacommerce.shared.v1.ValidationProto.NumericRule.getDefaultInstance());
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldNumericRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.NumericRule rules = 1 [json_name = "rules"];</code>
        */
-      public java.util.List<org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule.Builder> 
+      public java.util.List<org.megacommerce.shared.v1.ValidationProto.NumericRule.Builder> 
            getRulesBuilderList() {
         return internalGetRulesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule, org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule.Builder, org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleOrBuilder> 
+          org.megacommerce.shared.v1.ValidationProto.NumericRule, org.megacommerce.shared.v1.ValidationProto.NumericRule.Builder, org.megacommerce.shared.v1.ValidationProto.NumericRuleOrBuilder> 
           internalGetRulesFieldBuilder() {
         if (rulesBuilder_ == null) {
           rulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule, org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule.Builder, org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleOrBuilder>(
+              org.megacommerce.shared.v1.ValidationProto.NumericRule, org.megacommerce.shared.v1.ValidationProto.NumericRule.Builder, org.megacommerce.shared.v1.ValidationProto.NumericRuleOrBuilder>(
                   rules_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -2142,20 +2158,20 @@ public final class ValidationProto {
 
   }
 
-  public interface ValidationFieldNumericRuleOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:shared.v1.ValidationFieldNumericRule)
+  public interface NumericRuleOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:shared.v1.NumericRule)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];</code>
+     * <code>.shared.v1.NumericRuleType type = 1 [json_name = "type"];</code>
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
     /**
-     * <code>.shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];</code>
+     * <code>.shared.v1.NumericRuleType type = 1 [json_name = "type"];</code>
      * @return The type.
      */
-    org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType getType();
+    org.megacommerce.shared.v1.ValidationProto.NumericRuleType getType();
 
     /**
      * <pre>
@@ -2168,12 +2184,12 @@ public final class ValidationProto {
     double getValue();
   }
   /**
-   * Protobuf type {@code shared.v1.ValidationFieldNumericRule}
+   * Protobuf type {@code shared.v1.NumericRule}
    */
-  public static final class ValidationFieldNumericRule extends
+  public static final class NumericRule extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:shared.v1.ValidationFieldNumericRule)
-      ValidationFieldNumericRuleOrBuilder {
+      // @@protoc_insertion_point(message_implements:shared.v1.NumericRule)
+      NumericRuleOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -2182,45 +2198,45 @@ public final class ValidationProto {
         /* minor= */ 31,
         /* patch= */ 1,
         /* suffix= */ "",
-        ValidationFieldNumericRule.class.getName());
+        NumericRule.class.getName());
     }
-    // Use ValidationFieldNumericRule.newBuilder() to construct.
-    private ValidationFieldNumericRule(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use NumericRule.newBuilder() to construct.
+    private NumericRule(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private ValidationFieldNumericRule() {
+    private NumericRule() {
       type_ = 0;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.megacommerce.shared.v1.ValidationProto.internal_static_shared_v1_ValidationFieldNumericRule_descriptor;
+      return org.megacommerce.shared.v1.ValidationProto.internal_static_shared_v1_NumericRule_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.megacommerce.shared.v1.ValidationProto.internal_static_shared_v1_ValidationFieldNumericRule_fieldAccessorTable
+      return org.megacommerce.shared.v1.ValidationProto.internal_static_shared_v1_NumericRule_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule.class, org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule.Builder.class);
+              org.megacommerce.shared.v1.ValidationProto.NumericRule.class, org.megacommerce.shared.v1.ValidationProto.NumericRule.Builder.class);
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_ = 0;
     /**
-     * <code>.shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];</code>
+     * <code>.shared.v1.NumericRuleType type = 1 [json_name = "type"];</code>
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override public int getTypeValue() {
       return type_;
     }
     /**
-     * <code>.shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];</code>
+     * <code>.shared.v1.NumericRuleType type = 1 [json_name = "type"];</code>
      * @return The type.
      */
-    @java.lang.Override public org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType getType() {
-      org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType result = org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType.forNumber(type_);
-      return result == null ? org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType.UNRECOGNIZED : result;
+    @java.lang.Override public org.megacommerce.shared.v1.ValidationProto.NumericRuleType getType() {
+      org.megacommerce.shared.v1.ValidationProto.NumericRuleType result = org.megacommerce.shared.v1.ValidationProto.NumericRuleType.forNumber(type_);
+      return result == null ? org.megacommerce.shared.v1.ValidationProto.NumericRuleType.UNRECOGNIZED : result;
     }
 
     public static final int VALUE_FIELD_NUMBER = 2;
@@ -2252,7 +2268,7 @@ public final class ValidationProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (type_ != org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN.getNumber()) {
+      if (type_ != org.megacommerce.shared.v1.ValidationProto.NumericRuleType.NUMERIC_RULE_TYPE_MIN.getNumber()) {
         output.writeEnum(1, type_);
       }
       if (java.lang.Double.doubleToRawLongBits(value_) != 0) {
@@ -2267,7 +2283,7 @@ public final class ValidationProto {
       if (size != -1) return size;
 
       size = 0;
-      if (type_ != org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN.getNumber()) {
+      if (type_ != org.megacommerce.shared.v1.ValidationProto.NumericRuleType.NUMERIC_RULE_TYPE_MIN.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, type_);
       }
@@ -2285,10 +2301,10 @@ public final class ValidationProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule)) {
+      if (!(obj instanceof org.megacommerce.shared.v1.ValidationProto.NumericRule)) {
         return super.equals(obj);
       }
-      org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule other = (org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule) obj;
+      org.megacommerce.shared.v1.ValidationProto.NumericRule other = (org.megacommerce.shared.v1.ValidationProto.NumericRule) obj;
 
       if (type_ != other.type_) return false;
       if (java.lang.Double.doubleToLongBits(getValue())
@@ -2315,44 +2331,44 @@ public final class ValidationProto {
       return hash;
     }
 
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule parseFrom(
+    public static org.megacommerce.shared.v1.ValidationProto.NumericRule parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule parseFrom(
+    public static org.megacommerce.shared.v1.ValidationProto.NumericRule parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule parseFrom(
+    public static org.megacommerce.shared.v1.ValidationProto.NumericRule parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule parseFrom(
+    public static org.megacommerce.shared.v1.ValidationProto.NumericRule parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule parseFrom(byte[] data)
+    public static org.megacommerce.shared.v1.ValidationProto.NumericRule parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule parseFrom(
+    public static org.megacommerce.shared.v1.ValidationProto.NumericRule parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule parseFrom(java.io.InputStream input)
+    public static org.megacommerce.shared.v1.ValidationProto.NumericRule parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule parseFrom(
+    public static org.megacommerce.shared.v1.ValidationProto.NumericRule parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2360,26 +2376,26 @@ public final class ValidationProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule parseDelimitedFrom(java.io.InputStream input)
+    public static org.megacommerce.shared.v1.ValidationProto.NumericRule parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule parseDelimitedFrom(
+    public static org.megacommerce.shared.v1.ValidationProto.NumericRule parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule parseFrom(
+    public static org.megacommerce.shared.v1.ValidationProto.NumericRule parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule parseFrom(
+    public static org.megacommerce.shared.v1.ValidationProto.NumericRule parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2392,7 +2408,7 @@ public final class ValidationProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule prototype) {
+    public static Builder newBuilder(org.megacommerce.shared.v1.ValidationProto.NumericRule prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2408,26 +2424,26 @@ public final class ValidationProto {
       return builder;
     }
     /**
-     * Protobuf type {@code shared.v1.ValidationFieldNumericRule}
+     * Protobuf type {@code shared.v1.NumericRule}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:shared.v1.ValidationFieldNumericRule)
-        org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleOrBuilder {
+        // @@protoc_insertion_point(builder_implements:shared.v1.NumericRule)
+        org.megacommerce.shared.v1.ValidationProto.NumericRuleOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.megacommerce.shared.v1.ValidationProto.internal_static_shared_v1_ValidationFieldNumericRule_descriptor;
+        return org.megacommerce.shared.v1.ValidationProto.internal_static_shared_v1_NumericRule_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.megacommerce.shared.v1.ValidationProto.internal_static_shared_v1_ValidationFieldNumericRule_fieldAccessorTable
+        return org.megacommerce.shared.v1.ValidationProto.internal_static_shared_v1_NumericRule_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule.class, org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule.Builder.class);
+                org.megacommerce.shared.v1.ValidationProto.NumericRule.class, org.megacommerce.shared.v1.ValidationProto.NumericRule.Builder.class);
       }
 
-      // Construct using org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule.newBuilder()
+      // Construct using org.megacommerce.shared.v1.ValidationProto.NumericRule.newBuilder()
       private Builder() {
 
       }
@@ -2449,17 +2465,17 @@ public final class ValidationProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.megacommerce.shared.v1.ValidationProto.internal_static_shared_v1_ValidationFieldNumericRule_descriptor;
+        return org.megacommerce.shared.v1.ValidationProto.internal_static_shared_v1_NumericRule_descriptor;
       }
 
       @java.lang.Override
-      public org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule getDefaultInstanceForType() {
-        return org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule.getDefaultInstance();
+      public org.megacommerce.shared.v1.ValidationProto.NumericRule getDefaultInstanceForType() {
+        return org.megacommerce.shared.v1.ValidationProto.NumericRule.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule build() {
-        org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule result = buildPartial();
+      public org.megacommerce.shared.v1.ValidationProto.NumericRule build() {
+        org.megacommerce.shared.v1.ValidationProto.NumericRule result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2467,14 +2483,14 @@ public final class ValidationProto {
       }
 
       @java.lang.Override
-      public org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule buildPartial() {
-        org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule result = new org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule(this);
+      public org.megacommerce.shared.v1.ValidationProto.NumericRule buildPartial() {
+        org.megacommerce.shared.v1.ValidationProto.NumericRule result = new org.megacommerce.shared.v1.ValidationProto.NumericRule(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule result) {
+      private void buildPartial0(org.megacommerce.shared.v1.ValidationProto.NumericRule result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.type_ = type_;
@@ -2486,16 +2502,16 @@ public final class ValidationProto {
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule) {
-          return mergeFrom((org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule)other);
+        if (other instanceof org.megacommerce.shared.v1.ValidationProto.NumericRule) {
+          return mergeFrom((org.megacommerce.shared.v1.ValidationProto.NumericRule)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule other) {
-        if (other == org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.megacommerce.shared.v1.ValidationProto.NumericRule other) {
+        if (other == org.megacommerce.shared.v1.ValidationProto.NumericRule.getDefaultInstance()) return this;
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
@@ -2557,14 +2573,14 @@ public final class ValidationProto {
 
       private int type_ = 0;
       /**
-       * <code>.shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];</code>
+       * <code>.shared.v1.NumericRuleType type = 1 [json_name = "type"];</code>
        * @return The enum numeric value on the wire for type.
        */
       @java.lang.Override public int getTypeValue() {
         return type_;
       }
       /**
-       * <code>.shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];</code>
+       * <code>.shared.v1.NumericRuleType type = 1 [json_name = "type"];</code>
        * @param value The enum numeric value on the wire for type to set.
        * @return This builder for chaining.
        */
@@ -2575,20 +2591,20 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>.shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];</code>
+       * <code>.shared.v1.NumericRuleType type = 1 [json_name = "type"];</code>
        * @return The type.
        */
       @java.lang.Override
-      public org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType getType() {
-        org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType result = org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType.forNumber(type_);
-        return result == null ? org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType.UNRECOGNIZED : result;
+      public org.megacommerce.shared.v1.ValidationProto.NumericRuleType getType() {
+        org.megacommerce.shared.v1.ValidationProto.NumericRuleType result = org.megacommerce.shared.v1.ValidationProto.NumericRuleType.forNumber(type_);
+        return result == null ? org.megacommerce.shared.v1.ValidationProto.NumericRuleType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];</code>
+       * <code>.shared.v1.NumericRuleType type = 1 [json_name = "type"];</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
-      public Builder setType(org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType value) {
+      public Builder setType(org.megacommerce.shared.v1.ValidationProto.NumericRuleType value) {
         if (value == null) { throw new NullPointerException(); }
         bitField0_ |= 0x00000001;
         type_ = value.getNumber();
@@ -2596,7 +2612,7 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>.shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];</code>
+       * <code>.shared.v1.NumericRuleType type = 1 [json_name = "type"];</code>
        * @return This builder for chaining.
        */
       public Builder clearType() {
@@ -2650,23 +2666,23 @@ public final class ValidationProto {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:shared.v1.ValidationFieldNumericRule)
+      // @@protoc_insertion_point(builder_scope:shared.v1.NumericRule)
     }
 
-    // @@protoc_insertion_point(class_scope:shared.v1.ValidationFieldNumericRule)
-    private static final org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:shared.v1.NumericRule)
+    private static final org.megacommerce.shared.v1.ValidationProto.NumericRule DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule();
+      DEFAULT_INSTANCE = new org.megacommerce.shared.v1.ValidationProto.NumericRule();
     }
 
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule getDefaultInstance() {
+    public static org.megacommerce.shared.v1.ValidationProto.NumericRule getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ValidationFieldNumericRule>
-        PARSER = new com.google.protobuf.AbstractParser<ValidationFieldNumericRule>() {
+    private static final com.google.protobuf.Parser<NumericRule>
+        PARSER = new com.google.protobuf.AbstractParser<NumericRule>() {
       @java.lang.Override
-      public ValidationFieldNumericRule parsePartialFrom(
+      public NumericRule parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2685,17 +2701,17 @@ public final class ValidationProto {
       }
     };
 
-    public static com.google.protobuf.Parser<ValidationFieldNumericRule> parser() {
+    public static com.google.protobuf.Parser<NumericRule> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ValidationFieldNumericRule> getParserForType() {
+    public com.google.protobuf.Parser<NumericRule> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRule getDefaultInstanceForType() {
+    public org.megacommerce.shared.v1.ValidationProto.NumericRule getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2706,27 +2722,27 @@ public final class ValidationProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+     * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
      */
-    java.util.List<org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule> 
+    java.util.List<org.megacommerce.shared.v1.ValidationProto.StringRule> 
         getRulesList();
     /**
-     * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+     * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
      */
-    org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule getRules(int index);
+    org.megacommerce.shared.v1.ValidationProto.StringRule getRules(int index);
     /**
-     * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+     * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
      */
     int getRulesCount();
     /**
-     * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+     * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
      */
-    java.util.List<? extends org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRuleOrBuilder> 
+    java.util.List<? extends org.megacommerce.shared.v1.ValidationProto.StringRuleOrBuilder> 
         getRulesOrBuilderList();
     /**
-     * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+     * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
      */
-    org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRuleOrBuilder getRulesOrBuilder(
+    org.megacommerce.shared.v1.ValidationProto.StringRuleOrBuilder getRulesOrBuilder(
         int index);
   }
   /**
@@ -2773,41 +2789,41 @@ public final class ValidationProto {
 
     public static final int RULES_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private java.util.List<org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule> rules_;
+    private java.util.List<org.megacommerce.shared.v1.ValidationProto.StringRule> rules_;
     /**
-     * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+     * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
      */
     @java.lang.Override
-    public java.util.List<org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule> getRulesList() {
+    public java.util.List<org.megacommerce.shared.v1.ValidationProto.StringRule> getRulesList() {
       return rules_;
     }
     /**
-     * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+     * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRuleOrBuilder> 
+    public java.util.List<? extends org.megacommerce.shared.v1.ValidationProto.StringRuleOrBuilder> 
         getRulesOrBuilderList() {
       return rules_;
     }
     /**
-     * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+     * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
      */
     @java.lang.Override
     public int getRulesCount() {
       return rules_.size();
     }
     /**
-     * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+     * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule getRules(int index) {
+    public org.megacommerce.shared.v1.ValidationProto.StringRule getRules(int index) {
       return rules_.get(index);
     }
     /**
-     * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+     * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRuleOrBuilder getRulesOrBuilder(
+    public org.megacommerce.shared.v1.ValidationProto.StringRuleOrBuilder getRulesOrBuilder(
         int index) {
       return rules_.get(index);
     }
@@ -3129,9 +3145,9 @@ public final class ValidationProto {
                 done = true;
                 break;
               case 10: {
-                org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule m =
+                org.megacommerce.shared.v1.ValidationProto.StringRule m =
                     input.readMessage(
-                        org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule.parser(),
+                        org.megacommerce.shared.v1.ValidationProto.StringRule.parser(),
                         extensionRegistry);
                 if (rulesBuilder_ == null) {
                   ensureRulesIsMutable();
@@ -3158,22 +3174,22 @@ public final class ValidationProto {
       }
       private int bitField0_;
 
-      private java.util.List<org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule> rules_ =
+      private java.util.List<org.megacommerce.shared.v1.ValidationProto.StringRule> rules_ =
         java.util.Collections.emptyList();
       private void ensureRulesIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          rules_ = new java.util.ArrayList<org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule>(rules_);
+          rules_ = new java.util.ArrayList<org.megacommerce.shared.v1.ValidationProto.StringRule>(rules_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule, org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule.Builder, org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRuleOrBuilder> rulesBuilder_;
+          org.megacommerce.shared.v1.ValidationProto.StringRule, org.megacommerce.shared.v1.ValidationProto.StringRule.Builder, org.megacommerce.shared.v1.ValidationProto.StringRuleOrBuilder> rulesBuilder_;
 
       /**
-       * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
        */
-      public java.util.List<org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule> getRulesList() {
+      public java.util.List<org.megacommerce.shared.v1.ValidationProto.StringRule> getRulesList() {
         if (rulesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(rules_);
         } else {
@@ -3181,7 +3197,7 @@ public final class ValidationProto {
         }
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
        */
       public int getRulesCount() {
         if (rulesBuilder_ == null) {
@@ -3191,9 +3207,9 @@ public final class ValidationProto {
         }
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
        */
-      public org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule getRules(int index) {
+      public org.megacommerce.shared.v1.ValidationProto.StringRule getRules(int index) {
         if (rulesBuilder_ == null) {
           return rules_.get(index);
         } else {
@@ -3201,10 +3217,10 @@ public final class ValidationProto {
         }
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
        */
       public Builder setRules(
-          int index, org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule value) {
+          int index, org.megacommerce.shared.v1.ValidationProto.StringRule value) {
         if (rulesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3218,10 +3234,10 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
        */
       public Builder setRules(
-          int index, org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule.Builder builderForValue) {
+          int index, org.megacommerce.shared.v1.ValidationProto.StringRule.Builder builderForValue) {
         if (rulesBuilder_ == null) {
           ensureRulesIsMutable();
           rules_.set(index, builderForValue.build());
@@ -3232,9 +3248,9 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
        */
-      public Builder addRules(org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule value) {
+      public Builder addRules(org.megacommerce.shared.v1.ValidationProto.StringRule value) {
         if (rulesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3248,10 +3264,10 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
        */
       public Builder addRules(
-          int index, org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule value) {
+          int index, org.megacommerce.shared.v1.ValidationProto.StringRule value) {
         if (rulesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3265,10 +3281,10 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
        */
       public Builder addRules(
-          org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule.Builder builderForValue) {
+          org.megacommerce.shared.v1.ValidationProto.StringRule.Builder builderForValue) {
         if (rulesBuilder_ == null) {
           ensureRulesIsMutable();
           rules_.add(builderForValue.build());
@@ -3279,10 +3295,10 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
        */
       public Builder addRules(
-          int index, org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule.Builder builderForValue) {
+          int index, org.megacommerce.shared.v1.ValidationProto.StringRule.Builder builderForValue) {
         if (rulesBuilder_ == null) {
           ensureRulesIsMutable();
           rules_.add(index, builderForValue.build());
@@ -3293,10 +3309,10 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
        */
       public Builder addAllRules(
-          java.lang.Iterable<? extends org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule> values) {
+          java.lang.Iterable<? extends org.megacommerce.shared.v1.ValidationProto.StringRule> values) {
         if (rulesBuilder_ == null) {
           ensureRulesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -3308,7 +3324,7 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
        */
       public Builder clearRules() {
         if (rulesBuilder_ == null) {
@@ -3321,7 +3337,7 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
        */
       public Builder removeRules(int index) {
         if (rulesBuilder_ == null) {
@@ -3334,16 +3350,16 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
        */
-      public org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule.Builder getRulesBuilder(
+      public org.megacommerce.shared.v1.ValidationProto.StringRule.Builder getRulesBuilder(
           int index) {
         return internalGetRulesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
        */
-      public org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRuleOrBuilder getRulesOrBuilder(
+      public org.megacommerce.shared.v1.ValidationProto.StringRuleOrBuilder getRulesOrBuilder(
           int index) {
         if (rulesBuilder_ == null) {
           return rules_.get(index);  } else {
@@ -3351,9 +3367,9 @@ public final class ValidationProto {
         }
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
        */
-      public java.util.List<? extends org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRuleOrBuilder> 
+      public java.util.List<? extends org.megacommerce.shared.v1.ValidationProto.StringRuleOrBuilder> 
            getRulesOrBuilderList() {
         if (rulesBuilder_ != null) {
           return rulesBuilder_.getMessageOrBuilderList();
@@ -3362,33 +3378,33 @@ public final class ValidationProto {
         }
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
        */
-      public org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule.Builder addRulesBuilder() {
+      public org.megacommerce.shared.v1.ValidationProto.StringRule.Builder addRulesBuilder() {
         return internalGetRulesFieldBuilder().addBuilder(
-            org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule.getDefaultInstance());
+            org.megacommerce.shared.v1.ValidationProto.StringRule.getDefaultInstance());
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
        */
-      public org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule.Builder addRulesBuilder(
+      public org.megacommerce.shared.v1.ValidationProto.StringRule.Builder addRulesBuilder(
           int index) {
         return internalGetRulesFieldBuilder().addBuilder(
-            index, org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule.getDefaultInstance());
+            index, org.megacommerce.shared.v1.ValidationProto.StringRule.getDefaultInstance());
       }
       /**
-       * <code>repeated .shared.v1.ValidationFieldStringRule rules = 1 [json_name = "rules"];</code>
+       * <code>repeated .shared.v1.StringRule rules = 1 [json_name = "rules"];</code>
        */
-      public java.util.List<org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule.Builder> 
+      public java.util.List<org.megacommerce.shared.v1.ValidationProto.StringRule.Builder> 
            getRulesBuilderList() {
         return internalGetRulesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule, org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule.Builder, org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRuleOrBuilder> 
+          org.megacommerce.shared.v1.ValidationProto.StringRule, org.megacommerce.shared.v1.ValidationProto.StringRule.Builder, org.megacommerce.shared.v1.ValidationProto.StringRuleOrBuilder> 
           internalGetRulesFieldBuilder() {
         if (rulesBuilder_ == null) {
           rulesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule, org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule.Builder, org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRuleOrBuilder>(
+              org.megacommerce.shared.v1.ValidationProto.StringRule, org.megacommerce.shared.v1.ValidationProto.StringRule.Builder, org.megacommerce.shared.v1.ValidationProto.StringRuleOrBuilder>(
                   rules_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
@@ -3449,20 +3465,20 @@ public final class ValidationProto {
 
   }
 
-  public interface ValidationFieldStringRuleOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:shared.v1.ValidationFieldStringRule)
+  public interface StringRuleOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:shared.v1.StringRule)
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];</code>
+     * <code>.shared.v1.StringRuleType type = 1 [json_name = "type"];</code>
      * @return The enum numeric value on the wire for type.
      */
     int getTypeValue();
     /**
-     * <code>.shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];</code>
+     * <code>.shared.v1.StringRuleType type = 1 [json_name = "type"];</code>
      * @return The type.
      */
-    org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType getType();
+    org.megacommerce.shared.v1.ValidationProto.StringRuleType getType();
 
     /**
      * <pre>
@@ -3475,12 +3491,12 @@ public final class ValidationProto {
     double getValue();
   }
   /**
-   * Protobuf type {@code shared.v1.ValidationFieldStringRule}
+   * Protobuf type {@code shared.v1.StringRule}
    */
-  public static final class ValidationFieldStringRule extends
+  public static final class StringRule extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:shared.v1.ValidationFieldStringRule)
-      ValidationFieldStringRuleOrBuilder {
+      // @@protoc_insertion_point(message_implements:shared.v1.StringRule)
+      StringRuleOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -3489,45 +3505,45 @@ public final class ValidationProto {
         /* minor= */ 31,
         /* patch= */ 1,
         /* suffix= */ "",
-        ValidationFieldStringRule.class.getName());
+        StringRule.class.getName());
     }
-    // Use ValidationFieldStringRule.newBuilder() to construct.
-    private ValidationFieldStringRule(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use StringRule.newBuilder() to construct.
+    private StringRule(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private ValidationFieldStringRule() {
+    private StringRule() {
       type_ = 0;
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.megacommerce.shared.v1.ValidationProto.internal_static_shared_v1_ValidationFieldStringRule_descriptor;
+      return org.megacommerce.shared.v1.ValidationProto.internal_static_shared_v1_StringRule_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.megacommerce.shared.v1.ValidationProto.internal_static_shared_v1_ValidationFieldStringRule_fieldAccessorTable
+      return org.megacommerce.shared.v1.ValidationProto.internal_static_shared_v1_StringRule_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule.class, org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule.Builder.class);
+              org.megacommerce.shared.v1.ValidationProto.StringRule.class, org.megacommerce.shared.v1.ValidationProto.StringRule.Builder.class);
     }
 
     public static final int TYPE_FIELD_NUMBER = 1;
     private int type_ = 0;
     /**
-     * <code>.shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];</code>
+     * <code>.shared.v1.StringRuleType type = 1 [json_name = "type"];</code>
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override public int getTypeValue() {
       return type_;
     }
     /**
-     * <code>.shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];</code>
+     * <code>.shared.v1.StringRuleType type = 1 [json_name = "type"];</code>
      * @return The type.
      */
-    @java.lang.Override public org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType getType() {
-      org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType result = org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType.forNumber(type_);
-      return result == null ? org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType.UNRECOGNIZED : result;
+    @java.lang.Override public org.megacommerce.shared.v1.ValidationProto.StringRuleType getType() {
+      org.megacommerce.shared.v1.ValidationProto.StringRuleType result = org.megacommerce.shared.v1.ValidationProto.StringRuleType.forNumber(type_);
+      return result == null ? org.megacommerce.shared.v1.ValidationProto.StringRuleType.UNRECOGNIZED : result;
     }
 
     public static final int VALUE_FIELD_NUMBER = 2;
@@ -3559,7 +3575,7 @@ public final class ValidationProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (type_ != org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN.getNumber()) {
+      if (type_ != org.megacommerce.shared.v1.ValidationProto.StringRuleType.STRING_RULE_TYPE_MIN.getNumber()) {
         output.writeEnum(1, type_);
       }
       if (java.lang.Double.doubleToRawLongBits(value_) != 0) {
@@ -3574,7 +3590,7 @@ public final class ValidationProto {
       if (size != -1) return size;
 
       size = 0;
-      if (type_ != org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN.getNumber()) {
+      if (type_ != org.megacommerce.shared.v1.ValidationProto.StringRuleType.STRING_RULE_TYPE_MIN.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, type_);
       }
@@ -3592,10 +3608,10 @@ public final class ValidationProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule)) {
+      if (!(obj instanceof org.megacommerce.shared.v1.ValidationProto.StringRule)) {
         return super.equals(obj);
       }
-      org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule other = (org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule) obj;
+      org.megacommerce.shared.v1.ValidationProto.StringRule other = (org.megacommerce.shared.v1.ValidationProto.StringRule) obj;
 
       if (type_ != other.type_) return false;
       if (java.lang.Double.doubleToLongBits(getValue())
@@ -3622,44 +3638,44 @@ public final class ValidationProto {
       return hash;
     }
 
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule parseFrom(
+    public static org.megacommerce.shared.v1.ValidationProto.StringRule parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule parseFrom(
+    public static org.megacommerce.shared.v1.ValidationProto.StringRule parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule parseFrom(
+    public static org.megacommerce.shared.v1.ValidationProto.StringRule parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule parseFrom(
+    public static org.megacommerce.shared.v1.ValidationProto.StringRule parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule parseFrom(byte[] data)
+    public static org.megacommerce.shared.v1.ValidationProto.StringRule parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule parseFrom(
+    public static org.megacommerce.shared.v1.ValidationProto.StringRule parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule parseFrom(java.io.InputStream input)
+    public static org.megacommerce.shared.v1.ValidationProto.StringRule parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule parseFrom(
+    public static org.megacommerce.shared.v1.ValidationProto.StringRule parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3667,26 +3683,26 @@ public final class ValidationProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule parseDelimitedFrom(java.io.InputStream input)
+    public static org.megacommerce.shared.v1.ValidationProto.StringRule parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule parseDelimitedFrom(
+    public static org.megacommerce.shared.v1.ValidationProto.StringRule parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule parseFrom(
+    public static org.megacommerce.shared.v1.ValidationProto.StringRule parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule parseFrom(
+    public static org.megacommerce.shared.v1.ValidationProto.StringRule parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3699,7 +3715,7 @@ public final class ValidationProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule prototype) {
+    public static Builder newBuilder(org.megacommerce.shared.v1.ValidationProto.StringRule prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -3715,26 +3731,26 @@ public final class ValidationProto {
       return builder;
     }
     /**
-     * Protobuf type {@code shared.v1.ValidationFieldStringRule}
+     * Protobuf type {@code shared.v1.StringRule}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:shared.v1.ValidationFieldStringRule)
-        org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRuleOrBuilder {
+        // @@protoc_insertion_point(builder_implements:shared.v1.StringRule)
+        org.megacommerce.shared.v1.ValidationProto.StringRuleOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.megacommerce.shared.v1.ValidationProto.internal_static_shared_v1_ValidationFieldStringRule_descriptor;
+        return org.megacommerce.shared.v1.ValidationProto.internal_static_shared_v1_StringRule_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.megacommerce.shared.v1.ValidationProto.internal_static_shared_v1_ValidationFieldStringRule_fieldAccessorTable
+        return org.megacommerce.shared.v1.ValidationProto.internal_static_shared_v1_StringRule_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule.class, org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule.Builder.class);
+                org.megacommerce.shared.v1.ValidationProto.StringRule.class, org.megacommerce.shared.v1.ValidationProto.StringRule.Builder.class);
       }
 
-      // Construct using org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule.newBuilder()
+      // Construct using org.megacommerce.shared.v1.ValidationProto.StringRule.newBuilder()
       private Builder() {
 
       }
@@ -3756,17 +3772,17 @@ public final class ValidationProto {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.megacommerce.shared.v1.ValidationProto.internal_static_shared_v1_ValidationFieldStringRule_descriptor;
+        return org.megacommerce.shared.v1.ValidationProto.internal_static_shared_v1_StringRule_descriptor;
       }
 
       @java.lang.Override
-      public org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule getDefaultInstanceForType() {
-        return org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule.getDefaultInstance();
+      public org.megacommerce.shared.v1.ValidationProto.StringRule getDefaultInstanceForType() {
+        return org.megacommerce.shared.v1.ValidationProto.StringRule.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule build() {
-        org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule result = buildPartial();
+      public org.megacommerce.shared.v1.ValidationProto.StringRule build() {
+        org.megacommerce.shared.v1.ValidationProto.StringRule result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -3774,14 +3790,14 @@ public final class ValidationProto {
       }
 
       @java.lang.Override
-      public org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule buildPartial() {
-        org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule result = new org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule(this);
+      public org.megacommerce.shared.v1.ValidationProto.StringRule buildPartial() {
+        org.megacommerce.shared.v1.ValidationProto.StringRule result = new org.megacommerce.shared.v1.ValidationProto.StringRule(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule result) {
+      private void buildPartial0(org.megacommerce.shared.v1.ValidationProto.StringRule result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.type_ = type_;
@@ -3793,16 +3809,16 @@ public final class ValidationProto {
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule) {
-          return mergeFrom((org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule)other);
+        if (other instanceof org.megacommerce.shared.v1.ValidationProto.StringRule) {
+          return mergeFrom((org.megacommerce.shared.v1.ValidationProto.StringRule)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule other) {
-        if (other == org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.megacommerce.shared.v1.ValidationProto.StringRule other) {
+        if (other == org.megacommerce.shared.v1.ValidationProto.StringRule.getDefaultInstance()) return this;
         if (other.type_ != 0) {
           setTypeValue(other.getTypeValue());
         }
@@ -3864,14 +3880,14 @@ public final class ValidationProto {
 
       private int type_ = 0;
       /**
-       * <code>.shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];</code>
+       * <code>.shared.v1.StringRuleType type = 1 [json_name = "type"];</code>
        * @return The enum numeric value on the wire for type.
        */
       @java.lang.Override public int getTypeValue() {
         return type_;
       }
       /**
-       * <code>.shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];</code>
+       * <code>.shared.v1.StringRuleType type = 1 [json_name = "type"];</code>
        * @param value The enum numeric value on the wire for type to set.
        * @return This builder for chaining.
        */
@@ -3882,20 +3898,20 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>.shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];</code>
+       * <code>.shared.v1.StringRuleType type = 1 [json_name = "type"];</code>
        * @return The type.
        */
       @java.lang.Override
-      public org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType getType() {
-        org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType result = org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType.forNumber(type_);
-        return result == null ? org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType.UNRECOGNIZED : result;
+      public org.megacommerce.shared.v1.ValidationProto.StringRuleType getType() {
+        org.megacommerce.shared.v1.ValidationProto.StringRuleType result = org.megacommerce.shared.v1.ValidationProto.StringRuleType.forNumber(type_);
+        return result == null ? org.megacommerce.shared.v1.ValidationProto.StringRuleType.UNRECOGNIZED : result;
       }
       /**
-       * <code>.shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];</code>
+       * <code>.shared.v1.StringRuleType type = 1 [json_name = "type"];</code>
        * @param value The type to set.
        * @return This builder for chaining.
        */
-      public Builder setType(org.megacommerce.shared.v1.ValidationProto.ValidationFieldNumericRuleType value) {
+      public Builder setType(org.megacommerce.shared.v1.ValidationProto.StringRuleType value) {
         if (value == null) { throw new NullPointerException(); }
         bitField0_ |= 0x00000001;
         type_ = value.getNumber();
@@ -3903,7 +3919,7 @@ public final class ValidationProto {
         return this;
       }
       /**
-       * <code>.shared.v1.ValidationFieldNumericRuleType type = 1 [json_name = "type"];</code>
+       * <code>.shared.v1.StringRuleType type = 1 [json_name = "type"];</code>
        * @return This builder for chaining.
        */
       public Builder clearType() {
@@ -3957,23 +3973,23 @@ public final class ValidationProto {
         return this;
       }
 
-      // @@protoc_insertion_point(builder_scope:shared.v1.ValidationFieldStringRule)
+      // @@protoc_insertion_point(builder_scope:shared.v1.StringRule)
     }
 
-    // @@protoc_insertion_point(class_scope:shared.v1.ValidationFieldStringRule)
-    private static final org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:shared.v1.StringRule)
+    private static final org.megacommerce.shared.v1.ValidationProto.StringRule DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule();
+      DEFAULT_INSTANCE = new org.megacommerce.shared.v1.ValidationProto.StringRule();
     }
 
-    public static org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule getDefaultInstance() {
+    public static org.megacommerce.shared.v1.ValidationProto.StringRule getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ValidationFieldStringRule>
-        PARSER = new com.google.protobuf.AbstractParser<ValidationFieldStringRule>() {
+    private static final com.google.protobuf.Parser<StringRule>
+        PARSER = new com.google.protobuf.AbstractParser<StringRule>() {
       @java.lang.Override
-      public ValidationFieldStringRule parsePartialFrom(
+      public StringRule parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3992,17 +4008,17 @@ public final class ValidationProto {
       }
     };
 
-    public static com.google.protobuf.Parser<ValidationFieldStringRule> parser() {
+    public static com.google.protobuf.Parser<StringRule> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ValidationFieldStringRule> getParserForType() {
+    public com.google.protobuf.Parser<StringRule> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.megacommerce.shared.v1.ValidationProto.ValidationFieldStringRule getDefaultInstanceForType() {
+    public org.megacommerce.shared.v1.ValidationProto.StringRule getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4610,20 +4626,20 @@ public final class ValidationProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_shared_v1_ValidationFieldNumeric_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_shared_v1_ValidationFieldNumericRule_descriptor;
+    internal_static_shared_v1_NumericRule_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_shared_v1_ValidationFieldNumericRule_fieldAccessorTable;
+      internal_static_shared_v1_NumericRule_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_shared_v1_ValidationFieldString_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_shared_v1_ValidationFieldString_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_shared_v1_ValidationFieldStringRule_descriptor;
+    internal_static_shared_v1_StringRule_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_shared_v1_ValidationFieldStringRule_fieldAccessorTable;
+      internal_static_shared_v1_StringRule_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_shared_v1_ValidationFieldRegex_descriptor;
   private static final 
@@ -4644,31 +4660,25 @@ public final class ValidationProto {
       "ic\0224\n\003str\030\002 \001(\0132 .shared.v1.ValidationFi" +
       "eldStringH\000R\003str\0227\n\005regex\030\003 \001(\0132\037.shared" +
       ".v1.ValidationFieldRegexH\000R\005regexB\006\n\004rul" +
-      "e\"U\n\026ValidationFieldNumeric\022;\n\005rules\030\001 \003" +
-      "(\0132%.shared.v1.ValidationFieldNumericRul" +
-      "eR\005rules\"q\n\032ValidationFieldNumericRule\022=" +
-      "\n\004type\030\001 \001(\0162).shared.v1.ValidationField" +
-      "NumericRuleTypeR\004type\022\024\n\005value\030\002 \001(\001R\005va" +
-      "lue\"S\n\025ValidationFieldString\022:\n\005rules\030\001 " +
-      "\003(\0132$.shared.v1.ValidationFieldStringRul" +
-      "eR\005rules\"p\n\031ValidationFieldStringRule\022=\n" +
-      "\004type\030\001 \001(\0162).shared.v1.ValidationFieldN" +
-      "umericRuleTypeR\004type\022\024\n\005value\030\002 \001(\001R\005val" +
-      "ue\"W\n\024ValidationFieldRegex\022\030\n\007pattern\030\001 " +
-      "\001(\tR\007pattern\022%\n\016case_sensitive\030\002 \001(\010R\rca" +
-      "seSensitive*\352\001\n\036ValidationFieldNumericRu" +
-      "leType\0221\n-PRODUCT_ATTRIBUTE_NUMERIC_VALI" +
-      "DATION_RULE_MIN\020\000\0221\n-PRODUCT_ATTRIBUTE_N" +
-      "UMERIC_VALIDATION_RULE_MAX\020\001\0220\n,PRODUCT_" +
-      "ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT\020\002\0220" +
-      "\n,PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_R" +
-      "ULE_LT\020\003*\203\001\n\035ValidationFieldStringRuleTy" +
-      "pe\0220\n,PRODUCT_ATTRIBUTE_STRING_VALIDATIO" +
-      "N_RULE_MIN\020\000\0220\n,PRODUCT_ATTRIBUTE_STRING" +
-      "_VALIDATION_RULE_MAX\020\001Bu\n\032org.megacommer" +
-      "ce.shared.v1B\017ValidationProtoZCgithub.co" +
-      "m/ahmad-khatib0-org/megacommerce-proto/g" +
-      "en/go/shared/v1;v1\370\001\001b\006proto3"
+      "e\"F\n\026ValidationFieldNumeric\022,\n\005rules\030\001 \003" +
+      "(\0132\026.shared.v1.NumericRuleR\005rules\"S\n\013Num" +
+      "ericRule\022.\n\004type\030\001 \001(\0162\032.shared.v1.Numer" +
+      "icRuleTypeR\004type\022\024\n\005value\030\002 \001(\001R\005value\"D" +
+      "\n\025ValidationFieldString\022+\n\005rules\030\001 \003(\0132\025" +
+      ".shared.v1.StringRuleR\005rules\"Q\n\nStringRu" +
+      "le\022-\n\004type\030\001 \001(\0162\031.shared.v1.StringRuleT" +
+      "ypeR\004type\022\024\n\005value\030\002 \001(\001R\005value\"W\n\024Valid" +
+      "ationFieldRegex\022\030\n\007pattern\030\001 \001(\tR\007patter" +
+      "n\022%\n\016case_sensitive\030\002 \001(\010R\rcaseSensitive" +
+      "*{\n\017NumericRuleType\022\031\n\025NUMERIC_RULE_TYPE" +
+      "_MIN\020\000\022\031\n\025NUMERIC_RULE_TYPE_MAX\020\001\022\030\n\024NUM" +
+      "ERIC_RULE_TYPE_GT\020\002\022\030\n\024NUMERIC_RULE_TYPE" +
+      "_LT\020\003*D\n\016StringRuleType\022\030\n\024STRING_RULE_T" +
+      "YPE_MIN\020\000\022\030\n\024STRING_RULE_TYPE_MAX\020\001Bu\n\032o" +
+      "rg.megacommerce.shared.v1B\017ValidationPro" +
+      "toZCgithub.com/ahmad-khatib0-org/megacom" +
+      "merce-proto/gen/go/shared/v1;v1\370\001\001b\006prot" +
+      "o3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4686,11 +4696,11 @@ public final class ValidationProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_ValidationFieldNumeric_descriptor,
         new java.lang.String[] { "Rules", });
-    internal_static_shared_v1_ValidationFieldNumericRule_descriptor =
+    internal_static_shared_v1_NumericRule_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_shared_v1_ValidationFieldNumericRule_fieldAccessorTable = new
+    internal_static_shared_v1_NumericRule_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_shared_v1_ValidationFieldNumericRule_descriptor,
+        internal_static_shared_v1_NumericRule_descriptor,
         new java.lang.String[] { "Type", "Value", });
     internal_static_shared_v1_ValidationFieldString_descriptor =
       getDescriptor().getMessageTypes().get(3);
@@ -4698,11 +4708,11 @@ public final class ValidationProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_ValidationFieldString_descriptor,
         new java.lang.String[] { "Rules", });
-    internal_static_shared_v1_ValidationFieldStringRule_descriptor =
+    internal_static_shared_v1_StringRule_descriptor =
       getDescriptor().getMessageTypes().get(4);
-    internal_static_shared_v1_ValidationFieldStringRule_fieldAccessorTable = new
+    internal_static_shared_v1_StringRule_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_shared_v1_ValidationFieldStringRule_descriptor,
+        internal_static_shared_v1_StringRule_descriptor,
         new java.lang.String[] { "Type", "Value", });
     internal_static_shared_v1_ValidationFieldRegex_descriptor =
       getDescriptor().getMessageTypes().get(5);
