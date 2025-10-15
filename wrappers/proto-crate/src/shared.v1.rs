@@ -42,6 +42,14 @@ pub struct SuccessResponseData {
         ::prost::alloc::string::String,
     >,
 }
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct IdName {
+    #[prost(string, tag = "1")]
+    pub id: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub name: ::prost::alloc::string::String,
+}
 /// Custom Any message to avoid google.protobuf.Any issues
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

@@ -26,8 +26,8 @@ public final class ProductCategoriesProto {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
-  public interface ProductCategoryOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:products.v1.ProductCategory)
+  public interface CategoryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:products.v1.Category)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -55,36 +55,48 @@ public final class ProductCategoriesProto {
         getNameBytes();
 
     /**
-     * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+     * <code>string image = 3 [json_name = "image"];</code>
+     * @return The image.
      */
-    java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory> 
+    java.lang.String getImage();
+    /**
+     * <code>string image = 3 [json_name = "image"];</code>
+     * @return The bytes for image.
+     */
+    com.google.protobuf.ByteString
+        getImageBytes();
+
+    /**
+     * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
+     */
+    java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.Subcategory> 
         getSubcategoriesList();
     /**
-     * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+     * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
      */
-    org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory getSubcategories(int index);
+    org.megacommerce.products.v1.ProductCategoriesProto.Subcategory getSubcategories(int index);
     /**
-     * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+     * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
      */
     int getSubcategoriesCount();
     /**
-     * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+     * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
      */
-    java.util.List<? extends org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryOrBuilder> 
+    java.util.List<? extends org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryOrBuilder> 
         getSubcategoriesOrBuilderList();
     /**
-     * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+     * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
      */
-    org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryOrBuilder getSubcategoriesOrBuilder(
+    org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryOrBuilder getSubcategoriesOrBuilder(
         int index);
   }
   /**
-   * Protobuf type {@code products.v1.ProductCategory}
+   * Protobuf type {@code products.v1.Category}
    */
-  public static final class ProductCategory extends
+  public static final class Category extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:products.v1.ProductCategory)
-      ProductCategoryOrBuilder {
+      // @@protoc_insertion_point(message_implements:products.v1.Category)
+      CategoryOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -93,29 +105,30 @@ public final class ProductCategoriesProto {
         /* minor= */ 31,
         /* patch= */ 1,
         /* suffix= */ "",
-        ProductCategory.class.getName());
+        Category.class.getName());
     }
-    // Use ProductCategory.newBuilder() to construct.
-    private ProductCategory(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use Category.newBuilder() to construct.
+    private Category(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private ProductCategory() {
+    private Category() {
       id_ = "";
       name_ = "";
+      image_ = "";
       subcategories_ = java.util.Collections.emptyList();
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductCategory_descriptor;
+      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_Category_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductCategory_fieldAccessorTable
+      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_Category_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.class, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.Builder.class);
+              org.megacommerce.products.v1.ProductCategoriesProto.Category.class, org.megacommerce.products.v1.ProductCategoriesProto.Category.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -196,43 +209,82 @@ public final class ProductCategoriesProto {
       }
     }
 
-    public static final int SUBCATEGORIES_FIELD_NUMBER = 3;
+    public static final int IMAGE_FIELD_NUMBER = 3;
     @SuppressWarnings("serial")
-    private java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory> subcategories_;
+    private volatile java.lang.Object image_ = "";
     /**
-     * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+     * <code>string image = 3 [json_name = "image"];</code>
+     * @return The image.
      */
     @java.lang.Override
-    public java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory> getSubcategoriesList() {
+    public java.lang.String getImage() {
+      java.lang.Object ref = image_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        image_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string image = 3 [json_name = "image"];</code>
+     * @return The bytes for image.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getImageBytes() {
+      java.lang.Object ref = image_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        image_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SUBCATEGORIES_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.Subcategory> subcategories_;
+    /**
+     * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.Subcategory> getSubcategoriesList() {
       return subcategories_;
     }
     /**
-     * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+     * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
      */
     @java.lang.Override
-    public java.util.List<? extends org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryOrBuilder> 
+    public java.util.List<? extends org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryOrBuilder> 
         getSubcategoriesOrBuilderList() {
       return subcategories_;
     }
     /**
-     * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+     * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
      */
     @java.lang.Override
     public int getSubcategoriesCount() {
       return subcategories_.size();
     }
     /**
-     * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+     * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory getSubcategories(int index) {
+    public org.megacommerce.products.v1.ProductCategoriesProto.Subcategory getSubcategories(int index) {
       return subcategories_.get(index);
     }
     /**
-     * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+     * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryOrBuilder getSubcategoriesOrBuilder(
+    public org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryOrBuilder getSubcategoriesOrBuilder(
         int index) {
       return subcategories_.get(index);
     }
@@ -257,8 +309,11 @@ public final class ProductCategoriesProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 2, name_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(image_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, image_);
+      }
       for (int i = 0; i < subcategories_.size(); i++) {
-        output.writeMessage(3, subcategories_.get(i));
+        output.writeMessage(4, subcategories_.get(i));
       }
       getUnknownFields().writeTo(output);
     }
@@ -275,9 +330,12 @@ public final class ProductCategoriesProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(2, name_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(image_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, image_);
+      }
       for (int i = 0; i < subcategories_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, subcategories_.get(i));
+          .computeMessageSize(4, subcategories_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -289,15 +347,17 @@ public final class ProductCategoriesProto {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory)) {
+      if (!(obj instanceof org.megacommerce.products.v1.ProductCategoriesProto.Category)) {
         return super.equals(obj);
       }
-      org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory other = (org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory) obj;
+      org.megacommerce.products.v1.ProductCategoriesProto.Category other = (org.megacommerce.products.v1.ProductCategoriesProto.Category) obj;
 
       if (!getId()
           .equals(other.getId())) return false;
       if (!getName()
           .equals(other.getName())) return false;
+      if (!getImage()
+          .equals(other.getImage())) return false;
       if (!getSubcategoriesList()
           .equals(other.getSubcategoriesList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -315,6 +375,8 @@ public final class ProductCategoriesProto {
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + IMAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getImage().hashCode();
       if (getSubcategoriesCount() > 0) {
         hash = (37 * hash) + SUBCATEGORIES_FIELD_NUMBER;
         hash = (53 * hash) + getSubcategoriesList().hashCode();
@@ -324,44 +386,44 @@ public final class ProductCategoriesProto {
       return hash;
     }
 
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Category parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Category parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Category parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Category parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory parseFrom(byte[] data)
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Category parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Category parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory parseFrom(java.io.InputStream input)
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Category parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Category parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -369,26 +431,26 @@ public final class ProductCategoriesProto {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory parseDelimitedFrom(java.io.InputStream input)
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Category parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory parseDelimitedFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Category parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Category parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Category parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -401,7 +463,7 @@ public final class ProductCategoriesProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory prototype) {
+    public static Builder newBuilder(org.megacommerce.products.v1.ProductCategoriesProto.Category prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -417,26 +479,26 @@ public final class ProductCategoriesProto {
       return builder;
     }
     /**
-     * Protobuf type {@code products.v1.ProductCategory}
+     * Protobuf type {@code products.v1.Category}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:products.v1.ProductCategory)
-        org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryOrBuilder {
+        // @@protoc_insertion_point(builder_implements:products.v1.Category)
+        org.megacommerce.products.v1.ProductCategoriesProto.CategoryOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductCategory_descriptor;
+        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_Category_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductCategory_fieldAccessorTable
+        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_Category_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.class, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.Builder.class);
+                org.megacommerce.products.v1.ProductCategoriesProto.Category.class, org.megacommerce.products.v1.ProductCategoriesProto.Category.Builder.class);
       }
 
-      // Construct using org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.newBuilder()
+      // Construct using org.megacommerce.products.v1.ProductCategoriesProto.Category.newBuilder()
       private Builder() {
 
       }
@@ -452,30 +514,31 @@ public final class ProductCategoriesProto {
         bitField0_ = 0;
         id_ = "";
         name_ = "";
+        image_ = "";
         if (subcategoriesBuilder_ == null) {
           subcategories_ = java.util.Collections.emptyList();
         } else {
           subcategories_ = null;
           subcategoriesBuilder_.clear();
         }
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductCategory_descriptor;
+        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_Category_descriptor;
       }
 
       @java.lang.Override
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory getDefaultInstanceForType() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.getDefaultInstance();
+      public org.megacommerce.products.v1.ProductCategoriesProto.Category getDefaultInstanceForType() {
+        return org.megacommerce.products.v1.ProductCategoriesProto.Category.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory build() {
-        org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory result = buildPartial();
+      public org.megacommerce.products.v1.ProductCategoriesProto.Category build() {
+        org.megacommerce.products.v1.ProductCategoriesProto.Category result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -483,19 +546,19 @@ public final class ProductCategoriesProto {
       }
 
       @java.lang.Override
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory buildPartial() {
-        org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory result = new org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory(this);
+      public org.megacommerce.products.v1.ProductCategoriesProto.Category buildPartial() {
+        org.megacommerce.products.v1.ProductCategoriesProto.Category result = new org.megacommerce.products.v1.ProductCategoriesProto.Category(this);
         buildPartialRepeatedFields(result);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartialRepeatedFields(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory result) {
+      private void buildPartialRepeatedFields(org.megacommerce.products.v1.ProductCategoriesProto.Category result) {
         if (subcategoriesBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
+          if (((bitField0_ & 0x00000008) != 0)) {
             subcategories_ = java.util.Collections.unmodifiableList(subcategories_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.subcategories_ = subcategories_;
         } else {
@@ -503,7 +566,7 @@ public final class ProductCategoriesProto {
         }
       }
 
-      private void buildPartial0(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory result) {
+      private void buildPartial0(org.megacommerce.products.v1.ProductCategoriesProto.Category result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.id_ = id_;
@@ -511,20 +574,23 @@ public final class ProductCategoriesProto {
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.name_ = name_;
         }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.image_ = image_;
+        }
       }
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory) {
-          return mergeFrom((org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory)other);
+        if (other instanceof org.megacommerce.products.v1.ProductCategoriesProto.Category) {
+          return mergeFrom((org.megacommerce.products.v1.ProductCategoriesProto.Category)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory other) {
-        if (other == org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.megacommerce.products.v1.ProductCategoriesProto.Category other) {
+        if (other == org.megacommerce.products.v1.ProductCategoriesProto.Category.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           bitField0_ |= 0x00000001;
@@ -535,11 +601,16 @@ public final class ProductCategoriesProto {
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (!other.getImage().isEmpty()) {
+          image_ = other.image_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
         if (subcategoriesBuilder_ == null) {
           if (!other.subcategories_.isEmpty()) {
             if (subcategories_.isEmpty()) {
               subcategories_ = other.subcategories_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensureSubcategoriesIsMutable();
               subcategories_.addAll(other.subcategories_);
@@ -552,7 +623,7 @@ public final class ProductCategoriesProto {
               subcategoriesBuilder_.dispose();
               subcategoriesBuilder_ = null;
               subcategories_ = other.subcategories_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
               subcategoriesBuilder_ = 
                 com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
                    internalGetSubcategoriesFieldBuilder() : null;
@@ -598,9 +669,14 @@ public final class ProductCategoriesProto {
                 break;
               } // case 18
               case 26: {
-                org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory m =
+                image_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                org.megacommerce.products.v1.ProductCategoriesProto.Subcategory m =
                     input.readMessage(
-                        org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory.parser(),
+                        org.megacommerce.products.v1.ProductCategoriesProto.Subcategory.parser(),
                         extensionRegistry);
                 if (subcategoriesBuilder_ == null) {
                   ensureSubcategoriesIsMutable();
@@ -609,7 +685,7 @@ public final class ProductCategoriesProto {
                   subcategoriesBuilder_.addMessage(m);
                 }
                 break;
-              } // case 26
+              } // case 34
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -771,22 +847,94 @@ public final class ProductCategoriesProto {
         return this;
       }
 
-      private java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory> subcategories_ =
+      private java.lang.Object image_ = "";
+      /**
+       * <code>string image = 3 [json_name = "image"];</code>
+       * @return The image.
+       */
+      public java.lang.String getImage() {
+        java.lang.Object ref = image_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          image_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string image = 3 [json_name = "image"];</code>
+       * @return The bytes for image.
+       */
+      public com.google.protobuf.ByteString
+          getImageBytes() {
+        java.lang.Object ref = image_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          image_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string image = 3 [json_name = "image"];</code>
+       * @param value The image to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImage(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        image_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string image = 3 [json_name = "image"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearImage() {
+        image_ = getDefaultInstance().getImage();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string image = 3 [json_name = "image"];</code>
+       * @param value The bytes for image to set.
+       * @return This builder for chaining.
+       */
+      public Builder setImageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        image_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.Subcategory> subcategories_ =
         java.util.Collections.emptyList();
       private void ensureSubcategoriesIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
-          subcategories_ = new java.util.ArrayList<org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory>(subcategories_);
-          bitField0_ |= 0x00000004;
+        if (!((bitField0_ & 0x00000008) != 0)) {
+          subcategories_ = new java.util.ArrayList<org.megacommerce.products.v1.ProductCategoriesProto.Subcategory>(subcategories_);
+          bitField0_ |= 0x00000008;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilder<
-          org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryOrBuilder> subcategoriesBuilder_;
+          org.megacommerce.products.v1.ProductCategoriesProto.Subcategory, org.megacommerce.products.v1.ProductCategoriesProto.Subcategory.Builder, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryOrBuilder> subcategoriesBuilder_;
 
       /**
-       * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+       * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
        */
-      public java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory> getSubcategoriesList() {
+      public java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.Subcategory> getSubcategoriesList() {
         if (subcategoriesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(subcategories_);
         } else {
@@ -794,7 +942,7 @@ public final class ProductCategoriesProto {
         }
       }
       /**
-       * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+       * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
        */
       public int getSubcategoriesCount() {
         if (subcategoriesBuilder_ == null) {
@@ -804,9 +952,9 @@ public final class ProductCategoriesProto {
         }
       }
       /**
-       * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+       * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
        */
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory getSubcategories(int index) {
+      public org.megacommerce.products.v1.ProductCategoriesProto.Subcategory getSubcategories(int index) {
         if (subcategoriesBuilder_ == null) {
           return subcategories_.get(index);
         } else {
@@ -814,10 +962,10 @@ public final class ProductCategoriesProto {
         }
       }
       /**
-       * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+       * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
        */
       public Builder setSubcategories(
-          int index, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory value) {
+          int index, org.megacommerce.products.v1.ProductCategoriesProto.Subcategory value) {
         if (subcategoriesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -831,10 +979,10 @@ public final class ProductCategoriesProto {
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+       * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
        */
       public Builder setSubcategories(
-          int index, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory.Builder builderForValue) {
+          int index, org.megacommerce.products.v1.ProductCategoriesProto.Subcategory.Builder builderForValue) {
         if (subcategoriesBuilder_ == null) {
           ensureSubcategoriesIsMutable();
           subcategories_.set(index, builderForValue.build());
@@ -845,9 +993,9 @@ public final class ProductCategoriesProto {
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+       * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
        */
-      public Builder addSubcategories(org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory value) {
+      public Builder addSubcategories(org.megacommerce.products.v1.ProductCategoriesProto.Subcategory value) {
         if (subcategoriesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -861,10 +1009,10 @@ public final class ProductCategoriesProto {
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+       * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
        */
       public Builder addSubcategories(
-          int index, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory value) {
+          int index, org.megacommerce.products.v1.ProductCategoriesProto.Subcategory value) {
         if (subcategoriesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -878,10 +1026,10 @@ public final class ProductCategoriesProto {
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+       * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
        */
       public Builder addSubcategories(
-          org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory.Builder builderForValue) {
+          org.megacommerce.products.v1.ProductCategoriesProto.Subcategory.Builder builderForValue) {
         if (subcategoriesBuilder_ == null) {
           ensureSubcategoriesIsMutable();
           subcategories_.add(builderForValue.build());
@@ -892,10 +1040,10 @@ public final class ProductCategoriesProto {
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+       * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
        */
       public Builder addSubcategories(
-          int index, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory.Builder builderForValue) {
+          int index, org.megacommerce.products.v1.ProductCategoriesProto.Subcategory.Builder builderForValue) {
         if (subcategoriesBuilder_ == null) {
           ensureSubcategoriesIsMutable();
           subcategories_.add(index, builderForValue.build());
@@ -906,10 +1054,10 @@ public final class ProductCategoriesProto {
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+       * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
        */
       public Builder addAllSubcategories(
-          java.lang.Iterable<? extends org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory> values) {
+          java.lang.Iterable<? extends org.megacommerce.products.v1.ProductCategoriesProto.Subcategory> values) {
         if (subcategoriesBuilder_ == null) {
           ensureSubcategoriesIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
@@ -921,12 +1069,12 @@ public final class ProductCategoriesProto {
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+       * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
        */
       public Builder clearSubcategories() {
         if (subcategoriesBuilder_ == null) {
           subcategories_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           subcategoriesBuilder_.clear();
@@ -934,7 +1082,7 @@ public final class ProductCategoriesProto {
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+       * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
        */
       public Builder removeSubcategories(int index) {
         if (subcategoriesBuilder_ == null) {
@@ -947,16 +1095,16 @@ public final class ProductCategoriesProto {
         return this;
       }
       /**
-       * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+       * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
        */
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory.Builder getSubcategoriesBuilder(
+      public org.megacommerce.products.v1.ProductCategoriesProto.Subcategory.Builder getSubcategoriesBuilder(
           int index) {
         return internalGetSubcategoriesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+       * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
        */
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryOrBuilder getSubcategoriesOrBuilder(
+      public org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryOrBuilder getSubcategoriesOrBuilder(
           int index) {
         if (subcategoriesBuilder_ == null) {
           return subcategories_.get(index);  } else {
@@ -964,9 +1112,9 @@ public final class ProductCategoriesProto {
         }
       }
       /**
-       * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+       * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
        */
-      public java.util.List<? extends org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryOrBuilder> 
+      public java.util.List<? extends org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryOrBuilder> 
            getSubcategoriesOrBuilderList() {
         if (subcategoriesBuilder_ != null) {
           return subcategoriesBuilder_.getMessageOrBuilderList();
@@ -975,35 +1123,35 @@ public final class ProductCategoriesProto {
         }
       }
       /**
-       * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+       * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
        */
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory.Builder addSubcategoriesBuilder() {
+      public org.megacommerce.products.v1.ProductCategoriesProto.Subcategory.Builder addSubcategoriesBuilder() {
         return internalGetSubcategoriesFieldBuilder().addBuilder(
-            org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory.getDefaultInstance());
+            org.megacommerce.products.v1.ProductCategoriesProto.Subcategory.getDefaultInstance());
       }
       /**
-       * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+       * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
        */
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory.Builder addSubcategoriesBuilder(
+      public org.megacommerce.products.v1.ProductCategoriesProto.Subcategory.Builder addSubcategoriesBuilder(
           int index) {
         return internalGetSubcategoriesFieldBuilder().addBuilder(
-            index, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory.getDefaultInstance());
+            index, org.megacommerce.products.v1.ProductCategoriesProto.Subcategory.getDefaultInstance());
       }
       /**
-       * <code>repeated .products.v1.ProductSubcategory subcategories = 3 [json_name = "subcategories"];</code>
+       * <code>repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];</code>
        */
-      public java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory.Builder> 
+      public java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.Subcategory.Builder> 
            getSubcategoriesBuilderList() {
         return internalGetSubcategoriesFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilder<
-          org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryOrBuilder> 
+          org.megacommerce.products.v1.ProductCategoriesProto.Subcategory, org.megacommerce.products.v1.ProductCategoriesProto.Subcategory.Builder, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryOrBuilder> 
           internalGetSubcategoriesFieldBuilder() {
         if (subcategoriesBuilder_ == null) {
           subcategoriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryOrBuilder>(
+              org.megacommerce.products.v1.ProductCategoriesProto.Subcategory, org.megacommerce.products.v1.ProductCategoriesProto.Subcategory.Builder, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryOrBuilder>(
                   subcategories_,
-                  ((bitField0_ & 0x00000004) != 0),
+                  ((bitField0_ & 0x00000008) != 0),
                   getParentForChildren(),
                   isClean());
           subcategories_ = null;
@@ -1011,23 +1159,23 @@ public final class ProductCategoriesProto {
         return subcategoriesBuilder_;
       }
 
-      // @@protoc_insertion_point(builder_scope:products.v1.ProductCategory)
+      // @@protoc_insertion_point(builder_scope:products.v1.Category)
     }
 
-    // @@protoc_insertion_point(class_scope:products.v1.ProductCategory)
-    private static final org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:products.v1.Category)
+    private static final org.megacommerce.products.v1.ProductCategoriesProto.Category DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory();
+      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductCategoriesProto.Category();
     }
 
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory getDefaultInstance() {
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Category getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ProductCategory>
-        PARSER = new com.google.protobuf.AbstractParser<ProductCategory>() {
+    private static final com.google.protobuf.Parser<Category>
+        PARSER = new com.google.protobuf.AbstractParser<Category>() {
       @java.lang.Override
-      public ProductCategory parsePartialFrom(
+      public Category parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1046,24 +1194,24 @@ public final class ProductCategoriesProto {
       }
     };
 
-    public static com.google.protobuf.Parser<ProductCategory> parser() {
+    public static com.google.protobuf.Parser<Category> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ProductCategory> getParserForType() {
+    public com.google.protobuf.Parser<Category> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory getDefaultInstanceForType() {
+    public org.megacommerce.products.v1.ProductCategoriesProto.Category getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface ProductSubcategoryOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:products.v1.ProductSubcategory)
+  public interface SubcategoryOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:products.v1.Subcategory)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -1091,11 +1239,29 @@ public final class ProductCategoriesProto {
         getNameBytes();
 
     /**
-     * <code>map&lt;string, .products.v1.ProductSubcategoryAttribute&gt; attributes = 3 [json_name = "attributes"];</code>
+     * <code>int32 version = 3 [json_name = "version"];</code>
+     * @return The version.
+     */
+    int getVersion();
+
+    /**
+     * <code>string created_at = 4 [json_name = "createdAt"];</code>
+     * @return The createdAt.
+     */
+    java.lang.String getCreatedAt();
+    /**
+     * <code>string created_at = 4 [json_name = "createdAt"];</code>
+     * @return The bytes for createdAt.
+     */
+    com.google.protobuf.ByteString
+        getCreatedAtBytes();
+
+    /**
+     * <code>map&lt;string, .products.v1.SubcategoryAttribute&gt; attributes = 5 [json_name = "attributes"];</code>
      */
     int getAttributesCount();
     /**
-     * <code>map&lt;string, .products.v1.ProductSubcategoryAttribute&gt; attributes = 3 [json_name = "attributes"];</code>
+     * <code>map&lt;string, .products.v1.SubcategoryAttribute&gt; attributes = 5 [json_name = "attributes"];</code>
      */
     boolean containsAttributes(
         java.lang.String key);
@@ -1103,34 +1269,34 @@ public final class ProductCategoriesProto {
      * Use {@link #getAttributesMap()} instead.
      */
     @java.lang.Deprecated
-    java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute>
+    java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute>
     getAttributes();
     /**
-     * <code>map&lt;string, .products.v1.ProductSubcategoryAttribute&gt; attributes = 3 [json_name = "attributes"];</code>
+     * <code>map&lt;string, .products.v1.SubcategoryAttribute&gt; attributes = 5 [json_name = "attributes"];</code>
      */
-    java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute>
+    java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute>
     getAttributesMap();
     /**
-     * <code>map&lt;string, .products.v1.ProductSubcategoryAttribute&gt; attributes = 3 [json_name = "attributes"];</code>
+     * <code>map&lt;string, .products.v1.SubcategoryAttribute&gt; attributes = 5 [json_name = "attributes"];</code>
      */
     /* nullable */
-org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute getAttributesOrDefault(
+org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute getAttributesOrDefault(
         java.lang.String key,
         /* nullable */
-org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute defaultValue);
+org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute defaultValue);
     /**
-     * <code>map&lt;string, .products.v1.ProductSubcategoryAttribute&gt; attributes = 3 [json_name = "attributes"];</code>
+     * <code>map&lt;string, .products.v1.SubcategoryAttribute&gt; attributes = 5 [json_name = "attributes"];</code>
      */
-    org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute getAttributesOrThrow(
+    org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute getAttributesOrThrow(
         java.lang.String key);
   }
   /**
-   * Protobuf type {@code products.v1.ProductSubcategory}
+   * Protobuf type {@code products.v1.Subcategory}
    */
-  public static final class ProductSubcategory extends
+  public static final class Subcategory extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:products.v1.ProductSubcategory)
-      ProductSubcategoryOrBuilder {
+      // @@protoc_insertion_point(message_implements:products.v1.Subcategory)
+      SubcategoryOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -1139,20 +1305,21 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         /* minor= */ 31,
         /* patch= */ 1,
         /* suffix= */ "",
-        ProductSubcategory.class.getName());
+        Subcategory.class.getName());
     }
-    // Use ProductSubcategory.newBuilder() to construct.
-    private ProductSubcategory(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use Subcategory.newBuilder() to construct.
+    private Subcategory(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private ProductSubcategory() {
+    private Subcategory() {
       id_ = "";
       name_ = "";
+      createdAt_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductSubcategory_descriptor;
+      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_Subcategory_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -1160,7 +1327,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
     protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
         int number) {
       switch (number) {
-        case 3:
+        case 5:
           return internalGetAttributes();
         default:
           throw new RuntimeException(
@@ -1170,9 +1337,9 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductSubcategory_fieldAccessorTable
+      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_Subcategory_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory.class, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory.Builder.class);
+              org.megacommerce.products.v1.ProductCategoriesProto.Subcategory.class, org.megacommerce.products.v1.ProductCategoriesProto.Subcategory.Builder.class);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
@@ -1253,22 +1420,72 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       }
     }
 
-    public static final int ATTRIBUTES_FIELD_NUMBER = 3;
+    public static final int VERSION_FIELD_NUMBER = 3;
+    private int version_ = 0;
+    /**
+     * <code>int32 version = 3 [json_name = "version"];</code>
+     * @return The version.
+     */
+    @java.lang.Override
+    public int getVersion() {
+      return version_;
+    }
+
+    public static final int CREATED_AT_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object createdAt_ = "";
+    /**
+     * <code>string created_at = 4 [json_name = "createdAt"];</code>
+     * @return The createdAt.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedAt() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdAt_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string created_at = 4 [json_name = "createdAt"];</code>
+     * @return The bytes for createdAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCreatedAtBytes() {
+      java.lang.Object ref = createdAt_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdAt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ATTRIBUTES_FIELD_NUMBER = 5;
     private static final class AttributesDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute> defaultEntry =
+          java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute> defaultEntry =
               com.google.protobuf.MapEntry
-              .<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute>newDefaultInstance(
-                  org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductSubcategory_AttributesEntry_descriptor, 
+              .<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute>newDefaultInstance(
+                  org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_Subcategory_AttributesEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute.getDefaultInstance());
+                  org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute.getDefaultInstance());
     }
     @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
-        java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute> attributes_;
-    private com.google.protobuf.MapField<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute>
+        java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute> attributes_;
+    private com.google.protobuf.MapField<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute>
     internalGetAttributes() {
       if (attributes_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -1280,7 +1497,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       return internalGetAttributes().getMap().size();
     }
     /**
-     * <code>map&lt;string, .products.v1.ProductSubcategoryAttribute&gt; attributes = 3 [json_name = "attributes"];</code>
+     * <code>map&lt;string, .products.v1.SubcategoryAttribute&gt; attributes = 5 [json_name = "attributes"];</code>
      */
     @java.lang.Override
     public boolean containsAttributes(
@@ -1293,38 +1510,38 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute> getAttributes() {
+    public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute> getAttributes() {
       return getAttributesMap();
     }
     /**
-     * <code>map&lt;string, .products.v1.ProductSubcategoryAttribute&gt; attributes = 3 [json_name = "attributes"];</code>
+     * <code>map&lt;string, .products.v1.SubcategoryAttribute&gt; attributes = 5 [json_name = "attributes"];</code>
      */
     @java.lang.Override
-    public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute> getAttributesMap() {
+    public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute> getAttributesMap() {
       return internalGetAttributes().getMap();
     }
     /**
-     * <code>map&lt;string, .products.v1.ProductSubcategoryAttribute&gt; attributes = 3 [json_name = "attributes"];</code>
+     * <code>map&lt;string, .products.v1.SubcategoryAttribute&gt; attributes = 5 [json_name = "attributes"];</code>
      */
     @java.lang.Override
     public /* nullable */
-org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute getAttributesOrDefault(
+org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute getAttributesOrDefault(
         java.lang.String key,
         /* nullable */
-org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute defaultValue) {
+org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute defaultValue) {
       if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute> map =
+      java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute> map =
           internalGetAttributes().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, .products.v1.ProductSubcategoryAttribute&gt; attributes = 3 [json_name = "attributes"];</code>
+     * <code>map&lt;string, .products.v1.SubcategoryAttribute&gt; attributes = 5 [json_name = "attributes"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute getAttributesOrThrow(
+    public org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute getAttributesOrThrow(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute> map =
+      java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute> map =
           internalGetAttributes().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
@@ -1352,12 +1569,18 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 2, name_);
       }
+      if (version_ != 0) {
+        output.writeInt32(3, version_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, createdAt_);
+      }
       com.google.protobuf.GeneratedMessage
         .serializeStringMapTo(
           output,
           internalGetAttributes(),
           AttributesDefaultEntryHolder.defaultEntry,
-          3);
+          5);
       getUnknownFields().writeTo(output);
     }
 
@@ -1373,15 +1596,22 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(2, name_);
       }
-      for (java.util.Map.Entry<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute> entry
+      if (version_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(3, version_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(createdAt_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, createdAt_);
+      }
+      for (java.util.Map.Entry<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute> entry
            : internalGetAttributes().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute>
+        com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute>
         attributes__ = AttributesDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(3, attributes__);
+            .computeMessageSize(5, attributes__);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1393,15 +1623,19 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory)) {
+      if (!(obj instanceof org.megacommerce.products.v1.ProductCategoriesProto.Subcategory)) {
         return super.equals(obj);
       }
-      org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory other = (org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory) obj;
+      org.megacommerce.products.v1.ProductCategoriesProto.Subcategory other = (org.megacommerce.products.v1.ProductCategoriesProto.Subcategory) obj;
 
       if (!getId()
           .equals(other.getId())) return false;
       if (!getName()
           .equals(other.getName())) return false;
+      if (getVersion()
+          != other.getVersion()) return false;
+      if (!getCreatedAt()
+          .equals(other.getCreatedAt())) return false;
       if (!internalGetAttributes().equals(
           other.internalGetAttributes())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -1419,6 +1653,10 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       hash = (53 * hash) + getId().hashCode();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion();
+      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedAt().hashCode();
       if (!internalGetAttributes().getMap().isEmpty()) {
         hash = (37 * hash) + ATTRIBUTES_FIELD_NUMBER;
         hash = (53 * hash) + internalGetAttributes().hashCode();
@@ -1428,44 +1666,44 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       return hash;
     }
 
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Subcategory parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Subcategory parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Subcategory parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Subcategory parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory parseFrom(byte[] data)
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Subcategory parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Subcategory parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory parseFrom(java.io.InputStream input)
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Subcategory parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Subcategory parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1473,26 +1711,26 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory parseDelimitedFrom(java.io.InputStream input)
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Subcategory parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory parseDelimitedFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Subcategory parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Subcategory parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Subcategory parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1505,7 +1743,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory prototype) {
+    public static Builder newBuilder(org.megacommerce.products.v1.ProductCategoriesProto.Subcategory prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -1521,22 +1759,22 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       return builder;
     }
     /**
-     * Protobuf type {@code products.v1.ProductSubcategory}
+     * Protobuf type {@code products.v1.Subcategory}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:products.v1.ProductSubcategory)
-        org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryOrBuilder {
+        // @@protoc_insertion_point(builder_implements:products.v1.Subcategory)
+        org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductSubcategory_descriptor;
+        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_Subcategory_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
       protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
           int number) {
         switch (number) {
-          case 3:
+          case 5:
             return internalGetAttributes();
           default:
             throw new RuntimeException(
@@ -1547,7 +1785,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
           int number) {
         switch (number) {
-          case 3:
+          case 5:
             return internalGetMutableAttributes();
           default:
             throw new RuntimeException(
@@ -1557,12 +1795,12 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductSubcategory_fieldAccessorTable
+        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_Subcategory_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory.class, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory.Builder.class);
+                org.megacommerce.products.v1.ProductCategoriesProto.Subcategory.class, org.megacommerce.products.v1.ProductCategoriesProto.Subcategory.Builder.class);
       }
 
-      // Construct using org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory.newBuilder()
+      // Construct using org.megacommerce.products.v1.ProductCategoriesProto.Subcategory.newBuilder()
       private Builder() {
 
       }
@@ -1578,6 +1816,8 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         bitField0_ = 0;
         id_ = "";
         name_ = "";
+        version_ = 0;
+        createdAt_ = "";
         internalGetMutableAttributes().clear();
         return this;
       }
@@ -1585,17 +1825,17 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductSubcategory_descriptor;
+        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_Subcategory_descriptor;
       }
 
       @java.lang.Override
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory getDefaultInstanceForType() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory.getDefaultInstance();
+      public org.megacommerce.products.v1.ProductCategoriesProto.Subcategory getDefaultInstanceForType() {
+        return org.megacommerce.products.v1.ProductCategoriesProto.Subcategory.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory build() {
-        org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory result = buildPartial();
+      public org.megacommerce.products.v1.ProductCategoriesProto.Subcategory build() {
+        org.megacommerce.products.v1.ProductCategoriesProto.Subcategory result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -1603,14 +1843,14 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       }
 
       @java.lang.Override
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory buildPartial() {
-        org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory result = new org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory(this);
+      public org.megacommerce.products.v1.ProductCategoriesProto.Subcategory buildPartial() {
+        org.megacommerce.products.v1.ProductCategoriesProto.Subcategory result = new org.megacommerce.products.v1.ProductCategoriesProto.Subcategory(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory result) {
+      private void buildPartial0(org.megacommerce.products.v1.ProductCategoriesProto.Subcategory result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.id_ = id_;
@@ -1619,22 +1859,28 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
           result.name_ = name_;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.version_ = version_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.createdAt_ = createdAt_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           result.attributes_ = internalGetAttributes().build(AttributesDefaultEntryHolder.defaultEntry);
         }
       }
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory) {
-          return mergeFrom((org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory)other);
+        if (other instanceof org.megacommerce.products.v1.ProductCategoriesProto.Subcategory) {
+          return mergeFrom((org.megacommerce.products.v1.ProductCategoriesProto.Subcategory)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory other) {
-        if (other == org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.megacommerce.products.v1.ProductCategoriesProto.Subcategory other) {
+        if (other == org.megacommerce.products.v1.ProductCategoriesProto.Subcategory.getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           bitField0_ |= 0x00000001;
@@ -1645,9 +1891,17 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (other.getVersion() != 0) {
+          setVersion(other.getVersion());
+        }
+        if (!other.getCreatedAt().isEmpty()) {
+          createdAt_ = other.createdAt_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
         internalGetMutableAttributes().mergeFrom(
             other.internalGetAttributes());
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1684,15 +1938,25 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
-              case 26: {
-                com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute>
+              case 24: {
+                version_ = input.readInt32();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+              case 34: {
+                createdAt_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 42: {
+                com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute>
                 attributes__ = input.readMessage(
                     AttributesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableAttributes().ensureBuilderMap().put(
                     attributes__.getKey(), attributes__.getValue());
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000010;
                 break;
-              } // case 26
+              } // case 42
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1854,35 +2118,139 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         return this;
       }
 
-      private static final class AttributesConverter implements com.google.protobuf.MapFieldBuilder.Converter<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttributeOrBuilder, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute> {
+      private int version_ ;
+      /**
+       * <code>int32 version = 3 [json_name = "version"];</code>
+       * @return The version.
+       */
+      @java.lang.Override
+      public int getVersion() {
+        return version_;
+      }
+      /**
+       * <code>int32 version = 3 [json_name = "version"];</code>
+       * @param value The version to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVersion(int value) {
+
+        version_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 version = 3 [json_name = "version"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearVersion() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        version_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object createdAt_ = "";
+      /**
+       * <code>string created_at = 4 [json_name = "createdAt"];</code>
+       * @return The createdAt.
+       */
+      public java.lang.String getCreatedAt() {
+        java.lang.Object ref = createdAt_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdAt_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 4 [json_name = "createdAt"];</code>
+       * @return The bytes for createdAt.
+       */
+      public com.google.protobuf.ByteString
+          getCreatedAtBytes() {
+        java.lang.Object ref = createdAt_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdAt_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string created_at = 4 [json_name = "createdAt"];</code>
+       * @param value The createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAt(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        createdAt_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 4 [json_name = "createdAt"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCreatedAt() {
+        createdAt_ = getDefaultInstance().getCreatedAt();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string created_at = 4 [json_name = "createdAt"];</code>
+       * @param value The bytes for createdAt to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCreatedAtBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        createdAt_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private static final class AttributesConverter implements com.google.protobuf.MapFieldBuilder.Converter<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeOrBuilder, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute> {
         @java.lang.Override
-        public org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute build(org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttributeOrBuilder val) {
-          if (val instanceof org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute) { return (org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute) val; }
-          return ((org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute.Builder) val).build();
+        public org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute build(org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeOrBuilder val) {
+          if (val instanceof org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute) { return (org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute) val; }
+          return ((org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute.Builder) val).build();
         }
 
         @java.lang.Override
-        public com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute> defaultEntry() {
+        public com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute> defaultEntry() {
           return AttributesDefaultEntryHolder.defaultEntry;
         }
       };
       private static final AttributesConverter attributesConverter = new AttributesConverter();
 
       private com.google.protobuf.MapFieldBuilder<
-          java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttributeOrBuilder, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute.Builder> attributes_;
-      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttributeOrBuilder, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute.Builder>
+          java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeOrBuilder, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute.Builder> attributes_;
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeOrBuilder, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute.Builder>
           internalGetAttributes() {
         if (attributes_ == null) {
           return new com.google.protobuf.MapFieldBuilder<>(attributesConverter);
         }
         return attributes_;
       }
-      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttributeOrBuilder, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute.Builder>
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeOrBuilder, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute.Builder>
           internalGetMutableAttributes() {
         if (attributes_ == null) {
           attributes_ = new com.google.protobuf.MapFieldBuilder<>(attributesConverter);
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         onChanged();
         return attributes_;
       }
@@ -1890,7 +2258,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         return internalGetAttributes().ensureBuilderMap().size();
       }
       /**
-       * <code>map&lt;string, .products.v1.ProductSubcategoryAttribute&gt; attributes = 3 [json_name = "attributes"];</code>
+       * <code>map&lt;string, .products.v1.SubcategoryAttribute&gt; attributes = 5 [json_name = "attributes"];</code>
        */
       @java.lang.Override
       public boolean containsAttributes(
@@ -1903,49 +2271,49 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
        */
       @java.lang.Override
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute> getAttributes() {
+      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute> getAttributes() {
         return getAttributesMap();
       }
       /**
-       * <code>map&lt;string, .products.v1.ProductSubcategoryAttribute&gt; attributes = 3 [json_name = "attributes"];</code>
+       * <code>map&lt;string, .products.v1.SubcategoryAttribute&gt; attributes = 5 [json_name = "attributes"];</code>
        */
       @java.lang.Override
-      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute> getAttributesMap() {
+      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute> getAttributesMap() {
         return internalGetAttributes().getImmutableMap();
       }
       /**
-       * <code>map&lt;string, .products.v1.ProductSubcategoryAttribute&gt; attributes = 3 [json_name = "attributes"];</code>
+       * <code>map&lt;string, .products.v1.SubcategoryAttribute&gt; attributes = 5 [json_name = "attributes"];</code>
        */
       @java.lang.Override
       public /* nullable */
-org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute getAttributesOrDefault(
+org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute getAttributesOrDefault(
           java.lang.String key,
           /* nullable */
-org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute defaultValue) {
+org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute defaultValue) {
         if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttributeOrBuilder> map = internalGetMutableAttributes().ensureBuilderMap();
+        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeOrBuilder> map = internalGetMutableAttributes().ensureBuilderMap();
         return map.containsKey(key) ? attributesConverter.build(map.get(key)) : defaultValue;
       }
       /**
-       * <code>map&lt;string, .products.v1.ProductSubcategoryAttribute&gt; attributes = 3 [json_name = "attributes"];</code>
+       * <code>map&lt;string, .products.v1.SubcategoryAttribute&gt; attributes = 5 [json_name = "attributes"];</code>
        */
       @java.lang.Override
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute getAttributesOrThrow(
+      public org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute getAttributesOrThrow(
           java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttributeOrBuilder> map = internalGetMutableAttributes().ensureBuilderMap();
+        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeOrBuilder> map = internalGetMutableAttributes().ensureBuilderMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
         return attributesConverter.build(map.get(key));
       }
       public Builder clearAttributes() {
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000010);
         internalGetMutableAttributes().clear();
         return this;
       }
       /**
-       * <code>map&lt;string, .products.v1.ProductSubcategoryAttribute&gt; attributes = 3 [json_name = "attributes"];</code>
+       * <code>map&lt;string, .products.v1.SubcategoryAttribute&gt; attributes = 5 [json_name = "attributes"];</code>
        */
       public Builder removeAttributes(
           java.lang.String key) {
@@ -1958,74 +2326,74 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
        * Use alternate mutation accessors instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute>
+      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute>
           getMutableAttributes() {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         return internalGetMutableAttributes().ensureMessageMap();
       }
       /**
-       * <code>map&lt;string, .products.v1.ProductSubcategoryAttribute&gt; attributes = 3 [json_name = "attributes"];</code>
+       * <code>map&lt;string, .products.v1.SubcategoryAttribute&gt; attributes = 5 [json_name = "attributes"];</code>
        */
       public Builder putAttributes(
           java.lang.String key,
-          org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute value) {
+          org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute value) {
         if (key == null) { throw new NullPointerException("map key"); }
         if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableAttributes().ensureBuilderMap()
             .put(key, value);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         return this;
       }
       /**
-       * <code>map&lt;string, .products.v1.ProductSubcategoryAttribute&gt; attributes = 3 [json_name = "attributes"];</code>
+       * <code>map&lt;string, .products.v1.SubcategoryAttribute&gt; attributes = 5 [json_name = "attributes"];</code>
        */
       public Builder putAllAttributes(
-          java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute> values) {
-        for (java.util.Map.Entry<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute> e : values.entrySet()) {
+          java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute> values) {
+        for (java.util.Map.Entry<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute> e : values.entrySet()) {
           if (e.getKey() == null || e.getValue() == null) {
             throw new NullPointerException();
           }
         }
         internalGetMutableAttributes().ensureBuilderMap()
             .putAll(values);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000010;
         return this;
       }
       /**
-       * <code>map&lt;string, .products.v1.ProductSubcategoryAttribute&gt; attributes = 3 [json_name = "attributes"];</code>
+       * <code>map&lt;string, .products.v1.SubcategoryAttribute&gt; attributes = 5 [json_name = "attributes"];</code>
        */
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute.Builder putAttributesBuilderIfAbsent(
+      public org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute.Builder putAttributesBuilderIfAbsent(
           java.lang.String key) {
-        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttributeOrBuilder> builderMap = internalGetMutableAttributes().ensureBuilderMap();
-        org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttributeOrBuilder entry = builderMap.get(key);
+        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeOrBuilder> builderMap = internalGetMutableAttributes().ensureBuilderMap();
+        org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeOrBuilder entry = builderMap.get(key);
         if (entry == null) {
-          entry = org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute.newBuilder();
+          entry = org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute.newBuilder();
           builderMap.put(key, entry);
         }
-        if (entry instanceof org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute) {
-          entry = ((org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute) entry).toBuilder();
+        if (entry instanceof org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute) {
+          entry = ((org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute) entry).toBuilder();
           builderMap.put(key, entry);
         }
-        return (org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute.Builder) entry;
+        return (org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute.Builder) entry;
       }
 
-      // @@protoc_insertion_point(builder_scope:products.v1.ProductSubcategory)
+      // @@protoc_insertion_point(builder_scope:products.v1.Subcategory)
     }
 
-    // @@protoc_insertion_point(class_scope:products.v1.ProductSubcategory)
-    private static final org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:products.v1.Subcategory)
+    private static final org.megacommerce.products.v1.ProductCategoriesProto.Subcategory DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory();
+      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductCategoriesProto.Subcategory();
     }
 
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory getDefaultInstance() {
+    public static org.megacommerce.products.v1.ProductCategoriesProto.Subcategory getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ProductSubcategory>
-        PARSER = new com.google.protobuf.AbstractParser<ProductSubcategory>() {
+    private static final com.google.protobuf.Parser<Subcategory>
+        PARSER = new com.google.protobuf.AbstractParser<Subcategory>() {
       @java.lang.Override
-      public ProductSubcategory parsePartialFrom(
+      public Subcategory parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2044,24 +2412,24 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       }
     };
 
-    public static com.google.protobuf.Parser<ProductSubcategory> parser() {
+    public static com.google.protobuf.Parser<Subcategory> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ProductSubcategory> getParserForType() {
+    public com.google.protobuf.Parser<Subcategory> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategory getDefaultInstanceForType() {
+    public org.megacommerce.products.v1.ProductCategoriesProto.Subcategory getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
-  public interface ProductSubcategoryAttributeOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:products.v1.ProductSubcategoryAttribute)
+  public interface SubcategoryAttributeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:products.v1.SubcategoryAttribute)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -2218,12 +2586,12 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
    * Top-level attribute with a typed validation
    * </pre>
    *
-   * Protobuf type {@code products.v1.ProductSubcategoryAttribute}
+   * Protobuf type {@code products.v1.SubcategoryAttribute}
    */
-  public static final class ProductSubcategoryAttribute extends
+  public static final class SubcategoryAttribute extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:products.v1.ProductSubcategoryAttribute)
-      ProductSubcategoryAttributeOrBuilder {
+      // @@protoc_insertion_point(message_implements:products.v1.SubcategoryAttribute)
+      SubcategoryAttributeOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -2232,13 +2600,13 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         /* minor= */ 31,
         /* patch= */ 1,
         /* suffix= */ "",
-        ProductSubcategoryAttribute.class.getName());
+        SubcategoryAttribute.class.getName());
     }
-    // Use ProductSubcategoryAttribute.newBuilder() to construct.
-    private ProductSubcategoryAttribute(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use SubcategoryAttribute.newBuilder() to construct.
+    private SubcategoryAttribute(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private ProductSubcategoryAttribute() {
+    private SubcategoryAttribute() {
       type_ = "";
       refrence_ = "";
       stringArray_ =
@@ -2247,15 +2615,15 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductSubcategoryAttribute_descriptor;
+      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_SubcategoryAttribute_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductSubcategoryAttribute_fieldAccessorTable
+      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_SubcategoryAttribute_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute.class, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute.Builder.class);
+              org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute.class, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute.Builder.class);
     }
 
     private int bitField0_;
@@ -2578,10 +2946,10 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute)) {
+      if (!(obj instanceof org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute)) {
         return super.equals(obj);
       }
-      org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute other = (org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute) obj;
+      org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute other = (org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute) obj;
 
       if (getRequired()
           != other.getRequired()) return false;
@@ -2642,44 +3010,44 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       return hash;
     }
 
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute parseFrom(byte[] data)
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute parseFrom(java.io.InputStream input)
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2687,26 +3055,26 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute parseDelimitedFrom(java.io.InputStream input)
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute parseDelimitedFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute parseFrom(
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2719,7 +3087,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute prototype) {
+    public static Builder newBuilder(org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -2739,26 +3107,26 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
      * Top-level attribute with a typed validation
      * </pre>
      *
-     * Protobuf type {@code products.v1.ProductSubcategoryAttribute}
+     * Protobuf type {@code products.v1.SubcategoryAttribute}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:products.v1.ProductSubcategoryAttribute)
-        org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttributeOrBuilder {
+        // @@protoc_insertion_point(builder_implements:products.v1.SubcategoryAttribute)
+        org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductSubcategoryAttribute_descriptor;
+        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_SubcategoryAttribute_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductSubcategoryAttribute_fieldAccessorTable
+        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_SubcategoryAttribute_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute.class, org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute.Builder.class);
+                org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute.class, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute.Builder.class);
       }
 
-      // Construct using org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute.newBuilder()
+      // Construct using org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -2795,17 +3163,17 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductSubcategoryAttribute_descriptor;
+        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_SubcategoryAttribute_descriptor;
       }
 
       @java.lang.Override
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute getDefaultInstanceForType() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute.getDefaultInstance();
+      public org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute getDefaultInstanceForType() {
+        return org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute build() {
-        org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute result = buildPartial();
+      public org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute build() {
+        org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -2813,14 +3181,14 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       }
 
       @java.lang.Override
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute buildPartial() {
-        org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute result = new org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute(this);
+      public org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute buildPartial() {
+        org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute result = new org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute(this);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartial0(org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute result) {
+      private void buildPartial0(org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.required_ = required_;
@@ -2852,16 +3220,16 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute) {
-          return mergeFrom((org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute)other);
+        if (other instanceof org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute) {
+          return mergeFrom((org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute other) {
-        if (other == org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute other) {
+        if (other == org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute.getDefaultInstance()) return this;
         if (other.getRequired() != false) {
           setRequired(other.getRequired());
         }
@@ -3572,23 +3940,23 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         return validationBuilder_;
       }
 
-      // @@protoc_insertion_point(builder_scope:products.v1.ProductSubcategoryAttribute)
+      // @@protoc_insertion_point(builder_scope:products.v1.SubcategoryAttribute)
     }
 
-    // @@protoc_insertion_point(class_scope:products.v1.ProductSubcategoryAttribute)
-    private static final org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:products.v1.SubcategoryAttribute)
+    private static final org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute();
+      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute();
     }
 
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute getDefaultInstance() {
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ProductSubcategoryAttribute>
-        PARSER = new com.google.protobuf.AbstractParser<ProductSubcategoryAttribute>() {
+    private static final com.google.protobuf.Parser<SubcategoryAttribute>
+        PARSER = new com.google.protobuf.AbstractParser<SubcategoryAttribute>() {
       @java.lang.Override
-      public ProductSubcategoryAttribute parsePartialFrom(
+      public SubcategoryAttribute parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3607,2195 +3975,42 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       }
     };
 
-    public static com.google.protobuf.Parser<ProductSubcategoryAttribute> parser() {
+    public static com.google.protobuf.Parser<SubcategoryAttribute> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ProductSubcategoryAttribute> getParserForType() {
+    public com.google.protobuf.Parser<SubcategoryAttribute> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ProductCategoriesOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:products.v1.ProductCategories)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-     */
-    java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory> 
-        getCategoriesList();
-    /**
-     * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-     */
-    org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory getCategories(int index);
-    /**
-     * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-     */
-    int getCategoriesCount();
-    /**
-     * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-     */
-    java.util.List<? extends org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryOrBuilder> 
-        getCategoriesOrBuilderList();
-    /**
-     * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-     */
-    org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryOrBuilder getCategoriesOrBuilder(
-        int index);
-  }
-  /**
-   * Protobuf type {@code products.v1.ProductCategories}
-   */
-  public static final class ProductCategories extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:products.v1.ProductCategories)
-      ProductCategoriesOrBuilder {
-  private static final long serialVersionUID = 0L;
-    static {
-      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
-        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
-        /* major= */ 4,
-        /* minor= */ 31,
-        /* patch= */ 1,
-        /* suffix= */ "",
-        ProductCategories.class.getName());
-    }
-    // Use ProductCategories.newBuilder() to construct.
-    private ProductCategories(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-    }
-    private ProductCategories() {
-      categories_ = java.util.Collections.emptyList();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductCategories_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductCategories_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories.class, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories.Builder.class);
-    }
-
-    public static final int CATEGORIES_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory> categories_;
-    /**
-     * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory> getCategoriesList() {
-      return categories_;
-    }
-    /**
-     * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryOrBuilder> 
-        getCategoriesOrBuilderList() {
-      return categories_;
-    }
-    /**
-     * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-     */
-    @java.lang.Override
-    public int getCategoriesCount() {
-      return categories_.size();
-    }
-    /**
-     * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-     */
-    @java.lang.Override
-    public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory getCategories(int index) {
-      return categories_.get(index);
-    }
-    /**
-     * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-     */
-    @java.lang.Override
-    public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryOrBuilder getCategoriesOrBuilder(
-        int index) {
-      return categories_.get(index);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      for (int i = 0; i < categories_.size(); i++) {
-        output.writeMessage(1, categories_.get(i));
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      for (int i = 0; i < categories_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, categories_.get(i));
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories)) {
-        return super.equals(obj);
-      }
-      org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories other = (org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories) obj;
-
-      if (!getCategoriesList()
-          .equals(other.getCategoriesList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getCategoriesCount() > 0) {
-        hash = (37 * hash) + CATEGORIES_FIELD_NUMBER;
-        hash = (53 * hash) + getCategoriesList().hashCode();
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code products.v1.ProductCategories}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:products.v1.ProductCategories)
-        org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductCategories_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductCategories_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories.class, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories.Builder.class);
-      }
-
-      // Construct using org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories.newBuilder()
-      private Builder() {
-
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        if (categoriesBuilder_ == null) {
-          categories_ = java.util.Collections.emptyList();
-        } else {
-          categories_ = null;
-          categoriesBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductCategories_descriptor;
-      }
-
-      @java.lang.Override
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories getDefaultInstanceForType() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories build() {
-        org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories buildPartial() {
-        org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories result = new org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories result) {
-        if (categoriesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            categories_ = java.util.Collections.unmodifiableList(categories_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.categories_ = categories_;
-        } else {
-          result.categories_ = categoriesBuilder_.build();
-        }
-      }
-
-      private void buildPartial0(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories result) {
-        int from_bitField0_ = bitField0_;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories) {
-          return mergeFrom((org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories other) {
-        if (other == org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories.getDefaultInstance()) return this;
-        if (categoriesBuilder_ == null) {
-          if (!other.categories_.isEmpty()) {
-            if (categories_.isEmpty()) {
-              categories_ = other.categories_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureCategoriesIsMutable();
-              categories_.addAll(other.categories_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.categories_.isEmpty()) {
-            if (categoriesBuilder_.isEmpty()) {
-              categoriesBuilder_.dispose();
-              categoriesBuilder_ = null;
-              categories_ = other.categories_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              categoriesBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   internalGetCategoriesFieldBuilder() : null;
-            } else {
-              categoriesBuilder_.addAllMessages(other.categories_);
-            }
-          }
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory m =
-                    input.readMessage(
-                        org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.parser(),
-                        extensionRegistry);
-                if (categoriesBuilder_ == null) {
-                  ensureCategoriesIsMutable();
-                  categories_.add(m);
-                } else {
-                  categoriesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory> categories_ =
-        java.util.Collections.emptyList();
-      private void ensureCategoriesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          categories_ = new java.util.ArrayList<org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory>(categories_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilder<
-          org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryOrBuilder> categoriesBuilder_;
-
-      /**
-       * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-       */
-      public java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory> getCategoriesList() {
-        if (categoriesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(categories_);
-        } else {
-          return categoriesBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-       */
-      public int getCategoriesCount() {
-        if (categoriesBuilder_ == null) {
-          return categories_.size();
-        } else {
-          return categoriesBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-       */
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory getCategories(int index) {
-        if (categoriesBuilder_ == null) {
-          return categories_.get(index);
-        } else {
-          return categoriesBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-       */
-      public Builder setCategories(
-          int index, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory value) {
-        if (categoriesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCategoriesIsMutable();
-          categories_.set(index, value);
-          onChanged();
-        } else {
-          categoriesBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-       */
-      public Builder setCategories(
-          int index, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.Builder builderForValue) {
-        if (categoriesBuilder_ == null) {
-          ensureCategoriesIsMutable();
-          categories_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          categoriesBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-       */
-      public Builder addCategories(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory value) {
-        if (categoriesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCategoriesIsMutable();
-          categories_.add(value);
-          onChanged();
-        } else {
-          categoriesBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-       */
-      public Builder addCategories(
-          int index, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory value) {
-        if (categoriesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCategoriesIsMutable();
-          categories_.add(index, value);
-          onChanged();
-        } else {
-          categoriesBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-       */
-      public Builder addCategories(
-          org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.Builder builderForValue) {
-        if (categoriesBuilder_ == null) {
-          ensureCategoriesIsMutable();
-          categories_.add(builderForValue.build());
-          onChanged();
-        } else {
-          categoriesBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-       */
-      public Builder addCategories(
-          int index, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.Builder builderForValue) {
-        if (categoriesBuilder_ == null) {
-          ensureCategoriesIsMutable();
-          categories_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          categoriesBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-       */
-      public Builder addAllCategories(
-          java.lang.Iterable<? extends org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory> values) {
-        if (categoriesBuilder_ == null) {
-          ensureCategoriesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, categories_);
-          onChanged();
-        } else {
-          categoriesBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-       */
-      public Builder clearCategories() {
-        if (categoriesBuilder_ == null) {
-          categories_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          categoriesBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-       */
-      public Builder removeCategories(int index) {
-        if (categoriesBuilder_ == null) {
-          ensureCategoriesIsMutable();
-          categories_.remove(index);
-          onChanged();
-        } else {
-          categoriesBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-       */
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.Builder getCategoriesBuilder(
-          int index) {
-        return internalGetCategoriesFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-       */
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryOrBuilder getCategoriesOrBuilder(
-          int index) {
-        if (categoriesBuilder_ == null) {
-          return categories_.get(index);  } else {
-          return categoriesBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-       */
-      public java.util.List<? extends org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryOrBuilder> 
-           getCategoriesOrBuilderList() {
-        if (categoriesBuilder_ != null) {
-          return categoriesBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(categories_);
-        }
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-       */
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.Builder addCategoriesBuilder() {
-        return internalGetCategoriesFieldBuilder().addBuilder(
-            org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-       */
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.Builder addCategoriesBuilder(
-          int index) {
-        return internalGetCategoriesFieldBuilder().addBuilder(
-            index, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategory categories = 1 [json_name = "categories"];</code>
-       */
-      public java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.Builder> 
-           getCategoriesBuilderList() {
-        return internalGetCategoriesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilder<
-          org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryOrBuilder> 
-          internalGetCategoriesFieldBuilder() {
-        if (categoriesBuilder_ == null) {
-          categoriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategory.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryOrBuilder>(
-                  categories_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          categories_ = null;
-        }
-        return categoriesBuilder_;
-      }
-
-      // @@protoc_insertion_point(builder_scope:products.v1.ProductCategories)
-    }
-
-    // @@protoc_insertion_point(class_scope:products.v1.ProductCategories)
-    private static final org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories();
-    }
-
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ProductCategories>
-        PARSER = new com.google.protobuf.AbstractParser<ProductCategories>() {
-      @java.lang.Override
-      public ProductCategories parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<ProductCategories> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ProductCategories> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategories getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ProductCategoryWithoutSubcategoriesOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:products.v1.ProductCategoryWithoutSubcategories)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The id.
-     */
-    java.lang.String getId();
-    /**
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The bytes for id.
-     */
-    com.google.protobuf.ByteString
-        getIdBytes();
-
-    /**
-     * <code>string name = 2 [json_name = "name"];</code>
-     * @return The name.
-     */
-    java.lang.String getName();
-    /**
-     * <code>string name = 2 [json_name = "name"];</code>
-     * @return The bytes for name.
-     */
-    com.google.protobuf.ByteString
-        getNameBytes();
-  }
-  /**
-   * Protobuf type {@code products.v1.ProductCategoryWithoutSubcategories}
-   */
-  public static final class ProductCategoryWithoutSubcategories extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:products.v1.ProductCategoryWithoutSubcategories)
-      ProductCategoryWithoutSubcategoriesOrBuilder {
-  private static final long serialVersionUID = 0L;
-    static {
-      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
-        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
-        /* major= */ 4,
-        /* minor= */ 31,
-        /* patch= */ 1,
-        /* suffix= */ "",
-        ProductCategoryWithoutSubcategories.class.getName());
-    }
-    // Use ProductCategoryWithoutSubcategories.newBuilder() to construct.
-    private ProductCategoryWithoutSubcategories(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-    }
-    private ProductCategoryWithoutSubcategories() {
-      id_ = "";
-      name_ = "";
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductCategoryWithoutSubcategories_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductCategoryWithoutSubcategories_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories.class, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories.Builder.class);
-    }
-
-    public static final int ID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object id_ = "";
-    /**
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The id.
-     */
-    @java.lang.Override
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string id = 1 [json_name = "id"];</code>
-     * @return The bytes for id.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int NAME_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object name_ = "";
-    /**
-     * <code>string name = 2 [json_name = "name"];</code>
-     * @return The name.
-     */
-    @java.lang.Override
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string name = 2 [json_name = "name"];</code>
-     * @return The bytes for name.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, id_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 2, name_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(id_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, id_);
-      }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, name_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories)) {
-        return super.equals(obj);
-      }
-      org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories other = (org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories) obj;
-
-      if (!getId()
-          .equals(other.getId())) return false;
-      if (!getName()
-          .equals(other.getName())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code products.v1.ProductCategoryWithoutSubcategories}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:products.v1.ProductCategoryWithoutSubcategories)
-        org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategoriesOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductCategoryWithoutSubcategories_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductCategoryWithoutSubcategories_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories.class, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories.Builder.class);
-      }
-
-      // Construct using org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories.newBuilder()
-      private Builder() {
-
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        id_ = "";
-        name_ = "";
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductCategoryWithoutSubcategories_descriptor;
-      }
-
-      @java.lang.Override
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories getDefaultInstanceForType() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories build() {
-        org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories buildPartial() {
-        org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories result = new org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartial0(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.id_ = id_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.name_ = name_;
-        }
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories) {
-          return mergeFrom((org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories other) {
-        if (other == org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories.getDefaultInstance()) return this;
-        if (!other.getId().isEmpty()) {
-          id_ = other.id_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
-          bitField0_ |= 0x00000002;
-          onChanged();
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                id_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object id_ = "";
-      /**
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @return The id.
-       */
-      public java.lang.String getId() {
-        java.lang.Object ref = id_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          id_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @return The bytes for id.
-       */
-      public com.google.protobuf.ByteString
-          getIdBytes() {
-        java.lang.Object ref = id_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          id_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setId(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        id_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearId() {
-        id_ = getDefaultInstance().getId();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string id = 1 [json_name = "id"];</code>
-       * @param value The bytes for id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        id_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object name_ = "";
-      /**
-       * <code>string name = 2 [json_name = "name"];</code>
-       * @return The name.
-       */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string name = 2 [json_name = "name"];</code>
-       * @return The bytes for name.
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string name = 2 [json_name = "name"];</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setName(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        name_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string name = 2 [json_name = "name"];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearName() {
-        name_ = getDefaultInstance().getName();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string name = 2 [json_name = "name"];</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        name_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-
-      // @@protoc_insertion_point(builder_scope:products.v1.ProductCategoryWithoutSubcategories)
-    }
-
-    // @@protoc_insertion_point(class_scope:products.v1.ProductCategoryWithoutSubcategories)
-    private static final org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories();
-    }
-
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ProductCategoryWithoutSubcategories>
-        PARSER = new com.google.protobuf.AbstractParser<ProductCategoryWithoutSubcategories>() {
-      @java.lang.Override
-      public ProductCategoryWithoutSubcategories parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<ProductCategoryWithoutSubcategories> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ProductCategoryWithoutSubcategories> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
-  }
-
-  public interface ProductCategoriesWithoutSubcategoriesOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:products.v1.ProductCategoriesWithoutSubcategories)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-     */
-    java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories> 
-        getCategoriesList();
-    /**
-     * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-     */
-    org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories getCategories(int index);
-    /**
-     * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-     */
-    int getCategoriesCount();
-    /**
-     * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-     */
-    java.util.List<? extends org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategoriesOrBuilder> 
-        getCategoriesOrBuilderList();
-    /**
-     * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-     */
-    org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategoriesOrBuilder getCategoriesOrBuilder(
-        int index);
-  }
-  /**
-   * Protobuf type {@code products.v1.ProductCategoriesWithoutSubcategories}
-   */
-  public static final class ProductCategoriesWithoutSubcategories extends
-      com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:products.v1.ProductCategoriesWithoutSubcategories)
-      ProductCategoriesWithoutSubcategoriesOrBuilder {
-  private static final long serialVersionUID = 0L;
-    static {
-      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
-        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
-        /* major= */ 4,
-        /* minor= */ 31,
-        /* patch= */ 1,
-        /* suffix= */ "",
-        ProductCategoriesWithoutSubcategories.class.getName());
-    }
-    // Use ProductCategoriesWithoutSubcategories.newBuilder() to construct.
-    private ProductCategoriesWithoutSubcategories(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-      super(builder);
-    }
-    private ProductCategoriesWithoutSubcategories() {
-      categories_ = java.util.Collections.emptyList();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductCategoriesWithoutSubcategories_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductCategoriesWithoutSubcategories_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories.class, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories.Builder.class);
-    }
-
-    public static final int CATEGORIES_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories> categories_;
-    /**
-     * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories> getCategoriesList() {
-      return categories_;
-    }
-    /**
-     * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-     */
-    @java.lang.Override
-    public java.util.List<? extends org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategoriesOrBuilder> 
-        getCategoriesOrBuilderList() {
-      return categories_;
-    }
-    /**
-     * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-     */
-    @java.lang.Override
-    public int getCategoriesCount() {
-      return categories_.size();
-    }
-    /**
-     * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-     */
-    @java.lang.Override
-    public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories getCategories(int index) {
-      return categories_.get(index);
-    }
-    /**
-     * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-     */
-    @java.lang.Override
-    public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategoriesOrBuilder getCategoriesOrBuilder(
-        int index) {
-      return categories_.get(index);
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      for (int i = 0; i < categories_.size(); i++) {
-        output.writeMessage(1, categories_.get(i));
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      for (int i = 0; i < categories_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, categories_.get(i));
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories)) {
-        return super.equals(obj);
-      }
-      org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories other = (org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories) obj;
-
-      if (!getCategoriesList()
-          .equals(other.getCategoriesList())) return false;
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      if (getCategoriesCount() > 0) {
-        hash = (37 * hash) + CATEGORIES_FIELD_NUMBER;
-        hash = (53 * hash) + getCategoriesList().hashCode();
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input);
-    }
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessage
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code products.v1.ProductCategoriesWithoutSubcategories}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:products.v1.ProductCategoriesWithoutSubcategories)
-        org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategoriesOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductCategoriesWithoutSubcategories_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductCategoriesWithoutSubcategories_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories.class, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories.Builder.class);
-      }
-
-      // Construct using org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories.newBuilder()
-      private Builder() {
-
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-        super(parent);
-
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        if (categoriesBuilder_ == null) {
-          categories_ = java.util.Collections.emptyList();
-        } else {
-          categories_ = null;
-          categoriesBuilder_.clear();
-        }
-        bitField0_ = (bitField0_ & ~0x00000001);
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductCategoriesWithoutSubcategories_descriptor;
-      }
-
-      @java.lang.Override
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories getDefaultInstanceForType() {
-        return org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories build() {
-        org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories buildPartial() {
-        org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories result = new org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories(this);
-        buildPartialRepeatedFields(result);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartialRepeatedFields(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories result) {
-        if (categoriesBuilder_ == null) {
-          if (((bitField0_ & 0x00000001) != 0)) {
-            categories_ = java.util.Collections.unmodifiableList(categories_);
-            bitField0_ = (bitField0_ & ~0x00000001);
-          }
-          result.categories_ = categories_;
-        } else {
-          result.categories_ = categoriesBuilder_.build();
-        }
-      }
-
-      private void buildPartial0(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories result) {
-        int from_bitField0_ = bitField0_;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories) {
-          return mergeFrom((org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories other) {
-        if (other == org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories.getDefaultInstance()) return this;
-        if (categoriesBuilder_ == null) {
-          if (!other.categories_.isEmpty()) {
-            if (categories_.isEmpty()) {
-              categories_ = other.categories_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-            } else {
-              ensureCategoriesIsMutable();
-              categories_.addAll(other.categories_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.categories_.isEmpty()) {
-            if (categoriesBuilder_.isEmpty()) {
-              categoriesBuilder_.dispose();
-              categoriesBuilder_ = null;
-              categories_ = other.categories_;
-              bitField0_ = (bitField0_ & ~0x00000001);
-              categoriesBuilder_ = 
-                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                   internalGetCategoriesFieldBuilder() : null;
-            } else {
-              categoriesBuilder_.addAllMessages(other.categories_);
-            }
-          }
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories m =
-                    input.readMessage(
-                        org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories.parser(),
-                        extensionRegistry);
-                if (categoriesBuilder_ == null) {
-                  ensureCategoriesIsMutable();
-                  categories_.add(m);
-                } else {
-                  categoriesBuilder_.addMessage(m);
-                }
-                break;
-              } // case 10
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories> categories_ =
-        java.util.Collections.emptyList();
-      private void ensureCategoriesIsMutable() {
-        if (!((bitField0_ & 0x00000001) != 0)) {
-          categories_ = new java.util.ArrayList<org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories>(categories_);
-          bitField0_ |= 0x00000001;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilder<
-          org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategoriesOrBuilder> categoriesBuilder_;
-
-      /**
-       * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-       */
-      public java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories> getCategoriesList() {
-        if (categoriesBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(categories_);
-        } else {
-          return categoriesBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-       */
-      public int getCategoriesCount() {
-        if (categoriesBuilder_ == null) {
-          return categories_.size();
-        } else {
-          return categoriesBuilder_.getCount();
-        }
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-       */
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories getCategories(int index) {
-        if (categoriesBuilder_ == null) {
-          return categories_.get(index);
-        } else {
-          return categoriesBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-       */
-      public Builder setCategories(
-          int index, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories value) {
-        if (categoriesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCategoriesIsMutable();
-          categories_.set(index, value);
-          onChanged();
-        } else {
-          categoriesBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-       */
-      public Builder setCategories(
-          int index, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories.Builder builderForValue) {
-        if (categoriesBuilder_ == null) {
-          ensureCategoriesIsMutable();
-          categories_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          categoriesBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-       */
-      public Builder addCategories(org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories value) {
-        if (categoriesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCategoriesIsMutable();
-          categories_.add(value);
-          onChanged();
-        } else {
-          categoriesBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-       */
-      public Builder addCategories(
-          int index, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories value) {
-        if (categoriesBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureCategoriesIsMutable();
-          categories_.add(index, value);
-          onChanged();
-        } else {
-          categoriesBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-       */
-      public Builder addCategories(
-          org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories.Builder builderForValue) {
-        if (categoriesBuilder_ == null) {
-          ensureCategoriesIsMutable();
-          categories_.add(builderForValue.build());
-          onChanged();
-        } else {
-          categoriesBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-       */
-      public Builder addCategories(
-          int index, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories.Builder builderForValue) {
-        if (categoriesBuilder_ == null) {
-          ensureCategoriesIsMutable();
-          categories_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          categoriesBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-       */
-      public Builder addAllCategories(
-          java.lang.Iterable<? extends org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories> values) {
-        if (categoriesBuilder_ == null) {
-          ensureCategoriesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, categories_);
-          onChanged();
-        } else {
-          categoriesBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-       */
-      public Builder clearCategories() {
-        if (categoriesBuilder_ == null) {
-          categories_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000001);
-          onChanged();
-        } else {
-          categoriesBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-       */
-      public Builder removeCategories(int index) {
-        if (categoriesBuilder_ == null) {
-          ensureCategoriesIsMutable();
-          categories_.remove(index);
-          onChanged();
-        } else {
-          categoriesBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-       */
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories.Builder getCategoriesBuilder(
-          int index) {
-        return internalGetCategoriesFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-       */
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategoriesOrBuilder getCategoriesOrBuilder(
-          int index) {
-        if (categoriesBuilder_ == null) {
-          return categories_.get(index);  } else {
-          return categoriesBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-       */
-      public java.util.List<? extends org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategoriesOrBuilder> 
-           getCategoriesOrBuilderList() {
-        if (categoriesBuilder_ != null) {
-          return categoriesBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(categories_);
-        }
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-       */
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories.Builder addCategoriesBuilder() {
-        return internalGetCategoriesFieldBuilder().addBuilder(
-            org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-       */
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories.Builder addCategoriesBuilder(
-          int index) {
-        return internalGetCategoriesFieldBuilder().addBuilder(
-            index, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories.getDefaultInstance());
-      }
-      /**
-       * <code>repeated .products.v1.ProductCategoryWithoutSubcategories categories = 1 [json_name = "categories"];</code>
-       */
-      public java.util.List<org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories.Builder> 
-           getCategoriesBuilderList() {
-        return internalGetCategoriesFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilder<
-          org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategoriesOrBuilder> 
-          internalGetCategoriesFieldBuilder() {
-        if (categoriesBuilder_ == null) {
-          categoriesBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-              org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategories.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoryWithoutSubcategoriesOrBuilder>(
-                  categories_,
-                  ((bitField0_ & 0x00000001) != 0),
-                  getParentForChildren(),
-                  isClean());
-          categories_ = null;
-        }
-        return categoriesBuilder_;
-      }
-
-      // @@protoc_insertion_point(builder_scope:products.v1.ProductCategoriesWithoutSubcategories)
-    }
-
-    // @@protoc_insertion_point(class_scope:products.v1.ProductCategoriesWithoutSubcategories)
-    private static final org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories();
-    }
-
-    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<ProductCategoriesWithoutSubcategories>
-        PARSER = new com.google.protobuf.AbstractParser<ProductCategoriesWithoutSubcategories>() {
-      @java.lang.Override
-      public ProductCategoriesWithoutSubcategories parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<ProductCategoriesWithoutSubcategories> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<ProductCategoriesWithoutSubcategories> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public org.megacommerce.products.v1.ProductCategoriesProto.ProductCategoriesWithoutSubcategories getDefaultInstanceForType() {
+    public org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_products_v1_ProductCategory_descriptor;
+    internal_static_products_v1_Category_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_products_v1_ProductCategory_fieldAccessorTable;
+      internal_static_products_v1_Category_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_products_v1_ProductSubcategory_descriptor;
+    internal_static_products_v1_Subcategory_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_products_v1_ProductSubcategory_fieldAccessorTable;
+      internal_static_products_v1_Subcategory_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_products_v1_ProductSubcategory_AttributesEntry_descriptor;
+    internal_static_products_v1_Subcategory_AttributesEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_products_v1_ProductSubcategory_AttributesEntry_fieldAccessorTable;
+      internal_static_products_v1_Subcategory_AttributesEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_products_v1_ProductSubcategoryAttribute_descriptor;
+    internal_static_products_v1_SubcategoryAttribute_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_products_v1_ProductSubcategoryAttribute_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_products_v1_ProductCategories_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_products_v1_ProductCategories_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_products_v1_ProductCategoryWithoutSubcategories_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_products_v1_ProductCategoryWithoutSubcategories_fieldAccessorTable;
-  private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_products_v1_ProductCategoriesWithoutSubcategories_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_products_v1_ProductCategoriesWithoutSubcategories_fieldAccessorTable;
+      internal_static_products_v1_SubcategoryAttribute_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -5807,81 +4022,57 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
     java.lang.String[] descriptorData = {
       "\n$products/v1/product_categories.proto\022\013" +
       "products.v1\032\032shared/v1/validation.proto\"" +
-      "|\n\017ProductCategory\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004na" +
-      "me\030\002 \001(\tR\004name\022E\n\rsubcategories\030\003 \003(\0132\037." +
-      "products.v1.ProductSubcategoryR\rsubcateg" +
-      "ories\"\362\001\n\022ProductSubcategory\022\016\n\002id\030\001 \001(\t" +
-      "R\002id\022\022\n\004name\030\002 \001(\tR\004name\022O\n\nattributes\030\003" +
-      " \003(\0132/.products.v1.ProductSubcategory.At" +
-      "tributesEntryR\nattributes\032g\n\017AttributesE" +
-      "ntry\022\020\n\003key\030\001 \001(\tR\003key\022>\n\005value\030\002 \001(\0132(." +
-      "products.v1.ProductSubcategoryAttributeR" +
-      "\005value:\0028\001\"\220\002\n\033ProductSubcategoryAttribu" +
-      "te\022\032\n\010required\030\001 \001(\010R\010required\022\022\n\004type\030\002" +
-      " \001(\tR\004type\022\037\n\010refrence\030\003 \001(\tH\000R\010refrence" +
-      "\210\001\001\022!\n\014string_array\030\004 \003(\tR\013stringArray\022$" +
-      "\n\013is_multiple\030\005 \001(\010H\001R\nisMultiple\210\001\001\022:\n\n" +
-      "validation\030\006 \001(\0132\032.shared.v1.ValidationF" +
-      "ieldR\nvalidationB\013\n\t_refrenceB\016\n\014_is_mul" +
-      "tiple\"Q\n\021ProductCategories\022<\n\ncategories" +
-      "\030\001 \003(\0132\034.products.v1.ProductCategoryR\nca" +
-      "tegories\"I\n#ProductCategoryWithoutSubcat" +
-      "egories\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004n" +
-      "ame\"y\n%ProductCategoriesWithoutSubcatego" +
-      "ries\022P\n\ncategories\030\001 \003(\01320.products.v1.P" +
-      "roductCategoryWithoutSubcategoriesR\ncate" +
-      "goriesB\200\001\n\034org.megacommerce.products.v1B" +
-      "\026ProductCategoriesProtoZEgithub.com/ahma" +
-      "d-khatib0-org/megacommerce-proto/gen/go/" +
-      "products/v1;v1\370\001\001b\006proto3"
+      "\204\001\n\010Category\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001" +
+      "(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022>\n\rsubcat" +
+      "egories\030\004 \003(\0132\030.products.v1.SubcategoryR" +
+      "\rsubcategories\"\226\002\n\013Subcategory\022\016\n\002id\030\001 \001" +
+      "(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\030\n\007version\030\003 " +
+      "\001(\005R\007version\022\035\n\ncreated_at\030\004 \001(\tR\tcreate" +
+      "dAt\022H\n\nattributes\030\005 \003(\0132(.products.v1.Su" +
+      "bcategory.AttributesEntryR\nattributes\032`\n" +
+      "\017AttributesEntry\022\020\n\003key\030\001 \001(\tR\003key\0227\n\005va" +
+      "lue\030\002 \001(\0132!.products.v1.SubcategoryAttri" +
+      "buteR\005value:\0028\001\"\211\002\n\024SubcategoryAttribute" +
+      "\022\032\n\010required\030\001 \001(\010R\010required\022\022\n\004type\030\002 \001" +
+      "(\tR\004type\022\037\n\010refrence\030\003 \001(\tH\000R\010refrence\210\001" +
+      "\001\022!\n\014string_array\030\004 \003(\tR\013stringArray\022$\n\013" +
+      "is_multiple\030\005 \001(\010H\001R\nisMultiple\210\001\001\022:\n\nva" +
+      "lidation\030\006 \001(\0132\032.shared.v1.ValidationFie" +
+      "ldR\nvalidationB\013\n\t_refrenceB\016\n\014_is_multi" +
+      "pleB\200\001\n\034org.megacommerce.products.v1B\026Pr" +
+      "oductCategoriesProtoZEgithub.com/ahmad-k" +
+      "hatib0-org/megacommerce-proto/gen/go/pro" +
+      "ducts/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.megacommerce.shared.v1.ValidationProto.getDescriptor(),
         });
-    internal_static_products_v1_ProductCategory_descriptor =
+    internal_static_products_v1_Category_descriptor =
       getDescriptor().getMessageTypes().get(0);
-    internal_static_products_v1_ProductCategory_fieldAccessorTable = new
+    internal_static_products_v1_Category_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_products_v1_ProductCategory_descriptor,
-        new java.lang.String[] { "Id", "Name", "Subcategories", });
-    internal_static_products_v1_ProductSubcategory_descriptor =
+        internal_static_products_v1_Category_descriptor,
+        new java.lang.String[] { "Id", "Name", "Image", "Subcategories", });
+    internal_static_products_v1_Subcategory_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_products_v1_ProductSubcategory_fieldAccessorTable = new
+    internal_static_products_v1_Subcategory_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_products_v1_ProductSubcategory_descriptor,
-        new java.lang.String[] { "Id", "Name", "Attributes", });
-    internal_static_products_v1_ProductSubcategory_AttributesEntry_descriptor =
-      internal_static_products_v1_ProductSubcategory_descriptor.getNestedTypes().get(0);
-    internal_static_products_v1_ProductSubcategory_AttributesEntry_fieldAccessorTable = new
+        internal_static_products_v1_Subcategory_descriptor,
+        new java.lang.String[] { "Id", "Name", "Version", "CreatedAt", "Attributes", });
+    internal_static_products_v1_Subcategory_AttributesEntry_descriptor =
+      internal_static_products_v1_Subcategory_descriptor.getNestedTypes().get(0);
+    internal_static_products_v1_Subcategory_AttributesEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_products_v1_ProductSubcategory_AttributesEntry_descriptor,
+        internal_static_products_v1_Subcategory_AttributesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_products_v1_ProductSubcategoryAttribute_descriptor =
+    internal_static_products_v1_SubcategoryAttribute_descriptor =
       getDescriptor().getMessageTypes().get(2);
-    internal_static_products_v1_ProductSubcategoryAttribute_fieldAccessorTable = new
+    internal_static_products_v1_SubcategoryAttribute_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_products_v1_ProductSubcategoryAttribute_descriptor,
+        internal_static_products_v1_SubcategoryAttribute_descriptor,
         new java.lang.String[] { "Required", "Type", "Refrence", "StringArray", "IsMultiple", "Validation", });
-    internal_static_products_v1_ProductCategories_descriptor =
-      getDescriptor().getMessageTypes().get(3);
-    internal_static_products_v1_ProductCategories_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_products_v1_ProductCategories_descriptor,
-        new java.lang.String[] { "Categories", });
-    internal_static_products_v1_ProductCategoryWithoutSubcategories_descriptor =
-      getDescriptor().getMessageTypes().get(4);
-    internal_static_products_v1_ProductCategoryWithoutSubcategories_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_products_v1_ProductCategoryWithoutSubcategories_descriptor,
-        new java.lang.String[] { "Id", "Name", });
-    internal_static_products_v1_ProductCategoriesWithoutSubcategories_descriptor =
-      getDescriptor().getMessageTypes().get(5);
-    internal_static_products_v1_ProductCategoriesWithoutSubcategories_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_products_v1_ProductCategoriesWithoutSubcategories_descriptor,
-        new java.lang.String[] { "Categories", });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.shared.v1.ValidationProto.getDescriptor();
   }

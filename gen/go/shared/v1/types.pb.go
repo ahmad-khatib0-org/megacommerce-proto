@@ -243,6 +243,58 @@ func (x *SuccessResponseData) GetMetadata() map[string]string {
 	return nil
 }
 
+type IDName struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *IDName) Reset() {
+	*x = IDName{}
+	mi := &file_shared_v1_types_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *IDName) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*IDName) ProtoMessage() {}
+
+func (x *IDName) ProtoReflect() protoreflect.Message {
+	mi := &file_shared_v1_types_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use IDName.ProtoReflect.Descriptor instead.
+func (*IDName) Descriptor() ([]byte, []int) {
+	return file_shared_v1_types_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *IDName) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
+func (x *IDName) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
 // Custom Any message to avoid google.protobuf.Any issues
 type Any struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
@@ -254,7 +306,7 @@ type Any struct {
 
 func (x *Any) Reset() {
 	*x = Any{}
-	mi := &file_shared_v1_types_proto_msgTypes[4]
+	mi := &file_shared_v1_types_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -266,7 +318,7 @@ func (x *Any) String() string {
 func (*Any) ProtoMessage() {}
 
 func (x *Any) ProtoReflect() protoreflect.Message {
-	mi := &file_shared_v1_types_proto_msgTypes[4]
+	mi := &file_shared_v1_types_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -279,7 +331,7 @@ func (x *Any) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Any.ProtoReflect.Descriptor instead.
 func (*Any) Descriptor() ([]byte, []int) {
-	return file_shared_v1_types_proto_rawDescGZIP(), []int{4}
+	return file_shared_v1_types_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *Any) GetTypeUrl() string {
@@ -304,7 +356,7 @@ type Empty struct {
 
 func (x *Empty) Reset() {
 	*x = Empty{}
-	mi := &file_shared_v1_types_proto_msgTypes[5]
+	mi := &file_shared_v1_types_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -316,7 +368,7 @@ func (x *Empty) String() string {
 func (*Empty) ProtoMessage() {}
 
 func (x *Empty) ProtoReflect() protoreflect.Message {
-	mi := &file_shared_v1_types_proto_msgTypes[5]
+	mi := &file_shared_v1_types_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -329,7 +381,7 @@ func (x *Empty) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Empty.ProtoReflect.Descriptor instead.
 func (*Empty) Descriptor() ([]byte, []int) {
-	return file_shared_v1_types_proto_rawDescGZIP(), []int{5}
+	return file_shared_v1_types_proto_rawDescGZIP(), []int{6}
 }
 
 var File_shared_v1_types_proto protoreflect.FileDescriptor
@@ -358,7 +410,10 @@ const file_shared_v1_types_proto_rawDesc = "" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\n" +
 	"\n" +
-	"\b_message\"6\n" +
+	"\b_message\",\n" +
+	"\x06IDName\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\"6\n" +
 	"\x03Any\x12\x19\n" +
 	"\btype_url\x18\x01 \x01(\tR\atypeUrl\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\fR\x05value\"\a\n" +
@@ -378,22 +433,23 @@ func file_shared_v1_types_proto_rawDescGZIP() []byte {
 	return file_shared_v1_types_proto_rawDescData
 }
 
-var file_shared_v1_types_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_shared_v1_types_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_shared_v1_types_proto_goTypes = []any{
 	(*StringMap)(nil),           // 0: shared.v1.StringMap
 	(*NestedStringMap)(nil),     // 1: shared.v1.NestedStringMap
 	(*OrderDirection)(nil),      // 2: shared.v1.OrderDirection
 	(*SuccessResponseData)(nil), // 3: shared.v1.SuccessResponseData
-	(*Any)(nil),                 // 4: shared.v1.Any
-	(*Empty)(nil),               // 5: shared.v1.Empty
-	nil,                         // 6: shared.v1.StringMap.DataEntry
-	nil,                         // 7: shared.v1.NestedStringMap.DataEntry
-	nil,                         // 8: shared.v1.SuccessResponseData.MetadataEntry
+	(*IDName)(nil),              // 4: shared.v1.IDName
+	(*Any)(nil),                 // 5: shared.v1.Any
+	(*Empty)(nil),               // 6: shared.v1.Empty
+	nil,                         // 7: shared.v1.StringMap.DataEntry
+	nil,                         // 8: shared.v1.NestedStringMap.DataEntry
+	nil,                         // 9: shared.v1.SuccessResponseData.MetadataEntry
 }
 var file_shared_v1_types_proto_depIdxs = []int32{
-	6, // 0: shared.v1.StringMap.data:type_name -> shared.v1.StringMap.DataEntry
-	7, // 1: shared.v1.NestedStringMap.data:type_name -> shared.v1.NestedStringMap.DataEntry
-	8, // 2: shared.v1.SuccessResponseData.metadata:type_name -> shared.v1.SuccessResponseData.MetadataEntry
+	7, // 0: shared.v1.StringMap.data:type_name -> shared.v1.StringMap.DataEntry
+	8, // 1: shared.v1.NestedStringMap.data:type_name -> shared.v1.NestedStringMap.DataEntry
+	9, // 2: shared.v1.SuccessResponseData.metadata:type_name -> shared.v1.SuccessResponseData.MetadataEntry
 	0, // 3: shared.v1.NestedStringMap.DataEntry.value:type_name -> shared.v1.StringMap
 	4, // [4:4] is the sub-list for method output_type
 	4, // [4:4] is the sub-list for method input_type
@@ -418,7 +474,7 @@ func file_shared_v1_types_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_shared_v1_types_proto_rawDesc), len(file_shared_v1_types_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   9,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

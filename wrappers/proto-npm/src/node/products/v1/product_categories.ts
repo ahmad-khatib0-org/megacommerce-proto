@@ -10,25 +10,28 @@ import { ValidationField } from "../../shared/v1/validation";
 
 export const protobufPackage = "products.v1";
 
-export interface ProductCategory {
+export interface Category {
   id: string;
   name: string;
-  subcategories: ProductSubcategory[];
+  image: string;
+  subcategories: Subcategory[];
 }
 
-export interface ProductSubcategory {
+export interface Subcategory {
   id: string;
   name: string;
-  attributes: { [key: string]: ProductSubcategoryAttribute };
+  version: number;
+  createdAt: string;
+  attributes: { [key: string]: SubcategoryAttribute };
 }
 
-export interface ProductSubcategory_AttributesEntry {
+export interface Subcategory_AttributesEntry {
   key: string;
-  value?: ProductSubcategoryAttribute | undefined;
+  value?: SubcategoryAttribute | undefined;
 }
 
 /** Top-level attribute with a typed validation */
-export interface ProductSubcategoryAttribute {
+export interface SubcategoryAttribute {
   /** wither this attribute required or optional */
   required: boolean;
   /** input, select, tags ... */
@@ -50,41 +53,31 @@ export interface ProductSubcategoryAttribute {
   validation?: ValidationField | undefined;
 }
 
-export interface ProductCategories {
-  categories: ProductCategory[];
+function createBaseCategory(): Category {
+  return { id: "", name: "", image: "", subcategories: [] };
 }
 
-export interface ProductCategoryWithoutSubcategories {
-  id: string;
-  name: string;
-}
-
-export interface ProductCategoriesWithoutSubcategories {
-  categories: ProductCategoryWithoutSubcategories[];
-}
-
-function createBaseProductCategory(): ProductCategory {
-  return { id: "", name: "", subcategories: [] };
-}
-
-export const ProductCategory: MessageFns<ProductCategory> = {
-  encode(message: ProductCategory, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+export const Category: MessageFns<Category> = {
+  encode(message: Category, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.id !== "") {
       writer.uint32(10).string(message.id);
     }
     if (message.name !== "") {
       writer.uint32(18).string(message.name);
     }
+    if (message.image !== "") {
+      writer.uint32(26).string(message.image);
+    }
     for (const v of message.subcategories) {
-      ProductSubcategory.encode(v!, writer.uint32(26).fork()).join();
+      Subcategory.encode(v!, writer.uint32(34).fork()).join();
     }
     return writer;
   },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): ProductCategory {
+  decode(input: BinaryReader | Uint8Array, length?: number): Category {
     const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseProductCategory();
+    const message = createBaseCategory();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -109,7 +102,15 @@ export const ProductCategory: MessageFns<ProductCategory> = {
             break;
           }
 
-          message.subcategories.push(ProductSubcategory.decode(reader, reader.uint32()));
+          message.image = reader.string();
+          continue;
+        }
+        case 4: {
+          if (tag !== 34) {
+            break;
+          }
+
+          message.subcategories.push(Subcategory.decode(reader, reader.uint32()));
           continue;
         }
       }
@@ -121,17 +122,18 @@ export const ProductCategory: MessageFns<ProductCategory> = {
     return message;
   },
 
-  fromJSON(object: any): ProductCategory {
+  fromJSON(object: any): Category {
     return {
       id: isSet(object.id) ? globalThis.String(object.id) : "",
       name: isSet(object.name) ? globalThis.String(object.name) : "",
+      image: isSet(object.image) ? globalThis.String(object.image) : "",
       subcategories: globalThis.Array.isArray(object?.subcategories)
-        ? object.subcategories.map((e: any) => ProductSubcategory.fromJSON(e))
+        ? object.subcategories.map((e: any) => Subcategory.fromJSON(e))
         : [],
     };
   },
 
-  toJSON(message: ProductCategory): unknown {
+  toJSON(message: Category): unknown {
     const obj: any = {};
     if (message.id !== "") {
       obj.id = message.id;
@@ -139,46 +141,56 @@ export const ProductCategory: MessageFns<ProductCategory> = {
     if (message.name !== "") {
       obj.name = message.name;
     }
+    if (message.image !== "") {
+      obj.image = message.image;
+    }
     if (message.subcategories?.length) {
-      obj.subcategories = message.subcategories.map((e) => ProductSubcategory.toJSON(e));
+      obj.subcategories = message.subcategories.map((e) => Subcategory.toJSON(e));
     }
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<ProductCategory>, I>>(base?: I): ProductCategory {
-    return ProductCategory.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<Category>, I>>(base?: I): Category {
+    return Category.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<ProductCategory>, I>>(object: I): ProductCategory {
-    const message = createBaseProductCategory();
+  fromPartial<I extends Exact<DeepPartial<Category>, I>>(object: I): Category {
+    const message = createBaseCategory();
     message.id = object.id ?? "";
     message.name = object.name ?? "";
-    message.subcategories = object.subcategories?.map((e) => ProductSubcategory.fromPartial(e)) || [];
+    message.image = object.image ?? "";
+    message.subcategories = object.subcategories?.map((e) => Subcategory.fromPartial(e)) || [];
     return message;
   },
 };
 
-function createBaseProductSubcategory(): ProductSubcategory {
-  return { id: "", name: "", attributes: {} };
+function createBaseSubcategory(): Subcategory {
+  return { id: "", name: "", version: 0, createdAt: "", attributes: {} };
 }
 
-export const ProductSubcategory: MessageFns<ProductSubcategory> = {
-  encode(message: ProductSubcategory, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+export const Subcategory: MessageFns<Subcategory> = {
+  encode(message: Subcategory, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.id !== "") {
       writer.uint32(10).string(message.id);
     }
     if (message.name !== "") {
       writer.uint32(18).string(message.name);
     }
+    if (message.version !== 0) {
+      writer.uint32(24).int32(message.version);
+    }
+    if (message.createdAt !== "") {
+      writer.uint32(34).string(message.createdAt);
+    }
     Object.entries(message.attributes).forEach(([key, value]) => {
-      ProductSubcategory_AttributesEntry.encode({ key: key as any, value }, writer.uint32(26).fork()).join();
+      Subcategory_AttributesEntry.encode({ key: key as any, value }, writer.uint32(42).fork()).join();
     });
     return writer;
   },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): ProductSubcategory {
+  decode(input: BinaryReader | Uint8Array, length?: number): Subcategory {
     const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseProductSubcategory();
+    const message = createBaseSubcategory();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -199,13 +211,29 @@ export const ProductSubcategory: MessageFns<ProductSubcategory> = {
           continue;
         }
         case 3: {
-          if (tag !== 26) {
+          if (tag !== 24) {
             break;
           }
 
-          const entry3 = ProductSubcategory_AttributesEntry.decode(reader, reader.uint32());
-          if (entry3.value !== undefined) {
-            message.attributes[entry3.key] = entry3.value;
+          message.version = reader.int32();
+          continue;
+        }
+        case 4: {
+          if (tag !== 34) {
+            break;
+          }
+
+          message.createdAt = reader.string();
+          continue;
+        }
+        case 5: {
+          if (tag !== 42) {
+            break;
+          }
+
+          const entry5 = Subcategory_AttributesEntry.decode(reader, reader.uint32());
+          if (entry5.value !== undefined) {
+            message.attributes[entry5.key] = entry5.value;
           }
           continue;
         }
@@ -218,53 +246,60 @@ export const ProductSubcategory: MessageFns<ProductSubcategory> = {
     return message;
   },
 
-  fromJSON(object: any): ProductSubcategory {
+  fromJSON(object: any): Subcategory {
     return {
       id: isSet(object.id) ? globalThis.String(object.id) : "",
       name: isSet(object.name) ? globalThis.String(object.name) : "",
+      version: isSet(object.version) ? globalThis.Number(object.version) : 0,
+      createdAt: isSet(object.createdAt) ? globalThis.String(object.createdAt) : "",
       attributes: isObject(object.attributes)
-        ? Object.entries(object.attributes).reduce<{ [key: string]: ProductSubcategoryAttribute }>(
-          (acc, [key, value]) => {
-            acc[key] = ProductSubcategoryAttribute.fromJSON(value);
-            return acc;
-          },
-          {},
-        )
+        ? Object.entries(object.attributes).reduce<{ [key: string]: SubcategoryAttribute }>((acc, [key, value]) => {
+          acc[key] = SubcategoryAttribute.fromJSON(value);
+          return acc;
+        }, {})
         : {},
     };
   },
 
-  toJSON(message: ProductSubcategory): unknown {
+  toJSON(message: Subcategory): unknown {
     const obj: any = {};
     if (message.id !== "") {
       obj.id = message.id;
     }
     if (message.name !== "") {
       obj.name = message.name;
+    }
+    if (message.version !== 0) {
+      obj.version = Math.round(message.version);
+    }
+    if (message.createdAt !== "") {
+      obj.createdAt = message.createdAt;
     }
     if (message.attributes) {
       const entries = Object.entries(message.attributes);
       if (entries.length > 0) {
         obj.attributes = {};
         entries.forEach(([k, v]) => {
-          obj.attributes[k] = ProductSubcategoryAttribute.toJSON(v);
+          obj.attributes[k] = SubcategoryAttribute.toJSON(v);
         });
       }
     }
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<ProductSubcategory>, I>>(base?: I): ProductSubcategory {
-    return ProductSubcategory.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<Subcategory>, I>>(base?: I): Subcategory {
+    return Subcategory.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<ProductSubcategory>, I>>(object: I): ProductSubcategory {
-    const message = createBaseProductSubcategory();
+  fromPartial<I extends Exact<DeepPartial<Subcategory>, I>>(object: I): Subcategory {
+    const message = createBaseSubcategory();
     message.id = object.id ?? "";
     message.name = object.name ?? "";
-    message.attributes = Object.entries(object.attributes ?? {}).reduce<{ [key: string]: ProductSubcategoryAttribute }>(
+    message.version = object.version ?? 0;
+    message.createdAt = object.createdAt ?? "";
+    message.attributes = Object.entries(object.attributes ?? {}).reduce<{ [key: string]: SubcategoryAttribute }>(
       (acc, [key, value]) => {
         if (value !== undefined) {
-          acc[key] = ProductSubcategoryAttribute.fromPartial(value);
+          acc[key] = SubcategoryAttribute.fromPartial(value);
         }
         return acc;
       },
@@ -274,25 +309,25 @@ export const ProductSubcategory: MessageFns<ProductSubcategory> = {
   },
 };
 
-function createBaseProductSubcategory_AttributesEntry(): ProductSubcategory_AttributesEntry {
+function createBaseSubcategory_AttributesEntry(): Subcategory_AttributesEntry {
   return { key: "", value: undefined };
 }
 
-export const ProductSubcategory_AttributesEntry: MessageFns<ProductSubcategory_AttributesEntry> = {
-  encode(message: ProductSubcategory_AttributesEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+export const Subcategory_AttributesEntry: MessageFns<Subcategory_AttributesEntry> = {
+  encode(message: Subcategory_AttributesEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.key !== "") {
       writer.uint32(10).string(message.key);
     }
     if (message.value !== undefined) {
-      ProductSubcategoryAttribute.encode(message.value, writer.uint32(18).fork()).join();
+      SubcategoryAttribute.encode(message.value, writer.uint32(18).fork()).join();
     }
     return writer;
   },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): ProductSubcategory_AttributesEntry {
+  decode(input: BinaryReader | Uint8Array, length?: number): Subcategory_AttributesEntry {
     const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseProductSubcategory_AttributesEntry();
+    const message = createBaseSubcategory_AttributesEntry();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -309,7 +344,7 @@ export const ProductSubcategory_AttributesEntry: MessageFns<ProductSubcategory_A
             break;
           }
 
-          message.value = ProductSubcategoryAttribute.decode(reader, reader.uint32());
+          message.value = SubcategoryAttribute.decode(reader, reader.uint32());
           continue;
         }
       }
@@ -321,42 +356,38 @@ export const ProductSubcategory_AttributesEntry: MessageFns<ProductSubcategory_A
     return message;
   },
 
-  fromJSON(object: any): ProductSubcategory_AttributesEntry {
+  fromJSON(object: any): Subcategory_AttributesEntry {
     return {
       key: isSet(object.key) ? globalThis.String(object.key) : "",
-      value: isSet(object.value) ? ProductSubcategoryAttribute.fromJSON(object.value) : undefined,
+      value: isSet(object.value) ? SubcategoryAttribute.fromJSON(object.value) : undefined,
     };
   },
 
-  toJSON(message: ProductSubcategory_AttributesEntry): unknown {
+  toJSON(message: Subcategory_AttributesEntry): unknown {
     const obj: any = {};
     if (message.key !== "") {
       obj.key = message.key;
     }
     if (message.value !== undefined) {
-      obj.value = ProductSubcategoryAttribute.toJSON(message.value);
+      obj.value = SubcategoryAttribute.toJSON(message.value);
     }
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<ProductSubcategory_AttributesEntry>, I>>(
-    base?: I,
-  ): ProductSubcategory_AttributesEntry {
-    return ProductSubcategory_AttributesEntry.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<Subcategory_AttributesEntry>, I>>(base?: I): Subcategory_AttributesEntry {
+    return Subcategory_AttributesEntry.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<ProductSubcategory_AttributesEntry>, I>>(
-    object: I,
-  ): ProductSubcategory_AttributesEntry {
-    const message = createBaseProductSubcategory_AttributesEntry();
+  fromPartial<I extends Exact<DeepPartial<Subcategory_AttributesEntry>, I>>(object: I): Subcategory_AttributesEntry {
+    const message = createBaseSubcategory_AttributesEntry();
     message.key = object.key ?? "";
     message.value = (object.value !== undefined && object.value !== null)
-      ? ProductSubcategoryAttribute.fromPartial(object.value)
+      ? SubcategoryAttribute.fromPartial(object.value)
       : undefined;
     return message;
   },
 };
 
-function createBaseProductSubcategoryAttribute(): ProductSubcategoryAttribute {
+function createBaseSubcategoryAttribute(): SubcategoryAttribute {
   return {
     required: false,
     type: "",
@@ -367,8 +398,8 @@ function createBaseProductSubcategoryAttribute(): ProductSubcategoryAttribute {
   };
 }
 
-export const ProductSubcategoryAttribute: MessageFns<ProductSubcategoryAttribute> = {
-  encode(message: ProductSubcategoryAttribute, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+export const SubcategoryAttribute: MessageFns<SubcategoryAttribute> = {
+  encode(message: SubcategoryAttribute, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.required !== false) {
       writer.uint32(8).bool(message.required);
     }
@@ -390,10 +421,10 @@ export const ProductSubcategoryAttribute: MessageFns<ProductSubcategoryAttribute
     return writer;
   },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): ProductSubcategoryAttribute {
+  decode(input: BinaryReader | Uint8Array, length?: number): SubcategoryAttribute {
     const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseProductSubcategoryAttribute();
+    const message = createBaseSubcategoryAttribute();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -454,7 +485,7 @@ export const ProductSubcategoryAttribute: MessageFns<ProductSubcategoryAttribute
     return message;
   },
 
-  fromJSON(object: any): ProductSubcategoryAttribute {
+  fromJSON(object: any): SubcategoryAttribute {
     return {
       required: isSet(object.required) ? globalThis.Boolean(object.required) : false,
       type: isSet(object.type) ? globalThis.String(object.type) : "",
@@ -467,7 +498,7 @@ export const ProductSubcategoryAttribute: MessageFns<ProductSubcategoryAttribute
     };
   },
 
-  toJSON(message: ProductSubcategoryAttribute): unknown {
+  toJSON(message: SubcategoryAttribute): unknown {
     const obj: any = {};
     if (message.required !== false) {
       obj.required = message.required;
@@ -490,11 +521,11 @@ export const ProductSubcategoryAttribute: MessageFns<ProductSubcategoryAttribute
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<ProductSubcategoryAttribute>, I>>(base?: I): ProductSubcategoryAttribute {
-    return ProductSubcategoryAttribute.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<SubcategoryAttribute>, I>>(base?: I): SubcategoryAttribute {
+    return SubcategoryAttribute.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<ProductSubcategoryAttribute>, I>>(object: I): ProductSubcategoryAttribute {
-    const message = createBaseProductSubcategoryAttribute();
+  fromPartial<I extends Exact<DeepPartial<SubcategoryAttribute>, I>>(object: I): SubcategoryAttribute {
+    const message = createBaseSubcategoryAttribute();
     message.required = object.required ?? false;
     message.type = object.type ?? "";
     message.refrence = object.refrence ?? undefined;
@@ -503,214 +534,6 @@ export const ProductSubcategoryAttribute: MessageFns<ProductSubcategoryAttribute
     message.validation = (object.validation !== undefined && object.validation !== null)
       ? ValidationField.fromPartial(object.validation)
       : undefined;
-    return message;
-  },
-};
-
-function createBaseProductCategories(): ProductCategories {
-  return { categories: [] };
-}
-
-export const ProductCategories: MessageFns<ProductCategories> = {
-  encode(message: ProductCategories, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    for (const v of message.categories) {
-      ProductCategory.encode(v!, writer.uint32(10).fork()).join();
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): ProductCategories {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseProductCategories();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.categories.push(ProductCategory.decode(reader, reader.uint32()));
-          continue;
-        }
-      }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
-      }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
-
-  fromJSON(object: any): ProductCategories {
-    return {
-      categories: globalThis.Array.isArray(object?.categories)
-        ? object.categories.map((e: any) => ProductCategory.fromJSON(e))
-        : [],
-    };
-  },
-
-  toJSON(message: ProductCategories): unknown {
-    const obj: any = {};
-    if (message.categories?.length) {
-      obj.categories = message.categories.map((e) => ProductCategory.toJSON(e));
-    }
-    return obj;
-  },
-
-  create<I extends Exact<DeepPartial<ProductCategories>, I>>(base?: I): ProductCategories {
-    return ProductCategories.fromPartial(base ?? ({} as any));
-  },
-  fromPartial<I extends Exact<DeepPartial<ProductCategories>, I>>(object: I): ProductCategories {
-    const message = createBaseProductCategories();
-    message.categories = object.categories?.map((e) => ProductCategory.fromPartial(e)) || [];
-    return message;
-  },
-};
-
-function createBaseProductCategoryWithoutSubcategories(): ProductCategoryWithoutSubcategories {
-  return { id: "", name: "" };
-}
-
-export const ProductCategoryWithoutSubcategories: MessageFns<ProductCategoryWithoutSubcategories> = {
-  encode(message: ProductCategoryWithoutSubcategories, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.id !== "") {
-      writer.uint32(10).string(message.id);
-    }
-    if (message.name !== "") {
-      writer.uint32(18).string(message.name);
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): ProductCategoryWithoutSubcategories {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseProductCategoryWithoutSubcategories();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.id = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.name = reader.string();
-          continue;
-        }
-      }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
-      }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
-
-  fromJSON(object: any): ProductCategoryWithoutSubcategories {
-    return {
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
-      name: isSet(object.name) ? globalThis.String(object.name) : "",
-    };
-  },
-
-  toJSON(message: ProductCategoryWithoutSubcategories): unknown {
-    const obj: any = {};
-    if (message.id !== "") {
-      obj.id = message.id;
-    }
-    if (message.name !== "") {
-      obj.name = message.name;
-    }
-    return obj;
-  },
-
-  create<I extends Exact<DeepPartial<ProductCategoryWithoutSubcategories>, I>>(
-    base?: I,
-  ): ProductCategoryWithoutSubcategories {
-    return ProductCategoryWithoutSubcategories.fromPartial(base ?? ({} as any));
-  },
-  fromPartial<I extends Exact<DeepPartial<ProductCategoryWithoutSubcategories>, I>>(
-    object: I,
-  ): ProductCategoryWithoutSubcategories {
-    const message = createBaseProductCategoryWithoutSubcategories();
-    message.id = object.id ?? "";
-    message.name = object.name ?? "";
-    return message;
-  },
-};
-
-function createBaseProductCategoriesWithoutSubcategories(): ProductCategoriesWithoutSubcategories {
-  return { categories: [] };
-}
-
-export const ProductCategoriesWithoutSubcategories: MessageFns<ProductCategoriesWithoutSubcategories> = {
-  encode(message: ProductCategoriesWithoutSubcategories, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    for (const v of message.categories) {
-      ProductCategoryWithoutSubcategories.encode(v!, writer.uint32(10).fork()).join();
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): ProductCategoriesWithoutSubcategories {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseProductCategoriesWithoutSubcategories();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.categories.push(ProductCategoryWithoutSubcategories.decode(reader, reader.uint32()));
-          continue;
-        }
-      }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
-      }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
-
-  fromJSON(object: any): ProductCategoriesWithoutSubcategories {
-    return {
-      categories: globalThis.Array.isArray(object?.categories)
-        ? object.categories.map((e: any) => ProductCategoryWithoutSubcategories.fromJSON(e))
-        : [],
-    };
-  },
-
-  toJSON(message: ProductCategoriesWithoutSubcategories): unknown {
-    const obj: any = {};
-    if (message.categories?.length) {
-      obj.categories = message.categories.map((e) => ProductCategoryWithoutSubcategories.toJSON(e));
-    }
-    return obj;
-  },
-
-  create<I extends Exact<DeepPartial<ProductCategoriesWithoutSubcategories>, I>>(
-    base?: I,
-  ): ProductCategoriesWithoutSubcategories {
-    return ProductCategoriesWithoutSubcategories.fromPartial(base ?? ({} as any));
-  },
-  fromPartial<I extends Exact<DeepPartial<ProductCategoriesWithoutSubcategories>, I>>(
-    object: I,
-  ): ProductCategoriesWithoutSubcategories {
-    const message = createBaseProductCategoriesWithoutSubcategories();
-    message.categories = object.categories?.map((e) => ProductCategoryWithoutSubcategories.fromPartial(e)) || [];
     return message;
   },
 };

@@ -9,20 +9,23 @@ option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/prod
 option java_outer_classname = "ProductCategoriesProto";
 option java_package = "org.megacommerce.products.v1";
 
-message ProductCategory {
+message Category {
   string id = 1;
   string name = 2;
-  repeated ProductSubcategory subcategories = 3;
+  string image = 3;
+  repeated Subcategory subcategories = 4;
 }
 
-message ProductSubcategory {
+message Subcategory {
   string id = 1;
   string name = 2;
-  map<string, ProductSubcategoryAttribute> attributes = 3;
+  int32 version = 3;
+  string created_at = 4;
+  map<string, SubcategoryAttribute> attributes = 5;
 }
 
 // Top-level attribute with a typed validation
-message ProductSubcategoryAttribute {
+message SubcategoryAttribute {
   // wither this attribute required or optional
   bool required = 1;
   // input, select, tags ...
@@ -36,19 +39,4 @@ message ProductSubcategoryAttribute {
   optional bool is_multiple = 5;
   // validation rules of this attribute
   shared.v1.ValidationField validation = 6;
-}
-
-// not related to database
-
-message ProductCategories {
-  repeated ProductCategory categories = 1;
-}
-
-message ProductCategoryWithoutSubcategories {
-  string id = 1;
-  string name = 2;
-}
-
-message ProductCategoriesWithoutSubcategories {
-  repeated ProductCategoryWithoutSubcategories categories = 1;
 }

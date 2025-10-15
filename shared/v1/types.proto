@@ -23,6 +23,11 @@ message SuccessResponseData {
   map<string, string> metadata = 2;
 }
 
+message IDName {
+  string id = 1;
+  string name = 2;
+}
+
 // Custom Any message to avoid google.protobuf.Any issues
 message Any {
   string type_url = 1; // Identifies the type of the serialized message

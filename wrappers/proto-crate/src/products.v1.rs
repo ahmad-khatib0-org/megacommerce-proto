@@ -97,31 +97,37 @@ pub struct Product {
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ProductCategory {
+pub struct Category {
     #[prost(string, tag = "1")]
     pub id: ::prost::alloc::string::String,
     #[prost(string, tag = "2")]
     pub name: ::prost::alloc::string::String,
-    #[prost(message, repeated, tag = "3")]
-    pub subcategories: ::prost::alloc::vec::Vec<ProductSubcategory>,
+    #[prost(string, tag = "3")]
+    pub image: ::prost::alloc::string::String,
+    #[prost(message, repeated, tag = "4")]
+    pub subcategories: ::prost::alloc::vec::Vec<Subcategory>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ProductSubcategory {
+pub struct Subcategory {
     #[prost(string, tag = "1")]
     pub id: ::prost::alloc::string::String,
     #[prost(string, tag = "2")]
     pub name: ::prost::alloc::string::String,
-    #[prost(map = "string, message", tag = "3")]
+    #[prost(int32, tag = "3")]
+    pub version: i32,
+    #[prost(string, tag = "4")]
+    pub created_at: ::prost::alloc::string::String,
+    #[prost(map = "string, message", tag = "5")]
     pub attributes: ::std::collections::HashMap<
         ::prost::alloc::string::String,
-        ProductSubcategoryAttribute,
+        SubcategoryAttribute,
     >,
 }
 /// Top-level attribute with a typed validation
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ProductSubcategoryAttribute {
+pub struct SubcategoryAttribute {
     /// wither this attribute required or optional
     #[prost(bool, tag = "1")]
     pub required: bool,
@@ -134,7 +140,6 @@ pub struct ProductSubcategoryAttribute {
     pub refrence: ::core::option::Option<::prost::alloc::string::String>,
     /// for select type (E.g. \['white', 'black', ...\])
     #[prost(string, repeated, tag = "4")]
-    #[serde(default)]
     pub string_array: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
     /// for select type (E.g. multiple colors)
     #[prost(bool, optional, tag = "5")]
@@ -145,44 +150,18 @@ pub struct ProductSubcategoryAttribute {
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ProductCategories {
-    #[prost(message, repeated, tag = "1")]
-    pub categories: ::prost::alloc::vec::Vec<ProductCategory>,
-}
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ProductCategoryWithoutSubcategories {
-    #[prost(string, tag = "1")]
-    pub id: ::prost::alloc::string::String,
-    #[prost(string, tag = "2")]
-    pub name: ::prost::alloc::string::String,
-}
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ProductCategoriesWithoutSubcategories {
-    #[prost(message, repeated, tag = "1")]
-    pub categories: ::prost::alloc::vec::Vec<ProductCategoryWithoutSubcategories>,
-}
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductDataResponseData {
     #[prost(message, optional, tag = "1")]
-    pub categories: ::core::option::Option<ProductCategoriesWithoutSubcategories>,
+    pub category: ::core::option::Option<Category>,
     #[prost(message, optional, tag = "2")]
-    pub category_data: ::core::option::Option<ProductCategory>,
-    #[prost(message, optional, tag = "3")]
     pub tags: ::core::option::Option<ProductTags>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductDataRequest {
-    #[prost(bool, optional, tag = "1")]
-    pub get_all_categories: ::core::option::Option<bool>,
-    #[prost(bool, optional, tag = "2")]
-    pub get_category_data: ::core::option::Option<bool>,
-    #[prost(string, optional, tag = "3")]
+    #[prost(string, optional, tag = "1")]
     pub category_name: ::core::option::Option<::prost::alloc::string::String>,
-    #[prost(bool, optional, tag = "4")]
+    #[prost(bool, optional, tag = "2")]
     pub get_tags: ::core::option::Option<bool>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]

@@ -42,6 +42,11 @@ export interface SuccessResponseData_MetadataEntry {
   value: string;
 }
 
+export interface IDName {
+  id: string;
+  name: string;
+}
+
 /** Custom Any message to avoid google.protobuf.Any issues */
 export interface Any {
   /** Identifies the type of the serialized message */
@@ -612,6 +617,82 @@ export const SuccessResponseData_MetadataEntry: MessageFns<SuccessResponseData_M
     const message = createBaseSuccessResponseData_MetadataEntry();
     message.key = object.key ?? "";
     message.value = object.value ?? "";
+    return message;
+  },
+};
+
+function createBaseIDName(): IDName {
+  return { id: "", name: "" };
+}
+
+export const IDName: MessageFns<IDName> = {
+  encode(message: IDName, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.id !== "") {
+      writer.uint32(10).string(message.id);
+    }
+    if (message.name !== "") {
+      writer.uint32(18).string(message.name);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): IDName {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseIDName();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.id = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.name = reader.string();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): IDName {
+    return {
+      id: isSet(object.id) ? globalThis.String(object.id) : "",
+      name: isSet(object.name) ? globalThis.String(object.name) : "",
+    };
+  },
+
+  toJSON(message: IDName): unknown {
+    const obj: any = {};
+    if (message.id !== "") {
+      obj.id = message.id;
+    }
+    if (message.name !== "") {
+      obj.name = message.name;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<IDName>, I>>(base?: I): IDName {
+    return IDName.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<IDName>, I>>(object: I): IDName {
+    const message = createBaseIDName();
+    message.id = object.id ?? "";
+    message.name = object.name ?? "";
     return message;
   },
 };

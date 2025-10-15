@@ -23,10 +23,9 @@ const (
 )
 
 type ProductDataResponseData struct {
-	state         protoimpl.MessageState                 `protogen:"open.v1"`
-	Categories    *ProductCategoriesWithoutSubcategories `protobuf:"bytes,1,opt,name=categories,proto3,oneof" json:"categories,omitempty"`
-	CategoryData  *ProductCategory                       `protobuf:"bytes,2,opt,name=category_data,json=categoryData,proto3,oneof" json:"category_data,omitempty"`
-	Tags          *ProductTags                           `protobuf:"bytes,3,opt,name=tags,proto3,oneof" json:"tags,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Category      *Category              `protobuf:"bytes,1,opt,name=category,proto3,oneof" json:"category,omitempty"`
+	Tags          *ProductTags           `protobuf:"bytes,2,opt,name=tags,proto3,oneof" json:"tags,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -61,16 +60,9 @@ func (*ProductDataResponseData) Descriptor() ([]byte, []int) {
 	return file_products_v1_product_data_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *ProductDataResponseData) GetCategories() *ProductCategoriesWithoutSubcategories {
+func (x *ProductDataResponseData) GetCategory() *Category {
 	if x != nil {
-		return x.Categories
-	}
-	return nil
-}
-
-func (x *ProductDataResponseData) GetCategoryData() *ProductCategory {
-	if x != nil {
-		return x.CategoryData
+		return x.Category
 	}
 	return nil
 }
@@ -83,13 +75,11 @@ func (x *ProductDataResponseData) GetTags() *ProductTags {
 }
 
 type ProductDataRequest struct {
-	state            protoimpl.MessageState `protogen:"open.v1"`
-	GetAllCategories *bool                  `protobuf:"varint,1,opt,name=get_all_categories,json=getAllCategories,proto3,oneof" json:"get_all_categories,omitempty"`
-	GetCategoryData  *bool                  `protobuf:"varint,2,opt,name=get_category_data,json=getCategoryData,proto3,oneof" json:"get_category_data,omitempty"`
-	CategoryName     *string                `protobuf:"bytes,3,opt,name=category_name,json=categoryName,proto3,oneof" json:"category_name,omitempty"`
-	GetTags          *bool                  `protobuf:"varint,4,opt,name=get_tags,json=getTags,proto3,oneof" json:"get_tags,omitempty"`
-	unknownFields    protoimpl.UnknownFields
-	sizeCache        protoimpl.SizeCache
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	CategoryName  *string                `protobuf:"bytes,1,opt,name=category_name,json=categoryName,proto3,oneof" json:"category_name,omitempty"`
+	GetTags       *bool                  `protobuf:"varint,2,opt,name=get_tags,json=getTags,proto3,oneof" json:"get_tags,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ProductDataRequest) Reset() {
@@ -120,20 +110,6 @@ func (x *ProductDataRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use ProductDataRequest.ProtoReflect.Descriptor instead.
 func (*ProductDataRequest) Descriptor() ([]byte, []int) {
 	return file_products_v1_product_data_proto_rawDescGZIP(), []int{1}
-}
-
-func (x *ProductDataRequest) GetGetAllCategories() bool {
-	if x != nil && x.GetAllCategories != nil {
-		return *x.GetAllCategories
-	}
-	return false
-}
-
-func (x *ProductDataRequest) GetGetCategoryData() bool {
-	if x != nil && x.GetCategoryData != nil {
-		return *x.GetCategoryData
-	}
-	return false
 }
 
 func (x *ProductDataRequest) GetCategoryName() string {
@@ -236,23 +212,15 @@ var File_products_v1_product_data_proto protoreflect.FileDescriptor
 
 const file_products_v1_product_data_proto_rawDesc = "" +
 	"\n" +
-	"\x1eproducts/v1/product_data.proto\x12\vproducts.v1\x1a\x19products/v1/product.proto\x1a$products/v1/product_categories.proto\x1a\x15shared/v1/error.proto\"\x97\x02\n" +
-	"\x17ProductDataResponseData\x12W\n" +
-	"\n" +
-	"categories\x18\x01 \x01(\v22.products.v1.ProductCategoriesWithoutSubcategoriesH\x00R\n" +
-	"categories\x88\x01\x01\x12F\n" +
-	"\rcategory_data\x18\x02 \x01(\v2\x1c.products.v1.ProductCategoryH\x01R\fcategoryData\x88\x01\x01\x121\n" +
-	"\x04tags\x18\x03 \x01(\v2\x18.products.v1.ProductTagsH\x02R\x04tags\x88\x01\x01B\r\n" +
-	"\v_categoriesB\x10\n" +
-	"\x0e_category_dataB\a\n" +
-	"\x05_tags\"\x8e\x02\n" +
-	"\x12ProductDataRequest\x121\n" +
-	"\x12get_all_categories\x18\x01 \x01(\bH\x00R\x10getAllCategories\x88\x01\x01\x12/\n" +
-	"\x11get_category_data\x18\x02 \x01(\bH\x01R\x0fgetCategoryData\x88\x01\x01\x12(\n" +
-	"\rcategory_name\x18\x03 \x01(\tH\x02R\fcategoryName\x88\x01\x01\x12\x1e\n" +
-	"\bget_tags\x18\x04 \x01(\bH\x03R\agetTags\x88\x01\x01B\x15\n" +
-	"\x13_get_all_categoriesB\x14\n" +
-	"\x12_get_category_dataB\x10\n" +
+	"\x1eproducts/v1/product_data.proto\x12\vproducts.v1\x1a\x19products/v1/product.proto\x1a$products/v1/product_categories.proto\x1a\x15shared/v1/error.proto\"\x9a\x01\n" +
+	"\x17ProductDataResponseData\x126\n" +
+	"\bcategory\x18\x01 \x01(\v2\x15.products.v1.CategoryH\x00R\bcategory\x88\x01\x01\x121\n" +
+	"\x04tags\x18\x02 \x01(\v2\x18.products.v1.ProductTagsH\x01R\x04tags\x88\x01\x01B\v\n" +
+	"\t_categoryB\a\n" +
+	"\x05_tags\"}\n" +
+	"\x12ProductDataRequest\x12(\n" +
+	"\rcategory_name\x18\x01 \x01(\tH\x00R\fcategoryName\x88\x01\x01\x12\x1e\n" +
+	"\bget_tags\x18\x02 \x01(\bH\x01R\agetTags\x88\x01\x01B\x10\n" +
 	"\x0e_category_nameB\v\n" +
 	"\t_get_tags\"\x8a\x01\n" +
 	"\x13ProductDataResponse\x12:\n" +
@@ -276,25 +244,23 @@ func file_products_v1_product_data_proto_rawDescGZIP() []byte {
 
 var file_products_v1_product_data_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_products_v1_product_data_proto_goTypes = []any{
-	(*ProductDataResponseData)(nil),               // 0: products.v1.ProductDataResponseData
-	(*ProductDataRequest)(nil),                    // 1: products.v1.ProductDataRequest
-	(*ProductDataResponse)(nil),                   // 2: products.v1.ProductDataResponse
-	(*ProductCategoriesWithoutSubcategories)(nil), // 3: products.v1.ProductCategoriesWithoutSubcategories
-	(*ProductCategory)(nil),                       // 4: products.v1.ProductCategory
-	(*ProductTags)(nil),                           // 5: products.v1.ProductTags
-	(*v1.AppError)(nil),                           // 6: shared.v1.AppError
+	(*ProductDataResponseData)(nil), // 0: products.v1.ProductDataResponseData
+	(*ProductDataRequest)(nil),      // 1: products.v1.ProductDataRequest
+	(*ProductDataResponse)(nil),     // 2: products.v1.ProductDataResponse
+	(*Category)(nil),                // 3: products.v1.Category
+	(*ProductTags)(nil),             // 4: products.v1.ProductTags
+	(*v1.AppError)(nil),             // 5: shared.v1.AppError
 }
 var file_products_v1_product_data_proto_depIdxs = []int32{
-	3, // 0: products.v1.ProductDataResponseData.categories:type_name -> products.v1.ProductCategoriesWithoutSubcategories
-	4, // 1: products.v1.ProductDataResponseData.category_data:type_name -> products.v1.ProductCategory
-	5, // 2: products.v1.ProductDataResponseData.tags:type_name -> products.v1.ProductTags
-	0, // 3: products.v1.ProductDataResponse.data:type_name -> products.v1.ProductDataResponseData
-	6, // 4: products.v1.ProductDataResponse.error:type_name -> shared.v1.AppError
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	3, // 0: products.v1.ProductDataResponseData.category:type_name -> products.v1.Category
+	4, // 1: products.v1.ProductDataResponseData.tags:type_name -> products.v1.ProductTags
+	0, // 2: products.v1.ProductDataResponse.data:type_name -> products.v1.ProductDataResponseData
+	5, // 3: products.v1.ProductDataResponse.error:type_name -> shared.v1.AppError
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_products_v1_product_data_proto_init() }
