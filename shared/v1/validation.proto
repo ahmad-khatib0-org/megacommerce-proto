@@ -1,0 +1,55 @@
+syntax = "proto3";
+
+package shared.v1;
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1;v1";
+option java_outer_classname = "ValidationProto";
+option java_package = "org.megacommerce.shared.v1";
+
+// Validation message with a oneof for typed rules
+message ValidationField {
+  oneof rule {
+    ValidationFieldNumeric numeric = 1;
+    ValidationFieldString str = 2;
+    ValidationFieldRegex regex = 3;
+  }
+}
+
+// Numeric rule (min/max, etc.)
+message ValidationFieldNumeric {
+  repeated ValidationFieldNumericRule rules = 1;
+}
+
+message ValidationFieldNumericRule {
+  ValidationFieldNumericRuleType type = 1;
+  double value = 2; // numeric parameter (double to accept int/float)
+}
+
+enum ValidationFieldNumericRuleType {
+  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN = 0;
+  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX = 1;
+  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT = 2;
+  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT = 3;
+}
+
+// String rule (min/max length)
+message ValidationFieldString {
+  repeated ValidationFieldStringRule rules = 1;
+}
+
+message ValidationFieldStringRule {
+  ValidationFieldNumericRuleType type = 1;
+  double value = 2; // numeric parameter (double to accept int/float)
+}
+
+enum ValidationFieldStringRuleType {
+  PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN = 0;
+  PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX = 1;
+}
+
+// Regex rule (pattern)
+message ValidationFieldRegex {
+  string pattern = 1;
+  bool case_sensitive = 2;
+}

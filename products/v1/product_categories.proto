@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package products.v1;
 
+import "shared/v1/validation.proto";
+
 option cc_enable_arenas = true;
 option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1";
 option java_outer_classname = "ProductCategoriesProto";
@@ -19,51 +21,21 @@ message ProductSubcategory {
   map<string, ProductSubcategoryAttribute> attributes = 3;
 }
 
-// Top-level attribute with a typed validation oneof
+// Top-level attribute with a typed validation
 message ProductSubcategoryAttribute {
+  // wither this attribute required or optional
   bool required = 1;
+  // input, select, tags ...
   string type = 2;
-  repeated string string_array = 3;
-  ProductAttributeValidation validation = 4;
-}
-
-// Validation message with a oneof for typed rules
-message ProductAttributeValidation {
-  oneof rule {
-    ProductAttributeValidationNumeric numeric = 1;
-    ProductAttributeValidationString str = 2;
-    ProductAttributeValidationRegex regex = 3;
-  }
-}
-
-// Numeric rule (min/max, etc.)
-message ProductAttributeValidationNumeric {
-  ProductAttributeNumericValidationRule rule = 1;
-  double value = 2; // numeric parameter (use double to accept int/float)
-}
-
-enum ProductAttributeNumericValidationRule {
-  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN = 0;
-  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX = 1;
-  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT = 2;
-  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT = 3;
-}
-
-// String rule (min/max length)
-message ProductAttributeValidationString {
-  ProductAttributeStringValidationRule rule = 1;
-  int32 value = 2; // length or other integer parameter
-}
-
-enum ProductAttributeStringValidationRule {
-  PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN = 0;
-  PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX = 1;
-}
-
-// Regex rule (pattern)
-message ProductAttributeValidationRegex {
-  string pattern = 1;
-  bool case_sensitive = 2;
+  // reference id to the attributes table (E.g weight is common for many products types,
+  // so instead rewriting it each time, we store it in another table)
+  optional string refrence = 3;
+  // for select type (E.g. ['white', 'black', ...])
+  repeated string string_array = 4;
+  // for select type (E.g. multiple colors)
+  optional bool is_multiple = 5;
+  // validation rules of this attribute
+  shared.v1.ValidationField validation = 6;
 }
 
 // not related to database

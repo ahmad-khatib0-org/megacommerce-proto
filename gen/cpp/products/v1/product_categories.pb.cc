@@ -57,86 +57,6 @@ struct ProductCategoryWithoutSubcategoriesDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCategoryWithoutSubcategoriesDefaultTypeInternal _ProductCategoryWithoutSubcategories_default_instance_;
 
-inline constexpr ProductAttributeValidationString::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : _cached_size_{0},
-        rule_{static_cast< ::products::v1::ProductAttributeStringValidationRule >(0)},
-        value_{0} {}
-
-template <typename>
-PROTOBUF_CONSTEXPR ProductAttributeValidationString::ProductAttributeValidationString(::_pbi::ConstantInitialized)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(ProductAttributeValidationString_class_data_.base()),
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(),
-#endif  // PROTOBUF_CUSTOM_VTABLE
-      _impl_(::_pbi::ConstantInitialized()) {
-}
-struct ProductAttributeValidationStringDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ProductAttributeValidationStringDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ProductAttributeValidationStringDefaultTypeInternal() {}
-  union {
-    ProductAttributeValidationString _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductAttributeValidationStringDefaultTypeInternal _ProductAttributeValidationString_default_instance_;
-
-inline constexpr ProductAttributeValidationRegex::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : _cached_size_{0},
-        pattern_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        case_sensitive_{false} {}
-
-template <typename>
-PROTOBUF_CONSTEXPR ProductAttributeValidationRegex::ProductAttributeValidationRegex(::_pbi::ConstantInitialized)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(ProductAttributeValidationRegex_class_data_.base()),
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(),
-#endif  // PROTOBUF_CUSTOM_VTABLE
-      _impl_(::_pbi::ConstantInitialized()) {
-}
-struct ProductAttributeValidationRegexDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ProductAttributeValidationRegexDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ProductAttributeValidationRegexDefaultTypeInternal() {}
-  union {
-    ProductAttributeValidationRegex _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductAttributeValidationRegexDefaultTypeInternal _ProductAttributeValidationRegex_default_instance_;
-
-inline constexpr ProductAttributeValidationNumeric::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : _cached_size_{0},
-        value_{0},
-        rule_{static_cast< ::products::v1::ProductAttributeNumericValidationRule >(0)} {}
-
-template <typename>
-PROTOBUF_CONSTEXPR ProductAttributeValidationNumeric::ProductAttributeValidationNumeric(::_pbi::ConstantInitialized)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(ProductAttributeValidationNumeric_class_data_.base()),
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(),
-#endif  // PROTOBUF_CUSTOM_VTABLE
-      _impl_(::_pbi::ConstantInitialized()) {
-}
-struct ProductAttributeValidationNumericDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ProductAttributeValidationNumericDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ProductAttributeValidationNumericDefaultTypeInternal() {}
-  union {
-    ProductAttributeValidationNumeric _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductAttributeValidationNumericDefaultTypeInternal _ProductAttributeValidationNumeric_default_instance_;
-
 inline constexpr ProductCategoriesWithoutSubcategories::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : categories_{},
@@ -162,32 +82,6 @@ struct ProductCategoriesWithoutSubcategoriesDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCategoriesWithoutSubcategoriesDefaultTypeInternal _ProductCategoriesWithoutSubcategories_default_instance_;
 
-inline constexpr ProductAttributeValidation::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : rule_{},
-        _cached_size_{0},
-        _oneof_case_{} {}
-
-template <typename>
-PROTOBUF_CONSTEXPR ProductAttributeValidation::ProductAttributeValidation(::_pbi::ConstantInitialized)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(ProductAttributeValidation_class_data_.base()),
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(),
-#endif  // PROTOBUF_CUSTOM_VTABLE
-      _impl_(::_pbi::ConstantInitialized()) {
-}
-struct ProductAttributeValidationDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ProductAttributeValidationDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ProductAttributeValidationDefaultTypeInternal() {}
-  union {
-    ProductAttributeValidation _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductAttributeValidationDefaultTypeInternal _ProductAttributeValidation_default_instance_;
-
 inline constexpr ProductSubcategoryAttribute::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
@@ -195,8 +89,12 @@ inline constexpr ProductSubcategoryAttribute::Impl_::Impl_(
         type_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
+        refrence_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
         validation_{nullptr},
-        required_{false} {}
+        required_{false},
+        is_multiple_{false} {}
 
 template <typename>
 PROTOBUF_CONSTEXPR ProductSubcategoryAttribute::ProductSubcategoryAttribute(::_pbi::ConstantInitialized)
@@ -324,8 +222,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCategoriesDefaultTypeInternal _ProductCategories_default_instance_;
 }  // namespace v1
 }  // namespace products
-static const ::_pb::EnumDescriptor* PROTOBUF_NONNULL
-    file_level_enum_descriptors_products_2fv1_2fproduct_5fcategories_2eproto[2];
+static constexpr const ::_pb::EnumDescriptor *PROTOBUF_NONNULL *PROTOBUF_NULLABLE
+    file_level_enum_descriptors_products_2fv1_2fproduct_5fcategories_2eproto = nullptr;
 static constexpr const ::_pb::ServiceDescriptor *PROTOBUF_NONNULL *PROTOBUF_NULLABLE
     file_level_service_descriptors_products_2fv1_2fproduct_5fcategories_2eproto = nullptr;
 const ::uint32_t
@@ -358,42 +256,19 @@ const ::uint32_t
         ~0u,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductSubcategoryAttribute, _impl_._has_bits_),
-        7, // hasbit index offset
+        9, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductSubcategoryAttribute, _impl_.required_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductSubcategoryAttribute, _impl_.type_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductSubcategoryAttribute, _impl_.refrence_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductSubcategoryAttribute, _impl_.string_array_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductSubcategoryAttribute, _impl_.is_multiple_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductSubcategoryAttribute, _impl_.validation_),
-        2,
+        3,
         0,
+        1,
         ~0u,
-        1,
-        0x004, // bitmap
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductAttributeValidation, _impl_._oneof_case_[0]),
-        ::_pbi::kInvalidFieldOffsetTag,
-        ::_pbi::kInvalidFieldOffsetTag,
-        ::_pbi::kInvalidFieldOffsetTag,
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductAttributeValidation, _impl_.rule_),
-        0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductAttributeValidationNumeric, _impl_._has_bits_),
-        5, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductAttributeValidationNumeric, _impl_.rule_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductAttributeValidationNumeric, _impl_.value_),
-        1,
-        0,
-        0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductAttributeValidationString, _impl_._has_bits_),
-        5, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductAttributeValidationString, _impl_.rule_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductAttributeValidationString, _impl_.value_),
-        0,
-        1,
-        0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductAttributeValidationRegex, _impl_._has_bits_),
-        5, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductAttributeValidationRegex, _impl_.pattern_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductAttributeValidationRegex, _impl_.case_sensitive_),
-        0,
-        1,
+        4,
+        2,
         0x000, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductCategories, _impl_.categories_),
         0x081, // bitmap
@@ -413,23 +288,15 @@ static const ::_pbi::MigrationSchema
         {9, sizeof(::products::v1::ProductSubcategory_AttributesEntry_DoNotUse)},
         {16, sizeof(::products::v1::ProductSubcategory)},
         {25, sizeof(::products::v1::ProductSubcategoryAttribute)},
-        {36, sizeof(::products::v1::ProductAttributeValidation)},
-        {42, sizeof(::products::v1::ProductAttributeValidationNumeric)},
-        {49, sizeof(::products::v1::ProductAttributeValidationString)},
-        {56, sizeof(::products::v1::ProductAttributeValidationRegex)},
-        {63, sizeof(::products::v1::ProductCategories)},
-        {65, sizeof(::products::v1::ProductCategoryWithoutSubcategories)},
-        {72, sizeof(::products::v1::ProductCategoriesWithoutSubcategories)},
+        {40, sizeof(::products::v1::ProductCategories)},
+        {42, sizeof(::products::v1::ProductCategoryWithoutSubcategories)},
+        {49, sizeof(::products::v1::ProductCategoriesWithoutSubcategories)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::products::v1::_ProductCategory_default_instance_._instance,
     &::products::v1::_ProductSubcategory_AttributesEntry_DoNotUse_default_instance_._instance,
     &::products::v1::_ProductSubcategory_default_instance_._instance,
     &::products::v1::_ProductSubcategoryAttribute_default_instance_._instance,
-    &::products::v1::_ProductAttributeValidation_default_instance_._instance,
-    &::products::v1::_ProductAttributeValidationNumeric_default_instance_._instance,
-    &::products::v1::_ProductAttributeValidationString_default_instance_._instance,
-    &::products::v1::_ProductAttributeValidationRegex_default_instance_._instance,
     &::products::v1::_ProductCategories_default_instance_._instance,
     &::products::v1::_ProductCategoryWithoutSubcategories_default_instance_._instance,
     &::products::v1::_ProductCategoriesWithoutSubcategories_default_instance_._instance,
@@ -437,68 +304,50 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 const char descriptor_table_protodef_products_2fv1_2fproduct_5fcategories_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n$products/v1/product_categories.proto\022\013"
-    "products.v1\"|\n\017ProductCategory\022\016\n\002id\030\001 \001"
-    "(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022E\n\rsubcategor"
-    "ies\030\003 \003(\0132\037.products.v1.ProductSubcatego"
-    "ryR\rsubcategories\"\362\001\n\022ProductSubcategory"
-    "\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022O\n\n"
-    "attributes\030\003 \003(\0132/.products.v1.ProductSu"
-    "bcategory.AttributesEntryR\nattributes\032g\n"
-    "\017AttributesEntry\022\020\n\003key\030\001 \001(\tR\003key\022>\n\005va"
-    "lue\030\002 \001(\0132(.products.v1.ProductSubcatego"
-    "ryAttributeR\005value:\0028\001\"\271\001\n\033ProductSubcat"
-    "egoryAttribute\022\032\n\010required\030\001 \001(\010R\010requir"
-    "ed\022\022\n\004type\030\002 \001(\tR\004type\022!\n\014string_array\030\003"
-    " \003(\tR\013stringArray\022G\n\nvalidation\030\004 \001(\0132\'."
-    "products.v1.ProductAttributeValidationR\n"
-    "validation\"\371\001\n\032ProductAttributeValidatio"
-    "n\022J\n\007numeric\030\001 \001(\0132..products.v1.Product"
-    "AttributeValidationNumericH\000R\007numeric\022A\n"
-    "\003str\030\002 \001(\0132-.products.v1.ProductAttribut"
-    "eValidationStringH\000R\003str\022D\n\005regex\030\003 \001(\0132"
-    ",.products.v1.ProductAttributeValidation"
-    "RegexH\000R\005regexB\006\n\004rule\"\201\001\n!ProductAttrib"
-    "uteValidationNumeric\022F\n\004rule\030\001 \001(\01622.pro"
-    "ducts.v1.ProductAttributeNumericValidati"
-    "onRuleR\004rule\022\024\n\005value\030\002 \001(\001R\005value\"\177\n Pr"
-    "oductAttributeValidationString\022E\n\004rule\030\001"
-    " \001(\01621.products.v1.ProductAttributeStrin"
-    "gValidationRuleR\004rule\022\024\n\005value\030\002 \001(\005R\005va"
-    "lue\"b\n\037ProductAttributeValidationRegex\022\030"
-    "\n\007pattern\030\001 \001(\tR\007pattern\022%\n\016case_sensiti"
-    "ve\030\002 \001(\010R\rcaseSensitive\"Q\n\021ProductCatego"
-    "ries\022<\n\ncategories\030\001 \003(\0132\034.products.v1.P"
-    "roductCategoryR\ncategories\"I\n#ProductCat"
-    "egoryWithoutSubcategories\022\016\n\002id\030\001 \001(\tR\002i"
-    "d\022\022\n\004name\030\002 \001(\tR\004name\"y\n%ProductCategori"
-    "esWithoutSubcategories\022P\n\ncategories\030\001 \003"
-    "(\01320.products.v1.ProductCategoryWithoutS"
-    "ubcategoriesR\ncategories*\361\001\n%ProductAttr"
-    "ibuteNumericValidationRule\0221\n-PRODUCT_AT"
-    "TRIBUTE_NUMERIC_VALIDATION_RULE_MIN\020\000\0221\n"
-    "-PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RU"
-    "LE_MAX\020\001\0220\n,PRODUCT_ATTRIBUTE_NUMERIC_VA"
-    "LIDATION_RULE_GT\020\002\0220\n,PRODUCT_ATTRIBUTE_"
-    "NUMERIC_VALIDATION_RULE_LT\020\003*\212\001\n$Product"
-    "AttributeStringValidationRule\0220\n,PRODUCT"
-    "_ATTRIBUTE_STRING_VALIDATION_RULE_MIN\020\000\022"
-    "0\n,PRODUCT_ATTRIBUTE_STRING_VALIDATION_R"
-    "ULE_MAX\020\001B\200\001\n\034org.megacommerce.products."
-    "v1B\026ProductCategoriesProtoZEgithub.com/a"
-    "hmad-khatib0-org/megacommerce-proto/gen/"
-    "go/products/v1;v1\370\001\001b\006proto3"
+    "products.v1\032\032shared/v1/validation.proto\""
+    "|\n\017ProductCategory\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004na"
+    "me\030\002 \001(\tR\004name\022E\n\rsubcategories\030\003 \003(\0132\037."
+    "products.v1.ProductSubcategoryR\rsubcateg"
+    "ories\"\362\001\n\022ProductSubcategory\022\016\n\002id\030\001 \001(\t"
+    "R\002id\022\022\n\004name\030\002 \001(\tR\004name\022O\n\nattributes\030\003"
+    " \003(\0132/.products.v1.ProductSubcategory.At"
+    "tributesEntryR\nattributes\032g\n\017AttributesE"
+    "ntry\022\020\n\003key\030\001 \001(\tR\003key\022>\n\005value\030\002 \001(\0132(."
+    "products.v1.ProductSubcategoryAttributeR"
+    "\005value:\0028\001\"\220\002\n\033ProductSubcategoryAttribu"
+    "te\022\032\n\010required\030\001 \001(\010R\010required\022\022\n\004type\030\002"
+    " \001(\tR\004type\022\037\n\010refrence\030\003 \001(\tH\000R\010refrence"
+    "\210\001\001\022!\n\014string_array\030\004 \003(\tR\013stringArray\022$"
+    "\n\013is_multiple\030\005 \001(\010H\001R\nisMultiple\210\001\001\022:\n\n"
+    "validation\030\006 \001(\0132\032.shared.v1.ValidationF"
+    "ieldR\nvalidationB\013\n\t_refrenceB\016\n\014_is_mul"
+    "tiple\"Q\n\021ProductCategories\022<\n\ncategories"
+    "\030\001 \003(\0132\034.products.v1.ProductCategoryR\nca"
+    "tegories\"I\n#ProductCategoryWithoutSubcat"
+    "egories\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004n"
+    "ame\"y\n%ProductCategoriesWithoutSubcatego"
+    "ries\022P\n\ncategories\030\001 \003(\01320.products.v1.P"
+    "roductCategoryWithoutSubcategoriesR\ncate"
+    "goriesB\200\001\n\034org.megacommerce.products.v1B"
+    "\026ProductCategoriesProtoZEgithub.com/ahma"
+    "d-khatib0-org/megacommerce-proto/gen/go/"
+    "products/v1;v1\370\001\001b\006proto3"
+};
+static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
+    descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_deps[1] = {
+        &::descriptor_table_shared_2fv1_2fvalidation_2eproto,
 };
 static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto = {
     false,
     false,
-    2028,
+    1145,
     descriptor_table_protodef_products_2fv1_2fproduct_5fcategories_2eproto,
     "products/v1/product_categories.proto",
     &descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_once,
-    nullptr,
-    0,
-    11,
+    descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_deps,
+    1,
+    7,
     schemas,
     file_default_instances,
     TableStruct_products_2fv1_2fproduct_5fcategories_2eproto::offsets,
@@ -507,18 +356,6 @@ PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_
 };
 namespace products {
 namespace v1 {
-const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL ProductAttributeNumericValidationRule_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto);
-  return file_level_enum_descriptors_products_2fv1_2fproduct_5fcategories_2eproto[0];
-}
-PROTOBUF_CONSTINIT const uint32_t ProductAttributeNumericValidationRule_internal_data_[] = {
-    262144u, 0u, };
-const ::google::protobuf::EnumDescriptor* PROTOBUF_NONNULL ProductAttributeStringValidationRule_descriptor() {
-  ::google::protobuf::internal::AssignDescriptors(&descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto);
-  return file_level_enum_descriptors_products_2fv1_2fproduct_5fcategories_2eproto[1];
-}
-PROTOBUF_CONSTINIT const uint32_t ProductAttributeStringValidationRule_internal_data_[] = {
-    131072u, 0u, };
 // ===================================================================
 
 class ProductCategory::_Internal {
@@ -1358,6 +1195,11 @@ class ProductSubcategoryAttribute::_Internal {
       8 * PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_._has_bits_);
 };
 
+void ProductSubcategoryAttribute::clear_validation() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.validation_ != nullptr) _impl_.validation_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
 ProductSubcategoryAttribute::ProductSubcategoryAttribute(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ::google::protobuf::Message(arena, ProductSubcategoryAttribute_class_data_.base()) {
@@ -1374,7 +1216,8 @@ PROTOBUF_NDEBUG_INLINE ProductSubcategoryAttribute::Impl_::Impl_(
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
         string_array_{visibility, arena, from.string_array_},
-        type_(arena, from.type_) {}
+        type_(arena, from.type_),
+        refrence_(arena, from.refrence_) {}
 
 ProductSubcategoryAttribute::ProductSubcategoryAttribute(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -1390,10 +1233,16 @@ ProductSubcategoryAttribute::ProductSubcategoryAttribute(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
   ::uint32_t cached_has_bits = _impl_._has_bits_[0];
-  _impl_.validation_ = ((cached_has_bits & 0x00000002u) != 0)
+  _impl_.validation_ = ((cached_has_bits & 0x00000004u) != 0)
                 ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.validation_)
                 : nullptr;
-  _impl_.required_ = from._impl_.required_;
+  ::memcpy(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, required_),
+           reinterpret_cast<const char *>(&from._impl_) +
+               offsetof(Impl_, required_),
+           offsetof(Impl_, is_multiple_) -
+               offsetof(Impl_, required_) +
+               sizeof(Impl_::is_multiple_));
 
   // @@protoc_insertion_point(copy_constructor:products.v1.ProductSubcategoryAttribute)
 }
@@ -1402,16 +1251,17 @@ PROTOBUF_NDEBUG_INLINE ProductSubcategoryAttribute::Impl_::Impl_(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
         string_array_{visibility, arena},
-        type_(arena) {}
+        type_(arena),
+        refrence_(arena) {}
 
 inline void ProductSubcategoryAttribute::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
   ::memset(reinterpret_cast<char *>(&_impl_) +
                offsetof(Impl_, validation_),
            0,
-           offsetof(Impl_, required_) -
+           offsetof(Impl_, is_multiple_) -
                offsetof(Impl_, validation_) +
-               sizeof(Impl_::required_));
+               sizeof(Impl_::is_multiple_));
 }
 ProductSubcategoryAttribute::~ProductSubcategoryAttribute() {
   // @@protoc_insertion_point(destructor:products.v1.ProductSubcategoryAttribute)
@@ -1422,6 +1272,7 @@ inline void ProductSubcategoryAttribute::SharedDtor(MessageLite& self) {
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.type_.Destroy();
+  this_._impl_.refrence_.Destroy();
   delete this_._impl_.validation_;
   this_._impl_.~Impl_();
 }
@@ -1481,16 +1332,16 @@ ProductSubcategoryAttribute::GetClassData() const {
   return ProductSubcategoryAttribute_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 4, 1, 64, 2>
+const ::_pbi::TcParseTable<3, 6, 1, 72, 2>
 ProductSubcategoryAttribute::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_._has_bits_),
     0, // no _extensions_
-    4, 24,  // max_field_number, fast_idx_mask
+    6, 56,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967280,  // skipmap
+    4294967232,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    4,  // num_field_entries
+    6,  // num_field_entries
     1,  // num_aux_entries
     offsetof(decltype(_table_), aux_entries),
     ProductSubcategoryAttribute_class_data_.base(),
@@ -1500,41 +1351,56 @@ ProductSubcategoryAttribute::_table_ = {
     ::_pbi::TcParser::GetTable<::products::v1::ProductSubcategoryAttribute>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // .products.v1.ProductAttributeValidation validation = 4 [json_name = "validation"];
-    {::_pbi::TcParser::FastMtS1,
-     {34, 1, 0, PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.validation_)}},
+    {::_pbi::TcParser::MiniParse, {}},
     // bool required = 1 [json_name = "required"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductSubcategoryAttribute, _impl_.required_), 2>(),
-     {8, 2, 0, PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.required_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductSubcategoryAttribute, _impl_.required_), 3>(),
+     {8, 3, 0, PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.required_)}},
     // string type = 2 [json_name = "type"];
     {::_pbi::TcParser::FastUS1,
      {18, 0, 0, PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.type_)}},
-    // repeated string string_array = 3 [json_name = "stringArray"];
+    // optional string refrence = 3 [json_name = "refrence"];
+    {::_pbi::TcParser::FastUS1,
+     {26, 1, 0, PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.refrence_)}},
+    // repeated string string_array = 4 [json_name = "stringArray"];
     {::_pbi::TcParser::FastUR1,
-     {26, 63, 0, PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.string_array_)}},
+     {34, 63, 0, PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.string_array_)}},
+    // optional bool is_multiple = 5 [json_name = "isMultiple"];
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductSubcategoryAttribute, _impl_.is_multiple_), 4>(),
+     {40, 4, 0, PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.is_multiple_)}},
+    // .shared.v1.ValidationField validation = 6 [json_name = "validation"];
+    {::_pbi::TcParser::FastMtS1,
+     {50, 2, 0, PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.validation_)}},
+    {::_pbi::TcParser::MiniParse, {}},
   }}, {{
     65535, 65535
   }}, {{
     // bool required = 1 [json_name = "required"];
-    {PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.required_), _Internal::kHasBitsOffset + 2, 0,
+    {PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.required_), _Internal::kHasBitsOffset + 3, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
     // string type = 2 [json_name = "type"];
     {PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.type_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // repeated string string_array = 3 [json_name = "stringArray"];
+    // optional string refrence = 3 [json_name = "refrence"];
+    {PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.refrence_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // repeated string string_array = 4 [json_name = "stringArray"];
     {PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.string_array_), -1, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kUtf8String | ::_fl::kRepSString)},
-    // .products.v1.ProductAttributeValidation validation = 4 [json_name = "validation"];
-    {PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.validation_), _Internal::kHasBitsOffset + 1, 0,
+    // optional bool is_multiple = 5 [json_name = "isMultiple"];
+    {PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.is_multiple_), _Internal::kHasBitsOffset + 4, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBool)},
+    // .shared.v1.ValidationField validation = 6 [json_name = "validation"];
+    {PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.validation_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
-      {::_pbi::TcParser::GetTable<::products::v1::ProductAttributeValidation>()},
+      {::_pbi::TcParser::GetTable<::shared::v1::ValidationField>()},
   }},
   {{
-    "\47\0\4\14\0\0\0\0"
+    "\47\0\4\10\14\0\0\0"
     "products.v1.ProductSubcategoryAttribute"
     "type"
+    "refrence"
     "string_array"
   }},
 };
@@ -1547,16 +1413,21 @@ PROTOBUF_NOINLINE void ProductSubcategoryAttribute::Clear() {
 
   _impl_.string_array_.Clear();
   cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000003u) != 0) {
+  if ((cached_has_bits & 0x00000007u) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
       _impl_.type_.ClearNonDefaultToEmpty();
     }
     if ((cached_has_bits & 0x00000002u) != 0) {
+      _impl_.refrence_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000004u) != 0) {
       ABSL_DCHECK(_impl_.validation_ != nullptr);
       _impl_.validation_->Clear();
     }
   }
-  _impl_.required_ = false;
+  ::memset(&_impl_.required_, 0, static_cast<::size_t>(
+      reinterpret_cast<char*>(&_impl_.is_multiple_) -
+      reinterpret_cast<char*>(&_impl_.required_)) + sizeof(_impl_.is_multiple_));
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
@@ -1577,7 +1448,7 @@ PROTOBUF_NOINLINE void ProductSubcategoryAttribute::Clear() {
   (void)cached_has_bits;
 
   // bool required = 1 [json_name = "required"];
-  if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
+  if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
     if (this_._internal_required() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteBoolToArray(
@@ -1595,19 +1466,34 @@ PROTOBUF_NOINLINE void ProductSubcategoryAttribute::Clear() {
     }
   }
 
-  // repeated string string_array = 3 [json_name = "stringArray"];
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // optional string refrence = 3 [json_name = "refrence"];
+  if ((cached_has_bits & 0x00000002u) != 0) {
+    const ::std::string& _s = this_._internal_refrence();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductSubcategoryAttribute.refrence");
+    target = stream->WriteStringMaybeAliased(3, _s, target);
+  }
+
+  // repeated string string_array = 4 [json_name = "stringArray"];
   for (int i = 0, n = this_._internal_string_array_size(); i < n; ++i) {
     const auto& s = this_._internal_string_array().Get(i);
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductSubcategoryAttribute.string_array");
-    target = stream->WriteString(3, s, target);
+    target = stream->WriteString(4, s, target);
   }
 
-  cached_has_bits = this_._impl_._has_bits_[0];
-  // .products.v1.ProductAttributeValidation validation = 4 [json_name = "validation"];
-  if ((cached_has_bits & 0x00000002u) != 0) {
+  // optional bool is_multiple = 5 [json_name = "isMultiple"];
+  if ((cached_has_bits & 0x00000010u) != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        5, this_._internal_is_multiple(), target);
+  }
+
+  // .shared.v1.ValidationField validation = 6 [json_name = "validation"];
+  if ((cached_has_bits & 0x00000004u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        4, *this_._impl_.validation_, this_._impl_.validation_->GetCachedSize(), target,
+        6, *this_._impl_.validation_, this_._impl_.validation_->GetCachedSize(), target,
         stream);
   }
 
@@ -1636,7 +1522,7 @@ PROTOBUF_NOINLINE void ProductSubcategoryAttribute::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
    {
-    // repeated string string_array = 3 [json_name = "stringArray"];
+    // repeated string string_array = 4 [json_name = "stringArray"];
     {
       total_size +=
           1 * ::google::protobuf::internal::FromIntSize(this_._internal_string_array().size());
@@ -1647,7 +1533,8 @@ PROTOBUF_NOINLINE void ProductSubcategoryAttribute::Clear() {
     }
   }
   cached_has_bits = this_._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000007u) != 0) {
+  total_size += static_cast<bool>(0x00000010u & cached_has_bits) * 2;
+  if ((cached_has_bits & 0x0000000fu) != 0) {
     // string type = 2 [json_name = "type"];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_type().empty()) {
@@ -1655,13 +1542,18 @@ PROTOBUF_NOINLINE void ProductSubcategoryAttribute::Clear() {
                                         this_._internal_type());
       }
     }
-    // .products.v1.ProductAttributeValidation validation = 4 [json_name = "validation"];
+    // optional string refrence = 3 [json_name = "refrence"];
     if ((cached_has_bits & 0x00000002u) != 0) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_refrence());
+    }
+    // .shared.v1.ValidationField validation = 6 [json_name = "validation"];
+    if ((cached_has_bits & 0x00000004u) != 0) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.validation_);
     }
     // bool required = 1 [json_name = "required"];
-    if ((cached_has_bits & 0x00000004u) != 0) {
+    if ((cached_has_bits & 0x00000008u) != 0) {
       if (this_._internal_required() != 0) {
         total_size += 2;
       }
@@ -1682,7 +1574,7 @@ void ProductSubcategoryAttribute::MergeImpl(::google::protobuf::MessageLite& to_
 
   _this->_internal_mutable_string_array()->MergeFrom(from._internal_string_array());
   cached_has_bits = from._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000007u) != 0) {
+  if ((cached_has_bits & 0x0000001fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!from._internal_type().empty()) {
         _this->_internal_set_type(from._internal_type());
@@ -1693,6 +1585,9 @@ void ProductSubcategoryAttribute::MergeImpl(::google::protobuf::MessageLite& to_
       }
     }
     if ((cached_has_bits & 0x00000002u) != 0) {
+      _this->_internal_set_refrence(from._internal_refrence());
+    }
+    if ((cached_has_bits & 0x00000004u) != 0) {
       ABSL_DCHECK(from._impl_.validation_ != nullptr);
       if (_this->_impl_.validation_ == nullptr) {
         _this->_impl_.validation_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.validation_);
@@ -1700,10 +1595,13 @@ void ProductSubcategoryAttribute::MergeImpl(::google::protobuf::MessageLite& to_
         _this->_impl_.validation_->MergeFrom(*from._impl_.validation_);
       }
     }
-    if ((cached_has_bits & 0x00000004u) != 0) {
+    if ((cached_has_bits & 0x00000008u) != 0) {
       if (from._internal_required() != 0) {
         _this->_impl_.required_ = from._impl_.required_;
       }
+    }
+    if ((cached_has_bits & 0x00000010u) != 0) {
+      _this->_impl_.is_multiple_ = from._impl_.is_multiple_;
     }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -1726,1273 +1624,16 @@ void ProductSubcategoryAttribute::InternalSwap(ProductSubcategoryAttribute* PROT
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.string_array_.InternalSwap(&other->_impl_.string_array_);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.type_, &other->_impl_.type_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.refrence_, &other->_impl_.refrence_, arena);
   ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.required_)
-      + sizeof(ProductSubcategoryAttribute::_impl_.required_)
+      PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.is_multiple_)
+      + sizeof(ProductSubcategoryAttribute::_impl_.is_multiple_)
       - PROTOBUF_FIELD_OFFSET(ProductSubcategoryAttribute, _impl_.validation_)>(
           reinterpret_cast<char*>(&_impl_.validation_),
           reinterpret_cast<char*>(&other->_impl_.validation_));
 }
 
 ::google::protobuf::Metadata ProductSubcategoryAttribute::GetMetadata() const {
-  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
-}
-// ===================================================================
-
-class ProductAttributeValidation::_Internal {
- public:
-  static constexpr ::int32_t kOneofCaseOffset =
-      PROTOBUF_FIELD_OFFSET(::products::v1::ProductAttributeValidation, _impl_._oneof_case_);
-};
-
-void ProductAttributeValidation::set_allocated_numeric(::products::v1::ProductAttributeValidationNumeric* PROTOBUF_NULLABLE numeric) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  clear_rule();
-  if (numeric) {
-    ::google::protobuf::Arena* submessage_arena = numeric->GetArena();
-    if (message_arena != submessage_arena) {
-      numeric = ::google::protobuf::internal::GetOwnedMessage(message_arena, numeric, submessage_arena);
-    }
-    set_has_numeric();
-    _impl_.rule_.numeric_ = numeric;
-  }
-  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductAttributeValidation.numeric)
-}
-void ProductAttributeValidation::set_allocated_str(::products::v1::ProductAttributeValidationString* PROTOBUF_NULLABLE str) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  clear_rule();
-  if (str) {
-    ::google::protobuf::Arena* submessage_arena = str->GetArena();
-    if (message_arena != submessage_arena) {
-      str = ::google::protobuf::internal::GetOwnedMessage(message_arena, str, submessage_arena);
-    }
-    set_has_str();
-    _impl_.rule_.str_ = str;
-  }
-  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductAttributeValidation.str)
-}
-void ProductAttributeValidation::set_allocated_regex(::products::v1::ProductAttributeValidationRegex* PROTOBUF_NULLABLE regex) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  clear_rule();
-  if (regex) {
-    ::google::protobuf::Arena* submessage_arena = regex->GetArena();
-    if (message_arena != submessage_arena) {
-      regex = ::google::protobuf::internal::GetOwnedMessage(message_arena, regex, submessage_arena);
-    }
-    set_has_regex();
-    _impl_.rule_.regex_ = regex;
-  }
-  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductAttributeValidation.regex)
-}
-ProductAttributeValidation::ProductAttributeValidation(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena, ProductAttributeValidation_class_data_.base()) {
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(arena) {
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:products.v1.ProductAttributeValidation)
-}
-PROTOBUF_NDEBUG_INLINE ProductAttributeValidation::Impl_::Impl_(
-    ::google::protobuf::internal::InternalVisibility visibility,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-    const ::products::v1::ProductAttributeValidation& from_msg)
-      : rule_{},
-        _cached_size_{0},
-        _oneof_case_{from._oneof_case_[0]} {}
-
-ProductAttributeValidation::ProductAttributeValidation(
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
-    const ProductAttributeValidation& from)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena, ProductAttributeValidation_class_data_.base()) {
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(arena) {
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  ProductAttributeValidation* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
-  switch (rule_case()) {
-    case RULE_NOT_SET:
-      break;
-      case kNumeric:
-        _impl_.rule_.numeric_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.rule_.numeric_);
-        break;
-      case kStr:
-        _impl_.rule_.str_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.rule_.str_);
-        break;
-      case kRegex:
-        _impl_.rule_.regex_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.rule_.regex_);
-        break;
-  }
-
-  // @@protoc_insertion_point(copy_constructor:products.v1.ProductAttributeValidation)
-}
-PROTOBUF_NDEBUG_INLINE ProductAttributeValidation::Impl_::Impl_(
-    ::google::protobuf::internal::InternalVisibility visibility,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-      : rule_{},
-        _cached_size_{0},
-        _oneof_case_{} {}
-
-inline void ProductAttributeValidation::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
-  new (&_impl_) Impl_(internal_visibility(), arena);
-}
-ProductAttributeValidation::~ProductAttributeValidation() {
-  // @@protoc_insertion_point(destructor:products.v1.ProductAttributeValidation)
-  SharedDtor(*this);
-}
-inline void ProductAttributeValidation::SharedDtor(MessageLite& self) {
-  ProductAttributeValidation& this_ = static_cast<ProductAttributeValidation&>(self);
-  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
-  ABSL_DCHECK(this_.GetArena() == nullptr);
-  if (this_.has_rule()) {
-    this_.clear_rule();
-  }
-  this_._impl_.~Impl_();
-}
-
-void ProductAttributeValidation::clear_rule() {
-// @@protoc_insertion_point(one_of_clear_start:products.v1.ProductAttributeValidation)
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  switch (rule_case()) {
-    case kNumeric: {
-      if (GetArena() == nullptr) {
-        delete _impl_.rule_.numeric_;
-      } else if (::google::protobuf::internal::DebugHardenClearOneofMessageOnArena()) {
-        ::google::protobuf::internal::MaybePoisonAfterClear(_impl_.rule_.numeric_);
-      }
-      break;
-    }
-    case kStr: {
-      if (GetArena() == nullptr) {
-        delete _impl_.rule_.str_;
-      } else if (::google::protobuf::internal::DebugHardenClearOneofMessageOnArena()) {
-        ::google::protobuf::internal::MaybePoisonAfterClear(_impl_.rule_.str_);
-      }
-      break;
-    }
-    case kRegex: {
-      if (GetArena() == nullptr) {
-        delete _impl_.rule_.regex_;
-      } else if (::google::protobuf::internal::DebugHardenClearOneofMessageOnArena()) {
-        ::google::protobuf::internal::MaybePoisonAfterClear(_impl_.rule_.regex_);
-      }
-      break;
-    }
-    case RULE_NOT_SET: {
-      break;
-    }
-  }
-  _impl_._oneof_case_[0] = RULE_NOT_SET;
-}
-
-
-inline void* PROTOBUF_NONNULL ProductAttributeValidation::PlacementNew_(
-    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) ProductAttributeValidation(arena);
-}
-constexpr auto ProductAttributeValidation::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::ZeroInit(sizeof(ProductAttributeValidation),
-                                            alignof(ProductAttributeValidation));
-}
-constexpr auto ProductAttributeValidation::InternalGenerateClassData_() {
-  return ::google::protobuf::internal::ClassDataFull{
-      ::google::protobuf::internal::ClassData{
-          &_ProductAttributeValidation_default_instance_._instance,
-          &_table_.header,
-          nullptr,  // OnDemandRegisterArenaDtor
-          nullptr,  // IsInitialized
-          &ProductAttributeValidation::MergeImpl,
-          ::google::protobuf::Message::GetNewImpl<ProductAttributeValidation>(),
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          &ProductAttributeValidation::SharedDtor,
-          ::google::protobuf::Message::GetClearImpl<ProductAttributeValidation>(), &ProductAttributeValidation::ByteSizeLong,
-              &ProductAttributeValidation::_InternalSerialize,
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(ProductAttributeValidation, _impl_._cached_size_),
-          false,
-      },
-      &ProductAttributeValidation::kDescriptorMethods,
-      &descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto,
-      nullptr,  // tracker
-  };
-}
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull ProductAttributeValidation_class_data_ =
-        ProductAttributeValidation::InternalGenerateClassData_();
-
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-ProductAttributeValidation::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&ProductAttributeValidation_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(ProductAttributeValidation_class_data_.tc_table);
-  return ProductAttributeValidation_class_data_.base();
-}
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 3, 3, 0, 2>
-ProductAttributeValidation::_table_ = {
-  {
-    0,  // no _has_bits_
-    0, // no _extensions_
-    3, 0,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967288,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    3,  // num_field_entries
-    3,  // num_aux_entries
-    offsetof(decltype(_table_), aux_entries),
-    ProductAttributeValidation_class_data_.base(),
-    nullptr,  // post_loop_handler
-    ::_pbi::TcParser::GenericFallback,  // fallback
-    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-    ::_pbi::TcParser::GetTable<::products::v1::ProductAttributeValidation>(),  // to_prefetch
-    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
-  }, {{
-    {::_pbi::TcParser::MiniParse, {}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .products.v1.ProductAttributeValidationNumeric numeric = 1 [json_name = "numeric"];
-    {PROTOBUF_FIELD_OFFSET(ProductAttributeValidation, _impl_.rule_.numeric_), _Internal::kOneofCaseOffset + 0, 0,
-    (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .products.v1.ProductAttributeValidationString str = 2 [json_name = "str"];
-    {PROTOBUF_FIELD_OFFSET(ProductAttributeValidation, _impl_.rule_.str_), _Internal::kOneofCaseOffset + 0, 1,
-    (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .products.v1.ProductAttributeValidationRegex regex = 3 [json_name = "regex"];
-    {PROTOBUF_FIELD_OFFSET(ProductAttributeValidation, _impl_.rule_.regex_), _Internal::kOneofCaseOffset + 0, 2,
-    (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
-  }},
-  {{
-      {::_pbi::TcParser::GetTable<::products::v1::ProductAttributeValidationNumeric>()},
-      {::_pbi::TcParser::GetTable<::products::v1::ProductAttributeValidationString>()},
-      {::_pbi::TcParser::GetTable<::products::v1::ProductAttributeValidationRegex>()},
-  }},
-  {{
-  }},
-};
-PROTOBUF_NOINLINE void ProductAttributeValidation::Clear() {
-// @@protoc_insertion_point(message_clear_start:products.v1.ProductAttributeValidation)
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  ::uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  clear_rule();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::uint8_t* PROTOBUF_NONNULL ProductAttributeValidation::_InternalSerialize(
-    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
-  const ProductAttributeValidation& this_ = static_cast<const ProductAttributeValidation&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::uint8_t* PROTOBUF_NONNULL ProductAttributeValidation::_InternalSerialize(
-    ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-  const ProductAttributeValidation& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductAttributeValidation)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
-
-  switch (this_.rule_case()) {
-    case kNumeric: {
-      target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-          1, *this_._impl_.rule_.numeric_, this_._impl_.rule_.numeric_->GetCachedSize(), target,
-          stream);
-      break;
-    }
-    case kStr: {
-      target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-          2, *this_._impl_.rule_.str_, this_._impl_.rule_.str_->GetCachedSize(), target,
-          stream);
-      break;
-    }
-    case kRegex: {
-      target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-          3, *this_._impl_.rule_.regex_, this_._impl_.rule_.regex_->GetCachedSize(), target,
-          stream);
-      break;
-    }
-    default:
-      break;
-  }
-  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductAttributeValidation)
-  return target;
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::size_t ProductAttributeValidation::ByteSizeLong(const MessageLite& base) {
-  const ProductAttributeValidation& this_ = static_cast<const ProductAttributeValidation&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::size_t ProductAttributeValidation::ByteSizeLong() const {
-  const ProductAttributeValidation& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductAttributeValidation)
-  ::size_t total_size = 0;
-
-  ::uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void)cached_has_bits;
-
-  switch (this_.rule_case()) {
-    // .products.v1.ProductAttributeValidationNumeric numeric = 1 [json_name = "numeric"];
-    case kNumeric: {
-      total_size += 1 +
-                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.rule_.numeric_);
-      break;
-    }
-    // .products.v1.ProductAttributeValidationString str = 2 [json_name = "str"];
-    case kStr: {
-      total_size += 1 +
-                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.rule_.str_);
-      break;
-    }
-    // .products.v1.ProductAttributeValidationRegex regex = 3 [json_name = "regex"];
-    case kRegex: {
-      total_size += 1 +
-                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.rule_.regex_);
-      break;
-    }
-    case RULE_NOT_SET: {
-      break;
-    }
-  }
-  return this_.MaybeComputeUnknownFieldsSize(total_size,
-                                             &this_._impl_._cached_size_);
-}
-
-void ProductAttributeValidation::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
-  auto* const _this = static_cast<ProductAttributeValidation*>(&to_msg);
-  auto& from = static_cast<const ProductAttributeValidation&>(from_msg);
-  ::google::protobuf::Arena* arena = _this->GetArena();
-  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductAttributeValidation)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (const uint32_t oneof_from_case = from._impl_._oneof_case_[0]) {
-    const uint32_t oneof_to_case = _this->_impl_._oneof_case_[0];
-    const bool oneof_needs_init = oneof_to_case != oneof_from_case;
-    if (oneof_needs_init) {
-      if (oneof_to_case != 0) {
-        _this->clear_rule();
-      }
-      _this->_impl_._oneof_case_[0] = oneof_from_case;
-    }
-
-    switch (oneof_from_case) {
-      case kNumeric: {
-        if (oneof_needs_init) {
-          _this->_impl_.rule_.numeric_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.rule_.numeric_);
-        } else {
-          _this->_impl_.rule_.numeric_->MergeFrom(*from._impl_.rule_.numeric_);
-        }
-        break;
-      }
-      case kStr: {
-        if (oneof_needs_init) {
-          _this->_impl_.rule_.str_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.rule_.str_);
-        } else {
-          _this->_impl_.rule_.str_->MergeFrom(*from._impl_.rule_.str_);
-        }
-        break;
-      }
-      case kRegex: {
-        if (oneof_needs_init) {
-          _this->_impl_.rule_.regex_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.rule_.regex_);
-        } else {
-          _this->_impl_.rule_.regex_->MergeFrom(*from._impl_.rule_.regex_);
-        }
-        break;
-      }
-      case RULE_NOT_SET:
-        break;
-    }
-  }
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void ProductAttributeValidation::CopyFrom(const ProductAttributeValidation& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductAttributeValidation)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-
-void ProductAttributeValidation::InternalSwap(ProductAttributeValidation* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
-  using ::std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.rule_, other->_impl_.rule_);
-  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
-}
-
-::google::protobuf::Metadata ProductAttributeValidation::GetMetadata() const {
-  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
-}
-// ===================================================================
-
-class ProductAttributeValidationNumeric::_Internal {
- public:
-  using HasBits =
-      decltype(::std::declval<ProductAttributeValidationNumeric>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(ProductAttributeValidationNumeric, _impl_._has_bits_);
-};
-
-ProductAttributeValidationNumeric::ProductAttributeValidationNumeric(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena, ProductAttributeValidationNumeric_class_data_.base()) {
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(arena) {
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:products.v1.ProductAttributeValidationNumeric)
-}
-ProductAttributeValidationNumeric::ProductAttributeValidationNumeric(
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ProductAttributeValidationNumeric& from)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena, ProductAttributeValidationNumeric_class_data_.base()),
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(arena),
-#endif  // PROTOBUF_CUSTOM_VTABLE
-      _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-}
-PROTOBUF_NDEBUG_INLINE ProductAttributeValidationNumeric::Impl_::Impl_(
-    ::google::protobuf::internal::InternalVisibility visibility,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-      : _cached_size_{0} {}
-
-inline void ProductAttributeValidationNumeric::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
-  new (&_impl_) Impl_(internal_visibility(), arena);
-  ::memset(reinterpret_cast<char *>(&_impl_) +
-               offsetof(Impl_, value_),
-           0,
-           offsetof(Impl_, rule_) -
-               offsetof(Impl_, value_) +
-               sizeof(Impl_::rule_));
-}
-ProductAttributeValidationNumeric::~ProductAttributeValidationNumeric() {
-  // @@protoc_insertion_point(destructor:products.v1.ProductAttributeValidationNumeric)
-  SharedDtor(*this);
-}
-inline void ProductAttributeValidationNumeric::SharedDtor(MessageLite& self) {
-  ProductAttributeValidationNumeric& this_ = static_cast<ProductAttributeValidationNumeric&>(self);
-  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
-  ABSL_DCHECK(this_.GetArena() == nullptr);
-  this_._impl_.~Impl_();
-}
-
-inline void* PROTOBUF_NONNULL ProductAttributeValidationNumeric::PlacementNew_(
-    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) ProductAttributeValidationNumeric(arena);
-}
-constexpr auto ProductAttributeValidationNumeric::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::ZeroInit(sizeof(ProductAttributeValidationNumeric),
-                                            alignof(ProductAttributeValidationNumeric));
-}
-constexpr auto ProductAttributeValidationNumeric::InternalGenerateClassData_() {
-  return ::google::protobuf::internal::ClassDataFull{
-      ::google::protobuf::internal::ClassData{
-          &_ProductAttributeValidationNumeric_default_instance_._instance,
-          &_table_.header,
-          nullptr,  // OnDemandRegisterArenaDtor
-          nullptr,  // IsInitialized
-          &ProductAttributeValidationNumeric::MergeImpl,
-          ::google::protobuf::Message::GetNewImpl<ProductAttributeValidationNumeric>(),
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          &ProductAttributeValidationNumeric::SharedDtor,
-          ::google::protobuf::Message::GetClearImpl<ProductAttributeValidationNumeric>(), &ProductAttributeValidationNumeric::ByteSizeLong,
-              &ProductAttributeValidationNumeric::_InternalSerialize,
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(ProductAttributeValidationNumeric, _impl_._cached_size_),
-          false,
-      },
-      &ProductAttributeValidationNumeric::kDescriptorMethods,
-      &descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto,
-      nullptr,  // tracker
-  };
-}
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull ProductAttributeValidationNumeric_class_data_ =
-        ProductAttributeValidationNumeric::InternalGenerateClassData_();
-
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-ProductAttributeValidationNumeric::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&ProductAttributeValidationNumeric_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(ProductAttributeValidationNumeric_class_data_.tc_table);
-  return ProductAttributeValidationNumeric_class_data_.base();
-}
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 0, 2>
-ProductAttributeValidationNumeric::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(ProductAttributeValidationNumeric, _impl_._has_bits_),
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    ProductAttributeValidationNumeric_class_data_.base(),
-    nullptr,  // post_loop_handler
-    ::_pbi::TcParser::GenericFallback,  // fallback
-    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-    ::_pbi::TcParser::GetTable<::products::v1::ProductAttributeValidationNumeric>(),  // to_prefetch
-    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
-  }, {{
-    // double value = 2 [json_name = "value"];
-    {::_pbi::TcParser::FastF64S1,
-     {17, 0, 0, PROTOBUF_FIELD_OFFSET(ProductAttributeValidationNumeric, _impl_.value_)}},
-    // .products.v1.ProductAttributeNumericValidationRule rule = 1 [json_name = "rule"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ProductAttributeValidationNumeric, _impl_.rule_), 1>(),
-     {8, 1, 0, PROTOBUF_FIELD_OFFSET(ProductAttributeValidationNumeric, _impl_.rule_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .products.v1.ProductAttributeNumericValidationRule rule = 1 [json_name = "rule"];
-    {PROTOBUF_FIELD_OFFSET(ProductAttributeValidationNumeric, _impl_.rule_), _Internal::kHasBitsOffset + 1, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-    // double value = 2 [json_name = "value"];
-    {PROTOBUF_FIELD_OFFSET(ProductAttributeValidationNumeric, _impl_.value_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kDouble)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-PROTOBUF_NOINLINE void ProductAttributeValidationNumeric::Clear() {
-// @@protoc_insertion_point(message_clear_start:products.v1.ProductAttributeValidationNumeric)
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  ::uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000003u) != 0) {
-    ::memset(&_impl_.value_, 0, static_cast<::size_t>(
-        reinterpret_cast<char*>(&_impl_.rule_) -
-        reinterpret_cast<char*>(&_impl_.value_)) + sizeof(_impl_.rule_));
-  }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::uint8_t* PROTOBUF_NONNULL ProductAttributeValidationNumeric::_InternalSerialize(
-    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
-  const ProductAttributeValidationNumeric& this_ = static_cast<const ProductAttributeValidationNumeric&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::uint8_t* PROTOBUF_NONNULL ProductAttributeValidationNumeric::_InternalSerialize(
-    ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-  const ProductAttributeValidationNumeric& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductAttributeValidationNumeric)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
-
-  // .products.v1.ProductAttributeNumericValidationRule rule = 1 [json_name = "rule"];
-  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
-    if (this_._internal_rule() != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteEnumToArray(
-          1, this_._internal_rule(), target);
-    }
-  }
-
-  // double value = 2 [json_name = "value"];
-  if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    if (::absl::bit_cast<::uint64_t>(this_._internal_value()) != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteDoubleToArray(
-          2, this_._internal_value(), target);
-    }
-  }
-
-  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductAttributeValidationNumeric)
-  return target;
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::size_t ProductAttributeValidationNumeric::ByteSizeLong(const MessageLite& base) {
-  const ProductAttributeValidationNumeric& this_ = static_cast<const ProductAttributeValidationNumeric&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::size_t ProductAttributeValidationNumeric::ByteSizeLong() const {
-  const ProductAttributeValidationNumeric& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductAttributeValidationNumeric)
-  ::size_t total_size = 0;
-
-  ::uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void)cached_has_bits;
-
-  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
-  cached_has_bits = this_._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000003u) != 0) {
-    // double value = 2 [json_name = "value"];
-    if ((cached_has_bits & 0x00000001u) != 0) {
-      if (::absl::bit_cast<::uint64_t>(this_._internal_value()) != 0) {
-        total_size += 9;
-      }
-    }
-    // .products.v1.ProductAttributeNumericValidationRule rule = 1 [json_name = "rule"];
-    if ((cached_has_bits & 0x00000002u) != 0) {
-      if (this_._internal_rule() != 0) {
-        total_size += 1 +
-                      ::_pbi::WireFormatLite::EnumSize(this_._internal_rule());
-      }
-    }
-  }
-  return this_.MaybeComputeUnknownFieldsSize(total_size,
-                                             &this_._impl_._cached_size_);
-}
-
-void ProductAttributeValidationNumeric::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
-  auto* const _this = static_cast<ProductAttributeValidationNumeric*>(&to_msg);
-  auto& from = static_cast<const ProductAttributeValidationNumeric&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductAttributeValidationNumeric)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  cached_has_bits = from._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000003u) != 0) {
-    if ((cached_has_bits & 0x00000001u) != 0) {
-      if (::absl::bit_cast<::uint64_t>(from._internal_value()) != 0) {
-        _this->_impl_.value_ = from._impl_.value_;
-      }
-    }
-    if ((cached_has_bits & 0x00000002u) != 0) {
-      if (from._internal_rule() != 0) {
-        _this->_impl_.rule_ = from._impl_.rule_;
-      }
-    }
-  }
-  _this->_impl_._has_bits_[0] |= cached_has_bits;
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void ProductAttributeValidationNumeric::CopyFrom(const ProductAttributeValidationNumeric& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductAttributeValidationNumeric)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-
-void ProductAttributeValidationNumeric::InternalSwap(ProductAttributeValidationNumeric* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
-  using ::std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ProductAttributeValidationNumeric, _impl_.rule_)
-      + sizeof(ProductAttributeValidationNumeric::_impl_.rule_)
-      - PROTOBUF_FIELD_OFFSET(ProductAttributeValidationNumeric, _impl_.value_)>(
-          reinterpret_cast<char*>(&_impl_.value_),
-          reinterpret_cast<char*>(&other->_impl_.value_));
-}
-
-::google::protobuf::Metadata ProductAttributeValidationNumeric::GetMetadata() const {
-  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
-}
-// ===================================================================
-
-class ProductAttributeValidationString::_Internal {
- public:
-  using HasBits =
-      decltype(::std::declval<ProductAttributeValidationString>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(ProductAttributeValidationString, _impl_._has_bits_);
-};
-
-ProductAttributeValidationString::ProductAttributeValidationString(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena, ProductAttributeValidationString_class_data_.base()) {
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(arena) {
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:products.v1.ProductAttributeValidationString)
-}
-ProductAttributeValidationString::ProductAttributeValidationString(
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ProductAttributeValidationString& from)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena, ProductAttributeValidationString_class_data_.base()),
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(arena),
-#endif  // PROTOBUF_CUSTOM_VTABLE
-      _impl_(from._impl_) {
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-}
-PROTOBUF_NDEBUG_INLINE ProductAttributeValidationString::Impl_::Impl_(
-    ::google::protobuf::internal::InternalVisibility visibility,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-      : _cached_size_{0} {}
-
-inline void ProductAttributeValidationString::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
-  new (&_impl_) Impl_(internal_visibility(), arena);
-  ::memset(reinterpret_cast<char *>(&_impl_) +
-               offsetof(Impl_, rule_),
-           0,
-           offsetof(Impl_, value_) -
-               offsetof(Impl_, rule_) +
-               sizeof(Impl_::value_));
-}
-ProductAttributeValidationString::~ProductAttributeValidationString() {
-  // @@protoc_insertion_point(destructor:products.v1.ProductAttributeValidationString)
-  SharedDtor(*this);
-}
-inline void ProductAttributeValidationString::SharedDtor(MessageLite& self) {
-  ProductAttributeValidationString& this_ = static_cast<ProductAttributeValidationString&>(self);
-  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
-  ABSL_DCHECK(this_.GetArena() == nullptr);
-  this_._impl_.~Impl_();
-}
-
-inline void* PROTOBUF_NONNULL ProductAttributeValidationString::PlacementNew_(
-    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) ProductAttributeValidationString(arena);
-}
-constexpr auto ProductAttributeValidationString::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::ZeroInit(sizeof(ProductAttributeValidationString),
-                                            alignof(ProductAttributeValidationString));
-}
-constexpr auto ProductAttributeValidationString::InternalGenerateClassData_() {
-  return ::google::protobuf::internal::ClassDataFull{
-      ::google::protobuf::internal::ClassData{
-          &_ProductAttributeValidationString_default_instance_._instance,
-          &_table_.header,
-          nullptr,  // OnDemandRegisterArenaDtor
-          nullptr,  // IsInitialized
-          &ProductAttributeValidationString::MergeImpl,
-          ::google::protobuf::Message::GetNewImpl<ProductAttributeValidationString>(),
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          &ProductAttributeValidationString::SharedDtor,
-          ::google::protobuf::Message::GetClearImpl<ProductAttributeValidationString>(), &ProductAttributeValidationString::ByteSizeLong,
-              &ProductAttributeValidationString::_InternalSerialize,
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(ProductAttributeValidationString, _impl_._cached_size_),
-          false,
-      },
-      &ProductAttributeValidationString::kDescriptorMethods,
-      &descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto,
-      nullptr,  // tracker
-  };
-}
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull ProductAttributeValidationString_class_data_ =
-        ProductAttributeValidationString::InternalGenerateClassData_();
-
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-ProductAttributeValidationString::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&ProductAttributeValidationString_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(ProductAttributeValidationString_class_data_.tc_table);
-  return ProductAttributeValidationString_class_data_.base();
-}
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 0, 2>
-ProductAttributeValidationString::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(ProductAttributeValidationString, _impl_._has_bits_),
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    ProductAttributeValidationString_class_data_.base(),
-    nullptr,  // post_loop_handler
-    ::_pbi::TcParser::GenericFallback,  // fallback
-    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-    ::_pbi::TcParser::GetTable<::products::v1::ProductAttributeValidationString>(),  // to_prefetch
-    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
-  }, {{
-    // int32 value = 2 [json_name = "value"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ProductAttributeValidationString, _impl_.value_), 1>(),
-     {16, 1, 0, PROTOBUF_FIELD_OFFSET(ProductAttributeValidationString, _impl_.value_)}},
-    // .products.v1.ProductAttributeStringValidationRule rule = 1 [json_name = "rule"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ProductAttributeValidationString, _impl_.rule_), 0>(),
-     {8, 0, 0, PROTOBUF_FIELD_OFFSET(ProductAttributeValidationString, _impl_.rule_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // .products.v1.ProductAttributeStringValidationRule rule = 1 [json_name = "rule"];
-    {PROTOBUF_FIELD_OFFSET(ProductAttributeValidationString, _impl_.rule_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kOpenEnum)},
-    // int32 value = 2 [json_name = "value"];
-    {PROTOBUF_FIELD_OFFSET(ProductAttributeValidationString, _impl_.value_), _Internal::kHasBitsOffset + 1, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
-  }},
-  // no aux_entries
-  {{
-  }},
-};
-PROTOBUF_NOINLINE void ProductAttributeValidationString::Clear() {
-// @@protoc_insertion_point(message_clear_start:products.v1.ProductAttributeValidationString)
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  ::uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000003u) != 0) {
-    ::memset(&_impl_.rule_, 0, static_cast<::size_t>(
-        reinterpret_cast<char*>(&_impl_.value_) -
-        reinterpret_cast<char*>(&_impl_.rule_)) + sizeof(_impl_.value_));
-  }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::uint8_t* PROTOBUF_NONNULL ProductAttributeValidationString::_InternalSerialize(
-    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
-  const ProductAttributeValidationString& this_ = static_cast<const ProductAttributeValidationString&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::uint8_t* PROTOBUF_NONNULL ProductAttributeValidationString::_InternalSerialize(
-    ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-  const ProductAttributeValidationString& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductAttributeValidationString)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
-
-  // .products.v1.ProductAttributeStringValidationRule rule = 1 [json_name = "rule"];
-  if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    if (this_._internal_rule() != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteEnumToArray(
-          1, this_._internal_rule(), target);
-    }
-  }
-
-  // int32 value = 2 [json_name = "value"];
-  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
-    if (this_._internal_value() != 0) {
-      target =
-          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<2>(
-              stream, this_._internal_value(), target);
-    }
-  }
-
-  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductAttributeValidationString)
-  return target;
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::size_t ProductAttributeValidationString::ByteSizeLong(const MessageLite& base) {
-  const ProductAttributeValidationString& this_ = static_cast<const ProductAttributeValidationString&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::size_t ProductAttributeValidationString::ByteSizeLong() const {
-  const ProductAttributeValidationString& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductAttributeValidationString)
-  ::size_t total_size = 0;
-
-  ::uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void)cached_has_bits;
-
-  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
-  cached_has_bits = this_._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000003u) != 0) {
-    // .products.v1.ProductAttributeStringValidationRule rule = 1 [json_name = "rule"];
-    if ((cached_has_bits & 0x00000001u) != 0) {
-      if (this_._internal_rule() != 0) {
-        total_size += 1 +
-                      ::_pbi::WireFormatLite::EnumSize(this_._internal_rule());
-      }
-    }
-    // int32 value = 2 [json_name = "value"];
-    if ((cached_has_bits & 0x00000002u) != 0) {
-      if (this_._internal_value() != 0) {
-        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-            this_._internal_value());
-      }
-    }
-  }
-  return this_.MaybeComputeUnknownFieldsSize(total_size,
-                                             &this_._impl_._cached_size_);
-}
-
-void ProductAttributeValidationString::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
-  auto* const _this = static_cast<ProductAttributeValidationString*>(&to_msg);
-  auto& from = static_cast<const ProductAttributeValidationString&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductAttributeValidationString)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  cached_has_bits = from._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000003u) != 0) {
-    if ((cached_has_bits & 0x00000001u) != 0) {
-      if (from._internal_rule() != 0) {
-        _this->_impl_.rule_ = from._impl_.rule_;
-      }
-    }
-    if ((cached_has_bits & 0x00000002u) != 0) {
-      if (from._internal_value() != 0) {
-        _this->_impl_.value_ = from._impl_.value_;
-      }
-    }
-  }
-  _this->_impl_._has_bits_[0] |= cached_has_bits;
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void ProductAttributeValidationString::CopyFrom(const ProductAttributeValidationString& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductAttributeValidationString)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-
-void ProductAttributeValidationString::InternalSwap(ProductAttributeValidationString* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
-  using ::std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ProductAttributeValidationString, _impl_.value_)
-      + sizeof(ProductAttributeValidationString::_impl_.value_)
-      - PROTOBUF_FIELD_OFFSET(ProductAttributeValidationString, _impl_.rule_)>(
-          reinterpret_cast<char*>(&_impl_.rule_),
-          reinterpret_cast<char*>(&other->_impl_.rule_));
-}
-
-::google::protobuf::Metadata ProductAttributeValidationString::GetMetadata() const {
-  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
-}
-// ===================================================================
-
-class ProductAttributeValidationRegex::_Internal {
- public:
-  using HasBits =
-      decltype(::std::declval<ProductAttributeValidationRegex>()._impl_._has_bits_);
-  static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(ProductAttributeValidationRegex, _impl_._has_bits_);
-};
-
-ProductAttributeValidationRegex::ProductAttributeValidationRegex(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena, ProductAttributeValidationRegex_class_data_.base()) {
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(arena) {
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:products.v1.ProductAttributeValidationRegex)
-}
-PROTOBUF_NDEBUG_INLINE ProductAttributeValidationRegex::Impl_::Impl_(
-    ::google::protobuf::internal::InternalVisibility visibility,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-    const ::products::v1::ProductAttributeValidationRegex& from_msg)
-      : _has_bits_{from._has_bits_},
-        _cached_size_{0},
-        pattern_(arena, from.pattern_) {}
-
-ProductAttributeValidationRegex::ProductAttributeValidationRegex(
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
-    const ProductAttributeValidationRegex& from)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena, ProductAttributeValidationRegex_class_data_.base()) {
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(arena) {
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  ProductAttributeValidationRegex* const _this = this;
-  (void)_this;
-  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
-      from._internal_metadata_);
-  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
-  _impl_.case_sensitive_ = from._impl_.case_sensitive_;
-
-  // @@protoc_insertion_point(copy_constructor:products.v1.ProductAttributeValidationRegex)
-}
-PROTOBUF_NDEBUG_INLINE ProductAttributeValidationRegex::Impl_::Impl_(
-    ::google::protobuf::internal::InternalVisibility visibility,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-      : _cached_size_{0},
-        pattern_(arena) {}
-
-inline void ProductAttributeValidationRegex::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
-  new (&_impl_) Impl_(internal_visibility(), arena);
-  _impl_.case_sensitive_ = {};
-}
-ProductAttributeValidationRegex::~ProductAttributeValidationRegex() {
-  // @@protoc_insertion_point(destructor:products.v1.ProductAttributeValidationRegex)
-  SharedDtor(*this);
-}
-inline void ProductAttributeValidationRegex::SharedDtor(MessageLite& self) {
-  ProductAttributeValidationRegex& this_ = static_cast<ProductAttributeValidationRegex&>(self);
-  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
-  ABSL_DCHECK(this_.GetArena() == nullptr);
-  this_._impl_.pattern_.Destroy();
-  this_._impl_.~Impl_();
-}
-
-inline void* PROTOBUF_NONNULL ProductAttributeValidationRegex::PlacementNew_(
-    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) ProductAttributeValidationRegex(arena);
-}
-constexpr auto ProductAttributeValidationRegex::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(ProductAttributeValidationRegex),
-                                            alignof(ProductAttributeValidationRegex));
-}
-constexpr auto ProductAttributeValidationRegex::InternalGenerateClassData_() {
-  return ::google::protobuf::internal::ClassDataFull{
-      ::google::protobuf::internal::ClassData{
-          &_ProductAttributeValidationRegex_default_instance_._instance,
-          &_table_.header,
-          nullptr,  // OnDemandRegisterArenaDtor
-          nullptr,  // IsInitialized
-          &ProductAttributeValidationRegex::MergeImpl,
-          ::google::protobuf::Message::GetNewImpl<ProductAttributeValidationRegex>(),
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-          &ProductAttributeValidationRegex::SharedDtor,
-          ::google::protobuf::Message::GetClearImpl<ProductAttributeValidationRegex>(), &ProductAttributeValidationRegex::ByteSizeLong,
-              &ProductAttributeValidationRegex::_InternalSerialize,
-#endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(ProductAttributeValidationRegex, _impl_._cached_size_),
-          false,
-      },
-      &ProductAttributeValidationRegex::kDescriptorMethods,
-      &descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto,
-      nullptr,  // tracker
-  };
-}
-
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull ProductAttributeValidationRegex_class_data_ =
-        ProductAttributeValidationRegex::InternalGenerateClassData_();
-
-PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-ProductAttributeValidationRegex::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&ProductAttributeValidationRegex_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(ProductAttributeValidationRegex_class_data_.tc_table);
-  return ProductAttributeValidationRegex_class_data_.base();
-}
-PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 59, 2>
-ProductAttributeValidationRegex::_table_ = {
-  {
-    PROTOBUF_FIELD_OFFSET(ProductAttributeValidationRegex, _impl_._has_bits_),
-    0, // no _extensions_
-    2, 8,  // max_field_number, fast_idx_mask
-    offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
-    offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    0,  // num_aux_entries
-    offsetof(decltype(_table_), field_names),  // no aux_entries
-    ProductAttributeValidationRegex_class_data_.base(),
-    nullptr,  // post_loop_handler
-    ::_pbi::TcParser::GenericFallback,  // fallback
-    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-    ::_pbi::TcParser::GetTable<::products::v1::ProductAttributeValidationRegex>(),  // to_prefetch
-    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
-  }, {{
-    // bool case_sensitive = 2 [json_name = "caseSensitive"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductAttributeValidationRegex, _impl_.case_sensitive_), 1>(),
-     {16, 1, 0, PROTOBUF_FIELD_OFFSET(ProductAttributeValidationRegex, _impl_.case_sensitive_)}},
-    // string pattern = 1 [json_name = "pattern"];
-    {::_pbi::TcParser::FastUS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductAttributeValidationRegex, _impl_.pattern_)}},
-  }}, {{
-    65535, 65535
-  }}, {{
-    // string pattern = 1 [json_name = "pattern"];
-    {PROTOBUF_FIELD_OFFSET(ProductAttributeValidationRegex, _impl_.pattern_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // bool case_sensitive = 2 [json_name = "caseSensitive"];
-    {PROTOBUF_FIELD_OFFSET(ProductAttributeValidationRegex, _impl_.case_sensitive_), _Internal::kHasBitsOffset + 1, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kBool)},
-  }},
-  // no aux_entries
-  {{
-    "\53\7\0\0\0\0\0\0"
-    "products.v1.ProductAttributeValidationRegex"
-    "pattern"
-  }},
-};
-PROTOBUF_NOINLINE void ProductAttributeValidationRegex::Clear() {
-// @@protoc_insertion_point(message_clear_start:products.v1.ProductAttributeValidationRegex)
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  ::uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000001u) != 0) {
-    _impl_.pattern_.ClearNonDefaultToEmpty();
-  }
-  _impl_.case_sensitive_ = false;
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::uint8_t* PROTOBUF_NONNULL ProductAttributeValidationRegex::_InternalSerialize(
-    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
-  const ProductAttributeValidationRegex& this_ = static_cast<const ProductAttributeValidationRegex&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::uint8_t* PROTOBUF_NONNULL ProductAttributeValidationRegex::_InternalSerialize(
-    ::uint8_t* PROTOBUF_NONNULL target,
-    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-  const ProductAttributeValidationRegex& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductAttributeValidationRegex)
-  ::uint32_t cached_has_bits = 0;
-  (void)cached_has_bits;
-
-  // string pattern = 1 [json_name = "pattern"];
-  if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    if (!this_._internal_pattern().empty()) {
-      const ::std::string& _s = this_._internal_pattern();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductAttributeValidationRegex.pattern");
-      target = stream->WriteStringMaybeAliased(1, _s, target);
-    }
-  }
-
-  // bool case_sensitive = 2 [json_name = "caseSensitive"];
-  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
-    if (this_._internal_case_sensitive() != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteBoolToArray(
-          2, this_._internal_case_sensitive(), target);
-    }
-  }
-
-  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
-    target =
-        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductAttributeValidationRegex)
-  return target;
-}
-
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-::size_t ProductAttributeValidationRegex::ByteSizeLong(const MessageLite& base) {
-  const ProductAttributeValidationRegex& this_ = static_cast<const ProductAttributeValidationRegex&>(base);
-#else   // PROTOBUF_CUSTOM_VTABLE
-::size_t ProductAttributeValidationRegex::ByteSizeLong() const {
-  const ProductAttributeValidationRegex& this_ = *this;
-#endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductAttributeValidationRegex)
-  ::size_t total_size = 0;
-
-  ::uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void)cached_has_bits;
-
-  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
-  cached_has_bits = this_._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000003u) != 0) {
-    // string pattern = 1 [json_name = "pattern"];
-    if ((cached_has_bits & 0x00000001u) != 0) {
-      if (!this_._internal_pattern().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_pattern());
-      }
-    }
-    // bool case_sensitive = 2 [json_name = "caseSensitive"];
-    if ((cached_has_bits & 0x00000002u) != 0) {
-      if (this_._internal_case_sensitive() != 0) {
-        total_size += 2;
-      }
-    }
-  }
-  return this_.MaybeComputeUnknownFieldsSize(total_size,
-                                             &this_._impl_._cached_size_);
-}
-
-void ProductAttributeValidationRegex::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
-  auto* const _this = static_cast<ProductAttributeValidationRegex*>(&to_msg);
-  auto& from = static_cast<const ProductAttributeValidationRegex&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductAttributeValidationRegex)
-  ABSL_DCHECK_NE(&from, _this);
-  ::uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  cached_has_bits = from._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000003u) != 0) {
-    if ((cached_has_bits & 0x00000001u) != 0) {
-      if (!from._internal_pattern().empty()) {
-        _this->_internal_set_pattern(from._internal_pattern());
-      } else {
-        if (_this->_impl_.pattern_.IsDefault()) {
-          _this->_internal_set_pattern("");
-        }
-      }
-    }
-    if ((cached_has_bits & 0x00000002u) != 0) {
-      if (from._internal_case_sensitive() != 0) {
-        _this->_impl_.case_sensitive_ = from._impl_.case_sensitive_;
-      }
-    }
-  }
-  _this->_impl_._has_bits_[0] |= cached_has_bits;
-  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void ProductAttributeValidationRegex::CopyFrom(const ProductAttributeValidationRegex& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductAttributeValidationRegex)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-
-void ProductAttributeValidationRegex::InternalSwap(ProductAttributeValidationRegex* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
-  using ::std::swap;
-  auto* arena = GetArena();
-  ABSL_DCHECK_EQ(arena, other->GetArena());
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.pattern_, &other->_impl_.pattern_, arena);
-  swap(_impl_.case_sensitive_, other->_impl_.case_sensitive_);
-}
-
-::google::protobuf::Metadata ProductAttributeValidationRegex::GetMetadata() const {
   return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // ===================================================================

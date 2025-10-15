@@ -22,9 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from shared.v1 import validation_pb2 as shared_dot_v1_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$products/v1/product_categories.proto\x12\x0bproducts.v1\"c\n\x0fProductCategory\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x36\n\rsubcategories\x18\x03 \x03(\x0b\x32\x1f.products.v1.ProductSubcategory\"\xd0\x01\n\x12ProductSubcategory\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x43\n\nattributes\x18\x03 \x03(\x0b\x32/.products.v1.ProductSubcategory.AttributesEntry\x1a[\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x37\n\x05value\x18\x02 \x01(\x0b\x32(.products.v1.ProductSubcategoryAttribute:\x02\x38\x01\"\x90\x01\n\x1bProductSubcategoryAttribute\x12\x10\n\x08required\x18\x01 \x01(\x08\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x14\n\x0cstring_array\x18\x03 \x03(\t\x12;\n\nvalidation\x18\x04 \x01(\x0b\x32\'.products.v1.ProductAttributeValidation\"\xe4\x01\n\x1aProductAttributeValidation\x12\x41\n\x07numeric\x18\x01 \x01(\x0b\x32..products.v1.ProductAttributeValidationNumericH\x00\x12<\n\x03str\x18\x02 \x01(\x0b\x32-.products.v1.ProductAttributeValidationStringH\x00\x12=\n\x05regex\x18\x03 \x01(\x0b\x32,.products.v1.ProductAttributeValidationRegexH\x00\x42\x06\n\x04rule\"t\n!ProductAttributeValidationNumeric\x12@\n\x04rule\x18\x01 \x01(\x0e\x32\x32.products.v1.ProductAttributeNumericValidationRule\x12\r\n\x05value\x18\x02 \x01(\x01\"r\n ProductAttributeValidationString\x12?\n\x04rule\x18\x01 \x01(\x0e\x32\x31.products.v1.ProductAttributeStringValidationRule\x12\r\n\x05value\x18\x02 \x01(\x05\"J\n\x1fProductAttributeValidationRegex\x12\x0f\n\x07pattern\x18\x01 \x01(\t\x12\x16\n\x0e\x63\x61se_sensitive\x18\x02 \x01(\x08\"E\n\x11ProductCategories\x12\x30\n\ncategories\x18\x01 \x03(\x0b\x32\x1c.products.v1.ProductCategory\"?\n#ProductCategoryWithoutSubcategories\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"m\n%ProductCategoriesWithoutSubcategories\x12\x44\n\ncategories\x18\x01 \x03(\x0b\x32\x30.products.v1.ProductCategoryWithoutSubcategories*\xf1\x01\n%ProductAttributeNumericValidationRule\x12\x31\n-PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN\x10\x00\x12\x31\n-PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX\x10\x01\x12\x30\n,PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT\x10\x02\x12\x30\n,PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT\x10\x03*\x8a\x01\n$ProductAttributeStringValidationRule\x12\x30\n,PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN\x10\x00\x12\x30\n,PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX\x10\x01\x42\x80\x01\n\x1corg.megacommerce.products.v1B\x16ProductCategoriesProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$products/v1/product_categories.proto\x12\x0bproducts.v1\x1a\x1ashared/v1/validation.proto\"c\n\x0fProductCategory\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x36\n\rsubcategories\x18\x03 \x03(\x0b\x32\x1f.products.v1.ProductSubcategory\"\xd0\x01\n\x12ProductSubcategory\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x43\n\nattributes\x18\x03 \x03(\x0b\x32/.products.v1.ProductSubcategory.AttributesEntry\x1a[\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x37\n\x05value\x18\x02 \x01(\x0b\x32(.products.v1.ProductSubcategoryAttribute:\x02\x38\x01\"\xd1\x01\n\x1bProductSubcategoryAttribute\x12\x10\n\x08required\x18\x01 \x01(\x08\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x15\n\x08refrence\x18\x03 \x01(\tH\x00\x88\x01\x01\x12\x14\n\x0cstring_array\x18\x04 \x03(\t\x12\x18\n\x0bis_multiple\x18\x05 \x01(\x08H\x01\x88\x01\x01\x12.\n\nvalidation\x18\x06 \x01(\x0b\x32\x1a.shared.v1.ValidationFieldB\x0b\n\t_refrenceB\x0e\n\x0c_is_multiple\"E\n\x11ProductCategories\x12\x30\n\ncategories\x18\x01 \x03(\x0b\x32\x1c.products.v1.ProductCategory\"?\n#ProductCategoryWithoutSubcategories\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"m\n%ProductCategoriesWithoutSubcategories\x12\x44\n\ncategories\x18\x01 \x03(\x0b\x32\x30.products.v1.ProductCategoryWithoutSubcategoriesB\x80\x01\n\x1corg.megacommerce.products.v1B\x16ProductCategoriesProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,30 +35,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\034org.megacommerce.products.v1B\026ProductCategoriesProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\370\001\001'
   _globals['_PRODUCTSUBCATEGORY_ATTRIBUTESENTRY']._loaded_options = None
   _globals['_PRODUCTSUBCATEGORY_ATTRIBUTESENTRY']._serialized_options = b'8\001'
-  _globals['_PRODUCTATTRIBUTENUMERICVALIDATIONRULE']._serialized_start=1301
-  _globals['_PRODUCTATTRIBUTENUMERICVALIDATIONRULE']._serialized_end=1542
-  _globals['_PRODUCTATTRIBUTESTRINGVALIDATIONRULE']._serialized_start=1545
-  _globals['_PRODUCTATTRIBUTESTRINGVALIDATIONRULE']._serialized_end=1683
-  _globals['_PRODUCTCATEGORY']._serialized_start=53
-  _globals['_PRODUCTCATEGORY']._serialized_end=152
-  _globals['_PRODUCTSUBCATEGORY']._serialized_start=155
-  _globals['_PRODUCTSUBCATEGORY']._serialized_end=363
-  _globals['_PRODUCTSUBCATEGORY_ATTRIBUTESENTRY']._serialized_start=272
-  _globals['_PRODUCTSUBCATEGORY_ATTRIBUTESENTRY']._serialized_end=363
-  _globals['_PRODUCTSUBCATEGORYATTRIBUTE']._serialized_start=366
-  _globals['_PRODUCTSUBCATEGORYATTRIBUTE']._serialized_end=510
-  _globals['_PRODUCTATTRIBUTEVALIDATION']._serialized_start=513
-  _globals['_PRODUCTATTRIBUTEVALIDATION']._serialized_end=741
-  _globals['_PRODUCTATTRIBUTEVALIDATIONNUMERIC']._serialized_start=743
-  _globals['_PRODUCTATTRIBUTEVALIDATIONNUMERIC']._serialized_end=859
-  _globals['_PRODUCTATTRIBUTEVALIDATIONSTRING']._serialized_start=861
-  _globals['_PRODUCTATTRIBUTEVALIDATIONSTRING']._serialized_end=975
-  _globals['_PRODUCTATTRIBUTEVALIDATIONREGEX']._serialized_start=977
-  _globals['_PRODUCTATTRIBUTEVALIDATIONREGEX']._serialized_end=1051
-  _globals['_PRODUCTCATEGORIES']._serialized_start=1053
-  _globals['_PRODUCTCATEGORIES']._serialized_end=1122
-  _globals['_PRODUCTCATEGORYWITHOUTSUBCATEGORIES']._serialized_start=1124
-  _globals['_PRODUCTCATEGORYWITHOUTSUBCATEGORIES']._serialized_end=1187
-  _globals['_PRODUCTCATEGORIESWITHOUTSUBCATEGORIES']._serialized_start=1189
-  _globals['_PRODUCTCATEGORIESWITHOUTSUBCATEGORIES']._serialized_end=1298
+  _globals['_PRODUCTCATEGORY']._serialized_start=81
+  _globals['_PRODUCTCATEGORY']._serialized_end=180
+  _globals['_PRODUCTSUBCATEGORY']._serialized_start=183
+  _globals['_PRODUCTSUBCATEGORY']._serialized_end=391
+  _globals['_PRODUCTSUBCATEGORY_ATTRIBUTESENTRY']._serialized_start=300
+  _globals['_PRODUCTSUBCATEGORY_ATTRIBUTESENTRY']._serialized_end=391
+  _globals['_PRODUCTSUBCATEGORYATTRIBUTE']._serialized_start=394
+  _globals['_PRODUCTSUBCATEGORYATTRIBUTE']._serialized_end=603
+  _globals['_PRODUCTCATEGORIES']._serialized_start=605
+  _globals['_PRODUCTCATEGORIES']._serialized_end=674
+  _globals['_PRODUCTCATEGORYWITHOUTSUBCATEGORIES']._serialized_start=676
+  _globals['_PRODUCTCATEGORYWITHOUTSUBCATEGORIES']._serialized_end=739
+  _globals['_PRODUCTCATEGORIESWITHOUTSUBCATEGORIES']._serialized_start=741
+  _globals['_PRODUCTCATEGORIESWITHOUTSUBCATEGORIES']._serialized_end=850
 # @@protoc_insertion_point(module_scope)

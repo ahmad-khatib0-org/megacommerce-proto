@@ -2,12 +2,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
   let out_dir = "wrappers/proto-crate/src";
   std::fs::create_dir_all(out_dir)?;
 
-  // Verify googleapis exists
-  // let googleapis_path = "external_libs";
-  // if !std::path::Path::new(googleapis_path).exists() {
-  //   panic!("Google APIs protos not found. Please run:\n  mkdir -p external_libs && git clone --depth 1 https://github.com/googleapis/googleapis.git external_libs/googleapis");
-  // }
-
   let includes = &[
     "third_party/proto/envoyproxy/api", // Envoy protos
     "third_party/proto/googleapis",
@@ -35,6 +29,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         "shared/v1/attachment.proto",
         "shared/v1/struct.proto",
         "shared/v1/time.proto",
+        "shared/v1/validation.proto",
         "users/v1/users.proto",
         "users/v1/cache.proto",
         "users/v1/user.proto",

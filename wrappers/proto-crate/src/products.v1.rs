@@ -118,68 +118,30 @@ pub struct ProductSubcategory {
         ProductSubcategoryAttribute,
     >,
 }
-/// Top-level attribute with a typed validation oneof
+/// Top-level attribute with a typed validation
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductSubcategoryAttribute {
+    /// wither this attribute required or optional
     #[prost(bool, tag = "1")]
     pub required: bool,
+    /// input, select, tags ...
     #[prost(string, tag = "2")]
     pub r#type: ::prost::alloc::string::String,
-    #[prost(string, repeated, tag = "3")]
+    /// reference id to the attributes table (E.g weight is common for many products types,
+    /// so instead rewriting it each time, we store it in another table)
+    #[prost(string, optional, tag = "3")]
+    pub refrence: ::core::option::Option<::prost::alloc::string::String>,
+    /// for select type (E.g. \['white', 'black', ...\])
+    #[prost(string, repeated, tag = "4")]
     #[serde(default)]
     pub string_array: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
-    #[prost(message, optional, tag = "4")]
-    pub validation: ::core::option::Option<ProductAttributeValidation>,
-}
-/// Validation message with a oneof for typed rules
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ProductAttributeValidation {
-    #[prost(oneof = "product_attribute_validation::Rule", tags = "1, 2, 3")]
-    pub rule: ::core::option::Option<product_attribute_validation::Rule>,
-}
-/// Nested message and enum types in `ProductAttributeValidation`.
-pub mod product_attribute_validation {
-    #[derive(serde::Serialize, serde::Deserialize)]
-    #[derive(Clone, PartialEq, ::prost::Oneof)]
-    pub enum Rule {
-        #[prost(message, tag = "1")]
-        Numeric(super::ProductAttributeValidationNumeric),
-        #[prost(message, tag = "2")]
-        Str(super::ProductAttributeValidationString),
-        #[prost(message, tag = "3")]
-        Regex(super::ProductAttributeValidationRegex),
-    }
-}
-/// Numeric rule (min/max, etc.)
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
-pub struct ProductAttributeValidationNumeric {
-    #[prost(enumeration = "ProductAttributeNumericValidationRule", tag = "1")]
-    pub rule: i32,
-    /// numeric parameter (use double to accept int/float)
-    #[prost(double, tag = "2")]
-    pub value: f64,
-}
-/// String rule (min/max length)
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
-pub struct ProductAttributeValidationString {
-    #[prost(enumeration = "ProductAttributeStringValidationRule", tag = "1")]
-    pub rule: i32,
-    /// length or other integer parameter
-    #[prost(int32, tag = "2")]
-    pub value: i32,
-}
-/// Regex rule (pattern)
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ProductAttributeValidationRegex {
-    #[prost(string, tag = "1")]
-    pub pattern: ::prost::alloc::string::String,
-    #[prost(bool, tag = "2")]
-    pub case_sensitive: bool,
+    /// for select type (E.g. multiple colors)
+    #[prost(bool, optional, tag = "5")]
+    pub is_multiple: ::core::option::Option<bool>,
+    /// validation rules of this attribute
+    #[prost(message, optional, tag = "6")]
+    pub validation: ::core::option::Option<super::super::shared::v1::ValidationField>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -200,66 +162,6 @@ pub struct ProductCategoryWithoutSubcategories {
 pub struct ProductCategoriesWithoutSubcategories {
     #[prost(message, repeated, tag = "1")]
     pub categories: ::prost::alloc::vec::Vec<ProductCategoryWithoutSubcategories>,
-}
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
-#[repr(i32)]
-pub enum ProductAttributeNumericValidationRule {
-    Min = 0,
-    Max = 1,
-    Gt = 2,
-    Lt = 3,
-}
-impl ProductAttributeNumericValidationRule {
-    /// String value of the enum field names used in the ProtoBuf definition.
-    ///
-    /// The values are not transformed in any way and thus are considered stable
-    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
-    pub fn as_str_name(&self) -> &'static str {
-        match self {
-            Self::Min => "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN",
-            Self::Max => "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX",
-            Self::Gt => "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT",
-            Self::Lt => "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT",
-        }
-    }
-    /// Creates an enum from field names used in the ProtoBuf definition.
-    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
-        match value {
-            "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN" => Some(Self::Min),
-            "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX" => Some(Self::Max),
-            "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT" => Some(Self::Gt),
-            "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT" => Some(Self::Lt),
-            _ => None,
-        }
-    }
-}
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
-#[repr(i32)]
-pub enum ProductAttributeStringValidationRule {
-    Min = 0,
-    Max = 1,
-}
-impl ProductAttributeStringValidationRule {
-    /// String value of the enum field names used in the ProtoBuf definition.
-    ///
-    /// The values are not transformed in any way and thus are considered stable
-    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
-    pub fn as_str_name(&self) -> &'static str {
-        match self {
-            Self::Min => "PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN",
-            Self::Max => "PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX",
-        }
-    }
-    /// Creates an enum from field names used in the ProtoBuf definition.
-    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
-        match value {
-            "PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN" => Some(Self::Min),
-            "PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX" => Some(Self::Max),
-            _ => None,
-        }
-    }
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
