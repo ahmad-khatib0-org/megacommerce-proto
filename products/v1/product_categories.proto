@@ -19,6 +19,7 @@ message ProductSubcategory {
   map<string, ProductSubcategoryAttribute> attributes = 3;
 }
 
+// Top-level attribute with a typed validation oneof
 message ProductSubcategoryAttribute {
   bool required = 1;
   string type = 2;
@@ -26,34 +27,43 @@ message ProductSubcategoryAttribute {
   ProductAttributeValidation validation = 4;
 }
 
+// Validation message with a oneof for typed rules
 message ProductAttributeValidation {
-  ProductAttributeValidationType type = 1;
-  string value = 2; // can be integer, float, string ...
+  oneof rule {
+    ProductAttributeValidationNumeric numeric = 1;
+    ProductAttributeValidationString str = 2;
+    ProductAttributeValidationRegex regex = 3;
+  }
 }
 
-enum ProductAttributeValidationType {
-  PRODUCT_ATTRIBUTE_VALIDATION_TYPE_NUMERIC = 0;
-  PRODUCT_ATTRIBUTE_VALIDATION_TYPE_STRING = 1;
-}
-
+// Numeric rule (min/max, etc.)
 message ProductAttributeValidationNumeric {
   ProductAttributeNumericValidationRule rule = 1;
+  double value = 2; // numeric parameter (use double to accept int/float)
 }
 
 enum ProductAttributeNumericValidationRule {
   PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN = 0;
   PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX = 1;
-  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_BIGGER_THAN = 2;
-  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LESS_THAN = 3;
+  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT = 2;
+  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT = 3;
 }
 
+// String rule (min/max length)
 message ProductAttributeValidationString {
-  ProductAttributeNumericValidationRule rule = 1;
+  ProductAttributeStringValidationRule rule = 1;
+  int32 value = 2; // length or other integer parameter
 }
 
 enum ProductAttributeStringValidationRule {
   PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN = 0;
   PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MAX = 1;
+}
+
+// Regex rule (pattern)
+message ProductAttributeValidationRegex {
+  string pattern = 1;
+  bool case_sensitive = 2;
 }
 
 // not related to database

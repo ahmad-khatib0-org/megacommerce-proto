@@ -9,44 +9,11 @@ import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 
 export const protobufPackage = "products.v1";
 
-export enum ProductAttributeValidationType {
-  PRODUCT_ATTRIBUTE_VALIDATION_TYPE_NUMERIC = 0,
-  PRODUCT_ATTRIBUTE_VALIDATION_TYPE_STRING = 1,
-  UNRECOGNIZED = -1,
-}
-
-export function productAttributeValidationTypeFromJSON(object: any): ProductAttributeValidationType {
-  switch (object) {
-    case 0:
-    case "PRODUCT_ATTRIBUTE_VALIDATION_TYPE_NUMERIC":
-      return ProductAttributeValidationType.PRODUCT_ATTRIBUTE_VALIDATION_TYPE_NUMERIC;
-    case 1:
-    case "PRODUCT_ATTRIBUTE_VALIDATION_TYPE_STRING":
-      return ProductAttributeValidationType.PRODUCT_ATTRIBUTE_VALIDATION_TYPE_STRING;
-    case -1:
-    case "UNRECOGNIZED":
-    default:
-      return ProductAttributeValidationType.UNRECOGNIZED;
-  }
-}
-
-export function productAttributeValidationTypeToJSON(object: ProductAttributeValidationType): string {
-  switch (object) {
-    case ProductAttributeValidationType.PRODUCT_ATTRIBUTE_VALIDATION_TYPE_NUMERIC:
-      return "PRODUCT_ATTRIBUTE_VALIDATION_TYPE_NUMERIC";
-    case ProductAttributeValidationType.PRODUCT_ATTRIBUTE_VALIDATION_TYPE_STRING:
-      return "PRODUCT_ATTRIBUTE_VALIDATION_TYPE_STRING";
-    case ProductAttributeValidationType.UNRECOGNIZED:
-    default:
-      return "UNRECOGNIZED";
-  }
-}
-
 export enum ProductAttributeNumericValidationRule {
   PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN = 0,
   PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX = 1,
-  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_BIGGER_THAN = 2,
-  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LESS_THAN = 3,
+  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT = 2,
+  PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT = 3,
   UNRECOGNIZED = -1,
 }
 
@@ -59,11 +26,11 @@ export function productAttributeNumericValidationRuleFromJSON(object: any): Prod
     case "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX":
       return ProductAttributeNumericValidationRule.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX;
     case 2:
-    case "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_BIGGER_THAN":
-      return ProductAttributeNumericValidationRule.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_BIGGER_THAN;
+    case "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT":
+      return ProductAttributeNumericValidationRule.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT;
     case 3:
-    case "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LESS_THAN":
-      return ProductAttributeNumericValidationRule.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LESS_THAN;
+    case "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT":
+      return ProductAttributeNumericValidationRule.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT;
     case -1:
     case "UNRECOGNIZED":
     default:
@@ -77,10 +44,10 @@ export function productAttributeNumericValidationRuleToJSON(object: ProductAttri
       return "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN";
     case ProductAttributeNumericValidationRule.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX:
       return "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX";
-    case ProductAttributeNumericValidationRule.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_BIGGER_THAN:
-      return "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_BIGGER_THAN";
-    case ProductAttributeNumericValidationRule.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LESS_THAN:
-      return "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LESS_THAN";
+    case ProductAttributeNumericValidationRule.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT:
+      return "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT";
+    case ProductAttributeNumericValidationRule.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT:
+      return "PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT";
     case ProductAttributeNumericValidationRule.UNRECOGNIZED:
     default:
       return "UNRECOGNIZED";
@@ -137,6 +104,7 @@ export interface ProductSubcategory_AttributesEntry {
   value?: ProductSubcategoryAttribute | undefined;
 }
 
+/** Top-level attribute with a typed validation oneof */
 export interface ProductSubcategoryAttribute {
   required: boolean;
   type: string;
@@ -144,18 +112,31 @@ export interface ProductSubcategoryAttribute {
   validation?: ProductAttributeValidation | undefined;
 }
 
+/** Validation message with a oneof for typed rules */
 export interface ProductAttributeValidation {
-  type: ProductAttributeValidationType;
-  /** can be integer, float, string ... */
-  value: string;
+  numeric?: ProductAttributeValidationNumeric | undefined;
+  str?: ProductAttributeValidationString | undefined;
+  regex?: ProductAttributeValidationRegex | undefined;
 }
 
+/** Numeric rule (min/max, etc.) */
 export interface ProductAttributeValidationNumeric {
   rule: ProductAttributeNumericValidationRule;
+  /** numeric parameter (use double to accept int/float) */
+  value: number;
 }
 
+/** String rule (min/max length) */
 export interface ProductAttributeValidationString {
-  rule: ProductAttributeNumericValidationRule;
+  rule: ProductAttributeStringValidationRule;
+  /** length or other integer parameter */
+  value: number;
+}
+
+/** Regex rule (pattern) */
+export interface ProductAttributeValidationRegex {
+  pattern: string;
+  caseSensitive: boolean;
 }
 
 export interface ProductCategories {
@@ -577,16 +558,19 @@ export const ProductSubcategoryAttribute: MessageFns<ProductSubcategoryAttribute
 };
 
 function createBaseProductAttributeValidation(): ProductAttributeValidation {
-  return { type: 0, value: "" };
+  return { numeric: undefined, str: undefined, regex: undefined };
 }
 
 export const ProductAttributeValidation: MessageFns<ProductAttributeValidation> = {
   encode(message: ProductAttributeValidation, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.type !== 0) {
-      writer.uint32(8).int32(message.type);
+    if (message.numeric !== undefined) {
+      ProductAttributeValidationNumeric.encode(message.numeric, writer.uint32(10).fork()).join();
     }
-    if (message.value !== "") {
-      writer.uint32(18).string(message.value);
+    if (message.str !== undefined) {
+      ProductAttributeValidationString.encode(message.str, writer.uint32(18).fork()).join();
+    }
+    if (message.regex !== undefined) {
+      ProductAttributeValidationRegex.encode(message.regex, writer.uint32(26).fork()).join();
     }
     return writer;
   },
@@ -599,11 +583,11 @@ export const ProductAttributeValidation: MessageFns<ProductAttributeValidation> 
       const tag = reader.uint32();
       switch (tag >>> 3) {
         case 1: {
-          if (tag !== 8) {
+          if (tag !== 10) {
             break;
           }
 
-          message.type = reader.int32() as any;
+          message.numeric = ProductAttributeValidationNumeric.decode(reader, reader.uint32());
           continue;
         }
         case 2: {
@@ -611,7 +595,15 @@ export const ProductAttributeValidation: MessageFns<ProductAttributeValidation> 
             break;
           }
 
-          message.value = reader.string();
+          message.str = ProductAttributeValidationString.decode(reader, reader.uint32());
+          continue;
+        }
+        case 3: {
+          if (tag !== 26) {
+            break;
+          }
+
+          message.regex = ProductAttributeValidationRegex.decode(reader, reader.uint32());
           continue;
         }
       }
@@ -625,18 +617,22 @@ export const ProductAttributeValidation: MessageFns<ProductAttributeValidation> 
 
   fromJSON(object: any): ProductAttributeValidation {
     return {
-      type: isSet(object.type) ? productAttributeValidationTypeFromJSON(object.type) : 0,
-      value: isSet(object.value) ? globalThis.String(object.value) : "",
+      numeric: isSet(object.numeric) ? ProductAttributeValidationNumeric.fromJSON(object.numeric) : undefined,
+      str: isSet(object.str) ? ProductAttributeValidationString.fromJSON(object.str) : undefined,
+      regex: isSet(object.regex) ? ProductAttributeValidationRegex.fromJSON(object.regex) : undefined,
     };
   },
 
   toJSON(message: ProductAttributeValidation): unknown {
     const obj: any = {};
-    if (message.type !== 0) {
-      obj.type = productAttributeValidationTypeToJSON(message.type);
+    if (message.numeric !== undefined) {
+      obj.numeric = ProductAttributeValidationNumeric.toJSON(message.numeric);
     }
-    if (message.value !== "") {
-      obj.value = message.value;
+    if (message.str !== undefined) {
+      obj.str = ProductAttributeValidationString.toJSON(message.str);
+    }
+    if (message.regex !== undefined) {
+      obj.regex = ProductAttributeValidationRegex.toJSON(message.regex);
     }
     return obj;
   },
@@ -646,20 +642,30 @@ export const ProductAttributeValidation: MessageFns<ProductAttributeValidation> 
   },
   fromPartial<I extends Exact<DeepPartial<ProductAttributeValidation>, I>>(object: I): ProductAttributeValidation {
     const message = createBaseProductAttributeValidation();
-    message.type = object.type ?? 0;
-    message.value = object.value ?? "";
+    message.numeric = (object.numeric !== undefined && object.numeric !== null)
+      ? ProductAttributeValidationNumeric.fromPartial(object.numeric)
+      : undefined;
+    message.str = (object.str !== undefined && object.str !== null)
+      ? ProductAttributeValidationString.fromPartial(object.str)
+      : undefined;
+    message.regex = (object.regex !== undefined && object.regex !== null)
+      ? ProductAttributeValidationRegex.fromPartial(object.regex)
+      : undefined;
     return message;
   },
 };
 
 function createBaseProductAttributeValidationNumeric(): ProductAttributeValidationNumeric {
-  return { rule: 0 };
+  return { rule: 0, value: 0 };
 }
 
 export const ProductAttributeValidationNumeric: MessageFns<ProductAttributeValidationNumeric> = {
   encode(message: ProductAttributeValidationNumeric, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.rule !== 0) {
       writer.uint32(8).int32(message.rule);
+    }
+    if (message.value !== 0) {
+      writer.uint32(17).double(message.value);
     }
     return writer;
   },
@@ -679,6 +685,14 @@ export const ProductAttributeValidationNumeric: MessageFns<ProductAttributeValid
           message.rule = reader.int32() as any;
           continue;
         }
+        case 2: {
+          if (tag !== 17) {
+            break;
+          }
+
+          message.value = reader.double();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -689,13 +703,19 @@ export const ProductAttributeValidationNumeric: MessageFns<ProductAttributeValid
   },
 
   fromJSON(object: any): ProductAttributeValidationNumeric {
-    return { rule: isSet(object.rule) ? productAttributeNumericValidationRuleFromJSON(object.rule) : 0 };
+    return {
+      rule: isSet(object.rule) ? productAttributeNumericValidationRuleFromJSON(object.rule) : 0,
+      value: isSet(object.value) ? globalThis.Number(object.value) : 0,
+    };
   },
 
   toJSON(message: ProductAttributeValidationNumeric): unknown {
     const obj: any = {};
     if (message.rule !== 0) {
       obj.rule = productAttributeNumericValidationRuleToJSON(message.rule);
+    }
+    if (message.value !== 0) {
+      obj.value = message.value;
     }
     return obj;
   },
@@ -710,18 +730,22 @@ export const ProductAttributeValidationNumeric: MessageFns<ProductAttributeValid
   ): ProductAttributeValidationNumeric {
     const message = createBaseProductAttributeValidationNumeric();
     message.rule = object.rule ?? 0;
+    message.value = object.value ?? 0;
     return message;
   },
 };
 
 function createBaseProductAttributeValidationString(): ProductAttributeValidationString {
-  return { rule: 0 };
+  return { rule: 0, value: 0 };
 }
 
 export const ProductAttributeValidationString: MessageFns<ProductAttributeValidationString> = {
   encode(message: ProductAttributeValidationString, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.rule !== 0) {
       writer.uint32(8).int32(message.rule);
+    }
+    if (message.value !== 0) {
+      writer.uint32(16).int32(message.value);
     }
     return writer;
   },
@@ -741,6 +765,14 @@ export const ProductAttributeValidationString: MessageFns<ProductAttributeValida
           message.rule = reader.int32() as any;
           continue;
         }
+        case 2: {
+          if (tag !== 16) {
+            break;
+          }
+
+          message.value = reader.int32();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -751,13 +783,19 @@ export const ProductAttributeValidationString: MessageFns<ProductAttributeValida
   },
 
   fromJSON(object: any): ProductAttributeValidationString {
-    return { rule: isSet(object.rule) ? productAttributeNumericValidationRuleFromJSON(object.rule) : 0 };
+    return {
+      rule: isSet(object.rule) ? productAttributeStringValidationRuleFromJSON(object.rule) : 0,
+      value: isSet(object.value) ? globalThis.Number(object.value) : 0,
+    };
   },
 
   toJSON(message: ProductAttributeValidationString): unknown {
     const obj: any = {};
     if (message.rule !== 0) {
-      obj.rule = productAttributeNumericValidationRuleToJSON(message.rule);
+      obj.rule = productAttributeStringValidationRuleToJSON(message.rule);
+    }
+    if (message.value !== 0) {
+      obj.value = Math.round(message.value);
     }
     return obj;
   },
@@ -772,6 +810,85 @@ export const ProductAttributeValidationString: MessageFns<ProductAttributeValida
   ): ProductAttributeValidationString {
     const message = createBaseProductAttributeValidationString();
     message.rule = object.rule ?? 0;
+    message.value = object.value ?? 0;
+    return message;
+  },
+};
+
+function createBaseProductAttributeValidationRegex(): ProductAttributeValidationRegex {
+  return { pattern: "", caseSensitive: false };
+}
+
+export const ProductAttributeValidationRegex: MessageFns<ProductAttributeValidationRegex> = {
+  encode(message: ProductAttributeValidationRegex, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.pattern !== "") {
+      writer.uint32(10).string(message.pattern);
+    }
+    if (message.caseSensitive !== false) {
+      writer.uint32(16).bool(message.caseSensitive);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductAttributeValidationRegex {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductAttributeValidationRegex();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.pattern = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 16) {
+            break;
+          }
+
+          message.caseSensitive = reader.bool();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductAttributeValidationRegex {
+    return {
+      pattern: isSet(object.pattern) ? globalThis.String(object.pattern) : "",
+      caseSensitive: isSet(object.caseSensitive) ? globalThis.Boolean(object.caseSensitive) : false,
+    };
+  },
+
+  toJSON(message: ProductAttributeValidationRegex): unknown {
+    const obj: any = {};
+    if (message.pattern !== "") {
+      obj.pattern = message.pattern;
+    }
+    if (message.caseSensitive !== false) {
+      obj.caseSensitive = message.caseSensitive;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductAttributeValidationRegex>, I>>(base?: I): ProductAttributeValidationRegex {
+    return ProductAttributeValidationRegex.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductAttributeValidationRegex>, I>>(
+    object: I,
+  ): ProductAttributeValidationRegex {
+    const message = createBaseProductAttributeValidationRegex();
+    message.pattern = object.pattern ?? "";
+    message.caseSensitive = object.caseSensitive ?? false;
     return message;
   },
 };

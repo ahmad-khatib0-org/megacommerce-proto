@@ -27,123 +27,6 @@ public final class ProductCategoriesProto {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   /**
-   * Protobuf enum {@code products.v1.ProductAttributeValidationType}
-   */
-  public enum ProductAttributeValidationType
-      implements com.google.protobuf.ProtocolMessageEnum {
-    /**
-     * <code>PRODUCT_ATTRIBUTE_VALIDATION_TYPE_NUMERIC = 0;</code>
-     */
-    PRODUCT_ATTRIBUTE_VALIDATION_TYPE_NUMERIC(0),
-    /**
-     * <code>PRODUCT_ATTRIBUTE_VALIDATION_TYPE_STRING = 1;</code>
-     */
-    PRODUCT_ATTRIBUTE_VALIDATION_TYPE_STRING(1),
-    UNRECOGNIZED(-1),
-    ;
-
-    static {
-      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
-        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
-        /* major= */ 4,
-        /* minor= */ 31,
-        /* patch= */ 1,
-        /* suffix= */ "",
-        ProductAttributeValidationType.class.getName());
-    }
-    /**
-     * <code>PRODUCT_ATTRIBUTE_VALIDATION_TYPE_NUMERIC = 0;</code>
-     */
-    public static final int PRODUCT_ATTRIBUTE_VALIDATION_TYPE_NUMERIC_VALUE = 0;
-    /**
-     * <code>PRODUCT_ATTRIBUTE_VALIDATION_TYPE_STRING = 1;</code>
-     */
-    public static final int PRODUCT_ATTRIBUTE_VALIDATION_TYPE_STRING_VALUE = 1;
-
-
-    public final int getNumber() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalArgumentException(
-            "Can't get the number of an unknown enum value.");
-      }
-      return value;
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static ProductAttributeValidationType valueOf(int value) {
-      return forNumber(value);
-    }
-
-    /**
-     * @param value The numeric wire value of the corresponding enum entry.
-     * @return The enum associated with the given numeric wire value.
-     */
-    public static ProductAttributeValidationType forNumber(int value) {
-      switch (value) {
-        case 0: return PRODUCT_ATTRIBUTE_VALIDATION_TYPE_NUMERIC;
-        case 1: return PRODUCT_ATTRIBUTE_VALIDATION_TYPE_STRING;
-        default: return null;
-      }
-    }
-
-    public static com.google.protobuf.Internal.EnumLiteMap<ProductAttributeValidationType>
-        internalGetValueMap() {
-      return internalValueMap;
-    }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        ProductAttributeValidationType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<ProductAttributeValidationType>() {
-            public ProductAttributeValidationType findValueByNumber(int number) {
-              return ProductAttributeValidationType.forNumber(number);
-            }
-          };
-
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
-      if (this == UNRECOGNIZED) {
-        throw new java.lang.IllegalStateException(
-            "Can't get the descriptor of an unrecognized enum value.");
-      }
-      return getDescriptor().getValues().get(ordinal());
-    }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
-      return getDescriptor();
-    }
-    public static com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return org.megacommerce.products.v1.ProductCategoriesProto.getDescriptor().getEnumTypes().get(0);
-    }
-
-    private static final ProductAttributeValidationType[] VALUES = values();
-
-    public static ProductAttributeValidationType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-      if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
-      }
-      if (desc.getIndex() == -1) {
-        return UNRECOGNIZED;
-      }
-      return VALUES[desc.getIndex()];
-    }
-
-    private final int value;
-
-    private ProductAttributeValidationType(int value) {
-      this.value = value;
-    }
-
-    // @@protoc_insertion_point(enum_scope:products.v1.ProductAttributeValidationType)
-  }
-
-  /**
    * Protobuf enum {@code products.v1.ProductAttributeNumericValidationRule}
    */
   public enum ProductAttributeNumericValidationRule
@@ -157,13 +40,13 @@ public final class ProductCategoriesProto {
      */
     PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX(1),
     /**
-     * <code>PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_BIGGER_THAN = 2;</code>
+     * <code>PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT = 2;</code>
      */
-    PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_BIGGER_THAN(2),
+    PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT(2),
     /**
-     * <code>PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LESS_THAN = 3;</code>
+     * <code>PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT = 3;</code>
      */
-    PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LESS_THAN(3),
+    PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -185,13 +68,13 @@ public final class ProductCategoriesProto {
      */
     public static final int PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX_VALUE = 1;
     /**
-     * <code>PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_BIGGER_THAN = 2;</code>
+     * <code>PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT = 2;</code>
      */
-    public static final int PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_BIGGER_THAN_VALUE = 2;
+    public static final int PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT_VALUE = 2;
     /**
-     * <code>PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LESS_THAN = 3;</code>
+     * <code>PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT = 3;</code>
      */
-    public static final int PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LESS_THAN_VALUE = 3;
+    public static final int PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT_VALUE = 3;
 
 
     public final int getNumber() {
@@ -220,8 +103,8 @@ public final class ProductCategoriesProto {
       switch (value) {
         case 0: return PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN;
         case 1: return PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MAX;
-        case 2: return PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_BIGGER_THAN;
-        case 3: return PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LESS_THAN;
+        case 2: return PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_GT;
+        case 3: return PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_LT;
         default: return null;
       }
     }
@@ -252,7 +135,7 @@ public final class ProductCategoriesProto {
     }
     public static com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return org.megacommerce.products.v1.ProductCategoriesProto.getDescriptor().getEnumTypes().get(1);
+      return org.megacommerce.products.v1.ProductCategoriesProto.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final ProductAttributeNumericValidationRule[] VALUES = values();
@@ -369,7 +252,7 @@ public final class ProductCategoriesProto {
     }
     public static com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return org.megacommerce.products.v1.ProductCategoriesProto.getDescriptor().getEnumTypes().get(2);
+      return org.megacommerce.products.v1.ProductCategoriesProto.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final ProductAttributeStringValidationRule[] VALUES = values();
@@ -2492,6 +2375,10 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
     org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationOrBuilder getValidationOrBuilder();
   }
   /**
+   * <pre>
+   * Top-level attribute with a typed validation oneof
+   * </pre>
+   *
    * Protobuf type {@code products.v1.ProductSubcategoryAttribute}
    */
   public static final class ProductSubcategoryAttribute extends
@@ -2847,6 +2734,10 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       return builder;
     }
     /**
+     * <pre>
+     * Top-level attribute with a typed validation oneof
+     * </pre>
+     *
      * Protobuf type {@code products.v1.ProductSubcategoryAttribute}
      */
     public static final class Builder extends
@@ -3439,37 +3330,57 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.products.v1.ProductAttributeValidationType type = 1 [json_name = "type"];</code>
-     * @return The enum numeric value on the wire for type.
+     * <code>.products.v1.ProductAttributeValidationNumeric numeric = 1 [json_name = "numeric"];</code>
+     * @return Whether the numeric field is set.
      */
-    int getTypeValue();
+    boolean hasNumeric();
     /**
-     * <code>.products.v1.ProductAttributeValidationType type = 1 [json_name = "type"];</code>
-     * @return The type.
+     * <code>.products.v1.ProductAttributeValidationNumeric numeric = 1 [json_name = "numeric"];</code>
+     * @return The numeric.
      */
-    org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationType getType();
+    org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric getNumeric();
+    /**
+     * <code>.products.v1.ProductAttributeValidationNumeric numeric = 1 [json_name = "numeric"];</code>
+     */
+    org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumericOrBuilder getNumericOrBuilder();
 
     /**
-     * <pre>
-     * can be integer, float, string ...
-     * </pre>
-     *
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The value.
+     * <code>.products.v1.ProductAttributeValidationString str = 2 [json_name = "str"];</code>
+     * @return Whether the str field is set.
      */
-    java.lang.String getValue();
+    boolean hasStr();
     /**
-     * <pre>
-     * can be integer, float, string ...
-     * </pre>
-     *
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The bytes for value.
+     * <code>.products.v1.ProductAttributeValidationString str = 2 [json_name = "str"];</code>
+     * @return The str.
      */
-    com.google.protobuf.ByteString
-        getValueBytes();
+    org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString getStr();
+    /**
+     * <code>.products.v1.ProductAttributeValidationString str = 2 [json_name = "str"];</code>
+     */
+    org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationStringOrBuilder getStrOrBuilder();
+
+    /**
+     * <code>.products.v1.ProductAttributeValidationRegex regex = 3 [json_name = "regex"];</code>
+     * @return Whether the regex field is set.
+     */
+    boolean hasRegex();
+    /**
+     * <code>.products.v1.ProductAttributeValidationRegex regex = 3 [json_name = "regex"];</code>
+     * @return The regex.
+     */
+    org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex getRegex();
+    /**
+     * <code>.products.v1.ProductAttributeValidationRegex regex = 3 [json_name = "regex"];</code>
+     */
+    org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegexOrBuilder getRegexOrBuilder();
+
+    org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidation.RuleCase getRuleCase();
   }
   /**
+   * <pre>
+   * Validation message with a oneof for typed rules
+   * </pre>
+   *
    * Protobuf type {@code products.v1.ProductAttributeValidation}
    */
   public static final class ProductAttributeValidation extends
@@ -3491,8 +3402,6 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       super(builder);
     }
     private ProductAttributeValidation() {
-      type_ = 0;
-      value_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -3508,69 +3417,141 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
               org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidation.class, org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidation.Builder.class);
     }
 
-    public static final int TYPE_FIELD_NUMBER = 1;
-    private int type_ = 0;
-    /**
-     * <code>.products.v1.ProductAttributeValidationType type = 1 [json_name = "type"];</code>
-     * @return The enum numeric value on the wire for type.
-     */
-    @java.lang.Override public int getTypeValue() {
-      return type_;
-    }
-    /**
-     * <code>.products.v1.ProductAttributeValidationType type = 1 [json_name = "type"];</code>
-     * @return The type.
-     */
-    @java.lang.Override public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationType getType() {
-      org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationType result = org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationType.forNumber(type_);
-      return result == null ? org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationType.UNRECOGNIZED : result;
+    private int ruleCase_ = 0;
+    @SuppressWarnings("serial")
+    private java.lang.Object rule_;
+    public enum RuleCase
+        implements com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      NUMERIC(1),
+      STR(2),
+      REGEX(3),
+      RULE_NOT_SET(0);
+      private final int value;
+      private RuleCase(int value) {
+        this.value = value;
+      }
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static RuleCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static RuleCase forNumber(int value) {
+        switch (value) {
+          case 1: return NUMERIC;
+          case 2: return STR;
+          case 3: return REGEX;
+          case 0: return RULE_NOT_SET;
+          default: return null;
+        }
+      }
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public RuleCase
+    getRuleCase() {
+      return RuleCase.forNumber(
+          ruleCase_);
     }
 
-    public static final int VALUE_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object value_ = "";
+    public static final int NUMERIC_FIELD_NUMBER = 1;
     /**
-     * <pre>
-     * can be integer, float, string ...
-     * </pre>
-     *
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The value.
+     * <code>.products.v1.ProductAttributeValidationNumeric numeric = 1 [json_name = "numeric"];</code>
+     * @return Whether the numeric field is set.
      */
     @java.lang.Override
-    public java.lang.String getValue() {
-      java.lang.Object ref = value_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        value_ = s;
-        return s;
-      }
+    public boolean hasNumeric() {
+      return ruleCase_ == 1;
     }
     /**
-     * <pre>
-     * can be integer, float, string ...
-     * </pre>
-     *
-     * <code>string value = 2 [json_name = "value"];</code>
-     * @return The bytes for value.
+     * <code>.products.v1.ProductAttributeValidationNumeric numeric = 1 [json_name = "numeric"];</code>
+     * @return The numeric.
      */
     @java.lang.Override
-    public com.google.protobuf.ByteString
-        getValueBytes() {
-      java.lang.Object ref = value_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        value_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
+    public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric getNumeric() {
+      if (ruleCase_ == 1) {
+         return (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric) rule_;
       }
+      return org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric.getDefaultInstance();
+    }
+    /**
+     * <code>.products.v1.ProductAttributeValidationNumeric numeric = 1 [json_name = "numeric"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumericOrBuilder getNumericOrBuilder() {
+      if (ruleCase_ == 1) {
+         return (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric) rule_;
+      }
+      return org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric.getDefaultInstance();
+    }
+
+    public static final int STR_FIELD_NUMBER = 2;
+    /**
+     * <code>.products.v1.ProductAttributeValidationString str = 2 [json_name = "str"];</code>
+     * @return Whether the str field is set.
+     */
+    @java.lang.Override
+    public boolean hasStr() {
+      return ruleCase_ == 2;
+    }
+    /**
+     * <code>.products.v1.ProductAttributeValidationString str = 2 [json_name = "str"];</code>
+     * @return The str.
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString getStr() {
+      if (ruleCase_ == 2) {
+         return (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString) rule_;
+      }
+      return org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString.getDefaultInstance();
+    }
+    /**
+     * <code>.products.v1.ProductAttributeValidationString str = 2 [json_name = "str"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationStringOrBuilder getStrOrBuilder() {
+      if (ruleCase_ == 2) {
+         return (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString) rule_;
+      }
+      return org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString.getDefaultInstance();
+    }
+
+    public static final int REGEX_FIELD_NUMBER = 3;
+    /**
+     * <code>.products.v1.ProductAttributeValidationRegex regex = 3 [json_name = "regex"];</code>
+     * @return Whether the regex field is set.
+     */
+    @java.lang.Override
+    public boolean hasRegex() {
+      return ruleCase_ == 3;
+    }
+    /**
+     * <code>.products.v1.ProductAttributeValidationRegex regex = 3 [json_name = "regex"];</code>
+     * @return The regex.
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex getRegex() {
+      if (ruleCase_ == 3) {
+         return (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex) rule_;
+      }
+      return org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex.getDefaultInstance();
+    }
+    /**
+     * <code>.products.v1.ProductAttributeValidationRegex regex = 3 [json_name = "regex"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegexOrBuilder getRegexOrBuilder() {
+      if (ruleCase_ == 3) {
+         return (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex) rule_;
+      }
+      return org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3587,11 +3568,14 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (type_ != org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationType.PRODUCT_ATTRIBUTE_VALIDATION_TYPE_NUMERIC.getNumber()) {
-        output.writeEnum(1, type_);
+      if (ruleCase_ == 1) {
+        output.writeMessage(1, (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric) rule_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(value_)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 2, value_);
+      if (ruleCase_ == 2) {
+        output.writeMessage(2, (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString) rule_);
+      }
+      if (ruleCase_ == 3) {
+        output.writeMessage(3, (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex) rule_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -3602,12 +3586,17 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       if (size != -1) return size;
 
       size = 0;
-      if (type_ != org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationType.PRODUCT_ATTRIBUTE_VALIDATION_TYPE_NUMERIC.getNumber()) {
+      if (ruleCase_ == 1) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(1, type_);
+          .computeMessageSize(1, (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric) rule_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(value_)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, value_);
+      if (ruleCase_ == 2) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString) rule_);
+      }
+      if (ruleCase_ == 3) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex) rule_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3624,9 +3613,23 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       }
       org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidation other = (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidation) obj;
 
-      if (type_ != other.type_) return false;
-      if (!getValue()
-          .equals(other.getValue())) return false;
+      if (!getRuleCase().equals(other.getRuleCase())) return false;
+      switch (ruleCase_) {
+        case 1:
+          if (!getNumeric()
+              .equals(other.getNumeric())) return false;
+          break;
+        case 2:
+          if (!getStr()
+              .equals(other.getStr())) return false;
+          break;
+        case 3:
+          if (!getRegex()
+              .equals(other.getRegex())) return false;
+          break;
+        case 0:
+        default:
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3638,10 +3641,22 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + type_;
-      hash = (37 * hash) + VALUE_FIELD_NUMBER;
-      hash = (53 * hash) + getValue().hashCode();
+      switch (ruleCase_) {
+        case 1:
+          hash = (37 * hash) + NUMERIC_FIELD_NUMBER;
+          hash = (53 * hash) + getNumeric().hashCode();
+          break;
+        case 2:
+          hash = (37 * hash) + STR_FIELD_NUMBER;
+          hash = (53 * hash) + getStr().hashCode();
+          break;
+        case 3:
+          hash = (37 * hash) + REGEX_FIELD_NUMBER;
+          hash = (53 * hash) + getRegex().hashCode();
+          break;
+        case 0:
+        default:
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -3740,6 +3755,10 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       return builder;
     }
     /**
+     * <pre>
+     * Validation message with a oneof for typed rules
+     * </pre>
+     *
      * Protobuf type {@code products.v1.ProductAttributeValidation}
      */
     public static final class Builder extends
@@ -3773,8 +3792,17 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        type_ = 0;
-        value_ = "";
+        if (numericBuilder_ != null) {
+          numericBuilder_.clear();
+        }
+        if (strBuilder_ != null) {
+          strBuilder_.clear();
+        }
+        if (regexBuilder_ != null) {
+          regexBuilder_.clear();
+        }
+        ruleCase_ = 0;
+        rule_ = null;
         return this;
       }
 
@@ -3802,17 +3830,29 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidation buildPartial() {
         org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidation result = new org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidation(this);
         if (bitField0_ != 0) { buildPartial0(result); }
+        buildPartialOneofs(result);
         onBuilt();
         return result;
       }
 
       private void buildPartial0(org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidation result) {
         int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.type_ = type_;
+      }
+
+      private void buildPartialOneofs(org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidation result) {
+        result.ruleCase_ = ruleCase_;
+        result.rule_ = this.rule_;
+        if (ruleCase_ == 1 &&
+            numericBuilder_ != null) {
+          result.rule_ = numericBuilder_.build();
         }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.value_ = value_;
+        if (ruleCase_ == 2 &&
+            strBuilder_ != null) {
+          result.rule_ = strBuilder_.build();
+        }
+        if (ruleCase_ == 3 &&
+            regexBuilder_ != null) {
+          result.rule_ = regexBuilder_.build();
         }
       }
 
@@ -3828,13 +3868,22 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
 
       public Builder mergeFrom(org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidation other) {
         if (other == org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidation.getDefaultInstance()) return this;
-        if (other.type_ != 0) {
-          setTypeValue(other.getTypeValue());
-        }
-        if (!other.getValue().isEmpty()) {
-          value_ = other.value_;
-          bitField0_ |= 0x00000002;
-          onChanged();
+        switch (other.getRuleCase()) {
+          case NUMERIC: {
+            mergeNumeric(other.getNumeric());
+            break;
+          }
+          case STR: {
+            mergeStr(other.getStr());
+            break;
+          }
+          case REGEX: {
+            mergeRegex(other.getRegex());
+            break;
+          }
+          case RULE_NOT_SET: {
+            break;
+          }
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -3862,16 +3911,27 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
               case 0:
                 done = true;
                 break;
-              case 8: {
-                type_ = input.readEnum();
-                bitField0_ |= 0x00000001;
+              case 10: {
+                input.readMessage(
+                    internalGetNumericFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                ruleCase_ = 1;
                 break;
-              } // case 8
+              } // case 10
               case 18: {
-                value_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                input.readMessage(
+                    internalGetStrFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                ruleCase_ = 2;
                 break;
               } // case 18
+              case 26: {
+                input.readMessage(
+                    internalGetRegexFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                ruleCase_ = 3;
+                break;
+              } // case 26
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3887,149 +3947,447 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         } // finally
         return this;
       }
+      private int ruleCase_ = 0;
+      private java.lang.Object rule_;
+      public RuleCase
+          getRuleCase() {
+        return RuleCase.forNumber(
+            ruleCase_);
+      }
+
+      public Builder clearRule() {
+        ruleCase_ = 0;
+        rule_ = null;
+        onChanged();
+        return this;
+      }
+
       private int bitField0_;
 
-      private int type_ = 0;
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric, org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumericOrBuilder> numericBuilder_;
       /**
-       * <code>.products.v1.ProductAttributeValidationType type = 1 [json_name = "type"];</code>
-       * @return The enum numeric value on the wire for type.
-       */
-      @java.lang.Override public int getTypeValue() {
-        return type_;
-      }
-      /**
-       * <code>.products.v1.ProductAttributeValidationType type = 1 [json_name = "type"];</code>
-       * @param value The enum numeric value on the wire for type to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTypeValue(int value) {
-        type_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.products.v1.ProductAttributeValidationType type = 1 [json_name = "type"];</code>
-       * @return The type.
+       * <code>.products.v1.ProductAttributeValidationNumeric numeric = 1 [json_name = "numeric"];</code>
+       * @return Whether the numeric field is set.
        */
       @java.lang.Override
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationType getType() {
-        org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationType result = org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationType.forNumber(type_);
-        return result == null ? org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationType.UNRECOGNIZED : result;
+      public boolean hasNumeric() {
+        return ruleCase_ == 1;
       }
       /**
-       * <code>.products.v1.ProductAttributeValidationType type = 1 [json_name = "type"];</code>
-       * @param value The type to set.
-       * @return This builder for chaining.
+       * <code>.products.v1.ProductAttributeValidationNumeric numeric = 1 [json_name = "numeric"];</code>
+       * @return The numeric.
        */
-      public Builder setType(org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationType value) {
-        if (value == null) { throw new NullPointerException(); }
-        bitField0_ |= 0x00000001;
-        type_ = value.getNumber();
-        onChanged();
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric getNumeric() {
+        if (numericBuilder_ == null) {
+          if (ruleCase_ == 1) {
+            return (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric) rule_;
+          }
+          return org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric.getDefaultInstance();
+        } else {
+          if (ruleCase_ == 1) {
+            return numericBuilder_.getMessage();
+          }
+          return org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.products.v1.ProductAttributeValidationNumeric numeric = 1 [json_name = "numeric"];</code>
+       */
+      public Builder setNumeric(org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric value) {
+        if (numericBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          rule_ = value;
+          onChanged();
+        } else {
+          numericBuilder_.setMessage(value);
+        }
+        ruleCase_ = 1;
         return this;
       }
       /**
-       * <code>.products.v1.ProductAttributeValidationType type = 1 [json_name = "type"];</code>
-       * @return This builder for chaining.
+       * <code>.products.v1.ProductAttributeValidationNumeric numeric = 1 [json_name = "numeric"];</code>
        */
-      public Builder clearType() {
-        bitField0_ = (bitField0_ & ~0x00000001);
-        type_ = 0;
-        onChanged();
+      public Builder setNumeric(
+          org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric.Builder builderForValue) {
+        if (numericBuilder_ == null) {
+          rule_ = builderForValue.build();
+          onChanged();
+        } else {
+          numericBuilder_.setMessage(builderForValue.build());
+        }
+        ruleCase_ = 1;
         return this;
+      }
+      /**
+       * <code>.products.v1.ProductAttributeValidationNumeric numeric = 1 [json_name = "numeric"];</code>
+       */
+      public Builder mergeNumeric(org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric value) {
+        if (numericBuilder_ == null) {
+          if (ruleCase_ == 1 &&
+              rule_ != org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric.getDefaultInstance()) {
+            rule_ = org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric.newBuilder((org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric) rule_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            rule_ = value;
+          }
+          onChanged();
+        } else {
+          if (ruleCase_ == 1) {
+            numericBuilder_.mergeFrom(value);
+          } else {
+            numericBuilder_.setMessage(value);
+          }
+        }
+        ruleCase_ = 1;
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductAttributeValidationNumeric numeric = 1 [json_name = "numeric"];</code>
+       */
+      public Builder clearNumeric() {
+        if (numericBuilder_ == null) {
+          if (ruleCase_ == 1) {
+            ruleCase_ = 0;
+            rule_ = null;
+            onChanged();
+          }
+        } else {
+          if (ruleCase_ == 1) {
+            ruleCase_ = 0;
+            rule_ = null;
+          }
+          numericBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductAttributeValidationNumeric numeric = 1 [json_name = "numeric"];</code>
+       */
+      public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric.Builder getNumericBuilder() {
+        return internalGetNumericFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.products.v1.ProductAttributeValidationNumeric numeric = 1 [json_name = "numeric"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumericOrBuilder getNumericOrBuilder() {
+        if ((ruleCase_ == 1) && (numericBuilder_ != null)) {
+          return numericBuilder_.getMessageOrBuilder();
+        } else {
+          if (ruleCase_ == 1) {
+            return (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric) rule_;
+          }
+          return org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.products.v1.ProductAttributeValidationNumeric numeric = 1 [json_name = "numeric"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric, org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumericOrBuilder> 
+          internalGetNumericFieldBuilder() {
+        if (numericBuilder_ == null) {
+          if (!(ruleCase_ == 1)) {
+            rule_ = org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric.getDefaultInstance();
+          }
+          numericBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric, org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumericOrBuilder>(
+                  (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric) rule_,
+                  getParentForChildren(),
+                  isClean());
+          rule_ = null;
+        }
+        ruleCase_ = 1;
+        onChanged();
+        return numericBuilder_;
       }
 
-      private java.lang.Object value_ = "";
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString, org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationStringOrBuilder> strBuilder_;
       /**
-       * <pre>
-       * can be integer, float, string ...
-       * </pre>
-       *
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @return The value.
+       * <code>.products.v1.ProductAttributeValidationString str = 2 [json_name = "str"];</code>
+       * @return Whether the str field is set.
        */
-      public java.lang.String getValue() {
-        java.lang.Object ref = value_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          value_ = s;
-          return s;
+      @java.lang.Override
+      public boolean hasStr() {
+        return ruleCase_ == 2;
+      }
+      /**
+       * <code>.products.v1.ProductAttributeValidationString str = 2 [json_name = "str"];</code>
+       * @return The str.
+       */
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString getStr() {
+        if (strBuilder_ == null) {
+          if (ruleCase_ == 2) {
+            return (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString) rule_;
+          }
+          return org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString.getDefaultInstance();
         } else {
-          return (java.lang.String) ref;
+          if (ruleCase_ == 2) {
+            return strBuilder_.getMessage();
+          }
+          return org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString.getDefaultInstance();
         }
       }
       /**
-       * <pre>
-       * can be integer, float, string ...
-       * </pre>
-       *
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @return The bytes for value.
+       * <code>.products.v1.ProductAttributeValidationString str = 2 [json_name = "str"];</code>
        */
-      public com.google.protobuf.ByteString
-          getValueBytes() {
-        java.lang.Object ref = value_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          value_ = b;
-          return b;
+      public Builder setStr(org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString value) {
+        if (strBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          rule_ = value;
+          onChanged();
         } else {
-          return (com.google.protobuf.ByteString) ref;
+          strBuilder_.setMessage(value);
+        }
+        ruleCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductAttributeValidationString str = 2 [json_name = "str"];</code>
+       */
+      public Builder setStr(
+          org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString.Builder builderForValue) {
+        if (strBuilder_ == null) {
+          rule_ = builderForValue.build();
+          onChanged();
+        } else {
+          strBuilder_.setMessage(builderForValue.build());
+        }
+        ruleCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductAttributeValidationString str = 2 [json_name = "str"];</code>
+       */
+      public Builder mergeStr(org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString value) {
+        if (strBuilder_ == null) {
+          if (ruleCase_ == 2 &&
+              rule_ != org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString.getDefaultInstance()) {
+            rule_ = org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString.newBuilder((org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString) rule_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            rule_ = value;
+          }
+          onChanged();
+        } else {
+          if (ruleCase_ == 2) {
+            strBuilder_.mergeFrom(value);
+          } else {
+            strBuilder_.setMessage(value);
+          }
+        }
+        ruleCase_ = 2;
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductAttributeValidationString str = 2 [json_name = "str"];</code>
+       */
+      public Builder clearStr() {
+        if (strBuilder_ == null) {
+          if (ruleCase_ == 2) {
+            ruleCase_ = 0;
+            rule_ = null;
+            onChanged();
+          }
+        } else {
+          if (ruleCase_ == 2) {
+            ruleCase_ = 0;
+            rule_ = null;
+          }
+          strBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductAttributeValidationString str = 2 [json_name = "str"];</code>
+       */
+      public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString.Builder getStrBuilder() {
+        return internalGetStrFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.products.v1.ProductAttributeValidationString str = 2 [json_name = "str"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationStringOrBuilder getStrOrBuilder() {
+        if ((ruleCase_ == 2) && (strBuilder_ != null)) {
+          return strBuilder_.getMessageOrBuilder();
+        } else {
+          if (ruleCase_ == 2) {
+            return (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString) rule_;
+          }
+          return org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString.getDefaultInstance();
         }
       }
       /**
-       * <pre>
-       * can be integer, float, string ...
-       * </pre>
-       *
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @param value The value to set.
-       * @return This builder for chaining.
+       * <code>.products.v1.ProductAttributeValidationString str = 2 [json_name = "str"];</code>
        */
-      public Builder setValue(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        value_ = value;
-        bitField0_ |= 0x00000002;
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString, org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationStringOrBuilder> 
+          internalGetStrFieldBuilder() {
+        if (strBuilder_ == null) {
+          if (!(ruleCase_ == 2)) {
+            rule_ = org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString.getDefaultInstance();
+          }
+          strBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString, org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationStringOrBuilder>(
+                  (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString) rule_,
+                  getParentForChildren(),
+                  isClean());
+          rule_ = null;
+        }
+        ruleCase_ = 2;
         onChanged();
+        return strBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex, org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegexOrBuilder> regexBuilder_;
+      /**
+       * <code>.products.v1.ProductAttributeValidationRegex regex = 3 [json_name = "regex"];</code>
+       * @return Whether the regex field is set.
+       */
+      @java.lang.Override
+      public boolean hasRegex() {
+        return ruleCase_ == 3;
+      }
+      /**
+       * <code>.products.v1.ProductAttributeValidationRegex regex = 3 [json_name = "regex"];</code>
+       * @return The regex.
+       */
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex getRegex() {
+        if (regexBuilder_ == null) {
+          if (ruleCase_ == 3) {
+            return (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex) rule_;
+          }
+          return org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex.getDefaultInstance();
+        } else {
+          if (ruleCase_ == 3) {
+            return regexBuilder_.getMessage();
+          }
+          return org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.products.v1.ProductAttributeValidationRegex regex = 3 [json_name = "regex"];</code>
+       */
+      public Builder setRegex(org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex value) {
+        if (regexBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          rule_ = value;
+          onChanged();
+        } else {
+          regexBuilder_.setMessage(value);
+        }
+        ruleCase_ = 3;
         return this;
       }
       /**
-       * <pre>
-       * can be integer, float, string ...
-       * </pre>
-       *
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @return This builder for chaining.
+       * <code>.products.v1.ProductAttributeValidationRegex regex = 3 [json_name = "regex"];</code>
        */
-      public Builder clearValue() {
-        value_ = getDefaultInstance().getValue();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
+      public Builder setRegex(
+          org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex.Builder builderForValue) {
+        if (regexBuilder_ == null) {
+          rule_ = builderForValue.build();
+          onChanged();
+        } else {
+          regexBuilder_.setMessage(builderForValue.build());
+        }
+        ruleCase_ = 3;
         return this;
       }
       /**
-       * <pre>
-       * can be integer, float, string ...
-       * </pre>
-       *
-       * <code>string value = 2 [json_name = "value"];</code>
-       * @param value The bytes for value to set.
-       * @return This builder for chaining.
+       * <code>.products.v1.ProductAttributeValidationRegex regex = 3 [json_name = "regex"];</code>
        */
-      public Builder setValueBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        value_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
+      public Builder mergeRegex(org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex value) {
+        if (regexBuilder_ == null) {
+          if (ruleCase_ == 3 &&
+              rule_ != org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex.getDefaultInstance()) {
+            rule_ = org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex.newBuilder((org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex) rule_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            rule_ = value;
+          }
+          onChanged();
+        } else {
+          if (ruleCase_ == 3) {
+            regexBuilder_.mergeFrom(value);
+          } else {
+            regexBuilder_.setMessage(value);
+          }
+        }
+        ruleCase_ = 3;
         return this;
+      }
+      /**
+       * <code>.products.v1.ProductAttributeValidationRegex regex = 3 [json_name = "regex"];</code>
+       */
+      public Builder clearRegex() {
+        if (regexBuilder_ == null) {
+          if (ruleCase_ == 3) {
+            ruleCase_ = 0;
+            rule_ = null;
+            onChanged();
+          }
+        } else {
+          if (ruleCase_ == 3) {
+            ruleCase_ = 0;
+            rule_ = null;
+          }
+          regexBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductAttributeValidationRegex regex = 3 [json_name = "regex"];</code>
+       */
+      public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex.Builder getRegexBuilder() {
+        return internalGetRegexFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.products.v1.ProductAttributeValidationRegex regex = 3 [json_name = "regex"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegexOrBuilder getRegexOrBuilder() {
+        if ((ruleCase_ == 3) && (regexBuilder_ != null)) {
+          return regexBuilder_.getMessageOrBuilder();
+        } else {
+          if (ruleCase_ == 3) {
+            return (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex) rule_;
+          }
+          return org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.products.v1.ProductAttributeValidationRegex regex = 3 [json_name = "regex"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex, org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegexOrBuilder> 
+          internalGetRegexFieldBuilder() {
+        if (regexBuilder_ == null) {
+          if (!(ruleCase_ == 3)) {
+            rule_ = org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex.getDefaultInstance();
+          }
+          regexBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex, org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex.Builder, org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegexOrBuilder>(
+                  (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex) rule_,
+                  getParentForChildren(),
+                  isClean());
+          rule_ = null;
+        }
+        ruleCase_ = 3;
+        onChanged();
+        return regexBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:products.v1.ProductAttributeValidation)
@@ -4097,8 +4455,22 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
      * @return The rule.
      */
     org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeNumericValidationRule getRule();
+
+    /**
+     * <pre>
+     * numeric parameter (use double to accept int/float)
+     * </pre>
+     *
+     * <code>double value = 2 [json_name = "value"];</code>
+     * @return The value.
+     */
+    double getValue();
   }
   /**
+   * <pre>
+   * Numeric rule (min/max, etc.)
+   * </pre>
+   *
    * Protobuf type {@code products.v1.ProductAttributeValidationNumeric}
    */
   public static final class ProductAttributeValidationNumeric extends
@@ -4154,6 +4526,21 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       return result == null ? org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeNumericValidationRule.UNRECOGNIZED : result;
     }
 
+    public static final int VALUE_FIELD_NUMBER = 2;
+    private double value_ = 0D;
+    /**
+     * <pre>
+     * numeric parameter (use double to accept int/float)
+     * </pre>
+     *
+     * <code>double value = 2 [json_name = "value"];</code>
+     * @return The value.
+     */
+    @java.lang.Override
+    public double getValue() {
+      return value_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -4171,6 +4558,9 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       if (rule_ != org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeNumericValidationRule.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN.getNumber()) {
         output.writeEnum(1, rule_);
       }
+      if (java.lang.Double.doubleToRawLongBits(value_) != 0) {
+        output.writeDouble(2, value_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -4183,6 +4573,10 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       if (rule_ != org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeNumericValidationRule.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, rule_);
+      }
+      if (java.lang.Double.doubleToRawLongBits(value_) != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(2, value_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4200,6 +4594,9 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric other = (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric) obj;
 
       if (rule_ != other.rule_) return false;
+      if (java.lang.Double.doubleToLongBits(getValue())
+          != java.lang.Double.doubleToLongBits(
+              other.getValue())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -4213,6 +4610,9 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + RULE_FIELD_NUMBER;
       hash = (53 * hash) + rule_;
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          java.lang.Double.doubleToLongBits(getValue()));
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4311,6 +4711,10 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       return builder;
     }
     /**
+     * <pre>
+     * Numeric rule (min/max, etc.)
+     * </pre>
+     *
      * Protobuf type {@code products.v1.ProductAttributeValidationNumeric}
      */
     public static final class Builder extends
@@ -4345,6 +4749,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         super.clear();
         bitField0_ = 0;
         rule_ = 0;
+        value_ = 0D;
         return this;
       }
 
@@ -4381,6 +4786,9 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.rule_ = rule_;
         }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.value_ = value_;
+        }
       }
 
       @java.lang.Override
@@ -4397,6 +4805,9 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         if (other == org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationNumeric.getDefaultInstance()) return this;
         if (other.rule_ != 0) {
           setRuleValue(other.getRuleValue());
+        }
+        if (java.lang.Double.doubleToRawLongBits(other.getValue()) != 0) {
+          setValue(other.getValue());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -4429,6 +4840,11 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+              case 17: {
+                value_ = input.readDouble();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 17
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -4497,6 +4913,50 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         return this;
       }
 
+      private double value_ ;
+      /**
+       * <pre>
+       * numeric parameter (use double to accept int/float)
+       * </pre>
+       *
+       * <code>double value = 2 [json_name = "value"];</code>
+       * @return The value.
+       */
+      @java.lang.Override
+      public double getValue() {
+        return value_;
+      }
+      /**
+       * <pre>
+       * numeric parameter (use double to accept int/float)
+       * </pre>
+       *
+       * <code>double value = 2 [json_name = "value"];</code>
+       * @param value The value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValue(double value) {
+
+        value_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * numeric parameter (use double to accept int/float)
+       * </pre>
+       *
+       * <code>double value = 2 [json_name = "value"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearValue() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        value_ = 0D;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:products.v1.ProductAttributeValidationNumeric)
     }
 
@@ -4553,17 +5013,31 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.products.v1.ProductAttributeNumericValidationRule rule = 1 [json_name = "rule"];</code>
+     * <code>.products.v1.ProductAttributeStringValidationRule rule = 1 [json_name = "rule"];</code>
      * @return The enum numeric value on the wire for rule.
      */
     int getRuleValue();
     /**
-     * <code>.products.v1.ProductAttributeNumericValidationRule rule = 1 [json_name = "rule"];</code>
+     * <code>.products.v1.ProductAttributeStringValidationRule rule = 1 [json_name = "rule"];</code>
      * @return The rule.
      */
-    org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeNumericValidationRule getRule();
+    org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeStringValidationRule getRule();
+
+    /**
+     * <pre>
+     * length or other integer parameter
+     * </pre>
+     *
+     * <code>int32 value = 2 [json_name = "value"];</code>
+     * @return The value.
+     */
+    int getValue();
   }
   /**
+   * <pre>
+   * String rule (min/max length)
+   * </pre>
+   *
    * Protobuf type {@code products.v1.ProductAttributeValidationString}
    */
   public static final class ProductAttributeValidationString extends
@@ -4604,19 +5078,34 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
     public static final int RULE_FIELD_NUMBER = 1;
     private int rule_ = 0;
     /**
-     * <code>.products.v1.ProductAttributeNumericValidationRule rule = 1 [json_name = "rule"];</code>
+     * <code>.products.v1.ProductAttributeStringValidationRule rule = 1 [json_name = "rule"];</code>
      * @return The enum numeric value on the wire for rule.
      */
     @java.lang.Override public int getRuleValue() {
       return rule_;
     }
     /**
-     * <code>.products.v1.ProductAttributeNumericValidationRule rule = 1 [json_name = "rule"];</code>
+     * <code>.products.v1.ProductAttributeStringValidationRule rule = 1 [json_name = "rule"];</code>
      * @return The rule.
      */
-    @java.lang.Override public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeNumericValidationRule getRule() {
-      org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeNumericValidationRule result = org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeNumericValidationRule.forNumber(rule_);
-      return result == null ? org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeNumericValidationRule.UNRECOGNIZED : result;
+    @java.lang.Override public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeStringValidationRule getRule() {
+      org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeStringValidationRule result = org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeStringValidationRule.forNumber(rule_);
+      return result == null ? org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeStringValidationRule.UNRECOGNIZED : result;
+    }
+
+    public static final int VALUE_FIELD_NUMBER = 2;
+    private int value_ = 0;
+    /**
+     * <pre>
+     * length or other integer parameter
+     * </pre>
+     *
+     * <code>int32 value = 2 [json_name = "value"];</code>
+     * @return The value.
+     */
+    @java.lang.Override
+    public int getValue() {
+      return value_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4633,8 +5122,11 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (rule_ != org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeNumericValidationRule.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN.getNumber()) {
+      if (rule_ != org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeStringValidationRule.PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN.getNumber()) {
         output.writeEnum(1, rule_);
+      }
+      if (value_ != 0) {
+        output.writeInt32(2, value_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -4645,9 +5137,13 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       if (size != -1) return size;
 
       size = 0;
-      if (rule_ != org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeNumericValidationRule.PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_MIN.getNumber()) {
+      if (rule_ != org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeStringValidationRule.PRODUCT_ATTRIBUTE_STRING_VALIDATION_RULE_MIN.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, rule_);
+      }
+      if (value_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, value_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -4665,6 +5161,8 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString other = (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString) obj;
 
       if (rule_ != other.rule_) return false;
+      if (getValue()
+          != other.getValue()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -4678,6 +5176,8 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + RULE_FIELD_NUMBER;
       hash = (53 * hash) + rule_;
+      hash = (37 * hash) + VALUE_FIELD_NUMBER;
+      hash = (53 * hash) + getValue();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -4776,6 +5276,10 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       return builder;
     }
     /**
+     * <pre>
+     * String rule (min/max length)
+     * </pre>
+     *
      * Protobuf type {@code products.v1.ProductAttributeValidationString}
      */
     public static final class Builder extends
@@ -4810,6 +5314,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         super.clear();
         bitField0_ = 0;
         rule_ = 0;
+        value_ = 0;
         return this;
       }
 
@@ -4846,6 +5351,9 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.rule_ = rule_;
         }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.value_ = value_;
+        }
       }
 
       @java.lang.Override
@@ -4862,6 +5370,9 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         if (other == org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString.getDefaultInstance()) return this;
         if (other.rule_ != 0) {
           setRuleValue(other.getRuleValue());
+        }
+        if (other.getValue() != 0) {
+          setValue(other.getValue());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -4894,6 +5405,11 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
+              case 16: {
+                value_ = input.readInt32();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -4913,14 +5429,14 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
 
       private int rule_ = 0;
       /**
-       * <code>.products.v1.ProductAttributeNumericValidationRule rule = 1 [json_name = "rule"];</code>
+       * <code>.products.v1.ProductAttributeStringValidationRule rule = 1 [json_name = "rule"];</code>
        * @return The enum numeric value on the wire for rule.
        */
       @java.lang.Override public int getRuleValue() {
         return rule_;
       }
       /**
-       * <code>.products.v1.ProductAttributeNumericValidationRule rule = 1 [json_name = "rule"];</code>
+       * <code>.products.v1.ProductAttributeStringValidationRule rule = 1 [json_name = "rule"];</code>
        * @param value The enum numeric value on the wire for rule to set.
        * @return This builder for chaining.
        */
@@ -4931,20 +5447,20 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         return this;
       }
       /**
-       * <code>.products.v1.ProductAttributeNumericValidationRule rule = 1 [json_name = "rule"];</code>
+       * <code>.products.v1.ProductAttributeStringValidationRule rule = 1 [json_name = "rule"];</code>
        * @return The rule.
        */
       @java.lang.Override
-      public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeNumericValidationRule getRule() {
-        org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeNumericValidationRule result = org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeNumericValidationRule.forNumber(rule_);
-        return result == null ? org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeNumericValidationRule.UNRECOGNIZED : result;
+      public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeStringValidationRule getRule() {
+        org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeStringValidationRule result = org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeStringValidationRule.forNumber(rule_);
+        return result == null ? org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeStringValidationRule.UNRECOGNIZED : result;
       }
       /**
-       * <code>.products.v1.ProductAttributeNumericValidationRule rule = 1 [json_name = "rule"];</code>
+       * <code>.products.v1.ProductAttributeStringValidationRule rule = 1 [json_name = "rule"];</code>
        * @param value The rule to set.
        * @return This builder for chaining.
        */
-      public Builder setRule(org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeNumericValidationRule value) {
+      public Builder setRule(org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeStringValidationRule value) {
         if (value == null) { throw new NullPointerException(); }
         bitField0_ |= 0x00000001;
         rule_ = value.getNumber();
@@ -4952,12 +5468,56 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
         return this;
       }
       /**
-       * <code>.products.v1.ProductAttributeNumericValidationRule rule = 1 [json_name = "rule"];</code>
+       * <code>.products.v1.ProductAttributeStringValidationRule rule = 1 [json_name = "rule"];</code>
        * @return This builder for chaining.
        */
       public Builder clearRule() {
         bitField0_ = (bitField0_ & ~0x00000001);
         rule_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int value_ ;
+      /**
+       * <pre>
+       * length or other integer parameter
+       * </pre>
+       *
+       * <code>int32 value = 2 [json_name = "value"];</code>
+       * @return The value.
+       */
+      @java.lang.Override
+      public int getValue() {
+        return value_;
+      }
+      /**
+       * <pre>
+       * length or other integer parameter
+       * </pre>
+       *
+       * <code>int32 value = 2 [json_name = "value"];</code>
+       * @param value The value to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValue(int value) {
+
+        value_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * length or other integer parameter
+       * </pre>
+       *
+       * <code>int32 value = 2 [json_name = "value"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearValue() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        value_ = 0;
         onChanged();
         return this;
       }
@@ -5008,6 +5568,597 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
 
     @java.lang.Override
     public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationString getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ProductAttributeValidationRegexOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:products.v1.ProductAttributeValidationRegex)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string pattern = 1 [json_name = "pattern"];</code>
+     * @return The pattern.
+     */
+    java.lang.String getPattern();
+    /**
+     * <code>string pattern = 1 [json_name = "pattern"];</code>
+     * @return The bytes for pattern.
+     */
+    com.google.protobuf.ByteString
+        getPatternBytes();
+
+    /**
+     * <code>bool case_sensitive = 2 [json_name = "caseSensitive"];</code>
+     * @return The caseSensitive.
+     */
+    boolean getCaseSensitive();
+  }
+  /**
+   * <pre>
+   * Regex rule (pattern)
+   * </pre>
+   *
+   * Protobuf type {@code products.v1.ProductAttributeValidationRegex}
+   */
+  public static final class ProductAttributeValidationRegex extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:products.v1.ProductAttributeValidationRegex)
+      ProductAttributeValidationRegexOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ProductAttributeValidationRegex.class.getName());
+    }
+    // Use ProductAttributeValidationRegex.newBuilder() to construct.
+    private ProductAttributeValidationRegex(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ProductAttributeValidationRegex() {
+      pattern_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductAttributeValidationRegex_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductAttributeValidationRegex_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex.class, org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex.Builder.class);
+    }
+
+    public static final int PATTERN_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object pattern_ = "";
+    /**
+     * <code>string pattern = 1 [json_name = "pattern"];</code>
+     * @return The pattern.
+     */
+    @java.lang.Override
+    public java.lang.String getPattern() {
+      java.lang.Object ref = pattern_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        pattern_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string pattern = 1 [json_name = "pattern"];</code>
+     * @return The bytes for pattern.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPatternBytes() {
+      java.lang.Object ref = pattern_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        pattern_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CASE_SENSITIVE_FIELD_NUMBER = 2;
+    private boolean caseSensitive_ = false;
+    /**
+     * <code>bool case_sensitive = 2 [json_name = "caseSensitive"];</code>
+     * @return The caseSensitive.
+     */
+    @java.lang.Override
+    public boolean getCaseSensitive() {
+      return caseSensitive_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pattern_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, pattern_);
+      }
+      if (caseSensitive_ != false) {
+        output.writeBool(2, caseSensitive_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(pattern_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, pattern_);
+      }
+      if (caseSensitive_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(2, caseSensitive_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex other = (org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex) obj;
+
+      if (!getPattern()
+          .equals(other.getPattern())) return false;
+      if (getCaseSensitive()
+          != other.getCaseSensitive()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + PATTERN_FIELD_NUMBER;
+      hash = (53 * hash) + getPattern().hashCode();
+      hash = (37 * hash) + CASE_SENSITIVE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getCaseSensitive());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * Regex rule (pattern)
+     * </pre>
+     *
+     * Protobuf type {@code products.v1.ProductAttributeValidationRegex}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:products.v1.ProductAttributeValidationRegex)
+        org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegexOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductAttributeValidationRegex_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductAttributeValidationRegex_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex.class, org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex.Builder.class);
+      }
+
+      // Construct using org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        pattern_ = "";
+        caseSensitive_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_ProductAttributeValidationRegex_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex getDefaultInstanceForType() {
+        return org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex build() {
+        org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex buildPartial() {
+        org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex result = new org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.pattern_ = pattern_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.caseSensitive_ = caseSensitive_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex) {
+          return mergeFrom((org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex other) {
+        if (other == org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex.getDefaultInstance()) return this;
+        if (!other.getPattern().isEmpty()) {
+          pattern_ = other.pattern_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getCaseSensitive() != false) {
+          setCaseSensitive(other.getCaseSensitive());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                pattern_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 16: {
+                caseSensitive_ = input.readBool();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 16
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object pattern_ = "";
+      /**
+       * <code>string pattern = 1 [json_name = "pattern"];</code>
+       * @return The pattern.
+       */
+      public java.lang.String getPattern() {
+        java.lang.Object ref = pattern_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          pattern_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string pattern = 1 [json_name = "pattern"];</code>
+       * @return The bytes for pattern.
+       */
+      public com.google.protobuf.ByteString
+          getPatternBytes() {
+        java.lang.Object ref = pattern_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          pattern_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string pattern = 1 [json_name = "pattern"];</code>
+       * @param value The pattern to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPattern(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        pattern_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string pattern = 1 [json_name = "pattern"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPattern() {
+        pattern_ = getDefaultInstance().getPattern();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string pattern = 1 [json_name = "pattern"];</code>
+       * @param value The bytes for pattern to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPatternBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        pattern_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private boolean caseSensitive_ ;
+      /**
+       * <code>bool case_sensitive = 2 [json_name = "caseSensitive"];</code>
+       * @return The caseSensitive.
+       */
+      @java.lang.Override
+      public boolean getCaseSensitive() {
+        return caseSensitive_;
+      }
+      /**
+       * <code>bool case_sensitive = 2 [json_name = "caseSensitive"];</code>
+       * @param value The caseSensitive to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCaseSensitive(boolean value) {
+
+        caseSensitive_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool case_sensitive = 2 [json_name = "caseSensitive"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCaseSensitive() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        caseSensitive_ = false;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:products.v1.ProductAttributeValidationRegex)
+    }
+
+    // @@protoc_insertion_point(class_scope:products.v1.ProductAttributeValidationRegex)
+    private static final org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex();
+    }
+
+    public static org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProductAttributeValidationRegex>
+        PARSER = new com.google.protobuf.AbstractParser<ProductAttributeValidationRegex>() {
+      @java.lang.Override
+      public ProductAttributeValidationRegex parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProductAttributeValidationRegex> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProductAttributeValidationRegex> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductCategoriesProto.ProductAttributeValidationRegex getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7187,6 +8338,11 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_products_v1_ProductAttributeValidationString_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductAttributeValidationRegex_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductAttributeValidationRegex_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_products_v1_ProductCategories_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -7225,39 +8381,42 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
       "ed\022\022\n\004type\030\002 \001(\tR\004type\022!\n\014string_array\030\003" +
       " \003(\tR\013stringArray\022G\n\nvalidation\030\004 \001(\0132\'." +
       "products.v1.ProductAttributeValidationR\n" +
-      "validation\"s\n\032ProductAttributeValidation" +
-      "\022?\n\004type\030\001 \001(\0162+.products.v1.ProductAttr" +
-      "ibuteValidationTypeR\004type\022\024\n\005value\030\002 \001(\t" +
-      "R\005value\"k\n!ProductAttributeValidationNum" +
-      "eric\022F\n\004rule\030\001 \001(\01622.products.v1.Product" +
-      "AttributeNumericValidationRuleR\004rule\"j\n " +
-      "ProductAttributeValidationString\022F\n\004rule" +
-      "\030\001 \001(\01622.products.v1.ProductAttributeNum" +
-      "ericValidationRuleR\004rule\"Q\n\021ProductCateg" +
-      "ories\022<\n\ncategories\030\001 \003(\0132\034.products.v1." +
-      "ProductCategoryR\ncategories\"I\n#ProductCa" +
-      "tegoryWithoutSubcategories\022\016\n\002id\030\001 \001(\tR\002" +
-      "id\022\022\n\004name\030\002 \001(\tR\004name\"y\n%ProductCategor" +
-      "iesWithoutSubcategories\022P\n\ncategories\030\001 " +
-      "\003(\01320.products.v1.ProductCategoryWithout" +
-      "SubcategoriesR\ncategories*}\n\036ProductAttr" +
-      "ibuteValidationType\022-\n)PRODUCT_ATTRIBUTE" +
-      "_VALIDATION_TYPE_NUMERIC\020\000\022,\n(PRODUCT_AT" +
-      "TRIBUTE_VALIDATION_TYPE_STRING\020\001*\201\002\n%Pro" +
-      "ductAttributeNumericValidationRule\0221\n-PR" +
-      "ODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE_" +
-      "MIN\020\000\0221\n-PRODUCT_ATTRIBUTE_NUMERIC_VALID" +
-      "ATION_RULE_MAX\020\001\0229\n5PRODUCT_ATTRIBUTE_NU" +
-      "MERIC_VALIDATION_RULE_BIGGER_THAN\020\002\0227\n3P" +
-      "RODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RULE" +
-      "_LESS_THAN\020\003*\212\001\n$ProductAttributeStringV" +
-      "alidationRule\0220\n,PRODUCT_ATTRIBUTE_STRIN" +
-      "G_VALIDATION_RULE_MIN\020\000\0220\n,PRODUCT_ATTRI" +
-      "BUTE_STRING_VALIDATION_RULE_MAX\020\001B\200\001\n\034or" +
-      "g.megacommerce.products.v1B\026ProductCateg" +
-      "oriesProtoZEgithub.com/ahmad-khatib0-org" +
-      "/megacommerce-proto/gen/go/products/v1;v" +
-      "1\370\001\001b\006proto3"
+      "validation\"\371\001\n\032ProductAttributeValidatio" +
+      "n\022J\n\007numeric\030\001 \001(\0132..products.v1.Product" +
+      "AttributeValidationNumericH\000R\007numeric\022A\n" +
+      "\003str\030\002 \001(\0132-.products.v1.ProductAttribut" +
+      "eValidationStringH\000R\003str\022D\n\005regex\030\003 \001(\0132" +
+      ",.products.v1.ProductAttributeValidation" +
+      "RegexH\000R\005regexB\006\n\004rule\"\201\001\n!ProductAttrib" +
+      "uteValidationNumeric\022F\n\004rule\030\001 \001(\01622.pro" +
+      "ducts.v1.ProductAttributeNumericValidati" +
+      "onRuleR\004rule\022\024\n\005value\030\002 \001(\001R\005value\"\177\n Pr" +
+      "oductAttributeValidationString\022E\n\004rule\030\001" +
+      " \001(\01621.products.v1.ProductAttributeStrin" +
+      "gValidationRuleR\004rule\022\024\n\005value\030\002 \001(\005R\005va" +
+      "lue\"b\n\037ProductAttributeValidationRegex\022\030" +
+      "\n\007pattern\030\001 \001(\tR\007pattern\022%\n\016case_sensiti" +
+      "ve\030\002 \001(\010R\rcaseSensitive\"Q\n\021ProductCatego" +
+      "ries\022<\n\ncategories\030\001 \003(\0132\034.products.v1.P" +
+      "roductCategoryR\ncategories\"I\n#ProductCat" +
+      "egoryWithoutSubcategories\022\016\n\002id\030\001 \001(\tR\002i" +
+      "d\022\022\n\004name\030\002 \001(\tR\004name\"y\n%ProductCategori" +
+      "esWithoutSubcategories\022P\n\ncategories\030\001 \003" +
+      "(\01320.products.v1.ProductCategoryWithoutS" +
+      "ubcategoriesR\ncategories*\361\001\n%ProductAttr" +
+      "ibuteNumericValidationRule\0221\n-PRODUCT_AT" +
+      "TRIBUTE_NUMERIC_VALIDATION_RULE_MIN\020\000\0221\n" +
+      "-PRODUCT_ATTRIBUTE_NUMERIC_VALIDATION_RU" +
+      "LE_MAX\020\001\0220\n,PRODUCT_ATTRIBUTE_NUMERIC_VA" +
+      "LIDATION_RULE_GT\020\002\0220\n,PRODUCT_ATTRIBUTE_" +
+      "NUMERIC_VALIDATION_RULE_LT\020\003*\212\001\n$Product" +
+      "AttributeStringValidationRule\0220\n,PRODUCT" +
+      "_ATTRIBUTE_STRING_VALIDATION_RULE_MIN\020\000\022" +
+      "0\n,PRODUCT_ATTRIBUTE_STRING_VALIDATION_R" +
+      "ULE_MAX\020\001B\200\001\n\034org.megacommerce.products." +
+      "v1B\026ProductCategoriesProtoZEgithub.com/a" +
+      "hmad-khatib0-org/megacommerce-proto/gen/" +
+      "go/products/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7292,33 +8451,39 @@ org.megacommerce.products.v1.ProductCategoriesProto.ProductSubcategoryAttribute 
     internal_static_products_v1_ProductAttributeValidation_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductAttributeValidation_descriptor,
-        new java.lang.String[] { "Type", "Value", });
+        new java.lang.String[] { "Numeric", "Str", "Regex", "Rule", });
     internal_static_products_v1_ProductAttributeValidationNumeric_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_products_v1_ProductAttributeValidationNumeric_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductAttributeValidationNumeric_descriptor,
-        new java.lang.String[] { "Rule", });
+        new java.lang.String[] { "Rule", "Value", });
     internal_static_products_v1_ProductAttributeValidationString_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_products_v1_ProductAttributeValidationString_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductAttributeValidationString_descriptor,
-        new java.lang.String[] { "Rule", });
-    internal_static_products_v1_ProductCategories_descriptor =
+        new java.lang.String[] { "Rule", "Value", });
+    internal_static_products_v1_ProductAttributeValidationRegex_descriptor =
       getDescriptor().getMessageTypes().get(6);
+    internal_static_products_v1_ProductAttributeValidationRegex_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductAttributeValidationRegex_descriptor,
+        new java.lang.String[] { "Pattern", "CaseSensitive", });
+    internal_static_products_v1_ProductCategories_descriptor =
+      getDescriptor().getMessageTypes().get(7);
     internal_static_products_v1_ProductCategories_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductCategories_descriptor,
         new java.lang.String[] { "Categories", });
     internal_static_products_v1_ProductCategoryWithoutSubcategories_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_products_v1_ProductCategoryWithoutSubcategories_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductCategoryWithoutSubcategories_descriptor,
         new java.lang.String[] { "Id", "Name", });
     internal_static_products_v1_ProductCategoriesWithoutSubcategories_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_products_v1_ProductCategoriesWithoutSubcategories_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductCategoriesWithoutSubcategories_descriptor,
