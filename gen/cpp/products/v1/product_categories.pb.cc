@@ -34,7 +34,7 @@ inline constexpr SubcategoryAttribute::Impl_::Impl_(
         type_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        refrence_(
+        reference_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         validation_{nullptr},
@@ -192,7 +192,7 @@ const ::uint32_t
         9, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryAttribute, _impl_.required_),
         PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryAttribute, _impl_.type_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryAttribute, _impl_.refrence_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryAttribute, _impl_.reference_),
         PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryAttribute, _impl_.string_array_),
         PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryAttribute, _impl_.is_multiple_),
         PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryAttribute, _impl_.validation_),
@@ -231,17 +231,17 @@ const char descriptor_table_protodef_products_2fv1_2fproduct_5fcategories_2eprot
     "bcategory.AttributesEntryR\nattributes\032`\n"
     "\017AttributesEntry\022\020\n\003key\030\001 \001(\tR\003key\0227\n\005va"
     "lue\030\002 \001(\0132!.products.v1.SubcategoryAttri"
-    "buteR\005value:\0028\001\"\211\002\n\024SubcategoryAttribute"
+    "buteR\005value:\0028\001\"\214\002\n\024SubcategoryAttribute"
     "\022\032\n\010required\030\001 \001(\010R\010required\022\022\n\004type\030\002 \001"
-    "(\tR\004type\022\037\n\010refrence\030\003 \001(\tH\000R\010refrence\210\001"
-    "\001\022!\n\014string_array\030\004 \003(\tR\013stringArray\022$\n\013"
-    "is_multiple\030\005 \001(\010H\001R\nisMultiple\210\001\001\022:\n\nva"
-    "lidation\030\006 \001(\0132\032.shared.v1.ValidationFie"
-    "ldR\nvalidationB\013\n\t_refrenceB\016\n\014_is_multi"
-    "pleB\200\001\n\034org.megacommerce.products.v1B\026Pr"
-    "oductCategoriesProtoZEgithub.com/ahmad-k"
-    "hatib0-org/megacommerce-proto/gen/go/pro"
-    "ducts/v1;v1\370\001\001b\006proto3"
+    "(\tR\004type\022!\n\treference\030\003 \001(\tH\000R\treference"
+    "\210\001\001\022!\n\014string_array\030\004 \003(\tR\013stringArray\022$"
+    "\n\013is_multiple\030\005 \001(\010H\001R\nisMultiple\210\001\001\022:\n\n"
+    "validation\030\006 \001(\0132\032.shared.v1.ValidationF"
+    "ieldR\nvalidationB\014\n\n_referenceB\016\n\014_is_mu"
+    "ltipleB\200\001\n\034org.megacommerce.products.v1B"
+    "\026ProductCategoriesProtoZEgithub.com/ahma"
+    "d-khatib0-org/megacommerce-proto/gen/go/"
+    "products/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_deps[1] = {
@@ -251,7 +251,7 @@ static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_5fcategories_2
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto = {
     false,
     false,
-    902,
+    905,
     descriptor_table_protodef_products_2fv1_2fproduct_5fcategories_2eproto,
     "products/v1/product_categories.proto",
     &descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_once,
@@ -1237,7 +1237,7 @@ PROTOBUF_NDEBUG_INLINE SubcategoryAttribute::Impl_::Impl_(
         _cached_size_{0},
         string_array_{visibility, arena, from.string_array_},
         type_(arena, from.type_),
-        refrence_(arena, from.refrence_) {}
+        reference_(arena, from.reference_) {}
 
 SubcategoryAttribute::SubcategoryAttribute(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -1272,7 +1272,7 @@ PROTOBUF_NDEBUG_INLINE SubcategoryAttribute::Impl_::Impl_(
       : _cached_size_{0},
         string_array_{visibility, arena},
         type_(arena),
-        refrence_(arena) {}
+        reference_(arena) {}
 
 inline void SubcategoryAttribute::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
@@ -1292,7 +1292,7 @@ inline void SubcategoryAttribute::SharedDtor(MessageLite& self) {
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.type_.Destroy();
-  this_._impl_.refrence_.Destroy();
+  this_._impl_.reference_.Destroy();
   delete this_._impl_.validation_;
   this_._impl_.~Impl_();
 }
@@ -1352,7 +1352,7 @@ SubcategoryAttribute::GetClassData() const {
   return SubcategoryAttribute_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 6, 1, 65, 2>
+const ::_pbi::TcParseTable<3, 6, 1, 66, 2>
 SubcategoryAttribute::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_._has_bits_),
@@ -1378,9 +1378,9 @@ SubcategoryAttribute::_table_ = {
     // string type = 2 [json_name = "type"];
     {::_pbi::TcParser::FastUS1,
      {18, 0, 0, PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.type_)}},
-    // optional string refrence = 3 [json_name = "refrence"];
+    // optional string reference = 3 [json_name = "reference"];
     {::_pbi::TcParser::FastUS1,
-     {26, 1, 0, PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.refrence_)}},
+     {26, 1, 0, PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.reference_)}},
     // repeated string string_array = 4 [json_name = "stringArray"];
     {::_pbi::TcParser::FastUR1,
      {34, 63, 0, PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.string_array_)}},
@@ -1400,8 +1400,8 @@ SubcategoryAttribute::_table_ = {
     // string type = 2 [json_name = "type"];
     {PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.type_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional string refrence = 3 [json_name = "refrence"];
-    {PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.refrence_), _Internal::kHasBitsOffset + 1, 0,
+    // optional string reference = 3 [json_name = "reference"];
+    {PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.reference_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // repeated string string_array = 4 [json_name = "stringArray"];
     {PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.string_array_), -1, 0,
@@ -1417,10 +1417,10 @@ SubcategoryAttribute::_table_ = {
       {::_pbi::TcParser::GetTable<::shared::v1::ValidationField>()},
   }},
   {{
-    "\40\0\4\10\14\0\0\0"
+    "\40\0\4\11\14\0\0\0"
     "products.v1.SubcategoryAttribute"
     "type"
-    "refrence"
+    "reference"
     "string_array"
   }},
 };
@@ -1438,7 +1438,7 @@ PROTOBUF_NOINLINE void SubcategoryAttribute::Clear() {
       _impl_.type_.ClearNonDefaultToEmpty();
     }
     if ((cached_has_bits & 0x00000002u) != 0) {
-      _impl_.refrence_.ClearNonDefaultToEmpty();
+      _impl_.reference_.ClearNonDefaultToEmpty();
     }
     if ((cached_has_bits & 0x00000004u) != 0) {
       ABSL_DCHECK(_impl_.validation_ != nullptr);
@@ -1487,11 +1487,11 @@ PROTOBUF_NOINLINE void SubcategoryAttribute::Clear() {
   }
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // optional string refrence = 3 [json_name = "refrence"];
+  // optional string reference = 3 [json_name = "reference"];
   if ((cached_has_bits & 0x00000002u) != 0) {
-    const ::std::string& _s = this_._internal_refrence();
+    const ::std::string& _s = this_._internal_reference();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.SubcategoryAttribute.refrence");
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.SubcategoryAttribute.reference");
     target = stream->WriteStringMaybeAliased(3, _s, target);
   }
 
@@ -1562,10 +1562,10 @@ PROTOBUF_NOINLINE void SubcategoryAttribute::Clear() {
                                         this_._internal_type());
       }
     }
-    // optional string refrence = 3 [json_name = "refrence"];
+    // optional string reference = 3 [json_name = "reference"];
     if ((cached_has_bits & 0x00000002u) != 0) {
       total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                      this_._internal_refrence());
+                                      this_._internal_reference());
     }
     // .shared.v1.ValidationField validation = 6 [json_name = "validation"];
     if ((cached_has_bits & 0x00000004u) != 0) {
@@ -1605,7 +1605,7 @@ void SubcategoryAttribute::MergeImpl(::google::protobuf::MessageLite& to_msg, co
       }
     }
     if ((cached_has_bits & 0x00000002u) != 0) {
-      _this->_internal_set_refrence(from._internal_refrence());
+      _this->_internal_set_reference(from._internal_reference());
     }
     if ((cached_has_bits & 0x00000004u) != 0) {
       ABSL_DCHECK(from._impl_.validation_ != nullptr);
@@ -1644,7 +1644,7 @@ void SubcategoryAttribute::InternalSwap(SubcategoryAttribute* PROTOBUF_RESTRICT 
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.string_array_.InternalSwap(&other->_impl_.string_array_);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.type_, &other->_impl_.type_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.refrence_, &other->_impl_.refrence_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.reference_, &other->_impl_.reference_, arena);
   ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.is_multiple_)
       + sizeof(SubcategoryAttribute::_impl_.is_multiple_)

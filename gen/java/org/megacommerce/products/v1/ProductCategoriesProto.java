@@ -2468,31 +2468,31 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * so instead rewriting it each time, we store it in another table)
      * </pre>
      *
-     * <code>optional string refrence = 3 [json_name = "refrence"];</code>
-     * @return Whether the refrence field is set.
+     * <code>optional string reference = 3 [json_name = "reference"];</code>
+     * @return Whether the reference field is set.
      */
-    boolean hasRefrence();
+    boolean hasReference();
     /**
      * <pre>
      * reference id to the attributes table (E.g weight is common for many products types,
      * so instead rewriting it each time, we store it in another table)
      * </pre>
      *
-     * <code>optional string refrence = 3 [json_name = "refrence"];</code>
-     * @return The refrence.
+     * <code>optional string reference = 3 [json_name = "reference"];</code>
+     * @return The reference.
      */
-    java.lang.String getRefrence();
+    java.lang.String getReference();
     /**
      * <pre>
      * reference id to the attributes table (E.g weight is common for many products types,
      * so instead rewriting it each time, we store it in another table)
      * </pre>
      *
-     * <code>optional string refrence = 3 [json_name = "refrence"];</code>
-     * @return The bytes for refrence.
+     * <code>optional string reference = 3 [json_name = "reference"];</code>
+     * @return The bytes for reference.
      */
     com.google.protobuf.ByteString
-        getRefrenceBytes();
+        getReferenceBytes();
 
     /**
      * <pre>
@@ -2608,7 +2608,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
     }
     private SubcategoryAttribute() {
       type_ = "";
-      refrence_ = "";
+      reference_ = "";
       stringArray_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
     }
@@ -2689,20 +2689,20 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
       }
     }
 
-    public static final int REFRENCE_FIELD_NUMBER = 3;
+    public static final int REFERENCE_FIELD_NUMBER = 3;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object refrence_ = "";
+    private volatile java.lang.Object reference_ = "";
     /**
      * <pre>
      * reference id to the attributes table (E.g weight is common for many products types,
      * so instead rewriting it each time, we store it in another table)
      * </pre>
      *
-     * <code>optional string refrence = 3 [json_name = "refrence"];</code>
-     * @return Whether the refrence field is set.
+     * <code>optional string reference = 3 [json_name = "reference"];</code>
+     * @return Whether the reference field is set.
      */
     @java.lang.Override
-    public boolean hasRefrence() {
+    public boolean hasReference() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
@@ -2711,19 +2711,19 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * so instead rewriting it each time, we store it in another table)
      * </pre>
      *
-     * <code>optional string refrence = 3 [json_name = "refrence"];</code>
-     * @return The refrence.
+     * <code>optional string reference = 3 [json_name = "reference"];</code>
+     * @return The reference.
      */
     @java.lang.Override
-    public java.lang.String getRefrence() {
-      java.lang.Object ref = refrence_;
+    public java.lang.String getReference() {
+      java.lang.Object ref = reference_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        refrence_ = s;
+        reference_ = s;
         return s;
       }
     }
@@ -2733,18 +2733,18 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * so instead rewriting it each time, we store it in another table)
      * </pre>
      *
-     * <code>optional string refrence = 3 [json_name = "refrence"];</code>
-     * @return The bytes for refrence.
+     * <code>optional string reference = 3 [json_name = "reference"];</code>
+     * @return The bytes for reference.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getRefrenceBytes() {
-      java.lang.Object ref = refrence_;
+        getReferenceBytes() {
+      java.lang.Object ref = reference_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        refrence_ = b;
+        reference_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -2890,7 +2890,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
         com.google.protobuf.GeneratedMessage.writeString(output, 2, type_);
       }
       if (((bitField0_ & 0x00000001) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 3, refrence_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, reference_);
       }
       for (int i = 0; i < stringArray_.size(); i++) {
         com.google.protobuf.GeneratedMessage.writeString(output, 4, stringArray_.getRaw(i));
@@ -2918,7 +2918,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
         size += com.google.protobuf.GeneratedMessage.computeStringSize(2, type_);
       }
       if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, refrence_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, reference_);
       }
       {
         int dataSize = 0;
@@ -2955,10 +2955,10 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
           != other.getRequired()) return false;
       if (!getType()
           .equals(other.getType())) return false;
-      if (hasRefrence() != other.hasRefrence()) return false;
-      if (hasRefrence()) {
-        if (!getRefrence()
-            .equals(other.getRefrence())) return false;
+      if (hasReference() != other.hasReference()) return false;
+      if (hasReference()) {
+        if (!getReference()
+            .equals(other.getReference())) return false;
       }
       if (!getStringArrayList()
           .equals(other.getStringArrayList())) return false;
@@ -2988,9 +2988,9 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
           getRequired());
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
-      if (hasRefrence()) {
-        hash = (37 * hash) + REFRENCE_FIELD_NUMBER;
-        hash = (53 * hash) + getRefrence().hashCode();
+      if (hasReference()) {
+        hash = (37 * hash) + REFERENCE_FIELD_NUMBER;
+        hash = (53 * hash) + getReference().hashCode();
       }
       if (getStringArrayCount() > 0) {
         hash = (37 * hash) + STRING_ARRAY_FIELD_NUMBER;
@@ -3148,7 +3148,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
         bitField0_ = 0;
         required_ = false;
         type_ = "";
-        refrence_ = "";
+        reference_ = "";
         stringArray_ =
             com.google.protobuf.LazyStringArrayList.emptyList();
         isMultiple_ = false;
@@ -3198,7 +3198,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
         }
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.refrence_ = refrence_;
+          result.reference_ = reference_;
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
@@ -3238,8 +3238,8 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
           bitField0_ |= 0x00000002;
           onChanged();
         }
-        if (other.hasRefrence()) {
-          refrence_ = other.refrence_;
+        if (other.hasReference()) {
+          reference_ = other.reference_;
           bitField0_ |= 0x00000004;
           onChanged();
         }
@@ -3296,7 +3296,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
                 break;
               } // case 18
               case 26: {
-                refrence_ = input.readStringRequireUtf8();
+                reference_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
@@ -3471,17 +3471,17 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
         return this;
       }
 
-      private java.lang.Object refrence_ = "";
+      private java.lang.Object reference_ = "";
       /**
        * <pre>
        * reference id to the attributes table (E.g weight is common for many products types,
        * so instead rewriting it each time, we store it in another table)
        * </pre>
        *
-       * <code>optional string refrence = 3 [json_name = "refrence"];</code>
-       * @return Whether the refrence field is set.
+       * <code>optional string reference = 3 [json_name = "reference"];</code>
+       * @return Whether the reference field is set.
        */
-      public boolean hasRefrence() {
+      public boolean hasReference() {
         return ((bitField0_ & 0x00000004) != 0);
       }
       /**
@@ -3490,16 +3490,16 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * so instead rewriting it each time, we store it in another table)
        * </pre>
        *
-       * <code>optional string refrence = 3 [json_name = "refrence"];</code>
-       * @return The refrence.
+       * <code>optional string reference = 3 [json_name = "reference"];</code>
+       * @return The reference.
        */
-      public java.lang.String getRefrence() {
-        java.lang.Object ref = refrence_;
+      public java.lang.String getReference() {
+        java.lang.Object ref = reference_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          refrence_ = s;
+          reference_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
@@ -3511,17 +3511,17 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * so instead rewriting it each time, we store it in another table)
        * </pre>
        *
-       * <code>optional string refrence = 3 [json_name = "refrence"];</code>
-       * @return The bytes for refrence.
+       * <code>optional string reference = 3 [json_name = "reference"];</code>
+       * @return The bytes for reference.
        */
       public com.google.protobuf.ByteString
-          getRefrenceBytes() {
-        java.lang.Object ref = refrence_;
+          getReferenceBytes() {
+        java.lang.Object ref = reference_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          refrence_ = b;
+          reference_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
@@ -3533,14 +3533,14 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * so instead rewriting it each time, we store it in another table)
        * </pre>
        *
-       * <code>optional string refrence = 3 [json_name = "refrence"];</code>
-       * @param value The refrence to set.
+       * <code>optional string reference = 3 [json_name = "reference"];</code>
+       * @param value The reference to set.
        * @return This builder for chaining.
        */
-      public Builder setRefrence(
+      public Builder setReference(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        refrence_ = value;
+        reference_ = value;
         bitField0_ |= 0x00000004;
         onChanged();
         return this;
@@ -3551,11 +3551,11 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * so instead rewriting it each time, we store it in another table)
        * </pre>
        *
-       * <code>optional string refrence = 3 [json_name = "refrence"];</code>
+       * <code>optional string reference = 3 [json_name = "reference"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearRefrence() {
-        refrence_ = getDefaultInstance().getRefrence();
+      public Builder clearReference() {
+        reference_ = getDefaultInstance().getReference();
         bitField0_ = (bitField0_ & ~0x00000004);
         onChanged();
         return this;
@@ -3566,15 +3566,15 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * so instead rewriting it each time, we store it in another table)
        * </pre>
        *
-       * <code>optional string refrence = 3 [json_name = "refrence"];</code>
-       * @param value The bytes for refrence to set.
+       * <code>optional string reference = 3 [json_name = "reference"];</code>
+       * @param value The bytes for reference to set.
        * @return This builder for chaining.
        */
-      public Builder setRefrenceBytes(
+      public Builder setReferenceBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        refrence_ = value;
+        reference_ = value;
         bitField0_ |= 0x00000004;
         onChanged();
         return this;
@@ -4032,17 +4032,17 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
       "bcategory.AttributesEntryR\nattributes\032`\n" +
       "\017AttributesEntry\022\020\n\003key\030\001 \001(\tR\003key\0227\n\005va" +
       "lue\030\002 \001(\0132!.products.v1.SubcategoryAttri" +
-      "buteR\005value:\0028\001\"\211\002\n\024SubcategoryAttribute" +
+      "buteR\005value:\0028\001\"\214\002\n\024SubcategoryAttribute" +
       "\022\032\n\010required\030\001 \001(\010R\010required\022\022\n\004type\030\002 \001" +
-      "(\tR\004type\022\037\n\010refrence\030\003 \001(\tH\000R\010refrence\210\001" +
-      "\001\022!\n\014string_array\030\004 \003(\tR\013stringArray\022$\n\013" +
-      "is_multiple\030\005 \001(\010H\001R\nisMultiple\210\001\001\022:\n\nva" +
-      "lidation\030\006 \001(\0132\032.shared.v1.ValidationFie" +
-      "ldR\nvalidationB\013\n\t_refrenceB\016\n\014_is_multi" +
-      "pleB\200\001\n\034org.megacommerce.products.v1B\026Pr" +
-      "oductCategoriesProtoZEgithub.com/ahmad-k" +
-      "hatib0-org/megacommerce-proto/gen/go/pro" +
-      "ducts/v1;v1\370\001\001b\006proto3"
+      "(\tR\004type\022!\n\treference\030\003 \001(\tH\000R\treference" +
+      "\210\001\001\022!\n\014string_array\030\004 \003(\tR\013stringArray\022$" +
+      "\n\013is_multiple\030\005 \001(\010H\001R\nisMultiple\210\001\001\022:\n\n" +
+      "validation\030\006 \001(\0132\032.shared.v1.ValidationF" +
+      "ieldR\nvalidationB\014\n\n_referenceB\016\n\014_is_mu" +
+      "ltipleB\200\001\n\034org.megacommerce.products.v1B" +
+      "\026ProductCategoriesProtoZEgithub.com/ahma" +
+      "d-khatib0-org/megacommerce-proto/gen/go/" +
+      "products/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4072,7 +4072,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
     internal_static_products_v1_SubcategoryAttribute_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_SubcategoryAttribute_descriptor,
-        new java.lang.String[] { "Required", "Type", "Refrence", "StringArray", "IsMultiple", "Validation", });
+        new java.lang.String[] { "Required", "Type", "Reference", "StringArray", "IsMultiple", "Validation", });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.shared.v1.ValidationProto.getDescriptor();
   }

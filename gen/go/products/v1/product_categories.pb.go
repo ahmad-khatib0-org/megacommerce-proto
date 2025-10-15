@@ -175,7 +175,7 @@ type SubcategoryAttribute struct {
 	Type string `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
 	// reference id to the attributes table (E.g weight is common for many products types,
 	// so instead rewriting it each time, we store it in another table)
-	Refrence *string `protobuf:"bytes,3,opt,name=refrence,proto3,oneof" json:"refrence,omitempty"`
+	Reference *string `protobuf:"bytes,3,opt,name=reference,proto3,oneof" json:"reference,omitempty"`
 	// for select type (E.g. ['white', 'black', ...])
 	StringArray []string `protobuf:"bytes,4,rep,name=string_array,json=stringArray,proto3" json:"string_array,omitempty"`
 	// for select type (E.g. multiple colors)
@@ -230,9 +230,9 @@ func (x *SubcategoryAttribute) GetType() string {
 	return ""
 }
 
-func (x *SubcategoryAttribute) GetRefrence() string {
-	if x != nil && x.Refrence != nil {
-		return *x.Refrence
+func (x *SubcategoryAttribute) GetReference() string {
+	if x != nil && x.Reference != nil {
+		return *x.Reference
 	}
 	return ""
 }
@@ -279,18 +279,19 @@ const file_products_v1_product_categories_proto_rawDesc = "" +
 	"attributes\x1a`\n" +
 	"\x0fAttributesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x127\n" +
-	"\x05value\x18\x02 \x01(\v2!.products.v1.SubcategoryAttributeR\x05value:\x028\x01\"\x89\x02\n" +
+	"\x05value\x18\x02 \x01(\v2!.products.v1.SubcategoryAttributeR\x05value:\x028\x01\"\x8c\x02\n" +
 	"\x14SubcategoryAttribute\x12\x1a\n" +
 	"\brequired\x18\x01 \x01(\bR\brequired\x12\x12\n" +
-	"\x04type\x18\x02 \x01(\tR\x04type\x12\x1f\n" +
-	"\brefrence\x18\x03 \x01(\tH\x00R\brefrence\x88\x01\x01\x12!\n" +
+	"\x04type\x18\x02 \x01(\tR\x04type\x12!\n" +
+	"\treference\x18\x03 \x01(\tH\x00R\treference\x88\x01\x01\x12!\n" +
 	"\fstring_array\x18\x04 \x03(\tR\vstringArray\x12$\n" +
 	"\vis_multiple\x18\x05 \x01(\bH\x01R\n" +
 	"isMultiple\x88\x01\x01\x12:\n" +
 	"\n" +
 	"validation\x18\x06 \x01(\v2\x1a.shared.v1.ValidationFieldR\n" +
-	"validationB\v\n" +
-	"\t_refrenceB\x0e\n" +
+	"validationB\f\n" +
+	"\n" +
+	"_referenceB\x0e\n" +
 	"\f_is_multipleB\x80\x01\n" +
 	"\x1corg.megacommerce.products.v1B\x16ProductCategoriesProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01b\x06proto3"
 

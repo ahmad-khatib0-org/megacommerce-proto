@@ -32,7 +32,7 @@ message SubcategoryAttribute {
   string type = 2;
   // reference id to the attributes table (E.g weight is common for many products types,
   // so instead rewriting it each time, we store it in another table)
-  optional string refrence = 3;
+  optional string reference = 3;
   // for select type (E.g. ['white', 'black', ...])
   repeated string string_array = 4;
   // for select type (E.g. multiple colors)

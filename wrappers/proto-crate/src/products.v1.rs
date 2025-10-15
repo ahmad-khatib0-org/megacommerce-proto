@@ -137,7 +137,7 @@ pub struct SubcategoryAttribute {
     /// reference id to the attributes table (E.g weight is common for many products types,
     /// so instead rewriting it each time, we store it in another table)
     #[prost(string, optional, tag = "3")]
-    pub refrence: ::core::option::Option<::prost::alloc::string::String>,
+    pub reference: ::core::option::Option<::prost::alloc::string::String>,
     /// for select type (E.g. \['white', 'black', ...\])
     #[prost(string, repeated, tag = "4")]
     pub string_array: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,

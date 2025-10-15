@@ -235,7 +235,7 @@ class SubcategoryAttribute final : public ::google::protobuf::Message
   enum : int {
     kStringArrayFieldNumber = 4,
     kTypeFieldNumber = 2,
-    kRefrenceFieldNumber = 3,
+    kReferenceFieldNumber = 3,
     kValidationFieldNumber = 6,
     kRequiredFieldNumber = 1,
     kIsMultipleFieldNumber = 5,
@@ -277,20 +277,20 @@ class SubcategoryAttribute final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_type();
 
   public:
-  // optional string refrence = 3 [json_name = "refrence"];
-  bool has_refrence() const;
-  void clear_refrence() ;
-  const ::std::string& refrence() const;
+  // optional string reference = 3 [json_name = "reference"];
+  bool has_reference() const;
+  void clear_reference() ;
+  const ::std::string& reference() const;
   template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_refrence(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_refrence();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_refrence();
-  void set_allocated_refrence(::std::string* PROTOBUF_NULLABLE value);
+  void set_reference(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_reference();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_reference();
+  void set_allocated_reference(::std::string* PROTOBUF_NULLABLE value);
 
   private:
-  const ::std::string& _internal_refrence() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_refrence(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_refrence();
+  const ::std::string& _internal_reference() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_reference(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_reference();
 
   public:
   // .shared.v1.ValidationField validation = 6 [json_name = "validation"];
@@ -334,7 +334,7 @@ class SubcategoryAttribute final : public ::google::protobuf::Message
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<3, 6,
-                                   1, 65,
+                                   1, 66,
                                    2>
       _table_;
 
@@ -357,7 +357,7 @@ class SubcategoryAttribute final : public ::google::protobuf::Message
     ::google::protobuf::internal::CachedSize _cached_size_;
     ::google::protobuf::RepeatedPtrField<::std::string> string_array_;
     ::google::protobuf::internal::ArenaStringPtr type_;
-    ::google::protobuf::internal::ArenaStringPtr refrence_;
+    ::google::protobuf::internal::ArenaStringPtr reference_;
     ::shared::v1::ValidationField* PROTOBUF_NULLABLE validation_;
     bool required_;
     bool is_multiple_;
@@ -1527,73 +1527,73 @@ inline void SubcategoryAttribute::set_allocated_type(::std::string* PROTOBUF_NUL
   // @@protoc_insertion_point(field_set_allocated:products.v1.SubcategoryAttribute.type)
 }
 
-// optional string refrence = 3 [json_name = "refrence"];
-inline bool SubcategoryAttribute::has_refrence() const {
+// optional string reference = 3 [json_name = "reference"];
+inline bool SubcategoryAttribute::has_reference() const {
   bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
 }
-inline void SubcategoryAttribute::clear_refrence() {
+inline void SubcategoryAttribute::clear_reference() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.refrence_.ClearToEmpty();
+  _impl_.reference_.ClearToEmpty();
   _impl_._has_bits_[0] &= ~0x00000002u;
 }
-inline const ::std::string& SubcategoryAttribute::refrence() const
+inline const ::std::string& SubcategoryAttribute::reference() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:products.v1.SubcategoryAttribute.refrence)
-  return _internal_refrence();
+  // @@protoc_insertion_point(field_get:products.v1.SubcategoryAttribute.reference)
+  return _internal_reference();
 }
 template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void SubcategoryAttribute::set_refrence(Arg_&& arg, Args_... args) {
+PROTOBUF_ALWAYS_INLINE void SubcategoryAttribute::set_reference(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.refrence_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:products.v1.SubcategoryAttribute.refrence)
+  _impl_.reference_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:products.v1.SubcategoryAttribute.reference)
 }
-inline ::std::string* PROTOBUF_NONNULL SubcategoryAttribute::mutable_refrence()
+inline ::std::string* PROTOBUF_NONNULL SubcategoryAttribute::mutable_reference()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_refrence();
-  // @@protoc_insertion_point(field_mutable:products.v1.SubcategoryAttribute.refrence)
+  ::std::string* _s = _internal_mutable_reference();
+  // @@protoc_insertion_point(field_mutable:products.v1.SubcategoryAttribute.reference)
   return _s;
 }
-inline const ::std::string& SubcategoryAttribute::_internal_refrence() const {
+inline const ::std::string& SubcategoryAttribute::_internal_reference() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.refrence_.Get();
+  return _impl_.reference_.Get();
 }
-inline void SubcategoryAttribute::_internal_set_refrence(const ::std::string& value) {
+inline void SubcategoryAttribute::_internal_set_reference(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000002u;
-  _impl_.refrence_.Set(value, GetArena());
+  _impl_.reference_.Set(value, GetArena());
 }
-inline ::std::string* PROTOBUF_NONNULL SubcategoryAttribute::_internal_mutable_refrence() {
+inline ::std::string* PROTOBUF_NONNULL SubcategoryAttribute::_internal_mutable_reference() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_._has_bits_[0] |= 0x00000002u;
-  return _impl_.refrence_.Mutable( GetArena());
+  return _impl_.reference_.Mutable( GetArena());
 }
-inline ::std::string* PROTOBUF_NULLABLE SubcategoryAttribute::release_refrence() {
+inline ::std::string* PROTOBUF_NULLABLE SubcategoryAttribute::release_reference() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:products.v1.SubcategoryAttribute.refrence)
+  // @@protoc_insertion_point(field_release:products.v1.SubcategoryAttribute.reference)
   if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
     return nullptr;
   }
   _impl_._has_bits_[0] &= ~0x00000002u;
-  auto* released = _impl_.refrence_.Release();
+  auto* released = _impl_.reference_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.refrence_.Set("", GetArena());
+    _impl_.reference_.Set("", GetArena());
   }
   return released;
 }
-inline void SubcategoryAttribute::set_allocated_refrence(::std::string* PROTOBUF_NULLABLE value) {
+inline void SubcategoryAttribute::set_allocated_reference(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
     _impl_._has_bits_[0] |= 0x00000002u;
   } else {
     _impl_._has_bits_[0] &= ~0x00000002u;
   }
-  _impl_.refrence_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.refrence_.IsDefault()) {
-    _impl_.refrence_.Set("", GetArena());
+  _impl_.reference_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.reference_.IsDefault()) {
+    _impl_.reference_.Set("", GetArena());
   }
-  // @@protoc_insertion_point(field_set_allocated:products.v1.SubcategoryAttribute.refrence)
+  // @@protoc_insertion_point(field_set_allocated:products.v1.SubcategoryAttribute.reference)
 }
 
 // repeated string string_array = 4 [json_name = "stringArray"];

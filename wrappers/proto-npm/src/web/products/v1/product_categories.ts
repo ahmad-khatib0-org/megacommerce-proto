@@ -40,7 +40,7 @@ export interface SubcategoryAttribute {
    * reference id to the attributes table (E.g weight is common for many products types,
    * so instead rewriting it each time, we store it in another table)
    */
-  refrence?:
+  reference?:
     | string
     | undefined;
   /** for select type (E.g. ['white', 'black', ...]) */
@@ -391,7 +391,7 @@ function createBaseSubcategoryAttribute(): SubcategoryAttribute {
   return {
     required: false,
     type: "",
-    refrence: undefined,
+    reference: undefined,
     stringArray: [],
     isMultiple: undefined,
     validation: undefined,
@@ -406,8 +406,8 @@ export const SubcategoryAttribute: MessageFns<SubcategoryAttribute> = {
     if (message.type !== "") {
       writer.uint32(18).string(message.type);
     }
-    if (message.refrence !== undefined) {
-      writer.uint32(26).string(message.refrence);
+    if (message.reference !== undefined) {
+      writer.uint32(26).string(message.reference);
     }
     for (const v of message.stringArray) {
       writer.uint32(34).string(v!);
@@ -449,7 +449,7 @@ export const SubcategoryAttribute: MessageFns<SubcategoryAttribute> = {
             break;
           }
 
-          message.refrence = reader.string();
+          message.reference = reader.string();
           continue;
         }
         case 4: {
@@ -489,7 +489,7 @@ export const SubcategoryAttribute: MessageFns<SubcategoryAttribute> = {
     return {
       required: isSet(object.required) ? globalThis.Boolean(object.required) : false,
       type: isSet(object.type) ? globalThis.String(object.type) : "",
-      refrence: isSet(object.refrence) ? globalThis.String(object.refrence) : undefined,
+      reference: isSet(object.reference) ? globalThis.String(object.reference) : undefined,
       stringArray: globalThis.Array.isArray(object?.stringArray)
         ? object.stringArray.map((e: any) => globalThis.String(e))
         : [],
@@ -506,8 +506,8 @@ export const SubcategoryAttribute: MessageFns<SubcategoryAttribute> = {
     if (message.type !== "") {
       obj.type = message.type;
     }
-    if (message.refrence !== undefined) {
-      obj.refrence = message.refrence;
+    if (message.reference !== undefined) {
+      obj.reference = message.reference;
     }
     if (message.stringArray?.length) {
       obj.stringArray = message.stringArray;
@@ -528,7 +528,7 @@ export const SubcategoryAttribute: MessageFns<SubcategoryAttribute> = {
     const message = createBaseSubcategoryAttribute();
     message.required = object.required ?? false;
     message.type = object.type ?? "";
-    message.refrence = object.refrence ?? undefined;
+    message.reference = object.reference ?? undefined;
     message.stringArray = object.stringArray?.map((e) => e) || [];
     message.isMultiple = object.isMultiple ?? undefined;
     message.validation = (object.validation !== undefined && object.validation !== null)
