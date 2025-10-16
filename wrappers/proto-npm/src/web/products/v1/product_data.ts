@@ -8,18 +8,23 @@
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import { AppError } from "../../shared/v1/error.js";
 import { ProductTags } from "./product.js";
-import { Category } from "./product_categories.js";
+import { Subcategory } from "./product_categories.js";
 
 export const protobufPackage = "products.v1";
 
 export interface ProductDataResponseData {
-  category?: Category | undefined;
+  subcategory?: Subcategory | undefined;
   tags?: ProductTags | undefined;
 }
 
 export interface ProductDataRequest {
-  categoryName?: string | undefined;
+  subcategory?: ProductDataRequestCategory | undefined;
   getTags?: boolean | undefined;
+}
+
+export interface ProductDataRequestCategory {
+  category: string;
+  subcategory: string;
 }
 
 export interface ProductDataResponse {
@@ -28,13 +33,13 @@ export interface ProductDataResponse {
 }
 
 function createBaseProductDataResponseData(): ProductDataResponseData {
-  return { category: undefined, tags: undefined };
+  return { subcategory: undefined, tags: undefined };
 }
 
 export const ProductDataResponseData: MessageFns<ProductDataResponseData> = {
   encode(message: ProductDataResponseData, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.category !== undefined) {
-      Category.encode(message.category, writer.uint32(10).fork()).join();
+    if (message.subcategory !== undefined) {
+      Subcategory.encode(message.subcategory, writer.uint32(10).fork()).join();
     }
     if (message.tags !== undefined) {
       ProductTags.encode(message.tags, writer.uint32(18).fork()).join();
@@ -54,7 +59,7 @@ export const ProductDataResponseData: MessageFns<ProductDataResponseData> = {
             break;
           }
 
-          message.category = Category.decode(reader, reader.uint32());
+          message.subcategory = Subcategory.decode(reader, reader.uint32());
           continue;
         }
         case 2: {
@@ -76,15 +81,15 @@ export const ProductDataResponseData: MessageFns<ProductDataResponseData> = {
 
   fromJSON(object: any): ProductDataResponseData {
     return {
-      category: isSet(object.category) ? Category.fromJSON(object.category) : undefined,
+      subcategory: isSet(object.subcategory) ? Subcategory.fromJSON(object.subcategory) : undefined,
       tags: isSet(object.tags) ? ProductTags.fromJSON(object.tags) : undefined,
     };
   },
 
   toJSON(message: ProductDataResponseData): unknown {
     const obj: any = {};
-    if (message.category !== undefined) {
-      obj.category = Category.toJSON(message.category);
+    if (message.subcategory !== undefined) {
+      obj.subcategory = Subcategory.toJSON(message.subcategory);
     }
     if (message.tags !== undefined) {
       obj.tags = ProductTags.toJSON(message.tags);
@@ -97,8 +102,8 @@ export const ProductDataResponseData: MessageFns<ProductDataResponseData> = {
   },
   fromPartial<I extends Exact<DeepPartial<ProductDataResponseData>, I>>(object: I): ProductDataResponseData {
     const message = createBaseProductDataResponseData();
-    message.category = (object.category !== undefined && object.category !== null)
-      ? Category.fromPartial(object.category)
+    message.subcategory = (object.subcategory !== undefined && object.subcategory !== null)
+      ? Subcategory.fromPartial(object.subcategory)
       : undefined;
     message.tags = (object.tags !== undefined && object.tags !== null)
       ? ProductTags.fromPartial(object.tags)
@@ -108,13 +113,13 @@ export const ProductDataResponseData: MessageFns<ProductDataResponseData> = {
 };
 
 function createBaseProductDataRequest(): ProductDataRequest {
-  return { categoryName: undefined, getTags: undefined };
+  return { subcategory: undefined, getTags: undefined };
 }
 
 export const ProductDataRequest: MessageFns<ProductDataRequest> = {
   encode(message: ProductDataRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.categoryName !== undefined) {
-      writer.uint32(10).string(message.categoryName);
+    if (message.subcategory !== undefined) {
+      ProductDataRequestCategory.encode(message.subcategory, writer.uint32(10).fork()).join();
     }
     if (message.getTags !== undefined) {
       writer.uint32(16).bool(message.getTags);
@@ -134,7 +139,7 @@ export const ProductDataRequest: MessageFns<ProductDataRequest> = {
             break;
           }
 
-          message.categoryName = reader.string();
+          message.subcategory = ProductDataRequestCategory.decode(reader, reader.uint32());
           continue;
         }
         case 2: {
@@ -156,15 +161,15 @@ export const ProductDataRequest: MessageFns<ProductDataRequest> = {
 
   fromJSON(object: any): ProductDataRequest {
     return {
-      categoryName: isSet(object.categoryName) ? globalThis.String(object.categoryName) : undefined,
+      subcategory: isSet(object.subcategory) ? ProductDataRequestCategory.fromJSON(object.subcategory) : undefined,
       getTags: isSet(object.getTags) ? globalThis.Boolean(object.getTags) : undefined,
     };
   },
 
   toJSON(message: ProductDataRequest): unknown {
     const obj: any = {};
-    if (message.categoryName !== undefined) {
-      obj.categoryName = message.categoryName;
+    if (message.subcategory !== undefined) {
+      obj.subcategory = ProductDataRequestCategory.toJSON(message.subcategory);
     }
     if (message.getTags !== undefined) {
       obj.getTags = message.getTags;
@@ -177,8 +182,86 @@ export const ProductDataRequest: MessageFns<ProductDataRequest> = {
   },
   fromPartial<I extends Exact<DeepPartial<ProductDataRequest>, I>>(object: I): ProductDataRequest {
     const message = createBaseProductDataRequest();
-    message.categoryName = object.categoryName ?? undefined;
+    message.subcategory = (object.subcategory !== undefined && object.subcategory !== null)
+      ? ProductDataRequestCategory.fromPartial(object.subcategory)
+      : undefined;
     message.getTags = object.getTags ?? undefined;
+    return message;
+  },
+};
+
+function createBaseProductDataRequestCategory(): ProductDataRequestCategory {
+  return { category: "", subcategory: "" };
+}
+
+export const ProductDataRequestCategory: MessageFns<ProductDataRequestCategory> = {
+  encode(message: ProductDataRequestCategory, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.category !== "") {
+      writer.uint32(10).string(message.category);
+    }
+    if (message.subcategory !== "") {
+      writer.uint32(18).string(message.subcategory);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductDataRequestCategory {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductDataRequestCategory();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.category = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.subcategory = reader.string();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductDataRequestCategory {
+    return {
+      category: isSet(object.category) ? globalThis.String(object.category) : "",
+      subcategory: isSet(object.subcategory) ? globalThis.String(object.subcategory) : "",
+    };
+  },
+
+  toJSON(message: ProductDataRequestCategory): unknown {
+    const obj: any = {};
+    if (message.category !== "") {
+      obj.category = message.category;
+    }
+    if (message.subcategory !== "") {
+      obj.subcategory = message.subcategory;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductDataRequestCategory>, I>>(base?: I): ProductDataRequestCategory {
+    return ProductDataRequestCategory.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductDataRequestCategory>, I>>(object: I): ProductDataRequestCategory {
+    const message = createBaseProductDataRequestCategory();
+    message.category = object.category ?? "";
+    message.subcategory = object.subcategory ?? "";
     return message;
   },
 };
