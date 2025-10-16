@@ -26,6 +26,71 @@ namespace _pbi = ::google::protobuf::internal;
 namespace _fl = ::google::protobuf::internal::field_layout;
 namespace products {
 namespace v1 {
+template <typename>
+PROTOBUF_CONSTEXPR SubcategoryTranslations_AttributesEntry_DoNotUse::SubcategoryTranslations_AttributesEntry_DoNotUse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : SubcategoryTranslations_AttributesEntry_DoNotUse::MapEntry(SubcategoryTranslations_AttributesEntry_DoNotUse_class_data_.base()){}
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : SubcategoryTranslations_AttributesEntry_DoNotUse::MapEntry() {
+}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+struct SubcategoryTranslations_AttributesEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SubcategoryTranslations_AttributesEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SubcategoryTranslations_AttributesEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    SubcategoryTranslations_AttributesEntry_DoNotUse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SubcategoryTranslations_AttributesEntry_DoNotUseDefaultTypeInternal _SubcategoryTranslations_AttributesEntry_DoNotUse_default_instance_;
+template <typename>
+PROTOBUF_CONSTEXPR SubcategoryTranslations_DataEntry_DoNotUse::SubcategoryTranslations_DataEntry_DoNotUse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : SubcategoryTranslations_DataEntry_DoNotUse::MapEntry(SubcategoryTranslations_DataEntry_DoNotUse_class_data_.base()){}
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : SubcategoryTranslations_DataEntry_DoNotUse::MapEntry() {
+}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+struct SubcategoryTranslations_DataEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SubcategoryTranslations_DataEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SubcategoryTranslations_DataEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    SubcategoryTranslations_DataEntry_DoNotUse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SubcategoryTranslations_DataEntry_DoNotUseDefaultTypeInternal _SubcategoryTranslations_DataEntry_DoNotUse_default_instance_;
+
+inline constexpr SubcategoryTranslations::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        attributes_{},
+        data_{},
+        name_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()) {}
+
+template <typename>
+PROTOBUF_CONSTEXPR SubcategoryTranslations::SubcategoryTranslations(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(SubcategoryTranslations_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct SubcategoryTranslationsDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SubcategoryTranslationsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SubcategoryTranslationsDefaultTypeInternal() {}
+  union {
+    SubcategoryTranslations _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SubcategoryTranslationsDefaultTypeInternal _SubcategoryTranslations_default_instance_;
 
 inline constexpr SubcategoryAttribute::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -61,6 +126,24 @@ struct SubcategoryAttributeDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SubcategoryAttributeDefaultTypeInternal _SubcategoryAttribute_default_instance_;
 template <typename>
+PROTOBUF_CONSTEXPR CategoryTranslations_SubcategoriesEntry_DoNotUse::CategoryTranslations_SubcategoriesEntry_DoNotUse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : CategoryTranslations_SubcategoriesEntry_DoNotUse::MapEntry(CategoryTranslations_SubcategoriesEntry_DoNotUse_class_data_.base()){}
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : CategoryTranslations_SubcategoriesEntry_DoNotUse::MapEntry() {
+}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+struct CategoryTranslations_SubcategoriesEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CategoryTranslations_SubcategoriesEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CategoryTranslations_SubcategoriesEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    CategoryTranslations_SubcategoriesEntry_DoNotUse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CategoryTranslations_SubcategoriesEntry_DoNotUseDefaultTypeInternal _CategoryTranslations_SubcategoriesEntry_DoNotUse_default_instance_;
+template <typename>
 PROTOBUF_CONSTEXPR Subcategory_AttributesEntry_DoNotUse::Subcategory_AttributesEntry_DoNotUse(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : Subcategory_AttributesEntry_DoNotUse::MapEntry(Subcategory_AttributesEntry_DoNotUse_class_data_.base()){}
@@ -78,6 +161,38 @@ struct Subcategory_AttributesEntry_DoNotUseDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Subcategory_AttributesEntry_DoNotUseDefaultTypeInternal _Subcategory_AttributesEntry_DoNotUse_default_instance_;
+
+inline constexpr CategoryTranslations::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        subcategories_{},
+        name_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        language_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        version_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR CategoryTranslations::CategoryTranslations(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(CategoryTranslations_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct CategoryTranslationsDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CategoryTranslationsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CategoryTranslationsDefaultTypeInternal() {}
+  union {
+    CategoryTranslations _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CategoryTranslationsDefaultTypeInternal _CategoryTranslations_default_instance_;
 
 inline constexpr Subcategory::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -117,6 +232,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
 inline constexpr Category::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
+        translations_{},
         subcategories_{},
         id_(
             &::google::protobuf::internal::fixed_address_empty_string,
@@ -158,14 +274,57 @@ const ::uint32_t
         protodesc_cold) = {
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::Category, _impl_._has_bits_),
-        7, // hasbit index offset
+        8, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::products::v1::Category, _impl_.id_),
         PROTOBUF_FIELD_OFFSET(::products::v1::Category, _impl_.name_),
         PROTOBUF_FIELD_OFFSET(::products::v1::Category, _impl_.image_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::Category, _impl_.translations_),
         PROTOBUF_FIELD_OFFSET(::products::v1::Category, _impl_.subcategories_),
         0,
         1,
         2,
+        ~0u,
+        ~0u,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::CategoryTranslations_SubcategoriesEntry_DoNotUse, _impl_._has_bits_),
+        5, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::CategoryTranslations_SubcategoriesEntry_DoNotUse, _impl_.key_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::CategoryTranslations_SubcategoriesEntry_DoNotUse, _impl_.value_),
+        0,
+        1,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::CategoryTranslations, _impl_._has_bits_),
+        7, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::CategoryTranslations, _impl_.name_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::CategoryTranslations, _impl_.language_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::CategoryTranslations, _impl_.version_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::CategoryTranslations, _impl_.subcategories_),
+        0,
+        1,
+        2,
+        ~0u,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryTranslations_AttributesEntry_DoNotUse, _impl_._has_bits_),
+        5, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryTranslations_AttributesEntry_DoNotUse, _impl_.key_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryTranslations_AttributesEntry_DoNotUse, _impl_.value_),
+        0,
+        1,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryTranslations_DataEntry_DoNotUse, _impl_._has_bits_),
+        5, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryTranslations_DataEntry_DoNotUse, _impl_.key_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryTranslations_DataEntry_DoNotUse, _impl_.value_),
+        0,
+        1,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryTranslations, _impl_._has_bits_),
+        6, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryTranslations, _impl_.name_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryTranslations, _impl_.attributes_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryTranslations, _impl_.data_),
+        0,
+        ~0u,
         ~0u,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::Subcategory_AttributesEntry_DoNotUse, _impl_._has_bits_),
@@ -207,12 +366,22 @@ const ::uint32_t
 static const ::_pbi::MigrationSchema
     schemas[] ABSL_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
         {0, sizeof(::products::v1::Category)},
-        {11, sizeof(::products::v1::Subcategory_AttributesEntry_DoNotUse)},
-        {18, sizeof(::products::v1::Subcategory)},
-        {31, sizeof(::products::v1::SubcategoryAttribute)},
+        {13, sizeof(::products::v1::CategoryTranslations_SubcategoriesEntry_DoNotUse)},
+        {20, sizeof(::products::v1::CategoryTranslations)},
+        {31, sizeof(::products::v1::SubcategoryTranslations_AttributesEntry_DoNotUse)},
+        {38, sizeof(::products::v1::SubcategoryTranslations_DataEntry_DoNotUse)},
+        {45, sizeof(::products::v1::SubcategoryTranslations)},
+        {54, sizeof(::products::v1::Subcategory_AttributesEntry_DoNotUse)},
+        {61, sizeof(::products::v1::Subcategory)},
+        {74, sizeof(::products::v1::SubcategoryAttribute)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::products::v1::_Category_default_instance_._instance,
+    &::products::v1::_CategoryTranslations_SubcategoriesEntry_DoNotUse_default_instance_._instance,
+    &::products::v1::_CategoryTranslations_default_instance_._instance,
+    &::products::v1::_SubcategoryTranslations_AttributesEntry_DoNotUse_default_instance_._instance,
+    &::products::v1::_SubcategoryTranslations_DataEntry_DoNotUse_default_instance_._instance,
+    &::products::v1::_SubcategoryTranslations_default_instance_._instance,
     &::products::v1::_Subcategory_AttributesEntry_DoNotUse_default_instance_._instance,
     &::products::v1::_Subcategory_default_instance_._instance,
     &::products::v1::_SubcategoryAttribute_default_instance_._instance,
@@ -220,44 +389,63 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 const char descriptor_table_protodef_products_2fv1_2fproduct_5fcategories_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n$products/v1/product_categories.proto\022\013"
-    "products.v1\032\032shared/v1/validation.proto\""
-    "\204\001\n\010Category\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001"
-    "(\tR\004name\022\024\n\005image\030\003 \001(\tR\005image\022>\n\rsubcat"
-    "egories\030\004 \003(\0132\030.products.v1.SubcategoryR"
-    "\rsubcategories\"\226\002\n\013Subcategory\022\016\n\002id\030\001 \001"
-    "(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\030\n\007version\030\003 "
-    "\001(\005R\007version\022\035\n\ncreated_at\030\004 \001(\tR\tcreate"
-    "dAt\022H\n\nattributes\030\005 \003(\0132(.products.v1.Su"
-    "bcategory.AttributesEntryR\nattributes\032`\n"
-    "\017AttributesEntry\022\020\n\003key\030\001 \001(\tR\003key\0227\n\005va"
-    "lue\030\002 \001(\0132!.products.v1.SubcategoryAttri"
-    "buteR\005value:\0028\001\"\214\002\n\024SubcategoryAttribute"
-    "\022\032\n\010required\030\001 \001(\010R\010required\022\022\n\004type\030\002 \001"
-    "(\tR\004type\022!\n\treference\030\003 \001(\tH\000R\treference"
-    "\210\001\001\022!\n\014string_array\030\004 \003(\tR\013stringArray\022$"
-    "\n\013is_multiple\030\005 \001(\010H\001R\nisMultiple\210\001\001\022:\n\n"
-    "validation\030\006 \001(\0132\032.shared.v1.ValidationF"
-    "ieldR\nvalidationB\014\n\n_referenceB\016\n\014_is_mu"
-    "ltipleB\200\001\n\034org.megacommerce.products.v1B"
-    "\026ProductCategoriesProtoZEgithub.com/ahma"
-    "d-khatib0-org/megacommerce-proto/gen/go/"
-    "products/v1;v1\370\001\001b\006proto3"
+    "products.v1\032\025shared/v1/types.proto\032\032shar"
+    "ed/v1/validation.proto\"\313\001\n\010Category\022\016\n\002i"
+    "d\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\024\n\005image"
+    "\030\003 \001(\tR\005image\022E\n\014translations\030\004 \003(\0132!.pr"
+    "oducts.v1.CategoryTranslationsR\014translat"
+    "ions\022>\n\rsubcategories\030\005 \003(\0132\030.products.v"
+    "1.SubcategoryR\rsubcategories\"\244\002\n\024Categor"
+    "yTranslations\022\022\n\004name\030\001 \001(\tR\004name\022\032\n\010lan"
+    "guage\030\002 \001(\tR\010language\022\030\n\007version\030\003 \001(\005R\007"
+    "version\022Z\n\rsubcategories\030\004 \003(\01324.product"
+    "s.v1.CategoryTranslations.SubcategoriesE"
+    "ntryR\rsubcategories\032f\n\022SubcategoriesEntr"
+    "y\022\020\n\003key\030\001 \001(\tR\003key\022:\n\005value\030\002 \001(\0132$.pro"
+    "ducts.v1.SubcategoryTranslationsR\005value:"
+    "\0028\001\"\327\002\n\027SubcategoryTranslations\022\022\n\004name\030"
+    "\001 \001(\tR\004name\022T\n\nattributes\030\002 \003(\01324.produc"
+    "ts.v1.SubcategoryTranslations.Attributes"
+    "EntryR\nattributes\022B\n\004data\030\003 \003(\0132..produc"
+    "ts.v1.SubcategoryTranslations.DataEntryR"
+    "\004data\032=\n\017AttributesEntry\022\020\n\003key\030\001 \001(\tR\003k"
+    "ey\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032O\n\tDataEntr"
+    "y\022\020\n\003key\030\001 \001(\tR\003key\022,\n\005value\030\002 \001(\0132\026.sha"
+    "red.v1.StringArrayR\005value:\0028\001\"\226\002\n\013Subcat"
+    "egory\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004nam"
+    "e\022\030\n\007version\030\003 \001(\005R\007version\022\035\n\ncreated_a"
+    "t\030\004 \001(\tR\tcreatedAt\022H\n\nattributes\030\005 \003(\0132("
+    ".products.v1.Subcategory.AttributesEntry"
+    "R\nattributes\032`\n\017AttributesEntry\022\020\n\003key\030\001"
+    " \001(\tR\003key\0227\n\005value\030\002 \001(\0132!.products.v1.S"
+    "ubcategoryAttributeR\005value:\0028\001\"\214\002\n\024Subca"
+    "tegoryAttribute\022\032\n\010required\030\001 \001(\010R\010requi"
+    "red\022\022\n\004type\030\002 \001(\tR\004type\022!\n\treference\030\003 \001"
+    "(\tH\000R\treference\210\001\001\022!\n\014string_array\030\004 \003(\t"
+    "R\013stringArray\022$\n\013is_multiple\030\005 \001(\010H\001R\nis"
+    "Multiple\210\001\001\022:\n\nvalidation\030\006 \001(\0132\032.shared"
+    ".v1.ValidationFieldR\nvalidationB\014\n\n_refe"
+    "renceB\016\n\014_is_multipleB\200\001\n\034org.megacommer"
+    "ce.products.v1B\026ProductCategoriesProtoZE"
+    "github.com/ahmad-khatib0-org/megacommerc"
+    "e-proto/gen/go/products/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
-    descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_deps[1] = {
+    descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_deps[2] = {
+        &::descriptor_table_shared_2fv1_2ftypes_2eproto,
         &::descriptor_table_shared_2fv1_2fvalidation_2eproto,
 };
 static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto = {
     false,
     false,
-    905,
+    1640,
     descriptor_table_protodef_products_2fv1_2fproduct_5fcategories_2eproto,
     "products/v1/product_categories.proto",
     &descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_once,
     descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_deps,
-    1,
-    4,
+    2,
+    9,
     schemas,
     file_default_instances,
     TableStruct_products_2fv1_2fproduct_5fcategories_2eproto::offsets,
@@ -291,6 +479,7 @@ PROTOBUF_NDEBUG_INLINE Category::Impl_::Impl_(
     const ::products::v1::Category& from_msg)
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
+        translations_{visibility, arena, from.translations_},
         subcategories_{visibility, arena, from.subcategories_},
         id_(arena, from.id_),
         name_(arena, from.name_),
@@ -316,6 +505,7 @@ PROTOBUF_NDEBUG_INLINE Category::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
+        translations_{visibility, arena},
         subcategories_{visibility, arena},
         id_(arena),
         name_(arena),
@@ -345,6 +535,10 @@ inline void* PROTOBUF_NONNULL Category::PlacementNew_(
 }
 constexpr auto Category::InternalNewImpl_() {
   constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
+      PROTOBUF_FIELD_OFFSET(Category, _impl_.translations_) +
+          decltype(Category::_impl_.translations_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
       PROTOBUF_FIELD_OFFSET(Category, _impl_.subcategories_) +
           decltype(Category::_impl_.subcategories_)::
               InternalGetArenaOffset(
@@ -393,17 +587,17 @@ Category::GetClassData() const {
   return Category_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 4, 1, 40, 2>
+const ::_pbi::TcParseTable<3, 5, 2, 40, 2>
 Category::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(Category, _impl_._has_bits_),
     0, // no _extensions_
-    4, 24,  // max_field_number, fast_idx_mask
+    5, 56,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967280,  // skipmap
+    4294967264,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    4,  // num_field_entries
-    1,  // num_aux_entries
+    5,  // num_field_entries
+    2,  // num_aux_entries
     offsetof(decltype(_table_), aux_entries),
     Category_class_data_.base(),
     nullptr,  // post_loop_handler
@@ -412,9 +606,7 @@ Category::_table_ = {
     ::_pbi::TcParser::GetTable<::products::v1::Category>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];
-    {::_pbi::TcParser::FastMtR1,
-     {34, 63, 0, PROTOBUF_FIELD_OFFSET(Category, _impl_.subcategories_)}},
+    {::_pbi::TcParser::MiniParse, {}},
     // string id = 1 [json_name = "id"];
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(Category, _impl_.id_)}},
@@ -424,6 +616,14 @@ Category::_table_ = {
     // string image = 3 [json_name = "image"];
     {::_pbi::TcParser::FastUS1,
      {26, 2, 0, PROTOBUF_FIELD_OFFSET(Category, _impl_.image_)}},
+    // repeated .products.v1.CategoryTranslations translations = 4 [json_name = "translations"];
+    {::_pbi::TcParser::FastMtR1,
+     {34, 63, 0, PROTOBUF_FIELD_OFFSET(Category, _impl_.translations_)}},
+    // repeated .products.v1.Subcategory subcategories = 5 [json_name = "subcategories"];
+    {::_pbi::TcParser::FastMtR1,
+     {42, 63, 1, PROTOBUF_FIELD_OFFSET(Category, _impl_.subcategories_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
   }}, {{
     65535, 65535
   }}, {{
@@ -436,11 +636,15 @@ Category::_table_ = {
     // string image = 3 [json_name = "image"];
     {PROTOBUF_FIELD_OFFSET(Category, _impl_.image_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];
-    {PROTOBUF_FIELD_OFFSET(Category, _impl_.subcategories_), -1, 0,
+    // repeated .products.v1.CategoryTranslations translations = 4 [json_name = "translations"];
+    {PROTOBUF_FIELD_OFFSET(Category, _impl_.translations_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // repeated .products.v1.Subcategory subcategories = 5 [json_name = "subcategories"];
+    {PROTOBUF_FIELD_OFFSET(Category, _impl_.subcategories_), -1, 1,
     (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
+      {::_pbi::TcParser::GetTable<::products::v1::CategoryTranslations>()},
       {::_pbi::TcParser::GetTable<::products::v1::Subcategory>()},
   }},
   {{
@@ -458,6 +662,7 @@ PROTOBUF_NOINLINE void Category::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  _impl_.translations_.Clear();
   _impl_.subcategories_.Clear();
   cached_has_bits = _impl_._has_bits_[0];
   if ((cached_has_bits & 0x00000007u) != 0) {
@@ -520,14 +725,25 @@ PROTOBUF_NOINLINE void Category::Clear() {
     }
   }
 
-  // repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];
+  // repeated .products.v1.CategoryTranslations translations = 4 [json_name = "translations"];
+  for (unsigned i = 0, n = static_cast<unsigned>(
+                           this_._internal_translations_size());
+       i < n; i++) {
+    const auto& repfield = this_._internal_translations().Get(i);
+    target =
+        ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+            4, repfield, repfield.GetCachedSize(),
+            target, stream);
+  }
+
+  // repeated .products.v1.Subcategory subcategories = 5 [json_name = "subcategories"];
   for (unsigned i = 0, n = static_cast<unsigned>(
                            this_._internal_subcategories_size());
        i < n; i++) {
     const auto& repfield = this_._internal_subcategories().Get(i);
     target =
         ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-            4, repfield, repfield.GetCachedSize(),
+            5, repfield, repfield.GetCachedSize(),
             target, stream);
   }
 
@@ -556,7 +772,14 @@ PROTOBUF_NOINLINE void Category::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
    {
-    // repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];
+    // repeated .products.v1.CategoryTranslations translations = 4 [json_name = "translations"];
+    {
+      total_size += 1UL * this_._internal_translations_size();
+      for (const auto& msg : this_._internal_translations()) {
+        total_size += ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      }
+    }
+    // repeated .products.v1.Subcategory subcategories = 5 [json_name = "subcategories"];
     {
       total_size += 1UL * this_._internal_subcategories_size();
       for (const auto& msg : this_._internal_subcategories()) {
@@ -600,6 +823,8 @@ void Category::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  _this->_internal_mutable_translations()->MergeFrom(
+      from._internal_translations());
   _this->_internal_mutable_subcategories()->MergeFrom(
       from._internal_subcategories());
   cached_has_bits = from._impl_._has_bits_[0];
@@ -650,6 +875,7 @@ void Category::InternalSwap(Category* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) 
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.translations_.InternalSwap(&other->_impl_.translations_);
   _impl_.subcategories_.InternalSwap(&other->_impl_.subcategories_);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.id_, &other->_impl_.id_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.name_, &other->_impl_.name_, arena);
@@ -657,6 +883,1109 @@ void Category::InternalSwap(Category* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) 
 }
 
 ::google::protobuf::Metadata Category::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+CategoryTranslations_SubcategoriesEntry_DoNotUse::CategoryTranslations_SubcategoriesEntry_DoNotUse()
+    : SuperType(CategoryTranslations_SubcategoriesEntry_DoNotUse_class_data_.base()) {}
+CategoryTranslations_SubcategoriesEntry_DoNotUse::CategoryTranslations_SubcategoriesEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+    : SuperType(arena, CategoryTranslations_SubcategoriesEntry_DoNotUse_class_data_.base()) {}
+#else   // PROTOBUF_CUSTOM_VTABLE
+CategoryTranslations_SubcategoriesEntry_DoNotUse::CategoryTranslations_SubcategoriesEntry_DoNotUse() : SuperType() {}
+CategoryTranslations_SubcategoriesEntry_DoNotUse::CategoryTranslations_SubcategoriesEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena) : SuperType(arena) {}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+inline void* PROTOBUF_NONNULL CategoryTranslations_SubcategoriesEntry_DoNotUse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) CategoryTranslations_SubcategoriesEntry_DoNotUse(arena);
+}
+constexpr auto CategoryTranslations_SubcategoriesEntry_DoNotUse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(CategoryTranslations_SubcategoriesEntry_DoNotUse),
+                                            alignof(CategoryTranslations_SubcategoriesEntry_DoNotUse));
+}
+constexpr auto CategoryTranslations_SubcategoriesEntry_DoNotUse::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_CategoryTranslations_SubcategoriesEntry_DoNotUse_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &CategoryTranslations_SubcategoriesEntry_DoNotUse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<CategoryTranslations_SubcategoriesEntry_DoNotUse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &CategoryTranslations_SubcategoriesEntry_DoNotUse::SharedDtor,
+          static_cast<void (::google::protobuf::MessageLite::*)()>(&CategoryTranslations_SubcategoriesEntry_DoNotUse::ClearImpl),
+              ::google::protobuf::Message::ByteSizeLongImpl, ::google::protobuf::Message::_InternalSerializeImpl
+              ,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(CategoryTranslations_SubcategoriesEntry_DoNotUse, _impl_._cached_size_),
+          false,
+      },
+      &CategoryTranslations_SubcategoriesEntry_DoNotUse::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull CategoryTranslations_SubcategoriesEntry_DoNotUse_class_data_ =
+        CategoryTranslations_SubcategoriesEntry_DoNotUse::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+CategoryTranslations_SubcategoriesEntry_DoNotUse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&CategoryTranslations_SubcategoriesEntry_DoNotUse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(CategoryTranslations_SubcategoriesEntry_DoNotUse_class_data_.tc_table);
+  return CategoryTranslations_SubcategoriesEntry_DoNotUse_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 1, 63, 2>
+CategoryTranslations_SubcategoriesEntry_DoNotUse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(CategoryTranslations_SubcategoriesEntry_DoNotUse, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    CategoryTranslations_SubcategoriesEntry_DoNotUse_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::DiscardEverythingFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::CategoryTranslations_SubcategoriesEntry_DoNotUse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // .products.v1.SubcategoryTranslations value = 2 [json_name = "value"];
+    {::_pbi::TcParser::FastMtS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(CategoryTranslations_SubcategoriesEntry_DoNotUse, _impl_.value_)}},
+    // string key = 1 [json_name = "key"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(CategoryTranslations_SubcategoriesEntry_DoNotUse, _impl_.key_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string key = 1 [json_name = "key"];
+    {PROTOBUF_FIELD_OFFSET(CategoryTranslations_SubcategoriesEntry_DoNotUse, _impl_.key_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // .products.v1.SubcategoryTranslations value = 2 [json_name = "value"];
+    {PROTOBUF_FIELD_OFFSET(CategoryTranslations_SubcategoriesEntry_DoNotUse, _impl_.value_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::products::v1::SubcategoryTranslations>()},
+  }},
+  {{
+    "\63\3\0\0\0\0\0\0"
+    "products.v1.CategoryTranslations.SubcategoriesEntry"
+    "key"
+  }},
+};
+// ===================================================================
+
+class CategoryTranslations::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<CategoryTranslations>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(CategoryTranslations, _impl_._has_bits_);
+};
+
+CategoryTranslations::CategoryTranslations(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, CategoryTranslations_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:products.v1.CategoryTranslations)
+}
+PROTOBUF_NDEBUG_INLINE CategoryTranslations::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::products::v1::CategoryTranslations& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        subcategories_{visibility, arena, from.subcategories_},
+        name_(arena, from.name_),
+        language_(arena, from.language_) {}
+
+CategoryTranslations::CategoryTranslations(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const CategoryTranslations& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, CategoryTranslations_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  CategoryTranslations* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.version_ = from._impl_.version_;
+
+  // @@protoc_insertion_point(copy_constructor:products.v1.CategoryTranslations)
+}
+PROTOBUF_NDEBUG_INLINE CategoryTranslations::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        subcategories_{visibility, arena},
+        name_(arena),
+        language_(arena) {}
+
+inline void CategoryTranslations::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.version_ = {};
+}
+CategoryTranslations::~CategoryTranslations() {
+  // @@protoc_insertion_point(destructor:products.v1.CategoryTranslations)
+  SharedDtor(*this);
+}
+inline void CategoryTranslations::SharedDtor(MessageLite& self) {
+  CategoryTranslations& this_ = static_cast<CategoryTranslations&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.name_.Destroy();
+  this_._impl_.language_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL CategoryTranslations::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) CategoryTranslations(arena);
+}
+constexpr auto CategoryTranslations::InternalNewImpl_() {
+  constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
+      PROTOBUF_FIELD_OFFSET(CategoryTranslations, _impl_.subcategories_) +
+          decltype(CategoryTranslations::_impl_.subcategories_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+      PROTOBUF_FIELD_OFFSET(CategoryTranslations, _impl_.subcategories_) +
+          decltype(CategoryTranslations::_impl_.subcategories_)::
+              InternalGetArenaOffsetAlt(
+                  ::google::protobuf::Message::internal_visibility()),
+  });
+  if (arena_bits.has_value()) {
+    return ::google::protobuf::internal::MessageCreator::CopyInit(
+        sizeof(CategoryTranslations), alignof(CategoryTranslations), *arena_bits);
+  } else {
+    return ::google::protobuf::internal::MessageCreator(&CategoryTranslations::PlacementNew_,
+                                 sizeof(CategoryTranslations),
+                                 alignof(CategoryTranslations));
+  }
+}
+constexpr auto CategoryTranslations::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_CategoryTranslations_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &CategoryTranslations::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<CategoryTranslations>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &CategoryTranslations::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<CategoryTranslations>(), &CategoryTranslations::ByteSizeLong,
+              &CategoryTranslations::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(CategoryTranslations, _impl_._cached_size_),
+          false,
+      },
+      &CategoryTranslations::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull CategoryTranslations_class_data_ =
+        CategoryTranslations::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+CategoryTranslations::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&CategoryTranslations_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(CategoryTranslations_class_data_.tc_table);
+  return CategoryTranslations_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 4, 2, 66, 2>
+CategoryTranslations::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(CategoryTranslations, _impl_._has_bits_),
+    0, // no _extensions_
+    4, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967280,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    4,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    CategoryTranslations_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::CategoryTranslations>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // string name = 1 [json_name = "name"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(CategoryTranslations, _impl_.name_)}},
+    // string language = 2 [json_name = "language"];
+    {::_pbi::TcParser::FastUS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(CategoryTranslations, _impl_.language_)}},
+    // int32 version = 3 [json_name = "version"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(CategoryTranslations, _impl_.version_), 2>(),
+     {24, 2, 0, PROTOBUF_FIELD_OFFSET(CategoryTranslations, _impl_.version_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string name = 1 [json_name = "name"];
+    {PROTOBUF_FIELD_OFFSET(CategoryTranslations, _impl_.name_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string language = 2 [json_name = "language"];
+    {PROTOBUF_FIELD_OFFSET(CategoryTranslations, _impl_.language_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // int32 version = 3 [json_name = "version"];
+    {PROTOBUF_FIELD_OFFSET(CategoryTranslations, _impl_.version_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    // map<string, .products.v1.SubcategoryTranslations> subcategories = 4 [json_name = "subcategories"];
+    {PROTOBUF_FIELD_OFFSET(CategoryTranslations, _impl_.subcategories_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
+  }},
+  {{
+      {::_pbi::TcParser::GetMapAuxInfo(1, 0, 0,
+                                       9, 11,
+                                       0)},
+      {::_pbi::TcParser::GetTable<::products::v1::SubcategoryTranslations>()},
+  }},
+  {{
+    "\40\4\10\0\15\0\0\0"
+    "products.v1.CategoryTranslations"
+    "name"
+    "language"
+    "subcategories"
+  }},
+};
+PROTOBUF_NOINLINE void CategoryTranslations::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.CategoryTranslations)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.subcategories_.Clear();
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003u) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      _impl_.name_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      _impl_.language_.ClearNonDefaultToEmpty();
+    }
+  }
+  _impl_.version_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL CategoryTranslations::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const CategoryTranslations& this_ = static_cast<const CategoryTranslations&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL CategoryTranslations::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const CategoryTranslations& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.CategoryTranslations)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // string name = 1 [json_name = "name"];
+  if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    if (!this_._internal_name().empty()) {
+      const ::std::string& _s = this_._internal_name();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.CategoryTranslations.name");
+      target = stream->WriteStringMaybeAliased(1, _s, target);
+    }
+  }
+
+  // string language = 2 [json_name = "language"];
+  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    if (!this_._internal_language().empty()) {
+      const ::std::string& _s = this_._internal_language();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.CategoryTranslations.language");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
+    }
+  }
+
+  // int32 version = 3 [json_name = "version"];
+  if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
+    if (this_._internal_version() != 0) {
+      target =
+          ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<3>(
+              stream, this_._internal_version(), target);
+    }
+  }
+
+  // map<string, .products.v1.SubcategoryTranslations> subcategories = 4 [json_name = "subcategories"];
+  if (!this_._internal_subcategories().empty()) {
+    using MapType = ::google::protobuf::Map<std::string, ::products::v1::SubcategoryTranslations>;
+    using WireHelper = _pbi::MapEntryFuncs<std::string, ::products::v1::SubcategoryTranslations,
+                                   _pbi::WireFormatLite::TYPE_STRING,
+                                   _pbi::WireFormatLite::TYPE_MESSAGE>;
+    const auto& field = this_._internal_subcategories();
+
+    if (stream->IsSerializationDeterministic() && field.size() > 1) {
+      for (const auto& entry : ::google::protobuf::internal::MapSorterPtr<MapType>(field)) {
+        target = WireHelper::InternalSerialize(
+            4, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.CategoryTranslations.subcategories");
+      }
+    } else {
+      for (const auto& entry : field) {
+        target = WireHelper::InternalSerialize(
+            4, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.CategoryTranslations.subcategories");
+      }
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.CategoryTranslations)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t CategoryTranslations::ByteSizeLong(const MessageLite& base) {
+  const CategoryTranslations& this_ = static_cast<const CategoryTranslations&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t CategoryTranslations::ByteSizeLong() const {
+  const CategoryTranslations& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.CategoryTranslations)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+   {
+    // map<string, .products.v1.SubcategoryTranslations> subcategories = 4 [json_name = "subcategories"];
+    {
+      total_size +=
+          1 * ::google::protobuf::internal::FromIntSize(this_._internal_subcategories_size());
+      for (const auto& entry : this_._internal_subcategories()) {
+        total_size += _pbi::MapEntryFuncs<std::string, ::products::v1::SubcategoryTranslations,
+                                       _pbi::WireFormatLite::TYPE_STRING,
+                                       _pbi::WireFormatLite::TYPE_MESSAGE>::ByteSizeLong(entry.first, entry.second);
+      }
+    }
+  }
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000007u) != 0) {
+    // string name = 1 [json_name = "name"];
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!this_._internal_name().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_name());
+      }
+    }
+    // string language = 2 [json_name = "language"];
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!this_._internal_language().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_language());
+      }
+    }
+    // int32 version = 3 [json_name = "version"];
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      if (this_._internal_version() != 0) {
+        total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+            this_._internal_version());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void CategoryTranslations::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<CategoryTranslations*>(&to_msg);
+  auto& from = static_cast<const CategoryTranslations&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.CategoryTranslations)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.subcategories_.MergeFrom(from._impl_.subcategories_);
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000007u) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!from._internal_name().empty()) {
+        _this->_internal_set_name(from._internal_name());
+      } else {
+        if (_this->_impl_.name_.IsDefault()) {
+          _this->_internal_set_name("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!from._internal_language().empty()) {
+        _this->_internal_set_language(from._internal_language());
+      } else {
+        if (_this->_impl_.language_.IsDefault()) {
+          _this->_internal_set_language("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      if (from._internal_version() != 0) {
+        _this->_impl_.version_ = from._impl_.version_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CategoryTranslations::CopyFrom(const CategoryTranslations& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.CategoryTranslations)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void CategoryTranslations::InternalSwap(CategoryTranslations* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.subcategories_.InternalSwap(&other->_impl_.subcategories_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.name_, &other->_impl_.name_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.language_, &other->_impl_.language_, arena);
+  swap(_impl_.version_, other->_impl_.version_);
+}
+
+::google::protobuf::Metadata CategoryTranslations::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+SubcategoryTranslations_AttributesEntry_DoNotUse::SubcategoryTranslations_AttributesEntry_DoNotUse()
+    : SuperType(SubcategoryTranslations_AttributesEntry_DoNotUse_class_data_.base()) {}
+SubcategoryTranslations_AttributesEntry_DoNotUse::SubcategoryTranslations_AttributesEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+    : SuperType(arena, SubcategoryTranslations_AttributesEntry_DoNotUse_class_data_.base()) {}
+#else   // PROTOBUF_CUSTOM_VTABLE
+SubcategoryTranslations_AttributesEntry_DoNotUse::SubcategoryTranslations_AttributesEntry_DoNotUse() : SuperType() {}
+SubcategoryTranslations_AttributesEntry_DoNotUse::SubcategoryTranslations_AttributesEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena) : SuperType(arena) {}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+inline void* PROTOBUF_NONNULL SubcategoryTranslations_AttributesEntry_DoNotUse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) SubcategoryTranslations_AttributesEntry_DoNotUse(arena);
+}
+constexpr auto SubcategoryTranslations_AttributesEntry_DoNotUse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(SubcategoryTranslations_AttributesEntry_DoNotUse),
+                                            alignof(SubcategoryTranslations_AttributesEntry_DoNotUse));
+}
+constexpr auto SubcategoryTranslations_AttributesEntry_DoNotUse::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_SubcategoryTranslations_AttributesEntry_DoNotUse_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &SubcategoryTranslations_AttributesEntry_DoNotUse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<SubcategoryTranslations_AttributesEntry_DoNotUse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &SubcategoryTranslations_AttributesEntry_DoNotUse::SharedDtor,
+          static_cast<void (::google::protobuf::MessageLite::*)()>(&SubcategoryTranslations_AttributesEntry_DoNotUse::ClearImpl),
+              ::google::protobuf::Message::ByteSizeLongImpl, ::google::protobuf::Message::_InternalSerializeImpl
+              ,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(SubcategoryTranslations_AttributesEntry_DoNotUse, _impl_._cached_size_),
+          false,
+      },
+      &SubcategoryTranslations_AttributesEntry_DoNotUse::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull SubcategoryTranslations_AttributesEntry_DoNotUse_class_data_ =
+        SubcategoryTranslations_AttributesEntry_DoNotUse::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+SubcategoryTranslations_AttributesEntry_DoNotUse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&SubcategoryTranslations_AttributesEntry_DoNotUse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(SubcategoryTranslations_AttributesEntry_DoNotUse_class_data_.tc_table);
+  return SubcategoryTranslations_AttributesEntry_DoNotUse_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 0, 68, 2>
+SubcategoryTranslations_AttributesEntry_DoNotUse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(SubcategoryTranslations_AttributesEntry_DoNotUse, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    SubcategoryTranslations_AttributesEntry_DoNotUse_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::DiscardEverythingFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::SubcategoryTranslations_AttributesEntry_DoNotUse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // string value = 2 [json_name = "value"];
+    {::_pbi::TcParser::FastUS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(SubcategoryTranslations_AttributesEntry_DoNotUse, _impl_.value_)}},
+    // string key = 1 [json_name = "key"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(SubcategoryTranslations_AttributesEntry_DoNotUse, _impl_.key_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string key = 1 [json_name = "key"];
+    {PROTOBUF_FIELD_OFFSET(SubcategoryTranslations_AttributesEntry_DoNotUse, _impl_.key_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string value = 2 [json_name = "value"];
+    {PROTOBUF_FIELD_OFFSET(SubcategoryTranslations_AttributesEntry_DoNotUse, _impl_.value_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\63\3\5\0\0\0\0\0"
+    "products.v1.SubcategoryTranslations.AttributesEntry"
+    "key"
+    "value"
+  }},
+};
+// ===================================================================
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+SubcategoryTranslations_DataEntry_DoNotUse::SubcategoryTranslations_DataEntry_DoNotUse()
+    : SuperType(SubcategoryTranslations_DataEntry_DoNotUse_class_data_.base()) {}
+SubcategoryTranslations_DataEntry_DoNotUse::SubcategoryTranslations_DataEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+    : SuperType(arena, SubcategoryTranslations_DataEntry_DoNotUse_class_data_.base()) {}
+#else   // PROTOBUF_CUSTOM_VTABLE
+SubcategoryTranslations_DataEntry_DoNotUse::SubcategoryTranslations_DataEntry_DoNotUse() : SuperType() {}
+SubcategoryTranslations_DataEntry_DoNotUse::SubcategoryTranslations_DataEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena) : SuperType(arena) {}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+inline void* PROTOBUF_NONNULL SubcategoryTranslations_DataEntry_DoNotUse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) SubcategoryTranslations_DataEntry_DoNotUse(arena);
+}
+constexpr auto SubcategoryTranslations_DataEntry_DoNotUse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(SubcategoryTranslations_DataEntry_DoNotUse),
+                                            alignof(SubcategoryTranslations_DataEntry_DoNotUse));
+}
+constexpr auto SubcategoryTranslations_DataEntry_DoNotUse::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_SubcategoryTranslations_DataEntry_DoNotUse_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &SubcategoryTranslations_DataEntry_DoNotUse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<SubcategoryTranslations_DataEntry_DoNotUse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &SubcategoryTranslations_DataEntry_DoNotUse::SharedDtor,
+          static_cast<void (::google::protobuf::MessageLite::*)()>(&SubcategoryTranslations_DataEntry_DoNotUse::ClearImpl),
+              ::google::protobuf::Message::ByteSizeLongImpl, ::google::protobuf::Message::_InternalSerializeImpl
+              ,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(SubcategoryTranslations_DataEntry_DoNotUse, _impl_._cached_size_),
+          false,
+      },
+      &SubcategoryTranslations_DataEntry_DoNotUse::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull SubcategoryTranslations_DataEntry_DoNotUse_class_data_ =
+        SubcategoryTranslations_DataEntry_DoNotUse::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+SubcategoryTranslations_DataEntry_DoNotUse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&SubcategoryTranslations_DataEntry_DoNotUse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(SubcategoryTranslations_DataEntry_DoNotUse_class_data_.tc_table);
+  return SubcategoryTranslations_DataEntry_DoNotUse_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 1, 57, 2>
+SubcategoryTranslations_DataEntry_DoNotUse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(SubcategoryTranslations_DataEntry_DoNotUse, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    SubcategoryTranslations_DataEntry_DoNotUse_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::DiscardEverythingFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::SubcategoryTranslations_DataEntry_DoNotUse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // .shared.v1.StringArray value = 2 [json_name = "value"];
+    {::_pbi::TcParser::FastMtS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(SubcategoryTranslations_DataEntry_DoNotUse, _impl_.value_)}},
+    // string key = 1 [json_name = "key"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(SubcategoryTranslations_DataEntry_DoNotUse, _impl_.key_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string key = 1 [json_name = "key"];
+    {PROTOBUF_FIELD_OFFSET(SubcategoryTranslations_DataEntry_DoNotUse, _impl_.key_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // .shared.v1.StringArray value = 2 [json_name = "value"];
+    {PROTOBUF_FIELD_OFFSET(SubcategoryTranslations_DataEntry_DoNotUse, _impl_.value_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::shared::v1::StringArray>()},
+  }},
+  {{
+    "\55\3\0\0\0\0\0\0"
+    "products.v1.SubcategoryTranslations.DataEntry"
+    "key"
+  }},
+};
+// ===================================================================
+
+class SubcategoryTranslations::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<SubcategoryTranslations>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(SubcategoryTranslations, _impl_._has_bits_);
+};
+
+void SubcategoryTranslations::clear_data() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.data_.Clear();
+}
+SubcategoryTranslations::SubcategoryTranslations(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, SubcategoryTranslations_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:products.v1.SubcategoryTranslations)
+}
+PROTOBUF_NDEBUG_INLINE SubcategoryTranslations::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::products::v1::SubcategoryTranslations& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        attributes_{visibility, arena, from.attributes_},
+        data_{visibility, arena, from.data_},
+        name_(arena, from.name_) {}
+
+SubcategoryTranslations::SubcategoryTranslations(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const SubcategoryTranslations& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, SubcategoryTranslations_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SubcategoryTranslations* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+
+  // @@protoc_insertion_point(copy_constructor:products.v1.SubcategoryTranslations)
+}
+PROTOBUF_NDEBUG_INLINE SubcategoryTranslations::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        attributes_{visibility, arena},
+        data_{visibility, arena},
+        name_(arena) {}
+
+inline void SubcategoryTranslations::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+SubcategoryTranslations::~SubcategoryTranslations() {
+  // @@protoc_insertion_point(destructor:products.v1.SubcategoryTranslations)
+  SharedDtor(*this);
+}
+inline void SubcategoryTranslations::SharedDtor(MessageLite& self) {
+  SubcategoryTranslations& this_ = static_cast<SubcategoryTranslations&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.name_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL SubcategoryTranslations::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) SubcategoryTranslations(arena);
+}
+constexpr auto SubcategoryTranslations::InternalNewImpl_() {
+  constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
+      PROTOBUF_FIELD_OFFSET(SubcategoryTranslations, _impl_.attributes_) +
+          decltype(SubcategoryTranslations::_impl_.attributes_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+      PROTOBUF_FIELD_OFFSET(SubcategoryTranslations, _impl_.attributes_) +
+          decltype(SubcategoryTranslations::_impl_.attributes_)::
+              InternalGetArenaOffsetAlt(
+                  ::google::protobuf::Message::internal_visibility()),
+      PROTOBUF_FIELD_OFFSET(SubcategoryTranslations, _impl_.data_) +
+          decltype(SubcategoryTranslations::_impl_.data_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+      PROTOBUF_FIELD_OFFSET(SubcategoryTranslations, _impl_.data_) +
+          decltype(SubcategoryTranslations::_impl_.data_)::
+              InternalGetArenaOffsetAlt(
+                  ::google::protobuf::Message::internal_visibility()),
+  });
+  if (arena_bits.has_value()) {
+    return ::google::protobuf::internal::MessageCreator::CopyInit(
+        sizeof(SubcategoryTranslations), alignof(SubcategoryTranslations), *arena_bits);
+  } else {
+    return ::google::protobuf::internal::MessageCreator(&SubcategoryTranslations::PlacementNew_,
+                                 sizeof(SubcategoryTranslations),
+                                 alignof(SubcategoryTranslations));
+  }
+}
+constexpr auto SubcategoryTranslations::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_SubcategoryTranslations_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &SubcategoryTranslations::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<SubcategoryTranslations>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &SubcategoryTranslations::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<SubcategoryTranslations>(), &SubcategoryTranslations::ByteSizeLong,
+              &SubcategoryTranslations::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(SubcategoryTranslations, _impl_._cached_size_),
+          false,
+      },
+      &SubcategoryTranslations::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull SubcategoryTranslations_class_data_ =
+        SubcategoryTranslations::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+SubcategoryTranslations::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&SubcategoryTranslations_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(SubcategoryTranslations_class_data_.tc_table);
+  return SubcategoryTranslations_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 3, 3, 62, 2>
+SubcategoryTranslations::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(SubcategoryTranslations, _impl_._has_bits_),
+    0, // no _extensions_
+    3, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967288,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    3,  // num_field_entries
+    3,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    SubcategoryTranslations_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::SubcategoryTranslations>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // string name = 1 [json_name = "name"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(SubcategoryTranslations, _impl_.name_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string name = 1 [json_name = "name"];
+    {PROTOBUF_FIELD_OFFSET(SubcategoryTranslations, _impl_.name_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // map<string, string> attributes = 2 [json_name = "attributes"];
+    {PROTOBUF_FIELD_OFFSET(SubcategoryTranslations, _impl_.attributes_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
+    // map<string, .shared.v1.StringArray> data = 3 [json_name = "data"];
+    {PROTOBUF_FIELD_OFFSET(SubcategoryTranslations, _impl_.data_), -1, 1,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
+  }},
+  {{
+      {::_pbi::TcParser::GetMapAuxInfo(1, 0, 0,
+                                       9, 9,
+                                       0)},
+      {::_pbi::TcParser::GetMapAuxInfo(1, 0, 0,
+                                       9, 11,
+                                       0)},
+      {::_pbi::TcParser::GetTable<::shared::v1::StringArray>()},
+  }},
+  {{
+    "\43\4\12\4\0\0\0\0"
+    "products.v1.SubcategoryTranslations"
+    "name"
+    "attributes"
+    "data"
+  }},
+};
+PROTOBUF_NOINLINE void SubcategoryTranslations::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.SubcategoryTranslations)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.attributes_.Clear();
+  _impl_.data_.Clear();
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000001u) != 0) {
+    _impl_.name_.ClearNonDefaultToEmpty();
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL SubcategoryTranslations::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const SubcategoryTranslations& this_ = static_cast<const SubcategoryTranslations&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL SubcategoryTranslations::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const SubcategoryTranslations& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.SubcategoryTranslations)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // string name = 1 [json_name = "name"];
+  if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    if (!this_._internal_name().empty()) {
+      const ::std::string& _s = this_._internal_name();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.SubcategoryTranslations.name");
+      target = stream->WriteStringMaybeAliased(1, _s, target);
+    }
+  }
+
+  // map<string, string> attributes = 2 [json_name = "attributes"];
+  if (!this_._internal_attributes().empty()) {
+    using MapType = ::google::protobuf::Map<std::string, std::string>;
+    using WireHelper = _pbi::MapEntryFuncs<std::string, std::string,
+                                   _pbi::WireFormatLite::TYPE_STRING,
+                                   _pbi::WireFormatLite::TYPE_STRING>;
+    const auto& field = this_._internal_attributes();
+
+    if (stream->IsSerializationDeterministic() && field.size() > 1) {
+      for (const auto& entry : ::google::protobuf::internal::MapSorterPtr<MapType>(field)) {
+        target = WireHelper::InternalSerialize(
+            2, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.SubcategoryTranslations.attributes");
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.second.data(), static_cast<int>(entry.second.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.SubcategoryTranslations.attributes");
+      }
+    } else {
+      for (const auto& entry : field) {
+        target = WireHelper::InternalSerialize(
+            2, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.SubcategoryTranslations.attributes");
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.second.data(), static_cast<int>(entry.second.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.SubcategoryTranslations.attributes");
+      }
+    }
+  }
+
+  // map<string, .shared.v1.StringArray> data = 3 [json_name = "data"];
+  if (!this_._internal_data().empty()) {
+    using MapType = ::google::protobuf::Map<std::string, ::shared::v1::StringArray>;
+    using WireHelper = _pbi::MapEntryFuncs<std::string, ::shared::v1::StringArray,
+                                   _pbi::WireFormatLite::TYPE_STRING,
+                                   _pbi::WireFormatLite::TYPE_MESSAGE>;
+    const auto& field = this_._internal_data();
+
+    if (stream->IsSerializationDeterministic() && field.size() > 1) {
+      for (const auto& entry : ::google::protobuf::internal::MapSorterPtr<MapType>(field)) {
+        target = WireHelper::InternalSerialize(
+            3, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.SubcategoryTranslations.data");
+      }
+    } else {
+      for (const auto& entry : field) {
+        target = WireHelper::InternalSerialize(
+            3, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.SubcategoryTranslations.data");
+      }
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.SubcategoryTranslations)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t SubcategoryTranslations::ByteSizeLong(const MessageLite& base) {
+  const SubcategoryTranslations& this_ = static_cast<const SubcategoryTranslations&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t SubcategoryTranslations::ByteSizeLong() const {
+  const SubcategoryTranslations& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.SubcategoryTranslations)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+   {
+    // map<string, string> attributes = 2 [json_name = "attributes"];
+    {
+      total_size +=
+          1 * ::google::protobuf::internal::FromIntSize(this_._internal_attributes_size());
+      for (const auto& entry : this_._internal_attributes()) {
+        total_size += _pbi::MapEntryFuncs<std::string, std::string,
+                                       _pbi::WireFormatLite::TYPE_STRING,
+                                       _pbi::WireFormatLite::TYPE_STRING>::ByteSizeLong(entry.first, entry.second);
+      }
+    }
+    // map<string, .shared.v1.StringArray> data = 3 [json_name = "data"];
+    {
+      total_size +=
+          1 * ::google::protobuf::internal::FromIntSize(this_._internal_data_size());
+      for (const auto& entry : this_._internal_data()) {
+        total_size += _pbi::MapEntryFuncs<std::string, ::shared::v1::StringArray,
+                                       _pbi::WireFormatLite::TYPE_STRING,
+                                       _pbi::WireFormatLite::TYPE_MESSAGE>::ByteSizeLong(entry.first, entry.second);
+      }
+    }
+  }
+   {
+    // string name = 1 [json_name = "name"];
+    cached_has_bits = this_._impl_._has_bits_[0];
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!this_._internal_name().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_name());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void SubcategoryTranslations::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<SubcategoryTranslations*>(&to_msg);
+  auto& from = static_cast<const SubcategoryTranslations&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.SubcategoryTranslations)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.attributes_.MergeFrom(from._impl_.attributes_);
+  _this->_impl_.data_.MergeFrom(from._impl_.data_);
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000001u) != 0) {
+    if (!from._internal_name().empty()) {
+      _this->_internal_set_name(from._internal_name());
+    } else {
+      if (_this->_impl_.name_.IsDefault()) {
+        _this->_internal_set_name("");
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SubcategoryTranslations::CopyFrom(const SubcategoryTranslations& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.SubcategoryTranslations)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void SubcategoryTranslations::InternalSwap(SubcategoryTranslations* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.attributes_.InternalSwap(&other->_impl_.attributes_);
+  _impl_.data_.InternalSwap(&other->_impl_.data_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.name_, &other->_impl_.name_, arena);
+}
+
+::google::protobuf::Metadata SubcategoryTranslations::GetMetadata() const {
   return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // ===================================================================

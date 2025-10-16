@@ -15,6 +15,12 @@ pub struct NestedStringMap {
     pub data: ::std::collections::HashMap<::prost::alloc::string::String, StringMap>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct StringArray {
+    #[prost(string, repeated, tag = "1")]
+    pub values: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]
 pub struct OrderDirection {
     #[prost(oneof = "order_direction::Order", tags = "1, 2")]

@@ -2,6 +2,7 @@ syntax = "proto3";
 
 package products.v1;
 
+import "shared/v1/types.proto";
 import "shared/v1/validation.proto";
 
 option cc_enable_arenas = true;
@@ -13,7 +14,21 @@ message Category {
   string id = 1;
   string name = 2;
   string image = 3;
-  repeated Subcategory subcategories = 4;
+  repeated CategoryTranslations translations = 4;
+  repeated Subcategory subcategories = 5;
+}
+
+message CategoryTranslations {
+  string name = 1;
+  string language = 2;
+  int32 version = 3;
+  map<string, SubcategoryTranslations> subcategories = 4;
+}
+
+message SubcategoryTranslations {
+  string name = 1;
+  map<string, string> attributes = 2;
+  map<string, shared.v1.StringArray> data = 3;
 }
 
 message Subcategory {

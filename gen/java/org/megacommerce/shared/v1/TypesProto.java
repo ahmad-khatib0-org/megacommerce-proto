@@ -1403,6 +1403,582 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
 
   }
 
+  public interface StringArrayOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:shared.v1.StringArray)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated string values = 1 [json_name = "values"];</code>
+     * @return A list containing the values.
+     */
+    java.util.List<java.lang.String>
+        getValuesList();
+    /**
+     * <code>repeated string values = 1 [json_name = "values"];</code>
+     * @return The count of values.
+     */
+    int getValuesCount();
+    /**
+     * <code>repeated string values = 1 [json_name = "values"];</code>
+     * @param index The index of the element to return.
+     * @return The values at the given index.
+     */
+    java.lang.String getValues(int index);
+    /**
+     * <code>repeated string values = 1 [json_name = "values"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the values at the given index.
+     */
+    com.google.protobuf.ByteString
+        getValuesBytes(int index);
+  }
+  /**
+   * Protobuf type {@code shared.v1.StringArray}
+   */
+  public static final class StringArray extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:shared.v1.StringArray)
+      StringArrayOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        StringArray.class.getName());
+    }
+    // Use StringArray.newBuilder() to construct.
+    private StringArray(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private StringArray() {
+      values_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_StringArray_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_StringArray_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.shared.v1.TypesProto.StringArray.class, org.megacommerce.shared.v1.TypesProto.StringArray.Builder.class);
+    }
+
+    public static final int VALUES_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList values_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     * <code>repeated string values = 1 [json_name = "values"];</code>
+     * @return A list containing the values.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getValuesList() {
+      return values_;
+    }
+    /**
+     * <code>repeated string values = 1 [json_name = "values"];</code>
+     * @return The count of values.
+     */
+    public int getValuesCount() {
+      return values_.size();
+    }
+    /**
+     * <code>repeated string values = 1 [json_name = "values"];</code>
+     * @param index The index of the element to return.
+     * @return The values at the given index.
+     */
+    public java.lang.String getValues(int index) {
+      return values_.get(index);
+    }
+    /**
+     * <code>repeated string values = 1 [json_name = "values"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the values at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getValuesBytes(int index) {
+      return values_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < values_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, values_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < values_.size(); i++) {
+          dataSize += computeStringSizeNoTag(values_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getValuesList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.shared.v1.TypesProto.StringArray)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.shared.v1.TypesProto.StringArray other = (org.megacommerce.shared.v1.TypesProto.StringArray) obj;
+
+      if (!getValuesList()
+          .equals(other.getValuesList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getValuesCount() > 0) {
+        hash = (37 * hash) + VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + getValuesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.shared.v1.TypesProto.StringArray parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.StringArray parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.StringArray parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.StringArray parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.StringArray parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.StringArray parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.StringArray parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.StringArray parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.shared.v1.TypesProto.StringArray parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.shared.v1.TypesProto.StringArray parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.StringArray parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.shared.v1.TypesProto.StringArray parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.shared.v1.TypesProto.StringArray prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code shared.v1.StringArray}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:shared.v1.StringArray)
+        org.megacommerce.shared.v1.TypesProto.StringArrayOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_StringArray_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_StringArray_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.shared.v1.TypesProto.StringArray.class, org.megacommerce.shared.v1.TypesProto.StringArray.Builder.class);
+      }
+
+      // Construct using org.megacommerce.shared.v1.TypesProto.StringArray.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        values_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_StringArray_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.StringArray getDefaultInstanceForType() {
+        return org.megacommerce.shared.v1.TypesProto.StringArray.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.StringArray build() {
+        org.megacommerce.shared.v1.TypesProto.StringArray result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.StringArray buildPartial() {
+        org.megacommerce.shared.v1.TypesProto.StringArray result = new org.megacommerce.shared.v1.TypesProto.StringArray(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.shared.v1.TypesProto.StringArray result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          values_.makeImmutable();
+          result.values_ = values_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.shared.v1.TypesProto.StringArray) {
+          return mergeFrom((org.megacommerce.shared.v1.TypesProto.StringArray)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.shared.v1.TypesProto.StringArray other) {
+        if (other == org.megacommerce.shared.v1.TypesProto.StringArray.getDefaultInstance()) return this;
+        if (!other.values_.isEmpty()) {
+          if (values_.isEmpty()) {
+            values_ = other.values_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureValuesIsMutable();
+            values_.addAll(other.values_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureValuesIsMutable();
+                values_.add(s);
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringArrayList values_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensureValuesIsMutable() {
+        if (!values_.isModifiable()) {
+          values_ = new com.google.protobuf.LazyStringArrayList(values_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+      /**
+       * <code>repeated string values = 1 [json_name = "values"];</code>
+       * @return A list containing the values.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getValuesList() {
+        values_.makeImmutable();
+        return values_;
+      }
+      /**
+       * <code>repeated string values = 1 [json_name = "values"];</code>
+       * @return The count of values.
+       */
+      public int getValuesCount() {
+        return values_.size();
+      }
+      /**
+       * <code>repeated string values = 1 [json_name = "values"];</code>
+       * @param index The index of the element to return.
+       * @return The values at the given index.
+       */
+      public java.lang.String getValues(int index) {
+        return values_.get(index);
+      }
+      /**
+       * <code>repeated string values = 1 [json_name = "values"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the values at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getValuesBytes(int index) {
+        return values_.getByteString(index);
+      }
+      /**
+       * <code>repeated string values = 1 [json_name = "values"];</code>
+       * @param index The index to set the value at.
+       * @param value The values to set.
+       * @return This builder for chaining.
+       */
+      public Builder setValues(
+          int index, java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureValuesIsMutable();
+        values_.set(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string values = 1 [json_name = "values"];</code>
+       * @param value The values to add.
+       * @return This builder for chaining.
+       */
+      public Builder addValues(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureValuesIsMutable();
+        values_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string values = 1 [json_name = "values"];</code>
+       * @param values The values to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllValues(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureValuesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, values_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string values = 1 [json_name = "values"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearValues() {
+        values_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string values = 1 [json_name = "values"];</code>
+       * @param value The bytes of the values to add.
+       * @return This builder for chaining.
+       */
+      public Builder addValuesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        ensureValuesIsMutable();
+        values_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:shared.v1.StringArray)
+    }
+
+    // @@protoc_insertion_point(class_scope:shared.v1.StringArray)
+    private static final org.megacommerce.shared.v1.TypesProto.StringArray DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.shared.v1.TypesProto.StringArray();
+    }
+
+    public static org.megacommerce.shared.v1.TypesProto.StringArray getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StringArray>
+        PARSER = new com.google.protobuf.AbstractParser<StringArray>() {
+      @java.lang.Override
+      public StringArray parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<StringArray> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StringArray> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.shared.v1.TypesProto.StringArray getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface OrderDirectionOrBuilder extends
       // @@protoc_insertion_point(interface_extends:shared.v1.OrderDirection)
       com.google.protobuf.MessageOrBuilder {
@@ -4581,6 +5157,11 @@ java.lang.String defaultValue) {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_shared_v1_NestedStringMap_DataEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_shared_v1_StringArray_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_shared_v1_StringArray_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_shared_v1_OrderDirection_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -4626,20 +5207,21 @@ java.lang.String defaultValue) {
       "\017NestedStringMap\0228\n\004data\030\001 \003(\0132$.shared." +
       "v1.NestedStringMap.DataEntryR\004data\032M\n\tDa" +
       "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\013" +
-      "2\024.shared.v1.StringMapR\005value:\0028\001\"C\n\016Ord" +
-      "erDirection\022\022\n\003asc\030\001 \001(\010H\000R\003asc\022\024\n\004desc\030" +
-      "\002 \001(\010H\000R\004descB\007\n\005order\"\307\001\n\023SuccessRespon" +
-      "seData\022\035\n\007message\030\001 \001(\tH\000R\007message\210\001\001\022H\n" +
-      "\010metadata\030\002 \003(\0132,.shared.v1.SuccessRespo" +
-      "nseData.MetadataEntryR\010metadata\032;\n\rMetad" +
-      "ataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(" +
-      "\tR\005value:\0028\001B\n\n\010_message\",\n\006IDName\022\016\n\002id" +
-      "\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\"6\n\003Any\022\031\n" +
-      "\010type_url\030\001 \001(\tR\007typeUrl\022\024\n\005value\030\002 \001(\014R" +
-      "\005value\"\007\n\005EmptyBp\n\032org.megacommerce.shar" +
-      "ed.v1B\nTypesProtoZCgithub.com/ahmad-khat" +
-      "ib0-org/megacommerce-proto/gen/go/shared" +
-      "/v1;v1\370\001\001b\006proto3"
+      "2\024.shared.v1.StringMapR\005value:\0028\001\"%\n\013Str" +
+      "ingArray\022\026\n\006values\030\001 \003(\tR\006values\"C\n\016Orde" +
+      "rDirection\022\022\n\003asc\030\001 \001(\010H\000R\003asc\022\024\n\004desc\030\002" +
+      " \001(\010H\000R\004descB\007\n\005order\"\307\001\n\023SuccessRespons" +
+      "eData\022\035\n\007message\030\001 \001(\tH\000R\007message\210\001\001\022H\n\010" +
+      "metadata\030\002 \003(\0132,.shared.v1.SuccessRespon" +
+      "seData.MetadataEntryR\010metadata\032;\n\rMetada" +
+      "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t" +
+      "R\005value:\0028\001B\n\n\010_message\",\n\006IDName\022\016\n\002id\030" +
+      "\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\"6\n\003Any\022\031\n\010" +
+      "type_url\030\001 \001(\tR\007typeUrl\022\024\n\005value\030\002 \001(\014R\005" +
+      "value\"\007\n\005EmptyBp\n\032org.megacommerce.share" +
+      "d.v1B\nTypesProtoZCgithub.com/ahmad-khati" +
+      "b0-org/megacommerce-proto/gen/go/shared/" +
+      "v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4669,14 +5251,20 @@ java.lang.String defaultValue) {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_NestedStringMap_DataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_shared_v1_OrderDirection_descriptor =
+    internal_static_shared_v1_StringArray_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_shared_v1_StringArray_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_shared_v1_StringArray_descriptor,
+        new java.lang.String[] { "Values", });
+    internal_static_shared_v1_OrderDirection_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_shared_v1_OrderDirection_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_OrderDirection_descriptor,
         new java.lang.String[] { "Asc", "Desc", "Order", });
     internal_static_shared_v1_SuccessResponseData_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_shared_v1_SuccessResponseData_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_SuccessResponseData_descriptor,
@@ -4688,19 +5276,19 @@ java.lang.String defaultValue) {
         internal_static_shared_v1_SuccessResponseData_MetadataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_shared_v1_IDName_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_shared_v1_IDName_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_IDName_descriptor,
         new java.lang.String[] { "Id", "Name", });
     internal_static_shared_v1_Any_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_shared_v1_Any_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_Any_descriptor,
         new java.lang.String[] { "TypeUrl", "Value", });
     internal_static_shared_v1_Empty_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_shared_v1_Empty_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_Empty_descriptor,

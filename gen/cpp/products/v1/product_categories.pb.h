@@ -33,6 +33,7 @@
 #include "google/protobuf/map_entry.h"
 #include "google/protobuf/map_field.h"
 #include "google/protobuf/unknown_field_set.h"
+#include "shared/v1/types.pb.h"
 #include "shared/v1/validation.pb.h"
 // @@protoc_insertion_point(includes)
 
@@ -63,6 +64,14 @@ class Category;
 struct CategoryDefaultTypeInternal;
 extern CategoryDefaultTypeInternal _Category_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull Category_class_data_;
+class CategoryTranslations;
+struct CategoryTranslationsDefaultTypeInternal;
+extern CategoryTranslationsDefaultTypeInternal _CategoryTranslations_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull CategoryTranslations_class_data_;
+class CategoryTranslations_SubcategoriesEntry_DoNotUse;
+struct CategoryTranslations_SubcategoriesEntry_DoNotUseDefaultTypeInternal;
+extern CategoryTranslations_SubcategoriesEntry_DoNotUseDefaultTypeInternal _CategoryTranslations_SubcategoriesEntry_DoNotUse_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull CategoryTranslations_SubcategoriesEntry_DoNotUse_class_data_;
 class Subcategory;
 struct SubcategoryDefaultTypeInternal;
 extern SubcategoryDefaultTypeInternal _Subcategory_default_instance_;
@@ -71,6 +80,18 @@ class SubcategoryAttribute;
 struct SubcategoryAttributeDefaultTypeInternal;
 extern SubcategoryAttributeDefaultTypeInternal _SubcategoryAttribute_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull SubcategoryAttribute_class_data_;
+class SubcategoryTranslations;
+struct SubcategoryTranslationsDefaultTypeInternal;
+extern SubcategoryTranslationsDefaultTypeInternal _SubcategoryTranslations_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull SubcategoryTranslations_class_data_;
+class SubcategoryTranslations_AttributesEntry_DoNotUse;
+struct SubcategoryTranslations_AttributesEntry_DoNotUseDefaultTypeInternal;
+extern SubcategoryTranslations_AttributesEntry_DoNotUseDefaultTypeInternal _SubcategoryTranslations_AttributesEntry_DoNotUse_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull SubcategoryTranslations_AttributesEntry_DoNotUse_class_data_;
+class SubcategoryTranslations_DataEntry_DoNotUse;
+struct SubcategoryTranslations_DataEntry_DoNotUseDefaultTypeInternal;
+extern SubcategoryTranslations_DataEntry_DoNotUseDefaultTypeInternal _SubcategoryTranslations_DataEntry_DoNotUse_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull SubcategoryTranslations_DataEntry_DoNotUse_class_data_;
 class Subcategory_AttributesEntry_DoNotUse;
 struct Subcategory_AttributesEntry_DoNotUseDefaultTypeInternal;
 extern Subcategory_AttributesEntry_DoNotUseDefaultTypeInternal _Subcategory_AttributesEntry_DoNotUse_default_instance_;
@@ -88,6 +109,320 @@ namespace v1 {
 // ===================================================================
 
 
+// -------------------------------------------------------------------
+
+class SubcategoryTranslations_AttributesEntry_DoNotUse final
+    : public ::google::protobuf::internal::MapEntry<std::string, std::string,
+                             ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+                             ::google::protobuf::internal::WireFormatLite::TYPE_STRING> {
+ public:
+  using SuperType =
+      ::google::protobuf::internal::MapEntry<std::string, std::string,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING>;
+  SubcategoryTranslations_AttributesEntry_DoNotUse();
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR SubcategoryTranslations_AttributesEntry_DoNotUse(::google::protobuf::internal::ConstantInitialized);
+  explicit SubcategoryTranslations_AttributesEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr const void* PROTOBUF_NONNULL internal_default_instance() {
+    return &_SubcategoryTranslations_AttributesEntry_DoNotUse_default_instance_;
+  }
+
+
+  static constexpr auto InternalGenerateClassData_();
+
+ private:
+  friend class ::google::protobuf::MessageLite;
+  friend struct ::TableStruct_products_2fv1_2fproduct_5fcategories_2eproto;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<1, 2,
+                                   0, 68,
+                                   2>
+      _table_;
+
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+};
+extern const ::google::protobuf::internal::ClassDataFull SubcategoryTranslations_AttributesEntry_DoNotUse_class_data_;
+// -------------------------------------------------------------------
+
+class SubcategoryTranslations_DataEntry_DoNotUse final
+    : public ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
+                             ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+                             ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE> {
+ public:
+  using SuperType =
+      ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE>;
+  SubcategoryTranslations_DataEntry_DoNotUse();
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR SubcategoryTranslations_DataEntry_DoNotUse(::google::protobuf::internal::ConstantInitialized);
+  explicit SubcategoryTranslations_DataEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr const void* PROTOBUF_NONNULL internal_default_instance() {
+    return &_SubcategoryTranslations_DataEntry_DoNotUse_default_instance_;
+  }
+
+
+  static constexpr auto InternalGenerateClassData_();
+
+ private:
+  friend class ::google::protobuf::MessageLite;
+  friend struct ::TableStruct_products_2fv1_2fproduct_5fcategories_2eproto;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<1, 2,
+                                   1, 57,
+                                   2>
+      _table_;
+
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+};
+extern const ::google::protobuf::internal::ClassDataFull SubcategoryTranslations_DataEntry_DoNotUse_class_data_;
+// -------------------------------------------------------------------
+
+class SubcategoryTranslations final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:products.v1.SubcategoryTranslations) */ {
+ public:
+  inline SubcategoryTranslations() : SubcategoryTranslations(nullptr) {}
+  ~SubcategoryTranslations() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(SubcategoryTranslations* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(SubcategoryTranslations));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR SubcategoryTranslations(::google::protobuf::internal::ConstantInitialized);
+
+  inline SubcategoryTranslations(const SubcategoryTranslations& from) : SubcategoryTranslations(nullptr, from) {}
+  inline SubcategoryTranslations(SubcategoryTranslations&& from) noexcept
+      : SubcategoryTranslations(nullptr, ::std::move(from)) {}
+  inline SubcategoryTranslations& operator=(const SubcategoryTranslations& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SubcategoryTranslations& operator=(SubcategoryTranslations&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SubcategoryTranslations& default_instance() {
+    return *reinterpret_cast<const SubcategoryTranslations*>(
+        &_SubcategoryTranslations_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 5;
+  friend void swap(SubcategoryTranslations& a, SubcategoryTranslations& b) { a.Swap(&b); }
+  inline void Swap(SubcategoryTranslations* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SubcategoryTranslations* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SubcategoryTranslations* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<SubcategoryTranslations>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const SubcategoryTranslations& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const SubcategoryTranslations& from) { SubcategoryTranslations::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(SubcategoryTranslations* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "products.v1.SubcategoryTranslations"; }
+
+ protected:
+  explicit SubcategoryTranslations(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  SubcategoryTranslations(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const SubcategoryTranslations& from);
+  SubcategoryTranslations(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, SubcategoryTranslations&& from) noexcept
+      : SubcategoryTranslations(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kAttributesFieldNumber = 2,
+    kDataFieldNumber = 3,
+    kNameFieldNumber = 1,
+  };
+  // map<string, string> attributes = 2 [json_name = "attributes"];
+  int attributes_size() const;
+  private:
+  int _internal_attributes_size() const;
+
+  public:
+  void clear_attributes() ;
+  const ::google::protobuf::Map<std::string, std::string>& attributes() const;
+  ::google::protobuf::Map<std::string, std::string>* PROTOBUF_NONNULL mutable_attributes();
+
+  private:
+  const ::google::protobuf::Map<std::string, std::string>& _internal_attributes() const;
+  ::google::protobuf::Map<std::string, std::string>* PROTOBUF_NONNULL _internal_mutable_attributes();
+
+  public:
+  // map<string, .shared.v1.StringArray> data = 3 [json_name = "data"];
+  int data_size() const;
+  private:
+  int _internal_data_size() const;
+
+  public:
+  void clear_data() ;
+  const ::google::protobuf::Map<std::string, ::shared::v1::StringArray>& data() const;
+  ::google::protobuf::Map<std::string, ::shared::v1::StringArray>* PROTOBUF_NONNULL mutable_data();
+
+  private:
+  const ::google::protobuf::Map<std::string, ::shared::v1::StringArray>& _internal_data() const;
+  ::google::protobuf::Map<std::string, ::shared::v1::StringArray>* PROTOBUF_NONNULL _internal_mutable_data();
+
+  public:
+  // string name = 1 [json_name = "name"];
+  void clear_name() ;
+  const ::std::string& name() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_name(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_name();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_name();
+  void set_allocated_name(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_name() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_name(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_name();
+
+  public:
+  // @@protoc_insertion_point(class_scope:products.v1.SubcategoryTranslations)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<0, 3,
+                                   3, 62,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const SubcategoryTranslations& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::MapField<SubcategoryTranslations_AttributesEntry_DoNotUse, std::string, std::string,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING>
+        attributes_;
+    ::google::protobuf::internal::MapField<SubcategoryTranslations_DataEntry_DoNotUse, std::string, ::shared::v1::StringArray,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE>
+        data_;
+    ::google::protobuf::internal::ArenaStringPtr name_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_products_2fv1_2fproduct_5fcategories_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull SubcategoryTranslations_class_data_;
 // -------------------------------------------------------------------
 
 class SubcategoryAttribute final : public ::google::protobuf::Message
@@ -145,7 +480,7 @@ class SubcategoryAttribute final : public ::google::protobuf::Message
     return *reinterpret_cast<const SubcategoryAttribute*>(
         &_SubcategoryAttribute_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 3;
+  static constexpr int kIndexInFileMessages = 8;
   friend void swap(SubcategoryAttribute& a, SubcategoryAttribute& b) { a.Swap(&b); }
   inline void Swap(SubcategoryAttribute* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -370,6 +705,45 @@ class SubcategoryAttribute final : public ::google::protobuf::Message
 extern const ::google::protobuf::internal::ClassDataFull SubcategoryAttribute_class_data_;
 // -------------------------------------------------------------------
 
+class CategoryTranslations_SubcategoriesEntry_DoNotUse final
+    : public ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
+                             ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+                             ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE> {
+ public:
+  using SuperType =
+      ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE>;
+  CategoryTranslations_SubcategoriesEntry_DoNotUse();
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR CategoryTranslations_SubcategoriesEntry_DoNotUse(::google::protobuf::internal::ConstantInitialized);
+  explicit CategoryTranslations_SubcategoriesEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr const void* PROTOBUF_NONNULL internal_default_instance() {
+    return &_CategoryTranslations_SubcategoriesEntry_DoNotUse_default_instance_;
+  }
+
+
+  static constexpr auto InternalGenerateClassData_();
+
+ private:
+  friend class ::google::protobuf::MessageLite;
+  friend struct ::TableStruct_products_2fv1_2fproduct_5fcategories_2eproto;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<1, 2,
+                                   1, 63,
+                                   2>
+      _table_;
+
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+};
+extern const ::google::protobuf::internal::ClassDataFull CategoryTranslations_SubcategoriesEntry_DoNotUse_class_data_;
+// -------------------------------------------------------------------
+
 class Subcategory_AttributesEntry_DoNotUse final
     : public ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
                              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
@@ -407,6 +781,251 @@ class Subcategory_AttributesEntry_DoNotUse final
   static constexpr auto InternalNewImpl_();
 };
 extern const ::google::protobuf::internal::ClassDataFull Subcategory_AttributesEntry_DoNotUse_class_data_;
+// -------------------------------------------------------------------
+
+class CategoryTranslations final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:products.v1.CategoryTranslations) */ {
+ public:
+  inline CategoryTranslations() : CategoryTranslations(nullptr) {}
+  ~CategoryTranslations() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(CategoryTranslations* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(CategoryTranslations));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR CategoryTranslations(::google::protobuf::internal::ConstantInitialized);
+
+  inline CategoryTranslations(const CategoryTranslations& from) : CategoryTranslations(nullptr, from) {}
+  inline CategoryTranslations(CategoryTranslations&& from) noexcept
+      : CategoryTranslations(nullptr, ::std::move(from)) {}
+  inline CategoryTranslations& operator=(const CategoryTranslations& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CategoryTranslations& operator=(CategoryTranslations&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CategoryTranslations& default_instance() {
+    return *reinterpret_cast<const CategoryTranslations*>(
+        &_CategoryTranslations_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 2;
+  friend void swap(CategoryTranslations& a, CategoryTranslations& b) { a.Swap(&b); }
+  inline void Swap(CategoryTranslations* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CategoryTranslations* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CategoryTranslations* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<CategoryTranslations>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const CategoryTranslations& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const CategoryTranslations& from) { CategoryTranslations::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(CategoryTranslations* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "products.v1.CategoryTranslations"; }
+
+ protected:
+  explicit CategoryTranslations(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  CategoryTranslations(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const CategoryTranslations& from);
+  CategoryTranslations(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, CategoryTranslations&& from) noexcept
+      : CategoryTranslations(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kSubcategoriesFieldNumber = 4,
+    kNameFieldNumber = 1,
+    kLanguageFieldNumber = 2,
+    kVersionFieldNumber = 3,
+  };
+  // map<string, .products.v1.SubcategoryTranslations> subcategories = 4 [json_name = "subcategories"];
+  int subcategories_size() const;
+  private:
+  int _internal_subcategories_size() const;
+
+  public:
+  void clear_subcategories() ;
+  const ::google::protobuf::Map<std::string, ::products::v1::SubcategoryTranslations>& subcategories() const;
+  ::google::protobuf::Map<std::string, ::products::v1::SubcategoryTranslations>* PROTOBUF_NONNULL mutable_subcategories();
+
+  private:
+  const ::google::protobuf::Map<std::string, ::products::v1::SubcategoryTranslations>& _internal_subcategories() const;
+  ::google::protobuf::Map<std::string, ::products::v1::SubcategoryTranslations>* PROTOBUF_NONNULL _internal_mutable_subcategories();
+
+  public:
+  // string name = 1 [json_name = "name"];
+  void clear_name() ;
+  const ::std::string& name() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_name(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_name();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_name();
+  void set_allocated_name(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_name() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_name(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_name();
+
+  public:
+  // string language = 2 [json_name = "language"];
+  void clear_language() ;
+  const ::std::string& language() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_language(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_language();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_language();
+  void set_allocated_language(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_language() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_language(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_language();
+
+  public:
+  // int32 version = 3 [json_name = "version"];
+  void clear_version() ;
+  ::int32_t version() const;
+  void set_version(::int32_t value);
+
+  private:
+  ::int32_t _internal_version() const;
+  void _internal_set_version(::int32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:products.v1.CategoryTranslations)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<2, 4,
+                                   2, 66,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const CategoryTranslations& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::MapField<CategoryTranslations_SubcategoriesEntry_DoNotUse, std::string, ::products::v1::SubcategoryTranslations,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE>
+        subcategories_;
+    ::google::protobuf::internal::ArenaStringPtr name_;
+    ::google::protobuf::internal::ArenaStringPtr language_;
+    ::int32_t version_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_products_2fv1_2fproduct_5fcategories_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull CategoryTranslations_class_data_;
 // -------------------------------------------------------------------
 
 class Subcategory final : public ::google::protobuf::Message
@@ -464,7 +1083,7 @@ class Subcategory final : public ::google::protobuf::Message
     return *reinterpret_cast<const Subcategory*>(
         &_Subcategory_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 2;
+  static constexpr int kIndexInFileMessages = 7;
   friend void swap(Subcategory& a, Subcategory& b) { a.Swap(&b); }
   inline void Swap(Subcategory* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -814,12 +1433,30 @@ class Category final : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
   enum : int {
-    kSubcategoriesFieldNumber = 4,
+    kTranslationsFieldNumber = 4,
+    kSubcategoriesFieldNumber = 5,
     kIdFieldNumber = 1,
     kNameFieldNumber = 2,
     kImageFieldNumber = 3,
   };
-  // repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];
+  // repeated .products.v1.CategoryTranslations translations = 4 [json_name = "translations"];
+  int translations_size() const;
+  private:
+  int _internal_translations_size() const;
+
+  public:
+  void clear_translations() ;
+  ::products::v1::CategoryTranslations* PROTOBUF_NONNULL mutable_translations(int index);
+  ::google::protobuf::RepeatedPtrField<::products::v1::CategoryTranslations>* PROTOBUF_NONNULL mutable_translations();
+
+  private:
+  const ::google::protobuf::RepeatedPtrField<::products::v1::CategoryTranslations>& _internal_translations() const;
+  ::google::protobuf::RepeatedPtrField<::products::v1::CategoryTranslations>* PROTOBUF_NONNULL _internal_mutable_translations();
+  public:
+  const ::products::v1::CategoryTranslations& translations(int index) const;
+  ::products::v1::CategoryTranslations* PROTOBUF_NONNULL add_translations();
+  const ::google::protobuf::RepeatedPtrField<::products::v1::CategoryTranslations>& translations() const;
+  // repeated .products.v1.Subcategory subcategories = 5 [json_name = "subcategories"];
   int subcategories_size() const;
   private:
   int _internal_subcategories_size() const;
@@ -885,8 +1522,8 @@ class Category final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<2, 4,
-                                   1, 40,
+  static const ::google::protobuf::internal::TcParseTable<3, 5,
+                                   2, 40,
                                    2>
       _table_;
 
@@ -907,6 +1544,7 @@ class Category final : public ::google::protobuf::Message
         const Category& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::RepeatedPtrField< ::products::v1::CategoryTranslations > translations_;
     ::google::protobuf::RepeatedPtrField< ::products::v1::Subcategory > subcategories_;
     ::google::protobuf::internal::ArenaStringPtr id_;
     ::google::protobuf::internal::ArenaStringPtr name_;
@@ -1130,7 +1768,57 @@ inline void Category::set_allocated_image(::std::string* PROTOBUF_NULLABLE value
   // @@protoc_insertion_point(field_set_allocated:products.v1.Category.image)
 }
 
-// repeated .products.v1.Subcategory subcategories = 4 [json_name = "subcategories"];
+// repeated .products.v1.CategoryTranslations translations = 4 [json_name = "translations"];
+inline int Category::_internal_translations_size() const {
+  return _internal_translations().size();
+}
+inline int Category::translations_size() const {
+  return _internal_translations_size();
+}
+inline void Category::clear_translations() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.translations_.Clear();
+}
+inline ::products::v1::CategoryTranslations* PROTOBUF_NONNULL Category::mutable_translations(int index)
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable:products.v1.Category.translations)
+  return _internal_mutable_translations()->Mutable(index);
+}
+inline ::google::protobuf::RepeatedPtrField<::products::v1::CategoryTranslations>* PROTOBUF_NONNULL Category::mutable_translations()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable_list:products.v1.Category.translations)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _internal_mutable_translations();
+}
+inline const ::products::v1::CategoryTranslations& Category::translations(int index) const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.Category.translations)
+  return _internal_translations().Get(index);
+}
+inline ::products::v1::CategoryTranslations* PROTOBUF_NONNULL Category::add_translations()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::products::v1::CategoryTranslations* _add = _internal_mutable_translations()->Add();
+  // @@protoc_insertion_point(field_add:products.v1.Category.translations)
+  return _add;
+}
+inline const ::google::protobuf::RepeatedPtrField<::products::v1::CategoryTranslations>& Category::translations() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_list:products.v1.Category.translations)
+  return _internal_translations();
+}
+inline const ::google::protobuf::RepeatedPtrField<::products::v1::CategoryTranslations>&
+Category::_internal_translations() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.translations_;
+}
+inline ::google::protobuf::RepeatedPtrField<::products::v1::CategoryTranslations>* PROTOBUF_NONNULL
+Category::_internal_mutable_translations() {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return &_impl_.translations_;
+}
+
+// repeated .products.v1.Subcategory subcategories = 5 [json_name = "subcategories"];
 inline int Category::_internal_subcategories_size() const {
   return _internal_subcategories().size();
 }
@@ -1178,6 +1866,322 @@ inline ::google::protobuf::RepeatedPtrField<::products::v1::Subcategory>* PROTOB
 Category::_internal_mutable_subcategories() {
   ::google::protobuf::internal::TSanRead(&_impl_);
   return &_impl_.subcategories_;
+}
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// CategoryTranslations
+
+// string name = 1 [json_name = "name"];
+inline void CategoryTranslations::clear_name() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.name_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const ::std::string& CategoryTranslations::name() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.CategoryTranslations.name)
+  return _internal_name();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void CategoryTranslations::set_name(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:products.v1.CategoryTranslations.name)
+}
+inline ::std::string* PROTOBUF_NONNULL CategoryTranslations::mutable_name()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:products.v1.CategoryTranslations.name)
+  return _s;
+}
+inline const ::std::string& CategoryTranslations::_internal_name() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.name_.Get();
+}
+inline void CategoryTranslations::_internal_set_name(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.name_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL CategoryTranslations::_internal_mutable_name() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.name_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE CategoryTranslations::release_name() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.CategoryTranslations.name)
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* released = _impl_.name_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.name_.Set("", GetArena());
+  }
+  return released;
+}
+inline void CategoryTranslations::set_allocated_name(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.name_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.name_.IsDefault()) {
+    _impl_.name_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.CategoryTranslations.name)
+}
+
+// string language = 2 [json_name = "language"];
+inline void CategoryTranslations::clear_language() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.language_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const ::std::string& CategoryTranslations::language() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.CategoryTranslations.language)
+  return _internal_language();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void CategoryTranslations::set_language(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.language_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:products.v1.CategoryTranslations.language)
+}
+inline ::std::string* PROTOBUF_NONNULL CategoryTranslations::mutable_language()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_language();
+  // @@protoc_insertion_point(field_mutable:products.v1.CategoryTranslations.language)
+  return _s;
+}
+inline const ::std::string& CategoryTranslations::_internal_language() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.language_.Get();
+}
+inline void CategoryTranslations::_internal_set_language(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.language_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL CategoryTranslations::_internal_mutable_language() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.language_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE CategoryTranslations::release_language() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.CategoryTranslations.language)
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* released = _impl_.language_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.language_.Set("", GetArena());
+  }
+  return released;
+}
+inline void CategoryTranslations::set_allocated_language(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.language_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.language_.IsDefault()) {
+    _impl_.language_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.CategoryTranslations.language)
+}
+
+// int32 version = 3 [json_name = "version"];
+inline void CategoryTranslations::clear_version() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.version_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline ::int32_t CategoryTranslations::version() const {
+  // @@protoc_insertion_point(field_get:products.v1.CategoryTranslations.version)
+  return _internal_version();
+}
+inline void CategoryTranslations::set_version(::int32_t value) {
+  _internal_set_version(value);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  // @@protoc_insertion_point(field_set:products.v1.CategoryTranslations.version)
+}
+inline ::int32_t CategoryTranslations::_internal_version() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.version_;
+}
+inline void CategoryTranslations::_internal_set_version(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.version_ = value;
+}
+
+// map<string, .products.v1.SubcategoryTranslations> subcategories = 4 [json_name = "subcategories"];
+inline int CategoryTranslations::_internal_subcategories_size() const {
+  return _internal_subcategories().size();
+}
+inline int CategoryTranslations::subcategories_size() const {
+  return _internal_subcategories_size();
+}
+inline void CategoryTranslations::clear_subcategories() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.subcategories_.Clear();
+}
+inline const ::google::protobuf::Map<std::string, ::products::v1::SubcategoryTranslations>& CategoryTranslations::_internal_subcategories() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.subcategories_.GetMap();
+}
+inline const ::google::protobuf::Map<std::string, ::products::v1::SubcategoryTranslations>& CategoryTranslations::subcategories() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_map:products.v1.CategoryTranslations.subcategories)
+  return _internal_subcategories();
+}
+inline ::google::protobuf::Map<std::string, ::products::v1::SubcategoryTranslations>* PROTOBUF_NONNULL CategoryTranslations::_internal_mutable_subcategories() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.subcategories_.MutableMap();
+}
+inline ::google::protobuf::Map<std::string, ::products::v1::SubcategoryTranslations>* PROTOBUF_NONNULL CategoryTranslations::mutable_subcategories()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable_map:products.v1.CategoryTranslations.subcategories)
+  return _internal_mutable_subcategories();
+}
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// SubcategoryTranslations
+
+// string name = 1 [json_name = "name"];
+inline void SubcategoryTranslations::clear_name() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.name_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const ::std::string& SubcategoryTranslations::name() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.SubcategoryTranslations.name)
+  return _internal_name();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void SubcategoryTranslations::set_name(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.name_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:products.v1.SubcategoryTranslations.name)
+}
+inline ::std::string* PROTOBUF_NONNULL SubcategoryTranslations::mutable_name()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_name();
+  // @@protoc_insertion_point(field_mutable:products.v1.SubcategoryTranslations.name)
+  return _s;
+}
+inline const ::std::string& SubcategoryTranslations::_internal_name() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.name_.Get();
+}
+inline void SubcategoryTranslations::_internal_set_name(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.name_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL SubcategoryTranslations::_internal_mutable_name() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.name_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE SubcategoryTranslations::release_name() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.SubcategoryTranslations.name)
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* released = _impl_.name_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.name_.Set("", GetArena());
+  }
+  return released;
+}
+inline void SubcategoryTranslations::set_allocated_name(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.name_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.name_.IsDefault()) {
+    _impl_.name_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.SubcategoryTranslations.name)
+}
+
+// map<string, string> attributes = 2 [json_name = "attributes"];
+inline int SubcategoryTranslations::_internal_attributes_size() const {
+  return _internal_attributes().size();
+}
+inline int SubcategoryTranslations::attributes_size() const {
+  return _internal_attributes_size();
+}
+inline void SubcategoryTranslations::clear_attributes() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.attributes_.Clear();
+}
+inline const ::google::protobuf::Map<std::string, std::string>& SubcategoryTranslations::_internal_attributes() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.attributes_.GetMap();
+}
+inline const ::google::protobuf::Map<std::string, std::string>& SubcategoryTranslations::attributes() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_map:products.v1.SubcategoryTranslations.attributes)
+  return _internal_attributes();
+}
+inline ::google::protobuf::Map<std::string, std::string>* PROTOBUF_NONNULL SubcategoryTranslations::_internal_mutable_attributes() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.attributes_.MutableMap();
+}
+inline ::google::protobuf::Map<std::string, std::string>* PROTOBUF_NONNULL SubcategoryTranslations::mutable_attributes()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable_map:products.v1.SubcategoryTranslations.attributes)
+  return _internal_mutable_attributes();
+}
+
+// map<string, .shared.v1.StringArray> data = 3 [json_name = "data"];
+inline int SubcategoryTranslations::_internal_data_size() const {
+  return _internal_data().size();
+}
+inline int SubcategoryTranslations::data_size() const {
+  return _internal_data_size();
+}
+inline const ::google::protobuf::Map<std::string, ::shared::v1::StringArray>& SubcategoryTranslations::_internal_data() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.data_.GetMap();
+}
+inline const ::google::protobuf::Map<std::string, ::shared::v1::StringArray>& SubcategoryTranslations::data() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_map:products.v1.SubcategoryTranslations.data)
+  return _internal_data();
+}
+inline ::google::protobuf::Map<std::string, ::shared::v1::StringArray>* PROTOBUF_NONNULL SubcategoryTranslations::_internal_mutable_data() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _impl_.data_.MutableMap();
+}
+inline ::google::protobuf::Map<std::string, ::shared::v1::StringArray>* PROTOBUF_NONNULL SubcategoryTranslations::mutable_data()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable_map:products.v1.SubcategoryTranslations.data)
+  return _internal_mutable_data();
 }
 
 // -------------------------------------------------------------------

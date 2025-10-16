@@ -63,6 +63,31 @@ struct StringMap_DataEntry_DoNotUseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StringMap_DataEntry_DoNotUseDefaultTypeInternal _StringMap_DataEntry_DoNotUse_default_instance_;
 
+inline constexpr StringArray::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : values_{},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR StringArray::StringArray(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(StringArray_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct StringArrayDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR StringArrayDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~StringArrayDefaultTypeInternal() {}
+  union {
+    StringArray _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StringArrayDefaultTypeInternal _StringArray_default_instance_;
+
 inline constexpr OrderDirection::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : order_{},
@@ -289,6 +314,8 @@ const ::uint32_t
         1,
         0x000, // bitmap
         PROTOBUF_FIELD_OFFSET(::shared::v1::NestedStringMap, _impl_.data_),
+        0x000, // bitmap
+        PROTOBUF_FIELD_OFFSET(::shared::v1::StringArray, _impl_.values_),
         0x004, // bitmap
         PROTOBUF_FIELD_OFFSET(::shared::v1::OrderDirection, _impl_._oneof_case_[0]),
         ::_pbi::kInvalidFieldOffsetTag,
@@ -331,18 +358,20 @@ static const ::_pbi::MigrationSchema
         {7, sizeof(::shared::v1::StringMap)},
         {9, sizeof(::shared::v1::NestedStringMap_DataEntry_DoNotUse)},
         {16, sizeof(::shared::v1::NestedStringMap)},
-        {18, sizeof(::shared::v1::OrderDirection)},
-        {23, sizeof(::shared::v1::SuccessResponseData_MetadataEntry_DoNotUse)},
-        {30, sizeof(::shared::v1::SuccessResponseData)},
-        {37, sizeof(::shared::v1::IDName)},
-        {44, sizeof(::shared::v1::Any)},
-        {51, sizeof(::shared::v1::Empty)},
+        {18, sizeof(::shared::v1::StringArray)},
+        {20, sizeof(::shared::v1::OrderDirection)},
+        {25, sizeof(::shared::v1::SuccessResponseData_MetadataEntry_DoNotUse)},
+        {32, sizeof(::shared::v1::SuccessResponseData)},
+        {39, sizeof(::shared::v1::IDName)},
+        {46, sizeof(::shared::v1::Any)},
+        {53, sizeof(::shared::v1::Empty)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::shared::v1::_StringMap_DataEntry_DoNotUse_default_instance_._instance,
     &::shared::v1::_StringMap_default_instance_._instance,
     &::shared::v1::_NestedStringMap_DataEntry_DoNotUse_default_instance_._instance,
     &::shared::v1::_NestedStringMap_default_instance_._instance,
+    &::shared::v1::_StringArray_default_instance_._instance,
     &::shared::v1::_OrderDirection_default_instance_._instance,
     &::shared::v1::_SuccessResponseData_MetadataEntry_DoNotUse_default_instance_._instance,
     &::shared::v1::_SuccessResponseData_default_instance_._instance,
@@ -359,32 +388,33 @@ const char descriptor_table_protodef_shared_2fv1_2ftypes_2eproto[] ABSL_ATTRIBUT
     "\017NestedStringMap\0228\n\004data\030\001 \003(\0132$.shared."
     "v1.NestedStringMap.DataEntryR\004data\032M\n\tDa"
     "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\013"
-    "2\024.shared.v1.StringMapR\005value:\0028\001\"C\n\016Ord"
-    "erDirection\022\022\n\003asc\030\001 \001(\010H\000R\003asc\022\024\n\004desc\030"
-    "\002 \001(\010H\000R\004descB\007\n\005order\"\307\001\n\023SuccessRespon"
-    "seData\022\035\n\007message\030\001 \001(\tH\000R\007message\210\001\001\022H\n"
-    "\010metadata\030\002 \003(\0132,.shared.v1.SuccessRespo"
-    "nseData.MetadataEntryR\010metadata\032;\n\rMetad"
-    "ataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001("
-    "\tR\005value:\0028\001B\n\n\010_message\",\n\006IDName\022\016\n\002id"
-    "\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\"6\n\003Any\022\031\n"
-    "\010type_url\030\001 \001(\tR\007typeUrl\022\024\n\005value\030\002 \001(\014R"
-    "\005value\"\007\n\005EmptyBp\n\032org.megacommerce.shar"
-    "ed.v1B\nTypesProtoZCgithub.com/ahmad-khat"
-    "ib0-org/megacommerce-proto/gen/go/shared"
-    "/v1;v1\370\001\001b\006proto3"
+    "2\024.shared.v1.StringMapR\005value:\0028\001\"%\n\013Str"
+    "ingArray\022\026\n\006values\030\001 \003(\tR\006values\"C\n\016Orde"
+    "rDirection\022\022\n\003asc\030\001 \001(\010H\000R\003asc\022\024\n\004desc\030\002"
+    " \001(\010H\000R\004descB\007\n\005order\"\307\001\n\023SuccessRespons"
+    "eData\022\035\n\007message\030\001 \001(\tH\000R\007message\210\001\001\022H\n\010"
+    "metadata\030\002 \003(\0132,.shared.v1.SuccessRespon"
+    "seData.MetadataEntryR\010metadata\032;\n\rMetada"
+    "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t"
+    "R\005value:\0028\001B\n\n\010_message\",\n\006IDName\022\016\n\002id\030"
+    "\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\"6\n\003Any\022\031\n\010"
+    "type_url\030\001 \001(\tR\007typeUrl\022\024\n\005value\030\002 \001(\014R\005"
+    "value\"\007\n\005EmptyBp\n\032org.megacommerce.share"
+    "d.v1B\nTypesProtoZCgithub.com/ahmad-khati"
+    "b0-org/megacommerce-proto/gen/go/shared/"
+    "v1;v1\370\001\001b\006proto3"
 };
 static ::absl::once_flag descriptor_table_shared_2fv1_2ftypes_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_shared_2fv1_2ftypes_2eproto = {
     false,
     false,
-    817,
+    856,
     descriptor_table_protodef_shared_2fv1_2ftypes_2eproto,
     "shared/v1/types.proto",
     &descriptor_table_shared_2fv1_2ftypes_2eproto_once,
     nullptr,
     0,
-    10,
+    11,
     schemas,
     file_default_instances,
     TableStruct_shared_2fv1_2ftypes_2eproto::offsets,
@@ -1149,6 +1179,257 @@ void NestedStringMap::InternalSwap(NestedStringMap* PROTOBUF_RESTRICT PROTOBUF_N
 }
 
 ::google::protobuf::Metadata NestedStringMap::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class StringArray::_Internal {
+ public:
+};
+
+StringArray::StringArray(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, StringArray_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:shared.v1.StringArray)
+}
+PROTOBUF_NDEBUG_INLINE StringArray::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::shared::v1::StringArray& from_msg)
+      : values_{visibility, arena, from.values_},
+        _cached_size_{0} {}
+
+StringArray::StringArray(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const StringArray& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, StringArray_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  StringArray* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+
+  // @@protoc_insertion_point(copy_constructor:shared.v1.StringArray)
+}
+PROTOBUF_NDEBUG_INLINE StringArray::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : values_{visibility, arena},
+        _cached_size_{0} {}
+
+inline void StringArray::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+StringArray::~StringArray() {
+  // @@protoc_insertion_point(destructor:shared.v1.StringArray)
+  SharedDtor(*this);
+}
+inline void StringArray::SharedDtor(MessageLite& self) {
+  StringArray& this_ = static_cast<StringArray&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL StringArray::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) StringArray(arena);
+}
+constexpr auto StringArray::InternalNewImpl_() {
+  constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
+      PROTOBUF_FIELD_OFFSET(StringArray, _impl_.values_) +
+          decltype(StringArray::_impl_.values_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+  });
+  if (arena_bits.has_value()) {
+    return ::google::protobuf::internal::MessageCreator::ZeroInit(
+        sizeof(StringArray), alignof(StringArray), *arena_bits);
+  } else {
+    return ::google::protobuf::internal::MessageCreator(&StringArray::PlacementNew_,
+                                 sizeof(StringArray),
+                                 alignof(StringArray));
+  }
+}
+constexpr auto StringArray::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_StringArray_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &StringArray::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<StringArray>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &StringArray::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<StringArray>(), &StringArray::ByteSizeLong,
+              &StringArray::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(StringArray, _impl_._cached_size_),
+          false,
+      },
+      &StringArray::kDescriptorMethods,
+      &descriptor_table_shared_2fv1_2ftypes_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull StringArray_class_data_ =
+        StringArray::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+StringArray::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&StringArray_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(StringArray_class_data_.tc_table);
+  return StringArray_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 0, 36, 2>
+StringArray::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    StringArray_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::shared::v1::StringArray>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // repeated string values = 1 [json_name = "values"];
+    {::_pbi::TcParser::FastUR1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(StringArray, _impl_.values_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // repeated string values = 1 [json_name = "values"];
+    {PROTOBUF_FIELD_OFFSET(StringArray, _impl_.values_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kUtf8String | ::_fl::kRepSString)},
+  }},
+  // no aux_entries
+  {{
+    "\25\6\0\0\0\0\0\0"
+    "shared.v1.StringArray"
+    "values"
+  }},
+};
+PROTOBUF_NOINLINE void StringArray::Clear() {
+// @@protoc_insertion_point(message_clear_start:shared.v1.StringArray)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.values_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL StringArray::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const StringArray& this_ = static_cast<const StringArray&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL StringArray::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const StringArray& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:shared.v1.StringArray)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // repeated string values = 1 [json_name = "values"];
+  for (int i = 0, n = this_._internal_values_size(); i < n; ++i) {
+    const auto& s = this_._internal_values().Get(i);
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.StringArray.values");
+    target = stream->WriteString(1, s, target);
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:shared.v1.StringArray)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t StringArray::ByteSizeLong(const MessageLite& base) {
+  const StringArray& this_ = static_cast<const StringArray&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t StringArray::ByteSizeLong() const {
+  const StringArray& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:shared.v1.StringArray)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+   {
+    // repeated string values = 1 [json_name = "values"];
+    {
+      total_size +=
+          1 * ::google::protobuf::internal::FromIntSize(this_._internal_values().size());
+      for (int i = 0, n = this_._internal_values().size(); i < n; ++i) {
+        total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+            this_._internal_values().Get(i));
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void StringArray::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<StringArray*>(&to_msg);
+  auto& from = static_cast<const StringArray&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:shared.v1.StringArray)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_values()->MergeFrom(from._internal_values());
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void StringArray::CopyFrom(const StringArray& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:shared.v1.StringArray)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void StringArray::InternalSwap(StringArray* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.values_.InternalSwap(&other->_impl_.values_);
+}
+
+::google::protobuf::Metadata StringArray::GetMetadata() const {
   return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // ===================================================================

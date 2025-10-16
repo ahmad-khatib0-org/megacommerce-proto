@@ -105,7 +105,40 @@ pub struct Category {
     #[prost(string, tag = "3")]
     pub image: ::prost::alloc::string::String,
     #[prost(message, repeated, tag = "4")]
+    pub translations: ::prost::alloc::vec::Vec<CategoryTranslations>,
+    #[prost(message, repeated, tag = "5")]
     pub subcategories: ::prost::alloc::vec::Vec<Subcategory>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct CategoryTranslations {
+    #[prost(string, tag = "1")]
+    pub name: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub language: ::prost::alloc::string::String,
+    #[prost(int32, tag = "3")]
+    pub version: i32,
+    #[prost(map = "string, message", tag = "4")]
+    pub subcategories: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        SubcategoryTranslations,
+    >,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct SubcategoryTranslations {
+    #[prost(string, tag = "1")]
+    pub name: ::prost::alloc::string::String,
+    #[prost(map = "string, string", tag = "2")]
+    pub attributes: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        ::prost::alloc::string::String,
+    >,
+    #[prost(map = "string, message", tag = "3")]
+    pub data: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        super::super::shared::v1::StringArray,
+    >,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

@@ -83,6 +83,10 @@ class OrderDirection;
 struct OrderDirectionDefaultTypeInternal;
 extern OrderDirectionDefaultTypeInternal _OrderDirection_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull OrderDirection_class_data_;
+class StringArray;
+struct StringArrayDefaultTypeInternal;
+extern StringArrayDefaultTypeInternal _StringArray_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull StringArray_class_data_;
 class StringMap;
 struct StringMapDefaultTypeInternal;
 extern StringMapDefaultTypeInternal _StringMap_default_instance_;
@@ -192,6 +196,208 @@ class StringMap_DataEntry_DoNotUse final
 extern const ::google::protobuf::internal::ClassDataFull StringMap_DataEntry_DoNotUse_class_data_;
 // -------------------------------------------------------------------
 
+class StringArray final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:shared.v1.StringArray) */ {
+ public:
+  inline StringArray() : StringArray(nullptr) {}
+  ~StringArray() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(StringArray* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(StringArray));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR StringArray(::google::protobuf::internal::ConstantInitialized);
+
+  inline StringArray(const StringArray& from) : StringArray(nullptr, from) {}
+  inline StringArray(StringArray&& from) noexcept
+      : StringArray(nullptr, ::std::move(from)) {}
+  inline StringArray& operator=(const StringArray& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline StringArray& operator=(StringArray&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const StringArray& default_instance() {
+    return *reinterpret_cast<const StringArray*>(
+        &_StringArray_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 4;
+  friend void swap(StringArray& a, StringArray& b) { a.Swap(&b); }
+  inline void Swap(StringArray* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(StringArray* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  StringArray* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<StringArray>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const StringArray& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const StringArray& from) { StringArray::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(StringArray* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "shared.v1.StringArray"; }
+
+ protected:
+  explicit StringArray(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  StringArray(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const StringArray& from);
+  StringArray(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, StringArray&& from) noexcept
+      : StringArray(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kValuesFieldNumber = 1,
+  };
+  // repeated string values = 1 [json_name = "values"];
+  int values_size() const;
+  private:
+  int _internal_values_size() const;
+
+  public:
+  void clear_values() ;
+  const ::std::string& values(int index) const;
+  ::std::string* PROTOBUF_NONNULL mutable_values(int index);
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_values(int index, Arg_&& value, Args_... args);
+  ::std::string* PROTOBUF_NONNULL add_values();
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void add_values(Arg_&& value, Args_... args);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& values() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL mutable_values();
+
+  private:
+  const ::google::protobuf::RepeatedPtrField<::std::string>& _internal_values() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL _internal_mutable_values();
+
+  public:
+  // @@protoc_insertion_point(class_scope:shared.v1.StringArray)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<0, 1,
+                                   0, 36,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const StringArray& from_msg);
+    ::google::protobuf::RepeatedPtrField<::std::string> values_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_shared_2fv1_2ftypes_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull StringArray_class_data_;
+// -------------------------------------------------------------------
+
 class OrderDirection final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:shared.v1.OrderDirection) */ {
  public:
@@ -252,7 +458,7 @@ class OrderDirection final : public ::google::protobuf::Message
     kDesc = 2,
     ORDER_NOT_SET = 0,
   };
-  static constexpr int kIndexInFileMessages = 4;
+  static constexpr int kIndexInFileMessages = 5;
   friend void swap(OrderDirection& a, OrderDirection& b) { a.Swap(&b); }
   inline void Swap(OrderDirection* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -467,7 +673,7 @@ class IDName final : public ::google::protobuf::Message
     return *reinterpret_cast<const IDName*>(
         &_IDName_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 7;
+  static constexpr int kIndexInFileMessages = 8;
   friend void swap(IDName& a, IDName& b) { a.Swap(&b); }
   inline void Swap(IDName* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -679,7 +885,7 @@ class Empty final : public ::google::protobuf::internal::ZeroFieldsBase
     return *reinterpret_cast<const Empty*>(
         &_Empty_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 9;
+  static constexpr int kIndexInFileMessages = 10;
   friend void swap(Empty& a, Empty& b) { a.Swap(&b); }
   inline void Swap(Empty* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -826,7 +1032,7 @@ class Any final : public ::google::protobuf::Message
     return *reinterpret_cast<const Any*>(
         &_Any_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 8;
+  static constexpr int kIndexInFileMessages = 9;
   friend void swap(Any& a, Any& b) { a.Swap(&b); }
   inline void Swap(Any* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1039,7 +1245,7 @@ class SuccessResponseData final : public ::google::protobuf::Message
     return *reinterpret_cast<const SuccessResponseData*>(
         &_SuccessResponseData_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 6;
+  static constexpr int kIndexInFileMessages = 7;
   friend void swap(SuccessResponseData& a, SuccessResponseData& b) { a.Swap(&b); }
   inline void Swap(SuccessResponseData* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1715,6 +1921,74 @@ inline ::google::protobuf::Map<std::string, ::shared::v1::StringMap>* PROTOBUF_N
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_mutable_map:shared.v1.NestedStringMap.data)
   return _internal_mutable_data();
+}
+
+// -------------------------------------------------------------------
+
+// StringArray
+
+// repeated string values = 1 [json_name = "values"];
+inline int StringArray::_internal_values_size() const {
+  return _internal_values().size();
+}
+inline int StringArray::values_size() const {
+  return _internal_values_size();
+}
+inline void StringArray::clear_values() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.values_.Clear();
+}
+inline ::std::string* PROTOBUF_NONNULL StringArray::add_values()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::std::string* _s = _internal_mutable_values()->Add();
+  // @@protoc_insertion_point(field_add_mutable:shared.v1.StringArray.values)
+  return _s;
+}
+inline const ::std::string& StringArray::values(int index) const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:shared.v1.StringArray.values)
+  return _internal_values().Get(index);
+}
+inline ::std::string* PROTOBUF_NONNULL StringArray::mutable_values(int index)
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable:shared.v1.StringArray.values)
+  return _internal_mutable_values()->Mutable(index);
+}
+template <typename Arg_, typename... Args_>
+inline void StringArray::set_values(int index, Arg_&& value, Args_... args) {
+  ::google::protobuf::internal::AssignToString(*_internal_mutable_values()->Mutable(index), ::std::forward<Arg_>(value),
+                        args... );
+  // @@protoc_insertion_point(field_set:shared.v1.StringArray.values)
+}
+template <typename Arg_, typename... Args_>
+inline void StringArray::add_values(Arg_&& value, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::google::protobuf::internal::AddToRepeatedPtrField(*_internal_mutable_values(),
+                               ::std::forward<Arg_>(value),
+                               args... );
+  // @@protoc_insertion_point(field_add:shared.v1.StringArray.values)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>& StringArray::values()
+    const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_list:shared.v1.StringArray.values)
+  return _internal_values();
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL
+StringArray::mutable_values() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable_list:shared.v1.StringArray.values)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _internal_mutable_values();
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+StringArray::_internal_values() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.values_;
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL
+StringArray::_internal_mutable_values() {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return &_impl_.values_;
 }
 
 // -------------------------------------------------------------------

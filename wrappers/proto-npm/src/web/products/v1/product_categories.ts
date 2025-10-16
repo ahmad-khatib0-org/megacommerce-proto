@@ -6,6 +6,7 @@
 
 /* eslint-disable */
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
+import { StringArray } from "../../shared/v1/types.js";
 import { ValidationField } from "../../shared/v1/validation.js";
 
 export const protobufPackage = "products.v1";
@@ -14,7 +15,36 @@ export interface Category {
   id: string;
   name: string;
   image: string;
+  translations: CategoryTranslations[];
   subcategories: Subcategory[];
+}
+
+export interface CategoryTranslations {
+  name: string;
+  language: string;
+  version: number;
+  subcategories: { [key: string]: SubcategoryTranslations };
+}
+
+export interface CategoryTranslations_SubcategoriesEntry {
+  key: string;
+  value?: SubcategoryTranslations | undefined;
+}
+
+export interface SubcategoryTranslations {
+  name: string;
+  attributes: { [key: string]: string };
+  data: { [key: string]: StringArray };
+}
+
+export interface SubcategoryTranslations_AttributesEntry {
+  key: string;
+  value: string;
+}
+
+export interface SubcategoryTranslations_DataEntry {
+  key: string;
+  value?: StringArray | undefined;
 }
 
 export interface Subcategory {
@@ -54,7 +84,7 @@ export interface SubcategoryAttribute {
 }
 
 function createBaseCategory(): Category {
-  return { id: "", name: "", image: "", subcategories: [] };
+  return { id: "", name: "", image: "", translations: [], subcategories: [] };
 }
 
 export const Category: MessageFns<Category> = {
@@ -68,8 +98,11 @@ export const Category: MessageFns<Category> = {
     if (message.image !== "") {
       writer.uint32(26).string(message.image);
     }
+    for (const v of message.translations) {
+      CategoryTranslations.encode(v!, writer.uint32(34).fork()).join();
+    }
     for (const v of message.subcategories) {
-      Subcategory.encode(v!, writer.uint32(34).fork()).join();
+      Subcategory.encode(v!, writer.uint32(42).fork()).join();
     }
     return writer;
   },
@@ -110,6 +143,14 @@ export const Category: MessageFns<Category> = {
             break;
           }
 
+          message.translations.push(CategoryTranslations.decode(reader, reader.uint32()));
+          continue;
+        }
+        case 5: {
+          if (tag !== 42) {
+            break;
+          }
+
           message.subcategories.push(Subcategory.decode(reader, reader.uint32()));
           continue;
         }
@@ -127,6 +168,9 @@ export const Category: MessageFns<Category> = {
       id: isSet(object.id) ? globalThis.String(object.id) : "",
       name: isSet(object.name) ? globalThis.String(object.name) : "",
       image: isSet(object.image) ? globalThis.String(object.image) : "",
+      translations: globalThis.Array.isArray(object?.translations)
+        ? object.translations.map((e: any) => CategoryTranslations.fromJSON(e))
+        : [],
       subcategories: globalThis.Array.isArray(object?.subcategories)
         ? object.subcategories.map((e: any) => Subcategory.fromJSON(e))
         : [],
@@ -144,6 +188,9 @@ export const Category: MessageFns<Category> = {
     if (message.image !== "") {
       obj.image = message.image;
     }
+    if (message.translations?.length) {
+      obj.translations = message.translations.map((e) => CategoryTranslations.toJSON(e));
+    }
     if (message.subcategories?.length) {
       obj.subcategories = message.subcategories.map((e) => Subcategory.toJSON(e));
     }
@@ -158,7 +205,517 @@ export const Category: MessageFns<Category> = {
     message.id = object.id ?? "";
     message.name = object.name ?? "";
     message.image = object.image ?? "";
+    message.translations = object.translations?.map((e) => CategoryTranslations.fromPartial(e)) || [];
     message.subcategories = object.subcategories?.map((e) => Subcategory.fromPartial(e)) || [];
+    return message;
+  },
+};
+
+function createBaseCategoryTranslations(): CategoryTranslations {
+  return { name: "", language: "", version: 0, subcategories: {} };
+}
+
+export const CategoryTranslations: MessageFns<CategoryTranslations> = {
+  encode(message: CategoryTranslations, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.name !== "") {
+      writer.uint32(10).string(message.name);
+    }
+    if (message.language !== "") {
+      writer.uint32(18).string(message.language);
+    }
+    if (message.version !== 0) {
+      writer.uint32(24).int32(message.version);
+    }
+    Object.entries(message.subcategories).forEach(([key, value]) => {
+      CategoryTranslations_SubcategoriesEntry.encode({ key: key as any, value }, writer.uint32(34).fork()).join();
+    });
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): CategoryTranslations {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseCategoryTranslations();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.name = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.language = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 24) {
+            break;
+          }
+
+          message.version = reader.int32();
+          continue;
+        }
+        case 4: {
+          if (tag !== 34) {
+            break;
+          }
+
+          const entry4 = CategoryTranslations_SubcategoriesEntry.decode(reader, reader.uint32());
+          if (entry4.value !== undefined) {
+            message.subcategories[entry4.key] = entry4.value;
+          }
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): CategoryTranslations {
+    return {
+      name: isSet(object.name) ? globalThis.String(object.name) : "",
+      language: isSet(object.language) ? globalThis.String(object.language) : "",
+      version: isSet(object.version) ? globalThis.Number(object.version) : 0,
+      subcategories: isObject(object.subcategories)
+        ? Object.entries(object.subcategories).reduce<{ [key: string]: SubcategoryTranslations }>(
+          (acc, [key, value]) => {
+            acc[key] = SubcategoryTranslations.fromJSON(value);
+            return acc;
+          },
+          {},
+        )
+        : {},
+    };
+  },
+
+  toJSON(message: CategoryTranslations): unknown {
+    const obj: any = {};
+    if (message.name !== "") {
+      obj.name = message.name;
+    }
+    if (message.language !== "") {
+      obj.language = message.language;
+    }
+    if (message.version !== 0) {
+      obj.version = Math.round(message.version);
+    }
+    if (message.subcategories) {
+      const entries = Object.entries(message.subcategories);
+      if (entries.length > 0) {
+        obj.subcategories = {};
+        entries.forEach(([k, v]) => {
+          obj.subcategories[k] = SubcategoryTranslations.toJSON(v);
+        });
+      }
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<CategoryTranslations>, I>>(base?: I): CategoryTranslations {
+    return CategoryTranslations.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<CategoryTranslations>, I>>(object: I): CategoryTranslations {
+    const message = createBaseCategoryTranslations();
+    message.name = object.name ?? "";
+    message.language = object.language ?? "";
+    message.version = object.version ?? 0;
+    message.subcategories = Object.entries(object.subcategories ?? {}).reduce<
+      { [key: string]: SubcategoryTranslations }
+    >((acc, [key, value]) => {
+      if (value !== undefined) {
+        acc[key] = SubcategoryTranslations.fromPartial(value);
+      }
+      return acc;
+    }, {});
+    return message;
+  },
+};
+
+function createBaseCategoryTranslations_SubcategoriesEntry(): CategoryTranslations_SubcategoriesEntry {
+  return { key: "", value: undefined };
+}
+
+export const CategoryTranslations_SubcategoriesEntry: MessageFns<CategoryTranslations_SubcategoriesEntry> = {
+  encode(message: CategoryTranslations_SubcategoriesEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.key !== "") {
+      writer.uint32(10).string(message.key);
+    }
+    if (message.value !== undefined) {
+      SubcategoryTranslations.encode(message.value, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): CategoryTranslations_SubcategoriesEntry {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseCategoryTranslations_SubcategoriesEntry();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.key = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.value = SubcategoryTranslations.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): CategoryTranslations_SubcategoriesEntry {
+    return {
+      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      value: isSet(object.value) ? SubcategoryTranslations.fromJSON(object.value) : undefined,
+    };
+  },
+
+  toJSON(message: CategoryTranslations_SubcategoriesEntry): unknown {
+    const obj: any = {};
+    if (message.key !== "") {
+      obj.key = message.key;
+    }
+    if (message.value !== undefined) {
+      obj.value = SubcategoryTranslations.toJSON(message.value);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<CategoryTranslations_SubcategoriesEntry>, I>>(
+    base?: I,
+  ): CategoryTranslations_SubcategoriesEntry {
+    return CategoryTranslations_SubcategoriesEntry.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<CategoryTranslations_SubcategoriesEntry>, I>>(
+    object: I,
+  ): CategoryTranslations_SubcategoriesEntry {
+    const message = createBaseCategoryTranslations_SubcategoriesEntry();
+    message.key = object.key ?? "";
+    message.value = (object.value !== undefined && object.value !== null)
+      ? SubcategoryTranslations.fromPartial(object.value)
+      : undefined;
+    return message;
+  },
+};
+
+function createBaseSubcategoryTranslations(): SubcategoryTranslations {
+  return { name: "", attributes: {}, data: {} };
+}
+
+export const SubcategoryTranslations: MessageFns<SubcategoryTranslations> = {
+  encode(message: SubcategoryTranslations, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.name !== "") {
+      writer.uint32(10).string(message.name);
+    }
+    Object.entries(message.attributes).forEach(([key, value]) => {
+      SubcategoryTranslations_AttributesEntry.encode({ key: key as any, value }, writer.uint32(18).fork()).join();
+    });
+    Object.entries(message.data).forEach(([key, value]) => {
+      SubcategoryTranslations_DataEntry.encode({ key: key as any, value }, writer.uint32(26).fork()).join();
+    });
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): SubcategoryTranslations {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseSubcategoryTranslations();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.name = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          const entry2 = SubcategoryTranslations_AttributesEntry.decode(reader, reader.uint32());
+          if (entry2.value !== undefined) {
+            message.attributes[entry2.key] = entry2.value;
+          }
+          continue;
+        }
+        case 3: {
+          if (tag !== 26) {
+            break;
+          }
+
+          const entry3 = SubcategoryTranslations_DataEntry.decode(reader, reader.uint32());
+          if (entry3.value !== undefined) {
+            message.data[entry3.key] = entry3.value;
+          }
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): SubcategoryTranslations {
+    return {
+      name: isSet(object.name) ? globalThis.String(object.name) : "",
+      attributes: isObject(object.attributes)
+        ? Object.entries(object.attributes).reduce<{ [key: string]: string }>((acc, [key, value]) => {
+          acc[key] = String(value);
+          return acc;
+        }, {})
+        : {},
+      data: isObject(object.data)
+        ? Object.entries(object.data).reduce<{ [key: string]: StringArray }>((acc, [key, value]) => {
+          acc[key] = StringArray.fromJSON(value);
+          return acc;
+        }, {})
+        : {},
+    };
+  },
+
+  toJSON(message: SubcategoryTranslations): unknown {
+    const obj: any = {};
+    if (message.name !== "") {
+      obj.name = message.name;
+    }
+    if (message.attributes) {
+      const entries = Object.entries(message.attributes);
+      if (entries.length > 0) {
+        obj.attributes = {};
+        entries.forEach(([k, v]) => {
+          obj.attributes[k] = v;
+        });
+      }
+    }
+    if (message.data) {
+      const entries = Object.entries(message.data);
+      if (entries.length > 0) {
+        obj.data = {};
+        entries.forEach(([k, v]) => {
+          obj.data[k] = StringArray.toJSON(v);
+        });
+      }
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<SubcategoryTranslations>, I>>(base?: I): SubcategoryTranslations {
+    return SubcategoryTranslations.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<SubcategoryTranslations>, I>>(object: I): SubcategoryTranslations {
+    const message = createBaseSubcategoryTranslations();
+    message.name = object.name ?? "";
+    message.attributes = Object.entries(object.attributes ?? {}).reduce<{ [key: string]: string }>(
+      (acc, [key, value]) => {
+        if (value !== undefined) {
+          acc[key] = globalThis.String(value);
+        }
+        return acc;
+      },
+      {},
+    );
+    message.data = Object.entries(object.data ?? {}).reduce<{ [key: string]: StringArray }>((acc, [key, value]) => {
+      if (value !== undefined) {
+        acc[key] = StringArray.fromPartial(value);
+      }
+      return acc;
+    }, {});
+    return message;
+  },
+};
+
+function createBaseSubcategoryTranslations_AttributesEntry(): SubcategoryTranslations_AttributesEntry {
+  return { key: "", value: "" };
+}
+
+export const SubcategoryTranslations_AttributesEntry: MessageFns<SubcategoryTranslations_AttributesEntry> = {
+  encode(message: SubcategoryTranslations_AttributesEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.key !== "") {
+      writer.uint32(10).string(message.key);
+    }
+    if (message.value !== "") {
+      writer.uint32(18).string(message.value);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): SubcategoryTranslations_AttributesEntry {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseSubcategoryTranslations_AttributesEntry();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.key = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.value = reader.string();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): SubcategoryTranslations_AttributesEntry {
+    return {
+      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      value: isSet(object.value) ? globalThis.String(object.value) : "",
+    };
+  },
+
+  toJSON(message: SubcategoryTranslations_AttributesEntry): unknown {
+    const obj: any = {};
+    if (message.key !== "") {
+      obj.key = message.key;
+    }
+    if (message.value !== "") {
+      obj.value = message.value;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<SubcategoryTranslations_AttributesEntry>, I>>(
+    base?: I,
+  ): SubcategoryTranslations_AttributesEntry {
+    return SubcategoryTranslations_AttributesEntry.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<SubcategoryTranslations_AttributesEntry>, I>>(
+    object: I,
+  ): SubcategoryTranslations_AttributesEntry {
+    const message = createBaseSubcategoryTranslations_AttributesEntry();
+    message.key = object.key ?? "";
+    message.value = object.value ?? "";
+    return message;
+  },
+};
+
+function createBaseSubcategoryTranslations_DataEntry(): SubcategoryTranslations_DataEntry {
+  return { key: "", value: undefined };
+}
+
+export const SubcategoryTranslations_DataEntry: MessageFns<SubcategoryTranslations_DataEntry> = {
+  encode(message: SubcategoryTranslations_DataEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.key !== "") {
+      writer.uint32(10).string(message.key);
+    }
+    if (message.value !== undefined) {
+      StringArray.encode(message.value, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): SubcategoryTranslations_DataEntry {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseSubcategoryTranslations_DataEntry();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.key = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.value = StringArray.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): SubcategoryTranslations_DataEntry {
+    return {
+      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      value: isSet(object.value) ? StringArray.fromJSON(object.value) : undefined,
+    };
+  },
+
+  toJSON(message: SubcategoryTranslations_DataEntry): unknown {
+    const obj: any = {};
+    if (message.key !== "") {
+      obj.key = message.key;
+    }
+    if (message.value !== undefined) {
+      obj.value = StringArray.toJSON(message.value);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<SubcategoryTranslations_DataEntry>, I>>(
+    base?: I,
+  ): SubcategoryTranslations_DataEntry {
+    return SubcategoryTranslations_DataEntry.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<SubcategoryTranslations_DataEntry>, I>>(
+    object: I,
+  ): SubcategoryTranslations_DataEntry {
+    const message = createBaseSubcategoryTranslations_DataEntry();
+    message.key = object.key ?? "";
+    message.value = (object.value !== undefined && object.value !== null)
+      ? StringArray.fromPartial(object.value)
+      : undefined;
     return message;
   },
 };
