@@ -12,8 +12,13 @@ option java_outer_classname = "ProductDataProto";
 option java_package = "org.megacommerce.products.v1";
 
 message ProductDataResponseData {
-  optional products.v1.Subcategory subcategory = 1;
+  optional ProductDataResponseSubcategory subcategory = 1;
   optional products.v1.ProductTags tags = 2;
+}
+
+message ProductDataResponseSubcategory {
+  products.v1.Subcategory data = 1;
+  products.v1.SubcategoryTranslations translations = 2;
 }
 
 message ProductDataRequest {

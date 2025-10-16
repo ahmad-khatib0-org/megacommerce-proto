@@ -83,6 +83,32 @@ struct ProductDataRequestDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductDataRequestDefaultTypeInternal _ProductDataRequest_default_instance_;
 
+inline constexpr ProductDataResponseSubcategory::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        data_{nullptr},
+        translations_{nullptr} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductDataResponseSubcategory::ProductDataResponseSubcategory(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductDataResponseSubcategory_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductDataResponseSubcategoryDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductDataResponseSubcategoryDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductDataResponseSubcategoryDefaultTypeInternal() {}
+  union {
+    ProductDataResponseSubcategory _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductDataResponseSubcategoryDefaultTypeInternal _ProductDataResponseSubcategory_default_instance_;
+
 inline constexpr ProductDataResponseData::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
@@ -151,6 +177,13 @@ const ::uint32_t
         0,
         1,
         0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductDataResponseSubcategory, _impl_._has_bits_),
+        5, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductDataResponseSubcategory, _impl_.data_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductDataResponseSubcategory, _impl_.translations_),
+        0,
+        1,
+        0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductDataRequest, _impl_._has_bits_),
         5, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductDataRequest, _impl_.subcategory_),
@@ -174,12 +207,14 @@ const ::uint32_t
 static const ::_pbi::MigrationSchema
     schemas[] ABSL_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
         {0, sizeof(::products::v1::ProductDataResponseData)},
-        {7, sizeof(::products::v1::ProductDataRequest)},
-        {14, sizeof(::products::v1::ProductDataRequestCategory)},
-        {21, sizeof(::products::v1::ProductDataResponse)},
+        {7, sizeof(::products::v1::ProductDataResponseSubcategory)},
+        {14, sizeof(::products::v1::ProductDataRequest)},
+        {21, sizeof(::products::v1::ProductDataRequestCategory)},
+        {28, sizeof(::products::v1::ProductDataResponse)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::products::v1::_ProductDataResponseData_default_instance_._instance,
+    &::products::v1::_ProductDataResponseSubcategory_default_instance_._instance,
     &::products::v1::_ProductDataRequest_default_instance_._instance,
     &::products::v1::_ProductDataRequestCategory_default_instance_._instance,
     &::products::v1::_ProductDataResponse_default_instance_._instance,
@@ -189,24 +224,29 @@ const char descriptor_table_protodef_products_2fv1_2fproduct_5fdata_2eproto[] AB
     "\n\036products/v1/product_data.proto\022\013produc"
     "ts.v1\032\031products/v1/product.proto\032$produc"
     "ts/v1/product_categories.proto\032\025shared/v"
-    "1/error.proto\"\246\001\n\027ProductDataResponseDat"
-    "a\022\?\n\013subcategory\030\001 \001(\0132\030.products.v1.Sub"
-    "categoryH\000R\013subcategory\210\001\001\0221\n\004tags\030\002 \001(\013"
-    "2\030.products.v1.ProductTagsH\001R\004tags\210\001\001B\016\n"
-    "\014_subcategoryB\007\n\005_tags\"\241\001\n\022ProductDataRe"
-    "quest\022N\n\013subcategory\030\001 \001(\0132\'.products.v1"
-    ".ProductDataRequestCategoryH\000R\013subcatego"
-    "ry\210\001\001\022\036\n\010get_tags\030\002 \001(\010H\001R\007getTags\210\001\001B\016\n"
-    "\014_subcategoryB\013\n\t_get_tags\"Z\n\032ProductDat"
-    "aRequestCategory\022\032\n\010category\030\001 \001(\tR\010cate"
-    "gory\022 \n\013subcategory\030\002 \001(\tR\013subcategory\"\212"
-    "\001\n\023ProductDataResponse\022:\n\004data\030\001 \001(\0132$.p"
-    "roducts.v1.ProductDataResponseDataH\000R\004da"
-    "ta\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErrorH\000"
-    "R\005errorB\n\n\010responseBz\n\034org.megacommerce."
-    "products.v1B\020ProductDataProtoZEgithub.co"
-    "m/ahmad-khatib0-org/megacommerce-proto/g"
-    "en/go/products/v1;v1\370\001\001b\006proto3"
+    "1/error.proto\"\271\001\n\027ProductDataResponseDat"
+    "a\022R\n\013subcategory\030\001 \001(\0132+.products.v1.Pro"
+    "ductDataResponseSubcategoryH\000R\013subcatego"
+    "ry\210\001\001\0221\n\004tags\030\002 \001(\0132\030.products.v1.Produc"
+    "tTagsH\001R\004tags\210\001\001B\016\n\014_subcategoryB\007\n\005_tag"
+    "s\"\230\001\n\036ProductDataResponseSubcategory\022,\n\004"
+    "data\030\001 \001(\0132\030.products.v1.SubcategoryR\004da"
+    "ta\022H\n\014translations\030\002 \001(\0132$.products.v1.S"
+    "ubcategoryTranslationsR\014translations\"\241\001\n"
+    "\022ProductDataRequest\022N\n\013subcategory\030\001 \001(\013"
+    "2\'.products.v1.ProductDataRequestCategor"
+    "yH\000R\013subcategory\210\001\001\022\036\n\010get_tags\030\002 \001(\010H\001R"
+    "\007getTags\210\001\001B\016\n\014_subcategoryB\013\n\t_get_tags"
+    "\"Z\n\032ProductDataRequestCategory\022\032\n\010catego"
+    "ry\030\001 \001(\tR\010category\022 \n\013subcategory\030\002 \001(\tR"
+    "\013subcategory\"\212\001\n\023ProductDataResponse\022:\n\004"
+    "data\030\001 \001(\0132$.products.v1.ProductDataResp"
+    "onseDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared"
+    ".v1.AppErrorH\000R\005errorB\n\n\010responseBz\n\034org"
+    ".megacommerce.products.v1B\020ProductDataPr"
+    "otoZEgithub.com/ahmad-khatib0-org/megaco"
+    "mmerce-proto/gen/go/products/v1;v1\370\001\001b\006p"
+    "roto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_products_2fv1_2fproduct_5fdata_2eproto_deps[3] = {
@@ -218,13 +258,13 @@ static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_5fdata_2eproto
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_5fdata_2eproto = {
     false,
     false,
-    831,
+    1005,
     descriptor_table_protodef_products_2fv1_2fproduct_5fdata_2eproto,
     "products/v1/product_data.proto",
     &descriptor_table_products_2fv1_2fproduct_5fdata_2eproto_once,
     descriptor_table_products_2fv1_2fproduct_5fdata_2eproto_deps,
     3,
-    4,
+    5,
     schemas,
     file_default_instances,
     TableStruct_products_2fv1_2fproduct_5fdata_2eproto::offsets,
@@ -243,11 +283,6 @@ class ProductDataResponseData::_Internal {
       8 * PROTOBUF_FIELD_OFFSET(ProductDataResponseData, _impl_._has_bits_);
 };
 
-void ProductDataResponseData::clear_subcategory() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (_impl_.subcategory_ != nullptr) _impl_.subcategory_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000001u;
-}
 void ProductDataResponseData::clear_tags() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (_impl_.tags_ != nullptr) _impl_.tags_->Clear();
@@ -384,13 +419,13 @@ ProductDataResponseData::_table_ = {
     // optional .products.v1.ProductTags tags = 2 [json_name = "tags"];
     {::_pbi::TcParser::FastMtS1,
      {18, 1, 1, PROTOBUF_FIELD_OFFSET(ProductDataResponseData, _impl_.tags_)}},
-    // optional .products.v1.Subcategory subcategory = 1 [json_name = "subcategory"];
+    // optional .products.v1.ProductDataResponseSubcategory subcategory = 1 [json_name = "subcategory"];
     {::_pbi::TcParser::FastMtS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductDataResponseData, _impl_.subcategory_)}},
   }}, {{
     65535, 65535
   }}, {{
-    // optional .products.v1.Subcategory subcategory = 1 [json_name = "subcategory"];
+    // optional .products.v1.ProductDataResponseSubcategory subcategory = 1 [json_name = "subcategory"];
     {PROTOBUF_FIELD_OFFSET(ProductDataResponseData, _impl_.subcategory_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
     // optional .products.v1.ProductTags tags = 2 [json_name = "tags"];
@@ -398,7 +433,7 @@ ProductDataResponseData::_table_ = {
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
-      {::_pbi::TcParser::GetTable<::products::v1::Subcategory>()},
+      {::_pbi::TcParser::GetTable<::products::v1::ProductDataResponseSubcategory>()},
       {::_pbi::TcParser::GetTable<::products::v1::ProductTags>()},
   }},
   {{
@@ -442,7 +477,7 @@ PROTOBUF_NOINLINE void ProductDataResponseData::Clear() {
   (void)cached_has_bits;
 
   cached_has_bits = this_._impl_._has_bits_[0];
-  // optional .products.v1.Subcategory subcategory = 1 [json_name = "subcategory"];
+  // optional .products.v1.ProductDataResponseSubcategory subcategory = 1 [json_name = "subcategory"];
   if ((cached_has_bits & 0x00000001u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
         1, *this_._impl_.subcategory_, this_._impl_.subcategory_->GetCachedSize(), target,
@@ -482,7 +517,7 @@ PROTOBUF_NOINLINE void ProductDataResponseData::Clear() {
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
   cached_has_bits = this_._impl_._has_bits_[0];
   if ((cached_has_bits & 0x00000003u) != 0) {
-    // optional .products.v1.Subcategory subcategory = 1 [json_name = "subcategory"];
+    // optional .products.v1.ProductDataResponseSubcategory subcategory = 1 [json_name = "subcategory"];
     if ((cached_has_bits & 0x00000001u) != 0) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.subcategory_);
@@ -550,6 +585,325 @@ void ProductDataResponseData::InternalSwap(ProductDataResponseData* PROTOBUF_RES
 }
 
 ::google::protobuf::Metadata ProductDataResponseData::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class ProductDataResponseSubcategory::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<ProductDataResponseSubcategory>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(ProductDataResponseSubcategory, _impl_._has_bits_);
+};
+
+void ProductDataResponseSubcategory::clear_data() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.data_ != nullptr) _impl_.data_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+void ProductDataResponseSubcategory::clear_translations() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.translations_ != nullptr) _impl_.translations_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+ProductDataResponseSubcategory::ProductDataResponseSubcategory(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductDataResponseSubcategory_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:products.v1.ProductDataResponseSubcategory)
+}
+PROTOBUF_NDEBUG_INLINE ProductDataResponseSubcategory::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::products::v1::ProductDataResponseSubcategory& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0} {}
+
+ProductDataResponseSubcategory::ProductDataResponseSubcategory(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const ProductDataResponseSubcategory& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductDataResponseSubcategory_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ProductDataResponseSubcategory* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
+  _impl_.data_ = ((cached_has_bits & 0x00000001u) != 0)
+                ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.data_)
+                : nullptr;
+  _impl_.translations_ = ((cached_has_bits & 0x00000002u) != 0)
+                ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.translations_)
+                : nullptr;
+
+  // @@protoc_insertion_point(copy_constructor:products.v1.ProductDataResponseSubcategory)
+}
+PROTOBUF_NDEBUG_INLINE ProductDataResponseSubcategory::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0} {}
+
+inline void ProductDataResponseSubcategory::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, data_),
+           0,
+           offsetof(Impl_, translations_) -
+               offsetof(Impl_, data_) +
+               sizeof(Impl_::translations_));
+}
+ProductDataResponseSubcategory::~ProductDataResponseSubcategory() {
+  // @@protoc_insertion_point(destructor:products.v1.ProductDataResponseSubcategory)
+  SharedDtor(*this);
+}
+inline void ProductDataResponseSubcategory::SharedDtor(MessageLite& self) {
+  ProductDataResponseSubcategory& this_ = static_cast<ProductDataResponseSubcategory&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  delete this_._impl_.data_;
+  delete this_._impl_.translations_;
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL ProductDataResponseSubcategory::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductDataResponseSubcategory(arena);
+}
+constexpr auto ProductDataResponseSubcategory::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::ZeroInit(sizeof(ProductDataResponseSubcategory),
+                                            alignof(ProductDataResponseSubcategory));
+}
+constexpr auto ProductDataResponseSubcategory::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductDataResponseSubcategory_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductDataResponseSubcategory::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductDataResponseSubcategory>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductDataResponseSubcategory::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<ProductDataResponseSubcategory>(), &ProductDataResponseSubcategory::ByteSizeLong,
+              &ProductDataResponseSubcategory::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductDataResponseSubcategory, _impl_._cached_size_),
+          false,
+      },
+      &ProductDataResponseSubcategory::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fdata_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductDataResponseSubcategory_class_data_ =
+        ProductDataResponseSubcategory::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductDataResponseSubcategory::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductDataResponseSubcategory_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductDataResponseSubcategory_class_data_.tc_table);
+  return ProductDataResponseSubcategory_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 2, 0, 2>
+ProductDataResponseSubcategory::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(ProductDataResponseSubcategory, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductDataResponseSubcategory_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductDataResponseSubcategory>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // .products.v1.SubcategoryTranslations translations = 2 [json_name = "translations"];
+    {::_pbi::TcParser::FastMtS1,
+     {18, 1, 1, PROTOBUF_FIELD_OFFSET(ProductDataResponseSubcategory, _impl_.translations_)}},
+    // .products.v1.Subcategory data = 1 [json_name = "data"];
+    {::_pbi::TcParser::FastMtS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductDataResponseSubcategory, _impl_.data_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // .products.v1.Subcategory data = 1 [json_name = "data"];
+    {PROTOBUF_FIELD_OFFSET(ProductDataResponseSubcategory, _impl_.data_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .products.v1.SubcategoryTranslations translations = 2 [json_name = "translations"];
+    {PROTOBUF_FIELD_OFFSET(ProductDataResponseSubcategory, _impl_.translations_), _Internal::kHasBitsOffset + 1, 1,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::products::v1::Subcategory>()},
+      {::_pbi::TcParser::GetTable<::products::v1::SubcategoryTranslations>()},
+  }},
+  {{
+  }},
+};
+PROTOBUF_NOINLINE void ProductDataResponseSubcategory::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.ProductDataResponseSubcategory)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003u) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      ABSL_DCHECK(_impl_.data_ != nullptr);
+      _impl_.data_->Clear();
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      ABSL_DCHECK(_impl_.translations_ != nullptr);
+      _impl_.translations_->Clear();
+    }
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL ProductDataResponseSubcategory::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const ProductDataResponseSubcategory& this_ = static_cast<const ProductDataResponseSubcategory&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL ProductDataResponseSubcategory::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const ProductDataResponseSubcategory& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductDataResponseSubcategory)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // .products.v1.Subcategory data = 1 [json_name = "data"];
+  if ((cached_has_bits & 0x00000001u) != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        1, *this_._impl_.data_, this_._impl_.data_->GetCachedSize(), target,
+        stream);
+  }
+
+  // .products.v1.SubcategoryTranslations translations = 2 [json_name = "translations"];
+  if ((cached_has_bits & 0x00000002u) != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        2, *this_._impl_.translations_, this_._impl_.translations_->GetCachedSize(), target,
+        stream);
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductDataResponseSubcategory)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t ProductDataResponseSubcategory::ByteSizeLong(const MessageLite& base) {
+  const ProductDataResponseSubcategory& this_ = static_cast<const ProductDataResponseSubcategory&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t ProductDataResponseSubcategory::ByteSizeLong() const {
+  const ProductDataResponseSubcategory& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductDataResponseSubcategory)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003u) != 0) {
+    // .products.v1.Subcategory data = 1 [json_name = "data"];
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.data_);
+    }
+    // .products.v1.SubcategoryTranslations translations = 2 [json_name = "translations"];
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.translations_);
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void ProductDataResponseSubcategory::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ProductDataResponseSubcategory*>(&to_msg);
+  auto& from = static_cast<const ProductDataResponseSubcategory&>(from_msg);
+  ::google::protobuf::Arena* arena = _this->GetArena();
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductDataResponseSubcategory)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003u) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      ABSL_DCHECK(from._impl_.data_ != nullptr);
+      if (_this->_impl_.data_ == nullptr) {
+        _this->_impl_.data_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.data_);
+      } else {
+        _this->_impl_.data_->MergeFrom(*from._impl_.data_);
+      }
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      ABSL_DCHECK(from._impl_.translations_ != nullptr);
+      if (_this->_impl_.translations_ == nullptr) {
+        _this->_impl_.translations_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.translations_);
+      } else {
+        _this->_impl_.translations_->MergeFrom(*from._impl_.translations_);
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ProductDataResponseSubcategory::CopyFrom(const ProductDataResponseSubcategory& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductDataResponseSubcategory)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void ProductDataResponseSubcategory::InternalSwap(ProductDataResponseSubcategory* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ProductDataResponseSubcategory, _impl_.translations_)
+      + sizeof(ProductDataResponseSubcategory::_impl_.translations_)
+      - PROTOBUF_FIELD_OFFSET(ProductDataResponseSubcategory, _impl_.data_)>(
+          reinterpret_cast<char*>(&_impl_.data_),
+          reinterpret_cast<char*>(&other->_impl_.data_));
+}
+
+::google::protobuf::Metadata ProductDataResponseSubcategory::GetMetadata() const {
   return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // ===================================================================

@@ -185,9 +185,17 @@ pub struct SubcategoryAttribute {
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductDataResponseData {
     #[prost(message, optional, tag = "1")]
-    pub subcategory: ::core::option::Option<Subcategory>,
+    pub subcategory: ::core::option::Option<ProductDataResponseSubcategory>,
     #[prost(message, optional, tag = "2")]
     pub tags: ::core::option::Option<ProductTags>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductDataResponseSubcategory {
+    #[prost(message, optional, tag = "1")]
+    pub data: ::core::option::Option<Subcategory>,
+    #[prost(message, optional, tag = "2")]
+    pub translations: ::core::option::Option<SubcategoryTranslations>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

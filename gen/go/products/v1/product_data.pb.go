@@ -23,9 +23,9 @@ const (
 )
 
 type ProductDataResponseData struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Subcategory   *Subcategory           `protobuf:"bytes,1,opt,name=subcategory,proto3,oneof" json:"subcategory,omitempty"`
-	Tags          *ProductTags           `protobuf:"bytes,2,opt,name=tags,proto3,oneof" json:"tags,omitempty"`
+	state         protoimpl.MessageState          `protogen:"open.v1"`
+	Subcategory   *ProductDataResponseSubcategory `protobuf:"bytes,1,opt,name=subcategory,proto3,oneof" json:"subcategory,omitempty"`
+	Tags          *ProductTags                    `protobuf:"bytes,2,opt,name=tags,proto3,oneof" json:"tags,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -60,7 +60,7 @@ func (*ProductDataResponseData) Descriptor() ([]byte, []int) {
 	return file_products_v1_product_data_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *ProductDataResponseData) GetSubcategory() *Subcategory {
+func (x *ProductDataResponseData) GetSubcategory() *ProductDataResponseSubcategory {
 	if x != nil {
 		return x.Subcategory
 	}
@@ -70,6 +70,58 @@ func (x *ProductDataResponseData) GetSubcategory() *Subcategory {
 func (x *ProductDataResponseData) GetTags() *ProductTags {
 	if x != nil {
 		return x.Tags
+	}
+	return nil
+}
+
+type ProductDataResponseSubcategory struct {
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Data          *Subcategory             `protobuf:"bytes,1,opt,name=data,proto3" json:"data,omitempty"`
+	Translations  *SubcategoryTranslations `protobuf:"bytes,2,opt,name=translations,proto3" json:"translations,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ProductDataResponseSubcategory) Reset() {
+	*x = ProductDataResponseSubcategory{}
+	mi := &file_products_v1_product_data_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProductDataResponseSubcategory) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProductDataResponseSubcategory) ProtoMessage() {}
+
+func (x *ProductDataResponseSubcategory) ProtoReflect() protoreflect.Message {
+	mi := &file_products_v1_product_data_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProductDataResponseSubcategory.ProtoReflect.Descriptor instead.
+func (*ProductDataResponseSubcategory) Descriptor() ([]byte, []int) {
+	return file_products_v1_product_data_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *ProductDataResponseSubcategory) GetData() *Subcategory {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
+func (x *ProductDataResponseSubcategory) GetTranslations() *SubcategoryTranslations {
+	if x != nil {
+		return x.Translations
 	}
 	return nil
 }
@@ -84,7 +136,7 @@ type ProductDataRequest struct {
 
 func (x *ProductDataRequest) Reset() {
 	*x = ProductDataRequest{}
-	mi := &file_products_v1_product_data_proto_msgTypes[1]
+	mi := &file_products_v1_product_data_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -96,7 +148,7 @@ func (x *ProductDataRequest) String() string {
 func (*ProductDataRequest) ProtoMessage() {}
 
 func (x *ProductDataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_product_data_proto_msgTypes[1]
+	mi := &file_products_v1_product_data_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -109,7 +161,7 @@ func (x *ProductDataRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductDataRequest.ProtoReflect.Descriptor instead.
 func (*ProductDataRequest) Descriptor() ([]byte, []int) {
-	return file_products_v1_product_data_proto_rawDescGZIP(), []int{1}
+	return file_products_v1_product_data_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ProductDataRequest) GetSubcategory() *ProductDataRequestCategory {
@@ -136,7 +188,7 @@ type ProductDataRequestCategory struct {
 
 func (x *ProductDataRequestCategory) Reset() {
 	*x = ProductDataRequestCategory{}
-	mi := &file_products_v1_product_data_proto_msgTypes[2]
+	mi := &file_products_v1_product_data_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -148,7 +200,7 @@ func (x *ProductDataRequestCategory) String() string {
 func (*ProductDataRequestCategory) ProtoMessage() {}
 
 func (x *ProductDataRequestCategory) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_product_data_proto_msgTypes[2]
+	mi := &file_products_v1_product_data_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -161,7 +213,7 @@ func (x *ProductDataRequestCategory) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductDataRequestCategory.ProtoReflect.Descriptor instead.
 func (*ProductDataRequestCategory) Descriptor() ([]byte, []int) {
-	return file_products_v1_product_data_proto_rawDescGZIP(), []int{2}
+	return file_products_v1_product_data_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ProductDataRequestCategory) GetCategory() string {
@@ -191,7 +243,7 @@ type ProductDataResponse struct {
 
 func (x *ProductDataResponse) Reset() {
 	*x = ProductDataResponse{}
-	mi := &file_products_v1_product_data_proto_msgTypes[3]
+	mi := &file_products_v1_product_data_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -203,7 +255,7 @@ func (x *ProductDataResponse) String() string {
 func (*ProductDataResponse) ProtoMessage() {}
 
 func (x *ProductDataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_product_data_proto_msgTypes[3]
+	mi := &file_products_v1_product_data_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -216,7 +268,7 @@ func (x *ProductDataResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProductDataResponse.ProtoReflect.Descriptor instead.
 func (*ProductDataResponse) Descriptor() ([]byte, []int) {
-	return file_products_v1_product_data_proto_rawDescGZIP(), []int{3}
+	return file_products_v1_product_data_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ProductDataResponse) GetResponse() isProductDataResponse_Response {
@@ -264,12 +316,15 @@ var File_products_v1_product_data_proto protoreflect.FileDescriptor
 
 const file_products_v1_product_data_proto_rawDesc = "" +
 	"\n" +
-	"\x1eproducts/v1/product_data.proto\x12\vproducts.v1\x1a\x19products/v1/product.proto\x1a$products/v1/product_categories.proto\x1a\x15shared/v1/error.proto\"\xa6\x01\n" +
-	"\x17ProductDataResponseData\x12?\n" +
-	"\vsubcategory\x18\x01 \x01(\v2\x18.products.v1.SubcategoryH\x00R\vsubcategory\x88\x01\x01\x121\n" +
+	"\x1eproducts/v1/product_data.proto\x12\vproducts.v1\x1a\x19products/v1/product.proto\x1a$products/v1/product_categories.proto\x1a\x15shared/v1/error.proto\"\xb9\x01\n" +
+	"\x17ProductDataResponseData\x12R\n" +
+	"\vsubcategory\x18\x01 \x01(\v2+.products.v1.ProductDataResponseSubcategoryH\x00R\vsubcategory\x88\x01\x01\x121\n" +
 	"\x04tags\x18\x02 \x01(\v2\x18.products.v1.ProductTagsH\x01R\x04tags\x88\x01\x01B\x0e\n" +
 	"\f_subcategoryB\a\n" +
-	"\x05_tags\"\xa1\x01\n" +
+	"\x05_tags\"\x98\x01\n" +
+	"\x1eProductDataResponseSubcategory\x12,\n" +
+	"\x04data\x18\x01 \x01(\v2\x18.products.v1.SubcategoryR\x04data\x12H\n" +
+	"\ftranslations\x18\x02 \x01(\v2$.products.v1.SubcategoryTranslationsR\ftranslations\"\xa1\x01\n" +
 	"\x12ProductDataRequest\x12N\n" +
 	"\vsubcategory\x18\x01 \x01(\v2'.products.v1.ProductDataRequestCategoryH\x00R\vsubcategory\x88\x01\x01\x12\x1e\n" +
 	"\bget_tags\x18\x02 \x01(\bH\x01R\agetTags\x88\x01\x01B\x0e\n" +
@@ -297,27 +352,31 @@ func file_products_v1_product_data_proto_rawDescGZIP() []byte {
 	return file_products_v1_product_data_proto_rawDescData
 }
 
-var file_products_v1_product_data_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_products_v1_product_data_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_products_v1_product_data_proto_goTypes = []any{
-	(*ProductDataResponseData)(nil),    // 0: products.v1.ProductDataResponseData
-	(*ProductDataRequest)(nil),         // 1: products.v1.ProductDataRequest
-	(*ProductDataRequestCategory)(nil), // 2: products.v1.ProductDataRequestCategory
-	(*ProductDataResponse)(nil),        // 3: products.v1.ProductDataResponse
-	(*Subcategory)(nil),                // 4: products.v1.Subcategory
-	(*ProductTags)(nil),                // 5: products.v1.ProductTags
-	(*v1.AppError)(nil),                // 6: shared.v1.AppError
+	(*ProductDataResponseData)(nil),        // 0: products.v1.ProductDataResponseData
+	(*ProductDataResponseSubcategory)(nil), // 1: products.v1.ProductDataResponseSubcategory
+	(*ProductDataRequest)(nil),             // 2: products.v1.ProductDataRequest
+	(*ProductDataRequestCategory)(nil),     // 3: products.v1.ProductDataRequestCategory
+	(*ProductDataResponse)(nil),            // 4: products.v1.ProductDataResponse
+	(*ProductTags)(nil),                    // 5: products.v1.ProductTags
+	(*Subcategory)(nil),                    // 6: products.v1.Subcategory
+	(*SubcategoryTranslations)(nil),        // 7: products.v1.SubcategoryTranslations
+	(*v1.AppError)(nil),                    // 8: shared.v1.AppError
 }
 var file_products_v1_product_data_proto_depIdxs = []int32{
-	4, // 0: products.v1.ProductDataResponseData.subcategory:type_name -> products.v1.Subcategory
+	1, // 0: products.v1.ProductDataResponseData.subcategory:type_name -> products.v1.ProductDataResponseSubcategory
 	5, // 1: products.v1.ProductDataResponseData.tags:type_name -> products.v1.ProductTags
-	2, // 2: products.v1.ProductDataRequest.subcategory:type_name -> products.v1.ProductDataRequestCategory
-	0, // 3: products.v1.ProductDataResponse.data:type_name -> products.v1.ProductDataResponseData
-	6, // 4: products.v1.ProductDataResponse.error:type_name -> shared.v1.AppError
-	5, // [5:5] is the sub-list for method output_type
-	5, // [5:5] is the sub-list for method input_type
-	5, // [5:5] is the sub-list for extension type_name
-	5, // [5:5] is the sub-list for extension extendee
-	0, // [0:5] is the sub-list for field type_name
+	6, // 2: products.v1.ProductDataResponseSubcategory.data:type_name -> products.v1.Subcategory
+	7, // 3: products.v1.ProductDataResponseSubcategory.translations:type_name -> products.v1.SubcategoryTranslations
+	3, // 4: products.v1.ProductDataRequest.subcategory:type_name -> products.v1.ProductDataRequestCategory
+	0, // 5: products.v1.ProductDataResponse.data:type_name -> products.v1.ProductDataResponseData
+	8, // 6: products.v1.ProductDataResponse.error:type_name -> shared.v1.AppError
+	7, // [7:7] is the sub-list for method output_type
+	7, // [7:7] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_products_v1_product_data_proto_init() }
@@ -328,8 +387,8 @@ func file_products_v1_product_data_proto_init() {
 	file_products_v1_product_proto_init()
 	file_products_v1_product_categories_proto_init()
 	file_products_v1_product_data_proto_msgTypes[0].OneofWrappers = []any{}
-	file_products_v1_product_data_proto_msgTypes[1].OneofWrappers = []any{}
-	file_products_v1_product_data_proto_msgTypes[3].OneofWrappers = []any{
+	file_products_v1_product_data_proto_msgTypes[2].OneofWrappers = []any{}
+	file_products_v1_product_data_proto_msgTypes[4].OneofWrappers = []any{
 		(*ProductDataResponse_Data)(nil),
 		(*ProductDataResponse_Error)(nil),
 	}
@@ -339,7 +398,7 @@ func file_products_v1_product_data_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_products_v1_product_data_proto_rawDesc), len(file_products_v1_product_data_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

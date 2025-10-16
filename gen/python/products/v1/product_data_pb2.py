@@ -27,7 +27,7 @@ from products.v1 import product_categories_pb2 as products_dot_v1_dot_product__c
 from shared.v1 import error_pb2 as shared_dot_v1_dot_error__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1eproducts/v1/product_data.proto\x12\x0bproducts.v1\x1a\x19products/v1/product.proto\x1a$products/v1/product_categories.proto\x1a\x15shared/v1/error.proto\"\x93\x01\n\x17ProductDataResponseData\x12\x32\n\x0bsubcategory\x18\x01 \x01(\x0b\x32\x18.products.v1.SubcategoryH\x00\x88\x01\x01\x12+\n\x04tags\x18\x02 \x01(\x0b\x32\x18.products.v1.ProductTagsH\x01\x88\x01\x01\x42\x0e\n\x0c_subcategoryB\x07\n\x05_tags\"\x8b\x01\n\x12ProductDataRequest\x12\x41\n\x0bsubcategory\x18\x01 \x01(\x0b\x32\'.products.v1.ProductDataRequestCategoryH\x00\x88\x01\x01\x12\x15\n\x08get_tags\x18\x02 \x01(\x08H\x01\x88\x01\x01\x42\x0e\n\x0c_subcategoryB\x0b\n\t_get_tags\"C\n\x1aProductDataRequestCategory\x12\x10\n\x08\x63\x61tegory\x18\x01 \x01(\t\x12\x13\n\x0bsubcategory\x18\x02 \x01(\t\"}\n\x13ProductDataResponse\x12\x34\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32$.products.v1.ProductDataResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08responseBz\n\x1corg.megacommerce.products.v1B\x10ProductDataProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1eproducts/v1/product_data.proto\x12\x0bproducts.v1\x1a\x19products/v1/product.proto\x1a$products/v1/product_categories.proto\x1a\x15shared/v1/error.proto\"\xa6\x01\n\x17ProductDataResponseData\x12\x45\n\x0bsubcategory\x18\x01 \x01(\x0b\x32+.products.v1.ProductDataResponseSubcategoryH\x00\x88\x01\x01\x12+\n\x04tags\x18\x02 \x01(\x0b\x32\x18.products.v1.ProductTagsH\x01\x88\x01\x01\x42\x0e\n\x0c_subcategoryB\x07\n\x05_tags\"\x84\x01\n\x1eProductDataResponseSubcategory\x12&\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x18.products.v1.Subcategory\x12:\n\x0ctranslations\x18\x02 \x01(\x0b\x32$.products.v1.SubcategoryTranslations\"\x8b\x01\n\x12ProductDataRequest\x12\x41\n\x0bsubcategory\x18\x01 \x01(\x0b\x32\'.products.v1.ProductDataRequestCategoryH\x00\x88\x01\x01\x12\x15\n\x08get_tags\x18\x02 \x01(\x08H\x01\x88\x01\x01\x42\x0e\n\x0c_subcategoryB\x0b\n\t_get_tags\"C\n\x1aProductDataRequestCategory\x12\x10\n\x08\x63\x61tegory\x18\x01 \x01(\t\x12\x13\n\x0bsubcategory\x18\x02 \x01(\t\"}\n\x13ProductDataResponse\x12\x34\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32$.products.v1.ProductDataResponseDataH\x00\x12$\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x13.shared.v1.AppErrorH\x00\x42\n\n\x08responseBz\n\x1corg.megacommerce.products.v1B\x10ProductDataProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,11 +36,13 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\034org.megacommerce.products.v1B\020ProductDataProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\370\001\001'
   _globals['_PRODUCTDATARESPONSEDATA']._serialized_start=136
-  _globals['_PRODUCTDATARESPONSEDATA']._serialized_end=283
-  _globals['_PRODUCTDATAREQUEST']._serialized_start=286
-  _globals['_PRODUCTDATAREQUEST']._serialized_end=425
-  _globals['_PRODUCTDATAREQUESTCATEGORY']._serialized_start=427
-  _globals['_PRODUCTDATAREQUESTCATEGORY']._serialized_end=494
-  _globals['_PRODUCTDATARESPONSE']._serialized_start=496
-  _globals['_PRODUCTDATARESPONSE']._serialized_end=621
+  _globals['_PRODUCTDATARESPONSEDATA']._serialized_end=302
+  _globals['_PRODUCTDATARESPONSESUBCATEGORY']._serialized_start=305
+  _globals['_PRODUCTDATARESPONSESUBCATEGORY']._serialized_end=437
+  _globals['_PRODUCTDATAREQUEST']._serialized_start=440
+  _globals['_PRODUCTDATAREQUEST']._serialized_end=579
+  _globals['_PRODUCTDATAREQUESTCATEGORY']._serialized_start=581
+  _globals['_PRODUCTDATAREQUESTCATEGORY']._serialized_end=648
+  _globals['_PRODUCTDATARESPONSE']._serialized_start=650
+  _globals['_PRODUCTDATARESPONSE']._serialized_end=775
 # @@protoc_insertion_point(module_scope)

@@ -8,13 +8,18 @@
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 import { AppError } from "../../shared/v1/error.js";
 import { ProductTags } from "./product.js";
-import { Subcategory } from "./product_categories.js";
+import { Subcategory, SubcategoryTranslations } from "./product_categories.js";
 
 export const protobufPackage = "products.v1";
 
 export interface ProductDataResponseData {
-  subcategory?: Subcategory | undefined;
+  subcategory?: ProductDataResponseSubcategory | undefined;
   tags?: ProductTags | undefined;
+}
+
+export interface ProductDataResponseSubcategory {
+  data?: Subcategory | undefined;
+  translations?: SubcategoryTranslations | undefined;
 }
 
 export interface ProductDataRequest {
@@ -39,7 +44,7 @@ function createBaseProductDataResponseData(): ProductDataResponseData {
 export const ProductDataResponseData: MessageFns<ProductDataResponseData> = {
   encode(message: ProductDataResponseData, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.subcategory !== undefined) {
-      Subcategory.encode(message.subcategory, writer.uint32(10).fork()).join();
+      ProductDataResponseSubcategory.encode(message.subcategory, writer.uint32(10).fork()).join();
     }
     if (message.tags !== undefined) {
       ProductTags.encode(message.tags, writer.uint32(18).fork()).join();
@@ -59,7 +64,7 @@ export const ProductDataResponseData: MessageFns<ProductDataResponseData> = {
             break;
           }
 
-          message.subcategory = Subcategory.decode(reader, reader.uint32());
+          message.subcategory = ProductDataResponseSubcategory.decode(reader, reader.uint32());
           continue;
         }
         case 2: {
@@ -81,7 +86,7 @@ export const ProductDataResponseData: MessageFns<ProductDataResponseData> = {
 
   fromJSON(object: any): ProductDataResponseData {
     return {
-      subcategory: isSet(object.subcategory) ? Subcategory.fromJSON(object.subcategory) : undefined,
+      subcategory: isSet(object.subcategory) ? ProductDataResponseSubcategory.fromJSON(object.subcategory) : undefined,
       tags: isSet(object.tags) ? ProductTags.fromJSON(object.tags) : undefined,
     };
   },
@@ -89,7 +94,7 @@ export const ProductDataResponseData: MessageFns<ProductDataResponseData> = {
   toJSON(message: ProductDataResponseData): unknown {
     const obj: any = {};
     if (message.subcategory !== undefined) {
-      obj.subcategory = Subcategory.toJSON(message.subcategory);
+      obj.subcategory = ProductDataResponseSubcategory.toJSON(message.subcategory);
     }
     if (message.tags !== undefined) {
       obj.tags = ProductTags.toJSON(message.tags);
@@ -103,10 +108,92 @@ export const ProductDataResponseData: MessageFns<ProductDataResponseData> = {
   fromPartial<I extends Exact<DeepPartial<ProductDataResponseData>, I>>(object: I): ProductDataResponseData {
     const message = createBaseProductDataResponseData();
     message.subcategory = (object.subcategory !== undefined && object.subcategory !== null)
-      ? Subcategory.fromPartial(object.subcategory)
+      ? ProductDataResponseSubcategory.fromPartial(object.subcategory)
       : undefined;
     message.tags = (object.tags !== undefined && object.tags !== null)
       ? ProductTags.fromPartial(object.tags)
+      : undefined;
+    return message;
+  },
+};
+
+function createBaseProductDataResponseSubcategory(): ProductDataResponseSubcategory {
+  return { data: undefined, translations: undefined };
+}
+
+export const ProductDataResponseSubcategory: MessageFns<ProductDataResponseSubcategory> = {
+  encode(message: ProductDataResponseSubcategory, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.data !== undefined) {
+      Subcategory.encode(message.data, writer.uint32(10).fork()).join();
+    }
+    if (message.translations !== undefined) {
+      SubcategoryTranslations.encode(message.translations, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductDataResponseSubcategory {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductDataResponseSubcategory();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.data = Subcategory.decode(reader, reader.uint32());
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.translations = SubcategoryTranslations.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductDataResponseSubcategory {
+    return {
+      data: isSet(object.data) ? Subcategory.fromJSON(object.data) : undefined,
+      translations: isSet(object.translations) ? SubcategoryTranslations.fromJSON(object.translations) : undefined,
+    };
+  },
+
+  toJSON(message: ProductDataResponseSubcategory): unknown {
+    const obj: any = {};
+    if (message.data !== undefined) {
+      obj.data = Subcategory.toJSON(message.data);
+    }
+    if (message.translations !== undefined) {
+      obj.translations = SubcategoryTranslations.toJSON(message.translations);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductDataResponseSubcategory>, I>>(base?: I): ProductDataResponseSubcategory {
+    return ProductDataResponseSubcategory.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductDataResponseSubcategory>, I>>(
+    object: I,
+  ): ProductDataResponseSubcategory {
+    const message = createBaseProductDataResponseSubcategory();
+    message.data = (object.data !== undefined && object.data !== null)
+      ? Subcategory.fromPartial(object.data)
+      : undefined;
+    message.translations = (object.translations !== undefined && object.translations !== null)
+      ? SubcategoryTranslations.fromPartial(object.translations)
       : undefined;
     return message;
   },
