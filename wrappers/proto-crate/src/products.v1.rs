@@ -137,7 +137,7 @@ pub struct SubcategoryTranslations {
     #[prost(map = "string, message", tag = "3")]
     pub data: ::std::collections::HashMap<
         ::prost::alloc::string::String,
-        super::super::shared::v1::StringArray,
+        super::super::shared::v1::StringMap,
     >,
 }
 #[derive(serde::Serialize, serde::Deserialize)]

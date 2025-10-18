@@ -3,7 +3,7 @@
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct StringMap {
     #[prost(map = "string, string", tag = "1")]
-    pub data: ::std::collections::HashMap<
+    pub values: ::std::collections::HashMap<
         ::prost::alloc::string::String,
         ::prost::alloc::string::String,
     >,

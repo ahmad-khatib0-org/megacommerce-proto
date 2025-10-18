@@ -6,7 +6,7 @@
 
 /* eslint-disable */
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
-import { StringArray } from "../../shared/v1/types.js";
+import { StringMap } from "../../shared/v1/types.js";
 import { ValidationField } from "../../shared/v1/validation.js";
 
 export const protobufPackage = "products.v1";
@@ -34,7 +34,7 @@ export interface CategoryTranslations_SubcategoriesEntry {
 export interface SubcategoryTranslations {
   name: string;
   attributes: { [key: string]: string };
-  data: { [key: string]: StringArray };
+  data: { [key: string]: StringMap };
 }
 
 export interface SubcategoryTranslations_AttributesEntry {
@@ -44,7 +44,7 @@ export interface SubcategoryTranslations_AttributesEntry {
 
 export interface SubcategoryTranslations_DataEntry {
   key: string;
-  value?: StringArray | undefined;
+  value?: StringMap | undefined;
 }
 
 export interface Subcategory {
@@ -499,8 +499,8 @@ export const SubcategoryTranslations: MessageFns<SubcategoryTranslations> = {
         }, {})
         : {},
       data: isObject(object.data)
-        ? Object.entries(object.data).reduce<{ [key: string]: StringArray }>((acc, [key, value]) => {
-          acc[key] = StringArray.fromJSON(value);
+        ? Object.entries(object.data).reduce<{ [key: string]: StringMap }>((acc, [key, value]) => {
+          acc[key] = StringMap.fromJSON(value);
           return acc;
         }, {})
         : {},
@@ -526,7 +526,7 @@ export const SubcategoryTranslations: MessageFns<SubcategoryTranslations> = {
       if (entries.length > 0) {
         obj.data = {};
         entries.forEach(([k, v]) => {
-          obj.data[k] = StringArray.toJSON(v);
+          obj.data[k] = StringMap.toJSON(v);
         });
       }
     }
@@ -548,9 +548,9 @@ export const SubcategoryTranslations: MessageFns<SubcategoryTranslations> = {
       },
       {},
     );
-    message.data = Object.entries(object.data ?? {}).reduce<{ [key: string]: StringArray }>((acc, [key, value]) => {
+    message.data = Object.entries(object.data ?? {}).reduce<{ [key: string]: StringMap }>((acc, [key, value]) => {
       if (value !== undefined) {
-        acc[key] = StringArray.fromPartial(value);
+        acc[key] = StringMap.fromPartial(value);
       }
       return acc;
     }, {});
@@ -648,7 +648,7 @@ export const SubcategoryTranslations_DataEntry: MessageFns<SubcategoryTranslatio
       writer.uint32(10).string(message.key);
     }
     if (message.value !== undefined) {
-      StringArray.encode(message.value, writer.uint32(18).fork()).join();
+      StringMap.encode(message.value, writer.uint32(18).fork()).join();
     }
     return writer;
   },
@@ -673,7 +673,7 @@ export const SubcategoryTranslations_DataEntry: MessageFns<SubcategoryTranslatio
             break;
           }
 
-          message.value = StringArray.decode(reader, reader.uint32());
+          message.value = StringMap.decode(reader, reader.uint32());
           continue;
         }
       }
@@ -688,7 +688,7 @@ export const SubcategoryTranslations_DataEntry: MessageFns<SubcategoryTranslatio
   fromJSON(object: any): SubcategoryTranslations_DataEntry {
     return {
       key: isSet(object.key) ? globalThis.String(object.key) : "",
-      value: isSet(object.value) ? StringArray.fromJSON(object.value) : undefined,
+      value: isSet(object.value) ? StringMap.fromJSON(object.value) : undefined,
     };
   },
 
@@ -698,7 +698,7 @@ export const SubcategoryTranslations_DataEntry: MessageFns<SubcategoryTranslatio
       obj.key = message.key;
     }
     if (message.value !== undefined) {
-      obj.value = StringArray.toJSON(message.value);
+      obj.value = StringMap.toJSON(message.value);
     }
     return obj;
   },
@@ -714,7 +714,7 @@ export const SubcategoryTranslations_DataEntry: MessageFns<SubcategoryTranslatio
     const message = createBaseSubcategoryTranslations_DataEntry();
     message.key = object.key ?? "";
     message.value = (object.value !== undefined && object.value !== null)
-      ? StringArray.fromPartial(object.value)
+      ? StringMap.fromPartial(object.value)
       : undefined;
     return message;
   },

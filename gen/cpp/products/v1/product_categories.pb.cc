@@ -126,24 +126,6 @@ struct SubcategoryAttributeDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SubcategoryAttributeDefaultTypeInternal _SubcategoryAttribute_default_instance_;
 template <typename>
-PROTOBUF_CONSTEXPR CategoryTranslations_SubcategoriesEntry_DoNotUse::CategoryTranslations_SubcategoriesEntry_DoNotUse(::_pbi::ConstantInitialized)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : CategoryTranslations_SubcategoriesEntry_DoNotUse::MapEntry(CategoryTranslations_SubcategoriesEntry_DoNotUse_class_data_.base()){}
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : CategoryTranslations_SubcategoriesEntry_DoNotUse::MapEntry() {
-}
-#endif  // PROTOBUF_CUSTOM_VTABLE
-struct CategoryTranslations_SubcategoriesEntry_DoNotUseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CategoryTranslations_SubcategoriesEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~CategoryTranslations_SubcategoriesEntry_DoNotUseDefaultTypeInternal() {}
-  union {
-    CategoryTranslations_SubcategoriesEntry_DoNotUse _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CategoryTranslations_SubcategoriesEntry_DoNotUseDefaultTypeInternal _CategoryTranslations_SubcategoriesEntry_DoNotUse_default_instance_;
-template <typename>
 PROTOBUF_CONSTEXPR Subcategory_AttributesEntry_DoNotUse::Subcategory_AttributesEntry_DoNotUse(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : Subcategory_AttributesEntry_DoNotUse::MapEntry(Subcategory_AttributesEntry_DoNotUse_class_data_.base()){}
@@ -161,38 +143,24 @@ struct Subcategory_AttributesEntry_DoNotUseDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Subcategory_AttributesEntry_DoNotUseDefaultTypeInternal _Subcategory_AttributesEntry_DoNotUse_default_instance_;
-
-inline constexpr CategoryTranslations::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : _cached_size_{0},
-        subcategories_{},
-        name_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        language_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        version_{0} {}
-
 template <typename>
-PROTOBUF_CONSTEXPR CategoryTranslations::CategoryTranslations(::_pbi::ConstantInitialized)
+PROTOBUF_CONSTEXPR CategoryTranslations_SubcategoriesEntry_DoNotUse::CategoryTranslations_SubcategoriesEntry_DoNotUse(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(CategoryTranslations_class_data_.base()),
+    : CategoryTranslations_SubcategoriesEntry_DoNotUse::MapEntry(CategoryTranslations_SubcategoriesEntry_DoNotUse_class_data_.base()){}
 #else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(),
-#endif  // PROTOBUF_CUSTOM_VTABLE
-      _impl_(::_pbi::ConstantInitialized()) {
+    : CategoryTranslations_SubcategoriesEntry_DoNotUse::MapEntry() {
 }
-struct CategoryTranslationsDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CategoryTranslationsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~CategoryTranslationsDefaultTypeInternal() {}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+struct CategoryTranslations_SubcategoriesEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CategoryTranslations_SubcategoriesEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CategoryTranslations_SubcategoriesEntry_DoNotUseDefaultTypeInternal() {}
   union {
-    CategoryTranslations _instance;
+    CategoryTranslations_SubcategoriesEntry_DoNotUse _instance;
   };
 };
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CategoryTranslationsDefaultTypeInternal _CategoryTranslations_default_instance_;
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CategoryTranslations_SubcategoriesEntry_DoNotUseDefaultTypeInternal _CategoryTranslations_SubcategoriesEntry_DoNotUse_default_instance_;
 
 inline constexpr Subcategory::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -228,6 +196,38 @@ struct SubcategoryDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SubcategoryDefaultTypeInternal _Subcategory_default_instance_;
+
+inline constexpr CategoryTranslations::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        subcategories_{},
+        name_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        language_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        version_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR CategoryTranslations::CategoryTranslations(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(CategoryTranslations_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct CategoryTranslationsDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CategoryTranslationsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CategoryTranslationsDefaultTypeInternal() {}
+  union {
+    CategoryTranslations _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CategoryTranslationsDefaultTypeInternal _CategoryTranslations_default_instance_;
 
 inline constexpr Category::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -403,32 +403,32 @@ const char descriptor_table_protodef_products_2fv1_2fproduct_5fcategories_2eprot
     "ntryR\rsubcategories\032f\n\022SubcategoriesEntr"
     "y\022\020\n\003key\030\001 \001(\tR\003key\022:\n\005value\030\002 \001(\0132$.pro"
     "ducts.v1.SubcategoryTranslationsR\005value:"
-    "\0028\001\"\327\002\n\027SubcategoryTranslations\022\022\n\004name\030"
+    "\0028\001\"\325\002\n\027SubcategoryTranslations\022\022\n\004name\030"
     "\001 \001(\tR\004name\022T\n\nattributes\030\002 \003(\01324.produc"
     "ts.v1.SubcategoryTranslations.Attributes"
     "EntryR\nattributes\022B\n\004data\030\003 \003(\0132..produc"
     "ts.v1.SubcategoryTranslations.DataEntryR"
     "\004data\032=\n\017AttributesEntry\022\020\n\003key\030\001 \001(\tR\003k"
-    "ey\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032O\n\tDataEntr"
-    "y\022\020\n\003key\030\001 \001(\tR\003key\022,\n\005value\030\002 \001(\0132\026.sha"
-    "red.v1.StringArrayR\005value:\0028\001\"\226\002\n\013Subcat"
-    "egory\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004nam"
-    "e\022\030\n\007version\030\003 \001(\005R\007version\022\035\n\ncreated_a"
-    "t\030\004 \001(\tR\tcreatedAt\022H\n\nattributes\030\005 \003(\0132("
-    ".products.v1.Subcategory.AttributesEntry"
-    "R\nattributes\032`\n\017AttributesEntry\022\020\n\003key\030\001"
-    " \001(\tR\003key\0227\n\005value\030\002 \001(\0132!.products.v1.S"
-    "ubcategoryAttributeR\005value:\0028\001\"\214\002\n\024Subca"
-    "tegoryAttribute\022\032\n\010required\030\001 \001(\010R\010requi"
-    "red\022\022\n\004type\030\002 \001(\tR\004type\022!\n\treference\030\003 \001"
-    "(\tH\000R\treference\210\001\001\022!\n\014string_array\030\004 \003(\t"
-    "R\013stringArray\022$\n\013is_multiple\030\005 \001(\010H\001R\nis"
-    "Multiple\210\001\001\022:\n\nvalidation\030\006 \001(\0132\032.shared"
-    ".v1.ValidationFieldR\nvalidationB\014\n\n_refe"
-    "renceB\016\n\014_is_multipleB\200\001\n\034org.megacommer"
-    "ce.products.v1B\026ProductCategoriesProtoZE"
-    "github.com/ahmad-khatib0-org/megacommerc"
-    "e-proto/gen/go/products/v1;v1\370\001\001b\006proto3"
+    "ey\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032M\n\tDataEntr"
+    "y\022\020\n\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\0132\024.sha"
+    "red.v1.StringMapR\005value:\0028\001\"\226\002\n\013Subcateg"
+    "ory\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022"
+    "\030\n\007version\030\003 \001(\005R\007version\022\035\n\ncreated_at\030"
+    "\004 \001(\tR\tcreatedAt\022H\n\nattributes\030\005 \003(\0132(.p"
+    "roducts.v1.Subcategory.AttributesEntryR\n"
+    "attributes\032`\n\017AttributesEntry\022\020\n\003key\030\001 \001"
+    "(\tR\003key\0227\n\005value\030\002 \001(\0132!.products.v1.Sub"
+    "categoryAttributeR\005value:\0028\001\"\214\002\n\024Subcate"
+    "goryAttribute\022\032\n\010required\030\001 \001(\010R\010require"
+    "d\022\022\n\004type\030\002 \001(\tR\004type\022!\n\treference\030\003 \001(\t"
+    "H\000R\treference\210\001\001\022!\n\014string_array\030\004 \003(\tR\013"
+    "stringArray\022$\n\013is_multiple\030\005 \001(\010H\001R\nisMu"
+    "ltiple\210\001\001\022:\n\nvalidation\030\006 \001(\0132\032.shared.v"
+    "1.ValidationFieldR\nvalidationB\014\n\n_refere"
+    "nceB\016\n\014_is_multipleB\200\001\n\034org.megacommerce"
+    ".products.v1B\026ProductCategoriesProtoZEgi"
+    "thub.com/ahmad-khatib0-org/megacommerce-"
+    "proto/gen/go/products/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_deps[2] = {
@@ -439,7 +439,7 @@ static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_5fcategories_2
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto = {
     false,
     false,
-    1640,
+    1638,
     descriptor_table_protodef_products_2fv1_2fproduct_5fcategories_2eproto,
     "products/v1/product_categories.proto",
     &descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_once,
@@ -1564,7 +1564,7 @@ SubcategoryTranslations_DataEntry_DoNotUse::_table_ = {
     ::_pbi::TcParser::GetTable<::products::v1::SubcategoryTranslations_DataEntry_DoNotUse>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // .shared.v1.StringArray value = 2 [json_name = "value"];
+    // .shared.v1.StringMap value = 2 [json_name = "value"];
     {::_pbi::TcParser::FastMtS1,
      {18, 1, 0, PROTOBUF_FIELD_OFFSET(SubcategoryTranslations_DataEntry_DoNotUse, _impl_.value_)}},
     // string key = 1 [json_name = "key"];
@@ -1576,12 +1576,12 @@ SubcategoryTranslations_DataEntry_DoNotUse::_table_ = {
     // string key = 1 [json_name = "key"];
     {PROTOBUF_FIELD_OFFSET(SubcategoryTranslations_DataEntry_DoNotUse, _impl_.key_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // .shared.v1.StringArray value = 2 [json_name = "value"];
+    // .shared.v1.StringMap value = 2 [json_name = "value"];
     {PROTOBUF_FIELD_OFFSET(SubcategoryTranslations_DataEntry_DoNotUse, _impl_.value_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
-      {::_pbi::TcParser::GetTable<::shared::v1::StringArray>()},
+      {::_pbi::TcParser::GetTable<::shared::v1::StringMap>()},
   }},
   {{
     "\55\3\0\0\0\0\0\0"
@@ -1759,7 +1759,7 @@ SubcategoryTranslations::_table_ = {
     // map<string, string> attributes = 2 [json_name = "attributes"];
     {PROTOBUF_FIELD_OFFSET(SubcategoryTranslations, _impl_.attributes_), -1, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
-    // map<string, .shared.v1.StringArray> data = 3 [json_name = "data"];
+    // map<string, .shared.v1.StringMap> data = 3 [json_name = "data"];
     {PROTOBUF_FIELD_OFFSET(SubcategoryTranslations, _impl_.data_), -1, 1,
     (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
   }},
@@ -1770,7 +1770,7 @@ SubcategoryTranslations::_table_ = {
       {::_pbi::TcParser::GetMapAuxInfo(1, 0, 0,
                                        9, 11,
                                        0)},
-      {::_pbi::TcParser::GetTable<::shared::v1::StringArray>()},
+      {::_pbi::TcParser::GetTable<::shared::v1::StringMap>()},
   }},
   {{
     "\43\4\12\4\0\0\0\0"
@@ -1855,10 +1855,10 @@ PROTOBUF_NOINLINE void SubcategoryTranslations::Clear() {
     }
   }
 
-  // map<string, .shared.v1.StringArray> data = 3 [json_name = "data"];
+  // map<string, .shared.v1.StringMap> data = 3 [json_name = "data"];
   if (!this_._internal_data().empty()) {
-    using MapType = ::google::protobuf::Map<std::string, ::shared::v1::StringArray>;
-    using WireHelper = _pbi::MapEntryFuncs<std::string, ::shared::v1::StringArray,
+    using MapType = ::google::protobuf::Map<std::string, ::shared::v1::StringMap>;
+    using WireHelper = _pbi::MapEntryFuncs<std::string, ::shared::v1::StringMap,
                                    _pbi::WireFormatLite::TYPE_STRING,
                                    _pbi::WireFormatLite::TYPE_MESSAGE>;
     const auto& field = this_._internal_data();
@@ -1917,12 +1917,12 @@ PROTOBUF_NOINLINE void SubcategoryTranslations::Clear() {
                                        _pbi::WireFormatLite::TYPE_STRING>::ByteSizeLong(entry.first, entry.second);
       }
     }
-    // map<string, .shared.v1.StringArray> data = 3 [json_name = "data"];
+    // map<string, .shared.v1.StringMap> data = 3 [json_name = "data"];
     {
       total_size +=
           1 * ::google::protobuf::internal::FromIntSize(this_._internal_data_size());
       for (const auto& entry : this_._internal_data()) {
-        total_size += _pbi::MapEntryFuncs<std::string, ::shared::v1::StringArray,
+        total_size += _pbi::MapEntryFuncs<std::string, ::shared::v1::StringMap,
                                        _pbi::WireFormatLite::TYPE_STRING,
                                        _pbi::WireFormatLite::TYPE_MESSAGE>::ByteSizeLong(entry.first, entry.second);
       }

@@ -31,37 +31,37 @@ public final class TypesProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; values = 1 [json_name = "values"];</code>
      */
-    int getDataCount();
+    int getValuesCount();
     /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; values = 1 [json_name = "values"];</code>
      */
-    boolean containsData(
+    boolean containsValues(
         java.lang.String key);
     /**
-     * Use {@link #getDataMap()} instead.
+     * Use {@link #getValuesMap()} instead.
      */
     @java.lang.Deprecated
     java.util.Map<java.lang.String, java.lang.String>
-    getData();
+    getValues();
     /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; values = 1 [json_name = "values"];</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
-    getDataMap();
+    getValuesMap();
     /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; values = 1 [json_name = "values"];</code>
      */
     /* nullable */
-java.lang.String getDataOrDefault(
+java.lang.String getValuesOrDefault(
         java.lang.String key,
         /* nullable */
 java.lang.String defaultValue);
     /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; values = 1 [json_name = "values"];</code>
      */
-    java.lang.String getDataOrThrow(
+    java.lang.String getValuesOrThrow(
         java.lang.String key);
   }
   /**
@@ -99,7 +99,7 @@ java.lang.String defaultValue);
         int number) {
       switch (number) {
         case 1:
-          return internalGetData();
+          return internalGetValues();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -113,13 +113,13 @@ java.lang.String defaultValue);
               org.megacommerce.shared.v1.TypesProto.StringMap.class, org.megacommerce.shared.v1.TypesProto.StringMap.Builder.class);
     }
 
-    public static final int DATA_FIELD_NUMBER = 1;
-    private static final class DataDefaultEntryHolder {
+    public static final int VALUES_FIELD_NUMBER = 1;
+    private static final class ValuesDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.String> defaultEntry =
               com.google.protobuf.MapEntry
               .<java.lang.String, java.lang.String>newDefaultInstance(
-                  org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_StringMap_DataEntry_descriptor, 
+                  org.megacommerce.shared.v1.TypesProto.internal_static_shared_v1_StringMap_ValuesEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.STRING,
@@ -127,65 +127,65 @@ java.lang.String defaultValue);
     }
     @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> data_;
+        java.lang.String, java.lang.String> values_;
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetData() {
-      if (data_ == null) {
+    internalGetValues() {
+      if (values_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            DataDefaultEntryHolder.defaultEntry);
+            ValuesDefaultEntryHolder.defaultEntry);
       }
-      return data_;
+      return values_;
     }
-    public int getDataCount() {
-      return internalGetData().getMap().size();
+    public int getValuesCount() {
+      return internalGetValues().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; values = 1 [json_name = "values"];</code>
      */
     @java.lang.Override
-    public boolean containsData(
+    public boolean containsValues(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
-      return internalGetData().getMap().containsKey(key);
+      return internalGetValues().getMap().containsKey(key);
     }
     /**
-     * Use {@link #getDataMap()} instead.
+     * Use {@link #getValuesMap()} instead.
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getData() {
-      return getDataMap();
+    public java.util.Map<java.lang.String, java.lang.String> getValues() {
+      return getValuesMap();
     }
     /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; values = 1 [json_name = "values"];</code>
      */
     @java.lang.Override
-    public java.util.Map<java.lang.String, java.lang.String> getDataMap() {
-      return internalGetData().getMap();
+    public java.util.Map<java.lang.String, java.lang.String> getValuesMap() {
+      return internalGetValues().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; values = 1 [json_name = "values"];</code>
      */
     @java.lang.Override
     public /* nullable */
-java.lang.String getDataOrDefault(
+java.lang.String getValuesOrDefault(
         java.lang.String key,
         /* nullable */
 java.lang.String defaultValue) {
       if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetData().getMap();
+          internalGetValues().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+     * <code>map&lt;string, string&gt; values = 1 [json_name = "values"];</code>
      */
     @java.lang.Override
-    public java.lang.String getDataOrThrow(
+    public java.lang.String getValuesOrThrow(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
       java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetData().getMap();
+          internalGetValues().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -209,8 +209,8 @@ java.lang.String defaultValue) {
       com.google.protobuf.GeneratedMessage
         .serializeStringMapTo(
           output,
-          internalGetData(),
-          DataDefaultEntryHolder.defaultEntry,
+          internalGetValues(),
+          ValuesDefaultEntryHolder.defaultEntry,
           1);
       getUnknownFields().writeTo(output);
     }
@@ -222,14 +222,14 @@ java.lang.String defaultValue) {
 
       size = 0;
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-           : internalGetData().getMap().entrySet()) {
+           : internalGetValues().getMap().entrySet()) {
         com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-        data__ = DataDefaultEntryHolder.defaultEntry.newBuilderForType()
+        values__ = ValuesDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(1, data__);
+            .computeMessageSize(1, values__);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -246,8 +246,8 @@ java.lang.String defaultValue) {
       }
       org.megacommerce.shared.v1.TypesProto.StringMap other = (org.megacommerce.shared.v1.TypesProto.StringMap) obj;
 
-      if (!internalGetData().equals(
-          other.internalGetData())) return false;
+      if (!internalGetValues().equals(
+          other.internalGetValues())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -259,9 +259,9 @@ java.lang.String defaultValue) {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (!internalGetData().getMap().isEmpty()) {
-        hash = (37 * hash) + DATA_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetData().hashCode();
+      if (!internalGetValues().getMap().isEmpty()) {
+        hash = (37 * hash) + VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetValues().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -377,7 +377,7 @@ java.lang.String defaultValue) {
           int number) {
         switch (number) {
           case 1:
-            return internalGetData();
+            return internalGetValues();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -388,7 +388,7 @@ java.lang.String defaultValue) {
           int number) {
         switch (number) {
           case 1:
-            return internalGetMutableData();
+            return internalGetMutableValues();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -416,7 +416,7 @@ java.lang.String defaultValue) {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        internalGetMutableData().clear();
+        internalGetMutableValues().clear();
         return this;
       }
 
@@ -451,8 +451,8 @@ java.lang.String defaultValue) {
       private void buildPartial0(org.megacommerce.shared.v1.TypesProto.StringMap result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.data_ = internalGetData();
-          result.data_.makeImmutable();
+          result.values_ = internalGetValues();
+          result.values_.makeImmutable();
         }
       }
 
@@ -468,8 +468,8 @@ java.lang.String defaultValue) {
 
       public Builder mergeFrom(org.megacommerce.shared.v1.TypesProto.StringMap other) {
         if (other == org.megacommerce.shared.v1.TypesProto.StringMap.getDefaultInstance()) return this;
-        internalGetMutableData().mergeFrom(
-            other.internalGetData());
+        internalGetMutableValues().mergeFrom(
+            other.internalGetValues());
         bitField0_ |= 0x00000001;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -499,10 +499,10 @@ java.lang.String defaultValue) {
                 break;
               case 10: {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-                data__ = input.readMessage(
-                    DataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableData().getMutableMap().put(
-                    data__.getKey(), data__.getValue());
+                values__ = input.readMessage(
+                    ValuesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableValues().getMutableMap().put(
+                    values__.getKey(), values__.getValue());
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
@@ -524,96 +524,96 @@ java.lang.String defaultValue) {
       private int bitField0_;
 
       private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> data_;
+          java.lang.String, java.lang.String> values_;
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-          internalGetData() {
-        if (data_ == null) {
+          internalGetValues() {
+        if (values_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
-              DataDefaultEntryHolder.defaultEntry);
+              ValuesDefaultEntryHolder.defaultEntry);
         }
-        return data_;
+        return values_;
       }
       private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-          internalGetMutableData() {
-        if (data_ == null) {
-          data_ = com.google.protobuf.MapField.newMapField(
-              DataDefaultEntryHolder.defaultEntry);
+          internalGetMutableValues() {
+        if (values_ == null) {
+          values_ = com.google.protobuf.MapField.newMapField(
+              ValuesDefaultEntryHolder.defaultEntry);
         }
-        if (!data_.isMutable()) {
-          data_ = data_.copy();
+        if (!values_.isMutable()) {
+          values_ = values_.copy();
         }
         bitField0_ |= 0x00000001;
         onChanged();
-        return data_;
+        return values_;
       }
-      public int getDataCount() {
-        return internalGetData().getMap().size();
+      public int getValuesCount() {
+        return internalGetValues().getMap().size();
       }
       /**
-       * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+       * <code>map&lt;string, string&gt; values = 1 [json_name = "values"];</code>
        */
       @java.lang.Override
-      public boolean containsData(
+      public boolean containsValues(
           java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
-        return internalGetData().getMap().containsKey(key);
+        return internalGetValues().getMap().containsKey(key);
       }
       /**
-       * Use {@link #getDataMap()} instead.
+       * Use {@link #getValuesMap()} instead.
        */
       @java.lang.Override
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getData() {
-        return getDataMap();
+      public java.util.Map<java.lang.String, java.lang.String> getValues() {
+        return getValuesMap();
       }
       /**
-       * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+       * <code>map&lt;string, string&gt; values = 1 [json_name = "values"];</code>
        */
       @java.lang.Override
-      public java.util.Map<java.lang.String, java.lang.String> getDataMap() {
-        return internalGetData().getMap();
+      public java.util.Map<java.lang.String, java.lang.String> getValuesMap() {
+        return internalGetValues().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+       * <code>map&lt;string, string&gt; values = 1 [json_name = "values"];</code>
        */
       @java.lang.Override
       public /* nullable */
-java.lang.String getDataOrDefault(
+java.lang.String getValuesOrDefault(
           java.lang.String key,
           /* nullable */
 java.lang.String defaultValue) {
         if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetData().getMap();
+            internalGetValues().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+       * <code>map&lt;string, string&gt; values = 1 [json_name = "values"];</code>
        */
       @java.lang.Override
-      public java.lang.String getDataOrThrow(
+      public java.lang.String getValuesOrThrow(
           java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
         java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetData().getMap();
+            internalGetValues().getMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
         return map.get(key);
       }
-      public Builder clearData() {
+      public Builder clearValues() {
         bitField0_ = (bitField0_ & ~0x00000001);
-        internalGetMutableData().getMutableMap()
+        internalGetMutableValues().getMutableMap()
             .clear();
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+       * <code>map&lt;string, string&gt; values = 1 [json_name = "values"];</code>
        */
-      public Builder removeData(
+      public Builder removeValues(
           java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
-        internalGetMutableData().getMutableMap()
+        internalGetMutableValues().getMutableMap()
             .remove(key);
         return this;
       }
@@ -622,29 +622,29 @@ java.lang.String defaultValue) {
        */
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String>
-          getMutableData() {
+          getMutableValues() {
         bitField0_ |= 0x00000001;
-        return internalGetMutableData().getMutableMap();
+        return internalGetMutableValues().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+       * <code>map&lt;string, string&gt; values = 1 [json_name = "values"];</code>
        */
-      public Builder putData(
+      public Builder putValues(
           java.lang.String key,
           java.lang.String value) {
         if (key == null) { throw new NullPointerException("map key"); }
         if (value == null) { throw new NullPointerException("map value"); }
-        internalGetMutableData().getMutableMap()
+        internalGetMutableValues().getMutableMap()
             .put(key, value);
         bitField0_ |= 0x00000001;
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; data = 1 [json_name = "data"];</code>
+       * <code>map&lt;string, string&gt; values = 1 [json_name = "values"];</code>
        */
-      public Builder putAllData(
+      public Builder putAllValues(
           java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableData().getMutableMap()
+        internalGetMutableValues().getMutableMap()
             .putAll(values);
         bitField0_ |= 0x00000001;
         return this;
@@ -5142,10 +5142,10 @@ java.lang.String defaultValue) {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_shared_v1_StringMap_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_shared_v1_StringMap_DataEntry_descriptor;
+    internal_static_shared_v1_StringMap_ValuesEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_shared_v1_StringMap_DataEntry_fieldAccessorTable;
+      internal_static_shared_v1_StringMap_ValuesEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_shared_v1_NestedStringMap_descriptor;
   private static final 
@@ -5200,28 +5200,28 @@ java.lang.String defaultValue) {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025shared/v1/types.proto\022\tshared.v1\"x\n\tSt" +
-      "ringMap\0222\n\004data\030\001 \003(\0132\036.shared.v1.String" +
-      "Map.DataEntryR\004data\0327\n\tDataEntry\022\020\n\003key\030" +
-      "\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\232\001\n" +
-      "\017NestedStringMap\0228\n\004data\030\001 \003(\0132$.shared." +
-      "v1.NestedStringMap.DataEntryR\004data\032M\n\tDa" +
-      "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\013" +
-      "2\024.shared.v1.StringMapR\005value:\0028\001\"%\n\013Str" +
-      "ingArray\022\026\n\006values\030\001 \003(\tR\006values\"C\n\016Orde" +
-      "rDirection\022\022\n\003asc\030\001 \001(\010H\000R\003asc\022\024\n\004desc\030\002" +
-      " \001(\010H\000R\004descB\007\n\005order\"\307\001\n\023SuccessRespons" +
-      "eData\022\035\n\007message\030\001 \001(\tH\000R\007message\210\001\001\022H\n\010" +
-      "metadata\030\002 \003(\0132,.shared.v1.SuccessRespon" +
-      "seData.MetadataEntryR\010metadata\032;\n\rMetada" +
-      "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t" +
-      "R\005value:\0028\001B\n\n\010_message\",\n\006IDName\022\016\n\002id\030" +
-      "\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\"6\n\003Any\022\031\n\010" +
-      "type_url\030\001 \001(\tR\007typeUrl\022\024\n\005value\030\002 \001(\014R\005" +
-      "value\"\007\n\005EmptyBp\n\032org.megacommerce.share" +
-      "d.v1B\nTypesProtoZCgithub.com/ahmad-khati" +
-      "b0-org/megacommerce-proto/gen/go/shared/" +
-      "v1;v1\370\001\001b\006proto3"
+      "\n\025shared/v1/types.proto\022\tshared.v1\"\200\001\n\tS" +
+      "tringMap\0228\n\006values\030\001 \003(\0132 .shared.v1.Str" +
+      "ingMap.ValuesEntryR\006values\0329\n\013ValuesEntr" +
+      "y\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005valu" +
+      "e:\0028\001\"\232\001\n\017NestedStringMap\0228\n\004data\030\001 \003(\0132" +
+      "$.shared.v1.NestedStringMap.DataEntryR\004d" +
+      "ata\032M\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022*\n\005va" +
+      "lue\030\002 \001(\0132\024.shared.v1.StringMapR\005value:\002" +
+      "8\001\"%\n\013StringArray\022\026\n\006values\030\001 \003(\tR\006value" +
+      "s\"C\n\016OrderDirection\022\022\n\003asc\030\001 \001(\010H\000R\003asc\022" +
+      "\024\n\004desc\030\002 \001(\010H\000R\004descB\007\n\005order\"\307\001\n\023Succe" +
+      "ssResponseData\022\035\n\007message\030\001 \001(\tH\000R\007messa" +
+      "ge\210\001\001\022H\n\010metadata\030\002 \003(\0132,.shared.v1.Succ" +
+      "essResponseData.MetadataEntryR\010metadata\032" +
+      ";\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005va" +
+      "lue\030\002 \001(\tR\005value:\0028\001B\n\n\010_message\",\n\006IDNa" +
+      "me\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\"6" +
+      "\n\003Any\022\031\n\010type_url\030\001 \001(\tR\007typeUrl\022\024\n\005valu" +
+      "e\030\002 \001(\014R\005value\"\007\n\005EmptyBp\n\032org.megacomme" +
+      "rce.shared.v1B\nTypesProtoZCgithub.com/ah" +
+      "mad-khatib0-org/megacommerce-proto/gen/g" +
+      "o/shared/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -5232,12 +5232,12 @@ java.lang.String defaultValue) {
     internal_static_shared_v1_StringMap_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_StringMap_descriptor,
-        new java.lang.String[] { "Data", });
-    internal_static_shared_v1_StringMap_DataEntry_descriptor =
+        new java.lang.String[] { "Values", });
+    internal_static_shared_v1_StringMap_ValuesEntry_descriptor =
       internal_static_shared_v1_StringMap_descriptor.getNestedTypes().get(0);
-    internal_static_shared_v1_StringMap_DataEntry_fieldAccessorTable = new
+    internal_static_shared_v1_StringMap_ValuesEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_shared_v1_StringMap_DataEntry_descriptor,
+        internal_static_shared_v1_StringMap_ValuesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_shared_v1_NestedStringMap_descriptor =
       getDescriptor().getMessageTypes().get(1);

@@ -23,7 +23,7 @@ const (
 
 type StringMap struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Data          map[string]string      `protobuf:"bytes,1,rep,name=data,proto3" json:"data,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	Values        map[string]string      `protobuf:"bytes,1,rep,name=values,proto3" json:"values,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -58,9 +58,9 @@ func (*StringMap) Descriptor() ([]byte, []int) {
 	return file_shared_v1_types_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *StringMap) GetData() map[string]string {
+func (x *StringMap) GetValues() map[string]string {
 	if x != nil {
-		return x.Data
+		return x.Values
 	}
 	return nil
 }
@@ -432,10 +432,10 @@ var File_shared_v1_types_proto protoreflect.FileDescriptor
 
 const file_shared_v1_types_proto_rawDesc = "" +
 	"\n" +
-	"\x15shared/v1/types.proto\x12\tshared.v1\"x\n" +
-	"\tStringMap\x122\n" +
-	"\x04data\x18\x01 \x03(\v2\x1e.shared.v1.StringMap.DataEntryR\x04data\x1a7\n" +
-	"\tDataEntry\x12\x10\n" +
+	"\x15shared/v1/types.proto\x12\tshared.v1\"\x80\x01\n" +
+	"\tStringMap\x128\n" +
+	"\x06values\x18\x01 \x03(\v2 .shared.v1.StringMap.ValuesEntryR\x06values\x1a9\n" +
+	"\vValuesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
 	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\"\x9a\x01\n" +
 	"\x0fNestedStringMap\x128\n" +
@@ -489,12 +489,12 @@ var file_shared_v1_types_proto_goTypes = []any{
 	(*IDName)(nil),              // 5: shared.v1.IDName
 	(*Any)(nil),                 // 6: shared.v1.Any
 	(*Empty)(nil),               // 7: shared.v1.Empty
-	nil,                         // 8: shared.v1.StringMap.DataEntry
+	nil,                         // 8: shared.v1.StringMap.ValuesEntry
 	nil,                         // 9: shared.v1.NestedStringMap.DataEntry
 	nil,                         // 10: shared.v1.SuccessResponseData.MetadataEntry
 }
 var file_shared_v1_types_proto_depIdxs = []int32{
-	8,  // 0: shared.v1.StringMap.data:type_name -> shared.v1.StringMap.DataEntry
+	8,  // 0: shared.v1.StringMap.values:type_name -> shared.v1.StringMap.ValuesEntry
 	9,  // 1: shared.v1.NestedStringMap.data:type_name -> shared.v1.NestedStringMap.DataEntry
 	10, // 2: shared.v1.SuccessResponseData.metadata:type_name -> shared.v1.SuccessResponseData.MetadataEntry
 	0,  // 3: shared.v1.NestedStringMap.DataEntry.value:type_name -> shared.v1.StringMap

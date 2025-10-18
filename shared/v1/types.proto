@@ -8,7 +8,7 @@ option java_outer_classname = "TypesProto";
 option java_package = "org.megacommerce.shared.v1";
 
 message StringMap {
-  map<string, string> data = 1;
+  map<string, string> values = 1;
 }
 
 message NestedStringMap {

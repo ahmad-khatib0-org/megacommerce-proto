@@ -2705,11 +2705,11 @@ java.lang.String defaultValue);
         java.lang.String key);
 
     /**
-     * <code>map&lt;string, .shared.v1.StringArray&gt; data = 3 [json_name = "data"];</code>
+     * <code>map&lt;string, .shared.v1.StringMap&gt; data = 3 [json_name = "data"];</code>
      */
     int getDataCount();
     /**
-     * <code>map&lt;string, .shared.v1.StringArray&gt; data = 3 [json_name = "data"];</code>
+     * <code>map&lt;string, .shared.v1.StringMap&gt; data = 3 [json_name = "data"];</code>
      */
     boolean containsData(
         java.lang.String key);
@@ -2717,25 +2717,25 @@ java.lang.String defaultValue);
      * Use {@link #getDataMap()} instead.
      */
     @java.lang.Deprecated
-    java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArray>
+    java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap>
     getData();
     /**
-     * <code>map&lt;string, .shared.v1.StringArray&gt; data = 3 [json_name = "data"];</code>
+     * <code>map&lt;string, .shared.v1.StringMap&gt; data = 3 [json_name = "data"];</code>
      */
-    java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArray>
+    java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap>
     getDataMap();
     /**
-     * <code>map&lt;string, .shared.v1.StringArray&gt; data = 3 [json_name = "data"];</code>
+     * <code>map&lt;string, .shared.v1.StringMap&gt; data = 3 [json_name = "data"];</code>
      */
     /* nullable */
-org.megacommerce.shared.v1.TypesProto.StringArray getDataOrDefault(
+org.megacommerce.shared.v1.TypesProto.StringMap getDataOrDefault(
         java.lang.String key,
         /* nullable */
-org.megacommerce.shared.v1.TypesProto.StringArray defaultValue);
+org.megacommerce.shared.v1.TypesProto.StringMap defaultValue);
     /**
-     * <code>map&lt;string, .shared.v1.StringArray&gt; data = 3 [json_name = "data"];</code>
+     * <code>map&lt;string, .shared.v1.StringMap&gt; data = 3 [json_name = "data"];</code>
      */
-    org.megacommerce.shared.v1.TypesProto.StringArray getDataOrThrow(
+    org.megacommerce.shared.v1.TypesProto.StringMap getDataOrThrow(
         java.lang.String key);
   }
   /**
@@ -2911,19 +2911,19 @@ java.lang.String defaultValue) {
     public static final int DATA_FIELD_NUMBER = 3;
     private static final class DataDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArray> defaultEntry =
+          java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> defaultEntry =
               com.google.protobuf.MapEntry
-              .<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArray>newDefaultInstance(
+              .<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap>newDefaultInstance(
                   org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_SubcategoryTranslations_DataEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  org.megacommerce.shared.v1.TypesProto.StringArray.getDefaultInstance());
+                  org.megacommerce.shared.v1.TypesProto.StringMap.getDefaultInstance());
     }
     @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
-        java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArray> data_;
-    private com.google.protobuf.MapField<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArray>
+        java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> data_;
+    private com.google.protobuf.MapField<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap>
     internalGetData() {
       if (data_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -2935,7 +2935,7 @@ java.lang.String defaultValue) {
       return internalGetData().getMap().size();
     }
     /**
-     * <code>map&lt;string, .shared.v1.StringArray&gt; data = 3 [json_name = "data"];</code>
+     * <code>map&lt;string, .shared.v1.StringMap&gt; data = 3 [json_name = "data"];</code>
      */
     @java.lang.Override
     public boolean containsData(
@@ -2948,38 +2948,38 @@ java.lang.String defaultValue) {
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArray> getData() {
+    public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> getData() {
       return getDataMap();
     }
     /**
-     * <code>map&lt;string, .shared.v1.StringArray&gt; data = 3 [json_name = "data"];</code>
+     * <code>map&lt;string, .shared.v1.StringMap&gt; data = 3 [json_name = "data"];</code>
      */
     @java.lang.Override
-    public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArray> getDataMap() {
+    public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> getDataMap() {
       return internalGetData().getMap();
     }
     /**
-     * <code>map&lt;string, .shared.v1.StringArray&gt; data = 3 [json_name = "data"];</code>
+     * <code>map&lt;string, .shared.v1.StringMap&gt; data = 3 [json_name = "data"];</code>
      */
     @java.lang.Override
     public /* nullable */
-org.megacommerce.shared.v1.TypesProto.StringArray getDataOrDefault(
+org.megacommerce.shared.v1.TypesProto.StringMap getDataOrDefault(
         java.lang.String key,
         /* nullable */
-org.megacommerce.shared.v1.TypesProto.StringArray defaultValue) {
+org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
       if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArray> map =
+      java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> map =
           internalGetData().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, .shared.v1.StringArray&gt; data = 3 [json_name = "data"];</code>
+     * <code>map&lt;string, .shared.v1.StringMap&gt; data = 3 [json_name = "data"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.shared.v1.TypesProto.StringArray getDataOrThrow(
+    public org.megacommerce.shared.v1.TypesProto.StringMap getDataOrThrow(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArray> map =
+      java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> map =
           internalGetData().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
@@ -3038,9 +3038,9 @@ org.megacommerce.shared.v1.TypesProto.StringArray defaultValue) {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(2, attributes__);
       }
-      for (java.util.Map.Entry<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArray> entry
+      for (java.util.Map.Entry<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> entry
            : internalGetData().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArray>
+        com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap>
         data__ = DataDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -3359,7 +3359,7 @@ org.megacommerce.shared.v1.TypesProto.StringArray defaultValue) {
                 break;
               } // case 18
               case 26: {
-                com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArray>
+                com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap>
                 data__ = input.readMessage(
                     DataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableData().ensureBuilderMap().put(
@@ -3583,30 +3583,30 @@ java.lang.String defaultValue) {
         return this;
       }
 
-      private static final class DataConverter implements com.google.protobuf.MapFieldBuilder.Converter<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArrayOrBuilder, org.megacommerce.shared.v1.TypesProto.StringArray> {
+      private static final class DataConverter implements com.google.protobuf.MapFieldBuilder.Converter<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder, org.megacommerce.shared.v1.TypesProto.StringMap> {
         @java.lang.Override
-        public org.megacommerce.shared.v1.TypesProto.StringArray build(org.megacommerce.shared.v1.TypesProto.StringArrayOrBuilder val) {
-          if (val instanceof org.megacommerce.shared.v1.TypesProto.StringArray) { return (org.megacommerce.shared.v1.TypesProto.StringArray) val; }
-          return ((org.megacommerce.shared.v1.TypesProto.StringArray.Builder) val).build();
+        public org.megacommerce.shared.v1.TypesProto.StringMap build(org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder val) {
+          if (val instanceof org.megacommerce.shared.v1.TypesProto.StringMap) { return (org.megacommerce.shared.v1.TypesProto.StringMap) val; }
+          return ((org.megacommerce.shared.v1.TypesProto.StringMap.Builder) val).build();
         }
 
         @java.lang.Override
-        public com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArray> defaultEntry() {
+        public com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> defaultEntry() {
           return DataDefaultEntryHolder.defaultEntry;
         }
       };
       private static final DataConverter dataConverter = new DataConverter();
 
       private com.google.protobuf.MapFieldBuilder<
-          java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArrayOrBuilder, org.megacommerce.shared.v1.TypesProto.StringArray, org.megacommerce.shared.v1.TypesProto.StringArray.Builder> data_;
-      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArrayOrBuilder, org.megacommerce.shared.v1.TypesProto.StringArray, org.megacommerce.shared.v1.TypesProto.StringArray.Builder>
+          java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder, org.megacommerce.shared.v1.TypesProto.StringMap, org.megacommerce.shared.v1.TypesProto.StringMap.Builder> data_;
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder, org.megacommerce.shared.v1.TypesProto.StringMap, org.megacommerce.shared.v1.TypesProto.StringMap.Builder>
           internalGetData() {
         if (data_ == null) {
           return new com.google.protobuf.MapFieldBuilder<>(dataConverter);
         }
         return data_;
       }
-      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArrayOrBuilder, org.megacommerce.shared.v1.TypesProto.StringArray, org.megacommerce.shared.v1.TypesProto.StringArray.Builder>
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder, org.megacommerce.shared.v1.TypesProto.StringMap, org.megacommerce.shared.v1.TypesProto.StringMap.Builder>
           internalGetMutableData() {
         if (data_ == null) {
           data_ = new com.google.protobuf.MapFieldBuilder<>(dataConverter);
@@ -3619,7 +3619,7 @@ java.lang.String defaultValue) {
         return internalGetData().ensureBuilderMap().size();
       }
       /**
-       * <code>map&lt;string, .shared.v1.StringArray&gt; data = 3 [json_name = "data"];</code>
+       * <code>map&lt;string, .shared.v1.StringMap&gt; data = 3 [json_name = "data"];</code>
        */
       @java.lang.Override
       public boolean containsData(
@@ -3632,37 +3632,37 @@ java.lang.String defaultValue) {
        */
       @java.lang.Override
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArray> getData() {
+      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> getData() {
         return getDataMap();
       }
       /**
-       * <code>map&lt;string, .shared.v1.StringArray&gt; data = 3 [json_name = "data"];</code>
+       * <code>map&lt;string, .shared.v1.StringMap&gt; data = 3 [json_name = "data"];</code>
        */
       @java.lang.Override
-      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArray> getDataMap() {
+      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> getDataMap() {
         return internalGetData().getImmutableMap();
       }
       /**
-       * <code>map&lt;string, .shared.v1.StringArray&gt; data = 3 [json_name = "data"];</code>
+       * <code>map&lt;string, .shared.v1.StringMap&gt; data = 3 [json_name = "data"];</code>
        */
       @java.lang.Override
       public /* nullable */
-org.megacommerce.shared.v1.TypesProto.StringArray getDataOrDefault(
+org.megacommerce.shared.v1.TypesProto.StringMap getDataOrDefault(
           java.lang.String key,
           /* nullable */
-org.megacommerce.shared.v1.TypesProto.StringArray defaultValue) {
+org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
         if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArrayOrBuilder> map = internalGetMutableData().ensureBuilderMap();
+        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder> map = internalGetMutableData().ensureBuilderMap();
         return map.containsKey(key) ? dataConverter.build(map.get(key)) : defaultValue;
       }
       /**
-       * <code>map&lt;string, .shared.v1.StringArray&gt; data = 3 [json_name = "data"];</code>
+       * <code>map&lt;string, .shared.v1.StringMap&gt; data = 3 [json_name = "data"];</code>
        */
       @java.lang.Override
-      public org.megacommerce.shared.v1.TypesProto.StringArray getDataOrThrow(
+      public org.megacommerce.shared.v1.TypesProto.StringMap getDataOrThrow(
           java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArrayOrBuilder> map = internalGetMutableData().ensureBuilderMap();
+        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder> map = internalGetMutableData().ensureBuilderMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
@@ -3674,7 +3674,7 @@ org.megacommerce.shared.v1.TypesProto.StringArray defaultValue) {
         return this;
       }
       /**
-       * <code>map&lt;string, .shared.v1.StringArray&gt; data = 3 [json_name = "data"];</code>
+       * <code>map&lt;string, .shared.v1.StringMap&gt; data = 3 [json_name = "data"];</code>
        */
       public Builder removeData(
           java.lang.String key) {
@@ -3687,17 +3687,17 @@ org.megacommerce.shared.v1.TypesProto.StringArray defaultValue) {
        * Use alternate mutation accessors instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArray>
+      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap>
           getMutableData() {
         bitField0_ |= 0x00000004;
         return internalGetMutableData().ensureMessageMap();
       }
       /**
-       * <code>map&lt;string, .shared.v1.StringArray&gt; data = 3 [json_name = "data"];</code>
+       * <code>map&lt;string, .shared.v1.StringMap&gt; data = 3 [json_name = "data"];</code>
        */
       public Builder putData(
           java.lang.String key,
-          org.megacommerce.shared.v1.TypesProto.StringArray value) {
+          org.megacommerce.shared.v1.TypesProto.StringMap value) {
         if (key == null) { throw new NullPointerException("map key"); }
         if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableData().ensureBuilderMap()
@@ -3706,11 +3706,11 @@ org.megacommerce.shared.v1.TypesProto.StringArray defaultValue) {
         return this;
       }
       /**
-       * <code>map&lt;string, .shared.v1.StringArray&gt; data = 3 [json_name = "data"];</code>
+       * <code>map&lt;string, .shared.v1.StringMap&gt; data = 3 [json_name = "data"];</code>
        */
       public Builder putAllData(
-          java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArray> values) {
-        for (java.util.Map.Entry<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArray> e : values.entrySet()) {
+          java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> values) {
+        for (java.util.Map.Entry<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMap> e : values.entrySet()) {
           if (e.getKey() == null || e.getValue() == null) {
             throw new NullPointerException();
           }
@@ -3721,21 +3721,21 @@ org.megacommerce.shared.v1.TypesProto.StringArray defaultValue) {
         return this;
       }
       /**
-       * <code>map&lt;string, .shared.v1.StringArray&gt; data = 3 [json_name = "data"];</code>
+       * <code>map&lt;string, .shared.v1.StringMap&gt; data = 3 [json_name = "data"];</code>
        */
-      public org.megacommerce.shared.v1.TypesProto.StringArray.Builder putDataBuilderIfAbsent(
+      public org.megacommerce.shared.v1.TypesProto.StringMap.Builder putDataBuilderIfAbsent(
           java.lang.String key) {
-        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringArrayOrBuilder> builderMap = internalGetMutableData().ensureBuilderMap();
-        org.megacommerce.shared.v1.TypesProto.StringArrayOrBuilder entry = builderMap.get(key);
+        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder> builderMap = internalGetMutableData().ensureBuilderMap();
+        org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder entry = builderMap.get(key);
         if (entry == null) {
-          entry = org.megacommerce.shared.v1.TypesProto.StringArray.newBuilder();
+          entry = org.megacommerce.shared.v1.TypesProto.StringMap.newBuilder();
           builderMap.put(key, entry);
         }
-        if (entry instanceof org.megacommerce.shared.v1.TypesProto.StringArray) {
-          entry = ((org.megacommerce.shared.v1.TypesProto.StringArray) entry).toBuilder();
+        if (entry instanceof org.megacommerce.shared.v1.TypesProto.StringMap) {
+          entry = ((org.megacommerce.shared.v1.TypesProto.StringMap) entry).toBuilder();
           builderMap.put(key, entry);
         }
-        return (org.megacommerce.shared.v1.TypesProto.StringArray.Builder) entry;
+        return (org.megacommerce.shared.v1.TypesProto.StringMap.Builder) entry;
       }
 
       // @@protoc_insertion_point(builder_scope:products.v1.SubcategoryTranslations)
@@ -6639,32 +6639,32 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
       "ntryR\rsubcategories\032f\n\022SubcategoriesEntr" +
       "y\022\020\n\003key\030\001 \001(\tR\003key\022:\n\005value\030\002 \001(\0132$.pro" +
       "ducts.v1.SubcategoryTranslationsR\005value:" +
-      "\0028\001\"\327\002\n\027SubcategoryTranslations\022\022\n\004name\030" +
+      "\0028\001\"\325\002\n\027SubcategoryTranslations\022\022\n\004name\030" +
       "\001 \001(\tR\004name\022T\n\nattributes\030\002 \003(\01324.produc" +
       "ts.v1.SubcategoryTranslations.Attributes" +
       "EntryR\nattributes\022B\n\004data\030\003 \003(\0132..produc" +
       "ts.v1.SubcategoryTranslations.DataEntryR" +
       "\004data\032=\n\017AttributesEntry\022\020\n\003key\030\001 \001(\tR\003k" +
-      "ey\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032O\n\tDataEntr" +
-      "y\022\020\n\003key\030\001 \001(\tR\003key\022,\n\005value\030\002 \001(\0132\026.sha" +
-      "red.v1.StringArrayR\005value:\0028\001\"\226\002\n\013Subcat" +
-      "egory\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004nam" +
-      "e\022\030\n\007version\030\003 \001(\005R\007version\022\035\n\ncreated_a" +
-      "t\030\004 \001(\tR\tcreatedAt\022H\n\nattributes\030\005 \003(\0132(" +
-      ".products.v1.Subcategory.AttributesEntry" +
-      "R\nattributes\032`\n\017AttributesEntry\022\020\n\003key\030\001" +
-      " \001(\tR\003key\0227\n\005value\030\002 \001(\0132!.products.v1.S" +
-      "ubcategoryAttributeR\005value:\0028\001\"\214\002\n\024Subca" +
-      "tegoryAttribute\022\032\n\010required\030\001 \001(\010R\010requi" +
-      "red\022\022\n\004type\030\002 \001(\tR\004type\022!\n\treference\030\003 \001" +
-      "(\tH\000R\treference\210\001\001\022!\n\014string_array\030\004 \003(\t" +
-      "R\013stringArray\022$\n\013is_multiple\030\005 \001(\010H\001R\nis" +
-      "Multiple\210\001\001\022:\n\nvalidation\030\006 \001(\0132\032.shared" +
-      ".v1.ValidationFieldR\nvalidationB\014\n\n_refe" +
-      "renceB\016\n\014_is_multipleB\200\001\n\034org.megacommer" +
-      "ce.products.v1B\026ProductCategoriesProtoZE" +
-      "github.com/ahmad-khatib0-org/megacommerc" +
-      "e-proto/gen/go/products/v1;v1\370\001\001b\006proto3"
+      "ey\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032M\n\tDataEntr" +
+      "y\022\020\n\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\0132\024.sha" +
+      "red.v1.StringMapR\005value:\0028\001\"\226\002\n\013Subcateg" +
+      "ory\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022" +
+      "\030\n\007version\030\003 \001(\005R\007version\022\035\n\ncreated_at\030" +
+      "\004 \001(\tR\tcreatedAt\022H\n\nattributes\030\005 \003(\0132(.p" +
+      "roducts.v1.Subcategory.AttributesEntryR\n" +
+      "attributes\032`\n\017AttributesEntry\022\020\n\003key\030\001 \001" +
+      "(\tR\003key\0227\n\005value\030\002 \001(\0132!.products.v1.Sub" +
+      "categoryAttributeR\005value:\0028\001\"\214\002\n\024Subcate" +
+      "goryAttribute\022\032\n\010required\030\001 \001(\010R\010require" +
+      "d\022\022\n\004type\030\002 \001(\tR\004type\022!\n\treference\030\003 \001(\t" +
+      "H\000R\treference\210\001\001\022!\n\014string_array\030\004 \003(\tR\013" +
+      "stringArray\022$\n\013is_multiple\030\005 \001(\010H\001R\nisMu" +
+      "ltiple\210\001\001\022:\n\nvalidation\030\006 \001(\0132\032.shared.v" +
+      "1.ValidationFieldR\nvalidationB\014\n\n_refere" +
+      "nceB\016\n\014_is_multipleB\200\001\n\034org.megacommerce" +
+      ".products.v1B\026ProductCategoriesProtoZEgi" +
+      "thub.com/ahmad-khatib0-org/megacommerce-" +
+      "proto/gen/go/products/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,

@@ -167,10 +167,10 @@ func (x *CategoryTranslations) GetSubcategories() map[string]*SubcategoryTransla
 }
 
 type SubcategoryTranslations struct {
-	state         protoimpl.MessageState     `protogen:"open.v1"`
-	Name          string                     `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Attributes    map[string]string          `protobuf:"bytes,2,rep,name=attributes,proto3" json:"attributes,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	Data          map[string]*v1.StringArray `protobuf:"bytes,3,rep,name=data,proto3" json:"data,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state         protoimpl.MessageState   `protogen:"open.v1"`
+	Name          string                   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	Attributes    map[string]string        `protobuf:"bytes,2,rep,name=attributes,proto3" json:"attributes,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	Data          map[string]*v1.StringMap `protobuf:"bytes,3,rep,name=data,proto3" json:"data,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -219,7 +219,7 @@ func (x *SubcategoryTranslations) GetAttributes() map[string]string {
 	return nil
 }
 
-func (x *SubcategoryTranslations) GetData() map[string]*v1.StringArray {
+func (x *SubcategoryTranslations) GetData() map[string]*v1.StringMap {
 	if x != nil {
 		return x.Data
 	}
@@ -412,7 +412,7 @@ const file_products_v1_product_categories_proto_rawDesc = "" +
 	"\rsubcategories\x18\x04 \x03(\v24.products.v1.CategoryTranslations.SubcategoriesEntryR\rsubcategories\x1af\n" +
 	"\x12SubcategoriesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12:\n" +
-	"\x05value\x18\x02 \x01(\v2$.products.v1.SubcategoryTranslationsR\x05value:\x028\x01\"\xd7\x02\n" +
+	"\x05value\x18\x02 \x01(\v2$.products.v1.SubcategoryTranslationsR\x05value:\x028\x01\"\xd5\x02\n" +
 	"\x17SubcategoryTranslations\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12T\n" +
 	"\n" +
@@ -421,10 +421,10 @@ const file_products_v1_product_categories_proto_rawDesc = "" +
 	"\x04data\x18\x03 \x03(\v2..products.v1.SubcategoryTranslations.DataEntryR\x04data\x1a=\n" +
 	"\x0fAttributesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\x1aO\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\x1aM\n" +
 	"\tDataEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x12,\n" +
-	"\x05value\x18\x02 \x01(\v2\x16.shared.v1.StringArrayR\x05value:\x028\x01\"\x96\x02\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12*\n" +
+	"\x05value\x18\x02 \x01(\v2\x14.shared.v1.StringMapR\x05value:\x028\x01\"\x96\x02\n" +
 	"\vSubcategory\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x18\n" +
@@ -476,7 +476,7 @@ var file_products_v1_product_categories_proto_goTypes = []any{
 	nil,                             // 7: products.v1.SubcategoryTranslations.DataEntry
 	nil,                             // 8: products.v1.Subcategory.AttributesEntry
 	(*v1.ValidationField)(nil),      // 9: shared.v1.ValidationField
-	(*v1.StringArray)(nil),          // 10: shared.v1.StringArray
+	(*v1.StringMap)(nil),            // 10: shared.v1.StringMap
 }
 var file_products_v1_product_categories_proto_depIdxs = []int32{
 	1,  // 0: products.v1.Category.translations:type_name -> products.v1.CategoryTranslations
@@ -487,7 +487,7 @@ var file_products_v1_product_categories_proto_depIdxs = []int32{
 	8,  // 5: products.v1.Subcategory.attributes:type_name -> products.v1.Subcategory.AttributesEntry
 	9,  // 6: products.v1.SubcategoryAttribute.validation:type_name -> shared.v1.ValidationField
 	2,  // 7: products.v1.CategoryTranslations.SubcategoriesEntry.value:type_name -> products.v1.SubcategoryTranslations
-	10, // 8: products.v1.SubcategoryTranslations.DataEntry.value:type_name -> shared.v1.StringArray
+	10, // 8: products.v1.SubcategoryTranslations.DataEntry.value:type_name -> shared.v1.StringMap
 	4,  // 9: products.v1.Subcategory.AttributesEntry.value:type_name -> products.v1.SubcategoryAttribute
 	10, // [10:10] is the sub-list for method output_type
 	10, // [10:10] is the sub-list for method input_type

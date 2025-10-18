@@ -91,10 +91,10 @@ class StringMap;
 struct StringMapDefaultTypeInternal;
 extern StringMapDefaultTypeInternal _StringMap_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull StringMap_class_data_;
-class StringMap_DataEntry_DoNotUse;
-struct StringMap_DataEntry_DoNotUseDefaultTypeInternal;
-extern StringMap_DataEntry_DoNotUseDefaultTypeInternal _StringMap_DataEntry_DoNotUse_default_instance_;
-extern const ::google::protobuf::internal::ClassDataFull StringMap_DataEntry_DoNotUse_class_data_;
+class StringMap_ValuesEntry_DoNotUse;
+struct StringMap_ValuesEntry_DoNotUseDefaultTypeInternal;
+extern StringMap_ValuesEntry_DoNotUseDefaultTypeInternal _StringMap_ValuesEntry_DoNotUse_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull StringMap_ValuesEntry_DoNotUse_class_data_;
 class SuccessResponseData;
 struct SuccessResponseDataDefaultTypeInternal;
 extern SuccessResponseDataDefaultTypeInternal _SuccessResponseData_default_instance_;
@@ -157,7 +157,7 @@ class SuccessResponseData_MetadataEntry_DoNotUse final
 extern const ::google::protobuf::internal::ClassDataFull SuccessResponseData_MetadataEntry_DoNotUse_class_data_;
 // -------------------------------------------------------------------
 
-class StringMap_DataEntry_DoNotUse final
+class StringMap_ValuesEntry_DoNotUse final
     : public ::google::protobuf::internal::MapEntry<std::string, std::string,
                              ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
                              ::google::protobuf::internal::WireFormatLite::TYPE_STRING> {
@@ -166,12 +166,12 @@ class StringMap_DataEntry_DoNotUse final
       ::google::protobuf::internal::MapEntry<std::string, std::string,
                       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
                       ::google::protobuf::internal::WireFormatLite::TYPE_STRING>;
-  StringMap_DataEntry_DoNotUse();
+  StringMap_ValuesEntry_DoNotUse();
   template <typename = void>
-  explicit PROTOBUF_CONSTEXPR StringMap_DataEntry_DoNotUse(::google::protobuf::internal::ConstantInitialized);
-  explicit StringMap_DataEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  explicit PROTOBUF_CONSTEXPR StringMap_ValuesEntry_DoNotUse(::google::protobuf::internal::ConstantInitialized);
+  explicit StringMap_ValuesEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static constexpr const void* PROTOBUF_NONNULL internal_default_instance() {
-    return &_StringMap_DataEntry_DoNotUse_default_instance_;
+    return &_StringMap_ValuesEntry_DoNotUse_default_instance_;
   }
 
 
@@ -183,7 +183,7 @@ class StringMap_DataEntry_DoNotUse final
 
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<1, 2,
-                                   0, 46,
+                                   0, 48,
                                    2>
       _table_;
 
@@ -193,7 +193,7 @@ class StringMap_DataEntry_DoNotUse final
       ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
   static constexpr auto InternalNewImpl_();
 };
-extern const ::google::protobuf::internal::ClassDataFull StringMap_DataEntry_DoNotUse_class_data_;
+extern const ::google::protobuf::internal::ClassDataFull StringMap_ValuesEntry_DoNotUse_class_data_;
 // -------------------------------------------------------------------
 
 class StringArray final : public ::google::protobuf::Message
@@ -1550,21 +1550,21 @@ class StringMap final : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
   enum : int {
-    kDataFieldNumber = 1,
+    kValuesFieldNumber = 1,
   };
-  // map<string, string> data = 1 [json_name = "data"];
-  int data_size() const;
+  // map<string, string> values = 1 [json_name = "values"];
+  int values_size() const;
   private:
-  int _internal_data_size() const;
+  int _internal_values_size() const;
 
   public:
-  void clear_data() ;
-  const ::google::protobuf::Map<std::string, std::string>& data() const;
-  ::google::protobuf::Map<std::string, std::string>* PROTOBUF_NONNULL mutable_data();
+  void clear_values() ;
+  const ::google::protobuf::Map<std::string, std::string>& values() const;
+  ::google::protobuf::Map<std::string, std::string>* PROTOBUF_NONNULL mutable_values();
 
   private:
-  const ::google::protobuf::Map<std::string, std::string>& _internal_data() const;
-  ::google::protobuf::Map<std::string, std::string>* PROTOBUF_NONNULL _internal_mutable_data();
+  const ::google::protobuf::Map<std::string, std::string>& _internal_values() const;
+  ::google::protobuf::Map<std::string, std::string>* PROTOBUF_NONNULL _internal_mutable_values();
 
   public:
   // @@protoc_insertion_point(class_scope:shared.v1.StringMap)
@@ -1572,7 +1572,7 @@ class StringMap final : public ::google::protobuf::Message
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<0, 1,
-                                   1, 32,
+                                   1, 34,
                                    2>
       _table_;
 
@@ -1591,10 +1591,10 @@ class StringMap final : public ::google::protobuf::Message
         ::google::protobuf::internal::InternalVisibility visibility,
         ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
         const StringMap& from_msg);
-    ::google::protobuf::internal::MapField<StringMap_DataEntry_DoNotUse, std::string, std::string,
+    ::google::protobuf::internal::MapField<StringMap_ValuesEntry_DoNotUse, std::string, std::string,
                       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
                       ::google::protobuf::internal::WireFormatLite::TYPE_STRING>
-        data_;
+        values_;
     ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -1859,33 +1859,33 @@ extern const ::google::protobuf::internal::ClassDataFull NestedStringMap_class_d
 
 // StringMap
 
-// map<string, string> data = 1 [json_name = "data"];
-inline int StringMap::_internal_data_size() const {
-  return _internal_data().size();
+// map<string, string> values = 1 [json_name = "values"];
+inline int StringMap::_internal_values_size() const {
+  return _internal_values().size();
 }
-inline int StringMap::data_size() const {
-  return _internal_data_size();
+inline int StringMap::values_size() const {
+  return _internal_values_size();
 }
-inline void StringMap::clear_data() {
+inline void StringMap::clear_values() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.data_.Clear();
+  _impl_.values_.Clear();
 }
-inline const ::google::protobuf::Map<std::string, std::string>& StringMap::_internal_data() const {
+inline const ::google::protobuf::Map<std::string, std::string>& StringMap::_internal_values() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.data_.GetMap();
+  return _impl_.values_.GetMap();
 }
-inline const ::google::protobuf::Map<std::string, std::string>& StringMap::data() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_map:shared.v1.StringMap.data)
-  return _internal_data();
+inline const ::google::protobuf::Map<std::string, std::string>& StringMap::values() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_map:shared.v1.StringMap.values)
+  return _internal_values();
 }
-inline ::google::protobuf::Map<std::string, std::string>* PROTOBUF_NONNULL StringMap::_internal_mutable_data() {
+inline ::google::protobuf::Map<std::string, std::string>* PROTOBUF_NONNULL StringMap::_internal_mutable_values() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.data_.MutableMap();
+  return _impl_.values_.MutableMap();
 }
-inline ::google::protobuf::Map<std::string, std::string>* PROTOBUF_NONNULL StringMap::mutable_data()
+inline ::google::protobuf::Map<std::string, std::string>* PROTOBUF_NONNULL StringMap::mutable_values()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_mutable_map:shared.v1.StringMap.data)
-  return _internal_mutable_data();
+  // @@protoc_insertion_point(field_mutable_map:shared.v1.StringMap.values)
+  return _internal_mutable_values();
 }
 
 // -------------------------------------------------------------------

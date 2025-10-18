@@ -45,23 +45,23 @@ struct SuccessResponseData_MetadataEntry_DoNotUseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SuccessResponseData_MetadataEntry_DoNotUseDefaultTypeInternal _SuccessResponseData_MetadataEntry_DoNotUse_default_instance_;
 template <typename>
-PROTOBUF_CONSTEXPR StringMap_DataEntry_DoNotUse::StringMap_DataEntry_DoNotUse(::_pbi::ConstantInitialized)
+PROTOBUF_CONSTEXPR StringMap_ValuesEntry_DoNotUse::StringMap_ValuesEntry_DoNotUse(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : StringMap_DataEntry_DoNotUse::MapEntry(StringMap_DataEntry_DoNotUse_class_data_.base()){}
+    : StringMap_ValuesEntry_DoNotUse::MapEntry(StringMap_ValuesEntry_DoNotUse_class_data_.base()){}
 #else   // PROTOBUF_CUSTOM_VTABLE
-    : StringMap_DataEntry_DoNotUse::MapEntry() {
+    : StringMap_ValuesEntry_DoNotUse::MapEntry() {
 }
 #endif  // PROTOBUF_CUSTOM_VTABLE
-struct StringMap_DataEntry_DoNotUseDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR StringMap_DataEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~StringMap_DataEntry_DoNotUseDefaultTypeInternal() {}
+struct StringMap_ValuesEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR StringMap_ValuesEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~StringMap_ValuesEntry_DoNotUseDefaultTypeInternal() {}
   union {
-    StringMap_DataEntry_DoNotUse _instance;
+    StringMap_ValuesEntry_DoNotUse _instance;
   };
 };
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StringMap_DataEntry_DoNotUseDefaultTypeInternal _StringMap_DataEntry_DoNotUse_default_instance_;
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 StringMap_ValuesEntry_DoNotUseDefaultTypeInternal _StringMap_ValuesEntry_DoNotUse_default_instance_;
 
 inline constexpr StringArray::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -222,7 +222,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
 
 inline constexpr StringMap::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
-      : data_{},
+      : values_{},
         _cached_size_{0} {}
 
 template <typename>
@@ -297,14 +297,14 @@ const ::uint32_t
     TableStruct_shared_2fv1_2ftypes_2eproto::offsets[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
         protodesc_cold) = {
         0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::shared::v1::StringMap_DataEntry_DoNotUse, _impl_._has_bits_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::StringMap_ValuesEntry_DoNotUse, _impl_._has_bits_),
         5, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::shared::v1::StringMap_DataEntry_DoNotUse, _impl_.key_),
-        PROTOBUF_FIELD_OFFSET(::shared::v1::StringMap_DataEntry_DoNotUse, _impl_.value_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::StringMap_ValuesEntry_DoNotUse, _impl_.key_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::StringMap_ValuesEntry_DoNotUse, _impl_.value_),
         0,
         1,
         0x000, // bitmap
-        PROTOBUF_FIELD_OFFSET(::shared::v1::StringMap, _impl_.data_),
+        PROTOBUF_FIELD_OFFSET(::shared::v1::StringMap, _impl_.values_),
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::shared::v1::NestedStringMap_DataEntry_DoNotUse, _impl_._has_bits_),
         5, // hasbit index offset
@@ -354,7 +354,7 @@ const ::uint32_t
 
 static const ::_pbi::MigrationSchema
     schemas[] ABSL_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-        {0, sizeof(::shared::v1::StringMap_DataEntry_DoNotUse)},
+        {0, sizeof(::shared::v1::StringMap_ValuesEntry_DoNotUse)},
         {7, sizeof(::shared::v1::StringMap)},
         {9, sizeof(::shared::v1::NestedStringMap_DataEntry_DoNotUse)},
         {16, sizeof(::shared::v1::NestedStringMap)},
@@ -367,7 +367,7 @@ static const ::_pbi::MigrationSchema
         {53, sizeof(::shared::v1::Empty)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
-    &::shared::v1::_StringMap_DataEntry_DoNotUse_default_instance_._instance,
+    &::shared::v1::_StringMap_ValuesEntry_DoNotUse_default_instance_._instance,
     &::shared::v1::_StringMap_default_instance_._instance,
     &::shared::v1::_NestedStringMap_DataEntry_DoNotUse_default_instance_._instance,
     &::shared::v1::_NestedStringMap_default_instance_._instance,
@@ -381,34 +381,34 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
 };
 const char descriptor_table_protodef_shared_2fv1_2ftypes_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
-    "\n\025shared/v1/types.proto\022\tshared.v1\"x\n\tSt"
-    "ringMap\0222\n\004data\030\001 \003(\0132\036.shared.v1.String"
-    "Map.DataEntryR\004data\0327\n\tDataEntry\022\020\n\003key\030"
-    "\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\"\232\001\n"
-    "\017NestedStringMap\0228\n\004data\030\001 \003(\0132$.shared."
-    "v1.NestedStringMap.DataEntryR\004data\032M\n\tDa"
-    "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\013"
-    "2\024.shared.v1.StringMapR\005value:\0028\001\"%\n\013Str"
-    "ingArray\022\026\n\006values\030\001 \003(\tR\006values\"C\n\016Orde"
-    "rDirection\022\022\n\003asc\030\001 \001(\010H\000R\003asc\022\024\n\004desc\030\002"
-    " \001(\010H\000R\004descB\007\n\005order\"\307\001\n\023SuccessRespons"
-    "eData\022\035\n\007message\030\001 \001(\tH\000R\007message\210\001\001\022H\n\010"
-    "metadata\030\002 \003(\0132,.shared.v1.SuccessRespon"
-    "seData.MetadataEntryR\010metadata\032;\n\rMetada"
-    "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\t"
-    "R\005value:\0028\001B\n\n\010_message\",\n\006IDName\022\016\n\002id\030"
-    "\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\"6\n\003Any\022\031\n\010"
-    "type_url\030\001 \001(\tR\007typeUrl\022\024\n\005value\030\002 \001(\014R\005"
-    "value\"\007\n\005EmptyBp\n\032org.megacommerce.share"
-    "d.v1B\nTypesProtoZCgithub.com/ahmad-khati"
-    "b0-org/megacommerce-proto/gen/go/shared/"
-    "v1;v1\370\001\001b\006proto3"
+    "\n\025shared/v1/types.proto\022\tshared.v1\"\200\001\n\tS"
+    "tringMap\0228\n\006values\030\001 \003(\0132 .shared.v1.Str"
+    "ingMap.ValuesEntryR\006values\0329\n\013ValuesEntr"
+    "y\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005value\030\002 \001(\tR\005valu"
+    "e:\0028\001\"\232\001\n\017NestedStringMap\0228\n\004data\030\001 \003(\0132"
+    "$.shared.v1.NestedStringMap.DataEntryR\004d"
+    "ata\032M\n\tDataEntry\022\020\n\003key\030\001 \001(\tR\003key\022*\n\005va"
+    "lue\030\002 \001(\0132\024.shared.v1.StringMapR\005value:\002"
+    "8\001\"%\n\013StringArray\022\026\n\006values\030\001 \003(\tR\006value"
+    "s\"C\n\016OrderDirection\022\022\n\003asc\030\001 \001(\010H\000R\003asc\022"
+    "\024\n\004desc\030\002 \001(\010H\000R\004descB\007\n\005order\"\307\001\n\023Succe"
+    "ssResponseData\022\035\n\007message\030\001 \001(\tH\000R\007messa"
+    "ge\210\001\001\022H\n\010metadata\030\002 \003(\0132,.shared.v1.Succ"
+    "essResponseData.MetadataEntryR\010metadata\032"
+    ";\n\rMetadataEntry\022\020\n\003key\030\001 \001(\tR\003key\022\024\n\005va"
+    "lue\030\002 \001(\tR\005value:\0028\001B\n\n\010_message\",\n\006IDNa"
+    "me\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\"6"
+    "\n\003Any\022\031\n\010type_url\030\001 \001(\tR\007typeUrl\022\024\n\005valu"
+    "e\030\002 \001(\014R\005value\"\007\n\005EmptyBp\n\032org.megacomme"
+    "rce.shared.v1B\nTypesProtoZCgithub.com/ah"
+    "mad-khatib0-org/megacommerce-proto/gen/g"
+    "o/shared/v1;v1\370\001\001b\006proto3"
 };
 static ::absl::once_flag descriptor_table_shared_2fv1_2ftypes_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_shared_2fv1_2ftypes_2eproto = {
     false,
     false,
-    856,
+    865,
     descriptor_table_protodef_shared_2fv1_2ftypes_2eproto,
     "shared/v1/types.proto",
     &descriptor_table_shared_2fv1_2ftypes_2eproto_once,
@@ -426,62 +426,62 @@ namespace v1 {
 // ===================================================================
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-StringMap_DataEntry_DoNotUse::StringMap_DataEntry_DoNotUse()
-    : SuperType(StringMap_DataEntry_DoNotUse_class_data_.base()) {}
-StringMap_DataEntry_DoNotUse::StringMap_DataEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-    : SuperType(arena, StringMap_DataEntry_DoNotUse_class_data_.base()) {}
+StringMap_ValuesEntry_DoNotUse::StringMap_ValuesEntry_DoNotUse()
+    : SuperType(StringMap_ValuesEntry_DoNotUse_class_data_.base()) {}
+StringMap_ValuesEntry_DoNotUse::StringMap_ValuesEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+    : SuperType(arena, StringMap_ValuesEntry_DoNotUse_class_data_.base()) {}
 #else   // PROTOBUF_CUSTOM_VTABLE
-StringMap_DataEntry_DoNotUse::StringMap_DataEntry_DoNotUse() : SuperType() {}
-StringMap_DataEntry_DoNotUse::StringMap_DataEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena) : SuperType(arena) {}
+StringMap_ValuesEntry_DoNotUse::StringMap_ValuesEntry_DoNotUse() : SuperType() {}
+StringMap_ValuesEntry_DoNotUse::StringMap_ValuesEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena) : SuperType(arena) {}
 #endif  // PROTOBUF_CUSTOM_VTABLE
-inline void* PROTOBUF_NONNULL StringMap_DataEntry_DoNotUse::PlacementNew_(
+inline void* PROTOBUF_NONNULL StringMap_ValuesEntry_DoNotUse::PlacementNew_(
     const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) StringMap_DataEntry_DoNotUse(arena);
+  return ::new (mem) StringMap_ValuesEntry_DoNotUse(arena);
 }
-constexpr auto StringMap_DataEntry_DoNotUse::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(StringMap_DataEntry_DoNotUse),
-                                            alignof(StringMap_DataEntry_DoNotUse));
+constexpr auto StringMap_ValuesEntry_DoNotUse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(StringMap_ValuesEntry_DoNotUse),
+                                            alignof(StringMap_ValuesEntry_DoNotUse));
 }
-constexpr auto StringMap_DataEntry_DoNotUse::InternalGenerateClassData_() {
+constexpr auto StringMap_ValuesEntry_DoNotUse::InternalGenerateClassData_() {
   return ::google::protobuf::internal::ClassDataFull{
       ::google::protobuf::internal::ClassData{
-          &_StringMap_DataEntry_DoNotUse_default_instance_._instance,
+          &_StringMap_ValuesEntry_DoNotUse_default_instance_._instance,
           &_table_.header,
           nullptr,  // OnDemandRegisterArenaDtor
           nullptr,  // IsInitialized
-          &StringMap_DataEntry_DoNotUse::MergeImpl,
-          ::google::protobuf::Message::GetNewImpl<StringMap_DataEntry_DoNotUse>(),
+          &StringMap_ValuesEntry_DoNotUse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<StringMap_ValuesEntry_DoNotUse>(),
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-          &StringMap_DataEntry_DoNotUse::SharedDtor,
-          static_cast<void (::google::protobuf::MessageLite::*)()>(&StringMap_DataEntry_DoNotUse::ClearImpl),
+          &StringMap_ValuesEntry_DoNotUse::SharedDtor,
+          static_cast<void (::google::protobuf::MessageLite::*)()>(&StringMap_ValuesEntry_DoNotUse::ClearImpl),
               ::google::protobuf::Message::ByteSizeLongImpl, ::google::protobuf::Message::_InternalSerializeImpl
               ,
 #endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(StringMap_DataEntry_DoNotUse, _impl_._cached_size_),
+          PROTOBUF_FIELD_OFFSET(StringMap_ValuesEntry_DoNotUse, _impl_._cached_size_),
           false,
       },
-      &StringMap_DataEntry_DoNotUse::kDescriptorMethods,
+      &StringMap_ValuesEntry_DoNotUse::kDescriptorMethods,
       &descriptor_table_shared_2fv1_2ftypes_2eproto,
       nullptr,  // tracker
   };
 }
 
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull StringMap_DataEntry_DoNotUse_class_data_ =
-        StringMap_DataEntry_DoNotUse::InternalGenerateClassData_();
+    ::google::protobuf::internal::ClassDataFull StringMap_ValuesEntry_DoNotUse_class_data_ =
+        StringMap_ValuesEntry_DoNotUse::InternalGenerateClassData_();
 
 PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-StringMap_DataEntry_DoNotUse::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&StringMap_DataEntry_DoNotUse_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(StringMap_DataEntry_DoNotUse_class_data_.tc_table);
-  return StringMap_DataEntry_DoNotUse_class_data_.base();
+StringMap_ValuesEntry_DoNotUse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&StringMap_ValuesEntry_DoNotUse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(StringMap_ValuesEntry_DoNotUse_class_data_.tc_table);
+  return StringMap_ValuesEntry_DoNotUse_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<1, 2, 0, 46, 2>
-StringMap_DataEntry_DoNotUse::_table_ = {
+const ::_pbi::TcParseTable<1, 2, 0, 48, 2>
+StringMap_ValuesEntry_DoNotUse::_table_ = {
   {
-    PROTOBUF_FIELD_OFFSET(StringMap_DataEntry_DoNotUse, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(StringMap_ValuesEntry_DoNotUse, _impl_._has_bits_),
     0, // no _extensions_
     2, 8,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
@@ -490,33 +490,33 @@ StringMap_DataEntry_DoNotUse::_table_ = {
     2,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
-    StringMap_DataEntry_DoNotUse_class_data_.base(),
+    StringMap_ValuesEntry_DoNotUse_class_data_.base(),
     nullptr,  // post_loop_handler
     ::_pbi::TcParser::DiscardEverythingFallback,  // fallback
     #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-    ::_pbi::TcParser::GetTable<::shared::v1::StringMap_DataEntry_DoNotUse>(),  // to_prefetch
+    ::_pbi::TcParser::GetTable<::shared::v1::StringMap_ValuesEntry_DoNotUse>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     // string value = 2 [json_name = "value"];
     {::_pbi::TcParser::FastUS1,
-     {18, 1, 0, PROTOBUF_FIELD_OFFSET(StringMap_DataEntry_DoNotUse, _impl_.value_)}},
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(StringMap_ValuesEntry_DoNotUse, _impl_.value_)}},
     // string key = 1 [json_name = "key"];
     {::_pbi::TcParser::FastUS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(StringMap_DataEntry_DoNotUse, _impl_.key_)}},
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(StringMap_ValuesEntry_DoNotUse, _impl_.key_)}},
   }}, {{
     65535, 65535
   }}, {{
     // string key = 1 [json_name = "key"];
-    {PROTOBUF_FIELD_OFFSET(StringMap_DataEntry_DoNotUse, _impl_.key_), _Internal::kHasBitsOffset + 0, 0,
+    {PROTOBUF_FIELD_OFFSET(StringMap_ValuesEntry_DoNotUse, _impl_.key_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // string value = 2 [json_name = "value"];
-    {PROTOBUF_FIELD_OFFSET(StringMap_DataEntry_DoNotUse, _impl_.value_), _Internal::kHasBitsOffset + 1, 0,
+    {PROTOBUF_FIELD_OFFSET(StringMap_ValuesEntry_DoNotUse, _impl_.value_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
   }},
   // no aux_entries
   {{
-    "\35\3\5\0\0\0\0\0"
-    "shared.v1.StringMap.DataEntry"
+    "\37\3\5\0\0\0\0\0"
+    "shared.v1.StringMap.ValuesEntry"
     "key"
     "value"
   }},
@@ -540,7 +540,7 @@ PROTOBUF_NDEBUG_INLINE StringMap::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
     const ::shared::v1::StringMap& from_msg)
-      : data_{visibility, arena, from.data_},
+      : values_{visibility, arena, from.values_},
         _cached_size_{0} {}
 
 StringMap::StringMap(
@@ -562,7 +562,7 @@ StringMap::StringMap(
 PROTOBUF_NDEBUG_INLINE StringMap::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-      : data_{visibility, arena},
+      : values_{visibility, arena},
         _cached_size_{0} {}
 
 inline void StringMap::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
@@ -586,12 +586,12 @@ inline void* PROTOBUF_NONNULL StringMap::PlacementNew_(
 }
 constexpr auto StringMap::InternalNewImpl_() {
   constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
-      PROTOBUF_FIELD_OFFSET(StringMap, _impl_.data_) +
-          decltype(StringMap::_impl_.data_)::
+      PROTOBUF_FIELD_OFFSET(StringMap, _impl_.values_) +
+          decltype(StringMap::_impl_.values_)::
               InternalGetArenaOffset(
                   ::google::protobuf::Message::internal_visibility()),
-      PROTOBUF_FIELD_OFFSET(StringMap, _impl_.data_) +
-          decltype(StringMap::_impl_.data_)::
+      PROTOBUF_FIELD_OFFSET(StringMap, _impl_.values_) +
+          decltype(StringMap::_impl_.values_)::
               InternalGetArenaOffsetAlt(
                   ::google::protobuf::Message::internal_visibility()),
   });
@@ -638,7 +638,7 @@ StringMap::GetClassData() const {
   return StringMap_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 1, 32, 2>
+const ::_pbi::TcParseTable<0, 1, 1, 34, 2>
 StringMap::_table_ = {
   {
     0,  // no _has_bits_
@@ -661,8 +661,8 @@ StringMap::_table_ = {
   }}, {{
     65535, 65535
   }}, {{
-    // map<string, string> data = 1 [json_name = "data"];
-    {PROTOBUF_FIELD_OFFSET(StringMap, _impl_.data_), 0, 0,
+    // map<string, string> values = 1 [json_name = "values"];
+    {PROTOBUF_FIELD_OFFSET(StringMap, _impl_.values_), 0, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
   }},
   {{
@@ -671,9 +671,9 @@ StringMap::_table_ = {
                                        0)},
   }},
   {{
-    "\23\4\0\0\0\0\0\0"
+    "\23\6\0\0\0\0\0\0"
     "shared.v1.StringMap"
-    "data"
+    "values"
   }},
 };
 PROTOBUF_NOINLINE void StringMap::Clear() {
@@ -683,7 +683,7 @@ PROTOBUF_NOINLINE void StringMap::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.data_.Clear();
+  _impl_.values_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
@@ -702,13 +702,13 @@ PROTOBUF_NOINLINE void StringMap::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // map<string, string> data = 1 [json_name = "data"];
-  if (!this_._internal_data().empty()) {
+  // map<string, string> values = 1 [json_name = "values"];
+  if (!this_._internal_values().empty()) {
     using MapType = ::google::protobuf::Map<std::string, std::string>;
     using WireHelper = _pbi::MapEntryFuncs<std::string, std::string,
                                    _pbi::WireFormatLite::TYPE_STRING,
                                    _pbi::WireFormatLite::TYPE_STRING>;
-    const auto& field = this_._internal_data();
+    const auto& field = this_._internal_values();
 
     if (stream->IsSerializationDeterministic() && field.size() > 1) {
       for (const auto& entry : ::google::protobuf::internal::MapSorterPtr<MapType>(field)) {
@@ -716,10 +716,10 @@ PROTOBUF_NOINLINE void StringMap::Clear() {
             1, entry.first, entry.second, target, stream);
         ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             entry.first.data(), static_cast<int>(entry.first.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.StringMap.data");
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.StringMap.values");
         ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             entry.second.data(), static_cast<int>(entry.second.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.StringMap.data");
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.StringMap.values");
       }
     } else {
       for (const auto& entry : field) {
@@ -727,10 +727,10 @@ PROTOBUF_NOINLINE void StringMap::Clear() {
             1, entry.first, entry.second, target, stream);
         ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             entry.first.data(), static_cast<int>(entry.first.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.StringMap.data");
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.StringMap.values");
         ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
             entry.second.data(), static_cast<int>(entry.second.length()),
- ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.StringMap.data");
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "shared.v1.StringMap.values");
       }
     }
   }
@@ -760,11 +760,11 @@ PROTOBUF_NOINLINE void StringMap::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
    {
-    // map<string, string> data = 1 [json_name = "data"];
+    // map<string, string> values = 1 [json_name = "values"];
     {
       total_size +=
-          1 * ::google::protobuf::internal::FromIntSize(this_._internal_data_size());
-      for (const auto& entry : this_._internal_data()) {
+          1 * ::google::protobuf::internal::FromIntSize(this_._internal_values_size());
+      for (const auto& entry : this_._internal_values()) {
         total_size += _pbi::MapEntryFuncs<std::string, std::string,
                                        _pbi::WireFormatLite::TYPE_STRING,
                                        _pbi::WireFormatLite::TYPE_STRING>::ByteSizeLong(entry.first, entry.second);
@@ -783,7 +783,7 @@ void StringMap::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::googl
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.data_.MergeFrom(from._impl_.data_);
+  _this->_impl_.values_.MergeFrom(from._impl_.values_);
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -798,7 +798,7 @@ void StringMap::CopyFrom(const StringMap& from) {
 void StringMap::InternalSwap(StringMap* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   using ::std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.data_.InternalSwap(&other->_impl_.data_);
+  _impl_.values_.InternalSwap(&other->_impl_.values_);
 }
 
 ::google::protobuf::Metadata StringMap::GetMetadata() const {
