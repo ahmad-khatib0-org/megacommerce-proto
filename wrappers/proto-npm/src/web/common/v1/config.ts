@@ -329,15 +329,16 @@ export interface ConfigNativeApp {
 }
 
 export interface ConfigMeilisearch {
-  serverUrl?:
-    | string
-    | undefined;
+  serverUrls: string[];
   /** Meilisearch-specific authentication */
   masterKey?: string | undefined;
   enableIndexing?: boolean | undefined;
   enableSearching?: boolean | undefined;
-  enableAutocomplete?: boolean | undefined;
-  batchSize?: number | undefined;
+  enableAutocomplete?:
+    | boolean
+    | undefined;
+  /** concurrency limiter */
+  maxConcurrency?: number | undefined;
   requestTimeoutSeconds?:
     | number
     | undefined;
@@ -348,6 +349,24 @@ export interface ConfigMeilisearch {
   /** performance tuning */
   searchCutoffMs?: number | undefined;
   enableTypoTolerance?: boolean | undefined;
+  kafkaBroker: string;
+  kafkaGroupId: string;
+  kafakTopic: string;
+  kafakTopicDlq: string;
+  /** how long to wait for Meili task to finish (ms) */
+  taskMaxWaitMs?:
+    | number
+    | undefined;
+  /** per-endpoint retry attempts */
+  taskMaxRetries?:
+    | number
+    | undefined;
+  /** initial backoff (ms) */
+  taskBackoffBaseMs?:
+    | number
+    | undefined;
+  /** how long to wait for in-flight tasks on shutdown */
+  shutdownWaitSecs?: number | undefined;
 }
 
 export interface ConfigBleve {
@@ -5512,23 +5531,31 @@ export const ConfigNativeApp: MessageFns<ConfigNativeApp> = {
 
 function createBaseConfigMeilisearch(): ConfigMeilisearch {
   return {
-    serverUrl: undefined,
+    serverUrls: [],
     masterKey: undefined,
     enableIndexing: undefined,
     enableSearching: undefined,
     enableAutocomplete: undefined,
-    batchSize: undefined,
+    maxConcurrency: undefined,
     requestTimeoutSeconds: undefined,
     indexPrefix: undefined,
     searchCutoffMs: undefined,
     enableTypoTolerance: undefined,
+    kafkaBroker: "",
+    kafkaGroupId: "",
+    kafakTopic: "",
+    kafakTopicDlq: "",
+    taskMaxWaitMs: undefined,
+    taskMaxRetries: undefined,
+    taskBackoffBaseMs: undefined,
+    shutdownWaitSecs: undefined,
   };
 }
 
 export const ConfigMeilisearch: MessageFns<ConfigMeilisearch> = {
   encode(message: ConfigMeilisearch, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.serverUrl !== undefined) {
-      writer.uint32(10).string(message.serverUrl);
+    for (const v of message.serverUrls) {
+      writer.uint32(10).string(v!);
     }
     if (message.masterKey !== undefined) {
       writer.uint32(18).string(message.masterKey);
@@ -5542,8 +5569,8 @@ export const ConfigMeilisearch: MessageFns<ConfigMeilisearch> = {
     if (message.enableAutocomplete !== undefined) {
       writer.uint32(40).bool(message.enableAutocomplete);
     }
-    if (message.batchSize !== undefined) {
-      writer.uint32(48).int32(message.batchSize);
+    if (message.maxConcurrency !== undefined) {
+      writer.uint32(48).int32(message.maxConcurrency);
     }
     if (message.requestTimeoutSeconds !== undefined) {
       writer.uint32(56).int32(message.requestTimeoutSeconds);
@@ -5556,6 +5583,30 @@ export const ConfigMeilisearch: MessageFns<ConfigMeilisearch> = {
     }
     if (message.enableTypoTolerance !== undefined) {
       writer.uint32(80).bool(message.enableTypoTolerance);
+    }
+    if (message.kafkaBroker !== "") {
+      writer.uint32(90).string(message.kafkaBroker);
+    }
+    if (message.kafkaGroupId !== "") {
+      writer.uint32(98).string(message.kafkaGroupId);
+    }
+    if (message.kafakTopic !== "") {
+      writer.uint32(106).string(message.kafakTopic);
+    }
+    if (message.kafakTopicDlq !== "") {
+      writer.uint32(114).string(message.kafakTopicDlq);
+    }
+    if (message.taskMaxWaitMs !== undefined) {
+      writer.uint32(120).int32(message.taskMaxWaitMs);
+    }
+    if (message.taskMaxRetries !== undefined) {
+      writer.uint32(128).int32(message.taskMaxRetries);
+    }
+    if (message.taskBackoffBaseMs !== undefined) {
+      writer.uint32(136).int32(message.taskBackoffBaseMs);
+    }
+    if (message.shutdownWaitSecs !== undefined) {
+      writer.uint32(144).int32(message.shutdownWaitSecs);
     }
     return writer;
   },
@@ -5572,7 +5623,7 @@ export const ConfigMeilisearch: MessageFns<ConfigMeilisearch> = {
             break;
           }
 
-          message.serverUrl = reader.string();
+          message.serverUrls.push(reader.string());
           continue;
         }
         case 2: {
@@ -5612,7 +5663,7 @@ export const ConfigMeilisearch: MessageFns<ConfigMeilisearch> = {
             break;
           }
 
-          message.batchSize = reader.int32();
+          message.maxConcurrency = reader.int32();
           continue;
         }
         case 7: {
@@ -5647,6 +5698,70 @@ export const ConfigMeilisearch: MessageFns<ConfigMeilisearch> = {
           message.enableTypoTolerance = reader.bool();
           continue;
         }
+        case 11: {
+          if (tag !== 90) {
+            break;
+          }
+
+          message.kafkaBroker = reader.string();
+          continue;
+        }
+        case 12: {
+          if (tag !== 98) {
+            break;
+          }
+
+          message.kafkaGroupId = reader.string();
+          continue;
+        }
+        case 13: {
+          if (tag !== 106) {
+            break;
+          }
+
+          message.kafakTopic = reader.string();
+          continue;
+        }
+        case 14: {
+          if (tag !== 114) {
+            break;
+          }
+
+          message.kafakTopicDlq = reader.string();
+          continue;
+        }
+        case 15: {
+          if (tag !== 120) {
+            break;
+          }
+
+          message.taskMaxWaitMs = reader.int32();
+          continue;
+        }
+        case 16: {
+          if (tag !== 128) {
+            break;
+          }
+
+          message.taskMaxRetries = reader.int32();
+          continue;
+        }
+        case 17: {
+          if (tag !== 136) {
+            break;
+          }
+
+          message.taskBackoffBaseMs = reader.int32();
+          continue;
+        }
+        case 18: {
+          if (tag !== 144) {
+            break;
+          }
+
+          message.shutdownWaitSecs = reader.int32();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -5658,12 +5773,14 @@ export const ConfigMeilisearch: MessageFns<ConfigMeilisearch> = {
 
   fromJSON(object: any): ConfigMeilisearch {
     return {
-      serverUrl: isSet(object.server_url) ? globalThis.String(object.server_url) : undefined,
+      serverUrls: globalThis.Array.isArray(object?.server_urls)
+        ? object.server_urls.map((e: any) => globalThis.String(e))
+        : [],
       masterKey: isSet(object.masterKey) ? globalThis.String(object.masterKey) : undefined,
       enableIndexing: isSet(object.enableIndexing) ? globalThis.Boolean(object.enableIndexing) : undefined,
       enableSearching: isSet(object.enableSearching) ? globalThis.Boolean(object.enableSearching) : undefined,
       enableAutocomplete: isSet(object.enableAutocomplete) ? globalThis.Boolean(object.enableAutocomplete) : undefined,
-      batchSize: isSet(object.batchSize) ? globalThis.Number(object.batchSize) : undefined,
+      maxConcurrency: isSet(object.maxConcurrency) ? globalThis.Number(object.maxConcurrency) : undefined,
       requestTimeoutSeconds: isSet(object.requestTimeoutSeconds)
         ? globalThis.Number(object.requestTimeoutSeconds)
         : undefined,
@@ -5672,13 +5789,21 @@ export const ConfigMeilisearch: MessageFns<ConfigMeilisearch> = {
       enableTypoTolerance: isSet(object.enableTypoTolerance)
         ? globalThis.Boolean(object.enableTypoTolerance)
         : undefined,
+      kafkaBroker: isSet(object.kafkaBroker) ? globalThis.String(object.kafkaBroker) : "",
+      kafkaGroupId: isSet(object.kafkaGroupId) ? globalThis.String(object.kafkaGroupId) : "",
+      kafakTopic: isSet(object.kafakTopic) ? globalThis.String(object.kafakTopic) : "",
+      kafakTopicDlq: isSet(object.kafakTopicDlq) ? globalThis.String(object.kafakTopicDlq) : "",
+      taskMaxWaitMs: isSet(object.taskMaxWaitMs) ? globalThis.Number(object.taskMaxWaitMs) : undefined,
+      taskMaxRetries: isSet(object.taskMaxRetries) ? globalThis.Number(object.taskMaxRetries) : undefined,
+      taskBackoffBaseMs: isSet(object.taskBackoffBaseMs) ? globalThis.Number(object.taskBackoffBaseMs) : undefined,
+      shutdownWaitSecs: isSet(object.shutdownWaitSecs) ? globalThis.Number(object.shutdownWaitSecs) : undefined,
     };
   },
 
   toJSON(message: ConfigMeilisearch): unknown {
     const obj: any = {};
-    if (message.serverUrl !== undefined) {
-      obj.server_url = message.serverUrl;
+    if (message.serverUrls?.length) {
+      obj.server_urls = message.serverUrls;
     }
     if (message.masterKey !== undefined) {
       obj.masterKey = message.masterKey;
@@ -5692,8 +5817,8 @@ export const ConfigMeilisearch: MessageFns<ConfigMeilisearch> = {
     if (message.enableAutocomplete !== undefined) {
       obj.enableAutocomplete = message.enableAutocomplete;
     }
-    if (message.batchSize !== undefined) {
-      obj.batchSize = Math.round(message.batchSize);
+    if (message.maxConcurrency !== undefined) {
+      obj.maxConcurrency = Math.round(message.maxConcurrency);
     }
     if (message.requestTimeoutSeconds !== undefined) {
       obj.requestTimeoutSeconds = Math.round(message.requestTimeoutSeconds);
@@ -5707,6 +5832,30 @@ export const ConfigMeilisearch: MessageFns<ConfigMeilisearch> = {
     if (message.enableTypoTolerance !== undefined) {
       obj.enableTypoTolerance = message.enableTypoTolerance;
     }
+    if (message.kafkaBroker !== "") {
+      obj.kafkaBroker = message.kafkaBroker;
+    }
+    if (message.kafkaGroupId !== "") {
+      obj.kafkaGroupId = message.kafkaGroupId;
+    }
+    if (message.kafakTopic !== "") {
+      obj.kafakTopic = message.kafakTopic;
+    }
+    if (message.kafakTopicDlq !== "") {
+      obj.kafakTopicDlq = message.kafakTopicDlq;
+    }
+    if (message.taskMaxWaitMs !== undefined) {
+      obj.taskMaxWaitMs = Math.round(message.taskMaxWaitMs);
+    }
+    if (message.taskMaxRetries !== undefined) {
+      obj.taskMaxRetries = Math.round(message.taskMaxRetries);
+    }
+    if (message.taskBackoffBaseMs !== undefined) {
+      obj.taskBackoffBaseMs = Math.round(message.taskBackoffBaseMs);
+    }
+    if (message.shutdownWaitSecs !== undefined) {
+      obj.shutdownWaitSecs = Math.round(message.shutdownWaitSecs);
+    }
     return obj;
   },
 
@@ -5715,16 +5864,24 @@ export const ConfigMeilisearch: MessageFns<ConfigMeilisearch> = {
   },
   fromPartial<I extends Exact<DeepPartial<ConfigMeilisearch>, I>>(object: I): ConfigMeilisearch {
     const message = createBaseConfigMeilisearch();
-    message.serverUrl = object.serverUrl ?? undefined;
+    message.serverUrls = object.serverUrls?.map((e) => e) || [];
     message.masterKey = object.masterKey ?? undefined;
     message.enableIndexing = object.enableIndexing ?? undefined;
     message.enableSearching = object.enableSearching ?? undefined;
     message.enableAutocomplete = object.enableAutocomplete ?? undefined;
-    message.batchSize = object.batchSize ?? undefined;
+    message.maxConcurrency = object.maxConcurrency ?? undefined;
     message.requestTimeoutSeconds = object.requestTimeoutSeconds ?? undefined;
     message.indexPrefix = object.indexPrefix ?? undefined;
     message.searchCutoffMs = object.searchCutoffMs ?? undefined;
     message.enableTypoTolerance = object.enableTypoTolerance ?? undefined;
+    message.kafkaBroker = object.kafkaBroker ?? "";
+    message.kafkaGroupId = object.kafkaGroupId ?? "";
+    message.kafakTopic = object.kafakTopic ?? "";
+    message.kafakTopicDlq = object.kafakTopicDlq ?? "";
+    message.taskMaxWaitMs = object.taskMaxWaitMs ?? undefined;
+    message.taskMaxRetries = object.taskMaxRetries ?? undefined;
+    message.taskBackoffBaseMs = object.taskBackoffBaseMs ?? undefined;
+    message.shutdownWaitSecs = object.shutdownWaitSecs ?? undefined;
     return message;
   },
 };

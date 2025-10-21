@@ -41059,21 +41059,29 @@ public final class ConfigProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>optional string server_url = 1 [json_name = "server_url"];</code>
-     * @return Whether the serverUrl field is set.
+     * <code>repeated string server_urls = 1 [json_name = "server_urls"];</code>
+     * @return A list containing the serverUrls.
      */
-    boolean hasServerUrl();
+    java.util.List<java.lang.String>
+        getServerUrlsList();
     /**
-     * <code>optional string server_url = 1 [json_name = "server_url"];</code>
-     * @return The serverUrl.
+     * <code>repeated string server_urls = 1 [json_name = "server_urls"];</code>
+     * @return The count of serverUrls.
      */
-    java.lang.String getServerUrl();
+    int getServerUrlsCount();
     /**
-     * <code>optional string server_url = 1 [json_name = "server_url"];</code>
-     * @return The bytes for serverUrl.
+     * <code>repeated string server_urls = 1 [json_name = "server_urls"];</code>
+     * @param index The index of the element to return.
+     * @return The serverUrls at the given index.
+     */
+    java.lang.String getServerUrls(int index);
+    /**
+     * <code>repeated string server_urls = 1 [json_name = "server_urls"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the serverUrls at the given index.
      */
     com.google.protobuf.ByteString
-        getServerUrlBytes();
+        getServerUrlsBytes(int index);
 
     /**
      * <pre>
@@ -41138,15 +41146,23 @@ public final class ConfigProto {
     boolean getEnableAutocomplete();
 
     /**
-     * <code>optional int32 batch_size = 6 [json_name = "batchSize"];</code>
-     * @return Whether the batchSize field is set.
+     * <pre>
+     * concurrency limiter
+     * </pre>
+     *
+     * <code>optional int32 max_concurrency = 6 [json_name = "maxConcurrency"];</code>
+     * @return Whether the maxConcurrency field is set.
      */
-    boolean hasBatchSize();
+    boolean hasMaxConcurrency();
     /**
-     * <code>optional int32 batch_size = 6 [json_name = "batchSize"];</code>
-     * @return The batchSize.
+     * <pre>
+     * concurrency limiter
+     * </pre>
+     *
+     * <code>optional int32 max_concurrency = 6 [json_name = "maxConcurrency"];</code>
+     * @return The maxConcurrency.
      */
-    int getBatchSize();
+    int getMaxConcurrency();
 
     /**
      * <code>optional int32 request_timeout_seconds = 7 [json_name = "requestTimeoutSeconds"];</code>
@@ -41217,6 +41233,130 @@ public final class ConfigProto {
      * @return The enableTypoTolerance.
      */
     boolean getEnableTypoTolerance();
+
+    /**
+     * <code>string kafka_broker = 11 [json_name = "kafkaBroker"];</code>
+     * @return The kafkaBroker.
+     */
+    java.lang.String getKafkaBroker();
+    /**
+     * <code>string kafka_broker = 11 [json_name = "kafkaBroker"];</code>
+     * @return The bytes for kafkaBroker.
+     */
+    com.google.protobuf.ByteString
+        getKafkaBrokerBytes();
+
+    /**
+     * <code>string kafka_group_id = 12 [json_name = "kafkaGroupId"];</code>
+     * @return The kafkaGroupId.
+     */
+    java.lang.String getKafkaGroupId();
+    /**
+     * <code>string kafka_group_id = 12 [json_name = "kafkaGroupId"];</code>
+     * @return The bytes for kafkaGroupId.
+     */
+    com.google.protobuf.ByteString
+        getKafkaGroupIdBytes();
+
+    /**
+     * <code>string kafak_topic = 13 [json_name = "kafakTopic"];</code>
+     * @return The kafakTopic.
+     */
+    java.lang.String getKafakTopic();
+    /**
+     * <code>string kafak_topic = 13 [json_name = "kafakTopic"];</code>
+     * @return The bytes for kafakTopic.
+     */
+    com.google.protobuf.ByteString
+        getKafakTopicBytes();
+
+    /**
+     * <code>string kafak_topic_dlq = 14 [json_name = "kafakTopicDlq"];</code>
+     * @return The kafakTopicDlq.
+     */
+    java.lang.String getKafakTopicDlq();
+    /**
+     * <code>string kafak_topic_dlq = 14 [json_name = "kafakTopicDlq"];</code>
+     * @return The bytes for kafakTopicDlq.
+     */
+    com.google.protobuf.ByteString
+        getKafakTopicDlqBytes();
+
+    /**
+     * <pre>
+     * how long to wait for Meili task to finish (ms)
+     * </pre>
+     *
+     * <code>optional int32 task_max_wait_ms = 15 [json_name = "taskMaxWaitMs"];</code>
+     * @return Whether the taskMaxWaitMs field is set.
+     */
+    boolean hasTaskMaxWaitMs();
+    /**
+     * <pre>
+     * how long to wait for Meili task to finish (ms)
+     * </pre>
+     *
+     * <code>optional int32 task_max_wait_ms = 15 [json_name = "taskMaxWaitMs"];</code>
+     * @return The taskMaxWaitMs.
+     */
+    int getTaskMaxWaitMs();
+
+    /**
+     * <pre>
+     * per-endpoint retry attempts
+     * </pre>
+     *
+     * <code>optional int32 task_max_retries = 16 [json_name = "taskMaxRetries"];</code>
+     * @return Whether the taskMaxRetries field is set.
+     */
+    boolean hasTaskMaxRetries();
+    /**
+     * <pre>
+     * per-endpoint retry attempts
+     * </pre>
+     *
+     * <code>optional int32 task_max_retries = 16 [json_name = "taskMaxRetries"];</code>
+     * @return The taskMaxRetries.
+     */
+    int getTaskMaxRetries();
+
+    /**
+     * <pre>
+     * initial backoff (ms)
+     * </pre>
+     *
+     * <code>optional int32 task_backoff_base_ms = 17 [json_name = "taskBackoffBaseMs"];</code>
+     * @return Whether the taskBackoffBaseMs field is set.
+     */
+    boolean hasTaskBackoffBaseMs();
+    /**
+     * <pre>
+     * initial backoff (ms)
+     * </pre>
+     *
+     * <code>optional int32 task_backoff_base_ms = 17 [json_name = "taskBackoffBaseMs"];</code>
+     * @return The taskBackoffBaseMs.
+     */
+    int getTaskBackoffBaseMs();
+
+    /**
+     * <pre>
+     * how long to wait for in-flight tasks on shutdown
+     * </pre>
+     *
+     * <code>optional int32 shutdown_wait_secs = 18 [json_name = "shutdownWaitSecs"];</code>
+     * @return Whether the shutdownWaitSecs field is set.
+     */
+    boolean hasShutdownWaitSecs();
+    /**
+     * <pre>
+     * how long to wait for in-flight tasks on shutdown
+     * </pre>
+     *
+     * <code>optional int32 shutdown_wait_secs = 18 [json_name = "shutdownWaitSecs"];</code>
+     * @return The shutdownWaitSecs.
+     */
+    int getShutdownWaitSecs();
   }
   /**
    * Protobuf type {@code common.v1.ConfigMeilisearch}
@@ -41240,9 +41380,14 @@ public final class ConfigProto {
       super(builder);
     }
     private ConfigMeilisearch() {
-      serverUrl_ = "";
+      serverUrls_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       masterKey_ = "";
       indexPrefix_ = "";
+      kafkaBroker_ = "";
+      kafkaGroupId_ = "";
+      kafakTopic_ = "";
+      kafakTopicDlq_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -41259,51 +41404,41 @@ public final class ConfigProto {
     }
 
     private int bitField0_;
-    public static final int SERVER_URL_FIELD_NUMBER = 1;
+    public static final int SERVER_URLS_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object serverUrl_ = "";
+    private com.google.protobuf.LazyStringArrayList serverUrls_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     /**
-     * <code>optional string server_url = 1 [json_name = "server_url"];</code>
-     * @return Whether the serverUrl field is set.
+     * <code>repeated string server_urls = 1 [json_name = "server_urls"];</code>
+     * @return A list containing the serverUrls.
      */
-    @java.lang.Override
-    public boolean hasServerUrl() {
-      return ((bitField0_ & 0x00000001) != 0);
+    public com.google.protobuf.ProtocolStringList
+        getServerUrlsList() {
+      return serverUrls_;
     }
     /**
-     * <code>optional string server_url = 1 [json_name = "server_url"];</code>
-     * @return The serverUrl.
+     * <code>repeated string server_urls = 1 [json_name = "server_urls"];</code>
+     * @return The count of serverUrls.
      */
-    @java.lang.Override
-    public java.lang.String getServerUrl() {
-      java.lang.Object ref = serverUrl_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        serverUrl_ = s;
-        return s;
-      }
+    public int getServerUrlsCount() {
+      return serverUrls_.size();
     }
     /**
-     * <code>optional string server_url = 1 [json_name = "server_url"];</code>
-     * @return The bytes for serverUrl.
+     * <code>repeated string server_urls = 1 [json_name = "server_urls"];</code>
+     * @param index The index of the element to return.
+     * @return The serverUrls at the given index.
      */
-    @java.lang.Override
+    public java.lang.String getServerUrls(int index) {
+      return serverUrls_.get(index);
+    }
+    /**
+     * <code>repeated string server_urls = 1 [json_name = "server_urls"];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the serverUrls at the given index.
+     */
     public com.google.protobuf.ByteString
-        getServerUrlBytes() {
-      java.lang.Object ref = serverUrl_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        serverUrl_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+        getServerUrlsBytes(int index) {
+      return serverUrls_.getByteString(index);
     }
 
     public static final int MASTER_KEY_FIELD_NUMBER = 2;
@@ -41319,7 +41454,7 @@ public final class ConfigProto {
      */
     @java.lang.Override
     public boolean hasMasterKey() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000001) != 0);
     }
     /**
      * <pre>
@@ -41373,7 +41508,7 @@ public final class ConfigProto {
      */
     @java.lang.Override
     public boolean hasEnableIndexing() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
     /**
      * <code>optional bool enable_indexing = 3 [json_name = "enableIndexing"];</code>
@@ -41392,7 +41527,7 @@ public final class ConfigProto {
      */
     @java.lang.Override
     public boolean hasEnableSearching() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
     /**
      * <code>optional bool enable_searching = 4 [json_name = "enableSearching"];</code>
@@ -41411,7 +41546,7 @@ public final class ConfigProto {
      */
     @java.lang.Override
     public boolean hasEnableAutocomplete() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
      * <code>optional bool enable_autocomplete = 5 [json_name = "enableAutocomplete"];</code>
@@ -41422,23 +41557,31 @@ public final class ConfigProto {
       return enableAutocomplete_;
     }
 
-    public static final int BATCH_SIZE_FIELD_NUMBER = 6;
-    private int batchSize_ = 0;
+    public static final int MAX_CONCURRENCY_FIELD_NUMBER = 6;
+    private int maxConcurrency_ = 0;
     /**
-     * <code>optional int32 batch_size = 6 [json_name = "batchSize"];</code>
-     * @return Whether the batchSize field is set.
+     * <pre>
+     * concurrency limiter
+     * </pre>
+     *
+     * <code>optional int32 max_concurrency = 6 [json_name = "maxConcurrency"];</code>
+     * @return Whether the maxConcurrency field is set.
      */
     @java.lang.Override
-    public boolean hasBatchSize() {
-      return ((bitField0_ & 0x00000020) != 0);
+    public boolean hasMaxConcurrency() {
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>optional int32 batch_size = 6 [json_name = "batchSize"];</code>
-     * @return The batchSize.
+     * <pre>
+     * concurrency limiter
+     * </pre>
+     *
+     * <code>optional int32 max_concurrency = 6 [json_name = "maxConcurrency"];</code>
+     * @return The maxConcurrency.
      */
     @java.lang.Override
-    public int getBatchSize() {
-      return batchSize_;
+    public int getMaxConcurrency() {
+      return maxConcurrency_;
     }
 
     public static final int REQUEST_TIMEOUT_SECONDS_FIELD_NUMBER = 7;
@@ -41449,7 +41592,7 @@ public final class ConfigProto {
      */
     @java.lang.Override
     public boolean hasRequestTimeoutSeconds() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
      * <code>optional int32 request_timeout_seconds = 7 [json_name = "requestTimeoutSeconds"];</code>
@@ -41473,7 +41616,7 @@ public final class ConfigProto {
      */
     @java.lang.Override
     public boolean hasIndexPrefix() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
     /**
      * <pre>
@@ -41531,7 +41674,7 @@ public final class ConfigProto {
      */
     @java.lang.Override
     public boolean hasSearchCutoffMs() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
     /**
      * <pre>
@@ -41554,7 +41697,7 @@ public final class ConfigProto {
      */
     @java.lang.Override
     public boolean hasEnableTypoTolerance() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
     /**
      * <code>optional bool enable_typo_tolerance = 10 [json_name = "enableTypoTolerance"];</code>
@@ -41563,6 +41706,270 @@ public final class ConfigProto {
     @java.lang.Override
     public boolean getEnableTypoTolerance() {
       return enableTypoTolerance_;
+    }
+
+    public static final int KAFKA_BROKER_FIELD_NUMBER = 11;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object kafkaBroker_ = "";
+    /**
+     * <code>string kafka_broker = 11 [json_name = "kafkaBroker"];</code>
+     * @return The kafkaBroker.
+     */
+    @java.lang.Override
+    public java.lang.String getKafkaBroker() {
+      java.lang.Object ref = kafkaBroker_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kafkaBroker_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string kafka_broker = 11 [json_name = "kafkaBroker"];</code>
+     * @return The bytes for kafkaBroker.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getKafkaBrokerBytes() {
+      java.lang.Object ref = kafkaBroker_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        kafkaBroker_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int KAFKA_GROUP_ID_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object kafkaGroupId_ = "";
+    /**
+     * <code>string kafka_group_id = 12 [json_name = "kafkaGroupId"];</code>
+     * @return The kafkaGroupId.
+     */
+    @java.lang.Override
+    public java.lang.String getKafkaGroupId() {
+      java.lang.Object ref = kafkaGroupId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kafkaGroupId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string kafka_group_id = 12 [json_name = "kafkaGroupId"];</code>
+     * @return The bytes for kafkaGroupId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getKafkaGroupIdBytes() {
+      java.lang.Object ref = kafkaGroupId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        kafkaGroupId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int KAFAK_TOPIC_FIELD_NUMBER = 13;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object kafakTopic_ = "";
+    /**
+     * <code>string kafak_topic = 13 [json_name = "kafakTopic"];</code>
+     * @return The kafakTopic.
+     */
+    @java.lang.Override
+    public java.lang.String getKafakTopic() {
+      java.lang.Object ref = kafakTopic_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kafakTopic_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string kafak_topic = 13 [json_name = "kafakTopic"];</code>
+     * @return The bytes for kafakTopic.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getKafakTopicBytes() {
+      java.lang.Object ref = kafakTopic_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        kafakTopic_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int KAFAK_TOPIC_DLQ_FIELD_NUMBER = 14;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object kafakTopicDlq_ = "";
+    /**
+     * <code>string kafak_topic_dlq = 14 [json_name = "kafakTopicDlq"];</code>
+     * @return The kafakTopicDlq.
+     */
+    @java.lang.Override
+    public java.lang.String getKafakTopicDlq() {
+      java.lang.Object ref = kafakTopicDlq_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        kafakTopicDlq_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string kafak_topic_dlq = 14 [json_name = "kafakTopicDlq"];</code>
+     * @return The bytes for kafakTopicDlq.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getKafakTopicDlqBytes() {
+      java.lang.Object ref = kafakTopicDlq_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        kafakTopicDlq_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TASK_MAX_WAIT_MS_FIELD_NUMBER = 15;
+    private int taskMaxWaitMs_ = 0;
+    /**
+     * <pre>
+     * how long to wait for Meili task to finish (ms)
+     * </pre>
+     *
+     * <code>optional int32 task_max_wait_ms = 15 [json_name = "taskMaxWaitMs"];</code>
+     * @return Whether the taskMaxWaitMs field is set.
+     */
+    @java.lang.Override
+    public boolean hasTaskMaxWaitMs() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+    /**
+     * <pre>
+     * how long to wait for Meili task to finish (ms)
+     * </pre>
+     *
+     * <code>optional int32 task_max_wait_ms = 15 [json_name = "taskMaxWaitMs"];</code>
+     * @return The taskMaxWaitMs.
+     */
+    @java.lang.Override
+    public int getTaskMaxWaitMs() {
+      return taskMaxWaitMs_;
+    }
+
+    public static final int TASK_MAX_RETRIES_FIELD_NUMBER = 16;
+    private int taskMaxRetries_ = 0;
+    /**
+     * <pre>
+     * per-endpoint retry attempts
+     * </pre>
+     *
+     * <code>optional int32 task_max_retries = 16 [json_name = "taskMaxRetries"];</code>
+     * @return Whether the taskMaxRetries field is set.
+     */
+    @java.lang.Override
+    public boolean hasTaskMaxRetries() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+    /**
+     * <pre>
+     * per-endpoint retry attempts
+     * </pre>
+     *
+     * <code>optional int32 task_max_retries = 16 [json_name = "taskMaxRetries"];</code>
+     * @return The taskMaxRetries.
+     */
+    @java.lang.Override
+    public int getTaskMaxRetries() {
+      return taskMaxRetries_;
+    }
+
+    public static final int TASK_BACKOFF_BASE_MS_FIELD_NUMBER = 17;
+    private int taskBackoffBaseMs_ = 0;
+    /**
+     * <pre>
+     * initial backoff (ms)
+     * </pre>
+     *
+     * <code>optional int32 task_backoff_base_ms = 17 [json_name = "taskBackoffBaseMs"];</code>
+     * @return Whether the taskBackoffBaseMs field is set.
+     */
+    @java.lang.Override
+    public boolean hasTaskBackoffBaseMs() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+    /**
+     * <pre>
+     * initial backoff (ms)
+     * </pre>
+     *
+     * <code>optional int32 task_backoff_base_ms = 17 [json_name = "taskBackoffBaseMs"];</code>
+     * @return The taskBackoffBaseMs.
+     */
+    @java.lang.Override
+    public int getTaskBackoffBaseMs() {
+      return taskBackoffBaseMs_;
+    }
+
+    public static final int SHUTDOWN_WAIT_SECS_FIELD_NUMBER = 18;
+    private int shutdownWaitSecs_ = 0;
+    /**
+     * <pre>
+     * how long to wait for in-flight tasks on shutdown
+     * </pre>
+     *
+     * <code>optional int32 shutdown_wait_secs = 18 [json_name = "shutdownWaitSecs"];</code>
+     * @return Whether the shutdownWaitSecs field is set.
+     */
+    @java.lang.Override
+    public boolean hasShutdownWaitSecs() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+    /**
+     * <pre>
+     * how long to wait for in-flight tasks on shutdown
+     * </pre>
+     *
+     * <code>optional int32 shutdown_wait_secs = 18 [json_name = "shutdownWaitSecs"];</code>
+     * @return The shutdownWaitSecs.
+     */
+    @java.lang.Override
+    public int getShutdownWaitSecs() {
+      return shutdownWaitSecs_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -41579,35 +41986,59 @@ public final class ConfigProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (((bitField0_ & 0x00000001) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 1, serverUrl_);
+      for (int i = 0; i < serverUrls_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, serverUrls_.getRaw(i));
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 2, masterKey_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         output.writeBool(3, enableIndexing_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         output.writeBool(4, enableSearching_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         output.writeBool(5, enableAutocomplete_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
-        output.writeInt32(6, batchSize_);
+      if (((bitField0_ & 0x00000010) != 0)) {
+        output.writeInt32(6, maxConcurrency_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         output.writeInt32(7, requestTimeoutSeconds_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 8, indexPrefix_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         output.writeInt32(9, searchCutoffMs_);
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         output.writeBool(10, enableTypoTolerance_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kafkaBroker_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 11, kafkaBroker_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kafkaGroupId_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 12, kafkaGroupId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kafakTopic_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 13, kafakTopic_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kafakTopicDlq_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 14, kafakTopicDlq_);
+      }
+      if (((bitField0_ & 0x00000200) != 0)) {
+        output.writeInt32(15, taskMaxWaitMs_);
+      }
+      if (((bitField0_ & 0x00000400) != 0)) {
+        output.writeInt32(16, taskMaxRetries_);
+      }
+      if (((bitField0_ & 0x00000800) != 0)) {
+        output.writeInt32(17, taskBackoffBaseMs_);
+      }
+      if (((bitField0_ & 0x00001000) != 0)) {
+        output.writeInt32(18, shutdownWaitSecs_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -41618,42 +42049,75 @@ public final class ConfigProto {
       if (size != -1) return size;
 
       size = 0;
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, serverUrl_);
+      {
+        int dataSize = 0;
+        for (int i = 0; i < serverUrls_.size(); i++) {
+          dataSize += computeStringSizeNoTag(serverUrls_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getServerUrlsList().size();
       }
-      if (((bitField0_ & 0x00000002) != 0)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(2, masterKey_);
       }
-      if (((bitField0_ & 0x00000004) != 0)) {
+      if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(3, enableIndexing_);
       }
-      if (((bitField0_ & 0x00000008) != 0)) {
+      if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(4, enableSearching_);
       }
-      if (((bitField0_ & 0x00000010) != 0)) {
+      if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(5, enableAutocomplete_);
       }
-      if (((bitField0_ & 0x00000020) != 0)) {
+      if (((bitField0_ & 0x00000010) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, batchSize_);
+          .computeInt32Size(6, maxConcurrency_);
       }
-      if (((bitField0_ & 0x00000040) != 0)) {
+      if (((bitField0_ & 0x00000020) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(7, requestTimeoutSeconds_);
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(8, indexPrefix_);
       }
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(9, searchCutoffMs_);
       }
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(10, enableTypoTolerance_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kafkaBroker_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(11, kafkaBroker_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kafkaGroupId_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(12, kafkaGroupId_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kafakTopic_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(13, kafakTopic_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(kafakTopicDlq_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(14, kafakTopicDlq_);
+      }
+      if (((bitField0_ & 0x00000200) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(15, taskMaxWaitMs_);
+      }
+      if (((bitField0_ & 0x00000400) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(16, taskMaxRetries_);
+      }
+      if (((bitField0_ & 0x00000800) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(17, taskBackoffBaseMs_);
+      }
+      if (((bitField0_ & 0x00001000) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(18, shutdownWaitSecs_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -41670,11 +42134,8 @@ public final class ConfigProto {
       }
       org.megacommerce.common.v1.ConfigProto.ConfigMeilisearch other = (org.megacommerce.common.v1.ConfigProto.ConfigMeilisearch) obj;
 
-      if (hasServerUrl() != other.hasServerUrl()) return false;
-      if (hasServerUrl()) {
-        if (!getServerUrl()
-            .equals(other.getServerUrl())) return false;
-      }
+      if (!getServerUrlsList()
+          .equals(other.getServerUrlsList())) return false;
       if (hasMasterKey() != other.hasMasterKey()) return false;
       if (hasMasterKey()) {
         if (!getMasterKey()
@@ -41695,10 +42156,10 @@ public final class ConfigProto {
         if (getEnableAutocomplete()
             != other.getEnableAutocomplete()) return false;
       }
-      if (hasBatchSize() != other.hasBatchSize()) return false;
-      if (hasBatchSize()) {
-        if (getBatchSize()
-            != other.getBatchSize()) return false;
+      if (hasMaxConcurrency() != other.hasMaxConcurrency()) return false;
+      if (hasMaxConcurrency()) {
+        if (getMaxConcurrency()
+            != other.getMaxConcurrency()) return false;
       }
       if (hasRequestTimeoutSeconds() != other.hasRequestTimeoutSeconds()) return false;
       if (hasRequestTimeoutSeconds()) {
@@ -41720,6 +42181,34 @@ public final class ConfigProto {
         if (getEnableTypoTolerance()
             != other.getEnableTypoTolerance()) return false;
       }
+      if (!getKafkaBroker()
+          .equals(other.getKafkaBroker())) return false;
+      if (!getKafkaGroupId()
+          .equals(other.getKafkaGroupId())) return false;
+      if (!getKafakTopic()
+          .equals(other.getKafakTopic())) return false;
+      if (!getKafakTopicDlq()
+          .equals(other.getKafakTopicDlq())) return false;
+      if (hasTaskMaxWaitMs() != other.hasTaskMaxWaitMs()) return false;
+      if (hasTaskMaxWaitMs()) {
+        if (getTaskMaxWaitMs()
+            != other.getTaskMaxWaitMs()) return false;
+      }
+      if (hasTaskMaxRetries() != other.hasTaskMaxRetries()) return false;
+      if (hasTaskMaxRetries()) {
+        if (getTaskMaxRetries()
+            != other.getTaskMaxRetries()) return false;
+      }
+      if (hasTaskBackoffBaseMs() != other.hasTaskBackoffBaseMs()) return false;
+      if (hasTaskBackoffBaseMs()) {
+        if (getTaskBackoffBaseMs()
+            != other.getTaskBackoffBaseMs()) return false;
+      }
+      if (hasShutdownWaitSecs() != other.hasShutdownWaitSecs()) return false;
+      if (hasShutdownWaitSecs()) {
+        if (getShutdownWaitSecs()
+            != other.getShutdownWaitSecs()) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -41731,9 +42220,9 @@ public final class ConfigProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      if (hasServerUrl()) {
-        hash = (37 * hash) + SERVER_URL_FIELD_NUMBER;
-        hash = (53 * hash) + getServerUrl().hashCode();
+      if (getServerUrlsCount() > 0) {
+        hash = (37 * hash) + SERVER_URLS_FIELD_NUMBER;
+        hash = (53 * hash) + getServerUrlsList().hashCode();
       }
       if (hasMasterKey()) {
         hash = (37 * hash) + MASTER_KEY_FIELD_NUMBER;
@@ -41754,9 +42243,9 @@ public final class ConfigProto {
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getEnableAutocomplete());
       }
-      if (hasBatchSize()) {
-        hash = (37 * hash) + BATCH_SIZE_FIELD_NUMBER;
-        hash = (53 * hash) + getBatchSize();
+      if (hasMaxConcurrency()) {
+        hash = (37 * hash) + MAX_CONCURRENCY_FIELD_NUMBER;
+        hash = (53 * hash) + getMaxConcurrency();
       }
       if (hasRequestTimeoutSeconds()) {
         hash = (37 * hash) + REQUEST_TIMEOUT_SECONDS_FIELD_NUMBER;
@@ -41774,6 +42263,30 @@ public final class ConfigProto {
         hash = (37 * hash) + ENABLE_TYPO_TOLERANCE_FIELD_NUMBER;
         hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
             getEnableTypoTolerance());
+      }
+      hash = (37 * hash) + KAFKA_BROKER_FIELD_NUMBER;
+      hash = (53 * hash) + getKafkaBroker().hashCode();
+      hash = (37 * hash) + KAFKA_GROUP_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getKafkaGroupId().hashCode();
+      hash = (37 * hash) + KAFAK_TOPIC_FIELD_NUMBER;
+      hash = (53 * hash) + getKafakTopic().hashCode();
+      hash = (37 * hash) + KAFAK_TOPIC_DLQ_FIELD_NUMBER;
+      hash = (53 * hash) + getKafakTopicDlq().hashCode();
+      if (hasTaskMaxWaitMs()) {
+        hash = (37 * hash) + TASK_MAX_WAIT_MS_FIELD_NUMBER;
+        hash = (53 * hash) + getTaskMaxWaitMs();
+      }
+      if (hasTaskMaxRetries()) {
+        hash = (37 * hash) + TASK_MAX_RETRIES_FIELD_NUMBER;
+        hash = (53 * hash) + getTaskMaxRetries();
+      }
+      if (hasTaskBackoffBaseMs()) {
+        hash = (37 * hash) + TASK_BACKOFF_BASE_MS_FIELD_NUMBER;
+        hash = (53 * hash) + getTaskBackoffBaseMs();
+      }
+      if (hasShutdownWaitSecs()) {
+        hash = (37 * hash) + SHUTDOWN_WAIT_SECS_FIELD_NUMBER;
+        hash = (53 * hash) + getShutdownWaitSecs();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -41906,16 +42419,25 @@ public final class ConfigProto {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
-        serverUrl_ = "";
+        serverUrls_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
         masterKey_ = "";
         enableIndexing_ = false;
         enableSearching_ = false;
         enableAutocomplete_ = false;
-        batchSize_ = 0;
+        maxConcurrency_ = 0;
         requestTimeoutSeconds_ = 0;
         indexPrefix_ = "";
         searchCutoffMs_ = 0;
         enableTypoTolerance_ = false;
+        kafkaBroker_ = "";
+        kafkaGroupId_ = "";
+        kafakTopic_ = "";
+        kafakTopicDlq_ = "";
+        taskMaxWaitMs_ = 0;
+        taskMaxRetries_ = 0;
+        taskBackoffBaseMs_ = 0;
+        shutdownWaitSecs_ = 0;
         return this;
       }
 
@@ -41949,46 +42471,74 @@ public final class ConfigProto {
 
       private void buildPartial0(org.megacommerce.common.v1.ConfigProto.ConfigMeilisearch result) {
         int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.serverUrl_ = serverUrl_;
-          to_bitField0_ |= 0x00000001;
+          serverUrls_.makeImmutable();
+          result.serverUrls_ = serverUrls_;
         }
+        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.masterKey_ = masterKey_;
-          to_bitField0_ |= 0x00000002;
+          to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.enableIndexing_ = enableIndexing_;
-          to_bitField0_ |= 0x00000004;
+          to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.enableSearching_ = enableSearching_;
-          to_bitField0_ |= 0x00000008;
+          to_bitField0_ |= 0x00000004;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
           result.enableAutocomplete_ = enableAutocomplete_;
-          to_bitField0_ |= 0x00000010;
+          to_bitField0_ |= 0x00000008;
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.batchSize_ = batchSize_;
-          to_bitField0_ |= 0x00000020;
+          result.maxConcurrency_ = maxConcurrency_;
+          to_bitField0_ |= 0x00000010;
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
           result.requestTimeoutSeconds_ = requestTimeoutSeconds_;
-          to_bitField0_ |= 0x00000040;
+          to_bitField0_ |= 0x00000020;
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
           result.indexPrefix_ = indexPrefix_;
-          to_bitField0_ |= 0x00000080;
+          to_bitField0_ |= 0x00000040;
         }
         if (((from_bitField0_ & 0x00000100) != 0)) {
           result.searchCutoffMs_ = searchCutoffMs_;
-          to_bitField0_ |= 0x00000100;
+          to_bitField0_ |= 0x00000080;
         }
         if (((from_bitField0_ & 0x00000200) != 0)) {
           result.enableTypoTolerance_ = enableTypoTolerance_;
+          to_bitField0_ |= 0x00000100;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.kafkaBroker_ = kafkaBroker_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.kafkaGroupId_ = kafkaGroupId_;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.kafakTopic_ = kafakTopic_;
+        }
+        if (((from_bitField0_ & 0x00002000) != 0)) {
+          result.kafakTopicDlq_ = kafakTopicDlq_;
+        }
+        if (((from_bitField0_ & 0x00004000) != 0)) {
+          result.taskMaxWaitMs_ = taskMaxWaitMs_;
           to_bitField0_ |= 0x00000200;
+        }
+        if (((from_bitField0_ & 0x00008000) != 0)) {
+          result.taskMaxRetries_ = taskMaxRetries_;
+          to_bitField0_ |= 0x00000400;
+        }
+        if (((from_bitField0_ & 0x00010000) != 0)) {
+          result.taskBackoffBaseMs_ = taskBackoffBaseMs_;
+          to_bitField0_ |= 0x00000800;
+        }
+        if (((from_bitField0_ & 0x00020000) != 0)) {
+          result.shutdownWaitSecs_ = shutdownWaitSecs_;
+          to_bitField0_ |= 0x00001000;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -42005,9 +42555,14 @@ public final class ConfigProto {
 
       public Builder mergeFrom(org.megacommerce.common.v1.ConfigProto.ConfigMeilisearch other) {
         if (other == org.megacommerce.common.v1.ConfigProto.ConfigMeilisearch.getDefaultInstance()) return this;
-        if (other.hasServerUrl()) {
-          serverUrl_ = other.serverUrl_;
-          bitField0_ |= 0x00000001;
+        if (!other.serverUrls_.isEmpty()) {
+          if (serverUrls_.isEmpty()) {
+            serverUrls_ = other.serverUrls_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureServerUrlsIsMutable();
+            serverUrls_.addAll(other.serverUrls_);
+          }
           onChanged();
         }
         if (other.hasMasterKey()) {
@@ -42024,8 +42579,8 @@ public final class ConfigProto {
         if (other.hasEnableAutocomplete()) {
           setEnableAutocomplete(other.getEnableAutocomplete());
         }
-        if (other.hasBatchSize()) {
-          setBatchSize(other.getBatchSize());
+        if (other.hasMaxConcurrency()) {
+          setMaxConcurrency(other.getMaxConcurrency());
         }
         if (other.hasRequestTimeoutSeconds()) {
           setRequestTimeoutSeconds(other.getRequestTimeoutSeconds());
@@ -42040,6 +42595,38 @@ public final class ConfigProto {
         }
         if (other.hasEnableTypoTolerance()) {
           setEnableTypoTolerance(other.getEnableTypoTolerance());
+        }
+        if (!other.getKafkaBroker().isEmpty()) {
+          kafkaBroker_ = other.kafkaBroker_;
+          bitField0_ |= 0x00000400;
+          onChanged();
+        }
+        if (!other.getKafkaGroupId().isEmpty()) {
+          kafkaGroupId_ = other.kafkaGroupId_;
+          bitField0_ |= 0x00000800;
+          onChanged();
+        }
+        if (!other.getKafakTopic().isEmpty()) {
+          kafakTopic_ = other.kafakTopic_;
+          bitField0_ |= 0x00001000;
+          onChanged();
+        }
+        if (!other.getKafakTopicDlq().isEmpty()) {
+          kafakTopicDlq_ = other.kafakTopicDlq_;
+          bitField0_ |= 0x00002000;
+          onChanged();
+        }
+        if (other.hasTaskMaxWaitMs()) {
+          setTaskMaxWaitMs(other.getTaskMaxWaitMs());
+        }
+        if (other.hasTaskMaxRetries()) {
+          setTaskMaxRetries(other.getTaskMaxRetries());
+        }
+        if (other.hasTaskBackoffBaseMs()) {
+          setTaskBackoffBaseMs(other.getTaskBackoffBaseMs());
+        }
+        if (other.hasShutdownWaitSecs()) {
+          setShutdownWaitSecs(other.getShutdownWaitSecs());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
@@ -42068,8 +42655,9 @@ public final class ConfigProto {
                 done = true;
                 break;
               case 10: {
-                serverUrl_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureServerUrlsIsMutable();
+                serverUrls_.add(s);
                 break;
               } // case 10
               case 18: {
@@ -42093,7 +42681,7 @@ public final class ConfigProto {
                 break;
               } // case 40
               case 48: {
-                batchSize_ = input.readInt32();
+                maxConcurrency_ = input.readInt32();
                 bitField0_ |= 0x00000020;
                 break;
               } // case 48
@@ -42117,6 +42705,46 @@ public final class ConfigProto {
                 bitField0_ |= 0x00000200;
                 break;
               } // case 80
+              case 90: {
+                kafkaBroker_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
+              case 98: {
+                kafkaGroupId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
+              case 106: {
+                kafakTopic_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 106
+              case 114: {
+                kafakTopicDlq_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 114
+              case 120: {
+                taskMaxWaitMs_ = input.readInt32();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 120
+              case 128: {
+                taskMaxRetries_ = input.readInt32();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 128
+              case 136: {
+                taskBackoffBaseMs_ = input.readInt32();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 136
+              case 144: {
+                shutdownWaitSecs_ = input.readInt32();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 144
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -42134,80 +42762,112 @@ public final class ConfigProto {
       }
       private int bitField0_;
 
-      private java.lang.Object serverUrl_ = "";
-      /**
-       * <code>optional string server_url = 1 [json_name = "server_url"];</code>
-       * @return Whether the serverUrl field is set.
-       */
-      public boolean hasServerUrl() {
-        return ((bitField0_ & 0x00000001) != 0);
-      }
-      /**
-       * <code>optional string server_url = 1 [json_name = "server_url"];</code>
-       * @return The serverUrl.
-       */
-      public java.lang.String getServerUrl() {
-        java.lang.Object ref = serverUrl_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          serverUrl_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
+      private com.google.protobuf.LazyStringArrayList serverUrls_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensureServerUrlsIsMutable() {
+        if (!serverUrls_.isModifiable()) {
+          serverUrls_ = new com.google.protobuf.LazyStringArrayList(serverUrls_);
         }
+        bitField0_ |= 0x00000001;
       }
       /**
-       * <code>optional string server_url = 1 [json_name = "server_url"];</code>
-       * @return The bytes for serverUrl.
+       * <code>repeated string server_urls = 1 [json_name = "server_urls"];</code>
+       * @return A list containing the serverUrls.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getServerUrlsList() {
+        serverUrls_.makeImmutable();
+        return serverUrls_;
+      }
+      /**
+       * <code>repeated string server_urls = 1 [json_name = "server_urls"];</code>
+       * @return The count of serverUrls.
+       */
+      public int getServerUrlsCount() {
+        return serverUrls_.size();
+      }
+      /**
+       * <code>repeated string server_urls = 1 [json_name = "server_urls"];</code>
+       * @param index The index of the element to return.
+       * @return The serverUrls at the given index.
+       */
+      public java.lang.String getServerUrls(int index) {
+        return serverUrls_.get(index);
+      }
+      /**
+       * <code>repeated string server_urls = 1 [json_name = "server_urls"];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the serverUrls at the given index.
        */
       public com.google.protobuf.ByteString
-          getServerUrlBytes() {
-        java.lang.Object ref = serverUrl_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          serverUrl_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
+          getServerUrlsBytes(int index) {
+        return serverUrls_.getByteString(index);
       }
       /**
-       * <code>optional string server_url = 1 [json_name = "server_url"];</code>
-       * @param value The serverUrl to set.
+       * <code>repeated string server_urls = 1 [json_name = "server_urls"];</code>
+       * @param index The index to set the value at.
+       * @param value The serverUrls to set.
        * @return This builder for chaining.
        */
-      public Builder setServerUrl(
-          java.lang.String value) {
+      public Builder setServerUrls(
+          int index, java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        serverUrl_ = value;
+        ensureServerUrlsIsMutable();
+        serverUrls_.set(index, value);
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string server_url = 1 [json_name = "server_url"];</code>
+       * <code>repeated string server_urls = 1 [json_name = "server_urls"];</code>
+       * @param value The serverUrls to add.
        * @return This builder for chaining.
        */
-      public Builder clearServerUrl() {
-        serverUrl_ = getDefaultInstance().getServerUrl();
-        bitField0_ = (bitField0_ & ~0x00000001);
+      public Builder addServerUrls(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureServerUrlsIsMutable();
+        serverUrls_.add(value);
+        bitField0_ |= 0x00000001;
         onChanged();
         return this;
       }
       /**
-       * <code>optional string server_url = 1 [json_name = "server_url"];</code>
-       * @param value The bytes for serverUrl to set.
+       * <code>repeated string server_urls = 1 [json_name = "server_urls"];</code>
+       * @param values The serverUrls to add.
        * @return This builder for chaining.
        */
-      public Builder setServerUrlBytes(
+      public Builder addAllServerUrls(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureServerUrlsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, serverUrls_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string server_urls = 1 [json_name = "server_urls"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearServerUrls() {
+        serverUrls_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string server_urls = 1 [json_name = "server_urls"];</code>
+       * @param value The bytes of the serverUrls to add.
+       * @return This builder for chaining.
+       */
+      public Builder addServerUrlsBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        serverUrl_ = value;
+        ensureServerUrlsIsMutable();
+        serverUrls_.add(value);
         bitField0_ |= 0x00000001;
         onChanged();
         return this;
@@ -42436,42 +43096,58 @@ public final class ConfigProto {
         return this;
       }
 
-      private int batchSize_ ;
+      private int maxConcurrency_ ;
       /**
-       * <code>optional int32 batch_size = 6 [json_name = "batchSize"];</code>
-       * @return Whether the batchSize field is set.
+       * <pre>
+       * concurrency limiter
+       * </pre>
+       *
+       * <code>optional int32 max_concurrency = 6 [json_name = "maxConcurrency"];</code>
+       * @return Whether the maxConcurrency field is set.
        */
       @java.lang.Override
-      public boolean hasBatchSize() {
+      public boolean hasMaxConcurrency() {
         return ((bitField0_ & 0x00000020) != 0);
       }
       /**
-       * <code>optional int32 batch_size = 6 [json_name = "batchSize"];</code>
-       * @return The batchSize.
+       * <pre>
+       * concurrency limiter
+       * </pre>
+       *
+       * <code>optional int32 max_concurrency = 6 [json_name = "maxConcurrency"];</code>
+       * @return The maxConcurrency.
        */
       @java.lang.Override
-      public int getBatchSize() {
-        return batchSize_;
+      public int getMaxConcurrency() {
+        return maxConcurrency_;
       }
       /**
-       * <code>optional int32 batch_size = 6 [json_name = "batchSize"];</code>
-       * @param value The batchSize to set.
+       * <pre>
+       * concurrency limiter
+       * </pre>
+       *
+       * <code>optional int32 max_concurrency = 6 [json_name = "maxConcurrency"];</code>
+       * @param value The maxConcurrency to set.
        * @return This builder for chaining.
        */
-      public Builder setBatchSize(int value) {
+      public Builder setMaxConcurrency(int value) {
 
-        batchSize_ = value;
+        maxConcurrency_ = value;
         bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
       /**
-       * <code>optional int32 batch_size = 6 [json_name = "batchSize"];</code>
+       * <pre>
+       * concurrency limiter
+       * </pre>
+       *
+       * <code>optional int32 max_concurrency = 6 [json_name = "maxConcurrency"];</code>
        * @return This builder for chaining.
        */
-      public Builder clearBatchSize() {
+      public Builder clearMaxConcurrency() {
         bitField0_ = (bitField0_ & ~0x00000020);
-        batchSize_ = 0;
+        maxConcurrency_ = 0;
         onChanged();
         return this;
       }
@@ -42711,6 +43387,518 @@ public final class ConfigProto {
       public Builder clearEnableTypoTolerance() {
         bitField0_ = (bitField0_ & ~0x00000200);
         enableTypoTolerance_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object kafkaBroker_ = "";
+      /**
+       * <code>string kafka_broker = 11 [json_name = "kafkaBroker"];</code>
+       * @return The kafkaBroker.
+       */
+      public java.lang.String getKafkaBroker() {
+        java.lang.Object ref = kafkaBroker_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          kafkaBroker_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string kafka_broker = 11 [json_name = "kafkaBroker"];</code>
+       * @return The bytes for kafkaBroker.
+       */
+      public com.google.protobuf.ByteString
+          getKafkaBrokerBytes() {
+        java.lang.Object ref = kafkaBroker_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          kafkaBroker_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string kafka_broker = 11 [json_name = "kafkaBroker"];</code>
+       * @param value The kafkaBroker to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKafkaBroker(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        kafkaBroker_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string kafka_broker = 11 [json_name = "kafkaBroker"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKafkaBroker() {
+        kafkaBroker_ = getDefaultInstance().getKafkaBroker();
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string kafka_broker = 11 [json_name = "kafkaBroker"];</code>
+       * @param value The bytes for kafkaBroker to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKafkaBrokerBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        kafkaBroker_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object kafkaGroupId_ = "";
+      /**
+       * <code>string kafka_group_id = 12 [json_name = "kafkaGroupId"];</code>
+       * @return The kafkaGroupId.
+       */
+      public java.lang.String getKafkaGroupId() {
+        java.lang.Object ref = kafkaGroupId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          kafkaGroupId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string kafka_group_id = 12 [json_name = "kafkaGroupId"];</code>
+       * @return The bytes for kafkaGroupId.
+       */
+      public com.google.protobuf.ByteString
+          getKafkaGroupIdBytes() {
+        java.lang.Object ref = kafkaGroupId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          kafkaGroupId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string kafka_group_id = 12 [json_name = "kafkaGroupId"];</code>
+       * @param value The kafkaGroupId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKafkaGroupId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        kafkaGroupId_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string kafka_group_id = 12 [json_name = "kafkaGroupId"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKafkaGroupId() {
+        kafkaGroupId_ = getDefaultInstance().getKafkaGroupId();
+        bitField0_ = (bitField0_ & ~0x00000800);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string kafka_group_id = 12 [json_name = "kafkaGroupId"];</code>
+       * @param value The bytes for kafkaGroupId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKafkaGroupIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        kafkaGroupId_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object kafakTopic_ = "";
+      /**
+       * <code>string kafak_topic = 13 [json_name = "kafakTopic"];</code>
+       * @return The kafakTopic.
+       */
+      public java.lang.String getKafakTopic() {
+        java.lang.Object ref = kafakTopic_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          kafakTopic_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string kafak_topic = 13 [json_name = "kafakTopic"];</code>
+       * @return The bytes for kafakTopic.
+       */
+      public com.google.protobuf.ByteString
+          getKafakTopicBytes() {
+        java.lang.Object ref = kafakTopic_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          kafakTopic_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string kafak_topic = 13 [json_name = "kafakTopic"];</code>
+       * @param value The kafakTopic to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKafakTopic(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        kafakTopic_ = value;
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string kafak_topic = 13 [json_name = "kafakTopic"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKafakTopic() {
+        kafakTopic_ = getDefaultInstance().getKafakTopic();
+        bitField0_ = (bitField0_ & ~0x00001000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string kafak_topic = 13 [json_name = "kafakTopic"];</code>
+       * @param value The bytes for kafakTopic to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKafakTopicBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        kafakTopic_ = value;
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object kafakTopicDlq_ = "";
+      /**
+       * <code>string kafak_topic_dlq = 14 [json_name = "kafakTopicDlq"];</code>
+       * @return The kafakTopicDlq.
+       */
+      public java.lang.String getKafakTopicDlq() {
+        java.lang.Object ref = kafakTopicDlq_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          kafakTopicDlq_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string kafak_topic_dlq = 14 [json_name = "kafakTopicDlq"];</code>
+       * @return The bytes for kafakTopicDlq.
+       */
+      public com.google.protobuf.ByteString
+          getKafakTopicDlqBytes() {
+        java.lang.Object ref = kafakTopicDlq_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          kafakTopicDlq_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string kafak_topic_dlq = 14 [json_name = "kafakTopicDlq"];</code>
+       * @param value The kafakTopicDlq to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKafakTopicDlq(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        kafakTopicDlq_ = value;
+        bitField0_ |= 0x00002000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string kafak_topic_dlq = 14 [json_name = "kafakTopicDlq"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearKafakTopicDlq() {
+        kafakTopicDlq_ = getDefaultInstance().getKafakTopicDlq();
+        bitField0_ = (bitField0_ & ~0x00002000);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string kafak_topic_dlq = 14 [json_name = "kafakTopicDlq"];</code>
+       * @param value The bytes for kafakTopicDlq to set.
+       * @return This builder for chaining.
+       */
+      public Builder setKafakTopicDlqBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        kafakTopicDlq_ = value;
+        bitField0_ |= 0x00002000;
+        onChanged();
+        return this;
+      }
+
+      private int taskMaxWaitMs_ ;
+      /**
+       * <pre>
+       * how long to wait for Meili task to finish (ms)
+       * </pre>
+       *
+       * <code>optional int32 task_max_wait_ms = 15 [json_name = "taskMaxWaitMs"];</code>
+       * @return Whether the taskMaxWaitMs field is set.
+       */
+      @java.lang.Override
+      public boolean hasTaskMaxWaitMs() {
+        return ((bitField0_ & 0x00004000) != 0);
+      }
+      /**
+       * <pre>
+       * how long to wait for Meili task to finish (ms)
+       * </pre>
+       *
+       * <code>optional int32 task_max_wait_ms = 15 [json_name = "taskMaxWaitMs"];</code>
+       * @return The taskMaxWaitMs.
+       */
+      @java.lang.Override
+      public int getTaskMaxWaitMs() {
+        return taskMaxWaitMs_;
+      }
+      /**
+       * <pre>
+       * how long to wait for Meili task to finish (ms)
+       * </pre>
+       *
+       * <code>optional int32 task_max_wait_ms = 15 [json_name = "taskMaxWaitMs"];</code>
+       * @param value The taskMaxWaitMs to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTaskMaxWaitMs(int value) {
+
+        taskMaxWaitMs_ = value;
+        bitField0_ |= 0x00004000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * how long to wait for Meili task to finish (ms)
+       * </pre>
+       *
+       * <code>optional int32 task_max_wait_ms = 15 [json_name = "taskMaxWaitMs"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTaskMaxWaitMs() {
+        bitField0_ = (bitField0_ & ~0x00004000);
+        taskMaxWaitMs_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int taskMaxRetries_ ;
+      /**
+       * <pre>
+       * per-endpoint retry attempts
+       * </pre>
+       *
+       * <code>optional int32 task_max_retries = 16 [json_name = "taskMaxRetries"];</code>
+       * @return Whether the taskMaxRetries field is set.
+       */
+      @java.lang.Override
+      public boolean hasTaskMaxRetries() {
+        return ((bitField0_ & 0x00008000) != 0);
+      }
+      /**
+       * <pre>
+       * per-endpoint retry attempts
+       * </pre>
+       *
+       * <code>optional int32 task_max_retries = 16 [json_name = "taskMaxRetries"];</code>
+       * @return The taskMaxRetries.
+       */
+      @java.lang.Override
+      public int getTaskMaxRetries() {
+        return taskMaxRetries_;
+      }
+      /**
+       * <pre>
+       * per-endpoint retry attempts
+       * </pre>
+       *
+       * <code>optional int32 task_max_retries = 16 [json_name = "taskMaxRetries"];</code>
+       * @param value The taskMaxRetries to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTaskMaxRetries(int value) {
+
+        taskMaxRetries_ = value;
+        bitField0_ |= 0x00008000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * per-endpoint retry attempts
+       * </pre>
+       *
+       * <code>optional int32 task_max_retries = 16 [json_name = "taskMaxRetries"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTaskMaxRetries() {
+        bitField0_ = (bitField0_ & ~0x00008000);
+        taskMaxRetries_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int taskBackoffBaseMs_ ;
+      /**
+       * <pre>
+       * initial backoff (ms)
+       * </pre>
+       *
+       * <code>optional int32 task_backoff_base_ms = 17 [json_name = "taskBackoffBaseMs"];</code>
+       * @return Whether the taskBackoffBaseMs field is set.
+       */
+      @java.lang.Override
+      public boolean hasTaskBackoffBaseMs() {
+        return ((bitField0_ & 0x00010000) != 0);
+      }
+      /**
+       * <pre>
+       * initial backoff (ms)
+       * </pre>
+       *
+       * <code>optional int32 task_backoff_base_ms = 17 [json_name = "taskBackoffBaseMs"];</code>
+       * @return The taskBackoffBaseMs.
+       */
+      @java.lang.Override
+      public int getTaskBackoffBaseMs() {
+        return taskBackoffBaseMs_;
+      }
+      /**
+       * <pre>
+       * initial backoff (ms)
+       * </pre>
+       *
+       * <code>optional int32 task_backoff_base_ms = 17 [json_name = "taskBackoffBaseMs"];</code>
+       * @param value The taskBackoffBaseMs to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTaskBackoffBaseMs(int value) {
+
+        taskBackoffBaseMs_ = value;
+        bitField0_ |= 0x00010000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * initial backoff (ms)
+       * </pre>
+       *
+       * <code>optional int32 task_backoff_base_ms = 17 [json_name = "taskBackoffBaseMs"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearTaskBackoffBaseMs() {
+        bitField0_ = (bitField0_ & ~0x00010000);
+        taskBackoffBaseMs_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int shutdownWaitSecs_ ;
+      /**
+       * <pre>
+       * how long to wait for in-flight tasks on shutdown
+       * </pre>
+       *
+       * <code>optional int32 shutdown_wait_secs = 18 [json_name = "shutdownWaitSecs"];</code>
+       * @return Whether the shutdownWaitSecs field is set.
+       */
+      @java.lang.Override
+      public boolean hasShutdownWaitSecs() {
+        return ((bitField0_ & 0x00020000) != 0);
+      }
+      /**
+       * <pre>
+       * how long to wait for in-flight tasks on shutdown
+       * </pre>
+       *
+       * <code>optional int32 shutdown_wait_secs = 18 [json_name = "shutdownWaitSecs"];</code>
+       * @return The shutdownWaitSecs.
+       */
+      @java.lang.Override
+      public int getShutdownWaitSecs() {
+        return shutdownWaitSecs_;
+      }
+      /**
+       * <pre>
+       * how long to wait for in-flight tasks on shutdown
+       * </pre>
+       *
+       * <code>optional int32 shutdown_wait_secs = 18 [json_name = "shutdownWaitSecs"];</code>
+       * @param value The shutdownWaitSecs to set.
+       * @return This builder for chaining.
+       */
+      public Builder setShutdownWaitSecs(int value) {
+
+        shutdownWaitSecs_ = value;
+        bitField0_ |= 0x00020000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * how long to wait for in-flight tasks on shutdown
+       * </pre>
+       *
+       * <code>optional int32 shutdown_wait_secs = 18 [json_name = "shutdownWaitSecs"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearShutdownWaitSecs() {
+        bitField0_ = (bitField0_ & ~0x00020000);
+        shutdownWaitSecs_ = 0;
         onChanged();
         return this;
       }
@@ -55711,109 +56899,120 @@ public final class ConfigProto {
       "load_linkB\032\n\030_mobile_external_browserB\033\n" +
       "\031_mobile_enable_biometricsB \n\036_mobile_pr" +
       "event_screen_captureB\036\n\034_mobile_jailbrea" +
-      "k_protection\"\253\005\n\021ConfigMeilisearch\022#\n\nse" +
-      "rver_url\030\001 \001(\tH\000R\nserver_url\210\001\001\022\"\n\nmaste" +
-      "r_key\030\002 \001(\tH\001R\tmasterKey\210\001\001\022,\n\017enable_in" +
-      "dexing\030\003 \001(\010H\002R\016enableIndexing\210\001\001\022.\n\020ena" +
-      "ble_searching\030\004 \001(\010H\003R\017enableSearching\210\001" +
-      "\001\0224\n\023enable_autocomplete\030\005 \001(\010H\004R\022enable" +
-      "Autocomplete\210\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tb" +
-      "atchSize\210\001\001\022;\n\027request_timeout_seconds\030\007" +
-      " \001(\005H\006R\025requestTimeoutSeconds\210\001\001\022&\n\014inde" +
-      "x_prefix\030\010 \001(\tH\007R\013indexPrefix\210\001\001\022-\n\020sear" +
-      "ch_cutoff_ms\030\t \001(\005H\010R\016searchCutoffMs\210\001\001\022" +
-      "7\n\025enable_typo_tolerance\030\n \001(\010H\tR\023enable" +
-      "TypoTolerance\210\001\001B\r\n\013_server_urlB\r\n\013_mast" +
-      "er_keyB\022\n\020_enable_indexingB\023\n\021_enable_se" +
-      "archingB\026\n\024_enable_autocompleteB\r\n\013_batc" +
-      "h_sizeB\032\n\030_request_timeout_secondsB\017\n\r_i" +
-      "ndex_prefixB\023\n\021_search_cutoff_msB\030\n\026_ena" +
-      "ble_typo_tolerance\"\272\003\n\013ConfigBleve\022 \n\tin" +
-      "dex_dir\030\001 \001(\tH\000R\010indexDir\210\001\001\022,\n\017enable_i" +
-      "ndexing\030\002 \001(\010H\001R\016enableIndexing\210\001\001\022.\n\020en" +
-      "able_searching\030\003 \001(\010H\002R\017enableSearching\210" +
-      "\001\001\0224\n\023enable_autocomplete\030\004 \001(\010H\003R\022enabl" +
-      "eAutocomplete\210\001\001\022M\n!bulk_indexing_time_w" +
-      "indow_seconds\030\005 \001(\005H\004R\035bulkIndexingTimeW" +
-      "indowSeconds\210\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tb" +
-      "atchSize\210\001\001B\014\n\n_index_dirB\022\n\020_enable_ind" +
-      "exingB\023\n\021_enable_searchingB\026\n\024_enable_au" +
-      "tocompleteB$\n\"_bulk_indexing_time_window" +
-      "_secondsB\r\n\013_batch_size\"\354\006\n\023ConfigDataRe" +
-      "tention\022;\n\027enable_message_deletion\030\001 \001(\010" +
-      "H\000R\025enableMessageDeletion\210\001\001\0225\n\024enable_f" +
-      "ile_deletion\030\002 \001(\010H\001R\022enableFileDeletion" +
-      "\210\001\001\0229\n\026enable_boards_deletion\030\003 \001(\010H\002R\024e" +
-      "nableBoardsDeletion\210\001\001\022;\n\027message_retent" +
-      "ion_hours\030\004 \001(\005H\003R\025messageRetentionHours" +
-      "\210\001\001\0225\n\024file_retention_hours\030\005 \001(\005H\004R\022fil" +
-      "eRetentionHours\210\001\001\0227\n\025boards_retention_d" +
-      "ays\030\006 \001(\005H\005R\023boardsRetentionDays\210\001\001\022:\n\027d" +
-      "eletion_job_start_time\030\007 \001(\tH\006R\024deletion" +
-      "JobStartTime\210\001\001\022\"\n\nbatch_size\030\010 \001(\005H\007R\tb" +
-      "atchSize\210\001\001\022N\n!time_between_batches_mill" +
-      "iseconds\030\t \001(\005H\010R\036timeBetweenBatchesMill" +
-      "iseconds\210\001\001\022<\n\030retention_ids_batch_size\030" +
-      "\n \001(\005H\tR\025retentionIdsBatchSize\210\001\001B\032\n\030_en" +
-      "able_message_deletionB\027\n\025_enable_file_de" +
-      "letionB\031\n\027_enable_boards_deletionB\032\n\030_me" +
-      "ssage_retention_hoursB\027\n\025_file_retention" +
-      "_hoursB\030\n\026_boards_retention_daysB\032\n\030_del" +
-      "etion_job_start_timeB\r\n\013_batch_sizeB$\n\"_" +
-      "time_between_batches_millisecondsB\033\n\031_re" +
-      "tention_ids_batch_size\"\264\002\n\020ConfigImagePr" +
-      "oxy\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022-\n\020imag" +
-      "e_proxy_type\030\002 \001(\tH\001R\016imageProxyType\210\001\001\022" +
-      "8\n\026remote_image_proxy_url\030\003 \001(\tH\002R\023remot" +
-      "eImageProxyUrl\210\001\001\022@\n\032remote_image_proxy_" +
-      "options\030\004 \001(\tH\003R\027remoteImageProxyOptions" +
-      "\210\001\001B\t\n\007_enableB\023\n\021_image_proxy_typeB\031\n\027_" +
-      "remote_image_proxy_urlB\035\n\033_remote_image_" +
-      "proxy_options\"\373\010\n\006Config\022)\n\004main\030\001 \001(\0132\025" +
-      ".common.v1.ConfigMainR\004main\0225\n\010services\030" +
-      "\002 \001(\0132\031.common.v1.ConfigServicesR\010servic" +
-      "es\0225\n\010security\030\003 \001(\0132\031.common.v1.ConfigS" +
-      "ecurityR\010security\022,\n\005cache\030\004 \001(\0132\026.commo" +
-      "n.v1.CacheConfigR\005cache\0222\n\007metrics\030\005 \001(\013" +
-      "2\030.common.v1.ConfigMetricsR\007metrics\022&\n\003s" +
-      "so\030\006 \001(\0132\024.common.v1.ConfigSSOR\003sso\022&\n\003s" +
-      "ql\030\007 \001(\0132\024.common.v1.ConfigSqlR\003sql\0225\n\010p" +
-      "assword\030\010 \001(\0132\031.common.v1.ConfigPassword" +
-      "R\010password\022)\n\004file\030\t \001(\0132\025.common.v1.Con" +
-      "figFileR\004file\022,\n\005email\030\n \001(\0132\026.common.v1" +
-      ".ConfigEmailR\005email\0229\n\nrate_limit\030\013 \001(\0132" +
-      "\032.common.v1.ConfigRateLimitR\trateLimit\0222" +
-      "\n\007privacy\030\014 \001(\0132\030.common.v1.ConfigPrivac" +
-      "yR\007privacy\0222\n\007support\030\r \001(\0132\030.common.v1." +
-      "ConfigSupportR\007support\022A\n\014localization\030\016" +
-      " \001(\0132\035.common.v1.ConfigLocalizationR\014loc" +
-      "alization\022)\n\004ldap\030\017 \001(\0132\025.common.v1.Conf" +
-      "igLdapR\004ldap\022)\n\004saml\030\020 \001(\0132\025.common.v1.C" +
-      "onfigSamlR\004saml\0229\n\nnative_app\030\021 \001(\0132\032.co" +
-      "mmon.v1.ConfigNativeAppR\tnativeApp\022>\n\013me" +
-      "ilisearch\030\022 \001(\0132\034.common.v1.ConfigMeilis" +
-      "earchR\013meilisearch\022,\n\005bleve\030\023 \001(\0132\026.comm" +
-      "on.v1.ConfigBleveR\005bleve\022E\n\016data_retenti" +
-      "on\030\024 \001(\0132\036.common.v1.ConfigDataRetention" +
-      "R\rdataRetention\022<\n\013image_proxy\030\025 \001(\0132\033.c" +
-      "ommon.v1.ConfigImageProxyR\nimageProxy\022,\n" +
-      "\005oauth\030\026 \001(\0132\026.common.v1.ConfigOAuthR\005oa" +
-      "uth\"\022\n\020ConfigGetRequest\"u\n\021ConfigGetResp" +
-      "onse\022\'\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R" +
-      "\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErro" +
-      "rH\000R\005errorB\n\n\010response\"@\n\023ConfigUpdateRe" +
-      "quest\022)\n\006config\030\001 \001(\0132\021.common.v1.Config" +
-      "R\006config\"x\n\024ConfigUpdateResponse\022\'\n\004data" +
-      "\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005err" +
-      "or\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n" +
-      "\n\010response\"z\n\026ConfigListenerResponse\022\'\n\004" +
-      "data\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n" +
-      "\005error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005err" +
-      "orB\n\n\010response\"4\n\025ConfigListenerRequest\022" +
-      "\033\n\tclient_id\030\001 \001(\tR\010clientIdBq\n\032org.mega" +
-      "commerce.common.v1B\013ConfigProtoZCgithub." +
-      "com/ahmad-khatib0-org/megacommerce-proto" +
-      "/gen/go/common/v1;v1\370\001\001b\006proto3"
+      "k_protection\"\332\010\n\021ConfigMeilisearch\022 \n\013se" +
+      "rver_urls\030\001 \003(\tR\013server_urls\022\"\n\nmaster_k" +
+      "ey\030\002 \001(\tH\000R\tmasterKey\210\001\001\022,\n\017enable_index" +
+      "ing\030\003 \001(\010H\001R\016enableIndexing\210\001\001\022.\n\020enable" +
+      "_searching\030\004 \001(\010H\002R\017enableSearching\210\001\001\0224" +
+      "\n\023enable_autocomplete\030\005 \001(\010H\003R\022enableAut" +
+      "ocomplete\210\001\001\022,\n\017max_concurrency\030\006 \001(\005H\004R" +
+      "\016maxConcurrency\210\001\001\022;\n\027request_timeout_se" +
+      "conds\030\007 \001(\005H\005R\025requestTimeoutSeconds\210\001\001\022" +
+      "&\n\014index_prefix\030\010 \001(\tH\006R\013indexPrefix\210\001\001\022" +
+      "-\n\020search_cutoff_ms\030\t \001(\005H\007R\016searchCutof" +
+      "fMs\210\001\001\0227\n\025enable_typo_tolerance\030\n \001(\010H\010R" +
+      "\023enableTypoTolerance\210\001\001\022!\n\014kafka_broker\030" +
+      "\013 \001(\tR\013kafkaBroker\022$\n\016kafka_group_id\030\014 \001" +
+      "(\tR\014kafkaGroupId\022\037\n\013kafak_topic\030\r \001(\tR\nk" +
+      "afakTopic\022&\n\017kafak_topic_dlq\030\016 \001(\tR\rkafa" +
+      "kTopicDlq\022,\n\020task_max_wait_ms\030\017 \001(\005H\tR\rt" +
+      "askMaxWaitMs\210\001\001\022-\n\020task_max_retries\030\020 \001(" +
+      "\005H\nR\016taskMaxRetries\210\001\001\0224\n\024task_backoff_b" +
+      "ase_ms\030\021 \001(\005H\013R\021taskBackoffBaseMs\210\001\001\0221\n\022" +
+      "shutdown_wait_secs\030\022 \001(\005H\014R\020shutdownWait" +
+      "Secs\210\001\001B\r\n\013_master_keyB\022\n\020_enable_indexi" +
+      "ngB\023\n\021_enable_searchingB\026\n\024_enable_autoc" +
+      "ompleteB\022\n\020_max_concurrencyB\032\n\030_request_" +
+      "timeout_secondsB\017\n\r_index_prefixB\023\n\021_sea" +
+      "rch_cutoff_msB\030\n\026_enable_typo_toleranceB" +
+      "\023\n\021_task_max_wait_msB\023\n\021_task_max_retrie" +
+      "sB\027\n\025_task_backoff_base_msB\025\n\023_shutdown_" +
+      "wait_secs\"\272\003\n\013ConfigBleve\022 \n\tindex_dir\030\001" +
+      " \001(\tH\000R\010indexDir\210\001\001\022,\n\017enable_indexing\030\002" +
+      " \001(\010H\001R\016enableIndexing\210\001\001\022.\n\020enable_sear" +
+      "ching\030\003 \001(\010H\002R\017enableSearching\210\001\001\0224\n\023ena" +
+      "ble_autocomplete\030\004 \001(\010H\003R\022enableAutocomp" +
+      "lete\210\001\001\022M\n!bulk_indexing_time_window_sec" +
+      "onds\030\005 \001(\005H\004R\035bulkIndexingTimeWindowSeco" +
+      "nds\210\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210" +
+      "\001\001B\014\n\n_index_dirB\022\n\020_enable_indexingB\023\n\021" +
+      "_enable_searchingB\026\n\024_enable_autocomplet" +
+      "eB$\n\"_bulk_indexing_time_window_secondsB" +
+      "\r\n\013_batch_size\"\354\006\n\023ConfigDataRetention\022;" +
+      "\n\027enable_message_deletion\030\001 \001(\010H\000R\025enabl" +
+      "eMessageDeletion\210\001\001\0225\n\024enable_file_delet" +
+      "ion\030\002 \001(\010H\001R\022enableFileDeletion\210\001\001\0229\n\026en" +
+      "able_boards_deletion\030\003 \001(\010H\002R\024enableBoar" +
+      "dsDeletion\210\001\001\022;\n\027message_retention_hours" +
+      "\030\004 \001(\005H\003R\025messageRetentionHours\210\001\001\0225\n\024fi" +
+      "le_retention_hours\030\005 \001(\005H\004R\022fileRetentio" +
+      "nHours\210\001\001\0227\n\025boards_retention_days\030\006 \001(\005" +
+      "H\005R\023boardsRetentionDays\210\001\001\022:\n\027deletion_j" +
+      "ob_start_time\030\007 \001(\tH\006R\024deletionJobStartT" +
+      "ime\210\001\001\022\"\n\nbatch_size\030\010 \001(\005H\007R\tbatchSize\210" +
+      "\001\001\022N\n!time_between_batches_milliseconds\030" +
+      "\t \001(\005H\010R\036timeBetweenBatchesMilliseconds\210" +
+      "\001\001\022<\n\030retention_ids_batch_size\030\n \001(\005H\tR\025" +
+      "retentionIdsBatchSize\210\001\001B\032\n\030_enable_mess" +
+      "age_deletionB\027\n\025_enable_file_deletionB\031\n" +
+      "\027_enable_boards_deletionB\032\n\030_message_ret" +
+      "ention_hoursB\027\n\025_file_retention_hoursB\030\n" +
+      "\026_boards_retention_daysB\032\n\030_deletion_job" +
+      "_start_timeB\r\n\013_batch_sizeB$\n\"_time_betw" +
+      "een_batches_millisecondsB\033\n\031_retention_i" +
+      "ds_batch_size\"\264\002\n\020ConfigImageProxy\022\033\n\006en" +
+      "able\030\001 \001(\010H\000R\006enable\210\001\001\022-\n\020image_proxy_t" +
+      "ype\030\002 \001(\tH\001R\016imageProxyType\210\001\001\0228\n\026remote" +
+      "_image_proxy_url\030\003 \001(\tH\002R\023remoteImagePro" +
+      "xyUrl\210\001\001\022@\n\032remote_image_proxy_options\030\004" +
+      " \001(\tH\003R\027remoteImageProxyOptions\210\001\001B\t\n\007_e" +
+      "nableB\023\n\021_image_proxy_typeB\031\n\027_remote_im" +
+      "age_proxy_urlB\035\n\033_remote_image_proxy_opt" +
+      "ions\"\373\010\n\006Config\022)\n\004main\030\001 \001(\0132\025.common.v" +
+      "1.ConfigMainR\004main\0225\n\010services\030\002 \001(\0132\031.c" +
+      "ommon.v1.ConfigServicesR\010services\0225\n\010sec" +
+      "urity\030\003 \001(\0132\031.common.v1.ConfigSecurityR\010" +
+      "security\022,\n\005cache\030\004 \001(\0132\026.common.v1.Cach" +
+      "eConfigR\005cache\0222\n\007metrics\030\005 \001(\0132\030.common" +
+      ".v1.ConfigMetricsR\007metrics\022&\n\003sso\030\006 \001(\0132" +
+      "\024.common.v1.ConfigSSOR\003sso\022&\n\003sql\030\007 \001(\0132" +
+      "\024.common.v1.ConfigSqlR\003sql\0225\n\010password\030\010" +
+      " \001(\0132\031.common.v1.ConfigPasswordR\010passwor" +
+      "d\022)\n\004file\030\t \001(\0132\025.common.v1.ConfigFileR\004" +
+      "file\022,\n\005email\030\n \001(\0132\026.common.v1.ConfigEm" +
+      "ailR\005email\0229\n\nrate_limit\030\013 \001(\0132\032.common." +
+      "v1.ConfigRateLimitR\trateLimit\0222\n\007privacy" +
+      "\030\014 \001(\0132\030.common.v1.ConfigPrivacyR\007privac" +
+      "y\0222\n\007support\030\r \001(\0132\030.common.v1.ConfigSup" +
+      "portR\007support\022A\n\014localization\030\016 \001(\0132\035.co" +
+      "mmon.v1.ConfigLocalizationR\014localization" +
+      "\022)\n\004ldap\030\017 \001(\0132\025.common.v1.ConfigLdapR\004l" +
+      "dap\022)\n\004saml\030\020 \001(\0132\025.common.v1.ConfigSaml" +
+      "R\004saml\0229\n\nnative_app\030\021 \001(\0132\032.common.v1.C" +
+      "onfigNativeAppR\tnativeApp\022>\n\013meilisearch" +
+      "\030\022 \001(\0132\034.common.v1.ConfigMeilisearchR\013me" +
+      "ilisearch\022,\n\005bleve\030\023 \001(\0132\026.common.v1.Con" +
+      "figBleveR\005bleve\022E\n\016data_retention\030\024 \001(\0132" +
+      "\036.common.v1.ConfigDataRetentionR\rdataRet" +
+      "ention\022<\n\013image_proxy\030\025 \001(\0132\033.common.v1." +
+      "ConfigImageProxyR\nimageProxy\022,\n\005oauth\030\026 " +
+      "\001(\0132\026.common.v1.ConfigOAuthR\005oauth\"\022\n\020Co" +
+      "nfigGetRequest\"u\n\021ConfigGetResponse\022\'\n\004d" +
+      "ata\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005" +
+      "error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005erro" +
+      "rB\n\n\010response\"@\n\023ConfigUpdateRequest\022)\n\006" +
+      "config\030\001 \001(\0132\021.common.v1.ConfigR\006config\"" +
+      "x\n\024ConfigUpdateResponse\022\'\n\004data\030\001 \001(\0132\021." +
+      "common.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132" +
+      "\023.shared.v1.AppErrorH\000R\005errorB\n\n\010respons" +
+      "e\"z\n\026ConfigListenerResponse\022\'\n\004data\030\001 \001(" +
+      "\0132\021.common.v1.ConfigH\000R\004data\022+\n\005error\030\002 " +
+      "\001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n\010res" +
+      "ponse\"4\n\025ConfigListenerRequest\022\033\n\tclient" +
+      "_id\030\001 \001(\tR\010clientIdBq\n\032org.megacommerce." +
+      "common.v1B\013ConfigProtoZCgithub.com/ahmad" +
+      "-khatib0-org/megacommerce-proto/gen/go/c" +
+      "ommon/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -55933,7 +57132,7 @@ public final class ConfigProto {
     internal_static_common_v1_ConfigMeilisearch_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_common_v1_ConfigMeilisearch_descriptor,
-        new java.lang.String[] { "ServerUrl", "MasterKey", "EnableIndexing", "EnableSearching", "EnableAutocomplete", "BatchSize", "RequestTimeoutSeconds", "IndexPrefix", "SearchCutoffMs", "EnableTypoTolerance", });
+        new java.lang.String[] { "ServerUrls", "MasterKey", "EnableIndexing", "EnableSearching", "EnableAutocomplete", "MaxConcurrency", "RequestTimeoutSeconds", "IndexPrefix", "SearchCutoffMs", "EnableTypoTolerance", "KafkaBroker", "KafkaGroupId", "KafakTopic", "KafakTopicDlq", "TaskMaxWaitMs", "TaskMaxRetries", "TaskBackoffBaseMs", "ShutdownWaitSecs", });
     internal_static_common_v1_ConfigBleve_descriptor =
       getDescriptor().getMessageTypes().get(19);
     internal_static_common_v1_ConfigBleve_fieldAccessorTable = new

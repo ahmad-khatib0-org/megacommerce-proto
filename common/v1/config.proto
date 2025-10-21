@@ -328,19 +328,33 @@ message ConfigNativeApp {
 }
 
 message ConfigMeilisearch {
-  optional string server_url = 1 [json_name = "server_url"];
+  repeated string server_urls = 1 [json_name = "server_urls"];
   optional string master_key = 2; // Meilisearch-specific authentication
   optional bool enable_indexing = 3;
   optional bool enable_searching = 4;
   optional bool enable_autocomplete = 5;
 
-  optional int32 batch_size = 6;
+  // concurrency limiter
+  optional int32 max_concurrency = 6;
   optional int32 request_timeout_seconds = 7;
 
   // Meilisearch-specific options
   optional string index_prefix = 8;
   optional int32 search_cutoff_ms = 9; // performance tuning
   optional bool enable_typo_tolerance = 10;
+
+  string kafka_broker = 11;
+  string kafka_group_id = 12;
+  string kafak_topic = 13;
+  string kafak_topic_dlq = 14;
+  // how long to wait for Meili task to finish (ms)
+  optional int32 task_max_wait_ms = 15;
+  // per-endpoint retry attempts
+  optional int32 task_max_retries = 16;
+  // initial backoff (ms)
+  optional int32 task_backoff_base_ms = 17;
+  // how long to wait for in-flight tasks on shutdown
+  optional int32 shutdown_wait_secs = 18;
 }
 
 message ConfigBleve {

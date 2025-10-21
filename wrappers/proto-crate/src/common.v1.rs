@@ -597,8 +597,8 @@ pub struct ConfigNativeApp {
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ConfigMeilisearch {
-    #[prost(string, optional, tag = "1")]
-    pub server_url: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, repeated, tag = "1")]
+    pub server_urls: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
     /// Meilisearch-specific authentication
     #[prost(string, optional, tag = "2")]
     pub master_key: ::core::option::Option<::prost::alloc::string::String>,
@@ -608,8 +608,9 @@ pub struct ConfigMeilisearch {
     pub enable_searching: ::core::option::Option<bool>,
     #[prost(bool, optional, tag = "5")]
     pub enable_autocomplete: ::core::option::Option<bool>,
+    /// concurrency limiter
     #[prost(int32, optional, tag = "6")]
-    pub batch_size: ::core::option::Option<i32>,
+    pub max_concurrency: ::core::option::Option<i32>,
     #[prost(int32, optional, tag = "7")]
     pub request_timeout_seconds: ::core::option::Option<i32>,
     /// Meilisearch-specific options
@@ -620,6 +621,26 @@ pub struct ConfigMeilisearch {
     pub search_cutoff_ms: ::core::option::Option<i32>,
     #[prost(bool, optional, tag = "10")]
     pub enable_typo_tolerance: ::core::option::Option<bool>,
+    #[prost(string, tag = "11")]
+    pub kafka_broker: ::prost::alloc::string::String,
+    #[prost(string, tag = "12")]
+    pub kafka_group_id: ::prost::alloc::string::String,
+    #[prost(string, tag = "13")]
+    pub kafak_topic: ::prost::alloc::string::String,
+    #[prost(string, tag = "14")]
+    pub kafak_topic_dlq: ::prost::alloc::string::String,
+    /// how long to wait for Meili task to finish (ms)
+    #[prost(int32, optional, tag = "15")]
+    pub task_max_wait_ms: ::core::option::Option<i32>,
+    /// per-endpoint retry attempts
+    #[prost(int32, optional, tag = "16")]
+    pub task_max_retries: ::core::option::Option<i32>,
+    /// initial backoff (ms)
+    #[prost(int32, optional, tag = "17")]
+    pub task_backoff_base_ms: ::core::option::Option<i32>,
+    /// how long to wait for in-flight tasks on shutdown
+    #[prost(int32, optional, tag = "18")]
+    pub shutdown_wait_secs: ::core::option::Option<i32>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

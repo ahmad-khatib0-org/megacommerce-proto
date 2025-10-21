@@ -601,22 +601,36 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
 inline constexpr ConfigMeilisearch::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
-        server_url_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
+        server_urls_{},
         master_key_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         index_prefix_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
+        kafka_broker_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        kafka_group_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        kafak_topic_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        kafak_topic_dlq_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
         enable_indexing_{false},
         enable_searching_{false},
         enable_autocomplete_{false},
         enable_typo_tolerance_{false},
-        batch_size_{0},
+        max_concurrency_{0},
         request_timeout_seconds_{0},
-        search_cutoff_ms_{0} {}
+        search_cutoff_ms_{0},
+        task_max_wait_ms_{0},
+        task_max_retries_{0},
+        task_backoff_base_ms_{0},
+        shutdown_wait_secs_{0} {}
 
 template <typename>
 PROTOBUF_CONSTEXPR ConfigMeilisearch::ConfigMeilisearch(::_pbi::ConstantInitialized)
@@ -1838,27 +1852,43 @@ const ::uint32_t
         6,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigMeilisearch, _impl_._has_bits_),
-        13, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigMeilisearch, _impl_.server_url_),
+        21, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigMeilisearch, _impl_.server_urls_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigMeilisearch, _impl_.master_key_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigMeilisearch, _impl_.enable_indexing_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigMeilisearch, _impl_.enable_searching_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigMeilisearch, _impl_.enable_autocomplete_),
-        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigMeilisearch, _impl_.batch_size_),
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigMeilisearch, _impl_.max_concurrency_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigMeilisearch, _impl_.request_timeout_seconds_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigMeilisearch, _impl_.index_prefix_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigMeilisearch, _impl_.search_cutoff_ms_),
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigMeilisearch, _impl_.enable_typo_tolerance_),
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigMeilisearch, _impl_.kafka_broker_),
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigMeilisearch, _impl_.kafka_group_id_),
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigMeilisearch, _impl_.kafak_topic_),
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigMeilisearch, _impl_.kafak_topic_dlq_),
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigMeilisearch, _impl_.task_max_wait_ms_),
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigMeilisearch, _impl_.task_max_retries_),
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigMeilisearch, _impl_.task_backoff_base_ms_),
+        PROTOBUF_FIELD_OFFSET(::common::v1::ConfigMeilisearch, _impl_.shutdown_wait_secs_),
+        ~0u,
         0,
+        6,
+        7,
+        8,
+        10,
+        11,
         1,
+        12,
+        9,
+        2,
         3,
         4,
         5,
-        7,
-        8,
-        2,
-        9,
-        6,
+        13,
+        14,
+        15,
+        16,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::common::v1::ConfigBleve, _impl_._has_bits_),
         9, // hasbit index offset
@@ -2004,16 +2034,16 @@ static const ::_pbi::MigrationSchema
         {448, sizeof(::common::v1::ConfigSaml)},
         {517, sizeof(::common::v1::ConfigNativeApp)},
         {536, sizeof(::common::v1::ConfigMeilisearch)},
-        {559, sizeof(::common::v1::ConfigBleve)},
-        {574, sizeof(::common::v1::ConfigDataRetention)},
-        {597, sizeof(::common::v1::ConfigImageProxy)},
-        {608, sizeof(::common::v1::Config)},
-        {655, sizeof(::common::v1::ConfigGetRequest)},
-        {656, sizeof(::common::v1::ConfigGetResponse)},
-        {661, sizeof(::common::v1::ConfigUpdateRequest)},
-        {666, sizeof(::common::v1::ConfigUpdateResponse)},
-        {671, sizeof(::common::v1::ConfigListenerResponse)},
-        {676, sizeof(::common::v1::ConfigListenerRequest)},
+        {575, sizeof(::common::v1::ConfigBleve)},
+        {590, sizeof(::common::v1::ConfigDataRetention)},
+        {613, sizeof(::common::v1::ConfigImageProxy)},
+        {624, sizeof(::common::v1::Config)},
+        {671, sizeof(::common::v1::ConfigGetRequest)},
+        {672, sizeof(::common::v1::ConfigGetResponse)},
+        {677, sizeof(::common::v1::ConfigUpdateRequest)},
+        {682, sizeof(::common::v1::ConfigUpdateResponse)},
+        {687, sizeof(::common::v1::ConfigListenerResponse)},
+        {692, sizeof(::common::v1::ConfigListenerRequest)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::common::v1::_ConfigMain_default_instance_._instance,
@@ -2522,109 +2552,120 @@ const char descriptor_table_protodef_common_2fv1_2fconfig_2eproto[] ABSL_ATTRIBU
     "load_linkB\032\n\030_mobile_external_browserB\033\n"
     "\031_mobile_enable_biometricsB \n\036_mobile_pr"
     "event_screen_captureB\036\n\034_mobile_jailbrea"
-    "k_protection\"\253\005\n\021ConfigMeilisearch\022#\n\nse"
-    "rver_url\030\001 \001(\tH\000R\nserver_url\210\001\001\022\"\n\nmaste"
-    "r_key\030\002 \001(\tH\001R\tmasterKey\210\001\001\022,\n\017enable_in"
-    "dexing\030\003 \001(\010H\002R\016enableIndexing\210\001\001\022.\n\020ena"
-    "ble_searching\030\004 \001(\010H\003R\017enableSearching\210\001"
-    "\001\0224\n\023enable_autocomplete\030\005 \001(\010H\004R\022enable"
-    "Autocomplete\210\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tb"
-    "atchSize\210\001\001\022;\n\027request_timeout_seconds\030\007"
-    " \001(\005H\006R\025requestTimeoutSeconds\210\001\001\022&\n\014inde"
-    "x_prefix\030\010 \001(\tH\007R\013indexPrefix\210\001\001\022-\n\020sear"
-    "ch_cutoff_ms\030\t \001(\005H\010R\016searchCutoffMs\210\001\001\022"
-    "7\n\025enable_typo_tolerance\030\n \001(\010H\tR\023enable"
-    "TypoTolerance\210\001\001B\r\n\013_server_urlB\r\n\013_mast"
-    "er_keyB\022\n\020_enable_indexingB\023\n\021_enable_se"
-    "archingB\026\n\024_enable_autocompleteB\r\n\013_batc"
-    "h_sizeB\032\n\030_request_timeout_secondsB\017\n\r_i"
-    "ndex_prefixB\023\n\021_search_cutoff_msB\030\n\026_ena"
-    "ble_typo_tolerance\"\272\003\n\013ConfigBleve\022 \n\tin"
-    "dex_dir\030\001 \001(\tH\000R\010indexDir\210\001\001\022,\n\017enable_i"
-    "ndexing\030\002 \001(\010H\001R\016enableIndexing\210\001\001\022.\n\020en"
-    "able_searching\030\003 \001(\010H\002R\017enableSearching\210"
-    "\001\001\0224\n\023enable_autocomplete\030\004 \001(\010H\003R\022enabl"
-    "eAutocomplete\210\001\001\022M\n!bulk_indexing_time_w"
-    "indow_seconds\030\005 \001(\005H\004R\035bulkIndexingTimeW"
-    "indowSeconds\210\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tb"
-    "atchSize\210\001\001B\014\n\n_index_dirB\022\n\020_enable_ind"
-    "exingB\023\n\021_enable_searchingB\026\n\024_enable_au"
-    "tocompleteB$\n\"_bulk_indexing_time_window"
-    "_secondsB\r\n\013_batch_size\"\354\006\n\023ConfigDataRe"
-    "tention\022;\n\027enable_message_deletion\030\001 \001(\010"
-    "H\000R\025enableMessageDeletion\210\001\001\0225\n\024enable_f"
-    "ile_deletion\030\002 \001(\010H\001R\022enableFileDeletion"
-    "\210\001\001\0229\n\026enable_boards_deletion\030\003 \001(\010H\002R\024e"
-    "nableBoardsDeletion\210\001\001\022;\n\027message_retent"
-    "ion_hours\030\004 \001(\005H\003R\025messageRetentionHours"
-    "\210\001\001\0225\n\024file_retention_hours\030\005 \001(\005H\004R\022fil"
-    "eRetentionHours\210\001\001\0227\n\025boards_retention_d"
-    "ays\030\006 \001(\005H\005R\023boardsRetentionDays\210\001\001\022:\n\027d"
-    "eletion_job_start_time\030\007 \001(\tH\006R\024deletion"
-    "JobStartTime\210\001\001\022\"\n\nbatch_size\030\010 \001(\005H\007R\tb"
-    "atchSize\210\001\001\022N\n!time_between_batches_mill"
-    "iseconds\030\t \001(\005H\010R\036timeBetweenBatchesMill"
-    "iseconds\210\001\001\022<\n\030retention_ids_batch_size\030"
-    "\n \001(\005H\tR\025retentionIdsBatchSize\210\001\001B\032\n\030_en"
-    "able_message_deletionB\027\n\025_enable_file_de"
-    "letionB\031\n\027_enable_boards_deletionB\032\n\030_me"
-    "ssage_retention_hoursB\027\n\025_file_retention"
-    "_hoursB\030\n\026_boards_retention_daysB\032\n\030_del"
-    "etion_job_start_timeB\r\n\013_batch_sizeB$\n\"_"
-    "time_between_batches_millisecondsB\033\n\031_re"
-    "tention_ids_batch_size\"\264\002\n\020ConfigImagePr"
-    "oxy\022\033\n\006enable\030\001 \001(\010H\000R\006enable\210\001\001\022-\n\020imag"
-    "e_proxy_type\030\002 \001(\tH\001R\016imageProxyType\210\001\001\022"
-    "8\n\026remote_image_proxy_url\030\003 \001(\tH\002R\023remot"
-    "eImageProxyUrl\210\001\001\022@\n\032remote_image_proxy_"
-    "options\030\004 \001(\tH\003R\027remoteImageProxyOptions"
-    "\210\001\001B\t\n\007_enableB\023\n\021_image_proxy_typeB\031\n\027_"
-    "remote_image_proxy_urlB\035\n\033_remote_image_"
-    "proxy_options\"\373\010\n\006Config\022)\n\004main\030\001 \001(\0132\025"
-    ".common.v1.ConfigMainR\004main\0225\n\010services\030"
-    "\002 \001(\0132\031.common.v1.ConfigServicesR\010servic"
-    "es\0225\n\010security\030\003 \001(\0132\031.common.v1.ConfigS"
-    "ecurityR\010security\022,\n\005cache\030\004 \001(\0132\026.commo"
-    "n.v1.CacheConfigR\005cache\0222\n\007metrics\030\005 \001(\013"
-    "2\030.common.v1.ConfigMetricsR\007metrics\022&\n\003s"
-    "so\030\006 \001(\0132\024.common.v1.ConfigSSOR\003sso\022&\n\003s"
-    "ql\030\007 \001(\0132\024.common.v1.ConfigSqlR\003sql\0225\n\010p"
-    "assword\030\010 \001(\0132\031.common.v1.ConfigPassword"
-    "R\010password\022)\n\004file\030\t \001(\0132\025.common.v1.Con"
-    "figFileR\004file\022,\n\005email\030\n \001(\0132\026.common.v1"
-    ".ConfigEmailR\005email\0229\n\nrate_limit\030\013 \001(\0132"
-    "\032.common.v1.ConfigRateLimitR\trateLimit\0222"
-    "\n\007privacy\030\014 \001(\0132\030.common.v1.ConfigPrivac"
-    "yR\007privacy\0222\n\007support\030\r \001(\0132\030.common.v1."
-    "ConfigSupportR\007support\022A\n\014localization\030\016"
-    " \001(\0132\035.common.v1.ConfigLocalizationR\014loc"
-    "alization\022)\n\004ldap\030\017 \001(\0132\025.common.v1.Conf"
-    "igLdapR\004ldap\022)\n\004saml\030\020 \001(\0132\025.common.v1.C"
-    "onfigSamlR\004saml\0229\n\nnative_app\030\021 \001(\0132\032.co"
-    "mmon.v1.ConfigNativeAppR\tnativeApp\022>\n\013me"
-    "ilisearch\030\022 \001(\0132\034.common.v1.ConfigMeilis"
-    "earchR\013meilisearch\022,\n\005bleve\030\023 \001(\0132\026.comm"
-    "on.v1.ConfigBleveR\005bleve\022E\n\016data_retenti"
-    "on\030\024 \001(\0132\036.common.v1.ConfigDataRetention"
-    "R\rdataRetention\022<\n\013image_proxy\030\025 \001(\0132\033.c"
-    "ommon.v1.ConfigImageProxyR\nimageProxy\022,\n"
-    "\005oauth\030\026 \001(\0132\026.common.v1.ConfigOAuthR\005oa"
-    "uth\"\022\n\020ConfigGetRequest\"u\n\021ConfigGetResp"
-    "onse\022\'\n\004data\030\001 \001(\0132\021.common.v1.ConfigH\000R"
-    "\004data\022+\n\005error\030\002 \001(\0132\023.shared.v1.AppErro"
-    "rH\000R\005errorB\n\n\010response\"@\n\023ConfigUpdateRe"
-    "quest\022)\n\006config\030\001 \001(\0132\021.common.v1.Config"
-    "R\006config\"x\n\024ConfigUpdateResponse\022\'\n\004data"
-    "\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005err"
-    "or\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n"
-    "\n\010response\"z\n\026ConfigListenerResponse\022\'\n\004"
-    "data\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n"
-    "\005error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005err"
-    "orB\n\n\010response\"4\n\025ConfigListenerRequest\022"
-    "\033\n\tclient_id\030\001 \001(\tR\010clientIdBq\n\032org.mega"
-    "commerce.common.v1B\013ConfigProtoZCgithub."
-    "com/ahmad-khatib0-org/megacommerce-proto"
-    "/gen/go/common/v1;v1\370\001\001b\006proto3"
+    "k_protection\"\332\010\n\021ConfigMeilisearch\022 \n\013se"
+    "rver_urls\030\001 \003(\tR\013server_urls\022\"\n\nmaster_k"
+    "ey\030\002 \001(\tH\000R\tmasterKey\210\001\001\022,\n\017enable_index"
+    "ing\030\003 \001(\010H\001R\016enableIndexing\210\001\001\022.\n\020enable"
+    "_searching\030\004 \001(\010H\002R\017enableSearching\210\001\001\0224"
+    "\n\023enable_autocomplete\030\005 \001(\010H\003R\022enableAut"
+    "ocomplete\210\001\001\022,\n\017max_concurrency\030\006 \001(\005H\004R"
+    "\016maxConcurrency\210\001\001\022;\n\027request_timeout_se"
+    "conds\030\007 \001(\005H\005R\025requestTimeoutSeconds\210\001\001\022"
+    "&\n\014index_prefix\030\010 \001(\tH\006R\013indexPrefix\210\001\001\022"
+    "-\n\020search_cutoff_ms\030\t \001(\005H\007R\016searchCutof"
+    "fMs\210\001\001\0227\n\025enable_typo_tolerance\030\n \001(\010H\010R"
+    "\023enableTypoTolerance\210\001\001\022!\n\014kafka_broker\030"
+    "\013 \001(\tR\013kafkaBroker\022$\n\016kafka_group_id\030\014 \001"
+    "(\tR\014kafkaGroupId\022\037\n\013kafak_topic\030\r \001(\tR\nk"
+    "afakTopic\022&\n\017kafak_topic_dlq\030\016 \001(\tR\rkafa"
+    "kTopicDlq\022,\n\020task_max_wait_ms\030\017 \001(\005H\tR\rt"
+    "askMaxWaitMs\210\001\001\022-\n\020task_max_retries\030\020 \001("
+    "\005H\nR\016taskMaxRetries\210\001\001\0224\n\024task_backoff_b"
+    "ase_ms\030\021 \001(\005H\013R\021taskBackoffBaseMs\210\001\001\0221\n\022"
+    "shutdown_wait_secs\030\022 \001(\005H\014R\020shutdownWait"
+    "Secs\210\001\001B\r\n\013_master_keyB\022\n\020_enable_indexi"
+    "ngB\023\n\021_enable_searchingB\026\n\024_enable_autoc"
+    "ompleteB\022\n\020_max_concurrencyB\032\n\030_request_"
+    "timeout_secondsB\017\n\r_index_prefixB\023\n\021_sea"
+    "rch_cutoff_msB\030\n\026_enable_typo_toleranceB"
+    "\023\n\021_task_max_wait_msB\023\n\021_task_max_retrie"
+    "sB\027\n\025_task_backoff_base_msB\025\n\023_shutdown_"
+    "wait_secs\"\272\003\n\013ConfigBleve\022 \n\tindex_dir\030\001"
+    " \001(\tH\000R\010indexDir\210\001\001\022,\n\017enable_indexing\030\002"
+    " \001(\010H\001R\016enableIndexing\210\001\001\022.\n\020enable_sear"
+    "ching\030\003 \001(\010H\002R\017enableSearching\210\001\001\0224\n\023ena"
+    "ble_autocomplete\030\004 \001(\010H\003R\022enableAutocomp"
+    "lete\210\001\001\022M\n!bulk_indexing_time_window_sec"
+    "onds\030\005 \001(\005H\004R\035bulkIndexingTimeWindowSeco"
+    "nds\210\001\001\022\"\n\nbatch_size\030\006 \001(\005H\005R\tbatchSize\210"
+    "\001\001B\014\n\n_index_dirB\022\n\020_enable_indexingB\023\n\021"
+    "_enable_searchingB\026\n\024_enable_autocomplet"
+    "eB$\n\"_bulk_indexing_time_window_secondsB"
+    "\r\n\013_batch_size\"\354\006\n\023ConfigDataRetention\022;"
+    "\n\027enable_message_deletion\030\001 \001(\010H\000R\025enabl"
+    "eMessageDeletion\210\001\001\0225\n\024enable_file_delet"
+    "ion\030\002 \001(\010H\001R\022enableFileDeletion\210\001\001\0229\n\026en"
+    "able_boards_deletion\030\003 \001(\010H\002R\024enableBoar"
+    "dsDeletion\210\001\001\022;\n\027message_retention_hours"
+    "\030\004 \001(\005H\003R\025messageRetentionHours\210\001\001\0225\n\024fi"
+    "le_retention_hours\030\005 \001(\005H\004R\022fileRetentio"
+    "nHours\210\001\001\0227\n\025boards_retention_days\030\006 \001(\005"
+    "H\005R\023boardsRetentionDays\210\001\001\022:\n\027deletion_j"
+    "ob_start_time\030\007 \001(\tH\006R\024deletionJobStartT"
+    "ime\210\001\001\022\"\n\nbatch_size\030\010 \001(\005H\007R\tbatchSize\210"
+    "\001\001\022N\n!time_between_batches_milliseconds\030"
+    "\t \001(\005H\010R\036timeBetweenBatchesMilliseconds\210"
+    "\001\001\022<\n\030retention_ids_batch_size\030\n \001(\005H\tR\025"
+    "retentionIdsBatchSize\210\001\001B\032\n\030_enable_mess"
+    "age_deletionB\027\n\025_enable_file_deletionB\031\n"
+    "\027_enable_boards_deletionB\032\n\030_message_ret"
+    "ention_hoursB\027\n\025_file_retention_hoursB\030\n"
+    "\026_boards_retention_daysB\032\n\030_deletion_job"
+    "_start_timeB\r\n\013_batch_sizeB$\n\"_time_betw"
+    "een_batches_millisecondsB\033\n\031_retention_i"
+    "ds_batch_size\"\264\002\n\020ConfigImageProxy\022\033\n\006en"
+    "able\030\001 \001(\010H\000R\006enable\210\001\001\022-\n\020image_proxy_t"
+    "ype\030\002 \001(\tH\001R\016imageProxyType\210\001\001\0228\n\026remote"
+    "_image_proxy_url\030\003 \001(\tH\002R\023remoteImagePro"
+    "xyUrl\210\001\001\022@\n\032remote_image_proxy_options\030\004"
+    " \001(\tH\003R\027remoteImageProxyOptions\210\001\001B\t\n\007_e"
+    "nableB\023\n\021_image_proxy_typeB\031\n\027_remote_im"
+    "age_proxy_urlB\035\n\033_remote_image_proxy_opt"
+    "ions\"\373\010\n\006Config\022)\n\004main\030\001 \001(\0132\025.common.v"
+    "1.ConfigMainR\004main\0225\n\010services\030\002 \001(\0132\031.c"
+    "ommon.v1.ConfigServicesR\010services\0225\n\010sec"
+    "urity\030\003 \001(\0132\031.common.v1.ConfigSecurityR\010"
+    "security\022,\n\005cache\030\004 \001(\0132\026.common.v1.Cach"
+    "eConfigR\005cache\0222\n\007metrics\030\005 \001(\0132\030.common"
+    ".v1.ConfigMetricsR\007metrics\022&\n\003sso\030\006 \001(\0132"
+    "\024.common.v1.ConfigSSOR\003sso\022&\n\003sql\030\007 \001(\0132"
+    "\024.common.v1.ConfigSqlR\003sql\0225\n\010password\030\010"
+    " \001(\0132\031.common.v1.ConfigPasswordR\010passwor"
+    "d\022)\n\004file\030\t \001(\0132\025.common.v1.ConfigFileR\004"
+    "file\022,\n\005email\030\n \001(\0132\026.common.v1.ConfigEm"
+    "ailR\005email\0229\n\nrate_limit\030\013 \001(\0132\032.common."
+    "v1.ConfigRateLimitR\trateLimit\0222\n\007privacy"
+    "\030\014 \001(\0132\030.common.v1.ConfigPrivacyR\007privac"
+    "y\0222\n\007support\030\r \001(\0132\030.common.v1.ConfigSup"
+    "portR\007support\022A\n\014localization\030\016 \001(\0132\035.co"
+    "mmon.v1.ConfigLocalizationR\014localization"
+    "\022)\n\004ldap\030\017 \001(\0132\025.common.v1.ConfigLdapR\004l"
+    "dap\022)\n\004saml\030\020 \001(\0132\025.common.v1.ConfigSaml"
+    "R\004saml\0229\n\nnative_app\030\021 \001(\0132\032.common.v1.C"
+    "onfigNativeAppR\tnativeApp\022>\n\013meilisearch"
+    "\030\022 \001(\0132\034.common.v1.ConfigMeilisearchR\013me"
+    "ilisearch\022,\n\005bleve\030\023 \001(\0132\026.common.v1.Con"
+    "figBleveR\005bleve\022E\n\016data_retention\030\024 \001(\0132"
+    "\036.common.v1.ConfigDataRetentionR\rdataRet"
+    "ention\022<\n\013image_proxy\030\025 \001(\0132\033.common.v1."
+    "ConfigImageProxyR\nimageProxy\022,\n\005oauth\030\026 "
+    "\001(\0132\026.common.v1.ConfigOAuthR\005oauth\"\022\n\020Co"
+    "nfigGetRequest\"u\n\021ConfigGetResponse\022\'\n\004d"
+    "ata\030\001 \001(\0132\021.common.v1.ConfigH\000R\004data\022+\n\005"
+    "error\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005erro"
+    "rB\n\n\010response\"@\n\023ConfigUpdateRequest\022)\n\006"
+    "config\030\001 \001(\0132\021.common.v1.ConfigR\006config\""
+    "x\n\024ConfigUpdateResponse\022\'\n\004data\030\001 \001(\0132\021."
+    "common.v1.ConfigH\000R\004data\022+\n\005error\030\002 \001(\0132"
+    "\023.shared.v1.AppErrorH\000R\005errorB\n\n\010respons"
+    "e\"z\n\026ConfigListenerResponse\022\'\n\004data\030\001 \001("
+    "\0132\021.common.v1.ConfigH\000R\004data\022+\n\005error\030\002 "
+    "\001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n\n\010res"
+    "ponse\"4\n\025ConfigListenerRequest\022\033\n\tclient"
+    "_id\030\001 \001(\tR\010clientIdBq\n\032org.megacommerce."
+    "common.v1B\013ConfigProtoZCgithub.com/ahmad"
+    "-khatib0-org/megacommerce-proto/gen/go/c"
+    "ommon/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_common_2fv1_2fconfig_2eproto_deps[1] = {
@@ -2634,7 +2675,7 @@ static ::absl::once_flag descriptor_table_common_2fv1_2fconfig_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_common_2fv1_2fconfig_2eproto = {
     false,
     false,
-    23071,
+    23502,
     descriptor_table_protodef_common_2fv1_2fconfig_2eproto,
     "common/v1/config.proto",
     &descriptor_table_common_2fv1_2fconfig_2eproto_once,
@@ -13247,9 +13288,13 @@ PROTOBUF_NDEBUG_INLINE ConfigMeilisearch::Impl_::Impl_(
     const ::common::v1::ConfigMeilisearch& from_msg)
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
-        server_url_(arena, from.server_url_),
+        server_urls_{visibility, arena, from.server_urls_},
         master_key_(arena, from.master_key_),
-        index_prefix_(arena, from.index_prefix_) {}
+        index_prefix_(arena, from.index_prefix_),
+        kafka_broker_(arena, from.kafka_broker_),
+        kafka_group_id_(arena, from.kafka_group_id_),
+        kafak_topic_(arena, from.kafak_topic_),
+        kafak_topic_dlq_(arena, from.kafak_topic_dlq_) {}
 
 ConfigMeilisearch::ConfigMeilisearch(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -13268,9 +13313,9 @@ ConfigMeilisearch::ConfigMeilisearch(
                offsetof(Impl_, enable_indexing_),
            reinterpret_cast<const char *>(&from._impl_) +
                offsetof(Impl_, enable_indexing_),
-           offsetof(Impl_, search_cutoff_ms_) -
+           offsetof(Impl_, shutdown_wait_secs_) -
                offsetof(Impl_, enable_indexing_) +
-               sizeof(Impl_::search_cutoff_ms_));
+               sizeof(Impl_::shutdown_wait_secs_));
 
   // @@protoc_insertion_point(copy_constructor:common.v1.ConfigMeilisearch)
 }
@@ -13278,18 +13323,22 @@ PROTOBUF_NDEBUG_INLINE ConfigMeilisearch::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
-        server_url_(arena),
+        server_urls_{visibility, arena},
         master_key_(arena),
-        index_prefix_(arena) {}
+        index_prefix_(arena),
+        kafka_broker_(arena),
+        kafka_group_id_(arena),
+        kafak_topic_(arena),
+        kafak_topic_dlq_(arena) {}
 
 inline void ConfigMeilisearch::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
   ::memset(reinterpret_cast<char *>(&_impl_) +
                offsetof(Impl_, enable_indexing_),
            0,
-           offsetof(Impl_, search_cutoff_ms_) -
+           offsetof(Impl_, shutdown_wait_secs_) -
                offsetof(Impl_, enable_indexing_) +
-               sizeof(Impl_::search_cutoff_ms_));
+               sizeof(Impl_::shutdown_wait_secs_));
 }
 ConfigMeilisearch::~ConfigMeilisearch() {
   // @@protoc_insertion_point(destructor:common.v1.ConfigMeilisearch)
@@ -13299,9 +13348,12 @@ inline void ConfigMeilisearch::SharedDtor(MessageLite& self) {
   ConfigMeilisearch& this_ = static_cast<ConfigMeilisearch&>(self);
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
-  this_._impl_.server_url_.Destroy();
   this_._impl_.master_key_.Destroy();
   this_._impl_.index_prefix_.Destroy();
+  this_._impl_.kafka_broker_.Destroy();
+  this_._impl_.kafka_group_id_.Destroy();
+  this_._impl_.kafak_topic_.Destroy();
+  this_._impl_.kafak_topic_dlq_.Destroy();
   this_._impl_.~Impl_();
 }
 
@@ -13311,8 +13363,20 @@ inline void* PROTOBUF_NONNULL ConfigMeilisearch::PlacementNew_(
   return ::new (mem) ConfigMeilisearch(arena);
 }
 constexpr auto ConfigMeilisearch::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(ConfigMeilisearch),
-                                            alignof(ConfigMeilisearch));
+  constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
+      PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.server_urls_) +
+          decltype(ConfigMeilisearch::_impl_.server_urls_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+  });
+  if (arena_bits.has_value()) {
+    return ::google::protobuf::internal::MessageCreator::CopyInit(
+        sizeof(ConfigMeilisearch), alignof(ConfigMeilisearch), *arena_bits);
+  } else {
+    return ::google::protobuf::internal::MessageCreator(&ConfigMeilisearch::PlacementNew_,
+                                 sizeof(ConfigMeilisearch),
+                                 alignof(ConfigMeilisearch));
+  }
 }
 constexpr auto ConfigMeilisearch::InternalGenerateClassData_() {
   return ::google::protobuf::internal::ClassDataFull{
@@ -13348,16 +13412,16 @@ ConfigMeilisearch::GetClassData() const {
   return ConfigMeilisearch_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<4, 10, 0, 76, 2>
+const ::_pbi::TcParseTable<5, 18, 0, 137, 2>
 ConfigMeilisearch::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_._has_bits_),
     0, // no _extensions_
-    10, 120,  // max_field_number, fast_idx_mask
+    18, 248,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294966272,  // skipmap
+    4294705152,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    10,  // num_field_entries
+    18,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     ConfigMeilisearch_class_data_.base(),
@@ -13368,36 +13432,68 @@ ConfigMeilisearch::_table_ = {
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     {::_pbi::TcParser::MiniParse, {}},
-    // optional string server_url = 1 [json_name = "server_url"];
-    {::_pbi::TcParser::FastUS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.server_url_)}},
+    // repeated string server_urls = 1 [json_name = "server_urls"];
+    {::_pbi::TcParser::FastUR1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.server_urls_)}},
     // optional string master_key = 2 [json_name = "masterKey"];
     {::_pbi::TcParser::FastUS1,
-     {18, 1, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.master_key_)}},
+     {18, 0, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.master_key_)}},
     // optional bool enable_indexing = 3 [json_name = "enableIndexing"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ConfigMeilisearch, _impl_.enable_indexing_), 3>(),
-     {24, 3, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.enable_indexing_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ConfigMeilisearch, _impl_.enable_indexing_), 6>(),
+     {24, 6, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.enable_indexing_)}},
     // optional bool enable_searching = 4 [json_name = "enableSearching"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ConfigMeilisearch, _impl_.enable_searching_), 4>(),
-     {32, 4, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.enable_searching_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ConfigMeilisearch, _impl_.enable_searching_), 7>(),
+     {32, 7, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.enable_searching_)}},
     // optional bool enable_autocomplete = 5 [json_name = "enableAutocomplete"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ConfigMeilisearch, _impl_.enable_autocomplete_), 5>(),
-     {40, 5, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.enable_autocomplete_)}},
-    // optional int32 batch_size = 6 [json_name = "batchSize"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ConfigMeilisearch, _impl_.batch_size_), 7>(),
-     {48, 7, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.batch_size_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ConfigMeilisearch, _impl_.enable_autocomplete_), 8>(),
+     {40, 8, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.enable_autocomplete_)}},
+    // optional int32 max_concurrency = 6 [json_name = "maxConcurrency"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ConfigMeilisearch, _impl_.max_concurrency_), 10>(),
+     {48, 10, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.max_concurrency_)}},
     // optional int32 request_timeout_seconds = 7 [json_name = "requestTimeoutSeconds"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ConfigMeilisearch, _impl_.request_timeout_seconds_), 8>(),
-     {56, 8, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.request_timeout_seconds_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ConfigMeilisearch, _impl_.request_timeout_seconds_), 11>(),
+     {56, 11, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.request_timeout_seconds_)}},
     // optional string index_prefix = 8 [json_name = "indexPrefix"];
     {::_pbi::TcParser::FastUS1,
-     {66, 2, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.index_prefix_)}},
+     {66, 1, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.index_prefix_)}},
     // optional int32 search_cutoff_ms = 9 [json_name = "searchCutoffMs"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ConfigMeilisearch, _impl_.search_cutoff_ms_), 9>(),
-     {72, 9, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.search_cutoff_ms_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ConfigMeilisearch, _impl_.search_cutoff_ms_), 12>(),
+     {72, 12, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.search_cutoff_ms_)}},
     // optional bool enable_typo_tolerance = 10 [json_name = "enableTypoTolerance"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ConfigMeilisearch, _impl_.enable_typo_tolerance_), 6>(),
-     {80, 6, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.enable_typo_tolerance_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ConfigMeilisearch, _impl_.enable_typo_tolerance_), 9>(),
+     {80, 9, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.enable_typo_tolerance_)}},
+    // string kafka_broker = 11 [json_name = "kafkaBroker"];
+    {::_pbi::TcParser::FastUS1,
+     {90, 2, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.kafka_broker_)}},
+    // string kafka_group_id = 12 [json_name = "kafkaGroupId"];
+    {::_pbi::TcParser::FastUS1,
+     {98, 3, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.kafka_group_id_)}},
+    // string kafak_topic = 13 [json_name = "kafakTopic"];
+    {::_pbi::TcParser::FastUS1,
+     {106, 4, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.kafak_topic_)}},
+    // string kafak_topic_dlq = 14 [json_name = "kafakTopicDlq"];
+    {::_pbi::TcParser::FastUS1,
+     {114, 5, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.kafak_topic_dlq_)}},
+    // optional int32 task_max_wait_ms = 15 [json_name = "taskMaxWaitMs"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(ConfigMeilisearch, _impl_.task_max_wait_ms_), 13>(),
+     {120, 13, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.task_max_wait_ms_)}},
+    // optional int32 task_max_retries = 16 [json_name = "taskMaxRetries"];
+    {::_pbi::TcParser::FastV32S2,
+     {384, 14, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.task_max_retries_)}},
+    // optional int32 task_backoff_base_ms = 17 [json_name = "taskBackoffBaseMs"];
+    {::_pbi::TcParser::FastV32S2,
+     {392, 15, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.task_backoff_base_ms_)}},
+    // optional int32 shutdown_wait_secs = 18 [json_name = "shutdownWaitSecs"];
+    {::_pbi::TcParser::FastV32S2,
+     {400, 16, 0, PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.shutdown_wait_secs_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
@@ -13406,44 +13502,72 @@ ConfigMeilisearch::_table_ = {
   }}, {{
     65535, 65535
   }}, {{
-    // optional string server_url = 1 [json_name = "server_url"];
-    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.server_url_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // repeated string server_urls = 1 [json_name = "server_urls"];
+    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.server_urls_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kUtf8String | ::_fl::kRepSString)},
     // optional string master_key = 2 [json_name = "masterKey"];
-    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.master_key_), _Internal::kHasBitsOffset + 1, 0,
+    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.master_key_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // optional bool enable_indexing = 3 [json_name = "enableIndexing"];
-    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.enable_indexing_), _Internal::kHasBitsOffset + 3, 0,
+    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.enable_indexing_), _Internal::kHasBitsOffset + 6, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
     // optional bool enable_searching = 4 [json_name = "enableSearching"];
-    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.enable_searching_), _Internal::kHasBitsOffset + 4, 0,
+    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.enable_searching_), _Internal::kHasBitsOffset + 7, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
     // optional bool enable_autocomplete = 5 [json_name = "enableAutocomplete"];
-    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.enable_autocomplete_), _Internal::kHasBitsOffset + 5, 0,
+    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.enable_autocomplete_), _Internal::kHasBitsOffset + 8, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
-    // optional int32 batch_size = 6 [json_name = "batchSize"];
-    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.batch_size_), _Internal::kHasBitsOffset + 7, 0,
+    // optional int32 max_concurrency = 6 [json_name = "maxConcurrency"];
+    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.max_concurrency_), _Internal::kHasBitsOffset + 10, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
     // optional int32 request_timeout_seconds = 7 [json_name = "requestTimeoutSeconds"];
-    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.request_timeout_seconds_), _Internal::kHasBitsOffset + 8, 0,
+    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.request_timeout_seconds_), _Internal::kHasBitsOffset + 11, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
     // optional string index_prefix = 8 [json_name = "indexPrefix"];
-    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.index_prefix_), _Internal::kHasBitsOffset + 2, 0,
+    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.index_prefix_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // optional int32 search_cutoff_ms = 9 [json_name = "searchCutoffMs"];
-    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.search_cutoff_ms_), _Internal::kHasBitsOffset + 9, 0,
+    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.search_cutoff_ms_), _Internal::kHasBitsOffset + 12, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
     // optional bool enable_typo_tolerance = 10 [json_name = "enableTypoTolerance"];
-    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.enable_typo_tolerance_), _Internal::kHasBitsOffset + 6, 0,
+    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.enable_typo_tolerance_), _Internal::kHasBitsOffset + 9, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
+    // string kafka_broker = 11 [json_name = "kafkaBroker"];
+    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.kafka_broker_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string kafka_group_id = 12 [json_name = "kafkaGroupId"];
+    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.kafka_group_id_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string kafak_topic = 13 [json_name = "kafakTopic"];
+    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.kafak_topic_), _Internal::kHasBitsOffset + 4, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string kafak_topic_dlq = 14 [json_name = "kafakTopicDlq"];
+    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.kafak_topic_dlq_), _Internal::kHasBitsOffset + 5, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional int32 task_max_wait_ms = 15 [json_name = "taskMaxWaitMs"];
+    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.task_max_wait_ms_), _Internal::kHasBitsOffset + 13, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    // optional int32 task_max_retries = 16 [json_name = "taskMaxRetries"];
+    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.task_max_retries_), _Internal::kHasBitsOffset + 14, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    // optional int32 task_backoff_base_ms = 17 [json_name = "taskBackoffBaseMs"];
+    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.task_backoff_base_ms_), _Internal::kHasBitsOffset + 15, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
+    // optional int32 shutdown_wait_secs = 18 [json_name = "shutdownWaitSecs"];
+    {PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.shutdown_wait_secs_), _Internal::kHasBitsOffset + 16, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kInt32)},
   }},
   // no aux_entries
   {{
-    "\33\12\12\0\0\0\0\0\14\0\0\0\0\0\0\0"
+    "\33\13\12\0\0\0\0\0\14\0\0\14\16\13\17\0\0\0\0\0\0\0\0\0"
     "common.v1.ConfigMeilisearch"
-    "server_url"
+    "server_urls"
     "master_key"
     "index_prefix"
+    "kafka_broker"
+    "kafka_group_id"
+    "kafak_topic"
+    "kafak_topic_dlq"
   }},
 };
 PROTOBUF_NOINLINE void ConfigMeilisearch::Clear() {
@@ -13453,28 +13577,39 @@ PROTOBUF_NOINLINE void ConfigMeilisearch::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  _impl_.server_urls_.Clear();
   cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x00000007u) != 0) {
+  if ((cached_has_bits & 0x0000003fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
-      _impl_.server_url_.ClearNonDefaultToEmpty();
-    }
-    if ((cached_has_bits & 0x00000002u) != 0) {
       _impl_.master_key_.ClearNonDefaultToEmpty();
     }
-    if ((cached_has_bits & 0x00000004u) != 0) {
+    if ((cached_has_bits & 0x00000002u) != 0) {
       _impl_.index_prefix_.ClearNonDefaultToEmpty();
     }
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      _impl_.kafka_broker_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      _impl_.kafka_group_id_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000010u) != 0) {
+      _impl_.kafak_topic_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000020u) != 0) {
+      _impl_.kafak_topic_dlq_.ClearNonDefaultToEmpty();
+    }
   }
-  if ((cached_has_bits & 0x000000f8u) != 0) {
+  if ((cached_has_bits & 0x000000c0u) != 0) {
     ::memset(&_impl_.enable_indexing_, 0, static_cast<::size_t>(
-        reinterpret_cast<char*>(&_impl_.batch_size_) -
-        reinterpret_cast<char*>(&_impl_.enable_indexing_)) + sizeof(_impl_.batch_size_));
+        reinterpret_cast<char*>(&_impl_.enable_searching_) -
+        reinterpret_cast<char*>(&_impl_.enable_indexing_)) + sizeof(_impl_.enable_searching_));
   }
-  if ((cached_has_bits & 0x00000300u) != 0) {
-    ::memset(&_impl_.request_timeout_seconds_, 0, static_cast<::size_t>(
-        reinterpret_cast<char*>(&_impl_.search_cutoff_ms_) -
-        reinterpret_cast<char*>(&_impl_.request_timeout_seconds_)) + sizeof(_impl_.search_cutoff_ms_));
+  if ((cached_has_bits & 0x0000ff00u) != 0) {
+    ::memset(&_impl_.enable_autocomplete_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.task_backoff_base_ms_) -
+        reinterpret_cast<char*>(&_impl_.enable_autocomplete_)) + sizeof(_impl_.task_backoff_base_ms_));
   }
+  _impl_.shutdown_wait_secs_ = 0;
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
@@ -13494,17 +13629,17 @@ PROTOBUF_NOINLINE void ConfigMeilisearch::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  cached_has_bits = this_._impl_._has_bits_[0];
-  // optional string server_url = 1 [json_name = "server_url"];
-  if ((cached_has_bits & 0x00000001u) != 0) {
-    const ::std::string& _s = this_._internal_server_url();
+  // repeated string server_urls = 1 [json_name = "server_urls"];
+  for (int i = 0, n = this_._internal_server_urls_size(); i < n; ++i) {
+    const auto& s = this_._internal_server_urls().Get(i);
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigMeilisearch.server_url");
-    target = stream->WriteStringMaybeAliased(1, _s, target);
+        s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigMeilisearch.server_urls");
+    target = stream->WriteString(1, s, target);
   }
 
+  cached_has_bits = this_._impl_._has_bits_[0];
   // optional string master_key = 2 [json_name = "masterKey"];
-  if ((cached_has_bits & 0x00000002u) != 0) {
+  if ((cached_has_bits & 0x00000001u) != 0) {
     const ::std::string& _s = this_._internal_master_key();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigMeilisearch.master_key");
@@ -13512,42 +13647,42 @@ PROTOBUF_NOINLINE void ConfigMeilisearch::Clear() {
   }
 
   // optional bool enable_indexing = 3 [json_name = "enableIndexing"];
-  if ((cached_has_bits & 0x00000008u) != 0) {
+  if ((cached_has_bits & 0x00000040u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(
         3, this_._internal_enable_indexing(), target);
   }
 
   // optional bool enable_searching = 4 [json_name = "enableSearching"];
-  if ((cached_has_bits & 0x00000010u) != 0) {
+  if ((cached_has_bits & 0x00000080u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(
         4, this_._internal_enable_searching(), target);
   }
 
   // optional bool enable_autocomplete = 5 [json_name = "enableAutocomplete"];
-  if ((cached_has_bits & 0x00000020u) != 0) {
+  if ((cached_has_bits & 0x00000100u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(
         5, this_._internal_enable_autocomplete(), target);
   }
 
-  // optional int32 batch_size = 6 [json_name = "batchSize"];
-  if ((cached_has_bits & 0x00000080u) != 0) {
+  // optional int32 max_concurrency = 6 [json_name = "maxConcurrency"];
+  if ((cached_has_bits & 0x00000400u) != 0) {
     target =
         ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<6>(
-            stream, this_._internal_batch_size(), target);
+            stream, this_._internal_max_concurrency(), target);
   }
 
   // optional int32 request_timeout_seconds = 7 [json_name = "requestTimeoutSeconds"];
-  if ((cached_has_bits & 0x00000100u) != 0) {
+  if ((cached_has_bits & 0x00000800u) != 0) {
     target =
         ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<7>(
             stream, this_._internal_request_timeout_seconds(), target);
   }
 
   // optional string index_prefix = 8 [json_name = "indexPrefix"];
-  if ((cached_has_bits & 0x00000004u) != 0) {
+  if ((cached_has_bits & 0x00000002u) != 0) {
     const ::std::string& _s = this_._internal_index_prefix();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigMeilisearch.index_prefix");
@@ -13555,17 +13690,85 @@ PROTOBUF_NOINLINE void ConfigMeilisearch::Clear() {
   }
 
   // optional int32 search_cutoff_ms = 9 [json_name = "searchCutoffMs"];
-  if ((cached_has_bits & 0x00000200u) != 0) {
+  if ((cached_has_bits & 0x00001000u) != 0) {
     target =
         ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<9>(
             stream, this_._internal_search_cutoff_ms(), target);
   }
 
   // optional bool enable_typo_tolerance = 10 [json_name = "enableTypoTolerance"];
-  if ((cached_has_bits & 0x00000040u) != 0) {
+  if ((cached_has_bits & 0x00000200u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(
         10, this_._internal_enable_typo_tolerance(), target);
+  }
+
+  // string kafka_broker = 11 [json_name = "kafkaBroker"];
+  if ((cached_has_bits & 0x00000004u) != 0) {
+    if (!this_._internal_kafka_broker().empty()) {
+      const ::std::string& _s = this_._internal_kafka_broker();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigMeilisearch.kafka_broker");
+      target = stream->WriteStringMaybeAliased(11, _s, target);
+    }
+  }
+
+  // string kafka_group_id = 12 [json_name = "kafkaGroupId"];
+  if ((cached_has_bits & 0x00000008u) != 0) {
+    if (!this_._internal_kafka_group_id().empty()) {
+      const ::std::string& _s = this_._internal_kafka_group_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigMeilisearch.kafka_group_id");
+      target = stream->WriteStringMaybeAliased(12, _s, target);
+    }
+  }
+
+  // string kafak_topic = 13 [json_name = "kafakTopic"];
+  if ((cached_has_bits & 0x00000010u) != 0) {
+    if (!this_._internal_kafak_topic().empty()) {
+      const ::std::string& _s = this_._internal_kafak_topic();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigMeilisearch.kafak_topic");
+      target = stream->WriteStringMaybeAliased(13, _s, target);
+    }
+  }
+
+  // string kafak_topic_dlq = 14 [json_name = "kafakTopicDlq"];
+  if ((cached_has_bits & 0x00000020u) != 0) {
+    if (!this_._internal_kafak_topic_dlq().empty()) {
+      const ::std::string& _s = this_._internal_kafak_topic_dlq();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "common.v1.ConfigMeilisearch.kafak_topic_dlq");
+      target = stream->WriteStringMaybeAliased(14, _s, target);
+    }
+  }
+
+  // optional int32 task_max_wait_ms = 15 [json_name = "taskMaxWaitMs"];
+  if ((cached_has_bits & 0x00002000u) != 0) {
+    target =
+        ::google::protobuf::internal::WireFormatLite::WriteInt32ToArrayWithField<15>(
+            stream, this_._internal_task_max_wait_ms(), target);
+  }
+
+  // optional int32 task_max_retries = 16 [json_name = "taskMaxRetries"];
+  if ((cached_has_bits & 0x00004000u) != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        16, this_._internal_task_max_retries(), target);
+  }
+
+  // optional int32 task_backoff_base_ms = 17 [json_name = "taskBackoffBaseMs"];
+  if ((cached_has_bits & 0x00008000u) != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        17, this_._internal_task_backoff_base_ms(), target);
+  }
+
+  // optional int32 shutdown_wait_secs = 18 [json_name = "shutdownWaitSecs"];
+  if ((cached_has_bits & 0x00010000u) != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(
+        18, this_._internal_shutdown_wait_secs(), target);
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -13592,40 +13795,96 @@ PROTOBUF_NOINLINE void ConfigMeilisearch::Clear() {
   (void)cached_has_bits;
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
-  cached_has_bits = this_._impl_._has_bits_[0];
-  total_size += ::absl::popcount(0x00000078u & cached_has_bits) * 2;
-  if ((cached_has_bits & 0x00000087u) != 0) {
-    // optional string server_url = 1 [json_name = "server_url"];
-    if ((cached_has_bits & 0x00000001u) != 0) {
-      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                      this_._internal_server_url());
+   {
+    // repeated string server_urls = 1 [json_name = "server_urls"];
+    {
+      total_size +=
+          1 * ::google::protobuf::internal::FromIntSize(this_._internal_server_urls().size());
+      for (int i = 0, n = this_._internal_server_urls().size(); i < n; ++i) {
+        total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+            this_._internal_server_urls().Get(i));
+      }
     }
+  }
+  cached_has_bits = this_._impl_._has_bits_[0];
+  total_size += ::absl::popcount(0x000003c0u & cached_has_bits) * 2;
+  if ((cached_has_bits & 0x0000003fu) != 0) {
     // optional string master_key = 2 [json_name = "masterKey"];
-    if ((cached_has_bits & 0x00000002u) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
       total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                       this_._internal_master_key());
     }
     // optional string index_prefix = 8 [json_name = "indexPrefix"];
-    if ((cached_has_bits & 0x00000004u) != 0) {
+    if ((cached_has_bits & 0x00000002u) != 0) {
       total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                       this_._internal_index_prefix());
     }
-    // optional int32 batch_size = 6 [json_name = "batchSize"];
-    if ((cached_has_bits & 0x00000080u) != 0) {
-      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
-          this_._internal_batch_size());
+    // string kafka_broker = 11 [json_name = "kafkaBroker"];
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      if (!this_._internal_kafka_broker().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_kafka_broker());
+      }
+    }
+    // string kafka_group_id = 12 [json_name = "kafkaGroupId"];
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      if (!this_._internal_kafka_group_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_kafka_group_id());
+      }
+    }
+    // string kafak_topic = 13 [json_name = "kafakTopic"];
+    if ((cached_has_bits & 0x00000010u) != 0) {
+      if (!this_._internal_kafak_topic().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_kafak_topic());
+      }
+    }
+    // string kafak_topic_dlq = 14 [json_name = "kafakTopicDlq"];
+    if ((cached_has_bits & 0x00000020u) != 0) {
+      if (!this_._internal_kafak_topic_dlq().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_kafak_topic_dlq());
+      }
     }
   }
-  if ((cached_has_bits & 0x00000300u) != 0) {
+  if ((cached_has_bits & 0x0000fc00u) != 0) {
+    // optional int32 max_concurrency = 6 [json_name = "maxConcurrency"];
+    if ((cached_has_bits & 0x00000400u) != 0) {
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+          this_._internal_max_concurrency());
+    }
     // optional int32 request_timeout_seconds = 7 [json_name = "requestTimeoutSeconds"];
-    if ((cached_has_bits & 0x00000100u) != 0) {
+    if ((cached_has_bits & 0x00000800u) != 0) {
       total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
           this_._internal_request_timeout_seconds());
     }
     // optional int32 search_cutoff_ms = 9 [json_name = "searchCutoffMs"];
-    if ((cached_has_bits & 0x00000200u) != 0) {
+    if ((cached_has_bits & 0x00001000u) != 0) {
       total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
           this_._internal_search_cutoff_ms());
+    }
+    // optional int32 task_max_wait_ms = 15 [json_name = "taskMaxWaitMs"];
+    if ((cached_has_bits & 0x00002000u) != 0) {
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(
+          this_._internal_task_max_wait_ms());
+    }
+    // optional int32 task_max_retries = 16 [json_name = "taskMaxRetries"];
+    if ((cached_has_bits & 0x00004000u) != 0) {
+      total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                      this_._internal_task_max_retries());
+    }
+    // optional int32 task_backoff_base_ms = 17 [json_name = "taskBackoffBaseMs"];
+    if ((cached_has_bits & 0x00008000u) != 0) {
+      total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                      this_._internal_task_backoff_base_ms());
+    }
+  }
+   {
+    // optional int32 shutdown_wait_secs = 18 [json_name = "shutdownWaitSecs"];
+    if ((cached_has_bits & 0x00010000u) != 0) {
+      total_size += 2 + ::_pbi::WireFormatLite::Int32Size(
+                                      this_._internal_shutdown_wait_secs());
     }
   }
   return this_.MaybeComputeUnknownFieldsSize(total_size,
@@ -13640,40 +13899,86 @@ void ConfigMeilisearch::MergeImpl(::google::protobuf::MessageLite& to_msg, const
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  _this->_internal_mutable_server_urls()->MergeFrom(from._internal_server_urls());
   cached_has_bits = from._impl_._has_bits_[0];
   if ((cached_has_bits & 0x000000ffu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
-      _this->_internal_set_server_url(from._internal_server_url());
-    }
-    if ((cached_has_bits & 0x00000002u) != 0) {
       _this->_internal_set_master_key(from._internal_master_key());
     }
-    if ((cached_has_bits & 0x00000004u) != 0) {
+    if ((cached_has_bits & 0x00000002u) != 0) {
       _this->_internal_set_index_prefix(from._internal_index_prefix());
     }
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      if (!from._internal_kafka_broker().empty()) {
+        _this->_internal_set_kafka_broker(from._internal_kafka_broker());
+      } else {
+        if (_this->_impl_.kafka_broker_.IsDefault()) {
+          _this->_internal_set_kafka_broker("");
+        }
+      }
+    }
     if ((cached_has_bits & 0x00000008u) != 0) {
-      _this->_impl_.enable_indexing_ = from._impl_.enable_indexing_;
+      if (!from._internal_kafka_group_id().empty()) {
+        _this->_internal_set_kafka_group_id(from._internal_kafka_group_id());
+      } else {
+        if (_this->_impl_.kafka_group_id_.IsDefault()) {
+          _this->_internal_set_kafka_group_id("");
+        }
+      }
     }
     if ((cached_has_bits & 0x00000010u) != 0) {
-      _this->_impl_.enable_searching_ = from._impl_.enable_searching_;
+      if (!from._internal_kafak_topic().empty()) {
+        _this->_internal_set_kafak_topic(from._internal_kafak_topic());
+      } else {
+        if (_this->_impl_.kafak_topic_.IsDefault()) {
+          _this->_internal_set_kafak_topic("");
+        }
+      }
     }
     if ((cached_has_bits & 0x00000020u) != 0) {
-      _this->_impl_.enable_autocomplete_ = from._impl_.enable_autocomplete_;
+      if (!from._internal_kafak_topic_dlq().empty()) {
+        _this->_internal_set_kafak_topic_dlq(from._internal_kafak_topic_dlq());
+      } else {
+        if (_this->_impl_.kafak_topic_dlq_.IsDefault()) {
+          _this->_internal_set_kafak_topic_dlq("");
+        }
+      }
     }
     if ((cached_has_bits & 0x00000040u) != 0) {
-      _this->_impl_.enable_typo_tolerance_ = from._impl_.enable_typo_tolerance_;
+      _this->_impl_.enable_indexing_ = from._impl_.enable_indexing_;
     }
     if ((cached_has_bits & 0x00000080u) != 0) {
-      _this->_impl_.batch_size_ = from._impl_.batch_size_;
+      _this->_impl_.enable_searching_ = from._impl_.enable_searching_;
     }
   }
-  if ((cached_has_bits & 0x00000300u) != 0) {
+  if ((cached_has_bits & 0x0000ff00u) != 0) {
     if ((cached_has_bits & 0x00000100u) != 0) {
-      _this->_impl_.request_timeout_seconds_ = from._impl_.request_timeout_seconds_;
+      _this->_impl_.enable_autocomplete_ = from._impl_.enable_autocomplete_;
     }
     if ((cached_has_bits & 0x00000200u) != 0) {
+      _this->_impl_.enable_typo_tolerance_ = from._impl_.enable_typo_tolerance_;
+    }
+    if ((cached_has_bits & 0x00000400u) != 0) {
+      _this->_impl_.max_concurrency_ = from._impl_.max_concurrency_;
+    }
+    if ((cached_has_bits & 0x00000800u) != 0) {
+      _this->_impl_.request_timeout_seconds_ = from._impl_.request_timeout_seconds_;
+    }
+    if ((cached_has_bits & 0x00001000u) != 0) {
       _this->_impl_.search_cutoff_ms_ = from._impl_.search_cutoff_ms_;
     }
+    if ((cached_has_bits & 0x00002000u) != 0) {
+      _this->_impl_.task_max_wait_ms_ = from._impl_.task_max_wait_ms_;
+    }
+    if ((cached_has_bits & 0x00004000u) != 0) {
+      _this->_impl_.task_max_retries_ = from._impl_.task_max_retries_;
+    }
+    if ((cached_has_bits & 0x00008000u) != 0) {
+      _this->_impl_.task_backoff_base_ms_ = from._impl_.task_backoff_base_ms_;
+    }
+  }
+  if ((cached_has_bits & 0x00010000u) != 0) {
+    _this->_impl_.shutdown_wait_secs_ = from._impl_.shutdown_wait_secs_;
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
@@ -13693,12 +13998,16 @@ void ConfigMeilisearch::InternalSwap(ConfigMeilisearch* PROTOBUF_RESTRICT PROTOB
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.server_url_, &other->_impl_.server_url_, arena);
+  _impl_.server_urls_.InternalSwap(&other->_impl_.server_urls_);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.master_key_, &other->_impl_.master_key_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.index_prefix_, &other->_impl_.index_prefix_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.kafka_broker_, &other->_impl_.kafka_broker_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.kafka_group_id_, &other->_impl_.kafka_group_id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.kafak_topic_, &other->_impl_.kafak_topic_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.kafak_topic_dlq_, &other->_impl_.kafak_topic_dlq_, arena);
   ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.search_cutoff_ms_)
-      + sizeof(ConfigMeilisearch::_impl_.search_cutoff_ms_)
+      PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.shutdown_wait_secs_)
+      + sizeof(ConfigMeilisearch::_impl_.shutdown_wait_secs_)
       - PROTOBUF_FIELD_OFFSET(ConfigMeilisearch, _impl_.enable_indexing_)>(
           reinterpret_cast<char*>(&_impl_.enable_indexing_),
           reinterpret_cast<char*>(&other->_impl_.enable_indexing_));

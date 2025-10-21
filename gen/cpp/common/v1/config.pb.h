@@ -4646,31 +4646,45 @@ class ConfigMeilisearch final : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
   enum : int {
-    kServerUrlFieldNumber = 1,
+    kServerUrlsFieldNumber = 1,
     kMasterKeyFieldNumber = 2,
     kIndexPrefixFieldNumber = 8,
+    kKafkaBrokerFieldNumber = 11,
+    kKafkaGroupIdFieldNumber = 12,
+    kKafakTopicFieldNumber = 13,
+    kKafakTopicDlqFieldNumber = 14,
     kEnableIndexingFieldNumber = 3,
     kEnableSearchingFieldNumber = 4,
     kEnableAutocompleteFieldNumber = 5,
     kEnableTypoToleranceFieldNumber = 10,
-    kBatchSizeFieldNumber = 6,
+    kMaxConcurrencyFieldNumber = 6,
     kRequestTimeoutSecondsFieldNumber = 7,
     kSearchCutoffMsFieldNumber = 9,
+    kTaskMaxWaitMsFieldNumber = 15,
+    kTaskMaxRetriesFieldNumber = 16,
+    kTaskBackoffBaseMsFieldNumber = 17,
+    kShutdownWaitSecsFieldNumber = 18,
   };
-  // optional string server_url = 1 [json_name = "server_url"];
-  bool has_server_url() const;
-  void clear_server_url() ;
-  const ::std::string& server_url() const;
+  // repeated string server_urls = 1 [json_name = "server_urls"];
+  int server_urls_size() const;
+  private:
+  int _internal_server_urls_size() const;
+
+  public:
+  void clear_server_urls() ;
+  const ::std::string& server_urls(int index) const;
+  ::std::string* PROTOBUF_NONNULL mutable_server_urls(int index);
   template <typename Arg_ = const ::std::string&, typename... Args_>
-  void set_server_url(Arg_&& arg, Args_... args);
-  ::std::string* PROTOBUF_NONNULL mutable_server_url();
-  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_server_url();
-  void set_allocated_server_url(::std::string* PROTOBUF_NULLABLE value);
+  void set_server_urls(int index, Arg_&& value, Args_... args);
+  ::std::string* PROTOBUF_NONNULL add_server_urls();
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void add_server_urls(Arg_&& value, Args_... args);
+  const ::google::protobuf::RepeatedPtrField<::std::string>& server_urls() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL mutable_server_urls();
 
   private:
-  const ::std::string& _internal_server_url() const;
-  PROTOBUF_ALWAYS_INLINE void _internal_set_server_url(const ::std::string& value);
-  ::std::string* PROTOBUF_NONNULL _internal_mutable_server_url();
+  const ::google::protobuf::RepeatedPtrField<::std::string>& _internal_server_urls() const;
+  ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL _internal_mutable_server_urls();
 
   public:
   // optional string master_key = 2 [json_name = "masterKey"];
@@ -4703,6 +4717,66 @@ class ConfigMeilisearch final : public ::google::protobuf::Message
   const ::std::string& _internal_index_prefix() const;
   PROTOBUF_ALWAYS_INLINE void _internal_set_index_prefix(const ::std::string& value);
   ::std::string* PROTOBUF_NONNULL _internal_mutable_index_prefix();
+
+  public:
+  // string kafka_broker = 11 [json_name = "kafkaBroker"];
+  void clear_kafka_broker() ;
+  const ::std::string& kafka_broker() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_kafka_broker(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_kafka_broker();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_kafka_broker();
+  void set_allocated_kafka_broker(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_kafka_broker() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_kafka_broker(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_kafka_broker();
+
+  public:
+  // string kafka_group_id = 12 [json_name = "kafkaGroupId"];
+  void clear_kafka_group_id() ;
+  const ::std::string& kafka_group_id() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_kafka_group_id(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_kafka_group_id();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_kafka_group_id();
+  void set_allocated_kafka_group_id(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_kafka_group_id() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_kafka_group_id(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_kafka_group_id();
+
+  public:
+  // string kafak_topic = 13 [json_name = "kafakTopic"];
+  void clear_kafak_topic() ;
+  const ::std::string& kafak_topic() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_kafak_topic(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_kafak_topic();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_kafak_topic();
+  void set_allocated_kafak_topic(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_kafak_topic() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_kafak_topic(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_kafak_topic();
+
+  public:
+  // string kafak_topic_dlq = 14 [json_name = "kafakTopicDlq"];
+  void clear_kafak_topic_dlq() ;
+  const ::std::string& kafak_topic_dlq() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_kafak_topic_dlq(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_kafak_topic_dlq();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_kafak_topic_dlq();
+  void set_allocated_kafak_topic_dlq(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_kafak_topic_dlq() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_kafak_topic_dlq(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_kafak_topic_dlq();
 
   public:
   // optional bool enable_indexing = 3 [json_name = "enableIndexing"];
@@ -4749,15 +4823,15 @@ class ConfigMeilisearch final : public ::google::protobuf::Message
   void _internal_set_enable_typo_tolerance(bool value);
 
   public:
-  // optional int32 batch_size = 6 [json_name = "batchSize"];
-  bool has_batch_size() const;
-  void clear_batch_size() ;
-  ::int32_t batch_size() const;
-  void set_batch_size(::int32_t value);
+  // optional int32 max_concurrency = 6 [json_name = "maxConcurrency"];
+  bool has_max_concurrency() const;
+  void clear_max_concurrency() ;
+  ::int32_t max_concurrency() const;
+  void set_max_concurrency(::int32_t value);
 
   private:
-  ::int32_t _internal_batch_size() const;
-  void _internal_set_batch_size(::int32_t value);
+  ::int32_t _internal_max_concurrency() const;
+  void _internal_set_max_concurrency(::int32_t value);
 
   public:
   // optional int32 request_timeout_seconds = 7 [json_name = "requestTimeoutSeconds"];
@@ -4782,12 +4856,56 @@ class ConfigMeilisearch final : public ::google::protobuf::Message
   void _internal_set_search_cutoff_ms(::int32_t value);
 
   public:
+  // optional int32 task_max_wait_ms = 15 [json_name = "taskMaxWaitMs"];
+  bool has_task_max_wait_ms() const;
+  void clear_task_max_wait_ms() ;
+  ::int32_t task_max_wait_ms() const;
+  void set_task_max_wait_ms(::int32_t value);
+
+  private:
+  ::int32_t _internal_task_max_wait_ms() const;
+  void _internal_set_task_max_wait_ms(::int32_t value);
+
+  public:
+  // optional int32 task_max_retries = 16 [json_name = "taskMaxRetries"];
+  bool has_task_max_retries() const;
+  void clear_task_max_retries() ;
+  ::int32_t task_max_retries() const;
+  void set_task_max_retries(::int32_t value);
+
+  private:
+  ::int32_t _internal_task_max_retries() const;
+  void _internal_set_task_max_retries(::int32_t value);
+
+  public:
+  // optional int32 task_backoff_base_ms = 17 [json_name = "taskBackoffBaseMs"];
+  bool has_task_backoff_base_ms() const;
+  void clear_task_backoff_base_ms() ;
+  ::int32_t task_backoff_base_ms() const;
+  void set_task_backoff_base_ms(::int32_t value);
+
+  private:
+  ::int32_t _internal_task_backoff_base_ms() const;
+  void _internal_set_task_backoff_base_ms(::int32_t value);
+
+  public:
+  // optional int32 shutdown_wait_secs = 18 [json_name = "shutdownWaitSecs"];
+  bool has_shutdown_wait_secs() const;
+  void clear_shutdown_wait_secs() ;
+  ::int32_t shutdown_wait_secs() const;
+  void set_shutdown_wait_secs(::int32_t value);
+
+  private:
+  ::int32_t _internal_shutdown_wait_secs() const;
+  void _internal_set_shutdown_wait_secs(::int32_t value);
+
+  public:
   // @@protoc_insertion_point(class_scope:common.v1.ConfigMeilisearch)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<4, 10,
-                                   0, 76,
+  static const ::google::protobuf::internal::TcParseTable<5, 18,
+                                   0, 137,
                                    2>
       _table_;
 
@@ -4808,16 +4926,24 @@ class ConfigMeilisearch final : public ::google::protobuf::Message
         const ConfigMeilisearch& from_msg);
     ::google::protobuf::internal::HasBits<1> _has_bits_;
     ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr server_url_;
+    ::google::protobuf::RepeatedPtrField<::std::string> server_urls_;
     ::google::protobuf::internal::ArenaStringPtr master_key_;
     ::google::protobuf::internal::ArenaStringPtr index_prefix_;
+    ::google::protobuf::internal::ArenaStringPtr kafka_broker_;
+    ::google::protobuf::internal::ArenaStringPtr kafka_group_id_;
+    ::google::protobuf::internal::ArenaStringPtr kafak_topic_;
+    ::google::protobuf::internal::ArenaStringPtr kafak_topic_dlq_;
     bool enable_indexing_;
     bool enable_searching_;
     bool enable_autocomplete_;
     bool enable_typo_tolerance_;
-    ::int32_t batch_size_;
+    ::int32_t max_concurrency_;
     ::int32_t request_timeout_seconds_;
     ::int32_t search_cutoff_ms_;
+    ::int32_t task_max_wait_ms_;
+    ::int32_t task_max_retries_;
+    ::int32_t task_backoff_base_ms_;
+    ::int32_t shutdown_wait_secs_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -22440,84 +22566,79 @@ inline void ConfigNativeApp::_internal_set_mobile_jailbreak_protection(bool valu
 
 // ConfigMeilisearch
 
-// optional string server_url = 1 [json_name = "server_url"];
-inline bool ConfigMeilisearch::has_server_url() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  return value;
+// repeated string server_urls = 1 [json_name = "server_urls"];
+inline int ConfigMeilisearch::_internal_server_urls_size() const {
+  return _internal_server_urls().size();
 }
-inline void ConfigMeilisearch::clear_server_url() {
+inline int ConfigMeilisearch::server_urls_size() const {
+  return _internal_server_urls_size();
+}
+inline void ConfigMeilisearch::clear_server_urls() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.server_url_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000001u;
+  _impl_.server_urls_.Clear();
 }
-inline const ::std::string& ConfigMeilisearch::server_url() const
+inline ::std::string* PROTOBUF_NONNULL ConfigMeilisearch::add_server_urls()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigMeilisearch.server_url)
-  return _internal_server_url();
-}
-template <typename Arg_, typename... Args_>
-PROTOBUF_ALWAYS_INLINE void ConfigMeilisearch::set_server_url(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.server_url_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
-  // @@protoc_insertion_point(field_set:common.v1.ConfigMeilisearch.server_url)
-}
-inline ::std::string* PROTOBUF_NONNULL ConfigMeilisearch::mutable_server_url()
-    ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::std::string* _s = _internal_mutable_server_url();
-  // @@protoc_insertion_point(field_mutable:common.v1.ConfigMeilisearch.server_url)
+  ::std::string* _s = _internal_mutable_server_urls()->Add();
+  // @@protoc_insertion_point(field_add_mutable:common.v1.ConfigMeilisearch.server_urls)
   return _s;
 }
-inline const ::std::string& ConfigMeilisearch::_internal_server_url() const {
+inline const ::std::string& ConfigMeilisearch::server_urls(int index) const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigMeilisearch.server_urls)
+  return _internal_server_urls().Get(index);
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigMeilisearch::mutable_server_urls(int index)
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigMeilisearch.server_urls)
+  return _internal_mutable_server_urls()->Mutable(index);
+}
+template <typename Arg_, typename... Args_>
+inline void ConfigMeilisearch::set_server_urls(int index, Arg_&& value, Args_... args) {
+  ::google::protobuf::internal::AssignToString(*_internal_mutable_server_urls()->Mutable(index), ::std::forward<Arg_>(value),
+                        args... );
+  // @@protoc_insertion_point(field_set:common.v1.ConfigMeilisearch.server_urls)
+}
+template <typename Arg_, typename... Args_>
+inline void ConfigMeilisearch::add_server_urls(Arg_&& value, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::google::protobuf::internal::AddToRepeatedPtrField(*_internal_mutable_server_urls(),
+                               ::std::forward<Arg_>(value),
+                               args... );
+  // @@protoc_insertion_point(field_add:common.v1.ConfigMeilisearch.server_urls)
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>& ConfigMeilisearch::server_urls()
+    const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_list:common.v1.ConfigMeilisearch.server_urls)
+  return _internal_server_urls();
+}
+inline ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL
+ConfigMeilisearch::mutable_server_urls() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_mutable_list:common.v1.ConfigMeilisearch.server_urls)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  return _internal_mutable_server_urls();
+}
+inline const ::google::protobuf::RepeatedPtrField<::std::string>&
+ConfigMeilisearch::_internal_server_urls() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.server_url_.Get();
+  return _impl_.server_urls_;
 }
-inline void ConfigMeilisearch::_internal_set_server_url(const ::std::string& value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  _impl_.server_url_.Set(value, GetArena());
-}
-inline ::std::string* PROTOBUF_NONNULL ConfigMeilisearch::_internal_mutable_server_url() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  return _impl_.server_url_.Mutable( GetArena());
-}
-inline ::std::string* PROTOBUF_NULLABLE ConfigMeilisearch::release_server_url() {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  // @@protoc_insertion_point(field_release:common.v1.ConfigMeilisearch.server_url)
-  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  auto* released = _impl_.server_url_.Release();
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
-    _impl_.server_url_.Set("", GetArena());
-  }
-  return released;
-}
-inline void ConfigMeilisearch::set_allocated_server_url(::std::string* PROTOBUF_NULLABLE value) {
-  ::google::protobuf::internal::TSanWrite(&_impl_);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000001u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
-  }
-  _impl_.server_url_.SetAllocated(value, GetArena());
-  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.server_url_.IsDefault()) {
-    _impl_.server_url_.Set("", GetArena());
-  }
-  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigMeilisearch.server_url)
+inline ::google::protobuf::RepeatedPtrField<::std::string>* PROTOBUF_NONNULL
+ConfigMeilisearch::_internal_mutable_server_urls() {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return &_impl_.server_urls_;
 }
 
 // optional string master_key = 2 [json_name = "masterKey"];
 inline bool ConfigMeilisearch::has_master_key() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   return value;
 }
 inline void ConfigMeilisearch::clear_master_key() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.master_key_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
 }
 inline const ::std::string& ConfigMeilisearch::master_key() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -22527,7 +22648,7 @@ inline const ::std::string& ConfigMeilisearch::master_key() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void ConfigMeilisearch::set_master_key(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.master_key_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:common.v1.ConfigMeilisearch.master_key)
 }
@@ -22543,21 +22664,21 @@ inline const ::std::string& ConfigMeilisearch::_internal_master_key() const {
 }
 inline void ConfigMeilisearch::_internal_set_master_key(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.master_key_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL ConfigMeilisearch::_internal_mutable_master_key() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000001u;
   return _impl_.master_key_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE ConfigMeilisearch::release_master_key() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:common.v1.ConfigMeilisearch.master_key)
-  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
   auto* released = _impl_.master_key_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.master_key_.Set("", GetArena());
@@ -22567,9 +22688,9 @@ inline ::std::string* PROTOBUF_NULLABLE ConfigMeilisearch::release_master_key() 
 inline void ConfigMeilisearch::set_allocated_master_key(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000002u;
+    _impl_._has_bits_[0] |= 0x00000001u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000002u;
+    _impl_._has_bits_[0] &= ~0x00000001u;
   }
   _impl_.master_key_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.master_key_.IsDefault()) {
@@ -22580,13 +22701,13 @@ inline void ConfigMeilisearch::set_allocated_master_key(::std::string* PROTOBUF_
 
 // optional bool enable_indexing = 3 [json_name = "enableIndexing"];
 inline bool ConfigMeilisearch::has_enable_indexing() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
   return value;
 }
 inline void ConfigMeilisearch::clear_enable_indexing() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.enable_indexing_ = false;
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000040u;
 }
 inline bool ConfigMeilisearch::enable_indexing() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigMeilisearch.enable_indexing)
@@ -22594,7 +22715,7 @@ inline bool ConfigMeilisearch::enable_indexing() const {
 }
 inline void ConfigMeilisearch::set_enable_indexing(bool value) {
   _internal_set_enable_indexing(value);
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000040u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigMeilisearch.enable_indexing)
 }
 inline bool ConfigMeilisearch::_internal_enable_indexing() const {
@@ -22608,13 +22729,13 @@ inline void ConfigMeilisearch::_internal_set_enable_indexing(bool value) {
 
 // optional bool enable_searching = 4 [json_name = "enableSearching"];
 inline bool ConfigMeilisearch::has_enable_searching() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
   return value;
 }
 inline void ConfigMeilisearch::clear_enable_searching() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.enable_searching_ = false;
-  _impl_._has_bits_[0] &= ~0x00000010u;
+  _impl_._has_bits_[0] &= ~0x00000080u;
 }
 inline bool ConfigMeilisearch::enable_searching() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigMeilisearch.enable_searching)
@@ -22622,7 +22743,7 @@ inline bool ConfigMeilisearch::enable_searching() const {
 }
 inline void ConfigMeilisearch::set_enable_searching(bool value) {
   _internal_set_enable_searching(value);
-  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_._has_bits_[0] |= 0x00000080u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigMeilisearch.enable_searching)
 }
 inline bool ConfigMeilisearch::_internal_enable_searching() const {
@@ -22636,13 +22757,13 @@ inline void ConfigMeilisearch::_internal_set_enable_searching(bool value) {
 
 // optional bool enable_autocomplete = 5 [json_name = "enableAutocomplete"];
 inline bool ConfigMeilisearch::has_enable_autocomplete() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
   return value;
 }
 inline void ConfigMeilisearch::clear_enable_autocomplete() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.enable_autocomplete_ = false;
-  _impl_._has_bits_[0] &= ~0x00000020u;
+  _impl_._has_bits_[0] &= ~0x00000100u;
 }
 inline bool ConfigMeilisearch::enable_autocomplete() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigMeilisearch.enable_autocomplete)
@@ -22650,7 +22771,7 @@ inline bool ConfigMeilisearch::enable_autocomplete() const {
 }
 inline void ConfigMeilisearch::set_enable_autocomplete(bool value) {
   _internal_set_enable_autocomplete(value);
-  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_._has_bits_[0] |= 0x00000100u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigMeilisearch.enable_autocomplete)
 }
 inline bool ConfigMeilisearch::_internal_enable_autocomplete() const {
@@ -22662,43 +22783,43 @@ inline void ConfigMeilisearch::_internal_set_enable_autocomplete(bool value) {
   _impl_.enable_autocomplete_ = value;
 }
 
-// optional int32 batch_size = 6 [json_name = "batchSize"];
-inline bool ConfigMeilisearch::has_batch_size() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
+// optional int32 max_concurrency = 6 [json_name = "maxConcurrency"];
+inline bool ConfigMeilisearch::has_max_concurrency() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000400u) != 0;
   return value;
 }
-inline void ConfigMeilisearch::clear_batch_size() {
+inline void ConfigMeilisearch::clear_max_concurrency() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.batch_size_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000080u;
+  _impl_.max_concurrency_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000400u;
 }
-inline ::int32_t ConfigMeilisearch::batch_size() const {
-  // @@protoc_insertion_point(field_get:common.v1.ConfigMeilisearch.batch_size)
-  return _internal_batch_size();
+inline ::int32_t ConfigMeilisearch::max_concurrency() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigMeilisearch.max_concurrency)
+  return _internal_max_concurrency();
 }
-inline void ConfigMeilisearch::set_batch_size(::int32_t value) {
-  _internal_set_batch_size(value);
-  _impl_._has_bits_[0] |= 0x00000080u;
-  // @@protoc_insertion_point(field_set:common.v1.ConfigMeilisearch.batch_size)
+inline void ConfigMeilisearch::set_max_concurrency(::int32_t value) {
+  _internal_set_max_concurrency(value);
+  _impl_._has_bits_[0] |= 0x00000400u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigMeilisearch.max_concurrency)
 }
-inline ::int32_t ConfigMeilisearch::_internal_batch_size() const {
+inline ::int32_t ConfigMeilisearch::_internal_max_concurrency() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.batch_size_;
+  return _impl_.max_concurrency_;
 }
-inline void ConfigMeilisearch::_internal_set_batch_size(::int32_t value) {
+inline void ConfigMeilisearch::_internal_set_max_concurrency(::int32_t value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.batch_size_ = value;
+  _impl_.max_concurrency_ = value;
 }
 
 // optional int32 request_timeout_seconds = 7 [json_name = "requestTimeoutSeconds"];
 inline bool ConfigMeilisearch::has_request_timeout_seconds() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000800u) != 0;
   return value;
 }
 inline void ConfigMeilisearch::clear_request_timeout_seconds() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.request_timeout_seconds_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000100u;
+  _impl_._has_bits_[0] &= ~0x00000800u;
 }
 inline ::int32_t ConfigMeilisearch::request_timeout_seconds() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigMeilisearch.request_timeout_seconds)
@@ -22706,7 +22827,7 @@ inline ::int32_t ConfigMeilisearch::request_timeout_seconds() const {
 }
 inline void ConfigMeilisearch::set_request_timeout_seconds(::int32_t value) {
   _internal_set_request_timeout_seconds(value);
-  _impl_._has_bits_[0] |= 0x00000100u;
+  _impl_._has_bits_[0] |= 0x00000800u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigMeilisearch.request_timeout_seconds)
 }
 inline ::int32_t ConfigMeilisearch::_internal_request_timeout_seconds() const {
@@ -22720,13 +22841,13 @@ inline void ConfigMeilisearch::_internal_set_request_timeout_seconds(::int32_t v
 
 // optional string index_prefix = 8 [json_name = "indexPrefix"];
 inline bool ConfigMeilisearch::has_index_prefix() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
 }
 inline void ConfigMeilisearch::clear_index_prefix() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.index_prefix_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 inline const ::std::string& ConfigMeilisearch::index_prefix() const
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -22736,7 +22857,7 @@ inline const ::std::string& ConfigMeilisearch::index_prefix() const
 template <typename Arg_, typename... Args_>
 PROTOBUF_ALWAYS_INLINE void ConfigMeilisearch::set_index_prefix(Arg_&& arg, Args_... args) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.index_prefix_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
   // @@protoc_insertion_point(field_set:common.v1.ConfigMeilisearch.index_prefix)
 }
@@ -22752,21 +22873,21 @@ inline const ::std::string& ConfigMeilisearch::_internal_index_prefix() const {
 }
 inline void ConfigMeilisearch::_internal_set_index_prefix(const ::std::string& value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.index_prefix_.Set(value, GetArena());
 }
 inline ::std::string* PROTOBUF_NONNULL ConfigMeilisearch::_internal_mutable_index_prefix() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000002u;
   return _impl_.index_prefix_.Mutable( GetArena());
 }
 inline ::std::string* PROTOBUF_NULLABLE ConfigMeilisearch::release_index_prefix() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   // @@protoc_insertion_point(field_release:common.v1.ConfigMeilisearch.index_prefix)
-  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
     return nullptr;
   }
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
   auto* released = _impl_.index_prefix_.Release();
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
     _impl_.index_prefix_.Set("", GetArena());
@@ -22776,9 +22897,9 @@ inline ::std::string* PROTOBUF_NULLABLE ConfigMeilisearch::release_index_prefix(
 inline void ConfigMeilisearch::set_allocated_index_prefix(::std::string* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000004u;
+    _impl_._has_bits_[0] |= 0x00000002u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00000004u;
+    _impl_._has_bits_[0] &= ~0x00000002u;
   }
   _impl_.index_prefix_.SetAllocated(value, GetArena());
   if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.index_prefix_.IsDefault()) {
@@ -22789,13 +22910,13 @@ inline void ConfigMeilisearch::set_allocated_index_prefix(::std::string* PROTOBU
 
 // optional int32 search_cutoff_ms = 9 [json_name = "searchCutoffMs"];
 inline bool ConfigMeilisearch::has_search_cutoff_ms() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00001000u) != 0;
   return value;
 }
 inline void ConfigMeilisearch::clear_search_cutoff_ms() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.search_cutoff_ms_ = 0;
-  _impl_._has_bits_[0] &= ~0x00000200u;
+  _impl_._has_bits_[0] &= ~0x00001000u;
 }
 inline ::int32_t ConfigMeilisearch::search_cutoff_ms() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigMeilisearch.search_cutoff_ms)
@@ -22803,7 +22924,7 @@ inline ::int32_t ConfigMeilisearch::search_cutoff_ms() const {
 }
 inline void ConfigMeilisearch::set_search_cutoff_ms(::int32_t value) {
   _internal_set_search_cutoff_ms(value);
-  _impl_._has_bits_[0] |= 0x00000200u;
+  _impl_._has_bits_[0] |= 0x00001000u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigMeilisearch.search_cutoff_ms)
 }
 inline ::int32_t ConfigMeilisearch::_internal_search_cutoff_ms() const {
@@ -22817,13 +22938,13 @@ inline void ConfigMeilisearch::_internal_set_search_cutoff_ms(::int32_t value) {
 
 // optional bool enable_typo_tolerance = 10 [json_name = "enableTypoTolerance"];
 inline bool ConfigMeilisearch::has_enable_typo_tolerance() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
   return value;
 }
 inline void ConfigMeilisearch::clear_enable_typo_tolerance() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.enable_typo_tolerance_ = false;
-  _impl_._has_bits_[0] &= ~0x00000040u;
+  _impl_._has_bits_[0] &= ~0x00000200u;
 }
 inline bool ConfigMeilisearch::enable_typo_tolerance() const {
   // @@protoc_insertion_point(field_get:common.v1.ConfigMeilisearch.enable_typo_tolerance)
@@ -22831,7 +22952,7 @@ inline bool ConfigMeilisearch::enable_typo_tolerance() const {
 }
 inline void ConfigMeilisearch::set_enable_typo_tolerance(bool value) {
   _internal_set_enable_typo_tolerance(value);
-  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_._has_bits_[0] |= 0x00000200u;
   // @@protoc_insertion_point(field_set:common.v1.ConfigMeilisearch.enable_typo_tolerance)
 }
 inline bool ConfigMeilisearch::_internal_enable_typo_tolerance() const {
@@ -22841,6 +22962,378 @@ inline bool ConfigMeilisearch::_internal_enable_typo_tolerance() const {
 inline void ConfigMeilisearch::_internal_set_enable_typo_tolerance(bool value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.enable_typo_tolerance_ = value;
+}
+
+// string kafka_broker = 11 [json_name = "kafkaBroker"];
+inline void ConfigMeilisearch::clear_kafka_broker() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.kafka_broker_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline const ::std::string& ConfigMeilisearch::kafka_broker() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigMeilisearch.kafka_broker)
+  return _internal_kafka_broker();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigMeilisearch::set_kafka_broker(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.kafka_broker_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigMeilisearch.kafka_broker)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigMeilisearch::mutable_kafka_broker()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_kafka_broker();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigMeilisearch.kafka_broker)
+  return _s;
+}
+inline const ::std::string& ConfigMeilisearch::_internal_kafka_broker() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.kafka_broker_.Get();
+}
+inline void ConfigMeilisearch::_internal_set_kafka_broker(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.kafka_broker_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigMeilisearch::_internal_mutable_kafka_broker() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  return _impl_.kafka_broker_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigMeilisearch::release_kafka_broker() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigMeilisearch.kafka_broker)
+  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  auto* released = _impl_.kafka_broker_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.kafka_broker_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigMeilisearch::set_allocated_kafka_broker(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+  _impl_.kafka_broker_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.kafka_broker_.IsDefault()) {
+    _impl_.kafka_broker_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigMeilisearch.kafka_broker)
+}
+
+// string kafka_group_id = 12 [json_name = "kafkaGroupId"];
+inline void ConfigMeilisearch::clear_kafka_group_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.kafka_group_id_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline const ::std::string& ConfigMeilisearch::kafka_group_id() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigMeilisearch.kafka_group_id)
+  return _internal_kafka_group_id();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigMeilisearch::set_kafka_group_id(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.kafka_group_id_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigMeilisearch.kafka_group_id)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigMeilisearch::mutable_kafka_group_id()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_kafka_group_id();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigMeilisearch.kafka_group_id)
+  return _s;
+}
+inline const ::std::string& ConfigMeilisearch::_internal_kafka_group_id() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.kafka_group_id_.Get();
+}
+inline void ConfigMeilisearch::_internal_set_kafka_group_id(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.kafka_group_id_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigMeilisearch::_internal_mutable_kafka_group_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  return _impl_.kafka_group_id_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigMeilisearch::release_kafka_group_id() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigMeilisearch.kafka_group_id)
+  if ((_impl_._has_bits_[0] & 0x00000008u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000008u;
+  auto* released = _impl_.kafka_group_id_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.kafka_group_id_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigMeilisearch::set_allocated_kafka_group_id(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000008u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000008u;
+  }
+  _impl_.kafka_group_id_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.kafka_group_id_.IsDefault()) {
+    _impl_.kafka_group_id_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigMeilisearch.kafka_group_id)
+}
+
+// string kafak_topic = 13 [json_name = "kafakTopic"];
+inline void ConfigMeilisearch::clear_kafak_topic() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.kafak_topic_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000010u;
+}
+inline const ::std::string& ConfigMeilisearch::kafak_topic() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigMeilisearch.kafak_topic)
+  return _internal_kafak_topic();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigMeilisearch::set_kafak_topic(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_.kafak_topic_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigMeilisearch.kafak_topic)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigMeilisearch::mutable_kafak_topic()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_kafak_topic();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigMeilisearch.kafak_topic)
+  return _s;
+}
+inline const ::std::string& ConfigMeilisearch::_internal_kafak_topic() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.kafak_topic_.Get();
+}
+inline void ConfigMeilisearch::_internal_set_kafak_topic(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_.kafak_topic_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigMeilisearch::_internal_mutable_kafak_topic() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000010u;
+  return _impl_.kafak_topic_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigMeilisearch::release_kafak_topic() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigMeilisearch.kafak_topic)
+  if ((_impl_._has_bits_[0] & 0x00000010u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000010u;
+  auto* released = _impl_.kafak_topic_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.kafak_topic_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigMeilisearch::set_allocated_kafak_topic(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000010u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000010u;
+  }
+  _impl_.kafak_topic_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.kafak_topic_.IsDefault()) {
+    _impl_.kafak_topic_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigMeilisearch.kafak_topic)
+}
+
+// string kafak_topic_dlq = 14 [json_name = "kafakTopicDlq"];
+inline void ConfigMeilisearch::clear_kafak_topic_dlq() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.kafak_topic_dlq_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000020u;
+}
+inline const ::std::string& ConfigMeilisearch::kafak_topic_dlq() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigMeilisearch.kafak_topic_dlq)
+  return _internal_kafak_topic_dlq();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ConfigMeilisearch::set_kafak_topic_dlq(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_.kafak_topic_dlq_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:common.v1.ConfigMeilisearch.kafak_topic_dlq)
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigMeilisearch::mutable_kafak_topic_dlq()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_kafak_topic_dlq();
+  // @@protoc_insertion_point(field_mutable:common.v1.ConfigMeilisearch.kafak_topic_dlq)
+  return _s;
+}
+inline const ::std::string& ConfigMeilisearch::_internal_kafak_topic_dlq() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.kafak_topic_dlq_.Get();
+}
+inline void ConfigMeilisearch::_internal_set_kafak_topic_dlq(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_.kafak_topic_dlq_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ConfigMeilisearch::_internal_mutable_kafak_topic_dlq() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000020u;
+  return _impl_.kafak_topic_dlq_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ConfigMeilisearch::release_kafak_topic_dlq() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:common.v1.ConfigMeilisearch.kafak_topic_dlq)
+  if ((_impl_._has_bits_[0] & 0x00000020u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000020u;
+  auto* released = _impl_.kafak_topic_dlq_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.kafak_topic_dlq_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ConfigMeilisearch::set_allocated_kafak_topic_dlq(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000020u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000020u;
+  }
+  _impl_.kafak_topic_dlq_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.kafak_topic_dlq_.IsDefault()) {
+    _impl_.kafak_topic_dlq_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:common.v1.ConfigMeilisearch.kafak_topic_dlq)
+}
+
+// optional int32 task_max_wait_ms = 15 [json_name = "taskMaxWaitMs"];
+inline bool ConfigMeilisearch::has_task_max_wait_ms() const {
+  bool value = (_impl_._has_bits_[0] & 0x00002000u) != 0;
+  return value;
+}
+inline void ConfigMeilisearch::clear_task_max_wait_ms() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.task_max_wait_ms_ = 0;
+  _impl_._has_bits_[0] &= ~0x00002000u;
+}
+inline ::int32_t ConfigMeilisearch::task_max_wait_ms() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigMeilisearch.task_max_wait_ms)
+  return _internal_task_max_wait_ms();
+}
+inline void ConfigMeilisearch::set_task_max_wait_ms(::int32_t value) {
+  _internal_set_task_max_wait_ms(value);
+  _impl_._has_bits_[0] |= 0x00002000u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigMeilisearch.task_max_wait_ms)
+}
+inline ::int32_t ConfigMeilisearch::_internal_task_max_wait_ms() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.task_max_wait_ms_;
+}
+inline void ConfigMeilisearch::_internal_set_task_max_wait_ms(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.task_max_wait_ms_ = value;
+}
+
+// optional int32 task_max_retries = 16 [json_name = "taskMaxRetries"];
+inline bool ConfigMeilisearch::has_task_max_retries() const {
+  bool value = (_impl_._has_bits_[0] & 0x00004000u) != 0;
+  return value;
+}
+inline void ConfigMeilisearch::clear_task_max_retries() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.task_max_retries_ = 0;
+  _impl_._has_bits_[0] &= ~0x00004000u;
+}
+inline ::int32_t ConfigMeilisearch::task_max_retries() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigMeilisearch.task_max_retries)
+  return _internal_task_max_retries();
+}
+inline void ConfigMeilisearch::set_task_max_retries(::int32_t value) {
+  _internal_set_task_max_retries(value);
+  _impl_._has_bits_[0] |= 0x00004000u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigMeilisearch.task_max_retries)
+}
+inline ::int32_t ConfigMeilisearch::_internal_task_max_retries() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.task_max_retries_;
+}
+inline void ConfigMeilisearch::_internal_set_task_max_retries(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.task_max_retries_ = value;
+}
+
+// optional int32 task_backoff_base_ms = 17 [json_name = "taskBackoffBaseMs"];
+inline bool ConfigMeilisearch::has_task_backoff_base_ms() const {
+  bool value = (_impl_._has_bits_[0] & 0x00008000u) != 0;
+  return value;
+}
+inline void ConfigMeilisearch::clear_task_backoff_base_ms() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.task_backoff_base_ms_ = 0;
+  _impl_._has_bits_[0] &= ~0x00008000u;
+}
+inline ::int32_t ConfigMeilisearch::task_backoff_base_ms() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigMeilisearch.task_backoff_base_ms)
+  return _internal_task_backoff_base_ms();
+}
+inline void ConfigMeilisearch::set_task_backoff_base_ms(::int32_t value) {
+  _internal_set_task_backoff_base_ms(value);
+  _impl_._has_bits_[0] |= 0x00008000u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigMeilisearch.task_backoff_base_ms)
+}
+inline ::int32_t ConfigMeilisearch::_internal_task_backoff_base_ms() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.task_backoff_base_ms_;
+}
+inline void ConfigMeilisearch::_internal_set_task_backoff_base_ms(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.task_backoff_base_ms_ = value;
+}
+
+// optional int32 shutdown_wait_secs = 18 [json_name = "shutdownWaitSecs"];
+inline bool ConfigMeilisearch::has_shutdown_wait_secs() const {
+  bool value = (_impl_._has_bits_[0] & 0x00010000u) != 0;
+  return value;
+}
+inline void ConfigMeilisearch::clear_shutdown_wait_secs() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.shutdown_wait_secs_ = 0;
+  _impl_._has_bits_[0] &= ~0x00010000u;
+}
+inline ::int32_t ConfigMeilisearch::shutdown_wait_secs() const {
+  // @@protoc_insertion_point(field_get:common.v1.ConfigMeilisearch.shutdown_wait_secs)
+  return _internal_shutdown_wait_secs();
+}
+inline void ConfigMeilisearch::set_shutdown_wait_secs(::int32_t value) {
+  _internal_set_shutdown_wait_secs(value);
+  _impl_._has_bits_[0] |= 0x00010000u;
+  // @@protoc_insertion_point(field_set:common.v1.ConfigMeilisearch.shutdown_wait_secs)
+}
+inline ::int32_t ConfigMeilisearch::_internal_shutdown_wait_secs() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.shutdown_wait_secs_;
+}
+inline void ConfigMeilisearch::_internal_set_shutdown_wait_secs(::int32_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.shutdown_wait_secs_ = value;
 }
 
 // -------------------------------------------------------------------

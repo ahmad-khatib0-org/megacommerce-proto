@@ -2608,20 +2608,33 @@ func (x *ConfigNativeApp) GetMobileJailbreakProtection() bool {
 }
 
 type ConfigMeilisearch struct {
-	state                 protoimpl.MessageState `protogen:"open.v1"`
-	ServerUrl             *string                `protobuf:"bytes,1,opt,name=server_url,proto3,oneof" json:"server_url,omitempty"`
-	MasterKey             *string                `protobuf:"bytes,2,opt,name=master_key,json=masterKey,proto3,oneof" json:"master_key,omitempty"` // Meilisearch-specific authentication
-	EnableIndexing        *bool                  `protobuf:"varint,3,opt,name=enable_indexing,json=enableIndexing,proto3,oneof" json:"enable_indexing,omitempty"`
-	EnableSearching       *bool                  `protobuf:"varint,4,opt,name=enable_searching,json=enableSearching,proto3,oneof" json:"enable_searching,omitempty"`
-	EnableAutocomplete    *bool                  `protobuf:"varint,5,opt,name=enable_autocomplete,json=enableAutocomplete,proto3,oneof" json:"enable_autocomplete,omitempty"`
-	BatchSize             *int32                 `protobuf:"varint,6,opt,name=batch_size,json=batchSize,proto3,oneof" json:"batch_size,omitempty"`
-	RequestTimeoutSeconds *int32                 `protobuf:"varint,7,opt,name=request_timeout_seconds,json=requestTimeoutSeconds,proto3,oneof" json:"request_timeout_seconds,omitempty"`
+	state              protoimpl.MessageState `protogen:"open.v1"`
+	ServerUrls         []string               `protobuf:"bytes,1,rep,name=server_urls,proto3" json:"server_urls,omitempty"`
+	MasterKey          *string                `protobuf:"bytes,2,opt,name=master_key,json=masterKey,proto3,oneof" json:"master_key,omitempty"` // Meilisearch-specific authentication
+	EnableIndexing     *bool                  `protobuf:"varint,3,opt,name=enable_indexing,json=enableIndexing,proto3,oneof" json:"enable_indexing,omitempty"`
+	EnableSearching    *bool                  `protobuf:"varint,4,opt,name=enable_searching,json=enableSearching,proto3,oneof" json:"enable_searching,omitempty"`
+	EnableAutocomplete *bool                  `protobuf:"varint,5,opt,name=enable_autocomplete,json=enableAutocomplete,proto3,oneof" json:"enable_autocomplete,omitempty"`
+	// concurrency limiter
+	MaxConcurrency        *int32 `protobuf:"varint,6,opt,name=max_concurrency,json=maxConcurrency,proto3,oneof" json:"max_concurrency,omitempty"`
+	RequestTimeoutSeconds *int32 `protobuf:"varint,7,opt,name=request_timeout_seconds,json=requestTimeoutSeconds,proto3,oneof" json:"request_timeout_seconds,omitempty"`
 	// Meilisearch-specific options
 	IndexPrefix         *string `protobuf:"bytes,8,opt,name=index_prefix,json=indexPrefix,proto3,oneof" json:"index_prefix,omitempty"`
 	SearchCutoffMs      *int32  `protobuf:"varint,9,opt,name=search_cutoff_ms,json=searchCutoffMs,proto3,oneof" json:"search_cutoff_ms,omitempty"` // performance tuning
 	EnableTypoTolerance *bool   `protobuf:"varint,10,opt,name=enable_typo_tolerance,json=enableTypoTolerance,proto3,oneof" json:"enable_typo_tolerance,omitempty"`
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+	KafkaBroker         string  `protobuf:"bytes,11,opt,name=kafka_broker,json=kafkaBroker,proto3" json:"kafka_broker,omitempty"`
+	KafkaGroupId        string  `protobuf:"bytes,12,opt,name=kafka_group_id,json=kafkaGroupId,proto3" json:"kafka_group_id,omitempty"`
+	KafakTopic          string  `protobuf:"bytes,13,opt,name=kafak_topic,json=kafakTopic,proto3" json:"kafak_topic,omitempty"`
+	KafakTopicDlq       string  `protobuf:"bytes,14,opt,name=kafak_topic_dlq,json=kafakTopicDlq,proto3" json:"kafak_topic_dlq,omitempty"`
+	// how long to wait for Meili task to finish (ms)
+	TaskMaxWaitMs *int32 `protobuf:"varint,15,opt,name=task_max_wait_ms,json=taskMaxWaitMs,proto3,oneof" json:"task_max_wait_ms,omitempty"`
+	// per-endpoint retry attempts
+	TaskMaxRetries *int32 `protobuf:"varint,16,opt,name=task_max_retries,json=taskMaxRetries,proto3,oneof" json:"task_max_retries,omitempty"`
+	// initial backoff (ms)
+	TaskBackoffBaseMs *int32 `protobuf:"varint,17,opt,name=task_backoff_base_ms,json=taskBackoffBaseMs,proto3,oneof" json:"task_backoff_base_ms,omitempty"`
+	// how long to wait for in-flight tasks on shutdown
+	ShutdownWaitSecs *int32 `protobuf:"varint,18,opt,name=shutdown_wait_secs,json=shutdownWaitSecs,proto3,oneof" json:"shutdown_wait_secs,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *ConfigMeilisearch) Reset() {
@@ -2654,11 +2667,11 @@ func (*ConfigMeilisearch) Descriptor() ([]byte, []int) {
 	return file_common_v1_config_proto_rawDescGZIP(), []int{18}
 }
 
-func (x *ConfigMeilisearch) GetServerUrl() string {
-	if x != nil && x.ServerUrl != nil {
-		return *x.ServerUrl
+func (x *ConfigMeilisearch) GetServerUrls() []string {
+	if x != nil {
+		return x.ServerUrls
 	}
-	return ""
+	return nil
 }
 
 func (x *ConfigMeilisearch) GetMasterKey() string {
@@ -2689,9 +2702,9 @@ func (x *ConfigMeilisearch) GetEnableAutocomplete() bool {
 	return false
 }
 
-func (x *ConfigMeilisearch) GetBatchSize() int32 {
-	if x != nil && x.BatchSize != nil {
-		return *x.BatchSize
+func (x *ConfigMeilisearch) GetMaxConcurrency() int32 {
+	if x != nil && x.MaxConcurrency != nil {
+		return *x.MaxConcurrency
 	}
 	return 0
 }
@@ -2722,6 +2735,62 @@ func (x *ConfigMeilisearch) GetEnableTypoTolerance() bool {
 		return *x.EnableTypoTolerance
 	}
 	return false
+}
+
+func (x *ConfigMeilisearch) GetKafkaBroker() string {
+	if x != nil {
+		return x.KafkaBroker
+	}
+	return ""
+}
+
+func (x *ConfigMeilisearch) GetKafkaGroupId() string {
+	if x != nil {
+		return x.KafkaGroupId
+	}
+	return ""
+}
+
+func (x *ConfigMeilisearch) GetKafakTopic() string {
+	if x != nil {
+		return x.KafakTopic
+	}
+	return ""
+}
+
+func (x *ConfigMeilisearch) GetKafakTopicDlq() string {
+	if x != nil {
+		return x.KafakTopicDlq
+	}
+	return ""
+}
+
+func (x *ConfigMeilisearch) GetTaskMaxWaitMs() int32 {
+	if x != nil && x.TaskMaxWaitMs != nil {
+		return *x.TaskMaxWaitMs
+	}
+	return 0
+}
+
+func (x *ConfigMeilisearch) GetTaskMaxRetries() int32 {
+	if x != nil && x.TaskMaxRetries != nil {
+		return *x.TaskMaxRetries
+	}
+	return 0
+}
+
+func (x *ConfigMeilisearch) GetTaskBackoffBaseMs() int32 {
+	if x != nil && x.TaskBackoffBaseMs != nil {
+		return *x.TaskBackoffBaseMs
+	}
+	return 0
+}
+
+func (x *ConfigMeilisearch) GetShutdownWaitSecs() int32 {
+	if x != nil && x.ShutdownWaitSecs != nil {
+		return *x.ShutdownWaitSecs
+	}
+	return 0
 }
 
 type ConfigBleve struct {
@@ -4119,33 +4188,43 @@ const file_common_v1_config_proto_rawDesc = "" +
 	"\x18_mobile_external_browserB\x1b\n" +
 	"\x19_mobile_enable_biometricsB \n" +
 	"\x1e_mobile_prevent_screen_captureB\x1e\n" +
-	"\x1c_mobile_jailbreak_protection\"\xab\x05\n" +
-	"\x11ConfigMeilisearch\x12#\n" +
+	"\x1c_mobile_jailbreak_protection\"\xda\b\n" +
+	"\x11ConfigMeilisearch\x12 \n" +
+	"\vserver_urls\x18\x01 \x03(\tR\vserver_urls\x12\"\n" +
 	"\n" +
-	"server_url\x18\x01 \x01(\tH\x00R\n" +
-	"server_url\x88\x01\x01\x12\"\n" +
-	"\n" +
-	"master_key\x18\x02 \x01(\tH\x01R\tmasterKey\x88\x01\x01\x12,\n" +
-	"\x0fenable_indexing\x18\x03 \x01(\bH\x02R\x0eenableIndexing\x88\x01\x01\x12.\n" +
-	"\x10enable_searching\x18\x04 \x01(\bH\x03R\x0fenableSearching\x88\x01\x01\x124\n" +
-	"\x13enable_autocomplete\x18\x05 \x01(\bH\x04R\x12enableAutocomplete\x88\x01\x01\x12\"\n" +
-	"\n" +
-	"batch_size\x18\x06 \x01(\x05H\x05R\tbatchSize\x88\x01\x01\x12;\n" +
-	"\x17request_timeout_seconds\x18\a \x01(\x05H\x06R\x15requestTimeoutSeconds\x88\x01\x01\x12&\n" +
-	"\findex_prefix\x18\b \x01(\tH\aR\vindexPrefix\x88\x01\x01\x12-\n" +
-	"\x10search_cutoff_ms\x18\t \x01(\x05H\bR\x0esearchCutoffMs\x88\x01\x01\x127\n" +
+	"master_key\x18\x02 \x01(\tH\x00R\tmasterKey\x88\x01\x01\x12,\n" +
+	"\x0fenable_indexing\x18\x03 \x01(\bH\x01R\x0eenableIndexing\x88\x01\x01\x12.\n" +
+	"\x10enable_searching\x18\x04 \x01(\bH\x02R\x0fenableSearching\x88\x01\x01\x124\n" +
+	"\x13enable_autocomplete\x18\x05 \x01(\bH\x03R\x12enableAutocomplete\x88\x01\x01\x12,\n" +
+	"\x0fmax_concurrency\x18\x06 \x01(\x05H\x04R\x0emaxConcurrency\x88\x01\x01\x12;\n" +
+	"\x17request_timeout_seconds\x18\a \x01(\x05H\x05R\x15requestTimeoutSeconds\x88\x01\x01\x12&\n" +
+	"\findex_prefix\x18\b \x01(\tH\x06R\vindexPrefix\x88\x01\x01\x12-\n" +
+	"\x10search_cutoff_ms\x18\t \x01(\x05H\aR\x0esearchCutoffMs\x88\x01\x01\x127\n" +
 	"\x15enable_typo_tolerance\x18\n" +
-	" \x01(\bH\tR\x13enableTypoTolerance\x88\x01\x01B\r\n" +
-	"\v_server_urlB\r\n" +
+	" \x01(\bH\bR\x13enableTypoTolerance\x88\x01\x01\x12!\n" +
+	"\fkafka_broker\x18\v \x01(\tR\vkafkaBroker\x12$\n" +
+	"\x0ekafka_group_id\x18\f \x01(\tR\fkafkaGroupId\x12\x1f\n" +
+	"\vkafak_topic\x18\r \x01(\tR\n" +
+	"kafakTopic\x12&\n" +
+	"\x0fkafak_topic_dlq\x18\x0e \x01(\tR\rkafakTopicDlq\x12,\n" +
+	"\x10task_max_wait_ms\x18\x0f \x01(\x05H\tR\rtaskMaxWaitMs\x88\x01\x01\x12-\n" +
+	"\x10task_max_retries\x18\x10 \x01(\x05H\n" +
+	"R\x0etaskMaxRetries\x88\x01\x01\x124\n" +
+	"\x14task_backoff_base_ms\x18\x11 \x01(\x05H\vR\x11taskBackoffBaseMs\x88\x01\x01\x121\n" +
+	"\x12shutdown_wait_secs\x18\x12 \x01(\x05H\fR\x10shutdownWaitSecs\x88\x01\x01B\r\n" +
 	"\v_master_keyB\x12\n" +
 	"\x10_enable_indexingB\x13\n" +
 	"\x11_enable_searchingB\x16\n" +
-	"\x14_enable_autocompleteB\r\n" +
-	"\v_batch_sizeB\x1a\n" +
+	"\x14_enable_autocompleteB\x12\n" +
+	"\x10_max_concurrencyB\x1a\n" +
 	"\x18_request_timeout_secondsB\x0f\n" +
 	"\r_index_prefixB\x13\n" +
 	"\x11_search_cutoff_msB\x18\n" +
-	"\x16_enable_typo_tolerance\"\xba\x03\n" +
+	"\x16_enable_typo_toleranceB\x13\n" +
+	"\x11_task_max_wait_msB\x13\n" +
+	"\x11_task_max_retriesB\x17\n" +
+	"\x15_task_backoff_base_msB\x15\n" +
+	"\x13_shutdown_wait_secs\"\xba\x03\n" +
 	"\vConfigBleve\x12 \n" +
 	"\tindex_dir\x18\x01 \x01(\tH\x00R\bindexDir\x88\x01\x01\x12,\n" +
 	"\x0fenable_indexing\x18\x02 \x01(\bH\x01R\x0eenableIndexing\x88\x01\x01\x12.\n" +
