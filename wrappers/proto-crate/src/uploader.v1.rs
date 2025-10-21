@@ -221,3 +221,555 @@ pub mod uploader_service_server {
         const NAME: &'static str = SERVICE_NAME;
     }
 }
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct DataStorageOptions {
+    /// Rustus storage type.
+    ///
+    /// Storages are used to store uploads.
+    ///
+    /// NOTE: Rust default is `default_storage()` -> FileStorage. Apply this default if field absent.
+    #[prost(enumeration = "AvailableDataStorages", tag = "1")]
+    pub storage: i32,
+    /// Rustus data directory
+    ///
+    /// This directory is used to store files for all `file_storage` storages.
+    /// PathBuf in Rust -> string path here.
+    ///
+    /// NOTE: Rust default is `./data`.
+    #[prost(string, tag = "2")]
+    pub data_dir: ::prost::alloc::string::String,
+    /// Storage directory structure. This template shows inner directory structure.
+    /// You can use following variables: day, month, year or even environment variables.
+    /// Example: "/year/month/day/env\[HOSTNAME\]/".
+    #[prost(string, tag = "3")]
+    pub dir_structure: ::prost::alloc::string::String,
+    /// Forces fsync call after writing chunk to filesystem. Useful for network filesystems.
+    #[prost(bool, tag = "4")]
+    pub force_fsync: bool,
+    /// S3 bucket to upload files to.
+    ///
+    /// This parameter is required for s3-based storages.
+    #[prost(string, optional, tag = "10")]
+    pub s3_bucket: ::core::option::Option<::prost::alloc::string::String>,
+    /// S3 region.
+    ///
+    /// This parameter is required for s3-based storages.
+    #[prost(string, optional, tag = "11")]
+    pub s3_region: ::core::option::Option<::prost::alloc::string::String>,
+    /// S3 access key.
+    ///
+    /// This parameter is required for s3-based storages.
+    #[prost(string, optional, tag = "12")]
+    pub s3_access_key: ::core::option::Option<::prost::alloc::string::String>,
+    /// S3 access key path.
+    ///
+    /// path to file that has s3-access-key inside.
+    ///
+    /// This parameter is used for s3-based storages.
+    #[prost(string, optional, tag = "13")]
+    pub s3_access_key_path: ::core::option::Option<::prost::alloc::string::String>,
+    /// S3 secret key.
+    ///
+    /// This parameter is required for s3-based storages.
+    #[prost(string, optional, tag = "14")]
+    pub s3_secret_key: ::core::option::Option<::prost::alloc::string::String>,
+    /// S3 secret key path.
+    ///
+    /// path to file that has s3-secret-key inside.
+    ///
+    /// This parameter is required for s3-based storages.
+    #[prost(string, optional, tag = "15")]
+    pub s3_secret_key_path: ::core::option::Option<::prost::alloc::string::String>,
+    /// S3 URL.
+    ///
+    /// This parameter is required for s3-based storages.
+    #[prost(string, optional, tag = "16")]
+    pub s3_url: ::core::option::Option<::prost::alloc::string::String>,
+    /// S3 force path style.
+    ///
+    /// This parameter is required for some s3-based storages (e.g. MinIO).
+    #[prost(bool, tag = "17")]
+    pub s3_force_path_style: bool,
+    /// S3 security token.
+    ///
+    /// This parameter is used for temporary credentials.
+    #[prost(string, optional, tag = "18")]
+    pub s3_security_token: ::core::option::Option<::prost::alloc::string::String>,
+    /// S3 session token.
+    #[prost(string, optional, tag = "19")]
+    pub s3_session_token: ::core::option::Option<::prost::alloc::string::String>,
+    /// S3 profile.
+    #[prost(string, optional, tag = "20")]
+    pub s3_profile: ::core::option::Option<::prost::alloc::string::String>,
+    /// Additional S3 headers. These headers are passed to every request to s3.
+    /// Useful for configuring ACLs.
+    #[prost(string, optional, tag = "21")]
+    pub s3_headers: ::core::option::Option<::prost::alloc::string::String>,
+    /// Number of concurrent downloads of partial files from S3.
+    /// When performing concatenation, Rustus downloads all partial files
+    /// from S3 and concatenates them into a single file.
+    ///
+    /// This parameter controls the number of concurrent downloads.
+    ///
+    /// NOTE: Rust default = 10
+    #[prost(uint32, tag = "22")]
+    pub s3_concat_concurrent_downloads: u32,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct InfoStoreOptions {
+    /// / Type of info storage.
+    /// /
+    /// / Info storages are used to store information about uploads.
+    /// /
+    /// / This information is used in HEAD requests.
+    ///
+    /// NOTE: Rust default = Files
+    #[prost(enumeration = "AvailableInfoStorages", tag = "1")]
+    pub info_storage: i32,
+    /// / Rustus info directory
+    /// /
+    /// / This directory is used to store .info files for `file_info_storage`.
+    ///
+    /// NOTE: Rust default = "./data"
+    #[prost(string, tag = "2")]
+    pub info_dir: ::prost::alloc::string::String,
+    /// / Connection string for remote info storages.
+    /// /
+    /// / This connection string is used for storages which require connection.
+    /// / Examples of such storages are `Postgres`, `MySQL` or `Redis`.
+    /// /
+    /// / Value must include all connection details.
+    #[prost(string, optional, tag = "3")]
+    pub info_db_dsn: ::core::option::Option<::prost::alloc::string::String>,
+    /// redis_info_expiration: Option<usize> in Rust -> optional uint64 here
+    #[prost(uint64, optional, tag = "4")]
+    pub redis_info_expiration: ::core::option::Option<u64>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct AmqpHooksOptions {
+    /// / Url for AMQP server.
+    #[prost(string, optional, tag = "1")]
+    pub url: ::core::option::Option<::prost::alloc::string::String>,
+    /// / Rustus will create exchange if enabled.
+    #[prost(bool, tag = "2")]
+    pub declare_exchange: bool,
+    /// / Rustus will create all queues for communication and bind them
+    /// / to exchange if enabled.
+    #[prost(bool, tag = "3")]
+    pub declare_queues: bool,
+    /// / Durability type of exchange.
+    #[prost(bool, tag = "4")]
+    pub durable_exchange: bool,
+    /// / Durability type of queues.
+    #[prost(bool, tag = "5")]
+    pub durable_queues: bool,
+    /// / Adds celery specific headers.
+    #[prost(bool, tag = "6")]
+    pub celery: bool,
+    /// / Name of amqp exchange.
+    ///
+    /// default "rustus" in Rust
+    #[prost(string, tag = "10")]
+    pub exchange: ::prost::alloc::string::String,
+    /// / Exchange kind.
+    ///
+    /// default "topic" in Rust
+    #[prost(string, tag = "11")]
+    pub exchange_kind: ::prost::alloc::string::String,
+    /// / Routing key to use when sending message to an exchange.
+    #[prost(string, optional, tag = "12")]
+    pub routing_key: ::core::option::Option<::prost::alloc::string::String>,
+    /// / Prefix for all AMQP queues.
+    ///
+    /// default "rustus" in Rust
+    #[prost(string, tag = "13")]
+    pub queues_prefix: ::prost::alloc::string::String,
+    /// / Maximum number of connections for `RabbitMQ`.
+    ///
+    /// default 10
+    #[prost(uint64, tag = "14")]
+    pub connection_pool_size: u64,
+    /// / Maximum number of opened channels for each connection.
+    ///
+    /// default 10
+    #[prost(uint64, tag = "15")]
+    pub channel_pool_size: u64,
+    /// / After this amount of time the connection will be dropped.
+    #[prost(uint64, optional, tag = "16")]
+    pub idle_connection_timeout: ::core::option::Option<u64>,
+    /// / After this amount of time in seconds, the channel will be closed.
+    #[prost(uint64, optional, tag = "17")]
+    pub idle_channels_timeout: ::core::option::Option<u64>,
+    /// / Declares all objects with auto-delete property set.
+    #[prost(bool, tag = "18")]
+    pub auto_delete: bool,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct KafkaHookOptions {
+    /// / Kafka urls.
+    /// / List of brokers to connect to in the format `host:port`.
+    /// / If you have multiple brokers, separate them with commas.
+    /// / Corresponds to `bootstrap.servers` in Kafka configuration.
+    #[prost(string, optional, tag = "1")]
+    pub urls: ::core::option::Option<::prost::alloc::string::String>,
+    /// / Kafka producer client.id.
+    #[prost(string, optional, tag = "2")]
+    pub client_id: ::core::option::Option<::prost::alloc::string::String>,
+    /// / Kafka required acks.
+    #[prost(string, optional, tag = "5")]
+    pub required_acks: ::core::option::Option<::prost::alloc::string::String>,
+    /// / Compression codec.
+    #[prost(string, optional, tag = "6")]
+    pub compression: ::core::option::Option<::prost::alloc::string::String>,
+    /// / Kafka idle timeout in seconds.
+    #[prost(uint64, optional, tag = "7")]
+    pub idle_timeout: ::core::option::Option<u64>,
+    /// / Kafka send timeout in seconds.
+    #[prost(uint64, optional, tag = "8")]
+    pub send_timeout: ::core::option::Option<u64>,
+    /// / Extra options for Kafka.
+    /// / In Rust this is ExtraKafkaOptions; here it's a map of strings.
+    #[prost(map = "string, string", tag = "20")]
+    pub extra_kafka_opts: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        ::prost::alloc::string::String,
+    >,
+    /// Mutual exclusion: topic OR prefix (Rust validate enforces this).
+    #[prost(oneof = "kafka_hook_options::TopicOrPrefix", tags = "3, 4")]
+    pub topic_or_prefix: ::core::option::Option<kafka_hook_options::TopicOrPrefix>,
+}
+/// Nested message and enum types in `KafkaHookOptions`.
+pub mod kafka_hook_options {
+    /// Mutual exclusion: topic OR prefix (Rust validate enforces this).
+    #[derive(serde::Serialize, serde::Deserialize)]
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum TopicOrPrefix {
+        #[prost(string, tag = "3")]
+        Topic(::prost::alloc::string::String),
+        #[prost(string, tag = "4")]
+        Prefix(::prost::alloc::string::String),
+    }
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct NatsHookOptions {
+    /// / List of URLs to connect to NATS. Commas are used as delimiters.
+    #[prost(string, repeated, tag = "1")]
+    pub urls: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    /// / Wait for replies from NATS.
+    #[prost(bool, tag = "4")]
+    pub wait_for_replies: bool,
+    /// / NATS user to connect to the server.
+    #[prost(string, optional, tag = "10")]
+    pub username: ::core::option::Option<::prost::alloc::string::String>,
+    /// / NATS password to connect to the server.
+    #[prost(string, optional, tag = "11")]
+    pub password: ::core::option::Option<::prost::alloc::string::String>,
+    /// / NATS token to connect to the server.
+    #[prost(string, optional, tag = "12")]
+    pub token: ::core::option::Option<::prost::alloc::string::String>,
+    /// Mutual exclusion: subject OR prefix (Rust validate enforces this).
+    #[prost(oneof = "nats_hook_options::SubjectOrPrefix", tags = "2, 3")]
+    pub subject_or_prefix: ::core::option::Option<nats_hook_options::SubjectOrPrefix>,
+}
+/// Nested message and enum types in `NatsHookOptions`.
+pub mod nats_hook_options {
+    /// Mutual exclusion: subject OR prefix (Rust validate enforces this).
+    #[derive(serde::Serialize, serde::Deserialize)]
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum SubjectOrPrefix {
+        #[prost(string, tag = "2")]
+        Subject(::prost::alloc::string::String),
+        #[prost(string, tag = "3")]
+        Prefix(::prost::alloc::string::String),
+    }
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct NotificationsOptions {
+    /// / Notifications format.
+    /// /
+    /// / This format will be used in all messages about hooks.
+    ///
+    /// default Format::Default in Rust
+    #[prost(enumeration = "Format", tag = "1")]
+    pub hooks_format: i32,
+    /// / Enabled hooks for notifications.
+    ///
+    /// default set in Rust (pre-create, post-create, ...)
+    #[prost(enumeration = "Hook", repeated, tag = "2")]
+    pub hooks: ::prost::alloc::vec::Vec<i32>,
+    /// / Use this option if you use rustus behind any proxy. Like Nginx or Traefik.
+    #[prost(bool, tag = "3")]
+    pub behind_proxy: bool,
+    /// / List of URLS to send webhooks to.
+    #[prost(string, repeated, tag = "4")]
+    pub hooks_http_urls: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    /// / Timeout for all HTTP requests in seconds.
+    #[prost(uint64, optional, tag = "5")]
+    pub http_hook_timeout: ::core::option::Option<u64>,
+    /// List of headers to forward from client.
+    #[prost(string, repeated, tag = "6")]
+    pub hooks_http_proxy_headers: ::prost::alloc::vec::Vec<
+        ::prost::alloc::string::String,
+    >,
+    /// / Directory for executable hook files.
+    #[prost(string, optional, tag = "10")]
+    pub hooks_dir: ::core::option::Option<::prost::alloc::string::String>,
+    /// / Executable file which must be called for notifying about upload status.
+    #[prost(string, optional, tag = "11")]
+    pub hooks_file: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(message, optional, tag = "20")]
+    pub amqp_hook_opts: ::core::option::Option<AmqpHooksOptions>,
+    #[prost(message, optional, tag = "21")]
+    pub kafka_hook_opts: ::core::option::Option<KafkaHookOptions>,
+    #[prost(message, optional, tag = "22")]
+    pub nats_hook_opts: ::core::option::Option<NatsHookOptions>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct SentryOptions {
+    #[prost(string, optional, tag = "1")]
+    pub dsn: ::core::option::Option<::prost::alloc::string::String>,
+    /// sample_rate: f32 in Rust -> float here (no presence tracking for float in proto3
+    /// unless you use wrapper; we keep it as scalar and document default)
+    ///
+    /// Rust default = 1.0; consumers should apply if zero/absent
+    #[prost(float, tag = "2")]
+    pub sample_rate: f32,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct RustusConf {
+    /// / Rustus server host
+    #[prost(string, tag = "1")]
+    pub host: ::prost::alloc::string::String,
+    /// / Rustus server port
+    #[prost(uint32, tag = "2")]
+    pub port: u32,
+    #[prost(bool, tag = "3")]
+    pub disable_health_access_log: bool,
+    /// / Rustus base API url
+    #[prost(string, tag = "4")]
+    pub url: ::prost::alloc::string::String,
+    /// / Allowed hosts for CORS protocol.
+    #[prost(string, repeated, tag = "10")]
+    pub cors: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    /// / Maximum payload size.
+    #[prost(uint64, tag = "11")]
+    pub max_body_size: u64,
+    /// / Rustus maximum log level (string; maps to log::LevelFilter in Rust)
+    #[prost(string, tag = "12")]
+    pub log_level: ::prost::alloc::string::String,
+    /// / Number of actix workers (optional: None -> auto)
+    #[prost(uint64, optional, tag = "13")]
+    pub workers: ::core::option::Option<u64>,
+    /// / Enabled extensions for TUS protocol.
+    #[prost(enumeration = "Extension", repeated, tag = "14")]
+    pub tus_extensions: ::prost::alloc::vec::Vec<i32>,
+    /// / Allow creation of empty files when Upload-Length header equals 0.
+    #[prost(bool, tag = "15")]
+    pub allow_empty: bool,
+    /// / Remove part files after concatenation is done.
+    #[prost(bool, tag = "16")]
+    pub remove_parts: bool,
+    /// / Maximum size of file that can be uploaded. Optional -> presence matters.
+    #[prost(uint64, optional, tag = "17")]
+    pub max_file_size: ::core::option::Option<u64>,
+    /// Nested option messages
+    #[prost(message, optional, tag = "20")]
+    pub storage_opts: ::core::option::Option<DataStorageOptions>,
+    #[prost(message, optional, tag = "21")]
+    pub info_storage_opts: ::core::option::Option<InfoStoreOptions>,
+    #[prost(message, optional, tag = "22")]
+    pub notification_opts: ::core::option::Option<NotificationsOptions>,
+    #[prost(message, optional, tag = "23")]
+    pub sentry_opts: ::core::option::Option<SentryOptions>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+#[repr(i32)]
+pub enum AvailableDataStorages {
+    Unspecified = 0,
+    FileStorage = 1,
+    S3 = 2,
+    HybridS3 = 3,
+}
+impl AvailableDataStorages {
+    /// String value of the enum field names used in the ProtoBuf definition.
+    ///
+    /// The values are not transformed in any way and thus are considered stable
+    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
+    pub fn as_str_name(&self) -> &'static str {
+        match self {
+            Self::Unspecified => "AVAILABLE_DATA_STORAGES_UNSPECIFIED",
+            Self::FileStorage => "FILE_STORAGE",
+            Self::S3 => "S3",
+            Self::HybridS3 => "HYBRID_S3",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "AVAILABLE_DATA_STORAGES_UNSPECIFIED" => Some(Self::Unspecified),
+            "FILE_STORAGE" => Some(Self::FileStorage),
+            "S3" => Some(Self::S3),
+            "HYBRID_S3" => Some(Self::HybridS3),
+            _ => None,
+        }
+    }
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+#[repr(i32)]
+pub enum AvailableInfoStorages {
+    Unspecified = 0,
+    Files = 1,
+    Redis = 2,
+    Postgres = 3,
+}
+impl AvailableInfoStorages {
+    /// String value of the enum field names used in the ProtoBuf definition.
+    ///
+    /// The values are not transformed in any way and thus are considered stable
+    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
+    pub fn as_str_name(&self) -> &'static str {
+        match self {
+            Self::Unspecified => "AVAILABLE_INFO_STORAGES_UNSPECIFIED",
+            Self::Files => "FILES",
+            Self::Redis => "REDIS",
+            Self::Postgres => "POSTGRES",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "AVAILABLE_INFO_STORAGES_UNSPECIFIED" => Some(Self::Unspecified),
+            "FILES" => Some(Self::Files),
+            "REDIS" => Some(Self::Redis),
+            "POSTGRES" => Some(Self::Postgres),
+            _ => None,
+        }
+    }
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+#[repr(i32)]
+pub enum Hook {
+    Unspecified = 0,
+    PreCreate = 1,
+    PostCreate = 2,
+    PostReceive = 3,
+    PreTerminate = 4,
+    PostTerminate = 5,
+    PostFinish = 6,
+}
+impl Hook {
+    /// String value of the enum field names used in the ProtoBuf definition.
+    ///
+    /// The values are not transformed in any way and thus are considered stable
+    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
+    pub fn as_str_name(&self) -> &'static str {
+        match self {
+            Self::Unspecified => "HOOK_UNSPECIFIED",
+            Self::PreCreate => "PRE_CREATE",
+            Self::PostCreate => "POST_CREATE",
+            Self::PostReceive => "POST_RECEIVE",
+            Self::PreTerminate => "PRE_TERMINATE",
+            Self::PostTerminate => "POST_TERMINATE",
+            Self::PostFinish => "POST_FINISH",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "HOOK_UNSPECIFIED" => Some(Self::Unspecified),
+            "PRE_CREATE" => Some(Self::PreCreate),
+            "POST_CREATE" => Some(Self::PostCreate),
+            "POST_RECEIVE" => Some(Self::PostReceive),
+            "PRE_TERMINATE" => Some(Self::PreTerminate),
+            "POST_TERMINATE" => Some(Self::PostTerminate),
+            "POST_FINISH" => Some(Self::PostFinish),
+            _ => None,
+        }
+    }
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+#[repr(i32)]
+pub enum Format {
+    Unspecified = 0,
+    Default = 1,
+    V2 = 2,
+}
+impl Format {
+    /// String value of the enum field names used in the ProtoBuf definition.
+    ///
+    /// The values are not transformed in any way and thus are considered stable
+    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
+    pub fn as_str_name(&self) -> &'static str {
+        match self {
+            Self::Unspecified => "FORMAT_UNSPECIFIED",
+            Self::Default => "DEFAULT",
+            Self::V2 => "V2",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "FORMAT_UNSPECIFIED" => Some(Self::Unspecified),
+            "DEFAULT" => Some(Self::Default),
+            "V2" => Some(Self::V2),
+            _ => None,
+        }
+    }
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord, ::prost::Enumeration)]
+#[repr(i32)]
+pub enum Extension {
+    Unspecified = 0,
+    Getting = 1,
+    Creation = 2,
+    CreationWithUpload = 3,
+    CreationDeferLength = 4,
+    Termination = 5,
+    Concatenation = 6,
+    Checksum = 7,
+}
+impl Extension {
+    /// String value of the enum field names used in the ProtoBuf definition.
+    ///
+    /// The values are not transformed in any way and thus are considered stable
+    /// (if the ProtoBuf definition does not change) and safe for programmatic use.
+    pub fn as_str_name(&self) -> &'static str {
+        match self {
+            Self::Unspecified => "EXTENSION_UNSPECIFIED",
+            Self::Getting => "GETTING",
+            Self::Creation => "CREATION",
+            Self::CreationWithUpload => "CREATION_WITH_UPLOAD",
+            Self::CreationDeferLength => "CREATION_DEFER_LENGTH",
+            Self::Termination => "TERMINATION",
+            Self::Concatenation => "CONCATENATION",
+            Self::Checksum => "CHECKSUM",
+        }
+    }
+    /// Creates an enum from field names used in the ProtoBuf definition.
+    pub fn from_str_name(value: &str) -> ::core::option::Option<Self> {
+        match value {
+            "EXTENSION_UNSPECIFIED" => Some(Self::Unspecified),
+            "GETTING" => Some(Self::Getting),
+            "CREATION" => Some(Self::Creation),
+            "CREATION_WITH_UPLOAD" => Some(Self::CreationWithUpload),
+            "CREATION_DEFER_LENGTH" => Some(Self::CreationDeferLength),
+            "TERMINATION" => Some(Self::Termination),
+            "CONCATENATION" => Some(Self::Concatenation),
+            "CHECKSUM" => Some(Self::Checksum),
+            _ => None,
+        }
+    }
+}

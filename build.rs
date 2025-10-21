@@ -43,6 +43,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         "products/v1/product_data.proto",
         "products/v1/product_list.proto",
         "uploader/v1/uploader.proto",
+        "uploader/v1/config.proto",
       ],
       &["."],
     )?;
