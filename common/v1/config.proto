@@ -44,6 +44,8 @@ message ConfigServices {
   optional int64 users_service_max_receive_message_size_bytes = 8;
   optional string auth_service_grpc_url = 9;
   optional string auth_service_prometheus_url = 10;
+  string search_service_grpc_url = 11;
+  string search_service_prometheus_url = 12;
 }
 
 message ConfigOAuth {

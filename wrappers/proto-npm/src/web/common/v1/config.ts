@@ -45,6 +45,8 @@ export interface ConfigServices {
   usersServiceMaxReceiveMessageSizeBytes?: string | undefined;
   authServiceGrpcUrl?: string | undefined;
   authServicePrometheusUrl?: string | undefined;
+  searchServiceGrpcUrl: string;
+  searchServicePrometheusUrl: string;
 }
 
 export interface ConfigOAuth {
@@ -883,6 +885,8 @@ function createBaseConfigServices(): ConfigServices {
     usersServiceMaxReceiveMessageSizeBytes: undefined,
     authServiceGrpcUrl: undefined,
     authServicePrometheusUrl: undefined,
+    searchServiceGrpcUrl: "",
+    searchServicePrometheusUrl: "",
   };
 }
 
@@ -917,6 +921,12 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     }
     if (message.authServicePrometheusUrl !== undefined) {
       writer.uint32(82).string(message.authServicePrometheusUrl);
+    }
+    if (message.searchServiceGrpcUrl !== "") {
+      writer.uint32(90).string(message.searchServiceGrpcUrl);
+    }
+    if (message.searchServicePrometheusUrl !== "") {
+      writer.uint32(98).string(message.searchServicePrometheusUrl);
     }
     return writer;
   },
@@ -1008,6 +1018,22 @@ export const ConfigServices: MessageFns<ConfigServices> = {
           message.authServicePrometheusUrl = reader.string();
           continue;
         }
+        case 11: {
+          if (tag !== 90) {
+            break;
+          }
+
+          message.searchServiceGrpcUrl = reader.string();
+          continue;
+        }
+        case 12: {
+          if (tag !== 98) {
+            break;
+          }
+
+          message.searchServicePrometheusUrl = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -1043,6 +1069,10 @@ export const ConfigServices: MessageFns<ConfigServices> = {
       authServicePrometheusUrl: isSet(object.authServicePrometheusUrl)
         ? globalThis.String(object.authServicePrometheusUrl)
         : undefined,
+      searchServiceGrpcUrl: isSet(object.searchServiceGrpcUrl) ? globalThis.String(object.searchServiceGrpcUrl) : "",
+      searchServicePrometheusUrl: isSet(object.searchServicePrometheusUrl)
+        ? globalThis.String(object.searchServicePrometheusUrl)
+        : "",
     };
   },
 
@@ -1078,6 +1108,12 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     if (message.authServicePrometheusUrl !== undefined) {
       obj.authServicePrometheusUrl = message.authServicePrometheusUrl;
     }
+    if (message.searchServiceGrpcUrl !== "") {
+      obj.searchServiceGrpcUrl = message.searchServiceGrpcUrl;
+    }
+    if (message.searchServicePrometheusUrl !== "") {
+      obj.searchServicePrometheusUrl = message.searchServicePrometheusUrl;
+    }
     return obj;
   },
 
@@ -1096,6 +1132,8 @@ export const ConfigServices: MessageFns<ConfigServices> = {
     message.usersServiceMaxReceiveMessageSizeBytes = object.usersServiceMaxReceiveMessageSizeBytes ?? undefined;
     message.authServiceGrpcUrl = object.authServiceGrpcUrl ?? undefined;
     message.authServicePrometheusUrl = object.authServicePrometheusUrl ?? undefined;
+    message.searchServiceGrpcUrl = object.searchServiceGrpcUrl ?? "";
+    message.searchServicePrometheusUrl = object.searchServicePrometheusUrl ?? "";
     return message;
   },
 };
