@@ -846,3 +846,68 @@ pub mod products_service_server {
         const NAME: &'static str = SERVICE_NAME;
     }
 }
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ChangeFeed {
+    #[prost(message, optional, tag = "1")]
+    pub after: ::core::option::Option<ProductOutbox>,
+    #[prost(message, optional, tag = "2")]
+    pub before: ::core::option::Option<ProductOutbox>,
+    #[prost(int64, tag = "3")]
+    pub updated: i64,
+    #[prost(int64, tag = "4")]
+    pub resolved: i64,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductOutbox {
+    #[prost(string, tag = "1")]
+    pub id: ::prost::alloc::string::String,
+    /// in other word: the aggregate id
+    #[prost(string, tag = "2")]
+    pub product_id: ::prost::alloc::string::String,
+    /// 'created'|'updated'|'deleted'
+    #[prost(string, tag = "3")]
+    pub r#type: ::prost::alloc::string::String,
+    /// unix timestamp
+    #[prost(int64, optional, tag = "4")]
+    pub processed_at: ::core::option::Option<i64>,
+    #[prost(uint32, tag = "5")]
+    pub processing_attempts: u32,
+    #[prost(string, optional, tag = "6")]
+    pub last_error: ::core::option::Option<::prost::alloc::string::String>,
+    /// unix timestamp
+    #[prost(int64, tag = "7")]
+    pub created_at: i64,
+    #[prost(int64, tag = "8")]
+    pub updated_at: i64,
+    #[prost(oneof = "product_outbox::Payload", tags = "9, 10")]
+    pub payload: ::core::option::Option<product_outbox::Payload>,
+}
+/// Nested message and enum types in `ProductOutbox`.
+pub mod product_outbox {
+    #[derive(serde::Serialize, serde::Deserialize)]
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Payload {
+        #[prost(message, tag = "9")]
+        Created(super::ProductCreatedEvent),
+        #[prost(message, tag = "10")]
+        Updated(super::ProductUpdatedEvent),
+    }
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductCreatedEvent {
+    #[prost(string, tag = "1")]
+    pub title: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub description: ::prost::alloc::string::String,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductUpdatedEvent {
+    #[prost(string, optional, tag = "1")]
+    pub title: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "2")]
+    pub description: ::core::option::Option<::prost::alloc::string::String>,
+}

@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package products.v1;
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1";
+option java_outer_classname = "ProductEventsProto";
+option java_package = "org.megacommerce.products.v1";
+
+message ChangeFeed {
+  ProductOutbox after = 1;
+  ProductOutbox before = 2;
+  int64 updated = 3;
+  int64 resolved = 4;
+}
+
+message ProductOutbox {
+  string id = 1;
+  string product_id = 2; // in other word: the aggregate id
+  string type = 3; // 'created'|'updated'|'deleted'
+  optional int64 processed_at = 4; // unix timestamp
+  uint32 processing_attempts = 5;
+  optional string last_error = 6;
+  int64 created_at = 7; // unix timestamp
+  int64 updated_at = 8;
+  oneof payload {
+    ProductCreatedEvent created = 9;
+    ProductUpdatedEvent updated = 10;
+  }
+}
+
+message ProductCreatedEvent {
+  string title = 1;
+  string description = 2;
+}
+
+message ProductUpdatedEvent {
+  optional string title = 1;
+  optional string description = 2;
+}
