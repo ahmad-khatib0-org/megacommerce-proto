@@ -1309,11 +1309,3822 @@ public final class TasksProto {
 
   }
 
+  public interface TaskGetResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:search.v1.TaskGetResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * JSON: "uid": 1
+     * </pre>
+     *
+     * <code>uint64 uid = 1 [json_name = "uid"];</code>
+     * @return The uid.
+     */
+    long getUid();
+
+    /**
+     * <pre>
+     * JSON: "indexUid": "movies"
+     * </pre>
+     *
+     * <code>string index_uid = 2 [json_name = "indexUid"];</code>
+     * @return The indexUid.
+     */
+    java.lang.String getIndexUid();
+    /**
+     * <pre>
+     * JSON: "indexUid": "movies"
+     * </pre>
+     *
+     * <code>string index_uid = 2 [json_name = "indexUid"];</code>
+     * @return The bytes for indexUid.
+     */
+    com.google.protobuf.ByteString
+        getIndexUidBytes();
+
+    /**
+     * <pre>
+     * JSON: "status": "succeeded"
+     * </pre>
+     *
+     * <code>string status = 3 [json_name = "status"];</code>
+     * @return The status.
+     */
+    java.lang.String getStatus();
+    /**
+     * <pre>
+     * JSON: "status": "succeeded"
+     * </pre>
+     *
+     * <code>string status = 3 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
+
+    /**
+     * <pre>
+     * JSON: "type": "settingsUpdate"
+     * </pre>
+     *
+     * <code>string type = 4 [json_name = "type"];</code>
+     * @return The type.
+     */
+    java.lang.String getType();
+    /**
+     * <pre>
+     * JSON: "type": "settingsUpdate"
+     * </pre>
+     *
+     * <code>string type = 4 [json_name = "type"];</code>
+     * @return The bytes for type.
+     */
+    com.google.protobuf.ByteString
+        getTypeBytes();
+
+    /**
+     * <pre>
+     * JSON: "canceledBy": null  (or integer)
+     * </pre>
+     *
+     * <code>.shared.v1.UInt64Value canceled_by = 5 [json_name = "canceledBy"];</code>
+     * @return Whether the canceledBy field is set.
+     */
+    boolean hasCanceledBy();
+    /**
+     * <pre>
+     * JSON: "canceledBy": null  (or integer)
+     * </pre>
+     *
+     * <code>.shared.v1.UInt64Value canceled_by = 5 [json_name = "canceledBy"];</code>
+     * @return The canceledBy.
+     */
+    org.megacommerce.shared.v1.WrappersProto.UInt64Value getCanceledBy();
+    /**
+     * <pre>
+     * JSON: "canceledBy": null  (or integer)
+     * </pre>
+     *
+     * <code>.shared.v1.UInt64Value canceled_by = 5 [json_name = "canceledBy"];</code>
+     */
+    org.megacommerce.shared.v1.WrappersProto.UInt64ValueOrBuilder getCanceledByOrBuilder();
+
+    /**
+     * <pre>
+     * JSON: "details": { "rankingRules": [...] }
+     * </pre>
+     *
+     * <code>.shared.v1.Struct details = 6 [json_name = "details"];</code>
+     * @return Whether the details field is set.
+     */
+    boolean hasDetails();
+    /**
+     * <pre>
+     * JSON: "details": { "rankingRules": [...] }
+     * </pre>
+     *
+     * <code>.shared.v1.Struct details = 6 [json_name = "details"];</code>
+     * @return The details.
+     */
+    org.megacommerce.shared.v1.StructProto.Struct getDetails();
+    /**
+     * <pre>
+     * JSON: "details": { "rankingRules": [...] }
+     * </pre>
+     *
+     * <code>.shared.v1.Struct details = 6 [json_name = "details"];</code>
+     */
+    org.megacommerce.shared.v1.StructProto.StructOrBuilder getDetailsOrBuilder();
+
+    /**
+     * <pre>
+     * JSON: "error": null  (or object)
+     * </pre>
+     *
+     * <code>.search.v1.TaskGetResponseError error = 7 [json_name = "error"];</code>
+     * @return Whether the error field is set.
+     */
+    boolean hasError();
+    /**
+     * <pre>
+     * JSON: "error": null  (or object)
+     * </pre>
+     *
+     * <code>.search.v1.TaskGetResponseError error = 7 [json_name = "error"];</code>
+     * @return The error.
+     */
+    org.megacommerce.search.v1.TasksProto.TaskGetResponseError getError();
+    /**
+     * <pre>
+     * JSON: "error": null  (or object)
+     * </pre>
+     *
+     * <code>.search.v1.TaskGetResponseError error = 7 [json_name = "error"];</code>
+     */
+    org.megacommerce.search.v1.TasksProto.TaskGetResponseErrorOrBuilder getErrorOrBuilder();
+
+    /**
+     * <pre>
+     * JSON: "duration": "PT1S"  (ISO 8601 duration string)
+     * </pre>
+     *
+     * <code>string duration = 8 [json_name = "duration"];</code>
+     * @return The duration.
+     */
+    java.lang.String getDuration();
+    /**
+     * <pre>
+     * JSON: "duration": "PT1S"  (ISO 8601 duration string)
+     * </pre>
+     *
+     * <code>string duration = 8 [json_name = "duration"];</code>
+     * @return The bytes for duration.
+     */
+    com.google.protobuf.ByteString
+        getDurationBytes();
+
+    /**
+     * <pre>
+     * JSON RFC3339 timestamps -&gt; protobuf Timestamp
+     * </pre>
+     *
+     * <code>.shared.v1.Timestamp enqueued_at = 9 [json_name = "enqueuedAt"];</code>
+     * @return Whether the enqueuedAt field is set.
+     */
+    boolean hasEnqueuedAt();
+    /**
+     * <pre>
+     * JSON RFC3339 timestamps -&gt; protobuf Timestamp
+     * </pre>
+     *
+     * <code>.shared.v1.Timestamp enqueued_at = 9 [json_name = "enqueuedAt"];</code>
+     * @return The enqueuedAt.
+     */
+    org.megacommerce.shared.v1.TimeProto.Timestamp getEnqueuedAt();
+    /**
+     * <pre>
+     * JSON RFC3339 timestamps -&gt; protobuf Timestamp
+     * </pre>
+     *
+     * <code>.shared.v1.Timestamp enqueued_at = 9 [json_name = "enqueuedAt"];</code>
+     */
+    org.megacommerce.shared.v1.TimeProto.TimestampOrBuilder getEnqueuedAtOrBuilder();
+
+    /**
+     * <code>.shared.v1.Timestamp started_at = 10 [json_name = "startedAt"];</code>
+     * @return Whether the startedAt field is set.
+     */
+    boolean hasStartedAt();
+    /**
+     * <code>.shared.v1.Timestamp started_at = 10 [json_name = "startedAt"];</code>
+     * @return The startedAt.
+     */
+    org.megacommerce.shared.v1.TimeProto.Timestamp getStartedAt();
+    /**
+     * <code>.shared.v1.Timestamp started_at = 10 [json_name = "startedAt"];</code>
+     */
+    org.megacommerce.shared.v1.TimeProto.TimestampOrBuilder getStartedAtOrBuilder();
+
+    /**
+     * <code>.shared.v1.Timestamp finished_at = 11 [json_name = "finishedAt"];</code>
+     * @return Whether the finishedAt field is set.
+     */
+    boolean hasFinishedAt();
+    /**
+     * <code>.shared.v1.Timestamp finished_at = 11 [json_name = "finishedAt"];</code>
+     * @return The finishedAt.
+     */
+    org.megacommerce.shared.v1.TimeProto.Timestamp getFinishedAt();
+    /**
+     * <code>.shared.v1.Timestamp finished_at = 11 [json_name = "finishedAt"];</code>
+     */
+    org.megacommerce.shared.v1.TimeProto.TimestampOrBuilder getFinishedAtOrBuilder();
+  }
+  /**
+   * Protobuf type {@code search.v1.TaskGetResponse}
+   */
+  public static final class TaskGetResponse extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:search.v1.TaskGetResponse)
+      TaskGetResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        TaskGetResponse.class.getName());
+    }
+    // Use TaskGetResponse.newBuilder() to construct.
+    private TaskGetResponse(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private TaskGetResponse() {
+      indexUid_ = "";
+      status_ = "";
+      type_ = "";
+      duration_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.search.v1.TasksProto.internal_static_search_v1_TaskGetResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.search.v1.TasksProto.internal_static_search_v1_TaskGetResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.search.v1.TasksProto.TaskGetResponse.class, org.megacommerce.search.v1.TasksProto.TaskGetResponse.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int UID_FIELD_NUMBER = 1;
+    private long uid_ = 0L;
+    /**
+     * <pre>
+     * JSON: "uid": 1
+     * </pre>
+     *
+     * <code>uint64 uid = 1 [json_name = "uid"];</code>
+     * @return The uid.
+     */
+    @java.lang.Override
+    public long getUid() {
+      return uid_;
+    }
+
+    public static final int INDEX_UID_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object indexUid_ = "";
+    /**
+     * <pre>
+     * JSON: "indexUid": "movies"
+     * </pre>
+     *
+     * <code>string index_uid = 2 [json_name = "indexUid"];</code>
+     * @return The indexUid.
+     */
+    @java.lang.Override
+    public java.lang.String getIndexUid() {
+      java.lang.Object ref = indexUid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        indexUid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * JSON: "indexUid": "movies"
+     * </pre>
+     *
+     * <code>string index_uid = 2 [json_name = "indexUid"];</code>
+     * @return The bytes for indexUid.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getIndexUidBytes() {
+      java.lang.Object ref = indexUid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        indexUid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object status_ = "";
+    /**
+     * <pre>
+     * JSON: "status": "succeeded"
+     * </pre>
+     *
+     * <code>string status = 3 [json_name = "status"];</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * JSON: "status": "succeeded"
+     * </pre>
+     *
+     * <code>string status = 3 [json_name = "status"];</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object type_ = "";
+    /**
+     * <pre>
+     * JSON: "type": "settingsUpdate"
+     * </pre>
+     *
+     * <code>string type = 4 [json_name = "type"];</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * JSON: "type": "settingsUpdate"
+     * </pre>
+     *
+     * <code>string type = 4 [json_name = "type"];</code>
+     * @return The bytes for type.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CANCELED_BY_FIELD_NUMBER = 5;
+    private org.megacommerce.shared.v1.WrappersProto.UInt64Value canceledBy_;
+    /**
+     * <pre>
+     * JSON: "canceledBy": null  (or integer)
+     * </pre>
+     *
+     * <code>.shared.v1.UInt64Value canceled_by = 5 [json_name = "canceledBy"];</code>
+     * @return Whether the canceledBy field is set.
+     */
+    @java.lang.Override
+    public boolean hasCanceledBy() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <pre>
+     * JSON: "canceledBy": null  (or integer)
+     * </pre>
+     *
+     * <code>.shared.v1.UInt64Value canceled_by = 5 [json_name = "canceledBy"];</code>
+     * @return The canceledBy.
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.WrappersProto.UInt64Value getCanceledBy() {
+      return canceledBy_ == null ? org.megacommerce.shared.v1.WrappersProto.UInt64Value.getDefaultInstance() : canceledBy_;
+    }
+    /**
+     * <pre>
+     * JSON: "canceledBy": null  (or integer)
+     * </pre>
+     *
+     * <code>.shared.v1.UInt64Value canceled_by = 5 [json_name = "canceledBy"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.WrappersProto.UInt64ValueOrBuilder getCanceledByOrBuilder() {
+      return canceledBy_ == null ? org.megacommerce.shared.v1.WrappersProto.UInt64Value.getDefaultInstance() : canceledBy_;
+    }
+
+    public static final int DETAILS_FIELD_NUMBER = 6;
+    private org.megacommerce.shared.v1.StructProto.Struct details_;
+    /**
+     * <pre>
+     * JSON: "details": { "rankingRules": [...] }
+     * </pre>
+     *
+     * <code>.shared.v1.Struct details = 6 [json_name = "details"];</code>
+     * @return Whether the details field is set.
+     */
+    @java.lang.Override
+    public boolean hasDetails() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+    /**
+     * <pre>
+     * JSON: "details": { "rankingRules": [...] }
+     * </pre>
+     *
+     * <code>.shared.v1.Struct details = 6 [json_name = "details"];</code>
+     * @return The details.
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.StructProto.Struct getDetails() {
+      return details_ == null ? org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : details_;
+    }
+    /**
+     * <pre>
+     * JSON: "details": { "rankingRules": [...] }
+     * </pre>
+     *
+     * <code>.shared.v1.Struct details = 6 [json_name = "details"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.StructProto.StructOrBuilder getDetailsOrBuilder() {
+      return details_ == null ? org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : details_;
+    }
+
+    public static final int ERROR_FIELD_NUMBER = 7;
+    private org.megacommerce.search.v1.TasksProto.TaskGetResponseError error_;
+    /**
+     * <pre>
+     * JSON: "error": null  (or object)
+     * </pre>
+     *
+     * <code>.search.v1.TaskGetResponseError error = 7 [json_name = "error"];</code>
+     * @return Whether the error field is set.
+     */
+    @java.lang.Override
+    public boolean hasError() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <pre>
+     * JSON: "error": null  (or object)
+     * </pre>
+     *
+     * <code>.search.v1.TaskGetResponseError error = 7 [json_name = "error"];</code>
+     * @return The error.
+     */
+    @java.lang.Override
+    public org.megacommerce.search.v1.TasksProto.TaskGetResponseError getError() {
+      return error_ == null ? org.megacommerce.search.v1.TasksProto.TaskGetResponseError.getDefaultInstance() : error_;
+    }
+    /**
+     * <pre>
+     * JSON: "error": null  (or object)
+     * </pre>
+     *
+     * <code>.search.v1.TaskGetResponseError error = 7 [json_name = "error"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.search.v1.TasksProto.TaskGetResponseErrorOrBuilder getErrorOrBuilder() {
+      return error_ == null ? org.megacommerce.search.v1.TasksProto.TaskGetResponseError.getDefaultInstance() : error_;
+    }
+
+    public static final int DURATION_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object duration_ = "";
+    /**
+     * <pre>
+     * JSON: "duration": "PT1S"  (ISO 8601 duration string)
+     * </pre>
+     *
+     * <code>string duration = 8 [json_name = "duration"];</code>
+     * @return The duration.
+     */
+    @java.lang.Override
+    public java.lang.String getDuration() {
+      java.lang.Object ref = duration_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        duration_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * JSON: "duration": "PT1S"  (ISO 8601 duration string)
+     * </pre>
+     *
+     * <code>string duration = 8 [json_name = "duration"];</code>
+     * @return The bytes for duration.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getDurationBytes() {
+      java.lang.Object ref = duration_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        duration_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ENQUEUED_AT_FIELD_NUMBER = 9;
+    private org.megacommerce.shared.v1.TimeProto.Timestamp enqueuedAt_;
+    /**
+     * <pre>
+     * JSON RFC3339 timestamps -&gt; protobuf Timestamp
+     * </pre>
+     *
+     * <code>.shared.v1.Timestamp enqueued_at = 9 [json_name = "enqueuedAt"];</code>
+     * @return Whether the enqueuedAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnqueuedAt() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+    /**
+     * <pre>
+     * JSON RFC3339 timestamps -&gt; protobuf Timestamp
+     * </pre>
+     *
+     * <code>.shared.v1.Timestamp enqueued_at = 9 [json_name = "enqueuedAt"];</code>
+     * @return The enqueuedAt.
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.TimeProto.Timestamp getEnqueuedAt() {
+      return enqueuedAt_ == null ? org.megacommerce.shared.v1.TimeProto.Timestamp.getDefaultInstance() : enqueuedAt_;
+    }
+    /**
+     * <pre>
+     * JSON RFC3339 timestamps -&gt; protobuf Timestamp
+     * </pre>
+     *
+     * <code>.shared.v1.Timestamp enqueued_at = 9 [json_name = "enqueuedAt"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.TimeProto.TimestampOrBuilder getEnqueuedAtOrBuilder() {
+      return enqueuedAt_ == null ? org.megacommerce.shared.v1.TimeProto.Timestamp.getDefaultInstance() : enqueuedAt_;
+    }
+
+    public static final int STARTED_AT_FIELD_NUMBER = 10;
+    private org.megacommerce.shared.v1.TimeProto.Timestamp startedAt_;
+    /**
+     * <code>.shared.v1.Timestamp started_at = 10 [json_name = "startedAt"];</code>
+     * @return Whether the startedAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasStartedAt() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+    /**
+     * <code>.shared.v1.Timestamp started_at = 10 [json_name = "startedAt"];</code>
+     * @return The startedAt.
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.TimeProto.Timestamp getStartedAt() {
+      return startedAt_ == null ? org.megacommerce.shared.v1.TimeProto.Timestamp.getDefaultInstance() : startedAt_;
+    }
+    /**
+     * <code>.shared.v1.Timestamp started_at = 10 [json_name = "startedAt"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.TimeProto.TimestampOrBuilder getStartedAtOrBuilder() {
+      return startedAt_ == null ? org.megacommerce.shared.v1.TimeProto.Timestamp.getDefaultInstance() : startedAt_;
+    }
+
+    public static final int FINISHED_AT_FIELD_NUMBER = 11;
+    private org.megacommerce.shared.v1.TimeProto.Timestamp finishedAt_;
+    /**
+     * <code>.shared.v1.Timestamp finished_at = 11 [json_name = "finishedAt"];</code>
+     * @return Whether the finishedAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasFinishedAt() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+    /**
+     * <code>.shared.v1.Timestamp finished_at = 11 [json_name = "finishedAt"];</code>
+     * @return The finishedAt.
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.TimeProto.Timestamp getFinishedAt() {
+      return finishedAt_ == null ? org.megacommerce.shared.v1.TimeProto.Timestamp.getDefaultInstance() : finishedAt_;
+    }
+    /**
+     * <code>.shared.v1.Timestamp finished_at = 11 [json_name = "finishedAt"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.TimeProto.TimestampOrBuilder getFinishedAtOrBuilder() {
+      return finishedAt_ == null ? org.megacommerce.shared.v1.TimeProto.Timestamp.getDefaultInstance() : finishedAt_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (uid_ != 0L) {
+        output.writeUInt64(1, uid_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(indexUid_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, indexUid_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, status_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(type_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, type_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(5, getCanceledBy());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(6, getDetails());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(7, getError());
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(duration_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 8, duration_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeMessage(9, getEnqueuedAt());
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        output.writeMessage(10, getStartedAt());
+      }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        output.writeMessage(11, getFinishedAt());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (uid_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, uid_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(indexUid_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, indexUid_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, status_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(type_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, type_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getCanceledBy());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, getDetails());
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, getError());
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(duration_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(8, duration_);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getEnqueuedAt());
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, getStartedAt());
+      }
+      if (((bitField0_ & 0x00000020) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, getFinishedAt());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.search.v1.TasksProto.TaskGetResponse)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.search.v1.TasksProto.TaskGetResponse other = (org.megacommerce.search.v1.TasksProto.TaskGetResponse) obj;
+
+      if (getUid()
+          != other.getUid()) return false;
+      if (!getIndexUid()
+          .equals(other.getIndexUid())) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+      if (!getType()
+          .equals(other.getType())) return false;
+      if (hasCanceledBy() != other.hasCanceledBy()) return false;
+      if (hasCanceledBy()) {
+        if (!getCanceledBy()
+            .equals(other.getCanceledBy())) return false;
+      }
+      if (hasDetails() != other.hasDetails()) return false;
+      if (hasDetails()) {
+        if (!getDetails()
+            .equals(other.getDetails())) return false;
+      }
+      if (hasError() != other.hasError()) return false;
+      if (hasError()) {
+        if (!getError()
+            .equals(other.getError())) return false;
+      }
+      if (!getDuration()
+          .equals(other.getDuration())) return false;
+      if (hasEnqueuedAt() != other.hasEnqueuedAt()) return false;
+      if (hasEnqueuedAt()) {
+        if (!getEnqueuedAt()
+            .equals(other.getEnqueuedAt())) return false;
+      }
+      if (hasStartedAt() != other.hasStartedAt()) return false;
+      if (hasStartedAt()) {
+        if (!getStartedAt()
+            .equals(other.getStartedAt())) return false;
+      }
+      if (hasFinishedAt() != other.hasFinishedAt()) return false;
+      if (hasFinishedAt()) {
+        if (!getFinishedAt()
+            .equals(other.getFinishedAt())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + UID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getUid());
+      hash = (37 * hash) + INDEX_UID_FIELD_NUMBER;
+      hash = (53 * hash) + getIndexUid().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      if (hasCanceledBy()) {
+        hash = (37 * hash) + CANCELED_BY_FIELD_NUMBER;
+        hash = (53 * hash) + getCanceledBy().hashCode();
+      }
+      if (hasDetails()) {
+        hash = (37 * hash) + DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getDetails().hashCode();
+      }
+      if (hasError()) {
+        hash = (37 * hash) + ERROR_FIELD_NUMBER;
+        hash = (53 * hash) + getError().hashCode();
+      }
+      hash = (37 * hash) + DURATION_FIELD_NUMBER;
+      hash = (53 * hash) + getDuration().hashCode();
+      if (hasEnqueuedAt()) {
+        hash = (37 * hash) + ENQUEUED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getEnqueuedAt().hashCode();
+      }
+      if (hasStartedAt()) {
+        hash = (37 * hash) + STARTED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getStartedAt().hashCode();
+      }
+      if (hasFinishedAt()) {
+        hash = (37 * hash) + FINISHED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getFinishedAt().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.search.v1.TasksProto.TaskGetResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code search.v1.TaskGetResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:search.v1.TaskGetResponse)
+        org.megacommerce.search.v1.TasksProto.TaskGetResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.search.v1.TasksProto.internal_static_search_v1_TaskGetResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.search.v1.TasksProto.internal_static_search_v1_TaskGetResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.search.v1.TasksProto.TaskGetResponse.class, org.megacommerce.search.v1.TasksProto.TaskGetResponse.Builder.class);
+      }
+
+      // Construct using org.megacommerce.search.v1.TasksProto.TaskGetResponse.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          internalGetCanceledByFieldBuilder();
+          internalGetDetailsFieldBuilder();
+          internalGetErrorFieldBuilder();
+          internalGetEnqueuedAtFieldBuilder();
+          internalGetStartedAtFieldBuilder();
+          internalGetFinishedAtFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        uid_ = 0L;
+        indexUid_ = "";
+        status_ = "";
+        type_ = "";
+        canceledBy_ = null;
+        if (canceledByBuilder_ != null) {
+          canceledByBuilder_.dispose();
+          canceledByBuilder_ = null;
+        }
+        details_ = null;
+        if (detailsBuilder_ != null) {
+          detailsBuilder_.dispose();
+          detailsBuilder_ = null;
+        }
+        error_ = null;
+        if (errorBuilder_ != null) {
+          errorBuilder_.dispose();
+          errorBuilder_ = null;
+        }
+        duration_ = "";
+        enqueuedAt_ = null;
+        if (enqueuedAtBuilder_ != null) {
+          enqueuedAtBuilder_.dispose();
+          enqueuedAtBuilder_ = null;
+        }
+        startedAt_ = null;
+        if (startedAtBuilder_ != null) {
+          startedAtBuilder_.dispose();
+          startedAtBuilder_ = null;
+        }
+        finishedAt_ = null;
+        if (finishedAtBuilder_ != null) {
+          finishedAtBuilder_.dispose();
+          finishedAtBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.search.v1.TasksProto.internal_static_search_v1_TaskGetResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.search.v1.TasksProto.TaskGetResponse getDefaultInstanceForType() {
+        return org.megacommerce.search.v1.TasksProto.TaskGetResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.search.v1.TasksProto.TaskGetResponse build() {
+        org.megacommerce.search.v1.TasksProto.TaskGetResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.search.v1.TasksProto.TaskGetResponse buildPartial() {
+        org.megacommerce.search.v1.TasksProto.TaskGetResponse result = new org.megacommerce.search.v1.TasksProto.TaskGetResponse(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.search.v1.TasksProto.TaskGetResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.uid_ = uid_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.indexUid_ = indexUid_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.status_ = status_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.type_ = type_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.canceledBy_ = canceledByBuilder_ == null
+              ? canceledBy_
+              : canceledByBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.details_ = detailsBuilder_ == null
+              ? details_
+              : detailsBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.error_ = errorBuilder_ == null
+              ? error_
+              : errorBuilder_.build();
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.duration_ = duration_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.enqueuedAt_ = enqueuedAtBuilder_ == null
+              ? enqueuedAt_
+              : enqueuedAtBuilder_.build();
+          to_bitField0_ |= 0x00000008;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.startedAt_ = startedAtBuilder_ == null
+              ? startedAt_
+              : startedAtBuilder_.build();
+          to_bitField0_ |= 0x00000010;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.finishedAt_ = finishedAtBuilder_ == null
+              ? finishedAt_
+              : finishedAtBuilder_.build();
+          to_bitField0_ |= 0x00000020;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.search.v1.TasksProto.TaskGetResponse) {
+          return mergeFrom((org.megacommerce.search.v1.TasksProto.TaskGetResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.search.v1.TasksProto.TaskGetResponse other) {
+        if (other == org.megacommerce.search.v1.TasksProto.TaskGetResponse.getDefaultInstance()) return this;
+        if (other.getUid() != 0L) {
+          setUid(other.getUid());
+        }
+        if (!other.getIndexUid().isEmpty()) {
+          indexUid_ = other.indexUid_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (other.hasCanceledBy()) {
+          mergeCanceledBy(other.getCanceledBy());
+        }
+        if (other.hasDetails()) {
+          mergeDetails(other.getDetails());
+        }
+        if (other.hasError()) {
+          mergeError(other.getError());
+        }
+        if (!other.getDuration().isEmpty()) {
+          duration_ = other.duration_;
+          bitField0_ |= 0x00000080;
+          onChanged();
+        }
+        if (other.hasEnqueuedAt()) {
+          mergeEnqueuedAt(other.getEnqueuedAt());
+        }
+        if (other.hasStartedAt()) {
+          mergeStartedAt(other.getStartedAt());
+        }
+        if (other.hasFinishedAt()) {
+          mergeFinishedAt(other.getFinishedAt());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                uid_ = input.readUInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                indexUid_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                status_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                type_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 42: {
+                input.readMessage(
+                    internalGetCanceledByFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              case 50: {
+                input.readMessage(
+                    internalGetDetailsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+              case 58: {
+                input.readMessage(
+                    internalGetErrorFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+              case 66: {
+                duration_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+              case 74: {
+                input.readMessage(
+                    internalGetEnqueuedAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+              case 82: {
+                input.readMessage(
+                    internalGetStartedAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 82
+              case 90: {
+                input.readMessage(
+                    internalGetFinishedAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private long uid_ ;
+      /**
+       * <pre>
+       * JSON: "uid": 1
+       * </pre>
+       *
+       * <code>uint64 uid = 1 [json_name = "uid"];</code>
+       * @return The uid.
+       */
+      @java.lang.Override
+      public long getUid() {
+        return uid_;
+      }
+      /**
+       * <pre>
+       * JSON: "uid": 1
+       * </pre>
+       *
+       * <code>uint64 uid = 1 [json_name = "uid"];</code>
+       * @param value The uid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setUid(long value) {
+
+        uid_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON: "uid": 1
+       * </pre>
+       *
+       * <code>uint64 uid = 1 [json_name = "uid"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearUid() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        uid_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object indexUid_ = "";
+      /**
+       * <pre>
+       * JSON: "indexUid": "movies"
+       * </pre>
+       *
+       * <code>string index_uid = 2 [json_name = "indexUid"];</code>
+       * @return The indexUid.
+       */
+      public java.lang.String getIndexUid() {
+        java.lang.Object ref = indexUid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          indexUid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * JSON: "indexUid": "movies"
+       * </pre>
+       *
+       * <code>string index_uid = 2 [json_name = "indexUid"];</code>
+       * @return The bytes for indexUid.
+       */
+      public com.google.protobuf.ByteString
+          getIndexUidBytes() {
+        java.lang.Object ref = indexUid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          indexUid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * JSON: "indexUid": "movies"
+       * </pre>
+       *
+       * <code>string index_uid = 2 [json_name = "indexUid"];</code>
+       * @param value The indexUid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIndexUid(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        indexUid_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON: "indexUid": "movies"
+       * </pre>
+       *
+       * <code>string index_uid = 2 [json_name = "indexUid"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIndexUid() {
+        indexUid_ = getDefaultInstance().getIndexUid();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON: "indexUid": "movies"
+       * </pre>
+       *
+       * <code>string index_uid = 2 [json_name = "indexUid"];</code>
+       * @param value The bytes for indexUid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIndexUidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        indexUid_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <pre>
+       * JSON: "status": "succeeded"
+       * </pre>
+       *
+       * <code>string status = 3 [json_name = "status"];</code>
+       * @return The status.
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * JSON: "status": "succeeded"
+       * </pre>
+       *
+       * <code>string status = 3 [json_name = "status"];</code>
+       * @return The bytes for status.
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * JSON: "status": "succeeded"
+       * </pre>
+       *
+       * <code>string status = 3 [json_name = "status"];</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        status_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON: "status": "succeeded"
+       * </pre>
+       *
+       * <code>string status = 3 [json_name = "status"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        status_ = getDefaultInstance().getStatus();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON: "status": "succeeded"
+       * </pre>
+       *
+       * <code>string status = 3 [json_name = "status"];</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        status_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object type_ = "";
+      /**
+       * <pre>
+       * JSON: "type": "settingsUpdate"
+       * </pre>
+       *
+       * <code>string type = 4 [json_name = "type"];</code>
+       * @return The type.
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * JSON: "type": "settingsUpdate"
+       * </pre>
+       *
+       * <code>string type = 4 [json_name = "type"];</code>
+       * @return The bytes for type.
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * JSON: "type": "settingsUpdate"
+       * </pre>
+       *
+       * <code>string type = 4 [json_name = "type"];</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        type_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON: "type": "settingsUpdate"
+       * </pre>
+       *
+       * <code>string type = 4 [json_name = "type"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        type_ = getDefaultInstance().getType();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON: "type": "settingsUpdate"
+       * </pre>
+       *
+       * <code>string type = 4 [json_name = "type"];</code>
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        type_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private org.megacommerce.shared.v1.WrappersProto.UInt64Value canceledBy_;
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.shared.v1.WrappersProto.UInt64Value, org.megacommerce.shared.v1.WrappersProto.UInt64Value.Builder, org.megacommerce.shared.v1.WrappersProto.UInt64ValueOrBuilder> canceledByBuilder_;
+      /**
+       * <pre>
+       * JSON: "canceledBy": null  (or integer)
+       * </pre>
+       *
+       * <code>.shared.v1.UInt64Value canceled_by = 5 [json_name = "canceledBy"];</code>
+       * @return Whether the canceledBy field is set.
+       */
+      public boolean hasCanceledBy() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       * <pre>
+       * JSON: "canceledBy": null  (or integer)
+       * </pre>
+       *
+       * <code>.shared.v1.UInt64Value canceled_by = 5 [json_name = "canceledBy"];</code>
+       * @return The canceledBy.
+       */
+      public org.megacommerce.shared.v1.WrappersProto.UInt64Value getCanceledBy() {
+        if (canceledByBuilder_ == null) {
+          return canceledBy_ == null ? org.megacommerce.shared.v1.WrappersProto.UInt64Value.getDefaultInstance() : canceledBy_;
+        } else {
+          return canceledByBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * JSON: "canceledBy": null  (or integer)
+       * </pre>
+       *
+       * <code>.shared.v1.UInt64Value canceled_by = 5 [json_name = "canceledBy"];</code>
+       */
+      public Builder setCanceledBy(org.megacommerce.shared.v1.WrappersProto.UInt64Value value) {
+        if (canceledByBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          canceledBy_ = value;
+        } else {
+          canceledByBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON: "canceledBy": null  (or integer)
+       * </pre>
+       *
+       * <code>.shared.v1.UInt64Value canceled_by = 5 [json_name = "canceledBy"];</code>
+       */
+      public Builder setCanceledBy(
+          org.megacommerce.shared.v1.WrappersProto.UInt64Value.Builder builderForValue) {
+        if (canceledByBuilder_ == null) {
+          canceledBy_ = builderForValue.build();
+        } else {
+          canceledByBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON: "canceledBy": null  (or integer)
+       * </pre>
+       *
+       * <code>.shared.v1.UInt64Value canceled_by = 5 [json_name = "canceledBy"];</code>
+       */
+      public Builder mergeCanceledBy(org.megacommerce.shared.v1.WrappersProto.UInt64Value value) {
+        if (canceledByBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0) &&
+            canceledBy_ != null &&
+            canceledBy_ != org.megacommerce.shared.v1.WrappersProto.UInt64Value.getDefaultInstance()) {
+            getCanceledByBuilder().mergeFrom(value);
+          } else {
+            canceledBy_ = value;
+          }
+        } else {
+          canceledByBuilder_.mergeFrom(value);
+        }
+        if (canceledBy_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON: "canceledBy": null  (or integer)
+       * </pre>
+       *
+       * <code>.shared.v1.UInt64Value canceled_by = 5 [json_name = "canceledBy"];</code>
+       */
+      public Builder clearCanceledBy() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        canceledBy_ = null;
+        if (canceledByBuilder_ != null) {
+          canceledByBuilder_.dispose();
+          canceledByBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON: "canceledBy": null  (or integer)
+       * </pre>
+       *
+       * <code>.shared.v1.UInt64Value canceled_by = 5 [json_name = "canceledBy"];</code>
+       */
+      public org.megacommerce.shared.v1.WrappersProto.UInt64Value.Builder getCanceledByBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return internalGetCanceledByFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * JSON: "canceledBy": null  (or integer)
+       * </pre>
+       *
+       * <code>.shared.v1.UInt64Value canceled_by = 5 [json_name = "canceledBy"];</code>
+       */
+      public org.megacommerce.shared.v1.WrappersProto.UInt64ValueOrBuilder getCanceledByOrBuilder() {
+        if (canceledByBuilder_ != null) {
+          return canceledByBuilder_.getMessageOrBuilder();
+        } else {
+          return canceledBy_ == null ?
+              org.megacommerce.shared.v1.WrappersProto.UInt64Value.getDefaultInstance() : canceledBy_;
+        }
+      }
+      /**
+       * <pre>
+       * JSON: "canceledBy": null  (or integer)
+       * </pre>
+       *
+       * <code>.shared.v1.UInt64Value canceled_by = 5 [json_name = "canceledBy"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.shared.v1.WrappersProto.UInt64Value, org.megacommerce.shared.v1.WrappersProto.UInt64Value.Builder, org.megacommerce.shared.v1.WrappersProto.UInt64ValueOrBuilder> 
+          internalGetCanceledByFieldBuilder() {
+        if (canceledByBuilder_ == null) {
+          canceledByBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.shared.v1.WrappersProto.UInt64Value, org.megacommerce.shared.v1.WrappersProto.UInt64Value.Builder, org.megacommerce.shared.v1.WrappersProto.UInt64ValueOrBuilder>(
+                  getCanceledBy(),
+                  getParentForChildren(),
+                  isClean());
+          canceledBy_ = null;
+        }
+        return canceledByBuilder_;
+      }
+
+      private org.megacommerce.shared.v1.StructProto.Struct details_;
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.shared.v1.StructProto.Struct, org.megacommerce.shared.v1.StructProto.Struct.Builder, org.megacommerce.shared.v1.StructProto.StructOrBuilder> detailsBuilder_;
+      /**
+       * <pre>
+       * JSON: "details": { "rankingRules": [...] }
+       * </pre>
+       *
+       * <code>.shared.v1.Struct details = 6 [json_name = "details"];</code>
+       * @return Whether the details field is set.
+       */
+      public boolean hasDetails() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+      /**
+       * <pre>
+       * JSON: "details": { "rankingRules": [...] }
+       * </pre>
+       *
+       * <code>.shared.v1.Struct details = 6 [json_name = "details"];</code>
+       * @return The details.
+       */
+      public org.megacommerce.shared.v1.StructProto.Struct getDetails() {
+        if (detailsBuilder_ == null) {
+          return details_ == null ? org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : details_;
+        } else {
+          return detailsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * JSON: "details": { "rankingRules": [...] }
+       * </pre>
+       *
+       * <code>.shared.v1.Struct details = 6 [json_name = "details"];</code>
+       */
+      public Builder setDetails(org.megacommerce.shared.v1.StructProto.Struct value) {
+        if (detailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          details_ = value;
+        } else {
+          detailsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON: "details": { "rankingRules": [...] }
+       * </pre>
+       *
+       * <code>.shared.v1.Struct details = 6 [json_name = "details"];</code>
+       */
+      public Builder setDetails(
+          org.megacommerce.shared.v1.StructProto.Struct.Builder builderForValue) {
+        if (detailsBuilder_ == null) {
+          details_ = builderForValue.build();
+        } else {
+          detailsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON: "details": { "rankingRules": [...] }
+       * </pre>
+       *
+       * <code>.shared.v1.Struct details = 6 [json_name = "details"];</code>
+       */
+      public Builder mergeDetails(org.megacommerce.shared.v1.StructProto.Struct value) {
+        if (detailsBuilder_ == null) {
+          if (((bitField0_ & 0x00000020) != 0) &&
+            details_ != null &&
+            details_ != org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance()) {
+            getDetailsBuilder().mergeFrom(value);
+          } else {
+            details_ = value;
+          }
+        } else {
+          detailsBuilder_.mergeFrom(value);
+        }
+        if (details_ != null) {
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON: "details": { "rankingRules": [...] }
+       * </pre>
+       *
+       * <code>.shared.v1.Struct details = 6 [json_name = "details"];</code>
+       */
+      public Builder clearDetails() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        details_ = null;
+        if (detailsBuilder_ != null) {
+          detailsBuilder_.dispose();
+          detailsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON: "details": { "rankingRules": [...] }
+       * </pre>
+       *
+       * <code>.shared.v1.Struct details = 6 [json_name = "details"];</code>
+       */
+      public org.megacommerce.shared.v1.StructProto.Struct.Builder getDetailsBuilder() {
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return internalGetDetailsFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * JSON: "details": { "rankingRules": [...] }
+       * </pre>
+       *
+       * <code>.shared.v1.Struct details = 6 [json_name = "details"];</code>
+       */
+      public org.megacommerce.shared.v1.StructProto.StructOrBuilder getDetailsOrBuilder() {
+        if (detailsBuilder_ != null) {
+          return detailsBuilder_.getMessageOrBuilder();
+        } else {
+          return details_ == null ?
+              org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : details_;
+        }
+      }
+      /**
+       * <pre>
+       * JSON: "details": { "rankingRules": [...] }
+       * </pre>
+       *
+       * <code>.shared.v1.Struct details = 6 [json_name = "details"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.shared.v1.StructProto.Struct, org.megacommerce.shared.v1.StructProto.Struct.Builder, org.megacommerce.shared.v1.StructProto.StructOrBuilder> 
+          internalGetDetailsFieldBuilder() {
+        if (detailsBuilder_ == null) {
+          detailsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.shared.v1.StructProto.Struct, org.megacommerce.shared.v1.StructProto.Struct.Builder, org.megacommerce.shared.v1.StructProto.StructOrBuilder>(
+                  getDetails(),
+                  getParentForChildren(),
+                  isClean());
+          details_ = null;
+        }
+        return detailsBuilder_;
+      }
+
+      private org.megacommerce.search.v1.TasksProto.TaskGetResponseError error_;
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.search.v1.TasksProto.TaskGetResponseError, org.megacommerce.search.v1.TasksProto.TaskGetResponseError.Builder, org.megacommerce.search.v1.TasksProto.TaskGetResponseErrorOrBuilder> errorBuilder_;
+      /**
+       * <pre>
+       * JSON: "error": null  (or object)
+       * </pre>
+       *
+       * <code>.search.v1.TaskGetResponseError error = 7 [json_name = "error"];</code>
+       * @return Whether the error field is set.
+       */
+      public boolean hasError() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+      /**
+       * <pre>
+       * JSON: "error": null  (or object)
+       * </pre>
+       *
+       * <code>.search.v1.TaskGetResponseError error = 7 [json_name = "error"];</code>
+       * @return The error.
+       */
+      public org.megacommerce.search.v1.TasksProto.TaskGetResponseError getError() {
+        if (errorBuilder_ == null) {
+          return error_ == null ? org.megacommerce.search.v1.TasksProto.TaskGetResponseError.getDefaultInstance() : error_;
+        } else {
+          return errorBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * JSON: "error": null  (or object)
+       * </pre>
+       *
+       * <code>.search.v1.TaskGetResponseError error = 7 [json_name = "error"];</code>
+       */
+      public Builder setError(org.megacommerce.search.v1.TasksProto.TaskGetResponseError value) {
+        if (errorBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          error_ = value;
+        } else {
+          errorBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON: "error": null  (or object)
+       * </pre>
+       *
+       * <code>.search.v1.TaskGetResponseError error = 7 [json_name = "error"];</code>
+       */
+      public Builder setError(
+          org.megacommerce.search.v1.TasksProto.TaskGetResponseError.Builder builderForValue) {
+        if (errorBuilder_ == null) {
+          error_ = builderForValue.build();
+        } else {
+          errorBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON: "error": null  (or object)
+       * </pre>
+       *
+       * <code>.search.v1.TaskGetResponseError error = 7 [json_name = "error"];</code>
+       */
+      public Builder mergeError(org.megacommerce.search.v1.TasksProto.TaskGetResponseError value) {
+        if (errorBuilder_ == null) {
+          if (((bitField0_ & 0x00000040) != 0) &&
+            error_ != null &&
+            error_ != org.megacommerce.search.v1.TasksProto.TaskGetResponseError.getDefaultInstance()) {
+            getErrorBuilder().mergeFrom(value);
+          } else {
+            error_ = value;
+          }
+        } else {
+          errorBuilder_.mergeFrom(value);
+        }
+        if (error_ != null) {
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON: "error": null  (or object)
+       * </pre>
+       *
+       * <code>.search.v1.TaskGetResponseError error = 7 [json_name = "error"];</code>
+       */
+      public Builder clearError() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        error_ = null;
+        if (errorBuilder_ != null) {
+          errorBuilder_.dispose();
+          errorBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON: "error": null  (or object)
+       * </pre>
+       *
+       * <code>.search.v1.TaskGetResponseError error = 7 [json_name = "error"];</code>
+       */
+      public org.megacommerce.search.v1.TasksProto.TaskGetResponseError.Builder getErrorBuilder() {
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return internalGetErrorFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * JSON: "error": null  (or object)
+       * </pre>
+       *
+       * <code>.search.v1.TaskGetResponseError error = 7 [json_name = "error"];</code>
+       */
+      public org.megacommerce.search.v1.TasksProto.TaskGetResponseErrorOrBuilder getErrorOrBuilder() {
+        if (errorBuilder_ != null) {
+          return errorBuilder_.getMessageOrBuilder();
+        } else {
+          return error_ == null ?
+              org.megacommerce.search.v1.TasksProto.TaskGetResponseError.getDefaultInstance() : error_;
+        }
+      }
+      /**
+       * <pre>
+       * JSON: "error": null  (or object)
+       * </pre>
+       *
+       * <code>.search.v1.TaskGetResponseError error = 7 [json_name = "error"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.search.v1.TasksProto.TaskGetResponseError, org.megacommerce.search.v1.TasksProto.TaskGetResponseError.Builder, org.megacommerce.search.v1.TasksProto.TaskGetResponseErrorOrBuilder> 
+          internalGetErrorFieldBuilder() {
+        if (errorBuilder_ == null) {
+          errorBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.search.v1.TasksProto.TaskGetResponseError, org.megacommerce.search.v1.TasksProto.TaskGetResponseError.Builder, org.megacommerce.search.v1.TasksProto.TaskGetResponseErrorOrBuilder>(
+                  getError(),
+                  getParentForChildren(),
+                  isClean());
+          error_ = null;
+        }
+        return errorBuilder_;
+      }
+
+      private java.lang.Object duration_ = "";
+      /**
+       * <pre>
+       * JSON: "duration": "PT1S"  (ISO 8601 duration string)
+       * </pre>
+       *
+       * <code>string duration = 8 [json_name = "duration"];</code>
+       * @return The duration.
+       */
+      public java.lang.String getDuration() {
+        java.lang.Object ref = duration_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          duration_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * JSON: "duration": "PT1S"  (ISO 8601 duration string)
+       * </pre>
+       *
+       * <code>string duration = 8 [json_name = "duration"];</code>
+       * @return The bytes for duration.
+       */
+      public com.google.protobuf.ByteString
+          getDurationBytes() {
+        java.lang.Object ref = duration_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          duration_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * JSON: "duration": "PT1S"  (ISO 8601 duration string)
+       * </pre>
+       *
+       * <code>string duration = 8 [json_name = "duration"];</code>
+       * @param value The duration to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDuration(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        duration_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON: "duration": "PT1S"  (ISO 8601 duration string)
+       * </pre>
+       *
+       * <code>string duration = 8 [json_name = "duration"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearDuration() {
+        duration_ = getDefaultInstance().getDuration();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON: "duration": "PT1S"  (ISO 8601 duration string)
+       * </pre>
+       *
+       * <code>string duration = 8 [json_name = "duration"];</code>
+       * @param value The bytes for duration to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDurationBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        duration_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      private org.megacommerce.shared.v1.TimeProto.Timestamp enqueuedAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.shared.v1.TimeProto.Timestamp, org.megacommerce.shared.v1.TimeProto.Timestamp.Builder, org.megacommerce.shared.v1.TimeProto.TimestampOrBuilder> enqueuedAtBuilder_;
+      /**
+       * <pre>
+       * JSON RFC3339 timestamps -&gt; protobuf Timestamp
+       * </pre>
+       *
+       * <code>.shared.v1.Timestamp enqueued_at = 9 [json_name = "enqueuedAt"];</code>
+       * @return Whether the enqueuedAt field is set.
+       */
+      public boolean hasEnqueuedAt() {
+        return ((bitField0_ & 0x00000100) != 0);
+      }
+      /**
+       * <pre>
+       * JSON RFC3339 timestamps -&gt; protobuf Timestamp
+       * </pre>
+       *
+       * <code>.shared.v1.Timestamp enqueued_at = 9 [json_name = "enqueuedAt"];</code>
+       * @return The enqueuedAt.
+       */
+      public org.megacommerce.shared.v1.TimeProto.Timestamp getEnqueuedAt() {
+        if (enqueuedAtBuilder_ == null) {
+          return enqueuedAt_ == null ? org.megacommerce.shared.v1.TimeProto.Timestamp.getDefaultInstance() : enqueuedAt_;
+        } else {
+          return enqueuedAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * JSON RFC3339 timestamps -&gt; protobuf Timestamp
+       * </pre>
+       *
+       * <code>.shared.v1.Timestamp enqueued_at = 9 [json_name = "enqueuedAt"];</code>
+       */
+      public Builder setEnqueuedAt(org.megacommerce.shared.v1.TimeProto.Timestamp value) {
+        if (enqueuedAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          enqueuedAt_ = value;
+        } else {
+          enqueuedAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON RFC3339 timestamps -&gt; protobuf Timestamp
+       * </pre>
+       *
+       * <code>.shared.v1.Timestamp enqueued_at = 9 [json_name = "enqueuedAt"];</code>
+       */
+      public Builder setEnqueuedAt(
+          org.megacommerce.shared.v1.TimeProto.Timestamp.Builder builderForValue) {
+        if (enqueuedAtBuilder_ == null) {
+          enqueuedAt_ = builderForValue.build();
+        } else {
+          enqueuedAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON RFC3339 timestamps -&gt; protobuf Timestamp
+       * </pre>
+       *
+       * <code>.shared.v1.Timestamp enqueued_at = 9 [json_name = "enqueuedAt"];</code>
+       */
+      public Builder mergeEnqueuedAt(org.megacommerce.shared.v1.TimeProto.Timestamp value) {
+        if (enqueuedAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000100) != 0) &&
+            enqueuedAt_ != null &&
+            enqueuedAt_ != org.megacommerce.shared.v1.TimeProto.Timestamp.getDefaultInstance()) {
+            getEnqueuedAtBuilder().mergeFrom(value);
+          } else {
+            enqueuedAt_ = value;
+          }
+        } else {
+          enqueuedAtBuilder_.mergeFrom(value);
+        }
+        if (enqueuedAt_ != null) {
+          bitField0_ |= 0x00000100;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON RFC3339 timestamps -&gt; protobuf Timestamp
+       * </pre>
+       *
+       * <code>.shared.v1.Timestamp enqueued_at = 9 [json_name = "enqueuedAt"];</code>
+       */
+      public Builder clearEnqueuedAt() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        enqueuedAt_ = null;
+        if (enqueuedAtBuilder_ != null) {
+          enqueuedAtBuilder_.dispose();
+          enqueuedAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * JSON RFC3339 timestamps -&gt; protobuf Timestamp
+       * </pre>
+       *
+       * <code>.shared.v1.Timestamp enqueued_at = 9 [json_name = "enqueuedAt"];</code>
+       */
+      public org.megacommerce.shared.v1.TimeProto.Timestamp.Builder getEnqueuedAtBuilder() {
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return internalGetEnqueuedAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * JSON RFC3339 timestamps -&gt; protobuf Timestamp
+       * </pre>
+       *
+       * <code>.shared.v1.Timestamp enqueued_at = 9 [json_name = "enqueuedAt"];</code>
+       */
+      public org.megacommerce.shared.v1.TimeProto.TimestampOrBuilder getEnqueuedAtOrBuilder() {
+        if (enqueuedAtBuilder_ != null) {
+          return enqueuedAtBuilder_.getMessageOrBuilder();
+        } else {
+          return enqueuedAt_ == null ?
+              org.megacommerce.shared.v1.TimeProto.Timestamp.getDefaultInstance() : enqueuedAt_;
+        }
+      }
+      /**
+       * <pre>
+       * JSON RFC3339 timestamps -&gt; protobuf Timestamp
+       * </pre>
+       *
+       * <code>.shared.v1.Timestamp enqueued_at = 9 [json_name = "enqueuedAt"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.shared.v1.TimeProto.Timestamp, org.megacommerce.shared.v1.TimeProto.Timestamp.Builder, org.megacommerce.shared.v1.TimeProto.TimestampOrBuilder> 
+          internalGetEnqueuedAtFieldBuilder() {
+        if (enqueuedAtBuilder_ == null) {
+          enqueuedAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.shared.v1.TimeProto.Timestamp, org.megacommerce.shared.v1.TimeProto.Timestamp.Builder, org.megacommerce.shared.v1.TimeProto.TimestampOrBuilder>(
+                  getEnqueuedAt(),
+                  getParentForChildren(),
+                  isClean());
+          enqueuedAt_ = null;
+        }
+        return enqueuedAtBuilder_;
+      }
+
+      private org.megacommerce.shared.v1.TimeProto.Timestamp startedAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.shared.v1.TimeProto.Timestamp, org.megacommerce.shared.v1.TimeProto.Timestamp.Builder, org.megacommerce.shared.v1.TimeProto.TimestampOrBuilder> startedAtBuilder_;
+      /**
+       * <code>.shared.v1.Timestamp started_at = 10 [json_name = "startedAt"];</code>
+       * @return Whether the startedAt field is set.
+       */
+      public boolean hasStartedAt() {
+        return ((bitField0_ & 0x00000200) != 0);
+      }
+      /**
+       * <code>.shared.v1.Timestamp started_at = 10 [json_name = "startedAt"];</code>
+       * @return The startedAt.
+       */
+      public org.megacommerce.shared.v1.TimeProto.Timestamp getStartedAt() {
+        if (startedAtBuilder_ == null) {
+          return startedAt_ == null ? org.megacommerce.shared.v1.TimeProto.Timestamp.getDefaultInstance() : startedAt_;
+        } else {
+          return startedAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.shared.v1.Timestamp started_at = 10 [json_name = "startedAt"];</code>
+       */
+      public Builder setStartedAt(org.megacommerce.shared.v1.TimeProto.Timestamp value) {
+        if (startedAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          startedAt_ = value;
+        } else {
+          startedAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.shared.v1.Timestamp started_at = 10 [json_name = "startedAt"];</code>
+       */
+      public Builder setStartedAt(
+          org.megacommerce.shared.v1.TimeProto.Timestamp.Builder builderForValue) {
+        if (startedAtBuilder_ == null) {
+          startedAt_ = builderForValue.build();
+        } else {
+          startedAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.shared.v1.Timestamp started_at = 10 [json_name = "startedAt"];</code>
+       */
+      public Builder mergeStartedAt(org.megacommerce.shared.v1.TimeProto.Timestamp value) {
+        if (startedAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000200) != 0) &&
+            startedAt_ != null &&
+            startedAt_ != org.megacommerce.shared.v1.TimeProto.Timestamp.getDefaultInstance()) {
+            getStartedAtBuilder().mergeFrom(value);
+          } else {
+            startedAt_ = value;
+          }
+        } else {
+          startedAtBuilder_.mergeFrom(value);
+        }
+        if (startedAt_ != null) {
+          bitField0_ |= 0x00000200;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.shared.v1.Timestamp started_at = 10 [json_name = "startedAt"];</code>
+       */
+      public Builder clearStartedAt() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        startedAt_ = null;
+        if (startedAtBuilder_ != null) {
+          startedAtBuilder_.dispose();
+          startedAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.shared.v1.Timestamp started_at = 10 [json_name = "startedAt"];</code>
+       */
+      public org.megacommerce.shared.v1.TimeProto.Timestamp.Builder getStartedAtBuilder() {
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return internalGetStartedAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.shared.v1.Timestamp started_at = 10 [json_name = "startedAt"];</code>
+       */
+      public org.megacommerce.shared.v1.TimeProto.TimestampOrBuilder getStartedAtOrBuilder() {
+        if (startedAtBuilder_ != null) {
+          return startedAtBuilder_.getMessageOrBuilder();
+        } else {
+          return startedAt_ == null ?
+              org.megacommerce.shared.v1.TimeProto.Timestamp.getDefaultInstance() : startedAt_;
+        }
+      }
+      /**
+       * <code>.shared.v1.Timestamp started_at = 10 [json_name = "startedAt"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.shared.v1.TimeProto.Timestamp, org.megacommerce.shared.v1.TimeProto.Timestamp.Builder, org.megacommerce.shared.v1.TimeProto.TimestampOrBuilder> 
+          internalGetStartedAtFieldBuilder() {
+        if (startedAtBuilder_ == null) {
+          startedAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.shared.v1.TimeProto.Timestamp, org.megacommerce.shared.v1.TimeProto.Timestamp.Builder, org.megacommerce.shared.v1.TimeProto.TimestampOrBuilder>(
+                  getStartedAt(),
+                  getParentForChildren(),
+                  isClean());
+          startedAt_ = null;
+        }
+        return startedAtBuilder_;
+      }
+
+      private org.megacommerce.shared.v1.TimeProto.Timestamp finishedAt_;
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.shared.v1.TimeProto.Timestamp, org.megacommerce.shared.v1.TimeProto.Timestamp.Builder, org.megacommerce.shared.v1.TimeProto.TimestampOrBuilder> finishedAtBuilder_;
+      /**
+       * <code>.shared.v1.Timestamp finished_at = 11 [json_name = "finishedAt"];</code>
+       * @return Whether the finishedAt field is set.
+       */
+      public boolean hasFinishedAt() {
+        return ((bitField0_ & 0x00000400) != 0);
+      }
+      /**
+       * <code>.shared.v1.Timestamp finished_at = 11 [json_name = "finishedAt"];</code>
+       * @return The finishedAt.
+       */
+      public org.megacommerce.shared.v1.TimeProto.Timestamp getFinishedAt() {
+        if (finishedAtBuilder_ == null) {
+          return finishedAt_ == null ? org.megacommerce.shared.v1.TimeProto.Timestamp.getDefaultInstance() : finishedAt_;
+        } else {
+          return finishedAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.shared.v1.Timestamp finished_at = 11 [json_name = "finishedAt"];</code>
+       */
+      public Builder setFinishedAt(org.megacommerce.shared.v1.TimeProto.Timestamp value) {
+        if (finishedAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          finishedAt_ = value;
+        } else {
+          finishedAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.shared.v1.Timestamp finished_at = 11 [json_name = "finishedAt"];</code>
+       */
+      public Builder setFinishedAt(
+          org.megacommerce.shared.v1.TimeProto.Timestamp.Builder builderForValue) {
+        if (finishedAtBuilder_ == null) {
+          finishedAt_ = builderForValue.build();
+        } else {
+          finishedAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.shared.v1.Timestamp finished_at = 11 [json_name = "finishedAt"];</code>
+       */
+      public Builder mergeFinishedAt(org.megacommerce.shared.v1.TimeProto.Timestamp value) {
+        if (finishedAtBuilder_ == null) {
+          if (((bitField0_ & 0x00000400) != 0) &&
+            finishedAt_ != null &&
+            finishedAt_ != org.megacommerce.shared.v1.TimeProto.Timestamp.getDefaultInstance()) {
+            getFinishedAtBuilder().mergeFrom(value);
+          } else {
+            finishedAt_ = value;
+          }
+        } else {
+          finishedAtBuilder_.mergeFrom(value);
+        }
+        if (finishedAt_ != null) {
+          bitField0_ |= 0x00000400;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.shared.v1.Timestamp finished_at = 11 [json_name = "finishedAt"];</code>
+       */
+      public Builder clearFinishedAt() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        finishedAt_ = null;
+        if (finishedAtBuilder_ != null) {
+          finishedAtBuilder_.dispose();
+          finishedAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.shared.v1.Timestamp finished_at = 11 [json_name = "finishedAt"];</code>
+       */
+      public org.megacommerce.shared.v1.TimeProto.Timestamp.Builder getFinishedAtBuilder() {
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return internalGetFinishedAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.shared.v1.Timestamp finished_at = 11 [json_name = "finishedAt"];</code>
+       */
+      public org.megacommerce.shared.v1.TimeProto.TimestampOrBuilder getFinishedAtOrBuilder() {
+        if (finishedAtBuilder_ != null) {
+          return finishedAtBuilder_.getMessageOrBuilder();
+        } else {
+          return finishedAt_ == null ?
+              org.megacommerce.shared.v1.TimeProto.Timestamp.getDefaultInstance() : finishedAt_;
+        }
+      }
+      /**
+       * <code>.shared.v1.Timestamp finished_at = 11 [json_name = "finishedAt"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.shared.v1.TimeProto.Timestamp, org.megacommerce.shared.v1.TimeProto.Timestamp.Builder, org.megacommerce.shared.v1.TimeProto.TimestampOrBuilder> 
+          internalGetFinishedAtFieldBuilder() {
+        if (finishedAtBuilder_ == null) {
+          finishedAtBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.shared.v1.TimeProto.Timestamp, org.megacommerce.shared.v1.TimeProto.Timestamp.Builder, org.megacommerce.shared.v1.TimeProto.TimestampOrBuilder>(
+                  getFinishedAt(),
+                  getParentForChildren(),
+                  isClean());
+          finishedAt_ = null;
+        }
+        return finishedAtBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:search.v1.TaskGetResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:search.v1.TaskGetResponse)
+    private static final org.megacommerce.search.v1.TasksProto.TaskGetResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.search.v1.TasksProto.TaskGetResponse();
+    }
+
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TaskGetResponse>
+        PARSER = new com.google.protobuf.AbstractParser<TaskGetResponse>() {
+      @java.lang.Override
+      public TaskGetResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<TaskGetResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TaskGetResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.search.v1.TasksProto.TaskGetResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface TaskGetResponseErrorOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:search.v1.TaskGetResponseError)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string message = 1 [json_name = "message"];</code>
+     * @return The message.
+     */
+    java.lang.String getMessage();
+    /**
+     * <code>string message = 1 [json_name = "message"];</code>
+     * @return The bytes for message.
+     */
+    com.google.protobuf.ByteString
+        getMessageBytes();
+
+    /**
+     * <code>string code = 2 [json_name = "code"];</code>
+     * @return The code.
+     */
+    java.lang.String getCode();
+    /**
+     * <code>string code = 2 [json_name = "code"];</code>
+     * @return The bytes for code.
+     */
+    com.google.protobuf.ByteString
+        getCodeBytes();
+
+    /**
+     * <code>string type = 3 [json_name = "type"];</code>
+     * @return The type.
+     */
+    java.lang.String getType();
+    /**
+     * <code>string type = 3 [json_name = "type"];</code>
+     * @return The bytes for type.
+     */
+    com.google.protobuf.ByteString
+        getTypeBytes();
+
+    /**
+     * <code>string link = 4 [json_name = "link"];</code>
+     * @return The link.
+     */
+    java.lang.String getLink();
+    /**
+     * <code>string link = 4 [json_name = "link"];</code>
+     * @return The bytes for link.
+     */
+    com.google.protobuf.ByteString
+        getLinkBytes();
+
+    /**
+     * <code>.shared.v1.Struct details = 5 [json_name = "details"];</code>
+     * @return Whether the details field is set.
+     */
+    boolean hasDetails();
+    /**
+     * <code>.shared.v1.Struct details = 5 [json_name = "details"];</code>
+     * @return The details.
+     */
+    org.megacommerce.shared.v1.StructProto.Struct getDetails();
+    /**
+     * <code>.shared.v1.Struct details = 5 [json_name = "details"];</code>
+     */
+    org.megacommerce.shared.v1.StructProto.StructOrBuilder getDetailsOrBuilder();
+  }
+  /**
+   * Protobuf type {@code search.v1.TaskGetResponseError}
+   */
+  public static final class TaskGetResponseError extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:search.v1.TaskGetResponseError)
+      TaskGetResponseErrorOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        TaskGetResponseError.class.getName());
+    }
+    // Use TaskGetResponseError.newBuilder() to construct.
+    private TaskGetResponseError(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private TaskGetResponseError() {
+      message_ = "";
+      code_ = "";
+      type_ = "";
+      link_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.search.v1.TasksProto.internal_static_search_v1_TaskGetResponseError_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.search.v1.TasksProto.internal_static_search_v1_TaskGetResponseError_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.search.v1.TasksProto.TaskGetResponseError.class, org.megacommerce.search.v1.TasksProto.TaskGetResponseError.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int MESSAGE_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object message_ = "";
+    /**
+     * <code>string message = 1 [json_name = "message"];</code>
+     * @return The message.
+     */
+    @java.lang.Override
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        message_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string message = 1 [json_name = "message"];</code>
+     * @return The bytes for message.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getMessageBytes() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        message_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CODE_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object code_ = "";
+    /**
+     * <code>string code = 2 [json_name = "code"];</code>
+     * @return The code.
+     */
+    @java.lang.Override
+    public java.lang.String getCode() {
+      java.lang.Object ref = code_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        code_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string code = 2 [json_name = "code"];</code>
+     * @return The bytes for code.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getCodeBytes() {
+      java.lang.Object ref = code_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        code_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object type_ = "";
+    /**
+     * <code>string type = 3 [json_name = "type"];</code>
+     * @return The type.
+     */
+    @java.lang.Override
+    public java.lang.String getType() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        type_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string type = 3 [json_name = "type"];</code>
+     * @return The bytes for type.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getTypeBytes() {
+      java.lang.Object ref = type_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        type_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int LINK_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object link_ = "";
+    /**
+     * <code>string link = 4 [json_name = "link"];</code>
+     * @return The link.
+     */
+    @java.lang.Override
+    public java.lang.String getLink() {
+      java.lang.Object ref = link_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        link_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string link = 4 [json_name = "link"];</code>
+     * @return The bytes for link.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLinkBytes() {
+      java.lang.Object ref = link_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        link_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int DETAILS_FIELD_NUMBER = 5;
+    private org.megacommerce.shared.v1.StructProto.Struct details_;
+    /**
+     * <code>.shared.v1.Struct details = 5 [json_name = "details"];</code>
+     * @return Whether the details field is set.
+     */
+    @java.lang.Override
+    public boolean hasDetails() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.shared.v1.Struct details = 5 [json_name = "details"];</code>
+     * @return The details.
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.StructProto.Struct getDetails() {
+      return details_ == null ? org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : details_;
+    }
+    /**
+     * <code>.shared.v1.Struct details = 5 [json_name = "details"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.StructProto.StructOrBuilder getDetailsOrBuilder() {
+      return details_ == null ? org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : details_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(message_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, message_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(code_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, code_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(type_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, type_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(link_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, link_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(5, getDetails());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(message_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, message_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(code_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, code_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(type_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, type_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(link_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, link_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(5, getDetails());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.search.v1.TasksProto.TaskGetResponseError)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.search.v1.TasksProto.TaskGetResponseError other = (org.megacommerce.search.v1.TasksProto.TaskGetResponseError) obj;
+
+      if (!getMessage()
+          .equals(other.getMessage())) return false;
+      if (!getCode()
+          .equals(other.getCode())) return false;
+      if (!getType()
+          .equals(other.getType())) return false;
+      if (!getLink()
+          .equals(other.getLink())) return false;
+      if (hasDetails() != other.hasDetails()) return false;
+      if (hasDetails()) {
+        if (!getDetails()
+            .equals(other.getDetails())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
+      hash = (53 * hash) + getMessage().hashCode();
+      hash = (37 * hash) + CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getCode().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + LINK_FIELD_NUMBER;
+      hash = (53 * hash) + getLink().hashCode();
+      if (hasDetails()) {
+        hash = (37 * hash) + DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getDetails().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponseError parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponseError parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponseError parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponseError parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponseError parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponseError parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponseError parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponseError parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponseError parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponseError parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponseError parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponseError parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.search.v1.TasksProto.TaskGetResponseError prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code search.v1.TaskGetResponseError}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:search.v1.TaskGetResponseError)
+        org.megacommerce.search.v1.TasksProto.TaskGetResponseErrorOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.search.v1.TasksProto.internal_static_search_v1_TaskGetResponseError_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.search.v1.TasksProto.internal_static_search_v1_TaskGetResponseError_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.search.v1.TasksProto.TaskGetResponseError.class, org.megacommerce.search.v1.TasksProto.TaskGetResponseError.Builder.class);
+      }
+
+      // Construct using org.megacommerce.search.v1.TasksProto.TaskGetResponseError.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage
+                .alwaysUseFieldBuilders) {
+          internalGetDetailsFieldBuilder();
+        }
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        message_ = "";
+        code_ = "";
+        type_ = "";
+        link_ = "";
+        details_ = null;
+        if (detailsBuilder_ != null) {
+          detailsBuilder_.dispose();
+          detailsBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.search.v1.TasksProto.internal_static_search_v1_TaskGetResponseError_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.search.v1.TasksProto.TaskGetResponseError getDefaultInstanceForType() {
+        return org.megacommerce.search.v1.TasksProto.TaskGetResponseError.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.search.v1.TasksProto.TaskGetResponseError build() {
+        org.megacommerce.search.v1.TasksProto.TaskGetResponseError result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.search.v1.TasksProto.TaskGetResponseError buildPartial() {
+        org.megacommerce.search.v1.TasksProto.TaskGetResponseError result = new org.megacommerce.search.v1.TasksProto.TaskGetResponseError(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.search.v1.TasksProto.TaskGetResponseError result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.message_ = message_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.code_ = code_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.type_ = type_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.link_ = link_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.details_ = detailsBuilder_ == null
+              ? details_
+              : detailsBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.search.v1.TasksProto.TaskGetResponseError) {
+          return mergeFrom((org.megacommerce.search.v1.TasksProto.TaskGetResponseError)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.search.v1.TasksProto.TaskGetResponseError other) {
+        if (other == org.megacommerce.search.v1.TasksProto.TaskGetResponseError.getDefaultInstance()) return this;
+        if (!other.getMessage().isEmpty()) {
+          message_ = other.message_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getCode().isEmpty()) {
+          code_ = other.code_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getType().isEmpty()) {
+          type_ = other.type_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getLink().isEmpty()) {
+          link_ = other.link_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (other.hasDetails()) {
+          mergeDetails(other.getDetails());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                message_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                code_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                type_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                link_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 42: {
+                input.readMessage(
+                    internalGetDetailsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object message_ = "";
+      /**
+       * <code>string message = 1 [json_name = "message"];</code>
+       * @return The message.
+       */
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          message_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string message = 1 [json_name = "message"];</code>
+       * @return The bytes for message.
+       */
+      public com.google.protobuf.ByteString
+          getMessageBytes() {
+        java.lang.Object ref = message_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          message_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string message = 1 [json_name = "message"];</code>
+       * @param value The message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessage(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        message_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 1 [json_name = "message"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMessage() {
+        message_ = getDefaultInstance().getMessage();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string message = 1 [json_name = "message"];</code>
+       * @param value The bytes for message to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMessageBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        message_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object code_ = "";
+      /**
+       * <code>string code = 2 [json_name = "code"];</code>
+       * @return The code.
+       */
+      public java.lang.String getCode() {
+        java.lang.Object ref = code_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          code_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string code = 2 [json_name = "code"];</code>
+       * @return The bytes for code.
+       */
+      public com.google.protobuf.ByteString
+          getCodeBytes() {
+        java.lang.Object ref = code_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          code_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string code = 2 [json_name = "code"];</code>
+       * @param value The code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCode(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        code_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string code = 2 [json_name = "code"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCode() {
+        code_ = getDefaultInstance().getCode();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string code = 2 [json_name = "code"];</code>
+       * @param value The bytes for code to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        code_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object type_ = "";
+      /**
+       * <code>string type = 3 [json_name = "type"];</code>
+       * @return The type.
+       */
+      public java.lang.String getType() {
+        java.lang.Object ref = type_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          type_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string type = 3 [json_name = "type"];</code>
+       * @return The bytes for type.
+       */
+      public com.google.protobuf.ByteString
+          getTypeBytes() {
+        java.lang.Object ref = type_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          type_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string type = 3 [json_name = "type"];</code>
+       * @param value The type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setType(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        type_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string type = 3 [json_name = "type"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearType() {
+        type_ = getDefaultInstance().getType();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string type = 3 [json_name = "type"];</code>
+       * @param value The bytes for type to set.
+       * @return This builder for chaining.
+       */
+      public Builder setTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        type_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object link_ = "";
+      /**
+       * <code>string link = 4 [json_name = "link"];</code>
+       * @return The link.
+       */
+      public java.lang.String getLink() {
+        java.lang.Object ref = link_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          link_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string link = 4 [json_name = "link"];</code>
+       * @return The bytes for link.
+       */
+      public com.google.protobuf.ByteString
+          getLinkBytes() {
+        java.lang.Object ref = link_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          link_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string link = 4 [json_name = "link"];</code>
+       * @param value The link to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLink(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        link_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string link = 4 [json_name = "link"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLink() {
+        link_ = getDefaultInstance().getLink();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string link = 4 [json_name = "link"];</code>
+       * @param value The bytes for link to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLinkBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        link_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private org.megacommerce.shared.v1.StructProto.Struct details_;
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.shared.v1.StructProto.Struct, org.megacommerce.shared.v1.StructProto.Struct.Builder, org.megacommerce.shared.v1.StructProto.StructOrBuilder> detailsBuilder_;
+      /**
+       * <code>.shared.v1.Struct details = 5 [json_name = "details"];</code>
+       * @return Whether the details field is set.
+       */
+      public boolean hasDetails() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+      /**
+       * <code>.shared.v1.Struct details = 5 [json_name = "details"];</code>
+       * @return The details.
+       */
+      public org.megacommerce.shared.v1.StructProto.Struct getDetails() {
+        if (detailsBuilder_ == null) {
+          return details_ == null ? org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : details_;
+        } else {
+          return detailsBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.shared.v1.Struct details = 5 [json_name = "details"];</code>
+       */
+      public Builder setDetails(org.megacommerce.shared.v1.StructProto.Struct value) {
+        if (detailsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          details_ = value;
+        } else {
+          detailsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.shared.v1.Struct details = 5 [json_name = "details"];</code>
+       */
+      public Builder setDetails(
+          org.megacommerce.shared.v1.StructProto.Struct.Builder builderForValue) {
+        if (detailsBuilder_ == null) {
+          details_ = builderForValue.build();
+        } else {
+          detailsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.shared.v1.Struct details = 5 [json_name = "details"];</code>
+       */
+      public Builder mergeDetails(org.megacommerce.shared.v1.StructProto.Struct value) {
+        if (detailsBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0) &&
+            details_ != null &&
+            details_ != org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance()) {
+            getDetailsBuilder().mergeFrom(value);
+          } else {
+            details_ = value;
+          }
+        } else {
+          detailsBuilder_.mergeFrom(value);
+        }
+        if (details_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.shared.v1.Struct details = 5 [json_name = "details"];</code>
+       */
+      public Builder clearDetails() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        details_ = null;
+        if (detailsBuilder_ != null) {
+          detailsBuilder_.dispose();
+          detailsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.shared.v1.Struct details = 5 [json_name = "details"];</code>
+       */
+      public org.megacommerce.shared.v1.StructProto.Struct.Builder getDetailsBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return internalGetDetailsFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.shared.v1.Struct details = 5 [json_name = "details"];</code>
+       */
+      public org.megacommerce.shared.v1.StructProto.StructOrBuilder getDetailsOrBuilder() {
+        if (detailsBuilder_ != null) {
+          return detailsBuilder_.getMessageOrBuilder();
+        } else {
+          return details_ == null ?
+              org.megacommerce.shared.v1.StructProto.Struct.getDefaultInstance() : details_;
+        }
+      }
+      /**
+       * <code>.shared.v1.Struct details = 5 [json_name = "details"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.shared.v1.StructProto.Struct, org.megacommerce.shared.v1.StructProto.Struct.Builder, org.megacommerce.shared.v1.StructProto.StructOrBuilder> 
+          internalGetDetailsFieldBuilder() {
+        if (detailsBuilder_ == null) {
+          detailsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.shared.v1.StructProto.Struct, org.megacommerce.shared.v1.StructProto.Struct.Builder, org.megacommerce.shared.v1.StructProto.StructOrBuilder>(
+                  getDetails(),
+                  getParentForChildren(),
+                  isClean());
+          details_ = null;
+        }
+        return detailsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:search.v1.TaskGetResponseError)
+    }
+
+    // @@protoc_insertion_point(class_scope:search.v1.TaskGetResponseError)
+    private static final org.megacommerce.search.v1.TasksProto.TaskGetResponseError DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.search.v1.TasksProto.TaskGetResponseError();
+    }
+
+    public static org.megacommerce.search.v1.TasksProto.TaskGetResponseError getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TaskGetResponseError>
+        PARSER = new com.google.protobuf.AbstractParser<TaskGetResponseError>() {
+      @java.lang.Override
+      public TaskGetResponseError parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<TaskGetResponseError> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TaskGetResponseError> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.search.v1.TasksProto.TaskGetResponseError getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_search_v1_TaskCreateResponse_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_search_v1_TaskCreateResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_search_v1_TaskGetResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_search_v1_TaskGetResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_search_v1_TaskGetResponseError_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_search_v1_TaskGetResponseError_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1323,20 +5134,39 @@ public final class TasksProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025search/v1/tasks.proto\022\tsearch.v1\032\024shar" +
-      "ed/v1/time.proto\"\257\001\n\022TaskCreateResponse\022" +
-      "\031\n\010task_uid\030\001 \001(\004R\007taskUid\022\033\n\tindex_uid\030" +
-      "\002 \001(\tR\010indexUid\022\026\n\006status\030\003 \001(\tR\006status\022" +
-      "\022\n\004type\030\004 \001(\tR\004type\0225\n\013enqueued_at\030\005 \001(\013" +
-      "2\024.shared.v1.TimestampR\nenqueuedAtBp\n\032or" +
-      "g.megacommerce.search.v1B\nTasksProtoZCgi" +
-      "thub.com/ahmad-khatib0-org/megacommerce-" +
-      "proto/gen/go/search/v1;v1\370\001\001b\006proto3"
+      "\n\025search/v1/tasks.proto\022\tsearch.v1\032\026shar" +
+      "ed/v1/struct.proto\032\024shared/v1/time.proto" +
+      "\032\030shared/v1/wrappers.proto\"\257\001\n\022TaskCreat" +
+      "eResponse\022\031\n\010task_uid\030\001 \001(\004R\007taskUid\022\033\n\t" +
+      "index_uid\030\002 \001(\tR\010indexUid\022\026\n\006status\030\003 \001(" +
+      "\tR\006status\022\022\n\004type\030\004 \001(\tR\004type\0225\n\013enqueue" +
+      "d_at\030\005 \001(\0132\024.shared.v1.TimestampR\nenqueu" +
+      "edAt\"\310\003\n\017TaskGetResponse\022\020\n\003uid\030\001 \001(\004R\003u" +
+      "id\022\033\n\tindex_uid\030\002 \001(\tR\010indexUid\022\026\n\006statu" +
+      "s\030\003 \001(\tR\006status\022\022\n\004type\030\004 \001(\tR\004type\0227\n\013c" +
+      "anceled_by\030\005 \001(\0132\026.shared.v1.UInt64Value" +
+      "R\ncanceledBy\022+\n\007details\030\006 \001(\0132\021.shared.v" +
+      "1.StructR\007details\0225\n\005error\030\007 \001(\0132\037.searc" +
+      "h.v1.TaskGetResponseErrorR\005error\022\032\n\010dura" +
+      "tion\030\010 \001(\tR\010duration\0225\n\013enqueued_at\030\t \001(" +
+      "\0132\024.shared.v1.TimestampR\nenqueuedAt\0223\n\ns" +
+      "tarted_at\030\n \001(\0132\024.shared.v1.TimestampR\ts" +
+      "tartedAt\0225\n\013finished_at\030\013 \001(\0132\024.shared.v" +
+      "1.TimestampR\nfinishedAt\"\231\001\n\024TaskGetRespo" +
+      "nseError\022\030\n\007message\030\001 \001(\tR\007message\022\022\n\004co" +
+      "de\030\002 \001(\tR\004code\022\022\n\004type\030\003 \001(\tR\004type\022\022\n\004li" +
+      "nk\030\004 \001(\tR\004link\022+\n\007details\030\005 \001(\0132\021.shared" +
+      ".v1.StructR\007detailsBp\n\032org.megacommerce." +
+      "search.v1B\nTasksProtoZCgithub.com/ahmad-" +
+      "khatib0-org/megacommerce-proto/gen/go/se" +
+      "arch/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          org.megacommerce.shared.v1.StructProto.getDescriptor(),
           org.megacommerce.shared.v1.TimeProto.getDescriptor(),
+          org.megacommerce.shared.v1.WrappersProto.getDescriptor(),
         });
     internal_static_search_v1_TaskCreateResponse_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -1344,8 +5174,22 @@ public final class TasksProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_search_v1_TaskCreateResponse_descriptor,
         new java.lang.String[] { "TaskUid", "IndexUid", "Status", "Type", "EnqueuedAt", });
+    internal_static_search_v1_TaskGetResponse_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_search_v1_TaskGetResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_search_v1_TaskGetResponse_descriptor,
+        new java.lang.String[] { "Uid", "IndexUid", "Status", "Type", "CanceledBy", "Details", "Error", "Duration", "EnqueuedAt", "StartedAt", "FinishedAt", });
+    internal_static_search_v1_TaskGetResponseError_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_search_v1_TaskGetResponseError_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_search_v1_TaskGetResponseError_descriptor,
+        new java.lang.String[] { "Message", "Code", "Type", "Link", "Details", });
     descriptor.resolveAllFeaturesImmutable();
+    org.megacommerce.shared.v1.StructProto.getDescriptor();
     org.megacommerce.shared.v1.TimeProto.getDescriptor();
+    org.megacommerce.shared.v1.WrappersProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

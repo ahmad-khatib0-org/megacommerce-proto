@@ -323,3 +323,52 @@ pub struct TaskCreateResponse {
     #[prost(message, optional, tag = "5")]
     pub enqueued_at: ::core::option::Option<super::super::shared::v1::Timestamp>,
 }
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct TaskGetResponse {
+    /// JSON: "uid": 1
+    #[prost(uint64, tag = "1")]
+    pub uid: u64,
+    /// JSON: "indexUid": "movies"
+    #[prost(string, tag = "2")]
+    pub index_uid: ::prost::alloc::string::String,
+    /// JSON: "status": "succeeded"
+    #[prost(string, tag = "3")]
+    pub status: ::prost::alloc::string::String,
+    /// JSON: "type": "settingsUpdate"
+    #[prost(string, tag = "4")]
+    pub r#type: ::prost::alloc::string::String,
+    /// JSON: "canceledBy": null  (or integer)
+    #[prost(message, optional, tag = "5")]
+    pub canceled_by: ::core::option::Option<super::super::shared::v1::UInt64Value>,
+    /// JSON: "details": { "rankingRules": \[...\] }
+    #[prost(message, optional, tag = "6")]
+    pub details: ::core::option::Option<super::super::shared::v1::Struct>,
+    /// JSON: "error": null  (or object)
+    #[prost(message, optional, tag = "7")]
+    pub error: ::core::option::Option<TaskGetResponseError>,
+    /// JSON: "duration": "PT1S"  (ISO 8601 duration string)
+    #[prost(string, tag = "8")]
+    pub duration: ::prost::alloc::string::String,
+    /// JSON RFC3339 timestamps -> protobuf Timestamp
+    #[prost(message, optional, tag = "9")]
+    pub enqueued_at: ::core::option::Option<super::super::shared::v1::Timestamp>,
+    #[prost(message, optional, tag = "10")]
+    pub started_at: ::core::option::Option<super::super::shared::v1::Timestamp>,
+    #[prost(message, optional, tag = "11")]
+    pub finished_at: ::core::option::Option<super::super::shared::v1::Timestamp>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct TaskGetResponseError {
+    #[prost(string, tag = "1")]
+    pub message: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub code: ::prost::alloc::string::String,
+    #[prost(string, tag = "3")]
+    pub r#type: ::prost::alloc::string::String,
+    #[prost(string, tag = "4")]
+    pub link: ::prost::alloc::string::String,
+    #[prost(message, optional, tag = "5")]
+    pub details: ::core::option::Option<super::super::shared::v1::Struct>,
+}

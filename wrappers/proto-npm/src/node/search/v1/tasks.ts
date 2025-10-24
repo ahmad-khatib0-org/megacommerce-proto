@@ -6,7 +6,9 @@
 
 /* eslint-disable */
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
+import { Struct } from "../../shared/v1/struct";
 import { Timestamp } from "../../shared/v1/time";
+import { UInt64Value } from "../../shared/v1/wrappers";
 
 export const protobufPackage = "search.v1";
 
@@ -22,6 +24,43 @@ export interface TaskCreateResponse {
   type: string;
   /** enqueuedAt is returned as an RFC3339 string in JSON. Use Timestamp for typed time. */
   enqueuedAt?: Timestamp | undefined;
+}
+
+export interface TaskGetResponse {
+  /** JSON: "uid": 1 */
+  uid: string;
+  /** JSON: "indexUid": "movies" */
+  indexUid: string;
+  /** JSON: "status": "succeeded" */
+  status: string;
+  /** JSON: "type": "settingsUpdate" */
+  type: string;
+  /** JSON: "canceledBy": null  (or integer) */
+  canceledBy?:
+    | UInt64Value
+    | undefined;
+  /** JSON: "details": { "rankingRules": [...] } */
+  details?:
+    | Struct
+    | undefined;
+  /** JSON: "error": null  (or object) */
+  error?:
+    | TaskGetResponseError
+    | undefined;
+  /** JSON: "duration": "PT1S"  (ISO 8601 duration string) */
+  duration: string;
+  /** JSON RFC3339 timestamps -> protobuf Timestamp */
+  enqueuedAt?: Timestamp | undefined;
+  startedAt?: Timestamp | undefined;
+  finishedAt?: Timestamp | undefined;
+}
+
+export interface TaskGetResponseError {
+  message: string;
+  code: string;
+  type: string;
+  link: string;
+  details?: Struct | undefined;
 }
 
 function createBaseTaskCreateResponse(): TaskCreateResponse {
@@ -145,6 +184,376 @@ export const TaskCreateResponse: MessageFns<TaskCreateResponse> = {
     message.type = object.type ?? "";
     message.enqueuedAt = (object.enqueuedAt !== undefined && object.enqueuedAt !== null)
       ? Timestamp.fromPartial(object.enqueuedAt)
+      : undefined;
+    return message;
+  },
+};
+
+function createBaseTaskGetResponse(): TaskGetResponse {
+  return {
+    uid: "0",
+    indexUid: "",
+    status: "",
+    type: "",
+    canceledBy: undefined,
+    details: undefined,
+    error: undefined,
+    duration: "",
+    enqueuedAt: undefined,
+    startedAt: undefined,
+    finishedAt: undefined,
+  };
+}
+
+export const TaskGetResponse: MessageFns<TaskGetResponse> = {
+  encode(message: TaskGetResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.uid !== "0") {
+      writer.uint32(8).uint64(message.uid);
+    }
+    if (message.indexUid !== "") {
+      writer.uint32(18).string(message.indexUid);
+    }
+    if (message.status !== "") {
+      writer.uint32(26).string(message.status);
+    }
+    if (message.type !== "") {
+      writer.uint32(34).string(message.type);
+    }
+    if (message.canceledBy !== undefined) {
+      UInt64Value.encode(message.canceledBy, writer.uint32(42).fork()).join();
+    }
+    if (message.details !== undefined) {
+      Struct.encode(message.details, writer.uint32(50).fork()).join();
+    }
+    if (message.error !== undefined) {
+      TaskGetResponseError.encode(message.error, writer.uint32(58).fork()).join();
+    }
+    if (message.duration !== "") {
+      writer.uint32(66).string(message.duration);
+    }
+    if (message.enqueuedAt !== undefined) {
+      Timestamp.encode(message.enqueuedAt, writer.uint32(74).fork()).join();
+    }
+    if (message.startedAt !== undefined) {
+      Timestamp.encode(message.startedAt, writer.uint32(82).fork()).join();
+    }
+    if (message.finishedAt !== undefined) {
+      Timestamp.encode(message.finishedAt, writer.uint32(90).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): TaskGetResponse {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseTaskGetResponse();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 8) {
+            break;
+          }
+
+          message.uid = reader.uint64().toString();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.indexUid = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 26) {
+            break;
+          }
+
+          message.status = reader.string();
+          continue;
+        }
+        case 4: {
+          if (tag !== 34) {
+            break;
+          }
+
+          message.type = reader.string();
+          continue;
+        }
+        case 5: {
+          if (tag !== 42) {
+            break;
+          }
+
+          message.canceledBy = UInt64Value.decode(reader, reader.uint32());
+          continue;
+        }
+        case 6: {
+          if (tag !== 50) {
+            break;
+          }
+
+          message.details = Struct.decode(reader, reader.uint32());
+          continue;
+        }
+        case 7: {
+          if (tag !== 58) {
+            break;
+          }
+
+          message.error = TaskGetResponseError.decode(reader, reader.uint32());
+          continue;
+        }
+        case 8: {
+          if (tag !== 66) {
+            break;
+          }
+
+          message.duration = reader.string();
+          continue;
+        }
+        case 9: {
+          if (tag !== 74) {
+            break;
+          }
+
+          message.enqueuedAt = Timestamp.decode(reader, reader.uint32());
+          continue;
+        }
+        case 10: {
+          if (tag !== 82) {
+            break;
+          }
+
+          message.startedAt = Timestamp.decode(reader, reader.uint32());
+          continue;
+        }
+        case 11: {
+          if (tag !== 90) {
+            break;
+          }
+
+          message.finishedAt = Timestamp.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): TaskGetResponse {
+    return {
+      uid: isSet(object.uid) ? globalThis.String(object.uid) : "0",
+      indexUid: isSet(object.indexUid) ? globalThis.String(object.indexUid) : "",
+      status: isSet(object.status) ? globalThis.String(object.status) : "",
+      type: isSet(object.type) ? globalThis.String(object.type) : "",
+      canceledBy: isSet(object.canceledBy) ? UInt64Value.fromJSON(object.canceledBy) : undefined,
+      details: isSet(object.details) ? Struct.fromJSON(object.details) : undefined,
+      error: isSet(object.error) ? TaskGetResponseError.fromJSON(object.error) : undefined,
+      duration: isSet(object.duration) ? globalThis.String(object.duration) : "",
+      enqueuedAt: isSet(object.enqueuedAt) ? Timestamp.fromJSON(object.enqueuedAt) : undefined,
+      startedAt: isSet(object.startedAt) ? Timestamp.fromJSON(object.startedAt) : undefined,
+      finishedAt: isSet(object.finishedAt) ? Timestamp.fromJSON(object.finishedAt) : undefined,
+    };
+  },
+
+  toJSON(message: TaskGetResponse): unknown {
+    const obj: any = {};
+    if (message.uid !== "0") {
+      obj.uid = message.uid;
+    }
+    if (message.indexUid !== "") {
+      obj.indexUid = message.indexUid;
+    }
+    if (message.status !== "") {
+      obj.status = message.status;
+    }
+    if (message.type !== "") {
+      obj.type = message.type;
+    }
+    if (message.canceledBy !== undefined) {
+      obj.canceledBy = UInt64Value.toJSON(message.canceledBy);
+    }
+    if (message.details !== undefined) {
+      obj.details = Struct.toJSON(message.details);
+    }
+    if (message.error !== undefined) {
+      obj.error = TaskGetResponseError.toJSON(message.error);
+    }
+    if (message.duration !== "") {
+      obj.duration = message.duration;
+    }
+    if (message.enqueuedAt !== undefined) {
+      obj.enqueuedAt = Timestamp.toJSON(message.enqueuedAt);
+    }
+    if (message.startedAt !== undefined) {
+      obj.startedAt = Timestamp.toJSON(message.startedAt);
+    }
+    if (message.finishedAt !== undefined) {
+      obj.finishedAt = Timestamp.toJSON(message.finishedAt);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<TaskGetResponse>, I>>(base?: I): TaskGetResponse {
+    return TaskGetResponse.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<TaskGetResponse>, I>>(object: I): TaskGetResponse {
+    const message = createBaseTaskGetResponse();
+    message.uid = object.uid ?? "0";
+    message.indexUid = object.indexUid ?? "";
+    message.status = object.status ?? "";
+    message.type = object.type ?? "";
+    message.canceledBy = (object.canceledBy !== undefined && object.canceledBy !== null)
+      ? UInt64Value.fromPartial(object.canceledBy)
+      : undefined;
+    message.details = (object.details !== undefined && object.details !== null)
+      ? Struct.fromPartial(object.details)
+      : undefined;
+    message.error = (object.error !== undefined && object.error !== null)
+      ? TaskGetResponseError.fromPartial(object.error)
+      : undefined;
+    message.duration = object.duration ?? "";
+    message.enqueuedAt = (object.enqueuedAt !== undefined && object.enqueuedAt !== null)
+      ? Timestamp.fromPartial(object.enqueuedAt)
+      : undefined;
+    message.startedAt = (object.startedAt !== undefined && object.startedAt !== null)
+      ? Timestamp.fromPartial(object.startedAt)
+      : undefined;
+    message.finishedAt = (object.finishedAt !== undefined && object.finishedAt !== null)
+      ? Timestamp.fromPartial(object.finishedAt)
+      : undefined;
+    return message;
+  },
+};
+
+function createBaseTaskGetResponseError(): TaskGetResponseError {
+  return { message: "", code: "", type: "", link: "", details: undefined };
+}
+
+export const TaskGetResponseError: MessageFns<TaskGetResponseError> = {
+  encode(message: TaskGetResponseError, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.message !== "") {
+      writer.uint32(10).string(message.message);
+    }
+    if (message.code !== "") {
+      writer.uint32(18).string(message.code);
+    }
+    if (message.type !== "") {
+      writer.uint32(26).string(message.type);
+    }
+    if (message.link !== "") {
+      writer.uint32(34).string(message.link);
+    }
+    if (message.details !== undefined) {
+      Struct.encode(message.details, writer.uint32(42).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): TaskGetResponseError {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseTaskGetResponseError();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.message = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.code = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 26) {
+            break;
+          }
+
+          message.type = reader.string();
+          continue;
+        }
+        case 4: {
+          if (tag !== 34) {
+            break;
+          }
+
+          message.link = reader.string();
+          continue;
+        }
+        case 5: {
+          if (tag !== 42) {
+            break;
+          }
+
+          message.details = Struct.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): TaskGetResponseError {
+    return {
+      message: isSet(object.message) ? globalThis.String(object.message) : "",
+      code: isSet(object.code) ? globalThis.String(object.code) : "",
+      type: isSet(object.type) ? globalThis.String(object.type) : "",
+      link: isSet(object.link) ? globalThis.String(object.link) : "",
+      details: isSet(object.details) ? Struct.fromJSON(object.details) : undefined,
+    };
+  },
+
+  toJSON(message: TaskGetResponseError): unknown {
+    const obj: any = {};
+    if (message.message !== "") {
+      obj.message = message.message;
+    }
+    if (message.code !== "") {
+      obj.code = message.code;
+    }
+    if (message.type !== "") {
+      obj.type = message.type;
+    }
+    if (message.link !== "") {
+      obj.link = message.link;
+    }
+    if (message.details !== undefined) {
+      obj.details = Struct.toJSON(message.details);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<TaskGetResponseError>, I>>(base?: I): TaskGetResponseError {
+    return TaskGetResponseError.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<TaskGetResponseError>, I>>(object: I): TaskGetResponseError {
+    const message = createBaseTaskGetResponseError();
+    message.message = object.message ?? "";
+    message.code = object.code ?? "";
+    message.type = object.type ?? "";
+    message.link = object.link ?? "";
+    message.details = (object.details !== undefined && object.details !== null)
+      ? Struct.fromPartial(object.details)
       : undefined;
     return message;
   },

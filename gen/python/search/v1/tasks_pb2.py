@@ -22,10 +22,12 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from shared.v1 import struct_pb2 as shared_dot_v1_dot_struct__pb2
 from shared.v1 import time_pb2 as shared_dot_v1_dot_time__pb2
+from shared.v1 import wrappers_pb2 as shared_dot_v1_dot_wrappers__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15search/v1/tasks.proto\x12\tsearch.v1\x1a\x14shared/v1/time.proto\"\xa1\x01\n\x12TaskCreateResponse\x12\x19\n\x08task_uid\x18\x01 \x01(\x04R\x07taskUid\x12\x1b\n\tindex_uid\x18\x02 \x01(\tR\x08indexUid\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\x35\n\x0b\x65nqueued_at\x18\x05 \x01(\x0b\x32\x14.shared.v1.TimestampR\nenqueuedAtBp\n\x1aorg.megacommerce.search.v1B\nTasksProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/search/v1;v1\xf8\x01\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15search/v1/tasks.proto\x12\tsearch.v1\x1a\x16shared/v1/struct.proto\x1a\x14shared/v1/time.proto\x1a\x18shared/v1/wrappers.proto\"\xa1\x01\n\x12TaskCreateResponse\x12\x19\n\x08task_uid\x18\x01 \x01(\x04R\x07taskUid\x12\x1b\n\tindex_uid\x18\x02 \x01(\tR\x08indexUid\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\x35\n\x0b\x65nqueued_at\x18\x05 \x01(\x0b\x32\x14.shared.v1.TimestampR\nenqueuedAt\"\xc8\x03\n\x0fTaskGetResponse\x12\x10\n\x03uid\x18\x01 \x01(\x04R\x03uid\x12\x1b\n\tindex_uid\x18\x02 \x01(\tR\x08indexUid\x12\x16\n\x06status\x18\x03 \x01(\tR\x06status\x12\x12\n\x04type\x18\x04 \x01(\tR\x04type\x12\x37\n\x0b\x63\x61nceled_by\x18\x05 \x01(\x0b\x32\x16.shared.v1.UInt64ValueR\ncanceledBy\x12+\n\x07\x64\x65tails\x18\x06 \x01(\x0b\x32\x11.shared.v1.StructR\x07\x64\x65tails\x12\x35\n\x05\x65rror\x18\x07 \x01(\x0b\x32\x1f.search.v1.TaskGetResponseErrorR\x05\x65rror\x12\x1a\n\x08\x64uration\x18\x08 \x01(\tR\x08\x64uration\x12\x35\n\x0b\x65nqueued_at\x18\t \x01(\x0b\x32\x14.shared.v1.TimestampR\nenqueuedAt\x12\x33\n\nstarted_at\x18\n \x01(\x0b\x32\x14.shared.v1.TimestampR\tstartedAt\x12\x35\n\x0b\x66inished_at\x18\x0b \x01(\x0b\x32\x14.shared.v1.TimestampR\nfinishedAt\"\x99\x01\n\x14TaskGetResponseError\x12\x18\n\x07message\x18\x01 \x01(\tR\x07message\x12\x12\n\x04\x63ode\x18\x02 \x01(\tR\x04\x63ode\x12\x12\n\x04type\x18\x03 \x01(\tR\x04type\x12\x12\n\x04link\x18\x04 \x01(\tR\x04link\x12+\n\x07\x64\x65tails\x18\x05 \x01(\x0b\x32\x11.shared.v1.StructR\x07\x64\x65tailsBp\n\x1aorg.megacommerce.search.v1B\nTasksProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/search/v1;v1\xf8\x01\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,6 +35,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'search.v1.tasks_pb2', _glob
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\032org.megacommerce.search.v1B\nTasksProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/search/v1;v1\370\001\001'
-  _globals['_TASKCREATERESPONSE']._serialized_start=59
-  _globals['_TASKCREATERESPONSE']._serialized_end=220
+  _globals['_TASKCREATERESPONSE']._serialized_start=109
+  _globals['_TASKCREATERESPONSE']._serialized_end=270
+  _globals['_TASKGETRESPONSE']._serialized_start=273
+  _globals['_TASKGETRESPONSE']._serialized_end=729
+  _globals['_TASKGETRESPONSEERROR']._serialized_start=732
+  _globals['_TASKGETRESPONSEERROR']._serialized_end=885
 # @@protoc_insertion_point(module_scope)

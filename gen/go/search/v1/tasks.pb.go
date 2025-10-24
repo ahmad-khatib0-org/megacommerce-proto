@@ -104,18 +104,250 @@ func (x *TaskCreateResponse) GetEnqueuedAt() *v1.Timestamp {
 	return nil
 }
 
+type TaskGetResponse struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// JSON: "uid": 1
+	Uid uint64 `protobuf:"varint,1,opt,name=uid,proto3" json:"uid,omitempty"`
+	// JSON: "indexUid": "movies"
+	IndexUid string `protobuf:"bytes,2,opt,name=index_uid,json=indexUid,proto3" json:"index_uid,omitempty"`
+	// JSON: "status": "succeeded"
+	Status string `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`
+	// JSON: "type": "settingsUpdate"
+	Type string `protobuf:"bytes,4,opt,name=type,proto3" json:"type,omitempty"`
+	// JSON: "canceledBy": null  (or integer)
+	CanceledBy *v1.UInt64Value `protobuf:"bytes,5,opt,name=canceled_by,json=canceledBy,proto3" json:"canceled_by,omitempty"`
+	// JSON: "details": { "rankingRules": [...] }
+	Details *v1.Struct `protobuf:"bytes,6,opt,name=details,proto3" json:"details,omitempty"`
+	// JSON: "error": null  (or object)
+	Error *TaskGetResponseError `protobuf:"bytes,7,opt,name=error,proto3" json:"error,omitempty"`
+	// JSON: "duration": "PT1S"  (ISO 8601 duration string)
+	Duration string `protobuf:"bytes,8,opt,name=duration,proto3" json:"duration,omitempty"`
+	// JSON RFC3339 timestamps -> protobuf Timestamp
+	EnqueuedAt    *v1.Timestamp `protobuf:"bytes,9,opt,name=enqueued_at,json=enqueuedAt,proto3" json:"enqueued_at,omitempty"`
+	StartedAt     *v1.Timestamp `protobuf:"bytes,10,opt,name=started_at,json=startedAt,proto3" json:"started_at,omitempty"`
+	FinishedAt    *v1.Timestamp `protobuf:"bytes,11,opt,name=finished_at,json=finishedAt,proto3" json:"finished_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TaskGetResponse) Reset() {
+	*x = TaskGetResponse{}
+	mi := &file_search_v1_tasks_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TaskGetResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TaskGetResponse) ProtoMessage() {}
+
+func (x *TaskGetResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_search_v1_tasks_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TaskGetResponse.ProtoReflect.Descriptor instead.
+func (*TaskGetResponse) Descriptor() ([]byte, []int) {
+	return file_search_v1_tasks_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *TaskGetResponse) GetUid() uint64 {
+	if x != nil {
+		return x.Uid
+	}
+	return 0
+}
+
+func (x *TaskGetResponse) GetIndexUid() string {
+	if x != nil {
+		return x.IndexUid
+	}
+	return ""
+}
+
+func (x *TaskGetResponse) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *TaskGetResponse) GetType() string {
+	if x != nil {
+		return x.Type
+	}
+	return ""
+}
+
+func (x *TaskGetResponse) GetCanceledBy() *v1.UInt64Value {
+	if x != nil {
+		return x.CanceledBy
+	}
+	return nil
+}
+
+func (x *TaskGetResponse) GetDetails() *v1.Struct {
+	if x != nil {
+		return x.Details
+	}
+	return nil
+}
+
+func (x *TaskGetResponse) GetError() *TaskGetResponseError {
+	if x != nil {
+		return x.Error
+	}
+	return nil
+}
+
+func (x *TaskGetResponse) GetDuration() string {
+	if x != nil {
+		return x.Duration
+	}
+	return ""
+}
+
+func (x *TaskGetResponse) GetEnqueuedAt() *v1.Timestamp {
+	if x != nil {
+		return x.EnqueuedAt
+	}
+	return nil
+}
+
+func (x *TaskGetResponse) GetStartedAt() *v1.Timestamp {
+	if x != nil {
+		return x.StartedAt
+	}
+	return nil
+}
+
+func (x *TaskGetResponse) GetFinishedAt() *v1.Timestamp {
+	if x != nil {
+		return x.FinishedAt
+	}
+	return nil
+}
+
+type TaskGetResponseError struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Message       string                 `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+	Code          string                 `protobuf:"bytes,2,opt,name=code,proto3" json:"code,omitempty"`
+	Type          string                 `protobuf:"bytes,3,opt,name=type,proto3" json:"type,omitempty"`
+	Link          string                 `protobuf:"bytes,4,opt,name=link,proto3" json:"link,omitempty"`
+	Details       *v1.Struct             `protobuf:"bytes,5,opt,name=details,proto3" json:"details,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TaskGetResponseError) Reset() {
+	*x = TaskGetResponseError{}
+	mi := &file_search_v1_tasks_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TaskGetResponseError) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TaskGetResponseError) ProtoMessage() {}
+
+func (x *TaskGetResponseError) ProtoReflect() protoreflect.Message {
+	mi := &file_search_v1_tasks_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TaskGetResponseError.ProtoReflect.Descriptor instead.
+func (*TaskGetResponseError) Descriptor() ([]byte, []int) {
+	return file_search_v1_tasks_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *TaskGetResponseError) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+func (x *TaskGetResponseError) GetCode() string {
+	if x != nil {
+		return x.Code
+	}
+	return ""
+}
+
+func (x *TaskGetResponseError) GetType() string {
+	if x != nil {
+		return x.Type
+	}
+	return ""
+}
+
+func (x *TaskGetResponseError) GetLink() string {
+	if x != nil {
+		return x.Link
+	}
+	return ""
+}
+
+func (x *TaskGetResponseError) GetDetails() *v1.Struct {
+	if x != nil {
+		return x.Details
+	}
+	return nil
+}
+
 var File_search_v1_tasks_proto protoreflect.FileDescriptor
 
 const file_search_v1_tasks_proto_rawDesc = "" +
 	"\n" +
-	"\x15search/v1/tasks.proto\x12\tsearch.v1\x1a\x14shared/v1/time.proto\"\xaf\x01\n" +
+	"\x15search/v1/tasks.proto\x12\tsearch.v1\x1a\x16shared/v1/struct.proto\x1a\x14shared/v1/time.proto\x1a\x18shared/v1/wrappers.proto\"\xaf\x01\n" +
 	"\x12TaskCreateResponse\x12\x19\n" +
 	"\btask_uid\x18\x01 \x01(\x04R\ataskUid\x12\x1b\n" +
 	"\tindex_uid\x18\x02 \x01(\tR\bindexUid\x12\x16\n" +
 	"\x06status\x18\x03 \x01(\tR\x06status\x12\x12\n" +
 	"\x04type\x18\x04 \x01(\tR\x04type\x125\n" +
 	"\venqueued_at\x18\x05 \x01(\v2\x14.shared.v1.TimestampR\n" +
-	"enqueuedAtBp\n" +
+	"enqueuedAt\"\xc8\x03\n" +
+	"\x0fTaskGetResponse\x12\x10\n" +
+	"\x03uid\x18\x01 \x01(\x04R\x03uid\x12\x1b\n" +
+	"\tindex_uid\x18\x02 \x01(\tR\bindexUid\x12\x16\n" +
+	"\x06status\x18\x03 \x01(\tR\x06status\x12\x12\n" +
+	"\x04type\x18\x04 \x01(\tR\x04type\x127\n" +
+	"\vcanceled_by\x18\x05 \x01(\v2\x16.shared.v1.UInt64ValueR\n" +
+	"canceledBy\x12+\n" +
+	"\adetails\x18\x06 \x01(\v2\x11.shared.v1.StructR\adetails\x125\n" +
+	"\x05error\x18\a \x01(\v2\x1f.search.v1.TaskGetResponseErrorR\x05error\x12\x1a\n" +
+	"\bduration\x18\b \x01(\tR\bduration\x125\n" +
+	"\venqueued_at\x18\t \x01(\v2\x14.shared.v1.TimestampR\n" +
+	"enqueuedAt\x123\n" +
+	"\n" +
+	"started_at\x18\n" +
+	" \x01(\v2\x14.shared.v1.TimestampR\tstartedAt\x125\n" +
+	"\vfinished_at\x18\v \x01(\v2\x14.shared.v1.TimestampR\n" +
+	"finishedAt\"\x99\x01\n" +
+	"\x14TaskGetResponseError\x12\x18\n" +
+	"\amessage\x18\x01 \x01(\tR\amessage\x12\x12\n" +
+	"\x04code\x18\x02 \x01(\tR\x04code\x12\x12\n" +
+	"\x04type\x18\x03 \x01(\tR\x04type\x12\x12\n" +
+	"\x04link\x18\x04 \x01(\tR\x04link\x12+\n" +
+	"\adetails\x18\x05 \x01(\v2\x11.shared.v1.StructR\adetailsBp\n" +
 	"\x1aorg.megacommerce.search.v1B\n" +
 	"TasksProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/search/v1;v1\xf8\x01\x01b\x06proto3"
 
@@ -131,18 +363,29 @@ func file_search_v1_tasks_proto_rawDescGZIP() []byte {
 	return file_search_v1_tasks_proto_rawDescData
 }
 
-var file_search_v1_tasks_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_search_v1_tasks_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_search_v1_tasks_proto_goTypes = []any{
-	(*TaskCreateResponse)(nil), // 0: search.v1.TaskCreateResponse
-	(*v1.Timestamp)(nil),       // 1: shared.v1.Timestamp
+	(*TaskCreateResponse)(nil),   // 0: search.v1.TaskCreateResponse
+	(*TaskGetResponse)(nil),      // 1: search.v1.TaskGetResponse
+	(*TaskGetResponseError)(nil), // 2: search.v1.TaskGetResponseError
+	(*v1.Timestamp)(nil),         // 3: shared.v1.Timestamp
+	(*v1.UInt64Value)(nil),       // 4: shared.v1.UInt64Value
+	(*v1.Struct)(nil),            // 5: shared.v1.Struct
 }
 var file_search_v1_tasks_proto_depIdxs = []int32{
-	1, // 0: search.v1.TaskCreateResponse.enqueued_at:type_name -> shared.v1.Timestamp
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	3, // 0: search.v1.TaskCreateResponse.enqueued_at:type_name -> shared.v1.Timestamp
+	4, // 1: search.v1.TaskGetResponse.canceled_by:type_name -> shared.v1.UInt64Value
+	5, // 2: search.v1.TaskGetResponse.details:type_name -> shared.v1.Struct
+	2, // 3: search.v1.TaskGetResponse.error:type_name -> search.v1.TaskGetResponseError
+	3, // 4: search.v1.TaskGetResponse.enqueued_at:type_name -> shared.v1.Timestamp
+	3, // 5: search.v1.TaskGetResponse.started_at:type_name -> shared.v1.Timestamp
+	3, // 6: search.v1.TaskGetResponse.finished_at:type_name -> shared.v1.Timestamp
+	5, // 7: search.v1.TaskGetResponseError.details:type_name -> shared.v1.Struct
+	8, // [8:8] is the sub-list for method output_type
+	8, // [8:8] is the sub-list for method input_type
+	8, // [8:8] is the sub-list for extension type_name
+	8, // [8:8] is the sub-list for extension extendee
+	0, // [0:8] is the sub-list for field type_name
 }
 
 func init() { file_search_v1_tasks_proto_init() }
@@ -156,7 +399,7 @@ func file_search_v1_tasks_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_search_v1_tasks_proto_rawDesc), len(file_search_v1_tasks_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   1,
+			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

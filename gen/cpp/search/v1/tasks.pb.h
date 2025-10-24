@@ -29,7 +29,9 @@
 #include "google/protobuf/repeated_field.h"  // IWYU pragma: export
 #include "google/protobuf/extension_set.h"  // IWYU pragma: export
 #include "google/protobuf/unknown_field_set.h"
+#include "shared/v1/struct.pb.h"
 #include "shared/v1/time.pb.h"
+#include "shared/v1/wrappers.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.
@@ -59,6 +61,14 @@ class TaskCreateResponse;
 struct TaskCreateResponseDefaultTypeInternal;
 extern TaskCreateResponseDefaultTypeInternal _TaskCreateResponse_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull TaskCreateResponse_class_data_;
+class TaskGetResponse;
+struct TaskGetResponseDefaultTypeInternal;
+extern TaskGetResponseDefaultTypeInternal _TaskGetResponse_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull TaskGetResponse_class_data_;
+class TaskGetResponseError;
+struct TaskGetResponseErrorDefaultTypeInternal;
+extern TaskGetResponseErrorDefaultTypeInternal _TaskGetResponseError_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull TaskGetResponseError_class_data_;
 }  // namespace v1
 }  // namespace search
 namespace google {
@@ -72,6 +82,270 @@ namespace v1 {
 // ===================================================================
 
 
+// -------------------------------------------------------------------
+
+class TaskGetResponseError final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:search.v1.TaskGetResponseError) */ {
+ public:
+  inline TaskGetResponseError() : TaskGetResponseError(nullptr) {}
+  ~TaskGetResponseError() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(TaskGetResponseError* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(TaskGetResponseError));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR TaskGetResponseError(::google::protobuf::internal::ConstantInitialized);
+
+  inline TaskGetResponseError(const TaskGetResponseError& from) : TaskGetResponseError(nullptr, from) {}
+  inline TaskGetResponseError(TaskGetResponseError&& from) noexcept
+      : TaskGetResponseError(nullptr, ::std::move(from)) {}
+  inline TaskGetResponseError& operator=(const TaskGetResponseError& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TaskGetResponseError& operator=(TaskGetResponseError&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const TaskGetResponseError& default_instance() {
+    return *reinterpret_cast<const TaskGetResponseError*>(
+        &_TaskGetResponseError_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 2;
+  friend void swap(TaskGetResponseError& a, TaskGetResponseError& b) { a.Swap(&b); }
+  inline void Swap(TaskGetResponseError* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TaskGetResponseError* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  TaskGetResponseError* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<TaskGetResponseError>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const TaskGetResponseError& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const TaskGetResponseError& from) { TaskGetResponseError::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(TaskGetResponseError* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "search.v1.TaskGetResponseError"; }
+
+ protected:
+  explicit TaskGetResponseError(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  TaskGetResponseError(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const TaskGetResponseError& from);
+  TaskGetResponseError(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, TaskGetResponseError&& from) noexcept
+      : TaskGetResponseError(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kMessageFieldNumber = 1,
+    kCodeFieldNumber = 2,
+    kTypeFieldNumber = 3,
+    kLinkFieldNumber = 4,
+    kDetailsFieldNumber = 5,
+  };
+  // string message = 1 [json_name = "message"];
+  void clear_message() ;
+  const ::std::string& message() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_message(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_message();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_message();
+  void set_allocated_message(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_message() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_message(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_message();
+
+  public:
+  // string code = 2 [json_name = "code"];
+  void clear_code() ;
+  const ::std::string& code() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_code(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_code();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_code();
+  void set_allocated_code(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_code() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_code(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_code();
+
+  public:
+  // string type = 3 [json_name = "type"];
+  void clear_type() ;
+  const ::std::string& type() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_type(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_type();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_type();
+  void set_allocated_type(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_type() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_type(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_type();
+
+  public:
+  // string link = 4 [json_name = "link"];
+  void clear_link() ;
+  const ::std::string& link() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_link(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_link();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_link();
+  void set_allocated_link(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_link() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_link(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_link();
+
+  public:
+  // .shared.v1.Struct details = 5 [json_name = "details"];
+  bool has_details() const;
+  void clear_details() ;
+  const ::shared::v1::Struct& details() const;
+  [[nodiscard]] ::shared::v1::Struct* PROTOBUF_NULLABLE release_details();
+  ::shared::v1::Struct* PROTOBUF_NONNULL mutable_details();
+  void set_allocated_details(::shared::v1::Struct* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_details(::shared::v1::Struct* PROTOBUF_NULLABLE value);
+  ::shared::v1::Struct* PROTOBUF_NULLABLE unsafe_arena_release_details();
+
+  private:
+  const ::shared::v1::Struct& _internal_details() const;
+  ::shared::v1::Struct* PROTOBUF_NONNULL _internal_mutable_details();
+
+  public:
+  // @@protoc_insertion_point(class_scope:search.v1.TaskGetResponseError)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<3, 5,
+                                   1, 58,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const TaskGetResponseError& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr message_;
+    ::google::protobuf::internal::ArenaStringPtr code_;
+    ::google::protobuf::internal::ArenaStringPtr type_;
+    ::google::protobuf::internal::ArenaStringPtr link_;
+    ::shared::v1::Struct* PROTOBUF_NULLABLE details_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_search_2fv1_2ftasks_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull TaskGetResponseError_class_data_;
 // -------------------------------------------------------------------
 
 class TaskCreateResponse final : public ::google::protobuf::Message
@@ -331,6 +605,367 @@ class TaskCreateResponse final : public ::google::protobuf::Message
 };
 
 extern const ::google::protobuf::internal::ClassDataFull TaskCreateResponse_class_data_;
+// -------------------------------------------------------------------
+
+class TaskGetResponse final : public ::google::protobuf::Message
+/* @@protoc_insertion_point(class_definition:search.v1.TaskGetResponse) */ {
+ public:
+  inline TaskGetResponse() : TaskGetResponse(nullptr) {}
+  ~TaskGetResponse() PROTOBUF_FINAL;
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(TaskGetResponse* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(TaskGetResponse));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR TaskGetResponse(::google::protobuf::internal::ConstantInitialized);
+
+  inline TaskGetResponse(const TaskGetResponse& from) : TaskGetResponse(nullptr, from) {}
+  inline TaskGetResponse(TaskGetResponse&& from) noexcept
+      : TaskGetResponse(nullptr, ::std::move(from)) {}
+  inline TaskGetResponse& operator=(const TaskGetResponse& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline TaskGetResponse& operator=(TaskGetResponse&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const TaskGetResponse& default_instance() {
+    return *reinterpret_cast<const TaskGetResponse*>(
+        &_TaskGetResponse_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 1;
+  friend void swap(TaskGetResponse& a, TaskGetResponse& b) { a.Swap(&b); }
+  inline void Swap(TaskGetResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(TaskGetResponse* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  TaskGetResponse* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::Message::DefaultConstruct<TaskGetResponse>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const TaskGetResponse& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom(const TaskGetResponse& from) { TaskGetResponse::MergeImpl(*this, from); }
+
+  private:
+  static void MergeImpl(::google::protobuf::MessageLite& to_msg,
+                        const ::google::protobuf::MessageLite& from_msg);
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+  ABSL_ATTRIBUTE_REINITIALIZES void Clear() PROTOBUF_FINAL;
+  #if defined(PROTOBUF_CUSTOM_VTABLE)
+  private:
+  static ::size_t ByteSizeLong(const ::google::protobuf::MessageLite& msg);
+  static ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      const ::google::protobuf::MessageLite& msg, ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream);
+
+  public:
+  ::size_t ByteSizeLong() const { return ByteSizeLong(*this); }
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+    return _InternalSerialize(*this, target, stream);
+  }
+  #else   // PROTOBUF_CUSTOM_VTABLE
+  ::size_t ByteSizeLong() const final;
+  ::uint8_t* PROTOBUF_NONNULL _InternalSerialize(
+      ::uint8_t* PROTOBUF_NONNULL target,
+      ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const final;
+  #endif  // PROTOBUF_CUSTOM_VTABLE
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static void SharedDtor(MessageLite& self);
+  void InternalSwap(TaskGetResponse* PROTOBUF_NONNULL other);
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "search.v1.TaskGetResponse"; }
+
+ protected:
+  explicit TaskGetResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  TaskGetResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const TaskGetResponse& from);
+  TaskGetResponse(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, TaskGetResponse&& from) noexcept
+      : TaskGetResponse(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  enum : int {
+    kIndexUidFieldNumber = 2,
+    kStatusFieldNumber = 3,
+    kTypeFieldNumber = 4,
+    kDurationFieldNumber = 8,
+    kCanceledByFieldNumber = 5,
+    kDetailsFieldNumber = 6,
+    kErrorFieldNumber = 7,
+    kEnqueuedAtFieldNumber = 9,
+    kStartedAtFieldNumber = 10,
+    kFinishedAtFieldNumber = 11,
+    kUidFieldNumber = 1,
+  };
+  // string index_uid = 2 [json_name = "indexUid"];
+  void clear_index_uid() ;
+  const ::std::string& index_uid() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_index_uid(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_index_uid();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_index_uid();
+  void set_allocated_index_uid(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_index_uid() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_index_uid(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_index_uid();
+
+  public:
+  // string status = 3 [json_name = "status"];
+  void clear_status() ;
+  const ::std::string& status() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_status(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_status();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_status();
+  void set_allocated_status(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_status() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_status(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_status();
+
+  public:
+  // string type = 4 [json_name = "type"];
+  void clear_type() ;
+  const ::std::string& type() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_type(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_type();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_type();
+  void set_allocated_type(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_type() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_type(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_type();
+
+  public:
+  // string duration = 8 [json_name = "duration"];
+  void clear_duration() ;
+  const ::std::string& duration() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_duration(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_duration();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_duration();
+  void set_allocated_duration(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_duration() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_duration(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_duration();
+
+  public:
+  // .shared.v1.UInt64Value canceled_by = 5 [json_name = "canceledBy"];
+  bool has_canceled_by() const;
+  void clear_canceled_by() ;
+  const ::shared::v1::UInt64Value& canceled_by() const;
+  [[nodiscard]] ::shared::v1::UInt64Value* PROTOBUF_NULLABLE release_canceled_by();
+  ::shared::v1::UInt64Value* PROTOBUF_NONNULL mutable_canceled_by();
+  void set_allocated_canceled_by(::shared::v1::UInt64Value* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_canceled_by(::shared::v1::UInt64Value* PROTOBUF_NULLABLE value);
+  ::shared::v1::UInt64Value* PROTOBUF_NULLABLE unsafe_arena_release_canceled_by();
+
+  private:
+  const ::shared::v1::UInt64Value& _internal_canceled_by() const;
+  ::shared::v1::UInt64Value* PROTOBUF_NONNULL _internal_mutable_canceled_by();
+
+  public:
+  // .shared.v1.Struct details = 6 [json_name = "details"];
+  bool has_details() const;
+  void clear_details() ;
+  const ::shared::v1::Struct& details() const;
+  [[nodiscard]] ::shared::v1::Struct* PROTOBUF_NULLABLE release_details();
+  ::shared::v1::Struct* PROTOBUF_NONNULL mutable_details();
+  void set_allocated_details(::shared::v1::Struct* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_details(::shared::v1::Struct* PROTOBUF_NULLABLE value);
+  ::shared::v1::Struct* PROTOBUF_NULLABLE unsafe_arena_release_details();
+
+  private:
+  const ::shared::v1::Struct& _internal_details() const;
+  ::shared::v1::Struct* PROTOBUF_NONNULL _internal_mutable_details();
+
+  public:
+  // .search.v1.TaskGetResponseError error = 7 [json_name = "error"];
+  bool has_error() const;
+  void clear_error() ;
+  const ::search::v1::TaskGetResponseError& error() const;
+  [[nodiscard]] ::search::v1::TaskGetResponseError* PROTOBUF_NULLABLE release_error();
+  ::search::v1::TaskGetResponseError* PROTOBUF_NONNULL mutable_error();
+  void set_allocated_error(::search::v1::TaskGetResponseError* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_error(::search::v1::TaskGetResponseError* PROTOBUF_NULLABLE value);
+  ::search::v1::TaskGetResponseError* PROTOBUF_NULLABLE unsafe_arena_release_error();
+
+  private:
+  const ::search::v1::TaskGetResponseError& _internal_error() const;
+  ::search::v1::TaskGetResponseError* PROTOBUF_NONNULL _internal_mutable_error();
+
+  public:
+  // .shared.v1.Timestamp enqueued_at = 9 [json_name = "enqueuedAt"];
+  bool has_enqueued_at() const;
+  void clear_enqueued_at() ;
+  const ::shared::v1::Timestamp& enqueued_at() const;
+  [[nodiscard]] ::shared::v1::Timestamp* PROTOBUF_NULLABLE release_enqueued_at();
+  ::shared::v1::Timestamp* PROTOBUF_NONNULL mutable_enqueued_at();
+  void set_allocated_enqueued_at(::shared::v1::Timestamp* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_enqueued_at(::shared::v1::Timestamp* PROTOBUF_NULLABLE value);
+  ::shared::v1::Timestamp* PROTOBUF_NULLABLE unsafe_arena_release_enqueued_at();
+
+  private:
+  const ::shared::v1::Timestamp& _internal_enqueued_at() const;
+  ::shared::v1::Timestamp* PROTOBUF_NONNULL _internal_mutable_enqueued_at();
+
+  public:
+  // .shared.v1.Timestamp started_at = 10 [json_name = "startedAt"];
+  bool has_started_at() const;
+  void clear_started_at() ;
+  const ::shared::v1::Timestamp& started_at() const;
+  [[nodiscard]] ::shared::v1::Timestamp* PROTOBUF_NULLABLE release_started_at();
+  ::shared::v1::Timestamp* PROTOBUF_NONNULL mutable_started_at();
+  void set_allocated_started_at(::shared::v1::Timestamp* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_started_at(::shared::v1::Timestamp* PROTOBUF_NULLABLE value);
+  ::shared::v1::Timestamp* PROTOBUF_NULLABLE unsafe_arena_release_started_at();
+
+  private:
+  const ::shared::v1::Timestamp& _internal_started_at() const;
+  ::shared::v1::Timestamp* PROTOBUF_NONNULL _internal_mutable_started_at();
+
+  public:
+  // .shared.v1.Timestamp finished_at = 11 [json_name = "finishedAt"];
+  bool has_finished_at() const;
+  void clear_finished_at() ;
+  const ::shared::v1::Timestamp& finished_at() const;
+  [[nodiscard]] ::shared::v1::Timestamp* PROTOBUF_NULLABLE release_finished_at();
+  ::shared::v1::Timestamp* PROTOBUF_NONNULL mutable_finished_at();
+  void set_allocated_finished_at(::shared::v1::Timestamp* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_finished_at(::shared::v1::Timestamp* PROTOBUF_NULLABLE value);
+  ::shared::v1::Timestamp* PROTOBUF_NULLABLE unsafe_arena_release_finished_at();
+
+  private:
+  const ::shared::v1::Timestamp& _internal_finished_at() const;
+  ::shared::v1::Timestamp* PROTOBUF_NONNULL _internal_mutable_finished_at();
+
+  public:
+  // uint64 uid = 1 [json_name = "uid"];
+  void clear_uid() ;
+  ::uint64_t uid() const;
+  void set_uid(::uint64_t value);
+
+  private:
+  ::uint64_t _internal_uid() const;
+  void _internal_set_uid(::uint64_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:search.v1.TaskGetResponse)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<4, 11,
+                                   6, 69,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const TaskGetResponse& from_msg);
+    ::google::protobuf::internal::HasBits<1> _has_bits_;
+    ::google::protobuf::internal::CachedSize _cached_size_;
+    ::google::protobuf::internal::ArenaStringPtr index_uid_;
+    ::google::protobuf::internal::ArenaStringPtr status_;
+    ::google::protobuf::internal::ArenaStringPtr type_;
+    ::google::protobuf::internal::ArenaStringPtr duration_;
+    ::shared::v1::UInt64Value* PROTOBUF_NULLABLE canceled_by_;
+    ::shared::v1::Struct* PROTOBUF_NULLABLE details_;
+    ::search::v1::TaskGetResponseError* PROTOBUF_NULLABLE error_;
+    ::shared::v1::Timestamp* PROTOBUF_NULLABLE enqueued_at_;
+    ::shared::v1::Timestamp* PROTOBUF_NULLABLE started_at_;
+    ::shared::v1::Timestamp* PROTOBUF_NULLABLE finished_at_;
+    ::uint64_t uid_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_search_2fv1_2ftasks_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull TaskGetResponse_class_data_;
 
 // ===================================================================
 
@@ -658,6 +1293,1214 @@ inline void TaskCreateResponse::set_allocated_enqueued_at(::shared::v1::Timestam
 
   _impl_.enqueued_at_ = reinterpret_cast<::shared::v1::Timestamp*>(value);
   // @@protoc_insertion_point(field_set_allocated:search.v1.TaskCreateResponse.enqueued_at)
+}
+
+// -------------------------------------------------------------------
+
+// TaskGetResponse
+
+// uint64 uid = 1 [json_name = "uid"];
+inline void TaskGetResponse::clear_uid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.uid_ = ::uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000400u;
+}
+inline ::uint64_t TaskGetResponse::uid() const {
+  // @@protoc_insertion_point(field_get:search.v1.TaskGetResponse.uid)
+  return _internal_uid();
+}
+inline void TaskGetResponse::set_uid(::uint64_t value) {
+  _internal_set_uid(value);
+  _impl_._has_bits_[0] |= 0x00000400u;
+  // @@protoc_insertion_point(field_set:search.v1.TaskGetResponse.uid)
+}
+inline ::uint64_t TaskGetResponse::_internal_uid() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.uid_;
+}
+inline void TaskGetResponse::_internal_set_uid(::uint64_t value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.uid_ = value;
+}
+
+// string index_uid = 2 [json_name = "indexUid"];
+inline void TaskGetResponse::clear_index_uid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.index_uid_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const ::std::string& TaskGetResponse::index_uid() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:search.v1.TaskGetResponse.index_uid)
+  return _internal_index_uid();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void TaskGetResponse::set_index_uid(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.index_uid_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:search.v1.TaskGetResponse.index_uid)
+}
+inline ::std::string* PROTOBUF_NONNULL TaskGetResponse::mutable_index_uid()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_index_uid();
+  // @@protoc_insertion_point(field_mutable:search.v1.TaskGetResponse.index_uid)
+  return _s;
+}
+inline const ::std::string& TaskGetResponse::_internal_index_uid() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.index_uid_.Get();
+}
+inline void TaskGetResponse::_internal_set_index_uid(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.index_uid_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL TaskGetResponse::_internal_mutable_index_uid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.index_uid_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE TaskGetResponse::release_index_uid() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:search.v1.TaskGetResponse.index_uid)
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* released = _impl_.index_uid_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.index_uid_.Set("", GetArena());
+  }
+  return released;
+}
+inline void TaskGetResponse::set_allocated_index_uid(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.index_uid_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.index_uid_.IsDefault()) {
+    _impl_.index_uid_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:search.v1.TaskGetResponse.index_uid)
+}
+
+// string status = 3 [json_name = "status"];
+inline void TaskGetResponse::clear_status() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.status_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const ::std::string& TaskGetResponse::status() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:search.v1.TaskGetResponse.status)
+  return _internal_status();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void TaskGetResponse::set_status(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.status_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:search.v1.TaskGetResponse.status)
+}
+inline ::std::string* PROTOBUF_NONNULL TaskGetResponse::mutable_status()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:search.v1.TaskGetResponse.status)
+  return _s;
+}
+inline const ::std::string& TaskGetResponse::_internal_status() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.status_.Get();
+}
+inline void TaskGetResponse::_internal_set_status(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.status_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL TaskGetResponse::_internal_mutable_status() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.status_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE TaskGetResponse::release_status() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:search.v1.TaskGetResponse.status)
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* released = _impl_.status_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.status_.Set("", GetArena());
+  }
+  return released;
+}
+inline void TaskGetResponse::set_allocated_status(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.status_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.status_.IsDefault()) {
+    _impl_.status_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:search.v1.TaskGetResponse.status)
+}
+
+// string type = 4 [json_name = "type"];
+inline void TaskGetResponse::clear_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.type_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline const ::std::string& TaskGetResponse::type() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:search.v1.TaskGetResponse.type)
+  return _internal_type();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void TaskGetResponse::set_type(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.type_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:search.v1.TaskGetResponse.type)
+}
+inline ::std::string* PROTOBUF_NONNULL TaskGetResponse::mutable_type()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_type();
+  // @@protoc_insertion_point(field_mutable:search.v1.TaskGetResponse.type)
+  return _s;
+}
+inline const ::std::string& TaskGetResponse::_internal_type() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.type_.Get();
+}
+inline void TaskGetResponse::_internal_set_type(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.type_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL TaskGetResponse::_internal_mutable_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  return _impl_.type_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE TaskGetResponse::release_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:search.v1.TaskGetResponse.type)
+  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  auto* released = _impl_.type_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.type_.Set("", GetArena());
+  }
+  return released;
+}
+inline void TaskGetResponse::set_allocated_type(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+  _impl_.type_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.type_.IsDefault()) {
+    _impl_.type_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:search.v1.TaskGetResponse.type)
+}
+
+// .shared.v1.UInt64Value canceled_by = 5 [json_name = "canceledBy"];
+inline bool TaskGetResponse::has_canceled_by() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.canceled_by_ != nullptr);
+  return value;
+}
+inline const ::shared::v1::UInt64Value& TaskGetResponse::_internal_canceled_by() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::shared::v1::UInt64Value* p = _impl_.canceled_by_;
+  return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::UInt64Value&>(::shared::v1::_UInt64Value_default_instance_);
+}
+inline const ::shared::v1::UInt64Value& TaskGetResponse::canceled_by() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:search.v1.TaskGetResponse.canceled_by)
+  return _internal_canceled_by();
+}
+inline void TaskGetResponse::unsafe_arena_set_allocated_canceled_by(
+    ::shared::v1::UInt64Value* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.canceled_by_);
+  }
+  _impl_.canceled_by_ = reinterpret_cast<::shared::v1::UInt64Value*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000010u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000010u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:search.v1.TaskGetResponse.canceled_by)
+}
+inline ::shared::v1::UInt64Value* PROTOBUF_NULLABLE TaskGetResponse::release_canceled_by() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00000010u;
+  ::shared::v1::UInt64Value* released = _impl_.canceled_by_;
+  _impl_.canceled_by_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::shared::v1::UInt64Value* PROTOBUF_NULLABLE TaskGetResponse::unsafe_arena_release_canceled_by() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:search.v1.TaskGetResponse.canceled_by)
+
+  _impl_._has_bits_[0] &= ~0x00000010u;
+  ::shared::v1::UInt64Value* temp = _impl_.canceled_by_;
+  _impl_.canceled_by_ = nullptr;
+  return temp;
+}
+inline ::shared::v1::UInt64Value* PROTOBUF_NONNULL TaskGetResponse::_internal_mutable_canceled_by() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.canceled_by_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::UInt64Value>(GetArena());
+    _impl_.canceled_by_ = reinterpret_cast<::shared::v1::UInt64Value*>(p);
+  }
+  return _impl_.canceled_by_;
+}
+inline ::shared::v1::UInt64Value* PROTOBUF_NONNULL TaskGetResponse::mutable_canceled_by()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00000010u;
+  ::shared::v1::UInt64Value* _msg = _internal_mutable_canceled_by();
+  // @@protoc_insertion_point(field_mutable:search.v1.TaskGetResponse.canceled_by)
+  return _msg;
+}
+inline void TaskGetResponse::set_allocated_canceled_by(::shared::v1::UInt64Value* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.canceled_by_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::Message*>(value)->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000010u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000010u;
+  }
+
+  _impl_.canceled_by_ = reinterpret_cast<::shared::v1::UInt64Value*>(value);
+  // @@protoc_insertion_point(field_set_allocated:search.v1.TaskGetResponse.canceled_by)
+}
+
+// .shared.v1.Struct details = 6 [json_name = "details"];
+inline bool TaskGetResponse::has_details() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.details_ != nullptr);
+  return value;
+}
+inline const ::shared::v1::Struct& TaskGetResponse::_internal_details() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::shared::v1::Struct* p = _impl_.details_;
+  return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::Struct&>(::shared::v1::_Struct_default_instance_);
+}
+inline const ::shared::v1::Struct& TaskGetResponse::details() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:search.v1.TaskGetResponse.details)
+  return _internal_details();
+}
+inline void TaskGetResponse::unsafe_arena_set_allocated_details(
+    ::shared::v1::Struct* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.details_);
+  }
+  _impl_.details_ = reinterpret_cast<::shared::v1::Struct*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000020u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000020u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:search.v1.TaskGetResponse.details)
+}
+inline ::shared::v1::Struct* PROTOBUF_NULLABLE TaskGetResponse::release_details() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00000020u;
+  ::shared::v1::Struct* released = _impl_.details_;
+  _impl_.details_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::shared::v1::Struct* PROTOBUF_NULLABLE TaskGetResponse::unsafe_arena_release_details() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:search.v1.TaskGetResponse.details)
+
+  _impl_._has_bits_[0] &= ~0x00000020u;
+  ::shared::v1::Struct* temp = _impl_.details_;
+  _impl_.details_ = nullptr;
+  return temp;
+}
+inline ::shared::v1::Struct* PROTOBUF_NONNULL TaskGetResponse::_internal_mutable_details() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.details_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::Struct>(GetArena());
+    _impl_.details_ = reinterpret_cast<::shared::v1::Struct*>(p);
+  }
+  return _impl_.details_;
+}
+inline ::shared::v1::Struct* PROTOBUF_NONNULL TaskGetResponse::mutable_details()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00000020u;
+  ::shared::v1::Struct* _msg = _internal_mutable_details();
+  // @@protoc_insertion_point(field_mutable:search.v1.TaskGetResponse.details)
+  return _msg;
+}
+inline void TaskGetResponse::set_allocated_details(::shared::v1::Struct* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.details_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::Message*>(value)->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000020u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000020u;
+  }
+
+  _impl_.details_ = reinterpret_cast<::shared::v1::Struct*>(value);
+  // @@protoc_insertion_point(field_set_allocated:search.v1.TaskGetResponse.details)
+}
+
+// .search.v1.TaskGetResponseError error = 7 [json_name = "error"];
+inline bool TaskGetResponse::has_error() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.error_ != nullptr);
+  return value;
+}
+inline void TaskGetResponse::clear_error() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.error_ != nullptr) _impl_.error_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000040u;
+}
+inline const ::search::v1::TaskGetResponseError& TaskGetResponse::_internal_error() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::search::v1::TaskGetResponseError* p = _impl_.error_;
+  return p != nullptr ? *p : reinterpret_cast<const ::search::v1::TaskGetResponseError&>(::search::v1::_TaskGetResponseError_default_instance_);
+}
+inline const ::search::v1::TaskGetResponseError& TaskGetResponse::error() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:search.v1.TaskGetResponse.error)
+  return _internal_error();
+}
+inline void TaskGetResponse::unsafe_arena_set_allocated_error(
+    ::search::v1::TaskGetResponseError* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.error_);
+  }
+  _impl_.error_ = reinterpret_cast<::search::v1::TaskGetResponseError*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000040u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000040u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:search.v1.TaskGetResponse.error)
+}
+inline ::search::v1::TaskGetResponseError* PROTOBUF_NULLABLE TaskGetResponse::release_error() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00000040u;
+  ::search::v1::TaskGetResponseError* released = _impl_.error_;
+  _impl_.error_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::search::v1::TaskGetResponseError* PROTOBUF_NULLABLE TaskGetResponse::unsafe_arena_release_error() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:search.v1.TaskGetResponse.error)
+
+  _impl_._has_bits_[0] &= ~0x00000040u;
+  ::search::v1::TaskGetResponseError* temp = _impl_.error_;
+  _impl_.error_ = nullptr;
+  return temp;
+}
+inline ::search::v1::TaskGetResponseError* PROTOBUF_NONNULL TaskGetResponse::_internal_mutable_error() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.error_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::search::v1::TaskGetResponseError>(GetArena());
+    _impl_.error_ = reinterpret_cast<::search::v1::TaskGetResponseError*>(p);
+  }
+  return _impl_.error_;
+}
+inline ::search::v1::TaskGetResponseError* PROTOBUF_NONNULL TaskGetResponse::mutable_error()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00000040u;
+  ::search::v1::TaskGetResponseError* _msg = _internal_mutable_error();
+  // @@protoc_insertion_point(field_mutable:search.v1.TaskGetResponse.error)
+  return _msg;
+}
+inline void TaskGetResponse::set_allocated_error(::search::v1::TaskGetResponseError* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.error_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = value->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000040u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000040u;
+  }
+
+  _impl_.error_ = reinterpret_cast<::search::v1::TaskGetResponseError*>(value);
+  // @@protoc_insertion_point(field_set_allocated:search.v1.TaskGetResponse.error)
+}
+
+// string duration = 8 [json_name = "duration"];
+inline void TaskGetResponse::clear_duration() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.duration_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline const ::std::string& TaskGetResponse::duration() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:search.v1.TaskGetResponse.duration)
+  return _internal_duration();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void TaskGetResponse::set_duration(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.duration_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:search.v1.TaskGetResponse.duration)
+}
+inline ::std::string* PROTOBUF_NONNULL TaskGetResponse::mutable_duration()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_duration();
+  // @@protoc_insertion_point(field_mutable:search.v1.TaskGetResponse.duration)
+  return _s;
+}
+inline const ::std::string& TaskGetResponse::_internal_duration() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.duration_.Get();
+}
+inline void TaskGetResponse::_internal_set_duration(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.duration_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL TaskGetResponse::_internal_mutable_duration() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  return _impl_.duration_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE TaskGetResponse::release_duration() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:search.v1.TaskGetResponse.duration)
+  if ((_impl_._has_bits_[0] & 0x00000008u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000008u;
+  auto* released = _impl_.duration_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.duration_.Set("", GetArena());
+  }
+  return released;
+}
+inline void TaskGetResponse::set_allocated_duration(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000008u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000008u;
+  }
+  _impl_.duration_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.duration_.IsDefault()) {
+    _impl_.duration_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:search.v1.TaskGetResponse.duration)
+}
+
+// .shared.v1.Timestamp enqueued_at = 9 [json_name = "enqueuedAt"];
+inline bool TaskGetResponse::has_enqueued_at() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.enqueued_at_ != nullptr);
+  return value;
+}
+inline const ::shared::v1::Timestamp& TaskGetResponse::_internal_enqueued_at() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::shared::v1::Timestamp* p = _impl_.enqueued_at_;
+  return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::Timestamp&>(::shared::v1::_Timestamp_default_instance_);
+}
+inline const ::shared::v1::Timestamp& TaskGetResponse::enqueued_at() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:search.v1.TaskGetResponse.enqueued_at)
+  return _internal_enqueued_at();
+}
+inline void TaskGetResponse::unsafe_arena_set_allocated_enqueued_at(
+    ::shared::v1::Timestamp* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.enqueued_at_);
+  }
+  _impl_.enqueued_at_ = reinterpret_cast<::shared::v1::Timestamp*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000080u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000080u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:search.v1.TaskGetResponse.enqueued_at)
+}
+inline ::shared::v1::Timestamp* PROTOBUF_NULLABLE TaskGetResponse::release_enqueued_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00000080u;
+  ::shared::v1::Timestamp* released = _impl_.enqueued_at_;
+  _impl_.enqueued_at_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::shared::v1::Timestamp* PROTOBUF_NULLABLE TaskGetResponse::unsafe_arena_release_enqueued_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:search.v1.TaskGetResponse.enqueued_at)
+
+  _impl_._has_bits_[0] &= ~0x00000080u;
+  ::shared::v1::Timestamp* temp = _impl_.enqueued_at_;
+  _impl_.enqueued_at_ = nullptr;
+  return temp;
+}
+inline ::shared::v1::Timestamp* PROTOBUF_NONNULL TaskGetResponse::_internal_mutable_enqueued_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.enqueued_at_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::Timestamp>(GetArena());
+    _impl_.enqueued_at_ = reinterpret_cast<::shared::v1::Timestamp*>(p);
+  }
+  return _impl_.enqueued_at_;
+}
+inline ::shared::v1::Timestamp* PROTOBUF_NONNULL TaskGetResponse::mutable_enqueued_at()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00000080u;
+  ::shared::v1::Timestamp* _msg = _internal_mutable_enqueued_at();
+  // @@protoc_insertion_point(field_mutable:search.v1.TaskGetResponse.enqueued_at)
+  return _msg;
+}
+inline void TaskGetResponse::set_allocated_enqueued_at(::shared::v1::Timestamp* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.enqueued_at_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::Message*>(value)->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000080u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000080u;
+  }
+
+  _impl_.enqueued_at_ = reinterpret_cast<::shared::v1::Timestamp*>(value);
+  // @@protoc_insertion_point(field_set_allocated:search.v1.TaskGetResponse.enqueued_at)
+}
+
+// .shared.v1.Timestamp started_at = 10 [json_name = "startedAt"];
+inline bool TaskGetResponse::has_started_at() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.started_at_ != nullptr);
+  return value;
+}
+inline const ::shared::v1::Timestamp& TaskGetResponse::_internal_started_at() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::shared::v1::Timestamp* p = _impl_.started_at_;
+  return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::Timestamp&>(::shared::v1::_Timestamp_default_instance_);
+}
+inline const ::shared::v1::Timestamp& TaskGetResponse::started_at() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:search.v1.TaskGetResponse.started_at)
+  return _internal_started_at();
+}
+inline void TaskGetResponse::unsafe_arena_set_allocated_started_at(
+    ::shared::v1::Timestamp* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.started_at_);
+  }
+  _impl_.started_at_ = reinterpret_cast<::shared::v1::Timestamp*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000100u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000100u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:search.v1.TaskGetResponse.started_at)
+}
+inline ::shared::v1::Timestamp* PROTOBUF_NULLABLE TaskGetResponse::release_started_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00000100u;
+  ::shared::v1::Timestamp* released = _impl_.started_at_;
+  _impl_.started_at_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::shared::v1::Timestamp* PROTOBUF_NULLABLE TaskGetResponse::unsafe_arena_release_started_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:search.v1.TaskGetResponse.started_at)
+
+  _impl_._has_bits_[0] &= ~0x00000100u;
+  ::shared::v1::Timestamp* temp = _impl_.started_at_;
+  _impl_.started_at_ = nullptr;
+  return temp;
+}
+inline ::shared::v1::Timestamp* PROTOBUF_NONNULL TaskGetResponse::_internal_mutable_started_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.started_at_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::Timestamp>(GetArena());
+    _impl_.started_at_ = reinterpret_cast<::shared::v1::Timestamp*>(p);
+  }
+  return _impl_.started_at_;
+}
+inline ::shared::v1::Timestamp* PROTOBUF_NONNULL TaskGetResponse::mutable_started_at()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00000100u;
+  ::shared::v1::Timestamp* _msg = _internal_mutable_started_at();
+  // @@protoc_insertion_point(field_mutable:search.v1.TaskGetResponse.started_at)
+  return _msg;
+}
+inline void TaskGetResponse::set_allocated_started_at(::shared::v1::Timestamp* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.started_at_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::Message*>(value)->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000100u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000100u;
+  }
+
+  _impl_.started_at_ = reinterpret_cast<::shared::v1::Timestamp*>(value);
+  // @@protoc_insertion_point(field_set_allocated:search.v1.TaskGetResponse.started_at)
+}
+
+// .shared.v1.Timestamp finished_at = 11 [json_name = "finishedAt"];
+inline bool TaskGetResponse::has_finished_at() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000200u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.finished_at_ != nullptr);
+  return value;
+}
+inline const ::shared::v1::Timestamp& TaskGetResponse::_internal_finished_at() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::shared::v1::Timestamp* p = _impl_.finished_at_;
+  return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::Timestamp&>(::shared::v1::_Timestamp_default_instance_);
+}
+inline const ::shared::v1::Timestamp& TaskGetResponse::finished_at() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:search.v1.TaskGetResponse.finished_at)
+  return _internal_finished_at();
+}
+inline void TaskGetResponse::unsafe_arena_set_allocated_finished_at(
+    ::shared::v1::Timestamp* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.finished_at_);
+  }
+  _impl_.finished_at_ = reinterpret_cast<::shared::v1::Timestamp*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000200u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000200u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:search.v1.TaskGetResponse.finished_at)
+}
+inline ::shared::v1::Timestamp* PROTOBUF_NULLABLE TaskGetResponse::release_finished_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00000200u;
+  ::shared::v1::Timestamp* released = _impl_.finished_at_;
+  _impl_.finished_at_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::shared::v1::Timestamp* PROTOBUF_NULLABLE TaskGetResponse::unsafe_arena_release_finished_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:search.v1.TaskGetResponse.finished_at)
+
+  _impl_._has_bits_[0] &= ~0x00000200u;
+  ::shared::v1::Timestamp* temp = _impl_.finished_at_;
+  _impl_.finished_at_ = nullptr;
+  return temp;
+}
+inline ::shared::v1::Timestamp* PROTOBUF_NONNULL TaskGetResponse::_internal_mutable_finished_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.finished_at_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::Timestamp>(GetArena());
+    _impl_.finished_at_ = reinterpret_cast<::shared::v1::Timestamp*>(p);
+  }
+  return _impl_.finished_at_;
+}
+inline ::shared::v1::Timestamp* PROTOBUF_NONNULL TaskGetResponse::mutable_finished_at()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00000200u;
+  ::shared::v1::Timestamp* _msg = _internal_mutable_finished_at();
+  // @@protoc_insertion_point(field_mutable:search.v1.TaskGetResponse.finished_at)
+  return _msg;
+}
+inline void TaskGetResponse::set_allocated_finished_at(::shared::v1::Timestamp* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.finished_at_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::Message*>(value)->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000200u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000200u;
+  }
+
+  _impl_.finished_at_ = reinterpret_cast<::shared::v1::Timestamp*>(value);
+  // @@protoc_insertion_point(field_set_allocated:search.v1.TaskGetResponse.finished_at)
+}
+
+// -------------------------------------------------------------------
+
+// TaskGetResponseError
+
+// string message = 1 [json_name = "message"];
+inline void TaskGetResponseError::clear_message() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.message_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const ::std::string& TaskGetResponseError::message() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:search.v1.TaskGetResponseError.message)
+  return _internal_message();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void TaskGetResponseError::set_message(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.message_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:search.v1.TaskGetResponseError.message)
+}
+inline ::std::string* PROTOBUF_NONNULL TaskGetResponseError::mutable_message()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:search.v1.TaskGetResponseError.message)
+  return _s;
+}
+inline const ::std::string& TaskGetResponseError::_internal_message() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.message_.Get();
+}
+inline void TaskGetResponseError::_internal_set_message(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.message_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL TaskGetResponseError::_internal_mutable_message() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.message_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE TaskGetResponseError::release_message() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:search.v1.TaskGetResponseError.message)
+  if ((_impl_._has_bits_[0] & 0x00000001u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* released = _impl_.message_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.message_.Set("", GetArena());
+  }
+  return released;
+}
+inline void TaskGetResponseError::set_allocated_message(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.message_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.message_.IsDefault()) {
+    _impl_.message_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:search.v1.TaskGetResponseError.message)
+}
+
+// string code = 2 [json_name = "code"];
+inline void TaskGetResponseError::clear_code() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.code_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const ::std::string& TaskGetResponseError::code() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:search.v1.TaskGetResponseError.code)
+  return _internal_code();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void TaskGetResponseError::set_code(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.code_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:search.v1.TaskGetResponseError.code)
+}
+inline ::std::string* PROTOBUF_NONNULL TaskGetResponseError::mutable_code()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_code();
+  // @@protoc_insertion_point(field_mutable:search.v1.TaskGetResponseError.code)
+  return _s;
+}
+inline const ::std::string& TaskGetResponseError::_internal_code() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.code_.Get();
+}
+inline void TaskGetResponseError::_internal_set_code(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.code_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL TaskGetResponseError::_internal_mutable_code() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.code_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE TaskGetResponseError::release_code() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:search.v1.TaskGetResponseError.code)
+  if ((_impl_._has_bits_[0] & 0x00000002u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* released = _impl_.code_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.code_.Set("", GetArena());
+  }
+  return released;
+}
+inline void TaskGetResponseError::set_allocated_code(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.code_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.code_.IsDefault()) {
+    _impl_.code_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:search.v1.TaskGetResponseError.code)
+}
+
+// string type = 3 [json_name = "type"];
+inline void TaskGetResponseError::clear_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.type_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline const ::std::string& TaskGetResponseError::type() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:search.v1.TaskGetResponseError.type)
+  return _internal_type();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void TaskGetResponseError::set_type(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.type_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:search.v1.TaskGetResponseError.type)
+}
+inline ::std::string* PROTOBUF_NONNULL TaskGetResponseError::mutable_type()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_type();
+  // @@protoc_insertion_point(field_mutable:search.v1.TaskGetResponseError.type)
+  return _s;
+}
+inline const ::std::string& TaskGetResponseError::_internal_type() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.type_.Get();
+}
+inline void TaskGetResponseError::_internal_set_type(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.type_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL TaskGetResponseError::_internal_mutable_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000004u;
+  return _impl_.type_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE TaskGetResponseError::release_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:search.v1.TaskGetResponseError.type)
+  if ((_impl_._has_bits_[0] & 0x00000004u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  auto* released = _impl_.type_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.type_.Set("", GetArena());
+  }
+  return released;
+}
+inline void TaskGetResponseError::set_allocated_type(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+  _impl_.type_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.type_.IsDefault()) {
+    _impl_.type_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:search.v1.TaskGetResponseError.type)
+}
+
+// string link = 4 [json_name = "link"];
+inline void TaskGetResponseError::clear_link() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.link_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline const ::std::string& TaskGetResponseError::link() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:search.v1.TaskGetResponseError.link)
+  return _internal_link();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void TaskGetResponseError::set_link(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.link_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:search.v1.TaskGetResponseError.link)
+}
+inline ::std::string* PROTOBUF_NONNULL TaskGetResponseError::mutable_link()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_link();
+  // @@protoc_insertion_point(field_mutable:search.v1.TaskGetResponseError.link)
+  return _s;
+}
+inline const ::std::string& TaskGetResponseError::_internal_link() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.link_.Get();
+}
+inline void TaskGetResponseError::_internal_set_link(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.link_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL TaskGetResponseError::_internal_mutable_link() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000008u;
+  return _impl_.link_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE TaskGetResponseError::release_link() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:search.v1.TaskGetResponseError.link)
+  if ((_impl_._has_bits_[0] & 0x00000008u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000008u;
+  auto* released = _impl_.link_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.link_.Set("", GetArena());
+  }
+  return released;
+}
+inline void TaskGetResponseError::set_allocated_link(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000008u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000008u;
+  }
+  _impl_.link_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.link_.IsDefault()) {
+    _impl_.link_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:search.v1.TaskGetResponseError.link)
+}
+
+// .shared.v1.Struct details = 5 [json_name = "details"];
+inline bool TaskGetResponseError::has_details() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.details_ != nullptr);
+  return value;
+}
+inline const ::shared::v1::Struct& TaskGetResponseError::_internal_details() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  const ::shared::v1::Struct* p = _impl_.details_;
+  return p != nullptr ? *p : reinterpret_cast<const ::shared::v1::Struct&>(::shared::v1::_Struct_default_instance_);
+}
+inline const ::shared::v1::Struct& TaskGetResponseError::details() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:search.v1.TaskGetResponseError.details)
+  return _internal_details();
+}
+inline void TaskGetResponseError::unsafe_arena_set_allocated_details(
+    ::shared::v1::Struct* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.details_);
+  }
+  _impl_.details_ = reinterpret_cast<::shared::v1::Struct*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000010u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000010u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:search.v1.TaskGetResponseError.details)
+}
+inline ::shared::v1::Struct* PROTOBUF_NULLABLE TaskGetResponseError::release_details() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00000010u;
+  ::shared::v1::Struct* released = _impl_.details_;
+  _impl_.details_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::shared::v1::Struct* PROTOBUF_NULLABLE TaskGetResponseError::unsafe_arena_release_details() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:search.v1.TaskGetResponseError.details)
+
+  _impl_._has_bits_[0] &= ~0x00000010u;
+  ::shared::v1::Struct* temp = _impl_.details_;
+  _impl_.details_ = nullptr;
+  return temp;
+}
+inline ::shared::v1::Struct* PROTOBUF_NONNULL TaskGetResponseError::_internal_mutable_details() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.details_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::shared::v1::Struct>(GetArena());
+    _impl_.details_ = reinterpret_cast<::shared::v1::Struct*>(p);
+  }
+  return _impl_.details_;
+}
+inline ::shared::v1::Struct* PROTOBUF_NONNULL TaskGetResponseError::mutable_details()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  _impl_._has_bits_[0] |= 0x00000010u;
+  ::shared::v1::Struct* _msg = _internal_mutable_details();
+  // @@protoc_insertion_point(field_mutable:search.v1.TaskGetResponseError.details)
+  return _msg;
+}
+inline void TaskGetResponseError::set_allocated_details(::shared::v1::Struct* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.details_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::google::protobuf::Message*>(value)->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000010u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000010u;
+  }
+
+  _impl_.details_ = reinterpret_cast<::shared::v1::Struct*>(value);
+  // @@protoc_insertion_point(field_set_allocated:search.v1.TaskGetResponseError.details)
 }
 
 #ifdef __GNUC__

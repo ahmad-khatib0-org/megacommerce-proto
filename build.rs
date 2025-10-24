@@ -29,6 +29,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         "shared/v1/struct.proto",
         "shared/v1/time.proto",
         "shared/v1/validation.proto",
+        "shared/v1/wrappers.proto",
         "users/v1/users.proto",
         "users/v1/cache.proto",
         "users/v1/user.proto",
