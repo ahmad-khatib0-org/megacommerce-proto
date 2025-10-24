@@ -865,12 +865,6 @@ pub struct TranslationElements {
     #[prost(message, repeated, tag = "1")]
     pub trans: ::prost::alloc::vec::Vec<TranslationElement>,
 }
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
-pub struct PingRequest {}
-#[derive(serde::Serialize, serde::Deserialize)]
-#[derive(Clone, Copy, PartialEq, ::prost::Message)]
-pub struct PingResponse {}
 /// Generated client implementations.
 pub mod common_service_client {
     #![allow(
@@ -964,8 +958,13 @@ pub mod common_service_client {
         }
         pub async fn ping(
             &mut self,
-            request: impl tonic::IntoRequest<super::PingRequest>,
-        ) -> std::result::Result<tonic::Response<super::PingResponse>, tonic::Status> {
+            request: impl tonic::IntoRequest<
+                super::super::super::shared::v1::PingRequest,
+            >,
+        ) -> std::result::Result<
+            tonic::Response<super::super::super::shared::v1::PingResponse>,
+            tonic::Status,
+        > {
             self.inner
                 .ready()
                 .await
@@ -1122,8 +1121,11 @@ pub mod common_service_server {
     pub trait CommonService: std::marker::Send + std::marker::Sync + 'static {
         async fn ping(
             &self,
-            request: tonic::Request<super::PingRequest>,
-        ) -> std::result::Result<tonic::Response<super::PingResponse>, tonic::Status>;
+            request: tonic::Request<super::super::super::shared::v1::PingRequest>,
+        ) -> std::result::Result<
+            tonic::Response<super::super::super::shared::v1::PingResponse>,
+            tonic::Status,
+        >;
         async fn config_get(
             &self,
             request: tonic::Request<super::ConfigGetRequest>,
@@ -1247,15 +1249,19 @@ pub mod common_service_server {
                     struct PingSvc<T: CommonService>(pub Arc<T>);
                     impl<
                         T: CommonService,
-                    > tonic::server::UnaryService<super::PingRequest> for PingSvc<T> {
-                        type Response = super::PingResponse;
+                    > tonic::server::UnaryService<
+                        super::super::super::shared::v1::PingRequest,
+                    > for PingSvc<T> {
+                        type Response = super::super::super::shared::v1::PingResponse;
                         type Future = BoxFuture<
                             tonic::Response<Self::Response>,
                             tonic::Status,
                         >;
                         fn call(
                             &mut self,
-                            request: tonic::Request<super::PingRequest>,
+                            request: tonic::Request<
+                                super::super::super::shared::v1::PingRequest,
+                            >,
                         ) -> Self::Future {
                             let inner = Arc::clone(&self.0);
                             let fut = async move {

@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package search.v1;
+
+import "shared/v1/types.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/search/v1;v1";
+option java_outer_classname = "SearchProto";
+option java_package = "org.megacommerce.search.v1";
+
+service SearchService {
+  rpc Ping(shared.v1.PingRequest) returns (shared.v1.PingResponse) {}
+}

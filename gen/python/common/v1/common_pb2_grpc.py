@@ -5,7 +5,7 @@ import warnings
 
 from common.v1 import config_pb2 as common_dot_v1_dot_config__pb2
 from common.v1 import trans_pb2 as common_dot_v1_dot_trans__pb2
-from common.v1 import types_pb2 as common_dot_v1_dot_types__pb2
+from shared.v1 import types_pb2 as shared_dot_v1_dot_types__pb2
 
 GRPC_GENERATED_VERSION = '1.71.0'
 GRPC_VERSION = grpc.__version__
@@ -38,8 +38,8 @@ class CommonServiceStub(object):
         """
         self.Ping = channel.unary_unary(
                 '/common.v1.CommonService/Ping',
-                request_serializer=common_dot_v1_dot_types__pb2.PingRequest.SerializeToString,
-                response_deserializer=common_dot_v1_dot_types__pb2.PingResponse.FromString,
+                request_serializer=shared_dot_v1_dot_types__pb2.PingRequest.SerializeToString,
+                response_deserializer=shared_dot_v1_dot_types__pb2.PingResponse.FromString,
                 _registered_method=True)
         self.ConfigGet = channel.unary_unary(
                 '/common.v1.CommonService/ConfigGet',
@@ -112,8 +112,8 @@ def add_CommonServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Ping': grpc.unary_unary_rpc_method_handler(
                     servicer.Ping,
-                    request_deserializer=common_dot_v1_dot_types__pb2.PingRequest.FromString,
-                    response_serializer=common_dot_v1_dot_types__pb2.PingResponse.SerializeToString,
+                    request_deserializer=shared_dot_v1_dot_types__pb2.PingRequest.FromString,
+                    response_serializer=shared_dot_v1_dot_types__pb2.PingResponse.SerializeToString,
             ),
             'ConfigGet': grpc.unary_unary_rpc_method_handler(
                     servicer.ConfigGet,
@@ -166,8 +166,8 @@ class CommonService(object):
             request,
             target,
             '/common.v1.CommonService/Ping',
-            common_dot_v1_dot_types__pb2.PingRequest.SerializeToString,
-            common_dot_v1_dot_types__pb2.PingResponse.FromString,
+            shared_dot_v1_dot_types__pb2.PingRequest.SerializeToString,
+            shared_dot_v1_dot_types__pb2.PingResponse.FromString,
             options,
             channel_credentials,
             insecure,

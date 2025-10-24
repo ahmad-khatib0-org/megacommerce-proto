@@ -19,6 +19,7 @@ import {
   type ServiceError,
   type UntypedServiceImplementation,
 } from "@grpc/grpc-js";
+import { PingRequest, PingResponse } from "../../shared/v1/types";
 import {
   ConfigGetRequest,
   ConfigGetResponse,
@@ -33,7 +34,6 @@ import {
   TranslationsGetRequest,
   TranslationsGetResponse,
 } from "./trans";
-import { PingRequest, PingResponse } from "./types";
 
 export const protobufPackage = "common.v1";
 

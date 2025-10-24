@@ -40,9 +40,9 @@ const char descriptor_table_protodef_common_2fv1_2fcommon_2eproto[] ABSL_ATTRIBU
     protodesc_cold) = {
     "\n\026common/v1/common.proto\022\tcommon.v1\032\026com"
     "mon/v1/config.proto\032\025common/v1/trans.pro"
-    "to\032\025common/v1/types.proto2\205\004\n\rCommonServ"
-    "ice\0229\n\004Ping\022\026.common.v1.PingRequest\032\027.co"
-    "mmon.v1.PingResponse\"\000\022F\n\tConfigGet\022\033.co"
+    "to\032\025shared/v1/types.proto2\205\004\n\rCommonServ"
+    "ice\0229\n\004Ping\022\026.shared.v1.PingRequest\032\027.sh"
+    "ared.v1.PingResponse\"\000\022F\n\tConfigGet\022\033.co"
     "mmon.v1.ConfigGetRequest\032\034.common.v1.Con"
     "figGetResponse\022O\n\014ConfigUpdate\022\036.common."
     "v1.ConfigUpdateRequest\032\037.common.v1.Confi"
@@ -62,7 +62,7 @@ static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_common_2fv1_2fcommon_2eproto_deps[3] = {
         &::descriptor_table_common_2fv1_2fconfig_2eproto,
         &::descriptor_table_common_2fv1_2ftrans_2eproto,
-        &::descriptor_table_common_2fv1_2ftypes_2eproto,
+        &::descriptor_table_shared_2fv1_2ftypes_2eproto,
 };
 static ::absl::once_flag descriptor_table_common_2fv1_2fcommon_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_common_2fv1_2fcommon_2eproto = {

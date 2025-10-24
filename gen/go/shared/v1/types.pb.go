@@ -21,6 +21,130 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type PingRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PingRequest) Reset() {
+	*x = PingRequest{}
+	mi := &file_shared_v1_types_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PingRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PingRequest) ProtoMessage() {}
+
+func (x *PingRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_shared_v1_types_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PingRequest.ProtoReflect.Descriptor instead.
+func (*PingRequest) Descriptor() ([]byte, []int) {
+	return file_shared_v1_types_proto_rawDescGZIP(), []int{0}
+}
+
+type PingResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *PingResponse) Reset() {
+	*x = PingResponse{}
+	mi := &file_shared_v1_types_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *PingResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PingResponse) ProtoMessage() {}
+
+func (x *PingResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_shared_v1_types_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PingResponse.ProtoReflect.Descriptor instead.
+func (*PingResponse) Descriptor() ([]byte, []int) {
+	return file_shared_v1_types_proto_rawDescGZIP(), []int{1}
+}
+
+type SuccessResponseData struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Message       *string                `protobuf:"bytes,1,opt,name=message,proto3,oneof" json:"message,omitempty"`
+	Metadata      map[string]string      `protobuf:"bytes,2,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SuccessResponseData) Reset() {
+	*x = SuccessResponseData{}
+	mi := &file_shared_v1_types_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SuccessResponseData) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SuccessResponseData) ProtoMessage() {}
+
+func (x *SuccessResponseData) ProtoReflect() protoreflect.Message {
+	mi := &file_shared_v1_types_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SuccessResponseData.ProtoReflect.Descriptor instead.
+func (*SuccessResponseData) Descriptor() ([]byte, []int) {
+	return file_shared_v1_types_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *SuccessResponseData) GetMessage() string {
+	if x != nil && x.Message != nil {
+		return *x.Message
+	}
+	return ""
+}
+
+func (x *SuccessResponseData) GetMetadata() map[string]string {
+	if x != nil {
+		return x.Metadata
+	}
+	return nil
+}
+
 type StringMap struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Values        map[string]string      `protobuf:"bytes,1,rep,name=values,proto3" json:"values,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
@@ -30,7 +154,7 @@ type StringMap struct {
 
 func (x *StringMap) Reset() {
 	*x = StringMap{}
-	mi := &file_shared_v1_types_proto_msgTypes[0]
+	mi := &file_shared_v1_types_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -42,7 +166,7 @@ func (x *StringMap) String() string {
 func (*StringMap) ProtoMessage() {}
 
 func (x *StringMap) ProtoReflect() protoreflect.Message {
-	mi := &file_shared_v1_types_proto_msgTypes[0]
+	mi := &file_shared_v1_types_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -55,7 +179,7 @@ func (x *StringMap) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StringMap.ProtoReflect.Descriptor instead.
 func (*StringMap) Descriptor() ([]byte, []int) {
-	return file_shared_v1_types_proto_rawDescGZIP(), []int{0}
+	return file_shared_v1_types_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *StringMap) GetValues() map[string]string {
@@ -74,7 +198,7 @@ type NestedStringMap struct {
 
 func (x *NestedStringMap) Reset() {
 	*x = NestedStringMap{}
-	mi := &file_shared_v1_types_proto_msgTypes[1]
+	mi := &file_shared_v1_types_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -86,7 +210,7 @@ func (x *NestedStringMap) String() string {
 func (*NestedStringMap) ProtoMessage() {}
 
 func (x *NestedStringMap) ProtoReflect() protoreflect.Message {
-	mi := &file_shared_v1_types_proto_msgTypes[1]
+	mi := &file_shared_v1_types_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -99,7 +223,7 @@ func (x *NestedStringMap) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NestedStringMap.ProtoReflect.Descriptor instead.
 func (*NestedStringMap) Descriptor() ([]byte, []int) {
-	return file_shared_v1_types_proto_rawDescGZIP(), []int{1}
+	return file_shared_v1_types_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *NestedStringMap) GetData() map[string]*StringMap {
@@ -118,7 +242,7 @@ type StringArray struct {
 
 func (x *StringArray) Reset() {
 	*x = StringArray{}
-	mi := &file_shared_v1_types_proto_msgTypes[2]
+	mi := &file_shared_v1_types_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -130,7 +254,7 @@ func (x *StringArray) String() string {
 func (*StringArray) ProtoMessage() {}
 
 func (x *StringArray) ProtoReflect() protoreflect.Message {
-	mi := &file_shared_v1_types_proto_msgTypes[2]
+	mi := &file_shared_v1_types_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -143,7 +267,7 @@ func (x *StringArray) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StringArray.ProtoReflect.Descriptor instead.
 func (*StringArray) Descriptor() ([]byte, []int) {
-	return file_shared_v1_types_proto_rawDescGZIP(), []int{2}
+	return file_shared_v1_types_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *StringArray) GetValues() []string {
@@ -166,7 +290,7 @@ type OrderDirection struct {
 
 func (x *OrderDirection) Reset() {
 	*x = OrderDirection{}
-	mi := &file_shared_v1_types_proto_msgTypes[3]
+	mi := &file_shared_v1_types_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -178,7 +302,7 @@ func (x *OrderDirection) String() string {
 func (*OrderDirection) ProtoMessage() {}
 
 func (x *OrderDirection) ProtoReflect() protoreflect.Message {
-	mi := &file_shared_v1_types_proto_msgTypes[3]
+	mi := &file_shared_v1_types_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -191,7 +315,7 @@ func (x *OrderDirection) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OrderDirection.ProtoReflect.Descriptor instead.
 func (*OrderDirection) Descriptor() ([]byte, []int) {
-	return file_shared_v1_types_proto_rawDescGZIP(), []int{3}
+	return file_shared_v1_types_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *OrderDirection) GetOrder() isOrderDirection_Order {
@@ -235,58 +359,6 @@ func (*OrderDirection_Asc) isOrderDirection_Order() {}
 
 func (*OrderDirection_Desc) isOrderDirection_Order() {}
 
-type SuccessResponseData struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Message       *string                `protobuf:"bytes,1,opt,name=message,proto3,oneof" json:"message,omitempty"`
-	Metadata      map[string]string      `protobuf:"bytes,2,rep,name=metadata,proto3" json:"metadata,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *SuccessResponseData) Reset() {
-	*x = SuccessResponseData{}
-	mi := &file_shared_v1_types_proto_msgTypes[4]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *SuccessResponseData) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*SuccessResponseData) ProtoMessage() {}
-
-func (x *SuccessResponseData) ProtoReflect() protoreflect.Message {
-	mi := &file_shared_v1_types_proto_msgTypes[4]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use SuccessResponseData.ProtoReflect.Descriptor instead.
-func (*SuccessResponseData) Descriptor() ([]byte, []int) {
-	return file_shared_v1_types_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *SuccessResponseData) GetMessage() string {
-	if x != nil && x.Message != nil {
-		return *x.Message
-	}
-	return ""
-}
-
-func (x *SuccessResponseData) GetMetadata() map[string]string {
-	if x != nil {
-		return x.Metadata
-	}
-	return nil
-}
-
 type IDName struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Id            string                 `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -297,7 +369,7 @@ type IDName struct {
 
 func (x *IDName) Reset() {
 	*x = IDName{}
-	mi := &file_shared_v1_types_proto_msgTypes[5]
+	mi := &file_shared_v1_types_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -309,7 +381,7 @@ func (x *IDName) String() string {
 func (*IDName) ProtoMessage() {}
 
 func (x *IDName) ProtoReflect() protoreflect.Message {
-	mi := &file_shared_v1_types_proto_msgTypes[5]
+	mi := &file_shared_v1_types_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -322,7 +394,7 @@ func (x *IDName) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IDName.ProtoReflect.Descriptor instead.
 func (*IDName) Descriptor() ([]byte, []int) {
-	return file_shared_v1_types_proto_rawDescGZIP(), []int{5}
+	return file_shared_v1_types_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *IDName) GetId() string {
@@ -350,7 +422,7 @@ type Any struct {
 
 func (x *Any) Reset() {
 	*x = Any{}
-	mi := &file_shared_v1_types_proto_msgTypes[6]
+	mi := &file_shared_v1_types_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -362,7 +434,7 @@ func (x *Any) String() string {
 func (*Any) ProtoMessage() {}
 
 func (x *Any) ProtoReflect() protoreflect.Message {
-	mi := &file_shared_v1_types_proto_msgTypes[6]
+	mi := &file_shared_v1_types_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -375,7 +447,7 @@ func (x *Any) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Any.ProtoReflect.Descriptor instead.
 func (*Any) Descriptor() ([]byte, []int) {
-	return file_shared_v1_types_proto_rawDescGZIP(), []int{6}
+	return file_shared_v1_types_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *Any) GetTypeUrl() string {
@@ -400,7 +472,7 @@ type Empty struct {
 
 func (x *Empty) Reset() {
 	*x = Empty{}
-	mi := &file_shared_v1_types_proto_msgTypes[7]
+	mi := &file_shared_v1_types_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -412,7 +484,7 @@ func (x *Empty) String() string {
 func (*Empty) ProtoMessage() {}
 
 func (x *Empty) ProtoReflect() protoreflect.Message {
-	mi := &file_shared_v1_types_proto_msgTypes[7]
+	mi := &file_shared_v1_types_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -425,14 +497,24 @@ func (x *Empty) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Empty.ProtoReflect.Descriptor instead.
 func (*Empty) Descriptor() ([]byte, []int) {
-	return file_shared_v1_types_proto_rawDescGZIP(), []int{7}
+	return file_shared_v1_types_proto_rawDescGZIP(), []int{9}
 }
 
 var File_shared_v1_types_proto protoreflect.FileDescriptor
 
 const file_shared_v1_types_proto_rawDesc = "" +
 	"\n" +
-	"\x15shared/v1/types.proto\x12\tshared.v1\"\x80\x01\n" +
+	"\x15shared/v1/types.proto\x12\tshared.v1\"\r\n" +
+	"\vPingRequest\"\x0e\n" +
+	"\fPingResponse\"\xc7\x01\n" +
+	"\x13SuccessResponseData\x12\x1d\n" +
+	"\amessage\x18\x01 \x01(\tH\x00R\amessage\x88\x01\x01\x12H\n" +
+	"\bmetadata\x18\x02 \x03(\v2,.shared.v1.SuccessResponseData.MetadataEntryR\bmetadata\x1a;\n" +
+	"\rMetadataEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\n" +
+	"\n" +
+	"\b_message\"\x80\x01\n" +
 	"\tStringMap\x128\n" +
 	"\x06values\x18\x01 \x03(\v2 .shared.v1.StringMap.ValuesEntryR\x06values\x1a9\n" +
 	"\vValuesEntry\x12\x10\n" +
@@ -448,15 +530,7 @@ const file_shared_v1_types_proto_rawDesc = "" +
 	"\x0eOrderDirection\x12\x12\n" +
 	"\x03asc\x18\x01 \x01(\bH\x00R\x03asc\x12\x14\n" +
 	"\x04desc\x18\x02 \x01(\bH\x00R\x04descB\a\n" +
-	"\x05order\"\xc7\x01\n" +
-	"\x13SuccessResponseData\x12\x1d\n" +
-	"\amessage\x18\x01 \x01(\tH\x00R\amessage\x88\x01\x01\x12H\n" +
-	"\bmetadata\x18\x02 \x03(\v2,.shared.v1.SuccessResponseData.MetadataEntryR\bmetadata\x1a;\n" +
-	"\rMetadataEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01B\n" +
-	"\n" +
-	"\b_message\",\n" +
+	"\x05order\",\n" +
 	"\x06IDName\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\"6\n" +
@@ -479,25 +553,27 @@ func file_shared_v1_types_proto_rawDescGZIP() []byte {
 	return file_shared_v1_types_proto_rawDescData
 }
 
-var file_shared_v1_types_proto_msgTypes = make([]protoimpl.MessageInfo, 11)
+var file_shared_v1_types_proto_msgTypes = make([]protoimpl.MessageInfo, 13)
 var file_shared_v1_types_proto_goTypes = []any{
-	(*StringMap)(nil),           // 0: shared.v1.StringMap
-	(*NestedStringMap)(nil),     // 1: shared.v1.NestedStringMap
-	(*StringArray)(nil),         // 2: shared.v1.StringArray
-	(*OrderDirection)(nil),      // 3: shared.v1.OrderDirection
-	(*SuccessResponseData)(nil), // 4: shared.v1.SuccessResponseData
-	(*IDName)(nil),              // 5: shared.v1.IDName
-	(*Any)(nil),                 // 6: shared.v1.Any
-	(*Empty)(nil),               // 7: shared.v1.Empty
-	nil,                         // 8: shared.v1.StringMap.ValuesEntry
-	nil,                         // 9: shared.v1.NestedStringMap.DataEntry
+	(*PingRequest)(nil),         // 0: shared.v1.PingRequest
+	(*PingResponse)(nil),        // 1: shared.v1.PingResponse
+	(*SuccessResponseData)(nil), // 2: shared.v1.SuccessResponseData
+	(*StringMap)(nil),           // 3: shared.v1.StringMap
+	(*NestedStringMap)(nil),     // 4: shared.v1.NestedStringMap
+	(*StringArray)(nil),         // 5: shared.v1.StringArray
+	(*OrderDirection)(nil),      // 6: shared.v1.OrderDirection
+	(*IDName)(nil),              // 7: shared.v1.IDName
+	(*Any)(nil),                 // 8: shared.v1.Any
+	(*Empty)(nil),               // 9: shared.v1.Empty
 	nil,                         // 10: shared.v1.SuccessResponseData.MetadataEntry
+	nil,                         // 11: shared.v1.StringMap.ValuesEntry
+	nil,                         // 12: shared.v1.NestedStringMap.DataEntry
 }
 var file_shared_v1_types_proto_depIdxs = []int32{
-	8,  // 0: shared.v1.StringMap.values:type_name -> shared.v1.StringMap.ValuesEntry
-	9,  // 1: shared.v1.NestedStringMap.data:type_name -> shared.v1.NestedStringMap.DataEntry
-	10, // 2: shared.v1.SuccessResponseData.metadata:type_name -> shared.v1.SuccessResponseData.MetadataEntry
-	0,  // 3: shared.v1.NestedStringMap.DataEntry.value:type_name -> shared.v1.StringMap
+	10, // 0: shared.v1.SuccessResponseData.metadata:type_name -> shared.v1.SuccessResponseData.MetadataEntry
+	11, // 1: shared.v1.StringMap.values:type_name -> shared.v1.StringMap.ValuesEntry
+	12, // 2: shared.v1.NestedStringMap.data:type_name -> shared.v1.NestedStringMap.DataEntry
+	3,  // 3: shared.v1.NestedStringMap.DataEntry.value:type_name -> shared.v1.StringMap
 	4,  // [4:4] is the sub-list for method output_type
 	4,  // [4:4] is the sub-list for method input_type
 	4,  // [4:4] is the sub-list for extension type_name
@@ -510,18 +586,18 @@ func file_shared_v1_types_proto_init() {
 	if File_shared_v1_types_proto != nil {
 		return
 	}
-	file_shared_v1_types_proto_msgTypes[3].OneofWrappers = []any{
+	file_shared_v1_types_proto_msgTypes[2].OneofWrappers = []any{}
+	file_shared_v1_types_proto_msgTypes[6].OneofWrappers = []any{
 		(*OrderDirection_Asc)(nil),
 		(*OrderDirection_Desc)(nil),
 	}
-	file_shared_v1_types_proto_msgTypes[4].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_shared_v1_types_proto_rawDesc), len(file_shared_v1_types_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   11,
+			NumMessages:   13,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

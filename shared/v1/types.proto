@@ -1,11 +1,23 @@
 syntax = "proto3";
 
+
+
+
 package shared.v1;
 
 option cc_enable_arenas = true;
 option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1;v1";
 option java_outer_classname = "TypesProto";
 option java_package = "org.megacommerce.shared.v1";
+
+message PingRequest {}
+
+message PingResponse {}
+
+message SuccessResponseData {
+  optional string message = 1;
+  map<string, string> metadata = 2;
+}
 
 message StringMap {
   map<string, string> values = 1;
@@ -24,11 +36,6 @@ message OrderDirection {
     bool asc = 1;
     bool desc = 2;
   }
-}
-
-message SuccessResponseData {
-  optional string message = 1;
-  map<string, string> metadata = 2;
 }
 
 message IDName {

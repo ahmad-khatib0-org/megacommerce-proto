@@ -9,6 +9,7 @@ import { grpc } from "@improbable-eng/grpc-web";
 import { BrowserHeaders } from "browser-headers";
 import { Observable } from "rxjs";
 import { share } from "rxjs/operators";
+import { PingRequest, PingResponse } from "../../shared/v1/types.js";
 import {
   ConfigGetRequest,
   ConfigGetResponse,
@@ -23,7 +24,6 @@ import {
   TranslationsGetRequest,
   TranslationsGetResponse,
 } from "./trans.js";
-import { PingRequest, PingResponse } from "./types.js";
 
 export const protobufPackage = "common.v1";
 

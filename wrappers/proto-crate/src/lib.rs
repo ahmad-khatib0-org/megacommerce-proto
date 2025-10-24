@@ -79,6 +79,12 @@ mod products {
   }
 }
 
+mod search {
+  pub mod v1 {
+    include!("search.v1.rs");
+  }
+}
+
 mod uploader {
   pub mod v1 {
     include!("uploader.v1.rs");
@@ -89,6 +95,7 @@ mod uploader {
 pub use common::v1::*;
 pub use envoy::*;
 pub use products::v1::*;
+pub use search::v1::*;
 pub use shared::v1::*;
 pub use uploader::v1::*;
 pub use users::v1::*;

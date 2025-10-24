@@ -8,6 +8,7 @@ package v1
 
 import (
 	context "context"
+	v1 "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/shared/v1"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -31,7 +32,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CommonServiceClient interface {
-	Ping(ctx context.Context, in *PingRequest, opts ...grpc.CallOption) (*PingResponse, error)
+	Ping(ctx context.Context, in *v1.PingRequest, opts ...grpc.CallOption) (*v1.PingResponse, error)
 	ConfigGet(ctx context.Context, in *ConfigGetRequest, opts ...grpc.CallOption) (*ConfigGetResponse, error)
 	ConfigUpdate(ctx context.Context, in *ConfigUpdateRequest, opts ...grpc.CallOption) (*ConfigUpdateResponse, error)
 	ConfigListener(ctx context.Context, in *ConfigListenerRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[ConfigListenerResponse], error)
@@ -47,9 +48,9 @@ func NewCommonServiceClient(cc grpc.ClientConnInterface) CommonServiceClient {
 	return &commonServiceClient{cc}
 }
 
-func (c *commonServiceClient) Ping(ctx context.Context, in *PingRequest, opts ...grpc.CallOption) (*PingResponse, error) {
+func (c *commonServiceClient) Ping(ctx context.Context, in *v1.PingRequest, opts ...grpc.CallOption) (*v1.PingResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(PingResponse)
+	out := new(v1.PingResponse)
 	err := c.cc.Invoke(ctx, CommonService_Ping_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -120,7 +121,7 @@ func (c *commonServiceClient) TranslationsForLangGet(ctx context.Context, in *Tr
 // All implementations must embed UnimplementedCommonServiceServer
 // for forward compatibility.
 type CommonServiceServer interface {
-	Ping(context.Context, *PingRequest) (*PingResponse, error)
+	Ping(context.Context, *v1.PingRequest) (*v1.PingResponse, error)
 	ConfigGet(context.Context, *ConfigGetRequest) (*ConfigGetResponse, error)
 	ConfigUpdate(context.Context, *ConfigUpdateRequest) (*ConfigUpdateResponse, error)
 	ConfigListener(*ConfigListenerRequest, grpc.ServerStreamingServer[ConfigListenerResponse]) error
@@ -136,7 +137,7 @@ type CommonServiceServer interface {
 // pointer dereference when methods are called.
 type UnimplementedCommonServiceServer struct{}
 
-func (UnimplementedCommonServiceServer) Ping(context.Context, *PingRequest) (*PingResponse, error) {
+func (UnimplementedCommonServiceServer) Ping(context.Context, *v1.PingRequest) (*v1.PingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Ping not implemented")
 }
 func (UnimplementedCommonServiceServer) ConfigGet(context.Context, *ConfigGetRequest) (*ConfigGetResponse, error) {
@@ -176,7 +177,7 @@ func RegisterCommonServiceServer(s grpc.ServiceRegistrar, srv CommonServiceServe
 }
 
 func _CommonService_Ping_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(PingRequest)
+	in := new(v1.PingRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -188,7 +189,7 @@ func _CommonService_Ping_Handler(srv interface{}, ctx context.Context, dec func(
 		FullMethod: CommonService_Ping_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(CommonServiceServer).Ping(ctx, req.(*PingRequest))
+		return srv.(CommonServiceServer).Ping(ctx, req.(*v1.PingRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

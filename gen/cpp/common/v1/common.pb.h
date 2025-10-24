@@ -28,7 +28,7 @@
 #include "google/protobuf/extension_set.h"  // IWYU pragma: export
 #include "common/v1/config.pb.h"
 #include "common/v1/trans.pb.h"
-#include "common/v1/types.pb.h"
+#include "shared/v1/types.pb.h"
 // @@protoc_insertion_point(includes)
 
 // Must be included last.

@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package search.v1;
+
+import "shared/v1/time.proto";
+
+option cc_enable_arenas = true;
+option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/search/v1;v1";
+option java_outer_classname = "TasksProto";
+option java_package = "org.megacommerce.search.v1";
+
+// Minimal task-create / add-documents response
+message TaskCreateResponse {
+  // Meili returns a numeric task id (examples show "taskUid"). Use uint64.
+  uint64 task_uid = 1 [json_name = "taskUid"];
+
+  // index uid string
+  string index_uid = 2 [json_name = "indexUid"];
+
+  // status e.g. "enqueued", "processing", "succeeded", "failed"
+  string status = 3;
+
+  // type e.g. "documentAdditionOrUpdate"
+  string type = 4;
+
+  // enqueuedAt is returned as an RFC3339 string in JSON. Use Timestamp for typed time.
+  shared.v1.Timestamp enqueued_at = 5 [json_name = "enqueuedAt"];
+}

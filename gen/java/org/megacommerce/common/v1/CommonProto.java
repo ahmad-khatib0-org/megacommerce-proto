@@ -37,9 +37,9 @@ public final class CommonProto {
     java.lang.String[] descriptorData = {
       "\n\026common/v1/common.proto\022\tcommon.v1\032\026com" +
       "mon/v1/config.proto\032\025common/v1/trans.pro" +
-      "to\032\025common/v1/types.proto2\205\004\n\rCommonServ" +
-      "ice\0229\n\004Ping\022\026.common.v1.PingRequest\032\027.co" +
-      "mmon.v1.PingResponse\"\000\022F\n\tConfigGet\022\033.co" +
+      "to\032\025shared/v1/types.proto2\205\004\n\rCommonServ" +
+      "ice\0229\n\004Ping\022\026.shared.v1.PingRequest\032\027.sh" +
+      "ared.v1.PingResponse\"\000\022F\n\tConfigGet\022\033.co" +
       "mmon.v1.ConfigGetRequest\032\034.common.v1.Con" +
       "figGetResponse\022O\n\014ConfigUpdate\022\036.common." +
       "v1.ConfigUpdateRequest\032\037.common.v1.Confi" +
@@ -60,12 +60,12 @@ public final class CommonProto {
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           org.megacommerce.common.v1.ConfigProto.getDescriptor(),
           org.megacommerce.common.v1.TransProto.getDescriptor(),
-          org.megacommerce.common.v1.TypesProto.getDescriptor(),
+          org.megacommerce.shared.v1.TypesProto.getDescriptor(),
         });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.common.v1.ConfigProto.getDescriptor();
     org.megacommerce.common.v1.TransProto.getDescriptor();
-    org.megacommerce.common.v1.TypesProto.getDescriptor();
+    org.megacommerce.shared.v1.TypesProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

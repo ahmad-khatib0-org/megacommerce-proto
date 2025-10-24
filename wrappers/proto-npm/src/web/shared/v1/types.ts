@@ -9,6 +9,22 @@ import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
 
 export const protobufPackage = "shared.v1";
 
+export interface PingRequest {
+}
+
+export interface PingResponse {
+}
+
+export interface SuccessResponseData {
+  message?: string | undefined;
+  metadata: { [key: string]: string };
+}
+
+export interface SuccessResponseData_MetadataEntry {
+  key: string;
+  value: string;
+}
+
 export interface StringMap {
   values: { [key: string]: string };
 }
@@ -36,16 +52,6 @@ export interface OrderDirection {
   desc?: boolean | undefined;
 }
 
-export interface SuccessResponseData {
-  message?: string | undefined;
-  metadata: { [key: string]: string };
-}
-
-export interface SuccessResponseData_MetadataEntry {
-  key: string;
-  value: string;
-}
-
 export interface IDName {
   id: string;
   name: string;
@@ -61,6 +67,267 @@ export interface Any {
 
 export interface Empty {
 }
+
+function createBasePingRequest(): PingRequest {
+  return {};
+}
+
+export const PingRequest: MessageFns<PingRequest> = {
+  encode(_: PingRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): PingRequest {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBasePingRequest();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(_: any): PingRequest {
+    return {};
+  },
+
+  toJSON(_: PingRequest): unknown {
+    const obj: any = {};
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<PingRequest>, I>>(base?: I): PingRequest {
+    return PingRequest.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<PingRequest>, I>>(_: I): PingRequest {
+    const message = createBasePingRequest();
+    return message;
+  },
+};
+
+function createBasePingResponse(): PingResponse {
+  return {};
+}
+
+export const PingResponse: MessageFns<PingResponse> = {
+  encode(_: PingResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): PingResponse {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBasePingResponse();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(_: any): PingResponse {
+    return {};
+  },
+
+  toJSON(_: PingResponse): unknown {
+    const obj: any = {};
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<PingResponse>, I>>(base?: I): PingResponse {
+    return PingResponse.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<PingResponse>, I>>(_: I): PingResponse {
+    const message = createBasePingResponse();
+    return message;
+  },
+};
+
+function createBaseSuccessResponseData(): SuccessResponseData {
+  return { message: undefined, metadata: {} };
+}
+
+export const SuccessResponseData: MessageFns<SuccessResponseData> = {
+  encode(message: SuccessResponseData, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.message !== undefined) {
+      writer.uint32(10).string(message.message);
+    }
+    Object.entries(message.metadata).forEach(([key, value]) => {
+      SuccessResponseData_MetadataEntry.encode({ key: key as any, value }, writer.uint32(18).fork()).join();
+    });
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): SuccessResponseData {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseSuccessResponseData();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.message = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          const entry2 = SuccessResponseData_MetadataEntry.decode(reader, reader.uint32());
+          if (entry2.value !== undefined) {
+            message.metadata[entry2.key] = entry2.value;
+          }
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): SuccessResponseData {
+    return {
+      message: isSet(object.message) ? globalThis.String(object.message) : undefined,
+      metadata: isObject(object.metadata)
+        ? Object.entries(object.metadata).reduce<{ [key: string]: string }>((acc, [key, value]) => {
+          acc[key] = String(value);
+          return acc;
+        }, {})
+        : {},
+    };
+  },
+
+  toJSON(message: SuccessResponseData): unknown {
+    const obj: any = {};
+    if (message.message !== undefined) {
+      obj.message = message.message;
+    }
+    if (message.metadata) {
+      const entries = Object.entries(message.metadata);
+      if (entries.length > 0) {
+        obj.metadata = {};
+        entries.forEach(([k, v]) => {
+          obj.metadata[k] = v;
+        });
+      }
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<SuccessResponseData>, I>>(base?: I): SuccessResponseData {
+    return SuccessResponseData.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<SuccessResponseData>, I>>(object: I): SuccessResponseData {
+    const message = createBaseSuccessResponseData();
+    message.message = object.message ?? undefined;
+    message.metadata = Object.entries(object.metadata ?? {}).reduce<{ [key: string]: string }>((acc, [key, value]) => {
+      if (value !== undefined) {
+        acc[key] = globalThis.String(value);
+      }
+      return acc;
+    }, {});
+    return message;
+  },
+};
+
+function createBaseSuccessResponseData_MetadataEntry(): SuccessResponseData_MetadataEntry {
+  return { key: "", value: "" };
+}
+
+export const SuccessResponseData_MetadataEntry: MessageFns<SuccessResponseData_MetadataEntry> = {
+  encode(message: SuccessResponseData_MetadataEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.key !== "") {
+      writer.uint32(10).string(message.key);
+    }
+    if (message.value !== "") {
+      writer.uint32(18).string(message.value);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): SuccessResponseData_MetadataEntry {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseSuccessResponseData_MetadataEntry();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.key = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.value = reader.string();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): SuccessResponseData_MetadataEntry {
+    return {
+      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      value: isSet(object.value) ? globalThis.String(object.value) : "",
+    };
+  },
+
+  toJSON(message: SuccessResponseData_MetadataEntry): unknown {
+    const obj: any = {};
+    if (message.key !== "") {
+      obj.key = message.key;
+    }
+    if (message.value !== "") {
+      obj.value = message.value;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<SuccessResponseData_MetadataEntry>, I>>(
+    base?: I,
+  ): SuccessResponseData_MetadataEntry {
+    return SuccessResponseData_MetadataEntry.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<SuccessResponseData_MetadataEntry>, I>>(
+    object: I,
+  ): SuccessResponseData_MetadataEntry {
+    const message = createBaseSuccessResponseData_MetadataEntry();
+    message.key = object.key ?? "";
+    message.value = object.value ?? "";
+    return message;
+  },
+};
 
 function createBaseStringMap(): StringMap {
   return { values: {} };
@@ -506,181 +773,6 @@ export const OrderDirection: MessageFns<OrderDirection> = {
     const message = createBaseOrderDirection();
     message.asc = object.asc ?? undefined;
     message.desc = object.desc ?? undefined;
-    return message;
-  },
-};
-
-function createBaseSuccessResponseData(): SuccessResponseData {
-  return { message: undefined, metadata: {} };
-}
-
-export const SuccessResponseData: MessageFns<SuccessResponseData> = {
-  encode(message: SuccessResponseData, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.message !== undefined) {
-      writer.uint32(10).string(message.message);
-    }
-    Object.entries(message.metadata).forEach(([key, value]) => {
-      SuccessResponseData_MetadataEntry.encode({ key: key as any, value }, writer.uint32(18).fork()).join();
-    });
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): SuccessResponseData {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseSuccessResponseData();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.message = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          const entry2 = SuccessResponseData_MetadataEntry.decode(reader, reader.uint32());
-          if (entry2.value !== undefined) {
-            message.metadata[entry2.key] = entry2.value;
-          }
-          continue;
-        }
-      }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
-      }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
-
-  fromJSON(object: any): SuccessResponseData {
-    return {
-      message: isSet(object.message) ? globalThis.String(object.message) : undefined,
-      metadata: isObject(object.metadata)
-        ? Object.entries(object.metadata).reduce<{ [key: string]: string }>((acc, [key, value]) => {
-          acc[key] = String(value);
-          return acc;
-        }, {})
-        : {},
-    };
-  },
-
-  toJSON(message: SuccessResponseData): unknown {
-    const obj: any = {};
-    if (message.message !== undefined) {
-      obj.message = message.message;
-    }
-    if (message.metadata) {
-      const entries = Object.entries(message.metadata);
-      if (entries.length > 0) {
-        obj.metadata = {};
-        entries.forEach(([k, v]) => {
-          obj.metadata[k] = v;
-        });
-      }
-    }
-    return obj;
-  },
-
-  create<I extends Exact<DeepPartial<SuccessResponseData>, I>>(base?: I): SuccessResponseData {
-    return SuccessResponseData.fromPartial(base ?? ({} as any));
-  },
-  fromPartial<I extends Exact<DeepPartial<SuccessResponseData>, I>>(object: I): SuccessResponseData {
-    const message = createBaseSuccessResponseData();
-    message.message = object.message ?? undefined;
-    message.metadata = Object.entries(object.metadata ?? {}).reduce<{ [key: string]: string }>((acc, [key, value]) => {
-      if (value !== undefined) {
-        acc[key] = globalThis.String(value);
-      }
-      return acc;
-    }, {});
-    return message;
-  },
-};
-
-function createBaseSuccessResponseData_MetadataEntry(): SuccessResponseData_MetadataEntry {
-  return { key: "", value: "" };
-}
-
-export const SuccessResponseData_MetadataEntry: MessageFns<SuccessResponseData_MetadataEntry> = {
-  encode(message: SuccessResponseData_MetadataEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.key !== "") {
-      writer.uint32(10).string(message.key);
-    }
-    if (message.value !== "") {
-      writer.uint32(18).string(message.value);
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): SuccessResponseData_MetadataEntry {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseSuccessResponseData_MetadataEntry();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.key = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.value = reader.string();
-          continue;
-        }
-      }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
-      }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
-
-  fromJSON(object: any): SuccessResponseData_MetadataEntry {
-    return {
-      key: isSet(object.key) ? globalThis.String(object.key) : "",
-      value: isSet(object.value) ? globalThis.String(object.value) : "",
-    };
-  },
-
-  toJSON(message: SuccessResponseData_MetadataEntry): unknown {
-    const obj: any = {};
-    if (message.key !== "") {
-      obj.key = message.key;
-    }
-    if (message.value !== "") {
-      obj.value = message.value;
-    }
-    return obj;
-  },
-
-  create<I extends Exact<DeepPartial<SuccessResponseData_MetadataEntry>, I>>(
-    base?: I,
-  ): SuccessResponseData_MetadataEntry {
-    return SuccessResponseData_MetadataEntry.fromPartial(base ?? ({} as any));
-  },
-  fromPartial<I extends Exact<DeepPartial<SuccessResponseData_MetadataEntry>, I>>(
-    object: I,
-  ): SuccessResponseData_MetadataEntry {
-    const message = createBaseSuccessResponseData_MetadataEntry();
-    message.key = object.key ?? "";
-    message.value = object.value ?? "";
     return message;
   },
 };
