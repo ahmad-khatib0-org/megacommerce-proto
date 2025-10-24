@@ -881,7 +881,7 @@ pub struct ProductOutbox {
     pub created_at: i64,
     #[prost(int64, tag = "8")]
     pub updated_at: i64,
-    #[prost(oneof = "product_outbox::Payload", tags = "9, 10")]
+    #[prost(oneof = "product_outbox::Payload", tags = "9, 10, 11")]
     pub payload: ::core::option::Option<product_outbox::Payload>,
 }
 /// Nested message and enum types in `ProductOutbox`.
@@ -893,6 +893,8 @@ pub mod product_outbox {
         Created(super::ProductCreatedEvent),
         #[prost(message, tag = "10")]
         Updated(super::ProductUpdatedEvent),
+        #[prost(message, tag = "11")]
+        Deleted(super::ProductDeletedEvent),
     }
 }
 #[derive(serde::Serialize, serde::Deserialize)]
@@ -911,3 +913,6 @@ pub struct ProductUpdatedEvent {
     #[prost(string, optional, tag = "2")]
     pub description: ::core::option::Option<::prost::alloc::string::String>,
 }
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, Copy, PartialEq, ::prost::Message)]
+pub struct ProductDeletedEvent {}

@@ -1086,6 +1086,21 @@ public final class ProductEventsProto {
      */
     org.megacommerce.products.v1.ProductEventsProto.ProductUpdatedEventOrBuilder getUpdatedOrBuilder();
 
+    /**
+     * <code>.products.v1.ProductDeletedEvent deleted = 11 [json_name = "deleted"];</code>
+     * @return Whether the deleted field is set.
+     */
+    boolean hasDeleted();
+    /**
+     * <code>.products.v1.ProductDeletedEvent deleted = 11 [json_name = "deleted"];</code>
+     * @return The deleted.
+     */
+    org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent getDeleted();
+    /**
+     * <code>.products.v1.ProductDeletedEvent deleted = 11 [json_name = "deleted"];</code>
+     */
+    org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEventOrBuilder getDeletedOrBuilder();
+
     org.megacommerce.products.v1.ProductEventsProto.ProductOutbox.PayloadCase getPayloadCase();
   }
   /**
@@ -1138,6 +1153,7 @@ public final class ProductEventsProto {
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
       CREATED(9),
       UPDATED(10),
+      DELETED(11),
       PAYLOAD_NOT_SET(0);
       private final int value;
       private PayloadCase(int value) {
@@ -1157,6 +1173,7 @@ public final class ProductEventsProto {
         switch (value) {
           case 9: return CREATED;
           case 10: return UPDATED;
+          case 11: return DELETED;
           case 0: return PAYLOAD_NOT_SET;
           default: return null;
         }
@@ -1478,6 +1495,37 @@ public final class ProductEventsProto {
       return org.megacommerce.products.v1.ProductEventsProto.ProductUpdatedEvent.getDefaultInstance();
     }
 
+    public static final int DELETED_FIELD_NUMBER = 11;
+    /**
+     * <code>.products.v1.ProductDeletedEvent deleted = 11 [json_name = "deleted"];</code>
+     * @return Whether the deleted field is set.
+     */
+    @java.lang.Override
+    public boolean hasDeleted() {
+      return payloadCase_ == 11;
+    }
+    /**
+     * <code>.products.v1.ProductDeletedEvent deleted = 11 [json_name = "deleted"];</code>
+     * @return The deleted.
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent getDeleted() {
+      if (payloadCase_ == 11) {
+         return (org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent) payload_;
+      }
+      return org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent.getDefaultInstance();
+    }
+    /**
+     * <code>.products.v1.ProductDeletedEvent deleted = 11 [json_name = "deleted"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEventOrBuilder getDeletedOrBuilder() {
+      if (payloadCase_ == 11) {
+         return (org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent) payload_;
+      }
+      return org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -1521,6 +1569,9 @@ public final class ProductEventsProto {
       }
       if (payloadCase_ == 10) {
         output.writeMessage(10, (org.megacommerce.products.v1.ProductEventsProto.ProductUpdatedEvent) payload_);
+      }
+      if (payloadCase_ == 11) {
+        output.writeMessage(11, (org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent) payload_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1566,6 +1617,10 @@ public final class ProductEventsProto {
       if (payloadCase_ == 10) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(10, (org.megacommerce.products.v1.ProductEventsProto.ProductUpdatedEvent) payload_);
+      }
+      if (payloadCase_ == 11) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(11, (org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent) payload_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1614,6 +1669,10 @@ public final class ProductEventsProto {
           if (!getUpdated()
               .equals(other.getUpdated())) return false;
           break;
+        case 11:
+          if (!getDeleted()
+              .equals(other.getDeleted())) return false;
+          break;
         case 0:
         default:
       }
@@ -1659,6 +1718,10 @@ public final class ProductEventsProto {
         case 10:
           hash = (37 * hash) + UPDATED_FIELD_NUMBER;
           hash = (53 * hash) + getUpdated().hashCode();
+          break;
+        case 11:
+          hash = (37 * hash) + DELETED_FIELD_NUMBER;
+          hash = (53 * hash) + getDeleted().hashCode();
           break;
         case 0:
         default:
@@ -1808,6 +1871,9 @@ public final class ProductEventsProto {
         if (updatedBuilder_ != null) {
           updatedBuilder_.clear();
         }
+        if (deletedBuilder_ != null) {
+          deletedBuilder_.clear();
+        }
         payloadCase_ = 0;
         payload_ = null;
         return this;
@@ -1885,6 +1951,10 @@ public final class ProductEventsProto {
             updatedBuilder_ != null) {
           result.payload_ = updatedBuilder_.build();
         }
+        if (payloadCase_ == 11 &&
+            deletedBuilder_ != null) {
+          result.payload_ = deletedBuilder_.build();
+        }
       }
 
       @java.lang.Override
@@ -1938,6 +2008,10 @@ public final class ProductEventsProto {
           }
           case UPDATED: {
             mergeUpdated(other.getUpdated());
+            break;
+          }
+          case DELETED: {
+            mergeDeleted(other.getDeleted());
             break;
           }
           case PAYLOAD_NOT_SET: {
@@ -2024,6 +2098,13 @@ public final class ProductEventsProto {
                 payloadCase_ = 10;
                 break;
               } // case 82
+              case 90: {
+                input.readMessage(
+                    internalGetDeletedFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                payloadCase_ = 11;
+                break;
+              } // case 90
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2837,6 +2918,148 @@ public final class ProductEventsProto {
         payloadCase_ = 10;
         onChanged();
         return updatedBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent, org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent.Builder, org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEventOrBuilder> deletedBuilder_;
+      /**
+       * <code>.products.v1.ProductDeletedEvent deleted = 11 [json_name = "deleted"];</code>
+       * @return Whether the deleted field is set.
+       */
+      @java.lang.Override
+      public boolean hasDeleted() {
+        return payloadCase_ == 11;
+      }
+      /**
+       * <code>.products.v1.ProductDeletedEvent deleted = 11 [json_name = "deleted"];</code>
+       * @return The deleted.
+       */
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent getDeleted() {
+        if (deletedBuilder_ == null) {
+          if (payloadCase_ == 11) {
+            return (org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent) payload_;
+          }
+          return org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent.getDefaultInstance();
+        } else {
+          if (payloadCase_ == 11) {
+            return deletedBuilder_.getMessage();
+          }
+          return org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.products.v1.ProductDeletedEvent deleted = 11 [json_name = "deleted"];</code>
+       */
+      public Builder setDeleted(org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent value) {
+        if (deletedBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          payload_ = value;
+          onChanged();
+        } else {
+          deletedBuilder_.setMessage(value);
+        }
+        payloadCase_ = 11;
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductDeletedEvent deleted = 11 [json_name = "deleted"];</code>
+       */
+      public Builder setDeleted(
+          org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent.Builder builderForValue) {
+        if (deletedBuilder_ == null) {
+          payload_ = builderForValue.build();
+          onChanged();
+        } else {
+          deletedBuilder_.setMessage(builderForValue.build());
+        }
+        payloadCase_ = 11;
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductDeletedEvent deleted = 11 [json_name = "deleted"];</code>
+       */
+      public Builder mergeDeleted(org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent value) {
+        if (deletedBuilder_ == null) {
+          if (payloadCase_ == 11 &&
+              payload_ != org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent.getDefaultInstance()) {
+            payload_ = org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent.newBuilder((org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent) payload_)
+                .mergeFrom(value).buildPartial();
+          } else {
+            payload_ = value;
+          }
+          onChanged();
+        } else {
+          if (payloadCase_ == 11) {
+            deletedBuilder_.mergeFrom(value);
+          } else {
+            deletedBuilder_.setMessage(value);
+          }
+        }
+        payloadCase_ = 11;
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductDeletedEvent deleted = 11 [json_name = "deleted"];</code>
+       */
+      public Builder clearDeleted() {
+        if (deletedBuilder_ == null) {
+          if (payloadCase_ == 11) {
+            payloadCase_ = 0;
+            payload_ = null;
+            onChanged();
+          }
+        } else {
+          if (payloadCase_ == 11) {
+            payloadCase_ = 0;
+            payload_ = null;
+          }
+          deletedBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>.products.v1.ProductDeletedEvent deleted = 11 [json_name = "deleted"];</code>
+       */
+      public org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent.Builder getDeletedBuilder() {
+        return internalGetDeletedFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.products.v1.ProductDeletedEvent deleted = 11 [json_name = "deleted"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEventOrBuilder getDeletedOrBuilder() {
+        if ((payloadCase_ == 11) && (deletedBuilder_ != null)) {
+          return deletedBuilder_.getMessageOrBuilder();
+        } else {
+          if (payloadCase_ == 11) {
+            return (org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent) payload_;
+          }
+          return org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent.getDefaultInstance();
+        }
+      }
+      /**
+       * <code>.products.v1.ProductDeletedEvent deleted = 11 [json_name = "deleted"];</code>
+       */
+      private com.google.protobuf.SingleFieldBuilder<
+          org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent, org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent.Builder, org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEventOrBuilder> 
+          internalGetDeletedFieldBuilder() {
+        if (deletedBuilder_ == null) {
+          if (!(payloadCase_ == 11)) {
+            payload_ = org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent.getDefaultInstance();
+          }
+          deletedBuilder_ = new com.google.protobuf.SingleFieldBuilder<
+              org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent, org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent.Builder, org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEventOrBuilder>(
+                  (org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent) payload_,
+                  getParentForChildren(),
+                  isClean());
+          payload_ = null;
+        }
+        payloadCase_ = 11;
+        onChanged();
+        return deletedBuilder_;
       }
 
       // @@protoc_insertion_point(builder_scope:products.v1.ProductOutbox)
@@ -4261,6 +4484,361 @@ public final class ProductEventsProto {
 
   }
 
+  public interface ProductDeletedEventOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:products.v1.ProductDeletedEvent)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * Protobuf type {@code products.v1.ProductDeletedEvent}
+   */
+  public static final class ProductDeletedEvent extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:products.v1.ProductDeletedEvent)
+      ProductDeletedEventOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        ProductDeletedEvent.class.getName());
+    }
+    // Use ProductDeletedEvent.newBuilder() to construct.
+    private ProductDeletedEvent(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ProductDeletedEvent() {
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.products.v1.ProductEventsProto.internal_static_products_v1_ProductDeletedEvent_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.products.v1.ProductEventsProto.internal_static_products_v1_ProductDeletedEvent_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent.class, org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent other = (org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code products.v1.ProductDeletedEvent}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:products.v1.ProductDeletedEvent)
+        org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEventOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.products.v1.ProductEventsProto.internal_static_products_v1_ProductDeletedEvent_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.products.v1.ProductEventsProto.internal_static_products_v1_ProductDeletedEvent_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent.class, org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent.Builder.class);
+      }
+
+      // Construct using org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.products.v1.ProductEventsProto.internal_static_products_v1_ProductDeletedEvent_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent getDefaultInstanceForType() {
+        return org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent build() {
+        org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent buildPartial() {
+        org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent result = new org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent) {
+          return mergeFrom((org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent other) {
+        if (other == org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:products.v1.ProductDeletedEvent)
+    }
+
+    // @@protoc_insertion_point(class_scope:products.v1.ProductDeletedEvent)
+    private static final org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent();
+    }
+
+    public static org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ProductDeletedEvent>
+        PARSER = new com.google.protobuf.AbstractParser<ProductDeletedEvent>() {
+      @java.lang.Override
+      public ProductDeletedEvent parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<ProductDeletedEvent> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ProductDeletedEvent> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductEventsProto.ProductDeletedEvent getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_products_v1_ChangeFeed_descriptor;
   private static final 
@@ -4281,6 +4859,11 @@ public final class ProductEventsProto {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_products_v1_ProductUpdatedEvent_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductDeletedEvent_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductDeletedEvent_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -4295,7 +4878,7 @@ public final class ProductEventsProto {
       "products.v1.ProductOutboxR\005after\0222\n\006befo" +
       "re\030\002 \001(\0132\032.products.v1.ProductOutboxR\006be" +
       "fore\022\030\n\007updated\030\003 \001(\003R\007updated\022\032\n\010resolv" +
-      "ed\030\004 \001(\003R\010resolved\"\264\003\n\rProductOutbox\022\016\n\002" +
+      "ed\030\004 \001(\003R\010resolved\"\362\003\n\rProductOutbox\022\016\n\002" +
       "id\030\001 \001(\tR\002id\022\035\n\nproduct_id\030\002 \001(\tR\tproduc" +
       "tId\022\022\n\004type\030\003 \001(\tR\004type\022&\n\014processed_at\030" +
       "\004 \001(\003H\001R\013processedAt\210\001\001\022/\n\023processing_at" +
@@ -4305,16 +4888,18 @@ public final class ProductEventsProto {
       "\tupdatedAt\022<\n\007created\030\t \001(\0132 .products.v" +
       "1.ProductCreatedEventH\000R\007created\022<\n\007upda" +
       "ted\030\n \001(\0132 .products.v1.ProductUpdatedEv" +
-      "entH\000R\007updatedB\t\n\007payloadB\017\n\r_processed_" +
-      "atB\r\n\013_last_error\"M\n\023ProductCreatedEvent" +
-      "\022\024\n\005title\030\001 \001(\tR\005title\022 \n\013description\030\002 " +
-      "\001(\tR\013description\"q\n\023ProductUpdatedEvent\022" +
-      "\031\n\005title\030\001 \001(\tH\000R\005title\210\001\001\022%\n\013descriptio" +
-      "n\030\002 \001(\tH\001R\013description\210\001\001B\010\n\006_titleB\016\n\014_" +
-      "descriptionB|\n\034org.megacommerce.products" +
-      ".v1B\022ProductEventsProtoZEgithub.com/ahma" +
-      "d-khatib0-org/megacommerce-proto/gen/go/" +
-      "products/v1;v1\370\001\001b\006proto3"
+      "entH\000R\007updated\022<\n\007deleted\030\013 \001(\0132 .produc" +
+      "ts.v1.ProductDeletedEventH\000R\007deletedB\t\n\007" +
+      "payloadB\017\n\r_processed_atB\r\n\013_last_error\"" +
+      "M\n\023ProductCreatedEvent\022\024\n\005title\030\001 \001(\tR\005t" +
+      "itle\022 \n\013description\030\002 \001(\tR\013description\"q" +
+      "\n\023ProductUpdatedEvent\022\031\n\005title\030\001 \001(\tH\000R\005" +
+      "title\210\001\001\022%\n\013description\030\002 \001(\tH\001R\013descrip" +
+      "tion\210\001\001B\010\n\006_titleB\016\n\014_description\"\025\n\023Pro" +
+      "ductDeletedEventB|\n\034org.megacommerce.pro" +
+      "ducts.v1B\022ProductEventsProtoZEgithub.com" +
+      "/ahmad-khatib0-org/megacommerce-proto/ge" +
+      "n/go/products/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -4331,7 +4916,7 @@ public final class ProductEventsProto {
     internal_static_products_v1_ProductOutbox_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductOutbox_descriptor,
-        new java.lang.String[] { "Id", "ProductId", "Type", "ProcessedAt", "ProcessingAttempts", "LastError", "CreatedAt", "UpdatedAt", "Created", "Updated", "Payload", });
+        new java.lang.String[] { "Id", "ProductId", "Type", "ProcessedAt", "ProcessingAttempts", "LastError", "CreatedAt", "UpdatedAt", "Created", "Updated", "Deleted", "Payload", });
     internal_static_products_v1_ProductCreatedEvent_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_products_v1_ProductCreatedEvent_fieldAccessorTable = new
@@ -4344,6 +4929,12 @@ public final class ProductEventsProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductUpdatedEvent_descriptor,
         new java.lang.String[] { "Title", "Description", });
+    internal_static_products_v1_ProductDeletedEvent_descriptor =
+      getDescriptor().getMessageTypes().get(4);
+    internal_static_products_v1_ProductDeletedEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductDeletedEvent_descriptor,
+        new java.lang.String[] { });
     descriptor.resolveAllFeaturesImmutable();
   }
 

@@ -56,6 +56,24 @@ struct ProductUpdatedEventDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductUpdatedEventDefaultTypeInternal _ProductUpdatedEvent_default_instance_;
+template <typename>
+PROTOBUF_CONSTEXPR ProductDeletedEvent::ProductDeletedEvent(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::internal::ZeroFieldsBase(ProductDeletedEvent_class_data_.base()){}
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::internal::ZeroFieldsBase() {
+}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+struct ProductDeletedEventDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductDeletedEventDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductDeletedEventDefaultTypeInternal() {}
+  union {
+    ProductDeletedEvent _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductDeletedEventDefaultTypeInternal _ProductDeletedEvent_default_instance_;
 
 inline constexpr ProductCreatedEvent::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -179,7 +197,7 @@ const ::uint32_t
         0x085, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductOutbox, _impl_._has_bits_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductOutbox, _impl_._oneof_case_[0]),
-        15, // hasbit index offset
+        16, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductOutbox, _impl_.id_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductOutbox, _impl_.product_id_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductOutbox, _impl_.type_),
@@ -188,6 +206,7 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductOutbox, _impl_.last_error_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductOutbox, _impl_.created_at_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductOutbox, _impl_.updated_at_),
+        ::_pbi::kInvalidFieldOffsetTag,
         ::_pbi::kInvalidFieldOffsetTag,
         ::_pbi::kInvalidFieldOffsetTag,
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductOutbox, _impl_.payload_),
@@ -199,6 +218,7 @@ const ::uint32_t
         3,
         5,
         6,
+        ~0u,
         ~0u,
         ~0u,
         0x081, // bitmap
@@ -215,20 +235,23 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductUpdatedEvent, _impl_.description_),
         0,
         1,
+        0x000, // bitmap
 };
 
 static const ::_pbi::MigrationSchema
     schemas[] ABSL_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
         {0, sizeof(::products::v1::ChangeFeed)},
         {11, sizeof(::products::v1::ProductOutbox)},
-        {36, sizeof(::products::v1::ProductCreatedEvent)},
-        {43, sizeof(::products::v1::ProductUpdatedEvent)},
+        {38, sizeof(::products::v1::ProductCreatedEvent)},
+        {45, sizeof(::products::v1::ProductUpdatedEvent)},
+        {52, sizeof(::products::v1::ProductDeletedEvent)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::products::v1::_ChangeFeed_default_instance_._instance,
     &::products::v1::_ProductOutbox_default_instance_._instance,
     &::products::v1::_ProductCreatedEvent_default_instance_._instance,
     &::products::v1::_ProductUpdatedEvent_default_instance_._instance,
+    &::products::v1::_ProductDeletedEvent_default_instance_._instance,
 };
 const char descriptor_table_protodef_products_2fv1_2fproduct_5fevents_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
@@ -237,7 +260,7 @@ const char descriptor_table_protodef_products_2fv1_2fproduct_5fevents_2eproto[] 
     "products.v1.ProductOutboxR\005after\0222\n\006befo"
     "re\030\002 \001(\0132\032.products.v1.ProductOutboxR\006be"
     "fore\022\030\n\007updated\030\003 \001(\003R\007updated\022\032\n\010resolv"
-    "ed\030\004 \001(\003R\010resolved\"\264\003\n\rProductOutbox\022\016\n\002"
+    "ed\030\004 \001(\003R\010resolved\"\362\003\n\rProductOutbox\022\016\n\002"
     "id\030\001 \001(\tR\002id\022\035\n\nproduct_id\030\002 \001(\tR\tproduc"
     "tId\022\022\n\004type\030\003 \001(\tR\004type\022&\n\014processed_at\030"
     "\004 \001(\003H\001R\013processedAt\210\001\001\022/\n\023processing_at"
@@ -247,28 +270,30 @@ const char descriptor_table_protodef_products_2fv1_2fproduct_5fevents_2eproto[] 
     "\tupdatedAt\022<\n\007created\030\t \001(\0132 .products.v"
     "1.ProductCreatedEventH\000R\007created\022<\n\007upda"
     "ted\030\n \001(\0132 .products.v1.ProductUpdatedEv"
-    "entH\000R\007updatedB\t\n\007payloadB\017\n\r_processed_"
-    "atB\r\n\013_last_error\"M\n\023ProductCreatedEvent"
-    "\022\024\n\005title\030\001 \001(\tR\005title\022 \n\013description\030\002 "
-    "\001(\tR\013description\"q\n\023ProductUpdatedEvent\022"
-    "\031\n\005title\030\001 \001(\tH\000R\005title\210\001\001\022%\n\013descriptio"
-    "n\030\002 \001(\tH\001R\013description\210\001\001B\010\n\006_titleB\016\n\014_"
-    "descriptionB|\n\034org.megacommerce.products"
-    ".v1B\022ProductEventsProtoZEgithub.com/ahma"
-    "d-khatib0-org/megacommerce-proto/gen/go/"
-    "products/v1;v1\370\001\001b\006proto3"
+    "entH\000R\007updated\022<\n\007deleted\030\013 \001(\0132 .produc"
+    "ts.v1.ProductDeletedEventH\000R\007deletedB\t\n\007"
+    "payloadB\017\n\r_processed_atB\r\n\013_last_error\""
+    "M\n\023ProductCreatedEvent\022\024\n\005title\030\001 \001(\tR\005t"
+    "itle\022 \n\013description\030\002 \001(\tR\013description\"q"
+    "\n\023ProductUpdatedEvent\022\031\n\005title\030\001 \001(\tH\000R\005"
+    "title\210\001\001\022%\n\013description\030\002 \001(\tH\001R\013descrip"
+    "tion\210\001\001B\010\n\006_titleB\016\n\014_description\"\025\n\023Pro"
+    "ductDeletedEventB|\n\034org.megacommerce.pro"
+    "ducts.v1B\022ProductEventsProtoZEgithub.com"
+    "/ahmad-khatib0-org/megacommerce-proto/ge"
+    "n/go/products/v1;v1\370\001\001b\006proto3"
 };
 static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_5fevents_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_5fevents_2eproto = {
     false,
     false,
-    985,
+    1070,
     descriptor_table_protodef_products_2fv1_2fproduct_5fevents_2eproto,
     "products/v1/product_events.proto",
     &descriptor_table_products_2fv1_2fproduct_5fevents_2eproto_once,
     nullptr,
     0,
-    4,
+    5,
     schemas,
     file_default_instances,
     TableStruct_products_2fv1_2fproduct_5fevents_2eproto::offsets,
@@ -690,6 +715,19 @@ void ProductOutbox::set_allocated_updated(::products::v1::ProductUpdatedEvent* P
   }
   // @@protoc_insertion_point(field_set_allocated:products.v1.ProductOutbox.updated)
 }
+void ProductOutbox::set_allocated_deleted(::products::v1::ProductDeletedEvent* PROTOBUF_NULLABLE deleted) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  clear_payload();
+  if (deleted) {
+    ::google::protobuf::Arena* submessage_arena = deleted->GetArena();
+    if (message_arena != submessage_arena) {
+      deleted = ::google::protobuf::internal::GetOwnedMessage(message_arena, deleted, submessage_arena);
+    }
+    set_has_deleted();
+    _impl_.payload_.deleted_ = deleted;
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductOutbox.deleted)
+}
 ProductOutbox::ProductOutbox(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
     : ::google::protobuf::Message(arena, ProductOutbox_class_data_.base()) {
@@ -740,6 +778,9 @@ ProductOutbox::ProductOutbox(
         break;
       case kUpdated:
         _impl_.payload_.updated_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.payload_.updated_);
+        break;
+      case kDeleted:
+        _impl_.payload_.deleted_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.payload_.deleted_);
         break;
   }
 
@@ -803,6 +844,14 @@ void ProductOutbox::clear_payload() {
       }
       break;
     }
+    case kDeleted: {
+      if (GetArena() == nullptr) {
+        delete _impl_.payload_.deleted_;
+      } else if (::google::protobuf::internal::DebugHardenClearOneofMessageOnArena()) {
+        ::google::protobuf::internal::MaybePoisonAfterClear(_impl_.payload_.deleted_);
+      }
+      break;
+    }
     case PAYLOAD_NOT_SET: {
       break;
     }
@@ -854,17 +903,17 @@ ProductOutbox::GetClassData() const {
   return ProductOutbox_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 10, 2, 68, 2>
+const ::_pbi::TcParseTable<3, 11, 3, 68, 2>
 ProductOutbox::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(ProductOutbox, _impl_._has_bits_),
     0, // no _extensions_
-    10, 56,  // max_field_number, fast_idx_mask
+    11, 56,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294966272,  // skipmap
+    4294965248,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    10,  // num_field_entries
-    2,  // num_aux_entries
+    11,  // num_field_entries
+    3,  // num_aux_entries
     offsetof(decltype(_table_), aux_entries),
     ProductOutbox_class_data_.base(),
     nullptr,  // post_loop_handler
@@ -930,10 +979,14 @@ ProductOutbox::_table_ = {
     // .products.v1.ProductUpdatedEvent updated = 10 [json_name = "updated"];
     {PROTOBUF_FIELD_OFFSET(ProductOutbox, _impl_.payload_.updated_), _Internal::kOneofCaseOffset + 0, 1,
     (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .products.v1.ProductDeletedEvent deleted = 11 [json_name = "deleted"];
+    {PROTOBUF_FIELD_OFFSET(ProductOutbox, _impl_.payload_.deleted_), _Internal::kOneofCaseOffset + 0, 2,
+    (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
       {::_pbi::TcParser::GetTable<::products::v1::ProductCreatedEvent>()},
       {::_pbi::TcParser::GetTable<::products::v1::ProductUpdatedEvent>()},
+      {::_pbi::TcParser::GetTable<::products::v1::ProductDeletedEvent>()},
   }},
   {{
     "\31\2\12\4\0\0\12\0\0\0\0\0\0\0\0\0"
@@ -1077,6 +1130,12 @@ PROTOBUF_NOINLINE void ProductOutbox::Clear() {
           stream);
       break;
     }
+    case kDeleted: {
+      target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+          11, *this_._impl_.payload_.deleted_, this_._impl_.payload_.deleted_->GetCachedSize(), target,
+          stream);
+      break;
+    }
     default:
       break;
   }
@@ -1172,6 +1231,12 @@ PROTOBUF_NOINLINE void ProductOutbox::Clear() {
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.payload_.updated_);
       break;
     }
+    // .products.v1.ProductDeletedEvent deleted = 11 [json_name = "deleted"];
+    case kDeleted: {
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.payload_.deleted_);
+      break;
+    }
     case PAYLOAD_NOT_SET: {
       break;
     }
@@ -1265,6 +1330,14 @@ void ProductOutbox::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::g
           _this->_impl_.payload_.updated_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.payload_.updated_);
         } else {
           _this->_impl_.payload_.updated_->MergeFrom(*from._impl_.payload_.updated_);
+        }
+        break;
+      }
+      case kDeleted: {
+        if (oneof_needs_init) {
+          _this->_impl_.payload_.deleted_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.payload_.deleted_);
+        } else {
+          _this->_impl_.payload_.deleted_->MergeFrom(*from._impl_.payload_.deleted_);
         }
         break;
       }
@@ -1900,6 +1973,115 @@ void ProductUpdatedEvent::InternalSwap(ProductUpdatedEvent* PROTOBUF_RESTRICT PR
 
 ::google::protobuf::Metadata ProductUpdatedEvent::GetMetadata() const {
   return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class ProductDeletedEvent::_Internal {
+ public:
+};
+
+ProductDeletedEvent::ProductDeletedEvent(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::internal::ZeroFieldsBase(arena, ProductDeletedEvent_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(arena_constructor:products.v1.ProductDeletedEvent)
+}
+ProductDeletedEvent::ProductDeletedEvent(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const ProductDeletedEvent& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::internal::ZeroFieldsBase(arena, ProductDeletedEvent_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::internal::ZeroFieldsBase(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ProductDeletedEvent* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+
+  // @@protoc_insertion_point(copy_constructor:products.v1.ProductDeletedEvent)
+}
+
+inline void* PROTOBUF_NONNULL ProductDeletedEvent::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductDeletedEvent(arena);
+}
+constexpr auto ProductDeletedEvent::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::ZeroInit(sizeof(ProductDeletedEvent),
+                                            alignof(ProductDeletedEvent));
+}
+constexpr auto ProductDeletedEvent::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductDeletedEvent_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductDeletedEvent::MergeImpl,
+          ::google::protobuf::internal::ZeroFieldsBase::GetNewImpl<ProductDeletedEvent>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductDeletedEvent::SharedDtor,
+          ::google::protobuf::internal::ZeroFieldsBase::GetClearImpl<ProductDeletedEvent>(), &ProductDeletedEvent::ByteSizeLong,
+              &ProductDeletedEvent::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductDeletedEvent, _impl_._cached_size_),
+          false,
+      },
+      &ProductDeletedEvent::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fevents_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductDeletedEvent_class_data_ =
+        ProductDeletedEvent::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductDeletedEvent::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductDeletedEvent_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductDeletedEvent_class_data_.tc_table);
+  return ProductDeletedEvent_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 0, 0, 0, 2>
+ProductDeletedEvent::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    0, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967295,  // skipmap
+    offsetof(decltype(_table_), field_names),  // no field_entries
+    0,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    ProductDeletedEvent_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductDeletedEvent>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, // no field_entries, or aux_entries
+  {{
+  }},
+};
+
+
+
+
+
+
+
+::google::protobuf::Metadata ProductDeletedEvent::GetMetadata() const {
+  return ::google::protobuf::internal::ZeroFieldsBase::GetMetadataImpl(GetClassData()->full());
 }
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace v1

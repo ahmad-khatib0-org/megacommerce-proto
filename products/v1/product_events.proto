@@ -26,6 +26,7 @@ message ProductOutbox {
   oneof payload {
     ProductCreatedEvent created = 9;
     ProductUpdatedEvent updated = 10;
+    ProductDeletedEvent deleted = 11;
   }
 }
 
@@ -38,3 +39,5 @@ message ProductUpdatedEvent {
   optional string title = 1;
   optional string description = 2;
 }
+
+message ProductDeletedEvent {}

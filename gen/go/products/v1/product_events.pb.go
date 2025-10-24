@@ -103,6 +103,7 @@ type ProductOutbox struct {
 	//
 	//	*ProductOutbox_Created
 	//	*ProductOutbox_Updated
+	//	*ProductOutbox_Deleted
 	Payload       isProductOutbox_Payload `protobuf_oneof:"payload"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -219,6 +220,15 @@ func (x *ProductOutbox) GetUpdated() *ProductUpdatedEvent {
 	return nil
 }
 
+func (x *ProductOutbox) GetDeleted() *ProductDeletedEvent {
+	if x != nil {
+		if x, ok := x.Payload.(*ProductOutbox_Deleted); ok {
+			return x.Deleted
+		}
+	}
+	return nil
+}
+
 type isProductOutbox_Payload interface {
 	isProductOutbox_Payload()
 }
@@ -231,9 +241,15 @@ type ProductOutbox_Updated struct {
 	Updated *ProductUpdatedEvent `protobuf:"bytes,10,opt,name=updated,proto3,oneof"`
 }
 
+type ProductOutbox_Deleted struct {
+	Deleted *ProductDeletedEvent `protobuf:"bytes,11,opt,name=deleted,proto3,oneof"`
+}
+
 func (*ProductOutbox_Created) isProductOutbox_Payload() {}
 
 func (*ProductOutbox_Updated) isProductOutbox_Payload() {}
+
+func (*ProductOutbox_Deleted) isProductOutbox_Payload() {}
 
 type ProductCreatedEvent struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
@@ -339,6 +355,42 @@ func (x *ProductUpdatedEvent) GetDescription() string {
 	return ""
 }
 
+type ProductDeletedEvent struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ProductDeletedEvent) Reset() {
+	*x = ProductDeletedEvent{}
+	mi := &file_products_v1_product_events_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ProductDeletedEvent) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ProductDeletedEvent) ProtoMessage() {}
+
+func (x *ProductDeletedEvent) ProtoReflect() protoreflect.Message {
+	mi := &file_products_v1_product_events_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ProductDeletedEvent.ProtoReflect.Descriptor instead.
+func (*ProductDeletedEvent) Descriptor() ([]byte, []int) {
+	return file_products_v1_product_events_proto_rawDescGZIP(), []int{4}
+}
+
 var File_products_v1_product_events_proto protoreflect.FileDescriptor
 
 const file_products_v1_product_events_proto_rawDesc = "" +
@@ -349,7 +401,7 @@ const file_products_v1_product_events_proto_rawDesc = "" +
 	"\x05after\x18\x01 \x01(\v2\x1a.products.v1.ProductOutboxR\x05after\x122\n" +
 	"\x06before\x18\x02 \x01(\v2\x1a.products.v1.ProductOutboxR\x06before\x12\x18\n" +
 	"\aupdated\x18\x03 \x01(\x03R\aupdated\x12\x1a\n" +
-	"\bresolved\x18\x04 \x01(\x03R\bresolved\"\xb4\x03\n" +
+	"\bresolved\x18\x04 \x01(\x03R\bresolved\"\xf2\x03\n" +
 	"\rProductOutbox\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1d\n" +
 	"\n" +
@@ -365,7 +417,8 @@ const file_products_v1_product_events_proto_rawDesc = "" +
 	"updated_at\x18\b \x01(\x03R\tupdatedAt\x12<\n" +
 	"\acreated\x18\t \x01(\v2 .products.v1.ProductCreatedEventH\x00R\acreated\x12<\n" +
 	"\aupdated\x18\n" +
-	" \x01(\v2 .products.v1.ProductUpdatedEventH\x00R\aupdatedB\t\n" +
+	" \x01(\v2 .products.v1.ProductUpdatedEventH\x00R\aupdated\x12<\n" +
+	"\adeleted\x18\v \x01(\v2 .products.v1.ProductDeletedEventH\x00R\adeletedB\t\n" +
 	"\apayloadB\x0f\n" +
 	"\r_processed_atB\r\n" +
 	"\v_last_error\"M\n" +
@@ -376,7 +429,8 @@ const file_products_v1_product_events_proto_rawDesc = "" +
 	"\x05title\x18\x01 \x01(\tH\x00R\x05title\x88\x01\x01\x12%\n" +
 	"\vdescription\x18\x02 \x01(\tH\x01R\vdescription\x88\x01\x01B\b\n" +
 	"\x06_titleB\x0e\n" +
-	"\f_descriptionB|\n" +
+	"\f_description\"\x15\n" +
+	"\x13ProductDeletedEventB|\n" +
 	"\x1corg.megacommerce.products.v1B\x12ProductEventsProtoZEgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1\xf8\x01\x01b\x06proto3"
 
 var (
@@ -391,23 +445,25 @@ func file_products_v1_product_events_proto_rawDescGZIP() []byte {
 	return file_products_v1_product_events_proto_rawDescData
 }
 
-var file_products_v1_product_events_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_products_v1_product_events_proto_msgTypes = make([]protoimpl.MessageInfo, 5)
 var file_products_v1_product_events_proto_goTypes = []any{
 	(*ChangeFeed)(nil),          // 0: products.v1.ChangeFeed
 	(*ProductOutbox)(nil),       // 1: products.v1.ProductOutbox
 	(*ProductCreatedEvent)(nil), // 2: products.v1.ProductCreatedEvent
 	(*ProductUpdatedEvent)(nil), // 3: products.v1.ProductUpdatedEvent
+	(*ProductDeletedEvent)(nil), // 4: products.v1.ProductDeletedEvent
 }
 var file_products_v1_product_events_proto_depIdxs = []int32{
 	1, // 0: products.v1.ChangeFeed.after:type_name -> products.v1.ProductOutbox
 	1, // 1: products.v1.ChangeFeed.before:type_name -> products.v1.ProductOutbox
 	2, // 2: products.v1.ProductOutbox.created:type_name -> products.v1.ProductCreatedEvent
 	3, // 3: products.v1.ProductOutbox.updated:type_name -> products.v1.ProductUpdatedEvent
-	4, // [4:4] is the sub-list for method output_type
-	4, // [4:4] is the sub-list for method input_type
-	4, // [4:4] is the sub-list for extension type_name
-	4, // [4:4] is the sub-list for extension extendee
-	0, // [0:4] is the sub-list for field type_name
+	4, // 4: products.v1.ProductOutbox.deleted:type_name -> products.v1.ProductDeletedEvent
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_products_v1_product_events_proto_init() }
@@ -418,6 +474,7 @@ func file_products_v1_product_events_proto_init() {
 	file_products_v1_product_events_proto_msgTypes[1].OneofWrappers = []any{
 		(*ProductOutbox_Created)(nil),
 		(*ProductOutbox_Updated)(nil),
+		(*ProductOutbox_Deleted)(nil),
 	}
 	file_products_v1_product_events_proto_msgTypes[3].OneofWrappers = []any{}
 	type x struct{}
@@ -426,7 +483,7 @@ func file_products_v1_product_events_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_products_v1_product_events_proto_rawDesc), len(file_products_v1_product_events_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   5,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

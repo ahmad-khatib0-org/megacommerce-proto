@@ -20,6 +20,7 @@
 #include "google/protobuf/io/coded_stream.h"
 #include "google/protobuf/arena.h"
 #include "google/protobuf/arenastring.h"
+#include "google/protobuf/generated_message_bases.h"
 #include "google/protobuf/generated_message_tctable_decl.h"
 #include "google/protobuf/generated_message_util.h"
 #include "google/protobuf/metadata_lite.h"
@@ -62,6 +63,10 @@ class ProductCreatedEvent;
 struct ProductCreatedEventDefaultTypeInternal;
 extern ProductCreatedEventDefaultTypeInternal _ProductCreatedEvent_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull ProductCreatedEvent_class_data_;
+class ProductDeletedEvent;
+struct ProductDeletedEventDefaultTypeInternal;
+extern ProductDeletedEventDefaultTypeInternal _ProductDeletedEvent_default_instance_;
+extern const ::google::protobuf::internal::ClassDataFull ProductDeletedEvent_class_data_;
 class ProductOutbox;
 struct ProductOutboxDefaultTypeInternal;
 extern ProductOutboxDefaultTypeInternal _ProductOutbox_default_instance_;
@@ -298,6 +303,152 @@ class ProductUpdatedEvent final : public ::google::protobuf::Message
 };
 
 extern const ::google::protobuf::internal::ClassDataFull ProductUpdatedEvent_class_data_;
+// -------------------------------------------------------------------
+
+class ProductDeletedEvent final : public ::google::protobuf::internal::ZeroFieldsBase
+/* @@protoc_insertion_point(class_definition:products.v1.ProductDeletedEvent) */ {
+ public:
+  inline ProductDeletedEvent() : ProductDeletedEvent(nullptr) {}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+  void operator delete(ProductDeletedEvent* PROTOBUF_NONNULL msg, std::destroying_delete_t) {
+    SharedDtor(*msg);
+    ::google::protobuf::internal::SizedDelete(msg, sizeof(ProductDeletedEvent));
+  }
+#endif
+
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR ProductDeletedEvent(::google::protobuf::internal::ConstantInitialized);
+
+  inline ProductDeletedEvent(const ProductDeletedEvent& from) : ProductDeletedEvent(nullptr, from) {}
+  inline ProductDeletedEvent(ProductDeletedEvent&& from) noexcept
+      : ProductDeletedEvent(nullptr, ::std::move(from)) {}
+  inline ProductDeletedEvent& operator=(const ProductDeletedEvent& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline ProductDeletedEvent& operator=(ProductDeletedEvent&& from) noexcept {
+    if (this == &from) return *this;
+    if (::google::protobuf::internal::CanMoveWithInternalSwap(GetArena(), from.GetArena())) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* PROTOBUF_NONNULL mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* PROTOBUF_NONNULL GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* PROTOBUF_NONNULL GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const ProductDeletedEvent& default_instance() {
+    return *reinterpret_cast<const ProductDeletedEvent*>(
+        &_ProductDeletedEvent_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages = 4;
+  friend void swap(ProductDeletedEvent& a, ProductDeletedEvent& b) { a.Swap(&b); }
+  inline void Swap(ProductDeletedEvent* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    if (::google::protobuf::internal::CanUseInternalSwap(GetArena(), other->GetArena())) {
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(ProductDeletedEvent* PROTOBUF_NONNULL other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  ProductDeletedEvent* PROTOBUF_NONNULL New(::google::protobuf::Arena* PROTOBUF_NULLABLE arena = nullptr) const {
+    return ::google::protobuf::internal::ZeroFieldsBase::DefaultConstruct<ProductDeletedEvent>(arena);
+  }
+  using ::google::protobuf::internal::ZeroFieldsBase::CopyFrom;
+  inline void CopyFrom(const ProductDeletedEvent& from) {
+    ::google::protobuf::internal::ZeroFieldsBase::CopyImpl(*this, from);
+  }
+  using ::google::protobuf::internal::ZeroFieldsBase::MergeFrom;
+  void MergeFrom(const ProductDeletedEvent& from) {
+    ::google::protobuf::internal::ZeroFieldsBase::MergeImpl(*this, from);
+  }
+
+  public:
+  bool IsInitialized() const {
+    return true;
+  }
+ private:
+  template <typename T>
+  friend ::absl::string_view(::google::protobuf::internal::GetAnyMessageName)();
+  static ::absl::string_view FullMessageName() { return "products.v1.ProductDeletedEvent"; }
+
+ protected:
+  explicit ProductDeletedEvent(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  ProductDeletedEvent(::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const ProductDeletedEvent& from);
+  ProductDeletedEvent(
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, ProductDeletedEvent&& from) noexcept
+      : ProductDeletedEvent(arena) {
+    *this = ::std::move(from);
+  }
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+
+ public:
+  static constexpr auto InternalGenerateClassData_();
+
+  ::google::protobuf::Metadata GetMetadata() const;
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+  // @@protoc_insertion_point(class_scope:products.v1.ProductDeletedEvent)
+ private:
+  class _Internal;
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<0, 0,
+                                   0, 0,
+                                   2>
+      _table_;
+
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+    inline explicit constexpr Impl_(::google::protobuf::internal::ConstantInitialized) noexcept;
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+    inline explicit Impl_(
+        ::google::protobuf::internal::InternalVisibility visibility,
+        ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+        const ProductDeletedEvent& from_msg);
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  friend struct ::TableStruct_products_2fv1_2fproduct_5fevents_2eproto;
+};
+
+extern const ::google::protobuf::internal::ClassDataFull ProductDeletedEvent_class_data_;
 // -------------------------------------------------------------------
 
 class ProductCreatedEvent final : public ::google::protobuf::Message
@@ -571,6 +722,7 @@ class ProductOutbox final : public ::google::protobuf::Message
   enum PayloadCase {
     kCreated = 9,
     kUpdated = 10,
+    kDeleted = 11,
     PAYLOAD_NOT_SET = 0,
   };
   static constexpr int kIndexInFileMessages = 1;
@@ -671,6 +823,7 @@ class ProductOutbox final : public ::google::protobuf::Message
     kProcessingAttemptsFieldNumber = 5,
     kCreatedFieldNumber = 9,
     kUpdatedFieldNumber = 10,
+    kDeletedFieldNumber = 11,
   };
   // string id = 1 [json_name = "id"];
   void clear_id() ;
@@ -812,6 +965,25 @@ class ProductOutbox final : public ::google::protobuf::Message
   ::products::v1::ProductUpdatedEvent* PROTOBUF_NONNULL _internal_mutable_updated();
 
   public:
+  // .products.v1.ProductDeletedEvent deleted = 11 [json_name = "deleted"];
+  bool has_deleted() const;
+  private:
+  bool _internal_has_deleted() const;
+
+  public:
+  void clear_deleted() ;
+  const ::products::v1::ProductDeletedEvent& deleted() const;
+  [[nodiscard]] ::products::v1::ProductDeletedEvent* PROTOBUF_NULLABLE release_deleted();
+  ::products::v1::ProductDeletedEvent* PROTOBUF_NONNULL mutable_deleted();
+  void set_allocated_deleted(::products::v1::ProductDeletedEvent* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_deleted(::products::v1::ProductDeletedEvent* PROTOBUF_NULLABLE value);
+  ::products::v1::ProductDeletedEvent* PROTOBUF_NULLABLE unsafe_arena_release_deleted();
+
+  private:
+  const ::products::v1::ProductDeletedEvent& _internal_deleted() const;
+  ::products::v1::ProductDeletedEvent* PROTOBUF_NONNULL _internal_mutable_deleted();
+
+  public:
   void clear_payload();
   PayloadCase payload_case() const;
   // @@protoc_insertion_point(class_scope:products.v1.ProductOutbox)
@@ -819,11 +991,12 @@ class ProductOutbox final : public ::google::protobuf::Message
   class _Internal;
   void set_has_created();
   void set_has_updated();
+  void set_has_deleted();
   inline bool has_payload() const;
   inline void clear_has_payload();
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<3, 10,
-                                   2, 68,
+  static const ::google::protobuf::internal::TcParseTable<3, 11,
+                                   3, 68,
                                    2>
       _table_;
 
@@ -855,8 +1028,9 @@ class ProductOutbox final : public ::google::protobuf::Message
     union PayloadUnion {
       constexpr PayloadUnion() : _constinit_{} {}
       ::google::protobuf::internal::ConstantInitialized _constinit_;
-      ::products::v1::ProductCreatedEvent* PROTOBUF_NULLABLE created_;
-      ::products::v1::ProductUpdatedEvent* PROTOBUF_NULLABLE updated_;
+      ::google::protobuf::Message* PROTOBUF_NULLABLE created_;
+      ::google::protobuf::Message* PROTOBUF_NULLABLE updated_;
+      ::google::protobuf::Message* PROTOBUF_NULLABLE deleted_;
     } payload_;
     ::uint32_t _oneof_case_[1];
     PROTOBUF_TSAN_DECLARE_MEMBER
@@ -1757,7 +1931,7 @@ inline ::products::v1::ProductCreatedEvent* PROTOBUF_NULLABLE ProductOutbox::rel
   // @@protoc_insertion_point(field_release:products.v1.ProductOutbox.created)
   if (payload_case() == kCreated) {
     clear_has_payload();
-    auto* temp = _impl_.payload_.created_;
+    auto* temp = reinterpret_cast<::products::v1::ProductCreatedEvent*>(_impl_.payload_.created_);
     if (GetArena() != nullptr) {
       temp = ::google::protobuf::internal::DuplicateIfNonNull(temp);
     }
@@ -1768,7 +1942,7 @@ inline ::products::v1::ProductCreatedEvent* PROTOBUF_NULLABLE ProductOutbox::rel
   }
 }
 inline const ::products::v1::ProductCreatedEvent& ProductOutbox::_internal_created() const {
-  return payload_case() == kCreated ? *_impl_.payload_.created_ : reinterpret_cast<::products::v1::ProductCreatedEvent&>(::products::v1::_ProductCreatedEvent_default_instance_);
+  return payload_case() == kCreated ? *reinterpret_cast<::products::v1::ProductCreatedEvent*>(_impl_.payload_.created_) : reinterpret_cast<::products::v1::ProductCreatedEvent&>(::products::v1::_ProductCreatedEvent_default_instance_);
 }
 inline const ::products::v1::ProductCreatedEvent& ProductOutbox::created() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:products.v1.ProductOutbox.created)
@@ -1778,7 +1952,7 @@ inline ::products::v1::ProductCreatedEvent* PROTOBUF_NULLABLE ProductOutbox::uns
   // @@protoc_insertion_point(field_unsafe_arena_release:products.v1.ProductOutbox.created)
   if (payload_case() == kCreated) {
     clear_has_payload();
-    auto* temp = _impl_.payload_.created_;
+    auto* temp = reinterpret_cast<::products::v1::ProductCreatedEvent*>(_impl_.payload_.created_);
     _impl_.payload_.created_ = nullptr;
     return temp;
   } else {
@@ -1793,7 +1967,7 @@ inline void ProductOutbox::unsafe_arena_set_allocated_created(
   clear_payload();
   if (value) {
     set_has_created();
-    _impl_.payload_.created_ = value;
+    _impl_.payload_.created_ = reinterpret_cast<::google::protobuf::Message*>(value);
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:products.v1.ProductOutbox.created)
 }
@@ -1801,10 +1975,10 @@ inline ::products::v1::ProductCreatedEvent* PROTOBUF_NONNULL ProductOutbox::_int
   if (payload_case() != kCreated) {
     clear_payload();
     set_has_created();
-    _impl_.payload_.created_ = 
-        ::google::protobuf::Message::DefaultConstruct<::products::v1::ProductCreatedEvent>(GetArena());
+    _impl_.payload_.created_ = reinterpret_cast<::google::protobuf::Message*>(
+        ::google::protobuf::Message::DefaultConstruct<::products::v1::ProductCreatedEvent>(GetArena()));
   }
-  return _impl_.payload_.created_;
+  return reinterpret_cast<::products::v1::ProductCreatedEvent*>(_impl_.payload_.created_);
 }
 inline ::products::v1::ProductCreatedEvent* PROTOBUF_NONNULL ProductOutbox::mutable_created()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
@@ -1838,7 +2012,7 @@ inline ::products::v1::ProductUpdatedEvent* PROTOBUF_NULLABLE ProductOutbox::rel
   // @@protoc_insertion_point(field_release:products.v1.ProductOutbox.updated)
   if (payload_case() == kUpdated) {
     clear_has_payload();
-    auto* temp = _impl_.payload_.updated_;
+    auto* temp = reinterpret_cast<::products::v1::ProductUpdatedEvent*>(_impl_.payload_.updated_);
     if (GetArena() != nullptr) {
       temp = ::google::protobuf::internal::DuplicateIfNonNull(temp);
     }
@@ -1849,7 +2023,7 @@ inline ::products::v1::ProductUpdatedEvent* PROTOBUF_NULLABLE ProductOutbox::rel
   }
 }
 inline const ::products::v1::ProductUpdatedEvent& ProductOutbox::_internal_updated() const {
-  return payload_case() == kUpdated ? *_impl_.payload_.updated_ : reinterpret_cast<::products::v1::ProductUpdatedEvent&>(::products::v1::_ProductUpdatedEvent_default_instance_);
+  return payload_case() == kUpdated ? *reinterpret_cast<::products::v1::ProductUpdatedEvent*>(_impl_.payload_.updated_) : reinterpret_cast<::products::v1::ProductUpdatedEvent&>(::products::v1::_ProductUpdatedEvent_default_instance_);
 }
 inline const ::products::v1::ProductUpdatedEvent& ProductOutbox::updated() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
   // @@protoc_insertion_point(field_get:products.v1.ProductOutbox.updated)
@@ -1859,7 +2033,7 @@ inline ::products::v1::ProductUpdatedEvent* PROTOBUF_NULLABLE ProductOutbox::uns
   // @@protoc_insertion_point(field_unsafe_arena_release:products.v1.ProductOutbox.updated)
   if (payload_case() == kUpdated) {
     clear_has_payload();
-    auto* temp = _impl_.payload_.updated_;
+    auto* temp = reinterpret_cast<::products::v1::ProductUpdatedEvent*>(_impl_.payload_.updated_);
     _impl_.payload_.updated_ = nullptr;
     return temp;
   } else {
@@ -1874,7 +2048,7 @@ inline void ProductOutbox::unsafe_arena_set_allocated_updated(
   clear_payload();
   if (value) {
     set_has_updated();
-    _impl_.payload_.updated_ = value;
+    _impl_.payload_.updated_ = reinterpret_cast<::google::protobuf::Message*>(value);
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:products.v1.ProductOutbox.updated)
 }
@@ -1882,15 +2056,96 @@ inline ::products::v1::ProductUpdatedEvent* PROTOBUF_NONNULL ProductOutbox::_int
   if (payload_case() != kUpdated) {
     clear_payload();
     set_has_updated();
-    _impl_.payload_.updated_ = 
-        ::google::protobuf::Message::DefaultConstruct<::products::v1::ProductUpdatedEvent>(GetArena());
+    _impl_.payload_.updated_ = reinterpret_cast<::google::protobuf::Message*>(
+        ::google::protobuf::Message::DefaultConstruct<::products::v1::ProductUpdatedEvent>(GetArena()));
   }
-  return _impl_.payload_.updated_;
+  return reinterpret_cast<::products::v1::ProductUpdatedEvent*>(_impl_.payload_.updated_);
 }
 inline ::products::v1::ProductUpdatedEvent* PROTOBUF_NONNULL ProductOutbox::mutable_updated()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
   ::products::v1::ProductUpdatedEvent* _msg = _internal_mutable_updated();
   // @@protoc_insertion_point(field_mutable:products.v1.ProductOutbox.updated)
+  return _msg;
+}
+
+// .products.v1.ProductDeletedEvent deleted = 11 [json_name = "deleted"];
+inline bool ProductOutbox::has_deleted() const {
+  return payload_case() == kDeleted;
+}
+inline bool ProductOutbox::_internal_has_deleted() const {
+  return payload_case() == kDeleted;
+}
+inline void ProductOutbox::set_has_deleted() {
+  _impl_._oneof_case_[0] = kDeleted;
+}
+inline void ProductOutbox::clear_deleted() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (payload_case() == kDeleted) {
+    if (GetArena() == nullptr) {
+      delete _impl_.payload_.deleted_;
+    } else if (::google::protobuf::internal::DebugHardenClearOneofMessageOnArena()) {
+      ::google::protobuf::internal::MaybePoisonAfterClear(_impl_.payload_.deleted_);
+    }
+    clear_has_payload();
+  }
+}
+inline ::products::v1::ProductDeletedEvent* PROTOBUF_NULLABLE ProductOutbox::release_deleted() {
+  // @@protoc_insertion_point(field_release:products.v1.ProductOutbox.deleted)
+  if (payload_case() == kDeleted) {
+    clear_has_payload();
+    auto* temp = reinterpret_cast<::products::v1::ProductDeletedEvent*>(_impl_.payload_.deleted_);
+    if (GetArena() != nullptr) {
+      temp = ::google::protobuf::internal::DuplicateIfNonNull(temp);
+    }
+    _impl_.payload_.deleted_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::products::v1::ProductDeletedEvent& ProductOutbox::_internal_deleted() const {
+  return payload_case() == kDeleted ? *reinterpret_cast<::products::v1::ProductDeletedEvent*>(_impl_.payload_.deleted_) : reinterpret_cast<::products::v1::ProductDeletedEvent&>(::products::v1::_ProductDeletedEvent_default_instance_);
+}
+inline const ::products::v1::ProductDeletedEvent& ProductOutbox::deleted() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.ProductOutbox.deleted)
+  return _internal_deleted();
+}
+inline ::products::v1::ProductDeletedEvent* PROTOBUF_NULLABLE ProductOutbox::unsafe_arena_release_deleted() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:products.v1.ProductOutbox.deleted)
+  if (payload_case() == kDeleted) {
+    clear_has_payload();
+    auto* temp = reinterpret_cast<::products::v1::ProductDeletedEvent*>(_impl_.payload_.deleted_);
+    _impl_.payload_.deleted_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline void ProductOutbox::unsafe_arena_set_allocated_deleted(
+    ::products::v1::ProductDeletedEvent* PROTOBUF_NULLABLE value) {
+  // We rely on the oneof clear method to free the earlier contents
+  // of this oneof. We can directly use the pointer we're given to
+  // set the new value.
+  clear_payload();
+  if (value) {
+    set_has_deleted();
+    _impl_.payload_.deleted_ = reinterpret_cast<::google::protobuf::Message*>(value);
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:products.v1.ProductOutbox.deleted)
+}
+inline ::products::v1::ProductDeletedEvent* PROTOBUF_NONNULL ProductOutbox::_internal_mutable_deleted() {
+  if (payload_case() != kDeleted) {
+    clear_payload();
+    set_has_deleted();
+    _impl_.payload_.deleted_ = reinterpret_cast<::google::protobuf::Message*>(
+        ::google::protobuf::Message::DefaultConstruct<::products::v1::ProductDeletedEvent>(GetArena()));
+  }
+  return reinterpret_cast<::products::v1::ProductDeletedEvent*>(_impl_.payload_.deleted_);
+}
+inline ::products::v1::ProductDeletedEvent* PROTOBUF_NONNULL ProductOutbox::mutable_deleted()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::products::v1::ProductDeletedEvent* _msg = _internal_mutable_deleted();
+  // @@protoc_insertion_point(field_mutable:products.v1.ProductOutbox.deleted)
   return _msg;
 }
 
@@ -2178,6 +2433,10 @@ inline void ProductUpdatedEvent::set_allocated_description(::std::string* PROTOB
   }
   // @@protoc_insertion_point(field_set_allocated:products.v1.ProductUpdatedEvent.description)
 }
+
+// -------------------------------------------------------------------
+
+// ProductDeletedEvent
 
 #ifdef __GNUC__
 #pragma GCC diagnostic pop

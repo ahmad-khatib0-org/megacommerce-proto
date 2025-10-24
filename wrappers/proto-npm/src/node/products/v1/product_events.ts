@@ -33,6 +33,7 @@ export interface ProductOutbox {
   updatedAt: string;
   created?: ProductCreatedEvent | undefined;
   updated?: ProductUpdatedEvent | undefined;
+  deleted?: ProductDeletedEvent | undefined;
 }
 
 export interface ProductCreatedEvent {
@@ -43,6 +44,9 @@ export interface ProductCreatedEvent {
 export interface ProductUpdatedEvent {
   title?: string | undefined;
   description?: string | undefined;
+}
+
+export interface ProductDeletedEvent {
 }
 
 function createBaseChangeFeed(): ChangeFeed {
@@ -169,6 +173,7 @@ function createBaseProductOutbox(): ProductOutbox {
     updatedAt: "0",
     created: undefined,
     updated: undefined,
+    deleted: undefined,
   };
 }
 
@@ -203,6 +208,9 @@ export const ProductOutbox: MessageFns<ProductOutbox> = {
     }
     if (message.updated !== undefined) {
       ProductUpdatedEvent.encode(message.updated, writer.uint32(82).fork()).join();
+    }
+    if (message.deleted !== undefined) {
+      ProductDeletedEvent.encode(message.deleted, writer.uint32(90).fork()).join();
     }
     return writer;
   },
@@ -294,6 +302,14 @@ export const ProductOutbox: MessageFns<ProductOutbox> = {
           message.updated = ProductUpdatedEvent.decode(reader, reader.uint32());
           continue;
         }
+        case 11: {
+          if (tag !== 90) {
+            break;
+          }
+
+          message.deleted = ProductDeletedEvent.decode(reader, reader.uint32());
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -315,6 +331,7 @@ export const ProductOutbox: MessageFns<ProductOutbox> = {
       updatedAt: isSet(object.updatedAt) ? globalThis.String(object.updatedAt) : "0",
       created: isSet(object.created) ? ProductCreatedEvent.fromJSON(object.created) : undefined,
       updated: isSet(object.updated) ? ProductUpdatedEvent.fromJSON(object.updated) : undefined,
+      deleted: isSet(object.deleted) ? ProductDeletedEvent.fromJSON(object.deleted) : undefined,
     };
   },
 
@@ -350,6 +367,9 @@ export const ProductOutbox: MessageFns<ProductOutbox> = {
     if (message.updated !== undefined) {
       obj.updated = ProductUpdatedEvent.toJSON(message.updated);
     }
+    if (message.deleted !== undefined) {
+      obj.deleted = ProductDeletedEvent.toJSON(message.deleted);
+    }
     return obj;
   },
 
@@ -371,6 +391,9 @@ export const ProductOutbox: MessageFns<ProductOutbox> = {
       : undefined;
     message.updated = (object.updated !== undefined && object.updated !== null)
       ? ProductUpdatedEvent.fromPartial(object.updated)
+      : undefined;
+    message.deleted = (object.deleted !== undefined && object.deleted !== null)
+      ? ProductDeletedEvent.fromPartial(object.deleted)
       : undefined;
     return message;
   },
@@ -524,6 +547,49 @@ export const ProductUpdatedEvent: MessageFns<ProductUpdatedEvent> = {
     const message = createBaseProductUpdatedEvent();
     message.title = object.title ?? undefined;
     message.description = object.description ?? undefined;
+    return message;
+  },
+};
+
+function createBaseProductDeletedEvent(): ProductDeletedEvent {
+  return {};
+}
+
+export const ProductDeletedEvent: MessageFns<ProductDeletedEvent> = {
+  encode(_: ProductDeletedEvent, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductDeletedEvent {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductDeletedEvent();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(_: any): ProductDeletedEvent {
+    return {};
+  },
+
+  toJSON(_: ProductDeletedEvent): unknown {
+    const obj: any = {};
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductDeletedEvent>, I>>(base?: I): ProductDeletedEvent {
+    return ProductDeletedEvent.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductDeletedEvent>, I>>(_: I): ProductDeletedEvent {
+    const message = createBaseProductDeletedEvent();
     return message;
   },
 };
