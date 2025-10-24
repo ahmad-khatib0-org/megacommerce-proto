@@ -67,3 +67,12 @@ message TaskGetResponseError {
   string link = 4 [json_name = "link"];
   shared.v1.Struct details = 5 [json_name = "details"];
 }
+
+// Task object for a delete-one-document request (type = "documentDeletion")
+message TaskDeleteResponse {
+  uint64 task_uid = 1 [json_name = "taskUid"];
+  string index_uid = 2 [json_name = "indexUid"];
+  string status = 3 [json_name = "status"];
+  string type = 4 [json_name = "type"];
+  shared.v1.Timestamp enqueued_at = 5 [json_name = "enqueuedAt"];
+}

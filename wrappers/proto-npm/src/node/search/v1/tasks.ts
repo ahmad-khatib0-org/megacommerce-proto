@@ -63,6 +63,15 @@ export interface TaskGetResponseError {
   details?: Struct | undefined;
 }
 
+/** Task object for a delete-one-document request (type = "documentDeletion") */
+export interface TaskDeleteResponse {
+  taskUid: string;
+  indexUid: string;
+  status: string;
+  type: string;
+  enqueuedAt?: Timestamp | undefined;
+}
+
 function createBaseTaskCreateResponse(): TaskCreateResponse {
   return { taskUid: "0", indexUid: "", status: "", type: "", enqueuedAt: undefined };
 }
@@ -554,6 +563,132 @@ export const TaskGetResponseError: MessageFns<TaskGetResponseError> = {
     message.link = object.link ?? "";
     message.details = (object.details !== undefined && object.details !== null)
       ? Struct.fromPartial(object.details)
+      : undefined;
+    return message;
+  },
+};
+
+function createBaseTaskDeleteResponse(): TaskDeleteResponse {
+  return { taskUid: "0", indexUid: "", status: "", type: "", enqueuedAt: undefined };
+}
+
+export const TaskDeleteResponse: MessageFns<TaskDeleteResponse> = {
+  encode(message: TaskDeleteResponse, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.taskUid !== "0") {
+      writer.uint32(8).uint64(message.taskUid);
+    }
+    if (message.indexUid !== "") {
+      writer.uint32(18).string(message.indexUid);
+    }
+    if (message.status !== "") {
+      writer.uint32(26).string(message.status);
+    }
+    if (message.type !== "") {
+      writer.uint32(34).string(message.type);
+    }
+    if (message.enqueuedAt !== undefined) {
+      Timestamp.encode(message.enqueuedAt, writer.uint32(42).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): TaskDeleteResponse {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseTaskDeleteResponse();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 8) {
+            break;
+          }
+
+          message.taskUid = reader.uint64().toString();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.indexUid = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 26) {
+            break;
+          }
+
+          message.status = reader.string();
+          continue;
+        }
+        case 4: {
+          if (tag !== 34) {
+            break;
+          }
+
+          message.type = reader.string();
+          continue;
+        }
+        case 5: {
+          if (tag !== 42) {
+            break;
+          }
+
+          message.enqueuedAt = Timestamp.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): TaskDeleteResponse {
+    return {
+      taskUid: isSet(object.taskUid) ? globalThis.String(object.taskUid) : "0",
+      indexUid: isSet(object.indexUid) ? globalThis.String(object.indexUid) : "",
+      status: isSet(object.status) ? globalThis.String(object.status) : "",
+      type: isSet(object.type) ? globalThis.String(object.type) : "",
+      enqueuedAt: isSet(object.enqueuedAt) ? Timestamp.fromJSON(object.enqueuedAt) : undefined,
+    };
+  },
+
+  toJSON(message: TaskDeleteResponse): unknown {
+    const obj: any = {};
+    if (message.taskUid !== "0") {
+      obj.taskUid = message.taskUid;
+    }
+    if (message.indexUid !== "") {
+      obj.indexUid = message.indexUid;
+    }
+    if (message.status !== "") {
+      obj.status = message.status;
+    }
+    if (message.type !== "") {
+      obj.type = message.type;
+    }
+    if (message.enqueuedAt !== undefined) {
+      obj.enqueuedAt = Timestamp.toJSON(message.enqueuedAt);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<TaskDeleteResponse>, I>>(base?: I): TaskDeleteResponse {
+    return TaskDeleteResponse.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<TaskDeleteResponse>, I>>(object: I): TaskDeleteResponse {
+    const message = createBaseTaskDeleteResponse();
+    message.taskUid = object.taskUid ?? "0";
+    message.indexUid = object.indexUid ?? "";
+    message.status = object.status ?? "";
+    message.type = object.type ?? "";
+    message.enqueuedAt = (object.enqueuedAt !== undefined && object.enqueuedAt !== null)
+      ? Timestamp.fromPartial(object.enqueuedAt)
       : undefined;
     return message;
   },

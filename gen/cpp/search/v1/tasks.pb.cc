@@ -64,6 +64,41 @@ struct TaskGetResponseErrorDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TaskGetResponseErrorDefaultTypeInternal _TaskGetResponseError_default_instance_;
 
+inline constexpr TaskDeleteResponse::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        index_uid_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        status_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        type_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        enqueued_at_{nullptr},
+        task_uid_{::uint64_t{0u}} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR TaskDeleteResponse::TaskDeleteResponse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(TaskDeleteResponse_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct TaskDeleteResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR TaskDeleteResponseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~TaskDeleteResponseDefaultTypeInternal() {}
+  union {
+    TaskDeleteResponse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 TaskDeleteResponseDefaultTypeInternal _TaskDeleteResponse_default_instance_;
+
 inline constexpr TaskCreateResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
@@ -201,6 +236,19 @@ const ::uint32_t
         2,
         3,
         4,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::search::v1::TaskDeleteResponse, _impl_._has_bits_),
+        8, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::search::v1::TaskDeleteResponse, _impl_.task_uid_),
+        PROTOBUF_FIELD_OFFSET(::search::v1::TaskDeleteResponse, _impl_.index_uid_),
+        PROTOBUF_FIELD_OFFSET(::search::v1::TaskDeleteResponse, _impl_.status_),
+        PROTOBUF_FIELD_OFFSET(::search::v1::TaskDeleteResponse, _impl_.type_),
+        PROTOBUF_FIELD_OFFSET(::search::v1::TaskDeleteResponse, _impl_.enqueued_at_),
+        4,
+        0,
+        1,
+        2,
+        3,
 };
 
 static const ::_pbi::MigrationSchema
@@ -208,11 +256,13 @@ static const ::_pbi::MigrationSchema
         {0, sizeof(::search::v1::TaskCreateResponse)},
         {13, sizeof(::search::v1::TaskGetResponse)},
         {38, sizeof(::search::v1::TaskGetResponseError)},
+        {51, sizeof(::search::v1::TaskDeleteResponse)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::search::v1::_TaskCreateResponse_default_instance_._instance,
     &::search::v1::_TaskGetResponse_default_instance_._instance,
     &::search::v1::_TaskGetResponseError_default_instance_._instance,
+    &::search::v1::_TaskDeleteResponse_default_instance_._instance,
 };
 const char descriptor_table_protodef_search_2fv1_2ftasks_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
@@ -238,10 +288,14 @@ const char descriptor_table_protodef_search_2fv1_2ftasks_2eproto[] ABSL_ATTRIBUT
     "nseError\022\030\n\007message\030\001 \001(\tR\007message\022\022\n\004co"
     "de\030\002 \001(\tR\004code\022\022\n\004type\030\003 \001(\tR\004type\022\022\n\004li"
     "nk\030\004 \001(\tR\004link\022+\n\007details\030\005 \001(\0132\021.shared"
-    ".v1.StructR\007detailsBp\n\032org.megacommerce."
-    "search.v1B\nTasksProtoZCgithub.com/ahmad-"
-    "khatib0-org/megacommerce-proto/gen/go/se"
-    "arch/v1;v1\370\001\001b\006proto3"
+    ".v1.StructR\007details\"\257\001\n\022TaskDeleteRespon"
+    "se\022\031\n\010task_uid\030\001 \001(\004R\007taskUid\022\033\n\tindex_u"
+    "id\030\002 \001(\tR\010indexUid\022\026\n\006status\030\003 \001(\tR\006stat"
+    "us\022\022\n\004type\030\004 \001(\tR\004type\0225\n\013enqueued_at\030\005 "
+    "\001(\0132\024.shared.v1.TimestampR\nenqueuedAtBp\n"
+    "\032org.megacommerce.search.v1B\nTasksProtoZ"
+    "Cgithub.com/ahmad-khatib0-org/megacommer"
+    "ce-proto/gen/go/search/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_search_2fv1_2ftasks_2eproto_deps[3] = {
@@ -253,13 +307,13 @@ static ::absl::once_flag descriptor_table_search_2fv1_2ftasks_2eproto_once;
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_search_2fv1_2ftasks_2eproto = {
     false,
     false,
-    1021,
+    1199,
     descriptor_table_protodef_search_2fv1_2ftasks_2eproto,
     "search/v1/tasks.proto",
     &descriptor_table_search_2fv1_2ftasks_2eproto_once,
     descriptor_table_search_2fv1_2ftasks_2eproto_deps,
     3,
-    3,
+    4,
     schemas,
     file_default_instances,
     TableStruct_search_2fv1_2ftasks_2eproto::offsets,
@@ -1815,6 +1869,441 @@ void TaskGetResponseError::InternalSwap(TaskGetResponseError* PROTOBUF_RESTRICT 
 }
 
 ::google::protobuf::Metadata TaskGetResponseError::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class TaskDeleteResponse::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<TaskDeleteResponse>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(TaskDeleteResponse, _impl_._has_bits_);
+};
+
+void TaskDeleteResponse::clear_enqueued_at() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.enqueued_at_ != nullptr) _impl_.enqueued_at_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+TaskDeleteResponse::TaskDeleteResponse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, TaskDeleteResponse_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:search.v1.TaskDeleteResponse)
+}
+PROTOBUF_NDEBUG_INLINE TaskDeleteResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::search::v1::TaskDeleteResponse& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        index_uid_(arena, from.index_uid_),
+        status_(arena, from.status_),
+        type_(arena, from.type_) {}
+
+TaskDeleteResponse::TaskDeleteResponse(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const TaskDeleteResponse& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, TaskDeleteResponse_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  TaskDeleteResponse* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
+  _impl_.enqueued_at_ = ((cached_has_bits & 0x00000008u) != 0)
+                ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.enqueued_at_)
+                : nullptr;
+  _impl_.task_uid_ = from._impl_.task_uid_;
+
+  // @@protoc_insertion_point(copy_constructor:search.v1.TaskDeleteResponse)
+}
+PROTOBUF_NDEBUG_INLINE TaskDeleteResponse::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        index_uid_(arena),
+        status_(arena),
+        type_(arena) {}
+
+inline void TaskDeleteResponse::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, enqueued_at_),
+           0,
+           offsetof(Impl_, task_uid_) -
+               offsetof(Impl_, enqueued_at_) +
+               sizeof(Impl_::task_uid_));
+}
+TaskDeleteResponse::~TaskDeleteResponse() {
+  // @@protoc_insertion_point(destructor:search.v1.TaskDeleteResponse)
+  SharedDtor(*this);
+}
+inline void TaskDeleteResponse::SharedDtor(MessageLite& self) {
+  TaskDeleteResponse& this_ = static_cast<TaskDeleteResponse&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.index_uid_.Destroy();
+  this_._impl_.status_.Destroy();
+  this_._impl_.type_.Destroy();
+  delete this_._impl_.enqueued_at_;
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL TaskDeleteResponse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) TaskDeleteResponse(arena);
+}
+constexpr auto TaskDeleteResponse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(TaskDeleteResponse),
+                                            alignof(TaskDeleteResponse));
+}
+constexpr auto TaskDeleteResponse::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_TaskDeleteResponse_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &TaskDeleteResponse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<TaskDeleteResponse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &TaskDeleteResponse::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<TaskDeleteResponse>(), &TaskDeleteResponse::ByteSizeLong,
+              &TaskDeleteResponse::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(TaskDeleteResponse, _impl_._cached_size_),
+          false,
+      },
+      &TaskDeleteResponse::kDescriptorMethods,
+      &descriptor_table_search_2fv1_2ftasks_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull TaskDeleteResponse_class_data_ =
+        TaskDeleteResponse::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+TaskDeleteResponse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&TaskDeleteResponse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(TaskDeleteResponse_class_data_.tc_table);
+  return TaskDeleteResponse_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<3, 5, 1, 56, 2>
+TaskDeleteResponse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(TaskDeleteResponse, _impl_._has_bits_),
+    0, // no _extensions_
+    5, 56,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967264,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    5,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    TaskDeleteResponse_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::search::v1::TaskDeleteResponse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // uint64 task_uid = 1 [json_name = "taskUid"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(TaskDeleteResponse, _impl_.task_uid_), 4>(),
+     {8, 4, 0, PROTOBUF_FIELD_OFFSET(TaskDeleteResponse, _impl_.task_uid_)}},
+    // string index_uid = 2 [json_name = "indexUid"];
+    {::_pbi::TcParser::FastUS1,
+     {18, 0, 0, PROTOBUF_FIELD_OFFSET(TaskDeleteResponse, _impl_.index_uid_)}},
+    // string status = 3 [json_name = "status"];
+    {::_pbi::TcParser::FastUS1,
+     {26, 1, 0, PROTOBUF_FIELD_OFFSET(TaskDeleteResponse, _impl_.status_)}},
+    // string type = 4 [json_name = "type"];
+    {::_pbi::TcParser::FastUS1,
+     {34, 2, 0, PROTOBUF_FIELD_OFFSET(TaskDeleteResponse, _impl_.type_)}},
+    // .shared.v1.Timestamp enqueued_at = 5 [json_name = "enqueuedAt"];
+    {::_pbi::TcParser::FastMtS1,
+     {42, 3, 0, PROTOBUF_FIELD_OFFSET(TaskDeleteResponse, _impl_.enqueued_at_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // uint64 task_uid = 1 [json_name = "taskUid"];
+    {PROTOBUF_FIELD_OFFSET(TaskDeleteResponse, _impl_.task_uid_), _Internal::kHasBitsOffset + 4, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // string index_uid = 2 [json_name = "indexUid"];
+    {PROTOBUF_FIELD_OFFSET(TaskDeleteResponse, _impl_.index_uid_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string status = 3 [json_name = "status"];
+    {PROTOBUF_FIELD_OFFSET(TaskDeleteResponse, _impl_.status_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string type = 4 [json_name = "type"];
+    {PROTOBUF_FIELD_OFFSET(TaskDeleteResponse, _impl_.type_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // .shared.v1.Timestamp enqueued_at = 5 [json_name = "enqueuedAt"];
+    {PROTOBUF_FIELD_OFFSET(TaskDeleteResponse, _impl_.enqueued_at_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::shared::v1::Timestamp>()},
+  }},
+  {{
+    "\34\0\11\6\4\0\0\0"
+    "search.v1.TaskDeleteResponse"
+    "index_uid"
+    "status"
+    "type"
+  }},
+};
+PROTOBUF_NOINLINE void TaskDeleteResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:search.v1.TaskDeleteResponse)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x0000000fu) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      _impl_.index_uid_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      _impl_.status_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      _impl_.type_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      ABSL_DCHECK(_impl_.enqueued_at_ != nullptr);
+      _impl_.enqueued_at_->Clear();
+    }
+  }
+  _impl_.task_uid_ = ::uint64_t{0u};
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL TaskDeleteResponse::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const TaskDeleteResponse& this_ = static_cast<const TaskDeleteResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL TaskDeleteResponse::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const TaskDeleteResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:search.v1.TaskDeleteResponse)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // uint64 task_uid = 1 [json_name = "taskUid"];
+  if ((this_._impl_._has_bits_[0] & 0x00000010u) != 0) {
+    if (this_._internal_task_uid() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          1, this_._internal_task_uid(), target);
+    }
+  }
+
+  // string index_uid = 2 [json_name = "indexUid"];
+  if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    if (!this_._internal_index_uid().empty()) {
+      const ::std::string& _s = this_._internal_index_uid();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "search.v1.TaskDeleteResponse.index_uid");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
+    }
+  }
+
+  // string status = 3 [json_name = "status"];
+  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    if (!this_._internal_status().empty()) {
+      const ::std::string& _s = this_._internal_status();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "search.v1.TaskDeleteResponse.status");
+      target = stream->WriteStringMaybeAliased(3, _s, target);
+    }
+  }
+
+  // string type = 4 [json_name = "type"];
+  if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
+    if (!this_._internal_type().empty()) {
+      const ::std::string& _s = this_._internal_type();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "search.v1.TaskDeleteResponse.type");
+      target = stream->WriteStringMaybeAliased(4, _s, target);
+    }
+  }
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // .shared.v1.Timestamp enqueued_at = 5 [json_name = "enqueuedAt"];
+  if ((cached_has_bits & 0x00000008u) != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        5, *this_._impl_.enqueued_at_, this_._impl_.enqueued_at_->GetCachedSize(), target,
+        stream);
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:search.v1.TaskDeleteResponse)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t TaskDeleteResponse::ByteSizeLong(const MessageLite& base) {
+  const TaskDeleteResponse& this_ = static_cast<const TaskDeleteResponse&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t TaskDeleteResponse::ByteSizeLong() const {
+  const TaskDeleteResponse& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:search.v1.TaskDeleteResponse)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x0000001fu) != 0) {
+    // string index_uid = 2 [json_name = "indexUid"];
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!this_._internal_index_uid().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_index_uid());
+      }
+    }
+    // string status = 3 [json_name = "status"];
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!this_._internal_status().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_status());
+      }
+    }
+    // string type = 4 [json_name = "type"];
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      if (!this_._internal_type().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_type());
+      }
+    }
+    // .shared.v1.Timestamp enqueued_at = 5 [json_name = "enqueuedAt"];
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.enqueued_at_);
+    }
+    // uint64 task_uid = 1 [json_name = "taskUid"];
+    if ((cached_has_bits & 0x00000010u) != 0) {
+      if (this_._internal_task_uid() != 0) {
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+            this_._internal_task_uid());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void TaskDeleteResponse::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<TaskDeleteResponse*>(&to_msg);
+  auto& from = static_cast<const TaskDeleteResponse&>(from_msg);
+  ::google::protobuf::Arena* arena = _this->GetArena();
+  // @@protoc_insertion_point(class_specific_merge_from_start:search.v1.TaskDeleteResponse)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x0000001fu) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!from._internal_index_uid().empty()) {
+        _this->_internal_set_index_uid(from._internal_index_uid());
+      } else {
+        if (_this->_impl_.index_uid_.IsDefault()) {
+          _this->_internal_set_index_uid("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!from._internal_status().empty()) {
+        _this->_internal_set_status(from._internal_status());
+      } else {
+        if (_this->_impl_.status_.IsDefault()) {
+          _this->_internal_set_status("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      if (!from._internal_type().empty()) {
+        _this->_internal_set_type(from._internal_type());
+      } else {
+        if (_this->_impl_.type_.IsDefault()) {
+          _this->_internal_set_type("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      ABSL_DCHECK(from._impl_.enqueued_at_ != nullptr);
+      if (_this->_impl_.enqueued_at_ == nullptr) {
+        _this->_impl_.enqueued_at_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.enqueued_at_);
+      } else {
+        _this->_impl_.enqueued_at_->MergeFrom(*from._impl_.enqueued_at_);
+      }
+    }
+    if ((cached_has_bits & 0x00000010u) != 0) {
+      if (from._internal_task_uid() != 0) {
+        _this->_impl_.task_uid_ = from._impl_.task_uid_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void TaskDeleteResponse::CopyFrom(const TaskDeleteResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:search.v1.TaskDeleteResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void TaskDeleteResponse::InternalSwap(TaskDeleteResponse* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.index_uid_, &other->_impl_.index_uid_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.status_, &other->_impl_.status_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.type_, &other->_impl_.type_, arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(TaskDeleteResponse, _impl_.task_uid_)
+      + sizeof(TaskDeleteResponse::_impl_.task_uid_)
+      - PROTOBUF_FIELD_OFFSET(TaskDeleteResponse, _impl_.enqueued_at_)>(
+          reinterpret_cast<char*>(&_impl_.enqueued_at_),
+          reinterpret_cast<char*>(&other->_impl_.enqueued_at_));
+}
+
+::google::protobuf::Metadata TaskDeleteResponse::GetMetadata() const {
   return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // @@protoc_insertion_point(namespace_scope)

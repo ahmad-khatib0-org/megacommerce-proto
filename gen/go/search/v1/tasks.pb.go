@@ -313,6 +313,83 @@ func (x *TaskGetResponseError) GetDetails() *v1.Struct {
 	return nil
 }
 
+// Task object for a delete-one-document request (type = "documentDeletion")
+type TaskDeleteResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	TaskUid       uint64                 `protobuf:"varint,1,opt,name=task_uid,json=taskUid,proto3" json:"task_uid,omitempty"`
+	IndexUid      string                 `protobuf:"bytes,2,opt,name=index_uid,json=indexUid,proto3" json:"index_uid,omitempty"`
+	Status        string                 `protobuf:"bytes,3,opt,name=status,proto3" json:"status,omitempty"`
+	Type          string                 `protobuf:"bytes,4,opt,name=type,proto3" json:"type,omitempty"`
+	EnqueuedAt    *v1.Timestamp          `protobuf:"bytes,5,opt,name=enqueued_at,json=enqueuedAt,proto3" json:"enqueued_at,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *TaskDeleteResponse) Reset() {
+	*x = TaskDeleteResponse{}
+	mi := &file_search_v1_tasks_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *TaskDeleteResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*TaskDeleteResponse) ProtoMessage() {}
+
+func (x *TaskDeleteResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_search_v1_tasks_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use TaskDeleteResponse.ProtoReflect.Descriptor instead.
+func (*TaskDeleteResponse) Descriptor() ([]byte, []int) {
+	return file_search_v1_tasks_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *TaskDeleteResponse) GetTaskUid() uint64 {
+	if x != nil {
+		return x.TaskUid
+	}
+	return 0
+}
+
+func (x *TaskDeleteResponse) GetIndexUid() string {
+	if x != nil {
+		return x.IndexUid
+	}
+	return ""
+}
+
+func (x *TaskDeleteResponse) GetStatus() string {
+	if x != nil {
+		return x.Status
+	}
+	return ""
+}
+
+func (x *TaskDeleteResponse) GetType() string {
+	if x != nil {
+		return x.Type
+	}
+	return ""
+}
+
+func (x *TaskDeleteResponse) GetEnqueuedAt() *v1.Timestamp {
+	if x != nil {
+		return x.EnqueuedAt
+	}
+	return nil
+}
+
 var File_search_v1_tasks_proto protoreflect.FileDescriptor
 
 const file_search_v1_tasks_proto_rawDesc = "" +
@@ -347,7 +424,14 @@ const file_search_v1_tasks_proto_rawDesc = "" +
 	"\x04code\x18\x02 \x01(\tR\x04code\x12\x12\n" +
 	"\x04type\x18\x03 \x01(\tR\x04type\x12\x12\n" +
 	"\x04link\x18\x04 \x01(\tR\x04link\x12+\n" +
-	"\adetails\x18\x05 \x01(\v2\x11.shared.v1.StructR\adetailsBp\n" +
+	"\adetails\x18\x05 \x01(\v2\x11.shared.v1.StructR\adetails\"\xaf\x01\n" +
+	"\x12TaskDeleteResponse\x12\x19\n" +
+	"\btask_uid\x18\x01 \x01(\x04R\ataskUid\x12\x1b\n" +
+	"\tindex_uid\x18\x02 \x01(\tR\bindexUid\x12\x16\n" +
+	"\x06status\x18\x03 \x01(\tR\x06status\x12\x12\n" +
+	"\x04type\x18\x04 \x01(\tR\x04type\x125\n" +
+	"\venqueued_at\x18\x05 \x01(\v2\x14.shared.v1.TimestampR\n" +
+	"enqueuedAtBp\n" +
 	"\x1aorg.megacommerce.search.v1B\n" +
 	"TasksProtoZCgithub.com/ahmad-khatib0-org/megacommerce-proto/gen/go/search/v1;v1\xf8\x01\x01b\x06proto3"
 
@@ -363,29 +447,31 @@ func file_search_v1_tasks_proto_rawDescGZIP() []byte {
 	return file_search_v1_tasks_proto_rawDescData
 }
 
-var file_search_v1_tasks_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_search_v1_tasks_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_search_v1_tasks_proto_goTypes = []any{
 	(*TaskCreateResponse)(nil),   // 0: search.v1.TaskCreateResponse
 	(*TaskGetResponse)(nil),      // 1: search.v1.TaskGetResponse
 	(*TaskGetResponseError)(nil), // 2: search.v1.TaskGetResponseError
-	(*v1.Timestamp)(nil),         // 3: shared.v1.Timestamp
-	(*v1.UInt64Value)(nil),       // 4: shared.v1.UInt64Value
-	(*v1.Struct)(nil),            // 5: shared.v1.Struct
+	(*TaskDeleteResponse)(nil),   // 3: search.v1.TaskDeleteResponse
+	(*v1.Timestamp)(nil),         // 4: shared.v1.Timestamp
+	(*v1.UInt64Value)(nil),       // 5: shared.v1.UInt64Value
+	(*v1.Struct)(nil),            // 6: shared.v1.Struct
 }
 var file_search_v1_tasks_proto_depIdxs = []int32{
-	3, // 0: search.v1.TaskCreateResponse.enqueued_at:type_name -> shared.v1.Timestamp
-	4, // 1: search.v1.TaskGetResponse.canceled_by:type_name -> shared.v1.UInt64Value
-	5, // 2: search.v1.TaskGetResponse.details:type_name -> shared.v1.Struct
+	4, // 0: search.v1.TaskCreateResponse.enqueued_at:type_name -> shared.v1.Timestamp
+	5, // 1: search.v1.TaskGetResponse.canceled_by:type_name -> shared.v1.UInt64Value
+	6, // 2: search.v1.TaskGetResponse.details:type_name -> shared.v1.Struct
 	2, // 3: search.v1.TaskGetResponse.error:type_name -> search.v1.TaskGetResponseError
-	3, // 4: search.v1.TaskGetResponse.enqueued_at:type_name -> shared.v1.Timestamp
-	3, // 5: search.v1.TaskGetResponse.started_at:type_name -> shared.v1.Timestamp
-	3, // 6: search.v1.TaskGetResponse.finished_at:type_name -> shared.v1.Timestamp
-	5, // 7: search.v1.TaskGetResponseError.details:type_name -> shared.v1.Struct
-	8, // [8:8] is the sub-list for method output_type
-	8, // [8:8] is the sub-list for method input_type
-	8, // [8:8] is the sub-list for extension type_name
-	8, // [8:8] is the sub-list for extension extendee
-	0, // [0:8] is the sub-list for field type_name
+	4, // 4: search.v1.TaskGetResponse.enqueued_at:type_name -> shared.v1.Timestamp
+	4, // 5: search.v1.TaskGetResponse.started_at:type_name -> shared.v1.Timestamp
+	4, // 6: search.v1.TaskGetResponse.finished_at:type_name -> shared.v1.Timestamp
+	6, // 7: search.v1.TaskGetResponseError.details:type_name -> shared.v1.Struct
+	4, // 8: search.v1.TaskDeleteResponse.enqueued_at:type_name -> shared.v1.Timestamp
+	9, // [9:9] is the sub-list for method output_type
+	9, // [9:9] is the sub-list for method input_type
+	9, // [9:9] is the sub-list for extension type_name
+	9, // [9:9] is the sub-list for extension extendee
+	0, // [0:9] is the sub-list for field type_name
 }
 
 func init() { file_search_v1_tasks_proto_init() }
@@ -399,7 +485,7 @@ func file_search_v1_tasks_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_search_v1_tasks_proto_rawDesc), len(file_search_v1_tasks_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

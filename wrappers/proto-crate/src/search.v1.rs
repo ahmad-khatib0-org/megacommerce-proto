@@ -372,3 +372,18 @@ pub struct TaskGetResponseError {
     #[prost(message, optional, tag = "5")]
     pub details: ::core::option::Option<super::super::shared::v1::Struct>,
 }
+/// Task object for a delete-one-document request (type = "documentDeletion")
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct TaskDeleteResponse {
+    #[prost(uint64, tag = "1")]
+    pub task_uid: u64,
+    #[prost(string, tag = "2")]
+    pub index_uid: ::prost::alloc::string::String,
+    #[prost(string, tag = "3")]
+    pub status: ::prost::alloc::string::String,
+    #[prost(string, tag = "4")]
+    pub r#type: ::prost::alloc::string::String,
+    #[prost(message, optional, tag = "5")]
+    pub enqueued_at: ::core::option::Option<super::super::shared::v1::Timestamp>,
+}
