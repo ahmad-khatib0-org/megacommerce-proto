@@ -568,14 +568,15 @@ class SubcategoryAttribute final : public ::google::protobuf::Message
 
   // accessors -------------------------------------------------------
   enum : int {
-    kStringArrayFieldNumber = 4,
+    kStringArrayFieldNumber = 5,
     kTypeFieldNumber = 2,
-    kReferenceFieldNumber = 3,
-    kValidationFieldNumber = 6,
+    kReferenceFieldNumber = 4,
+    kValidationFieldNumber = 7,
     kRequiredFieldNumber = 1,
-    kIsMultipleFieldNumber = 5,
+    kIncludeInVariantsFieldNumber = 3,
+    kIsMultipleFieldNumber = 6,
   };
-  // repeated string string_array = 4 [json_name = "stringArray"];
+  // repeated string string_array = 5 [json_name = "stringArray"];
   int string_array_size() const;
   private:
   int _internal_string_array_size() const;
@@ -612,7 +613,7 @@ class SubcategoryAttribute final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_type();
 
   public:
-  // optional string reference = 3 [json_name = "reference"];
+  // optional string reference = 4 [json_name = "reference"];
   bool has_reference() const;
   void clear_reference() ;
   const ::std::string& reference() const;
@@ -628,7 +629,7 @@ class SubcategoryAttribute final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_reference();
 
   public:
-  // .shared.v1.ValidationField validation = 6 [json_name = "validation"];
+  // .shared.v1.ValidationField validation = 7 [json_name = "validation"];
   bool has_validation() const;
   void clear_validation() ;
   const ::shared::v1::ValidationField& validation() const;
@@ -653,7 +654,17 @@ class SubcategoryAttribute final : public ::google::protobuf::Message
   void _internal_set_required(bool value);
 
   public:
-  // optional bool is_multiple = 5 [json_name = "isMultiple"];
+  // bool include_in_variants = 3 [json_name = "includeInVariants"];
+  void clear_include_in_variants() ;
+  bool include_in_variants() const;
+  void set_include_in_variants(bool value);
+
+  private:
+  bool _internal_include_in_variants() const;
+  void _internal_set_include_in_variants(bool value);
+
+  public:
+  // optional bool is_multiple = 6 [json_name = "isMultiple"];
   bool has_is_multiple() const;
   void clear_is_multiple() ;
   bool is_multiple() const;
@@ -668,7 +679,7 @@ class SubcategoryAttribute final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<3, 6,
+  static const ::google::protobuf::internal::TcParseTable<3, 7,
                                    1, 66,
                                    2>
       _table_;
@@ -695,6 +706,7 @@ class SubcategoryAttribute final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr reference_;
     ::shared::v1::ValidationField* PROTOBUF_NULLABLE validation_;
     bool required_;
+    bool include_in_variants_;
     bool is_multiple_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
@@ -2531,7 +2543,31 @@ inline void SubcategoryAttribute::set_allocated_type(::std::string* PROTOBUF_NUL
   // @@protoc_insertion_point(field_set_allocated:products.v1.SubcategoryAttribute.type)
 }
 
-// optional string reference = 3 [json_name = "reference"];
+// bool include_in_variants = 3 [json_name = "includeInVariants"];
+inline void SubcategoryAttribute::clear_include_in_variants() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.include_in_variants_ = false;
+  _impl_._has_bits_[0] &= ~0x00000010u;
+}
+inline bool SubcategoryAttribute::include_in_variants() const {
+  // @@protoc_insertion_point(field_get:products.v1.SubcategoryAttribute.include_in_variants)
+  return _internal_include_in_variants();
+}
+inline void SubcategoryAttribute::set_include_in_variants(bool value) {
+  _internal_set_include_in_variants(value);
+  _impl_._has_bits_[0] |= 0x00000010u;
+  // @@protoc_insertion_point(field_set:products.v1.SubcategoryAttribute.include_in_variants)
+}
+inline bool SubcategoryAttribute::_internal_include_in_variants() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.include_in_variants_;
+}
+inline void SubcategoryAttribute::_internal_set_include_in_variants(bool value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.include_in_variants_ = value;
+}
+
+// optional string reference = 4 [json_name = "reference"];
 inline bool SubcategoryAttribute::has_reference() const {
   bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
@@ -2600,7 +2636,7 @@ inline void SubcategoryAttribute::set_allocated_reference(::std::string* PROTOBU
   // @@protoc_insertion_point(field_set_allocated:products.v1.SubcategoryAttribute.reference)
 }
 
-// repeated string string_array = 4 [json_name = "stringArray"];
+// repeated string string_array = 5 [json_name = "stringArray"];
 inline int SubcategoryAttribute::_internal_string_array_size() const {
   return _internal_string_array().size();
 }
@@ -2664,15 +2700,15 @@ SubcategoryAttribute::_internal_mutable_string_array() {
   return &_impl_.string_array_;
 }
 
-// optional bool is_multiple = 5 [json_name = "isMultiple"];
+// optional bool is_multiple = 6 [json_name = "isMultiple"];
 inline bool SubcategoryAttribute::has_is_multiple() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
   return value;
 }
 inline void SubcategoryAttribute::clear_is_multiple() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.is_multiple_ = false;
-  _impl_._has_bits_[0] &= ~0x00000010u;
+  _impl_._has_bits_[0] &= ~0x00000020u;
 }
 inline bool SubcategoryAttribute::is_multiple() const {
   // @@protoc_insertion_point(field_get:products.v1.SubcategoryAttribute.is_multiple)
@@ -2680,7 +2716,7 @@ inline bool SubcategoryAttribute::is_multiple() const {
 }
 inline void SubcategoryAttribute::set_is_multiple(bool value) {
   _internal_set_is_multiple(value);
-  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_._has_bits_[0] |= 0x00000020u;
   // @@protoc_insertion_point(field_set:products.v1.SubcategoryAttribute.is_multiple)
 }
 inline bool SubcategoryAttribute::_internal_is_multiple() const {
@@ -2692,7 +2728,7 @@ inline void SubcategoryAttribute::_internal_set_is_multiple(bool value) {
   _impl_.is_multiple_ = value;
 }
 
-// .shared.v1.ValidationField validation = 6 [json_name = "validation"];
+// .shared.v1.ValidationField validation = 7 [json_name = "validation"];
 inline bool SubcategoryAttribute::has_validation() const {
   bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.validation_ != nullptr);

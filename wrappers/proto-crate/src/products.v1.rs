@@ -167,18 +167,22 @@ pub struct SubcategoryAttribute {
     /// input, select, tags ...
     #[prost(string, tag = "2")]
     pub r#type: ::prost::alloc::string::String,
+    /// wither this attributes can be customized for each variation or it must be shared
+    /// by all of the product's variations
+    #[prost(bool, tag = "3")]
+    pub include_in_variants: bool,
     /// reference id to the attributes table (E.g weight is common for many products types,
     /// so instead rewriting it each time, we store it in another table)
-    #[prost(string, optional, tag = "3")]
+    #[prost(string, optional, tag = "4")]
     pub reference: ::core::option::Option<::prost::alloc::string::String>,
     /// for select type (E.g. \['white', 'black', ...\])
-    #[prost(string, repeated, tag = "4")]
+    #[prost(string, repeated, tag = "5")]
     pub string_array: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
     /// for select type (E.g. multiple colors)
-    #[prost(bool, optional, tag = "5")]
+    #[prost(bool, optional, tag = "6")]
     pub is_multiple: ::core::option::Option<bool>,
     /// validation rules of this attribute
-    #[prost(message, optional, tag = "6")]
+    #[prost(message, optional, tag = "7")]
     pub validation: ::core::option::Option<super::super::shared::v1::ValidationField>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]

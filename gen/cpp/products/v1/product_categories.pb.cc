@@ -104,6 +104,7 @@ inline constexpr SubcategoryAttribute::Impl_::Impl_(
             ::_pbi::ConstantInitialized()),
         validation_{nullptr},
         required_{false},
+        include_in_variants_{false},
         is_multiple_{false} {}
 
 template <typename>
@@ -348,18 +349,20 @@ const ::uint32_t
         ~0u,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryAttribute, _impl_._has_bits_),
-        9, // hasbit index offset
+        10, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryAttribute, _impl_.required_),
         PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryAttribute, _impl_.type_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryAttribute, _impl_.include_in_variants_),
         PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryAttribute, _impl_.reference_),
         PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryAttribute, _impl_.string_array_),
         PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryAttribute, _impl_.is_multiple_),
         PROTOBUF_FIELD_OFFSET(::products::v1::SubcategoryAttribute, _impl_.validation_),
         3,
         0,
+        4,
         1,
         ~0u,
-        4,
+        5,
         2,
 };
 
@@ -418,17 +421,19 @@ const char descriptor_table_protodef_products_2fv1_2fproduct_5fcategories_2eprot
     "roducts.v1.Subcategory.AttributesEntryR\n"
     "attributes\032`\n\017AttributesEntry\022\020\n\003key\030\001 \001"
     "(\tR\003key\0227\n\005value\030\002 \001(\0132!.products.v1.Sub"
-    "categoryAttributeR\005value:\0028\001\"\214\002\n\024Subcate"
+    "categoryAttributeR\005value:\0028\001\"\274\002\n\024Subcate"
     "goryAttribute\022\032\n\010required\030\001 \001(\010R\010require"
-    "d\022\022\n\004type\030\002 \001(\tR\004type\022!\n\treference\030\003 \001(\t"
-    "H\000R\treference\210\001\001\022!\n\014string_array\030\004 \003(\tR\013"
-    "stringArray\022$\n\013is_multiple\030\005 \001(\010H\001R\nisMu"
-    "ltiple\210\001\001\022:\n\nvalidation\030\006 \001(\0132\032.shared.v"
-    "1.ValidationFieldR\nvalidationB\014\n\n_refere"
-    "nceB\016\n\014_is_multipleB\200\001\n\034org.megacommerce"
-    ".products.v1B\026ProductCategoriesProtoZEgi"
-    "thub.com/ahmad-khatib0-org/megacommerce-"
-    "proto/gen/go/products/v1;v1\370\001\001b\006proto3"
+    "d\022\022\n\004type\030\002 \001(\tR\004type\022.\n\023include_in_vari"
+    "ants\030\003 \001(\010R\021includeInVariants\022!\n\treferen"
+    "ce\030\004 \001(\tH\000R\treference\210\001\001\022!\n\014string_array"
+    "\030\005 \003(\tR\013stringArray\022$\n\013is_multiple\030\006 \001(\010"
+    "H\001R\nisMultiple\210\001\001\022:\n\nvalidation\030\007 \001(\0132\032."
+    "shared.v1.ValidationFieldR\nvalidationB\014\n"
+    "\n_referenceB\016\n\014_is_multipleB\200\001\n\034org.mega"
+    "commerce.products.v1B\026ProductCategoriesP"
+    "rotoZEgithub.com/ahmad-khatib0-org/megac"
+    "ommerce-proto/gen/go/products/v1;v1\370\001\001b\006"
+    "proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_deps[2] = {
@@ -439,7 +444,7 @@ static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_5fcategories_2
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto = {
     false,
     false,
-    1638,
+    1686,
     descriptor_table_protodef_products_2fv1_2fproduct_5fcategories_2eproto,
     "products/v1/product_categories.proto",
     &descriptor_table_products_2fv1_2fproduct_5fcategories_2eproto_once,
@@ -2681,16 +2686,16 @@ SubcategoryAttribute::GetClassData() const {
   return SubcategoryAttribute_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 6, 1, 66, 2>
+const ::_pbi::TcParseTable<3, 7, 1, 66, 2>
 SubcategoryAttribute::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_._has_bits_),
     0, // no _extensions_
-    6, 56,  // max_field_number, fast_idx_mask
+    7, 56,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967232,  // skipmap
+    4294967168,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    6,  // num_field_entries
+    7,  // num_field_entries
     1,  // num_aux_entries
     offsetof(decltype(_table_), aux_entries),
     SubcategoryAttribute_class_data_.base(),
@@ -2707,19 +2712,21 @@ SubcategoryAttribute::_table_ = {
     // string type = 2 [json_name = "type"];
     {::_pbi::TcParser::FastUS1,
      {18, 0, 0, PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.type_)}},
-    // optional string reference = 3 [json_name = "reference"];
+    // bool include_in_variants = 3 [json_name = "includeInVariants"];
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(SubcategoryAttribute, _impl_.include_in_variants_), 4>(),
+     {24, 4, 0, PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.include_in_variants_)}},
+    // optional string reference = 4 [json_name = "reference"];
     {::_pbi::TcParser::FastUS1,
-     {26, 1, 0, PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.reference_)}},
-    // repeated string string_array = 4 [json_name = "stringArray"];
+     {34, 1, 0, PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.reference_)}},
+    // repeated string string_array = 5 [json_name = "stringArray"];
     {::_pbi::TcParser::FastUR1,
-     {34, 63, 0, PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.string_array_)}},
-    // optional bool is_multiple = 5 [json_name = "isMultiple"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(SubcategoryAttribute, _impl_.is_multiple_), 4>(),
-     {40, 4, 0, PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.is_multiple_)}},
-    // .shared.v1.ValidationField validation = 6 [json_name = "validation"];
+     {42, 63, 0, PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.string_array_)}},
+    // optional bool is_multiple = 6 [json_name = "isMultiple"];
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(SubcategoryAttribute, _impl_.is_multiple_), 5>(),
+     {48, 5, 0, PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.is_multiple_)}},
+    // .shared.v1.ValidationField validation = 7 [json_name = "validation"];
     {::_pbi::TcParser::FastMtS1,
-     {50, 2, 0, PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.validation_)}},
-    {::_pbi::TcParser::MiniParse, {}},
+     {58, 2, 0, PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.validation_)}},
   }}, {{
     65535, 65535
   }}, {{
@@ -2729,16 +2736,19 @@ SubcategoryAttribute::_table_ = {
     // string type = 2 [json_name = "type"];
     {PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.type_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // optional string reference = 3 [json_name = "reference"];
+    // bool include_in_variants = 3 [json_name = "includeInVariants"];
+    {PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.include_in_variants_), _Internal::kHasBitsOffset + 4, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBool)},
+    // optional string reference = 4 [json_name = "reference"];
     {PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.reference_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // repeated string string_array = 4 [json_name = "stringArray"];
+    // repeated string string_array = 5 [json_name = "stringArray"];
     {PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.string_array_), -1, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kUtf8String | ::_fl::kRepSString)},
-    // optional bool is_multiple = 5 [json_name = "isMultiple"];
-    {PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.is_multiple_), _Internal::kHasBitsOffset + 4, 0,
+    // optional bool is_multiple = 6 [json_name = "isMultiple"];
+    {PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.is_multiple_), _Internal::kHasBitsOffset + 5, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
-    // .shared.v1.ValidationField validation = 6 [json_name = "validation"];
+    // .shared.v1.ValidationField validation = 7 [json_name = "validation"];
     {PROTOBUF_FIELD_OFFSET(SubcategoryAttribute, _impl_.validation_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
@@ -2746,7 +2756,7 @@ SubcategoryAttribute::_table_ = {
       {::_pbi::TcParser::GetTable<::shared::v1::ValidationField>()},
   }},
   {{
-    "\40\0\4\11\14\0\0\0"
+    "\40\0\4\0\11\14\0\0"
     "products.v1.SubcategoryAttribute"
     "type"
     "reference"
@@ -2815,34 +2825,43 @@ PROTOBUF_NOINLINE void SubcategoryAttribute::Clear() {
     }
   }
 
+  // bool include_in_variants = 3 [json_name = "includeInVariants"];
+  if ((this_._impl_._has_bits_[0] & 0x00000010u) != 0) {
+    if (this_._internal_include_in_variants() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteBoolToArray(
+          3, this_._internal_include_in_variants(), target);
+    }
+  }
+
   cached_has_bits = this_._impl_._has_bits_[0];
-  // optional string reference = 3 [json_name = "reference"];
+  // optional string reference = 4 [json_name = "reference"];
   if ((cached_has_bits & 0x00000002u) != 0) {
     const ::std::string& _s = this_._internal_reference();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.SubcategoryAttribute.reference");
-    target = stream->WriteStringMaybeAliased(3, _s, target);
+    target = stream->WriteStringMaybeAliased(4, _s, target);
   }
 
-  // repeated string string_array = 4 [json_name = "stringArray"];
+  // repeated string string_array = 5 [json_name = "stringArray"];
   for (int i = 0, n = this_._internal_string_array_size(); i < n; ++i) {
     const auto& s = this_._internal_string_array().Get(i);
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
         s.data(), static_cast<int>(s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.SubcategoryAttribute.string_array");
-    target = stream->WriteString(4, s, target);
+    target = stream->WriteString(5, s, target);
   }
 
-  // optional bool is_multiple = 5 [json_name = "isMultiple"];
-  if ((cached_has_bits & 0x00000010u) != 0) {
+  // optional bool is_multiple = 6 [json_name = "isMultiple"];
+  if ((cached_has_bits & 0x00000020u) != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(
-        5, this_._internal_is_multiple(), target);
+        6, this_._internal_is_multiple(), target);
   }
 
-  // .shared.v1.ValidationField validation = 6 [json_name = "validation"];
+  // .shared.v1.ValidationField validation = 7 [json_name = "validation"];
   if ((cached_has_bits & 0x00000004u) != 0) {
     target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-        6, *this_._impl_.validation_, this_._impl_.validation_->GetCachedSize(), target,
+        7, *this_._impl_.validation_, this_._impl_.validation_->GetCachedSize(), target,
         stream);
   }
 
@@ -2871,7 +2890,7 @@ PROTOBUF_NOINLINE void SubcategoryAttribute::Clear() {
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
    {
-    // repeated string string_array = 4 [json_name = "stringArray"];
+    // repeated string string_array = 5 [json_name = "stringArray"];
     {
       total_size +=
           1 * ::google::protobuf::internal::FromIntSize(this_._internal_string_array().size());
@@ -2882,8 +2901,8 @@ PROTOBUF_NOINLINE void SubcategoryAttribute::Clear() {
     }
   }
   cached_has_bits = this_._impl_._has_bits_[0];
-  total_size += static_cast<bool>(0x00000010u & cached_has_bits) * 2;
-  if ((cached_has_bits & 0x0000000fu) != 0) {
+  total_size += static_cast<bool>(0x00000020u & cached_has_bits) * 2;
+  if ((cached_has_bits & 0x0000001fu) != 0) {
     // string type = 2 [json_name = "type"];
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!this_._internal_type().empty()) {
@@ -2891,12 +2910,12 @@ PROTOBUF_NOINLINE void SubcategoryAttribute::Clear() {
                                         this_._internal_type());
       }
     }
-    // optional string reference = 3 [json_name = "reference"];
+    // optional string reference = 4 [json_name = "reference"];
     if ((cached_has_bits & 0x00000002u) != 0) {
       total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
                                       this_._internal_reference());
     }
-    // .shared.v1.ValidationField validation = 6 [json_name = "validation"];
+    // .shared.v1.ValidationField validation = 7 [json_name = "validation"];
     if ((cached_has_bits & 0x00000004u) != 0) {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.validation_);
@@ -2904,6 +2923,12 @@ PROTOBUF_NOINLINE void SubcategoryAttribute::Clear() {
     // bool required = 1 [json_name = "required"];
     if ((cached_has_bits & 0x00000008u) != 0) {
       if (this_._internal_required() != 0) {
+        total_size += 2;
+      }
+    }
+    // bool include_in_variants = 3 [json_name = "includeInVariants"];
+    if ((cached_has_bits & 0x00000010u) != 0) {
+      if (this_._internal_include_in_variants() != 0) {
         total_size += 2;
       }
     }
@@ -2923,7 +2948,7 @@ void SubcategoryAttribute::MergeImpl(::google::protobuf::MessageLite& to_msg, co
 
   _this->_internal_mutable_string_array()->MergeFrom(from._internal_string_array());
   cached_has_bits = from._impl_._has_bits_[0];
-  if ((cached_has_bits & 0x0000001fu) != 0) {
+  if ((cached_has_bits & 0x0000003fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
       if (!from._internal_type().empty()) {
         _this->_internal_set_type(from._internal_type());
@@ -2950,6 +2975,11 @@ void SubcategoryAttribute::MergeImpl(::google::protobuf::MessageLite& to_msg, co
       }
     }
     if ((cached_has_bits & 0x00000010u) != 0) {
+      if (from._internal_include_in_variants() != 0) {
+        _this->_impl_.include_in_variants_ = from._impl_.include_in_variants_;
+      }
+    }
+    if ((cached_has_bits & 0x00000020u) != 0) {
       _this->_impl_.is_multiple_ = from._impl_.is_multiple_;
     }
   }

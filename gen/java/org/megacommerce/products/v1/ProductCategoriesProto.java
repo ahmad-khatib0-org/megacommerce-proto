@@ -5043,11 +5043,22 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
 
     /**
      * <pre>
+     * wither this attributes can be customized for each variation or it must be shared
+     * by all of the product's variations
+     * </pre>
+     *
+     * <code>bool include_in_variants = 3 [json_name = "includeInVariants"];</code>
+     * @return The includeInVariants.
+     */
+    boolean getIncludeInVariants();
+
+    /**
+     * <pre>
      * reference id to the attributes table (E.g weight is common for many products types,
      * so instead rewriting it each time, we store it in another table)
      * </pre>
      *
-     * <code>optional string reference = 3 [json_name = "reference"];</code>
+     * <code>optional string reference = 4 [json_name = "reference"];</code>
      * @return Whether the reference field is set.
      */
     boolean hasReference();
@@ -5057,7 +5068,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * so instead rewriting it each time, we store it in another table)
      * </pre>
      *
-     * <code>optional string reference = 3 [json_name = "reference"];</code>
+     * <code>optional string reference = 4 [json_name = "reference"];</code>
      * @return The reference.
      */
     java.lang.String getReference();
@@ -5067,7 +5078,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * so instead rewriting it each time, we store it in another table)
      * </pre>
      *
-     * <code>optional string reference = 3 [json_name = "reference"];</code>
+     * <code>optional string reference = 4 [json_name = "reference"];</code>
      * @return The bytes for reference.
      */
     com.google.protobuf.ByteString
@@ -5078,7 +5089,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * for select type (E.g. ['white', 'black', ...])
      * </pre>
      *
-     * <code>repeated string string_array = 4 [json_name = "stringArray"];</code>
+     * <code>repeated string string_array = 5 [json_name = "stringArray"];</code>
      * @return A list containing the stringArray.
      */
     java.util.List<java.lang.String>
@@ -5088,7 +5099,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * for select type (E.g. ['white', 'black', ...])
      * </pre>
      *
-     * <code>repeated string string_array = 4 [json_name = "stringArray"];</code>
+     * <code>repeated string string_array = 5 [json_name = "stringArray"];</code>
      * @return The count of stringArray.
      */
     int getStringArrayCount();
@@ -5097,7 +5108,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * for select type (E.g. ['white', 'black', ...])
      * </pre>
      *
-     * <code>repeated string string_array = 4 [json_name = "stringArray"];</code>
+     * <code>repeated string string_array = 5 [json_name = "stringArray"];</code>
      * @param index The index of the element to return.
      * @return The stringArray at the given index.
      */
@@ -5107,7 +5118,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * for select type (E.g. ['white', 'black', ...])
      * </pre>
      *
-     * <code>repeated string string_array = 4 [json_name = "stringArray"];</code>
+     * <code>repeated string string_array = 5 [json_name = "stringArray"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the stringArray at the given index.
      */
@@ -5119,7 +5130,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * for select type (E.g. multiple colors)
      * </pre>
      *
-     * <code>optional bool is_multiple = 5 [json_name = "isMultiple"];</code>
+     * <code>optional bool is_multiple = 6 [json_name = "isMultiple"];</code>
      * @return Whether the isMultiple field is set.
      */
     boolean hasIsMultiple();
@@ -5128,7 +5139,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * for select type (E.g. multiple colors)
      * </pre>
      *
-     * <code>optional bool is_multiple = 5 [json_name = "isMultiple"];</code>
+     * <code>optional bool is_multiple = 6 [json_name = "isMultiple"];</code>
      * @return The isMultiple.
      */
     boolean getIsMultiple();
@@ -5138,7 +5149,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * validation rules of this attribute
      * </pre>
      *
-     * <code>.shared.v1.ValidationField validation = 6 [json_name = "validation"];</code>
+     * <code>.shared.v1.ValidationField validation = 7 [json_name = "validation"];</code>
      * @return Whether the validation field is set.
      */
     boolean hasValidation();
@@ -5147,7 +5158,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * validation rules of this attribute
      * </pre>
      *
-     * <code>.shared.v1.ValidationField validation = 6 [json_name = "validation"];</code>
+     * <code>.shared.v1.ValidationField validation = 7 [json_name = "validation"];</code>
      * @return The validation.
      */
     org.megacommerce.shared.v1.ValidationProto.ValidationField getValidation();
@@ -5156,7 +5167,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * validation rules of this attribute
      * </pre>
      *
-     * <code>.shared.v1.ValidationField validation = 6 [json_name = "validation"];</code>
+     * <code>.shared.v1.ValidationField validation = 7 [json_name = "validation"];</code>
      */
     org.megacommerce.shared.v1.ValidationProto.ValidationFieldOrBuilder getValidationOrBuilder();
   }
@@ -5268,7 +5279,23 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
       }
     }
 
-    public static final int REFERENCE_FIELD_NUMBER = 3;
+    public static final int INCLUDE_IN_VARIANTS_FIELD_NUMBER = 3;
+    private boolean includeInVariants_ = false;
+    /**
+     * <pre>
+     * wither this attributes can be customized for each variation or it must be shared
+     * by all of the product's variations
+     * </pre>
+     *
+     * <code>bool include_in_variants = 3 [json_name = "includeInVariants"];</code>
+     * @return The includeInVariants.
+     */
+    @java.lang.Override
+    public boolean getIncludeInVariants() {
+      return includeInVariants_;
+    }
+
+    public static final int REFERENCE_FIELD_NUMBER = 4;
     @SuppressWarnings("serial")
     private volatile java.lang.Object reference_ = "";
     /**
@@ -5277,7 +5304,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * so instead rewriting it each time, we store it in another table)
      * </pre>
      *
-     * <code>optional string reference = 3 [json_name = "reference"];</code>
+     * <code>optional string reference = 4 [json_name = "reference"];</code>
      * @return Whether the reference field is set.
      */
     @java.lang.Override
@@ -5290,7 +5317,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * so instead rewriting it each time, we store it in another table)
      * </pre>
      *
-     * <code>optional string reference = 3 [json_name = "reference"];</code>
+     * <code>optional string reference = 4 [json_name = "reference"];</code>
      * @return The reference.
      */
     @java.lang.Override
@@ -5312,7 +5339,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * so instead rewriting it each time, we store it in another table)
      * </pre>
      *
-     * <code>optional string reference = 3 [json_name = "reference"];</code>
+     * <code>optional string reference = 4 [json_name = "reference"];</code>
      * @return The bytes for reference.
      */
     @java.lang.Override
@@ -5330,7 +5357,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
       }
     }
 
-    public static final int STRING_ARRAY_FIELD_NUMBER = 4;
+    public static final int STRING_ARRAY_FIELD_NUMBER = 5;
     @SuppressWarnings("serial")
     private com.google.protobuf.LazyStringArrayList stringArray_ =
         com.google.protobuf.LazyStringArrayList.emptyList();
@@ -5339,7 +5366,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * for select type (E.g. ['white', 'black', ...])
      * </pre>
      *
-     * <code>repeated string string_array = 4 [json_name = "stringArray"];</code>
+     * <code>repeated string string_array = 5 [json_name = "stringArray"];</code>
      * @return A list containing the stringArray.
      */
     public com.google.protobuf.ProtocolStringList
@@ -5351,7 +5378,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * for select type (E.g. ['white', 'black', ...])
      * </pre>
      *
-     * <code>repeated string string_array = 4 [json_name = "stringArray"];</code>
+     * <code>repeated string string_array = 5 [json_name = "stringArray"];</code>
      * @return The count of stringArray.
      */
     public int getStringArrayCount() {
@@ -5362,7 +5389,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * for select type (E.g. ['white', 'black', ...])
      * </pre>
      *
-     * <code>repeated string string_array = 4 [json_name = "stringArray"];</code>
+     * <code>repeated string string_array = 5 [json_name = "stringArray"];</code>
      * @param index The index of the element to return.
      * @return The stringArray at the given index.
      */
@@ -5374,7 +5401,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * for select type (E.g. ['white', 'black', ...])
      * </pre>
      *
-     * <code>repeated string string_array = 4 [json_name = "stringArray"];</code>
+     * <code>repeated string string_array = 5 [json_name = "stringArray"];</code>
      * @param index The index of the value to return.
      * @return The bytes of the stringArray at the given index.
      */
@@ -5383,14 +5410,14 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
       return stringArray_.getByteString(index);
     }
 
-    public static final int IS_MULTIPLE_FIELD_NUMBER = 5;
+    public static final int IS_MULTIPLE_FIELD_NUMBER = 6;
     private boolean isMultiple_ = false;
     /**
      * <pre>
      * for select type (E.g. multiple colors)
      * </pre>
      *
-     * <code>optional bool is_multiple = 5 [json_name = "isMultiple"];</code>
+     * <code>optional bool is_multiple = 6 [json_name = "isMultiple"];</code>
      * @return Whether the isMultiple field is set.
      */
     @java.lang.Override
@@ -5402,7 +5429,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * for select type (E.g. multiple colors)
      * </pre>
      *
-     * <code>optional bool is_multiple = 5 [json_name = "isMultiple"];</code>
+     * <code>optional bool is_multiple = 6 [json_name = "isMultiple"];</code>
      * @return The isMultiple.
      */
     @java.lang.Override
@@ -5410,14 +5437,14 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
       return isMultiple_;
     }
 
-    public static final int VALIDATION_FIELD_NUMBER = 6;
+    public static final int VALIDATION_FIELD_NUMBER = 7;
     private org.megacommerce.shared.v1.ValidationProto.ValidationField validation_;
     /**
      * <pre>
      * validation rules of this attribute
      * </pre>
      *
-     * <code>.shared.v1.ValidationField validation = 6 [json_name = "validation"];</code>
+     * <code>.shared.v1.ValidationField validation = 7 [json_name = "validation"];</code>
      * @return Whether the validation field is set.
      */
     @java.lang.Override
@@ -5429,7 +5456,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * validation rules of this attribute
      * </pre>
      *
-     * <code>.shared.v1.ValidationField validation = 6 [json_name = "validation"];</code>
+     * <code>.shared.v1.ValidationField validation = 7 [json_name = "validation"];</code>
      * @return The validation.
      */
     @java.lang.Override
@@ -5441,7 +5468,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
      * validation rules of this attribute
      * </pre>
      *
-     * <code>.shared.v1.ValidationField validation = 6 [json_name = "validation"];</code>
+     * <code>.shared.v1.ValidationField validation = 7 [json_name = "validation"];</code>
      */
     @java.lang.Override
     public org.megacommerce.shared.v1.ValidationProto.ValidationFieldOrBuilder getValidationOrBuilder() {
@@ -5468,17 +5495,20 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(type_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 2, type_);
       }
+      if (includeInVariants_ != false) {
+        output.writeBool(3, includeInVariants_);
+      }
       if (((bitField0_ & 0x00000001) != 0)) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 3, reference_);
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, reference_);
       }
       for (int i = 0; i < stringArray_.size(); i++) {
-        com.google.protobuf.GeneratedMessage.writeString(output, 4, stringArray_.getRaw(i));
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, stringArray_.getRaw(i));
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeBool(5, isMultiple_);
+        output.writeBool(6, isMultiple_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
-        output.writeMessage(6, getValidation());
+        output.writeMessage(7, getValidation());
       }
       getUnknownFields().writeTo(output);
     }
@@ -5496,8 +5526,12 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(type_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(2, type_);
       }
+      if (includeInVariants_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(3, includeInVariants_);
+      }
       if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, reference_);
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, reference_);
       }
       {
         int dataSize = 0;
@@ -5509,11 +5543,11 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(5, isMultiple_);
+          .computeBoolSize(6, isMultiple_);
       }
       if (((bitField0_ & 0x00000004) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getValidation());
+          .computeMessageSize(7, getValidation());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -5534,6 +5568,8 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
           != other.getRequired()) return false;
       if (!getType()
           .equals(other.getType())) return false;
+      if (getIncludeInVariants()
+          != other.getIncludeInVariants()) return false;
       if (hasReference() != other.hasReference()) return false;
       if (hasReference()) {
         if (!getReference()
@@ -5567,6 +5603,9 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
           getRequired());
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType().hashCode();
+      hash = (37 * hash) + INCLUDE_IN_VARIANTS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIncludeInVariants());
       if (hasReference()) {
         hash = (37 * hash) + REFERENCE_FIELD_NUMBER;
         hash = (53 * hash) + getReference().hashCode();
@@ -5727,6 +5766,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
         bitField0_ = 0;
         required_ = false;
         type_ = "";
+        includeInVariants_ = false;
         reference_ = "";
         stringArray_ =
             com.google.protobuf.LazyStringArrayList.emptyList();
@@ -5775,20 +5815,23 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.type_ = type_;
         }
-        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.includeInVariants_ = includeInVariants_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.reference_ = reference_;
           to_bitField0_ |= 0x00000001;
         }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
+        if (((from_bitField0_ & 0x00000010) != 0)) {
           stringArray_.makeImmutable();
           result.stringArray_ = stringArray_;
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
+        if (((from_bitField0_ & 0x00000020) != 0)) {
           result.isMultiple_ = isMultiple_;
           to_bitField0_ |= 0x00000002;
         }
-        if (((from_bitField0_ & 0x00000020) != 0)) {
+        if (((from_bitField0_ & 0x00000040) != 0)) {
           result.validation_ = validationBuilder_ == null
               ? validation_
               : validationBuilder_.build();
@@ -5817,15 +5860,18 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (other.getIncludeInVariants() != false) {
+          setIncludeInVariants(other.getIncludeInVariants());
+        }
         if (other.hasReference()) {
           reference_ = other.reference_;
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
           onChanged();
         }
         if (!other.stringArray_.isEmpty()) {
           if (stringArray_.isEmpty()) {
             stringArray_ = other.stringArray_;
-            bitField0_ |= 0x00000008;
+            bitField0_ |= 0x00000010;
           } else {
             ensureStringArrayIsMutable();
             stringArray_.addAll(other.stringArray_);
@@ -5874,29 +5920,34 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
-              case 26: {
-                reference_ = input.readStringRequireUtf8();
+              case 24: {
+                includeInVariants_ = input.readBool();
                 bitField0_ |= 0x00000004;
                 break;
-              } // case 26
+              } // case 24
               case 34: {
+                reference_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 42: {
                 java.lang.String s = input.readStringRequireUtf8();
                 ensureStringArrayIsMutable();
                 stringArray_.add(s);
                 break;
-              } // case 34
-              case 40: {
+              } // case 42
+              case 48: {
                 isMultiple_ = input.readBool();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
-              } // case 40
-              case 50: {
+              } // case 48
+              case 58: {
                 input.readMessage(
                     internalGetValidationFieldBuilder().getBuilder(),
                     extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
-              } // case 50
+              } // case 58
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -6050,6 +6101,53 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
         return this;
       }
 
+      private boolean includeInVariants_ ;
+      /**
+       * <pre>
+       * wither this attributes can be customized for each variation or it must be shared
+       * by all of the product's variations
+       * </pre>
+       *
+       * <code>bool include_in_variants = 3 [json_name = "includeInVariants"];</code>
+       * @return The includeInVariants.
+       */
+      @java.lang.Override
+      public boolean getIncludeInVariants() {
+        return includeInVariants_;
+      }
+      /**
+       * <pre>
+       * wither this attributes can be customized for each variation or it must be shared
+       * by all of the product's variations
+       * </pre>
+       *
+       * <code>bool include_in_variants = 3 [json_name = "includeInVariants"];</code>
+       * @param value The includeInVariants to set.
+       * @return This builder for chaining.
+       */
+      public Builder setIncludeInVariants(boolean value) {
+
+        includeInVariants_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * wither this attributes can be customized for each variation or it must be shared
+       * by all of the product's variations
+       * </pre>
+       *
+       * <code>bool include_in_variants = 3 [json_name = "includeInVariants"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearIncludeInVariants() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        includeInVariants_ = false;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object reference_ = "";
       /**
        * <pre>
@@ -6057,11 +6155,11 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * so instead rewriting it each time, we store it in another table)
        * </pre>
        *
-       * <code>optional string reference = 3 [json_name = "reference"];</code>
+       * <code>optional string reference = 4 [json_name = "reference"];</code>
        * @return Whether the reference field is set.
        */
       public boolean hasReference() {
-        return ((bitField0_ & 0x00000004) != 0);
+        return ((bitField0_ & 0x00000008) != 0);
       }
       /**
        * <pre>
@@ -6069,7 +6167,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * so instead rewriting it each time, we store it in another table)
        * </pre>
        *
-       * <code>optional string reference = 3 [json_name = "reference"];</code>
+       * <code>optional string reference = 4 [json_name = "reference"];</code>
        * @return The reference.
        */
       public java.lang.String getReference() {
@@ -6090,7 +6188,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * so instead rewriting it each time, we store it in another table)
        * </pre>
        *
-       * <code>optional string reference = 3 [json_name = "reference"];</code>
+       * <code>optional string reference = 4 [json_name = "reference"];</code>
        * @return The bytes for reference.
        */
       public com.google.protobuf.ByteString
@@ -6112,7 +6210,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * so instead rewriting it each time, we store it in another table)
        * </pre>
        *
-       * <code>optional string reference = 3 [json_name = "reference"];</code>
+       * <code>optional string reference = 4 [json_name = "reference"];</code>
        * @param value The reference to set.
        * @return This builder for chaining.
        */
@@ -6120,7 +6218,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         reference_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -6130,12 +6228,12 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * so instead rewriting it each time, we store it in another table)
        * </pre>
        *
-       * <code>optional string reference = 3 [json_name = "reference"];</code>
+       * <code>optional string reference = 4 [json_name = "reference"];</code>
        * @return This builder for chaining.
        */
       public Builder clearReference() {
         reference_ = getDefaultInstance().getReference();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
@@ -6145,7 +6243,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * so instead rewriting it each time, we store it in another table)
        * </pre>
        *
-       * <code>optional string reference = 3 [json_name = "reference"];</code>
+       * <code>optional string reference = 4 [json_name = "reference"];</code>
        * @param value The bytes for reference to set.
        * @return This builder for chaining.
        */
@@ -6154,7 +6252,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         reference_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -6165,14 +6263,14 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
         if (!stringArray_.isModifiable()) {
           stringArray_ = new com.google.protobuf.LazyStringArrayList(stringArray_);
         }
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
       }
       /**
        * <pre>
        * for select type (E.g. ['white', 'black', ...])
        * </pre>
        *
-       * <code>repeated string string_array = 4 [json_name = "stringArray"];</code>
+       * <code>repeated string string_array = 5 [json_name = "stringArray"];</code>
        * @return A list containing the stringArray.
        */
       public com.google.protobuf.ProtocolStringList
@@ -6185,7 +6283,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * for select type (E.g. ['white', 'black', ...])
        * </pre>
        *
-       * <code>repeated string string_array = 4 [json_name = "stringArray"];</code>
+       * <code>repeated string string_array = 5 [json_name = "stringArray"];</code>
        * @return The count of stringArray.
        */
       public int getStringArrayCount() {
@@ -6196,7 +6294,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * for select type (E.g. ['white', 'black', ...])
        * </pre>
        *
-       * <code>repeated string string_array = 4 [json_name = "stringArray"];</code>
+       * <code>repeated string string_array = 5 [json_name = "stringArray"];</code>
        * @param index The index of the element to return.
        * @return The stringArray at the given index.
        */
@@ -6208,7 +6306,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * for select type (E.g. ['white', 'black', ...])
        * </pre>
        *
-       * <code>repeated string string_array = 4 [json_name = "stringArray"];</code>
+       * <code>repeated string string_array = 5 [json_name = "stringArray"];</code>
        * @param index The index of the value to return.
        * @return The bytes of the stringArray at the given index.
        */
@@ -6221,7 +6319,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * for select type (E.g. ['white', 'black', ...])
        * </pre>
        *
-       * <code>repeated string string_array = 4 [json_name = "stringArray"];</code>
+       * <code>repeated string string_array = 5 [json_name = "stringArray"];</code>
        * @param index The index to set the value at.
        * @param value The stringArray to set.
        * @return This builder for chaining.
@@ -6231,7 +6329,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
         if (value == null) { throw new NullPointerException(); }
         ensureStringArrayIsMutable();
         stringArray_.set(index, value);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -6240,7 +6338,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * for select type (E.g. ['white', 'black', ...])
        * </pre>
        *
-       * <code>repeated string string_array = 4 [json_name = "stringArray"];</code>
+       * <code>repeated string string_array = 5 [json_name = "stringArray"];</code>
        * @param value The stringArray to add.
        * @return This builder for chaining.
        */
@@ -6249,7 +6347,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
         if (value == null) { throw new NullPointerException(); }
         ensureStringArrayIsMutable();
         stringArray_.add(value);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -6258,7 +6356,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * for select type (E.g. ['white', 'black', ...])
        * </pre>
        *
-       * <code>repeated string string_array = 4 [json_name = "stringArray"];</code>
+       * <code>repeated string string_array = 5 [json_name = "stringArray"];</code>
        * @param values The stringArray to add.
        * @return This builder for chaining.
        */
@@ -6267,7 +6365,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
         ensureStringArrayIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, stringArray_);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -6276,13 +6374,13 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * for select type (E.g. ['white', 'black', ...])
        * </pre>
        *
-       * <code>repeated string string_array = 4 [json_name = "stringArray"];</code>
+       * <code>repeated string string_array = 5 [json_name = "stringArray"];</code>
        * @return This builder for chaining.
        */
       public Builder clearStringArray() {
         stringArray_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000008);;
+        bitField0_ = (bitField0_ & ~0x00000010);;
         onChanged();
         return this;
       }
@@ -6291,7 +6389,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * for select type (E.g. ['white', 'black', ...])
        * </pre>
        *
-       * <code>repeated string string_array = 4 [json_name = "stringArray"];</code>
+       * <code>repeated string string_array = 5 [json_name = "stringArray"];</code>
        * @param value The bytes of the stringArray to add.
        * @return This builder for chaining.
        */
@@ -6301,7 +6399,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
         checkByteStringIsUtf8(value);
         ensureStringArrayIsMutable();
         stringArray_.add(value);
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
@@ -6312,19 +6410,19 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * for select type (E.g. multiple colors)
        * </pre>
        *
-       * <code>optional bool is_multiple = 5 [json_name = "isMultiple"];</code>
+       * <code>optional bool is_multiple = 6 [json_name = "isMultiple"];</code>
        * @return Whether the isMultiple field is set.
        */
       @java.lang.Override
       public boolean hasIsMultiple() {
-        return ((bitField0_ & 0x00000010) != 0);
+        return ((bitField0_ & 0x00000020) != 0);
       }
       /**
        * <pre>
        * for select type (E.g. multiple colors)
        * </pre>
        *
-       * <code>optional bool is_multiple = 5 [json_name = "isMultiple"];</code>
+       * <code>optional bool is_multiple = 6 [json_name = "isMultiple"];</code>
        * @return The isMultiple.
        */
       @java.lang.Override
@@ -6336,14 +6434,14 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * for select type (E.g. multiple colors)
        * </pre>
        *
-       * <code>optional bool is_multiple = 5 [json_name = "isMultiple"];</code>
+       * <code>optional bool is_multiple = 6 [json_name = "isMultiple"];</code>
        * @param value The isMultiple to set.
        * @return This builder for chaining.
        */
       public Builder setIsMultiple(boolean value) {
 
         isMultiple_ = value;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -6352,11 +6450,11 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * for select type (E.g. multiple colors)
        * </pre>
        *
-       * <code>optional bool is_multiple = 5 [json_name = "isMultiple"];</code>
+       * <code>optional bool is_multiple = 6 [json_name = "isMultiple"];</code>
        * @return This builder for chaining.
        */
       public Builder clearIsMultiple() {
-        bitField0_ = (bitField0_ & ~0x00000010);
+        bitField0_ = (bitField0_ & ~0x00000020);
         isMultiple_ = false;
         onChanged();
         return this;
@@ -6370,18 +6468,18 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * validation rules of this attribute
        * </pre>
        *
-       * <code>.shared.v1.ValidationField validation = 6 [json_name = "validation"];</code>
+       * <code>.shared.v1.ValidationField validation = 7 [json_name = "validation"];</code>
        * @return Whether the validation field is set.
        */
       public boolean hasValidation() {
-        return ((bitField0_ & 0x00000020) != 0);
+        return ((bitField0_ & 0x00000040) != 0);
       }
       /**
        * <pre>
        * validation rules of this attribute
        * </pre>
        *
-       * <code>.shared.v1.ValidationField validation = 6 [json_name = "validation"];</code>
+       * <code>.shared.v1.ValidationField validation = 7 [json_name = "validation"];</code>
        * @return The validation.
        */
       public org.megacommerce.shared.v1.ValidationProto.ValidationField getValidation() {
@@ -6396,7 +6494,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * validation rules of this attribute
        * </pre>
        *
-       * <code>.shared.v1.ValidationField validation = 6 [json_name = "validation"];</code>
+       * <code>.shared.v1.ValidationField validation = 7 [json_name = "validation"];</code>
        */
       public Builder setValidation(org.megacommerce.shared.v1.ValidationProto.ValidationField value) {
         if (validationBuilder_ == null) {
@@ -6407,7 +6505,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
         } else {
           validationBuilder_.setMessage(value);
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -6416,7 +6514,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * validation rules of this attribute
        * </pre>
        *
-       * <code>.shared.v1.ValidationField validation = 6 [json_name = "validation"];</code>
+       * <code>.shared.v1.ValidationField validation = 7 [json_name = "validation"];</code>
        */
       public Builder setValidation(
           org.megacommerce.shared.v1.ValidationProto.ValidationField.Builder builderForValue) {
@@ -6425,7 +6523,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
         } else {
           validationBuilder_.setMessage(builderForValue.build());
         }
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
@@ -6434,11 +6532,11 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * validation rules of this attribute
        * </pre>
        *
-       * <code>.shared.v1.ValidationField validation = 6 [json_name = "validation"];</code>
+       * <code>.shared.v1.ValidationField validation = 7 [json_name = "validation"];</code>
        */
       public Builder mergeValidation(org.megacommerce.shared.v1.ValidationProto.ValidationField value) {
         if (validationBuilder_ == null) {
-          if (((bitField0_ & 0x00000020) != 0) &&
+          if (((bitField0_ & 0x00000040) != 0) &&
             validation_ != null &&
             validation_ != org.megacommerce.shared.v1.ValidationProto.ValidationField.getDefaultInstance()) {
             getValidationBuilder().mergeFrom(value);
@@ -6449,7 +6547,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
           validationBuilder_.mergeFrom(value);
         }
         if (validation_ != null) {
-          bitField0_ |= 0x00000020;
+          bitField0_ |= 0x00000040;
           onChanged();
         }
         return this;
@@ -6459,10 +6557,10 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * validation rules of this attribute
        * </pre>
        *
-       * <code>.shared.v1.ValidationField validation = 6 [json_name = "validation"];</code>
+       * <code>.shared.v1.ValidationField validation = 7 [json_name = "validation"];</code>
        */
       public Builder clearValidation() {
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         validation_ = null;
         if (validationBuilder_ != null) {
           validationBuilder_.dispose();
@@ -6476,10 +6574,10 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * validation rules of this attribute
        * </pre>
        *
-       * <code>.shared.v1.ValidationField validation = 6 [json_name = "validation"];</code>
+       * <code>.shared.v1.ValidationField validation = 7 [json_name = "validation"];</code>
        */
       public org.megacommerce.shared.v1.ValidationProto.ValidationField.Builder getValidationBuilder() {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
         return internalGetValidationFieldBuilder().getBuilder();
       }
@@ -6488,7 +6586,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * validation rules of this attribute
        * </pre>
        *
-       * <code>.shared.v1.ValidationField validation = 6 [json_name = "validation"];</code>
+       * <code>.shared.v1.ValidationField validation = 7 [json_name = "validation"];</code>
        */
       public org.megacommerce.shared.v1.ValidationProto.ValidationFieldOrBuilder getValidationOrBuilder() {
         if (validationBuilder_ != null) {
@@ -6503,7 +6601,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
        * validation rules of this attribute
        * </pre>
        *
-       * <code>.shared.v1.ValidationField validation = 6 [json_name = "validation"];</code>
+       * <code>.shared.v1.ValidationField validation = 7 [json_name = "validation"];</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           org.megacommerce.shared.v1.ValidationProto.ValidationField, org.megacommerce.shared.v1.ValidationProto.ValidationField.Builder, org.megacommerce.shared.v1.ValidationProto.ValidationFieldOrBuilder> 
@@ -6654,17 +6752,19 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
       "roducts.v1.Subcategory.AttributesEntryR\n" +
       "attributes\032`\n\017AttributesEntry\022\020\n\003key\030\001 \001" +
       "(\tR\003key\0227\n\005value\030\002 \001(\0132!.products.v1.Sub" +
-      "categoryAttributeR\005value:\0028\001\"\214\002\n\024Subcate" +
+      "categoryAttributeR\005value:\0028\001\"\274\002\n\024Subcate" +
       "goryAttribute\022\032\n\010required\030\001 \001(\010R\010require" +
-      "d\022\022\n\004type\030\002 \001(\tR\004type\022!\n\treference\030\003 \001(\t" +
-      "H\000R\treference\210\001\001\022!\n\014string_array\030\004 \003(\tR\013" +
-      "stringArray\022$\n\013is_multiple\030\005 \001(\010H\001R\nisMu" +
-      "ltiple\210\001\001\022:\n\nvalidation\030\006 \001(\0132\032.shared.v" +
-      "1.ValidationFieldR\nvalidationB\014\n\n_refere" +
-      "nceB\016\n\014_is_multipleB\200\001\n\034org.megacommerce" +
-      ".products.v1B\026ProductCategoriesProtoZEgi" +
-      "thub.com/ahmad-khatib0-org/megacommerce-" +
-      "proto/gen/go/products/v1;v1\370\001\001b\006proto3"
+      "d\022\022\n\004type\030\002 \001(\tR\004type\022.\n\023include_in_vari" +
+      "ants\030\003 \001(\010R\021includeInVariants\022!\n\treferen" +
+      "ce\030\004 \001(\tH\000R\treference\210\001\001\022!\n\014string_array" +
+      "\030\005 \003(\tR\013stringArray\022$\n\013is_multiple\030\006 \001(\010" +
+      "H\001R\nisMultiple\210\001\001\022:\n\nvalidation\030\007 \001(\0132\032." +
+      "shared.v1.ValidationFieldR\nvalidationB\014\n" +
+      "\n_referenceB\016\n\014_is_multipleB\200\001\n\034org.mega" +
+      "commerce.products.v1B\026ProductCategoriesP" +
+      "rotoZEgithub.com/ahmad-khatib0-org/megac" +
+      "ommerce-proto/gen/go/products/v1;v1\370\001\001b\006" +
+      "proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6725,7 +6825,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
     internal_static_products_v1_SubcategoryAttribute_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_SubcategoryAttribute_descriptor,
-        new java.lang.String[] { "Required", "Type", "Reference", "StringArray", "IsMultiple", "Validation", });
+        new java.lang.String[] { "Required", "Type", "IncludeInVariants", "Reference", "StringArray", "IsMultiple", "Validation", });
     descriptor.resolveAllFeaturesImmutable();
     org.megacommerce.shared.v1.TypesProto.getDescriptor();
     org.megacommerce.shared.v1.ValidationProto.getDescriptor();

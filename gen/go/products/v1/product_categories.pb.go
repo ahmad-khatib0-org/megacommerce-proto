@@ -309,15 +309,18 @@ type SubcategoryAttribute struct {
 	Required bool `protobuf:"varint,1,opt,name=required,proto3" json:"required,omitempty"`
 	// input, select, tags ...
 	Type string `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
+	// wither this attributes can be customized for each variation or it must be shared
+	// by all of the product's variations
+	IncludeInVariants bool `protobuf:"varint,3,opt,name=include_in_variants,json=includeInVariants,proto3" json:"include_in_variants,omitempty"`
 	// reference id to the attributes table (E.g weight is common for many products types,
 	// so instead rewriting it each time, we store it in another table)
-	Reference *string `protobuf:"bytes,3,opt,name=reference,proto3,oneof" json:"reference,omitempty"`
+	Reference *string `protobuf:"bytes,4,opt,name=reference,proto3,oneof" json:"reference,omitempty"`
 	// for select type (E.g. ['white', 'black', ...])
-	StringArray []string `protobuf:"bytes,4,rep,name=string_array,json=stringArray,proto3" json:"string_array,omitempty"`
+	StringArray []string `protobuf:"bytes,5,rep,name=string_array,json=stringArray,proto3" json:"string_array,omitempty"`
 	// for select type (E.g. multiple colors)
-	IsMultiple *bool `protobuf:"varint,5,opt,name=is_multiple,json=isMultiple,proto3,oneof" json:"is_multiple,omitempty"`
+	IsMultiple *bool `protobuf:"varint,6,opt,name=is_multiple,json=isMultiple,proto3,oneof" json:"is_multiple,omitempty"`
 	// validation rules of this attribute
-	Validation    *v1.ValidationField `protobuf:"bytes,6,opt,name=validation,proto3" json:"validation,omitempty"`
+	Validation    *v1.ValidationField `protobuf:"bytes,7,opt,name=validation,proto3" json:"validation,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -364,6 +367,13 @@ func (x *SubcategoryAttribute) GetType() string {
 		return x.Type
 	}
 	return ""
+}
+
+func (x *SubcategoryAttribute) GetIncludeInVariants() bool {
+	if x != nil {
+		return x.IncludeInVariants
+	}
+	return false
 }
 
 func (x *SubcategoryAttribute) GetReference() string {
@@ -436,16 +446,17 @@ const file_products_v1_product_categories_proto_rawDesc = "" +
 	"attributes\x1a`\n" +
 	"\x0fAttributesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x127\n" +
-	"\x05value\x18\x02 \x01(\v2!.products.v1.SubcategoryAttributeR\x05value:\x028\x01\"\x8c\x02\n" +
+	"\x05value\x18\x02 \x01(\v2!.products.v1.SubcategoryAttributeR\x05value:\x028\x01\"\xbc\x02\n" +
 	"\x14SubcategoryAttribute\x12\x1a\n" +
 	"\brequired\x18\x01 \x01(\bR\brequired\x12\x12\n" +
-	"\x04type\x18\x02 \x01(\tR\x04type\x12!\n" +
-	"\treference\x18\x03 \x01(\tH\x00R\treference\x88\x01\x01\x12!\n" +
-	"\fstring_array\x18\x04 \x03(\tR\vstringArray\x12$\n" +
-	"\vis_multiple\x18\x05 \x01(\bH\x01R\n" +
+	"\x04type\x18\x02 \x01(\tR\x04type\x12.\n" +
+	"\x13include_in_variants\x18\x03 \x01(\bR\x11includeInVariants\x12!\n" +
+	"\treference\x18\x04 \x01(\tH\x00R\treference\x88\x01\x01\x12!\n" +
+	"\fstring_array\x18\x05 \x03(\tR\vstringArray\x12$\n" +
+	"\vis_multiple\x18\x06 \x01(\bH\x01R\n" +
 	"isMultiple\x88\x01\x01\x12:\n" +
 	"\n" +
-	"validation\x18\x06 \x01(\v2\x1a.shared.v1.ValidationFieldR\n" +
+	"validation\x18\a \x01(\v2\x1a.shared.v1.ValidationFieldR\n" +
 	"validationB\f\n" +
 	"\n" +
 	"_referenceB\x0e\n" +

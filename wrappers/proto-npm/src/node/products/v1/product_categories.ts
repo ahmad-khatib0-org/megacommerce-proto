@@ -67,6 +67,11 @@ export interface SubcategoryAttribute {
   /** input, select, tags ... */
   type: string;
   /**
+   * wither this attributes can be customized for each variation or it must be shared
+   * by all of the product's variations
+   */
+  includeInVariants: boolean;
+  /**
    * reference id to the attributes table (E.g weight is common for many products types,
    * so instead rewriting it each time, we store it in another table)
    */
@@ -948,6 +953,7 @@ function createBaseSubcategoryAttribute(): SubcategoryAttribute {
   return {
     required: false,
     type: "",
+    includeInVariants: false,
     reference: undefined,
     stringArray: [],
     isMultiple: undefined,
@@ -963,17 +969,20 @@ export const SubcategoryAttribute: MessageFns<SubcategoryAttribute> = {
     if (message.type !== "") {
       writer.uint32(18).string(message.type);
     }
+    if (message.includeInVariants !== false) {
+      writer.uint32(24).bool(message.includeInVariants);
+    }
     if (message.reference !== undefined) {
-      writer.uint32(26).string(message.reference);
+      writer.uint32(34).string(message.reference);
     }
     for (const v of message.stringArray) {
-      writer.uint32(34).string(v!);
+      writer.uint32(42).string(v!);
     }
     if (message.isMultiple !== undefined) {
-      writer.uint32(40).bool(message.isMultiple);
+      writer.uint32(48).bool(message.isMultiple);
     }
     if (message.validation !== undefined) {
-      ValidationField.encode(message.validation, writer.uint32(50).fork()).join();
+      ValidationField.encode(message.validation, writer.uint32(58).fork()).join();
     }
     return writer;
   },
@@ -1002,11 +1011,11 @@ export const SubcategoryAttribute: MessageFns<SubcategoryAttribute> = {
           continue;
         }
         case 3: {
-          if (tag !== 26) {
+          if (tag !== 24) {
             break;
           }
 
-          message.reference = reader.string();
+          message.includeInVariants = reader.bool();
           continue;
         }
         case 4: {
@@ -1014,19 +1023,27 @@ export const SubcategoryAttribute: MessageFns<SubcategoryAttribute> = {
             break;
           }
 
-          message.stringArray.push(reader.string());
+          message.reference = reader.string();
           continue;
         }
         case 5: {
-          if (tag !== 40) {
+          if (tag !== 42) {
+            break;
+          }
+
+          message.stringArray.push(reader.string());
+          continue;
+        }
+        case 6: {
+          if (tag !== 48) {
             break;
           }
 
           message.isMultiple = reader.bool();
           continue;
         }
-        case 6: {
-          if (tag !== 50) {
+        case 7: {
+          if (tag !== 58) {
             break;
           }
 
@@ -1046,6 +1063,7 @@ export const SubcategoryAttribute: MessageFns<SubcategoryAttribute> = {
     return {
       required: isSet(object.required) ? globalThis.Boolean(object.required) : false,
       type: isSet(object.type) ? globalThis.String(object.type) : "",
+      includeInVariants: isSet(object.includeInVariants) ? globalThis.Boolean(object.includeInVariants) : false,
       reference: isSet(object.reference) ? globalThis.String(object.reference) : undefined,
       stringArray: globalThis.Array.isArray(object?.stringArray)
         ? object.stringArray.map((e: any) => globalThis.String(e))
@@ -1062,6 +1080,9 @@ export const SubcategoryAttribute: MessageFns<SubcategoryAttribute> = {
     }
     if (message.type !== "") {
       obj.type = message.type;
+    }
+    if (message.includeInVariants !== false) {
+      obj.includeInVariants = message.includeInVariants;
     }
     if (message.reference !== undefined) {
       obj.reference = message.reference;
@@ -1085,6 +1106,7 @@ export const SubcategoryAttribute: MessageFns<SubcategoryAttribute> = {
     const message = createBaseSubcategoryAttribute();
     message.required = object.required ?? false;
     message.type = object.type ?? "";
+    message.includeInVariants = object.includeInVariants ?? false;
     message.reference = object.reference ?? undefined;
     message.stringArray = object.stringArray?.map((e) => e) || [];
     message.isMultiple = object.isMultiple ?? undefined;
