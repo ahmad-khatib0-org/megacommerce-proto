@@ -129,16 +129,26 @@ pub struct CategoryTranslations {
 pub struct SubcategoryTranslations {
     #[prost(string, tag = "1")]
     pub name: ::prost::alloc::string::String,
-    #[prost(map = "string, string", tag = "2")]
+    #[prost(map = "string, message", tag = "2")]
     pub attributes: ::std::collections::HashMap<
         ::prost::alloc::string::String,
-        ::prost::alloc::string::String,
+        SubcategoryAttributeTranslation,
     >,
     #[prost(map = "string, message", tag = "3")]
     pub data: ::std::collections::HashMap<
         ::prost::alloc::string::String,
         super::super::shared::v1::StringMap,
     >,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct SubcategoryAttributeTranslation {
+    #[prost(string, tag = "1")]
+    pub label: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub placeholder: ::prost::alloc::string::String,
+    #[prost(string, tag = "3")]
+    pub info: ::prost::alloc::string::String,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

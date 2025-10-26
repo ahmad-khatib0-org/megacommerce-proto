@@ -27,8 +27,14 @@ message CategoryTranslations {
 
 message SubcategoryTranslations {
   string name = 1;
-  map<string, string> attributes = 2;
+  map<string, SubcategoryAttributeTranslation> attributes = 2;
   map<string, shared.v1.StringMap> data = 3;
+}
+
+message SubcategoryAttributeTranslation {
+  string label = 1;
+  string placeholder = 2;
+  string info = 3;
 }
 
 message Subcategory {

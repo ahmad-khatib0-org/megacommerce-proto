@@ -167,10 +167,10 @@ func (x *CategoryTranslations) GetSubcategories() map[string]*SubcategoryTransla
 }
 
 type SubcategoryTranslations struct {
-	state         protoimpl.MessageState   `protogen:"open.v1"`
-	Name          string                   `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
-	Attributes    map[string]string        `protobuf:"bytes,2,rep,name=attributes,proto3" json:"attributes,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
-	Data          map[string]*v1.StringMap `protobuf:"bytes,3,rep,name=data,proto3" json:"data,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state         protoimpl.MessageState                      `protogen:"open.v1"`
+	Name          string                                      `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	Attributes    map[string]*SubcategoryAttributeTranslation `protobuf:"bytes,2,rep,name=attributes,proto3" json:"attributes,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	Data          map[string]*v1.StringMap                    `protobuf:"bytes,3,rep,name=data,proto3" json:"data,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -212,7 +212,7 @@ func (x *SubcategoryTranslations) GetName() string {
 	return ""
 }
 
-func (x *SubcategoryTranslations) GetAttributes() map[string]string {
+func (x *SubcategoryTranslations) GetAttributes() map[string]*SubcategoryAttributeTranslation {
 	if x != nil {
 		return x.Attributes
 	}
@@ -224,6 +224,66 @@ func (x *SubcategoryTranslations) GetData() map[string]*v1.StringMap {
 		return x.Data
 	}
 	return nil
+}
+
+type SubcategoryAttributeTranslation struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Label         string                 `protobuf:"bytes,1,opt,name=label,proto3" json:"label,omitempty"`
+	Placeholder   string                 `protobuf:"bytes,2,opt,name=placeholder,proto3" json:"placeholder,omitempty"`
+	Info          string                 `protobuf:"bytes,3,opt,name=info,proto3" json:"info,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubcategoryAttributeTranslation) Reset() {
+	*x = SubcategoryAttributeTranslation{}
+	mi := &file_products_v1_product_categories_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubcategoryAttributeTranslation) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubcategoryAttributeTranslation) ProtoMessage() {}
+
+func (x *SubcategoryAttributeTranslation) ProtoReflect() protoreflect.Message {
+	mi := &file_products_v1_product_categories_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubcategoryAttributeTranslation.ProtoReflect.Descriptor instead.
+func (*SubcategoryAttributeTranslation) Descriptor() ([]byte, []int) {
+	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *SubcategoryAttributeTranslation) GetLabel() string {
+	if x != nil {
+		return x.Label
+	}
+	return ""
+}
+
+func (x *SubcategoryAttributeTranslation) GetPlaceholder() string {
+	if x != nil {
+		return x.Placeholder
+	}
+	return ""
+}
+
+func (x *SubcategoryAttributeTranslation) GetInfo() string {
+	if x != nil {
+		return x.Info
+	}
+	return ""
 }
 
 type Subcategory struct {
@@ -239,7 +299,7 @@ type Subcategory struct {
 
 func (x *Subcategory) Reset() {
 	*x = Subcategory{}
-	mi := &file_products_v1_product_categories_proto_msgTypes[3]
+	mi := &file_products_v1_product_categories_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -251,7 +311,7 @@ func (x *Subcategory) String() string {
 func (*Subcategory) ProtoMessage() {}
 
 func (x *Subcategory) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_product_categories_proto_msgTypes[3]
+	mi := &file_products_v1_product_categories_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -264,7 +324,7 @@ func (x *Subcategory) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Subcategory.ProtoReflect.Descriptor instead.
 func (*Subcategory) Descriptor() ([]byte, []int) {
-	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{3}
+	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *Subcategory) GetId() string {
@@ -327,7 +387,7 @@ type SubcategoryAttribute struct {
 
 func (x *SubcategoryAttribute) Reset() {
 	*x = SubcategoryAttribute{}
-	mi := &file_products_v1_product_categories_proto_msgTypes[4]
+	mi := &file_products_v1_product_categories_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -339,7 +399,7 @@ func (x *SubcategoryAttribute) String() string {
 func (*SubcategoryAttribute) ProtoMessage() {}
 
 func (x *SubcategoryAttribute) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_product_categories_proto_msgTypes[4]
+	mi := &file_products_v1_product_categories_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -352,7 +412,7 @@ func (x *SubcategoryAttribute) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubcategoryAttribute.ProtoReflect.Descriptor instead.
 func (*SubcategoryAttribute) Descriptor() ([]byte, []int) {
-	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{4}
+	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *SubcategoryAttribute) GetRequired() bool {
@@ -422,19 +482,23 @@ const file_products_v1_product_categories_proto_rawDesc = "" +
 	"\rsubcategories\x18\x04 \x03(\v24.products.v1.CategoryTranslations.SubcategoriesEntryR\rsubcategories\x1af\n" +
 	"\x12SubcategoriesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12:\n" +
-	"\x05value\x18\x02 \x01(\v2$.products.v1.SubcategoryTranslationsR\x05value:\x028\x01\"\xd5\x02\n" +
+	"\x05value\x18\x02 \x01(\v2$.products.v1.SubcategoryTranslationsR\x05value:\x028\x01\"\x83\x03\n" +
 	"\x17SubcategoryTranslations\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12T\n" +
 	"\n" +
 	"attributes\x18\x02 \x03(\v24.products.v1.SubcategoryTranslations.AttributesEntryR\n" +
 	"attributes\x12B\n" +
-	"\x04data\x18\x03 \x03(\v2..products.v1.SubcategoryTranslations.DataEntryR\x04data\x1a=\n" +
+	"\x04data\x18\x03 \x03(\v2..products.v1.SubcategoryTranslations.DataEntryR\x04data\x1ak\n" +
 	"\x0fAttributesEntry\x12\x10\n" +
-	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01\x1aM\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12B\n" +
+	"\x05value\x18\x02 \x01(\v2,.products.v1.SubcategoryAttributeTranslationR\x05value:\x028\x01\x1aM\n" +
 	"\tDataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12*\n" +
-	"\x05value\x18\x02 \x01(\v2\x14.shared.v1.StringMapR\x05value:\x028\x01\"\x96\x02\n" +
+	"\x05value\x18\x02 \x01(\v2\x14.shared.v1.StringMapR\x05value:\x028\x01\"m\n" +
+	"\x1fSubcategoryAttributeTranslation\x12\x14\n" +
+	"\x05label\x18\x01 \x01(\tR\x05label\x12 \n" +
+	"\vplaceholder\x18\x02 \x01(\tR\vplaceholder\x12\x12\n" +
+	"\x04info\x18\x03 \x01(\tR\x04info\"\x96\x02\n" +
 	"\vSubcategory\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x18\n" +
@@ -475,36 +539,38 @@ func file_products_v1_product_categories_proto_rawDescGZIP() []byte {
 	return file_products_v1_product_categories_proto_rawDescData
 }
 
-var file_products_v1_product_categories_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_products_v1_product_categories_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_products_v1_product_categories_proto_goTypes = []any{
-	(*Category)(nil),                // 0: products.v1.Category
-	(*CategoryTranslations)(nil),    // 1: products.v1.CategoryTranslations
-	(*SubcategoryTranslations)(nil), // 2: products.v1.SubcategoryTranslations
-	(*Subcategory)(nil),             // 3: products.v1.Subcategory
-	(*SubcategoryAttribute)(nil),    // 4: products.v1.SubcategoryAttribute
-	nil,                             // 5: products.v1.CategoryTranslations.SubcategoriesEntry
-	nil,                             // 6: products.v1.SubcategoryTranslations.AttributesEntry
-	nil,                             // 7: products.v1.SubcategoryTranslations.DataEntry
-	nil,                             // 8: products.v1.Subcategory.AttributesEntry
-	(*v1.ValidationField)(nil),      // 9: shared.v1.ValidationField
-	(*v1.StringMap)(nil),            // 10: shared.v1.StringMap
+	(*Category)(nil),                        // 0: products.v1.Category
+	(*CategoryTranslations)(nil),            // 1: products.v1.CategoryTranslations
+	(*SubcategoryTranslations)(nil),         // 2: products.v1.SubcategoryTranslations
+	(*SubcategoryAttributeTranslation)(nil), // 3: products.v1.SubcategoryAttributeTranslation
+	(*Subcategory)(nil),                     // 4: products.v1.Subcategory
+	(*SubcategoryAttribute)(nil),            // 5: products.v1.SubcategoryAttribute
+	nil,                                     // 6: products.v1.CategoryTranslations.SubcategoriesEntry
+	nil,                                     // 7: products.v1.SubcategoryTranslations.AttributesEntry
+	nil,                                     // 8: products.v1.SubcategoryTranslations.DataEntry
+	nil,                                     // 9: products.v1.Subcategory.AttributesEntry
+	(*v1.ValidationField)(nil),              // 10: shared.v1.ValidationField
+	(*v1.StringMap)(nil),                    // 11: shared.v1.StringMap
 }
 var file_products_v1_product_categories_proto_depIdxs = []int32{
 	1,  // 0: products.v1.Category.translations:type_name -> products.v1.CategoryTranslations
-	3,  // 1: products.v1.Category.subcategories:type_name -> products.v1.Subcategory
-	5,  // 2: products.v1.CategoryTranslations.subcategories:type_name -> products.v1.CategoryTranslations.SubcategoriesEntry
-	6,  // 3: products.v1.SubcategoryTranslations.attributes:type_name -> products.v1.SubcategoryTranslations.AttributesEntry
-	7,  // 4: products.v1.SubcategoryTranslations.data:type_name -> products.v1.SubcategoryTranslations.DataEntry
-	8,  // 5: products.v1.Subcategory.attributes:type_name -> products.v1.Subcategory.AttributesEntry
-	9,  // 6: products.v1.SubcategoryAttribute.validation:type_name -> shared.v1.ValidationField
+	4,  // 1: products.v1.Category.subcategories:type_name -> products.v1.Subcategory
+	6,  // 2: products.v1.CategoryTranslations.subcategories:type_name -> products.v1.CategoryTranslations.SubcategoriesEntry
+	7,  // 3: products.v1.SubcategoryTranslations.attributes:type_name -> products.v1.SubcategoryTranslations.AttributesEntry
+	8,  // 4: products.v1.SubcategoryTranslations.data:type_name -> products.v1.SubcategoryTranslations.DataEntry
+	9,  // 5: products.v1.Subcategory.attributes:type_name -> products.v1.Subcategory.AttributesEntry
+	10, // 6: products.v1.SubcategoryAttribute.validation:type_name -> shared.v1.ValidationField
 	2,  // 7: products.v1.CategoryTranslations.SubcategoriesEntry.value:type_name -> products.v1.SubcategoryTranslations
-	10, // 8: products.v1.SubcategoryTranslations.DataEntry.value:type_name -> shared.v1.StringMap
-	4,  // 9: products.v1.Subcategory.AttributesEntry.value:type_name -> products.v1.SubcategoryAttribute
-	10, // [10:10] is the sub-list for method output_type
-	10, // [10:10] is the sub-list for method input_type
-	10, // [10:10] is the sub-list for extension type_name
-	10, // [10:10] is the sub-list for extension extendee
-	0,  // [0:10] is the sub-list for field type_name
+	3,  // 8: products.v1.SubcategoryTranslations.AttributesEntry.value:type_name -> products.v1.SubcategoryAttributeTranslation
+	11, // 9: products.v1.SubcategoryTranslations.DataEntry.value:type_name -> shared.v1.StringMap
+	5,  // 10: products.v1.Subcategory.AttributesEntry.value:type_name -> products.v1.SubcategoryAttribute
+	11, // [11:11] is the sub-list for method output_type
+	11, // [11:11] is the sub-list for method input_type
+	11, // [11:11] is the sub-list for extension type_name
+	11, // [11:11] is the sub-list for extension extendee
+	0,  // [0:11] is the sub-list for field type_name
 }
 
 func init() { file_products_v1_product_categories_proto_init() }
@@ -512,14 +578,14 @@ func file_products_v1_product_categories_proto_init() {
 	if File_products_v1_product_categories_proto != nil {
 		return
 	}
-	file_products_v1_product_categories_proto_msgTypes[4].OneofWrappers = []any{}
+	file_products_v1_product_categories_proto_msgTypes[5].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_products_v1_product_categories_proto_rawDesc), len(file_products_v1_product_categories_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   9,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

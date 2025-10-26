@@ -2671,11 +2671,11 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryTranslations defa
         getNameBytes();
 
     /**
-     * <code>map&lt;string, string&gt; attributes = 2 [json_name = "attributes"];</code>
+     * <code>map&lt;string, .products.v1.SubcategoryAttributeTranslation&gt; attributes = 2 [json_name = "attributes"];</code>
      */
     int getAttributesCount();
     /**
-     * <code>map&lt;string, string&gt; attributes = 2 [json_name = "attributes"];</code>
+     * <code>map&lt;string, .products.v1.SubcategoryAttributeTranslation&gt; attributes = 2 [json_name = "attributes"];</code>
      */
     boolean containsAttributes(
         java.lang.String key);
@@ -2683,25 +2683,25 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryTranslations defa
      * Use {@link #getAttributesMap()} instead.
      */
     @java.lang.Deprecated
-    java.util.Map<java.lang.String, java.lang.String>
+    java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation>
     getAttributes();
     /**
-     * <code>map&lt;string, string&gt; attributes = 2 [json_name = "attributes"];</code>
+     * <code>map&lt;string, .products.v1.SubcategoryAttributeTranslation&gt; attributes = 2 [json_name = "attributes"];</code>
      */
-    java.util.Map<java.lang.String, java.lang.String>
+    java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation>
     getAttributesMap();
     /**
-     * <code>map&lt;string, string&gt; attributes = 2 [json_name = "attributes"];</code>
+     * <code>map&lt;string, .products.v1.SubcategoryAttributeTranslation&gt; attributes = 2 [json_name = "attributes"];</code>
      */
     /* nullable */
-java.lang.String getAttributesOrDefault(
+org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation getAttributesOrDefault(
         java.lang.String key,
         /* nullable */
-java.lang.String defaultValue);
+org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation defaultValue);
     /**
-     * <code>map&lt;string, string&gt; attributes = 2 [json_name = "attributes"];</code>
+     * <code>map&lt;string, .products.v1.SubcategoryAttributeTranslation&gt; attributes = 2 [json_name = "attributes"];</code>
      */
-    java.lang.String getAttributesOrThrow(
+    org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation getAttributesOrThrow(
         java.lang.String key);
 
     /**
@@ -2832,19 +2832,19 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue);
     public static final int ATTRIBUTES_FIELD_NUMBER = 2;
     private static final class AttributesDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          java.lang.String, java.lang.String> defaultEntry =
+          java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation> defaultEntry =
               com.google.protobuf.MapEntry
-              .<java.lang.String, java.lang.String>newDefaultInstance(
+              .<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation>newDefaultInstance(
                   org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_SubcategoryTranslations_AttributesEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation.getDefaultInstance());
     }
     @SuppressWarnings("serial")
     private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> attributes_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation> attributes_;
+    private com.google.protobuf.MapField<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation>
     internalGetAttributes() {
       if (attributes_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -2856,7 +2856,7 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue);
       return internalGetAttributes().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; attributes = 2 [json_name = "attributes"];</code>
+     * <code>map&lt;string, .products.v1.SubcategoryAttributeTranslation&gt; attributes = 2 [json_name = "attributes"];</code>
      */
     @java.lang.Override
     public boolean containsAttributes(
@@ -2869,38 +2869,38 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue);
      */
     @java.lang.Override
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String> getAttributes() {
+    public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation> getAttributes() {
       return getAttributesMap();
     }
     /**
-     * <code>map&lt;string, string&gt; attributes = 2 [json_name = "attributes"];</code>
+     * <code>map&lt;string, .products.v1.SubcategoryAttributeTranslation&gt; attributes = 2 [json_name = "attributes"];</code>
      */
     @java.lang.Override
-    public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
+    public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation> getAttributesMap() {
       return internalGetAttributes().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; attributes = 2 [json_name = "attributes"];</code>
+     * <code>map&lt;string, .products.v1.SubcategoryAttributeTranslation&gt; attributes = 2 [json_name = "attributes"];</code>
      */
     @java.lang.Override
     public /* nullable */
-java.lang.String getAttributesOrDefault(
+org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation getAttributesOrDefault(
         java.lang.String key,
         /* nullable */
-java.lang.String defaultValue) {
+org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation defaultValue) {
       if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, java.lang.String> map =
+      java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation> map =
           internalGetAttributes().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; attributes = 2 [json_name = "attributes"];</code>
+     * <code>map&lt;string, .products.v1.SubcategoryAttributeTranslation&gt; attributes = 2 [json_name = "attributes"];</code>
      */
     @java.lang.Override
-    public java.lang.String getAttributesOrThrow(
+    public org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation getAttributesOrThrow(
         java.lang.String key) {
       if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, java.lang.String> map =
+      java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation> map =
           internalGetAttributes().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
@@ -3028,9 +3028,9 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(name_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(1, name_);
       }
-      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+      for (java.util.Map.Entry<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation> entry
            : internalGetAttributes().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation>
         attributes__ = AttributesDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -3287,8 +3287,7 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
           result.name_ = name_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.attributes_ = internalGetAttributes();
-          result.attributes_.makeImmutable();
+          result.attributes_ = internalGetAttributes().build(AttributesDefaultEntryHolder.defaultEntry);
         }
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.data_ = internalGetData().build(DataDefaultEntryHolder.defaultEntry);
@@ -3350,10 +3349,10 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
                 break;
               } // case 10
               case 18: {
-                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation>
                 attributes__ = input.readMessage(
                     AttributesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableAttributes().getMutableMap().put(
+                internalGetMutableAttributes().ensureBuilderMap().put(
                     attributes__.getKey(), attributes__.getValue());
                 bitField0_ |= 0x00000002;
                 break;
@@ -3456,97 +3455,103 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
         return this;
       }
 
-      private com.google.protobuf.MapField<
-          java.lang.String, java.lang.String> attributes_;
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      private static final class AttributesConverter implements com.google.protobuf.MapFieldBuilder.Converter<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslationOrBuilder, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation> {
+        @java.lang.Override
+        public org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation build(org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslationOrBuilder val) {
+          if (val instanceof org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation) { return (org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation) val; }
+          return ((org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation.Builder) val).build();
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation> defaultEntry() {
+          return AttributesDefaultEntryHolder.defaultEntry;
+        }
+      };
+      private static final AttributesConverter attributesConverter = new AttributesConverter();
+
+      private com.google.protobuf.MapFieldBuilder<
+          java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslationOrBuilder, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation.Builder> attributes_;
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslationOrBuilder, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation.Builder>
           internalGetAttributes() {
         if (attributes_ == null) {
-          return com.google.protobuf.MapField.emptyMapField(
-              AttributesDefaultEntryHolder.defaultEntry);
+          return new com.google.protobuf.MapFieldBuilder<>(attributesConverter);
         }
         return attributes_;
       }
-      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslationOrBuilder, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation.Builder>
           internalGetMutableAttributes() {
         if (attributes_ == null) {
-          attributes_ = com.google.protobuf.MapField.newMapField(
-              AttributesDefaultEntryHolder.defaultEntry);
-        }
-        if (!attributes_.isMutable()) {
-          attributes_ = attributes_.copy();
+          attributes_ = new com.google.protobuf.MapFieldBuilder<>(attributesConverter);
         }
         bitField0_ |= 0x00000002;
         onChanged();
         return attributes_;
       }
       public int getAttributesCount() {
-        return internalGetAttributes().getMap().size();
+        return internalGetAttributes().ensureBuilderMap().size();
       }
       /**
-       * <code>map&lt;string, string&gt; attributes = 2 [json_name = "attributes"];</code>
+       * <code>map&lt;string, .products.v1.SubcategoryAttributeTranslation&gt; attributes = 2 [json_name = "attributes"];</code>
        */
       @java.lang.Override
       public boolean containsAttributes(
           java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
-        return internalGetAttributes().getMap().containsKey(key);
+        return internalGetAttributes().ensureBuilderMap().containsKey(key);
       }
       /**
        * Use {@link #getAttributesMap()} instead.
        */
       @java.lang.Override
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String> getAttributes() {
+      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation> getAttributes() {
         return getAttributesMap();
       }
       /**
-       * <code>map&lt;string, string&gt; attributes = 2 [json_name = "attributes"];</code>
+       * <code>map&lt;string, .products.v1.SubcategoryAttributeTranslation&gt; attributes = 2 [json_name = "attributes"];</code>
        */
       @java.lang.Override
-      public java.util.Map<java.lang.String, java.lang.String> getAttributesMap() {
-        return internalGetAttributes().getMap();
+      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation> getAttributesMap() {
+        return internalGetAttributes().getImmutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; attributes = 2 [json_name = "attributes"];</code>
+       * <code>map&lt;string, .products.v1.SubcategoryAttributeTranslation&gt; attributes = 2 [json_name = "attributes"];</code>
        */
       @java.lang.Override
       public /* nullable */
-java.lang.String getAttributesOrDefault(
+org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation getAttributesOrDefault(
           java.lang.String key,
           /* nullable */
-java.lang.String defaultValue) {
+org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation defaultValue) {
         if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetAttributes().getMap();
-        return map.containsKey(key) ? map.get(key) : defaultValue;
+        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslationOrBuilder> map = internalGetMutableAttributes().ensureBuilderMap();
+        return map.containsKey(key) ? attributesConverter.build(map.get(key)) : defaultValue;
       }
       /**
-       * <code>map&lt;string, string&gt; attributes = 2 [json_name = "attributes"];</code>
+       * <code>map&lt;string, .products.v1.SubcategoryAttributeTranslation&gt; attributes = 2 [json_name = "attributes"];</code>
        */
       @java.lang.Override
-      public java.lang.String getAttributesOrThrow(
+      public org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation getAttributesOrThrow(
           java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, java.lang.String> map =
-            internalGetAttributes().getMap();
+        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslationOrBuilder> map = internalGetMutableAttributes().ensureBuilderMap();
         if (!map.containsKey(key)) {
           throw new java.lang.IllegalArgumentException();
         }
-        return map.get(key);
+        return attributesConverter.build(map.get(key));
       }
       public Builder clearAttributes() {
         bitField0_ = (bitField0_ & ~0x00000002);
-        internalGetMutableAttributes().getMutableMap()
-            .clear();
+        internalGetMutableAttributes().clear();
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; attributes = 2 [json_name = "attributes"];</code>
+       * <code>map&lt;string, .products.v1.SubcategoryAttributeTranslation&gt; attributes = 2 [json_name = "attributes"];</code>
        */
       public Builder removeAttributes(
           java.lang.String key) {
         if (key == null) { throw new NullPointerException("map key"); }
-        internalGetMutableAttributes().getMutableMap()
+        internalGetMutableAttributes().ensureBuilderMap()
             .remove(key);
         return this;
       }
@@ -3554,33 +3559,55 @@ java.lang.String defaultValue) {
        * Use alternate mutation accessors instead.
        */
       @java.lang.Deprecated
-      public java.util.Map<java.lang.String, java.lang.String>
+      public java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation>
           getMutableAttributes() {
         bitField0_ |= 0x00000002;
-        return internalGetMutableAttributes().getMutableMap();
+        return internalGetMutableAttributes().ensureMessageMap();
       }
       /**
-       * <code>map&lt;string, string&gt; attributes = 2 [json_name = "attributes"];</code>
+       * <code>map&lt;string, .products.v1.SubcategoryAttributeTranslation&gt; attributes = 2 [json_name = "attributes"];</code>
        */
       public Builder putAttributes(
           java.lang.String key,
-          java.lang.String value) {
+          org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation value) {
         if (key == null) { throw new NullPointerException("map key"); }
         if (value == null) { throw new NullPointerException("map value"); }
-        internalGetMutableAttributes().getMutableMap()
+        internalGetMutableAttributes().ensureBuilderMap()
             .put(key, value);
         bitField0_ |= 0x00000002;
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; attributes = 2 [json_name = "attributes"];</code>
+       * <code>map&lt;string, .products.v1.SubcategoryAttributeTranslation&gt; attributes = 2 [json_name = "attributes"];</code>
        */
       public Builder putAllAttributes(
-          java.util.Map<java.lang.String, java.lang.String> values) {
-        internalGetMutableAttributes().getMutableMap()
+          java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation> values) {
+        for (java.util.Map.Entry<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation> e : values.entrySet()) {
+          if (e.getKey() == null || e.getValue() == null) {
+            throw new NullPointerException();
+          }
+        }
+        internalGetMutableAttributes().ensureBuilderMap()
             .putAll(values);
         bitField0_ |= 0x00000002;
         return this;
+      }
+      /**
+       * <code>map&lt;string, .products.v1.SubcategoryAttributeTranslation&gt; attributes = 2 [json_name = "attributes"];</code>
+       */
+      public org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation.Builder putAttributesBuilderIfAbsent(
+          java.lang.String key) {
+        java.util.Map<java.lang.String, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslationOrBuilder> builderMap = internalGetMutableAttributes().ensureBuilderMap();
+        org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslationOrBuilder entry = builderMap.get(key);
+        if (entry == null) {
+          entry = org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation.newBuilder();
+          builderMap.put(key, entry);
+        }
+        if (entry instanceof org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation) {
+          entry = ((org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation) entry).toBuilder();
+          builderMap.put(key, entry);
+        }
+        return (org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation.Builder) entry;
       }
 
       private static final class DataConverter implements com.google.protobuf.MapFieldBuilder.Converter<java.lang.String, org.megacommerce.shared.v1.TypesProto.StringMapOrBuilder, org.megacommerce.shared.v1.TypesProto.StringMap> {
@@ -3784,6 +3811,812 @@ org.megacommerce.shared.v1.TypesProto.StringMap defaultValue) {
 
     @java.lang.Override
     public org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryTranslations getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SubcategoryAttributeTranslationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:products.v1.SubcategoryAttributeTranslation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string label = 1 [json_name = "label"];</code>
+     * @return The label.
+     */
+    java.lang.String getLabel();
+    /**
+     * <code>string label = 1 [json_name = "label"];</code>
+     * @return The bytes for label.
+     */
+    com.google.protobuf.ByteString
+        getLabelBytes();
+
+    /**
+     * <code>string placeholder = 2 [json_name = "placeholder"];</code>
+     * @return The placeholder.
+     */
+    java.lang.String getPlaceholder();
+    /**
+     * <code>string placeholder = 2 [json_name = "placeholder"];</code>
+     * @return The bytes for placeholder.
+     */
+    com.google.protobuf.ByteString
+        getPlaceholderBytes();
+
+    /**
+     * <code>string info = 3 [json_name = "info"];</code>
+     * @return The info.
+     */
+    java.lang.String getInfo();
+    /**
+     * <code>string info = 3 [json_name = "info"];</code>
+     * @return The bytes for info.
+     */
+    com.google.protobuf.ByteString
+        getInfoBytes();
+  }
+  /**
+   * Protobuf type {@code products.v1.SubcategoryAttributeTranslation}
+   */
+  public static final class SubcategoryAttributeTranslation extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:products.v1.SubcategoryAttributeTranslation)
+      SubcategoryAttributeTranslationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        SubcategoryAttributeTranslation.class.getName());
+    }
+    // Use SubcategoryAttributeTranslation.newBuilder() to construct.
+    private SubcategoryAttributeTranslation(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private SubcategoryAttributeTranslation() {
+      label_ = "";
+      placeholder_ = "";
+      info_ = "";
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_SubcategoryAttributeTranslation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_SubcategoryAttributeTranslation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation.class, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation.Builder.class);
+    }
+
+    public static final int LABEL_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object label_ = "";
+    /**
+     * <code>string label = 1 [json_name = "label"];</code>
+     * @return The label.
+     */
+    @java.lang.Override
+    public java.lang.String getLabel() {
+      java.lang.Object ref = label_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        label_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string label = 1 [json_name = "label"];</code>
+     * @return The bytes for label.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getLabelBytes() {
+      java.lang.Object ref = label_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        label_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PLACEHOLDER_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object placeholder_ = "";
+    /**
+     * <code>string placeholder = 2 [json_name = "placeholder"];</code>
+     * @return The placeholder.
+     */
+    @java.lang.Override
+    public java.lang.String getPlaceholder() {
+      java.lang.Object ref = placeholder_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        placeholder_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string placeholder = 2 [json_name = "placeholder"];</code>
+     * @return The bytes for placeholder.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPlaceholderBytes() {
+      java.lang.Object ref = placeholder_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        placeholder_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INFO_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object info_ = "";
+    /**
+     * <code>string info = 3 [json_name = "info"];</code>
+     * @return The info.
+     */
+    @java.lang.Override
+    public java.lang.String getInfo() {
+      java.lang.Object ref = info_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        info_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string info = 3 [json_name = "info"];</code>
+     * @return The bytes for info.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getInfoBytes() {
+      java.lang.Object ref = info_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        info_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(label_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, label_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(placeholder_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, placeholder_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(info_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, info_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(label_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, label_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(placeholder_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, placeholder_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(info_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, info_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation other = (org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation) obj;
+
+      if (!getLabel()
+          .equals(other.getLabel())) return false;
+      if (!getPlaceholder()
+          .equals(other.getPlaceholder())) return false;
+      if (!getInfo()
+          .equals(other.getInfo())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + LABEL_FIELD_NUMBER;
+      hash = (53 * hash) + getLabel().hashCode();
+      hash = (37 * hash) + PLACEHOLDER_FIELD_NUMBER;
+      hash = (53 * hash) + getPlaceholder().hashCode();
+      hash = (37 * hash) + INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getInfo().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code products.v1.SubcategoryAttributeTranslation}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:products.v1.SubcategoryAttributeTranslation)
+        org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_SubcategoryAttributeTranslation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_SubcategoryAttributeTranslation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation.class, org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation.Builder.class);
+      }
+
+      // Construct using org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        label_ = "";
+        placeholder_ = "";
+        info_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.products.v1.ProductCategoriesProto.internal_static_products_v1_SubcategoryAttributeTranslation_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation getDefaultInstanceForType() {
+        return org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation build() {
+        org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation buildPartial() {
+        org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation result = new org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.label_ = label_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.placeholder_ = placeholder_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.info_ = info_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation) {
+          return mergeFrom((org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation other) {
+        if (other == org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation.getDefaultInstance()) return this;
+        if (!other.getLabel().isEmpty()) {
+          label_ = other.label_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getPlaceholder().isEmpty()) {
+          placeholder_ = other.placeholder_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getInfo().isEmpty()) {
+          info_ = other.info_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                label_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                placeholder_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                info_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object label_ = "";
+      /**
+       * <code>string label = 1 [json_name = "label"];</code>
+       * @return The label.
+       */
+      public java.lang.String getLabel() {
+        java.lang.Object ref = label_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          label_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string label = 1 [json_name = "label"];</code>
+       * @return The bytes for label.
+       */
+      public com.google.protobuf.ByteString
+          getLabelBytes() {
+        java.lang.Object ref = label_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          label_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string label = 1 [json_name = "label"];</code>
+       * @param value The label to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLabel(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        label_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string label = 1 [json_name = "label"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearLabel() {
+        label_ = getDefaultInstance().getLabel();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string label = 1 [json_name = "label"];</code>
+       * @param value The bytes for label to set.
+       * @return This builder for chaining.
+       */
+      public Builder setLabelBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        label_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object placeholder_ = "";
+      /**
+       * <code>string placeholder = 2 [json_name = "placeholder"];</code>
+       * @return The placeholder.
+       */
+      public java.lang.String getPlaceholder() {
+        java.lang.Object ref = placeholder_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          placeholder_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string placeholder = 2 [json_name = "placeholder"];</code>
+       * @return The bytes for placeholder.
+       */
+      public com.google.protobuf.ByteString
+          getPlaceholderBytes() {
+        java.lang.Object ref = placeholder_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          placeholder_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string placeholder = 2 [json_name = "placeholder"];</code>
+       * @param value The placeholder to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlaceholder(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        placeholder_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string placeholder = 2 [json_name = "placeholder"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPlaceholder() {
+        placeholder_ = getDefaultInstance().getPlaceholder();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string placeholder = 2 [json_name = "placeholder"];</code>
+       * @param value The bytes for placeholder to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPlaceholderBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        placeholder_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object info_ = "";
+      /**
+       * <code>string info = 3 [json_name = "info"];</code>
+       * @return The info.
+       */
+      public java.lang.String getInfo() {
+        java.lang.Object ref = info_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          info_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string info = 3 [json_name = "info"];</code>
+       * @return The bytes for info.
+       */
+      public com.google.protobuf.ByteString
+          getInfoBytes() {
+        java.lang.Object ref = info_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          info_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string info = 3 [json_name = "info"];</code>
+       * @param value The info to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInfo(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        info_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string info = 3 [json_name = "info"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearInfo() {
+        info_ = getDefaultInstance().getInfo();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string info = 3 [json_name = "info"];</code>
+       * @param value The bytes for info to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInfoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        info_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:products.v1.SubcategoryAttributeTranslation)
+    }
+
+    // @@protoc_insertion_point(class_scope:products.v1.SubcategoryAttributeTranslation)
+    private static final org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation();
+    }
+
+    public static org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SubcategoryAttributeTranslation>
+        PARSER = new com.google.protobuf.AbstractParser<SubcategoryAttributeTranslation>() {
+      @java.lang.Override
+      public SubcategoryAttributeTranslation parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<SubcategoryAttributeTranslation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<SubcategoryAttributeTranslation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttributeTranslation getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6699,6 +7532,11 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_products_v1_SubcategoryTranslations_DataEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_SubcategoryAttributeTranslation_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_SubcategoryAttributeTranslation_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_products_v1_Subcategory_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -6737,34 +7575,38 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
       "ntryR\rsubcategories\032f\n\022SubcategoriesEntr" +
       "y\022\020\n\003key\030\001 \001(\tR\003key\022:\n\005value\030\002 \001(\0132$.pro" +
       "ducts.v1.SubcategoryTranslationsR\005value:" +
-      "\0028\001\"\325\002\n\027SubcategoryTranslations\022\022\n\004name\030" +
+      "\0028\001\"\203\003\n\027SubcategoryTranslations\022\022\n\004name\030" +
       "\001 \001(\tR\004name\022T\n\nattributes\030\002 \003(\01324.produc" +
       "ts.v1.SubcategoryTranslations.Attributes" +
       "EntryR\nattributes\022B\n\004data\030\003 \003(\0132..produc" +
       "ts.v1.SubcategoryTranslations.DataEntryR" +
-      "\004data\032=\n\017AttributesEntry\022\020\n\003key\030\001 \001(\tR\003k" +
-      "ey\022\024\n\005value\030\002 \001(\tR\005value:\0028\001\032M\n\tDataEntr" +
-      "y\022\020\n\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\0132\024.sha" +
-      "red.v1.StringMapR\005value:\0028\001\"\226\002\n\013Subcateg" +
-      "ory\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022" +
-      "\030\n\007version\030\003 \001(\005R\007version\022\035\n\ncreated_at\030" +
-      "\004 \001(\tR\tcreatedAt\022H\n\nattributes\030\005 \003(\0132(.p" +
-      "roducts.v1.Subcategory.AttributesEntryR\n" +
-      "attributes\032`\n\017AttributesEntry\022\020\n\003key\030\001 \001" +
-      "(\tR\003key\0227\n\005value\030\002 \001(\0132!.products.v1.Sub" +
-      "categoryAttributeR\005value:\0028\001\"\274\002\n\024Subcate" +
-      "goryAttribute\022\032\n\010required\030\001 \001(\010R\010require" +
-      "d\022\022\n\004type\030\002 \001(\tR\004type\022.\n\023include_in_vari" +
-      "ants\030\003 \001(\010R\021includeInVariants\022!\n\treferen" +
-      "ce\030\004 \001(\tH\000R\treference\210\001\001\022!\n\014string_array" +
-      "\030\005 \003(\tR\013stringArray\022$\n\013is_multiple\030\006 \001(\010" +
-      "H\001R\nisMultiple\210\001\001\022:\n\nvalidation\030\007 \001(\0132\032." +
-      "shared.v1.ValidationFieldR\nvalidationB\014\n" +
-      "\n_referenceB\016\n\014_is_multipleB\200\001\n\034org.mega" +
-      "commerce.products.v1B\026ProductCategoriesP" +
-      "rotoZEgithub.com/ahmad-khatib0-org/megac" +
-      "ommerce-proto/gen/go/products/v1;v1\370\001\001b\006" +
-      "proto3"
+      "\004data\032k\n\017AttributesEntry\022\020\n\003key\030\001 \001(\tR\003k" +
+      "ey\022B\n\005value\030\002 \001(\0132,.products.v1.Subcateg" +
+      "oryAttributeTranslationR\005value:\0028\001\032M\n\tDa" +
+      "taEntry\022\020\n\003key\030\001 \001(\tR\003key\022*\n\005value\030\002 \001(\013" +
+      "2\024.shared.v1.StringMapR\005value:\0028\001\"m\n\037Sub" +
+      "categoryAttributeTranslation\022\024\n\005label\030\001 " +
+      "\001(\tR\005label\022 \n\013placeholder\030\002 \001(\tR\013placeho" +
+      "lder\022\022\n\004info\030\003 \001(\tR\004info\"\226\002\n\013Subcategory" +
+      "\022\016\n\002id\030\001 \001(\tR\002id\022\022\n\004name\030\002 \001(\tR\004name\022\030\n\007" +
+      "version\030\003 \001(\005R\007version\022\035\n\ncreated_at\030\004 \001" +
+      "(\tR\tcreatedAt\022H\n\nattributes\030\005 \003(\0132(.prod" +
+      "ucts.v1.Subcategory.AttributesEntryR\natt" +
+      "ributes\032`\n\017AttributesEntry\022\020\n\003key\030\001 \001(\tR" +
+      "\003key\0227\n\005value\030\002 \001(\0132!.products.v1.Subcat" +
+      "egoryAttributeR\005value:\0028\001\"\274\002\n\024Subcategor" +
+      "yAttribute\022\032\n\010required\030\001 \001(\010R\010required\022\022" +
+      "\n\004type\030\002 \001(\tR\004type\022.\n\023include_in_variant" +
+      "s\030\003 \001(\010R\021includeInVariants\022!\n\treference\030" +
+      "\004 \001(\tH\000R\treference\210\001\001\022!\n\014string_array\030\005 " +
+      "\003(\tR\013stringArray\022$\n\013is_multiple\030\006 \001(\010H\001R" +
+      "\nisMultiple\210\001\001\022:\n\nvalidation\030\007 \001(\0132\032.sha" +
+      "red.v1.ValidationFieldR\nvalidationB\014\n\n_r" +
+      "eferenceB\016\n\014_is_multipleB\200\001\n\034org.megacom" +
+      "merce.products.v1B\026ProductCategoriesProt" +
+      "oZEgithub.com/ahmad-khatib0-org/megacomm" +
+      "erce-proto/gen/go/products/v1;v1\370\001\001b\006pro" +
+      "to3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6808,8 +7650,14 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_SubcategoryTranslations_DataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_products_v1_Subcategory_descriptor =
+    internal_static_products_v1_SubcategoryAttributeTranslation_descriptor =
       getDescriptor().getMessageTypes().get(3);
+    internal_static_products_v1_SubcategoryAttributeTranslation_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_SubcategoryAttributeTranslation_descriptor,
+        new java.lang.String[] { "Label", "Placeholder", "Info", });
+    internal_static_products_v1_Subcategory_descriptor =
+      getDescriptor().getMessageTypes().get(4);
     internal_static_products_v1_Subcategory_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_Subcategory_descriptor,
@@ -6821,7 +7669,7 @@ org.megacommerce.products.v1.ProductCategoriesProto.SubcategoryAttribute default
         internal_static_products_v1_Subcategory_AttributesEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_products_v1_SubcategoryAttribute_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_products_v1_SubcategoryAttribute_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_SubcategoryAttribute_descriptor,

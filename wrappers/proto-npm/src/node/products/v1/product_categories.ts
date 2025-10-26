@@ -33,18 +33,24 @@ export interface CategoryTranslations_SubcategoriesEntry {
 
 export interface SubcategoryTranslations {
   name: string;
-  attributes: { [key: string]: string };
+  attributes: { [key: string]: SubcategoryAttributeTranslation };
   data: { [key: string]: StringMap };
 }
 
 export interface SubcategoryTranslations_AttributesEntry {
   key: string;
-  value: string;
+  value?: SubcategoryAttributeTranslation | undefined;
 }
 
 export interface SubcategoryTranslations_DataEntry {
   key: string;
   value?: StringMap | undefined;
+}
+
+export interface SubcategoryAttributeTranslation {
+  label: string;
+  placeholder: string;
+  info: string;
 }
 
 export interface Subcategory {
@@ -498,10 +504,13 @@ export const SubcategoryTranslations: MessageFns<SubcategoryTranslations> = {
     return {
       name: isSet(object.name) ? globalThis.String(object.name) : "",
       attributes: isObject(object.attributes)
-        ? Object.entries(object.attributes).reduce<{ [key: string]: string }>((acc, [key, value]) => {
-          acc[key] = String(value);
-          return acc;
-        }, {})
+        ? Object.entries(object.attributes).reduce<{ [key: string]: SubcategoryAttributeTranslation }>(
+          (acc, [key, value]) => {
+            acc[key] = SubcategoryAttributeTranslation.fromJSON(value);
+            return acc;
+          },
+          {},
+        )
         : {},
       data: isObject(object.data)
         ? Object.entries(object.data).reduce<{ [key: string]: StringMap }>((acc, [key, value]) => {
@@ -522,7 +531,7 @@ export const SubcategoryTranslations: MessageFns<SubcategoryTranslations> = {
       if (entries.length > 0) {
         obj.attributes = {};
         entries.forEach(([k, v]) => {
-          obj.attributes[k] = v;
+          obj.attributes[k] = SubcategoryAttributeTranslation.toJSON(v);
         });
       }
     }
@@ -544,15 +553,14 @@ export const SubcategoryTranslations: MessageFns<SubcategoryTranslations> = {
   fromPartial<I extends Exact<DeepPartial<SubcategoryTranslations>, I>>(object: I): SubcategoryTranslations {
     const message = createBaseSubcategoryTranslations();
     message.name = object.name ?? "";
-    message.attributes = Object.entries(object.attributes ?? {}).reduce<{ [key: string]: string }>(
-      (acc, [key, value]) => {
-        if (value !== undefined) {
-          acc[key] = globalThis.String(value);
-        }
-        return acc;
-      },
-      {},
-    );
+    message.attributes = Object.entries(object.attributes ?? {}).reduce<
+      { [key: string]: SubcategoryAttributeTranslation }
+    >((acc, [key, value]) => {
+      if (value !== undefined) {
+        acc[key] = SubcategoryAttributeTranslation.fromPartial(value);
+      }
+      return acc;
+    }, {});
     message.data = Object.entries(object.data ?? {}).reduce<{ [key: string]: StringMap }>((acc, [key, value]) => {
       if (value !== undefined) {
         acc[key] = StringMap.fromPartial(value);
@@ -564,7 +572,7 @@ export const SubcategoryTranslations: MessageFns<SubcategoryTranslations> = {
 };
 
 function createBaseSubcategoryTranslations_AttributesEntry(): SubcategoryTranslations_AttributesEntry {
-  return { key: "", value: "" };
+  return { key: "", value: undefined };
 }
 
 export const SubcategoryTranslations_AttributesEntry: MessageFns<SubcategoryTranslations_AttributesEntry> = {
@@ -572,8 +580,8 @@ export const SubcategoryTranslations_AttributesEntry: MessageFns<SubcategoryTran
     if (message.key !== "") {
       writer.uint32(10).string(message.key);
     }
-    if (message.value !== "") {
-      writer.uint32(18).string(message.value);
+    if (message.value !== undefined) {
+      SubcategoryAttributeTranslation.encode(message.value, writer.uint32(18).fork()).join();
     }
     return writer;
   },
@@ -598,7 +606,7 @@ export const SubcategoryTranslations_AttributesEntry: MessageFns<SubcategoryTran
             break;
           }
 
-          message.value = reader.string();
+          message.value = SubcategoryAttributeTranslation.decode(reader, reader.uint32());
           continue;
         }
       }
@@ -613,7 +621,7 @@ export const SubcategoryTranslations_AttributesEntry: MessageFns<SubcategoryTran
   fromJSON(object: any): SubcategoryTranslations_AttributesEntry {
     return {
       key: isSet(object.key) ? globalThis.String(object.key) : "",
-      value: isSet(object.value) ? globalThis.String(object.value) : "",
+      value: isSet(object.value) ? SubcategoryAttributeTranslation.fromJSON(object.value) : undefined,
     };
   },
 
@@ -622,8 +630,8 @@ export const SubcategoryTranslations_AttributesEntry: MessageFns<SubcategoryTran
     if (message.key !== "") {
       obj.key = message.key;
     }
-    if (message.value !== "") {
-      obj.value = message.value;
+    if (message.value !== undefined) {
+      obj.value = SubcategoryAttributeTranslation.toJSON(message.value);
     }
     return obj;
   },
@@ -638,7 +646,9 @@ export const SubcategoryTranslations_AttributesEntry: MessageFns<SubcategoryTran
   ): SubcategoryTranslations_AttributesEntry {
     const message = createBaseSubcategoryTranslations_AttributesEntry();
     message.key = object.key ?? "";
-    message.value = object.value ?? "";
+    message.value = (object.value !== undefined && object.value !== null)
+      ? SubcategoryAttributeTranslation.fromPartial(object.value)
+      : undefined;
     return message;
   },
 };
@@ -721,6 +731,100 @@ export const SubcategoryTranslations_DataEntry: MessageFns<SubcategoryTranslatio
     message.value = (object.value !== undefined && object.value !== null)
       ? StringMap.fromPartial(object.value)
       : undefined;
+    return message;
+  },
+};
+
+function createBaseSubcategoryAttributeTranslation(): SubcategoryAttributeTranslation {
+  return { label: "", placeholder: "", info: "" };
+}
+
+export const SubcategoryAttributeTranslation: MessageFns<SubcategoryAttributeTranslation> = {
+  encode(message: SubcategoryAttributeTranslation, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.label !== "") {
+      writer.uint32(10).string(message.label);
+    }
+    if (message.placeholder !== "") {
+      writer.uint32(18).string(message.placeholder);
+    }
+    if (message.info !== "") {
+      writer.uint32(26).string(message.info);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): SubcategoryAttributeTranslation {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseSubcategoryAttributeTranslation();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.label = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.placeholder = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 26) {
+            break;
+          }
+
+          message.info = reader.string();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): SubcategoryAttributeTranslation {
+    return {
+      label: isSet(object.label) ? globalThis.String(object.label) : "",
+      placeholder: isSet(object.placeholder) ? globalThis.String(object.placeholder) : "",
+      info: isSet(object.info) ? globalThis.String(object.info) : "",
+    };
+  },
+
+  toJSON(message: SubcategoryAttributeTranslation): unknown {
+    const obj: any = {};
+    if (message.label !== "") {
+      obj.label = message.label;
+    }
+    if (message.placeholder !== "") {
+      obj.placeholder = message.placeholder;
+    }
+    if (message.info !== "") {
+      obj.info = message.info;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<SubcategoryAttributeTranslation>, I>>(base?: I): SubcategoryAttributeTranslation {
+    return SubcategoryAttributeTranslation.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<SubcategoryAttributeTranslation>, I>>(
+    object: I,
+  ): SubcategoryAttributeTranslation {
+    const message = createBaseSubcategoryAttributeTranslation();
+    message.label = object.label ?? "";
+    message.placeholder = object.placeholder ?? "";
+    message.info = object.info ?? "";
     return message;
   },
 };
