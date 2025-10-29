@@ -139,6 +139,11 @@ pub struct SubcategoryTranslations {
         ::prost::alloc::string::String,
         super::super::shared::v1::StringMap,
     >,
+    #[prost(map = "string, message", tag = "4")]
+    pub safety: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        SubcategorySafetyTranslation,
+    >,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -149,6 +154,20 @@ pub struct SubcategoryAttributeTranslation {
     pub placeholder: ::prost::alloc::string::String,
     #[prost(string, tag = "3")]
     pub info: ::prost::alloc::string::String,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct SubcategorySafetyTranslation {
+    #[prost(map = "string, message", tag = "1")]
+    pub attributes: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        SubcategoryAttributeTranslation,
+    >,
+    #[prost(map = "string, message", tag = "2")]
+    pub data: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        super::super::shared::v1::StringMap,
+    >,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
@@ -165,6 +184,11 @@ pub struct Subcategory {
     pub attributes: ::std::collections::HashMap<
         ::prost::alloc::string::String,
         SubcategoryAttribute,
+    >,
+    #[prost(map = "string, message", tag = "6")]
+    pub safety: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        SubcategorySafety,
     >,
 }
 /// Top-level attribute with a typed validation
@@ -193,6 +217,30 @@ pub struct SubcategoryAttribute {
     pub is_multiple: ::core::option::Option<bool>,
     /// validation rules of this attribute
     #[prost(message, optional, tag = "7")]
+    pub validation: ::core::option::Option<super::super::shared::v1::ValidationField>,
+}
+/// Top-level safety attribute with a typed validation
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct SubcategorySafety {
+    /// wither this attribute required or optional
+    #[prost(bool, tag = "1")]
+    pub required: bool,
+    /// input, select, tags ...
+    #[prost(string, tag = "2")]
+    pub r#type: ::prost::alloc::string::String,
+    /// reference id to the attributes table (E.g weight is common for many products types,
+    /// so instead rewriting it each time, we store it in another table)
+    #[prost(string, optional, tag = "3")]
+    pub reference: ::core::option::Option<::prost::alloc::string::String>,
+    /// for select type (E.g. \['white', 'black', ...\])
+    #[prost(string, repeated, tag = "4")]
+    pub string_array: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    /// for select type (E.g. multiple colors)
+    #[prost(bool, optional, tag = "5")]
+    pub is_multiple: ::core::option::Option<bool>,
+    /// validation rules of this attribute
+    #[prost(message, optional, tag = "6")]
     pub validation: ::core::option::Option<super::super::shared::v1::ValidationField>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]

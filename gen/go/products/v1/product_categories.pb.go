@@ -171,6 +171,7 @@ type SubcategoryTranslations struct {
 	Name          string                                      `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	Attributes    map[string]*SubcategoryAttributeTranslation `protobuf:"bytes,2,rep,name=attributes,proto3" json:"attributes,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	Data          map[string]*v1.StringMap                    `protobuf:"bytes,3,rep,name=data,proto3" json:"data,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	Safety        map[string]*SubcategorySafetyTranslation    `protobuf:"bytes,4,rep,name=safety,proto3" json:"safety,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -222,6 +223,13 @@ func (x *SubcategoryTranslations) GetAttributes() map[string]*SubcategoryAttribu
 func (x *SubcategoryTranslations) GetData() map[string]*v1.StringMap {
 	if x != nil {
 		return x.Data
+	}
+	return nil
+}
+
+func (x *SubcategoryTranslations) GetSafety() map[string]*SubcategorySafetyTranslation {
+	if x != nil {
+		return x.Safety
 	}
 	return nil
 }
@@ -286,6 +294,58 @@ func (x *SubcategoryAttributeTranslation) GetInfo() string {
 	return ""
 }
 
+type SubcategorySafetyTranslation struct {
+	state         protoimpl.MessageState                      `protogen:"open.v1"`
+	Attributes    map[string]*SubcategoryAttributeTranslation `protobuf:"bytes,1,rep,name=attributes,proto3" json:"attributes,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	Data          map[string]*v1.StringMap                    `protobuf:"bytes,2,rep,name=data,proto3" json:"data,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubcategorySafetyTranslation) Reset() {
+	*x = SubcategorySafetyTranslation{}
+	mi := &file_products_v1_product_categories_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubcategorySafetyTranslation) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubcategorySafetyTranslation) ProtoMessage() {}
+
+func (x *SubcategorySafetyTranslation) ProtoReflect() protoreflect.Message {
+	mi := &file_products_v1_product_categories_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubcategorySafetyTranslation.ProtoReflect.Descriptor instead.
+func (*SubcategorySafetyTranslation) Descriptor() ([]byte, []int) {
+	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *SubcategorySafetyTranslation) GetAttributes() map[string]*SubcategoryAttributeTranslation {
+	if x != nil {
+		return x.Attributes
+	}
+	return nil
+}
+
+func (x *SubcategorySafetyTranslation) GetData() map[string]*v1.StringMap {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
 type Subcategory struct {
 	state         protoimpl.MessageState           `protogen:"open.v1"`
 	Id            string                           `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
@@ -293,13 +353,14 @@ type Subcategory struct {
 	Version       int32                            `protobuf:"varint,3,opt,name=version,proto3" json:"version,omitempty"`
 	CreatedAt     string                           `protobuf:"bytes,4,opt,name=created_at,json=createdAt,proto3" json:"created_at,omitempty"`
 	Attributes    map[string]*SubcategoryAttribute `protobuf:"bytes,5,rep,name=attributes,proto3" json:"attributes,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	Safety        map[string]*SubcategorySafety    `protobuf:"bytes,6,rep,name=safety,proto3" json:"safety,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *Subcategory) Reset() {
 	*x = Subcategory{}
-	mi := &file_products_v1_product_categories_proto_msgTypes[4]
+	mi := &file_products_v1_product_categories_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -311,7 +372,7 @@ func (x *Subcategory) String() string {
 func (*Subcategory) ProtoMessage() {}
 
 func (x *Subcategory) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_product_categories_proto_msgTypes[4]
+	mi := &file_products_v1_product_categories_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -324,7 +385,7 @@ func (x *Subcategory) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Subcategory.ProtoReflect.Descriptor instead.
 func (*Subcategory) Descriptor() ([]byte, []int) {
-	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{4}
+	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *Subcategory) GetId() string {
@@ -362,6 +423,13 @@ func (x *Subcategory) GetAttributes() map[string]*SubcategoryAttribute {
 	return nil
 }
 
+func (x *Subcategory) GetSafety() map[string]*SubcategorySafety {
+	if x != nil {
+		return x.Safety
+	}
+	return nil
+}
+
 // Top-level attribute with a typed validation
 type SubcategoryAttribute struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
@@ -387,7 +455,7 @@ type SubcategoryAttribute struct {
 
 func (x *SubcategoryAttribute) Reset() {
 	*x = SubcategoryAttribute{}
-	mi := &file_products_v1_product_categories_proto_msgTypes[5]
+	mi := &file_products_v1_product_categories_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -399,7 +467,7 @@ func (x *SubcategoryAttribute) String() string {
 func (*SubcategoryAttribute) ProtoMessage() {}
 
 func (x *SubcategoryAttribute) ProtoReflect() protoreflect.Message {
-	mi := &file_products_v1_product_categories_proto_msgTypes[5]
+	mi := &file_products_v1_product_categories_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -412,7 +480,7 @@ func (x *SubcategoryAttribute) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubcategoryAttribute.ProtoReflect.Descriptor instead.
 func (*SubcategoryAttribute) Descriptor() ([]byte, []int) {
-	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{5}
+	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *SubcategoryAttribute) GetRequired() bool {
@@ -464,6 +532,98 @@ func (x *SubcategoryAttribute) GetValidation() *v1.ValidationField {
 	return nil
 }
 
+// Top-level safety attribute with a typed validation
+type SubcategorySafety struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// wither this attribute required or optional
+	Required bool `protobuf:"varint,1,opt,name=required,proto3" json:"required,omitempty"`
+	// input, select, tags ...
+	Type string `protobuf:"bytes,2,opt,name=type,proto3" json:"type,omitempty"`
+	// reference id to the attributes table (E.g weight is common for many products types,
+	// so instead rewriting it each time, we store it in another table)
+	Reference *string `protobuf:"bytes,3,opt,name=reference,proto3,oneof" json:"reference,omitempty"`
+	// for select type (E.g. ['white', 'black', ...])
+	StringArray []string `protobuf:"bytes,4,rep,name=string_array,json=stringArray,proto3" json:"string_array,omitempty"`
+	// for select type (E.g. multiple colors)
+	IsMultiple *bool `protobuf:"varint,5,opt,name=is_multiple,json=isMultiple,proto3,oneof" json:"is_multiple,omitempty"`
+	// validation rules of this attribute
+	Validation    *v1.ValidationField `protobuf:"bytes,6,opt,name=validation,proto3" json:"validation,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubcategorySafety) Reset() {
+	*x = SubcategorySafety{}
+	mi := &file_products_v1_product_categories_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubcategorySafety) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubcategorySafety) ProtoMessage() {}
+
+func (x *SubcategorySafety) ProtoReflect() protoreflect.Message {
+	mi := &file_products_v1_product_categories_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubcategorySafety.ProtoReflect.Descriptor instead.
+func (*SubcategorySafety) Descriptor() ([]byte, []int) {
+	return file_products_v1_product_categories_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *SubcategorySafety) GetRequired() bool {
+	if x != nil {
+		return x.Required
+	}
+	return false
+}
+
+func (x *SubcategorySafety) GetType() string {
+	if x != nil {
+		return x.Type
+	}
+	return ""
+}
+
+func (x *SubcategorySafety) GetReference() string {
+	if x != nil && x.Reference != nil {
+		return *x.Reference
+	}
+	return ""
+}
+
+func (x *SubcategorySafety) GetStringArray() []string {
+	if x != nil {
+		return x.StringArray
+	}
+	return nil
+}
+
+func (x *SubcategorySafety) GetIsMultiple() bool {
+	if x != nil && x.IsMultiple != nil {
+		return *x.IsMultiple
+	}
+	return false
+}
+
+func (x *SubcategorySafety) GetValidation() *v1.ValidationField {
+	if x != nil {
+		return x.Validation
+	}
+	return nil
+}
+
 var File_products_v1_product_categories_proto protoreflect.FileDescriptor
 
 const file_products_v1_product_categories_proto_rawDesc = "" +
@@ -482,23 +642,38 @@ const file_products_v1_product_categories_proto_rawDesc = "" +
 	"\rsubcategories\x18\x04 \x03(\v24.products.v1.CategoryTranslations.SubcategoriesEntryR\rsubcategories\x1af\n" +
 	"\x12SubcategoriesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12:\n" +
-	"\x05value\x18\x02 \x01(\v2$.products.v1.SubcategoryTranslationsR\x05value:\x028\x01\"\x83\x03\n" +
+	"\x05value\x18\x02 \x01(\v2$.products.v1.SubcategoryTranslationsR\x05value:\x028\x01\"\xb3\x04\n" +
 	"\x17SubcategoryTranslations\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12T\n" +
 	"\n" +
 	"attributes\x18\x02 \x03(\v24.products.v1.SubcategoryTranslations.AttributesEntryR\n" +
 	"attributes\x12B\n" +
-	"\x04data\x18\x03 \x03(\v2..products.v1.SubcategoryTranslations.DataEntryR\x04data\x1ak\n" +
+	"\x04data\x18\x03 \x03(\v2..products.v1.SubcategoryTranslations.DataEntryR\x04data\x12H\n" +
+	"\x06safety\x18\x04 \x03(\v20.products.v1.SubcategoryTranslations.SafetyEntryR\x06safety\x1ak\n" +
 	"\x0fAttributesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12B\n" +
 	"\x05value\x18\x02 \x01(\v2,.products.v1.SubcategoryAttributeTranslationR\x05value:\x028\x01\x1aM\n" +
 	"\tDataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12*\n" +
-	"\x05value\x18\x02 \x01(\v2\x14.shared.v1.StringMapR\x05value:\x028\x01\"m\n" +
+	"\x05value\x18\x02 \x01(\v2\x14.shared.v1.StringMapR\x05value:\x028\x01\x1ad\n" +
+	"\vSafetyEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12?\n" +
+	"\x05value\x18\x02 \x01(\v2).products.v1.SubcategorySafetyTranslationR\x05value:\x028\x01\"m\n" +
 	"\x1fSubcategoryAttributeTranslation\x12\x14\n" +
 	"\x05label\x18\x01 \x01(\tR\x05label\x12 \n" +
 	"\vplaceholder\x18\x02 \x01(\tR\vplaceholder\x12\x12\n" +
-	"\x04info\x18\x03 \x01(\tR\x04info\"\x96\x02\n" +
+	"\x04info\x18\x03 \x01(\tR\x04info\"\xfe\x02\n" +
+	"\x1cSubcategorySafetyTranslation\x12Y\n" +
+	"\n" +
+	"attributes\x18\x01 \x03(\v29.products.v1.SubcategorySafetyTranslation.AttributesEntryR\n" +
+	"attributes\x12G\n" +
+	"\x04data\x18\x02 \x03(\v23.products.v1.SubcategorySafetyTranslation.DataEntryR\x04data\x1ak\n" +
+	"\x0fAttributesEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12B\n" +
+	"\x05value\x18\x02 \x01(\v2,.products.v1.SubcategoryAttributeTranslationR\x05value:\x028\x01\x1aM\n" +
+	"\tDataEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12*\n" +
+	"\x05value\x18\x02 \x01(\v2\x14.shared.v1.StringMapR\x05value:\x028\x01\"\xaf\x03\n" +
 	"\vSubcategory\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x12\n" +
 	"\x04name\x18\x02 \x01(\tR\x04name\x12\x18\n" +
@@ -507,10 +682,14 @@ const file_products_v1_product_categories_proto_rawDesc = "" +
 	"created_at\x18\x04 \x01(\tR\tcreatedAt\x12H\n" +
 	"\n" +
 	"attributes\x18\x05 \x03(\v2(.products.v1.Subcategory.AttributesEntryR\n" +
-	"attributes\x1a`\n" +
+	"attributes\x12<\n" +
+	"\x06safety\x18\x06 \x03(\v2$.products.v1.Subcategory.SafetyEntryR\x06safety\x1a`\n" +
 	"\x0fAttributesEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x127\n" +
-	"\x05value\x18\x02 \x01(\v2!.products.v1.SubcategoryAttributeR\x05value:\x028\x01\"\xbc\x02\n" +
+	"\x05value\x18\x02 \x01(\v2!.products.v1.SubcategoryAttributeR\x05value:\x028\x01\x1aY\n" +
+	"\vSafetyEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x124\n" +
+	"\x05value\x18\x02 \x01(\v2\x1e.products.v1.SubcategorySafetyR\x05value:\x028\x01\"\xbc\x02\n" +
 	"\x14SubcategoryAttribute\x12\x1a\n" +
 	"\brequired\x18\x01 \x01(\bR\brequired\x12\x12\n" +
 	"\x04type\x18\x02 \x01(\tR\x04type\x12.\n" +
@@ -521,6 +700,19 @@ const file_products_v1_product_categories_proto_rawDesc = "" +
 	"isMultiple\x88\x01\x01\x12:\n" +
 	"\n" +
 	"validation\x18\a \x01(\v2\x1a.shared.v1.ValidationFieldR\n" +
+	"validationB\f\n" +
+	"\n" +
+	"_referenceB\x0e\n" +
+	"\f_is_multiple\"\x89\x02\n" +
+	"\x11SubcategorySafety\x12\x1a\n" +
+	"\brequired\x18\x01 \x01(\bR\brequired\x12\x12\n" +
+	"\x04type\x18\x02 \x01(\tR\x04type\x12!\n" +
+	"\treference\x18\x03 \x01(\tH\x00R\treference\x88\x01\x01\x12!\n" +
+	"\fstring_array\x18\x04 \x03(\tR\vstringArray\x12$\n" +
+	"\vis_multiple\x18\x05 \x01(\bH\x01R\n" +
+	"isMultiple\x88\x01\x01\x12:\n" +
+	"\n" +
+	"validation\x18\x06 \x01(\v2\x1a.shared.v1.ValidationFieldR\n" +
 	"validationB\f\n" +
 	"\n" +
 	"_referenceB\x0e\n" +
@@ -539,38 +731,53 @@ func file_products_v1_product_categories_proto_rawDescGZIP() []byte {
 	return file_products_v1_product_categories_proto_rawDescData
 }
 
-var file_products_v1_product_categories_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
+var file_products_v1_product_categories_proto_msgTypes = make([]protoimpl.MessageInfo, 16)
 var file_products_v1_product_categories_proto_goTypes = []any{
 	(*Category)(nil),                        // 0: products.v1.Category
 	(*CategoryTranslations)(nil),            // 1: products.v1.CategoryTranslations
 	(*SubcategoryTranslations)(nil),         // 2: products.v1.SubcategoryTranslations
 	(*SubcategoryAttributeTranslation)(nil), // 3: products.v1.SubcategoryAttributeTranslation
-	(*Subcategory)(nil),                     // 4: products.v1.Subcategory
-	(*SubcategoryAttribute)(nil),            // 5: products.v1.SubcategoryAttribute
-	nil,                                     // 6: products.v1.CategoryTranslations.SubcategoriesEntry
-	nil,                                     // 7: products.v1.SubcategoryTranslations.AttributesEntry
-	nil,                                     // 8: products.v1.SubcategoryTranslations.DataEntry
-	nil,                                     // 9: products.v1.Subcategory.AttributesEntry
-	(*v1.ValidationField)(nil),              // 10: shared.v1.ValidationField
-	(*v1.StringMap)(nil),                    // 11: shared.v1.StringMap
+	(*SubcategorySafetyTranslation)(nil),    // 4: products.v1.SubcategorySafetyTranslation
+	(*Subcategory)(nil),                     // 5: products.v1.Subcategory
+	(*SubcategoryAttribute)(nil),            // 6: products.v1.SubcategoryAttribute
+	(*SubcategorySafety)(nil),               // 7: products.v1.SubcategorySafety
+	nil,                                     // 8: products.v1.CategoryTranslations.SubcategoriesEntry
+	nil,                                     // 9: products.v1.SubcategoryTranslations.AttributesEntry
+	nil,                                     // 10: products.v1.SubcategoryTranslations.DataEntry
+	nil,                                     // 11: products.v1.SubcategoryTranslations.SafetyEntry
+	nil,                                     // 12: products.v1.SubcategorySafetyTranslation.AttributesEntry
+	nil,                                     // 13: products.v1.SubcategorySafetyTranslation.DataEntry
+	nil,                                     // 14: products.v1.Subcategory.AttributesEntry
+	nil,                                     // 15: products.v1.Subcategory.SafetyEntry
+	(*v1.ValidationField)(nil),              // 16: shared.v1.ValidationField
+	(*v1.StringMap)(nil),                    // 17: shared.v1.StringMap
 }
 var file_products_v1_product_categories_proto_depIdxs = []int32{
 	1,  // 0: products.v1.Category.translations:type_name -> products.v1.CategoryTranslations
-	4,  // 1: products.v1.Category.subcategories:type_name -> products.v1.Subcategory
-	6,  // 2: products.v1.CategoryTranslations.subcategories:type_name -> products.v1.CategoryTranslations.SubcategoriesEntry
-	7,  // 3: products.v1.SubcategoryTranslations.attributes:type_name -> products.v1.SubcategoryTranslations.AttributesEntry
-	8,  // 4: products.v1.SubcategoryTranslations.data:type_name -> products.v1.SubcategoryTranslations.DataEntry
-	9,  // 5: products.v1.Subcategory.attributes:type_name -> products.v1.Subcategory.AttributesEntry
-	10, // 6: products.v1.SubcategoryAttribute.validation:type_name -> shared.v1.ValidationField
-	2,  // 7: products.v1.CategoryTranslations.SubcategoriesEntry.value:type_name -> products.v1.SubcategoryTranslations
-	3,  // 8: products.v1.SubcategoryTranslations.AttributesEntry.value:type_name -> products.v1.SubcategoryAttributeTranslation
-	11, // 9: products.v1.SubcategoryTranslations.DataEntry.value:type_name -> shared.v1.StringMap
-	5,  // 10: products.v1.Subcategory.AttributesEntry.value:type_name -> products.v1.SubcategoryAttribute
-	11, // [11:11] is the sub-list for method output_type
-	11, // [11:11] is the sub-list for method input_type
-	11, // [11:11] is the sub-list for extension type_name
-	11, // [11:11] is the sub-list for extension extendee
-	0,  // [0:11] is the sub-list for field type_name
+	5,  // 1: products.v1.Category.subcategories:type_name -> products.v1.Subcategory
+	8,  // 2: products.v1.CategoryTranslations.subcategories:type_name -> products.v1.CategoryTranslations.SubcategoriesEntry
+	9,  // 3: products.v1.SubcategoryTranslations.attributes:type_name -> products.v1.SubcategoryTranslations.AttributesEntry
+	10, // 4: products.v1.SubcategoryTranslations.data:type_name -> products.v1.SubcategoryTranslations.DataEntry
+	11, // 5: products.v1.SubcategoryTranslations.safety:type_name -> products.v1.SubcategoryTranslations.SafetyEntry
+	12, // 6: products.v1.SubcategorySafetyTranslation.attributes:type_name -> products.v1.SubcategorySafetyTranslation.AttributesEntry
+	13, // 7: products.v1.SubcategorySafetyTranslation.data:type_name -> products.v1.SubcategorySafetyTranslation.DataEntry
+	14, // 8: products.v1.Subcategory.attributes:type_name -> products.v1.Subcategory.AttributesEntry
+	15, // 9: products.v1.Subcategory.safety:type_name -> products.v1.Subcategory.SafetyEntry
+	16, // 10: products.v1.SubcategoryAttribute.validation:type_name -> shared.v1.ValidationField
+	16, // 11: products.v1.SubcategorySafety.validation:type_name -> shared.v1.ValidationField
+	2,  // 12: products.v1.CategoryTranslations.SubcategoriesEntry.value:type_name -> products.v1.SubcategoryTranslations
+	3,  // 13: products.v1.SubcategoryTranslations.AttributesEntry.value:type_name -> products.v1.SubcategoryAttributeTranslation
+	17, // 14: products.v1.SubcategoryTranslations.DataEntry.value:type_name -> shared.v1.StringMap
+	4,  // 15: products.v1.SubcategoryTranslations.SafetyEntry.value:type_name -> products.v1.SubcategorySafetyTranslation
+	3,  // 16: products.v1.SubcategorySafetyTranslation.AttributesEntry.value:type_name -> products.v1.SubcategoryAttributeTranslation
+	17, // 17: products.v1.SubcategorySafetyTranslation.DataEntry.value:type_name -> shared.v1.StringMap
+	6,  // 18: products.v1.Subcategory.AttributesEntry.value:type_name -> products.v1.SubcategoryAttribute
+	7,  // 19: products.v1.Subcategory.SafetyEntry.value:type_name -> products.v1.SubcategorySafety
+	20, // [20:20] is the sub-list for method output_type
+	20, // [20:20] is the sub-list for method input_type
+	20, // [20:20] is the sub-list for extension type_name
+	20, // [20:20] is the sub-list for extension extendee
+	0,  // [0:20] is the sub-list for field type_name
 }
 
 func init() { file_products_v1_product_categories_proto_init() }
@@ -578,14 +785,15 @@ func file_products_v1_product_categories_proto_init() {
 	if File_products_v1_product_categories_proto != nil {
 		return
 	}
-	file_products_v1_product_categories_proto_msgTypes[5].OneofWrappers = []any{}
+	file_products_v1_product_categories_proto_msgTypes[6].OneofWrappers = []any{}
+	file_products_v1_product_categories_proto_msgTypes[7].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_products_v1_product_categories_proto_rawDesc), len(file_products_v1_product_categories_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   10,
+			NumMessages:   16,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
