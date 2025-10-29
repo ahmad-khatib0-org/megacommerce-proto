@@ -139,11 +139,8 @@ pub struct SubcategoryTranslations {
         ::prost::alloc::string::String,
         super::super::shared::v1::StringMap,
     >,
-    #[prost(map = "string, message", tag = "4")]
-    pub safety: ::std::collections::HashMap<
-        ::prost::alloc::string::String,
-        SubcategorySafetyTranslation,
-    >,
+    #[prost(message, optional, tag = "4")]
+    pub safety: ::core::option::Option<SubcategorySafetyTranslation>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

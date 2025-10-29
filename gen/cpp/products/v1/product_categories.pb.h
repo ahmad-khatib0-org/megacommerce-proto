@@ -112,10 +112,6 @@ class SubcategoryTranslations_DataEntry_DoNotUse;
 struct SubcategoryTranslations_DataEntry_DoNotUseDefaultTypeInternal;
 extern SubcategoryTranslations_DataEntry_DoNotUseDefaultTypeInternal _SubcategoryTranslations_DataEntry_DoNotUse_default_instance_;
 extern const ::google::protobuf::internal::ClassDataFull SubcategoryTranslations_DataEntry_DoNotUse_class_data_;
-class SubcategoryTranslations_SafetyEntry_DoNotUse;
-struct SubcategoryTranslations_SafetyEntry_DoNotUseDefaultTypeInternal;
-extern SubcategoryTranslations_SafetyEntry_DoNotUseDefaultTypeInternal _SubcategoryTranslations_SafetyEntry_DoNotUse_default_instance_;
-extern const ::google::protobuf::internal::ClassDataFull SubcategoryTranslations_SafetyEntry_DoNotUse_class_data_;
 class Subcategory_AttributesEntry_DoNotUse;
 struct Subcategory_AttributesEntry_DoNotUseDefaultTypeInternal;
 extern Subcategory_AttributesEntry_DoNotUseDefaultTypeInternal _Subcategory_AttributesEntry_DoNotUse_default_instance_;
@@ -194,7 +190,7 @@ class SubcategoryAttributeTranslation final : public ::google::protobuf::Message
     return *reinterpret_cast<const SubcategoryAttributeTranslation*>(
         &_SubcategoryAttributeTranslation_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 7;
+  static constexpr int kIndexInFileMessages = 6;
   friend void swap(SubcategoryAttributeTranslation& a, SubcategoryAttributeTranslation& b) { a.Swap(&b); }
   inline void Swap(SubcategoryAttributeTranslation* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -580,7 +576,7 @@ class SubcategorySafetyTranslation final : public ::google::protobuf::Message
     return *reinterpret_cast<const SubcategorySafetyTranslation*>(
         &_SubcategorySafetyTranslation_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 10;
+  static constexpr int kIndexInFileMessages = 9;
   friend void swap(SubcategorySafetyTranslation& a, SubcategorySafetyTranslation& b) { a.Swap(&b); }
   inline void Swap(SubcategorySafetyTranslation* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -798,7 +794,7 @@ class SubcategorySafety final : public ::google::protobuf::Message
     return *reinterpret_cast<const SubcategorySafety*>(
         &_SubcategorySafety_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 15;
+  static constexpr int kIndexInFileMessages = 14;
   friend void swap(SubcategorySafety& a, SubcategorySafety& b) { a.Swap(&b); }
   inline void Swap(SubcategorySafety* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1078,7 +1074,7 @@ class SubcategoryAttribute final : public ::google::protobuf::Message
     return *reinterpret_cast<const SubcategoryAttribute*>(
         &_SubcategoryAttribute_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 14;
+  static constexpr int kIndexInFileMessages = 13;
   friend void swap(SubcategoryAttribute& a, SubcategoryAttribute& b) { a.Swap(&b); }
   inline void Swap(SubcategoryAttribute* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1315,123 +1311,6 @@ class SubcategoryAttribute final : public ::google::protobuf::Message
 extern const ::google::protobuf::internal::ClassDataFull SubcategoryAttribute_class_data_;
 // -------------------------------------------------------------------
 
-class SubcategoryTranslations_SafetyEntry_DoNotUse final
-    : public ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
-                             ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-                             ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE> {
- public:
-  using SuperType =
-      ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
-                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-                      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE>;
-  SubcategoryTranslations_SafetyEntry_DoNotUse();
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR SubcategoryTranslations_SafetyEntry_DoNotUse(::google::protobuf::internal::ConstantInitialized);
-  explicit SubcategoryTranslations_SafetyEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr const void* PROTOBUF_NONNULL internal_default_instance() {
-    return &_SubcategoryTranslations_SafetyEntry_DoNotUse_default_instance_;
-  }
-
-
-  static constexpr auto InternalGenerateClassData_();
-
- private:
-  friend class ::google::protobuf::MessageLite;
-  friend struct ::TableStruct_products_2fv1_2fproduct_5fcategories_2eproto;
-
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<1, 2,
-                                   1, 59,
-                                   2>
-      _table_;
-
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-};
-extern const ::google::protobuf::internal::ClassDataFull SubcategoryTranslations_SafetyEntry_DoNotUse_class_data_;
-// -------------------------------------------------------------------
-
-class Subcategory_SafetyEntry_DoNotUse final
-    : public ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
-                             ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-                             ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE> {
- public:
-  using SuperType =
-      ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
-                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-                      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE>;
-  Subcategory_SafetyEntry_DoNotUse();
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR Subcategory_SafetyEntry_DoNotUse(::google::protobuf::internal::ConstantInitialized);
-  explicit Subcategory_SafetyEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr const void* PROTOBUF_NONNULL internal_default_instance() {
-    return &_Subcategory_SafetyEntry_DoNotUse_default_instance_;
-  }
-
-
-  static constexpr auto InternalGenerateClassData_();
-
- private:
-  friend class ::google::protobuf::MessageLite;
-  friend struct ::TableStruct_products_2fv1_2fproduct_5fcategories_2eproto;
-
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<1, 2,
-                                   1, 47,
-                                   2>
-      _table_;
-
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-};
-extern const ::google::protobuf::internal::ClassDataFull Subcategory_SafetyEntry_DoNotUse_class_data_;
-// -------------------------------------------------------------------
-
-class Subcategory_AttributesEntry_DoNotUse final
-    : public ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
-                             ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-                             ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE> {
- public:
-  using SuperType =
-      ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
-                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-                      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE>;
-  Subcategory_AttributesEntry_DoNotUse();
-  template <typename = void>
-  explicit PROTOBUF_CONSTEXPR Subcategory_AttributesEntry_DoNotUse(::google::protobuf::internal::ConstantInitialized);
-  explicit Subcategory_AttributesEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr const void* PROTOBUF_NONNULL internal_default_instance() {
-    return &_Subcategory_AttributesEntry_DoNotUse_default_instance_;
-  }
-
-
-  static constexpr auto InternalGenerateClassData_();
-
- private:
-  friend class ::google::protobuf::MessageLite;
-  friend struct ::TableStruct_products_2fv1_2fproduct_5fcategories_2eproto;
-
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<1, 2,
-                                   1, 51,
-                                   2>
-      _table_;
-
-  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
-  static void* PROTOBUF_NONNULL PlacementNew_(
-      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
-      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
-  static constexpr auto InternalNewImpl_();
-};
-extern const ::google::protobuf::internal::ClassDataFull Subcategory_AttributesEntry_DoNotUse_class_data_;
-// -------------------------------------------------------------------
-
 class SubcategoryTranslations final : public ::google::protobuf::Message
 /* @@protoc_insertion_point(class_definition:products.v1.SubcategoryTranslations) */ {
  public:
@@ -1487,7 +1366,7 @@ class SubcategoryTranslations final : public ::google::protobuf::Message
     return *reinterpret_cast<const SubcategoryTranslations*>(
         &_SubcategoryTranslations_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 6;
+  static constexpr int kIndexInFileMessages = 5;
   friend void swap(SubcategoryTranslations& a, SubcategoryTranslations& b) { a.Swap(&b); }
   inline void Swap(SubcategoryTranslations* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -1577,8 +1456,8 @@ class SubcategoryTranslations final : public ::google::protobuf::Message
   enum : int {
     kAttributesFieldNumber = 2,
     kDataFieldNumber = 3,
-    kSafetyFieldNumber = 4,
     kNameFieldNumber = 1,
+    kSafetyFieldNumber = 4,
   };
   // map<string, .products.v1.SubcategoryAttributeTranslation> attributes = 2 [json_name = "attributes"];
   int attributes_size() const;
@@ -1610,21 +1489,6 @@ class SubcategoryTranslations final : public ::google::protobuf::Message
   ::google::protobuf::Map<std::string, ::shared::v1::StringMap>* PROTOBUF_NONNULL _internal_mutable_data();
 
   public:
-  // map<string, .products.v1.SubcategorySafetyTranslation> safety = 4 [json_name = "safety"];
-  int safety_size() const;
-  private:
-  int _internal_safety_size() const;
-
-  public:
-  void clear_safety() ;
-  const ::google::protobuf::Map<std::string, ::products::v1::SubcategorySafetyTranslation>& safety() const;
-  ::google::protobuf::Map<std::string, ::products::v1::SubcategorySafetyTranslation>* PROTOBUF_NONNULL mutable_safety();
-
-  private:
-  const ::google::protobuf::Map<std::string, ::products::v1::SubcategorySafetyTranslation>& _internal_safety() const;
-  ::google::protobuf::Map<std::string, ::products::v1::SubcategorySafetyTranslation>* PROTOBUF_NONNULL _internal_mutable_safety();
-
-  public:
   // string name = 1 [json_name = "name"];
   void clear_name() ;
   const ::std::string& name() const;
@@ -1640,12 +1504,27 @@ class SubcategoryTranslations final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_name();
 
   public:
+  // .products.v1.SubcategorySafetyTranslation safety = 4 [json_name = "safety"];
+  bool has_safety() const;
+  void clear_safety() ;
+  const ::products::v1::SubcategorySafetyTranslation& safety() const;
+  [[nodiscard]] ::products::v1::SubcategorySafetyTranslation* PROTOBUF_NULLABLE release_safety();
+  ::products::v1::SubcategorySafetyTranslation* PROTOBUF_NONNULL mutable_safety();
+  void set_allocated_safety(::products::v1::SubcategorySafetyTranslation* PROTOBUF_NULLABLE value);
+  void unsafe_arena_set_allocated_safety(::products::v1::SubcategorySafetyTranslation* PROTOBUF_NULLABLE value);
+  ::products::v1::SubcategorySafetyTranslation* PROTOBUF_NULLABLE unsafe_arena_release_safety();
+
+  private:
+  const ::products::v1::SubcategorySafetyTranslation& _internal_safety() const;
+  ::products::v1::SubcategorySafetyTranslation* PROTOBUF_NONNULL _internal_mutable_safety();
+
+  public:
   // @@protoc_insertion_point(class_scope:products.v1.SubcategoryTranslations)
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<0, 4,
-                                   6, 68,
+  static const ::google::protobuf::internal::TcParseTable<1, 4,
+                                   5, 62,
                                    2>
       _table_;
 
@@ -1674,11 +1553,8 @@ class SubcategoryTranslations final : public ::google::protobuf::Message
                       ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
                       ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE>
         data_;
-    ::google::protobuf::internal::MapField<SubcategoryTranslations_SafetyEntry_DoNotUse, std::string, ::products::v1::SubcategorySafetyTranslation,
-                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
-                      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE>
-        safety_;
     ::google::protobuf::internal::ArenaStringPtr name_;
+    ::products::v1::SubcategorySafetyTranslation* PROTOBUF_NULLABLE safety_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -1686,6 +1562,84 @@ class SubcategoryTranslations final : public ::google::protobuf::Message
 };
 
 extern const ::google::protobuf::internal::ClassDataFull SubcategoryTranslations_class_data_;
+// -------------------------------------------------------------------
+
+class Subcategory_SafetyEntry_DoNotUse final
+    : public ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
+                             ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+                             ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE> {
+ public:
+  using SuperType =
+      ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE>;
+  Subcategory_SafetyEntry_DoNotUse();
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR Subcategory_SafetyEntry_DoNotUse(::google::protobuf::internal::ConstantInitialized);
+  explicit Subcategory_SafetyEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr const void* PROTOBUF_NONNULL internal_default_instance() {
+    return &_Subcategory_SafetyEntry_DoNotUse_default_instance_;
+  }
+
+
+  static constexpr auto InternalGenerateClassData_();
+
+ private:
+  friend class ::google::protobuf::MessageLite;
+  friend struct ::TableStruct_products_2fv1_2fproduct_5fcategories_2eproto;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<1, 2,
+                                   1, 47,
+                                   2>
+      _table_;
+
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+};
+extern const ::google::protobuf::internal::ClassDataFull Subcategory_SafetyEntry_DoNotUse_class_data_;
+// -------------------------------------------------------------------
+
+class Subcategory_AttributesEntry_DoNotUse final
+    : public ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
+                             ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+                             ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE> {
+ public:
+  using SuperType =
+      ::google::protobuf::internal::MapEntry<std::string, ::google::protobuf::Message,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_STRING,
+                      ::google::protobuf::internal::WireFormatLite::TYPE_MESSAGE>;
+  Subcategory_AttributesEntry_DoNotUse();
+  template <typename = void>
+  explicit PROTOBUF_CONSTEXPR Subcategory_AttributesEntry_DoNotUse(::google::protobuf::internal::ConstantInitialized);
+  explicit Subcategory_AttributesEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr const void* PROTOBUF_NONNULL internal_default_instance() {
+    return &_Subcategory_AttributesEntry_DoNotUse_default_instance_;
+  }
+
+
+  static constexpr auto InternalGenerateClassData_();
+
+ private:
+  friend class ::google::protobuf::MessageLite;
+  friend struct ::TableStruct_products_2fv1_2fproduct_5fcategories_2eproto;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<1, 2,
+                                   1, 51,
+                                   2>
+      _table_;
+
+  const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL GetClassData() const PROTOBUF_FINAL;
+  static void* PROTOBUF_NONNULL PlacementNew_(
+      const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+      ::google::protobuf::Arena* PROTOBUF_NULLABLE arena);
+  static constexpr auto InternalNewImpl_();
+};
+extern const ::google::protobuf::internal::ClassDataFull Subcategory_AttributesEntry_DoNotUse_class_data_;
 // -------------------------------------------------------------------
 
 class Subcategory final : public ::google::protobuf::Message
@@ -1743,7 +1697,7 @@ class Subcategory final : public ::google::protobuf::Message
     return *reinterpret_cast<const Subcategory*>(
         &_Subcategory_default_instance_);
   }
-  static constexpr int kIndexInFileMessages = 13;
+  static constexpr int kIndexInFileMessages = 12;
   friend void swap(Subcategory& a, Subcategory& b) { a.Swap(&b); }
   inline void Swap(Subcategory* PROTOBUF_NONNULL other) {
     if (other == this) return;
@@ -3027,8 +2981,6 @@ inline ::google::protobuf::Map<std::string, ::products::v1::SubcategoryTranslati
 
 // -------------------------------------------------------------------
 
-// -------------------------------------------------------------------
-
 // SubcategoryTranslations
 
 // string name = 1 [json_name = "name"];
@@ -3150,33 +3102,102 @@ inline ::google::protobuf::Map<std::string, ::shared::v1::StringMap>* PROTOBUF_N
   return _internal_mutable_data();
 }
 
-// map<string, .products.v1.SubcategorySafetyTranslation> safety = 4 [json_name = "safety"];
-inline int SubcategoryTranslations::_internal_safety_size() const {
-  return _internal_safety().size();
-}
-inline int SubcategoryTranslations::safety_size() const {
-  return _internal_safety_size();
+// .products.v1.SubcategorySafetyTranslation safety = 4 [json_name = "safety"];
+inline bool SubcategoryTranslations::has_safety() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.safety_ != nullptr);
+  return value;
 }
 inline void SubcategoryTranslations::clear_safety() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  _impl_.safety_.Clear();
+  if (_impl_.safety_ != nullptr) _impl_.safety_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
-inline const ::google::protobuf::Map<std::string, ::products::v1::SubcategorySafetyTranslation>& SubcategoryTranslations::_internal_safety() const {
+inline const ::products::v1::SubcategorySafetyTranslation& SubcategoryTranslations::_internal_safety() const {
   ::google::protobuf::internal::TSanRead(&_impl_);
-  return _impl_.safety_.GetMap();
+  const ::products::v1::SubcategorySafetyTranslation* p = _impl_.safety_;
+  return p != nullptr ? *p : reinterpret_cast<const ::products::v1::SubcategorySafetyTranslation&>(::products::v1::_SubcategorySafetyTranslation_default_instance_);
 }
-inline const ::google::protobuf::Map<std::string, ::products::v1::SubcategorySafetyTranslation>& SubcategoryTranslations::safety() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_map:products.v1.SubcategoryTranslations.safety)
+inline const ::products::v1::SubcategorySafetyTranslation& SubcategoryTranslations::safety() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.SubcategoryTranslations.safety)
   return _internal_safety();
 }
-inline ::google::protobuf::Map<std::string, ::products::v1::SubcategorySafetyTranslation>* PROTOBUF_NONNULL SubcategoryTranslations::_internal_mutable_safety() {
+inline void SubcategoryTranslations::unsafe_arena_set_allocated_safety(
+    ::products::v1::SubcategorySafetyTranslation* PROTOBUF_NULLABLE value) {
   ::google::protobuf::internal::TSanWrite(&_impl_);
-  return _impl_.safety_.MutableMap();
+  if (GetArena() == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.safety_);
+  }
+  _impl_.safety_ = reinterpret_cast<::products::v1::SubcategorySafetyTranslation*>(value);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:products.v1.SubcategoryTranslations.safety)
 }
-inline ::google::protobuf::Map<std::string, ::products::v1::SubcategorySafetyTranslation>* PROTOBUF_NONNULL SubcategoryTranslations::mutable_safety()
+inline ::products::v1::SubcategorySafetyTranslation* PROTOBUF_NULLABLE SubcategoryTranslations::release_safety() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  ::products::v1::SubcategorySafetyTranslation* released = _impl_.safety_;
+  _impl_.safety_ = nullptr;
+  if (::google::protobuf::internal::DebugHardenForceCopyInRelease()) {
+    auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
+    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    if (GetArena() == nullptr) {
+      delete old;
+    }
+  } else {
+    if (GetArena() != nullptr) {
+      released = ::google::protobuf::internal::DuplicateIfNonNull(released);
+    }
+  }
+  return released;
+}
+inline ::products::v1::SubcategorySafetyTranslation* PROTOBUF_NULLABLE SubcategoryTranslations::unsafe_arena_release_safety() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.SubcategoryTranslations.safety)
+
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  ::products::v1::SubcategorySafetyTranslation* temp = _impl_.safety_;
+  _impl_.safety_ = nullptr;
+  return temp;
+}
+inline ::products::v1::SubcategorySafetyTranslation* PROTOBUF_NONNULL SubcategoryTranslations::_internal_mutable_safety() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (_impl_.safety_ == nullptr) {
+    auto* p = ::google::protobuf::Message::DefaultConstruct<::products::v1::SubcategorySafetyTranslation>(GetArena());
+    _impl_.safety_ = reinterpret_cast<::products::v1::SubcategorySafetyTranslation*>(p);
+  }
+  return _impl_.safety_;
+}
+inline ::products::v1::SubcategorySafetyTranslation* PROTOBUF_NONNULL SubcategoryTranslations::mutable_safety()
     ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_mutable_map:products.v1.SubcategoryTranslations.safety)
-  return _internal_mutable_safety();
+  _impl_._has_bits_[0] |= 0x00000002u;
+  ::products::v1::SubcategorySafetyTranslation* _msg = _internal_mutable_safety();
+  // @@protoc_insertion_point(field_mutable:products.v1.SubcategoryTranslations.safety)
+  return _msg;
+}
+inline void SubcategoryTranslations::set_allocated_safety(::products::v1::SubcategorySafetyTranslation* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (message_arena == nullptr) {
+    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.safety_);
+  }
+
+  if (value != nullptr) {
+    ::google::protobuf::Arena* submessage_arena = value->GetArena();
+    if (message_arena != submessage_arena) {
+      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
+    }
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+
+  _impl_.safety_ = reinterpret_cast<::products::v1::SubcategorySafetyTranslation*>(value);
+  // @@protoc_insertion_point(field_set_allocated:products.v1.SubcategoryTranslations.safety)
 }
 
 // -------------------------------------------------------------------

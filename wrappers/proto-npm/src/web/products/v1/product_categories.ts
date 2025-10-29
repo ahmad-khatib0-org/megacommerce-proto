@@ -35,7 +35,7 @@ export interface SubcategoryTranslations {
   name: string;
   attributes: { [key: string]: SubcategoryAttributeTranslation };
   data: { [key: string]: StringMap };
-  safety: { [key: string]: SubcategorySafetyTranslation };
+  safety?: SubcategorySafetyTranslation | undefined;
 }
 
 export interface SubcategoryTranslations_AttributesEntry {
@@ -46,11 +46,6 @@ export interface SubcategoryTranslations_AttributesEntry {
 export interface SubcategoryTranslations_DataEntry {
   key: string;
   value?: StringMap | undefined;
-}
-
-export interface SubcategoryTranslations_SafetyEntry {
-  key: string;
-  value?: SubcategorySafetyTranslation | undefined;
 }
 
 export interface SubcategoryAttributeTranslation {
@@ -487,7 +482,7 @@ export const CategoryTranslations_SubcategoriesEntry: MessageFns<CategoryTransla
 };
 
 function createBaseSubcategoryTranslations(): SubcategoryTranslations {
-  return { name: "", attributes: {}, data: {}, safety: {} };
+  return { name: "", attributes: {}, data: {}, safety: undefined };
 }
 
 export const SubcategoryTranslations: MessageFns<SubcategoryTranslations> = {
@@ -501,9 +496,9 @@ export const SubcategoryTranslations: MessageFns<SubcategoryTranslations> = {
     Object.entries(message.data).forEach(([key, value]) => {
       SubcategoryTranslations_DataEntry.encode({ key: key as any, value }, writer.uint32(26).fork()).join();
     });
-    Object.entries(message.safety).forEach(([key, value]) => {
-      SubcategoryTranslations_SafetyEntry.encode({ key: key as any, value }, writer.uint32(34).fork()).join();
-    });
+    if (message.safety !== undefined) {
+      SubcategorySafetyTranslation.encode(message.safety, writer.uint32(34).fork()).join();
+    }
     return writer;
   },
 
@@ -549,10 +544,7 @@ export const SubcategoryTranslations: MessageFns<SubcategoryTranslations> = {
             break;
           }
 
-          const entry4 = SubcategoryTranslations_SafetyEntry.decode(reader, reader.uint32());
-          if (entry4.value !== undefined) {
-            message.safety[entry4.key] = entry4.value;
-          }
+          message.safety = SubcategorySafetyTranslation.decode(reader, reader.uint32());
           continue;
         }
       }
@@ -582,12 +574,7 @@ export const SubcategoryTranslations: MessageFns<SubcategoryTranslations> = {
           return acc;
         }, {})
         : {},
-      safety: isObject(object.safety)
-        ? Object.entries(object.safety).reduce<{ [key: string]: SubcategorySafetyTranslation }>((acc, [key, value]) => {
-          acc[key] = SubcategorySafetyTranslation.fromJSON(value);
-          return acc;
-        }, {})
-        : {},
+      safety: isSet(object.safety) ? SubcategorySafetyTranslation.fromJSON(object.safety) : undefined,
     };
   },
 
@@ -614,14 +601,8 @@ export const SubcategoryTranslations: MessageFns<SubcategoryTranslations> = {
         });
       }
     }
-    if (message.safety) {
-      const entries = Object.entries(message.safety);
-      if (entries.length > 0) {
-        obj.safety = {};
-        entries.forEach(([k, v]) => {
-          obj.safety[k] = SubcategorySafetyTranslation.toJSON(v);
-        });
-      }
+    if (message.safety !== undefined) {
+      obj.safety = SubcategorySafetyTranslation.toJSON(message.safety);
     }
     return obj;
   },
@@ -646,15 +627,9 @@ export const SubcategoryTranslations: MessageFns<SubcategoryTranslations> = {
       }
       return acc;
     }, {});
-    message.safety = Object.entries(object.safety ?? {}).reduce<{ [key: string]: SubcategorySafetyTranslation }>(
-      (acc, [key, value]) => {
-        if (value !== undefined) {
-          acc[key] = SubcategorySafetyTranslation.fromPartial(value);
-        }
-        return acc;
-      },
-      {},
-    );
+    message.safety = (object.safety !== undefined && object.safety !== null)
+      ? SubcategorySafetyTranslation.fromPartial(object.safety)
+      : undefined;
     return message;
   },
 };
@@ -818,88 +793,6 @@ export const SubcategoryTranslations_DataEntry: MessageFns<SubcategoryTranslatio
     message.key = object.key ?? "";
     message.value = (object.value !== undefined && object.value !== null)
       ? StringMap.fromPartial(object.value)
-      : undefined;
-    return message;
-  },
-};
-
-function createBaseSubcategoryTranslations_SafetyEntry(): SubcategoryTranslations_SafetyEntry {
-  return { key: "", value: undefined };
-}
-
-export const SubcategoryTranslations_SafetyEntry: MessageFns<SubcategoryTranslations_SafetyEntry> = {
-  encode(message: SubcategoryTranslations_SafetyEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.key !== "") {
-      writer.uint32(10).string(message.key);
-    }
-    if (message.value !== undefined) {
-      SubcategorySafetyTranslation.encode(message.value, writer.uint32(18).fork()).join();
-    }
-    return writer;
-  },
-
-  decode(input: BinaryReader | Uint8Array, length?: number): SubcategoryTranslations_SafetyEntry {
-    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
-    const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseSubcategoryTranslations_SafetyEntry();
-    while (reader.pos < end) {
-      const tag = reader.uint32();
-      switch (tag >>> 3) {
-        case 1: {
-          if (tag !== 10) {
-            break;
-          }
-
-          message.key = reader.string();
-          continue;
-        }
-        case 2: {
-          if (tag !== 18) {
-            break;
-          }
-
-          message.value = SubcategorySafetyTranslation.decode(reader, reader.uint32());
-          continue;
-        }
-      }
-      if ((tag & 7) === 4 || tag === 0) {
-        break;
-      }
-      reader.skip(tag & 7);
-    }
-    return message;
-  },
-
-  fromJSON(object: any): SubcategoryTranslations_SafetyEntry {
-    return {
-      key: isSet(object.key) ? globalThis.String(object.key) : "",
-      value: isSet(object.value) ? SubcategorySafetyTranslation.fromJSON(object.value) : undefined,
-    };
-  },
-
-  toJSON(message: SubcategoryTranslations_SafetyEntry): unknown {
-    const obj: any = {};
-    if (message.key !== "") {
-      obj.key = message.key;
-    }
-    if (message.value !== undefined) {
-      obj.value = SubcategorySafetyTranslation.toJSON(message.value);
-    }
-    return obj;
-  },
-
-  create<I extends Exact<DeepPartial<SubcategoryTranslations_SafetyEntry>, I>>(
-    base?: I,
-  ): SubcategoryTranslations_SafetyEntry {
-    return SubcategoryTranslations_SafetyEntry.fromPartial(base ?? ({} as any));
-  },
-  fromPartial<I extends Exact<DeepPartial<SubcategoryTranslations_SafetyEntry>, I>>(
-    object: I,
-  ): SubcategoryTranslations_SafetyEntry {
-    const message = createBaseSubcategoryTranslations_SafetyEntry();
-    message.key = object.key ?? "";
-    message.value = (object.value !== undefined && object.value !== null)
-      ? SubcategorySafetyTranslation.fromPartial(object.value)
       : undefined;
     return message;
   },

@@ -29,7 +29,7 @@ message SubcategoryTranslations {
   string name = 1;
   map<string, SubcategoryAttributeTranslation> attributes = 2;
   map<string, shared.v1.StringMap> data = 3;
-  map<string, SubcategorySafetyTranslation> safety = 4;
+  SubcategorySafetyTranslation safety = 4;
 }
 
 message SubcategoryAttributeTranslation {
