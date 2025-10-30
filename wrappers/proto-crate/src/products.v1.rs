@@ -10,20 +10,244 @@ pub struct ProductCreateTag {
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductCreateRequest {
+    #[prost(message, optional, tag = "1")]
+    pub identity: ::core::option::Option<ProductCreateRequestIdentity>,
+    #[prost(message, optional, tag = "2")]
+    pub description: ::core::option::Option<ProductCreateRequestDescription>,
+    #[prost(message, optional, tag = "3")]
+    pub details: ::core::option::Option<ProductCreateRequestDetails>,
+    #[prost(message, optional, tag = "4")]
+    pub media: ::core::option::Option<ProductCreateRequestMedia>,
+    #[prost(message, optional, tag = "5")]
+    pub offer: ::core::option::Option<ProductCreateRequestOffer>,
+    #[prost(message, optional, tag = "6")]
+    pub safety: ::core::option::Option<ProductCreateRequestSafety>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductCreateRequestIdentity {
     #[prost(string, tag = "1")]
     pub title: ::prost::alloc::string::String,
     #[prost(string, tag = "2")]
-    pub description: ::prost::alloc::string::String,
+    pub category: ::prost::alloc::string::String,
     #[prost(string, tag = "3")]
+    pub subcategory: ::prost::alloc::string::String,
+    #[prost(bool, tag = "4")]
+    pub has_variations: bool,
+    #[prost(string, tag = "5")]
+    pub brand_name: ::prost::alloc::string::String,
+    #[prost(bool, tag = "6")]
+    pub no_brand: bool,
+    #[prost(string, tag = "7")]
+    pub product_id: ::prost::alloc::string::String,
+    #[prost(bool, tag = "8")]
+    pub no_product_id: bool,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductCreateRequestDescription {
+    #[prost(string, tag = "1")]
+    pub description: ::prost::alloc::string::String,
+    #[prost(message, repeated, tag = "2")]
+    pub bullet_points: ::prost::alloc::vec::Vec<ProductCreateRequestBulletPoint>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductCreateRequestBulletPoint {
+    #[prost(string, tag = "1")]
+    pub id: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub bullet_point: ::prost::alloc::string::String,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductCreateRequestDetails {
+    #[prost(oneof = "product_create_request_details::Details", tags = "1, 2")]
+    pub details: ::core::option::Option<product_create_request_details::Details>,
+}
+/// Nested message and enum types in `ProductCreateRequestDetails`.
+pub mod product_create_request_details {
+    #[derive(serde::Serialize, serde::Deserialize)]
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Details {
+        #[prost(message, tag = "1")]
+        WithVariants(super::ProductCreateRequestDetailsWithVariants),
+        #[prost(message, tag = "2")]
+        WithoutVariants(super::ProductCreateRequestDetailsWithoutVariants),
+    }
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductCreateRequestDetailsWithVariants {
+    #[prost(message, repeated, tag = "1")]
+    pub variants: ::prost::alloc::vec::Vec<ProductCreateRequestDetailsVariantForm>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductCreateRequestDetailsVariantForm {
+    #[prost(map = "string, message", tag = "1")]
+    pub form: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        super::super::shared::v1::Any,
+    >,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductCreateRequestDetailsWithoutVariants {
+    #[prost(map = "string, message", tag = "1")]
+    pub form: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        super::super::shared::v1::Any,
+    >,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductCreateRequestMedia {
+    #[prost(uint64, tag = "1")]
+    pub total_size: u64,
+    #[prost(oneof = "product_create_request_media::Media", tags = "2, 3")]
+    pub media: ::core::option::Option<product_create_request_media::Media>,
+}
+/// Nested message and enum types in `ProductCreateRequestMedia`.
+pub mod product_create_request_media {
+    #[derive(serde::Serialize, serde::Deserialize)]
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Media {
+        #[prost(message, tag = "2")]
+        WithVariants(super::ProductCreateRequestMediaWithVariants),
+        #[prost(message, tag = "3")]
+        WithoutVariants(super::ProductCreateRequestMediaWithoutVariants),
+    }
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductCreateRequestMediaWithVariants {
+    #[prost(map = "string, message", tag = "1")]
+    pub images: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        super::super::shared::v1::Attachments,
+    >,
+    #[prost(map = "string, message", tag = "2")]
+    pub videos: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        super::super::shared::v1::Attachments,
+    >,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductCreateRequestMediaWithoutVariants {
+    #[prost(message, repeated, tag = "1")]
+    pub images: ::prost::alloc::vec::Vec<super::super::shared::v1::Attachment>,
+    #[prost(message, repeated, tag = "2")]
+    pub videos: ::prost::alloc::vec::Vec<super::super::shared::v1::Attachment>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductCreateRequestOffer {
+    #[prost(string, tag = "1")]
+    pub currency: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub fulfillment_type: ::prost::alloc::string::String,
+    #[prost(uint64, tag = "3")]
+    pub processing_time: u64,
+    #[prost(oneof = "product_create_request_offer::Pricing", tags = "4, 5")]
+    pub pricing: ::core::option::Option<product_create_request_offer::Pricing>,
+}
+/// Nested message and enum types in `ProductCreateRequestOffer`.
+pub mod product_create_request_offer {
+    #[derive(serde::Serialize, serde::Deserialize)]
+    #[derive(Clone, PartialEq, ::prost::Oneof)]
+    pub enum Pricing {
+        #[prost(message, tag = "4")]
+        WithVariants(super::ProductCreateRequestOfferWithVariants),
+        #[prost(message, tag = "5")]
+        WithoutVariants(super::ProductCreateRequestOfferPricing),
+    }
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductCreateRequestOfferWithVariants {
+    #[prost(message, repeated, tag = "1")]
+    pub variants: ::prost::alloc::vec::Vec<ProductCreateRequestOfferVariant>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductCreateRequestOfferVariant {
+    #[prost(string, tag = "1")]
+    pub id: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
     pub sku: ::prost::alloc::string::String,
+    #[prost(uint64, tag = "3")]
+    pub quantity: u64,
     #[prost(string, tag = "4")]
     pub price: ::prost::alloc::string::String,
     #[prost(string, tag = "5")]
-    pub currency_code: ::prost::alloc::string::String,
-    #[prost(message, repeated, tag = "6")]
-    pub tags: ::prost::alloc::vec::Vec<ProductCreateTag>,
-    #[prost(bool, tag = "7")]
-    pub ar_enabled: bool,
+    pub offering_condition: ::prost::alloc::string::String,
+    #[prost(string, optional, tag = "6")]
+    pub condition_note: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "7")]
+    pub list_price: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(bool, optional, tag = "8")]
+    pub has_sale_price: ::core::option::Option<bool>,
+    #[prost(string, optional, tag = "9")]
+    pub sale_price: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "10")]
+    pub sale_price_start: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "11")]
+    pub sale_price_end: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(bool, tag = "12")]
+    pub has_minimum_orders: bool,
+    #[prost(message, repeated, tag = "13")]
+    pub minimum_orders: ::prost::alloc::vec::Vec<ProductCreateRequestOfferMinimumOrder>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductCreateRequestOfferPricing {
+    #[prost(string, tag = "1")]
+    pub sku: ::prost::alloc::string::String,
+    #[prost(uint64, tag = "2")]
+    pub quantity: u64,
+    #[prost(string, tag = "3")]
+    pub price: ::prost::alloc::string::String,
+    #[prost(string, tag = "4")]
+    pub offering_condition: ::prost::alloc::string::String,
+    #[prost(string, optional, tag = "5")]
+    pub condition_note: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "6")]
+    pub list_price: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(bool, optional, tag = "7")]
+    pub has_sale_price: ::core::option::Option<bool>,
+    #[prost(string, optional, tag = "8")]
+    pub sale_price: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "9")]
+    pub sale_price_start: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(string, optional, tag = "10")]
+    pub sale_price_end: ::core::option::Option<::prost::alloc::string::String>,
+    #[prost(bool, tag = "11")]
+    pub has_minimum_orders: bool,
+    #[prost(message, repeated, tag = "12")]
+    pub minimum_orders: ::prost::alloc::vec::Vec<ProductCreateRequestOfferMinimumOrder>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductCreateRequestOfferMinimumOrder {
+    #[prost(string, tag = "1")]
+    pub id: ::prost::alloc::string::String,
+    #[prost(string, tag = "2")]
+    pub price: ::prost::alloc::string::String,
+    #[prost(uint64, tag = "3")]
+    pub quantity: u64,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct ProductCreateRequestSafety {
+    #[prost(bool, tag = "1")]
+    pub attestation: bool,
+    #[prost(map = "string, message", tag = "2")]
+    pub form: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        super::super::shared::v1::Any,
+    >,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]

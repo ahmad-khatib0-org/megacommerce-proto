@@ -335,6 +335,23 @@ public final class AttachmentProto {
      */
     com.google.protobuf.ByteString
         getMimeBytes();
+
+    /**
+     * <code>optional string checksum = 12 [json_name = "checksum"];</code>
+     * @return Whether the checksum field is set.
+     */
+    boolean hasChecksum();
+    /**
+     * <code>optional string checksum = 12 [json_name = "checksum"];</code>
+     * @return The checksum.
+     */
+    java.lang.String getChecksum();
+    /**
+     * <code>optional string checksum = 12 [json_name = "checksum"];</code>
+     * @return The bytes for checksum.
+     */
+    com.google.protobuf.ByteString
+        getChecksumBytes();
   }
   /**
    * Protobuf type {@code shared.v1.Attachment}
@@ -365,6 +382,7 @@ public final class AttachmentProto {
       base64_ = "";
       data_ = com.google.protobuf.ByteString.EMPTY;
       mime_ = "";
+      checksum_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -724,6 +742,53 @@ public final class AttachmentProto {
       }
     }
 
+    public static final int CHECKSUM_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object checksum_ = "";
+    /**
+     * <code>optional string checksum = 12 [json_name = "checksum"];</code>
+     * @return Whether the checksum field is set.
+     */
+    @java.lang.Override
+    public boolean hasChecksum() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>optional string checksum = 12 [json_name = "checksum"];</code>
+     * @return The checksum.
+     */
+    @java.lang.Override
+    public java.lang.String getChecksum() {
+      java.lang.Object ref = checksum_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        checksum_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string checksum = 12 [json_name = "checksum"];</code>
+     * @return The bytes for checksum.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getChecksumBytes() {
+      java.lang.Object ref = checksum_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        checksum_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -770,6 +835,9 @@ public final class AttachmentProto {
       }
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mime_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 11, mime_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 12, checksum_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -818,6 +886,9 @@ public final class AttachmentProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(mime_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(11, mime_);
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(12, checksum_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -861,6 +932,11 @@ public final class AttachmentProto {
           .equals(other.getData())) return false;
       if (!getMime()
           .equals(other.getMime())) return false;
+      if (hasChecksum() != other.hasChecksum()) return false;
+      if (hasChecksum()) {
+        if (!getChecksum()
+            .equals(other.getChecksum())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -899,6 +975,10 @@ public final class AttachmentProto {
       hash = (53 * hash) + getData().hashCode();
       hash = (37 * hash) + MIME_FIELD_NUMBER;
       hash = (53 * hash) + getMime().hashCode();
+      if (hasChecksum()) {
+        hash = (37 * hash) + CHECKSUM_FIELD_NUMBER;
+        hash = (53 * hash) + getChecksum().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1056,6 +1136,7 @@ public final class AttachmentProto {
         }
         data_ = com.google.protobuf.ByteString.EMPTY;
         mime_ = "";
+        checksum_ = "";
         return this;
       }
 
@@ -1129,6 +1210,10 @@ public final class AttachmentProto {
         if (((from_bitField0_ & 0x00000400) != 0)) {
           result.mime_ = mime_;
         }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.checksum_ = checksum_;
+          to_bitField0_ |= 0x00000004;
+        }
         result.bitField0_ |= to_bitField0_;
       }
 
@@ -1187,6 +1272,11 @@ public final class AttachmentProto {
         if (!other.getMime().isEmpty()) {
           mime_ = other.mime_;
           bitField0_ |= 0x00000400;
+          onChanged();
+        }
+        if (other.hasChecksum()) {
+          checksum_ = other.checksum_;
+          bitField0_ |= 0x00000800;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1274,6 +1364,11 @@ public final class AttachmentProto {
                 bitField0_ |= 0x00000400;
                 break;
               } // case 90
+              case 98: {
+                checksum_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -2129,6 +2224,85 @@ public final class AttachmentProto {
         return this;
       }
 
+      private java.lang.Object checksum_ = "";
+      /**
+       * <code>optional string checksum = 12 [json_name = "checksum"];</code>
+       * @return Whether the checksum field is set.
+       */
+      public boolean hasChecksum() {
+        return ((bitField0_ & 0x00000800) != 0);
+      }
+      /**
+       * <code>optional string checksum = 12 [json_name = "checksum"];</code>
+       * @return The checksum.
+       */
+      public java.lang.String getChecksum() {
+        java.lang.Object ref = checksum_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          checksum_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string checksum = 12 [json_name = "checksum"];</code>
+       * @return The bytes for checksum.
+       */
+      public com.google.protobuf.ByteString
+          getChecksumBytes() {
+        java.lang.Object ref = checksum_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          checksum_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string checksum = 12 [json_name = "checksum"];</code>
+       * @param value The checksum to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChecksum(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        checksum_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string checksum = 12 [json_name = "checksum"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChecksum() {
+        checksum_ = getDefaultInstance().getChecksum();
+        bitField0_ = (bitField0_ & ~0x00000800);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string checksum = 12 [json_name = "checksum"];</code>
+       * @param value The bytes for checksum to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChecksumBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        checksum_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+
       // @@protoc_insertion_point(builder_scope:shared.v1.Attachment)
     }
 
@@ -2175,6 +2349,746 @@ public final class AttachmentProto {
 
     @java.lang.Override
     public org.megacommerce.shared.v1.AttachmentProto.Attachment getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AttachmentsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:shared.v1.Attachments)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+     */
+    java.util.List<org.megacommerce.shared.v1.AttachmentProto.Attachment> 
+        getAttachmentsList();
+    /**
+     * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+     */
+    org.megacommerce.shared.v1.AttachmentProto.Attachment getAttachments(int index);
+    /**
+     * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+     */
+    int getAttachmentsCount();
+    /**
+     * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+     */
+    java.util.List<? extends org.megacommerce.shared.v1.AttachmentProto.AttachmentOrBuilder> 
+        getAttachmentsOrBuilderList();
+    /**
+     * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+     */
+    org.megacommerce.shared.v1.AttachmentProto.AttachmentOrBuilder getAttachmentsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code shared.v1.Attachments}
+   */
+  public static final class Attachments extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:shared.v1.Attachments)
+      AttachmentsOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 31,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        Attachments.class.getName());
+    }
+    // Use Attachments.newBuilder() to construct.
+    private Attachments(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private Attachments() {
+      attachments_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return org.megacommerce.shared.v1.AttachmentProto.internal_static_shared_v1_Attachments_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return org.megacommerce.shared.v1.AttachmentProto.internal_static_shared_v1_Attachments_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              org.megacommerce.shared.v1.AttachmentProto.Attachments.class, org.megacommerce.shared.v1.AttachmentProto.Attachments.Builder.class);
+    }
+
+    public static final int ATTACHMENTS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<org.megacommerce.shared.v1.AttachmentProto.Attachment> attachments_;
+    /**
+     * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<org.megacommerce.shared.v1.AttachmentProto.Attachment> getAttachmentsList() {
+      return attachments_;
+    }
+    /**
+     * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends org.megacommerce.shared.v1.AttachmentProto.AttachmentOrBuilder> 
+        getAttachmentsOrBuilderList() {
+      return attachments_;
+    }
+    /**
+     * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+     */
+    @java.lang.Override
+    public int getAttachmentsCount() {
+      return attachments_.size();
+    }
+    /**
+     * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.AttachmentProto.Attachment getAttachments(int index) {
+      return attachments_.get(index);
+    }
+    /**
+     * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.AttachmentProto.AttachmentOrBuilder getAttachmentsOrBuilder(
+        int index) {
+      return attachments_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < attachments_.size(); i++) {
+        output.writeMessage(1, attachments_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < attachments_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, attachments_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof org.megacommerce.shared.v1.AttachmentProto.Attachments)) {
+        return super.equals(obj);
+      }
+      org.megacommerce.shared.v1.AttachmentProto.Attachments other = (org.megacommerce.shared.v1.AttachmentProto.Attachments) obj;
+
+      if (!getAttachmentsList()
+          .equals(other.getAttachmentsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getAttachmentsCount() > 0) {
+        hash = (37 * hash) + ATTACHMENTS_FIELD_NUMBER;
+        hash = (53 * hash) + getAttachmentsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachments parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachments parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachments parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachments parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachments parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachments parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachments parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachments parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachments parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachments parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachments parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachments parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(org.megacommerce.shared.v1.AttachmentProto.Attachments prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code shared.v1.Attachments}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:shared.v1.Attachments)
+        org.megacommerce.shared.v1.AttachmentProto.AttachmentsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return org.megacommerce.shared.v1.AttachmentProto.internal_static_shared_v1_Attachments_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return org.megacommerce.shared.v1.AttachmentProto.internal_static_shared_v1_Attachments_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                org.megacommerce.shared.v1.AttachmentProto.Attachments.class, org.megacommerce.shared.v1.AttachmentProto.Attachments.Builder.class);
+      }
+
+      // Construct using org.megacommerce.shared.v1.AttachmentProto.Attachments.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (attachmentsBuilder_ == null) {
+          attachments_ = java.util.Collections.emptyList();
+        } else {
+          attachments_ = null;
+          attachmentsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return org.megacommerce.shared.v1.AttachmentProto.internal_static_shared_v1_Attachments_descriptor;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.shared.v1.AttachmentProto.Attachments getDefaultInstanceForType() {
+        return org.megacommerce.shared.v1.AttachmentProto.Attachments.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public org.megacommerce.shared.v1.AttachmentProto.Attachments build() {
+        org.megacommerce.shared.v1.AttachmentProto.Attachments result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public org.megacommerce.shared.v1.AttachmentProto.Attachments buildPartial() {
+        org.megacommerce.shared.v1.AttachmentProto.Attachments result = new org.megacommerce.shared.v1.AttachmentProto.Attachments(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(org.megacommerce.shared.v1.AttachmentProto.Attachments result) {
+        if (attachmentsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            attachments_ = java.util.Collections.unmodifiableList(attachments_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.attachments_ = attachments_;
+        } else {
+          result.attachments_ = attachmentsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(org.megacommerce.shared.v1.AttachmentProto.Attachments result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof org.megacommerce.shared.v1.AttachmentProto.Attachments) {
+          return mergeFrom((org.megacommerce.shared.v1.AttachmentProto.Attachments)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(org.megacommerce.shared.v1.AttachmentProto.Attachments other) {
+        if (other == org.megacommerce.shared.v1.AttachmentProto.Attachments.getDefaultInstance()) return this;
+        if (attachmentsBuilder_ == null) {
+          if (!other.attachments_.isEmpty()) {
+            if (attachments_.isEmpty()) {
+              attachments_ = other.attachments_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureAttachmentsIsMutable();
+              attachments_.addAll(other.attachments_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.attachments_.isEmpty()) {
+            if (attachmentsBuilder_.isEmpty()) {
+              attachmentsBuilder_.dispose();
+              attachmentsBuilder_ = null;
+              attachments_ = other.attachments_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              attachmentsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   internalGetAttachmentsFieldBuilder() : null;
+            } else {
+              attachmentsBuilder_.addAllMessages(other.attachments_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                org.megacommerce.shared.v1.AttachmentProto.Attachment m =
+                    input.readMessage(
+                        org.megacommerce.shared.v1.AttachmentProto.Attachment.parser(),
+                        extensionRegistry);
+                if (attachmentsBuilder_ == null) {
+                  ensureAttachmentsIsMutable();
+                  attachments_.add(m);
+                } else {
+                  attachmentsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<org.megacommerce.shared.v1.AttachmentProto.Attachment> attachments_ =
+        java.util.Collections.emptyList();
+      private void ensureAttachmentsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          attachments_ = new java.util.ArrayList<org.megacommerce.shared.v1.AttachmentProto.Attachment>(attachments_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.megacommerce.shared.v1.AttachmentProto.Attachment, org.megacommerce.shared.v1.AttachmentProto.Attachment.Builder, org.megacommerce.shared.v1.AttachmentProto.AttachmentOrBuilder> attachmentsBuilder_;
+
+      /**
+       * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+       */
+      public java.util.List<org.megacommerce.shared.v1.AttachmentProto.Attachment> getAttachmentsList() {
+        if (attachmentsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(attachments_);
+        } else {
+          return attachmentsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+       */
+      public int getAttachmentsCount() {
+        if (attachmentsBuilder_ == null) {
+          return attachments_.size();
+        } else {
+          return attachmentsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+       */
+      public org.megacommerce.shared.v1.AttachmentProto.Attachment getAttachments(int index) {
+        if (attachmentsBuilder_ == null) {
+          return attachments_.get(index);
+        } else {
+          return attachmentsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+       */
+      public Builder setAttachments(
+          int index, org.megacommerce.shared.v1.AttachmentProto.Attachment value) {
+        if (attachmentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAttachmentsIsMutable();
+          attachments_.set(index, value);
+          onChanged();
+        } else {
+          attachmentsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+       */
+      public Builder setAttachments(
+          int index, org.megacommerce.shared.v1.AttachmentProto.Attachment.Builder builderForValue) {
+        if (attachmentsBuilder_ == null) {
+          ensureAttachmentsIsMutable();
+          attachments_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          attachmentsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+       */
+      public Builder addAttachments(org.megacommerce.shared.v1.AttachmentProto.Attachment value) {
+        if (attachmentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAttachmentsIsMutable();
+          attachments_.add(value);
+          onChanged();
+        } else {
+          attachmentsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+       */
+      public Builder addAttachments(
+          int index, org.megacommerce.shared.v1.AttachmentProto.Attachment value) {
+        if (attachmentsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureAttachmentsIsMutable();
+          attachments_.add(index, value);
+          onChanged();
+        } else {
+          attachmentsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+       */
+      public Builder addAttachments(
+          org.megacommerce.shared.v1.AttachmentProto.Attachment.Builder builderForValue) {
+        if (attachmentsBuilder_ == null) {
+          ensureAttachmentsIsMutable();
+          attachments_.add(builderForValue.build());
+          onChanged();
+        } else {
+          attachmentsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+       */
+      public Builder addAttachments(
+          int index, org.megacommerce.shared.v1.AttachmentProto.Attachment.Builder builderForValue) {
+        if (attachmentsBuilder_ == null) {
+          ensureAttachmentsIsMutable();
+          attachments_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          attachmentsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+       */
+      public Builder addAllAttachments(
+          java.lang.Iterable<? extends org.megacommerce.shared.v1.AttachmentProto.Attachment> values) {
+        if (attachmentsBuilder_ == null) {
+          ensureAttachmentsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, attachments_);
+          onChanged();
+        } else {
+          attachmentsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+       */
+      public Builder clearAttachments() {
+        if (attachmentsBuilder_ == null) {
+          attachments_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          attachmentsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+       */
+      public Builder removeAttachments(int index) {
+        if (attachmentsBuilder_ == null) {
+          ensureAttachmentsIsMutable();
+          attachments_.remove(index);
+          onChanged();
+        } else {
+          attachmentsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+       */
+      public org.megacommerce.shared.v1.AttachmentProto.Attachment.Builder getAttachmentsBuilder(
+          int index) {
+        return internalGetAttachmentsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+       */
+      public org.megacommerce.shared.v1.AttachmentProto.AttachmentOrBuilder getAttachmentsOrBuilder(
+          int index) {
+        if (attachmentsBuilder_ == null) {
+          return attachments_.get(index);  } else {
+          return attachmentsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+       */
+      public java.util.List<? extends org.megacommerce.shared.v1.AttachmentProto.AttachmentOrBuilder> 
+           getAttachmentsOrBuilderList() {
+        if (attachmentsBuilder_ != null) {
+          return attachmentsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(attachments_);
+        }
+      }
+      /**
+       * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+       */
+      public org.megacommerce.shared.v1.AttachmentProto.Attachment.Builder addAttachmentsBuilder() {
+        return internalGetAttachmentsFieldBuilder().addBuilder(
+            org.megacommerce.shared.v1.AttachmentProto.Attachment.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+       */
+      public org.megacommerce.shared.v1.AttachmentProto.Attachment.Builder addAttachmentsBuilder(
+          int index) {
+        return internalGetAttachmentsFieldBuilder().addBuilder(
+            index, org.megacommerce.shared.v1.AttachmentProto.Attachment.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .shared.v1.Attachment attachments = 1 [json_name = "attachments"];</code>
+       */
+      public java.util.List<org.megacommerce.shared.v1.AttachmentProto.Attachment.Builder> 
+           getAttachmentsBuilderList() {
+        return internalGetAttachmentsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          org.megacommerce.shared.v1.AttachmentProto.Attachment, org.megacommerce.shared.v1.AttachmentProto.Attachment.Builder, org.megacommerce.shared.v1.AttachmentProto.AttachmentOrBuilder> 
+          internalGetAttachmentsFieldBuilder() {
+        if (attachmentsBuilder_ == null) {
+          attachmentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              org.megacommerce.shared.v1.AttachmentProto.Attachment, org.megacommerce.shared.v1.AttachmentProto.Attachment.Builder, org.megacommerce.shared.v1.AttachmentProto.AttachmentOrBuilder>(
+                  attachments_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          attachments_ = null;
+        }
+        return attachmentsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:shared.v1.Attachments)
+    }
+
+    // @@protoc_insertion_point(class_scope:shared.v1.Attachments)
+    private static final org.megacommerce.shared.v1.AttachmentProto.Attachments DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new org.megacommerce.shared.v1.AttachmentProto.Attachments();
+    }
+
+    public static org.megacommerce.shared.v1.AttachmentProto.Attachments getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Attachments>
+        PARSER = new com.google.protobuf.AbstractParser<Attachments>() {
+      @java.lang.Override
+      public Attachments parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<Attachments> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Attachments> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public org.megacommerce.shared.v1.AttachmentProto.Attachments getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3935,6 +4849,11 @@ public final class AttachmentProto {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_shared_v1_Attachment_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_shared_v1_Attachments_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_shared_v1_Attachments_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_shared_v1_Crop_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -3954,7 +4873,7 @@ public final class AttachmentProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\032shared/v1/attachment.proto\022\tshared.v1\032" +
-      "\026shared/v1/struct.proto\"\330\002\n\nAttachment\022\016" +
+      "\026shared/v1/struct.proto\"\206\003\n\nAttachment\022\016" +
       "\n\002id\030\001 \001(\tR\002id\022\032\n\010filename\030\002 \001(\tR\010filena" +
       "me\022\033\n\tfile_type\030\003 \001(\tR\010fileType\022\033\n\tfile_" +
       "size\030\004 \001(\003R\010fileSize\022%\n\016file_extension\030\005" +
@@ -3963,20 +4882,23 @@ public final class AttachmentProto {
       "tation\022#\n\004crop\030\010 \001(\0132\017.shared.v1.CropR\004c" +
       "rop\022-\n\010metadata\030\t \001(\0132\021.shared.v1.Struct" +
       "R\010metadata\022\022\n\004data\030\n \001(\014R\004data\022\022\n\004mime\030\013" +
-      " \001(\tR\004mime\"s\n\004Crop\022\014\n\001x\030\001 \001(\002R\001x\022\014\n\001y\030\002 " +
-      "\001(\002R\001y\022\024\n\005width\030\003 \001(\002R\005width\022\026\n\006height\030\004" +
-      " \001(\002R\006height\022!\n\014aspect_ratio\030\005 \001(\002R\013aspe" +
-      "ctRatio\"\205\001\n\017AttachmentError\022\016\n\002id\030\001 \001(\tR" +
-      "\002id\0222\n\004type\030\002 \001(\0162\036.shared.v1.Attachment" +
-      "ErrorTypeR\004type\022\030\n\007message\030\003 \001(\tR\007messag" +
-      "e\022\024\n\005error\030\004 \001(\tR\005error*\242\001\n\023AttachmentEr" +
-      "rorType\022\017\n\013UNSPECIFIED\020\000\022\022\n\016INVALID_BASE" +
-      "64\020\001\022\025\n\021INVALID_FILE_TYPE\020\002\022\014\n\010BIG_FILE\020" +
-      "\003\022\016\n\nDECODE_IMG\020\004\022\026\n\022BIG_DIMENSIONS_IMG\020" +
-      "\005\022\031\n\025UNSUPPORTED_FILE_TYPE\020\006Bu\n\032org.mega" +
-      "commerce.shared.v1B\017AttachmentProtoZCgit" +
-      "hub.com/ahmad-khatib0-org/megacommerce-p" +
-      "roto/gen/go/shared/v1;v1\370\001\001b\006proto3"
+      " \001(\tR\004mime\022\037\n\010checksum\030\014 \001(\tH\000R\010checksum" +
+      "\210\001\001B\013\n\t_checksum\"F\n\013Attachments\0227\n\013attac" +
+      "hments\030\001 \003(\0132\025.shared.v1.AttachmentR\013att" +
+      "achments\"s\n\004Crop\022\014\n\001x\030\001 \001(\002R\001x\022\014\n\001y\030\002 \001(" +
+      "\002R\001y\022\024\n\005width\030\003 \001(\002R\005width\022\026\n\006height\030\004 \001" +
+      "(\002R\006height\022!\n\014aspect_ratio\030\005 \001(\002R\013aspect" +
+      "Ratio\"\205\001\n\017AttachmentError\022\016\n\002id\030\001 \001(\tR\002i" +
+      "d\0222\n\004type\030\002 \001(\0162\036.shared.v1.AttachmentEr" +
+      "rorTypeR\004type\022\030\n\007message\030\003 \001(\tR\007message\022" +
+      "\024\n\005error\030\004 \001(\tR\005error*\242\001\n\023AttachmentErro" +
+      "rType\022\017\n\013UNSPECIFIED\020\000\022\022\n\016INVALID_BASE64" +
+      "\020\001\022\025\n\021INVALID_FILE_TYPE\020\002\022\014\n\010BIG_FILE\020\003\022" +
+      "\016\n\nDECODE_IMG\020\004\022\026\n\022BIG_DIMENSIONS_IMG\020\005\022" +
+      "\031\n\025UNSUPPORTED_FILE_TYPE\020\006Bu\n\032org.megaco" +
+      "mmerce.shared.v1B\017AttachmentProtoZCgithu" +
+      "b.com/ahmad-khatib0-org/megacommerce-pro" +
+      "to/gen/go/shared/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -3988,15 +4910,21 @@ public final class AttachmentProto {
     internal_static_shared_v1_Attachment_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_Attachment_descriptor,
-        new java.lang.String[] { "Id", "Filename", "FileType", "FileSize", "FileExtension", "Base64", "ExifOrientation", "Crop", "Metadata", "Data", "Mime", });
-    internal_static_shared_v1_Crop_descriptor =
+        new java.lang.String[] { "Id", "Filename", "FileType", "FileSize", "FileExtension", "Base64", "ExifOrientation", "Crop", "Metadata", "Data", "Mime", "Checksum", });
+    internal_static_shared_v1_Attachments_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_shared_v1_Attachments_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_shared_v1_Attachments_descriptor,
+        new java.lang.String[] { "Attachments", });
+    internal_static_shared_v1_Crop_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_shared_v1_Crop_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_Crop_descriptor,
         new java.lang.String[] { "X", "Y", "Width", "Height", "AspectRatio", });
     internal_static_shared_v1_AttachmentError_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_shared_v1_AttachmentError_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_shared_v1_AttachmentError_descriptor,

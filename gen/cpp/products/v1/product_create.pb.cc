@@ -55,14 +55,132 @@ struct ProductCreateTagDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateTagDefaultTypeInternal _ProductCreateTag_default_instance_;
 
-inline constexpr ProductCreateRequest::Impl_::Impl_(
+inline constexpr ProductCreateRequestOfferMinimumOrder::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
-        tags_{},
+        id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        price_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        quantity_{::uint64_t{0u}} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestOfferMinimumOrder::ProductCreateRequestOfferMinimumOrder(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductCreateRequestOfferMinimumOrder_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductCreateRequestOfferMinimumOrderDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestOfferMinimumOrderDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestOfferMinimumOrderDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestOfferMinimumOrder _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestOfferMinimumOrderDefaultTypeInternal _ProductCreateRequestOfferMinimumOrder_default_instance_;
+
+inline constexpr ProductCreateRequestIdentity::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
         title_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        description_(
+        category_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        subcategory_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        brand_name_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        product_id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        has_variations_{false},
+        no_brand_{false},
+        no_product_id_{false} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestIdentity::ProductCreateRequestIdentity(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductCreateRequestIdentity_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductCreateRequestIdentityDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestIdentityDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestIdentityDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestIdentity _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestIdentityDefaultTypeInternal _ProductCreateRequestIdentity_default_instance_;
+
+inline constexpr ProductCreateRequestBulletPoint::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        id_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        bullet_point_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()) {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestBulletPoint::ProductCreateRequestBulletPoint(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductCreateRequestBulletPoint_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductCreateRequestBulletPointDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestBulletPointDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestBulletPointDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestBulletPoint _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestBulletPointDefaultTypeInternal _ProductCreateRequestBulletPoint_default_instance_;
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestSafety_FormEntry_DoNotUse::ProductCreateRequestSafety_FormEntry_DoNotUse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ProductCreateRequestSafety_FormEntry_DoNotUse::MapEntry(ProductCreateRequestSafety_FormEntry_DoNotUse_class_data_.base()){}
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ProductCreateRequestSafety_FormEntry_DoNotUse::MapEntry() {
+}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+struct ProductCreateRequestSafety_FormEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestSafety_FormEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestSafety_FormEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestSafety_FormEntry_DoNotUse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestSafety_FormEntry_DoNotUseDefaultTypeInternal _ProductCreateRequestSafety_FormEntry_DoNotUse_default_instance_;
+
+inline constexpr ProductCreateRequestOfferVariant::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        minimum_orders_{},
+        id_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
         sku_(
@@ -71,30 +189,436 @@ inline constexpr ProductCreateRequest::Impl_::Impl_(
         price_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        currency_code_(
+        offering_condition_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
-        ar_enabled_{false} {}
+        condition_note_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        list_price_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        sale_price_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        sale_price_start_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        sale_price_end_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        quantity_{::uint64_t{0u}},
+        has_sale_price_{false},
+        has_minimum_orders_{false} {}
 
 template <typename>
-PROTOBUF_CONSTEXPR ProductCreateRequest::ProductCreateRequest(::_pbi::ConstantInitialized)
+PROTOBUF_CONSTEXPR ProductCreateRequestOfferVariant::ProductCreateRequestOfferVariant(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(ProductCreateRequest_class_data_.base()),
+    : ::google::protobuf::Message(ProductCreateRequestOfferVariant_class_data_.base()),
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(),
 #endif  // PROTOBUF_CUSTOM_VTABLE
       _impl_(::_pbi::ConstantInitialized()) {
 }
-struct ProductCreateRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ProductCreateRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ProductCreateRequestDefaultTypeInternal() {}
+struct ProductCreateRequestOfferVariantDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestOfferVariantDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestOfferVariantDefaultTypeInternal() {}
   union {
-    ProductCreateRequest _instance;
+    ProductCreateRequestOfferVariant _instance;
   };
 };
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestDefaultTypeInternal _ProductCreateRequest_default_instance_;
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestOfferVariantDefaultTypeInternal _ProductCreateRequestOfferVariant_default_instance_;
+
+inline constexpr ProductCreateRequestOfferPricing::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        minimum_orders_{},
+        sku_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        price_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        offering_condition_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        condition_note_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        list_price_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        sale_price_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        sale_price_start_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        sale_price_end_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        quantity_{::uint64_t{0u}},
+        has_sale_price_{false},
+        has_minimum_orders_{false} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestOfferPricing::ProductCreateRequestOfferPricing(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductCreateRequestOfferPricing_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductCreateRequestOfferPricingDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestOfferPricingDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestOfferPricingDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestOfferPricing _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestOfferPricingDefaultTypeInternal _ProductCreateRequestOfferPricing_default_instance_;
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse::ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse::MapEntry(ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse_class_data_.base()){}
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse::MapEntry() {
+}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+struct ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUseDefaultTypeInternal _ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse_default_instance_;
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse::ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse::MapEntry(ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse_class_data_.base()){}
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse::MapEntry() {
+}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+struct ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUseDefaultTypeInternal _ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse_default_instance_;
+
+inline constexpr ProductCreateRequestDescription::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        bullet_points_{},
+        description_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()) {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestDescription::ProductCreateRequestDescription(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductCreateRequestDescription_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductCreateRequestDescriptionDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestDescriptionDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestDescriptionDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestDescription _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestDescriptionDefaultTypeInternal _ProductCreateRequestDescription_default_instance_;
+
+inline constexpr ProductCreateRequestSafety::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        form_{},
+        attestation_{false} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestSafety::ProductCreateRequestSafety(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductCreateRequestSafety_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductCreateRequestSafetyDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestSafetyDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestSafetyDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestSafety _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestSafetyDefaultTypeInternal _ProductCreateRequestSafety_default_instance_;
+
+inline constexpr ProductCreateRequestOfferWithVariants::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : variants_{},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestOfferWithVariants::ProductCreateRequestOfferWithVariants(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductCreateRequestOfferWithVariants_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductCreateRequestOfferWithVariantsDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestOfferWithVariantsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestOfferWithVariantsDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestOfferWithVariants _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestOfferWithVariantsDefaultTypeInternal _ProductCreateRequestOfferWithVariants_default_instance_;
+
+inline constexpr ProductCreateRequestMediaWithoutVariants::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : images_{},
+        videos_{},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestMediaWithoutVariants::ProductCreateRequestMediaWithoutVariants(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductCreateRequestMediaWithoutVariants_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductCreateRequestMediaWithoutVariantsDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestMediaWithoutVariantsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestMediaWithoutVariantsDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestMediaWithoutVariants _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestMediaWithoutVariantsDefaultTypeInternal _ProductCreateRequestMediaWithoutVariants_default_instance_;
+
+inline constexpr ProductCreateRequestDetailsWithoutVariants::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : form_{},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestDetailsWithoutVariants::ProductCreateRequestDetailsWithoutVariants(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductCreateRequestDetailsWithoutVariants_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductCreateRequestDetailsWithoutVariantsDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestDetailsWithoutVariantsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestDetailsWithoutVariantsDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestDetailsWithoutVariants _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestDetailsWithoutVariantsDefaultTypeInternal _ProductCreateRequestDetailsWithoutVariants_default_instance_;
+
+inline constexpr ProductCreateRequestDetailsVariantForm::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : form_{},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestDetailsVariantForm::ProductCreateRequestDetailsVariantForm(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductCreateRequestDetailsVariantForm_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductCreateRequestDetailsVariantFormDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestDetailsVariantFormDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestDetailsVariantFormDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestDetailsVariantForm _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestDetailsVariantFormDefaultTypeInternal _ProductCreateRequestDetailsVariantForm_default_instance_;
+
+inline constexpr ProductCreateRequestOffer::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        currency_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        fulfillment_type_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        processing_time_{::uint64_t{0u}},
+        pricing_{},
+        _oneof_case_{} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestOffer::ProductCreateRequestOffer(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductCreateRequestOffer_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductCreateRequestOfferDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestOfferDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestOfferDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestOffer _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestOfferDefaultTypeInternal _ProductCreateRequestOffer_default_instance_;
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse::ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse::MapEntry(ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse_class_data_.base()){}
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse::MapEntry() {
+}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+struct ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUseDefaultTypeInternal _ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse_default_instance_;
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse::ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse::MapEntry(ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse_class_data_.base()){}
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse::MapEntry() {
+}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+struct ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUseDefaultTypeInternal _ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse_default_instance_;
+
+inline constexpr ProductCreateRequestDetailsWithVariants::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : variants_{},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestDetailsWithVariants::ProductCreateRequestDetailsWithVariants(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductCreateRequestDetailsWithVariants_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductCreateRequestDetailsWithVariantsDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestDetailsWithVariantsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestDetailsWithVariantsDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestDetailsWithVariants _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestDetailsWithVariantsDefaultTypeInternal _ProductCreateRequestDetailsWithVariants_default_instance_;
+
+inline constexpr ProductCreateRequestMediaWithVariants::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : images_{},
+        videos_{},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestMediaWithVariants::ProductCreateRequestMediaWithVariants(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductCreateRequestMediaWithVariants_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductCreateRequestMediaWithVariantsDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestMediaWithVariantsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestMediaWithVariantsDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestMediaWithVariants _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestMediaWithVariantsDefaultTypeInternal _ProductCreateRequestMediaWithVariants_default_instance_;
+
+inline constexpr ProductCreateRequestDetails::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : details_{},
+        _cached_size_{0},
+        _oneof_case_{} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestDetails::ProductCreateRequestDetails(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductCreateRequestDetails_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductCreateRequestDetailsDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestDetailsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestDetailsDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestDetails _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestDetailsDefaultTypeInternal _ProductCreateRequestDetails_default_instance_;
 
 inline constexpr ProductCreateResponse::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -121,6 +645,63 @@ struct ProductCreateResponseDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateResponseDefaultTypeInternal _ProductCreateResponse_default_instance_;
+
+inline constexpr ProductCreateRequestMedia::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        total_size_{::uint64_t{0u}},
+        media_{},
+        _oneof_case_{} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestMedia::ProductCreateRequestMedia(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductCreateRequestMedia_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductCreateRequestMediaDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestMediaDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestMediaDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestMedia _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestMediaDefaultTypeInternal _ProductCreateRequestMedia_default_instance_;
+
+inline constexpr ProductCreateRequest::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        identity_{nullptr},
+        description_{nullptr},
+        details_{nullptr},
+        media_{nullptr},
+        offer_{nullptr},
+        safety_{nullptr} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequest::ProductCreateRequest(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductCreateRequest_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductCreateRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestDefaultTypeInternal() {}
+  union {
+    ProductCreateRequest _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestDefaultTypeInternal _ProductCreateRequest_default_instance_;
 }  // namespace v1
 }  // namespace products
 static constexpr const ::_pb::EnumDescriptor *PROTOBUF_NONNULL *PROTOBUF_NULLABLE
@@ -139,21 +720,204 @@ const ::uint32_t
         0,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequest, _impl_._has_bits_),
-        10, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequest, _impl_.title_),
+        9, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequest, _impl_.identity_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequest, _impl_.description_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequest, _impl_.sku_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequest, _impl_.price_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequest, _impl_.currency_code_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequest, _impl_.tags_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequest, _impl_.ar_enabled_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequest, _impl_.details_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequest, _impl_.media_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequest, _impl_.offer_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequest, _impl_.safety_),
         0,
         1,
         2,
         3,
         4,
-        ~0u,
         5,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestIdentity, _impl_._has_bits_),
+        11, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestIdentity, _impl_.title_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestIdentity, _impl_.category_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestIdentity, _impl_.subcategory_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestIdentity, _impl_.has_variations_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestIdentity, _impl_.brand_name_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestIdentity, _impl_.no_brand_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestIdentity, _impl_.product_id_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestIdentity, _impl_.no_product_id_),
+        0,
+        1,
+        2,
+        5,
+        3,
+        6,
+        4,
+        7,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDescription, _impl_._has_bits_),
+        5, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDescription, _impl_.description_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDescription, _impl_.bullet_points_),
+        0,
+        ~0u,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestBulletPoint, _impl_._has_bits_),
+        5, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestBulletPoint, _impl_.id_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestBulletPoint, _impl_.bullet_point_),
+        0,
+        1,
+        0x004, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDetails, _impl_._oneof_case_[0]),
+        ::_pbi::kInvalidFieldOffsetTag,
+        ::_pbi::kInvalidFieldOffsetTag,
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDetails, _impl_.details_),
+        0x000, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDetailsWithVariants, _impl_.variants_),
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse, _impl_._has_bits_),
+        5, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse, _impl_.key_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse, _impl_.value_),
+        0,
+        1,
+        0x000, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDetailsVariantForm, _impl_.form_),
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse, _impl_._has_bits_),
+        5, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse, _impl_.key_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse, _impl_.value_),
+        0,
+        1,
+        0x000, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDetailsWithoutVariants, _impl_.form_),
+        0x085, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestMedia, _impl_._has_bits_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestMedia, _impl_._oneof_case_[0]),
+        8, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestMedia, _impl_.total_size_),
+        ::_pbi::kInvalidFieldOffsetTag,
+        ::_pbi::kInvalidFieldOffsetTag,
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestMedia, _impl_.media_),
+        0,
+        ~0u,
+        ~0u,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse, _impl_._has_bits_),
+        5, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse, _impl_.key_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse, _impl_.value_),
+        0,
+        1,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse, _impl_._has_bits_),
+        5, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse, _impl_.key_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse, _impl_.value_),
+        0,
+        1,
+        0x000, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestMediaWithVariants, _impl_.images_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestMediaWithVariants, _impl_.videos_),
+        0x000, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestMediaWithoutVariants, _impl_.images_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestMediaWithoutVariants, _impl_.videos_),
+        0x085, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOffer, _impl_._has_bits_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOffer, _impl_._oneof_case_[0]),
+        10, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOffer, _impl_.currency_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOffer, _impl_.fulfillment_type_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOffer, _impl_.processing_time_),
+        ::_pbi::kInvalidFieldOffsetTag,
+        ::_pbi::kInvalidFieldOffsetTag,
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOffer, _impl_.pricing_),
+        0,
+        1,
+        2,
+        ~0u,
+        ~0u,
+        0x000, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferWithVariants, _impl_.variants_),
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferVariant, _impl_._has_bits_),
+        16, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferVariant, _impl_.id_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferVariant, _impl_.sku_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferVariant, _impl_.quantity_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferVariant, _impl_.price_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferVariant, _impl_.offering_condition_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferVariant, _impl_.condition_note_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferVariant, _impl_.list_price_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferVariant, _impl_.has_sale_price_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferVariant, _impl_.sale_price_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferVariant, _impl_.sale_price_start_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferVariant, _impl_.sale_price_end_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferVariant, _impl_.has_minimum_orders_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferVariant, _impl_.minimum_orders_),
+        0,
+        1,
+        9,
+        2,
+        3,
+        4,
+        5,
+        10,
+        6,
+        7,
+        8,
+        11,
+        ~0u,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_._has_bits_),
+        15, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.sku_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.quantity_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.price_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.offering_condition_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.condition_note_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.list_price_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.has_sale_price_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.sale_price_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.sale_price_start_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.sale_price_end_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.has_minimum_orders_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.minimum_orders_),
+        0,
+        8,
+        1,
+        2,
+        3,
+        4,
+        9,
+        5,
+        6,
+        7,
+        10,
+        ~0u,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferMinimumOrder, _impl_._has_bits_),
+        6, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferMinimumOrder, _impl_.id_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferMinimumOrder, _impl_.price_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferMinimumOrder, _impl_.quantity_),
+        0,
+        1,
+        2,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestSafety_FormEntry_DoNotUse, _impl_._has_bits_),
+        5, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestSafety_FormEntry_DoNotUse, _impl_.key_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestSafety_FormEntry_DoNotUse, _impl_.value_),
+        0,
+        1,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestSafety, _impl_._has_bits_),
+        5, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestSafety, _impl_.attestation_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestSafety, _impl_.form_),
+        0,
+        ~0u,
         0x004, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateResponse, _impl_._oneof_case_[0]),
         ::_pbi::kInvalidFieldOffsetTag,
@@ -165,36 +929,188 @@ static const ::_pbi::MigrationSchema
     schemas[] ABSL_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
         {0, sizeof(::products::v1::ProductCreateTag)},
         {7, sizeof(::products::v1::ProductCreateRequest)},
-        {24, sizeof(::products::v1::ProductCreateResponse)},
+        {22, sizeof(::products::v1::ProductCreateRequestIdentity)},
+        {41, sizeof(::products::v1::ProductCreateRequestDescription)},
+        {48, sizeof(::products::v1::ProductCreateRequestBulletPoint)},
+        {55, sizeof(::products::v1::ProductCreateRequestDetails)},
+        {60, sizeof(::products::v1::ProductCreateRequestDetailsWithVariants)},
+        {62, sizeof(::products::v1::ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse)},
+        {69, sizeof(::products::v1::ProductCreateRequestDetailsVariantForm)},
+        {71, sizeof(::products::v1::ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse)},
+        {78, sizeof(::products::v1::ProductCreateRequestDetailsWithoutVariants)},
+        {80, sizeof(::products::v1::ProductCreateRequestMedia)},
+        {91, sizeof(::products::v1::ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse)},
+        {98, sizeof(::products::v1::ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse)},
+        {105, sizeof(::products::v1::ProductCreateRequestMediaWithVariants)},
+        {108, sizeof(::products::v1::ProductCreateRequestMediaWithoutVariants)},
+        {111, sizeof(::products::v1::ProductCreateRequestOffer)},
+        {126, sizeof(::products::v1::ProductCreateRequestOfferWithVariants)},
+        {128, sizeof(::products::v1::ProductCreateRequestOfferVariant)},
+        {157, sizeof(::products::v1::ProductCreateRequestOfferPricing)},
+        {184, sizeof(::products::v1::ProductCreateRequestOfferMinimumOrder)},
+        {193, sizeof(::products::v1::ProductCreateRequestSafety_FormEntry_DoNotUse)},
+        {200, sizeof(::products::v1::ProductCreateRequestSafety)},
+        {207, sizeof(::products::v1::ProductCreateResponse)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::products::v1::_ProductCreateTag_default_instance_._instance,
     &::products::v1::_ProductCreateRequest_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestIdentity_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestDescription_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestBulletPoint_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestDetails_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestDetailsWithVariants_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestDetailsVariantForm_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestDetailsWithoutVariants_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestMedia_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestMediaWithVariants_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestMediaWithoutVariants_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestOffer_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestOfferWithVariants_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestOfferVariant_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestOfferPricing_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestOfferMinimumOrder_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestSafety_FormEntry_DoNotUse_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestSafety_default_instance_._instance,
     &::products::v1::_ProductCreateResponse_default_instance_._instance,
 };
 const char descriptor_table_protodef_products_2fv1_2fproduct_5fcreate_2eproto[] ABSL_ATTRIBUTE_SECTION_VARIABLE(
     protodesc_cold) = {
     "\n products/v1/product_create.proto\022\013prod"
-    "ucts.v1\032\025shared/v1/types.proto\032\025shared/v"
-    "1/error.proto\"P\n\020ProductCreateTag\022\023\n\002id\030"
-    "\001 \001(\rH\000R\002id\210\001\001\022\027\n\004name\030\002 \001(\tH\001R\004name\210\001\001B"
-    "\005\n\003_idB\007\n\005_name\"\355\001\n\024ProductCreateRequest"
-    "\022\024\n\005title\030\001 \001(\tR\005title\022 \n\013description\030\002 "
-    "\001(\tR\013description\022\020\n\003sku\030\003 \001(\tR\003sku\022\024\n\005pr"
-    "ice\030\004 \001(\tR\005price\022#\n\rcurrency_code\030\005 \001(\tR"
-    "\014currencyCode\0221\n\004tags\030\006 \003(\0132\035.products.v"
-    "1.ProductCreateTagR\004tags\022\035\n\nar_enabled\030\007"
-    " \001(\010R\tarEnabled\"\206\001\n\025ProductCreateRespons"
-    "e\0224\n\004data\030\001 \001(\0132\036.shared.v1.SuccessRespo"
-    "nseDataH\000R\004data\022+\n\005error\030\002 \001(\0132\023.shared."
-    "v1.AppErrorH\000R\005errorB\n\n\010responseB|\n\034org."
-    "megacommerce.products.v1B\022ProductCreateP"
-    "rotoZEgithub.com/ahmad-khatib0-org/megac"
-    "ommerce-proto/gen/go/products/v1;v1\370\001\001b\006"
-    "proto3"
+    "ucts.v1\032\032shared/v1/attachment.proto\032\025sha"
+    "red/v1/error.proto\032\025shared/v1/types.prot"
+    "o\"P\n\020ProductCreateTag\022\023\n\002id\030\001 \001(\rH\000R\002id\210"
+    "\001\001\022\027\n\004name\030\002 \001(\tH\001R\004name\210\001\001B\005\n\003_idB\007\n\005_n"
+    "ame\"\256\003\n\024ProductCreateRequest\022E\n\010identity"
+    "\030\001 \001(\0132).products.v1.ProductCreateReques"
+    "tIdentityR\010identity\022N\n\013description\030\002 \001(\013"
+    "2,.products.v1.ProductCreateRequestDescr"
+    "iptionR\013description\022B\n\007details\030\003 \001(\0132(.p"
+    "roducts.v1.ProductCreateRequestDetailsR\007"
+    "details\022<\n\005media\030\004 \001(\0132&.products.v1.Pro"
+    "ductCreateRequestMediaR\005media\022<\n\005offer\030\005"
+    " \001(\0132&.products.v1.ProductCreateRequestO"
+    "fferR\005offer\022\?\n\006safety\030\006 \001(\0132\'.products.v"
+    "1.ProductCreateRequestSafetyR\006safety\"\226\002\n"
+    "\034ProductCreateRequestIdentity\022\024\n\005title\030\001"
+    " \001(\tR\005title\022\032\n\010category\030\002 \001(\tR\010category\022"
+    " \n\013subcategory\030\003 \001(\tR\013subcategory\022%\n\016has"
+    "_variations\030\004 \001(\010R\rhasVariations\022\035\n\nbran"
+    "d_name\030\005 \001(\tR\tbrandName\022\031\n\010no_brand\030\006 \001("
+    "\010R\007noBrand\022\035\n\nproduct_id\030\007 \001(\tR\tproductI"
+    "d\022\"\n\rno_product_id\030\010 \001(\010R\013noProductId\"\226\001"
+    "\n\037ProductCreateRequestDescription\022 \n\013des"
+    "cription\030\001 \001(\tR\013description\022Q\n\rbullet_po"
+    "ints\030\002 \003(\0132,.products.v1.ProductCreateRe"
+    "questBulletPointR\014bulletPoints\"T\n\037Produc"
+    "tCreateRequestBulletPoint\022\016\n\002id\030\001 \001(\tR\002i"
+    "d\022!\n\014bullet_point\030\002 \001(\tR\013bulletPoint\"\353\001\n"
+    "\033ProductCreateRequestDetails\022[\n\rwith_var"
+    "iants\030\001 \001(\01324.products.v1.ProductCreateR"
+    "equestDetailsWithVariantsH\000R\014withVariant"
+    "s\022d\n\020without_variants\030\002 \001(\01327.products.v"
+    "1.ProductCreateRequestDetailsWithoutVari"
+    "antsH\000R\017withoutVariantsB\t\n\007details\"z\n\'Pr"
+    "oductCreateRequestDetailsWithVariants\022O\n"
+    "\010variants\030\001 \003(\01323.products.v1.ProductCre"
+    "ateRequestDetailsVariantFormR\010variants\"\304"
+    "\001\n&ProductCreateRequestDetailsVariantFor"
+    "m\022Q\n\004form\030\001 \003(\0132=.products.v1.ProductCre"
+    "ateRequestDetailsVariantForm.FormEntryR\004"
+    "form\032G\n\tFormEntry\022\020\n\003key\030\001 \001(\tR\003key\022$\n\005v"
+    "alue\030\002 \001(\0132\016.shared.v1.AnyR\005value:\0028\001\"\314\001"
+    "\n*ProductCreateRequestDetailsWithoutVari"
+    "ants\022U\n\004form\030\001 \003(\0132A.products.v1.Product"
+    "CreateRequestDetailsWithoutVariants.Form"
+    "EntryR\004form\032G\n\tFormEntry\022\020\n\003key\030\001 \001(\tR\003k"
+    "ey\022$\n\005value\030\002 \001(\0132\016.shared.v1.AnyR\005value"
+    ":\0028\001\"\202\002\n\031ProductCreateRequestMedia\022\035\n\nto"
+    "tal_size\030\001 \001(\004R\ttotalSize\022Y\n\rwith_varian"
+    "ts\030\002 \001(\01322.products.v1.ProductCreateRequ"
+    "estMediaWithVariantsH\000R\014withVariants\022b\n\020"
+    "without_variants\030\003 \001(\01325.products.v1.Pro"
+    "ductCreateRequestMediaWithoutVariantsH\000R"
+    "\017withoutVariantsB\007\n\005media\"\375\002\n%ProductCre"
+    "ateRequestMediaWithVariants\022V\n\006images\030\001 "
+    "\003(\0132>.products.v1.ProductCreateRequestMe"
+    "diaWithVariants.ImagesEntryR\006images\022V\n\006v"
+    "ideos\030\002 \003(\0132>.products.v1.ProductCreateR"
+    "equestMediaWithVariants.VideosEntryR\006vid"
+    "eos\032Q\n\013ImagesEntry\022\020\n\003key\030\001 \001(\tR\003key\022,\n\005"
+    "value\030\002 \001(\0132\026.shared.v1.AttachmentsR\005val"
+    "ue:\0028\001\032Q\n\013VideosEntry\022\020\n\003key\030\001 \001(\tR\003key\022"
+    ",\n\005value\030\002 \001(\0132\026.shared.v1.AttachmentsR\005"
+    "value:\0028\001\"\210\001\n(ProductCreateRequestMediaW"
+    "ithoutVariants\022-\n\006images\030\001 \003(\0132\025.shared."
+    "v1.AttachmentR\006images\022-\n\006videos\030\002 \003(\0132\025."
+    "shared.v1.AttachmentR\006videos\"\315\002\n\031Product"
+    "CreateRequestOffer\022\032\n\010currency\030\001 \001(\tR\010cu"
+    "rrency\022)\n\020fulfillment_type\030\002 \001(\tR\017fulfil"
+    "lmentType\022\'\n\017processing_time\030\003 \001(\004R\016proc"
+    "essingTime\022Y\n\rwith_variants\030\004 \001(\01322.prod"
+    "ucts.v1.ProductCreateRequestOfferWithVar"
+    "iantsH\000R\014withVariants\022Z\n\020without_variant"
+    "s\030\005 \001(\0132-.products.v1.ProductCreateReque"
+    "stOfferPricingH\000R\017withoutVariantsB\t\n\007pri"
+    "cing\"r\n%ProductCreateRequestOfferWithVar"
+    "iants\022I\n\010variants\030\001 \003(\0132-.products.v1.Pr"
+    "oductCreateRequestOfferVariantR\010variants"
+    "\"\223\005\n ProductCreateRequestOfferVariant\022\016\n"
+    "\002id\030\001 \001(\tR\002id\022\020\n\003sku\030\002 \001(\tR\003sku\022\032\n\010quant"
+    "ity\030\003 \001(\004R\010quantity\022\024\n\005price\030\004 \001(\tR\005pric"
+    "e\022-\n\022offering_condition\030\005 \001(\tR\021offeringC"
+    "ondition\022*\n\016condition_note\030\006 \001(\tH\000R\rcond"
+    "itionNote\210\001\001\022\"\n\nlist_price\030\007 \001(\tH\001R\tlist"
+    "Price\210\001\001\022)\n\016has_sale_price\030\010 \001(\010H\002R\014hasS"
+    "alePrice\210\001\001\022\"\n\nsale_price\030\t \001(\tH\003R\tsaleP"
+    "rice\210\001\001\022-\n\020sale_price_start\030\n \001(\tH\004R\016sal"
+    "ePriceStart\210\001\001\022)\n\016sale_price_end\030\013 \001(\tH\005"
+    "R\014salePriceEnd\210\001\001\022,\n\022has_minimum_orders\030"
+    "\014 \001(\010R\020hasMinimumOrders\022Y\n\016minimum_order"
+    "s\030\r \003(\01322.products.v1.ProductCreateReque"
+    "stOfferMinimumOrderR\rminimumOrdersB\021\n\017_c"
+    "ondition_noteB\r\n\013_list_priceB\021\n\017_has_sal"
+    "e_priceB\r\n\013_sale_priceB\023\n\021_sale_price_st"
+    "artB\021\n\017_sale_price_end\"\203\005\n ProductCreate"
+    "RequestOfferPricing\022\020\n\003sku\030\001 \001(\tR\003sku\022\032\n"
+    "\010quantity\030\002 \001(\004R\010quantity\022\024\n\005price\030\003 \001(\t"
+    "R\005price\022-\n\022offering_condition\030\004 \001(\tR\021off"
+    "eringCondition\022*\n\016condition_note\030\005 \001(\tH\000"
+    "R\rconditionNote\210\001\001\022\"\n\nlist_price\030\006 \001(\tH\001"
+    "R\tlistPrice\210\001\001\022)\n\016has_sale_price\030\007 \001(\010H\002"
+    "R\014hasSalePrice\210\001\001\022\"\n\nsale_price\030\010 \001(\tH\003R"
+    "\tsalePrice\210\001\001\022-\n\020sale_price_start\030\t \001(\tH"
+    "\004R\016salePriceStart\210\001\001\022)\n\016sale_price_end\030\n"
+    " \001(\tH\005R\014salePriceEnd\210\001\001\022,\n\022has_minimum_o"
+    "rders\030\013 \001(\010R\020hasMinimumOrders\022Y\n\016minimum"
+    "_orders\030\014 \003(\01322.products.v1.ProductCreat"
+    "eRequestOfferMinimumOrderR\rminimumOrders"
+    "B\021\n\017_condition_noteB\r\n\013_list_priceB\021\n\017_h"
+    "as_sale_priceB\r\n\013_sale_priceB\023\n\021_sale_pr"
+    "ice_startB\021\n\017_sale_price_end\"i\n%ProductC"
+    "reateRequestOfferMinimumOrder\022\016\n\002id\030\001 \001("
+    "\tR\002id\022\024\n\005price\030\002 \001(\tR\005price\022\032\n\010quantity\030"
+    "\003 \001(\004R\010quantity\"\316\001\n\032ProductCreateRequest"
+    "Safety\022 \n\013attestation\030\001 \001(\010R\013attestation"
+    "\022E\n\004form\030\002 \003(\01321.products.v1.ProductCrea"
+    "teRequestSafety.FormEntryR\004form\032G\n\tFormE"
+    "ntry\022\020\n\003key\030\001 \001(\tR\003key\022$\n\005value\030\002 \001(\0132\016."
+    "shared.v1.AnyR\005value:\0028\001\"\206\001\n\025ProductCrea"
+    "teResponse\0224\n\004data\030\001 \001(\0132\036.shared.v1.Suc"
+    "cessResponseDataH\000R\004data\022+\n\005error\030\002 \001(\0132"
+    "\023.shared.v1.AppErrorH\000R\005errorB\n\n\010respons"
+    "eB|\n\034org.megacommerce.products.v1B\022Produ"
+    "ctCreateProtoZEgithub.com/ahmad-khatib0-"
+    "org/megacommerce-proto/gen/go/products/v"
+    "1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
-    descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto_deps[2] = {
+    descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto_deps[3] = {
+        &::descriptor_table_shared_2fv1_2fattachment_2eproto,
         &::descriptor_table_shared_2fv1_2ferror_2eproto,
         &::descriptor_table_shared_2fv1_2ftypes_2eproto,
 };
@@ -202,13 +1118,13 @@ static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_5fcreate_2epro
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto = {
     false,
     false,
-    686,
+    5055,
     descriptor_table_protodef_products_2fv1_2fproduct_5fcreate_2eproto,
     "products/v1/product_create.proto",
     &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto_once,
     descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto_deps,
-    2,
     3,
+    24,
     schemas,
     file_default_instances,
     TableStruct_products_2fv1_2fproduct_5fcreate_2eproto::offsets,
@@ -522,13 +1438,7 @@ PROTOBUF_NDEBUG_INLINE ProductCreateRequest::Impl_::Impl_(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
     const ::products::v1::ProductCreateRequest& from_msg)
       : _has_bits_{from._has_bits_},
-        _cached_size_{0},
-        tags_{visibility, arena, from.tags_},
-        title_(arena, from.title_),
-        description_(arena, from.description_),
-        sku_(arena, from.sku_),
-        price_(arena, from.price_),
-        currency_code_(arena, from.currency_code_) {}
+        _cached_size_{0} {}
 
 ProductCreateRequest::ProductCreateRequest(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -543,24 +1453,41 @@ ProductCreateRequest::ProductCreateRequest(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
-  _impl_.ar_enabled_ = from._impl_.ar_enabled_;
+  ::uint32_t cached_has_bits = _impl_._has_bits_[0];
+  _impl_.identity_ = ((cached_has_bits & 0x00000001u) != 0)
+                ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.identity_)
+                : nullptr;
+  _impl_.description_ = ((cached_has_bits & 0x00000002u) != 0)
+                ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.description_)
+                : nullptr;
+  _impl_.details_ = ((cached_has_bits & 0x00000004u) != 0)
+                ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.details_)
+                : nullptr;
+  _impl_.media_ = ((cached_has_bits & 0x00000008u) != 0)
+                ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.media_)
+                : nullptr;
+  _impl_.offer_ = ((cached_has_bits & 0x00000010u) != 0)
+                ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.offer_)
+                : nullptr;
+  _impl_.safety_ = ((cached_has_bits & 0x00000020u) != 0)
+                ? ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.safety_)
+                : nullptr;
 
   // @@protoc_insertion_point(copy_constructor:products.v1.ProductCreateRequest)
 }
 PROTOBUF_NDEBUG_INLINE ProductCreateRequest::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-      : _cached_size_{0},
-        tags_{visibility, arena},
-        title_(arena),
-        description_(arena),
-        sku_(arena),
-        price_(arena),
-        currency_code_(arena) {}
+      : _cached_size_{0} {}
 
 inline void ProductCreateRequest::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
-  _impl_.ar_enabled_ = {};
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, identity_),
+           0,
+           offsetof(Impl_, safety_) -
+               offsetof(Impl_, identity_) +
+               sizeof(Impl_::safety_));
 }
 ProductCreateRequest::~ProductCreateRequest() {
   // @@protoc_insertion_point(destructor:products.v1.ProductCreateRequest)
@@ -570,11 +1497,12 @@ inline void ProductCreateRequest::SharedDtor(MessageLite& self) {
   ProductCreateRequest& this_ = static_cast<ProductCreateRequest&>(self);
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
-  this_._impl_.title_.Destroy();
-  this_._impl_.description_.Destroy();
-  this_._impl_.sku_.Destroy();
-  this_._impl_.price_.Destroy();
-  this_._impl_.currency_code_.Destroy();
+  delete this_._impl_.identity_;
+  delete this_._impl_.description_;
+  delete this_._impl_.details_;
+  delete this_._impl_.media_;
+  delete this_._impl_.offer_;
+  delete this_._impl_.safety_;
   this_._impl_.~Impl_();
 }
 
@@ -584,20 +1512,8 @@ inline void* PROTOBUF_NONNULL ProductCreateRequest::PlacementNew_(
   return ::new (mem) ProductCreateRequest(arena);
 }
 constexpr auto ProductCreateRequest::InternalNewImpl_() {
-  constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
-      PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.tags_) +
-          decltype(ProductCreateRequest::_impl_.tags_)::
-              InternalGetArenaOffset(
-                  ::google::protobuf::Message::internal_visibility()),
-  });
-  if (arena_bits.has_value()) {
-    return ::google::protobuf::internal::MessageCreator::CopyInit(
-        sizeof(ProductCreateRequest), alignof(ProductCreateRequest), *arena_bits);
-  } else {
-    return ::google::protobuf::internal::MessageCreator(&ProductCreateRequest::PlacementNew_,
-                                 sizeof(ProductCreateRequest),
-                                 alignof(ProductCreateRequest));
-  }
+  return ::google::protobuf::internal::MessageCreator::ZeroInit(sizeof(ProductCreateRequest),
+                                            alignof(ProductCreateRequest));
 }
 constexpr auto ProductCreateRequest::InternalGenerateClassData_() {
   return ::google::protobuf::internal::ClassDataFull{
@@ -633,17 +1549,17 @@ ProductCreateRequest::GetClassData() const {
   return ProductCreateRequest_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 7, 1, 78, 2>
+const ::_pbi::TcParseTable<3, 6, 6, 0, 2>
 ProductCreateRequest::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_._has_bits_),
     0, // no _extensions_
-    7, 56,  // max_field_number, fast_idx_mask
+    6, 56,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967168,  // skipmap
+    4294967232,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    7,  // num_field_entries
-    1,  // num_aux_entries
+    6,  // num_field_entries
+    6,  // num_aux_entries
     offsetof(decltype(_table_), aux_entries),
     ProductCreateRequest_class_data_.base(),
     nullptr,  // post_loop_handler
@@ -653,63 +1569,56 @@ ProductCreateRequest::_table_ = {
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     {::_pbi::TcParser::MiniParse, {}},
-    // string title = 1 [json_name = "title"];
-    {::_pbi::TcParser::FastUS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.title_)}},
-    // string description = 2 [json_name = "description"];
-    {::_pbi::TcParser::FastUS1,
-     {18, 1, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.description_)}},
-    // string sku = 3 [json_name = "sku"];
-    {::_pbi::TcParser::FastUS1,
-     {26, 2, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.sku_)}},
-    // string price = 4 [json_name = "price"];
-    {::_pbi::TcParser::FastUS1,
-     {34, 3, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.price_)}},
-    // string currency_code = 5 [json_name = "currencyCode"];
-    {::_pbi::TcParser::FastUS1,
-     {42, 4, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.currency_code_)}},
-    // repeated .products.v1.ProductCreateTag tags = 6 [json_name = "tags"];
-    {::_pbi::TcParser::FastMtR1,
-     {50, 63, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.tags_)}},
-    // bool ar_enabled = 7 [json_name = "arEnabled"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductCreateRequest, _impl_.ar_enabled_), 5>(),
-     {56, 5, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.ar_enabled_)}},
+    // .products.v1.ProductCreateRequestIdentity identity = 1 [json_name = "identity"];
+    {::_pbi::TcParser::FastMtS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.identity_)}},
+    // .products.v1.ProductCreateRequestDescription description = 2 [json_name = "description"];
+    {::_pbi::TcParser::FastMtS1,
+     {18, 1, 1, PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.description_)}},
+    // .products.v1.ProductCreateRequestDetails details = 3 [json_name = "details"];
+    {::_pbi::TcParser::FastMtS1,
+     {26, 2, 2, PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.details_)}},
+    // .products.v1.ProductCreateRequestMedia media = 4 [json_name = "media"];
+    {::_pbi::TcParser::FastMtS1,
+     {34, 3, 3, PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.media_)}},
+    // .products.v1.ProductCreateRequestOffer offer = 5 [json_name = "offer"];
+    {::_pbi::TcParser::FastMtS1,
+     {42, 4, 4, PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.offer_)}},
+    // .products.v1.ProductCreateRequestSafety safety = 6 [json_name = "safety"];
+    {::_pbi::TcParser::FastMtS1,
+     {50, 5, 5, PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.safety_)}},
+    {::_pbi::TcParser::MiniParse, {}},
   }}, {{
     65535, 65535
   }}, {{
-    // string title = 1 [json_name = "title"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.title_), _Internal::kHasBitsOffset + 0, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string description = 2 [json_name = "description"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.description_), _Internal::kHasBitsOffset + 1, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string sku = 3 [json_name = "sku"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.sku_), _Internal::kHasBitsOffset + 2, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string price = 4 [json_name = "price"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.price_), _Internal::kHasBitsOffset + 3, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // string currency_code = 5 [json_name = "currencyCode"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.currency_code_), _Internal::kHasBitsOffset + 4, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // repeated .products.v1.ProductCreateTag tags = 6 [json_name = "tags"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.tags_), -1, 0,
-    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
-    // bool ar_enabled = 7 [json_name = "arEnabled"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.ar_enabled_), _Internal::kHasBitsOffset + 5, 0,
-    (0 | ::_fl::kFcOptional | ::_fl::kBool)},
+    // .products.v1.ProductCreateRequestIdentity identity = 1 [json_name = "identity"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.identity_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .products.v1.ProductCreateRequestDescription description = 2 [json_name = "description"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.description_), _Internal::kHasBitsOffset + 1, 1,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .products.v1.ProductCreateRequestDetails details = 3 [json_name = "details"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.details_), _Internal::kHasBitsOffset + 2, 2,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .products.v1.ProductCreateRequestMedia media = 4 [json_name = "media"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.media_), _Internal::kHasBitsOffset + 3, 3,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .products.v1.ProductCreateRequestOffer offer = 5 [json_name = "offer"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.offer_), _Internal::kHasBitsOffset + 4, 4,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .products.v1.ProductCreateRequestSafety safety = 6 [json_name = "safety"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.safety_), _Internal::kHasBitsOffset + 5, 5,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
-      {::_pbi::TcParser::GetTable<::products::v1::ProductCreateTag>()},
+      {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestIdentity>()},
+      {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestDescription>()},
+      {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestDetails>()},
+      {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestMedia>()},
+      {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestOffer>()},
+      {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestSafety>()},
   }},
   {{
-    "\40\5\13\3\5\15\0\0"
-    "products.v1.ProductCreateRequest"
-    "title"
-    "description"
-    "sku"
-    "price"
-    "currency_code"
   }},
 };
 PROTOBUF_NOINLINE void ProductCreateRequest::Clear() {
@@ -719,26 +1628,33 @@ PROTOBUF_NOINLINE void ProductCreateRequest::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.tags_.Clear();
   cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x0000001fu) != 0) {
+  if ((cached_has_bits & 0x0000003fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
-      _impl_.title_.ClearNonDefaultToEmpty();
+      ABSL_DCHECK(_impl_.identity_ != nullptr);
+      _impl_.identity_->Clear();
     }
     if ((cached_has_bits & 0x00000002u) != 0) {
-      _impl_.description_.ClearNonDefaultToEmpty();
+      ABSL_DCHECK(_impl_.description_ != nullptr);
+      _impl_.description_->Clear();
     }
     if ((cached_has_bits & 0x00000004u) != 0) {
-      _impl_.sku_.ClearNonDefaultToEmpty();
+      ABSL_DCHECK(_impl_.details_ != nullptr);
+      _impl_.details_->Clear();
     }
     if ((cached_has_bits & 0x00000008u) != 0) {
-      _impl_.price_.ClearNonDefaultToEmpty();
+      ABSL_DCHECK(_impl_.media_ != nullptr);
+      _impl_.media_->Clear();
     }
     if ((cached_has_bits & 0x00000010u) != 0) {
-      _impl_.currency_code_.ClearNonDefaultToEmpty();
+      ABSL_DCHECK(_impl_.offer_ != nullptr);
+      _impl_.offer_->Clear();
+    }
+    if ((cached_has_bits & 0x00000020u) != 0) {
+      ABSL_DCHECK(_impl_.safety_ != nullptr);
+      _impl_.safety_->Clear();
     }
   }
-  _impl_.ar_enabled_ = false;
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
@@ -758,74 +1674,47 @@ PROTOBUF_NOINLINE void ProductCreateRequest::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  // string title = 1 [json_name = "title"];
-  if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
-    if (!this_._internal_title().empty()) {
-      const ::std::string& _s = this_._internal_title();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequest.title");
-      target = stream->WriteStringMaybeAliased(1, _s, target);
-    }
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // .products.v1.ProductCreateRequestIdentity identity = 1 [json_name = "identity"];
+  if ((cached_has_bits & 0x00000001u) != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        1, *this_._impl_.identity_, this_._impl_.identity_->GetCachedSize(), target,
+        stream);
   }
 
-  // string description = 2 [json_name = "description"];
-  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
-    if (!this_._internal_description().empty()) {
-      const ::std::string& _s = this_._internal_description();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequest.description");
-      target = stream->WriteStringMaybeAliased(2, _s, target);
-    }
+  // .products.v1.ProductCreateRequestDescription description = 2 [json_name = "description"];
+  if ((cached_has_bits & 0x00000002u) != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        2, *this_._impl_.description_, this_._impl_.description_->GetCachedSize(), target,
+        stream);
   }
 
-  // string sku = 3 [json_name = "sku"];
-  if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
-    if (!this_._internal_sku().empty()) {
-      const ::std::string& _s = this_._internal_sku();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequest.sku");
-      target = stream->WriteStringMaybeAliased(3, _s, target);
-    }
+  // .products.v1.ProductCreateRequestDetails details = 3 [json_name = "details"];
+  if ((cached_has_bits & 0x00000004u) != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        3, *this_._impl_.details_, this_._impl_.details_->GetCachedSize(), target,
+        stream);
   }
 
-  // string price = 4 [json_name = "price"];
-  if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
-    if (!this_._internal_price().empty()) {
-      const ::std::string& _s = this_._internal_price();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequest.price");
-      target = stream->WriteStringMaybeAliased(4, _s, target);
-    }
+  // .products.v1.ProductCreateRequestMedia media = 4 [json_name = "media"];
+  if ((cached_has_bits & 0x00000008u) != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        4, *this_._impl_.media_, this_._impl_.media_->GetCachedSize(), target,
+        stream);
   }
 
-  // string currency_code = 5 [json_name = "currencyCode"];
-  if ((this_._impl_._has_bits_[0] & 0x00000010u) != 0) {
-    if (!this_._internal_currency_code().empty()) {
-      const ::std::string& _s = this_._internal_currency_code();
-      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequest.currency_code");
-      target = stream->WriteStringMaybeAliased(5, _s, target);
-    }
+  // .products.v1.ProductCreateRequestOffer offer = 5 [json_name = "offer"];
+  if ((cached_has_bits & 0x00000010u) != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        5, *this_._impl_.offer_, this_._impl_.offer_->GetCachedSize(), target,
+        stream);
   }
 
-  // repeated .products.v1.ProductCreateTag tags = 6 [json_name = "tags"];
-  for (unsigned i = 0, n = static_cast<unsigned>(
-                           this_._internal_tags_size());
-       i < n; i++) {
-    const auto& repfield = this_._internal_tags().Get(i);
-    target =
-        ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-            6, repfield, repfield.GetCachedSize(),
-            target, stream);
-  }
-
-  // bool ar_enabled = 7 [json_name = "arEnabled"];
-  if ((this_._impl_._has_bits_[0] & 0x00000020u) != 0) {
-    if (this_._internal_ar_enabled() != 0) {
-      target = stream->EnsureSpace(target);
-      target = ::_pbi::WireFormatLite::WriteBoolToArray(
-          7, this_._internal_ar_enabled(), target);
-    }
+  // .products.v1.ProductCreateRequestSafety safety = 6 [json_name = "safety"];
+  if ((cached_has_bits & 0x00000020u) != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+        6, *this_._impl_.safety_, this_._impl_.safety_->GetCachedSize(), target,
+        stream);
   }
 
   if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
@@ -852,57 +1741,37 @@ PROTOBUF_NOINLINE void ProductCreateRequest::Clear() {
   (void)cached_has_bits;
 
   ::_pbi::Prefetch5LinesFrom7Lines(&this_);
-   {
-    // repeated .products.v1.ProductCreateTag tags = 6 [json_name = "tags"];
-    {
-      total_size += 1UL * this_._internal_tags_size();
-      for (const auto& msg : this_._internal_tags()) {
-        total_size += ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
-      }
-    }
-  }
   cached_has_bits = this_._impl_._has_bits_[0];
   if ((cached_has_bits & 0x0000003fu) != 0) {
-    // string title = 1 [json_name = "title"];
+    // .products.v1.ProductCreateRequestIdentity identity = 1 [json_name = "identity"];
     if ((cached_has_bits & 0x00000001u) != 0) {
-      if (!this_._internal_title().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_title());
-      }
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.identity_);
     }
-    // string description = 2 [json_name = "description"];
+    // .products.v1.ProductCreateRequestDescription description = 2 [json_name = "description"];
     if ((cached_has_bits & 0x00000002u) != 0) {
-      if (!this_._internal_description().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_description());
-      }
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.description_);
     }
-    // string sku = 3 [json_name = "sku"];
+    // .products.v1.ProductCreateRequestDetails details = 3 [json_name = "details"];
     if ((cached_has_bits & 0x00000004u) != 0) {
-      if (!this_._internal_sku().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_sku());
-      }
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.details_);
     }
-    // string price = 4 [json_name = "price"];
+    // .products.v1.ProductCreateRequestMedia media = 4 [json_name = "media"];
     if ((cached_has_bits & 0x00000008u) != 0) {
-      if (!this_._internal_price().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_price());
-      }
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.media_);
     }
-    // string currency_code = 5 [json_name = "currencyCode"];
+    // .products.v1.ProductCreateRequestOffer offer = 5 [json_name = "offer"];
     if ((cached_has_bits & 0x00000010u) != 0) {
-      if (!this_._internal_currency_code().empty()) {
-        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
-                                        this_._internal_currency_code());
-      }
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.offer_);
     }
-    // bool ar_enabled = 7 [json_name = "arEnabled"];
+    // .products.v1.ProductCreateRequestSafety safety = 6 [json_name = "safety"];
     if ((cached_has_bits & 0x00000020u) != 0) {
-      if (this_._internal_ar_enabled() != 0) {
-        total_size += 2;
-      }
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.safety_);
     }
   }
   return this_.MaybeComputeUnknownFieldsSize(total_size,
@@ -912,63 +1781,60 @@ PROTOBUF_NOINLINE void ProductCreateRequest::Clear() {
 void ProductCreateRequest::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
   auto* const _this = static_cast<ProductCreateRequest*>(&to_msg);
   auto& from = static_cast<const ProductCreateRequest&>(from_msg);
+  ::google::protobuf::Arena* arena = _this->GetArena();
   // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductCreateRequest)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_internal_mutable_tags()->MergeFrom(
-      from._internal_tags());
   cached_has_bits = from._impl_._has_bits_[0];
   if ((cached_has_bits & 0x0000003fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
-      if (!from._internal_title().empty()) {
-        _this->_internal_set_title(from._internal_title());
+      ABSL_DCHECK(from._impl_.identity_ != nullptr);
+      if (_this->_impl_.identity_ == nullptr) {
+        _this->_impl_.identity_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.identity_);
       } else {
-        if (_this->_impl_.title_.IsDefault()) {
-          _this->_internal_set_title("");
-        }
+        _this->_impl_.identity_->MergeFrom(*from._impl_.identity_);
       }
     }
     if ((cached_has_bits & 0x00000002u) != 0) {
-      if (!from._internal_description().empty()) {
-        _this->_internal_set_description(from._internal_description());
+      ABSL_DCHECK(from._impl_.description_ != nullptr);
+      if (_this->_impl_.description_ == nullptr) {
+        _this->_impl_.description_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.description_);
       } else {
-        if (_this->_impl_.description_.IsDefault()) {
-          _this->_internal_set_description("");
-        }
+        _this->_impl_.description_->MergeFrom(*from._impl_.description_);
       }
     }
     if ((cached_has_bits & 0x00000004u) != 0) {
-      if (!from._internal_sku().empty()) {
-        _this->_internal_set_sku(from._internal_sku());
+      ABSL_DCHECK(from._impl_.details_ != nullptr);
+      if (_this->_impl_.details_ == nullptr) {
+        _this->_impl_.details_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.details_);
       } else {
-        if (_this->_impl_.sku_.IsDefault()) {
-          _this->_internal_set_sku("");
-        }
+        _this->_impl_.details_->MergeFrom(*from._impl_.details_);
       }
     }
     if ((cached_has_bits & 0x00000008u) != 0) {
-      if (!from._internal_price().empty()) {
-        _this->_internal_set_price(from._internal_price());
+      ABSL_DCHECK(from._impl_.media_ != nullptr);
+      if (_this->_impl_.media_ == nullptr) {
+        _this->_impl_.media_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.media_);
       } else {
-        if (_this->_impl_.price_.IsDefault()) {
-          _this->_internal_set_price("");
-        }
+        _this->_impl_.media_->MergeFrom(*from._impl_.media_);
       }
     }
     if ((cached_has_bits & 0x00000010u) != 0) {
-      if (!from._internal_currency_code().empty()) {
-        _this->_internal_set_currency_code(from._internal_currency_code());
+      ABSL_DCHECK(from._impl_.offer_ != nullptr);
+      if (_this->_impl_.offer_ == nullptr) {
+        _this->_impl_.offer_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.offer_);
       } else {
-        if (_this->_impl_.currency_code_.IsDefault()) {
-          _this->_internal_set_currency_code("");
-        }
+        _this->_impl_.offer_->MergeFrom(*from._impl_.offer_);
       }
     }
     if ((cached_has_bits & 0x00000020u) != 0) {
-      if (from._internal_ar_enabled() != 0) {
-        _this->_impl_.ar_enabled_ = from._impl_.ar_enabled_;
+      ABSL_DCHECK(from._impl_.safety_ != nullptr);
+      if (_this->_impl_.safety_ == nullptr) {
+        _this->_impl_.safety_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.safety_);
+      } else {
+        _this->_impl_.safety_->MergeFrom(*from._impl_.safety_);
       }
     }
   }
@@ -986,20 +1852,6598 @@ void ProductCreateRequest::CopyFrom(const ProductCreateRequest& from) {
 
 void ProductCreateRequest::InternalSwap(ProductCreateRequest* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   using ::std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.safety_)
+      + sizeof(ProductCreateRequest::_impl_.safety_)
+      - PROTOBUF_FIELD_OFFSET(ProductCreateRequest, _impl_.identity_)>(
+          reinterpret_cast<char*>(&_impl_.identity_),
+          reinterpret_cast<char*>(&other->_impl_.identity_));
+}
+
+::google::protobuf::Metadata ProductCreateRequest::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class ProductCreateRequestIdentity::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<ProductCreateRequestIdentity>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_._has_bits_);
+};
+
+ProductCreateRequestIdentity::ProductCreateRequestIdentity(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestIdentity_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:products.v1.ProductCreateRequestIdentity)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestIdentity::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::products::v1::ProductCreateRequestIdentity& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        title_(arena, from.title_),
+        category_(arena, from.category_),
+        subcategory_(arena, from.subcategory_),
+        brand_name_(arena, from.brand_name_),
+        product_id_(arena, from.product_id_) {}
+
+ProductCreateRequestIdentity::ProductCreateRequestIdentity(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const ProductCreateRequestIdentity& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestIdentity_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ProductCreateRequestIdentity* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::memcpy(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, has_variations_),
+           reinterpret_cast<const char *>(&from._impl_) +
+               offsetof(Impl_, has_variations_),
+           offsetof(Impl_, no_product_id_) -
+               offsetof(Impl_, has_variations_) +
+               sizeof(Impl_::no_product_id_));
+
+  // @@protoc_insertion_point(copy_constructor:products.v1.ProductCreateRequestIdentity)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestIdentity::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        title_(arena),
+        category_(arena),
+        subcategory_(arena),
+        brand_name_(arena),
+        product_id_(arena) {}
+
+inline void ProductCreateRequestIdentity::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, has_variations_),
+           0,
+           offsetof(Impl_, no_product_id_) -
+               offsetof(Impl_, has_variations_) +
+               sizeof(Impl_::no_product_id_));
+}
+ProductCreateRequestIdentity::~ProductCreateRequestIdentity() {
+  // @@protoc_insertion_point(destructor:products.v1.ProductCreateRequestIdentity)
+  SharedDtor(*this);
+}
+inline void ProductCreateRequestIdentity::SharedDtor(MessageLite& self) {
+  ProductCreateRequestIdentity& this_ = static_cast<ProductCreateRequestIdentity&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.title_.Destroy();
+  this_._impl_.category_.Destroy();
+  this_._impl_.subcategory_.Destroy();
+  this_._impl_.brand_name_.Destroy();
+  this_._impl_.product_id_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL ProductCreateRequestIdentity::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestIdentity(arena);
+}
+constexpr auto ProductCreateRequestIdentity::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(ProductCreateRequestIdentity),
+                                            alignof(ProductCreateRequestIdentity));
+}
+constexpr auto ProductCreateRequestIdentity::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestIdentity_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestIdentity::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestIdentity>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestIdentity::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<ProductCreateRequestIdentity>(), &ProductCreateRequestIdentity::ByteSizeLong,
+              &ProductCreateRequestIdentity::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestIdentity::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestIdentity_class_data_ =
+        ProductCreateRequestIdentity::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestIdentity::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestIdentity_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestIdentity_class_data_.tc_table);
+  return ProductCreateRequestIdentity_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<3, 8, 0, 101, 2>
+ProductCreateRequestIdentity::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_._has_bits_),
+    0, // no _extensions_
+    8, 56,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967040,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    8,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    ProductCreateRequestIdentity_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestIdentity>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // bool no_product_id = 8 [json_name = "noProductId"];
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductCreateRequestIdentity, _impl_.no_product_id_), 7>(),
+     {64, 7, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.no_product_id_)}},
+    // string title = 1 [json_name = "title"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.title_)}},
+    // string category = 2 [json_name = "category"];
+    {::_pbi::TcParser::FastUS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.category_)}},
+    // string subcategory = 3 [json_name = "subcategory"];
+    {::_pbi::TcParser::FastUS1,
+     {26, 2, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.subcategory_)}},
+    // bool has_variations = 4 [json_name = "hasVariations"];
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductCreateRequestIdentity, _impl_.has_variations_), 5>(),
+     {32, 5, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.has_variations_)}},
+    // string brand_name = 5 [json_name = "brandName"];
+    {::_pbi::TcParser::FastUS1,
+     {42, 3, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.brand_name_)}},
+    // bool no_brand = 6 [json_name = "noBrand"];
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductCreateRequestIdentity, _impl_.no_brand_), 6>(),
+     {48, 6, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.no_brand_)}},
+    // string product_id = 7 [json_name = "productId"];
+    {::_pbi::TcParser::FastUS1,
+     {58, 4, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.product_id_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string title = 1 [json_name = "title"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.title_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string category = 2 [json_name = "category"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.category_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string subcategory = 3 [json_name = "subcategory"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.subcategory_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // bool has_variations = 4 [json_name = "hasVariations"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.has_variations_), _Internal::kHasBitsOffset + 5, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBool)},
+    // string brand_name = 5 [json_name = "brandName"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.brand_name_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // bool no_brand = 6 [json_name = "noBrand"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.no_brand_), _Internal::kHasBitsOffset + 6, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBool)},
+    // string product_id = 7 [json_name = "productId"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.product_id_), _Internal::kHasBitsOffset + 4, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // bool no_product_id = 8 [json_name = "noProductId"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.no_product_id_), _Internal::kHasBitsOffset + 7, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBool)},
+  }},
+  // no aux_entries
+  {{
+    "\50\5\10\13\0\12\0\12\0\0\0\0\0\0\0\0"
+    "products.v1.ProductCreateRequestIdentity"
+    "title"
+    "category"
+    "subcategory"
+    "brand_name"
+    "product_id"
+  }},
+};
+PROTOBUF_NOINLINE void ProductCreateRequestIdentity::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.ProductCreateRequestIdentity)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x0000001fu) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      _impl_.title_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      _impl_.category_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      _impl_.subcategory_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      _impl_.brand_name_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000010u) != 0) {
+      _impl_.product_id_.ClearNonDefaultToEmpty();
+    }
+  }
+  ::memset(&_impl_.has_variations_, 0, static_cast<::size_t>(
+      reinterpret_cast<char*>(&_impl_.no_product_id_) -
+      reinterpret_cast<char*>(&_impl_.has_variations_)) + sizeof(_impl_.no_product_id_));
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestIdentity::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const ProductCreateRequestIdentity& this_ = static_cast<const ProductCreateRequestIdentity&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestIdentity::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const ProductCreateRequestIdentity& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductCreateRequestIdentity)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // string title = 1 [json_name = "title"];
+  if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    if (!this_._internal_title().empty()) {
+      const ::std::string& _s = this_._internal_title();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestIdentity.title");
+      target = stream->WriteStringMaybeAliased(1, _s, target);
+    }
+  }
+
+  // string category = 2 [json_name = "category"];
+  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    if (!this_._internal_category().empty()) {
+      const ::std::string& _s = this_._internal_category();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestIdentity.category");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
+    }
+  }
+
+  // string subcategory = 3 [json_name = "subcategory"];
+  if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
+    if (!this_._internal_subcategory().empty()) {
+      const ::std::string& _s = this_._internal_subcategory();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestIdentity.subcategory");
+      target = stream->WriteStringMaybeAliased(3, _s, target);
+    }
+  }
+
+  // bool has_variations = 4 [json_name = "hasVariations"];
+  if ((this_._impl_._has_bits_[0] & 0x00000020u) != 0) {
+    if (this_._internal_has_variations() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteBoolToArray(
+          4, this_._internal_has_variations(), target);
+    }
+  }
+
+  // string brand_name = 5 [json_name = "brandName"];
+  if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
+    if (!this_._internal_brand_name().empty()) {
+      const ::std::string& _s = this_._internal_brand_name();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestIdentity.brand_name");
+      target = stream->WriteStringMaybeAliased(5, _s, target);
+    }
+  }
+
+  // bool no_brand = 6 [json_name = "noBrand"];
+  if ((this_._impl_._has_bits_[0] & 0x00000040u) != 0) {
+    if (this_._internal_no_brand() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteBoolToArray(
+          6, this_._internal_no_brand(), target);
+    }
+  }
+
+  // string product_id = 7 [json_name = "productId"];
+  if ((this_._impl_._has_bits_[0] & 0x00000010u) != 0) {
+    if (!this_._internal_product_id().empty()) {
+      const ::std::string& _s = this_._internal_product_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestIdentity.product_id");
+      target = stream->WriteStringMaybeAliased(7, _s, target);
+    }
+  }
+
+  // bool no_product_id = 8 [json_name = "noProductId"];
+  if ((this_._impl_._has_bits_[0] & 0x00000080u) != 0) {
+    if (this_._internal_no_product_id() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteBoolToArray(
+          8, this_._internal_no_product_id(), target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductCreateRequestIdentity)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t ProductCreateRequestIdentity::ByteSizeLong(const MessageLite& base) {
+  const ProductCreateRequestIdentity& this_ = static_cast<const ProductCreateRequestIdentity&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t ProductCreateRequestIdentity::ByteSizeLong() const {
+  const ProductCreateRequestIdentity& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductCreateRequestIdentity)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x000000ffu) != 0) {
+    // string title = 1 [json_name = "title"];
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!this_._internal_title().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_title());
+      }
+    }
+    // string category = 2 [json_name = "category"];
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!this_._internal_category().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_category());
+      }
+    }
+    // string subcategory = 3 [json_name = "subcategory"];
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      if (!this_._internal_subcategory().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_subcategory());
+      }
+    }
+    // string brand_name = 5 [json_name = "brandName"];
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      if (!this_._internal_brand_name().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_brand_name());
+      }
+    }
+    // string product_id = 7 [json_name = "productId"];
+    if ((cached_has_bits & 0x00000010u) != 0) {
+      if (!this_._internal_product_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_product_id());
+      }
+    }
+    // bool has_variations = 4 [json_name = "hasVariations"];
+    if ((cached_has_bits & 0x00000020u) != 0) {
+      if (this_._internal_has_variations() != 0) {
+        total_size += 2;
+      }
+    }
+    // bool no_brand = 6 [json_name = "noBrand"];
+    if ((cached_has_bits & 0x00000040u) != 0) {
+      if (this_._internal_no_brand() != 0) {
+        total_size += 2;
+      }
+    }
+    // bool no_product_id = 8 [json_name = "noProductId"];
+    if ((cached_has_bits & 0x00000080u) != 0) {
+      if (this_._internal_no_product_id() != 0) {
+        total_size += 2;
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void ProductCreateRequestIdentity::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ProductCreateRequestIdentity*>(&to_msg);
+  auto& from = static_cast<const ProductCreateRequestIdentity&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductCreateRequestIdentity)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x000000ffu) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!from._internal_title().empty()) {
+        _this->_internal_set_title(from._internal_title());
+      } else {
+        if (_this->_impl_.title_.IsDefault()) {
+          _this->_internal_set_title("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!from._internal_category().empty()) {
+        _this->_internal_set_category(from._internal_category());
+      } else {
+        if (_this->_impl_.category_.IsDefault()) {
+          _this->_internal_set_category("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      if (!from._internal_subcategory().empty()) {
+        _this->_internal_set_subcategory(from._internal_subcategory());
+      } else {
+        if (_this->_impl_.subcategory_.IsDefault()) {
+          _this->_internal_set_subcategory("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      if (!from._internal_brand_name().empty()) {
+        _this->_internal_set_brand_name(from._internal_brand_name());
+      } else {
+        if (_this->_impl_.brand_name_.IsDefault()) {
+          _this->_internal_set_brand_name("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000010u) != 0) {
+      if (!from._internal_product_id().empty()) {
+        _this->_internal_set_product_id(from._internal_product_id());
+      } else {
+        if (_this->_impl_.product_id_.IsDefault()) {
+          _this->_internal_set_product_id("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000020u) != 0) {
+      if (from._internal_has_variations() != 0) {
+        _this->_impl_.has_variations_ = from._impl_.has_variations_;
+      }
+    }
+    if ((cached_has_bits & 0x00000040u) != 0) {
+      if (from._internal_no_brand() != 0) {
+        _this->_impl_.no_brand_ = from._impl_.no_brand_;
+      }
+    }
+    if ((cached_has_bits & 0x00000080u) != 0) {
+      if (from._internal_no_product_id() != 0) {
+        _this->_impl_.no_product_id_ = from._impl_.no_product_id_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ProductCreateRequestIdentity::CopyFrom(const ProductCreateRequestIdentity& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductCreateRequestIdentity)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void ProductCreateRequestIdentity::InternalSwap(ProductCreateRequestIdentity* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
   auto* arena = GetArena();
   ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  _impl_.tags_.InternalSwap(&other->_impl_.tags_);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.title_, &other->_impl_.title_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.description_, &other->_impl_.description_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sku_, &other->_impl_.sku_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.price_, &other->_impl_.price_, arena);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.currency_code_, &other->_impl_.currency_code_, arena);
-  swap(_impl_.ar_enabled_, other->_impl_.ar_enabled_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.category_, &other->_impl_.category_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.subcategory_, &other->_impl_.subcategory_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.brand_name_, &other->_impl_.brand_name_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.product_id_, &other->_impl_.product_id_, arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.no_product_id_)
+      + sizeof(ProductCreateRequestIdentity::_impl_.no_product_id_)
+      - PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.has_variations_)>(
+          reinterpret_cast<char*>(&_impl_.has_variations_),
+          reinterpret_cast<char*>(&other->_impl_.has_variations_));
 }
 
-::google::protobuf::Metadata ProductCreateRequest::GetMetadata() const {
+::google::protobuf::Metadata ProductCreateRequestIdentity::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class ProductCreateRequestDescription::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<ProductCreateRequestDescription>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(ProductCreateRequestDescription, _impl_._has_bits_);
+};
+
+ProductCreateRequestDescription::ProductCreateRequestDescription(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestDescription_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:products.v1.ProductCreateRequestDescription)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestDescription::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::products::v1::ProductCreateRequestDescription& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        bullet_points_{visibility, arena, from.bullet_points_},
+        description_(arena, from.description_) {}
+
+ProductCreateRequestDescription::ProductCreateRequestDescription(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const ProductCreateRequestDescription& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestDescription_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ProductCreateRequestDescription* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+
+  // @@protoc_insertion_point(copy_constructor:products.v1.ProductCreateRequestDescription)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestDescription::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        bullet_points_{visibility, arena},
+        description_(arena) {}
+
+inline void ProductCreateRequestDescription::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+ProductCreateRequestDescription::~ProductCreateRequestDescription() {
+  // @@protoc_insertion_point(destructor:products.v1.ProductCreateRequestDescription)
+  SharedDtor(*this);
+}
+inline void ProductCreateRequestDescription::SharedDtor(MessageLite& self) {
+  ProductCreateRequestDescription& this_ = static_cast<ProductCreateRequestDescription&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.description_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL ProductCreateRequestDescription::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestDescription(arena);
+}
+constexpr auto ProductCreateRequestDescription::InternalNewImpl_() {
+  constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestDescription, _impl_.bullet_points_) +
+          decltype(ProductCreateRequestDescription::_impl_.bullet_points_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+  });
+  if (arena_bits.has_value()) {
+    return ::google::protobuf::internal::MessageCreator::CopyInit(
+        sizeof(ProductCreateRequestDescription), alignof(ProductCreateRequestDescription), *arena_bits);
+  } else {
+    return ::google::protobuf::internal::MessageCreator(&ProductCreateRequestDescription::PlacementNew_,
+                                 sizeof(ProductCreateRequestDescription),
+                                 alignof(ProductCreateRequestDescription));
+  }
+}
+constexpr auto ProductCreateRequestDescription::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestDescription_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestDescription::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestDescription>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestDescription::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<ProductCreateRequestDescription>(), &ProductCreateRequestDescription::ByteSizeLong,
+              &ProductCreateRequestDescription::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestDescription, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestDescription::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestDescription_class_data_ =
+        ProductCreateRequestDescription::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestDescription::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestDescription_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestDescription_class_data_.tc_table);
+  return ProductCreateRequestDescription_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 1, 63, 2>
+ProductCreateRequestDescription::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(ProductCreateRequestDescription, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductCreateRequestDescription_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestDescription>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // repeated .products.v1.ProductCreateRequestBulletPoint bullet_points = 2 [json_name = "bulletPoints"];
+    {::_pbi::TcParser::FastMtR1,
+     {18, 63, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestDescription, _impl_.bullet_points_)}},
+    // string description = 1 [json_name = "description"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestDescription, _impl_.description_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string description = 1 [json_name = "description"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestDescription, _impl_.description_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // repeated .products.v1.ProductCreateRequestBulletPoint bullet_points = 2 [json_name = "bulletPoints"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestDescription, _impl_.bullet_points_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestBulletPoint>()},
+  }},
+  {{
+    "\53\13\0\0\0\0\0\0"
+    "products.v1.ProductCreateRequestDescription"
+    "description"
+  }},
+};
+PROTOBUF_NOINLINE void ProductCreateRequestDescription::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.ProductCreateRequestDescription)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.bullet_points_.Clear();
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000001u) != 0) {
+    _impl_.description_.ClearNonDefaultToEmpty();
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestDescription::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const ProductCreateRequestDescription& this_ = static_cast<const ProductCreateRequestDescription&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestDescription::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const ProductCreateRequestDescription& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductCreateRequestDescription)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // string description = 1 [json_name = "description"];
+  if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    if (!this_._internal_description().empty()) {
+      const ::std::string& _s = this_._internal_description();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestDescription.description");
+      target = stream->WriteStringMaybeAliased(1, _s, target);
+    }
+  }
+
+  // repeated .products.v1.ProductCreateRequestBulletPoint bullet_points = 2 [json_name = "bulletPoints"];
+  for (unsigned i = 0, n = static_cast<unsigned>(
+                           this_._internal_bullet_points_size());
+       i < n; i++) {
+    const auto& repfield = this_._internal_bullet_points().Get(i);
+    target =
+        ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+            2, repfield, repfield.GetCachedSize(),
+            target, stream);
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductCreateRequestDescription)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t ProductCreateRequestDescription::ByteSizeLong(const MessageLite& base) {
+  const ProductCreateRequestDescription& this_ = static_cast<const ProductCreateRequestDescription&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t ProductCreateRequestDescription::ByteSizeLong() const {
+  const ProductCreateRequestDescription& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductCreateRequestDescription)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+   {
+    // repeated .products.v1.ProductCreateRequestBulletPoint bullet_points = 2 [json_name = "bulletPoints"];
+    {
+      total_size += 1UL * this_._internal_bullet_points_size();
+      for (const auto& msg : this_._internal_bullet_points()) {
+        total_size += ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      }
+    }
+  }
+   {
+    // string description = 1 [json_name = "description"];
+    cached_has_bits = this_._impl_._has_bits_[0];
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!this_._internal_description().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_description());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void ProductCreateRequestDescription::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ProductCreateRequestDescription*>(&to_msg);
+  auto& from = static_cast<const ProductCreateRequestDescription&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductCreateRequestDescription)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_bullet_points()->MergeFrom(
+      from._internal_bullet_points());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000001u) != 0) {
+    if (!from._internal_description().empty()) {
+      _this->_internal_set_description(from._internal_description());
+    } else {
+      if (_this->_impl_.description_.IsDefault()) {
+        _this->_internal_set_description("");
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ProductCreateRequestDescription::CopyFrom(const ProductCreateRequestDescription& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductCreateRequestDescription)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void ProductCreateRequestDescription::InternalSwap(ProductCreateRequestDescription* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.bullet_points_.InternalSwap(&other->_impl_.bullet_points_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.description_, &other->_impl_.description_, arena);
+}
+
+::google::protobuf::Metadata ProductCreateRequestDescription::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class ProductCreateRequestBulletPoint::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<ProductCreateRequestBulletPoint>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(ProductCreateRequestBulletPoint, _impl_._has_bits_);
+};
+
+ProductCreateRequestBulletPoint::ProductCreateRequestBulletPoint(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestBulletPoint_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:products.v1.ProductCreateRequestBulletPoint)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestBulletPoint::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::products::v1::ProductCreateRequestBulletPoint& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        id_(arena, from.id_),
+        bullet_point_(arena, from.bullet_point_) {}
+
+ProductCreateRequestBulletPoint::ProductCreateRequestBulletPoint(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const ProductCreateRequestBulletPoint& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestBulletPoint_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ProductCreateRequestBulletPoint* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+
+  // @@protoc_insertion_point(copy_constructor:products.v1.ProductCreateRequestBulletPoint)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestBulletPoint::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        id_(arena),
+        bullet_point_(arena) {}
+
+inline void ProductCreateRequestBulletPoint::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+ProductCreateRequestBulletPoint::~ProductCreateRequestBulletPoint() {
+  // @@protoc_insertion_point(destructor:products.v1.ProductCreateRequestBulletPoint)
+  SharedDtor(*this);
+}
+inline void ProductCreateRequestBulletPoint::SharedDtor(MessageLite& self) {
+  ProductCreateRequestBulletPoint& this_ = static_cast<ProductCreateRequestBulletPoint&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.id_.Destroy();
+  this_._impl_.bullet_point_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL ProductCreateRequestBulletPoint::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestBulletPoint(arena);
+}
+constexpr auto ProductCreateRequestBulletPoint::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(ProductCreateRequestBulletPoint),
+                                            alignof(ProductCreateRequestBulletPoint));
+}
+constexpr auto ProductCreateRequestBulletPoint::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestBulletPoint_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestBulletPoint::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestBulletPoint>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestBulletPoint::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<ProductCreateRequestBulletPoint>(), &ProductCreateRequestBulletPoint::ByteSizeLong,
+              &ProductCreateRequestBulletPoint::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestBulletPoint, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestBulletPoint::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestBulletPoint_class_data_ =
+        ProductCreateRequestBulletPoint::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestBulletPoint::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestBulletPoint_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestBulletPoint_class_data_.tc_table);
+  return ProductCreateRequestBulletPoint_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 0, 66, 2>
+ProductCreateRequestBulletPoint::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(ProductCreateRequestBulletPoint, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    ProductCreateRequestBulletPoint_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestBulletPoint>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // string bullet_point = 2 [json_name = "bulletPoint"];
+    {::_pbi::TcParser::FastUS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestBulletPoint, _impl_.bullet_point_)}},
+    // string id = 1 [json_name = "id"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestBulletPoint, _impl_.id_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string id = 1 [json_name = "id"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestBulletPoint, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string bullet_point = 2 [json_name = "bulletPoint"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestBulletPoint, _impl_.bullet_point_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\53\2\14\0\0\0\0\0"
+    "products.v1.ProductCreateRequestBulletPoint"
+    "id"
+    "bullet_point"
+  }},
+};
+PROTOBUF_NOINLINE void ProductCreateRequestBulletPoint::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.ProductCreateRequestBulletPoint)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003u) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      _impl_.id_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      _impl_.bullet_point_.ClearNonDefaultToEmpty();
+    }
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestBulletPoint::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const ProductCreateRequestBulletPoint& this_ = static_cast<const ProductCreateRequestBulletPoint&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestBulletPoint::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const ProductCreateRequestBulletPoint& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductCreateRequestBulletPoint)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // string id = 1 [json_name = "id"];
+  if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    if (!this_._internal_id().empty()) {
+      const ::std::string& _s = this_._internal_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestBulletPoint.id");
+      target = stream->WriteStringMaybeAliased(1, _s, target);
+    }
+  }
+
+  // string bullet_point = 2 [json_name = "bulletPoint"];
+  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    if (!this_._internal_bullet_point().empty()) {
+      const ::std::string& _s = this_._internal_bullet_point();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestBulletPoint.bullet_point");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductCreateRequestBulletPoint)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t ProductCreateRequestBulletPoint::ByteSizeLong(const MessageLite& base) {
+  const ProductCreateRequestBulletPoint& this_ = static_cast<const ProductCreateRequestBulletPoint&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t ProductCreateRequestBulletPoint::ByteSizeLong() const {
+  const ProductCreateRequestBulletPoint& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductCreateRequestBulletPoint)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003u) != 0) {
+    // string id = 1 [json_name = "id"];
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!this_._internal_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_id());
+      }
+    }
+    // string bullet_point = 2 [json_name = "bulletPoint"];
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!this_._internal_bullet_point().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_bullet_point());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void ProductCreateRequestBulletPoint::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ProductCreateRequestBulletPoint*>(&to_msg);
+  auto& from = static_cast<const ProductCreateRequestBulletPoint&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductCreateRequestBulletPoint)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003u) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!from._internal_id().empty()) {
+        _this->_internal_set_id(from._internal_id());
+      } else {
+        if (_this->_impl_.id_.IsDefault()) {
+          _this->_internal_set_id("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!from._internal_bullet_point().empty()) {
+        _this->_internal_set_bullet_point(from._internal_bullet_point());
+      } else {
+        if (_this->_impl_.bullet_point_.IsDefault()) {
+          _this->_internal_set_bullet_point("");
+        }
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ProductCreateRequestBulletPoint::CopyFrom(const ProductCreateRequestBulletPoint& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductCreateRequestBulletPoint)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void ProductCreateRequestBulletPoint::InternalSwap(ProductCreateRequestBulletPoint* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.id_, &other->_impl_.id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.bullet_point_, &other->_impl_.bullet_point_, arena);
+}
+
+::google::protobuf::Metadata ProductCreateRequestBulletPoint::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class ProductCreateRequestDetails::_Internal {
+ public:
+  static constexpr ::int32_t kOneofCaseOffset =
+      PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDetails, _impl_._oneof_case_);
+};
+
+void ProductCreateRequestDetails::set_allocated_with_variants(::products::v1::ProductCreateRequestDetailsWithVariants* PROTOBUF_NULLABLE with_variants) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  clear_details();
+  if (with_variants) {
+    ::google::protobuf::Arena* submessage_arena = with_variants->GetArena();
+    if (message_arena != submessage_arena) {
+      with_variants = ::google::protobuf::internal::GetOwnedMessage(message_arena, with_variants, submessage_arena);
+    }
+    set_has_with_variants();
+    _impl_.details_.with_variants_ = with_variants;
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductCreateRequestDetails.with_variants)
+}
+void ProductCreateRequestDetails::set_allocated_without_variants(::products::v1::ProductCreateRequestDetailsWithoutVariants* PROTOBUF_NULLABLE without_variants) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  clear_details();
+  if (without_variants) {
+    ::google::protobuf::Arena* submessage_arena = without_variants->GetArena();
+    if (message_arena != submessage_arena) {
+      without_variants = ::google::protobuf::internal::GetOwnedMessage(message_arena, without_variants, submessage_arena);
+    }
+    set_has_without_variants();
+    _impl_.details_.without_variants_ = without_variants;
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductCreateRequestDetails.without_variants)
+}
+ProductCreateRequestDetails::ProductCreateRequestDetails(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestDetails_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:products.v1.ProductCreateRequestDetails)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestDetails::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::products::v1::ProductCreateRequestDetails& from_msg)
+      : details_{},
+        _cached_size_{0},
+        _oneof_case_{from._oneof_case_[0]} {}
+
+ProductCreateRequestDetails::ProductCreateRequestDetails(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const ProductCreateRequestDetails& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestDetails_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ProductCreateRequestDetails* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  switch (details_case()) {
+    case DETAILS_NOT_SET:
+      break;
+      case kWithVariants:
+        _impl_.details_.with_variants_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.details_.with_variants_);
+        break;
+      case kWithoutVariants:
+        _impl_.details_.without_variants_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.details_.without_variants_);
+        break;
+  }
+
+  // @@protoc_insertion_point(copy_constructor:products.v1.ProductCreateRequestDetails)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestDetails::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : details_{},
+        _cached_size_{0},
+        _oneof_case_{} {}
+
+inline void ProductCreateRequestDetails::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+ProductCreateRequestDetails::~ProductCreateRequestDetails() {
+  // @@protoc_insertion_point(destructor:products.v1.ProductCreateRequestDetails)
+  SharedDtor(*this);
+}
+inline void ProductCreateRequestDetails::SharedDtor(MessageLite& self) {
+  ProductCreateRequestDetails& this_ = static_cast<ProductCreateRequestDetails&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  if (this_.has_details()) {
+    this_.clear_details();
+  }
+  this_._impl_.~Impl_();
+}
+
+void ProductCreateRequestDetails::clear_details() {
+// @@protoc_insertion_point(one_of_clear_start:products.v1.ProductCreateRequestDetails)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  switch (details_case()) {
+    case kWithVariants: {
+      if (GetArena() == nullptr) {
+        delete _impl_.details_.with_variants_;
+      } else if (::google::protobuf::internal::DebugHardenClearOneofMessageOnArena()) {
+        ::google::protobuf::internal::MaybePoisonAfterClear(_impl_.details_.with_variants_);
+      }
+      break;
+    }
+    case kWithoutVariants: {
+      if (GetArena() == nullptr) {
+        delete _impl_.details_.without_variants_;
+      } else if (::google::protobuf::internal::DebugHardenClearOneofMessageOnArena()) {
+        ::google::protobuf::internal::MaybePoisonAfterClear(_impl_.details_.without_variants_);
+      }
+      break;
+    }
+    case DETAILS_NOT_SET: {
+      break;
+    }
+  }
+  _impl_._oneof_case_[0] = DETAILS_NOT_SET;
+}
+
+
+inline void* PROTOBUF_NONNULL ProductCreateRequestDetails::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestDetails(arena);
+}
+constexpr auto ProductCreateRequestDetails::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::ZeroInit(sizeof(ProductCreateRequestDetails),
+                                            alignof(ProductCreateRequestDetails));
+}
+constexpr auto ProductCreateRequestDetails::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestDetails_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestDetails::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestDetails>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestDetails::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<ProductCreateRequestDetails>(), &ProductCreateRequestDetails::ByteSizeLong,
+              &ProductCreateRequestDetails::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetails, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestDetails::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestDetails_class_data_ =
+        ProductCreateRequestDetails::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestDetails::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestDetails_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestDetails_class_data_.tc_table);
+  return ProductCreateRequestDetails_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 2, 2, 0, 2>
+ProductCreateRequestDetails::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    2, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductCreateRequestDetails_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestDetails>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // .products.v1.ProductCreateRequestDetailsWithVariants with_variants = 1 [json_name = "withVariants"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetails, _impl_.details_.with_variants_), _Internal::kOneofCaseOffset + 0, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 2 [json_name = "withoutVariants"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetails, _impl_.details_.without_variants_), _Internal::kOneofCaseOffset + 0, 1,
+    (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestDetailsWithVariants>()},
+      {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestDetailsWithoutVariants>()},
+  }},
+  {{
+  }},
+};
+PROTOBUF_NOINLINE void ProductCreateRequestDetails::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.ProductCreateRequestDetails)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  clear_details();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestDetails::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const ProductCreateRequestDetails& this_ = static_cast<const ProductCreateRequestDetails&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestDetails::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const ProductCreateRequestDetails& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductCreateRequestDetails)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  switch (this_.details_case()) {
+    case kWithVariants: {
+      target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+          1, *this_._impl_.details_.with_variants_, this_._impl_.details_.with_variants_->GetCachedSize(), target,
+          stream);
+      break;
+    }
+    case kWithoutVariants: {
+      target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+          2, *this_._impl_.details_.without_variants_, this_._impl_.details_.without_variants_->GetCachedSize(), target,
+          stream);
+      break;
+    }
+    default:
+      break;
+  }
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductCreateRequestDetails)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t ProductCreateRequestDetails::ByteSizeLong(const MessageLite& base) {
+  const ProductCreateRequestDetails& this_ = static_cast<const ProductCreateRequestDetails&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t ProductCreateRequestDetails::ByteSizeLong() const {
+  const ProductCreateRequestDetails& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductCreateRequestDetails)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  switch (this_.details_case()) {
+    // .products.v1.ProductCreateRequestDetailsWithVariants with_variants = 1 [json_name = "withVariants"];
+    case kWithVariants: {
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.details_.with_variants_);
+      break;
+    }
+    // .products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 2 [json_name = "withoutVariants"];
+    case kWithoutVariants: {
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.details_.without_variants_);
+      break;
+    }
+    case DETAILS_NOT_SET: {
+      break;
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void ProductCreateRequestDetails::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ProductCreateRequestDetails*>(&to_msg);
+  auto& from = static_cast<const ProductCreateRequestDetails&>(from_msg);
+  ::google::protobuf::Arena* arena = _this->GetArena();
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductCreateRequestDetails)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (const uint32_t oneof_from_case = from._impl_._oneof_case_[0]) {
+    const uint32_t oneof_to_case = _this->_impl_._oneof_case_[0];
+    const bool oneof_needs_init = oneof_to_case != oneof_from_case;
+    if (oneof_needs_init) {
+      if (oneof_to_case != 0) {
+        _this->clear_details();
+      }
+      _this->_impl_._oneof_case_[0] = oneof_from_case;
+    }
+
+    switch (oneof_from_case) {
+      case kWithVariants: {
+        if (oneof_needs_init) {
+          _this->_impl_.details_.with_variants_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.details_.with_variants_);
+        } else {
+          _this->_impl_.details_.with_variants_->MergeFrom(*from._impl_.details_.with_variants_);
+        }
+        break;
+      }
+      case kWithoutVariants: {
+        if (oneof_needs_init) {
+          _this->_impl_.details_.without_variants_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.details_.without_variants_);
+        } else {
+          _this->_impl_.details_.without_variants_->MergeFrom(*from._impl_.details_.without_variants_);
+        }
+        break;
+      }
+      case DETAILS_NOT_SET:
+        break;
+    }
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ProductCreateRequestDetails::CopyFrom(const ProductCreateRequestDetails& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductCreateRequestDetails)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void ProductCreateRequestDetails::InternalSwap(ProductCreateRequestDetails* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_.details_, other->_impl_.details_);
+  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
+}
+
+::google::protobuf::Metadata ProductCreateRequestDetails::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class ProductCreateRequestDetailsWithVariants::_Internal {
+ public:
+};
+
+ProductCreateRequestDetailsWithVariants::ProductCreateRequestDetailsWithVariants(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestDetailsWithVariants_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:products.v1.ProductCreateRequestDetailsWithVariants)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestDetailsWithVariants::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::products::v1::ProductCreateRequestDetailsWithVariants& from_msg)
+      : variants_{visibility, arena, from.variants_},
+        _cached_size_{0} {}
+
+ProductCreateRequestDetailsWithVariants::ProductCreateRequestDetailsWithVariants(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const ProductCreateRequestDetailsWithVariants& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestDetailsWithVariants_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ProductCreateRequestDetailsWithVariants* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+
+  // @@protoc_insertion_point(copy_constructor:products.v1.ProductCreateRequestDetailsWithVariants)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestDetailsWithVariants::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : variants_{visibility, arena},
+        _cached_size_{0} {}
+
+inline void ProductCreateRequestDetailsWithVariants::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+ProductCreateRequestDetailsWithVariants::~ProductCreateRequestDetailsWithVariants() {
+  // @@protoc_insertion_point(destructor:products.v1.ProductCreateRequestDetailsWithVariants)
+  SharedDtor(*this);
+}
+inline void ProductCreateRequestDetailsWithVariants::SharedDtor(MessageLite& self) {
+  ProductCreateRequestDetailsWithVariants& this_ = static_cast<ProductCreateRequestDetailsWithVariants&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL ProductCreateRequestDetailsWithVariants::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestDetailsWithVariants(arena);
+}
+constexpr auto ProductCreateRequestDetailsWithVariants::InternalNewImpl_() {
+  constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsWithVariants, _impl_.variants_) +
+          decltype(ProductCreateRequestDetailsWithVariants::_impl_.variants_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+  });
+  if (arena_bits.has_value()) {
+    return ::google::protobuf::internal::MessageCreator::ZeroInit(
+        sizeof(ProductCreateRequestDetailsWithVariants), alignof(ProductCreateRequestDetailsWithVariants), *arena_bits);
+  } else {
+    return ::google::protobuf::internal::MessageCreator(&ProductCreateRequestDetailsWithVariants::PlacementNew_,
+                                 sizeof(ProductCreateRequestDetailsWithVariants),
+                                 alignof(ProductCreateRequestDetailsWithVariants));
+  }
+}
+constexpr auto ProductCreateRequestDetailsWithVariants::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestDetailsWithVariants_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestDetailsWithVariants::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestDetailsWithVariants>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestDetailsWithVariants::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<ProductCreateRequestDetailsWithVariants>(), &ProductCreateRequestDetailsWithVariants::ByteSizeLong,
+              &ProductCreateRequestDetailsWithVariants::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsWithVariants, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestDetailsWithVariants::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestDetailsWithVariants_class_data_ =
+        ProductCreateRequestDetailsWithVariants::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestDetailsWithVariants::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestDetailsWithVariants_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestDetailsWithVariants_class_data_.tc_table);
+  return ProductCreateRequestDetailsWithVariants_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 1, 0, 2>
+ProductCreateRequestDetailsWithVariants::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductCreateRequestDetailsWithVariants_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestDetailsWithVariants>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];
+    {::_pbi::TcParser::FastMtR1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsWithVariants, _impl_.variants_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsWithVariants, _impl_.variants_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestDetailsVariantForm>()},
+  }},
+  {{
+  }},
+};
+PROTOBUF_NOINLINE void ProductCreateRequestDetailsWithVariants::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.ProductCreateRequestDetailsWithVariants)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.variants_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestDetailsWithVariants::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const ProductCreateRequestDetailsWithVariants& this_ = static_cast<const ProductCreateRequestDetailsWithVariants&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestDetailsWithVariants::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const ProductCreateRequestDetailsWithVariants& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductCreateRequestDetailsWithVariants)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];
+  for (unsigned i = 0, n = static_cast<unsigned>(
+                           this_._internal_variants_size());
+       i < n; i++) {
+    const auto& repfield = this_._internal_variants().Get(i);
+    target =
+        ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+            1, repfield, repfield.GetCachedSize(),
+            target, stream);
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductCreateRequestDetailsWithVariants)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t ProductCreateRequestDetailsWithVariants::ByteSizeLong(const MessageLite& base) {
+  const ProductCreateRequestDetailsWithVariants& this_ = static_cast<const ProductCreateRequestDetailsWithVariants&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t ProductCreateRequestDetailsWithVariants::ByteSizeLong() const {
+  const ProductCreateRequestDetailsWithVariants& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductCreateRequestDetailsWithVariants)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+   {
+    // repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];
+    {
+      total_size += 1UL * this_._internal_variants_size();
+      for (const auto& msg : this_._internal_variants()) {
+        total_size += ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void ProductCreateRequestDetailsWithVariants::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ProductCreateRequestDetailsWithVariants*>(&to_msg);
+  auto& from = static_cast<const ProductCreateRequestDetailsWithVariants&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductCreateRequestDetailsWithVariants)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_variants()->MergeFrom(
+      from._internal_variants());
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ProductCreateRequestDetailsWithVariants::CopyFrom(const ProductCreateRequestDetailsWithVariants& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductCreateRequestDetailsWithVariants)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void ProductCreateRequestDetailsWithVariants::InternalSwap(ProductCreateRequestDetailsWithVariants* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.variants_.InternalSwap(&other->_impl_.variants_);
+}
+
+::google::protobuf::Metadata ProductCreateRequestDetailsWithVariants::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse::ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse()
+    : SuperType(ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse_class_data_.base()) {}
+ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse::ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+    : SuperType(arena, ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse_class_data_.base()) {}
+#else   // PROTOBUF_CUSTOM_VTABLE
+ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse::ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse() : SuperType() {}
+ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse::ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena) : SuperType(arena) {}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+inline void* PROTOBUF_NONNULL ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse(arena);
+}
+constexpr auto ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse),
+                                            alignof(ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse));
+}
+constexpr auto ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse::SharedDtor,
+          static_cast<void (::google::protobuf::MessageLite::*)()>(&ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse::ClearImpl),
+              ::google::protobuf::Message::ByteSizeLongImpl, ::google::protobuf::Message::_InternalSerializeImpl
+              ,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse_class_data_ =
+        ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse_class_data_.tc_table);
+  return ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 1, 72, 2>
+ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::DiscardEverythingFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // .shared.v1.Any value = 2 [json_name = "value"];
+    {::_pbi::TcParser::FastMtS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse, _impl_.value_)}},
+    // string key = 1 [json_name = "key"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse, _impl_.key_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string key = 1 [json_name = "key"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse, _impl_.key_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // .shared.v1.Any value = 2 [json_name = "value"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse, _impl_.value_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::shared::v1::Any>()},
+  }},
+  {{
+    "\74\3\0\0\0\0\0\0"
+    "products.v1.ProductCreateRequestDetailsVariantForm.FormEntry"
+    "key"
+  }},
+};
+// ===================================================================
+
+class ProductCreateRequestDetailsVariantForm::_Internal {
+ public:
+};
+
+void ProductCreateRequestDetailsVariantForm::clear_form() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.form_.Clear();
+}
+ProductCreateRequestDetailsVariantForm::ProductCreateRequestDetailsVariantForm(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestDetailsVariantForm_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:products.v1.ProductCreateRequestDetailsVariantForm)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestDetailsVariantForm::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::products::v1::ProductCreateRequestDetailsVariantForm& from_msg)
+      : form_{visibility, arena, from.form_},
+        _cached_size_{0} {}
+
+ProductCreateRequestDetailsVariantForm::ProductCreateRequestDetailsVariantForm(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const ProductCreateRequestDetailsVariantForm& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestDetailsVariantForm_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ProductCreateRequestDetailsVariantForm* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+
+  // @@protoc_insertion_point(copy_constructor:products.v1.ProductCreateRequestDetailsVariantForm)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestDetailsVariantForm::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : form_{visibility, arena},
+        _cached_size_{0} {}
+
+inline void ProductCreateRequestDetailsVariantForm::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+ProductCreateRequestDetailsVariantForm::~ProductCreateRequestDetailsVariantForm() {
+  // @@protoc_insertion_point(destructor:products.v1.ProductCreateRequestDetailsVariantForm)
+  SharedDtor(*this);
+}
+inline void ProductCreateRequestDetailsVariantForm::SharedDtor(MessageLite& self) {
+  ProductCreateRequestDetailsVariantForm& this_ = static_cast<ProductCreateRequestDetailsVariantForm&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL ProductCreateRequestDetailsVariantForm::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestDetailsVariantForm(arena);
+}
+constexpr auto ProductCreateRequestDetailsVariantForm::InternalNewImpl_() {
+  constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsVariantForm, _impl_.form_) +
+          decltype(ProductCreateRequestDetailsVariantForm::_impl_.form_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsVariantForm, _impl_.form_) +
+          decltype(ProductCreateRequestDetailsVariantForm::_impl_.form_)::
+              InternalGetArenaOffsetAlt(
+                  ::google::protobuf::Message::internal_visibility()),
+  });
+  if (arena_bits.has_value()) {
+    return ::google::protobuf::internal::MessageCreator::CopyInit(
+        sizeof(ProductCreateRequestDetailsVariantForm), alignof(ProductCreateRequestDetailsVariantForm), *arena_bits);
+  } else {
+    return ::google::protobuf::internal::MessageCreator(&ProductCreateRequestDetailsVariantForm::PlacementNew_,
+                                 sizeof(ProductCreateRequestDetailsVariantForm),
+                                 alignof(ProductCreateRequestDetailsVariantForm));
+  }
+}
+constexpr auto ProductCreateRequestDetailsVariantForm::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestDetailsVariantForm_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestDetailsVariantForm::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestDetailsVariantForm>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestDetailsVariantForm::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<ProductCreateRequestDetailsVariantForm>(), &ProductCreateRequestDetailsVariantForm::ByteSizeLong,
+              &ProductCreateRequestDetailsVariantForm::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsVariantForm, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestDetailsVariantForm::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestDetailsVariantForm_class_data_ =
+        ProductCreateRequestDetailsVariantForm::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestDetailsVariantForm::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestDetailsVariantForm_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestDetailsVariantForm_class_data_.tc_table);
+  return ProductCreateRequestDetailsVariantForm_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 2, 63, 2>
+ProductCreateRequestDetailsVariantForm::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductCreateRequestDetailsVariantForm_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestDetailsVariantForm>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // map<string, .shared.v1.Any> form = 1 [json_name = "form"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsVariantForm, _impl_.form_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
+  }},
+  {{
+      {::_pbi::TcParser::GetMapAuxInfo(1, 0, 0,
+                                       9, 11,
+                                       0)},
+      {::_pbi::TcParser::GetTable<::shared::v1::Any>()},
+  }},
+  {{
+    "\62\4\0\0\0\0\0\0"
+    "products.v1.ProductCreateRequestDetailsVariantForm"
+    "form"
+  }},
+};
+PROTOBUF_NOINLINE void ProductCreateRequestDetailsVariantForm::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.ProductCreateRequestDetailsVariantForm)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.form_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestDetailsVariantForm::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const ProductCreateRequestDetailsVariantForm& this_ = static_cast<const ProductCreateRequestDetailsVariantForm&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestDetailsVariantForm::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const ProductCreateRequestDetailsVariantForm& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductCreateRequestDetailsVariantForm)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // map<string, .shared.v1.Any> form = 1 [json_name = "form"];
+  if (!this_._internal_form().empty()) {
+    using MapType = ::google::protobuf::Map<std::string, ::shared::v1::Any>;
+    using WireHelper = _pbi::MapEntryFuncs<std::string, ::shared::v1::Any,
+                                   _pbi::WireFormatLite::TYPE_STRING,
+                                   _pbi::WireFormatLite::TYPE_MESSAGE>;
+    const auto& field = this_._internal_form();
+
+    if (stream->IsSerializationDeterministic() && field.size() > 1) {
+      for (const auto& entry : ::google::protobuf::internal::MapSorterPtr<MapType>(field)) {
+        target = WireHelper::InternalSerialize(
+            1, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestDetailsVariantForm.form");
+      }
+    } else {
+      for (const auto& entry : field) {
+        target = WireHelper::InternalSerialize(
+            1, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestDetailsVariantForm.form");
+      }
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductCreateRequestDetailsVariantForm)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t ProductCreateRequestDetailsVariantForm::ByteSizeLong(const MessageLite& base) {
+  const ProductCreateRequestDetailsVariantForm& this_ = static_cast<const ProductCreateRequestDetailsVariantForm&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t ProductCreateRequestDetailsVariantForm::ByteSizeLong() const {
+  const ProductCreateRequestDetailsVariantForm& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductCreateRequestDetailsVariantForm)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+   {
+    // map<string, .shared.v1.Any> form = 1 [json_name = "form"];
+    {
+      total_size +=
+          1 * ::google::protobuf::internal::FromIntSize(this_._internal_form_size());
+      for (const auto& entry : this_._internal_form()) {
+        total_size += _pbi::MapEntryFuncs<std::string, ::shared::v1::Any,
+                                       _pbi::WireFormatLite::TYPE_STRING,
+                                       _pbi::WireFormatLite::TYPE_MESSAGE>::ByteSizeLong(entry.first, entry.second);
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void ProductCreateRequestDetailsVariantForm::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ProductCreateRequestDetailsVariantForm*>(&to_msg);
+  auto& from = static_cast<const ProductCreateRequestDetailsVariantForm&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductCreateRequestDetailsVariantForm)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.form_.MergeFrom(from._impl_.form_);
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ProductCreateRequestDetailsVariantForm::CopyFrom(const ProductCreateRequestDetailsVariantForm& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductCreateRequestDetailsVariantForm)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void ProductCreateRequestDetailsVariantForm::InternalSwap(ProductCreateRequestDetailsVariantForm* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.form_.InternalSwap(&other->_impl_.form_);
+}
+
+::google::protobuf::Metadata ProductCreateRequestDetailsVariantForm::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse::ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse()
+    : SuperType(ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse_class_data_.base()) {}
+ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse::ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+    : SuperType(arena, ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse_class_data_.base()) {}
+#else   // PROTOBUF_CUSTOM_VTABLE
+ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse::ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse() : SuperType() {}
+ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse::ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena) : SuperType(arena) {}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+inline void* PROTOBUF_NONNULL ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse(arena);
+}
+constexpr auto ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse),
+                                            alignof(ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse));
+}
+constexpr auto ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse::SharedDtor,
+          static_cast<void (::google::protobuf::MessageLite::*)()>(&ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse::ClearImpl),
+              ::google::protobuf::Message::ByteSizeLongImpl, ::google::protobuf::Message::_InternalSerializeImpl
+              ,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse_class_data_ =
+        ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse_class_data_.tc_table);
+  return ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 1, 76, 2>
+ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::DiscardEverythingFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // .shared.v1.Any value = 2 [json_name = "value"];
+    {::_pbi::TcParser::FastMtS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse, _impl_.value_)}},
+    // string key = 1 [json_name = "key"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse, _impl_.key_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string key = 1 [json_name = "key"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse, _impl_.key_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // .shared.v1.Any value = 2 [json_name = "value"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse, _impl_.value_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::shared::v1::Any>()},
+  }},
+  {{
+    "\100\3\0\0\0\0\0\0"
+    "products.v1.ProductCreateRequestDetailsWithoutVariants.FormEntry"
+    "key"
+  }},
+};
+// ===================================================================
+
+class ProductCreateRequestDetailsWithoutVariants::_Internal {
+ public:
+};
+
+void ProductCreateRequestDetailsWithoutVariants::clear_form() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.form_.Clear();
+}
+ProductCreateRequestDetailsWithoutVariants::ProductCreateRequestDetailsWithoutVariants(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestDetailsWithoutVariants_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:products.v1.ProductCreateRequestDetailsWithoutVariants)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestDetailsWithoutVariants::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::products::v1::ProductCreateRequestDetailsWithoutVariants& from_msg)
+      : form_{visibility, arena, from.form_},
+        _cached_size_{0} {}
+
+ProductCreateRequestDetailsWithoutVariants::ProductCreateRequestDetailsWithoutVariants(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const ProductCreateRequestDetailsWithoutVariants& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestDetailsWithoutVariants_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ProductCreateRequestDetailsWithoutVariants* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+
+  // @@protoc_insertion_point(copy_constructor:products.v1.ProductCreateRequestDetailsWithoutVariants)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestDetailsWithoutVariants::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : form_{visibility, arena},
+        _cached_size_{0} {}
+
+inline void ProductCreateRequestDetailsWithoutVariants::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+ProductCreateRequestDetailsWithoutVariants::~ProductCreateRequestDetailsWithoutVariants() {
+  // @@protoc_insertion_point(destructor:products.v1.ProductCreateRequestDetailsWithoutVariants)
+  SharedDtor(*this);
+}
+inline void ProductCreateRequestDetailsWithoutVariants::SharedDtor(MessageLite& self) {
+  ProductCreateRequestDetailsWithoutVariants& this_ = static_cast<ProductCreateRequestDetailsWithoutVariants&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL ProductCreateRequestDetailsWithoutVariants::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestDetailsWithoutVariants(arena);
+}
+constexpr auto ProductCreateRequestDetailsWithoutVariants::InternalNewImpl_() {
+  constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsWithoutVariants, _impl_.form_) +
+          decltype(ProductCreateRequestDetailsWithoutVariants::_impl_.form_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsWithoutVariants, _impl_.form_) +
+          decltype(ProductCreateRequestDetailsWithoutVariants::_impl_.form_)::
+              InternalGetArenaOffsetAlt(
+                  ::google::protobuf::Message::internal_visibility()),
+  });
+  if (arena_bits.has_value()) {
+    return ::google::protobuf::internal::MessageCreator::CopyInit(
+        sizeof(ProductCreateRequestDetailsWithoutVariants), alignof(ProductCreateRequestDetailsWithoutVariants), *arena_bits);
+  } else {
+    return ::google::protobuf::internal::MessageCreator(&ProductCreateRequestDetailsWithoutVariants::PlacementNew_,
+                                 sizeof(ProductCreateRequestDetailsWithoutVariants),
+                                 alignof(ProductCreateRequestDetailsWithoutVariants));
+  }
+}
+constexpr auto ProductCreateRequestDetailsWithoutVariants::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestDetailsWithoutVariants_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestDetailsWithoutVariants::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestDetailsWithoutVariants>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestDetailsWithoutVariants::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<ProductCreateRequestDetailsWithoutVariants>(), &ProductCreateRequestDetailsWithoutVariants::ByteSizeLong,
+              &ProductCreateRequestDetailsWithoutVariants::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsWithoutVariants, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestDetailsWithoutVariants::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestDetailsWithoutVariants_class_data_ =
+        ProductCreateRequestDetailsWithoutVariants::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestDetailsWithoutVariants::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestDetailsWithoutVariants_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestDetailsWithoutVariants_class_data_.tc_table);
+  return ProductCreateRequestDetailsWithoutVariants_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 2, 67, 2>
+ProductCreateRequestDetailsWithoutVariants::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductCreateRequestDetailsWithoutVariants_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestDetailsWithoutVariants>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // map<string, .shared.v1.Any> form = 1 [json_name = "form"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetailsWithoutVariants, _impl_.form_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
+  }},
+  {{
+      {::_pbi::TcParser::GetMapAuxInfo(1, 0, 0,
+                                       9, 11,
+                                       0)},
+      {::_pbi::TcParser::GetTable<::shared::v1::Any>()},
+  }},
+  {{
+    "\66\4\0\0\0\0\0\0"
+    "products.v1.ProductCreateRequestDetailsWithoutVariants"
+    "form"
+  }},
+};
+PROTOBUF_NOINLINE void ProductCreateRequestDetailsWithoutVariants::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.ProductCreateRequestDetailsWithoutVariants)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.form_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestDetailsWithoutVariants::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const ProductCreateRequestDetailsWithoutVariants& this_ = static_cast<const ProductCreateRequestDetailsWithoutVariants&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestDetailsWithoutVariants::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const ProductCreateRequestDetailsWithoutVariants& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductCreateRequestDetailsWithoutVariants)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // map<string, .shared.v1.Any> form = 1 [json_name = "form"];
+  if (!this_._internal_form().empty()) {
+    using MapType = ::google::protobuf::Map<std::string, ::shared::v1::Any>;
+    using WireHelper = _pbi::MapEntryFuncs<std::string, ::shared::v1::Any,
+                                   _pbi::WireFormatLite::TYPE_STRING,
+                                   _pbi::WireFormatLite::TYPE_MESSAGE>;
+    const auto& field = this_._internal_form();
+
+    if (stream->IsSerializationDeterministic() && field.size() > 1) {
+      for (const auto& entry : ::google::protobuf::internal::MapSorterPtr<MapType>(field)) {
+        target = WireHelper::InternalSerialize(
+            1, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestDetailsWithoutVariants.form");
+      }
+    } else {
+      for (const auto& entry : field) {
+        target = WireHelper::InternalSerialize(
+            1, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestDetailsWithoutVariants.form");
+      }
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductCreateRequestDetailsWithoutVariants)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t ProductCreateRequestDetailsWithoutVariants::ByteSizeLong(const MessageLite& base) {
+  const ProductCreateRequestDetailsWithoutVariants& this_ = static_cast<const ProductCreateRequestDetailsWithoutVariants&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t ProductCreateRequestDetailsWithoutVariants::ByteSizeLong() const {
+  const ProductCreateRequestDetailsWithoutVariants& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductCreateRequestDetailsWithoutVariants)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+   {
+    // map<string, .shared.v1.Any> form = 1 [json_name = "form"];
+    {
+      total_size +=
+          1 * ::google::protobuf::internal::FromIntSize(this_._internal_form_size());
+      for (const auto& entry : this_._internal_form()) {
+        total_size += _pbi::MapEntryFuncs<std::string, ::shared::v1::Any,
+                                       _pbi::WireFormatLite::TYPE_STRING,
+                                       _pbi::WireFormatLite::TYPE_MESSAGE>::ByteSizeLong(entry.first, entry.second);
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void ProductCreateRequestDetailsWithoutVariants::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ProductCreateRequestDetailsWithoutVariants*>(&to_msg);
+  auto& from = static_cast<const ProductCreateRequestDetailsWithoutVariants&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductCreateRequestDetailsWithoutVariants)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.form_.MergeFrom(from._impl_.form_);
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ProductCreateRequestDetailsWithoutVariants::CopyFrom(const ProductCreateRequestDetailsWithoutVariants& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductCreateRequestDetailsWithoutVariants)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void ProductCreateRequestDetailsWithoutVariants::InternalSwap(ProductCreateRequestDetailsWithoutVariants* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.form_.InternalSwap(&other->_impl_.form_);
+}
+
+::google::protobuf::Metadata ProductCreateRequestDetailsWithoutVariants::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class ProductCreateRequestMedia::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<ProductCreateRequestMedia>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(ProductCreateRequestMedia, _impl_._has_bits_);
+  static constexpr ::int32_t kOneofCaseOffset =
+      PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestMedia, _impl_._oneof_case_);
+};
+
+void ProductCreateRequestMedia::set_allocated_with_variants(::products::v1::ProductCreateRequestMediaWithVariants* PROTOBUF_NULLABLE with_variants) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  clear_media();
+  if (with_variants) {
+    ::google::protobuf::Arena* submessage_arena = with_variants->GetArena();
+    if (message_arena != submessage_arena) {
+      with_variants = ::google::protobuf::internal::GetOwnedMessage(message_arena, with_variants, submessage_arena);
+    }
+    set_has_with_variants();
+    _impl_.media_.with_variants_ = with_variants;
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductCreateRequestMedia.with_variants)
+}
+void ProductCreateRequestMedia::set_allocated_without_variants(::products::v1::ProductCreateRequestMediaWithoutVariants* PROTOBUF_NULLABLE without_variants) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  clear_media();
+  if (without_variants) {
+    ::google::protobuf::Arena* submessage_arena = without_variants->GetArena();
+    if (message_arena != submessage_arena) {
+      without_variants = ::google::protobuf::internal::GetOwnedMessage(message_arena, without_variants, submessage_arena);
+    }
+    set_has_without_variants();
+    _impl_.media_.without_variants_ = without_variants;
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductCreateRequestMedia.without_variants)
+}
+ProductCreateRequestMedia::ProductCreateRequestMedia(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestMedia_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:products.v1.ProductCreateRequestMedia)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestMedia::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::products::v1::ProductCreateRequestMedia& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        media_{},
+        _oneof_case_{from._oneof_case_[0]} {}
+
+ProductCreateRequestMedia::ProductCreateRequestMedia(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const ProductCreateRequestMedia& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestMedia_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ProductCreateRequestMedia* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.total_size_ = from._impl_.total_size_;
+  switch (media_case()) {
+    case MEDIA_NOT_SET:
+      break;
+      case kWithVariants:
+        _impl_.media_.with_variants_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.media_.with_variants_);
+        break;
+      case kWithoutVariants:
+        _impl_.media_.without_variants_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.media_.without_variants_);
+        break;
+  }
+
+  // @@protoc_insertion_point(copy_constructor:products.v1.ProductCreateRequestMedia)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestMedia::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        media_{},
+        _oneof_case_{} {}
+
+inline void ProductCreateRequestMedia::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.total_size_ = {};
+}
+ProductCreateRequestMedia::~ProductCreateRequestMedia() {
+  // @@protoc_insertion_point(destructor:products.v1.ProductCreateRequestMedia)
+  SharedDtor(*this);
+}
+inline void ProductCreateRequestMedia::SharedDtor(MessageLite& self) {
+  ProductCreateRequestMedia& this_ = static_cast<ProductCreateRequestMedia&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  if (this_.has_media()) {
+    this_.clear_media();
+  }
+  this_._impl_.~Impl_();
+}
+
+void ProductCreateRequestMedia::clear_media() {
+// @@protoc_insertion_point(one_of_clear_start:products.v1.ProductCreateRequestMedia)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  switch (media_case()) {
+    case kWithVariants: {
+      if (GetArena() == nullptr) {
+        delete _impl_.media_.with_variants_;
+      } else if (::google::protobuf::internal::DebugHardenClearOneofMessageOnArena()) {
+        ::google::protobuf::internal::MaybePoisonAfterClear(_impl_.media_.with_variants_);
+      }
+      break;
+    }
+    case kWithoutVariants: {
+      if (GetArena() == nullptr) {
+        delete _impl_.media_.without_variants_;
+      } else if (::google::protobuf::internal::DebugHardenClearOneofMessageOnArena()) {
+        ::google::protobuf::internal::MaybePoisonAfterClear(_impl_.media_.without_variants_);
+      }
+      break;
+    }
+    case MEDIA_NOT_SET: {
+      break;
+    }
+  }
+  _impl_._oneof_case_[0] = MEDIA_NOT_SET;
+}
+
+
+inline void* PROTOBUF_NONNULL ProductCreateRequestMedia::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestMedia(arena);
+}
+constexpr auto ProductCreateRequestMedia::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::ZeroInit(sizeof(ProductCreateRequestMedia),
+                                            alignof(ProductCreateRequestMedia));
+}
+constexpr auto ProductCreateRequestMedia::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestMedia_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestMedia::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestMedia>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestMedia::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<ProductCreateRequestMedia>(), &ProductCreateRequestMedia::ByteSizeLong,
+              &ProductCreateRequestMedia::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestMedia, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestMedia::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestMedia_class_data_ =
+        ProductCreateRequestMedia::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestMedia::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestMedia_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestMedia_class_data_.tc_table);
+  return ProductCreateRequestMedia_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 3, 2, 0, 2>
+ProductCreateRequestMedia::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(ProductCreateRequestMedia, _impl_._has_bits_),
+    0, // no _extensions_
+    3, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967288,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    3,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductCreateRequestMedia_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestMedia>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // uint64 total_size = 1 [json_name = "totalSize"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ProductCreateRequestMedia, _impl_.total_size_), 0>(),
+     {8, 0, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestMedia, _impl_.total_size_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // uint64 total_size = 1 [json_name = "totalSize"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestMedia, _impl_.total_size_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // .products.v1.ProductCreateRequestMediaWithVariants with_variants = 2 [json_name = "withVariants"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestMedia, _impl_.media_.with_variants_), _Internal::kOneofCaseOffset + 0, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .products.v1.ProductCreateRequestMediaWithoutVariants without_variants = 3 [json_name = "withoutVariants"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestMedia, _impl_.media_.without_variants_), _Internal::kOneofCaseOffset + 0, 1,
+    (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestMediaWithVariants>()},
+      {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestMediaWithoutVariants>()},
+  }},
+  {{
+  }},
+};
+PROTOBUF_NOINLINE void ProductCreateRequestMedia::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.ProductCreateRequestMedia)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.total_size_ = ::uint64_t{0u};
+  clear_media();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestMedia::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const ProductCreateRequestMedia& this_ = static_cast<const ProductCreateRequestMedia&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestMedia::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const ProductCreateRequestMedia& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductCreateRequestMedia)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // uint64 total_size = 1 [json_name = "totalSize"];
+  if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    if (this_._internal_total_size() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          1, this_._internal_total_size(), target);
+    }
+  }
+
+  switch (this_.media_case()) {
+    case kWithVariants: {
+      target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+          2, *this_._impl_.media_.with_variants_, this_._impl_.media_.with_variants_->GetCachedSize(), target,
+          stream);
+      break;
+    }
+    case kWithoutVariants: {
+      target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+          3, *this_._impl_.media_.without_variants_, this_._impl_.media_.without_variants_->GetCachedSize(), target,
+          stream);
+      break;
+    }
+    default:
+      break;
+  }
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductCreateRequestMedia)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t ProductCreateRequestMedia::ByteSizeLong(const MessageLite& base) {
+  const ProductCreateRequestMedia& this_ = static_cast<const ProductCreateRequestMedia&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t ProductCreateRequestMedia::ByteSizeLong() const {
+  const ProductCreateRequestMedia& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductCreateRequestMedia)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+   {
+    // uint64 total_size = 1 [json_name = "totalSize"];
+    cached_has_bits = this_._impl_._has_bits_[0];
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (this_._internal_total_size() != 0) {
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+            this_._internal_total_size());
+      }
+    }
+  }
+  switch (this_.media_case()) {
+    // .products.v1.ProductCreateRequestMediaWithVariants with_variants = 2 [json_name = "withVariants"];
+    case kWithVariants: {
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.media_.with_variants_);
+      break;
+    }
+    // .products.v1.ProductCreateRequestMediaWithoutVariants without_variants = 3 [json_name = "withoutVariants"];
+    case kWithoutVariants: {
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.media_.without_variants_);
+      break;
+    }
+    case MEDIA_NOT_SET: {
+      break;
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void ProductCreateRequestMedia::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ProductCreateRequestMedia*>(&to_msg);
+  auto& from = static_cast<const ProductCreateRequestMedia&>(from_msg);
+  ::google::protobuf::Arena* arena = _this->GetArena();
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductCreateRequestMedia)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000001u) != 0) {
+    if (from._internal_total_size() != 0) {
+      _this->_impl_.total_size_ = from._impl_.total_size_;
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  if (const uint32_t oneof_from_case = from._impl_._oneof_case_[0]) {
+    const uint32_t oneof_to_case = _this->_impl_._oneof_case_[0];
+    const bool oneof_needs_init = oneof_to_case != oneof_from_case;
+    if (oneof_needs_init) {
+      if (oneof_to_case != 0) {
+        _this->clear_media();
+      }
+      _this->_impl_._oneof_case_[0] = oneof_from_case;
+    }
+
+    switch (oneof_from_case) {
+      case kWithVariants: {
+        if (oneof_needs_init) {
+          _this->_impl_.media_.with_variants_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.media_.with_variants_);
+        } else {
+          _this->_impl_.media_.with_variants_->MergeFrom(*from._impl_.media_.with_variants_);
+        }
+        break;
+      }
+      case kWithoutVariants: {
+        if (oneof_needs_init) {
+          _this->_impl_.media_.without_variants_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.media_.without_variants_);
+        } else {
+          _this->_impl_.media_.without_variants_->MergeFrom(*from._impl_.media_.without_variants_);
+        }
+        break;
+      }
+      case MEDIA_NOT_SET:
+        break;
+    }
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ProductCreateRequestMedia::CopyFrom(const ProductCreateRequestMedia& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductCreateRequestMedia)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void ProductCreateRequestMedia::InternalSwap(ProductCreateRequestMedia* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  swap(_impl_.total_size_, other->_impl_.total_size_);
+  swap(_impl_.media_, other->_impl_.media_);
+  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
+}
+
+::google::protobuf::Metadata ProductCreateRequestMedia::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse::ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse()
+    : SuperType(ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse_class_data_.base()) {}
+ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse::ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+    : SuperType(arena, ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse_class_data_.base()) {}
+#else   // PROTOBUF_CUSTOM_VTABLE
+ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse::ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse() : SuperType() {}
+ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse::ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena) : SuperType(arena) {}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+inline void* PROTOBUF_NONNULL ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse(arena);
+}
+constexpr auto ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse),
+                                            alignof(ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse));
+}
+constexpr auto ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse::SharedDtor,
+          static_cast<void (::google::protobuf::MessageLite::*)()>(&ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse::ClearImpl),
+              ::google::protobuf::Message::ByteSizeLongImpl, ::google::protobuf::Message::_InternalSerializeImpl
+              ,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse_class_data_ =
+        ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse_class_data_.tc_table);
+  return ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 1, 73, 2>
+ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::DiscardEverythingFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // .shared.v1.Attachments value = 2 [json_name = "value"];
+    {::_pbi::TcParser::FastMtS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse, _impl_.value_)}},
+    // string key = 1 [json_name = "key"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse, _impl_.key_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string key = 1 [json_name = "key"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse, _impl_.key_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // .shared.v1.Attachments value = 2 [json_name = "value"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse, _impl_.value_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::shared::v1::Attachments>()},
+  }},
+  {{
+    "\75\3\0\0\0\0\0\0"
+    "products.v1.ProductCreateRequestMediaWithVariants.ImagesEntry"
+    "key"
+  }},
+};
+// ===================================================================
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse::ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse()
+    : SuperType(ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse_class_data_.base()) {}
+ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse::ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+    : SuperType(arena, ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse_class_data_.base()) {}
+#else   // PROTOBUF_CUSTOM_VTABLE
+ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse::ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse() : SuperType() {}
+ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse::ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena) : SuperType(arena) {}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+inline void* PROTOBUF_NONNULL ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse(arena);
+}
+constexpr auto ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse),
+                                            alignof(ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse));
+}
+constexpr auto ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse::SharedDtor,
+          static_cast<void (::google::protobuf::MessageLite::*)()>(&ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse::ClearImpl),
+              ::google::protobuf::Message::ByteSizeLongImpl, ::google::protobuf::Message::_InternalSerializeImpl
+              ,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse_class_data_ =
+        ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse_class_data_.tc_table);
+  return ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 1, 73, 2>
+ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::DiscardEverythingFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // .shared.v1.Attachments value = 2 [json_name = "value"];
+    {::_pbi::TcParser::FastMtS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse, _impl_.value_)}},
+    // string key = 1 [json_name = "key"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse, _impl_.key_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string key = 1 [json_name = "key"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse, _impl_.key_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // .shared.v1.Attachments value = 2 [json_name = "value"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse, _impl_.value_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::shared::v1::Attachments>()},
+  }},
+  {{
+    "\75\3\0\0\0\0\0\0"
+    "products.v1.ProductCreateRequestMediaWithVariants.VideosEntry"
+    "key"
+  }},
+};
+// ===================================================================
+
+class ProductCreateRequestMediaWithVariants::_Internal {
+ public:
+};
+
+void ProductCreateRequestMediaWithVariants::clear_images() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.images_.Clear();
+}
+void ProductCreateRequestMediaWithVariants::clear_videos() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.videos_.Clear();
+}
+ProductCreateRequestMediaWithVariants::ProductCreateRequestMediaWithVariants(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestMediaWithVariants_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:products.v1.ProductCreateRequestMediaWithVariants)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestMediaWithVariants::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::products::v1::ProductCreateRequestMediaWithVariants& from_msg)
+      : images_{visibility, arena, from.images_},
+        videos_{visibility, arena, from.videos_},
+        _cached_size_{0} {}
+
+ProductCreateRequestMediaWithVariants::ProductCreateRequestMediaWithVariants(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const ProductCreateRequestMediaWithVariants& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestMediaWithVariants_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ProductCreateRequestMediaWithVariants* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+
+  // @@protoc_insertion_point(copy_constructor:products.v1.ProductCreateRequestMediaWithVariants)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestMediaWithVariants::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : images_{visibility, arena},
+        videos_{visibility, arena},
+        _cached_size_{0} {}
+
+inline void ProductCreateRequestMediaWithVariants::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+ProductCreateRequestMediaWithVariants::~ProductCreateRequestMediaWithVariants() {
+  // @@protoc_insertion_point(destructor:products.v1.ProductCreateRequestMediaWithVariants)
+  SharedDtor(*this);
+}
+inline void ProductCreateRequestMediaWithVariants::SharedDtor(MessageLite& self) {
+  ProductCreateRequestMediaWithVariants& this_ = static_cast<ProductCreateRequestMediaWithVariants&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL ProductCreateRequestMediaWithVariants::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestMediaWithVariants(arena);
+}
+constexpr auto ProductCreateRequestMediaWithVariants::InternalNewImpl_() {
+  constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithVariants, _impl_.images_) +
+          decltype(ProductCreateRequestMediaWithVariants::_impl_.images_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithVariants, _impl_.images_) +
+          decltype(ProductCreateRequestMediaWithVariants::_impl_.images_)::
+              InternalGetArenaOffsetAlt(
+                  ::google::protobuf::Message::internal_visibility()),
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithVariants, _impl_.videos_) +
+          decltype(ProductCreateRequestMediaWithVariants::_impl_.videos_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithVariants, _impl_.videos_) +
+          decltype(ProductCreateRequestMediaWithVariants::_impl_.videos_)::
+              InternalGetArenaOffsetAlt(
+                  ::google::protobuf::Message::internal_visibility()),
+  });
+  if (arena_bits.has_value()) {
+    return ::google::protobuf::internal::MessageCreator::CopyInit(
+        sizeof(ProductCreateRequestMediaWithVariants), alignof(ProductCreateRequestMediaWithVariants), *arena_bits);
+  } else {
+    return ::google::protobuf::internal::MessageCreator(&ProductCreateRequestMediaWithVariants::PlacementNew_,
+                                 sizeof(ProductCreateRequestMediaWithVariants),
+                                 alignof(ProductCreateRequestMediaWithVariants));
+  }
+}
+constexpr auto ProductCreateRequestMediaWithVariants::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestMediaWithVariants_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestMediaWithVariants::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestMediaWithVariants>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestMediaWithVariants::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<ProductCreateRequestMediaWithVariants>(), &ProductCreateRequestMediaWithVariants::ByteSizeLong,
+              &ProductCreateRequestMediaWithVariants::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithVariants, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestMediaWithVariants::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestMediaWithVariants_class_data_ =
+        ProductCreateRequestMediaWithVariants::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestMediaWithVariants::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestMediaWithVariants_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestMediaWithVariants_class_data_.tc_table);
+  return ProductCreateRequestMediaWithVariants_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 2, 4, 70, 2>
+ProductCreateRequestMediaWithVariants::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    2, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    4,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductCreateRequestMediaWithVariants_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestMediaWithVariants>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // map<string, .shared.v1.Attachments> images = 1 [json_name = "images"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithVariants, _impl_.images_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
+    // map<string, .shared.v1.Attachments> videos = 2 [json_name = "videos"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithVariants, _impl_.videos_), 0, 2,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
+  }},
+  {{
+      {::_pbi::TcParser::GetMapAuxInfo(1, 0, 0,
+                                       9, 11,
+                                       0)},
+      {::_pbi::TcParser::GetTable<::shared::v1::Attachments>()},
+      {::_pbi::TcParser::GetMapAuxInfo(1, 0, 0,
+                                       9, 11,
+                                       0)},
+      {::_pbi::TcParser::GetTable<::shared::v1::Attachments>()},
+  }},
+  {{
+    "\61\6\6\0\0\0\0\0"
+    "products.v1.ProductCreateRequestMediaWithVariants"
+    "images"
+    "videos"
+  }},
+};
+PROTOBUF_NOINLINE void ProductCreateRequestMediaWithVariants::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.ProductCreateRequestMediaWithVariants)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.images_.Clear();
+  _impl_.videos_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestMediaWithVariants::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const ProductCreateRequestMediaWithVariants& this_ = static_cast<const ProductCreateRequestMediaWithVariants&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestMediaWithVariants::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const ProductCreateRequestMediaWithVariants& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductCreateRequestMediaWithVariants)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // map<string, .shared.v1.Attachments> images = 1 [json_name = "images"];
+  if (!this_._internal_images().empty()) {
+    using MapType = ::google::protobuf::Map<std::string, ::shared::v1::Attachments>;
+    using WireHelper = _pbi::MapEntryFuncs<std::string, ::shared::v1::Attachments,
+                                   _pbi::WireFormatLite::TYPE_STRING,
+                                   _pbi::WireFormatLite::TYPE_MESSAGE>;
+    const auto& field = this_._internal_images();
+
+    if (stream->IsSerializationDeterministic() && field.size() > 1) {
+      for (const auto& entry : ::google::protobuf::internal::MapSorterPtr<MapType>(field)) {
+        target = WireHelper::InternalSerialize(
+            1, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestMediaWithVariants.images");
+      }
+    } else {
+      for (const auto& entry : field) {
+        target = WireHelper::InternalSerialize(
+            1, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestMediaWithVariants.images");
+      }
+    }
+  }
+
+  // map<string, .shared.v1.Attachments> videos = 2 [json_name = "videos"];
+  if (!this_._internal_videos().empty()) {
+    using MapType = ::google::protobuf::Map<std::string, ::shared::v1::Attachments>;
+    using WireHelper = _pbi::MapEntryFuncs<std::string, ::shared::v1::Attachments,
+                                   _pbi::WireFormatLite::TYPE_STRING,
+                                   _pbi::WireFormatLite::TYPE_MESSAGE>;
+    const auto& field = this_._internal_videos();
+
+    if (stream->IsSerializationDeterministic() && field.size() > 1) {
+      for (const auto& entry : ::google::protobuf::internal::MapSorterPtr<MapType>(field)) {
+        target = WireHelper::InternalSerialize(
+            2, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestMediaWithVariants.videos");
+      }
+    } else {
+      for (const auto& entry : field) {
+        target = WireHelper::InternalSerialize(
+            2, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestMediaWithVariants.videos");
+      }
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductCreateRequestMediaWithVariants)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t ProductCreateRequestMediaWithVariants::ByteSizeLong(const MessageLite& base) {
+  const ProductCreateRequestMediaWithVariants& this_ = static_cast<const ProductCreateRequestMediaWithVariants&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t ProductCreateRequestMediaWithVariants::ByteSizeLong() const {
+  const ProductCreateRequestMediaWithVariants& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductCreateRequestMediaWithVariants)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+   {
+    // map<string, .shared.v1.Attachments> images = 1 [json_name = "images"];
+    {
+      total_size +=
+          1 * ::google::protobuf::internal::FromIntSize(this_._internal_images_size());
+      for (const auto& entry : this_._internal_images()) {
+        total_size += _pbi::MapEntryFuncs<std::string, ::shared::v1::Attachments,
+                                       _pbi::WireFormatLite::TYPE_STRING,
+                                       _pbi::WireFormatLite::TYPE_MESSAGE>::ByteSizeLong(entry.first, entry.second);
+      }
+    }
+    // map<string, .shared.v1.Attachments> videos = 2 [json_name = "videos"];
+    {
+      total_size +=
+          1 * ::google::protobuf::internal::FromIntSize(this_._internal_videos_size());
+      for (const auto& entry : this_._internal_videos()) {
+        total_size += _pbi::MapEntryFuncs<std::string, ::shared::v1::Attachments,
+                                       _pbi::WireFormatLite::TYPE_STRING,
+                                       _pbi::WireFormatLite::TYPE_MESSAGE>::ByteSizeLong(entry.first, entry.second);
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void ProductCreateRequestMediaWithVariants::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ProductCreateRequestMediaWithVariants*>(&to_msg);
+  auto& from = static_cast<const ProductCreateRequestMediaWithVariants&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductCreateRequestMediaWithVariants)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.images_.MergeFrom(from._impl_.images_);
+  _this->_impl_.videos_.MergeFrom(from._impl_.videos_);
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ProductCreateRequestMediaWithVariants::CopyFrom(const ProductCreateRequestMediaWithVariants& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductCreateRequestMediaWithVariants)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void ProductCreateRequestMediaWithVariants::InternalSwap(ProductCreateRequestMediaWithVariants* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.images_.InternalSwap(&other->_impl_.images_);
+  _impl_.videos_.InternalSwap(&other->_impl_.videos_);
+}
+
+::google::protobuf::Metadata ProductCreateRequestMediaWithVariants::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class ProductCreateRequestMediaWithoutVariants::_Internal {
+ public:
+};
+
+void ProductCreateRequestMediaWithoutVariants::clear_images() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.images_.Clear();
+}
+void ProductCreateRequestMediaWithoutVariants::clear_videos() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.videos_.Clear();
+}
+ProductCreateRequestMediaWithoutVariants::ProductCreateRequestMediaWithoutVariants(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestMediaWithoutVariants_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:products.v1.ProductCreateRequestMediaWithoutVariants)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestMediaWithoutVariants::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::products::v1::ProductCreateRequestMediaWithoutVariants& from_msg)
+      : images_{visibility, arena, from.images_},
+        videos_{visibility, arena, from.videos_},
+        _cached_size_{0} {}
+
+ProductCreateRequestMediaWithoutVariants::ProductCreateRequestMediaWithoutVariants(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const ProductCreateRequestMediaWithoutVariants& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestMediaWithoutVariants_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ProductCreateRequestMediaWithoutVariants* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+
+  // @@protoc_insertion_point(copy_constructor:products.v1.ProductCreateRequestMediaWithoutVariants)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestMediaWithoutVariants::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : images_{visibility, arena},
+        videos_{visibility, arena},
+        _cached_size_{0} {}
+
+inline void ProductCreateRequestMediaWithoutVariants::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+ProductCreateRequestMediaWithoutVariants::~ProductCreateRequestMediaWithoutVariants() {
+  // @@protoc_insertion_point(destructor:products.v1.ProductCreateRequestMediaWithoutVariants)
+  SharedDtor(*this);
+}
+inline void ProductCreateRequestMediaWithoutVariants::SharedDtor(MessageLite& self) {
+  ProductCreateRequestMediaWithoutVariants& this_ = static_cast<ProductCreateRequestMediaWithoutVariants&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL ProductCreateRequestMediaWithoutVariants::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestMediaWithoutVariants(arena);
+}
+constexpr auto ProductCreateRequestMediaWithoutVariants::InternalNewImpl_() {
+  constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithoutVariants, _impl_.images_) +
+          decltype(ProductCreateRequestMediaWithoutVariants::_impl_.images_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithoutVariants, _impl_.videos_) +
+          decltype(ProductCreateRequestMediaWithoutVariants::_impl_.videos_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+  });
+  if (arena_bits.has_value()) {
+    return ::google::protobuf::internal::MessageCreator::ZeroInit(
+        sizeof(ProductCreateRequestMediaWithoutVariants), alignof(ProductCreateRequestMediaWithoutVariants), *arena_bits);
+  } else {
+    return ::google::protobuf::internal::MessageCreator(&ProductCreateRequestMediaWithoutVariants::PlacementNew_,
+                                 sizeof(ProductCreateRequestMediaWithoutVariants),
+                                 alignof(ProductCreateRequestMediaWithoutVariants));
+  }
+}
+constexpr auto ProductCreateRequestMediaWithoutVariants::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestMediaWithoutVariants_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestMediaWithoutVariants::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestMediaWithoutVariants>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestMediaWithoutVariants::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<ProductCreateRequestMediaWithoutVariants>(), &ProductCreateRequestMediaWithoutVariants::ByteSizeLong,
+              &ProductCreateRequestMediaWithoutVariants::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithoutVariants, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestMediaWithoutVariants::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestMediaWithoutVariants_class_data_ =
+        ProductCreateRequestMediaWithoutVariants::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestMediaWithoutVariants::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestMediaWithoutVariants_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestMediaWithoutVariants_class_data_.tc_table);
+  return ProductCreateRequestMediaWithoutVariants_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 2, 0, 2>
+ProductCreateRequestMediaWithoutVariants::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductCreateRequestMediaWithoutVariants_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestMediaWithoutVariants>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // repeated .shared.v1.Attachment videos = 2 [json_name = "videos"];
+    {::_pbi::TcParser::FastMtR1,
+     {18, 63, 1, PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithoutVariants, _impl_.videos_)}},
+    // repeated .shared.v1.Attachment images = 1 [json_name = "images"];
+    {::_pbi::TcParser::FastMtR1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithoutVariants, _impl_.images_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // repeated .shared.v1.Attachment images = 1 [json_name = "images"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithoutVariants, _impl_.images_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+    // repeated .shared.v1.Attachment videos = 2 [json_name = "videos"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestMediaWithoutVariants, _impl_.videos_), 0, 1,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::shared::v1::Attachment>()},
+      {::_pbi::TcParser::GetTable<::shared::v1::Attachment>()},
+  }},
+  {{
+  }},
+};
+PROTOBUF_NOINLINE void ProductCreateRequestMediaWithoutVariants::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.ProductCreateRequestMediaWithoutVariants)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.images_.Clear();
+  _impl_.videos_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestMediaWithoutVariants::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const ProductCreateRequestMediaWithoutVariants& this_ = static_cast<const ProductCreateRequestMediaWithoutVariants&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestMediaWithoutVariants::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const ProductCreateRequestMediaWithoutVariants& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductCreateRequestMediaWithoutVariants)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // repeated .shared.v1.Attachment images = 1 [json_name = "images"];
+  for (unsigned i = 0, n = static_cast<unsigned>(
+                           this_._internal_images_size());
+       i < n; i++) {
+    const auto& repfield = this_._internal_images().Get(i);
+    target =
+        ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+            1, repfield, repfield.GetCachedSize(),
+            target, stream);
+  }
+
+  // repeated .shared.v1.Attachment videos = 2 [json_name = "videos"];
+  for (unsigned i = 0, n = static_cast<unsigned>(
+                           this_._internal_videos_size());
+       i < n; i++) {
+    const auto& repfield = this_._internal_videos().Get(i);
+    target =
+        ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+            2, repfield, repfield.GetCachedSize(),
+            target, stream);
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductCreateRequestMediaWithoutVariants)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t ProductCreateRequestMediaWithoutVariants::ByteSizeLong(const MessageLite& base) {
+  const ProductCreateRequestMediaWithoutVariants& this_ = static_cast<const ProductCreateRequestMediaWithoutVariants&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t ProductCreateRequestMediaWithoutVariants::ByteSizeLong() const {
+  const ProductCreateRequestMediaWithoutVariants& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductCreateRequestMediaWithoutVariants)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+   {
+    // repeated .shared.v1.Attachment images = 1 [json_name = "images"];
+    {
+      total_size += 1UL * this_._internal_images_size();
+      for (const auto& msg : this_._internal_images()) {
+        total_size += ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      }
+    }
+    // repeated .shared.v1.Attachment videos = 2 [json_name = "videos"];
+    {
+      total_size += 1UL * this_._internal_videos_size();
+      for (const auto& msg : this_._internal_videos()) {
+        total_size += ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void ProductCreateRequestMediaWithoutVariants::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ProductCreateRequestMediaWithoutVariants*>(&to_msg);
+  auto& from = static_cast<const ProductCreateRequestMediaWithoutVariants&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductCreateRequestMediaWithoutVariants)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_images()->MergeFrom(
+      from._internal_images());
+  _this->_internal_mutable_videos()->MergeFrom(
+      from._internal_videos());
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ProductCreateRequestMediaWithoutVariants::CopyFrom(const ProductCreateRequestMediaWithoutVariants& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductCreateRequestMediaWithoutVariants)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void ProductCreateRequestMediaWithoutVariants::InternalSwap(ProductCreateRequestMediaWithoutVariants* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.images_.InternalSwap(&other->_impl_.images_);
+  _impl_.videos_.InternalSwap(&other->_impl_.videos_);
+}
+
+::google::protobuf::Metadata ProductCreateRequestMediaWithoutVariants::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class ProductCreateRequestOffer::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<ProductCreateRequestOffer>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(ProductCreateRequestOffer, _impl_._has_bits_);
+  static constexpr ::int32_t kOneofCaseOffset =
+      PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOffer, _impl_._oneof_case_);
+};
+
+void ProductCreateRequestOffer::set_allocated_with_variants(::products::v1::ProductCreateRequestOfferWithVariants* PROTOBUF_NULLABLE with_variants) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  clear_pricing();
+  if (with_variants) {
+    ::google::protobuf::Arena* submessage_arena = with_variants->GetArena();
+    if (message_arena != submessage_arena) {
+      with_variants = ::google::protobuf::internal::GetOwnedMessage(message_arena, with_variants, submessage_arena);
+    }
+    set_has_with_variants();
+    _impl_.pricing_.with_variants_ = with_variants;
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductCreateRequestOffer.with_variants)
+}
+void ProductCreateRequestOffer::set_allocated_without_variants(::products::v1::ProductCreateRequestOfferPricing* PROTOBUF_NULLABLE without_variants) {
+  ::google::protobuf::Arena* message_arena = GetArena();
+  clear_pricing();
+  if (without_variants) {
+    ::google::protobuf::Arena* submessage_arena = without_variants->GetArena();
+    if (message_arena != submessage_arena) {
+      without_variants = ::google::protobuf::internal::GetOwnedMessage(message_arena, without_variants, submessage_arena);
+    }
+    set_has_without_variants();
+    _impl_.pricing_.without_variants_ = without_variants;
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductCreateRequestOffer.without_variants)
+}
+ProductCreateRequestOffer::ProductCreateRequestOffer(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestOffer_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:products.v1.ProductCreateRequestOffer)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestOffer::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::products::v1::ProductCreateRequestOffer& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        currency_(arena, from.currency_),
+        fulfillment_type_(arena, from.fulfillment_type_),
+        pricing_{},
+        _oneof_case_{from._oneof_case_[0]} {}
+
+ProductCreateRequestOffer::ProductCreateRequestOffer(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const ProductCreateRequestOffer& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestOffer_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ProductCreateRequestOffer* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.processing_time_ = from._impl_.processing_time_;
+  switch (pricing_case()) {
+    case PRICING_NOT_SET:
+      break;
+      case kWithVariants:
+        _impl_.pricing_.with_variants_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.pricing_.with_variants_);
+        break;
+      case kWithoutVariants:
+        _impl_.pricing_.without_variants_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.pricing_.without_variants_);
+        break;
+  }
+
+  // @@protoc_insertion_point(copy_constructor:products.v1.ProductCreateRequestOffer)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestOffer::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        currency_(arena),
+        fulfillment_type_(arena),
+        pricing_{},
+        _oneof_case_{} {}
+
+inline void ProductCreateRequestOffer::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.processing_time_ = {};
+}
+ProductCreateRequestOffer::~ProductCreateRequestOffer() {
+  // @@protoc_insertion_point(destructor:products.v1.ProductCreateRequestOffer)
+  SharedDtor(*this);
+}
+inline void ProductCreateRequestOffer::SharedDtor(MessageLite& self) {
+  ProductCreateRequestOffer& this_ = static_cast<ProductCreateRequestOffer&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.currency_.Destroy();
+  this_._impl_.fulfillment_type_.Destroy();
+  if (this_.has_pricing()) {
+    this_.clear_pricing();
+  }
+  this_._impl_.~Impl_();
+}
+
+void ProductCreateRequestOffer::clear_pricing() {
+// @@protoc_insertion_point(one_of_clear_start:products.v1.ProductCreateRequestOffer)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  switch (pricing_case()) {
+    case kWithVariants: {
+      if (GetArena() == nullptr) {
+        delete _impl_.pricing_.with_variants_;
+      } else if (::google::protobuf::internal::DebugHardenClearOneofMessageOnArena()) {
+        ::google::protobuf::internal::MaybePoisonAfterClear(_impl_.pricing_.with_variants_);
+      }
+      break;
+    }
+    case kWithoutVariants: {
+      if (GetArena() == nullptr) {
+        delete _impl_.pricing_.without_variants_;
+      } else if (::google::protobuf::internal::DebugHardenClearOneofMessageOnArena()) {
+        ::google::protobuf::internal::MaybePoisonAfterClear(_impl_.pricing_.without_variants_);
+      }
+      break;
+    }
+    case PRICING_NOT_SET: {
+      break;
+    }
+  }
+  _impl_._oneof_case_[0] = PRICING_NOT_SET;
+}
+
+
+inline void* PROTOBUF_NONNULL ProductCreateRequestOffer::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestOffer(arena);
+}
+constexpr auto ProductCreateRequestOffer::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(ProductCreateRequestOffer),
+                                            alignof(ProductCreateRequestOffer));
+}
+constexpr auto ProductCreateRequestOffer::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestOffer_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestOffer::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestOffer>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestOffer::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<ProductCreateRequestOffer>(), &ProductCreateRequestOffer::ByteSizeLong,
+              &ProductCreateRequestOffer::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestOffer, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestOffer::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestOffer_class_data_ =
+        ProductCreateRequestOffer::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestOffer::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestOffer_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestOffer_class_data_.tc_table);
+  return ProductCreateRequestOffer_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 5, 2, 70, 2>
+ProductCreateRequestOffer::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(ProductCreateRequestOffer, _impl_._has_bits_),
+    0, // no _extensions_
+    5, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967264,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    5,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductCreateRequestOffer_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestOffer>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // string currency = 1 [json_name = "currency"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOffer, _impl_.currency_)}},
+    // string fulfillment_type = 2 [json_name = "fulfillmentType"];
+    {::_pbi::TcParser::FastUS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOffer, _impl_.fulfillment_type_)}},
+    // uint64 processing_time = 3 [json_name = "processingTime"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ProductCreateRequestOffer, _impl_.processing_time_), 2>(),
+     {24, 2, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOffer, _impl_.processing_time_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string currency = 1 [json_name = "currency"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOffer, _impl_.currency_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string fulfillment_type = 2 [json_name = "fulfillmentType"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOffer, _impl_.fulfillment_type_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // uint64 processing_time = 3 [json_name = "processingTime"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOffer, _impl_.processing_time_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // .products.v1.ProductCreateRequestOfferWithVariants with_variants = 4 [json_name = "withVariants"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOffer, _impl_.pricing_.with_variants_), _Internal::kOneofCaseOffset + 0, 0,
+    (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
+    // .products.v1.ProductCreateRequestOfferPricing without_variants = 5 [json_name = "withoutVariants"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOffer, _impl_.pricing_.without_variants_), _Internal::kOneofCaseOffset + 0, 1,
+    (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestOfferWithVariants>()},
+      {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestOfferPricing>()},
+  }},
+  {{
+    "\45\10\20\0\0\0\0\0"
+    "products.v1.ProductCreateRequestOffer"
+    "currency"
+    "fulfillment_type"
+  }},
+};
+PROTOBUF_NOINLINE void ProductCreateRequestOffer::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.ProductCreateRequestOffer)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003u) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      _impl_.currency_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      _impl_.fulfillment_type_.ClearNonDefaultToEmpty();
+    }
+  }
+  _impl_.processing_time_ = ::uint64_t{0u};
+  clear_pricing();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestOffer::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const ProductCreateRequestOffer& this_ = static_cast<const ProductCreateRequestOffer&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestOffer::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const ProductCreateRequestOffer& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductCreateRequestOffer)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // string currency = 1 [json_name = "currency"];
+  if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    if (!this_._internal_currency().empty()) {
+      const ::std::string& _s = this_._internal_currency();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOffer.currency");
+      target = stream->WriteStringMaybeAliased(1, _s, target);
+    }
+  }
+
+  // string fulfillment_type = 2 [json_name = "fulfillmentType"];
+  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    if (!this_._internal_fulfillment_type().empty()) {
+      const ::std::string& _s = this_._internal_fulfillment_type();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOffer.fulfillment_type");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
+    }
+  }
+
+  // uint64 processing_time = 3 [json_name = "processingTime"];
+  if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
+    if (this_._internal_processing_time() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          3, this_._internal_processing_time(), target);
+    }
+  }
+
+  switch (this_.pricing_case()) {
+    case kWithVariants: {
+      target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+          4, *this_._impl_.pricing_.with_variants_, this_._impl_.pricing_.with_variants_->GetCachedSize(), target,
+          stream);
+      break;
+    }
+    case kWithoutVariants: {
+      target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+          5, *this_._impl_.pricing_.without_variants_, this_._impl_.pricing_.without_variants_->GetCachedSize(), target,
+          stream);
+      break;
+    }
+    default:
+      break;
+  }
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductCreateRequestOffer)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t ProductCreateRequestOffer::ByteSizeLong(const MessageLite& base) {
+  const ProductCreateRequestOffer& this_ = static_cast<const ProductCreateRequestOffer&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t ProductCreateRequestOffer::ByteSizeLong() const {
+  const ProductCreateRequestOffer& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductCreateRequestOffer)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000007u) != 0) {
+    // string currency = 1 [json_name = "currency"];
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!this_._internal_currency().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_currency());
+      }
+    }
+    // string fulfillment_type = 2 [json_name = "fulfillmentType"];
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!this_._internal_fulfillment_type().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_fulfillment_type());
+      }
+    }
+    // uint64 processing_time = 3 [json_name = "processingTime"];
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      if (this_._internal_processing_time() != 0) {
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+            this_._internal_processing_time());
+      }
+    }
+  }
+  switch (this_.pricing_case()) {
+    // .products.v1.ProductCreateRequestOfferWithVariants with_variants = 4 [json_name = "withVariants"];
+    case kWithVariants: {
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.pricing_.with_variants_);
+      break;
+    }
+    // .products.v1.ProductCreateRequestOfferPricing without_variants = 5 [json_name = "withoutVariants"];
+    case kWithoutVariants: {
+      total_size += 1 +
+                    ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.pricing_.without_variants_);
+      break;
+    }
+    case PRICING_NOT_SET: {
+      break;
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void ProductCreateRequestOffer::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ProductCreateRequestOffer*>(&to_msg);
+  auto& from = static_cast<const ProductCreateRequestOffer&>(from_msg);
+  ::google::protobuf::Arena* arena = _this->GetArena();
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductCreateRequestOffer)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000007u) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!from._internal_currency().empty()) {
+        _this->_internal_set_currency(from._internal_currency());
+      } else {
+        if (_this->_impl_.currency_.IsDefault()) {
+          _this->_internal_set_currency("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!from._internal_fulfillment_type().empty()) {
+        _this->_internal_set_fulfillment_type(from._internal_fulfillment_type());
+      } else {
+        if (_this->_impl_.fulfillment_type_.IsDefault()) {
+          _this->_internal_set_fulfillment_type("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      if (from._internal_processing_time() != 0) {
+        _this->_impl_.processing_time_ = from._impl_.processing_time_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  if (const uint32_t oneof_from_case = from._impl_._oneof_case_[0]) {
+    const uint32_t oneof_to_case = _this->_impl_._oneof_case_[0];
+    const bool oneof_needs_init = oneof_to_case != oneof_from_case;
+    if (oneof_needs_init) {
+      if (oneof_to_case != 0) {
+        _this->clear_pricing();
+      }
+      _this->_impl_._oneof_case_[0] = oneof_from_case;
+    }
+
+    switch (oneof_from_case) {
+      case kWithVariants: {
+        if (oneof_needs_init) {
+          _this->_impl_.pricing_.with_variants_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.pricing_.with_variants_);
+        } else {
+          _this->_impl_.pricing_.with_variants_->MergeFrom(*from._impl_.pricing_.with_variants_);
+        }
+        break;
+      }
+      case kWithoutVariants: {
+        if (oneof_needs_init) {
+          _this->_impl_.pricing_.without_variants_ = ::google::protobuf::Message::CopyConstruct(arena, *from._impl_.pricing_.without_variants_);
+        } else {
+          _this->_impl_.pricing_.without_variants_->MergeFrom(*from._impl_.pricing_.without_variants_);
+        }
+        break;
+      }
+      case PRICING_NOT_SET:
+        break;
+    }
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ProductCreateRequestOffer::CopyFrom(const ProductCreateRequestOffer& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductCreateRequestOffer)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void ProductCreateRequestOffer::InternalSwap(ProductCreateRequestOffer* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.currency_, &other->_impl_.currency_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.fulfillment_type_, &other->_impl_.fulfillment_type_, arena);
+  swap(_impl_.processing_time_, other->_impl_.processing_time_);
+  swap(_impl_.pricing_, other->_impl_.pricing_);
+  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
+}
+
+::google::protobuf::Metadata ProductCreateRequestOffer::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class ProductCreateRequestOfferWithVariants::_Internal {
+ public:
+};
+
+ProductCreateRequestOfferWithVariants::ProductCreateRequestOfferWithVariants(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestOfferWithVariants_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:products.v1.ProductCreateRequestOfferWithVariants)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestOfferWithVariants::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::products::v1::ProductCreateRequestOfferWithVariants& from_msg)
+      : variants_{visibility, arena, from.variants_},
+        _cached_size_{0} {}
+
+ProductCreateRequestOfferWithVariants::ProductCreateRequestOfferWithVariants(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const ProductCreateRequestOfferWithVariants& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestOfferWithVariants_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ProductCreateRequestOfferWithVariants* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+
+  // @@protoc_insertion_point(copy_constructor:products.v1.ProductCreateRequestOfferWithVariants)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestOfferWithVariants::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : variants_{visibility, arena},
+        _cached_size_{0} {}
+
+inline void ProductCreateRequestOfferWithVariants::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+ProductCreateRequestOfferWithVariants::~ProductCreateRequestOfferWithVariants() {
+  // @@protoc_insertion_point(destructor:products.v1.ProductCreateRequestOfferWithVariants)
+  SharedDtor(*this);
+}
+inline void ProductCreateRequestOfferWithVariants::SharedDtor(MessageLite& self) {
+  ProductCreateRequestOfferWithVariants& this_ = static_cast<ProductCreateRequestOfferWithVariants&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL ProductCreateRequestOfferWithVariants::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestOfferWithVariants(arena);
+}
+constexpr auto ProductCreateRequestOfferWithVariants::InternalNewImpl_() {
+  constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithVariants, _impl_.variants_) +
+          decltype(ProductCreateRequestOfferWithVariants::_impl_.variants_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+  });
+  if (arena_bits.has_value()) {
+    return ::google::protobuf::internal::MessageCreator::ZeroInit(
+        sizeof(ProductCreateRequestOfferWithVariants), alignof(ProductCreateRequestOfferWithVariants), *arena_bits);
+  } else {
+    return ::google::protobuf::internal::MessageCreator(&ProductCreateRequestOfferWithVariants::PlacementNew_,
+                                 sizeof(ProductCreateRequestOfferWithVariants),
+                                 alignof(ProductCreateRequestOfferWithVariants));
+  }
+}
+constexpr auto ProductCreateRequestOfferWithVariants::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestOfferWithVariants_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestOfferWithVariants::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestOfferWithVariants>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestOfferWithVariants::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<ProductCreateRequestOfferWithVariants>(), &ProductCreateRequestOfferWithVariants::ByteSizeLong,
+              &ProductCreateRequestOfferWithVariants::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithVariants, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestOfferWithVariants::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestOfferWithVariants_class_data_ =
+        ProductCreateRequestOfferWithVariants::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestOfferWithVariants::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestOfferWithVariants_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestOfferWithVariants_class_data_.tc_table);
+  return ProductCreateRequestOfferWithVariants_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 1, 0, 2>
+ProductCreateRequestOfferWithVariants::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductCreateRequestOfferWithVariants_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestOfferWithVariants>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // repeated .products.v1.ProductCreateRequestOfferVariant variants = 1 [json_name = "variants"];
+    {::_pbi::TcParser::FastMtR1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithVariants, _impl_.variants_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // repeated .products.v1.ProductCreateRequestOfferVariant variants = 1 [json_name = "variants"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithVariants, _impl_.variants_), 0, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestOfferVariant>()},
+  }},
+  {{
+  }},
+};
+PROTOBUF_NOINLINE void ProductCreateRequestOfferWithVariants::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.ProductCreateRequestOfferWithVariants)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.variants_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestOfferWithVariants::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const ProductCreateRequestOfferWithVariants& this_ = static_cast<const ProductCreateRequestOfferWithVariants&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestOfferWithVariants::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const ProductCreateRequestOfferWithVariants& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductCreateRequestOfferWithVariants)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // repeated .products.v1.ProductCreateRequestOfferVariant variants = 1 [json_name = "variants"];
+  for (unsigned i = 0, n = static_cast<unsigned>(
+                           this_._internal_variants_size());
+       i < n; i++) {
+    const auto& repfield = this_._internal_variants().Get(i);
+    target =
+        ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+            1, repfield, repfield.GetCachedSize(),
+            target, stream);
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductCreateRequestOfferWithVariants)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t ProductCreateRequestOfferWithVariants::ByteSizeLong(const MessageLite& base) {
+  const ProductCreateRequestOfferWithVariants& this_ = static_cast<const ProductCreateRequestOfferWithVariants&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t ProductCreateRequestOfferWithVariants::ByteSizeLong() const {
+  const ProductCreateRequestOfferWithVariants& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductCreateRequestOfferWithVariants)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+   {
+    // repeated .products.v1.ProductCreateRequestOfferVariant variants = 1 [json_name = "variants"];
+    {
+      total_size += 1UL * this_._internal_variants_size();
+      for (const auto& msg : this_._internal_variants()) {
+        total_size += ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void ProductCreateRequestOfferWithVariants::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ProductCreateRequestOfferWithVariants*>(&to_msg);
+  auto& from = static_cast<const ProductCreateRequestOfferWithVariants&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductCreateRequestOfferWithVariants)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_variants()->MergeFrom(
+      from._internal_variants());
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ProductCreateRequestOfferWithVariants::CopyFrom(const ProductCreateRequestOfferWithVariants& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductCreateRequestOfferWithVariants)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void ProductCreateRequestOfferWithVariants::InternalSwap(ProductCreateRequestOfferWithVariants* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.variants_.InternalSwap(&other->_impl_.variants_);
+}
+
+::google::protobuf::Metadata ProductCreateRequestOfferWithVariants::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class ProductCreateRequestOfferVariant::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<ProductCreateRequestOfferVariant>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_._has_bits_);
+};
+
+ProductCreateRequestOfferVariant::ProductCreateRequestOfferVariant(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestOfferVariant_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:products.v1.ProductCreateRequestOfferVariant)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestOfferVariant::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::products::v1::ProductCreateRequestOfferVariant& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        minimum_orders_{visibility, arena, from.minimum_orders_},
+        id_(arena, from.id_),
+        sku_(arena, from.sku_),
+        price_(arena, from.price_),
+        offering_condition_(arena, from.offering_condition_),
+        condition_note_(arena, from.condition_note_),
+        list_price_(arena, from.list_price_),
+        sale_price_(arena, from.sale_price_),
+        sale_price_start_(arena, from.sale_price_start_),
+        sale_price_end_(arena, from.sale_price_end_) {}
+
+ProductCreateRequestOfferVariant::ProductCreateRequestOfferVariant(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const ProductCreateRequestOfferVariant& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestOfferVariant_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ProductCreateRequestOfferVariant* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::memcpy(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, quantity_),
+           reinterpret_cast<const char *>(&from._impl_) +
+               offsetof(Impl_, quantity_),
+           offsetof(Impl_, has_minimum_orders_) -
+               offsetof(Impl_, quantity_) +
+               sizeof(Impl_::has_minimum_orders_));
+
+  // @@protoc_insertion_point(copy_constructor:products.v1.ProductCreateRequestOfferVariant)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestOfferVariant::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        minimum_orders_{visibility, arena},
+        id_(arena),
+        sku_(arena),
+        price_(arena),
+        offering_condition_(arena),
+        condition_note_(arena),
+        list_price_(arena),
+        sale_price_(arena),
+        sale_price_start_(arena),
+        sale_price_end_(arena) {}
+
+inline void ProductCreateRequestOfferVariant::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, quantity_),
+           0,
+           offsetof(Impl_, has_minimum_orders_) -
+               offsetof(Impl_, quantity_) +
+               sizeof(Impl_::has_minimum_orders_));
+}
+ProductCreateRequestOfferVariant::~ProductCreateRequestOfferVariant() {
+  // @@protoc_insertion_point(destructor:products.v1.ProductCreateRequestOfferVariant)
+  SharedDtor(*this);
+}
+inline void ProductCreateRequestOfferVariant::SharedDtor(MessageLite& self) {
+  ProductCreateRequestOfferVariant& this_ = static_cast<ProductCreateRequestOfferVariant&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.id_.Destroy();
+  this_._impl_.sku_.Destroy();
+  this_._impl_.price_.Destroy();
+  this_._impl_.offering_condition_.Destroy();
+  this_._impl_.condition_note_.Destroy();
+  this_._impl_.list_price_.Destroy();
+  this_._impl_.sale_price_.Destroy();
+  this_._impl_.sale_price_start_.Destroy();
+  this_._impl_.sale_price_end_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL ProductCreateRequestOfferVariant::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestOfferVariant(arena);
+}
+constexpr auto ProductCreateRequestOfferVariant::InternalNewImpl_() {
+  constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.minimum_orders_) +
+          decltype(ProductCreateRequestOfferVariant::_impl_.minimum_orders_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+  });
+  if (arena_bits.has_value()) {
+    return ::google::protobuf::internal::MessageCreator::CopyInit(
+        sizeof(ProductCreateRequestOfferVariant), alignof(ProductCreateRequestOfferVariant), *arena_bits);
+  } else {
+    return ::google::protobuf::internal::MessageCreator(&ProductCreateRequestOfferVariant::PlacementNew_,
+                                 sizeof(ProductCreateRequestOfferVariant),
+                                 alignof(ProductCreateRequestOfferVariant));
+  }
+}
+constexpr auto ProductCreateRequestOfferVariant::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestOfferVariant_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestOfferVariant::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestOfferVariant>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestOfferVariant::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<ProductCreateRequestOfferVariant>(), &ProductCreateRequestOfferVariant::ByteSizeLong,
+              &ProductCreateRequestOfferVariant::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestOfferVariant::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestOfferVariant_class_data_ =
+        ProductCreateRequestOfferVariant::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestOfferVariant::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestOfferVariant_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestOfferVariant_class_data_.tc_table);
+  return ProductCreateRequestOfferVariant_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<4, 13, 1, 153, 2>
+ProductCreateRequestOfferVariant::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_._has_bits_),
+    0, // no _extensions_
+    13, 120,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294959104,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    13,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductCreateRequestOfferVariant_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestOfferVariant>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // string id = 1 [json_name = "id"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.id_)}},
+    // string sku = 2 [json_name = "sku"];
+    {::_pbi::TcParser::FastUS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.sku_)}},
+    // uint64 quantity = 3 [json_name = "quantity"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ProductCreateRequestOfferVariant, _impl_.quantity_), 9>(),
+     {24, 9, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.quantity_)}},
+    // string price = 4 [json_name = "price"];
+    {::_pbi::TcParser::FastUS1,
+     {34, 2, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.price_)}},
+    // string offering_condition = 5 [json_name = "offeringCondition"];
+    {::_pbi::TcParser::FastUS1,
+     {42, 3, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.offering_condition_)}},
+    // optional string condition_note = 6 [json_name = "conditionNote"];
+    {::_pbi::TcParser::FastUS1,
+     {50, 4, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.condition_note_)}},
+    // optional string list_price = 7 [json_name = "listPrice"];
+    {::_pbi::TcParser::FastUS1,
+     {58, 5, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.list_price_)}},
+    // optional bool has_sale_price = 8 [json_name = "hasSalePrice"];
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductCreateRequestOfferVariant, _impl_.has_sale_price_), 10>(),
+     {64, 10, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.has_sale_price_)}},
+    // optional string sale_price = 9 [json_name = "salePrice"];
+    {::_pbi::TcParser::FastUS1,
+     {74, 6, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.sale_price_)}},
+    // optional string sale_price_start = 10 [json_name = "salePriceStart"];
+    {::_pbi::TcParser::FastUS1,
+     {82, 7, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.sale_price_start_)}},
+    // optional string sale_price_end = 11 [json_name = "salePriceEnd"];
+    {::_pbi::TcParser::FastUS1,
+     {90, 8, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.sale_price_end_)}},
+    // bool has_minimum_orders = 12 [json_name = "hasMinimumOrders"];
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductCreateRequestOfferVariant, _impl_.has_minimum_orders_), 11>(),
+     {96, 11, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.has_minimum_orders_)}},
+    // repeated .products.v1.ProductCreateRequestOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];
+    {::_pbi::TcParser::FastMtR1,
+     {106, 63, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.minimum_orders_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string id = 1 [json_name = "id"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string sku = 2 [json_name = "sku"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.sku_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // uint64 quantity = 3 [json_name = "quantity"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.quantity_), _Internal::kHasBitsOffset + 9, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // string price = 4 [json_name = "price"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.price_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string offering_condition = 5 [json_name = "offeringCondition"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.offering_condition_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional string condition_note = 6 [json_name = "conditionNote"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.condition_note_), _Internal::kHasBitsOffset + 4, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional string list_price = 7 [json_name = "listPrice"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.list_price_), _Internal::kHasBitsOffset + 5, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional bool has_sale_price = 8 [json_name = "hasSalePrice"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.has_sale_price_), _Internal::kHasBitsOffset + 10, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBool)},
+    // optional string sale_price = 9 [json_name = "salePrice"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.sale_price_), _Internal::kHasBitsOffset + 6, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional string sale_price_start = 10 [json_name = "salePriceStart"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.sale_price_start_), _Internal::kHasBitsOffset + 7, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional string sale_price_end = 11 [json_name = "salePriceEnd"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.sale_price_end_), _Internal::kHasBitsOffset + 8, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // bool has_minimum_orders = 12 [json_name = "hasMinimumOrders"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.has_minimum_orders_), _Internal::kHasBitsOffset + 11, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBool)},
+    // repeated .products.v1.ProductCreateRequestOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.minimum_orders_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestOfferMinimumOrder>()},
+  }},
+  {{
+    "\54\2\3\0\5\22\16\12\0\12\20\16\0\0\0\0"
+    "products.v1.ProductCreateRequestOfferVariant"
+    "id"
+    "sku"
+    "price"
+    "offering_condition"
+    "condition_note"
+    "list_price"
+    "sale_price"
+    "sale_price_start"
+    "sale_price_end"
+  }},
+};
+PROTOBUF_NOINLINE void ProductCreateRequestOfferVariant::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.ProductCreateRequestOfferVariant)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.minimum_orders_.Clear();
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x000000ffu) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      _impl_.id_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      _impl_.sku_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      _impl_.price_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      _impl_.offering_condition_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000010u) != 0) {
+      _impl_.condition_note_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000020u) != 0) {
+      _impl_.list_price_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000040u) != 0) {
+      _impl_.sale_price_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000080u) != 0) {
+      _impl_.sale_price_start_.ClearNonDefaultToEmpty();
+    }
+  }
+  if ((cached_has_bits & 0x00000100u) != 0) {
+    _impl_.sale_price_end_.ClearNonDefaultToEmpty();
+  }
+  if ((cached_has_bits & 0x00000e00u) != 0) {
+    ::memset(&_impl_.quantity_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.has_minimum_orders_) -
+        reinterpret_cast<char*>(&_impl_.quantity_)) + sizeof(_impl_.has_minimum_orders_));
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestOfferVariant::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const ProductCreateRequestOfferVariant& this_ = static_cast<const ProductCreateRequestOfferVariant&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestOfferVariant::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const ProductCreateRequestOfferVariant& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductCreateRequestOfferVariant)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // string id = 1 [json_name = "id"];
+  if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    if (!this_._internal_id().empty()) {
+      const ::std::string& _s = this_._internal_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferVariant.id");
+      target = stream->WriteStringMaybeAliased(1, _s, target);
+    }
+  }
+
+  // string sku = 2 [json_name = "sku"];
+  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    if (!this_._internal_sku().empty()) {
+      const ::std::string& _s = this_._internal_sku();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferVariant.sku");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
+    }
+  }
+
+  // uint64 quantity = 3 [json_name = "quantity"];
+  if ((this_._impl_._has_bits_[0] & 0x00000200u) != 0) {
+    if (this_._internal_quantity() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          3, this_._internal_quantity(), target);
+    }
+  }
+
+  // string price = 4 [json_name = "price"];
+  if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
+    if (!this_._internal_price().empty()) {
+      const ::std::string& _s = this_._internal_price();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferVariant.price");
+      target = stream->WriteStringMaybeAliased(4, _s, target);
+    }
+  }
+
+  // string offering_condition = 5 [json_name = "offeringCondition"];
+  if ((this_._impl_._has_bits_[0] & 0x00000008u) != 0) {
+    if (!this_._internal_offering_condition().empty()) {
+      const ::std::string& _s = this_._internal_offering_condition();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferVariant.offering_condition");
+      target = stream->WriteStringMaybeAliased(5, _s, target);
+    }
+  }
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // optional string condition_note = 6 [json_name = "conditionNote"];
+  if ((cached_has_bits & 0x00000010u) != 0) {
+    const ::std::string& _s = this_._internal_condition_note();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferVariant.condition_note");
+    target = stream->WriteStringMaybeAliased(6, _s, target);
+  }
+
+  // optional string list_price = 7 [json_name = "listPrice"];
+  if ((cached_has_bits & 0x00000020u) != 0) {
+    const ::std::string& _s = this_._internal_list_price();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferVariant.list_price");
+    target = stream->WriteStringMaybeAliased(7, _s, target);
+  }
+
+  // optional bool has_sale_price = 8 [json_name = "hasSalePrice"];
+  if ((cached_has_bits & 0x00000400u) != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        8, this_._internal_has_sale_price(), target);
+  }
+
+  // optional string sale_price = 9 [json_name = "salePrice"];
+  if ((cached_has_bits & 0x00000040u) != 0) {
+    const ::std::string& _s = this_._internal_sale_price();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferVariant.sale_price");
+    target = stream->WriteStringMaybeAliased(9, _s, target);
+  }
+
+  // optional string sale_price_start = 10 [json_name = "salePriceStart"];
+  if ((cached_has_bits & 0x00000080u) != 0) {
+    const ::std::string& _s = this_._internal_sale_price_start();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferVariant.sale_price_start");
+    target = stream->WriteStringMaybeAliased(10, _s, target);
+  }
+
+  // optional string sale_price_end = 11 [json_name = "salePriceEnd"];
+  if ((cached_has_bits & 0x00000100u) != 0) {
+    const ::std::string& _s = this_._internal_sale_price_end();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferVariant.sale_price_end");
+    target = stream->WriteStringMaybeAliased(11, _s, target);
+  }
+
+  // bool has_minimum_orders = 12 [json_name = "hasMinimumOrders"];
+  if ((cached_has_bits & 0x00000800u) != 0) {
+    if (this_._internal_has_minimum_orders() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteBoolToArray(
+          12, this_._internal_has_minimum_orders(), target);
+    }
+  }
+
+  // repeated .products.v1.ProductCreateRequestOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];
+  for (unsigned i = 0, n = static_cast<unsigned>(
+                           this_._internal_minimum_orders_size());
+       i < n; i++) {
+    const auto& repfield = this_._internal_minimum_orders().Get(i);
+    target =
+        ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+            13, repfield, repfield.GetCachedSize(),
+            target, stream);
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductCreateRequestOfferVariant)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t ProductCreateRequestOfferVariant::ByteSizeLong(const MessageLite& base) {
+  const ProductCreateRequestOfferVariant& this_ = static_cast<const ProductCreateRequestOfferVariant&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t ProductCreateRequestOfferVariant::ByteSizeLong() const {
+  const ProductCreateRequestOfferVariant& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductCreateRequestOfferVariant)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+   {
+    // repeated .products.v1.ProductCreateRequestOfferMinimumOrder minimum_orders = 13 [json_name = "minimumOrders"];
+    {
+      total_size += 1UL * this_._internal_minimum_orders_size();
+      for (const auto& msg : this_._internal_minimum_orders()) {
+        total_size += ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      }
+    }
+  }
+  cached_has_bits = this_._impl_._has_bits_[0];
+  total_size += static_cast<bool>(0x00000400u & cached_has_bits) * 2;
+  if ((cached_has_bits & 0x000000ffu) != 0) {
+    // string id = 1 [json_name = "id"];
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!this_._internal_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_id());
+      }
+    }
+    // string sku = 2 [json_name = "sku"];
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!this_._internal_sku().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_sku());
+      }
+    }
+    // string price = 4 [json_name = "price"];
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      if (!this_._internal_price().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_price());
+      }
+    }
+    // string offering_condition = 5 [json_name = "offeringCondition"];
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      if (!this_._internal_offering_condition().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_offering_condition());
+      }
+    }
+    // optional string condition_note = 6 [json_name = "conditionNote"];
+    if ((cached_has_bits & 0x00000010u) != 0) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_condition_note());
+    }
+    // optional string list_price = 7 [json_name = "listPrice"];
+    if ((cached_has_bits & 0x00000020u) != 0) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_list_price());
+    }
+    // optional string sale_price = 9 [json_name = "salePrice"];
+    if ((cached_has_bits & 0x00000040u) != 0) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_sale_price());
+    }
+    // optional string sale_price_start = 10 [json_name = "salePriceStart"];
+    if ((cached_has_bits & 0x00000080u) != 0) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_sale_price_start());
+    }
+  }
+  if ((cached_has_bits & 0x00000b00u) != 0) {
+    // optional string sale_price_end = 11 [json_name = "salePriceEnd"];
+    if ((cached_has_bits & 0x00000100u) != 0) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_sale_price_end());
+    }
+    // uint64 quantity = 3 [json_name = "quantity"];
+    if ((cached_has_bits & 0x00000200u) != 0) {
+      if (this_._internal_quantity() != 0) {
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+            this_._internal_quantity());
+      }
+    }
+    // bool has_minimum_orders = 12 [json_name = "hasMinimumOrders"];
+    if ((cached_has_bits & 0x00000800u) != 0) {
+      if (this_._internal_has_minimum_orders() != 0) {
+        total_size += 2;
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void ProductCreateRequestOfferVariant::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ProductCreateRequestOfferVariant*>(&to_msg);
+  auto& from = static_cast<const ProductCreateRequestOfferVariant&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductCreateRequestOfferVariant)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_minimum_orders()->MergeFrom(
+      from._internal_minimum_orders());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x000000ffu) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!from._internal_id().empty()) {
+        _this->_internal_set_id(from._internal_id());
+      } else {
+        if (_this->_impl_.id_.IsDefault()) {
+          _this->_internal_set_id("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!from._internal_sku().empty()) {
+        _this->_internal_set_sku(from._internal_sku());
+      } else {
+        if (_this->_impl_.sku_.IsDefault()) {
+          _this->_internal_set_sku("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      if (!from._internal_price().empty()) {
+        _this->_internal_set_price(from._internal_price());
+      } else {
+        if (_this->_impl_.price_.IsDefault()) {
+          _this->_internal_set_price("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      if (!from._internal_offering_condition().empty()) {
+        _this->_internal_set_offering_condition(from._internal_offering_condition());
+      } else {
+        if (_this->_impl_.offering_condition_.IsDefault()) {
+          _this->_internal_set_offering_condition("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000010u) != 0) {
+      _this->_internal_set_condition_note(from._internal_condition_note());
+    }
+    if ((cached_has_bits & 0x00000020u) != 0) {
+      _this->_internal_set_list_price(from._internal_list_price());
+    }
+    if ((cached_has_bits & 0x00000040u) != 0) {
+      _this->_internal_set_sale_price(from._internal_sale_price());
+    }
+    if ((cached_has_bits & 0x00000080u) != 0) {
+      _this->_internal_set_sale_price_start(from._internal_sale_price_start());
+    }
+  }
+  if ((cached_has_bits & 0x00000f00u) != 0) {
+    if ((cached_has_bits & 0x00000100u) != 0) {
+      _this->_internal_set_sale_price_end(from._internal_sale_price_end());
+    }
+    if ((cached_has_bits & 0x00000200u) != 0) {
+      if (from._internal_quantity() != 0) {
+        _this->_impl_.quantity_ = from._impl_.quantity_;
+      }
+    }
+    if ((cached_has_bits & 0x00000400u) != 0) {
+      _this->_impl_.has_sale_price_ = from._impl_.has_sale_price_;
+    }
+    if ((cached_has_bits & 0x00000800u) != 0) {
+      if (from._internal_has_minimum_orders() != 0) {
+        _this->_impl_.has_minimum_orders_ = from._impl_.has_minimum_orders_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ProductCreateRequestOfferVariant::CopyFrom(const ProductCreateRequestOfferVariant& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductCreateRequestOfferVariant)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void ProductCreateRequestOfferVariant::InternalSwap(ProductCreateRequestOfferVariant* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.minimum_orders_.InternalSwap(&other->_impl_.minimum_orders_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.id_, &other->_impl_.id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sku_, &other->_impl_.sku_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.price_, &other->_impl_.price_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.offering_condition_, &other->_impl_.offering_condition_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.condition_note_, &other->_impl_.condition_note_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.list_price_, &other->_impl_.list_price_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sale_price_, &other->_impl_.sale_price_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sale_price_start_, &other->_impl_.sale_price_start_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sale_price_end_, &other->_impl_.sale_price_end_, arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.has_minimum_orders_)
+      + sizeof(ProductCreateRequestOfferVariant::_impl_.has_minimum_orders_)
+      - PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferVariant, _impl_.quantity_)>(
+          reinterpret_cast<char*>(&_impl_.quantity_),
+          reinterpret_cast<char*>(&other->_impl_.quantity_));
+}
+
+::google::protobuf::Metadata ProductCreateRequestOfferVariant::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class ProductCreateRequestOfferPricing::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<ProductCreateRequestOfferPricing>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_._has_bits_);
+};
+
+ProductCreateRequestOfferPricing::ProductCreateRequestOfferPricing(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestOfferPricing_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:products.v1.ProductCreateRequestOfferPricing)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestOfferPricing::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::products::v1::ProductCreateRequestOfferPricing& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        minimum_orders_{visibility, arena, from.minimum_orders_},
+        sku_(arena, from.sku_),
+        price_(arena, from.price_),
+        offering_condition_(arena, from.offering_condition_),
+        condition_note_(arena, from.condition_note_),
+        list_price_(arena, from.list_price_),
+        sale_price_(arena, from.sale_price_),
+        sale_price_start_(arena, from.sale_price_start_),
+        sale_price_end_(arena, from.sale_price_end_) {}
+
+ProductCreateRequestOfferPricing::ProductCreateRequestOfferPricing(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const ProductCreateRequestOfferPricing& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestOfferPricing_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ProductCreateRequestOfferPricing* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  ::memcpy(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, quantity_),
+           reinterpret_cast<const char *>(&from._impl_) +
+               offsetof(Impl_, quantity_),
+           offsetof(Impl_, has_minimum_orders_) -
+               offsetof(Impl_, quantity_) +
+               sizeof(Impl_::has_minimum_orders_));
+
+  // @@protoc_insertion_point(copy_constructor:products.v1.ProductCreateRequestOfferPricing)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestOfferPricing::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        minimum_orders_{visibility, arena},
+        sku_(arena),
+        price_(arena),
+        offering_condition_(arena),
+        condition_note_(arena),
+        list_price_(arena),
+        sale_price_(arena),
+        sale_price_start_(arena),
+        sale_price_end_(arena) {}
+
+inline void ProductCreateRequestOfferPricing::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  ::memset(reinterpret_cast<char *>(&_impl_) +
+               offsetof(Impl_, quantity_),
+           0,
+           offsetof(Impl_, has_minimum_orders_) -
+               offsetof(Impl_, quantity_) +
+               sizeof(Impl_::has_minimum_orders_));
+}
+ProductCreateRequestOfferPricing::~ProductCreateRequestOfferPricing() {
+  // @@protoc_insertion_point(destructor:products.v1.ProductCreateRequestOfferPricing)
+  SharedDtor(*this);
+}
+inline void ProductCreateRequestOfferPricing::SharedDtor(MessageLite& self) {
+  ProductCreateRequestOfferPricing& this_ = static_cast<ProductCreateRequestOfferPricing&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.sku_.Destroy();
+  this_._impl_.price_.Destroy();
+  this_._impl_.offering_condition_.Destroy();
+  this_._impl_.condition_note_.Destroy();
+  this_._impl_.list_price_.Destroy();
+  this_._impl_.sale_price_.Destroy();
+  this_._impl_.sale_price_start_.Destroy();
+  this_._impl_.sale_price_end_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL ProductCreateRequestOfferPricing::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestOfferPricing(arena);
+}
+constexpr auto ProductCreateRequestOfferPricing::InternalNewImpl_() {
+  constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.minimum_orders_) +
+          decltype(ProductCreateRequestOfferPricing::_impl_.minimum_orders_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+  });
+  if (arena_bits.has_value()) {
+    return ::google::protobuf::internal::MessageCreator::CopyInit(
+        sizeof(ProductCreateRequestOfferPricing), alignof(ProductCreateRequestOfferPricing), *arena_bits);
+  } else {
+    return ::google::protobuf::internal::MessageCreator(&ProductCreateRequestOfferPricing::PlacementNew_,
+                                 sizeof(ProductCreateRequestOfferPricing),
+                                 alignof(ProductCreateRequestOfferPricing));
+  }
+}
+constexpr auto ProductCreateRequestOfferPricing::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestOfferPricing_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestOfferPricing::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestOfferPricing>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestOfferPricing::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<ProductCreateRequestOfferPricing>(), &ProductCreateRequestOfferPricing::ByteSizeLong,
+              &ProductCreateRequestOfferPricing::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestOfferPricing::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestOfferPricing_class_data_ =
+        ProductCreateRequestOfferPricing::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestOfferPricing::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestOfferPricing_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestOfferPricing_class_data_.tc_table);
+  return ProductCreateRequestOfferPricing_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<4, 12, 1, 151, 2>
+ProductCreateRequestOfferPricing::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_._has_bits_),
+    0, // no _extensions_
+    12, 120,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294963200,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    12,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductCreateRequestOfferPricing_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestOfferPricing>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // string sku = 1 [json_name = "sku"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.sku_)}},
+    // uint64 quantity = 2 [json_name = "quantity"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ProductCreateRequestOfferPricing, _impl_.quantity_), 8>(),
+     {16, 8, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.quantity_)}},
+    // string price = 3 [json_name = "price"];
+    {::_pbi::TcParser::FastUS1,
+     {26, 1, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.price_)}},
+    // string offering_condition = 4 [json_name = "offeringCondition"];
+    {::_pbi::TcParser::FastUS1,
+     {34, 2, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.offering_condition_)}},
+    // optional string condition_note = 5 [json_name = "conditionNote"];
+    {::_pbi::TcParser::FastUS1,
+     {42, 3, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.condition_note_)}},
+    // optional string list_price = 6 [json_name = "listPrice"];
+    {::_pbi::TcParser::FastUS1,
+     {50, 4, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.list_price_)}},
+    // optional bool has_sale_price = 7 [json_name = "hasSalePrice"];
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductCreateRequestOfferPricing, _impl_.has_sale_price_), 9>(),
+     {56, 9, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.has_sale_price_)}},
+    // optional string sale_price = 8 [json_name = "salePrice"];
+    {::_pbi::TcParser::FastUS1,
+     {66, 5, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.sale_price_)}},
+    // optional string sale_price_start = 9 [json_name = "salePriceStart"];
+    {::_pbi::TcParser::FastUS1,
+     {74, 6, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.sale_price_start_)}},
+    // optional string sale_price_end = 10 [json_name = "salePriceEnd"];
+    {::_pbi::TcParser::FastUS1,
+     {82, 7, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.sale_price_end_)}},
+    // bool has_minimum_orders = 11 [json_name = "hasMinimumOrders"];
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductCreateRequestOfferPricing, _impl_.has_minimum_orders_), 10>(),
+     {88, 10, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.has_minimum_orders_)}},
+    // repeated .products.v1.ProductCreateRequestOfferMinimumOrder minimum_orders = 12 [json_name = "minimumOrders"];
+    {::_pbi::TcParser::FastMtR1,
+     {98, 63, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.minimum_orders_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string sku = 1 [json_name = "sku"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.sku_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // uint64 quantity = 2 [json_name = "quantity"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.quantity_), _Internal::kHasBitsOffset + 8, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+    // string price = 3 [json_name = "price"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.price_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string offering_condition = 4 [json_name = "offeringCondition"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.offering_condition_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional string condition_note = 5 [json_name = "conditionNote"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.condition_note_), _Internal::kHasBitsOffset + 3, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional string list_price = 6 [json_name = "listPrice"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.list_price_), _Internal::kHasBitsOffset + 4, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional bool has_sale_price = 7 [json_name = "hasSalePrice"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.has_sale_price_), _Internal::kHasBitsOffset + 9, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBool)},
+    // optional string sale_price = 8 [json_name = "salePrice"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.sale_price_), _Internal::kHasBitsOffset + 5, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional string sale_price_start = 9 [json_name = "salePriceStart"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.sale_price_start_), _Internal::kHasBitsOffset + 6, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // optional string sale_price_end = 10 [json_name = "salePriceEnd"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.sale_price_end_), _Internal::kHasBitsOffset + 7, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // bool has_minimum_orders = 11 [json_name = "hasMinimumOrders"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.has_minimum_orders_), _Internal::kHasBitsOffset + 10, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBool)},
+    // repeated .products.v1.ProductCreateRequestOfferMinimumOrder minimum_orders = 12 [json_name = "minimumOrders"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.minimum_orders_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestOfferMinimumOrder>()},
+  }},
+  {{
+    "\54\3\0\5\22\16\12\0\12\20\16\0\0\0\0\0"
+    "products.v1.ProductCreateRequestOfferPricing"
+    "sku"
+    "price"
+    "offering_condition"
+    "condition_note"
+    "list_price"
+    "sale_price"
+    "sale_price_start"
+    "sale_price_end"
+  }},
+};
+PROTOBUF_NOINLINE void ProductCreateRequestOfferPricing::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.ProductCreateRequestOfferPricing)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.minimum_orders_.Clear();
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x000000ffu) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      _impl_.sku_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      _impl_.price_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      _impl_.offering_condition_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      _impl_.condition_note_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000010u) != 0) {
+      _impl_.list_price_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000020u) != 0) {
+      _impl_.sale_price_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000040u) != 0) {
+      _impl_.sale_price_start_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000080u) != 0) {
+      _impl_.sale_price_end_.ClearNonDefaultToEmpty();
+    }
+  }
+  if ((cached_has_bits & 0x00000700u) != 0) {
+    ::memset(&_impl_.quantity_, 0, static_cast<::size_t>(
+        reinterpret_cast<char*>(&_impl_.has_minimum_orders_) -
+        reinterpret_cast<char*>(&_impl_.quantity_)) + sizeof(_impl_.has_minimum_orders_));
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestOfferPricing::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const ProductCreateRequestOfferPricing& this_ = static_cast<const ProductCreateRequestOfferPricing&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestOfferPricing::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const ProductCreateRequestOfferPricing& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductCreateRequestOfferPricing)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // string sku = 1 [json_name = "sku"];
+  if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    if (!this_._internal_sku().empty()) {
+      const ::std::string& _s = this_._internal_sku();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferPricing.sku");
+      target = stream->WriteStringMaybeAliased(1, _s, target);
+    }
+  }
+
+  // uint64 quantity = 2 [json_name = "quantity"];
+  if ((this_._impl_._has_bits_[0] & 0x00000100u) != 0) {
+    if (this_._internal_quantity() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          2, this_._internal_quantity(), target);
+    }
+  }
+
+  // string price = 3 [json_name = "price"];
+  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    if (!this_._internal_price().empty()) {
+      const ::std::string& _s = this_._internal_price();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferPricing.price");
+      target = stream->WriteStringMaybeAliased(3, _s, target);
+    }
+  }
+
+  // string offering_condition = 4 [json_name = "offeringCondition"];
+  if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
+    if (!this_._internal_offering_condition().empty()) {
+      const ::std::string& _s = this_._internal_offering_condition();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferPricing.offering_condition");
+      target = stream->WriteStringMaybeAliased(4, _s, target);
+    }
+  }
+
+  cached_has_bits = this_._impl_._has_bits_[0];
+  // optional string condition_note = 5 [json_name = "conditionNote"];
+  if ((cached_has_bits & 0x00000008u) != 0) {
+    const ::std::string& _s = this_._internal_condition_note();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferPricing.condition_note");
+    target = stream->WriteStringMaybeAliased(5, _s, target);
+  }
+
+  // optional string list_price = 6 [json_name = "listPrice"];
+  if ((cached_has_bits & 0x00000010u) != 0) {
+    const ::std::string& _s = this_._internal_list_price();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferPricing.list_price");
+    target = stream->WriteStringMaybeAliased(6, _s, target);
+  }
+
+  // optional bool has_sale_price = 7 [json_name = "hasSalePrice"];
+  if ((cached_has_bits & 0x00000200u) != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(
+        7, this_._internal_has_sale_price(), target);
+  }
+
+  // optional string sale_price = 8 [json_name = "salePrice"];
+  if ((cached_has_bits & 0x00000020u) != 0) {
+    const ::std::string& _s = this_._internal_sale_price();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferPricing.sale_price");
+    target = stream->WriteStringMaybeAliased(8, _s, target);
+  }
+
+  // optional string sale_price_start = 9 [json_name = "salePriceStart"];
+  if ((cached_has_bits & 0x00000040u) != 0) {
+    const ::std::string& _s = this_._internal_sale_price_start();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferPricing.sale_price_start");
+    target = stream->WriteStringMaybeAliased(9, _s, target);
+  }
+
+  // optional string sale_price_end = 10 [json_name = "salePriceEnd"];
+  if ((cached_has_bits & 0x00000080u) != 0) {
+    const ::std::string& _s = this_._internal_sale_price_end();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferPricing.sale_price_end");
+    target = stream->WriteStringMaybeAliased(10, _s, target);
+  }
+
+  // bool has_minimum_orders = 11 [json_name = "hasMinimumOrders"];
+  if ((cached_has_bits & 0x00000400u) != 0) {
+    if (this_._internal_has_minimum_orders() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteBoolToArray(
+          11, this_._internal_has_minimum_orders(), target);
+    }
+  }
+
+  // repeated .products.v1.ProductCreateRequestOfferMinimumOrder minimum_orders = 12 [json_name = "minimumOrders"];
+  for (unsigned i = 0, n = static_cast<unsigned>(
+                           this_._internal_minimum_orders_size());
+       i < n; i++) {
+    const auto& repfield = this_._internal_minimum_orders().Get(i);
+    target =
+        ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
+            12, repfield, repfield.GetCachedSize(),
+            target, stream);
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductCreateRequestOfferPricing)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t ProductCreateRequestOfferPricing::ByteSizeLong(const MessageLite& base) {
+  const ProductCreateRequestOfferPricing& this_ = static_cast<const ProductCreateRequestOfferPricing&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t ProductCreateRequestOfferPricing::ByteSizeLong() const {
+  const ProductCreateRequestOfferPricing& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductCreateRequestOfferPricing)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+   {
+    // repeated .products.v1.ProductCreateRequestOfferMinimumOrder minimum_orders = 12 [json_name = "minimumOrders"];
+    {
+      total_size += 1UL * this_._internal_minimum_orders_size();
+      for (const auto& msg : this_._internal_minimum_orders()) {
+        total_size += ::google::protobuf::internal::WireFormatLite::MessageSize(msg);
+      }
+    }
+  }
+  cached_has_bits = this_._impl_._has_bits_[0];
+  total_size += static_cast<bool>(0x00000200u & cached_has_bits) * 2;
+  if ((cached_has_bits & 0x000000ffu) != 0) {
+    // string sku = 1 [json_name = "sku"];
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!this_._internal_sku().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_sku());
+      }
+    }
+    // string price = 3 [json_name = "price"];
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!this_._internal_price().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_price());
+      }
+    }
+    // string offering_condition = 4 [json_name = "offeringCondition"];
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      if (!this_._internal_offering_condition().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_offering_condition());
+      }
+    }
+    // optional string condition_note = 5 [json_name = "conditionNote"];
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_condition_note());
+    }
+    // optional string list_price = 6 [json_name = "listPrice"];
+    if ((cached_has_bits & 0x00000010u) != 0) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_list_price());
+    }
+    // optional string sale_price = 8 [json_name = "salePrice"];
+    if ((cached_has_bits & 0x00000020u) != 0) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_sale_price());
+    }
+    // optional string sale_price_start = 9 [json_name = "salePriceStart"];
+    if ((cached_has_bits & 0x00000040u) != 0) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_sale_price_start());
+    }
+    // optional string sale_price_end = 10 [json_name = "salePriceEnd"];
+    if ((cached_has_bits & 0x00000080u) != 0) {
+      total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                      this_._internal_sale_price_end());
+    }
+  }
+  if ((cached_has_bits & 0x00000500u) != 0) {
+    // uint64 quantity = 2 [json_name = "quantity"];
+    if ((cached_has_bits & 0x00000100u) != 0) {
+      if (this_._internal_quantity() != 0) {
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+            this_._internal_quantity());
+      }
+    }
+    // bool has_minimum_orders = 11 [json_name = "hasMinimumOrders"];
+    if ((cached_has_bits & 0x00000400u) != 0) {
+      if (this_._internal_has_minimum_orders() != 0) {
+        total_size += 2;
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void ProductCreateRequestOfferPricing::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ProductCreateRequestOfferPricing*>(&to_msg);
+  auto& from = static_cast<const ProductCreateRequestOfferPricing&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductCreateRequestOfferPricing)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_internal_mutable_minimum_orders()->MergeFrom(
+      from._internal_minimum_orders());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x000000ffu) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!from._internal_sku().empty()) {
+        _this->_internal_set_sku(from._internal_sku());
+      } else {
+        if (_this->_impl_.sku_.IsDefault()) {
+          _this->_internal_set_sku("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!from._internal_price().empty()) {
+        _this->_internal_set_price(from._internal_price());
+      } else {
+        if (_this->_impl_.price_.IsDefault()) {
+          _this->_internal_set_price("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      if (!from._internal_offering_condition().empty()) {
+        _this->_internal_set_offering_condition(from._internal_offering_condition());
+      } else {
+        if (_this->_impl_.offering_condition_.IsDefault()) {
+          _this->_internal_set_offering_condition("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000008u) != 0) {
+      _this->_internal_set_condition_note(from._internal_condition_note());
+    }
+    if ((cached_has_bits & 0x00000010u) != 0) {
+      _this->_internal_set_list_price(from._internal_list_price());
+    }
+    if ((cached_has_bits & 0x00000020u) != 0) {
+      _this->_internal_set_sale_price(from._internal_sale_price());
+    }
+    if ((cached_has_bits & 0x00000040u) != 0) {
+      _this->_internal_set_sale_price_start(from._internal_sale_price_start());
+    }
+    if ((cached_has_bits & 0x00000080u) != 0) {
+      _this->_internal_set_sale_price_end(from._internal_sale_price_end());
+    }
+  }
+  if ((cached_has_bits & 0x00000700u) != 0) {
+    if ((cached_has_bits & 0x00000100u) != 0) {
+      if (from._internal_quantity() != 0) {
+        _this->_impl_.quantity_ = from._impl_.quantity_;
+      }
+    }
+    if ((cached_has_bits & 0x00000200u) != 0) {
+      _this->_impl_.has_sale_price_ = from._impl_.has_sale_price_;
+    }
+    if ((cached_has_bits & 0x00000400u) != 0) {
+      if (from._internal_has_minimum_orders() != 0) {
+        _this->_impl_.has_minimum_orders_ = from._impl_.has_minimum_orders_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ProductCreateRequestOfferPricing::CopyFrom(const ProductCreateRequestOfferPricing& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductCreateRequestOfferPricing)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void ProductCreateRequestOfferPricing::InternalSwap(ProductCreateRequestOfferPricing* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.minimum_orders_.InternalSwap(&other->_impl_.minimum_orders_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sku_, &other->_impl_.sku_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.price_, &other->_impl_.price_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.offering_condition_, &other->_impl_.offering_condition_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.condition_note_, &other->_impl_.condition_note_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.list_price_, &other->_impl_.list_price_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sale_price_, &other->_impl_.sale_price_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sale_price_start_, &other->_impl_.sale_price_start_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sale_price_end_, &other->_impl_.sale_price_end_, arena);
+  ::google::protobuf::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.has_minimum_orders_)
+      + sizeof(ProductCreateRequestOfferPricing::_impl_.has_minimum_orders_)
+      - PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.quantity_)>(
+          reinterpret_cast<char*>(&_impl_.quantity_),
+          reinterpret_cast<char*>(&other->_impl_.quantity_));
+}
+
+::google::protobuf::Metadata ProductCreateRequestOfferPricing::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+class ProductCreateRequestOfferMinimumOrder::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<ProductCreateRequestOfferMinimumOrder>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferMinimumOrder, _impl_._has_bits_);
+};
+
+ProductCreateRequestOfferMinimumOrder::ProductCreateRequestOfferMinimumOrder(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestOfferMinimumOrder_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:products.v1.ProductCreateRequestOfferMinimumOrder)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestOfferMinimumOrder::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::products::v1::ProductCreateRequestOfferMinimumOrder& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        id_(arena, from.id_),
+        price_(arena, from.price_) {}
+
+ProductCreateRequestOfferMinimumOrder::ProductCreateRequestOfferMinimumOrder(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const ProductCreateRequestOfferMinimumOrder& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestOfferMinimumOrder_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ProductCreateRequestOfferMinimumOrder* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.quantity_ = from._impl_.quantity_;
+
+  // @@protoc_insertion_point(copy_constructor:products.v1.ProductCreateRequestOfferMinimumOrder)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestOfferMinimumOrder::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        id_(arena),
+        price_(arena) {}
+
+inline void ProductCreateRequestOfferMinimumOrder::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.quantity_ = {};
+}
+ProductCreateRequestOfferMinimumOrder::~ProductCreateRequestOfferMinimumOrder() {
+  // @@protoc_insertion_point(destructor:products.v1.ProductCreateRequestOfferMinimumOrder)
+  SharedDtor(*this);
+}
+inline void ProductCreateRequestOfferMinimumOrder::SharedDtor(MessageLite& self) {
+  ProductCreateRequestOfferMinimumOrder& this_ = static_cast<ProductCreateRequestOfferMinimumOrder&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.id_.Destroy();
+  this_._impl_.price_.Destroy();
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL ProductCreateRequestOfferMinimumOrder::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestOfferMinimumOrder(arena);
+}
+constexpr auto ProductCreateRequestOfferMinimumOrder::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(ProductCreateRequestOfferMinimumOrder),
+                                            alignof(ProductCreateRequestOfferMinimumOrder));
+}
+constexpr auto ProductCreateRequestOfferMinimumOrder::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestOfferMinimumOrder_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestOfferMinimumOrder::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestOfferMinimumOrder>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestOfferMinimumOrder::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<ProductCreateRequestOfferMinimumOrder>(), &ProductCreateRequestOfferMinimumOrder::ByteSizeLong,
+              &ProductCreateRequestOfferMinimumOrder::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferMinimumOrder, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestOfferMinimumOrder::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestOfferMinimumOrder_class_data_ =
+        ProductCreateRequestOfferMinimumOrder::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestOfferMinimumOrder::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestOfferMinimumOrder_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestOfferMinimumOrder_class_data_.tc_table);
+  return ProductCreateRequestOfferMinimumOrder_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<2, 3, 0, 65, 2>
+ProductCreateRequestOfferMinimumOrder::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferMinimumOrder, _impl_._has_bits_),
+    0, // no _extensions_
+    3, 24,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967288,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    3,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    ProductCreateRequestOfferMinimumOrder_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestOfferMinimumOrder>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    {::_pbi::TcParser::MiniParse, {}},
+    // string id = 1 [json_name = "id"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferMinimumOrder, _impl_.id_)}},
+    // string price = 2 [json_name = "price"];
+    {::_pbi::TcParser::FastUS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferMinimumOrder, _impl_.price_)}},
+    // uint64 quantity = 3 [json_name = "quantity"];
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ProductCreateRequestOfferMinimumOrder, _impl_.quantity_), 2>(),
+     {24, 2, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferMinimumOrder, _impl_.quantity_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string id = 1 [json_name = "id"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferMinimumOrder, _impl_.id_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // string price = 2 [json_name = "price"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferMinimumOrder, _impl_.price_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // uint64 quantity = 3 [json_name = "quantity"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferMinimumOrder, _impl_.quantity_), _Internal::kHasBitsOffset + 2, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
+  }},
+  // no aux_entries
+  {{
+    "\61\2\5\0\0\0\0\0"
+    "products.v1.ProductCreateRequestOfferMinimumOrder"
+    "id"
+    "price"
+  }},
+};
+PROTOBUF_NOINLINE void ProductCreateRequestOfferMinimumOrder::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.ProductCreateRequestOfferMinimumOrder)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000003u) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      _impl_.id_.ClearNonDefaultToEmpty();
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      _impl_.price_.ClearNonDefaultToEmpty();
+    }
+  }
+  _impl_.quantity_ = ::uint64_t{0u};
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestOfferMinimumOrder::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const ProductCreateRequestOfferMinimumOrder& this_ = static_cast<const ProductCreateRequestOfferMinimumOrder&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestOfferMinimumOrder::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const ProductCreateRequestOfferMinimumOrder& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductCreateRequestOfferMinimumOrder)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // string id = 1 [json_name = "id"];
+  if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    if (!this_._internal_id().empty()) {
+      const ::std::string& _s = this_._internal_id();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferMinimumOrder.id");
+      target = stream->WriteStringMaybeAliased(1, _s, target);
+    }
+  }
+
+  // string price = 2 [json_name = "price"];
+  if ((this_._impl_._has_bits_[0] & 0x00000002u) != 0) {
+    if (!this_._internal_price().empty()) {
+      const ::std::string& _s = this_._internal_price();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferMinimumOrder.price");
+      target = stream->WriteStringMaybeAliased(2, _s, target);
+    }
+  }
+
+  // uint64 quantity = 3 [json_name = "quantity"];
+  if ((this_._impl_._has_bits_[0] & 0x00000004u) != 0) {
+    if (this_._internal_quantity() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteUInt64ToArray(
+          3, this_._internal_quantity(), target);
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductCreateRequestOfferMinimumOrder)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t ProductCreateRequestOfferMinimumOrder::ByteSizeLong(const MessageLite& base) {
+  const ProductCreateRequestOfferMinimumOrder& this_ = static_cast<const ProductCreateRequestOfferMinimumOrder&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t ProductCreateRequestOfferMinimumOrder::ByteSizeLong() const {
+  const ProductCreateRequestOfferMinimumOrder& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductCreateRequestOfferMinimumOrder)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+  cached_has_bits = this_._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000007u) != 0) {
+    // string id = 1 [json_name = "id"];
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!this_._internal_id().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_id());
+      }
+    }
+    // string price = 2 [json_name = "price"];
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!this_._internal_price().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_price());
+      }
+    }
+    // uint64 quantity = 3 [json_name = "quantity"];
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      if (this_._internal_quantity() != 0) {
+        total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(
+            this_._internal_quantity());
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void ProductCreateRequestOfferMinimumOrder::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ProductCreateRequestOfferMinimumOrder*>(&to_msg);
+  auto& from = static_cast<const ProductCreateRequestOfferMinimumOrder&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductCreateRequestOfferMinimumOrder)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000007u) != 0) {
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (!from._internal_id().empty()) {
+        _this->_internal_set_id(from._internal_id());
+      } else {
+        if (_this->_impl_.id_.IsDefault()) {
+          _this->_internal_set_id("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000002u) != 0) {
+      if (!from._internal_price().empty()) {
+        _this->_internal_set_price(from._internal_price());
+      } else {
+        if (_this->_impl_.price_.IsDefault()) {
+          _this->_internal_set_price("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000004u) != 0) {
+      if (from._internal_quantity() != 0) {
+        _this->_impl_.quantity_ = from._impl_.quantity_;
+      }
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ProductCreateRequestOfferMinimumOrder::CopyFrom(const ProductCreateRequestOfferMinimumOrder& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductCreateRequestOfferMinimumOrder)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void ProductCreateRequestOfferMinimumOrder::InternalSwap(ProductCreateRequestOfferMinimumOrder* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.id_, &other->_impl_.id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.price_, &other->_impl_.price_, arena);
+  swap(_impl_.quantity_, other->_impl_.quantity_);
+}
+
+::google::protobuf::Metadata ProductCreateRequestOfferMinimumOrder::GetMetadata() const {
+  return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
+}
+// ===================================================================
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+ProductCreateRequestSafety_FormEntry_DoNotUse::ProductCreateRequestSafety_FormEntry_DoNotUse()
+    : SuperType(ProductCreateRequestSafety_FormEntry_DoNotUse_class_data_.base()) {}
+ProductCreateRequestSafety_FormEntry_DoNotUse::ProductCreateRequestSafety_FormEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+    : SuperType(arena, ProductCreateRequestSafety_FormEntry_DoNotUse_class_data_.base()) {}
+#else   // PROTOBUF_CUSTOM_VTABLE
+ProductCreateRequestSafety_FormEntry_DoNotUse::ProductCreateRequestSafety_FormEntry_DoNotUse() : SuperType() {}
+ProductCreateRequestSafety_FormEntry_DoNotUse::ProductCreateRequestSafety_FormEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena) : SuperType(arena) {}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+inline void* PROTOBUF_NONNULL ProductCreateRequestSafety_FormEntry_DoNotUse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestSafety_FormEntry_DoNotUse(arena);
+}
+constexpr auto ProductCreateRequestSafety_FormEntry_DoNotUse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(ProductCreateRequestSafety_FormEntry_DoNotUse),
+                                            alignof(ProductCreateRequestSafety_FormEntry_DoNotUse));
+}
+constexpr auto ProductCreateRequestSafety_FormEntry_DoNotUse::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestSafety_FormEntry_DoNotUse_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestSafety_FormEntry_DoNotUse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestSafety_FormEntry_DoNotUse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestSafety_FormEntry_DoNotUse::SharedDtor,
+          static_cast<void (::google::protobuf::MessageLite::*)()>(&ProductCreateRequestSafety_FormEntry_DoNotUse::ClearImpl),
+              ::google::protobuf::Message::ByteSizeLongImpl, ::google::protobuf::Message::_InternalSerializeImpl
+              ,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestSafety_FormEntry_DoNotUse, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestSafety_FormEntry_DoNotUse::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestSafety_FormEntry_DoNotUse_class_data_ =
+        ProductCreateRequestSafety_FormEntry_DoNotUse::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestSafety_FormEntry_DoNotUse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestSafety_FormEntry_DoNotUse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestSafety_FormEntry_DoNotUse_class_data_.tc_table);
+  return ProductCreateRequestSafety_FormEntry_DoNotUse_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 1, 60, 2>
+ProductCreateRequestSafety_FormEntry_DoNotUse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(ProductCreateRequestSafety_FormEntry_DoNotUse, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductCreateRequestSafety_FormEntry_DoNotUse_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::DiscardEverythingFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestSafety_FormEntry_DoNotUse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // .shared.v1.Any value = 2 [json_name = "value"];
+    {::_pbi::TcParser::FastMtS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestSafety_FormEntry_DoNotUse, _impl_.value_)}},
+    // string key = 1 [json_name = "key"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestSafety_FormEntry_DoNotUse, _impl_.key_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string key = 1 [json_name = "key"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestSafety_FormEntry_DoNotUse, _impl_.key_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // .shared.v1.Any value = 2 [json_name = "value"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestSafety_FormEntry_DoNotUse, _impl_.value_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::shared::v1::Any>()},
+  }},
+  {{
+    "\60\3\0\0\0\0\0\0"
+    "products.v1.ProductCreateRequestSafety.FormEntry"
+    "key"
+  }},
+};
+// ===================================================================
+
+class ProductCreateRequestSafety::_Internal {
+ public:
+  using HasBits =
+      decltype(::std::declval<ProductCreateRequestSafety>()._impl_._has_bits_);
+  static constexpr ::int32_t kHasBitsOffset =
+      8 * PROTOBUF_FIELD_OFFSET(ProductCreateRequestSafety, _impl_._has_bits_);
+};
+
+void ProductCreateRequestSafety::clear_form() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.form_.Clear();
+}
+ProductCreateRequestSafety::ProductCreateRequestSafety(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestSafety_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:products.v1.ProductCreateRequestSafety)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestSafety::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
+    const ::products::v1::ProductCreateRequestSafety& from_msg)
+      : _has_bits_{from._has_bits_},
+        _cached_size_{0},
+        form_{visibility, arena, from.form_} {}
+
+ProductCreateRequestSafety::ProductCreateRequestSafety(
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
+    const ProductCreateRequestSafety& from)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(arena, ProductCreateRequestSafety_class_data_.base()) {
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(arena) {
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  ProductCreateRequestSafety* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_, from);
+  _impl_.attestation_ = from._impl_.attestation_;
+
+  // @@protoc_insertion_point(copy_constructor:products.v1.ProductCreateRequestSafety)
+}
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestSafety::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+      : _cached_size_{0},
+        form_{visibility, arena} {}
+
+inline void ProductCreateRequestSafety::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.attestation_ = {};
+}
+ProductCreateRequestSafety::~ProductCreateRequestSafety() {
+  // @@protoc_insertion_point(destructor:products.v1.ProductCreateRequestSafety)
+  SharedDtor(*this);
+}
+inline void ProductCreateRequestSafety::SharedDtor(MessageLite& self) {
+  ProductCreateRequestSafety& this_ = static_cast<ProductCreateRequestSafety&>(self);
+  this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  ABSL_DCHECK(this_.GetArena() == nullptr);
+  this_._impl_.~Impl_();
+}
+
+inline void* PROTOBUF_NONNULL ProductCreateRequestSafety::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestSafety(arena);
+}
+constexpr auto ProductCreateRequestSafety::InternalNewImpl_() {
+  constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestSafety, _impl_.form_) +
+          decltype(ProductCreateRequestSafety::_impl_.form_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestSafety, _impl_.form_) +
+          decltype(ProductCreateRequestSafety::_impl_.form_)::
+              InternalGetArenaOffsetAlt(
+                  ::google::protobuf::Message::internal_visibility()),
+  });
+  if (arena_bits.has_value()) {
+    return ::google::protobuf::internal::MessageCreator::CopyInit(
+        sizeof(ProductCreateRequestSafety), alignof(ProductCreateRequestSafety), *arena_bits);
+  } else {
+    return ::google::protobuf::internal::MessageCreator(&ProductCreateRequestSafety::PlacementNew_,
+                                 sizeof(ProductCreateRequestSafety),
+                                 alignof(ProductCreateRequestSafety));
+  }
+}
+constexpr auto ProductCreateRequestSafety::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestSafety_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestSafety::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestSafety>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestSafety::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<ProductCreateRequestSafety>(), &ProductCreateRequestSafety::ByteSizeLong,
+              &ProductCreateRequestSafety::_InternalSerialize,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestSafety, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestSafety::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestSafety_class_data_ =
+        ProductCreateRequestSafety::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestSafety::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestSafety_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestSafety_class_data_.tc_table);
+  return ProductCreateRequestSafety_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 2, 2, 51, 2>
+ProductCreateRequestSafety::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(ProductCreateRequestSafety, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    2,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductCreateRequestSafety_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::GenericFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestSafety>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // bool attestation = 1 [json_name = "attestation"];
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductCreateRequestSafety, _impl_.attestation_), 0>(),
+     {8, 0, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestSafety, _impl_.attestation_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // bool attestation = 1 [json_name = "attestation"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestSafety, _impl_.attestation_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kBool)},
+    // map<string, .shared.v1.Any> form = 2 [json_name = "form"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestSafety, _impl_.form_), -1, 0,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
+  }},
+  {{
+      {::_pbi::TcParser::GetMapAuxInfo(1, 0, 0,
+                                       9, 11,
+                                       0)},
+      {::_pbi::TcParser::GetTable<::shared::v1::Any>()},
+  }},
+  {{
+    "\46\0\4\0\0\0\0\0"
+    "products.v1.ProductCreateRequestSafety"
+    "form"
+  }},
+};
+PROTOBUF_NOINLINE void ProductCreateRequestSafety::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.ProductCreateRequestSafety)
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.form_.Clear();
+  _impl_.attestation_ = false;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestSafety::_InternalSerialize(
+    const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
+  const ProductCreateRequestSafety& this_ = static_cast<const ProductCreateRequestSafety&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestSafety::_InternalSerialize(
+    ::uint8_t* PROTOBUF_NONNULL target,
+    ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
+  const ProductCreateRequestSafety& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductCreateRequestSafety)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // bool attestation = 1 [json_name = "attestation"];
+  if ((this_._impl_._has_bits_[0] & 0x00000001u) != 0) {
+    if (this_._internal_attestation() != 0) {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteBoolToArray(
+          1, this_._internal_attestation(), target);
+    }
+  }
+
+  // map<string, .shared.v1.Any> form = 2 [json_name = "form"];
+  if (!this_._internal_form().empty()) {
+    using MapType = ::google::protobuf::Map<std::string, ::shared::v1::Any>;
+    using WireHelper = _pbi::MapEntryFuncs<std::string, ::shared::v1::Any,
+                                   _pbi::WireFormatLite::TYPE_STRING,
+                                   _pbi::WireFormatLite::TYPE_MESSAGE>;
+    const auto& field = this_._internal_form();
+
+    if (stream->IsSerializationDeterministic() && field.size() > 1) {
+      for (const auto& entry : ::google::protobuf::internal::MapSorterPtr<MapType>(field)) {
+        target = WireHelper::InternalSerialize(
+            2, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestSafety.form");
+      }
+    } else {
+      for (const auto& entry : field) {
+        target = WireHelper::InternalSerialize(
+            2, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestSafety.form");
+      }
+    }
+  }
+
+  if (ABSL_PREDICT_FALSE(this_._internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductCreateRequestSafety)
+  return target;
+}
+
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+::size_t ProductCreateRequestSafety::ByteSizeLong(const MessageLite& base) {
+  const ProductCreateRequestSafety& this_ = static_cast<const ProductCreateRequestSafety&>(base);
+#else   // PROTOBUF_CUSTOM_VTABLE
+::size_t ProductCreateRequestSafety::ByteSizeLong() const {
+  const ProductCreateRequestSafety& this_ = *this;
+#endif  // PROTOBUF_CUSTOM_VTABLE
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductCreateRequestSafety)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void)cached_has_bits;
+
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+   {
+    // map<string, .shared.v1.Any> form = 2 [json_name = "form"];
+    {
+      total_size +=
+          1 * ::google::protobuf::internal::FromIntSize(this_._internal_form_size());
+      for (const auto& entry : this_._internal_form()) {
+        total_size += _pbi::MapEntryFuncs<std::string, ::shared::v1::Any,
+                                       _pbi::WireFormatLite::TYPE_STRING,
+                                       _pbi::WireFormatLite::TYPE_MESSAGE>::ByteSizeLong(entry.first, entry.second);
+      }
+    }
+  }
+   {
+    // bool attestation = 1 [json_name = "attestation"];
+    cached_has_bits = this_._impl_._has_bits_[0];
+    if ((cached_has_bits & 0x00000001u) != 0) {
+      if (this_._internal_attestation() != 0) {
+        total_size += 2;
+      }
+    }
+  }
+  return this_.MaybeComputeUnknownFieldsSize(total_size,
+                                             &this_._impl_._cached_size_);
+}
+
+void ProductCreateRequestSafety::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ProductCreateRequestSafety*>(&to_msg);
+  auto& from = static_cast<const ProductCreateRequestSafety&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductCreateRequestSafety)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.form_.MergeFrom(from._impl_.form_);
+  cached_has_bits = from._impl_._has_bits_[0];
+  if ((cached_has_bits & 0x00000001u) != 0) {
+    if (from._internal_attestation() != 0) {
+      _this->_impl_.attestation_ = from._impl_.attestation_;
+    }
+  }
+  _this->_impl_._has_bits_[0] |= cached_has_bits;
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ProductCreateRequestSafety::CopyFrom(const ProductCreateRequestSafety& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductCreateRequestSafety)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+
+void ProductCreateRequestSafety::InternalSwap(ProductCreateRequestSafety* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+  using ::std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.form_.InternalSwap(&other->_impl_.form_);
+  swap(_impl_.attestation_, other->_impl_.attestation_);
+}
+
+::google::protobuf::Metadata ProductCreateRequestSafety::GetMetadata() const {
   return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // ===================================================================

@@ -92,6 +92,11 @@ export interface Attachment {
   data: Uint8Array;
   /** usually set by the backend */
   mime: string;
+  checksum?: string | undefined;
+}
+
+export interface Attachments {
+  attachments: Attachment[];
 }
 
 export interface Crop {
@@ -125,6 +130,7 @@ function createBaseAttachment(): Attachment {
     metadata: undefined,
     data: new Uint8Array(0),
     mime: "",
+    checksum: undefined,
   };
 }
 
@@ -162,6 +168,9 @@ export const Attachment: MessageFns<Attachment> = {
     }
     if (message.mime !== "") {
       writer.uint32(90).string(message.mime);
+    }
+    if (message.checksum !== undefined) {
+      writer.uint32(98).string(message.checksum);
     }
     return writer;
   },
@@ -261,6 +270,14 @@ export const Attachment: MessageFns<Attachment> = {
           message.mime = reader.string();
           continue;
         }
+        case 12: {
+          if (tag !== 98) {
+            break;
+          }
+
+          message.checksum = reader.string();
+          continue;
+        }
       }
       if ((tag & 7) === 4 || tag === 0) {
         break;
@@ -283,6 +300,7 @@ export const Attachment: MessageFns<Attachment> = {
       metadata: isSet(object.metadata) ? Struct.fromJSON(object.metadata) : undefined,
       data: isSet(object.data) ? bytesFromBase64(object.data) : new Uint8Array(0),
       mime: isSet(object.mime) ? globalThis.String(object.mime) : "",
+      checksum: isSet(object.checksum) ? globalThis.String(object.checksum) : undefined,
     };
   },
 
@@ -321,6 +339,9 @@ export const Attachment: MessageFns<Attachment> = {
     if (message.mime !== "") {
       obj.mime = message.mime;
     }
+    if (message.checksum !== undefined) {
+      obj.checksum = message.checksum;
+    }
     return obj;
   },
 
@@ -342,6 +363,69 @@ export const Attachment: MessageFns<Attachment> = {
       : undefined;
     message.data = object.data ?? new Uint8Array(0);
     message.mime = object.mime ?? "";
+    message.checksum = object.checksum ?? undefined;
+    return message;
+  },
+};
+
+function createBaseAttachments(): Attachments {
+  return { attachments: [] };
+}
+
+export const Attachments: MessageFns<Attachments> = {
+  encode(message: Attachments, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    for (const v of message.attachments) {
+      Attachment.encode(v!, writer.uint32(10).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): Attachments {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseAttachments();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.attachments.push(Attachment.decode(reader, reader.uint32()));
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): Attachments {
+    return {
+      attachments: globalThis.Array.isArray(object?.attachments)
+        ? object.attachments.map((e: any) => Attachment.fromJSON(e))
+        : [],
+    };
+  },
+
+  toJSON(message: Attachments): unknown {
+    const obj: any = {};
+    if (message.attachments?.length) {
+      obj.attachments = message.attachments.map((e) => Attachment.toJSON(e));
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<Attachments>, I>>(base?: I): Attachments {
+    return Attachments.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<Attachments>, I>>(object: I): Attachments {
+    const message = createBaseAttachments();
+    message.attachments = object.attachments?.map((e) => Attachment.fromPartial(e)) || [];
     return message;
   },
 };

@@ -6,8 +6,9 @@
 
 /* eslint-disable */
 import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
+import { Attachment, Attachments } from "../../shared/v1/attachment";
 import { AppError } from "../../shared/v1/error";
-import { SuccessResponseData } from "../../shared/v1/types";
+import { Any, SuccessResponseData } from "../../shared/v1/types";
 
 export const protobufPackage = "products.v1";
 
@@ -17,13 +18,145 @@ export interface ProductCreateTag {
 }
 
 export interface ProductCreateRequest {
+  identity?: ProductCreateRequestIdentity | undefined;
+  description?: ProductCreateRequestDescription | undefined;
+  details?: ProductCreateRequestDetails | undefined;
+  media?: ProductCreateRequestMedia | undefined;
+  offer?: ProductCreateRequestOffer | undefined;
+  safety?: ProductCreateRequestSafety | undefined;
+}
+
+export interface ProductCreateRequestIdentity {
   title: string;
+  category: string;
+  subcategory: string;
+  hasVariations: boolean;
+  brandName: string;
+  noBrand: boolean;
+  productId: string;
+  noProductId: boolean;
+}
+
+export interface ProductCreateRequestDescription {
   description: string;
+  bulletPoints: ProductCreateRequestBulletPoint[];
+}
+
+export interface ProductCreateRequestBulletPoint {
+  id: string;
+  bulletPoint: string;
+}
+
+export interface ProductCreateRequestDetails {
+  withVariants?: ProductCreateRequestDetailsWithVariants | undefined;
+  withoutVariants?: ProductCreateRequestDetailsWithoutVariants | undefined;
+}
+
+export interface ProductCreateRequestDetailsWithVariants {
+  variants: ProductCreateRequestDetailsVariantForm[];
+}
+
+export interface ProductCreateRequestDetailsVariantForm {
+  form: { [key: string]: Any };
+}
+
+export interface ProductCreateRequestDetailsVariantForm_FormEntry {
+  key: string;
+  value?: Any | undefined;
+}
+
+export interface ProductCreateRequestDetailsWithoutVariants {
+  form: { [key: string]: Any };
+}
+
+export interface ProductCreateRequestDetailsWithoutVariants_FormEntry {
+  key: string;
+  value?: Any | undefined;
+}
+
+export interface ProductCreateRequestMedia {
+  totalSize: string;
+  withVariants?: ProductCreateRequestMediaWithVariants | undefined;
+  withoutVariants?: ProductCreateRequestMediaWithoutVariants | undefined;
+}
+
+export interface ProductCreateRequestMediaWithVariants {
+  images: { [key: string]: Attachments };
+  videos: { [key: string]: Attachments };
+}
+
+export interface ProductCreateRequestMediaWithVariants_ImagesEntry {
+  key: string;
+  value?: Attachments | undefined;
+}
+
+export interface ProductCreateRequestMediaWithVariants_VideosEntry {
+  key: string;
+  value?: Attachments | undefined;
+}
+
+export interface ProductCreateRequestMediaWithoutVariants {
+  images: Attachment[];
+  videos: Attachment[];
+}
+
+export interface ProductCreateRequestOffer {
+  currency: string;
+  fulfillmentType: string;
+  processingTime: string;
+  withVariants?: ProductCreateRequestOfferWithVariants | undefined;
+  withoutVariants?: ProductCreateRequestOfferPricing | undefined;
+}
+
+export interface ProductCreateRequestOfferWithVariants {
+  variants: ProductCreateRequestOfferVariant[];
+}
+
+export interface ProductCreateRequestOfferVariant {
+  id: string;
   sku: string;
+  quantity: string;
   price: string;
-  currencyCode: string;
-  tags: ProductCreateTag[];
-  arEnabled: boolean;
+  offeringCondition: string;
+  conditionNote?: string | undefined;
+  listPrice?: string | undefined;
+  hasSalePrice?: boolean | undefined;
+  salePrice?: string | undefined;
+  salePriceStart?: string | undefined;
+  salePriceEnd?: string | undefined;
+  hasMinimumOrders: boolean;
+  minimumOrders: ProductCreateRequestOfferMinimumOrder[];
+}
+
+export interface ProductCreateRequestOfferPricing {
+  sku: string;
+  quantity: string;
+  price: string;
+  offeringCondition: string;
+  conditionNote?: string | undefined;
+  listPrice?: string | undefined;
+  hasSalePrice?: boolean | undefined;
+  salePrice?: string | undefined;
+  salePriceStart?: string | undefined;
+  salePriceEnd?: string | undefined;
+  hasMinimumOrders: boolean;
+  minimumOrders: ProductCreateRequestOfferMinimumOrder[];
+}
+
+export interface ProductCreateRequestOfferMinimumOrder {
+  id: string;
+  price: string;
+  quantity: string;
+}
+
+export interface ProductCreateRequestSafety {
+  attestation: boolean;
+  form: { [key: string]: Any };
+}
+
+export interface ProductCreateRequestSafety_FormEntry {
+  key: string;
+  value?: Any | undefined;
 }
 
 export interface ProductCreateResponse {
@@ -108,31 +241,35 @@ export const ProductCreateTag: MessageFns<ProductCreateTag> = {
 };
 
 function createBaseProductCreateRequest(): ProductCreateRequest {
-  return { title: "", description: "", sku: "", price: "", currencyCode: "", tags: [], arEnabled: false };
+  return {
+    identity: undefined,
+    description: undefined,
+    details: undefined,
+    media: undefined,
+    offer: undefined,
+    safety: undefined,
+  };
 }
 
 export const ProductCreateRequest: MessageFns<ProductCreateRequest> = {
   encode(message: ProductCreateRequest, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
-    if (message.title !== "") {
-      writer.uint32(10).string(message.title);
+    if (message.identity !== undefined) {
+      ProductCreateRequestIdentity.encode(message.identity, writer.uint32(10).fork()).join();
     }
-    if (message.description !== "") {
-      writer.uint32(18).string(message.description);
+    if (message.description !== undefined) {
+      ProductCreateRequestDescription.encode(message.description, writer.uint32(18).fork()).join();
     }
-    if (message.sku !== "") {
-      writer.uint32(26).string(message.sku);
+    if (message.details !== undefined) {
+      ProductCreateRequestDetails.encode(message.details, writer.uint32(26).fork()).join();
     }
-    if (message.price !== "") {
-      writer.uint32(34).string(message.price);
+    if (message.media !== undefined) {
+      ProductCreateRequestMedia.encode(message.media, writer.uint32(34).fork()).join();
     }
-    if (message.currencyCode !== "") {
-      writer.uint32(42).string(message.currencyCode);
+    if (message.offer !== undefined) {
+      ProductCreateRequestOffer.encode(message.offer, writer.uint32(42).fork()).join();
     }
-    for (const v of message.tags) {
-      ProductCreateTag.encode(v!, writer.uint32(50).fork()).join();
-    }
-    if (message.arEnabled !== false) {
-      writer.uint32(56).bool(message.arEnabled);
+    if (message.safety !== undefined) {
+      ProductCreateRequestSafety.encode(message.safety, writer.uint32(50).fork()).join();
     }
     return writer;
   },
@@ -149,6 +286,173 @@ export const ProductCreateRequest: MessageFns<ProductCreateRequest> = {
             break;
           }
 
+          message.identity = ProductCreateRequestIdentity.decode(reader, reader.uint32());
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.description = ProductCreateRequestDescription.decode(reader, reader.uint32());
+          continue;
+        }
+        case 3: {
+          if (tag !== 26) {
+            break;
+          }
+
+          message.details = ProductCreateRequestDetails.decode(reader, reader.uint32());
+          continue;
+        }
+        case 4: {
+          if (tag !== 34) {
+            break;
+          }
+
+          message.media = ProductCreateRequestMedia.decode(reader, reader.uint32());
+          continue;
+        }
+        case 5: {
+          if (tag !== 42) {
+            break;
+          }
+
+          message.offer = ProductCreateRequestOffer.decode(reader, reader.uint32());
+          continue;
+        }
+        case 6: {
+          if (tag !== 50) {
+            break;
+          }
+
+          message.safety = ProductCreateRequestSafety.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequest {
+    return {
+      identity: isSet(object.identity) ? ProductCreateRequestIdentity.fromJSON(object.identity) : undefined,
+      description: isSet(object.description) ? ProductCreateRequestDescription.fromJSON(object.description) : undefined,
+      details: isSet(object.details) ? ProductCreateRequestDetails.fromJSON(object.details) : undefined,
+      media: isSet(object.media) ? ProductCreateRequestMedia.fromJSON(object.media) : undefined,
+      offer: isSet(object.offer) ? ProductCreateRequestOffer.fromJSON(object.offer) : undefined,
+      safety: isSet(object.safety) ? ProductCreateRequestSafety.fromJSON(object.safety) : undefined,
+    };
+  },
+
+  toJSON(message: ProductCreateRequest): unknown {
+    const obj: any = {};
+    if (message.identity !== undefined) {
+      obj.identity = ProductCreateRequestIdentity.toJSON(message.identity);
+    }
+    if (message.description !== undefined) {
+      obj.description = ProductCreateRequestDescription.toJSON(message.description);
+    }
+    if (message.details !== undefined) {
+      obj.details = ProductCreateRequestDetails.toJSON(message.details);
+    }
+    if (message.media !== undefined) {
+      obj.media = ProductCreateRequestMedia.toJSON(message.media);
+    }
+    if (message.offer !== undefined) {
+      obj.offer = ProductCreateRequestOffer.toJSON(message.offer);
+    }
+    if (message.safety !== undefined) {
+      obj.safety = ProductCreateRequestSafety.toJSON(message.safety);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequest>, I>>(base?: I): ProductCreateRequest {
+    return ProductCreateRequest.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequest>, I>>(object: I): ProductCreateRequest {
+    const message = createBaseProductCreateRequest();
+    message.identity = (object.identity !== undefined && object.identity !== null)
+      ? ProductCreateRequestIdentity.fromPartial(object.identity)
+      : undefined;
+    message.description = (object.description !== undefined && object.description !== null)
+      ? ProductCreateRequestDescription.fromPartial(object.description)
+      : undefined;
+    message.details = (object.details !== undefined && object.details !== null)
+      ? ProductCreateRequestDetails.fromPartial(object.details)
+      : undefined;
+    message.media = (object.media !== undefined && object.media !== null)
+      ? ProductCreateRequestMedia.fromPartial(object.media)
+      : undefined;
+    message.offer = (object.offer !== undefined && object.offer !== null)
+      ? ProductCreateRequestOffer.fromPartial(object.offer)
+      : undefined;
+    message.safety = (object.safety !== undefined && object.safety !== null)
+      ? ProductCreateRequestSafety.fromPartial(object.safety)
+      : undefined;
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestIdentity(): ProductCreateRequestIdentity {
+  return {
+    title: "",
+    category: "",
+    subcategory: "",
+    hasVariations: false,
+    brandName: "",
+    noBrand: false,
+    productId: "",
+    noProductId: false,
+  };
+}
+
+export const ProductCreateRequestIdentity: MessageFns<ProductCreateRequestIdentity> = {
+  encode(message: ProductCreateRequestIdentity, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.title !== "") {
+      writer.uint32(10).string(message.title);
+    }
+    if (message.category !== "") {
+      writer.uint32(18).string(message.category);
+    }
+    if (message.subcategory !== "") {
+      writer.uint32(26).string(message.subcategory);
+    }
+    if (message.hasVariations !== false) {
+      writer.uint32(32).bool(message.hasVariations);
+    }
+    if (message.brandName !== "") {
+      writer.uint32(42).string(message.brandName);
+    }
+    if (message.noBrand !== false) {
+      writer.uint32(48).bool(message.noBrand);
+    }
+    if (message.productId !== "") {
+      writer.uint32(58).string(message.productId);
+    }
+    if (message.noProductId !== false) {
+      writer.uint32(64).bool(message.noProductId);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestIdentity {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestIdentity();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
           message.title = reader.string();
           continue;
         }
@@ -157,7 +461,7 @@ export const ProductCreateRequest: MessageFns<ProductCreateRequest> = {
             break;
           }
 
-          message.description = reader.string();
+          message.category = reader.string();
           continue;
         }
         case 3: {
@@ -165,7 +469,1532 @@ export const ProductCreateRequest: MessageFns<ProductCreateRequest> = {
             break;
           }
 
+          message.subcategory = reader.string();
+          continue;
+        }
+        case 4: {
+          if (tag !== 32) {
+            break;
+          }
+
+          message.hasVariations = reader.bool();
+          continue;
+        }
+        case 5: {
+          if (tag !== 42) {
+            break;
+          }
+
+          message.brandName = reader.string();
+          continue;
+        }
+        case 6: {
+          if (tag !== 48) {
+            break;
+          }
+
+          message.noBrand = reader.bool();
+          continue;
+        }
+        case 7: {
+          if (tag !== 58) {
+            break;
+          }
+
+          message.productId = reader.string();
+          continue;
+        }
+        case 8: {
+          if (tag !== 64) {
+            break;
+          }
+
+          message.noProductId = reader.bool();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequestIdentity {
+    return {
+      title: isSet(object.title) ? globalThis.String(object.title) : "",
+      category: isSet(object.category) ? globalThis.String(object.category) : "",
+      subcategory: isSet(object.subcategory) ? globalThis.String(object.subcategory) : "",
+      hasVariations: isSet(object.hasVariations) ? globalThis.Boolean(object.hasVariations) : false,
+      brandName: isSet(object.brandName) ? globalThis.String(object.brandName) : "",
+      noBrand: isSet(object.noBrand) ? globalThis.Boolean(object.noBrand) : false,
+      productId: isSet(object.productId) ? globalThis.String(object.productId) : "",
+      noProductId: isSet(object.noProductId) ? globalThis.Boolean(object.noProductId) : false,
+    };
+  },
+
+  toJSON(message: ProductCreateRequestIdentity): unknown {
+    const obj: any = {};
+    if (message.title !== "") {
+      obj.title = message.title;
+    }
+    if (message.category !== "") {
+      obj.category = message.category;
+    }
+    if (message.subcategory !== "") {
+      obj.subcategory = message.subcategory;
+    }
+    if (message.hasVariations !== false) {
+      obj.hasVariations = message.hasVariations;
+    }
+    if (message.brandName !== "") {
+      obj.brandName = message.brandName;
+    }
+    if (message.noBrand !== false) {
+      obj.noBrand = message.noBrand;
+    }
+    if (message.productId !== "") {
+      obj.productId = message.productId;
+    }
+    if (message.noProductId !== false) {
+      obj.noProductId = message.noProductId;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequestIdentity>, I>>(base?: I): ProductCreateRequestIdentity {
+    return ProductCreateRequestIdentity.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestIdentity>, I>>(object: I): ProductCreateRequestIdentity {
+    const message = createBaseProductCreateRequestIdentity();
+    message.title = object.title ?? "";
+    message.category = object.category ?? "";
+    message.subcategory = object.subcategory ?? "";
+    message.hasVariations = object.hasVariations ?? false;
+    message.brandName = object.brandName ?? "";
+    message.noBrand = object.noBrand ?? false;
+    message.productId = object.productId ?? "";
+    message.noProductId = object.noProductId ?? false;
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestDescription(): ProductCreateRequestDescription {
+  return { description: "", bulletPoints: [] };
+}
+
+export const ProductCreateRequestDescription: MessageFns<ProductCreateRequestDescription> = {
+  encode(message: ProductCreateRequestDescription, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.description !== "") {
+      writer.uint32(10).string(message.description);
+    }
+    for (const v of message.bulletPoints) {
+      ProductCreateRequestBulletPoint.encode(v!, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestDescription {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestDescription();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.description = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.bulletPoints.push(ProductCreateRequestBulletPoint.decode(reader, reader.uint32()));
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequestDescription {
+    return {
+      description: isSet(object.description) ? globalThis.String(object.description) : "",
+      bulletPoints: globalThis.Array.isArray(object?.bulletPoints)
+        ? object.bulletPoints.map((e: any) => ProductCreateRequestBulletPoint.fromJSON(e))
+        : [],
+    };
+  },
+
+  toJSON(message: ProductCreateRequestDescription): unknown {
+    const obj: any = {};
+    if (message.description !== "") {
+      obj.description = message.description;
+    }
+    if (message.bulletPoints?.length) {
+      obj.bulletPoints = message.bulletPoints.map((e) => ProductCreateRequestBulletPoint.toJSON(e));
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequestDescription>, I>>(base?: I): ProductCreateRequestDescription {
+    return ProductCreateRequestDescription.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestDescription>, I>>(
+    object: I,
+  ): ProductCreateRequestDescription {
+    const message = createBaseProductCreateRequestDescription();
+    message.description = object.description ?? "";
+    message.bulletPoints = object.bulletPoints?.map((e) => ProductCreateRequestBulletPoint.fromPartial(e)) || [];
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestBulletPoint(): ProductCreateRequestBulletPoint {
+  return { id: "", bulletPoint: "" };
+}
+
+export const ProductCreateRequestBulletPoint: MessageFns<ProductCreateRequestBulletPoint> = {
+  encode(message: ProductCreateRequestBulletPoint, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.id !== "") {
+      writer.uint32(10).string(message.id);
+    }
+    if (message.bulletPoint !== "") {
+      writer.uint32(18).string(message.bulletPoint);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestBulletPoint {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestBulletPoint();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.id = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.bulletPoint = reader.string();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequestBulletPoint {
+    return {
+      id: isSet(object.id) ? globalThis.String(object.id) : "",
+      bulletPoint: isSet(object.bulletPoint) ? globalThis.String(object.bulletPoint) : "",
+    };
+  },
+
+  toJSON(message: ProductCreateRequestBulletPoint): unknown {
+    const obj: any = {};
+    if (message.id !== "") {
+      obj.id = message.id;
+    }
+    if (message.bulletPoint !== "") {
+      obj.bulletPoint = message.bulletPoint;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequestBulletPoint>, I>>(base?: I): ProductCreateRequestBulletPoint {
+    return ProductCreateRequestBulletPoint.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestBulletPoint>, I>>(
+    object: I,
+  ): ProductCreateRequestBulletPoint {
+    const message = createBaseProductCreateRequestBulletPoint();
+    message.id = object.id ?? "";
+    message.bulletPoint = object.bulletPoint ?? "";
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestDetails(): ProductCreateRequestDetails {
+  return { withVariants: undefined, withoutVariants: undefined };
+}
+
+export const ProductCreateRequestDetails: MessageFns<ProductCreateRequestDetails> = {
+  encode(message: ProductCreateRequestDetails, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.withVariants !== undefined) {
+      ProductCreateRequestDetailsWithVariants.encode(message.withVariants, writer.uint32(10).fork()).join();
+    }
+    if (message.withoutVariants !== undefined) {
+      ProductCreateRequestDetailsWithoutVariants.encode(message.withoutVariants, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestDetails {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestDetails();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.withVariants = ProductCreateRequestDetailsWithVariants.decode(reader, reader.uint32());
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.withoutVariants = ProductCreateRequestDetailsWithoutVariants.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequestDetails {
+    return {
+      withVariants: isSet(object.withVariants)
+        ? ProductCreateRequestDetailsWithVariants.fromJSON(object.withVariants)
+        : undefined,
+      withoutVariants: isSet(object.withoutVariants)
+        ? ProductCreateRequestDetailsWithoutVariants.fromJSON(object.withoutVariants)
+        : undefined,
+    };
+  },
+
+  toJSON(message: ProductCreateRequestDetails): unknown {
+    const obj: any = {};
+    if (message.withVariants !== undefined) {
+      obj.withVariants = ProductCreateRequestDetailsWithVariants.toJSON(message.withVariants);
+    }
+    if (message.withoutVariants !== undefined) {
+      obj.withoutVariants = ProductCreateRequestDetailsWithoutVariants.toJSON(message.withoutVariants);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequestDetails>, I>>(base?: I): ProductCreateRequestDetails {
+    return ProductCreateRequestDetails.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestDetails>, I>>(object: I): ProductCreateRequestDetails {
+    const message = createBaseProductCreateRequestDetails();
+    message.withVariants = (object.withVariants !== undefined && object.withVariants !== null)
+      ? ProductCreateRequestDetailsWithVariants.fromPartial(object.withVariants)
+      : undefined;
+    message.withoutVariants = (object.withoutVariants !== undefined && object.withoutVariants !== null)
+      ? ProductCreateRequestDetailsWithoutVariants.fromPartial(object.withoutVariants)
+      : undefined;
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestDetailsWithVariants(): ProductCreateRequestDetailsWithVariants {
+  return { variants: [] };
+}
+
+export const ProductCreateRequestDetailsWithVariants: MessageFns<ProductCreateRequestDetailsWithVariants> = {
+  encode(message: ProductCreateRequestDetailsWithVariants, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    for (const v of message.variants) {
+      ProductCreateRequestDetailsVariantForm.encode(v!, writer.uint32(10).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestDetailsWithVariants {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestDetailsWithVariants();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.variants.push(ProductCreateRequestDetailsVariantForm.decode(reader, reader.uint32()));
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequestDetailsWithVariants {
+    return {
+      variants: globalThis.Array.isArray(object?.variants)
+        ? object.variants.map((e: any) => ProductCreateRequestDetailsVariantForm.fromJSON(e))
+        : [],
+    };
+  },
+
+  toJSON(message: ProductCreateRequestDetailsWithVariants): unknown {
+    const obj: any = {};
+    if (message.variants?.length) {
+      obj.variants = message.variants.map((e) => ProductCreateRequestDetailsVariantForm.toJSON(e));
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequestDetailsWithVariants>, I>>(
+    base?: I,
+  ): ProductCreateRequestDetailsWithVariants {
+    return ProductCreateRequestDetailsWithVariants.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestDetailsWithVariants>, I>>(
+    object: I,
+  ): ProductCreateRequestDetailsWithVariants {
+    const message = createBaseProductCreateRequestDetailsWithVariants();
+    message.variants = object.variants?.map((e) => ProductCreateRequestDetailsVariantForm.fromPartial(e)) || [];
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestDetailsVariantForm(): ProductCreateRequestDetailsVariantForm {
+  return { form: {} };
+}
+
+export const ProductCreateRequestDetailsVariantForm: MessageFns<ProductCreateRequestDetailsVariantForm> = {
+  encode(message: ProductCreateRequestDetailsVariantForm, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    Object.entries(message.form).forEach(([key, value]) => {
+      ProductCreateRequestDetailsVariantForm_FormEntry.encode({ key: key as any, value }, writer.uint32(10).fork())
+        .join();
+    });
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestDetailsVariantForm {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestDetailsVariantForm();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          const entry1 = ProductCreateRequestDetailsVariantForm_FormEntry.decode(reader, reader.uint32());
+          if (entry1.value !== undefined) {
+            message.form[entry1.key] = entry1.value;
+          }
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequestDetailsVariantForm {
+    return {
+      form: isObject(object.form)
+        ? Object.entries(object.form).reduce<{ [key: string]: Any }>((acc, [key, value]) => {
+          acc[key] = Any.fromJSON(value);
+          return acc;
+        }, {})
+        : {},
+    };
+  },
+
+  toJSON(message: ProductCreateRequestDetailsVariantForm): unknown {
+    const obj: any = {};
+    if (message.form) {
+      const entries = Object.entries(message.form);
+      if (entries.length > 0) {
+        obj.form = {};
+        entries.forEach(([k, v]) => {
+          obj.form[k] = Any.toJSON(v);
+        });
+      }
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequestDetailsVariantForm>, I>>(
+    base?: I,
+  ): ProductCreateRequestDetailsVariantForm {
+    return ProductCreateRequestDetailsVariantForm.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestDetailsVariantForm>, I>>(
+    object: I,
+  ): ProductCreateRequestDetailsVariantForm {
+    const message = createBaseProductCreateRequestDetailsVariantForm();
+    message.form = Object.entries(object.form ?? {}).reduce<{ [key: string]: Any }>((acc, [key, value]) => {
+      if (value !== undefined) {
+        acc[key] = Any.fromPartial(value);
+      }
+      return acc;
+    }, {});
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestDetailsVariantForm_FormEntry(): ProductCreateRequestDetailsVariantForm_FormEntry {
+  return { key: "", value: undefined };
+}
+
+export const ProductCreateRequestDetailsVariantForm_FormEntry: MessageFns<
+  ProductCreateRequestDetailsVariantForm_FormEntry
+> = {
+  encode(
+    message: ProductCreateRequestDetailsVariantForm_FormEntry,
+    writer: BinaryWriter = new BinaryWriter(),
+  ): BinaryWriter {
+    if (message.key !== "") {
+      writer.uint32(10).string(message.key);
+    }
+    if (message.value !== undefined) {
+      Any.encode(message.value, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestDetailsVariantForm_FormEntry {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestDetailsVariantForm_FormEntry();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.key = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.value = Any.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequestDetailsVariantForm_FormEntry {
+    return {
+      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      value: isSet(object.value) ? Any.fromJSON(object.value) : undefined,
+    };
+  },
+
+  toJSON(message: ProductCreateRequestDetailsVariantForm_FormEntry): unknown {
+    const obj: any = {};
+    if (message.key !== "") {
+      obj.key = message.key;
+    }
+    if (message.value !== undefined) {
+      obj.value = Any.toJSON(message.value);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequestDetailsVariantForm_FormEntry>, I>>(
+    base?: I,
+  ): ProductCreateRequestDetailsVariantForm_FormEntry {
+    return ProductCreateRequestDetailsVariantForm_FormEntry.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestDetailsVariantForm_FormEntry>, I>>(
+    object: I,
+  ): ProductCreateRequestDetailsVariantForm_FormEntry {
+    const message = createBaseProductCreateRequestDetailsVariantForm_FormEntry();
+    message.key = object.key ?? "";
+    message.value = (object.value !== undefined && object.value !== null) ? Any.fromPartial(object.value) : undefined;
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestDetailsWithoutVariants(): ProductCreateRequestDetailsWithoutVariants {
+  return { form: {} };
+}
+
+export const ProductCreateRequestDetailsWithoutVariants: MessageFns<ProductCreateRequestDetailsWithoutVariants> = {
+  encode(message: ProductCreateRequestDetailsWithoutVariants, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    Object.entries(message.form).forEach(([key, value]) => {
+      ProductCreateRequestDetailsWithoutVariants_FormEntry.encode({ key: key as any, value }, writer.uint32(10).fork())
+        .join();
+    });
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestDetailsWithoutVariants {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestDetailsWithoutVariants();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          const entry1 = ProductCreateRequestDetailsWithoutVariants_FormEntry.decode(reader, reader.uint32());
+          if (entry1.value !== undefined) {
+            message.form[entry1.key] = entry1.value;
+          }
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequestDetailsWithoutVariants {
+    return {
+      form: isObject(object.form)
+        ? Object.entries(object.form).reduce<{ [key: string]: Any }>((acc, [key, value]) => {
+          acc[key] = Any.fromJSON(value);
+          return acc;
+        }, {})
+        : {},
+    };
+  },
+
+  toJSON(message: ProductCreateRequestDetailsWithoutVariants): unknown {
+    const obj: any = {};
+    if (message.form) {
+      const entries = Object.entries(message.form);
+      if (entries.length > 0) {
+        obj.form = {};
+        entries.forEach(([k, v]) => {
+          obj.form[k] = Any.toJSON(v);
+        });
+      }
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequestDetailsWithoutVariants>, I>>(
+    base?: I,
+  ): ProductCreateRequestDetailsWithoutVariants {
+    return ProductCreateRequestDetailsWithoutVariants.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestDetailsWithoutVariants>, I>>(
+    object: I,
+  ): ProductCreateRequestDetailsWithoutVariants {
+    const message = createBaseProductCreateRequestDetailsWithoutVariants();
+    message.form = Object.entries(object.form ?? {}).reduce<{ [key: string]: Any }>((acc, [key, value]) => {
+      if (value !== undefined) {
+        acc[key] = Any.fromPartial(value);
+      }
+      return acc;
+    }, {});
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestDetailsWithoutVariants_FormEntry(): ProductCreateRequestDetailsWithoutVariants_FormEntry {
+  return { key: "", value: undefined };
+}
+
+export const ProductCreateRequestDetailsWithoutVariants_FormEntry: MessageFns<
+  ProductCreateRequestDetailsWithoutVariants_FormEntry
+> = {
+  encode(
+    message: ProductCreateRequestDetailsWithoutVariants_FormEntry,
+    writer: BinaryWriter = new BinaryWriter(),
+  ): BinaryWriter {
+    if (message.key !== "") {
+      writer.uint32(10).string(message.key);
+    }
+    if (message.value !== undefined) {
+      Any.encode(message.value, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestDetailsWithoutVariants_FormEntry {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestDetailsWithoutVariants_FormEntry();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.key = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.value = Any.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequestDetailsWithoutVariants_FormEntry {
+    return {
+      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      value: isSet(object.value) ? Any.fromJSON(object.value) : undefined,
+    };
+  },
+
+  toJSON(message: ProductCreateRequestDetailsWithoutVariants_FormEntry): unknown {
+    const obj: any = {};
+    if (message.key !== "") {
+      obj.key = message.key;
+    }
+    if (message.value !== undefined) {
+      obj.value = Any.toJSON(message.value);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequestDetailsWithoutVariants_FormEntry>, I>>(
+    base?: I,
+  ): ProductCreateRequestDetailsWithoutVariants_FormEntry {
+    return ProductCreateRequestDetailsWithoutVariants_FormEntry.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestDetailsWithoutVariants_FormEntry>, I>>(
+    object: I,
+  ): ProductCreateRequestDetailsWithoutVariants_FormEntry {
+    const message = createBaseProductCreateRequestDetailsWithoutVariants_FormEntry();
+    message.key = object.key ?? "";
+    message.value = (object.value !== undefined && object.value !== null) ? Any.fromPartial(object.value) : undefined;
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestMedia(): ProductCreateRequestMedia {
+  return { totalSize: "0", withVariants: undefined, withoutVariants: undefined };
+}
+
+export const ProductCreateRequestMedia: MessageFns<ProductCreateRequestMedia> = {
+  encode(message: ProductCreateRequestMedia, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.totalSize !== "0") {
+      writer.uint32(8).uint64(message.totalSize);
+    }
+    if (message.withVariants !== undefined) {
+      ProductCreateRequestMediaWithVariants.encode(message.withVariants, writer.uint32(18).fork()).join();
+    }
+    if (message.withoutVariants !== undefined) {
+      ProductCreateRequestMediaWithoutVariants.encode(message.withoutVariants, writer.uint32(26).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestMedia {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestMedia();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 8) {
+            break;
+          }
+
+          message.totalSize = reader.uint64().toString();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.withVariants = ProductCreateRequestMediaWithVariants.decode(reader, reader.uint32());
+          continue;
+        }
+        case 3: {
+          if (tag !== 26) {
+            break;
+          }
+
+          message.withoutVariants = ProductCreateRequestMediaWithoutVariants.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequestMedia {
+    return {
+      totalSize: isSet(object.totalSize) ? globalThis.String(object.totalSize) : "0",
+      withVariants: isSet(object.withVariants)
+        ? ProductCreateRequestMediaWithVariants.fromJSON(object.withVariants)
+        : undefined,
+      withoutVariants: isSet(object.withoutVariants)
+        ? ProductCreateRequestMediaWithoutVariants.fromJSON(object.withoutVariants)
+        : undefined,
+    };
+  },
+
+  toJSON(message: ProductCreateRequestMedia): unknown {
+    const obj: any = {};
+    if (message.totalSize !== "0") {
+      obj.totalSize = message.totalSize;
+    }
+    if (message.withVariants !== undefined) {
+      obj.withVariants = ProductCreateRequestMediaWithVariants.toJSON(message.withVariants);
+    }
+    if (message.withoutVariants !== undefined) {
+      obj.withoutVariants = ProductCreateRequestMediaWithoutVariants.toJSON(message.withoutVariants);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequestMedia>, I>>(base?: I): ProductCreateRequestMedia {
+    return ProductCreateRequestMedia.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestMedia>, I>>(object: I): ProductCreateRequestMedia {
+    const message = createBaseProductCreateRequestMedia();
+    message.totalSize = object.totalSize ?? "0";
+    message.withVariants = (object.withVariants !== undefined && object.withVariants !== null)
+      ? ProductCreateRequestMediaWithVariants.fromPartial(object.withVariants)
+      : undefined;
+    message.withoutVariants = (object.withoutVariants !== undefined && object.withoutVariants !== null)
+      ? ProductCreateRequestMediaWithoutVariants.fromPartial(object.withoutVariants)
+      : undefined;
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestMediaWithVariants(): ProductCreateRequestMediaWithVariants {
+  return { images: {}, videos: {} };
+}
+
+export const ProductCreateRequestMediaWithVariants: MessageFns<ProductCreateRequestMediaWithVariants> = {
+  encode(message: ProductCreateRequestMediaWithVariants, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    Object.entries(message.images).forEach(([key, value]) => {
+      ProductCreateRequestMediaWithVariants_ImagesEntry.encode({ key: key as any, value }, writer.uint32(10).fork())
+        .join();
+    });
+    Object.entries(message.videos).forEach(([key, value]) => {
+      ProductCreateRequestMediaWithVariants_VideosEntry.encode({ key: key as any, value }, writer.uint32(18).fork())
+        .join();
+    });
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestMediaWithVariants {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestMediaWithVariants();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          const entry1 = ProductCreateRequestMediaWithVariants_ImagesEntry.decode(reader, reader.uint32());
+          if (entry1.value !== undefined) {
+            message.images[entry1.key] = entry1.value;
+          }
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          const entry2 = ProductCreateRequestMediaWithVariants_VideosEntry.decode(reader, reader.uint32());
+          if (entry2.value !== undefined) {
+            message.videos[entry2.key] = entry2.value;
+          }
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequestMediaWithVariants {
+    return {
+      images: isObject(object.images)
+        ? Object.entries(object.images).reduce<{ [key: string]: Attachments }>((acc, [key, value]) => {
+          acc[key] = Attachments.fromJSON(value);
+          return acc;
+        }, {})
+        : {},
+      videos: isObject(object.videos)
+        ? Object.entries(object.videos).reduce<{ [key: string]: Attachments }>((acc, [key, value]) => {
+          acc[key] = Attachments.fromJSON(value);
+          return acc;
+        }, {})
+        : {},
+    };
+  },
+
+  toJSON(message: ProductCreateRequestMediaWithVariants): unknown {
+    const obj: any = {};
+    if (message.images) {
+      const entries = Object.entries(message.images);
+      if (entries.length > 0) {
+        obj.images = {};
+        entries.forEach(([k, v]) => {
+          obj.images[k] = Attachments.toJSON(v);
+        });
+      }
+    }
+    if (message.videos) {
+      const entries = Object.entries(message.videos);
+      if (entries.length > 0) {
+        obj.videos = {};
+        entries.forEach(([k, v]) => {
+          obj.videos[k] = Attachments.toJSON(v);
+        });
+      }
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequestMediaWithVariants>, I>>(
+    base?: I,
+  ): ProductCreateRequestMediaWithVariants {
+    return ProductCreateRequestMediaWithVariants.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestMediaWithVariants>, I>>(
+    object: I,
+  ): ProductCreateRequestMediaWithVariants {
+    const message = createBaseProductCreateRequestMediaWithVariants();
+    message.images = Object.entries(object.images ?? {}).reduce<{ [key: string]: Attachments }>((acc, [key, value]) => {
+      if (value !== undefined) {
+        acc[key] = Attachments.fromPartial(value);
+      }
+      return acc;
+    }, {});
+    message.videos = Object.entries(object.videos ?? {}).reduce<{ [key: string]: Attachments }>((acc, [key, value]) => {
+      if (value !== undefined) {
+        acc[key] = Attachments.fromPartial(value);
+      }
+      return acc;
+    }, {});
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestMediaWithVariants_ImagesEntry(): ProductCreateRequestMediaWithVariants_ImagesEntry {
+  return { key: "", value: undefined };
+}
+
+export const ProductCreateRequestMediaWithVariants_ImagesEntry: MessageFns<
+  ProductCreateRequestMediaWithVariants_ImagesEntry
+> = {
+  encode(
+    message: ProductCreateRequestMediaWithVariants_ImagesEntry,
+    writer: BinaryWriter = new BinaryWriter(),
+  ): BinaryWriter {
+    if (message.key !== "") {
+      writer.uint32(10).string(message.key);
+    }
+    if (message.value !== undefined) {
+      Attachments.encode(message.value, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestMediaWithVariants_ImagesEntry {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestMediaWithVariants_ImagesEntry();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.key = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.value = Attachments.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequestMediaWithVariants_ImagesEntry {
+    return {
+      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      value: isSet(object.value) ? Attachments.fromJSON(object.value) : undefined,
+    };
+  },
+
+  toJSON(message: ProductCreateRequestMediaWithVariants_ImagesEntry): unknown {
+    const obj: any = {};
+    if (message.key !== "") {
+      obj.key = message.key;
+    }
+    if (message.value !== undefined) {
+      obj.value = Attachments.toJSON(message.value);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequestMediaWithVariants_ImagesEntry>, I>>(
+    base?: I,
+  ): ProductCreateRequestMediaWithVariants_ImagesEntry {
+    return ProductCreateRequestMediaWithVariants_ImagesEntry.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestMediaWithVariants_ImagesEntry>, I>>(
+    object: I,
+  ): ProductCreateRequestMediaWithVariants_ImagesEntry {
+    const message = createBaseProductCreateRequestMediaWithVariants_ImagesEntry();
+    message.key = object.key ?? "";
+    message.value = (object.value !== undefined && object.value !== null)
+      ? Attachments.fromPartial(object.value)
+      : undefined;
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestMediaWithVariants_VideosEntry(): ProductCreateRequestMediaWithVariants_VideosEntry {
+  return { key: "", value: undefined };
+}
+
+export const ProductCreateRequestMediaWithVariants_VideosEntry: MessageFns<
+  ProductCreateRequestMediaWithVariants_VideosEntry
+> = {
+  encode(
+    message: ProductCreateRequestMediaWithVariants_VideosEntry,
+    writer: BinaryWriter = new BinaryWriter(),
+  ): BinaryWriter {
+    if (message.key !== "") {
+      writer.uint32(10).string(message.key);
+    }
+    if (message.value !== undefined) {
+      Attachments.encode(message.value, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestMediaWithVariants_VideosEntry {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestMediaWithVariants_VideosEntry();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.key = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.value = Attachments.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequestMediaWithVariants_VideosEntry {
+    return {
+      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      value: isSet(object.value) ? Attachments.fromJSON(object.value) : undefined,
+    };
+  },
+
+  toJSON(message: ProductCreateRequestMediaWithVariants_VideosEntry): unknown {
+    const obj: any = {};
+    if (message.key !== "") {
+      obj.key = message.key;
+    }
+    if (message.value !== undefined) {
+      obj.value = Attachments.toJSON(message.value);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequestMediaWithVariants_VideosEntry>, I>>(
+    base?: I,
+  ): ProductCreateRequestMediaWithVariants_VideosEntry {
+    return ProductCreateRequestMediaWithVariants_VideosEntry.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestMediaWithVariants_VideosEntry>, I>>(
+    object: I,
+  ): ProductCreateRequestMediaWithVariants_VideosEntry {
+    const message = createBaseProductCreateRequestMediaWithVariants_VideosEntry();
+    message.key = object.key ?? "";
+    message.value = (object.value !== undefined && object.value !== null)
+      ? Attachments.fromPartial(object.value)
+      : undefined;
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestMediaWithoutVariants(): ProductCreateRequestMediaWithoutVariants {
+  return { images: [], videos: [] };
+}
+
+export const ProductCreateRequestMediaWithoutVariants: MessageFns<ProductCreateRequestMediaWithoutVariants> = {
+  encode(message: ProductCreateRequestMediaWithoutVariants, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    for (const v of message.images) {
+      Attachment.encode(v!, writer.uint32(10).fork()).join();
+    }
+    for (const v of message.videos) {
+      Attachment.encode(v!, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestMediaWithoutVariants {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestMediaWithoutVariants();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.images.push(Attachment.decode(reader, reader.uint32()));
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.videos.push(Attachment.decode(reader, reader.uint32()));
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequestMediaWithoutVariants {
+    return {
+      images: globalThis.Array.isArray(object?.images) ? object.images.map((e: any) => Attachment.fromJSON(e)) : [],
+      videos: globalThis.Array.isArray(object?.videos) ? object.videos.map((e: any) => Attachment.fromJSON(e)) : [],
+    };
+  },
+
+  toJSON(message: ProductCreateRequestMediaWithoutVariants): unknown {
+    const obj: any = {};
+    if (message.images?.length) {
+      obj.images = message.images.map((e) => Attachment.toJSON(e));
+    }
+    if (message.videos?.length) {
+      obj.videos = message.videos.map((e) => Attachment.toJSON(e));
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequestMediaWithoutVariants>, I>>(
+    base?: I,
+  ): ProductCreateRequestMediaWithoutVariants {
+    return ProductCreateRequestMediaWithoutVariants.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestMediaWithoutVariants>, I>>(
+    object: I,
+  ): ProductCreateRequestMediaWithoutVariants {
+    const message = createBaseProductCreateRequestMediaWithoutVariants();
+    message.images = object.images?.map((e) => Attachment.fromPartial(e)) || [];
+    message.videos = object.videos?.map((e) => Attachment.fromPartial(e)) || [];
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestOffer(): ProductCreateRequestOffer {
+  return {
+    currency: "",
+    fulfillmentType: "",
+    processingTime: "0",
+    withVariants: undefined,
+    withoutVariants: undefined,
+  };
+}
+
+export const ProductCreateRequestOffer: MessageFns<ProductCreateRequestOffer> = {
+  encode(message: ProductCreateRequestOffer, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.currency !== "") {
+      writer.uint32(10).string(message.currency);
+    }
+    if (message.fulfillmentType !== "") {
+      writer.uint32(18).string(message.fulfillmentType);
+    }
+    if (message.processingTime !== "0") {
+      writer.uint32(24).uint64(message.processingTime);
+    }
+    if (message.withVariants !== undefined) {
+      ProductCreateRequestOfferWithVariants.encode(message.withVariants, writer.uint32(34).fork()).join();
+    }
+    if (message.withoutVariants !== undefined) {
+      ProductCreateRequestOfferPricing.encode(message.withoutVariants, writer.uint32(42).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestOffer {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestOffer();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.currency = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.fulfillmentType = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 24) {
+            break;
+          }
+
+          message.processingTime = reader.uint64().toString();
+          continue;
+        }
+        case 4: {
+          if (tag !== 34) {
+            break;
+          }
+
+          message.withVariants = ProductCreateRequestOfferWithVariants.decode(reader, reader.uint32());
+          continue;
+        }
+        case 5: {
+          if (tag !== 42) {
+            break;
+          }
+
+          message.withoutVariants = ProductCreateRequestOfferPricing.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequestOffer {
+    return {
+      currency: isSet(object.currency) ? globalThis.String(object.currency) : "",
+      fulfillmentType: isSet(object.fulfillmentType) ? globalThis.String(object.fulfillmentType) : "",
+      processingTime: isSet(object.processingTime) ? globalThis.String(object.processingTime) : "0",
+      withVariants: isSet(object.withVariants)
+        ? ProductCreateRequestOfferWithVariants.fromJSON(object.withVariants)
+        : undefined,
+      withoutVariants: isSet(object.withoutVariants)
+        ? ProductCreateRequestOfferPricing.fromJSON(object.withoutVariants)
+        : undefined,
+    };
+  },
+
+  toJSON(message: ProductCreateRequestOffer): unknown {
+    const obj: any = {};
+    if (message.currency !== "") {
+      obj.currency = message.currency;
+    }
+    if (message.fulfillmentType !== "") {
+      obj.fulfillmentType = message.fulfillmentType;
+    }
+    if (message.processingTime !== "0") {
+      obj.processingTime = message.processingTime;
+    }
+    if (message.withVariants !== undefined) {
+      obj.withVariants = ProductCreateRequestOfferWithVariants.toJSON(message.withVariants);
+    }
+    if (message.withoutVariants !== undefined) {
+      obj.withoutVariants = ProductCreateRequestOfferPricing.toJSON(message.withoutVariants);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequestOffer>, I>>(base?: I): ProductCreateRequestOffer {
+    return ProductCreateRequestOffer.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestOffer>, I>>(object: I): ProductCreateRequestOffer {
+    const message = createBaseProductCreateRequestOffer();
+    message.currency = object.currency ?? "";
+    message.fulfillmentType = object.fulfillmentType ?? "";
+    message.processingTime = object.processingTime ?? "0";
+    message.withVariants = (object.withVariants !== undefined && object.withVariants !== null)
+      ? ProductCreateRequestOfferWithVariants.fromPartial(object.withVariants)
+      : undefined;
+    message.withoutVariants = (object.withoutVariants !== undefined && object.withoutVariants !== null)
+      ? ProductCreateRequestOfferPricing.fromPartial(object.withoutVariants)
+      : undefined;
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestOfferWithVariants(): ProductCreateRequestOfferWithVariants {
+  return { variants: [] };
+}
+
+export const ProductCreateRequestOfferWithVariants: MessageFns<ProductCreateRequestOfferWithVariants> = {
+  encode(message: ProductCreateRequestOfferWithVariants, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    for (const v of message.variants) {
+      ProductCreateRequestOfferVariant.encode(v!, writer.uint32(10).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestOfferWithVariants {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestOfferWithVariants();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.variants.push(ProductCreateRequestOfferVariant.decode(reader, reader.uint32()));
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequestOfferWithVariants {
+    return {
+      variants: globalThis.Array.isArray(object?.variants)
+        ? object.variants.map((e: any) => ProductCreateRequestOfferVariant.fromJSON(e))
+        : [],
+    };
+  },
+
+  toJSON(message: ProductCreateRequestOfferWithVariants): unknown {
+    const obj: any = {};
+    if (message.variants?.length) {
+      obj.variants = message.variants.map((e) => ProductCreateRequestOfferVariant.toJSON(e));
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequestOfferWithVariants>, I>>(
+    base?: I,
+  ): ProductCreateRequestOfferWithVariants {
+    return ProductCreateRequestOfferWithVariants.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestOfferWithVariants>, I>>(
+    object: I,
+  ): ProductCreateRequestOfferWithVariants {
+    const message = createBaseProductCreateRequestOfferWithVariants();
+    message.variants = object.variants?.map((e) => ProductCreateRequestOfferVariant.fromPartial(e)) || [];
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestOfferVariant(): ProductCreateRequestOfferVariant {
+  return {
+    id: "",
+    sku: "",
+    quantity: "0",
+    price: "",
+    offeringCondition: "",
+    conditionNote: undefined,
+    listPrice: undefined,
+    hasSalePrice: undefined,
+    salePrice: undefined,
+    salePriceStart: undefined,
+    salePriceEnd: undefined,
+    hasMinimumOrders: false,
+    minimumOrders: [],
+  };
+}
+
+export const ProductCreateRequestOfferVariant: MessageFns<ProductCreateRequestOfferVariant> = {
+  encode(message: ProductCreateRequestOfferVariant, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.id !== "") {
+      writer.uint32(10).string(message.id);
+    }
+    if (message.sku !== "") {
+      writer.uint32(18).string(message.sku);
+    }
+    if (message.quantity !== "0") {
+      writer.uint32(24).uint64(message.quantity);
+    }
+    if (message.price !== "") {
+      writer.uint32(34).string(message.price);
+    }
+    if (message.offeringCondition !== "") {
+      writer.uint32(42).string(message.offeringCondition);
+    }
+    if (message.conditionNote !== undefined) {
+      writer.uint32(50).string(message.conditionNote);
+    }
+    if (message.listPrice !== undefined) {
+      writer.uint32(58).string(message.listPrice);
+    }
+    if (message.hasSalePrice !== undefined) {
+      writer.uint32(64).bool(message.hasSalePrice);
+    }
+    if (message.salePrice !== undefined) {
+      writer.uint32(74).string(message.salePrice);
+    }
+    if (message.salePriceStart !== undefined) {
+      writer.uint32(82).string(message.salePriceStart);
+    }
+    if (message.salePriceEnd !== undefined) {
+      writer.uint32(90).string(message.salePriceEnd);
+    }
+    if (message.hasMinimumOrders !== false) {
+      writer.uint32(96).bool(message.hasMinimumOrders);
+    }
+    for (const v of message.minimumOrders) {
+      ProductCreateRequestOfferMinimumOrder.encode(v!, writer.uint32(106).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestOfferVariant {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestOfferVariant();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.id = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
           message.sku = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 24) {
+            break;
+          }
+
+          message.quantity = reader.uint64().toString();
           continue;
         }
         case 4: {
@@ -181,7 +2010,7 @@ export const ProductCreateRequest: MessageFns<ProductCreateRequest> = {
             break;
           }
 
-          message.currencyCode = reader.string();
+          message.offeringCondition = reader.string();
           continue;
         }
         case 6: {
@@ -189,15 +2018,63 @@ export const ProductCreateRequest: MessageFns<ProductCreateRequest> = {
             break;
           }
 
-          message.tags.push(ProductCreateTag.decode(reader, reader.uint32()));
+          message.conditionNote = reader.string();
           continue;
         }
         case 7: {
-          if (tag !== 56) {
+          if (tag !== 58) {
             break;
           }
 
-          message.arEnabled = reader.bool();
+          message.listPrice = reader.string();
+          continue;
+        }
+        case 8: {
+          if (tag !== 64) {
+            break;
+          }
+
+          message.hasSalePrice = reader.bool();
+          continue;
+        }
+        case 9: {
+          if (tag !== 74) {
+            break;
+          }
+
+          message.salePrice = reader.string();
+          continue;
+        }
+        case 10: {
+          if (tag !== 82) {
+            break;
+          }
+
+          message.salePriceStart = reader.string();
+          continue;
+        }
+        case 11: {
+          if (tag !== 90) {
+            break;
+          }
+
+          message.salePriceEnd = reader.string();
+          continue;
+        }
+        case 12: {
+          if (tag !== 96) {
+            break;
+          }
+
+          message.hasMinimumOrders = reader.bool();
+          continue;
+        }
+        case 13: {
+          if (tag !== 106) {
+            break;
+          }
+
+          message.minimumOrders.push(ProductCreateRequestOfferMinimumOrder.decode(reader, reader.uint32()));
           continue;
         }
       }
@@ -209,56 +2086,620 @@ export const ProductCreateRequest: MessageFns<ProductCreateRequest> = {
     return message;
   },
 
-  fromJSON(object: any): ProductCreateRequest {
+  fromJSON(object: any): ProductCreateRequestOfferVariant {
     return {
-      title: isSet(object.title) ? globalThis.String(object.title) : "",
-      description: isSet(object.description) ? globalThis.String(object.description) : "",
+      id: isSet(object.id) ? globalThis.String(object.id) : "",
       sku: isSet(object.sku) ? globalThis.String(object.sku) : "",
+      quantity: isSet(object.quantity) ? globalThis.String(object.quantity) : "0",
       price: isSet(object.price) ? globalThis.String(object.price) : "",
-      currencyCode: isSet(object.currencyCode) ? globalThis.String(object.currencyCode) : "",
-      tags: globalThis.Array.isArray(object?.tags) ? object.tags.map((e: any) => ProductCreateTag.fromJSON(e)) : [],
-      arEnabled: isSet(object.arEnabled) ? globalThis.Boolean(object.arEnabled) : false,
+      offeringCondition: isSet(object.offeringCondition) ? globalThis.String(object.offeringCondition) : "",
+      conditionNote: isSet(object.conditionNote) ? globalThis.String(object.conditionNote) : undefined,
+      listPrice: isSet(object.listPrice) ? globalThis.String(object.listPrice) : undefined,
+      hasSalePrice: isSet(object.hasSalePrice) ? globalThis.Boolean(object.hasSalePrice) : undefined,
+      salePrice: isSet(object.salePrice) ? globalThis.String(object.salePrice) : undefined,
+      salePriceStart: isSet(object.salePriceStart) ? globalThis.String(object.salePriceStart) : undefined,
+      salePriceEnd: isSet(object.salePriceEnd) ? globalThis.String(object.salePriceEnd) : undefined,
+      hasMinimumOrders: isSet(object.hasMinimumOrders) ? globalThis.Boolean(object.hasMinimumOrders) : false,
+      minimumOrders: globalThis.Array.isArray(object?.minimumOrders)
+        ? object.minimumOrders.map((e: any) => ProductCreateRequestOfferMinimumOrder.fromJSON(e))
+        : [],
     };
   },
 
-  toJSON(message: ProductCreateRequest): unknown {
+  toJSON(message: ProductCreateRequestOfferVariant): unknown {
     const obj: any = {};
-    if (message.title !== "") {
-      obj.title = message.title;
-    }
-    if (message.description !== "") {
-      obj.description = message.description;
+    if (message.id !== "") {
+      obj.id = message.id;
     }
     if (message.sku !== "") {
       obj.sku = message.sku;
     }
+    if (message.quantity !== "0") {
+      obj.quantity = message.quantity;
+    }
     if (message.price !== "") {
       obj.price = message.price;
     }
-    if (message.currencyCode !== "") {
-      obj.currencyCode = message.currencyCode;
+    if (message.offeringCondition !== "") {
+      obj.offeringCondition = message.offeringCondition;
     }
-    if (message.tags?.length) {
-      obj.tags = message.tags.map((e) => ProductCreateTag.toJSON(e));
+    if (message.conditionNote !== undefined) {
+      obj.conditionNote = message.conditionNote;
     }
-    if (message.arEnabled !== false) {
-      obj.arEnabled = message.arEnabled;
+    if (message.listPrice !== undefined) {
+      obj.listPrice = message.listPrice;
+    }
+    if (message.hasSalePrice !== undefined) {
+      obj.hasSalePrice = message.hasSalePrice;
+    }
+    if (message.salePrice !== undefined) {
+      obj.salePrice = message.salePrice;
+    }
+    if (message.salePriceStart !== undefined) {
+      obj.salePriceStart = message.salePriceStart;
+    }
+    if (message.salePriceEnd !== undefined) {
+      obj.salePriceEnd = message.salePriceEnd;
+    }
+    if (message.hasMinimumOrders !== false) {
+      obj.hasMinimumOrders = message.hasMinimumOrders;
+    }
+    if (message.minimumOrders?.length) {
+      obj.minimumOrders = message.minimumOrders.map((e) => ProductCreateRequestOfferMinimumOrder.toJSON(e));
     }
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<ProductCreateRequest>, I>>(base?: I): ProductCreateRequest {
-    return ProductCreateRequest.fromPartial(base ?? ({} as any));
+  create<I extends Exact<DeepPartial<ProductCreateRequestOfferVariant>, I>>(
+    base?: I,
+  ): ProductCreateRequestOfferVariant {
+    return ProductCreateRequestOfferVariant.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<ProductCreateRequest>, I>>(object: I): ProductCreateRequest {
-    const message = createBaseProductCreateRequest();
-    message.title = object.title ?? "";
-    message.description = object.description ?? "";
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestOfferVariant>, I>>(
+    object: I,
+  ): ProductCreateRequestOfferVariant {
+    const message = createBaseProductCreateRequestOfferVariant();
+    message.id = object.id ?? "";
     message.sku = object.sku ?? "";
+    message.quantity = object.quantity ?? "0";
     message.price = object.price ?? "";
-    message.currencyCode = object.currencyCode ?? "";
-    message.tags = object.tags?.map((e) => ProductCreateTag.fromPartial(e)) || [];
-    message.arEnabled = object.arEnabled ?? false;
+    message.offeringCondition = object.offeringCondition ?? "";
+    message.conditionNote = object.conditionNote ?? undefined;
+    message.listPrice = object.listPrice ?? undefined;
+    message.hasSalePrice = object.hasSalePrice ?? undefined;
+    message.salePrice = object.salePrice ?? undefined;
+    message.salePriceStart = object.salePriceStart ?? undefined;
+    message.salePriceEnd = object.salePriceEnd ?? undefined;
+    message.hasMinimumOrders = object.hasMinimumOrders ?? false;
+    message.minimumOrders = object.minimumOrders?.map((e) => ProductCreateRequestOfferMinimumOrder.fromPartial(e)) ||
+      [];
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestOfferPricing(): ProductCreateRequestOfferPricing {
+  return {
+    sku: "",
+    quantity: "0",
+    price: "",
+    offeringCondition: "",
+    conditionNote: undefined,
+    listPrice: undefined,
+    hasSalePrice: undefined,
+    salePrice: undefined,
+    salePriceStart: undefined,
+    salePriceEnd: undefined,
+    hasMinimumOrders: false,
+    minimumOrders: [],
+  };
+}
+
+export const ProductCreateRequestOfferPricing: MessageFns<ProductCreateRequestOfferPricing> = {
+  encode(message: ProductCreateRequestOfferPricing, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.sku !== "") {
+      writer.uint32(10).string(message.sku);
+    }
+    if (message.quantity !== "0") {
+      writer.uint32(16).uint64(message.quantity);
+    }
+    if (message.price !== "") {
+      writer.uint32(26).string(message.price);
+    }
+    if (message.offeringCondition !== "") {
+      writer.uint32(34).string(message.offeringCondition);
+    }
+    if (message.conditionNote !== undefined) {
+      writer.uint32(42).string(message.conditionNote);
+    }
+    if (message.listPrice !== undefined) {
+      writer.uint32(50).string(message.listPrice);
+    }
+    if (message.hasSalePrice !== undefined) {
+      writer.uint32(56).bool(message.hasSalePrice);
+    }
+    if (message.salePrice !== undefined) {
+      writer.uint32(66).string(message.salePrice);
+    }
+    if (message.salePriceStart !== undefined) {
+      writer.uint32(74).string(message.salePriceStart);
+    }
+    if (message.salePriceEnd !== undefined) {
+      writer.uint32(82).string(message.salePriceEnd);
+    }
+    if (message.hasMinimumOrders !== false) {
+      writer.uint32(88).bool(message.hasMinimumOrders);
+    }
+    for (const v of message.minimumOrders) {
+      ProductCreateRequestOfferMinimumOrder.encode(v!, writer.uint32(98).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestOfferPricing {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestOfferPricing();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.sku = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 16) {
+            break;
+          }
+
+          message.quantity = reader.uint64().toString();
+          continue;
+        }
+        case 3: {
+          if (tag !== 26) {
+            break;
+          }
+
+          message.price = reader.string();
+          continue;
+        }
+        case 4: {
+          if (tag !== 34) {
+            break;
+          }
+
+          message.offeringCondition = reader.string();
+          continue;
+        }
+        case 5: {
+          if (tag !== 42) {
+            break;
+          }
+
+          message.conditionNote = reader.string();
+          continue;
+        }
+        case 6: {
+          if (tag !== 50) {
+            break;
+          }
+
+          message.listPrice = reader.string();
+          continue;
+        }
+        case 7: {
+          if (tag !== 56) {
+            break;
+          }
+
+          message.hasSalePrice = reader.bool();
+          continue;
+        }
+        case 8: {
+          if (tag !== 66) {
+            break;
+          }
+
+          message.salePrice = reader.string();
+          continue;
+        }
+        case 9: {
+          if (tag !== 74) {
+            break;
+          }
+
+          message.salePriceStart = reader.string();
+          continue;
+        }
+        case 10: {
+          if (tag !== 82) {
+            break;
+          }
+
+          message.salePriceEnd = reader.string();
+          continue;
+        }
+        case 11: {
+          if (tag !== 88) {
+            break;
+          }
+
+          message.hasMinimumOrders = reader.bool();
+          continue;
+        }
+        case 12: {
+          if (tag !== 98) {
+            break;
+          }
+
+          message.minimumOrders.push(ProductCreateRequestOfferMinimumOrder.decode(reader, reader.uint32()));
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequestOfferPricing {
+    return {
+      sku: isSet(object.sku) ? globalThis.String(object.sku) : "",
+      quantity: isSet(object.quantity) ? globalThis.String(object.quantity) : "0",
+      price: isSet(object.price) ? globalThis.String(object.price) : "",
+      offeringCondition: isSet(object.offeringCondition) ? globalThis.String(object.offeringCondition) : "",
+      conditionNote: isSet(object.conditionNote) ? globalThis.String(object.conditionNote) : undefined,
+      listPrice: isSet(object.listPrice) ? globalThis.String(object.listPrice) : undefined,
+      hasSalePrice: isSet(object.hasSalePrice) ? globalThis.Boolean(object.hasSalePrice) : undefined,
+      salePrice: isSet(object.salePrice) ? globalThis.String(object.salePrice) : undefined,
+      salePriceStart: isSet(object.salePriceStart) ? globalThis.String(object.salePriceStart) : undefined,
+      salePriceEnd: isSet(object.salePriceEnd) ? globalThis.String(object.salePriceEnd) : undefined,
+      hasMinimumOrders: isSet(object.hasMinimumOrders) ? globalThis.Boolean(object.hasMinimumOrders) : false,
+      minimumOrders: globalThis.Array.isArray(object?.minimumOrders)
+        ? object.minimumOrders.map((e: any) => ProductCreateRequestOfferMinimumOrder.fromJSON(e))
+        : [],
+    };
+  },
+
+  toJSON(message: ProductCreateRequestOfferPricing): unknown {
+    const obj: any = {};
+    if (message.sku !== "") {
+      obj.sku = message.sku;
+    }
+    if (message.quantity !== "0") {
+      obj.quantity = message.quantity;
+    }
+    if (message.price !== "") {
+      obj.price = message.price;
+    }
+    if (message.offeringCondition !== "") {
+      obj.offeringCondition = message.offeringCondition;
+    }
+    if (message.conditionNote !== undefined) {
+      obj.conditionNote = message.conditionNote;
+    }
+    if (message.listPrice !== undefined) {
+      obj.listPrice = message.listPrice;
+    }
+    if (message.hasSalePrice !== undefined) {
+      obj.hasSalePrice = message.hasSalePrice;
+    }
+    if (message.salePrice !== undefined) {
+      obj.salePrice = message.salePrice;
+    }
+    if (message.salePriceStart !== undefined) {
+      obj.salePriceStart = message.salePriceStart;
+    }
+    if (message.salePriceEnd !== undefined) {
+      obj.salePriceEnd = message.salePriceEnd;
+    }
+    if (message.hasMinimumOrders !== false) {
+      obj.hasMinimumOrders = message.hasMinimumOrders;
+    }
+    if (message.minimumOrders?.length) {
+      obj.minimumOrders = message.minimumOrders.map((e) => ProductCreateRequestOfferMinimumOrder.toJSON(e));
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequestOfferPricing>, I>>(
+    base?: I,
+  ): ProductCreateRequestOfferPricing {
+    return ProductCreateRequestOfferPricing.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestOfferPricing>, I>>(
+    object: I,
+  ): ProductCreateRequestOfferPricing {
+    const message = createBaseProductCreateRequestOfferPricing();
+    message.sku = object.sku ?? "";
+    message.quantity = object.quantity ?? "0";
+    message.price = object.price ?? "";
+    message.offeringCondition = object.offeringCondition ?? "";
+    message.conditionNote = object.conditionNote ?? undefined;
+    message.listPrice = object.listPrice ?? undefined;
+    message.hasSalePrice = object.hasSalePrice ?? undefined;
+    message.salePrice = object.salePrice ?? undefined;
+    message.salePriceStart = object.salePriceStart ?? undefined;
+    message.salePriceEnd = object.salePriceEnd ?? undefined;
+    message.hasMinimumOrders = object.hasMinimumOrders ?? false;
+    message.minimumOrders = object.minimumOrders?.map((e) => ProductCreateRequestOfferMinimumOrder.fromPartial(e)) ||
+      [];
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestOfferMinimumOrder(): ProductCreateRequestOfferMinimumOrder {
+  return { id: "", price: "", quantity: "0" };
+}
+
+export const ProductCreateRequestOfferMinimumOrder: MessageFns<ProductCreateRequestOfferMinimumOrder> = {
+  encode(message: ProductCreateRequestOfferMinimumOrder, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.id !== "") {
+      writer.uint32(10).string(message.id);
+    }
+    if (message.price !== "") {
+      writer.uint32(18).string(message.price);
+    }
+    if (message.quantity !== "0") {
+      writer.uint32(24).uint64(message.quantity);
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestOfferMinimumOrder {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestOfferMinimumOrder();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.id = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.price = reader.string();
+          continue;
+        }
+        case 3: {
+          if (tag !== 24) {
+            break;
+          }
+
+          message.quantity = reader.uint64().toString();
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequestOfferMinimumOrder {
+    return {
+      id: isSet(object.id) ? globalThis.String(object.id) : "",
+      price: isSet(object.price) ? globalThis.String(object.price) : "",
+      quantity: isSet(object.quantity) ? globalThis.String(object.quantity) : "0",
+    };
+  },
+
+  toJSON(message: ProductCreateRequestOfferMinimumOrder): unknown {
+    const obj: any = {};
+    if (message.id !== "") {
+      obj.id = message.id;
+    }
+    if (message.price !== "") {
+      obj.price = message.price;
+    }
+    if (message.quantity !== "0") {
+      obj.quantity = message.quantity;
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequestOfferMinimumOrder>, I>>(
+    base?: I,
+  ): ProductCreateRequestOfferMinimumOrder {
+    return ProductCreateRequestOfferMinimumOrder.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestOfferMinimumOrder>, I>>(
+    object: I,
+  ): ProductCreateRequestOfferMinimumOrder {
+    const message = createBaseProductCreateRequestOfferMinimumOrder();
+    message.id = object.id ?? "";
+    message.price = object.price ?? "";
+    message.quantity = object.quantity ?? "0";
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestSafety(): ProductCreateRequestSafety {
+  return { attestation: false, form: {} };
+}
+
+export const ProductCreateRequestSafety: MessageFns<ProductCreateRequestSafety> = {
+  encode(message: ProductCreateRequestSafety, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.attestation !== false) {
+      writer.uint32(8).bool(message.attestation);
+    }
+    Object.entries(message.form).forEach(([key, value]) => {
+      ProductCreateRequestSafety_FormEntry.encode({ key: key as any, value }, writer.uint32(18).fork()).join();
+    });
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestSafety {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestSafety();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 8) {
+            break;
+          }
+
+          message.attestation = reader.bool();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          const entry2 = ProductCreateRequestSafety_FormEntry.decode(reader, reader.uint32());
+          if (entry2.value !== undefined) {
+            message.form[entry2.key] = entry2.value;
+          }
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequestSafety {
+    return {
+      attestation: isSet(object.attestation) ? globalThis.Boolean(object.attestation) : false,
+      form: isObject(object.form)
+        ? Object.entries(object.form).reduce<{ [key: string]: Any }>((acc, [key, value]) => {
+          acc[key] = Any.fromJSON(value);
+          return acc;
+        }, {})
+        : {},
+    };
+  },
+
+  toJSON(message: ProductCreateRequestSafety): unknown {
+    const obj: any = {};
+    if (message.attestation !== false) {
+      obj.attestation = message.attestation;
+    }
+    if (message.form) {
+      const entries = Object.entries(message.form);
+      if (entries.length > 0) {
+        obj.form = {};
+        entries.forEach(([k, v]) => {
+          obj.form[k] = Any.toJSON(v);
+        });
+      }
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequestSafety>, I>>(base?: I): ProductCreateRequestSafety {
+    return ProductCreateRequestSafety.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestSafety>, I>>(object: I): ProductCreateRequestSafety {
+    const message = createBaseProductCreateRequestSafety();
+    message.attestation = object.attestation ?? false;
+    message.form = Object.entries(object.form ?? {}).reduce<{ [key: string]: Any }>((acc, [key, value]) => {
+      if (value !== undefined) {
+        acc[key] = Any.fromPartial(value);
+      }
+      return acc;
+    }, {});
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestSafety_FormEntry(): ProductCreateRequestSafety_FormEntry {
+  return { key: "", value: undefined };
+}
+
+export const ProductCreateRequestSafety_FormEntry: MessageFns<ProductCreateRequestSafety_FormEntry> = {
+  encode(message: ProductCreateRequestSafety_FormEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.key !== "") {
+      writer.uint32(10).string(message.key);
+    }
+    if (message.value !== undefined) {
+      Any.encode(message.value, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestSafety_FormEntry {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestSafety_FormEntry();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.key = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.value = Any.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequestSafety_FormEntry {
+    return {
+      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      value: isSet(object.value) ? Any.fromJSON(object.value) : undefined,
+    };
+  },
+
+  toJSON(message: ProductCreateRequestSafety_FormEntry): unknown {
+    const obj: any = {};
+    if (message.key !== "") {
+      obj.key = message.key;
+    }
+    if (message.value !== undefined) {
+      obj.value = Any.toJSON(message.value);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequestSafety_FormEntry>, I>>(
+    base?: I,
+  ): ProductCreateRequestSafety_FormEntry {
+    return ProductCreateRequestSafety_FormEntry.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestSafety_FormEntry>, I>>(
+    object: I,
+  ): ProductCreateRequestSafety_FormEntry {
+    const message = createBaseProductCreateRequestSafety_FormEntry();
+    message.key = object.key ?? "";
+    message.value = (object.value !== undefined && object.value !== null) ? Any.fromPartial(object.value) : undefined;
     return message;
   },
 };
@@ -354,6 +2795,10 @@ export type DeepPartial<T> = T extends Builtin ? T
 type KeysOfUnion<T> = T extends T ? keyof T : never;
 export type Exact<P, I extends P> = P extends Builtin ? P
   : P & { [K in keyof P]: Exact<P[K], I[K]> } & { [K in Exclude<keyof I, KeysOfUnion<P>>]: never };
+
+function isObject(value: any): boolean {
+  return typeof value === "object" && value !== null;
+}
 
 function isSet(value: any): boolean {
   return value !== null && value !== undefined;

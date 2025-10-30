@@ -95,6 +95,7 @@ type Attachment struct {
 	Metadata        *Struct                `protobuf:"bytes,9,opt,name=metadata,proto3" json:"metadata,omitempty"` // arbitrary JSON-like object
 	Data            []byte                 `protobuf:"bytes,10,opt,name=data,proto3" json:"data,omitempty"`        // usually set by the backend
 	Mime            string                 `protobuf:"bytes,11,opt,name=mime,proto3" json:"mime,omitempty"`        // usually set by the backend
+	Checksum        *string                `protobuf:"bytes,12,opt,name=checksum,proto3,oneof" json:"checksum,omitempty"`
 	unknownFields   protoimpl.UnknownFields
 	sizeCache       protoimpl.SizeCache
 }
@@ -206,6 +207,57 @@ func (x *Attachment) GetMime() string {
 	return ""
 }
 
+func (x *Attachment) GetChecksum() string {
+	if x != nil && x.Checksum != nil {
+		return *x.Checksum
+	}
+	return ""
+}
+
+type Attachments struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Attachments   []*Attachment          `protobuf:"bytes,1,rep,name=attachments,proto3" json:"attachments,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Attachments) Reset() {
+	*x = Attachments{}
+	mi := &file_shared_v1_attachment_proto_msgTypes[1]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Attachments) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Attachments) ProtoMessage() {}
+
+func (x *Attachments) ProtoReflect() protoreflect.Message {
+	mi := &file_shared_v1_attachment_proto_msgTypes[1]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Attachments.ProtoReflect.Descriptor instead.
+func (*Attachments) Descriptor() ([]byte, []int) {
+	return file_shared_v1_attachment_proto_rawDescGZIP(), []int{1}
+}
+
+func (x *Attachments) GetAttachments() []*Attachment {
+	if x != nil {
+		return x.Attachments
+	}
+	return nil
+}
+
 type Crop struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	X             float32                `protobuf:"fixed32,1,opt,name=x,proto3" json:"x,omitempty"`
@@ -219,7 +271,7 @@ type Crop struct {
 
 func (x *Crop) Reset() {
 	*x = Crop{}
-	mi := &file_shared_v1_attachment_proto_msgTypes[1]
+	mi := &file_shared_v1_attachment_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -231,7 +283,7 @@ func (x *Crop) String() string {
 func (*Crop) ProtoMessage() {}
 
 func (x *Crop) ProtoReflect() protoreflect.Message {
-	mi := &file_shared_v1_attachment_proto_msgTypes[1]
+	mi := &file_shared_v1_attachment_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -244,7 +296,7 @@ func (x *Crop) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Crop.ProtoReflect.Descriptor instead.
 func (*Crop) Descriptor() ([]byte, []int) {
-	return file_shared_v1_attachment_proto_rawDescGZIP(), []int{1}
+	return file_shared_v1_attachment_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *Crop) GetX() float32 {
@@ -294,7 +346,7 @@ type AttachmentError struct {
 
 func (x *AttachmentError) Reset() {
 	*x = AttachmentError{}
-	mi := &file_shared_v1_attachment_proto_msgTypes[2]
+	mi := &file_shared_v1_attachment_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -306,7 +358,7 @@ func (x *AttachmentError) String() string {
 func (*AttachmentError) ProtoMessage() {}
 
 func (x *AttachmentError) ProtoReflect() protoreflect.Message {
-	mi := &file_shared_v1_attachment_proto_msgTypes[2]
+	mi := &file_shared_v1_attachment_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -319,7 +371,7 @@ func (x *AttachmentError) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AttachmentError.ProtoReflect.Descriptor instead.
 func (*AttachmentError) Descriptor() ([]byte, []int) {
-	return file_shared_v1_attachment_proto_rawDescGZIP(), []int{2}
+	return file_shared_v1_attachment_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *AttachmentError) GetId() string {
@@ -354,7 +406,7 @@ var File_shared_v1_attachment_proto protoreflect.FileDescriptor
 
 const file_shared_v1_attachment_proto_rawDesc = "" +
 	"\n" +
-	"\x1ashared/v1/attachment.proto\x12\tshared.v1\x1a\x16shared/v1/struct.proto\"\xd8\x02\n" +
+	"\x1ashared/v1/attachment.proto\x12\tshared.v1\x1a\x16shared/v1/struct.proto\"\x86\x03\n" +
 	"\n" +
 	"Attachment\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12\x1a\n" +
@@ -368,7 +420,11 @@ const file_shared_v1_attachment_proto_rawDesc = "" +
 	"\bmetadata\x18\t \x01(\v2\x11.shared.v1.StructR\bmetadata\x12\x12\n" +
 	"\x04data\x18\n" +
 	" \x01(\fR\x04data\x12\x12\n" +
-	"\x04mime\x18\v \x01(\tR\x04mime\"s\n" +
+	"\x04mime\x18\v \x01(\tR\x04mime\x12\x1f\n" +
+	"\bchecksum\x18\f \x01(\tH\x00R\bchecksum\x88\x01\x01B\v\n" +
+	"\t_checksum\"F\n" +
+	"\vAttachments\x127\n" +
+	"\vattachments\x18\x01 \x03(\v2\x15.shared.v1.AttachmentR\vattachments\"s\n" +
 	"\x04Crop\x12\f\n" +
 	"\x01x\x18\x01 \x01(\x02R\x01x\x12\f\n" +
 	"\x01y\x18\x02 \x01(\x02R\x01y\x12\x14\n" +
@@ -404,23 +460,25 @@ func file_shared_v1_attachment_proto_rawDescGZIP() []byte {
 }
 
 var file_shared_v1_attachment_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_shared_v1_attachment_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_shared_v1_attachment_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_shared_v1_attachment_proto_goTypes = []any{
 	(AttachmentErrorType)(0), // 0: shared.v1.AttachmentErrorType
 	(*Attachment)(nil),       // 1: shared.v1.Attachment
-	(*Crop)(nil),             // 2: shared.v1.Crop
-	(*AttachmentError)(nil),  // 3: shared.v1.AttachmentError
-	(*Struct)(nil),           // 4: shared.v1.Struct
+	(*Attachments)(nil),      // 2: shared.v1.Attachments
+	(*Crop)(nil),             // 3: shared.v1.Crop
+	(*AttachmentError)(nil),  // 4: shared.v1.AttachmentError
+	(*Struct)(nil),           // 5: shared.v1.Struct
 }
 var file_shared_v1_attachment_proto_depIdxs = []int32{
-	2, // 0: shared.v1.Attachment.crop:type_name -> shared.v1.Crop
-	4, // 1: shared.v1.Attachment.metadata:type_name -> shared.v1.Struct
-	0, // 2: shared.v1.AttachmentError.type:type_name -> shared.v1.AttachmentErrorType
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	3, // 0: shared.v1.Attachment.crop:type_name -> shared.v1.Crop
+	5, // 1: shared.v1.Attachment.metadata:type_name -> shared.v1.Struct
+	1, // 2: shared.v1.Attachments.attachments:type_name -> shared.v1.Attachment
+	0, // 3: shared.v1.AttachmentError.type:type_name -> shared.v1.AttachmentErrorType
+	4, // [4:4] is the sub-list for method output_type
+	4, // [4:4] is the sub-list for method input_type
+	4, // [4:4] is the sub-list for extension type_name
+	4, // [4:4] is the sub-list for extension extendee
+	0, // [0:4] is the sub-list for field type_name
 }
 
 func init() { file_shared_v1_attachment_proto_init() }
@@ -429,13 +487,14 @@ func file_shared_v1_attachment_proto_init() {
 		return
 	}
 	file_shared_v1_struct_proto_init()
+	file_shared_v1_attachment_proto_msgTypes[0].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_shared_v1_attachment_proto_rawDesc), len(file_shared_v1_attachment_proto_rawDesc)),
 			NumEnums:      1,
-			NumMessages:   3,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

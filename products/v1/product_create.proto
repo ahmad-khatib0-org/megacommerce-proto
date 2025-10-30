@@ -2,8 +2,9 @@ syntax = "proto3";
 
 package products.v1;
 
-import "shared/v1/types.proto";
+import "shared/v1/attachment.proto";
 import "shared/v1/error.proto";
+import "shared/v1/types.proto";
 
 option cc_enable_arenas = true;
 option go_package = "github.com/ahmad-khatib0-org/megacommerce-proto/gen/go/products/v1;v1";
@@ -16,13 +17,126 @@ message ProductCreateTag {
 }
 
 message ProductCreateRequest {
+  ProductCreateRequestIdentity identity = 1;
+  ProductCreateRequestDescription description = 2;
+  ProductCreateRequestDetails details = 3;
+  ProductCreateRequestMedia media = 4;
+  ProductCreateRequestOffer offer = 5;
+  ProductCreateRequestSafety safety = 6;
+}
+
+message ProductCreateRequestIdentity {
   string title = 1;
-  string description = 2;
-  string sku = 3;
+  string category = 2;
+  string subcategory = 3;
+  bool has_variations = 4;
+  string brand_name = 5;
+  bool no_brand = 6;
+  string product_id = 7;
+  bool no_product_id = 8;
+}
+
+message ProductCreateRequestDescription {
+  string description = 1;
+  repeated ProductCreateRequestBulletPoint bullet_points = 2;
+}
+
+message ProductCreateRequestBulletPoint {
+  string id = 1;
+  string bullet_point = 2;
+}
+
+message ProductCreateRequestDetails {
+  oneof details {
+    ProductCreateRequestDetailsWithVariants with_variants = 1;
+    ProductCreateRequestDetailsWithoutVariants without_variants = 2;
+  }
+}
+
+message ProductCreateRequestDetailsWithVariants {
+  repeated ProductCreateRequestDetailsVariantForm variants = 1;
+}
+
+message ProductCreateRequestDetailsVariantForm {
+  map<string, shared.v1.Any> form = 1;
+}
+
+message ProductCreateRequestDetailsWithoutVariants {
+  map<string, shared.v1.Any> form = 1;
+}
+
+message ProductCreateRequestMedia {
+  uint64 total_size = 1;
+  oneof media {
+    ProductCreateRequestMediaWithVariants with_variants = 2;
+    ProductCreateRequestMediaWithoutVariants without_variants = 3;
+  }
+}
+
+message ProductCreateRequestMediaWithVariants {
+  map<string, shared.v1.Attachments> images = 1;
+  map<string, shared.v1.Attachments> videos = 2;
+}
+
+message ProductCreateRequestMediaWithoutVariants {
+  repeated shared.v1.Attachment images = 1;
+  repeated shared.v1.Attachment videos = 2;
+}
+
+message ProductCreateRequestOffer {
+  string currency = 1;
+  string fulfillment_type = 2;
+  uint64 processing_time = 3;
+  oneof pricing {
+    ProductCreateRequestOfferWithVariants with_variants = 4;
+    ProductCreateRequestOfferPricing without_variants = 5;
+  }
+}
+
+message ProductCreateRequestOfferWithVariants {
+  repeated ProductCreateRequestOfferVariant variants = 1;
+}
+
+message ProductCreateRequestOfferVariant {
+  string id = 1;
+  string sku = 2;
+  uint64 quantity = 3;
   string price = 4;
-  string currency_code = 5;
-  repeated ProductCreateTag tags = 6;
-  bool ar_enabled = 7;
+  string offering_condition = 5;
+  optional string condition_note = 6;
+  optional string list_price = 7;
+  optional bool has_sale_price = 8;
+  optional string sale_price = 9;
+  optional string sale_price_start = 10;
+  optional string sale_price_end = 11;
+  bool has_minimum_orders = 12;
+  repeated ProductCreateRequestOfferMinimumOrder minimum_orders = 13;
+}
+
+message ProductCreateRequestOfferPricing {
+  string sku = 1;
+  uint64 quantity = 2;
+  string price = 3;
+  string offering_condition = 4;
+  optional string condition_note = 5;
+  optional string list_price = 6;
+  optional bool has_sale_price = 7;
+  optional string sale_price = 8;
+  optional string sale_price_start = 9;
+  optional string sale_price_end = 10;
+  bool has_minimum_orders = 11;
+  repeated ProductCreateRequestOfferMinimumOrder minimum_orders = 12;
+}
+
+message ProductCreateRequestOfferMinimumOrder {
+  string id = 1;
+  string price = 2;
+  uint64 quantity = 3;
+}
+
+message ProductCreateRequestSafety {
+  bool attestation = 1;
+  map<string, shared.v1.Any> form = 2;
 }
 
 message ProductCreateResponse {

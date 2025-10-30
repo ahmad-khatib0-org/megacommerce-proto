@@ -21,6 +21,11 @@ message Attachment {
   shared.v1.Struct metadata = 9; // arbitrary JSON-like object
   bytes data = 10; // usually set by the backend
   string mime = 11; // usually set by the backend
+  optional string checksum = 12;
+}
+
+message Attachments {
+  repeated Attachment attachments = 1;
 }
 
 message Crop {

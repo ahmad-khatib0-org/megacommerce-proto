@@ -225,6 +225,14 @@ pub struct Attachment {
     /// usually set by the backend
     #[prost(string, tag = "11")]
     pub mime: ::prost::alloc::string::String,
+    #[prost(string, optional, tag = "12")]
+    pub checksum: ::core::option::Option<::prost::alloc::string::String>,
+}
+#[derive(serde::Serialize, serde::Deserialize)]
+#[derive(Clone, PartialEq, ::prost::Message)]
+pub struct Attachments {
+    #[prost(message, repeated, tag = "1")]
+    pub attachments: ::prost::alloc::vec::Vec<Attachment>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, Copy, PartialEq, ::prost::Message)]
