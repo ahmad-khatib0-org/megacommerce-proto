@@ -176,6 +176,58 @@ struct ProductCreateRequestSafety_FormEntry_DoNotUseDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestSafety_FormEntry_DoNotUseDefaultTypeInternal _ProductCreateRequestSafety_FormEntry_DoNotUse_default_instance_;
 
+inline constexpr ProductCreateRequestOfferWithoutVariants::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : _cached_size_{0},
+        minimum_orders_{},
+        sku_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        price_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        offering_condition_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        condition_note_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        list_price_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        sale_price_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        sale_price_start_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        sale_price_end_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        quantity_{::uint64_t{0u}},
+        has_sale_price_{false},
+        has_minimum_orders_{false} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestOfferWithoutVariants::ProductCreateRequestOfferWithoutVariants(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ::google::protobuf::Message(ProductCreateRequestOfferWithoutVariants_class_data_.base()),
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ::google::protobuf::Message(),
+#endif  // PROTOBUF_CUSTOM_VTABLE
+      _impl_(::_pbi::ConstantInitialized()) {
+}
+struct ProductCreateRequestOfferWithoutVariantsDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestOfferWithoutVariantsDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestOfferWithoutVariantsDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestOfferWithoutVariants _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestOfferWithoutVariantsDefaultTypeInternal _ProductCreateRequestOfferWithoutVariants_default_instance_;
+
 inline constexpr ProductCreateRequestOfferVariant::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : _cached_size_{0},
@@ -230,58 +282,6 @@ struct ProductCreateRequestOfferVariantDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestOfferVariantDefaultTypeInternal _ProductCreateRequestOfferVariant_default_instance_;
-
-inline constexpr ProductCreateRequestOfferPricing::Impl_::Impl_(
-    ::_pbi::ConstantInitialized) noexcept
-      : _cached_size_{0},
-        minimum_orders_{},
-        sku_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        price_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        offering_condition_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        condition_note_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        list_price_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        sale_price_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        sale_price_start_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        sale_price_end_(
-            &::google::protobuf::internal::fixed_address_empty_string,
-            ::_pbi::ConstantInitialized()),
-        quantity_{::uint64_t{0u}},
-        has_sale_price_{false},
-        has_minimum_orders_{false} {}
-
-template <typename>
-PROTOBUF_CONSTEXPR ProductCreateRequestOfferPricing::ProductCreateRequestOfferPricing(::_pbi::ConstantInitialized)
-#if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(ProductCreateRequestOfferPricing_class_data_.base()),
-#else   // PROTOBUF_CUSTOM_VTABLE
-    : ::google::protobuf::Message(),
-#endif  // PROTOBUF_CUSTOM_VTABLE
-      _impl_(::_pbi::ConstantInitialized()) {
-}
-struct ProductCreateRequestOfferPricingDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR ProductCreateRequestOfferPricingDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~ProductCreateRequestOfferPricingDefaultTypeInternal() {}
-  union {
-    ProductCreateRequestOfferPricing _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestOfferPricingDefaultTypeInternal _ProductCreateRequestOfferPricing_default_instance_;
 template <typename>
 PROTOBUF_CONSTEXPR ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse::ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse(::_pbi::ConstantInitialized)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
@@ -318,6 +318,24 @@ struct ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUseDefaultTypeInter
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUseDefaultTypeInternal _ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse_default_instance_;
+template <typename>
+PROTOBUF_CONSTEXPR ProductCreateRequestDetails_SharedEntry_DoNotUse::ProductCreateRequestDetails_SharedEntry_DoNotUse(::_pbi::ConstantInitialized)
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+    : ProductCreateRequestDetails_SharedEntry_DoNotUse::MapEntry(ProductCreateRequestDetails_SharedEntry_DoNotUse_class_data_.base()){}
+#else   // PROTOBUF_CUSTOM_VTABLE
+    : ProductCreateRequestDetails_SharedEntry_DoNotUse::MapEntry() {
+}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+struct ProductCreateRequestDetails_SharedEntry_DoNotUseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ProductCreateRequestDetails_SharedEntry_DoNotUseDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ProductCreateRequestDetails_SharedEntry_DoNotUseDefaultTypeInternal() {}
+  union {
+    ProductCreateRequestDetails_SharedEntry_DoNotUse _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ProductCreateRequestDetails_SharedEntry_DoNotUseDefaultTypeInternal _ProductCreateRequestDetails_SharedEntry_DoNotUse_default_instance_;
 
 inline constexpr ProductCreateRequestDescription::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -596,7 +614,8 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
 
 inline constexpr ProductCreateRequestDetails::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
-      : details_{},
+      : shared_{},
+        details_{},
         _cached_size_{0},
         _oneof_case_{} {}
 
@@ -766,8 +785,16 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestBulletPoint, _impl_.bullet_point_),
         0,
         1,
+        0x081, // bitmap
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDetails_SharedEntry_DoNotUse, _impl_._has_bits_),
+        5, // hasbit index offset
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDetails_SharedEntry_DoNotUse, _impl_.key_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDetails_SharedEntry_DoNotUse, _impl_.value_),
+        0,
+        1,
         0x004, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDetails, _impl_._oneof_case_[0]),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDetails, _impl_.shared_),
         ::_pbi::kInvalidFieldOffsetTag,
         ::_pbi::kInvalidFieldOffsetTag,
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDetails, _impl_.details_),
@@ -869,20 +896,20 @@ const ::uint32_t
         11,
         ~0u,
         0x081, // bitmap
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_._has_bits_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferWithoutVariants, _impl_._has_bits_),
         15, // hasbit index offset
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.sku_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.quantity_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.price_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.offering_condition_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.condition_note_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.list_price_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.has_sale_price_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.sale_price_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.sale_price_start_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.sale_price_end_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.has_minimum_orders_),
-        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferPricing, _impl_.minimum_orders_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferWithoutVariants, _impl_.sku_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferWithoutVariants, _impl_.quantity_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferWithoutVariants, _impl_.price_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferWithoutVariants, _impl_.offering_condition_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferWithoutVariants, _impl_.condition_note_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferWithoutVariants, _impl_.list_price_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferWithoutVariants, _impl_.has_sale_price_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferWithoutVariants, _impl_.sale_price_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferWithoutVariants, _impl_.sale_price_start_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferWithoutVariants, _impl_.sale_price_end_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferWithoutVariants, _impl_.has_minimum_orders_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestOfferWithoutVariants, _impl_.minimum_orders_),
         0,
         8,
         1,
@@ -932,25 +959,26 @@ static const ::_pbi::MigrationSchema
         {22, sizeof(::products::v1::ProductCreateRequestIdentity)},
         {41, sizeof(::products::v1::ProductCreateRequestDescription)},
         {48, sizeof(::products::v1::ProductCreateRequestBulletPoint)},
-        {55, sizeof(::products::v1::ProductCreateRequestDetails)},
-        {60, sizeof(::products::v1::ProductCreateRequestDetailsWithVariants)},
-        {62, sizeof(::products::v1::ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse)},
-        {69, sizeof(::products::v1::ProductCreateRequestDetailsVariantForm)},
-        {71, sizeof(::products::v1::ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse)},
-        {78, sizeof(::products::v1::ProductCreateRequestDetailsWithoutVariants)},
-        {80, sizeof(::products::v1::ProductCreateRequestMedia)},
-        {91, sizeof(::products::v1::ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse)},
-        {98, sizeof(::products::v1::ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse)},
-        {105, sizeof(::products::v1::ProductCreateRequestMediaWithVariants)},
-        {108, sizeof(::products::v1::ProductCreateRequestMediaWithoutVariants)},
-        {111, sizeof(::products::v1::ProductCreateRequestOffer)},
-        {126, sizeof(::products::v1::ProductCreateRequestOfferWithVariants)},
-        {128, sizeof(::products::v1::ProductCreateRequestOfferVariant)},
-        {157, sizeof(::products::v1::ProductCreateRequestOfferPricing)},
-        {184, sizeof(::products::v1::ProductCreateRequestOfferMinimumOrder)},
-        {193, sizeof(::products::v1::ProductCreateRequestSafety_FormEntry_DoNotUse)},
-        {200, sizeof(::products::v1::ProductCreateRequestSafety)},
-        {207, sizeof(::products::v1::ProductCreateResponse)},
+        {55, sizeof(::products::v1::ProductCreateRequestDetails_SharedEntry_DoNotUse)},
+        {62, sizeof(::products::v1::ProductCreateRequestDetails)},
+        {68, sizeof(::products::v1::ProductCreateRequestDetailsWithVariants)},
+        {70, sizeof(::products::v1::ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse)},
+        {77, sizeof(::products::v1::ProductCreateRequestDetailsVariantForm)},
+        {79, sizeof(::products::v1::ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse)},
+        {86, sizeof(::products::v1::ProductCreateRequestDetailsWithoutVariants)},
+        {88, sizeof(::products::v1::ProductCreateRequestMedia)},
+        {99, sizeof(::products::v1::ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse)},
+        {106, sizeof(::products::v1::ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse)},
+        {113, sizeof(::products::v1::ProductCreateRequestMediaWithVariants)},
+        {116, sizeof(::products::v1::ProductCreateRequestMediaWithoutVariants)},
+        {119, sizeof(::products::v1::ProductCreateRequestOffer)},
+        {134, sizeof(::products::v1::ProductCreateRequestOfferWithVariants)},
+        {136, sizeof(::products::v1::ProductCreateRequestOfferVariant)},
+        {165, sizeof(::products::v1::ProductCreateRequestOfferWithoutVariants)},
+        {192, sizeof(::products::v1::ProductCreateRequestOfferMinimumOrder)},
+        {201, sizeof(::products::v1::ProductCreateRequestSafety_FormEntry_DoNotUse)},
+        {208, sizeof(::products::v1::ProductCreateRequestSafety)},
+        {215, sizeof(::products::v1::ProductCreateResponse)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::products::v1::_ProductCreateTag_default_instance_._instance,
@@ -958,6 +986,7 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::products::v1::_ProductCreateRequestIdentity_default_instance_._instance,
     &::products::v1::_ProductCreateRequestDescription_default_instance_._instance,
     &::products::v1::_ProductCreateRequestBulletPoint_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestDetails_SharedEntry_DoNotUse_default_instance_._instance,
     &::products::v1::_ProductCreateRequestDetails_default_instance_._instance,
     &::products::v1::_ProductCreateRequestDetailsWithVariants_default_instance_._instance,
     &::products::v1::_ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse_default_instance_._instance,
@@ -972,7 +1001,7 @@ static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::products::v1::_ProductCreateRequestOffer_default_instance_._instance,
     &::products::v1::_ProductCreateRequestOfferWithVariants_default_instance_._instance,
     &::products::v1::_ProductCreateRequestOfferVariant_default_instance_._instance,
-    &::products::v1::_ProductCreateRequestOfferPricing_default_instance_._instance,
+    &::products::v1::_ProductCreateRequestOfferWithoutVariants_default_instance_._instance,
     &::products::v1::_ProductCreateRequestOfferMinimumOrder_default_instance_._instance,
     &::products::v1::_ProductCreateRequestSafety_FormEntry_DoNotUse_default_instance_._instance,
     &::products::v1::_ProductCreateRequestSafety_default_instance_._instance,
@@ -1008,105 +1037,109 @@ const char descriptor_table_protodef_products_2fv1_2fproduct_5fcreate_2eproto[] 
     "ints\030\002 \003(\0132,.products.v1.ProductCreateRe"
     "questBulletPointR\014bulletPoints\"T\n\037Produc"
     "tCreateRequestBulletPoint\022\016\n\002id\030\001 \001(\tR\002i"
-    "d\022!\n\014bullet_point\030\002 \001(\tR\013bulletPoint\"\353\001\n"
-    "\033ProductCreateRequestDetails\022[\n\rwith_var"
-    "iants\030\001 \001(\01324.products.v1.ProductCreateR"
-    "equestDetailsWithVariantsH\000R\014withVariant"
-    "s\022d\n\020without_variants\030\002 \001(\01327.products.v"
-    "1.ProductCreateRequestDetailsWithoutVari"
-    "antsH\000R\017withoutVariantsB\t\n\007details\"z\n\'Pr"
-    "oductCreateRequestDetailsWithVariants\022O\n"
-    "\010variants\030\001 \003(\01323.products.v1.ProductCre"
-    "ateRequestDetailsVariantFormR\010variants\"\304"
-    "\001\n&ProductCreateRequestDetailsVariantFor"
-    "m\022Q\n\004form\030\001 \003(\0132=.products.v1.ProductCre"
-    "ateRequestDetailsVariantForm.FormEntryR\004"
+    "d\022!\n\014bullet_point\030\002 \001(\tR\013bulletPoint\"\204\003\n"
+    "\033ProductCreateRequestDetails\022L\n\006shared\030\001"
+    " \003(\01324.products.v1.ProductCreateRequestD"
+    "etails.SharedEntryR\006shared\022[\n\rwith_varia"
+    "nts\030\002 \001(\01324.products.v1.ProductCreateReq"
+    "uestDetailsWithVariantsH\000R\014withVariants\022"
+    "d\n\020without_variants\030\003 \001(\01327.products.v1."
+    "ProductCreateRequestDetailsWithoutVarian"
+    "tsH\000R\017withoutVariants\032I\n\013SharedEntry\022\020\n\003"
+    "key\030\001 \001(\tR\003key\022$\n\005value\030\002 \001(\0132\016.shared.v"
+    "1.AnyR\005value:\0028\001B\t\n\007details\"z\n\'ProductCr"
+    "eateRequestDetailsWithVariants\022O\n\010varian"
+    "ts\030\001 \003(\01323.products.v1.ProductCreateRequ"
+    "estDetailsVariantFormR\010variants\"\304\001\n&Prod"
+    "uctCreateRequestDetailsVariantForm\022Q\n\004fo"
+    "rm\030\001 \003(\0132=.products.v1.ProductCreateRequ"
+    "estDetailsVariantForm.FormEntryR\004form\032G\n"
+    "\tFormEntry\022\020\n\003key\030\001 \001(\tR\003key\022$\n\005value\030\002 "
+    "\001(\0132\016.shared.v1.AnyR\005value:\0028\001\"\314\001\n*Produ"
+    "ctCreateRequestDetailsWithoutVariants\022U\n"
+    "\004form\030\001 \003(\0132A.products.v1.ProductCreateR"
+    "equestDetailsWithoutVariants.FormEntryR\004"
     "form\032G\n\tFormEntry\022\020\n\003key\030\001 \001(\tR\003key\022$\n\005v"
-    "alue\030\002 \001(\0132\016.shared.v1.AnyR\005value:\0028\001\"\314\001"
-    "\n*ProductCreateRequestDetailsWithoutVari"
-    "ants\022U\n\004form\030\001 \003(\0132A.products.v1.Product"
-    "CreateRequestDetailsWithoutVariants.Form"
-    "EntryR\004form\032G\n\tFormEntry\022\020\n\003key\030\001 \001(\tR\003k"
-    "ey\022$\n\005value\030\002 \001(\0132\016.shared.v1.AnyR\005value"
-    ":\0028\001\"\202\002\n\031ProductCreateRequestMedia\022\035\n\nto"
-    "tal_size\030\001 \001(\004R\ttotalSize\022Y\n\rwith_varian"
-    "ts\030\002 \001(\01322.products.v1.ProductCreateRequ"
-    "estMediaWithVariantsH\000R\014withVariants\022b\n\020"
-    "without_variants\030\003 \001(\01325.products.v1.Pro"
-    "ductCreateRequestMediaWithoutVariantsH\000R"
-    "\017withoutVariantsB\007\n\005media\"\375\002\n%ProductCre"
-    "ateRequestMediaWithVariants\022V\n\006images\030\001 "
-    "\003(\0132>.products.v1.ProductCreateRequestMe"
-    "diaWithVariants.ImagesEntryR\006images\022V\n\006v"
-    "ideos\030\002 \003(\0132>.products.v1.ProductCreateR"
-    "equestMediaWithVariants.VideosEntryR\006vid"
-    "eos\032Q\n\013ImagesEntry\022\020\n\003key\030\001 \001(\tR\003key\022,\n\005"
-    "value\030\002 \001(\0132\026.shared.v1.AttachmentsR\005val"
-    "ue:\0028\001\032Q\n\013VideosEntry\022\020\n\003key\030\001 \001(\tR\003key\022"
-    ",\n\005value\030\002 \001(\0132\026.shared.v1.AttachmentsR\005"
-    "value:\0028\001\"\210\001\n(ProductCreateRequestMediaW"
-    "ithoutVariants\022-\n\006images\030\001 \003(\0132\025.shared."
-    "v1.AttachmentR\006images\022-\n\006videos\030\002 \003(\0132\025."
-    "shared.v1.AttachmentR\006videos\"\315\002\n\031Product"
-    "CreateRequestOffer\022\032\n\010currency\030\001 \001(\tR\010cu"
-    "rrency\022)\n\020fulfillment_type\030\002 \001(\tR\017fulfil"
-    "lmentType\022\'\n\017processing_time\030\003 \001(\004R\016proc"
-    "essingTime\022Y\n\rwith_variants\030\004 \001(\01322.prod"
-    "ucts.v1.ProductCreateRequestOfferWithVar"
-    "iantsH\000R\014withVariants\022Z\n\020without_variant"
-    "s\030\005 \001(\0132-.products.v1.ProductCreateReque"
-    "stOfferPricingH\000R\017withoutVariantsB\t\n\007pri"
-    "cing\"r\n%ProductCreateRequestOfferWithVar"
-    "iants\022I\n\010variants\030\001 \003(\0132-.products.v1.Pr"
-    "oductCreateRequestOfferVariantR\010variants"
-    "\"\223\005\n ProductCreateRequestOfferVariant\022\016\n"
-    "\002id\030\001 \001(\tR\002id\022\020\n\003sku\030\002 \001(\tR\003sku\022\032\n\010quant"
-    "ity\030\003 \001(\004R\010quantity\022\024\n\005price\030\004 \001(\tR\005pric"
-    "e\022-\n\022offering_condition\030\005 \001(\tR\021offeringC"
-    "ondition\022*\n\016condition_note\030\006 \001(\tH\000R\rcond"
-    "itionNote\210\001\001\022\"\n\nlist_price\030\007 \001(\tH\001R\tlist"
-    "Price\210\001\001\022)\n\016has_sale_price\030\010 \001(\010H\002R\014hasS"
-    "alePrice\210\001\001\022\"\n\nsale_price\030\t \001(\tH\003R\tsaleP"
-    "rice\210\001\001\022-\n\020sale_price_start\030\n \001(\tH\004R\016sal"
-    "ePriceStart\210\001\001\022)\n\016sale_price_end\030\013 \001(\tH\005"
-    "R\014salePriceEnd\210\001\001\022,\n\022has_minimum_orders\030"
-    "\014 \001(\010R\020hasMinimumOrders\022Y\n\016minimum_order"
-    "s\030\r \003(\01322.products.v1.ProductCreateReque"
-    "stOfferMinimumOrderR\rminimumOrdersB\021\n\017_c"
-    "ondition_noteB\r\n\013_list_priceB\021\n\017_has_sal"
-    "e_priceB\r\n\013_sale_priceB\023\n\021_sale_price_st"
-    "artB\021\n\017_sale_price_end\"\203\005\n ProductCreate"
-    "RequestOfferPricing\022\020\n\003sku\030\001 \001(\tR\003sku\022\032\n"
-    "\010quantity\030\002 \001(\004R\010quantity\022\024\n\005price\030\003 \001(\t"
-    "R\005price\022-\n\022offering_condition\030\004 \001(\tR\021off"
-    "eringCondition\022*\n\016condition_note\030\005 \001(\tH\000"
-    "R\rconditionNote\210\001\001\022\"\n\nlist_price\030\006 \001(\tH\001"
-    "R\tlistPrice\210\001\001\022)\n\016has_sale_price\030\007 \001(\010H\002"
-    "R\014hasSalePrice\210\001\001\022\"\n\nsale_price\030\010 \001(\tH\003R"
-    "\tsalePrice\210\001\001\022-\n\020sale_price_start\030\t \001(\tH"
-    "\004R\016salePriceStart\210\001\001\022)\n\016sale_price_end\030\n"
-    " \001(\tH\005R\014salePriceEnd\210\001\001\022,\n\022has_minimum_o"
-    "rders\030\013 \001(\010R\020hasMinimumOrders\022Y\n\016minimum"
-    "_orders\030\014 \003(\01322.products.v1.ProductCreat"
-    "eRequestOfferMinimumOrderR\rminimumOrders"
-    "B\021\n\017_condition_noteB\r\n\013_list_priceB\021\n\017_h"
-    "as_sale_priceB\r\n\013_sale_priceB\023\n\021_sale_pr"
-    "ice_startB\021\n\017_sale_price_end\"i\n%ProductC"
-    "reateRequestOfferMinimumOrder\022\016\n\002id\030\001 \001("
-    "\tR\002id\022\024\n\005price\030\002 \001(\tR\005price\022\032\n\010quantity\030"
-    "\003 \001(\004R\010quantity\"\316\001\n\032ProductCreateRequest"
-    "Safety\022 \n\013attestation\030\001 \001(\010R\013attestation"
-    "\022E\n\004form\030\002 \003(\01321.products.v1.ProductCrea"
-    "teRequestSafety.FormEntryR\004form\032G\n\tFormE"
-    "ntry\022\020\n\003key\030\001 \001(\tR\003key\022$\n\005value\030\002 \001(\0132\016."
-    "shared.v1.AnyR\005value:\0028\001\"\206\001\n\025ProductCrea"
-    "teResponse\0224\n\004data\030\001 \001(\0132\036.shared.v1.Suc"
-    "cessResponseDataH\000R\004data\022+\n\005error\030\002 \001(\0132"
-    "\023.shared.v1.AppErrorH\000R\005errorB\n\n\010respons"
-    "eB|\n\034org.megacommerce.products.v1B\022Produ"
-    "ctCreateProtoZEgithub.com/ahmad-khatib0-"
-    "org/megacommerce-proto/gen/go/products/v"
-    "1;v1\370\001\001b\006proto3"
+    "alue\030\002 \001(\0132\016.shared.v1.AnyR\005value:\0028\001\"\202\002"
+    "\n\031ProductCreateRequestMedia\022\035\n\ntotal_siz"
+    "e\030\001 \001(\004R\ttotalSize\022Y\n\rwith_variants\030\002 \001("
+    "\01322.products.v1.ProductCreateRequestMedi"
+    "aWithVariantsH\000R\014withVariants\022b\n\020without"
+    "_variants\030\003 \001(\01325.products.v1.ProductCre"
+    "ateRequestMediaWithoutVariantsH\000R\017withou"
+    "tVariantsB\007\n\005media\"\375\002\n%ProductCreateRequ"
+    "estMediaWithVariants\022V\n\006images\030\001 \003(\0132>.p"
+    "roducts.v1.ProductCreateRequestMediaWith"
+    "Variants.ImagesEntryR\006images\022V\n\006videos\030\002"
+    " \003(\0132>.products.v1.ProductCreateRequestM"
+    "ediaWithVariants.VideosEntryR\006videos\032Q\n\013"
+    "ImagesEntry\022\020\n\003key\030\001 \001(\tR\003key\022,\n\005value\030\002"
+    " \001(\0132\026.shared.v1.AttachmentsR\005value:\0028\001\032"
+    "Q\n\013VideosEntry\022\020\n\003key\030\001 \001(\tR\003key\022,\n\005valu"
+    "e\030\002 \001(\0132\026.shared.v1.AttachmentsR\005value:\002"
+    "8\001\"\210\001\n(ProductCreateRequestMediaWithoutV"
+    "ariants\022-\n\006images\030\001 \003(\0132\025.shared.v1.Atta"
+    "chmentR\006images\022-\n\006videos\030\002 \003(\0132\025.shared."
+    "v1.AttachmentR\006videos\"\325\002\n\031ProductCreateR"
+    "equestOffer\022\032\n\010currency\030\001 \001(\tR\010currency\022"
+    ")\n\020fulfillment_type\030\002 \001(\tR\017fulfillmentTy"
+    "pe\022\'\n\017processing_time\030\003 \001(\004R\016processingT"
+    "ime\022Y\n\rwith_variants\030\004 \001(\01322.products.v1"
+    ".ProductCreateRequestOfferWithVariantsH\000"
+    "R\014withVariants\022b\n\020without_variants\030\005 \001(\013"
+    "25.products.v1.ProductCreateRequestOffer"
+    "WithoutVariantsH\000R\017withoutVariantsB\t\n\007pr"
+    "icing\"r\n%ProductCreateRequestOfferWithVa"
+    "riants\022I\n\010variants\030\001 \003(\0132-.products.v1.P"
+    "roductCreateRequestOfferVariantR\010variant"
+    "s\"\223\005\n ProductCreateRequestOfferVariant\022\016"
+    "\n\002id\030\001 \001(\tR\002id\022\020\n\003sku\030\002 \001(\tR\003sku\022\032\n\010quan"
+    "tity\030\003 \001(\004R\010quantity\022\024\n\005price\030\004 \001(\tR\005pri"
+    "ce\022-\n\022offering_condition\030\005 \001(\tR\021offering"
+    "Condition\022*\n\016condition_note\030\006 \001(\tH\000R\rcon"
+    "ditionNote\210\001\001\022\"\n\nlist_price\030\007 \001(\tH\001R\tlis"
+    "tPrice\210\001\001\022)\n\016has_sale_price\030\010 \001(\010H\002R\014has"
+    "SalePrice\210\001\001\022\"\n\nsale_price\030\t \001(\tH\003R\tsale"
+    "Price\210\001\001\022-\n\020sale_price_start\030\n \001(\tH\004R\016sa"
+    "lePriceStart\210\001\001\022)\n\016sale_price_end\030\013 \001(\tH"
+    "\005R\014salePriceEnd\210\001\001\022,\n\022has_minimum_orders"
+    "\030\014 \001(\010R\020hasMinimumOrders\022Y\n\016minimum_orde"
+    "rs\030\r \003(\01322.products.v1.ProductCreateRequ"
+    "estOfferMinimumOrderR\rminimumOrdersB\021\n\017_"
+    "condition_noteB\r\n\013_list_priceB\021\n\017_has_sa"
+    "le_priceB\r\n\013_sale_priceB\023\n\021_sale_price_s"
+    "tartB\021\n\017_sale_price_end\"\213\005\n(ProductCreat"
+    "eRequestOfferWithoutVariants\022\020\n\003sku\030\001 \001("
+    "\tR\003sku\022\032\n\010quantity\030\002 \001(\004R\010quantity\022\024\n\005pr"
+    "ice\030\003 \001(\tR\005price\022-\n\022offering_condition\030\004"
+    " \001(\tR\021offeringCondition\022*\n\016condition_not"
+    "e\030\005 \001(\tH\000R\rconditionNote\210\001\001\022\"\n\nlist_pric"
+    "e\030\006 \001(\tH\001R\tlistPrice\210\001\001\022)\n\016has_sale_pric"
+    "e\030\007 \001(\010H\002R\014hasSalePrice\210\001\001\022\"\n\nsale_price"
+    "\030\010 \001(\tH\003R\tsalePrice\210\001\001\022-\n\020sale_price_sta"
+    "rt\030\t \001(\tH\004R\016salePriceStart\210\001\001\022)\n\016sale_pr"
+    "ice_end\030\n \001(\tH\005R\014salePriceEnd\210\001\001\022,\n\022has_"
+    "minimum_orders\030\013 \001(\010R\020hasMinimumOrders\022Y"
+    "\n\016minimum_orders\030\014 \003(\01322.products.v1.Pro"
+    "ductCreateRequestOfferMinimumOrderR\rmini"
+    "mumOrdersB\021\n\017_condition_noteB\r\n\013_list_pr"
+    "iceB\021\n\017_has_sale_priceB\r\n\013_sale_priceB\023\n"
+    "\021_sale_price_startB\021\n\017_sale_price_end\"i\n"
+    "%ProductCreateRequestOfferMinimumOrder\022\016"
+    "\n\002id\030\001 \001(\tR\002id\022\024\n\005price\030\002 \001(\tR\005price\022\032\n\010"
+    "quantity\030\003 \001(\004R\010quantity\"\316\001\n\032ProductCrea"
+    "teRequestSafety\022 \n\013attestation\030\001 \001(\010R\013at"
+    "testation\022E\n\004form\030\002 \003(\01321.products.v1.Pr"
+    "oductCreateRequestSafety.FormEntryR\004form"
+    "\032G\n\tFormEntry\022\020\n\003key\030\001 \001(\tR\003key\022$\n\005value"
+    "\030\002 \001(\0132\016.shared.v1.AnyR\005value:\0028\001\"\206\001\n\025Pr"
+    "oductCreateResponse\0224\n\004data\030\001 \001(\0132\036.shar"
+    "ed.v1.SuccessResponseDataH\000R\004data\022+\n\005err"
+    "or\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n"
+    "\n\010responseB|\n\034org.megacommerce.products."
+    "v1B\022ProductCreateProtoZEgithub.com/ahmad"
+    "-khatib0-org/megacommerce-proto/gen/go/p"
+    "roducts/v1;v1\370\001\001b\006proto3"
 };
 static const ::_pbi::DescriptorTable* PROTOBUF_NONNULL const
     descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto_deps[3] = {
@@ -1118,13 +1151,13 @@ static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_5fcreate_2epro
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto = {
     false,
     false,
-    5055,
+    5224,
     descriptor_table_protodef_products_2fv1_2fproduct_5fcreate_2eproto,
     "products/v1/product_create.proto",
     &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto_once,
     descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto_deps,
     3,
-    24,
+    25,
     schemas,
     file_default_instances,
     TableStruct_products_2fv1_2fproduct_5fcreate_2eproto::offsets,
@@ -3010,12 +3043,115 @@ void ProductCreateRequestBulletPoint::InternalSwap(ProductCreateRequestBulletPoi
 }
 // ===================================================================
 
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+ProductCreateRequestDetails_SharedEntry_DoNotUse::ProductCreateRequestDetails_SharedEntry_DoNotUse()
+    : SuperType(ProductCreateRequestDetails_SharedEntry_DoNotUse_class_data_.base()) {}
+ProductCreateRequestDetails_SharedEntry_DoNotUse::ProductCreateRequestDetails_SharedEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+    : SuperType(arena, ProductCreateRequestDetails_SharedEntry_DoNotUse_class_data_.base()) {}
+#else   // PROTOBUF_CUSTOM_VTABLE
+ProductCreateRequestDetails_SharedEntry_DoNotUse::ProductCreateRequestDetails_SharedEntry_DoNotUse() : SuperType() {}
+ProductCreateRequestDetails_SharedEntry_DoNotUse::ProductCreateRequestDetails_SharedEntry_DoNotUse(::google::protobuf::Arena* PROTOBUF_NULLABLE arena) : SuperType(arena) {}
+#endif  // PROTOBUF_CUSTOM_VTABLE
+inline void* PROTOBUF_NONNULL ProductCreateRequestDetails_SharedEntry_DoNotUse::PlacementNew_(
+    const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
+    ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
+  return ::new (mem) ProductCreateRequestDetails_SharedEntry_DoNotUse(arena);
+}
+constexpr auto ProductCreateRequestDetails_SharedEntry_DoNotUse::InternalNewImpl_() {
+  return ::google::protobuf::internal::MessageCreator::CopyInit(sizeof(ProductCreateRequestDetails_SharedEntry_DoNotUse),
+                                            alignof(ProductCreateRequestDetails_SharedEntry_DoNotUse));
+}
+constexpr auto ProductCreateRequestDetails_SharedEntry_DoNotUse::InternalGenerateClassData_() {
+  return ::google::protobuf::internal::ClassDataFull{
+      ::google::protobuf::internal::ClassData{
+          &_ProductCreateRequestDetails_SharedEntry_DoNotUse_default_instance_._instance,
+          &_table_.header,
+          nullptr,  // OnDemandRegisterArenaDtor
+          nullptr,  // IsInitialized
+          &ProductCreateRequestDetails_SharedEntry_DoNotUse::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestDetails_SharedEntry_DoNotUse>(),
+#if defined(PROTOBUF_CUSTOM_VTABLE)
+          &ProductCreateRequestDetails_SharedEntry_DoNotUse::SharedDtor,
+          static_cast<void (::google::protobuf::MessageLite::*)()>(&ProductCreateRequestDetails_SharedEntry_DoNotUse::ClearImpl),
+              ::google::protobuf::Message::ByteSizeLongImpl, ::google::protobuf::Message::_InternalSerializeImpl
+              ,
+#endif  // PROTOBUF_CUSTOM_VTABLE
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetails_SharedEntry_DoNotUse, _impl_._cached_size_),
+          false,
+      },
+      &ProductCreateRequestDetails_SharedEntry_DoNotUse::kDescriptorMethods,
+      &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
+      nullptr,  // tracker
+  };
+}
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestDetails_SharedEntry_DoNotUse_class_data_ =
+        ProductCreateRequestDetails_SharedEntry_DoNotUse::InternalGenerateClassData_();
+
+PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
+ProductCreateRequestDetails_SharedEntry_DoNotUse::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestDetails_SharedEntry_DoNotUse_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestDetails_SharedEntry_DoNotUse_class_data_.tc_table);
+  return ProductCreateRequestDetails_SharedEntry_DoNotUse_class_data_.base();
+}
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<1, 2, 1, 63, 2>
+ProductCreateRequestDetails_SharedEntry_DoNotUse::_table_ = {
+  {
+    PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetails_SharedEntry_DoNotUse, _impl_._has_bits_),
+    0, // no _extensions_
+    2, 8,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967292,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    2,  // num_field_entries
+    1,  // num_aux_entries
+    offsetof(decltype(_table_), aux_entries),
+    ProductCreateRequestDetails_SharedEntry_DoNotUse_class_data_.base(),
+    nullptr,  // post_loop_handler
+    ::_pbi::TcParser::DiscardEverythingFallback,  // fallback
+    #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestDetails_SharedEntry_DoNotUse>(),  // to_prefetch
+    #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
+  }, {{
+    // .shared.v1.Any value = 2 [json_name = "value"];
+    {::_pbi::TcParser::FastMtS1,
+     {18, 1, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetails_SharedEntry_DoNotUse, _impl_.value_)}},
+    // string key = 1 [json_name = "key"];
+    {::_pbi::TcParser::FastUS1,
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetails_SharedEntry_DoNotUse, _impl_.key_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string key = 1 [json_name = "key"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetails_SharedEntry_DoNotUse, _impl_.key_), _Internal::kHasBitsOffset + 0, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // .shared.v1.Any value = 2 [json_name = "value"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetails_SharedEntry_DoNotUse, _impl_.value_), _Internal::kHasBitsOffset + 1, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kMessage | ::_fl::kTvTable)},
+  }},
+  {{
+      {::_pbi::TcParser::GetTable<::shared::v1::Any>()},
+  }},
+  {{
+    "\63\3\0\0\0\0\0\0"
+    "products.v1.ProductCreateRequestDetails.SharedEntry"
+    "key"
+  }},
+};
+// ===================================================================
+
 class ProductCreateRequestDetails::_Internal {
  public:
   static constexpr ::int32_t kOneofCaseOffset =
       PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDetails, _impl_._oneof_case_);
 };
 
+void ProductCreateRequestDetails::clear_shared() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.shared_.Clear();
+}
 void ProductCreateRequestDetails::set_allocated_with_variants(::products::v1::ProductCreateRequestDetailsWithVariants* PROTOBUF_NULLABLE with_variants) {
   ::google::protobuf::Arena* message_arena = GetArena();
   clear_details();
@@ -3055,7 +3191,8 @@ PROTOBUF_NDEBUG_INLINE ProductCreateRequestDetails::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
     const ::products::v1::ProductCreateRequestDetails& from_msg)
-      : details_{},
+      : shared_{visibility, arena, from.shared_},
+        details_{},
         _cached_size_{0},
         _oneof_case_{from._oneof_case_[0]} {}
 
@@ -3088,7 +3225,8 @@ ProductCreateRequestDetails::ProductCreateRequestDetails(
 PROTOBUF_NDEBUG_INLINE ProductCreateRequestDetails::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
-      : details_{},
+      : shared_{visibility, arena},
+        details_{},
         _cached_size_{0},
         _oneof_case_{} {}
 
@@ -3143,8 +3281,24 @@ inline void* PROTOBUF_NONNULL ProductCreateRequestDetails::PlacementNew_(
   return ::new (mem) ProductCreateRequestDetails(arena);
 }
 constexpr auto ProductCreateRequestDetails::InternalNewImpl_() {
-  return ::google::protobuf::internal::MessageCreator::ZeroInit(sizeof(ProductCreateRequestDetails),
-                                            alignof(ProductCreateRequestDetails));
+  constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetails, _impl_.shared_) +
+          decltype(ProductCreateRequestDetails::_impl_.shared_)::
+              InternalGetArenaOffset(
+                  ::google::protobuf::Message::internal_visibility()),
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetails, _impl_.shared_) +
+          decltype(ProductCreateRequestDetails::_impl_.shared_)::
+              InternalGetArenaOffsetAlt(
+                  ::google::protobuf::Message::internal_visibility()),
+  });
+  if (arena_bits.has_value()) {
+    return ::google::protobuf::internal::MessageCreator::CopyInit(
+        sizeof(ProductCreateRequestDetails), alignof(ProductCreateRequestDetails), *arena_bits);
+  } else {
+    return ::google::protobuf::internal::MessageCreator(&ProductCreateRequestDetails::PlacementNew_,
+                                 sizeof(ProductCreateRequestDetails),
+                                 alignof(ProductCreateRequestDetails));
+  }
 }
 constexpr auto ProductCreateRequestDetails::InternalGenerateClassData_() {
   return ::google::protobuf::internal::ClassDataFull{
@@ -3180,17 +3334,17 @@ ProductCreateRequestDetails::GetClassData() const {
   return ProductCreateRequestDetails_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 2, 2, 0, 2>
+const ::_pbi::TcParseTable<0, 3, 4, 54, 2>
 ProductCreateRequestDetails::_table_ = {
   {
     0,  // no _has_bits_
     0, // no _extensions_
-    2, 0,  // max_field_number, fast_idx_mask
+    3, 0,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967292,  // skipmap
+    4294967288,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    2,  // num_field_entries
-    2,  // num_aux_entries
+    3,  // num_field_entries
+    4,  // num_aux_entries
     offsetof(decltype(_table_), aux_entries),
     ProductCreateRequestDetails_class_data_.base(),
     nullptr,  // post_loop_handler
@@ -3203,18 +3357,28 @@ ProductCreateRequestDetails::_table_ = {
   }}, {{
     65535, 65535
   }}, {{
-    // .products.v1.ProductCreateRequestDetailsWithVariants with_variants = 1 [json_name = "withVariants"];
+    // map<string, .shared.v1.Any> shared = 1 [json_name = "shared"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetails, _impl_.shared_), 0, 2,
+    (0 | ::_fl::kFcRepeated | ::_fl::kMap)},
+    // .products.v1.ProductCreateRequestDetailsWithVariants with_variants = 2 [json_name = "withVariants"];
     {PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetails, _impl_.details_.with_variants_), _Internal::kOneofCaseOffset + 0, 0,
     (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 2 [json_name = "withoutVariants"];
+    // .products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 3 [json_name = "withoutVariants"];
     {PROTOBUF_FIELD_OFFSET(ProductCreateRequestDetails, _impl_.details_.without_variants_), _Internal::kOneofCaseOffset + 0, 1,
     (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
       {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestDetailsWithVariants>()},
       {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestDetailsWithoutVariants>()},
+      {::_pbi::TcParser::GetMapAuxInfo(1, 0, 0,
+                                       9, 11,
+                                       0)},
+      {::_pbi::TcParser::GetTable<::shared::v1::Any>()},
   }},
   {{
+    "\47\6\0\0\0\0\0\0"
+    "products.v1.ProductCreateRequestDetails"
+    "shared"
   }},
 };
 PROTOBUF_NOINLINE void ProductCreateRequestDetails::Clear() {
@@ -3224,6 +3388,7 @@ PROTOBUF_NOINLINE void ProductCreateRequestDetails::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  _impl_.shared_.Clear();
   clear_details();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
@@ -3243,16 +3408,43 @@ PROTOBUF_NOINLINE void ProductCreateRequestDetails::Clear() {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
+  // map<string, .shared.v1.Any> shared = 1 [json_name = "shared"];
+  if (!this_._internal_shared().empty()) {
+    using MapType = ::google::protobuf::Map<std::string, ::shared::v1::Any>;
+    using WireHelper = _pbi::MapEntryFuncs<std::string, ::shared::v1::Any,
+                                   _pbi::WireFormatLite::TYPE_STRING,
+                                   _pbi::WireFormatLite::TYPE_MESSAGE>;
+    const auto& field = this_._internal_shared();
+
+    if (stream->IsSerializationDeterministic() && field.size() > 1) {
+      for (const auto& entry : ::google::protobuf::internal::MapSorterPtr<MapType>(field)) {
+        target = WireHelper::InternalSerialize(
+            1, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestDetails.shared");
+      }
+    } else {
+      for (const auto& entry : field) {
+        target = WireHelper::InternalSerialize(
+            1, entry.first, entry.second, target, stream);
+        ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            entry.first.data(), static_cast<int>(entry.first.length()),
+ ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestDetails.shared");
+      }
+    }
+  }
+
   switch (this_.details_case()) {
     case kWithVariants: {
       target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-          1, *this_._impl_.details_.with_variants_, this_._impl_.details_.with_variants_->GetCachedSize(), target,
+          2, *this_._impl_.details_.with_variants_, this_._impl_.details_.with_variants_->GetCachedSize(), target,
           stream);
       break;
     }
     case kWithoutVariants: {
       target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
-          2, *this_._impl_.details_.without_variants_, this_._impl_.details_.without_variants_->GetCachedSize(), target,
+          3, *this_._impl_.details_.without_variants_, this_._impl_.details_.without_variants_->GetCachedSize(), target,
           stream);
       break;
     }
@@ -3282,14 +3474,27 @@ PROTOBUF_NOINLINE void ProductCreateRequestDetails::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void)cached_has_bits;
 
+  ::_pbi::Prefetch5LinesFrom7Lines(&this_);
+   {
+    // map<string, .shared.v1.Any> shared = 1 [json_name = "shared"];
+    {
+      total_size +=
+          1 * ::google::protobuf::internal::FromIntSize(this_._internal_shared_size());
+      for (const auto& entry : this_._internal_shared()) {
+        total_size += _pbi::MapEntryFuncs<std::string, ::shared::v1::Any,
+                                       _pbi::WireFormatLite::TYPE_STRING,
+                                       _pbi::WireFormatLite::TYPE_MESSAGE>::ByteSizeLong(entry.first, entry.second);
+      }
+    }
+  }
   switch (this_.details_case()) {
-    // .products.v1.ProductCreateRequestDetailsWithVariants with_variants = 1 [json_name = "withVariants"];
+    // .products.v1.ProductCreateRequestDetailsWithVariants with_variants = 2 [json_name = "withVariants"];
     case kWithVariants: {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.details_.with_variants_);
       break;
     }
-    // .products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 2 [json_name = "withoutVariants"];
+    // .products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 3 [json_name = "withoutVariants"];
     case kWithoutVariants: {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.details_.without_variants_);
@@ -3312,6 +3517,7 @@ void ProductCreateRequestDetails::MergeImpl(::google::protobuf::MessageLite& to_
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  _this->_impl_.shared_.MergeFrom(from._impl_.shared_);
   if (const uint32_t oneof_from_case = from._impl_._oneof_case_[0]) {
     const uint32_t oneof_to_case = _this->_impl_._oneof_case_[0];
     const bool oneof_needs_init = oneof_to_case != oneof_from_case;
@@ -3357,6 +3563,7 @@ void ProductCreateRequestDetails::CopyFrom(const ProductCreateRequestDetails& fr
 void ProductCreateRequestDetails::InternalSwap(ProductCreateRequestDetails* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   using ::std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.shared_.InternalSwap(&other->_impl_.shared_);
   swap(_impl_.details_, other->_impl_.details_);
   swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
 }
@@ -5638,7 +5845,7 @@ void ProductCreateRequestOffer::set_allocated_with_variants(::products::v1::Prod
   }
   // @@protoc_insertion_point(field_set_allocated:products.v1.ProductCreateRequestOffer.with_variants)
 }
-void ProductCreateRequestOffer::set_allocated_without_variants(::products::v1::ProductCreateRequestOfferPricing* PROTOBUF_NULLABLE without_variants) {
+void ProductCreateRequestOffer::set_allocated_without_variants(::products::v1::ProductCreateRequestOfferWithoutVariants* PROTOBUF_NULLABLE without_variants) {
   ::google::protobuf::Arena* message_arena = GetArena();
   clear_pricing();
   if (without_variants) {
@@ -5842,13 +6049,13 @@ ProductCreateRequestOffer::_table_ = {
     // .products.v1.ProductCreateRequestOfferWithVariants with_variants = 4 [json_name = "withVariants"];
     {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOffer, _impl_.pricing_.with_variants_), _Internal::kOneofCaseOffset + 0, 0,
     (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
-    // .products.v1.ProductCreateRequestOfferPricing without_variants = 5 [json_name = "withoutVariants"];
+    // .products.v1.ProductCreateRequestOfferWithoutVariants without_variants = 5 [json_name = "withoutVariants"];
     {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOffer, _impl_.pricing_.without_variants_), _Internal::kOneofCaseOffset + 0, 1,
     (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
       {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestOfferWithVariants>()},
-      {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestOfferPricing>()},
+      {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestOfferWithoutVariants>()},
   }},
   {{
     "\45\10\20\0\0\0\0\0"
@@ -5994,7 +6201,7 @@ PROTOBUF_NOINLINE void ProductCreateRequestOffer::Clear() {
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.pricing_.with_variants_);
       break;
     }
-    // .products.v1.ProductCreateRequestOfferPricing without_variants = 5 [json_name = "withoutVariants"];
+    // .products.v1.ProductCreateRequestOfferWithoutVariants without_variants = 5 [json_name = "withoutVariants"];
     case kWithoutVariants: {
       total_size += 1 +
                     ::google::protobuf::internal::WireFormatLite::MessageSize(*this_._impl_.pricing_.without_variants_);
@@ -7041,27 +7248,27 @@ void ProductCreateRequestOfferVariant::InternalSwap(ProductCreateRequestOfferVar
 }
 // ===================================================================
 
-class ProductCreateRequestOfferPricing::_Internal {
+class ProductCreateRequestOfferWithoutVariants::_Internal {
  public:
   using HasBits =
-      decltype(::std::declval<ProductCreateRequestOfferPricing>()._impl_._has_bits_);
+      decltype(::std::declval<ProductCreateRequestOfferWithoutVariants>()._impl_._has_bits_);
   static constexpr ::int32_t kHasBitsOffset =
-      8 * PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_._has_bits_);
+      8 * PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_._has_bits_);
 };
 
-ProductCreateRequestOfferPricing::ProductCreateRequestOfferPricing(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
+ProductCreateRequestOfferWithoutVariants::ProductCreateRequestOfferWithoutVariants(::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena, ProductCreateRequestOfferPricing_class_data_.base()) {
+    : ::google::protobuf::Message(arena, ProductCreateRequestOfferWithoutVariants_class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
   SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:products.v1.ProductCreateRequestOfferPricing)
+  // @@protoc_insertion_point(arena_constructor:products.v1.ProductCreateRequestOfferWithoutVariants)
 }
-PROTOBUF_NDEBUG_INLINE ProductCreateRequestOfferPricing::Impl_::Impl_(
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestOfferWithoutVariants::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena, const Impl_& from,
-    const ::products::v1::ProductCreateRequestOfferPricing& from_msg)
+    const ::products::v1::ProductCreateRequestOfferWithoutVariants& from_msg)
       : _has_bits_{from._has_bits_},
         _cached_size_{0},
         minimum_orders_{visibility, arena, from.minimum_orders_},
@@ -7074,15 +7281,15 @@ PROTOBUF_NDEBUG_INLINE ProductCreateRequestOfferPricing::Impl_::Impl_(
         sale_price_start_(arena, from.sale_price_start_),
         sale_price_end_(arena, from.sale_price_end_) {}
 
-ProductCreateRequestOfferPricing::ProductCreateRequestOfferPricing(
+ProductCreateRequestOfferWithoutVariants::ProductCreateRequestOfferWithoutVariants(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
-    const ProductCreateRequestOfferPricing& from)
+    const ProductCreateRequestOfferWithoutVariants& from)
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-    : ::google::protobuf::Message(arena, ProductCreateRequestOfferPricing_class_data_.base()) {
+    : ::google::protobuf::Message(arena, ProductCreateRequestOfferWithoutVariants_class_data_.base()) {
 #else   // PROTOBUF_CUSTOM_VTABLE
     : ::google::protobuf::Message(arena) {
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  ProductCreateRequestOfferPricing* const _this = this;
+  ProductCreateRequestOfferWithoutVariants* const _this = this;
   (void)_this;
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
@@ -7095,9 +7302,9 @@ ProductCreateRequestOfferPricing::ProductCreateRequestOfferPricing(
                offsetof(Impl_, quantity_) +
                sizeof(Impl_::has_minimum_orders_));
 
-  // @@protoc_insertion_point(copy_constructor:products.v1.ProductCreateRequestOfferPricing)
+  // @@protoc_insertion_point(copy_constructor:products.v1.ProductCreateRequestOfferWithoutVariants)
 }
-PROTOBUF_NDEBUG_INLINE ProductCreateRequestOfferPricing::Impl_::Impl_(
+PROTOBUF_NDEBUG_INLINE ProductCreateRequestOfferWithoutVariants::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena)
       : _cached_size_{0},
@@ -7111,7 +7318,7 @@ PROTOBUF_NDEBUG_INLINE ProductCreateRequestOfferPricing::Impl_::Impl_(
         sale_price_start_(arena),
         sale_price_end_(arena) {}
 
-inline void ProductCreateRequestOfferPricing::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
+inline void ProductCreateRequestOfferWithoutVariants::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
   ::memset(reinterpret_cast<char *>(&_impl_) +
                offsetof(Impl_, quantity_),
@@ -7120,12 +7327,12 @@ inline void ProductCreateRequestOfferPricing::SharedCtor(::_pb::Arena* PROTOBUF_
                offsetof(Impl_, quantity_) +
                sizeof(Impl_::has_minimum_orders_));
 }
-ProductCreateRequestOfferPricing::~ProductCreateRequestOfferPricing() {
-  // @@protoc_insertion_point(destructor:products.v1.ProductCreateRequestOfferPricing)
+ProductCreateRequestOfferWithoutVariants::~ProductCreateRequestOfferWithoutVariants() {
+  // @@protoc_insertion_point(destructor:products.v1.ProductCreateRequestOfferWithoutVariants)
   SharedDtor(*this);
 }
-inline void ProductCreateRequestOfferPricing::SharedDtor(MessageLite& self) {
-  ProductCreateRequestOfferPricing& this_ = static_cast<ProductCreateRequestOfferPricing&>(self);
+inline void ProductCreateRequestOfferWithoutVariants::SharedDtor(MessageLite& self) {
+  ProductCreateRequestOfferWithoutVariants& this_ = static_cast<ProductCreateRequestOfferWithoutVariants&>(self);
   this_._internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   ABSL_DCHECK(this_.GetArena() == nullptr);
   this_._impl_.sku_.Destroy();
@@ -7139,65 +7346,65 @@ inline void ProductCreateRequestOfferPricing::SharedDtor(MessageLite& self) {
   this_._impl_.~Impl_();
 }
 
-inline void* PROTOBUF_NONNULL ProductCreateRequestOfferPricing::PlacementNew_(
+inline void* PROTOBUF_NONNULL ProductCreateRequestOfferWithoutVariants::PlacementNew_(
     const void* PROTOBUF_NONNULL, void* PROTOBUF_NONNULL mem,
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena) {
-  return ::new (mem) ProductCreateRequestOfferPricing(arena);
+  return ::new (mem) ProductCreateRequestOfferWithoutVariants(arena);
 }
-constexpr auto ProductCreateRequestOfferPricing::InternalNewImpl_() {
+constexpr auto ProductCreateRequestOfferWithoutVariants::InternalNewImpl_() {
   constexpr auto arena_bits = ::google::protobuf::internal::EncodePlacementArenaOffsets({
-      PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.minimum_orders_) +
-          decltype(ProductCreateRequestOfferPricing::_impl_.minimum_orders_)::
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.minimum_orders_) +
+          decltype(ProductCreateRequestOfferWithoutVariants::_impl_.minimum_orders_)::
               InternalGetArenaOffset(
                   ::google::protobuf::Message::internal_visibility()),
   });
   if (arena_bits.has_value()) {
     return ::google::protobuf::internal::MessageCreator::CopyInit(
-        sizeof(ProductCreateRequestOfferPricing), alignof(ProductCreateRequestOfferPricing), *arena_bits);
+        sizeof(ProductCreateRequestOfferWithoutVariants), alignof(ProductCreateRequestOfferWithoutVariants), *arena_bits);
   } else {
-    return ::google::protobuf::internal::MessageCreator(&ProductCreateRequestOfferPricing::PlacementNew_,
-                                 sizeof(ProductCreateRequestOfferPricing),
-                                 alignof(ProductCreateRequestOfferPricing));
+    return ::google::protobuf::internal::MessageCreator(&ProductCreateRequestOfferWithoutVariants::PlacementNew_,
+                                 sizeof(ProductCreateRequestOfferWithoutVariants),
+                                 alignof(ProductCreateRequestOfferWithoutVariants));
   }
 }
-constexpr auto ProductCreateRequestOfferPricing::InternalGenerateClassData_() {
+constexpr auto ProductCreateRequestOfferWithoutVariants::InternalGenerateClassData_() {
   return ::google::protobuf::internal::ClassDataFull{
       ::google::protobuf::internal::ClassData{
-          &_ProductCreateRequestOfferPricing_default_instance_._instance,
+          &_ProductCreateRequestOfferWithoutVariants_default_instance_._instance,
           &_table_.header,
           nullptr,  // OnDemandRegisterArenaDtor
           nullptr,  // IsInitialized
-          &ProductCreateRequestOfferPricing::MergeImpl,
-          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestOfferPricing>(),
+          &ProductCreateRequestOfferWithoutVariants::MergeImpl,
+          ::google::protobuf::Message::GetNewImpl<ProductCreateRequestOfferWithoutVariants>(),
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-          &ProductCreateRequestOfferPricing::SharedDtor,
-          ::google::protobuf::Message::GetClearImpl<ProductCreateRequestOfferPricing>(), &ProductCreateRequestOfferPricing::ByteSizeLong,
-              &ProductCreateRequestOfferPricing::_InternalSerialize,
+          &ProductCreateRequestOfferWithoutVariants::SharedDtor,
+          ::google::protobuf::Message::GetClearImpl<ProductCreateRequestOfferWithoutVariants>(), &ProductCreateRequestOfferWithoutVariants::ByteSizeLong,
+              &ProductCreateRequestOfferWithoutVariants::_InternalSerialize,
 #endif  // PROTOBUF_CUSTOM_VTABLE
-          PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_._cached_size_),
+          PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_._cached_size_),
           false,
       },
-      &ProductCreateRequestOfferPricing::kDescriptorMethods,
+      &ProductCreateRequestOfferWithoutVariants::kDescriptorMethods,
       &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto,
       nullptr,  // tracker
   };
 }
 
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 const
-    ::google::protobuf::internal::ClassDataFull ProductCreateRequestOfferPricing_class_data_ =
-        ProductCreateRequestOfferPricing::InternalGenerateClassData_();
+    ::google::protobuf::internal::ClassDataFull ProductCreateRequestOfferWithoutVariants_class_data_ =
+        ProductCreateRequestOfferWithoutVariants::InternalGenerateClassData_();
 
 PROTOBUF_ATTRIBUTE_WEAK const ::google::protobuf::internal::ClassData* PROTOBUF_NONNULL
-ProductCreateRequestOfferPricing::GetClassData() const {
-  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestOfferPricing_class_data_);
-  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestOfferPricing_class_data_.tc_table);
-  return ProductCreateRequestOfferPricing_class_data_.base();
+ProductCreateRequestOfferWithoutVariants::GetClassData() const {
+  ::google::protobuf::internal::PrefetchToLocalCache(&ProductCreateRequestOfferWithoutVariants_class_data_);
+  ::google::protobuf::internal::PrefetchToLocalCache(ProductCreateRequestOfferWithoutVariants_class_data_.tc_table);
+  return ProductCreateRequestOfferWithoutVariants_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<4, 12, 1, 151, 2>
-ProductCreateRequestOfferPricing::_table_ = {
+const ::_pbi::TcParseTable<4, 12, 1, 159, 2>
+ProductCreateRequestOfferWithoutVariants::_table_ = {
   {
-    PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_._has_bits_),
+    PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_._has_bits_),
     0, // no _extensions_
     12, 120,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
@@ -7206,50 +7413,50 @@ ProductCreateRequestOfferPricing::_table_ = {
     12,  // num_field_entries
     1,  // num_aux_entries
     offsetof(decltype(_table_), aux_entries),
-    ProductCreateRequestOfferPricing_class_data_.base(),
+    ProductCreateRequestOfferWithoutVariants_class_data_.base(),
     nullptr,  // post_loop_handler
     ::_pbi::TcParser::GenericFallback,  // fallback
     #ifdef PROTOBUF_PREFETCH_PARSE_TABLE
-    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestOfferPricing>(),  // to_prefetch
+    ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestOfferWithoutVariants>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
     {::_pbi::TcParser::MiniParse, {}},
     // string sku = 1 [json_name = "sku"];
     {::_pbi::TcParser::FastUS1,
-     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.sku_)}},
+     {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.sku_)}},
     // uint64 quantity = 2 [json_name = "quantity"];
-    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ProductCreateRequestOfferPricing, _impl_.quantity_), 8>(),
-     {16, 8, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.quantity_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint64_t, offsetof(ProductCreateRequestOfferWithoutVariants, _impl_.quantity_), 8>(),
+     {16, 8, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.quantity_)}},
     // string price = 3 [json_name = "price"];
     {::_pbi::TcParser::FastUS1,
-     {26, 1, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.price_)}},
+     {26, 1, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.price_)}},
     // string offering_condition = 4 [json_name = "offeringCondition"];
     {::_pbi::TcParser::FastUS1,
-     {34, 2, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.offering_condition_)}},
+     {34, 2, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.offering_condition_)}},
     // optional string condition_note = 5 [json_name = "conditionNote"];
     {::_pbi::TcParser::FastUS1,
-     {42, 3, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.condition_note_)}},
+     {42, 3, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.condition_note_)}},
     // optional string list_price = 6 [json_name = "listPrice"];
     {::_pbi::TcParser::FastUS1,
-     {50, 4, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.list_price_)}},
+     {50, 4, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.list_price_)}},
     // optional bool has_sale_price = 7 [json_name = "hasSalePrice"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductCreateRequestOfferPricing, _impl_.has_sale_price_), 9>(),
-     {56, 9, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.has_sale_price_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductCreateRequestOfferWithoutVariants, _impl_.has_sale_price_), 9>(),
+     {56, 9, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.has_sale_price_)}},
     // optional string sale_price = 8 [json_name = "salePrice"];
     {::_pbi::TcParser::FastUS1,
-     {66, 5, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.sale_price_)}},
+     {66, 5, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.sale_price_)}},
     // optional string sale_price_start = 9 [json_name = "salePriceStart"];
     {::_pbi::TcParser::FastUS1,
-     {74, 6, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.sale_price_start_)}},
+     {74, 6, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.sale_price_start_)}},
     // optional string sale_price_end = 10 [json_name = "salePriceEnd"];
     {::_pbi::TcParser::FastUS1,
-     {82, 7, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.sale_price_end_)}},
+     {82, 7, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.sale_price_end_)}},
     // bool has_minimum_orders = 11 [json_name = "hasMinimumOrders"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductCreateRequestOfferPricing, _impl_.has_minimum_orders_), 10>(),
-     {88, 10, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.has_minimum_orders_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductCreateRequestOfferWithoutVariants, _impl_.has_minimum_orders_), 10>(),
+     {88, 10, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.has_minimum_orders_)}},
     // repeated .products.v1.ProductCreateRequestOfferMinimumOrder minimum_orders = 12 [json_name = "minimumOrders"];
     {::_pbi::TcParser::FastMtR1,
-     {98, 63, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.minimum_orders_)}},
+     {98, 63, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.minimum_orders_)}},
     {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
     {::_pbi::TcParser::MiniParse, {}},
@@ -7257,48 +7464,48 @@ ProductCreateRequestOfferPricing::_table_ = {
     65535, 65535
   }}, {{
     // string sku = 1 [json_name = "sku"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.sku_), _Internal::kHasBitsOffset + 0, 0,
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.sku_), _Internal::kHasBitsOffset + 0, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // uint64 quantity = 2 [json_name = "quantity"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.quantity_), _Internal::kHasBitsOffset + 8, 0,
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.quantity_), _Internal::kHasBitsOffset + 8, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUInt64)},
     // string price = 3 [json_name = "price"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.price_), _Internal::kHasBitsOffset + 1, 0,
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.price_), _Internal::kHasBitsOffset + 1, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // string offering_condition = 4 [json_name = "offeringCondition"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.offering_condition_), _Internal::kHasBitsOffset + 2, 0,
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.offering_condition_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // optional string condition_note = 5 [json_name = "conditionNote"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.condition_note_), _Internal::kHasBitsOffset + 3, 0,
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.condition_note_), _Internal::kHasBitsOffset + 3, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // optional string list_price = 6 [json_name = "listPrice"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.list_price_), _Internal::kHasBitsOffset + 4, 0,
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.list_price_), _Internal::kHasBitsOffset + 4, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // optional bool has_sale_price = 7 [json_name = "hasSalePrice"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.has_sale_price_), _Internal::kHasBitsOffset + 9, 0,
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.has_sale_price_), _Internal::kHasBitsOffset + 9, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
     // optional string sale_price = 8 [json_name = "salePrice"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.sale_price_), _Internal::kHasBitsOffset + 5, 0,
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.sale_price_), _Internal::kHasBitsOffset + 5, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // optional string sale_price_start = 9 [json_name = "salePriceStart"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.sale_price_start_), _Internal::kHasBitsOffset + 6, 0,
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.sale_price_start_), _Internal::kHasBitsOffset + 6, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // optional string sale_price_end = 10 [json_name = "salePriceEnd"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.sale_price_end_), _Internal::kHasBitsOffset + 7, 0,
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.sale_price_end_), _Internal::kHasBitsOffset + 7, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // bool has_minimum_orders = 11 [json_name = "hasMinimumOrders"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.has_minimum_orders_), _Internal::kHasBitsOffset + 10, 0,
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.has_minimum_orders_), _Internal::kHasBitsOffset + 10, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
     // repeated .products.v1.ProductCreateRequestOfferMinimumOrder minimum_orders = 12 [json_name = "minimumOrders"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.minimum_orders_), -1, 0,
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.minimum_orders_), -1, 0,
     (0 | ::_fl::kFcRepeated | ::_fl::kMessage | ::_fl::kTvTable)},
   }},
   {{
       {::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestOfferMinimumOrder>()},
   }},
   {{
-    "\54\3\0\5\22\16\12\0\12\20\16\0\0\0\0\0"
-    "products.v1.ProductCreateRequestOfferPricing"
+    "\64\3\0\5\22\16\12\0\12\20\16\0\0\0\0\0"
+    "products.v1.ProductCreateRequestOfferWithoutVariants"
     "sku"
     "price"
     "offering_condition"
@@ -7309,8 +7516,8 @@ ProductCreateRequestOfferPricing::_table_ = {
     "sale_price_end"
   }},
 };
-PROTOBUF_NOINLINE void ProductCreateRequestOfferPricing::Clear() {
-// @@protoc_insertion_point(message_clear_start:products.v1.ProductCreateRequestOfferPricing)
+PROTOBUF_NOINLINE void ProductCreateRequestOfferWithoutVariants::Clear() {
+// @@protoc_insertion_point(message_clear_start:products.v1.ProductCreateRequestOfferWithoutVariants)
   ::google::protobuf::internal::TSanWrite(&_impl_);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
@@ -7354,17 +7561,17 @@ PROTOBUF_NOINLINE void ProductCreateRequestOfferPricing::Clear() {
 }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-::uint8_t* PROTOBUF_NONNULL ProductCreateRequestOfferPricing::_InternalSerialize(
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestOfferWithoutVariants::_InternalSerialize(
     const ::google::protobuf::MessageLite& base, ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) {
-  const ProductCreateRequestOfferPricing& this_ = static_cast<const ProductCreateRequestOfferPricing&>(base);
+  const ProductCreateRequestOfferWithoutVariants& this_ = static_cast<const ProductCreateRequestOfferWithoutVariants&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-::uint8_t* PROTOBUF_NONNULL ProductCreateRequestOfferPricing::_InternalSerialize(
+::uint8_t* PROTOBUF_NONNULL ProductCreateRequestOfferWithoutVariants::_InternalSerialize(
     ::uint8_t* PROTOBUF_NONNULL target,
     ::google::protobuf::io::EpsCopyOutputStream* PROTOBUF_NONNULL stream) const {
-  const ProductCreateRequestOfferPricing& this_ = *this;
+  const ProductCreateRequestOfferWithoutVariants& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductCreateRequestOfferPricing)
+  // @@protoc_insertion_point(serialize_to_array_start:products.v1.ProductCreateRequestOfferWithoutVariants)
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
@@ -7373,7 +7580,7 @@ PROTOBUF_NOINLINE void ProductCreateRequestOfferPricing::Clear() {
     if (!this_._internal_sku().empty()) {
       const ::std::string& _s = this_._internal_sku();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferPricing.sku");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferWithoutVariants.sku");
       target = stream->WriteStringMaybeAliased(1, _s, target);
     }
   }
@@ -7392,7 +7599,7 @@ PROTOBUF_NOINLINE void ProductCreateRequestOfferPricing::Clear() {
     if (!this_._internal_price().empty()) {
       const ::std::string& _s = this_._internal_price();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferPricing.price");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferWithoutVariants.price");
       target = stream->WriteStringMaybeAliased(3, _s, target);
     }
   }
@@ -7402,7 +7609,7 @@ PROTOBUF_NOINLINE void ProductCreateRequestOfferPricing::Clear() {
     if (!this_._internal_offering_condition().empty()) {
       const ::std::string& _s = this_._internal_offering_condition();
       ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferPricing.offering_condition");
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferWithoutVariants.offering_condition");
       target = stream->WriteStringMaybeAliased(4, _s, target);
     }
   }
@@ -7412,7 +7619,7 @@ PROTOBUF_NOINLINE void ProductCreateRequestOfferPricing::Clear() {
   if ((cached_has_bits & 0x00000008u) != 0) {
     const ::std::string& _s = this_._internal_condition_note();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferPricing.condition_note");
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferWithoutVariants.condition_note");
     target = stream->WriteStringMaybeAliased(5, _s, target);
   }
 
@@ -7420,7 +7627,7 @@ PROTOBUF_NOINLINE void ProductCreateRequestOfferPricing::Clear() {
   if ((cached_has_bits & 0x00000010u) != 0) {
     const ::std::string& _s = this_._internal_list_price();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferPricing.list_price");
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferWithoutVariants.list_price");
     target = stream->WriteStringMaybeAliased(6, _s, target);
   }
 
@@ -7435,7 +7642,7 @@ PROTOBUF_NOINLINE void ProductCreateRequestOfferPricing::Clear() {
   if ((cached_has_bits & 0x00000020u) != 0) {
     const ::std::string& _s = this_._internal_sale_price();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferPricing.sale_price");
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferWithoutVariants.sale_price");
     target = stream->WriteStringMaybeAliased(8, _s, target);
   }
 
@@ -7443,7 +7650,7 @@ PROTOBUF_NOINLINE void ProductCreateRequestOfferPricing::Clear() {
   if ((cached_has_bits & 0x00000040u) != 0) {
     const ::std::string& _s = this_._internal_sale_price_start();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferPricing.sale_price_start");
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferWithoutVariants.sale_price_start");
     target = stream->WriteStringMaybeAliased(9, _s, target);
   }
 
@@ -7451,7 +7658,7 @@ PROTOBUF_NOINLINE void ProductCreateRequestOfferPricing::Clear() {
   if ((cached_has_bits & 0x00000080u) != 0) {
     const ::std::string& _s = this_._internal_sale_price_end();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferPricing.sale_price_end");
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestOfferWithoutVariants.sale_price_end");
     target = stream->WriteStringMaybeAliased(10, _s, target);
   }
 
@@ -7480,18 +7687,18 @@ PROTOBUF_NOINLINE void ProductCreateRequestOfferPricing::Clear() {
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
             this_._internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductCreateRequestOfferPricing)
+  // @@protoc_insertion_point(serialize_to_array_end:products.v1.ProductCreateRequestOfferWithoutVariants)
   return target;
 }
 
 #if defined(PROTOBUF_CUSTOM_VTABLE)
-::size_t ProductCreateRequestOfferPricing::ByteSizeLong(const MessageLite& base) {
-  const ProductCreateRequestOfferPricing& this_ = static_cast<const ProductCreateRequestOfferPricing&>(base);
+::size_t ProductCreateRequestOfferWithoutVariants::ByteSizeLong(const MessageLite& base) {
+  const ProductCreateRequestOfferWithoutVariants& this_ = static_cast<const ProductCreateRequestOfferWithoutVariants&>(base);
 #else   // PROTOBUF_CUSTOM_VTABLE
-::size_t ProductCreateRequestOfferPricing::ByteSizeLong() const {
-  const ProductCreateRequestOfferPricing& this_ = *this;
+::size_t ProductCreateRequestOfferWithoutVariants::ByteSizeLong() const {
+  const ProductCreateRequestOfferWithoutVariants& this_ = *this;
 #endif  // PROTOBUF_CUSTOM_VTABLE
-  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductCreateRequestOfferPricing)
+  // @@protoc_insertion_point(message_byte_size_start:products.v1.ProductCreateRequestOfferWithoutVariants)
   ::size_t total_size = 0;
 
   ::uint32_t cached_has_bits = 0;
@@ -7577,10 +7784,10 @@ PROTOBUF_NOINLINE void ProductCreateRequestOfferPricing::Clear() {
                                              &this_._impl_._cached_size_);
 }
 
-void ProductCreateRequestOfferPricing::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
-  auto* const _this = static_cast<ProductCreateRequestOfferPricing*>(&to_msg);
-  auto& from = static_cast<const ProductCreateRequestOfferPricing&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductCreateRequestOfferPricing)
+void ProductCreateRequestOfferWithoutVariants::MergeImpl(::google::protobuf::MessageLite& to_msg, const ::google::protobuf::MessageLite& from_msg) {
+  auto* const _this = static_cast<ProductCreateRequestOfferWithoutVariants*>(&to_msg);
+  auto& from = static_cast<const ProductCreateRequestOfferWithoutVariants&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:products.v1.ProductCreateRequestOfferWithoutVariants)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -7651,15 +7858,15 @@ void ProductCreateRequestOfferPricing::MergeImpl(::google::protobuf::MessageLite
   _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void ProductCreateRequestOfferPricing::CopyFrom(const ProductCreateRequestOfferPricing& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductCreateRequestOfferPricing)
+void ProductCreateRequestOfferWithoutVariants::CopyFrom(const ProductCreateRequestOfferWithoutVariants& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:products.v1.ProductCreateRequestOfferWithoutVariants)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
 
-void ProductCreateRequestOfferPricing::InternalSwap(ProductCreateRequestOfferPricing* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
+void ProductCreateRequestOfferWithoutVariants::InternalSwap(ProductCreateRequestOfferWithoutVariants* PROTOBUF_RESTRICT PROTOBUF_NONNULL other) {
   using ::std::swap;
   auto* arena = GetArena();
   ABSL_DCHECK_EQ(arena, other->GetArena());
@@ -7675,14 +7882,14 @@ void ProductCreateRequestOfferPricing::InternalSwap(ProductCreateRequestOfferPri
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sale_price_start_, &other->_impl_.sale_price_start_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.sale_price_end_, &other->_impl_.sale_price_end_, arena);
   ::google::protobuf::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.has_minimum_orders_)
-      + sizeof(ProductCreateRequestOfferPricing::_impl_.has_minimum_orders_)
-      - PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferPricing, _impl_.quantity_)>(
+      PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.has_minimum_orders_)
+      + sizeof(ProductCreateRequestOfferWithoutVariants::_impl_.has_minimum_orders_)
+      - PROTOBUF_FIELD_OFFSET(ProductCreateRequestOfferWithoutVariants, _impl_.quantity_)>(
           reinterpret_cast<char*>(&_impl_.quantity_),
           reinterpret_cast<char*>(&other->_impl_.quantity_));
 }
 
-::google::protobuf::Metadata ProductCreateRequestOfferPricing::GetMetadata() const {
+::google::protobuf::Metadata ProductCreateRequestOfferWithoutVariants::GetMetadata() const {
   return ::google::protobuf::Message::GetMetadataImpl(GetClassData()->full());
 }
 // ===================================================================

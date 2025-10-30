@@ -47,25 +47,33 @@ message ProductCreateRequestBulletPoint {
 }
 
 message ProductCreateRequestDetails {
+  // attributes that has include_in_variants = false, so they are existed
+  // if in both (with_variants, without_variants)
+  map<string, shared.v1.Any> shared = 1;
   oneof details {
-    ProductCreateRequestDetailsWithVariants with_variants = 1;
-    ProductCreateRequestDetailsWithoutVariants without_variants = 2;
+    ProductCreateRequestDetailsWithVariants with_variants = 2;
+    ProductCreateRequestDetailsWithoutVariants without_variants = 3;
   }
 }
 
 message ProductCreateRequestDetailsWithVariants {
+  // an array of details for values for each product's details variant
   repeated ProductCreateRequestDetailsVariantForm variants = 1;
 }
 
 message ProductCreateRequestDetailsVariantForm {
+  // <attribute_id, attribute value>
   map<string, shared.v1.Any> form = 1;
 }
 
 message ProductCreateRequestDetailsWithoutVariants {
+  // <attribute_id, attribute value>
   map<string, shared.v1.Any> form = 1;
 }
 
 message ProductCreateRequestMedia {
+  // total size in bytes, so this size is used to decide how to upload the media,
+  // either with resumable uploading or directly if media files aren't so big
   uint64 total_size = 1;
   oneof media {
     ProductCreateRequestMediaWithVariants with_variants = 2;
@@ -89,7 +97,7 @@ message ProductCreateRequestOffer {
   uint64 processing_time = 3;
   oneof pricing {
     ProductCreateRequestOfferWithVariants with_variants = 4;
-    ProductCreateRequestOfferPricing without_variants = 5;
+    ProductCreateRequestOfferWithoutVariants without_variants = 5;
   }
 }
 
@@ -113,7 +121,7 @@ message ProductCreateRequestOfferVariant {
   repeated ProductCreateRequestOfferMinimumOrder minimum_orders = 13;
 }
 
-message ProductCreateRequestOfferPricing {
+message ProductCreateRequestOfferWithoutVariants {
   string sku = 1;
   uint64 quantity = 2;
   string price = 3;

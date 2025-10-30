@@ -364,6 +364,9 @@ func (x *ProductCreateRequestBulletPoint) GetBulletPoint() string {
 
 type ProductCreateRequestDetails struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
+	// attributes that has include_in_variants = false, so they are existed
+	// if in both (with_variants, without_variants)
+	Shared map[string]*v1.Any `protobuf:"bytes,1,rep,name=shared,proto3" json:"shared,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	// Types that are valid to be assigned to Details:
 	//
 	//	*ProductCreateRequestDetails_WithVariants
@@ -403,6 +406,13 @@ func (*ProductCreateRequestDetails) Descriptor() ([]byte, []int) {
 	return file_products_v1_product_create_proto_rawDescGZIP(), []int{5}
 }
 
+func (x *ProductCreateRequestDetails) GetShared() map[string]*v1.Any {
+	if x != nil {
+		return x.Shared
+	}
+	return nil
+}
+
 func (x *ProductCreateRequestDetails) GetDetails() isProductCreateRequestDetails_Details {
 	if x != nil {
 		return x.Details
@@ -433,11 +443,11 @@ type isProductCreateRequestDetails_Details interface {
 }
 
 type ProductCreateRequestDetails_WithVariants struct {
-	WithVariants *ProductCreateRequestDetailsWithVariants `protobuf:"bytes,1,opt,name=with_variants,json=withVariants,proto3,oneof"`
+	WithVariants *ProductCreateRequestDetailsWithVariants `protobuf:"bytes,2,opt,name=with_variants,json=withVariants,proto3,oneof"`
 }
 
 type ProductCreateRequestDetails_WithoutVariants struct {
-	WithoutVariants *ProductCreateRequestDetailsWithoutVariants `protobuf:"bytes,2,opt,name=without_variants,json=withoutVariants,proto3,oneof"`
+	WithoutVariants *ProductCreateRequestDetailsWithoutVariants `protobuf:"bytes,3,opt,name=without_variants,json=withoutVariants,proto3,oneof"`
 }
 
 func (*ProductCreateRequestDetails_WithVariants) isProductCreateRequestDetails_Details() {}
@@ -445,7 +455,8 @@ func (*ProductCreateRequestDetails_WithVariants) isProductCreateRequestDetails_D
 func (*ProductCreateRequestDetails_WithoutVariants) isProductCreateRequestDetails_Details() {}
 
 type ProductCreateRequestDetailsWithVariants struct {
-	state         protoimpl.MessageState                    `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// an array of details for values for each product's details variant
 	Variants      []*ProductCreateRequestDetailsVariantForm `protobuf:"bytes,1,rep,name=variants,proto3" json:"variants,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -489,8 +500,9 @@ func (x *ProductCreateRequestDetailsWithVariants) GetVariants() []*ProductCreate
 }
 
 type ProductCreateRequestDetailsVariantForm struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Form          map[string]*v1.Any     `protobuf:"bytes,1,rep,name=form,proto3" json:"form,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// <attribute_id, attribute value>
+	Form          map[string]*v1.Any `protobuf:"bytes,1,rep,name=form,proto3" json:"form,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -533,8 +545,9 @@ func (x *ProductCreateRequestDetailsVariantForm) GetForm() map[string]*v1.Any {
 }
 
 type ProductCreateRequestDetailsWithoutVariants struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Form          map[string]*v1.Any     `protobuf:"bytes,1,rep,name=form,proto3" json:"form,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// <attribute_id, attribute value>
+	Form          map[string]*v1.Any `protobuf:"bytes,1,rep,name=form,proto3" json:"form,omitempty" protobuf_key:"bytes,1,opt,name=key" protobuf_val:"bytes,2,opt,name=value"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -577,8 +590,10 @@ func (x *ProductCreateRequestDetailsWithoutVariants) GetForm() map[string]*v1.An
 }
 
 type ProductCreateRequestMedia struct {
-	state     protoimpl.MessageState `protogen:"open.v1"`
-	TotalSize uint64                 `protobuf:"varint,1,opt,name=total_size,json=totalSize,proto3" json:"total_size,omitempty"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// total size in bytes, so this size is used to decide how to upload the media,
+	// either with resumable uploading or directly if media files aren't so big
+	TotalSize uint64 `protobuf:"varint,1,opt,name=total_size,json=totalSize,proto3" json:"total_size,omitempty"`
 	// Types that are valid to be assigned to Media:
 	//
 	//	*ProductCreateRequestMedia_WithVariants
@@ -851,7 +866,7 @@ func (x *ProductCreateRequestOffer) GetWithVariants() *ProductCreateRequestOffer
 	return nil
 }
 
-func (x *ProductCreateRequestOffer) GetWithoutVariants() *ProductCreateRequestOfferPricing {
+func (x *ProductCreateRequestOffer) GetWithoutVariants() *ProductCreateRequestOfferWithoutVariants {
 	if x != nil {
 		if x, ok := x.Pricing.(*ProductCreateRequestOffer_WithoutVariants); ok {
 			return x.WithoutVariants
@@ -869,7 +884,7 @@ type ProductCreateRequestOffer_WithVariants struct {
 }
 
 type ProductCreateRequestOffer_WithoutVariants struct {
-	WithoutVariants *ProductCreateRequestOfferPricing `protobuf:"bytes,5,opt,name=without_variants,json=withoutVariants,proto3,oneof"`
+	WithoutVariants *ProductCreateRequestOfferWithoutVariants `protobuf:"bytes,5,opt,name=without_variants,json=withoutVariants,proto3,oneof"`
 }
 
 func (*ProductCreateRequestOffer_WithVariants) isProductCreateRequestOffer_Pricing() {}
@@ -1060,7 +1075,7 @@ func (x *ProductCreateRequestOfferVariant) GetMinimumOrders() []*ProductCreateRe
 	return nil
 }
 
-type ProductCreateRequestOfferPricing struct {
+type ProductCreateRequestOfferWithoutVariants struct {
 	state             protoimpl.MessageState                   `protogen:"open.v1"`
 	Sku               string                                   `protobuf:"bytes,1,opt,name=sku,proto3" json:"sku,omitempty"`
 	Quantity          uint64                                   `protobuf:"varint,2,opt,name=quantity,proto3" json:"quantity,omitempty"`
@@ -1078,20 +1093,20 @@ type ProductCreateRequestOfferPricing struct {
 	sizeCache         protoimpl.SizeCache
 }
 
-func (x *ProductCreateRequestOfferPricing) Reset() {
-	*x = ProductCreateRequestOfferPricing{}
+func (x *ProductCreateRequestOfferWithoutVariants) Reset() {
+	*x = ProductCreateRequestOfferWithoutVariants{}
 	mi := &file_products_v1_product_create_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ProductCreateRequestOfferPricing) String() string {
+func (x *ProductCreateRequestOfferWithoutVariants) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ProductCreateRequestOfferPricing) ProtoMessage() {}
+func (*ProductCreateRequestOfferWithoutVariants) ProtoMessage() {}
 
-func (x *ProductCreateRequestOfferPricing) ProtoReflect() protoreflect.Message {
+func (x *ProductCreateRequestOfferWithoutVariants) ProtoReflect() protoreflect.Message {
 	mi := &file_products_v1_product_create_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -1103,89 +1118,89 @@ func (x *ProductCreateRequestOfferPricing) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ProductCreateRequestOfferPricing.ProtoReflect.Descriptor instead.
-func (*ProductCreateRequestOfferPricing) Descriptor() ([]byte, []int) {
+// Deprecated: Use ProductCreateRequestOfferWithoutVariants.ProtoReflect.Descriptor instead.
+func (*ProductCreateRequestOfferWithoutVariants) Descriptor() ([]byte, []int) {
 	return file_products_v1_product_create_proto_rawDescGZIP(), []int{15}
 }
 
-func (x *ProductCreateRequestOfferPricing) GetSku() string {
+func (x *ProductCreateRequestOfferWithoutVariants) GetSku() string {
 	if x != nil {
 		return x.Sku
 	}
 	return ""
 }
 
-func (x *ProductCreateRequestOfferPricing) GetQuantity() uint64 {
+func (x *ProductCreateRequestOfferWithoutVariants) GetQuantity() uint64 {
 	if x != nil {
 		return x.Quantity
 	}
 	return 0
 }
 
-func (x *ProductCreateRequestOfferPricing) GetPrice() string {
+func (x *ProductCreateRequestOfferWithoutVariants) GetPrice() string {
 	if x != nil {
 		return x.Price
 	}
 	return ""
 }
 
-func (x *ProductCreateRequestOfferPricing) GetOfferingCondition() string {
+func (x *ProductCreateRequestOfferWithoutVariants) GetOfferingCondition() string {
 	if x != nil {
 		return x.OfferingCondition
 	}
 	return ""
 }
 
-func (x *ProductCreateRequestOfferPricing) GetConditionNote() string {
+func (x *ProductCreateRequestOfferWithoutVariants) GetConditionNote() string {
 	if x != nil && x.ConditionNote != nil {
 		return *x.ConditionNote
 	}
 	return ""
 }
 
-func (x *ProductCreateRequestOfferPricing) GetListPrice() string {
+func (x *ProductCreateRequestOfferWithoutVariants) GetListPrice() string {
 	if x != nil && x.ListPrice != nil {
 		return *x.ListPrice
 	}
 	return ""
 }
 
-func (x *ProductCreateRequestOfferPricing) GetHasSalePrice() bool {
+func (x *ProductCreateRequestOfferWithoutVariants) GetHasSalePrice() bool {
 	if x != nil && x.HasSalePrice != nil {
 		return *x.HasSalePrice
 	}
 	return false
 }
 
-func (x *ProductCreateRequestOfferPricing) GetSalePrice() string {
+func (x *ProductCreateRequestOfferWithoutVariants) GetSalePrice() string {
 	if x != nil && x.SalePrice != nil {
 		return *x.SalePrice
 	}
 	return ""
 }
 
-func (x *ProductCreateRequestOfferPricing) GetSalePriceStart() string {
+func (x *ProductCreateRequestOfferWithoutVariants) GetSalePriceStart() string {
 	if x != nil && x.SalePriceStart != nil {
 		return *x.SalePriceStart
 	}
 	return ""
 }
 
-func (x *ProductCreateRequestOfferPricing) GetSalePriceEnd() string {
+func (x *ProductCreateRequestOfferWithoutVariants) GetSalePriceEnd() string {
 	if x != nil && x.SalePriceEnd != nil {
 		return *x.SalePriceEnd
 	}
 	return ""
 }
 
-func (x *ProductCreateRequestOfferPricing) GetHasMinimumOrders() bool {
+func (x *ProductCreateRequestOfferWithoutVariants) GetHasMinimumOrders() bool {
 	if x != nil {
 		return x.HasMinimumOrders
 	}
 	return false
 }
 
-func (x *ProductCreateRequestOfferPricing) GetMinimumOrders() []*ProductCreateRequestOfferMinimumOrder {
+func (x *ProductCreateRequestOfferWithoutVariants) GetMinimumOrders() []*ProductCreateRequestOfferMinimumOrder {
 	if x != nil {
 		return x.MinimumOrders
 	}
@@ -1419,10 +1434,14 @@ const file_products_v1_product_create_proto_rawDesc = "" +
 	"\rbullet_points\x18\x02 \x03(\v2,.products.v1.ProductCreateRequestBulletPointR\fbulletPoints\"T\n" +
 	"\x1fProductCreateRequestBulletPoint\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12!\n" +
-	"\fbullet_point\x18\x02 \x01(\tR\vbulletPoint\"\xeb\x01\n" +
-	"\x1bProductCreateRequestDetails\x12[\n" +
-	"\rwith_variants\x18\x01 \x01(\v24.products.v1.ProductCreateRequestDetailsWithVariantsH\x00R\fwithVariants\x12d\n" +
-	"\x10without_variants\x18\x02 \x01(\v27.products.v1.ProductCreateRequestDetailsWithoutVariantsH\x00R\x0fwithoutVariantsB\t\n" +
+	"\fbullet_point\x18\x02 \x01(\tR\vbulletPoint\"\x84\x03\n" +
+	"\x1bProductCreateRequestDetails\x12L\n" +
+	"\x06shared\x18\x01 \x03(\v24.products.v1.ProductCreateRequestDetails.SharedEntryR\x06shared\x12[\n" +
+	"\rwith_variants\x18\x02 \x01(\v24.products.v1.ProductCreateRequestDetailsWithVariantsH\x00R\fwithVariants\x12d\n" +
+	"\x10without_variants\x18\x03 \x01(\v27.products.v1.ProductCreateRequestDetailsWithoutVariantsH\x00R\x0fwithoutVariants\x1aI\n" +
+	"\vSharedEntry\x12\x10\n" +
+	"\x03key\x18\x01 \x01(\tR\x03key\x12$\n" +
+	"\x05value\x18\x02 \x01(\v2\x0e.shared.v1.AnyR\x05value:\x028\x01B\t\n" +
 	"\adetails\"z\n" +
 	"'ProductCreateRequestDetailsWithVariants\x12O\n" +
 	"\bvariants\x18\x01 \x03(\v23.products.v1.ProductCreateRequestDetailsVariantFormR\bvariants\"\xc4\x01\n" +
@@ -1453,13 +1472,13 @@ const file_products_v1_product_create_proto_rawDesc = "" +
 	"\x05value\x18\x02 \x01(\v2\x16.shared.v1.AttachmentsR\x05value:\x028\x01\"\x88\x01\n" +
 	"(ProductCreateRequestMediaWithoutVariants\x12-\n" +
 	"\x06images\x18\x01 \x03(\v2\x15.shared.v1.AttachmentR\x06images\x12-\n" +
-	"\x06videos\x18\x02 \x03(\v2\x15.shared.v1.AttachmentR\x06videos\"\xcd\x02\n" +
+	"\x06videos\x18\x02 \x03(\v2\x15.shared.v1.AttachmentR\x06videos\"\xd5\x02\n" +
 	"\x19ProductCreateRequestOffer\x12\x1a\n" +
 	"\bcurrency\x18\x01 \x01(\tR\bcurrency\x12)\n" +
 	"\x10fulfillment_type\x18\x02 \x01(\tR\x0ffulfillmentType\x12'\n" +
 	"\x0fprocessing_time\x18\x03 \x01(\x04R\x0eprocessingTime\x12Y\n" +
-	"\rwith_variants\x18\x04 \x01(\v22.products.v1.ProductCreateRequestOfferWithVariantsH\x00R\fwithVariants\x12Z\n" +
-	"\x10without_variants\x18\x05 \x01(\v2-.products.v1.ProductCreateRequestOfferPricingH\x00R\x0fwithoutVariantsB\t\n" +
+	"\rwith_variants\x18\x04 \x01(\v22.products.v1.ProductCreateRequestOfferWithVariantsH\x00R\fwithVariants\x12b\n" +
+	"\x10without_variants\x18\x05 \x01(\v25.products.v1.ProductCreateRequestOfferWithoutVariantsH\x00R\x0fwithoutVariantsB\t\n" +
 	"\apricing\"r\n" +
 	"%ProductCreateRequestOfferWithVariants\x12I\n" +
 	"\bvariants\x18\x01 \x03(\v2-.products.v1.ProductCreateRequestOfferVariantR\bvariants\"\x93\x05\n" +
@@ -1485,8 +1504,8 @@ const file_products_v1_product_create_proto_rawDesc = "" +
 	"\x0f_has_sale_priceB\r\n" +
 	"\v_sale_priceB\x13\n" +
 	"\x11_sale_price_startB\x11\n" +
-	"\x0f_sale_price_end\"\x83\x05\n" +
-	" ProductCreateRequestOfferPricing\x12\x10\n" +
+	"\x0f_sale_price_end\"\x8b\x05\n" +
+	"(ProductCreateRequestOfferWithoutVariants\x12\x10\n" +
 	"\x03sku\x18\x01 \x01(\tR\x03sku\x12\x1a\n" +
 	"\bquantity\x18\x02 \x01(\x04R\bquantity\x12\x14\n" +
 	"\x05price\x18\x03 \x01(\tR\x05price\x12-\n" +
@@ -1537,7 +1556,7 @@ func file_products_v1_product_create_proto_rawDescGZIP() []byte {
 	return file_products_v1_product_create_proto_rawDescData
 }
 
-var file_products_v1_product_create_proto_msgTypes = make([]protoimpl.MessageInfo, 24)
+var file_products_v1_product_create_proto_msgTypes = make([]protoimpl.MessageInfo, 25)
 var file_products_v1_product_create_proto_goTypes = []any{
 	(*ProductCreateTag)(nil),                           // 0: products.v1.ProductCreateTag
 	(*ProductCreateRequest)(nil),                       // 1: products.v1.ProductCreateRequest
@@ -1554,20 +1573,21 @@ var file_products_v1_product_create_proto_goTypes = []any{
 	(*ProductCreateRequestOffer)(nil),                  // 12: products.v1.ProductCreateRequestOffer
 	(*ProductCreateRequestOfferWithVariants)(nil),      // 13: products.v1.ProductCreateRequestOfferWithVariants
 	(*ProductCreateRequestOfferVariant)(nil),           // 14: products.v1.ProductCreateRequestOfferVariant
-	(*ProductCreateRequestOfferPricing)(nil),           // 15: products.v1.ProductCreateRequestOfferPricing
+	(*ProductCreateRequestOfferWithoutVariants)(nil),   // 15: products.v1.ProductCreateRequestOfferWithoutVariants
 	(*ProductCreateRequestOfferMinimumOrder)(nil),      // 16: products.v1.ProductCreateRequestOfferMinimumOrder
 	(*ProductCreateRequestSafety)(nil),                 // 17: products.v1.ProductCreateRequestSafety
 	(*ProductCreateResponse)(nil),                      // 18: products.v1.ProductCreateResponse
-	nil,                                                // 19: products.v1.ProductCreateRequestDetailsVariantForm.FormEntry
-	nil,                                                // 20: products.v1.ProductCreateRequestDetailsWithoutVariants.FormEntry
-	nil,                                                // 21: products.v1.ProductCreateRequestMediaWithVariants.ImagesEntry
-	nil,                                                // 22: products.v1.ProductCreateRequestMediaWithVariants.VideosEntry
-	nil,                                                // 23: products.v1.ProductCreateRequestSafety.FormEntry
-	(*v1.Attachment)(nil),                              // 24: shared.v1.Attachment
-	(*v1.SuccessResponseData)(nil),                     // 25: shared.v1.SuccessResponseData
-	(*v1.AppError)(nil),                                // 26: shared.v1.AppError
-	(*v1.Any)(nil),                                     // 27: shared.v1.Any
-	(*v1.Attachments)(nil),                             // 28: shared.v1.Attachments
+	nil,                                                // 19: products.v1.ProductCreateRequestDetails.SharedEntry
+	nil,                                                // 20: products.v1.ProductCreateRequestDetailsVariantForm.FormEntry
+	nil,                                                // 21: products.v1.ProductCreateRequestDetailsWithoutVariants.FormEntry
+	nil,                                                // 22: products.v1.ProductCreateRequestMediaWithVariants.ImagesEntry
+	nil,                                                // 23: products.v1.ProductCreateRequestMediaWithVariants.VideosEntry
+	nil,                                                // 24: products.v1.ProductCreateRequestSafety.FormEntry
+	(*v1.Attachment)(nil),                              // 25: shared.v1.Attachment
+	(*v1.SuccessResponseData)(nil),                     // 26: shared.v1.SuccessResponseData
+	(*v1.AppError)(nil),                                // 27: shared.v1.AppError
+	(*v1.Any)(nil),                                     // 28: shared.v1.Any
+	(*v1.Attachments)(nil),                             // 29: shared.v1.Attachments
 }
 var file_products_v1_product_create_proto_depIdxs = []int32{
 	2,  // 0: products.v1.ProductCreateRequest.identity:type_name -> products.v1.ProductCreateRequestIdentity
@@ -1577,35 +1597,37 @@ var file_products_v1_product_create_proto_depIdxs = []int32{
 	12, // 4: products.v1.ProductCreateRequest.offer:type_name -> products.v1.ProductCreateRequestOffer
 	17, // 5: products.v1.ProductCreateRequest.safety:type_name -> products.v1.ProductCreateRequestSafety
 	4,  // 6: products.v1.ProductCreateRequestDescription.bullet_points:type_name -> products.v1.ProductCreateRequestBulletPoint
-	6,  // 7: products.v1.ProductCreateRequestDetails.with_variants:type_name -> products.v1.ProductCreateRequestDetailsWithVariants
-	8,  // 8: products.v1.ProductCreateRequestDetails.without_variants:type_name -> products.v1.ProductCreateRequestDetailsWithoutVariants
-	7,  // 9: products.v1.ProductCreateRequestDetailsWithVariants.variants:type_name -> products.v1.ProductCreateRequestDetailsVariantForm
-	19, // 10: products.v1.ProductCreateRequestDetailsVariantForm.form:type_name -> products.v1.ProductCreateRequestDetailsVariantForm.FormEntry
-	20, // 11: products.v1.ProductCreateRequestDetailsWithoutVariants.form:type_name -> products.v1.ProductCreateRequestDetailsWithoutVariants.FormEntry
-	10, // 12: products.v1.ProductCreateRequestMedia.with_variants:type_name -> products.v1.ProductCreateRequestMediaWithVariants
-	11, // 13: products.v1.ProductCreateRequestMedia.without_variants:type_name -> products.v1.ProductCreateRequestMediaWithoutVariants
-	21, // 14: products.v1.ProductCreateRequestMediaWithVariants.images:type_name -> products.v1.ProductCreateRequestMediaWithVariants.ImagesEntry
-	22, // 15: products.v1.ProductCreateRequestMediaWithVariants.videos:type_name -> products.v1.ProductCreateRequestMediaWithVariants.VideosEntry
-	24, // 16: products.v1.ProductCreateRequestMediaWithoutVariants.images:type_name -> shared.v1.Attachment
-	24, // 17: products.v1.ProductCreateRequestMediaWithoutVariants.videos:type_name -> shared.v1.Attachment
-	13, // 18: products.v1.ProductCreateRequestOffer.with_variants:type_name -> products.v1.ProductCreateRequestOfferWithVariants
-	15, // 19: products.v1.ProductCreateRequestOffer.without_variants:type_name -> products.v1.ProductCreateRequestOfferPricing
-	14, // 20: products.v1.ProductCreateRequestOfferWithVariants.variants:type_name -> products.v1.ProductCreateRequestOfferVariant
-	16, // 21: products.v1.ProductCreateRequestOfferVariant.minimum_orders:type_name -> products.v1.ProductCreateRequestOfferMinimumOrder
-	16, // 22: products.v1.ProductCreateRequestOfferPricing.minimum_orders:type_name -> products.v1.ProductCreateRequestOfferMinimumOrder
-	23, // 23: products.v1.ProductCreateRequestSafety.form:type_name -> products.v1.ProductCreateRequestSafety.FormEntry
-	25, // 24: products.v1.ProductCreateResponse.data:type_name -> shared.v1.SuccessResponseData
-	26, // 25: products.v1.ProductCreateResponse.error:type_name -> shared.v1.AppError
-	27, // 26: products.v1.ProductCreateRequestDetailsVariantForm.FormEntry.value:type_name -> shared.v1.Any
-	27, // 27: products.v1.ProductCreateRequestDetailsWithoutVariants.FormEntry.value:type_name -> shared.v1.Any
-	28, // 28: products.v1.ProductCreateRequestMediaWithVariants.ImagesEntry.value:type_name -> shared.v1.Attachments
-	28, // 29: products.v1.ProductCreateRequestMediaWithVariants.VideosEntry.value:type_name -> shared.v1.Attachments
-	27, // 30: products.v1.ProductCreateRequestSafety.FormEntry.value:type_name -> shared.v1.Any
-	31, // [31:31] is the sub-list for method output_type
-	31, // [31:31] is the sub-list for method input_type
-	31, // [31:31] is the sub-list for extension type_name
-	31, // [31:31] is the sub-list for extension extendee
-	0,  // [0:31] is the sub-list for field type_name
+	19, // 7: products.v1.ProductCreateRequestDetails.shared:type_name -> products.v1.ProductCreateRequestDetails.SharedEntry
+	6,  // 8: products.v1.ProductCreateRequestDetails.with_variants:type_name -> products.v1.ProductCreateRequestDetailsWithVariants
+	8,  // 9: products.v1.ProductCreateRequestDetails.without_variants:type_name -> products.v1.ProductCreateRequestDetailsWithoutVariants
+	7,  // 10: products.v1.ProductCreateRequestDetailsWithVariants.variants:type_name -> products.v1.ProductCreateRequestDetailsVariantForm
+	20, // 11: products.v1.ProductCreateRequestDetailsVariantForm.form:type_name -> products.v1.ProductCreateRequestDetailsVariantForm.FormEntry
+	21, // 12: products.v1.ProductCreateRequestDetailsWithoutVariants.form:type_name -> products.v1.ProductCreateRequestDetailsWithoutVariants.FormEntry
+	10, // 13: products.v1.ProductCreateRequestMedia.with_variants:type_name -> products.v1.ProductCreateRequestMediaWithVariants
+	11, // 14: products.v1.ProductCreateRequestMedia.without_variants:type_name -> products.v1.ProductCreateRequestMediaWithoutVariants
+	22, // 15: products.v1.ProductCreateRequestMediaWithVariants.images:type_name -> products.v1.ProductCreateRequestMediaWithVariants.ImagesEntry
+	23, // 16: products.v1.ProductCreateRequestMediaWithVariants.videos:type_name -> products.v1.ProductCreateRequestMediaWithVariants.VideosEntry
+	25, // 17: products.v1.ProductCreateRequestMediaWithoutVariants.images:type_name -> shared.v1.Attachment
+	25, // 18: products.v1.ProductCreateRequestMediaWithoutVariants.videos:type_name -> shared.v1.Attachment
+	13, // 19: products.v1.ProductCreateRequestOffer.with_variants:type_name -> products.v1.ProductCreateRequestOfferWithVariants
+	15, // 20: products.v1.ProductCreateRequestOffer.without_variants:type_name -> products.v1.ProductCreateRequestOfferWithoutVariants
+	14, // 21: products.v1.ProductCreateRequestOfferWithVariants.variants:type_name -> products.v1.ProductCreateRequestOfferVariant
+	16, // 22: products.v1.ProductCreateRequestOfferVariant.minimum_orders:type_name -> products.v1.ProductCreateRequestOfferMinimumOrder
+	16, // 23: products.v1.ProductCreateRequestOfferWithoutVariants.minimum_orders:type_name -> products.v1.ProductCreateRequestOfferMinimumOrder
+	24, // 24: products.v1.ProductCreateRequestSafety.form:type_name -> products.v1.ProductCreateRequestSafety.FormEntry
+	26, // 25: products.v1.ProductCreateResponse.data:type_name -> shared.v1.SuccessResponseData
+	27, // 26: products.v1.ProductCreateResponse.error:type_name -> shared.v1.AppError
+	28, // 27: products.v1.ProductCreateRequestDetails.SharedEntry.value:type_name -> shared.v1.Any
+	28, // 28: products.v1.ProductCreateRequestDetailsVariantForm.FormEntry.value:type_name -> shared.v1.Any
+	28, // 29: products.v1.ProductCreateRequestDetailsWithoutVariants.FormEntry.value:type_name -> shared.v1.Any
+	29, // 30: products.v1.ProductCreateRequestMediaWithVariants.ImagesEntry.value:type_name -> shared.v1.Attachments
+	29, // 31: products.v1.ProductCreateRequestMediaWithVariants.VideosEntry.value:type_name -> shared.v1.Attachments
+	28, // 32: products.v1.ProductCreateRequestSafety.FormEntry.value:type_name -> shared.v1.Any
+	33, // [33:33] is the sub-list for method output_type
+	33, // [33:33] is the sub-list for method input_type
+	33, // [33:33] is the sub-list for extension type_name
+	33, // [33:33] is the sub-list for extension extendee
+	0,  // [0:33] is the sub-list for field type_name
 }
 
 func init() { file_products_v1_product_create_proto_init() }
@@ -1638,7 +1660,7 @@ func file_products_v1_product_create_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_products_v1_product_create_proto_rawDesc), len(file_products_v1_product_create_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   24,
+			NumMessages:   25,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

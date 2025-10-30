@@ -62,7 +62,14 @@ pub struct ProductCreateRequestBulletPoint {
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductCreateRequestDetails {
-    #[prost(oneof = "product_create_request_details::Details", tags = "1, 2")]
+    /// attributes that has include_in_variants = false, so they are existed
+    /// if in both (with_variants, without_variants)
+    #[prost(map = "string, message", tag = "1")]
+    pub shared: ::std::collections::HashMap<
+        ::prost::alloc::string::String,
+        super::super::shared::v1::Any,
+    >,
+    #[prost(oneof = "product_create_request_details::Details", tags = "2, 3")]
     pub details: ::core::option::Option<product_create_request_details::Details>,
 }
 /// Nested message and enum types in `ProductCreateRequestDetails`.
@@ -70,21 +77,23 @@ pub mod product_create_request_details {
     #[derive(serde::Serialize, serde::Deserialize)]
     #[derive(Clone, PartialEq, ::prost::Oneof)]
     pub enum Details {
-        #[prost(message, tag = "1")]
-        WithVariants(super::ProductCreateRequestDetailsWithVariants),
         #[prost(message, tag = "2")]
+        WithVariants(super::ProductCreateRequestDetailsWithVariants),
+        #[prost(message, tag = "3")]
         WithoutVariants(super::ProductCreateRequestDetailsWithoutVariants),
     }
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductCreateRequestDetailsWithVariants {
+    /// an array of details for values for each product's details variant
     #[prost(message, repeated, tag = "1")]
     pub variants: ::prost::alloc::vec::Vec<ProductCreateRequestDetailsVariantForm>,
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductCreateRequestDetailsVariantForm {
+    /// <attribute_id, attribute value>
     #[prost(map = "string, message", tag = "1")]
     pub form: ::std::collections::HashMap<
         ::prost::alloc::string::String,
@@ -94,6 +103,7 @@ pub struct ProductCreateRequestDetailsVariantForm {
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductCreateRequestDetailsWithoutVariants {
+    /// <attribute_id, attribute value>
     #[prost(map = "string, message", tag = "1")]
     pub form: ::std::collections::HashMap<
         ::prost::alloc::string::String,
@@ -103,6 +113,8 @@ pub struct ProductCreateRequestDetailsWithoutVariants {
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
 pub struct ProductCreateRequestMedia {
+    /// total size in bytes, so this size is used to decide how to upload the media,
+    /// either with resumable uploading or directly if media files aren't so big
     #[prost(uint64, tag = "1")]
     pub total_size: u64,
     #[prost(oneof = "product_create_request_media::Media", tags = "2, 3")]
@@ -161,7 +173,7 @@ pub mod product_create_request_offer {
         #[prost(message, tag = "4")]
         WithVariants(super::ProductCreateRequestOfferWithVariants),
         #[prost(message, tag = "5")]
-        WithoutVariants(super::ProductCreateRequestOfferPricing),
+        WithoutVariants(super::ProductCreateRequestOfferWithoutVariants),
     }
 }
 #[derive(serde::Serialize, serde::Deserialize)]
@@ -202,7 +214,7 @@ pub struct ProductCreateRequestOfferVariant {
 }
 #[derive(serde::Serialize, serde::Deserialize)]
 #[derive(Clone, PartialEq, ::prost::Message)]
-pub struct ProductCreateRequestOfferPricing {
+pub struct ProductCreateRequestOfferWithoutVariants {
     #[prost(string, tag = "1")]
     pub sku: ::prost::alloc::string::String,
     #[prost(uint64, tag = "2")]

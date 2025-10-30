@@ -5106,32 +5106,91 @@ public final class ProductCreateProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 1 [json_name = "withVariants"];</code>
+     * <pre>
+     * attributes that has include_in_variants = false, so they are existed
+     * if in both (with_variants, without_variants)
+     * </pre>
+     *
+     * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+     */
+    int getSharedCount();
+    /**
+     * <pre>
+     * attributes that has include_in_variants = false, so they are existed
+     * if in both (with_variants, without_variants)
+     * </pre>
+     *
+     * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+     */
+    boolean containsShared(
+        java.lang.String key);
+    /**
+     * Use {@link #getSharedMap()} instead.
+     */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+    getShared();
+    /**
+     * <pre>
+     * attributes that has include_in_variants = false, so they are existed
+     * if in both (with_variants, without_variants)
+     * </pre>
+     *
+     * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+     */
+    java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+    getSharedMap();
+    /**
+     * <pre>
+     * attributes that has include_in_variants = false, so they are existed
+     * if in both (with_variants, without_variants)
+     * </pre>
+     *
+     * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+     */
+    /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any getSharedOrDefault(
+        java.lang.String key,
+        /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any defaultValue);
+    /**
+     * <pre>
+     * attributes that has include_in_variants = false, so they are existed
+     * if in both (with_variants, without_variants)
+     * </pre>
+     *
+     * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+     */
+    org.megacommerce.shared.v1.TypesProto.Any getSharedOrThrow(
+        java.lang.String key);
+
+    /**
+     * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 2 [json_name = "withVariants"];</code>
      * @return Whether the withVariants field is set.
      */
     boolean hasWithVariants();
     /**
-     * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 1 [json_name = "withVariants"];</code>
+     * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 2 [json_name = "withVariants"];</code>
      * @return The withVariants.
      */
     org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants getWithVariants();
     /**
-     * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 1 [json_name = "withVariants"];</code>
+     * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 2 [json_name = "withVariants"];</code>
      */
     org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariantsOrBuilder getWithVariantsOrBuilder();
 
     /**
-     * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 2 [json_name = "withoutVariants"];</code>
+     * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 3 [json_name = "withoutVariants"];</code>
      * @return Whether the withoutVariants field is set.
      */
     boolean hasWithoutVariants();
     /**
-     * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 2 [json_name = "withoutVariants"];</code>
+     * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 3 [json_name = "withoutVariants"];</code>
      * @return The withoutVariants.
      */
     org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants getWithoutVariants();
     /**
-     * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 2 [json_name = "withoutVariants"];</code>
+     * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 3 [json_name = "withoutVariants"];</code>
      */
     org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariantsOrBuilder getWithoutVariantsOrBuilder();
 
@@ -5166,6 +5225,18 @@ public final class ProductCreateProto {
       return org.megacommerce.products.v1.ProductCreateProto.internal_static_products_v1_ProductCreateRequestDetails_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 1:
+          return internalGetShared();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -5180,8 +5251,8 @@ public final class ProductCreateProto {
     public enum DetailsCase
         implements com.google.protobuf.Internal.EnumLite,
             com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      WITH_VARIANTS(1),
-      WITHOUT_VARIANTS(2),
+      WITH_VARIANTS(2),
+      WITHOUT_VARIANTS(3),
       DETAILS_NOT_SET(0);
       private final int value;
       private DetailsCase(int value) {
@@ -5199,8 +5270,8 @@ public final class ProductCreateProto {
 
       public static DetailsCase forNumber(int value) {
         switch (value) {
-          case 1: return WITH_VARIANTS;
-          case 2: return WITHOUT_VARIANTS;
+          case 2: return WITH_VARIANTS;
+          case 3: return WITHOUT_VARIANTS;
           case 0: return DETAILS_NOT_SET;
           default: return null;
         }
@@ -5216,63 +5287,162 @@ public final class ProductCreateProto {
           detailsCase_);
     }
 
-    public static final int WITH_VARIANTS_FIELD_NUMBER = 1;
+    public static final int SHARED_FIELD_NUMBER = 1;
+    private static final class SharedDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>newDefaultInstance(
+                  org.megacommerce.products.v1.ProductCreateProto.internal_static_products_v1_ProductCreateRequestDetails_SharedEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                  org.megacommerce.shared.v1.TypesProto.Any.getDefaultInstance());
+    }
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<
+        java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> shared_;
+    private com.google.protobuf.MapField<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+    internalGetShared() {
+      if (shared_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            SharedDefaultEntryHolder.defaultEntry);
+      }
+      return shared_;
+    }
+    public int getSharedCount() {
+      return internalGetShared().getMap().size();
+    }
     /**
-     * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 1 [json_name = "withVariants"];</code>
+     * <pre>
+     * attributes that has include_in_variants = false, so they are existed
+     * if in both (with_variants, without_variants)
+     * </pre>
+     *
+     * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+     */
+    @java.lang.Override
+    public boolean containsShared(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetShared().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getSharedMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getShared() {
+      return getSharedMap();
+    }
+    /**
+     * <pre>
+     * attributes that has include_in_variants = false, so they are existed
+     * if in both (with_variants, without_variants)
+     * </pre>
+     *
+     * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getSharedMap() {
+      return internalGetShared().getMap();
+    }
+    /**
+     * <pre>
+     * attributes that has include_in_variants = false, so they are existed
+     * if in both (with_variants, without_variants)
+     * </pre>
+     *
+     * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any getSharedOrDefault(
+        java.lang.String key,
+        /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> map =
+          internalGetShared().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <pre>
+     * attributes that has include_in_variants = false, so they are existed
+     * if in both (with_variants, without_variants)
+     * </pre>
+     *
+     * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+     */
+    @java.lang.Override
+    public org.megacommerce.shared.v1.TypesProto.Any getSharedOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> map =
+          internalGetShared().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int WITH_VARIANTS_FIELD_NUMBER = 2;
+    /**
+     * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 2 [json_name = "withVariants"];</code>
      * @return Whether the withVariants field is set.
      */
     @java.lang.Override
     public boolean hasWithVariants() {
-      return detailsCase_ == 1;
+      return detailsCase_ == 2;
     }
     /**
-     * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 1 [json_name = "withVariants"];</code>
+     * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 2 [json_name = "withVariants"];</code>
      * @return The withVariants.
      */
     @java.lang.Override
     public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants getWithVariants() {
-      if (detailsCase_ == 1) {
+      if (detailsCase_ == 2) {
          return (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants) details_;
       }
       return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants.getDefaultInstance();
     }
     /**
-     * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 1 [json_name = "withVariants"];</code>
+     * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 2 [json_name = "withVariants"];</code>
      */
     @java.lang.Override
     public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariantsOrBuilder getWithVariantsOrBuilder() {
-      if (detailsCase_ == 1) {
+      if (detailsCase_ == 2) {
          return (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants) details_;
       }
       return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants.getDefaultInstance();
     }
 
-    public static final int WITHOUT_VARIANTS_FIELD_NUMBER = 2;
+    public static final int WITHOUT_VARIANTS_FIELD_NUMBER = 3;
     /**
-     * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 2 [json_name = "withoutVariants"];</code>
+     * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 3 [json_name = "withoutVariants"];</code>
      * @return Whether the withoutVariants field is set.
      */
     @java.lang.Override
     public boolean hasWithoutVariants() {
-      return detailsCase_ == 2;
+      return detailsCase_ == 3;
     }
     /**
-     * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 2 [json_name = "withoutVariants"];</code>
+     * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 3 [json_name = "withoutVariants"];</code>
      * @return The withoutVariants.
      */
     @java.lang.Override
     public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants getWithoutVariants() {
-      if (detailsCase_ == 2) {
+      if (detailsCase_ == 3) {
          return (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants) details_;
       }
       return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants.getDefaultInstance();
     }
     /**
-     * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 2 [json_name = "withoutVariants"];</code>
+     * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 3 [json_name = "withoutVariants"];</code>
      */
     @java.lang.Override
     public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariantsOrBuilder getWithoutVariantsOrBuilder() {
-      if (detailsCase_ == 2) {
+      if (detailsCase_ == 3) {
          return (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants) details_;
       }
       return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants.getDefaultInstance();
@@ -5292,11 +5462,17 @@ public final class ProductCreateProto {
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (detailsCase_ == 1) {
-        output.writeMessage(1, (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants) details_);
-      }
+      com.google.protobuf.GeneratedMessage
+        .serializeStringMapTo(
+          output,
+          internalGetShared(),
+          SharedDefaultEntryHolder.defaultEntry,
+          1);
       if (detailsCase_ == 2) {
-        output.writeMessage(2, (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants) details_);
+        output.writeMessage(2, (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants) details_);
+      }
+      if (detailsCase_ == 3) {
+        output.writeMessage(3, (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants) details_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -5307,13 +5483,23 @@ public final class ProductCreateProto {
       if (size != -1) return size;
 
       size = 0;
-      if (detailsCase_ == 1) {
+      for (java.util.Map.Entry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> entry
+           : internalGetShared().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+        shared__ = SharedDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants) details_);
+            .computeMessageSize(1, shared__);
       }
       if (detailsCase_ == 2) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants) details_);
+          .computeMessageSize(2, (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants) details_);
+      }
+      if (detailsCase_ == 3) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants) details_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -5330,13 +5516,15 @@ public final class ProductCreateProto {
       }
       org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetails other = (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetails) obj;
 
+      if (!internalGetShared().equals(
+          other.internalGetShared())) return false;
       if (!getDetailsCase().equals(other.getDetailsCase())) return false;
       switch (detailsCase_) {
-        case 1:
+        case 2:
           if (!getWithVariants()
               .equals(other.getWithVariants())) return false;
           break;
-        case 2:
+        case 3:
           if (!getWithoutVariants()
               .equals(other.getWithoutVariants())) return false;
           break;
@@ -5354,12 +5542,16 @@ public final class ProductCreateProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (!internalGetShared().getMap().isEmpty()) {
+        hash = (37 * hash) + SHARED_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetShared().hashCode();
+      }
       switch (detailsCase_) {
-        case 1:
+        case 2:
           hash = (37 * hash) + WITH_VARIANTS_FIELD_NUMBER;
           hash = (53 * hash) + getWithVariants().hashCode();
           break;
-        case 2:
+        case 3:
           hash = (37 * hash) + WITHOUT_VARIANTS_FIELD_NUMBER;
           hash = (53 * hash) + getWithoutVariants().hashCode();
           break;
@@ -5475,6 +5667,28 @@ public final class ProductCreateProto {
         return org.megacommerce.products.v1.ProductCreateProto.internal_static_products_v1_ProductCreateRequestDetails_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetShared();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 1:
+            return internalGetMutableShared();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -5497,6 +5711,7 @@ public final class ProductCreateProto {
       public Builder clear() {
         super.clear();
         bitField0_ = 0;
+        internalGetMutableShared().clear();
         if (withVariantsBuilder_ != null) {
           withVariantsBuilder_.clear();
         }
@@ -5539,16 +5754,19 @@ public final class ProductCreateProto {
 
       private void buildPartial0(org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetails result) {
         int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.shared_ = internalGetShared().build(SharedDefaultEntryHolder.defaultEntry);
+        }
       }
 
       private void buildPartialOneofs(org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetails result) {
         result.detailsCase_ = detailsCase_;
         result.details_ = this.details_;
-        if (detailsCase_ == 1 &&
+        if (detailsCase_ == 2 &&
             withVariantsBuilder_ != null) {
           result.details_ = withVariantsBuilder_.build();
         }
-        if (detailsCase_ == 2 &&
+        if (detailsCase_ == 3 &&
             withoutVariantsBuilder_ != null) {
           result.details_ = withoutVariantsBuilder_.build();
         }
@@ -5566,6 +5784,9 @@ public final class ProductCreateProto {
 
       public Builder mergeFrom(org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetails other) {
         if (other == org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetails.getDefaultInstance()) return this;
+        internalGetMutableShared().mergeFrom(
+            other.internalGetShared());
+        bitField0_ |= 0x00000001;
         switch (other.getDetailsCase()) {
           case WITH_VARIANTS: {
             mergeWithVariants(other.getWithVariants());
@@ -5606,19 +5827,28 @@ public final class ProductCreateProto {
                 done = true;
                 break;
               case 10: {
-                input.readMessage(
-                    internalGetWithVariantsFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                detailsCase_ = 1;
+                com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+                shared__ = input.readMessage(
+                    SharedDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableShared().ensureBuilderMap().put(
+                    shared__.getKey(), shared__.getValue());
+                bitField0_ |= 0x00000001;
                 break;
               } // case 10
               case 18: {
                 input.readMessage(
-                    internalGetWithoutVariantsFieldBuilder().getBuilder(),
+                    internalGetWithVariantsFieldBuilder().getBuilder(),
                     extensionRegistry);
                 detailsCase_ = 2;
                 break;
               } // case 18
+              case 26: {
+                input.readMessage(
+                    internalGetWithoutVariantsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                detailsCase_ = 3;
+                break;
+              } // case 26
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -5651,36 +5881,231 @@ public final class ProductCreateProto {
 
       private int bitField0_;
 
+      private static final class SharedConverter implements com.google.protobuf.MapFieldBuilder.Converter<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any> {
+        @java.lang.Override
+        public org.megacommerce.shared.v1.TypesProto.Any build(org.megacommerce.shared.v1.TypesProto.AnyOrBuilder val) {
+          if (val instanceof org.megacommerce.shared.v1.TypesProto.Any) { return (org.megacommerce.shared.v1.TypesProto.Any) val; }
+          return ((org.megacommerce.shared.v1.TypesProto.Any.Builder) val).build();
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.MapEntry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> defaultEntry() {
+          return SharedDefaultEntryHolder.defaultEntry;
+        }
+      };
+      private static final SharedConverter sharedConverter = new SharedConverter();
+
+      private com.google.protobuf.MapFieldBuilder<
+          java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder> shared_;
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder>
+          internalGetShared() {
+        if (shared_ == null) {
+          return new com.google.protobuf.MapFieldBuilder<>(sharedConverter);
+        }
+        return shared_;
+      }
+      private com.google.protobuf.MapFieldBuilder<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder, org.megacommerce.shared.v1.TypesProto.Any, org.megacommerce.shared.v1.TypesProto.Any.Builder>
+          internalGetMutableShared() {
+        if (shared_ == null) {
+          shared_ = new com.google.protobuf.MapFieldBuilder<>(sharedConverter);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return shared_;
+      }
+      public int getSharedCount() {
+        return internalGetShared().ensureBuilderMap().size();
+      }
+      /**
+       * <pre>
+       * attributes that has include_in_variants = false, so they are existed
+       * if in both (with_variants, without_variants)
+       * </pre>
+       *
+       * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+       */
+      @java.lang.Override
+      public boolean containsShared(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetShared().ensureBuilderMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getSharedMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getShared() {
+        return getSharedMap();
+      }
+      /**
+       * <pre>
+       * attributes that has include_in_variants = false, so they are existed
+       * if in both (with_variants, without_variants)
+       * </pre>
+       *
+       * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> getSharedMap() {
+        return internalGetShared().getImmutableMap();
+      }
+      /**
+       * <pre>
+       * attributes that has include_in_variants = false, so they are existed
+       * if in both (with_variants, without_variants)
+       * </pre>
+       *
+       * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+       */
+      @java.lang.Override
+      public /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any getSharedOrDefault(
+          java.lang.String key,
+          /* nullable */
+org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> map = internalGetMutableShared().ensureBuilderMap();
+        return map.containsKey(key) ? sharedConverter.build(map.get(key)) : defaultValue;
+      }
+      /**
+       * <pre>
+       * attributes that has include_in_variants = false, so they are existed
+       * if in both (with_variants, without_variants)
+       * </pre>
+       *
+       * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+       */
+      @java.lang.Override
+      public org.megacommerce.shared.v1.TypesProto.Any getSharedOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> map = internalGetMutableShared().ensureBuilderMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return sharedConverter.build(map.get(key));
+      }
+      public Builder clearShared() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        internalGetMutableShared().clear();
+        return this;
+      }
+      /**
+       * <pre>
+       * attributes that has include_in_variants = false, so they are existed
+       * if in both (with_variants, without_variants)
+       * </pre>
+       *
+       * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+       */
+      public Builder removeShared(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableShared().ensureBuilderMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
+          getMutableShared() {
+        bitField0_ |= 0x00000001;
+        return internalGetMutableShared().ensureMessageMap();
+      }
+      /**
+       * <pre>
+       * attributes that has include_in_variants = false, so they are existed
+       * if in both (with_variants, without_variants)
+       * </pre>
+       *
+       * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+       */
+      public Builder putShared(
+          java.lang.String key,
+          org.megacommerce.shared.v1.TypesProto.Any value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) { throw new NullPointerException("map value"); }
+        internalGetMutableShared().ensureBuilderMap()
+            .put(key, value);
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <pre>
+       * attributes that has include_in_variants = false, so they are existed
+       * if in both (with_variants, without_variants)
+       * </pre>
+       *
+       * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+       */
+      public Builder putAllShared(
+          java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> values) {
+        for (java.util.Map.Entry<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any> e : values.entrySet()) {
+          if (e.getKey() == null || e.getValue() == null) {
+            throw new NullPointerException();
+          }
+        }
+        internalGetMutableShared().ensureBuilderMap()
+            .putAll(values);
+        bitField0_ |= 0x00000001;
+        return this;
+      }
+      /**
+       * <pre>
+       * attributes that has include_in_variants = false, so they are existed
+       * if in both (with_variants, without_variants)
+       * </pre>
+       *
+       * <code>map&lt;string, .shared.v1.Any&gt; shared = 1 [json_name = "shared"];</code>
+       */
+      public org.megacommerce.shared.v1.TypesProto.Any.Builder putSharedBuilderIfAbsent(
+          java.lang.String key) {
+        java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.AnyOrBuilder> builderMap = internalGetMutableShared().ensureBuilderMap();
+        org.megacommerce.shared.v1.TypesProto.AnyOrBuilder entry = builderMap.get(key);
+        if (entry == null) {
+          entry = org.megacommerce.shared.v1.TypesProto.Any.newBuilder();
+          builderMap.put(key, entry);
+        }
+        if (entry instanceof org.megacommerce.shared.v1.TypesProto.Any) {
+          entry = ((org.megacommerce.shared.v1.TypesProto.Any) entry).toBuilder();
+          builderMap.put(key, entry);
+        }
+        return (org.megacommerce.shared.v1.TypesProto.Any.Builder) entry;
+      }
+
       private com.google.protobuf.SingleFieldBuilder<
           org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants.Builder, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariantsOrBuilder> withVariantsBuilder_;
       /**
-       * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 1 [json_name = "withVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 2 [json_name = "withVariants"];</code>
        * @return Whether the withVariants field is set.
        */
       @java.lang.Override
       public boolean hasWithVariants() {
-        return detailsCase_ == 1;
+        return detailsCase_ == 2;
       }
       /**
-       * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 1 [json_name = "withVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 2 [json_name = "withVariants"];</code>
        * @return The withVariants.
        */
       @java.lang.Override
       public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants getWithVariants() {
         if (withVariantsBuilder_ == null) {
-          if (detailsCase_ == 1) {
+          if (detailsCase_ == 2) {
             return (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants) details_;
           }
           return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants.getDefaultInstance();
         } else {
-          if (detailsCase_ == 1) {
+          if (detailsCase_ == 2) {
             return withVariantsBuilder_.getMessage();
           }
           return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants.getDefaultInstance();
         }
       }
       /**
-       * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 1 [json_name = "withVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 2 [json_name = "withVariants"];</code>
        */
       public Builder setWithVariants(org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants value) {
         if (withVariantsBuilder_ == null) {
@@ -5692,11 +6117,11 @@ public final class ProductCreateProto {
         } else {
           withVariantsBuilder_.setMessage(value);
         }
-        detailsCase_ = 1;
+        detailsCase_ = 2;
         return this;
       }
       /**
-       * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 1 [json_name = "withVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 2 [json_name = "withVariants"];</code>
        */
       public Builder setWithVariants(
           org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants.Builder builderForValue) {
@@ -5706,15 +6131,15 @@ public final class ProductCreateProto {
         } else {
           withVariantsBuilder_.setMessage(builderForValue.build());
         }
-        detailsCase_ = 1;
+        detailsCase_ = 2;
         return this;
       }
       /**
-       * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 1 [json_name = "withVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 2 [json_name = "withVariants"];</code>
        */
       public Builder mergeWithVariants(org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants value) {
         if (withVariantsBuilder_ == null) {
-          if (detailsCase_ == 1 &&
+          if (detailsCase_ == 2 &&
               details_ != org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants.getDefaultInstance()) {
             details_ = org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants.newBuilder((org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants) details_)
                 .mergeFrom(value).buildPartial();
@@ -5723,27 +6148,27 @@ public final class ProductCreateProto {
           }
           onChanged();
         } else {
-          if (detailsCase_ == 1) {
+          if (detailsCase_ == 2) {
             withVariantsBuilder_.mergeFrom(value);
           } else {
             withVariantsBuilder_.setMessage(value);
           }
         }
-        detailsCase_ = 1;
+        detailsCase_ = 2;
         return this;
       }
       /**
-       * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 1 [json_name = "withVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 2 [json_name = "withVariants"];</code>
        */
       public Builder clearWithVariants() {
         if (withVariantsBuilder_ == null) {
-          if (detailsCase_ == 1) {
+          if (detailsCase_ == 2) {
             detailsCase_ = 0;
             details_ = null;
             onChanged();
           }
         } else {
-          if (detailsCase_ == 1) {
+          if (detailsCase_ == 2) {
             detailsCase_ = 0;
             details_ = null;
           }
@@ -5752,33 +6177,33 @@ public final class ProductCreateProto {
         return this;
       }
       /**
-       * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 1 [json_name = "withVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 2 [json_name = "withVariants"];</code>
        */
       public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants.Builder getWithVariantsBuilder() {
         return internalGetWithVariantsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 1 [json_name = "withVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 2 [json_name = "withVariants"];</code>
        */
       @java.lang.Override
       public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariantsOrBuilder getWithVariantsOrBuilder() {
-        if ((detailsCase_ == 1) && (withVariantsBuilder_ != null)) {
+        if ((detailsCase_ == 2) && (withVariantsBuilder_ != null)) {
           return withVariantsBuilder_.getMessageOrBuilder();
         } else {
-          if (detailsCase_ == 1) {
+          if (detailsCase_ == 2) {
             return (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants) details_;
           }
           return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants.getDefaultInstance();
         }
       }
       /**
-       * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 1 [json_name = "withVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestDetailsWithVariants with_variants = 2 [json_name = "withVariants"];</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants.Builder, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariantsOrBuilder> 
           internalGetWithVariantsFieldBuilder() {
         if (withVariantsBuilder_ == null) {
-          if (!(detailsCase_ == 1)) {
+          if (!(detailsCase_ == 2)) {
             details_ = org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithVariants.getDefaultInstance();
           }
           withVariantsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
@@ -5788,7 +6213,7 @@ public final class ProductCreateProto {
                   isClean());
           details_ = null;
         }
-        detailsCase_ = 1;
+        detailsCase_ = 2;
         onChanged();
         return withVariantsBuilder_;
       }
@@ -5796,33 +6221,33 @@ public final class ProductCreateProto {
       private com.google.protobuf.SingleFieldBuilder<
           org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants.Builder, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariantsOrBuilder> withoutVariantsBuilder_;
       /**
-       * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 2 [json_name = "withoutVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 3 [json_name = "withoutVariants"];</code>
        * @return Whether the withoutVariants field is set.
        */
       @java.lang.Override
       public boolean hasWithoutVariants() {
-        return detailsCase_ == 2;
+        return detailsCase_ == 3;
       }
       /**
-       * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 2 [json_name = "withoutVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 3 [json_name = "withoutVariants"];</code>
        * @return The withoutVariants.
        */
       @java.lang.Override
       public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants getWithoutVariants() {
         if (withoutVariantsBuilder_ == null) {
-          if (detailsCase_ == 2) {
+          if (detailsCase_ == 3) {
             return (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants) details_;
           }
           return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants.getDefaultInstance();
         } else {
-          if (detailsCase_ == 2) {
+          if (detailsCase_ == 3) {
             return withoutVariantsBuilder_.getMessage();
           }
           return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants.getDefaultInstance();
         }
       }
       /**
-       * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 2 [json_name = "withoutVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 3 [json_name = "withoutVariants"];</code>
        */
       public Builder setWithoutVariants(org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants value) {
         if (withoutVariantsBuilder_ == null) {
@@ -5834,11 +6259,11 @@ public final class ProductCreateProto {
         } else {
           withoutVariantsBuilder_.setMessage(value);
         }
-        detailsCase_ = 2;
+        detailsCase_ = 3;
         return this;
       }
       /**
-       * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 2 [json_name = "withoutVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 3 [json_name = "withoutVariants"];</code>
        */
       public Builder setWithoutVariants(
           org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants.Builder builderForValue) {
@@ -5848,15 +6273,15 @@ public final class ProductCreateProto {
         } else {
           withoutVariantsBuilder_.setMessage(builderForValue.build());
         }
-        detailsCase_ = 2;
+        detailsCase_ = 3;
         return this;
       }
       /**
-       * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 2 [json_name = "withoutVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 3 [json_name = "withoutVariants"];</code>
        */
       public Builder mergeWithoutVariants(org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants value) {
         if (withoutVariantsBuilder_ == null) {
-          if (detailsCase_ == 2 &&
+          if (detailsCase_ == 3 &&
               details_ != org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants.getDefaultInstance()) {
             details_ = org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants.newBuilder((org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants) details_)
                 .mergeFrom(value).buildPartial();
@@ -5865,27 +6290,27 @@ public final class ProductCreateProto {
           }
           onChanged();
         } else {
-          if (detailsCase_ == 2) {
+          if (detailsCase_ == 3) {
             withoutVariantsBuilder_.mergeFrom(value);
           } else {
             withoutVariantsBuilder_.setMessage(value);
           }
         }
-        detailsCase_ = 2;
+        detailsCase_ = 3;
         return this;
       }
       /**
-       * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 2 [json_name = "withoutVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 3 [json_name = "withoutVariants"];</code>
        */
       public Builder clearWithoutVariants() {
         if (withoutVariantsBuilder_ == null) {
-          if (detailsCase_ == 2) {
+          if (detailsCase_ == 3) {
             detailsCase_ = 0;
             details_ = null;
             onChanged();
           }
         } else {
-          if (detailsCase_ == 2) {
+          if (detailsCase_ == 3) {
             detailsCase_ = 0;
             details_ = null;
           }
@@ -5894,33 +6319,33 @@ public final class ProductCreateProto {
         return this;
       }
       /**
-       * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 2 [json_name = "withoutVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 3 [json_name = "withoutVariants"];</code>
        */
       public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants.Builder getWithoutVariantsBuilder() {
         return internalGetWithoutVariantsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 2 [json_name = "withoutVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 3 [json_name = "withoutVariants"];</code>
        */
       @java.lang.Override
       public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariantsOrBuilder getWithoutVariantsOrBuilder() {
-        if ((detailsCase_ == 2) && (withoutVariantsBuilder_ != null)) {
+        if ((detailsCase_ == 3) && (withoutVariantsBuilder_ != null)) {
           return withoutVariantsBuilder_.getMessageOrBuilder();
         } else {
-          if (detailsCase_ == 2) {
+          if (detailsCase_ == 3) {
             return (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants) details_;
           }
           return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants.getDefaultInstance();
         }
       }
       /**
-       * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 2 [json_name = "withoutVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestDetailsWithoutVariants without_variants = 3 [json_name = "withoutVariants"];</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
           org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants.Builder, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariantsOrBuilder> 
           internalGetWithoutVariantsFieldBuilder() {
         if (withoutVariantsBuilder_ == null) {
-          if (!(detailsCase_ == 2)) {
+          if (!(detailsCase_ == 3)) {
             details_ = org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsWithoutVariants.getDefaultInstance();
           }
           withoutVariantsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
@@ -5930,7 +6355,7 @@ public final class ProductCreateProto {
                   isClean());
           details_ = null;
         }
-        detailsCase_ = 2;
+        detailsCase_ = 3;
         onChanged();
         return withoutVariantsBuilder_;
       }
@@ -5991,24 +6416,44 @@ public final class ProductCreateProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * an array of details for values for each product's details variant
+     * </pre>
+     *
      * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
      */
     java.util.List<org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsVariantForm> 
         getVariantsList();
     /**
+     * <pre>
+     * an array of details for values for each product's details variant
+     * </pre>
+     *
      * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
      */
     org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsVariantForm getVariants(int index);
     /**
+     * <pre>
+     * an array of details for values for each product's details variant
+     * </pre>
+     *
      * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
      */
     int getVariantsCount();
     /**
+     * <pre>
+     * an array of details for values for each product's details variant
+     * </pre>
+     *
      * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
      */
     java.util.List<? extends org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsVariantFormOrBuilder> 
         getVariantsOrBuilderList();
     /**
+     * <pre>
+     * an array of details for values for each product's details variant
+     * </pre>
+     *
      * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
      */
     org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsVariantFormOrBuilder getVariantsOrBuilder(
@@ -6056,6 +6501,10 @@ public final class ProductCreateProto {
     @SuppressWarnings("serial")
     private java.util.List<org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsVariantForm> variants_;
     /**
+     * <pre>
+     * an array of details for values for each product's details variant
+     * </pre>
+     *
      * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
      */
     @java.lang.Override
@@ -6063,6 +6512,10 @@ public final class ProductCreateProto {
       return variants_;
     }
     /**
+     * <pre>
+     * an array of details for values for each product's details variant
+     * </pre>
+     *
      * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
      */
     @java.lang.Override
@@ -6071,6 +6524,10 @@ public final class ProductCreateProto {
       return variants_;
     }
     /**
+     * <pre>
+     * an array of details for values for each product's details variant
+     * </pre>
+     *
      * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
      */
     @java.lang.Override
@@ -6078,6 +6535,10 @@ public final class ProductCreateProto {
       return variants_.size();
     }
     /**
+     * <pre>
+     * an array of details for values for each product's details variant
+     * </pre>
+     *
      * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
      */
     @java.lang.Override
@@ -6085,6 +6546,10 @@ public final class ProductCreateProto {
       return variants_.get(index);
     }
     /**
+     * <pre>
+     * an array of details for values for each product's details variant
+     * </pre>
+     *
      * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
      */
     @java.lang.Override
@@ -6448,6 +6913,10 @@ public final class ProductCreateProto {
           org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsVariantForm, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsVariantForm.Builder, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsVariantFormOrBuilder> variantsBuilder_;
 
       /**
+       * <pre>
+       * an array of details for values for each product's details variant
+       * </pre>
+       *
        * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
        */
       public java.util.List<org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsVariantForm> getVariantsList() {
@@ -6458,6 +6927,10 @@ public final class ProductCreateProto {
         }
       }
       /**
+       * <pre>
+       * an array of details for values for each product's details variant
+       * </pre>
+       *
        * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
        */
       public int getVariantsCount() {
@@ -6468,6 +6941,10 @@ public final class ProductCreateProto {
         }
       }
       /**
+       * <pre>
+       * an array of details for values for each product's details variant
+       * </pre>
+       *
        * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
        */
       public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsVariantForm getVariants(int index) {
@@ -6478,6 +6955,10 @@ public final class ProductCreateProto {
         }
       }
       /**
+       * <pre>
+       * an array of details for values for each product's details variant
+       * </pre>
+       *
        * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
        */
       public Builder setVariants(
@@ -6495,6 +6976,10 @@ public final class ProductCreateProto {
         return this;
       }
       /**
+       * <pre>
+       * an array of details for values for each product's details variant
+       * </pre>
+       *
        * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
        */
       public Builder setVariants(
@@ -6509,6 +6994,10 @@ public final class ProductCreateProto {
         return this;
       }
       /**
+       * <pre>
+       * an array of details for values for each product's details variant
+       * </pre>
+       *
        * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
        */
       public Builder addVariants(org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsVariantForm value) {
@@ -6525,6 +7014,10 @@ public final class ProductCreateProto {
         return this;
       }
       /**
+       * <pre>
+       * an array of details for values for each product's details variant
+       * </pre>
+       *
        * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
        */
       public Builder addVariants(
@@ -6542,6 +7035,10 @@ public final class ProductCreateProto {
         return this;
       }
       /**
+       * <pre>
+       * an array of details for values for each product's details variant
+       * </pre>
+       *
        * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
        */
       public Builder addVariants(
@@ -6556,6 +7053,10 @@ public final class ProductCreateProto {
         return this;
       }
       /**
+       * <pre>
+       * an array of details for values for each product's details variant
+       * </pre>
+       *
        * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
        */
       public Builder addVariants(
@@ -6570,6 +7071,10 @@ public final class ProductCreateProto {
         return this;
       }
       /**
+       * <pre>
+       * an array of details for values for each product's details variant
+       * </pre>
+       *
        * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
        */
       public Builder addAllVariants(
@@ -6585,6 +7090,10 @@ public final class ProductCreateProto {
         return this;
       }
       /**
+       * <pre>
+       * an array of details for values for each product's details variant
+       * </pre>
+       *
        * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
        */
       public Builder clearVariants() {
@@ -6598,6 +7107,10 @@ public final class ProductCreateProto {
         return this;
       }
       /**
+       * <pre>
+       * an array of details for values for each product's details variant
+       * </pre>
+       *
        * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
        */
       public Builder removeVariants(int index) {
@@ -6611,6 +7124,10 @@ public final class ProductCreateProto {
         return this;
       }
       /**
+       * <pre>
+       * an array of details for values for each product's details variant
+       * </pre>
+       *
        * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
        */
       public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsVariantForm.Builder getVariantsBuilder(
@@ -6618,6 +7135,10 @@ public final class ProductCreateProto {
         return internalGetVariantsFieldBuilder().getBuilder(index);
       }
       /**
+       * <pre>
+       * an array of details for values for each product's details variant
+       * </pre>
+       *
        * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
        */
       public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsVariantFormOrBuilder getVariantsOrBuilder(
@@ -6628,6 +7149,10 @@ public final class ProductCreateProto {
         }
       }
       /**
+       * <pre>
+       * an array of details for values for each product's details variant
+       * </pre>
+       *
        * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
        */
       public java.util.List<? extends org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsVariantFormOrBuilder> 
@@ -6639,6 +7164,10 @@ public final class ProductCreateProto {
         }
       }
       /**
+       * <pre>
+       * an array of details for values for each product's details variant
+       * </pre>
+       *
        * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
        */
       public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsVariantForm.Builder addVariantsBuilder() {
@@ -6646,6 +7175,10 @@ public final class ProductCreateProto {
             org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsVariantForm.getDefaultInstance());
       }
       /**
+       * <pre>
+       * an array of details for values for each product's details variant
+       * </pre>
+       *
        * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
        */
       public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsVariantForm.Builder addVariantsBuilder(
@@ -6654,6 +7187,10 @@ public final class ProductCreateProto {
             index, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsVariantForm.getDefaultInstance());
       }
       /**
+       * <pre>
+       * an array of details for values for each product's details variant
+       * </pre>
+       *
        * <code>repeated .products.v1.ProductCreateRequestDetailsVariantForm variants = 1 [json_name = "variants"];</code>
        */
       public java.util.List<org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestDetailsVariantForm.Builder> 
@@ -6731,10 +7268,18 @@ public final class ProductCreateProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * &lt;attribute_id, attribute value&gt;
+     * </pre>
+     *
      * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
      */
     int getFormCount();
     /**
+     * <pre>
+     * &lt;attribute_id, attribute value&gt;
+     * </pre>
+     *
      * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
      */
     boolean containsForm(
@@ -6746,11 +7291,19 @@ public final class ProductCreateProto {
     java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
     getForm();
     /**
+     * <pre>
+     * &lt;attribute_id, attribute value&gt;
+     * </pre>
+     *
      * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
      */
     java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
     getFormMap();
     /**
+     * <pre>
+     * &lt;attribute_id, attribute value&gt;
+     * </pre>
+     *
      * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
      */
     /* nullable */
@@ -6759,6 +7312,10 @@ org.megacommerce.shared.v1.TypesProto.Any getFormOrDefault(
         /* nullable */
 org.megacommerce.shared.v1.TypesProto.Any defaultValue);
     /**
+     * <pre>
+     * &lt;attribute_id, attribute value&gt;
+     * </pre>
+     *
      * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
      */
     org.megacommerce.shared.v1.TypesProto.Any getFormOrThrow(
@@ -6840,6 +7397,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue);
       return internalGetForm().getMap().size();
     }
     /**
+     * <pre>
+     * &lt;attribute_id, attribute value&gt;
+     * </pre>
+     *
      * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
      */
     @java.lang.Override
@@ -6857,6 +7418,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue);
       return getFormMap();
     }
     /**
+     * <pre>
+     * &lt;attribute_id, attribute value&gt;
+     * </pre>
+     *
      * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
      */
     @java.lang.Override
@@ -6864,6 +7429,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue);
       return internalGetForm().getMap();
     }
     /**
+     * <pre>
+     * &lt;attribute_id, attribute value&gt;
+     * </pre>
+     *
      * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
      */
     @java.lang.Override
@@ -6878,6 +7447,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     * <pre>
+     * &lt;attribute_id, attribute value&gt;
+     * </pre>
+     *
      * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
      */
     @java.lang.Override
@@ -7258,6 +7831,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
         return internalGetForm().ensureBuilderMap().size();
       }
       /**
+       * <pre>
+       * &lt;attribute_id, attribute value&gt;
+       * </pre>
+       *
        * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
        */
       @java.lang.Override
@@ -7275,6 +7852,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
         return getFormMap();
       }
       /**
+       * <pre>
+       * &lt;attribute_id, attribute value&gt;
+       * </pre>
+       *
        * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
        */
       @java.lang.Override
@@ -7282,6 +7863,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
         return internalGetForm().getImmutableMap();
       }
       /**
+       * <pre>
+       * &lt;attribute_id, attribute value&gt;
+       * </pre>
+       *
        * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
        */
       @java.lang.Override
@@ -7295,6 +7880,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
         return map.containsKey(key) ? formConverter.build(map.get(key)) : defaultValue;
       }
       /**
+       * <pre>
+       * &lt;attribute_id, attribute value&gt;
+       * </pre>
+       *
        * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
        */
       @java.lang.Override
@@ -7313,6 +7902,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
         return this;
       }
       /**
+       * <pre>
+       * &lt;attribute_id, attribute value&gt;
+       * </pre>
+       *
        * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
        */
       public Builder removeForm(
@@ -7332,6 +7925,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
         return internalGetMutableForm().ensureMessageMap();
       }
       /**
+       * <pre>
+       * &lt;attribute_id, attribute value&gt;
+       * </pre>
+       *
        * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
        */
       public Builder putForm(
@@ -7345,6 +7942,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
         return this;
       }
       /**
+       * <pre>
+       * &lt;attribute_id, attribute value&gt;
+       * </pre>
+       *
        * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
        */
       public Builder putAllForm(
@@ -7360,6 +7961,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
         return this;
       }
       /**
+       * <pre>
+       * &lt;attribute_id, attribute value&gt;
+       * </pre>
+       *
        * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
        */
       public org.megacommerce.shared.v1.TypesProto.Any.Builder putFormBuilderIfAbsent(
@@ -7433,10 +8038,18 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * &lt;attribute_id, attribute value&gt;
+     * </pre>
+     *
      * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
      */
     int getFormCount();
     /**
+     * <pre>
+     * &lt;attribute_id, attribute value&gt;
+     * </pre>
+     *
      * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
      */
     boolean containsForm(
@@ -7448,11 +8061,19 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
     java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
     getForm();
     /**
+     * <pre>
+     * &lt;attribute_id, attribute value&gt;
+     * </pre>
+     *
      * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
      */
     java.util.Map<java.lang.String, org.megacommerce.shared.v1.TypesProto.Any>
     getFormMap();
     /**
+     * <pre>
+     * &lt;attribute_id, attribute value&gt;
+     * </pre>
+     *
      * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
      */
     /* nullable */
@@ -7461,6 +8082,10 @@ org.megacommerce.shared.v1.TypesProto.Any getFormOrDefault(
         /* nullable */
 org.megacommerce.shared.v1.TypesProto.Any defaultValue);
     /**
+     * <pre>
+     * &lt;attribute_id, attribute value&gt;
+     * </pre>
+     *
      * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
      */
     org.megacommerce.shared.v1.TypesProto.Any getFormOrThrow(
@@ -7542,6 +8167,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue);
       return internalGetForm().getMap().size();
     }
     /**
+     * <pre>
+     * &lt;attribute_id, attribute value&gt;
+     * </pre>
+     *
      * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
      */
     @java.lang.Override
@@ -7559,6 +8188,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue);
       return getFormMap();
     }
     /**
+     * <pre>
+     * &lt;attribute_id, attribute value&gt;
+     * </pre>
+     *
      * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
      */
     @java.lang.Override
@@ -7566,6 +8199,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue);
       return internalGetForm().getMap();
     }
     /**
+     * <pre>
+     * &lt;attribute_id, attribute value&gt;
+     * </pre>
+     *
      * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
      */
     @java.lang.Override
@@ -7580,6 +8217,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     * <pre>
+     * &lt;attribute_id, attribute value&gt;
+     * </pre>
+     *
      * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
      */
     @java.lang.Override
@@ -7960,6 +8601,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
         return internalGetForm().ensureBuilderMap().size();
       }
       /**
+       * <pre>
+       * &lt;attribute_id, attribute value&gt;
+       * </pre>
+       *
        * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
        */
       @java.lang.Override
@@ -7977,6 +8622,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
         return getFormMap();
       }
       /**
+       * <pre>
+       * &lt;attribute_id, attribute value&gt;
+       * </pre>
+       *
        * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
        */
       @java.lang.Override
@@ -7984,6 +8633,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
         return internalGetForm().getImmutableMap();
       }
       /**
+       * <pre>
+       * &lt;attribute_id, attribute value&gt;
+       * </pre>
+       *
        * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
        */
       @java.lang.Override
@@ -7997,6 +8650,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
         return map.containsKey(key) ? formConverter.build(map.get(key)) : defaultValue;
       }
       /**
+       * <pre>
+       * &lt;attribute_id, attribute value&gt;
+       * </pre>
+       *
        * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
        */
       @java.lang.Override
@@ -8015,6 +8672,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
         return this;
       }
       /**
+       * <pre>
+       * &lt;attribute_id, attribute value&gt;
+       * </pre>
+       *
        * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
        */
       public Builder removeForm(
@@ -8034,6 +8695,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
         return internalGetMutableForm().ensureMessageMap();
       }
       /**
+       * <pre>
+       * &lt;attribute_id, attribute value&gt;
+       * </pre>
+       *
        * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
        */
       public Builder putForm(
@@ -8047,6 +8712,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
         return this;
       }
       /**
+       * <pre>
+       * &lt;attribute_id, attribute value&gt;
+       * </pre>
+       *
        * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
        */
       public Builder putAllForm(
@@ -8062,6 +8731,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
         return this;
       }
       /**
+       * <pre>
+       * &lt;attribute_id, attribute value&gt;
+       * </pre>
+       *
        * <code>map&lt;string, .shared.v1.Any&gt; form = 1 [json_name = "form"];</code>
        */
       public org.megacommerce.shared.v1.TypesProto.Any.Builder putFormBuilderIfAbsent(
@@ -8135,6 +8808,11 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     * <pre>
+     * total size in bytes, so this size is used to decide how to upload the media,
+     * either with resumable uploading or directly if media files aren't so big
+     * </pre>
+     *
      * <code>uint64 total_size = 1 [json_name = "totalSize"];</code>
      * @return The totalSize.
      */
@@ -8254,6 +8932,11 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
     public static final int TOTAL_SIZE_FIELD_NUMBER = 1;
     private long totalSize_ = 0L;
     /**
+     * <pre>
+     * total size in bytes, so this size is used to decide how to upload the media,
+     * either with resumable uploading or directly if media files aren't so big
+     * </pre>
+     *
      * <code>uint64 total_size = 1 [json_name = "totalSize"];</code>
      * @return The totalSize.
      */
@@ -8723,6 +9406,11 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
 
       private long totalSize_ ;
       /**
+       * <pre>
+       * total size in bytes, so this size is used to decide how to upload the media,
+       * either with resumable uploading or directly if media files aren't so big
+       * </pre>
+       *
        * <code>uint64 total_size = 1 [json_name = "totalSize"];</code>
        * @return The totalSize.
        */
@@ -8731,6 +9419,11 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
         return totalSize_;
       }
       /**
+       * <pre>
+       * total size in bytes, so this size is used to decide how to upload the media,
+       * either with resumable uploading or directly if media files aren't so big
+       * </pre>
+       *
        * <code>uint64 total_size = 1 [json_name = "totalSize"];</code>
        * @param value The totalSize to set.
        * @return This builder for chaining.
@@ -8743,6 +9436,11 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
         return this;
       }
       /**
+       * <pre>
+       * total size in bytes, so this size is used to decide how to upload the media,
+       * either with resumable uploading or directly if media files aren't so big
+       * </pre>
+       *
        * <code>uint64 total_size = 1 [json_name = "totalSize"];</code>
        * @return This builder for chaining.
        */
@@ -11266,19 +11964,19 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
     org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithVariantsOrBuilder getWithVariantsOrBuilder();
 
     /**
-     * <code>.products.v1.ProductCreateRequestOfferPricing without_variants = 5 [json_name = "withoutVariants"];</code>
+     * <code>.products.v1.ProductCreateRequestOfferWithoutVariants without_variants = 5 [json_name = "withoutVariants"];</code>
      * @return Whether the withoutVariants field is set.
      */
     boolean hasWithoutVariants();
     /**
-     * <code>.products.v1.ProductCreateRequestOfferPricing without_variants = 5 [json_name = "withoutVariants"];</code>
+     * <code>.products.v1.ProductCreateRequestOfferWithoutVariants without_variants = 5 [json_name = "withoutVariants"];</code>
      * @return The withoutVariants.
      */
-    org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing getWithoutVariants();
+    org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants getWithoutVariants();
     /**
-     * <code>.products.v1.ProductCreateRequestOfferPricing without_variants = 5 [json_name = "withoutVariants"];</code>
+     * <code>.products.v1.ProductCreateRequestOfferWithoutVariants without_variants = 5 [json_name = "withoutVariants"];</code>
      */
-    org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricingOrBuilder getWithoutVariantsOrBuilder();
+    org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariantsOrBuilder getWithoutVariantsOrBuilder();
 
     org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOffer.PricingCase getPricingCase();
   }
@@ -11485,7 +12183,7 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
 
     public static final int WITHOUT_VARIANTS_FIELD_NUMBER = 5;
     /**
-     * <code>.products.v1.ProductCreateRequestOfferPricing without_variants = 5 [json_name = "withoutVariants"];</code>
+     * <code>.products.v1.ProductCreateRequestOfferWithoutVariants without_variants = 5 [json_name = "withoutVariants"];</code>
      * @return Whether the withoutVariants field is set.
      */
     @java.lang.Override
@@ -11493,25 +12191,25 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
       return pricingCase_ == 5;
     }
     /**
-     * <code>.products.v1.ProductCreateRequestOfferPricing without_variants = 5 [json_name = "withoutVariants"];</code>
+     * <code>.products.v1.ProductCreateRequestOfferWithoutVariants without_variants = 5 [json_name = "withoutVariants"];</code>
      * @return The withoutVariants.
      */
     @java.lang.Override
-    public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing getWithoutVariants() {
+    public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants getWithoutVariants() {
       if (pricingCase_ == 5) {
-         return (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing) pricing_;
+         return (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants) pricing_;
       }
-      return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing.getDefaultInstance();
+      return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants.getDefaultInstance();
     }
     /**
-     * <code>.products.v1.ProductCreateRequestOfferPricing without_variants = 5 [json_name = "withoutVariants"];</code>
+     * <code>.products.v1.ProductCreateRequestOfferWithoutVariants without_variants = 5 [json_name = "withoutVariants"];</code>
      */
     @java.lang.Override
-    public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricingOrBuilder getWithoutVariantsOrBuilder() {
+    public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariantsOrBuilder getWithoutVariantsOrBuilder() {
       if (pricingCase_ == 5) {
-         return (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing) pricing_;
+         return (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants) pricing_;
       }
-      return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing.getDefaultInstance();
+      return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants.getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
@@ -11541,7 +12239,7 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
         output.writeMessage(4, (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithVariants) pricing_);
       }
       if (pricingCase_ == 5) {
-        output.writeMessage(5, (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing) pricing_);
+        output.writeMessage(5, (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants) pricing_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -11568,7 +12266,7 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
       }
       if (pricingCase_ == 5) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing) pricing_);
+          .computeMessageSize(5, (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants) pricing_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -12278,9 +12976,9 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
       }
 
       private com.google.protobuf.SingleFieldBuilder<
-          org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing.Builder, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricingOrBuilder> withoutVariantsBuilder_;
+          org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants.Builder, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariantsOrBuilder> withoutVariantsBuilder_;
       /**
-       * <code>.products.v1.ProductCreateRequestOfferPricing without_variants = 5 [json_name = "withoutVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestOfferWithoutVariants without_variants = 5 [json_name = "withoutVariants"];</code>
        * @return Whether the withoutVariants field is set.
        */
       @java.lang.Override
@@ -12288,27 +12986,27 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
         return pricingCase_ == 5;
       }
       /**
-       * <code>.products.v1.ProductCreateRequestOfferPricing without_variants = 5 [json_name = "withoutVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestOfferWithoutVariants without_variants = 5 [json_name = "withoutVariants"];</code>
        * @return The withoutVariants.
        */
       @java.lang.Override
-      public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing getWithoutVariants() {
+      public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants getWithoutVariants() {
         if (withoutVariantsBuilder_ == null) {
           if (pricingCase_ == 5) {
-            return (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing) pricing_;
+            return (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants) pricing_;
           }
-          return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing.getDefaultInstance();
+          return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants.getDefaultInstance();
         } else {
           if (pricingCase_ == 5) {
             return withoutVariantsBuilder_.getMessage();
           }
-          return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing.getDefaultInstance();
+          return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants.getDefaultInstance();
         }
       }
       /**
-       * <code>.products.v1.ProductCreateRequestOfferPricing without_variants = 5 [json_name = "withoutVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestOfferWithoutVariants without_variants = 5 [json_name = "withoutVariants"];</code>
        */
-      public Builder setWithoutVariants(org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing value) {
+      public Builder setWithoutVariants(org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants value) {
         if (withoutVariantsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -12322,10 +13020,10 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
         return this;
       }
       /**
-       * <code>.products.v1.ProductCreateRequestOfferPricing without_variants = 5 [json_name = "withoutVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestOfferWithoutVariants without_variants = 5 [json_name = "withoutVariants"];</code>
        */
       public Builder setWithoutVariants(
-          org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing.Builder builderForValue) {
+          org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants.Builder builderForValue) {
         if (withoutVariantsBuilder_ == null) {
           pricing_ = builderForValue.build();
           onChanged();
@@ -12336,13 +13034,13 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
         return this;
       }
       /**
-       * <code>.products.v1.ProductCreateRequestOfferPricing without_variants = 5 [json_name = "withoutVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestOfferWithoutVariants without_variants = 5 [json_name = "withoutVariants"];</code>
        */
-      public Builder mergeWithoutVariants(org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing value) {
+      public Builder mergeWithoutVariants(org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants value) {
         if (withoutVariantsBuilder_ == null) {
           if (pricingCase_ == 5 &&
-              pricing_ != org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing.getDefaultInstance()) {
-            pricing_ = org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing.newBuilder((org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing) pricing_)
+              pricing_ != org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants.getDefaultInstance()) {
+            pricing_ = org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants.newBuilder((org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants) pricing_)
                 .mergeFrom(value).buildPartial();
           } else {
             pricing_ = value;
@@ -12359,7 +13057,7 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
         return this;
       }
       /**
-       * <code>.products.v1.ProductCreateRequestOfferPricing without_variants = 5 [json_name = "withoutVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestOfferWithoutVariants without_variants = 5 [json_name = "withoutVariants"];</code>
        */
       public Builder clearWithoutVariants() {
         if (withoutVariantsBuilder_ == null) {
@@ -12378,38 +13076,38 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
         return this;
       }
       /**
-       * <code>.products.v1.ProductCreateRequestOfferPricing without_variants = 5 [json_name = "withoutVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestOfferWithoutVariants without_variants = 5 [json_name = "withoutVariants"];</code>
        */
-      public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing.Builder getWithoutVariantsBuilder() {
+      public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants.Builder getWithoutVariantsBuilder() {
         return internalGetWithoutVariantsFieldBuilder().getBuilder();
       }
       /**
-       * <code>.products.v1.ProductCreateRequestOfferPricing without_variants = 5 [json_name = "withoutVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestOfferWithoutVariants without_variants = 5 [json_name = "withoutVariants"];</code>
        */
       @java.lang.Override
-      public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricingOrBuilder getWithoutVariantsOrBuilder() {
+      public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariantsOrBuilder getWithoutVariantsOrBuilder() {
         if ((pricingCase_ == 5) && (withoutVariantsBuilder_ != null)) {
           return withoutVariantsBuilder_.getMessageOrBuilder();
         } else {
           if (pricingCase_ == 5) {
-            return (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing) pricing_;
+            return (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants) pricing_;
           }
-          return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing.getDefaultInstance();
+          return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants.getDefaultInstance();
         }
       }
       /**
-       * <code>.products.v1.ProductCreateRequestOfferPricing without_variants = 5 [json_name = "withoutVariants"];</code>
+       * <code>.products.v1.ProductCreateRequestOfferWithoutVariants without_variants = 5 [json_name = "withoutVariants"];</code>
        */
       private com.google.protobuf.SingleFieldBuilder<
-          org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing.Builder, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricingOrBuilder> 
+          org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants.Builder, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariantsOrBuilder> 
           internalGetWithoutVariantsFieldBuilder() {
         if (withoutVariantsBuilder_ == null) {
           if (!(pricingCase_ == 5)) {
-            pricing_ = org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing.getDefaultInstance();
+            pricing_ = org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants.getDefaultInstance();
           }
           withoutVariantsBuilder_ = new com.google.protobuf.SingleFieldBuilder<
-              org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing.Builder, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricingOrBuilder>(
-                  (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing) pricing_,
+              org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants.Builder, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariantsOrBuilder>(
+                  (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants) pricing_,
                   getParentForChildren(),
                   isClean());
           pricing_ = null;
@@ -15661,8 +16359,8 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
 
   }
 
-  public interface ProductCreateRequestOfferPricingOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:products.v1.ProductCreateRequestOfferPricing)
+  public interface ProductCreateRequestOfferWithoutVariantsOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:products.v1.ProductCreateRequestOfferWithoutVariants)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -15834,12 +16532,12 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
         int index);
   }
   /**
-   * Protobuf type {@code products.v1.ProductCreateRequestOfferPricing}
+   * Protobuf type {@code products.v1.ProductCreateRequestOfferWithoutVariants}
    */
-  public static final class ProductCreateRequestOfferPricing extends
+  public static final class ProductCreateRequestOfferWithoutVariants extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:products.v1.ProductCreateRequestOfferPricing)
-      ProductCreateRequestOfferPricingOrBuilder {
+      // @@protoc_insertion_point(message_implements:products.v1.ProductCreateRequestOfferWithoutVariants)
+      ProductCreateRequestOfferWithoutVariantsOrBuilder {
   private static final long serialVersionUID = 0L;
     static {
       com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
@@ -15848,13 +16546,13 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
         /* minor= */ 31,
         /* patch= */ 1,
         /* suffix= */ "",
-        ProductCreateRequestOfferPricing.class.getName());
+        ProductCreateRequestOfferWithoutVariants.class.getName());
     }
-    // Use ProductCreateRequestOfferPricing.newBuilder() to construct.
-    private ProductCreateRequestOfferPricing(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+    // Use ProductCreateRequestOfferWithoutVariants.newBuilder() to construct.
+    private ProductCreateRequestOfferWithoutVariants(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
       super(builder);
     }
-    private ProductCreateRequestOfferPricing() {
+    private ProductCreateRequestOfferWithoutVariants() {
       sku_ = "";
       price_ = "";
       offeringCondition_ = "";
@@ -15868,15 +16566,15 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
 
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return org.megacommerce.products.v1.ProductCreateProto.internal_static_products_v1_ProductCreateRequestOfferPricing_descriptor;
+      return org.megacommerce.products.v1.ProductCreateProto.internal_static_products_v1_ProductCreateRequestOfferWithoutVariants_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return org.megacommerce.products.v1.ProductCreateProto.internal_static_products_v1_ProductCreateRequestOfferPricing_fieldAccessorTable
+      return org.megacommerce.products.v1.ProductCreateProto.internal_static_products_v1_ProductCreateRequestOfferWithoutVariants_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing.class, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing.Builder.class);
+              org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants.class, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants.Builder.class);
     }
 
     private int bitField0_;
@@ -16423,10 +17121,10 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
       if (obj == this) {
        return true;
       }
-      if (!(obj instanceof org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing)) {
+      if (!(obj instanceof org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants)) {
         return super.equals(obj);
       }
-      org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing other = (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing) obj;
+      org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants other = (org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants) obj;
 
       if (!getSku()
           .equals(other.getSku())) return false;
@@ -16527,44 +17225,44 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
       return hash;
     }
 
-    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing parseFrom(
+    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants parseFrom(
         java.nio.ByteBuffer data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing parseFrom(
+    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants parseFrom(
         java.nio.ByteBuffer data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing parseFrom(
+    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing parseFrom(
+    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing parseFrom(byte[] data)
+    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing parseFrom(
+    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing parseFrom(java.io.InputStream input)
+    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing parseFrom(
+    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -16572,26 +17270,26 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
 
-    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing parseDelimitedFrom(java.io.InputStream input)
+    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
 
-    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing parseDelimitedFrom(
+    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing parseFrom(
+    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing parseFrom(
+    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -16604,7 +17302,7 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing prototype) {
+    public static Builder newBuilder(org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     @java.lang.Override
@@ -16620,26 +17318,26 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
       return builder;
     }
     /**
-     * Protobuf type {@code products.v1.ProductCreateRequestOfferPricing}
+     * Protobuf type {@code products.v1.ProductCreateRequestOfferWithoutVariants}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:products.v1.ProductCreateRequestOfferPricing)
-        org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricingOrBuilder {
+        // @@protoc_insertion_point(builder_implements:products.v1.ProductCreateRequestOfferWithoutVariants)
+        org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariantsOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return org.megacommerce.products.v1.ProductCreateProto.internal_static_products_v1_ProductCreateRequestOfferPricing_descriptor;
+        return org.megacommerce.products.v1.ProductCreateProto.internal_static_products_v1_ProductCreateRequestOfferWithoutVariants_descriptor;
       }
 
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return org.megacommerce.products.v1.ProductCreateProto.internal_static_products_v1_ProductCreateRequestOfferPricing_fieldAccessorTable
+        return org.megacommerce.products.v1.ProductCreateProto.internal_static_products_v1_ProductCreateRequestOfferWithoutVariants_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing.class, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing.Builder.class);
+                org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants.class, org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants.Builder.class);
       }
 
-      // Construct using org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing.newBuilder()
+      // Construct using org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants.newBuilder()
       private Builder() {
 
       }
@@ -16677,17 +17375,17 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
       @java.lang.Override
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return org.megacommerce.products.v1.ProductCreateProto.internal_static_products_v1_ProductCreateRequestOfferPricing_descriptor;
+        return org.megacommerce.products.v1.ProductCreateProto.internal_static_products_v1_ProductCreateRequestOfferWithoutVariants_descriptor;
       }
 
       @java.lang.Override
-      public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing getDefaultInstanceForType() {
-        return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing.getDefaultInstance();
+      public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants getDefaultInstanceForType() {
+        return org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants.getDefaultInstance();
       }
 
       @java.lang.Override
-      public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing build() {
-        org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing result = buildPartial();
+      public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants build() {
+        org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
@@ -16695,15 +17393,15 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
       }
 
       @java.lang.Override
-      public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing buildPartial() {
-        org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing result = new org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing(this);
+      public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants buildPartial() {
+        org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants result = new org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants(this);
         buildPartialRepeatedFields(result);
         if (bitField0_ != 0) { buildPartial0(result); }
         onBuilt();
         return result;
       }
 
-      private void buildPartialRepeatedFields(org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing result) {
+      private void buildPartialRepeatedFields(org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants result) {
         if (minimumOrdersBuilder_ == null) {
           if (((bitField0_ & 0x00000800) != 0)) {
             minimumOrders_ = java.util.Collections.unmodifiableList(minimumOrders_);
@@ -16715,7 +17413,7 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
         }
       }
 
-      private void buildPartial0(org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing result) {
+      private void buildPartial0(org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants result) {
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.sku_ = sku_;
@@ -16762,16 +17460,16 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
 
       @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing) {
-          return mergeFrom((org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing)other);
+        if (other instanceof org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants) {
+          return mergeFrom((org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing other) {
-        if (other == org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing.getDefaultInstance()) return this;
+      public Builder mergeFrom(org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants other) {
+        if (other == org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants.getDefaultInstance()) return this;
         if (!other.getSku().isEmpty()) {
           sku_ = other.sku_;
           bitField0_ |= 0x00000001;
@@ -17913,23 +18611,23 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
         return minimumOrdersBuilder_;
       }
 
-      // @@protoc_insertion_point(builder_scope:products.v1.ProductCreateRequestOfferPricing)
+      // @@protoc_insertion_point(builder_scope:products.v1.ProductCreateRequestOfferWithoutVariants)
     }
 
-    // @@protoc_insertion_point(class_scope:products.v1.ProductCreateRequestOfferPricing)
-    private static final org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:products.v1.ProductCreateRequestOfferWithoutVariants)
+    private static final org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing();
+      DEFAULT_INSTANCE = new org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants();
     }
 
-    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing getDefaultInstance() {
+    public static org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<ProductCreateRequestOfferPricing>
-        PARSER = new com.google.protobuf.AbstractParser<ProductCreateRequestOfferPricing>() {
+    private static final com.google.protobuf.Parser<ProductCreateRequestOfferWithoutVariants>
+        PARSER = new com.google.protobuf.AbstractParser<ProductCreateRequestOfferWithoutVariants>() {
       @java.lang.Override
-      public ProductCreateRequestOfferPricing parsePartialFrom(
+      public ProductCreateRequestOfferWithoutVariants parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -17948,17 +18646,17 @@ org.megacommerce.shared.v1.AttachmentProto.Attachments defaultValue) {
       }
     };
 
-    public static com.google.protobuf.Parser<ProductCreateRequestOfferPricing> parser() {
+    public static com.google.protobuf.Parser<ProductCreateRequestOfferWithoutVariants> parser() {
       return PARSER;
     }
 
     @java.lang.Override
-    public com.google.protobuf.Parser<ProductCreateRequestOfferPricing> getParserForType() {
+    public com.google.protobuf.Parser<ProductCreateRequestOfferWithoutVariants> getParserForType() {
       return PARSER;
     }
 
     @java.lang.Override
-    public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferPricing getDefaultInstanceForType() {
+    public org.megacommerce.products.v1.ProductCreateProto.ProductCreateRequestOfferWithoutVariants getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -20386,6 +21084,11 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_products_v1_ProductCreateRequestDetails_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_products_v1_ProductCreateRequestDetails_SharedEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_products_v1_ProductCreateRequestDetails_SharedEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_products_v1_ProductCreateRequestDetailsWithVariants_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -20451,10 +21154,10 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_products_v1_ProductCreateRequestOfferVariant_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_products_v1_ProductCreateRequestOfferPricing_descriptor;
+    internal_static_products_v1_ProductCreateRequestOfferWithoutVariants_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_products_v1_ProductCreateRequestOfferPricing_fieldAccessorTable;
+      internal_static_products_v1_ProductCreateRequestOfferWithoutVariants_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_products_v1_ProductCreateRequestOfferMinimumOrder_descriptor;
   private static final 
@@ -20512,105 +21215,109 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
       "ints\030\002 \003(\0132,.products.v1.ProductCreateRe" +
       "questBulletPointR\014bulletPoints\"T\n\037Produc" +
       "tCreateRequestBulletPoint\022\016\n\002id\030\001 \001(\tR\002i" +
-      "d\022!\n\014bullet_point\030\002 \001(\tR\013bulletPoint\"\353\001\n" +
-      "\033ProductCreateRequestDetails\022[\n\rwith_var" +
-      "iants\030\001 \001(\01324.products.v1.ProductCreateR" +
-      "equestDetailsWithVariantsH\000R\014withVariant" +
-      "s\022d\n\020without_variants\030\002 \001(\01327.products.v" +
-      "1.ProductCreateRequestDetailsWithoutVari" +
-      "antsH\000R\017withoutVariantsB\t\n\007details\"z\n\'Pr" +
-      "oductCreateRequestDetailsWithVariants\022O\n" +
-      "\010variants\030\001 \003(\01323.products.v1.ProductCre" +
-      "ateRequestDetailsVariantFormR\010variants\"\304" +
-      "\001\n&ProductCreateRequestDetailsVariantFor" +
-      "m\022Q\n\004form\030\001 \003(\0132=.products.v1.ProductCre" +
-      "ateRequestDetailsVariantForm.FormEntryR\004" +
+      "d\022!\n\014bullet_point\030\002 \001(\tR\013bulletPoint\"\204\003\n" +
+      "\033ProductCreateRequestDetails\022L\n\006shared\030\001" +
+      " \003(\01324.products.v1.ProductCreateRequestD" +
+      "etails.SharedEntryR\006shared\022[\n\rwith_varia" +
+      "nts\030\002 \001(\01324.products.v1.ProductCreateReq" +
+      "uestDetailsWithVariantsH\000R\014withVariants\022" +
+      "d\n\020without_variants\030\003 \001(\01327.products.v1." +
+      "ProductCreateRequestDetailsWithoutVarian" +
+      "tsH\000R\017withoutVariants\032I\n\013SharedEntry\022\020\n\003" +
+      "key\030\001 \001(\tR\003key\022$\n\005value\030\002 \001(\0132\016.shared.v" +
+      "1.AnyR\005value:\0028\001B\t\n\007details\"z\n\'ProductCr" +
+      "eateRequestDetailsWithVariants\022O\n\010varian" +
+      "ts\030\001 \003(\01323.products.v1.ProductCreateRequ" +
+      "estDetailsVariantFormR\010variants\"\304\001\n&Prod" +
+      "uctCreateRequestDetailsVariantForm\022Q\n\004fo" +
+      "rm\030\001 \003(\0132=.products.v1.ProductCreateRequ" +
+      "estDetailsVariantForm.FormEntryR\004form\032G\n" +
+      "\tFormEntry\022\020\n\003key\030\001 \001(\tR\003key\022$\n\005value\030\002 " +
+      "\001(\0132\016.shared.v1.AnyR\005value:\0028\001\"\314\001\n*Produ" +
+      "ctCreateRequestDetailsWithoutVariants\022U\n" +
+      "\004form\030\001 \003(\0132A.products.v1.ProductCreateR" +
+      "equestDetailsWithoutVariants.FormEntryR\004" +
       "form\032G\n\tFormEntry\022\020\n\003key\030\001 \001(\tR\003key\022$\n\005v" +
-      "alue\030\002 \001(\0132\016.shared.v1.AnyR\005value:\0028\001\"\314\001" +
-      "\n*ProductCreateRequestDetailsWithoutVari" +
-      "ants\022U\n\004form\030\001 \003(\0132A.products.v1.Product" +
-      "CreateRequestDetailsWithoutVariants.Form" +
-      "EntryR\004form\032G\n\tFormEntry\022\020\n\003key\030\001 \001(\tR\003k" +
-      "ey\022$\n\005value\030\002 \001(\0132\016.shared.v1.AnyR\005value" +
-      ":\0028\001\"\202\002\n\031ProductCreateRequestMedia\022\035\n\nto" +
-      "tal_size\030\001 \001(\004R\ttotalSize\022Y\n\rwith_varian" +
-      "ts\030\002 \001(\01322.products.v1.ProductCreateRequ" +
-      "estMediaWithVariantsH\000R\014withVariants\022b\n\020" +
-      "without_variants\030\003 \001(\01325.products.v1.Pro" +
-      "ductCreateRequestMediaWithoutVariantsH\000R" +
-      "\017withoutVariantsB\007\n\005media\"\375\002\n%ProductCre" +
-      "ateRequestMediaWithVariants\022V\n\006images\030\001 " +
-      "\003(\0132>.products.v1.ProductCreateRequestMe" +
-      "diaWithVariants.ImagesEntryR\006images\022V\n\006v" +
-      "ideos\030\002 \003(\0132>.products.v1.ProductCreateR" +
-      "equestMediaWithVariants.VideosEntryR\006vid" +
-      "eos\032Q\n\013ImagesEntry\022\020\n\003key\030\001 \001(\tR\003key\022,\n\005" +
-      "value\030\002 \001(\0132\026.shared.v1.AttachmentsR\005val" +
-      "ue:\0028\001\032Q\n\013VideosEntry\022\020\n\003key\030\001 \001(\tR\003key\022" +
-      ",\n\005value\030\002 \001(\0132\026.shared.v1.AttachmentsR\005" +
-      "value:\0028\001\"\210\001\n(ProductCreateRequestMediaW" +
-      "ithoutVariants\022-\n\006images\030\001 \003(\0132\025.shared." +
-      "v1.AttachmentR\006images\022-\n\006videos\030\002 \003(\0132\025." +
-      "shared.v1.AttachmentR\006videos\"\315\002\n\031Product" +
-      "CreateRequestOffer\022\032\n\010currency\030\001 \001(\tR\010cu" +
-      "rrency\022)\n\020fulfillment_type\030\002 \001(\tR\017fulfil" +
-      "lmentType\022\'\n\017processing_time\030\003 \001(\004R\016proc" +
-      "essingTime\022Y\n\rwith_variants\030\004 \001(\01322.prod" +
-      "ucts.v1.ProductCreateRequestOfferWithVar" +
-      "iantsH\000R\014withVariants\022Z\n\020without_variant" +
-      "s\030\005 \001(\0132-.products.v1.ProductCreateReque" +
-      "stOfferPricingH\000R\017withoutVariantsB\t\n\007pri" +
-      "cing\"r\n%ProductCreateRequestOfferWithVar" +
-      "iants\022I\n\010variants\030\001 \003(\0132-.products.v1.Pr" +
-      "oductCreateRequestOfferVariantR\010variants" +
-      "\"\223\005\n ProductCreateRequestOfferVariant\022\016\n" +
-      "\002id\030\001 \001(\tR\002id\022\020\n\003sku\030\002 \001(\tR\003sku\022\032\n\010quant" +
-      "ity\030\003 \001(\004R\010quantity\022\024\n\005price\030\004 \001(\tR\005pric" +
-      "e\022-\n\022offering_condition\030\005 \001(\tR\021offeringC" +
-      "ondition\022*\n\016condition_note\030\006 \001(\tH\000R\rcond" +
-      "itionNote\210\001\001\022\"\n\nlist_price\030\007 \001(\tH\001R\tlist" +
-      "Price\210\001\001\022)\n\016has_sale_price\030\010 \001(\010H\002R\014hasS" +
-      "alePrice\210\001\001\022\"\n\nsale_price\030\t \001(\tH\003R\tsaleP" +
-      "rice\210\001\001\022-\n\020sale_price_start\030\n \001(\tH\004R\016sal" +
-      "ePriceStart\210\001\001\022)\n\016sale_price_end\030\013 \001(\tH\005" +
-      "R\014salePriceEnd\210\001\001\022,\n\022has_minimum_orders\030" +
-      "\014 \001(\010R\020hasMinimumOrders\022Y\n\016minimum_order" +
-      "s\030\r \003(\01322.products.v1.ProductCreateReque" +
-      "stOfferMinimumOrderR\rminimumOrdersB\021\n\017_c" +
-      "ondition_noteB\r\n\013_list_priceB\021\n\017_has_sal" +
-      "e_priceB\r\n\013_sale_priceB\023\n\021_sale_price_st" +
-      "artB\021\n\017_sale_price_end\"\203\005\n ProductCreate" +
-      "RequestOfferPricing\022\020\n\003sku\030\001 \001(\tR\003sku\022\032\n" +
-      "\010quantity\030\002 \001(\004R\010quantity\022\024\n\005price\030\003 \001(\t" +
-      "R\005price\022-\n\022offering_condition\030\004 \001(\tR\021off" +
-      "eringCondition\022*\n\016condition_note\030\005 \001(\tH\000" +
-      "R\rconditionNote\210\001\001\022\"\n\nlist_price\030\006 \001(\tH\001" +
-      "R\tlistPrice\210\001\001\022)\n\016has_sale_price\030\007 \001(\010H\002" +
-      "R\014hasSalePrice\210\001\001\022\"\n\nsale_price\030\010 \001(\tH\003R" +
-      "\tsalePrice\210\001\001\022-\n\020sale_price_start\030\t \001(\tH" +
-      "\004R\016salePriceStart\210\001\001\022)\n\016sale_price_end\030\n" +
-      " \001(\tH\005R\014salePriceEnd\210\001\001\022,\n\022has_minimum_o" +
-      "rders\030\013 \001(\010R\020hasMinimumOrders\022Y\n\016minimum" +
-      "_orders\030\014 \003(\01322.products.v1.ProductCreat" +
-      "eRequestOfferMinimumOrderR\rminimumOrders" +
-      "B\021\n\017_condition_noteB\r\n\013_list_priceB\021\n\017_h" +
-      "as_sale_priceB\r\n\013_sale_priceB\023\n\021_sale_pr" +
-      "ice_startB\021\n\017_sale_price_end\"i\n%ProductC" +
-      "reateRequestOfferMinimumOrder\022\016\n\002id\030\001 \001(" +
-      "\tR\002id\022\024\n\005price\030\002 \001(\tR\005price\022\032\n\010quantity\030" +
-      "\003 \001(\004R\010quantity\"\316\001\n\032ProductCreateRequest" +
-      "Safety\022 \n\013attestation\030\001 \001(\010R\013attestation" +
-      "\022E\n\004form\030\002 \003(\01321.products.v1.ProductCrea" +
-      "teRequestSafety.FormEntryR\004form\032G\n\tFormE" +
-      "ntry\022\020\n\003key\030\001 \001(\tR\003key\022$\n\005value\030\002 \001(\0132\016." +
-      "shared.v1.AnyR\005value:\0028\001\"\206\001\n\025ProductCrea" +
-      "teResponse\0224\n\004data\030\001 \001(\0132\036.shared.v1.Suc" +
-      "cessResponseDataH\000R\004data\022+\n\005error\030\002 \001(\0132" +
-      "\023.shared.v1.AppErrorH\000R\005errorB\n\n\010respons" +
-      "eB|\n\034org.megacommerce.products.v1B\022Produ" +
-      "ctCreateProtoZEgithub.com/ahmad-khatib0-" +
-      "org/megacommerce-proto/gen/go/products/v" +
-      "1;v1\370\001\001b\006proto3"
+      "alue\030\002 \001(\0132\016.shared.v1.AnyR\005value:\0028\001\"\202\002" +
+      "\n\031ProductCreateRequestMedia\022\035\n\ntotal_siz" +
+      "e\030\001 \001(\004R\ttotalSize\022Y\n\rwith_variants\030\002 \001(" +
+      "\01322.products.v1.ProductCreateRequestMedi" +
+      "aWithVariantsH\000R\014withVariants\022b\n\020without" +
+      "_variants\030\003 \001(\01325.products.v1.ProductCre" +
+      "ateRequestMediaWithoutVariantsH\000R\017withou" +
+      "tVariantsB\007\n\005media\"\375\002\n%ProductCreateRequ" +
+      "estMediaWithVariants\022V\n\006images\030\001 \003(\0132>.p" +
+      "roducts.v1.ProductCreateRequestMediaWith" +
+      "Variants.ImagesEntryR\006images\022V\n\006videos\030\002" +
+      " \003(\0132>.products.v1.ProductCreateRequestM" +
+      "ediaWithVariants.VideosEntryR\006videos\032Q\n\013" +
+      "ImagesEntry\022\020\n\003key\030\001 \001(\tR\003key\022,\n\005value\030\002" +
+      " \001(\0132\026.shared.v1.AttachmentsR\005value:\0028\001\032" +
+      "Q\n\013VideosEntry\022\020\n\003key\030\001 \001(\tR\003key\022,\n\005valu" +
+      "e\030\002 \001(\0132\026.shared.v1.AttachmentsR\005value:\002" +
+      "8\001\"\210\001\n(ProductCreateRequestMediaWithoutV" +
+      "ariants\022-\n\006images\030\001 \003(\0132\025.shared.v1.Atta" +
+      "chmentR\006images\022-\n\006videos\030\002 \003(\0132\025.shared." +
+      "v1.AttachmentR\006videos\"\325\002\n\031ProductCreateR" +
+      "equestOffer\022\032\n\010currency\030\001 \001(\tR\010currency\022" +
+      ")\n\020fulfillment_type\030\002 \001(\tR\017fulfillmentTy" +
+      "pe\022\'\n\017processing_time\030\003 \001(\004R\016processingT" +
+      "ime\022Y\n\rwith_variants\030\004 \001(\01322.products.v1" +
+      ".ProductCreateRequestOfferWithVariantsH\000" +
+      "R\014withVariants\022b\n\020without_variants\030\005 \001(\013" +
+      "25.products.v1.ProductCreateRequestOffer" +
+      "WithoutVariantsH\000R\017withoutVariantsB\t\n\007pr" +
+      "icing\"r\n%ProductCreateRequestOfferWithVa" +
+      "riants\022I\n\010variants\030\001 \003(\0132-.products.v1.P" +
+      "roductCreateRequestOfferVariantR\010variant" +
+      "s\"\223\005\n ProductCreateRequestOfferVariant\022\016" +
+      "\n\002id\030\001 \001(\tR\002id\022\020\n\003sku\030\002 \001(\tR\003sku\022\032\n\010quan" +
+      "tity\030\003 \001(\004R\010quantity\022\024\n\005price\030\004 \001(\tR\005pri" +
+      "ce\022-\n\022offering_condition\030\005 \001(\tR\021offering" +
+      "Condition\022*\n\016condition_note\030\006 \001(\tH\000R\rcon" +
+      "ditionNote\210\001\001\022\"\n\nlist_price\030\007 \001(\tH\001R\tlis" +
+      "tPrice\210\001\001\022)\n\016has_sale_price\030\010 \001(\010H\002R\014has" +
+      "SalePrice\210\001\001\022\"\n\nsale_price\030\t \001(\tH\003R\tsale" +
+      "Price\210\001\001\022-\n\020sale_price_start\030\n \001(\tH\004R\016sa" +
+      "lePriceStart\210\001\001\022)\n\016sale_price_end\030\013 \001(\tH" +
+      "\005R\014salePriceEnd\210\001\001\022,\n\022has_minimum_orders" +
+      "\030\014 \001(\010R\020hasMinimumOrders\022Y\n\016minimum_orde" +
+      "rs\030\r \003(\01322.products.v1.ProductCreateRequ" +
+      "estOfferMinimumOrderR\rminimumOrdersB\021\n\017_" +
+      "condition_noteB\r\n\013_list_priceB\021\n\017_has_sa" +
+      "le_priceB\r\n\013_sale_priceB\023\n\021_sale_price_s" +
+      "tartB\021\n\017_sale_price_end\"\213\005\n(ProductCreat" +
+      "eRequestOfferWithoutVariants\022\020\n\003sku\030\001 \001(" +
+      "\tR\003sku\022\032\n\010quantity\030\002 \001(\004R\010quantity\022\024\n\005pr" +
+      "ice\030\003 \001(\tR\005price\022-\n\022offering_condition\030\004" +
+      " \001(\tR\021offeringCondition\022*\n\016condition_not" +
+      "e\030\005 \001(\tH\000R\rconditionNote\210\001\001\022\"\n\nlist_pric" +
+      "e\030\006 \001(\tH\001R\tlistPrice\210\001\001\022)\n\016has_sale_pric" +
+      "e\030\007 \001(\010H\002R\014hasSalePrice\210\001\001\022\"\n\nsale_price" +
+      "\030\010 \001(\tH\003R\tsalePrice\210\001\001\022-\n\020sale_price_sta" +
+      "rt\030\t \001(\tH\004R\016salePriceStart\210\001\001\022)\n\016sale_pr" +
+      "ice_end\030\n \001(\tH\005R\014salePriceEnd\210\001\001\022,\n\022has_" +
+      "minimum_orders\030\013 \001(\010R\020hasMinimumOrders\022Y" +
+      "\n\016minimum_orders\030\014 \003(\01322.products.v1.Pro" +
+      "ductCreateRequestOfferMinimumOrderR\rmini" +
+      "mumOrdersB\021\n\017_condition_noteB\r\n\013_list_pr" +
+      "iceB\021\n\017_has_sale_priceB\r\n\013_sale_priceB\023\n" +
+      "\021_sale_price_startB\021\n\017_sale_price_end\"i\n" +
+      "%ProductCreateRequestOfferMinimumOrder\022\016" +
+      "\n\002id\030\001 \001(\tR\002id\022\024\n\005price\030\002 \001(\tR\005price\022\032\n\010" +
+      "quantity\030\003 \001(\004R\010quantity\"\316\001\n\032ProductCrea" +
+      "teRequestSafety\022 \n\013attestation\030\001 \001(\010R\013at" +
+      "testation\022E\n\004form\030\002 \003(\01321.products.v1.Pr" +
+      "oductCreateRequestSafety.FormEntryR\004form" +
+      "\032G\n\tFormEntry\022\020\n\003key\030\001 \001(\tR\003key\022$\n\005value" +
+      "\030\002 \001(\0132\016.shared.v1.AnyR\005value:\0028\001\"\206\001\n\025Pr" +
+      "oductCreateResponse\0224\n\004data\030\001 \001(\0132\036.shar" +
+      "ed.v1.SuccessResponseDataH\000R\004data\022+\n\005err" +
+      "or\030\002 \001(\0132\023.shared.v1.AppErrorH\000R\005errorB\n" +
+      "\n\010responseB|\n\034org.megacommerce.products." +
+      "v1B\022ProductCreateProtoZEgithub.com/ahmad" +
+      "-khatib0-org/megacommerce-proto/gen/go/p" +
+      "roducts/v1;v1\370\001\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -20654,7 +21361,13 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
     internal_static_products_v1_ProductCreateRequestDetails_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductCreateRequestDetails_descriptor,
-        new java.lang.String[] { "WithVariants", "WithoutVariants", "Details", });
+        new java.lang.String[] { "Shared", "WithVariants", "WithoutVariants", "Details", });
+    internal_static_products_v1_ProductCreateRequestDetails_SharedEntry_descriptor =
+      internal_static_products_v1_ProductCreateRequestDetails_descriptor.getNestedTypes().get(0);
+    internal_static_products_v1_ProductCreateRequestDetails_SharedEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_products_v1_ProductCreateRequestDetails_SharedEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     internal_static_products_v1_ProductCreateRequestDetailsWithVariants_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_products_v1_ProductCreateRequestDetailsWithVariants_fieldAccessorTable = new
@@ -20733,11 +21446,11 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductCreateRequestOfferVariant_descriptor,
         new java.lang.String[] { "Id", "Sku", "Quantity", "Price", "OfferingCondition", "ConditionNote", "ListPrice", "HasSalePrice", "SalePrice", "SalePriceStart", "SalePriceEnd", "HasMinimumOrders", "MinimumOrders", });
-    internal_static_products_v1_ProductCreateRequestOfferPricing_descriptor =
+    internal_static_products_v1_ProductCreateRequestOfferWithoutVariants_descriptor =
       getDescriptor().getMessageTypes().get(15);
-    internal_static_products_v1_ProductCreateRequestOfferPricing_fieldAccessorTable = new
+    internal_static_products_v1_ProductCreateRequestOfferWithoutVariants_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_products_v1_ProductCreateRequestOfferPricing_descriptor,
+        internal_static_products_v1_ProductCreateRequestOfferWithoutVariants_descriptor,
         new java.lang.String[] { "Sku", "Quantity", "Price", "OfferingCondition", "ConditionNote", "ListPrice", "HasSalePrice", "SalePrice", "SalePriceStart", "SalePriceEnd", "HasMinimumOrders", "MinimumOrders", });
     internal_static_products_v1_ProductCreateRequestOfferMinimumOrder_descriptor =
       getDescriptor().getMessageTypes().get(16);

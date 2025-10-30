@@ -48,15 +48,27 @@ export interface ProductCreateRequestBulletPoint {
 }
 
 export interface ProductCreateRequestDetails {
+  /**
+   * attributes that has include_in_variants = false, so they are existed
+   * if in both (with_variants, without_variants)
+   */
+  shared: { [key: string]: Any };
   withVariants?: ProductCreateRequestDetailsWithVariants | undefined;
   withoutVariants?: ProductCreateRequestDetailsWithoutVariants | undefined;
 }
 
+export interface ProductCreateRequestDetails_SharedEntry {
+  key: string;
+  value?: Any | undefined;
+}
+
 export interface ProductCreateRequestDetailsWithVariants {
+  /** an array of details for values for each product's details variant */
   variants: ProductCreateRequestDetailsVariantForm[];
 }
 
 export interface ProductCreateRequestDetailsVariantForm {
+  /** <attribute_id, attribute value> */
   form: { [key: string]: Any };
 }
 
@@ -66,6 +78,7 @@ export interface ProductCreateRequestDetailsVariantForm_FormEntry {
 }
 
 export interface ProductCreateRequestDetailsWithoutVariants {
+  /** <attribute_id, attribute value> */
   form: { [key: string]: Any };
 }
 
@@ -75,6 +88,10 @@ export interface ProductCreateRequestDetailsWithoutVariants_FormEntry {
 }
 
 export interface ProductCreateRequestMedia {
+  /**
+   * total size in bytes, so this size is used to decide how to upload the media,
+   * either with resumable uploading or directly if media files aren't so big
+   */
   totalSize: string;
   withVariants?: ProductCreateRequestMediaWithVariants | undefined;
   withoutVariants?: ProductCreateRequestMediaWithoutVariants | undefined;
@@ -105,7 +122,7 @@ export interface ProductCreateRequestOffer {
   fulfillmentType: string;
   processingTime: string;
   withVariants?: ProductCreateRequestOfferWithVariants | undefined;
-  withoutVariants?: ProductCreateRequestOfferPricing | undefined;
+  withoutVariants?: ProductCreateRequestOfferWithoutVariants | undefined;
 }
 
 export interface ProductCreateRequestOfferWithVariants {
@@ -128,7 +145,7 @@ export interface ProductCreateRequestOfferVariant {
   minimumOrders: ProductCreateRequestOfferMinimumOrder[];
 }
 
-export interface ProductCreateRequestOfferPricing {
+export interface ProductCreateRequestOfferWithoutVariants {
   sku: string;
   quantity: string;
   price: string;
@@ -739,16 +756,19 @@ export const ProductCreateRequestBulletPoint: MessageFns<ProductCreateRequestBul
 };
 
 function createBaseProductCreateRequestDetails(): ProductCreateRequestDetails {
-  return { withVariants: undefined, withoutVariants: undefined };
+  return { shared: {}, withVariants: undefined, withoutVariants: undefined };
 }
 
 export const ProductCreateRequestDetails: MessageFns<ProductCreateRequestDetails> = {
   encode(message: ProductCreateRequestDetails, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    Object.entries(message.shared).forEach(([key, value]) => {
+      ProductCreateRequestDetails_SharedEntry.encode({ key: key as any, value }, writer.uint32(10).fork()).join();
+    });
     if (message.withVariants !== undefined) {
-      ProductCreateRequestDetailsWithVariants.encode(message.withVariants, writer.uint32(10).fork()).join();
+      ProductCreateRequestDetailsWithVariants.encode(message.withVariants, writer.uint32(18).fork()).join();
     }
     if (message.withoutVariants !== undefined) {
-      ProductCreateRequestDetailsWithoutVariants.encode(message.withoutVariants, writer.uint32(18).fork()).join();
+      ProductCreateRequestDetailsWithoutVariants.encode(message.withoutVariants, writer.uint32(26).fork()).join();
     }
     return writer;
   },
@@ -765,11 +785,22 @@ export const ProductCreateRequestDetails: MessageFns<ProductCreateRequestDetails
             break;
           }
 
-          message.withVariants = ProductCreateRequestDetailsWithVariants.decode(reader, reader.uint32());
+          const entry1 = ProductCreateRequestDetails_SharedEntry.decode(reader, reader.uint32());
+          if (entry1.value !== undefined) {
+            message.shared[entry1.key] = entry1.value;
+          }
           continue;
         }
         case 2: {
           if (tag !== 18) {
+            break;
+          }
+
+          message.withVariants = ProductCreateRequestDetailsWithVariants.decode(reader, reader.uint32());
+          continue;
+        }
+        case 3: {
+          if (tag !== 26) {
             break;
           }
 
@@ -787,6 +818,12 @@ export const ProductCreateRequestDetails: MessageFns<ProductCreateRequestDetails
 
   fromJSON(object: any): ProductCreateRequestDetails {
     return {
+      shared: isObject(object.shared)
+        ? Object.entries(object.shared).reduce<{ [key: string]: Any }>((acc, [key, value]) => {
+          acc[key] = Any.fromJSON(value);
+          return acc;
+        }, {})
+        : {},
       withVariants: isSet(object.withVariants)
         ? ProductCreateRequestDetailsWithVariants.fromJSON(object.withVariants)
         : undefined,
@@ -798,6 +835,15 @@ export const ProductCreateRequestDetails: MessageFns<ProductCreateRequestDetails
 
   toJSON(message: ProductCreateRequestDetails): unknown {
     const obj: any = {};
+    if (message.shared) {
+      const entries = Object.entries(message.shared);
+      if (entries.length > 0) {
+        obj.shared = {};
+        entries.forEach(([k, v]) => {
+          obj.shared[k] = Any.toJSON(v);
+        });
+      }
+    }
     if (message.withVariants !== undefined) {
       obj.withVariants = ProductCreateRequestDetailsWithVariants.toJSON(message.withVariants);
     }
@@ -812,12 +858,98 @@ export const ProductCreateRequestDetails: MessageFns<ProductCreateRequestDetails
   },
   fromPartial<I extends Exact<DeepPartial<ProductCreateRequestDetails>, I>>(object: I): ProductCreateRequestDetails {
     const message = createBaseProductCreateRequestDetails();
+    message.shared = Object.entries(object.shared ?? {}).reduce<{ [key: string]: Any }>((acc, [key, value]) => {
+      if (value !== undefined) {
+        acc[key] = Any.fromPartial(value);
+      }
+      return acc;
+    }, {});
     message.withVariants = (object.withVariants !== undefined && object.withVariants !== null)
       ? ProductCreateRequestDetailsWithVariants.fromPartial(object.withVariants)
       : undefined;
     message.withoutVariants = (object.withoutVariants !== undefined && object.withoutVariants !== null)
       ? ProductCreateRequestDetailsWithoutVariants.fromPartial(object.withoutVariants)
       : undefined;
+    return message;
+  },
+};
+
+function createBaseProductCreateRequestDetails_SharedEntry(): ProductCreateRequestDetails_SharedEntry {
+  return { key: "", value: undefined };
+}
+
+export const ProductCreateRequestDetails_SharedEntry: MessageFns<ProductCreateRequestDetails_SharedEntry> = {
+  encode(message: ProductCreateRequestDetails_SharedEntry, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+    if (message.key !== "") {
+      writer.uint32(10).string(message.key);
+    }
+    if (message.value !== undefined) {
+      Any.encode(message.value, writer.uint32(18).fork()).join();
+    }
+    return writer;
+  },
+
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestDetails_SharedEntry {
+    const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
+    const end = length === undefined ? reader.len : reader.pos + length;
+    const message = createBaseProductCreateRequestDetails_SharedEntry();
+    while (reader.pos < end) {
+      const tag = reader.uint32();
+      switch (tag >>> 3) {
+        case 1: {
+          if (tag !== 10) {
+            break;
+          }
+
+          message.key = reader.string();
+          continue;
+        }
+        case 2: {
+          if (tag !== 18) {
+            break;
+          }
+
+          message.value = Any.decode(reader, reader.uint32());
+          continue;
+        }
+      }
+      if ((tag & 7) === 4 || tag === 0) {
+        break;
+      }
+      reader.skip(tag & 7);
+    }
+    return message;
+  },
+
+  fromJSON(object: any): ProductCreateRequestDetails_SharedEntry {
+    return {
+      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      value: isSet(object.value) ? Any.fromJSON(object.value) : undefined,
+    };
+  },
+
+  toJSON(message: ProductCreateRequestDetails_SharedEntry): unknown {
+    const obj: any = {};
+    if (message.key !== "") {
+      obj.key = message.key;
+    }
+    if (message.value !== undefined) {
+      obj.value = Any.toJSON(message.value);
+    }
+    return obj;
+  },
+
+  create<I extends Exact<DeepPartial<ProductCreateRequestDetails_SharedEntry>, I>>(
+    base?: I,
+  ): ProductCreateRequestDetails_SharedEntry {
+    return ProductCreateRequestDetails_SharedEntry.fromPartial(base ?? ({} as any));
+  },
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestDetails_SharedEntry>, I>>(
+    object: I,
+  ): ProductCreateRequestDetails_SharedEntry {
+    const message = createBaseProductCreateRequestDetails_SharedEntry();
+    message.key = object.key ?? "";
+    message.value = (object.value !== undefined && object.value !== null) ? Any.fromPartial(object.value) : undefined;
     return message;
   },
 };
@@ -1725,7 +1857,7 @@ export const ProductCreateRequestOffer: MessageFns<ProductCreateRequestOffer> = 
       ProductCreateRequestOfferWithVariants.encode(message.withVariants, writer.uint32(34).fork()).join();
     }
     if (message.withoutVariants !== undefined) {
-      ProductCreateRequestOfferPricing.encode(message.withoutVariants, writer.uint32(42).fork()).join();
+      ProductCreateRequestOfferWithoutVariants.encode(message.withoutVariants, writer.uint32(42).fork()).join();
     }
     return writer;
   },
@@ -1774,7 +1906,7 @@ export const ProductCreateRequestOffer: MessageFns<ProductCreateRequestOffer> = 
             break;
           }
 
-          message.withoutVariants = ProductCreateRequestOfferPricing.decode(reader, reader.uint32());
+          message.withoutVariants = ProductCreateRequestOfferWithoutVariants.decode(reader, reader.uint32());
           continue;
         }
       }
@@ -1795,7 +1927,7 @@ export const ProductCreateRequestOffer: MessageFns<ProductCreateRequestOffer> = 
         ? ProductCreateRequestOfferWithVariants.fromJSON(object.withVariants)
         : undefined,
       withoutVariants: isSet(object.withoutVariants)
-        ? ProductCreateRequestOfferPricing.fromJSON(object.withoutVariants)
+        ? ProductCreateRequestOfferWithoutVariants.fromJSON(object.withoutVariants)
         : undefined,
     };
   },
@@ -1815,7 +1947,7 @@ export const ProductCreateRequestOffer: MessageFns<ProductCreateRequestOffer> = 
       obj.withVariants = ProductCreateRequestOfferWithVariants.toJSON(message.withVariants);
     }
     if (message.withoutVariants !== undefined) {
-      obj.withoutVariants = ProductCreateRequestOfferPricing.toJSON(message.withoutVariants);
+      obj.withoutVariants = ProductCreateRequestOfferWithoutVariants.toJSON(message.withoutVariants);
     }
     return obj;
   },
@@ -1832,7 +1964,7 @@ export const ProductCreateRequestOffer: MessageFns<ProductCreateRequestOffer> = 
       ? ProductCreateRequestOfferWithVariants.fromPartial(object.withVariants)
       : undefined;
     message.withoutVariants = (object.withoutVariants !== undefined && object.withoutVariants !== null)
-      ? ProductCreateRequestOfferPricing.fromPartial(object.withoutVariants)
+      ? ProductCreateRequestOfferWithoutVariants.fromPartial(object.withoutVariants)
       : undefined;
     return message;
   },
@@ -2177,7 +2309,7 @@ export const ProductCreateRequestOfferVariant: MessageFns<ProductCreateRequestOf
   },
 };
 
-function createBaseProductCreateRequestOfferPricing(): ProductCreateRequestOfferPricing {
+function createBaseProductCreateRequestOfferWithoutVariants(): ProductCreateRequestOfferWithoutVariants {
   return {
     sku: "",
     quantity: "0",
@@ -2194,8 +2326,8 @@ function createBaseProductCreateRequestOfferPricing(): ProductCreateRequestOffer
   };
 }
 
-export const ProductCreateRequestOfferPricing: MessageFns<ProductCreateRequestOfferPricing> = {
-  encode(message: ProductCreateRequestOfferPricing, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
+export const ProductCreateRequestOfferWithoutVariants: MessageFns<ProductCreateRequestOfferWithoutVariants> = {
+  encode(message: ProductCreateRequestOfferWithoutVariants, writer: BinaryWriter = new BinaryWriter()): BinaryWriter {
     if (message.sku !== "") {
       writer.uint32(10).string(message.sku);
     }
@@ -2235,10 +2367,10 @@ export const ProductCreateRequestOfferPricing: MessageFns<ProductCreateRequestOf
     return writer;
   },
 
-  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestOfferPricing {
+  decode(input: BinaryReader | Uint8Array, length?: number): ProductCreateRequestOfferWithoutVariants {
     const reader = input instanceof BinaryReader ? input : new BinaryReader(input);
     const end = length === undefined ? reader.len : reader.pos + length;
-    const message = createBaseProductCreateRequestOfferPricing();
+    const message = createBaseProductCreateRequestOfferWithoutVariants();
     while (reader.pos < end) {
       const tag = reader.uint32();
       switch (tag >>> 3) {
@@ -2347,7 +2479,7 @@ export const ProductCreateRequestOfferPricing: MessageFns<ProductCreateRequestOf
     return message;
   },
 
-  fromJSON(object: any): ProductCreateRequestOfferPricing {
+  fromJSON(object: any): ProductCreateRequestOfferWithoutVariants {
     return {
       sku: isSet(object.sku) ? globalThis.String(object.sku) : "",
       quantity: isSet(object.quantity) ? globalThis.String(object.quantity) : "0",
@@ -2366,7 +2498,7 @@ export const ProductCreateRequestOfferPricing: MessageFns<ProductCreateRequestOf
     };
   },
 
-  toJSON(message: ProductCreateRequestOfferPricing): unknown {
+  toJSON(message: ProductCreateRequestOfferWithoutVariants): unknown {
     const obj: any = {};
     if (message.sku !== "") {
       obj.sku = message.sku;
@@ -2407,15 +2539,15 @@ export const ProductCreateRequestOfferPricing: MessageFns<ProductCreateRequestOf
     return obj;
   },
 
-  create<I extends Exact<DeepPartial<ProductCreateRequestOfferPricing>, I>>(
+  create<I extends Exact<DeepPartial<ProductCreateRequestOfferWithoutVariants>, I>>(
     base?: I,
-  ): ProductCreateRequestOfferPricing {
-    return ProductCreateRequestOfferPricing.fromPartial(base ?? ({} as any));
+  ): ProductCreateRequestOfferWithoutVariants {
+    return ProductCreateRequestOfferWithoutVariants.fromPartial(base ?? ({} as any));
   },
-  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestOfferPricing>, I>>(
+  fromPartial<I extends Exact<DeepPartial<ProductCreateRequestOfferWithoutVariants>, I>>(
     object: I,
-  ): ProductCreateRequestOfferPricing {
-    const message = createBaseProductCreateRequestOfferPricing();
+  ): ProductCreateRequestOfferWithoutVariants {
+    const message = createBaseProductCreateRequestOfferWithoutVariants();
     message.sku = object.sku ?? "";
     message.quantity = object.quantity ?? "0";
     message.price = object.price ?? "";
