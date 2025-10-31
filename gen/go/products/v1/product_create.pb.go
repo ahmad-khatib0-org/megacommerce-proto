@@ -167,7 +167,8 @@ type ProductCreateRequestIdentity struct {
 	BrandName     string                 `protobuf:"bytes,5,opt,name=brand_name,json=brandName,proto3" json:"brand_name,omitempty"`
 	NoBrand       bool                   `protobuf:"varint,6,opt,name=no_brand,json=noBrand,proto3" json:"no_brand,omitempty"`
 	ProductId     string                 `protobuf:"bytes,7,opt,name=product_id,json=productId,proto3" json:"product_id,omitempty"`
-	NoProductId   bool                   `protobuf:"varint,8,opt,name=no_product_id,json=noProductId,proto3" json:"no_product_id,omitempty"`
+	ProductIdType string                 `protobuf:"bytes,8,opt,name=product_id_type,json=productIdType,proto3" json:"product_id_type,omitempty"`
+	NoProductId   bool                   `protobuf:"varint,9,opt,name=no_product_id,json=noProductId,proto3" json:"no_product_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -247,6 +248,13 @@ func (x *ProductCreateRequestIdentity) GetNoBrand() bool {
 func (x *ProductCreateRequestIdentity) GetProductId() string {
 	if x != nil {
 		return x.ProductId
+	}
+	return ""
+}
+
+func (x *ProductCreateRequestIdentity) GetProductIdType() string {
+	if x != nil {
+		return x.ProductIdType
 	}
 	return ""
 }
@@ -1417,7 +1425,7 @@ const file_products_v1_product_create_proto_rawDesc = "" +
 	"\adetails\x18\x03 \x01(\v2(.products.v1.ProductCreateRequestDetailsR\adetails\x12<\n" +
 	"\x05media\x18\x04 \x01(\v2&.products.v1.ProductCreateRequestMediaR\x05media\x12<\n" +
 	"\x05offer\x18\x05 \x01(\v2&.products.v1.ProductCreateRequestOfferR\x05offer\x12?\n" +
-	"\x06safety\x18\x06 \x01(\v2'.products.v1.ProductCreateRequestSafetyR\x06safety\"\x96\x02\n" +
+	"\x06safety\x18\x06 \x01(\v2'.products.v1.ProductCreateRequestSafetyR\x06safety\"\xbe\x02\n" +
 	"\x1cProductCreateRequestIdentity\x12\x14\n" +
 	"\x05title\x18\x01 \x01(\tR\x05title\x12\x1a\n" +
 	"\bcategory\x18\x02 \x01(\tR\bcategory\x12 \n" +
@@ -1427,8 +1435,9 @@ const file_products_v1_product_create_proto_rawDesc = "" +
 	"brand_name\x18\x05 \x01(\tR\tbrandName\x12\x19\n" +
 	"\bno_brand\x18\x06 \x01(\bR\anoBrand\x12\x1d\n" +
 	"\n" +
-	"product_id\x18\a \x01(\tR\tproductId\x12\"\n" +
-	"\rno_product_id\x18\b \x01(\bR\vnoProductId\"\x96\x01\n" +
+	"product_id\x18\a \x01(\tR\tproductId\x12&\n" +
+	"\x0fproduct_id_type\x18\b \x01(\tR\rproductIdType\x12\"\n" +
+	"\rno_product_id\x18\t \x01(\bR\vnoProductId\"\x96\x01\n" +
 	"\x1fProductCreateRequestDescription\x12 \n" +
 	"\vdescription\x18\x01 \x01(\tR\vdescription\x12Q\n" +
 	"\rbullet_points\x18\x02 \x03(\v2,.products.v1.ProductCreateRequestBulletPointR\fbulletPoints\"T\n" +

@@ -33,7 +33,8 @@ message ProductCreateRequestIdentity {
   string brand_name = 5;
   bool no_brand = 6;
   string product_id = 7;
-  bool no_product_id = 8;
+  string product_id_type = 8;
+  bool no_product_id = 9;
 }
 
 message ProductCreateRequestDescription {

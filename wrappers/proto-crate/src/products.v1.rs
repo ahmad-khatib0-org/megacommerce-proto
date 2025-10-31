@@ -40,7 +40,9 @@ pub struct ProductCreateRequestIdentity {
     pub no_brand: bool,
     #[prost(string, tag = "7")]
     pub product_id: ::prost::alloc::string::String,
-    #[prost(bool, tag = "8")]
+    #[prost(string, tag = "8")]
+    pub product_id_type: ::prost::alloc::string::String,
+    #[prost(bool, tag = "9")]
     pub no_product_id: bool,
 }
 #[derive(serde::Serialize, serde::Deserialize)]

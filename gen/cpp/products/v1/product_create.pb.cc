@@ -104,6 +104,9 @@ inline constexpr ProductCreateRequestIdentity::Impl_::Impl_(
         product_id_(
             &::google::protobuf::internal::fixed_address_empty_string,
             ::_pbi::ConstantInitialized()),
+        product_id_type_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
         has_variations_{false},
         no_brand_{false},
         no_product_id_{false} {}
@@ -754,7 +757,7 @@ const ::uint32_t
         5,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestIdentity, _impl_._has_bits_),
-        11, // hasbit index offset
+        12, // hasbit index offset
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestIdentity, _impl_.title_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestIdentity, _impl_.category_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestIdentity, _impl_.subcategory_),
@@ -762,15 +765,17 @@ const ::uint32_t
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestIdentity, _impl_.brand_name_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestIdentity, _impl_.no_brand_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestIdentity, _impl_.product_id_),
+        PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestIdentity, _impl_.product_id_type_),
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestIdentity, _impl_.no_product_id_),
         0,
         1,
         2,
-        5,
-        3,
         6,
-        4,
+        3,
         7,
+        4,
+        5,
+        8,
         0x081, // bitmap
         PROTOBUF_FIELD_OFFSET(::products::v1::ProductCreateRequestDescription, _impl_._has_bits_),
         5, // hasbit index offset
@@ -957,28 +962,28 @@ static const ::_pbi::MigrationSchema
         {0, sizeof(::products::v1::ProductCreateTag)},
         {7, sizeof(::products::v1::ProductCreateRequest)},
         {22, sizeof(::products::v1::ProductCreateRequestIdentity)},
-        {41, sizeof(::products::v1::ProductCreateRequestDescription)},
-        {48, sizeof(::products::v1::ProductCreateRequestBulletPoint)},
-        {55, sizeof(::products::v1::ProductCreateRequestDetails_SharedEntry_DoNotUse)},
-        {62, sizeof(::products::v1::ProductCreateRequestDetails)},
-        {68, sizeof(::products::v1::ProductCreateRequestDetailsWithVariants)},
-        {70, sizeof(::products::v1::ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse)},
-        {77, sizeof(::products::v1::ProductCreateRequestDetailsVariantForm)},
-        {79, sizeof(::products::v1::ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse)},
-        {86, sizeof(::products::v1::ProductCreateRequestDetailsWithoutVariants)},
-        {88, sizeof(::products::v1::ProductCreateRequestMedia)},
-        {99, sizeof(::products::v1::ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse)},
-        {106, sizeof(::products::v1::ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse)},
-        {113, sizeof(::products::v1::ProductCreateRequestMediaWithVariants)},
-        {116, sizeof(::products::v1::ProductCreateRequestMediaWithoutVariants)},
-        {119, sizeof(::products::v1::ProductCreateRequestOffer)},
-        {134, sizeof(::products::v1::ProductCreateRequestOfferWithVariants)},
-        {136, sizeof(::products::v1::ProductCreateRequestOfferVariant)},
-        {165, sizeof(::products::v1::ProductCreateRequestOfferWithoutVariants)},
-        {192, sizeof(::products::v1::ProductCreateRequestOfferMinimumOrder)},
-        {201, sizeof(::products::v1::ProductCreateRequestSafety_FormEntry_DoNotUse)},
-        {208, sizeof(::products::v1::ProductCreateRequestSafety)},
-        {215, sizeof(::products::v1::ProductCreateResponse)},
+        {43, sizeof(::products::v1::ProductCreateRequestDescription)},
+        {50, sizeof(::products::v1::ProductCreateRequestBulletPoint)},
+        {57, sizeof(::products::v1::ProductCreateRequestDetails_SharedEntry_DoNotUse)},
+        {64, sizeof(::products::v1::ProductCreateRequestDetails)},
+        {70, sizeof(::products::v1::ProductCreateRequestDetailsWithVariants)},
+        {72, sizeof(::products::v1::ProductCreateRequestDetailsVariantForm_FormEntry_DoNotUse)},
+        {79, sizeof(::products::v1::ProductCreateRequestDetailsVariantForm)},
+        {81, sizeof(::products::v1::ProductCreateRequestDetailsWithoutVariants_FormEntry_DoNotUse)},
+        {88, sizeof(::products::v1::ProductCreateRequestDetailsWithoutVariants)},
+        {90, sizeof(::products::v1::ProductCreateRequestMedia)},
+        {101, sizeof(::products::v1::ProductCreateRequestMediaWithVariants_ImagesEntry_DoNotUse)},
+        {108, sizeof(::products::v1::ProductCreateRequestMediaWithVariants_VideosEntry_DoNotUse)},
+        {115, sizeof(::products::v1::ProductCreateRequestMediaWithVariants)},
+        {118, sizeof(::products::v1::ProductCreateRequestMediaWithoutVariants)},
+        {121, sizeof(::products::v1::ProductCreateRequestOffer)},
+        {136, sizeof(::products::v1::ProductCreateRequestOfferWithVariants)},
+        {138, sizeof(::products::v1::ProductCreateRequestOfferVariant)},
+        {167, sizeof(::products::v1::ProductCreateRequestOfferWithoutVariants)},
+        {194, sizeof(::products::v1::ProductCreateRequestOfferMinimumOrder)},
+        {203, sizeof(::products::v1::ProductCreateRequestSafety_FormEntry_DoNotUse)},
+        {210, sizeof(::products::v1::ProductCreateRequestSafety)},
+        {217, sizeof(::products::v1::ProductCreateResponse)},
 };
 static const ::_pb::Message* PROTOBUF_NONNULL const file_default_instances[] = {
     &::products::v1::_ProductCreateTag_default_instance_._instance,
@@ -1024,14 +1029,15 @@ const char descriptor_table_protodef_products_2fv1_2fproduct_5fcreate_2eproto[] 
     "ductCreateRequestMediaR\005media\022<\n\005offer\030\005"
     " \001(\0132&.products.v1.ProductCreateRequestO"
     "fferR\005offer\022\?\n\006safety\030\006 \001(\0132\'.products.v"
-    "1.ProductCreateRequestSafetyR\006safety\"\226\002\n"
+    "1.ProductCreateRequestSafetyR\006safety\"\276\002\n"
     "\034ProductCreateRequestIdentity\022\024\n\005title\030\001"
     " \001(\tR\005title\022\032\n\010category\030\002 \001(\tR\010category\022"
     " \n\013subcategory\030\003 \001(\tR\013subcategory\022%\n\016has"
     "_variations\030\004 \001(\010R\rhasVariations\022\035\n\nbran"
     "d_name\030\005 \001(\tR\tbrandName\022\031\n\010no_brand\030\006 \001("
     "\010R\007noBrand\022\035\n\nproduct_id\030\007 \001(\tR\tproductI"
-    "d\022\"\n\rno_product_id\030\010 \001(\010R\013noProductId\"\226\001"
+    "d\022&\n\017product_id_type\030\010 \001(\tR\rproductIdTyp"
+    "e\022\"\n\rno_product_id\030\t \001(\010R\013noProductId\"\226\001"
     "\n\037ProductCreateRequestDescription\022 \n\013des"
     "cription\030\001 \001(\tR\013description\022Q\n\rbullet_po"
     "ints\030\002 \003(\0132,.products.v1.ProductCreateRe"
@@ -1151,7 +1157,7 @@ static ::absl::once_flag descriptor_table_products_2fv1_2fproduct_5fcreate_2epro
 PROTOBUF_CONSTINIT const ::_pbi::DescriptorTable descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto = {
     false,
     false,
-    5224,
+    5264,
     descriptor_table_protodef_products_2fv1_2fproduct_5fcreate_2eproto,
     "products/v1/product_create.proto",
     &descriptor_table_products_2fv1_2fproduct_5fcreate_2eproto_once,
@@ -1927,7 +1933,8 @@ PROTOBUF_NDEBUG_INLINE ProductCreateRequestIdentity::Impl_::Impl_(
         category_(arena, from.category_),
         subcategory_(arena, from.subcategory_),
         brand_name_(arena, from.brand_name_),
-        product_id_(arena, from.product_id_) {}
+        product_id_(arena, from.product_id_),
+        product_id_type_(arena, from.product_id_type_) {}
 
 ProductCreateRequestIdentity::ProductCreateRequestIdentity(
     ::google::protobuf::Arena* PROTOBUF_NULLABLE arena,
@@ -1960,7 +1967,8 @@ PROTOBUF_NDEBUG_INLINE ProductCreateRequestIdentity::Impl_::Impl_(
         category_(arena),
         subcategory_(arena),
         brand_name_(arena),
-        product_id_(arena) {}
+        product_id_(arena),
+        product_id_type_(arena) {}
 
 inline void ProductCreateRequestIdentity::SharedCtor(::_pb::Arena* PROTOBUF_NULLABLE arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
@@ -1984,6 +1992,7 @@ inline void ProductCreateRequestIdentity::SharedDtor(MessageLite& self) {
   this_._impl_.subcategory_.Destroy();
   this_._impl_.brand_name_.Destroy();
   this_._impl_.product_id_.Destroy();
+  this_._impl_.product_id_type_.Destroy();
   this_._impl_.~Impl_();
 }
 
@@ -2030,16 +2039,16 @@ ProductCreateRequestIdentity::GetClassData() const {
   return ProductCreateRequestIdentity_class_data_.base();
 }
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<3, 8, 0, 101, 2>
+const ::_pbi::TcParseTable<4, 9, 0, 116, 2>
 ProductCreateRequestIdentity::_table_ = {
   {
     PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_._has_bits_),
     0, // no _extensions_
-    8, 56,  // max_field_number, fast_idx_mask
+    9, 120,  // max_field_number, fast_idx_mask
     offsetof(decltype(_table_), field_lookup_table),
-    4294967040,  // skipmap
+    4294966784,  // skipmap
     offsetof(decltype(_table_), field_entries),
-    8,  // num_field_entries
+    9,  // num_field_entries
     0,  // num_aux_entries
     offsetof(decltype(_table_), field_names),  // no aux_entries
     ProductCreateRequestIdentity_class_data_.base(),
@@ -2049,9 +2058,7 @@ ProductCreateRequestIdentity::_table_ = {
     ::_pbi::TcParser::GetTable<::products::v1::ProductCreateRequestIdentity>(),  // to_prefetch
     #endif  // PROTOBUF_PREFETCH_PARSE_TABLE
   }, {{
-    // bool no_product_id = 8 [json_name = "noProductId"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductCreateRequestIdentity, _impl_.no_product_id_), 7>(),
-     {64, 7, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.no_product_id_)}},
+    {::_pbi::TcParser::MiniParse, {}},
     // string title = 1 [json_name = "title"];
     {::_pbi::TcParser::FastUS1,
      {10, 0, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.title_)}},
@@ -2062,17 +2069,29 @@ ProductCreateRequestIdentity::_table_ = {
     {::_pbi::TcParser::FastUS1,
      {26, 2, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.subcategory_)}},
     // bool has_variations = 4 [json_name = "hasVariations"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductCreateRequestIdentity, _impl_.has_variations_), 5>(),
-     {32, 5, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.has_variations_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductCreateRequestIdentity, _impl_.has_variations_), 6>(),
+     {32, 6, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.has_variations_)}},
     // string brand_name = 5 [json_name = "brandName"];
     {::_pbi::TcParser::FastUS1,
      {42, 3, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.brand_name_)}},
     // bool no_brand = 6 [json_name = "noBrand"];
-    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductCreateRequestIdentity, _impl_.no_brand_), 6>(),
-     {48, 6, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.no_brand_)}},
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductCreateRequestIdentity, _impl_.no_brand_), 7>(),
+     {48, 7, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.no_brand_)}},
     // string product_id = 7 [json_name = "productId"];
     {::_pbi::TcParser::FastUS1,
      {58, 4, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.product_id_)}},
+    // string product_id_type = 8 [json_name = "productIdType"];
+    {::_pbi::TcParser::FastUS1,
+     {66, 5, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.product_id_type_)}},
+    // bool no_product_id = 9 [json_name = "noProductId"];
+    {::_pbi::TcParser::SingularVarintNoZag1<bool, offsetof(ProductCreateRequestIdentity, _impl_.no_product_id_), 8>(),
+     {72, 8, 0, PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.no_product_id_)}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
+    {::_pbi::TcParser::MiniParse, {}},
   }}, {{
     65535, 65535
   }}, {{
@@ -2086,30 +2105,34 @@ ProductCreateRequestIdentity::_table_ = {
     {PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.subcategory_), _Internal::kHasBitsOffset + 2, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // bool has_variations = 4 [json_name = "hasVariations"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.has_variations_), _Internal::kHasBitsOffset + 5, 0,
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.has_variations_), _Internal::kHasBitsOffset + 6, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
     // string brand_name = 5 [json_name = "brandName"];
     {PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.brand_name_), _Internal::kHasBitsOffset + 3, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
     // bool no_brand = 6 [json_name = "noBrand"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.no_brand_), _Internal::kHasBitsOffset + 6, 0,
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.no_brand_), _Internal::kHasBitsOffset + 7, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
     // string product_id = 7 [json_name = "productId"];
     {PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.product_id_), _Internal::kHasBitsOffset + 4, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
-    // bool no_product_id = 8 [json_name = "noProductId"];
-    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.no_product_id_), _Internal::kHasBitsOffset + 7, 0,
+    // string product_id_type = 8 [json_name = "productIdType"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.product_id_type_), _Internal::kHasBitsOffset + 5, 0,
+    (0 | ::_fl::kFcOptional | ::_fl::kUtf8String | ::_fl::kRepAString)},
+    // bool no_product_id = 9 [json_name = "noProductId"];
+    {PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.no_product_id_), _Internal::kHasBitsOffset + 8, 0,
     (0 | ::_fl::kFcOptional | ::_fl::kBool)},
   }},
   // no aux_entries
   {{
-    "\50\5\10\13\0\12\0\12\0\0\0\0\0\0\0\0"
+    "\50\5\10\13\0\12\0\12\17\0\0\0\0\0\0\0"
     "products.v1.ProductCreateRequestIdentity"
     "title"
     "category"
     "subcategory"
     "brand_name"
     "product_id"
+    "product_id_type"
   }},
 };
 PROTOBUF_NOINLINE void ProductCreateRequestIdentity::Clear() {
@@ -2120,7 +2143,7 @@ PROTOBUF_NOINLINE void ProductCreateRequestIdentity::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if ((cached_has_bits & 0x0000001fu) != 0) {
+  if ((cached_has_bits & 0x0000003fu) != 0) {
     if ((cached_has_bits & 0x00000001u) != 0) {
       _impl_.title_.ClearNonDefaultToEmpty();
     }
@@ -2136,10 +2159,14 @@ PROTOBUF_NOINLINE void ProductCreateRequestIdentity::Clear() {
     if ((cached_has_bits & 0x00000010u) != 0) {
       _impl_.product_id_.ClearNonDefaultToEmpty();
     }
+    if ((cached_has_bits & 0x00000020u) != 0) {
+      _impl_.product_id_type_.ClearNonDefaultToEmpty();
+    }
   }
   ::memset(&_impl_.has_variations_, 0, static_cast<::size_t>(
-      reinterpret_cast<char*>(&_impl_.no_product_id_) -
-      reinterpret_cast<char*>(&_impl_.has_variations_)) + sizeof(_impl_.no_product_id_));
+      reinterpret_cast<char*>(&_impl_.no_brand_) -
+      reinterpret_cast<char*>(&_impl_.has_variations_)) + sizeof(_impl_.no_brand_));
+  _impl_.no_product_id_ = false;
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
@@ -2190,7 +2217,7 @@ PROTOBUF_NOINLINE void ProductCreateRequestIdentity::Clear() {
   }
 
   // bool has_variations = 4 [json_name = "hasVariations"];
-  if ((this_._impl_._has_bits_[0] & 0x00000020u) != 0) {
+  if ((this_._impl_._has_bits_[0] & 0x00000040u) != 0) {
     if (this_._internal_has_variations() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteBoolToArray(
@@ -2209,7 +2236,7 @@ PROTOBUF_NOINLINE void ProductCreateRequestIdentity::Clear() {
   }
 
   // bool no_brand = 6 [json_name = "noBrand"];
-  if ((this_._impl_._has_bits_[0] & 0x00000040u) != 0) {
+  if ((this_._impl_._has_bits_[0] & 0x00000080u) != 0) {
     if (this_._internal_no_brand() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteBoolToArray(
@@ -2227,12 +2254,22 @@ PROTOBUF_NOINLINE void ProductCreateRequestIdentity::Clear() {
     }
   }
 
-  // bool no_product_id = 8 [json_name = "noProductId"];
-  if ((this_._impl_._has_bits_[0] & 0x00000080u) != 0) {
+  // string product_id_type = 8 [json_name = "productIdType"];
+  if ((this_._impl_._has_bits_[0] & 0x00000020u) != 0) {
+    if (!this_._internal_product_id_type().empty()) {
+      const ::std::string& _s = this_._internal_product_id_type();
+      ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+          _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "products.v1.ProductCreateRequestIdentity.product_id_type");
+      target = stream->WriteStringMaybeAliased(8, _s, target);
+    }
+  }
+
+  // bool no_product_id = 9 [json_name = "noProductId"];
+  if ((this_._impl_._has_bits_[0] & 0x00000100u) != 0) {
     if (this_._internal_no_product_id() != 0) {
       target = stream->EnsureSpace(target);
       target = ::_pbi::WireFormatLite::WriteBoolToArray(
-          8, this_._internal_no_product_id(), target);
+          9, this_._internal_no_product_id(), target);
     }
   }
 
@@ -2297,20 +2334,29 @@ PROTOBUF_NOINLINE void ProductCreateRequestIdentity::Clear() {
                                         this_._internal_product_id());
       }
     }
-    // bool has_variations = 4 [json_name = "hasVariations"];
+    // string product_id_type = 8 [json_name = "productIdType"];
     if ((cached_has_bits & 0x00000020u) != 0) {
+      if (!this_._internal_product_id_type().empty()) {
+        total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                        this_._internal_product_id_type());
+      }
+    }
+    // bool has_variations = 4 [json_name = "hasVariations"];
+    if ((cached_has_bits & 0x00000040u) != 0) {
       if (this_._internal_has_variations() != 0) {
         total_size += 2;
       }
     }
     // bool no_brand = 6 [json_name = "noBrand"];
-    if ((cached_has_bits & 0x00000040u) != 0) {
+    if ((cached_has_bits & 0x00000080u) != 0) {
       if (this_._internal_no_brand() != 0) {
         total_size += 2;
       }
     }
-    // bool no_product_id = 8 [json_name = "noProductId"];
-    if ((cached_has_bits & 0x00000080u) != 0) {
+  }
+   {
+    // bool no_product_id = 9 [json_name = "noProductId"];
+    if ((cached_has_bits & 0x00000100u) != 0) {
       if (this_._internal_no_product_id() != 0) {
         total_size += 2;
       }
@@ -2376,19 +2422,28 @@ void ProductCreateRequestIdentity::MergeImpl(::google::protobuf::MessageLite& to
       }
     }
     if ((cached_has_bits & 0x00000020u) != 0) {
+      if (!from._internal_product_id_type().empty()) {
+        _this->_internal_set_product_id_type(from._internal_product_id_type());
+      } else {
+        if (_this->_impl_.product_id_type_.IsDefault()) {
+          _this->_internal_set_product_id_type("");
+        }
+      }
+    }
+    if ((cached_has_bits & 0x00000040u) != 0) {
       if (from._internal_has_variations() != 0) {
         _this->_impl_.has_variations_ = from._impl_.has_variations_;
       }
     }
-    if ((cached_has_bits & 0x00000040u) != 0) {
+    if ((cached_has_bits & 0x00000080u) != 0) {
       if (from._internal_no_brand() != 0) {
         _this->_impl_.no_brand_ = from._impl_.no_brand_;
       }
     }
-    if ((cached_has_bits & 0x00000080u) != 0) {
-      if (from._internal_no_product_id() != 0) {
-        _this->_impl_.no_product_id_ = from._impl_.no_product_id_;
-      }
+  }
+  if ((cached_has_bits & 0x00000100u) != 0) {
+    if (from._internal_no_product_id() != 0) {
+      _this->_impl_.no_product_id_ = from._impl_.no_product_id_;
     }
   }
   _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -2414,6 +2469,7 @@ void ProductCreateRequestIdentity::InternalSwap(ProductCreateRequestIdentity* PR
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.subcategory_, &other->_impl_.subcategory_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.brand_name_, &other->_impl_.brand_name_, arena);
   ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.product_id_, &other->_impl_.product_id_, arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.product_id_type_, &other->_impl_.product_id_type_, arena);
   ::google::protobuf::internal::memswap<
       PROTOBUF_FIELD_OFFSET(ProductCreateRequestIdentity, _impl_.no_product_id_)
       + sizeof(ProductCreateRequestIdentity::_impl_.no_product_id_)

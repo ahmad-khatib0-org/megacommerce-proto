@@ -2311,7 +2311,19 @@ public final class ProductCreateProto {
         getProductIdBytes();
 
     /**
-     * <code>bool no_product_id = 8 [json_name = "noProductId"];</code>
+     * <code>string product_id_type = 8 [json_name = "productIdType"];</code>
+     * @return The productIdType.
+     */
+    java.lang.String getProductIdType();
+    /**
+     * <code>string product_id_type = 8 [json_name = "productIdType"];</code>
+     * @return The bytes for productIdType.
+     */
+    com.google.protobuf.ByteString
+        getProductIdTypeBytes();
+
+    /**
+     * <code>bool no_product_id = 9 [json_name = "noProductId"];</code>
      * @return The noProductId.
      */
     boolean getNoProductId();
@@ -2343,6 +2355,7 @@ public final class ProductCreateProto {
       subcategory_ = "";
       brandName_ = "";
       productId_ = "";
+      productIdType_ = "";
     }
 
     public static final com.google.protobuf.Descriptors.Descriptor
@@ -2575,10 +2588,49 @@ public final class ProductCreateProto {
       }
     }
 
-    public static final int NO_PRODUCT_ID_FIELD_NUMBER = 8;
+    public static final int PRODUCT_ID_TYPE_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object productIdType_ = "";
+    /**
+     * <code>string product_id_type = 8 [json_name = "productIdType"];</code>
+     * @return The productIdType.
+     */
+    @java.lang.Override
+    public java.lang.String getProductIdType() {
+      java.lang.Object ref = productIdType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        productIdType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string product_id_type = 8 [json_name = "productIdType"];</code>
+     * @return The bytes for productIdType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getProductIdTypeBytes() {
+      java.lang.Object ref = productIdType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        productIdType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NO_PRODUCT_ID_FIELD_NUMBER = 9;
     private boolean noProductId_ = false;
     /**
-     * <code>bool no_product_id = 8 [json_name = "noProductId"];</code>
+     * <code>bool no_product_id = 9 [json_name = "noProductId"];</code>
      * @return The noProductId.
      */
     @java.lang.Override
@@ -2621,8 +2673,11 @@ public final class ProductCreateProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(productId_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 7, productId_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(productIdType_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 8, productIdType_);
+      }
       if (noProductId_ != false) {
-        output.writeBool(8, noProductId_);
+        output.writeBool(9, noProductId_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -2656,9 +2711,12 @@ public final class ProductCreateProto {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(productId_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(7, productId_);
       }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(productIdType_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(8, productIdType_);
+      }
       if (noProductId_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(8, noProductId_);
+          .computeBoolSize(9, noProductId_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -2689,6 +2747,8 @@ public final class ProductCreateProto {
           != other.getNoBrand()) return false;
       if (!getProductId()
           .equals(other.getProductId())) return false;
+      if (!getProductIdType()
+          .equals(other.getProductIdType())) return false;
       if (getNoProductId()
           != other.getNoProductId()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -2718,6 +2778,8 @@ public final class ProductCreateProto {
           getNoBrand());
       hash = (37 * hash) + PRODUCT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getProductId().hashCode();
+      hash = (37 * hash) + PRODUCT_ID_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getProductIdType().hashCode();
       hash = (37 * hash) + NO_PRODUCT_ID_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getNoProductId());
@@ -2859,6 +2921,7 @@ public final class ProductCreateProto {
         brandName_ = "";
         noBrand_ = false;
         productId_ = "";
+        productIdType_ = "";
         noProductId_ = false;
         return this;
       }
@@ -2915,6 +2978,9 @@ public final class ProductCreateProto {
           result.productId_ = productId_;
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.productIdType_ = productIdType_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
           result.noProductId_ = noProductId_;
         }
       }
@@ -2960,6 +3026,11 @@ public final class ProductCreateProto {
         if (!other.getProductId().isEmpty()) {
           productId_ = other.productId_;
           bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        if (!other.getProductIdType().isEmpty()) {
+          productIdType_ = other.productIdType_;
+          bitField0_ |= 0x00000080;
           onChanged();
         }
         if (other.getNoProductId() != false) {
@@ -3026,11 +3097,16 @@ public final class ProductCreateProto {
                 bitField0_ |= 0x00000040;
                 break;
               } // case 58
-              case 64: {
-                noProductId_ = input.readBool();
+              case 66: {
+                productIdType_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000080;
                 break;
-              } // case 64
+              } // case 66
+              case 72: {
+                noProductId_ = input.readBool();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -3472,9 +3548,81 @@ public final class ProductCreateProto {
         return this;
       }
 
+      private java.lang.Object productIdType_ = "";
+      /**
+       * <code>string product_id_type = 8 [json_name = "productIdType"];</code>
+       * @return The productIdType.
+       */
+      public java.lang.String getProductIdType() {
+        java.lang.Object ref = productIdType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          productIdType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string product_id_type = 8 [json_name = "productIdType"];</code>
+       * @return The bytes for productIdType.
+       */
+      public com.google.protobuf.ByteString
+          getProductIdTypeBytes() {
+        java.lang.Object ref = productIdType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          productIdType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string product_id_type = 8 [json_name = "productIdType"];</code>
+       * @param value The productIdType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductIdType(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        productIdType_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string product_id_type = 8 [json_name = "productIdType"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearProductIdType() {
+        productIdType_ = getDefaultInstance().getProductIdType();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string product_id_type = 8 [json_name = "productIdType"];</code>
+       * @param value The bytes for productIdType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setProductIdTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        productIdType_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
       private boolean noProductId_ ;
       /**
-       * <code>bool no_product_id = 8 [json_name = "noProductId"];</code>
+       * <code>bool no_product_id = 9 [json_name = "noProductId"];</code>
        * @return The noProductId.
        */
       @java.lang.Override
@@ -3482,23 +3630,23 @@ public final class ProductCreateProto {
         return noProductId_;
       }
       /**
-       * <code>bool no_product_id = 8 [json_name = "noProductId"];</code>
+       * <code>bool no_product_id = 9 [json_name = "noProductId"];</code>
        * @param value The noProductId to set.
        * @return This builder for chaining.
        */
       public Builder setNoProductId(boolean value) {
 
         noProductId_ = value;
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
         return this;
       }
       /**
-       * <code>bool no_product_id = 8 [json_name = "noProductId"];</code>
+       * <code>bool no_product_id = 9 [json_name = "noProductId"];</code>
        * @return This builder for chaining.
        */
       public Builder clearNoProductId() {
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         noProductId_ = false;
         onChanged();
         return this;
@@ -21202,14 +21350,15 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
       "ductCreateRequestMediaR\005media\022<\n\005offer\030\005" +
       " \001(\0132&.products.v1.ProductCreateRequestO" +
       "fferR\005offer\022?\n\006safety\030\006 \001(\0132\'.products.v" +
-      "1.ProductCreateRequestSafetyR\006safety\"\226\002\n" +
+      "1.ProductCreateRequestSafetyR\006safety\"\276\002\n" +
       "\034ProductCreateRequestIdentity\022\024\n\005title\030\001" +
       " \001(\tR\005title\022\032\n\010category\030\002 \001(\tR\010category\022" +
       " \n\013subcategory\030\003 \001(\tR\013subcategory\022%\n\016has" +
       "_variations\030\004 \001(\010R\rhasVariations\022\035\n\nbran" +
       "d_name\030\005 \001(\tR\tbrandName\022\031\n\010no_brand\030\006 \001(" +
       "\010R\007noBrand\022\035\n\nproduct_id\030\007 \001(\tR\tproductI" +
-      "d\022\"\n\rno_product_id\030\010 \001(\010R\013noProductId\"\226\001" +
+      "d\022&\n\017product_id_type\030\010 \001(\tR\rproductIdTyp" +
+      "e\022\"\n\rno_product_id\030\t \001(\010R\013noProductId\"\226\001" +
       "\n\037ProductCreateRequestDescription\022 \n\013des" +
       "cription\030\001 \001(\tR\013description\022Q\n\rbullet_po" +
       "ints\030\002 \003(\0132,.products.v1.ProductCreateRe" +
@@ -21343,7 +21492,7 @@ org.megacommerce.shared.v1.TypesProto.Any defaultValue) {
     internal_static_products_v1_ProductCreateRequestIdentity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_products_v1_ProductCreateRequestIdentity_descriptor,
-        new java.lang.String[] { "Title", "Category", "Subcategory", "HasVariations", "BrandName", "NoBrand", "ProductId", "NoProductId", });
+        new java.lang.String[] { "Title", "Category", "Subcategory", "HasVariations", "BrandName", "NoBrand", "ProductId", "ProductIdType", "NoProductId", });
     internal_static_products_v1_ProductCreateRequestDescription_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_products_v1_ProductCreateRequestDescription_fieldAccessorTable = new

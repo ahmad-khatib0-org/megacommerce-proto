@@ -34,6 +34,7 @@ export interface ProductCreateRequestIdentity {
   brandName: string;
   noBrand: boolean;
   productId: string;
+  productIdType: string;
   noProductId: boolean;
 }
 
@@ -425,6 +426,7 @@ function createBaseProductCreateRequestIdentity(): ProductCreateRequestIdentity 
     brandName: "",
     noBrand: false,
     productId: "",
+    productIdType: "",
     noProductId: false,
   };
 }
@@ -452,8 +454,11 @@ export const ProductCreateRequestIdentity: MessageFns<ProductCreateRequestIdenti
     if (message.productId !== "") {
       writer.uint32(58).string(message.productId);
     }
+    if (message.productIdType !== "") {
+      writer.uint32(66).string(message.productIdType);
+    }
     if (message.noProductId !== false) {
-      writer.uint32(64).bool(message.noProductId);
+      writer.uint32(72).bool(message.noProductId);
     }
     return writer;
   },
@@ -522,7 +527,15 @@ export const ProductCreateRequestIdentity: MessageFns<ProductCreateRequestIdenti
           continue;
         }
         case 8: {
-          if (tag !== 64) {
+          if (tag !== 66) {
+            break;
+          }
+
+          message.productIdType = reader.string();
+          continue;
+        }
+        case 9: {
+          if (tag !== 72) {
             break;
           }
 
@@ -547,6 +560,7 @@ export const ProductCreateRequestIdentity: MessageFns<ProductCreateRequestIdenti
       brandName: isSet(object.brandName) ? globalThis.String(object.brandName) : "",
       noBrand: isSet(object.noBrand) ? globalThis.Boolean(object.noBrand) : false,
       productId: isSet(object.productId) ? globalThis.String(object.productId) : "",
+      productIdType: isSet(object.productIdType) ? globalThis.String(object.productIdType) : "",
       noProductId: isSet(object.noProductId) ? globalThis.Boolean(object.noProductId) : false,
     };
   },
@@ -574,6 +588,9 @@ export const ProductCreateRequestIdentity: MessageFns<ProductCreateRequestIdenti
     if (message.productId !== "") {
       obj.productId = message.productId;
     }
+    if (message.productIdType !== "") {
+      obj.productIdType = message.productIdType;
+    }
     if (message.noProductId !== false) {
       obj.noProductId = message.noProductId;
     }
@@ -592,6 +609,7 @@ export const ProductCreateRequestIdentity: MessageFns<ProductCreateRequestIdenti
     message.brandName = object.brandName ?? "";
     message.noBrand = object.noBrand ?? false;
     message.productId = object.productId ?? "";
+    message.productIdType = object.productIdType ?? "";
     message.noProductId = object.noProductId ?? false;
     return message;
   },

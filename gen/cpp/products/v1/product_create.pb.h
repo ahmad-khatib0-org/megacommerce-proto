@@ -759,9 +759,10 @@ class ProductCreateRequestIdentity final : public ::google::protobuf::Message
     kSubcategoryFieldNumber = 3,
     kBrandNameFieldNumber = 5,
     kProductIdFieldNumber = 7,
+    kProductIdTypeFieldNumber = 8,
     kHasVariationsFieldNumber = 4,
     kNoBrandFieldNumber = 6,
-    kNoProductIdFieldNumber = 8,
+    kNoProductIdFieldNumber = 9,
   };
   // string title = 1 [json_name = "title"];
   void clear_title() ;
@@ -838,6 +839,21 @@ class ProductCreateRequestIdentity final : public ::google::protobuf::Message
   ::std::string* PROTOBUF_NONNULL _internal_mutable_product_id();
 
   public:
+  // string product_id_type = 8 [json_name = "productIdType"];
+  void clear_product_id_type() ;
+  const ::std::string& product_id_type() const;
+  template <typename Arg_ = const ::std::string&, typename... Args_>
+  void set_product_id_type(Arg_&& arg, Args_... args);
+  ::std::string* PROTOBUF_NONNULL mutable_product_id_type();
+  [[nodiscard]] ::std::string* PROTOBUF_NULLABLE release_product_id_type();
+  void set_allocated_product_id_type(::std::string* PROTOBUF_NULLABLE value);
+
+  private:
+  const ::std::string& _internal_product_id_type() const;
+  PROTOBUF_ALWAYS_INLINE void _internal_set_product_id_type(const ::std::string& value);
+  ::std::string* PROTOBUF_NONNULL _internal_mutable_product_id_type();
+
+  public:
   // bool has_variations = 4 [json_name = "hasVariations"];
   void clear_has_variations() ;
   bool has_variations() const;
@@ -858,7 +874,7 @@ class ProductCreateRequestIdentity final : public ::google::protobuf::Message
   void _internal_set_no_brand(bool value);
 
   public:
-  // bool no_product_id = 8 [json_name = "noProductId"];
+  // bool no_product_id = 9 [json_name = "noProductId"];
   void clear_no_product_id() ;
   bool no_product_id() const;
   void set_no_product_id(bool value);
@@ -872,8 +888,8 @@ class ProductCreateRequestIdentity final : public ::google::protobuf::Message
  private:
   class _Internal;
   friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<3, 8,
-                                   0, 101,
+  static const ::google::protobuf::internal::TcParseTable<4, 9,
+                                   0, 116,
                                    2>
       _table_;
 
@@ -899,6 +915,7 @@ class ProductCreateRequestIdentity final : public ::google::protobuf::Message
     ::google::protobuf::internal::ArenaStringPtr subcategory_;
     ::google::protobuf::internal::ArenaStringPtr brand_name_;
     ::google::protobuf::internal::ArenaStringPtr product_id_;
+    ::google::protobuf::internal::ArenaStringPtr product_id_type_;
     bool has_variations_;
     bool no_brand_;
     bool no_product_id_;
@@ -5989,7 +6006,7 @@ inline void ProductCreateRequestIdentity::set_allocated_subcategory(::std::strin
 inline void ProductCreateRequestIdentity::clear_has_variations() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.has_variations_ = false;
-  _impl_._has_bits_[0] &= ~0x00000020u;
+  _impl_._has_bits_[0] &= ~0x00000040u;
 }
 inline bool ProductCreateRequestIdentity::has_variations() const {
   // @@protoc_insertion_point(field_get:products.v1.ProductCreateRequestIdentity.has_variations)
@@ -5997,7 +6014,7 @@ inline bool ProductCreateRequestIdentity::has_variations() const {
 }
 inline void ProductCreateRequestIdentity::set_has_variations(bool value) {
   _internal_set_has_variations(value);
-  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_._has_bits_[0] |= 0x00000040u;
   // @@protoc_insertion_point(field_set:products.v1.ProductCreateRequestIdentity.has_variations)
 }
 inline bool ProductCreateRequestIdentity::_internal_has_variations() const {
@@ -6078,7 +6095,7 @@ inline void ProductCreateRequestIdentity::set_allocated_brand_name(::std::string
 inline void ProductCreateRequestIdentity::clear_no_brand() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.no_brand_ = false;
-  _impl_._has_bits_[0] &= ~0x00000040u;
+  _impl_._has_bits_[0] &= ~0x00000080u;
 }
 inline bool ProductCreateRequestIdentity::no_brand() const {
   // @@protoc_insertion_point(field_get:products.v1.ProductCreateRequestIdentity.no_brand)
@@ -6086,7 +6103,7 @@ inline bool ProductCreateRequestIdentity::no_brand() const {
 }
 inline void ProductCreateRequestIdentity::set_no_brand(bool value) {
   _internal_set_no_brand(value);
-  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_._has_bits_[0] |= 0x00000080u;
   // @@protoc_insertion_point(field_set:products.v1.ProductCreateRequestIdentity.no_brand)
 }
 inline bool ProductCreateRequestIdentity::_internal_no_brand() const {
@@ -6163,11 +6180,76 @@ inline void ProductCreateRequestIdentity::set_allocated_product_id(::std::string
   // @@protoc_insertion_point(field_set_allocated:products.v1.ProductCreateRequestIdentity.product_id)
 }
 
-// bool no_product_id = 8 [json_name = "noProductId"];
+// string product_id_type = 8 [json_name = "productIdType"];
+inline void ProductCreateRequestIdentity::clear_product_id_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_.product_id_type_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000020u;
+}
+inline const ::std::string& ProductCreateRequestIdentity::product_id_type() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:products.v1.ProductCreateRequestIdentity.product_id_type)
+  return _internal_product_id_type();
+}
+template <typename Arg_, typename... Args_>
+PROTOBUF_ALWAYS_INLINE void ProductCreateRequestIdentity::set_product_id_type(Arg_&& arg, Args_... args) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_.product_id_type_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:products.v1.ProductCreateRequestIdentity.product_id_type)
+}
+inline ::std::string* PROTOBUF_NONNULL ProductCreateRequestIdentity::mutable_product_id_type()
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  ::std::string* _s = _internal_mutable_product_id_type();
+  // @@protoc_insertion_point(field_mutable:products.v1.ProductCreateRequestIdentity.product_id_type)
+  return _s;
+}
+inline const ::std::string& ProductCreateRequestIdentity::_internal_product_id_type() const {
+  ::google::protobuf::internal::TSanRead(&_impl_);
+  return _impl_.product_id_type_.Get();
+}
+inline void ProductCreateRequestIdentity::_internal_set_product_id_type(const ::std::string& value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_.product_id_type_.Set(value, GetArena());
+}
+inline ::std::string* PROTOBUF_NONNULL ProductCreateRequestIdentity::_internal_mutable_product_id_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  _impl_._has_bits_[0] |= 0x00000020u;
+  return _impl_.product_id_type_.Mutable( GetArena());
+}
+inline ::std::string* PROTOBUF_NULLABLE ProductCreateRequestIdentity::release_product_id_type() {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  // @@protoc_insertion_point(field_release:products.v1.ProductCreateRequestIdentity.product_id_type)
+  if ((_impl_._has_bits_[0] & 0x00000020u) == 0) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000020u;
+  auto* released = _impl_.product_id_type_.Release();
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString()) {
+    _impl_.product_id_type_.Set("", GetArena());
+  }
+  return released;
+}
+inline void ProductCreateRequestIdentity::set_allocated_product_id_type(::std::string* PROTOBUF_NULLABLE value) {
+  ::google::protobuf::internal::TSanWrite(&_impl_);
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000020u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000020u;
+  }
+  _impl_.product_id_type_.SetAllocated(value, GetArena());
+  if (::google::protobuf::internal::DebugHardenForceCopyDefaultString() && _impl_.product_id_type_.IsDefault()) {
+    _impl_.product_id_type_.Set("", GetArena());
+  }
+  // @@protoc_insertion_point(field_set_allocated:products.v1.ProductCreateRequestIdentity.product_id_type)
+}
+
+// bool no_product_id = 9 [json_name = "noProductId"];
 inline void ProductCreateRequestIdentity::clear_no_product_id() {
   ::google::protobuf::internal::TSanWrite(&_impl_);
   _impl_.no_product_id_ = false;
-  _impl_._has_bits_[0] &= ~0x00000080u;
+  _impl_._has_bits_[0] &= ~0x00000100u;
 }
 inline bool ProductCreateRequestIdentity::no_product_id() const {
   // @@protoc_insertion_point(field_get:products.v1.ProductCreateRequestIdentity.no_product_id)
@@ -6175,7 +6257,7 @@ inline bool ProductCreateRequestIdentity::no_product_id() const {
 }
 inline void ProductCreateRequestIdentity::set_no_product_id(bool value) {
   _internal_set_no_product_id(value);
-  _impl_._has_bits_[0] |= 0x00000080u;
+  _impl_._has_bits_[0] |= 0x00000100u;
   // @@protoc_insertion_point(field_set:products.v1.ProductCreateRequestIdentity.no_product_id)
 }
 inline bool ProductCreateRequestIdentity::_internal_no_product_id() const {
